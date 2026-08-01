@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
-from datetime import timezone
+from datetime import timedelta, timezone
 from pathlib import Path
 
-from tracker.fetch import load_sources, parse_feed, parse_huggingface
+import pytest
+
+from tracker.fetch import (
+    _to_utc,
+    fetch_source,
+    load_sources,
+    parse_feed,
+    parse_huggingface,
+)
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -61,6 +69,11 @@ def test_parse_huggingface_skips_entry_without_model_id():
     assert len(updates) == 2
 
 
+def test_parse_huggingface_skips_entry_without_created_at():
+    updates = parse_huggingface(HF_SOURCE, _read("sample_hf_models.json"))
+    assert "deepseek-ai/NoDateModel" not in [u.title for u in updates]
+
+
 def test_parse_feed_on_garbage_returns_empty_without_raising():
     assert parse_feed(RSS_SOURCE, b"not a feed at all") == []
 
@@ -78,3 +91,81 @@ def test_load_sources(tmp_path):
     )
     sources = load_sources(path)
     assert sources[0]["id"] == "a"
+
+
+def test_fetch_source_parses_rss_and_reports_no_error(monkeypatch):
+    captured = {}
+
+    def fake_get(url):
+        captured["url"] = url
+        return _read("sample_rss.xml")
+
+    monkeypatch.setattr("tracker.fetch._http_get", fake_get)
+    updates, error = fetch_source(dict(RSS_SOURCE, url="https://example.com/feed"))
+    assert error is None
+    assert captured["url"] == "https://example.com/feed"
+    assert len(updates) == 2
+
+
+def test_fetch_source_builds_huggingface_api_url(monkeypatch):
+    captured = {}
+
+    def fake_get(url):
+        captured["url"] = url
+        return _read("sample_hf_models.json")
+
+    monkeypatch.setattr("tracker.fetch._http_get", fake_get)
+    updates, error = fetch_source(dict(HF_SOURCE, org="deepseek-ai"))
+    assert error is None
+    assert "author=deepseek-ai" in captured["url"]
+    assert "sort=createdAt" in captured["url"]
+    assert "direction=-1" in captured["url"]
+    assert len(updates) == 2
+
+
+def test_fetch_source_returns_error_string_instead_of_raising(monkeypatch):
+    def boom(url):
+        raise OSError("connection reset by peer")
+
+    monkeypatch.setattr("tracker.fetch._http_get", boom)
+    updates, error = fetch_source(dict(RSS_SOURCE, url="https://example.com/feed"))
+    assert updates == []
+    assert error.startswith("OSError: ")
+    assert "connection reset by peer" in error
+
+
+def test_fetch_source_missing_org_degrades_to_recorded_error(monkeypatch):
+    # sources.yml の書き間違いでクラッシュせず、死活記録に落ちることを保証する。
+    monkeypatch.setattr("tracker.fetch._http_get", lambda url: b"[]")
+    updates, error = fetch_source(HF_SOURCE)
+    assert updates == []
+    assert "KeyError" in error
+
+
+def test_fetch_source_truncates_long_error_messages(monkeypatch):
+    def boom(url):
+        raise OSError("x" * 500)
+
+    monkeypatch.setattr("tracker.fetch._http_get", boom)
+    _, error = fetch_source(dict(RSS_SOURCE, url="https://example.com/feed"))
+    assert error.startswith("OSError: ")
+    assert len(error) < 100
+
+
+@pytest.mark.parametrize("value,expected_hour", [
+    ("Fri, 01 Aug 2026 09:00:00 GMT", 9),
+    ("Fri, 01 Aug 2026 09:00:00 +0900", 0),
+    ("Fri, 01 Aug 2026 09:00:00 +0800", 1),
+    ("2026-08-01T10:00:00Z", 10),
+    ("2026-07-31T04:05:06.000Z", 4),
+])
+def test_to_utc_handles_real_world_formats(value, expected_hour):
+    result = _to_utc(value)
+    assert result is not None
+    assert result.utcoffset() == timedelta(0)
+    assert result.hour == expected_hour
+
+
+@pytest.mark.parametrize("value", ["", "not a date", "2026-13-45T99:99:99Z"])
+def test_to_utc_returns_none_for_unparseable(value):
+    assert _to_utc(value) is None
