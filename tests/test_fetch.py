@@ -10,6 +10,7 @@ from tracker.fetch import (
     load_sources,
     parse_feed,
     parse_huggingface,
+    parse_openrouter,
 )
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -169,3 +170,51 @@ def test_to_utc_handles_real_world_formats(value, expected_hour):
 @pytest.mark.parametrize("value", ["", "not a date", "2026-13-45T99:99:99Z"])
 def test_to_utc_returns_none_for_unparseable(value):
     assert _to_utc(value) is None
+
+
+OR_SOURCE = {"id": "or", "vendor": "xAI", "label": "Grok 新モデル",
+             "type": "openrouter", "org": "x-ai"}
+
+
+def test_parse_openrouter_filters_by_org_prefix():
+    updates = parse_openrouter(OR_SOURCE, _read("sample_openrouter.json"))
+    assert all(u.title.startswith("x-ai/") for u in updates)
+    assert "anthropic/claude-opus-5" not in [u.title for u in updates]
+
+
+def test_parse_openrouter_converts_unix_timestamp():
+    updates = parse_openrouter(OR_SOURCE, _read("sample_openrouter.json"))
+    published = {u.title: u.published for u in updates}
+    assert published["x-ai/grok-4.5"].year == 2026
+    assert published["x-ai/grok-4.5"].tzinfo is not None
+    assert published["x-ai/grok-4.5"].utcoffset() == timedelta(0)
+
+
+def test_parse_openrouter_sorts_newest_first():
+    updates = parse_openrouter(OR_SOURCE, _read("sample_openrouter.json"))
+    assert updates[0].title == "x-ai/grok-4.5:free"
+
+
+def test_parse_openrouter_skips_entry_without_created():
+    updates = parse_openrouter(OR_SOURCE, _read("sample_openrouter.json"))
+    assert "x-ai/no-timestamp" not in [u.title for u in updates]
+
+
+def test_parse_openrouter_builds_model_url():
+    updates = parse_openrouter(OR_SOURCE, _read("sample_openrouter.json"))
+    by_title = {u.title: u.url for u in updates}
+    assert by_title["x-ai/grok-4.5"] == "https://openrouter.ai/x-ai/grok-4.5"
+
+
+def test_fetch_source_uses_openrouter_api(monkeypatch):
+    captured = {}
+
+    def fake_get(url):
+        captured["url"] = url
+        return _read("sample_openrouter.json")
+
+    monkeypatch.setattr("tracker.fetch._http_get", fake_get)
+    updates, error = fetch_source(OR_SOURCE)
+    assert error is None
+    assert captured["url"] == "https://openrouter.ai/api/v1/models"
+    assert all(u.title.startswith("x-ai/") for u in updates)

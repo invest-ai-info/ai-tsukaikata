@@ -132,3 +132,17 @@ def test_colon_patch_release_stays_minor(title):
 
 def test_colon_feature_release_still_major():
     assert classify(_update("v1.2.0: new provider support"), "github_releases").importance == "major"
+
+
+def test_openrouter_new_model_is_major():
+    assert classify(_update("x-ai/grok-4.5"), "openrouter").importance == "major"
+
+
+@pytest.mark.parametrize("model_id", [
+    "x-ai/grok-4.5:free",
+    "x-ai/grok-4.5:thinking",
+    "anthropic/claude-opus-5:beta",
+])
+def test_openrouter_tagged_variant_is_minor(model_id):
+    # OpenRouter は ":free" などのタグでベースモデルの派生を表す。
+    assert classify(_update(model_id), "openrouter").importance == "minor"

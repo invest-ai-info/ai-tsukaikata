@@ -21,6 +21,7 @@ USER_AGENT = "ai-tsukaikata-tracker/1.0"
 TIMEOUT = 20
 MAX_ENTRIES = 30
 HF_API = "https://huggingface.co/api/models"
+OPENROUTER_API = "https://openrouter.ai/api/v1/models"
 
 
 def load_sources(path: Path) -> list[dict]:
@@ -98,12 +99,47 @@ def parse_huggingface(source: dict, raw: bytes) -> list[Update]:
     return updates
 
 
+def parse_openrouter(source: dict, raw: bytes) -> list[Update]:
+    """OpenRouter models API の JSON を Update のリストにする。
+
+    org には OpenRouter のベンダー接頭辞を入れる（xAI なら "x-ai"）。
+    x.ai は403でbotブロックされ、HuggingFace の xai-org も更新が止まって
+    いるため、Grok の新モデルを追える唯一の実測済みルート。
+
+    created は他のソースと違い ISO 文字列ではなく Unix 秒。
+    """
+    models = json.loads(raw).get("data", [])
+    prefix = f"{source['org']}/"
+    matched = [m for m in models if str(m.get("id", "")).startswith(prefix)]
+    matched.sort(key=lambda m: m.get("created") or 0, reverse=True)
+
+    updates = []
+    for model in matched[:MAX_ENTRIES]:
+        model_id = model.get("id", "")
+        created = model.get("created")
+        if not model_id or not created:
+            continue
+        updates.append(Update(
+            uid=make_uid(source["id"], model_id),
+            source_id=source["id"],
+            vendor=source["vendor"],
+            label=source["label"],
+            title=model_id,
+            url=f"https://openrouter.ai/{model_id}",
+            published=datetime.fromtimestamp(created, tz=timezone.utc),
+            summary=model.get("description") or "",
+        ))
+    return updates
+
+
 def fetch_source(source: dict) -> tuple[list[Update], str | None]:
     """1ソースを取得する。(updates, error) を返し、例外は投げない。
 
     1ソースの失敗で全体を止めないため。失敗は呼び出し側が記録する。
     """
     try:
+        if source["type"] == "openrouter":
+            return parse_openrouter(source, _http_get(OPENROUTER_API)), None
         if source["type"] == "huggingface":
             url = (
                 f"{HF_API}?author={source['org']}"

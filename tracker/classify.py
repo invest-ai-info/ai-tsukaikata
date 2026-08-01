@@ -64,6 +64,11 @@ def _is_feature_release(title: str) -> bool:
 
 def classify(update: Update, source_type: str) -> Update:
     """importance を付けた新しい Update を返す。入力は変更しない。"""
+    if source_type == "openrouter":
+        # ":free" や ":thinking" 等はベースモデルの派生タグ
+        importance = "minor" if ":" in update.title else "major"
+        return update.with_importance(importance)
+
     if source_type == "huggingface":
         importance = "minor" if is_variant_model(update.title) else "major"
         return update.with_importance(importance)

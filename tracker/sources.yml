@@ -44,6 +44,14 @@ sources:
     type: huggingface
     org: xai-org
 
+  # x.ai は403、HuggingFace の xai-org も2025-08で停止しているため、
+  # Grok の新モデルは OpenRouter 経由で追う（2026-08-01 実測で grok-4.5 を捕捉）。
+  - id: openrouter-xai
+    vendor: xAI
+    label: Grok 新モデル
+    type: openrouter
+    org: x-ai
+
   # --- 中国系 ---
   - id: qwen-blog
     vendor: Alibaba Qwen

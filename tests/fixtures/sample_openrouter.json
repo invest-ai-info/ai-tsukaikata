@@ -1,0 +1,9 @@
+{
+  "data": [
+    {"id": "x-ai/grok-4.5", "name": "xAI: Grok 4.5", "created": 1783555200, "description": "Latest flagship model from xAI."},
+    {"id": "x-ai/grok-4.5:free", "name": "xAI: Grok 4.5 (free)", "created": 1783641600, "description": "Free tier variant."},
+    {"id": "anthropic/claude-opus-5", "name": "Anthropic: Claude Opus 5", "created": 1784000000, "description": "Not xAI, must be filtered out."},
+    {"id": "x-ai/grok-4.3", "name": "xAI: Grok 4.3", "created": 1777161600, "description": "Previous flagship."},
+    {"id": "x-ai/no-timestamp", "name": "Broken", "description": "Missing created field."}
+  ]
+}
