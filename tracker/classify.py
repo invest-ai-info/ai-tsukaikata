@@ -24,10 +24,15 @@ MAJOR_JA = ("発表", "提供開始", "リリース", "公開しました", "新
 
 # HuggingFace の派生モデル（量子化版・形式違い）の接尾辞
 VARIANT_SUFFIXES = (
-    "-gguf", "-awq", "-gptq", "-int4", "-int8", "-fp8", "-hf", "-bnb",
+    "-gguf", "-awq", "-gptq", "-int4", "-int8", "-fp8", "-hf", "-bnb", "-base",
 )
 
 _VERSION_RE = re.compile(r"v?(\d+)\.(\d+)\.(\d+)")
+
+# 「GPT-5.6: 〜」「Gemini 3.5: 〜」のような、製品名+バージョン+コロンの発表形式。
+# 実測（2026-08-01）でOpenAI・DeepMindの旗艦発表がこの形になっており、
+# 発表語を1つも含まないため MAJOR_EN では拾えない。
+_COLON_LAUNCH_RE = re.compile(r"^[^:：]{1,30}\d[^:：]{0,10}[:：]")
 
 
 def is_variant_model(model_id: str) -> bool:
@@ -40,6 +45,11 @@ def _has_announcement_word(title: str) -> bool:
     if any(word in lowered for word in MAJOR_EN):
         return True
     return any(word in title for word in MAJOR_JA)
+
+
+def _looks_like_launch(title: str) -> bool:
+    """製品名にバージョン番号を含み、コロンで見出しが続く発表形式か。"""
+    return bool(_COLON_LAUNCH_RE.search(title))
 
 
 def _is_feature_release(title: str) -> bool:
@@ -56,7 +66,7 @@ def classify(update: Update, source_type: str) -> Update:
         importance = "minor" if is_variant_model(update.title) else "major"
         return update.with_importance(importance)
 
-    if _has_announcement_word(update.title):
+    if _has_announcement_word(update.title) or _looks_like_launch(update.title):
         return update.with_importance("major")
 
     if source_type == "github_releases" and _is_feature_release(update.title):

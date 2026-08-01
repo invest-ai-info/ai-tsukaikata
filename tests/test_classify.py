@@ -97,3 +97,25 @@ def test_classify_does_not_mutate_input():
     u = _update("Introducing X")
     classify(u, "rss")
     assert u.importance == "minor"
+
+
+@pytest.mark.parametrize("title", [
+    "GPT-5.6: Frontier intelligence that scales with your ambition",
+    "Gemini 3.5: frontier intelligence with action",
+    "Gemma 4: Byte for byte, the most capable open models",
+])
+def test_colon_tagline_launch_is_major(title):
+    assert classify(_update(title), "rss").importance == "major"
+
+
+def test_release_word_alone_does_not_make_it_major():
+    # MAJOR_EN から "release" を意図的に外している。GitHubのリリース見出しは
+    # 常にこの語を含みうるため、入れると全patchが major になって埋もれる。
+    u = _update("Release notes for v1.2.3")
+    assert classify(u, "github_releases").importance == "minor"
+
+
+def test_huggingface_base_checkpoint_is_minor():
+    # 同日に出る X-Base / X-Instruct で2通になるのを防ぐ。
+    assert classify(_update("moonshotai/Kimi-K2-Base"), "huggingface").importance == "minor"
+    assert classify(_update("moonshotai/Kimi-K2-Instruct"), "huggingface").importance == "major"
