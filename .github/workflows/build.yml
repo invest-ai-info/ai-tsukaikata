@@ -1,0 +1,60 @@
+name: Build & Deploy Site
+
+on:
+  push:
+    branches: [main]
+    # data/ は毎時トラッカーが書き換える。paths を絞らないとサイトが
+    # 1日24回リビルドされる
+    paths:
+      - "content/**"
+      - "templates/**"
+      - "static/**"
+      - "src/**"
+      - "requirements.txt"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存をインストール
+        run: pip install -r requirements.txt
+
+      # テストが落ちたらここで止まる。壊れたものは公開に到達しない
+      - name: テスト
+        run: python -m pytest -q
+
+      - name: ビルド
+        run: python -m src.build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
