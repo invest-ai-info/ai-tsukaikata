@@ -1,0 +1,95 @@
+# 追跡対象。到達性を実測で確認したものだけを入れる（設計書 §3 参照）。
+# 追加はこのファイルに数行足すだけでよく、コードの変更は不要。
+sources:
+  # --- Anthropic ---
+  # 公式news はRSS未提供（/news/rss.xml・/rss.xml・/engineering/rss.xml すべて404）。
+  # releases 2本で実質的にカバーする。
+  - id: claude-code
+    vendor: Anthropic
+    label: Claude Code
+    type: github_releases
+    url: https://github.com/anthropics/claude-code/releases.atom
+
+  - id: anthropic-sdk
+    vendor: Anthropic
+    label: Anthropic SDK (Python)
+    type: github_releases
+    url: https://github.com/anthropics/anthropic-sdk-python/releases.atom
+
+  # --- OpenAI ---
+  - id: openai-news
+    vendor: OpenAI
+    label: OpenAI News
+    type: rss
+    url: https://openai.com/news/rss.xml
+
+  # --- Google ---
+  - id: google-ai-blog
+    vendor: Google
+    label: Google AI Blog
+    type: rss
+    url: https://blog.google/technology/ai/rss/
+
+  - id: deepmind-blog
+    vendor: Google DeepMind
+    label: DeepMind Blog
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+
+  # --- xAI ---
+  # x.ai/news は403でbotブロック。迂回はせずHuggingFace経由で追う。
+  - id: hf-xai
+    vendor: xAI
+    label: xAI 新モデル
+    type: huggingface
+    org: xai-org
+
+  # --- 中国系 ---
+  - id: qwen-blog
+    vendor: Alibaba Qwen
+    label: Qwen Blog
+    type: rss
+    url: https://qwenlm.github.io/blog/index.xml
+
+  - id: hf-qwen
+    vendor: Alibaba Qwen
+    label: Qwen 新モデル
+    type: huggingface
+    org: Qwen
+
+  - id: hf-deepseek
+    vendor: DeepSeek
+    label: DeepSeek 新モデル
+    type: huggingface
+    org: deepseek-ai
+
+  - id: hf-moonshot
+    vendor: Moonshot AI
+    label: Kimi 新モデル
+    type: huggingface
+    org: moonshotai
+
+  - id: hf-zhipu
+    vendor: Zhipu AI
+    label: GLM 新モデル
+    type: huggingface
+    org: zai-org
+
+  # --- 日本系 ---
+  - id: sakana-blog
+    vendor: Sakana AI
+    label: Sakana AI Blog
+    type: rss
+    url: https://sakana.ai/feed.xml
+
+  - id: pfn-blog
+    vendor: Preferred Networks
+    label: PFN 技術ブログ
+    type: rss
+    url: https://tech.preferred.jp/ja/blog/feed/
+
+  - id: elyza-note
+    vendor: ELYZA
+    label: ELYZA note
+    type: rss
+    url: https://note.com/elyza/rss
