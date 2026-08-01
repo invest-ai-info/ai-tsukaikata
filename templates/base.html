@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{% if page_title %}{{ page_title }}{% else %}{{ site.name }}{% endif %}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-name" href="/">{{ site.name }}</a>
+  <nav class="site-nav">
+    {% for item in nav %}
+    <a href="{{ item.url }}">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+</header>
+
+<main class="site-main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="/about/">このサイトについて</a>
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/feed.xml">RSS</a>
+  </nav>
+  <p class="copyright">© {{ site.name }}</p>
+</footer>
+</body>
+</html>

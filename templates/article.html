@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="article">
+  {% if category_label %}
+  <p class="breadcrumb"><a href="/">ホーム</a> › <a href="{{ category_url }}">{{ category_label }}</a></p>
+  {% endif %}
+
+  <h1 class="article-title">{{ article.title }}</h1>
+
+  <p class="article-meta">
+    <time datetime="{{ article.published.isoformat() }}">{{ article.published | jp_date }} 公開</time>
+    {% if article.updated %}
+    <time datetime="{{ article.updated.isoformat() }}">{{ article.updated | jp_date }} 更新</time>
+    {% endif %}
+  </p>
+
+  {% if article.time_required or article.cost %}
+  <dl class="recipe-meta">
+    {% if article.time_required %}
+    <div><dt>かかる時間</dt><dd>{{ article.time_required }}</dd></div>
+    {% endif %}
+    {% if article.cost %}
+    <div><dt>費用</dt><dd>{{ article.cost }}</dd></div>
+    {% endif %}
+  </dl>
+  {% endif %}
+
+  <div class="article-body">{{ article.body_html | safe }}</div>
+
+  {% if article.tags %}
+  <p class="tags">{% for tag in article.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</p>
+  {% endif %}
+</article>
+{% endblock %}

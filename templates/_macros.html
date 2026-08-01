@@ -1,0 +1,11 @@
+{% macro card(article) %}
+<article class="card">
+  <h2 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+  <p class="card-description">{{ article.description }}</p>
+  <p class="card-meta">
+    <time datetime="{{ article.published.isoformat() }}">{{ article.published | jp_date }}</time>
+    {% if article.time_required %}<span class="card-badge">{{ article.time_required }}</span>{% endif %}
+    {% if article.cost %}<span class="card-badge">{{ article.cost }}</span>{% endif %}
+  </p>
+</article>
+{% endmacro %}

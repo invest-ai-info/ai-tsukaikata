@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "_macros.html" as macros %}
+<section class="hero">
+  <h1>{{ site.name }}</h1>
+  <p class="hero-lead">{{ site.description }}</p>
+  <p class="hero-note">ここに載っているのは、運営者が自分で毎日動かしているものだけです。動かしていないものは書きません。</p>
+</section>
+
+<section class="article-list">
+  <h2 class="section-title">新着</h2>
+  {% for article in articles %}
+  {{ macros.card(article) }}
+  {% endfor %}
+</section>
+{% endblock %}
