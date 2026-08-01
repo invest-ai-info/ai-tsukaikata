@@ -27,6 +27,43 @@ def _default_mailer(subject: str, plain: str, html_body: str) -> None:
     notify.send_mail(subject, plain, html_body)
 
 
+REQUIRED_KEYS = ("id", "vendor", "label", "type")
+
+
+def _source_label(source: dict, index: int) -> str:
+    """ソースを識別するラベル。id があればそれを、無ければ位置から作る。
+
+    _valid_sources と forget_removed_sources 用の active_source_ids の
+    両方でこの同じラベルを使うこと。片方だけ生の source["id"] を使うと、
+    id の無い壊れた定義でまた KeyError になるか、記録した直後の死活記録を
+    forget_removed_sources が同じ run 内で消してしまう。
+    """
+    return source.get("id") or f"sources[{index}]"
+
+
+def _valid_sources(sources: list[dict], state: dict) -> list[dict]:
+    """必須キーの揃ったソースだけを返し、壊れた定義は死活記録に落とす。
+
+    sources.yml は手書きなので誤字が入る。1件の誤字で全ソースの取得が
+    止まらないよう、壊れた定義だけを外して残りは通常どおり処理する。
+    外した定義はダイジェストの死活警告に出るので放置されない。
+    """
+    valid = []
+    for index, source in enumerate(sources):
+        missing = [key for key in REQUIRED_KEYS if not source.get(key)]
+        if missing:
+            label = _source_label(source, index)
+            reason = f"定義エラー: {'/'.join(missing)} が無い"
+            store.record_result(state, label, reason, 0)
+            # 絵文字は使わない。cp932 コンソール（PYTHONUTF8 未設定の Windows）では
+            # "⚠️" の実行時 print が UnicodeEncodeError で落ちる。既存の他の
+            # print はどれも絵文字を含まないのと合わせる。
+            print(f"[警告] {label}: {reason}")
+            continue
+        valid.append(source)
+    return valid
+
+
 def _collect(sources: list[dict], state: dict, fetcher) -> list:
     """全ソースを取得し、重要度を付けた Update のリストを返す。
 
@@ -34,7 +71,7 @@ def _collect(sources: list[dict], state: dict, fetcher) -> list:
     更新の少ないソースが数時間で死亡扱いになる。
     """
     collected = []
-    for source in sources:
+    for source in _valid_sources(sources, state):
         updates, error = fetcher(source)
         store.record_result(state, source["id"], error, len(updates))
         collected.extend(classify(u, source["type"]) for u in updates)
@@ -53,10 +90,15 @@ def run_check(*, sources, state_path, fetcher, mailer, now) -> int:
     if major:
         plain, html_body = notify.build_body(major, [])
         mailer(notify.build_subject("major", len(major)), plain, html_body)
+        # build_body が1通に載せきれなかった分は捨てずにダイジェストへ回す。
+        # 捨てると「情報は失われず最大24時間遅れるだけ」の原則が壊れる。
+        newest_first = sorted(major, key=lambda u: u.published, reverse=True)
+        minor = minor + newest_first[notify.MAX_ITEMS:]
 
     store.mark_seen(state, fresh, now)
     store.queue_minor(state, minor)
-    store.forget_removed_sources(state, {s["id"] for s in sources})
+    active_ids = {_source_label(s, i) for i, s in enumerate(sources)}
+    store.forget_removed_sources(state, active_ids)
     store.prune(state, now)
     store.save_state(state_path, state)
 

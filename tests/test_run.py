@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import pytest
 
 from tracker.models import Update
+from tracker.notify import MAX_ITEMS
 from tracker.run import run_bootstrap, run_check, run_digest
 from tracker.store import empty_state, load_state, save_state
 
@@ -186,3 +187,39 @@ def test_digest_keeps_queue_when_send_fails(tmp_path):
     with pytest.raises(RuntimeError):
         run_digest(state_path=path, mailer=_boom)
     assert len(load_state(path)["pending_minor"]) == 1
+
+
+def test_check_skips_malformed_source_and_keeps_the_rest(tmp_path):
+    # sources.yml は手書きなので誤字が入る。1件の誤字で全体が止まってはいけない。
+    path = tmp_path / "seen.json"
+    broken = {"vendor": "V", "label": "L", "type": "rss"}  # id が無い
+    mailer = Mailer()
+    run_check(
+        sources=SOURCES + [broken], state_path=path,
+        fetcher=_fetcher([_update("a", "Introducing X")]),
+        mailer=mailer, now=NOW,
+    )
+    assert len(mailer.sent) == 1
+    assert "a" in load_state(path)["uids"]
+
+
+def test_check_records_malformed_source_as_a_failure(tmp_path):
+    path = tmp_path / "seen.json"
+    broken = {"vendor": "V", "label": "L", "type": "rss"}
+    run_check(
+        sources=SOURCES + [broken], state_path=path,
+        fetcher=_fetcher([]), mailer=Mailer(), now=NOW,
+    )
+    failures = load_state(path)["failures"]
+    assert any("定義エラー" in entry["last_error"] for entry in failures.values())
+
+
+def test_check_queues_overflow_majors_for_the_digest(tmp_path):
+    # 1通に載りきらない major を捨てると情報が永久に失われる。
+    path = tmp_path / "seen.json"
+    many = [_update(str(i), f"Introducing model {i}") for i in range(MAX_ITEMS + 5)]
+    run_check(
+        sources=SOURCES, state_path=path,
+        fetcher=_fetcher(many), mailer=Mailer(), now=NOW,
+    )
+    assert len(load_state(path)["pending_minor"]) == 5
