@@ -1,32 +1,31 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-08-01 22:12 JST
+最終更新: 2026-08-01 22:51 JST
 
 ---
 
 ## 現在地
 
-3段構えの**1段目が完了・本番稼働中**。次は2段目。
+3段構えの**1段目が稼働中**。**2段目はコードと記事が完成し、`site` ブランチで人間のレビュー待ち**。
 
 | 段 | 内容 | 状態 |
 |---|---|---|
 | 1 | AI更新情報トラッカー | ✅ **稼働中**（2026-08-01〜） |
-| 2 | サイト本体 ai-tsukaikata.com | ⬜ **次はここ**。設計書あり・実装計画から |
+| 2 | サイト本体 ai-tsukaikata.com | 🟡 **実装完了・未公開**。`site` ブランチ。次は下の3手 |
 | 3 | 使い分けマップ | ⬜ 保留（トラッカーがデータを貯めてから） |
 
 ---
 
-## 次のセッションでやること
+## 次のセッションでやること（2段目の公開）
 
-**2段目（サイト本体）の実装計画を作り、実装する。**
+コードも記事5本も完成している。残りは**人間にしかできない3手**。
 
-1. 設計書 `docs/superpowers/specs/2026-08-01-ai-tsukaikata-site-design.md` を読む
-2. `superpowers:writing-plans` で実装計画を作る（1段目と同じ流れ）
-3. `superpowers:subagent-driven-development` で実装する
+1. **記事5本を読んで事実確認する**（← これが最優先）
+   ローカルでプレビューできる: `python -m src.build` してから、Claude に「ai-tsukaikata-preview を開いて」と頼む（`http://localhost:8791`）
+2. **`site` ブランチを `main` にマージして push**
+3. **GitHub側の設定**（下の「公開に必要な設定」を順に）
 
-設計は承認済みなので、ブレインストーミングからやり直す必要はない。
-
-**初回5本の記事の1本目「AIの最新情報を自動で集めて、重要なものだけメールで受け取る」は、1段目で作ったトラッカーそのものが原料になる。** 実物（`tracker/` 配下と `.github/workflows/`）を読んで書けば、実運用の裏付けがある記事になる。記憶や一般論から書かないこと。
+記事は実物（`tracker/` 配下、marketwatch の `health-check.yml` / `generate_youtube_summary.py`、`.claude` のメモリ）を読んで書いてあるが、**言い過ぎ・事実誤認の最終ゲートは人間**。設計書 §5 ④のとおり完全自動公開はしない。
 
 ---
 
@@ -37,8 +36,8 @@
 | 作業フォルダ | `C:\Users\info0\ai-tsukaikata`（**OneDrive外**。同期が `.git` を壊すため） |
 | GitHub | `invest-ai-info/ai-tsukaikata`（public） |
 | ドメイン | `ai-tsukaikata.com`（2026-08-01 取得済み。GitHub Pages への接続は2段目の作業） |
-| Python | 3.12.10。依存は `requirements.txt`（feedparser / PyYAML / pytest） |
-| テスト | `python -m pytest -q` → 142 passed |
+| Python | 3.12.10。依存は `requirements.txt`（feedparser / PyYAML / pytest / Jinja2 / Markdown） |
+| テスト | `python -m pytest -q` → 220 passed（トラッカー142 + サイト78） |
 
 **Windows の注意:** ローカルで `python -m tracker.run` を叩くときは `$env:PYTHONUTF8=1` を付ける。コンソールが cp932 なので、日本語の出力で `UnicodeEncodeError` になることがある。
 
@@ -77,6 +76,48 @@
 ⚠️ **HuggingFace の org 名は大文字小文字が効く。** `moonshotai`・`zai-org` は動くが `MoonshotAI`・`THUDM` は0件を返す。
 
 ⚠️ **x.ai は 403 で bot ブロックされている。User-Agent の偽装で迂回しない。** OpenRouter 経由が唯一の実測済みルート。
+
+---
+
+## 2段目（サイト本体・`site` ブランチ）
+
+### できているもの
+
+| | |
+|---|---|
+| 生成 | `python -m src.build` → `build/` に13ファイル。`build/` は `.gitignore` 済み |
+| プレビュー | `ai-tsukaikata-preview`（`http://localhost:8791`）。設定は `.claude/launch.json` |
+| 記事 | レシピ5本 + about / privacy。すべて実運用中の自動化から執筆 |
+| 配信 | `.github/workflows/build.yml` — push で テスト → ビルド → Pages |
+
+計画書: `docs/superpowers/plans/2026-08-01-ai-tsukaikata-site.md`
+
+### 設計上、触ると壊れるところ
+
+- **`validate.py` のチェックを「うるさいから」で外さない。** これは機密漏れをコードで止める唯一の層で、記事化のたびに人間の注意力に頼らないためにある。誤検知が出たら**除外条件を精密にする**（例: 穴埋め語の許可リストに足す）。チェック自体を消さない
+- **`build.py` は「全部通る or 何も出さない」。** 検証エラーが1件でもあれば `build/` に一切触らず exit 1 する。「エラーの記事だけ飛ばして続行」にしない。直った記事だけ新しく、壊れた記事だけ古い、という状態が公開に出る
+- **`build.yml` の `paths:` フィルタを外さない。** トラッカーが毎時 `data/tracker/seen.json` を push するので、外すとサイトが1日24回リビルドされる
+- **`build/CNAME` の生成を消さない。** 生成HTMLをコミットしない方式では、artifact に CNAME が無いとデプロイのたびに独自ドメインが外れる
+- **記事の内部リンクは実在チェックが効く。** まだ書いていない記事へリンクするとビルドが落ちる。書いてから貼る
+
+### 公開に必要な設定（運営者の作業・未実施）
+
+1. `site` ブランチを `main` にマージして push
+2. `Settings → Pages → Source` を **GitHub Actions** に変更（初期値の "Deploy from a branch" のままだと deploy が失敗する）
+3. `Actions → Build & Deploy Site → Run workflow` で手動実行し、両ジョブが緑になるのを確認
+4. レジストラで DNS を設定（GitHub Pages の Apex 用 A レコード4本 + `www` の CNAME → `invest-ai-info.github.io`）。**IPは[公式ドキュメント](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)で現行値を確認してから入れる**
+5. `Settings → Pages → Custom domain` に `ai-tsukaikata.com` を入れて Save。DNS伝播後に `Enforce HTTPS`
+6. Google Search Console に登録し、`https://ai-tsukaikata.com/sitemap.xml` を送信
+
+### 検証済みであること（2026-08-01）
+
+- 220 passed
+- 実弾テスト: 機密（GitHubトークン・生メールアドレス・`C:\Users\` 絶対パス）とリンク切れ・広告表記漏れを含む記事を `content/` に置いてビルド → **5件すべてを一度に検出して中止し、`build/` は1バイトも変わらなかった**
+- ローカルプレビューで、CSS適用・スマホ幅375pxで横スクロールなし・コードブロックが各自の枠内で横スクロール（12個中10個）・コンソールエラーなし を確認
+
+### 次に書く記事
+
+`content/_ideas.md` に置いてある。AdSense申請は**記事20本を超えてから**なので、あと13本。
 
 ---
 
