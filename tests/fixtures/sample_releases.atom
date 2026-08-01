@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Releases</title>
+  <entry>
+    <id>tag:github.com,2008:Repository/1/v1.2.0</id>
+    <title>v1.2.0</title>
+    <updated>2026-08-01T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/o/r/releases/tag/v1.2.0"/>
+    <content type="html">Added a feature.</content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/1/v1.1.3</id>
+    <title>v1.1.3</title>
+    <updated>2026-07-28T10:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/o/r/releases/tag/v1.1.3"/>
+    <content type="html">Fixed a bug.</content>
+  </entry>
+</feed>

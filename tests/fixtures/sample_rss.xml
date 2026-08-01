@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Sample News</title>
+    <item>
+      <title>Introducing a new model</title>
+      <link>https://example.com/news/1</link>
+      <pubDate>Fri, 01 Aug 2026 09:00:00 GMT</pubDate>
+      <description>&lt;p&gt;We are &lt;b&gt;excited&lt;/b&gt; to share this.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Weekly notes</title>
+      <link>https://example.com/news/2</link>
+      <pubDate>Thu, 31 Jul 2026 09:00:00 GMT</pubDate>
+      <description>Ordinary post.</description>
+    </item>
+    <item>
+      <title>Broken entry without link</title>
+      <pubDate>Wed, 30 Jul 2026 09:00:00 GMT</pubDate>
+      <description>No link here.</description>
+    </item>
+  </channel>
+</rss>
