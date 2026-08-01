@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, timezone
 
+import smtplib
+
 import pytest
 
 from tracker.models import Update
-from tracker.notify import build_body, build_subject, send_mail
+from tracker.notify import MAX_ITEMS, build_body, build_subject, send_mail
 
 NOW = datetime(2026, 8, 1, 9, 0, tzinfo=timezone.utc)
 
@@ -140,3 +142,67 @@ def test_send_mail_falls_back_to_sender_when_recipient_unset(monkeypatch):
     send_mail("件名", "本文", "<p>本文</p>")
 
     assert sent["to"] == ["me@example.com"]
+
+
+def test_body_renders_updates_and_dead_sources_together():
+    plain, html_body = build_body([_update()], [("s1", 3, "Timeout")])
+    for text in (plain, html_body):
+        assert "Introducing X" in text
+        assert "s1" in text
+
+
+def test_body_caps_item_count_and_reports_omissions():
+    many = [
+        Update(
+            uid=str(i), source_id="s", vendor="V", label="L",
+            title=f"item {i}", url=f"https://example.com/{i}",
+            published=NOW, summary="",
+        )
+        for i in range(MAX_ITEMS + 20)
+    ]
+    plain, html_body = build_body(many, [])
+    assert plain.count("[V] item") == MAX_ITEMS
+    assert "他 20 件" in plain
+    assert "他 20 件" in html_body
+
+
+def test_body_does_not_mention_omissions_when_under_cap():
+    plain, _ = build_body([_update()], [])
+    assert "省略" not in plain
+
+
+def test_subject_flags_a_dead_source_only_digest():
+    subject = build_subject("digest", 0, dead_count=2)
+    assert "0件" not in subject
+    assert "2" in subject
+
+
+def test_subject_ignores_dead_count_when_items_present():
+    assert build_subject("digest", 5, dead_count=1) == build_subject("digest", 5)
+
+
+def test_title_newlines_are_collapsed():
+    plain, _ = build_body([_update(title="Broken\ntitle")], [])
+    assert "[OpenAI] Broken title" in plain
+
+
+def test_send_mail_propagates_smtp_errors(monkeypatch):
+    # 送信失敗を握り潰してはいけない。既読にした更新が二度と届かなくなる。
+    # 例外を上げてワークフローを失敗させ、seen.json を未コミットのままにして
+    # 次回に再送させるのが正しい。
+    class FailingServer:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def login(self, *args):
+            raise smtplib.SMTPAuthenticationError(535, b"bad credentials")
+
+    monkeypatch.setenv("GMAIL_USER", "me@example.com")
+    monkeypatch.setenv("GMAIL_APP_PASSWORD", "secret")
+    monkeypatch.setattr("smtplib.SMTP_SSL", lambda *a, **k: FailingServer())
+
+    with pytest.raises(smtplib.SMTPAuthenticationError):
+        send_mail("件名", "本文", "<p>本文</p>")

@@ -16,10 +16,25 @@ from .models import Update
 
 FOOTER = "※個人用の情報収集メモです。詳細は必ず出典元をご確認ください。"
 
+# 1通に載せる最大件数。Gmail は約102KBでメールを途中打ち切りする（実測で
+# 1件あたり約1KB）。打ち切られると末尾が読めなくなるので、こちらで先に切る。
+MAX_ITEMS = 50
 
-def build_subject(mode: str, count: int) -> str:
+
+def _one_line(text: str) -> str:
+    """改行やタブを潰して1行にする。
+
+    壊れたフィードのタイトルに改行が入ると、プレーンテキスト本文で
+    別エントリの見出しのように見えてしまう。
+    """
+    return " ".join((text or "").split())
+
+
+def build_subject(mode: str, count: int, dead_count: int = 0) -> str:
     if mode == "major":
         return f"🚨 AI重要アップデート {count}件"
+    if count == 0 and dead_count:
+        return f"⚠️ AIトラッカー: {dead_count}件のソースが取得できていません"
     return f"📮 AI更新ダイジェスト {count}件"
 
 
@@ -29,13 +44,16 @@ def build_body(
 ) -> tuple[str, str]:
     """(plain, html) を返す。新しい順に並べる。"""
     ordered = sorted(updates, key=lambda u: u.published, reverse=True)
+    shown = ordered[:MAX_ITEMS]
+    omitted = len(ordered) - len(shown)
 
     plain_lines = []
     html_items = []
-    for update in ordered:
+    for update in shown:
+        title = _one_line(update.title)
         stamp = update.published.strftime("%Y-%m-%d %H:%M UTC")
         rows = [
-            f"[{update.vendor}] {update.title}",
+            f"[{update.vendor}] {title}",
             f"  {stamp}",
             f"  {update.url}",
         ]
@@ -51,7 +69,7 @@ def build_body(
             "<li style='margin-bottom:14px'>"
             f"<b>[{html_mod.escape(update.vendor)}]</b> "
             f"<a href=\"{html_mod.escape(update.url, quote=True)}\">"
-            f"{html_mod.escape(update.title)}</a>"
+            f"{html_mod.escape(title)}</a>"
             f"<br><small style='color:#6e7781'>{stamp}</small>"
             f"{summary_html}"
             "</li>"
@@ -62,6 +80,10 @@ def build_body(
         f"<ul style='padding-left:18px'>{''.join(html_items)}</ul>"
         if html_items else "<p>（新着なし）</p>"
     )
+
+    if omitted:
+        plain += f"\n（他 {omitted} 件は省略しました）\n"
+        body_html += f"<p>（他 {omitted} 件は省略しました）</p>"
 
     if dead:
         plain += "\n--- 取得できていないソース ---\n"
@@ -79,12 +101,13 @@ def build_body(
 
     plain += f"\n{FOOTER}\n"
     html_body = (
-        "<html><body style=\"font-family:-apple-system,Segoe UI,sans-serif;"
+        "<html><body>"
+        "<div style=\"font-family:-apple-system,Segoe UI,sans-serif;"
         "font-size:14px;line-height:1.6;color:#1f2328;max-width:760px;"
         "margin:0 auto;padding:8px\">"
         f"{body_html}"
         f"<hr><p style=\"font-size:12px;color:#6e7781\">{FOOTER}</p>"
-        "</body></html>"
+        "</div></body></html>"
     )
     return plain, html_body
 
