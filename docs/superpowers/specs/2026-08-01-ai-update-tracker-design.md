@@ -2,7 +2,7 @@
 
 作成日: 2026-08-01
 ステータス: 設計承認済み・実装計画待ち
-関連: [ai-tsukaikata.jp サイト設計書](2026-08-01-ai-tsukaikata-site-design.md)
+関連: [ai-tsukaikata.com サイト設計書](2026-08-01-ai-tsukaikata-site-design.md)
 
 ---
 
@@ -17,7 +17,7 @@
 3段構えの1段目にあたる。
 
 1. **本設計書: 更新情報トラッカー**（自分用・最短で動く）
-2. サイト本体 ai-tsukaikata.jp（別設計書）
+2. サイト本体 ai-tsukaikata.com（別設計書）
 3. 使い分けマップ（トラッカーがデータを貯めてから着手）
 
 トラッカーを先に作る理由:

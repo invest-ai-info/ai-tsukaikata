@@ -1,4 +1,4 @@
-# 設計書: AIの使い方（ai-tsukaikata.jp）
+# 設計書: AIの使い方（ai-tsukaikata.com）
 
 作成日: 2026-08-01
 最終更新: 2026-08-01（3段構えの2段目に位置づけを変更）
@@ -43,7 +43,7 @@ AIツール分野は YMYL（投資・医療などの高リスク領域）に該�
 | 主軸コンテンツ | 実装レシピ集（ニュース自動収集は第2段階） |
 | 記事の作り方 | 実作業ログから半自動生成 → 運営者が目視確認 → 公開 |
 | サイト名 | AIの使い方 |
-| ドメイン | ai-tsukaikata.jp（2026-08-01時点で空きを RDAP + DNS の2方式で確認済み） |
+| ドメイン | **ai-tsukaikata.com（2026-08-01 取得済み）**。当初案の `.jp` から変更 |
 | ホスティング | GitHub Pages（新規リポジトリ） |
 | 生成方式 | Python製ミニSSG（Jinja2 + Markdown） |
 | 生成HTML | git にコミットしない（Actions から Pages へ直接配信） |
@@ -293,7 +293,7 @@ marketwatch-jp.com 側には公開してはいけないものがある（APIキ�
 
 | # | 内容 | 担当 |
 |---|---|---|
-| 1 | `ai-tsukaikata.jp` をレジストラで取得（実装と並行して進めるのが無駄がない。後回しにすると記事URLが後から変わる） | 運営者（購入のためClaudeでは代行不可） |
+| 1 | ~~ドメイン取得~~ **完了（2026-08-01、`ai-tsukaikata.com`）**。⚠️ gTLD は登録から15日以内に登録者メールの確認をしないと停止されるので、レジストラからの確認メールを必ず処理すること | 運営者 |
 | 2 | GitHub に新規リポジトリ `ai-tsukaikata`（public）を作成 | 運営者 or Claude（PAT経由） |
 | 3 | 実装計画の作成（writing-plans） | Claude |
 | 4 | 実装 | Claude |
@@ -316,4 +316,4 @@ marketwatch-jp.com 側には公開してはいけないものがある（APIキ�
 | marketwatch側への注意分散 | 初回は最小構成（5本）に絞る。ニュース自動収集は第2段階へ後倒し |
 | ステマ規制違反 | 広告表記チェックをコードで強制（§6） |
 | OneDrive同期による `.git` 破損 | リポジトリをOneDrive外（`C:\Users\info0\ai-tsukaikata`）に置く |
-| ドメインが取得できなかった場合 | `ai-tsukaikata.com` / `aitsukaikata.com` も同日時点で空きを確認済み。サイト名は変えずドメインのみ差し替える |
+| ~~ドメインが取得できなかった場合~~ | 解消済み（`ai-tsukaikata.com` を取得） |
