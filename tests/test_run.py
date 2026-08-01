@@ -223,3 +223,39 @@ def test_check_queues_overflow_majors_for_the_digest(tmp_path):
         fetcher=_fetcher(many), mailer=Mailer(), now=NOW,
     )
     assert len(load_state(path)["pending_minor"]) == 5
+
+
+def test_main_refuses_check_without_state_file(tmp_path, capsys):
+    # bootstrap 前に check が走ると、全ソースの過去記事が新着扱いになり
+    # 1000通以上のメールが飛ぶ。cron が先に発火する事故を防ぐ。
+    from tracker.run import main
+
+    code = main([
+        "--mode", "check",
+        "--sources", str(tmp_path / "sources.yml"),
+        "--state", str(tmp_path / "seen.json"),
+    ])
+    assert code == 1
+    assert "bootstrap" in capsys.readouterr().out
+
+
+def test_main_allows_bootstrap_without_state_file(tmp_path, monkeypatch):
+    from tracker import run as run_module
+
+    sources = tmp_path / "sources.yml"
+    sources.write_text(
+        "sources:\n"
+        "  - id: a\n"
+        "    vendor: V\n"
+        "    label: L\n"
+        "    type: rss\n"
+        "    url: https://example.com/feed\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(run_module.fetch_module, "fetch_source", lambda s: ([], None))
+    code = run_module.main([
+        "--mode", "bootstrap",
+        "--sources", str(sources),
+        "--state", str(tmp_path / "seen.json"),
+    ])
+    assert code == 0

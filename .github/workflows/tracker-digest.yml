@@ -1,0 +1,42 @@
+name: AI Update Digest
+
+on:
+  # JST 7:22（UTC 22:22）。毎時0分を避ける
+  schedule:
+    - cron: "22 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tracker
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    env:
+      GMAIL_USER: ${{ secrets.GMAIL_USER }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      ALERT_RECIPIENT: ${{ secrets.ALERT_RECIPIENT }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存をインストール
+        run: pip install -r requirements.txt
+
+      - name: ダイジェストを送信
+        run: python -m tracker.run --mode digest
+
+      - name: 既読状態をコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tracker/seen.json
+          git diff --staged --quiet || git commit -m "chore: ダイジェスト送信後の状態を更新"
+          git push

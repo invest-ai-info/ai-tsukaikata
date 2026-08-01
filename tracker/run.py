@@ -150,6 +150,14 @@ def main(argv=None) -> int:
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
     args = parser.parse_args(argv)
 
+    if args.mode == "check" and not args.state.exists():
+        print(
+            f"状態ファイルがありません: {args.state}\n"
+            "先に --mode bootstrap を実行してください。これをせずに check を走らせると、"
+            "全ソースの過去記事が新着扱いになり1000通以上のメールが飛びます。"
+        )
+        return 1
+
     now = datetime.now(timezone.utc)
 
     if args.mode == "digest":
