@@ -119,3 +119,16 @@ def test_huggingface_base_checkpoint_is_minor():
     # 同日に出る X-Base / X-Instruct で2通になるのを防ぐ。
     assert classify(_update("moonshotai/Kimi-K2-Base"), "huggingface").importance == "minor"
     assert classify(_update("moonshotai/Kimi-K2-Instruct"), "huggingface").importance == "major"
+
+
+@pytest.mark.parametrize("title", [
+    "v1.2.3: Fix memory leak in worker pool",
+    "v0.9.7: patch release",
+])
+def test_colon_patch_release_stays_minor(title):
+    # コロン規則が _is_feature_release を上書きしてはいけない。
+    assert classify(_update(title), "github_releases").importance == "minor"
+
+
+def test_colon_feature_release_still_major():
+    assert classify(_update("v1.2.0: new provider support"), "github_releases").importance == "major"

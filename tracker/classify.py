@@ -32,6 +32,8 @@ _VERSION_RE = re.compile(r"v?(\d+)\.(\d+)\.(\d+)")
 # 「GPT-5.6: 〜」「Gemini 3.5: 〜」のような、製品名+バージョン+コロンの発表形式。
 # 実測（2026-08-01）でOpenAI・DeepMindの旗艦発表がこの形になっており、
 # 発表語を1つも含まないため MAJOR_EN では拾えない。
+# ⚠️ rss 限定。github_releases に効かせると "v1.2.3: 修正内容" 形式のパッチ見出しが
+# すべて major になり、_is_feature_release の patch/feature 判別を無効化してしまう。
 _COLON_LAUNCH_RE = re.compile(r"^[^:：]{1,30}\d[^:：]{0,10}[:：]")
 
 
@@ -66,7 +68,10 @@ def classify(update: Update, source_type: str) -> Update:
         importance = "minor" if is_variant_model(update.title) else "major"
         return update.with_importance(importance)
 
-    if _has_announcement_word(update.title) or _looks_like_launch(update.title):
+    if _has_announcement_word(update.title):
+        return update.with_importance("major")
+
+    if source_type == "rss" and _looks_like_launch(update.title):
         return update.with_importance("major")
 
     if source_type == "github_releases" and _is_feature_release(update.title):
