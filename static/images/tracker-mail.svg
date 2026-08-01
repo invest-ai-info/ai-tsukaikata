@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" role="img" aria-label="届く2種類のメールの図。上は重要アップデートの即時通知で、件名がAI重要アップデート1件、本文にDeepSeekの新モデルの名前、公開日時、HuggingFaceのURL、要約が並ぶ。下は毎朝のダイジェストで、件名がAI更新ダイジェスト3件、Claude Codeのリリースが2件並び、末尾に3回連続で取得に失敗したソースの警告が付く。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .mail { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .subject-bar { fill: #f2f4f6; }
+  .rule { stroke: #e3e6ea; stroke-width: 1; }
+  .warn-box { fill: #fdf6e8; stroke: #d4a72c; stroke-width: 1.2; }
+  .t-subject { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-vendor { fill: #1f2328; font-size: 12.5px; font-weight: 700; }
+  .t-title { fill: #1a56b8; font-size: 12.5px; }
+  .t-sm { fill: #616b76; font-size: 11px; }
+  .t-url { fill: #1a56b8; font-size: 10.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t-body { fill: #1f2328; font-size: 11.5px; }
+  .t-warn { fill: #8a6100; font-size: 11.5px; }
+  .t-label { fill: #616b76; font-size: 11.5px; font-weight: 700; }
+  .t-foot { fill: #8b949e; font-size: 10.5px; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .mail { fill: #14171a; stroke: #363c43; }
+    .subject-bar { fill: #1c2126; }
+    .rule { stroke: #2a2f35; }
+    .warn-box { fill: #2b2415; stroke: #a68321; }
+    .t-subject { fill: #e6e9ec; }
+    .t-vendor { fill: #e6e9ec; }
+    .t-title { fill: #7ab0ff; }
+    .t-sm { fill: #9aa4ae; }
+    .t-url { fill: #7ab0ff; }
+    .t-body { fill: #e6e9ec; }
+    .t-warn { fill: #e0b644; }
+    .t-label { fill: #9aa4ae; }
+    .t-foot { fill: #6e7781; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="430" rx="8"/>
+
+<!-- ① 重要な発表: 即時メール -->
+<text class="t-label" x="20" y="26">重要な発表があったとき（その時間内に1通）</text>
+
+<rect class="mail" x="20" y="36" width="680" height="132" rx="7"/>
+<rect class="subject-bar" x="20" y="36" width="680" height="32" rx="7"/>
+<rect class="subject-bar" x="20" y="56" width="680" height="12"/>
+<text class="t-subject" x="38" y="57">🚨 AI重要アップデート 1件</text>
+<line class="rule" x1="20" y1="68" x2="700" y2="68"/>
+
+<text class="t-vendor" x="38" y="94">[DeepSeek]</text>
+<text class="t-title" x="112" y="94">deepseek-ai/DeepSeek-V4-Flash-0731</text>
+<text class="t-sm" x="52" y="113">2026-07-31 07:30 UTC</text>
+<text class="t-url" x="52" y="131">https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731</text>
+<text class="t-body" x="52" y="151">HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4-Flash-0731 が公開されました。</text>
+
+<!-- ② 毎朝のダイジェスト -->
+<text class="t-label" x="20" y="202">溜まった分をまとめて（毎朝 7:22 に1通）</text>
+
+<rect class="mail" x="20" y="212" width="680" height="196" rx="7"/>
+<rect class="subject-bar" x="20" y="212" width="680" height="32" rx="7"/>
+<rect class="subject-bar" x="20" y="232" width="680" height="12"/>
+<text class="t-subject" x="38" y="233">📮 AI更新ダイジェスト 3件</text>
+<line class="rule" x1="20" y1="244" x2="700" y2="244"/>
+
+<text class="t-vendor" x="38" y="270">[Anthropic]</text>
+<text class="t-title" x="116" y="270">v2.1.220</text>
+<text class="t-sm" x="52" y="288">2026-07-25 01:35 UTC</text>
+<text class="t-body" x="52" y="306">What's changed Bug fixes and reliability improvements</text>
+
+<line class="rule" x1="38" y1="318" x2="682" y2="318"/>
+
+<text class="t-vendor" x="38" y="340">[Anthropic]</text>
+<text class="t-title" x="116" y="340">v2.1.219</text>
+<text class="t-sm" x="52" y="358">2026-07-24 17:14 UTC</text>
+<text class="t-body" x="52" y="376">What's changed Added Claude Opus 5 ( claude-opus-5 ), now the default Opus model …</text>
+
+<rect class="warn-box" x="38" y="384" width="644" height="18" rx="4"/>
+<text class="t-warn" x="48" y="397">⚠️ qwen-blog: 3回連続で失敗 (HTTPError: 404)　← 静かに死んだソースはここに出る</text>
+
+<text class="t-foot" x="20" y="424">※ 上の内容は 2026-08-01 に実際のソースを取得し、実際の送信コードで組み立てた本物の出力です（配色はこの記事用）。</text>
+</svg>

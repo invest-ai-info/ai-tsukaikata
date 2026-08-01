@@ -55,6 +55,25 @@ def test_collect_reports_unreadable_article(tmp_path):
     assert any("frontmatter" in error for error in errors)
 
 
+def test_static_paths_lists_files_as_urls(tmp_path):
+    static = tmp_path / "static"
+    (static / "images").mkdir(parents=True)
+    (static / "style.css").write_text("body{}", encoding="utf-8")
+    (static / "images" / "a.svg").write_text("<svg/>", encoding="utf-8")
+    assert build.static_paths(static) == {"/static/style.css", "/static/images/a.svg"}
+
+
+def test_static_paths_on_missing_directory_is_empty(tmp_path):
+    assert build.static_paths(tmp_path / "nope") == set()
+
+
+def test_collect_rejects_article_pointing_at_missing_image(tmp_path):
+    body = '<img src="/static/images/nothing.svg" alt="無い画像">'
+    files, errors = build.collect(_content_dir(tmp_path, RECIPE + body + "\n"))
+    assert files == {}
+    assert any("画像" in error for error in errors)
+
+
 def test_write_creates_directory_structure(tmp_path):
     build_dir = tmp_path / "build"
     build.write({"recipes/sample/index.html": "<p>x</p>"}, build_dir, tmp_path / "missing-static")

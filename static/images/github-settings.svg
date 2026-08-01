@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="330" viewBox="0 0 720 330" role="img" aria-label="GitHubリポジトリのSettingsで触る2箇所の図解。1つ目はSecrets and variables のActionsで、GMAIL_USER、GMAIL_APP_PASSWORD、ALERT_RECIPIENT の3件を登録する。2つ目はActionsのGeneralにあるWorkflow permissionsで、Read and write permissions を選ぶ。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .win { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .bar { fill: #f2f4f6; }
+  .row { fill: #ffffff; stroke: #e3e6ea; stroke-width: 1; }
+  .sel { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .t { fill: #1f2328; font-size: 12.5px; }
+  .t-sm { fill: #616b76; font-size: 11px; }
+  .t-mono { fill: #1f2328; font-size: 12px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t-head { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 12.5px; font-weight: 700; }
+  .step { fill: #1a56b8; }
+  .step-n { fill: #ffffff; font-size: 12px; font-weight: 700; }
+  .radio-off { fill: none; stroke: #8b949e; stroke-width: 1.5; }
+  .radio-on { fill: none; stroke: #1a56b8; stroke-width: 2; }
+  .radio-dot { fill: #1a56b8; }
+  .crumb { fill: #616b76; font-size: 11px; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .win { fill: #14171a; stroke: #363c43; }
+    .bar { fill: #1c2126; }
+    .row { fill: #14171a; stroke: #2a2f35; }
+    .sel { fill: #1b2735; stroke: #7ab0ff; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-mono { fill: #e6e9ec; }
+    .t-head { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .step { fill: #7ab0ff; }
+    .step-n { fill: #14171a; }
+    .radio-off { stroke: #6e7781; }
+    .radio-on { stroke: #7ab0ff; }
+    .radio-dot { fill: #7ab0ff; }
+    .crumb { fill: #9aa4ae; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="330" rx="8"/>
+
+<!-- 左: Secrets -->
+<circle class="step" cx="34" cy="34" r="12"/>
+<text class="step-n" x="30" y="38">1</text>
+<text class="t-head" x="54" y="38">認証情報を登録する</text>
+<text class="crumb" x="54" y="56">Settings → Secrets and variables → Actions</text>
+
+<rect class="win" x="20" y="68" width="320" height="180" rx="7"/>
+<rect class="bar" x="20" y="68" width="320" height="30" rx="7"/>
+<rect class="bar" x="20" y="88" width="320" height="10"/>
+<text class="t" x="36" y="88">Repository secrets</text>
+<rect class="sel" x="248" y="74" width="78" height="19" rx="4"/>
+<text class="t-accent" x="256" y="88">New secret</text>
+
+<rect class="row" x="36" y="110" width="288" height="34" rx="5"/>
+<text class="t-mono" x="50" y="132">GMAIL_USER</text>
+<text class="t-sm" x="252" y="132">Updated</text>
+
+<rect class="row" x="36" y="150" width="288" height="34" rx="5"/>
+<text class="t-mono" x="50" y="172">GMAIL_APP_PASSWORD</text>
+<text class="t-sm" x="252" y="172">Updated</text>
+
+<rect class="row" x="36" y="190" width="288" height="34" rx="5"/>
+<text class="t-mono" x="50" y="212">ALERT_RECIPIENT</text>
+<text class="t-sm" x="252" y="212">Updated</text>
+
+<text class="t-sm" x="36" y="242">値は登録後に見られない。控えは手元に残す</text>
+
+<!-- 右: Workflow permissions -->
+<circle class="step" cx="394" cy="34" r="12"/>
+<text class="step-n" x="390" y="38">2</text>
+<text class="t-head" x="414" y="38">書き込み権限を与える</text>
+<text class="crumb" x="414" y="56">Settings → Actions → General → Workflow permissions</text>
+
+<rect class="win" x="380" y="68" width="320" height="180" rx="7"/>
+<rect class="bar" x="380" y="68" width="320" height="30" rx="7"/>
+<rect class="bar" x="380" y="88" width="320" height="10"/>
+<text class="t" x="396" y="88">Workflow permissions</text>
+
+<circle class="radio-on" cx="406" cy="124" r="7"/>
+<circle class="radio-dot" cx="406" cy="124" r="3.5"/>
+<text class="t-accent" x="422" y="128">Read and write permissions</text>
+<text class="t-sm" x="422" y="146">既読状態のファイルを書き戻すのに必要</text>
+
+<circle class="radio-off" cx="406" cy="176" r="7"/>
+<text class="t" x="422" y="180">Read repository contents permission</text>
+<text class="t-sm" x="422" y="198">初期値。このままだと push が 403 で落ちる</text>
+
+<rect class="row" x="396" y="212" width="288" height="24" rx="5"/>
+<text class="t-sm" x="410" y="228">変更したら Save を押す（押し忘れが起きやすい）</text>
+
+<text class="t-sm" x="20" y="278">※ この図はGitHubの画面配置を説明するための図解です。実際の画面とは配色や文言が異なります。</text>
+<text class="t-sm" x="20" y="298">※ アプリパスワードそのものが表示される画面は、性質上ここには載せていません。</text>
+</svg>

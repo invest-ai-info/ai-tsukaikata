@@ -176,6 +176,30 @@ a { color: var(--accent); }
 
 .article-body img { max-width: 100%; height: auto; }
 
+/* 図。本文の理解を助けるものなので、本文より少し目立たせて区切る */
+.article-body .figure {
+  margin: 2rem 0;
+  padding: 1rem 1rem 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.article-body .figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-body .figure figcaption {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
 /* コードは手順書の本体。折り返さず横スクロールさせる（コピペを壊さないため） */
 .article-body pre {
   margin: 1.3rem 0;

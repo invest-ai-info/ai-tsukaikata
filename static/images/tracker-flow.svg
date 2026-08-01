@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="15の公式ソースを毎時17分に取得し、既読でないものだけを重要度で振り分ける流れ。重要なものは即メール、それ以外は溜めて翌朝7時22分に1通にまとめて送る。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13.5px; font-weight: 700; }
+  .arrow { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .arrow-head { fill: #8b949e; }
+  .divider { stroke: #d5dae0; stroke-width: 1; stroke-dasharray: 4 4; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .arrow { stroke: #6e7781; }
+    .arrow-head { fill: #6e7781; }
+    .divider { stroke: #363c43; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="400" rx="8"/>
+
+<!-- 1. ソース -->
+<rect class="box" x="20" y="30" width="150" height="86" rx="7"/>
+<text class="t-strong" x="34" y="53">15の公式ソース</text>
+<text class="t-sm" x="34" y="74">OpenAI / Anthropic</text>
+<text class="t-sm" x="34" y="91">Google / DeepSeek …</text>
+<text class="t-sm" x="34" y="108">sources.yml に定義</text>
+
+<!-- 矢印 1→2 -->
+<path class="arrow" d="M170 73 H206"/>
+<path class="arrow-head" d="M206 68 l10 5 -10 5 z"/>
+
+<!-- 2. 毎時取得 -->
+<rect class="box-accent" x="220" y="30" width="150" height="86" rx="7"/>
+<text class="t-accent" x="234" y="53">毎時 :17 に取得</text>
+<text class="t-sm" x="234" y="74">GitHub Actions</text>
+<text class="t-sm" x="234" y="91">毎時 :00 は混雑して</text>
+<text class="t-sm" x="234" y="108">遅延・スキップする</text>
+
+<!-- 矢印 2→3 -->
+<path class="arrow" d="M370 73 H406"/>
+<path class="arrow-head" d="M406 68 l10 5 -10 5 z"/>
+
+<!-- 3. 既読判定 -->
+<rect class="box" x="420" y="30" width="160" height="86" rx="7"/>
+<text class="t-strong" x="434" y="53">既読か？</text>
+<text class="t-sm" x="434" y="74">seen.json に無いもの</text>
+<text class="t-sm" x="434" y="91">＝新着。遅れても</text>
+<text class="t-sm" x="434" y="108">次回に必ず拾う</text>
+
+<!-- 3→4 下向き -->
+<path class="arrow" d="M500 116 V148"/>
+<path class="arrow-head" d="M495 148 l5 10 5 -10 z"/>
+<text class="t-sm" x="512" y="140">新着だけ</text>
+
+<!-- 4. 重要度判定 -->
+<rect class="box" x="285" y="160" width="290" height="58" rx="7"/>
+<text class="t-strong" x="300" y="184">重要度を判定する</text>
+<text class="t-sm" x="300" y="204">迷ったら minor に倒す（情報は失われず最大24時間遅れるだけ）</text>
+
+<!-- 分岐 -->
+<path class="arrow" d="M360 218 V248 H196"/>
+<path class="arrow-head" d="M196 243 l-10 5 10 5 z"/>
+<text class="t-sm" x="252" y="242">major</text>
+
+<path class="arrow" d="M500 218 V248 H540"/>
+<path class="arrow-head" d="M540 243 l10 5 -10 5 z"/>
+<text class="t-sm" x="508" y="242">minor</text>
+
+<!-- 5a. 即メール -->
+<rect class="box-accent" x="36" y="262" width="160" height="76" rx="7"/>
+<text class="t-accent" x="50" y="285">その場でメール</text>
+<text class="t-sm" x="50" y="306">1時間に最大1通</text>
+<text class="t-sm" x="50" y="323">まとめて送るので溢れない</text>
+
+<!-- 5b. 溜める -->
+<rect class="box-quiet" x="440" y="262" width="150" height="76" rx="7"/>
+<text class="t-strong" x="454" y="285">キューに溜める</text>
+<text class="t-sm" x="454" y="306">seen.json の</text>
+<text class="t-sm" x="454" y="323">pending_minor</text>
+
+<!-- 5b→6 -->
+<path class="arrow" d="M590 300 H626"/>
+<path class="arrow-head" d="M626 295 l10 5 -10 5 z"/>
+
+<!-- 6. 朝ダイジェスト -->
+<rect class="box-accent" x="600" y="30" width="100" height="86" rx="7"/>
+<text class="t-accent" x="613" y="53">毎朝 7:22</text>
+<text class="t-sm" x="613" y="74">ダイジェスト</text>
+<text class="t-sm" x="613" y="91">溜めた分＋</text>
+<text class="t-sm" x="613" y="108">死活警告を1通</text>
+<path class="arrow" d="M650 262 V126"/>
+<path class="arrow-head" d="M645 126 l5 -10 5 10 z"/>
+<path class="divider" d="M636 300 H650 V262"/>
+</svg>

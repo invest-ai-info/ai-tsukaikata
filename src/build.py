@@ -21,10 +21,26 @@ STATIC_DIR = ROOT / "static"
 BUILD_DIR = ROOT / "build"
 
 
-def collect(content_dir: Path) -> tuple[dict[str, str], list[str]]:
+def static_paths(static_dir: Path) -> set[str]:
+    """static/ にあるファイルを公開URLの形（/static/...）で列挙する。
+
+    ディスクを見るのはここだけ。validate.py はこの集合と照合するだけにして
+    純粋なまま保つ。
+    """
+    static_dir = Path(static_dir)
+    if not static_dir.exists():
+        return set()
+    return {
+        "/static/" + path.relative_to(static_dir).as_posix()
+        for path in static_dir.rglob("*")
+        if path.is_file()
+    }
+
+
+def collect(content_dir: Path, static_dir: Path = STATIC_DIR) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
-    errors = errors + validate(articles)
+    errors = errors + validate(articles, static_paths(static_dir))
     if errors:
         return {}, errors
 
@@ -59,7 +75,7 @@ def write(files: dict[str, str], build_dir: Path, static_dir: Path) -> None:
 
 
 def main(argv=None) -> int:
-    files, errors = collect(CONTENT_DIR)
+    files, errors = collect(CONTENT_DIR, STATIC_DIR)
     if errors:
         print(f"ビルド中止: {len(errors)}件の問題があります", file=sys.stderr)
         for error in errors:

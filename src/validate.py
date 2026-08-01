@@ -54,6 +54,9 @@ AFFILIATE_PATTERNS = (
 DISCLOSURE_WORDS = ("広告", "PR", "アフィリエイト", "プロモーション")
 
 INTERNAL_LINK_RE = re.compile(r'href="(/[^"]*)"')
+IMG_TAG_RE = re.compile(r"<img\b[^>]*>")
+IMG_SRC_RE = re.compile(r'\bsrc="([^"]*)"')
+IMG_ALT_RE = re.compile(r'\balt="([^"]*)"')
 ALWAYS_VALID_PATHS = ("/", "/feed.xml", "/sitemap.xml", "/robots.txt")
 
 
@@ -91,11 +94,21 @@ def _has_affiliate_link(text: str) -> bool:
     return any(pattern.search(text) for pattern in AFFILIATE_PATTERNS)
 
 
-def _link_errors(where: str, body_html: str, valid_paths: set[str]) -> list[str]:
+def _link_errors(
+    where: str,
+    body_html: str,
+    valid_paths: set[str],
+    static_paths: set[str] | None,
+) -> list[str]:
     errors = []
     for raw in INTERNAL_LINK_RE.findall(body_html):
         path = raw.split("#")[0].split("?")[0]
-        if not path or path.startswith("/static/"):
+        if not path:
+            continue
+        if path.startswith("/static/"):
+            # 静的ファイルの一覧を渡されたときだけ実在を見る
+            if static_paths is not None and path not in static_paths:
+                errors.append(f"{where}: リンク先 {raw} が存在しません")
             continue
         if path in valid_paths:
             continue
@@ -103,8 +116,39 @@ def _link_errors(where: str, body_html: str, valid_paths: set[str]) -> list[str]
     return errors
 
 
-def validate(articles: list[Article]) -> list[str]:
-    """全記事を検査してエラー文字列のリストを返す。空なら公開してよい。"""
+def _image_errors(where: str, body_html: str, static_paths: set[str] | None) -> list[str]:
+    """画像の参照先と alt を検査する。
+
+    alt を必須にするのは、読み上げ環境で図の意味が消えるのを防ぐため。
+    図が説明の中心になる記事ほど、alt が無いと本文が成立しなくなる。
+    """
+    errors = []
+    for tag in IMG_TAG_RE.findall(body_html):
+        src_match = IMG_SRC_RE.search(tag)
+        src = src_match.group(1) if src_match else ""
+        alt_match = IMG_ALT_RE.search(tag)
+
+        if not src:
+            errors.append(f"{where}: src の無い画像があります")
+        elif src.startswith("/static/") and static_paths is not None:
+            if src not in static_paths:
+                errors.append(f"{where}: 画像 {src} が存在しません")
+
+        if alt_match is None or not alt_match.group(1).strip():
+            errors.append(f"{where}: 画像 {src or '(src不明)'} に alt がありません")
+    return errors
+
+
+def validate(
+    articles: list[Article],
+    static_paths: set[str] | None = None,
+) -> list[str]:
+    """全記事を検査してエラー文字列のリストを返す。空なら公開してよい。
+
+    static_paths には `/static/...` 形式の実在する静的ファイルの一覧を渡す。
+    ディスクを見に行くのは build.py の仕事なので、ここは渡された集合と
+    照合するだけにしてある。渡されなければ静的ファイルの実在は検査しない。
+    """
     errors: list[str] = []
 
     reserved = {"/"} | {f"/{name}/" for name in config.LISTED_CATEGORIES}
@@ -131,7 +175,8 @@ def validate(articles: list[Article]) -> list[str]:
         else:
             taken[article.url] = where
 
-        errors += _link_errors(where, article.body_html, valid_paths)
+        errors += _link_errors(where, article.body_html, valid_paths, static_paths)
+        errors += _image_errors(where, article.body_html, static_paths)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(

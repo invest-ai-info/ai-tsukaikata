@@ -133,6 +133,56 @@ def test_affiliate_link_with_disclosure_passes():
     assert validate([_article(body=body)]) == []
 
 
+FIGURE = (
+    '<figure class="figure">\n'
+    '<img src="/static/images/sample.svg" alt="図の説明">\n'
+    "<figcaption>キャプション</figcaption>\n"
+    "</figure>"
+)
+
+STATIC_PATHS = {"/static/style.css", "/static/images/sample.svg"}
+
+
+def test_figure_with_existing_image_passes():
+    assert validate([_article(body=FIGURE)], static_paths=STATIC_PATHS) == []
+
+
+def test_missing_image_file_is_detected():
+    body = FIGURE.replace("sample.svg", "nothing-here.svg")
+    errors = validate([_article(body=body)], static_paths=STATIC_PATHS)
+    assert any("画像" in error and "存在しません" in error for error in errors)
+
+
+def test_image_without_alt_is_detected():
+    body = FIGURE.replace(' alt="図の説明"', "")
+    errors = validate([_article(body=body)], static_paths=STATIC_PATHS)
+    assert any("alt" in error for error in errors)
+
+
+def test_image_with_empty_alt_is_detected():
+    body = FIGURE.replace('alt="図の説明"', 'alt=""')
+    errors = validate([_article(body=body)], static_paths=STATIC_PATHS)
+    assert any("alt" in error for error in errors)
+
+
+def test_broken_static_link_is_detected():
+    errors = validate(
+        [_article(body="[CSS](/static/nope.css)")], static_paths=STATIC_PATHS
+    )
+    assert any("nope.css" in error for error in errors)
+
+
+def test_static_paths_unknown_means_no_check():
+    """static_paths を渡さないときは静的ファイルの実在を検査しない（純粋なままにするため）。"""
+    body = FIGURE.replace("sample.svg", "nothing-here.svg")
+    assert validate([_article(body=body)]) == []
+
+
+def test_external_image_is_not_checked():
+    body = '<img src="https://example.com/a.png" alt="外部の画像">'
+    assert validate([_article(body=body)], static_paths=STATIC_PATHS) == []
+
+
 def test_all_errors_are_collected_not_just_the_first():
     body = (
         "連絡は taro.yamada@gmail.com へ。\n\n"

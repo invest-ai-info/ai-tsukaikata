@@ -17,21 +17,19 @@ AIの新モデルや新機能の発表を、**自分で見に行かなくても�
 - 細かい更新は溜めておいて**毎朝7時台に1通**にまとめて配信
 - サーバーもVPSも不要。GitHub の無料枠だけで動く
 
-届くメールはこんな形です。
+届くメールは2種類です。
 
-```
-件名: 🚨 AI重要アップデート 2件
+<figure class="figure">
+<img src="/static/images/tracker-mail.svg" alt="2種類のメール。上は重要アップデートの即時通知で、件名は「🚨 AI重要アップデート 1件」、本文にDeepSeekの新モデル名・公開日時・HuggingFaceのURL・要約が並ぶ。下は毎朝のダイジェストで、件名は「📮 AI更新ダイジェスト 3件」、Claude Codeのリリースが2件並び、末尾に「qwen-blog: 3回連続で失敗 (HTTPError: 404)」という死活警告が付いている。">
+<figcaption>実際に届くメール。2026年8月1日にソースを取得し、この記事で作る送信コードでそのまま組み立てた本物の出力です（配色だけこの記事に合わせています）。末尾の警告については「フィードが静かに死ぬ」で説明します。</figcaption>
+</figure>
 
-[Anthropic] Claude Code v3.1.0
-  2026-08-01 06:12 UTC
-  https://github.com/anthropics/claude-code/releases/tag/v3.1.0
-  Added a feature...
+全体はこう動きます。
 
-[DeepSeek] deepseek-ai/DeepSeek-V4-Flash
-  2026-08-01 04:05 UTC
-  https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash
-  HuggingFace に新しいモデルが公開されました。
-```
+<figure class="figure">
+<img src="/static/images/tracker-flow.svg" alt="処理の流れ。15の公式ソースを毎時17分に取得し、seen.jsonに無いものだけを新着として重要度判定にかける。重要なものはその場でメール送信、それ以外はキューに溜めて毎朝7時22分のダイジェストで1通にまとめて送る。">
+<figcaption>毎時17分に取得し、既読でないものだけを重要度で振り分けます。判定に迷ったときは必ず「重要でない」側に倒します。溜めた分は翌朝1通にまとまるので、情報は失われず最大24時間遅れるだけです。</figcaption>
+</figure>
 
 この記事で作るものの完成品は [GitHub で公開しています](https://github.com/invest-ai-info/ai-tsukaikata)。動かしながら読むならそちらを clone するのが早いです。
 
@@ -107,6 +105,13 @@ sources:
 この16桁は**画面を閉じると二度と表示されません**。控え忘れたら作り直しになります。
 
 ### 4. GitHubにSecretsを登録する
+
+GitHub側で触るのは2箇所だけです。
+
+<figure class="figure">
+<img src="/static/images/github-settings.svg" alt="GitHubのSettingsで触る2箇所の図解。1つ目はSecrets and variablesのActionsで、GMAIL_USER・GMAIL_APP_PASSWORD・ALERT_RECIPIENTの3件を登録する。2つ目はActionsのGeneralにあるWorkflow permissionsで、初期値のRead repository contents permissionではなくRead and write permissionsを選び、Saveを押す。">
+<figcaption>GitHubの画面配置を説明するための図解です（実際の画面とは配色・文言が異なります）。左が手順4、右が手順5。右を初期値のままにすると、メールは届くのに最後の保存だけ 403 で落ちます。</figcaption>
+</figure>
 
 リポジトリの `Settings → Secrets and variables → Actions` で、以下を `New repository secret` から登録します。
 
@@ -216,6 +221,11 @@ jobs:
 これが最大の罠です。
 
 RSSフィードには**過去記事が全部入っています**。何も知らない状態で「新着チェック」を走らせると、フィードにある記事が全部「新着」になります。試したところ、**OpenAI のフィードだけで1105件**ありました。15ソース分だと数千通です。
+
+<figure class="figure">
+<img src="/static/images/tracker-bootstrap.svg" alt="初期化を飛ばした場合と実行した場合の比較。飛ばすとフィードの過去記事が全部新着と判定され、OpenAIのフィード1本だけで1105通の通知が飛ぶ。先に初期化を実行すると全件を既読として記録し、通知は0通。以後は本当の新着だけが届く。">
+<figcaption>左が初期化を飛ばした場合、右が先に実行した場合。差は「既読の記録が1件でもあるかどうか」だけです。</figcaption>
+</figure>
 
 だから手順6の初期化が必要です。初期化は「今フィードにあるものを、通知せずに全部既読にする」だけの処理です。
 

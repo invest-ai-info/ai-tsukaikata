@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300" role="img" aria-label="初期化を飛ばした場合と実行した場合の比較。飛ばすとフィードにある過去記事すべてが新着扱いになり、OpenAIのフィードだけで1105件の通知が飛ぶ。初期化すると全件を既読として記録し通知は0件、以後は本当の新着だけが届く。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .panel-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .panel-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .chip { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.2; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-bad { fill: #b02020; font-size: 13.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 13.5px; font-weight: 700; }
+  .num-bad { fill: #b02020; font-size: 30px; font-weight: 700; }
+  .num-good { fill: #16682e; font-size: 30px; font-weight: 700; }
+  .arrow { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .arrow-head { fill: #8b949e; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .panel-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .panel-good { fill: #16261b; stroke: #57ab68; }
+    .chip { fill: #14171a; stroke: #363c43; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .num-bad { fill: #f07a7a; }
+    .num-good { fill: #57ab68; }
+    .arrow { stroke: #6e7781; }
+    .arrow-head { fill: #6e7781; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="300" rx="8"/>
+
+<!-- 左: 初期化なし -->
+<rect class="panel-bad" x="20" y="22" width="320" height="256" rx="8"/>
+<text class="t-bad" x="40" y="50">初期化しないでいきなり動かすと</text>
+
+<rect class="chip" x="40" y="66" width="280" height="52" rx="6"/>
+<text class="t" x="54" y="88">フィードには過去記事が全部入っている</text>
+<text class="t-sm" x="54" y="107">RSSは「最近のN件」ではなく全件を返すことがある</text>
+
+<path class="arrow" d="M180 118 V142"/>
+<path class="arrow-head" d="M175 142 l5 10 5 -10 z"/>
+
+<rect class="chip" x="40" y="152" width="280" height="44" rx="6"/>
+<text class="t" x="54" y="171">それが全部「新着」と判定される</text>
+<text class="t-sm" x="54" y="189">既読の記録が1件も無いため</text>
+
+<path class="arrow" d="M180 196 V218"/>
+<path class="arrow-head" d="M175 218 l5 10 5 -10 z"/>
+
+<text class="num-bad" x="54" y="256">1105通</text>
+<text class="t-sm" x="152" y="248">OpenAIのフィード1本だけで</text>
+<text class="t-sm" x="152" y="265">15ソース分なら数千通になる</text>
+
+<!-- 右: 初期化あり -->
+<rect class="panel-good" x="380" y="22" width="320" height="256" rx="8"/>
+<text class="t-good" x="400" y="50">先に --mode bootstrap を走らせると</text>
+
+<rect class="chip" x="400" y="66" width="280" height="52" rx="6"/>
+<text class="t" x="414" y="88">今フィードにある全件を既読にする</text>
+<text class="t-sm" x="414" y="107">seen.json を作るだけ。メールは送らない</text>
+
+<path class="arrow" d="M540 118 V142"/>
+<path class="arrow-head" d="M535 142 l5 10 5 -10 z"/>
+
+<rect class="chip" x="400" y="152" width="280" height="44" rx="6"/>
+<text class="t" x="414" y="171">以後は seen.json に無いものだけ</text>
+<text class="t-sm" x="414" y="189">＝本当の新着だけが通知される</text>
+
+<path class="arrow" d="M540 196 V218"/>
+<path class="arrow-head" d="M535 218 l5 10 5 -10 z"/>
+
+<text class="num-good" x="414" y="256">0通</text>
+<text class="t-sm" x="480" y="248">初期化そのものは1通も送らない</text>
+<text class="t-sm" x="480" y="265">翌時から通常運転に入れる</text>
+</svg>
