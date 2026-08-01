@@ -36,8 +36,8 @@ def clip_summary(text: str) -> str:
 class Update:
     uid: str
     source_id: str
-    vendor: str
-    label: str
+    vendor: str  # 会社名（グルーピングとメール件名の接頭辞に使う）
+    label: str  # フィード個別の人間向け表示名
     title: str
     url: str
     published: datetime  # tz-aware UTC
@@ -47,6 +47,8 @@ class Update:
     def __post_init__(self) -> None:
         if not self.url:
             raise ValueError("Update.url は必須（出典を必ず示すため）")
+        if self.published.tzinfo is None:
+            raise ValueError("Update.published は tz-aware である必要があります")
         object.__setattr__(self, "summary", clip_summary(self.summary))
 
     def with_importance(self, importance: str) -> "Update":
