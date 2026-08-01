@@ -1,0 +1,236 @@
+/* AIの使い方 — 手順書として読めることを最優先にした最小限のCSS */
+
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #616b76;
+  --line: #e3e6ea;
+  --accent: #1a56b8;
+  --code-bg: #f5f7f9;
+  --card-bg: #fbfcfd;
+  --max: 46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a;
+    --fg: #e6e9ec;
+    --muted: #9aa4ae;
+    --line: #2a2f35;
+    --accent: #7ab0ff;
+    --code-bg: #1c2126;
+    --card-bg: #191d21;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Noto Sans JP", Meiryo, sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--accent); }
+
+/* --- ヘッダ / フッタ --- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: baseline;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.25rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.site-nav a {
+  margin-right: 1rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover, .site-name:hover { text-decoration: underline; }
+
+.site-main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.1rem 3rem;
+}
+
+.site-footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.1rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-nav a { margin-right: 1rem; }
+.copyright { margin: 0.75rem 0 0; }
+
+/* --- トップ --- */
+
+.hero { margin-bottom: 2.5rem; }
+.hero h1 { font-size: 1.6rem; margin: 0 0 0.5rem; }
+.hero-lead { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.hero-note { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+.section-title {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-lead { color: var(--muted); font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+
+/* --- 記事カード --- */
+
+.card {
+  padding: 1.1rem 1.2rem;
+  margin: 1.1rem 0;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.card-title { font-size: 1.1rem; margin: 0 0 0.4rem; line-height: 1.6; }
+.card-title a { text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-description { margin: 0 0 0.6rem; color: var(--fg); font-size: 0.97rem; }
+
+.card-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card-badge {
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+}
+
+/* --- 記事本文 --- */
+
+.breadcrumb { color: var(--muted); font-size: 0.87rem; margin: 0 0 0.75rem; }
+
+.article-title { font-size: 1.5rem; line-height: 1.55; margin: 0 0 0.6rem; }
+.article-meta { color: var(--muted); font-size: 0.87rem; margin: 0 0 1.5rem; }
+.article-meta time { margin-right: 1rem; }
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 0 0 2rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.recipe-meta div { display: flex; gap: 0.6rem; align-items: baseline; }
+.recipe-meta dt { color: var(--muted); font-size: 0.85rem; margin: 0; }
+.recipe-meta dd { margin: 0; font-weight: 600; }
+
+.article-body h2 {
+  font-size: 1.25rem;
+  margin: 2.75rem 0 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-body h3 { font-size: 1.08rem; margin: 2rem 0 0.7rem; }
+.article-body p { margin: 1.1rem 0; }
+.article-body ul, .article-body ol { padding-left: 1.5rem; }
+.article-body li { margin: 0.4rem 0; }
+
+.article-body blockquote {
+  margin: 1.5rem 0;
+  padding: 0.2rem 1.1rem;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+}
+
+.article-body img { max-width: 100%; height: auto; }
+
+/* コードは手順書の本体。折り返さず横スクロールさせる（コピペを壊さないため） */
+.article-body pre {
+  margin: 1.3rem 0;
+  padding: 0.95rem 1.1rem;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.7;
+}
+
+.article-body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.88em;
+}
+
+.article-body p > code, .article-body li > code, .article-body td > code {
+  padding: 0.12em 0.4em;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.article-body pre code { padding: 0; background: none; border: none; }
+
+.article-body table {
+  width: 100%;
+  margin: 1.3rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.article-body th, .article-body td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.article-body th { background: var(--code-bg); }
+
+.tags { margin: 2.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.tag {
+  padding: 0.15rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .article-title { font-size: 1.32rem; }
+  .site-header { padding: 1rem 0.9rem; }
+  .site-main, .site-footer { padding-left: 0.9rem; padding-right: 0.9rem; }
+}
