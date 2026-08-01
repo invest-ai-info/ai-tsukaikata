@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -31,10 +32,17 @@ def load_state(path: Path) -> dict:
 
 
 def save_state(path: Path, state: dict) -> None:
+    """一時ファイルに書いてから置換する。
+
+    直接 "w" で開くと書き込み前にファイルが0バイトに切り詰められ、途中で
+    落ちると壊れた seen.json が残る。そうなると以降の実行が毎回落ちる。
+    """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    tmp = path.with_name(path.name + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2, sort_keys=True)
+    os.replace(tmp, path)
 
 
 def select_unseen(state: dict, updates: list[Update]) -> list[Update]:
@@ -59,7 +67,13 @@ def take_pending_minor(state: dict) -> list[Update]:
 
 
 def record_result(state: dict, source_id: str, error: str | None, count: int) -> None:
-    """取得結果を記録する。成功かつ1件以上なら失敗カウントをリセットする。"""
+    """取得結果を記録する。成功かつ1件以上なら失敗カウントをリセットする。
+
+    ⚠️ count には「そのポーリングで取得できた生の件数」を渡すこと。
+    select_unseen 後の「新着件数」を渡してはいけない。更新の少ないソースは
+    新着0が普通なので、それを渡すと健全なソースが3時間で死亡扱いになる。
+    生の件数なら、更新が止まっているフィードでも過去記事が返るので0にならない。
+    """
     if error is None and count > 0:
         state["failures"].pop(source_id, None)
         return
@@ -80,6 +94,18 @@ def dead_sources(state: dict) -> list[tuple[str, int, str]]:
         for source_id, entry in sorted(state["failures"].items())
         if entry["count"] >= FAILURE_THRESHOLD
     ]
+
+
+def forget_removed_sources(state: dict, active_source_ids: set[str]) -> int:
+    """sources.yml から消えたソースの失敗記録を捨て、捨てた件数を返す。
+
+    これが無いと、設定から外したソースが永久にダイジェストの死活警告に
+    出続け、警告欄そのものが読まれなくなる。
+    """
+    stale = [sid for sid in state["failures"] if sid not in active_source_ids]
+    for source_id in stale:
+        del state["failures"][source_id]
+    return len(stale)
 
 
 def prune(state: dict, now: datetime) -> int:
