@@ -3,6 +3,7 @@
   .bg { fill: #fbfcfd; }
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
   .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .bar-plain { fill: #f2f4f6; }
   .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
   .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
   .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
@@ -32,7 +33,8 @@
     .bg { fill: #191d21; }
     .box { fill: #14171a; stroke: #363c43; }
     .box-accent { fill: #1b2735; stroke: #7ab0ff; }
-    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .bar-plain { fill: #1c2126; }
+  .box-quiet { fill: #1c2126; stroke: #363c43; }
     .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
     .box-good { fill: #16261b; stroke: #57ab68; }
     .box-warn { fill: #2b2415; stroke: #a68321; }
@@ -64,8 +66,8 @@
 <text class="t-strong" x="24" y="34">1ファイルはこの形にする</text>
 
 <rect class="box" x="24" y="54" width="440" height="252" rx="7"/>
-<rect class="box-quiet" x="24" y="54" width="440" height="98" rx="7"/>
-<rect class="box-quiet" x="24" y="130" width="440" height="22"/>
+<rect class="box-quiet" x="24" y="54" width="440" height="114" rx="7"/>
+<rect class="bar-plain" x="24" y="146" width="440" height="22"/>
 <text class="mono-sm" x="42" y="78">---</text>
 <text class="mono-sm" x="42" y="98">name: feedback_date_freshness</text>
 <text class="mono-sm" x="42" y="118">description: 日付は書き込む直前に取り直す</text>

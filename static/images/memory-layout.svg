@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-label="記憶の置き場所の全体像。CLAUDE.mdは毎回自動で読み込まれるのでプロジェクトの前提だけを書く。memoryフォルダは1ファイル1事実で、索引のMEMORY.mdには1行の見出しだけを書く。SESSION_HANDOFFは今どこにいるかを書く別のファイルで、次の会話の最初に読ませる。">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="352" viewBox="0 0 720 352" role="img" aria-label="記憶の置き場所の全体像。CLAUDE.mdは毎回自動で読み込まれるのでプロジェクトの前提だけを書く。memoryフォルダは1ファイル1事実で、索引のMEMORY.mdには1行の見出しだけを書く。SESSION_HANDOFFは今どこにいるかを書く別のファイルで、次の会話の最初に読ませる。">
 <style>
   .bg { fill: #fbfcfd; }
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
@@ -59,7 +59,7 @@
   }
 </style>
 
-<rect class="bg" x="0" y="0" width="720" height="340" rx="8"/>
+<rect class="bg" x="0" y="0" width="720" height="352" rx="8"/>
 
 <text class="t-strong" x="24" y="34">3種類を分ける。混ぜると腐る</text>
 
@@ -87,9 +87,10 @@
 <path class="line" d="M358 182 V206"/>
 <path class="head" d="M353 206 l5 10 5 -10 z"/>
 
-<rect class="box-quiet" x="132" y="216" width="452" height="106" rx="7"/>
+<rect class="box-quiet" x="132" y="216" width="452" height="118" rx="7"/>
 <text class="t-strong" x="150" y="240">MEMORY.md（索引）</text>
 <text class="mono-sm" x="150" y="266">- [自分のプロフィール](user_profile.md) — 非エンジニア・自動化重視</text>
 <text class="mono-sm" x="150" y="286">- [進行中: サイト構築](project_site.md) — 8月公開目標</text>
-<text class="t-bad" x="150" y="312">1メモリ1行だけ。ここに中身を書くと、結局毎回全部読み込むのと同じになる</text>
+<text class="t-bad" x="150" y="306">1メモリ1行だけ。中身を書いてはいけない。</text>
+<text class="t-bad" x="150" y="324">結局毎回全部読み込むのと同じになる</text>
 </svg>

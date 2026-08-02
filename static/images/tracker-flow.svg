@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="15の公式ソースを毎時17分に取得し、既読でないものだけを重要度で振り分ける流れ。重要なものは即メール、それ以外は溜めて翌朝7時22分に1通にまとめて送る。">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="415" viewBox="0 0 720 415" role="img" aria-label="15の公式ソースを毎時17分に取得し、既読でないものだけを重要度で振り分ける流れ。重要なものは即メール、それ以外は溜めて翌朝7時22分に1通にまとめて送る。">
 <style>
   .bg { fill: #fbfcfd; }
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
@@ -27,7 +27,7 @@
   }
 </style>
 
-<rect class="bg" x="0" y="0" width="720" height="400" rx="8"/>
+<rect class="bg" x="0" y="0" width="720" height="415" rx="8"/>
 
 <!-- 1. ソース -->
 <rect class="box" x="20" y="30" width="150" height="86" rx="7"/>
@@ -64,34 +64,35 @@
 <text class="t-sm" x="512" y="140">新着だけ</text>
 
 <!-- 4. 重要度判定 -->
-<rect class="box" x="285" y="160" width="290" height="58" rx="7"/>
+<rect class="box" x="285" y="160" width="290" height="76" rx="7"/>
 <text class="t-strong" x="300" y="184">重要度を判定する</text>
-<text class="t-sm" x="300" y="204">迷ったら minor に倒す（情報は失われず最大24時間遅れるだけ）</text>
+<text class="t-sm" x="300" y="204">迷ったら「重要ではない」に倒す</text>
+<text class="t-sm" x="300" y="222">（情報は失われず、最大24時間遅れるだけ）</text>
 
 <!-- 分岐 -->
-<path class="arrow" d="M360 218 V248 H196"/>
-<path class="arrow-head" d="M196 243 l-10 5 10 5 z"/>
-<text class="t-sm" x="252" y="242">major</text>
+<path class="arrow" d="M360 236 V254 H196"/>
+<path class="arrow-head" d="M196 249 l-10 5 10 5 z"/>
+<text class="t-sm" x="252" y="248">major</text>
 
-<path class="arrow" d="M500 218 V248 H540"/>
-<path class="arrow-head" d="M540 243 l10 5 -10 5 z"/>
-<text class="t-sm" x="508" y="242">minor</text>
+<path class="arrow" d="M500 236 V254 H540"/>
+<path class="arrow-head" d="M540 249 l10 5 -10 5 z"/>
+<text class="t-sm" x="508" y="248">minor</text>
 
 <!-- 5a. 即メール -->
-<rect class="box-accent" x="36" y="262" width="160" height="76" rx="7"/>
-<text class="t-accent" x="50" y="285">その場でメール</text>
-<text class="t-sm" x="50" y="306">1時間に最大1通</text>
-<text class="t-sm" x="50" y="323">まとめて送るので溢れない</text>
+<rect class="box-accent" x="36" y="272" width="160" height="76" rx="7"/>
+<text class="t-accent" x="50" y="295">その場でメール</text>
+<text class="t-sm" x="50" y="316">1時間に最大1通</text>
+<text class="t-sm" x="50" y="333">まとめて送るので溢れない</text>
 
 <!-- 5b. 溜める -->
-<rect class="box-quiet" x="440" y="262" width="150" height="76" rx="7"/>
-<text class="t-strong" x="454" y="285">キューに溜める</text>
-<text class="t-sm" x="454" y="306">seen.json の</text>
-<text class="t-sm" x="454" y="323">pending_minor</text>
+<rect class="box-quiet" x="440" y="272" width="150" height="76" rx="7"/>
+<text class="t-strong" x="454" y="295">キューに溜める</text>
+<text class="t-sm" x="454" y="316">seen.json の</text>
+<text class="t-sm" x="454" y="333">pending_minor</text>
 
 <!-- 5b→6 -->
-<path class="arrow" d="M590 300 H626"/>
-<path class="arrow-head" d="M626 295 l10 5 -10 5 z"/>
+<path class="arrow" d="M590 310 H626"/>
+<path class="arrow-head" d="M626 305 l10 5 -10 5 z"/>
 
 <!-- 6. 朝ダイジェスト -->
 <rect class="box-accent" x="600" y="30" width="100" height="86" rx="7"/>
@@ -99,7 +100,7 @@
 <text class="t-sm" x="613" y="74">ダイジェスト</text>
 <text class="t-sm" x="613" y="91">溜めた分＋</text>
 <text class="t-sm" x="613" y="108">死活警告を1通</text>
-<path class="arrow" d="M650 262 V126"/>
+<path class="arrow" d="M650 272 V126"/>
 <path class="arrow-head" d="M645 126 l5 -10 5 10 z"/>
-<path class="divider" d="M636 300 H650 V262"/>
+<path class="divider" d="M636 310 H650 V272"/>
 </svg>

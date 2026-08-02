@@ -37,7 +37,7 @@
 
 <rect class="chip" x="40" y="66" width="280" height="52" rx="6"/>
 <text class="t" x="54" y="88">フィードには過去記事が全部入っている</text>
-<text class="t-sm" x="54" y="107">RSSは「最近のN件」ではなく全件を返すことがある</text>
+<text class="t-sm" x="54" y="107">RSSは「最近のN件」ではなく全件を返す</text>
 
 <path class="arrow" d="M180 118 V142"/>
 <path class="arrow-head" d="M175 142 l5 10 5 -10 z"/>

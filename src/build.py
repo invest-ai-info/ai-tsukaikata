@@ -13,6 +13,7 @@ from pathlib import Path
 
 from . import config, feeds, render
 from .content import load_articles
+from .figures import check_svg
 from .validate import validate
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,10 +38,22 @@ def static_paths(static_dir: Path) -> set[str]:
     }
 
 
+def figure_errors(static_dir: Path) -> list[str]:
+    """図（SVG）の文字が枠からはみ出していないか・線に重なっていないか。"""
+    images = Path(static_dir) / "images"
+    if not images.exists():
+        return []
+    errors: list[str] = []
+    for path in sorted(images.glob("*.svg")):
+        errors += check_svg(path.name, path.read_text(encoding="utf-8"))
+    return errors
+
+
 def collect(content_dir: Path, static_dir: Path = STATIC_DIR) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
     errors = errors + validate(articles, static_paths(static_dir))
+    errors = errors + figure_errors(static_dir)
     if errors:
         return {}, errors
 

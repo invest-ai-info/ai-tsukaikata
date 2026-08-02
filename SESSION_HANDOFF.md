@@ -1,6 +1,6 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-08-01 22:51 JST
+最終更新: 2026-08-02 16:30 JST
 
 ---
 
@@ -37,7 +37,7 @@
 | GitHub | `invest-ai-info/ai-tsukaikata`（public） |
 | ドメイン | `ai-tsukaikata.com`（2026-08-01 取得済み。GitHub Pages への接続は2段目の作業） |
 | Python | 3.12.10。依存は `requirements.txt`（feedparser / PyYAML / pytest / Jinja2 / Markdown） |
-| テスト | `python -m pytest -q` → 220 passed（トラッカー142 + サイト78） |
+| テスト | `python -m pytest -q` → 249 passed（トラッカー146 + サイト103） |
 
 **Windows の注意:** ローカルで `python -m tracker.run` を叩くときは `$env:PYTHONUTF8=1` を付ける。コンソールが cp932 なので、日本語の出力で `UnicodeEncodeError` になることがある。
 
@@ -164,7 +164,26 @@ h2 は帯＋アイコンで「ここで話題が変わる」ことを見せる�
 - SVGには `width`/`height`/`viewBox` を全部書く（無いとレイアウトシフトする）
 - SVGに `<style>` を持たせ、`@media (prefers-color-scheme: dark)` を入れる。`<img>` 経由でもダークモードは効く。**外部CSSは当たらない**ので配色はSVGの中に持つ
 - viewBox幅は720で揃えてある。CSSが `min-width: 600px` を効かせるので、スマホでは枠内で横スクロールする（縮めると図中の文字が5px相当になって読めない）
-- **文字のはみ出しは目視では分からない。** 追加したらブラウザで `getBBox()` を測って viewBox 内に収まっているか確認する（実際に2枚はみ出していた）
+
+### 図の崩れは2段構えで検査する
+
+**目視では見落とす。**実際に「見出しを枠線が貫く」「ラベルが枠から12pxはみ出る」を公開直前まで見逃した。
+
+**① `src/figures.py`（ビルドで自動・誤検知しない）**
+
+`python -m src.build` が全SVGを検査し、崩れがあれば止める。検査するのは3つ。
+
+- 文字を横線が貫いていないか（**縦位置だけで判定できるので厳密**）
+- 枠から上下にはみ出していないか（同上）
+- 枠・画面から右にはみ出していないか（幅は推定なので**ありうる最小幅**で判定）
+
+文字幅はブラウザ実測315要素から較正してある（推定は実測の1.00〜1.15倍。下限で判定するので**誤検知は起きない代わりに、数pxのはみ出しは見逃す**）。
+
+⚠️ **枠とみなすのは線のある矩形だけ。**角を四角く見せる当て板（塗りだけ）は囲いではない。**当て板に線のあるクラスを使うと、その上辺が文字を貫く。**上記の不具合はこれが原因だった。
+
+**② ブラウザでの厳密計測（図を足したら手で1回）**
+
+`getBBox()` で実寸を測る。①が見逃す数pxのはみ出しまで拾える（実際に3pxと22pxを検出した）。Claude に「図の厳密計測をして」と頼めば実行できる（`tools/measure_figures.js` の中身をブラウザのコンソールに流す）。図を追加・変更したときだけでよい。
 
 計画書: `docs/superpowers/plans/2026-08-01-ai-tsukaikata-site.md`
 
@@ -185,15 +204,12 @@ h2 は帯＋アイコンで「ここで話題が変わる」ことを見せる�
 5. `Settings → Pages → Custom domain` に `ai-tsukaikata.com` を入れて Save。DNS伝播後に `Enforce HTTPS`
 6. Google Search Console に登録し、`https://ai-tsukaikata.com/sitemap.xml` を送信
 
-### 既知のノイズ: テストがたまに赤くなる
+### 解決済み: 常駐ソフトとのファイル競合（2026-08-02）
 
-`test_digest_sends_when_only_dead_sources_exist` が **全テスト実行の約3%** で `PermissionError` で落ちる（`load_state` の読み込み）。
+トラッカーのテストが全実行の約3%で `PermissionError` で落ちていた。**Norton 360 が `os.replace` 直後のファイルを掴む競合**で、`save_state` に短いリトライを入れて解消（70回中0回・導入前は2回）。
 
-- **コードの問題ではない。** 図の追加前のコミットで70回回して2回落ちる、同じ再現率。単体では 0/400 で再現しない
-- この環境の **Norton 360** が `os.replace` 直後のファイルを掴む競合が濃厚（`.bat` を消される・requests のSSLが落ちる、と同系統）
-- **GitHub Actions（ubuntu-latest）とプロダクションには影響しない**
-- 直すなら `load_state` に短いリトライ。「壊れたファイルを握り潰すな」には抵触しない（JSONの破損は従来どおり落ちる）。稼働中の1段目に触るので未実施
-- **赤くなったらまず1回再実行する。** 同じテストが同じ理由で落ちているだけなら、これ
+- 最初 `load_state` 側だと見立てたが外れ。**実際は `save_state` の `os.replace` が本命**だった
+- 壊れたJSONは従来どおり即座に落とす（リトライしない）
 
 ### 検証済みであること（2026-08-01〜02）
 
