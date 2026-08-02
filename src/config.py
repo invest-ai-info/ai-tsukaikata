@@ -9,7 +9,10 @@ from __future__ import annotations
 SITE_NAME = "AIの使い方"
 SITE_URL = "https://ai-tsukaikata.com"
 CUSTOM_DOMAIN = "ai-tsukaikata.com"
-SITE_DESCRIPTION = "プログラマーでなくても動かせる、実際に運用している自動化の手順書。"
+SITE_DESCRIPTION = (
+    "プログラミングなしで、AIに頼んで自動化を作る方法。"
+    "実際に本番で動いている仕組みと、それを作らせた指示文をそのまま公開しています。"
+)
 SITE_LANG = "ja"
 
 # 一覧ページを持つカテゴリ。pages（about等）は一覧に出さない
@@ -18,7 +21,7 @@ LISTED_CATEGORIES = ("recipes", "tools")
 CATEGORIES = {
     "recipes": {
         "label": "レシピ",
-        "description": "実際に動かしている自動化を、コピペできる手順にしたものです。",
+        "description": "実際に動かしている自動化と、それをAIに作らせた指示文。コピーしてそのまま使えます。",
     },
     "tools": {
         "label": "ツール",
