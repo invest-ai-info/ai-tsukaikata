@@ -183,6 +183,27 @@ def test_external_image_is_not_checked():
     assert validate([_article(body=body)], static_paths=STATIC_PATHS) == []
 
 
+PROMPT = '<div class="prompt">AIにこう頼んでください。\n2行目です。</div>'
+
+
+def test_plain_prompt_passes():
+    assert validate([_article(body=PROMPT)]) == []
+
+
+def test_html_tag_inside_prompt_is_detected():
+    """指示文はそのままコピーされるので、中にタグが混ざるとタグごと貼られる。"""
+    body = '<div class="prompt">これは<mark>重要</mark>です。</div>'
+    errors = validate([_article(body=body)])
+    assert any("指示文" in error for error in errors)
+
+
+def test_markdown_emphasis_inside_prompt_is_detected():
+    """生HTMLの中では ** が展開されないので、画面にそのまま出てしまう。"""
+    body = '<div class="prompt">**実際に開いて確認してから**リストにしてください。</div>'
+    errors = validate([_article(body=body)])
+    assert any("指示文" in error for error in errors)
+
+
 def test_all_errors_are_collected_not_just_the_first():
     body = (
         "連絡は taro.yamada@gmail.com へ。\n\n"

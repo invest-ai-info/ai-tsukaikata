@@ -54,6 +54,7 @@ AFFILIATE_PATTERNS = (
 DISCLOSURE_WORDS = ("広告", "PR", "アフィリエイト", "プロモーション")
 
 INTERNAL_LINK_RE = re.compile(r'href="(/[^"]*)"')
+PROMPT_RE = re.compile(r'<div class="prompt">(.*?)</div>', re.DOTALL)
 IMG_TAG_RE = re.compile(r"<img\b[^>]*>")
 IMG_SRC_RE = re.compile(r'\bsrc="([^"]*)"')
 IMG_ALT_RE = re.compile(r'\balt="([^"]*)"')
@@ -87,6 +88,23 @@ def _secret_errors(where: str, text: str) -> list[str]:
     if LOCAL_PATH_RE.search(text):
         errors.append(f"{where}: ローカルの絶対パス（C:\\Users\\…）が含まれています")
 
+    return errors
+
+
+def _prompt_errors(where: str, body_html: str) -> list[str]:
+    """AIへの指示文が「そのままコピーできる素のテキスト」かを見る。
+
+    指示文は生HTMLで書くので、中に書いたものは一切変換されない。
+    - タグを入れるとコピーしたときにタグごと貼られる
+    - Markdownの ** は展開されず、画面に ** がそのまま出る
+    どちらも書いた本人には気づきにくいので、ここで止める。
+    """
+    errors = []
+    for index, body in enumerate(PROMPT_RE.findall(body_html), start=1):
+        if "<" in body:
+            errors.append(f"{where}: {index}個目の指示文にHTMLタグが入っています（コピーすると混ざります）")
+        if "**" in body:
+            errors.append(f"{where}: {index}個目の指示文に ** が入っています（画面にそのまま出ます）")
     return errors
 
 
@@ -177,6 +195,7 @@ def validate(
 
         errors += _link_errors(where, article.body_html, valid_paths, static_paths)
         errors += _image_errors(where, article.body_html, static_paths)
+        errors += _prompt_errors(where, article.body_html)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(

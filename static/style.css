@@ -9,6 +9,9 @@
   --code-bg: #f5f7f9;
   --card-bg: #fbfcfd;
   --prompt-bg: #f4f8fe;
+  --mark: rgba(255, 190, 10, 0.55);
+  --mark-warn: rgba(217, 43, 43, 0.22);
+  --mark-warn-fg: #9b1c1c;
   --max: 46rem;
 }
 
@@ -22,6 +25,9 @@
     --code-bg: #1c2126;
     --card-bg: #191d21;
     --prompt-bg: #172230;
+    --mark: rgba(255, 190, 10, 0.32);
+    --mark-warn: rgba(240, 122, 122, 0.26);
+    --mark-warn-fg: #ffb0b0;
   }
 }
 
@@ -165,6 +171,25 @@ a { color: var(--accent); }
 }
 
 .article-body h3 { font-size: 1.08rem; margin: 2rem 0 0.7rem; }
+
+/* 重要な一文。読み飛ばす人がここだけ拾えば筋が通るように使う。
+   文字色は変えず下半分に色を敷く（マーカーを引いた形）。文字と背景の
+   コントラストが落ちないので、色を変えるより読みやすい。
+   色だけに頼らないよう太字も併用する（色の見分けが苦手な人のため） */
+.article-body mark {
+  background: linear-gradient(transparent 56%, var(--mark) 56%);
+  color: inherit;
+  font-weight: 700;
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* こちらは「やると事故る」。赤は警告だけに使い、多用しない */
+.article-body mark.warn {
+  background: linear-gradient(transparent 56%, var(--mark-warn) 56%);
+  color: var(--mark-warn-fg);
+}
 .article-body p { margin: 1.1rem 0; }
 .article-body ul, .article-body ol { padding-left: 1.5rem; }
 .article-body li { margin: 0.4rem 0; }
