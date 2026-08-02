@@ -193,6 +193,72 @@ a { color: var(--accent); }
 
 .article-body .prompt + .prompt { margin-top: -0.4rem; }
 
+/* ここから下は JavaScript が動いたときだけ作られる。
+   動かない環境では上の .prompt がそのまま出る（読めて選択できる） */
+.article-body .prompt-box {
+  margin: 1.4rem 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.article-body .prompt-box .prompt {
+  margin: 0;
+  border: 0;
+  border-left: 4px solid var(--accent);
+  border-radius: 0;
+}
+
+.prompt-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0.6rem 0.45rem 1.1rem;
+  background: var(--code-bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.prompt-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+.prompt-copy {
+  flex: none;
+  padding: 0.3rem 0.9rem;
+  background: var(--bg);
+  color: var(--accent);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  /* 押した瞬間に文言が変わって幅が動くと目が滑るので、最小幅を確保する */
+  min-width: 7.5em;
+  text-align: center;
+}
+
+.prompt-copy:hover { border-color: var(--accent); }
+
+.prompt-copy:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.prompt-copy.is-done { color: #16682e; border-color: #16682e; }
+.prompt-copy.is-failed { color: #b02020; border-color: #b02020; }
+
+@media (prefers-color-scheme: dark) {
+  .prompt-copy.is-done { color: #57ab68; border-color: #57ab68; }
+  .prompt-copy.is-failed { color: #f07a7a; border-color: #f07a7a; }
+}
+
 /* 図。本文の理解を助けるものなので、本文より少し目立たせて区切る */
 .article-body .figure {
   margin: 2rem 0;

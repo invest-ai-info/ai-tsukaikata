@@ -102,6 +102,13 @@ def test_output_paths_use_trailing_slash_structure():
     }
 
 
+def test_copy_script_is_loaded_with_defer():
+    """指示文のコピーボタンは JS で足す。defer にして描画を止めない。"""
+    pages = render_site([_article()])
+    html = pages["recipes/sample/index.html"]
+    assert '<script src="/static/js/copy.js" defer></script>' in html
+
+
 def test_japanese_date_format():
     pages = render_site([_article(published=date(2026, 8, 1))])
     assert "2026年8月1日" in pages["recipes/sample/index.html"]
