@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="350" viewBox="0 0 720 350" role="img" aria-label="cronの5つの数字の読み方。左から分・時・日・月・曜日で、時はUTC。27 22 星 星 星 は UTC 22時27分で、日本時間では翌日の朝7時27分になる。曜日を指定するときは、日本時間の月曜朝はUTCでは日曜の夜になる点に注意する。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .box-warn { fill: #fdf6e8; stroke: #d4a72c; stroke-width: 1.3; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13.5px; font-weight: 700; }
+  .t-bad { fill: #b02020; font-size: 13px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 13px; font-weight: 700; }
+  .t-warn { fill: #8a6100; font-size: 12px; }
+  .mono { fill: #1f2328; font-size: 13px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-big { fill: #1f2328; font-size: 21px; font-weight: 700; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-sm { fill: #616b76; font-size: 11px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .line { stroke: #8b949e; stroke-width: 1.4; fill: none; }
+  .line-quiet { stroke: #d5dae0; stroke-width: 1; fill: none; }
+  .head { fill: #8b949e; }
+  .bar { fill: #c8d1da; }
+  .bar-hot { fill: #d92b2b; }
+  .bar-pick { fill: #1a56b8; }
+  .dot-ok { fill: #1a7f37; }
+  .dot-skip { fill: #d92b2b; }
+  .dot-idle { fill: #c8d1da; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .box-warn { fill: #2b2415; stroke: #a68321; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t-warn { fill: #e0b644; }
+    .mono { fill: #e6e9ec; }
+    .mono-big { fill: #e6e9ec; }
+    .mono-sm { fill: #9aa4ae; }
+    .line { stroke: #6e7781; }
+    .line-quiet { stroke: #363c43; }
+    .head { fill: #6e7781; }
+    .bar { fill: #3a424a; }
+    .bar-hot { fill: #f07a7a; }
+    .bar-pick { fill: #7ab0ff; }
+    .dot-ok { fill: #57ab68; }
+    .dot-skip { fill: #f07a7a; }
+    .dot-idle { fill: #3a424a; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="350" rx="8"/>
+
+<text class="t-strong" x="24" y="34">cron の5つの数字</text>
+
+<text class="mono-big" x="40" y="76">27</text>
+<text class="mono-big" x="92" y="76">22</text>
+<text class="mono-big" x="150" y="76">*</text>
+<text class="mono-big" x="192" y="76">*</text>
+<text class="mono-big" x="234" y="76">*</text>
+
+<path class="line-quiet" d="M252 86 V96 H286"/>
+<text class="t" x="296" y="100">曜日（0-6、0が日曜）</text>
+
+<path class="line-quiet" d="M210 86 V124 H286"/>
+<text class="t" x="296" y="128">月（1-12）</text>
+
+<path class="line-quiet" d="M158 86 V152 H286"/>
+<text class="t" x="296" y="156">日（1-31）</text>
+
+<path class="line-quiet" d="M104 86 V180 H286"/>
+<text class="t" x="296" y="184">時（0-23）</text>
+<text class="t-bad" x="380" y="184">← UTC。日本時間ではない</text>
+
+<path class="line-quiet" d="M52 86 V208 H286"/>
+<text class="t" x="296" y="212">分（0-59）</text>
+<text class="t-sm" x="380" y="212">0 は避ける（次の図）</text>
+
+<rect class="box-accent" x="24" y="238" width="330" height="92" rx="7"/>
+<text class="t-accent" x="42" y="264">日本時間に直す</text>
+<text class="mono" x="42" y="290">UTC 22:27</text>
+<text class="t-sm" x="140" y="290">＋9時間</text>
+<text class="mono" x="212" y="290">JST 翌日 7:27</text>
+<text class="t-sm" x="42" y="314">9時間足すと日付をまたぐことが多い</text>
+
+<rect class="box-warn" x="372" y="238" width="324" height="92" rx="7"/>
+<text class="t-warn" x="390" y="264">曜日と組み合わせると1日ずれる</text>
+<text class="t-sm" x="390" y="288">「毎週月曜の朝7時」は UTC では日曜の夜。</text>
+<text class="mono-sm" x="390" y="310">27 22 * * 0</text>
+<text class="t-sm" x="480" y="310">と書く（1 ではない）</text>
+</svg>

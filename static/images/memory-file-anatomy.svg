@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="330" viewBox="0 0 720 330" role="img" aria-label="記憶ファイル1枚の構造。上に名前と一行説明と種別を書き、本文に何が起きたかを書く。その下にWhyとしてなぜそうするのかを書き、How to applyとして次にどうするかを書く。WhyとHow to applyが無いと、半年後に読んだときにまだ有効なルールか判断できない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .box-warn { fill: #fdf6e8; stroke: #d4a72c; stroke-width: 1.3; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13.5px; font-weight: 700; }
+  .t-bad { fill: #b02020; font-size: 13px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 13px; font-weight: 700; }
+  .t-warn { fill: #8a6100; font-size: 12px; }
+  .mono { fill: #1f2328; font-size: 13px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-big { fill: #1f2328; font-size: 21px; font-weight: 700; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-sm { fill: #616b76; font-size: 11px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .line { stroke: #8b949e; stroke-width: 1.4; fill: none; }
+  .line-quiet { stroke: #d5dae0; stroke-width: 1; fill: none; }
+  .head { fill: #8b949e; }
+  .bar { fill: #c8d1da; }
+  .bar-hot { fill: #d92b2b; }
+  .bar-pick { fill: #1a56b8; }
+  .dot-ok { fill: #1a7f37; }
+  .dot-skip { fill: #d92b2b; }
+  .dot-idle { fill: #c8d1da; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .box-warn { fill: #2b2415; stroke: #a68321; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t-warn { fill: #e0b644; }
+    .mono { fill: #e6e9ec; }
+    .mono-big { fill: #e6e9ec; }
+    .mono-sm { fill: #9aa4ae; }
+    .line { stroke: #6e7781; }
+    .line-quiet { stroke: #363c43; }
+    .head { fill: #6e7781; }
+    .bar { fill: #3a424a; }
+    .bar-hot { fill: #f07a7a; }
+    .bar-pick { fill: #7ab0ff; }
+    .dot-ok { fill: #57ab68; }
+    .dot-skip { fill: #f07a7a; }
+    .dot-idle { fill: #3a424a; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="330" rx="8"/>
+
+<text class="t-strong" x="24" y="34">1ファイルはこの形にする</text>
+
+<rect class="box" x="24" y="54" width="440" height="252" rx="7"/>
+<rect class="box-quiet" x="24" y="54" width="440" height="98" rx="7"/>
+<rect class="box-quiet" x="24" y="130" width="440" height="22"/>
+<text class="mono-sm" x="42" y="78">---</text>
+<text class="mono-sm" x="42" y="98">name: feedback_date_freshness</text>
+<text class="mono-sm" x="42" y="118">description: 日付は書き込む直前に取り直す</text>
+<text class="mono-sm" x="42" y="138">type: feedback</text>
+<text class="mono-sm" x="42" y="158">---</text>
+
+<text class="t-sm" x="42" y="186">会話が中断され3日後に再開された際、冒頭で</text>
+<text class="t-sm" x="42" y="206">取った日付を使って誤った日付で公開した。</text>
+
+<text class="mono-sm" x="42" y="240">**Why:** 会話は日をまたぐことがあり、冒頭で</text>
+<text class="mono-sm" x="42" y="258">取った時刻は再開時点では古い。</text>
+
+<text class="mono-sm" x="42" y="288">**How to apply:** 書き込む直前に取り直す。</text>
+
+<path class="line" d="M464 100 H500"/>
+<path class="head" d="M500 95 l10 5 -10 5 z"/>
+<rect class="box-quiet" x="512" y="72" width="184" height="56" rx="6"/>
+<text class="t-strong" x="528" y="94">名前・一行説明・種別</text>
+<text class="t-xs" x="528" y="116">一行説明で関連判定される</text>
+
+<path class="line" d="M464 196 H500"/>
+<path class="head" d="M500 191 l10 5 -10 5 z"/>
+<rect class="box-quiet" x="512" y="168" width="184" height="56" rx="6"/>
+<text class="t-strong" x="528" y="190">何が起きたか</text>
+<text class="t-xs" x="528" y="212">絶対日付で書く（「先週」は禁止）</text>
+
+<path class="line" d="M464 264 H500"/>
+<path class="head" d="M500 259 l10 5 -10 5 z"/>
+<rect class="box-accent" x="512" y="236" width="184" height="70" rx="6"/>
+<text class="t-accent" x="528" y="258">Why と How to apply</text>
+<text class="t-xs" x="528" y="280">これが無いと、半年後に</text>
+<text class="t-xs" x="528" y="298">まだ有効か判断できない</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="290" viewBox="0 0 720 290" role="img" aria-label="異常を検知したときに自動で立つGitHub Issueの図。タイトルはサイト異常検知と日付、本文に検出した項目が並ぶ。既に開いているIssueがあるときは新しく立てず、そのIssueに再検知としてコメントを追加する。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .box-warn { fill: #fdf6e8; stroke: #d4a72c; stroke-width: 1.3; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13.5px; font-weight: 700; }
+  .t-bad { fill: #b02020; font-size: 13px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 13px; font-weight: 700; }
+  .t-warn { fill: #8a6100; font-size: 12px; }
+  .mono { fill: #1f2328; font-size: 13px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-big { fill: #1f2328; font-size: 21px; font-weight: 700; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-sm { fill: #616b76; font-size: 11px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .line { stroke: #8b949e; stroke-width: 1.4; fill: none; }
+  .line-quiet { stroke: #d5dae0; stroke-width: 1; fill: none; }
+  .head { fill: #8b949e; }
+  .bar { fill: #c8d1da; }
+  .bar-hot { fill: #d92b2b; }
+  .bar-pick { fill: #1a56b8; }
+  .dot-ok { fill: #1a7f37; }
+  .dot-skip { fill: #d92b2b; }
+  .dot-idle { fill: #c8d1da; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .box-warn { fill: #2b2415; stroke: #a68321; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t-warn { fill: #e0b644; }
+    .mono { fill: #e6e9ec; }
+    .mono-big { fill: #e6e9ec; }
+    .mono-sm { fill: #9aa4ae; }
+    .line { stroke: #6e7781; }
+    .line-quiet { stroke: #363c43; }
+    .head { fill: #6e7781; }
+    .bar { fill: #3a424a; }
+    .bar-hot { fill: #f07a7a; }
+    .bar-pick { fill: #7ab0ff; }
+    .dot-ok { fill: #57ab68; }
+    .dot-skip { fill: #f07a7a; }
+    .dot-idle { fill: #3a424a; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="290" rx="8"/>
+
+<text class="t-strong" x="24" y="34">異常のときだけ Issue が立つ</text>
+
+<rect class="box" x="24" y="52" width="672" height="140" rx="7"/>
+<rect class="box-quiet" x="24" y="52" width="672" height="36" rx="7"/>
+<rect class="box-quiet" x="24" y="72" width="672" height="16"/>
+<text class="t-strong" x="44" y="76">🚨 サイト異常検知: 2026-08-02</text>
+<rect class="box-bad" x="596" y="60" width="84" height="20" rx="10"/>
+<text class="t-bad" x="612" y="75">health-check</text>
+
+<text class="mono-sm" x="44" y="114">🚨 index.html 日付が古い: ページ 2026-08-01, 今日 2026-08-02（1日遅れ）</text>
+<text class="mono-sm" x="44" y="138">⚠️ charts.html サイズ異常: 1240 bytes（途中切れの可能性）</text>
+<text class="mono-sm" x="44" y="162">❌ vix.html HTTP 404</text>
+<text class="t-xs" x="44" y="182">検出した項目を全部並べる。1個直して再実行、の往復を避けるため</text>
+
+<path class="line" d="M360 192 V214"/>
+<path class="head" d="M355 214 l5 10 5 -10 z"/>
+<text class="t-sm" x="376" y="212">翌日も直っていなかったら</text>
+
+<rect class="box-quiet" x="24" y="224" width="672" height="52" rx="7"/>
+<text class="t-strong" x="44" y="248">🔁 2026-08-03 再検知</text>
+<text class="t-sm" x="44" y="268">新しいIssueは立てず、開いているIssueにコメントを足す（同じ通知で埋まらないように）</text>
+</svg>

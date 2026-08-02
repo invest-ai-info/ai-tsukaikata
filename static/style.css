@@ -183,11 +183,15 @@ a { color: var(--accent); }
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: 10px;
+  /* 画面幅に合わせて縮めると図中の文字が読めなくなるので、枠内で横スクロールさせる。
+     コードブロックと同じ扱い。ページ本体は横スクロールさせない */
+  overflow-x: auto;
 }
 
 .article-body .figure img {
   display: block;
   width: 100%;
+  min-width: 600px;
   height: auto;
 }
 

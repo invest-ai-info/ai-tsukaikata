@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="330" viewBox="0 0 720 330" role="img" aria-label="字幕が取れないときの3段階のフォールバック。1段目は字幕を要約する。取れなければ2段目としてタイトルと説明文だけで紹介文を書かせるが、このときAIは中身を見ていないので慎重な表現を強制する。それも失敗したら3段目としてその動画をスキップする。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .box-warn { fill: #fdf6e8; stroke: #d4a72c; stroke-width: 1.3; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13.5px; font-weight: 700; }
+  .t-bad { fill: #b02020; font-size: 13px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 13px; font-weight: 700; }
+  .t-warn { fill: #8a6100; font-size: 12px; }
+  .mono { fill: #1f2328; font-size: 13px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-big { fill: #1f2328; font-size: 21px; font-weight: 700; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-sm { fill: #616b76; font-size: 11px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .line { stroke: #8b949e; stroke-width: 1.4; fill: none; }
+  .line-quiet { stroke: #d5dae0; stroke-width: 1; fill: none; }
+  .head { fill: #8b949e; }
+  .bar { fill: #c8d1da; }
+  .bar-hot { fill: #d92b2b; }
+  .bar-pick { fill: #1a56b8; }
+  .dot-ok { fill: #1a7f37; }
+  .dot-skip { fill: #d92b2b; }
+  .dot-idle { fill: #c8d1da; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .box-warn { fill: #2b2415; stroke: #a68321; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t-warn { fill: #e0b644; }
+    .mono { fill: #e6e9ec; }
+    .mono-big { fill: #e6e9ec; }
+    .mono-sm { fill: #9aa4ae; }
+    .line { stroke: #6e7781; }
+    .line-quiet { stroke: #363c43; }
+    .head { fill: #6e7781; }
+    .bar { fill: #3a424a; }
+    .bar-hot { fill: #f07a7a; }
+    .bar-pick { fill: #7ab0ff; }
+    .dot-ok { fill: #57ab68; }
+    .dot-skip { fill: #f07a7a; }
+    .dot-idle { fill: #3a424a; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="330" rx="8"/>
+
+<text class="t-strong" x="24" y="34">字幕は「取れないことがある」前提で組む</text>
+<text class="t-sm" x="24" y="54">字幕が無い／投稿者が無効にしている／クラウドのIPからのアクセスが制限される、が重なります。</text>
+
+<rect class="box-good" x="24" y="74" width="672" height="62" rx="7"/>
+<circle class="dot-ok" cx="50" cy="105" r="11"/>
+<text class="t-good" x="46" y="110">1</text>
+<text class="t-good" x="76" y="100">字幕が取れた → 字幕を要約する</text>
+<text class="t-sm" x="76" y="122">最良。動画の中身に基づいた要約になる</text>
+
+<path class="line" d="M360 136 V152"/>
+<path class="head" d="M355 152 l5 10 5 -10 z"/>
+<text class="t-sm" x="376" y="150">取れなかった</text>
+
+<rect class="box-warn" x="24" y="162" width="672" height="86" rx="7"/>
+<circle class="dot-idle" cx="50" cy="193" r="11"/>
+<text class="t-warn" x="46" y="198">2</text>
+<text class="t-warn" x="76" y="188">タイトルと説明文だけで紹介文を書かせる</text>
+<text class="t-bad" x="76" y="212">AIは中身を見ていないのに、見てきたような要約を書きます。</text>
+<text class="t-sm" x="76" y="234">プロンプトで「未視聴である前提で、〜と思われる／〜の可能性、と書く」と縛る</text>
+
+<path class="line" d="M360 248 V264"/>
+<path class="head" d="M355 264 l5 10 5 -10 z"/>
+<text class="t-sm" x="376" y="262">それも失敗した</text>
+
+<rect class="box-quiet" x="24" y="274" width="672" height="44" rx="7"/>
+<circle class="dot-idle" cx="50" cy="296" r="11"/>
+<text class="t" x="46" y="301">3</text>
+<text class="t" x="76" y="301">その動画はスキップする（空の要約を載せない）</text>
+</svg>

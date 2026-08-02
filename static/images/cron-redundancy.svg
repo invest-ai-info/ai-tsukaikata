@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320" role="img" aria-label="スキップ対策として30分おきに4回仕掛けるタイムラインの図。1回目が動いた日は残り3回が「変更なし」で何もせず終わる。1回目がスキップされた日は2回目が拾うため、結果は同じになる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .box-warn { fill: #fdf6e8; stroke: #d4a72c; stroke-width: 1.3; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13.5px; font-weight: 700; }
+  .t-bad { fill: #b02020; font-size: 13px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 13px; font-weight: 700; }
+  .t-warn { fill: #8a6100; font-size: 12px; }
+  .mono { fill: #1f2328; font-size: 13px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-big { fill: #1f2328; font-size: 21px; font-weight: 700; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .mono-sm { fill: #616b76; font-size: 11px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .line { stroke: #8b949e; stroke-width: 1.4; fill: none; }
+  .line-quiet { stroke: #d5dae0; stroke-width: 1; fill: none; }
+  .head { fill: #8b949e; }
+  .bar { fill: #c8d1da; }
+  .bar-hot { fill: #d92b2b; }
+  .bar-pick { fill: #1a56b8; }
+  .dot-ok { fill: #1a7f37; }
+  .dot-skip { fill: #d92b2b; }
+  .dot-idle { fill: #c8d1da; }
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .box-warn { fill: #2b2415; stroke: #a68321; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t-warn { fill: #e0b644; }
+    .mono { fill: #e6e9ec; }
+    .mono-big { fill: #e6e9ec; }
+    .mono-sm { fill: #9aa4ae; }
+    .line { stroke: #6e7781; }
+    .line-quiet { stroke: #363c43; }
+    .head { fill: #6e7781; }
+    .bar { fill: #3a424a; }
+    .bar-hot { fill: #f07a7a; }
+    .bar-pick { fill: #7ab0ff; }
+    .dot-ok { fill: #57ab68; }
+    .dot-skip { fill: #f07a7a; }
+    .dot-idle { fill: #3a424a; }
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="720" height="320" rx="8"/>
+
+<text class="t-strong" x="24" y="34">1つの時刻に賭けず、30分おきに4回仕掛ける</text>
+
+<text class="mono-sm" x="90" y="70">7:27</text>
+<text class="mono-sm" x="248" y="70">7:57</text>
+<text class="mono-sm" x="406" y="70">8:27</text>
+<text class="mono-sm" x="564" y="70">8:57</text>
+
+<!-- 通常の日 -->
+<text class="t-sm" x="24" y="112">動いた日</text>
+<path class="line-quiet" d="M96 108 H676"/>
+<circle class="dot-ok" cx="104" cy="108" r="9"/>
+<circle class="dot-idle" cx="262" cy="108" r="7"/>
+<circle class="dot-idle" cx="420" cy="108" r="7"/>
+<circle class="dot-idle" cx="578" cy="108" r="7"/>
+<text class="t-good" x="88" y="138">更新</text>
+<text class="t-sm" x="216" y="138">変更なし</text>
+<text class="t-sm" x="374" y="138">変更なし</text>
+<text class="t-sm" x="532" y="138">変更なし</text>
+
+<!-- スキップされた日 -->
+<text class="t-sm" x="24" y="188">1回目がスキップされた日</text>
+<path class="line-quiet" d="M96 184 H676"/>
+<circle class="dot-skip" cx="104" cy="184" r="9"/>
+<circle class="dot-ok" cx="262" cy="184" r="9"/>
+<circle class="dot-idle" cx="420" cy="184" r="7"/>
+<circle class="dot-idle" cx="578" cy="184" r="7"/>
+<text class="t-bad" x="80" y="214">スキップ</text>
+<text class="t-good" x="246" y="214">更新</text>
+<text class="t-sm" x="374" y="214">変更なし</text>
+<text class="t-sm" x="532" y="214">変更なし</text>
+
+<rect class="box-accent" x="24" y="240" width="672" height="60" rx="7"/>
+<text class="t-accent" x="42" y="264">成立する条件は「2回目以降が無害であること」</text>
+<text class="t-sm" x="42" y="286">スクリプト側で「前回から変わっていなければ何もしない」と判定しておけば、4回動いても更新は1回だけ。</text>
+</svg>
