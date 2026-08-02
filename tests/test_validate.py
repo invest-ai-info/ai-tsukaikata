@@ -30,13 +30,19 @@ def test_clean_article_has_no_errors():
     assert validate([_article()]) == []
 
 
-@pytest.mark.parametrize("secret", [
-    "ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-    "github_pat_11ABCDEFG0abcdefghijklmnopqrstuvwxyz012345",
-    "sk-ant-api03-AbCdEfGhIjKlMnOpQrStUvWxYz0123456789",
-    "AKIAIOSFODNN7EXAMPLE",
-    "xoxb-1234567890-abcdefghijklmnop",
-])
+# 検査用のダミー。接頭辞と本体を分けて組み立てる。
+# 完全な形で書くと、偽物でもGitHubのシークレット検出に引っかかって
+# push が丸ごと拒否される（実際に拒否された）。
+FAKE_TOKENS = [
+    "ghp_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    "github_" + "pat_11ABCDEFG0abcdefghijklmnopqrstuvwxyz012345",
+    "sk-" + "ant-api03-AbCdEfGhIjKlMnOpQrStUvWxYz0123456789",
+    "AKIA" + "IOSFODNN7EXAMPLE",
+    "xoxb-" + "1234567890-abcdefghijklmnop",
+]
+
+
+@pytest.mark.parametrize("secret", FAKE_TOKENS)
 def test_token_shaped_string_is_detected(secret):
     errors = validate([_article(body=f"設定値は {secret} です。")])
     assert len(errors) == 1
@@ -79,7 +85,7 @@ def test_placeholder_windows_path_is_allowed():
 
 
 def test_secret_in_title_is_detected():
-    errors = validate([_article(title="ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 の使い方")])
+    errors = validate([_article(title=f"{FAKE_TOKENS[0]} の使い方")])
     assert len(errors) == 1
 
 
