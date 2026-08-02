@@ -240,9 +240,13 @@ a { color: var(--accent); }
   background: linear-gradient(transparent 56%, var(--mark-warn) 56%);
   color: var(--mark-warn-fg);
 }
-.article-body p { margin: 1.1rem 0; }
-.article-body ul, .article-body ol { padding-left: 1.5rem; }
-.article-body li { margin: 0.4rem 0; }
+/* 本文はゆったり組む。指示文（.prompt）とコード（pre）は自前で
+   line-height を持っているので、ここを広げても影響しない */
+.article-body { line-height: 2.5; }
+
+.article-body p { margin: 2.2rem 0; }
+.article-body ul, .article-body ol { padding-left: 1.5rem; margin: 2.2rem 0; }
+.article-body li { margin: 0.9rem 0; }
 
 .article-body blockquote {
   margin: 1.5rem 0;
@@ -277,10 +281,10 @@ a { color: var(--accent); }
   overflow: hidden;
 }
 
+/* 枠とヘッダで十分に区切れているので、中の左線は出さない */
 .article-body .prompt-box .prompt {
   margin: 0;
   border: 0;
-  border-left: 4px solid var(--accent);
   border-radius: 0;
 }
 
