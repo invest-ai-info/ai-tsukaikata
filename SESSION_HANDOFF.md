@@ -1,31 +1,62 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-08-02 16:30 JST
+最終更新: 2026-08-02 18:51 JST
 
 ---
 
 ## 現在地
 
-3段構えの**1段目が稼働中**。**2段目はコードと記事が完成し、`site` ブランチで人間のレビュー待ち**。
+**2段目のサイトが本番公開されました。** https://ai-tsukaikata.com
 
 | 段 | 内容 | 状態 |
 |---|---|---|
-| 1 | AI更新情報トラッカー | ✅ **稼働中**（2026-08-01〜） |
-| 2 | サイト本体 ai-tsukaikata.com | 🟡 **実装完了・未公開**。`site` ブランチ。次は下の3手 |
+| 1 | AI更新情報トラッカー | ✅ 稼働中（2026-08-01〜） |
+| 2 | サイト本体 ai-tsukaikata.com | ✅ **公開中**（2026-08-02〜） |
 | 3 | 使い分けマップ | ⬜ 保留（トラッカーがデータを貯めてから） |
 
 ---
 
-## 次のセッションでやること（2段目の公開）
+## 次のセッションで最初にやること
 
-コードも記事5本も完成している。残りは**人間にしかできない3手**。
+### 1. 未pushのコミットが1件ある（最優先で判断）
 
-1. **記事5本を読んで事実確認する**（← これが最優先）
-   ローカルでプレビューできる: `python -m src.build` してから、Claude に「ai-tsukaikata-preview を開いて」と頼む（`http://localhost:8791`）
-2. **`site` ブランチを `main` にマージして push**
-3. **GitHub側の設定**（下の「公開に必要な設定」を順に）
+```
+6a43ea1 ci: GitHub Actions のバージョンを上げる（Node.js 20 非推奨対応）
+```
 
-記事は実物（`tracker/` 配下、marketwatch の `health-check.yml` / `generate_youtube_summary.py`、`.claude` のメモリ）を読んで書いてあるが、**言い過ぎ・事実誤認の最終ゲートは人間**。設計書 §5 ④のとおり完全自動公開はしない。
+`main` がリモートより1コミット進んだ状態。**push の可否を運営者に確認してから**進めること。
+
+- 内容: checkout v4→v7 / setup-python v5→v7 / configure-pages v5→v6 / upload-pages-artifact v3→v5 / deploy-pages v4→v5
+- 各アクションの最新リリースをAPIで実測し、リリースノートで破壊的変更が無いことを確認済み
+- ⚠️ **トラッカーは稼働中**。push したら `AI Update Tracker` を手動実行して、壊れていないことを必ず確認する
+- 放置しても当面は動くが、Node.js 20 のサポート終了で止まる
+
+### 2. Enforce HTTPS が未設定
+
+`Settings → Pages` の **Enforce HTTPS** にチェックが入っていない。いまは押せる状態（DNS check successful）。
+入れないと `http://` で来た人がそのまま平文で閲覧する。
+
+### 3. Search Console 未登録
+
+`https://ai-tsukaikata.com/sitemap.xml` を送信する。
+
+### 4. 記事を20本まで増やす（AdSense申請の条件）
+
+いま5本。ネタは `content/_ideas.md`。**一番強い候補**は「AIに『実際に動かして確かめてから報告して』を徹底させる言い方だけを集めた記事」——5本すべてで一番効いた指示で、単独で1本にする価値がある。
+
+---
+
+## 公開までに詰まったこと（再発したら思い出す）
+
+**GitHubのDNSチェックが1時間「進行中」のまま止まった。**DNS設定自体は最初から正しかった（権威DNS・公開DNSとも Aレコード4件）のに、GitHub側が古い結果を掴んでいた。
+
+**直し方: Custom domain をいったん空にして Save → 入れ直して Save。** これで `DNS check successful` に変わり、証明書が発行された。
+
+- 入力欄を空にして保存しても、値は `ai-tsukaikata.com` に戻る。ビルド成果物の `CNAME` から復元されるため。**これは正常**
+- DNSは**エックスドメイン**（`ns1.xdomain.ne.jp`）で管理。Aレコード4件（ホスト名は空欄）＋ `www` の CNAME
+- **push が Push Protection で拒否された。**テストのダミートークンが Slack トークン形式に一致したため。GitHubのUIで「テストで使用」として許可して解決。以後、ダミーは接頭辞と本体を分けて組み立てる（`tests/test_validate.py` の `FAKE_TOKENS`）
+
+---
 
 ---
 
@@ -195,14 +226,17 @@ h2 は帯＋アイコンで「ここで話題が変わる」ことを見せる�
 - **`build/CNAME` の生成を消さない。** 生成HTMLをコミットしない方式では、artifact に CNAME が無いとデプロイのたびに独自ドメインが外れる
 - **記事の内部リンクは実在チェックが効く。** まだ書いていない記事へリンクするとビルドが落ちる。書いてから貼る
 
-### 公開に必要な設定（運営者の作業・未実施）
+### 公開の構成（2026-08-02 完了）
 
-1. `site` ブランチを `main` にマージして push
-2. `Settings → Pages → Source` を **GitHub Actions** に変更（初期値の "Deploy from a branch" のままだと deploy が失敗する）
-3. `Actions → Build & Deploy Site → Run workflow` で手動実行し、両ジョブが緑になるのを確認
-4. レジストラで DNS を設定（GitHub Pages の Apex 用 A レコード4本 + `www` の CNAME → `invest-ai-info.github.io`）。**IPは[公式ドキュメント](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)で現行値を確認してから入れる**
-5. `Settings → Pages → Custom domain` に `ai-tsukaikata.com` を入れて Save。DNS伝播後に `Enforce HTTPS`
-6. Google Search Console に登録し、`https://ai-tsukaikata.com/sitemap.xml` を送信
+| | |
+|---|---|
+| 本番URL | https://ai-tsukaikata.com |
+| ホスティング | GitHub Pages（Source = **GitHub Actions**。branch方式ではない） |
+| DNS | エックスドメイン。Aレコード4件（ホスト名 空欄）＋ `www` は CNAME → `invest-ai-info.github.io` |
+| 証明書 | GitHub が自動発行・自動更新 |
+| 配信 | `main` への push（`content/` `templates/` `static/` `src/` `requirements.txt` の変更時）→ テスト → ビルド → Pages |
+
+⚠️ **`build/CNAME` の生成を消さない。** 生成HTMLをコミットしない方式では、artifact に CNAME が無いとデプロイのたびに独自ドメインが外れる。
 
 ### 解決済み: 常駐ソフトとのファイル競合（2026-08-02）
 
