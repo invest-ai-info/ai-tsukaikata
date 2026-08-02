@@ -12,6 +12,8 @@
   --mark: rgba(255, 190, 10, 0.55);
   --mark-warn: rgba(217, 43, 43, 0.22);
   --mark-warn-fg: #9b1c1c;
+  --h2-bg: #eef3fb;
+  --h2-bar: #1a56b8;
   --max: 46rem;
 }
 
@@ -28,6 +30,8 @@
     --mark: rgba(255, 190, 10, 0.32);
     --mark-warn: rgba(240, 122, 122, 0.26);
     --mark-warn-fg: #ffb0b0;
+    --h2-bg: #1b2431;
+    --h2-bar: #7ab0ff;
   }
 }
 
@@ -163,14 +167,60 @@ a { color: var(--accent); }
 .recipe-meta dt { color: var(--muted); font-size: 0.85rem; margin: 0; }
 .recipe-meta dd { margin: 0; font-weight: 600; }
 
+/* h2 = 章の区切り。ここで話題が変わることが一目で分かるように、
+   アイコン付きの帯にする。アイコンは記事側で class を付けて選ぶ
+   （class 無しでも既定のアイコンが出るので、付け忘れても崩れない） */
 .article-body h2 {
-  font-size: 1.25rem;
-  margin: 2.75rem 0 0.9rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 3.4rem 0 1.3rem;
+  padding: 0.75rem 1rem;
+  background: var(--h2-bg);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--h2-bar);
+  border-radius: 8px;
 }
 
-.article-body h3 { font-size: 1.08rem; margin: 2rem 0 0.7rem; }
+.article-body h2::before {
+  content: "◆";
+  flex: none;
+  font-size: 1.05em;
+  line-height: 1;
+  color: var(--h2-bar);
+}
+
+/* 5ブロック構成に合わせたアイコン。設計書 §3 の並びと対応させる */
+.article-body h2.what::before { content: "🎯"; }
+.article-body h2.need::before { content: "📋"; }
+.article-body h2.ask::before { content: "💬"; }
+/* 異体字セレクタ付き。無いと環境によってモノクロの記号として描画される */
+.article-body h2.fix::before { content: "🛠️"; }
+.article-body h2.next::before { content: "🚀"; }
+
+/* h3 = 章の中の手順。h2 より弱く、でも区切りとしては分かるように */
+.article-body h3 {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin: 2.4rem 0 0.8rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--h2-bar);
+}
+
+/* 「うまくいかないときの言い直し方」の中の見出しは、
+   困りごとそのものなので警告色にする */
+.article-body h3.trouble {
+  border-left-color: var(--mark-warn-fg);
+}
+
+.article-body h3.trouble::before {
+  content: "？";
+  margin-right: 0.35rem;
+  color: var(--mark-warn-fg);
+  font-weight: 700;
+}
 
 /* 重要な一文。読み飛ばす人がここだけ拾えば筋が通るように使う。
    文字色は変えず下半分に色を敷く（マーカーを引いた形）。文字と背景の
