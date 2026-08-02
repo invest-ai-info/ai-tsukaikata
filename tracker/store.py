@@ -17,13 +17,19 @@ from .models import Update
 RETENTION_DAYS = 90
 FAILURE_THRESHOLD = 3
 
+# 何日あたらしい記事が出ていなければ「止まっている」とみなすか。
+# 実測（2026-08-02）でベンダーの静かな期間は最長でも2週間程度だったのに対し、
+# 実質停止していた Moonshot / Zhipu / Qwen は5〜7週。14日にすると通常の
+# 静かな期間まで拾って警告欄が読まれなくなるので、30日で切る。
+STALE_DAYS = 30
+
 # 保存直後の読み込みが常駐ソフトのスキャンとぶつかることがある（Windows）。
 # 数十ミリ秒で解けるので、少しだけ待って読み直す。
 LOCK_RETRY_DELAYS = (0.05, 0.1, 0.2)
 
 
 def empty_state() -> dict:
-    return {"uids": {}, "pending_minor": [], "failures": {}}
+    return {"uids": {}, "pending_minor": [], "failures": {}, "latest": {}}
 
 
 def load_state(path: Path) -> dict:
@@ -124,16 +130,63 @@ def dead_sources(state: dict) -> list[tuple[str, int, str]]:
     ]
 
 
+def record_latest(state: dict, source_id: str, updates: list[Update]) -> None:
+    """そのソースで観測した最新の公開日を記録する。
+
+    record_result が見るのは取得の成否と件数だけなので、更新が止まった
+    フィードは古い記事を返し続けて永久に健康に見える。中身が動いているかは
+    公開日で見るしかない。
+
+    ⚠️ 日付を巻き戻さないこと。フィードが一時的に古い記事だけ返した回に
+    上書きすると、止まっていないソースが突然「停止」に見える。
+    """
+    if not updates:
+        return
+    newest = max(update.published for update in updates)
+    current = state["latest"].get(source_id)
+    if current:
+        try:
+            if datetime.fromisoformat(current) >= newest:
+                return
+        except (TypeError, ValueError):
+            pass  # 壊れた記録は上書きして直す
+    state["latest"][source_id] = newest.isoformat()
+
+
+def stale_sources(state: dict, now: datetime) -> list[tuple[str, int]]:
+    """STALE_DAYS 以上あたらしい記事の出ていないソースを、古い順に返す。
+
+    記録の無いソースは出さない。「止まっている」ではなく「まだ分からない」で、
+    この機能より前に書かれた seen.json には latest が無いため。
+    """
+    result: list[tuple[str, int]] = []
+    for source_id, seen_at in state["latest"].items():
+        try:
+            latest = datetime.fromisoformat(seen_at)
+        except (TypeError, ValueError):
+            continue  # ここで落とすとダイジェスト送信ごと止まる
+        if latest.tzinfo is None:
+            latest = latest.replace(tzinfo=timezone.utc)
+        days = (now - latest).days
+        if days >= STALE_DAYS:
+            result.append((source_id, days))
+    result.sort(key=lambda item: (-item[1], item[0]))
+    return result
+
+
 def forget_removed_sources(state: dict, active_source_ids: set[str]) -> int:
-    """sources.yml から消えたソースの失敗記録を捨て、捨てた件数を返す。
+    """sources.yml から消えたソースの記録を捨て、捨てたソース数を返す。
 
     これが無いと、設定から外したソースが永久にダイジェストの死活警告に
     出続け、警告欄そのものが読まれなくなる。
     """
-    stale = [sid for sid in state["failures"] if sid not in active_source_ids]
-    for source_id in stale:
-        del state["failures"][source_id]
-    return len(stale)
+    dropped = set()
+    for key in ("failures", "latest"):
+        stale = [sid for sid in state[key] if sid not in active_source_ids]
+        for source_id in stale:
+            del state[key][source_id]
+            dropped.add(source_id)
+    return len(dropped)
 
 
 def prune(state: dict, now: datetime) -> int:

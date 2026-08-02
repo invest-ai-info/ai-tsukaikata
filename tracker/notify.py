@@ -30,19 +30,27 @@ def _one_line(text: str) -> str:
     return " ".join((text or "").split())
 
 
-def build_subject(mode: str, count: int, dead_count: int = 0) -> str:
+def build_subject(
+    mode: str, count: int, dead_count: int = 0, stale_count: int = 0
+) -> str:
     if mode == "major":
         return f"🚨 AI重要アップデート {count}件"
-    if count == 0 and dead_count:
-        return f"⚠️ AIトラッカー: {dead_count}件のソースが取得できていません"
+    trouble = dead_count + stale_count
+    if count == 0 and trouble:
+        return f"⚠️ AIトラッカー: {trouble}件のソースに問題があります"
     return f"📮 AI更新ダイジェスト {count}件"
 
 
 def build_body(
     updates: list[Update],
     dead: list[tuple[str, int, str]],
+    stale: list[tuple[str, int]] = (),
 ) -> tuple[str, str]:
-    """(plain, html) を返す。新しい順に並べる。"""
+    """(plain, html) を返す。新しい順に並べる。
+
+    dead と stale は別枠にする。前者は「取得できていない」、後者は
+    「取得はできるが中身が更新されていない」で、打つ手が違うため。
+    """
     ordered = sorted(updates, key=lambda u: u.published, reverse=True)
     shown = ordered[:MAX_ITEMS]
     omitted = len(ordered) - len(shown)
@@ -97,6 +105,20 @@ def build_body(
         body_html += (
             "<h3 style='font-size:14px'>取得できていないソース</h3>"
             f"<ul style='padding-left:18px'>{''.join(dead_items)}</ul>"
+        )
+
+    if stale:
+        plain += "\n--- 更新が止まっているソース ---\n"
+        stale_items = []
+        for source_id, days in stale:
+            plain += f"⚠️ {source_id}: {days}日あたらしい記事なし\n"
+            stale_items.append(
+                f"<li>⚠️ {html_mod.escape(source_id)}: "
+                f"{days}日あたらしい記事なし</li>"
+            )
+        body_html += (
+            "<h3 style='font-size:14px'>更新が止まっているソース</h3>"
+            f"<ul style='padding-left:18px'>{''.join(stale_items)}</ul>"
         )
 
     plain += f"\n{FOOTER}\n"

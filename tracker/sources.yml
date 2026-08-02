@@ -37,15 +37,9 @@ sources:
     url: https://deepmind.google/blog/rss.xml
 
   # --- xAI ---
-  # x.ai/news は403でbotブロック。迂回はせずHuggingFace経由で追う。
-  - id: hf-xai
-    vendor: xAI
-    label: xAI 新モデル
-    type: huggingface
-    org: xai-org
-
-  # x.ai は403、HuggingFace の xai-org も2025-08で停止しているため、
-  # Grok の新モデルは OpenRouter 経由で追う（2026-08-01 実測で grok-4.5 を捕捉）。
+  # x.ai/news は403でbotブロック。迂回はしない。
+  # HuggingFace の xai-org は2025-08で停止（2026-08-02 実測で344日更新なし）
+  # のため外した。OpenRouter が唯一の生きた経路。
   - id: openrouter-xai
     vendor: xAI
     label: Grok 新モデル
@@ -53,30 +47,32 @@ sources:
     org: x-ai
 
   # --- 中国系 ---
-  - id: qwen-blog
-    vendor: Alibaba Qwen
-    label: Qwen Blog
-    type: rss
-    url: https://qwenlm.github.io/blog/index.xml
-
-  - id: hf-qwen
+  # HuggingFace の org フィードは研究成果物リポジトリが大量に混ざるうえ、
+  # 実際に提供が始まったモデルが載るとは限らない。2026-08-02 の実測で
+  # Qwen 37日 / Moonshot 50日の更新途絶に対し、OpenRouter は同じ時点で
+  # Qwen 6日 / Moonshot 17日だった。提供中のモデルだけが載るぶん精度も高い。
+  - id: openrouter-qwen
     vendor: Alibaba Qwen
     label: Qwen 新モデル
-    type: huggingface
-    org: Qwen
+    type: openrouter
+    org: qwen
 
+  - id: openrouter-moonshot
+    vendor: Moonshot AI
+    label: Kimi 新モデル
+    type: openrouter
+    org: moonshotai
+
+  # DeepSeek は HuggingFace 側が生きている（実測2日）ので触らない。
   - id: hf-deepseek
     vendor: DeepSeek
     label: DeepSeek 新モデル
     type: huggingface
     org: deepseek-ai
 
-  - id: hf-moonshot
-    vendor: Moonshot AI
-    label: Kimi 新モデル
-    type: huggingface
-    org: moonshotai
-
+  # ⚠️ Zhipu は差し替えない。OpenRouter の z-ai も同じ 2026-06-17 の
+  # glm-5.2 が最新で、1日も新しくならない。これはソースの問題ではなく
+  # Zhipu 自体が出していないということ。停止警告に任せて実態を見る。
   - id: hf-zhipu
     vendor: Zhipu AI
     label: GLM 新モデル

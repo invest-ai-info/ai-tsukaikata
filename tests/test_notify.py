@@ -181,6 +181,20 @@ def test_subject_ignores_dead_count_when_items_present():
     assert build_subject("digest", 5, dead_count=1) == build_subject("digest", 5)
 
 
+def test_body_reports_sources_that_stopped_publishing():
+    # 取得はできているが中身が止まっているソース。dead とは別枠で出す。
+    plain, html_body = build_body([], [], [("hf-qwen", 47)])
+    for text in (plain, html_body):
+        assert "hf-qwen" in text
+        assert "47" in text
+
+
+def test_subject_flags_stale_sources_in_an_otherwise_empty_digest():
+    subject = build_subject("digest", 0, stale_count=3)
+    assert "0件" not in subject
+    assert "3" in subject
+
+
 def test_title_newlines_are_collapsed():
     plain, _ = build_body([_update(title="Broken\ntitle")], [])
     assert "[OpenAI] Broken title" in plain

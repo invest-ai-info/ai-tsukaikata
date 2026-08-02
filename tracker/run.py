@@ -74,6 +74,7 @@ def _collect(sources: list[dict], state: dict, fetcher) -> list:
     for source in _valid_sources(sources, state):
         updates, error = fetcher(source)
         store.record_result(state, source["id"], error, len(updates))
+        store.record_latest(state, source["id"], updates)
         collected.extend(classify(u, source["type"]) for u in updates)
     return collected
 
@@ -106,25 +107,36 @@ def run_check(*, sources, state_path, fetcher, mailer, now) -> int:
     return len(fresh)
 
 
-def run_digest(*, state_path, mailer) -> int:
-    """毎朝のダイジェスト。溜まった minor と死んだソースを1通にまとめる。"""
+def run_digest(*, state_path, mailer, now) -> int:
+    """毎朝のダイジェスト。溜まった minor と異常なソースを1通にまとめる。
+
+    異常は2種類ある。取得できていない(dead)ものと、取得はできるが中身が
+    止まっている(stale)もの。後者は失敗カウントが0のままなので、公開日を
+    見ないと永久に気づけない。
+    """
     state = store.load_state(state_path)
     pending = store.take_pending_minor(state)
     dead = store.dead_sources(state)
+    stale = store.stale_sources(state, now)
 
-    if not pending and not dead:
+    if not pending and not dead and not stale:
         print("ダイジェスト対象なし。送信しません")
         return 0
 
-    plain, html_body = notify.build_body(pending, dead)
+    plain, html_body = notify.build_body(pending, dead, stale)
     mailer(
-        notify.build_subject("digest", len(pending), dead_count=len(dead)),
+        notify.build_subject(
+            "digest", len(pending), dead_count=len(dead), stale_count=len(stale)
+        ),
         plain,
         html_body,
     )
     store.save_state(state_path, state)
 
-    print(f"ダイジェスト送信 {len(pending)}件（死活警告 {len(dead)}件）")
+    print(
+        f"ダイジェスト送信 {len(pending)}件"
+        f"（取得失敗 {len(dead)}件 / 更新停止 {len(stale)}件）"
+    )
     return len(pending)
 
 
@@ -161,7 +173,7 @@ def main(argv=None) -> int:
     now = datetime.now(timezone.utc)
 
     if args.mode == "digest":
-        run_digest(state_path=args.state, mailer=_default_mailer)
+        run_digest(state_path=args.state, mailer=_default_mailer, now=now)
         return 0
 
     sources = fetch_module.load_sources(args.sources)

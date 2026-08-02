@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
@@ -152,7 +152,7 @@ def test_digest_sends_queued_minor_and_clears(tmp_path):
         fetcher=_fetcher([_update("a", "Weekly notes")]),
         mailer=Mailer(), now=NOW,
     )
-    run_digest(state_path=path, mailer=mailer)
+    run_digest(state_path=path, mailer=mailer, now=NOW)
     assert len(mailer.sent) == 1
     assert load_state(path)["pending_minor"] == []
 
@@ -160,7 +160,7 @@ def test_digest_sends_queued_minor_and_clears(tmp_path):
 def test_digest_sends_nothing_when_queue_empty(tmp_path):
     path = tmp_path / "seen.json"
     mailer = Mailer()
-    run_digest(state_path=path, mailer=mailer)
+    run_digest(state_path=path, mailer=mailer, now=NOW)
     assert mailer.sent == []
 
 
@@ -171,7 +171,7 @@ def test_digest_sends_when_only_dead_sources_exist(tmp_path):
     save_state(path, state)
 
     mailer = Mailer()
-    run_digest(state_path=path, mailer=mailer)
+    run_digest(state_path=path, mailer=mailer, now=NOW)
     assert len(mailer.sent) == 1
     assert "0件" not in mailer.sent[0]
 
@@ -185,8 +185,57 @@ def test_digest_keeps_queue_when_send_fails(tmp_path):
         mailer=Mailer(), now=NOW,
     )
     with pytest.raises(RuntimeError):
-        run_digest(state_path=path, mailer=_boom)
+        run_digest(state_path=path, mailer=_boom, now=NOW)
     assert len(load_state(path)["pending_minor"]) == 1
+
+
+# --- 更新が止まったソースの警告 -------------------------------------------
+
+
+def _update_at(uid, published):
+    return Update(
+        uid=uid, source_id="s1", vendor="V", label="L",
+        title="Weekly notes", url=f"https://example.com/{uid}",
+        published=published, summary="",
+    )
+
+
+def test_check_records_the_newest_published_date_per_source(tmp_path):
+    path = tmp_path / "seen.json"
+    run_check(
+        sources=SOURCES, state_path=path,
+        fetcher=_fetcher([
+            _update_at("a", NOW - timedelta(days=3)),
+            _update_at("b", NOW),
+        ]),
+        mailer=Mailer(), now=NOW,
+    )
+    assert load_state(path)["latest"]["s1"] == NOW.isoformat()
+
+
+def test_digest_warns_when_a_source_stopped_publishing(tmp_path):
+    # 取得は成功し続けるので failures は空。それでも気づけること。
+    path = tmp_path / "seen.json"
+    state = empty_state()
+    state["latest"]["s1"] = (NOW - timedelta(days=45)).isoformat()
+    save_state(path, state)
+
+    mailer = Mailer()
+    run_digest(state_path=path, mailer=mailer, now=NOW)
+    assert len(mailer.sent) == 1
+    assert "0件" not in mailer.sent[0]
+
+
+def test_digest_stays_silent_when_a_source_is_merely_quiet(tmp_path):
+    # 20日の沈黙は通常の範囲。ここで鳴らすと警告欄が読まれなくなる。
+    path = tmp_path / "seen.json"
+    state = empty_state()
+    state["latest"]["s1"] = (NOW - timedelta(days=20)).isoformat()
+    save_state(path, state)
+
+    mailer = Mailer()
+    run_digest(state_path=path, mailer=mailer, now=NOW)
+    assert mailer.sent == []
 
 
 def test_check_skips_malformed_source_and_keeps_the_rest(tmp_path):

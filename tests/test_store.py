@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
+from tracker import store as store_module
 from tracker.models import Update
 from tracker.store import (
     dead_sources,
@@ -266,3 +267,98 @@ def test_save_state_gives_up_when_replace_never_succeeds(tmp_path, monkeypatch):
     monkeypatch.setattr("os.replace", always_blocked)
     with pytest.raises(PermissionError):
         save_state(path, empty_state())
+
+
+# --- 更新が止まったソースの検出 -------------------------------------------
+#
+# record_result は「取得できたか」しか見ない。凍ったフィードは古い記事を
+# 返し続けるので、失敗カウントは永久に0のまま健康に見える。実測で Moonshot /
+# Zhipu / Qwen が5〜7週止まっていたのに dead_sources は0件だった。
+# ここでは「中身が更新されているか」を公開日から見る。
+
+
+def _update_at(uid, published, source_id="s"):
+    return Update(
+        uid=uid, source_id=source_id, vendor="V", label="L",
+        title="t", url="https://example.com/x", published=published, summary="",
+    )
+
+
+def test_record_latest_stores_the_newest_published_date():
+    state = empty_state()
+    store_module.record_latest(state, "s1", [
+        _update_at("a", NOW - timedelta(days=5)),
+        _update_at("b", NOW - timedelta(days=1)),
+    ])
+    assert state["latest"]["s1"] == (NOW - timedelta(days=1)).isoformat()
+
+
+def test_record_latest_never_moves_the_date_backwards():
+    # フィードが古い記事だけ返した回に上書きすると日付が巻き戻り、
+    # 止まっていないソースが突然「停止」に見える。
+    state = empty_state()
+    state["latest"]["s1"] = NOW.isoformat()
+    store_module.record_latest(state, "s1", [_update_at("a", NOW - timedelta(days=10))])
+    assert state["latest"]["s1"] == NOW.isoformat()
+
+
+def test_record_latest_ignores_an_empty_fetch():
+    state = empty_state()
+    store_module.record_latest(state, "s1", [])
+    assert "s1" not in state["latest"]
+
+
+def test_stale_sources_flags_a_source_that_stopped_publishing():
+    state = empty_state()
+    state["latest"]["frozen"] = (NOW - timedelta(days=31)).isoformat()
+    assert store_module.stale_sources(state, NOW) == [("frozen", 31)]
+
+
+def test_stale_sources_ignores_a_source_that_published_recently():
+    state = empty_state()
+    state["latest"]["alive"] = (NOW - timedelta(days=29)).isoformat()
+    assert store_module.stale_sources(state, NOW) == []
+
+
+def test_stale_sources_treats_thirty_days_as_stale():
+    state = empty_state()
+    state["latest"]["edge"] = (NOW - timedelta(days=store_module.STALE_DAYS)).isoformat()
+    assert [sid for sid, _ in store_module.stale_sources(state, NOW)] == ["edge"]
+
+
+def test_stale_sources_ignores_sources_with_no_record():
+    # 記録が無いのは「止まっている」ではなく「まだ分からない」。
+    # 稼働中の seen.json には latest が無いので、初回実行で誤警告してはいけない。
+    assert store_module.stale_sources(empty_state(), NOW) == []
+
+
+def test_stale_sources_ignores_unparseable_dates():
+    # ここで落ちるとダイジェスト送信ごと止まる。警告を1件諦めるほうが軽い。
+    state = empty_state()
+    state["latest"]["broken"] = "not-a-date"
+    assert store_module.stale_sources(state, NOW) == []
+
+
+def test_stale_sources_lists_the_most_stale_first():
+    state = empty_state()
+    state["latest"]["a"] = (NOW - timedelta(days=35)).isoformat()
+    state["latest"]["b"] = (NOW - timedelta(days=60)).isoformat()
+    assert [sid for sid, _ in store_module.stale_sources(state, NOW)] == ["b", "a"]
+
+
+def test_forget_removed_sources_also_drops_latest_records():
+    # これが無いと、外したソースが永久に停止警告に出続けて警告欄が読まれなくなる。
+    state = empty_state()
+    state["latest"] = {"alive": NOW.isoformat(), "removed": NOW.isoformat()}
+    forget_removed_sources(state, {"alive"})
+    assert set(state["latest"]) == {"alive"}
+
+
+def test_load_state_adds_latest_to_a_file_written_before_the_feature(tmp_path):
+    # 稼働中の seen.json には latest が無い。落ちずに空で補われること。
+    path = tmp_path / "seen.json"
+    path.write_text(
+        json.dumps({"uids": {}, "pending_minor": [], "failures": {}}),
+        encoding="utf-8",
+    )
+    assert load_state(path)["latest"] == {}
