@@ -177,3 +177,92 @@ def test_forget_removed_sources_drops_orphaned_failures():
     record_result(state, "removed", "Timeout", 0)
     assert forget_removed_sources(state, {"alive"}) == 1
     assert set(state["failures"]) == {"alive"}
+
+
+def test_load_state_retries_when_the_file_is_briefly_locked(tmp_path, monkeypatch):
+    """常駐ソフトが os.replace 直後のファイルを掴む競合から復帰できること。
+
+    Windows + リアルタイムスキャンの環境で、保存直後の読み込みが
+    PermissionError になることがある。数十ミリ秒で解けるので待って読み直す。
+    """
+    path = tmp_path / "seen.json"
+    save_state(path, empty_state())
+
+    real_open = open
+    calls = {"n": 0}
+
+    def flaky_open(*args, **kwargs):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise PermissionError(13, "Permission denied")
+        return real_open(*args, **kwargs)
+
+    monkeypatch.setattr("builtins.open", flaky_open)
+    assert load_state(path) == empty_state()
+    assert calls["n"] == 2
+
+
+def test_load_state_gives_up_when_the_lock_never_clears(tmp_path, monkeypatch):
+    """本物の権限問題は握り潰さず、落ちて人間に気づかせる。"""
+    path = tmp_path / "seen.json"
+    save_state(path, empty_state())
+
+    def always_denied(*args, **kwargs):
+        raise PermissionError(13, "Permission denied")
+
+    monkeypatch.setattr("builtins.open", always_denied)
+    with pytest.raises(PermissionError):
+        load_state(path)
+
+
+def test_load_state_does_not_retry_on_broken_json(tmp_path, monkeypatch):
+    """壊れたファイルは即座に落とす。リトライしても直らないし、
+    握り潰すと全uidが新着に戻って過去のmajorまで再送される。"""
+    path = tmp_path / "seen.json"
+    path.write_text("{壊れている", encoding="utf-8")
+
+    calls = {"n": 0}
+    real_open = open
+
+    def counting_open(*args, **kwargs):
+        calls["n"] += 1
+        return real_open(*args, **kwargs)
+
+    monkeypatch.setattr("builtins.open", counting_open)
+    with pytest.raises(json.JSONDecodeError):
+        load_state(path)
+    assert calls["n"] == 1
+
+
+def test_save_state_retries_when_replace_is_briefly_blocked(tmp_path, monkeypatch):
+    """os.replace が常駐ソフトのスキャンとぶつかる競合から復帰できること。
+
+    実測ではこちらが本命で、Windows で WinError 32 として出る。
+    """
+    path = tmp_path / "seen.json"
+    real_replace = os.replace
+    calls = {"n": 0}
+
+    def flaky_replace(src, dst):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise PermissionError(32, "別のプロセスが使用中です")
+        return real_replace(src, dst)
+
+    monkeypatch.setattr("os.replace", flaky_replace)
+    save_state(path, empty_state())
+
+    assert calls["n"] == 2
+    assert load_state(path) == empty_state()
+
+
+def test_save_state_gives_up_when_replace_never_succeeds(tmp_path, monkeypatch):
+    """本物の権限問題は握り潰さず落とす。"""
+    path = tmp_path / "seen.json"
+
+    def always_blocked(src, dst):
+        raise PermissionError(32, "別のプロセスが使用中です")
+
+    monkeypatch.setattr("os.replace", always_blocked)
+    with pytest.raises(PermissionError):
+        save_state(path, empty_state())

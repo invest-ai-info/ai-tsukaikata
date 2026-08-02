@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -15,6 +16,10 @@ from .models import Update
 
 RETENTION_DAYS = 90
 FAILURE_THRESHOLD = 3
+
+# 保存直後の読み込みが常駐ソフトのスキャンとぶつかることがある（Windows）。
+# 数十ミリ秒で解けるので、少しだけ待って読み直す。
+LOCK_RETRY_DELAYS = (0.05, 0.1, 0.2)
 
 
 def empty_state() -> dict:
@@ -24,8 +29,22 @@ def empty_state() -> dict:
 def load_state(path: Path) -> dict:
     if not Path(path).exists():
         return empty_state()
-    with open(path, encoding="utf-8") as f:
-        state = json.load(f)
+
+    # PermissionError だけ待って読み直す。壊れたJSONは即座に落とす
+    # （リトライしても直らないし、握り潰すと全uidが新着に戻って
+    #   過去の major まで再送される）。
+    for delay in LOCK_RETRY_DELAYS:
+        try:
+            with open(path, encoding="utf-8") as f:
+                state = json.load(f)
+            break
+        except PermissionError:
+            time.sleep(delay)
+    else:
+        # 最後の1回。ここでも駄目なら本物の権限問題なので落として気づかせる
+        with open(path, encoding="utf-8") as f:
+            state = json.load(f)
+
     for key, default in empty_state().items():
         state.setdefault(key, default)
     return state
@@ -42,7 +61,16 @@ def save_state(path: Path, state: dict) -> None:
     tmp = path.with_name(path.name + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2, sort_keys=True)
-    os.replace(tmp, path)
+
+    # 置換も常駐ソフトのスキャンとぶつかる（Windows の WinError 32）。
+    # 実測ではここが本命で、load_state 側より高い頻度で当たる。
+    for delay in LOCK_RETRY_DELAYS:
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:
+            time.sleep(delay)
+    os.replace(tmp, path)  # 最後の1回。駄目なら落として気づかせる
 
 
 def select_unseen(state: dict, updates: list[Update]) -> list[Update]:
