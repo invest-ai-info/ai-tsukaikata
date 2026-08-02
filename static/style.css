@@ -8,6 +8,7 @@
   --accent: #1a56b8;
   --code-bg: #f5f7f9;
   --card-bg: #fbfcfd;
+  --prompt-bg: #f4f8fe;
   --max: 46rem;
 }
 
@@ -20,6 +21,7 @@
     --accent: #7ab0ff;
     --code-bg: #1c2126;
     --card-bg: #191d21;
+    --prompt-bg: #172230;
   }
 }
 
@@ -175,6 +177,21 @@ a { color: var(--accent); }
 }
 
 .article-body img { max-width: 100%; height: auto; }
+
+/* AIへの指示文。このサイトで一番コピーされるものなので、一番目立たせる。
+   pre-wrap で改行をそのまま出す（コピーしたときに原文どおりになるように） */
+.article-body .prompt {
+  margin: 1.2rem 0;
+  padding: 1rem 1.2rem;
+  background: var(--prompt-bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  white-space: pre-wrap;
+  line-height: 1.85;
+}
+
+.article-body .prompt + .prompt { margin-top: -0.4rem; }
 
 /* 図。本文の理解を助けるものなので、本文より少し目立たせて区切る */
 .article-body .figure {
