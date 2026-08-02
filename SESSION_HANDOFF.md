@@ -88,7 +88,25 @@
 | 生成 | `python -m src.build` → `build/` に13ファイル。`build/` は `.gitignore` 済み |
 | プレビュー | `ai-tsukaikata-preview`（`http://localhost:8791`）。設定は `.claude/launch.json` |
 | 記事 | レシピ5本 + about / privacy。すべて実運用中の自動化から執筆 |
+| 図 | `static/images/` に18枚（手描きSVG）。記事に `<figure>` で埋め込み |
 | 配信 | `.github/workflows/build.yml` — push で テスト → ビルド → Pages |
+
+### 図の足し方
+
+`static/images/` にSVGを置き、記事に生HTMLで書くだけ。
+
+```html
+<figure class="figure">
+<img src="/static/images/なにか.svg" alt="読み上げでも意味が通る説明">
+<figcaption>キャプション</figcaption>
+</figure>
+```
+
+- **参照先の実在と `alt` は `validate.py` が強制する。** 存在しない画像を貼るとビルドが落ちる
+- SVGには `width`/`height`/`viewBox` を全部書く（無いとレイアウトシフトする）
+- SVGに `<style>` を持たせ、`@media (prefers-color-scheme: dark)` を入れる。`<img>` 経由でもダークモードは効く。**外部CSSは当たらない**ので配色はSVGの中に持つ
+- viewBox幅は720で揃えてある。CSSが `min-width: 600px` を効かせるので、スマホでは枠内で横スクロールする（縮めると図中の文字が5px相当になって読めない）
+- **文字のはみ出しは目視では分からない。** 追加したらブラウザで `getBBox()` を測って viewBox 内に収まっているか確認する（実際に2枚はみ出していた）
 
 計画書: `docs/superpowers/plans/2026-08-01-ai-tsukaikata-site.md`
 
@@ -109,11 +127,24 @@
 5. `Settings → Pages → Custom domain` に `ai-tsukaikata.com` を入れて Save。DNS伝播後に `Enforce HTTPS`
 6. Google Search Console に登録し、`https://ai-tsukaikata.com/sitemap.xml` を送信
 
-### 検証済みであること（2026-08-01）
+### 既知のノイズ: テストがたまに赤くなる
 
-- 220 passed
+`test_digest_sends_when_only_dead_sources_exist` が **全テスト実行の約3%** で `PermissionError` で落ちる（`load_state` の読み込み）。
+
+- **コードの問題ではない。** 図の追加前のコミットで70回回して2回落ちる、同じ再現率。単体では 0/400 で再現しない
+- この環境の **Norton 360** が `os.replace` 直後のファイルを掴む競合が濃厚（`.bat` を消される・requests のSSLが落ちる、と同系統）
+- **GitHub Actions（ubuntu-latest）とプロダクションには影響しない**
+- 直すなら `load_state` に短いリトライ。「壊れたファイルを握り潰すな」には抵触しない（JSONの破損は従来どおり落ちる）。稼働中の1段目に触るので未実施
+- **赤くなったらまず1回再実行する。** 同じテストが同じ理由で落ちているだけなら、これ
+
+### 検証済みであること（2026-08-01〜02）
+
+- 230 passed
 - 実弾テスト: 機密（GitHubトークン・生メールアドレス・`C:\Users\` 絶対パス）とリンク切れ・広告表記漏れを含む記事を `content/` に置いてビルド → **5件すべてを一度に検出して中止し、`build/` は1バイトも変わらなかった**
 - ローカルプレビューで、CSS適用・スマホ幅375pxで横スクロールなし・コードブロックが各自の枠内で横スクロール（12個中10個）・コンソールエラーなし を確認
+- 図18枚すべてで、参照先が200・`viewBox`あり・`width`/`height`あり・ダークモード対応あり・`alt`は最短94文字 を確認
+- 図中テキストの `getBBox()` を全18枚で実測し、viewBox からのはみ出しゼロ（当初2枚はみ出していたので2行に分割して修正済み）
+- スマホ幅375pxでは図が枠内で横スクロールし、図中の最小文字は約9.6px。デスクトップ1280pxではスクロールなし
 
 ### 次に書く記事
 
