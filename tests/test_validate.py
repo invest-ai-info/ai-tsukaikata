@@ -210,6 +210,85 @@ def test_markdown_emphasis_inside_prompt_is_detected():
     assert any("指示文" in error for error in errors)
 
 
+# --- 記事の作法（これまで目視で確認していたもの） -------------------------
+#
+# マーカーの数え上げと「h2の数とclass付きの数の突き合わせ」は、引き継ぎメモに
+# 手作業として書かれていた。実際に2026-08-02、マーカー14個の記事を手で数えて
+# 気づいた。人の注意力に頼る限り、いつか通り抜ける。
+
+
+def _marks(count, warn=0):
+    plain = "".join(f"<mark>目印{i}</mark>" for i in range(count - warn))
+    warns = "".join(f'<mark class="warn">警告{i}</mark>' for i in range(warn))
+    return plain + warns
+
+
+def test_marker_count_at_the_limit_passes():
+    assert validate([_article(body=_marks(13, warn=5))]) == []
+
+
+def test_too_many_markers_is_detected():
+    errors = validate([_article(body=_marks(14, warn=5))])
+    assert any("マーカー" in error and "14" in error for error in errors)
+
+
+def test_too_many_warning_markers_is_detected():
+    # 赤は「やると事故る」だけに使う。増やすと効かなくなる。
+    errors = validate([_article(body=_marks(13, warn=6))])
+    assert any("警告" in error and "6" in error for error in errors)
+
+
+def test_article_without_markers_passes():
+    # 下限は課さない。短い記事で永久に消えない偽陽性になるため。
+    assert validate([_article(body="マーカーのない記事です。")]) == []
+
+
+SECTIONS = (
+    "## これで何ができるか {: .what }\n\n本文。\n\n"
+    "## 前提 {: .need }\n\n本文。\n\n"
+    "## AIへの頼み方 {: .ask }\n\n本文。\n\n"
+    "## うまくいかないときの言い直し方 {: .fix }\n\n本文。\n\n"
+    "## 応用・次の一手 {: .next }\n\n本文。\n"
+)
+
+
+def test_known_section_classes_pass():
+    assert validate([_article(body=SECTIONS)]) == []
+
+
+def test_unknown_heading_class_is_detected():
+    # 誤字は既定アイコンが出るだけで、静かに間違ったまま公開される。
+    body = SECTIONS.replace("{: .what }", "{: .waht }")
+    errors = validate([_article(body=body)])
+    assert any("waht" in error for error in errors)
+
+
+def test_h2_missing_its_class_is_detected():
+    # 引き継ぎメモが「ブラウザでh2の数とclass付きの数を突き合わせる」と
+    # 書いていた手作業がこれ。1つ付け忘れても見た目は崩れない。
+    body = SECTIONS.replace("## 前提 {: .need }", "## 前提")
+    errors = validate([_article(body=body)])
+    assert any("class" in error for error in errors)
+
+
+def test_headings_entirely_without_class_pass():
+    # 固定ページ（about / privacy）は既定アイコンで運用している。
+    body = "## 見出しA\n\n本文。\n\n## 見出しB\n\n本文。\n"
+    assert validate([_article(body=body, category="pages", slug="about")]) == []
+
+
+def test_h3_without_class_is_allowed():
+    # h3 に class を付けるのは「言い直し方」の節だけ。混在が正常。
+    body = SECTIONS + "\n### 手順のひとつ\n\n本文。\n\n### 詰まったとき {: .trouble }\n\n本文。\n"
+    assert validate([_article(body=body)]) == []
+
+
+def test_unknown_h3_class_is_detected():
+    body = SECTIONS + "\n### 詰まったとき {: .trubble }\n\n本文。\n"
+    errors = validate([_article(body=body)])
+    assert any("trubble" in error for error in errors)
+
+
 def test_all_errors_are_collected_not_just_the_first():
     body = (
         "連絡は taro.yamada@gmail.com へ。\n\n"

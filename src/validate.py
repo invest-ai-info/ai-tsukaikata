@@ -53,6 +53,21 @@ AFFILIATE_PATTERNS = (
 )
 DISCLOSURE_WORDS = ("広告", "PR", "アフィリエイト", "プロモーション")
 
+# マーカーは「読み飛ばす人がそこだけ拾えば筋が通る」ための目印なので、
+# 増やすと目印でなくなる。上限だけを課し、下限は課さない（短い記事で
+# 永久に消えない偽陽性になり、検査全体の信用を落とすため）。
+MARK_MAX = 13
+MARK_WARN_MAX = 5
+MARK_RE = re.compile(r"<mark\b")
+MARK_WARN_RE = re.compile(r'<mark class="warn"')
+
+# 見出しのclassは付け忘れても既定アイコンが出るだけで、見た目が崩れない。
+# つまり目視では気づけない。誤字も同じ。
+SECTION_CLASSES = frozenset({"what", "need", "ask", "fix", "next"})
+TROUBLE_CLASSES = frozenset({"trouble"})
+HEADING_RE = re.compile(r"<(h2|h3)\b([^>]*)>")
+CLASS_ATTR_RE = re.compile(r'class="([^"]*)"')
+
 INTERNAL_LINK_RE = re.compile(r'href="(/[^"]*)"')
 PROMPT_RE = re.compile(r'<div class="prompt">(.*?)</div>', re.DOTALL)
 IMG_TAG_RE = re.compile(r"<img\b[^>]*>")
@@ -157,6 +172,56 @@ def _image_errors(where: str, body_html: str, static_paths: set[str] | None) -> 
     return errors
 
 
+def _marker_errors(where: str, body_html: str) -> list[str]:
+    """マーカーの数を数える。2026-08-02 まで人間が手で数えていた工程。"""
+    errors = []
+    total = len(MARK_RE.findall(body_html))
+    warns = len(MARK_WARN_RE.findall(body_html))
+    if total > MARK_MAX:
+        errors.append(
+            f"{where}: マーカーが{total}個あります"
+            f"（上限{MARK_MAX}個。増やすと目印として働きません）"
+        )
+    if warns > MARK_WARN_MAX:
+        errors.append(
+            f"{where}: 警告マーカー（赤）が{warns}個あります"
+            f"（上限{MARK_WARN_MAX}個。「やると事故る」だけに使わないと効かなくなります）"
+        )
+    return errors
+
+
+def _heading_errors(where: str, body_html: str) -> list[str]:
+    """見出しのclassを検査する。
+
+    誤字も付け忘れも、既定アイコンが出るだけで見た目は崩れない。
+    ブラウザで数を突き合わせる手作業をここに置き換える。
+    """
+    errors = []
+    h2_classes: list[str] = []
+
+    for match in HEADING_RE.finditer(body_html):
+        level, attrs = match.group(1), match.group(2)
+        found = CLASS_ATTR_RE.search(attrs)
+        css_class = found.group(1).strip() if found else ""
+        allowed = SECTION_CLASSES if level == "h2" else TROUBLE_CLASSES
+        if css_class and css_class not in allowed:
+            errors.append(
+                f"{where}: {level} に知らない class が付いています: {css_class}"
+                f"（{' / '.join(sorted(allowed))} のいずれか）"
+            )
+        if level == "h2":
+            h2_classes.append(css_class)
+
+    # 全部付いていないのは固定ページの正常な形。混ざっているのが付け忘れ。
+    if any(h2_classes) and not all(h2_classes):
+        missing = sum(1 for css_class in h2_classes if not css_class)
+        errors.append(
+            f"{where}: h2 が{len(h2_classes)}個あるうち{missing}個に class がありません"
+            "（付け忘れても見た目は崩れないので、ここで止めます）"
+        )
+    return errors
+
+
 def validate(
     articles: list[Article],
     static_paths: set[str] | None = None,
@@ -196,6 +261,8 @@ def validate(
         errors += _link_errors(where, article.body_html, valid_paths, static_paths)
         errors += _image_errors(where, article.body_html, static_paths)
         errors += _prompt_errors(where, article.body_html)
+        errors += _marker_errors(where, article.body_html)
+        errors += _heading_errors(where, article.body_html)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(
