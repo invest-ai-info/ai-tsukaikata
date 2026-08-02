@@ -11,7 +11,7 @@ SITE_URL = "https://ai-tsukaikata.com"
 CUSTOM_DOMAIN = "ai-tsukaikata.com"
 SITE_DESCRIPTION = (
     "プログラミングなしで、AIに頼んで自動化を作る方法。"
-    "実際に本番で動いている仕組みと、それを作らせた指示文をそのまま公開しています。"
+    "使った指示文をそのまま載せ、なぜその言い方が効くのかまで書いています。"
 )
 SITE_LANG = "ja"
 
@@ -21,7 +21,7 @@ LISTED_CATEGORIES = ("recipes", "tools")
 CATEGORIES = {
     "recipes": {
         "label": "レシピ",
-        "description": "実際に動かしている自動化と、それをAIに作らせた指示文。コピーしてそのまま使えます。",
+        "description": "AIに頼んで自動化を作る手順と、そのとき使った指示文。コピーしてそのまま使えます。",
     },
     "tools": {
         "label": "ツール",
