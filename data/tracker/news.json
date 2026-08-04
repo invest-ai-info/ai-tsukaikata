@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-04T18:05:22.407010+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-04T17:02:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Mariano-Florentino (Tino) Cuéllar will join Anthropic as its first Chief Global Affairs Officer.",
+      "summary_ja": "Anthropic社に初の役職者が就任しました。\nマリアノ・クエジャル氏がChief Global Affairs Officerに。",
+      "summary_source": "gemini",
+      "title": "Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer",
+      "uid": "090649ee691179b9",
+      "url": "https://www.anthropic.com/news/tino-cuellar",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-04T15:37:58.863476+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -25,6 +39,20 @@
       "uid": "3b859604a9edf5fa",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-04T18:05:22.407010+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-04T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build.",
+      "summary_ja": "ChatGPT WorkとCodexに教育用プラグインが登場。\n小中高や大学の教師、学生の学習・教育・研究を支援。",
+      "summary_source": "gemini",
+      "title": "New ways to learn and teach with ChatGPT Work and Codex",
+      "uid": "1cd7206d43933b0c",
+      "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-08-04T11:35:58.926237+00:00",

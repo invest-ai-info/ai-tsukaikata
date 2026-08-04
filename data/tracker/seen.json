@@ -1,7 +1,7 @@
 {
   "failures": {},
   "latest": {
-    "anthropic-news": "2026-07-30T15:00:00+00:00",
+    "anthropic-news": "2026-08-04T17:02:00+00:00",
     "anthropic-sdk": "2026-07-28T17:38:09+00:00",
     "claude-code": "2026-08-04T00:14:23+00:00",
     "deepmind-blog": "2026-07-30T15:00:59+00:00",
@@ -9,7 +9,7 @@
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-03T22:00:00+00:00",
+    "openai-news": "2026-08-04T00:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -71,6 +71,28 @@
       "uid": "8e1e7ef4c1267057",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-04T17:02:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Mariano-Florentino (Tino) Cuéllar will join Anthropic as its first Chief Global Affairs Officer.",
+      "title": "Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer",
+      "uid": "090649ee691179b9",
+      "url": "https://www.anthropic.com/news/tino-cuellar",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-04T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build.",
+      "title": "New ways to learn and teach with ChatGPT Work and Codex",
+      "uid": "1cd7206d43933b0c",
+      "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -87,6 +109,7 @@
     "061d4c8734585cfc": "2026-08-01T12:16:42.309603+00:00",
     "073e85b875b6623b": "2026-08-01T12:16:42.309603+00:00",
     "07e70d3d81c34e52": "2026-08-01T12:16:42.309603+00:00",
+    "090649ee691179b9": "2026-08-04T18:05:22.407010+00:00",
     "090a1ca9f566731e": "2026-08-01T12:16:42.309603+00:00",
     "0a4eb0445e3fd13b": "2026-08-01T12:16:42.309603+00:00",
     "0a6622bf6fc689b2": "2026-08-01T12:16:42.309603+00:00",
@@ -117,6 +140,7 @@
     "1a24794f576e817f": "2026-08-01T12:16:42.309603+00:00",
     "1addbd1846d983a4": "2026-08-01T12:16:42.309603+00:00",
     "1afaad08576a9b3a": "2026-08-01T12:16:42.309603+00:00",
+    "1cd7206d43933b0c": "2026-08-04T18:05:22.407010+00:00",
     "1d11d028a39c3f19": "2026-08-01T12:16:42.309603+00:00",
     "1f4d3e238d486dc4": "2026-08-01T12:16:42.309603+00:00",
     "1f9b5150bdae204d": "2026-08-01T12:16:42.309603+00:00",
