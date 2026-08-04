@@ -73,7 +73,7 @@ Anthropic は 2026年7月24日に **Claude Opus 5** を公開しました（出�
 
 移行ガイドは「**確認してから答えて」という指示は外すよう勧めています**。Opus 5 は言われなくても自分の作業を確認するので、残しておくと確認しすぎになる、という説明です（出典: 同上）。
 
-なお「速いモード（fast mode）」があります。<mark>公式は出力の速さが最大2.5倍で、料金は入力$10・出力$50（通常の2倍）と説明しています</mark>（出典: <https://platform.claude.com/docs/en/build-with-claude/fast-mode>）。ただし研究プレビューという扱いで、利用には申し込みが要ります。Amazon・Google・Microsoft の各クラウド経由では使えない、とも書かれています。
+なお「速いモード（fast mode）」があります。公式は出力の速さが最大2.5倍で、料金は入力$10・出力$50（通常の2倍）と説明しています（出典: <https://platform.claude.com/docs/en/build-with-claude/fast-mode>）。ただし研究プレビューという扱いで、利用には申し込みが要ります。Amazon・Google・Microsoft の各クラウド経由では使えない、とも書かれています。
 
 ## 他社の最上位モデルとの比較
 
@@ -89,7 +89,7 @@ Anthropic は 2026年7月24日に **Claude Opus 5** を公開しました（出�
 
 出典: Claude 各モデルは <https://platform.claude.com/docs/en/about-claude/pricing> と <https://platform.claude.com/docs/en/about-claude/models/overview>、GPT の料金は <https://developers.openai.com/api/docs/pricing>、GPT の読める量と締め切りは <https://developers.openai.com/api/docs/models>、Gemini の料金は <https://ai.google.dev/gemini-api/docs/pricing>、Gemini の読める量は <https://deepmind.google/models/gemini/pro/>
 
-参考までに、OpenAI の公式料金ページには最上位の `gpt-5.5-pro` も載っていて、入力$30.00・出力$180.00（長い入力のときは入力$60.00・出力$270.00）とされています（出典: <https://developers.openai.com/api/docs/pricing>）。
+参考までに、OpenAI の公式料金ページには最上位の `gpt-5.5-pro` も載っていて、入力$30.00・出力$180.00（短い入力のとき）とされています。**このモデルには「長い入力」の行がありません**——料金ページには「272Kトークン未満」という但し書きだけが付いています（出典: <https://developers.openai.com/api/docs/pricing>）。
 
 **この表は、そのまま「どれが安いか」の表としては読めません。**理由を4つ書きます。
 
@@ -119,7 +119,7 @@ Anthropic は 2026年7月24日に **Claude Opus 5** を公開しました（出�
 
 **この記事で分からないこと**
 
-実際に使ったときの体感、日本語での品質、返答が返ってくるまでの待ち時間。<mark class="warn">これらは公式ページに数字がなく、運営者も試していないので書けません</mark>。
+実際に使ったときの体感、日本語での品質、返答が返ってくるまでの待ち時間。これらは公式ページに数字がなく、運営者も試していないので書けません。
 
 ## 出典一覧
 

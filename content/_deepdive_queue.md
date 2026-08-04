@@ -33,5 +33,8 @@
 
 ## 処理済み
 
-- https://www.anthropic.com/news/claude-opus-5 → content/_draft-claude-opus-5.md（2026-08-04）
-  - 同日、OpenAI の公式数字を足して全面的に書き直し（2026-08-04・3回目）
+- https://www.anthropic.com/news/claude-opus-5 → **公開済み** content/tools/claude-opus-5.md（2026-08-04）
+  - 同日、OpenAI の公式数字を足して全面的に書き直し（3回目）→ 人間が検証して公開。
+  - ⚠️ 検証で1件の誤りを発見: `gpt-5.5-pro` の「長い入力」の料金（$60/$270）は**一次情報に存在せず**、
+    他モデルの比率（×2 / ×1.5）からの外挿だった。公開前に削除済み。
+    **数字は書けたかどうかではなく、出典に在るかどうかで見ること。**
