@@ -73,6 +73,15 @@ def test_prompt_forbids_inventing_facts():
     assert "推測" in prompt
 
 
+def test_prompt_forbids_filler_lines():
+    # 初回の実測（2026-08-04・59件）で、3行目が全件「〜に影響」の定型文になった。
+    # 「3行目=誰に関係するか」と型を固定したせいで、書くことが無くても埋めにいく。
+    # 行数を固定せず、埋め草を名指しで禁止する。
+    prompt = build_prompt([_item()])
+    assert "に影響" in prompt          # 禁止例として名指ししていること
+    assert "2行" in prompt             # 短くてよいと許可していること
+
+
 # --- 応答の解釈 ---
 
 
