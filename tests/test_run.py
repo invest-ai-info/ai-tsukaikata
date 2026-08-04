@@ -357,6 +357,49 @@ def test_check_does_not_archive_the_same_item_twice(tmp_path):
     assert len(load_news(news_path_for(state))["items"]) == 1
 
 
+def test_summarize_fills_only_announcement_items(tmp_path):
+    from tracker.run import run_summarize
+    from tracker.store import save_news
+
+    news = {"items": [
+        {"uid": "a", "source_id": "s1", "title": "Introducing X", "summary": "",
+         "published": NOW.isoformat()},
+        {"uid": "b", "source_id": "hf", "title": "org/Model-v2", "summary": "",
+         "published": NOW.isoformat()},
+    ]}
+    path = tmp_path / "news.json"
+    save_news(path, news)
+
+    added = run_summarize(
+        news_path=path,
+        source_types={"s1": "rss", "hf": "huggingface"},
+        client=lambda prompt: '[{"uid": "a", "summary_ja": "3行の要約"}]',
+    )
+    assert added == 1
+    items = {i["uid"]: i for i in load_news(path)["items"]}
+    assert items["a"]["summary_ja"] == "3行の要約"
+    assert "summary_ja" not in items["b"]
+
+
+def test_summarize_without_key_does_not_fail_the_run(monkeypatch, tmp_path):
+    # ここで exit 1 になると、後続の既読コミットが止まって記事が再送される。
+    import tracker.run as run_module
+
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    sources = tmp_path / "sources.yml"
+    sources.write_text(
+        "sources:\n  - id: a\n    vendor: V\n    label: L\n"
+        "    type: rss\n    url: https://example.com/feed\n",
+        encoding="utf-8",
+    )
+    code = run_module.main([
+        "--mode", "summarize",
+        "--sources", str(sources),
+        "--state", str(tmp_path / "seen.json"),
+    ])
+    assert code == 0
+
+
 def test_check_archives_even_when_mail_fails(tmp_path):
     # アーカイブは送信の成否と無関係。送れなかった回の記事が抜けると穴になる。
     state = tmp_path / "seen.json"

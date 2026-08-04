@@ -11,12 +11,13 @@ fetcher と mailer は引数で差し替えられるようにしてある。テ�
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 from . import fetch as fetch_module
-from . import notify, store
+from . import notify, store, summarize
 from .classify import classify
 
 DEFAULT_SOURCES = Path(__file__).parent / "sources.yml"
@@ -149,6 +150,25 @@ def run_digest(*, state_path, mailer, now) -> int:
     return len(pending)
 
 
+def run_summarize(*, news_path, source_types, client) -> int:
+    """アーカイブのうち、まだ要約の無いお知らせに日本語の要約を付ける。
+
+    メール送信とは別の実行にしてある。要約は派生データなので、Geminiが
+    落ちている日にメールまで止まるのは筋が悪い。
+    """
+    news = store.load_news(news_path)
+    targets = [i for i in news["items"] if summarize.needs_summary(i, source_types)]
+    if not targets:
+        print("要約が必要な記事はありません")
+        return 0
+
+    added = summarize.apply_summaries(targets, client)
+    if added:
+        store.save_news(news_path, news)
+    print(f"要約 {added}件（対象 {len(targets)}件・残りは次の実行で）")
+    return added
+
+
 def run_bootstrap(*, sources, state_path, fetcher, mailer, now) -> int:
     """初回セットアップ。全件を既読にするだけで、1通も送らない。
 
@@ -166,7 +186,11 @@ def run_bootstrap(*, sources, state_path, fetcher, mailer, now) -> int:
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="AI更新情報トラッカー")
-    parser.add_argument("--mode", choices=["check", "digest", "bootstrap"], required=True)
+    parser.add_argument(
+        "--mode",
+        choices=["check", "digest", "bootstrap", "summarize"],
+        required=True,
+    )
     parser.add_argument("--sources", type=Path, default=DEFAULT_SOURCES)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
     args = parser.parse_args(argv)
@@ -183,6 +207,22 @@ def main(argv=None) -> int:
 
     if args.mode == "digest":
         run_digest(state_path=args.state, mailer=_default_mailer, now=now)
+        return 0
+
+    if args.mode == "summarize":
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            # ここで exit 1 にしない。この後に控える既読状態のコミットが
+            # 止まると、送信済みの記事が未読に戻って再送される。
+            print("GEMINI_API_KEY が未設定のため要約しません（記事の収集には影響しません）")
+            return 0
+        sources = fetch_module.load_sources(args.sources)
+        run_summarize(
+            news_path=store.news_path_for(args.state),
+            source_types={s["id"]: s["type"] for s in sources
+                          if s.get("id") and s.get("type")},
+            client=summarize.gemini_client(api_key),
+        )
         return 0
 
     sources = fetch_module.load_sources(args.sources)

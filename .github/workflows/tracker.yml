@@ -20,6 +20,7 @@ jobs:
       GMAIL_USER: ${{ secrets.GMAIL_USER }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
       ALERT_RECIPIENT: ${{ secrets.ALERT_RECIPIENT }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     steps:
       - uses: actions/checkout@v7
 
@@ -32,6 +33,13 @@ jobs:
 
       - name: 新着をチェック
         run: python -m tracker.run --mode check
+
+      # 要約は派生データ。失敗しても次のコミットを止めないこと——止まると
+      # 送信済みの記事が未読に戻って再送される。コード側でも例外を投げないが、
+      # 想定外のクラッシュでも巻き込まないよう二重に守る。
+      - name: 日本語の要約を付ける
+        continue-on-error: true
+        run: python -m tracker.run --mode summarize
 
       - name: 既読状態とアーカイブをコミット
         run: |
