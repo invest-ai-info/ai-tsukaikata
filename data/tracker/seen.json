@@ -3,7 +3,7 @@
   "latest": {
     "anthropic-news": "2026-08-04T17:02:00+00:00",
     "anthropic-sdk": "2026-07-28T17:38:09+00:00",
-    "claude-code": "2026-08-04T00:14:23+00:00",
+    "claude-code": "2026-08-04T22:39:55+00:00",
     "deepmind-blog": "2026-07-30T15:00:59+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
@@ -104,6 +104,17 @@
       "uid": "79a297680f147c41",
       "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-04T22:39:55+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session…",
+      "title": "v2.1.222",
+      "uid": "23894ac3cc20aaef",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -164,6 +175,7 @@
     "22b238993e072940": "2026-08-01T12:16:42.309603+00:00",
     "22bf12b402da1696": "2026-08-01T12:16:42.309603+00:00",
     "233168dd42596c8b": "2026-08-01T12:16:42.309603+00:00",
+    "23894ac3cc20aaef": "2026-08-04T23:27:29.115493+00:00",
     "23be6e6cd2295d4b": "2026-08-01T12:16:42.309603+00:00",
     "25208758a5bb4102": "2026-08-01T12:16:42.309603+00:00",
     "26b7e2e66770bbba": "2026-08-01T12:16:42.309603+00:00",

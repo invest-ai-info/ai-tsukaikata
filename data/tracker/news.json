@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-04T23:27:29.115493+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-04T22:39:55+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session…",
+      "title": "v2.1.222",
+      "uid": "23894ac3cc20aaef",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-04T21:38:59.013970+00:00",
       "importance": "minor",
       "label": "OpenAI News",
