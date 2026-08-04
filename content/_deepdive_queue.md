@@ -14,7 +14,7 @@
 
 ## 待ち行列
 
-- [ ] https://www.anthropic.com/news/claude-opus-5
+- [x] https://www.anthropic.com/news/claude-opus-5
   - 2026-08-04 1回目: `Host not in allowlist: www.anthropic.com` の403で取得できず停止（記録は正しい挙動）。
     環境のネットワークアクセスを「カスタム」にして各社ドメインを追加し、解消。経緯は SESSION_HANDOFF.md 参照。
   - 2026-08-04 2回目: 取得成功。下書きを作成。
@@ -24,7 +24,14 @@
     `platform.claude.com`）は到達する。他社比較を書くなら、次に許可リストへ足すのは OpenAI。
   - 2026-08-04 3回目: 許可リストに `*.openai.com` を追加したので再実行。**OpenAI の公式料金ページの数字を
     入れて書き直すこと。**前の版は git に残っているので、悪くなったら戻せる。
+  - 2026-08-04 3回目の結果: **完了**。OpenAI の公式料金・公式モデル一覧を実際に読んで書き直した。
+    ⚠️ **`openai.com/api/pricing/` は403のまま**（プロキシではなく先方が返す403）。読めるのは
+    **`developers.openai.com/api/docs/pricing`** と **`/api/docs/models`**。
+    `platform.openai.com/docs/pricing` は 301 で developers 側へ飛ぶので、そちらを直接叩くのが速い。
+    ⚠️ OpenAI の料金表は「短い入力／長い入力」の2段だが、**境目のトークン数がページに書かれていない**。
+    記事には「公表されていない」と明記した。埋めたくなっても推測で書かないこと。
 
 ## 処理済み
 
 - https://www.anthropic.com/news/claude-opus-5 → content/_draft-claude-opus-5.md（2026-08-04）
+  - 同日、OpenAI の公式数字を足して全面的に書き直し（2026-08-04・3回目）
