@@ -6,7 +6,7 @@ import pytest
 from tracker.models import Update
 from tracker.notify import MAX_ITEMS
 from tracker.run import run_bootstrap, run_check, run_digest
-from tracker.store import empty_state, load_state, save_state
+from tracker.store import empty_state, load_news, load_state, news_path_for, save_state
 
 NOW = datetime(2026, 8, 1, 12, 0, tzinfo=timezone.utc)
 
@@ -308,3 +308,62 @@ def test_main_allows_bootstrap_without_state_file(tmp_path, monkeypatch):
         "--state", str(tmp_path / "seen.json"),
     ])
     assert code == 0
+
+
+# --- ニュースのアーカイブ ---
+
+
+def test_check_archives_new_updates(tmp_path):
+    state = tmp_path / "seen.json"
+    run_check(
+        sources=SOURCES, state_path=state,
+        fetcher=_fetcher([_update("a", "Introducing X")]),
+        mailer=Mailer(), now=NOW,
+    )
+    items = load_news(news_path_for(state))["items"]
+    assert [i["title"] for i in items] == ["Introducing X"]
+    assert items[0]["url"] == "https://example.com/a"
+
+
+def test_check_archives_minor_too(tmp_path):
+    # メールに即時で出ないものこそ、あとから見返す価値がある。
+    state = tmp_path / "seen.json"
+    run_check(
+        sources=SOURCES, state_path=state,
+        fetcher=_fetcher([_update("a", "Weekly notes")]),
+        mailer=Mailer(), now=NOW,
+    )
+    assert len(load_news(news_path_for(state))["items"]) == 1
+
+
+def test_check_keeps_importance_in_the_archive(tmp_path):
+    state = tmp_path / "seen.json"
+    run_check(
+        sources=SOURCES, state_path=state,
+        fetcher=_fetcher([_update("a", "Introducing X"), _update("b", "Weekly notes")]),
+        mailer=Mailer(), now=NOW,
+    )
+    by_uid = {i["uid"]: i["importance"] for i in load_news(news_path_for(state))["items"]}
+    assert by_uid == {"a": "major", "b": "minor"}
+
+
+def test_check_does_not_archive_the_same_item_twice(tmp_path):
+    state = tmp_path / "seen.json"
+    fetcher = _fetcher([_update("a", "Introducing X")])
+    run_check(sources=SOURCES, state_path=state, fetcher=fetcher,
+              mailer=Mailer(), now=NOW)
+    run_check(sources=SOURCES, state_path=state, fetcher=fetcher,
+              mailer=Mailer(), now=NOW + timedelta(hours=1))
+    assert len(load_news(news_path_for(state))["items"]) == 1
+
+
+def test_check_archives_even_when_mail_fails(tmp_path):
+    # アーカイブは送信の成否と無関係。送れなかった回の記事が抜けると穴になる。
+    state = tmp_path / "seen.json"
+    with pytest.raises(RuntimeError):
+        run_check(
+            sources=SOURCES, state_path=state,
+            fetcher=_fetcher([_update("a", "Introducing X")]),
+            mailer=_boom, now=NOW,
+        )
+    assert len(load_news(news_path_for(state))["items"]) == 1

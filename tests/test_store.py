@@ -8,14 +8,20 @@ import pytest
 from tracker import store as store_module
 from tracker.models import Update
 from tracker.store import (
+    append_news,
     dead_sources,
+    empty_news,
     empty_state,
     forget_removed_sources,
+    load_news,
     load_state,
     mark_seen,
+    news_path_for,
     prune,
+    prune_news,
     queue_minor,
     record_result,
+    save_news,
     save_state,
     select_unseen,
     take_pending_minor,
@@ -362,3 +368,95 @@ def test_load_state_adds_latest_to_a_file_written_before_the_feature(tmp_path):
         encoding="utf-8",
     )
     assert load_state(path)["latest"] == {}
+
+
+# --- ニュースのアーカイブ（サイト掲載の材料） ---
+#
+# seen.json は「いつ見たか」しか持たない＝記事の中身はどこにも残っていなかった。
+# 掲載するにはここに貯める。状態（seen.json）とは別ファイルにする。用途も寿命も
+# 違うし、サイト側が状態ファイルの形に依存しないほうがよいため。
+
+
+def _dated(uid, published, title="t"):
+    return Update(
+        uid=uid, source_id="s", vendor="V", label="L",
+        title=title, url="https://example.com/x", published=published, summary="",
+    )
+
+
+def test_news_path_sits_next_to_the_state_file(tmp_path):
+    assert news_path_for(tmp_path / "seen.json") == tmp_path / "news.json"
+
+
+def test_load_news_returns_empty_when_file_missing(tmp_path):
+    assert load_news(tmp_path / "nope.json") == empty_news()
+
+
+def test_save_and_load_news_roundtrip(tmp_path):
+    path = tmp_path / "sub" / "news.json"
+    news = empty_news()
+    append_news(news, [_update("a", title="タイトル")], NOW)
+    save_news(path, news)
+    assert load_news(path)["items"][0]["title"] == "タイトル"
+
+
+def test_append_news_records_when_it_was_first_seen(tmp_path):
+    news = empty_news()
+    append_news(news, [_update("a")], NOW)
+    assert news["items"][0]["first_seen"] == NOW.isoformat()
+
+
+def test_append_news_returns_number_added():
+    news = empty_news()
+    assert append_news(news, [_update("a"), _update("b")], NOW) == 2
+
+
+def test_append_news_ignores_uid_already_archived():
+    news = empty_news()
+    append_news(news, [_update("a")], NOW)
+    added = append_news(news, [_update("a")], NOW + timedelta(days=1))
+    assert added == 0
+    assert len(news["items"]) == 1
+
+
+def test_append_news_keeps_the_original_first_seen():
+    # 2回目に見たときの時刻で上書きすると「いつ届いたか」が狂う。
+    news = empty_news()
+    append_news(news, [_update("a")], NOW)
+    append_news(news, [_update("a")], NOW + timedelta(days=1))
+    assert news["items"][0]["first_seen"] == NOW.isoformat()
+
+
+def test_append_news_sorts_newest_first():
+    news = empty_news()
+    old = _dated("old", NOW - timedelta(days=2), title="古い")
+    new = _dated("new", NOW, title="新しい")
+    append_news(news, [old, new], NOW)
+    assert [i["title"] for i in news["items"]] == ["新しい", "古い"]
+
+
+def test_prune_news_drops_items_older_than_retention():
+    news = empty_news()
+    stale = _dated("stale", NOW - timedelta(days=store_module.NEWS_RETENTION_DAYS + 1))
+    fresh = _dated("fresh", NOW)
+    append_news(news, [stale, fresh], NOW)
+    assert prune_news(news, NOW) == 1
+    assert [i["uid"] for i in news["items"]] == ["fresh"]
+
+
+def test_prune_news_caps_the_item_count(monkeypatch):
+    monkeypatch.setattr(store_module, "NEWS_MAX_ITEMS", 3)
+    news = empty_news()
+    items = [_dated(f"u{n}", NOW - timedelta(hours=n)) for n in range(6)]
+    append_news(news, items, NOW)
+    prune_news(news, NOW)
+    # 新しい順に残る
+    assert [i["uid"] for i in news["items"]] == ["u0", "u1", "u2"]
+
+
+def test_load_news_raises_on_corrupt_file_rather_than_resetting(tmp_path):
+    # 握り潰すと集めた履歴が黙って消える。seen.json と同じく落として気づかせる。
+    path = tmp_path / "news.json"
+    path.write_text("{壊れている", encoding="utf-8")
+    with pytest.raises(json.JSONDecodeError):
+        load_news(path)

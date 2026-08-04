@@ -32,44 +32,37 @@ def empty_state() -> dict:
     return {"uids": {}, "pending_minor": [], "failures": {}, "latest": {}}
 
 
-def load_state(path: Path) -> dict:
-    if not Path(path).exists():
-        return empty_state()
+def _load_json(path: Path):
+    """PermissionError だけ待って読み直す。壊れたJSONは即座に落とす。
 
-    # PermissionError だけ待って読み直す。壊れたJSONは即座に落とす
-    # （リトライしても直らないし、握り潰すと全uidが新着に戻って
-    #   過去の major まで再送される）。
+    リトライしても直らないし、握り潰すと全uidが新着に戻って過去の major まで
+    再送される。落ちて人間に気づかせるのが正しい。
+    """
     for delay in LOCK_RETRY_DELAYS:
         try:
             with open(path, encoding="utf-8") as f:
-                state = json.load(f)
-            break
+                return json.load(f)
         except PermissionError:
             time.sleep(delay)
-    else:
-        # 最後の1回。ここでも駄目なら本物の権限問題なので落として気づかせる
-        with open(path, encoding="utf-8") as f:
-            state = json.load(f)
-
-    for key, default in empty_state().items():
-        state.setdefault(key, default)
-    return state
+    # 最後の1回。ここでも駄目なら本物の権限問題なので落として気づかせる
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
-def save_state(path: Path, state: dict) -> None:
+def _save_json(path: Path, data: dict) -> None:
     """一時ファイルに書いてから置換する。
 
     直接 "w" で開くと書き込み前にファイルが0バイトに切り詰められ、途中で
-    落ちると壊れた seen.json が残る。そうなると以降の実行が毎回落ちる。
+    落ちると壊れたファイルが残る。そうなると以降の実行が毎回落ちる。
     """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2, sort_keys=True)
+        json.dump(data, f, ensure_ascii=False, indent=2, sort_keys=True)
 
     # 置換も常駐ソフトのスキャンとぶつかる（Windows の WinError 32）。
-    # 実測ではここが本命で、load_state 側より高い頻度で当たる。
+    # 実測ではここが本命で、読み込み側より高い頻度で当たる。
     for delay in LOCK_RETRY_DELAYS:
         try:
             os.replace(tmp, path)
@@ -77,6 +70,19 @@ def save_state(path: Path, state: dict) -> None:
         except PermissionError:
             time.sleep(delay)
     os.replace(tmp, path)  # 最後の1回。駄目なら落として気づかせる
+
+
+def load_state(path: Path) -> dict:
+    if not Path(path).exists():
+        return empty_state()
+    state = _load_json(path)
+    for key, default in empty_state().items():
+        state.setdefault(key, default)
+    return state
+
+
+def save_state(path: Path, state: dict) -> None:
+    _save_json(path, state)
 
 
 def select_unseen(state: dict, updates: list[Update]) -> list[Update]:
@@ -187,6 +193,78 @@ def forget_removed_sources(state: dict, active_source_ids: set[str]) -> int:
             del state[key][source_id]
             dropped.add(source_id)
     return len(dropped)
+
+
+# --- ニュースのアーカイブ ---
+#
+# seen.json は uid と「いつ見たか」しか持たない。記事の中身はどこにも残って
+# いなかったので、サイトに載せるにはここに貯める。状態とは別ファイルにする：
+# 用途も寿命も違うし、サイト側がトラッカーの内部状態の形に依存しないほうがよい。
+
+NEWS_MAX_ITEMS = 500
+NEWS_RETENTION_DAYS = 90
+
+
+def empty_news() -> dict:
+    return {"items": []}
+
+
+def news_path_for(state_path: Path) -> Path:
+    """アーカイブは状態ファイルの隣に置く。
+
+    テストが tmp_path を渡せばアーカイブも一緒に隔離される。
+    """
+    return Path(state_path).with_name("news.json")
+
+
+def _published_at(item: dict) -> datetime:
+    value = datetime.fromisoformat(item["published"])
+    return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+
+
+def load_news(path: Path) -> dict:
+    if not Path(path).exists():
+        return empty_news()
+    news = _load_json(path)
+    news.setdefault("items", [])
+    return news
+
+
+def save_news(path: Path, news: dict) -> None:
+    _save_json(path, news)
+
+
+def append_news(news: dict, updates: list[Update], now: datetime) -> int:
+    """まだ載っていない記事だけ足して、足した件数を返す。
+
+    first_seen は最初に見た時刻のまま据え置く。2回目の観測で上書きすると
+    「いつ届いたか」が狂う。uid で弾くので、同じ記事を何度渡しても増えない。
+    """
+    known = {item["uid"] for item in news["items"]}
+    added = 0
+    for update in updates:
+        if update.uid in known:
+            continue
+        entry = update.to_dict()
+        entry["first_seen"] = now.isoformat()
+        news["items"].append(entry)
+        known.add(update.uid)
+        added += 1
+    news["items"].sort(key=_published_at, reverse=True)
+    return added
+
+
+def prune_news(news: dict, now: datetime) -> int:
+    """古い記事と上限超過分を落として、落とした件数を返す。
+
+    毎回コミットされるファイルなので、際限なく伸ばすと git が重くなる。
+    """
+    before = len(news["items"])
+    cutoff = now - timedelta(days=NEWS_RETENTION_DAYS)
+    kept = [item for item in news["items"] if _published_at(item) >= cutoff]
+    kept.sort(key=_published_at, reverse=True)
+    news["items"] = kept[:NEWS_MAX_ITEMS]
+    return before - len(news["items"])
 
 
 def prune(state: dict, now: datetime) -> int:

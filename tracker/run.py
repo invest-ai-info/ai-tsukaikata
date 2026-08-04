@@ -79,11 +79,20 @@ def _collect(sources: list[dict], state: dict, fetcher) -> list:
     return collected
 
 
-def run_check(*, sources, state_path, fetcher, mailer, now) -> int:
+def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None) -> int:
     """毎時チェック。major は即送信、minor はダイジェスト用に溜める。"""
     state = store.load_state(state_path)
     collected = _collect(sources, state, fetcher)
     fresh = store.select_unseen(state, collected)
+
+    # アーカイブは送信より先に書く。送信に失敗した回の記事が抜けると、
+    # あとから埋められない穴になるため。uid で重複を弾くので、送信に失敗して
+    # 次の回で再送されても二重にはならない。
+    archive_path = news_path or store.news_path_for(state_path)
+    archive = store.load_news(archive_path)
+    store.append_news(archive, fresh, now)
+    store.prune_news(archive, now)
+    store.save_news(archive_path, archive)
 
     major = [u for u in fresh if u.importance == "major"]
     minor = [u for u in fresh if u.importance == "minor"]
