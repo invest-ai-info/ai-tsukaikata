@@ -14,7 +14,7 @@
 
 ## 待ち行列
 
-- [x] https://www.anthropic.com/news/claude-opus-5
+- [ ] https://www.anthropic.com/news/claude-opus-5
   - 2026-08-04 1回目: `Host not in allowlist: www.anthropic.com` の403で取得できず停止（記録は正しい挙動）。
     環境のネットワークアクセスを「カスタム」にして各社ドメインを追加し、解消。経緯は SESSION_HANDOFF.md 参照。
   - 2026-08-04 2回目: 取得成功。下書きを作成。
@@ -22,6 +22,8 @@
     プロキシが `CONNECT tunnel failed, response 403` を返す＝先方のbotブロックではなく経路の遮断）。
     Google（`ai.google.dev` / `deepmind.google`）と Anthropic（`www.anthropic.com` /
     `platform.claude.com`）は到達する。他社比較を書くなら、次に許可リストへ足すのは OpenAI。
+  - 2026-08-04 3回目: 許可リストに `*.openai.com` を追加したので再実行。**OpenAI の公式料金ページの数字を
+    入れて書き直すこと。**前の版は git に残っているので、悪くなったら戻せる。
 
 ## 処理済み
 
