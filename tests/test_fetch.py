@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 from datetime import timedelta, timezone
 from pathlib import Path
 
@@ -8,6 +9,7 @@ from tracker.fetch import (
     _to_utc,
     fetch_source,
     load_sources,
+    parse_anthropic_news,
     parse_feed,
     parse_huggingface,
     parse_openrouter,
@@ -198,6 +200,76 @@ def test_parse_openrouter_sorts_newest_first():
 def test_parse_openrouter_skips_entry_without_created():
     updates = parse_openrouter(OR_SOURCE, _read("sample_openrouter.json"))
     assert "x-ai/no-timestamp" not in [u.title for u in updates]
+
+
+NEWS_SOURCE = {"id": "anthropic-news", "vendor": "Anthropic",
+               "label": "Anthropic 公式ニュース", "type": "anthropic_news"}
+
+
+def _news():
+    return parse_anthropic_news(NEWS_SOURCE, _read("sample_anthropic_news.html"))
+
+
+def test_parse_anthropic_news_reads_items_newest_first():
+    assert [u.title for u in _news()] == [
+        "Introducing Thing",
+        "Investigating three real-world incidents",
+        "We’re inviting hard questions",
+        'The "best" model yet',
+    ]
+
+
+def test_parse_anthropic_news_builds_article_urls():
+    assert _news()[0].url == "https://www.anthropic.com/news/introducing-thing"
+
+
+def test_parse_anthropic_news_dedupes_by_slug():
+    # 同じ記事が「注目」と一覧の両方に埋め込まれるため、実物でも重複する。
+    assert len([u for u in _news() if u.url.endswith("/introducing-thing")]) == 1
+
+
+def test_parse_anthropic_news_keeps_non_ascii_intact():
+    # unicode_escape で復号すると "We’re" が "Weâ€™re" に化ける。json で復号すること。
+    titles = [u.title for u in _news()]
+    assert "We’re inviting hard questions" in titles
+    assert not any("â" in t for t in titles)
+
+
+def test_parse_anthropic_news_unescapes_quotes_in_title_and_summary():
+    item = next(u for u in _news() if u.url.endswith("/quoted-title-post"))
+    assert item.title == 'The "best" model yet'
+    assert item.summary == 'He said "hello" loudly.'
+
+
+def test_parse_anthropic_news_null_summary_becomes_empty():
+    item = next(u for u in _news() if u.url.endswith("/no-summary-post"))
+    assert item.summary == ""
+
+
+def test_parse_anthropic_news_published_is_utc_aware():
+    published = _news()[0].published
+    assert published.tzinfo is not None
+    assert published.utcoffset() == timedelta(0)
+    assert (published.year, published.month, published.day) == (2026, 8, 1)
+
+
+def test_parse_anthropic_news_raises_when_payload_is_gone():
+    # 見た目のマークアップは残したまま、埋め込みデータだけ消えた状態。
+    # CSSクラス名を頼りに拾っていたら、ここで「1件取れた」ことになってしまう。
+    # ハッシュ付きクラス名はビルドごとに変わるので、拾ってはいけない。
+    html = _read("sample_anthropic_news.html")
+    broken = re.sub(rb"<script>self\.__next_f.*?</script>", b"", html, flags=re.S)
+    assert b"PublicationList-module" in broken  # 見た目側は残っている
+    with pytest.raises(ValueError):
+        parse_anthropic_news(NEWS_SOURCE, broken)
+
+
+def test_fetch_source_records_structure_change_as_error(monkeypatch):
+    # 静かに0件を返さず、死活記録に落ちること。3回続けばダイジェストに出る。
+    monkeypatch.setattr("tracker.fetch._http_get", lambda url: b"<html></html>")
+    updates, error = fetch_source(dict(NEWS_SOURCE, url="https://example.com/news"))
+    assert updates == []
+    assert "ValueError" in error
 
 
 def test_parse_openrouter_builds_model_url():

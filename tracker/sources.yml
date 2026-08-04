@@ -2,8 +2,20 @@
 # 追加はこのファイルに数行足すだけでよく、コードの変更は不要。
 sources:
   # --- Anthropic ---
-  # 公式news はRSS未提供（/news/rss.xml・/rss.xml・/engineering/rss.xml すべて404）。
-  # releases 2本で実質的にカバーする。
+  # 公式news はRSS未提供（/news/rss.xml・/rss.xml とも404を2026-08-04に再実測）。
+  # ⚠️「releases 2本で実質的にカバーする」という旧方針は誤りだった。料金改定・
+  # 利用上限の変更・モデルの提供終了は GitHub のリリースには一切現れない。
+  # ページ自体は素のUAで200を返すので、埋め込みデータから拾う（parse_anthropic_news）。
+  - id: anthropic-news
+    vendor: Anthropic
+    label: Anthropic 公式ニュース
+    type: anthropic_news
+    url: https://www.anthropic.com/news
+
+  # ⚠️ Claude Code のリリースは、実測で100件中 major 判定が0件（タイトルが
+  # "v2.1.221" という素のバージョン文字列で、patch番号も0にならないため）。
+  # 即時メールにはならずダイジェスト行き。CLIの更新通知のほうが中央値178分
+  # 早い（npm公開が先行・直近30件で30/30）ので、これは意図した状態。
   - id: claude-code
     vendor: Anthropic
     label: Claude Code

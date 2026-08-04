@@ -7,6 +7,7 @@ bot ブロックを迂回するための User-Agent 偽装はしない。403 を
 from __future__ import annotations
 
 import json
+import re
 import urllib.request
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -22,6 +23,7 @@ TIMEOUT = 20
 MAX_ENTRIES = 30
 HF_API = "https://huggingface.co/api/models"
 OPENROUTER_API = "https://openrouter.ai/api/v1/models"
+ANTHROPIC_NEWS_BASE = "https://www.anthropic.com/news/"
 
 
 def load_sources(path: Path) -> list[dict]:
@@ -132,12 +134,93 @@ def parse_openrouter(source: dict, raw: bytes) -> list[Update]:
     return updates
 
 
+# Anthropic 公式news は RSS を出していない（/rss.xml・/news/rss.xml とも404を実測）。
+# ただしページ自体は素の User-Agent で 200 を返すので、埋め込みデータから拾う。
+#
+# ⚠️ CSSのクラス名では拾わないこと。実物は CSS Modules のハッシュ付き
+# （PublicationList-module-scss-module__KxYrHG__date）で、ビルドのたびに変わる。
+# クラス名を頼ると次のデプロイで静かに0件になる。記事データは Next.js の
+# RSCペイロードに Sanity CMS のオブジェクトとして入っており、そちらは
+# publishedOn / slug / title というアプリ側の名前なので、見た目の変更では動かない。
+_RSC_CHUNK_RE = re.compile(r'self\.__next_f\.push\(\[\d+,("(?:[^"\\]|\\.)*")\]\)')
+
+_JSON_STR = r'(?:[^"\\]|\\.)*'
+_NEWS_ITEM_RE = re.compile(
+    r'"publishedOn":"(?P<published>[^"]+)"'
+    r',"slug":\{"_type":"slug","current":"(?P<slug>[^"]+)"\}'
+    r'(?P<middle>.{0,4000}?)'
+    rf'"title":"(?P<title>{_JSON_STR})"',
+    re.S,
+)
+_SUMMARY_RE = re.compile(rf'"summary":"(?P<summary>{_JSON_STR})"')
+
+
+def _json_unescape(text: str) -> str:
+    """JSON文字列としての復号。壊れていたら元をそのまま返す。"""
+    try:
+        return json.loads(f'"{text}"')
+    except ValueError:
+        return text
+
+
+def parse_anthropic_news(source: dict, raw: bytes) -> list[Update]:
+    """公式newsページの埋め込みデータを Update のリストにする。
+
+    1件も取れないときは例外を投げる。空リストを返すと「取得はできたが
+    中身が無い」と区別がつかず、静かに0件を返し続ける壊れ方になるため。
+    呼び出し側（fetch_source）が握って死活記録に落とす。
+    """
+    text = raw.decode("utf-8", "replace")
+    parts = []
+    for chunk in _RSC_CHUNK_RE.findall(text):
+        try:
+            parts.append(json.loads(chunk))
+        except ValueError:
+            continue  # 1チャンクの破損で全部を捨てない
+    if not parts:
+        raise ValueError("埋め込みデータが見つからない（サイト構造の変更を疑う）")
+
+    payload = "".join(parts)
+    items: dict[str, tuple[datetime, str, str]] = {}
+    for match in _NEWS_ITEM_RE.finditer(payload):
+        published = _to_utc(match.group("published"))
+        slug = match.group("slug")
+        title = _json_unescape(match.group("title")).strip()
+        if published is None or not slug or not title:
+            continue
+        found = _SUMMARY_RE.search(match.group("middle"))
+        summary = _json_unescape(found.group("summary")) if found else ""
+        # 同じ記事が「注目」と一覧の両方に入るので重複する。先勝ちで一意にする。
+        items.setdefault(slug, (published, title, summary))
+
+    if not items:
+        raise ValueError("埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）")
+
+    updates = [
+        Update(
+            uid=make_uid(source["id"], slug),
+            source_id=source["id"],
+            vendor=source["vendor"],
+            label=source["label"],
+            title=title,
+            url=f"{ANTHROPIC_NEWS_BASE}{slug}",
+            published=published,
+            summary=summary,
+        )
+        for slug, (published, title, summary) in items.items()
+    ]
+    updates.sort(key=lambda u: u.published, reverse=True)
+    return updates[:MAX_ENTRIES]
+
+
 def fetch_source(source: dict) -> tuple[list[Update], str | None]:
     """1ソースを取得する。(updates, error) を返し、例外は投げない。
 
     1ソースの失敗で全体を止めないため。失敗は呼び出し側が記録する。
     """
     try:
+        if source["type"] == "anthropic_news":
+            return parse_anthropic_news(source, _http_get(source["url"])), None
         if source["type"] == "openrouter":
             return parse_openrouter(source, _http_get(OPENROUTER_API)), None
         if source["type"] == "huggingface":

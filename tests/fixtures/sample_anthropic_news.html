@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><title>Newsroom \ Anthropic</title></head>
+<body>
+<!--
+  実物（2026-08-04 取得）の構造を写した最小版。
+  記事データは Next.js の RSC ペイロード self.__next_f.push([1,"..."]) の中に
+  Sanity CMS のオブジェクトとして入っており、publishedOn / slug / title が隣り合う。
+
+  ⚠️ CSSモジュールのクラス名（PublicationList-module-scss-module__KxYrHG__date）は
+  ビルドのたびにハッシュが変わる。だから見た目のマークアップ側にも「それらしい」
+  クラスを置いてあるが、パーサはこちらを見てはいけない。
+-->
+<main>
+  <ul>
+    <li class="PublicationList-module-scss-module__ZZZZZZ__listItem">
+      <a href="/news/introducing-thing">
+        <span class="PublicationList-module-scss-module__ZZZZZZ__date">Aug 1, 2026</span>
+        <h3>Introducing Thing</h3>
+      </a>
+    </li>
+  </ul>
+</main>
+<script>self.__next_f.push([1,"3:[\"$\",\"div\",null,{\"posts\":[{\"_type\":\"post\",\"publishedOn\":\"2026-08-01T15:00:00.000Z\",\"slug\":{\"_type\":\"slug\",\"current\":\"introducing-thing\"},\"subjects\":[{\"_key\":\"product\",\"_type\":\"tag\",\"label\":\"Product\",\"value\":\"product\"}],\"summary\":\"A short summary of the thing.\",\"title\":\"Introducing Thing\"},"])</script>
+<script>self.__next_f.push([1,"{\"_type\":\"post\",\"publishedOn\":\"2026-07-30T15:00:00.000Z\",\"slug\":{\"_type\":\"slug\",\"current\":\"no-summary-post\"},\"subjects\":[],\"summary\":null,\"title\":\"Investigating three real-world incidents\"},{\"_type\":\"post\",\"publishedOn\":\"2026-07-09T16:00:00.000Z\",\"slug\":{\"_type\":\"slug\",\"current\":\"curly-quote-post\"},\"subjects\":[],\"summary\":\"We’re asking the public for their hardest questions.\",\"title\":\"We’re inviting hard questions\"},"])</script>
+<script>self.__next_f.push([1,"{\"_type\":\"post\",\"publishedOn\":\"2026-06-30T18:00:00.000Z\",\"slug\":{\"_type\":\"slug\",\"current\":\"quoted-title-post\"},\"subjects\":[],\"summary\":\"He said \\\"hello\\\" loudly.\",\"title\":\"The \\\"best\\\" model yet\"},{\"_type\":\"post\",\"publishedOn\":\"2026-08-01T15:00:00.000Z\",\"slug\":{\"_type\":\"slug\",\"current\":\"introducing-thing\"},\"subjects\":[],\"summary\":\"A short summary of the thing.\",\"title\":\"Introducing Thing\"}]}]"])</script>
+</body>
+</html>
