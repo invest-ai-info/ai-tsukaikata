@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-04T21:38:59.013970+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-04T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+      "summary_ja": "OpenAIが第三者評価での問題を説明\nサイバーセキュリティ評価で起きた問題に対応\nモデルのテスト評価を強化する新しい対策を発表",
+      "summary_source": "gemini",
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "uid": "79a297680f147c41",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-04T18:05:22.407010+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",

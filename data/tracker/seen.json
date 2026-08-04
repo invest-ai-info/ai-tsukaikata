@@ -9,7 +9,7 @@
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-04T00:00:00+00:00",
+    "openai-news": "2026-08-04T19:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -92,6 +92,17 @@
       "title": "New ways to learn and teach with ChatGPT Work and Codex",
       "uid": "1cd7206d43933b0c",
       "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-04T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "uid": "79a297680f147c41",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
       "vendor": "OpenAI"
     }
   ],
@@ -284,6 +295,7 @@
     "77a90f76487e9ea3": "2026-08-01T12:16:42.309603+00:00",
     "77eb62ee9f40ebdc": "2026-08-01T12:16:42.309603+00:00",
     "792000c29c4b1292": "2026-08-01T12:16:42.309603+00:00",
+    "79a297680f147c41": "2026-08-04T21:38:59.013970+00:00",
     "7a61633a59ab7c8d": "2026-08-03T21:32:12.318301+00:00",
     "7c0ebd28c66beca8": "2026-08-01T12:16:42.309603+00:00",
     "7c4a5a0094bf952f": "2026-08-01T12:16:42.309603+00:00",
