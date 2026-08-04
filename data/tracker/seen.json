@@ -6,7 +6,7 @@
     "claude-code": "2026-08-04T00:14:23+00:00",
     "deepmind-blog": "2026-07-30T15:00:59+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-07-28T16:00:00+00:00",
+    "google-ai-blog": "2026-08-04T13:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "openai-news": "2026-08-03T22:00:00+00:00",
@@ -49,6 +49,28 @@
       "uid": "9f50c32afd5adfdf",
       "url": "https://openai.com/index/apple-is-getting-this-wrong",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-04T13:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "July AI recap header",
+      "title": "The latest AI news we announced in July 2026",
+      "uid": "042052bf2ede16ae",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/",
+      "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-03T15:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Illustrations of a laptop, an AI spark, messages, code, and a 3-D cube",
+      "title": "Inside our 353,000-person vibe coding course",
+      "uid": "8e1e7ef4c1267057",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -59,6 +81,7 @@
     "014263a32aba8db4": "2026-08-01T12:16:42.309603+00:00",
     "02d3a6ff4673b520": "2026-08-03T18:09:30.356189+00:00",
     "0372be360b5c7e86": "2026-08-01T12:16:42.309603+00:00",
+    "042052bf2ede16ae": "2026-08-04T15:37:58.863476+00:00",
     "043d9ba97b003da9": "2026-08-01T12:16:42.309603+00:00",
     "055754e127351ef2": "2026-08-01T12:16:42.309603+00:00",
     "061d4c8734585cfc": "2026-08-01T12:16:42.309603+00:00",
@@ -271,6 +294,7 @@
     "8cd77978c122fb1d": "2026-08-01T12:16:42.309603+00:00",
     "8d40a858cfb46bba": "2026-08-04T11:04:53.115730+00:00",
     "8d8717f348b9dda4": "2026-08-02T11:35:58.106550+00:00",
+    "8e1e7ef4c1267057": "2026-08-04T15:37:58.863476+00:00",
     "8e252f0ef1805792": "2026-08-01T12:16:42.309603+00:00",
     "8e8e3e26780328ea": "2026-08-02T11:35:58.106550+00:00",
     "8f72d8ca83a24b31": "2026-08-01T12:16:42.309603+00:00",
