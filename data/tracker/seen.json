@@ -2,7 +2,7 @@
   "failures": {},
   "latest": {
     "anthropic-sdk": "2026-07-28T17:38:09+00:00",
-    "claude-code": "2026-07-25T01:35:55+00:00",
+    "claude-code": "2026-08-04T00:14:23+00:00",
     "deepmind-blog": "2026-07-30T15:00:59+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-07-28T16:00:00+00:00",
@@ -15,7 +15,30 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-02T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-04T00:14:23+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed [VSCode] Added Focus view: a chat-menu toggle that hides tool activity behind an expandable per-turn summary with a live running-tool indicator, toggled with Ctrl+Alt+F or the \"Claude …",
+      "title": "v2.1.221",
+      "uid": "3b859604a9edf5fa",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-03T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.",
+      "title": "Circles powers telco personalization with OpenAI technology",
+      "uid": "946a2476bbaff510",
+      "url": "https://openai.com/index/circles",
+      "vendor": "OpenAI"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
@@ -110,6 +133,7 @@
     "384b57e4ba028be1": "2026-08-01T12:16:42.309603+00:00",
     "398c3d749429dce1": "2026-08-01T12:16:42.309603+00:00",
     "3b45fcd949fb0724": "2026-08-01T12:16:42.309603+00:00",
+    "3b859604a9edf5fa": "2026-08-04T03:41:25.671686+00:00",
     "3bcf0e19e600ae3a": "2026-08-01T13:06:14.304393+00:00",
     "3c5ff33fe4b93f1b": "2026-08-01T12:16:42.309603+00:00",
     "3cc46b67108e93f4": "2026-08-01T12:16:42.309603+00:00",
@@ -230,6 +254,7 @@
     "917c6476aecbbd59": "2026-08-01T12:16:42.309603+00:00",
     "92a7c1f7dbc60fd1": "2026-08-01T12:16:42.309603+00:00",
     "93f176ee3846ef8a": "2026-08-01T12:16:42.309603+00:00",
+    "946a2476bbaff510": "2026-08-04T03:41:25.671686+00:00",
     "948b1d1bbf83a6a0": "2026-08-01T12:16:42.309603+00:00",
     "94ea464771b94ad8": "2026-08-01T12:16:42.309603+00:00",
     "96552263e28620f5": "2026-08-01T12:16:42.309603+00:00",
