@@ -34,6 +34,11 @@ Anthropic は 2026年7月24日に **Claude Opus 5** を公開しました（出�
 
 出典: 仕様は <https://platform.claude.com/docs/en/about-claude/models/overview>、料金は <https://platform.claude.com/docs/en/about-claude/pricing>
 
+<figure class="figure">
+<img src="/static/images/opus5-what-changed.svg" alt="Opus 4.8 から Opus 5 への変化を2列で比べた図。変わらないもの＝入力5ドル、出力25ドル、読める量100万トークン、書ける量12.8万トークン。変わったもの＝学習データの締め切りが2026年1月から5月へ、既定で考えてから答えるようになった、返事が4.8より長くなる。">
+<figcaption>据え置きのものと、変わったもの</figcaption>
+</figure>
+
 **値段も、読める量も、書ける量も同じです。**変わったのは中身と、知識の新しさです。知識の締め切りが4か月ぶん進んでいます。
 
 「トークン」は文章を機械が数えるときの単位です。公式ドキュメントは 100万トークンを「英語でおよそ55.5万語」と説明しています（出典: <https://platform.claude.com/docs/en/about-claude/models/overview>）。
@@ -91,9 +96,19 @@ Anthropic は 2026年7月24日に **Claude Opus 5** を公開しました（出�
 
 参考までに、OpenAI の公式料金ページには最上位の `gpt-5.5-pro` も載っていて、入力$30.00・出力$180.00（短い入力のとき）とされています。**このモデルには「長い入力」の行がありません**——料金ページには「272Kトークン未満」という但し書きだけが付いています（出典: <https://developers.openai.com/api/docs/pricing>）。
 
+<figure class="figure">
+<img src="/static/images/opus5-price-comparison.svg" alt="5つのモデルの単価を比べた横棒グラフ。100万トークンあたりのドル。Claude Opus 5 は入力5ドル・出力25ドル、Claude Fable 5 は入力10ドル・出力50ドル、GPT-5.6-sol は入力5ドル・出力30ドル、GPT-5.6-terra は入力2ドル・出力12ドル、Gemini 3.1 Pro は入力2ドル・出力12ドル。ただし会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しません。">
+<figcaption>単価だけを並べたところ。ここから先が本題です</figcaption>
+</figure>
+
 **この表は、そのまま「どれが安いか」の表としては読めません。**理由を4つ書きます。
 
 **1つめ。トークンの数え方が会社ごとに違います。**Anthropic の料金ページには、Claude 4.7 以降のモデルは新しい数え方を使っていて、**同じ文章でおよそ30%多いトークンになる**と書かれています（出典: <https://platform.claude.com/docs/en/about-claude/pricing>）。同じ会社の中でも世代でずれるということは、他社との間ではもっとずれます。<mark class="warn">単価だけを並べても、実際の支払額の大小は判定できません</mark>。
+
+<figure class="figure">
+<img src="/static/images/opus5-tokenizer.svg" alt="トークンの数え方の違いを示した横棒グラフ。Sonnet 4.6 までの数え方を100とすると、Claude 4.7 以降の新しい数え方では同じ文章が約130になる。つまり同じ原稿でも請求されるトークン数が約1.3倍になるため、単価表を並べただけでは安さを比較できない。">
+<figcaption>同じ原稿でも、数えられる量が約1.3倍になります</figcaption>
+</figure>
 
 **2つめ。料金の形が違います。**<mark>Claude は100万トークンまで同じ単価ですが、GPT-5.6 も Gemini 3.1 Pro も、入力が長くなると単価が上がります</mark>（出典: Anthropic 側は <https://platform.claude.com/docs/en/about-claude/pricing>、OpenAI 側は <https://developers.openai.com/api/docs/pricing>、Google 側は <https://ai.google.dev/gemini-api/docs/pricing>）。長い資料を読ませる使い方だと、単価表の並びと請求額の並びが逆になり得ます。
 

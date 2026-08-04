@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="371" viewBox="0 0 720 371" role="img" aria-label="5つのモデルの単価を比べた横棒グラフ。100万トークンあたりのドル。Claude Opus 5 は入力5ドル・出力25ドル、Claude Fable 5 は入力10ドル・出力50ドル、GPT-5.6-sol は入力5ドル・出力30ドル、GPT-5.6-terra は入力2ドル・出力12ドル、Gemini 3.1 Pro は入力2ドル・出力12ドル。ただし会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しません。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="371"/>
+<text class="t-strong" x="18" y="26">1トークンあたりの単価（100万トークンあたり・ドル）</text>
+<text class="t-sm" x="18" y="45">入力＝薄い色 ／ 出力＝濃い色。GPTとGeminiは短い入力のときの値段。</text>
+<text class="t" x="18" y="74">Claude Opus 5</text>
+<rect class="bar-in" x="168" y="62" width="46.8" height="15" rx="2"/>
+<text class="t-sm" x="222.8" y="74">$5</text>
+<rect class="bar-out" x="168" y="82" width="234.0" height="15" rx="2"/>
+<text class="t-sm" x="410.0" y="94">$25</text>
+<text class="t-xs" x="110" y="74">入力</text>
+<text class="t-xs" x="110" y="94">出力</text>
+<text class="t" x="18" y="129">Claude Fable 5</text>
+<rect class="bar-in" x="168" y="117" width="93.6" height="15" rx="2"/>
+<text class="t-sm" x="269.6" y="129">$10</text>
+<rect class="bar-out" x="168" y="137" width="468.0" height="15" rx="2"/>
+<text class="t-sm" x="644.0" y="149">$50</text>
+<text class="t-xs" x="110" y="129">入力</text>
+<text class="t-xs" x="110" y="149">出力</text>
+<text class="t" x="18" y="184">GPT-5.6-sol</text>
+<rect class="bar-in" x="168" y="172" width="46.8" height="15" rx="2"/>
+<text class="t-sm" x="222.8" y="184">$5</text>
+<rect class="bar-out" x="168" y="192" width="280.8" height="15" rx="2"/>
+<text class="t-sm" x="456.8" y="204">$30</text>
+<text class="t-xs" x="110" y="184">入力</text>
+<text class="t-xs" x="110" y="204">出力</text>
+<text class="t" x="18" y="239">GPT-5.6-terra</text>
+<rect class="bar-in" x="168" y="227" width="18.7" height="15" rx="2"/>
+<text class="t-sm" x="194.7" y="239">$2</text>
+<rect class="bar-out" x="168" y="247" width="112.3" height="15" rx="2"/>
+<text class="t-sm" x="288.3" y="259">$12</text>
+<text class="t-xs" x="110" y="239">入力</text>
+<text class="t-xs" x="110" y="259">出力</text>
+<text class="t" x="18" y="294">Gemini 3.1 Pro</text>
+<rect class="bar-in" x="168" y="282" width="18.7" height="15" rx="2"/>
+<text class="t-sm" x="194.7" y="294">$2</text>
+<rect class="bar-out" x="168" y="302" width="112.3" height="15" rx="2"/>
+<text class="t-sm" x="288.3" y="314">$12</text>
+<text class="t-xs" x="110" y="294">入力</text>
+<text class="t-xs" x="110" y="314">出力</text>
+<text class="t-xs" x="18" y="359">※ 単価が安い＝支払いが安い、ではありません。会社ごとにトークンの数え方が違います。</text>
+</svg>

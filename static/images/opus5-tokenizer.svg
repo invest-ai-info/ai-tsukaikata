@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="232" viewBox="0 0 720 232" role="img" aria-label="トークンの数え方の違いを示した横棒グラフ。Sonnet 4.6 までの数え方を100とすると、Claude 4.7 以降の新しい数え方では同じ文章が約130になる。つまり同じ原稿でも請求されるトークン数が約1.3倍になるため、単価表を並べただけでは安さを比較できない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="232"/>
+<text class="t-strong" x="18" y="26">同じ文章でも、数えたトークンの量が違います</text>
+<text class="t-sm" x="18" y="45">公式は、Claude 4.7 以降は新しい数え方で約30%多くなると説明しています。</text>
+<text class="t" x="18" y="95">Sonnet 4.6 まで</text>
+<rect class="bar-old" x="210" y="74" width="330.8" height="30" rx="3"/>
+<text class="t-sm" x="548.8" y="95">100（相対）</text>
+<text class="t" x="18" y="151">Opus 5（4.7以降）</text>
+<rect class="bar-new" x="210" y="130" width="430.0" height="30" rx="3"/>
+<text class="t-sm" x="648.0" y="151">130（相対）</text>
+<text class="t-xs" x="18" y="206">※ 同じ原稿でも、請求されるトークン数が約1.3倍になります。</text>
+<text class="t-xs" x="18" y="222">※ だから単価表を横に並べても、どちらが安いかは決められません。</text>
+</svg>
