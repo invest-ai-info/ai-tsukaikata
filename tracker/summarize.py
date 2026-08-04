@@ -40,6 +40,11 @@ def needs_summary(item: dict, source_types: dict[str, str]) -> bool:
     """
     if item.get("summary_ja"):
         return False
+    # 説明が空の記事は要約しない。題名しか材料が無いと、埋めようとして
+    # 事実でないことを書く（実測＝Sakana の「日本語特化のLLM API」を
+    # 「外部サービス連携の仕組み」と書いた）。題名だけ出すほうが正しい。
+    if not (item.get("summary") or "").strip():
+        return False
     return source_types.get(item.get("source_id", "")) in ANNOUNCEMENT_TYPES
 
 

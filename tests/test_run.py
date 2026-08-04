@@ -362,9 +362,11 @@ def test_summarize_fills_only_announcement_items(tmp_path):
     from tracker.store import save_news
 
     news = {"items": [
-        {"uid": "a", "source_id": "s1", "title": "Introducing X", "summary": "",
+        {"uid": "a", "source_id": "s1", "title": "Introducing X",
+         "summary": "X ships today with a faster runtime.",
          "published": NOW.isoformat()},
-        {"uid": "b", "source_id": "hf", "title": "org/Model-v2", "summary": "",
+        {"uid": "b", "source_id": "hf", "title": "org/Model-v2",
+         "summary": "A new model checkpoint.",
          "published": NOW.isoformat()},
     ]}
     path = tmp_path / "news.json"

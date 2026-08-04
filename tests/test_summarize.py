@@ -53,6 +53,14 @@ def test_already_summarized_item_is_skipped():
     assert not needs_summary(_item(summary_ja="もう入っている"), TYPES)
 
 
+@pytest.mark.parametrize("summary", ["", "   ", None])
+def test_item_without_a_description_is_skipped(summary):
+    # 題名しか材料が無いと、埋めようとして事実でないことを書く。実測（2026-08-04）で
+    # 「日本語特化のLLM API」を「外部サービス連携の仕組みです」と書いた。
+    # 題名だけ見せるほうが正しい。書けないときは書かない。
+    assert not needs_summary(_item(summary=summary), TYPES)
+
+
 def test_unknown_source_is_skipped():
     # sources.yml から消えたソースの記事。型が分からないものは触らない。
     assert not needs_summary(_item(source_id="removed-source"), TYPES)
