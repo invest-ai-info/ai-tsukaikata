@@ -8,7 +8,7 @@
     "google-ai-blog": "2026-07-28T16:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-03T07:00:00+00:00",
+    "openai-news": "2026-08-03T22:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -36,6 +36,17 @@
       "title": "Circles powers telco personalization with OpenAI technology",
       "uid": "946a2476bbaff510",
       "url": "https://openai.com/index/circles",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-03T22:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
+      "title": "Apple is getting this wrong",
+      "uid": "9f50c32afd5adfdf",
+      "url": "https://openai.com/index/apple-is-getting-this-wrong",
       "vendor": "OpenAI"
     }
   ],
@@ -267,6 +278,7 @@
     "9b1ad9aef8483085": "2026-08-01T12:16:42.309603+00:00",
     "9b219e49ce105aee": "2026-08-01T12:16:42.309603+00:00",
     "9e5320c065227a44": "2026-08-01T12:16:42.309603+00:00",
+    "9f50c32afd5adfdf": "2026-08-04T06:42:56.075482+00:00",
     "a1d68b672d017794": "2026-08-01T12:16:42.309603+00:00",
     "a21a4a50aa103b6e": "2026-08-01T12:16:42.309603+00:00",
     "a24f8c5763daf39c": "2026-08-01T12:16:42.309603+00:00",
