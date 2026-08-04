@@ -14,7 +14,13 @@
 
 ## 待ち行列
 
-- [ ] https://www.anthropic.com/news/claude-opus-5
+- [!] https://www.anthropic.com/news/claude-opus-5
+  - 2026-08-04: 取得できず。実行環境の**ネットワーク許可リストに `www.anthropic.com` が入っていない**ため
+    403 が返る（本文は `Host not in allowlist: www.anthropic.com. Add this host to your network egress
+    settings to allow access.`）。プロキシ経由・プロキシ迂回（`--noproxy '*'`）の両方で同じ 403 なので、
+    Anthropic 側の bot ブロックではなく**この環境の egress 設定**が原因。
+    直し方＝環境のネットワーク設定に `www.anthropic.com` を追加してから、この行を `- [ ]` に戻す。
+    ⚠️ 出典を読めないまま検索結果や二次情報で書かない（数字が壊れるため）。
 
 ## 処理済み
 
