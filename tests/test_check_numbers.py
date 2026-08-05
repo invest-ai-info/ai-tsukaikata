@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 """記事の数字が、出典ページに実在するかを照合する検査のテスト。
 
-作った理由＝2026-08-04 に、出典URLは正しいのに**その出典にその数字が無い**
-記事が出た（`gpt-5.5-pro` の $60/$270。他モデルの倍率からの外挿）。
+作った理由＝出典URLが正しくても、その数字がそのページに在るとは限らないため。
 人が毎回突き合わせないと通ってしまうので、機械に渡す。
+
+⚠️ この検査は「どの出典ページにも無い数字」を報告するだけで、
+「別の行に在る数字を、違う行のものとして書いた」は捕まえられない。
+料金表1枚に80種類の金額があることも珍しくないので、そこは人が生の行を見る。
 """
 from decimal import Decimal
 
@@ -99,7 +102,7 @@ def test_unverified_returns_nothing_when_every_number_is_on_a_page():
 
 
 def test_unverified_flags_a_number_that_is_on_no_page():
-    # これが $60/$270 の再現。出典は正しいのに、その数字がページに無い。
+    # 出典は正しいのに、その数字がページに無い場合。
     article = "入力 $30 / 出力 $180（長い入力は $60 / $270）（出典: <https://a.example>）"
     pages = {"https://a.example": "gpt-5.5-pro $30 input $180 output"}
     found = {key for key, _ in unverified(article, pages)}
@@ -125,8 +128,8 @@ def test_unverified_reports_how_the_number_was_written():
 
 
 def test_unverified_does_not_accept_a_bare_number_of_a_different_kind():
-    # 型を落として照合すると検出力がゼロになる。実測（2026-08-05）＝出典10ページの
-    # 数字を1つのプールにまとめたら、捏造された $60 が「どこかに 60 がある」で通った。
+    # 型を落として照合すると検出力が落ちる。実測（2026-08-05）＝出典10ページの数字を
+    # 型なしで1つのプールにまとめたら、ドル額が「どこかに同じ数がある」だけで通った。
     article = "長い入力は $60 です（出典: <https://a.example>）"
     pages = {"https://a.example": "context window 60k tokens, 60 languages, 60% faster"}
     assert unverified(article, pages) == [(("$", Decimal("60")), ["$60"])]
