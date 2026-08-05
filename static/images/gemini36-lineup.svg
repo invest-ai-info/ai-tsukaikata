@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="330" viewBox="0 0 720 330" role="img" aria-label="2026年7月21日に同時発表された3つのモデルの用途を並べた図。Gemini 3.6 Flash は主力で、コーディングと知識作業、エージェントの土台、3.5 Flash の置き換え。入力100万トークンあたり1.50ドル、出力7.50ドル。一般提供中。Gemini 3.5 Flash-Lite は速さと量が持ち味で、低遅延・大量処理向け、検索や書類の処理、3.1 Flash-Lite の後継。入力0.30ドル、出力2.50ドル。一般提供中。Gemini 3.5 Flash Cyber は安全の点検用で、脆弱性の検出と修正、CodeMender と組で提供、政府と一部の相手のみ。料金の記載はなく、限定パイロットで近日提供。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="330"/>
+<text class="t-strong" x="18" y="26">同じ日に出た3つは、用途が別々です</text>
+<text class="t-sm" x="18" y="45">値段を並べる前に、まず何のためのモデルかを分けます。</text>
+<text class="t-sm" x="18" y="64">単価は100万トークンあたりのドル（Standard・有料層）。</text>
+<rect class="box-accent" x="18" y="88" width="216" height="200" rx="6"/>
+<text class="t-strong" x="30" y="116">Gemini 3.6 Flash</text>
+<text class="t-accent" x="30" y="140">主力（ふだん使い）</text>
+<text class="t-sm" x="30" y="166">コーディングと知識作業</text>
+<text class="t-sm" x="30" y="184">エージェントの土台</text>
+<text class="t-sm" x="30" y="202">3.5 Flash の置き換え</text>
+<text class="t-strong" x="30" y="234">入力 $1.50 ／ 出力 $7.50</text>
+<text class="t-xs" x="30" y="260">一般提供中</text>
+<rect class="box-accent" x="252" y="88" width="216" height="200" rx="6"/>
+<text class="t-strong" x="264" y="116">Gemini 3.5 Flash-Lite</text>
+<text class="t-accent" x="264" y="140">速さと量</text>
+<text class="t-sm" x="264" y="166">低遅延・大量処理向け</text>
+<text class="t-sm" x="264" y="184">検索や書類の処理</text>
+<text class="t-sm" x="264" y="202">3.1 Flash-Lite の後継</text>
+<text class="t-strong" x="264" y="234">入力 $0.30 ／ 出力 $2.50</text>
+<text class="t-xs" x="264" y="260">一般提供中</text>
+<rect class="box-quiet" x="486" y="88" width="216" height="200" rx="6"/>
+<text class="t-strong" x="498" y="116">Gemini 3.5 Flash Cyber</text>
+<text class="t-accent" x="498" y="140">安全の点検</text>
+<text class="t-sm" x="498" y="166">脆弱性の検出と修正</text>
+<text class="t-sm" x="498" y="184">CodeMender と組で提供</text>
+<text class="t-sm" x="498" y="202">政府と一部の相手のみ</text>
+<text class="t-strong" x="498" y="234">料金の記載なし</text>
+<text class="t-xs" x="498" y="260">限定パイロット（近日）</text>
+<text class="t-xs" x="18" y="316">※ Cyber だけ料金ページに行がありません。使える相手も限られています。</text>
+</svg>

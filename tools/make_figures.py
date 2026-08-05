@@ -500,6 +500,249 @@ def write_or_stop_chart() -> None:
     )
 
 
+def gemini36_lineup() -> None:
+    """同時に出た3つのモデルの、用途の違い。値段を並べる前にこれを見せる。"""
+    cards = [
+        (
+            "Gemini 3.6 Flash",
+            "主力（ふだん使い）",
+            ["コーディングと知識作業", "エージェントの土台", "3.5 Flash の置き換え"],
+            "入力 $1.50 ／ 出力 $7.50",
+            "一般提供中",
+        ),
+        (
+            "Gemini 3.5 Flash-Lite",
+            "速さと量",
+            ["低遅延・大量処理向け", "検索や書類の処理", "3.1 Flash-Lite の後継"],
+            "入力 $0.30 ／ 出力 $2.50",
+            "一般提供中",
+        ),
+        (
+            "Gemini 3.5 Flash Cyber",
+            "安全の点検",
+            ["脆弱性の検出と修正", "CodeMender と組で提供", "政府と一部の相手のみ"],
+            "料金の記載なし",
+            "限定パイロット（近日）",
+        ),
+    ]
+    box_w, gap, left, top, box_h = 216, 18, 18, 88, 200
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じ日に出た3つは、用途が別々です</text>\n',
+        '<text class="t-sm" x="18" y="45">値段を並べる前に、まず何のためのモデルかを分けます。</text>\n',
+        '<text class="t-sm" x="18" y="64">単価は100万トークンあたりのドル（Standard・有料層）。</text>\n',
+    ]
+    for index, (name, role, lines, price, status) in enumerate(cards):
+        x = left + index * (box_w + gap)
+        cls = "box-quiet" if index == 2 else "box-accent"
+        parts.append(
+            f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{x + 12}" y="{top + 28}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-accent" x="{x + 12}" y="{top + 52}">{_esc(role)}</text>\n')
+        for line_index, line in enumerate(lines):
+            parts.append(
+                f'<text class="t-sm" x="{x + 12}" y="{top + 78 + line_index * 18}">'
+                f"{_esc(line)}</text>\n"
+            )
+        parts.append(f'<text class="t-strong" x="{x + 12}" y="{top + 146}">{_esc(price)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{x + 12}" y="{top + 172}">{_esc(status)}</text>\n')
+
+    height = top + box_h + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ Cyber だけ料金ページに行がありません。使える相手も限られています。</text>\n"
+    )
+    alt = (
+        "2026年7月21日に同時発表された3つのモデルの用途を並べた図。"
+        "Gemini 3.6 Flash は主力で、コーディングと知識作業、エージェントの土台、"
+        "3.5 Flash の置き換え。入力100万トークンあたり1.50ドル、出力7.50ドル。一般提供中。"
+        "Gemini 3.5 Flash-Lite は速さと量が持ち味で、低遅延・大量処理向け、検索や書類の処理、"
+        "3.1 Flash-Lite の後継。入力0.30ドル、出力2.50ドル。一般提供中。"
+        "Gemini 3.5 Flash Cyber は安全の点検用で、脆弱性の検出と修正、CodeMender と組で提供、"
+        "政府と一部の相手のみ。料金の記載はなく、限定パイロットで近日提供。"
+    )
+    (OUT / "gemini36-lineup.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini36_cheap_price_chart() -> None:
+    """安いモデル4つの単価。入力と出力を2本並べる。"""
+    rows = [
+        ("Gemini 3.6 Flash", 1.50, 7.50),
+        ("Gemini 3.5 Flash-Lite", 0.30, 2.50),
+        ("Claude Haiku 4.5", 1.00, 5.00),
+        ("GPT-5.6 Luna", 0.20, 1.20),
+    ]
+    left, right = 210, 630
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 66, 15, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">安いモデル4つの単価（100万トークンあたり・ドル）</text>\n',
+        '<text class="t-sm" x="18" y="45">入力＝薄い色 ／ 出力＝濃い色。GPT-5.6 Luna は短い入力のときの値段。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="178" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:.2f}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 単価が安い＝支払いが安い、ではありません。会社ごとにトークンの数え方が違います。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 読める量も違います（Haiku 4.5 は20万トークン、他の3つは100万トークン超）。</text>\n"
+    )
+    alt = (
+        "安いモデル4つの単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "Gemini 3.6 Flash は入力1.50ドル・出力7.50ドル、"
+        "Gemini 3.5 Flash-Lite は入力0.30ドル・出力2.50ドル、"
+        "Claude Haiku 4.5 は入力1.00ドル・出力5.00ドル、"
+        "GPT-5.6 Luna は短い入力のとき入力0.20ドル・出力1.20ドル。"
+        "ただし会社ごとにトークンの数え方も読める量も違うため、単価の安さは支払額の安さを意味しません。"
+    )
+    (OUT / "gemini36-cheap-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini36_generation_chart() -> None:
+    """世代が上がって、単価が下がったもの／上がったもの。"""
+    rows = [
+        ("Flash の入力", 1.50, 1.50),
+        ("Flash の出力", 9.00, 7.50),
+        ("Flash-Lite の入力", 0.25, 0.30),
+        ("Flash-Lite の出力", 1.50, 2.50),
+    ]
+    left, right = 210, 600
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">世代が上がって、下がった単価と上がった単価</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝前の世代（3.5 Flash / 3.1 Flash-Lite）、青＝新しい世代。</text>\n',
+        '<text class="t-sm" x="18" y="64">100万トークンあたりのドル。Flash-Lite の入力はテキストの値。</text>\n',
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "前"), (new, "bar-new", "新"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="180" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:.2f}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Flash は出力が安くなりました。Flash-Lite は入力も出力も高くなっています。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 世代が新しいほど安い、とは限りません。乗り換える前に自分の使い方で計算してください。</text>\n"
+    )
+    alt = (
+        "世代交代で単価がどう動いたかを比べた横棒グラフ。100万トークンあたりのドル。"
+        "Flash の入力は 3.5 Flash の1.50ドルから 3.6 Flash も1.50ドルで据え置き。"
+        "Flash の出力は9.00ドルから7.50ドルへ下がった。"
+        "Flash-Lite の入力（テキスト）は 3.1 Flash-Lite の0.25ドルから 3.5 Flash-Lite の0.30ドルへ上がり、"
+        "出力は1.50ドルから2.50ドルへ上がった。"
+        "世代が新しいほど安いとは限らない。"
+    )
+    (OUT / "gemini36-generation.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini36_bench_chart() -> None:
+    """3.5 Flash と 3.6 Flash の、公式が挙げた点数（％のものだけ）。"""
+    rows = [
+        ("DeepSWE", 37.0, 49.0),
+        ("MLE Bench", 49.7, 63.9),
+        ("OSWorld-Verified", 78.4, 83.0),
+    ]
+    left, right = 230, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">公式が挙げた点数（3.5 Flash → 3.6 Flash）</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝3.5 Flash、青＝3.6 Flash。目盛りは0〜100％で揃えてあります。</text>\n',
+        '<text class="t-sm" x="18" y="64">どれも Google が自社で測った値です。他社が同じ条件で測った値ではありません。</text>\n',
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "3.5"), (new, "bar-new", "3.6"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="196" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ テストの中身も測り方も、この3つで別々です。並べても平均は取れません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 点数が何回試した値なのかは、発表ページに書かれていません。</text>\n"
+    )
+    alt = (
+        "Gemini 3.5 Flash と 3.6 Flash の点数を比べた横棒グラフ。"
+        "DeepSWE は37％から49％、MLE Bench は49.7％から63.9％、"
+        "OSWorld-Verified は78.4％から83.0％。いずれも Google が自社で測った値で、"
+        "テストの中身も測り方も3つで別々のため平均は取れない。"
+        "何回試した値なのかは発表ページに書かれていない。"
+    )
+    (OUT / "gemini36-bench.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -510,4 +753,8 @@ if __name__ == "__main__":
     citation_chain_chart()
     queue_flow_chart()
     write_or_stop_chart()
-    print(f"9枚を {OUT} に出力しました")
+    gemini36_lineup()
+    gemini36_cheap_price_chart()
+    gemini36_generation_chart()
+    gemini36_bench_chart()
+    print(f"13枚を {OUT} に出力しました")
