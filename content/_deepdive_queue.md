@@ -14,12 +14,44 @@
 
 ## 待ち行列
 
-- [ ] https://openrouter.ai/qwen/qwen3.8-max
+- [!] https://openrouter.ai/qwen/qwen3.8-max
   - 2026-08-04 にトラッカーが即時メールで拾った Alibaba の最上位モデル。
     ⚠️ OpenRouter は提供窓口であって一次情報ではない。**Alibaba/Qwen 自身の公式発表かモデルカードを探すこと**
     （HuggingFace の `Qwen` org は許可リストに入っている）。見つからなければ「公表されていない」と書く。
     比較相手は Claude Opus 5 / GPT-5.6 / Gemini 3.1 Pro。**単価・読める量・学習データの締め切り**が揃えば表になる。
     到達できないドメインがあったら、ここに**ドメイン名を列挙**しておくこと（まとめて許可リストに足すため）。
+  - **2026-08-05 1回目: 下書きを作らずに停止した。**キューのURL自体（OpenRouter）は取得できたが、
+    **Alibaba/Qwen 側の一次情報に到達できる経路が1つも無い**ため。二次情報で数字を埋めるくらいなら書かない。
+
+    **① 許可リストに足すドメイン（全部 `CONNECT tunnel failed, response 403` ＝経路の遮断。先方のbotブロックではない）**
+
+    | ドメイン | 何が載っているはずか |
+    |---|---|
+    | `qwen.ai` / `www.qwen.ai` | Qwen 公式サイト・ブログ（`qwen.ai/blog?id=...` の形）。**最優先** |
+    | `qwenlm.github.io` | 公式ブログの旧ドメイン。技術記事はこちらに残っている |
+    | `help.aliyun.com` | Model Studio（百煉）の日本語/中国語ドキュメント。**モデル一覧と料金はここ。2番目に重要** |
+    | `www.alibabacloud.com` | 同じものの英語版（`/help/en/model-studio/models`） |
+    | `dashscope.aliyuncs.com` | DashScope API のドキュメント/エンドポイント |
+    | `modelscope.cn` / `www.modelscope.cn` | ModelScope。中国側のモデルカードはここに先に出る |
+    | `www.aliyun.com` / `bailian.console.aliyun.com` | 料金ページ・コンソール |
+    | `chat.qwen.ai` | 一般向けチャット。仕様の記載は薄いので優先度は低い |
+
+    ⚠️ 環境の Network access を Custom にして足すとき、**「Also include default list of common package managers」の
+    チェックを外さないこと**（外すと同じ環境の MarketWatch 側が全部壊れる）。手順は SESSION_HANDOFF.md の
+    「クラウドルーティンは既定では各社の発表ページを読めない」節。
+
+    **② 許可リストに足しても解決しないかもしれない点（先に知っておくと無駄足が減る）**
+
+    - **HuggingFace の `Qwen` org に Qwen3.8 は1件も無い**（API で全件確認。最新は `Qwen3-ASR-0.6B-hf`＝2026-07-22、
+      Qwen3.5/3.6 止まり）。重みが未公開なので、モデルカード経由の仕様確認は**当面できない**。
+    - **GitHub の `QwenLM` にも Qwen3.8 のリポジトリが無い**（ピン留めは Qwen3.6 / Qwen3-VL / Qwen3-Coder / Qwen3-Omni）。
+      GitHub は到達できるので、ここに出たらそれが一番早い一次情報になる。
+    - → **次に足すべきは `help.aliyun.com` と `qwen.ai` の2つ。**クラウドの提供ドキュメントは重み未公開でも先に出る。
+
+    **③ 参考（記事には使っていない）** OpenRouter のページには 入力 $2 / 出力 $6（100万トークンあたり）・
+    コンテキスト 100万トークン・公開日 2026-08-03 と書かれていた。**これは OpenRouter が自社の窓口について
+    書いている値であって、Alibaba 公式の値ではない**ので、一次情報が読めるまで記事には載せない。
+    最大出力・学習データの締め切り・パラメータ数は OpenRouter にも記載が無い。
 
 - [x] https://www.anthropic.com/news/claude-opus-5
   - 2026-08-04 1回目: `Host not in allowlist: www.anthropic.com` の403で取得できず停止（記録は正しい挙動）。
