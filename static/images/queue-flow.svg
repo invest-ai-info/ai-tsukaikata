@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="232" viewBox="0 0 720 232" role="img" aria-label="待ち行列の流れを示した図。あなたがスマホでURLを1行足す、AIが毎朝きまった時刻に起動する、AIが出典の本文を実際に開いて読む、AIが公開されない場所に下書きを置く、最後にあなたが読む、の5段階。AIが担当するのは真ん中の3つで、人がやるのは最初の1行と最後に読むところだけ。途中で公開されることはない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="232"/>
+<text class="t-strong" x="18" y="26">気になったURLを1行足すと、翌朝には下書きができています</text>
+<text class="t-sm" x="18" y="45">青がAIの担当。人がやるのは最初の1行と、最後に読むところだけ。</text>
+<text class="t-sm" x="18" y="64">途中で公開されることはありません。置き場所を分けてあります。</text>
+<rect class="box" x="22" y="92" width="124" height="96" rx="6"/>
+<text class="t-strong" x="34" y="124">スマホで1行</text>
+<text class="t-xs" x="34" y="150">URLを足すだけ</text>
+<text class="t-xs" x="34" y="174">あなた</text>
+<path class="line" d="M150 140.0 L162 140.0"/>
+<rect class="box-accent" x="166" y="92" width="124" height="96" rx="6"/>
+<text class="t-accent" x="178" y="124">定時に起動</text>
+<text class="t-xs" x="178" y="150">毎朝きまった時刻</text>
+<text class="t-xs" x="178" y="174">AI</text>
+<path class="line" d="M294 140.0 L306 140.0"/>
+<rect class="box-accent" x="310" y="92" width="124" height="96" rx="6"/>
+<text class="t-accent" x="322" y="124">出典を読む</text>
+<text class="t-xs" x="322" y="150">本文を実際に開く</text>
+<text class="t-xs" x="322" y="174">AI</text>
+<path class="line" d="M438 140.0 L450 140.0"/>
+<rect class="box-accent" x="454" y="92" width="124" height="96" rx="6"/>
+<text class="t-accent" x="466" y="124">下書きを置く</text>
+<text class="t-xs" x="466" y="150">公開されない場所へ</text>
+<text class="t-xs" x="466" y="174">AI</text>
+<path class="line" d="M582 140.0 L594 140.0"/>
+<rect class="box" x="598" y="92" width="124" height="96" rx="6"/>
+<text class="t-strong" x="610" y="124">人が読む</text>
+<text class="t-xs" x="610" y="150">ここだけ人間</text>
+<text class="t-xs" x="610" y="174">あなた</text>
+<text class="t-xs" x="18" y="218">※ 待ち行列はただのテキストファイルです。専用の管理画面は作りません。</text>
+</svg>

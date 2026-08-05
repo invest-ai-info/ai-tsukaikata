@@ -18,6 +18,7 @@ STYLE = """  .bg { fill: #fbfcfd; }
   .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
   .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
   .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
   .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
   .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
   .t-good { fill: #16682e; font-size: 12.5px; }
@@ -36,6 +37,7 @@ STYLE = """  .bg { fill: #fbfcfd; }
     .box-accent { fill: #1b2735; stroke: #7ab0ff; }
     .box-quiet { fill: #1c2126; stroke: #363c43; }
     .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
     .line { stroke: #6e7781; }
     .t-bad { fill: #f07a7a; }
     .t-good { fill: #57ab68; }
@@ -409,6 +411,95 @@ def citation_chain_chart() -> None:
     )
 
 
+def queue_flow_chart() -> None:
+    """1行足す → 定時に起動 → 出典を読む → 下書き → 人が読む → 公開。"""
+    steps = [
+        ("スマホで1行", "URLを足すだけ", "you"),
+        ("定時に起動", "毎朝きまった時刻", "ai"),
+        ("出典を読む", "本文を実際に開く", "ai"),
+        ("下書きを置く", "公開されない場所へ", "ai"),
+        ("人が読む", "ここだけ人間", "you"),
+    ]
+    box_w, box_h, gap = 124, 96, 20
+    top, left = 92, 22
+    parts = [
+        '<text class="t-strong" x="18" y="26">気になったURLを1行足すと、翌朝には下書きができています</text>\n',
+        '<text class="t-sm" x="18" y="45">青がAIの担当。人がやるのは最初の1行と、最後に読むところだけ。</text>\n',
+        '<text class="t-sm" x="18" y="64">途中で公開されることはありません。置き場所を分けてあります。</text>\n',
+    ]
+    for index, (title, note, who) in enumerate(steps):
+        x = left + index * (box_w + gap)
+        cls = "box-accent" if who == "ai" else "box"
+        parts.append(
+            f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-accent" if who == "ai" else "t-strong"}" '
+            f'x="{x + 12}" y="{top + 32}">{_esc(title)}</text>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{x + 12}" y="{top + 58}">{_esc(note)}</text>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x + 12}" y="{top + box_h - 14}">'
+            f'{"AI" if who == "ai" else "あなた"}</text>\n'
+        )
+        if index < len(steps) - 1:
+            ax = x + box_w + 4
+            parts.append(
+                f'<path class="line" d="M{ax} {top + box_h / 2} L{ax + gap - 8} {top + box_h / 2}"/>\n'
+            )
+
+    height = top + box_h + 44
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 待ち行列はただのテキストファイルです。専用の管理画面は作りません。</text>\n"
+    )
+    alt = (
+        "待ち行列の流れを示した図。あなたがスマホでURLを1行足す、"
+        "AIが毎朝きまった時刻に起動する、AIが出典の本文を実際に開いて読む、"
+        "AIが公開されない場所に下書きを置く、最後にあなたが読む、の5段階。"
+        "AIが担当するのは真ん中の3つで、人がやるのは最初の1行と最後に読むところだけ。"
+        "途中で公開されることはない。"
+    )
+    (OUT / "queue-flow.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def write_or_stop_chart() -> None:
+    """一次情報に届いたかで、書く／書かないを分ける。"""
+    top, box_w, box_h = 96, 300, 130
+    left_x, right_x = 22, 380
+    parts = [
+        '<text class="t-strong" x="18" y="26">届かなかったときに、書かずに止まれるかどうか</text>\n',
+        '<text class="t-sm" x="18" y="45">今日じっさいに動かした2件は、片方が公開・片方が見送りでした。</text>\n',
+        '<text class="t-sm" x="18" y="64">見送れたことのほうが大事です。埋めて書かれるより安全なので。</text>\n',
+        f'<rect class="box-good" x="{left_x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-bad" x="{right_x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-good" x="{left_x + 16}" y="{top + 30}">一次情報に届いた</text>\n',
+        f'<text class="t-bad" x="{right_x + 16}" y="{top + 30}">届かなかった</text>\n',
+        f'<text class="t" x="{left_x + 16}" y="{top + 60}">出典を読んで下書きを書く</text>\n',
+        f'<text class="t" x="{right_x + 16}" y="{top + 60}">下書きを作らない</text>\n',
+        f'<text class="t-sm" x="{left_x + 16}" y="{top + 86}">人が読んでから公開</text>\n',
+        f'<text class="t-sm" x="{right_x + 16}" y="{top + 86}">止まった理由を書いて残す</text>\n',
+        f'<text class="t-xs" x="{left_x + 16}" y="{top + 112}">例: Claude Opus 5 の比較記事</text>\n',
+        f'<text class="t-xs" x="{right_x + 16}" y="{top + 112}">例: Qwen3.8（公式情報が未公開）</text>\n',
+    ]
+    height = top + box_h + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 二次情報で埋めれば表は完成します。完成した表のほうが危ないので、そうさせません。</text>\n"
+    )
+    alt = (
+        "一次情報に届いたかどうかで動きを分ける図。"
+        "届いた場合は出典を読んで下書きを書き、人が読んでから公開する（例：Claude Opus 5 の比較記事）。"
+        "届かなかった場合は下書きを作らず、止まった理由を書いて残す（例：Qwen3.8、公式情報が未公開）。"
+        "二次情報で埋めれば表は完成するが、完成した表のほうが危ないため、そうさせない。"
+    )
+    (OUT / "write-or-stop.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -417,4 +508,6 @@ if __name__ == "__main__":
     line_count_chart()
     extrapolation_chart()
     citation_chain_chart()
-    print(f"7枚を {OUT} に出力しました")
+    queue_flow_chart()
+    write_or_stop_chart()
+    print(f"9枚を {OUT} に出力しました")

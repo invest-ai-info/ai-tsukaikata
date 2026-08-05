@@ -5,6 +5,7 @@
   .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
   .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
   .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
   .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
   .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
   .t-good { fill: #16682e; font-size: 12.5px; }
@@ -23,6 +24,7 @@
     .box-accent { fill: #1b2735; stroke: #7ab0ff; }
     .box-quiet { fill: #1c2126; stroke: #363c43; }
     .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
     .line { stroke: #6e7781; }
     .t-bad { fill: #f07a7a; }
     .t-good { fill: #57ab68; }
