@@ -14,6 +14,15 @@
 
 ## 待ち行列
 
+- [ ] https://openai.com/index/continuous-voice-interaction-with-gpt-live/
+  - **末尾のスラッシュを必ず付けること。**無いと 308 リダイレクトになる（付ければ 200・約505KB を実測）。
+  - 比較相手＝Google の Gemini Live（`ai.google.dev` / `deepmind.google` は到達可）と、
+    OpenAI の他の音声モデル（`developers.openai.com/api/docs/models` と `/api/docs/pricing` は到達可）。
+    **Anthropic に同等の機能が無ければ「提供していない」と書けばよい。**無理に並べない。
+  - 集めたい数字＝**応答までの待ち時間・料金・対応言語・使えるモデル**。
+    ⚠️ 待ち時間は測り方で大きく変わる。条件が書かれていなければ「条件は公表されていない」と明記する。
+  - ⚠️ `openai.com/api/pricing/` は先方が403を返す。料金は `developers.openai.com/api/docs/pricing` を見ること。
+
 - [!] https://openrouter.ai/qwen/qwen3.8-max
   - 2026-08-04 にトラッカーが即時メールで拾った Alibaba の最上位モデル。
     ⚠️ OpenRouter は提供窓口であって一次情報ではない。**Alibaba/Qwen 自身の公式発表かモデルカードを探すこと**
