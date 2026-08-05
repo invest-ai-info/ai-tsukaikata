@@ -14,6 +14,19 @@
 
 ## 待ち行列
 
+- [ ] https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/
+  - **到達性は確認済み**＝`deepmind.google` と `ai.google.dev` は Opus 5 の記事を書いたときに
+    クラウド側から実際に読めている。料金は `ai.google.dev/gemini-api/docs/pricing`。
+  - 切り口＝**安いモデル同士の比較**。旗艦モデルより、このサイトの読者（非エンジニアの会社員）に近い。
+    比較相手＝Claude Haiku 4.5（`platform.claude.com/docs/en/about-claude/pricing`）と
+    OpenAI の小型モデル（**`developers.openai.com/api/docs/pricing` のみ**）。
+  - ⚠️ **`openai.com` の HTMLページは 403（Cloudflare の bot 判定）。**RSS と `developers.openai.com` は
+    200 なので、経路ではなく先方の判定。**UA偽装での迂回はしない。**`developers.openai.com` だけを使う。
+  - ⚠️ **トークン課金と分課金を1本の表に混ぜない**（前回 `gpt-realtime-translate` $0.034/分 のような
+    分課金があることを確認済み）。単位が違うものは表を分ける。
+  - ⚠️ 3つのモデルが同時発表なので、**用途の違い**（Flash / Flash-Lite / Flash Cyber）を先に整理してから
+    値段を並べること。値段だけ並べても選べない。
+
 - [!] https://openai.com/index/continuous-voice-interaction-with-gpt-live/
   - **末尾のスラッシュを必ず付けること。**無いと 308 リダイレクトになる（付ければ 200・約505KB を実測）。
   - 比較相手＝Google の Gemini Live（`ai.google.dev` / `deepmind.google` は到達可）と、
