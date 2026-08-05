@@ -205,8 +205,98 @@ def tokenizer_chart() -> None:
     )
 
 
+def filler_before_after() -> None:
+    """埋め草が入った要約の割合。指示を直す前と後。"""
+    left, right = 250, 600
+    span = right - left
+    top, bar_h, gap = 82, 34, 34
+    rows = [
+        ("行数を固定していたとき", 59, 59, "bar-old"),
+        ("固定をやめたあと", 0, 120, "bar-new"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">「当たり障りのない一文」が入っていた要約の割合</text>\n',
+        '<text class="t-sm" x="18" y="45">「〜に影響します」「注目されています」のような、誰にでも当てはまる行のこと。</text>\n',
+        '<text class="t-sm" x="18" y="64">同じ相手・同じ材料で、指示文だけを変えて数えました。</text>\n',
+    ]
+    for index, (label, hit, total, cls) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 11}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        ratio = hit / total
+        if hit:
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" '
+                f'width="{span * ratio:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="t-strong" x="{right + 12}" y="{y + bar_h - 11}">'
+            f"{hit} / {total}件</text>\n"
+        )
+
+    height = top + 2 * (bar_h + gap) + 22
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 直したのはAIではなく、こちらの指示文です。行数の指定をやめただけで消えました。</text>\n"
+    )
+    alt = (
+        "指示文を直す前と後で、当たり障りのない一文が入っていた要約の割合を比べた図。"
+        "行数を3行に固定していたときは59件中59件すべてに入っていたが、"
+        "行数の固定をやめたあとは120件中0件になった。"
+    )
+    (OUT / "filler-before-after.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def line_count_chart() -> None:
+    """行数の分布。固定をやめると、書ける量に応じて短くなる。"""
+    left, right = 210, 600
+    span = right - left
+    top, bar_h, gap = 78, 30, 22
+    rows = [("1行で済んだ", 10), ("2行", 43), ("3行", 67)]
+    biggest = max(v for _, v in rows)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">固定をやめたあとの、要約の行数（120件）</text>\n',
+        '<text class="t-sm" x="18" y="45">書くことが少ない記事は、短く終わるようになりました。</text>\n',
+        '<text class="t-sm" x="18" y="64">前は全件が3行でした。足りない行は埋め草で埋まっていました。</text>\n',
+    ]
+    for index, (label, value) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 9}">{_esc(label)}</text>\n')
+        bw = span * value / biggest
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 10:.1f}" y="{y + bar_h - 9}">{value}件</text>\n'
+        )
+
+    height = top + 3 * (bar_h + gap) + 18
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 短いほうが手抜きとは限りません。元の記事に書いてあることが少ないだけです。</text>\n"
+    )
+    alt = (
+        "行数の固定をやめたあとの要約120件の行数分布を示した横棒グラフ。"
+        "1行で済んだものが10件、2行が43件、3行が67件。"
+        "以前は全件が3行で、足りない行は当たり障りのない文で埋まっていた。"
+    )
+    (OUT / "summary-line-counts.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
     tokenizer_chart()
-    print(f"3枚を {OUT} に出力しました")
+    filler_before_after()
+    line_count_chart()
+    print(f"5枚を {OUT} に出力しました")

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="252" viewBox="0 0 720 252" role="img" aria-label="行数の固定をやめたあとの要約120件の行数分布を示した横棒グラフ。1行で済んだものが10件、2行が43件、3行が67件。以前は全件が3行で、足りない行は当たり障りのない文で埋まっていた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="252"/>
+<text class="t-strong" x="18" y="26">固定をやめたあとの、要約の行数（120件）</text>
+<text class="t-sm" x="18" y="45">書くことが少ない記事は、短く終わるようになりました。</text>
+<text class="t-sm" x="18" y="64">前は全件が3行でした。足りない行は埋め草で埋まっていました。</text>
+<text class="t" x="18" y="99">1行で済んだ</text>
+<rect class="bar-new" x="210" y="78" width="58.2" height="30" rx="3"/>
+<text class="t-sm" x="278.2" y="99">10件</text>
+<text class="t" x="18" y="151">2行</text>
+<rect class="bar-new" x="210" y="130" width="250.3" height="30" rx="3"/>
+<text class="t-sm" x="470.3" y="151">43件</text>
+<text class="t" x="18" y="203">3行</text>
+<rect class="bar-new" x="210" y="182" width="390.0" height="30" rx="3"/>
+<text class="t-sm" x="610.0" y="203">67件</text>
+<text class="t-xs" x="18" y="242">※ 短いほうが手抜きとは限りません。元の記事に書いてあることが少ないだけです。</text>
+</svg>
