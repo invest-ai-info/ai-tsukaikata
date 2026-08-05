@@ -14,7 +14,7 @@
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
     "pfn-blog": "2026-07-16T23:48:39+00:00",
-    "sakana-blog": "2026-08-02T15:00:00+00:00"
+    "sakana-blog": "2026-08-04T15:00:00+00:00"
   },
   "pending_minor": [
     {
@@ -115,6 +115,17 @@
       "uid": "23894ac3cc20aaef",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
       "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-08-04T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana AI、大和証券グループとの共同AIプロジェクトを本格展開フェーズへ移行　ウェルスマネジメント業務支援AIの開発を開始",
+      "uid": "e47b4c9b63e7b6ca",
+      "url": "/daiwa-shoken-full-scale/",
+      "vendor": "Sakana AI"
     }
   ],
   "uids": {
@@ -470,6 +481,7 @@
     "e308cad69399bfa1": "2026-08-01T12:16:42.309603+00:00",
     "e362d8ffa6e62ec6": "2026-08-01T12:16:42.309603+00:00",
     "e400d84d9e0eebed": "2026-08-01T12:16:42.309603+00:00",
+    "e47b4c9b63e7b6ca": "2026-08-05T03:36:38.501387+00:00",
     "e556c25d2eec71eb": "2026-08-01T12:16:42.309603+00:00",
     "e55a6a31804ca6ed": "2026-08-01T12:16:42.309603+00:00",
     "e67e30ab2776e7e3": "2026-08-01T12:16:42.309603+00:00",
