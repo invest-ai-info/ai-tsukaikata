@@ -45,10 +45,10 @@ Google は 2026年7月21日に **Gemini 3.6 Flash**・**Gemini 3.5 Flash-Lite**�
 |---|---|---|
 | Flash の入力（100万トークン） | 3.5 Flash: $1.50 | 3.6 Flash: $1.50 |
 | Flash の出力（100万トークン） | 3.5 Flash: $9.00 | 3.6 Flash: **$7.50** |
-| Flash のまとめ処理（Batch）入力 / 出力 | このページに記載なし | $0.75 / $3.75 |
+| Flash のまとめ処理（Batch）入力 / 出力 | 3.5 Flash: $0.75 / $4.50 | 3.6 Flash: $0.75 / **$3.75** |
 | Flash-Lite の入力（100万トークン） | 3.1 Flash-Lite: $0.25（音声は $0.50） | 3.5 Flash-Lite: **$0.30**（音声も同じ） |
 | Flash-Lite の出力（100万トークン） | 3.1 Flash-Lite: $1.50 | 3.5 Flash-Lite: **$2.50** |
-| Flash-Lite のまとめ処理（Batch）入力 / 出力 | このページに記載なし | $0.15 / $1.25 |
+| Flash-Lite のまとめ処理（Batch）入力 / 出力 | 3.1 Flash-Lite: $0.125（音声 $0.25）/ $0.75 | 3.5 Flash-Lite: **$0.15 / $1.25** |
 
 出典: すべて <https://ai.google.dev/gemini-api/docs/pricing>
 
@@ -57,7 +57,7 @@ Google は 2026年7月21日に **Gemini 3.6 Flash**・**Gemini 3.5 Flash-Lite**�
 <figcaption>下がったのは Flash の出力だけです</figcaption>
 </figure>
 
-**世代が新しいほど安い、ではありません。**Flash は出力が $9.00 から $7.50 へ下がりましたが、Flash-Lite は入力も出力も上がっています。出力にいたっては 1.67倍です。
+**世代が新しいほど安い、ではありません。**Flash は出力が $9.00 から $7.50 へ下がりましたが、Flash-Lite は入力も出力も上がっています。出力にいたっては 1.67倍です。まとめ処理（Batch）でも同じ向きで、Flash は $4.50 → $3.75 と下がり、Flash-Lite は $0.75 → $1.25 と上がっています。
 
 ただし Flash-Lite には逆向きの変化もあります。3.1 Flash-Lite は音声の入力だけ $0.50 と別料金でしたが、<mark>3.5 Flash-Lite はテキストも画像も動画も音声も一律 $0.30 です</mark>（出典: <https://ai.google.dev/gemini-api/docs/pricing>）。音声を大量に読ませる使い方なら、こちらは安くなります。
 
