@@ -17,6 +17,10 @@ STYLE = """  .bg { fill: #fbfcfd; }
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
   .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
   .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
   .t { fill: #1f2328; font-size: 13px; }
   .t-sm { fill: #616b76; font-size: 11.5px; }
   .t-xs { fill: #8b949e; font-size: 10.5px; }
@@ -31,6 +35,10 @@ STYLE = """  .bg { fill: #fbfcfd; }
     .box { fill: #14171a; stroke: #363c43; }
     .box-accent { fill: #1b2735; stroke: #7ab0ff; }
     .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
     .t { fill: #e6e9ec; }
     .t-sm { fill: #9aa4ae; }
     .t-xs { fill: #6e7781; }
@@ -293,10 +301,120 @@ def line_count_chart() -> None:
     )
 
 
+def extrapolation_chart() -> None:
+    """他の行の比率を当てはめて数字を作ってしまう、の図解。"""
+    col = [22, 210, 330, 450, 560]
+    top, row_h = 96, 46
+    rows = [
+        ("GPT-5.6-sol", "$5", "$10", "×2", False),
+        ("", "$30", "$45", "×1.5", False),
+        ("GPT-5.6-terra", "$2", "$4", "×2", False),
+        ("", "$12", "$18", "×1.5", False),
+        ("gpt-5.5-pro", "$30", "$60 ?", "×2", True),
+        ("", "$180", "$270 ?", "×1.5", True),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">出典に無い数字が、どうやって出てきたか</text>\n',
+        '<text class="t-sm" x="18" y="45">上4行は料金ページに書いてあった値。下2行は書いていないのに出てきた値。</text>\n',
+        '<text class="t-sm" x="18" y="64">かかっている倍率が、上の行とぴったり同じでした。</text>\n',
+        f'<text class="t-xs" x="{col[1]}" y="{top - 12}">短い入力</text>\n',
+        f'<text class="t-xs" x="{col[2]}" y="{top - 12}">長い入力</text>\n',
+        f'<text class="t-xs" x="{col[3]}" y="{top - 12}">倍率</text>\n',
+    ]
+    for index, (name, short, long_, ratio, made_up) in enumerate(rows):
+        y = top + index * row_h
+        if made_up:
+            parts.append(
+                f'<rect class="box-bad" x="{col[0] - 8}" y="{y - 18}" '
+                f'width="{col[4] + 130}" height="{row_h - 8}" rx="4"/>\n'
+            )
+        if name:
+            parts.append(f'<text class="t-strong" x="{col[0]}" y="{y}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t" x="{col[1]}" y="{y}">{_esc(short)}</text>\n')
+        parts.append(f'<text class="t" x="{col[2]}" y="{y}">{_esc(long_)}</text>\n')
+        parts.append(f'<text class="t-accent" x="{col[3]}" y="{y}">{_esc(ratio)}</text>\n')
+        note = "出典に無い" if made_up else "出典にある"
+        cls = "t-bad" if made_up else "t-sm"
+        parts.append(f'<text class="{cls}" x="{col[4]}" y="{y}">{note}</text>\n')
+
+    height = top + len(rows) * row_h + 22
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典URLは正しく付いていました。そのページに、その数字が無かっただけです。</text>\n"
+    )
+    alt = (
+        "AIが出典に無い数字を作った経緯を示した表。"
+        "GPT-5.6-sol は短い入力5ドルが長い入力10ドル（2倍）、出力30ドルが45ドル（1.5倍）。"
+        "GPT-5.6-terra も2ドルが4ドル（2倍）、12ドルが18ドル（1.5倍）。"
+        "ここまでは料金ページに書いてある値。"
+        "ところが gpt-5.5-pro には長い入力の行が無いのに、同じ倍率を当てはめて"
+        "60ドルと270ドルという値が書かれていた。出典URLは正しかったが、その数字はページに無かった。"
+    )
+    (OUT / "extrapolated-numbers.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def citation_chain_chart() -> None:
+    """出典が付いていると、最後の確認が飛ばされる。"""
+    box_w, box_h, gap = 200, 92, 34
+    top = 92
+    steps = [
+        ("出典URLが付いている", "見ればすぐ分かる", True),
+        ("そのページが開ける", "押せば分かる", True),
+        ("その数字がページに\n書いてある", "ここだけ誰も見ない", False),
+    ]
+    parts = [
+        '<text class="t-strong" x="18" y="26">出典が付いているほど、確認されなくなります</text>\n',
+        '<text class="t-sm" x="18" y="45">3つ目だけ、ページを開いて文字を探さないと確かめられません。</text>\n',
+        '<text class="t-sm" x="18" y="64">手間がかかるので飛ばされます。そこが抜け道になります。</text>\n',
+    ]
+    for index, (title, note, ok) in enumerate(steps):
+        x = 22 + index * (box_w + gap)
+        cls = "box" if ok else "box-bad"
+        parts.append(
+            f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        for line_index, line in enumerate(title.split("\n")):
+            parts.append(
+                f'<text class="t-strong" x="{x + 14}" y="{top + 30 + line_index * 20}">'
+                f"{_esc(line)}</text>\n"
+            )
+        parts.append(
+            f'<text class="{"t-good" if ok else "t-bad"}" x="{x + 14}" y="{top + box_h - 16}">'
+            f"{_esc(note)}</text>\n"
+        )
+        if index < len(steps) - 1:
+            ax = x + box_w + 8
+            parts.append(
+                f'<path class="line" d="M{ax} {top + box_h / 2} '
+                f'L{ax + gap - 16} {top + box_h / 2}"/>\n'
+            )
+
+    height = top + box_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ だから「その数字が書いてある部分を、周りの文ごと引用して」と頼みます。</text>\n"
+    )
+    alt = (
+        "出典の確認が3段階あることを示した図。"
+        "1つ目は出典URLが付いているか（見ればすぐ分かる）、"
+        "2つ目はそのページが開けるか（押せば分かる）、"
+        "3つ目はその数字がページに書いてあるか。"
+        "3つ目だけはページを開いて文字を探す必要があるため飛ばされやすく、そこが抜け道になる。"
+    )
+    (OUT / "citation-chain.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
     tokenizer_chart()
     filler_before_after()
     line_count_chart()
-    print(f"5枚を {OUT} に出力しました")
+    extrapolation_chart()
+    citation_chain_chart()
+    print(f"7枚を {OUT} に出力しました")

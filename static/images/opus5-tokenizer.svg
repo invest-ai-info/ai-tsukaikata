@@ -4,6 +4,10 @@
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
   .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
   .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
   .t { fill: #1f2328; font-size: 13px; }
   .t-sm { fill: #616b76; font-size: 11.5px; }
   .t-xs { fill: #8b949e; font-size: 10.5px; }
@@ -18,6 +22,10 @@
     .box { fill: #14171a; stroke: #363c43; }
     .box-accent { fill: #1b2735; stroke: #7ab0ff; }
     .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
     .t { fill: #e6e9ec; }
     .t-sm { fill: #9aa4ae; }
     .t-xs { fill: #6e7781; }
