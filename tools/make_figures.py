@@ -22,6 +22,7 @@ STYLE = """  .bg { fill: #fbfcfd; }
   .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
   .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
   .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
   .t { fill: #1f2328; font-size: 13px; }
   .t-sm { fill: #616b76; font-size: 11.5px; }
   .t-xs { fill: #8b949e; font-size: 10.5px; }
@@ -41,6 +42,7 @@ STYLE = """  .bg { fill: #fbfcfd; }
     .line { stroke: #6e7781; }
     .t-bad { fill: #f07a7a; }
     .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
     .t { fill: #e6e9ec; }
     .t-sm { fill: #9aa4ae; }
     .t-xs { fill: #6e7781; }
@@ -354,6 +356,44 @@ def extrapolation_chart() -> None:
         "60ドルと270ドルという値が書かれていた。出典URLは正しかったが、その数字はページに無かった。"
     )
     (OUT / "extrapolated-numbers.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def summary_vs_raw_chart() -> None:
+    """要約された確認結果と、生ページの実物を並べる。"""
+    top = 96
+    row = "gpt-5.5-pro   $30.00   -   -   $180.00   $60.00   -   -   $270.00"
+    parts = [
+        '<text class="t-strong" x="18" y="26">「確認しました」の中身が、作られていることがあります</text>\n',
+        '<text class="t-sm" x="18" y="45">料金表の1行を確かめようとして、AIに要約させた結果と、生ページの実物です。</text>\n',
+        '<text class="t-sm" x="18" y="64">要約のほうを信じて、正しく書かれていた数字を消してしまいました。</text>\n',
+        f'<rect class="box-good" x="22" y="{top}" width="676" height="86" rx="6"/>\n',
+        f'<text class="t-good" x="38" y="{top + 26}">生ページに実際にあった行</text>\n',
+        f'<text class="mono" x="38" y="{top + 52}">{_esc(row)}</text>\n',
+        f'<text class="t-xs" x="38" y="{top + 74}">'
+        "見出しは「Short context（短い入力）／ Long context（長い入力）」の8列。長い入力の行は在る。</text>\n",
+        f'<rect class="box-bad" x="22" y="{top + 104}" width="676" height="86" rx="6"/>\n',
+        f'<text class="t-bad" x="38" y="{top + 130}">AIが返してきた「確認結果」</text>\n',
+        f'<text class="t" x="38" y="{top + 156}">'
+        "「長い入力の行はありません。272Kトークン未満という但し書きだけです」</text>\n",
+        f'<text class="t-xs" x="38" y="{top + 178}">'
+        "→ 行は在る。そして 272K という文字列は、このページに1度も出てこない。</text>\n",
+    ]
+    height = top + 190 + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 確認をAIに要約させると、確認そのものが作り話になります。生の行を見てください。</text>\n"
+    )
+    alt = (
+        "要約された確認結果と生ページを比べた図。"
+        "生ページには gpt-5.5-pro の行が実際にあり、短い入力が30ドルと180ドル、"
+        "長い入力が60ドルと270ドルと書かれていた。見出しは Short context と Long context の8列。"
+        "ところがAIが返してきた確認結果は「長い入力の行はありません。272Kトークン未満という"
+        "但し書きだけです」というもので、行は実在し、272Kという文字列はページに1度も出てこない。"
+        "確認をAIに要約させると、確認そのものが作り話になる。"
+    )
+    (OUT / "summary-vs-raw.svg").write_text(
         _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
     )
 
@@ -750,6 +790,7 @@ if __name__ == "__main__":
     filler_before_after()
     line_count_chart()
     extrapolation_chart()
+    summary_vs_raw_chart()
     citation_chain_chart()
     queue_flow_chart()
     write_or_stop_chart()

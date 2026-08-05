@@ -94,7 +94,7 @@ Anthropic は 2026年7月24日に **Claude Opus 5** を公開しました（出�
 
 出典: Claude 各モデルは <https://platform.claude.com/docs/en/about-claude/pricing> と <https://platform.claude.com/docs/en/about-claude/models/overview>、GPT の料金は <https://developers.openai.com/api/docs/pricing>、GPT の読める量と締め切りは <https://developers.openai.com/api/docs/models>、Gemini の料金は <https://ai.google.dev/gemini-api/docs/pricing>、Gemini の読める量は <https://deepmind.google/models/gemini/pro/>
 
-参考までに、OpenAI の公式料金ページには最上位の `gpt-5.5-pro` も載っていて、入力$30.00・出力$180.00（短い入力のとき）とされています。**このモデルには「長い入力」の行がありません**——料金ページには「272Kトークン未満」という但し書きだけが付いています（出典: <https://developers.openai.com/api/docs/pricing>）。
+参考までに、OpenAI の公式料金ページには最上位の `gpt-5.5-pro` も載っていて、入力$30.00・出力$180.00、長い入力のときは入力$60.00・出力$270.00 とされています（出典: <https://developers.openai.com/api/docs/pricing>）。
 
 <figure class="figure">
 <img src="/static/images/opus5-price-comparison.svg" alt="5つのモデルの単価を比べた横棒グラフ。100万トークンあたりのドル。Claude Opus 5 は入力5ドル・出力25ドル、Claude Fable 5 は入力10ドル・出力50ドル、GPT-5.6-sol は入力5ドル・出力30ドル、GPT-5.6-terra は入力2ドル・出力12ドル、Gemini 3.1 Pro は入力2ドル・出力12ドル。ただし会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しません。">
