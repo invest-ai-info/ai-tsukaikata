@@ -14,7 +14,7 @@
 
 ## 待ち行列
 
-- [ ] https://openai.com/index/continuous-voice-interaction-with-gpt-live/
+- [!] https://openai.com/index/continuous-voice-interaction-with-gpt-live/
   - **末尾のスラッシュを必ず付けること。**無いと 308 リダイレクトになる（付ければ 200・約505KB を実測）。
   - 比較相手＝Google の Gemini Live（`ai.google.dev` / `deepmind.google` は到達可）と、
     OpenAI の他の音声モデル（`developers.openai.com/api/docs/models` と `/api/docs/pricing` は到達可）。
@@ -22,6 +22,51 @@
   - 集めたい数字＝**応答までの待ち時間・料金・対応言語・使えるモデル**。
     ⚠️ 待ち時間は測り方で大きく変わる。条件が書かれていなければ「条件は公表されていない」と明記する。
   - ⚠️ `openai.com/api/pricing/` は先方が403を返す。料金は `developers.openai.com/api/docs/pricing` を見ること。
+  - **2026-08-05 1回目: 下書きを作らずに停止した。**発表ページの本文が読めないため。
+
+    **① 何が起きたか＝`openai.com` の HTMLページが全部 Cloudflare の challenge で 403 になった**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `openai.com/index/continuous-voice-interaction-with-gpt-live/` | **403**（9,848バイトの challenge ページ） |
+    | `openai.com/index/continuous-voice-interaction-with-gpt-live`（スラッシュ無し） | **403**（308にすらならない） |
+    | `openai.com/` / `openai.com/news/` / `openai.com/index/gpt-5-6/` | **403**（＝この記事だけの問題ではない） |
+    | `openai.com/news/rss.xml` | **200**・約674KB |
+    | `developers.openai.com/api/docs/pricing` / `/api/docs/models` | **200** |
+
+    - 応答ヘッダに **`cf-mitigated: challenge`** と `server: cloudflare`。⚠️**これは先方のbot判定であって、
+      経路（プロキシの許可リスト）の遮断ではない。**許可リストに足しても直らない。切り分けの根拠＝同じ
+      `openai.com` の RSS が 200 で返っていること。前回の `CONNECT tunnel failed, response 403` とは別物。
+    - 末尾スラッシュ有り／無しで各3回・20秒間隔、WebFetch でも同じ 403。**UA偽装での迂回はしない**
+      （x.ai と同じ方針。SESSION_HANDOFF「x.ai は403でbotブロック」節）。
+    - **2026-08-04 には同じURLが 200・505KB で取れていた。**先方の設定が変わった可能性が高い。
+      **時間帯やegressのIP評価で戻ることがあるので、次回そのまま再実行する価値はある。**
+
+    **② RSS から分かったこと（本文ではないので記事には使えない）**
+
+    `openai.com/news/rss.xml` に該当の item はある。ただし **`<description>` の1文だけで本文は入っていない**（item全体で645バイト）。
+
+    - 実際のタイトルは **"How we built a realtime system for responsive voice AI in six months"**
+      （待ち行列のURLから想像していた見出しとは違う）。カテゴリは `Engineering`
+    - 公開日 **2026-08-03 07:00 GMT**
+    - description 全文＝`GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.`
+    - → **「待ち時間」の数値と測定条件、対応言語は、この1文からは1つも取れない。**ここが記事の主題なので書けない。
+
+    **③ 到達できた一次情報（`developers.openai.com` 実測・次回はここから埋められる）**
+
+    ⚠️ **記事にはまだ使っていない。**書くときは必ずページを開き直して、その数字がそこに在ることを確かめること。
+
+    - `/api/docs/models` に **`gpt-live-transcribe` が実在**（＝GPT-Live は製品名として docs 側にも出ている）。
+      ほかに `gpt-realtime-2.1` / `-2.1-mini` / `gpt-realtime-2` / `gpt-realtime-translate` / `gpt-realtime-1.5`。
+      `gpt-realtime-mini` は Deprecated 表示。**コンテキスト長・学習データの締め切りは、どのモデルも記載が無い**
+    - `/api/docs/pricing`（100万トークンあたり）＝ `gpt-realtime-2.1`: テキスト入力 $4.00 / 音声入力 $32.00 /
+      テキスト出力 $24.00。`gpt-realtime-2.1-mini`: $0.60 / $10.00 / $2.40。
+      **分あたりの課金のものもある**＝ `gpt-realtime-translate` $0.034/分、`gpt-live-transcribe` $0.017/分、
+      `gpt-transcribe` $0.0045/分。**トークン課金と分課金が混在するので、1本の表に並べると壊れる**
+    - `/api/docs/guides/realtime` は 200 で読める。接続方式は WebRTC / WebSocket / SIP の3つ。
+      ⚠️ **待ち時間の数値も対応言語の一覧も、このガイドには書かれていない**（"low latency" という言葉だけ）
+    - → **比較相手の Gemini Live 側（`ai.google.dev` / `deepmind.google`）はまだ叩いていない。**
+      発表本文が読めない以上、そちらだけ集めても記事の軸が立たないため。
 
 - [!] https://openrouter.ai/qwen/qwen3.8-max
   - 2026-08-04 にトラッカーが即時メールで拾った Alibaba の最上位モデル。
