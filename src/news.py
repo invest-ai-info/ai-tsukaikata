@@ -1,0 +1,85 @@
+# -*- coding: utf-8 -*-
+"""data/tracker/news.json を読んで、トップの「AIアップデート」欄と
+/news/ アーカイブに渡す形へ整える。
+
+トラッカーの内部は知らない。知っているのは news.json の項目形式と
+「お知らせは読む・モデルは見る」の粒度ルールだけ。読めないときは
+NewsError を投げてビルドを止める（半端な欄を公開しないため）。
+"""
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+import yaml
+
+JST = timezone(timedelta(hours=9))
+
+# 要約の対象と同じ線引き（tracker/summarize.py の ANNOUNCEMENT_TYPES と同値）。
+# お知らせ＝1件ずつ読む。モデル＝出たことが分かればよいので畳む。
+ANNOUNCEMENT_TYPES = frozenset({"rss", "anthropic_news"})
+
+TOP_ANNOUNCEMENTS = 10
+MODEL_WINDOW_FALLBACK = timedelta(days=14)
+
+REQUIRED_KEYS = ("uid", "source_id", "title", "url", "importance", "published")
+
+
+class NewsError(Exception):
+    """news.json / sources.yml を読めない・形が違うときに投げる。"""
+
+
+@dataclass(frozen=True)
+class NewsItem:
+    uid: str
+    source_id: str
+    title: str
+    url: str
+    vendor: str
+    label: str
+    importance: str
+    published: datetime  # JST
+    summary_ja: str | None
+
+
+def load_source_types(path: Path) -> dict[str, str]:
+    """sources.yml から {id: type} を作る。お知らせ/モデルの振り分けに使う。"""
+    try:
+        data = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+        return {s["id"]: s["type"] for s in data["sources"]}
+    except (OSError, yaml.YAMLError, KeyError, TypeError) as error:
+        raise NewsError(f"{path}: 読めませんでした: {error}") from error
+
+
+def load_news(path: Path) -> list[NewsItem]:
+    """news.json を読み、新しい順の NewsItem にする。published は JST。"""
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+        raw_items = data["items"]
+    except (OSError, json.JSONDecodeError, KeyError, TypeError) as error:
+        raise NewsError(f"{path}: 読めませんでした: {error}") from error
+
+    items: list[NewsItem] = []
+    for raw in raw_items:
+        missing = [key for key in REQUIRED_KEYS if not raw.get(key)]
+        if missing:
+            raise NewsError(
+                f"{path}: 項目に必須キーがありません: {', '.join(missing)}"
+                f"（uid: {raw.get('uid', '?')}）"
+            )
+        published = datetime.fromisoformat(raw["published"]).astimezone(JST)
+        items.append(NewsItem(
+            uid=raw["uid"],
+            source_id=raw["source_id"],
+            title=raw["title"],
+            url=raw["url"],
+            vendor=raw.get("vendor") or raw.get("label") or raw["source_id"],
+            label=raw.get("label") or raw.get("vendor") or raw["source_id"],
+            importance=raw["importance"],
+            published=published,
+            summary_ja=raw.get("summary_ja") or None,
+        ))
+    items.sort(key=lambda item: (item.published, item.uid), reverse=True)
+    return items
