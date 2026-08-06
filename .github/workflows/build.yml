@@ -23,6 +23,9 @@ permissions:
   pages: write
   id-token: write
 
+# ⚠️ deploy-pages が「Deployment cancelled」で落ち続けるときは、同じコミットSHAの
+# デプロイ記録が向こう側で詰まっている。再実行では直らない（4回実測）。
+# 直し方＝ /pages/deployments/<sha>/cancel を叩いてから、新しいコミットを積んで流す。
 concurrency:
   group: pages
   cancel-in-progress: false
