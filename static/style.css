@@ -417,6 +417,78 @@ a { color: var(--accent); }
   font-size: 0.82rem;
 }
 
+/* --- AIアップデート欄 --- */
+
+.news-section { margin-bottom: 2.5rem; }
+
+.news-list {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+}
+
+.news-item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-head {
+  margin: 0 0 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.news-vendor {
+  padding: 0.05rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card-bg);
+}
+
+.news-major {
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  background: var(--mark-warn);
+  color: var(--mark-warn-fg);
+  font-weight: 700;
+}
+
+.news-title { margin: 0; font-size: 1rem; line-height: 1.7; }
+.news-title a { text-decoration: none; }
+.news-title a:hover { text-decoration: underline; }
+
+/* 3行要約。summary_ja の改行をそのまま行にする */
+.news-summary {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.news-models-head {
+  margin: 1.2rem 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.news-models {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.92rem;
+}
+
+.news-models li { margin: 0.3rem 0; }
+
+.news-more { margin: 1rem 0 0; font-size: 0.95rem; }
+
+.news-month { margin-bottom: 2.5rem; }
+
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .article-title { font-size: 1.32rem; }
