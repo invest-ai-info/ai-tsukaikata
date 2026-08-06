@@ -123,6 +123,7 @@ def _news_top():
         vendor="OpenAI", label="OpenAI News", importance="major",
         published=datetime(2026, 8, 4, 9, 0, tzinfo=JST),
         summary_ja="1行目\n2行目\n3行目",
+        icon_code="O", icon_color="#10A37F",
     )
     return {
         "top": {
@@ -168,3 +169,29 @@ def test_news_nav_link_present_only_with_news():
     without = render_site([_article()])
     assert '<a href="/news/">AIアップデート</a>' in with_news["index.html"]
     assert '<a href="/news/">AIアップデート</a>' not in without["index.html"]
+
+
+def test_card_shows_eyecatch_only_when_available():
+    with_img = render_site([_article(slug="sample")], eyecatches={"sample"})
+    without = render_site([_article(slug="sample")])
+    assert "/static/images/eyecatch/sample.svg" in with_img["index.html"]
+    assert "/static/images/eyecatch/sample.svg" not in without["index.html"]
+
+
+def test_article_page_shows_eyecatch_banner():
+    pages = render_site([_article(slug="sample")], eyecatches={"sample"})
+    html = pages["recipes/sample/index.html"]
+    assert 'class="eyecatch"' in html
+    assert "/static/images/eyecatch/sample.svg" in html
+
+
+def test_index_hero_has_illustration():
+    pages = render_site([_article()])
+    assert "/static/images/hero.svg" in pages["index.html"]
+
+
+def test_news_vendor_icon_is_rendered():
+    pages = render_site([_article()], news=_news_top())
+    html = pages["index.html"]
+    assert 'class="vdot"' in html
+    assert "#10A37F" in html

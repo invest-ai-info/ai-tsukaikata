@@ -5,6 +5,10 @@
   <p class="breadcrumb"><a href="/">ホーム</a> › <a href="{{ category_url }}">{{ category_label }}</a></p>
   {% endif %}
 
+  {% if article.slug in eyecatches %}
+  <p class="eyecatch"><img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" width="720" height="180"></p>
+  {% endif %}
+
   <h1 class="article-title">{{ article.title }}</h1>
 
   <p class="article-meta">

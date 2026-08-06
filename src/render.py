@@ -43,14 +43,18 @@ def build_env(templates_dir: Path = TEMPLATES_DIR) -> Environment:
 def render_site(
     articles: list[Article],
     news: dict | None = None,
+    eyecatches: set[str] | None = None,
     env: Environment | None = None,
 ) -> dict[str, str]:
     """全ページを組み立てる。キーは build/ からの相対パス。
 
     news は build.py が src/news.py で作る {"top": ..., "archive": ...}。
     None ならニュース欄も /news/ も出さない（テスト・部分ビルド用）。
+    eyecatches はアイキャッチSVGが実在する slug の集合。無い記事は
+    画像なしで組む（壊れた img を出さない）。
     """
     env = env or build_env()
+    env.globals["eyecatches"] = eyecatches or set()
 
     listed = [a for a in articles if a.category in config.LISTED_CATEGORIES]
     active = [

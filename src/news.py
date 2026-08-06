@@ -26,6 +26,32 @@ MODEL_WINDOW_FALLBACK = timedelta(days=14)
 
 REQUIRED_KEYS = ("uid", "source_id", "title", "url", "importance", "published")
 
+# ベンダー識別アイコン（頭文字＋連想色の独自マーク）。
+# ⚠️ 公式ロゴの模倣はしない——商標の誤認を招くため。色と文字だけで見分ける。
+VENDOR_ICONS = {
+    "OpenAI": ("O", "#10A37F"),
+    "Anthropic": ("A", "#C15F3C"),
+    "Google": ("G", "#4285F4"),
+    "Google DeepMind": ("DM", "#185ABC"),
+    "DeepSeek": ("DS", "#4D6BFE"),
+    "Sakana AI": ("S", "#E8442E"),
+    "Preferred Networks": ("PF", "#0E7C7B"),
+    "ELYZA": ("E", "#2B6CB0"),
+    "Alibaba Qwen": ("Q", "#6E44C4"),
+    "Zhipu AI": ("Z", "#3859C4"),
+    "Moonshot AI": ("M", "#5B5B6E"),
+    "xAI": ("X", "#6B7280"),
+}
+DEFAULT_ICON_COLOR = "#8A7A64"
+
+
+def vendor_icon(vendor: str) -> tuple[str, str]:
+    """(表示文字, 色)。知らないベンダーは頭文字＋土色で出す（隠さない）。"""
+    if vendor in VENDOR_ICONS:
+        return VENDOR_ICONS[vendor]
+    initial = vendor[:1].upper() if vendor else "?"
+    return (initial, DEFAULT_ICON_COLOR)
+
 
 class NewsError(Exception):
     """news.json / sources.yml を読めない・形が違うときに投げる。"""
@@ -42,6 +68,8 @@ class NewsItem:
     importance: str
     published: datetime  # JST
     summary_ja: str | None
+    icon_code: str = "?"
+    icon_color: str = DEFAULT_ICON_COLOR
 
 
 def load_source_types(path: Path) -> dict[str, str]:
@@ -70,16 +98,20 @@ def load_news(path: Path) -> list[NewsItem]:
                 f"（uid: {raw.get('uid', '?')}）"
             )
         published = datetime.fromisoformat(raw["published"]).astimezone(JST)
+        vendor = raw.get("vendor") or raw.get("label") or raw["source_id"]
+        icon_code, icon_color = vendor_icon(vendor)
         items.append(NewsItem(
             uid=raw["uid"],
             source_id=raw["source_id"],
             title=raw["title"],
             url=raw["url"],
-            vendor=raw.get("vendor") or raw.get("label") or raw["source_id"],
+            vendor=vendor,
             label=raw.get("label") or raw.get("vendor") or raw["source_id"],
             importance=raw["importance"],
             published=published,
             summary_ja=raw.get("summary_ja") or None,
+            icon_code=icon_code,
+            icon_color=icon_color,
         ))
     items.sort(key=lambda item: (item.published, item.uid), reverse=True)
     return items

@@ -162,3 +162,17 @@ def test_group_by_month_labels_in_japanese(tmp_path):
     months = news.group_by_month(items)
     assert [label for label, _ in months] == ["2026年8月", "2026年7月"]
     assert [i.uid for i in months[0][1]] == ["aug"]
+
+
+def test_vendor_icon_known_and_unknown():
+    assert news.vendor_icon("OpenAI") == ("O", "#10A37F")
+    code, color = news.vendor_icon("New Vendor")
+    assert code == "N"
+    assert color == news.DEFAULT_ICON_COLOR
+
+
+def test_load_news_populates_vendor_icon(tmp_path):
+    news_path, _ = _write(tmp_path, [_item(vendor="OpenAI")])
+    item = news.load_news(news_path)[0]
+    assert item.icon_code == "O"
+    assert item.icon_color == "#10A37F"

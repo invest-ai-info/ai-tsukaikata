@@ -2,8 +2,11 @@
 {% block content %}
 {% import "_macros.html" as macros %}
 <section class="hero">
-  <h1>{{ site.name }}</h1>
-  <p class="hero-lead">{{ site.description }}</p>
+  <div class="hero-text">
+    <h1>{{ site.name }}</h1>
+    <p class="hero-lead">{{ site.description }}</p>
+  </div>
+  <img class="hero-art" src="/static/images/hero.svg" alt="" width="360" height="240">
 </section>
 
 {% if news %}

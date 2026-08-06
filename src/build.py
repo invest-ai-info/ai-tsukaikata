@@ -61,7 +61,8 @@ def collect(
 ) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
-    errors = errors + validate(articles, static_paths(static_dir))
+    available = static_paths(static_dir)
+    errors = errors + validate(articles, available)
     errors = errors + figure_errors(static_dir)
 
     news_data = None
@@ -78,7 +79,13 @@ def collect(
     if errors:
         return {}, errors
 
-    files = render.render_site(articles, news=news_data)
+    # アイキャッチが実在する記事だけ画像付きで組む（tools/make_eyecatch.py が生成）
+    eyecatches = {
+        path.rsplit("/", 1)[-1][:-4]
+        for path in available
+        if path.startswith("/static/images/eyecatch/") and path.endswith(".svg")
+    }
+    files = render.render_site(articles, news=news_data, eyecatches=eyecatches)
 
     section_paths = ("/", "/news/") + tuple(
         f"/{name}/" for name in config.LISTED_CATEGORIES

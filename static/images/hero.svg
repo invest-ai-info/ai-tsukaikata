@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240" role="img" aria-labelledby="hero-title">
+<title id="hero-title">机の上のノートと鉛筆とコーヒー。小さなロボットが隣で手伝っているイラスト</title>
+<style>
+.hv-bg{fill:#F5E6D3}
+.hv-paper{fill:#FFFDF8}
+.hv-ln{stroke:#4A3F35}
+.hv-rule{stroke:#D9CBB8}
+@media (prefers-color-scheme: dark){
+.hv-bg{fill:#33251B}
+.hv-paper{fill:#241D15}
+.hv-ln{stroke:#EFE7DA}
+.hv-rule{stroke:#5C5044}
+}
+</style>
+<rect width="360" height="240" rx="14" class="hv-bg"/>
+<g transform="translate(300,46)">
+<circle cx="0" cy="0" r="19" fill="#FAC775"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(45)"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(90)"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(135)"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(180)"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(225)"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(270)"/>
+<line x1="0" y1="-26" x2="0" y2="-33" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(315)"/>
+</g>
+<path d="M20 196 Q90 172 180 186 T344 178" fill="none" stroke="#D85A30" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+<g transform="translate(36,42)">
+<path d="M0 12 Q6 2 16 4 M8 18 Q14 8 24 10" fill="none" class="hv-rule" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<g transform="translate(48,96)">
+<rect width="128" height="92" rx="9" class="hv-paper hv-ln" stroke-width="3.5"/>
+<line x1="18" y1="26" x2="110" y2="26" class="hv-rule" stroke-width="3" stroke-linecap="round"/>
+<line x1="18" y1="46" x2="98" y2="46" class="hv-rule" stroke-width="3" stroke-linecap="round"/>
+<line x1="18" y1="66" x2="106" y2="66" stroke="#D85A30" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g transform="translate(190,108) rotate(20)">
+<rect width="19" height="74" rx="3" fill="#FAC775" class="hv-ln" stroke-width="3"/>
+<path d="M2 76 L9.5 95 L17 76 Z" fill="#D85A30" class="hv-ln" stroke-width="2.5" stroke-linejoin="round"/>
+</g>
+<g transform="translate(36,206)">
+<circle cx="0" cy="0" r="16" class="hv-paper hv-ln" stroke-width="3"/>
+<path d="M-6 -2 Q0 -9 6 -2" fill="none" stroke="#639922" stroke-width="3" stroke-linecap="round"/>
+<path d="M-4 -24 Q-1 -30 4 -28 M3 -20 Q6 -26 11 -24" fill="none" class="hv-rule" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<g transform="translate(236,118)">
+<line x1="40" y1="0" x2="40" y2="-12" class="hv-ln" stroke-width="3" stroke-linecap="round"/>
+<circle cx="40" cy="-17" r="5" fill="#D85A30"/>
+<rect width="80" height="58" rx="15" class="hv-paper hv-ln" stroke-width="3.5"/>
+<circle cx="27" cy="27" r="5" fill="#4A3F35"/>
+<circle cx="53" cy="27" r="5" fill="#4A3F35"/>
+<path d="M28 41 Q40 49 52 41" fill="none" stroke="#D85A30" stroke-width="3" stroke-linecap="round"/>
+<rect x="14" y="60" width="52" height="20" rx="8" fill="#F5C4B3" class="hv-ln" stroke-width="3"/>
+<path d="M-4 40 Q-16 34 -18 22" fill="none" class="hv-ln" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g transform="translate(206,54)">
+<rect width="48" height="48" rx="5" fill="#F5C4B3" class="hv-ln" stroke-width="2.5" transform="rotate(-7)"/>
+<line x1="8" y1="19" x2="36" y2="16" class="hv-rule" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="9" y1="31" x2="30" y2="28" class="hv-rule" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<g transform="translate(320,198)">
+<path d="M0 0 Q2 -18 12 -24" fill="none" stroke="#639922" stroke-width="3" stroke-linecap="round"/>
+<path d="M12 -24 Q4 -28 3 -38 Q14 -36 15 -26 Z" fill="#97C459" stroke="#639922" stroke-width="2"/>
+<path d="M12 -24 Q20 -30 30 -28 Q24 -18 14 -21 Z" fill="#97C459" stroke="#639922" stroke-width="2"/>
+</g>
+<circle cx="130" cy="52" r="4" fill="#97C459"/>
+<circle cx="282" cy="86" r="3.5" fill="#ED93B1"/>
+</svg>

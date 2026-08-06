@@ -1,12 +1,17 @@
 {% macro card(article) %}
 <article class="card">
-  <h2 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
-  <p class="card-description">{{ article.description }}</p>
-  <p class="card-meta">
-    <time datetime="{{ article.published.isoformat() }}">{{ article.published | jp_date }}</time>
-    {% if article.time_required %}<span class="card-badge">{{ article.time_required }}</span>{% endif %}
-    {% if article.cost %}<span class="card-badge">{{ article.cost }}</span>{% endif %}
-  </p>
+  {% if article.slug in eyecatches %}
+  <a class="card-thumb" href="{{ article.url }}" tabindex="-1" aria-hidden="true"><img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" loading="lazy"></a>
+  {% endif %}
+  <div class="card-body">
+    <h2 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+    <p class="card-description">{{ article.description }}</p>
+    <p class="card-meta">
+      <time datetime="{{ article.published.isoformat() }}">{{ article.published | jp_date }}</time>
+      {% if article.time_required %}<span class="card-badge">{{ article.time_required }}</span>{% endif %}
+      {% if article.cost %}<span class="card-badge">{{ article.cost }}</span>{% endif %}
+    </p>
+  </div>
 </article>
 {% endmacro %}
 
@@ -14,7 +19,7 @@
 <li class="news-item">
   <p class="news-head">
     <time datetime="{{ item.published.date().isoformat() }}">{{ item.published.date() | jp_date }}</time>
-    <span class="news-vendor">{{ item.vendor }}</span>
+    <span class="news-vendor"><span class="vdot" style="background: {{ item.icon_color }}" aria-hidden="true">{{ item.icon_code }}</span>{{ item.vendor }}</span>
     {% if item.importance == "major" %}<span class="news-major">重要</span>{% endif %}
   </p>
   <p class="news-title"><a href="{{ item.url }}">{{ item.title }}</a></p>
