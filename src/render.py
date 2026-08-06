@@ -40,8 +40,16 @@ def build_env(templates_dir: Path = TEMPLATES_DIR) -> Environment:
     return env
 
 
-def render_site(articles: list[Article], env: Environment | None = None) -> dict[str, str]:
-    """全ページを組み立てる。キーは build/ からの相対パス。"""
+def render_site(
+    articles: list[Article],
+    news: dict | None = None,
+    env: Environment | None = None,
+) -> dict[str, str]:
+    """全ページを組み立てる。キーは build/ からの相対パス。
+
+    news は build.py が src/news.py で作る {"top": ..., "archive": ...}。
+    None ならニュース欄も /news/ も出さない（テスト・部分ビルド用）。
+    """
     env = env or build_env()
 
     listed = [a for a in articles if a.category in config.LISTED_CATEGORIES]
@@ -50,9 +58,12 @@ def render_site(articles: list[Article], env: Environment | None = None) -> dict
         if any(a.category == name for a in listed)
     ]
     # 記事が1本もないカテゴリはナビにも一覧にも出さない（空ページを作らない）
-    env.globals["nav"] = [
+    nav = [
         {"url": f"/{name}/", "label": config.CATEGORIES[name]["label"]} for name in active
     ]
+    if news:
+        nav.append({"url": "/news/", "label": "AIアップデート"})
+    env.globals["nav"] = nav
 
     pages: dict[str, str] = {}
 
@@ -62,7 +73,17 @@ def render_site(articles: list[Article], env: Environment | None = None) -> dict
         canonical=f"{config.SITE_URL}/",
         og_type="website",
         articles=listed[: config.INDEX_MAX_ARTICLES],
+        news=news["top"] if news else None,
     )
+
+    if news:
+        pages["news/index.html"] = env.get_template("news.html").render(
+            page_title="AIアップデート",
+            description="AI各社の発表とモデルの提供開始を自動で集めた記録。",
+            canonical=f"{config.SITE_URL}/news/",
+            og_type="website",
+            news=news["archive"],
+        )
 
     for name in active:
         meta = config.CATEGORIES[name]

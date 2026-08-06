@@ -112,3 +112,59 @@ def test_copy_script_is_loaded_with_defer():
 def test_japanese_date_format():
     pages = render_site([_article(published=date(2026, 8, 1))])
     assert "2026年8月1日" in pages["recipes/sample/index.html"]
+
+
+def _news_top():
+    from datetime import datetime
+    from src.news import JST, NewsItem
+    item = NewsItem(
+        uid="n1", source_id="openai-news",
+        title="New ways to learn", url="https://example.com/post",
+        vendor="OpenAI", label="OpenAI News", importance="major",
+        published=datetime(2026, 8, 4, 9, 0, tzinfo=JST),
+        summary_ja="1行目\n2行目\n3行目",
+    )
+    return {
+        "top": {
+            "announcements": [item],
+            "model_groups": [{
+                "label": "Claude Code", "vendor": "Anthropic", "count": 2,
+                "latest_title": "v2.1.223",
+                "latest_published": item.published,
+            }],
+        },
+        "archive": {"months": [("2026年8月", [item])]},
+    }
+
+
+def test_index_shows_news_section():
+    pages = render_site([_article()], news=_news_top())
+    html = pages["index.html"]
+    assert "AIアップデート" in html
+    assert "New ways to learn" in html
+    assert "1行目" in html
+    assert "重要" in html
+    assert "Claude Code: 2件（最新: v2.1.223）" in html
+    assert "要約は自動生成" in html
+    assert 'href="/news/"' in html
+
+
+def test_news_page_is_rendered_with_months():
+    pages = render_site([_article()], news=_news_top())
+    html = pages["news/index.html"]
+    assert "2026年8月" in html
+    assert "New ways to learn" in html
+    assert '<link rel="canonical" href="https://ai-tsukaikata.com/news/">' in html
+
+
+def test_without_news_index_has_no_news_section():
+    pages = render_site([_article()])
+    assert "AIアップデート" not in pages["index.html"]
+    assert "news/index.html" not in pages
+
+
+def test_news_nav_link_present_only_with_news():
+    with_news = render_site([_article()], news=_news_top())
+    without = render_site([_article()])
+    assert '<a href="/news/">AIアップデート</a>' in with_news["index.html"]
+    assert '<a href="/news/">AIアップデート</a>' not in without["index.html"]

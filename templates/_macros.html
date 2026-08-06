@@ -9,3 +9,17 @@
   </p>
 </article>
 {% endmacro %}
+
+{% macro news_item(item) %}
+<li class="news-item">
+  <p class="news-head">
+    <time datetime="{{ item.published.date().isoformat() }}">{{ item.published.date() | jp_date }}</time>
+    <span class="news-vendor">{{ item.vendor }}</span>
+    {% if item.importance == "major" %}<span class="news-major">重要</span>{% endif %}
+  </p>
+  <p class="news-title"><a href="{{ item.url }}">{{ item.title }}</a></p>
+  {% if item.summary_ja %}
+  <p class="news-summary">{{ item.summary_ja }}</p>
+  {% endif %}
+</li>
+{% endmacro %}

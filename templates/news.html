@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "_macros.html" as macros %}
+<h1 class="article-title">AIアップデート</h1>
+<p class="article-meta">各社の発表とモデルの提供開始を自動で集めた記録です。1日数回、自動更新。要約は自動生成です。</p>
+{% for month_label, month_items in news.months %}
+<section class="news-month">
+  <h2 class="section-title">{{ month_label }}</h2>
+  <ul class="news-list">
+    {% for item in month_items %}
+    {{ macros.news_item(item) }}
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% endblock %}

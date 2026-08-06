@@ -6,6 +6,27 @@
   <p class="hero-lead">{{ site.description }}</p>
 </section>
 
+{% if news %}
+<section class="news-section">
+  <h2 class="section-title">AIアップデート</h2>
+  <p class="section-lead">各社の発表を自動で集めています。1日数回、自動更新。要約は自動生成です。</p>
+  <ul class="news-list">
+    {% for item in news.announcements %}
+    {{ macros.news_item(item) }}
+    {% endfor %}
+  </ul>
+  {% if news.model_groups %}
+  <p class="news-models-head">新モデル・新バージョン</p>
+  <ul class="news-models">
+    {% for group in news.model_groups %}
+    <li>{{ group.label }}: {{ group.count }}件（最新: {{ group.latest_title }}）</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <p class="news-more"><a href="/news/">すべて見る →</a></p>
+</section>
+{% endif %}
+
 <section class="article-list">
   <h2 class="section-title">新着</h2>
   {% for article in articles %}
