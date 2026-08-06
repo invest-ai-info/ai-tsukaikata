@@ -195,3 +195,11 @@ def test_news_vendor_icon_is_rendered():
     html = pages["index.html"]
     assert 'class="vdot"' in html
     assert "#10A37F" in html
+
+
+def test_every_page_has_og_image():
+    pages = render_site([_article()])
+    for name in ("index.html", "recipes/sample/index.html"):
+        html = pages[name]
+        assert 'property="og:image" content="https://ai-tsukaikata.com/static/images/og-card.png"' in html
+        assert 'name="twitter:card" content="summary_large_image"' in html
