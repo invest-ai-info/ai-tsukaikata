@@ -16,12 +16,14 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from . import deepdive
 from . import fetch as fetch_module
 from . import notify, store, summarize
 from .classify import classify
 
 DEFAULT_SOURCES = Path(__file__).parent / "sources.yml"
 DEFAULT_STATE = Path("data/tracker/seen.json")
+DEFAULT_QUEUE = Path("content/_deepdive_queue.md")
 
 
 def _default_mailer(subject: str, plain: str, html_body: str) -> None:
@@ -80,7 +82,41 @@ def _collect(sources: list[dict], state: dict, fetcher) -> list:
     return collected
 
 
-def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None) -> int:
+def _enqueue_deepdive(major, sources, state, now, queue_path) -> None:
+    """major のお知らせを深掘りキューへ自動追記する。
+
+    キューは派生データなので、ここの失敗でメール送信や既読の保存を
+    巻き込まない（要約と同じ扱い）。失敗はログに出して次へ進む。
+    """
+    queue_path = Path(queue_path)
+    if not queue_path.exists():
+        print(f"[警告] 深掘りキューが見つからないため自動追記しません: {queue_path}")
+        return
+    try:
+        source_types = {
+            s["id"]: s["type"] for s in sources if s.get("id") and s.get("type")
+        }
+        text = queue_path.read_text(encoding="utf-8")
+        picked = deepdive.select_candidates(
+            major,
+            source_types,
+            queued_uids=store.deepdive_queued_uids(state),
+            queued_urls_=deepdive.queued_urls(text),
+            today_count=store.deepdive_queued_today(state, now),
+        )
+        if not picked:
+            return
+        queue_path.write_text(
+            deepdive.append_lines(text, picked, now), encoding="utf-8", newline="\n"
+        )
+        store.record_deepdive_queued(state, picked, now)
+        print(f"深掘りキューへ {len(picked)}件を自動追記")
+    except OSError as error:
+        print(f"[警告] 深掘りキューへの追記に失敗: {error}")
+
+
+def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
+              queue_path=None) -> int:
     """毎時チェック。major は即送信、minor はダイジェスト用に溜める。"""
     state = store.load_state(state_path)
     collected = _collect(sources, state, fetcher)
@@ -105,6 +141,8 @@ def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None) -> i
         # 捨てると「情報は失われず最大24時間遅れるだけ」の原則が壊れる。
         newest_first = sorted(major, key=lambda u: u.published, reverse=True)
         minor = minor + newest_first[notify.MAX_ITEMS:]
+        if queue_path is not None:
+            _enqueue_deepdive(major, sources, state, now, queue_path)
 
     store.mark_seen(state, fresh, now)
     store.queue_minor(state, minor)
@@ -226,14 +264,23 @@ def main(argv=None) -> int:
         return 0
 
     sources = fetch_module.load_sources(args.sources)
-    runner = run_check if args.mode == "check" else run_bootstrap
-    runner(
-        sources=sources,
-        state_path=args.state,
-        fetcher=fetch_module.fetch_source,
-        mailer=_default_mailer,
-        now=now,
-    )
+    if args.mode == "check":
+        run_check(
+            sources=sources,
+            state_path=args.state,
+            fetcher=fetch_module.fetch_source,
+            mailer=_default_mailer,
+            now=now,
+            queue_path=DEFAULT_QUEUE,
+        )
+    else:
+        run_bootstrap(
+            sources=sources,
+            state_path=args.state,
+            fetcher=fetch_module.fetch_source,
+            mailer=_default_mailer,
+            now=now,
+        )
     return 0
 
 

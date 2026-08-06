@@ -284,3 +284,22 @@ def prune(state: dict, now: datetime) -> int:
     for uid in stale:
         del state["uids"][uid]
     return len(stale)
+
+
+# --- 深掘りキューへの自動追記の記録 ---
+
+def deepdive_queued_uids(state: dict) -> set[str]:
+    """自動追記済みの uid。二度追記しないための照合に使う。"""
+    return set(state.get("deepdive_queued", {}))
+
+
+def deepdive_queued_today(state: dict, now: datetime) -> int:
+    """今日すでに自動追記した件数。1日の上限を守るために数える。"""
+    today = now.date().isoformat()
+    return sum(1 for date in state.get("deepdive_queued", {}).values() if date == today)
+
+
+def record_deepdive_queued(state: dict, updates, now: datetime) -> None:
+    state.setdefault("deepdive_queued", {}).update(
+        (update.uid, now.date().isoformat()) for update in updates
+    )
