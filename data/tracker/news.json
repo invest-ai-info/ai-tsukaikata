@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-06T03:42:21.053999+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-06T00:52:37+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added owner wildcard entries ( \"owner/*\" ) to the strictKnownMarketplaces and blockedMarketplaces managed settings for allowing or blocking all marketplace repos under a GitHub org Add…",
+      "title": "v2.1.223",
+      "uid": "98d38d2a2af1049c",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-04T23:27:29.115493+00:00",
       "importance": "minor",
       "label": "Claude Code",

@@ -3,7 +3,7 @@
   "latest": {
     "anthropic-news": "2026-08-04T17:02:00+00:00",
     "anthropic-sdk": "2026-07-28T17:38:09+00:00",
-    "claude-code": "2026-08-04T22:39:55+00:00",
+    "claude-code": "2026-08-06T00:52:37+00:00",
     "deepmind-blog": "2026-07-30T15:00:59+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
@@ -16,7 +16,19 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-04T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-06T00:52:37+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added owner wildcard entries ( \"owner/*\" ) to the strictKnownMarketplaces and blockedMarketplaces managed settings for allowing or blocking all marketplace repos under a GitHub org Add…",
+      "title": "v2.1.223",
+      "uid": "98d38d2a2af1049c",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+      "vendor": "Anthropic"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
@@ -266,6 +278,7 @@
     "97148fe3ecb35e15": "2026-08-01T12:16:42.309603+00:00",
     "98a8dab990458d28": "2026-08-02T11:35:58.106550+00:00",
     "98b23bca7b3c51b6": "2026-08-02T11:35:58.106550+00:00",
+    "98d38d2a2af1049c": "2026-08-06T03:42:21.053999+00:00",
     "9a4f3382e90e3b50": "2026-08-02T11:35:58.106550+00:00",
     "9b1ad9aef8483085": "2026-08-01T12:16:42.309603+00:00",
     "9b219e49ce105aee": "2026-08-01T12:16:42.309603+00:00",
