@@ -89,3 +89,76 @@ def test_load_source_types_broken_yaml_raises(tmp_path):
     path.write_text("sources: [壊れ", encoding="utf-8")
     with pytest.raises(news.NewsError):
         news.load_source_types(path)
+
+
+SOURCE_TYPES = {"openai-news": "rss", "claude-code": "github_releases"}
+
+
+def _loaded(tmp_path, items):
+    news_path, _ = _write(tmp_path, items)
+    return news.load_news(news_path)
+
+
+def test_split_recent_separates_announcements_and_models(tmp_path):
+    items = _loaded(tmp_path, [
+        _item(uid="a", source_id="openai-news", published="2026-08-04T19:00:00+00:00",
+              summary_ja="1行目\n2行目\n3行目"),
+        _item(uid="m1", source_id="claude-code", title="v2.1.222",
+              vendor="Anthropic", label="Claude Code",
+              published="2026-08-04T22:00:00+00:00"),
+        _item(uid="m2", source_id="claude-code", title="v2.1.223",
+              vendor="Anthropic", label="Claude Code",
+              published="2026-08-06T00:00:00+00:00"),
+    ])
+    top = news.split_recent(items, SOURCE_TYPES)
+    assert [i.uid for i in top["announcements"]] == ["a"]
+    assert len(top["model_groups"]) == 1
+    group = top["model_groups"][0]
+    assert group["label"] == "Claude Code"
+    assert group["count"] == 2
+    assert group["latest_title"] == "v2.1.223"
+
+
+def test_split_recent_limits_announcements(tmp_path):
+    items = _loaded(tmp_path, [
+        _item(uid=f"a{i}", published=f"2026-08-{i:02d}T00:00:00+00:00")
+        for i in range(1, 14)
+    ])
+    top = news.split_recent(items, SOURCE_TYPES, limit=10)
+    assert len(top["announcements"]) == 10
+    assert top["announcements"][0].uid == "a13"
+
+
+def test_split_recent_model_window_follows_shown_announcements(tmp_path):
+    # 表示中お知らせの最古（8/2）より前のモデル（8/1）は畳みに入らない
+    items = _loaded(tmp_path, [
+        _item(uid="a1", published="2026-08-02T00:00:00+00:00"),
+        _item(uid="a2", published="2026-08-05T00:00:00+00:00"),
+        _item(uid="m-in", source_id="claude-code", label="Claude Code",
+              published="2026-08-03T00:00:00+00:00"),
+        _item(uid="m-out", source_id="claude-code", label="Claude Code",
+              published="2026-08-01T00:00:00+00:00"),
+    ])
+    top = news.split_recent(items, SOURCE_TYPES)
+    assert top["model_groups"][0]["count"] == 1
+
+
+def test_split_recent_unknown_source_counts_as_announcement(tmp_path):
+    items = _loaded(tmp_path, [_item(uid="x", source_id="retired-source")])
+    top = news.split_recent(items, SOURCE_TYPES)
+    assert [i.uid for i in top["announcements"]] == ["x"]
+
+
+def test_split_recent_empty_is_harmless(tmp_path):
+    top = news.split_recent([], SOURCE_TYPES)
+    assert top == {"announcements": [], "model_groups": []}
+
+
+def test_group_by_month_labels_in_japanese(tmp_path):
+    items = _loaded(tmp_path, [
+        _item(uid="jul", published="2026-07-10T00:00:00+00:00"),
+        _item(uid="aug", published="2026-08-04T19:00:00+00:00"),
+    ])
+    months = news.group_by_month(items)
+    assert [label for label, _ in months] == ["2026年8月", "2026年7月"]
+    assert [i.uid for i in months[0][1]] == ["aug"]

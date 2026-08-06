@@ -83,3 +83,52 @@ def load_news(path: Path) -> list[NewsItem]:
         ))
     items.sort(key=lambda item: (item.published, item.uid), reverse=True)
     return items
+
+
+def is_announcement(item: NewsItem, source_types: dict[str, str]) -> bool:
+    """お知らせ系なら True。型表に無い source_id は隠さない側（お知らせ）に倒す。"""
+    return source_types.get(item.source_id, "rss") in ANNOUNCEMENT_TYPES
+
+
+def split_recent(
+    items: list[NewsItem],
+    source_types: dict[str, str],
+    limit: int = TOP_ANNOUNCEMENTS,
+) -> dict:
+    """トップ用。お知らせ最新 limit 件と、同期間のモデルのラベル畳み。"""
+    announcements = [i for i in items if is_announcement(i, source_types)][:limit]
+    models = [i for i in items if not is_announcement(i, source_types)]
+
+    if announcements:
+        window_start = announcements[-1].published
+    elif items:
+        window_start = items[0].published - MODEL_WINDOW_FALLBACK
+    else:
+        return {"announcements": [], "model_groups": []}
+
+    groups: dict[str, dict] = {}
+    for item in models:
+        if item.published < window_start:
+            continue
+        group = groups.setdefault(item.label, {
+            "label": item.label,
+            "vendor": item.vendor,
+            "count": 0,
+            "latest_title": item.title,       # items は新しい順なので最初が最新
+            "latest_published": item.published,
+        })
+        group["count"] += 1
+
+    model_groups = sorted(
+        groups.values(), key=lambda g: g["latest_published"], reverse=True
+    )
+    return {"announcements": announcements, "model_groups": model_groups}
+
+
+def group_by_month(items: list[NewsItem]) -> list[tuple[str, list[NewsItem]]]:
+    """/news/ 用。新しい月から順に（「2026年8月」, 項目リスト）を返す。"""
+    months: dict[str, list[NewsItem]] = {}
+    for item in items:
+        label = f"{item.published.year}年{item.published.month}月"
+        months.setdefault(label, []).append(item)
+    return list(months.items())
