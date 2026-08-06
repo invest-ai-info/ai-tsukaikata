@@ -783,6 +783,219 @@ def gemini36_bench_chart() -> None:
     )
 
 
+def class_scrape_chart() -> None:
+    """クラス名で拾う／埋め込みデータで拾う、の対比。"""
+    left_rows = [
+        ("scss-module__KxYrHG__date", "mono"),
+        ("デザイン変更のたびに名前が変わる", "t"),
+        ("ある日、静かに0件になる", "t"),
+    ]
+    right_rows = [
+        ('"publishedOn": "2026-08-04"', "mono"),
+        ("記事そのもののデータを読む", "t"),
+        ("デザインが変わっても残る", "t"),
+    ]
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(left_rows), len(right_rows))
+    box_h = 30 + rows * row_h
+    height = first_y + rows * row_h + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じページを追う、2つの拾い方</text>\n',
+        '<text class="t-sm" x="18" y="45">見た目の目印（クラス名）は借り物。記事のデータは本体。</text>\n',
+        f'<rect class="box-bad" x="{left_x}" y="{head_y - 22}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-good" x="{right_x}" y="{head_y - 22}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-bad" x="{left_x + 14}" y="{head_y - 2}">クラス名で拾う</text>\n',
+        f'<text class="t-good" x="{right_x + 14}" y="{head_y - 2}">埋め込みデータで拾う</text>\n',
+    ]
+    for index, (text, cls) in enumerate(left_rows):
+        parts.append(
+            f'<text class="{cls}" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, (text, cls) in enumerate(right_rows):
+        parts.append(
+            f'<text class="{cls}" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ クラス名の例は実際のサイトで観測したもの。ハッシュ部分がビルドのたびに変わります。</text>\n"
+    )
+    alt = (
+        "RSSが無いサイトの2つの拾い方を比べた図。"
+        "左（クラス名で拾う）は、scss-module__KxYrHG__date のようなハッシュ付きクラス名を目印にするため、"
+        "デザイン変更のたびに名前が変わり、ある日静かに0件になる。"
+        "右（埋め込みデータで拾う）は、publishedOn: 2026-08-04 のような記事そのもののデータを読むため、"
+        "デザインが変わっても残る。"
+    )
+    (OUT / "rss-class-vs-data.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def silent_zero_chart() -> None:
+    """0件のとき空リストで済ませる設計と、例外で止める設計の対比。"""
+    lanes = [
+        ("bad", "空のまま成功扱いにする設計", "t-bad",
+         ["クラス名が変わる", "取得 0件・エラー無し", "翌週も 0件", "数週間 気づけない"]),
+        ("good", "1件も無ければ止める設計", "t-good",
+         ["クラス名が変わる", "その場でエラーになる", "3回続くと警告扱い", "翌朝のメールで気づく"]),
+    ]
+    box_w, box_h, gap_x = 152, 46, 22
+    left = 18
+    height = 292
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">「0件」をどう扱うかで、壊れたことに気づけるかが決まる</text>\n',
+        '<text class="t-sm" x="18" y="45">どちらもクラス名の変更で取れなくなった、同じ事故から始まります。</text>\n',
+    ]
+    for lane_index, (kind, label, label_cls, steps) in enumerate(lanes):
+        label_y = 84 + lane_index * 104
+        box_y = label_y + 12
+        parts.append(f'<text class="{label_cls}" x="18" y="{label_y}">{_esc(label)}</text>\n')
+        for step_index, text in enumerate(steps):
+            x = left + step_index * (box_w + gap_x)
+            box_cls = "box-quiet" if step_index == 0 else f"box-{kind}"
+            parts.append(
+                f'<rect class="{box_cls}" x="{x}" y="{box_y}" '
+                f'width="{box_w}" height="{box_h}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{x + 10}" y="{box_y + 28}">{_esc(text)}</text>\n'
+            )
+            if step_index < len(steps) - 1:
+                ax = x + box_w
+                ay = box_y + box_h / 2
+                parts.append(
+                    f'<line class="line" x1="{ax + 3}" y1="{ay}" x2="{ax + gap_x - 8}" y2="{ay}"/>\n'
+                )
+                parts.append(
+                    f'<path d="M{ax + gap_x - 8} {ay - 4} L{ax + gap_x - 1} {ay} '
+                    f'L{ax + gap_x - 8} {ay + 4} Z" fill="#8b949e"/>\n'
+                )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※「取得できたが0件」と「取得の仕組みが壊れた」は、外から見ると同じ0件です。</text>\n"
+    )
+    alt = (
+        "取得0件の扱い方2通りを時系列で比べた図。どちらもクラス名の変更から始まる。"
+        "上（空のまま成功扱いにする設計）＝取得0件でもエラーが出ず、翌週も0件のまま、数週間気づけない。"
+        "下（1件も無ければ止める設計）＝その場でエラーになり、3回続くと警告扱いになって、翌朝のメールで気づく。"
+    )
+    (OUT / "silent-zero.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def figure_checks_chart() -> None:
+    """図の崩れを止める2段構えの検査と、それぞれが捕まえた実例。"""
+    stages = [
+        ("box-quiet", "図を生成する", "座標は目分量ではなく計算で出す", ""),
+        ("box-accent", "① 座標の検査（公開のたび・自動）", "文字を線が貫く／枠や画面からはみ出す、を機械で見る",
+         "実例: 副題を枠の上辺が貫いた → 公開前に停止"),
+        ("box-accent", "② ブラウザで実寸を計測（図を触った日に1回）", "①が見逃す数ピクセルのはみ出しまで拾う",
+         "実例: 3px と 22px のはみ出しを検出"),
+        ("box-good", "公開", "", ""),
+    ]
+    box_x, box_w, box_h, gap_y = 18, 430, 52, 26
+    top = 66
+    height = top + len(stages) * (box_h + gap_y) - gap_y + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">図の崩れは2段構えで止める</text>\n',
+        '<text class="t-sm" x="18" y="45">目視は最後の手段。先に機械に見せます。</text>\n',
+    ]
+    for index, (cls, title, sub, example) in enumerate(stages):
+        y = top + index * (box_h + gap_y)
+        parts.append(
+            f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        title_y = y + (32 if sub else 32)
+        parts.append(f'<text class="t" x="{box_x + 14}" y="{y + 21}">{_esc(title)}</text>\n')
+        if sub:
+            parts.append(f'<text class="t-sm" x="{box_x + 14}" y="{y + 40}">{_esc(sub)}</text>\n')
+        if example:
+            parts.append(
+                f'<text class="t-sm" x="{box_x + box_w + 16}" y="{y + 31}">{_esc(example)}</text>\n'
+            )
+        if index < len(stages) - 1:
+            ax = box_x + 60
+            ay = y + box_h
+            parts.append(
+                f'<line class="line" x1="{ax}" y1="{ay + 3}" x2="{ax}" y2="{ay + gap_y - 8}"/>\n'
+            )
+            parts.append(
+                f'<path d="M{ax - 4} {ay + gap_y - 8} L{ax} {ay + gap_y - 1} '
+                f'L{ax + 4} {ay + gap_y - 8} Z" fill="#8b949e"/>\n'
+            )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 崩れていたら公開そのものが止まります。「直った記事だけ古いまま公開」を作らないため。</text>\n"
+    )
+    alt = (
+        "図の崩れを止める流れ。図を生成したら、①公開のたびに自動で座標を検査"
+        "（文字を線が貫く・枠や画面からのはみ出し。実例として副題を枠の上辺が貫いたのを公開前に停止）、"
+        "②図を触った日にはブラウザで実寸を計測（実例として3pxと22pxのはみ出しを検出）、"
+        "その両方を通ってから公開する。"
+    )
+    (OUT / "figure-checks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def check_blindspot_chart() -> None:
+    """座標の検査が見ていないもの（色）と、その塞ぎ方。"""
+    left_rows = ["文字と線の位置", "枠からのはみ出し", "画面からのはみ出し"]
+    right_rows = ["色は見ていない", "定義漏れのclassは真っ黒になる", "真っ黒でも位置は正しい → 通る"]
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(left_rows), len(right_rows))
+    box_h = 30 + rows * row_h
+    bar_y = first_y + rows * row_h + 18
+    height = bar_y + 64 + 36
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">検査には死角がある。何を見ていないかを知っておく</text>\n',
+        '<text class="t-sm" x="18" y="45">座標の検査は位置しか見ません。色の事故は素通りします。</text>\n',
+        f'<rect class="box-good" x="{left_x}" y="{head_y - 22}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-bad" x="{right_x}" y="{head_y - 22}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-good" x="{left_x + 14}" y="{head_y - 2}">座標の検査が見ているもの</text>\n',
+        f'<text class="t-bad" x="{right_x + 14}" y="{head_y - 2}">見ていないもの</text>\n',
+    ]
+    for index, text in enumerate(left_rows):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(right_rows):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<rect class="box-accent" x="{pad}" y="{bar_y}" width="{col_w * 2 + gap}" height="64" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{pad + 14}" y="{bar_y + 25}">死角は、別の小さな検査で塞ぐ</text>\n'
+    )
+    parts.append(
+        f'<text class="t" x="{pad + 14}" y="{bar_y + 48}">'
+        f'{_esc("使っているclassが<style>に定義されているか、公開のたびに機械で照合する")}</text>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 実際にこの死角で、真っ黒に塗り潰された図が検査を通り抜けました。</text>\n"
+    )
+    alt = (
+        "座標の検査の死角を説明する図。見ているもの＝文字と線の位置、枠からのはみ出し、画面からのはみ出し。"
+        "見ていないもの＝色。定義漏れのclassは真っ黒になるが、位置は正しいので検査を通る。"
+        "塞ぎ方＝使っているclassがstyleに定義されているかを、公開のたびに機械で照合する。"
+    )
+    (OUT / "check-blindspot.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -798,4 +1011,8 @@ if __name__ == "__main__":
     gemini36_cheap_price_chart()
     gemini36_generation_chart()
     gemini36_bench_chart()
-    print(f"13枚を {OUT} に出力しました")
+    class_scrape_chart()
+    silent_zero_chart()
+    figure_checks_chart()
+    check_blindspot_chart()
+    print(f"18枚を {OUT} に出力しました")
