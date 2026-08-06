@@ -996,6 +996,63 @@ def check_blindspot_chart() -> None:
     )
 
 
+def feels_off_chart() -> None:
+    """「なんか違う」の3つの正体と、それぞれにかける一言。"""
+    rows = [
+        ("結果が違う", "期待していたのは◯◯、出てきたのは△△"),
+        ("進め方が違う", "いったん止めて、途中で1回見せて"),
+        ("目的からズレた", "最初の依頼を引用して。対応してる？"),
+    ]
+    label_w, box_h, gap_y = 236, 56, 24
+    left_x = 18
+    right_x = left_x + label_w + 66
+    right_w = WIDTH - right_x - 18
+    top = 84
+    height = top + len(rows) * (box_h + gap_y) - gap_y + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">「なんか違う」には正体が3つある</text>\n',
+        '<text class="t-sm" x="18" y="45">どれかが分かれば、かける一言が決まる。分からなければ、それをAIに聞く。</text>\n',
+    ]
+    for index, (label, phrase) in enumerate(rows):
+        y = top + index * (box_h + gap_y)
+        mid = y + box_h / 2
+        parts.append(
+            f'<rect class="box-quiet" x="{left_x}" y="{y}" width="{label_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{left_x + 14}" y="{mid + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        ax = left_x + label_w
+        parts.append(
+            f'<line class="line" x1="{ax + 6}" y1="{mid:.0f}" x2="{right_x - 14}" y2="{mid:.0f}"/>\n'
+        )
+        parts.append(
+            f'<path d="M{right_x - 14} {mid - 4:.0f} L{right_x - 7} {mid:.0f} '
+            f'L{right_x - 14} {mid + 4:.0f} Z" fill="#8b949e"/>\n'
+        )
+        parts.append(
+            f'<rect class="box-accent" x="{right_x}" y="{y}" width="{right_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{mid + 5:.0f}">{_esc(phrase)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 違和感は誤報ではなく、いちばん早い警報。言葉になる前に止まってよい。</text>\n"
+    )
+    alt = (
+        "「なんか違う」の3つの正体と、それぞれにかける一言を並べた図。"
+        "結果が違う→「期待していたのは◯◯、出てきたのは△△」。"
+        "進め方が違う→「いったん止めて、途中で1回見せて」。"
+        "目的からズレた→「最初の依頼を引用して。対応してる？」。"
+        "どれか分からなければ、それ自体をAIに聞く。"
+    )
+    (OUT / "feels-off-map.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1015,4 +1072,5 @@ if __name__ == "__main__":
     silent_zero_chart()
     figure_checks_chart()
     check_blindspot_chart()
-    print(f"18枚を {OUT} に出力しました")
+    feels_off_chart()
+    print(f"19枚を {OUT} に出力しました")
