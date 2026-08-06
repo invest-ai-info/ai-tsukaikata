@@ -11,7 +11,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from . import config, feeds, render
+from . import config, feeds, news, render
 from .content import load_articles
 from .figures import check_svg
 from .validate import validate
@@ -49,17 +49,38 @@ def figure_errors(static_dir: Path) -> list[str]:
     return errors
 
 
-def collect(content_dir: Path, static_dir: Path = STATIC_DIR) -> tuple[dict[str, str], list[str]]:
+NEWS_PATH = ROOT / "data" / "tracker" / "news.json"
+SOURCES_PATH = ROOT / "tracker" / "sources.yml"
+
+
+def collect(
+    content_dir: Path,
+    static_dir: Path = STATIC_DIR,
+    news_path: Path = NEWS_PATH,
+    sources_path: Path = SOURCES_PATH,
+) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
     errors = errors + validate(articles, static_paths(static_dir))
     errors = errors + figure_errors(static_dir)
+
+    news_data = None
+    try:
+        source_types = news.load_source_types(sources_path)
+        items = news.load_news(news_path)
+        news_data = {
+            "top": news.split_recent(items, source_types),
+            "archive": {"months": news.group_by_month(items)},
+        }
+    except news.NewsError as error:
+        errors = errors + [str(error)]
+
     if errors:
         return {}, errors
 
-    files = render.render_site(articles)
+    files = render.render_site(articles, news=news_data)
 
-    section_paths = ("/",) + tuple(
+    section_paths = ("/", "/news/") + tuple(
         f"/{name}/" for name in config.LISTED_CATEGORIES
         if any(a.category == name for a in articles)
     )

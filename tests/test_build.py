@@ -116,3 +116,60 @@ def test_main_builds_successfully(tmp_path, monkeypatch):
     assert build.main() == 0
     assert (build_dir / "index.html").exists()
     assert (build_dir / "static" / "style.css").exists()
+
+
+import json
+
+NEWS_ITEM = {
+    "uid": "n1", "source_id": "openai-news",
+    "title": "ニューステスト", "url": "https://example.com/post",
+    "vendor": "OpenAI", "label": "OpenAI News", "importance": "minor",
+    "published": "2026-08-04T19:00:00+00:00", "summary_ja": "要約です",
+}
+
+SOURCES_YML = """\
+sources:
+  - id: openai-news
+    vendor: OpenAI
+    label: OpenAI News
+    type: rss
+    url: https://example.com/rss
+"""
+
+
+def _news_files(tmp_path: Path, items=None) -> tuple[Path, Path]:
+    news_path = tmp_path / "news.json"
+    news_path.write_text(
+        json.dumps({"items": items if items is not None else [NEWS_ITEM]}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    sources_path = tmp_path / "sources.yml"
+    sources_path.write_text(SOURCES_YML, encoding="utf-8")
+    return news_path, sources_path
+
+
+def test_collect_with_news_renders_top_and_archive(tmp_path):
+    news_path, sources_path = _news_files(tmp_path)
+    files, errors = build.collect(
+        _content_dir(tmp_path), news_path=news_path, sources_path=sources_path
+    )
+    assert errors == []
+    assert "ニューステスト" in files["index.html"]
+    assert "news/index.html" in files
+    assert "https://ai-tsukaikata.com/news/</loc>" in files["sitemap.xml"]
+
+
+def test_collect_with_broken_news_stops_build(tmp_path):
+    news_path, sources_path = _news_files(tmp_path)
+    news_path.write_text("{壊れている", encoding="utf-8")
+    files, errors = build.collect(
+        _content_dir(tmp_path), news_path=news_path, sources_path=sources_path
+    )
+    assert files == {}
+    assert any("news.json" in error or "読めません" in error for error in errors)
+
+
+def test_collect_without_news_paths_keeps_old_behavior(tmp_path):
+    files, errors = build.collect(_content_dir(tmp_path))
+    assert errors == []
+    assert "news/index.html" in files  # 既定は本物の data/tracker/news.json を読む
