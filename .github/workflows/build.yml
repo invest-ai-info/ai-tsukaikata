@@ -4,7 +4,9 @@ on:
   push:
     branches: [main]
     # data/ は毎時トラッカーが書き換える。paths を絞らないとサイトが
-    # 1日24回リビルドされる
+    # 1日24回リビルドされる。news.json はトップの「AIアップデート」欄の
+    # 中身なので例外（ニュースが実際に増えたコミットだけ再ビルドされる。
+    # seen.json だけの既読更新では動かない）
     paths:
       - "content/**"
       - "templates/**"
@@ -12,6 +14,8 @@ on:
       - "src/**"
       - "requirements.txt"
       - ".github/workflows/build.yml"
+      - "data/tracker/news.json"
+      - "tracker/sources.yml"
   workflow_dispatch:
 
 permissions:
