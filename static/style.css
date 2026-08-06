@@ -1,37 +1,64 @@
 /* AIの使い方 — 手順書として読めることを最優先にした最小限のCSS */
 
+/* 「あたたかい紙」パレット（2026-08-06 リデザイン）。
+   --accent は文字用（コントラスト確保のため深め）、--accent-deco は
+   帯・バー・飾り専用の明るいコーラル。文字には使わない */
 :root {
-  --bg: #ffffff;
-  --fg: #1f2328;
-  --muted: #616b76;
-  --line: #e3e6ea;
-  --accent: #1a56b8;
-  --code-bg: #f5f7f9;
-  --card-bg: #fbfcfd;
-  --prompt-bg: #f4f8fe;
+  --bg: #faf5ec;
+  --fg: #3d3428;
+  --muted: #7a6b57;
+  --line: #e8dcc8;
+  --accent: #a8481d;
+  --accent-deco: #d85a30;
+  --code-bg: #f3ebdd;
+  --card-bg: #fffdf8;
+  --prompt-bg: #fbf0dc;
   --mark: rgba(255, 190, 10, 0.55);
   --mark-warn: rgba(217, 43, 43, 0.22);
   --mark-warn-fg: #9b1c1c;
-  --h2-bg: #eef3fb;
-  --h2-bar: #1a56b8;
+  --h2-bg: #f9e7dc;
+  --h2-bar: #d85a30;
+  /* 5ブロック見出し帯の塗り分け（🎯コーラル 📋琥珀 💬オリーブ 🛠️レンガ赤 🚀ピンク） */
+  --h2-what-bg: #f9e7dc;
+  --h2-what-bar: #d85a30;
+  --h2-need-bg: #f8edd6;
+  --h2-need-bar: #ba7517;
+  --h2-ask-bg: #eff3df;
+  --h2-ask-bar: #639922;
+  --h2-fix-bg: #fcebeb;
+  --h2-fix-bar: #a32d2d;
+  --h2-next-bg: #fbeaf0;
+  --h2-next-bar: #d4537e;
   --max: 46rem;
 }
 
+/* ダークは青灰色ではなく茶系の「暖かい闇」。世界観を保つ */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #14171a;
-    --fg: #e6e9ec;
-    --muted: #9aa4ae;
-    --line: #2a2f35;
-    --accent: #7ab0ff;
-    --code-bg: #1c2126;
-    --card-bg: #191d21;
-    --prompt-bg: #172230;
+    --bg: #1c1712;
+    --fg: #efe7da;
+    --muted: #a99b87;
+    --line: #3a3226;
+    --accent: #f0997b;
+    --accent-deco: #f0997b;
+    --code-bg: #262019;
+    --card-bg: #241d15;
+    --prompt-bg: #2c2317;
     --mark: rgba(255, 190, 10, 0.32);
     --mark-warn: rgba(240, 122, 122, 0.26);
     --mark-warn-fg: #ffb0b0;
-    --h2-bg: #1b2431;
-    --h2-bar: #7ab0ff;
+    --h2-bg: #33251b;
+    --h2-bar: #f0997b;
+    --h2-what-bg: #33251b;
+    --h2-what-bar: #f0997b;
+    --h2-need-bg: #2e2513;
+    --h2-need-bar: #fac775;
+    --h2-ask-bg: #232a16;
+    --h2-ask-bar: #97c459;
+    --h2-fix-bg: #341d1b;
+    --h2-fix-bar: #f09595;
+    --h2-next-bg: #322028;
+    --h2-next-bar: #ed93b1;
   }
 }
 
@@ -199,6 +226,13 @@ a { color: var(--accent); }
 .article-body h2.fix::before { content: "🛠️"; }
 .article-body h2.next::before { content: "🚀"; }
 
+/* 帯の塗り分け。色は :root の変数で持つ（ダークは変数側で切り替わる） */
+.article-body h2.what { background: var(--h2-what-bg); border-left-color: var(--h2-what-bar); }
+.article-body h2.need { background: var(--h2-need-bg); border-left-color: var(--h2-need-bar); }
+.article-body h2.ask { background: var(--h2-ask-bg); border-left-color: var(--h2-ask-bar); }
+.article-body h2.fix { background: var(--h2-fix-bg); border-left-color: var(--h2-fix-bar); }
+.article-body h2.next { background: var(--h2-next-bg); border-left-color: var(--h2-next-bar); }
+
 /* h3 = 章の中の手順。h2 より弱く、でも区切りとしては分かるように */
 .article-body h3 {
   font-size: 1.08rem;
@@ -263,7 +297,7 @@ a { color: var(--accent); }
   padding: 1rem 1.2rem;
   background: var(--prompt-bg);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent-deco);
   border-radius: 8px;
   white-space: pre-wrap;
   line-height: 1.85;
