@@ -1053,6 +1053,61 @@ def feels_off_chart() -> None:
     )
 
 
+def delegate_types_chart() -> None:
+    """AIに渡せる作業の4つの型と、見分けるための問い。"""
+    rows = [
+        ("繰り返し", "毎週おなじ手順でやっている", "曜日や締切で思い出す作業はここ"),
+        ("転記", "AからBへ写している", "コピペが5回以上出てきたらここ"),
+        ("下書き", "ゼロから書き始めている", "白紙を埋める時間が長いならここ"),
+        ("チェック", "抜けや誤りを目で探している", "見落としが怖い作業はここ"),
+    ]
+    box_x, box_w, box_h, gap_y = 18, 200, 62, 18
+    mid_x = box_x + box_w + 22
+    mid_w = 236
+    right_x = mid_x + mid_w + 22
+    right_w = WIDTH - right_x - 18
+    top = 84
+    height = top + len(rows) * (box_h + gap_y) - gap_y + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">AIに渡せる作業は、だいたい4つの型に入る</text>\n',
+        '<text class="t-sm" x="18" y="45">自分の1週間を思い出して、当てはまるものを探すのが速い。</text>\n',
+    ]
+    for index, (name, question, hint) in enumerate(rows):
+        y = top + index * (box_h + gap_y)
+        mid = y + box_h / 2
+        parts.append(
+            f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{box_x + 16}" y="{mid + 5:.0f}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{mid_x}" y="{y}" width="{mid_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{mid_x + 14}" y="{mid + 5:.0f}">{_esc(question)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{right_x}" y="{mid + 5:.0f}">{_esc(hint)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ どれにも入らない作業は、たいてい判断が主役です。そこは人が持ったままでかまいません。</text>\n"
+    )
+    alt = (
+        "AIに渡せる作業の4つの型を並べた図。"
+        "繰り返し＝毎週おなじ手順でやっている（曜日や締切で思い出す作業）。"
+        "転記＝AからBへ写している（コピペが5回以上）。"
+        "下書き＝ゼロから書き始めている（白紙を埋める時間が長い）。"
+        "チェック＝抜けや誤りを目で探している（見落としが怖い作業）。"
+        "どれにも入らない作業は判断が主役なので、人が持ったままでよい。"
+    )
+    (OUT / "delegate-types.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1073,4 +1128,5 @@ if __name__ == "__main__":
     figure_checks_chart()
     check_blindspot_chart()
     feels_off_chart()
-    print(f"19枚を {OUT} に出力しました")
+    delegate_types_chart()
+    print(f"20枚を {OUT} に出力しました")
