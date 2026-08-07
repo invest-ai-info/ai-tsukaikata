@@ -9,7 +9,7 @@
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-06T10:00:00+00:00",
+    "openai-news": "2026-08-07T09:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -38,6 +38,17 @@
       "uid": "027b3b38530d9248",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
       "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-07T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
+      "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
+      "uid": "dc0ad20d81d4604e",
+      "url": "https://openai.com/index/hsp-gruppe",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -385,6 +396,7 @@
     "d9b9783de65b0390": "2026-08-01T12:16:42.309603+00:00",
     "da55c48d7516d3a5": "2026-08-01T12:16:42.309603+00:00",
     "db09d9b0c67a4180": "2026-08-01T12:16:42.309603+00:00",
+    "dc0ad20d81d4604e": "2026-08-07T09:17:20.213476+00:00",
     "dcb788e7da346d4f": "2026-08-01T12:16:42.309603+00:00",
     "dce652f432b6a45a": "2026-08-02T11:35:58.106550+00:00",
     "de00fa1ffddb6758": "2026-08-01T12:16:42.309603+00:00",

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-07T09:17:20.213476+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-07T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
+      "summary_ja": "HSP GRUPPEが税務顧問業務にAIを導入\n企業向けChatGPTを使い生産性を向上\n業務品質を高め、顧客対応の余力も創出",
+      "summary_source": "gemini",
+      "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
+      "uid": "dc0ad20d81d4604e",
+      "url": "https://openai.com/index/hsp-gruppe",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-07T04:04:17.931385+00:00",
       "importance": "minor",
       "label": "Claude Code",
