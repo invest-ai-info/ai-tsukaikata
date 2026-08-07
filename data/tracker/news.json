@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-07T18:04:53.397980+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-07T17:10:51+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "0.121.0 (2026-08-07) Full Changelog: v0.120.2...v0.121.0 Features api: add mid-conversation-tool-changes-2026-07-01 beta ( c7d1531 ) api: add support for session budgets, advisor tool, pinned inferen…",
+      "title": "v0.121.0",
+      "uid": "ce6d55dc824071b1",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.121.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-07T17:10:40.287447+00:00",
       "importance": "minor",
       "label": "OpenAI News",
