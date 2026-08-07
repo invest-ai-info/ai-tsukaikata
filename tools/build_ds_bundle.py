@@ -5,6 +5,7 @@
 <!-- @dsCard group="…" --> がカード索引になる（MarketWatch連携と同じ型）。
 出力: このスクリプトと同じ場所の ds_bundle/
 """
+import base64
 from pathlib import Path
 
 REPO = Path(r"C:\Users\info0\ai-tsukaikata")
@@ -12,6 +13,10 @@ OUT = Path(__file__).resolve().parent / "ds_bundle"
 
 CSS = (REPO / "static" / "style.css").read_text(encoding="utf-8")
 HERO_SVG = (REPO / "static" / "images" / "hero.svg").read_text(encoding="utf-8")
+
+# Design側は外部ファイルを持てないので、写真はdata URIで焼き込む
+_hero_jpg = (REPO / "static" / "images" / "hero-photo.jpg").read_bytes()
+HERO_PHOTO_DATA_URI = "data:image/jpeg;base64," + base64.b64encode(_hero_jpg).decode()
 FIGURE_SVG = (REPO / "static" / "images" / "feels-off-map.svg").read_text(encoding="utf-8")
 
 def eyecatch(slug: str) -> str:
@@ -104,11 +109,16 @@ FILES["components/header.html"] = page("Components", "ヘッダ", """
 
 FILES["components/hero.html"] = page("Components", "ヒーロー", f"""
 <section class="hero">
+  <img class="hero-photo" src="{HERO_PHOTO_DATA_URI}" alt="">
   <div class="hero-text">
+    <p class="hero-eyebrow">プログラミングなしで、AIに頼む</p>
     <h1>AIの使い方</h1>
-    <p class="hero-lead">プログラミングなしで、AIに頼んで自動化を作る方法。使った指示文をそのまま載せています。</p>
+    <p class="hero-lead">プログラミングなしで、AIに頼んで自動化を作る方法。使った指示文をそのまま載せ、なぜその言い方が効くのかまで書いています。</p>
+    <p class="hero-links">
+      <a class="hero-link is-primary" href="#">レシピを読む</a>
+      <a class="hero-link" href="#">AIアップデート</a>
+    </p>
   </div>
-  <div class="hero-art" style="width:300px;">{HERO_SVG}</div>
 </section>
 """, max_width="52rem")
 
