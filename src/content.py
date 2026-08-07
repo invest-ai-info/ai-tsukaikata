@@ -14,7 +14,7 @@ from pathlib import Path
 import markdown
 import yaml
 
-from .config import CATEGORIES
+from .config import CATEGORIES, SCENES
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
 SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
@@ -41,6 +41,7 @@ class Article:
     cost: str | None
     body_html: str
     source_path: Path
+    scene: str | None = None
 
     @property
     def url(self) -> str:
@@ -115,6 +116,16 @@ def parse_article(source_path: Path, text: str) -> Article:
     if not isinstance(tags, list):
         raise ArticleError("tags は [A, B] のリスト形式で書いてください")
 
+    # 場面は付け忘れても落とさない（固定ページには要らない）。ただし知らない値は
+    # 落とす——誤字を許すと、その記事だけどの場面にも出ない静かな欠落になる
+    scene = meta.get("scene")
+    if scene is not None:
+        scene = str(scene)
+        if scene not in SCENES:
+            raise ArticleError(
+                f"知らない場面です: {scene}（{' / '.join(SCENES)} のいずれか）"
+            )
+
     return Article(
         slug=slug,
         title=str(meta["title"]),
@@ -127,6 +138,7 @@ def parse_article(source_path: Path, text: str) -> Article:
         cost=str(meta["cost"]) if meta.get("cost") else None,
         body_html=render_markdown(body),
         source_path=source_path,
+        scene=scene,
     )
 
 

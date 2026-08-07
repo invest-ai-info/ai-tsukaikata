@@ -170,3 +170,21 @@ def test_load_articles_skips_underscore_files(tmp_path):
     articles, errors = load_articles(tmp_path)
     assert articles == []
     assert errors == []
+
+
+def test_scene_is_parsed():
+    from src.content import parse_article
+    text = RECIPE.replace("category: recipes", "category: recipes\nscene: work")
+    assert parse_article(Path("content/recipes/x.md"), text).scene == "work"
+
+
+def test_unknown_scene_is_rejected():
+    from src.content import ArticleError, parse_article
+    text = RECIPE.replace("category: recipes", "category: recipes\nscene: しごと")
+    with pytest.raises(ArticleError):
+        parse_article(Path("content/recipes/x.md"), text)
+
+
+def test_scene_is_optional():
+    from src.content import parse_article
+    assert parse_article(Path("content/recipes/x.md"), RECIPE).scene is None

@@ -90,6 +90,9 @@ def collect(
     section_paths = ("/", "/news/") + tuple(
         f"/{name}/" for name in config.LISTED_CATEGORIES
         if any(a.category == name for a in articles)
+    ) + tuple(
+        f"/scenes/{name}/" for name in config.SCENES
+        if any(a.scene == name for a in articles)
     )
     files["feed.xml"] = feeds.build_rss(articles)
     files["sitemap.xml"] = feeds.build_sitemap(articles, section_paths)

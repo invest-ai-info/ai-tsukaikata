@@ -2,6 +2,7 @@
 title: AIに「注目されています」と書かせないための頼み方
 description: AIの要約に混ざる、当たり障りのない一文をやめさせます。原因はAIではなく、こちらの指示にありました。実際に59件中59件から0件に変わった直し方です。
 category: recipes
+scene: work
 published: 2026-08-05
 tags: [プロンプト, AI, 要約, 失敗しない頼み方]
 time_required: 5分

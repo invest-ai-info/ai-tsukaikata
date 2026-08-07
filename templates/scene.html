@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "_macros.html" as macros %}
+<p class="breadcrumb"><a href="/">ホーム</a> › 場面から探す</p>
+<h1 class="article-title">{{ scene_label }}で使う</h1>
+<p class="section-lead">{{ scene_lead }}</p>
+
+{% for article in articles %}
+{{ macros.card(article) }}
+{% endfor %}
+
+<p class="scene-back"><a href="/">ほかの場面も見る →</a></p>
+{% endblock %}

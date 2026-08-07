@@ -2,6 +2,7 @@
 title: AIに数字を「それっぽく」埋めさせないための頼み方
 description: 出典URLは正しいのに、そのページにその数字が無いことがあります。実際に起きた例と、書かせる前に止めるための一文を集めました。
 category: recipes
+scene: work
 published: 2026-08-05
 tags: [プロンプト, AI, 事実確認, 失敗しない頼み方]
 time_required: 5分

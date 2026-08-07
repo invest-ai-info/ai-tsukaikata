@@ -2,6 +2,7 @@
 title: AIの最新情報を自動で集めて、重要なものだけメールで受け取る
 description: 15の公式ソースを毎時チェックし、重大な発表だけ即メール、それ以外は毎朝1通にまとめる仕組み。AIへの頼み方をそのまま載せています。
 category: recipes
+scene: research
 published: 2026-08-01
 updated: 2026-08-02
 tags: [GitHub Actions, 自動化, 無料, 情報収集, プロンプト]

@@ -210,3 +210,44 @@ def test_every_page_has_og_image():
         html = pages[name]
         assert 'property="og:image" content="https://ai-tsukaikata.com/static/images/og-image.jpg"' in html
         assert 'name="twitter:card" content="summary_large_image"' in html
+
+
+def test_scene_pages_are_generated_for_used_scenes():
+    pages = render_site([_article(slug="a", scene="work"), _article(slug="b", scene="life")])
+    assert "scenes/work/index.html" in pages
+    assert "scenes/life/index.html" in pages
+    assert "scenes/fun/index.html" not in pages
+
+
+def test_scene_page_lists_only_its_own_articles():
+    pages = render_site([
+        _article(slug="a", title="仕事の記事", scene="work"),
+        _article(slug="b", title="暮らしの記事", scene="life"),
+    ])
+    html = pages["scenes/work/index.html"]
+    assert "仕事の記事" in html
+    assert "暮らしの記事" not in html
+
+
+def test_index_shows_scene_cards_with_counts():
+    pages = render_site([
+        _article(slug="a", scene="work"),
+        _article(slug="b", scene="work"),
+        _article(slug="c", scene="life"),
+    ])
+    html = pages["index.html"]
+    assert "場面から探す" in html
+    assert 'href="/scenes/work/"' in html
+    assert 'href="/scenes/life/"' in html
+    assert 'href="/scenes/fun/"' not in html
+
+
+def test_article_without_scene_still_renders():
+    pages = render_site([_article(slug="a", scene=None)])
+    assert "scenes/" not in "".join(k for k in pages)
+    assert 'class="card-scene"' not in pages["index.html"]
+
+
+def test_article_page_breadcrumb_has_scene():
+    pages = render_site([_article(slug="a", scene="work")])
+    assert 'href="/scenes/work/"' in pages["recipes/a/index.html"]

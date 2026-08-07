@@ -2,6 +2,7 @@
 title: 気になったURLを1行足すだけで、AIに調べて下書きを書かせる
 description: スマホでURLを1行足すと、翌朝には出典を読んだうえで書かれた下書きができています。勝手に公開されない置き場所の作り方まで含めた頼み方です。
 category: recipes
+scene: research
 published: 2026-08-05
 tags: [プロンプト, AI, 自動化, 調べもの]
 time_required: 30分

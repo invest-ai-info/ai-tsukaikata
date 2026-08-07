@@ -2,6 +2,7 @@
 title: AIに「たぶん動きます」と言わせないための頼み方
 description: AIは動かしていないものを「できました」と報告します。実際に確かめてから言わせるための一文を、実際に効いたものだけ集めました。
 category: recipes
+scene: work
 published: 2026-08-02
 tags: [プロンプト, AI, 検証, 失敗しない頼み方]
 time_required: 5分

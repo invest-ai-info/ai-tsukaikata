@@ -2,6 +2,7 @@
 title: AIに「記憶」を持たせて、毎回同じ説明をしなくて済むようにする
 description: 前提・好み・過去の判断をAI自身に書き残させます。「で、この案件って何でしたっけ」が消えます。頼み方をそのまま載せました。
 category: recipes
+scene: work
 published: 2026-08-01
 updated: 2026-08-02
 tags: [Claude Code, AI, 効率化, プロンプト]

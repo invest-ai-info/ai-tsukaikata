@@ -2,6 +2,7 @@
 title: Gemini 3.6 Flash と 3.5 Flash-Lite は何が変わったのか（安いモデル同士で比べる）
 description: 2026年7月21日に発表された Gemini 3.6 Flash・3.5 Flash-Lite・3.5 Flash Cyber について、Google・Anthropic・OpenAI の公式発表と公式料金ページに書かれている数字だけを並べました。旗艦モデルではなく、ふだん使いの安いモデル同士の比較です。
 category: tools
+scene: choose
 published: 2026-08-05
 tags: [Gemini, モデル比較, 料金, AI最新情報]
 ---

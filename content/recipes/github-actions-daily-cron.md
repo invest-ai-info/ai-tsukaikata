@@ -2,6 +2,7 @@
 title: 「毎日決まった時刻に自動でやっておいて」をAIに作らせる
 description: 定時実行をAIに頼むときの言い方。そのまま頼むと「走らない・遅れる」で消耗するので、最初に付けておく注文をまとめました。
 category: recipes
+scene: automate
 published: 2026-08-01
 updated: 2026-08-02
 tags: [GitHub Actions, 自動化, 無料, プロンプト]

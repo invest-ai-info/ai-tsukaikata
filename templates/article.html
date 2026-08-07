@@ -2,7 +2,7 @@
 {% block content %}
 <article class="article">
   {% if category_label %}
-  <p class="breadcrumb"><a href="/">ホーム</a> › <a href="{{ category_url }}">{{ category_label }}</a></p>
+  <p class="breadcrumb"><a href="/">ホーム</a> › <a href="{{ category_url }}">{{ category_label }}</a>{% if scene_label %} › <a href="{{ scene_url }}">{{ scene_label }}</a>{% endif %}</p>
   {% endif %}
 
   {% if article.slug in eyecatches %}

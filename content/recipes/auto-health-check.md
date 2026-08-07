@@ -2,6 +2,7 @@
 title: 自動化が静かに壊れたのを、AIに見つけさせる
 description: 「落ちていないか」ではなく「更新が止まっていないか」を見張らせます。エラーを出さない故障を捕まえるための頼み方をまとめました。
 category: recipes
+scene: automate
 published: 2026-08-01
 updated: 2026-08-02
 tags: [監視, 自動化, 無料, プロンプト]

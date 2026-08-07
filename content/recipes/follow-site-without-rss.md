@@ -2,6 +2,7 @@
 title: RSSが無いサイトの更新も追わせる（クラス名で拾わせない）
 description: 更新情報を配信していないサイトをAIに追わせるときの頼み方。デザイン変更で静かに壊れる「クラス名で拾う」をやめさせ、壊れた日に気づける形で作らせます。実際に踏んだ失敗つき。
 category: recipes
+scene: research
 published: 2026-08-06
 tags: [自動化, 情報収集, プロンプト, 落とし穴]
 time_required: 30分

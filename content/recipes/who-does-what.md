@@ -2,6 +2,7 @@
 title: AIに「あとはご自分で」と言われないための頼み方
 description: AIは頼んだものを作ってくれますが、自分にしかできない作業を最後にまとめて渡してきます。始める前に分担を出させるための一文を集めました。
 category: recipes
+scene: work
 published: 2026-08-03
 tags: [プロンプト, AI, 段取り, 失敗しない頼み方]
 time_required: 5分

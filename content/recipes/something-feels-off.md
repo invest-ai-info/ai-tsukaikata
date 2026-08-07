@@ -2,6 +2,7 @@
 title: AIと作業していて「なんか違う」と思ったときの対処
 description: 違和感を言葉にできないまま作業が進んでしまう、を止める方法。違和感の正体を3つに分け、それぞれで使う一言と、言葉にできないときにAI自身に手伝わせる頼み方をまとめました。
 category: recipes
+scene: start
 published: 2026-08-06
 tags: [プロンプト, 作業のコツ, 言い直し]
 time_required: 5分

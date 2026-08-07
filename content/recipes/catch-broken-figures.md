@@ -2,6 +2,7 @@
 title: AIに図を作らせると崩れる、を検査で止める
 description: AIに作らせた図解やグラフは、文字を線が貫く・枠からはみ出す・真っ黒になる、と静かに崩れます。目視では見落とすので、公開前に機械で検査させる頼み方をまとめました。全部実際に起きた崩れです。
 category: recipes
+scene: automate
 published: 2026-08-06
 tags: [自動化, 図解, 検査, プロンプト]
 time_required: 30分

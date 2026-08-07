@@ -2,6 +2,7 @@
 title: YouTubeの動画を毎晩自動で要約させて、見る前に中身を知る
 description: 追いかけているチャンネルの新着を毎日まとめて要約させる仕組み。AIへの頼み方と、嘘の要約を書かせないための言い方を載せています。
 category: recipes
+scene: research
 published: 2026-08-01
 updated: 2026-08-02
 tags: [YouTube, 自動化, 要約, プロンプト]

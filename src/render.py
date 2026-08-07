@@ -69,6 +69,22 @@ def render_site(
         nav.append({"url": "/news/", "label": "AIアップデート"})
     env.globals["nav"] = nav
 
+    # 場面（scene）。記事が1本も無い場面は出さない＝中身が入った時点で現れる
+    active_scenes = [
+        name for name in config.SCENES
+        if any(a.scene == name for a in listed)
+    ]
+    scene_cards = [
+        {
+            "url": f"/scenes/{name}/",
+            "label": config.SCENES[name]["label"],
+            "lead": config.SCENES[name]["lead"],
+            "count": sum(1 for a in listed if a.scene == name),
+        }
+        for name in active_scenes
+    ]
+    env.globals["scenes"] = config.SCENES
+
     pages: dict[str, str] = {}
 
     pages["index.html"] = env.get_template("index.html").render(
@@ -78,6 +94,7 @@ def render_site(
         og_type="website",
         articles=listed[: config.INDEX_MAX_ARTICLES],
         news=news["top"] if news else None,
+        scene_cards=scene_cards,
     )
 
     if news:
@@ -87,6 +104,18 @@ def render_site(
             canonical=f"{config.SITE_URL}/news/",
             og_type="website",
             news=news["archive"],
+        )
+
+    for scene in active_scenes:
+        meta = config.SCENES[scene]
+        pages[f"scenes/{scene}/index.html"] = env.get_template("scene.html").render(
+            page_title=f"{meta['label']}で使う",
+            description=meta["lead"],
+            canonical=f"{config.SITE_URL}/scenes/{scene}/",
+            og_type="website",
+            scene_label=meta["label"],
+            scene_lead=meta["lead"],
+            articles=[a for a in listed if a.scene == scene],
         )
 
     for name in active:
@@ -111,6 +140,8 @@ def render_site(
             article=article,
             category_label=meta["label"] or None,
             category_url=f"/{article.category}/",
+            scene_label=config.SCENES[article.scene]["label"] if article.scene else None,
+            scene_url=f"/scenes/{article.scene}/" if article.scene else None,
         )
 
     return pages

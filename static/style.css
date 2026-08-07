@@ -203,6 +203,68 @@ a { color: var(--accent); }
 
 .section-lead { color: var(--muted); font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
 
+/* --- 場面から探す --- */
+
+.scene-section { margin-bottom: 2.5rem; }
+
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.scene-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent-deco);
+  border-radius: 0 10px 10px 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.scene-card:hover { border-color: var(--accent); border-left-color: var(--accent); }
+
+.scene-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.scene-count {
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: var(--h2-what-bg);
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+
+.scene-card .scene-lead {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.card-scene {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--h2-what-bg);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-scene:hover { text-decoration: underline; }
+
+.scene-back { margin-top: 2.5rem; }
+
 /* --- 記事カード --- */
 
 .card {

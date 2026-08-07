@@ -2,6 +2,7 @@
 title: Claude Opus 5 は何が変わったのか（公式発表の数字だけで比べる）
 description: 2026年7月24日に公開された Claude Opus 5 について、Anthropic・OpenAI・Google の公式発表と公式料金ページに書かれている数字だけを並べました。まとめ記事やニュースサイトの数字は1つも使っていません。
 category: tools
+scene: choose
 published: 2026-08-04
 tags: [Claude, モデル比較, 料金, AI最新情報]
 ---

@@ -2,6 +2,7 @@
 title: AIに「ついでに整理しておきました」と言わせないための頼み方
 description: AIは頼んだこと以外も善意でやります。動いているものが壊れる原因の上位です。範囲を先に区切るための一文を集めました。
 category: recipes
+scene: work
 published: 2026-08-02
 tags: [プロンプト, AI, 事故を防ぐ, 失敗しない頼み方]
 time_required: 5分

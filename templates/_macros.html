@@ -7,6 +7,7 @@
     <h2 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
     <p class="card-description">{{ article.description }}</p>
     <p class="card-meta">
+      {% if article.scene %}<a class="card-scene" href="/scenes/{{ article.scene }}/">{{ scenes[article.scene].label }}</a>{% endif %}
       <time datetime="{{ article.published.isoformat() }}">{{ article.published | jp_date }}</time>
       {% if article.time_required %}<span class="card-badge">{{ article.time_required }}</span>{% endif %}
       {% if article.cost %}<span class="card-badge">{{ article.cost }}</span>{% endif %}

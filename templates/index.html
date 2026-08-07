@@ -37,6 +37,21 @@
 </section>
 {% endif %}
 
+{% if scene_cards %}
+<section class="scene-section">
+  <h2 class="section-title">場面から探す</h2>
+  <p class="section-lead">どんなときに使いたいかで選べます。</p>
+  <div class="scene-grid">
+    {% for scene in scene_cards %}
+    <a class="scene-card" href="{{ scene.url }}">
+      <span class="scene-name">{{ scene.label }}<span class="scene-count">{{ scene.count }}</span></span>
+      <span class="scene-lead">{{ scene.lead }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 <section class="article-list">
   <h2 class="section-title">新着</h2>
   {% for article in articles %}
