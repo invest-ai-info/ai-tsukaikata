@@ -1218,6 +1218,158 @@ def fun_iteration_chart() -> None:
     )
 
 
+def batch_vs_one_chart() -> None:
+    """1件ずつ10回 vs 10件まとめて1回。毎回かかる説明の手間を可視化する。"""
+    left, right = 150, 660
+    span = right - left
+    top, bar_h, gap = 78, 34, 30
+
+    # 1回あたり: 説明1.0 + 待ち0.6。10回ぶんと、まとめて1回ぶん
+    rows = [
+        ("1件ずつ10回", 10.0, 6.0, "bar-old"),
+        ("10件まとめて1回", 1.0, 2.0, "bar-new"),
+    ]
+    biggest = max(a + b for _, a, b, _ in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じ説明を毎回書き直しているぶんが、まるごと消える</text>\n',
+        '<text class="t-sm" x="18" y="45">濃い色＝説明を書く時間 ／ 薄い色＝待ち時間。長さは考え方を示す目安です。</text>\n',
+    ]
+    for index, (label, explain, wait, cls) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 11}">{_esc(label)}</text>\n')
+        ew = explain * scale
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" width="{ew:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        ww = wait * scale
+        parts.append(
+            f'<rect class="bar-in" x="{left + ew:.1f}" y="{y}" '
+            f'width="{ww:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + 10}" y="{y + bar_h - 11}">説明</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + ew + 10:.1f}" y="{y + bar_h - 11}">待ち</text>\n'
+        )
+
+    height = top + len(rows) * (bar_h + gap) + 34
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 待ち時間は減りません。減るのは「毎回おなじ前置きを書き直す」ぶんです。</text>\n"
+    )
+    alt = (
+        "1件ずつ10回頼む場合と、10件まとめて1回頼む場合を比べた横棒グラフ。"
+        "1件ずつ10回は、説明を書く時間が10回ぶん積み上がり、待ち時間も10回ぶんかかる。"
+        "10件まとめて1回は、説明が1回ぶんで済み、待ち時間も1回にまとまる。"
+        "待ち時間そのものは減らず、減るのは毎回同じ前置きを書き直すぶん。"
+    )
+    (OUT / "batch-vs-one.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def meeting_outputs_chart() -> None:
+    """1本の録音から、用途の違う3つの成果物を出させる。"""
+    src_x, src_y, src_w, src_h = 18, 96, 168, 62
+    out_x = 300
+    out_w = WIDTH - out_x - 18
+    out_h = 52
+    out_gap = 16
+    outs = [
+        ("決まったこと", "そのまま共有できる形で"),
+        ("宿題（誰が・いつまで）", "担当と期限が空欄なら空欄と書かせる"),
+        ("持ち帰りの論点", "決まらなかったことを消させない"),
+    ]
+    top = 84
+    height = top + len(outs) * (out_h + out_gap) - out_gap + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">録音1本から、用途の違う3つを別々に出させる</text>\n',
+        '<text class="t-sm" x="18" y="45">まとめて「議事録にして」と頼むと、宿題が本文に埋もれます。</text>\n',
+        f'<rect class="box-quiet" x="{src_x}" y="{src_y}" width="{src_w}" height="{src_h}" rx="6"/>\n',
+        f'<text class="t" x="{src_x + 16}" y="{src_y + 26}">会議の録音</text>\n',
+        f'<text class="t-sm" x="{src_x + 16}" y="{src_y + 46}">文字起こしでも可</text>\n',
+    ]
+    for index, (title, note) in enumerate(outs):
+        y = top + index * (out_h + out_gap)
+        parts.append(
+            f'<rect class="box-accent" x="{out_x}" y="{y}" width="{out_w}" height="{out_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{out_x + 14}" y="{y + 22}">{_esc(title)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{out_x + 14}" y="{y + 40}">{_esc(note)}</text>\n'
+        )
+        ay = y + out_h / 2
+        parts.append(
+            f'<line class="line" x1="{src_x + src_w + 8}" y1="{src_y + src_h / 2}" '
+            f'x2="{out_x - 14}" y2="{ay}"/>\n'
+        )
+        parts.append(
+            f'<path d="M{out_x - 14} {ay - 4} L{out_x - 7} {ay} '
+            f'L{out_x - 14} {ay + 4} Z" fill="#8b949e"/>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 音声を渡す前に、社外秘や個人名が含まれていないかを確認してください。</text>\n"
+    )
+    alt = (
+        "会議の録音1本から3つの成果物を別々に出させる図。"
+        "決まったこと（そのまま共有できる形で）、宿題（誰が・いつまで。担当と期限が空欄なら空欄と書かせる）、"
+        "持ち帰りの論点（決まらなかったことを消させない）。"
+        "まとめて議事録にしてと頼むと宿題が本文に埋もれる。"
+    )
+    (OUT / "meeting-outputs.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sourced_research_chart() -> None:
+    """出典なしの答えと、出典つきの答えの違い。"""
+    left_rows = ["答えだけ返ってくる", "合っていそうに見える", "確かめる方法が無い", "間違いに気づけない"]
+    right_rows = ["答えとURLが並ぶ", "URLを開けば確かめられる", "無い情報は「無い」と分かる", "自分の責任で使える"]
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(left_rows), len(right_rows))
+    box_h = 30 + rows * row_h
+    height = first_y + rows * row_h + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">調べものは「答え」ではなく「答えと出典」で受け取る</text>\n',
+        '<text class="t-sm" x="18" y="45">正しさを見抜く力より、確かめられる形で受け取る習慣のほうが効きます。</text>\n',
+        f'<rect class="box-bad" x="{left_x}" y="{head_y - 22}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-good" x="{right_x}" y="{head_y - 22}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-bad" x="{left_x + 14}" y="{head_y - 2}">出典を求めないとき</text>\n',
+        f'<text class="t-good" x="{right_x + 14}" y="{head_y - 2}">出典を求めたとき</text>\n',
+    ]
+    for index, text in enumerate(left_rows):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(right_rows):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典が付いていても、URLが実在するとは限りません。1つは実際に開いて確かめてください。</text>\n"
+    )
+    alt = (
+        "調べものを出典つきで受け取る効果を比べた図。"
+        "出典を求めないとき＝答えだけ返り、合っていそうに見えるが、確かめる方法が無く、間違いに気づけない。"
+        "出典を求めたとき＝答えとURLが並び、URLを開けば確かめられ、無い情報は無いと分かり、自分の責任で使える。"
+        "ただし出典が付いていてもURLが実在するとは限らないので、1つは実際に開いて確かめる。"
+    )
+    (OUT / "sourced-research.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1241,4 +1393,7 @@ if __name__ == "__main__":
     delegate_types_chart()
     life_paperwork_chart()
     fun_iteration_chart()
-    print(f"22枚を {OUT} に出力しました")
+    batch_vs_one_chart()
+    meeting_outputs_chart()
+    sourced_research_chart()
+    print(f"25枚を {OUT} に出力しました")

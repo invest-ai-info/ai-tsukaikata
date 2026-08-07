@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="318" viewBox="0 0 720 318" role="img" aria-label="会議の録音1本から3つの成果物を別々に出させる図。決まったこと（そのまま共有できる形で）、宿題（誰が・いつまで。担当と期限が空欄なら空欄と書かせる）、持ち帰りの論点（決まらなかったことを消させない）。まとめて議事録にしてと頼むと宿題が本文に埋もれる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="318"/>
+<text class="t-strong" x="18" y="26">録音1本から、用途の違う3つを別々に出させる</text>
+<text class="t-sm" x="18" y="45">まとめて「議事録にして」と頼むと、宿題が本文に埋もれます。</text>
+<rect class="box-quiet" x="18" y="96" width="168" height="62" rx="6"/>
+<text class="t" x="34" y="122">会議の録音</text>
+<text class="t-sm" x="34" y="142">文字起こしでも可</text>
+<rect class="box-accent" x="300" y="84" width="402" height="52" rx="6"/>
+<text class="t-accent" x="314" y="106">決まったこと</text>
+<text class="t-sm" x="314" y="124">そのまま共有できる形で</text>
+<line class="line" x1="194" y1="127.0" x2="286" y2="110.0"/>
+<path d="M286 106.0 L293 110.0 L286 114.0 Z" fill="#8b949e"/>
+<rect class="box-accent" x="300" y="152" width="402" height="52" rx="6"/>
+<text class="t-accent" x="314" y="174">宿題（誰が・いつまで）</text>
+<text class="t-sm" x="314" y="192">担当と期限が空欄なら空欄と書かせる</text>
+<line class="line" x1="194" y1="127.0" x2="286" y2="178.0"/>
+<path d="M286 174.0 L293 178.0 L286 182.0 Z" fill="#8b949e"/>
+<rect class="box-accent" x="300" y="220" width="402" height="52" rx="6"/>
+<text class="t-accent" x="314" y="242">持ち帰りの論点</text>
+<text class="t-sm" x="314" y="260">決まらなかったことを消させない</text>
+<line class="line" x1="194" y1="127.0" x2="286" y2="246.0"/>
+<path d="M286 242.0 L293 246.0 L286 250.0 Z" fill="#8b949e"/>
+<text class="t-xs" x="18" y="306">※ 音声を渡す前に、社外秘や個人名が含まれていないかを確認してください。</text>
+</svg>
