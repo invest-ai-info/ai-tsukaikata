@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-07T00:17:27.231353+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-08-06T15:06:15+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
+      "uid": "a308efebc7f4e70d",
+      "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-08-07T00:17:27.231353+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-06T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.6 Luna.",
+      "summary_ja": "ChatGPTのAIが改善され、無料利用の範囲が広がった。\nAI「GPT-5.6 Sol」の精度と安定性が向上した。\n無料ユーザーはAI「GPT-5.6 Luna」と無制限に会話できる。",
+      "summary_source": "gemini",
+      "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "uid": "f86c8dc90103de18",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-07T00:17:27.231353+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-06T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health.",
+      "summary_ja": "OpenAIが米国心理学会と協力し、AIの指針を作る。\n若者の心の健康とAIの適切な利用について議論する。\n根拠に基づく指針や資料、安全策を推進する。",
+      "summary_source": "gemini",
+      "title": "Working with the American Psychological Association on youth mental health and AI",
+      "uid": "1e81e8ad089d65e4",
+      "url": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-06T03:42:21.053999+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -11,6 +51,20 @@
       "uid": "98d38d2a2af1049c",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-07T00:17:27.231353+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-06T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "New OpenAI Signals data shows how people use ChatGPT worldwide, with country-level insights on adoption, usage trends, and evolving behavior.",
+      "summary_ja": "世界のChatGPT利用状況に関するデータが公開された。\nOpenAI Signalsのデータで利用方法が明らかに。\n国ごとの普及状況や行動変化の傾向が示されている。",
+      "summary_source": "gemini",
+      "title": "From asking to doing: How the world is putting ChatGPT to work",
+      "uid": "5a7f04ad895f9075",
+      "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-08-04T23:27:29.115493+00:00",
@@ -1972,6 +2026,18 @@
       "title": "moonshotai/kimi-k2.7-code",
       "uid": "2eea59f66f030b75",
       "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
+      "vendor": "Moonshot AI"
+    },
+    {
+      "first_seen": "2026-08-07T00:17:27.231353+00:00",
+      "importance": "minor",
+      "label": "Kimi 新モデル",
+      "published": "2026-06-12T12:12:41+00:00",
+      "source_id": "openrouter-moonshot",
+      "summary": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-o…",
+      "title": "moonshotai/kimi-k2.7-code:batch",
+      "uid": "3fa92a15da863e80",
+      "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code:batch",
       "vendor": "Moonshot AI"
     },
     {
