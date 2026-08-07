@@ -1,9 +1,9 @@
 {
   "failures": {},
   "latest": {
-    "anthropic-news": "2026-08-04T17:02:00+00:00",
+    "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-07-28T17:38:09+00:00",
-    "claude-code": "2026-08-06T00:52:37+00:00",
+    "claude-code": "2026-08-07T04:00:59+00:00",
     "deepmind-blog": "2026-08-06T15:06:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
@@ -16,13 +16,37 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-04T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-07T01:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "",
+      "title": "Improving Fable 5's biology safeguards",
+      "uid": "fe3568a6632498a0",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-07T04:00:59+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added self-hosted environments: claude self-hosted-runner turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and Enterpri…",
+      "title": "v2.1.224",
+      "uid": "027b3b38530d9248",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
+      "vendor": "Anthropic"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
     "00d8ed5096ddb397": "2026-08-01T12:16:42.309603+00:00",
     "01397b600159fb88": "2026-08-01T12:16:42.309603+00:00",
     "014263a32aba8db4": "2026-08-01T12:16:42.309603+00:00",
+    "027b3b38530d9248": "2026-08-07T04:04:17.931385+00:00",
     "02d3a6ff4673b520": "2026-08-03T18:09:30.356189+00:00",
     "0372be360b5c7e86": "2026-08-01T12:16:42.309603+00:00",
     "042052bf2ede16ae": "2026-08-04T15:37:58.863476+00:00",
@@ -412,6 +436,7 @@
     "fb635ba6fad696ed": "2026-08-01T12:16:42.309603+00:00",
     "fc2f9703a075336f": "2026-08-01T12:16:42.309603+00:00",
     "fda3cc85eccc5822": "2026-08-01T12:16:42.309603+00:00",
+    "fe3568a6632498a0": "2026-08-07T04:04:17.931385+00:00",
     "fe5fd0dd27889fb7": "2026-08-01T12:16:42.309603+00:00",
     "ff16cd3750420e6b": "2026-08-01T12:16:42.309603+00:00",
     "fffcb7b3a7db4126": "2026-08-01T12:16:42.309603+00:00"
