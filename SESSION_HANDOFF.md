@@ -159,10 +159,10 @@ favicon.ico / apple-touch-icon.png / icon-512.png を作る。**絵を差し替�
 - 📌 **次に効いてくる警告**＝`openrouter-xai` が **2026-08-08 に30日到達**。x.ai は 403 で直取得できず
   OpenRouter が唯一の実測済みルートなので、ここが鳴ったら「xAIが出していない」のか「経路も静かになった」のかの切り分けが要る
 
-### 1. Enforce HTTPS が未設定（運営者の操作）
+### 1. ✅ Enforce HTTPS 設定済み（2026-08-07・運営者が実施）
 
-`Settings → Pages` の **Enforce HTTPS** にチェックが入っていない。いまは押せる状態（DNS check successful）。
-入れないと `http://` で来た人がそのまま平文で閲覧する。2026-08-02 実測で `http://` が301を返さず200のままなのを確認済み。
+`https_enforced: True`。実測で `http://ai-tsukaikata.com/` と `http://www...` の
+両方が **301 → https://** を返すことを確認済み（設定前は200のまま平文だった）。
 
 ### 2. Search Console 未登録（運営者の操作）
 
