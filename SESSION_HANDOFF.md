@@ -26,6 +26,11 @@
 | 3 | **絵と画像**＝hero.svg・アイキャッチ自動生成・ベンダー識別マーク | `d90dee8` |
 | 4 | **major お知らせ→深掘りキュー自動追記**（1日3件・二度追記しない） | `b163d74` |
 
+**Claude Design 連携（2026-08-07）**＝プロジェクト「AIの使い方 — あたたかい紙」
+（`f701e8e7-a0a8-4aee-b566-4e696c5cc0b9`）に12部品を push 済み。
+⚠️ **MarketWatch の「Design System」プロジェクトとは別**（`foundations/colors.html` 等が同名で衝突するため）。
+生成元＝scratchpad の `build_ds_bundle.py`（CSSとSVGをインラインに焼き込んで自己完結させる）。
+
 **新しい運用ルール:**
 - **記事を足したら `python -m tools.make_eyecatch` を1回**（全記事ぶん決定的に再生成・冪等）。
   実行しなくてもビルドは壊れない＝アイキャッチが無い記事は画像なしで組まれる
