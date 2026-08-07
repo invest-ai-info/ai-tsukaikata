@@ -9,7 +9,7 @@
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-07T09:00:00+00:00",
+    "openai-news": "2026-08-07T15:20:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -48,6 +48,17 @@
       "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
       "uid": "dc0ad20d81d4604e",
       "url": "https://openai.com/index/hsp-gruppe",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-07T15:20:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls.",
+      "title": "Responding to the next frontier of critical cyber capabilities",
+      "uid": "d8cc34f5bb6df456",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
       "vendor": "OpenAI"
     }
   ],
@@ -393,6 +404,7 @@
     "d7566d14fd510e1a": "2026-08-01T12:16:42.309603+00:00",
     "d79c29ede3907f9e": "2026-08-01T12:16:42.309603+00:00",
     "d84b42d0d5feeeb4": "2026-08-01T12:16:42.309603+00:00",
+    "d8cc34f5bb6df456": "2026-08-07T17:10:40.287447+00:00",
     "d9b9783de65b0390": "2026-08-01T12:16:42.309603+00:00",
     "da55c48d7516d3a5": "2026-08-01T12:16:42.309603+00:00",
     "db09d9b0c67a4180": "2026-08-01T12:16:42.309603+00:00",

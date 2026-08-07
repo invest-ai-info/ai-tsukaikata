@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-07T17:10:40.287447+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-07T15:20:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls.",
+      "summary_ja": "OpenAIが新モデルの安全評価を公開\nモデル「Astra」のサイバー攻撃への安全性評価\n安全対策とセキュリティ強化の措置も公表",
+      "summary_source": "gemini",
+      "title": "Responding to the next frontier of critical cyber capabilities",
+      "uid": "d8cc34f5bb6df456",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-07T09:17:20.213476+00:00",
       "importance": "minor",
       "label": "OpenAI News",
