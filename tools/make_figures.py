@@ -1108,6 +1108,116 @@ def delegate_types_chart() -> None:
     )
 
 
+def life_paperwork_chart() -> None:
+    """紙・書類まわりで、AIに渡せるところと自分で持つところ。"""
+    steps = [
+        ("box-good", "写真を撮る", "レシートも通知も\nスマホで1枚"),
+        ("box-good", "読み取らせる", "文字にして\n表にまとめさせる"),
+        ("box-good", "下書きさせる", "申請文・問い合わせ文\nを型どおりに"),
+        ("box-bad", "出す判断は自分", "金額と宛先だけ\n目で確かめる"),
+    ]
+    box_w, box_h, gap_x = 156, 78, 18
+    left, top = 18, 80
+    height = top + box_h + 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">暮らしの書類は「読み取り」と「下書き」まで渡せる</text>\n',
+        '<text class="t-sm" x="18" y="45">最後の確認だけ自分に残す。ここを渡すと事故になります。</text>\n',
+    ]
+    for index, (cls, title, sub) in enumerate(steps):
+        x = left + index * (box_w + gap_x)
+        parts.append(
+            f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        label_cls = "t-good" if cls == "box-good" else "t-bad"
+        parts.append(
+            f'<text class="{label_cls}" x="{x + 12}" y="{top + 24}">{_esc(title)}</text>\n'
+        )
+        for line_index, line in enumerate(sub.split("\n")):
+            parts.append(
+                f'<text class="t-sm" x="{x + 12}" y="{top + 46 + line_index * 17}">'
+                f"{_esc(line)}</text>\n"
+            )
+        if index < len(steps) - 1:
+            ax = x + box_w
+            ay = top + box_h / 2
+            parts.append(
+                f'<line class="line" x1="{ax + 3}" y1="{ay}" x2="{ax + gap_x - 8}" y2="{ay}"/>\n'
+            )
+            parts.append(
+                f'<path d="M{ax + gap_x - 8} {ay - 4} L{ax + gap_x - 1} {ay} '
+                f'L{ax + gap_x - 8} {ay + 4} Z" fill="#8b949e"/>\n'
+            )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 金額・宛先・期限は、AIの読み取り結果をそのまま信じないでください。原本と1回だけ見比べます。</text>\n"
+    )
+    alt = (
+        "暮らしの書類でAIに渡せる工程の図。写真を撮る（レシートも通知もスマホで1枚）、"
+        "読み取らせる（文字にして表にまとめさせる）、下書きさせる（申請文や問い合わせ文を型どおりに）"
+        "までは渡せる。最後の「出す判断」は自分が持ち、金額と宛先だけ目で確かめる。"
+        "金額・宛先・期限はAIの読み取りをそのまま信じず、原本と1回見比べる。"
+    )
+    (OUT / "life-paperwork.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fun_iteration_chart() -> None:
+    """創作では、1回で完成させず「案を並べさせて選ぶ」を回す。"""
+    lanes = [
+        ("bad", "1回で完成させようとする", "t-bad",
+         ["長い注文を書く", "1案だけ返ってくる", "違う→また長い注文", "だんだん惜しくなる"]),
+        ("good", "案を並べさせて選ぶ", "t-good",
+         ["短い注文を書く", "5案まとめて返る", "良い所を指して選ぶ", "選んだ案を伸ばす"]),
+    ]
+    box_w, box_h, gap_x = 152, 46, 22
+    left = 18
+    height = 292
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">創作は「1回で完成」より「並べて選ぶ」が速い</text>\n',
+        '<text class="t-sm" x="18" y="45">好みは言葉にしにくいので、見てから選ぶほうが早く着きます。</text>\n',
+    ]
+    for lane_index, (kind, label, label_cls, steps) in enumerate(lanes):
+        label_y = 84 + lane_index * 104
+        box_y = label_y + 12
+        parts.append(f'<text class="{label_cls}" x="18" y="{label_y}">{_esc(label)}</text>\n')
+        for step_index, text in enumerate(steps):
+            x = left + step_index * (box_w + gap_x)
+            box_cls = "box-quiet" if step_index == 0 else f"box-{kind}"
+            parts.append(
+                f'<rect class="{box_cls}" x="{x}" y="{box_y}" '
+                f'width="{box_w}" height="{box_h}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{x + 10}" y="{box_y + 28}">{_esc(text)}</text>\n'
+            )
+            if step_index < len(steps) - 1:
+                ax = x + box_w
+                ay = box_y + box_h / 2
+                parts.append(
+                    f'<line class="line" x1="{ax + 3}" y1="{ay}" x2="{ax + gap_x - 8}" y2="{ay}"/>\n'
+                )
+                parts.append(
+                    f'<path d="M{ax + gap_x - 8} {ay - 4} L{ax + gap_x - 1} {ay} '
+                    f'L{ax + gap_x - 8} {ay + 4} Z" fill="#8b949e"/>\n'
+                )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 5案は多すぎず少なすぎない数です。3案だと似たものが並び、10案だと選ぶのが仕事になります。</text>\n"
+    )
+    alt = (
+        "創作でのAIの使い方2通りを比べた図。"
+        "上（1回で完成させようとする）＝長い注文を書く、1案だけ返ってくる、違うのでまた長い注文、"
+        "だんだん惜しくなる。"
+        "下（案を並べさせて選ぶ）＝短い注文を書く、5案まとめて返る、良い所を指して選ぶ、選んだ案を伸ばす。"
+    )
+    (OUT / "fun-iteration.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1129,4 +1239,6 @@ if __name__ == "__main__":
     check_blindspot_chart()
     feels_off_chart()
     delegate_types_chart()
-    print(f"20枚を {OUT} に出力しました")
+    life_paperwork_chart()
+    fun_iteration_chart()
+    print(f"22枚を {OUT} に出力しました")

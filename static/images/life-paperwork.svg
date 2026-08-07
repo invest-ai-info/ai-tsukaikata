@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="218" viewBox="0 0 720 218" role="img" aria-label="暮らしの書類でAIに渡せる工程の図。写真を撮る（レシートも通知もスマホで1枚）、読み取らせる（文字にして表にまとめさせる）、下書きさせる（申請文や問い合わせ文を型どおりに）までは渡せる。最後の「出す判断」は自分が持ち、金額と宛先だけ目で確かめる。金額・宛先・期限はAIの読み取りをそのまま信じず、原本と1回見比べる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="218"/>
+<text class="t-strong" x="18" y="26">暮らしの書類は「読み取り」と「下書き」まで渡せる</text>
+<text class="t-sm" x="18" y="45">最後の確認だけ自分に残す。ここを渡すと事故になります。</text>
+<rect class="box-good" x="18" y="80" width="156" height="78" rx="6"/>
+<text class="t-good" x="30" y="104">写真を撮る</text>
+<text class="t-sm" x="30" y="126">レシートも通知も</text>
+<text class="t-sm" x="30" y="143">スマホで1枚</text>
+<line class="line" x1="177" y1="119.0" x2="184" y2="119.0"/>
+<path d="M184 115.0 L191 119.0 L184 123.0 Z" fill="#8b949e"/>
+<rect class="box-good" x="192" y="80" width="156" height="78" rx="6"/>
+<text class="t-good" x="204" y="104">読み取らせる</text>
+<text class="t-sm" x="204" y="126">文字にして</text>
+<text class="t-sm" x="204" y="143">表にまとめさせる</text>
+<line class="line" x1="351" y1="119.0" x2="358" y2="119.0"/>
+<path d="M358 115.0 L365 119.0 L358 123.0 Z" fill="#8b949e"/>
+<rect class="box-good" x="366" y="80" width="156" height="78" rx="6"/>
+<text class="t-good" x="378" y="104">下書きさせる</text>
+<text class="t-sm" x="378" y="126">申請文・問い合わせ文</text>
+<text class="t-sm" x="378" y="143">を型どおりに</text>
+<line class="line" x1="525" y1="119.0" x2="532" y2="119.0"/>
+<path d="M532 115.0 L539 119.0 L532 123.0 Z" fill="#8b949e"/>
+<rect class="box-bad" x="540" y="80" width="156" height="78" rx="6"/>
+<text class="t-bad" x="552" y="104">出す判断は自分</text>
+<text class="t-sm" x="552" y="126">金額と宛先だけ</text>
+<text class="t-sm" x="552" y="143">目で確かめる</text>
+<text class="t-xs" x="18" y="206">※ 金額・宛先・期限は、AIの読み取り結果をそのまま信じないでください。原本と1回だけ見比べます。</text>
+</svg>
