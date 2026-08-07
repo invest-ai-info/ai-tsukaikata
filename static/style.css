@@ -125,17 +125,74 @@ a { color: var(--accent); }
 
 /* --- トップ --- */
 
-.hero {
-  margin-bottom: 2.5rem;
+/* トップの顔。ここだけは他より大きく組んで「何のサイトか」を一目で見せる */
+.hero { margin: 0 0 3rem; }
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+.hero-text { margin-top: 1.4rem; }
+
+.hero-eyebrow {
+  margin: 0 0 0.3rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.7rem;
+}
+
+.hero-lead {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: var(--fg);
+}
+
+.hero-links {
+  margin: 1.3rem 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem 2rem;
-  align-items: center;
+  gap: 0.7rem;
 }
-.hero-text { flex: 1 1 260px; }
-.hero h1 { font-size: 1.6rem; margin: 0 0 0.5rem; }
-.hero-lead { margin: 0; font-size: 1.05rem; }
-.hero-art { flex: none; width: 300px; max-width: 100%; height: auto; margin: 0 auto; }
+
+.hero-link {
+  padding: 0.55rem 1.3rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.97rem;
+  font-weight: 700;
+}
+
+.hero-link:hover { background: var(--h2-what-bg); }
+
+/* 主導線は塗りにして、2つのボタンの序列をはっきりさせる。
+   文字色は地の明るさで決める——ダークの --accent は明るいコーラルなので、
+   そこに白を載せるとコントラストが 2.2:1 まで落ちて読めなくなる */
+.hero-link.is-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fffdf8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-link.is-primary { color: #1c1712; }
+}
+
+.hero-link.is-primary:hover { opacity: 0.88; }
 
 .section-title {
   font-size: 1.15rem;
@@ -583,6 +640,8 @@ a { color: var(--accent); }
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
+  .hero h1 { font-size: 1.85rem; }
+  .hero-lead { font-size: 1rem; }
   .article-title { font-size: 1.32rem; }
   .site-header { padding: 1rem 0.9rem; }
   .site-main, .site-footer { padding-left: 0.9rem; padding-right: 0.9rem; }

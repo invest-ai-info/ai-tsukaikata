@@ -187,7 +187,14 @@ def test_article_page_shows_eyecatch_banner():
 
 def test_index_hero_has_illustration():
     pages = render_site([_article()])
-    assert "/static/images/hero.svg" in pages["index.html"]
+    assert "/static/images/hero-photo.jpg" in pages["index.html"]
+
+
+def test_every_page_has_favicon():
+    pages = render_site([_article()])
+    for name in ("index.html", "recipes/sample/index.html"):
+        assert '<link rel="icon" href="/static/images/favicon.ico"' in pages[name]
+        assert 'rel="apple-touch-icon"' in pages[name]
 
 
 def test_news_vendor_icon_is_rendered():
@@ -201,5 +208,5 @@ def test_every_page_has_og_image():
     pages = render_site([_article()])
     for name in ("index.html", "recipes/sample/index.html"):
         html = pages[name]
-        assert 'property="og:image" content="https://ai-tsukaikata.com/static/images/og-card.png"' in html
+        assert 'property="og:image" content="https://ai-tsukaikata.com/static/images/og-image.jpg"' in html
         assert 'name="twitter:card" content="summary_large_image"' in html

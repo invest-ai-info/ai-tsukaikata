@@ -2,11 +2,18 @@
 {% block content %}
 {% import "_macros.html" as macros %}
 <section class="hero">
+  <img class="hero-photo" src="/static/images/hero-photo.jpg" alt="" width="1200" height="686">
   <div class="hero-text">
+    <p class="hero-eyebrow">プログラミングなしで、AIに頼む</p>
     <h1>{{ site.name }}</h1>
     <p class="hero-lead">{{ site.description }}</p>
+    <p class="hero-links">
+      <a class="hero-link is-primary" href="/recipes/">レシピを読む</a>
+      {% if news %}
+      <a class="hero-link" href="/news/">AIアップデート</a>
+      {% endif %}
+    </p>
   </div>
-  <img class="hero-art" src="/static/images/hero.svg" alt="" width="360" height="240">
 </section>
 
 {% if news %}
