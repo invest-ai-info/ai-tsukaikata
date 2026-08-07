@@ -1370,6 +1370,75 @@ def sourced_research_chart() -> None:
     )
 
 
+def gpt56_family_chart() -> None:
+    """GPT-5.6 の3モデル。値段は25倍差だが、器の仕様は全部同じ。"""
+    rows = [
+        ("GPT-5.6 Sol", 5.0, 30.0, "いちばん賢い"),
+        ("GPT-5.6 Terra", 2.0, 12.0, "中間"),
+        ("GPT-5.6 Luna", 0.20, 1.20, "いちばん安い"),
+    ]
+    left, right = 168, 600
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 76, 15, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / max(b for _, _, b, _ in rows)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">GPT-5.6 の3モデル（100万トークンあたり・ドル）</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力 ／ 濃い色＝出力。短い入力のときの値段です。</text>\n',
+    ]
+    for index, (name, price_in, price_out, note) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-xs" x="18" y="{y + 30}">{_esc(note)}</text>\n')
+        for offset, (value, cls) in enumerate(((price_in, "bar-in"), (price_out, "bar-out"))):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:g}</text>\n"
+            )
+
+    box_y = top + len(rows) * group_h - group_gap + 16
+    box_h = 74
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{box_y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{box_y + 24}">3つとも同じもの</text>\n'
+    )
+    parts.append(
+        f'<text class="t" x="34" y="{box_y + 46}">'
+        "読める量 1.05M ／ 書ける量 12.8万 ／ 知識は2026年2月16日まで</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{box_y + 64}">'
+        "使える道具（関数・ウェブ検索・ファイル検索・パソコン操作）も同じ</text>\n"
+    )
+
+    height = box_y + box_h + 34
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 違うのは値段と賢さだけ。器の大きさは同じなので、安いほうを試して足りれば安いままで済みます。</text>\n"
+    )
+    alt = (
+        "GPT-5.6 の3モデルの値段を比べた横棒グラフ。100万トークンあたりのドル。"
+        "GPT-5.6 Sol（いちばん賢い）は入力5ドル・出力30ドル、"
+        "GPT-5.6 Terra（中間）は入力2ドル・出力12ドル、"
+        "GPT-5.6 Luna（いちばん安い）は入力0.2ドル・出力1.2ドル。"
+        "3つとも読める量1.05M、書ける量12.8万、知識は2026年2月16日まで、"
+        "使える道具（関数・ウェブ検索・ファイル検索・パソコン操作）も同じ。"
+        "違うのは値段と賢さだけ。"
+    )
+    (OUT / "gpt56-family.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1396,4 +1465,5 @@ if __name__ == "__main__":
     batch_vs_one_chart()
     meeting_outputs_chart()
     sourced_research_chart()
-    print(f"25枚を {OUT} に出力しました")
+    gpt56_family_chart()
+    print(f"26枚を {OUT} に出力しました")
