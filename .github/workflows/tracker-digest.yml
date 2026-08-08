@@ -33,10 +33,29 @@ jobs:
       - name: ダイジェストを送信
         run: python -m tracker.run --mode digest
 
+      # ⚠️ push は rebase して必ず通す。ここで諦めると溜まっていた minor が
+      # 未送信のまま残り、翌朝のダイジェストで同じものが再送される（tracker.yml と同じ理由）
       - name: 既読状態をコミット
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/tracker/seen.json
-          git diff --staged --quiet || git commit -m "chore: ダイジェスト送信後の状態を更新"
-          git push
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットしません"
+            exit 0
+          fi
+          git commit -m "chore: ダイジェスト送信後の状態を更新"
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "push 成功（${attempt}回目）"
+              exit 0
+            fi
+            echo "push が拒否されたので rebase して再試行します（${attempt}回目）"
+            git pull --rebase --no-edit || {
+              git rebase --abort || true
+              echo "rebase が衝突しました。状態ファイルを人が見てください" >&2
+              exit 1
+            }
+          done
+          echo "3回試しても push できませんでした" >&2
+          exit 1
