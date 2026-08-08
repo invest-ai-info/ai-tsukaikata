@@ -75,6 +75,29 @@ IMG_SRC_RE = re.compile(r'\bsrc="([^"]*)"')
 IMG_ALT_RE = re.compile(r'\balt="([^"]*)"')
 ALWAYS_VALID_PATHS = ("/", "/feed.xml", "/sitemap.xml", "/robots.txt")
 
+# --- レシピの密度の下限（2026-08-08 追加） ---
+# 毎晩レシピを自動生成する担当を置いたので、薄い記事が積み上がるのを機械で止める。
+# 閾値は既存20本の実測（指示文 最小8/中央12、内部リンク 最小1、本文 最小2,343字）
+# より下に取ってある＝手で書いた良い記事は必ず通り、明らかに薄いものだけ落ちる。
+# ⚠️ 上限（マーカー）と違って下限なので、誤検知が出ると全部無視されるようになる。
+# 数字を上げたくなったら、先に既存記事を測り直すこと。
+RECIPE_MIN_PROMPTS = 6
+RECIPE_MIN_INTERNAL_LINKS = 1
+RECIPE_MIN_BODY_CHARS = 1800
+RECIPE_MIN_FIGURES = 1
+
+# 図を必須にする前に書かれた3本。オーナー指示「図は既定で入れる」は 2026-08-04 で、
+# この3本はそれ以前の集約型記事なので図が無い。消すのではなく明示的に外す
+# （検査を弱めるのではなく、除外条件を精密にする）。
+# ⚠️ 正しい直しは、この3本に図を足してこの一覧を空にすること。
+FIGURE_EXEMPT_SLUGS = frozenset({
+    "verify-before-report",
+    "who-does-what",
+    "limit-what-ai-touches",
+})
+
+TAG_RE = re.compile(r"<[^>]+>")
+
 
 def _looks_like_placeholder(value: str) -> bool:
     lowered = value.lower()
@@ -190,6 +213,49 @@ def _marker_errors(where: str, body_html: str) -> list[str]:
     return errors
 
 
+def _density_errors(where: str, article: Article) -> list[str]:
+    """レシピが薄すぎないかを見る。自動生成を積み上げるための歯止め。
+
+    レシピだけを対象にする。ツール記事（数字の比較）と固定ページは、
+    指示文が少なくても成り立つ形なので同じ物差しを当てない。
+    """
+    if article.category != "recipes":
+        return []
+
+    body = article.body_html
+    errors = []
+
+    prompts = len(PROMPT_RE.findall(body))
+    if prompts < RECIPE_MIN_PROMPTS:
+        errors.append(
+            f"{where}: 指示文が{prompts}個しかありません"
+            f"（レシピは{RECIPE_MIN_PROMPTS}個以上。指示文がこのサイトの本体です）"
+        )
+
+    links = [p for p in INTERNAL_LINK_RE.findall(body) if p.startswith(("/recipes/", "/tools/"))]
+    if len(links) < RECIPE_MIN_INTERNAL_LINKS:
+        errors.append(
+            f"{where}: 他の記事へのリンクがありません"
+            f"（{RECIPE_MIN_INTERNAL_LINKS}本以上。読者の次の一手を用意してください）"
+        )
+
+    figures = len(IMG_TAG_RE.findall(body))
+    if figures < RECIPE_MIN_FIGURES and article.slug not in FIGURE_EXEMPT_SLUGS:
+        errors.append(
+            f"{where}: 図が1枚もありません"
+            f"（文字だけだと読まれません。tools/make_figures.py で作ってください）"
+        )
+
+    chars = len(TAG_RE.sub("", body).strip())
+    if chars < RECIPE_MIN_BODY_CHARS:
+        errors.append(
+            f"{where}: 本文が{chars}字しかありません"
+            f"（レシピは{RECIPE_MIN_BODY_CHARS}字以上。薄い記事は審査にも読者にも効きません）"
+        )
+
+    return errors
+
+
 def _heading_errors(where: str, body_html: str) -> list[str]:
     """見出しのclassを検査する。
 
@@ -263,6 +329,7 @@ def validate(
         errors += _prompt_errors(where, article.body_html)
         errors += _marker_errors(where, article.body_html)
         errors += _heading_errors(where, article.body_html)
+        errors += _density_errors(where, article)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(

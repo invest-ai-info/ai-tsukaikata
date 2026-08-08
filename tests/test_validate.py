@@ -8,7 +8,10 @@ from src.content import Article, render_markdown
 from src.validate import validate
 
 
-def _article(body="ふつうの本文です。", slug="sample", category="recipes", title="題名", **kwargs):
+# 既定を pages にしてある。レシピには密度の下限（指示文6個・図・本文1800字）が
+# かかるので、それ以外の検査（機密・リンク・マーカー等）のテストで毎回
+# 分厚い本文を用意する必要が出てしまう。密度は下の専用テストで見る。
+def _article(body="ふつうの本文です。", slug="sample", category="pages", title="題名", **kwargs):
     defaults = dict(
         slug=slug,
         title=title,
@@ -113,7 +116,7 @@ def test_broken_internal_link_is_detected():
 
 def test_valid_internal_link_passes():
     target = _article(slug="target")
-    source = _article(slug="source", body="[あれ](/recipes/target/)を見てください。")
+    source = _article(slug="source", body="[あれ](/target/)を見てください。")
     assert validate([target, source]) == []
 
 
@@ -297,3 +300,72 @@ def test_all_errors_are_collected_not_just_the_first():
     )
     errors = validate([_article(body=body)])
     assert len(errors) == 3
+
+
+# --- レシピの密度の下限（自動生成の歯止め） ---
+
+def _recipe(body_html, slug="sample"):
+    from datetime import date
+    from pathlib import Path
+    from src.content import Article
+    return Article(
+        slug=slug, title="題", description="説明", category="recipes",
+        published=date(2026, 8, 8), updated=None, tags=(),
+        time_required="5分", cost="無料", body_html=body_html,
+        source_path=Path(f"content/recipes/{slug}.md"), scene="work",
+    )
+
+
+def _thick_body(prompts=8, figure=True, link=True, chars=2200, link_to="/recipes/sample/"):
+    parts = ['<div class="prompt">指示文です</div>'] * prompts
+    if figure:
+        parts.append('<figure class="figure"><img src="/static/images/x.svg" alt="説明"></figure>')
+    if link:
+        parts.append(f'<a href="{link_to}">他の記事</a>')
+    parts.append("<p>" + "あ" * chars + "</p>")
+    return "".join(parts)
+
+
+def test_thick_recipe_passes():
+    assert validate([_recipe(_thick_body())]) == []
+
+
+def test_recipe_with_too_few_prompts_is_rejected():
+    errors = validate([_recipe(_thick_body(prompts=5))])
+    assert any("指示文が5個" in e for e in errors)
+
+
+def test_recipe_without_figure_is_rejected():
+    errors = validate([_recipe(_thick_body(figure=False))])
+    assert any("図が1枚もありません" in e for e in errors)
+
+
+def test_recipe_without_internal_link_is_rejected():
+    errors = validate([_recipe(_thick_body(link=False))])
+    assert any("他の記事へのリンク" in e for e in errors)
+
+
+def test_thin_recipe_is_rejected():
+    errors = validate([_recipe(_thick_body(chars=500))])
+    assert any("本文が" in e for e in errors)
+
+
+def test_figure_exempt_slug_passes_without_figure():
+    """図を必須にする前に書かれた3本は落とさない（除外は明示的に）。"""
+    body = _thick_body(figure=False, link_to="/recipes/who-does-what/")
+    assert validate([_recipe(body, slug="who-does-what")]) == []
+
+
+def test_tools_article_is_not_measured_by_recipe_density():
+    """ツール記事は指示文が少なくても成り立つ形なので、同じ物差しを当てない。"""
+    from datetime import date
+    from pathlib import Path
+    from src.content import Article
+    article = Article(
+        slug="model-x", title="題", description="説明", category="tools",
+        published=date(2026, 8, 8), updated=None, tags=(),
+        time_required=None, cost=None,
+        body_html="<p>" + "あ" * 500 + "</p>",
+        source_path=Path("content/tools/model-x.md"), scene="choose",
+    )
+    assert validate([article]) == []

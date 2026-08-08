@@ -3,7 +3,17 @@ from pathlib import Path
 
 from src import build
 
-RECIPE = """---
+# レシピには密度の下限（指示文6個・図1枚・内部リンク1本・本文1800字）が
+# かかるので、擬似記事もそれを満たす形にしてある。ここを薄くすると
+# ビルドが正しく止まり、他の検査のテストが道連れになる。
+_PROMPTS = '<div class="prompt">指示文です</div>\n' * 6
+_FIGURE = (
+    '<figure class="figure">'
+    '<img src="/static/images/hero.svg" alt="読み上げでも意味が通る説明">'
+    "</figure>"
+)
+
+RECIPE = f"""---
 title: テスト記事
 description: これはテストです。
 category: recipes
@@ -12,7 +22,12 @@ time_required: 30分
 cost: 無料
 ---
 
-本文です。
+{_PROMPTS}
+{_FIGURE}
+
+[別の記事](/recipes/sample/)も見てください。
+
+{"本文です。" * 400}
 """
 
 
