@@ -2,12 +2,18 @@
 """記事のアイキャッチSVGを自動生成する。
 
 手描きしない理由＝記事を足すたびに絵を描く手数を残すと、自動公開の
-深掘り記事に絵が付かず、サイトの見た目が二層に割れるため。slug をシードに
-配置を揺らすので、同じカテゴリでも1枚ずつ違う絵になる。同じ slug なら
-必ず同じ絵（決定的）。
+レシピや深掘り記事に絵が付かず、サイトの見た目が二層に割れるため。
 
-部品は「机の上の道具」の世界観（設計書②）。レシピ＝ノート・鉛筆系、
-ツール＝歯車・ルーペ・小ロボット。植物と太陽は余白の飾り。
+⚠️ **絵柄は「場面（scene）」で選ぶ。**カテゴリだけで選んでいた版は、
+レシピ21本が全部ノート＋鉛筆になって「記事と関係ない絵」になった
+（2026-08-08 オーナー指摘）。scene ごとに主役の道具を変える。
+
+⚠️ **主役は中央 x=270〜450 に置く。**カードのサムネis 84px角で、
+`object-fit: cover` が横長バナー(720x180)の中央180px幅だけを切り出す
+（計算で確認済み）。端に置いた小物はカードでは見えない。
+
+slug をシードに配置と小物を揺らすので、同じ場面でも1枚ずつ違う絵になる。
+同じ slug なら必ず同じ絵（決定的）。
 
 ⚠️ SVG内で使う class は必ず下の STYLE に定義すること。定義漏れは黒塗りに
 なる（2026-08-05 実害）。tests/test_make_eyecatch.py が機械で照合している。
@@ -18,6 +24,7 @@
 from __future__ import annotations
 
 import hashlib
+import re
 import sys
 from pathlib import Path
 
@@ -25,12 +32,18 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 OUTPUT_DIR = ROOT / "static" / "images" / "eyecatch"
 
-# アイキャッチを付けるカテゴリ（pages は固定ページなので付けない）
 CATEGORIES = ("recipes", "tools")
 
 WIDTH, HEIGHT = 720, 180
+# カードのサムネに映る範囲。主役はこの中に収める
+FOCUS_LEFT, FOCUS_RIGHT = 270, 450
+FOCUS_CENTER = (FOCUS_LEFT + FOCUS_RIGHT) // 2
 
-# 「あたたかい紙」パレット（static/style.css と同じ世界観）
+# scene が無い記事の受け皿（固定ページには付けない）
+CATEGORY_FALLBACK_SCENE = {"recipes": "work", "tools": "choose"}
+
+SCENE_RE = re.compile(r"^scene:\s*(\w+)\s*$", re.MULTILINE)
+
 CORAL = "#D85A30"
 AMBER = "#FAC775"
 AMBER_DEEP = "#EF9F27"
@@ -38,17 +51,21 @@ GREEN = "#97C459"
 GREEN_DEEP = "#639922"
 PINK = "#ED93B1"
 PINK_PALE = "#F5C4B3"
+BLUE = "#85B7EB"
+PURPLE = "#AFA9EC"
 
 STYLE = """<style>
 .ec-bg{fill:#F5E6D3}
 .ec-paper{fill:#FFFDF8}
 .ec-ln{stroke:#4A3F35}
 .ec-rule{stroke:#D9CBB8}
+.ec-ink{fill:#4A3F35}
 @media (prefers-color-scheme: dark){
 .ec-bg{fill:#33251B}
 .ec-paper{fill:#241D15}
 .ec-ln{stroke:#EFE7DA}
 .ec-rule{stroke:#5C5044}
+.ec-ink{fill:#EFE7DA}
 }
 </style>"""
 
@@ -62,15 +79,171 @@ def pick(seed: int, salt: int, options: int) -> int:
     return (seed >> (salt * 5)) % options
 
 
-# --- 部品。すべて (x, y) を左上または中心にした断片を返す ---
+# --- 部品。(x, y) は左上または中心 ---
 
 def notebook(x: int, y: int) -> str:
     return (
         f'<g transform="translate({x},{y})">'
-        f'<rect width="120" height="85" rx="8" class="ec-paper ec-ln" stroke-width="3"/>'
-        f'<line x1="16" y1="24" x2="102" y2="24" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
-        f'<line x1="16" y1="42" x2="92" y2="42" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
-        f'<line x1="16" y1="60" x2="100" y2="60" stroke="{CORAL}" stroke-width="3" stroke-linecap="round"/>'
+        f'<rect width="104" height="74" rx="8" class="ec-paper ec-ln" stroke-width="3"/>'
+        f'<line x1="14" y1="22" x2="88" y2="22" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
+        f'<line x1="14" y1="38" x2="78" y2="38" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
+        f'<line x1="14" y1="54" x2="86" y2="54" stroke="{CORAL}" stroke-width="3" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def clipboard(x: int, y: int) -> str:
+    """仕事＝チェックの付いた書類。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<rect width="96" height="112" rx="8" class="ec-paper ec-ln" stroke-width="3"/>'
+        f'<rect x="32" y="-9" width="32" height="16" rx="5" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
+        f'<path d="M18 34 l8 8 14 -16" fill="none" stroke="{GREEN_DEEP}" stroke-width="4" '
+        f'stroke-linecap="round" stroke-linejoin="round"/>'
+        f'<line x1="50" y1="36" x2="80" y2="36" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
+        f'<path d="M18 62 l8 8 14 -16" fill="none" stroke="{GREEN_DEEP}" stroke-width="4" '
+        f'stroke-linecap="round" stroke-linejoin="round"/>'
+        f'<line x1="50" y1="64" x2="76" y2="64" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
+        f'<line x1="18" y1="92" x2="60" y2="92" class="ec-rule" stroke-width="3" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def magnifier(x: int, y: int, angle: int = 0) -> str:
+    """情報収集＝探す。"""
+    return (
+        f'<g transform="translate({x},{y}) rotate({angle})">'
+        f'<circle cx="0" cy="0" r="34" class="ec-paper ec-ln" stroke-width="4"/>'
+        f'<circle cx="0" cy="0" r="24" fill="none" stroke="{BLUE}" stroke-width="2.5"/>'
+        f'<line x1="25" y1="25" x2="50" y2="50" class="ec-ln" stroke-width="8" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def antenna(x: int, y: int) -> str:
+    """情報収集＝向こうから届く。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<line x1="0" y1="0" x2="0" y2="-34" class="ec-ln" stroke-width="3.5" stroke-linecap="round"/>'
+        f'<circle cx="0" cy="-38" r="5" fill="{CORAL}"/>'
+        f'<path d="M-14 -46 q14 -12 28 0" fill="none" stroke="{CORAL}" stroke-width="2.5" '
+        f'stroke-linecap="round" opacity="0.8"/>'
+        f'<path d="M-22 -56 q22 -18 44 0" fill="none" stroke="{CORAL}" stroke-width="2.5" '
+        f'stroke-linecap="round" opacity="0.5"/>'
+        f"</g>"
+    )
+
+
+def gear(x: int, y: int, r: int = 26) -> str:
+    """自動化＝仕掛け。"""
+    teeth = "".join(
+        f'<rect x="-4" y="{-r - 9}" width="8" height="12" rx="2" fill="{AMBER_DEEP}" '
+        f'transform="rotate({a})"/>'
+        for a in range(0, 360, 45)
+    )
+    return (
+        f'<g transform="translate({x},{y})">{teeth}'
+        f'<circle cx="0" cy="0" r="{r}" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
+        f'<circle cx="0" cy="0" r="{r // 2 - 2}" class="ec-bg ec-ln" stroke-width="3"/>'
+        f"</g>"
+    )
+
+
+def clock(x: int, y: int) -> str:
+    """自動化＝決まった時刻。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<circle cx="0" cy="0" r="24" class="ec-paper ec-ln" stroke-width="3.5"/>'
+        f'<line x1="0" y1="0" x2="0" y2="-14" class="ec-ln" stroke-width="3.5" stroke-linecap="round"/>'
+        f'<line x1="0" y1="0" x2="11" y2="5" stroke="{CORAL}" stroke-width="3.5" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def loop_arrows(x: int, y: int) -> str:
+    """自動化＝繰り返し。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<path d="M-24 6 a24 24 0 1 1 42 14" fill="none" stroke="{GREEN_DEEP}" '
+        f'stroke-width="3.5" stroke-linecap="round"/>'
+        f'<path d="M12 16 l7 6 -1 -10 Z" fill="{GREEN_DEEP}"/>'
+        f"</g>"
+    )
+
+
+def house(x: int, y: int) -> str:
+    """暮らし＝家。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<path d="M-46 0 L0 -38 L46 0 Z" fill="{PINK_PALE}" class="ec-ln" '
+        f'stroke-width="3.5" stroke-linejoin="round"/>'
+        f'<rect x="-36" y="0" width="72" height="52" class="ec-paper ec-ln" stroke-width="3.5"/>'
+        f'<rect x="-12" y="18" width="24" height="34" rx="3" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
+        f"</g>"
+    )
+
+
+def receipt(x: int, y: int, angle: int = 0) -> str:
+    """暮らし＝紙もの。"""
+    return (
+        f'<g transform="translate({x},{y}) rotate({angle})">'
+        f'<path d="M0 0 h40 v58 l-8 -5 -8 5 -8 -5 -8 5 -8 -5 V0 Z" '
+        f'class="ec-paper ec-ln" stroke-width="2.5" stroke-linejoin="round"/>'
+        f'<line x1="8" y1="14" x2="32" y2="14" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
+        f'<line x1="8" y1="26" x2="26" y2="26" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def palette(x: int, y: int) -> str:
+    """遊び・創作＝絵の具。"""
+    dots = "".join(
+        f'<circle cx="{cx}" cy="{cy}" r="6" fill="{c}"/>'
+        for cx, cy, c in ((-16, -10, CORAL), (2, -16, AMBER), (18, -4, GREEN), (8, 12, PINK))
+    )
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<path d="M-38 6 a38 32 0 1 1 60 22 a10 9 0 0 0 -12 12 a38 32 0 0 1 -48 -34 Z" '
+        f'class="ec-paper ec-ln" stroke-width="3.5"/>{dots}'
+        f"</g>"
+    )
+
+
+def brush(x: int, y: int, angle: int = 0) -> str:
+    return (
+        f'<g transform="translate({x},{y}) rotate({angle})">'
+        f'<rect width="12" height="52" rx="3" fill="{AMBER}" class="ec-ln" stroke-width="2.5"/>'
+        f'<path d="M0 52 h12 l-2 16 h-8 Z" fill="{PURPLE}" class="ec-ln" '
+        f'stroke-width="2.5" stroke-linejoin="round"/>'
+        f"</g>"
+    )
+
+
+def balance(x: int, y: int) -> str:
+    """AIを選ぶ＝比べる。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<line x1="0" y1="0" x2="0" y2="46" class="ec-ln" stroke-width="4" stroke-linecap="round"/>'
+        f'<line x1="-42" y1="0" x2="42" y2="0" class="ec-ln" stroke-width="4" stroke-linecap="round"/>'
+        f'<path d="M-56 18 h28 l-14 -18 Z" fill="{AMBER}" class="ec-ln" '
+        f'stroke-width="2.5" stroke-linejoin="round"/>'
+        f'<path d="M28 24 h28 l-14 -24 Z" fill="{BLUE}" class="ec-ln" '
+        f'stroke-width="2.5" stroke-linejoin="round"/>'
+        f'<circle cx="0" cy="-4" r="5" fill="{CORAL}"/>'
+        f'<path d="M-20 46 h40" class="ec-ln" stroke-width="4" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def signpost(x: int, y: int) -> str:
+    """はじめて＝どっちへ行くか。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<line x1="0" y1="0" x2="0" y2="72" class="ec-ln" stroke-width="5" stroke-linecap="round"/>'
+        f'<path d="M-2 6 h44 l12 12 -12 12 h-44 Z" fill="{AMBER}" class="ec-ln" '
+        f'stroke-width="3" stroke-linejoin="round"/>'
+        f'<path d="M2 38 h-40 l-12 11 12 11 h40 Z" fill="{PINK_PALE}" class="ec-ln" '
+        f'stroke-width="3" stroke-linejoin="round"/>'
         f"</g>"
     )
 
@@ -78,8 +251,9 @@ def notebook(x: int, y: int) -> str:
 def pencil(x: int, y: int, angle: int) -> str:
     return (
         f'<g transform="translate({x},{y}) rotate({angle})">'
-        f'<rect width="18" height="72" rx="3" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
-        f'<path d="M2 74 L9 92 L16 74 Z" fill="{CORAL}" class="ec-ln" stroke-width="2.5" stroke-linejoin="round"/>'
+        f'<rect width="16" height="62" rx="3" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
+        f'<path d="M2 64 L8 80 L14 64 Z" fill="{CORAL}" class="ec-ln" '
+        f'stroke-width="2.5" stroke-linejoin="round"/>'
         f"</g>"
     )
 
@@ -87,9 +261,9 @@ def pencil(x: int, y: int, angle: int) -> str:
 def sticky(x: int, y: int, angle: int) -> str:
     return (
         f'<g transform="translate({x},{y}) rotate({angle})">'
-        f'<rect width="46" height="46" rx="4" fill="{PINK_PALE}" class="ec-ln" stroke-width="2.5"/>'
-        f'<line x1="10" y1="20" x2="36" y2="20" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
-        f'<line x1="10" y1="32" x2="30" y2="32" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
+        f'<rect width="42" height="42" rx="4" fill="{PINK_PALE}" class="ec-ln" stroke-width="2.5"/>'
+        f'<line x1="9" y1="18" x2="33" y2="18" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
+        f'<line x1="9" y1="29" x2="27" y2="29" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
         f"</g>"
     )
 
@@ -98,30 +272,10 @@ def coffee(x: int, y: int) -> str:
     return (
         f'<g transform="translate({x},{y})">'
         f'<circle cx="0" cy="0" r="17" class="ec-paper ec-ln" stroke-width="3"/>'
-        f'<path d="M-7 -3 Q0 -10 7 -3" fill="none" stroke="{GREEN_DEEP}" stroke-width="3" stroke-linecap="round"/>'
-        f'<path d="M-4 -26 Q-1 -32 4 -30 M2 -22 Q5 -28 10 -26" fill="none" class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
-        f"</g>"
-    )
-
-
-def gear(x: int, y: int) -> str:
-    teeth = "".join(
-        f'<rect x="-4" y="-34" width="8" height="12" rx="2" fill="{AMBER_DEEP}" transform="rotate({a})"/>'
-        for a in range(0, 360, 60)
-    )
-    return (
-        f'<g transform="translate({x},{y})">{teeth}'
-        f'<circle cx="0" cy="0" r="24" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
-        f'<circle cx="0" cy="0" r="9" class="ec-bg ec-ln" stroke-width="3"/>'
-        f"</g>"
-    )
-
-
-def magnifier(x: int, y: int, angle: int) -> str:
-    return (
-        f'<g transform="translate({x},{y}) rotate({angle})">'
-        f'<circle cx="0" cy="0" r="22" class="ec-paper ec-ln" stroke-width="3.5"/>'
-        f'<line x1="16" y1="16" x2="34" y2="34" class="ec-ln" stroke-width="6" stroke-linecap="round"/>'
+        f'<path d="M-7 -3 Q0 -10 7 -3" fill="none" stroke="{GREEN_DEEP}" '
+        f'stroke-width="3" stroke-linecap="round"/>'
+        f'<path d="M-4 -26 Q-1 -32 4 -30 M2 -22 Q5 -28 10 -26" fill="none" '
+        f'class="ec-rule" stroke-width="2.5" stroke-linecap="round"/>'
         f"</g>"
     )
 
@@ -132,10 +286,12 @@ def robot(x: int, y: int) -> str:
         f'<line x1="42" y1="0" x2="42" y2="-12" class="ec-ln" stroke-width="3" stroke-linecap="round"/>'
         f'<circle cx="42" cy="-16" r="5" fill="{CORAL}"/>'
         f'<rect width="84" height="60" rx="15" class="ec-paper ec-ln" stroke-width="3"/>'
-        f'<circle cx="28" cy="28" r="5" fill="#4A3F35" class="ec-ln" stroke-width="1"/>'
-        f'<circle cx="56" cy="28" r="5" fill="#4A3F35" class="ec-ln" stroke-width="1"/>'
-        f'<path d="M30 42 Q42 50 54 42" fill="none" stroke="{CORAL}" stroke-width="3" stroke-linecap="round"/>'
-        f'<rect x="16" y="62" width="52" height="20" rx="8" fill="{PINK_PALE}" class="ec-ln" stroke-width="3"/>'
+        f'<circle cx="28" cy="28" r="5" class="ec-ink"/>'
+        f'<circle cx="56" cy="28" r="5" class="ec-ink"/>'
+        f'<path d="M30 42 Q42 50 54 42" fill="none" stroke="{CORAL}" '
+        f'stroke-width="3" stroke-linecap="round"/>'
+        f'<rect x="16" y="62" width="52" height="20" rx="8" fill="{PINK_PALE}" '
+        f'class="ec-ln" stroke-width="3"/>'
         f"</g>"
     )
 
@@ -143,9 +299,12 @@ def robot(x: int, y: int) -> str:
 def sprout(x: int, y: int) -> str:
     return (
         f'<g transform="translate({x},{y})">'
-        f'<path d="M0 0 Q2 -18 12 -24" fill="none" stroke="{GREEN_DEEP}" stroke-width="3" stroke-linecap="round"/>'
-        f'<path d="M12 -24 Q4 -28 3 -38 Q14 -36 15 -26 Z" fill="{GREEN}" stroke="{GREEN_DEEP}" stroke-width="2"/>'
-        f'<path d="M12 -24 Q20 -30 30 -28 Q24 -18 14 -21 Z" fill="{GREEN}" stroke="{GREEN_DEEP}" stroke-width="2"/>'
+        f'<path d="M0 0 Q2 -18 12 -24" fill="none" stroke="{GREEN_DEEP}" '
+        f'stroke-width="3" stroke-linecap="round"/>'
+        f'<path d="M12 -24 Q4 -28 3 -38 Q14 -36 15 -26 Z" fill="{GREEN}" '
+        f'stroke="{GREEN_DEEP}" stroke-width="2"/>'
+        f'<path d="M12 -24 Q20 -30 30 -28 Q24 -18 14 -21 Z" fill="{GREEN}" '
+        f'stroke="{GREEN_DEEP}" stroke-width="2"/>'
         f"</g>"
     )
 
@@ -156,11 +315,31 @@ def sun(x: int, y: int) -> str:
         f'stroke-linecap="round" transform="rotate({a})"/>'
         for a in range(0, 360, 45)
     )
+    return f'<g transform="translate({x},{y})"><circle cx="0" cy="0" r="17" fill="{AMBER}"/>{rays}</g>'
+
+
+def star(x: int, y: int, r: int = 12) -> str:
+    points = []
+    for i in range(10):
+        radius = r if i % 2 == 0 else r * 0.45
+        angle = -90 + i * 36
+        points.append(f"{radius * _cos(angle):.1f},{radius * _sin(angle):.1f}")
     return (
-        f'<g transform="translate({x},{y})">'
-        f'<circle cx="0" cy="0" r="17" fill="{AMBER}"/>{rays}'
-        f"</g>"
+        f'<polygon points="{" ".join(points)}" fill="{AMBER}" stroke="{AMBER_DEEP}" '
+        f'stroke-width="2" transform="translate({x},{y})"/>'
     )
+
+
+def _cos(deg: float) -> float:
+    import math
+
+    return math.cos(math.radians(deg))
+
+
+def _sin(deg: float) -> float:
+    import math
+
+    return math.sin(math.radians(deg))
 
 
 def ground(seed: int) -> str:
@@ -171,40 +350,101 @@ def ground(seed: int) -> str:
     )
 
 
-# --- 構図。カテゴリごとに数パターン、seed で選ぶ ---
+# --- 場面ごとの構図。主役は必ず中央 270〜450 に置く ---
 
-def _recipes_cluster(seed: int) -> str:
-    variant = pick(seed, 1, 3)
+def _scene_start(seed: int) -> str:
+    """はじめて＝道しるべと芽。"""
+    return signpost(FOCUS_CENTER - 4, 44) + sprout(238, 150) + coffee(496, 116)
+
+
+def _scene_work(seed: int) -> str:
+    """仕事＝チェック付きの書類。"""
+    variant = pick(seed, 1, 2)
+    main = clipboard(FOCUS_CENTER - 48, 40)
     if variant == 0:
-        return notebook(300, 42) + pencil(444, 48, 18) + sticky(236, 36, -8)
-    if variant == 1:
-        return notebook(316, 52) + coffee(262, 108) + pencil(452, 60, -14)
-    return notebook(284, 40) + sticky(424, 46, 10) + coffee(486, 104)
+        return main + pencil(456, 54, 16) + coffee(236, 120)
+    return main + sticky(452, 46, 9) + pencil(226, 58, -14)
 
 
-def _tools_cluster(seed: int) -> str:
-    variant = pick(seed, 1, 3)
+def _scene_research(seed: int) -> str:
+    """情報収集＝探す・届く。"""
+    variant = pick(seed, 1, 2)
+    main = magnifier(FOCUS_CENTER, 86, -14)
     if variant == 0:
-        return robot(318, 48) + gear(254, 74)
-    if variant == 1:
-        return gear(330, 78) + magnifier(424, 70, -12) + sticky(240, 40, -8)
-    return robot(300, 46) + magnifier(232, 80, 12) + sticky(430, 42, 8)
+        return main + antenna(246, 128) + notebook(452, 66)
+    return main + notebook(206, 62) + antenna(492, 132)
 
 
-def build_svg(slug: str, category: str) -> str:
-    """アイキャッチ1枚ぶんのSVG文字列。同じ入力なら必ず同じ出力。"""
-    seed = seed_from(slug + "/" + category)
-    cluster = _recipes_cluster(seed) if category == "recipes" else _tools_cluster(seed)
+def _scene_automate(seed: int) -> str:
+    """自動化＝歯車と時刻。"""
+    variant = pick(seed, 1, 2)
+    main = gear(FOCUS_CENTER, 88, 30)
+    if variant == 0:
+        return main + clock(244, 92) + loop_arrows(468, 84)
+    return main + loop_arrows(240, 84) + clock(470, 92)
+
+
+def _scene_life(seed: int) -> str:
+    """暮らし＝家と紙もの。"""
+    variant = pick(seed, 1, 2)
+    main = house(FOCUS_CENTER, 62)
+    if variant == 0:
+        return main + receipt(228, 58, -7) + sprout(492, 148)
+    return main + sprout(232, 148) + receipt(470, 56, 8)
+
+
+def _scene_fun(seed: int) -> str:
+    """遊び・創作＝絵の具と星。"""
+    variant = pick(seed, 1, 2)
+    main = palette(FOCUS_CENTER, 88)
+    if variant == 0:
+        return main + brush(452, 58, 14) + star(244, 70, 13)
+    return main + star(474, 64, 13) + brush(232, 60, -12)
+
+
+def _scene_choose(seed: int) -> str:
+    """AIを選ぶ＝天秤。"""
+    variant = pick(seed, 1, 2)
+    main = balance(FOCUS_CENTER, 62)
+    if variant == 0:
+        return main + robot(200, 56) + sticky(494, 62, 8)
+    return main + sticky(214, 60, -8) + robot(474, 56)
+
+
+SCENE_BUILDERS = {
+    "start": _scene_start,
+    "work": _scene_work,
+    "research": _scene_research,
+    "automate": _scene_automate,
+    "life": _scene_life,
+    "fun": _scene_fun,
+    "choose": _scene_choose,
+}
+
+
+def build_svg(slug: str, category: str, scene: str | None = None) -> str:
+    """アイキャッチ1枚ぶんのSVG。同じ入力なら必ず同じ出力。
+
+    scene が無ければカテゴリから受け皿の場面を決める（絵が無い記事を作らない）。
+    """
+    scene = scene or CATEGORY_FALLBACK_SCENE.get(category, "work")
+    builder = SCENE_BUILDERS.get(scene, _scene_work)
+    seed = seed_from(f"{slug}/{scene}")
     sun_x = 84 if pick(seed, 3, 2) == 0 else 636
-    sprout_x = 120 + pick(seed, 5, 5) * 110
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" '
         f'viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-hidden="true">'
         f"{STYLE}"
         f'<rect width="{WIDTH}" height="{HEIGHT}" rx="10" class="ec-bg"/>'
-        f"{sun(sun_x, 44)}{ground(seed)}{cluster}{sprout(sprout_x, 148)}"
+        f"{sun(sun_x, 44)}{ground(seed)}{builder(seed)}"
         f"</svg>"
     )
+
+
+def scene_of(text: str) -> str | None:
+    """frontmatter の scene を読む。無ければ None。"""
+    found = SCENE_RE.search(text)
+    return found.group(1) if found else None
 
 
 def main(content_dir: Path = CONTENT_DIR, output_dir: Path = OUTPUT_DIR) -> int:
@@ -221,9 +461,9 @@ def main(content_dir: Path = CONTENT_DIR, output_dir: Path = OUTPUT_DIR) -> int:
         for path in sorted(directory.glob("*.md")):
             if path.name.startswith("_"):
                 continue
-            slug = path.stem
-            svg = build_svg(slug, category)
-            (output_dir / f"{slug}.svg").write_text(svg, encoding="utf-8", newline="\n")
+            text = path.read_text(encoding="utf-8")
+            svg = build_svg(path.stem, category, scene_of(text))
+            (output_dir / f"{path.stem}.svg").write_text(svg, encoding="utf-8", newline="\n")
             written += 1
     return written
 

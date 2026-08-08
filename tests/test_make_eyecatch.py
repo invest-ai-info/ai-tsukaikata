@@ -64,3 +64,62 @@ def test_main_writes_one_svg_per_listed_article(tmp_path):
     assert (out / "one.svg").exists()
     assert not (out / "_draft.svg").exists()
     assert not (out / "about.svg").exists()
+
+
+# --- 場面ごとに絵柄が変わる（2026-08-08 追加） ---
+
+def test_scenes_give_different_pictures():
+    """全部が同じ絵になっていた不具合の再発防止。7場面すべて別の絵になる。"""
+    from tools.make_eyecatch import SCENE_BUILDERS
+    svgs = {s: build_svg("same-slug", "recipes", s) for s in SCENE_BUILDERS}
+    assert len(set(svgs.values())) == len(SCENE_BUILDERS)
+
+
+def test_main_reads_scene_from_frontmatter(tmp_path):
+    content = tmp_path / "content" / "recipes"
+    content.mkdir(parents=True)
+    (content / "a.md").write_text(
+        "---\ntitle: T\ncategory: recipes\nscene: life\n---\n本文", encoding="utf-8"
+    )
+    (content / "b.md").write_text(
+        "---\ntitle: T\ncategory: recipes\nscene: automate\n---\n本文", encoding="utf-8"
+    )
+    out = tmp_path / "out"
+    main(content_dir=tmp_path / "content", output_dir=out)
+    # 場面が違えば中身も違う（同じテンプレの使い回しになっていない）
+    assert (out / "a.svg").read_text(encoding="utf-8") != (out / "b.svg").read_text(encoding="utf-8")
+
+
+def test_scene_of_reads_and_missing_is_none():
+    from tools.make_eyecatch import scene_of
+    assert scene_of("---\ncategory: recipes\nscene: work\n---\n") == "work"
+    assert scene_of("---\ncategory: recipes\n---\n") is None
+
+
+def test_main_without_scene_still_writes(tmp_path):
+    """scene 無しでも絵は出す（絵が無い記事を作らない）。"""
+    content = tmp_path / "content" / "recipes"
+    content.mkdir(parents=True)
+    (content / "a.md").write_text("---\ntitle: T\ncategory: recipes\n---\n本文", encoding="utf-8")
+    out = tmp_path / "out"
+    assert main(content_dir=tmp_path / "content", output_dir=out) == 1
+    assert (out / "a.svg").exists()
+
+
+def test_main_variants_differ_within_same_scene():
+    """同じ場面でも slug で揺れる（全部同じ絵にならない）。"""
+    same = {build_svg(f"slug-{i}", "recipes", "work") for i in range(6)}
+    assert len(same) > 1
+
+
+def test_focus_region_holds_the_main_motif():
+    """カードのサムネは中央180pxだけを映すので、主役はそこに要る。
+
+    ⚠️ 端に置くとカードで見えない（実際にノートだけが並んで見えた原因）。
+    """
+    import re
+    from tools.make_eyecatch import FOCUS_LEFT, FOCUS_RIGHT, SCENE_BUILDERS
+    for scene in SCENE_BUILDERS:
+        svg = build_svg("focus-check", "recipes", scene)
+        xs = [float(m) for m in re.findall(r"translate\((-?[\d.]+),", svg)]
+        assert any(FOCUS_LEFT <= x <= FOCUS_RIGHT for x in xs), f"{scene}: 主役が中央に無い"
