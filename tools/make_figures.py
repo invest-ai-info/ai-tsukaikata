@@ -1370,6 +1370,85 @@ def sourced_research_chart() -> None:
     )
 
 
+def mail_triage_chart() -> None:
+    """受信箱を3つに仕分ける図。2分類だと真ん中が落ちることを見せる。"""
+    rows = [
+        (
+            "box-accent",
+            "t-accent",
+            "A 返信しないと相手が止まる",
+            "可否の回答待ち・実装が止まっている問い合わせ",
+        ),
+        (
+            "box-bad",
+            "t-bad",
+            "B 返信は要らないが、自分の作業がある",
+            "経費精算・回答期限つきの社内アンケート ← 2分類だとここが落ちる",
+        ),
+        (
+            "box-quiet",
+            "t",
+            "C 読むだけでよい",
+            "「返信は不要です」と本文に書いてある周知・メールマガジン",
+        ),
+    ]
+    src_x, src_w, src_h = 18, 168, 70
+    out_x = 300
+    out_w = WIDTH - out_x - 18
+    out_h, out_gap = 64, 18
+    top = 90
+    span = len(rows) * (out_h + out_gap) - out_gap
+    src_y = top + (span - src_h) / 2
+    height = top + span + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">受信箱は「返信が要る／要らない」の2つでは仕分けられない</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "返信は不要でも締切のある作業は残ります。3つに分けると、そこが消えません。</text>\n",
+        f'<rect class="box-quiet" x="{src_x}" y="{src_y:.0f}" '
+        f'width="{src_w}" height="{src_h}" rx="6"/>\n',
+        f'<text class="t" x="{src_x + 16}" y="{src_y + 28:.0f}">受信箱の未読</text>\n',
+        f'<text class="t-sm" x="{src_x + 16}" y="{src_y + 50:.0f}">まとめて貼って渡す</text>\n',
+    ]
+    for index, (box_cls, text_cls, title, note) in enumerate(rows):
+        y = top + index * (out_h + out_gap)
+        parts.append(
+            f'<rect class="{box_cls}" x="{out_x}" y="{y}" '
+            f'width="{out_w}" height="{out_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{out_x + 14}" y="{y + 26}">{_esc(title)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{out_x + 14}" y="{y + 47}">{_esc(note)}</text>\n'
+        )
+        ay = y + out_h / 2
+        parts.append(
+            f'<line class="line" x1="{src_x + src_w + 8}" y1="{src_y + src_h / 2:.0f}" '
+            f'x2="{out_x - 14}" y2="{ay:.0f}"/>\n'
+        )
+        parts.append(
+            f'<path d="M{out_x - 14} {ay - 4:.0f} L{out_x - 7} {ay:.0f} '
+            f'L{out_x - 14} {ay + 4:.0f} Z" fill="#8b949e"/>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ どちらにも当てはまる1通があります（返信もするし、社内の登録変更も要る）。"
+        "急ぐほうに入れて、もう片方を同じ行に書かせます。</text>\n"
+    )
+    alt = (
+        "受信箱の未読をAIに渡して3つに仕分ける図。"
+        "A＝返信しないと相手が止まるもの（可否の回答待ち、実装が止まっている問い合わせ）。"
+        "B＝返信は要らないが自分の作業があるもの（経費精算、回答期限つきの社内アンケート）。"
+        "「返信が要るものだけ」と頼むとBが落ちる。"
+        "C＝読むだけでよいもの（返信は不要ですと本文に書いてある周知、メールマガジン）。"
+        "AとBの両方に当てはまる1通は、急ぐほうに入れてもう片方を同じ行に書かせる。"
+    )
+    (OUT / "mail-triage.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def gpt56_family_chart() -> None:
     """GPT-5.6 の3モデル。値段は25倍差だが、器の仕様は全部同じ。"""
     rows = [
@@ -1466,4 +1545,5 @@ if __name__ == "__main__":
     meeting_outputs_chart()
     sourced_research_chart()
     gpt56_family_chart()
-    print(f"26枚を {OUT} に出力しました")
+    mail_triage_chart()
+    print(f"27枚を {OUT} に出力しました")
