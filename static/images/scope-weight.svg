@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="頼んだ範囲と返ってきた案の重さを比べた図。頼んだことはトップページの文章を1つ消すことだけで、実際にはテキスト4か所の書き換えで済み、かかった時間は5分。ところが返ってきた案は、記事ごとに3段階のラベルを付ける仕組み、記事の設定に項目を足す、テンプレートを直す、検査も足す、というもので、放っておけば半日かかる。ただし範囲を区切っても案が消えるわけではなく、「範囲外は直さずに指摘だけ」と足せば同じ案が提案として出てくる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">頼んだのは、文章を1つ消すことだけでした</text>
+<text class="t-sm" x="18" y="45">範囲を言わずに頼むと、返ってくる案は「良くする」方向へ膨らみます。</text>
+<text class="t-sm" x="18" y="64">悪意ではありません。丁寧にやろうとした結果です。</text>
+<rect class="box-good" x="18" y="96" width="310" height="170" rx="6"/>
+<text class="t-good" x="32" y="124">頼んだこと</text>
+<text class="t" x="32" y="152">トップページの文章を1つ消す</text>
+<text class="t-sm" x="32" y="180">実際に済んだ形:</text>
+<text class="t-sm" x="32" y="202">テキスト4か所の書き換え</text>
+<text class="t-strong" x="32" y="236">かかった時間 5分</text>
+<rect class="box-bad" x="352" y="96" width="350" height="170" rx="6"/>
+<text class="t-bad" x="366" y="124">返ってきた案</text>
+<text class="t-sm" x="366" y="152">記事ごとに3段階のラベルを付ける仕組み</text>
+<text class="t-sm" x="366" y="174">記事の設定に項目を足す</text>
+<text class="t-sm" x="366" y="196">テンプレートを直す</text>
+<text class="t-sm" x="366" y="218">検査も足す</text>
+<text class="t-strong" x="366" y="248">放っておけば 半日</text>
+<rect class="box-accent" x="18" y="290" width="684" height="62" rx="6"/>
+<text class="t-accent" x="32" y="320">範囲を区切っても、案が消えるわけではありません</text>
+<text class="t-sm" x="32" y="342">「範囲外は直さずに指摘だけ」と足すと、同じ案が提案として出てきます</text>
+<text class="t-xs" x="18" y="374">※ 案の良し悪しと、いまそれをやるべきかどうかは別の話です。</text>
+</svg>

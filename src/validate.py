@@ -86,15 +86,10 @@ RECIPE_MIN_INTERNAL_LINKS = 1
 RECIPE_MIN_BODY_CHARS = 1800
 RECIPE_MIN_FIGURES = 1
 
-# 図を必須にする前に書かれた3本。オーナー指示「図は既定で入れる」は 2026-08-04 で、
-# この3本はそれ以前の集約型記事なので図が無い。消すのではなく明示的に外す
-# （検査を弱めるのではなく、除外条件を精密にする）。
-# ⚠️ 正しい直しは、この3本に図を足してこの一覧を空にすること。
-FIGURE_EXEMPT_SLUGS = frozenset({
-    "verify-before-report",
-    "who-does-what",
-    "limit-what-ai-touches",
-})
+# 図の下限には例外を置かない。2026-08-08 まで、図を必須にする前に書かれた集約型3本
+# （verify-before-report / who-does-what / limit-what-ai-touches）を名指しで外していたが、
+# 3本とも図を足したので一覧ごと消した。
+# ⚠️ 例外を作らないこと。1件でも名指しで外すと、次に書く人が「そこに足せばいい」と学ぶ。
 
 TAG_RE = re.compile(r"<[^>]+>")
 
@@ -240,7 +235,7 @@ def _density_errors(where: str, article: Article) -> list[str]:
         )
 
     figures = len(IMG_TAG_RE.findall(body))
-    if figures < RECIPE_MIN_FIGURES and article.slug not in FIGURE_EXEMPT_SLUGS:
+    if figures < RECIPE_MIN_FIGURES:
         errors.append(
             f"{where}: 図が1枚もありません"
             f"（文字だけだと読まれません。tools/make_figures.py で作ってください）"

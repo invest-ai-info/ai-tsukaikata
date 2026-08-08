@@ -350,10 +350,17 @@ def test_thin_recipe_is_rejected():
     assert any("本文が" in e for e in errors)
 
 
-def test_figure_exempt_slug_passes_without_figure():
-    """図を必須にする前に書かれた3本は落とさない（除外は明示的に）。"""
-    body = _thick_body(figure=False, link_to="/recipes/who-does-what/")
-    assert validate([_recipe(body, slug="who-does-what")]) == []
+def test_no_recipe_slug_is_exempt_from_the_figure_rule():
+    """図の下限に名指しの例外を作らない。
+
+    2026-08-08 まで、図を必須にする前に書かれた集約型3本を名指しで外していた。
+    3本とも図を足したので例外ごと消した。名指しの穴が1つでも残ると、
+    次に書く人が「そこに足せばいい」と学んでしまう。
+    """
+    for slug in ("verify-before-report", "who-does-what", "limit-what-ai-touches"):
+        body = _thick_body(figure=False, link_to=f"/recipes/{slug}/")
+        errors = validate([_recipe(body, slug=slug)])
+        assert any("図が1枚もありません" in e for e in errors), slug
 
 
 def test_tools_article_is_not_measured_by_recipe_density():

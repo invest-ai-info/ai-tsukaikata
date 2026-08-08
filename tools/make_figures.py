@@ -305,61 +305,6 @@ def line_count_chart() -> None:
     )
 
 
-def extrapolation_chart() -> None:
-    """他の行の比率を当てはめて数字を作ってしまう、の図解。"""
-    col = [22, 210, 330, 450, 560]
-    top, row_h = 96, 46
-    rows = [
-        ("GPT-5.6-sol", "$5", "$10", "×2", False),
-        ("", "$30", "$45", "×1.5", False),
-        ("GPT-5.6-terra", "$2", "$4", "×2", False),
-        ("", "$12", "$18", "×1.5", False),
-        ("gpt-5.5-pro", "$30", "$60 ?", "×2", True),
-        ("", "$180", "$270 ?", "×1.5", True),
-    ]
-
-    parts = [
-        '<text class="t-strong" x="18" y="26">出典に無い数字が、どうやって出てきたか</text>\n',
-        '<text class="t-sm" x="18" y="45">上4行は料金ページに書いてあった値。下2行は書いていないのに出てきた値。</text>\n',
-        '<text class="t-sm" x="18" y="64">かかっている倍率が、上の行とぴったり同じでした。</text>\n',
-        f'<text class="t-xs" x="{col[1]}" y="{top - 12}">短い入力</text>\n',
-        f'<text class="t-xs" x="{col[2]}" y="{top - 12}">長い入力</text>\n',
-        f'<text class="t-xs" x="{col[3]}" y="{top - 12}">倍率</text>\n',
-    ]
-    for index, (name, short, long_, ratio, made_up) in enumerate(rows):
-        y = top + index * row_h
-        if made_up:
-            parts.append(
-                f'<rect class="box-bad" x="{col[0] - 8}" y="{y - 18}" '
-                f'width="{col[4] + 130}" height="{row_h - 8}" rx="4"/>\n'
-            )
-        if name:
-            parts.append(f'<text class="t-strong" x="{col[0]}" y="{y}">{_esc(name)}</text>\n')
-        parts.append(f'<text class="t" x="{col[1]}" y="{y}">{_esc(short)}</text>\n')
-        parts.append(f'<text class="t" x="{col[2]}" y="{y}">{_esc(long_)}</text>\n')
-        parts.append(f'<text class="t-accent" x="{col[3]}" y="{y}">{_esc(ratio)}</text>\n')
-        note = "出典に無い" if made_up else "出典にある"
-        cls = "t-bad" if made_up else "t-sm"
-        parts.append(f'<text class="{cls}" x="{col[4]}" y="{y}">{note}</text>\n')
-
-    height = top + len(rows) * row_h + 22
-    parts.append(
-        f'<text class="t-xs" x="18" y="{height - 12}">'
-        "※ 出典URLは正しく付いていました。そのページに、その数字が無かっただけです。</text>\n"
-    )
-    alt = (
-        "AIが出典に無い数字を作った経緯を示した表。"
-        "GPT-5.6-sol は短い入力5ドルが長い入力10ドル（2倍）、出力30ドルが45ドル（1.5倍）。"
-        "GPT-5.6-terra も2ドルが4ドル（2倍）、12ドルが18ドル（1.5倍）。"
-        "ここまでは料金ページに書いてある値。"
-        "ところが gpt-5.5-pro には長い入力の行が無いのに、同じ倍率を当てはめて"
-        "60ドルと270ドルという値が書かれていた。出典URLは正しかったが、その数字はページに無かった。"
-    )
-    (OUT / "extrapolated-numbers.svg").write_text(
-        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
-    )
-
-
 def summary_vs_raw_chart() -> None:
     """要約された確認結果と、生ページの実物を並べる。"""
     top = 96
@@ -1518,13 +1463,216 @@ def gpt56_family_chart() -> None:
     )
 
 
+def report_split_chart() -> None:
+    """報告の一文を「確認済み／未確認」に分けさせると、穴がその場で見える。"""
+    # 左の3つは記事の冒頭で挙げている、実際に返ってくる言い回しそのまま。
+    # 右は「分けさせたときに出てくる形」で、測った数字を勝手に足さない。
+    rows = [
+        (
+            "実装しました",
+            "box-good", "t-good", "確認済み",
+            "実行したコマンドと出力を添える",
+        ),
+        (
+            "おそらく正常に動作します",
+            "box-quiet", "t-sm", "未確認",
+            "まだ一度も動かしていない",
+        ),
+        (
+            "こちらのURLから取得できます",
+            "box-bad", "t-bad", "開けなかった",
+            "実際に開くと404だった",
+        ),
+    ]
+    left_x, left_w = 18, 282
+    right_x = 340
+    right_w = WIDTH - 18 - right_x
+    top, row_h, gap = 96, 68, 16
+    height = top + len(rows) * row_h + (len(rows) - 1) * gap + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「できました」を、確かめたかどうかで分けさせる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ1回の報告を3つに分けたものです。分けるまで、どれが未確認かは出てきません。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "URL・ファイル名・設定項目・オプション名は、とくに作られやすい4つです。</text>\n",
+        f'<text class="t-xs" x="{left_x}" y="{top - 12}">AIの報告（そのまま）</text>\n',
+        f'<text class="t-xs" x="{right_x}" y="{top - 12}">分けさせると、その場で見えるもの</text>\n',
+    ]
+    for index, (claim, box_cls, label_cls, label, detail) in enumerate(rows):
+        y = top + index * (row_h + gap)
+        parts.append(
+            f'<rect class="box-quiet" x="{left_x}" y="{y}" '
+            f'width="{left_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t" x="{left_x + 14}" y="{y + 40}">{_esc(claim)}</text>\n')
+        parts.append(
+            f'<rect class="{box_cls}" x="{right_x}" y="{y}" '
+            f'width="{right_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{label_cls}" x="{right_x + 14}" y="{y + 26}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 14}" y="{y + 50}">{_esc(detail)}</text>\n'
+        )
+        ay = y + row_h / 2
+        parts.append(
+            f'<line class="line" x1="{left_x + left_w + 8}" y1="{ay:.0f}" '
+            f'x2="{right_x - 14}" y2="{ay:.0f}"/>\n'
+        )
+        parts.append(
+            f'<path d="M{right_x - 14} {ay - 4:.0f} L{right_x - 7} {ay:.0f} '
+            f'L{right_x - 14} {ay + 4:.0f} Z" fill="#8b949e"/>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 3行ともそのまま読めば「できました」に見えます。だから分けさせます。</text>\n"
+    )
+    alt = (
+        "AIの報告を、確かめたかどうかで3つに分けた対応表。"
+        "「実装しました」は確認済みで、実行したコマンドと出力を添えさせる。"
+        "「おそらく正常に動作します」は未確認で、まだ一度も動かしていない。"
+        "「こちらのURLから取得できます」は開けなかったもので、実際に開くと404だった。"
+        "3行ともそのまま読めば「できました」に見えるため、分けさせるまでどれが未確認かは出てこない。"
+    )
+    (OUT / "report-split.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def handoff_timing_chart() -> None:
+    """人にしかできない作業が、いつ見えるか。作業は同じで、変わるのは時刻だけ。"""
+    bar_w, human_w, bar_h = 470, 206, 34
+    left = 18
+    lane_a_y, lane_b_y = 106, 212
+    band_y, band_h = 286, 62
+    height = band_y + band_h + 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">人にしかできない作業を、いつ知るか</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "作業そのものは変わりません。変わるのは、それが見える時刻だけです。</text>\n",
+        '<text class="t-sm" x="18" y="64">このサイトを公開したときに実際に起きたことです。</text>\n',
+        f'<text class="t-bad" x="18" y="{lane_a_y - 8}">分担表を出させないとき</text>\n',
+        f'<rect class="bar-old" x="{left}" y="{lane_a_y}" '
+        f'width="{bar_w}" height="{bar_h}" rx="3"/>\n',
+        f'<text class="t" x="{left + 14}" y="{lane_a_y + 22}">AIが作る</text>\n',
+        f'<rect class="box-bad" x="{left + bar_w + 8}" y="{lane_a_y}" '
+        f'width="{human_w}" height="{bar_h}" rx="6"/>\n',
+        f'<text class="t-bad" x="{left + bar_w + 22}" y="{lane_a_y + 22}">人の作業が3つ</text>\n',
+        f'<text class="t-sm" x="18" y="{lane_a_y + 50}">'
+        "公開の直前にまとめて出てくる。別の日に持ち越しになった</text>\n",
+        f'<text class="t-good" x="18" y="{lane_b_y - 8}">先に分担表を出させたとき</text>\n',
+        f'<rect class="box-good" x="{left}" y="{lane_b_y}" '
+        f'width="{human_w}" height="{bar_h}" rx="6"/>\n',
+        f'<text class="t-good" x="{left + 14}" y="{lane_b_y + 22}">人の作業が3つ</text>\n',
+        f'<rect class="bar-old" x="{left + human_w + 8}" y="{lane_b_y}" '
+        f'width="{bar_w}" height="{bar_h}" rx="3"/>\n',
+        f'<text class="t" x="{left + human_w + 22}" y="{lane_b_y + 22}">AIが作る</text>\n',
+        f'<text class="t-sm" x="18" y="{lane_b_y + 50}">'
+        "頼んだ日に一覧で見えている。順番を入れ替えるだけで済む</text>\n",
+        f'<rect class="box-accent" x="18" y="{band_y}" '
+        f'width="{WIDTH - 36}" height="{band_h}" rx="6"/>\n',
+        f'<text class="t-accent" x="32" y="{band_y + 30}">'
+        "3つとも、ログインして画面を操作する作業</text>\n",
+        f'<text class="t-sm" x="32" y="{band_y + 52}">'
+        "ドメインのDNS設定 ／ HTTPSの有効化 ／ 検索エンジンへの登録。AIは代われない</text>\n",
+    ]
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ どれも難しい作業ではありません。最後にまとめて出てくることだけが問題です。</text>\n"
+    )
+    alt = (
+        "人にしかできない作業をいつ知るかを2本のレーンで比べた図。"
+        "分担表を出させないときは、AIが作る工程が長く続いたあと、公開の直前に人の作業が3つまとめて出てきて、"
+        "別の日に持ち越しになった。"
+        "先に分担表を出させたときは、人の作業3つが頼んだ日に一覧で見えているので、順番を入れ替えるだけで済む。"
+        "3つとはドメインのDNS設定、HTTPSの有効化、検索エンジンへの登録で、"
+        "どれもログインして画面を操作する作業のためAIは代われない。"
+        "作業そのものは変わらず、変わるのはそれが見える時刻だけ。"
+    )
+    (OUT / "handoff-timing.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def scope_weight_chart() -> None:
+    """頼んだ範囲と、返ってきた案の重さ。範囲を区切っても案は消えない。"""
+    left_x, left_w = 18, 310
+    right_x = 352
+    right_w = WIDTH - 18 - right_x
+    top, box_h = 96, 170
+    band_y, band_h = 290, 62
+    height = band_y + band_h + 34
+    proposal = [
+        "記事ごとに3段階のラベルを付ける仕組み",
+        "記事の設定に項目を足す",
+        "テンプレートを直す",
+        "検査も足す",
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">頼んだのは、文章を1つ消すことだけでした</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "範囲を言わずに頼むと、返ってくる案は「良くする」方向へ膨らみます。</text>\n",
+        '<text class="t-sm" x="18" y="64">悪意ではありません。丁寧にやろうとした結果です。</text>\n',
+        f'<rect class="box-good" x="{left_x}" y="{top}" '
+        f'width="{left_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-good" x="{left_x + 14}" y="{top + 28}">頼んだこと</text>\n',
+        f'<text class="t" x="{left_x + 14}" y="{top + 56}">トップページの文章を1つ消す</text>\n',
+        f'<text class="t-sm" x="{left_x + 14}" y="{top + 84}">実際に済んだ形:</text>\n',
+        f'<text class="t-sm" x="{left_x + 14}" y="{top + 106}">テキスト4か所の書き換え</text>\n',
+        f'<text class="t-strong" x="{left_x + 14}" y="{top + 140}">かかった時間 5分</text>\n',
+        f'<rect class="box-bad" x="{right_x}" y="{top}" '
+        f'width="{right_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-bad" x="{right_x + 14}" y="{top + 28}">返ってきた案</text>\n',
+    ]
+    for index, line in enumerate(proposal):
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 14}" y="{top + 56 + index * 22}">'
+            f"{_esc(line)}</text>\n"
+        )
+    parts.append(
+        f'<text class="t-strong" x="{right_x + 14}" y="{top + 152}">放っておけば 半日</text>\n'
+    )
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{band_y}" '
+        f'width="{WIDTH - 36}" height="{band_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="32" y="{band_y + 30}">'
+        "範囲を区切っても、案が消えるわけではありません</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="32" y="{band_y + 52}">'
+        "「範囲外は直さずに指摘だけ」と足すと、同じ案が提案として出てきます</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 案の良し悪しと、いまそれをやるべきかどうかは別の話です。</text>\n"
+    )
+    alt = (
+        "頼んだ範囲と返ってきた案の重さを比べた図。"
+        "頼んだことはトップページの文章を1つ消すことだけで、"
+        "実際にはテキスト4か所の書き換えで済み、かかった時間は5分。"
+        "ところが返ってきた案は、記事ごとに3段階のラベルを付ける仕組み、記事の設定に項目を足す、"
+        "テンプレートを直す、検査も足す、というもので、放っておけば半日かかる。"
+        "ただし範囲を区切っても案が消えるわけではなく、"
+        "「範囲外は直さずに指摘だけ」と足せば同じ案が提案として出てくる。"
+    )
+    (OUT / "scope-weight.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
     tokenizer_chart()
     filler_before_after()
     line_count_chart()
-    extrapolation_chart()
     summary_vs_raw_chart()
     citation_chain_chart()
     queue_flow_chart()
@@ -1546,4 +1694,7 @@ if __name__ == "__main__":
     sourced_research_chart()
     gpt56_family_chart()
     mail_triage_chart()
-    print(f"27枚を {OUT} に出力しました")
+    report_split_chart()
+    handoff_timing_chart()
+    scope_weight_chart()
+    print(f"29枚を {OUT} に出力しました")
