@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-08T02:23:46.887173+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-08T01:09:26+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.2…",
+      "title": "v2.1.225",
+      "uid": "3155ee98a5ac2c58",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-07T18:04:53.397980+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",

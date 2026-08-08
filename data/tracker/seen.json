@@ -3,7 +3,7 @@
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
-    "claude-code": "2026-08-07T04:00:59+00:00",
+    "claude-code": "2026-08-08T01:09:26+00:00",
     "deepmind-blog": "2026-08-06T15:06:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
@@ -16,7 +16,19 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-04T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-08T01:09:26+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.2…",
+      "title": "v2.1.225",
+      "uid": "3155ee98a5ac2c58",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
+      "vendor": "Anthropic"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
@@ -108,6 +120,7 @@
     "30bec7ef49839403": "2026-08-01T12:16:42.309603+00:00",
     "31031406dc935cc6": "2026-08-01T12:16:42.309603+00:00",
     "311c8f4610bb96fe": "2026-08-02T11:35:58.106550+00:00",
+    "3155ee98a5ac2c58": "2026-08-08T02:23:46.887173+00:00",
     "319c07606d4d3143": "2026-08-01T12:16:42.309603+00:00",
     "31ae1fcf7b48fb3d": "2026-08-01T12:16:42.309603+00:00",
     "32c07dc4b24962d9": "2026-08-01T12:16:42.309603+00:00",
