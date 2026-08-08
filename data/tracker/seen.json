@@ -16,30 +16,7 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-04T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-08T01:09:26+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.2…",
-      "title": "v2.1.225",
-      "uid": "3155ee98a5ac2c58",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-08T02:48:05+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Bug fixes and reliability improvements",
-      "title": "v2.1.226",
-      "uid": "8a5d4b2b066e7e60",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
