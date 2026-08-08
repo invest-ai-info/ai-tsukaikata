@@ -3,7 +3,7 @@
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
-    "claude-code": "2026-08-08T01:09:26+00:00",
+    "claude-code": "2026-08-08T02:48:05+00:00",
     "deepmind-blog": "2026-08-06T15:06:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
@@ -26,6 +26,17 @@
       "title": "v2.1.225",
       "uid": "3155ee98a5ac2c58",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-08T02:48:05+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Bug fixes and reliability improvements",
+      "title": "v2.1.226",
+      "uid": "8a5d4b2b066e7e60",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
       "vendor": "Anthropic"
     }
   ],
@@ -251,6 +262,7 @@
     "899a69d6b69d8b0a": "2026-08-04T11:04:53.115730+00:00",
     "89be39b6a8da723f": "2026-08-01T12:16:42.309603+00:00",
     "89e5b616a5eef5af": "2026-08-01T12:16:42.309603+00:00",
+    "8a5d4b2b066e7e60": "2026-08-08T04:30:05.888432+00:00",
     "8ab5119082de1e96": "2026-08-01T12:16:42.309603+00:00",
     "8abcedc2590082cd": "2026-08-01T12:16:42.309603+00:00",
     "8b5cf9986bbc1621": "2026-08-01T12:16:42.309603+00:00",
