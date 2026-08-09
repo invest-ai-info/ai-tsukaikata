@@ -188,3 +188,47 @@ def test_unknown_scene_is_rejected():
 def test_scene_is_optional():
     from src.content import parse_article
     assert parse_article(Path("content/recipes/x.md"), RECIPE).scene is None
+
+
+def test_checked_is_parsed_as_a_date():
+    text = (
+        "---\n"
+        "title: 題\n"
+        "description: 説明\n"
+        "category: pages\n"
+        "published: 2026-08-09\n"
+        "checked: 2026-08-09\n"
+        "---\n"
+        "本文\n"
+    )
+    article = parse_article(Path("content/pages/start.md"), text)
+    assert article.checked == date(2026, 8, 9)
+
+
+def test_checked_is_optional():
+    text = (
+        "---\n"
+        "title: 題\n"
+        "description: 説明\n"
+        "category: pages\n"
+        "published: 2026-08-09\n"
+        "---\n"
+        "本文\n"
+    )
+    assert parse_article(Path("content/pages/x.md"), text).checked is None
+
+
+def test_quoted_checked_is_rejected():
+    """クォートで囲むと文字列になる。日付形式の揺れを frontmatter で止める。"""
+    text = (
+        "---\n"
+        "title: 題\n"
+        "description: 説明\n"
+        "category: pages\n"
+        "published: 2026-08-09\n"
+        'checked: "2026-08-09"\n'
+        "---\n"
+        "本文\n"
+    )
+    with pytest.raises(ArticleError):
+        parse_article(Path("content/pages/x.md"), text)

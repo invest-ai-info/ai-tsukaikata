@@ -42,6 +42,9 @@ class Article:
     body_html: str
     source_path: Path
     scene: str | None = None
+    # 外部の公式ページを見て書いた記事が「いつ時点の話か」。
+    # ⚠️ 古いことでビルドは止めない（週次の check_freshness.py が見る）。
+    checked: date | None = None
 
     @property
     def url(self) -> str:
@@ -139,6 +142,7 @@ def parse_article(source_path: Path, text: str) -> Article:
         body_html=render_markdown(body),
         source_path=source_path,
         scene=scene,
+        checked=_to_date(meta["checked"], "checked") if meta.get("checked") else None,
     )
 
 
