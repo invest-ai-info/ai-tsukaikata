@@ -708,3 +708,18 @@ a { color: var(--accent); }
   .site-header { padding: 1rem 0.9rem; }
   .site-main, .site-footer { padding-left: 0.9rem; padding-right: 0.9rem; }
 }
+
+/* 確認日。記事が「いつ時点の話か」を読者が自分で判断できるようにする */
+.checked-note {
+  background: var(--code-bg);
+  border-left: 3px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 1rem 0 1.5rem;
+  padding: 0.7rem 0.9rem;
+}
+
+.start-section { margin-bottom: 2.5rem; }
+.start-more { margin: 0; }

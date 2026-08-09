@@ -61,8 +61,13 @@ def render_site(
         name for name in config.LISTED_CATEGORIES
         if any(a.category == name for a in listed)
     ]
+    # 指南書は記事があるときだけ出す（無いのにリンクを出すとリンク切れになる）
+    has_start = any(a.url == "/start/" for a in articles)
+    env.globals["start_url"] = "/start/" if has_start else None
+
     # 記事が1本もないカテゴリはナビにも一覧にも出さない（空ページを作らない）
-    nav = [
+    nav = [{"url": "/start/", "label": "始め方"}] if has_start else []
+    nav += [
         {"url": f"/{name}/", "label": config.CATEGORIES[name]["label"]} for name in active
     ]
     if news:

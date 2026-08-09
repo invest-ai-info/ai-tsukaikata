@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="ブラウザ版だけでできることと、Claude Code が必要になることを2列で比べた図。ブラウザだけでできる＝文章を書かせる・直させる、資料を読ませて要約させる、調べものに付き合わせる、写真を見せて相談する。Claude Code が要る＝パソコンのファイルを直接触る、決まった時刻に自動で動かす、このサイトのレシピを実行する、作ったものを動かして確かめる。Claude Code の入り口は2つあり、デスクトップ版はターミナルを使わず、コマンド版は1行貼るだけ。どちらも Node.js は要らない（2026年8月9日に公式で確認）。右が要らないなら Claude Code は入れなくてよい。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="380"/>
+<text class="t-strong" x="18" y="26">ブラウザだけで足りるか、Claude Code が要るか</text>
+<text class="t-sm" x="18" y="45">左だけでも、AIの頼み方はひととおり身につきます。</text>
+<rect class="box-good" x="18" y="62" width="330" height="166" rx="6"/>
+<rect class="box-accent" x="372" y="62" width="330" height="166" rx="6"/>
+<text class="t-good" x="32" y="82">ブラウザだけでできる</text>
+<text class="t-accent" x="386" y="82">Claude Code が要る</text>
+<text class="t" x="32" y="114">文章を書かせる・直させる</text>
+<text class="t" x="32" y="148">資料を読ませて要約させる</text>
+<text class="t" x="32" y="182">調べものに付き合わせる</text>
+<text class="t" x="32" y="216">写真を見せて相談する</text>
+<text class="t" x="386" y="114">パソコンのファイルを直接触る</text>
+<text class="t" x="386" y="148">決まった時刻に自動で動かす</text>
+<text class="t" x="386" y="182">このサイトのレシピを実行する</text>
+<text class="t" x="386" y="216">作ったものを動かして確かめる</text>
+<rect class="box-quiet" x="18" y="268" width="684" height="76" rx="6"/>
+<text class="t-accent" x="32" y="294">Claude Code の入り口は2つある</text>
+<text class="t" x="32" y="318">デスクトップ版＝ターミナルを使わない ／ コマンド版＝1行貼るだけ</text>
+<text class="t-sm" x="32" y="336">どちらも Node.js は要りません（2026年8月9日に公式で確認）</text>
+<text class="t-xs" x="18" y="368">※ 右が要らないなら、Claude Code は入れなくて構いません。左だけで十分に役に立ちます。</text>
+</svg>

@@ -1667,6 +1667,169 @@ def scope_weight_chart() -> None:
     )
 
 
+def start_requirements_chart() -> None:
+    """4つのツールの最低要件。公式に書いていない欄は推測で埋めない。
+
+    値は docs/superpowers/notes/2026-08-09-start-facts.md（公式ページの生テキストから
+    収集）そのまま。⚠️ 埋まっていない欄を推測で埋めないこと。書いていないこと自体が
+    「普通のPCなら通る」という答えになっている。
+    """
+    rows = [
+        ("ChatGPT", "ブラウザ", "記載なし", ["記載なし"], "無料で開始"),
+        ("Claude", "ブラウザ", "記載なし", ["記載なし"], "無料で開始"),
+        ("Gemini", "ブラウザ", "記載なし",
+         ["Chrome / Safari / Firefox /", "Opera / Edgium"], "無料で開始"),
+        ("Claude Code", "アプリ", "4GB以上",
+         ["Windows 10 1809+", "macOS 13.0+"], "有料プラン"),
+    ]
+    name_x, mem_x, os_x, price_x = 32, 206, 296, 596
+    top, row_h, box_h = 104, 56, 48
+    band_y, band_h = 344, 54
+    height = band_y + band_h + 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">公式が出している「最低これだけ要る」</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "2026年8月9日に各社の公式ページで確認したものだけを並べています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「記載なし」は、公式が書いていないという意味です。こちらの推測では埋めていません。</text>\n",
+        f'<text class="t-xs" x="{name_x}" y="{top - 12}">ツール</text>\n',
+        f'<text class="t-xs" x="{mem_x}" y="{top - 12}">メモリ</text>\n',
+        f'<text class="t-xs" x="{os_x}" y="{top - 12}">対応OS・ブラウザ</text>\n',
+        f'<text class="t-xs" x="{price_x}" y="{top - 12}">料金</text>\n',
+    ]
+    for index, (name, kind, memory, os_lines, price) in enumerate(rows):
+        y = top + index * row_h
+        cls = "box-accent" if name == "Claude Code" else "box-quiet"
+        parts.append(
+            f'<rect class="{cls}" x="18" y="{y}" '
+            f'width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{name_x}" y="{y + 20}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{name_x}" y="{y + 38}">{_esc(kind)}</text>\n')
+        mem_cls = "t-strong" if memory != "記載なし" else "t-xs"
+        parts.append(f'<text class="{mem_cls}" x="{mem_x}" y="{y + 20}">{_esc(memory)}</text>\n')
+        for line_index, line in enumerate(os_lines):
+            line_cls = "t-xs" if line == "記載なし" else "t-sm"
+            parts.append(
+                f'<text class="{line_cls}" x="{os_x}" y="{y + 20 + line_index * 18}">'
+                f"{_esc(line)}</text>\n"
+            )
+        parts.append(f'<text class="t-sm" x="{price_x}" y="{y + 20}">{_esc(price)}</text>\n')
+
+    parts.append(
+        f'<rect class="box-good" x="18" y="{band_y}" '
+        f'width="{WIDTH - 36}" height="{band_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="32" y="{band_y + 24}">'
+        "4GB あれば、この4つのうち一番重いものが動きます</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="32" y="{band_y + 44}">'
+        "ブラウザで使う3つは、必要なメモリを公表していません。それだけ軽いということです。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Claude Code だけ、公式が 4GB以上・x64かARM64 と明記しています。</text>\n"
+    )
+    alt = (
+        "4つのAIツールの最低要件を並べた表。2026年8月9日に各社の公式ページで確認したもの。"
+        "ChatGPT・Claude のブラウザ版は、対応OSもメモリも公式の記載なしで、無料で開始できる。"
+        "Gemini のブラウザ版は対応ブラウザが Chrome、Safari、Firefox、Opera、Edgium と"
+        "公表されているが、メモリの記載はなく、無料で開始できる。"
+        "Claude Code はメモリ4GB以上、Windows 10 1809以降または macOS 13.0以降で、有料プラン。"
+        "つまり4GBあれば、この4つのうち一番重いものが動く。"
+        "ブラウザで使う3つは必要なメモリを公表しておらず、それだけ軽いということ。"
+    )
+    (OUT / "start-requirements.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def start_boundary_chart() -> None:
+    """ブラウザだけで足りること と、Claude Code が要ること の境界。
+
+    ⚠️ 初稿は「Claude Code＝ターミナルが要る」で描いていたが、公式に
+    「The Desktop app lets you use Claude Code without the terminal」とあり、
+    さらにネイティブ導入は Node.js を要求しない（npm版だけが Node.js 22+）。
+    初心者の障壁として一番大きい2つが、実は必須ではない。
+    """
+    left_rows = [
+        "文章を書かせる・直させる",
+        "資料を読ませて要約させる",
+        "調べものに付き合わせる",
+        "写真を見せて相談する",
+    ]
+    right_rows = [
+        "パソコンのファイルを直接触る",
+        "決まった時刻に自動で動かす",
+        "このサイトのレシピを実行する",
+        "作ったものを動かして確かめる",
+    ]
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(left_rows), len(right_rows))
+    box_h = 30 + rows * row_h
+    band_y, band_h = first_y + rows * row_h + 18, 76
+    height = band_y + band_h + 36
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "ブラウザだけで足りるか、Claude Code が要るか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "左だけでも、AIの頼み方はひととおり身につきます。</text>\n",
+        f'<rect class="box-good" x="{left_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-accent" x="{right_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-good" x="{left_x + 14}" y="{head_y - 2}">ブラウザだけでできる</text>\n',
+        f'<text class="t-accent" x="{right_x + 14}" y="{head_y - 2}">Claude Code が要る</text>\n',
+    ]
+    for index, text in enumerate(left_rows):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(right_rows):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<rect class="box-quiet" x="{pad}" y="{band_y}" '
+        f'width="{col_w * 2 + gap}" height="{band_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{pad + 14}" y="{band_y + 26}">'
+        "Claude Code の入り口は2つある</text>\n"
+    )
+    parts.append(
+        f'<text class="t" x="{pad + 14}" y="{band_y + 50}">'
+        "デスクトップ版＝ターミナルを使わない ／ コマンド版＝1行貼るだけ</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="{pad + 14}" y="{band_y + 68}">'
+        "どちらも Node.js は要りません（2026年8月9日に公式で確認）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 右が要らないなら、Claude Code は入れなくて構いません。左だけで十分に役に立ちます。</text>\n"
+    )
+    alt = (
+        "ブラウザ版だけでできることと、Claude Code が必要になることを2列で比べた図。"
+        "ブラウザだけでできる＝文章を書かせる・直させる、資料を読ませて要約させる、"
+        "調べものに付き合わせる、写真を見せて相談する。"
+        "Claude Code が要る＝パソコンのファイルを直接触る、決まった時刻に自動で動かす、"
+        "このサイトのレシピを実行する、作ったものを動かして確かめる。"
+        "Claude Code の入り口は2つあり、デスクトップ版はターミナルを使わず、"
+        "コマンド版は1行貼るだけ。どちらも Node.js は要らない（2026年8月9日に公式で確認）。"
+        "右が要らないなら Claude Code は入れなくてよい。"
+    )
+    (OUT / "start-boundary.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1697,4 +1860,6 @@ if __name__ == "__main__":
     report_split_chart()
     handoff_timing_chart()
     scope_weight_chart()
-    print(f"29枚を {OUT} に出力しました")
+    start_requirements_chart()
+    start_boundary_chart()
+    print(f"31枚を {OUT} に出力しました")

@@ -18,6 +18,10 @@
     {% endif %}
   </p>
 
+  {% if article.checked %}
+  <p class="checked-note">この記事の手順は <time datetime="{{ article.checked.isoformat() }}">{{ article.checked | jp_date }}</time> に公式ページで確認したものです。各社の仕様はよく変わります。表示が違っていたら公式のほうを優先してください。</p>
+  {% endif %}
+
   {% if article.time_required or article.cost %}
   <dl class="recipe-meta">
     {% if article.time_required %}

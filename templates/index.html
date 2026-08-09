@@ -16,6 +16,14 @@
   </div>
 </section>
 
+{% if start_url %}
+<section class="start-section">
+  <h2 class="section-title">はじめての人へ</h2>
+  <p class="section-lead">どのAIを、何を用意して、どこから触るか。自分のパソコンで動くかどうかから確かめられます。</p>
+  <p class="start-more"><a class="hero-link is-primary" href="{{ start_url }}">始め方を読む →</a></p>
+</section>
+{% endif %}
+
 {% if news %}
 <section class="news-section">
   <h2 class="section-title">AIアップデート</h2>

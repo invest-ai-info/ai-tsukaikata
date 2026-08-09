@@ -1,0 +1,28 @@
+name: Freshness Check
+
+on:
+  # 毎週月曜 JST 9:40（UTC 日曜 0:40）。毎時0分を避ける
+  schedule:
+    - cron: "40 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: 依存をインストール
+        run: pip install -r requirements.txt
+
+      # ⚠️ ここが失敗したら、GitHub の標準の失敗通知メールで気づく形にしてある。
+      # 専用の通知コードは足さない（サイトの検査がトラッカーに依存するのを避ける）。
+      - name: 鮮度と外部リンクを検査
+        run: python tools/check_freshness.py

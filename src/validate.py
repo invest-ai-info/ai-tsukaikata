@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import html
 import re
+from datetime import date
 
 from . import config
 from .content import Article
@@ -251,6 +252,26 @@ def _density_errors(where: str, article: Article) -> list[str]:
     return errors
 
 
+def _checked_errors(where: str, article: Article, today: date) -> list[str]:
+    """確認日の形だけを見る。
+
+    ⚠️ 「古い」ではビルドを止めない。古さは時間が経てば勝手に起きるので、
+    止めると毎晩21:00のレシピ担当が push した記事が、指南書の日付を理由に
+    公開されなくなる（build.py は「全部通る or 何も出さない」）。
+    古さと外部リンク切れは tools/check_freshness.py が週次で見る。
+
+    ここで止めるのは、書いた本人がその場で直せる「未来の日付」だけ。
+    """
+    if article.checked is None:
+        return []
+    if article.checked > today:
+        return [
+            f"{where}: 確認日が未来の日付です"
+            f"（checked: {article.checked} / 今日: {today}）"
+        ]
+    return []
+
+
 def _heading_errors(where: str, body_html: str) -> list[str]:
     """見出しのclassを検査する。
 
@@ -286,6 +307,7 @@ def _heading_errors(where: str, body_html: str) -> list[str]:
 def validate(
     articles: list[Article],
     static_paths: set[str] | None = None,
+    today: date | None = None,
 ) -> list[str]:
     """全記事を検査してエラー文字列のリストを返す。空なら公開してよい。
 
@@ -293,6 +315,7 @@ def validate(
     ディスクを見に行くのは build.py の仕事なので、ここは渡された集合と
     照合するだけにしてある。渡されなければ静的ファイルの実在は検査しない。
     """
+    today = today or date.today()
     errors: list[str] = []
 
     reserved = {"/"} | {f"/{name}/" for name in config.LISTED_CATEGORIES}
@@ -325,6 +348,7 @@ def validate(
         errors += _marker_errors(where, article.body_html)
         errors += _heading_errors(where, article.body_html)
         errors += _density_errors(where, article)
+        errors += _checked_errors(where, article, today)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(
