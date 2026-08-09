@@ -376,3 +376,18 @@ def test_tools_article_is_not_measured_by_recipe_density():
         source_path=Path("content/tools/model-x.md"), scene="choose",
     )
     assert validate([article]) == []
+
+
+def test_future_checked_date_is_rejected():
+    """未来の確認日は書き間違い。書いた本人がその場で直せるので止める。"""
+    errors = validate([_article(checked=date(2099, 1, 1))], today=date(2026, 8, 9))
+    assert any("未来の日付" in error for error in errors)
+
+
+def test_past_checked_date_is_fine():
+    assert validate([_article(checked=date(2020, 1, 1))], today=date(2026, 8, 9)) == []
+
+
+def test_missing_checked_is_not_an_error():
+    """checked が無いだけでは止めない。全記事に必須にすると既存記事が全部落ちる。"""
+    assert validate([_article()], today=date(2026, 8, 9)) == []
