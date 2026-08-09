@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-09T23:48:59.918712+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-08-09T23:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "Sakana AIは、Sakana Fuguの指揮者モデルをGemma 4ベースで訓練し、従来と同等のオーケストレーション性能が出ることを確認しました。モデルプールに加えて指揮者モデルの多様化・モジュール化を図ることで、国内のさまざまな用途で求められるソブリン性の要件に応じたオーケストレーション技術を開発し、提供していきます。",
+      "summary_ja": "Sakana AIがAI連携技術を別基盤で検証\nGemma 4基盤で指揮AI「Sakana Fugu」を開発。従来の連携性能を維持。\n国内向けに、基盤を選ばず使えるAI連携技術を提供へ。",
+      "summary_source": "gemini",
+      "title": "ベースモデルに依存しないオーケストレーションに向けて：Gemma 4版 Sakana Fuguの検証",
+      "uid": "1ed84fe2de2797eb",
+      "url": "/fugu-gemma4/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-08-08T04:30:05.888432+00:00",
       "importance": "minor",
       "label": "Claude Code",
