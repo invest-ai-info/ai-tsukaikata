@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
-from check_freshness import check_articles, external_links  # noqa: E402
+from check_freshness import Reached, check_articles, external_links  # noqa: E402
 
 from src.content import Article, render_markdown  # noqa: E402
 
@@ -24,7 +24,7 @@ def _article(body, checked=None, slug="start"):
 
 
 def _ok(url):
-    return 200
+    return Reached(200, url)
 
 
 def test_external_links_are_found_once_each():
@@ -40,7 +40,7 @@ def test_internal_links_are_not_external():
 def test_article_with_external_links_but_no_checked_is_reported():
     """付け忘れの網。ビルドでは止めないので、ここで拾わないと静かに漏れる。"""
     article = _article("[公式](https://example.com/a)", checked=None)
-    problems = check_articles([article], TODAY, head=_ok)
+    problems = check_articles([article], TODAY, head=_ok).problems
     assert any("checked" in p for p in problems)
 
 
@@ -48,39 +48,126 @@ def test_link_to_our_own_repo_does_not_require_checked():
     """自分のリポジトリへのリンクは、日付を付けても意味がない。
     永久に消えない警告は、一覧そのものを読まれなくする。"""
     article = _article("[このサイトの中身](https://github.com/invest-ai-info/ai-tsukaikata)")
-    assert check_articles([article], TODAY, head=_ok) == []
+    assert check_articles([article], TODAY, head=_ok).problems == []
 
 
 def test_our_own_broken_link_is_still_reported():
     """checked を求めないだけで、死活の検査からは外さない。"""
     article = _article("[このサイトの中身](https://github.com/invest-ai-info/ai-tsukaikata)")
-    problems = check_articles([article], TODAY, head=lambda url: 404)
+    problems = check_articles([article], TODAY, head=lambda url: Reached(404, url)).problems
     assert any("404" in p for p in problems)
 
 
 def test_fresh_checked_date_is_quiet():
     article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
-    assert check_articles([article], TODAY, head=_ok) == []
+    assert check_articles([article], TODAY, head=_ok).problems == []
 
 
 def test_old_checked_date_is_reported():
     article = _article("[公式](https://example.com/a)", checked=date(2026, 1, 1))
-    problems = check_articles([article], TODAY, head=_ok)
+    problems = check_articles([article], TODAY, head=_ok).problems
     assert any("確認日" in p for p in problems)
 
 
 def test_dead_link_is_reported():
     article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
-    problems = check_articles([article], TODAY, head=lambda url: 404)
+    problems = check_articles([article], TODAY, head=lambda url: Reached(404, url)).problems
     assert any("404" in p for p in problems)
 
 
 def test_unreachable_link_is_reported():
     article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
-    problems = check_articles([article], TODAY, head=lambda url: None)
+    problems = check_articles([article], TODAY, head=lambda url: Reached(None, url)).problems
     assert any("開けません" in p for p in problems)
 
 
 def test_article_without_external_links_and_without_checked_is_quiet():
     """既存記事の大半がこれ。ここで鳴ると一覧が読まれなくなる。"""
-    assert check_articles([_article("ふつうの本文")], TODAY, head=_ok) == []
+    assert check_articles([_article("ふつうの本文")], TODAY, head=_ok).problems == []
+
+
+def test_link_moved_to_another_host_is_reported():
+    """200が返ることと、そのURLが正式であることは別。
+
+    リダイレクトが効いているうちは死活の検査では鳴らないので、
+    たどり着いた先を突き合わせないと永久に気づけない。
+    実測した本物の引っ越し: docs.claude.com→code.claude.com、
+    deepmind.google→blog.google。
+    """
+    article = _article("[公式](https://old.example.com/a)", checked=date(2026, 8, 1))
+    problems = check_articles(
+        [article], TODAY, head=lambda url: Reached(200, "https://new.example.org/a")
+    ).problems
+    assert any("引っ越して" in p for p in problems)
+    assert any("https://new.example.org/a" in p for p in problems)
+
+
+def test_same_host_redirect_is_not_a_move():
+    """未ログインで /login へ飛ばされるのは引っ越しではない。
+
+    実測: https://claude.ai/ は https://claude.ai/login へ飛ぶ。
+    直しようがない警告を毎週出すと、一覧そのものが読まれなくなる。
+    """
+    article = _article("[公式](https://example.com/)", checked=date(2026, 8, 1))
+    problems = check_articles(
+        [article], TODAY, head=lambda url: Reached(200, "https://example.com/login")
+    ).problems
+    assert problems == []
+
+
+def test_trailing_slash_is_not_a_move():
+    """末尾スラッシュだけの差で鳴ると、毎週ほぼ全部のリンクが並ぶ。"""
+    article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
+    problems = check_articles([article], TODAY, head=lambda url: Reached(200, url + "/")).problems
+    assert problems == []
+
+
+def test_bot_blocked_link_is_a_note_not_a_problem():
+    """先方の bot 判定で弾かれただけ。人がブラウザで開けば見える。
+
+    実測: https://claude.ai/ は cf-mitigated: challenge 付きの403を返す。
+    UA偽装で迂回しない方針なので、こちらからは確かめられない。
+    ⚠️ これで週次を失敗させると、直しようがない警告が毎週出る。
+    """
+    article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
+    report = check_articles(
+        [article], TODAY, head=lambda url: Reached(403, url, bot_blocked=True)
+    )
+    assert report.problems == []
+    assert any("確かめられませんでした" in n for n in report.notes)
+
+
+def test_plain_403_without_bot_marker_is_still_a_problem():
+    """目印の無い403は、本当に見られなくなった可能性がある。握り潰さない。"""
+    article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
+    report = check_articles([article], TODAY, head=lambda url: Reached(403, url))
+    assert any("403" in p for p in report.problems)
+
+
+def test_move_is_quiet_when_the_article_already_links_the_destination():
+    """転送先を記事が既に貼っているなら、書き手は引っ越しを把握している。
+
+    実測（gemini-3-6-flash）＝出典1番に移転先 blog.google を貼ったうえで、
+    旧 deepmind.google を「開くとここへ転送されます」と注記していた。
+    ここで鳴らすと、正しく書いてある記事を毎週叩くことになる。
+    """
+    body = (
+        "[新](https://new.example.org/a) "
+        "[旧](https://old.example.com/a)"
+    )
+    article = _article(body, checked=date(2026, 8, 1))
+    moved = {"https://old.example.com/a": "https://new.example.org/a?utm_source=old"}
+    report = check_articles(
+        [article], TODAY,
+        head=lambda url: Reached(200, moved.get(url, url)),
+    )
+    assert report.problems == []
+
+
+def test_move_is_reported_when_the_destination_is_nowhere_in_the_article():
+    """把握していない引っ越しは、これまでどおり鳴らす。"""
+    article = _article("[旧](https://old.example.com/a)", checked=date(2026, 8, 1))
+    report = check_articles(
+        [article], TODAY, head=lambda url: Reached(200, "https://new.example.org/a")
+    )
+    assert any("引っ越して" in p for p in report.problems)

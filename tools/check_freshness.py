@@ -6,10 +6,16 @@
 レシピ担当が push した記事が、指南書の日付を理由に公開されなくなる
 （build.py は「全部通る or 何も出さない」）。止めるのではなく知らせる。
 
-見るのは3つ:
+見るのは4つ:
   1. 外部リンクが開けるか
-  2. 確認日（checked）が古くなっていないか
-  3. 外部リンクを持つのに checked が無い記事はどれか（付け忘れの網）
+  2. 外部リンクが引っ越していないか
+  3. 確認日（checked）が古くなっていないか
+  4. 外部リンクを持つのに checked が無い記事はどれか（付け忘れの網）
+
+⚠️ 2番は 2026-08-09 に足した。記事に貼った docs.claude.com のURLが、すでに
+code.claude.com へのリダイレクトになっていた。**リダイレクトが効いている限り
+200が返るので、死活の検査だけでは永久に気づけない。**200が返ることと、
+そのURLが正式であることは別。
 
 使い方: python tools/check_freshness.py
 """
@@ -18,9 +24,11 @@ from __future__ import annotations
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
+from typing import NamedTuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -51,8 +59,66 @@ def external_links(body_html: str) -> list[str]:
     return found
 
 
-def head(url: str) -> int | None:
-    """状態コードを返す。届かなければ None。
+class Reached(NamedTuple):
+    """リンクを1本叩いた結果。
+
+    status が None なら届かなかった。url は「実際にたどり着いた先」で、
+    リダイレクトされていれば移転先が入る。⚠️ 状態コードだけ返していると、
+    引っ越し済みのURLが永久に緑のままになる（それで実際に1本見逃した）。
+
+    bot_blocked ＝ 先方の bot 判定で弾かれた。人がブラウザで開けば見えるので
+    「リンク切れ」ではない。⚠️ UA偽装で迂回しない方針なので、確かめられない。
+    """
+
+    status: int | None
+    url: str
+    bot_blocked: bool = False
+
+
+class Report(NamedTuple):
+    """problems ＝直すべきもの（週次ワークフローを失敗させる）。
+
+    notes ＝直しようがないが、黙って消すと「確かめた」と誤解されるもの。
+    ⚠️ notes で失敗させないこと。直せない警告を毎週出すと一覧が読まれなくなる。
+    """
+
+    problems: list[str]
+    notes: list[str]
+
+
+# Cloudflare が bot 判定で返す 403 の目印。実測（2026-08-09・claude.ai）で
+# `cf-mitigated: challenge` が付いていた。これがあれば「壊れている」ではなく
+# 「こちらからは確かめられない」。
+BOT_BLOCK_HEADER = "cf-mitigated"
+
+
+def _moved_away(asked: str, reached: str) -> bool:
+    """引っ越したとみなすのは「別のホストへ飛ばされたとき」だけ。
+
+    ⚠️ パスの違いで鳴らしてはいけない。2026-08-09 に実測したところ、
+    `https://claude.ai/` は未ログインだと `https://claude.ai/login` へ飛ぶ。
+    これは引っ越しではなく、こちらがログインしていないだけで、直しようがない。
+    **直せない警告を毎週出すと、一覧そのものが読まれなくなる。**
+    末尾スラッシュやロケール付与も同じ理由でパスの差に入る。
+
+    逆にホストが変わったときは、まず本物の引っ越し（実測: docs.claude.com →
+    code.claude.com、deepmind.google → blog.google）。ここだけ鳴らす。
+    """
+    return urllib.parse.urlsplit(asked).netloc != urllib.parse.urlsplit(reached).netloc
+
+
+def _canonical(url: str) -> str:
+    """突き合わせ用に、クエリ・断片・末尾スラッシュを落とす。
+
+    転送先には `?utm_source=...` が付くことがあり、そのままだと
+    記事が貼っているURLと文字列比較で一致しない。
+    """
+    parts = urllib.parse.urlsplit(url)
+    return f"{parts.scheme}://{parts.netloc}{parts.path.rstrip('/')}"
+
+
+def head(url: str) -> Reached:
+    """状態コードと、実際にたどり着いたURLを返す。
 
     HEAD を拒む相手がいるので、拒まれたら GET で開き直す。
     """
@@ -62,21 +128,23 @@ def head(url: str) -> int | None:
         )
         try:
             with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-                return response.status
+                return Reached(response.status, response.url)
         except urllib.error.HTTPError as error:
-            if method == "HEAD" and error.code in (403, 405):
+            blocked = error.headers.get(BOT_BLOCK_HEADER) is not None
+            if method == "HEAD" and error.code in (403, 405) and not blocked:
                 continue
-            return error.code
+            return Reached(error.code, getattr(error, "url", None) or url, blocked)
         except Exception:  # noqa: BLE001 - 1件の失敗で全体を止めない
             if method == "HEAD":
                 continue
-            return None
-    return None
+            return Reached(None, url)
+    return Reached(None, url)
 
 
-def check_articles(articles, today: date, head=head, max_age_days=MAX_AGE_DAYS) -> list[str]:
-    """問題を文字列のリストで返す。空なら健康。"""
+def check_articles(articles, today: date, head=head, max_age_days=MAX_AGE_DAYS) -> Report:
+    """直すべきもの（problems）と、確かめられなかったもの（notes）を返す。"""
     problems: list[str] = []
+    notes: list[str] = []
     for article in articles:
         where = str(article.source_path)
         links = external_links(article.body_html)
@@ -96,13 +164,29 @@ def check_articles(articles, today: date, head=head, max_age_days=MAX_AGE_DAYS) 
                     f"（{max_age_days}日を超えました。checked: {article.checked}）"
                 )
 
+        # 転送先を記事が既に貼っているなら、書き手は引っ越しを把握している。
+        # 実測（gemini-3-6-flash）＝出典1番に移転先 blog.google を貼ったうえで、
+        # 旧 deepmind.google を「開くとここへ転送されます」と注記していた。
+        # ⚠️ ここで鳴らすと、正しく書いてある記事を毎週叩くことになる。
+        known = {_canonical(url) for url in links}
+
         for url in links:
-            status = head(url)
-            if status is None:
+            reached = head(url)
+            if reached.bot_blocked:
+                notes.append(
+                    f"{where}: 確かめられませんでした（先方のbot判定・{reached.status}）: {url}"
+                )
+            elif reached.status is None:
                 problems.append(f"{where}: リンクが開けません（接続できず）: {url}")
-            elif status >= 400:
-                problems.append(f"{where}: リンクが開けません（{status}）: {url}")
-    return problems
+            elif reached.status >= 400:
+                problems.append(f"{where}: リンクが開けません（{reached.status}）: {url}")
+            elif _moved_away(url, reached.url) and _canonical(reached.url) not in known:
+                problems.append(
+                    f"{where}: リンクが引っ越しています（貼り替えてください）\n"
+                    f"    いま貼っている先: {url}\n"
+                    f"    実際に着いた先:   {reached.url}"
+                )
+    return Report(problems, notes)
 
 
 def main() -> int:
@@ -111,14 +195,21 @@ def main() -> int:
     for error in errors:
         print(f"記事が読めません: {error}")
 
-    problems = check_articles(articles, date.today())
-    for problem in problems:
+    report = check_articles(articles, date.today())
+    for problem in report.problems:
         print(problem)
 
-    if errors or problems:
-        print(f"\n{len(errors) + len(problems)}件の問題があります")
+    # ⚠️ notes では失敗させない。直せない警告を毎週出すと一覧が読まれなくなる。
+    # ただし黙って消すと「確かめた」と誤解されるので、必ず表示はする。
+    if report.notes:
+        print("\n--- 参考（こちらからは確かめられないもの・直す必要はありません） ---")
+        for note in report.notes:
+            print(note)
+
+    if errors or report.problems:
+        print(f"\n{len(errors) + len(report.problems)}件の問題があります")
         return 1
-    print(f"{len(articles)}本を見て、問題はありませんでした")
+    print(f"\n{len(articles)}本を見て、直すべきものはありませんでした")
     return 0
 
 
