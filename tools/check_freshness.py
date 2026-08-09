@@ -32,6 +32,15 @@ MAX_AGE_DAYS = 90
 
 EXTERNAL_LINK_RE = re.compile(r'href="(https?://[^"]+)"')
 
+# 自分のサイトと自分のリポジトリへのリンクは「腐る外部情報」ではない。
+# checked: は「他人が公開した事実を、この日に確かめた」という意味なので、
+# 自分で管理しているものに日付を付けても意味がない。
+# ⚠️ 死活の検査からは外さない。自分のリポジトリへのリンクでも、切れていれば直す。
+OWN_LINK_PREFIXES = (
+    "https://ai-tsukaikata.com",
+    "https://github.com/invest-ai-info/",
+)
+
 
 def external_links(body_html: str) -> list[str]:
     """本文の外部リンクを、出てきた順で重複なく返す。"""
@@ -71,10 +80,12 @@ def check_articles(articles, today: date, head=head, max_age_days=MAX_AGE_DAYS) 
     for article in articles:
         where = str(article.source_path)
         links = external_links(article.body_html)
+        # checked: を求めるのは他人の情報だけ。自分のリンクは死活検査の対象には残す。
+        others = [url for url in links if not url.startswith(OWN_LINK_PREFIXES)]
 
-        if links and article.checked is None:
+        if others and article.checked is None:
             problems.append(
-                f"{where}: 外部リンクが{len(links)}本あるのに checked: がありません"
+                f"{where}: 外部リンクが{len(others)}本あるのに checked: がありません"
                 f"（腐っても誰も気づけません）"
             )
         elif article.checked is not None:

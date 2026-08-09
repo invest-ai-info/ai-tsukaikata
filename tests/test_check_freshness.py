@@ -44,6 +44,20 @@ def test_article_with_external_links_but_no_checked_is_reported():
     assert any("checked" in p for p in problems)
 
 
+def test_link_to_our_own_repo_does_not_require_checked():
+    """自分のリポジトリへのリンクは、日付を付けても意味がない。
+    永久に消えない警告は、一覧そのものを読まれなくする。"""
+    article = _article("[このサイトの中身](https://github.com/invest-ai-info/ai-tsukaikata)")
+    assert check_articles([article], TODAY, head=_ok) == []
+
+
+def test_our_own_broken_link_is_still_reported():
+    """checked を求めないだけで、死活の検査からは外さない。"""
+    article = _article("[このサイトの中身](https://github.com/invest-ai-info/ai-tsukaikata)")
+    problems = check_articles([article], TODAY, head=lambda url: 404)
+    assert any("404" in p for p in problems)
+
+
 def test_fresh_checked_date_is_quiet():
     article = _article("[公式](https://example.com/a)", checked=date(2026, 8, 1))
     assert check_articles([article], TODAY, head=_ok) == []
