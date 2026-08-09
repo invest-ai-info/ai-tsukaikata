@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="258" viewBox="0 0 720 258" role="img" aria-label="東京支店の月次売上12か月を数直線に並べた図。9月を除く11か月は44,800から61,200の間にかたまっていて、中央値は49,650。9月だけ482,000という誤入力が入っており、目盛りの外にあるため図には点として出ていない。その1つのせいで平均は50,609から86,558まで右へ動き、12か月のうち11か月が平均より下という状態になる。平均を基準に異常を探すと、この動いた平均が基準になってしまう。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="258"/>
+<text class="t-strong" x="18" y="26">誤入力が1つ入ると、平均はここまで動く</text>
+<text class="t-sm" x="18" y="45">東京の12か月。9月だけ 482,000（この目盛りの外）が入っている。</text>
+<line class="line" x1="371.2" y1="112" x2="371.2" y2="164"/>
+<line class="line" x1="559.4" y1="112" x2="559.4" y2="164"/>
+<text class="t-accent" x="309.2" y="102">中央値 49,650</text>
+<text class="t-bad" x="503.4" y="102">平均 86,558</text>
+<line class="line" x1="118" y1="152" x2="628" y2="152"/>
+<circle cx="346.5" cy="152" r="5" class="bar-out"/>
+<circle cx="349.0" cy="152" r="5" class="bar-out"/>
+<circle cx="354.1" cy="152" r="5" class="bar-out"/>
+<circle cx="356.7" cy="152" r="5" class="bar-out"/>
+<circle cx="358.2" cy="152" r="5" class="bar-out"/>
+<circle cx="368.9" cy="152" r="5" class="bar-out"/>
+<circle cx="373.5" cy="152" r="5" class="bar-out"/>
+<circle cx="380.1" cy="152" r="5" class="bar-out"/>
+<circle cx="401.6" cy="152" r="5" class="bar-out"/>
+<circle cx="418.4" cy="152" r="5" class="bar-out"/>
+<circle cx="430.1" cy="152" r="5" class="bar-out"/>
+<line class="line" x1="118.0" y1="152" x2="118.0" y2="159"/>
+<text class="t-xs" x="100.0" y="174">0</text>
+<line class="line" x1="373.0" y1="152" x2="373.0" y2="159"/>
+<text class="t-xs" x="355.0" y="174">50,000</text>
+<line class="line" x1="628.0" y1="152" x2="628.0" y2="159"/>
+<text class="t-xs" x="610.0" y="174">100,000</text>
+<text class="t-sm" x="18" y="138">9月以外の11か月</text>
+<text class="t" x="18" y="226">9月を除いた平均は 50,609。9月を入れると 86,558 まで動く。</text>
+<text class="t-bad" x="18" y="246">この結果、12か月のうち11か月が「平均より下」になる。</text>
+</svg>

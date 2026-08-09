@@ -1830,6 +1830,140 @@ def start_boundary_chart() -> None:
     )
 
 
+def table_anomaly_types_chart() -> None:
+    """表に混ざる異常の6種類と、目で見つかるかどうか。"""
+    rows = [
+        ("桁のミス", "他の月の10倍の数字が1つだけ入っている", "目で見つかる", False),
+        ("単位の混ざり", "1つの行だけ円、他の行は千円で入っている", "目で見つかる", False),
+        ("符号", "売上の列にマイナスの数字が混ざっている", "目で見つかる", False),
+        ("空欄", "1か月だけ何も入っていない", "目で見つかる", False),
+        ("合計欄のズレ", "合計欄と12か月の和が3,000だけ違う", "足し直すまで見えない", True),
+        ("行の重複", "同じ数字の行が別の名前で2つある", "足し直すまで見えない", True),
+    ]
+    box_x, box_w, box_h, gap_y = 18, 140, 52, 14
+    mid_x = box_x + box_w + 20
+    mid_w = 318
+    right_x = mid_x + mid_w + 20
+    top = 84
+    height = top + len(rows) * (box_h + gap_y) - gap_y + 44
+    assert right_x + 180 <= WIDTH - 18, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">表に混ざる異常は6種類。後ろの2つは見た目が普通</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "上の4つは数字そのものが目立つ。下の2つは1つ1つの数字が正常に見える。</text>\n",
+    ]
+    for index, (name, example, how, hidden) in enumerate(rows):
+        y = top + index * (box_h + gap_y)
+        mid = y + box_h / 2
+        name_cls = "box-bad" if hidden else "box-accent"
+        text_cls = "t-bad" if hidden else "t-accent"
+        parts.append(
+            f'<rect class="{name_cls}" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{box_x + 14}" y="{mid + 5:.0f}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{mid_x}" y="{y}" width="{mid_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{mid_x + 14}" y="{mid + 5:.0f}">{_esc(example)}</text>\n'
+        )
+        parts.append(
+            f'<text class="{"t-bad" if hidden else "t-sm"}" x="{right_x}" y="{mid + 5:.0f}">'
+            f"{_esc(how)}</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 下の2つは、セル1つだけを見ても異常に見えません。探す種類として名指しするまで出てきません。</text>\n"
+    )
+    alt = (
+        "表に混ざる異常を6種類に分けた図。桁のミス（他の月の10倍の数字が1つ）、"
+        "単位の混ざり（1つの行だけ円で他は千円）、符号（売上の列にマイナス）、"
+        "空欄（1か月だけ何も入っていない）の4つは、数字そのものが目立つので目で見つかる。"
+        "合計欄のズレ（合計欄と12か月の和が3,000違う）と行の重複（同じ数字の行が別の名前で2つある）の"
+        "2つは、1つ1つの数字が正常に見えるため、足し直すまで見えない。"
+        "この2つは探す種類として名指しするまで指摘に出てこない。"
+    )
+    (OUT / "table-anomaly-types.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def table_average_pulled_chart() -> None:
+    """誤入力が1つ混ざると平均がどこまで動くかを、数直線で見せる。"""
+    normal = [44800, 45300, 46300, 46800, 47100, 49200, 50100, 51400, 55600, 58900, 61200]
+    median = 49650
+    mean_with = 86558
+    mean_without = 50609
+    axis_max = 100000
+    left, right = 118, 628
+    span = right - left
+    axis_y = 152
+    height = 258
+
+    def x_of(value: int) -> float:
+        return left + span * value / axis_max
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">誤入力が1つ入ると、平均はここまで動く</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "東京の12か月。9月だけ 482,000（この目盛りの外）が入っている。</text>\n",
+    ]
+    # 平均・中央値の目印（縦線なので文字を貫かない）
+    parts.append(
+        f'<line class="line" x1="{x_of(median):.1f}" y1="112" '
+        f'x2="{x_of(median):.1f}" y2="{axis_y + 12}"/>\n'
+    )
+    parts.append(
+        f'<line class="line" x1="{x_of(mean_with):.1f}" y1="112" '
+        f'x2="{x_of(mean_with):.1f}" y2="{axis_y + 12}"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{x_of(median) - 62:.1f}" y="102">中央値 49,650</text>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{x_of(mean_with) - 56:.1f}" y="102">平均 86,558</text>\n'
+    )
+    # 数直線
+    parts.append(
+        f'<line class="line" x1="{left}" y1="{axis_y}" x2="{right}" y2="{axis_y}"/>\n'
+    )
+    for value in normal:
+        parts.append(
+            f'<circle cx="{x_of(value):.1f}" cy="{axis_y}" r="5" class="bar-out"/>\n'
+        )
+    for tick in (0, 50000, 100000):
+        tx = x_of(tick)
+        parts.append(
+            f'<line class="line" x1="{tx:.1f}" y1="{axis_y}" x2="{tx:.1f}" y2="{axis_y + 7}"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{tx - 18:.1f}" y="{axis_y + 22}">{tick:,}</text>\n'
+        )
+    parts.append(f'<text class="t-sm" x="18" y="{axis_y - 14}">9月以外の11か月</text>\n')
+    parts.append(
+        f'<text class="t" x="18" y="{height - 32}">'
+        f"9月を除いた平均は {mean_without:,}。9月を入れると {mean_with:,} まで動く。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 12}">'
+        "この結果、12か月のうち11か月が「平均より下」になる。</text>\n"
+    )
+    alt = (
+        "東京支店の月次売上12か月を数直線に並べた図。9月を除く11か月は44,800から61,200の間に"
+        "かたまっていて、中央値は49,650。9月だけ482,000という誤入力が入っており、"
+        "目盛りの外にあるため図には点として出ていない。"
+        "その1つのせいで平均は50,609から86,558まで右へ動き、"
+        "12か月のうち11か月が平均より下という状態になる。"
+        "平均を基準に異常を探すと、この動いた平均が基準になってしまう。"
+    )
+    (OUT / "table-average-pulled.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1862,4 +1996,6 @@ if __name__ == "__main__":
     scope_weight_chart()
     start_requirements_chart()
     start_boundary_chart()
-    print(f"31枚を {OUT} に出力しました")
+    table_anomaly_types_chart()
+    table_average_pulled_chart()
+    print(f"33枚を {OUT} に出力しました")
