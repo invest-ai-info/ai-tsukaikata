@@ -11,6 +11,11 @@
 | URL | 状態 | 拾った記述 |
 |---|---|---|
 | `https://docs.claude.com/en/docs/claude-code/setup` | 200（365,107字・dateModified 2026-07-28） | Claude Code のシステム要件と導入手順（下記） |
+
+⚠️ **上の1本目は、すでに `https://code.claude.com/docs/en/setup` へのリダイレクトだった**
+（2026-08-09 18:20 に実測。ページ自身が名乗る正式URLも移転先）。リダイレクトが効いているので
+週次の死活検査では鳴らない。**記事のリンクは移転先に直した。**
+🔑 これが「腐り方③＝URLが動く」の実例。**200が返ることと、そのURLが正式であることは別。**
 | `https://help.openai.com/en/articles/9982051` | 200（24,855字・Updated 9 days ago） | 「System Requirements: Windows 10 (x64 and arm64) version 17763.0 or higher」／Windowsアプリは**有料プラン限定**（Plus, Team, Edu, Enterprise）・Microsoft Store から |
 | `https://support.google.com/gemini/answer/13275745` | 200（768,691字） | 「To use gemini.google.com, you need access to a supported browser: Chrome, Safari, Firefox, Opera, or Edgium.」 |
 | `https://learn.microsoft.com/en-us/windows/release-health/release-information` | 200（85,154字） | 「Version 1809 (OS build 17763)」＝1809 と 17763 が同じものだと確認 |

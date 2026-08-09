@@ -139,7 +139,7 @@ irm https://claude.ai/install.ps1 | iex
 
 なお公式は、Windows では **Git for Windows** も入れておくことを勧めています。無くても動きますが、その場合 Claude Code は PowerShell を使って作業します。
 
-Mac の手順は、[公式のセットアップ手順](https://docs.claude.com/en/docs/claude-code/setup) に書かれています。**このページでは扱いません**——手元に Mac が無く、確かめていない手順を「こうです」と書くわけにはいかないからです。
+Mac の手順は、[公式のセットアップ手順](https://code.claude.com/docs/en/setup) に書かれています。**このページでは扱いません**——手元に Mac が無く、確かめていない手順を「こうです」と書くわけにはいかないからです。
 
 <mark class="warn">Claude Code だけは有料プランが要ります。</mark>ブラウザ版の3つと違い、無料では使えません。
 
