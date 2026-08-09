@@ -263,3 +263,14 @@ def test_checked_date_is_shown_on_the_page():
 def test_no_checked_note_when_the_date_is_missing():
     html = render_site([_article(slug="start", category="pages")])["start/index.html"]
     assert "checked-note" not in html
+
+
+def test_start_guide_appears_on_the_top_page_when_it_exists():
+    html = render_site([_article(slug="start", category="pages")])["index.html"]
+    assert 'href="/start/"' in html
+
+
+def test_no_start_link_when_the_guide_is_missing():
+    """記事が無いのにリンクを出すとリンク切れになる（既存の nav と同じ考え方）。"""
+    html = render_site([_article(slug="about", category="pages")])["index.html"]
+    assert 'href="/start/"' not in html
