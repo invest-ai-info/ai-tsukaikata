@@ -251,3 +251,15 @@ def test_article_without_scene_still_renders():
 def test_article_page_breadcrumb_has_scene():
     pages = render_site([_article(slug="a", scene="work")])
     assert 'href="/scenes/work/"' in pages["recipes/a/index.html"]
+
+
+def test_checked_date_is_shown_on_the_page():
+    article = _article(slug="start", category="pages", checked=date(2026, 8, 9))
+    html = render_site([article])["start/index.html"]
+    assert "2026年8月9日" in html
+    assert "確認" in html
+
+
+def test_no_checked_note_when_the_date_is_missing():
+    html = render_site([_article(slug="start", category="pages")])["start/index.html"]
+    assert "checked-note" not in html
