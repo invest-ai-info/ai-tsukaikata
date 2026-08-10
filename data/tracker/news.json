@@ -57,6 +57,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-08-10T19:19:14.523366+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Meet GPT-5.6-Cyber, OpenAI’s cybersecurity-specific model available through Daybreak Red for authorized vulnerability research, exploit validation, and security testing.",
+      "summary_ja": "OpenAIがセキュリティ専用AIを発表\n「GPT-5.6-Cyber」として提供されます\n脆弱性調査やセキュリティテストに利用可能",
+      "summary_source": "gemini",
+      "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
+      "uid": "7d5dc772904479c1",
+      "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-10T17:11:21.526374+00:00",
       "importance": "minor",
       "label": "OpenAI News",
