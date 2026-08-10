@@ -6,7 +6,7 @@
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
-    "claude-code": "2026-08-08T02:48:05+00:00",
+    "claude-code": "2026-08-10T22:56:53+00:00",
     "deepmind-blog": "2026-08-06T15:06:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-10T14:30:00+00:00",
@@ -19,7 +19,41 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-09T23:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-10T22:56:53+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage c…",
+      "title": "v2.1.227",
+      "uid": "85d495635b1d1874",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
+      "title": "How Zapier transformed core marketing processes with ChatGPT Work",
+      "uid": "c4a0ef8d3542dfce",
+      "url": "https://openai.com/index/zapier",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
+      "title": "Virgin Atlantic sharpens customer journeys with ChatGPT Work",
+      "uid": "4831eb0f4620e41c",
+      "url": "https://openai.com/index/virgin-atlantic/chatgpt-work",
+      "vendor": "OpenAI"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
@@ -150,6 +184,7 @@
     "46cc615752e5cc9a": "2026-08-01T12:16:42.309603+00:00",
     "4711ce4bf5c6c20c": "2026-08-01T12:16:42.309603+00:00",
     "4749e7d8a5f00671": "2026-08-01T12:16:42.309603+00:00",
+    "4831eb0f4620e41c": "2026-08-10T23:52:14.190919+00:00",
     "4853f3433bc25365": "2026-08-04T11:04:53.115730+00:00",
     "489cfa8978beb818": "2026-08-04T11:04:53.115730+00:00",
     "4a35357ef9cff73f": "2026-08-01T12:16:42.309603+00:00",
@@ -239,6 +274,7 @@
     "8430607b418fddd3": "2026-08-01T12:16:42.309603+00:00",
     "851445250326a908": "2026-08-01T12:16:42.309603+00:00",
     "853efa6073abd1f7": "2026-08-01T12:16:42.309603+00:00",
+    "85d495635b1d1874": "2026-08-10T23:52:14.190919+00:00",
     "872850c6d4927a61": "2026-08-01T12:16:42.309603+00:00",
     "875451fe27a98aba": "2026-08-04T11:04:53.115730+00:00",
     "876b71e6fe613e7a": "2026-08-01T12:16:42.309603+00:00",
@@ -338,6 +374,7 @@
     "c1056fd00c0b4379": "2026-08-01T12:16:42.309603+00:00",
     "c1e1787b9808b3a2": "2026-08-01T12:16:42.309603+00:00",
     "c48934e22b87504b": "2026-08-04T11:04:53.115730+00:00",
+    "c4a0ef8d3542dfce": "2026-08-10T23:52:14.190919+00:00",
     "c51ea358c8051b79": "2026-08-01T12:16:42.309603+00:00",
     "c5d31b0c68aa13d8": "2026-08-01T12:16:42.309603+00:00",
     "c8af84ddd44ed6b7": "2026-08-01T12:16:42.309603+00:00",

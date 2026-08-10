@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-10T23:52:14.190919+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-10T22:56:53+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage c…",
+      "title": "v2.1.227",
+      "uid": "85d495635b1d1874",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-10T17:11:21.526374+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -82,6 +94,34 @@
       "title": "Premium seats are coming to ChatGPT Business",
       "uid": "d9de7eb95547aa28",
       "url": "https://openai.com/index/premium-seats-chatgpt-business",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-10T23:52:14.190919+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
+      "summary_ja": "Zapierがマーケティング業務を効率化した\nビジネス向けChatGPTを使い、見込み客の離脱を減らした\nキャンペーン素材作成や報告業務も自動化",
+      "summary_source": "gemini",
+      "title": "How Zapier transformed core marketing processes with ChatGPT Work",
+      "uid": "c4a0ef8d3542dfce",
+      "url": "https://openai.com/index/zapier",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-10T23:52:14.190919+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
+      "summary_ja": "Virgin Atlanticが業務効率を上げた\nビジネス向けChatGPTで調査や製品計画を加速\n意思決定も早まり、顧客体験の連携も強化",
+      "summary_source": "gemini",
+      "title": "Virgin Atlantic sharpens customer journeys with ChatGPT Work",
+      "uid": "4831eb0f4620e41c",
+      "url": "https://openai.com/index/virgin-atlantic/chatgpt-work",
       "vendor": "OpenAI"
     },
     {
