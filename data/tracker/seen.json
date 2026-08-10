@@ -6,10 +6,10 @@
     "claude-code": "2026-08-08T02:48:05+00:00",
     "deepmind-blog": "2026-08-06T15:06:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-08-04T13:00:00+00:00",
+    "google-ai-blog": "2026-08-10T14:30:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-10T12:00:00+00:00",
+    "openai-news": "2026-08-10T14:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -38,6 +38,28 @@
       "uid": "63a2a604aa8ceaa6",
       "url": "https://openai.com/index/model-ml",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T14:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI sent Governor Greg Abbott a letter outlining its commitment to responsible AI infrastructure in Texas. The letter supports reliable, transparent growth that benefits Texans.",
+      "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
+      "uid": "221573987082c0d7",
+      "url": "https://openai.com/index/responsible-ai-infrastructure-texas",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-10T14:30:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Advisor UI in Google Ads and Google Analytics",
+      "title": "Evolve your marketing with new AI tools",
+      "uid": "342078cd534cadb7",
+      "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -97,6 +119,7 @@
     "21b197e450f44243": "2026-08-01T12:16:42.309603+00:00",
     "2200288597890194": "2026-08-01T12:16:42.309603+00:00",
     "2200aa40884d03b8": "2026-08-01T12:16:42.309603+00:00",
+    "221573987082c0d7": "2026-08-10T15:18:38.240078+00:00",
     "229710cf3e6a98f1": "2026-08-01T12:16:42.309603+00:00",
     "22b238993e072940": "2026-08-01T12:16:42.309603+00:00",
     "22bf12b402da1696": "2026-08-01T12:16:42.309603+00:00",
@@ -139,6 +162,7 @@
     "332ee0d179f1027c": "2026-08-01T12:16:42.309603+00:00",
     "3354062cd5ba6f95": "2026-08-01T12:16:42.309603+00:00",
     "33ee2bbfeb022426": "2026-08-01T12:16:42.309603+00:00",
+    "342078cd534cadb7": "2026-08-10T15:18:38.240078+00:00",
     "34614f01d31fcba6": "2026-08-01T12:16:42.309603+00:00",
     "34868f82e838f73a": "2026-08-01T12:16:42.309603+00:00",
     "35f471c92620f131": "2026-08-01T12:16:42.309603+00:00",
