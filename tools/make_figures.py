@@ -1964,6 +1964,65 @@ def table_average_pulled_chart() -> None:
     )
 
 
+def tool_only_here_chart() -> None:
+    """4社の公式ページで、1社しか書いていなかったもの。
+
+    ⚠️ 「他社にできない」ではなく「調べた範囲で1社しか書いていない」。
+    他社が黙っているだけかもしれないし、来月には並ぶ。日付が本体。
+    出典＝x.ai/grok・claude.com/product/claude-code・gemini.google/overview/・
+    help.openai.com（2026-08-10 に各社の公式ページで確認）。
+    """
+    rows = [
+        ("ChatGPT", "会議やメモを録音して、そのまま要約させる",
+         "公式ヘルプに「ChatGPT Record」の項目がある"),
+        ("Claude", "手元のパソコンのファイルを直接書き換えさせる",
+         "ターミナル・VS Code・Slack から動く（Claude Code）"),
+        ("Gemini", "音楽をつくる／Gmail やドライブの中身を読ませる",
+         "公式の「できること」に音楽生成と Workspace 連携が並ぶ"),
+        ("Grok", "X（旧Twitter）で、いま起きていることを読ませる",
+         "同じ会社が X を持っている"),
+    ]
+    top, row_h, box_h = 96, 76, 64
+    height = top + len(rows) * row_h + 44
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "4社のうち、1社しか書いていなかったこと</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "2026年8月10日に、各社の公式ページで確認できた範囲です。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「他社にはできない」ではありません。書いていないだけかもしれず、来月には並びます。</text>\n",
+    ]
+    for index, (name, what, why) in enumerate(rows):
+        y = top + index * row_h
+        parts.append(
+            f'<rect class="box-accent" x="18" y="{y}" '
+            f'width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="32" y="{y + 26}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t" x="190" y="{y + 26}">{_esc(what)}</text>\n')
+        parts.append(f'<text class="t-sm" x="190" y="{y + 48}">{_esc(why)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 4社とも、文章・画像・ウェブ検索・音声はどれもできます。違いはその外側に出ます。</text>\n"
+    )
+    alt = (
+        "4つのAIツールについて、2026年8月10日に各社の公式ページで確認した範囲で、"
+        "1社しか書いていなかった機能を並べた図。"
+        "ChatGPT は会議やメモを録音してそのまま要約させること（公式ヘルプに ChatGPT Record の項目がある）。"
+        "Claude は手元のパソコンのファイルを直接書き換えさせること"
+        "（ターミナル・VS Code・Slack から動く Claude Code）。"
+        "Gemini は音楽をつくることと、Gmail やドライブの中身を読ませること"
+        "（公式のできること一覧に音楽生成と Workspace 連携が並ぶ）。"
+        "Grok は X（旧Twitter）でいま起きていることを読ませること（同じ会社が X を持っている）。"
+        "これは他社にできないという意味ではなく、書いていないだけかもしれず、来月には並ぶ。"
+        "4社とも文章・画像・ウェブ検索・音声はどれもできる。"
+    )
+    (OUT / "tool-only-here.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -1998,4 +2057,5 @@ if __name__ == "__main__":
     start_boundary_chart()
     table_anomaly_types_chart()
     table_average_pulled_chart()
-    print(f"33枚を {OUT} に出力しました")
+    tool_only_here_chart()
+    print(f"34枚を {OUT} に出力しました")
