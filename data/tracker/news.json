@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-10T17:11:21.526374+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI.",
+      "summary_ja": "OpenAIのCFOがAI活用経理の教訓を共有\n経理にAIを組み込む5つの教訓を紹介\n自動予測や管理強化、投資効果など具体的に",
+      "summary_source": "gemini",
+      "title": "What building an AI-native finance function taught me",
+      "uid": "9f9b8cbc0990a835",
+      "url": "https://openai.com/index/building-an-ai-native-finance-function",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-10T15:18:38.240078+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -40,6 +54,20 @@
       "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
       "uid": "63a2a604aa8ceaa6",
       "url": "https://openai.com/index/model-ml",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-10T17:11:21.526374+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
+      "summary_ja": "ChatGPTビジネス版に上位プランが登場\n8月20日までの契約で100ドルの割引\nチームでより多くの利用が可能に",
+      "summary_source": "gemini",
+      "title": "Premium seats are coming to ChatGPT Business",
+      "uid": "d9de7eb95547aa28",
+      "url": "https://openai.com/index/premium-seats-chatgpt-business",
       "vendor": "OpenAI"
     },
     {
@@ -208,6 +236,34 @@
       "title": "From asking to doing: How the world is putting ChatGPT to work",
       "uid": "5a7f04ad895f9075",
       "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-10T17:11:21.526374+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-05T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
+      "summary_ja": "OpenAIの最先端AIがサイバー対策に活用される\n承認されたDaybreak提携企業が利用可能に\n顧客向けに監視下のサービスを提供開始",
+      "summary_source": "gemini",
+      "title": "Putting frontier cyber models in more trusted hands",
+      "uid": "afc8bc0e69c75b22",
+      "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-10T17:11:21.526374+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-08-05T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Frontier cyber models for defenders, from broad defensive work to advanced security research.",
+      "summary_ja": "サイバー対策AI「GPT-Daybreak」を発表\n防衛者向けに高度なAIモデルを提供\n幅広い対策から高度な研究までを支援",
+      "summary_source": "gemini",
+      "title": "Introducing GPT-Daybreak to accelerate defenders",
+      "uid": "a6760b940fd45ef8",
+      "url": "https://openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy",
       "vendor": "OpenAI"
     },
     {

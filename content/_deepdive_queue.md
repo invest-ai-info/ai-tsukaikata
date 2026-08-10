@@ -153,6 +153,9 @@
     ⚠️ OpenAI の料金表は「短い入力／長い入力」の2段だが、**境目のトークン数がページに書かれていない**。
     記事には「公表されていない」と明記した。埋めたくなっても推測で書かないこと。
 
+- [ ] https://openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy
+  - 2026-08-10 自動追記（major・OpenAI「Introducing GPT-Daybreak to accelerate defenders」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/ → content/_draft-gemini-3-6-flash.md（2026-08-05）

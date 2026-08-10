@@ -1,4 +1,7 @@
 {
+  "deepdive_queued": {
+    "a6760b940fd45ef8": "2026-08-10"
+  },
   "failures": {},
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
@@ -9,7 +12,7 @@
     "google-ai-blog": "2026-08-10T14:30:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-10T14:00:00+00:00",
+    "openai-news": "2026-08-10T17:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -60,6 +63,39 @@
       "uid": "342078cd534cadb7",
       "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI.",
+      "title": "What building an AI-native finance function taught me",
+      "uid": "9f9b8cbc0990a835",
+      "url": "https://openai.com/index/building-an-ai-native-finance-function",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
+      "title": "Premium seats are coming to ChatGPT Business",
+      "uid": "d9de7eb95547aa28",
+      "url": "https://openai.com/index/premium-seats-chatgpt-business",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-05T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
+      "title": "Putting frontier cyber models in more trusted hands",
+      "uid": "afc8bc0e69c75b22",
+      "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -327,6 +363,7 @@
     "9b219e49ce105aee": "2026-08-01T12:16:42.309603+00:00",
     "9e5320c065227a44": "2026-08-01T12:16:42.309603+00:00",
     "9f50c32afd5adfdf": "2026-08-04T06:42:56.075482+00:00",
+    "9f9b8cbc0990a835": "2026-08-10T17:11:21.526374+00:00",
     "a1d68b672d017794": "2026-08-01T12:16:42.309603+00:00",
     "a21a4a50aa103b6e": "2026-08-01T12:16:42.309603+00:00",
     "a24f8c5763daf39c": "2026-08-01T12:16:42.309603+00:00",
@@ -338,6 +375,7 @@
     "a45b32194abb2c90": "2026-08-01T12:16:42.309603+00:00",
     "a45be18d406b833f": "2026-08-04T11:04:53.115730+00:00",
     "a5de3e10035f4888": "2026-08-01T12:16:42.309603+00:00",
+    "a6760b940fd45ef8": "2026-08-10T17:11:21.526374+00:00",
     "a67927a331d4d07a": "2026-08-01T12:16:42.309603+00:00",
     "a72dcc278554c328": "2026-08-01T12:16:42.309603+00:00",
     "a73523e68eb3461f": "2026-08-01T12:16:42.309603+00:00",
@@ -350,6 +388,7 @@
     "ab62a10dc838a618": "2026-08-01T12:16:42.309603+00:00",
     "ac1d5f8d73018e0b": "2026-08-01T12:16:42.309603+00:00",
     "afb0505d5cc0bccb": "2026-08-01T12:16:42.309603+00:00",
+    "afc8bc0e69c75b22": "2026-08-10T17:11:21.526374+00:00",
     "b0dc27f61b025147": "2026-08-01T12:16:42.309603+00:00",
     "b0e1cf75b723ed62": "2026-08-01T12:16:42.309603+00:00",
     "b13341319837fb3b": "2026-08-01T12:16:42.309603+00:00",
@@ -413,6 +452,7 @@
     "d84b42d0d5feeeb4": "2026-08-01T12:16:42.309603+00:00",
     "d8cc34f5bb6df456": "2026-08-07T17:10:40.287447+00:00",
     "d9b9783de65b0390": "2026-08-01T12:16:42.309603+00:00",
+    "d9de7eb95547aa28": "2026-08-10T17:11:21.526374+00:00",
     "da55c48d7516d3a5": "2026-08-01T12:16:42.309603+00:00",
     "db09d9b0c67a4180": "2026-08-01T12:16:42.309603+00:00",
     "dc0ad20d81d4604e": "2026-08-07T09:17:20.213476+00:00",
