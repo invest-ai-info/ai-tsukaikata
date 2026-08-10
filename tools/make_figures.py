@@ -2023,6 +2023,141 @@ def tool_only_here_chart() -> None:
     )
 
 
+def translate_hidden_issues_chart() -> None:
+    """訳文だけを見ても気づけない返りを5種類に分けて並べる。
+
+    右列は「原文と突き合わせないと見えないか」。5つのうち4つが見えない側に入る
+    ＝訳文の日本語を読む検査では素通りする、というのがこの図の主張。
+    """
+    rows = [
+        ("用語の揺れ", "workspace と work area が別の日本語になる", True),
+        ("足された助言", "原文に無い「おすすめします」が1文増える", True),
+        ("日付の断定", "3/4/2026 を確認せずに1つの日付に決める", True),
+        ("時差の換算", "9:00 AM PT の換算が1時間ずれる", True),
+        ("文体の混在", "です・ます体と体言止めが混ざる", False),
+    ]
+    pad = 18
+    name_w, mid_w, gap = 132, 330, 16
+    box_h, gap_y = 46, 12
+    name_x = pad
+    mid_x = name_x + name_w + gap
+    right_x = mid_x + mid_w + gap
+    top = 84
+    height = top + len(rows) * (box_h + gap_y) - gap_y + 42
+    assert right_x + 150 <= WIDTH - pad, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "訳したあとに残るものは、5つのうち4つが訳文からは見えない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "日本語として読みやすいかを確かめても素通りします。原文と並べないと出てきません。</text>\n",
+    ]
+    for index, (name, example, hidden) in enumerate(rows):
+        y = top + index * (box_h + gap_y)
+        mid = y + box_h / 2 + 5
+        parts.append(
+            f'<rect class="{"box-bad" if hidden else "box-accent"}" x="{name_x}" y="{y}" '
+            f'width="{name_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-bad" if hidden else "t-accent"}" x="{name_x + 14}" '
+            f'y="{mid:.0f}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{mid_x}" y="{y}" '
+            f'width="{mid_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{mid_x + 14}" y="{mid:.0f}">{_esc(example)}</text>\n'
+        )
+        parts.append(
+            f'<text class="{"t-bad" if hidden else "t-sm"}" x="{right_x}" y="{mid:.0f}">'
+            f'{"訳文からは見えない" if hidden else "読めば気づく"}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 上の4つは、訳文だけが手元にある人には見つけられません。原文を持っている人が確かめる作業です。</text>\n"
+    )
+    alt = (
+        "訳したあとに残る問題を5種類に分けた図。"
+        "用語の揺れ（workspace と work area が別の日本語になる）、"
+        "足された助言（原文に無い「おすすめします」が1文増える）、"
+        "日付の断定（3/4/2026 を確認せずに1つの日付に決める）、"
+        "時差の換算（9:00 AM PT の換算が1時間ずれる）の4つは、"
+        "訳文だけを読んでも見えない。"
+        "文体の混在（です・ます体と体言止めが混ざる）だけは読めば気づく。"
+        "上の4つは訳文だけが手元にある人には見つけられず、原文を持っている人が確かめる作業になる。"
+    )
+    (OUT / "translate-hidden-issues.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def translate_three_steps_chart() -> None:
+    """訳す前・訳すとき・訳したあとで、それぞれ何を指定するか。"""
+    columns = [
+        ("訳す前に決める", ["揺れる言葉を表にする", "訳さない語を決める", "文体を1つに決める"], "box-accent", "t-accent"),
+        ("訳すときに縛る", ["原文に無いことを足さない", "迷ったら訳さず報告する", "段落に番号を振る"], "box", "t-strong"),
+        ("訳したあとに測る", ["数字を並べて突き合わせる", "用語表どおりか確かめる", "原文に無い文を探させる"], "box-good", "t-good"),
+    ]
+    pad, gap = 18, 16
+    col_w = (WIDTH - pad * 2 - gap * (len(columns) - 1)) // len(columns)
+    head_y, first_y, row_h = 88, 122, 30
+    rows = max(len(items) for _, items, _, _ in columns)
+    box_h = 34 + rows * row_h
+    band_y, band_h = head_y - 22 + box_h + 20, 54
+    height = band_y + band_h + 34
+    assert pad + len(columns) * col_w + (len(columns) - 1) * gap <= WIDTH - pad
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "指定する場所は3つに分かれる。前の1つを飛ばすと、直しが全文に及ぶ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "用語と文体は、訳し終わってから直すと全部の段落を触ることになります。</text>\n",
+    ]
+    for index, (title, items, box_cls, text_cls) in enumerate(columns):
+        x = pad + index * (col_w + gap)
+        parts.append(
+            f'<rect class="{box_cls}" x="{x}" y="{head_y - 22}" '
+            f'width="{col_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{x + 14}" y="{head_y}">{_esc(title)}</text>\n'
+        )
+        for row, item in enumerate(items):
+            parts.append(
+                f'<text class="t" x="{x + 14}" y="{first_y + row * row_h}">{_esc(item)}</text>\n'
+            )
+    parts.append(
+        f'<rect class="box-quiet" x="{pad}" y="{band_y}" '
+        f'width="{WIDTH - pad * 2}" height="{band_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t" x="{pad + 14}" y="{band_y + 22}">'
+        "左の3つは、訳す前なら1回書けば全文に効きます。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="{pad + 14}" y="{band_y + 42}">'
+        "右の3つは、原文と訳文の両方を渡さないとできません。訳文だけを渡しても答えは返りません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 真ん中の「段落に番号を振る」は、右の突き合わせを機械的にするための下ごしらえです。</text>\n"
+    )
+    alt = (
+        "翻訳をAIに頼むときの指定を、3つの場所に分けた図。"
+        "訳す前に決めるのは、揺れる言葉を表にする・訳さない語を決める・文体を1つに決める、の3つ。"
+        "訳すときに縛るのは、原文に無いことを足さない・迷ったら訳さず報告する・段落に番号を振る、の3つ。"
+        "訳したあとに測るのは、数字を並べて突き合わせる・用語表どおりか確かめる・原文に無い文を探させる、の3つ。"
+        "左の3つは訳す前なら1回書けば全文に効く。"
+        "右の3つは原文と訳文の両方を渡さないとできず、訳文だけを渡しても答えは返らない。"
+        "真ん中の段落に番号を振る指定は、右の突き合わせを機械的にするための下ごしらえ。"
+    )
+    (OUT / "translate-three-steps.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -2058,4 +2193,6 @@ if __name__ == "__main__":
     table_anomaly_types_chart()
     table_average_pulled_chart()
     tool_only_here_chart()
-    print(f"34枚を {OUT} に出力しました")
+    translate_hidden_issues_chart()
+    translate_three_steps_chart()
+    print(f"36枚を {OUT} に出力しました")
