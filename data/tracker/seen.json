@@ -9,7 +9,7 @@
     "google-ai-blog": "2026-08-04T13:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-07T15:20:00+00:00",
+    "openai-news": "2026-08-10T12:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -27,6 +27,17 @@
       "uid": "1ed84fe2de2797eb",
       "url": "/fugu-gemma4/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks.",
+      "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
+      "uid": "63a2a604aa8ceaa6",
+      "url": "https://openai.com/index/model-ml",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -195,6 +206,7 @@
     "619a89442fdb0b84": "2026-08-01T12:16:42.309603+00:00",
     "62f49d80d26acfec": "2026-08-01T12:16:42.309603+00:00",
     "6343efa02f30d00e": "2026-08-01T12:16:42.309603+00:00",
+    "63a2a604aa8ceaa6": "2026-08-10T13:47:18.672255+00:00",
     "647bb8a31f3ef8f9": "2026-08-01T12:16:42.309603+00:00",
     "65349b4475cfcb5e": "2026-08-01T12:16:42.309603+00:00",
     "657f2eee0dd348c9": "2026-08-01T12:16:42.309603+00:00",

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-10T13:47:18.672255+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-10T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks.",
+      "summary_ja": "Model MLがGPT-5.6 Solで財務業務を効率化\n調査・分析からPowerPointやExcel作成まで\n資料は編集や履歴の追跡が可能となる",
+      "summary_source": "gemini",
+      "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
+      "uid": "63a2a604aa8ceaa6",
+      "url": "https://openai.com/index/model-ml",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-09T23:48:59.918712+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",
