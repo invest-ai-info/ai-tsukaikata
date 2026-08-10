@@ -153,8 +153,61 @@
     ⚠️ OpenAI の料金表は「短い入力／長い入力」の2段だが、**境目のトークン数がページに書かれていない**。
     記事には「公表されていない」と明記した。埋めたくなっても推測で書かないこと。
 
-- [ ] https://openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy
+- [!] https://openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy
   - 2026-08-10 自動追記（major・OpenAI「Introducing GPT-Daybreak to accelerate defenders」）
+  - **2026-08-10 1回目: 下書きを作らずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
+
+    **① `openai.com` の HTMLページは今日も全部 403（Cloudflare の bot 判定）**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy/`（スラッシュ有り） | **403**・9,863バイト |
+    | 同（スラッシュ無し） | **403**・9,860バイト |
+    | `openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows` | **403**・9,881バイト |
+    | `openai.com/news/` | **403**・9,652バイト |
+    | `openai.com/news/rss.xml` | **200**・683,292バイト（1,123 item） |
+    | `developers.openai.com/api/docs/models` | **200**・343,339バイト |
+    | `developers.openai.com/api/docs/pricing` | **200**・542,564バイト |
+
+    - 応答ヘッダは前回と同じ **`cf-mitigated: challenge`** ＋ `server: cloudflare`。⚠️**先方のbot判定であって
+      経路（許可リスト）の遮断ではない。許可リストに足しても直らない。**切り分けの根拠＝同じ `openai.com` の
+      RSS が 200 で返り、`developers.openai.com` も 200 で返っていること。**UA偽装での迂回はしない。**
+    - WebFetch でも同じく HTTP 403。**2026-08-05 の GPT-Live の件から5日たっても戻っていない**
+      （＝「時間帯やegressのIP評価で戻る」ことは、少なくとも2回連続で起きなかった）。
+    - 💡 **次に `openai.com/index/...` のURLがキューに入ったときは、まずここを見ること。**先方の判定が続く限り、
+      OpenAI の発表本文はこの環境から読めない。読めるのは RSS の `<description>` 1文と `developers.openai.com` だけ。
+
+    **② そもそも、このURLは今のRSSに存在しない（ページが消えたか改名された可能性が高い）**
+
+    - 現在の `openai.com/news/rss.xml`（1,123 item）に `accelerating-defenders-with-gpt-daybreak-legacy` は**1件も無い**。
+      スラッグの末尾が `-legacy` なので、**改名前の旧URLが一時的にフィードに出ていた**と考えるのが自然。
+    - トラッカーの記録（`data/tracker/news.json`）＝ `first_seen` 2026-08-10T17:11Z ／ `published` 2026-08-05T10:00Z ／
+      title「Introducing GPT-Daybreak to accelerate defenders」／ importance major。
+    - **今のフィードにある Daybreak 関連（次に狙うならこちら）**
+      - 「Expanding Daybreak as the Cyber Defense Window Narrows」Mon, 10 Aug 2026 10:00 GMT
+        → `openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows`
+        description＝`Meet GPT-5.6-Cyber, OpenAI's cybersecurity-specific model available through Daybreak Red for authorized vulnerability research, exploit validation, and security testing.`
+      - 「Putting frontier cyber models in more trusted hands」Mon, 10 Aug 2026 10:00 GMT
+        （⚠️ トラッカーは `published` 2026-08-05 で記録していた。**フィード側の pubDate が動いている**）
+      - 「Responding to the next frontier of critical cyber capabilities」Fri, 07 Aug 2026 15:20 GMT
+      - 「Daybreak: Tools for securing every organization in the world」「Patch the Planet」いずれも 2026-06-22
+    - ⚠️ ただし後継URLも `openai.com` なので**①のbot判定で本文は読めない**。①が解けるまで、この題材は書けない。
+
+    **③ 到達できた一次情報（`developers.openai.com` 実測・生の行をそのまま写す）**
+
+    ⚠️ **記事には使っていない。**書くときは必ずページを開き直して、その数字がそこに在ることを確かめること。
+
+    - `/api/docs/models` の Specialized models に **OpenAI Daybreak（"Frontier cyber models for defenders"）**の節が実在。
+      中身は3つで、**説明文1行だけ。コンテキスト長・最大出力・学習データの締め切りはどれも記載が無い**。
+      - `GPT-5.6 Cyber` = "Our most advanced cybersecurity model for authorized vulnerability research and security testing."
+      - `Daybreak Red` = "An alias for advanced cybersecurity models for authorized vulnerability research and security testing."
+      - `Daybreak Blue` = "An alias for frontier general-purpose models with safeguards for defensive cybersecurity work."
+    - `/api/docs/pricing` に **「Cyber models / Our latest Daybreak models. Prices per 1M tokens.」の表**が実在。
+      見出しは Short context / Long context の8列（Input / Cached input / Cache writes / Output ×2）。生の行:
+      - `gpt-5.6-sol   $5.00 $0.50 $6.25 $30.00   $10.00 $1.00 $12.50 $45.00`
+      - `gpt-5.6-cyber $12.50 $1.25 $15.625 $75.00   - - - -` ← **長い入力の4列は全部ハイフン**
+    - → 料金と位置づけだけなら書ける。**が、発表本文（何ができるようになったか・誰に提供されるか・制限）が
+      読めないので、記事の軸が立たない。**二次情報で埋めるくらいなら書かない（GPT-Live と同じ判断）。
 
 ## 処理済み
 
