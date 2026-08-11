@@ -41,6 +41,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-08-11T22:07:19.519079+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-08-11T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
+      "summary_ja": "Daybreakのサイバーセキュリティ機能がAWSで利用可能に\nOpenAIとAWSがAmazon Bedrockを通じて提供\n企業のセキュリティ業務を支援します",
+      "summary_source": "gemini",
+      "title": "Daybreak models are now available on AWS",
+      "uid": "55beddbfd09c1a07",
+      "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-10T23:52:14.190919+00:00",
       "importance": "minor",
       "label": "Claude Code",

@@ -209,6 +209,9 @@
     - → 料金と位置づけだけなら書ける。**が、発表本文（何ができるようになったか・誰に提供されるか・制限）が
       読めないので、記事の軸が立たない。**二次情報で埋めるくらいなら書かない（GPT-Live と同じ判断）。
 
+- [ ] https://openai.com/index/daybreak-models-are-now-available-on-aws
+  - 2026-08-11 自動追記（major・OpenAI「Daybreak models are now available on AWS」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/ → content/_draft-gemini-3-6-flash.md（2026-08-05）
