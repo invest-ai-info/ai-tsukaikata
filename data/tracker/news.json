@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-11T17:14:43.158523+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-11T17:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "AMIE promotional video",
+      "summary_ja": "医療AI「AMIE」が動画での遠隔診療を実演\n世界初の研究としてリアルタイムの相談が可能に",
+      "summary_source": "gemini",
+      "title": "AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.",
+      "uid": "ed00016dbf571254",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-08-11T17:14:43.158523+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-11T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
+      "summary_ja": "ChatGPTで広告のテスト運用が始まった\n無料利用の維持を目的としてOpenAIが開始\n広告は明確に表示されプライバシーも保護される",
+      "summary_source": "gemini",
+      "title": "Testing ads in ChatGPT",
+      "uid": "88604715e73f2ef3",
+      "url": "https://openai.com/index/testing-ads-in-chatgpt",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-10T23:52:14.190919+00:00",
       "importance": "minor",
       "label": "Claude Code",

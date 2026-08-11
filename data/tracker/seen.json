@@ -9,10 +9,10 @@
     "claude-code": "2026-08-10T22:56:53+00:00",
     "deepmind-blog": "2026-08-06T15:06:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-08-10T14:30:00+00:00",
+    "google-ai-blog": "2026-08-11T17:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-10T17:00:00+00:00",
+    "openai-news": "2026-08-11T10:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
@@ -52,6 +52,28 @@
       "uid": "4831eb0f4620e41c",
       "url": "https://openai.com/index/virgin-atlantic/chatgpt-work",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-11T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
+      "title": "Testing ads in ChatGPT",
+      "uid": "88604715e73f2ef3",
+      "url": "https://openai.com/index/testing-ads-in-chatgpt",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-11T17:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "AMIE promotional video",
+      "title": "AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.",
+      "uid": "ed00016dbf571254",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -279,6 +301,7 @@
     "875451fe27a98aba": "2026-08-04T11:04:53.115730+00:00",
     "876b71e6fe613e7a": "2026-08-01T12:16:42.309603+00:00",
     "878e074db4fa320c": "2026-08-01T12:16:42.309603+00:00",
+    "88604715e73f2ef3": "2026-08-11T17:14:43.158523+00:00",
     "88d87ad5c86e5ab7": "2026-08-01T12:16:42.309603+00:00",
     "899a69d6b69d8b0a": "2026-08-04T11:04:53.115730+00:00",
     "89be39b6a8da723f": "2026-08-01T12:16:42.309603+00:00",
@@ -441,6 +464,7 @@
     "ea275c28714596ce": "2026-08-01T12:16:42.309603+00:00",
     "ec9009e847c8684e": "2026-08-03T04:02:09.411555+00:00",
     "ecf4d4206eb91af8": "2026-08-02T11:35:58.106550+00:00",
+    "ed00016dbf571254": "2026-08-11T17:14:43.158523+00:00",
     "ed6c0bdf6b9515e4": "2026-08-01T12:16:42.309603+00:00",
     "ed717fc91eed3a49": "2026-08-01T12:16:42.309603+00:00",
     "ee5324cacb6dfd4d": "2026-08-01T12:16:42.309603+00:00",
