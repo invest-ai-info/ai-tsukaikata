@@ -2738,6 +2738,175 @@ def summary_length_vs_keep_chart() -> None:
     )
 
 
+def files_naive_outcome_chart() -> None:
+    """「このファイル一覧を整理して」だけで頼んだとき、45件がどこへ行ったか。
+
+    実測（2026-08-11・架空の散らかったフォルダ45件）。
+    出力に名前がそのまま出たかを Python で照合した（長い名前から先に消して誤ヒットを防いだ）。
+    """
+    segments = [
+        ("移動先が示された", 22, "bar-in"),
+        ("削除を提案された", 14, "bar-old"),
+        ("名前が一度も出てこない", 9, "box-bad"),
+    ]
+    total = sum(count for _, count, _ in segments)
+    bar_x, bar_w, bar_y, bar_h = 18, 666, 84, 34
+    top = 152
+    row_h, gap_y = 30, 10
+    height = top + len(segments) * (row_h + gap_y) - gap_y + 62
+    assert bar_x + bar_w <= WIDTH - 18, bar_x + bar_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「このファイル一覧を整理してください」だけで頼んだとき、45件はどこへ行ったか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の散らかったフォルダ45件。返ってきた提案に名前がそのまま出たかを機械で数えた。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{bar_y - 10}">45件の内訳</text>\n',
+    ]
+    x = bar_x
+    for label, count, klass in segments:
+        width = round(bar_w * count / total)
+        parts.append(
+            f'<rect class="{klass}" x="{x}" y="{bar_y}" '
+            f'width="{width}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x + 10}" y="{bar_y + 22}">{count}件</text>\n'
+        )
+        x += width
+    for index, (label, count, klass) in enumerate(segments):
+        y = top + index * (row_h + gap_y)
+        box = {"bar-in": "box-accent", "bar-old": "box-quiet", "box-bad": "box-bad"}[klass]
+        text_class = {"bar-in": "t", "bar-old": "t-sm", "box-bad": "t-bad"}[klass]
+        parts.append(
+            f'<rect class="{box}" x="18" y="{y}" width="666" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_class}" x="30" y="{y + 20}">{_esc(label)}　{count}件</text>\n'
+        )
+        note = {
+            22: "この22件だけを見ていると、全部さばけたように読める",
+            14: "うち名前だけで確実に判定できるのは3件。残り11件は名前からの推測",
+            9: "「スクリーンショット5点」「など」に丸められて、一覧から消えた",
+        }[count]
+        parts.append(f'<text class="t-xs" x="286" y="{y + 20}">{_esc(note)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ いちばん下の9件が問題。提案の中に「5点」と書いてあるので、"
+        "読んでも抜けたことに気づけない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 削除を提案された14件には、更新日時では最も新しいファイルが含まれていた"
+        "（名前の「最終_確定」を信じたため）。</text>\n"
+    )
+    alt = (
+        "「このファイル一覧を整理してください」とだけ頼んだときに、"
+        "45件のファイルがどこへ行ったかを示した図。"
+        "移動先が示されたものが22件、削除を提案されたものが14件、"
+        "名前が一度も出てこなかったものが9件。"
+        "移動先が示された22件だけを見ていると、全部さばけたように読める。"
+        "削除を提案された14件のうち、名前だけで確実に判定できるのは3件で、"
+        "残り11件は名前からの推測にすぎない。"
+        "名前が出てこなかった9件は、スクリーンショット5点、などという書き方に丸められて"
+        "一覧から消えた。提案の中に5点と書いてあるので、読んでも抜けたことに気づけない。"
+        "また削除を提案された14件には、更新日時では最も新しいファイルが含まれていた。"
+        "名前についている最終_確定という語を信じたため。"
+    )
+    (OUT / "files-naive-outcome.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def files_decidable_chart() -> None:
+    """名前だけで決まるものと、決まらないもの。決まらないものは「何を見れば決まるか」で割る。
+
+    実測（2026-08-11・同じ45件）。全件を1行ずつ出させ、判断できないものは
+    「判断できない」に入れるよう指定した結果。45行が45行のまま返った。
+    """
+    first = ("名前だけで移動先が決まった", 26)
+    reasons = [
+        ("開いて中身を見れば決まる", 15, "スクショ5・写真2・領収書2・無題3・メモ3"),
+        ("プロパティの発行元を見れば決まる", 2, "setup.exe と setup (1).exe"),
+        ("社内規程を見れば決まる", 1, "社員名簿（個人情報を含む）"),
+        ("Excelを閉じれば決まる", 1, "~$ で始まる一時ファイル"),
+    ]
+    total = 45
+    label_x = 18
+    bar_x, bar_max = 230, 150
+    count_x = bar_x + bar_max + 14
+    note_x = count_x + 46
+    row_h = 28
+    assert note_x + 240 <= WIDTH - 18, note_x
+
+    top = 96
+    header2_y = top + row_h + 34
+    rows_top = header2_y + 14
+    gap_y = 12
+    height = rows_top + len(reasons) * (row_h + gap_y) - gap_y + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「全部の行を出して。決まらないものは判断できないに入れて」と頼んだ結果</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ45件。45行が45行のまま返り、勝手に消えたファイルも作られたファイルも無かった。</text>\n",
+        f'<text class="t-good" x="{label_x}" y="{top - 12}">自分が開かなくてよいもの</text>\n',
+    ]
+    width = round(bar_max * first[1] / total)
+    parts.append(
+        f'<text class="t-sm" x="{label_x}" y="{top + 19}">{_esc(first[0])}</text>\n'
+    )
+    parts.append(
+        f'<rect class="bar-new" x="{bar_x}" y="{top + 3}" '
+        f'width="{width}" height="{row_h - 6}" rx="3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{count_x}" y="{top + 19}">{first[1]}件</text>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{label_x}" y="{header2_y}">'
+        "名前だけでは決まらない　19件　←　ここだけ自分で見る</text>\n"
+    )
+    for index, (label, count, note) in enumerate(reasons):
+        y = rows_top + index * (row_h + gap_y)
+        width = round(bar_max * count / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 19}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-in" x="{bar_x}" y="{y + 3}" '
+            f'width="{max(width, 3)}" height="{row_h - 6}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{count_x}" y="{y + 19}">{count}件</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{note_x}" y="{y + 19}">{_esc(note)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 45件を全部開く代わりに、19件だけ開けばよくなる。"
+        "「判断できない」を用意しないと、この19件は推測で振り分けられる。</text>\n"
+    )
+    alt = (
+        "全部の行を出させ、決まらないものは判断できないに入れるよう頼んだ結果の図。"
+        "同じ45件のファイル一覧を使い、45行が45行のまま返り、"
+        "勝手に消えたファイルも作られたファイルも無かった。"
+        "名前だけで移動先が決まったものが26件。"
+        "名前だけでは決まらないものが19件で、この19件だけを自分で見ればよい。"
+        "その内訳は、開いて中身を見れば決まるものが15件"
+        "（スクリーンショット5点、写真2点、領収書2点、無題のファイル3点、メモ3点）、"
+        "プロパティの発行元を見れば決まるものが2件（setup.exe と setup (1).exe）、"
+        "社内規程を見れば決まるものが1件（個人情報を含む社員名簿）、"
+        "Excelを閉じれば決まるものが1件（チルダとドル記号で始まる一時ファイル）。"
+        "45件を全部開く代わりに19件だけ開けばよくなる。"
+        "判断できないという行き先を用意しないと、この19件は推測で振り分けられる。"
+    )
+    (OUT / "files-decidable.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -2783,4 +2952,6 @@ if __name__ == "__main__":
     slides_transcription_chart()
     summary_what_drops_chart()
     summary_length_vs_keep_chart()
-    print(f"44枚を {OUT} に出力しました")
+    files_naive_outcome_chart()
+    files_decidable_chart()
+    print(f"46枚を {OUT} に出力しました")
