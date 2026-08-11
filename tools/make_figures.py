@@ -1891,6 +1891,146 @@ def table_anomaly_types_chart() -> None:
     )
 
 
+def quiz_coverage_chart() -> None:
+    """「10問作って」と「条ごとに1問」で、どの条から出題されたかの実測。
+
+    数字は架空の規程7条に対する実測（2026-08-11）。左＝10問まとめて頼んだとき、
+    右＝条ごとに最低1問と指定したとき。左は後半2条がゼロになる。
+    """
+    rows = [
+        ("第1条 申請期限", 2, 1),
+        ("第2条 領収書", 3, 1),
+        ("第3条 会議費", 2, 1),
+        ("第4条 出張日当", 2, 1),
+        ("第5条 前払金", 1, 1),
+        ("第6条 差戻し", 0, 1),
+        ("第7条 私的利用", 0, 1),
+    ]
+    label_x, label_w = 18, 150
+    unit = 34  # 1問あたりの幅
+    left_x = label_x + label_w + 16
+    left_w = 3 * unit  # 最大3問
+    right_x = left_x + left_w + 96
+    row_h, gap_y = 40, 10
+    top = 92
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 46
+    # 右の帯の右端が画面からはみ出さないこと（幅は推定ではなく計算で出す）
+    assert right_x + unit + 120 <= WIDTH - 18, right_x + unit + 120
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「10問作って」だと、後ろの2条から1問も出なかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の規程7条に対する実測。同じ教材・同じ相手で、頼み方だけを変えた。</text>\n",
+        f'<text class="t-xs" x="{left_x}" y="{top - 12}">「10問作って」</text>\n',
+        f'<text class="t-xs" x="{right_x}" y="{top - 12}">「条ごとに最低1問ずつ」</text>\n',
+    ]
+    for index, (name, before, after) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        mid = y + row_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{mid:.0f}">{_esc(name)}</text>\n')
+        if before:
+            parts.append(
+                f'<rect class="box-quiet" x="{left_x}" y="{y}" '
+                f'width="{before * unit}" height="{row_h}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="t" x="{left_x + before * unit / 2 - 8:.0f}" '
+                f'y="{mid:.0f}">{before}</text>\n'
+            )
+        else:
+            parts.append(
+                f'<rect class="box-bad" x="{left_x}" y="{y}" '
+                f'width="{unit * 3}" height="{row_h}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="t-bad" x="{left_x + 14}" y="{mid:.0f}">0問（出題なし）</text>\n'
+            )
+        parts.append(
+            f'<rect class="box-good" x="{right_x}" y="{y}" '
+            f'width="{after * unit}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{right_x + after * unit / 2 - 8:.0f}" '
+            f'y="{mid:.0f}">{after}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 落ちた2条は、差し戻し後の再申請期限と、私的利用が混ざったときの扱い。"
+        "実務で一番困る側から落ちている。</text>\n"
+    )
+    alt = (
+        "出題された条を、頼み方2種類で比べた図。「10問作って」と頼むと、"
+        "第1条2問・第2条3問・第3条2問・第4条2問・第5条1問と前半に集まり、"
+        "第6条（差戻し）と第7条（私的利用）は0問で出題されなかった。"
+        "「条ごとに最低1問ずつ」と指定すると、第1条から第7条まですべて1問ずつ出題された。"
+        "落ちた2条は差し戻し後の再申請期限と私的利用が混ざったときの扱いで、"
+        "実務で一番困る側から落ちている。"
+    )
+    (OUT / "quiz-coverage.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def quiz_three_leaks_chart() -> None:
+    """出題させたときに起きる3つの漏れと、それぞれを止める一言。"""
+    rows = [
+        ("出ない", "後ろの条から1問も出ない", "条ごとに最低1問ずつ出して"),
+        ("無い話", "教材に無い言葉で出題する", "書いてあることだけから出して"),
+        ("理由違い", "正解だが根拠が別の条", "根拠の一文をそのまま引用して"),
+    ]
+    tag_x, tag_w = 18, 108
+    mid_x = tag_x + tag_w + 18
+    mid_w = 252
+    fix_x = mid_x + mid_w + 18
+    fix_w = WIDTH - 18 - fix_x
+    row_h, gap_y = 62, 16
+    top = 88
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 46
+    assert fix_w >= 260, fix_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "出題させると漏れは3種類。どれも一言で止まる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の規程で実際に出題させて出たもの。3つとも原文と突き合わせて確かめた。</text>\n",
+        f'<text class="t-xs" x="{mid_x}" y="{top - 10}">何が起きるか</text>\n',
+        f'<text class="t-xs" x="{fix_x}" y="{top - 10}">足す一言</text>\n',
+    ]
+    for index, (tag, what, fix) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        mid = y + row_h / 2 + 5
+        parts.append(
+            f'<rect class="box-bad" x="{tag_x}" y="{y}" '
+            f'width="{tag_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-bad" x="{tag_x + 14}" y="{mid:.0f}">{_esc(tag)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{mid_x}" y="{y}" '
+            f'width="{mid_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t" x="{mid_x + 14}" y="{mid:.0f}">{_esc(what)}</text>\n')
+        parts.append(
+            f'<rect class="box-good" x="{fix_x}" y="{y}" '
+            f'width="{fix_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-good" x="{fix_x + 14}" y="{mid:.0f}">{_esc(fix)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 3つ目がいちばん見つけにくい。答えが合っているので、読んでも気づけない。</text>\n"
+    )
+    alt = (
+        "出題させたときに起きる3つの漏れと、それぞれを止める一言をまとめた図。"
+        "1つ目は「出ない」＝後ろの条から1問も出ないので、「条ごとに最低1問ずつ出して」と足す。"
+        "2つ目は「無い話」＝教材に無い言葉で出題するので、「書いてあることだけから出して」と足す。"
+        "3つ目は「理由違い」＝正解だが根拠が別の条なので、「根拠の一文をそのまま引用して」と足す。"
+        "3つ目は答えが合っているため、読んでも気づけない。"
+    )
+    (OUT / "quiz-three-leaks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def table_average_pulled_chart() -> None:
     """誤入力が1つ混ざると平均がどこまで動くかを、数直線で見せる。"""
     normal = [44800, 45300, 46300, 46800, 47100, 49200, 50100, 51400, 55600, 58900, 61200]
@@ -2195,4 +2335,6 @@ if __name__ == "__main__":
     tool_only_here_chart()
     translate_hidden_issues_chart()
     translate_three_steps_chart()
-    print(f"36枚を {OUT} に出力しました")
+    quiz_coverage_chart()
+    quiz_three_leaks_chart()
+    print(f"38枚を {OUT} に出力しました")
