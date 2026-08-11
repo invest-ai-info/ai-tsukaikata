@@ -20,74 +20,7 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-09T23:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-10T22:56:53+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage c…",
-      "title": "v2.1.227",
-      "uid": "85d495635b1d1874",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-10T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
-      "title": "How Zapier transformed core marketing processes with ChatGPT Work",
-      "uid": "c4a0ef8d3542dfce",
-      "url": "https://openai.com/index/zapier",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-10T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
-      "title": "Virgin Atlantic sharpens customer journeys with ChatGPT Work",
-      "uid": "4831eb0f4620e41c",
-      "url": "https://openai.com/index/virgin-atlantic/chatgpt-work",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-11T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
-      "title": "Testing ads in ChatGPT",
-      "uid": "88604715e73f2ef3",
-      "url": "https://openai.com/index/testing-ads-in-chatgpt",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-11T17:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "AMIE promotional video",
-      "title": "AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.",
-      "uid": "ed00016dbf571254",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-11T19:50:59+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed interactive sessions that could stop redrawing entirely, while the process kept running, after a rare internal layout error Fixed git / Git Bash not being found on Windows when C…",
-      "title": "v2.1.228",
-      "uid": "fbb8442b97daea2e",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
