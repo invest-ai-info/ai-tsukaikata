@@ -1891,6 +1891,138 @@ def table_anomaly_types_chart() -> None:
     )
 
 
+def proofread_scope_chart() -> None:
+    """頼み方3種で「直った欠陥」と「守れた語」がどう動くかの実測。
+
+    架空の社内お知らせに、直してほしい欠陥6件（誤字3・冗長3）と、
+    触ってほしくない語4件（本件・別紙・稟議・体言止め）を仕込んで測った。
+    """
+    rows = [
+        ("「校正して」", 6, 0, "社内用語が全部消えた"),
+        ("「誤字だけ。他は変えるな」", 3, 4, "冗長さが3件とも残った"),
+        ("直す種類を列挙＋守る語を宣言", 6, 4, "両方そろった"),
+    ]
+    label_x, label_w = 18, 206
+    unit = 20
+    fixed_x = label_x + label_w + 14
+    kept_x = fixed_x + 6 * unit + 30
+    note_x = kept_x + 4 * unit + 26
+    row_h, gap_y = 46, 16
+    top = 96
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 46
+    # 注記のいちばん長い行「冗長さが3件とも残った」11字ぶんの幅を見込む
+    assert note_x + 11 * 16 <= WIDTH - 18, note_x + 11 * 16
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "広すぎても狭すぎても駄目。直す種類を名指しするとそろう</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ下書きに、直したい欠陥6件と触ってほしくない語4件を仕込んで測った。</text>\n",
+        f'<text class="t-xs" x="{fixed_x}" y="{top - 12}">直った欠陥（6件中）</text>\n',
+        f'<text class="t-xs" x="{kept_x}" y="{top - 12}">守れた語（4件中）</text>\n',
+    ]
+    for index, (name, fixed, kept, note) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        mid = y + row_h / 2 + 5
+        good = fixed == 6 and kept == 4
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{mid:.0f}">{_esc(name)}</text>\n')
+        for start, value, total in ((fixed_x, fixed, 6), (kept_x, kept, 4)):
+            parts.append(
+                f'<rect class="box-quiet" x="{start}" y="{y}" '
+                f'width="{total * unit}" height="{row_h}" rx="6"/>\n'
+            )
+            if value:
+                cls = "box-good" if good else "box-accent"
+                parts.append(
+                    f'<rect class="{cls}" x="{start}" y="{y}" '
+                    f'width="{value * unit}" height="{row_h}" rx="6"/>\n'
+                )
+            text_cls = "t-good" if good else ("t-bad" if value < total else "t-accent")
+            parts.append(
+                f'<text class="{text_cls}" x="{start + total * unit + 8}" '
+                f'y="{mid:.0f}">{value}</text>\n'
+            )
+        parts.append(
+            f'<text class="{"t-good" if good else "t-bad"}" x="{note_x}" '
+            f'y="{mid:.0f}">{_esc(note)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 1行目は誤字が全部直っているので、読むと良くなったように見える。"
+        "書き換えは差分を取るまで見えない。</text>\n"
+    )
+    alt = (
+        "校正の頼み方3種を比べた実測の図。下書きに直したい欠陥6件と触ってほしくない語4件を"
+        "仕込んで測った。「校正して」とだけ頼むと欠陥は6件すべて直るが、守りたい語は"
+        "4件中0件しか残らず、社内用語が全部書き換わった。「誤字だけ。他は変えるな」と頼むと"
+        "守りたい語は4件すべて残るが、直った欠陥は6件中3件で冗長さが3件とも残った。"
+        "直す種類を列挙して守る語を宣言すると、欠陥6件すべてが直り、守りたい語も4件すべて残った。"
+        "1行目は誤字が全部直っているため、読むと良くなったように見え、書き換えは差分を取るまで見えない。"
+    )
+    (OUT / "proofread-scope.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def proofread_unreported_chart() -> None:
+    """「直した箇所の一覧」に載らなかった変更を、実際の差分と突き合わせた図。"""
+    reported = 7
+    actual = 13
+    silent = ["行って下さい", "本件", "別紙", "稟議", "期限厳守。", "お問い合わせいただけますよう"]
+    left, unit = 150, 34
+    bar_h, gap_y = 44, 18
+    top = 92
+    list_top = top + 2 * (bar_h + gap_y) + 16
+    height = list_top + len(silent) * 26 + 44
+    assert left + actual * unit <= WIDTH - 18, left + actual * unit
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「直した箇所」の申告は7件。実際に変わっていたのは13件</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ1回の校正について、申告した一覧と、原文との差分を突き合わせた。</text>\n",
+    ]
+    for index, (name, value, cls, tcls) in enumerate(
+        (("AIの申告", reported, "box-accent", "t-accent"),
+         ("実際の差分", actual, "box-bad", "t-bad"))
+    ):
+        y = top + index * (bar_h + gap_y)
+        mid = y + bar_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="18" y="{mid:.0f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{value * unit}" height="{bar_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{left + value * unit + 10}" '
+            f'y="{mid:.0f}">{value}件</text>\n'
+        )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{list_top - 14}">'
+        f"申告に載らなかった{len(silent)}件（守りたかった語がここに入っていた）</text>\n"
+    )
+    for index, word in enumerate(silent):
+        parts.append(
+            f'<text class="t-sm" x="34" y="{list_top + index * 26 + 12}">'
+            f"・{_esc(word)}</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 一覧に出るのは「直した」と自覚したものだけ。"
+        "良くしたつもりの書き換えは、本人の申告に出てこない。</text>\n"
+    )
+    alt = (
+        "校正で申告された変更件数と、実際の差分を比べた図。AIが「直した箇所」として"
+        "申告したのは7件だったが、原文と突き合わせると実際には13件が変わっていた。"
+        "申告に載らなかった6件は、行って下さい、本件、別紙、稟議、期限厳守。、"
+        "お問い合わせいただけますよう、で、守りたかった社内用語と体言止めがすべてここに入っていた。"
+        "一覧に出るのは直したと自覚したものだけで、良くしたつもりの書き換えは申告に出てこない。"
+    )
+    (OUT / "proofread-unreported.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def quiz_coverage_chart() -> None:
     """「10問作って」と「条ごとに1問」で、どの条から出題されたかの実測。
 
@@ -2337,4 +2469,6 @@ if __name__ == "__main__":
     translate_three_steps_chart()
     quiz_coverage_chart()
     quiz_three_leaks_chart()
-    print(f"38枚を {OUT} に出力しました")
+    proofread_scope_chart()
+    proofread_unreported_chart()
+    print(f"40枚を {OUT} に出力しました")
