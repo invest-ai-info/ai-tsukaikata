@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-11T21:06:02.039062+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-11T19:50:59+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed interactive sessions that could stop redrawing entirely, while the process kept running, after a rare internal layout error Fixed git / Git Bash not being found on Windows when C…",
+      "title": "v2.1.228",
+      "uid": "fbb8442b97daea2e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-11T17:14:43.158523+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
