@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="336" viewBox="0 0 720 336" role="img" aria-label="要約の長さと、落としてはいけない情報が残った件数を並べた図。同じ原文2,192字を、落としてはいけない情報14件を先に決めたうえで要約させた。「要約してください」とだけ頼むと458字で4件しか残らない。「大事なところを落とさずに」と足すと511字になるが、残ったのは5件で1件しか増えない。「200字以内で要約して」は196字で5件。落とさない6種類を名指ししたうえで400字以内と指定すると、417字で14件すべて残った。いちばん下は、いちばん上より41字短いのに全部残っている。つまり落ちる原因は長さではなく、何を残すかを決めていないこと。なお400字以内という指定は守られず417字で、4%超過していた。字数は目安として効くが、上限としては当てにできない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="336"/>
+<text class="t-strong" x="18" y="26">落ちるのは、長さが足りないからではない</text>
+<text class="t-sm" x="18" y="45">同じ原文（2,192字）。落としてはいけない情報14件のうち、いくつ残ったか。</text>
+<text class="t-xs" x="236" y="92">残った件数（14件中）</text>
+<text class="t-xs" x="592" y="92">要約の長さ</text>
+<text class="t-sm" x="18" y="124">「要約してください」</text>
+<rect class="bar-old" x="236" y="108" width="340" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="236" y="108" width="97" height="22" rx="3"/>
+<text class="t-sm" x="343" y="124">4件</text>
+<text class="t-sm" x="592" y="124">458字</text>
+<text class="t-sm" x="18" y="174">「大事なところを落とさずに」</text>
+<rect class="bar-old" x="236" y="158" width="340" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="236" y="158" width="121" height="22" rx="3"/>
+<text class="t-sm" x="367" y="174">5件</text>
+<text class="t-sm" x="592" y="174">511字</text>
+<text class="t-sm" x="18" y="224">「200字以内で要約して」</text>
+<rect class="bar-old" x="236" y="208" width="340" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="236" y="208" width="121" height="22" rx="3"/>
+<text class="t-sm" x="367" y="224">5件</text>
+<text class="t-sm" x="592" y="224">196字</text>
+<text class="t-sm" x="18" y="274">6種類を名指し＋400字以内</text>
+<rect class="bar-old" x="236" y="258" width="340" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="236" y="258" width="340" height="22" rx="3"/>
+<text class="t-accent" x="586" y="274">14件</text>
+<text class="t-sm" x="592" y="274">417字</text>
+<text class="t-xs" x="18" y="304">※ いちばん下は、いちばん上より41字短い。それでも14件すべて残っている。</text>
+<text class="t-xs" x="18" y="322">※「400字以内」は守られず417字だった（4%超過）。字数は目安として効くが、上限としては当てにできない。</text>
+</svg>

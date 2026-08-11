@@ -2568,6 +2568,345 @@ def translate_three_steps_chart() -> None:
     )
 
 
+def summary_what_drops_chart() -> None:
+    """素朴に「要約して」と頼んだとき、何が残って何が落ちたか。
+
+    実測（2026-08-11・架空の社内通知2,192字・落としてはいけない情報14件を先に決めた）。
+    判定は Python の文字列照合。要約Aは458字で 4/14 が残った。
+    """
+    kept = [
+        "9月1日に新システム稼働",
+        "8月28日18:00が締切",
+        "45時間超は事前申請",
+        "交通費の上限35,000円",
+    ]
+    lost = [
+        ("ただし書き", "残業申請は9月4日まで"),
+        ("ただし書き", "管理職1名なら承認1名"),
+        ("ただし書き", "新幹線通勤は据え置き"),
+        ("条件", "スマホ打刻は社内Wi-Fiのみ"),
+        ("禁止", "移行3日間は打刻しない"),
+        ("対象外", "警備担当の契約社員12名"),
+        ("作業", "3日以内にパスワード変更"),
+        ("結果", "未変更は9月8日に停止"),
+        ("期限", "旧データは2027年3月に削除"),
+        ("窓口", "電話では受け付けない"),
+    ]
+    left_x, right_x, col_w = 18, 372, 330
+    row_h, gap_y = 30, 8
+    top = 96
+    height = top + len(lost) * (row_h + gap_y) - gap_y + 44
+    assert right_x + col_w <= WIDTH - 18, right_x + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「次の文書を要約してください」だけで頼んだとき、何が残ったか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "落としてはいけない情報14件を先に決めてから要約させ、機械で1件ずつ照合した。</text>\n",
+        f'<text class="t-good" x="{left_x}" y="{top - 14}">残った　4件</text>\n',
+        f'<text class="t-bad" x="{right_x}" y="{top - 14}">落ちた　10件</text>\n',
+    ]
+    for index, label in enumerate(kept):
+        y = top + index * (row_h + gap_y)
+        parts.append(
+            f'<rect class="box-good" x="{left_x}" y="{y}" '
+            f'width="{col_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{left_x + 12}" y="{y + 20}">{_esc(label)}</text>\n'
+        )
+    note_y = top + len(kept) * (row_h + gap_y) + 12
+    parts.append(
+        f'<text class="t-xs" x="{left_x}" y="{note_y}">'
+        "残ったのは、文書の主語が大きい話ばかり。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left_x}" y="{note_y + 18}">'
+        "「誰に効くか」「いつまでか」は右へ移った。</text>\n"
+    )
+    for index, (kind, label) in enumerate(lost):
+        y = top + index * (row_h + gap_y)
+        parts.append(
+            f'<rect class="box-bad" x="{right_x}" y="{y}" '
+            f'width="{col_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{right_x + 12}" y="{y + 20}">{_esc(kind)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="{right_x + 78}" y="{y + 20}">{_esc(label)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 原文54文のうち、ただし書き・禁止・対象外を含む文は10文。"
+        "そのうち要約に残ったのは0文だった。</text>\n"
+    )
+    alt = (
+        "素朴に「要約してください」と頼んだときに、何が残って何が落ちたかを並べた図。"
+        "教材は架空の社内通知で、落としてはいけない情報を14件、先に決めてある。"
+        "残ったのは4件で、9月1日に新システム稼働、8月28日18時が締切、"
+        "45時間超は事前申請、交通費の上限35,000円。"
+        "落ちたのは10件で、ただし書きが3件（残業申請は9月4日まで、"
+        "管理職1名なら承認1名、新幹線通勤は据え置き）、"
+        "条件が1件（スマホ打刻は社内Wi-Fiのみ）、禁止が1件（移行3日間は打刻しない）、"
+        "対象外が1件（警備担当の契約社員12名）、自分の作業が1件（3日以内にパスワード変更）、"
+        "結果が1件（未変更は9月8日に停止）、期限が1件（旧データは2027年3月に削除）、"
+        "窓口が1件（電話では受け付けない）。"
+        "残ったのは主語が大きい話ばかりで、誰に効くか・いつまでかは落ちている。"
+        "原文54文のうち、ただし書き・禁止・対象外を含む文は10文あったが、"
+        "そのうち要約に残ったものは0文だった。"
+    )
+    (OUT / "summary-what-drops.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def summary_length_vs_keep_chart() -> None:
+    """要約の長さと、残った件数の関係。長さのせいではないことを見せる。
+
+    実測（2026-08-11・同じ原文2,192字・落としてはいけない情報14件）。
+    字数は空白を除いて数えた。
+    """
+    rows = [
+        ("「要約してください」", 458, 4, False),
+        ("「大事なところを落とさずに」", 511, 5, False),
+        ("「200字以内で要約して」", 196, 5, False),
+        ("6種類を名指し＋400字以内", 417, 14, True),
+    ]
+    total = 14
+    label_x, label_w = 18, 210
+    bar_x, bar_max = 236, 340
+    row_h, gap_y = 30, 20
+    top = 104
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 52
+    assert bar_x + bar_max + 126 <= WIDTH - 18, bar_x + bar_max + 126
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "落ちるのは、長さが足りないからではない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ原文（2,192字）。落としてはいけない情報14件のうち、いくつ残ったか。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">残った件数（14件中）</text>\n',
+        f'<text class="t-xs" x="{bar_x + bar_max + 16}" y="{top - 12}">要約の長さ</text>\n',
+    ]
+    for index, (name, chars, kept, best) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * kept / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 20}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        klass = "bar-new" if best else "bar-in"
+        parts.append(
+            f'<rect class="{klass}" x="{bar_x}" y="{y + 4}" '
+            f'width="{width}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        value_class = "t-accent" if best else "t-sm"
+        parts.append(
+            f'<text class="{value_class}" x="{bar_x + width + 10}" y="{y + 20}">'
+            f"{kept}件</text>\n"
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_x + bar_max + 16}" y="{y + 20}">{chars}字</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ いちばん下は、いちばん上より41字短い。それでも14件すべて残っている。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※「400字以内」は守られず417字だった（4%超過）。字数は目安として効くが、"
+        "上限としては当てにできない。</text>\n"
+    )
+    alt = (
+        "要約の長さと、落としてはいけない情報が残った件数を並べた図。"
+        "同じ原文2,192字を、落としてはいけない情報14件を先に決めたうえで要約させた。"
+        "「要約してください」とだけ頼むと458字で4件しか残らない。"
+        "「大事なところを落とさずに」と足すと511字になるが、残ったのは5件で1件しか増えない。"
+        "「200字以内で要約して」は196字で5件。"
+        "落とさない6種類を名指ししたうえで400字以内と指定すると、417字で14件すべて残った。"
+        "いちばん下は、いちばん上より41字短いのに全部残っている。"
+        "つまり落ちる原因は長さではなく、何を残すかを決めていないこと。"
+        "なお400字以内という指定は守られず417字で、4%超過していた。"
+        "字数は目安として効くが、上限としては当てにできない。"
+    )
+    (OUT / "summary-length-vs-keep.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def files_naive_outcome_chart() -> None:
+    """「このファイル一覧を整理して」だけで頼んだとき、45件がどこへ行ったか。
+
+    実測（2026-08-11・架空の散らかったフォルダ45件）。
+    出力に名前がそのまま出たかを Python で照合した（長い名前から先に消して誤ヒットを防いだ）。
+    """
+    segments = [
+        ("移動先が示された", 22, "bar-in"),
+        ("削除を提案された", 14, "bar-old"),
+        ("名前が一度も出てこない", 9, "box-bad"),
+    ]
+    total = sum(count for _, count, _ in segments)
+    bar_x, bar_w, bar_y, bar_h = 18, 666, 84, 34
+    top = 152
+    row_h, gap_y = 30, 10
+    height = top + len(segments) * (row_h + gap_y) - gap_y + 62
+    assert bar_x + bar_w <= WIDTH - 18, bar_x + bar_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「このファイル一覧を整理してください」だけで頼んだとき、45件はどこへ行ったか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の散らかったフォルダ45件。返ってきた提案に名前がそのまま出たかを機械で数えた。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{bar_y - 10}">45件の内訳</text>\n',
+    ]
+    x = bar_x
+    for label, count, klass in segments:
+        width = round(bar_w * count / total)
+        parts.append(
+            f'<rect class="{klass}" x="{x}" y="{bar_y}" '
+            f'width="{width}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x + 10}" y="{bar_y + 22}">{count}件</text>\n'
+        )
+        x += width
+    for index, (label, count, klass) in enumerate(segments):
+        y = top + index * (row_h + gap_y)
+        box = {"bar-in": "box-accent", "bar-old": "box-quiet", "box-bad": "box-bad"}[klass]
+        text_class = {"bar-in": "t", "bar-old": "t-sm", "box-bad": "t-bad"}[klass]
+        parts.append(
+            f'<rect class="{box}" x="18" y="{y}" width="666" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_class}" x="30" y="{y + 20}">{_esc(label)}　{count}件</text>\n'
+        )
+        note = {
+            22: "この22件だけを見ていると、全部さばけたように読める",
+            14: "うち名前だけで確実に判定できるのは3件。残り11件は名前からの推測",
+            9: "「スクリーンショット5点」「など」に丸められて、一覧から消えた",
+        }[count]
+        parts.append(f'<text class="t-xs" x="286" y="{y + 20}">{_esc(note)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ いちばん下の9件が問題。提案の中に「5点」と書いてあるので、"
+        "読んでも抜けたことに気づけない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 削除を提案された14件には、更新日時では最も新しいファイルが含まれていた"
+        "（名前の「最終_確定」を信じたため）。</text>\n"
+    )
+    alt = (
+        "「このファイル一覧を整理してください」とだけ頼んだときに、"
+        "45件のファイルがどこへ行ったかを示した図。"
+        "移動先が示されたものが22件、削除を提案されたものが14件、"
+        "名前が一度も出てこなかったものが9件。"
+        "移動先が示された22件だけを見ていると、全部さばけたように読める。"
+        "削除を提案された14件のうち、名前だけで確実に判定できるのは3件で、"
+        "残り11件は名前からの推測にすぎない。"
+        "名前が出てこなかった9件は、スクリーンショット5点、などという書き方に丸められて"
+        "一覧から消えた。提案の中に5点と書いてあるので、読んでも抜けたことに気づけない。"
+        "また削除を提案された14件には、更新日時では最も新しいファイルが含まれていた。"
+        "名前についている最終_確定という語を信じたため。"
+    )
+    (OUT / "files-naive-outcome.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def files_decidable_chart() -> None:
+    """名前だけで決まるものと、決まらないもの。決まらないものは「何を見れば決まるか」で割る。
+
+    実測（2026-08-11・同じ45件）。全件を1行ずつ出させ、判断できないものは
+    「判断できない」に入れるよう指定した結果。45行が45行のまま返った。
+    """
+    first = ("名前だけで移動先が決まった", 26)
+    reasons = [
+        ("開いて中身を見れば決まる", 15, "スクショ5・写真2・領収書2・無題3・メモ3"),
+        ("プロパティの発行元を見れば決まる", 2, "setup.exe と setup (1).exe"),
+        ("社内規程を見れば決まる", 1, "社員名簿（個人情報を含む）"),
+        ("Excelを閉じれば決まる", 1, "~$ で始まる一時ファイル"),
+    ]
+    total = 45
+    label_x = 18
+    bar_x, bar_max = 230, 150
+    count_x = bar_x + bar_max + 14
+    note_x = count_x + 46
+    row_h = 28
+    assert note_x + 240 <= WIDTH - 18, note_x
+
+    top = 96
+    header2_y = top + row_h + 34
+    rows_top = header2_y + 14
+    gap_y = 12
+    height = rows_top + len(reasons) * (row_h + gap_y) - gap_y + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「全部の行を出して。決まらないものは判断できないに入れて」と頼んだ結果</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ45件。45行が45行のまま返り、勝手に消えたファイルも作られたファイルも無かった。</text>\n",
+        f'<text class="t-good" x="{label_x}" y="{top - 12}">自分が開かなくてよいもの</text>\n',
+    ]
+    width = round(bar_max * first[1] / total)
+    parts.append(
+        f'<text class="t-sm" x="{label_x}" y="{top + 19}">{_esc(first[0])}</text>\n'
+    )
+    parts.append(
+        f'<rect class="bar-new" x="{bar_x}" y="{top + 3}" '
+        f'width="{width}" height="{row_h - 6}" rx="3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{count_x}" y="{top + 19}">{first[1]}件</text>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{label_x}" y="{header2_y}">'
+        "名前だけでは決まらない　19件　←　ここだけ自分で見る</text>\n"
+    )
+    for index, (label, count, note) in enumerate(reasons):
+        y = rows_top + index * (row_h + gap_y)
+        width = round(bar_max * count / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 19}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-in" x="{bar_x}" y="{y + 3}" '
+            f'width="{max(width, 3)}" height="{row_h - 6}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{count_x}" y="{y + 19}">{count}件</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{note_x}" y="{y + 19}">{_esc(note)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 45件を全部開く代わりに、19件だけ開けばよくなる。"
+        "「判断できない」を用意しないと、この19件は推測で振り分けられる。</text>\n"
+    )
+    alt = (
+        "全部の行を出させ、決まらないものは判断できないに入れるよう頼んだ結果の図。"
+        "同じ45件のファイル一覧を使い、45行が45行のまま返り、"
+        "勝手に消えたファイルも作られたファイルも無かった。"
+        "名前だけで移動先が決まったものが26件。"
+        "名前だけでは決まらないものが19件で、この19件だけを自分で見ればよい。"
+        "その内訳は、開いて中身を見れば決まるものが15件"
+        "（スクリーンショット5点、写真2点、領収書2点、無題のファイル3点、メモ3点）、"
+        "プロパティの発行元を見れば決まるものが2件（setup.exe と setup (1).exe）、"
+        "社内規程を見れば決まるものが1件（個人情報を含む社員名簿）、"
+        "Excelを閉じれば決まるものが1件（チルダとドル記号で始まる一時ファイル）。"
+        "45件を全部開く代わりに19件だけ開けばよくなる。"
+        "判断できないという行き先を用意しないと、この19件は推測で振り分けられる。"
+    )
+    (OUT / "files-decidable.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -2611,4 +2950,8 @@ if __name__ == "__main__":
     proofread_unreported_chart()
     slides_screen_vs_spoken_chart()
     slides_transcription_chart()
-    print(f"42枚を {OUT} に出力しました")
+    summary_what_drops_chart()
+    summary_length_vs_keep_chart()
+    files_naive_outcome_chart()
+    files_decidable_chart()
+    print(f"46枚を {OUT} に出力しました")

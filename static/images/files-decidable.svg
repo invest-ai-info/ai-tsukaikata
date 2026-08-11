@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="366" viewBox="0 0 720 366" role="img" aria-label="全部の行を出させ、決まらないものは判断できないに入れるよう頼んだ結果の図。同じ45件のファイル一覧を使い、45行が45行のまま返り、勝手に消えたファイルも作られたファイルも無かった。名前だけで移動先が決まったものが26件。名前だけでは決まらないものが19件で、この19件だけを自分で見ればよい。その内訳は、開いて中身を見れば決まるものが15件（スクリーンショット5点、写真2点、領収書2点、無題のファイル3点、メモ3点）、プロパティの発行元を見れば決まるものが2件（setup.exe と setup (1).exe）、社内規程を見れば決まるものが1件（個人情報を含む社員名簿）、Excelを閉じれば決まるものが1件（チルダとドル記号で始まる一時ファイル）。45件を全部開く代わりに19件だけ開けばよくなる。判断できないという行き先を用意しないと、この19件は推測で振り分けられる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="366"/>
+<text class="t-strong" x="18" y="26">「全部の行を出して。決まらないものは判断できないに入れて」と頼んだ結果</text>
+<text class="t-sm" x="18" y="45">同じ45件。45行が45行のまま返り、勝手に消えたファイルも作られたファイルも無かった。</text>
+<text class="t-good" x="18" y="84">自分が開かなくてよいもの</text>
+<text class="t-sm" x="18" y="115">名前だけで移動先が決まった</text>
+<rect class="bar-new" x="230" y="99" width="87" height="22" rx="3"/>
+<text class="t-accent" x="394" y="115">26件</text>
+<text class="t-bad" x="18" y="158">名前だけでは決まらない　19件　←　ここだけ自分で見る</text>
+<text class="t-sm" x="18" y="191">開いて中身を見れば決まる</text>
+<rect class="bar-in" x="230" y="175" width="50" height="22" rx="3"/>
+<text class="t-sm" x="394" y="191">15件</text>
+<text class="t-xs" x="440" y="191">スクショ5・写真2・領収書2・無題3・メモ3</text>
+<text class="t-sm" x="18" y="231">プロパティの発行元を見れば決まる</text>
+<rect class="bar-in" x="230" y="215" width="7" height="22" rx="3"/>
+<text class="t-sm" x="394" y="231">2件</text>
+<text class="t-xs" x="440" y="231">setup.exe と setup (1).exe</text>
+<text class="t-sm" x="18" y="271">社内規程を見れば決まる</text>
+<rect class="bar-in" x="230" y="255" width="3" height="22" rx="3"/>
+<text class="t-sm" x="394" y="271">1件</text>
+<text class="t-xs" x="440" y="271">社員名簿（個人情報を含む）</text>
+<text class="t-sm" x="18" y="311">Excelを閉じれば決まる</text>
+<rect class="bar-in" x="230" y="295" width="3" height="22" rx="3"/>
+<text class="t-sm" x="394" y="311">1件</text>
+<text class="t-xs" x="440" y="311">~$ で始まる一時ファイル</text>
+<text class="t-xs" x="18" y="352">※ 45件を全部開く代わりに、19件だけ開けばよくなる。「判断できない」を用意しないと、この19件は推測で振り分けられる。</text>
+</svg>
