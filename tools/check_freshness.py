@@ -189,6 +189,29 @@ def check_articles(articles, today: date, head=head, max_age_days=MAX_AGE_DAYS) 
     return Report(problems, notes)
 
 
+QUEUE_PATH = "content/_recipe_queue.md"
+QUEUE_FLOOR = 6  # 2晩ぶん。ここを切ったら補充が最優先
+UNPROCESSED_RE = re.compile(r"^- \[ \]", re.M)
+
+
+def queue_shortage(queue_text: str, floor: int = QUEUE_FLOOR) -> str | None:
+    """レシピの待ち行列が枯れかけていたら、知らせる文字列を返す。
+
+    ⚠️ 静かに枯れると、毎晩の担当が「題材が無い」で止まり始めてから気づくことになる。
+    サイトが止まるわけではないので、ビルドでは止めずに週次で知らせる。
+
+    未処理は `- [ ]` だけ。`- [x]`（公開済み）も `- [!]`（書かずに止めた）も数えない。
+    """
+    count = len(UNPROCESSED_RE.findall(queue_text))
+    if count < floor:
+        return (
+            f"{QUEUE_PATH}: 待ち行列の未処理が{count}件です"
+            f"（床は{floor}件＝2晩ぶん。補充が最優先です。"
+            f"再実行の手順は docs/superpowers/notes/2026-08-10-demand-research.md）"
+        )
+    return None
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     articles, errors = load_articles(root / "content")
@@ -196,6 +219,14 @@ def main() -> int:
         print(f"記事が読めません: {error}")
 
     report = check_articles(articles, date.today())
+
+    # 待ち行列の残量は記事の腐りとは別件だが、見る頻度（週次）が同じなので相乗りさせる。
+    queue_file = root / "content" / "_recipe_queue.md"
+    if queue_file.exists():
+        shortage = queue_shortage(queue_file.read_text(encoding="utf-8"))
+        if shortage:
+            report.problems.append(shortage)
+
     for problem in report.problems:
         print(problem)
 

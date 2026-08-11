@@ -5,7 +5,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
-from check_freshness import Reached, check_articles, external_links  # noqa: E402
+from check_freshness import (  # noqa: E402
+    Reached,
+    check_articles,
+    external_links,
+    queue_shortage,
+)
 
 from src.content import Article, render_markdown  # noqa: E402
 
@@ -171,3 +176,27 @@ def test_move_is_reported_when_the_destination_is_nowhere_in_the_article():
         [article], TODAY, head=lambda url: Reached(200, "https://new.example.org/a")
     )
     assert any("引っ越して" in p for p in report.problems)
+
+
+def test_queue_shortage_fires_below_the_floor():
+    """待ち行列が枯れかけていたら知らせる。
+
+    静かに枯れると、毎晩の担当が「題材が無い」で止まり始めてから気づくことになる。
+    """
+    queue = "\n".join(["- [ ] 題材A", "- [x] 済み", "- [!] 止めた", "- [ ] 題材B"])
+    problem = queue_shortage(queue, floor=6)
+    assert problem is not None
+    assert "2件" in problem
+
+
+def test_queue_shortage_counts_only_unprocessed():
+    """`- [x]`（済み）も `- [!]`（止めた）も未処理ではない。"""
+    queue = "\n".join(["- [x] 済み"] * 10 + ["- [!] 止めた"] * 10)
+    problem = queue_shortage(queue, floor=6)
+    assert problem is not None
+    assert "0件" in problem
+
+
+def test_queue_shortage_is_quiet_at_or_above_the_floor():
+    queue = "\n".join(f"- [ ] 題材{i}" for i in range(6))
+    assert queue_shortage(queue, floor=6) is None
