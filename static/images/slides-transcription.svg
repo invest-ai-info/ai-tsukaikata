@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="408" viewBox="0 0 720 408" role="img" aria-label="素朴に頼んだときのスライド構成を、素材のメモと並べた図。左が素材の箇条書きで、電話とFAXで確認、1件12分・1日20件、二重販売が3件、謝罪訪問に部長同行、倉庫も電話60本と続き全14件。右が返ってきたスライドで、はじめに、現状の課題、業務量の実態、二重販売の発生、二重販売の影響と続き全18枚。箇条書きがほぼ1行1枚に置き換えられており、表紙とまとめとご清聴の3枚を足すと数が合う。1枚目から7枚目までが全部課題の説明で、聞く側は何が問題なのかを7回に分けて聞かされることになり、何を承認してほしいのかが最後まで出てこない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="408"/>
+<text class="t-strong" x="18" y="26">構成を考えたのではなく、箇条書きを1行1枚に置き換えただけ</text>
+<text class="t-sm" x="18" y="45">素材14件に対して18枚。表紙・まとめ・ご清聴の3枚を足すと数が合ってしまう。</text>
+<text class="t-xs" x="26" y="98">素材のメモ（箇条書き）</text>
+<text class="t-xs" x="392" y="98">返ってきたスライド</text>
+<rect class="box-quiet" x="18" y="112" width="318" height="30" rx="5"/>
+<text class="t-sm" x="30" y="132">電話とFAXで確認</text>
+<rect class="box-accent" x="384" y="112" width="318" height="30" rx="5"/>
+<text class="t-sm" x="396" y="132">1. はじめに</text>
+<line class="link" x1="344" y1="127.0" x2="376" y2="127.0"/>
+<rect class="box-quiet" x="18" y="150" width="318" height="30" rx="5"/>
+<text class="t-sm" x="30" y="170">1件12分・1日20件</text>
+<rect class="box-accent" x="384" y="150" width="318" height="30" rx="5"/>
+<text class="t-sm" x="396" y="170">2. 現状の課題</text>
+<line class="link" x1="344" y1="165.0" x2="376" y2="165.0"/>
+<rect class="box-quiet" x="18" y="188" width="318" height="30" rx="5"/>
+<text class="t-sm" x="30" y="208">二重販売が3件</text>
+<rect class="box-accent" x="384" y="188" width="318" height="30" rx="5"/>
+<text class="t-sm" x="396" y="208">3. 業務量の実態</text>
+<line class="link" x1="344" y1="203.0" x2="376" y2="203.0"/>
+<rect class="box-quiet" x="18" y="226" width="318" height="30" rx="5"/>
+<text class="t-sm" x="30" y="246">謝罪訪問に部長同行</text>
+<rect class="box-accent" x="384" y="226" width="318" height="30" rx="5"/>
+<text class="t-sm" x="396" y="246">4. 二重販売の発生</text>
+<line class="link" x1="344" y1="241.0" x2="376" y2="241.0"/>
+<rect class="box-quiet" x="18" y="264" width="318" height="30" rx="5"/>
+<text class="t-sm" x="30" y="284">倉庫も電話60本</text>
+<rect class="box-accent" x="384" y="264" width="318" height="30" rx="5"/>
+<text class="t-sm" x="396" y="284">5. 二重販売の影響</text>
+<line class="link" x1="344" y1="279.0" x2="376" y2="279.0"/>
+<rect class="box-quiet" x="18" y="302" width="318" height="30" rx="5"/>
+<text class="t-sm" x="30" y="322">…（全14件）</text>
+<rect class="box-accent" x="384" y="302" width="318" height="30" rx="5"/>
+<text class="t-sm" x="396" y="322">…（全18枚）</text>
+<line class="link" x1="344" y1="317.0" x2="376" y2="317.0"/>
+<text class="t-bad" x="18" y="370">1〜7枚目が全部「課題」。聞く側は、何が問題なのかを7回に分けて聞かされる</text>
+<text class="t-xs" x="18" y="394">※ 材料を渡した順に並べ替えているだけなので、「何を承認してほしいのか」が最後まで出てこない。</text>
+</svg>

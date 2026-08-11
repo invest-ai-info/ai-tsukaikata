@@ -1891,6 +1891,144 @@ def table_anomaly_types_chart() -> None:
     )
 
 
+def slides_screen_vs_spoken_chart() -> None:
+    """同じ素材で、頼み方だけを変えて測った4項目。
+
+    実測（2026-08-11・15分の社内提案・素材は箇条書き14件）。
+    判定は Python（枚数・画面に出る文字数・口頭の分離・未確認情報の位置）。
+    """
+    rows = [
+        ("枚数（15分）", "18枚", "9枚", True),
+        ("画面に出る字（平均）", "63字", "17字", True),
+        ("40字を超えた枚", "18枚中15枚", "9枚中0枚", True),
+        ("口で言うこと", "分かれていない", "画面の3.9倍", True),
+        ("裏を取れていない話", "画面に載る", "画面から外す", True),
+    ]
+    label_x, label_w = 18, 168
+    col_w = 168
+    a_x = label_x + label_w + 16
+    b_x = a_x + col_w + 22
+    row_h, gap_y = 40, 12
+    top = 100
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 46
+    assert b_x + col_w <= WIDTH - 18, b_x + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ素材・同じ15分。頼み方だけを変えて測った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "素材は箇条書き14件の発表メモ。判定はすべて機械（文字数と枚数を数えた）。</text>\n",
+        f'<text class="t-xs" x="{a_x + 8}" y="{top - 12}">'
+        "「15分の発表用に構成を作って」</text>\n",
+        f'<text class="t-xs" x="{b_x + 8}" y="{top - 12}">'
+        "枚数・字数・口頭を指定</text>\n",
+    ]
+    for index, (name, before, after, better) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        mid = y + row_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{mid:.0f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{a_x}" y="{y}" '
+            f'width="{col_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="{a_x + 12}" y="{mid:.0f}">{_esc(before)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-good" x="{b_x}" y="{y}" '
+            f'width="{col_w}" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{b_x + 12}" y="{mid:.0f}">{_esc(after)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 口で言うことが画面の3.9倍。発表は「書いてあることを読む」ものではないので、"
+        "この差が出るのが正しい。</text>\n"
+    )
+    alt = (
+        "スライドの骨子を作らせた実測の比較図。素材は箇条書き14件の発表メモで、"
+        "持ち時間は15分。「15分の発表用に構成を作って」とだけ頼むと、枚数は18枚、"
+        "画面に出る文字は平均63字、40字を超えた枚が18枚中15枚、口で言うことは"
+        "画面と分かれておらず、裏を取れていない他社の話も画面に載った。"
+        "枚数と画面の字数と口頭の分離を指定すると、枚数は9枚、画面の文字は平均17字、"
+        "40字超は9枚中0枚、口で言うことは画面の3.9倍になり、裏を取れていない話は"
+        "画面から外れた。発表は書いてあることを読むものではないので、"
+        "口で言うことのほうが多くなるのが正しい。"
+    )
+    (OUT / "slides-screen-vs-spoken.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def slides_transcription_chart() -> None:
+    """素朴に頼むと、メモの箇条書きが1行1枚に転記されるだけになる図。"""
+    left_x, right_x = 18, 384
+    box_w = 318
+    item_h, gap = 30, 8
+    top = 112
+    memo_items = ["電話とFAXで確認", "1件12分・1日20件", "二重販売が3件",
+                  "謝罪訪問に部長同行", "倉庫も電話60本", "…（全14件）"]
+    slide_items = ["1. はじめに", "2. 現状の課題", "3. 業務量の実態",
+                   "4. 二重販売の発生", "5. 二重販売の影響", "…（全18枚）"]
+    height = top + len(memo_items) * (item_h + gap) - gap + 76
+    assert right_x + box_w <= WIDTH - 18, right_x + box_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "構成を考えたのではなく、箇条書きを1行1枚に置き換えただけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "素材14件に対して18枚。表紙・まとめ・ご清聴の3枚を足すと数が合ってしまう。</text>\n",
+        f'<text class="t-xs" x="{left_x + 8}" y="{top - 14}">素材のメモ（箇条書き）</text>\n',
+        f'<text class="t-xs" x="{right_x + 8}" y="{top - 14}">返ってきたスライド</text>\n',
+    ]
+    for index in range(len(memo_items)):
+        y = top + index * (item_h + gap)
+        mid = y + item_h / 2 + 5
+        parts.append(
+            f'<rect class="box-quiet" x="{left_x}" y="{y}" '
+            f'width="{box_w}" height="{item_h}" rx="5"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left_x + 12}" y="{mid:.0f}">'
+            f"{_esc(memo_items[index])}</text>\n"
+        )
+        parts.append(
+            f'<rect class="box-accent" x="{right_x}" y="{y}" '
+            f'width="{box_w}" height="{item_h}" rx="5"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 12}" y="{mid:.0f}">'
+            f"{_esc(slide_items[index])}</text>\n"
+        )
+        arrow_y = y + item_h / 2
+        parts.append(
+            f'<line class="link" x1="{left_x + box_w + 8}" y1="{arrow_y}" '
+            f'x2="{right_x - 8}" y2="{arrow_y}"/>\n'
+        )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "1〜7枚目が全部「課題」。聞く側は、何が問題なのかを7回に分けて聞かされる</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 材料を渡した順に並べ替えているだけなので、"
+        "「何を承認してほしいのか」が最後まで出てこない。</text>\n"
+    )
+    alt = (
+        "素朴に頼んだときのスライド構成を、素材のメモと並べた図。左が素材の箇条書きで、"
+        "電話とFAXで確認、1件12分・1日20件、二重販売が3件、謝罪訪問に部長同行、"
+        "倉庫も電話60本と続き全14件。右が返ってきたスライドで、はじめに、現状の課題、"
+        "業務量の実態、二重販売の発生、二重販売の影響と続き全18枚。"
+        "箇条書きがほぼ1行1枚に置き換えられており、表紙とまとめとご清聴の3枚を足すと"
+        "数が合う。1枚目から7枚目までが全部課題の説明で、聞く側は何が問題なのかを"
+        "7回に分けて聞かされることになり、何を承認してほしいのかが最後まで出てこない。"
+    )
+    (OUT / "slides-transcription.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def proofread_scope_chart() -> None:
     """頼み方3種で「直った欠陥」と「守れた語」がどう動くかの実測。
 
@@ -2471,4 +2609,6 @@ if __name__ == "__main__":
     quiz_three_leaks_chart()
     proofread_scope_chart()
     proofread_unreported_chart()
-    print(f"40枚を {OUT} に出力しました")
+    slides_screen_vs_spoken_chart()
+    slides_transcription_chart()
+    print(f"42枚を {OUT} に出力しました")
