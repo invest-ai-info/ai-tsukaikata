@@ -36,6 +36,7 @@ def build_env(templates_dir: Path = TEMPLATES_DIR) -> Environment:
         "url": config.SITE_URL,
         "description": config.SITE_DESCRIPTION,
         "lang": config.SITE_LANG,
+        "adsense_publisher_id": config.ADSENSE_PUBLISHER_ID,
     }
     return env
 

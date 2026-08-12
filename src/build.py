@@ -102,6 +102,11 @@ def collect(
     # デプロイのたびに独自ドメインの設定が外れる
     files["CNAME"] = config.CUSTOM_DOMAIN + "\n"
 
+    # AdSense の販売者確認ファイル。IDの実体は config が単一ソース
+    files["ads.txt"] = (
+        f"google.com, {config.ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0\n"
+    )
+
     return files, []
 
 

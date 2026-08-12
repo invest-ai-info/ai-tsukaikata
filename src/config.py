@@ -9,6 +9,10 @@ from __future__ import annotations
 SITE_NAME = "AIの使い方"
 SITE_URL = "https://ai-tsukaikata.com"
 CUSTOM_DOMAIN = "ai-tsukaikata.com"
+
+# AdSense のサイト運営者ID（2026-08-13 オーナーが審査コードを提供）。
+# 審査タグは templates/base.html、ads.txt は src/build.py がこのIDから作る。
+ADSENSE_PUBLISHER_ID = "pub-2552122294306014"
 SITE_DESCRIPTION = (
     "プログラミングなしで、AIに頼んで自動化を作る方法。"
     "使った指示文をそのまま載せ、なぜその言い方が効くのかまで書いています。"
@@ -59,6 +63,10 @@ SCENES = {
     "earn": {
         "label": "副業",
         "lead": "副業の作業と段取りをAIに手伝わせます。「必ず稼げる」は書きません。",
+    },
+    "safety": {
+        "label": "詐欺を防ぐ",
+        "lead": "AIで作られた・AIを名乗る詐欺から身を守ります。断定より、確かめる手順を。",
     },
     "fun": {
         "label": "遊び・創作",
