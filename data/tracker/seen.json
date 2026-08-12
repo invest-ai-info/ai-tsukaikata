@@ -5,11 +5,11 @@
   },
   "failures": {
     "anthropic-sdk": {
-      "count": 1,
+      "count": 2,
       "last_error": "RemoteDisconnected: Remote end closed connection without response"
     },
     "claude-code": {
-      "count": 1,
+      "count": 2,
       "last_error": "RemoteDisconnected: Remote end closed connection without response"
     }
   },
