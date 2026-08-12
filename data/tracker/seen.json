@@ -8,7 +8,7 @@
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
     "claude-code": "2026-08-11T19:50:59+00:00",
-    "deepmind-blog": "2026-08-06T15:06:15+00:00",
+    "deepmind-blog": "2026-08-12T14:01:59+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-11T17:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
@@ -31,6 +31,17 @@
       "uid": "e33edd69f7816887",
       "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-08-12T14:01:59+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users.",
+      "title": "Putting sign language AI into users’ hands",
+      "uid": "51a5149bea38d09d",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+      "vendor": "Google DeepMind"
     }
   ],
   "uids": {
@@ -178,6 +189,7 @@
     "4fd0ba602c3bc33b": "2026-08-01T12:16:42.309603+00:00",
     "4fe8178063b9a4c4": "2026-08-01T12:16:42.309603+00:00",
     "512015744152eb26": "2026-08-01T12:16:42.309603+00:00",
+    "51a5149bea38d09d": "2026-08-12T15:16:40.028954+00:00",
     "51e03e55a1dfd29e": "2026-08-01T12:16:42.309603+00:00",
     "53ed9cf1bc8fddae": "2026-08-02T11:35:58.106550+00:00",
     "540824f7c5e758f3": "2026-08-01T12:16:42.309603+00:00",
