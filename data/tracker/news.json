@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-12T16:13:47.060095+00:00",
+      "importance": "major",
+      "label": "Grok 新モデル",
+      "published": "2026-08-12T15:35:57+00:00",
+      "source_id": "openrouter-xai",
+      "summary": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+      "title": "x-ai/grok-4.6",
+      "uid": "732cc8e99d4e8494",
+      "url": "https://openrouter.ai/x-ai/grok-4.6",
+      "vendor": "xAI"
+    },
+    {
       "first_seen": "2026-08-12T15:16:40.028954+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",
