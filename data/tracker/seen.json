@@ -20,52 +20,7 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-09T23:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-12T06:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption.",
-      "title": "From assistance to execution: How enterprises put AI to work",
-      "uid": "e33edd69f7816887",
-      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-12T14:01:59+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users.",
-      "title": "Putting sign language AI into users’ hands",
-      "uid": "51a5149bea38d09d",
-      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-12T20:56:22+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Documented claude remote-control --continue for resuming the most recent Remote Control session Added server-supplied Claude Code hook support for self-hosted runner sessions, matching…",
-      "title": "v2.1.229",
-      "uid": "a9dcded0aaecd80a",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-12T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations.",
-      "title": "How RingCentral builds AI-native work from engineering to ops",
-      "uid": "4408d194e70063a3",
-      "url": "https://openai.com/index/ringcentral",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
