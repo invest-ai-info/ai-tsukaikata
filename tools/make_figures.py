@@ -3459,6 +3459,172 @@ def critique_rewrite_loses_chart() -> None:
     )
 
 
+def runbook_find_holes_chart() -> None:
+    """手順書に仕込んだ穴8件を、頼み方4通りで何件見つけられたか。
+
+    実測（2026-08-12・架空の社内手順書8手順）。4通りとも会話の1手目として
+    独立に実行した。判定は Python の正規表現照合
+    （`docs/evidence/try-the-runbook.md`）。
+    """
+    rows = [
+        ("①「レビューしてください」", 5, "bar-old", "読んで批評させた"),
+        ("②「そのとおりにやってみて」", 0, "box-bad", "止まらずに8手順とも完了した"),
+        ("③ ②＋「できない所で止まって」", 8, "bar-new", "8手順すべてで止まった"),
+        ("④ 手順ごとに要る物を先に出させる", 7, "bar-in", "成果物の連鎖が切れた2か所を名指し"),
+    ]
+    left, right = 258, 470
+    scale = (right - left) / 8.0
+    top, bar_h, gap = 96, 24, 30
+    row_h = bar_h + gap
+    height = top + len(rows) * row_h + 46
+    assert right + 40 <= WIDTH - 18, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ手順書に仕込んだ穴8件を、頼み方4通りで何件見つけられたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の社内手順書（8手順）。前の手順の成果物が無い・場所が決まらないなどの穴を、"
+        "先に8件仕込んだ。</text>\n",
+        f'<text class="t-xs" x="{left}" y="{top - 12}">0件</text>\n',
+        f'<text class="t-xs" x="{right - 22}" y="{top - 12}">8件</text>\n',
+    ]
+    for index, (name, found, klass, note) in enumerate(rows):
+        y = top + index * row_h
+        parts.append(f'<text class="t" x="18" y="{y + 17}">{_esc(name)}</text>\n')
+        bw = max(3.0, found * scale)
+        parts.append(
+            f'<rect class="{klass}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        value_class = "t-bad" if found <= 2 else "t-strong"
+        parts.append(
+            f'<text class="{value_class}" x="{left + bw + 10:.1f}" y="{y + 17}">'
+            f"{found}/8</text>\n"
+        )
+        parts.append(
+            f'<text class="t-xs" x="{left}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ ②は穴を1件も報告しなかった。書かれていないことを自分で決めて、"
+        "8手順とも「完了」で終えたため。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 差は「実行させたかどうか」ではなく、"
+        "「できないときに止まってよい、と伝えたかどうか」で出ている。</text>\n"
+    )
+    alt = (
+        "同じ手順書に仕込んだ穴8件を、頼み方4通りで何件見つけられたかを比べた横棒グラフ。"
+        "架空の社内手順書8手順に、前の手順の成果物が無い、保存場所が決まらないなどの穴を"
+        "先に8件仕込んである。"
+        "「この手順書をレビューしてください」と読ませて批評させると8件中5件。"
+        "「そのとおりにやってみてください」と実行させただけだと8件中0件で、"
+        "止まらずに8手順とも完了した。"
+        "同じ実行の指示に「できないところがあったらそこで止まって理由を書いてください」を"
+        "足すと8件中8件で、8手順すべてで止まった。"
+        "各手順の開始時点で手元に必要なものを先に出させると8件中7件で、"
+        "前の手順の成果物として存在しないものを2か所名指しした。"
+        "実行させただけの回が穴を1件も報告しなかったのは、書かれていないことを"
+        "自分で決めて、8手順とも完了で終えたため。"
+        "差は実行させたかどうかではなく、できないときに止まってよいと"
+        "伝えたかどうかで出ている。"
+    )
+    (OUT / "runbook-find-holes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def runbook_silent_completion_chart() -> None:
+    """「そのとおりにやってみて」だけで頼んだとき、各手順で何件を自分で決めたか。
+
+    実測（2026-08-12・同じ手順書）。返ってきた実行記録から、手順書に
+    書かれていない決定を人が数え、あとから申告させた件数と突き合わせた。
+    """
+    steps = [
+        ("1 メールから集める", 3),
+        ("2 共有フォルダに保存", 1),
+        ("3 ファイル名を変更", 2),
+        ("4 金額を確認・差し戻す", 3),
+        ("5 明細表を添付して連絡", 3),
+        ("6 経理から承認", 0),
+        ("7 上長に提出", 1),
+        ("8 記録を残す", 1),
+    ]
+    total = sum(n for _, n in steps)
+    left = 232
+    unit = 26
+    top, row_h = 96, 28
+    bottom = top + len(steps) * row_h + 16
+    facts = [
+        ("この実行で「止まった」と報告された手順", "0 / 8", "box-bad", "t-bad"),
+        ("「完了しました」で終わった手順", "8 / 8", "box-bad", "t-bad"),
+        ("あとから「自分で決めたこと」を挙げさせたときの申告", "12 件", "box-quiet", "t-sm"),
+        ("決めるその場で「仮置き」と印を付けさせた場合", "12 / 12 一致", "box-good", "t-good"),
+    ]
+    height = bottom + len(facts) * (26 + 8) + 46
+    assert left + 8 * unit + 60 <= WIDTH - 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「この手順書のとおりにやってみてください」だけで頼んだとき、"
+        "各手順で自分で決めた数</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "手順書に書かれていないのに値を決めた箇所を、返ってきた実行記録から数えた。"
+        f"全8手順で計{total}件。</text>\n",
+    ]
+    for index, (name, count) in enumerate(steps):
+        y = top + index * row_h
+        parts.append(f'<text class="t" x="18" y="{y + 15}">{_esc(name)}</text>\n')
+        for i in range(count):
+            parts.append(
+                f'<rect class="box-bad" x="{left + i * unit}" y="{y}" '
+                f'width="{unit - 6}" height="18" rx="3"/>\n'
+            )
+        label = f"{count}件を自分で決めた" if count else "決めた値なし"
+        cls = "t-bad" if count else "t-sm"
+        parts.append(
+            f'<text class="{cls}" x="{left + 8 * unit}" y="{y + 14}">{_esc(label)}</text>\n'
+        )
+    for index, (label, value, box, text_class) in enumerate(facts):
+        y = bottom + index * (26 + 8)
+        parts.append(
+            f'<rect class="{box}" x="18" y="{y}" width="666" height="26" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t" x="30" y="{y + 18}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<text class="{text_class}" x="560" y="{y + 18}">{_esc(value)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        f"※ 実際に決めていたのは{total}件だが、あとから挙げさせた申告は12件。"
+        "漏れた2件は、値を書かずに黙って進んだ判断だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 決めた値を、決めるその場で「仮置き」と印を付けさせると、"
+        "本文の印と最後の一覧が12件で一致した。</text>\n"
+    )
+    alt = (
+        "「この手順書のとおりにやってみてください」とだけ頼んだときに、"
+        "各手順でいくつの値を自分で決めたかを示した図。"
+        "手順1のメールから集めるで3件、手順2の共有フォルダに保存で1件、"
+        "手順3のファイル名を変更で2件、手順4の金額を確認し差し戻すで3件、"
+        "手順5の明細表を添付して連絡で3件、手順6の経理から承認で0件、"
+        "手順7の上長に提出で1件、手順8の記録を残すで1件。合計14件。"
+        "この実行で止まったと報告された手順は8つのうち0。"
+        "完了しましたで終わった手順は8つのうち8。"
+        "あとから自分で決めたことを挙げさせたときの申告は12件で、"
+        "実際に決めていた14件より2件少ない。"
+        "漏れた2件は、値を書かずに黙って進んだ判断だった。"
+        "決めた値を、決めるその場で仮置きと印を付けさせた場合は、"
+        "本文の印と最後の一覧が12件で一致した。"
+    )
+    (OUT / "runbook-silent-completion.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -3514,4 +3680,6 @@ if __name__ == "__main__":
     files_decidable_chart()
     critique_written_vs_missing_chart()
     critique_rewrite_loses_chart()
-    print(f"54枚を {OUT} に出力しました")
+    runbook_find_holes_chart()
+    runbook_silent_completion_chart()
+    print(f"56枚を {OUT} に出力しました")

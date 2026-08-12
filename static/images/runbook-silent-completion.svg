@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="518" viewBox="0 0 720 518" role="img" aria-label="「この手順書のとおりにやってみてください」とだけ頼んだときに、各手順でいくつの値を自分で決めたかを示した図。手順1のメールから集めるで3件、手順2の共有フォルダに保存で1件、手順3のファイル名を変更で2件、手順4の金額を確認し差し戻すで3件、手順5の明細表を添付して連絡で3件、手順6の経理から承認で0件、手順7の上長に提出で1件、手順8の記録を残すで1件。合計14件。この実行で止まったと報告された手順は8つのうち0。完了しましたで終わった手順は8つのうち8。あとから自分で決めたことを挙げさせたときの申告は12件で、実際に決めていた14件より2件少ない。漏れた2件は、値を書かずに黙って進んだ判断だった。決めた値を、決めるその場で仮置きと印を付けさせた場合は、本文の印と最後の一覧が12件で一致した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="518"/>
+<text class="t-strong" x="18" y="26">「この手順書のとおりにやってみてください」だけで頼んだとき、各手順で自分で決めた数</text>
+<text class="t-sm" x="18" y="45">手順書に書かれていないのに値を決めた箇所を、返ってきた実行記録から数えた。全8手順で計14件。</text>
+<text class="t" x="18" y="111">1 メールから集める</text>
+<rect class="box-bad" x="232" y="96" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="258" y="96" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="284" y="96" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="110">3件を自分で決めた</text>
+<text class="t" x="18" y="139">2 共有フォルダに保存</text>
+<rect class="box-bad" x="232" y="124" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="138">1件を自分で決めた</text>
+<text class="t" x="18" y="167">3 ファイル名を変更</text>
+<rect class="box-bad" x="232" y="152" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="258" y="152" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="166">2件を自分で決めた</text>
+<text class="t" x="18" y="195">4 金額を確認・差し戻す</text>
+<rect class="box-bad" x="232" y="180" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="258" y="180" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="284" y="180" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="194">3件を自分で決めた</text>
+<text class="t" x="18" y="223">5 明細表を添付して連絡</text>
+<rect class="box-bad" x="232" y="208" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="258" y="208" width="20" height="18" rx="3"/>
+<rect class="box-bad" x="284" y="208" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="222">3件を自分で決めた</text>
+<text class="t" x="18" y="251">6 経理から承認</text>
+<text class="t-sm" x="440" y="250">決めた値なし</text>
+<text class="t" x="18" y="279">7 上長に提出</text>
+<rect class="box-bad" x="232" y="264" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="278">1件を自分で決めた</text>
+<text class="t" x="18" y="307">8 記録を残す</text>
+<rect class="box-bad" x="232" y="292" width="20" height="18" rx="3"/>
+<text class="t-bad" x="440" y="306">1件を自分で決めた</text>
+<rect class="box-bad" x="18" y="336" width="666" height="26" rx="6"/>
+<text class="t" x="30" y="354">この実行で「止まった」と報告された手順</text>
+<text class="t-bad" x="560" y="354">0 / 8</text>
+<rect class="box-bad" x="18" y="370" width="666" height="26" rx="6"/>
+<text class="t" x="30" y="388">「完了しました」で終わった手順</text>
+<text class="t-bad" x="560" y="388">8 / 8</text>
+<rect class="box-quiet" x="18" y="404" width="666" height="26" rx="6"/>
+<text class="t" x="30" y="422">あとから「自分で決めたこと」を挙げさせたときの申告</text>
+<text class="t-sm" x="560" y="422">12 件</text>
+<rect class="box-good" x="18" y="438" width="666" height="26" rx="6"/>
+<text class="t" x="30" y="456">決めるその場で「仮置き」と印を付けさせた場合</text>
+<text class="t-good" x="560" y="456">12 / 12 一致</text>
+<text class="t-xs" x="18" y="490">※ 実際に決めていたのは14件だが、あとから挙げさせた申告は12件。漏れた2件は、値を書かずに黙って進んだ判断だった。</text>
+<text class="t-xs" x="18" y="506">※ 決めた値を、決めるその場で「仮置き」と印を付けさせると、本文の印と最後の一覧が12件で一致した。</text>
+</svg>

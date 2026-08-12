@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="358" viewBox="0 0 720 358" role="img" aria-label="同じ手順書に仕込んだ穴8件を、頼み方4通りで何件見つけられたかを比べた横棒グラフ。架空の社内手順書8手順に、前の手順の成果物が無い、保存場所が決まらないなどの穴を先に8件仕込んである。「この手順書をレビューしてください」と読ませて批評させると8件中5件。「そのとおりにやってみてください」と実行させただけだと8件中0件で、止まらずに8手順とも完了した。同じ実行の指示に「できないところがあったらそこで止まって理由を書いてください」を足すと8件中8件で、8手順すべてで止まった。各手順の開始時点で手元に必要なものを先に出させると8件中7件で、前の手順の成果物として存在しないものを2か所名指しした。実行させただけの回が穴を1件も報告しなかったのは、書かれていないことを自分で決めて、8手順とも完了で終えたため。差は実行させたかどうかではなく、できないときに止まってよいと伝えたかどうかで出ている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="358"/>
+<text class="t-strong" x="18" y="26">同じ手順書に仕込んだ穴8件を、頼み方4通りで何件見つけられたか</text>
+<text class="t-sm" x="18" y="45">架空の社内手順書（8手順）。前の手順の成果物が無い・場所が決まらないなどの穴を、先に8件仕込んだ。</text>
+<text class="t-xs" x="258" y="84">0件</text>
+<text class="t-xs" x="448" y="84">8件</text>
+<text class="t" x="18" y="113">①「レビューしてください」</text>
+<rect class="bar-old" x="258" y="96" width="132.5" height="24" rx="3"/>
+<text class="t-strong" x="400.5" y="113">5/8</text>
+<text class="t-xs" x="258" y="135">読んで批評させた</text>
+<text class="t" x="18" y="167">②「そのとおりにやってみて」</text>
+<rect class="box-bad" x="258" y="150" width="3.0" height="24" rx="3"/>
+<text class="t-bad" x="271.0" y="167">0/8</text>
+<text class="t-xs" x="258" y="189">止まらずに8手順とも完了した</text>
+<text class="t" x="18" y="221">③ ②＋「できない所で止まって」</text>
+<rect class="bar-new" x="258" y="204" width="212.0" height="24" rx="3"/>
+<text class="t-strong" x="480.0" y="221">8/8</text>
+<text class="t-xs" x="258" y="243">8手順すべてで止まった</text>
+<text class="t" x="18" y="275">④ 手順ごとに要る物を先に出させる</text>
+<rect class="bar-in" x="258" y="258" width="185.5" height="24" rx="3"/>
+<text class="t-strong" x="453.5" y="275">7/8</text>
+<text class="t-xs" x="258" y="297">成果物の連鎖が切れた2か所を名指し</text>
+<text class="t-xs" x="18" y="330">※ ②は穴を1件も報告しなかった。書かれていないことを自分で決めて、8手順とも「完了」で終えたため。</text>
+<text class="t-xs" x="18" y="346">※ 差は「実行させたかどうか」ではなく、「できないときに止まってよい、と伝えたかどうか」で出ている。</text>
+</svg>
