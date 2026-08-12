@@ -1891,6 +1891,137 @@ def table_anomaly_types_chart() -> None:
     )
 
 
+def ask_invented_settings_chart() -> None:
+    """21字の依頼に対し、AIが勝手に決めた設定の数（2026-08-12 実測）。"""
+    rows = [
+        ("そのまま書かせる", 4, "box-accent", "t-accent",
+         "原因・部署・氏名・再発防止策"),
+        ("「この頼み方を良くして」", 7, "box-bad", "t-bad",
+         "＋日数・取引の長さ・初回か・文体・字数"),
+        ("「足りない情報を挙げて」", 0, "box-good", "t-good",
+         "決めずに、7件を質問で返す"),
+    ]
+    # 注記は棒の右ではなく行の下に敷く（右に置くと 21字ぶんで枠を越える）
+    label_x, label_w = 18, 214
+    unit = 34
+    bar_x = label_x + label_w + 14
+    row_h, gap_y = 34, 30  # gap_y に注記1行ぶんを含める
+    top = 100
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 46
+    assert bar_x + 7 * unit + 60 <= WIDTH - 18, bar_x + 7 * unit + 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「良くして」と頼むと、AIが決めた設定はむしろ増える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "21字の依頼「取引先に謝るメールを書いて。納期が遅れた。」に対して。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "AIが勝手に決めた設定の数</text>\n",
+    ]
+    for index, (name, value, cls, tcls, note) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        mid = y + row_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{mid:.0f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{bar_x}" y="{y}" '
+            f'width="{7 * unit}" height="{row_h}" rx="6"/>\n'
+        )
+        if value:
+            parts.append(
+                f'<rect class="{cls}" x="{bar_x}" y="{y}" '
+                f'width="{value * unit}" height="{row_h}" rx="6"/>\n'
+            )
+        parts.append(
+            f'<text class="{tcls}" x="{bar_x + 7 * unit + 12}" '
+            f'y="{mid:.0f}">{value}件</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{bar_x}" y="{y + row_h + 18}">{_esc(note)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 2行目の改良版プロンプトは立派に見えるので、そのまま使いやすい。"
+        "「5年以上の取引」「初めての遅延」は、こちらが一度も言っていない。</text>\n"
+    )
+    alt = (
+        "21字の曖昧な依頼に対して、AIが勝手に決めた設定の数を比べた図。"
+        "依頼は「取引先に謝るメールを書いて。納期が遅れた。」で、書いてある事実は3件だけ。"
+        "そのまま書かせると、原因・部署・氏名・再発防止策の4件をAIが決めた。"
+        "「この頼み方を良くして」と頼むと、さらに遅延日数・取引の長さ・初回かどうか・"
+        "文体・文字数が加わって7件に増えた。「足りない情報を挙げて」と頼むと"
+        "決めた設定は0件で、代わりに7件を質問として返してきた。"
+        "改良版プロンプトは立派に見えるのでそのまま使いやすいが、"
+        "5年以上の取引や初めての遅延は、こちらが一度も言っていない。"
+    )
+    (OUT / "ask-invented-settings.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def ask_missing_info_chart() -> None:
+    """「足りない情報」として返ってきた7件と、その並び順の意味。"""
+    items = [
+        ("1", "何がどれだけ遅れたのか", "謝罪の重さが変わる"),
+        ("2", "遅れた原因", "書かないと「隠している」と読まれる"),
+        ("3", "新しい納期が決まっているか", "無いと相手が動けない"),
+        ("4", "相手が受ける影響", "補償に触れるかが決まる"),
+        ("5", "自分の立場と相手の役職", "文面の重さが変わる"),
+        ("6", "これが初めてか", "再発防止策の要否"),
+        ("7", "補償や値引きに触れるか", "社内未決を書くと後で困る"),
+    ]
+    num_x, name_x, why_x = 22, 56, 330
+    row_h, gap = 34, 8
+    top = 100
+    height = top + len(items) * (row_h + gap) - gap + 62
+    assert why_x + 26 * 13 <= WIDTH - 18, why_x + 26 * 13
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "答えが変わる度合いの大きい順に、質問が返ってくる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "上の3つが埋まれば下書きは作れる。4〜7は「不明」のまま触れない形にできる。</text>\n",
+        f'<text class="t-xs" x="{name_x}" y="{top - 12}">足りない情報</text>\n',
+        f'<text class="t-xs" x="{why_x}" y="{top - 12}">埋まらないと何が起きるか</text>\n',
+    ]
+    for index, (num, name, why) in enumerate(items):
+        y = top + index * (row_h + gap)
+        mid = y + row_h / 2 + 5
+        top3 = index < 3
+        parts.append(
+            f'<rect class="{"box-accent" if top3 else "box-quiet"}" x="{num_x - 4}" '
+            f'y="{y}" width="{WIDTH - 40}" height="{row_h}" rx="5"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-accent" if top3 else "t-sm"}" x="{num_x + 6}" '
+            f'y="{mid:.0f}">{num}</text>\n'
+        )
+        parts.append(f'<text class="t-sm" x="{name_x}" y="{mid:.0f}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{why_x}" y="{mid:.0f}">{_esc(why)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ 色の付いた1〜3が「これが無いと仮の内容になる」もの。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 質問が7件返るということは、そのまま書かせていたら"
+        "7件をAIが決めていたということ。</text>\n"
+    )
+    alt = (
+        "「足りない情報を挙げて」と頼んだときに返ってきた7件を、"
+        "答えが変わる度合いの大きい順に並べた図。1番は何がどれだけ遅れたのかで"
+        "謝罪の重さが変わる。2番は遅れた原因で、書かないと隠していると読まれる。"
+        "3番は新しい納期が決まっているかで、無いと相手が動けない。"
+        "4番は相手が受ける影響で補償に触れるかが決まる。5番は自分の立場と相手の役職で"
+        "文面の重さが変わる。6番はこれが初めてかで再発防止策の要否。"
+        "7番は補償や値引きに触れるかで、社内で決まっていないことを書くと後で困る。"
+        "上の3つが埋まれば下書きは作れ、4から7は不明のまま触れない形にできる。"
+        "質問が7件返るということは、そのまま書かせていたら7件をAIが決めていたということ。"
+    )
+    (OUT / "ask-missing-info.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def report_facts_lost_chart() -> None:
     """今週のメモにあった事実のうち、週報に残った数（2026-08-12 実測）。"""
     lost = ["返事がまだ来ていない", "止まっている理由（担当が出張）",
@@ -3209,8 +3340,10 @@ if __name__ == "__main__":
     menu_stock_usage_chart()
     report_facts_lost_chart()
     report_template_overwrite_chart()
+    ask_invented_settings_chart()
+    ask_missing_info_chart()
     summary_what_drops_chart()
     summary_length_vs_keep_chart()
     files_naive_outcome_chart()
     files_decidable_chart()
-    print(f"50枚を {OUT} に出力しました")
+    print(f"52枚を {OUT} に出力しました")

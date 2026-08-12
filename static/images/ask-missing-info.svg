@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="448" viewBox="0 0 720 448" role="img" aria-label="「足りない情報を挙げて」と頼んだときに返ってきた7件を、答えが変わる度合いの大きい順に並べた図。1番は何がどれだけ遅れたのかで謝罪の重さが変わる。2番は遅れた原因で、書かないと隠していると読まれる。3番は新しい納期が決まっているかで、無いと相手が動けない。4番は相手が受ける影響で補償に触れるかが決まる。5番は自分の立場と相手の役職で文面の重さが変わる。6番はこれが初めてかで再発防止策の要否。7番は補償や値引きに触れるかで、社内で決まっていないことを書くと後で困る。上の3つが埋まれば下書きは作れ、4から7は不明のまま触れない形にできる。質問が7件返るということは、そのまま書かせていたら7件をAIが決めていたということ。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="448"/>
+<text class="t-strong" x="18" y="26">答えが変わる度合いの大きい順に、質問が返ってくる</text>
+<text class="t-sm" x="18" y="45">上の3つが埋まれば下書きは作れる。4〜7は「不明」のまま触れない形にできる。</text>
+<text class="t-xs" x="56" y="88">足りない情報</text>
+<text class="t-xs" x="330" y="88">埋まらないと何が起きるか</text>
+<rect class="box-accent" x="18" y="100" width="680" height="34" rx="5"/>
+<text class="t-accent" x="28" y="122">1</text>
+<text class="t-sm" x="56" y="122">何がどれだけ遅れたのか</text>
+<text class="t-xs" x="330" y="122">謝罪の重さが変わる</text>
+<rect class="box-accent" x="18" y="142" width="680" height="34" rx="5"/>
+<text class="t-accent" x="28" y="164">2</text>
+<text class="t-sm" x="56" y="164">遅れた原因</text>
+<text class="t-xs" x="330" y="164">書かないと「隠している」と読まれる</text>
+<rect class="box-accent" x="18" y="184" width="680" height="34" rx="5"/>
+<text class="t-accent" x="28" y="206">3</text>
+<text class="t-sm" x="56" y="206">新しい納期が決まっているか</text>
+<text class="t-xs" x="330" y="206">無いと相手が動けない</text>
+<rect class="box-quiet" x="18" y="226" width="680" height="34" rx="5"/>
+<text class="t-sm" x="28" y="248">4</text>
+<text class="t-sm" x="56" y="248">相手が受ける影響</text>
+<text class="t-xs" x="330" y="248">補償に触れるかが決まる</text>
+<rect class="box-quiet" x="18" y="268" width="680" height="34" rx="5"/>
+<text class="t-sm" x="28" y="290">5</text>
+<text class="t-sm" x="56" y="290">自分の立場と相手の役職</text>
+<text class="t-xs" x="330" y="290">文面の重さが変わる</text>
+<rect class="box-quiet" x="18" y="310" width="680" height="34" rx="5"/>
+<text class="t-sm" x="28" y="332">6</text>
+<text class="t-sm" x="56" y="332">これが初めてか</text>
+<text class="t-xs" x="330" y="332">再発防止策の要否</text>
+<rect class="box-quiet" x="18" y="352" width="680" height="34" rx="5"/>
+<text class="t-sm" x="28" y="374">7</text>
+<text class="t-sm" x="56" y="374">補償や値引きに触れるか</text>
+<text class="t-xs" x="330" y="374">社内未決を書くと後で困る</text>
+<text class="t-xs" x="18" y="416">※ 色の付いた1〜3が「これが無いと仮の内容になる」もの。</text>
+<text class="t-xs" x="18" y="436">※ 質問が7件返るということは、そのまま書かせていたら7件をAIが決めていたということ。</text>
+</svg>
