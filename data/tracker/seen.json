@@ -3,20 +3,11 @@
     "55beddbfd09c1a07": "2026-08-11",
     "a6760b940fd45ef8": "2026-08-10"
   },
-  "failures": {
-    "anthropic-sdk": {
-      "count": 2,
-      "last_error": "RemoteDisconnected: Remote end closed connection without response"
-    },
-    "claude-code": {
-      "count": 2,
-      "last_error": "RemoteDisconnected: Remote end closed connection without response"
-    }
-  },
+  "failures": {},
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
-    "claude-code": "2026-08-11T19:50:59+00:00",
+    "claude-code": "2026-08-12T20:56:22+00:00",
     "deepmind-blog": "2026-08-12T14:01:59+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-11T17:00:00+00:00",
@@ -51,6 +42,28 @@
       "uid": "51a5149bea38d09d",
       "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
       "vendor": "Google DeepMind"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-12T20:56:22+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Documented claude remote-control --continue for resuming the most recent Remote Control session Added server-supplied Claude Code hook support for self-hosted runner sessions, matching…",
+      "title": "v2.1.229",
+      "uid": "a9dcded0aaecd80a",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-12T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations.",
+      "title": "How RingCentral builds AI-native work from engineering to ops",
+      "uid": "4408d194e70063a3",
+      "url": "https://openai.com/index/ringcentral",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -176,6 +189,7 @@
     "41208f4ee4f0d528": "2026-08-01T12:16:42.309603+00:00",
     "4176b3ffa531bc36": "2026-08-01T12:16:42.309603+00:00",
     "43e86934d8332c0b": "2026-08-01T12:16:42.309603+00:00",
+    "4408d194e70063a3": "2026-08-12T22:05:03.082330+00:00",
     "44e661cdec0139b2": "2026-08-04T11:04:53.115730+00:00",
     "451d82648427a5d8": "2026-08-01T13:06:14.304393+00:00",
     "45686ecb6e4a26aa": "2026-08-04T11:04:53.115730+00:00",
@@ -344,6 +358,7 @@
     "a74604468732dd9e": "2026-08-01T12:16:42.309603+00:00",
     "a7c54df51aea4a5c": "2026-08-01T12:16:42.309603+00:00",
     "a7d16ccc94839459": "2026-08-01T12:16:42.309603+00:00",
+    "a9dcded0aaecd80a": "2026-08-12T22:05:03.082330+00:00",
     "aa33c668794b3a3e": "2026-08-01T12:16:42.309603+00:00",
     "aa4f152550a6d84f": "2026-08-01T12:16:42.309603+00:00",
     "ab042980a9ef630c": "2026-08-01T12:16:42.309603+00:00",

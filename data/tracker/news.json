@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-12T22:05:03.082330+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-12T20:56:22+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Documented claude remote-control --continue for resuming the most recent Remote Control session Added server-supplied Claude Code hook support for self-hosted runner sessions, matching…",
+      "title": "v2.1.229",
+      "uid": "a9dcded0aaecd80a",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-12T17:16:22.730003+00:00",
       "importance": "major",
       "label": "Qwen 新モデル",
@@ -50,6 +62,20 @@
       "title": "From assistance to execution: How enterprises put AI to work",
       "uid": "e33edd69f7816887",
       "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-12T22:05:03.082330+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-12T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations.",
+      "summary_ja": "RingCentralがAI活用で業務を改善。\n仕事向けChatGPTとCodexを使い、\nAI製品開発加速と運用状況分析を一元化。",
+      "summary_source": "gemini",
+      "title": "How RingCentral builds AI-native work from engineering to ops",
+      "uid": "4408d194e70063a3",
+      "url": "https://openai.com/index/ringcentral",
       "vendor": "OpenAI"
     },
     {
