@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-12T17:16:22.730003+00:00",
+      "importance": "major",
+      "label": "Qwen 新モデル",
+      "published": "2026-08-12T16:21:42+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion to…",
+      "title": "qwen/qwen3.8-2.4t-a95b",
+      "uid": "c02f674e6ff35098",
+      "url": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b",
+      "vendor": "Alibaba Qwen"
+    },
+    {
       "first_seen": "2026-08-12T16:13:47.060095+00:00",
       "importance": "major",
       "label": "Grok 新モデル",
