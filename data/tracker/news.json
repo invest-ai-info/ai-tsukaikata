@@ -2829,20 +2829,6 @@
       "uid": "9b219e49ce105aee",
       "url": "https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "ELYZA note",
-      "published": "2026-05-14T10:02:08+00:00",
-      "source_id": "elyza-note",
-      "summary": "2026年5月よりELYZAのVI（ビジュアル・アイデンティティ）がリニューアルされました！ 続きをみる",
-      "summary_ja": "ELYZAのVI（ビジュアル・アイデンティティ）がリニューアルされた。\n2026年5月より。",
-      "summary_source": "gemini",
-      "title": "ELYZAのVIがリニューアルされました！",
-      "uid": "0e685010fece824f",
-      "url": "https://note.com/elyza/n/nbb38d0962941",
-      "vendor": "ELYZA"
     }
   ]
 }
