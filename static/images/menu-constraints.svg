@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="433" viewBox="0 0 720 433" role="img" aria-label="献立作りで、渡した条件がどれだけ守られたかを比べた実測の図。架空の冷蔵庫15品と条件5つを渡して機械で判定した。「あるもので献立を作って」とだけ頼むと、えびアレルギーを守る、買い足しに金額がある、予算3,000円に触れている、各日の調理時間がある、使わなかったものが分かる、在庫の残量が分かる、の6項目すべてが守られなかった。守る条件を先に書き出させると6項目すべてが守られた。素朴に頼んだ献立は読んでもおかしくないので、えびが入っていることは自分で条件と照らし合わせるまで気づけない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="433"/>
+<text class="t-strong" x="18" y="26">条件は、書いて渡しただけでは守られない</text>
+<text class="t-sm" x="18" y="45">架空の冷蔵庫15品と条件5つを渡して測った。判定はすべて機械。</text>
+<text class="t-xs" x="304" y="92">「あるもので献立を作って」</text>
+<text class="t-xs" x="480" y="92">条件を先に書き出させる</text>
+<text class="t-sm" x="18" y="128">えびアレルギーを守った</text>
+<rect class="box-quiet" x="304" y="104" width="150" height="38" rx="6"/>
+<text class="t-bad" x="318" y="128">守られない</text>
+<rect class="box-good" x="480" y="104" width="150" height="38" rx="6"/>
+<text class="t-good" x="494" y="128">守られた</text>
+<text class="t-sm" x="18" y="177">買い足しに金額がある</text>
+<rect class="box-quiet" x="304" y="153" width="150" height="38" rx="6"/>
+<text class="t-bad" x="318" y="177">守られない</text>
+<rect class="box-good" x="480" y="153" width="150" height="38" rx="6"/>
+<text class="t-good" x="494" y="177">守られた</text>
+<text class="t-sm" x="18" y="226">予算3,000円に触れている</text>
+<rect class="box-quiet" x="304" y="202" width="150" height="38" rx="6"/>
+<text class="t-bad" x="318" y="226">守られない</text>
+<rect class="box-good" x="480" y="202" width="150" height="38" rx="6"/>
+<text class="t-good" x="494" y="226">守られた</text>
+<text class="t-sm" x="18" y="275">各日の調理時間がある</text>
+<rect class="box-quiet" x="304" y="251" width="150" height="38" rx="6"/>
+<text class="t-bad" x="318" y="275">守られない</text>
+<rect class="box-good" x="480" y="251" width="150" height="38" rx="6"/>
+<text class="t-good" x="494" y="275">守られた</text>
+<text class="t-sm" x="18" y="324">使わなかったものが分かる</text>
+<rect class="box-quiet" x="304" y="300" width="150" height="38" rx="6"/>
+<text class="t-bad" x="318" y="324">守られない</text>
+<rect class="box-good" x="480" y="300" width="150" height="38" rx="6"/>
+<text class="t-good" x="494" y="324">守られた</text>
+<text class="t-sm" x="18" y="373">在庫の残量が分かる</text>
+<rect class="box-quiet" x="304" y="349" width="150" height="38" rx="6"/>
+<text class="t-bad" x="318" y="373">守られない</text>
+<rect class="box-good" x="480" y="349" width="150" height="38" rx="6"/>
+<text class="t-good" x="494" y="373">守られた</text>
+<text class="t-xs" x="18" y="419">※ 左の献立は読んでもおかしくない。えびが入っていることは、自分で条件と照らし合わせるまで気づけない。</text>
+</svg>

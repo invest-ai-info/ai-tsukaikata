@@ -1891,6 +1891,129 @@ def table_anomaly_types_chart() -> None:
     )
 
 
+def menu_constraints_chart() -> None:
+    """渡した条件が、献立にいくつ反映されたかの実測（2026-08-12）。
+
+    架空の冷蔵庫（15品）と5つの条件（えびアレルギー・予算3,000円・
+    平日20分・期限順・7日分）を渡して測った。判定は Python。
+    """
+    rows = [
+        ("えびアレルギーを守った", False, True),
+        ("買い足しに金額がある", False, True),
+        ("予算3,000円に触れている", False, True),
+        ("各日の調理時間がある", False, True),
+        ("使わなかったものが分かる", False, True),
+        ("在庫の残量が分かる", False, True),
+    ]
+    label_x, label_w = 18, 268
+    mark_w = 150
+    a_x = label_x + label_w + 18
+    b_x = a_x + mark_w + 26
+    row_h, gap_y = 38, 11
+    top = 104
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 46
+    assert b_x + mark_w <= WIDTH - 18, b_x + mark_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "条件は、書いて渡しただけでは守られない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の冷蔵庫15品と条件5つを渡して測った。判定はすべて機械。</text>\n",
+        f'<text class="t-xs" x="{a_x}" y="{top - 12}">'
+        "「あるもので献立を作って」</text>\n",
+        f'<text class="t-xs" x="{b_x}" y="{top - 12}">'
+        "条件を先に書き出させる</text>\n",
+    ]
+    for index, (name, before, after) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        mid = y + row_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{mid:.0f}">{_esc(name)}</text>\n')
+        for start, ok in ((a_x, before), (b_x, after)):
+            parts.append(
+                f'<rect class="{"box-good" if ok else "box-quiet"}" x="{start}" y="{y}" '
+                f'width="{mark_w}" height="{row_h}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="{"t-good" if ok else "t-bad"}" x="{start + 14}" '
+                f'y="{mid:.0f}">{"守られた" if ok else "守られない"}</text>\n'
+            )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 左の献立は読んでもおかしくない。えびが入っていることは、"
+        "自分で条件と照らし合わせるまで気づけない。</text>\n"
+    )
+    alt = (
+        "献立作りで、渡した条件がどれだけ守られたかを比べた実測の図。"
+        "架空の冷蔵庫15品と条件5つを渡して機械で判定した。"
+        "「あるもので献立を作って」とだけ頼むと、えびアレルギーを守る、"
+        "買い足しに金額がある、予算3,000円に触れている、各日の調理時間がある、"
+        "使わなかったものが分かる、在庫の残量が分かる、の6項目すべてが守られなかった。"
+        "守る条件を先に書き出させると6項目すべてが守られた。"
+        "素朴に頼んだ献立は読んでもおかしくないので、えびが入っていることは"
+        "自分で条件と照らし合わせるまで気づけない。"
+    )
+    (OUT / "menu-constraints.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def menu_stock_usage_chart() -> None:
+    """冷蔵庫にある15品のうち、献立に登場したものの数。"""
+    left, unit = 172, 30
+    bar_h, gap_y = 46, 20
+    top = 96
+    leftover = ["にんじん", "玉ねぎ", "ピーマン", "牛乳", "ミックスベジタブル", "食パン"]
+    list_top = top + 2 * (bar_h + gap_y) + 14
+    height = list_top + 30 + 44
+    assert left + 15 * unit <= WIDTH - 18, left + 15 * unit
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「あるもので」と頼んでも、6品は使われずに残る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "冷蔵庫と食品棚にあった15品のうち、献立に出てきた数。</text>\n",
+    ]
+    for index, (name, value, cls, tcls) in enumerate(
+        (("「あるもので作って」", 9, "box-accent", "t-accent"),
+         ("使い切る量まで書かせる", 15, "box-good", "t-good"))
+    ):
+        y = top + index * (bar_h + gap_y)
+        mid = y + bar_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="18" y="{mid:.0f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{15 * unit}" height="{bar_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{value * unit}" height="{bar_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{left + 15 * unit + 10}" '
+            f'y="{mid:.0f}">{value}／15品</text>\n'
+        )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{list_top}">'
+        f"残ったもの: {_esc('・'.join(leftover))}</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 残った6品は、次の週まで持たないものが混ざる。"
+        "「使わなかったものを挙げて」と頼むまで、残ったこと自体が見えない。</text>\n"
+    )
+    alt = (
+        "冷蔵庫にあった15品のうち、献立に登場した品数を比べた図。"
+        "「あるもので作って」と頼んだときは15品中9品しか使われず、"
+        "にんじん、玉ねぎ、ピーマン、牛乳、ミックスベジタブル、食パンの6品が残った。"
+        "使い切る量まで書かせると15品すべてが使われた。"
+        "残った6品には次の週まで持たないものが混ざるが、"
+        "使わなかったものを挙げてと頼むまで、残ったこと自体が見えない。"
+    )
+    (OUT / "menu-stock-usage.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def slides_screen_vs_spoken_chart() -> None:
     """同じ素材で、頼み方だけを変えて測った4項目。
 
@@ -2950,8 +3073,10 @@ if __name__ == "__main__":
     proofread_unreported_chart()
     slides_screen_vs_spoken_chart()
     slides_transcription_chart()
+    menu_constraints_chart()
+    menu_stock_usage_chart()
     summary_what_drops_chart()
     summary_length_vs_keep_chart()
     files_naive_outcome_chart()
     files_decidable_chart()
-    print(f"46枚を {OUT} に出力しました")
+    print(f"48枚を {OUT} に出力しました")
