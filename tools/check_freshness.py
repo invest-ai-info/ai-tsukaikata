@@ -212,6 +212,39 @@ def queue_shortage(queue_text: str, floor: int = QUEUE_FLOOR) -> str | None:
     return None
 
 
+EARN_HEADING_RE = re.compile(r"^### 副業.*$", re.M)
+EARN_FLOOR = 3  # 1晩ぶん。「副業も毎晩3本」（2026-08-13 オーナー指示）を支える床
+
+
+def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
+    """「副業」の節の未処理が1晩ぶんを切ったら、知らせる文字列を返す。
+
+    毎晩3本の方針は、節の残量が尽きると黙って守れなくなる（担当は正しく
+    「残りが無い」と報告するが、週次まで誰も補充しない）ので、床を別に持つ。
+
+    ⚠️ 節の見出しが見つからない場合も知らせる。見出しの改名で番人が
+    黙って死ぬのが、このサイトが一番警戒している「静かな欠落」だから。
+    """
+    m = EARN_HEADING_RE.search(queue_text)
+    if m is None:
+        return (
+            f"{QUEUE_PATH}: 「### 副業」の節が見つかりません。"
+            f"見出しを変えたなら tools/check_freshness.py の EARN_HEADING_RE も直すこと"
+        )
+    rest = queue_text[m.end():]
+    nxt = re.search(r"^### ", rest, re.M)
+    section = rest[: nxt.start()] if nxt else rest
+    count = len(UNPROCESSED_RE.findall(section))
+    if count < floor:
+        return (
+            f"{QUEUE_PATH}: 「副業」の節の未処理が{count}件です"
+            f"（床は{floor}件＝1晩ぶん。毎晩3本の方針が守れなくなります。"
+            f"補充の手順は docs/superpowers/notes/2026-08-10-demand-research.md の"
+            f"「2026-08-13 追加実行」節）"
+        )
+    return None
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     articles, errors = load_articles(root / "content")
@@ -223,9 +256,11 @@ def main() -> int:
     # 待ち行列の残量は記事の腐りとは別件だが、見る頻度（週次）が同じなので相乗りさせる。
     queue_file = root / "content" / "_recipe_queue.md"
     if queue_file.exists():
-        shortage = queue_shortage(queue_file.read_text(encoding="utf-8"))
-        if shortage:
-            report.problems.append(shortage)
+        queue_text = queue_file.read_text(encoding="utf-8")
+        for check in (queue_shortage, earn_queue_shortage):
+            shortage = check(queue_text)
+            if shortage:
+                report.problems.append(shortage)
 
     for problem in report.problems:
         print(problem)

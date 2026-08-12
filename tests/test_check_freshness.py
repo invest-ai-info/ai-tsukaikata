@@ -9,6 +9,7 @@ from check_freshness import (  # noqa: E402
     Reached,
     check_articles,
     external_links,
+    earn_queue_shortage,
     queue_shortage,
 )
 
@@ -200,3 +201,39 @@ def test_queue_shortage_counts_only_unprocessed():
 def test_queue_shortage_is_quiet_at_or_above_the_floor():
     queue = "\n".join(f"- [ ] 題材{i}" for i in range(6))
     assert queue_shortage(queue, floor=6) is None
+
+
+def test_earn_queue_shortage_fires_below_the_floor():
+    """「副業」の節の残量は全体とは別に見張る（毎晩3本の方針を支える床）。"""
+    queue = "\n".join(
+        ["- [ ] 全体側の題材"] * 10
+        + ["### 副業（テスト）", "- [ ] 副業の題材A", "- [!] 保留", "### 次の節", "- [ ] 別の節の題材"]
+    )
+    problem = earn_queue_shortage(queue, floor=3)
+    assert problem is not None
+    assert "1件" in problem
+
+
+def test_earn_queue_shortage_is_quiet_at_the_floor():
+    queue = "\n".join(
+        ["### 副業（テスト）"] + [f"- [ ] 副業の題材{i}" for i in range(3)] + ["### 次の節"]
+    )
+    assert earn_queue_shortage(queue, floor=3) is None
+
+
+def test_earn_queue_shortage_counts_only_inside_the_section():
+    """節の外の未処理をいくら積んでも、副業の床は埋まらない。"""
+    queue = "\n".join(
+        ["- [ ] 外の題材"] * 20 + ["### 副業（テスト）", "### 次の節"] + ["- [ ] 外の題材"] * 20
+    )
+    problem = earn_queue_shortage(queue, floor=3)
+    assert problem is not None
+    assert "0件" in problem
+
+
+def test_earn_queue_shortage_warns_when_the_section_is_missing():
+    """見出しの改名で番人が黙って死なないこと（静かな欠落の防止）。"""
+    queue = "\n".join(f"- [ ] 題材{i}" for i in range(10))
+    problem = earn_queue_shortage(queue, floor=3)
+    assert problem is not None
+    assert "見つかりません" in problem
