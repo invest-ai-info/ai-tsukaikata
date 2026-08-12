@@ -2843,20 +2843,6 @@
       "uid": "0e685010fece824f",
       "url": "https://note.com/elyza/n/nbb38d0962941",
       "vendor": "ELYZA"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "ELYZA note",
-      "published": "2026-05-14T00:57:45+00:00",
-      "source_id": "elyza-note",
-      "summary": "「JR西日本お客様センター」を運営する株式会社JR西日本カスタマーリレーションズ（代表取締役社長：堤 恵理子、以下JWCR）と大規模言語モデル（LLM）の社会実装を進める株式会社ELYZA（代表取締役：曽根岡 侑也、以下ELYZA）は、「JR西日本お客様センター」におけるお客様から寄せられる「ご意見・ご要望」について、電話の応対履歴作成業務に生成AIを活用し、運用整備と継続的な改善を通じて、平均…",
-      "summary_ja": "JR西日本とELYZAが生成AIを業務に定着させ、時間削減に成功した。\nJR西日本お客様センターで100名規模の応対履歴作成に利用。\n後処理時間を50%削減した。",
-      "summary_source": "gemini",
-      "title": "【社会実装】JR西日本カスタマーリレーションズとELYZA、運用整備とモデル改善で生成AI要約を100名規模の業務で定着させ後処理時間を50%削減",
-      "uid": "1addbd1846d983a4",
-      "url": "https://note.com/elyza/n/n41dc4c06b42d",
-      "vendor": "ELYZA"
     }
   ]
 }
