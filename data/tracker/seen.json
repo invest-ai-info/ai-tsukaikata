@@ -3,7 +3,16 @@
     "55beddbfd09c1a07": "2026-08-11",
     "a6760b940fd45ef8": "2026-08-10"
   },
-  "failures": {},
+  "failures": {
+    "anthropic-sdk": {
+      "count": 1,
+      "last_error": "RemoteDisconnected: Remote end closed connection without response"
+    },
+    "claude-code": {
+      "count": 1,
+      "last_error": "RemoteDisconnected: Remote end closed connection without response"
+    }
+  },
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
