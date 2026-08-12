@@ -3293,6 +3293,172 @@ def files_decidable_chart() -> None:
     )
 
 
+
+def critique_written_vs_missing_chart() -> None:
+    """批評のさせ方8通りで、仕込んだ欠陥10件のうち何件が指摘されたか。
+
+    実測（2026-08-12・架空の社内メールの下書き283字）。
+    仕込みは「文の中にある欠陥」5件と「一度も書かれていない欠陥」5件。
+    判定は Python の文字列照合（`docs/evidence/critique-not-rewrite.md`）。
+    """
+    rows = [
+        ("①「批評してください」", 4, 1),
+        ("②「添削してください」", 1, 0),
+        ("③ 直さずに批評", 5, 2),
+        ("④ 書かれていないことを", 1, 3),
+        ("⑤ ③＋一文を引用", 5, 3),
+        ("⑥ 読み手を名指し", 0, 5),
+        ("⑦ 最初に聞かれる質問", 0, 4),
+        ("⑧ 段落ごとに割り当て", 5, 4),
+    ]
+    left, right = 190, 566
+    span = right - left
+    scale = span / 5.0
+    top, bar_h, bar_gap, group_gap = 96, 14, 4, 18
+    group_h = bar_h * 2 + bar_gap + group_gap
+    height = top + len(rows) * group_h + 46
+    assert right + 44 <= WIDTH - 18, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ下書きを8通りに批評させて、仕込んだ欠陥10件のうち何件が指摘されたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の社内メール283字。文の中にある欠陥5件（濃い色）と、"
+        "一度も書かれていない欠陥5件（薄い色）を先に仕込んだ。</text>\n",
+        f'<text class="t-xs" x="{left}" y="{top - 30}">'
+        "濃い色＝文の中にある欠陥（指させる文がある） ／ "
+        "薄い色＝書かれていない欠陥（指させる文が無い）</text>\n",
+    ]
+    for index, (name, in_text, missing) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls) in enumerate(((in_text, "bar-out"), (missing, "bar-in"))):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            label_class = "t-bad" if value <= 1 else "t-sm"
+            parts.append(
+                f'<text class="{label_class}" x="{left + bw + 8:.1f}" y="{by + bar_h - 2}">'
+                f"{value}/5</text>\n"
+            )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ ①は指摘を6件も出すので十分な批評に見えるが、"
+        "書かれていない欠陥は5件中1件しか出ない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ ⑥は書かれていない欠陥を全部拾う代わりに、文の中の欠陥が0件になる。"
+        "片方だけでは足りないので2回に分けて聞く。</text>\n"
+    )
+    alt = (
+        "同じ下書きを8通りのやり方で批評させ、仕込んだ欠陥10件のうち何件が"
+        "指摘されたかを比べた横棒グラフ。欠陥は、文の中にある欠陥5件と、"
+        "下書きに一度も書かれていない欠陥5件に分けてある。"
+        "「批評してください」だけだと、文の中にある欠陥は5件中4件拾うのに、"
+        "書かれていない欠陥は5件中1件しか出ない。"
+        "「添削してください」は指摘としては5件中1件と0件しか出ない。"
+        "「直さずに批評してください」で文の中の欠陥が5件中5件、"
+        "書かれていない欠陥は5件中2件。"
+        "「書かれていないことを挙げて」で書かれていない欠陥が5件中3件。"
+        "一文を引用させると5件中5件と5件中3件。"
+        "読み手を名指しして何が分からないまま残るかを聞くと、"
+        "書かれていない欠陥が5件中5件になる代わりに、文の中の欠陥は5件中0件になる。"
+        "返信で最初に聞かれる質問を出させると5件中0件と5件中4件。"
+        "段落ごとに割り当てさせると5件中5件と5件中4件で、"
+        "1つの指示文としては最も広く拾った。"
+        "読み手を名指しする聞き方は、書かれていない欠陥を全部拾う代わりに"
+        "文の中の欠陥が見えなくなるので、2回に分けて聞く必要がある。"
+    )
+    (OUT / "critique-written-vs-missing.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def critique_rewrite_loses_chart() -> None:
+    """「添削してください」と頼んだとき、下書きに何が起きたか。
+
+    実測（2026-08-12・同じ下書き）。原文10行のうち何行がそのまま残ったかを
+    Python の文字列一致で数え、AIの申告件数と突き合わせた。
+    """
+    kept = 2
+    total = 10
+    cell_x, cell_gap = 18, 6
+    cell_w = (666 - cell_gap * (total - 1)) / total
+    cell_y, cell_h = 96, 34
+    top = 176
+    row_h, gap_y = 30, 10
+    facts = [
+        ("AIが申告した変更点", "3件", "box-quiet", "t-sm"),
+        ("指摘として挙がった欠陥（仕込み10件のうち）", "1件", "box-bad", "t-bad"),
+        ("原文に根拠のない記述が、書き直し本文に足された", "5件", "box-bad", "t-bad"),
+        ("書かれていない欠陥（期限・連絡先・主管・工数）が埋まった", "0件", "box-bad", "t-bad"),
+    ]
+    height = top + len(facts) * (row_h + gap_y) - gap_y + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「この下書きを添削してください」と頼んだとき、下書きに起きたこと</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の社内メール（本文10行）。返ってきた書き直し本文に"
+        "原文の行がそのまま残っているかを機械で数えた。</text>\n",
+        f'<text class="t-xs" x="18" y="{cell_y - 12}">'
+        "原文10行のうち、そのまま残った行（濃い枠）と、消えた行（赤い枠）</text>\n",
+    ]
+    for i in range(total):
+        x = cell_x + i * (cell_w + cell_gap)
+        klass = "box-good" if i < kept else "box-bad"
+        parts.append(
+            f'<rect class="{klass}" x="{x:.1f}" y="{cell_y}" '
+            f'width="{cell_w:.1f}" height="{cell_h}" rx="4"/>\n'
+        )
+    parts.append(
+        f'<text class="t-good" x="{cell_x}" y="{cell_y + cell_h + 18}">'
+        "残った2行＝宛名と名乗り</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="{cell_x + 200}" y="{cell_y + cell_h + 18}">'
+        "消えた8行。うち「大幅にコストが下がります」は指摘されずに削除された</text>\n"
+    )
+    for index, (label, value, box, text_class) in enumerate(facts):
+        y = top + index * (row_h + gap_y)
+        parts.append(
+            f'<rect class="{box}" x="18" y="{y}" width="666" height="{row_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t" x="30" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<text class="{text_class}" x="600" y="{y + 20}">{_esc(value)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ いちばん重いのは3行目。書き直し本文には、下書きの持ち主が決めていない"
+        "内容が5件入っていた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 根拠のない断定は「指摘」ではなく「削除」で処理されるので、"
+        "書いた本人は自分の断定に根拠が無かったことを知らないまま終わる。</text>\n"
+    )
+    alt = (
+        "「この下書きを添削してください」と頼んだときに下書きに起きたことを示した図。"
+        "本文10行のうち、そのまま残ったのは宛名と名乗りの2行だけで、残り8行は消えた。"
+        "消えた8行には「大幅にコストが下がります」という根拠のない断定が含まれるが、"
+        "これは指摘されずに削除された。"
+        "AIが申告した変更点は3件。仕込んだ欠陥10件のうち指摘として挙がったのは1件。"
+        "原文に根拠のない記述が書き直し本文に5件足された。"
+        "期限・連絡先・主管・工数といった、下書きに書かれていない欠陥が埋まったものは0件。"
+        "書き直し本文には、下書きの持ち主が決めていない内容が5件入っていた。"
+        "根拠のない断定は指摘ではなく削除で処理されるので、"
+        "書いた本人は自分の断定に根拠が無かったことを知らないまま終わる。"
+    )
+    (OUT / "critique-rewrite-loses.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -3346,4 +3512,6 @@ if __name__ == "__main__":
     summary_length_vs_keep_chart()
     files_naive_outcome_chart()
     files_decidable_chart()
-    print(f"52枚を {OUT} に出力しました")
+    critique_written_vs_missing_chart()
+    critique_rewrite_loses_chart()
+    print(f"54枚を {OUT} に出力しました")

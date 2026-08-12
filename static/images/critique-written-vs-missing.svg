@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="542" viewBox="0 0 720 542" role="img" aria-label="同じ下書きを8通りのやり方で批評させ、仕込んだ欠陥10件のうち何件が指摘されたかを比べた横棒グラフ。欠陥は、文の中にある欠陥5件と、下書きに一度も書かれていない欠陥5件に分けてある。「批評してください」だけだと、文の中にある欠陥は5件中4件拾うのに、書かれていない欠陥は5件中1件しか出ない。「添削してください」は指摘としては5件中1件と0件しか出ない。「直さずに批評してください」で文の中の欠陥が5件中5件、書かれていない欠陥は5件中2件。「書かれていないことを挙げて」で書かれていない欠陥が5件中3件。一文を引用させると5件中5件と5件中3件。読み手を名指しして何が分からないまま残るかを聞くと、書かれていない欠陥が5件中5件になる代わりに、文の中の欠陥は5件中0件になる。返信で最初に聞かれる質問を出させると5件中0件と5件中4件。段落ごとに割り当てさせると5件中5件と5件中4件で、1つの指示文としては最も広く拾った。読み手を名指しする聞き方は、書かれていない欠陥を全部拾う代わりに文の中の欠陥が見えなくなるので、2回に分けて聞く必要がある。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="542"/>
+<text class="t-strong" x="18" y="26">同じ下書きを8通りに批評させて、仕込んだ欠陥10件のうち何件が指摘されたか</text>
+<text class="t-sm" x="18" y="45">架空の社内メール283字。文の中にある欠陥5件（濃い色）と、一度も書かれていない欠陥5件（薄い色）を先に仕込んだ。</text>
+<text class="t-xs" x="190" y="66">濃い色＝文の中にある欠陥（指させる文がある） ／ 薄い色＝書かれていない欠陥（指させる文が無い）</text>
+<text class="t" x="18" y="108">①「批評してください」</text>
+<rect class="bar-out" x="190" y="96" width="300.8" height="14" rx="2"/>
+<text class="t-sm" x="498.8" y="108">4/5</text>
+<rect class="bar-in" x="190" y="114" width="75.2" height="14" rx="2"/>
+<text class="t-bad" x="273.2" y="126">1/5</text>
+<text class="t" x="18" y="158">②「添削してください」</text>
+<rect class="bar-out" x="190" y="146" width="75.2" height="14" rx="2"/>
+<text class="t-bad" x="273.2" y="158">1/5</text>
+<rect class="bar-in" x="190" y="164" width="2.0" height="14" rx="2"/>
+<text class="t-bad" x="200.0" y="176">0/5</text>
+<text class="t" x="18" y="208">③ 直さずに批評</text>
+<rect class="bar-out" x="190" y="196" width="376.0" height="14" rx="2"/>
+<text class="t-sm" x="574.0" y="208">5/5</text>
+<rect class="bar-in" x="190" y="214" width="150.4" height="14" rx="2"/>
+<text class="t-sm" x="348.4" y="226">2/5</text>
+<text class="t" x="18" y="258">④ 書かれていないことを</text>
+<rect class="bar-out" x="190" y="246" width="75.2" height="14" rx="2"/>
+<text class="t-bad" x="273.2" y="258">1/5</text>
+<rect class="bar-in" x="190" y="264" width="225.6" height="14" rx="2"/>
+<text class="t-sm" x="423.6" y="276">3/5</text>
+<text class="t" x="18" y="308">⑤ ③＋一文を引用</text>
+<rect class="bar-out" x="190" y="296" width="376.0" height="14" rx="2"/>
+<text class="t-sm" x="574.0" y="308">5/5</text>
+<rect class="bar-in" x="190" y="314" width="225.6" height="14" rx="2"/>
+<text class="t-sm" x="423.6" y="326">3/5</text>
+<text class="t" x="18" y="358">⑥ 読み手を名指し</text>
+<rect class="bar-out" x="190" y="346" width="2.0" height="14" rx="2"/>
+<text class="t-bad" x="200.0" y="358">0/5</text>
+<rect class="bar-in" x="190" y="364" width="376.0" height="14" rx="2"/>
+<text class="t-sm" x="574.0" y="376">5/5</text>
+<text class="t" x="18" y="408">⑦ 最初に聞かれる質問</text>
+<rect class="bar-out" x="190" y="396" width="2.0" height="14" rx="2"/>
+<text class="t-bad" x="200.0" y="408">0/5</text>
+<rect class="bar-in" x="190" y="414" width="300.8" height="14" rx="2"/>
+<text class="t-sm" x="498.8" y="426">4/5</text>
+<text class="t" x="18" y="458">⑧ 段落ごとに割り当て</text>
+<rect class="bar-out" x="190" y="446" width="376.0" height="14" rx="2"/>
+<text class="t-sm" x="574.0" y="458">5/5</text>
+<rect class="bar-in" x="190" y="464" width="300.8" height="14" rx="2"/>
+<text class="t-sm" x="498.8" y="476">4/5</text>
+<text class="t-xs" x="18" y="514">※ ①は指摘を6件も出すので十分な批評に見えるが、書かれていない欠陥は5件中1件しか出ない。</text>
+<text class="t-xs" x="18" y="530">※ ⑥は書かれていない欠陥を全部拾う代わりに、文の中の欠陥が0件になる。片方だけでは足りないので2回に分けて聞く。</text>
+</svg>
