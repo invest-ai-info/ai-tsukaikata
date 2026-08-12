@@ -1891,6 +1891,138 @@ def table_anomaly_types_chart() -> None:
     )
 
 
+def report_facts_lost_chart() -> None:
+    """今週のメモにあった事実のうち、週報に残った数（2026-08-12 実測）。"""
+    lost = ["返事がまだ来ていない", "止まっている理由（担当が出張）",
+            "△△工業は今週動きなし", "研修が延期になった",
+            "延期は先方都合", "事務作業で2日つぶれた",
+            "値引きの可否を相談したい"]
+    left, unit = 214, 42
+    bar_h, gap_y = 46, 20
+    top = 96
+    list_top = top + 2 * (bar_h + gap_y) + 22
+    height = list_top + len(lost) * 25 + 44
+    assert left + 9 * unit <= WIDTH - 18, left + 9 * unit
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "先週の形に合わせると、今週の事実が消える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "走り書きのメモにあった「報告すべき事実」9件が、週報にいくつ残ったか。</text>\n",
+    ]
+    for index, (name, value, cls, tcls) in enumerate(
+        (("「先週のこの形式で」", 2, "box-bad", "t-bad"),
+         ("型だけ使わせ、対応表を出させる", 9, "box-good", "t-good"))
+    ):
+        y = top + index * (bar_h + gap_y)
+        mid = y + bar_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="18" y="{mid:.0f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{9 * unit}" height="{bar_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{value * unit}" height="{bar_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{left + 9 * unit + 10}" '
+            f'y="{mid:.0f}">{value}／9</text>\n'
+        )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{list_top - 8}">'
+        "消えた7件（上ほど困るもの）</text>\n"
+    )
+    for index, name in enumerate(lost):
+        parts.append(
+            f'<text class="t-sm" x="34" y="{list_top + index * 25 + 12}">'
+            f"・{_esc(name)}</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 消えた7件は、どれも「進んでいない」ことを伝える情報。"
+        "報告書としては、いちばん伝えなければいけないところ。</text>\n"
+    )
+    alt = (
+        "週報を作らせたときに、今週のメモにあった事実がいくつ残ったかを比べた図。"
+        "走り書きのメモにあった報告すべき事実9件のうち、「先週のこの形式で書いて」と"
+        "頼んだ場合は2件しか残らなかった。型だけ使わせてメモとの対応表を出させると"
+        "9件すべてが残った。消えた7件は、返事がまだ来ていない、止まっている理由が"
+        "担当の出張であること、△△工業は今週動きなし、研修が延期になった、"
+        "延期は先方都合、事務作業で2日つぶれた、値引きの可否を相談したい、の7つ。"
+        "どれも進んでいないことを伝える情報で、報告書としてはいちばん伝えなければ"
+        "いけないところ。"
+    )
+    (OUT / "report-facts-lost.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def report_template_overwrite_chart() -> None:
+    """先週の型の言葉が、今週の事実を上書きした対応（実測）。"""
+    pairs = [
+        ("返事なし・担当が出張", "検討が進んでいます"),
+        ("今週は動きなし", "順調に進行中"),
+        ("研修が延期・日程未定", "日程を調整中"),
+        ("値引きの可否を相談したい", "特になし"),
+        ("（メモに進捗の数字なし）", "進捗85%"),
+    ]
+    left_x, right_x = 18, 392
+    box_w = 300
+    item_h, gap = 44, 12
+    top = 106
+    height = top + len(pairs) * (item_h + gap) - gap + 48
+    assert right_x + box_w <= WIDTH - 18, right_x + box_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "型の言葉が、今週の事実を上書きする</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "左が今週のメモに書いてあったこと。右が返ってきた週報の文。</text>\n",
+        f'<text class="t-xs" x="{left_x + 8}" y="{top - 14}">メモ（本当のこと）</text>\n',
+        f'<text class="t-xs" x="{right_x + 8}" y="{top - 14}">週報に出てきた文</text>\n',
+    ]
+    for index, (fact, written) in enumerate(pairs):
+        y = top + index * (item_h + gap)
+        mid = y + item_h / 2 + 5
+        parts.append(
+            f'<rect class="box-quiet" x="{left_x}" y="{y}" '
+            f'width="{box_w}" height="{item_h}" rx="5"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left_x + 12}" y="{mid:.0f}">{_esc(fact)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-bad" x="{right_x}" y="{y}" '
+            f'width="{box_w}" height="{item_h}" rx="5"/>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="{right_x + 12}" y="{mid:.0f}">{_esc(written)}</text>\n'
+        )
+        arrow_y = y + item_h / 2
+        parts.append(
+            f'<line class="link" x1="{left_x + box_w + 8}" y1="{arrow_y}" '
+            f'x2="{right_x - 8}" y2="{arrow_y}"/>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 右の文はどれも週報として自然に読める。"
+        "メモと並べるまで、書き換わっていることが分からない。</text>\n"
+    )
+    alt = (
+        "週報で、型の言葉が今週の事実を上書きした対応を並べた図。"
+        "メモに「返事なし・担当が出張」とあったものが週報では「検討が進んでいます」に、"
+        "「今週は動きなし」が「順調に進行中」に、「研修が延期・日程未定」が「日程を調整中」に、"
+        "「値引きの可否を相談したい」が「特になし」になった。"
+        "さらにメモに進捗の数字が無いのに「進捗85%」と書かれた。"
+        "右の文はどれも週報として自然に読めるので、メモと並べるまで"
+        "書き換わっていることが分からない。"
+    )
+    (OUT / "report-template-overwrite.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def menu_constraints_chart() -> None:
     """渡した条件が、献立にいくつ反映されたかの実測（2026-08-12）。
 
@@ -3075,8 +3207,10 @@ if __name__ == "__main__":
     slides_transcription_chart()
     menu_constraints_chart()
     menu_stock_usage_chart()
+    report_facts_lost_chart()
+    report_template_overwrite_chart()
     summary_what_drops_chart()
     summary_length_vs_keep_chart()
     files_naive_outcome_chart()
     files_decidable_chart()
-    print(f"48枚を {OUT} に出力しました")
+    print(f"50枚を {OUT} に出力しました")
