@@ -3625,6 +3625,80 @@ def runbook_silent_completion_chart() -> None:
     )
 
 
+def transcript_keep_vs_rewrite_chart() -> None:
+    """「整えてください」と「種類を並べて渡す」で、文字起こしに何が起きたか。
+
+    実測（2026-08-13・架空の電話打ち合わせの文字起こし28行）。
+    仕込み＝誤変換5件・食い違い2組・言い切りの度合い4件。
+    判定は Python の行差分（`docs/evidence/tidy-transcript-without-rewriting.md`）。
+    """
+    rows = [
+        ("誤変換5件（人事移動・決済など）", ["5/5 直った"], True, ["5/5 直った"], True),
+        ("40台/50台・加藤/佐藤の食い違い", ["自発的に指摘した"], True,
+         ["〔要確認〕を付けて両方残した"], True),
+        ("発言の言い回し（28行）", ["12行が別の語に置き換わった", "（うちの→弊社・たぶん→おそらく）"],
+         False, ["置き換え 0行"], True),
+        ("「たぶん」「はず」など確度4件", ["4件とも書き換わった", "「遅れたはず」→「遅れました」"],
+         False, ["4件とも原文のまま"], True),
+        ("直した箇所の申告", ["誤変換5件だけ", "（実際に変わったのは25行）"], False,
+         ["直した種類を自分から明記"], True),
+    ]
+    label_x, naive_x, rule_x = 18, 268, 496
+    line_h, row_pad = 16, 14
+    top = 96
+    ys = []
+    y = top
+    for _, nl, _, rl, _ in rows:
+        ys.append(y)
+        y += max(len(nl), len(rl)) * line_h + row_pad
+    height = y + 44
+    assert rule_x + 210 <= WIDTH, rule_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ文字起こし28行を、2通りの頼み方で整えさせた結果</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の電話打ち合わせ。誤変換5件・食い違い2組・言い切りの度合い4件を先に仕込んだ。</text>\n",
+        f'<text class="t-bad" x="{naive_x}" y="{top - 22}">「読みやすく整えて」</text>\n',
+        f'<text class="t-accent" x="{rule_x}" y="{top - 22}">種類を並べて渡す</text>\n',
+    ]
+    for (label, naive_lines, naive_ok, rule_lines, rule_ok), y0 in zip(rows, ys):
+        parts.append(f'<text class="t" x="{label_x}" y="{y0 + 12}">{_esc(label)}</text>\n')
+        for col_x, lines, ok in ((naive_x, naive_lines, naive_ok), (rule_x, rule_lines, rule_ok)):
+            cls = "t-good" if ok else "t-bad"
+            for i, line in enumerate(lines):
+                use = cls if i == 0 else "t-xs"
+                parts.append(
+                    f'<text class="{use}" x="{col_x}" y="{y0 + 12 + i * line_h}">'
+                    f"{_esc(line)}</text>\n"
+                )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ どちらの頼み方でも修正と発見は同じだけ働く。違いは「発言がその人の言葉のまま残るか」。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 判定はすべて行差分の機械照合。真値が音源にしか無い「4日」は、どちらの頼み方でも見つからない。</text>\n"
+    )
+    alt = (
+        "同じ文字起こし28行を2通りの頼み方で整えさせて、仕込んだ誤りがどうなったかを"
+        "並べた比較表。仕込みは、文脈から確定できる誤変換5件、文脈から確定できない"
+        "食い違い2組（40台と50台、加藤と佐藤）、変えてはいけない言い切りの度合い4件。"
+        "「読みやすく整えてください」と頼むと、誤変換は5件とも直り、食い違いも自発的に"
+        "指摘されたが、発言の言い回しは28行中12行が元の発言に無い語へ置き換わり"
+        "（うちの、が弊社に、たぶん、がおそらくに）、言い切りの度合いは4件とも書き換わって、"
+        "遅れたはずです、が、遅れました、という断定に変わった。直した箇所の申告は"
+        "誤変換5件だけで、実際に変わった25行に対して大きく足りない。"
+        "一方、取り除いてよい種類と変えてはいけない種類を並べて渡すと、"
+        "誤変換の修正5件と食い違いの発見は同じまま、言い回しの置き換えは0行になり、"
+        "言い切りの度合い4件は原文のまま残り、食い違いには要確認の印が付いて両方残った。"
+        "どちらの頼み方でも、真値が音源にしか無い、4日、の聞き間違いは見つからない。"
+    )
+    (OUT / "transcript-keep-vs-rewrite.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -3682,4 +3756,5 @@ if __name__ == "__main__":
     critique_rewrite_loses_chart()
     runbook_find_holes_chart()
     runbook_silent_completion_chart()
-    print(f"56枚を {OUT} に出力しました")
+    transcript_keep_vs_rewrite_chart()
+    print(f"57枚を {OUT} に出力しました")

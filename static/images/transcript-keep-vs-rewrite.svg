@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="338" viewBox="0 0 720 338" role="img" aria-label="同じ文字起こし28行を2通りの頼み方で整えさせて、仕込んだ誤りがどうなったかを並べた比較表。仕込みは、文脈から確定できる誤変換5件、文脈から確定できない食い違い2組（40台と50台、加藤と佐藤）、変えてはいけない言い切りの度合い4件。「読みやすく整えてください」と頼むと、誤変換は5件とも直り、食い違いも自発的に指摘されたが、発言の言い回しは28行中12行が元の発言に無い語へ置き換わり（うちの、が弊社に、たぶん、がおそらくに）、言い切りの度合いは4件とも書き換わって、遅れたはずです、が、遅れました、という断定に変わった。直した箇所の申告は誤変換5件だけで、実際に変わった25行に対して大きく足りない。一方、取り除いてよい種類と変えてはいけない種類を並べて渡すと、誤変換の修正5件と食い違いの発見は同じまま、言い回しの置き換えは0行になり、言い切りの度合い4件は原文のまま残り、食い違いには要確認の印が付いて両方残った。どちらの頼み方でも、真値が音源にしか無い、4日、の聞き間違いは見つからない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="338"/>
+<text class="t-strong" x="18" y="26">同じ文字起こし28行を、2通りの頼み方で整えさせた結果</text>
+<text class="t-sm" x="18" y="45">架空の電話打ち合わせ。誤変換5件・食い違い2組・言い切りの度合い4件を先に仕込んだ。</text>
+<text class="t-bad" x="268" y="74">「読みやすく整えて」</text>
+<text class="t-accent" x="496" y="74">種類を並べて渡す</text>
+<text class="t" x="18" y="108">誤変換5件（人事移動・決済など）</text>
+<text class="t-good" x="268" y="108">5/5 直った</text>
+<text class="t-good" x="496" y="108">5/5 直った</text>
+<text class="t" x="18" y="138">40台/50台・加藤/佐藤の食い違い</text>
+<text class="t-good" x="268" y="138">自発的に指摘した</text>
+<text class="t-good" x="496" y="138">〔要確認〕を付けて両方残した</text>
+<text class="t" x="18" y="168">発言の言い回し（28行）</text>
+<text class="t-bad" x="268" y="168">12行が別の語に置き換わった</text>
+<text class="t-xs" x="268" y="184">（うちの→弊社・たぶん→おそらく）</text>
+<text class="t-good" x="496" y="168">置き換え 0行</text>
+<text class="t" x="18" y="214">「たぶん」「はず」など確度4件</text>
+<text class="t-bad" x="268" y="214">4件とも書き換わった</text>
+<text class="t-xs" x="268" y="230">「遅れたはず」→「遅れました」</text>
+<text class="t-good" x="496" y="214">4件とも原文のまま</text>
+<text class="t" x="18" y="260">直した箇所の申告</text>
+<text class="t-bad" x="268" y="260">誤変換5件だけ</text>
+<text class="t-xs" x="268" y="276">（実際に変わったのは25行）</text>
+<text class="t-good" x="496" y="260">直した種類を自分から明記</text>
+<text class="t-xs" x="18" y="312">※ どちらの頼み方でも修正と発見は同じだけ働く。違いは「発言がその人の言葉のまま残るか」。</text>
+<text class="t-xs" x="18" y="328">※ 判定はすべて行差分の機械照合。真値が音源にしか無い「4日」は、どちらの頼み方でも見つからない。</text>
+</svg>
