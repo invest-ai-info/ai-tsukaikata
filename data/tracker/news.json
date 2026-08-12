@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-12T13:51:03.624504+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-12T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption.",
+      "summary_ja": "OpenAIが企業のAI導入状況を調査。\n企業はエージェント型AIを導入し、\nChatGPTやCodexを使い最先端企業が先行。",
+      "summary_source": "gemini",
+      "title": "From assistance to execution: How enterprises put AI to work",
+      "uid": "e33edd69f7816887",
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-11T21:06:02.039062+00:00",
       "importance": "minor",
       "label": "Claude Code",

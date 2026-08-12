@@ -13,14 +13,26 @@
     "google-ai-blog": "2026-08-11T17:00:00+00:00",
     "hf-deepseek": "2026-07-31T07:30:24+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
-    "openai-news": "2026-08-11T10:00:00+00:00",
+    "openai-news": "2026-08-12T06:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-03T04:33:32+00:00",
     "openrouter-xai": "2026-07-08T15:05:54+00:00",
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-09T23:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-12T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption.",
+      "title": "From assistance to execution: How enterprises put AI to work",
+      "uid": "e33edd69f7816887",
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "vendor": "OpenAI"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
@@ -397,6 +409,7 @@
     "e2291bc75a55c0e3": "2026-08-01T12:16:42.309603+00:00",
     "e2f89661ee8c7381": "2026-08-04T11:04:53.115730+00:00",
     "e308cad69399bfa1": "2026-08-01T12:16:42.309603+00:00",
+    "e33edd69f7816887": "2026-08-12T13:51:03.624504+00:00",
     "e362d8ffa6e62ec6": "2026-08-01T12:16:42.309603+00:00",
     "e400d84d9e0eebed": "2026-08-01T12:16:42.309603+00:00",
     "e47b4c9b63e7b6ca": "2026-08-05T03:36:38.501387+00:00",
