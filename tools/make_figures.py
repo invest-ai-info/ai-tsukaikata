@@ -3859,6 +3859,165 @@ def blog_research_volume_drift_chart() -> None:
     )
 
 
+def writing_check_three_asks_chart() -> None:
+    """発注書14項目と原稿を突き合わせる、3通りの頼み方の比較。
+
+    実測（2026-08-13・架空の発注書14項目と、違反8件を仕込んだ架空の原稿）。
+    判定はすべて Python の文字列照合。
+    証拠＝`docs/evidence/writing-check-against-spec.md`。
+    """
+    rows = [
+        ("違反8件のうち見つけた数", "8/8", True, "8/8", True, "8/8", True),
+        ("誤って違反にした数", "0件", True, "0件", True, "0件", True),
+        ("14項目に判定が付いたか", "表で14項目", True, "14/14", True, "14/14", True),
+        ("本人が言った件数", "「7つ」", False, "「8項目」", True, "—", None),
+        ("文字数の申告（実測823字）", "約814字", False, "823字", True, "823字", True),
+        ("最長の文（実測46字）", "47字", False, "46字", True, "46字", True),
+        ("原稿の一文を引用したか", "指摘ごとに引用", True, "根拠として引用", True, "12/14に引用", True),
+        ("引用が原稿に実在したか", "—", None, "—", None, "12/12", True),
+    ]
+    label_x, cols = 18, (240, 380, 520)
+    row_h = 26
+    top = 108
+    height = top + len(rows) * row_h + 82
+    assert cols[2] + 140 <= WIDTH - 18, cols[2] + 140
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "発注書14項目との突き合わせ — 頼み方を3通り試した</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の発注書14項目と、違反を8件仕込んだ架空の原稿。判定はすべて文字列照合。</text>\n",
+        f'<text class="t-bad" x="{cols[0]}" y="{top - 30}">「確認して」</text>\n',
+        f'<text class="t-accent" x="{cols[1]}" y="{top - 30}">1項目ずつ</text>\n',
+        f'<text class="t-accent" x="{cols[2]}" y="{top - 30}">＋根拠を引用</text>\n',
+        f'<text class="t-xs" x="{cols[0]}" y="{top - 14}">（素朴）</text>\n',
+        f'<text class="t-xs" x="{cols[1]}" y="{top - 14}">（飛ばさないで）</text>\n',
+        f'<text class="t-xs" x="{cols[2]}" y="{top - 14}">（原稿の一文）</text>\n',
+    ]
+    for index, (label, a, aok, b, bok, c, cok) in enumerate(rows):
+        y = top + index * row_h + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{y}">{_esc(label)}</text>\n')
+        for x, val, ok in ((cols[0], a, aok), (cols[1], b, bok), (cols[2], c, cok)):
+            cls = "t-sm" if ok is None else ("t-good" if ok else "t-bad")
+            parts.append(f'<text class="{cls}" x="{x}" y="{y}">{_esc(val)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 64}">'
+        "※ どの頼み方でも、違反そのものは8件とも見つかっている。"
+        "違いは「数字と件数が合うか」だけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 44}">'
+        "※ 素朴版は、自分が作った表に8件のNGを並べておいて、"
+        "冒頭の要約では「7つ」と書いた（読むのは要約のほう）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 曖昧な項目（価格に触れたか）は、頼み方によって"
+        "「判断できない」と「違反の可能性が高い」に割れた。</text>\n"
+    )
+    alt = (
+        "架空の発注書14項目と、違反を8件仕込んだ架空の原稿を突き合わせさせて、"
+        "3通りの頼み方を比べた表。素朴に確認してと頼んだ場合、1項目ずつ飛ばさずに"
+        "判定を付けさせた場合、さらに根拠として原稿の一文を引用させた場合の3つ。"
+        "仕込んだ違反8件は、3通りとも8件すべて見つかり、誤って違反にしたものは"
+        "どれも0件だった。違いは数字のほうに出た。素朴に頼んだ場合、"
+        "自分が作った判定表にはNGが8件並んでいるのに、冒頭の要約では"
+        "修正が必要な項目が7つと書いた。文字数の申告は約814字で、実測の823字と合わない。"
+        "最長の文も47字と申告したが実測は46字だった。"
+        "1項目ずつ順番に、項目を飛ばさないでくださいと頼むと、14項目すべてに判定が付き、"
+        "件数の申告も8項目で正しく、文字数823字も最長の文46字も実測と一致した。"
+        "さらに根拠として原稿の一文をそのまま引用させると、14項目のうち12項目に引用が付き、"
+        "その12件はすべて原稿に実在した。残る2項目は引用できる箇所がないと明記された。"
+        "なお、価格に触れたかどうかという曖昧な項目は、頼み方によって"
+        "原稿からは判断できないと、違反の可能性が高いに割れた。"
+    )
+    (OUT / "writing-check-three-asks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def writing_fix_loses_your_text_chart() -> None:
+    """「発注書に合うように直して」と頼んだときに、原稿がどうなるか。
+
+    実測（2026-08-13・同じ架空の原稿28文）。判定は文字列照合。
+    証拠＝`docs/evidence/writing-check-against-spec.md`。
+    """
+    bars = [
+        ("自分が書いた文が、そのまま残った数", 1, 28, "28文中 1文"),
+        ("発注書の違反が直った数", 8, 8, "8件中 8件"),
+    ]
+    label_x = 18
+    bar_x, bar_max = 300, 268
+    row_h, gap_y = 30, 22
+    top = 100
+    height = top + len(bars) * (row_h + gap_y) - gap_y + 116
+    assert bar_x + bar_max + 116 <= WIDTH - 18, bar_x + bar_max + 116
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「発注書に合うように直してください」と頼んだ結果</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ架空の原稿（28文）。違反はきれいに直る。残らないのは、自分の文のほう。</text>\n",
+    ]
+    for index, (name, value, total, note) in enumerate(bars):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * value / total)
+        good = value == total
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{y + 20}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        parts.append(
+            f'<rect class="{"bar-new" if good else "bar-in"}" x="{bar_x}" y="{y + 4}" '
+            f'width="{max(width, 3)}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-good" if good else "t-bad"}" '
+            f'x="{bar_x + max(width, 3) + 10}" y="{y + 20}">{_esc(note)}</text>\n'
+        )
+    base = top + len(bars) * (row_h + gap_y) + 16
+    parts.append(
+        f'<text class="t-bad" x="18" y="{base}">'
+        "そして、原稿に無かった「参考にしたページ」が4件立った</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="18" y="{base + 20}">'
+        "元の原稿のURL 0件 → 直した版 4件（厚生労働省・業界団体・規格のPDFなど）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="18" y="{base + 38}">'
+        "自分は1つも開いていない。そのまま出せば「参考にした」と申告したことになる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 同じ原稿を「確認して」と頼んだときは、"
+        "URLは補われず「ご自身で列挙してください」と返ってきた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ 直した版には申し送りが付いていた。"
+        "付いていても、貼って出すのは自分なので、読まなければ同じこと。</text>\n"
+    )
+    alt = (
+        "同じ架空の原稿28文に、発注書に合うように直してくださいと頼んだ結果を並べた図。"
+        "発注書の違反8件は8件とも直った。一方、自分が書いた28の文のうち、"
+        "直した版にそのまま残ったのは1文だけだった。"
+        "つまり納品物のほとんどが、自分の書いた文ではなくなる。"
+        "さらに、元の原稿にはURLが1件も無かったのに、直した版には"
+        "参考にしたページとして4件のURLが立った。"
+        "厚生労働省のガイドラインや業界団体の資料、規格のページなどで、"
+        "自分は1つも開いていない。そのまま出せば、参考にしたと申告したことになる。"
+        "同じ原稿を、直さずに確認してくださいと頼んだときは、URLは補われず、"
+        "実際に参照したページをご自身で列挙してくださいと返ってきた。"
+        "直した版には申し送りが付いていたが、付いていても、"
+        "貼って出すのは自分なので、読まなければ同じことである。"
+    )
+    (OUT / "writing-fix-loses-your-text.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def offer_verdict_vs_claims_chart() -> None:
     """同じ中身の勧誘文2種に「これは詐欺?」と聞いた結果の比較。
 
@@ -3991,4 +4150,6 @@ if __name__ == "__main__":
     offer_verdict_vs_claims_chart()
     blog_research_coverage_chart()
     blog_research_volume_drift_chart()
-    print(f"60枚を {OUT} に出力しました")
+    writing_check_three_asks_chart()
+    writing_fix_loses_your_text_chart()
+    print(f"62枚を {OUT} に出力しました")

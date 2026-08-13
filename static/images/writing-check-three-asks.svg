@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="398" viewBox="0 0 720 398" role="img" aria-label="架空の発注書14項目と、違反を8件仕込んだ架空の原稿を突き合わせさせて、3通りの頼み方を比べた表。素朴に確認してと頼んだ場合、1項目ずつ飛ばさずに判定を付けさせた場合、さらに根拠として原稿の一文を引用させた場合の3つ。仕込んだ違反8件は、3通りとも8件すべて見つかり、誤って違反にしたものはどれも0件だった。違いは数字のほうに出た。素朴に頼んだ場合、自分が作った判定表にはNGが8件並んでいるのに、冒頭の要約では修正が必要な項目が7つと書いた。文字数の申告は約814字で、実測の823字と合わない。最長の文も47字と申告したが実測は46字だった。1項目ずつ順番に、項目を飛ばさないでくださいと頼むと、14項目すべてに判定が付き、件数の申告も8項目で正しく、文字数823字も最長の文46字も実測と一致した。さらに根拠として原稿の一文をそのまま引用させると、14項目のうち12項目に引用が付き、その12件はすべて原稿に実在した。残る2項目は引用できる箇所がないと明記された。なお、価格に触れたかどうかという曖昧な項目は、頼み方によって原稿からは判断できないと、違反の可能性が高いに割れた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="398"/>
+<text class="t-strong" x="18" y="26">発注書14項目との突き合わせ — 頼み方を3通り試した</text>
+<text class="t-sm" x="18" y="45">架空の発注書14項目と、違反を8件仕込んだ架空の原稿。判定はすべて文字列照合。</text>
+<text class="t-bad" x="240" y="78">「確認して」</text>
+<text class="t-accent" x="380" y="78">1項目ずつ</text>
+<text class="t-accent" x="520" y="78">＋根拠を引用</text>
+<text class="t-xs" x="240" y="94">（素朴）</text>
+<text class="t-xs" x="380" y="94">（飛ばさないで）</text>
+<text class="t-xs" x="520" y="94">（原稿の一文）</text>
+<text class="t" x="18" y="124">違反8件のうち見つけた数</text>
+<text class="t-good" x="240" y="124">8/8</text>
+<text class="t-good" x="380" y="124">8/8</text>
+<text class="t-good" x="520" y="124">8/8</text>
+<text class="t" x="18" y="150">誤って違反にした数</text>
+<text class="t-good" x="240" y="150">0件</text>
+<text class="t-good" x="380" y="150">0件</text>
+<text class="t-good" x="520" y="150">0件</text>
+<text class="t" x="18" y="176">14項目に判定が付いたか</text>
+<text class="t-good" x="240" y="176">表で14項目</text>
+<text class="t-good" x="380" y="176">14/14</text>
+<text class="t-good" x="520" y="176">14/14</text>
+<text class="t" x="18" y="202">本人が言った件数</text>
+<text class="t-bad" x="240" y="202">「7つ」</text>
+<text class="t-good" x="380" y="202">「8項目」</text>
+<text class="t-sm" x="520" y="202">—</text>
+<text class="t" x="18" y="228">文字数の申告（実測823字）</text>
+<text class="t-bad" x="240" y="228">約814字</text>
+<text class="t-good" x="380" y="228">823字</text>
+<text class="t-good" x="520" y="228">823字</text>
+<text class="t" x="18" y="254">最長の文（実測46字）</text>
+<text class="t-bad" x="240" y="254">47字</text>
+<text class="t-good" x="380" y="254">46字</text>
+<text class="t-good" x="520" y="254">46字</text>
+<text class="t" x="18" y="280">原稿の一文を引用したか</text>
+<text class="t-good" x="240" y="280">指摘ごとに引用</text>
+<text class="t-good" x="380" y="280">根拠として引用</text>
+<text class="t-good" x="520" y="280">12/14に引用</text>
+<text class="t" x="18" y="306">引用が原稿に実在したか</text>
+<text class="t-sm" x="240" y="306">—</text>
+<text class="t-sm" x="380" y="306">—</text>
+<text class="t-good" x="520" y="306">12/12</text>
+<text class="t-xs" x="18" y="334">※ どの頼み方でも、違反そのものは8件とも見つかっている。違いは「数字と件数が合うか」だけ。</text>
+<text class="t-xs" x="18" y="354">※ 素朴版は、自分が作った表に8件のNGを並べておいて、冒頭の要約では「7つ」と書いた（読むのは要約のほう）。</text>
+<text class="t-xs" x="18" y="374">※ 曖昧な項目（価格に触れたか）は、頼み方によって「判断できない」と「違反の可能性が高い」に割れた。</text>
+</svg>
