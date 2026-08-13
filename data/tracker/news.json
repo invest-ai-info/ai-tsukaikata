@@ -13,6 +13,20 @@
       "vendor": "Google DeepMind"
     },
     {
+      "first_seen": "2026-08-13T18:10:59.443436+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-13T16:45:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "The video shows Sheets canvas in action.",
+      "summary_ja": "Sheets canvasという新機能が登場しました\n表計算のデータをより分かりやすく表現\n実際の動きは動画で確認できます",
+      "summary_source": "gemini",
+      "title": "Bring your spreadsheet data to life with Sheets canvas",
+      "uid": "4bd32acd0d20328e",
+      "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-08-13T17:15:19.173918+00:00",
       "importance": "minor",
       "label": "OpenAI News",

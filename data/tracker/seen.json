@@ -11,7 +11,7 @@
     "claude-code": "2026-08-13T08:38:50+00:00",
     "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-08-11T17:00:00+00:00",
+    "google-ai-blog": "2026-08-13T16:45:00+00:00",
     "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-13T05:02:00+00:00",
@@ -70,6 +70,17 @@
       "uid": "a0625f59bdd66d41",
       "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-13T16:45:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "The video shows Sheets canvas in action.",
+      "title": "Bring your spreadsheet data to life with Sheets canvas",
+      "uid": "4bd32acd0d20328e",
+      "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -244,6 +255,7 @@
     "4ad192c7cf9c5c3f": "2026-08-13T12:01:33.145239+00:00",
     "4b3c27dd372b9bc9": "2026-08-01T12:16:42.309603+00:00",
     "4b4824c6c11a9f48": "2026-08-13T12:01:33.145239+00:00",
+    "4bd32acd0d20328e": "2026-08-13T18:10:59.443436+00:00",
     "4c22d218c984142f": "2026-08-01T12:16:42.309603+00:00",
     "4c82f847ed733fee": "2026-08-01T12:16:42.309603+00:00",
     "4d62c2b9721debaf": "2026-08-01T12:16:42.309603+00:00",
