@@ -4416,6 +4416,154 @@ def sell_what_carries_over_chart() -> None:
     )
 
 
+def video_length_drift_chart() -> None:
+    """動画の台本の尺が、頼み方でどれだけ動くか。
+
+    実測（2026-08-13・架空の走り書き14行、5分の動画）。
+    台詞の字数は Python で数えた（抜き出し規則は証拠ファイルに書いてある）。
+    証拠＝`docs/evidence/video-script-by-the-clock.md`。
+    """
+    rows = [
+        ("「5分くらいの台本を書いて」", 2320, "7分44秒", "＋2分44秒", False),
+        ("「1分300字・5分なので1,500字」", 1449, "4分50秒", "−10秒", True),
+        ("同じ指示文をもう1回", 1489, "4分58秒", "−2秒", True),
+        ("＋1文40字・書き言葉禁止・足さない", 969, "3分14秒", "−1分46秒", False),
+    ]
+    label_x = 18
+    bar_x, bar_w = 300, 230
+    biggest = max(n for _, n, _, _, _ in rows)
+    row_h = 34
+    top = 100
+    height = top + len(rows) * row_h + 76
+    time_x = bar_x + bar_w + 14
+    diff_x = time_x + 74
+    assert diff_x + 78 <= WIDTH - 18, diff_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「5分の動画」と言っても、5分にはならない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の走り書き14行から、5分の動画の台本を作らせた。"
+        "棒は台詞の字数（Pythonで実測）。</text>\n",
+        f'<text class="t-sm" x="{bar_x}" y="{top - 16}">台詞の字数</text>\n',
+        f'<text class="t-sm" x="{time_x}" y="{top - 16}">1分300字なら</text>\n',
+        f'<text class="t-sm" x="{diff_x}" y="{top - 16}">5分との差</text>\n',
+    ]
+    for index, (label, count, mmss, diff, ok) in enumerate(rows):
+        y = top + index * row_h
+        parts.append(f'<text class="t" x="{label_x}" y="{y + 17}">{_esc(label)}</text>\n')
+        w = round(bar_w * count / biggest)
+        cls = "box-good" if ok else "box-bad"
+        parts.append(
+            f'<rect class="{cls}" x="{bar_x}" y="{y + 4}" width="{w}" height="18" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{bar_x + 6}" y="{y + 17}">{count:,}字</text>\n'
+        )
+        vcls = "t-good" if ok else "t-bad"
+        parts.append(f'<text class="{vcls}" x="{time_x}" y="{y + 17}">{_esc(mmss)}</text>\n')
+        parts.append(f'<text class="{vcls}" x="{diff_x}" y="{y + 17}">{_esc(diff)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 52}">'
+        "※ 素朴に頼んだ版は、自分が何字書いたかを最後まで書かなかった。"
+        "画面上は「5分の台本」として渡される。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ 時間ではなく字数で渡した2回は、どちらも申告した字数が実測と一致した"
+        "（1,449字と1,489字）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 縛り（1文40字・書き言葉の禁止・足さない）を重ねると、"
+        "今度は尺が足りなくなる。足すのは自分の仕事になる。</text>\n"
+    )
+    alt = (
+        "架空の走り書き14行から5分の動画の台本を作らせて、"
+        "頼み方ごとに台詞の字数を実測した図。"
+        "5分くらいの台本を書いてと頼んだ場合、台詞は2,320字で、"
+        "1分300字で計算すると7分44秒、5分より2分44秒長い。"
+        "1分300字で計算して5分なので1,500字を目安にと頼むと1,449字で4分50秒、5分より10秒短いだけ。"
+        "同じ指示文をもう1回走らせると1,489字で4分58秒、5分より2秒短いだけだった。"
+        "さらに1文40字以内、書き言葉の禁止、走り書きにないことを足さない、"
+        "という3つの縛りを足すと969字で3分14秒になり、今度は1分46秒足りなくなった。"
+        "素朴に頼んだ版は、自分が何字書いたかを最後まで書かなかったので、"
+        "画面上は5分の台本として渡される。"
+        "時間ではなく字数で渡した2回は、どちらも申告した字数が実測と一致した。"
+        "縛りを重ねると尺が足りなくなり、足すのは自分の仕事になる。"
+    )
+    (OUT / "video-length-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def video_numbers_you_will_say_chart() -> None:
+    """台本に入った、走り書きに無い数字。
+
+    実測（2026-08-13）。証拠＝`docs/evidence/video-script-by-the-clock.md`。
+    """
+    rows = [
+        ("117,600円", "定期は月9,800円だった", "9,800 × 12か月"),
+        ("36,000円", "月3,000円の駐輪場を借りた", "3,000 × 12か月"),
+        ("54,400円", "点検とタイヤ交換で18,400円", "18,400 ＋ 36,000"),
+        ("6万円ちょっと", "（上の2つの差）", "117,600 − 54,400"),
+        ("2,800kmちょっと", "片道7.2km／198日", "7.2 × 2 × 198"),
+        ("46分", "信号込みで23分", "23 × 2"),
+    ]
+    label_x, cols = 18, (150, 400)
+    row_h = 27
+    top = 112
+    height = top + len(rows) * row_h + 74
+    assert cols[1] + 16 * 11.5 <= WIDTH - 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "台本に入っていた、走り書きに無い数字</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "素朴に頼んだ台本の台詞から、走り書きに出てこない数字を全部拾った（6件）。"
+        "計算は6件とも合っていた。</text>\n",
+        f'<text class="t-bad" x="{label_x}" y="{top - 16}">台本で言うことになる数字</text>\n',
+        f'<text class="t-sm" x="{cols[0]}" y="{top - 16}">走り書きにある行</text>\n',
+        f'<text class="t-sm" x="{cols[1]}" y="{top - 16}">どう作られたか</text>\n',
+    ]
+    for index, (num, src, how) in enumerate(rows):
+        y = top + index * row_h + 16
+        parts.append(f'<text class="t-bad" x="{label_x}" y="{y}">{_esc(num)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{cols[0]}" y="{y}">{_esc(src)}</text>\n')
+        parts.append(f'<text class="mono" x="{cols[1]}" y="{y}">{_esc(how)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 50}">'
+        "※ 計算はどれも合っている。問題は、これをカメラの前で言うのが自分だということ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 素朴な台本には「雨の日の電車代が入っていません」という断りが自分から書かれていた"
+        "＝抜けを隠してはいない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 別の頼み方では「定期の1年ぶんは9,800円×12か月で計算しました」と、"
+        "使った前提を書き添えて返った。</text>\n"
+    )
+    alt = (
+        "素朴に頼んだ動画台本の台詞から、走り書きに出てこない数字を全部拾った表。6件あった。"
+        "117,600円は、走り書きの定期は月9,800円だったという行から、9,800かける12か月で作られた。"
+        "36,000円は、月3,000円の駐輪場を借りたという行から、3,000かける12か月で作られた。"
+        "54,400円は、点検とタイヤ交換で18,400円という行から、18,400たす36,000で作られた。"
+        "6万円ちょっとは、上の2つの差で、117,600ひく54,400である。"
+        "2,800kmちょっとは、片道7.2kmと198日から、7.2かける2かける198で作られた。"
+        "46分は、信号込みで23分という行から、23かける2で作られた。"
+        "計算はどれも合っている。問題は、これをカメラの前で言うのが自分だということ。"
+        "素朴な台本には、雨の日の電車代が入っていませんという断りが自分から書かれていて、"
+        "抜けを隠してはいなかった。"
+        "別の頼み方では、定期の1年ぶんは9,800円かける12か月で計算しましたと、"
+        "使った前提を書き添えて返った。"
+    )
+    (OUT / "video-numbers-you-will-say.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -4483,4 +4631,6 @@ if __name__ == "__main__":
     proposal_who_decides_chart()
     sell_price_not_asked_chart()
     sell_what_carries_over_chart()
-    print(f"66枚を {OUT} に出力しました")
+    video_length_drift_chart()
+    video_numbers_you_will_say_chart()
+    print(f"68枚を {OUT} に出力しました")
