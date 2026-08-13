@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-13T08:45:37.262356+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-13T08:38:50+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack",
+      "title": "v2.1.231",
+      "uid": "15d33eba8d914dcd",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-12T22:05:03.082330+00:00",
       "importance": "minor",
       "label": "Claude Code",
