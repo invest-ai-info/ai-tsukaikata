@@ -2,6 +2,7 @@
 import sys
 from datetime import date
 from pathlib import Path
+from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 
@@ -10,6 +11,7 @@ from check_freshness import (  # noqa: E402
     check_articles,
     external_links,
     earn_queue_shortage,
+    evidence_gaps,
     queue_shortage,
 )
 
@@ -237,3 +239,52 @@ def test_earn_queue_shortage_warns_when_the_section_is_missing():
     problem = earn_queue_shortage(queue, floor=3)
     assert problem is not None
     assert "見つかりません" in problem
+
+
+# --- 証拠の機械照合（v1.5・2026-08-14）---
+
+def _recipe(slug="r", published=date(2026, 8, 13), prompts=("これを試す",)):
+    body = "".join(f'<div class="prompt">{p}</div>' for p in prompts)
+    return SimpleNamespace(slug=slug, category="recipes", published=published,
+                           body_html=body, source_path=Path(f"content/recipes/{slug}.md"))
+
+
+def test_evidence_gap_when_the_file_is_missing():
+    problems = evidence_gaps([_recipe()], evidence={})
+    assert problems and "証拠ファイルがありません" in problems[0]
+
+
+def test_evidence_gap_when_a_prompt_is_not_in_the_evidence():
+    article = _recipe(prompts=("試した文", "記事だけの文"))
+    problems = evidence_gaps([article], evidence={"r": "…試した文…"})
+    assert problems and "1/2件" in problems[0]
+
+
+def test_evidence_is_quiet_when_all_prompts_match():
+    article = _recipe(prompts=("試した文", "もう一つ"))
+    assert evidence_gaps([article], evidence={"r": "試した文 と もう一つ"}) == []
+
+
+def test_evidence_matching_is_exact_not_whitespace_insensitive():
+    """空白を無視すると「記事で膨らませた指示文」を見逃す（実測で本命だった型）。"""
+    article = _recipe(prompts=("一行目\n二行目",))
+    assert evidence_gaps([article], evidence={"r": "一行目二行目"}) != []
+
+
+def test_evidence_unescapes_html_entities():
+    """本文はHTML化されているので、実体参照を戻してから突き合わせる。"""
+    article = _recipe(prompts=("「A」&amp;「B」",))
+    assert evidence_gaps([article], evidence={"r": "「A」&「B」"}) == []
+
+
+def test_articles_before_the_era_are_exempt_by_date_not_by_name():
+    """⚠️ slug 名指しの除外は作らない（FIGURE_EXEMPT_SLUGS の教訓）。"""
+    old = _recipe(slug="old", published=date(2026, 8, 11))
+    assert evidence_gaps([old], evidence={}) == []
+
+
+def test_non_recipes_are_not_checked():
+    page = SimpleNamespace(slug="about", category="pages", published=date(2026, 8, 13),
+                           body_html='<div class="prompt">x</div>',
+                           source_path=Path("content/pages/about.md"))
+    assert evidence_gaps([page], evidence={}) == []

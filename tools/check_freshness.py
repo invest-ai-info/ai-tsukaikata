@@ -21,6 +21,7 @@ code.claude.com へのリダイレクトになっていた。**リダイレク�
 """
 from __future__ import annotations
 
+import html
 import re
 import sys
 import urllib.error
@@ -212,6 +213,68 @@ def queue_shortage(queue_text: str, floor: int = QUEUE_FLOOR) -> str | None:
     return None
 
 
+# --- 証拠の機械照合（進化ループ v1.5・2026-08-14）---
+#
+# 記事に載せた指示文が、証拠ファイル（docs/evidence/<slug>.md）に
+# そのままの文字列で入っているかを突き合わせる。
+#
+# 🚨 **ビルドでは強制しない。**計画（Task 9）は validate.py 行きだったが、
+# 2026-08-14 の較正で実測 94/129（8/12=54%・8/13=96%）と判明した。
+# いまビルドを止める形にすると既存6本で毎晩の記事公開が巻き込まれる
+# （`/start/` の鮮度で学んだのと同じ罠＝止めてよいのは本人がその場で直せるものだけ）。
+# → まず週次で可視化し、**一致率100%になってから validate.py へ昇格**する。
+PROMPT_RE = re.compile(r'<div class="prompt">(.*?)</div>', re.S)
+EVIDENCE_ERA = date(2026, 8, 12)  # 進化ループ v1 の証拠様式が入った日
+EVIDENCE_DIR = "docs/evidence"
+
+
+def evidence_gaps(articles, evidence: dict[str, str],
+                  era: date = EVIDENCE_ERA) -> list[str]:
+    """記事の指示文と証拠ファイルの食い違いを、問題の文字列にして返す。
+
+    照合は**完全一致**にする。空白を無視した緩い一致だと、記事で膨らませた
+    指示文（証拠より長い版）を見逃す——実測ではそれが本命の食い違いだった。
+
+    ⚠️ 対象は era 以降のレシピだけ。**slug 名指しの除外は作らない**
+    （`FIGURE_EXEMPT_SLUGS` の教訓＝名指しの穴は「そこに足せばいい」と学習される）。
+    """
+    problems: list[str] = []
+    for article in sorted(articles, key=lambda a: a.slug):
+        if getattr(article, "category", None) != "recipes":
+            continue
+        if article.published < era:
+            continue
+        text = evidence.get(article.slug)
+        if text is None:
+            problems.append(
+                f"{EVIDENCE_DIR}/{article.slug}.md: 証拠ファイルがありません"
+                f"（{article.published} 公開のレシピ。キュー10条）"
+            )
+            continue
+        prompts = [html.unescape(p).strip() for p in PROMPT_RE.findall(article.body_html)]
+        missing = [p for p in prompts if p not in text]
+        if missing:
+            sample = missing[0].splitlines()[0][:40]
+            problems.append(
+                f"{EVIDENCE_DIR}/{article.slug}.md: 記事の指示文"
+                f"{len(missing)}/{len(prompts)}件が証拠に同じ文字列で見つかりません"
+                f"（例: 「{sample}…」）"
+            )
+    return problems
+
+
+def load_evidence(root: Path) -> dict[str, str]:
+    """docs/evidence/<slug>.md を {slug: 本文} で読む。TEMPLATE は除く。"""
+    directory = Path(root) / EVIDENCE_DIR
+    if not directory.exists():
+        return {}
+    return {
+        path.stem: path.read_text(encoding="utf-8")
+        for path in directory.glob("*.md")
+        if path.stem != "TEMPLATE"
+    }
+
+
 EARN_HEADING_RE = re.compile(r"^### 副業.*$", re.M)
 EARN_FLOOR = 3  # 1晩ぶん。「副業も毎晩3本」（2026-08-13 オーナー指示）を支える床
 
@@ -254,6 +317,9 @@ def main() -> int:
     report = check_articles(articles, date.today())
 
     # 待ち行列の残量は記事の腐りとは別件だが、見る頻度（週次）が同じなので相乗りさせる。
+    # 証拠の機械照合（v1.5）。ビルドは止めず、週次で知らせるだけ
+    report.problems.extend(evidence_gaps(articles, load_evidence(root)))
+
     queue_file = root / "content" / "_recipe_queue.md"
     if queue_file.exists():
         queue_text = queue_file.read_text(encoding="utf-8")
