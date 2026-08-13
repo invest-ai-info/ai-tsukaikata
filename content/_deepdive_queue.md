@@ -284,11 +284,58 @@
       **次にやるべきは AWS 系ドメインの追加。**それが済めば、AWS の Bedrock 料金ページ・対応リージョン表という
       一次情報が使えるようになり、`developers.openai.com` 側と突き合わせて比較記事が成立する。
 
-- [ ] https://deepmind.google/blog/introducing-gemini-3-7-flash/
+- [x] https://deepmind.google/blog/introducing-gemini-3-7-flash/
   - 2026-08-13 自動追記（major・Google DeepMind「Introducing Gemini 3.7 Flash」）
+  - **2026-08-14: 下書きを作成**（content/_draft-gemini-3-7-flash.md・図4枚）。
+    ⚠️ **3.6 Flash と同じく 302 で `blog.google` に転送される**
+    （`blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/`）。
+    **返ってきた転送先URLで叩き直すこと。**これで2回連続なので、`deepmind.google/blog/...` は毎回そう考えてよい。
+  - 🚨 **WebFetch は本文を要約して返した**（「Return the full text verbatim」と頼んでも要約になった）。
+    数字を写す用途では使えない。**`curl` で生HTMLを取って、自分で `<tr>`/`<td>` を解析すること。**
+  - 🚨🚨 **タグを剥がして1行ずつにした版は、表の空セルを落として列がずれる。**実例＝モデルカードの
+    `Input price` 行は、平文化すると `$0.75 / $2.00 / $1.25` の**3値**に見えるが、生の `<tr>` は
+    **5列で `$0.75* | $0.75* | $2.00 | $2.00 | $1.25`**（3.7 Flash / 3.6 Flash / Claude Sonnet 5 /
+    GPT-5.6 Terra / Muse Spark 1.2）。**平文で読むと「3.6 Flash の値段が消える」**＝過去の
+    `gpt-5.5-pro` 事故とまったく同じ壊れ方。**表はセル単位で解析する。**
+  - **読めた一次情報**＝`blog.google`（発表本文）／
+    **`deepmind.google/models/model-cards/gemini-3-7-flash`（HTML・比較表20項目つき。今回いちばん濃い）**／
+    `ai.google.dev/gemini-api/docs/pricing`（料金・Standard/Batch/Flex/Priority の4段）／
+    `deepmind.google/models/gemini/flash/`（モデルカードと同じ比較表＋利用企業の声）／
+    `platform.claude.com`（Sonnet 5）／`developers.openai.com/api/docs/{pricing,models}`（GPT-5.6 Terra）。
+  - ⚠️ **`deepmind.google/models/model-cards/gemini-3-6-flash`（前の世代）は PDF**
+    （`storage.googleapis.com/deepmind-media/Model-Cards/...pdf` へ転送）。**この環境では中身を取り出せない**
+    （`pdftotext` 無し・`pypdf` は `_cffi_backend` が壊れていて import できない）。
+    **3.7 のカードは HTML なので読める。**新旧を比べたいときはこの差に注意。
+  - **見つからなかった数字**＝Muse Spark 1.2（Meta）の一次情報すべて。OpenAI の「短い入力／長い入力」の
+    境目のトークン数（前回と同じ。**推測で埋めない**）／利用企業の声の「35%安い」の測定条件。
+  - 🚨 **許可リストに足すドメイン（全部 `CONNECT tunnel failed, response 403` ＝経路の遮断。先方のbot判定ではない）**
+
+    | ドメイン | 何が載っているはずか |
+    |---|---|
+    | `dev.meta.ai` | Meta の Model API ドキュメント。**Muse Spark 1.2 の料金と仕様はここ。最優先** |
+    | `ai.meta.com` | Meta AI の公式サイト・モデル紹介 |
+    | `www.llama.com` / `llama.com` | Llama/Muse 系のモデルカード |
+    | `about.fb.com` | Meta のプレスリリース |
+
+    ⚠️ 環境の Network access を Custom にして足すとき、**「Also include default list of common package managers」の
+    チェックを外さないこと**（外すと同じ環境の MarketWatch 側が全部壊れる）。
+  - 💡 **今回の記事の芯になった3つ（次に同じ型が使える）**
+    1. **「半額」は 3.7 の特典ではない**＝料金ページを下まで読むと **3.6 Flash も $0.75/$3.75** に下がっている。
+       どちらも「2026-12-31まで／2027-01-01から $1.50/$7.50」。**値下げの主語を確かめること。**
+    2. **同じ会社の同じ日の2ページで数字が食い違う**＝3.6 Flash の DeepSWE v1.1 が
+       **発表ページ 49.0% ／ モデルカード 48.6%**。どちらが正かは公表されていないので両方書いた。
+    3. **他社の値は他社の公式で突き合わせる**＝Google の表の Claude Sonnet 5（$2/$10）と
+       GPT-5.6 Terra（$2/$12）は**各社の公式ページと一致した**。Muse Spark 1.2 だけ確認できず。
+       **この「突き合わせて一致した／できなかった」を書く型は、比較記事で毎回使える。**
+  - 📌 **20項目中9項目で最高**という数え（残り11項目は他社か前の世代が上）は**記事側の計算**。
+    `check_numbers.py` は $ と % しか見ないので、この種の数はそもそも照合対象外。
 
 ## 処理済み
 
+- https://deepmind.google/blog/introducing-gemini-3-7-flash/ → content/_draft-gemini-3-7-flash.md（2026-08-14）
+  - 図4枚（`gemini37-price-window` / `gemini37-vs-36` / `gemini37-four-prices` / `gemini37-not-first`）。
+    `check_numbers.py` は **48個すべて出典に存在**（出典9件とも取得成功）。
+    **人間の検証待ち。**公開するなら `content/tools/gemini-3-7-flash.md` へ移す。
 - https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/ → content/_draft-gemini-3-6-flash.md（2026-08-05）
   - 図4枚（`gemini36-lineup` / `gemini36-cheap-price` / `gemini36-generation` / `gemini36-bench`）。
     **人間の検証待ち。**公開するなら `content/tools/gemini-3-6-flash.md` へ移す。

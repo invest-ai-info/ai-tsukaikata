@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="352" viewBox="0 0 720 352" role="img" aria-label="Google のモデルカードの比較表で、Gemini 3.7 Flash が最高値だった項目の数を示した図。20項目のうち9項目で最高、残り11項目は他社か前の世代のほうが上だった。上だった例として、DeepSWE v1.1 は3.7 Flash の65.3％に対し GPT-5.6 Terra が69.6％、Terminal-bench 3.0 は14.9％に対し GPT-5.6 Terra が20.8％、GDPVal-AA v2 は Elo 1525 に対し Muse Spark 1.2 が1628、Agent's Last Exam は26.3％に対し Claude Sonnet 5 が33.3％、CharXiv（道具あり）は88.7％に対し前の世代の Gemini 3.6 Flash が89.4％。表を作ったのは Google であり、相手の会社が同じ条件で測った値ではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="352"/>
+<text class="t-strong" x="18" y="26">同じ表の中で、3.7 Flash が一番だったのは20項目中9項目</text>
+<text class="t-sm" x="18" y="45">Google のモデルカードに載っている比較表を、この記事で数えたものです。</text>
+<text class="t-sm" x="18" y="64">青＝3.7 Flash が最高値だった項目、灰色＝他社か前の世代のほうが上だった項目。</text>
+<rect class="bar-new" x="18.0" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="52.4" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="86.7" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="121.1" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="155.4" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="189.8" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="224.1" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="258.5" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-new" x="292.8" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="327.2" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="361.5" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="395.9" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="430.2" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="464.6" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="498.9" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="533.2" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="567.6" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="602.0" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="636.3" y="86" width="31.4" height="26" rx="2"/>
+<rect class="bar-old" x="670.6" y="86" width="31.4" height="26" rx="2"/>
+<text class="t-accent" x="18" y="132">9項目で最高</text>
+<text class="t-sm" x="150" y="132">11項目は、他社か前の世代のほうが上でした</text>
+<text class="t-xs" x="18" y="170">項目</text>
+<text class="t-xs" x="296" y="170">3.7 Flash</text>
+<text class="t-xs" x="424" y="170">それより上だったモデル</text>
+<text class="t" x="18" y="194">DeepSWE v1.1</text>
+<text class="t" x="296" y="194">65.3%</text>
+<text class="t-bad" x="424" y="194">GPT-5.6 Terra 69.6%</text>
+<text class="t" x="18" y="216">Terminal-bench 3.0</text>
+<text class="t" x="296" y="216">14.9%</text>
+<text class="t-bad" x="424" y="216">GPT-5.6 Terra 20.8%</text>
+<text class="t" x="18" y="238">GDPVal-AA v2（Elo）</text>
+<text class="t" x="296" y="238">1525</text>
+<text class="t-bad" x="424" y="238">Muse Spark 1.2 1628</text>
+<text class="t" x="18" y="260">Agent's Last Exam</text>
+<text class="t" x="296" y="260">26.3%</text>
+<text class="t-bad" x="424" y="260">Claude Sonnet 5 33.3%</text>
+<text class="t" x="18" y="282">CharXiv（道具あり）</text>
+<text class="t" x="296" y="282">88.7%</text>
+<text class="t-bad" x="424" y="282">Gemini 3.6 Flash 89.4%</text>
+<text class="t-xs" x="18" y="322">※ Muse Spark 1.2 は測っていない項目が多く、空欄は勝ち負けの数に入れていません。</text>
+<text class="t-xs" x="18" y="340">※ 表を作ったのは Google です。相手の会社が同じ条件で測った値ではありません。</text>
+</svg>

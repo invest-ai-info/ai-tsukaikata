@@ -4564,6 +4564,265 @@ def video_numbers_you_will_say_chart() -> None:
     )
 
 
+def _usd(value: float) -> str:
+    """$0.375 のような3桁の端数も、$1.50 のような2桁も、そのまま書ける形にする。"""
+    text = f"{value:.3f}".rstrip("0")
+    if len(text.split(".")[1]) < 2:
+        text = f"{value:.2f}"
+    return f"${text}"
+
+
+def gemini37_price_window() -> None:
+    """導入価格（2026年12月31日まで）と、2027年1月1日からの価格。"""
+    rows = [
+        ("入力（Standard）", 0.75, 1.50),
+        ("出力（Standard）", 3.75, 7.50),
+        ("入力（Batch）", 0.375, 0.75),
+        ("出力（Batch）", 1.875, 3.75),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Gemini 3.7 Flash の単価は、2027年1月1日に2倍になります</text>\n',
+        '<text class="t-sm" x="18" y="45">青＝2026年12月31日までの導入価格、灰色＝2027年1月1日からの価格。</text>\n',
+        '<text class="t-sm" x="18" y="64">100万トークンあたりのドル。Batch＝急がない仕事をまとめて流す使い方。</text>\n',
+    ]
+    for index, (name, intro, later) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((intro, "bar-new", "年内"), (later, "bar-old", "以降"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="204" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 前の世代の Gemini 3.6 Flash も、いまは同じ $0.75 ／ $3.75 です。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 半額なのは 3.7 だからではなく、いまが導入期間だからです。</text>\n"
+    )
+    alt = (
+        "Gemini 3.7 Flash の単価が期間で変わることを示した横棒グラフ。"
+        "100万トークンあたりのドル。Standard の入力は2026年12月31日まで0.75ドル、"
+        "2027年1月1日から1.50ドル。Standard の出力は3.75ドルから7.50ドル。"
+        "まとめ処理（Batch）の入力は0.375ドルから0.75ドル、出力は1.875ドルから3.75ドル。"
+        "いずれも2027年1月1日に2倍になる。"
+        "前の世代の Gemini 3.6 Flash も、いまは同じ0.75ドルと3.75ドルで、"
+        "半額なのは3.7だからではなく導入期間だから。"
+    )
+    (OUT / "gemini37-price-window.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini37_vs_36_chart() -> None:
+    """3.6 Flash と 3.7 Flash の点数（％で出ているものだけ）。"""
+    rows = [
+        ("FrontierCode 1.1", 34.4, 43.6),
+        ("DeepSWE v1.1", 48.6, 65.3),
+        ("Terminal-bench 2.1", 78.0, 85.8),
+        ("AutomationBench", 17.0, 30.4),
+        ("GDP.pdf", 22.0, 34.0),
+        ("CharXiv（道具なし）", 85.2, 84.5),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">モデルカードの点数（3.6 Flash → 3.7 Flash）</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝3.6 Flash、青＝3.7 Flash。目盛りは0〜100％で揃えてあります。</text>\n',
+        '<text class="t-sm" x="18" y="64">一番下だけ下がっています。上がった項目だけを見ないでください。</text>\n',
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "3.6"), (new, "bar-new", "3.7"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="216" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ テストの中身も測り方も、この6つで別々です。並べても平均は取れません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 何回試した値なのかは、モデルカードにも発表ページにも書かれていません。</text>\n"
+    )
+    alt = (
+        "Gemini 3.6 Flash と 3.7 Flash の点数を比べた横棒グラフ。"
+        "FrontierCode 1.1 は34.4％から43.6％、DeepSWE v1.1 は48.6％から65.3％、"
+        "Terminal-bench 2.1 は78.0％から85.8％、AutomationBench は17.0％から30.4％、"
+        "GDP.pdf は22.0％から34.0％へ上がった。"
+        "いっぽう CharXiv（道具なし）だけは85.2％から84.5％へ下がっている。"
+        "いずれも Google のモデルカードに載っている値で、テストの中身も測り方も別々のため平均は取れない。"
+    )
+    (OUT / "gemini37-vs-36.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini37_four_prices_chart() -> None:
+    """Google が比較相手に選んだ4モデルの単価。"""
+    rows = [
+        ("Gemini 3.7 Flash", 0.75, 3.75),
+        ("Claude Sonnet 5", 2.00, 10.00),
+        ("GPT-5.6 Terra", 2.00, 12.00),
+        ("Muse Spark 1.2", 1.25, 4.25),
+    ]
+    left, right = 210, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 66, 15, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Google が比較相手に選んだ4モデルの単価</text>\n',
+        '<text class="t-sm" x="18" y="45">入力＝薄い色 ／ 出力＝濃い色。100万トークンあたりのドル。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="178" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 68
+    notes = [
+        "※ Gemini の $0.75 ／ $3.75 は導入価格です。2027年1月1日から $1.50 ／ $7.50 になります。",
+        "※ GPT-5.6 Terra は「短い入力」のときの値段です。境目のトークン数は公表されていません。",
+        "※ Muse Spark 1.2 だけ、提供元の公式ページをこの記事では確認できていません。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 48 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "Google が自社のモデルカードで比較相手に選んだ4モデルの単価を比べた横棒グラフ。"
+        "100万トークンあたりのドル。Gemini 3.7 Flash は入力0.75ドル・出力3.75ドル、"
+        "Claude Sonnet 5 は入力2.00ドル・出力10.00ドル、"
+        "GPT-5.6 Terra は入力2.00ドル・出力12.00ドル、"
+        "Muse Spark 1.2 は入力1.25ドル・出力4.25ドル。"
+        "ただし Gemini の値は2026年12月31日までの導入価格で、2027年1月1日から1.50ドルと7.50ドルになる。"
+        "GPT-5.6 Terra は短い入力のときの値段。"
+        "Muse Spark 1.2 だけ提供元の公式ページを確認できていない。"
+    )
+    (OUT / "gemini37-four-prices.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini37_not_first_chart() -> None:
+    """Google 自身の比較表の中で、3.7 Flash が一番ではなかった項目。"""
+    total, won = 20, 9
+    losses = [
+        ("DeepSWE v1.1", "65.3%", "GPT-5.6 Terra 69.6%"),
+        ("Terminal-bench 3.0", "14.9%", "GPT-5.6 Terra 20.8%"),
+        ("GDPVal-AA v2（Elo）", "1525", "Muse Spark 1.2 1628"),
+        ("Agent's Last Exam", "26.3%", "Claude Sonnet 5 33.3%"),
+        ("CharXiv（道具あり）", "88.7%", "Gemini 3.6 Flash 89.4%"),
+    ]
+    bar_left, bar_right, bar_y, bar_h = 18, 702, 86, 26
+    cell_gap = 3
+    cell_w = (bar_right - bar_left + cell_gap) / total - cell_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じ表の中で、3.7 Flash が一番だったのは20項目中9項目</text>\n',
+        '<text class="t-sm" x="18" y="45">Google のモデルカードに載っている比較表を、この記事で数えたものです。</text>\n',
+        '<text class="t-sm" x="18" y="64">青＝3.7 Flash が最高値だった項目、灰色＝他社か前の世代のほうが上だった項目。</text>\n',
+    ]
+    for index in range(total):
+        x = bar_left + index * (cell_w + cell_gap)
+        cls = "bar-new" if index < won else "bar-old"
+        parts.append(
+            f'<rect class="{cls}" x="{x:.1f}" y="{bar_y}" '
+            f'width="{cell_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+    parts.append(f'<text class="t-accent" x="18" y="{bar_y + bar_h + 20}">9項目で最高</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="150" y="{bar_y + bar_h + 20}">'
+        "11項目は、他社か前の世代のほうが上でした</text>\n"
+    )
+
+    head_y = bar_y + bar_h + 58
+    col1, col2, col3 = 18, 296, 424
+    parts.append(f'<text class="t-xs" x="{col1}" y="{head_y}">項目</text>\n')
+    parts.append(f'<text class="t-xs" x="{col2}" y="{head_y}">3.7 Flash</text>\n')
+    parts.append(f'<text class="t-xs" x="{col3}" y="{head_y}">それより上だったモデル</text>\n')
+    for row_index, (name, mine, better) in enumerate(losses):
+        y = head_y + 24 + row_index * 22
+        parts.append(f'<text class="t" x="{col1}" y="{y}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t" x="{col2}" y="{y}">{_esc(mine)}</text>\n')
+        parts.append(f'<text class="t-bad" x="{col3}" y="{y}">{_esc(better)}</text>\n')
+
+    height = head_y + 24 + len(losses) * 22 + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Muse Spark 1.2 は測っていない項目が多く、空欄は勝ち負けの数に入れていません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 表を作ったのは Google です。相手の会社が同じ条件で測った値ではありません。</text>\n"
+    )
+    alt = (
+        "Google のモデルカードの比較表で、Gemini 3.7 Flash が最高値だった項目の数を示した図。"
+        "20項目のうち9項目で最高、残り11項目は他社か前の世代のほうが上だった。"
+        "上だった例として、DeepSWE v1.1 は3.7 Flash の65.3％に対し GPT-5.6 Terra が69.6％、"
+        "Terminal-bench 3.0 は14.9％に対し GPT-5.6 Terra が20.8％、"
+        "GDPVal-AA v2 は Elo 1525 に対し Muse Spark 1.2 が1628、"
+        "Agent's Last Exam は26.3％に対し Claude Sonnet 5 が33.3％、"
+        "CharXiv（道具あり）は88.7％に対し前の世代の Gemini 3.6 Flash が89.4％。"
+        "表を作ったのは Google であり、相手の会社が同じ条件で測った値ではない。"
+    )
+    (OUT / "gemini37-not-first.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -4578,6 +4837,10 @@ if __name__ == "__main__":
     gemini36_cheap_price_chart()
     gemini36_generation_chart()
     gemini36_bench_chart()
+    gemini37_price_window()
+    gemini37_vs_36_chart()
+    gemini37_four_prices_chart()
+    gemini37_not_first_chart()
     class_scrape_chart()
     silent_zero_chart()
     figure_checks_chart()
@@ -4633,4 +4896,4 @@ if __name__ == "__main__":
     sell_what_carries_over_chart()
     video_length_drift_chart()
     video_numbers_you_will_say_chart()
-    print(f"68枚を {OUT} に出力しました")
+    print(f"72枚を {OUT} に出力しました")
