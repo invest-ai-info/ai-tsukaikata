@@ -3699,6 +3699,166 @@ def transcript_keep_vs_rewrite_chart() -> None:
     )
 
 
+def blog_research_coverage_chart() -> None:
+    """貼った見出し32件のうち、返ってきた一覧に何件残ったか。
+
+    実測（2026-08-13・架空の上位6本の見出し39件＝重複を除くと32件）。
+    判定は文字列照合（論点欄か引用欄に、原文どおりの見出しが出た数）。
+    証拠＝`docs/evidence/blog-research-from-headings.md`。
+    """
+    rows = [
+        ("表の形で、落とさない2行つき", 32, "26行", True),
+        ("毎朝の形に短くした（1回目）", 22, "22行", False),
+        ("毎朝の形に短くした（2回目）", 19, "16行", False),
+        ("短く＋落とさせない一文（1回目）", 29, "27行", True),
+        ("短く＋落とさせない一文（2回目）", 32, "26行", True),
+    ]
+    total = 32
+    label_x = 18
+    bar_x, bar_max = 272, 296
+    row_h, gap_y = 28, 18
+    top = 104
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 70
+    assert bar_x + bar_max + 108 <= WIDTH - 18, bar_x + bar_max + 108
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "自動実行の形に短くすると、貼った見出しが静かに消える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の上位6本の見出し32件（重複を除く）を貼って、論点の一覧を出させた。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "一覧に出た見出し（32件中）</text>\n",
+        f'<text class="t-xs" x="{bar_x + bar_max + 16}" y="{top - 12}">返りの行数</text>\n',
+    ]
+    for index, (name, kept, lines, good) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * kept / total)
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{y + 19}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        parts.append(
+            f'<rect class="{"bar-new" if good else "bar-in"}" x="{bar_x}" y="{y + 4}" '
+            f'width="{width}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-accent" if good else "t-bad"}" '
+            f'x="{bar_x + width + 10}" y="{y + 19}">{kept}件</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_x + bar_max + 16}" y="{y + 19}">{lines}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 50}">'
+        "※ 短くしたときに落としたのは「まとめた言い方に置き換えないで」"
+        "「1本だけの論点も省かずに」の2行だけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ 同じ指示文を2回走らせて論点名が完全一致した数＝"
+        "短くしただけ 4件 ／ 落とさせない一文つき 21件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 引用の捏造は5回とも0件、記事番号と引用の食い違いも0件。"
+        "消えるほうだけが起きている。</text>\n"
+    )
+    alt = (
+        "架空の上位6本の記事の見出し32件を貼って論点の一覧を出させ、"
+        "貼った見出しのうち何件が一覧に残ったかを頼み方ごとに並べた横棒グラフ。"
+        "表の形で、まとめた言い方に置き換えないでください、"
+        "1本にしか出てこない論点も省かずに全部載せてください、の2行を付けて頼むと、"
+        "32件中32件が一覧に出た。返りは26行。"
+        "毎朝の自動実行に載せるために前置きを禁じて行の形だけを決め、"
+        "その2行を落とすと、1回目は32件中22件で22行、"
+        "同じ指示文の2回目は32件中19件で16行しか出ず、10件以上が消えた。"
+        "落とさせない一文を足し直すと、1回目は32件中29件で27行、"
+        "2回目は32件中32件で26行まで戻った。"
+        "短くしたときに落としたのは、まとめた言い方に置き換えないで、と、"
+        "1本だけの論点も省かずに、の2行だけである。"
+        "同じ指示文を2回走らせて論点名が完全に一致した数は、"
+        "短くしただけの場合が4件、落とさせない一文を付けた場合が21件だった。"
+        "なお引用の捏造は5回の実測すべてで0件、記事番号と引用の食い違いも0件で、"
+        "起きているのは作り話ではなく静かな欠落のほうだけだった。"
+    )
+    (OUT / "blog-research-coverage.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def blog_research_volume_drift_chart() -> None:
+    """同じ指示文で検索回数を2回聞いた結果の食い違い。
+
+    実測（2026-08-13）。別々の新しいセッションに、1文字も同じ指示文を渡した。
+    証拠＝`docs/evidence/blog-research-from-headings.md`。
+    """
+    rows = [
+        ("食洗機 工事不要", "1位・約12,000", "1位・8,000〜12,000", False),
+        ("タンク式食洗機", "2位・約9,900", "4位・4,000〜7,000", True),
+        ("食洗機 賃貸", "3位・約8,100", "8位・2,000〜3,500", True),
+        ("卓上食洗機", "4位・約8,100", "2位・6,000〜10,000", True),
+        ("食洗機 一人暮らし", "5位・約5,400", "3位・5,000〜8,000", True),
+        ("食洗機 分岐水栓", "6位・約4,400", "6位・3,000〜5,000", False),
+        ("食洗機 置き場所", "8位・約2,900", "9位・1,500〜3,000", False),
+        ("食洗機 設置", "10位・約2,400", "10位・1,500〜3,000", False),
+    ]
+    label_x, first_x, second_x = 18, 250, 470
+    row_h = 24
+    top = 100
+    height = top + len(rows) * row_h + 74
+    assert second_x + 200 <= WIDTH - 18, second_x + 200
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ指示文で「月間の検索回数」を2回聞いた結果</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "別々の新しいセッションに、1文字も同じ指示文を渡した。"
+        "20個のうち両方に出たのは11個。</text>\n",
+        f'<text class="t-xs" x="{label_x}" y="{top - 14}">キーワード</text>\n',
+        f'<text class="t-xs" x="{first_x}" y="{top - 14}">1回目</text>\n',
+        f'<text class="t-xs" x="{second_x}" y="{top - 14}">2回目（同じ指示文）</text>\n',
+    ]
+    for index, (kw, first, second, moved) in enumerate(rows):
+        y = top + index * row_h + 16
+        cls = "t-bad" if moved else "t-sm"
+        parts.append(f'<text class="t" x="{label_x}" y="{y}">{_esc(kw)}</text>\n')
+        parts.append(f'<text class="{cls}" x="{first_x}" y="{y}">{_esc(first)}</text>\n')
+        parts.append(f'<text class="{cls}" x="{second_x}" y="{y}">{_esc(second)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 52}">'
+        "※ 赤い行＝順位か桁が動いたもの。"
+        "「食洗機 賃貸」は記事の主題そのもので、3位→8位・数字で2.3〜4倍ちがう。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ どちらの回も「ツールに接続できないので推定です」と自分から断っている。"
+        "断ったうえで順位が並ぶ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 20個のうち9個は入れ替わった（1回目だけに出た語・2回目だけに出た語が9個ずつ）。</text>\n"
+    )
+    alt = (
+        "同じ指示文で月間の検索回数を2回聞いた結果を並べた表。"
+        "別々の新しいセッションに、1文字も同じ指示文を渡している。"
+        "挙がった20個のキーワードのうち、両方の回に出たのは11個だけで、"
+        "9個は入れ替わった。両方に出た語も数字が食い違う。"
+        "食洗機 工事不要は1回目が1位で約12,000、2回目も1位で8,000から12,000。"
+        "タンク式食洗機は2位で約9,900だったものが4位で4,000から7,000。"
+        "食洗機 賃貸は3位で約8,100だったものが8位で2,000から3,500へ動いた。"
+        "これは記事の主題そのもののキーワードで、順位で5つ、数字で2.3倍から4倍ちがう。"
+        "卓上食洗機は4位で約8,100が2位で6,000から10,000へ、"
+        "食洗機 一人暮らしは5位で約5,400が3位で5,000から8,000へ動いた。"
+        "食洗機 分岐水栓、食洗機 置き場所、食洗機 設置は順位がほぼ動いていない。"
+        "どちらの回も、検索ボリュームのツールに接続できないので推定ですと自分から断ったうえで、"
+        "具体的な順位と数字を並べている。"
+    )
+    (OUT / "blog-research-volume-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def offer_verdict_vs_claims_chart() -> None:
     """同じ中身の勧誘文2種に「これは詐欺?」と聞いた結果の比較。
 
@@ -3829,4 +3989,6 @@ if __name__ == "__main__":
     runbook_silent_completion_chart()
     transcript_keep_vs_rewrite_chart()
     offer_verdict_vs_claims_chart()
-    print(f"58枚を {OUT} に出力しました")
+    blog_research_coverage_chart()
+    blog_research_volume_drift_chart()
+    print(f"60枚を {OUT} に出力しました")

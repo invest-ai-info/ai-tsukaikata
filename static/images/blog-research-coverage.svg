@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="架空の上位6本の記事の見出し32件を貼って論点の一覧を出させ、貼った見出しのうち何件が一覧に残ったかを頼み方ごとに並べた横棒グラフ。表の形で、まとめた言い方に置き換えないでください、1本にしか出てこない論点も省かずに全部載せてください、の2行を付けて頼むと、32件中32件が一覧に出た。返りは26行。毎朝の自動実行に載せるために前置きを禁じて行の形だけを決め、その2行を落とすと、1回目は32件中22件で22行、同じ指示文の2回目は32件中19件で16行しか出ず、10件以上が消えた。落とさせない一文を足し直すと、1回目は32件中29件で27行、2回目は32件中32件で26行まで戻った。短くしたときに落としたのは、まとめた言い方に置き換えないで、と、1本だけの論点も省かずに、の2行だけである。同じ指示文を2回走らせて論点名が完全に一致した数は、短くしただけの場合が4件、落とさせない一文を付けた場合が21件だった。なお引用の捏造は5回の実測すべてで0件、記事番号と引用の食い違いも0件で、起きているのは作り話ではなく静かな欠落のほうだけだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">自動実行の形に短くすると、貼った見出しが静かに消える</text>
+<text class="t-sm" x="18" y="45">架空の上位6本の見出し32件（重複を除く）を貼って、論点の一覧を出させた。</text>
+<text class="t-xs" x="272" y="92">一覧に出た見出し（32件中）</text>
+<text class="t-xs" x="584" y="92">返りの行数</text>
+<text class="t-sm" x="18" y="123">表の形で、落とさない2行つき</text>
+<rect class="bar-old" x="272" y="108" width="296" height="20" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="272" y="108" width="296" height="20" rx="3"/>
+<text class="t-accent" x="578" y="123">32件</text>
+<text class="t-sm" x="584" y="123">26行</text>
+<text class="t-sm" x="18" y="169">毎朝の形に短くした（1回目）</text>
+<rect class="bar-old" x="272" y="154" width="296" height="20" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="272" y="154" width="204" height="20" rx="3"/>
+<text class="t-bad" x="486" y="169">22件</text>
+<text class="t-sm" x="584" y="169">22行</text>
+<text class="t-sm" x="18" y="215">毎朝の形に短くした（2回目）</text>
+<rect class="bar-old" x="272" y="200" width="296" height="20" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="272" y="200" width="176" height="20" rx="3"/>
+<text class="t-bad" x="458" y="215">19件</text>
+<text class="t-sm" x="584" y="215">16行</text>
+<text class="t-sm" x="18" y="261">短く＋落とさせない一文（1回目）</text>
+<rect class="bar-old" x="272" y="246" width="296" height="20" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="272" y="246" width="268" height="20" rx="3"/>
+<text class="t-accent" x="550" y="261">29件</text>
+<text class="t-sm" x="584" y="261">27行</text>
+<text class="t-sm" x="18" y="307">短く＋落とさせない一文（2回目）</text>
+<rect class="bar-old" x="272" y="292" width="296" height="20" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="272" y="292" width="296" height="20" rx="3"/>
+<text class="t-accent" x="578" y="307">32件</text>
+<text class="t-sm" x="584" y="307">26行</text>
+<text class="t-xs" x="18" y="336">※ 短くしたときに落としたのは「まとめた言い方に置き換えないで」「1本だけの論点も省かずに」の2行だけ。</text>
+<text class="t-xs" x="18" y="354">※ 同じ指示文を2回走らせて論点名が完全一致した数＝短くしただけ 4件 ／ 落とさせない一文つき 21件。</text>
+<text class="t-xs" x="18" y="372">※ 引用の捏造は5回とも0件、記事番号と引用の食い違いも0件。消えるほうだけが起きている。</text>
+</svg>
