@@ -26,74 +26,7 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-12T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-12T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Sakana Chatがアップデート：「Sakana Fugu」と新世代「Sakana Namazu」が利用可能に",
-      "uid": "f6c29fbda611dcc1",
-      "url": "/chat-update/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-13T08:38:50+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack",
-      "title": "v2.1.231",
-      "uid": "15d33eba8d914dcd",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-13T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
-      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
-      "uid": "ae8216f90e901db2",
-      "url": "https://openai.com/index/previewing-ultrafast",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-13T09:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI.",
-      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
-      "uid": "a0625f59bdd66d41",
-      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-13T16:45:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "The video shows Sheets canvas in action.",
-      "title": "Bring your spreadsheet data to life with Sheets canvas",
-      "uid": "4bd32acd0d20328e",
-      "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-13T11:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities.",
-      "title": "The builder’s guide to GPT‑5.6",
-      "uid": "a867dc6cc38cc8c2",
-      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
