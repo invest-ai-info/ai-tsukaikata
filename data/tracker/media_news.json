@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-13T23:05:11.097576+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-13T22:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "データセンターが“ホットなテーマ”だ。AI時代のデータセンターとは一体どのようなものなのか。潜入記事やフジクラ取材記事など、お薦め記事をまとめた。",
+      "title": "データセンターが“アツい”――「潜入レポート」「フジクラ取材」など注目記事5選（2026年前半版）",
+      "uid": "bd7c43315ef59a54",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/14/news040.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-13T23:05:11.097576+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-13T22:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "明治創業の老舗漬物店が、AI活用で成果を出している。Claudeを活用して「梅干し職人向けツール」などを開発。PCが苦手な人にも使いやすいツールをどのように作っているのか。",
+      "title": "“梅干し職人”のためツール自作　老舗漬物店のClaude活用、「チャット+コピペ」で成果を出せたワケ",
+      "uid": "c73e8f74e14fa43f",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/14/news053.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-13T22:05:19.093205+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -11,6 +35,18 @@
       "uid": "139a9a688c512297",
       "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2131865.html",
       "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-13T23:05:11.097576+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-13T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "小田原の老舗梅干し店がビジネス変革を成し遂げた。主導したのはドイツ出身のゾェルゲルさん。数々の課題をどう乗り越えたのか。",
+      "title": "小田原の老舗梅干し店、世界で稼ぐ――「この外国人は何を言っているんだ」から逆転、築いた“売れる仕組み”",
+      "uid": "169ea30b99063e3b",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/14/news019.html",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-08-13T22:05:19.093205+00:00",
