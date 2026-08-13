@@ -101,6 +101,9 @@ def render_site(
         if url.startswith("/scenes/"):
             name = url.strip("/").split("/")[-1]
             return name in active_scenes
+        name = url.strip("/")
+        if name in config.LISTED_CATEGORIES:
+            return name in active   # 記事0本のカテゴリ一覧は作られない
         return True
 
     top_nav = [item for item in config.TOP_NAV if _nav_target_exists(item["url"])]

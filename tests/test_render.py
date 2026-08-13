@@ -240,9 +240,18 @@ def test_index_top_nav_hides_empty_scene_buttons():
     assert 'class="top-nav-pill" href="/scenes/earn/"' in html
     assert ">AI副業</a>" in html
     assert 'href="/scenes/safety/"' not in html   # 記事0本 → ボタンごと隠す
-    assert 'href="/recipes/"' in html             # 静的な行き先は常に出る
+    assert 'href="/recipes/"' in html             # 記事のあるカテゴリは出る
+    assert ">深掘り記事</a>" not in html           # tools が0本ならボタンごと隠す
     # 旧デザインの場面カード節はもう無い
     assert "場面から探す" not in html
+
+
+def test_index_top_nav_shows_tools_button_when_tools_exist():
+    pages = render_site([_article(slug="a", scene="work"),
+                         _article(slug="t", category="tools")])
+    html = pages["index.html"]
+    assert 'class="top-nav-pill" href="/tools/"' in html
+    assert ">深掘り記事</a>" in html
 
 
 def test_article_without_scene_still_renders():

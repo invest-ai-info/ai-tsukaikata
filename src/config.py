@@ -21,6 +21,7 @@ TOP_NAV = [
     {"label": "セキュリティ対策", "url": "/scenes/security/"},
     {"label": "最新アップデート情報", "url": "/news/"},
     {"label": "AIレシピ", "url": "/recipes/"},
+    {"label": "深掘り記事", "url": "/tools/"},
 ]
 
 # AdSense のサイト運営者ID（2026-08-13 オーナーが審査コードを提供）。
