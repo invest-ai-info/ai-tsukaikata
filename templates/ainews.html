@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="article-title">AIニュース</h1>
+<p class="article-meta">国内メディアのAI関連記事の見出しを自動で集めた一覧です。リンクは出典元の記事へ。本文の転載はしていません。</p>
+{% for day_label, day_items in media.days %}
+<section class="news-month">
+  <h2 class="section-title">{{ day_label }}</h2>
+  <ul class="medianews-list">
+    {% for item in day_items %}
+    <li class="medianews-item">
+      <a href="{{ item.url }}" rel="noopener">{{ item.title }}</a>
+      <span class="medianews-src">{{ item.vendor }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% endblock %}

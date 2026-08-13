@@ -1,69 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 {% import "_macros.html" as macros %}
+{% if top_nav %}
+<nav class="top-nav" aria-label="カテゴリー">
+  {% for item in top_nav %}
+  <a class="top-nav-pill" href="{{ item.url }}">{{ item.label }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
+
 <section class="hero">
   <img class="hero-photo" src="/static/images/hero-photo.jpg" alt="" width="1200" height="686">
   <div class="hero-text">
     <p class="hero-eyebrow">プログラミングなしで、AIに頼む</p>
     <h1>{{ site.name }}</h1>
     <p class="hero-lead">{{ site.description }}</p>
-    <p class="hero-links">
-      <a class="hero-link is-primary" href="/recipes/">レシピを読む</a>
-      {% if news %}
-      <a class="hero-link" href="/news/">AIアップデート</a>
-      {% endif %}
-    </p>
   </div>
 </section>
 
-{% if start_url %}
-<section class="start-section">
-  <h2 class="section-title">はじめての人へ</h2>
-  <p class="section-lead">どのAIを、何を用意して、どこから触るか。自分のパソコンで動くかどうかから確かめられます。</p>
-  <p class="start-more"><a class="hero-link is-primary" href="{{ start_url }}">始め方を読む →</a></p>
+{% if media_news and media_news.entries %}
+<section class="medianews-section">
+  <h2 class="section-title">{{ media_news.label }}のAIニュース</h2>
+  <p class="section-lead">国内メディアのAI関連記事の見出しです。自動収集・リンクは出典元へ。</p>
+  <ul class="medianews-list">
+    {% for item in media_news.entries %}
+    <li class="medianews-item">
+      <a href="{{ item.url }}" rel="noopener">{{ item.title }}</a>
+      <span class="medianews-src">{{ item.vendor }}・{{ item.published.month }}月{{ item.published.day }}日</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="news-more"><a href="/ainews/">ニュース一覧へ →</a></p>
 </section>
 {% endif %}
 
-{% if news %}
+{% if news and news.updates_day and news.updates_day.entries %}
 <section class="news-section">
-  <h2 class="section-title">AIアップデート</h2>
-  <p class="section-lead">各社の発表を自動で集めています。1日数回、自動更新。要約は自動生成です。</p>
+  <h2 class="section-title">AIアップデート — {{ news.updates_day.label }}の発表</h2>
+  <p class="section-lead">各社の公式発表を自動で集めています。この日の発表を全部載せています。過去の分は一覧で。</p>
   <ul class="news-list">
-    {% for item in news.announcements %}
+    {% for item in news.updates_day.entries %}
     {{ macros.news_item(item) }}
     {% endfor %}
   </ul>
-  {% if news.model_groups %}
-  <p class="news-models-head">新モデル・新バージョン</p>
-  <ul class="news-models">
-    {% for group in news.model_groups %}
-    <li>{{ group.label }}: {{ group.count }}件（最新: {{ group.latest_title }}）</li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-  <p class="news-more"><a href="/news/">すべて見る →</a></p>
-</section>
-{% endif %}
-
-{% if scene_cards %}
-<section class="scene-section">
-  <h2 class="section-title">場面から探す</h2>
-  <p class="section-lead">どんなときに使いたいかで選べます。</p>
-  <div class="scene-grid">
-    {% for scene in scene_cards %}
-    <a class="scene-card" href="{{ scene.url }}">
-      <span class="scene-name">{{ scene.label }}<span class="scene-count">{{ scene.count }}</span></span>
-      <span class="scene-lead">{{ scene.lead }}</span>
-    </a>
-    {% endfor %}
-  </div>
+  <p class="news-more"><a href="/news/">過去の発表を一覧で見る →</a></p>
 </section>
 {% endif %}
 
 <section class="article-list">
-  <h2 class="section-title">新着</h2>
-  {% for article in articles %}
+  <h2 class="section-title">新着レシピ</h2>
+  {% for article in articles[:6] %}
   {{ macros.card(article) }}
   {% endfor %}
+  <p class="news-more"><a href="/recipes/">すべてのレシピ →</a></p>
 </section>
 {% endblock %}

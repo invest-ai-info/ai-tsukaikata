@@ -204,6 +204,11 @@ def forget_removed_sources(state: dict, active_source_ids: set[str]) -> int:
 NEWS_MAX_ITEMS = 500
 NEWS_RETENTION_DAYS = 90
 
+# メディアのAIニュース（lane: media）は別ファイル・別の寿命。
+# トップの「AIニュース」欄と /ainews/ が読む。メールには使わない。
+MEDIA_NEWS_MAX_ITEMS = 200
+MEDIA_NEWS_RETENTION_DAYS = 30
+
 
 def empty_news() -> dict:
     return {"items": []}
@@ -215,6 +220,11 @@ def news_path_for(state_path: Path) -> Path:
     テストが tmp_path を渡せばアーカイブも一緒に隔離される。
     """
     return Path(state_path).with_name("news.json")
+
+
+def media_news_path_for(state_path: Path) -> Path:
+    """メディアニュースのアーカイブも状態ファイルの隣。"""
+    return Path(state_path).with_name("media_news.json")
 
 
 def _published_at(item: dict) -> datetime:
@@ -254,16 +264,22 @@ def append_news(news: dict, updates: list[Update], now: datetime) -> int:
     return added
 
 
-def prune_news(news: dict, now: datetime) -> int:
+def prune_news(news: dict, now: datetime, *, max_items: int | None = None,
+               retention_days: int | None = None) -> int:
     """古い記事と上限超過分を落として、落とした件数を返す。
 
     毎回コミットされるファイルなので、際限なく伸ばすと git が重くなる。
+    メディアレーンは max_items / retention_days を小さくして呼ぶ。
     """
+    if max_items is None:
+        max_items = NEWS_MAX_ITEMS          # 既定は呼び出し時に読む（テストが差し替えるため）
+    if retention_days is None:
+        retention_days = NEWS_RETENTION_DAYS
     before = len(news["items"])
-    cutoff = now - timedelta(days=NEWS_RETENTION_DAYS)
+    cutoff = now - timedelta(days=retention_days)
     kept = [item for item in news["items"] if _published_at(item) >= cutoff]
     kept.sort(key=_published_at, reverse=True)
-    news["items"] = kept[:NEWS_MAX_ITEMS]
+    news["items"] = kept[:max_items]
     return before - len(news["items"])
 
 

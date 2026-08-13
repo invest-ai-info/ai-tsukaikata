@@ -115,10 +115,50 @@ def _enqueue_deepdive(major, sources, state, now, queue_path) -> None:
         print(f"[警告] 深掘りキューへの追記に失敗: {error}")
 
 
+# メディアレーンのAI関連語。総合メディア（filter: ai のソース）のタイトルを絞る。
+# AI専門フィード（filter なし）はそのまま通す。
+MEDIA_KEYWORDS = (
+    "AI", "ai", "人工知能", "生成", "ChatGPT", "チャットGPT", "Claude", "Gemini",
+    "Copilot", "LLM", "OpenAI", "Anthropic", "Grok", "ディープフェイク", "機械学習",
+)
+
+
+def _media_keep(update, source: dict) -> bool:
+    """メディアレーンの絞り込み。filter: ai のソースだけタイトルで判定する。"""
+    if source.get("filter") != "ai":
+        return True
+    return any(word in update.title for word in MEDIA_KEYWORDS)
+
+
 def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
-              queue_path=None) -> int:
-    """毎時チェック。major は即送信、minor はダイジェスト用に溜める。"""
+              queue_path=None, media_path=None) -> int:
+    """毎時チェック。major は即送信、minor はダイジェスト用に溜める。
+
+    lane: media のソースは別レーン＝サイトの「AIニュース」欄に貯めるだけで、
+    メールにも深掘りキューにも入れない（設計書 2026-08-13 §2）。
+    """
+    media_sources = [s for s in sources if s.get("lane") == "media"]
+    sources = [s for s in sources if s.get("lane") != "media"]
+
     state = store.load_state(state_path)
+
+    media_new = 0
+    if media_sources:
+        by_id = {s.get("id"): s for s in media_sources}
+        m_collected = _collect(media_sources, state, fetcher)
+        m_fresh = store.select_unseen(state, m_collected)
+        m_kept = [u for u in m_fresh
+                  if _media_keep(u, by_id.get(u.source_id, {}))]
+        m_path = media_path or store.media_news_path_for(state_path)
+        m_archive = store.load_news(m_path)
+        media_new = store.append_news(m_archive, m_kept, now)
+        store.prune_news(m_archive, now,
+                         max_items=store.MEDIA_NEWS_MAX_ITEMS,
+                         retention_days=store.MEDIA_NEWS_RETENTION_DAYS)
+        store.save_news(m_path, m_archive)
+        # フィルタで落とした分も既読にする——毎回同じ記事を再判定しないため
+        store.mark_seen(state, m_fresh, now)
+
     collected = _collect(sources, state, fetcher)
     fresh = store.select_unseen(state, collected)
 
@@ -146,12 +186,15 @@ def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
 
     store.mark_seen(state, fresh, now)
     store.queue_minor(state, minor)
-    active_ids = {_source_label(s, i) for i, s in enumerate(sources)}
+    # ⚠️ メディアレーンも「消したソース」扱いにしないこと（健康記録が毎回消える）
+    active_ids = {_source_label(s, i)
+                  for i, s in enumerate(sources + media_sources)}
     store.forget_removed_sources(state, active_ids)
     store.prune(state, now)
     store.save_state(state_path, state)
 
-    print(f"新着 {len(fresh)}件（major {len(major)} / minor {len(minor)}）")
+    print(f"新着 {len(fresh)}件（major {len(major)} / minor {len(minor)}）"
+          f" ／ メディアニュース {media_new}件")
     return len(fresh)
 
 

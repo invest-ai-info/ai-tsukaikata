@@ -164,3 +164,61 @@ def group_by_month(items: list[NewsItem]) -> list[tuple[str, list[NewsItem]]]:
         label = f"{item.published.year}年{item.published.month}月"
         months.setdefault(label, []).append(item)
     return list(months.items())
+
+
+def day_label(published: datetime) -> str:
+    """JSTの「8月13日」形式。トップの見出しと日別の区切りに使う。"""
+    return f"{published.month}月{published.day}日"
+
+
+def latest_day(items: list[NewsItem]) -> dict:
+    """トップの「AIアップデート」用＝最新の発表があった日の全件。
+
+    「その日の発表を全部見せる。過去は /news/ で」（2026-08-13 設計書 §1）。
+    当日ではなく「最新の発表日」にするのは、発表が無い日に欄が空にならないため。
+    """
+    if not items:
+        return {"label": None, "entries": []}
+    newest = items[0].published
+    key = (newest.year, newest.month, newest.day)
+    day_items = [i for i in items
+                 if (i.published.year, i.published.month, i.published.day) == key]
+    # ⚠️ キー名を items にしない——Jinja が dict.items メソッドを先に解決して壊れる
+    return {"label": day_label(newest), "entries": day_items}
+
+
+# --- メディアのAIニュース（data/tracker/media_news.json）---
+#
+# アップデート欄とは別レーン。項目形式はトラッカーの news アーカイブと同じなので
+# 読み込みは load_news の形式検査に相乗りするが、ファイルが「無い」ことは
+# エラーにしない——トラッカーが最初に走るまでは存在しないのが正常なため。
+# 欄ごと出さない、が設計どおりの挙動（半端な欄を出すよりよい）。
+
+MEDIA_TOP_ITEMS = 8
+
+
+def load_media_news(path: Path) -> list[NewsItem]:
+    """media_news.json を読む。ファイルが無ければ空（欄ごと非表示）。"""
+    if not Path(path).exists():
+        return []
+    return load_news(path)
+
+
+def media_top(items: list[NewsItem], limit: int = MEDIA_TOP_ITEMS) -> dict:
+    """トップの「AIニュース」欄＝最新 limit 件。見出しは最新記事の日付。"""
+    if not items:
+        return {"label": None, "entries": []}
+    return {"label": day_label(items[0].published), "entries": items[:limit]}
+
+
+def group_by_day(items: list[NewsItem]) -> list[tuple[str, list[NewsItem]]]:
+    """/ainews/ 用。新しい日から順に（「8月13日」, 項目リスト）を返す。"""
+    days: dict[tuple, list[NewsItem]] = {}
+    for item in items:
+        days.setdefault(
+            (item.published.year, item.published.month, item.published.day), []
+        ).append(item)
+    return [
+        (f"{y}年{m}月{d}日", day_items)
+        for (y, m, d), day_items in days.items()
+    ]

@@ -15,6 +15,7 @@ on:
       - "requirements.txt"
       - ".github/workflows/build.yml"
       - "data/tracker/news.json"
+      - "data/tracker/media_news.json"
       - "tracker/sources.yml"
   workflow_dispatch:
 

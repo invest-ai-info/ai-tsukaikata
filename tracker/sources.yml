@@ -109,3 +109,46 @@ sources:
     label: ELYZA note
     type: rss
     url: https://note.com/elyza/rss
+
+  # --- メディアのAIニュース（lane: media・2026-08-13 設計書 §2）---
+  # サイトのトップ「AIニュース」欄と /ainews/ 用。メール・深掘りには入れない
+  # （run.py がレーンを分離）。filter: ai のソースはタイトルにAI関連語を含む
+  # 記事だけ拾う（総合メディア用）。7候補を実測して、この5本を採用した
+  # （ASCII=芸能ノイズ・ITmedia NEWS=AI+と重複のため見送り）。
+  - id: media-itmedia-aiplus
+    vendor: ITmedia AI+
+    label: ITmedia AI+
+    type: rss
+    lane: media
+    url: https://rss.itmedia.co.jp/rss/2.0/aiplus.xml
+
+  - id: media-impress-ai
+    vendor: Impress AI Watch
+    label: Impress AI Watch
+    type: rss
+    lane: media
+    url: https://ai.watch.impress.co.jp/data/rss/1.0/aiw/feed.rdf
+
+  - id: media-publickey
+    vendor: Publickey
+    label: Publickey
+    type: rss
+    lane: media
+    filter: ai
+    url: https://www.publickey1.jp/atom.xml
+
+  - id: media-gigazine
+    vendor: GIGAZINE
+    label: GIGAZINE
+    type: rss
+    lane: media
+    filter: ai
+    url: https://gigazine.net/news/rss_2.0/
+
+  - id: media-cnet-japan
+    vendor: CNET Japan
+    label: CNET Japan
+    type: rss
+    lane: media
+    filter: ai
+    url: http://feeds.japan.cnet.com/rss/cnet/all.rdf

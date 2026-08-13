@@ -46,11 +46,14 @@ def render_site(
     news: dict | None = None,
     eyecatches: set[str] | None = None,
     env: Environment | None = None,
+    media: dict | None = None,
 ) -> dict[str, str]:
     """全ページを組み立てる。キーは build/ からの相対パス。
 
     news は build.py が src/news.py で作る {"top": ..., "archive": ...}。
     None ならニュース欄も /news/ も出さない（テスト・部分ビルド用）。
+    media はメディアのAIニュース {"top": ..., "days": ...}。None または
+    空ならトップの欄も /ainews/ も出さない（トラッカー初回前が正常にこの状態）。
     eyecatches はアイキャッチSVGが実在する slug の集合。無い記事は
     画像なしで組む（壊れた img を出さない）。
     """
@@ -91,6 +94,23 @@ def render_site(
     ]
     env.globals["scenes"] = config.SCENES
 
+    # カテゴリーボタン（2026-08-13 設計書 §1）。/scenes/ を指すボタンは、
+    # その場面に記事が入るまで隠す——0本の場面ページは作られず404になるため。
+    # 増やすときは config.TOP_NAV に足すだけ（このフィルタが行き先を守る）。
+    def _nav_target_exists(url: str) -> bool:
+        if url == "/start/":
+            return has_start
+        if url == "/news/":
+            return news is not None
+        if url == "/ainews/":
+            return bool(media and media.get("days"))
+        if url.startswith("/scenes/"):
+            name = url.strip("/").split("/")[-1]
+            return name in active_scenes
+        return True
+
+    top_nav = [item for item in config.TOP_NAV if _nav_target_exists(item["url"])]
+
     pages: dict[str, str] = {}
 
     pages["index.html"] = env.get_template("index.html").render(
@@ -100,6 +120,8 @@ def render_site(
         og_type="website",
         articles=listed[: config.INDEX_MAX_ARTICLES],
         news=news["top"] if news else None,
+        media_news=media["top"] if media else None,
+        top_nav=top_nav,
         scene_cards=scene_cards,
     )
 
@@ -110,6 +132,15 @@ def render_site(
             canonical=f"{config.SITE_URL}/news/",
             og_type="website",
             news=news["archive"],
+        )
+
+    if media and media.get("days"):
+        pages["ainews/index.html"] = env.get_template("ainews.html").render(
+            page_title="AIニュース",
+            description="国内メディアのAI関連記事の見出しを自動で集めた一覧。",
+            canonical=f"{config.SITE_URL}/ainews/",
+            og_type="website",
+            media=media,
         )
 
     for scene in active_scenes:

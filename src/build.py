@@ -50,6 +50,7 @@ def figure_errors(static_dir: Path) -> list[str]:
 
 
 NEWS_PATH = ROOT / "data" / "tracker" / "news.json"
+MEDIA_NEWS_PATH = ROOT / "data" / "tracker" / "media_news.json"
 SOURCES_PATH = ROOT / "tracker" / "sources.yml"
 
 
@@ -58,6 +59,7 @@ def collect(
     static_dir: Path = STATIC_DIR,
     news_path: Path = NEWS_PATH,
     sources_path: Path = SOURCES_PATH,
+    media_news_path: Path | None = None,
 ) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
@@ -70,9 +72,28 @@ def collect(
         source_types = news.load_source_types(sources_path)
         items = news.load_news(news_path)
         news_data = {
-            "top": news.split_recent(items, source_types),
+            "top": {
+                **news.split_recent(items, source_types),
+                "updates_day": news.latest_day(items),
+            },
             "archive": {"months": news.group_by_month(items)},
         }
+    except news.NewsError as error:
+        errors = errors + [str(error)]
+
+    # メディアのAIニュース。ファイルが無い＝トラッカー初回前で正常（欄ごと出さない）。
+    # 壊れている＝ビルドを止める（半端な欄を公開しない・news.json と同じ扱い）。
+    # 既定は news.json の隣＝テストが news_path を tmp に向ければ media も隔離される
+    if media_news_path is None:
+        media_news_path = Path(news_path).with_name("media_news.json")
+    media_data = None
+    try:
+        media_items = news.load_media_news(media_news_path)
+        if media_items:
+            media_data = {
+                "top": news.media_top(media_items),
+                "days": news.group_by_day(media_items),
+            }
     except news.NewsError as error:
         errors = errors + [str(error)]
 
@@ -85,9 +106,12 @@ def collect(
         for path in available
         if path.startswith("/static/images/eyecatch/") and path.endswith(".svg")
     }
-    files = render.render_site(articles, news=news_data, eyecatches=eyecatches)
+    files = render.render_site(articles, news=news_data, eyecatches=eyecatches,
+                               media=media_data)
 
-    section_paths = ("/", "/news/") + tuple(
+    section_paths = ("/", "/news/") + (
+        ("/ainews/",) if media_data else ()
+    ) + tuple(
         f"/{name}/" for name in config.LISTED_CATEGORIES
         if any(a.category == name for a in articles)
     ) + tuple(

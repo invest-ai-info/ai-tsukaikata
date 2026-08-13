@@ -10,6 +10,19 @@ SITE_NAME = "AIの使い方"
 SITE_URL = "https://ai-tsukaikata.com"
 CUSTOM_DOMAIN = "ai-tsukaikata.com"
 
+# トップページのカテゴリーボタン（2026-08-13 オーナー指示・設計書 §1）。
+# 後から増やすときはここに1行足すだけ。並び順のまま表示される。
+# ⚠️ /scenes/<name>/ を指すボタンは、その場面に記事が入るまで自動で隠れる
+# （render.py が絞る）。0本の場面へのリンクは404になるため。
+TOP_NAV = [
+    {"label": "初めての方", "url": "/start/"},
+    {"label": "AI副業", "url": "/scenes/earn/"},
+    {"label": "AI詐欺を防ぐ", "url": "/scenes/safety/"},
+    {"label": "セキュリティ対策", "url": "/scenes/security/"},
+    {"label": "最新アップデート情報", "url": "/news/"},
+    {"label": "AIレシピ", "url": "/recipes/"},
+]
+
 # AdSense のサイト運営者ID（2026-08-13 オーナーが審査コードを提供）。
 # 審査タグは templates/base.html、ads.txt は src/build.py がこのIDから作る。
 ADSENSE_PUBLISHER_ID = "pub-2552122294306014"
@@ -67,6 +80,10 @@ SCENES = {
     "safety": {
         "label": "詐欺を防ぐ",
         "lead": "AIで作られた・AIを名乗る詐欺から身を守ります。断定より、確かめる手順を。",
+    },
+    "security": {
+        "label": "セキュリティ対策",
+        "lead": "個人情報・アカウント・履歴。AIを使う前後の守りを固めます。",
     },
     "fun": {
         "label": "遊び・創作",

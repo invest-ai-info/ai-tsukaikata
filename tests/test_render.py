@@ -133,20 +133,20 @@ def _news_top():
                 "latest_title": "v2.1.223",
                 "latest_published": item.published,
             }],
+            # 2026-08-13 の再構成後、トップが使うのはこちら（最新発表日の全件）
+            "updates_day": {"label": "8月4日", "entries": [item]},
         },
         "archive": {"months": [("2026年8月", [item])]},
     }
 
 
 def test_index_shows_news_section():
+    """トップのアップデート欄は「最新の発表日の全件」（2026-08-13 再構成）。"""
     pages = render_site([_article()], news=_news_top())
     html = pages["index.html"]
-    assert "AIアップデート" in html
+    assert "AIアップデート — 8月4日の発表" in html
     assert "New ways to learn" in html
     assert "1行目" in html
-    assert "重要" in html
-    assert "Claude Code: 2件（最新: v2.1.223）" in html
-    assert "要約は自動生成" in html
     assert 'href="/news/"' in html
 
 
@@ -229,17 +229,17 @@ def test_scene_page_lists_only_its_own_articles():
     assert "暮らしの記事" not in html
 
 
-def test_index_shows_scene_cards_with_counts():
-    pages = render_site([
-        _article(slug="a", scene="work"),
-        _article(slug="b", scene="work"),
-        _article(slug="c", scene="life"),
-    ])
+def test_index_top_nav_hides_empty_scene_buttons():
+    """カテゴリーボタン（2026-08-13）。記事の無い場面のボタンは出さない＝
+    0本の場面ページは作られず404になるため。記事が入れば自動で現れる。"""
+    pages = render_site([_article(slug="a", scene="earn")])
     html = pages["index.html"]
-    assert "場面から探す" in html
-    assert 'href="/scenes/work/"' in html
-    assert 'href="/scenes/life/"' in html
-    assert 'href="/scenes/fun/"' not in html
+    assert 'class="top-nav-pill" href="/scenes/earn/"' in html
+    assert ">AI副業</a>" in html
+    assert 'href="/scenes/safety/"' not in html   # 記事0本 → ボタンごと隠す
+    assert 'href="/recipes/"' in html             # 静的な行き先は常に出る
+    # 旧デザインの場面カード節はもう無い
+    assert "場面から探す" not in html
 
 
 def test_article_without_scene_still_renders():
@@ -274,3 +274,46 @@ def test_no_start_link_when_the_guide_is_missing():
     """記事が無いのにリンクを出すとリンク切れになる（既存の nav と同じ考え方）。"""
     html = render_site([_article(slug="about", category="pages")])["index.html"]
     assert 'href="/start/"' not in html
+
+def _media():
+    from datetime import datetime
+    from src.news import JST, NewsItem
+    item = NewsItem(
+        uid="m1", source_id="media-x", title="生成AIの業務利用が拡大",
+        url="https://example.com/media/1", vendor="架空メディア", label="架空メディア",
+        importance="minor", published=datetime(2026, 8, 13, 8, 0, tzinfo=JST),
+        summary_ja=None,
+    )
+    return {
+        "top": {"label": "8月13日", "entries": [item]},
+        "days": [("2026年8月13日", [item])],
+    }
+
+
+def test_index_shows_media_news_and_ainews_page():
+    """メディアのAIニュース欄（2026-08-13）。見出し＋出典のみ・/ainews/ が生える。"""
+    pages = render_site([_article()], media=_media())
+    html = pages["index.html"]
+    assert "8月13日のAIニュース" in html
+    assert "生成AIの業務利用が拡大" in html
+    assert "架空メディア" in html
+    assert 'href="/ainews/"' in html
+    archive = pages["ainews/index.html"]
+    assert "2026年8月13日" in archive
+    assert "https://example.com/media/1" in archive
+
+
+def test_without_media_index_hides_the_section_and_page():
+    """media_news.json が無い（トラッカー初回前）＝欄ごと出さない・/ainews/ も作らない。"""
+    pages = render_site([_article()])
+    assert "のAIニュース" not in pages["index.html"]
+    assert "ainews/index.html" not in pages
+
+
+def test_index_caps_articles_at_six():
+    articles = [_article(slug=f"a{i}") for i in range(8)]
+    pages = render_site(articles)
+    html = pages["index.html"]
+    assert 'href="/recipes/a5/"' in html
+    assert 'href="/recipes/a6/"' not in html
+    assert "すべてのレシピ" in html
