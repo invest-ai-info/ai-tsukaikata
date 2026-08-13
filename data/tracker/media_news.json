@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-13T15:17:40.171847+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-13T14:12:24+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "中国DeepSeekは8月13日（日本時間、以下同）、AIモデルのAPI料金を値上げすると発表した。通常より2倍高いピーク時価格も導入する。新たな料金体系は17日午前1時から適用する。",
+      "title": "中国DeepSeek、API料金を「最大12倍」に値上げ　ピーク時価格も導入　8月17日から",
+      "uid": "6aaca9ae77098ee8",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000533/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-13T15:17:40.171847+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-13T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "寄付者情報データベース「PatronView」を運営するニック・グレイ氏が、ウェブサイトに押し寄せるAIクローラーやスクレイパーと約1年間にわたって続けてきた攻防を公開しました。サーバーが配信したページ数とアクセス解析の数字を比べると、「人間が1回ページ読み込んだ」と記録される間に、AIによるページ読み込みがおよそ214回発生していたとのことです。 続きを読む...",
+      "title": "ウェブサイトへのアクセスの99％超がボットに、人間1回に対して214回もページを読み込むAIスクレイパーとの攻防",
+      "uid": "287306b4f1e3d029",
+      "url": "https://gigazine.net/news/20260813-traffic-bot-percent/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-13T12:01:33.145239+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
