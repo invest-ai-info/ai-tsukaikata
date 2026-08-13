@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="328" viewBox="0 0 720 328" role="img" aria-label="同じ架空の募集要項と素材で頼み方だけを4通りに変えて、素材に書いていない決め事5件を誰が決めたかを比べた表。1つ目は素朴に頼む、2つ目は素材に書いていないことは書かないでくださいという禁止だけ、3つ目は書けない箇所を素材に無いと書いて空けさせる、4つ目は私が決めると印を残させる、の4通り。1週間に対応できる本数は、素朴に頼むとAIが週1本と決め、禁止だけでも週1本と決めた。空けさせると空欄になり、私が決めると印を残させたときだけ私が決める欄として残った。単価8,000円を受けるかは、素朴でも禁止だけでも出てこず、空けさせると空欄、印を残させたときだけ私が決める欄になった。サンプルを出すかは、素朴に頼むと無償で書くと申し出て、禁止だけでは出てこず、空けさせると相談と書き、印を残させたときは私が決める欄になった。画像差し替えの2回目以降は、素朴に頼んだときだけ自分で進めますと約束し、ほかの3通りでは出てこなかった。週2本への増加は、素朴でも禁止だけでも相談を約束し、ほかの2通りでは出てこなかった。募集要項は1週間に対応できる本数を書くよう求めているので、禁止だけを渡すとこの必須の欄が空欄になる。どの頼み方でも、素材にある事実である7本、記名なし、SEO未学習は書き換わっていない。動くのは決め事のほうだけである。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="328"/>
+<text class="t-strong" x="18" y="26">素材に書いていない決め事を、誰が決めたか</text>
+<text class="t-sm" x="18" y="45">同じ募集要項・同じ素材で、頼み方だけを4通りに変えた。素材にはこの5件がどれも書かれていない。</text>
+<text class="t-bad" x="216" y="80">素朴に頼む</text>
+<text class="t-xs" x="216" y="97">（そのまま）</text>
+<text class="t-bad" x="356" y="80">「書くな」だけ</text>
+<text class="t-xs" x="356" y="97">（禁止のみ）</text>
+<text class="t-sm" x="476" y="80">〔素材に無い〕</text>
+<text class="t-xs" x="476" y="97">（空けさせる）</text>
+<text class="t-accent" x="596" y="80">〔私が決める〕</text>
+<text class="t-xs" x="596" y="97">（印を残す）</text>
+<text class="t" x="18" y="128">1週間に対応できる本数</text>
+<text class="t-bad" x="216" y="128">「週1本」</text>
+<text class="t-bad" x="356" y="128">「週1本」</text>
+<text class="t-sm" x="476" y="128">空欄</text>
+<text class="t-good" x="596" y="128">私が決める欄</text>
+<text class="t" x="18" y="158">単価8,000円を受けるか</text>
+<text class="t-sm" x="216" y="158">出てこない</text>
+<text class="t-sm" x="356" y="158">出てこない</text>
+<text class="t-sm" x="476" y="158">空欄</text>
+<text class="t-good" x="596" y="158">私が決める欄</text>
+<text class="t" x="18" y="188">サンプルを出すか</text>
+<text class="t-bad" x="216" y="188">無償で書くと申し出</text>
+<text class="t-sm" x="356" y="188">出てこない</text>
+<text class="t-sm" x="476" y="188">相談と書いた</text>
+<text class="t-good" x="596" y="188">私が決める欄</text>
+<text class="t" x="18" y="218">画像差し替えの2回目以降</text>
+<text class="t-bad" x="216" y="218">「自分で進めます」</text>
+<text class="t-sm" x="356" y="218">出てこない</text>
+<text class="t-sm" x="476" y="218">出てこない</text>
+<text class="t-sm" x="596" y="218">出てこない</text>
+<text class="t" x="18" y="248">週2本への増加</text>
+<text class="t-bad" x="216" y="248">相談を約束</text>
+<text class="t-bad" x="356" y="248">相談を約束</text>
+<text class="t-sm" x="476" y="248">出てこない</text>
+<text class="t-sm" x="596" y="248">出てこない</text>
+<text class="t-xs" x="18" y="284">※ 募集要項は「1週間に対応できる本数」を書くよう求めている。禁止だけを渡すと、この必須の欄が空欄になった。</text>
+<text class="t-xs" x="18" y="304">※ どの頼み方でも、素材にある事実（7本・記名なし・SEO未学習）は書き換わっていない。動くのは決め事のほうだけ。</text>
+</svg>

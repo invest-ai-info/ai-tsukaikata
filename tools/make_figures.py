@@ -4089,6 +4089,182 @@ def offer_verdict_vs_claims_chart() -> None:
     )
 
 
+def proposal_sentence_check_chart() -> None:
+    """素朴に書かせた提案文25文を、3つに割り当てさせた結果。
+
+    実測（2026-08-13・架空の募集要項と、事実だけを並べた架空の素材15行）。
+    判定はすべて Python の文字列照合。
+    証拠＝`docs/evidence/proposal-without-inflating.md`。
+    """
+    segs = [
+        ("A", 12, "box-good", "（A）素材の行から導ける　12文"),
+        ("B", 4, "box-bad", "（B）素材より強い　4文"),
+        ("C", 9, "box-quiet", "（C）素材に無い　9文"),
+    ]
+    strong = [
+        ("デスクは自分で買い替えたことがあり、昇降デスクを1年使っている",
+         "デスクまわりは自分で試行錯誤してきました"),
+        ("画像の差し替えはやったことがない",
+         "初回のみ手順をご共有いただけますと確実です"),
+        ("SEOの勉強はしたことがない",
+         "SEOを体系的に学んだ経験はありません"),
+        ("キーワードを指定されればそれに沿って書ける",
+         "キーワードや構成をご指定いただければ"),
+    ]
+    left, right = 18, WIDTH - 18
+    span = right - left
+    total = sum(n for _, n, _, _ in segs)
+    bar_y, bar_h = 70, 26
+    list_top = 152
+    row_h = 46
+    height = list_top + len(strong) * row_h + 62
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "素朴に書かせた提案文25文を、1文ずつ3つに割り当てさせた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の募集要項と、事実だけを並べた架空の素材15行。25文が25項目で返り、引用25件は全部下書きに実在した。</text>\n",
+    ]
+    x = left
+    label_ys = []
+    for _, count, cls, label in segs:
+        w = round(span * count / total)
+        parts.append(
+            f'<rect class="{cls}" x="{x}" y="{bar_y}" width="{w}" height="{bar_h}" rx="3"/>\n'
+        )
+        label_ys.append((x, label))
+        x += w
+    for index, (x0, label) in enumerate(label_ys):
+        cls = ("t-good", "t-bad", "t-sm")[index]
+        parts.append(
+            f'<text class="{cls}" x="{x0 + 4}" y="{bar_y + bar_h + 20}">{_esc(label)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-strong" x="18" y="{list_top - 8}">'
+        "（B）＝素材にある事実を、素材より強く書いた4文</text>\n"
+    )
+    for index, (src, drafted) in enumerate(strong):
+        y = list_top + index * row_h + 14
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y}">{_esc("素材：" + src)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="18" y="{y + 19}">{_esc("下書き：" + drafted)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 40}">'
+        "※ 事実の捏造は0件だった。素材の数字（7本・4本・3本・8時間）は"
+        "1つも書き換わっていない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 20}">'
+        "※ （C）9文のうち4文は挨拶と結び。中身のある（C）は5文で、"
+        "いずれも素材の外にある申し出と見込みだった。</text>\n"
+    )
+    alt = (
+        "架空の募集要項と、事実だけを並べた架空の素材15行を渡して素朴に書かせた"
+        "提案文25文を、1文ずつ3つに割り当てさせた結果の図。"
+        "素材の行から導ける文が12文、素材にある事実だが素材より強く書いてある文が4文、"
+        "素材のどの行からも導けない文が9文だった。25文が25項目として返り、"
+        "引用25件はすべて下書きに実在した。素材より強く書いてある4文は次のとおり。"
+        "素材にはデスクは自分で買い替えたことがあり昇降デスクを1年使っているとあるのに、"
+        "下書きはデスクまわりは自分で試行錯誤してきましたと書いた。"
+        "素材には画像の差し替えはやったことがないとあるのに、"
+        "下書きは初回のみ手順をご共有いただけますと確実ですと書いた。"
+        "素材にはSEOの勉強はしたことがないとあるのに、"
+        "下書きはSEOを体系的に学んだ経験はありませんと書いた。"
+        "素材にはキーワードを指定されればそれに沿って書けるとあるのに、"
+        "下書きはキーワードや構成をご指定いただければと書いた。"
+        "なお事実の捏造は0件で、素材の数字である7本、4本、3本、8時間は1つも書き換わっていない。"
+        "素材のどの行からも導けない9文のうち4文は挨拶と結びで、"
+        "中身のある文は5文、いずれも素材の外にある申し出と見込みだった。"
+    )
+    (OUT / "proposal-sentence-check.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def proposal_who_decides_chart() -> None:
+    """素材に書いていない決め事を、頼み方4通りで誰が決めたか。
+
+    実測（2026-08-13）。証拠＝`docs/evidence/proposal-without-inflating.md`。
+    """
+    rows = [
+        ("1週間に対応できる本数", "「週1本」", False, "「週1本」", False,
+         "空欄", None, "私が決める欄", True),
+        ("単価8,000円を受けるか", "出てこない", None, "出てこない", None,
+         "空欄", None, "私が決める欄", True),
+        ("サンプルを出すか", "無償で書くと申し出", False, "出てこない", None,
+         "相談と書いた", None, "私が決める欄", True),
+        ("画像差し替えの2回目以降", "「自分で進めます」", False, "出てこない", None,
+         "出てこない", None, "出てこない", None),
+        ("週2本への増加", "相談を約束", False, "相談を約束", False,
+         "出てこない", None, "出てこない", None),
+    ]
+    label_x, cols = 18, (216, 356, 476, 596)
+    row_h = 30
+    top = 112
+    height = top + len(rows) * row_h + 66
+    assert cols[3] + 84 <= WIDTH - 18, cols[3] + 84
+
+    heads = (
+        (cols[0], "t-bad", "素朴に頼む", "（そのまま）"),
+        (cols[1], "t-bad", "「書くな」だけ", "（禁止のみ）"),
+        (cols[2], "t-sm", "〔素材に無い〕", "（空けさせる）"),
+        (cols[3], "t-accent", "〔私が決める〕", "（印を残す）"),
+    )
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "素材に書いていない決め事を、誰が決めたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ募集要項・同じ素材で、頼み方だけを4通りに変えた。"
+        "素材にはこの5件がどれも書かれていない。</text>\n",
+    ]
+    for x, cls, head, sub in heads:
+        parts.append(f'<text class="{cls}" x="{x}" y="{top - 32}">{_esc(head)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{x}" y="{top - 15}">{_esc(sub)}</text>\n')
+    for index, row in enumerate(rows):
+        y = top + index * row_h + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{y}">{_esc(row[0])}</text>\n')
+        for pos, (x, _, _, _) in enumerate(heads):
+            val, ok = row[1 + pos * 2], row[2 + pos * 2]
+            cls = "t-sm" if ok is None else ("t-good" if ok else "t-bad")
+            parts.append(f'<text class="{cls}" x="{x}" y="{y}">{_esc(val)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 44}">'
+        "※ 募集要項は「1週間に対応できる本数」を書くよう求めている。"
+        "禁止だけを渡すと、この必須の欄が空欄になった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ どの頼み方でも、素材にある事実（7本・記名なし・SEO未学習）は"
+        "書き換わっていない。動くのは決め事のほうだけ。</text>\n"
+    )
+    alt = (
+        "同じ架空の募集要項と素材で頼み方だけを4通りに変えて、"
+        "素材に書いていない決め事5件を誰が決めたかを比べた表。"
+        "1つ目は素朴に頼む、2つ目は素材に書いていないことは書かないでくださいという禁止だけ、"
+        "3つ目は書けない箇所を素材に無いと書いて空けさせる、"
+        "4つ目は私が決めると印を残させる、の4通り。"
+        "1週間に対応できる本数は、素朴に頼むとAIが週1本と決め、禁止だけでも週1本と決めた。"
+        "空けさせると空欄になり、私が決めると印を残させたときだけ私が決める欄として残った。"
+        "単価8,000円を受けるかは、素朴でも禁止だけでも出てこず、"
+        "空けさせると空欄、印を残させたときだけ私が決める欄になった。"
+        "サンプルを出すかは、素朴に頼むと無償で書くと申し出て、禁止だけでは出てこず、"
+        "空けさせると相談と書き、印を残させたときは私が決める欄になった。"
+        "画像差し替えの2回目以降は、素朴に頼んだときだけ自分で進めますと約束し、"
+        "ほかの3通りでは出てこなかった。"
+        "週2本への増加は、素朴でも禁止だけでも相談を約束し、ほかの2通りでは出てこなかった。"
+        "募集要項は1週間に対応できる本数を書くよう求めているので、"
+        "禁止だけを渡すとこの必須の欄が空欄になる。"
+        "どの頼み方でも、素材にある事実である7本、記名なし、SEO未学習は書き換わっていない。"
+        "動くのは決め事のほうだけである。"
+    )
+    (OUT / "proposal-who-decides.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -4152,4 +4328,6 @@ if __name__ == "__main__":
     blog_research_volume_drift_chart()
     writing_check_three_asks_chart()
     writing_fix_loses_your_text_chart()
-    print(f"62枚を {OUT} に出力しました")
+    proposal_sentence_check_chart()
+    proposal_who_decides_chart()
+    print(f"64枚を {OUT} に出力しました")
