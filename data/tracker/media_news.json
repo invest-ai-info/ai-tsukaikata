@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-13T22:05:19.093205+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-13T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 チャットを卒業してAIエージェントを使う！「サブエージェント」で完成度の高い成果物を",
+      "uid": "139a9a688c512297",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2131865.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-13T22:05:19.093205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-13T21:25:13+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、コーディングやエージェント用途に特化したAIモデル「Gemini 3.7 Flash」を発表した。前モデルからわずか3週間での投入だ。従来比半額の導入価格で提供し、個人向けエージェント機能「Gemini Spark」など各種プロダクトへ適用される。",
+      "title": "Google、「Gemini 3.7 Flash」公開　年内は半額の導入価格",
+      "uid": "0b2a09675d6057f8",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/14/2000000534/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-13T15:17:40.171847+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
