@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-13T19:28:08.765068+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-13T18:35:49+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "0.122.0 (2026-08-13) Full Changelog: v0.121.0...v0.122.0 Features api: add output_behavior to dream creation (create a new memory store or update the input store in place) ( 852c4bb ) Bug Fixes bedro…",
+      "title": "v0.122.0",
+      "uid": "258c7d230ca05f0b",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.122.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-13T17:15:19.173918+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -25,6 +37,20 @@
       "uid": "4bd32acd0d20328e",
       "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-08-13T19:28:08.765068+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-13T11:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities.",
+      "summary_ja": "GPT-5.6の活用ガイドが公開されました\nより早く低コストでAIシステムを作る方法を解説\n賢いモデル選びや新API機能について学べます",
+      "summary_source": "gemini",
+      "title": "The builder’s guide to GPT‑5.6",
+      "uid": "a867dc6cc38cc8c2",
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-08-13T17:15:19.173918+00:00",
