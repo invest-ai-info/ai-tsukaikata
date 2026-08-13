@@ -52,6 +52,18 @@ def figure_errors(static_dir: Path) -> list[str]:
 NEWS_PATH = ROOT / "data" / "tracker" / "news.json"
 MEDIA_NEWS_PATH = ROOT / "data" / "tracker" / "media_news.json"
 SOURCES_PATH = ROOT / "tracker" / "sources.yml"
+EVIDENCE_DIR = ROOT / "docs" / "evidence"
+
+
+def load_evidence(directory: Path) -> dict[str, str]:
+    """docs/evidence/<slug>.md を {slug: 本文} で読む。TEMPLATE は様式なので除く。"""
+    if not Path(directory).exists():
+        return {}
+    return {
+        path.stem: path.read_text(encoding="utf-8")
+        for path in sorted(Path(directory).glob("*.md"))
+        if path.stem != "TEMPLATE"
+    }
 
 
 def collect(
@@ -60,11 +72,13 @@ def collect(
     news_path: Path = NEWS_PATH,
     sources_path: Path = SOURCES_PATH,
     media_news_path: Path | None = None,
+    evidence_dir: Path = EVIDENCE_DIR,
 ) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
     available = static_paths(static_dir)
-    errors = errors + validate(articles, available)
+    evidence = load_evidence(evidence_dir)
+    errors = errors + validate(articles, available, evidence=evidence)
     errors = errors + figure_errors(static_dir)
 
     news_data = None

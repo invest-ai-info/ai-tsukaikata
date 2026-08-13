@@ -391,3 +391,57 @@ def test_past_checked_date_is_fine():
 def test_missing_checked_is_not_an_error():
     """checked が無いだけでは止めない。全記事に必須にすると既存記事が全部落ちる。"""
     assert validate([_article()], today=date(2026, 8, 9)) == []
+
+
+# --- 証拠の機械照合（v1.5・2026-08-14 に validate へ昇格）---
+#
+# キュー10条（記事に載せる指示文は、証拠に同一文字列で全文を残す）の強制。
+# 較正では 94/129（73%）だったので週次で可視化 → 33件を追試して 129/129 に
+# してから、ここへ移した。⚠️ 100%でないうちにビルドで止めると、毎晩の
+# 記事公開が巻き込まれる（`/start/` の鮮度で学んだ罠）。
+
+def _recipe_with_prompts(*prompts, published=date(2026, 8, 13), slug="r"):
+    body = "\n\n".join(f'<div class="prompt">{p}</div>' for p in prompts)
+    return _article(body=body, slug=slug, category="recipes", published=published)
+
+
+def _evidence_errors(errors):
+    """⚠️ 「指示文」で絞ると密度下限のエラー（指示文6個以上）まで拾う。
+    証拠照合のエラーは必ず docs/evidence を指すので、そこで絞る。"""
+    return [e for e in errors if "docs/evidence" in e]
+
+
+def test_recipe_without_evidence_file_is_rejected():
+    article = _recipe_with_prompts("これを試す")
+    errors = validate([article], evidence={})
+    assert any("証拠ファイル" in e for e in errors)
+
+
+def test_recipe_with_a_prompt_missing_from_evidence_is_rejected():
+    article = _recipe_with_prompts("試した文", "記事にしか無い文")
+    errors = validate([article], evidence={"r": "…試した文…"})
+    assert any("1/2件" in e for e in errors)
+
+
+def test_recipe_with_all_prompts_in_evidence_passes():
+    article = _recipe_with_prompts("試した文", "もう一つ")
+    errors = validate([article], evidence={"r": "試した文 と もう一つ"})
+    assert _evidence_errors(errors) == []
+
+
+def test_evidence_check_is_skipped_when_not_provided():
+    """evidence を渡さない呼び出し（部分ビルド・既存テスト）では検査しない。"""
+    article = _recipe_with_prompts("どこにも無い文")
+    assert _evidence_errors(validate([article])) == []
+
+
+def test_articles_before_the_era_are_exempt_by_date_not_by_name():
+    """⚠️ slug 名指しの除外を作らない（FIGURE_EXEMPT_SLUGS の教訓）。"""
+    old = _recipe_with_prompts("記録の無い文", published=date(2026, 8, 11))
+    assert _evidence_errors(validate([old], evidence={})) == []
+
+
+def test_non_recipe_pages_do_not_need_evidence():
+    page = _article(body='<div class="prompt">x</div>', category="pages",
+                    published=date(2026, 8, 13))
+    assert _evidence_errors(validate([page], evidence={})) == []

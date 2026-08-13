@@ -304,16 +304,63 @@ def _heading_errors(where: str, body_html: str) -> list[str]:
     return errors
 
 
+# --- 証拠の機械照合（進化ループ v1.5・2026-08-14 に昇格）---
+#
+# 記事に載せた指示文は、証拠ファイルに**同じ文字列で**入っていなければならない。
+# キュー10条（記事と同一文字列で全文を残す）をコードで強制する。
+#
+# 📌 昇格の経緯: 8/14 朝の較正では一致率 94/129（73%）だったので、まず
+# `tools/check_freshness.py` に置いて週次で可視化した。畳んで記録されていた
+# 33件を同日中に追試して **129/129（100%）** にしたので、ここへ移した。
+# ⚠️ ビルドで止めてよいのは「本人がその場で直せるもの」だけ。この検査は
+# 書いた本人が証拠を書き足せば直るので、その条件を満たす。
+EVIDENCE_ERA = date(2026, 8, 12)  # 進化ループ v1 の証拠様式が入った日
+
+
+def _evidence_errors(article: Article, evidence: dict[str, str] | None) -> list[str]:
+    """指示文が証拠に見つからなければエラー。era より前の記事は対象外。
+
+    ⚠️ 対象を slug 名指しで外さない（`FIGURE_EXEMPT_SLUGS` の教訓＝
+    名指しの穴は「そこに足せばいい」と学習される）。線は日付で引く。
+    """
+    if evidence is None or article.category != "recipes":
+        return []
+    if article.published < EVIDENCE_ERA:
+        return []
+    where = str(article.source_path)
+    text = evidence.get(article.slug)
+    if text is None:
+        return [
+            f"{where}: 証拠ファイル docs/evidence/{article.slug}.md がありません"
+            f"（キュー10条。試した記録が無い記事は公開しません）"
+        ]
+    prompts = [
+        html.unescape(body).strip()
+        for body in PROMPT_RE.findall(article.body_html)
+    ]
+    missing = [p for p in prompts if p not in text]
+    if not missing:
+        return []
+    sample = missing[0].splitlines()[0][:40]
+    return [
+        f"{where}: 指示文{len(missing)}/{len(prompts)}件が"
+        f"docs/evidence/{article.slug}.md に同じ文字列で見つかりません"
+        f"（例: 「{sample}…」）。記事と証拠は同一文字列にしてください"
+    ]
+
+
 def validate(
     articles: list[Article],
     static_paths: set[str] | None = None,
     today: date | None = None,
+    evidence: dict[str, str] | None = None,
 ) -> list[str]:
     """全記事を検査してエラー文字列のリストを返す。空なら公開してよい。
 
     static_paths には `/static/...` 形式の実在する静的ファイルの一覧を渡す。
     ディスクを見に行くのは build.py の仕事なので、ここは渡された集合と
     照合するだけにしてある。渡されなければ静的ファイルの実在は検査しない。
+    evidence も同じ流儀＝{slug: 証拠の本文}。渡されなければ検査しない。
     """
     today = today or date.today()
     errors: list[str] = []
@@ -343,6 +390,7 @@ def validate(
             taken[article.url] = where
 
         errors += _link_errors(where, article.body_html, valid_paths, static_paths)
+        errors += _evidence_errors(article, evidence)
         errors += _image_errors(where, article.body_html, static_paths)
         errors += _prompt_errors(where, article.body_html)
         errors += _marker_errors(where, article.body_html)
