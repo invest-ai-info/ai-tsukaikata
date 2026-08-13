@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="401" viewBox="0 0 720 401" role="img" aria-label="同じ中身の架空の勧誘文2種にAIで、これは詐欺かと聞いた結果を並べた図。検証できない主張5件、受講生の92%が初収益で出所は当社調べだけ、メディア掲載実績で媒体の名前が無い、返金保証で条件が書かれていない、通常価格298,000円から98,000円への割引で根拠が無い、運営会社と所在地と特定商取引法に基づく表記が無い、は両方の版に共通している。残り3名や本日23時59分までのような急がせる言葉が並ぶ粗い版への判定は黒に極めて近い、だったのに対し、同じ中身を丁寧な敬語に整えた版への判定はグレー、要警戒、へ一段やわらいだ。つまり判定が見ているのは中身ではなく文面で、どちらの判定も92%が本当かどうかは確かめていない。確かめられないもの5件は文面を整えても1件も減らない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="401"/>
+<text class="t-strong" x="18" y="26">同じ中身の勧誘文2種に「これは詐欺?」と聞いた結果（実測の一例）</text>
+<text class="t-sm" x="18" y="45">架空のAI副業講座。検証できない主張5件は両方に共通で、文面の丁寧さだけが違う。</text>
+<rect class="box-bad" x="18" y="64" width="330" height="118" rx="8"/>
+<rect class="box-quiet" x="372" y="64" width="330" height="118" rx="8"/>
+<text class="t-strong" x="34" y="90">粗い版（SNSのDM風）</text>
+<text class="t-sm" x="34" y="110">「残り3名」「本日23:59まで」</text>
+<text class="t-sm" x="34" y="126">「迷っている時間はありません」</text>
+<text class="t-bad" x="34" y="156">判定＝「黒に極めて近い」</text>
+<text class="t-strong" x="388" y="90">整えた版（案内ページ風）</text>
+<text class="t-sm" x="388" y="110">丁寧な敬語。急がせる言葉は</text>
+<text class="t-sm" x="388" y="126">「お早めにご検討ください」だけ</text>
+<text class="t-bad" x="388" y="156">判定＝「グレー（要警戒）」</text>
+<text class="t-accent" x="18" y="214">↓ どちらの版にも、そのまま残っている「確かめられないもの」5件</text>
+<rect class="box" x="18" y="226" width="684" height="129" rx="8"/>
+<text class="t" x="34" y="250">・受講生の92%が初収益（出所は「当社調べ」だけ）</text>
+<text class="t" x="34" y="269">・メディア掲載実績（媒体の名前が無い）</text>
+<text class="t" x="34" y="288">・返金保証（条件が書かれていない）</text>
+<text class="t" x="34" y="307">・通常価格298,000円→98,000円（根拠が無い）</text>
+<text class="t" x="34" y="326">・運営会社・所在地・特商法表記が無い</text>
+<text class="t-xs" x="18" y="375">※ 文面を整えただけで判定は一段やわらいだ。判定が見ているのは中身ではなく文面。</text>
+<text class="t-xs" x="18" y="391">※ どちらの判定も「92%が本当か」は確かめていない（AIには確かめられない）。返りは環境によって変わる。</text>
+</svg>

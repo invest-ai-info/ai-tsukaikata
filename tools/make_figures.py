@@ -3699,6 +3699,77 @@ def transcript_keep_vs_rewrite_chart() -> None:
     )
 
 
+def offer_verdict_vs_claims_chart() -> None:
+    """同じ中身の勧誘文2種に「これは詐欺?」と聞いた結果の比較。
+
+    実測（2026-08-13・架空のAI副業講座の勧誘文）。検証できない主張5件は両方に共通で、
+    文面の丁寧さだけが違う。判定の語は動いたが、確かめられないものは1件も減っていない。
+    証拠＝`docs/evidence/too-good-offer-checklist.md`（実測環境の注記もそちら）。
+    """
+    left_x, right_x = 18, 372
+    box_w = 330
+    top = 64
+    box_h = 118
+    claims = [
+        "受講生の92%が初収益（出所は「当社調べ」だけ）",
+        "メディア掲載実績（媒体の名前が無い）",
+        "返金保証（条件が書かれていない）",
+        "通常価格298,000円→98,000円（根拠が無い）",
+        "運営会社・所在地・特商法表記が無い",
+    ]
+    cl_top = top + box_h + 44
+    cl_h = len(claims) * 19 + 34
+    height = cl_top + cl_h + 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ中身の勧誘文2種に「これは詐欺?」と聞いた結果（実測の一例）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のAI副業講座。検証できない主張5件は両方に共通で、文面の丁寧さだけが違う。</text>\n",
+        f'<rect class="box-bad" x="{left_x}" y="{top}" width="{box_w}" height="{box_h}" rx="8"/>\n',
+        f'<rect class="box-quiet" x="{right_x}" y="{top}" width="{box_w}" height="{box_h}" rx="8"/>\n',
+        f'<text class="t-strong" x="{left_x + 16}" y="{top + 26}">粗い版（SNSのDM風）</text>\n',
+        f'<text class="t-sm" x="{left_x + 16}" y="{top + 46}">「残り3名」「本日23:59まで」</text>\n',
+        f'<text class="t-sm" x="{left_x + 16}" y="{top + 62}">「迷っている時間はありません」</text>\n',
+        f'<text class="t-bad" x="{left_x + 16}" y="{top + 92}">判定＝「黒に極めて近い」</text>\n',
+        f'<text class="t-strong" x="{right_x + 16}" y="{top + 26}">整えた版（案内ページ風）</text>\n',
+        f'<text class="t-sm" x="{right_x + 16}" y="{top + 46}">丁寧な敬語。急がせる言葉は</text>\n',
+        f'<text class="t-sm" x="{right_x + 16}" y="{top + 62}">「お早めにご検討ください」だけ</text>\n',
+        f'<text class="t-bad" x="{right_x + 16}" y="{top + 92}">判定＝「グレー（要警戒）」</text>\n',
+        f'<text class="t-accent" x="18" y="{cl_top - 12}">'
+        "↓ どちらの版にも、そのまま残っている「確かめられないもの」5件</text>\n",
+        f'<rect class="box" x="18" y="{cl_top}" width="{684}" height="{cl_h}" rx="8"/>\n',
+    ]
+    for i, c in enumerate(claims):
+        parts.append(
+            f'<text class="t" x="34" y="{cl_top + 24 + i * 19}">・{_esc(c)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ 文面を整えただけで判定は一段やわらいだ。判定が見ているのは中身ではなく文面。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ どちらの判定も「92%が本当か」は確かめていない（AIには確かめられない）。"
+        "返りは環境によって変わる。</text>\n"
+    )
+    alt = (
+        "同じ中身の架空の勧誘文2種にAIで、これは詐欺かと聞いた結果を並べた図。"
+        "検証できない主張5件、受講生の92%が初収益で出所は当社調べだけ、"
+        "メディア掲載実績で媒体の名前が無い、返金保証で条件が書かれていない、"
+        "通常価格298,000円から98,000円への割引で根拠が無い、"
+        "運営会社と所在地と特定商取引法に基づく表記が無い、は両方の版に共通している。"
+        "残り3名や本日23時59分までのような急がせる言葉が並ぶ粗い版への判定は"
+        "黒に極めて近い、だったのに対し、同じ中身を丁寧な敬語に整えた版への判定は"
+        "グレー、要警戒、へ一段やわらいだ。つまり判定が見ているのは中身ではなく文面で、"
+        "どちらの判定も92%が本当かどうかは確かめていない。"
+        "確かめられないもの5件は文面を整えても1件も減らない。"
+    )
+    (OUT / "offer-verdict-vs-claims.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -3757,4 +3828,5 @@ if __name__ == "__main__":
     runbook_find_holes_chart()
     runbook_silent_completion_chart()
     transcript_keep_vs_rewrite_chart()
-    print(f"57枚を {OUT} に出力しました")
+    offer_verdict_vs_claims_chart()
+    print(f"58枚を {OUT} に出力しました")
