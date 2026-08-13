@@ -69,14 +69,8 @@ def render_site(
     has_start = any(a.url == "/start/" for a in articles)
     env.globals["start_url"] = "/start/" if has_start else None
 
-    # 記事が1本もないカテゴリはナビにも一覧にも出さない（空ページを作らない）
-    nav = [{"url": "/start/", "label": "始め方"}] if has_start else []
-    nav += [
-        {"url": f"/{name}/", "label": config.CATEGORIES[name]["label"]} for name in active
-    ]
-    if news:
-        nav.append({"url": "/news/", "label": "AIアップデート"})
-    env.globals["nav"] = nav
+    # ヘッダーのナビは 2026-08-13 に廃止（オーナー指示）。トップのカテゴリー
+    # ボタン（TOP_NAV）と役割が重複したため。ヘッダーはサイト名だけ。
 
     # 場面（scene）。記事が1本も無い場面は出さない＝中身が入った時点で現れる
     active_scenes = [

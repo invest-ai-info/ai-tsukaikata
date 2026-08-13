@@ -164,11 +164,14 @@ def test_without_news_index_has_no_news_section():
     assert "news/index.html" not in pages
 
 
-def test_news_nav_link_present_only_with_news():
-    with_news = render_site([_article()], news=_news_top())
-    without = render_site([_article()])
-    assert '<a href="/news/">AIアップデート</a>' in with_news["index.html"]
-    assert '<a href="/news/">AIアップデート</a>' not in without["index.html"]
+def test_header_has_no_nav_links():
+    """ヘッダーのナビは 2026-08-13 に廃止（カテゴリーボタンと重複するため）。
+    ヘッダーに残るのはサイト名のリンクだけ。"""
+    pages = render_site([_article()], news=_news_top())
+    html = pages["recipes/sample/index.html"]
+    header = html.split("</header>")[0]
+    assert 'class="site-name"' in header
+    assert "site-nav" not in header
 
 
 def test_card_shows_eyecatch_only_when_available():
