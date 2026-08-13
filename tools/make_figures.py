@@ -4265,6 +4265,157 @@ def proposal_who_decides_chart() -> None:
     )
 
 
+def sell_price_not_asked_chart() -> None:
+    """棚卸しを頼んだときに、聞いていない金額が付いてくるか。
+
+    実測（2026-08-13・架空の会社員の箇条書き21行）。
+    金額の検出は Python の正規表現（数字＋円／万円／万）。
+    証拠＝`docs/evidence/sell-what-you-already-do.md`。
+    """
+    rows = [
+        ("「私は何で稼げますか。一言で」", "言っていない", False, "3件", False),
+        ("「売れそうなものを挙げて」", "言っていない", False, "4件", False),
+        ("「募集されている仕事の名前に」", "言った", True, "0件", True),
+        ("「相場を自分で確かめる手順を」", "言った", True, "0件", True),
+    ]
+    appeared = [
+        "単価が時間2,000〜3,000円のあたりから始まるとして、最初の数ヶ月は月2〜5万円",
+        "雛形づくりが1件1〜3万円、リストの整理が1,000件で1〜3万円あたりから",
+        "引き継ぎ書の代行は（中略）1本5〜15万円くらいのレンジ",
+    ]
+    label_x, cols = 18, (330, 500)
+    row_h = 28
+    top = 104
+    list_top = top + len(rows) * row_h + 40
+    height = list_top + len(appeared) * 20 + 52
+    assert cols[1] + 60 <= WIDTH - 18, cols[1] + 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "棚卸しを頼むと、聞いていない金額が付いてくる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の会社員の箇条書き21行。同じ材料で、頼み方だけを変えた。"
+        "金額の数え上げは正規表現（数字＋円／万円）。</text>\n",
+        f'<text class="t-sm" x="{cols[0]}" y="{top - 18}">金額を書くなと言ったか</text>\n',
+        f'<text class="t-sm" x="{cols[1]}" y="{top - 18}">返りに出た金額</text>\n',
+    ]
+    for index, (label, said, said_ok, count, count_ok) in enumerate(rows):
+        y = top + index * row_h + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{y}">{_esc(label)}</text>\n')
+        for x, val, ok in ((cols[0], said, said_ok), (cols[1], count, count_ok)):
+            cls = "t-good" if ok else "t-bad"
+            parts.append(f'<text class="{cls}" x="{x}" y="{y}">{_esc(val)}</text>\n')
+    parts.append(
+        f'<text class="t-strong" x="18" y="{list_top - 10}">'
+        "頼んでいないのに出てきた金額（そのまま引用）</text>\n"
+    )
+    for index, line in enumerate(appeared):
+        parts.append(
+            f'<text class="t-sm" x="18" y="{list_top + index * 20 + 8}">{_esc("・" + line)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 金額を禁じた側は、断ったうえで理由まで書いた"
+        "＝「推測の数字は、当てにできる数字と見た目が同じ」。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ どの数字にも出どころが書かれていない。募集ページを開いて確かめた数字ではない。</text>\n"
+    )
+    alt = (
+        "架空の会社員の箇条書き21行を渡して、頼み方だけを変えたときに、"
+        "返りに金額がいくつ出るかを比べた表。"
+        "私は何で稼げますかと一言で聞いた場合、金額を書くなとは言っておらず、返りに金額が3件出た。"
+        "売れそうなものを挙げてと頼んだ場合も、言っておらず、金額が4件出た。"
+        "募集されている仕事の名前に対応づけてくださいと頼み、"
+        "実際に募集ページを見て確かめた数字でない限り金額を書かないでくださいと足した場合は、0件だった。"
+        "相場を自分で確かめる手順を書いてくださいと頼み、同じ禁止を足した場合も0件だった。"
+        "頼んでいないのに出てきた金額は次のとおり。"
+        "単価が時間2,000から3,000円のあたりから始まるとして、最初の数ヶ月は月2から5万円。"
+        "雛形づくりが1件1から3万円、リストの整理が1,000件で1から3万円あたりから。"
+        "引き継ぎ書の代行は1本5から15万円くらいのレンジ。"
+        "金額を禁じた側は、断ったうえで理由まで書いた。"
+        "推測の数字は、当てにできる数字と見た目が同じだから混ぜないのが安全だ、という理由である。"
+        "どの数字にも出どころが書かれておらず、募集ページを開いて確かめた数字ではない。"
+    )
+    (OUT / "sell-price-not-asked.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sell_what_carries_over_chart() -> None:
+    """会社の中で積んだ経験のうち、社外に持ち出せるものはどれだけか。
+
+    実測（2026-08-13）。証拠＝`docs/evidence/sell-what-you-already-do.md`。
+    """
+    rows = [
+        ("○ 作り直せる", 4, "box-good", "t-good", "会社のものを使わずに、自分で作れる"),
+        ("△ 一部だけ", 6, "box-quiet", "t-sm", "やり方は再現できるが、現物は会社のもの"),
+        ("× 作り直せない", 3, "box-bad", "t-bad", "中身が会社そのもの。手元では再現できない"),
+        ("判定以前", 1, "box-quiet", "t-sm", "資格の領域（確定申告の相談）"),
+    ]
+    label_x = 18
+    bar_x, bar_unit = 150, 26
+    desc_x = 340
+    row_h = 34
+    top = 104
+    height = top + len(rows) * row_h + 76
+    assert desc_x + 22 * 11.5 <= WIDTH - 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "12年ぶんの経験のうち、社外に持ち出せるのはどれか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「勤務先のデータ・書式・システムを一切使わずに作り直せるか」で、"
+        "候補14件を判定させた結果。</text>\n",
+        f'<text class="t-sm" x="{bar_x}" y="{top - 16}">件数</text>\n',
+        f'<text class="t-sm" x="{desc_x}" y="{top - 16}">判定の意味</text>\n',
+    ]
+    for index, (label, count, box_cls, text_cls, desc) in enumerate(rows):
+        y = top + index * row_h
+        parts.append(f'<text class="{text_cls}" x="{label_x}" y="{y + 17}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box_cls}" x="{bar_x}" y="{y + 4}" '
+            f'width="{count * bar_unit}" height="18" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_x + count * bar_unit + 8}" y="{y + 17}">{count}件</text>\n'
+        )
+        parts.append(f'<text class="t-sm" x="{desc_x}" y="{y + 17}">{_esc(desc)}</text>\n')
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 56}">'
+        "そのまま売れるものは0件。△は、作り直すと実績のほうが消える。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 36}">'
+        "※ 持ち出しの問題がない候補は1つだけだった＝会社の外で7年続けた、"
+        "無償のチーム会計（本人が一番あっさり書いた行）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 冒頭でAI自身が書いた数は「○が5つ」。本文を数えると4件だった"
+        "（判定は合っていて、まとめの数だけが合わない）。</text>\n"
+    )
+    alt = (
+        "架空の会社員の箇条書き21行から作った売り物の候補14件を、"
+        "勤務先のデータ・書式・システムを一切使わずに自分でゼロから作り直せるか、"
+        "という基準で判定させた結果の図。"
+        "作り直せるものが4件で、会社のものを使わずに自分で作れるという意味。"
+        "一部だけ作り直せるものが6件で、やり方は再現できるが現物は会社のものだという意味。"
+        "作り直せないものが3件で、中身が会社そのものなので手元では再現できないという意味。"
+        "判定以前のものが1件で、資格の領域である確定申告の相談だった。"
+        "そのまま売れるものは0件で、一部だけ作り直せるものは、"
+        "作り直すと実績のほうが消えるという構造になっている。"
+        "持ち出しの問題がない候補は1つだけで、"
+        "会社の外で7年続けた無償のチーム会計だった。本人が一番あっさり書いた行である。"
+        "なお冒頭でAI自身が書いた数は作り直せるものが5つだったが、"
+        "本文を数えると4件だった。判定そのものは合っていて、まとめの数だけが合わない。"
+    )
+    (OUT / "sell-what-carries-over.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -4330,4 +4481,6 @@ if __name__ == "__main__":
     writing_fix_loses_your_text_chart()
     proposal_sentence_check_chart()
     proposal_who_decides_chart()
-    print(f"64枚を {OUT} に出力しました")
+    sell_price_not_asked_chart()
+    sell_what_carries_over_chart()
+    print(f"66枚を {OUT} に出力しました")

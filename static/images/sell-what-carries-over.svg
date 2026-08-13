@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="316" viewBox="0 0 720 316" role="img" aria-label="架空の会社員の箇条書き21行から作った売り物の候補14件を、勤務先のデータ・書式・システムを一切使わずに自分でゼロから作り直せるか、という基準で判定させた結果の図。作り直せるものが4件で、会社のものを使わずに自分で作れるという意味。一部だけ作り直せるものが6件で、やり方は再現できるが現物は会社のものだという意味。作り直せないものが3件で、中身が会社そのものなので手元では再現できないという意味。判定以前のものが1件で、資格の領域である確定申告の相談だった。そのまま売れるものは0件で、一部だけ作り直せるものは、作り直すと実績のほうが消えるという構造になっている。持ち出しの問題がない候補は1つだけで、会社の外で7年続けた無償のチーム会計だった。本人が一番あっさり書いた行である。なお冒頭でAI自身が書いた数は作り直せるものが5つだったが、本文を数えると4件だった。判定そのものは合っていて、まとめの数だけが合わない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="316"/>
+<text class="t-strong" x="18" y="26">12年ぶんの経験のうち、社外に持ち出せるのはどれか</text>
+<text class="t-sm" x="18" y="45">「勤務先のデータ・書式・システムを一切使わずに作り直せるか」で、候補14件を判定させた結果。</text>
+<text class="t-sm" x="150" y="88">件数</text>
+<text class="t-sm" x="340" y="88">判定の意味</text>
+<text class="t-good" x="18" y="121">○ 作り直せる</text>
+<rect class="box-good" x="150" y="108" width="104" height="18" rx="3"/>
+<text class="t-sm" x="262" y="121">4件</text>
+<text class="t-sm" x="340" y="121">会社のものを使わずに、自分で作れる</text>
+<text class="t-sm" x="18" y="155">△ 一部だけ</text>
+<rect class="box-quiet" x="150" y="142" width="156" height="18" rx="3"/>
+<text class="t-sm" x="314" y="155">6件</text>
+<text class="t-sm" x="340" y="155">やり方は再現できるが、現物は会社のもの</text>
+<text class="t-bad" x="18" y="189">× 作り直せない</text>
+<rect class="box-bad" x="150" y="176" width="78" height="18" rx="3"/>
+<text class="t-sm" x="236" y="189">3件</text>
+<text class="t-sm" x="340" y="189">中身が会社そのもの。手元では再現できない</text>
+<text class="t-sm" x="18" y="223">判定以前</text>
+<rect class="box-quiet" x="150" y="210" width="26" height="18" rx="3"/>
+<text class="t-sm" x="184" y="223">1件</text>
+<text class="t-sm" x="340" y="223">資格の領域（確定申告の相談）</text>
+<text class="t-bad" x="18" y="260">そのまま売れるものは0件。△は、作り直すと実績のほうが消える。</text>
+<text class="t-xs" x="18" y="280">※ 持ち出しの問題がない候補は1つだけだった＝会社の外で7年続けた、無償のチーム会計（本人が一番あっさり書いた行）。</text>
+<text class="t-xs" x="18" y="300">※ 冒頭でAI自身が書いた数は「○が5つ」。本文を数えると4件だった（判定は合っていて、まとめの数だけが合わない）。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="架空の会社員の箇条書き21行を渡して、頼み方だけを変えたときに、返りに金額がいくつ出るかを比べた表。私は何で稼げますかと一言で聞いた場合、金額を書くなとは言っておらず、返りに金額が3件出た。売れそうなものを挙げてと頼んだ場合も、言っておらず、金額が4件出た。募集されている仕事の名前に対応づけてくださいと頼み、実際に募集ページを見て確かめた数字でない限り金額を書かないでくださいと足した場合は、0件だった。相場を自分で確かめる手順を書いてくださいと頼み、同じ禁止を足した場合も0件だった。頼んでいないのに出てきた金額は次のとおり。単価が時間2,000から3,000円のあたりから始まるとして、最初の数ヶ月は月2から5万円。雛形づくりが1件1から3万円、リストの整理が1,000件で1から3万円あたりから。引き継ぎ書の代行は1本5から15万円くらいのレンジ。金額を禁じた側は、断ったうえで理由まで書いた。推測の数字は、当てにできる数字と見た目が同じだから混ぜないのが安全だ、という理由である。どの数字にも出どころが書かれておらず、募集ページを開いて確かめた数字ではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">棚卸しを頼むと、聞いていない金額が付いてくる</text>
+<text class="t-sm" x="18" y="45">架空の会社員の箇条書き21行。同じ材料で、頼み方だけを変えた。金額の数え上げは正規表現（数字＋円／万円）。</text>
+<text class="t-sm" x="330" y="86">金額を書くなと言ったか</text>
+<text class="t-sm" x="500" y="86">返りに出た金額</text>
+<text class="t" x="18" y="120">「私は何で稼げますか。一言で」</text>
+<text class="t-bad" x="330" y="120">言っていない</text>
+<text class="t-bad" x="500" y="120">3件</text>
+<text class="t" x="18" y="148">「売れそうなものを挙げて」</text>
+<text class="t-bad" x="330" y="148">言っていない</text>
+<text class="t-bad" x="500" y="148">4件</text>
+<text class="t" x="18" y="176">「募集されている仕事の名前に」</text>
+<text class="t-good" x="330" y="176">言った</text>
+<text class="t-good" x="500" y="176">0件</text>
+<text class="t" x="18" y="204">「相場を自分で確かめる手順を」</text>
+<text class="t-good" x="330" y="204">言った</text>
+<text class="t-good" x="500" y="204">0件</text>
+<text class="t-strong" x="18" y="246">頼んでいないのに出てきた金額（そのまま引用）</text>
+<text class="t-sm" x="18" y="264">・単価が時間2,000〜3,000円のあたりから始まるとして、最初の数ヶ月は月2〜5万円</text>
+<text class="t-sm" x="18" y="284">・雛形づくりが1件1〜3万円、リストの整理が1,000件で1〜3万円あたりから</text>
+<text class="t-sm" x="18" y="304">・引き継ぎ書の代行は（中略）1本5〜15万円くらいのレンジ</text>
+<text class="t-xs" x="18" y="338">※ 金額を禁じた側は、断ったうえで理由まで書いた＝「推測の数字は、当てにできる数字と見た目が同じ」。</text>
+<text class="t-xs" x="18" y="356">※ どの数字にも出どころが書かれていない。募集ページを開いて確かめた数字ではない。</text>
+</svg>
