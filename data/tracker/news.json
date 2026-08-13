@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-13T17:15:19.173918+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-08-13T17:04:18+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Introducing Gemini 3.7 Flash",
+      "uid": "bee8914689fa7a6e",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-08-13T17:15:19.173918+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-13T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
+      "summary_ja": "OpenAIがAIの高速利用サービス「Ultrafast」を開始。\n「GPT-5.6 Sol」を最大14倍の速さで動かせるように。\nCerebras提供で、毎秒750トークン出力に対応。",
+      "summary_source": "gemini",
+      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+      "uid": "ae8216f90e901db2",
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-13T17:15:19.173918+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-13T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI.",
+      "summary_ja": "OpenAIが最高収益責任者（CRO）を任命した。\nDali Rajic氏が就任し、グローバル収益組織を率いる。\n企業がAIの価値を最大限に活用できるよう支援する。",
+      "summary_source": "gemini",
+      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
+      "uid": "a0625f59bdd66d41",
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-13T08:45:37.262356+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -11,6 +51,18 @@
       "uid": "15d33eba8d914dcd",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-13T17:15:19.173918+00:00",
+      "importance": "major",
+      "label": "DeepSeek 新モデル",
+      "published": "2026-08-13T03:05:06+00:00",
+      "source_id": "hf-deepseek",
+      "summary": "HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4-Pro-0813 が公開されました。",
+      "title": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "uid": "ec0f7682cbae739d",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "vendor": "DeepSeek"
     },
     {
       "first_seen": "2026-08-12T22:05:03.082330+00:00",

@@ -284,6 +284,9 @@
       **次にやるべきは AWS 系ドメインの追加。**それが済めば、AWS の Bedrock 料金ページ・対応リージョン表という
       一次情報が使えるようになり、`developers.openai.com` 側と突き合わせて比較記事が成立する。
 
+- [ ] https://deepmind.google/blog/introducing-gemini-3-7-flash/
+  - 2026-08-13 自動追記（major・Google DeepMind「Introducing Gemini 3.7 Flash」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-3-6-flash-3-5-flash-lite-and-3-5-flash-cyber/ → content/_draft-gemini-3-6-flash.md（2026-08-05）

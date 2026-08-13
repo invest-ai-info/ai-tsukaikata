@@ -1,24 +1,25 @@
 {
   "deepdive_queued": {
     "55beddbfd09c1a07": "2026-08-11",
-    "a6760b940fd45ef8": "2026-08-10"
+    "a6760b940fd45ef8": "2026-08-10",
+    "bee8914689fa7a6e": "2026-08-13"
   },
   "failures": {},
   "latest": {
     "anthropic-news": "2026-08-07T01:00:00+00:00",
     "anthropic-sdk": "2026-08-07T17:10:51+00:00",
     "claude-code": "2026-08-13T08:38:50+00:00",
-    "deepmind-blog": "2026-08-12T14:01:59+00:00",
+    "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-11T17:00:00+00:00",
-    "hf-deepseek": "2026-07-31T07:30:24+00:00",
+    "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-13T05:02:00+00:00",
     "media-gigazine": "2026-08-13T14:00:00+00:00",
     "media-impress-ai": "2026-08-13T03:00:00+00:00",
     "media-itmedia-aiplus": "2026-08-13T14:12:24+00:00",
     "media-publickey": "2026-08-11T15:33:09+00:00",
-    "openai-news": "2026-08-12T06:00:00+00:00",
+    "openai-news": "2026-08-13T10:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-12T16:21:42+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -47,6 +48,28 @@
       "uid": "15d33eba8d914dcd",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
       "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-13T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
+      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+      "uid": "ae8216f90e901db2",
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-13T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI.",
+      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
+      "uid": "a0625f59bdd66d41",
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -406,6 +429,7 @@
     "9e5320c065227a44": "2026-08-01T12:16:42.309603+00:00",
     "9f50c32afd5adfdf": "2026-08-04T06:42:56.075482+00:00",
     "9f9b8cbc0990a835": "2026-08-10T17:11:21.526374+00:00",
+    "a0625f59bdd66d41": "2026-08-13T17:15:19.173918+00:00",
     "a11bca1f80b3b72f": "2026-08-13T12:01:33.145239+00:00",
     "a1d68b672d017794": "2026-08-01T12:16:42.309603+00:00",
     "a202b7bded482669": "2026-08-13T12:01:33.145239+00:00",
@@ -438,6 +462,7 @@
     "ab951f875581ca6d": "2026-08-13T12:01:33.145239+00:00",
     "ac1d5f8d73018e0b": "2026-08-01T12:16:42.309603+00:00",
     "ae0e68a2ceedba6b": "2026-08-13T13:50:50.784308+00:00",
+    "ae8216f90e901db2": "2026-08-13T17:15:19.173918+00:00",
     "af02503bc1d7b526": "2026-08-13T12:01:33.145239+00:00",
     "afb0505d5cc0bccb": "2026-08-01T12:16:42.309603+00:00",
     "afc79ff055e1a5cf": "2026-08-13T12:01:33.145239+00:00",
@@ -472,6 +497,7 @@
     "bc12642ee7efed3b": "2026-08-01T12:16:42.309603+00:00",
     "bc3b06b5a6a3a884": "2026-08-13T12:01:33.145239+00:00",
     "be2e952830b33e98": "2026-08-01T12:16:42.309603+00:00",
+    "bee8914689fa7a6e": "2026-08-13T17:15:19.173918+00:00",
     "c02f674e6ff35098": "2026-08-12T17:16:22.730003+00:00",
     "c0ce1899cf6cf5de": "2026-08-01T12:16:42.309603+00:00",
     "c1056fd00c0b4379": "2026-08-01T12:16:42.309603+00:00",
@@ -559,6 +585,7 @@
     "ea04c16e32111632": "2026-08-01T12:16:42.309603+00:00",
     "ea275c28714596ce": "2026-08-01T12:16:42.309603+00:00",
     "eaf137d5870f0c60": "2026-08-13T12:01:33.145239+00:00",
+    "ec0f7682cbae739d": "2026-08-13T17:15:19.173918+00:00",
     "ec9009e847c8684e": "2026-08-03T04:02:09.411555+00:00",
     "ecf4d4206eb91af8": "2026-08-02T11:35:58.106550+00:00",
     "ed00016dbf571254": "2026-08-11T17:14:43.158523+00:00",
