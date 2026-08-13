@@ -37,6 +37,18 @@
       "vendor": "xAI"
     },
     {
+      "first_seen": "2026-08-13T03:01:19.384336+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-08-12T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana Chatがアップデート：「Sakana Fugu」と新世代「Sakana Namazu」が利用可能に",
+      "uid": "f6c29fbda611dcc1",
+      "url": "/chat-update/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-08-12T15:16:40.028954+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",
