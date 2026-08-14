@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T05:06:15.076052+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-14T03:02:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "ライブ配信サービス「Twitch」は、コンテンツを親会社アマゾンのAIモデルの学習に利用しているとの報道を認めた。",
+      "title": "Twitch、配信内容をアマゾンのAI訓練に利用--「デフォルトで有効」なので要注意",
+      "uid": "b092e9116327a843",
+      "url": "https://japan.cnet.com/article/35251557/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-14T05:06:15.076052+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-14T03:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Code and DESIGNは、macOS（Appleシリコン）用シミュレーションゲーム「コンセプトカフェシミュレーター」をSteamにて早期アクセスリリースした。価格は655円。",
+      "title": "ローカルLLM搭載でAIキャストとの会話を存分に楽しめる！ 「コンセプトカフェシミュレーター」",
+      "uid": "131d20c7731c52b9",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2131696.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-14T05:06:15.076052+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-14T02:59:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "アプリの操作履歴やウェブでのアクティビティを記録し将来のタスクに役立てる機能「Computer History」がMac向けのChatGPTデスクトップアプリに追加されました。「将来のやり取りが最適化され、説明が少なく済む」とのことです。 続きを読む...",
+      "title": "ChatGPTに自分のPC操作履歴を学ばせる機能「Computer History」が登場",
+      "uid": "9afcdf0bf33a870c",
+      "url": "https://gigazine.net/news/20260814-chatgpt-computer-history/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-14T05:06:15.076052+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-14T02:57:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "現地時間の2026年8月13日、Googleはコーディングとエージェント向けに開発されたこれまでで最もインテリジェントなAIモデルの「Gemini 3.7 Flash」をリリースしました。 続きを読む...",
+      "title": "Googleが「Gemini 3.7 Flash」をリリース、Claude Sonnet 5やGPT-5.6 Terraに並ぶ性能で年末まではGemini 3.6 Flashの半額で利用可能",
+      "uid": "2767c05f6c97b4e6",
+      "url": "https://gigazine.net/news/20260814-google-gemini-3-7-flash/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-14T02:48:19.675404+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
