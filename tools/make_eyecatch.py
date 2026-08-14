@@ -235,6 +235,80 @@ def balance(x: int, y: int) -> str:
     )
 
 
+def price_tag(x: int, y: int, angle: int = 0) -> str:
+    """副業＝自分の仕事に値を付ける。
+
+    ⚠️ **札束・硬貨の山・右肩上がりのグラフは描かない。**この場面の記事は
+    「必ず稼げる」「月◯万」を書かない約束なので、絵でも稼ぎを匂わせない
+    （キューの「副業」節の冒頭の縛り）。値札は「自分で決める」ほうの絵。
+    """
+    return (
+        f'<g transform="translate({x},{y}) rotate({angle})">'
+        f'<path d="M0 40 L34 4 H92 V76 H34 Z" class="ec-paper ec-ln" '
+        f'stroke-width="3" stroke-linejoin="round"/>'
+        f'<line x1="34" y1="6" x2="34" y2="74" stroke="{AMBER_DEEP}" '
+        f'stroke-width="3" opacity="0.55"/>'
+        f'<circle cx="24" cy="40" r="7" class="ec-bg ec-ln" stroke-width="3"/>'
+        f'<line x1="48" y1="30" x2="80" y2="30" stroke="{CORAL}" '
+        f'stroke-width="3.5" stroke-linecap="round"/>'
+        f'<line x1="48" y1="52" x2="72" y2="52" class="ec-rule" '
+        f'stroke-width="3" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
+def coin(x: int, y: int) -> str:
+    """副業の小物。⚠️ 通貨記号は入れない（金額の約束に読ませない）。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<circle r="17" fill="{AMBER}" class="ec-ln" stroke-width="3"/>'
+        f'<circle r="9" fill="none" class="ec-ln" stroke-width="2.5" opacity="0.7"/>'
+        f"</g>"
+    )
+
+
+def shield(x: int, y: int) -> str:
+    """詐欺を防ぐ＝確かめてから進む。
+
+    ⚠️ **怖がらせる絵にしない**（ドクロ・警告の三角・赤い×・鎖）。この場面の型は
+    「詐欺かどうかをAIに判定させる」ではなく「**確認の手順に変える**」なので、
+    盾の中は「確かめた印」のチェックにする。
+    """
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<path d="M0 0 L40 14 V50 C40 74 22 90 0 98 C-22 90 -40 74 -40 50 V14 Z" '
+        f'class="ec-paper ec-ln" stroke-width="3.5" stroke-linejoin="round"/>'
+        f'<path d="M-16 48 l12 13 22 -28" fill="none" stroke="{GREEN_DEEP}" '
+        f'stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+        f"</g>"
+    )
+
+
+def envelope(x: int, y: int, angle: int = 0) -> str:
+    """身に覚えのない知らせ。⚠️ 「!」や「×」の印は付けない（煽らない）。"""
+    return (
+        f'<g transform="translate({x},{y}) rotate({angle})">'
+        f'<rect width="60" height="42" rx="5" class="ec-paper ec-ln" stroke-width="3"/>'
+        f'<path d="M0 5 L30 27 L60 5" fill="none" class="ec-ln" stroke-width="3" '
+        f'stroke-linecap="round" stroke-linejoin="round"/>'
+        f"</g>"
+    )
+
+
+def padlock(x: int, y: int) -> str:
+    """セキュリティ対策＝鍵をかける・渡さない。"""
+    return (
+        f'<g transform="translate({x},{y})">'
+        f'<path d="M-17 0 V-13 a17 17 0 0 1 34 0 V0" fill="none" class="ec-ln" '
+        f'stroke-width="6" stroke-linecap="round"/>'
+        f'<rect x="-29" y="0" width="58" height="46" rx="8" fill="{AMBER}" '
+        f'class="ec-ln" stroke-width="3"/>'
+        f'<circle cy="19" r="6" class="ec-ink"/>'
+        f'<path d="M0 23 v11" fill="none" class="ec-ln" stroke-width="4" stroke-linecap="round"/>'
+        f"</g>"
+    )
+
+
 def signpost(x: int, y: int) -> str:
     """はじめて＝どっちへ行くか。"""
     return (
@@ -411,12 +485,46 @@ def _scene_choose(seed: int) -> str:
     return main + sticky(214, 60, -8) + robot(474, 56)
 
 
+def _scene_earn(seed: int) -> str:
+    """副業＝自分の仕事に値を付けて納める。"""
+    variant = pick(seed, 1, 2)
+    main = price_tag(FOCUS_CENTER - 46, 50, -6)
+    if variant == 0:
+        return main + coin(238, 112) + notebook(452, 58)
+    return main + notebook(202, 56) + coin(490, 108)
+
+
+def _scene_safety(seed: int) -> str:
+    """詐欺を防ぐ＝確かめてから進む。"""
+    variant = pick(seed, 1, 2)
+    main = shield(FOCUS_CENTER, 40)
+    if variant == 0:
+        return main + envelope(202, 96, -7) + sticky(478, 56, 8)
+    return main + sticky(214, 54, -8) + envelope(450, 98, 6)
+
+
+def _scene_security(seed: int) -> str:
+    """セキュリティ対策＝鍵をかける・渡さない。"""
+    variant = pick(seed, 1, 2)
+    main = padlock(FOCUS_CENTER, 66)
+    if variant == 0:
+        return main + envelope(206, 94, 6) + robot(474, 54)
+    return main + robot(196, 54) + envelope(454, 92, -6)
+
+
+# ⚠️ ここに無い場面は黙って「仕事」の絵になる（build_svg の受け皿）。
+# 実際 earn / safety / security の3つが、絵柄の無いまま公開されていた
+# （2026-08-14 にオーナーが画面で気づいた）。config.SCENES と突き合わせる
+# テスト（test_every_scene_in_config_has_a_picture）で再発を止めている。
 SCENE_BUILDERS = {
     "start": _scene_start,
     "work": _scene_work,
     "research": _scene_research,
     "automate": _scene_automate,
     "life": _scene_life,
+    "earn": _scene_earn,
+    "safety": _scene_safety,
+    "security": _scene_security,
     "fun": _scene_fun,
     "choose": _scene_choose,
 }

@@ -69,10 +69,31 @@ def test_main_writes_one_svg_per_listed_article(tmp_path):
 # --- 場面ごとに絵柄が変わる（2026-08-08 追加） ---
 
 def test_scenes_give_different_pictures():
-    """全部が同じ絵になっていた不具合の再発防止。7場面すべて別の絵になる。"""
+    """全部が同じ絵になっていた不具合の再発防止。どの場面も別の絵になる。
+
+    ⚠️ 場面の数はここに書かない（足すたびに腐る）。SCENE_BUILDERS から数える。
+    """
     from tools.make_eyecatch import SCENE_BUILDERS
     svgs = {s: build_svg("same-slug", "recipes", s) for s in SCENE_BUILDERS}
     assert len(set(svgs.values())) == len(SCENE_BUILDERS)
+
+
+def test_every_scene_in_config_has_a_picture():
+    """config.SCENES に足した場面が、絵柄の無いまま公開されないこと。
+
+    🚨 SCENE_BUILDERS に無い場面は、build_svg の受け皿で**黙って「仕事」の絵**に
+    なる。エラーは出ず、テストも通り、記事も普通に公開される——実際
+    earn（副業）/ safety（詐欺を防ぐ）/ security の3つが 2026-08-13 の新設から
+    そのまま公開されていて、**オーナーが画面を見て気づくまで誰も分からなかった**。
+    このサイトが一番警戒している「静かな欠落」そのものなので、機械で照合する。
+    """
+    from src.config import SCENES
+    from tools.make_eyecatch import SCENE_BUILDERS
+    missing = [s for s in SCENES if s not in SCENE_BUILDERS]
+    assert not missing, (
+        f"絵柄の無い場面: {missing}。tools/make_eyecatch.py に "
+        f"_scene_<名前> を足して SCENE_BUILDERS に登録すること"
+    )
 
 
 def test_main_reads_scene_from_frontmatter(tmp_path):
