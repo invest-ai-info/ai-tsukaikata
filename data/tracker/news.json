@@ -117,6 +117,18 @@
       "vendor": "DeepSeek"
     },
     {
+      "first_seen": "2026-08-14T19:16:35.990897+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-12T23:49:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "",
+      "title": "How Claude’s text watermark works",
+      "uid": "c7be9f553b9d4f72",
+      "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-12T22:05:03.082330+00:00",
       "importance": "minor",
       "label": "Claude Code",
