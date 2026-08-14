@@ -5038,6 +5038,185 @@ def transcript_auto_what_drifts_chart() -> None:
     )
 
 
+def weekly_loop_swelling_chart() -> None:
+    """毎週の週報を自動で回したとき、報告書の項目数がどう動いたか。
+
+    実測（2026-08-14・架空の走り書きメモ3週ぶんを連鎖させ、各週2回ずつ）。
+    判定は Python（見出しごとの箇条書きの数え上げ）。証拠＝
+    `docs/evidence/weekly-report-loop-without-drift.md`。
+    """
+    rows = (
+        ("第2週（メモ9行）", "前回の週報を型に", 16, 16, False),
+        ("", "空の見出しだけ", 9, 10, True),
+        ("第3週（メモ8行）", "前回の週報を型に", 18, 19, False),
+        ("", "空の見出しだけ", 7, 8, True),
+        ("第4週（メモ8行）", "前回の週報を型に", 23, 21, False),
+        ("", "空の見出しだけ", 12, 11, True),
+    )
+    biggest = 23
+    label_x, sub_x = 18, 150
+    left, right = 292, 604
+    span = right - left
+    top = 104
+    bar_h, bar_gap, group_gap = 13, 4, 14
+    group_h = bar_h * 2 + bar_gap + group_gap
+    height = top + len(rows) * group_h + 62
+    assert right + 60 <= WIDTH - 18, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "前回の出来上がりを次回に渡すと、報告書だけが毎週太る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の走り書きメモ3週ぶんを連鎖させ、各週2回ずつ走らせた。"
+        "数えたのは見出し1〜4の箇条書きの数。</text>\n",
+        f'<text class="t-xs" x="{left}" y="{top - 26}">'
+        "上＝1回目 ／ 下＝2回目（同じ指示文をもう一度走らせたもの）</text>\n",
+    ]
+    for index, (week, how, first, second, good) in enumerate(rows):
+        y = top + index * group_h
+        if week:
+            parts.append(f'<text class="t" x="{label_x}" y="{y + 12}">{_esc(week)}</text>\n')
+        cls = "t-good" if good else "t-bad"
+        parts.append(f'<text class="{cls}" x="{sub_x}" y="{y + 12}">{_esc(how)}</text>\n')
+        for offset, value in enumerate((first, second)):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, span * value / biggest)
+            parts.append(
+                f'<rect class="{"bar-new" if good else "bar-in"}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{left + bw + 8:.1f}" y="{by + bar_h - 2}">'
+                f"{value}件</text>\n"
+            )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 44}">'
+        "※ メモの行数は9→8→8と減っている。太っているのは報告書だけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※「4. 相談したいこと」だけを数えると、前回を型にした側は"
+        "1件（人が書いた第1週）→3→3→5件。空の見出しの側は2→1→0件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ メモの事実そのものは、どちらの側も落ちていない"
+        "（語で照合して9/9・8/8・8/8。落ちたのは1回だけ1語）。</text>\n"
+    )
+    alt = (
+        "架空の走り書きメモ3週ぶんを連鎖させ、各週2回ずつ週報を作らせて、"
+        "見出し1から4の箇条書きの数を比べた横棒グラフ。"
+        "前回の出来上がりを今週の型として渡した側は、"
+        "第2週がメモ9行に対し16件と16件、"
+        "第3週がメモ8行に対し18件と19件、"
+        "第4週がメモ8行に対し23件と21件で、毎週増えていく。"
+        "前回の出来上がりを渡さず、空の見出しだけを渡した側は、"
+        "第2週が9件と10件、第3週が7件と8件、第4週が12件と11件で、"
+        "メモの行数とほぼ同じところに留まる。"
+        "メモの行数は9行、8行、8行と減っているので、"
+        "太っているのは報告書のほうだけである。"
+        "相談したいことの欄だけを数えると、前回を型にした側は"
+        "人が書いた第1週の1件から3件、3件、5件と増え、"
+        "空の見出しの側は2件、1件、0件と増えない。"
+        "メモに書かれた事実そのものは、どちらの側も落ちていない。"
+    )
+    (OUT / "weekly-loop-swelling.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def weekly_loop_invented_carry_chart() -> None:
+    """メモにも第1週の週報にも無い語が、世代を越えて残ったか。
+
+    実測（2026-08-14）。4語とも、材料側に1度も出てこないことを
+    先に機械で確かめてある（`check.py` の assert）。証拠＝
+    `docs/evidence/weekly-report-loop-without-drift.md`。
+    """
+    cols = ("第2週\n1回目", "第2週\n2回目", "第3週\n1回目", "第3週\n2回目",
+            "第4週\n1回目", "第4週\n2回目")
+    rows = (
+        ("窓口", (True, False, True, True, True, False)),
+        ("働きかけ", (True, False, True, True, False, False)),
+        ("業務量の配分", (False, False, False, False, True, True)),
+        ("未回答", (False, False, False, False, True, False)),
+    )
+    label_w = 130
+    left = 18 + label_w
+    col_w = (WIDTH - 36 - label_w) // len(cols)
+    top = 116
+    row_h, row_gap = 30, 8
+    height = top + len(rows) * (row_h + row_gap) + 84
+    assert left + col_w * len(cols) <= WIDTH - 18, left + col_w * len(cols)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "メモにも第1週の週報にも無い言葉が、世代を越えて残る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前回の出来上がりを今週の型として渡した側。"
+        "下の4語は、3週ぶんのメモにも第1週の週報にも1度も出てこない。</text>\n",
+        f'<text class="t-xs" x="18" y="{top - 40}">'
+        "■＝その回の週報に出た ／ 空白＝出なかった</text>\n",
+    ]
+    for index, title in enumerate(cols):
+        cx = left + index * col_w + 8
+        for line_no, line in enumerate(title.split("\n")):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 22 + line_no * 13}">'
+                f"{_esc(line)}</text>\n"
+            )
+    for r_index, (word, marks) in enumerate(rows):
+        y = top + r_index * (row_h + row_gap)
+        parts.append(f'<text class="t" x="18" y="{y + 20}">{_esc(word)}</text>\n')
+        for c_index, on in enumerate(marks):
+            x = left + c_index * col_w
+            box = "box-bad" if on else "box-quiet"
+            parts.append(
+                f'<rect class="{box}" x="{x + 3}" y="{y}" '
+                f'width="{col_w - 10}" height="{row_h}" rx="3"/>\n'
+            )
+            if on:
+                parts.append(
+                    f'<text class="t-bad" x="{x + 11}" y="{y + 20}">出た</text>\n'
+                )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 62}">'
+        "※「窓口」「働きかけ」は第2週の1回目に生まれた。"
+        "その回の週報を第3週に渡したので、第3週は2回とも出ている。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 44}">'
+        "※ 第2週の2回目は0件だった＝生まれるかどうかは回による。"
+        "生まれた回を次に渡すかどうかは、こちらが決めている。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ 前回の出来上がりを渡さず空の見出しだけにした側は、"
+        "12回すべてで4語とも0件だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※「窓口が定まっていません」はメモに無い。"
+        "元のメモは「情シスの担当が誰か確定してない」だけである。</text>\n"
+    )
+    alt = (
+        "前回の出来上がりを今週の型として渡す形で週報を3週ぶん連鎖させ、"
+        "メモにも第1週の週報にも1度も出てこない4つの言葉が、"
+        "どの回の週報に出たかを並べた表。"
+        "窓口という語は、第2週の1回目、第3週の1回目と2回目、第4週の1回目に出た。"
+        "働きかけという語は、第2週の1回目、第3週の1回目と2回目に出た。"
+        "業務量の配分という語は第4週の1回目と2回目、未回答という語は第4週の1回目に出た。"
+        "窓口と働きかけは第2週の1回目に生まれ、その回の週報を第3週に渡したため、"
+        "第3週は2回とも出ている。第2週の2回目は4語とも0件だったので、"
+        "生まれるかどうかは回によるが、生まれた回を次の週に渡すかどうかは書き手が決めている。"
+        "前回の出来上がりを渡さず空の見出しだけを渡した側は、12回すべてで4語とも0件だった。"
+        "窓口が定まっていません、という文はメモに無く、"
+        "元のメモは情シスの担当が誰か確定してない、だけである。"
+    )
+    (OUT / "weekly-loop-invented-carry.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -5113,4 +5292,6 @@ if __name__ == "__main__":
     video_numbers_you_will_say_chart()
     transcript_auto_shape_vs_content_chart()
     transcript_auto_what_drifts_chart()
-    print(f"74枚を {OUT} に出力しました")
+    weekly_loop_swelling_chart()
+    weekly_loop_invented_carry_chart()
+    print(f"76枚を {OUT} に出力しました")

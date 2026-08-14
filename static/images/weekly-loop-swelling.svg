@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" role="img" aria-label="架空の走り書きメモ3週ぶんを連鎖させ、各週2回ずつ週報を作らせて、見出し1から4の箇条書きの数を比べた横棒グラフ。前回の出来上がりを今週の型として渡した側は、第2週がメモ9行に対し16件と16件、第3週がメモ8行に対し18件と19件、第4週がメモ8行に対し23件と21件で、毎週増えていく。前回の出来上がりを渡さず、空の見出しだけを渡した側は、第2週が9件と10件、第3週が7件と8件、第4週が12件と11件で、メモの行数とほぼ同じところに留まる。メモの行数は9行、8行、8行と減っているので、太っているのは報告書のほうだけである。相談したいことの欄だけを数えると、前回を型にした側は人が書いた第1週の1件から3件、3件、5件と増え、空の見出しの側は2件、1件、0件と増えない。メモに書かれた事実そのものは、どちらの側も落ちていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="430"/>
+<text class="t-strong" x="18" y="26">前回の出来上がりを次回に渡すと、報告書だけが毎週太る</text>
+<text class="t-sm" x="18" y="45">架空の走り書きメモ3週ぶんを連鎖させ、各週2回ずつ走らせた。数えたのは見出し1〜4の箇条書きの数。</text>
+<text class="t-xs" x="292" y="78">上＝1回目 ／ 下＝2回目（同じ指示文をもう一度走らせたもの）</text>
+<text class="t" x="18" y="116">第2週（メモ9行）</text>
+<text class="t-bad" x="150" y="116">前回の週報を型に</text>
+<rect class="bar-in" x="292" y="104" width="217.0" height="13" rx="2"/>
+<text class="t-bad" x="517.0" y="115">16件</text>
+<rect class="bar-in" x="292" y="121" width="217.0" height="13" rx="2"/>
+<text class="t-bad" x="517.0" y="132">16件</text>
+<text class="t-good" x="150" y="160">空の見出しだけ</text>
+<rect class="bar-new" x="292" y="148" width="122.1" height="13" rx="2"/>
+<text class="t-good" x="422.1" y="159">9件</text>
+<rect class="bar-new" x="292" y="165" width="135.7" height="13" rx="2"/>
+<text class="t-good" x="435.7" y="176">10件</text>
+<text class="t" x="18" y="204">第3週（メモ8行）</text>
+<text class="t-bad" x="150" y="204">前回の週報を型に</text>
+<rect class="bar-in" x="292" y="192" width="244.2" height="13" rx="2"/>
+<text class="t-bad" x="544.2" y="203">18件</text>
+<rect class="bar-in" x="292" y="209" width="257.7" height="13" rx="2"/>
+<text class="t-bad" x="557.7" y="220">19件</text>
+<text class="t-good" x="150" y="248">空の見出しだけ</text>
+<rect class="bar-new" x="292" y="236" width="95.0" height="13" rx="2"/>
+<text class="t-good" x="395.0" y="247">7件</text>
+<rect class="bar-new" x="292" y="253" width="108.5" height="13" rx="2"/>
+<text class="t-good" x="408.5" y="264">8件</text>
+<text class="t" x="18" y="292">第4週（メモ8行）</text>
+<text class="t-bad" x="150" y="292">前回の週報を型に</text>
+<rect class="bar-in" x="292" y="280" width="312.0" height="13" rx="2"/>
+<text class="t-bad" x="612.0" y="291">23件</text>
+<rect class="bar-in" x="292" y="297" width="284.9" height="13" rx="2"/>
+<text class="t-bad" x="584.9" y="308">21件</text>
+<text class="t-good" x="150" y="336">空の見出しだけ</text>
+<rect class="bar-new" x="292" y="324" width="162.8" height="13" rx="2"/>
+<text class="t-good" x="462.8" y="335">12件</text>
+<rect class="bar-new" x="292" y="341" width="149.2" height="13" rx="2"/>
+<text class="t-good" x="449.2" y="352">11件</text>
+<text class="t-xs" x="18" y="386">※ メモの行数は9→8→8と減っている。太っているのは報告書だけ。</text>
+<text class="t-xs" x="18" y="404">※「4. 相談したいこと」だけを数えると、前回を型にした側は1件（人が書いた第1週）→3→3→5件。空の見出しの側は2→1→0件。</text>
+<text class="t-xs" x="18" y="422">※ メモの事実そのものは、どちらの側も落ちていない（語で照合して9/9・8/8・8/8。落ちたのは1回だけ1語）。</text>
+</svg>

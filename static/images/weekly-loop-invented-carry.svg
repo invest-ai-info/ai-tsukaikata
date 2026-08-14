@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="352" viewBox="0 0 720 352" role="img" aria-label="前回の出来上がりを今週の型として渡す形で週報を3週ぶん連鎖させ、メモにも第1週の週報にも1度も出てこない4つの言葉が、どの回の週報に出たかを並べた表。窓口という語は、第2週の1回目、第3週の1回目と2回目、第4週の1回目に出た。働きかけという語は、第2週の1回目、第3週の1回目と2回目に出た。業務量の配分という語は第4週の1回目と2回目、未回答という語は第4週の1回目に出た。窓口と働きかけは第2週の1回目に生まれ、その回の週報を第3週に渡したため、第3週は2回とも出ている。第2週の2回目は4語とも0件だったので、生まれるかどうかは回によるが、生まれた回を次の週に渡すかどうかは書き手が決めている。前回の出来上がりを渡さず空の見出しだけを渡した側は、12回すべてで4語とも0件だった。窓口が定まっていません、という文はメモに無く、元のメモは情シスの担当が誰か確定してない、だけである。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="352"/>
+<text class="t-strong" x="18" y="26">メモにも第1週の週報にも無い言葉が、世代を越えて残る</text>
+<text class="t-sm" x="18" y="45">前回の出来上がりを今週の型として渡した側。下の4語は、3週ぶんのメモにも第1週の週報にも1度も出てこない。</text>
+<text class="t-xs" x="18" y="76">■＝その回の週報に出た ／ 空白＝出なかった</text>
+<text class="t-xs" x="156" y="94">第2週</text>
+<text class="t-xs" x="156" y="107">1回目</text>
+<text class="t-xs" x="248" y="94">第2週</text>
+<text class="t-xs" x="248" y="107">2回目</text>
+<text class="t-xs" x="340" y="94">第3週</text>
+<text class="t-xs" x="340" y="107">1回目</text>
+<text class="t-xs" x="432" y="94">第3週</text>
+<text class="t-xs" x="432" y="107">2回目</text>
+<text class="t-xs" x="524" y="94">第4週</text>
+<text class="t-xs" x="524" y="107">1回目</text>
+<text class="t-xs" x="616" y="94">第4週</text>
+<text class="t-xs" x="616" y="107">2回目</text>
+<text class="t" x="18" y="136">窓口</text>
+<rect class="box-bad" x="151" y="116" width="82" height="30" rx="3"/>
+<text class="t-bad" x="159" y="136">出た</text>
+<rect class="box-quiet" x="243" y="116" width="82" height="30" rx="3"/>
+<rect class="box-bad" x="335" y="116" width="82" height="30" rx="3"/>
+<text class="t-bad" x="343" y="136">出た</text>
+<rect class="box-bad" x="427" y="116" width="82" height="30" rx="3"/>
+<text class="t-bad" x="435" y="136">出た</text>
+<rect class="box-bad" x="519" y="116" width="82" height="30" rx="3"/>
+<text class="t-bad" x="527" y="136">出た</text>
+<rect class="box-quiet" x="611" y="116" width="82" height="30" rx="3"/>
+<text class="t" x="18" y="174">働きかけ</text>
+<rect class="box-bad" x="151" y="154" width="82" height="30" rx="3"/>
+<text class="t-bad" x="159" y="174">出た</text>
+<rect class="box-quiet" x="243" y="154" width="82" height="30" rx="3"/>
+<rect class="box-bad" x="335" y="154" width="82" height="30" rx="3"/>
+<text class="t-bad" x="343" y="174">出た</text>
+<rect class="box-bad" x="427" y="154" width="82" height="30" rx="3"/>
+<text class="t-bad" x="435" y="174">出た</text>
+<rect class="box-quiet" x="519" y="154" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="611" y="154" width="82" height="30" rx="3"/>
+<text class="t" x="18" y="212">業務量の配分</text>
+<rect class="box-quiet" x="151" y="192" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="243" y="192" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="335" y="192" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="427" y="192" width="82" height="30" rx="3"/>
+<rect class="box-bad" x="519" y="192" width="82" height="30" rx="3"/>
+<text class="t-bad" x="527" y="212">出た</text>
+<rect class="box-bad" x="611" y="192" width="82" height="30" rx="3"/>
+<text class="t-bad" x="619" y="212">出た</text>
+<text class="t" x="18" y="250">未回答</text>
+<rect class="box-quiet" x="151" y="230" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="243" y="230" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="335" y="230" width="82" height="30" rx="3"/>
+<rect class="box-quiet" x="427" y="230" width="82" height="30" rx="3"/>
+<rect class="box-bad" x="519" y="230" width="82" height="30" rx="3"/>
+<text class="t-bad" x="527" y="250">出た</text>
+<rect class="box-quiet" x="611" y="230" width="82" height="30" rx="3"/>
+<text class="t-xs" x="18" y="290">※「窓口」「働きかけ」は第2週の1回目に生まれた。その回の週報を第3週に渡したので、第3週は2回とも出ている。</text>
+<text class="t-xs" x="18" y="308">※ 第2週の2回目は0件だった＝生まれるかどうかは回による。生まれた回を次に渡すかどうかは、こちらが決めている。</text>
+<text class="t-xs" x="18" y="326">※ 前回の出来上がりを渡さず空の見出しだけにした側は、12回すべてで4語とも0件だった。</text>
+<text class="t-xs" x="18" y="344">※「窓口が定まっていません」はメモに無い。元のメモは「情シスの担当が誰か確定してない」だけである。</text>
+</svg>
