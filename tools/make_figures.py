@@ -3625,6 +3625,100 @@ def runbook_silent_completion_chart() -> None:
     )
 
 
+def listing_facts_vs_flourish_chart() -> None:
+    """フリマの商品説明文。盛り語が減ると、メモの事実がいくつ残るか。
+
+    実測（2026-08-14・架空の出品メモ19行から23項目を機械で照合）。
+    盛り語は先に決めた49語のうち、説明文の本文に出たものだけを数えた
+    （〔私が確かめること〕欄の「書いていません」という説明は数えない）。
+    """
+    rows = [
+        ("そのまま頼む", 14, 14, False),
+        ("＋「書いていないことは書くな」", 17, 0, False),
+        ("＋〔私が確かめること〕を作らせる", 21, 1, False),
+        ("＋不明も本文に書かせる", 23, 0, True),
+    ]
+    total = 23
+    label_x = 18
+    bar_x, bar_max = 250, 300
+    row_h, gap_y = 30, 20
+    top = 104
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 70
+    assert bar_x + bar_max + 150 <= WIDTH - 18, bar_x + bar_max + 150
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "盛りが入ったぶんだけ、メモの事実が落ちている</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ架空の出品メモ（19行）。頼み方だけを変えて、返ってきた説明文を機械で照合した。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">メモの23項目のうち、説明文に残った数</text>\n',
+        f'<text class="t-xs" x="{bar_x + bar_max + 62}" y="{top - 12}">本文の盛り語</text>\n',
+    ]
+    for index, (name, kept, flourish, best) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * kept / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 20}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        klass = "bar-new" if best else "bar-in"
+        parts.append(
+            f'<rect class="{klass}" x="{bar_x}" y="{y + 4}" '
+            f'width="{width}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        value_class = "t-accent" if best else "t-sm"
+        parts.append(
+            f'<text class="{value_class}" x="{bar_x + width + 10}" y="{y + 20}">'
+            f"{kept}件</text>\n"
+        )
+        flourish_class = "t-bad" if flourish >= 10 else "t-sm"
+        parts.append(
+            f'<text class="{flourish_class}" x="{bar_x + bar_max + 62}" y="{y + 20}">'
+            f"{flourish}件</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 50}">'
+        "※ そのまま頼んだ回で落ちた9項目は、なめし方が不明・金具の材質が不明・"
+        "水濡れは試していない・金具の耐久は試していない・追跡なし、など。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ 禁止だけを足すと盛り語は0件になるが、"
+        "落ちた6項目のうち5項目が「不明」「試していない」「追跡なし」だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 3行目に残った盛り語1件は「それ以外に目立った傷や汚れはありません」。"
+        "確かめていない箇所まで含めて言い切っている。</text>\n"
+    )
+    alt = (
+        "架空の出品メモ19行から作った商品説明文を、頼み方を4通りに変えて機械で照合した図。"
+        "メモから取り出した23項目のうち説明文に残った数と、"
+        "先に決めた49語の盛り語のうち本文に出た数を並べている。"
+        "そのまま頼むと、残った事実は23項目中14項目で、盛り語は14件だった。"
+        "落ちた9項目は、制作時間、なめし方と産地が不明、金具の材質が不明、"
+        "色ムラが1ミリであること、水濡れは試していない、金具の耐久は試していない、"
+        "価格、普通郵便で追跡なし、同じ型を3個作った、である。"
+        "メモに書いていないことは書かないでくださいと足すと、盛り語は0件になるが、"
+        "残った事実は17項目にとどまった。"
+        "落ちた6項目のうち5項目は、なめし方が不明、金具の材質が不明、水濡れは試していない、"
+        "金具の耐久は試していない、追跡なし、で、いずれも買う人に不利な情報である。"
+        "良し悪しの言葉は引用できるときだけ使い、書けないものは私が確かめることとして"
+        "箇条書きにしてくださいと足すと、事実は21項目まで戻り、本文に残った盛り語は1件になった。"
+        "その1件はそれ以外に目立った傷や汚れはありませんという一文で、"
+        "確かめていない箇所まで含めて言い切っている。"
+        "さらに不明と試していない項目と追跡の有無を本文の中に書いてくださいと足すと、"
+        "盛り語0件のまま23項目すべてが残った。"
+        "つまり盛りが入った量だけ事実が落ちており、禁止だけを渡すと不利な情報まで一緒に消える。"
+    )
+    (OUT / "listing-facts-vs-flourish.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def transcript_keep_vs_rewrite_chart() -> None:
     """「整えてください」と「種類を並べて渡す」で、文字起こしに何が起きたか。
 
@@ -5294,4 +5388,5 @@ if __name__ == "__main__":
     transcript_auto_what_drifts_chart()
     weekly_loop_swelling_chart()
     weekly_loop_invented_carry_chart()
-    print(f"76枚を {OUT} に出力しました")
+    listing_facts_vs_flourish_chart()
+    print(f"77枚を {OUT} に出力しました")

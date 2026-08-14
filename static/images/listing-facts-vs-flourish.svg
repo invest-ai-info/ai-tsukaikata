@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="354" viewBox="0 0 720 354" role="img" aria-label="架空の出品メモ19行から作った商品説明文を、頼み方を4通りに変えて機械で照合した図。メモから取り出した23項目のうち説明文に残った数と、先に決めた49語の盛り語のうち本文に出た数を並べている。そのまま頼むと、残った事実は23項目中14項目で、盛り語は14件だった。落ちた9項目は、制作時間、なめし方と産地が不明、金具の材質が不明、色ムラが1ミリであること、水濡れは試していない、金具の耐久は試していない、価格、普通郵便で追跡なし、同じ型を3個作った、である。メモに書いていないことは書かないでくださいと足すと、盛り語は0件になるが、残った事実は17項目にとどまった。落ちた6項目のうち5項目は、なめし方が不明、金具の材質が不明、水濡れは試していない、金具の耐久は試していない、追跡なし、で、いずれも買う人に不利な情報である。良し悪しの言葉は引用できるときだけ使い、書けないものは私が確かめることとして箇条書きにしてくださいと足すと、事実は21項目まで戻り、本文に残った盛り語は1件になった。その1件はそれ以外に目立った傷や汚れはありませんという一文で、確かめていない箇所まで含めて言い切っている。さらに不明と試していない項目と追跡の有無を本文の中に書いてくださいと足すと、盛り語0件のまま23項目すべてが残った。つまり盛りが入った量だけ事実が落ちており、禁止だけを渡すと不利な情報まで一緒に消える。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="354"/>
+<text class="t-strong" x="18" y="26">盛りが入ったぶんだけ、メモの事実が落ちている</text>
+<text class="t-sm" x="18" y="45">同じ架空の出品メモ（19行）。頼み方だけを変えて、返ってきた説明文を機械で照合した。</text>
+<text class="t-xs" x="250" y="92">メモの23項目のうち、説明文に残った数</text>
+<text class="t-xs" x="612" y="92">本文の盛り語</text>
+<text class="t-sm" x="18" y="124">そのまま頼む</text>
+<rect class="bar-old" x="250" y="108" width="300" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="250" y="108" width="183" height="22" rx="3"/>
+<text class="t-sm" x="443" y="124">14件</text>
+<text class="t-bad" x="612" y="124">14件</text>
+<text class="t-sm" x="18" y="174">＋「書いていないことは書くな」</text>
+<rect class="bar-old" x="250" y="158" width="300" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="250" y="158" width="222" height="22" rx="3"/>
+<text class="t-sm" x="482" y="174">17件</text>
+<text class="t-sm" x="612" y="174">0件</text>
+<text class="t-sm" x="18" y="224">＋〔私が確かめること〕を作らせる</text>
+<rect class="bar-old" x="250" y="208" width="300" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="250" y="208" width="274" height="22" rx="3"/>
+<text class="t-sm" x="534" y="224">21件</text>
+<text class="t-sm" x="612" y="224">1件</text>
+<text class="t-sm" x="18" y="274">＋不明も本文に書かせる</text>
+<rect class="bar-old" x="250" y="258" width="300" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="250" y="258" width="300" height="22" rx="3"/>
+<text class="t-accent" x="560" y="274">23件</text>
+<text class="t-sm" x="612" y="274">0件</text>
+<text class="t-xs" x="18" y="304">※ そのまま頼んだ回で落ちた9項目は、なめし方が不明・金具の材質が不明・水濡れは試していない・金具の耐久は試していない・追跡なし、など。</text>
+<text class="t-xs" x="18" y="322">※ 禁止だけを足すと盛り語は0件になるが、落ちた6項目のうち5項目が「不明」「試していない」「追跡なし」だった。</text>
+<text class="t-xs" x="18" y="340">※ 3行目に残った盛り語1件は「それ以外に目立った傷や汚れはありません」。確かめていない箇所まで含めて言い切っている。</text>
+</svg>
