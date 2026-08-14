@@ -3719,6 +3719,99 @@ def listing_facts_vs_flourish_chart() -> None:
     )
 
 
+def reply_terms_survive_chart() -> None:
+    """取引先への返事。丁寧さを強めるほど、こちらが決めた条件が文面から消える。
+
+    実測（2026-08-14・先に決めた条件8件を11の文字列に分解して照合）。
+    ぼかし語15語は先に決め、材料（条件＋相手のメール）に1件も無いことを確かめてある。
+    """
+    rows = [
+        ("そのまま「角が立たないように」", 4, 8, False),
+        ("「できるだけ丁寧に」を足す", 0, 9, False),
+        ("「数字と期日は一字一句そのまま」", 11, 0, True),
+    ]
+    total = 11
+    label_x = 18
+    bar_x, bar_max = 258, 290
+    row_h, gap_y = 32, 24
+    top = 106
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 88
+    assert bar_x + bar_max + 148 <= WIDTH - 18, bar_x + bar_max + 148
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "丁寧にするほど、自分が決めた条件が文面から消える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ材料（先に決めた条件8件＋相手のメール）。頼み方だけを変えた。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">条件の11の文字列のうち、文面に残った数</text>\n',
+        f'<text class="t-xs" x="{bar_x + bar_max + 60}" y="{top - 12}">ぼかし語</text>\n',
+    ]
+    for index, (name, kept, hedge, best) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * kept / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 21}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 5}" '
+            f'width="{bar_max}" height="{row_h - 10}" rx="3" opacity="0.35"/>\n'
+        )
+        if width:
+            klass = "bar-new" if best else "bar-in"
+            parts.append(
+                f'<rect class="{klass}" x="{bar_x}" y="{y + 5}" '
+                f'width="{width}" height="{row_h - 10}" rx="3"/>\n'
+            )
+        value_class = "t-accent" if best else ("t-bad" if kept == 0 else "t-sm")
+        parts.append(
+            f'<text class="{value_class}" x="{bar_x + width + 10}" y="{y + 21}">'
+            f"{kept}件</text>\n"
+        )
+        hedge_class = "t-bad" if hedge >= 8 else "t-sm"
+        parts.append(
+            f'<text class="{hedge_class}" x="{bar_x + bar_max + 60}" y="{y + 21}">'
+            f"{hedge}件</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 68}">'
+        "※ 消えたのは 15,000円・7日以内・銀行振込・8月29日・著作権の譲渡・30分まで、など。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 50}">'
+        "※ 消えるだけでなく反転する。「これより早くはできない」が"
+        "「早められるよう進めてまいります」になった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ ぼかし語15語は先に決めたもの。条件にも相手のメールにも1件も無い"
+        "（書く工程で入っている）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ どの返事も、読むかぎり礼儀正しい。条件と並べるまで、緩んだことに気づけない。</text>\n"
+    )
+    alt = (
+        "取引先への返事の文面を、頼み方を3通りに変えて機械で照合した図。"
+        "先に自分で決めた条件8件を11の文字列に分解し、文面にそのまま残った数を数えた。"
+        "あわせて、条件を緩めるぼかし語15語が何件出たかも数えている。"
+        "角が立たないように書いてくださいと頼むと、残った条件は11のうち4件で、ぼかし語は8件だった。"
+        "できるだけ丁寧に、相手の気分を害さないようにと足すと、残った条件は0件になり、"
+        "ぼかし語は9件に増えた。48,000円も9月12日も修正2回も、文面から丸ごと消えている。"
+        "私が決めた条件の数字と期日は一字一句そのまま文面に書いてください、"
+        "言い換えやぼかしをしないでください、と足すと、11件すべてが残り、ぼかし語は0件になった。"
+        "消えたのは、ページ追加1ページ15,000円、支払いは納品後7日以内、銀行振込、"
+        "素材は8月29日まで、著作権の譲渡、打ち合わせは1回30分まで、などである。"
+        "消えるだけでなく反転もしており、これより早くはできないという条件が、"
+        "早められるよう進めてまいりますという文になった。"
+        "ぼかし語15語は先に決めたもので、条件にも相手のメールにも1件も出てこない。"
+        "つまり書く工程で入っている。どの返事も読むかぎり礼儀正しく、"
+        "条件と並べるまで緩んだことに気づけない。"
+    )
+    (OUT / "reply-terms-survive.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def transcript_keep_vs_rewrite_chart() -> None:
     """「整えてください」と「種類を並べて渡す」で、文字起こしに何が起きたか。
 
@@ -5389,4 +5482,5 @@ if __name__ == "__main__":
     weekly_loop_swelling_chart()
     weekly_loop_invented_carry_chart()
     listing_facts_vs_flourish_chart()
-    print(f"77枚を {OUT} に出力しました")
+    reply_terms_survive_chart()
+    print(f"78枚を {OUT} に出力しました")
