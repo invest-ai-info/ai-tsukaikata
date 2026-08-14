@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T23:40:53.575715+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-14T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "生成AIはしばしば、聞かれたことに対して「分かりません」とは答えずに適当なでっち上げを返してくることがあります。生成AIを使う人間もこれに影響され、「分かりません」と言えなくなってしまっている可能性が見えてきました。 続きを読む...",
+      "title": "AIの「分かったふり」を見続けていると人間も「分からない」と言えなくなるという研究結果",
+      "uid": "755fde574c505783",
+      "url": "https://gigazine.net/news/20260815-ai-advice-suppresses-people-willingness-idk/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-14T18:08:44.543127+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
