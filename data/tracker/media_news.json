@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T00:01:18.717033+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-13T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "南海電気鉄道と日立製作所は、日立独自技術「CMOSアニーリング」を活用し、鉄道の乗務員・車両の運用計画を自動作成するシステムの構築を始める。熟練者の手作業に依存してきた計画づくりを自動化し、業務負荷の軽減を図る。",
+      "title": "南海電鉄「数カ月かかった乗務員計画」が1週間に　「量子コンピュータを疑似再現」で鉄道現場はどう変わる？",
+      "uid": "799cfe0831c5747d",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/14/news043.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-13T23:05:11.097576+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
