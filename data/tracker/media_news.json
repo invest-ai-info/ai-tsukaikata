@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T18:08:44.543127+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-14T17:26:12+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "中国Alibaba傘下のAlibaba Cloudが、AIモデル「Qwen3.8-27B」のウェイト（重み）を公開した。Hugging FaceとModelScopeからダウンロード可能で、商用利用もできるライセンス「Apache 2.0」で提供する。一部のベンチマークでは、米Anthropicの「Claude Opus 4.6」の推論エフォート最大（以下、Opus 4.6 Max）を上回るスコ…",
+      "title": "「Qwen3.8-27B」ウェイト公開　一部「Opus 4.6 Max」超えか　ライセンスは商用可のApache 2.0",
+      "uid": "4bd27e355c847546",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/15/2000000554/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-14T11:59:16.623121+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
