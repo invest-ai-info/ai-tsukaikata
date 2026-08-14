@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T11:59:16.623121+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-14T11:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ChatGPTで知られるOpenAIの社内には、サム・アルトマンCEOや社長のグレッグ・ブロックマン氏など経営陣に直接業務における問題を報告して迅速な解決を求める「friction」というメールアドレスがあると元従業員が明かしました。 続きを読む...",
+      "title": "OpenAIにはサム・アルトマンCEOや経営陣に直接苦情を送ることができる専用のメールアドレスがある",
+      "uid": "b9fe5513c0e3f042",
+      "url": "https://gigazine.net/news/20260814-openai-special-address/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-14T08:39:06.340012+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
