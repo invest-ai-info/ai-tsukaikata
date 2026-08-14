@@ -1,0 +1,63 @@
+name: Topic Candidates
+
+# 題材の候補を、検索の言い回しから集めてコミットする。
+#
+# なぜ要るか＝毎晩の担当が書ける本数は、待ち行列の残量で決まる。
+# 補充は 2026-08-10 から4回とも**人が手で**やっていて、実際 8/14 に
+# 「金曜に枯れる」と分かっていながら当日まで誰も足さなかった。
+# 週次の番人（freshness）は鳴るだけで、足す側は自動化されていなかった。
+#
+# 🚨 **この仕事は候補を集めるところで止まる。キューには自動で入れない。**
+# 採否の理由は語数からは出てこない（2026-08-14 は実質語数の上位3つが1件も
+# 採用にならなかった＝お金直球・読者像違い）。入れるのは人か、毎晩の担当。
+
+on:
+  # 毎週土曜 JST 10:23（UTC 土曜 1:23）。⚠️ 毎時0分・30分は混むので避ける。
+  # 土曜にするのは、月曜の週次（freshness）が「残りが少ない」と鳴る前に
+  # 候補が揃っているようにするため。
+  schedule:
+    - cron: "23 1 * * 6"
+  workflow_dispatch:
+    inputs:
+      bank:
+        description: "種の束（automate / earn / safety / work）"
+        required: false
+        default: "automate"
+
+permissions:
+  contents: write
+
+# ⚠️ 走っている最中にもう1回起動しても、二重にコミットしない
+concurrency:
+  group: topic-candidates
+  cancel-in-progress: false
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+    env:
+      # 束を指定しなければ automate（オーナーの優先順位＝自動化・ループ）
+      BANK: ${{ inputs.bank || 'automate' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      # ⚠️ 1,200回サジェストを叩く。失敗はスクリプト側が数えて先へ進むので、
+      # 途中で落ちて中途半端な表ができることはない（tools/suggest_topics.py）。
+      - name: 候補を集める
+        run: python -m tools.suggest_topics "$BANK"
+
+      - name: 変わっていたらコミットする
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/topic-candidates
+          if git diff --cached --quiet; then
+            echo "候補に変化なし。コミットしません"
+            exit 0
+          fi
+          git commit -m "chore: 題材の候補を更新（$BANK）"
+          git push
