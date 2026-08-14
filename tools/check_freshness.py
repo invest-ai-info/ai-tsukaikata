@@ -312,6 +312,74 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
     return None
 
 
+# --- 台帳の昇格判定（2026-08-14）---
+#
+# 進化ループ輪2（週次）の「昇格判定」は、これまで人が台帳を読んで数えていた。
+# 実際にそれで数が腐った＝★1の節は自分を「4本で出た（最多）」と書き、
+# 引き継ぎは「5本」「6本」と書いていて、機械で数えると7だった。
+# 🔑 **数を文章で持つと必ず古くなる**（キューの本数が2か所にあって腐ったのと同じ型）。
+# ここでは数を持たず、毎回台帳から数え直す。
+LEDGER_PATH = "content/_lessons.md"
+LEDGER_CAP = 15  # 設計値。「長い台帳は読まれなくなって死ぬ」
+LESSON_RE = re.compile(r"^### (★?\d+[a-z]?)\. (.+)$", re.M)
+# 「4番が再発」「1番の系列」「12番の親戚」「2番の実例が増えた」
+LESSON_REF_RE = re.compile(r"(\d+[a-z]?)\s*番(?:が)?(?:再発|の系列|の親戚|の実例)")
+
+
+def lesson_promotions(ledger_text: str, slugs, cap: int = LEDGER_CAP):
+    """台帳の「何本で出たか」を数えて、(problems, notes) を返す。
+
+    昇格の条件は「2回出た教訓／全題材に効く教訓」（進化ループ設計）。
+    数え方は2つあって、どちらも1回に数える:
+
+      A. その節が本文で名指ししている記事slug（＝実際に出た記事）
+      B. 他の節から「N番が再発」と参照された回数（＝あとから再発したもの）
+
+    ⚠️ **Aは取りこぼす。**節が記事を「同じ実測」とだけ書いてslugを書かない場合、
+    0本と数える（実際 ★17・★24 などがそう）。**過小に出るほうへ倒してある**＝
+    昇格候補を多めに挙げて人が落とすほうが、見逃すより安全だから。
+    ⚠️ この検査は問題ではなく参考。**昇格させるかどうかは人が決める**
+    （設計で「昇格は人間セッションのみ」と決めてある）。
+    """
+    lessons = LESSON_RE.findall(ledger_text)
+    if not lessons:
+        return ([f"{LEDGER_PATH}: 教訓の節が1件も読めません"
+                 f"（見出しの形を変えたなら LESSON_RE も直すこと）"], [])
+
+    bodies = re.split(LESSON_RE, ledger_text)[3::3]
+    refs: dict[str, set[str]] = {}
+    for (num, _), body in zip(lessons, bodies):
+        for key in LESSON_REF_RE.findall(body):
+            if key != num.lstrip("★"):
+                refs.setdefault(key, set()).add(num)
+
+    scored = []
+    for (num, title), body in zip(lessons, bodies):
+        cited = sum(1 for s in slugs if s in body)
+        referred = len(refs.get(num.lstrip("★"), ()))
+        scored.append((cited + referred, cited, referred, num, title))
+    scored.sort(reverse=True)
+
+    problems = []
+    if len(lessons) > cap:
+        problems.append(
+            f"{LEDGER_PATH}: 生きている教訓が{len(lessons)}件です"
+            f"（上限{cap}件。昇格させて「昇格済み」へ移すか、束ねて整理してください。"
+            f"長い台帳は読まれなくなって死にます）"
+        )
+
+    ready = [s for s in scored if s[0] >= 2]
+    notes = [
+        f"{LEDGER_PATH}: 昇格の条件（2回以上）を満たす教訓が{len(ready)}件あります"
+        f"（昇格させるかは人が決める）"
+    ]
+    notes += [
+        f"    {num}. {title[:38]}（記事{cited}本＋被参照{referred}件＝{total}）"
+        for total, cited, referred, num, title in ready
+    ]
+    return (problems, notes)
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     articles, errors = load_articles(root / "content")
@@ -331,6 +399,16 @@ def main() -> int:
             shortage = check(queue_text)
             if shortage:
                 report.problems.append(shortage)
+
+    # 台帳の昇格判定。輪2（月曜）が数え直さずに済むように、数はここで出す。
+    ledger_file = root / "content" / "_lessons.md"
+    if ledger_file.exists():
+        ledger_problems, ledger_notes = lesson_promotions(
+            ledger_file.read_text(encoding="utf-8"),
+            {p.stem for p in (root / "content" / "recipes").glob("*.md")},
+        )
+        report.problems.extend(ledger_problems)
+        report.notes.extend(ledger_notes)
 
     for problem in report.problems:
         print(problem)

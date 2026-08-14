@@ -12,6 +12,7 @@ from check_freshness import (  # noqa: E402
     external_links,
     earn_queue_shortage,
     evidence_gaps,
+    lesson_promotions,
     queue_shortage,
 )
 
@@ -239,6 +240,78 @@ def test_earn_queue_shortage_warns_when_the_section_is_missing():
     problem = earn_queue_shortage(queue, floor=3)
     assert problem is not None
     assert "見つかりません" in problem
+
+
+# --- 台帳の昇格判定（2026-08-14）---
+
+
+def _ledger(*sections):
+    return "## 生きている教訓\n\n" + "\n\n".join(sections)
+
+
+def test_lesson_promotions_counts_articles_named_in_the_section():
+    ledger = _ledger(
+        "### ★1. 禁止は受け皿と対で\n\n`alpha` と `beta` で出た。",
+        "### 2. 別の教訓\n\n`alpha` だけ。",
+    )
+    problems, notes = lesson_promotions(ledger, {"alpha", "beta"}, cap=15)
+    assert problems == []
+    assert any("★1." in n and "記事2本" in n for n in notes)
+
+
+def test_lesson_promotions_counts_references_from_other_sections():
+    """あとから「N番が再発」と書かれたものも1回に数える。
+
+    再発は、その節ではなく**別の節**に書かれる（夜の担当は追記のみなので、
+    既存の節を書き換えられない）。片方だけ数えると昇格候補が沈む。
+    """
+    ledger = _ledger(
+        "### 4. 自己申告は当てにならない\n\n`alpha` で出た。",
+        "### ★17. 添削は削除で処理する\n\n📌 **4番が再発した**。",
+        "### ★18. 既定は決めて進む\n\n📌 **4番が再発（3本目）**。",
+    )
+    _, notes = lesson_promotions(ledger, {"alpha"}, cap=15)
+    assert any("4." in n and "被参照2件" in n for n in notes)
+
+
+def test_lesson_promotions_does_not_count_a_section_referring_to_itself():
+    """自分の節で「12番の系列」と書いても、それは再発ではない。
+
+    記事2本で一覧には出る。そこで被参照が0件のままであることを見る。
+    """
+    ledger = _ledger(
+        "### 12. 計測スクリプトを疑う\n\n12番の系列。`alpha` と `beta` で出た。"
+    )
+    _, notes = lesson_promotions(ledger, {"alpha", "beta"}, cap=15)
+    assert any("記事2本＋被参照0件" in n for n in notes)
+
+
+def test_lesson_promotions_is_quiet_about_lessons_seen_once():
+    ledger = _ledger("### 9. 一度きりの教訓\n\n`alpha` で出た。")
+    _, notes = lesson_promotions(ledger, {"alpha"}, cap=15)
+    assert any("0件あります" in n for n in notes)
+
+
+def test_lesson_promotions_fires_when_the_ledger_is_over_the_cap():
+    """上限を超えたら知らせる。長い台帳は読まれなくなって死ぬ。"""
+    ledger = _ledger(*(f"### {i}. 教訓{i}\n\n本文。" for i in range(1, 21)))
+    problems, _ = lesson_promotions(ledger, set(), cap=15)
+    assert len(problems) == 1
+    assert "20件" in problems[0]
+
+
+def test_lesson_promotions_is_quiet_at_the_cap():
+    ledger = _ledger(*(f"### {i}. 教訓{i}\n\n本文。" for i in range(1, 16)))
+    problems, _ = lesson_promotions(ledger, set(), cap=15)
+    assert problems == []
+
+
+def test_lesson_promotions_warns_when_no_section_can_be_read():
+    """見出しの形を変えて番人が黙って死なないこと（静かな欠落の防止）。"""
+    problems, notes = lesson_promotions("## 生きている教訓\n\n* 1. 形が違う\n", set())
+    assert len(problems) == 1
+    assert "1件も読めません" in problems[0]
+    assert notes == []
 
 
 # --- 証拠の機械照合（v1.5・2026-08-14）---
