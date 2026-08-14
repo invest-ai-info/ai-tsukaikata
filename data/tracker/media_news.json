@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T06:44:28.601215+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-14T06:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "一風変わったチャットボットサービス「ChatTJB」が注目を集めている。制作者であるアーティストの男性が、寄せられた質問のすべてに自ら答えていたのだ。",
+      "title": "AIチャットボット「ChatTJB」の正体は1人の男性、質問殺到で限界に--目的は？",
+      "uid": "85195a5aa5f182c0",
+      "url": "https://japan.cnet.com/article/35251560/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-08-14T05:06:15.076052+00:00",
       "importance": "minor",
       "label": "CNET Japan",
