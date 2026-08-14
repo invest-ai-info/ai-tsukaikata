@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-14T02:48:19.675404+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-14T02:28:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "マサチューセッツ州に住む17歳の少年が、母親と弟を殺害した容疑で起訴されました。捜査により、この少年はChatGPTに「家族殺しを題材にした小説のアイデア」を聞いていたことが明らかになりました。 続きを読む...",
+      "title": "母と弟を殺害した10代の少年がChatGPTにアイデアを求めていたことが判明",
+      "uid": "cfa5ff17ae168be5",
+      "url": "https://gigazine.net/news/20260814-teen-kill-family-chatgpt/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-14T02:48:19.675404+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-14T02:16:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "中国のAI開発企業であるMiniMaxが音楽生成AI「MiniMax-Music3」を日本時間の2026年8月14日に公開しました。MiniMax-Music3はテキストでの指示に沿ってボーカル付きの楽曲を生成可能で、日本語ボーカルの生成にも対応しています。モデルが無償で公開されており、ローカルで実行可能。さらに、ユーザーの短い入力をもとに長い歌詞やAIモデルに認識させやすい構造化されたプロンプ…",
+      "title": "MiniMaxが動画生成AIに続いて音楽生成AI「MiniMax-Music3」を無償公開、ローカルで最大5分の日本語ボーカル付き楽曲を生成可能",
+      "uid": "69cf5dff152cd4a1",
+      "url": "https://gigazine.net/news/20260814-minimax-music3/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-14T02:48:19.675404+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-14T01:32:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは、Linux向けに「ChatGPT」デスクトップアプリの提供を開始した。現在はプレビュー版で、Linux上でChatGPT、「ChatGPT Work」、「Codex」を利用できる。",
+      "title": "Linux版「ChatGPT」公式アプリが登場、UbuntuやDebianなどに対応",
+      "uid": "1985d27df1d8192d",
+      "url": "https://japan.cnet.com/article/35251554/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-14T02:48:19.675404+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-14T01:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "学生団体「イルカの耳研究会」は、AI・大学生・専門家が連携し、子どもの話を聞く体制を7月よりスタートさせた。今回のAI導入にあわせ「子どもが安心して話したくなるチャットAI」をテーマに研究を開始する。",
+      "title": "学生が“子どものためのチャットAI”を研究。独自のチャットAIの設計に活かす",
+      "uid": "59c2a12d58e78038",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2131675.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-14T02:48:19.675404+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-14T00:51:06+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、複数のAIエージェントが同じ環境で働くとどうなるかを検証した実験結果を公開した。互いを妨害し合う“縄張り争い”や、示し合わせたような価格カルテル、全員が同じ判断をして資源を食い潰す現象などが確認された。個々のAIを安全にするだけでは防げない問題があると警告している。",
+      "title": "AIエージェント同士が“縄張り争い”、マルウェアで妨害も　Anthropicがマルチエージェント実験の結果を公開",
+      "uid": "d6a8d86b69e97a37",
+      "url": "https://www.itmedia.co.jp/news/article/2608/14/2000000538/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-14T00:01:18.717033+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
