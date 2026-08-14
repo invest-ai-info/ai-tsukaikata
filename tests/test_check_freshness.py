@@ -12,6 +12,7 @@ from check_freshness import (  # noqa: E402
     external_links,
     earn_queue_shortage,
     evidence_gaps,
+    lawyer_deadline_gate,
     lesson_promotions,
     queue_shortage,
 )
@@ -240,6 +241,48 @@ def test_earn_queue_shortage_warns_when_the_section_is_missing():
     problem = earn_queue_shortage(queue, floor=3)
     assert problem is not None
     assert "見つかりません" in problem
+
+
+# --- 弁護士相談の期日ゲート（2026-08-14・収入エンジン設計 D-4）---
+
+
+def test_lawyer_gate_is_a_note_while_the_deadline_is_far():
+    """遠いうちは表示のみ。直せない警告を毎週メールすると一覧が読まれなくなる。"""
+    problems, notes = lawyer_deadline_gate(
+        date(2026, 8, 15), deadline=date(2026, 10, 31), done=False)
+    assert problems == []
+    assert len(notes) == 1
+    assert "残り77日" in notes[0]
+
+
+def test_lawyer_gate_escalates_in_the_final_month():
+    problems, notes = lawyer_deadline_gate(
+        date(2026, 10, 10), deadline=date(2026, 10, 31), done=False)
+    assert notes == []
+    assert len(problems) == 1
+    assert "残り21日" in problems[0]
+
+
+def test_lawyer_gate_declares_the_downgrade_after_the_deadline():
+    """期日超過＝グレー全域の格下げ宣言。どちらに転んでも浮遊状態が消える。"""
+    problems, _ = lawyer_deadline_gate(
+        date(2026, 11, 1), deadline=date(2026, 10, 31), done=False)
+    assert len(problems) == 1
+    assert "白のみで設計" in problems[0]
+
+
+def test_lawyer_gate_boundary_day_is_still_the_ramp_not_the_downgrade():
+    """期日当日はまだ格下げではない（過ぎたら、が仕様）。"""
+    problems, _ = lawyer_deadline_gate(
+        date(2026, 10, 31), deadline=date(2026, 10, 31), done=False)
+    assert "残り0日" in problems[0]
+    assert "格下げされます" in problems[0]
+    assert "格下げです" not in problems[0]  # 宣言文（超過後）とは別の文
+
+
+def test_lawyer_gate_goes_silent_once_the_consultation_is_done():
+    """済んだら黙る。済んだ後も鳴り続ける検査は読まれなくなる。"""
+    assert lawyer_deadline_gate(date(2026, 11, 1), done=True) == ([], [])
 
 
 # --- 台帳の昇格判定（2026-08-14）---

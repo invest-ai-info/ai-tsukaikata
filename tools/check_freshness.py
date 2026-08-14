@@ -380,6 +380,54 @@ def lesson_promotions(ledger_text: str, slugs, cap: int = LEDGER_CAP):
     return (problems, notes)
 
 
+# --- 弁護士相談の期日ゲート（2026-08-14・収入エンジン設計 D-4）---
+#
+# 「決めない状態」を機械が禁止する。相談が期日までに実施されなければ、
+# グレー全域（保留中の題材・公開範囲の拡張）は「今四半期は白のみで設計」へ
+# 格下げされる——どちらに転んでも浮遊状態が消える。
+# 設計書＝docs/superpowers/specs/2026-08-14-income-engine-design.md
+#
+# ⚠️ 期日と状態はここが唯一の置き場（2か所に書くと片方が腐る）。
+# 相談が済んだら LAWYER_CONSULT_DONE を True にする（1行のコミットで解除）。
+# 📌 早期トリガー「メアド100件到達」は自動では読めないので、達したら
+# 人が期日を手前に詰める（この定数を書き換える）。
+LAWYER_GATE_DEADLINE = date(2026, 10, 31)
+LAWYER_CONSULT_DONE = False
+LAWYER_GATE_RAMP_DAYS = 28  # 期日の4週前から週次メールに昇格する
+
+
+def lawyer_deadline_gate(today: date,
+                         deadline: date = LAWYER_GATE_DEADLINE,
+                         done: bool = LAWYER_CONSULT_DONE):
+    """(problems, notes) を返す。
+
+    鳴り方は3段階。⚠️ 遠いうちから problems で鳴らさない——直せない警告を
+    毎週メールすると一覧が読まれなくなる（/start/ の鮮度検査で学んだ型）。
+
+      期日まで4週超 : notes（表示のみ・失敗させない）
+      期日まで4週以内: problems（毎週メール＝最後の1か月だけ急かす）
+      期日超過      : problems（格下げの宣言。以後は毎週これが出る）
+    """
+    if done:
+        return ([], [])
+    days_left = (deadline - today).days
+    if days_left < 0:
+        return ([
+            f"弁護士相談の期日ゲート: 期日（{deadline}）を過ぎました。"
+            f"設計どおり、グレー全域は「今四半期は白のみで設計」へ格下げです。"
+            f"解除は相談実施後に LAWYER_CONSULT_DONE を True にする"
+        ], [])
+    if days_left <= LAWYER_GATE_RAMP_DAYS:
+        return ([
+            f"弁護士相談の期日ゲート: 期日（{deadline}）まで残り{days_left}日。"
+            f"未実施のまま期日を過ぎると、グレー全域が白のみ設計へ自動格下げされます"
+        ], [])
+    return ([], [
+        f"弁護士相談の期日ゲート: 期日 {deadline}（残り{days_left}日）。"
+        f"メアド100件に達したら期日を手前に詰める（tools/check_freshness.py）"
+    ])
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     articles, errors = load_articles(root / "content")
@@ -399,6 +447,11 @@ def main() -> int:
             shortage = check(queue_text)
             if shortage:
                 report.problems.append(shortage)
+
+    # 弁護士相談の期日ゲート（収入エンジン設計 D-4）
+    gate_problems, gate_notes = lawyer_deadline_gate(date.today())
+    report.problems.extend(gate_problems)
+    report.notes.extend(gate_notes)
 
     # 台帳の昇格判定。輪2（月曜）が数え直さずに済むように、数はここで出す。
     ledger_file = root / "content" / "_lessons.md"
