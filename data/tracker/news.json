@@ -2993,48 +2993,6 @@
       "uid": "512015744152eb26",
       "url": "https://deepmind.google/blog/strengthening-singapores-ai-future-a-new-national-partnership/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-05-16T08:16:06+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Clare Bryant uses Co-Scientist to identify genetic triggers in emerging infectious diseases.",
-      "summary_ja": "Clare Bryant氏がAI「Co-Scientist」で新興感染症の原因を特定する。\n新興感染症の遺伝子的な引き金を見つける。",
-      "summary_source": "gemini",
-      "title": "Finding the molecular switches behind new infectious diseases",
-      "uid": "ded1c65a039b1b6c",
-      "url": "https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-05-16T08:08:44+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Calico Life Sciences uses Co-Scientist to connect scattered findings and generate new leads in aging research.",
-      "summary_ja": "Calico Life Sciences社がAI「Co-Scientist」を使い老化研究を推進する。\n散らばった知見を繋げ、新たな研究の手掛かりを生み出す。",
-      "summary_source": "gemini",
-      "title": "Opening new paths in aging research",
-      "uid": "00248d3e119a45c9",
-      "url": "https://deepmind.google/blog/opening-new-paths-in-aging-research/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-05-16T08:00:15+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Filippo Menolascina uses Co-Scientist to identify new liver disease treatments and explain why existing drugs only help certain patients.",
-      "summary_ja": "Filippo Menolascina氏がAI「Co-Scientist」で肝疾患治療研究を進める。\n新しい治療法を探し、既存薬が一部にしか効かない理由を解明する。",
-      "summary_source": "gemini",
-      "title": "Accelerating discovery of liver disease mechanisms",
-      "uid": "9b219e49ce105aee",
-      "url": "https://deepmind.google/blog/accelerating-discovery-of-liver-disease-mechanisms/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
