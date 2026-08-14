@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="382" viewBox="0 0 720 382" role="img" aria-label="架空の文字起こし2本に同じ指示文をそれぞれ2回ずつ通し、1つの頼み方につき4回の結果がそろったかどうかを4つの観点で並べた表。観点は、出す形（見出しと表の列）、時刻タグが残った行、語尾が原文のまま残った数、本文の誤変換を直したかどうか。①手でうまくいった指示文を素朴に短くしただけの版では、出す形が4回とも違い、時刻タグは1本目の2回が29行中0行、2本目の2回が31行中31行、語尾は7件中2件、4件、7件、7件、本文の誤変換は4回とも直された。②出す欄と順番を指示文の中に決めた版では、出す形が4回とも同じになり、時刻タグは4回とも全行残り、語尾は7件中6件、7件、7件、7件になったが、本文の誤変換を直した回が1回、直さなかった回が3回に割れた。③②に加えて、誤変換に見えるものも1文字も直さず、直したい箇所は要確認の表に入れる、と方針まで書いた版では、出す形も時刻タグも語尾も4回ともそろい、本文の誤変換は4回とも直されずに原文のまま残った。①では1本目の文字起こしだけ時刻と話者の行の形が丸ごと消えたが、2本目では残っており、同じ指示文でも入力によって形が変わる。②は見出しも表の列も4回とも一致するので、表だけを見ていると中身の方針が割れていることに気づけない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="382"/>
+<text class="t-strong" x="18" y="26">同じ指示文を4回走らせて、毎回そろったものと、そろわなかったもの</text>
+<text class="t-sm" x="18" y="45">架空の文字起こし2本（29行・31行）に、同じ指示文をそれぞれ2回ずつ通した＝1つの頼み方につき4回。</text>
+<text class="t-xs" x="186" y="78">出す形</text>
+<text class="t-xs" x="186" y="92">（見出し・列）</text>
+<text class="t-xs" x="317" y="78">時刻タグが</text>
+<text class="t-xs" x="317" y="92">残った行</text>
+<text class="t-xs" x="448" y="78">語尾が</text>
+<text class="t-xs" x="448" y="92">原文のまま</text>
+<text class="t-xs" x="579" y="78">本文の誤変換を</text>
+<text class="t-xs" x="579" y="92">直したか</text>
+<text class="t-sm" x="18" y="134">① 素朴に短くしただけ</text>
+<rect class="box-bad" x="179" y="108" width="125" height="62" rx="4"/>
+<text class="t-bad" x="186" y="144">4回とも違う</text>
+<rect class="box-bad" x="310" y="108" width="125" height="62" rx="4"/>
+<text class="t-bad" x="317" y="144">0・0・31・31</text>
+<rect class="box-bad" x="441" y="108" width="125" height="62" rx="4"/>
+<text class="t-bad" x="448" y="136">2/7・4/7</text>
+<text class="t-bad" x="448" y="152">7/7・7/7</text>
+<rect class="box-bad" x="572" y="108" width="125" height="62" rx="4"/>
+<text class="t-bad" x="579" y="144">4回とも直した</text>
+<text class="t-sm" x="18" y="206">② 欄と順番を決めた</text>
+<rect class="box-good" x="179" y="180" width="125" height="62" rx="4"/>
+<text class="t-good" x="186" y="216">4回とも同じ</text>
+<rect class="box-good" x="310" y="180" width="125" height="62" rx="4"/>
+<text class="t-good" x="317" y="216">4回とも全行</text>
+<rect class="box-good" x="441" y="180" width="125" height="62" rx="4"/>
+<text class="t-good" x="448" y="208">6/7・7/7</text>
+<text class="t-good" x="448" y="224">7/7・7/7</text>
+<rect class="box-bad" x="572" y="180" width="125" height="62" rx="4"/>
+<text class="t-bad" x="579" y="208">直した1回</text>
+<text class="t-bad" x="579" y="224">直さない3回</text>
+<text class="t-sm" x="18" y="278">③ ②＋直さないと</text>
+<text class="t-sm" x="18" y="294">　 どこへ入れるか</text>
+<rect class="box-good" x="179" y="252" width="125" height="62" rx="4"/>
+<text class="t-good" x="186" y="288">4回とも同じ</text>
+<rect class="box-good" x="310" y="252" width="125" height="62" rx="4"/>
+<text class="t-good" x="317" y="288">4回とも全行</text>
+<rect class="box-good" x="441" y="252" width="125" height="62" rx="4"/>
+<text class="t-good" x="448" y="288">4回とも 7/7</text>
+<rect class="box-good" x="572" y="252" width="125" height="62" rx="4"/>
+<text class="t-good" x="579" y="288">4回とも直さない</text>
+<text class="t-xs" x="18" y="336">※ ①は1本目だけ「[時刻] 話者:」の形が消え、29行から時刻が全部無くなった。2本目は31行とも残った。</text>
+<text class="t-xs" x="18" y="354">※ ②は見出しも表の列も4回とも一致する。それでも本文を直すかどうかが割れる＝表からは分からない。</text>
+<text class="t-xs" x="18" y="372">※ ③＝「誤変換に見えるものも1文字も直さない。直したい箇所は要確認に入れる」を足した版。禁止だけでなく、行き先まで書いてある。</text>
+</svg>

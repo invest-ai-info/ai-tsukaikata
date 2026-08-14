@@ -4823,6 +4823,221 @@ def gemini37_not_first_chart() -> None:
     )
 
 
+def transcript_auto_shape_vs_content_chart() -> None:
+    """置くだけの形に固定した指示文を、2本×2回＝4回走らせて何が揃ったか。
+
+    実測（2026-08-14・架空の文字起こし2本、29行と31行）。
+    判定はすべて Python の文字列照合。証拠＝
+    `docs/evidence/transcript-auto-same-every-time.md`。
+    """
+    cols = ("出す形\n（見出し・列）", "時刻タグが\n残った行", "語尾が\n原文のまま", "本文の誤変換を\n直したか")
+    rows = (
+        (
+            "① 素朴に短くしただけ",
+            ("4回とも違う", False),
+            ("0・0・31・31", False),
+            ("2/7・4/7\n7/7・7/7", False),
+            ("4回とも直した", False),
+        ),
+        (
+            "② 欄と順番を決めた",
+            ("4回とも同じ", True),
+            ("4回とも全行", True),
+            ("6/7・7/7\n7/7・7/7", True),
+            ("直した1回\n直さない3回", False),
+        ),
+        (
+            "③ ②＋直さないと\n　 どこへ入れるか",
+            ("4回とも同じ", True),
+            ("4回とも全行", True),
+            ("4回とも 7/7", True),
+            ("4回とも直さない", True),
+        ),
+    )
+    label_w = 158
+    left = 18 + label_w
+    col_w = (WIDTH - 36 - label_w) // len(cols)
+    pad = 10
+    top = 108
+    row_h, row_gap = 62, 10
+    height = top + len(rows) * (row_h + row_gap) - row_gap + 68
+    assert left + col_w * len(cols) <= WIDTH - 18, left + col_w * len(cols)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ指示文を4回走らせて、毎回そろったものと、そろわなかったもの</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の文字起こし2本（29行・31行）に、同じ指示文をそれぞれ2回ずつ通した"
+        "＝1つの頼み方につき4回。</text>\n",
+    ]
+    # ⚠️ text-anchor="middle" は使わない。src/figures.py の検査は x を左端として
+    # 見るので、中央寄せにすると必ず「はみ出し」と判定される。左寄せに揃える。
+    for index, title in enumerate(cols):
+        cx = left + index * col_w + pad
+        for line_no, line in enumerate(title.split("\n")):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 30 + line_no * 14}">'
+                f"{_esc(line)}</text>\n"
+            )
+    for r_index, row in enumerate(rows):
+        y = top + r_index * (row_h + row_gap)
+        name, cells = row[0], row[1:]
+        for line_no, line in enumerate(name.split("\n")):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{y + 26 + line_no * 16}">{_esc(line)}</text>\n'
+            )
+        for c_index, (text, good) in enumerate(cells):
+            x = left + c_index * col_w
+            box = "box-good" if good else "box-bad"
+            parts.append(
+                f'<rect class="{box}" x="{x + 3}" y="{y}" '
+                f'width="{col_w - 6}" height="{row_h}" rx="4"/>\n'
+            )
+            lines = text.split("\n")
+            start = y + row_h // 2 - (len(lines) - 1) * 8 + 5
+            for line_no, line in enumerate(lines):
+                cls = "t-good" if good else "t-bad"
+                parts.append(
+                    f'<text class="{cls}" x="{x + pad}" '
+                    f'y="{start + line_no * 16}">{_esc(line)}</text>\n'
+                )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 46}">'
+        "※ ①は1本目だけ「[時刻] 話者:」の形が消え、29行から時刻が全部無くなった。"
+        "2本目は31行とも残った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ ②は見出しも表の列も4回とも一致する。それでも本文を直すかどうかが割れる"
+        "＝表からは分からない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ ③＝「誤変換に見えるものも1文字も直さない。直したい箇所は要確認に入れる」"
+        "を足した版。禁止だけでなく、行き先まで書いてある。</text>\n"
+    )
+    alt = (
+        "架空の文字起こし2本に同じ指示文をそれぞれ2回ずつ通し、"
+        "1つの頼み方につき4回の結果がそろったかどうかを4つの観点で並べた表。"
+        "観点は、出す形（見出しと表の列）、時刻タグが残った行、"
+        "語尾が原文のまま残った数、本文の誤変換を直したかどうか。"
+        "①手でうまくいった指示文を素朴に短くしただけの版では、"
+        "出す形が4回とも違い、時刻タグは1本目の2回が29行中0行、"
+        "2本目の2回が31行中31行、語尾は7件中2件、4件、7件、7件、"
+        "本文の誤変換は4回とも直された。"
+        "②出す欄と順番を指示文の中に決めた版では、出す形が4回とも同じになり、"
+        "時刻タグは4回とも全行残り、語尾は7件中6件、7件、7件、7件になったが、"
+        "本文の誤変換を直した回が1回、直さなかった回が3回に割れた。"
+        "③②に加えて、誤変換に見えるものも1文字も直さず、"
+        "直したい箇所は要確認の表に入れる、と方針まで書いた版では、"
+        "出す形も時刻タグも語尾も4回ともそろい、"
+        "本文の誤変換は4回とも直されずに原文のまま残った。"
+        "①では1本目の文字起こしだけ時刻と話者の行の形が丸ごと消えたが、"
+        "2本目では残っており、同じ指示文でも入力によって形が変わる。"
+        "②は見出しも表の列も4回とも一致するので、"
+        "表だけを見ていると中身の方針が割れていることに気づけない。"
+    )
+    (OUT / "transcript-auto-shape-vs-content.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def transcript_auto_what_drifts_chart() -> None:
+    """形も方針も固定したあとに、まだ残っていたブレ。
+
+    実測（2026-08-14）。同じ指示文の2回転を機械で突き合わせた結果。
+    証拠＝`docs/evidence/transcript-auto-same-every-time.md`。
+    """
+    groups = (
+        (
+            "整えたテキスト（本文）",
+            (
+                ("1本目・29行のうち違った行", 1, 29),
+                ("2本目・31行のうち違った行", 0, 31),
+            ),
+        ),
+        (
+            "要確認の表",
+            (
+                ("1本目・片方にしか無かった行", 1, 9),
+                ("2本目・種類の欄が食い違った行", 1, 7),
+            ),
+        ),
+    )
+    left, right = 296, 592
+    span = right - left
+    top = 112
+    bar_h, bar_gap = 20, 16
+    head_gap = 30
+    height = top + sum(head_gap + len(r) * (bar_h + bar_gap) for _, r in groups) + 60
+    assert right + 96 <= WIDTH - 18, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "形も方針も固定したあとに、それでも残ったブレ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ指示文を2回ずつ通して、1回目と2回目を機械で突き合わせた"
+        "（灰色＝全体、色つき＝違った数）。</text>\n",
+        f'<text class="t-xs" x="{left}" y="{top - 34}">'
+        "見出しの名前・並び順・表の列は、どちらの本でも2回とも完全に一致した。</text>\n",
+    ]
+    y = top
+    for title, rows in groups:
+        parts.append(f'<text class="t-accent" x="18" y="{y + 12}">{_esc(title)}</text>\n')
+        y += head_gap
+        for name, diff, total in rows:
+            width = max(3.0, span * diff / total)
+            parts.append(f'<text class="t-sm" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+            parts.append(
+                f'<rect class="bar-old" x="{left}" y="{y}" '
+                f'width="{span}" height="{bar_h}" rx="3" opacity="0.35"/>\n'
+            )
+            if diff:
+                parts.append(
+                    f'<rect class="bar-out" x="{left}" y="{y}" '
+                    f'width="{width:.1f}" height="{bar_h}" rx="3"/>\n'
+                )
+            cls = "t-good" if diff == 0 else "t-bad"
+            parts.append(
+                f'<text class="{cls}" x="{right + 12}" y="{y + bar_h - 5}">'
+                f"{diff} / {total}</text>\n"
+            )
+            y += bar_h + bar_gap
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 46}">'
+        "※ 1本目で消えた1行＝「稼働から6か月と書いてあったはずです／音源で確かめる」。"
+        "残り8行は2回とも同じだった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ 2本目は行数も中身も一致したが、担当者名の行だけ種類が"
+        "「音源で確かめる」と「話の中の食い違い」に割れた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 本文で違った1行は、つなぎ語の「あー、」が片方に残っただけ。"
+        "発言そのものの書き換えは、2本とも0行。</text>\n"
+    )
+    alt = (
+        "出す形と、直すか直さないかの方針まで指示文に書いたうえで、"
+        "同じ指示文を2回ずつ通し、1回目と2回目の違いを機械で突き合わせた横棒グラフ。"
+        "見出しの名前と並び順、表の列は、どちらの文字起こしでも2回とも完全に一致した。"
+        "整えたテキストの本文では、1本目は29行のうち違ったのが1行、"
+        "2本目は31行のうち違った行が0行だった。"
+        "違った1行は、つなぎ語のあー、が片方の回にだけ残ったもので、"
+        "発言そのものの書き換えは2本とも0行だった。"
+        "一方、要確認の表にはブレが残り、"
+        "1本目は9行のうち1行が片方の回にしか出ず、"
+        "消えたのは、稼働から6か月と書いてあったはずです、を音源で確かめる、という行だった。"
+        "2本目は7行で行数も中身も一致したが、担当者名の行だけ、"
+        "種類の欄が音源で確かめると話の中の食い違いに割れた。"
+        "そろうのは本文のほうが先で、最後まで残るのは要確認の表のブレである。"
+    )
+    (OUT / "transcript-auto-what-drifts.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -4896,4 +5111,6 @@ if __name__ == "__main__":
     sell_what_carries_over_chart()
     video_length_drift_chart()
     video_numbers_you_will_say_chart()
-    print(f"72枚を {OUT} に出力しました")
+    transcript_auto_shape_vs_content_chart()
+    transcript_auto_what_drifts_chart()
+    print(f"74枚を {OUT} に出力しました")
