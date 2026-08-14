@@ -3625,6 +3625,278 @@ def runbook_silent_completion_chart() -> None:
     )
 
 
+def listing_facts_vs_flourish_chart() -> None:
+    """フリマの商品説明文。盛り語が減ると、メモの事実がいくつ残るか。
+
+    実測（2026-08-14・架空の出品メモ19行から23項目を機械で照合）。
+    盛り語は先に決めた49語のうち、説明文の本文に出たものだけを数えた
+    （〔私が確かめること〕欄の「書いていません」という説明は数えない）。
+    """
+    rows = [
+        ("そのまま頼む", 14, 14, False),
+        ("＋「書いていないことは書くな」", 17, 0, False),
+        ("＋〔私が確かめること〕を作らせる", 21, 1, False),
+        ("＋不明も本文に書かせる", 23, 0, True),
+    ]
+    total = 23
+    label_x = 18
+    bar_x, bar_max = 250, 300
+    row_h, gap_y = 30, 20
+    top = 104
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 70
+    assert bar_x + bar_max + 150 <= WIDTH - 18, bar_x + bar_max + 150
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "盛りが入ったぶんだけ、メモの事実が落ちている</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ架空の出品メモ（19行）。頼み方だけを変えて、返ってきた説明文を機械で照合した。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">メモの23項目のうち、説明文に残った数</text>\n',
+        f'<text class="t-xs" x="{bar_x + bar_max + 62}" y="{top - 12}">本文の盛り語</text>\n',
+    ]
+    for index, (name, kept, flourish, best) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * kept / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 20}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        klass = "bar-new" if best else "bar-in"
+        parts.append(
+            f'<rect class="{klass}" x="{bar_x}" y="{y + 4}" '
+            f'width="{width}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        value_class = "t-accent" if best else "t-sm"
+        parts.append(
+            f'<text class="{value_class}" x="{bar_x + width + 10}" y="{y + 20}">'
+            f"{kept}件</text>\n"
+        )
+        flourish_class = "t-bad" if flourish >= 10 else "t-sm"
+        parts.append(
+            f'<text class="{flourish_class}" x="{bar_x + bar_max + 62}" y="{y + 20}">'
+            f"{flourish}件</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 50}">'
+        "※ そのまま頼んだ回で落ちた9項目は、なめし方が不明・金具の材質が不明・"
+        "水濡れは試していない・金具の耐久は試していない・追跡なし、など。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ 禁止だけを足すと盛り語は0件になるが、"
+        "落ちた6項目のうち5項目が「不明」「試していない」「追跡なし」だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 3行目に残った盛り語1件は「それ以外に目立った傷や汚れはありません」。"
+        "確かめていない箇所まで含めて言い切っている。</text>\n"
+    )
+    alt = (
+        "架空の出品メモ19行から作った商品説明文を、頼み方を4通りに変えて機械で照合した図。"
+        "メモから取り出した23項目のうち説明文に残った数と、"
+        "先に決めた49語の盛り語のうち本文に出た数を並べている。"
+        "そのまま頼むと、残った事実は23項目中14項目で、盛り語は14件だった。"
+        "落ちた9項目は、制作時間、なめし方と産地が不明、金具の材質が不明、"
+        "色ムラが1ミリであること、水濡れは試していない、金具の耐久は試していない、"
+        "価格、普通郵便で追跡なし、同じ型を3個作った、である。"
+        "メモに書いていないことは書かないでくださいと足すと、盛り語は0件になるが、"
+        "残った事実は17項目にとどまった。"
+        "落ちた6項目のうち5項目は、なめし方が不明、金具の材質が不明、水濡れは試していない、"
+        "金具の耐久は試していない、追跡なし、で、いずれも買う人に不利な情報である。"
+        "良し悪しの言葉は引用できるときだけ使い、書けないものは私が確かめることとして"
+        "箇条書きにしてくださいと足すと、事実は21項目まで戻り、本文に残った盛り語は1件になった。"
+        "その1件はそれ以外に目立った傷や汚れはありませんという一文で、"
+        "確かめていない箇所まで含めて言い切っている。"
+        "さらに不明と試していない項目と追跡の有無を本文の中に書いてくださいと足すと、"
+        "盛り語0件のまま23項目すべてが残った。"
+        "つまり盛りが入った量だけ事実が落ちており、禁止だけを渡すと不利な情報まで一緒に消える。"
+    )
+    (OUT / "listing-facts-vs-flourish.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def reply_terms_survive_chart() -> None:
+    """取引先への返事。丁寧さを強めるほど、こちらが決めた条件が文面から消える。
+
+    実測（2026-08-14・先に決めた条件8件を11の文字列に分解して照合）。
+    ぼかし語15語は先に決め、材料（条件＋相手のメール）に1件も無いことを確かめてある。
+    """
+    rows = [
+        ("そのまま「角が立たないように」", 4, 8, False),
+        ("「できるだけ丁寧に」を足す", 0, 9, False),
+        ("「数字と期日は一字一句そのまま」", 11, 0, True),
+    ]
+    total = 11
+    label_x = 18
+    bar_x, bar_max = 258, 290
+    row_h, gap_y = 32, 24
+    top = 106
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 88
+    assert bar_x + bar_max + 148 <= WIDTH - 18, bar_x + bar_max + 148
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "丁寧にするほど、自分が決めた条件が文面から消える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ材料（先に決めた条件8件＋相手のメール）。頼み方だけを変えた。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">条件の11の文字列のうち、文面に残った数</text>\n',
+        f'<text class="t-xs" x="{bar_x + bar_max + 60}" y="{top - 12}">ぼかし語</text>\n',
+    ]
+    for index, (name, kept, hedge, best) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * kept / total)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 21}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 5}" '
+            f'width="{bar_max}" height="{row_h - 10}" rx="3" opacity="0.35"/>\n'
+        )
+        if width:
+            klass = "bar-new" if best else "bar-in"
+            parts.append(
+                f'<rect class="{klass}" x="{bar_x}" y="{y + 5}" '
+                f'width="{width}" height="{row_h - 10}" rx="3"/>\n'
+            )
+        value_class = "t-accent" if best else ("t-bad" if kept == 0 else "t-sm")
+        parts.append(
+            f'<text class="{value_class}" x="{bar_x + width + 10}" y="{y + 21}">'
+            f"{kept}件</text>\n"
+        )
+        hedge_class = "t-bad" if hedge >= 8 else "t-sm"
+        parts.append(
+            f'<text class="{hedge_class}" x="{bar_x + bar_max + 60}" y="{y + 21}">'
+            f"{hedge}件</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 68}">'
+        "※ 消えたのは 15,000円・7日以内・銀行振込・8月29日・著作権の譲渡・30分まで、など。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 50}">'
+        "※ 消えるだけでなく反転する。「これより早くはできない」が"
+        "「早められるよう進めてまいります」になった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 32}">'
+        "※ ぼかし語15語は先に決めたもの。条件にも相手のメールにも1件も無い"
+        "（書く工程で入っている）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ どの返事も、読むかぎり礼儀正しい。条件と並べるまで、緩んだことに気づけない。</text>\n"
+    )
+    alt = (
+        "取引先への返事の文面を、頼み方を3通りに変えて機械で照合した図。"
+        "先に自分で決めた条件8件を11の文字列に分解し、文面にそのまま残った数を数えた。"
+        "あわせて、条件を緩めるぼかし語15語が何件出たかも数えている。"
+        "角が立たないように書いてくださいと頼むと、残った条件は11のうち4件で、ぼかし語は8件だった。"
+        "できるだけ丁寧に、相手の気分を害さないようにと足すと、残った条件は0件になり、"
+        "ぼかし語は9件に増えた。48,000円も9月12日も修正2回も、文面から丸ごと消えている。"
+        "私が決めた条件の数字と期日は一字一句そのまま文面に書いてください、"
+        "言い換えやぼかしをしないでください、と足すと、11件すべてが残り、ぼかし語は0件になった。"
+        "消えたのは、ページ追加1ページ15,000円、支払いは納品後7日以内、銀行振込、"
+        "素材は8月29日まで、著作権の譲渡、打ち合わせは1回30分まで、などである。"
+        "消えるだけでなく反転もしており、これより早くはできないという条件が、"
+        "早められるよう進めてまいりますという文になった。"
+        "ぼかし語15語は先に決めたもので、条件にも相手のメールにも1件も出てこない。"
+        "つまり書く工程で入っている。どの返事も読むかぎり礼儀正しく、"
+        "条件と並べるまで緩んだことに気づけない。"
+    )
+    (OUT / "reply-terms-survive.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def hourly_rate_boundary_chart() -> None:
+    """同じ作業記録から出る時給が、線引きだけでどれだけ動くか。
+
+    実測（2026-08-14・架空の作業記録26行・報酬5件）。
+    真値は記録から計算した（手で書いていない）。
+    """
+    rows = [
+        ("制作だけ", 5091, "A社 5,143 / C社 4,932"),
+        ("制作＋修正", 3490, "A社 3,972 / C社 2,748"),
+        ("制作＋修正＋打ち合わせ", 3231, "A社 3,600 / C社 2,517"),
+        ("全部（提案・事務も）", 2827, "A社 3,600 / C社 2,517"),
+    ]
+    biggest = max(v for _, v, _ in rows)
+    label_x = 18
+    bar_x, bar_max = 210, 210
+    row_h, gap_y = 30, 22
+    top = 106
+    height = top + len(rows) * (row_h + gap_y) - gap_y + 88
+    assert bar_x + bar_max + 250 <= WIDTH - 18, bar_x + bar_max + 250
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ記録・同じ報酬。時給は「線引き」だけで1.8倍動く</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の作業記録26行（報酬98,000円）。何を案件の作業時間に含めるかを変えただけ。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">全体の時給</text>\n',
+        f'<text class="t-xs" x="{bar_x + bar_max + 96}" y="{top - 12}">案件ごとの時給（一部）</text>\n',
+    ]
+    for index, (name, value, detail) in enumerate(rows):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * value / biggest)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 20}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        klass = "bar-new" if index == 0 else "bar-in"
+        parts.append(
+            f'<rect class="{klass}" x="{bar_x}" y="{y + 4}" '
+            f'width="{width}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{bar_x + width + 10}" y="{y + 20}">'
+            f"{value:,}円</text>\n"
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_x + bar_max + 96}" y="{y + 20}">{_esc(detail)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 68}">'
+        "※ 案件ごとの計算そのものは、5件とも真値と完全に一致した。"
+        "間違うのは計算ではない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 46}">'
+        "※ そのまま頼むと、どの線引きを使ったかは書かれない。読む側は1つの答えだと思う。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 順位も入れ替わる。全部入れるとE社が最下位（2,341円）、"
+        "制作＋修正だけだとC社が最下位（2,748円）。</text>\n"
+    )
+    alt = (
+        "同じ架空の作業記録26行と報酬98,000円から出した全体の時給を、"
+        "作業時間の線引きを4通りに変えて比べた図。"
+        "制作だけを案件の作業時間に含めると、全体の時給は5,091円になる。"
+        "制作と修正を含めると3,490円、制作と修正と打ち合わせを含めると3,231円、"
+        "提案や事務まで全部含めると2,827円になる。同じ記録から出る数字が1.8倍動いている。"
+        "案件ごとに見ると、A社サイトは5,143円から3,600円へ、"
+        "C社ロゴは4,932円から2,517円へ動く。"
+        "案件ごとの計算そのものは、5件とも記録から計算した真値と完全に一致していた。"
+        "つまり間違うのは計算ではない。"
+        "そのまま頼むと、どの線引きを使ったかは返りのどこにも書かれず、"
+        "読む側は1つの答えだと思って受け取ることになる。"
+        "順位も入れ替わり、全部入れるとE社記事が最下位で2,341円、"
+        "制作と修正だけだとC社ロゴが最下位で2,748円になる。"
+        "いちばん割に合わない案件が、線引きによって変わる。"
+    )
+    (OUT / "hourly-rate-boundary.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def transcript_keep_vs_rewrite_chart() -> None:
     """「整えてください」と「種類を並べて渡す」で、文字起こしに何が起きたか。
 
@@ -5294,4 +5566,7 @@ if __name__ == "__main__":
     transcript_auto_what_drifts_chart()
     weekly_loop_swelling_chart()
     weekly_loop_invented_carry_chart()
-    print(f"76枚を {OUT} に出力しました")
+    listing_facts_vs_flourish_chart()
+    reply_terms_survive_chart()
+    hourly_rate_boundary_chart()
+    print(f"79枚を {OUT} に出力しました")

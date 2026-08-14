@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="同じ架空の作業記録26行と報酬98,000円から出した全体の時給を、作業時間の線引きを4通りに変えて比べた図。制作だけを案件の作業時間に含めると、全体の時給は5,091円になる。制作と修正を含めると3,490円、制作と修正と打ち合わせを含めると3,231円、提案や事務まで全部含めると2,827円になる。同じ記録から出る数字が1.8倍動いている。案件ごとに見ると、A社サイトは5,143円から3,600円へ、C社ロゴは4,932円から2,517円へ動く。案件ごとの計算そのものは、5件とも記録から計算した真値と完全に一致していた。つまり間違うのは計算ではない。そのまま頼むと、どの線引きを使ったかは返りのどこにも書かれず、読む側は1つの答えだと思って受け取ることになる。順位も入れ替わり、全部入れるとE社記事が最下位で2,341円、制作と修正だけだとC社ロゴが最下位で2,748円になる。いちばん割に合わない案件が、線引きによって変わる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="380"/>
+<text class="t-strong" x="18" y="26">同じ記録・同じ報酬。時給は「線引き」だけで1.8倍動く</text>
+<text class="t-sm" x="18" y="45">架空の作業記録26行（報酬98,000円）。何を案件の作業時間に含めるかを変えただけ。</text>
+<text class="t-xs" x="210" y="94">全体の時給</text>
+<text class="t-xs" x="516" y="94">案件ごとの時給（一部）</text>
+<text class="t-sm" x="18" y="126">制作だけ</text>
+<rect class="bar-old" x="210" y="110" width="210" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="210" y="110" width="210" height="22" rx="3"/>
+<text class="t-accent" x="430" y="126">5,091円</text>
+<text class="t-sm" x="516" y="126">A社 5,143 / C社 4,932</text>
+<text class="t-sm" x="18" y="178">制作＋修正</text>
+<rect class="bar-old" x="210" y="162" width="210" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="210" y="162" width="144" height="22" rx="3"/>
+<text class="t-accent" x="364" y="178">3,490円</text>
+<text class="t-sm" x="516" y="178">A社 3,972 / C社 2,748</text>
+<text class="t-sm" x="18" y="230">制作＋修正＋打ち合わせ</text>
+<rect class="bar-old" x="210" y="214" width="210" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="210" y="214" width="133" height="22" rx="3"/>
+<text class="t-accent" x="353" y="230">3,231円</text>
+<text class="t-sm" x="516" y="230">A社 3,600 / C社 2,517</text>
+<text class="t-sm" x="18" y="282">全部（提案・事務も）</text>
+<rect class="bar-old" x="210" y="266" width="210" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="210" y="266" width="117" height="22" rx="3"/>
+<text class="t-accent" x="337" y="282">2,827円</text>
+<text class="t-sm" x="516" y="282">A社 3,600 / C社 2,517</text>
+<text class="t-xs" x="18" y="312">※ 案件ごとの計算そのものは、5件とも真値と完全に一致した。間違うのは計算ではない。</text>
+<text class="t-bad" x="18" y="334">※ そのまま頼むと、どの線引きを使ったかは書かれない。読む側は1つの答えだと思う。</text>
+<text class="t-xs" x="18" y="356">※ 順位も入れ替わる。全部入れるとE社が最下位（2,341円）、制作＋修正だけだとC社が最下位（2,748円）。</text>
+</svg>
