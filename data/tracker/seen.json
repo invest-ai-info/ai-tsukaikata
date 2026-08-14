@@ -8,7 +8,7 @@
   "latest": {
     "anthropic-news": "2026-08-14T19:16:00+00:00",
     "anthropic-sdk": "2026-08-13T18:35:49+00:00",
-    "claude-code": "2026-08-13T23:29:59+00:00",
+    "claude-code": "2026-08-14T22:20:57+00:00",
     "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-13T16:45:00+00:00",
@@ -47,6 +47,17 @@
       "title": "How Claude’s text watermark works",
       "uid": "c7be9f553b9d4f72",
       "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-14T22:20:57+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added GitLab merge request URL support to the --worktree flag and the claude agents view (where MRs display as !N ) Added an opt-in forward_user_identity apps gateway setting on Anthro…",
+      "title": "v2.1.233",
+      "uid": "1246398c4993fdfb",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
       "vendor": "Anthropic"
     }
   ],
@@ -97,6 +108,7 @@
     "10b5403829228bce": "2026-08-02T11:35:58.106550+00:00",
     "11025a21f60539e7": "2026-08-14T05:06:15.076052+00:00",
     "110fbcee8e39abdb": "2026-08-13T12:01:33.145239+00:00",
+    "1246398c4993fdfb": "2026-08-14T22:42:40.927953+00:00",
     "1301c07e627806af": "2026-08-13T12:01:33.145239+00:00",
     "131d20c7731c52b9": "2026-08-14T05:06:15.076052+00:00",
     "139a9a688c512297": "2026-08-13T22:05:19.093205+00:00",
