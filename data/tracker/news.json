@@ -13,6 +13,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-15T01:52:13.409322+00:00",
+      "importance": "major",
+      "label": "Qwen 新モデル",
+      "published": "2026-08-14T15:55:10+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
+      "title": "qwen/qwen3.8-27b",
+      "uid": "3380dbec625f2419",
+      "url": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "vendor": "Alibaba Qwen"
+    },
+    {
       "first_seen": "2026-08-14T00:01:18.717033+00:00",
       "importance": "minor",
       "label": "Claude Code",
