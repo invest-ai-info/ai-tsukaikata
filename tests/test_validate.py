@@ -489,3 +489,31 @@ def test_money_note_without_checked_date_is_detected():
 
 def test_article_without_money_note_passes():
     assert validate([_article(body="金額の話をしない記事です。")]) == []
+
+
+@pytest.mark.parametrize(
+    "phrase",
+    ["必ず稼げます", "確実に稼げる方法", "絶対に稼げます", "誰でも稼げる", "月30万円保証"],
+)
+def test_income_guarantee_phrase_is_detected(phrase):
+    errors = validate([_article(body=f"この方法なら{phrase}。")])
+    assert any("稼げる" in e or "保証" in e for e in errors)
+
+
+def test_disclaimer_itself_is_not_flagged():
+    # 免責文は「保証」を含むが、これは検出してはいけない（自分の型を自分で殺す）
+    assert validate([_article(body=MONEY_OK)]) == []
+
+
+def test_normal_earning_talk_passes():
+    assert validate([_article(body="副業の作業をAIに手伝わせる話です。")]) == []
+
+
+def test_safety_scene_may_quote_scam_phrases():
+    # 🚨 詐欺を防ぐ場面は、詐欺の勧誘文句を引用するのが仕事。
+    # ここで止めると、既存の too-good-offer-checklist の系列が書けなくなる。
+    article = _article(
+        body="広告に「必ず稼げます」とあったら、判定させずに確かめる手順に変えます。",
+        scene="safety",
+    )
+    assert validate([article]) == []

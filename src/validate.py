@@ -102,6 +102,22 @@ MONEY_DISCLAIMER = "収益を保証するものではありません"
 MONEY_SOURCE_RE = re.compile(r'href="https?://')
 MONEY_CHECKED_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 
+# 収益を保証する断定。earn の黒レーン（2026-08-13）をコードにしたもの。
+# ⚠️ 完全一致の少数だけにする。日本語の断定を正規表現で広く追うと誤検知が出て、
+# validate 全体の信用が落ちる（このサイトの判断済みの型）。
+BANNED_INCOME_PHRASES = (
+    "必ず稼げ",
+    "確実に稼げ",
+    "絶対に稼げ",
+    "誰でも稼げ",
+    "円保証",
+    "収入保証",
+)
+# 🚨 詐欺を防ぐ場面は、詐欺の勧誘文句を引用するのが仕事なので除外する。
+# ここを除外しないと、うちの safety 記事（「AIで稼げる」を引用している）の
+# 系列が書けなくなる＝番人が本来の仕事を邪魔する形になる。
+INCOME_PHRASE_EXEMPT_SCENES = frozenset({"safety"})
+
 TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -305,6 +321,23 @@ def _money_note_errors(where: str, body_html: str) -> list[str]:
     return errors
 
 
+def _income_phrase_errors(where: str, article: Article) -> list[str]:
+    """収益を保証する断定を見つける。
+
+    ⚠️ 誤検知してはいけないものが2つある:
+    ①免責文（「収益を保証するものではありません」）＝語を選んで避けてある
+     （「円保証」「収入保証」は免責文と一致しない）
+    ②詐欺を防ぐ場面の引用＝場面ごと除外する
+    """
+    if article.scene in INCOME_PHRASE_EXEMPT_SCENES:
+        return []
+    return [
+        f"{where}: 収益を保証する書き方があります（「{phrase}」）"
+        for phrase in BANNED_INCOME_PHRASES
+        if phrase in article.body_html
+    ]
+
+
 def _heading_errors(where: str, body_html: str) -> list[str]:
     """見出しのclassを検査する。
 
@@ -431,6 +464,7 @@ def validate(
         errors += _density_errors(where, article)
         errors += _checked_errors(where, article, today)
         errors += _money_note_errors(where, article.body_html)
+        errors += _income_phrase_errors(where, article)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(
