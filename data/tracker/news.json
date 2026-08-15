@@ -3001,20 +3001,6 @@
       "uid": "8c099460ba115f8f",
       "url": "https://deepmind.google/blog/gemini-for-science-ai-experiments-and-tools-for-a-new-era-of-discovery/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-05-17T13:43:50+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "We're expanding our tools to help you understand how content was created and edited across the web.",
-      "summary_ja": "ウェブ上のコンテンツがどう作られたか分かるように。\n作成や編集過程を理解しやすくするツールを拡大します。",
-      "summary_source": "gemini",
-      "title": "Making it easier to understand how content was created and edited",
-      "uid": "f71589d6fa18f2ab",
-      "url": "https://deepmind.google/blog/making-it-easier-to-understand-how-content-was-created-and-edited/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
