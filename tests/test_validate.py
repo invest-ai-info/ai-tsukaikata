@@ -493,7 +493,14 @@ def test_article_without_money_note_passes():
 
 @pytest.mark.parametrize(
     "phrase",
-    ["必ず稼げます", "確実に稼げる方法", "絶対に稼げます", "誰でも稼げる", "月30万円保証"],
+    [
+        "必ず稼げます",
+        "確実に稼げる方法",
+        "絶対に稼げます",
+        "誰でも稼げる",
+        "月30万円保証",
+        "収入保証つきの案件",  # 6語すべてを通す（1語だけ通らないと静かに死ぬ）
+    ],
 )
 def test_income_guarantee_phrase_is_detected(phrase):
     errors = validate([_article(body=f"この方法なら{phrase}。")])
@@ -517,3 +524,12 @@ def test_safety_scene_may_quote_scam_phrases():
         scene="safety",
     )
     assert validate([article]) == []
+
+
+def test_other_scenes_are_not_exempt():
+    # 🚨 除外は safety だけ。`if article.scene:` と書き間違えると、
+    # 場面のある記事が全部すり抜けるのに、上のテストは全部通ってしまう。
+    # ここが唯一その取り違えを捕まえる。
+    article = _article(body="この方法なら必ず稼げます。", scene="earn")
+    errors = validate([article])
+    assert any("必ず稼げ" in e for e in errors)
