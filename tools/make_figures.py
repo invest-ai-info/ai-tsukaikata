@@ -69,6 +69,113 @@ def _esc(text: str) -> str:
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+
+def estimate_range_naive_vs_log_chart() -> None:
+    """「聞いただけ」と「自分の記録を貼った」で、返ってきた見積もりの幅を並べる。
+
+    実測（2026-08-15・架空の案件1件と架空の作業記録3本）。
+    帯は返りに書いてあった合計をそのまま分に直したもの。
+    縦の点線は、記録に実際に残っている2本の合計（675分・725分）。
+    """
+    lo_axis, hi_axis = 540, 1020  # 9時間〜17時間
+    plot_x, plot_w = 190, 500
+    scale = plot_w / (hi_axis - lo_axis)
+
+    def px(minutes: float) -> float:
+        return plot_x + (minutes - lo_axis) * scale
+
+    groups = [
+        ("記録を渡さずに聞いた（3回）", "bar-old", [
+            ("1回目　10〜16時間", 600, 960),
+            ("2回目　12〜16時間", 720, 960),
+            ("3回目　10〜13時間", 600, 780),
+        ]),
+        ("自分の作業記録を貼った（3回）", "bar-new", [
+            ("1回目　670〜765分", 670, 765),
+            ("2回目　660〜770分", 660, 770),
+            ("3回目　665〜755分", 665, 755),
+        ]),
+    ]
+    actual = [675, 725]
+
+    top = 118
+    pitch, bar_h = 26, 18
+    rows = sum(1 + len(items) for _, _, items in groups)
+    plot_bottom = top + rows * pitch
+    axis_y = plot_bottom + 8
+    height = axis_y + 24 + 24 + 22 + 22 + 16
+
+    assert px(hi_axis) + 18 <= WIDTH, px(hi_axis)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ仕事の見積もり。聞いただけだと 10〜16時間、記録を貼ると 11.0〜12.8時間</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の案件1件（5,000字・未経験の分野）に、同じ指示文を3回ずつ通した実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "帯は、返ってきた合計そのまま。縦の点線は、記録に実際に残っている2本の合計。</text>\n",
+        f'<text class="t-xs" x="{px(actual[1]) + 10:.1f}" y="{top - 8}">'
+        "← 実際にかかった2本（675分・725分）</text>\n",
+    ]
+
+    for minutes in actual:
+        x = px(minutes)
+        parts.append(
+            f'<path class="line" d="M{x:.1f} {top - 2} L{x:.1f} {plot_bottom - 4}" '
+            f'stroke-dasharray="4 3"/>\n'
+        )
+
+    y = top
+    for title, klass, items in groups:
+        parts.append(f'<text class="t-accent" x="18" y="{y + 14}">{_esc(title)}</text>\n')
+        y += pitch
+        for label, lo, hi in items:
+            left, right = px(lo), px(hi)
+            parts.append(
+                f'<text class="t-sm" x="18" y="{y + 14}">{_esc(label)}</text>\n'
+            )
+            parts.append(
+                f'<rect class="{klass}" x="{left:.1f}" y="{y + 1}" '
+                f'width="{right - left:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            y += pitch
+
+    parts.append(
+        f'<path class="line" d="M{plot_x} {axis_y} L{px(hi_axis):.1f} {axis_y}"/>\n'
+    )
+    for hours in (10, 12, 14, 16):
+        x = px(hours * 60)
+        parts.append(
+            f'<path class="line" d="M{x:.1f} {axis_y} L{x:.1f} {axis_y + 5}"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x - 16:.1f}" y="{axis_y + 20}">{hours}時間</text>\n'
+        )
+
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ 3回を合わせた開きは 6.00時間 と 1.83時間。記録を貼ると 3.27倍せまくなった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ 上の3回は、何をもとにした数字かが1行も書かれていない。聞き直すと3回とも「推測です」と返る。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "同じ案件の見積もりを、記録を渡さずに聞いた3回と、自分の作業記録を貼って聞いた3回で"
+        "比べた図。渡さない3回は10〜16時間・12〜16時間・10〜13時間とばらつき、"
+        "記録を貼った3回は670〜765分・660〜770分・665〜755分にそろった。"
+        "記録に実際に残っている2本の合計675分と725分は、貼った3回の帯の内側にある。"
+    )
+    (OUT / "estimate-range-naive-vs-log.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -5741,4 +5848,5 @@ if __name__ == "__main__":
     hourly_rate_boundary_chart()
     inbox_loop_carryover_share_chart()
     inbox_loop_ai_guesses_chart()
-    print(f"81枚を {OUT} に出力しました")
+    estimate_range_naive_vs_log_chart()
+    print(f"82枚を {OUT} に出力しました")
