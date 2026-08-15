@@ -176,6 +176,91 @@ def estimate_range_naive_vs_log_chart() -> None:
     )
 
 
+
+def list_work_not_delivery_chart() -> None:
+    """集めた25件が「納品できる7件」と「自分が確かめる11件」に割れる図。
+
+    実測（2026-08-15・架空の候補25行）。真値は材料から計算した。
+    同じ指示文を3回通して、3回とも同じ割れ方になった。
+    """
+    segments = [
+        ("確かめられた", 7, "bar-new", "3条件とも○。このまま出せる"),
+        ("自分で確かめる", 11, "bar-in", "従業員数が空欄。○とも×とも言えない"),
+        ("重複の疑い", 1, "bar-old", "同じ社名の表記ゆれ"),
+        ("条件から外れる", 6, "bar-old", "100人超3件・別業種2件・関東外1件"),
+    ]
+    total = sum(n for _, n, _, _ in segments)
+    plot_x, plot_w = 18, 684
+    unit = plot_w / total
+    bar_y, bar_h = 122, 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「20件そろえて」と言われた仕事。条件を○にできたのは 7件だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の候補25行を渡して、同じ指示文を3回。3回とも同じ7件・11件・6件・重複1件に割れた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3回とも「20件は作れません」と断り、数をそろえるために条件外を混ぜた回は0回。</text>\n",
+    ]
+
+    # 20件目の位置（ここに線を引くと、条件から外れる側に入る）
+    x20 = plot_x + 20 * unit
+    parts.append(
+        f'<text class="t-bad" x="{x20 - 150:.1f}" y="{bar_y - 34}">'
+        "発注が求めた20件目 → ここ</text>\n"
+    )
+    parts.append(
+        f'<path class="line" d="M{x20:.1f} {bar_y - 28} L{x20:.1f} {bar_y + bar_h + 8}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    x = plot_x
+    label_rows = []
+    for name, count, klass, note in segments:
+        w = count * unit
+        parts.append(
+            f'<rect class="{klass}" x="{x:.1f}" y="{bar_y}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x + w / 2 - 12:.1f}" y="{bar_y + 25}">{count}件</text>\n'
+        )
+        label_rows.append((name, count, note))
+        x += w
+
+    y = bar_y + bar_h + 40
+    for name, count, note in label_rows:
+        parts.append(
+            f'<text class="t-accent" x="18" y="{y}">{_esc(name)}　{count}件</text>\n'
+        )
+        parts.append(f'<text class="t-sm" x="200" y="{y}">{_esc(note)}</text>\n')
+        y += 24
+
+    height = y + 12 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ 7件＋11件＝18件。全部が100人以下だったとしても、20件には届かない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ 値打ちは「20件が7件に減ったこと」ではない。11件が自分の作業として残ったこと。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "自分で集めた候補25件を条件で仕分けた図。3条件とも○にできたのが7件、"
+        "従業員数が空欄で自分が確かめることになるのが11件、重複の疑いが1件、"
+        "条件から外れるのが6件。発注が求めた20件目の位置は、"
+        "条件から外れる6件の中に入ってしまう。"
+    )
+    (OUT / "list-work-not-delivery.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -5849,4 +5934,5 @@ if __name__ == "__main__":
     inbox_loop_carryover_share_chart()
     inbox_loop_ai_guesses_chart()
     estimate_range_naive_vs_log_chart()
-    print(f"82枚を {OUT} に出力しました")
+    list_work_not_delivery_chart()
+    print(f"83枚を {OUT} に出力しました")
