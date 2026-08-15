@@ -445,3 +445,47 @@ def test_non_recipe_pages_do_not_need_evidence():
     page = _article(body='<div class="prompt">x</div>', category="pages",
                     published=date(2026, 8, 13))
     assert _evidence_errors(validate([page], evidence={})) == []
+
+
+# --- 金額目安ブロック（2026-08-14 稼ぎ方研究の設計）---
+#
+# 金額は money-note ブロックの中だけに書く。ブロックの外に書かれた収入金額は
+# 機械では見ない（「月3,000円のツール」＝価格 と「月3万円稼げる」＝収入 を
+# 確実に区別できず、誤検知は検査全体の信用を殺す）。人が見る＝確認担当の観点5。
+
+MONEY_OK = (
+    '<div class="money-note">\n'
+    "金額の目安: 月1〜6万円（副業帯）\n"
+    '根拠: 文字単価0.5〜3円（出典: <a href="https://example.com/price">○○公表価格</a>・'
+    "2026-08-15確認）× 月2万字の場合\n"
+    "この金額は目安であり、収益を保証するものではありません。\n"
+    "</div>"
+)
+
+
+def test_money_note_with_all_three_passes():
+    assert validate([_article(body=MONEY_OK)]) == []
+
+
+def test_money_note_without_disclaimer_is_detected():
+    body = MONEY_OK.replace("この金額は目安であり、収益を保証するものではありません。\n", "")
+    errors = validate([_article(body=body)])
+    assert any("収益を保証するものではありません" in e for e in errors)
+
+
+def test_money_note_without_source_link_is_detected():
+    body = MONEY_OK.replace(
+        '<a href="https://example.com/price">○○公表価格</a>', "○○公表価格"
+    )
+    errors = validate([_article(body=body)])
+    assert any("出典" in e for e in errors)
+
+
+def test_money_note_without_checked_date_is_detected():
+    body = MONEY_OK.replace("・2026-08-15確認", "")
+    errors = validate([_article(body=body)])
+    assert any("確認日" in e for e in errors)
+
+
+def test_article_without_money_note_passes():
+    assert validate([_article(body="金額の話をしない記事です。")]) == []

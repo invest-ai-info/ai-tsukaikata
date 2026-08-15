@@ -92,6 +92,16 @@ RECIPE_MIN_FIGURES = 1
 # 3本とも図を足したので一覧ごと消した。
 # ⚠️ 例外を作らないこと。1件でも名指しで外すと、次に書く人が「そこに足せばいい」と学ぶ。
 
+# --- 金額目安ブロック（2026-08-14 稼ぎ方研究の設計）---
+#
+# 金額は「出典つき単価 × 明示した前提」でしか出さない、という型を機械で守る。
+# ⚠️ ここで見るのはブロックの中身の3点だけ。ブロックの外に書かれた金額は
+# 見ない（価格と収入を機械で区別できないため。誤検知は検査全体の信用を殺す）。
+MONEY_NOTE_RE = re.compile(r'<div class="money-note">(.*?)</div>', re.DOTALL)
+MONEY_DISCLAIMER = "収益を保証するものではありません"
+MONEY_SOURCE_RE = re.compile(r'href="https?://')
+MONEY_CHECKED_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
+
 TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -272,6 +282,29 @@ def _checked_errors(where: str, article: Article, today: date) -> list[str]:
     return []
 
 
+def _money_note_errors(where: str, body_html: str) -> list[str]:
+    """金額目安ブロックの中身を検査する。
+
+    ブロックが無ければ何も言わない（金額を書かない記事のほうが多い）。
+    あるなら、出典・確認日・免責の3点が揃っていること。
+    """
+    errors = []
+    for index, match in enumerate(MONEY_NOTE_RE.finditer(body_html), start=1):
+        block = match.group(1)
+        where_block = f"{where}: 金額ブロック{index}"
+        if MONEY_DISCLAIMER not in block:
+            errors.append(
+                f"{where_block}に「{MONEY_DISCLAIMER}」の一文がありません"
+            )
+        if not MONEY_SOURCE_RE.search(block):
+            errors.append(f"{where_block}に出典のリンクがありません")
+        if not MONEY_CHECKED_RE.search(block):
+            errors.append(
+                f"{where_block}に確認日（YYYY-MM-DD）がありません"
+            )
+    return errors
+
+
 def _heading_errors(where: str, body_html: str) -> list[str]:
     """見出しのclassを検査する。
 
@@ -397,6 +430,7 @@ def validate(
         errors += _heading_errors(where, article.body_html)
         errors += _density_errors(where, article)
         errors += _checked_errors(where, article, today)
+        errors += _money_note_errors(where, article.body_html)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):
             errors.append(
