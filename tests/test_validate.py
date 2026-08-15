@@ -491,6 +491,20 @@ def test_article_without_money_note_passes():
     assert validate([_article(body="金額の話をしない記事です。")]) == []
 
 
+def test_money_note_broken_by_indent_is_detected():
+    # 🚨 4スペース以上字下げると Markdown がコードブロックとして出す。
+    # 読者には生HTMLが見え、しかも「ブロックが無い」ので検査も素通りしていた
+    # ＝金額の主張が出典・免責の強制を丸ごと迂回する。2026-08-15 に実測で発見。
+    body = (
+        "本文です。\n\n"
+        '    <div class="money-note">\n'
+        "    金額の目安: 月1〜6万円\n"
+        "    </div>\n"
+    )
+    errors = validate([_article(body=body)])
+    assert any("ブロックになっていません" in e for e in errors)
+
+
 @pytest.mark.parametrize(
     "phrase",
     [

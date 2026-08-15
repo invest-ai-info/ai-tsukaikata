@@ -98,6 +98,13 @@ RECIPE_MIN_FIGURES = 1
 # ⚠️ ここで見るのはブロックの中身の3点だけ。ブロックの外に書かれた金額は
 # 見ない（価格と収入を機械で区別できないため。誤検知は検査全体の信用を殺す）。
 MONEY_NOTE_RE = re.compile(r'<div class="money-note">(.*?)</div>', re.DOTALL)
+# 🚨 字下げると Markdown がコードブロックにして、divが `&lt;div …&gt;` に化ける。
+# そのとき読者には生HTMLが見え、しかも上の正規表現に当たらないので
+# **検査が素通りする**＝金額の主張が出典・免責の強制を丸ごと迂回する。
+# 2026-08-15 に実測で見つけた。化けた形を見つけたら、それ自体を止める。
+# ⚠️ 金額ブロックの書き方そのものを記事で説明したくなったら、この検査に当たる。
+# そのときは class 名を変えた例を載せること（検査を緩めない）。
+MONEY_NOTE_ESCAPED = '&lt;div class="money-note"&gt;'
 MONEY_DISCLAIMER = "収益を保証するものではありません"
 MONEY_SOURCE_RE = re.compile(r'href="https?://')
 MONEY_CHECKED_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
@@ -307,7 +314,16 @@ def _money_note_errors(where: str, body_html: str) -> list[str]:
     あるなら、出典・確認日・免責の3点が揃っていること。
     """
     errors = []
-    for index, match in enumerate(MONEY_NOTE_RE.finditer(body_html), start=1):
+    blocks = list(MONEY_NOTE_RE.finditer(body_html))
+
+    if MONEY_NOTE_ESCAPED in body_html and not blocks:
+        errors.append(
+            f"{where}: 金額ブロックが**ブロックになっていません**"
+            f"（4スペース以上の字下げがあると、Markdownがコードとして出します）。"
+            f"行頭から書いてください"
+        )
+
+    for index, match in enumerate(blocks, start=1):
         block = match.group(1)
         where_block = f"{where}: 金額ブロック{index}"
         if MONEY_DISCLAIMER not in block:
