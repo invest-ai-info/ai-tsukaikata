@@ -464,6 +464,19 @@ a { color: var(--accent); }
 
 .article-body .prompt + .prompt { margin-top: -0.4rem; }
 
+/* 金額の目安（2026-08-14）。出典・計算式・免責がひとかたまりで見えること。
+   指示文（.prompt）より控えめにする＝主役はあくまで手順のほう */
+.article-body .money-note {
+  margin: 1.4rem 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--prompt-bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--muted);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
 /* ここから下は JavaScript が動いたときだけ作られる。
    動かない環境では上の .prompt がそのまま出る（読めて選択できる） */
 .article-body .prompt-box {
