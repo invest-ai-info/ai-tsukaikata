@@ -23,11 +23,12 @@ from __future__ import annotations
 
 import html
 import re
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import NamedTuple
 
@@ -321,7 +322,7 @@ EARN_RESEARCH_PATH = "content/_earn_research.md"
 EARN_RESEARCH_MAX_HOURS = 48  # 1日休んでも鳴らない。2日黙ったら鳴る
 
 
-def earn_research_heartbeat(last_commit, now, max_hours=EARN_RESEARCH_MAX_HOURS):
+def earn_research_heartbeat(last_commit, now, max_hours=EARN_RESEARCH_MAX_HOURS) -> str | None:
     """稼ぎ方研究担当の作業ログが止まっていたら、知らせる文字列を返す。
 
     last_commit は最終コミット日時（tz付き）。ファイルが無ければ None を渡す。
@@ -329,16 +330,56 @@ def earn_research_heartbeat(last_commit, now, max_hours=EARN_RESEARCH_MAX_HOURS)
     if last_commit is None:
         return (
             f"{EARN_RESEARCH_PATH} が見つかりません。"
-            f"稼ぎ方研究担当の作業ログです（沈黙禁止＝0件の日も1行書く設計）"
+            f"稼ぎ方研究担当の作業ログです（沈黙禁止＝0件の日も1行書く設計。"
+            f"担当は毎日15:30 JSTのクラウドルーティン。動いたか確認すること）"
         )
     hours = (now - last_commit).total_seconds() / 3600
     if hours > max_hours:
         return (
             f"{EARN_RESEARCH_PATH}: 最後の追記から{hours:.0f}時間たっています"
-            f"（上限{max_hours}時間）。稼ぎ方研究担当（毎日15:30 JST）が"
-            f"止まっている可能性があります"
+            f"（上限{max_hours}時間）。稼ぎ方研究担当（毎日15:30 JSTのクラウドルーティン）が"
+            f"止まっている可能性があります。動いたか確認すること"
         )
     return None
+
+
+# --- 金額目安ブロックの鮮度（2026-08-14 稼ぎ方研究の設計）---
+#
+# 相場・プラットフォームの規約は変わるので、古い金額の目安は再確認へ出す。
+#
+# ⚠️ MONEY_NOTE_RE は src/validate.py にも同じものがある。これは意図的な重複。
+# tools/ と src/ は別レイヤーで、週次のこちらがビルド強制側（validate.py）を
+# import することはしない（ここが止まってもビルドは止めたくないので、
+# 依存を持たせない）。「重複を消そう」と import へまとめないこと。
+#
+# ⚠️ ここは古さでビルドを止めない。_checked_errors と同じ理由＝古さは時間が
+# 経てば勝手に起きるので、止めると毎晩の担当が push した記事が公開できなくなる。
+MONEY_NOTE_RE = re.compile(r'<div class="money-note">(.*?)</div>', re.S)
+MONEY_DATE_RE = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
+MONEY_MAX_AGE_DAYS = 180
+
+
+def money_note_staleness(articles, today: date, max_age_days=MONEY_MAX_AGE_DAYS) -> list[str]:
+    """金額目安ブロックの確認日が古い記事を、問題の文字列にして返す。
+
+    日付が見つからないブロックは黙ってスキップする（無いこと自体は
+    ビルド時の src/validate.py が既に強制している。ここで重複して言わない）。
+    """
+    problems: list[str] = []
+    for article in articles:
+        for block in MONEY_NOTE_RE.findall(article.body_html):
+            m = MONEY_DATE_RE.search(block)
+            if m is None:
+                continue
+            checked = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+            age = (today - checked).days
+            if age > max_age_days:
+                problems.append(
+                    f"{article.slug}: 金額目安ブロックの確認日が{age}日前です"
+                    f"（checked: {checked} / 上限{max_age_days}日。"
+                    f"単価と規約を確認し直してください）"
+                )
+    return problems
 
 
 # --- 台帳の昇格判定（2026-08-14）---
@@ -457,6 +498,25 @@ def lawyer_deadline_gate(today: date,
     ])
 
 
+def _last_commit_time(root: Path, path: Path):
+    """path の最後のコミット日時を返す。無ければ None。
+
+    ⚠️ mtime ではなく git を見る（クローンし直すと mtime は当てにならない）。
+    """
+    if not path.exists():
+        return None
+    result = subprocess.run(
+        ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(root))],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+    stamp = result.stdout.strip()
+    if not stamp:
+        return None
+    return datetime.fromisoformat(stamp)
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     articles, errors = load_articles(root / "content")
@@ -481,6 +541,15 @@ def main() -> int:
     gate_problems, gate_notes = lawyer_deadline_gate(date.today())
     report.problems.extend(gate_problems)
     report.notes.extend(gate_notes)
+
+    # 稼ぎ方研究担当の heartbeat と金額の鮮度（2026-08-14 稼ぎ方研究の設計）
+    research_file = root / "content" / "_earn_research.md"
+    heartbeat = earn_research_heartbeat(
+        _last_commit_time(root, research_file), datetime.now(timezone.utc)
+    )
+    if heartbeat:
+        report.problems.append(heartbeat)
+    report.problems.extend(money_note_staleness(articles, date.today()))
 
     # 台帳の昇格判定。輪2（月曜）が数え直さずに済むように、数はここで出す。
     ledger_file = root / "content" / "_lessons.md"

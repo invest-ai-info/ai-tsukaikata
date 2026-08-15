@@ -15,6 +15,7 @@ from check_freshness import (  # noqa: E402
     evidence_gaps,
     lawyer_deadline_gate,
     lesson_promotions,
+    money_note_staleness,
     queue_shortage,
 )
 
@@ -421,6 +422,13 @@ def test_earn_research_silent_too_long_is_detected():
     message = earn_research_heartbeat(_dt(50, now), now)
     assert message is not None
     assert "_earn_research.md" in message
+    assert "50" in message
+
+
+def test_earn_research_is_quiet_at_exactly_the_boundary_hour():
+    """比較は `>` なので、ちょうど48時間はまだ黙る。"""
+    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
+    assert earn_research_heartbeat(_dt(48, now), now) is None
 
 
 def test_earn_research_missing_file_is_detected():
@@ -428,3 +436,40 @@ def test_earn_research_missing_file_is_detected():
     message = earn_research_heartbeat(None, now)
     assert message is not None
     assert "見つかりません" in message
+
+
+# --- 金額目安ブロックの鮮度（2026-08-14 稼ぎ方研究の設計）---
+
+
+def _money_body(checked):
+    return (
+        '<div class="money-note">金額の目安: 月1〜6万円\n'
+        f'根拠: 出典 <a href="https://example.com">価格表</a>・{checked}確認\n'
+        "この金額は目安であり、収益を保証するものではありません。</div>"
+    )
+
+
+def test_fresh_money_note_is_silent():
+    articles = [SimpleNamespace(slug="a", body_html=_money_body("2026-08-01"))]
+    assert money_note_staleness(articles, date(2026, 9, 1)) == []
+
+
+def test_stale_money_note_is_listed():
+    articles = [SimpleNamespace(slug="a", body_html=_money_body("2026-01-01"))]
+    problems = money_note_staleness(articles, date(2026, 9, 1))
+    assert len(problems) == 1
+    assert "a" in problems[0]
+
+
+def test_article_without_money_note_is_silent():
+    articles = [SimpleNamespace(slug="a", body_html="<p>金額を書かない記事</p>")]
+    assert money_note_staleness(articles, date(2026, 9, 1)) == []
+
+
+def test_money_note_without_a_date_is_silently_skipped():
+    """日付が無いブロックはビルド時の検査が既に強制する。ここで重複して鳴らさない。"""
+    articles = [SimpleNamespace(
+        slug="a",
+        body_html='<div class="money-note">出典はあるが日付が無い</div>',
+    )]
+    assert money_note_staleness(articles, date(2026, 9, 1)) == []
