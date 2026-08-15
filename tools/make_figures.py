@@ -261,6 +261,90 @@ def list_work_not_delivery_chart() -> None:
     )
 
 
+
+def reply_undecided_marks_chart() -> None:
+    """答えられない6通が、工程ごとに「送れる文」になっていくところ。
+
+    実測（2026-08-15・架空の条件表8行と架空の問い合わせ12通）。
+    青＝本文の中に「私が決める」印が残っている（そのままでは送れない＝正しい）。
+    赤＝印が無く、1つの文面に決まっている（決めていないのに決まった）。
+    """
+    rows = [
+        ("「下書きを作って」1回目", [1, 1, 0, 0, 1, 0]),
+        ("「下書きを作って」2回目", [0, 1, 0, 1, 0, 0]),
+        ("「そのまま送れる形に」2回とも", [0, 0, 0, 0, 0, 0]),
+        ("〔私が決める〕を本文に残して", [1, 1, 1, 1, 1, 1]),
+    ]
+    cols = ["B1", "B2", "B3", "B4", "B5", "B6"]
+    label_w = 208
+    cell_w, cell_h, gap = 48, 30, 8
+    top = 122
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 130 <= WIDTH - 18, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "条件表に答えの無い6通が、頼み方ひとつで「そのまま送れる文」になる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の条件表8行と架空の問い合わせ12通。6通は条件表のどこにも答えが書いていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "青＝本文の中に「私が決める」印が残っている ／ 赤＝印が無く、1つの文面に決まっている。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "数えたのは、相手に貼る本文だけ。文面の外に付いた注記は数えていない。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 9:.1f}" y="{top - 10}">{name}</text>\n'
+        )
+
+    for row_index, (name, marks) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(name)}</text>\n')
+        for col_index, kept in enumerate(marks):
+            x = grid_x + col_index * (cell_w + gap)
+            klass = "box-accent" if kept else "box-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            mark = "印" if kept else "送"
+            tone = "t-accent" if kept else "t-bad"
+            parts.append(
+                f'<text class="{tone}" x="{x + cell_w / 2 - 7:.1f}" y="{y + 20}">{mark}</text>\n'
+            )
+        kept_n = sum(marks)
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 14}" y="{y + 20}">印 {kept_n}／6</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 12 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ 「そのまま送れる形に」の2回では、条件表に無い決めごとが本文に6件ずつ入った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ うち1回は「記事料金の3割」という数字を、もう1回は「他のお取引先とのお約束」という事実を作った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "条件表に答えの無い6通について、頼み方ごとに「私が決める」印が本文に残った数を並べた図。"
+        "下書きを作ってと頼んだ1回目は6通中3通、2回目は6通中2通にしか印が残らなかった。"
+        "そのまま送れる形にしてと頼むと2回とも0通になり、"
+        "〔私が決める〕を本文に残してと頼むと6通すべてに印が残った。"
+    )
+    (OUT / "reply-undecided-marks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -5935,4 +6019,5 @@ if __name__ == "__main__":
     inbox_loop_ai_guesses_chart()
     estimate_range_naive_vs_log_chart()
     list_work_not_delivery_chart()
-    print(f"83枚を {OUT} に出力しました")
+    reply_undecided_marks_chart()
+    print(f"84枚を {OUT} に出力しました")
