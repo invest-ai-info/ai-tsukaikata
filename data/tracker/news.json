@@ -2987,20 +2987,6 @@
       "uid": "967c66fc3222ab17",
       "url": "https://deepmind.google/blog/introducing-google-antigravity-2-0/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-05-17T13:50:34+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "A collection of science tools and experiments to expand the scale and precision of scientific exploration.",
-      "summary_ja": "「Gemini for Science」という科学向けAIツールが発表された。\n科学研究の規模と正確さを広げるためのもの。",
-      "summary_source": "gemini",
-      "title": "Gemini for Science: AI experiments and tools for a new era of discovery",
-      "uid": "8c099460ba115f8f",
-      "url": "https://deepmind.google/blog/gemini-for-science-ai-experiments-and-tools-for-a-new-era-of-discovery/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
