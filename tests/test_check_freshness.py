@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -11,6 +11,7 @@ from check_freshness import (  # noqa: E402
     check_articles,
     external_links,
     earn_queue_shortage,
+    earn_research_heartbeat,
     evidence_gaps,
     lawyer_deadline_gate,
     lesson_promotions,
@@ -404,3 +405,26 @@ def test_non_recipes_are_not_checked():
                            body_html='<div class="prompt">x</div>',
                            source_path=Path("content/pages/about.md"))
     assert evidence_gaps([page], evidence={}) == []
+
+
+def _dt(hours_ago, now):
+    return now - timedelta(hours=hours_ago)
+
+
+def test_earn_research_fresh_is_silent():
+    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
+    assert earn_research_heartbeat(_dt(20, now), now) is None
+
+
+def test_earn_research_silent_too_long_is_detected():
+    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
+    message = earn_research_heartbeat(_dt(50, now), now)
+    assert message is not None
+    assert "_earn_research.md" in message
+
+
+def test_earn_research_missing_file_is_detected():
+    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
+    message = earn_research_heartbeat(None, now)
+    assert message is not None
+    assert "見つかりません" in message

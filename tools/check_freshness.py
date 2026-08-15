@@ -312,6 +312,35 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
     return None
 
 
+# --- 稼ぎ方研究担当の heartbeat（2026-08-14 稼ぎ方研究の設計）---
+#
+# 担当は0件の日も1行書く（沈黙禁止）。だから「ログが止まった＝担当が止まった」。
+# ⚠️ ATには automation-health 相当のページがまだ無いので、当面はここが
+# 稼働登録を兼ねる（相当物ができたらそちらにも登録する）。
+EARN_RESEARCH_PATH = "content/_earn_research.md"
+EARN_RESEARCH_MAX_HOURS = 48  # 1日休んでも鳴らない。2日黙ったら鳴る
+
+
+def earn_research_heartbeat(last_commit, now, max_hours=EARN_RESEARCH_MAX_HOURS):
+    """稼ぎ方研究担当の作業ログが止まっていたら、知らせる文字列を返す。
+
+    last_commit は最終コミット日時（tz付き）。ファイルが無ければ None を渡す。
+    """
+    if last_commit is None:
+        return (
+            f"{EARN_RESEARCH_PATH} が見つかりません。"
+            f"稼ぎ方研究担当の作業ログです（沈黙禁止＝0件の日も1行書く設計）"
+        )
+    hours = (now - last_commit).total_seconds() / 3600
+    if hours > max_hours:
+        return (
+            f"{EARN_RESEARCH_PATH}: 最後の追記から{hours:.0f}時間たっています"
+            f"（上限{max_hours}時間）。稼ぎ方研究担当（毎日15:30 JST）が"
+            f"止まっている可能性があります"
+        )
+    return None
+
+
 # --- 台帳の昇格判定（2026-08-14）---
 #
 # 進化ループ輪2（週次）の「昇格判定」は、これまで人が台帳を読んで数えていた。
