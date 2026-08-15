@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-15T23:36:14.908146+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-15T22:58:11+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、「Claude」が生成するテキストに埋め込む電子透かしの仕組みを公表した。乱数生成に秘密鍵を用いて統計的パターンを残す手法で、品質や速度、料金に影響を与えない。「EU AI Act」への準拠を目的とするが全世界で適用され、コードや短文などでは入りにくいといった限界も明示している。",
+      "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明　「完全な書き直しなら消える」",
+      "uid": "c0251da309eb1571",
+      "url": "https://www.itmedia.co.jp/news/article/2608/16/2000000555/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-14T23:40:53.575715+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
