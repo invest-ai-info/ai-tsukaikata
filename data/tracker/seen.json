@@ -26,41 +26,7 @@
     "pfn-blog": "2026-07-16T23:48:39+00:00",
     "sakana-blog": "2026-08-12T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-13T23:29:59+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Subagent forking is now on by default: a subagent_type: \"fork\" subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run i…",
-      "title": "v2.1.232",
-      "uid": "84a41b4e152051ce",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-12T23:49:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "How Claude’s text watermark works",
-      "uid": "c7be9f553b9d4f72",
-      "url": "https://www.anthropic.com/news/claude-text-watermark",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-14T22:20:57+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added GitLab merge request URL support to the --worktree flag and the claude agents view (where MRs display as !N ) Added an opt-in forward_user_identity apps gateway setting on Anthro…",
-      "title": "v2.1.233",
-      "uid": "1246398c4993fdfb",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
