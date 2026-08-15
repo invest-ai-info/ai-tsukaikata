@@ -4,6 +4,7 @@ description: 2026年7月24日に公開された Claude Opus 5 について、Ant
 category: tools
 scene: choose
 published: 2026-08-04
+checked: 2026-08-04
 tags: [Claude, モデル比較, 料金, AI最新情報]
 ---
 

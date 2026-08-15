@@ -4,6 +4,7 @@ category: tools
 scene: choose
 description: 2026年8月6日にOpenAIが出した発表を、短くまとめました。ChatGPTの無料枠が広がった件と、GPT-5.6の3モデルの違い。公式ドキュメントに実際に書かれている数字だけを載せ、読めなかった部分は読めなかったと書いています。
 published: 2026-08-07
+checked: 2026-08-07
 tags: [OpenAI, ChatGPT, 料金, 比較]
 ---
 

@@ -4,6 +4,7 @@ description: 2026年7月21日に発表された Gemini 3.6 Flash・3.5 Flash-Lit
 category: tools
 scene: choose
 published: 2026-08-05
+checked: 2026-08-05
 tags: [Gemini, モデル比較, 料金, AI最新情報]
 ---
 
