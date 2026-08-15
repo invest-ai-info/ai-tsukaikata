@@ -5489,6 +5489,176 @@ def weekly_loop_invented_carry_chart() -> None:
     )
 
 
+def inbox_loop_carryover_share_chart() -> None:
+    """毎朝の一覧のうち、昨日も同じ欄に出ていたものが何件か。
+
+    実測（2026-08-15・架空の受信箱3日ぶん・居座り5通は3日とも同じ文字列）。
+    判定は Python（件名の文字列の完全一致）。証拠＝
+    `docs/evidence/inbox-loop-new-since-yesterday.md`。
+    """
+    # (日と欄, 昨日も同じ欄にいた数, 今日はじめて入った数)
+    rows = (
+        ("2日目 A欄（返信が要る）", 3, 1),
+        ("2日目 B欄（自分の作業）", 2, 3),
+        ("3日目 A欄（返信が要る）", 3, 2),
+        ("3日目 B欄（自分の作業）", 2, 3),
+    )
+    biggest = max(a + b for _, a, b in rows)
+    label_x, left = 18, 216
+    span = 232
+    top, bar_h, gap = 96, 22, 20
+    height = top + len(rows) * (bar_h + gap) + 74
+    # 棒のうしろに「同じ◯件／新しい◯件」（10字・12.5px）が入る幅を確保する。
+    assert left + span + 10 + 10 * 13 <= WIDTH - 18, left + span
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "毎朝の一覧の半分以上は、昨日も同じ欄にいたもの</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の受信箱3日ぶん。未処理のまま残った5通は、3日とも1文字も同じ文字列で入れてある。</text>\n",
+        '<text class="t-sm" x="18" y="63">'
+        "同じ指示文を各日2回ずつ走らせた。下の数字は2回とも同じだった。</text>\n",
+        f'<text class="t-xs" x="{left}" y="{top - 14}">'
+        "薄い色＝昨日も同じ欄にいた ／ 濃い色＝今日はじめて入った</text>\n",
+    ]
+    for index, (label, stayed, fresh) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + bar_h - 6}">{_esc(label)}</text>\n'
+        )
+        wide_stay = span * stayed / biggest
+        wide_fresh = span * fresh / biggest
+        parts.append(
+            f'<rect class="bar-old" x="{left}" y="{y}" '
+            f'width="{wide_stay:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{left + wide_stay:.1f}" y="{y}" '
+            f'width="{wide_fresh:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="{left + wide_stay + wide_fresh + 10:.1f}" '
+            f'y="{y + bar_h - 6}">同じ{stayed}件／新しい{fresh}件</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 52}">'
+        "※ 仕分けそのものは崩れていない。居座り5通は3日×2回＝6回とも同じ欄に入り、"
+        "件名も6回とも一字一句そのままだった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 問題は精度ではなく、返ってきた一覧のどこにも"
+        "「これは昨日もあった」と書かれていないこと。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 1日目は比べる相手が無いので数えていない。</text>\n"
+    )
+    alt = (
+        "架空の受信箱3日ぶんを毎朝仕分けさせて、"
+        "返ってきた一覧のうち昨日も同じ欄にいた件数と、"
+        "今日はじめて入った件数を並べた積み上げ横棒グラフ。"
+        "2日目のA欄は4件のうち3件が昨日と同じで、新しいのは1件。"
+        "2日目のB欄は5件のうち2件が昨日と同じで、新しいのは3件。"
+        "3日目のA欄は5件のうち3件が昨日と同じで、新しいのは2件。"
+        "3日目のB欄は5件のうち2件が昨日と同じで、新しいのは3件。"
+        "同じ指示文を各日2回ずつ走らせたが、この数字は2回とも同じだった。"
+        "仕分けそのものは崩れておらず、未処理のまま残した5通は"
+        "3日かける2回の6回とも同じ欄に入り、件名も6回とも一字一句そのままだった。"
+        "問題は仕分けの精度ではなく、返ってきた一覧のどこにも"
+        "これは昨日もあったと書かれていないことである。"
+    )
+    (OUT / "inbox-loop-carryover-share.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def inbox_loop_ai_guesses_chart() -> None:
+    """「前から残っているもの」をAIに振り分けさせたときの当たり外れ。
+
+    実測（2026-08-15・2日目と3日目を各2回）。真値は受信箱の作り方から出した。
+    判定は Python。証拠＝`docs/evidence/inbox-loop-new-since-yesterday.md`。
+    """
+    # (回, 当たり, はずれ, 「分からない」に置いた数)
+    rows = (
+        ("2日目 1回目", 3, 1, 5),
+        ("2日目 2回目", 3, 1, 5),
+        ("3日目 1回目", 6, 4, 0),
+        ("3日目 2回目", 4, 2, 4),
+    )
+    biggest = max(a + b + c for _, a, b, c in rows)
+    label_x, left = 18, 150
+    span = 330
+    top, bar_h, gap = 96, 22, 20
+    height = top + len(rows) * (bar_h + gap) + 92
+    # 棒のうしろに「当たり◯／はずれ◯／分からない◯」（15字・12.5px）が入る幅を確保する。
+    assert left + span + 10 + 15 * 13 <= WIDTH - 18, left + span
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「前から残っているもの」をAIに聞くと、3件に1件は逆になる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "AIが見ているのは今日の受信箱だけなので、昨日あったかどうかは原理的に分からない。</text>\n",
+        '<text class="t-sm" x="18" y="63">'
+        "「推測で振り分けないでください」と書いたうえで、2日目と3日目を各2回。</text>\n",
+        f'<text class="t-xs" x="{left}" y="{top - 14}">'
+        "濃い色＝当たり ／ 赤＝はずれ ／ 薄い色＝「どちらか分からない」に置いた</text>\n",
+    ]
+    for index, (label, hit, miss, unknown) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + bar_h - 6}">{_esc(label)}</text>\n'
+        )
+        x = float(left)
+        for value, cls in ((hit, "bar-new"), (miss, "box-bad"), (unknown, "bar-old")):
+            wide = span * value / biggest
+            if wide > 0:
+                parts.append(
+                    f'<rect class="{cls}" x="{x:.1f}" y="{y}" '
+                    f'width="{wide:.1f}" height="{bar_h}" rx="2"/>\n'
+                )
+            x += wide
+        cls = "t-bad" if miss else "t-good"
+        parts.append(
+            f'<text class="{cls}" x="{x + 10:.1f}" y="{y + bar_h - 6}">'
+            f"当たり{hit}／はずれ{miss}／分からない{unknown}</text>\n"
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 70}">'
+        "※ 4回で振り分けた24件のうち、はずれは8件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 52}">'
+        "※ 3日目は1回目が10件すべてを振り分け、2回目は4件を「分からない」に置いた。同じ指示文で。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ はずれ方に癖がある＝件名に「Re:」が付いているもの、"
+        "差出人が前日にも出ていたものを「前から残っている」に入れる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 真値は受信箱の作り方から出した（3日とも同じ文字列で入れた5通＝前から残っているもの）。</text>\n"
+    )
+    alt = (
+        "毎朝の仕分けのあとに、今日はじめて来たものと前から残っているものへ"
+        "AIに振り分けさせた結果の積み上げ横棒グラフ。"
+        "2日目は1回目も2回目も、当たり3件、はずれ1件、"
+        "どちらか分からないに置いたものが5件。"
+        "3日目の1回目は10件すべてを振り分けて当たり6件、はずれ4件、分からない0件。"
+        "3日目の2回目は当たり4件、はずれ2件、分からない4件で、"
+        "同じ指示文なのに1回目とまったく違う。"
+        "4回で振り分けた24件のうち、はずれは8件だった。"
+        "AIが見ているのは今日の受信箱だけなので、"
+        "昨日あったかどうかは原理的に分からない。"
+        "はずれ方には癖があり、件名にRe:が付いているものや、"
+        "差出人が前日にも出ていたものを前から残っているに入れる。"
+    )
+    (OUT / "inbox-loop-ai-guesses.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -5569,4 +5739,6 @@ if __name__ == "__main__":
     listing_facts_vs_flourish_chart()
     reply_terms_survive_chart()
     hourly_rate_boundary_chart()
-    print(f"79枚を {OUT} に出力しました")
+    inbox_loop_carryover_share_chart()
+    inbox_loop_ai_guesses_chart()
+    print(f"81枚を {OUT} に出力しました")

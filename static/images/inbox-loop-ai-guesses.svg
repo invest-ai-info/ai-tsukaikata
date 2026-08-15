@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="356" viewBox="0 0 720 356" role="img" aria-label="毎朝の仕分けのあとに、今日はじめて来たものと前から残っているものへAIに振り分けさせた結果の積み上げ横棒グラフ。2日目は1回目も2回目も、当たり3件、はずれ1件、どちらか分からないに置いたものが5件。3日目の1回目は10件すべてを振り分けて当たり6件、はずれ4件、分からない0件。3日目の2回目は当たり4件、はずれ2件、分からない4件で、同じ指示文なのに1回目とまったく違う。4回で振り分けた24件のうち、はずれは8件だった。AIが見ているのは今日の受信箱だけなので、昨日あったかどうかは原理的に分からない。はずれ方には癖があり、件名にRe:が付いているものや、差出人が前日にも出ていたものを前から残っているに入れる。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="356"/>
+<text class="t-strong" x="18" y="26">「前から残っているもの」をAIに聞くと、3件に1件は逆になる</text>
+<text class="t-sm" x="18" y="45">AIが見ているのは今日の受信箱だけなので、昨日あったかどうかは原理的に分からない。</text>
+<text class="t-sm" x="18" y="63">「推測で振り分けないでください」と書いたうえで、2日目と3日目を各2回。</text>
+<text class="t-xs" x="150" y="82">濃い色＝当たり ／ 赤＝はずれ ／ 薄い色＝「どちらか分からない」に置いた</text>
+<text class="t" x="18" y="112">2日目 1回目</text>
+<rect class="bar-new" x="150.0" y="96" width="99.0" height="22" rx="2"/>
+<rect class="box-bad" x="249.0" y="96" width="33.0" height="22" rx="2"/>
+<rect class="bar-old" x="282.0" y="96" width="165.0" height="22" rx="2"/>
+<text class="t-bad" x="457.0" y="112">当たり3／はずれ1／分からない5</text>
+<text class="t" x="18" y="154">2日目 2回目</text>
+<rect class="bar-new" x="150.0" y="138" width="99.0" height="22" rx="2"/>
+<rect class="box-bad" x="249.0" y="138" width="33.0" height="22" rx="2"/>
+<rect class="bar-old" x="282.0" y="138" width="165.0" height="22" rx="2"/>
+<text class="t-bad" x="457.0" y="154">当たり3／はずれ1／分からない5</text>
+<text class="t" x="18" y="196">3日目 1回目</text>
+<rect class="bar-new" x="150.0" y="180" width="198.0" height="22" rx="2"/>
+<rect class="box-bad" x="348.0" y="180" width="132.0" height="22" rx="2"/>
+<text class="t-bad" x="490.0" y="196">当たり6／はずれ4／分からない0</text>
+<text class="t" x="18" y="238">3日目 2回目</text>
+<rect class="bar-new" x="150.0" y="222" width="132.0" height="22" rx="2"/>
+<rect class="box-bad" x="282.0" y="222" width="66.0" height="22" rx="2"/>
+<rect class="bar-old" x="348.0" y="222" width="132.0" height="22" rx="2"/>
+<text class="t-bad" x="490.0" y="238">当たり4／はずれ2／分からない4</text>
+<text class="t-xs" x="18" y="286">※ 4回で振り分けた24件のうち、はずれは8件。</text>
+<text class="t-xs" x="18" y="304">※ 3日目は1回目が10件すべてを振り分け、2回目は4件を「分からない」に置いた。同じ指示文で。</text>
+<text class="t-xs" x="18" y="322">※ はずれ方に癖がある＝件名に「Re:」が付いているもの、差出人が前日にも出ていたものを「前から残っている」に入れる。</text>
+<text class="t-xs" x="18" y="340">※ 真値は受信箱の作り方から出した（3日とも同じ文字列で入れた5通＝前から残っているもの）。</text>
+</svg>

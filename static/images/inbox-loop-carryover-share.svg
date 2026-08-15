@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="338" viewBox="0 0 720 338" role="img" aria-label="架空の受信箱3日ぶんを毎朝仕分けさせて、返ってきた一覧のうち昨日も同じ欄にいた件数と、今日はじめて入った件数を並べた積み上げ横棒グラフ。2日目のA欄は4件のうち3件が昨日と同じで、新しいのは1件。2日目のB欄は5件のうち2件が昨日と同じで、新しいのは3件。3日目のA欄は5件のうち3件が昨日と同じで、新しいのは2件。3日目のB欄は5件のうち2件が昨日と同じで、新しいのは3件。同じ指示文を各日2回ずつ走らせたが、この数字は2回とも同じだった。仕分けそのものは崩れておらず、未処理のまま残した5通は3日かける2回の6回とも同じ欄に入り、件名も6回とも一字一句そのままだった。問題は仕分けの精度ではなく、返ってきた一覧のどこにもこれは昨日もあったと書かれていないことである。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="338"/>
+<text class="t-strong" x="18" y="26">毎朝の一覧の半分以上は、昨日も同じ欄にいたもの</text>
+<text class="t-sm" x="18" y="45">架空の受信箱3日ぶん。未処理のまま残った5通は、3日とも1文字も同じ文字列で入れてある。</text>
+<text class="t-sm" x="18" y="63">同じ指示文を各日2回ずつ走らせた。下の数字は2回とも同じだった。</text>
+<text class="t-xs" x="216" y="82">薄い色＝昨日も同じ欄にいた ／ 濃い色＝今日はじめて入った</text>
+<text class="t" x="18" y="112">2日目 A欄（返信が要る）</text>
+<rect class="bar-old" x="216" y="96" width="139.2" height="22" rx="2"/>
+<rect class="bar-new" x="355.2" y="96" width="46.4" height="22" rx="2"/>
+<text class="t-bad" x="411.6" y="112">同じ3件／新しい1件</text>
+<text class="t" x="18" y="154">2日目 B欄（自分の作業）</text>
+<rect class="bar-old" x="216" y="138" width="92.8" height="22" rx="2"/>
+<rect class="bar-new" x="308.8" y="138" width="139.2" height="22" rx="2"/>
+<text class="t-bad" x="458.0" y="154">同じ2件／新しい3件</text>
+<text class="t" x="18" y="196">3日目 A欄（返信が要る）</text>
+<rect class="bar-old" x="216" y="180" width="139.2" height="22" rx="2"/>
+<rect class="bar-new" x="355.2" y="180" width="92.8" height="22" rx="2"/>
+<text class="t-bad" x="458.0" y="196">同じ3件／新しい2件</text>
+<text class="t" x="18" y="238">3日目 B欄（自分の作業）</text>
+<rect class="bar-old" x="216" y="222" width="92.8" height="22" rx="2"/>
+<rect class="bar-new" x="308.8" y="222" width="139.2" height="22" rx="2"/>
+<text class="t-bad" x="458.0" y="238">同じ2件／新しい3件</text>
+<text class="t-xs" x="18" y="286">※ 仕分けそのものは崩れていない。居座り5通は3日×2回＝6回とも同じ欄に入り、件名も6回とも一字一句そのままだった。</text>
+<text class="t-xs" x="18" y="304">※ 問題は精度ではなく、返ってきた一覧のどこにも「これは昨日もあった」と書かれていないこと。</text>
+<text class="t-xs" x="18" y="322">※ 1日目は比べる相手が無いので数えていない。</text>
+</svg>
