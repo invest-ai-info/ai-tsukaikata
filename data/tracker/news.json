@@ -2949,44 +2949,6 @@
       "uid": "65e60b3863e613f1",
       "url": "https://tech.preferred.jp/ja/blog/benchmark-base-model/",
       "vendor": "Preferred Networks"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-05-17T19:53:18+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "We’re expanding access to Google AI Ultra subscribers globally and introducing a new capability powered by Street View.",
-      "summary_ja": "「プロジェクト ジーニー」で現実空間の再現を強化\n「Google AI Ultra」契約者に提供範囲を拡大\n「ストリートビュー」を活用した新機能を追加",
-      "summary_source": "gemini",
-      "title": "Simulate real-world places with Project Genie and Street View",
-      "uid": "5d4d3a5a9f86268e",
-      "url": "https://deepmind.google/blog/simulate-real-world-places-with-project-genie-and-street-view/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-05-17T19:50:57+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Introducing Gemini Omni",
-      "uid": "2b1a63bdf2fbad4d",
-      "url": "https://deepmind.google/blog/introducing-gemini-omni/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-05-17T19:43:45+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Introducing Google Antigravity 2.0",
-      "uid": "967c66fc3222ab17",
-      "url": "https://deepmind.google/blog/introducing-google-antigravity-2-0/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
