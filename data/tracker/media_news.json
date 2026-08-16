@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-16T08:48:35.468196+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-16T08:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "中国・アリババ(阿里巴巴)が展開しているオープンウェイトAIモデル「Qwen」シリーズが、過去6カ月間で30億回ダウンロードされたことがわかりました。この数字は国外各社や国内のライバルを上回るものです。 続きを読む...",
+      "title": "アリババのAI「Qwen」が6カ月間に30億回ダウンロードされる世界1位のAIモデルに",
+      "uid": "92e732d846928dd3",
+      "url": "https://gigazine.net/news/20260816-alibaba-qwen-3-billion-downloads/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-15T23:36:14.908146+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
