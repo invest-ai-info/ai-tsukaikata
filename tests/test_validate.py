@@ -512,6 +512,32 @@ def test_new_article_with_outcome_title_passes():
     assert validate([article]) == []
 
 
+@pytest.mark.parametrize("word", ["衝撃", "最強", "今だけ", "期間限定", "必見"])
+def test_hype_word_in_new_title_is_detected(word):
+    article = _article(title=f"{word}のAI活用術", published=date(2026, 8, 20))
+    errors = validate([article])
+    assert any("煽り語" in e for e in errors)
+
+
+def test_safety_scene_may_quote_hype_words_in_title():
+    # 🚨 詐欺を防ぐ場面は勧誘文句を引用するのが仕事（収益断定の除外と同じ線）
+    article = _article(
+        title="「今だけ限定」と書かれた勧誘を、判定させずに確かめる",
+        published=date(2026, 8, 20),
+        scene="safety",
+    )
+    assert validate([article]) == []
+
+
+def test_benefit_plus_pitfall_title_passes():
+    # 2026-08-16 オーナー判断の型＝便益——落とし穴
+    article = _article(
+        title="副業の本当の時給を出す——AIは線引きを書かない",
+        published=date(2026, 8, 20),
+    )
+    assert validate([article]) == []
+
+
 def test_old_article_keeps_its_title():
     # 既存記事の題は変えない（オーナー指示は「次から」）
     article = _article(

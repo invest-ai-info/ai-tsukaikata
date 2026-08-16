@@ -141,6 +141,18 @@ INCOME_PHRASE_EXEMPT_SCENES = frozenset({"safety"})
 TITLE_ERA = date(2026, 8, 16)
 TITLE_METHOD_FINDING_RE = re.compile(r"(?:する|させる|せる|なる)と、")
 
+# 煽り語（2026-08-16）。行動経済学とキャッチコピーを調べた結果、
+# 🔑 **このサイトが倫理的に使えない技法は、そもそも証拠も無かった**＝
+# 希少性・緊急性はメタ分析で有意でなく、最上級はクリックベイト検出の典型シグナル。
+# しかも Google は「不正確」な title を独自タイトルに書き換えるので、SEO でも損をする。
+# ⚠️ **既存57本で0件になる語だけを入れてある**（実測）。
+# 「注目」（`AIに「注目されています」と書かせない…`＝煽り語を批判対象として引用）と
+# 「だけで」（`1行足すだけで`＝正確な労力の記述）は誤検知なので入れない。
+BANNED_HYPE_WORDS = (
+    "衝撃", "驚愕", "信じられない", "ヤバい", "やばい", "最強", "爆速",
+    "必見", "話題沸騰", "今だけ", "期間限定", "数量限定", "残りわずか", "劇的",
+)
+
 TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -330,14 +342,29 @@ def _title_errors(where: str, article: Article) -> list[str]:
     """
     if article.published < TITLE_ERA:
         return []
-    if not TITLE_METHOD_FINDING_RE.search(article.title):
-        return []
-    return [
-        f"{where}: タイトルが「〜すると、〜になる」の形です"
-        f"（手法＋発見）。**何ができるか**に書き直してください"
-        f"（例: 「時給をAIに出させると線引きが書かれない」→「副業の本当の時給を出す」。"
-        f"手法と発見は説明文へ。content/_recipe_queue.md の「タイトルの付け方」）"
-    ]
+    errors = []
+
+    if TITLE_METHOD_FINDING_RE.search(article.title):
+        errors.append(
+            f"{where}: タイトルが「〜すると、〜になる」の形です"
+            f"（手法＋発見）。**何ができるか**を先頭に書き直してください"
+            f"（例: 「時給をAIに出させると線引きが書かれない」→"
+            f"「副業の本当の時給を出す——AIは線引きを書かない」。"
+            f"content/_recipe_queue.md の「タイトルの付け方」）"
+        )
+
+    # 🚨 詐欺を防ぐ場面は勧誘文句を引用するのが仕事なので、収益断定と同じく除外する
+    if article.scene not in INCOME_PHRASE_EXEMPT_SCENES:
+        errors += [
+            f"{where}: タイトルに煽り語「{word}」があります。"
+            f"⚠️ 希少性・緊急性・最上級は、メタ分析で効果が確認できないうえ、"
+            f"Google が「不正確」な title を書き換える対象にしています"
+            f"（content/_recipe_queue.md の「調べた結果」）"
+            for word in BANNED_HYPE_WORDS
+            if word in article.title
+        ]
+
+    return errors
 
 
 def _money_note_errors(where: str, body_html: str) -> list[str]:
