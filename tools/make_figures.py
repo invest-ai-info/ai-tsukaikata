@@ -345,6 +345,184 @@ def reply_undecided_marks_chart() -> None:
     )
 
 
+def material_checks_matrix_chart() -> None:
+    """材料に仕込んだ4つの異常が、頼み方3通りで返りに出たかどうか。
+
+    実測（2026-08-16・架空の日次の記録2本＝表形式と走り書き）。
+    真値は材料を作ったコードの assert で確かめてある。
+    セルの分母＝その頼み方を走らせた回数。
+    """
+    rows = [
+        ("中身が完全に同じ行（3組）", "4/4", "good", "2/4", "warn", "4/4", "good"),
+        ("途中で切れている行（1行）", "4/4", "good", "2/4", "warn", "4/4", "good"),
+        ("日付が1日古い（昨日ぶんではない）", "0/4", "bad", "0/4", "bad", "3/3", "good"),
+        ("毎日ある種類が、今日は0件", "0/4", "bad", "0/4", "bad", "2/2", "good"),
+    ]
+    cols = [
+        ("① そのまま頼む", "毎朝の集計を頼むだけ"),
+        ("② 自動実行の形に短く", "「この2つ以外は書かない」"),
+        ("③ 点検の欄を作る", "数と日付を先に書かせる"),
+    ]
+    klass = {"good": "box-good", "warn": "box-accent", "bad": "box-bad"}
+    text_klass = {"good": "t-good", "warn": "t-accent", "bad": "t-bad"}
+
+    label_x, label_w = 18, 276
+    col_w, col_gap = 132, 6
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(3)]
+    head_y, head_h = 92, 46
+    row_h, row_gap = 48, 6
+    row_y = [head_y + head_h + row_gap + i * (row_h + row_gap) for i in range(4)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "材料が壊れた日に、返りがそれを言ってくるか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の日次の記録2本（表形式・走り書き）に、同じ4つの異常を仕込んで走らせた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "分母は走らせた回数。③は、その項目を点検の欄に入れた回だけを数えている。</text>\n",
+    ]
+
+    for i, (head, sub) in enumerate(cols):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="{head_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + 8}" y="{head_y + 20}" '
+            f'style="font-size:12px">{_esc(head)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 36}">{_esc(sub)}</text>\n'
+        )
+
+    for r, (label, *cells) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for c in range(3):
+            value, kind = cells[c * 2], cells[c * 2 + 1]
+            parts.append(
+                f'<rect class="{klass[kind]}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_klass[kind]}" x="{col_x[c] + col_w / 2 - 16:.0f}" '
+                f'y="{y + row_h / 2 + 5:.0f}">{value}</text>\n'
+            )
+
+    bottom = row_y[-1] + row_h
+    notes = [
+        ("t-bad", "※ 下の2行は、材料の中を読んでも決まらない。今日が何日か・普段は何件かを"
+                  "AIは持っていない。"),
+        ("t-xs", "※ ②で 2/4 になったのは、表形式の材料2回で警告が丸ごと消えたため"
+                 "（走り書きの材料2回では残った）。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "材料が壊れた日に、返りが異常を指摘したかどうかを4つの異常と3つの頼み方で並べた表。"
+        "中身が完全に同じ行が3組ある件は、そのまま頼んだ4回で4回、"
+        "自動実行の形に短くした4回で2回、点検の欄を作った4回で4回。"
+        "途中で切れている行も同じく4回・2回・4回。"
+        "日付が1日古いことは、そのまま頼んだ4回で0回、短くした4回でも0回、"
+        "今日の日付をこちらから渡した3回では3回とも指摘した。"
+        "毎日ある種類が今日は0件だったことは、そのまま頼んだ4回で0回、"
+        "短くした4回でも0回、毎日ある種類の名前をこちらから渡した2回では2回とも指摘した。"
+        "下の2つは材料の中を読んでも決まらないもので、"
+        "今日が何日か、普段は何件かという情報をAIは持っていない。"
+    )
+    (OUT / "material-checks-matrix.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def material_check_split_chart() -> None:
+    """点検の欄と一覧はそろったのに、その下の集計だけが2回で割れた回。
+
+    実測（2026-08-16・同じ指示文を2回）。真値は材料から計算した。
+    """
+    blocks = [
+        ("毎日ある種類の 0件 の警告",
+         "請求 0件 / 納期 0件", "請求 0件 / 納期 0件", True, "2回とも同じ"),
+        ("種類ごとの件数",
+         "仕様2・返品2・その他2", "仕様3・返品3・その他3", False, "真値は 3・3・3"),
+        ("まだ対応が終わっていない一覧",
+         "3行（文字列まで一致）", "3行（文字列まで一致）", True, "2回とも同じ"),
+    ]
+    label_x, label_w = 18, 218
+    col_w, col_gap = 218, 8
+    col_x = [label_x + label_w + col_gap, label_x + label_w + col_gap * 2 + col_w]
+    head_y = 96
+    blk_h, blk_gap = 58, 8
+    blk_y = [head_y + 24 + i * (blk_h + blk_gap) for i in range(3)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "点検の欄はそろった。その下の集計だけが、2回で割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ指示文を2回。どちらの回も「中身が完全に同じ行は、1件として数えてください」入り。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "0件の警告も、未対応の一覧も、2回とも1文字も違わない。違ったのは件数だけ。</text>\n",
+        f'<text class="t-xs" x="{col_x[0]}" y="{head_y + 10}">1回目</text>\n',
+        f'<text class="t-xs" x="{col_x[1]}" y="{head_y + 10}">2回目</text>\n',
+    ]
+
+    for i, (label, a, b, same, note) in enumerate(blocks):
+        y = blk_y[i]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + 24}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{label_x}" y="{y + 44}">{_esc(note)}</text>\n'
+        )
+        for j, value in enumerate((a, b)):
+            css = "box-good" if same else "box-bad"
+            tcss = "t-good" if same else "t-bad"
+            if not same and j == 1:
+                css, tcss = "box-good", "t-good"
+            parts.append(
+                f'<rect class="{css}" x="{col_x[j]}" y="{y}" '
+                f'width="{col_w}" height="{blk_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcss}" x="{col_x[j] + 12}" y="{y + blk_h / 2 + 5:.0f}" '
+                f'style="font-size:12px">{_esc(value)}</text>\n'
+            )
+
+    bottom = blk_y[-1] + blk_h
+    notes = [
+        ("t-bad", "※ 1回目の件数は、材料から計算した真値と合っていない。"
+                  "一覧が合っているので、表だけでは気づけない。"),
+        ("t-xs", "※ 点検の欄（行数・最新の日付・重複の組数・崩れた行）は、"
+                 "10回とも真値と一致した。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "同じ指示文を2回走らせて、返りの3つの部分を並べた図。"
+        "毎日ある種類が0件だという警告は、1回目も2回目も請求0件・納期0件で同じ。"
+        "まだ対応が終わっていない一覧も、1回目も2回目も3行で文字列まで一致。"
+        "ところが種類ごとの件数だけが、1回目は仕様2・返品2・その他2、"
+        "2回目は仕様3・返品3・その他3に割れた。材料から計算した真値は3・3・3なので、"
+        "1回目のほうが間違っている。警告も一覧も合っているため、"
+        "件数が間違っていることに画面からは気づけない。"
+    )
+    (OUT / "material-check-split.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -6020,4 +6198,6 @@ if __name__ == "__main__":
     estimate_range_naive_vs_log_chart()
     list_work_not_delivery_chart()
     reply_undecided_marks_chart()
-    print(f"84枚を {OUT} に出力しました")
+    material_checks_matrix_chart()
+    material_check_split_chart()
+    print(f"86枚を {OUT} に出力しました")
