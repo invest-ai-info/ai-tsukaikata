@@ -491,6 +491,36 @@ def test_article_without_money_note_passes():
     assert validate([_article(body="金額の話をしない記事です。")]) == []
 
 
+# --- タイトルの型（2026-08-15 オーナー指示）---
+#
+# 「〜すると、〜になる」＝手法＋発見の形は、何ができるか読み取れない。
+# ⚠️ 字数では検査しない（実測で誤検知10件＝長くても分かりやすい題がある）。
+
+def test_new_article_with_method_and_finding_title_is_detected():
+    article = _article(
+        title="フリマの商品説明文をAIに書かせると、盛られたぶんだけ事実が消える",
+        published=date(2026, 8, 20),
+    )
+    errors = validate([article])
+    assert any("タイトル" in e for e in errors)
+
+
+def test_new_article_with_outcome_title_passes():
+    article = _article(
+        title="フリマの商品説明文を、盛らずに書く", published=date(2026, 8, 20)
+    )
+    assert validate([article]) == []
+
+
+def test_old_article_keeps_its_title():
+    # 既存記事の題は変えない（オーナー指示は「次から」）
+    article = _article(
+        title="フリマの商品説明文をAIに書かせると、盛られたぶんだけ事実が消える",
+        published=date(2026, 8, 10),
+    )
+    assert validate([article]) == []
+
+
 def test_money_note_broken_by_indent_is_detected():
     # 🚨 4スペース以上字下げると Markdown がコードブロックとして出す。
     # 読者には生HTMLが見え、しかも「ブロックが無い」ので検査も素通りしていた

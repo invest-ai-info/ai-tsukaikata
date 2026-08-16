@@ -127,6 +127,20 @@ BANNED_INCOME_PHRASES = (
 # 勧誘文句をそのまま引くときのための備え。番人が本来の仕事を邪魔しないように。
 INCOME_PHRASE_EXEMPT_SCENES = frozenset({"safety"})
 
+# --- タイトルの型（2026-08-15 オーナー指示）---
+#
+# オーナー指示＝「方法よりも**何ができるか**のほうが分かりやすい」。
+# 「〜すると、〜になる」は手法＋発見の形で、できることが読み取れない。
+#
+# ⚠️ **字数では検査しない。**46本を実測したら、30字超15本のうち10本は
+# 「散らかったフォルダは、AIに『移動先だけ』出させて自分で動かす」のように
+# 長いが分かりやすい題だった（誤検知が3分の2）。型だけを見る。
+# 実測では、この型に当たったのは46本中5本で、**どれも指摘どおりの形**だった。
+#
+# 📌 既存記事の題は変えない（指示は「次から」）ので、証拠の様式と同じく日付で線を引く。
+TITLE_ERA = date(2026, 8, 16)
+TITLE_METHOD_FINDING_RE = re.compile(r"(?:する|させる|せる|なる)と、")
+
 TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -307,6 +321,25 @@ def _checked_errors(where: str, article: Article, today: date) -> list[str]:
     return []
 
 
+def _title_errors(where: str, article: Article) -> list[str]:
+    """タイトルが「手法＋発見」の形になっていないかを見る。
+
+    見るのは形だけで、分かりやすさそのものは機械には分からない
+    （そこは確認担当の観点7が持つ）。ここで止めるのは、
+    オーナーが名指しした「〜すると、〜になる」という1つの型だけ。
+    """
+    if article.published < TITLE_ERA:
+        return []
+    if not TITLE_METHOD_FINDING_RE.search(article.title):
+        return []
+    return [
+        f"{where}: タイトルが「〜すると、〜になる」の形です"
+        f"（手法＋発見）。**何ができるか**に書き直してください"
+        f"（例: 「時給をAIに出させると線引きが書かれない」→「副業の本当の時給を出す」。"
+        f"手法と発見は説明文へ。content/_recipe_queue.md の「タイトルの付け方」）"
+    ]
+
+
 def _money_note_errors(where: str, body_html: str) -> list[str]:
     """金額目安ブロックの中身を検査する。
 
@@ -481,6 +514,7 @@ def validate(
         errors += _heading_errors(where, article.body_html)
         errors += _density_errors(where, article)
         errors += _checked_errors(where, article, today)
+        errors += _title_errors(where, article)
         errors += _money_note_errors(where, article.body_html)
         errors += _income_phrase_errors(where, article)
 
