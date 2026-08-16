@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-16T20:41:14.147464+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "何となくこう読むものだと思っていたら、実は違っていた。そんな経験はないでしょうか。AI用語にも、意外な読み方をするものや、人によって読み方が分かれるものが少なくありません。その読み方が合っているか、全30問のクイズで確かめてみてください。",
+      "title": "Claude、Codex、Qwen……そのAI用語、どう読む？　読み方クイズ30問",
+      "uid": "7bdac4316094a5f7",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/17/news020.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-16T14:42:12.391002+00:00",
       "importance": "major",
       "label": "Publickey",
