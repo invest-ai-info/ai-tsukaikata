@@ -6113,6 +6113,116 @@ def inbox_loop_ai_guesses_chart() -> None:
     )
 
 
+def constraints_hold_totals_drift_chart() -> None:
+    """5往復たっても縛りは守られ、頼んでいない合計だけが外れたところ。
+
+    実測（2026-08-16・材料2本×2回＋対照2本＝6本の会話・5往復）。
+    機械で照合したのは1往復目と5往復目の返り（6本×2＝12回）。
+    数字は「その回で縛りが守られていた会話の数／6」。
+    """
+    rules = [
+        ("① 全部の行を1行ずつ", 6, 6),
+        ("② 数字はメモのまま", 6, 5),
+        ("③ メモに無い品質を書かない", 6, 6),
+        ("④ 言い回しを整えない", 6, 6),
+        ("⑤ 〔要確認〕を残す", 6, 6),
+    ]
+    left = 18
+    label_w = 230
+    cell_w, cell_h, gap = 84, 30, 12
+    grid_x = left + label_w
+    note_x = grid_x + 2 * (cell_w + gap)
+    note_w = 250
+    assert note_x + note_w <= WIDTH - left, note_x
+    top = 128
+    pitch = cell_h + gap
+
+    parts = [
+        f'<text class="t-strong" x="{left}" y="26">'
+        "5往復たっても縛りは戻らない。狂ったのは、頼んでいない合計のほう</text>\n",
+        f'<text class="t-sm" x="{left}" y="45">'
+        "架空の副業の材料2本×各2回＋毎回縛りを貼り直した対照2本＝6本の会話。</text>\n",
+        f'<text class="t-sm" x="{left}" y="64">'
+        "2往復目からは、縛りに一切触れない普通の追加依頼だけを送っている。</text>\n",
+        f'<text class="t-sm" x="{left}" y="83">'
+        "数字は「その回で縛りが守られていた会話の数／6」。</text>\n",
+        f'<text class="t-xs" x="{grid_x + 22}" y="{top - 10}">1往復目</text>\n',
+        f'<text class="t-xs" x="{grid_x + cell_w + gap + 22}" y="{top - 10}">5往復目</text>\n',
+    ]
+
+    for row_index, (name, first, last) in enumerate(rules):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="{left}" y="{y + 20}">{_esc(name)}</text>\n')
+        for col_index, value in enumerate((first, last)):
+            x = grid_x + col_index * (cell_w + gap)
+            full = value == 6
+            parts.append(
+                f'<rect class="{"box-good" if full else "box-bad"}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{"t-good" if full else "t-bad"}" '
+                f'x="{x + cell_w / 2 - 20:.1f}" y="{y + 20}">{value}／6</text>\n'
+            )
+
+    # 右側＝頼んでいない合計
+    box_y = top
+    box_h = 2 * pitch - gap
+    parts.append(
+        f'<rect class="box-bad" x="{note_x}" y="{box_y}" width="{note_w}" height="{box_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{note_x + 14}" y="{box_y + 22}">'
+        "頼んでいない在庫の合計</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="{note_x + 14}" y="{box_y + 44}">'
+        "記録した4回とも54点（真値56点）</text>\n"
+    )
+    box2_y = top + 2 * pitch
+    parts.append(
+        f'<rect class="box-good" x="{note_x}" y="{box2_y}" width="{note_w}" height="{box_h}" rx="6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="{note_x + 14}" y="{box2_y + 22}">'
+        "もう1本の材料の報酬の合計</text>\n"
+    )
+    parts.append(
+        f'<text class="t-good" x="{note_x + 14}" y="{box2_y + 44}">'
+        "104,000円＝真値と一致（小計6件も）</text>\n"
+    )
+
+    height = top + len(rules) * pitch + 10 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-bad" x="{left}" y="{height - 60}">'
+        "※ ②の1件は、在庫1が3に変わったもの。返り自身が気づいたが、"
+        "「直前の一覧で誤っていた」という申告のほうが事実と違った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left}" y="{height - 38}">'
+        "※ 合計の誤りは1往復目から出ていて、5往復ずっと直らない。"
+        "毎回縛りを貼り直した対照でも同じ54点だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left}" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "最初に渡した5つの縛りが、5往復のやりとりのあとも守られていたかを並べた図。"
+        "6本の会話のうち何本で守られていたかを、1往復目と5往復目で比べている。"
+        "全部の行を1行ずつ書く、メモに無い品質を書かない、言い回しを整えない、"
+        "〔要確認〕を残す、の4つは1往復目も5往復目も6本すべてで守られた。"
+        "数字をメモのまま写す縛りだけが5往復目に6本中5本になり、1件だけ在庫の数が変わった。"
+        "一方で、頼んでいない在庫の合計は記録した4回とも54点で、"
+        "メモの行を足した真値56点と合っていない。"
+        "もう1本の材料では、報酬の合計104,000円も発注元ごとの小計6件も真値と一致した。"
+    )
+    (OUT / "constraints-hold-totals-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def missing_material_noticed_chart() -> None:
     """貼り忘れた材料の種類ごとに、気づかれたかどうか。
 
@@ -6303,4 +6413,5 @@ if __name__ == "__main__":
     material_checks_matrix_chart()
     material_check_split_chart()
     missing_material_noticed_chart()
+    constraints_hold_totals_drift_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
