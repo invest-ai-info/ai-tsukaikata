@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-16T23:35:41.759149+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-16T23:23:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは、macOS版「ChatGPT」デスクトップアプリに新機能「Computer History」を追加した。アプリやウェブサイトでのクリックや文字入力といった操作履歴を、画面を撮影せずに記録して記憶とタイムラインに変換し、ChatGPTと「Codex」が参照できるようにする。「休憩の前に何をしていた？」「今日探していた提案書はどこ？」といった質問に、パソコン上の作業履歴をもとに答える。",
+      "title": "ChatGPT、Macでのクリックや文字入力を記憶する新機能--「あのファイルはどこ？」にも回答",
+      "uid": "ae589e99ffdce023",
+      "url": "https://japan.cnet.com/article/35251587/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-16T23:35:41.759149+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの普及によってITシステム開発の“垣根”が崩れつつある中、外資のAIベンダーがFDEを掲げて日本市場に参入してきた。SIerを取り巻く環境が急激に変わる中、TISとインテックが合併して発足したTISIはどのように自社の強みを打ち出そうとしているのか。",
+      "title": "外資AIベンダー襲来、システム開発の“垣根”消失……　新生TISIはどう対抗する？",
+      "uid": "ff8b15cfd405dd14",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2607/29/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-16T23:35:41.759149+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "組み込み開発の業務でもAI活用に対する期待は大きく高まっている。本稿では、現役の組み込みエンジニアが本業である筆者が、日々の業務にAIを組み込み続けてきて見えてきたAI活用の限界と現実解について解説する。",
+      "title": "現役組み込みエンジニアがAIを業務利用して分かったこと――期待と限界と現実解",
+      "uid": "d31416290b24328d",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/17/news019.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-16T23:35:41.759149+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「RAGを導入すれば業務が変わる」。そう信じて始めたのに、検索精度は上がらず、複雑な権限制御にも阻まれる――。Skyもまた、その壁にぶつかった一社だ。だが同社は「取りあえずRAG」を捨てることで前に進んだ。何でもベクトル化するのをやめたSkyの判断とは。",
+      "title": "「社内情報をAIに食わせればいい」だけでは足りない、情報検索精度向上の鉄則",
+      "uid": "7e5b6dc71433a350",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/17/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-16T22:39:52.834360+00:00",
       "importance": "minor",
       "label": "CNET Japan",
