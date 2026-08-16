@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-16T10:42:33.692092+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-16T10:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIが生成したコンテンツに目印を埋め込んで区別できるようにする「ウォーターマーク」が注目されており、OpenAIが試験的に導入したりAnthropicが導入を発表したりしています。画像と違ってデータを隠すためのピクセルがないテキストにはどのようにウォーターマークを入れるのかという仕組みについて、人間とAIの関係性について調査・研究するNOPEが解説しています。 続きを読む...",
+      "title": "AI生成テキストの「透かし」が埋め込まれる仕組み",
+      "uid": "b60b147154002e8e",
+      "url": "https://gigazine.net/news/20260816-ai-text-watermarking/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-16T08:48:35.468196+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
