@@ -6113,6 +6113,108 @@ def inbox_loop_ai_guesses_chart() -> None:
     )
 
 
+def missing_material_noticed_chart() -> None:
+    """貼り忘れた材料の種類ごとに、気づかれたかどうか。
+
+    実測（2026-08-16・保存版の指示文6本・全32回）。
+    青の帯＝「貼られていないもの」を名前で挙げた回の割合。
+    右の赤い数字＝そのまま相手に貼れる文面が返った回数
+    （行頭の「件名：」があって、材料から埋める穴が0個の回）。
+    """
+    rows = [
+        ("材料をひとつも貼らない", 12, 12, 0),
+        ("事実の中身を1つ貼り忘れ", 4, 4, 0),
+        ("「いつもの様式」を貼り忘れ", 0, 2, 2),
+        ("受け皿を足して、様式を貼り忘れ", 2, 2, 0),
+    ]
+    left = 18
+    label_w = 244
+    bar_x = left + label_w
+    bar_max = 268
+    right_x = bar_x + bar_max + 16
+    right_w = 96
+    # 見出し「そのまま貼れる文面」は9字。t-xs（10.5px）なので、ありうる最大でも 9×12 = 108px
+    assert right_x + max(right_w, 108) <= WIDTH - left, right_x
+    top = 122
+    row_h = 30
+    gap = 22
+    pitch = row_h + gap
+
+    parts = [
+        f'<text class="t-strong" x="{left}" y="26">'
+        "貼り忘れに気づくかどうかは、貼り忘れたものの種類で割れる</text>\n",
+        f'<text class="t-sm" x="{left}" y="45">'
+        "架空の副業ライターの、保存して使い回している指示文6本。全32回の実測。</text>\n",
+        f'<text class="t-sm" x="{left}" y="64">'
+        "青＝「貼られていないもの」を名前で挙げた回。灰＝一言も触れなかった回。</text>\n",
+        f'<text class="t-sm" x="{left}" y="83">'
+        "右は、そのまま相手に貼れる文面が返った回数（埋める穴が1つも無いもの）。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "貼られていないものを名指しした回</text>\n",
+        f'<text class="t-xs" x="{right_x}" y="{top - 12}">'
+        "そのまま貼れる文面</text>\n",
+    ]
+
+    for index, (name, named, total, sendable) in enumerate(rows):
+        y = top + index * pitch
+        parts.append(
+            f'<text class="t-sm" x="{left}" y="{y + 20}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{bar_x}" y="{y}" '
+            f'width="{bar_max}" height="{row_h}" rx="4"/>\n'
+        )
+        filled = bar_max * named / total
+        if named:
+            parts.append(
+                f'<rect class="bar-new" x="{bar_x}" y="{y}" '
+                f'width="{filled:.1f}" height="{row_h}" rx="4"/>\n'
+            )
+        # 数字は帯の中に置くと短い帯からはみ出すので、常に帯の右端の外に置く
+        parts.append(
+            f'<text class="t-strong" x="{bar_x + bar_max - 62}" y="{y + 20}">'
+            f"{named}／{total}回</text>\n"
+        )
+        tone = "t-bad" if sendable else "t-good"
+        mark = f"{sendable}回" if sendable else "0回"
+        parts.append(
+            f'<rect class="{"box-bad" if sendable else "box-good"}" '
+            f'x="{right_x}" y="{y}" width="{right_w}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{right_x + 34}" y="{y + 20}">{mark}</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 8 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-bad" x="{left}" y="{height - 60}">'
+        "※ 素通りした2回は、原稿を1文字も見ていないのに"
+        "「範囲内に収めております」と4件ずつ書いていた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left}" y="{height - 38}">'
+        "※ 「受け皿」＝保存版の上に貼る前置き。参照している材料が実際に貼られているかを、先に確かめさせる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left}" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "貼り忘れた材料の種類ごとに、AIがその不足に気づいたかどうかを並べた図。"
+        "材料をひとつも貼らなかった12回は、12回とも貼られていないものを名前で挙げ、"
+        "そのまま貼れる文面が返った回は0回だった。"
+        "実績メモや原稿のような事実の中身を1つだけ貼り忘れた4回も、4回とも名指しした。"
+        "ところが「いつもの様式」を貼り忘れた2回は、2回とも様式に一言も触れず、"
+        "2回ともそのまま相手に貼れる納品連絡メールが返った。"
+        "保存版の上に受け皿の前置きを足すと、同じ様式の貼り忘れを2回とも名指しして止まり、"
+        "そのまま貼れる文面は0回になった。"
+    )
+    (OUT / "missing-material-noticed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -6200,4 +6302,5 @@ if __name__ == "__main__":
     reply_undecided_marks_chart()
     material_checks_matrix_chart()
     material_check_split_chart()
-    print(f"86枚を {OUT} に出力しました")
+    missing_material_noticed_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
