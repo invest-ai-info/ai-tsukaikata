@@ -2935,20 +2935,6 @@
       "uid": "aa33c668794b3a3e",
       "url": "https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "PFN 技術ブログ",
-      "published": "2026-05-18T01:27:10+00:00",
-      "source_id": "pfn-blog",
-      "summary": "Preferred Networks では、大規模言語モデル PLaMo の開発を継続して行っています。 LLM を開発するうえで、モデルの能力を適切に測定するベンチマークは重要です。英語ではさまざまなベンチマークが日々 […] 投稿 pretrained model向けのベンチマークの構築 は Preferred Networks Tech Blog に最初に表示されました。",
-      "summary_ja": "「Preferred Networks」がAIモデルの評価基準を開発\n大規模言語モデル「PLaMo」の能力を測るため",
-      "summary_source": "gemini",
-      "title": "pretrained model向けのベンチマークの構築",
-      "uid": "65e60b3863e613f1",
-      "url": "https://tech.preferred.jp/ja/blog/benchmark-base-model/",
-      "vendor": "Preferred Networks"
     }
   ]
 }
