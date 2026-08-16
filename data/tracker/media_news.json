@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-16T14:42:12.391002+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-16T15:10:13+00:00",
+      "source_id": "media-publickey",
+      "summary": "CloudflareはAIエージェントによる操作専用のヘッドレスなWebブラウザ「Kitesurf」を発表しました。 現在ベータ版として公開されています。 Kitesurfは主にRust言語で記述されWebAssemblyにコンパイルされた...",
+      "title": "タブもテーマも拡張機能もないAI専用の超軽量ヘッドレスブラウザ「Kitesurf」、Cloudflareが発表",
+      "uid": "9ce6aec7a56c96db",
+      "url": "https://www.publickey1.jp/blog/26/aikitesurfcloudflare.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-08-16T14:42:12.391002+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-16T15:05:36+00:00",
+      "source_id": "media-publickey",
+      "summary": "オープンソースとして開発されている高速なコードエディタ「Zed」の開発チームは、人間の開発チームとAIエージェントの議論や対話内容とコードの変更履歴をすべて共有し、コンテキストとして保存できる「Delta」を発表しました。 Today we...",
+      "title": "Zed開発チームが「Delta」発表。人間とAIの全対話とコード変更履歴をコンテキストとして保存共有するコラボレーションツール",
+      "uid": "a1945b94ba57a46e",
+      "url": "https://www.publickey1.jp/blog/26/zeddeltaai.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-08-16T10:42:33.692092+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
