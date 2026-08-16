@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-16T22:39:52.834360+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-16T22:17:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AnthropicのAIサービス「Claude」で障害が発生している模様だ。公式ステータスページで障害を告知しているほか、SNSでは「アクセスできない」などの投稿が相次いでいる。",
+      "title": "Claudeで障害　アクセスできず（復旧）",
+      "uid": "2a0a579ad916ad43",
+      "url": "https://japan.cnet.com/article/35251584/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-16T22:39:52.834360+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "欧州のAI主権を担う存在として、AI企業のMistralが注目されている。同社を率いる34歳の“若き天才”は、“救世主”になり得るのか。",
+      "title": "「欧州のAI主権」任された“34歳の天才”　パリの新星、AI企業Mistralは「救世主」になれるのか",
+      "uid": "8d7936acf0d4e225",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/17/news037.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-16T22:39:52.834360+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "他組織がツールを導入した際の効果を知ることは、自社での導入を検討する際の大きな参考となる。中でも自治体における導入例は、組織の公共性もあり、詳細な効果を知ることが可能だ。本ブックレットでは、千代田区のCopilot全庁導入による月2000時間削減や、舞鶴市の脱WindowsからGoogleツール移行による6億円削減の事例を掲載した。",
+      "title": "自治体のコスト削減事例　舞鶴市「脱Windows」で6億円、千代田区Copilotで月2000時間",
+      "uid": "6129b7e056280b4a",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/17/news028.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-16T22:39:52.834360+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "どのような活動をすればDX推進と言えるのか。DXという言葉が普及した現在でも、その答えを一つに定めることは難しい。今回の記事では、経済産業省から「DX認定事業者」の認定を受けた雪印メグミルクの例を参考に、DX推進の具体像を探る。",
+      "title": "雪印メグミルク、ChatAIや社長AIで社内知見を活用　DX認定取得企業から“DXっぽさ”を探る",
+      "uid": "a743c8793a15dc0b",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/17/news030.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-16T22:39:52.834360+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIブームを追い風に、半導体市場の成長が止まらない。今、半導体市場で何が起きているのか。注目記事をまとめた。",
+      "title": "【読まれた記事1位】「AI需要で半導体不足」の裏で本当に起きていること――2026年前半まとめ",
+      "uid": "53a6026dceb6fa10",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/17/news045.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-16T20:41:14.147464+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
