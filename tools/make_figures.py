@@ -69,6 +69,460 @@ def _esc(text: str) -> str:
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+
+def estimate_range_naive_vs_log_chart() -> None:
+    """「聞いただけ」と「自分の記録を貼った」で、返ってきた見積もりの幅を並べる。
+
+    実測（2026-08-15・架空の案件1件と架空の作業記録3本）。
+    帯は返りに書いてあった合計をそのまま分に直したもの。
+    縦の点線は、記録に実際に残っている2本の合計（675分・725分）。
+    """
+    lo_axis, hi_axis = 540, 1020  # 9時間〜17時間
+    plot_x, plot_w = 190, 500
+    scale = plot_w / (hi_axis - lo_axis)
+
+    def px(minutes: float) -> float:
+        return plot_x + (minutes - lo_axis) * scale
+
+    groups = [
+        ("記録を渡さずに聞いた（3回）", "bar-old", [
+            ("1回目　10〜16時間", 600, 960),
+            ("2回目　12〜16時間", 720, 960),
+            ("3回目　10〜13時間", 600, 780),
+        ]),
+        ("自分の作業記録を貼った（3回）", "bar-new", [
+            ("1回目　670〜765分", 670, 765),
+            ("2回目　660〜770分", 660, 770),
+            ("3回目　665〜755分", 665, 755),
+        ]),
+    ]
+    actual = [675, 725]
+
+    top = 118
+    pitch, bar_h = 26, 18
+    rows = sum(1 + len(items) for _, _, items in groups)
+    plot_bottom = top + rows * pitch
+    axis_y = plot_bottom + 8
+    height = axis_y + 24 + 24 + 22 + 22 + 16
+
+    assert px(hi_axis) + 18 <= WIDTH, px(hi_axis)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ仕事の見積もり。聞いただけだと 10〜16時間、記録を貼ると 11.0〜12.8時間</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の案件1件（5,000字・未経験の分野）に、同じ指示文を3回ずつ通した実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "帯は、返ってきた合計そのまま。縦の点線は、記録に実際に残っている2本の合計。</text>\n",
+        f'<text class="t-xs" x="{px(actual[1]) + 10:.1f}" y="{top - 8}">'
+        "← 実際にかかった2本（675分・725分）</text>\n",
+    ]
+
+    for minutes in actual:
+        x = px(minutes)
+        parts.append(
+            f'<path class="line" d="M{x:.1f} {top - 2} L{x:.1f} {plot_bottom - 4}" '
+            f'stroke-dasharray="4 3"/>\n'
+        )
+
+    y = top
+    for title, klass, items in groups:
+        parts.append(f'<text class="t-accent" x="18" y="{y + 14}">{_esc(title)}</text>\n')
+        y += pitch
+        for label, lo, hi in items:
+            left, right = px(lo), px(hi)
+            parts.append(
+                f'<text class="t-sm" x="18" y="{y + 14}">{_esc(label)}</text>\n'
+            )
+            parts.append(
+                f'<rect class="{klass}" x="{left:.1f}" y="{y + 1}" '
+                f'width="{right - left:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            y += pitch
+
+    parts.append(
+        f'<path class="line" d="M{plot_x} {axis_y} L{px(hi_axis):.1f} {axis_y}"/>\n'
+    )
+    for hours in (10, 12, 14, 16):
+        x = px(hours * 60)
+        parts.append(
+            f'<path class="line" d="M{x:.1f} {axis_y} L{x:.1f} {axis_y + 5}"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x - 16:.1f}" y="{axis_y + 20}">{hours}時間</text>\n'
+        )
+
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ 3回を合わせた開きは 6.00時間 と 1.83時間。記録を貼ると 3.27倍せまくなった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ 上の3回は、何をもとにした数字かが1行も書かれていない。聞き直すと3回とも「推測です」と返る。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "同じ案件の見積もりを、記録を渡さずに聞いた3回と、自分の作業記録を貼って聞いた3回で"
+        "比べた図。渡さない3回は10〜16時間・12〜16時間・10〜13時間とばらつき、"
+        "記録を貼った3回は670〜765分・660〜770分・665〜755分にそろった。"
+        "記録に実際に残っている2本の合計675分と725分は、貼った3回の帯の内側にある。"
+    )
+    (OUT / "estimate-range-naive-vs-log.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+
+def list_work_not_delivery_chart() -> None:
+    """集めた25件が「納品できる7件」と「自分が確かめる11件」に割れる図。
+
+    実測（2026-08-15・架空の候補25行）。真値は材料から計算した。
+    同じ指示文を3回通して、3回とも同じ割れ方になった。
+    """
+    segments = [
+        ("確かめられた", 7, "bar-new", "3条件とも○。このまま出せる"),
+        ("自分で確かめる", 11, "bar-in", "従業員数が空欄。○とも×とも言えない"),
+        ("重複の疑い", 1, "bar-old", "同じ社名の表記ゆれ"),
+        ("条件から外れる", 6, "bar-old", "100人超3件・別業種2件・関東外1件"),
+    ]
+    total = sum(n for _, n, _, _ in segments)
+    plot_x, plot_w = 18, 684
+    unit = plot_w / total
+    bar_y, bar_h = 122, 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「20件そろえて」と言われた仕事。条件を○にできたのは 7件だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の候補25行を渡して、同じ指示文を3回。3回とも同じ7件・11件・6件・重複1件に割れた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3回とも「20件は作れません」と断り、数をそろえるために条件外を混ぜた回は0回。</text>\n",
+    ]
+
+    # 20件目の位置（ここに線を引くと、条件から外れる側に入る）
+    x20 = plot_x + 20 * unit
+    parts.append(
+        f'<text class="t-bad" x="{x20 - 150:.1f}" y="{bar_y - 34}">'
+        "発注が求めた20件目 → ここ</text>\n"
+    )
+    parts.append(
+        f'<path class="line" d="M{x20:.1f} {bar_y - 28} L{x20:.1f} {bar_y + bar_h + 8}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    x = plot_x
+    label_rows = []
+    for name, count, klass, note in segments:
+        w = count * unit
+        parts.append(
+            f'<rect class="{klass}" x="{x:.1f}" y="{bar_y}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x + w / 2 - 12:.1f}" y="{bar_y + 25}">{count}件</text>\n'
+        )
+        label_rows.append((name, count, note))
+        x += w
+
+    y = bar_y + bar_h + 40
+    for name, count, note in label_rows:
+        parts.append(
+            f'<text class="t-accent" x="18" y="{y}">{_esc(name)}　{count}件</text>\n'
+        )
+        parts.append(f'<text class="t-sm" x="200" y="{y}">{_esc(note)}</text>\n')
+        y += 24
+
+    height = y + 12 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ 7件＋11件＝18件。全部が100人以下だったとしても、20件には届かない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ 値打ちは「20件が7件に減ったこと」ではない。11件が自分の作業として残ったこと。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "自分で集めた候補25件を条件で仕分けた図。3条件とも○にできたのが7件、"
+        "従業員数が空欄で自分が確かめることになるのが11件、重複の疑いが1件、"
+        "条件から外れるのが6件。発注が求めた20件目の位置は、"
+        "条件から外れる6件の中に入ってしまう。"
+    )
+    (OUT / "list-work-not-delivery.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+
+def reply_undecided_marks_chart() -> None:
+    """答えられない6通が、工程ごとに「送れる文」になっていくところ。
+
+    実測（2026-08-15・架空の条件表8行と架空の問い合わせ12通）。
+    青＝本文の中に「私が決める」印が残っている（そのままでは送れない＝正しい）。
+    赤＝印が無く、1つの文面に決まっている（決めていないのに決まった）。
+    """
+    rows = [
+        ("「下書きを作って」1回目", [1, 1, 0, 0, 1, 0]),
+        ("「下書きを作って」2回目", [0, 1, 0, 1, 0, 0]),
+        ("「そのまま送れる形に」2回とも", [0, 0, 0, 0, 0, 0]),
+        ("〔私が決める〕を本文に残して", [1, 1, 1, 1, 1, 1]),
+    ]
+    cols = ["B1", "B2", "B3", "B4", "B5", "B6"]
+    label_w = 208
+    cell_w, cell_h, gap = 48, 30, 8
+    top = 122
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 130 <= WIDTH - 18, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "条件表に答えの無い6通が、頼み方ひとつで「そのまま送れる文」になる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の条件表8行と架空の問い合わせ12通。6通は条件表のどこにも答えが書いていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "青＝本文の中に「私が決める」印が残っている ／ 赤＝印が無く、1つの文面に決まっている。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "数えたのは、相手に貼る本文だけ。文面の外に付いた注記は数えていない。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 9:.1f}" y="{top - 10}">{name}</text>\n'
+        )
+
+    for row_index, (name, marks) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(name)}</text>\n')
+        for col_index, kept in enumerate(marks):
+            x = grid_x + col_index * (cell_w + gap)
+            klass = "box-accent" if kept else "box-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            mark = "印" if kept else "送"
+            tone = "t-accent" if kept else "t-bad"
+            parts.append(
+                f'<text class="{tone}" x="{x + cell_w / 2 - 7:.1f}" y="{y + 20}">{mark}</text>\n'
+            )
+        kept_n = sum(marks)
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 14}" y="{y + 20}">印 {kept_n}／6</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 12 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ 「そのまま送れる形に」の2回では、条件表に無い決めごとが本文に6件ずつ入った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ うち1回は「記事料金の3割」という数字を、もう1回は「他のお取引先とのお約束」という事実を作った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "条件表に答えの無い6通について、頼み方ごとに「私が決める」印が本文に残った数を並べた図。"
+        "下書きを作ってと頼んだ1回目は6通中3通、2回目は6通中2通にしか印が残らなかった。"
+        "そのまま送れる形にしてと頼むと2回とも0通になり、"
+        "〔私が決める〕を本文に残してと頼むと6通すべてに印が残った。"
+    )
+    (OUT / "reply-undecided-marks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def material_checks_matrix_chart() -> None:
+    """材料に仕込んだ4つの異常が、頼み方3通りで返りに出たかどうか。
+
+    実測（2026-08-16・架空の日次の記録2本＝表形式と走り書き）。
+    真値は材料を作ったコードの assert で確かめてある。
+    セルの分母＝その頼み方を走らせた回数。
+    """
+    rows = [
+        ("中身が完全に同じ行（3組）", "4/4", "good", "2/4", "warn", "4/4", "good"),
+        ("途中で切れている行（1行）", "4/4", "good", "2/4", "warn", "4/4", "good"),
+        ("日付が1日古い（昨日ぶんではない）", "0/4", "bad", "0/4", "bad", "3/3", "good"),
+        ("毎日ある種類が、今日は0件", "0/4", "bad", "0/4", "bad", "2/2", "good"),
+    ]
+    cols = [
+        ("① そのまま頼む", "毎朝の集計を頼むだけ"),
+        ("② 自動実行の形に短く", "「この2つ以外は書かない」"),
+        ("③ 点検の欄を作る", "数と日付を先に書かせる"),
+    ]
+    klass = {"good": "box-good", "warn": "box-accent", "bad": "box-bad"}
+    text_klass = {"good": "t-good", "warn": "t-accent", "bad": "t-bad"}
+
+    label_x, label_w = 18, 276
+    col_w, col_gap = 132, 6
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(3)]
+    head_y, head_h = 92, 46
+    row_h, row_gap = 48, 6
+    row_y = [head_y + head_h + row_gap + i * (row_h + row_gap) for i in range(4)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "材料が壊れた日に、返りがそれを言ってくるか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の日次の記録2本（表形式・走り書き）に、同じ4つの異常を仕込んで走らせた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "分母は走らせた回数。③は、その項目を点検の欄に入れた回だけを数えている。</text>\n",
+    ]
+
+    for i, (head, sub) in enumerate(cols):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="{head_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + 8}" y="{head_y + 20}" '
+            f'style="font-size:12px">{_esc(head)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 36}">{_esc(sub)}</text>\n'
+        )
+
+    for r, (label, *cells) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for c in range(3):
+            value, kind = cells[c * 2], cells[c * 2 + 1]
+            parts.append(
+                f'<rect class="{klass[kind]}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_klass[kind]}" x="{col_x[c] + col_w / 2 - 16:.0f}" '
+                f'y="{y + row_h / 2 + 5:.0f}">{value}</text>\n'
+            )
+
+    bottom = row_y[-1] + row_h
+    notes = [
+        ("t-bad", "※ 下の2行は、材料の中を読んでも決まらない。今日が何日か・普段は何件かを"
+                  "AIは持っていない。"),
+        ("t-xs", "※ ②で 2/4 になったのは、表形式の材料2回で警告が丸ごと消えたため"
+                 "（走り書きの材料2回では残った）。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "材料が壊れた日に、返りが異常を指摘したかどうかを4つの異常と3つの頼み方で並べた表。"
+        "中身が完全に同じ行が3組ある件は、そのまま頼んだ4回で4回、"
+        "自動実行の形に短くした4回で2回、点検の欄を作った4回で4回。"
+        "途中で切れている行も同じく4回・2回・4回。"
+        "日付が1日古いことは、そのまま頼んだ4回で0回、短くした4回でも0回、"
+        "今日の日付をこちらから渡した3回では3回とも指摘した。"
+        "毎日ある種類が今日は0件だったことは、そのまま頼んだ4回で0回、"
+        "短くした4回でも0回、毎日ある種類の名前をこちらから渡した2回では2回とも指摘した。"
+        "下の2つは材料の中を読んでも決まらないもので、"
+        "今日が何日か、普段は何件かという情報をAIは持っていない。"
+    )
+    (OUT / "material-checks-matrix.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def material_check_split_chart() -> None:
+    """点検の欄と一覧はそろったのに、その下の集計だけが2回で割れた回。
+
+    実測（2026-08-16・同じ指示文を2回）。真値は材料から計算した。
+    """
+    blocks = [
+        ("毎日ある種類の 0件 の警告",
+         "請求 0件 / 納期 0件", "請求 0件 / 納期 0件", True, "2回とも同じ"),
+        ("種類ごとの件数",
+         "仕様2・返品2・その他2", "仕様3・返品3・その他3", False, "真値は 3・3・3"),
+        ("まだ対応が終わっていない一覧",
+         "3行（文字列まで一致）", "3行（文字列まで一致）", True, "2回とも同じ"),
+    ]
+    label_x, label_w = 18, 218
+    col_w, col_gap = 218, 8
+    col_x = [label_x + label_w + col_gap, label_x + label_w + col_gap * 2 + col_w]
+    head_y = 96
+    blk_h, blk_gap = 58, 8
+    blk_y = [head_y + 24 + i * (blk_h + blk_gap) for i in range(3)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "点検の欄はそろった。その下の集計だけが、2回で割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ指示文を2回。どちらの回も「中身が完全に同じ行は、1件として数えてください」入り。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "0件の警告も、未対応の一覧も、2回とも1文字も違わない。違ったのは件数だけ。</text>\n",
+        f'<text class="t-xs" x="{col_x[0]}" y="{head_y + 10}">1回目</text>\n',
+        f'<text class="t-xs" x="{col_x[1]}" y="{head_y + 10}">2回目</text>\n',
+    ]
+
+    for i, (label, a, b, same, note) in enumerate(blocks):
+        y = blk_y[i]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + 24}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{label_x}" y="{y + 44}">{_esc(note)}</text>\n'
+        )
+        for j, value in enumerate((a, b)):
+            css = "box-good" if same else "box-bad"
+            tcss = "t-good" if same else "t-bad"
+            if not same and j == 1:
+                css, tcss = "box-good", "t-good"
+            parts.append(
+                f'<rect class="{css}" x="{col_x[j]}" y="{y}" '
+                f'width="{col_w}" height="{blk_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcss}" x="{col_x[j] + 12}" y="{y + blk_h / 2 + 5:.0f}" '
+                f'style="font-size:12px">{_esc(value)}</text>\n'
+            )
+
+    bottom = blk_y[-1] + blk_h
+    notes = [
+        ("t-bad", "※ 1回目の件数は、材料から計算した真値と合っていない。"
+                  "一覧が合っているので、表だけでは気づけない。"),
+        ("t-xs", "※ 点検の欄（行数・最新の日付・重複の組数・崩れた行）は、"
+                 "10回とも真値と一致した。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "同じ指示文を2回走らせて、返りの3つの部分を並べた図。"
+        "毎日ある種類が0件だという警告は、1回目も2回目も請求0件・納期0件で同じ。"
+        "まだ対応が終わっていない一覧も、1回目も2回目も3行で文字列まで一致。"
+        "ところが種類ごとの件数だけが、1回目は仕様2・返品2・その他2、"
+        "2回目は仕様3・返品3・その他3に割れた。材料から計算した真値は3・3・3なので、"
+        "1回目のほうが間違っている。警告も一覧も合っているため、"
+        "件数が間違っていることに画面からは気づけない。"
+    )
+    (OUT / "material-check-split.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -5741,4 +6195,9 @@ if __name__ == "__main__":
     hourly_rate_boundary_chart()
     inbox_loop_carryover_share_chart()
     inbox_loop_ai_guesses_chart()
-    print(f"81枚を {OUT} に出力しました")
+    estimate_range_naive_vs_log_chart()
+    list_work_not_delivery_chart()
+    reply_undecided_marks_chart()
+    material_checks_matrix_chart()
+    material_check_split_chart()
+    print(f"86枚を {OUT} に出力しました")
