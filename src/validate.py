@@ -367,14 +367,27 @@ def _title_errors(where: str, article: Article) -> list[str]:
     return errors
 
 
-def _money_note_errors(where: str, body_html: str) -> list[str]:
+def _money_note_errors(where: str, article: Article) -> list[str]:
     """金額目安ブロックの中身を検査する。
 
     ブロックが無ければ何も言わない（金額を書かない記事のほうが多い）。
     あるなら、出典・確認日・免責の3点が揃っていること。
+
+    ⚠️ frontmatter の `checked:` も要る。金額ブロックには必ず出典の外部リンクが
+    入るので、**金額ブロックのある記事は週次の「外部リンクがあるのに checked が無い」に
+    構造的に必ず引っかかる**（2026-08-17 に実際に Actions が落ちた）。
+    ブロック内の確認日とは別物なので、ここで一緒に止める。
     """
+    body_html = article.body_html
     errors = []
     blocks = list(MONEY_NOTE_RE.finditer(body_html))
+
+    if blocks and article.checked is None:
+        errors.append(
+            f"{where}: 金額ブロックがあるのに frontmatter の checked: がありません"
+            f"（出典の外部リンクが入るので、無いと週次チェックが必ず赤くなります。"
+            f"ブロック内の確認日と同じ日付を入れてください）"
+        )
 
     if MONEY_NOTE_ESCAPED in body_html and not blocks:
         errors.append(
@@ -542,7 +555,7 @@ def validate(
         errors += _density_errors(where, article)
         errors += _checked_errors(where, article, today)
         errors += _title_errors(where, article)
-        errors += _money_note_errors(where, article.body_html)
+        errors += _money_note_errors(where, article)
         errors += _income_phrase_errors(where, article)
 
         if _has_affiliate_link(text) and not any(word in text for word in DISCLOSURE_WORDS):

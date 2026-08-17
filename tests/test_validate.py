@@ -464,7 +464,7 @@ MONEY_OK = (
 
 
 def test_money_note_with_all_three_passes():
-    assert validate([_article(body=MONEY_OK)]) == []
+    assert validate([_article(body=MONEY_OK, checked=date(2026, 8, 15))]) == []
 
 
 def test_money_note_without_disclaimer_is_detected():
@@ -579,7 +579,7 @@ def test_income_guarantee_phrase_is_detected(phrase):
 
 def test_disclaimer_itself_is_not_flagged():
     # 免責文は「保証」を含むが、これは検出してはいけない（自分の型を自分で殺す）
-    assert validate([_article(body=MONEY_OK)]) == []
+    assert validate([_article(body=MONEY_OK, checked=date(2026, 8, 15))]) == []
 
 
 def test_normal_earning_talk_passes():
@@ -603,3 +603,14 @@ def test_other_scenes_are_not_exempt():
     article = _article(body="この方法なら必ず稼げます。", scene="earn")
     errors = validate([article])
     assert any("必ず稼げ" in e for e in errors)
+
+
+def test_money_note_without_frontmatter_checked_is_detected():
+    # 🚨 2026-08-17 に Actions が実際に落ちた型。金額ブロックには必ず出典の
+    # 外部リンクが入るので、frontmatter の checked が無いと週次が必ず赤くなる。
+    errors = validate([_article(body=MONEY_OK)])
+    assert any("frontmatter の checked" in e for e in errors)
+
+
+def test_money_note_with_frontmatter_checked_passes():
+    assert validate([_article(body=MONEY_OK, checked=date(2026, 8, 15))]) == []
