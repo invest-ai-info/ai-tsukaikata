@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T05:52:28.010678+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T05:33:43+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Microsoft 365 Copilotを起動すると、左上に表示される「Work IQ」という表示。昨今、Microsoft関連の情報で、よく目にするが、果たしてこれが何なのか？ と疑問に思っている人も少なくないことだろう。そこで、今回は、実際にWork IQから情報を取得して、既存のMicrosoft GraphやMicrosoft 365のデータ（メールや会議など）とどう違うのかを実際に確…",
+      "title": "清水理史の「AI道場」 Copilotの「Work IQ」を直感的に理解する 「私の今の仕事は何ですか？」に適切に答えられるスゴさ",
+      "uid": "542a7a358648db3e",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/dojo/2133138.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-17T05:00:16.701147+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -11,6 +23,18 @@
       "uid": "4b46d6da12a4d63c",
       "url": "https://gigazine.net/news/20260817-qwen3-8-27b/",
       "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T05:52:28.010678+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T04:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "マーケティングにAIを活用することで、どのような課題をどう解消できるのか。キーワードは「AIペルソナ」だ。NECのBestMoveを利用する、味の素冷凍食品の事例から探る。",
+      "title": "「データがない」「スキルがない」「発想が広がらない」　味の素冷凍食品は“3つのない”をどう解消した？",
+      "uid": "1b06eefe3633e778",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/17/news071.html",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-08-17T05:00:16.701147+00:00",
