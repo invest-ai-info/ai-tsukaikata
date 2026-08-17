@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T13:08:48.149000+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AnthropicがAIに関するリスクレポートを公開しました。その中で、一般公開されている最高性能のモデル「Claude Mythos 5」よりも性能が高い謎のモデルが登場することが話題になっています。 続きを読む...",
+      "title": "実はAnthropicには最上位のMythosよりも強力な「Model 2」というAIモデルがあるがリリース予定はない",
+      "uid": "1da891e1b70cbd41",
+      "url": "https://gigazine.net/news/20260817-anthropic-model-2/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-17T10:49:31.020743+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",

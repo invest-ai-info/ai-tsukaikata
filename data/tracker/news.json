@@ -15,6 +15,34 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-08-17T13:08:48.149000+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-17T05:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now.",
+      "summary_ja": "OpenAIがサイバーセキュリティ対策を強化",
+      "summary_source": "gemini",
+      "title": "The Defender’s Window",
+      "uid": "a8e707f4bb44f981",
+      "url": "https://openai.com/index/the-defenders-window",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-17T13:08:48.149000+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-17T05:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs",
+      "summary_ja": "OpenAIがPORTS-Pikeプロジェクトに参画\n地域投資を拡大し、南オハイオで数千人雇用を支援",
+      "summary_source": "gemini",
+      "title": "OpenAI joins PORTS-Pike project",
+      "uid": "be5536d69b68adf1",
+      "url": "https://openai.com/index/openai-joins-ports-pike-project",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-17T11:43:40.518684+00:00",
       "importance": "minor",
       "label": "OpenAI News",
