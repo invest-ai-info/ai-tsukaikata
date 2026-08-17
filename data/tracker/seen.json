@@ -15,11 +15,11 @@
     "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-17T08:25:00+00:00",
-    "media-gigazine": "2026-08-17T10:15:00+00:00",
+    "media-gigazine": "2026-08-17T11:00:00+00:00",
     "media-impress-ai": "2026-08-17T10:27:47+00:00",
     "media-itmedia-aiplus": "2026-08-17T07:58:35+00:00",
     "media-publickey": "2026-08-16T15:10:13+00:00",
-    "openai-news": "2026-08-13T11:00:00+00:00",
+    "openai-news": "2026-08-17T03:15:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-14T15:55:10+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -37,6 +37,17 @@
       "uid": "75d171f5f5c7a531",
       "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-17T03:15:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age.",
+      "title": "New policy ideas for the Intelligence Age",
+      "uid": "afa9efbccdaef592",
+      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -370,6 +381,7 @@
     "79a43c911506bc22": "2026-08-13T22:05:19.093205+00:00",
     "79de4c40dbfcb939": "2026-08-13T12:01:33.145239+00:00",
     "7a61633a59ab7c8d": "2026-08-03T21:32:12.318301+00:00",
+    "7afe8e69d002132f": "2026-08-17T11:43:40.518684+00:00",
     "7b8390237770e22e": "2026-08-15T08:47:19.497531+00:00",
     "7bdac4316094a5f7": "2026-08-16T20:41:14.147464+00:00",
     "7c0ebd28c66beca8": "2026-08-01T12:16:42.309603+00:00",
@@ -531,6 +543,7 @@
     "ae589e99ffdce023": "2026-08-16T23:35:41.759149+00:00",
     "ae8216f90e901db2": "2026-08-13T17:15:19.173918+00:00",
     "af02503bc1d7b526": "2026-08-13T12:01:33.145239+00:00",
+    "afa9efbccdaef592": "2026-08-17T11:43:40.518684+00:00",
     "afb0505d5cc0bccb": "2026-08-01T12:16:42.309603+00:00",
     "afc79ff055e1a5cf": "2026-08-13T12:01:33.145239+00:00",
     "afc8bc0e69c75b22": "2026-08-10T17:11:21.526374+00:00",

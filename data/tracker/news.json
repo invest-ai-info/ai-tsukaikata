@@ -15,6 +15,20 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-08-17T11:43:40.518684+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-17T03:15:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age.",
+      "summary_ja": "OpenAIが新たなAI政策の研究を支援。\n14の独立したプロジェクトに資金提供。\n経済発展と社会の安定を目指します。",
+      "summary_source": "gemini",
+      "title": "New policy ideas for the Intelligence Age",
+      "uid": "afa9efbccdaef592",
+      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-14T22:42:40.927953+00:00",
       "importance": "minor",
       "label": "Claude Code",
