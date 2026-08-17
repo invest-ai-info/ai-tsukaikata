@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T07:18:13.464827+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T07:05:41+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "アマゾン ウェブ サービス ジャパン（以下、AWSジャパン）は8月17日、新プログラム「AWS ジャパン地域創生支援プログラム」（以下、LEAP by AWS ジャパン）を発表した。",
+      "title": "AWS ジャパン地域創生支援プログラムで地域企業のAI・クラウド活用を支援",
+      "uid": "0d6be78e303c0b17",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133170.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-17T07:18:13.464827+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T06:12:13+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "LINEヤフーは、「Yahoo!ニュース」において専門家の知見を、Agent iとの対話で得られる「エキスパートAI」の提供を開始した。このエージェントは、AIエージェント「Agent i」内で利用可能。提供期間は、8月17日～9月30日。",
+      "title": "LINEヤフー、専門家の知見を「Agent i」で提供開始 料理専門家「脱サラ料理家ふらお」さんエージェント",
+      "uid": "306d9525b17359b5",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133162.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-17T07:18:13.464827+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T05:59:12+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "国立精神・神経医療研究センター（NCNP）と早稲田大学の研究グループは8月17日、脳理論に基づいたAIモデルをヒューマノイドロボットに実装し、高次元の視覚・固有受容感覚（身体感覚）を統合しながら、複数の介護動作を学習できることを実証したと発表した。",
+      "title": "脳理論に基づくAIモデルでヒューマノイドロボットが介護動作を学習 NCNPと早稲田大学が実証",
+      "uid": "97bc0a7023c06b63",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133147.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-17T05:52:28.010678+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
