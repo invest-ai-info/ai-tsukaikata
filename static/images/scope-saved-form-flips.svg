@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="456" viewBox="0 0 720 456" role="img" aria-label="毎回同じ形で出すための保存版の指示文を、同じ材料で2回ずつ走らせた結果を並べた図。1行目の見出し、列の名前、列の数まで指定してある。材料Aの1回目は、作業1から作業7まで7項目すべてが「未定」だった。同じ指示文の2回目は、7項目すべてが「含む」になった。材料Bでは逆で、1回目が7項目すべて「含む」、2回目が7項目すべて「未定」だった。列の名前も行の形も4回とも同じなので、表を見ているかぎり割れていることが分からない。さらに2回目には、材料Aでも材料Bでも納期・修正・支払いの3行が新しく生え、行数が7行と10行で違っている。「私が決める」の欄はどの回も埋まっていて、割れたのは判定の欄だけだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="456"/>
+<text class="t-strong" x="18" y="26">出す形を固定しても、判定そのものが2回で入れ替わった</text>
+<text class="t-sm" x="18" y="45">1行目の見出し・列の名前・列の数まで指定した保存版を、同じ材料で2回ずつ走らせた。</text>
+<text class="t-sm" x="18" y="64">列の名前も行の形も4回とも同じ。違うのは「含む/含まない」の欄の値だけ。</text>
+<text class="t-xs" x="128" y="108">材料A 1回目</text>
+<text class="t-xs" x="276" y="108">材料A 2回目</text>
+<text class="t-xs" x="424" y="108">材料B 1回目</text>
+<text class="t-xs" x="572" y="108">材料B 2回目</text>
+<text class="t-sm" x="18" y="141">作業1</text>
+<rect class="box-bad" x="120" y="122" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="142" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="122" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="142" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="122" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="142" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="122" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="142" style="font-size:12px">未定</text>
+<text class="t-sm" x="18" y="176">作業2</text>
+<rect class="box-bad" x="120" y="157" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="177" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="157" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="177" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="157" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="177" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="157" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="177" style="font-size:12px">未定</text>
+<text class="t-sm" x="18" y="211">作業3</text>
+<rect class="box-bad" x="120" y="192" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="212" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="192" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="212" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="192" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="212" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="192" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="212" style="font-size:12px">未定</text>
+<text class="t-sm" x="18" y="246">作業4</text>
+<rect class="box-bad" x="120" y="227" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="247" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="227" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="247" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="227" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="247" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="227" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="247" style="font-size:12px">未定</text>
+<text class="t-sm" x="18" y="281">作業5</text>
+<rect class="box-bad" x="120" y="262" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="282" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="262" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="282" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="262" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="282" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="262" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="282" style="font-size:12px">未定</text>
+<text class="t-sm" x="18" y="316">作業6</text>
+<rect class="box-bad" x="120" y="297" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="317" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="297" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="317" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="297" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="317" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="297" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="317" style="font-size:12px">未定</text>
+<text class="t-sm" x="18" y="351">作業7</text>
+<rect class="box-bad" x="120" y="332" width="138" height="30" rx="3"/>
+<text class="t-bad" x="173" y="352" style="font-size:12px">未定</text>
+<rect class="box-accent" x="268" y="332" width="138" height="30" rx="3"/>
+<text class="t-accent" x="321" y="352" style="font-size:12px">含む</text>
+<rect class="box-accent" x="416" y="332" width="138" height="30" rx="3"/>
+<text class="t-accent" x="469" y="352" style="font-size:12px">含む</text>
+<rect class="box-bad" x="564" y="332" width="138" height="30" rx="3"/>
+<text class="t-bad" x="617" y="352" style="font-size:12px">未定</text>
+<text class="t-bad" x="18" y="388">※ 2回目には、材料Aで3行（納期・修正・支払い）、材料Bでも3行が新しく生えた。行数が7行と10行で違う。</text>
+<text class="t-xs" x="18" y="410">※ 「私が決める」欄の中身は4回とも埋まっており、空欄になった回は無い。割れたのは判定の欄だけ。</text>
+<text class="t-xs" x="18" y="432">架空データでの実測。4回ぶんの生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

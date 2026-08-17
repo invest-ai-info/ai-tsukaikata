@@ -523,6 +523,190 @@ def material_check_split_chart() -> None:
     )
 
 
+
+def scope_lines_ai_drew_chart() -> None:
+    """頼み方ごとに、返ってきた表の3つの数を並べる（回ごとの値をそのまま出す）。
+
+    実測（2026-08-17・材料2本×各2回＝4回。指示文5と6は各1回で計2回）。
+    値は check2.py の出力そのまま。畳まずに回ごとに並べる（台帳★42）。
+    """
+    rows = [
+        ("そのまま「表を作って」", ["7", "7", "7", "0"], ["10", "3", "1", "1"], ["0", "0", "0", "0"]),
+        ("＋「含まれないものも」", ["7", "7", "7", "7"], ["4", "1", "1", "0"], ["0", "0", "0", "0"]),
+        ("＋「同じ数だけ・1行に1つ」", ["7", "7", "7", "7"], ["5", "1", "0", "0"], ["0", "0", "0", "0"]),
+        ("＋〔私が決める〕を表の中に", ["0", "0", "0", "0"], ["0", "1", "0", "0"], ["19", "27", "26", "18"]),
+        ("対照＝「書いてないことは書くな」", ["0", "0", "—", "—"], ["0", "0", "—", "—"], ["0", "0", "—", "—"]),
+    ]
+    label_x, label_w = 18, 208
+    col_w, col_gap = 152, 10
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(3)]
+    heads = [
+        ("含まれないこと", "並んだ項目の数"),
+        ("AIが引いた上限", "「3枚まで」等の数"),
+        ("〔私が決める〕", "表の中に残った印"),
+    ]
+    head_y = 92
+    row_h, row_gap = 40, 7
+    row_y = [head_y + 44 + i * (row_h + row_gap) for i in range(len(rows))]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "頼み方を変えると、表の中で決まっているものが入れ替わる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「できること7件・もう決めたこと3件」を材料2本ぶん作り、各2回ずつ通した（計4回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "セルの4つの数は、左から 材料A1回目・A2回目・B1回目・B2回目。畳まずに並べてある。</text>\n",
+    ]
+    for i, (title, sub) in enumerate(heads):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="38" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + 8}" y="{head_y + 17}" '
+            f'style="font-size:12px">{_esc(title)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 32}">{_esc(sub)}</text>\n'
+        )
+
+    for r, (label, excl, caps, marks) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12px">{_esc(label)}</text>\n'
+        )
+        for c, values in enumerate((excl, caps, marks)):
+            nums = [v for v in values if v != "—"]
+            if c == 0:
+                good = all(v == "7" for v in nums)
+                bad = any(v == "0" for v in nums)
+            elif c == 1:
+                good = all(v == "0" for v in nums)
+                bad = any(int(v) >= 3 for v in nums)
+            else:
+                good = all(v != "0" for v in nums)
+                bad = False
+            klass = "box-good" if good else ("box-bad" if bad else "box")
+            tone = "t-good" if good else ("t-bad" if bad else "t")
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + 12}" y="{y + row_h / 2 + 5:.0f}" '
+                f'style="font-size:12.5px">{_esc(" ・ ".join(values))}</text>\n'
+            )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        ("t-bad", "※ そのまま頼んだ4回のうち1回は、含まれないことが1項目も並ばなかった。"
+                  "残る3回は形が毎回違う（別表・列・見出し）。"),
+        ("t-bad", "※ 上限の中身も回ごとに違う。材料Aの2回で両方に出たのは「3枚」「14日」だけで、"
+                  "3,000字・5件・2枚・5ページは片方にしか出ない。"),
+        ("t-xs", "架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "引き受ける範囲の表を、頼み方を5通りに変えて作らせ、3つの数を回ごとに並べた図。"
+        "材料は架空の「できること7件・もう決めたこと3件」を2本用意し、各2回ずつ通した。"
+        "数は左から材料Aの1回目、Aの2回目、Bの1回目、Bの2回目。"
+        "そのまま「表を作って」と頼むと、含まれないことの項目は7・7・7・0で、"
+        "4回のうち1回は1項目も並ばなかった。"
+        "そのときAIが自分で引いた上限、たとえば写真3枚までや公開後14日以内といった数は"
+        "10・3・1・1で、材料に書いていない数字が線として表に入っている。"
+        "〔私が決める〕の印は4回とも0件。"
+        "「含まれないものも書いてください」を足すと、含まれないことは4回とも7件になり、"
+        "上限は4・1・1・0に減る。"
+        "「含まれるものと同じ数だけ、1行に1つ」まで足すと、含まれないことは4回とも7件、"
+        "上限は5・1・0・0。"
+        "〔私が決める：何を決めればよいか〕を表の中に残させると、"
+        "上限は0・1・0・0まで落ち、かわりに印が19・27・26・18件残る。"
+        "ただしこの版では含まれないことの項目は4回とも0件になる。"
+        "対照として「私が上に書いていないことは一切書かないでください」だけを渡すと、"
+        "2回とも含まれないことも上限も印も全部0件で、表は材料の写しになった。"
+    )
+    (OUT / "scope-lines-ai-drew.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def scope_saved_form_flips_chart() -> None:
+    """保存版（出す形を固定）を2回転させたら、判定列が丸ごと逆になった回。"""
+    cols = [("材料A 1回目", ["未定"] * 7), ("材料A 2回目", ["含む"] * 7),
+            ("材料B 1回目", ["含む"] * 7), ("材料B 2回目", ["未定"] * 7)]
+    items = ["作業1", "作業2", "作業3", "作業4", "作業5", "作業6", "作業7"]
+
+    label_x, label_w = 18, 92
+    col_w, col_gap = 138, 10
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(4)]
+    head_y = 96
+    cell_h, cell_gap = 30, 5
+    row_y = [head_y + 26 + i * (cell_h + cell_gap) for i in range(len(items))]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "出す形を固定しても、判定そのものが2回で入れ替わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "1行目の見出し・列の名前・列の数まで指定した保存版を、同じ材料で2回ずつ走らせた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "列の名前も行の形も4回とも同じ。違うのは「含む/含まない」の欄の値だけ。</text>\n",
+    ]
+    for i, (name, _) in enumerate(cols):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 12}">{_esc(name)}</text>\n'
+        )
+    for r, item in enumerate(items):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + cell_h / 2 + 4:.0f}">{_esc(item)}</text>\n'
+        )
+        for c, (_, values) in enumerate(cols):
+            value = values[r]
+            klass = "box-bad" if value == "未定" else "box-accent"
+            tone = "t-bad" if value == "未定" else "t-accent"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{cell_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + col_w / 2 - 16:.0f}" '
+                f'y="{y + cell_h / 2 + 5:.0f}" style="font-size:12px">{_esc(value)}</text>\n'
+            )
+
+    y = row_y[-1] + cell_h + 26
+    notes = [
+        ("t-bad", "※ 2回目には、材料Aで3行（納期・修正・支払い）、材料Bでも3行が新しく生えた。"
+                  "行数が7行と10行で違う。"),
+        ("t-xs", "※ 「私が決める」欄の中身は4回とも埋まっており、空欄になった回は無い。"
+                 "割れたのは判定の欄だけ。"),
+        ("t-xs", "架空データでの実測。4回ぶんの生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "毎回同じ形で出すための保存版の指示文を、同じ材料で2回ずつ走らせた結果を並べた図。"
+        "1行目の見出し、列の名前、列の数まで指定してある。"
+        "材料Aの1回目は、作業1から作業7まで7項目すべてが「未定」だった。"
+        "同じ指示文の2回目は、7項目すべてが「含む」になった。"
+        "材料Bでは逆で、1回目が7項目すべて「含む」、2回目が7項目すべて「未定」だった。"
+        "列の名前も行の形も4回とも同じなので、表を見ているかぎり割れていることが分からない。"
+        "さらに2回目には、材料Aでも材料Bでも納期・修正・支払いの3行が新しく生え、"
+        "行数が7行と10行で違っている。"
+        "「私が決める」の欄はどの回も埋まっていて、割れたのは判定の欄だけだった。"
+    )
+    (OUT / "scope-saved-form-flips.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -6600,4 +6784,6 @@ if __name__ == "__main__":
     constraints_hold_totals_drift_chart()
     two_runs_read_volume_chart()
     two_runs_narrowing_chart()
+    scope_lines_ai_drew_chart()
+    scope_saved_form_flips_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

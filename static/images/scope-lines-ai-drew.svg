@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="458" viewBox="0 0 720 458" role="img" aria-label="引き受ける範囲の表を、頼み方を5通りに変えて作らせ、3つの数を回ごとに並べた図。材料は架空の「できること7件・もう決めたこと3件」を2本用意し、各2回ずつ通した。数は左から材料Aの1回目、Aの2回目、Bの1回目、Bの2回目。そのまま「表を作って」と頼むと、含まれないことの項目は7・7・7・0で、4回のうち1回は1項目も並ばなかった。そのときAIが自分で引いた上限、たとえば写真3枚までや公開後14日以内といった数は10・3・1・1で、材料に書いていない数字が線として表に入っている。〔私が決める〕の印は4回とも0件。「含まれないものも書いてください」を足すと、含まれないことは4回とも7件になり、上限は4・1・1・0に減る。「含まれるものと同じ数だけ、1行に1つ」まで足すと、含まれないことは4回とも7件、上限は5・1・0・0。〔私が決める：何を決めればよいか〕を表の中に残させると、上限は0・1・0・0まで落ち、かわりに印が19・27・26・18件残る。ただしこの版では含まれないことの項目は4回とも0件になる。対照として「私が上に書いていないことは一切書かないでください」だけを渡すと、2回とも含まれないことも上限も印も全部0件で、表は材料の写しになった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="458"/>
+<text class="t-strong" x="18" y="26">頼み方を変えると、表の中で決まっているものが入れ替わる</text>
+<text class="t-sm" x="18" y="45">架空の「できること7件・もう決めたこと3件」を材料2本ぶん作り、各2回ずつ通した（計4回）。</text>
+<text class="t-sm" x="18" y="64">セルの4つの数は、左から 材料A1回目・A2回目・B1回目・B2回目。畳まずに並べてある。</text>
+<rect class="box-quiet" x="236" y="92" width="152" height="38" rx="3"/>
+<text class="t-strong" x="244" y="109" style="font-size:12px">含まれないこと</text>
+<text class="t-xs" x="244" y="124">並んだ項目の数</text>
+<rect class="box-quiet" x="398" y="92" width="152" height="38" rx="3"/>
+<text class="t-strong" x="406" y="109" style="font-size:12px">AIが引いた上限</text>
+<text class="t-xs" x="406" y="124">「3枚まで」等の数</text>
+<rect class="box-quiet" x="560" y="92" width="152" height="38" rx="3"/>
+<text class="t-strong" x="568" y="109" style="font-size:12px">〔私が決める〕</text>
+<text class="t-xs" x="568" y="124">表の中に残った印</text>
+<text class="t" x="18" y="161" style="font-size:12px">そのまま「表を作って」</text>
+<rect class="box-bad" x="236" y="136" width="152" height="40" rx="3"/>
+<text class="t-bad" x="248" y="161" style="font-size:12.5px">7 ・ 7 ・ 7 ・ 0</text>
+<rect class="box-bad" x="398" y="136" width="152" height="40" rx="3"/>
+<text class="t-bad" x="410" y="161" style="font-size:12.5px">10 ・ 3 ・ 1 ・ 1</text>
+<rect class="box" x="560" y="136" width="152" height="40" rx="3"/>
+<text class="t" x="572" y="161" style="font-size:12.5px">0 ・ 0 ・ 0 ・ 0</text>
+<text class="t" x="18" y="208" style="font-size:12px">＋「含まれないものも」</text>
+<rect class="box-good" x="236" y="183" width="152" height="40" rx="3"/>
+<text class="t-good" x="248" y="208" style="font-size:12.5px">7 ・ 7 ・ 7 ・ 7</text>
+<rect class="box-bad" x="398" y="183" width="152" height="40" rx="3"/>
+<text class="t-bad" x="410" y="208" style="font-size:12.5px">4 ・ 1 ・ 1 ・ 0</text>
+<rect class="box" x="560" y="183" width="152" height="40" rx="3"/>
+<text class="t" x="572" y="208" style="font-size:12.5px">0 ・ 0 ・ 0 ・ 0</text>
+<text class="t" x="18" y="255" style="font-size:12px">＋「同じ数だけ・1行に1つ」</text>
+<rect class="box-good" x="236" y="230" width="152" height="40" rx="3"/>
+<text class="t-good" x="248" y="255" style="font-size:12.5px">7 ・ 7 ・ 7 ・ 7</text>
+<rect class="box-bad" x="398" y="230" width="152" height="40" rx="3"/>
+<text class="t-bad" x="410" y="255" style="font-size:12.5px">5 ・ 1 ・ 0 ・ 0</text>
+<rect class="box" x="560" y="230" width="152" height="40" rx="3"/>
+<text class="t" x="572" y="255" style="font-size:12.5px">0 ・ 0 ・ 0 ・ 0</text>
+<text class="t" x="18" y="302" style="font-size:12px">＋〔私が決める〕を表の中に</text>
+<rect class="box-bad" x="236" y="277" width="152" height="40" rx="3"/>
+<text class="t-bad" x="248" y="302" style="font-size:12.5px">0 ・ 0 ・ 0 ・ 0</text>
+<rect class="box" x="398" y="277" width="152" height="40" rx="3"/>
+<text class="t" x="410" y="302" style="font-size:12.5px">0 ・ 1 ・ 0 ・ 0</text>
+<rect class="box-good" x="560" y="277" width="152" height="40" rx="3"/>
+<text class="t-good" x="572" y="302" style="font-size:12.5px">19 ・ 27 ・ 26 ・ 18</text>
+<text class="t" x="18" y="349" style="font-size:12px">対照＝「書いてないことは書くな」</text>
+<rect class="box-bad" x="236" y="324" width="152" height="40" rx="3"/>
+<text class="t-bad" x="248" y="349" style="font-size:12.5px">0 ・ 0 ・ — ・ —</text>
+<rect class="box-good" x="398" y="324" width="152" height="40" rx="3"/>
+<text class="t-good" x="410" y="349" style="font-size:12.5px">0 ・ 0 ・ — ・ —</text>
+<rect class="box" x="560" y="324" width="152" height="40" rx="3"/>
+<text class="t" x="572" y="349" style="font-size:12.5px">0 ・ 0 ・ — ・ —</text>
+<text class="t-bad" x="18" y="390">※ そのまま頼んだ4回のうち1回は、含まれないことが1項目も並ばなかった。残る3回は形が毎回違う（別表・列・見出し）。</text>
+<text class="t-bad" x="18" y="412">※ 上限の中身も回ごとに違う。材料Aの2回で両方に出たのは「3枚」「14日」だけで、3,000字・5件・2枚・5ページは片方にしか出ない。</text>
+<text class="t-xs" x="18" y="434">架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
