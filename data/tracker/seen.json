@@ -27,74 +27,7 @@
     "pfn-blog": "2026-08-17T06:00:13+00:00",
     "sakana-blog": "2026-08-12T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-17T08:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Low-angle view of a soccer player kicking a ball mid-air against a bright blue sky, with grass flying from their cleats.",
-      "title": "Get closer to the game with Gemini and Pixel",
-      "uid": "75d171f5f5c7a531",
-      "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-17T03:15:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age.",
-      "title": "New policy ideas for the Intelligence Age",
-      "uid": "afa9efbccdaef592",
-      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-17T05:30:00+00:00",
-      "source_id": "openai-news",
-      "summary": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now.",
-      "title": "The Defender’s Window",
-      "uid": "a8e707f4bb44f981",
-      "url": "https://openai.com/index/the-defenders-window",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-17T05:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs",
-      "title": "OpenAI joins PORTS-Pike project",
-      "uid": "be5536d69b68adf1",
-      "url": "https://openai.com/index/openai-joins-ports-pike-project",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "PFN 技術ブログ",
-      "published": "2026-08-17T05:59:40+00:00",
-      "source_id": "pfn-blog",
-      "summary": "概要 Matlantis PFP(以下、PFP)バージョン9の性能を公開ベンチマークで実証するため、Chiangら [1] によって提案された主要なベンチマークプラットフォームであるMLIP Arenaを用いて、PBE計 […] 投稿 PFP v9のMLIP Arenaベンチマーク評価(詳細版) は Preferred Networks Tech Blog に最初に表示されました。",
-      "title": "PFP v9のMLIP Arenaベンチマーク評価(詳細版)",
-      "uid": "0542c4a2a55ebb89",
-      "url": "https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/",
-      "vendor": "Preferred Networks"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-17T20:20:58+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added the optional CLAUDE_CODE_PROJECT_DIR_NAME environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript direc…",
-      "title": "v2.1.234",
-      "uid": "0fb016549607a756",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
