@@ -330,8 +330,59 @@
   - 📌 **20項目中9項目で最高**という数え（残り11項目は他社か前の世代が上）は**記事側の計算**。
     `check_numbers.py` は $ と % しか見ないので、この種の数はそもそも照合対象外。
 
-- [ ] https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/
+- [!] https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/
   - 2026-08-17 自動追記（major・Preferred Networks「PFP v9のご紹介: MLIP Arenaでのベンチマーク評価とr2SCANによる実験値再現性の向上」）
+  - **2026-08-17 1回目: 下書きを作らずに停止した。**発表本文に到達できないため。
+
+    **① `tech.preferred.jp` は経路の遮断（許可リスト）。先方の bot 判定ではない**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/` | `CONNECT tunnel failed, response 403` |
+    | `tech.preferred.jp/ja/blog/`（別パス） | 同上 |
+    | `tech.preferred.jp/ja/blog/feed/`（トラッカーが見ているRSS） | 同上 |
+    | `www.preferred.jp/ja/` | 同上 |
+    | `matlantis.com/` / `matlantis.com/ja/` / `docs.matlantis.com/` / `www.matlantis.com/` | 同上 |
+    | WebFetch（同URL） | `EGRESS_BLOCKED: Access to tech.preferred.jp is blocked by the network egress proxy` |
+    | `huggingface.co/spaces/atomind/mlip-arena`（参考・MLIP Arena本体） | **200** |
+    | `arxiv.org/abs/2504.03112`（参考・MLIP Arena の論文） | `CONNECT tunnel failed, response 403` |
+
+    - ⚠️ **同じドメインのどのパスも 403 で、応答ヘッダ自体が返ってこない**（`cf-mitigated` のような
+      先方由来のヘッダは無い＝プロキシが CONNECT の段階で切っている）。**許可リストに足せば直る種類。**
+      切り分けの根拠＝`huggingface.co` は同じ経路で 200 が返っていること。**UA偽装での迂回はしない。**
+    - トラッカー自身は GitHub Actions 側で走っているので RSS を取得できている。**読めないのはこの
+      クラウドルーティンの環境だけ。**環境が違えば結果が変わる（SESSION_HANDOFF の「到達できるかどうかは
+      必ずクラウド側で測ること」と同じ話の裏返し）。
+
+    **② 許可リストに足すドメイン**
+
+    | ドメイン | 何が載っているはずか |
+    |---|---|
+    | `tech.preferred.jp` | PFN 技術ブログ。**発表本文とベンチマークの数字はここ。最優先** |
+    | `www.preferred.jp` / `preferred.jp` | PFN 公式サイト・プレスリリース |
+    | `matlantis.com` / `www.matlantis.com` / `docs.matlantis.com` | Matlantis 製品ページ・料金・ドキュメント |
+    | `arxiv.org` | MLIP Arena の論文（Chiang ら）。**比較の土俵の定義がここにある。他の記事でも使う** |
+
+    ⚠️ 環境の Network access を Custom にして足すとき、**「Also include default list of common package managers」の
+    チェックを外さないこと**（外すと同じ環境の MarketWatch 側が全部壊れる）。
+
+    **③ RSS から分かったこと（トラッカーの `data/tracker/news.json` 経由。本文ではないので記事には使えない）**
+
+    - 公開日 **2026-08-17 06:00 GMT**。`importance` は major、`vendor` は Preferred Networks
+    - description は **抜粋のみで `[…]` で切れている**（「2021年7月のMatlantis™提供開始以来、その中核技術である
+      機械学習原子間ポテンシャル(Machine Learning Interatomic Potential, MLIP)「Matlantis PFP […]」）。
+      → **ベンチマークの点数・r2SCAN での再現性の数値・v8 との差は、ここから1つも取れない。**
+    - **同じ日に続きの記事が出ている**＝「PFP v9のMLIP Arenaベンチマーク評価(詳細版)」
+      `https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/`（minor・2026-08-17 05:59 GMT）。
+      **数字が濃いのは間違いなくこちら。**①が解けたら2本セットで読むこと。
+
+    **④ 書くとしたときの注意（①が解けた後の話）**
+
+    - 題材が**材料シミュレーション（原子間ポテンシャル）**で、このサイトの読者（自動化したい非エンジニアの
+      会社員）からは遠い。**LLM の料金比較の型はそのまま使えない。**書くなら「AIが実験を置き換える話」として
+      1本にまとめるか、読者に近くないと判断して見送るか、**先に切り口を決めてから数字を集めること。**
+    - 比較相手を置くなら MLIP Arena に載っている他のモデル（`huggingface.co/spaces/atomind/mlip-arena` は
+      **この環境から 200 で読める**）。⚠️ ただし PFP v9 の行が Arena 側にあるかは未確認。
 
 ## 処理済み
 
