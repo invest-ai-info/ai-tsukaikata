@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T03:14:24.845062+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T03:05:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "中国のAI企業・Z.ai(北京智譜華章科技)が、コーディング能力に優れ、サイバーセキュリティタスクでは「これまでで最も有能なモデル」だというAIモデル「GLM-5.3」をリリースしました。 続きを読む...",
+      "title": "Z.aiがコーディング能力に優れたオープンウェイトAIモデル「GLM-5.3」リリース、前モデル比で50％の性能向上",
+      "uid": "08020d6209edf834",
+      "url": "https://gigazine.net/news/20260817-z-ai-glm-5-3/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T03:14:24.845062+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T02:48:41+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは、コーディングとエージェント向け主力モデルの最新版「Gemini 3.7 Flash」をリリースした。Gemini Sparkも、すでにGemini 3.7 Flashを使用している。",
+      "title": "最新モデルGemini 3.7 Flashリリース、利用価格は、Gemini 3.6 Flashの実に半額",
+      "uid": "1d73cbc417a9099a",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133057.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-17T03:14:24.845062+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T02:43:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "EUの法律に準拠するため、AnthropicはClaudeが生成したコンテンツに「透かし(ウォーターマーク)」を追加する予定です。Anthropicが、「文章」に追加する透かしの仕組みを解説しました。 続きを読む...",
+      "title": "「AIが生成した文章であることを示す電子透かし」についてAnthropicが公式解説",
+      "uid": "351a47e82d99dd5e",
+      "url": "https://gigazine.net/news/20260817-anthropic-claude-text-watermark/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T03:14:24.845062+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T02:03:10+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "チェンジホールディングス（以下、チェンジHD）と同社の子会社、東光コンピュータ・サービス（以下、TCS）、エアロネクストと同社の子会社、NEXT DELIVERYの4社は8月12日、共同企業体（JV）を組成し、秋田県が実施する「ドローン等を活用したクマ対策実証事業業務委託」に採択されたと発表した。",
+      "title": "チェンジHDら4社、AI×ドローンで広域クマ対策を低コストで実現",
+      "uid": "5b40ff0cf87a4869",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2132252.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-17T01:56:45.196273+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
