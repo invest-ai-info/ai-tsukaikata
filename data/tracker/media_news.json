@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T01:56:45.196273+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T01:40:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "金融サービスプラットフォームのStripeが、AIゲートウェイサービス・OpenRouterの買収契約を締結したとBloombergが報じています。買収額は70億ドル(約1兆1000億円)を超える模様です。 続きを読む...",
+      "title": "1.1兆円超でStripeがAIゲートウェイサービスのOpenRouterを買収か",
+      "uid": "ea08338c412e6081",
+      "url": "https://gigazine.net/news/20260817-stripe-acquire-openrouter-7-billion/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T01:56:45.196273+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-16T23:42:45+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Hugging Faceは、オープンモデル動向をまとめたレポートを公開した。中国勢が2兆パラメータ超の大規模モデルを相次いで公開するなど台頭する一方、実際のダウンロードの8割以上は10億パラメータ未満の小型モデルが占めた。Alibabaの「Qwen」は派生モデル数でMetaを上回り、開発者コミュニティの事実上の基盤モデルになりつつある。",
+      "title": "Hugging Face分析、中国のオープンモデルが台頭　Qwenは派生モデル15万件超",
+      "uid": "bf0028cbcaba046c",
+      "url": "https://www.itmedia.co.jp/news/article/2608/17/2000000557/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-17T01:56:45.196273+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-16T23:36:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは8月13日、Google Meetの自動メモ機能「Take notes for me」を対面の会議でも使えるようにしたと発表した。ビデオ通話に入らなくても、ウェブ版かモバイルアプリのホーム画面から録音を始めるだけで、Geminiが会議の要約や文字起こしを作り、Googleドキュメントに保存する。",
+      "title": "Google Meet、リアル会議の議事録生成も可能に　スマホ1つで録音→要約",
+      "uid": "7e3d8cdaa6618b66",
+      "url": "https://japan.cnet.com/article/35251588/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-08-16T23:35:41.759149+00:00",
       "importance": "minor",
       "label": "CNET Japan",
