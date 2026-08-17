@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T09:59:27.614141+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T09:15:25+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "マネーフォワードは8月17日、法人のAI利用コストをダッシュボードで可視化する新プロダクト「マネーフォワード クラウドAIトークン管理」とAIツールの決済専用カードとして活用し、AI関連支出を集約・一元化できる仕組み「マネーフォワード ビジネスカード」の提供を開始した。",
+      "title": "マネーフォワード、法人のAI利用コストを一元管理できる新プロダクト",
+      "uid": "ec821c82cbc43032",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133255.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-17T09:59:27.614141+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T09:07:15+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "コロプラは、全社員によるAI活用の定着を経て、「個人の業務効率化」から「組織の仕組み」と「お客様に届ける新たな感動体験の創作」の再設計へと移すフェーズへ入ったと発表した。",
+      "title": "コロプラ、社内AI活用率98％。AI活用を前提とした仕事の再設計を推進",
+      "uid": "a7886ccef0db9d79",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133251.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-17T09:02:55.699871+00:00",
       "importance": "major",
       "label": "ITmedia AI+",
