@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T13:54:47.131963+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-17T15:42:34+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトはオープンソースで開発されているコードエディタの最新版「Visual Studio Code 1.133」（以下、VS Code 1.133）の正式リリースを発表しました。 The latest @code release b...",
+      "title": "Visual Studio Code 1.133正式リリース。プロンプトを見失わない固定スクロール、ローカルHTMLファイルの自動リロード、ClaudeとCopilotの混在可能など新機能",
+      "uid": "d48b9d5807f431a0",
+      "url": "https://www.publickey1.jp/blog/26/visual_studio_code_1133htmlclaudecopilot.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-08-17T13:08:48.149000+00:00",
       "importance": "major",
       "label": "GIGAZINE",
