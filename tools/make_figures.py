@@ -6325,6 +6325,190 @@ def missing_material_noticed_chart() -> None:
     )
 
 
+def two_runs_read_volume_chart() -> None:
+    """2回ぶんを見比べさせたとき、何件が返り、そのうち仕込みが何件かを頼み方ごとに並べる。
+
+    実測（2026-08-17・材料2本×各2回＝4回ずつ）。仕込んだ「形の崩れ」は材料ごとに5件。
+    棒の長さ＝1行1件で挙がった項目の総数。濃い部分が仕込みの5件。
+    """
+    rows = [
+        ("そのまま「違うところを教えて」", [8, 8, 9, 10], [5, 5, 5, 5]),
+        ("「違うところだけ・1行1件で」", [17, 18, 14, 14], [5, 5, 5, 5]),
+        ("＋毎回変わってよい3つを先に宣言", [5, 6, 7, 5], [5, 5, 5, 5]),
+        ("＋置いてよい/直す/判断できない", [11, 7, 9, 8], [5, 5, 5, 5]),
+        ("宣言を残したまま短くした版", [5, 5, 6, 7], [5, 5, 5, 5]),
+    ]
+    label_x, label_w = 18, 246
+    bar_x = label_x + label_w + 10
+    bar_max_w = 330
+    unit = bar_max_w / 18          # 最大値18件を基準に1件あたりの幅を出す
+    bar_h, bar_gap = 10, 4
+    row_gap = 16
+    top = 104
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "返ってくる件数は頼み方で3倍変わる。仕込んだ5件は、どの頼み方でも全部出た</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の自動処理の出力を2組（表形式・箇条書き）用意し、"
+        "毎回そろっていないと困る違いを5件ずつ仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1つの頼み方につき、材料2本 × 各2回 = 4回。棒1本が1回ぶん。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "濃い部分＝仕込んだ5件　薄い部分＝毎回変わって当然の差</text>\n",
+    ]
+
+    y = top
+    row_tops = []
+    for label, totals, reds in rows:
+        row_tops.append(y)
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + 22}">{_esc(label)}</text>\n'
+        )
+        for i, (total, red) in enumerate(zip(totals, reds)):
+            by = y + i * (bar_h + bar_gap)
+            parts.append(
+                f'<rect class="bar-old" x="{bar_x}" y="{by}" '
+                f'width="{total * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<rect class="bar-new" x="{bar_x}" y="{by}" '
+                f'width="{red * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{bar_x + total * unit + 8:.1f}" '
+                f'y="{by + bar_h - 1}">{total}件</text>\n'
+            )
+        y += 4 * (bar_h + bar_gap) + row_gap
+
+    notes = [
+        ("t-bad", "※「違うところだけ」と頼んだ4回は 14〜18件。"
+                  "そのうち13〜9件は、日付や件数など毎回変わって当然の差だった。"),
+        ("t-good", "※「毎回変わってよいのは日付・件数・中身の3つだけ」を先に書いた4回は"
+                   " 5〜7件。仕込みの5件は4回とも全部残った。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "自動処理の出力2回ぶんを見比べさせたとき、返ってきた項目の件数を"
+        "頼み方5通りで並べた横棒グラフ。1つの頼み方につき4回ぶんの棒がある。"
+        "そのまま違うところを教えてと頼んだ4回は8件・8件・9件・10件。"
+        "違うところだけ1行1件でと頼んだ4回は17件・18件・14件・14件。"
+        "毎回変わってよい3つを先に宣言した4回は5件・6件・7件・5件。"
+        "置いてよい・直す・判断できないの3択を付けさせた4回は11件・7件・9件・8件。"
+        "宣言を残したまま短くした版は5件・5件・6件・7件。"
+        "どの頼み方でも、仕込んだ5件は4回とも全部挙がっている。"
+        "違うのは、そこに混ざってくる「毎回変わって当然の差」の量で、"
+        "いちばん多い回で13件、宣言をした回は0件から2件だった。"
+    )
+    (OUT / "two-runs-read-volume.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def two_runs_narrowing_chart() -> None:
+    """見る場所を絞ると、絞った外がAIの気まぐれに乗るところ。
+
+    実測（2026-08-17）。仕込み5件のうち、見分けられる値が返りに出た数を
+    「こちらが指定した欄の中」と「AIが自分から付けた補足だけ」に分けて数えた。
+    """
+    rows = [
+        ("見出しの名前と順番だけ", "表形式の材料", 1, 2, 1),
+        ("見出しの名前と順番だけ", "表形式の材料", 2, 2, 3),
+        ("見出しの名前と順番だけ", "箇条書きの材料", 1, 2, 0),
+        ("見出しの名前と順番だけ", "箇条書きの材料", 2, 2, 0),
+        ("4つの欄を数えて並べさせる", "表形式の材料", 1, 4, 0),
+        ("4つの欄を数えて並べさせる", "表形式の材料", 2, 4, 0),
+        ("4つの欄を数えて並べさせる", "箇条書きの材料", 1, 2, 1),
+        ("4つの欄を数えて並べさせる", "箇条書きの材料", 2, 1, 3),
+    ]
+    label_x, label_w = 18, 216
+    mat_x = label_x + label_w
+    bar_x = mat_x + 118
+    cell = 46                       # 仕込み1件ぶんの幅
+    bar_h, gap = 22, 7
+    top = 100
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "見る場所を絞ると、絞った外は「その回に補足が付いたかどうか」で決まる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "仕込みは材料ごとに5件。棒は、見分けられる値が返りに出た数。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "濃い部分＝こちらが指定した欄の中に出た　薄い部分＝AIが自分から付けた補足にだけ出た</text>\n",
+    ]
+    for i in range(6):
+        parts.append(
+            f'<text class="t-xs" x="{bar_x + i * cell - 3}" y="{top - 8}">{i}</text>\n'
+        )
+
+    y = top
+    prev_label = None
+    for label, mat, run, field, note in rows:
+        if label != prev_label:
+            parts.append(
+                f'<text class="t" x="{label_x}" y="{y + 15}">{_esc(label)}</text>\n'
+            )
+            prev_label = label
+        parts.append(
+            f'<text class="t-xs" x="{mat_x}" y="{y + 15}">{_esc(mat)}・{run}回目</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{bar_x}" y="{y}" '
+            f'width="{5 * cell}" height="{bar_h}" rx="2"/>\n'
+        )
+        if field:
+            parts.append(
+                f'<rect class="bar-new" x="{bar_x}" y="{y}" '
+                f'width="{field * cell}" height="{bar_h}" rx="2"/>\n'
+            )
+        if note:
+            parts.append(
+                f'<rect class="bar-in" x="{bar_x + field * cell}" y="{y}" '
+                f'width="{note * cell}" height="{bar_h}" rx="2"/>\n'
+            )
+        css = "t-bad" if field + note < 4 else "t-good"
+        parts.append(
+            f'<text class="{css}" x="{bar_x + 5 * cell + 10}" y="{y + bar_h - 6}">'
+            f'{field + note}/5</text>\n'
+        )
+        y += bar_h + gap
+
+    notes = [
+        ("t-bad", "※ 同じ指示文の2回で 3/5 と 5/5 に割れた。"
+                  "増えた2件は、AIが自分から付けた補足に出たもの。"),
+        ("t-bad", "※ 4つの欄を数えさせた形では、欄に無い違い"
+                  "（点検の項目が1つ消えた・行の書き方が変わった）は写らない。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 18
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "見る場所を絞った2つの頼み方について、仕込んだ5件のうち何件を見分けられたかを"
+        "8回ぶん並べた横棒グラフ。見出しの名前と順番だけを並べさせた形では、"
+        "表形式の材料の1回目が5件中3件（指定した欄に2件、AIが自分から付けた補足に1件）、"
+        "2回目が5件中5件（欄に2件、補足に3件）と割れた。"
+        "同じ形を箇条書きの材料に当てると、2回とも5件中2件で、"
+        "行の書き方・末尾の注記・合計行の3つは出てこない。"
+        "4つの欄を数えて並べさせた形では、表形式の材料は2回とも5件中4件で"
+        "全部が指定した欄の中に出たが、点検の項目が1つ消えたことは2回とも写らなかった。"
+        "箇条書きの材料では5件中3件と4件に割れ、"
+        "そのうち1件と3件はAIが自分から付けた補足にだけ出ている。"
+    )
+    (OUT / "two-runs-narrowing.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -6414,4 +6598,6 @@ if __name__ == "__main__":
     material_check_split_chart()
     missing_material_noticed_chart()
     constraints_hold_totals_drift_chart()
+    two_runs_read_volume_chart()
+    two_runs_narrowing_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
