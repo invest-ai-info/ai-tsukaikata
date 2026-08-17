@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="534" viewBox="0 0 720 534" role="img" aria-label="架空の応募記録12件を、提案文の字数の多い順に並べた横棒グラフ。字数は材料そのものから数えた真値で、手で書いたものではない。1番が311字で採用、2番が284字で採用、3番が271字で採用。ここまでが上位3件で、そのまま採用の3件と一致する。以下は不採用で、7番258字、5番236字、12番224字、10番160字、9番151字、11番126字、6番119字、4番108字、8番85字と続く。つまり字数で並べるだけで採用と不採用が完全に分かれており、これは記録の中で数えれば誰でも確かめられる事実である。ところが「通った提案と通らなかった提案の差を出してください」と頼んだ4回は、4回とも「長さの差ではありません」と書いた。しかもその4回とも、案件ごとの字数を1件も数えていない。数えずに否定している。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="534"/>
+<text class="t-strong" x="18" y="26">字数の多い順に並べると、上位3件がそのまま採用の3件だった</text>
+<text class="t-sm" x="18" y="45">架空の応募記録12件（採用3・不採用9）。字数は材料そのものから数えた真値で、手で書いていない。</text>
+<text class="t-sm" x="18" y="64">この並びは、記録の中で数えれば誰でも確かめられる。推測は要らない。</text>
+<text class="t-xs" x="18" y="94">案件の番号</text>
+<text class="t-xs" x="118" y="94">提案文の字数</text>
+<text class="t-sm" x="18" y="133">1番</text>
+<rect class="bar-new" x="118" y="118" width="405.2" height="21" rx="2"/>
+<text class="t-accent" x="531.2" y="133">311字　採用</text>
+<text class="t-sm" x="18" y="160">2番</text>
+<rect class="bar-new" x="118" y="145" width="370.1" height="21" rx="2"/>
+<text class="t-accent" x="496.1" y="160">284字　採用</text>
+<text class="t-sm" x="18" y="187">3番</text>
+<rect class="bar-new" x="118" y="172" width="353.1" height="21" rx="2"/>
+<text class="t-accent" x="479.1" y="187">271字　採用</text>
+<text class="t-sm" x="18" y="214">7番</text>
+<rect class="bar-old" x="118" y="199" width="336.2" height="21" rx="2"/>
+<text class="t-sm" x="462.2" y="214">258字</text>
+<text class="t-sm" x="18" y="241">5番</text>
+<rect class="bar-old" x="118" y="226" width="307.5" height="21" rx="2"/>
+<text class="t-sm" x="433.5" y="241">236字</text>
+<text class="t-sm" x="18" y="268">12番</text>
+<rect class="bar-old" x="118" y="253" width="291.9" height="21" rx="2"/>
+<text class="t-sm" x="417.9" y="268">224字</text>
+<text class="t-sm" x="18" y="295">10番</text>
+<rect class="bar-old" x="118" y="280" width="208.5" height="21" rx="2"/>
+<text class="t-sm" x="334.5" y="295">160字</text>
+<text class="t-sm" x="18" y="322">9番</text>
+<rect class="bar-old" x="118" y="307" width="196.8" height="21" rx="2"/>
+<text class="t-sm" x="322.8" y="322">151字</text>
+<text class="t-sm" x="18" y="349">11番</text>
+<rect class="bar-old" x="118" y="334" width="164.2" height="21" rx="2"/>
+<text class="t-sm" x="290.2" y="349">126字</text>
+<text class="t-sm" x="18" y="376">6番</text>
+<rect class="bar-old" x="118" y="361" width="155.1" height="21" rx="2"/>
+<text class="t-sm" x="281.1" y="376">119字</text>
+<text class="t-sm" x="18" y="403">4番</text>
+<rect class="bar-old" x="118" y="388" width="140.7" height="21" rx="2"/>
+<text class="t-sm" x="266.7" y="403">108字</text>
+<text class="t-sm" x="18" y="430">8番</text>
+<rect class="bar-old" x="118" y="415" width="110.8" height="21" rx="2"/>
+<text class="t-sm" x="236.8" y="430">85字</text>
+<path class="line" d="M18 196.0 L548 196.0" stroke-dasharray="4 3"/>
+<text class="t-bad" x="418" y="188">ここより上が採用3件</text>
+<text class="t-bad" x="18" y="466">※ 「通った提案と通らなかった提案の差を出して」と頼んだ4回は、4回とも「長さの差ではありません」と書いた。</text>
+<text class="t-bad" x="18" y="488">※ その4回とも、案件ごとの字数は1件も数えていない。数えずに否定している。</text>
+<text class="t-xs" x="18" y="510">架空データでの実測。4回ぶんの生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

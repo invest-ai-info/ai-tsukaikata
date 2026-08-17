@@ -707,6 +707,180 @@ def scope_saved_form_flips_chart() -> None:
     )
 
 
+
+def records_length_vs_result_chart() -> None:
+    """架空の応募記録12件を、提案文の字数の多い順に並べた図。
+
+    真値は gen.py が材料そのものから数えたもの（手で書いていない）。
+    上位3件がそのまま採用の3件になる仕込み。
+    """
+    rows = [
+        (1, 311, True), (2, 284, True), (3, 271, True), (7, 258, False),
+        (5, 236, False), (12, 224, False), (10, 160, False), (9, 151, False),
+        (11, 126, False), (6, 119, False), (4, 108, False), (8, 85, False),
+    ]
+    label_x = 18
+    plot_x = 118
+    plot_w = 430
+    top = 118
+    bar_h, bar_gap = 21, 6
+    hi = 330
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / hi
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "字数の多い順に並べると、上位3件がそのまま採用の3件だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の応募記録12件（採用3・不採用9）。字数は材料そのものから数えた真値で、"
+        "手で書いていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "この並びは、記録の中で数えれば誰でも確かめられる。推測は要らない。</text>\n",
+        '<text class="t-xs" x="18" y="94">案件の番号</text>\n',
+        f'<text class="t-xs" x="{plot_x}" y="94">提案文の字数</text>\n',
+    ]
+    for i, (no, n, adopted) in enumerate(rows):
+        y = top + i * (bar_h + bar_gap)
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + bar_h - 6}">{no}番</text>\n'
+        )
+        klass = "bar-new" if adopted else "bar-old"
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x}" y="{y}" '
+            f'width="{px(n) - plot_x:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        css = "t-accent" if adopted else "t-sm"
+        parts.append(
+            f'<text class="{css}" x="{px(n) + 8:.1f}" y="{y + bar_h - 6}">'
+            f'{n}字{"　採用" if adopted else ""}</text>\n'
+        )
+
+    line_y = top + 3 * (bar_h + bar_gap) - bar_gap / 2
+    parts.append(
+        f'<path class="line" d="M{label_x} {line_y:.1f} L{plot_x + plot_w} {line_y:.1f}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{plot_x + 300}" y="{line_y - 8:.0f}">'
+        "ここより上が採用3件</text>\n"
+    )
+
+    y = top + len(rows) * (bar_h + bar_gap) + 24
+    notes = [
+        ("t-bad", "※ 「通った提案と通らなかった提案の差を出して」と頼んだ4回は、"
+                  "4回とも「長さの差ではありません」と書いた。"),
+        ("t-bad", "※ その4回とも、案件ごとの字数は1件も数えていない。数えずに否定している。"),
+        ("t-xs", "架空データでの実測。4回ぶんの生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "架空の応募記録12件を、提案文の字数の多い順に並べた横棒グラフ。"
+        "字数は材料そのものから数えた真値で、手で書いたものではない。"
+        "1番が311字で採用、2番が284字で採用、3番が271字で採用。"
+        "ここまでが上位3件で、そのまま採用の3件と一致する。"
+        "以下は不採用で、7番258字、5番236字、12番224字、10番160字、9番151字、"
+        "11番126字、6番119字、4番108字、8番85字と続く。"
+        "つまり字数で並べるだけで採用と不採用が完全に分かれており、"
+        "これは記録の中で数えれば誰でも確かめられる事実である。"
+        "ところが「通った提案と通らなかった提案の差を出してください」と頼んだ4回は、"
+        "4回とも「長さの差ではありません」と書いた。"
+        "しかもその4回とも、案件ごとの字数を1件も数えていない。数えずに否定している。"
+    )
+    (OUT / "records-length-vs-result.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def records_counted_or_not_chart() -> None:
+    """頼み方ごとに、字数を何件数えたか・真値と何件一致したかを並べる。"""
+    rows = [
+        ("そのまま「差を出して」", ["0/12", "0/12", "0/12", "0/12"], "×"),
+        ("「言えること／言えないこと」に分ける", ["3/12", "0/12", "5/12", "0/12"], "△"),
+        ("「記録にあることだけ表に」（各1回）", ["12/12", "12/12", "—", "—"], "○"),
+        ("保存版（形を固定）", ["12/12", "0/12", "12/12", "6/12"], "△"),
+    ]
+    label_x, label_w = 18, 244
+    col_w, col_gap = 96, 8
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(4)]
+    head_y = 96
+    row_h, row_gap = 42, 8
+    row_y = [head_y + 28 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["A 1回目", "A 2回目", "B 1回目", "B 2回目"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "案件ごとの字数を、何件ぶん数えて書いたか（真値と一致した数）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "分母は12件。真値は材料そのものから数えたもの。1件でもずれたら不一致として数えた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「記録にあることだけ表に」は材料2本を各1回なので、右2列は空欄。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 10}" y="{head_y + 14}">{_esc(name)}</text>\n'
+        )
+    for r, (label, values, _mark) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12px">{_esc(label)}</text>\n'
+        )
+        for c, value in enumerate(values):
+            if value == "—":
+                klass, tone = "box-quiet", "t-sm"
+            elif value.startswith("12/"):
+                klass, tone = "box-good", "t-good"
+            elif value.startswith("0/"):
+                klass, tone = "box-bad", "t-bad"
+            else:
+                klass, tone = "box", "t"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + 20}" y="{y + row_h / 2 + 5:.0f}" '
+                f'style="font-size:12.5px">{_esc(value)}</text>\n'
+            )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        ("t-good", "※ 「差や理由は書かないでください。記録に書いてあることだけを表にしてください」"
+                   "＝24マス全部が真値と一致した。"),
+        ("t-bad", "※ 保存版は形が4回ともそろっているのに、2回目だけ字数が消えて"
+                  "「長短だけでは分かれていない」という言葉に変わった。"),
+        ("t-xs", "架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "頼み方を4通りに変えて、案件ごとの提案文の字数を何件ぶん書いたかを並べた図。"
+        "分母は12件で、真値は材料そのものから数えたもの。"
+        "そのまま「差を出して」と頼んだ4回は、材料Aの1回目も2回目も、材料Bの1回目も2回目も、"
+        "すべて0件で、字数を1件も書いていない。"
+        "「言えること／言えないことに分けてください」と頼むと、材料Aの1回目が3件、"
+        "2回目が0件、材料Bの1回目が5件、2回目が0件で、書いた回と書かない回に割れた。"
+        "しかも材料Aの1回目に書いた3件は、3件とも真値とずれていた。"
+        "「差や理由は書かないでください。記録に書いてあることだけを表にしてください」と頼むと、"
+        "材料Aも材料Bも12件すべてを書き、24マス全部が真値と一致した。"
+        "出す形を固定した保存版では、材料Aの1回目が12件、2回目が0件、"
+        "材料Bの1回目が12件、2回目が6件で割れた。"
+        "形は4回ともそろっているのに、2回目だけ字数が消えて"
+        "「長短だけでは分かれていない」という言葉に置き換わっている。"
+    )
+    (OUT / "records-counted-or-not.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -6786,4 +6960,6 @@ if __name__ == "__main__":
     two_runs_narrowing_chart()
     scope_lines_ai_drew_chart()
     scope_saved_form_flips_chart()
+    records_length_vs_result_chart()
+    records_counted_or_not_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
