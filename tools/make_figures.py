@@ -881,6 +881,193 @@ def records_counted_or_not_chart() -> None:
     )
 
 
+
+def job_capacity_subtraction_chart() -> None:
+    """使える時間から既存案件を引いた残りに、幅つきの見積もりを重ねた図。
+
+    値は gen.py が材料から計算した真値（手で書いていない）。
+    """
+    avail, held, left, lo, hi = 2160, 1140, 1020, 800, 1120
+    plot_x, plot_w = 152, 500
+    hi_axis = 2200
+
+    def px(m: float) -> float:
+        return plot_x + plot_w * m / hi_axis
+
+    bar_h = 30
+    y1, y2, y3 = 116, 166, 216
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "合計は足りている。上限で見ると100分足りない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の2週間ぶんの予定表・抱えている案件3件・新しい依頼1件。"
+        "数字はすべて材料から計算した真値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "見積もりは幅で出ている（800分〜1,120分）。どちらを使うかで答えが逆になる。</text>\n",
+        f'<text class="t-sm" x="18" y="{y1 + 20}">使える時間</text>\n',
+        f'<rect class="bar-old" x="{plot_x}" y="{y1}" '
+        f'width="{px(avail) - plot_x:.1f}" height="{bar_h}" rx="2"/>\n',
+        f'<text class="t" x="{px(avail) + 8:.1f}" y="{y1 + 20}">2,160分</text>\n',
+        f'<text class="t-sm" x="18" y="{y2 + 20}">抱えている案件</text>\n',
+        f'<rect class="bar-in" x="{plot_x}" y="{y2}" '
+        f'width="{px(held) - plot_x:.1f}" height="{bar_h}" rx="2"/>\n',
+        f'<text class="t" x="{px(held) + 8:.1f}" y="{y2 + 20}">1,140分</text>\n',
+        f'<text class="t-sm" x="18" y="{y3 + 20}">新しい依頼</text>\n',
+    ]
+    # 残り 1,020分の枠（既存の右端から）
+    left_x = px(held)
+    parts.append(
+        f'<rect class="box-quiet" x="{left_x:.1f}" y="{y3}" '
+        f'width="{px(held + left) - left_x:.1f}" height="{bar_h}" rx="2"/>\n'
+    )
+    parts.append(
+        f'<rect class="bar-new" x="{left_x:.1f}" y="{y3 + 5}" '
+        f'width="{px(held + lo) - left_x:.1f}" height="{bar_h - 10}" rx="2"/>\n'
+    )
+    parts.append(
+        f'<rect class="box-bad" x="{px(held + lo):.1f}" y="{y3 + 5}" '
+        f'width="{px(held + hi) - px(held + lo):.1f}" height="{bar_h - 10}" rx="2"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="{plot_x + 14}" y="{y3 + 20}">下限 800分</text>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{px(held + hi) - 78:.1f}" y="{y3 + bar_h + 14}">'
+        "上限 1,120分</text>\n"
+    )
+    # 使える時間の右端の縦線
+    edge = px(avail)
+    parts.append(
+        f'<path class="line" d="M{edge:.1f} {y1 - 6} L{edge:.1f} {y3 + bar_h + 14}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-bad" x="{edge - 236:.0f}" y="{y3 + bar_h + 28}">'
+        "この線を100分はみ出す＝上限で見ると入らない</text>\n"
+    )
+
+    y = y3 + bar_h + 54
+    rows = [
+        ("使える時間の合計", "2,160分"),
+        ("抱えている案件の残り", "1,140分"),
+        ("差し引き（新しい依頼に回せる時間）", "1,020分"),
+        ("下限（800分）で見た場合", "220分あまる"),
+        ("上限（1,120分）で見た場合", "100分たりない"),
+    ]
+    for i, (name, value) in enumerate(rows):
+        css = "t-bad" if "たりない" in value else "t"
+        parts.append(f'<text class="t-sm" x="18" y="{y}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="{css}" x="{plot_x + 100}" y="{y}">{_esc(value)}</text>\n')
+        y += 22
+
+    y += 6
+    notes = [
+        ("t-bad", "※ 「この依頼、受けられますか」と聞いた4回は、4回ともこの数字を正しく出したうえで、"),
+        ("t-bad", "　 受ける／断るの言い切りを 2語・3語・1語・3語 書いた。決めるのは自分のはず。"),
+        ("t-xs", "架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "架空の2週間ぶんの予定表から、新しい依頼が入るかどうかを引き算で出した図。"
+        "使える時間の合計は2,160分。いま抱えている案件3件の残りが1,140分。"
+        "差し引き1,020分が、新しい依頼に回せる時間になる。"
+        "新しい依頼の見積もりは幅で出ていて、下限が800分、上限が1,120分。"
+        "下限の800分なら1,020分の枠に収まり、220分あまる。"
+        "上限の1,120分だと枠を100分はみ出して、たりない。"
+        "つまり見積もりの下限と上限のどちらを使うかで、入るか入らないかの答えが逆になる。"
+        "「この依頼、受けられますか」と聞いた4回は、4回ともこの数字を正しく計算したうえで、"
+        "受ける、または断るという言い切りを、それぞれ2語・3語・1語・3語書いた。"
+    )
+    (OUT / "job-capacity-subtraction.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def job_ask_shape_vs_verdict_chart() -> None:
+    """頼み方ごとに、返りの長さと「受ける/断る」の言い切りの数を並べる。"""
+    rows = [
+        ("そのまま「受けられますか」", ["2,520字 / 2語", "3,241字 / 3語",
+                                   "2,308字 / 1語", "1,974字 / 3語"], False),
+        ("「計算だけしてください」", ["612字 / 0語", "521字 / 0語",
+                               "338字 / 0語", "349字 / 0語"], True),
+        ("保存版（6行に固定）", ["103字 / 0語", "103字 / 0語",
+                            "259字 / 0語", "276字 / 0語"], True),
+    ]
+    label_x, label_w = 18, 200
+    col_w, col_gap = 112, 8
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(4)]
+    head_y = 96
+    row_h, row_gap = 44, 9
+    row_y = [head_y + 26 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["A 1回目", "A 2回目", "B 1回目", "B 2回目"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "判断をやめさせると、言い切りも長さも同時に落ちた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料2本（A＝きつい側／B＝余裕がある側）を各2回。"
+        "数字は「返りの字数 / 受ける・断るの言い切りの語数」。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "引き算の4つの数は、どの頼み方でも真値どおりだった。変わったのは判断と長さだけ。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 12}" y="{head_y + 12}">{_esc(name)}</text>\n'
+        )
+    for r, (label, values, good) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12px">{_esc(label)}</text>\n'
+        )
+        for c, value in enumerate(values):
+            klass = "box-good" if good else "box-bad"
+            tone = "t-good" if good else "t-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + 8}" y="{y + row_h / 2 + 5:.0f}" '
+                f'style="font-size:11.5px">{_esc(value)}</text>\n'
+            )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        ("t-bad", "※ 保存版の材料Bでは、こちらが決めた最後の行の様式（「上限なら◯分足りない」）が"),
+        ("t-bad", "　 事実と合わず、2回とも様式のほうを変えて注記が付いた。"),
+        ("t-xs", "架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "頼み方を3通りに変えて、返りの長さと、受ける・断るの言い切りの語数を並べた図。"
+        "材料は2本、それぞれ2回ずつ通した。"
+        "そのまま「この依頼、受けられますか」と聞くと、"
+        "材料Aの1回目が2,520字で言い切り2語、2回目が3,241字で3語、"
+        "材料Bの1回目が2,308字で1語、2回目が1,974字で3語だった。"
+        "「受けるかどうかは私が決めます。計算だけしてください」にすると、"
+        "612字・521字・338字・349字となり、言い切りは4回とも0語になった。"
+        "出す形を6行に固定した保存版では、103字・103字・259字・276字で、"
+        "言い切りはやはり4回とも0語。材料Aの2回は1文字も違わなかった。"
+        "引き算の4つの数は、どの頼み方でも材料から計算した真値どおりだった。"
+        "変わったのは判断が付くかどうかと、返りの長さだけである。"
+        "ただし保存版の材料Bでは、こちらが決めた最後の行の様式が事実と合わず、"
+        "2回とも様式のほうを変えて注記が付いた。"
+    )
+    (OUT / "job-ask-shape-vs-verdict.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def price_chart() -> None:
     """単価の横棒グラフ。入力と出力を2本並べる。"""
     rows = [
@@ -6962,4 +7149,6 @@ if __name__ == "__main__":
     scope_saved_form_flips_chart()
     records_length_vs_result_chart()
     records_counted_or_not_chart()
+    job_capacity_subtraction_chart()
+    job_ask_shape_vs_verdict_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
