@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T22:43:50.182334+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ZEALSが発表したコンパクトヒューマノイド「D1」は、市場相場の半額となる「1台500万円」を実現し注目を集めている。2足歩行を捨て台車構造を選び、手には中国製パーツを用いるなど「準国産」で割り切ることで開発コストを大幅に削減。米中が開発スピードで先行する中、安全性重視の設計と医療・保険・リース・商社を巻き込んだ4領域アライアンスを武器に、日本発の「ユースケース先進国」を目指す清水正大社長の戦…",
+      "title": "なぜ「相場の半額」にできた？　「ヒューマノイド界のトヨタ」目指すZEALSの“したたか”な戦略",
+      "uid": "40b14137df68d7cd",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/17/news051.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-17T22:43:50.182334+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T21:55:32+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NVIDIAは、オハイオ州で建設中のAIデータセンター「PORTS-Pike Technology Campus」に計算基盤を独占提供すると発表した。OpenAIがテナントとなり、SB Energyが運営する。NVIDIAは最大1050億ドルの債務保証を負い、最大8GW規模のAIファクトリーを段階的に展開する。",
+      "title": "NVIDIA、OpenAIのオハイオAIデータセンターに最大1050億ドルの債務保証──SB Energyと提携",
+      "uid": "8df54010e96a1e89",
+      "url": "https://www.itmedia.co.jp/news/article/2608/18/2000000572/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-17T22:43:50.182334+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T21:50:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "マネーフォワードは、AIサービスの利用量とコストを一元管理できる法人向けサービス「マネーフォワード クラウドAIトークン管理」の提供を始めた。同社サービスの共通ID「マネーフォワードID」を取得すれば無料で使える。",
+      "title": "ChatGPTやClaudeの利用量とコストを一元管理、無料で使える法人向け新サービス　マネーフォワード",
+      "uid": "e8ed0098cbcb5081",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/18/2000000571/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-17T22:43:50.182334+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T21:45:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "キャディは次世代版「製造業AIデータプラットフォームCADDi」を発表した。AIと人が共有するデータ／セマンティクス基盤で現場の暗黙知を構造化し、直列工程の並列化でモノづくりの加速を目指す。",
+      "title": "「AI進化の裏でモノづくりは30年止まっている」、直列工程を並列化する産業OS",
+      "uid": "2423e6dd355cdf71",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/18/news045.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-17T13:54:47.131963+00:00",
       "importance": "major",
       "label": "Publickey",
