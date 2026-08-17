@@ -15,6 +15,34 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-08-17T15:43:06.217480+00:00",
+      "importance": "major",
+      "label": "PFN 技術ブログ",
+      "published": "2026-08-17T06:00:13+00:00",
+      "source_id": "pfn-blog",
+      "summary": "概要 2021年7月のMatlantis™提供開始以来、その中核技術である機械学習原子間ポテンシャル(Machine Learning Interatomic Potential, MLIP)「Matlantis PFP […] 投稿 PFP v9のご紹介: MLIP Arenaでのベンチマーク評価とr2SCANによる実験値再現性の向上 は Preferred Networks Tech Blo…",
+      "summary_ja": "AIで材料開発する技術「PFP v9」を発表。\n性能評価「MLIP Arena」でベンチマークを実施。\n「r2SCAN」により実験値の再現性が向上した。",
+      "summary_source": "gemini",
+      "title": "PFP v9のご紹介: MLIP Arenaでのベンチマーク評価とr2SCANによる実験値再現性の向上",
+      "uid": "e5867c4dc76ca063",
+      "url": "https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/",
+      "vendor": "Preferred Networks"
+    },
+    {
+      "first_seen": "2026-08-17T15:43:06.217480+00:00",
+      "importance": "minor",
+      "label": "PFN 技術ブログ",
+      "published": "2026-08-17T05:59:40+00:00",
+      "source_id": "pfn-blog",
+      "summary": "概要 Matlantis PFP(以下、PFP)バージョン9の性能を公開ベンチマークで実証するため、Chiangら [1] によって提案された主要なベンチマークプラットフォームであるMLIP Arenaを用いて、PBE計 […] 投稿 PFP v9のMLIP Arenaベンチマーク評価(詳細版) は Preferred Networks Tech Blog に最初に表示されました。",
+      "summary_ja": "AIで材料開発する技術「PFP v9」の性能評価詳細版を公開。\n公開ベンチマークプラットフォーム「MLIP Arena」を使用。",
+      "summary_source": "gemini",
+      "title": "PFP v9のMLIP Arenaベンチマーク評価(詳細版)",
+      "uid": "0542c4a2a55ebb89",
+      "url": "https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/",
+      "vendor": "Preferred Networks"
+    },
+    {
       "first_seen": "2026-08-17T13:08:48.149000+00:00",
       "importance": "minor",
       "label": "OpenAI News",

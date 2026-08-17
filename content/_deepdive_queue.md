@@ -330,6 +330,9 @@
   - 📌 **20項目中9項目で最高**という数え（残り11項目は他社か前の世代が上）は**記事側の計算**。
     `check_numbers.py` は $ と % しか見ないので、この種の数はそもそも照合対象外。
 
+- [ ] https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/
+  - 2026-08-17 自動追記（major・Preferred Networks「PFP v9のご紹介: MLIP Arenaでのベンチマーク評価とr2SCANによる実験値再現性の向上」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-3-7-flash/ → content/_draft-gemini-3-7-flash.md（2026-08-14）
