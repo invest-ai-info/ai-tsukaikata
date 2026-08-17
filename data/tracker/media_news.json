@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T10:49:31.020743+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T10:27:47+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Uber Japanは、2026年後半に予定している東京でのロボタクシー（自動運転タクシー）の試験運行で、日々の運行を担うパートナーとして、提携タクシー事業者である日の丸交通と運行パートナーシップ契約を締結したことを発表した。",
+      "title": "Uber、自動運転タクシーの試験運行で日の丸交通とパートナーシップ契約締結",
+      "uid": "00bae19be60ef244",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133281.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-17T10:49:31.020743+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T10:26:57+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Pudu Roboticsは、小規模商業空間向けのAI搭載オールインワン小型掃除ロボット「PUDU ET1」を発表した。",
+      "title": "小規模商業空間向けAI搭載オールインワン小型掃除ロボット「PUDU ET1」",
+      "uid": "36cc04fe0afd5c7f",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133275.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-17T09:59:27.614141+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
