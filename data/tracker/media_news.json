@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T05:00:16.701147+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T04:47:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "アリババのQwenチームが270億パラメーターのAIモデル「Qwen3.8-27B」を公開しました。モデルのウェイトはApache License 2.0で公開されており、条件を守れば商用利用も可能。手元のPCに導入できるオープンウェイトモデルながら、一部の性能テストではAnthropicの高性能モデル「Claude Opus 4.6 Max」を上回る結果も報告されています。 続きを読む...",
+      "title": "ローカルで動かせる「Qwen3.8-27B」が無償公開、一部ベンチマークでClaude Opus 4.6 Max超え",
+      "uid": "4b46d6da12a4d63c",
+      "url": "https://gigazine.net/news/20260817-qwen3-8-27b/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T05:00:16.701147+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T04:29:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIがAIがもたらす深刻なリスクを評価・軽減することを目的とした危機管理チーム「Preparedness」を解散したと報じられています。 続きを読む...",
+      "title": "OpenAIがAIのもたらす深刻なリスクを評価・軽減することを目的とした危機管理チーム",
+      "uid": "470fd5d76665556e",
+      "url": "https://gigazine.net/news/20260817-openai-reportedly-disbanded-preparedness-team/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T05:00:16.701147+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T04:26:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Anthropicのダリオ・アモデイCEOは、カリフォルニア州で成立したAI規制法に賛成の立場を示し、AIが危険になり得るというメッセージを発信しています。このことが一部の人に「AIを中央集権化して独占したいと考えているのでは」と捉えられたため、アモデイCEOが発言意図について説明しました。 続きを読む...",
+      "title": "Anthropicのダリオ・アモデイCEOが「AIの規制」について物申す、規制が中央集権化につながるという指摘に反論",
+      "uid": "29a43e0524b555eb",
+      "url": "https://gigazine.net/news/20260817-dario-amodei-comment/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T05:00:16.701147+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-17T04:13:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "GoogleのAIで生成した画像・動画に表示される透かし(ウォーターマーク)を削除できる機能がGeminiとFlowに追加されます。削除されるのは目に見える透かしのみで、目に見えない「SynthID」と「C2PAメタデータ」には影響しないため、Geminiに問い合わせたり専用のサービスを用いたりすることで引き続きAI生成画像かどうか識別することができます。 続きを読む...",
+      "title": "GoogleがGeminiとFlowにAIが生成した画像・動画・音楽から目に見える「透かし」を削除する切り替え機能を追加、ただしSynthID透かしとC2PAメタデータは残る",
+      "uid": "ca8304dee8ff5fa9",
+      "url": "https://gigazine.net/news/20260817-google-visible-watermarks/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-17T05:00:16.701147+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-17T04:02:29+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NTTドコモビジネスとエクサウィザーズは8月17日、専用環境で企業の重要データを安全に活用できる「クローズドAIエージェント」の提供を開始した。",
+      "title": "企業の重要データを安全に活用できる「クローズドAIエージェント」",
+      "uid": "bf3b9382bfcb545b",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133096.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-17T05:00:16.701147+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T03:55:19+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "味の素は8月16日、レシピサイト「味の素パーク」の公式Xで14日に投稿した画像について謝罪した。生成AIによる加工のため、商品のラベルや文字の一部が乱れていたという。",
+      "title": "「ほんだし」のラベルがAIでぐちゃぐちゃに……　味の素、公式Xの投稿画像について謝罪",
+      "uid": "86e7b4cb4af114d0",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/17/2000000564/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-17T03:14:24.845062+00:00",
       "importance": "major",
       "label": "GIGAZINE",
