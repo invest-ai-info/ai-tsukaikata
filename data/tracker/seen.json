@@ -9,7 +9,7 @@
   "latest": {
     "anthropic-news": "2026-08-14T19:16:00+00:00",
     "anthropic-sdk": "2026-08-13T18:35:49+00:00",
-    "claude-code": "2026-08-14T22:20:57+00:00",
+    "claude-code": "2026-08-17T20:20:58+00:00",
     "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-17T08:00:00+00:00",
@@ -82,6 +82,17 @@
       "uid": "0542c4a2a55ebb89",
       "url": "https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/",
       "vendor": "Preferred Networks"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-17T20:20:58+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added the optional CLAUDE_CODE_PROJECT_DIR_NAME environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript direc…",
+      "title": "v2.1.234",
+      "uid": "0fb016549607a756",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -130,6 +141,7 @@
     "0f212765873ae80c": "2026-08-04T11:04:53.115730+00:00",
     "0f904c9b22156470": "2026-08-13T12:01:33.145239+00:00",
     "0fafeb8f45239cc3": "2026-08-04T11:04:53.115730+00:00",
+    "0fb016549607a756": "2026-08-17T20:46:22.723644+00:00",
     "0fd80a0b06df43ff": "2026-08-01T12:16:42.309603+00:00",
     "0fda04c42ed7698f": "2026-08-01T12:16:42.309603+00:00",
     "107befddda0dcd9b": "2026-08-17T03:14:24.845062+00:00",

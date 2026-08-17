@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T20:46:22.723644+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-17T20:20:58+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added the optional CLAUDE_CODE_PROJECT_DIR_NAME environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript direc…",
+      "title": "v2.1.234",
+      "uid": "0fb016549607a756",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-17T09:02:55.699871+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
