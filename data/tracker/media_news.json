@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-17T09:02:55.699871+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-08-17T07:58:35+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ロボット開発企業の中国Unitree Roboticsは、開発中の新型ヒューマノイドのデモ動画を公開した。助走なしで高さ2mのジャンプをしたほか、最高で秒速12.66m（時速45.576km）で走る姿を披露した。",
+      "title": "人型ロボが“人間超え”――助走なしで高さ2mのジャンプ、時速45kmで走行も　中国Unitreeが開発中の新モデルを公開",
+      "uid": "d0462c0f0126e19a",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/17/2000000567/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-17T09:02:55.699871+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-17T07:25:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "ビザ・ワールドワイド・ジャパンは8月17日、オンラインでの買い物にAIやAIエージェントをどこまで任せられるかを尋ねた消費者調査の結果を発表した。AIを活用した購買体験への関心は高まる一方、購入判断や決済までAIに委ねることへの受け入れは「極めて限定的」だったという。普及には利便性だけでなく「信頼と安心」と、利用者が自分で管理・選べる仕組みが求められるとしている。",
+      "title": "「あなたはAIエージェントに買い物を任せたいですか」 Visaが調査--消費者の回答は",
+      "uid": "8d684faf3ec9faaf",
+      "url": "https://japan.cnet.com/article/35251620/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-08-17T07:18:13.464827+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
