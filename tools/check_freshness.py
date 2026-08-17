@@ -23,12 +23,11 @@ from __future__ import annotations
 
 import html
 import re
-import subprocess
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date, datetime, timezone
+from datetime import date
 from pathlib import Path
 from typing import NamedTuple
 
@@ -318,27 +317,44 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
 # 担当は0件の日も1行書く（沈黙禁止）。だから「ログが止まった＝担当が止まった」。
 # ⚠️ ATには automation-health 相当のページがまだ無いので、当面はここが
 # 稼働登録を兼ねる（相当物ができたらそちらにも登録する）。
+#
+# 🚨 2026-08-17 に担当自身が設計の穴を見つけた（修正済み）。
+# 初版は**ファイルの最終コミット時刻**を見ていたが、それだと
+# **無関係なコミットがこのファイルに触れるだけで心拍が正常に戻る**。
+# 実際 8/16 は `44091fd`（タイトルの型をオーナー指示で直した回）がこの
+# ファイルに触れたので、**担当が1日沈黙したのに素通りした**。
+# 🔑 沈黙禁止は「ファイルが触られたか」ではなく「**その日の行があるか**」で測る。
 EARN_RESEARCH_PATH = "content/_earn_research.md"
-EARN_RESEARCH_MAX_HOURS = 48  # 1日休んでも鳴らない。2日黙ったら鳴る
+EARN_RESEARCH_MAX_DAYS = 2  # 1日休んでも鳴らない。2日ぶん空いたら鳴る
+# 作業ログの日付見出し＝「### 2026-08-17 — …」
+EARN_RESEARCH_DATE_RE = re.compile(r"^### (\d{4})-(\d{2})-(\d{2})", re.M)
 
 
-def earn_research_heartbeat(last_commit, now, max_hours=EARN_RESEARCH_MAX_HOURS) -> str | None:
+def earn_research_heartbeat(log_text, today: date,
+                            max_days: int = EARN_RESEARCH_MAX_DAYS) -> str | None:
     """稼ぎ方研究担当の作業ログが止まっていたら、知らせる文字列を返す。
 
-    last_commit は最終コミット日時（tz付き）。ファイルが無ければ None を渡す。
+    log_text は作業ログの中身。ファイルが無ければ None を渡す。
+    ⚠️ コミット時刻ではなく**ログに書かれた日付**を見る（上のコメント参照）。
     """
-    if last_commit is None:
+    tail = f"（沈黙禁止＝0件の日も1行書く設計。担当は毎日15:30 JSTの"            f"クラウドルーティン。動いたか確認すること）"
+    if log_text is None:
+        return f"{EARN_RESEARCH_PATH} が見つかりません。稼ぎ方研究担当の作業ログです{tail}"
+
+    dates = [date(int(y), int(m), int(d))
+             for y, m, d in EARN_RESEARCH_DATE_RE.findall(log_text)]
+    if not dates:
         return (
-            f"{EARN_RESEARCH_PATH} が見つかりません。"
-            f"稼ぎ方研究担当の作業ログです（沈黙禁止＝0件の日も1行書く設計。"
-            f"担当は毎日15:30 JSTのクラウドルーティン。動いたか確認すること）"
+            f"{EARN_RESEARCH_PATH}: 作業ログに日付の節（### YYYY-MM-DD）が1つもありません"
+            f"（見出しの形を変えたなら EARN_RESEARCH_DATE_RE も直すこと）"
         )
-    hours = (now - last_commit).total_seconds() / 3600
-    if hours > max_hours:
+
+    latest = max(dates)
+    gap = (today - latest).days
+    if gap > max_days:
         return (
-            f"{EARN_RESEARCH_PATH}: 最後の追記から{hours:.0f}時間たっています"
-            f"（上限{max_hours}時間）。稼ぎ方研究担当（毎日15:30 JSTのクラウドルーティン）が"
-            f"止まっている可能性があります。動いたか確認すること"
+            f"{EARN_RESEARCH_PATH}: 最後の追記が{latest}で、{gap}日ぶん空いています"
+            f"（上限{max_days}日）。稼ぎ方研究担当が止まっている可能性があります{tail}"
         )
     return None
 
@@ -498,25 +514,6 @@ def lawyer_deadline_gate(today: date,
     ])
 
 
-def _last_commit_time(root: Path, path: Path):
-    """path の最後のコミット日時を返す。無ければ None。
-
-    ⚠️ mtime ではなく git を見る（クローンし直すと mtime は当てにならない）。
-    """
-    if not path.exists():
-        return None
-    result = subprocess.run(
-        ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(root))],
-        cwd=root,
-        capture_output=True,
-        text=True,
-    )
-    stamp = result.stdout.strip()
-    if not stamp:
-        return None
-    return datetime.fromisoformat(stamp)
-
-
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     articles, errors = load_articles(root / "content")
@@ -545,7 +542,8 @@ def main() -> int:
     # 稼ぎ方研究担当の heartbeat と金額の鮮度（2026-08-14 稼ぎ方研究の設計）
     research_file = root / "content" / "_earn_research.md"
     heartbeat = earn_research_heartbeat(
-        _last_commit_time(root, research_file), datetime.now(timezone.utc)
+        research_file.read_text(encoding="utf-8") if research_file.exists() else None,
+        date.today(),
     )
     if heartbeat:
         report.problems.append(heartbeat)

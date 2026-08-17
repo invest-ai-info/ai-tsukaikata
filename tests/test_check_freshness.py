@@ -408,37 +408,56 @@ def test_non_recipes_are_not_checked():
     assert evidence_gaps([page], evidence={}) == []
 
 
-def _dt(hours_ago, now):
-    return now - timedelta(hours=hours_ago)
+# --- 稼ぎ方研究担当の heartbeat ---
+#
+# 🚨 2026-08-17 に担当自身が見つけた設計の穴の回帰テスト。
+# 初版はファイルの最終コミット時刻を見ていたので、**無関係なコミットが
+# このファイルに触れるだけで心拍が正常に戻った**（8/16 に実際に素通りした）。
+# いまは「ログにその日の行があるか」で測る。
+
+def _log(*days):
+    head = "# 稼ぎ方研究の作業ログ\n\n## 作業ログ\n\n"
+    return head + "".join(
+        f"### 2026-08-{d} — その日の記録\n本文\n\n" for d in days
+    )
 
 
-def test_earn_research_fresh_is_silent():
-    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
-    assert earn_research_heartbeat(_dt(20, now), now) is None
+def test_earn_research_today_is_silent():
+    assert earn_research_heartbeat(_log("17"), date(2026, 8, 17)) is None
+
+
+def test_earn_research_is_quiet_at_exactly_the_boundary():
+    # 上限は2日。ちょうど2日ぶん空いた日はまだ鳴らない
+    assert earn_research_heartbeat(_log("15"), date(2026, 8, 17)) is None
 
 
 def test_earn_research_silent_too_long_is_detected():
-    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
-    message = earn_research_heartbeat(_dt(50, now), now)
+    message = earn_research_heartbeat(_log("14"), date(2026, 8, 17))
     assert message is not None
-    assert "_earn_research.md" in message
-    assert "50" in message
+    assert "2026-08-14" in message and "3日" in message
 
 
-def test_earn_research_is_quiet_at_exactly_the_boundary_hour():
-    """比較は `>` なので、ちょうど48時間はまだ黙る。"""
-    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
-    assert earn_research_heartbeat(_dt(48, now), now) is None
+def test_earn_research_uses_the_newest_dated_entry():
+    # 日付節が複数あるときは、いちばん新しいものを見る
+    assert earn_research_heartbeat(_log("10", "17", "12"), date(2026, 8, 17)) is None
+
+
+def test_earn_research_ignores_unrelated_edits():
+    # 🚨 これが本体。ファイルに新しい文字が増えていても、
+    # **その日の日付節が無ければ鳴る**（8/16 の素通りの再発防止）
+    stale = _log("14") + "\n無関係な編集がここに入っても、日付節ではない。\n"
+    assert earn_research_heartbeat(stale, date(2026, 8, 17)) is not None
+
+
+def test_earn_research_without_dated_section_is_detected():
+    message = earn_research_heartbeat("日付の節が無い本文", date(2026, 8, 17))
+    assert message is not None and "日付の節" in message
 
 
 def test_earn_research_missing_file_is_detected():
-    now = datetime(2026, 8, 20, 12, 0, tzinfo=timezone.utc)
-    message = earn_research_heartbeat(None, now)
+    message = earn_research_heartbeat(None, date(2026, 8, 17))
     assert message is not None
     assert "見つかりません" in message
-
-
-# --- 金額目安ブロックの鮮度（2026-08-14 稼ぎ方研究の設計）---
 
 
 def _money_body(checked):
