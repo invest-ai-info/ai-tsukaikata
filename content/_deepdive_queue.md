@@ -384,8 +384,69 @@
     - 比較相手を置くなら MLIP Arena に載っている他のモデル（`huggingface.co/spaces/atomind/mlip-arena` は
       **この環境から 200 で読める**）。⚠️ ただし PFP v9 の行が Arena 側にあるかは未確認。
 
-- [ ] https://openai.com/index/chatgpt-for-teens
+- [!] https://openai.com/index/chatgpt-for-teens
   - 2026-08-18 自動追記（major・OpenAI「Introducing ChatGPT for Teens: Built for learning, backed by protections」）
+  - **2026-08-18 1回目: 下書きを作らずに停止した。**発表本文に到達できないため。
+    ⚠️ このURLは現在のRSSに実在する（消えたのではなく、読めないだけ）。
+
+    **① `openai.com` の HTMLページは今日も403（Cloudflare の bot 判定）。4回連続で戻っていない**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `openai.com/index/chatgpt-for-teens/`（スラッシュ有り） | **403**・9,731バイト |
+    | 同（スラッシュ無し） | **403**・9,728バイト |
+    | 同（WebFetch） | **HTTP 403**・本文なし |
+    | 同（`?x=1` 付き＝キャッシュ回避） | **403**・9,758バイト |
+    | `openai.com/ja-JP/index/chatgpt-for-teens/`（日本語版） | **403**・9,770バイト |
+    | `openai.com/policies/usage-policies/` | **403**・9,731バイト |
+    | **`help.openai.com/en/`**（ヘルプセンター・今回はじめて試した） | **403**・9,672バイト |
+    | `help.openai.com/en/articles/8313398-chatgpt-for-teens` | **403**・9,796バイト |
+    | `openai.com/news/rss.xml` | **200**・691,220バイト（1,137 item） |
+    | `developers.openai.com/api/docs/models` | **200**・345,216バイト |
+    | `developers.openai.com/api/docs/pricing` | **200**・544,675バイト |
+
+    - 応答ヘッダは毎回と同じ **`cf-mitigated: challenge`** ＋ `server: cloudflare`。⚠️**先方のbot判定であって
+      経路（許可リスト）の遮断ではない。許可リストに足しても直らない。**切り分けの根拠＝同じ `openai.com` の
+      RSS が 200 で返っていること。**UA偽装での迂回はしない。**
+    - 💡 **08-05（GPT-Live）→ 08-10（Daybreak legacy）→ 08-11（AWS）→ 08-18（本件）で4回連続403。**
+      13日たっても戻っていない。**`openai.com/index/...` が来たら、まずここを読むこと。**
+    - ⚠️ **`help.openai.com` も同じ判定だった**（今回の新しい知見）。ヘルプ記事から機能の詳細を埋める逃げ道も
+      塞がっている。⚠️ `chatgpt.com` は別種で **`CONNECT tunnel failed, response 403` ＝経路の遮断**
+      （許可リストに足せば直る種類）だが、製品ページに仕様の記載は薄いので優先度は低い。
+
+    **② 🆕 到達できる OpenAI 一次情報が1つ増えた＝`model-spec.openai.com`（200・今回はじめて確認）**
+
+    - `model-spec.openai.com/` → `2026-08-18.html` へ転送（**本件の発表と同じ日付**）。2,662,295バイト・素のHTMLで読める。
+      ⚠️ 転送は `<meta http-equiv="refresh">` なので `curl -L` では追えない。**`2026-08-18.html` を直接叩くこと。**
+    - 中身に **「Under-18 Principles」「Prioritize safety for teens」の節が実在**（`teen` 15回・`minor` 21回・
+      `parent` 35回）。**未成年に対してモデルがどう振る舞うと定めているか**は、ここから一次情報として引ける。
+    - ⚠️ **ただしこれは「モデルの振る舞いの規定」であって、製品「ChatGPT for Teens」の発表本文ではない。**
+      対象年齢・提供国・料金・保護者向け機能の中身・提供開始日は Model Spec には書かれていない。
+      **記事の軸（何が新しくなったのか）はこれだけでは立たない**ので、今回は書かなかった。
+
+    **③ RSS から分かったこと（本文ではないので記事には使えない）**
+
+    - タイトル＝**"Introducing ChatGPT for Teens: Built for learning, backed by protections"**。カテゴリは `Product`
+    - 公開日 **2026-08-18 11:00 GMT**
+    - description 全文＝`ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents.`
+    - → **対象年齢・提供国・料金・保護者が何をできるのかは、この1文から1つも取れない。**
+    - 💡 **同じ題材の過去記事がRSSに8本ある**（①が解けたら、経緯をたどる記事にできる材料）:
+      - `why-teens-deserve-access-safe-ai`（2026-07-16 16:00 GMT・Safety）
+      - `teen-safety-policies-gpt-oss-safeguard`（2026-03-24 11:00 GMT・Safety）
+      - **`japan-teen-safety-blueprint`（2026-03-17 10:00 GMT・Safety）＝日本向け。日本の読者には効く**
+      - `ai-literacy-resources-for-teens-and-parents` / `updating-model-spec-with-teen-protections`（ともに 2025-12-18 11:00 GMT）
+      - `introducing-the-teen-safety-blueprint`（2025-11-06・Company）／`teen-safety-freedom-and-privacy`（2025-09-16・Safety）
+      - ⚠️ **全部 `openai.com/index/...` なので①で読めない。**description の1文ずつしか取れない。
+
+    **④ 書くとしたときの注意（①が解けた後の話）**
+
+    - 題材が**料金でも性能でもない**（安全機能・保護者向けの管理）。**このサイトの料金比較の型はそのまま使えない。**
+      比較軸になるのは「対象年齢／保護者ができること／提供国／追加料金の有無」。
+    - 比較相手の到達性（今回確認）＝ **`www.anthropic.com` は 200**・**`ai.google.dev` は 200**。
+      Google の Family Link / Gemini の年齢制限、Anthropic の利用規約の年齢要件は読める見込み。
+      ⚠️ **同等の機能が無ければ「提供していない」と書けばよい。無理に並べない。**
+    - 読者（自動化したい非エンジニアの会社員）から遠い題材なので、**切り口を先に決めること。**
+      「子どもに使わせるとき、会社で使うのと何が違うか」なら近づく。
 
 ## 処理済み
 
