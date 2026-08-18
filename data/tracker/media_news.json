@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T07:56:05.033057+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T07:10:09+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ウエスタンデジタル（以下、WD）と東北大学は7月1日、次世代ストレージ技術の開発およびAIインフラストラクチャの持続的成長を支える人材育成を目的とした共同研究拠点「WD×東北大学 AIデータインフラ共創研究所」の設立を発表した。",
+      "title": "WDと東北大学、次世代ストレージ技術の未来を加速する共同研究拠点",
+      "uid": "8d970617a6b94375",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133537.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-18T07:56:05.033057+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T07:10:03+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Mizkan（以下、ミツカン）とOISSYは8月18日、味覚センサーAI「レオ」を用い、ソース・醤油・塩など、たこ焼きにつけて食べられる調味料との相性度を測定したと発表した。",
+      "title": "ミツカンとOISSY、味覚センサーAI「レオ」でたこ焼きに合う調味料を測定",
+      "uid": "c173c011a1d099f2",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133513.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-18T07:06:54.679285+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
