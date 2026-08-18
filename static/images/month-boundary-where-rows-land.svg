@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="502" viewBox="0 0 720 502" role="img" aria-label="境界の行が7月の実行と8月の実行のどちらに入ったかを、材料2本ぶん並べた表。材料Aの勤怠の打刻ログでは、前月からまたいできた退勤・翌月へまたいでいく出勤・その勤務の続き・7月29日の残業を足す訂正・7月30日の打刻を消す訂正の5件すべてが、7月の実行にも8月の実行にも入らず、どちらにも入らなかったの列に印が付いている。材料Bの売上の記録では、締め日当日の納品と2回に分けた納品の1回目が7月の実行に、その2回目と請求漏れの追加請求と返品が8月の実行に入っていて、5件とも、どちらにも入らなかったの列は空である。同じ頼み方・同じ回数でも、材料が変われば境界の行の行き先がまるごと変わった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="502"/>
+<text class="t-strong" x="18" y="26">同じ頼み方でも、境界の行の行き先は材料でまるごと変わった</text>
+<text class="t-sm" x="18" y="45">毎月ぶんのログを別々に渡し、「◯月ぶんの合計を出してください」とだけ頼んだ（材料2本 × 各月2回 = 8回）。</text>
+<text class="t-sm" x="18" y="64">行き先は、返ってきた合計から機械で判定した。同じ材料の2回は、どちらも同じ行き先だった。</text>
+<text class="t-xs" x="316" y="92" text-anchor="middle">7月の実行</text>
+<text class="t-xs" x="434" y="92" text-anchor="middle">8月の実行</text>
+<text class="t-xs" x="574" y="92" text-anchor="middle">どちらにも</text>
+<text class="t-xs" x="574" y="105" text-anchor="middle">入らなかった</text>
+<text class="t-accent" x="18" y="128">材料A ＝ 勤怠の打刻ログ</text>
+<text class="t" x="18" y="154">前月からまたいできた退勤（7/1 05:30）</text>
+<line class="line" x1="310" y1="149" x2="322" y2="149"/>
+<line class="line" x1="428" y1="149" x2="440" y2="149"/>
+<rect class="box-bad" x="547" y="140" width="54" height="19" rx="4"/>
+<text class="t-bad" x="574" y="154" text-anchor="middle">×</text>
+<text class="t" x="18" y="180">翌月へまたいでいく出勤（7/31 21:00）</text>
+<line class="line" x1="310" y1="175" x2="322" y2="175"/>
+<line class="line" x1="428" y1="175" x2="440" y2="175"/>
+<rect class="box-bad" x="547" y="166" width="54" height="19" rx="4"/>
+<text class="t-bad" x="574" y="180" text-anchor="middle">×</text>
+<text class="t" x="18" y="206">その勤務の続き（8/1 05:30）</text>
+<line class="line" x1="310" y1="201" x2="322" y2="201"/>
+<line class="line" x1="428" y1="201" x2="440" y2="201"/>
+<rect class="box-bad" x="547" y="192" width="54" height="19" rx="4"/>
+<text class="t-bad" x="574" y="206" text-anchor="middle">×</text>
+<text class="t" x="18" y="232">7/29 の残業を足す訂正（8/4 記録）</text>
+<line class="line" x1="310" y1="227" x2="322" y2="227"/>
+<line class="line" x1="428" y1="227" x2="440" y2="227"/>
+<rect class="box-bad" x="547" y="218" width="54" height="19" rx="4"/>
+<text class="t-bad" x="574" y="232" text-anchor="middle">×</text>
+<text class="t" x="18" y="258">7/30 の打刻を消す訂正（8/7 記録）</text>
+<line class="line" x1="310" y1="253" x2="322" y2="253"/>
+<line class="line" x1="428" y1="253" x2="440" y2="253"/>
+<rect class="box-bad" x="547" y="244" width="54" height="19" rx="4"/>
+<text class="t-bad" x="574" y="258" text-anchor="middle">×</text>
+<text class="t-accent" x="18" y="280">材料B ＝ 売上の記録</text>
+<text class="t" x="18" y="306">締め日当日の納品（7/31・84,000円）</text>
+<rect class="box-good" x="289" y="292" width="54" height="19" rx="4"/>
+<text class="t-good" x="316" y="306" text-anchor="middle">○</text>
+<line class="line" x1="428" y1="301" x2="440" y2="301"/>
+<line class="line" x1="568" y1="301" x2="580" y2="301"/>
+<text class="t" x="18" y="332">2回に分けた納品の1回目（7/19）</text>
+<rect class="box-good" x="289" y="318" width="54" height="19" rx="4"/>
+<text class="t-good" x="316" y="332" text-anchor="middle">○</text>
+<line class="line" x1="428" y1="327" x2="440" y2="327"/>
+<line class="line" x1="568" y1="327" x2="580" y2="327"/>
+<text class="t" x="18" y="358">その2回目（8/3・48,000円）</text>
+<line class="line" x1="310" y1="353" x2="322" y2="353"/>
+<rect class="box-good" x="407" y="344" width="54" height="19" rx="4"/>
+<text class="t-good" x="434" y="358" text-anchor="middle">○</text>
+<line class="line" x1="568" y1="353" x2="580" y2="353"/>
+<text class="t" x="18" y="384">7/17 ぶんの請求漏れ（8/4・+38,000円）</text>
+<line class="line" x1="310" y1="379" x2="322" y2="379"/>
+<rect class="box-good" x="407" y="370" width="54" height="19" rx="4"/>
+<text class="t-good" x="434" y="384" text-anchor="middle">○</text>
+<line class="line" x1="568" y1="379" x2="580" y2="379"/>
+<text class="t" x="18" y="410">7/19 ぶんの返品（8/6・−63,000円）</text>
+<line class="line" x1="310" y1="405" x2="322" y2="405"/>
+<rect class="box-good" x="407" y="396" width="54" height="19" rx="4"/>
+<text class="t-good" x="434" y="410" text-anchor="middle">○</text>
+<line class="line" x1="568" y1="405" x2="580" y2="405"/>
+<text class="t-bad" x="18" y="436">※ 勤怠では、境界の5件すべてが7月にも8月にも入らなかった。それでも合計はどちらの月も1分もずれていない。</text>
+<text class="t-good" x="18" y="458">※ 売上では、境界の5件すべてがどちらかの月にちょうど1回入った。二重計上も欠落も起きていない。</text>
+<text class="t-xs" x="18" y="480">架空データでの実測。生の返りは docs/evidence/ に置いてある。</text>
+</svg>

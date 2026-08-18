@@ -7054,6 +7054,186 @@ def two_runs_narrowing_chart() -> None:
     )
 
 
+
+def month_boundary_where_rows_land_chart() -> None:
+    """境界の行が、7月の実行と8月の実行のどちらに入ったかを材料別に並べる。
+
+    実測（2026-08-18・指示文1「◯月ぶんの合計を出してください」を材料2本×各月2回＝8回）。
+    印の位置は返りの合計から機械で決めた（合計が一意に線引きを決めるよう値を選んである）。
+    """
+    rows_a = [
+        ("前月からまたいできた退勤（7/1 05:30）", 2),
+        ("翌月へまたいでいく出勤（7/31 21:00）", 2),
+        ("その勤務の続き（8/1 05:30）", 2),
+        ("7/29 の残業を足す訂正（8/4 記録）", 2),
+        ("7/30 の打刻を消す訂正（8/7 記録）", 2),
+    ]
+    rows_b = [
+        ("締め日当日の納品（7/31・84,000円）", 0),
+        ("2回に分けた納品の1回目（7/19）", 0),
+        ("その2回目（8/3・48,000円）", 1),
+        ("7/17 ぶんの請求漏れ（8/4・+38,000円）", 1),
+        ("7/19 ぶんの返品（8/6・−63,000円）", 1),
+    ]
+    label_x, label_w = 18, 268
+    col_x = [label_x + label_w + 30, label_x + label_w + 148, label_x + label_w + 288]
+    col_names = [["7月の実行"], ["8月の実行"], ["どちらにも", "入らなかった"]]
+    row_h = 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ頼み方でも、境界の行の行き先は材料でまるごと変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "毎月ぶんのログを別々に渡し、「◯月ぶんの合計を出してください」とだけ頼んだ"
+        "（材料2本 × 各月2回 = 8回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "行き先は、返ってきた合計から機械で判定した。同じ材料の2回は、どちらも同じ行き先だった。"
+        "</text>\n",
+    ]
+
+    head_y = 92
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{head_y + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = 128
+    for title, rows in (("材料A ＝ 勤怠の打刻ログ", rows_a),
+                        ("材料B ＝ 売上の記録", rows_b)):
+        parts.append(f'<text class="t-accent" x="{label_x}" y="{y}">{_esc(title)}</text>\n')
+        y += 8
+        for label, col in rows:
+            ty = y + 18
+            parts.append(
+                f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n'
+            )
+            for i, cx in enumerate(col_x):
+                if i == col:
+                    cls = "box-bad" if col == 2 else "box-good"
+                    mark = "×" if col == 2 else "○"
+                    mcls = "t-bad" if col == 2 else "t-good"
+                    parts.append(
+                        f'<rect class="{cls}" x="{cx - 27}" y="{ty - 14}" '
+                        f'width="54" height="19" rx="4"/>\n'
+                    )
+                    parts.append(
+                        f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                        f'text-anchor="middle">{mark}</text>\n'
+                    )
+                else:
+                    parts.append(
+                        f'<line class="line" x1="{cx - 6}" y1="{ty - 5}" '
+                        f'x2="{cx + 6}" y2="{ty - 5}"/>\n'
+                    )
+            y += row_h
+        y += 14
+
+    notes = [
+        ("t-bad", "※ 勤怠では、境界の5件すべてが7月にも8月にも入らなかった。"
+                  "それでも合計はどちらの月も1分もずれていない。"),
+        ("t-good", "※ 売上では、境界の5件すべてがどちらかの月にちょうど1回入った。"
+                   "二重計上も欠落も起きていない。"),
+        ("t-xs", "架空データでの実測。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 4
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "境界の行が7月の実行と8月の実行のどちらに入ったかを、材料2本ぶん並べた表。"
+        "材料Aの勤怠の打刻ログでは、前月からまたいできた退勤・翌月へまたいでいく出勤・"
+        "その勤務の続き・7月29日の残業を足す訂正・7月30日の打刻を消す訂正の5件すべてが、"
+        "7月の実行にも8月の実行にも入らず、どちらにも入らなかったの列に印が付いている。"
+        "材料Bの売上の記録では、締め日当日の納品と2回に分けた納品の1回目が7月の実行に、"
+        "その2回目と請求漏れの追加請求と返品が8月の実行に入っていて、"
+        "5件とも、どちらにも入らなかったの列は空である。"
+        "同じ頼み方・同じ回数でも、材料が変われば境界の行の行き先がまるごと変わった。"
+    )
+    (OUT / "month-boundary-where-rows-land.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def month_boundary_two_runs_chart() -> None:
+    """出す形を固定して2回ずつ走らせたときの、またぎ欄の件数と合計。
+
+    実測（2026-08-18・指示文4を材料2本×各月2回＝8回）。
+    棒の長さ＝またぎ欄に挙がった行数。右の数字＝その回が出した合計。
+    """
+    rows = [
+        ("材料A ・ 7月ぶん", [(4, "10,890分"), (4, "10,890分")], True),
+        ("材料A ・ 8月ぶん", [(5, "10,800分"), (5, "10,800分")], True),
+        ("材料B ・ 7月ぶん", [(5, "922,000円"), (5, "922,000円")], True),
+        ("材料B ・ 8月ぶん", [(4, "852,000円"), (8, "594,000円")], False),
+    ]
+    label_x, label_w = 18, 130
+    bar_x = label_x + label_w + 10
+    bar_max_w = 300
+    unit = bar_max_w / 8          # 最大値8件を基準に1件あたりの幅を出す
+    bar_h, bar_gap = 14, 6
+    row_gap = 18
+    top = 106
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "出す形が1文字も動かなくても、拾う行数のほうが割れる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "【期間】【またぎ】【合計】の3つを見出しごと決めて、同じ指示文を2回ずつ走らせた"
+        "（材料2本 × 各月2回 = 8回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒の長さ＝またぎ欄に挙がった行数。右の数字＝その回が出した合計。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "上の棒が1回目、下の棒が2回目</text>\n",
+    ]
+
+    y = top
+    for label, runs, agreed in rows:
+        parts.append(f'<text class="t" x="{label_x}" y="{y + 20}">{_esc(label)}</text>\n')
+        for i, (n, total) in enumerate(runs):
+            by = y + i * (bar_h + bar_gap)
+            cls = "bar-old" if agreed else "bar-new"
+            parts.append(
+                f'<rect class="{cls}" x="{bar_x}" y="{by}" '
+                f'width="{n * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            tcls = "t-xs" if agreed else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{bar_x + n * unit + 8:.1f}" '
+                f'y="{by + bar_h - 2}">{n}件 / {_esc(total)}</text>\n'
+            )
+        y += 2 * (bar_h + bar_gap) + row_gap
+
+    notes = [
+        ("t-good", "※ 8回のうち6回は、返ってきた文が2回とも1文字も違わなかった。"),
+        ("t-bad", "※ 割れたのは材料B・8月ぶんの2回だけ。またぎが4件と8件で、"
+                  "合計の差は258,000円。形の崩れは1か所も無い。"),
+        ("t-xs", "架空データでの実測。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "出す形を固定した指示文を2回ずつ走らせたときの、またぎ欄に挙がった行数を並べた横棒グラフ。"
+        "材料Aの7月ぶんは1回目も2回目も4件で、合計はどちらも10,890分。"
+        "材料Aの8月ぶんは1回目も2回目も5件で、合計はどちらも10,800分。"
+        "材料Bの7月ぶんは1回目も2回目も5件で、合計はどちらも922,000円。"
+        "材料Bの8月ぶんだけが割れて、1回目は4件で合計852,000円、2回目は8件で合計594,000円。"
+        "その差は258,000円である。8回のうち6回は返ってきた文が2回とも1文字も違わず、"
+        "割れた回にも見出しの崩れや欄の欠落は1か所も無い。"
+    )
+    (OUT / "month-boundary-two-runs.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -7151,4 +7331,6 @@ if __name__ == "__main__":
     records_counted_or_not_chart()
     job_capacity_subtraction_chart()
     job_ask_shape_vs_verdict_chart()
+    month_boundary_where_rows_land_chart()
+    month_boundary_two_runs_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
