@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T04:00:09.864899+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T03:22:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Googleが経営破綻した格安航空会社スピリット航空の社内データを1000万ドル(約16億円)で取得する見通しであることが分かりました。購入対象には約1億件のメールや約5億件のMicrosoft Teamsのチャットなどが含まれており、Googleは製品開発やAIモデルの改善に利用する方針です。 続きを読む...",
+      "title": "Googleが倒産したスピリット航空のメール1億件・Teamsチャット5億件を約16億円で購入へ、AIモデルの学習などに利用",
+      "uid": "1abaac12930647cf",
+      "url": "https://gigazine.net/news/20260818-google-buy-bankrupt-airline/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-18T04:00:09.864899+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T03:19:34+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "DeepLは、開発者向けのポータルページ「DeepL for Developers」を新設した。無料のAPIキーは、クレジットカードの登録なしに取得することができる。",
+      "title": "DeepL、開発者向けポータルページ「DeepL for Developers」を新設",
+      "uid": "baff6d513517b290",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133412.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-18T04:00:09.864899+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T03:13:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "「AIが自分で考えてコードを書き、業務をこなしてくれる」──AIエージェントが急速に進化しています。一方で、「もしAIが暴走して、取り返しのつかない事故を起こしたら？」という心配も出てきました。",
+      "title": "AI用語の基礎知識 【第19回】「ガードレール」とは──AIの“暴走・脱線”を防ぐ安全装置",
+      "uid": "51bfd2373806fea4",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2133397.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-18T03:10:26.176978+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
