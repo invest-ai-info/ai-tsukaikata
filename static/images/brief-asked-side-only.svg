@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="544" viewBox="0 0 720 544" role="img" aria-label="架空の副業の発注書2本に、同時には守れない条件を6組と、単に書かれていない項目を6件ずつ仕込んで、頼み方を5通りで比べた横棒グラフ。棒1本が1回ぶんで、左が両立しない6組のうち挙がった数、右が書かれていない6件のうち挙がった数。そのまま発注書どおりに書いてと頼んだ4回は、6組が4回とも6件、書かれていない項目は4回とも0件。足りない情報を挙げてまだ書かないでと頼んだ4回は、6組が4回とも6件、書かれていない項目が4件・6件・4件・3件。同時には守れない組を対にして挙げてと頼んだ4回は、6組が4回とも6件、書かれていない項目は4回とも0件。組ごとに私が決める欄を残させた2回は、6組が2回とも6件、書かれていない項目が1件と0件。組と書かれていないことの2つを名指しした保存版の4回は、6組も書かれていない項目も4回とも6件でそろった。つまり仕込んだ矛盾はどの頼み方でも全部挙がり、挙がらないのは聞かなかったほうの項目だけだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="544"/>
+<text class="t-strong" x="18" y="26">仕込んだ矛盾は、どの頼み方でも全部出た。出ないのは「聞かなかったほう」だけ</text>
+<text class="t-sm" x="18" y="45">架空の副業の発注書を2本作り、同時には守れない条件を6組と、単に書かれていない項目を6件ずつ仕込んだ。</text>
+<text class="t-sm" x="18" y="64">棒1本が1回ぶん（材料2本 × 各2回、または各1回）。目盛りは0件から6件。</text>
+<text class="t-accent" x="284" y="96">両立しない6組</text>
+<text class="t-accent" x="516.0" y="96">書かれていない6件</text>
+<line class="line" x1="284.0" y1="112" x2="284.0" y2="452" stroke-dasharray="2 3"/>
+<line class="line" x1="440.0" y1="112" x2="440.0" y2="452" stroke-dasharray="2 3"/>
+<text class="t-xs" x="432.0" y="110">6件</text>
+<line class="line" x1="516.0" y1="112" x2="516.0" y2="452" stroke-dasharray="2 3"/>
+<line class="line" x1="672.0" y1="112" x2="672.0" y2="452" stroke-dasharray="2 3"/>
+<text class="t-xs" x="664.0" y="110">6件</text>
+<text class="t" x="18" y="146">そのまま「発注書どおりに書いて」</text>
+<rect class="bar-new" x="284" y="126" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="135">6</text>
+<rect class="bar-old" x="516.0" y="126" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="135">0</text>
+<rect class="bar-new" x="284" y="140" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="149">6</text>
+<rect class="bar-old" x="516.0" y="140" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="149">0</text>
+<rect class="bar-new" x="284" y="154" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="163">6</text>
+<rect class="bar-old" x="516.0" y="154" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="163">0</text>
+<rect class="bar-new" x="284" y="168" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="177">6</text>
+<rect class="bar-old" x="516.0" y="168" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="177">0</text>
+<text class="t" x="18" y="220">「足りない情報を挙げて。まだ書かないで」</text>
+<rect class="bar-new" x="284" y="200" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="209">6</text>
+<rect class="bar-in" x="516.0" y="200" width="104.0" height="10" rx="2"/>
+<text class="t-xs" x="628.0" y="209">4</text>
+<rect class="bar-new" x="284" y="214" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="223">6</text>
+<rect class="bar-in" x="516.0" y="214" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="680.0" y="223">6</text>
+<rect class="bar-new" x="284" y="228" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="237">6</text>
+<rect class="bar-in" x="516.0" y="228" width="104.0" height="10" rx="2"/>
+<text class="t-xs" x="628.0" y="237">4</text>
+<rect class="bar-new" x="284" y="242" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="251">6</text>
+<rect class="bar-in" x="516.0" y="242" width="78.0" height="10" rx="2"/>
+<text class="t-xs" x="602.0" y="251">3</text>
+<text class="t" x="18" y="294">「同時には守れない組を対にして挙げて」</text>
+<rect class="bar-new" x="284" y="274" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="283">6</text>
+<rect class="bar-old" x="516.0" y="274" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="283">0</text>
+<rect class="bar-new" x="284" y="288" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="297">6</text>
+<rect class="bar-old" x="516.0" y="288" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="297">0</text>
+<rect class="bar-new" x="284" y="302" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="311">6</text>
+<rect class="bar-old" x="516.0" y="302" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="311">0</text>
+<rect class="bar-new" x="284" y="316" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="325">6</text>
+<rect class="bar-old" x="516.0" y="316" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="325">0</text>
+<text class="t" x="18" y="368">組ごとに〔私が決める〕を残させる</text>
+<rect class="bar-new" x="284" y="348" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="357">6</text>
+<rect class="bar-old" x="516.0" y="348" width="26.0" height="10" rx="2"/>
+<text class="t-xs" x="550.0" y="357">1</text>
+<rect class="bar-new" x="284" y="362" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="371">6</text>
+<rect class="bar-old" x="516.0" y="362" width="2.0" height="10" rx="2"/>
+<text class="t-xs" x="524.0" y="371">0</text>
+<text class="t" x="18" y="414">保存版＝組と、書かれていないことの2つ</text>
+<rect class="bar-new" x="284" y="394" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="403">6</text>
+<rect class="bar-in" x="516.0" y="394" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="680.0" y="403">6</text>
+<rect class="bar-new" x="284" y="408" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="417">6</text>
+<rect class="bar-in" x="516.0" y="408" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="680.0" y="417">6</text>
+<rect class="bar-new" x="284" y="422" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="431">6</text>
+<rect class="bar-in" x="516.0" y="422" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="680.0" y="431">6</text>
+<rect class="bar-new" x="284" y="436" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="448.0" y="445">6</text>
+<rect class="bar-in" x="516.0" y="436" width="156.0" height="10" rx="2"/>
+<text class="t-xs" x="680.0" y="445">6</text>
+<text class="t-good" x="18" y="478">※ 仕込んだ6組は22回とも6組ぜんぶ挙がった。黙って片方を捨てた回は0回。</text>
+<text class="t-bad" x="18" y="500">※「同時には守れない組を挙げて」と聞いた4回は、書かれていない項目を1件も挙げない。</text>
+<text class="t-xs" x="18" y="522">架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>
+</svg>

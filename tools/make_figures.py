@@ -7055,6 +7055,115 @@ def two_runs_narrowing_chart() -> None:
 
 
 
+
+def brief_asked_side_only_chart() -> None:
+    """発注書に仕込んだ「両立しない6組」と「書かれていない6件」を、頼み方ごとに何件挙げたか。
+
+    実測（2026-08-18・架空の発注書2本 × 頼み方7通り＝22回）。
+    棒1本が1回ぶん。左の帯＝両立しない6組のうち挙がった数、右の帯＝書かれていない6件のうち挙がった数。
+    """
+    rows = [
+        ("そのまま「発注書どおりに書いて」", [6, 6, 6, 6], [0, 0, 0, 0]),
+        ("「足りない情報を挙げて。まだ書かないで」", [6, 6, 6, 6], [4, 6, 4, 3]),
+        ("「同時には守れない組を対にして挙げて」", [6, 6, 6, 6], [0, 0, 0, 0]),
+        ("組ごとに〔私が決める〕を残させる", [6, 6], [1, 0]),
+        ("保存版＝組と、書かれていないことの2つ", [6, 6, 6, 6], [6, 6, 6, 6]),
+    ]
+    label_x, label_w = 18, 252
+    gap = 14
+    unit = 26.0                     # 1件あたりの幅
+    left_x = label_x + label_w + gap
+    left_w = 6 * unit
+    right_x = left_x + left_w + 76
+    right_w = 6 * unit
+    bar_h, bar_gap = 10, 4
+    row_gap = 18
+    top = 126
+
+    assert right_x + right_w + 40 <= WIDTH, right_x + right_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "仕込んだ矛盾は、どの頼み方でも全部出た。出ないのは「聞かなかったほう」だけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の副業の発注書を2本作り、同時には守れない条件を6組と、単に書かれていない項目を"
+        "6件ずつ仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒1本が1回ぶん（材料2本 × 各2回、または各1回）。目盛りは0件から6件。</text>\n",
+        f'<text class="t-accent" x="{left_x}" y="{top - 30}">両立しない6組</text>\n',
+        f'<text class="t-accent" x="{right_x}" y="{top - 30}">書かれていない6件</text>\n',
+    ]
+    # 目盛り（0と6のところに薄い縦線）
+    total_h = sum(len(a) * (bar_h + bar_gap) + row_gap for _, a, _ in rows)
+    for x0, w0 in ((left_x, left_w), (right_x, right_w)):
+        for k in (0, 6):
+            parts.append(
+                f'<line class="line" x1="{x0 + k * unit:.1f}" y1="{top - 14}" '
+                f'x2="{x0 + k * unit:.1f}" y2="{top + total_h - row_gap + 2}" '
+                f'stroke-dasharray="2 3"/>\n'
+            )
+        parts.append(
+            f'<text class="t-xs" x="{x0 + w0 - 8:.1f}" y="{top - 16}">6件</text>\n'
+        )
+
+    y = top
+    for label, left_vals, right_vals in rows:
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + 20}">{_esc(label)}</text>\n'
+        )
+        for i, (lv, rv) in enumerate(zip(left_vals, right_vals)):
+            by = y + i * (bar_h + bar_gap)
+            parts.append(
+                f'<rect class="bar-new" x="{left_x}" y="{by}" '
+                f'width="{lv * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{left_x + lv * unit + 8:.1f}" '
+                f'y="{by + bar_h - 1}">{lv}</text>\n'
+            )
+            cls = "bar-old" if rv <= 1 else "bar-in"
+            parts.append(
+                f'<rect class="{cls}" x="{right_x}" y="{by}" '
+                f'width="{max(rv * unit, 2.0):.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{right_x + rv * unit + 8:.1f}" '
+                f'y="{by + bar_h - 1}">{rv}</text>\n'
+            )
+        y += len(left_vals) * (bar_h + bar_gap) + row_gap
+
+    notes = [
+        ("t-good", "※ 仕込んだ6組は22回とも6組ぜんぶ挙がった。黙って片方を捨てた回は0回。"),
+        ("t-bad", "※「同時には守れない組を挙げて」と聞いた4回は、書かれていない項目を1件も挙げない。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "架空の副業の発注書2本に、同時には守れない条件を6組と、単に書かれていない項目を6件ずつ"
+        "仕込んで、頼み方を5通りで比べた横棒グラフ。棒1本が1回ぶんで、左が両立しない6組のうち"
+        "挙がった数、右が書かれていない6件のうち挙がった数。"
+        "そのまま発注書どおりに書いてと頼んだ4回は、6組が4回とも6件、書かれていない項目は"
+        "4回とも0件。"
+        "足りない情報を挙げてまだ書かないでと頼んだ4回は、6組が4回とも6件、"
+        "書かれていない項目が4件・6件・4件・3件。"
+        "同時には守れない組を対にして挙げてと頼んだ4回は、6組が4回とも6件、"
+        "書かれていない項目は4回とも0件。"
+        "組ごとに私が決める欄を残させた2回は、6組が2回とも6件、書かれていない項目が1件と0件。"
+        "組と書かれていないことの2つを名指しした保存版の4回は、"
+        "6組も書かれていない項目も4回とも6件でそろった。"
+        "つまり仕込んだ矛盾はどの頼み方でも全部挙がり、"
+        "挙がらないのは聞かなかったほうの項目だけだった。"
+    )
+    (OUT / "brief-asked-side-only.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def month_boundary_where_rows_land_chart() -> None:
     """境界の行が、7月の実行と8月の実行のどちらに入ったかを材料別に並べる。
 
@@ -7333,4 +7442,5 @@ if __name__ == "__main__":
     job_ask_shape_vs_verdict_chart()
     month_boundary_where_rows_land_chart()
     month_boundary_two_runs_chart()
+    brief_asked_side_only_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
