@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T08:55:15.152162+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T08:48:05+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "じそく１じかんは、カシオ計算機のAIペットロボット“Moflin”と東京・渋谷の「パンとエスプレッソとまちあわせ」の期間限定コラボカフェを、9月5日より9月13日まで開催する。",
+      "title": "AIペットロボット「Moflin」が渋谷・MIYASHITA PARKのカフェとコラボ 「パンとエスプレッソとMoflinとまちあわせ」",
+      "uid": "9f6cb9ffdb65a744",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133586.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-18T08:55:15.152162+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T08:28:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "イスラエルのハノーバー公共政策研究所が、わずか1週間強の間にAIチャットボットを欺く目的で、100本近くの記事を公開していることが明らかになったと、外交政策シンクタンクのクインシー研究所が公開しているオンラインマガジン・Responsible Statecraftが報じています。 続きを読む...",
+      "title": "イスラエルでAIチャットボットを欺く目的で設立された偽のシンクタンクが出現、わずか1週間強の間にAIチャットボットに影響を与えることを目的としたと思われる記事を少なくとも100本公開",
+      "uid": "53197274131f8d5a",
+      "url": "https://gigazine.net/news/20260818-israel-creates-fake-think-tank-dupe-ai-chatbots/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-18T08:55:15.152162+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T08:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの基礎から本番実装まで学べる5つのガイドをGoogleが無償公開した。Kaggleと共同で実施した研修プログラムを基にした内容で、開発者の実務に直結する知識を習得できる。各ガイドが扱う内容とは。",
+      "title": "無料で読めるAIエージェントの実践ガイド、Googleが公開　基礎から本番実装まで学べる",
+      "uid": "de968c0c4ab0a1ee",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/18/news055.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T08:55:15.152162+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T07:50:11+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "LINEヤフーは8月18日、Yahoo!ショッピングでのAIエージェント活用に関する説明会を開催し、今後のアップデート予定が明らかにされた。",
+      "title": "Yahoo!ショッピング、ユーザー向け・ストア向けの双方でAI活用を強化",
+      "uid": "72aaea343043e771",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133570.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-18T07:56:05.033057+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
