@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T10:48:44.525538+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T10:13:33+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "イメージ・マジックは8月18日、Mimaki UVプリンター「UJF-7151 plusII」専用のAIカメラシステム「IM-V7 PRO MAX」を発売した。",
+      "title": "治具不要でUVプリント業務を自動化するAIカメラ「IM-V7 PRO MAX」",
+      "uid": "bc522cd98c6fdf3d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133640.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-18T10:48:44.525538+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T09:42:48+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日本電気（NEC）は8月18日、防衛装備庁防衛イノベーション科学技術研究所が実施する「革新型ブレークスルー研究」において、デュアルユースを視野に入れた「自己教師あり学習による水中音響基盤モデルに関わる研究委託（その1）」を受注し、研究を開始したと発表した。同基盤モデルについて、2027年度までの構築を目指す。",
+      "title": "NEC、AIを利用し防衛用途など水中音響基盤モデルの構築に向けた研究を開始",
+      "uid": "758d45a5fff0f7c9",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133626.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-18T08:55:15.152162+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
