@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T07:06:54.679285+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T07:05:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIは2026年7月に「テスト中の自社製モデルがHugging Faceに対するサイバー攻撃を実行してしまった」というセキュリティインシデントを報告しました。この「AIによって自律的にサイバー攻撃が実行された」という事例を受けて、OpenAIの共同創業者であり社長も務めるグレッグ・ブロックマン氏が「AIからの攻撃を防止するために取り組むべき10の事柄」を解説する記事を公開しました。解説記…",
+      "title": "Hugging Faceを攻撃してしまったOpenAIが「AIからの攻撃を防止する方法10選」を公開、CodexなどのAIツールの活用を呼びかけ",
+      "uid": "929f585366e58db3",
+      "url": "https://gigazine.net/news/20260818-ai-security/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-18T07:06:54.679285+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T06:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIアシスタント「Claude」を開発するAnthropicの年換算収益が650億ドル(約10兆円)を突破したことがわかりました。2025年末時点では約90億ドル(約1兆4400億円)だったため、わずか7カ月ほどで約7倍に拡大した計算です。 続きを読む...",
+      "title": "Anthropicの年換算収益が10兆円超で2025年末実績の約7倍に、四半期売上高は前年同期比14倍以上",
+      "uid": "7d25b8530a2c54cd",
+      "url": "https://gigazine.net/news/20260818-anthropic-revenue-run-rate/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-18T07:06:54.679285+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T06:16:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ロシアの起業家が開発したメッセージアプリ「Telegram」は、ロシアやウクライナで主要なメッセージングサービスとして使われているほか、映画やテレビ番組などの海賊版コンテンツを共有するプラットフォームとして使われている側面があります。ルイジアナ州立大学とテキサス大学アーリントン校の研究者らは、「Telegram上の動画海賊行為に関する最初の大規模な研究」と表現するTelegramの分析結果を発表…",
+      "title": "Telegramの海賊版配信者をAIで自動検出するツールを研究者らが開発、61日間で海賊版チャンネル524件とボット71件の削除に役立つ",
+      "uid": "de14ce397966e53d",
+      "url": "https://gigazine.net/news/20260818-telegram-pirates/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-18T07:06:54.679285+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T05:54:07+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "SB C&Sが展開するオーディオブランド「GLIDiC」は、AIを搭載した次世代型イヤホン「GLIDiC AI +uBuds」を8月18日よりオンラインショップにて一般販売を開始した。価格はオープン価格だが、オンラインショップ限定で29,800円。",
+      "title": "音声録音はもちろん、アドバイスしてくれるAIイヤホン「GLIDiC AI +u Buds」 8月18日よりオンラインショップにて一般販売開始",
+      "uid": "d148769090c9a0a5",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133497.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-18T05:46:53.344840+00:00",
       "importance": "minor",
       "label": "CNET Japan",
