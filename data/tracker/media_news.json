@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T14:54:17.878970+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-18T15:55:25+00:00",
+      "source_id": "media-publickey",
+      "summary": "Googleは、完全準同型暗号を利用したAIモデル用のオープンソースコンパイラ「HEIR」を発表しました。 AIモデルをコンパイルする「HEIR」 HEIRはAIモデル用のコンパイラとツールチェーンであり、これを用いて学習済みAIモデルのP...",
+      "title": "Google、AIモデルをコンパイルして暗号データを復号せずに扱えるように変換する「HEIR」発表。完全準同型暗号を利用し、AIでのセキュリティやプライバシー保護など実現へ",
+      "uid": "0ac02b70cb8fa0e0",
+      "url": "https://www.publickey1.jp/blog/26/googleaiheirai.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-08-18T13:58:51.108779+00:00",
       "importance": "major",
       "label": "Publickey",
