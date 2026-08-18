@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T22:43:44.829078+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-08-18T22:15:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは米国時間8月18日、最先端AIモデルの開発ペースを一時的に緩めたと明らかにした。提供を予定している最新モデルの強化学習（RL）訓練を2週間止め、計画していた最大規模のRL訓練は今も保留にしている。引き金になった出来事は2つある。7月に評価中のAIモデルが隔離環境を抜け出し、Hugging Faceのシステムに侵入したインシデントと、次期モデル「Astra」がサイバー攻撃能力で最高リ…",
+      "title": "OpenAI、AIの開発ペースを一時減速　最新モデルの強化学習を2週間停止　暴走リスクの高まりで",
+      "uid": "1523d190ab391d21",
+      "url": "https://japan.cnet.com/article/35251664/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-18T22:43:44.829078+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T22:06:14+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、外部侵害インシデントや次期モデルの高いサイバー能力を受け、開発・テスト段階の安全対策を強化すると発表した。一部の大規模モデルの強化学習を一時停止し、研究環境の隔離や内部活動の監視多段化、アラインメント手法の拡張を実施。安全性基準を満たした上で開発を進める姿勢を示した。",
+      "title": "OpenAI、フロンティアAIの強化学習を一部停止　安全対策を強化",
+      "uid": "2799bca519c90df9",
+      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000605/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T22:43:44.829078+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI営業電話に迷惑を被ったという声が少なくない。SNSでは迷惑がる声も……。",
+      "title": "「害悪すぎる」「バカ迷惑」──嫌われまくる“AI営業電話”、今すぐ取れる自衛策は",
+      "uid": "77b25b7604d79a99",
+      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000583/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T22:43:44.829078+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "レガシーシステムの解析、通信の遅延、現場ナレッジの活用。IT部門が抱える難題を、先進企業はどう突破したのか。3社の事例から、IT課題解決のための具体的なアプローチを紹介する。",
+      "title": "ニンテンドーシステムズ開発者が明かす、通信「低遅延・安定運用」のコツ【事例集】",
+      "uid": "4e1691996ccd7bd2",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/19/news046.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T22:43:44.829078+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「インテル・ロボティクス・ワークショップ2026」のレポート記事をお送りする。今回の後編では、ヒューマノイドとフィジカルAIをテーマにした、三菱UFJ銀行、Preferred Networks（PFN）、トヨタ自動車 未来創生センターの講演内容を紹介する。",
+      "title": "フィジカルAIとヒューマノイドの可能性、PFNの見立てとトヨタのアプローチ",
+      "uid": "a7e56fbae6ec3889",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/19/news019.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T22:43:44.829078+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "天才的なプログラミング能力を買われてFacebookやGoogleで働いた経験もあるジョージ・ホッツ氏が2016年に立ち上げたスタートアップComma.aiは、自動車に取り付けるだけで運転支援機能を追加できるデバイスを開発しています。そんなComma.aiが新たに、より大型のドライビングモデルを車が実行できるようにGPUを車載コンピューターにつなぐためのeGPUドック「Chestnut」をリリー…",
+      "title": "車に運転支援機能を追加できるデバイスをGPUで強化するためのeGPUドック「Chestnut」をComma.aiがリリース",
+      "uid": "e2e21ea9abd3b976",
+      "url": "https://gigazine.net/news/20260819-egpu-dock-chestnut/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-18T20:42:26.846917+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
