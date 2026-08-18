@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T23:39:50.245321+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-18T23:11:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは、若年層による生成AIツールの利用をめぐって懸念が高まる中、「ティーン向けChatGPT」の提供を開始したと発表した。",
+      "title": "「ティーン向けChatGPT」登場、依存リスクを軽減し学習を支援",
+      "uid": "a4eedbe3e378da16",
+      "url": "https://japan.cnet.com/article/35251667/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-18T23:39:50.245321+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "JetBrainsは、AIエージェントの応答を圧縮するスキル「Caveman」の効果を検証したした結果を公式ブログで公開した。Cavemanは、「エージェントの応答を原始人のような簡潔な言葉に変えることで、トークンを65％削減する」と主張しているスキルだ。",
+      "title": "「AIに原始人っぽく話すとトークン65％削減」は本当か？　JetBrainsが検証してみた",
+      "uid": "a8c1cf1d8f43840e",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news042.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T23:39:50.245321+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "話題の職種「FDE」の実態はどのようなものか。米OpenAIでFDEとして働く2人に聞いた。",
+      "title": "話題の職種「FDE」、実際何をやってるの？　OpenAIの現役2人に聞いた",
+      "uid": "cb914de8e13708de",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000560/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-18T23:39:50.245321+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T22:54:32+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、13?17歳向けの新環境「ChatGPT for Teens」を発表した。年齢推定や申告に基づいて自動適用され、段階的な理解を促す「Study Mode」などの学習機能を提供。自傷行為や摂食障害などの高リスク領域での保護を標準で有効にし、感情的な依存を促す対話を禁じるなど安全対策を強化した。",
+      "title": "OpenAI、「ChatGPT for Teens」発表──宿題の“丸投げ”検知、自傷や摂食障害などの保護も強化",
+      "uid": "911a4b3e187c4782",
+      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000606/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-18T22:43:44.829078+00:00",
       "importance": "major",
       "label": "CNET Japan",

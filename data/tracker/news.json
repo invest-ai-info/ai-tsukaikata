@@ -83,6 +83,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-08-18T23:39:50.245321+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-18T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "NVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.",
+      "summary_ja": "NVIDIAがChatGPT Workを導入しました。\nこれによって手作業を減らし、\n成功した仕事のやり方を世界中に広げています。",
+      "summary_source": "gemini",
+      "title": "How NVIDIA scales expertise with ChatGPT Work",
+      "uid": "7e0103b4dc91fb0f",
+      "url": "https://openai.com/index/nvidia/chatgpt-work",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-17T20:46:22.723644+00:00",
       "importance": "minor",
       "label": "Claude Code",
