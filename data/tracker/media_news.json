@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T13:58:51.108779+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-18T15:43:29+00:00",
+      "source_id": "media-publickey",
+      "summary": "AIコードエディタのCursorなどを提供するAnysphereは、Gitに対応したコードホスティングサービス「Origin」を発表しました。 Origin, our code hosting platform, is now live.I...",
+      "title": "AIエージェント時代のGitホスティングサービス「Origin」、Cursorが発表。Cursorとの統合、コマンドラインでの操作、GitHubとの同期など提供",
+      "uid": "fa4116ea6546df70",
+      "url": "https://www.publickey1.jp/blog/26/aigitorigincursorcursorgithub.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-08-18T10:48:44.525538+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
