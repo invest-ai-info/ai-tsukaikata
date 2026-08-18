@@ -3047,18 +3047,6 @@
       "uid": "a73523e68eb3461f",
       "url": "https://tech.preferred.jp/ja/blog/optuna-gp-sampler-parallelization/",
       "vendor": "Preferred Networks"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Grok 新モデル",
-      "published": "2026-05-20T17:28:43+00:00",
-      "source_id": "openrouter-xai",
-      "summary": "Grok Build 0.1 is xAI’s fast coding model trained specifically for agentic software engineering workflows. It supports text and image inputs with text output, and is optimized for interactive coding.…",
-      "title": "x-ai/grok-build-0.1",
-      "uid": "3bcf0e19e600ae3a",
-      "url": "https://openrouter.ai/x-ai/grok-build-0.1",
-      "vendor": "xAI"
     }
   ]
 }
