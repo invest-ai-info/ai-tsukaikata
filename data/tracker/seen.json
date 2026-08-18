@@ -39,6 +39,17 @@
       "uid": "37ae539724a5d7ab",
       "url": "https://openai.com/index/partnering-with-codeai",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-18T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Asana used OpenAI Codex to replace an outdated testing system in two weeks, completing work expected to take five years for about $12K.",
+      "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+      "uid": "5d298c626ae81838",
+      "url": "https://openai.com/index/asana",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -324,6 +335,7 @@
     "5b982cab5b748faf": "2026-08-01T12:16:42.309603+00:00",
     "5c13ec58fe7787cd": "2026-08-02T11:35:58.106550+00:00",
     "5c26a9e87e1444c2": "2026-08-18T03:10:26.176978+00:00",
+    "5d298c626ae81838": "2026-08-18T16:50:45.150549+00:00",
     "5d4d3a5a9f86268e": "2026-08-01T12:16:42.309603+00:00",
     "5de68ea435cd449a": "2026-08-13T12:01:33.145239+00:00",
     "5e1851923147abcd": "2026-08-01T12:16:42.309603+00:00",

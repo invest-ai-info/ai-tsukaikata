@@ -29,6 +29,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-08-18T16:50:45.150549+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-18T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Asana used OpenAI Codex to replace an outdated testing system in two weeks, completing work expected to take five years for about $12K.",
+      "summary_ja": "AsanaがAIを使い開発期間を大幅に短縮\n5年かかる作業を2週間で完了。古いテストシステムを入れ替え\nかかった費用は約1.2万ドル",
+      "summary_source": "gemini",
+      "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+      "uid": "5d298c626ae81838",
+      "url": "https://openai.com/index/asana",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-17T20:46:22.723644+00:00",
       "importance": "minor",
       "label": "Claude Code",
