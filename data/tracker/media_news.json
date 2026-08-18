@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T05:46:53.344840+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-18T05:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "SB C&Sは8月18日、AIイヤホン「GLIDiC AI +u Buds」を一般発売した。会議や通話をワンプッシュで録音し、AIが文字起こしと要約を行い、「次の一手」まで助言するのが特徴だ。同日から「トレテク！ソフトバンクセレクション」など各オンラインショップで販売し、9月4日には全国のソフトバンクショップでも取り扱いを始める。希望小売価格は税込2万9800円。",
+      "title": "ソフトバンク系、AIイヤホン「GLIDiC AI +u Buds」一般販売　会議や商談も要約",
+      "uid": "9f065f1cadf1c8d2",
+      "url": "https://japan.cnet.com/article/35251643/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-08-18T04:54:30.671033+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
