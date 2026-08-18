@@ -7164,6 +7164,104 @@ def brief_asked_side_only_chart() -> None:
     )
 
 
+
+def first_client_where_minutes_come_from_chart() -> None:
+    """初めての発注元の見積もりで、合計の何分が記録から出ていて、何分がそうでないか。
+
+    実測（2026-08-18・材料A＝初めての発注元。頼み方6通り）。
+    棒の長さ＝返りが「合計」として提示した分数。幅で答えた回は上限を採った。
+    """
+    rows = [
+        ("そのまま「何時間かかりますか」1回目", 360, 240, "500〜600分（うち推測 140〜240分）"),
+        ("そのまま「何時間かかりますか」2回目", 430, 170, "500〜600分（うち推測 100〜170分）"),
+        ("＋「記録なしと書いて」1回目", 405, 0, "405分"),
+        ("＋「記録なしと書いて」2回目", 408, 0, "408分"),
+        ("保存版（3つの欄に分ける）", 430, 0, "430分"),
+        ("初回4件の分を、私が決めて渡す", 405, 165, "570分（うち私が決めた 165分）"),
+    ]
+    label_x, label_w = 18, 236
+    bar_x = label_x + label_w + 12
+    unit = 0.40                      # 1分あたりの幅
+    bar_h, gap = 18, 12
+    top = 116
+
+    assert bar_x + 600 * unit + 190 <= WIDTH, bar_x + 600 * unit
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "合計は1.4倍に伸びる。伸びたぶんは、記録ではなく推測から来ている</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の作業記録3本（すべて4件目・5件目・3件目＝続けている発注元の仕事）に、"
+        "「この発注元は初めてです」の1行だけを足した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒の長さ＝返りが合計として書いた分数。幅で答えた回は上限を採った。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "濃い部分＝作業記録から計算した分　薄い部分＝記録に無い分</text>\n",
+    ]
+
+    # 記録から出る目安（3,000字あたり 398〜430分）の帯
+    y_end = top + len(rows) * (bar_h + gap)
+    parts.append(
+        f'<line class="line" x1="{bar_x + 415 * unit:.1f}" y1="{top - 6}" '
+        f'x2="{bar_x + 415 * unit:.1f}" y2="{y_end - 4}" stroke-dasharray="3 3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="{bar_x + 415 * unit + 6:.1f}" y="{top - 14}">'
+        "↑ 記録3本から出る目安 415分</text>\n"
+    )
+
+    y = top
+    for label, rec, extra, note in rows:
+        parts.append(f'<text class="t" x="{label_x}" y="{y + 13}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y}" '
+            f'width="{rec * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        if extra:
+            parts.append(
+                f'<rect class="bar-new" x="{bar_x + rec * unit:.1f}" y="{y}" '
+                f'width="{extra * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+        css = "t-bad" if extra else "t-good"
+        parts.append(
+            f'<text class="{css}" x="{bar_x + (rec + extra) * unit + 8:.1f}" '
+            f'y="{y + 13}">{_esc(note)}</text>\n'
+        )
+        y += bar_h + gap
+
+    notes = [
+        ("t-bad", "※ そのまま聞いた2回は、初回だけの工程を自分から挙げたうえで、"),
+        ("t-bad", "　 その分数を推測で作り、合計に混ぜた（返り自身が「当て推量です」と書いている）。"),
+        ("t-good", "※「記録に対応する行が無い工程は、数字を出さずに記録なしと書いて」を足した2回は、"),
+        ("t-good", "　 合計が記録どおりの405分・408分にとどまった。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y
+    alt = (
+        "初めての発注元の見積もりで、返りが合計として書いた分数を頼み方6通りで並べた横棒グラフ。"
+        "濃い部分が作業記録から計算した分、薄い部分が記録に無い分。"
+        "作業記録3本から出る目安は3,000字あたり415分で、そこに点線を引いてある。"
+        "そのまま何時間かかりますかと聞いた1回目は、記録から360分、推測で140分から240分を足して"
+        "合計500分から600分。2回目は記録から430分、推測で100分から170分を足して"
+        "やはり合計500分から600分。"
+        "記録に対応する行が無い工程は数字を出さずに記録なしと書いてくださいを足した2回は、"
+        "合計405分と408分で、記録から出る目安のままだった。"
+        "3つの欄に分ける保存版も430分で、記録に無い工程には時間を書いていない。"
+        "初回だけ発生する4件の時間を利用者が自分で決めて渡した回は、"
+        "記録から405分と、決めた165分を別の行にしたまま足して570分になった。"
+        "つまり合計が1.4倍に伸びるかどうかは、記録ではなく、"
+        "記録に無い分を誰がどう埋めるかで決まっている。"
+    )
+    (OUT / "first-client-where-minutes-come-from.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def month_boundary_where_rows_land_chart() -> None:
     """境界の行が、7月の実行と8月の実行のどちらに入ったかを材料別に並べる。
 
@@ -7443,4 +7541,5 @@ if __name__ == "__main__":
     month_boundary_where_rows_land_chart()
     month_boundary_two_runs_chart()
     brief_asked_side_only_chart()
+    first_client_where_minutes_come_from_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
