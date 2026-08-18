@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T04:54:30.671033+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T04:43:58+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日本エイサーは8月18日、薄型軽量ノートパソコンブランド「Swift（スイフト）」より、AMD Ryzen AI 7 345プロセッサーを搭載し、16型の大画面ながら重量約990gを実現した「Swift Air 16（SFA16-61M-N73Y）」を、Acer公式オンラインストアおよびAcerダイレクト各店、ならびにAmazonで発売した。",
+      "title": "AMD Ryzen AI 7 345CPU搭載のCopilot+ PC「Swift Air 16」新モデル",
+      "uid": "d71b638eec0baad7",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133468.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-18T04:54:30.671033+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-18T04:13:51+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日本電気（NEC）は、企業のデジタル業務を自動化するAIエージェント「NEC cotomi Agent」を、8月よりMicrosoft Marketplaceにて販売開始した。まずは日本市場向けに展開し、今後はグローバル市場へ展開していく予定。",
+      "title": "NEC、Microsoft Marketplaceで業務自動化AIエージェント「NEC cotomi Agent」を販売開始",
+      "uid": "a3fd225eeca9f71e",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133450.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-18T04:00:09.864899+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
