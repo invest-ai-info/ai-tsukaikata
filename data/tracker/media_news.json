@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T03:10:26.176978+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T02:43:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Amazonが大量の物理書籍を購入し、AIの学習データとして利用するために背表紙を切り落としてスキャンしていることが、テクノロジーメディアの404 Mediaによる調査で明らかになりました。404 Mediaが大量注文された希少本の1冊に追跡装置を仕込んだところ、最終的にAmazonが書籍をデジタル化しているラスベガスの施設へ到着したとのことです。 続きを読む...",
+      "title": "希少本の輸送状況を追跡したらAmazonのAIトレーニング施設に到着していたことが判明",
+      "uid": "05a804cb48a232c2",
+      "url": "https://gigazine.net/news/20260818-amazon-ai-training-with-rare-books/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-18T03:10:26.176978+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-18T02:40:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ソフトバンクグループの傘下企業であるSB Energyはアメリカのオハイオ州に「PORTS-Pike Technology Campus」と呼ばれる大規模データセンターを建設する計画を進めています。新たに、NVIDIAがSB Energyに15億ドル(約2400億円)を投資し、PORTS-Pike Technology CampusにおけるAIインフラストラクチャーの独占的プロバイダーとなる契約…",
+      "title": "OpenAIの大規模データセンターを作るべくNVIDIAがソフトバンク関連企業に2400億円を投資、2030年までに約96兆円のビジネスチャンスをもたらす計画",
+      "uid": "cce11ba4434bba5d",
+      "url": "https://gigazine.net/news/20260818-nvidia-sb-energy-openai-ports-pike/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-18T01:52:33.611856+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
