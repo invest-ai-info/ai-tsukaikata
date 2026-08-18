@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T20:42:26.846917+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-18T20:38:54+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added an optional spellcheck setting that underlines misspelled words in the prompt input as you type, using your installed aspell , hunspell , or ispell Fixed whole-prompt-cache inval…",
+      "title": "v2.1.235",
+      "uid": "b7ae0383bfd3f5c1",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.235",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-18T20:42:26.846917+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-18T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI launches an initiative to strengthen democratic oversight of AI in national security, supporting government institutions with tools, training, and expertise.",
+      "summary_ja": "OpenAIが国家安全保障分野のAI監視を強化する取り組みを開始\n政府機関に対し、ツールや研修、専門知識を提供",
+      "summary_source": "gemini",
+      "title": "Strengthening Democratic Oversight in National Security",
+      "uid": "f63af62064cc3f67",
+      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-18T11:43:24.359213+00:00",
       "importance": "minor",
       "label": "OpenAI News",

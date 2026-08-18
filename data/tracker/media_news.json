@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-18T20:42:26.846917+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-18T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "手に汗握るホラー映画を観た後では、観る前よりも握力が強くなったような気がしませんか？ 同じ人の2回の測定値の差を求め、ベイズ統計により検定します。事前分布のパラメーターを変えても結果が安定するかどうかを調べる「感度分析」にも触れます。『社会人1年生から学ぶ、やさしいデータ分析』ベイズ統計編の第7回です。",
+      "title": "【Pythonで学ぶデータ分析】対応のあるデータの母平均に差があるかどうかをベイズt検定で調べる ～ ホラー映画を観ると握力は上がるのか？",
+      "uid": "506522ed54584f2e",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news004.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-18T14:54:17.878970+00:00",
       "importance": "major",
       "label": "Publickey",
