@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="361" viewBox="0 0 720 361" role="img" aria-label="待ち行列を毎日1件ずつ処理させる形で、起こりうる事故を6つ数えた表。処理できない行に済が付いたのは32回中0回。済にした行が次の回でまた未処理に戻ったのも0回。もとから済またはできなかった印だった6行が変わったのも0回。待ち行列の行が消えたのも0回。1回で処理された件数が1件でなかったのは16系列中0系列。唯一起きたのは、できない行の行き先が無くなったことで、16系列中3系列。その3系列はすべて、印を固定してほかの行は1文字も変えないでと縛った頼み方だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="361"/>
+<text class="t-strong" x="18" y="26">心配していた事故は起きなかった。起きたのは1つだけ</text>
+<text class="t-sm" x="18" y="45">「済の印を付けさせると、失敗した行にも済が付いて永久に飛ばされる」という見立てで測りはじめた。</text>
+<text class="t-sm" x="18" y="64">真値はすべて機械が出している（済4行・できなかった2行・未処理6行の12行を、1行ずつ突き合わせた）。</text>
+<text class="t-xs" x="486" y="96" text-anchor="middle">実測</text>
+<text class="t" x="18" y="126">処理できない行に「済」が付いた</text>
+<rect class="box-good" x="428" y="112" width="116" height="19" rx="4"/>
+<text class="t-good" x="486" y="126" text-anchor="middle">0 / 32回</text>
+<text class="t" x="18" y="156">済にした行が、次の回でまた未処理に戻った</text>
+<rect class="box-good" x="428" y="142" width="116" height="19" rx="4"/>
+<text class="t-good" x="486" y="156" text-anchor="middle">0 / 32回</text>
+<text class="t" x="18" y="186">もとから済・できなかった印だった6行が変わった</text>
+<rect class="box-good" x="428" y="172" width="116" height="19" rx="4"/>
+<text class="t-good" x="486" y="186" text-anchor="middle">0 / 32回</text>
+<text class="t" x="18" y="216">待ち行列の行が消えた（12行が保たれなかった）</text>
+<rect class="box-good" x="428" y="202" width="116" height="19" rx="4"/>
+<text class="t-good" x="486" y="216" text-anchor="middle">0 / 32回</text>
+<text class="t" x="18" y="246">1回で処理された件数が1件でなかった</text>
+<rect class="box-good" x="428" y="232" width="116" height="19" rx="4"/>
+<text class="t-good" x="486" y="246" text-anchor="middle">0 / 16系列</text>
+<text class="t" x="18" y="276">できない行の行き先が無くなった</text>
+<rect class="box-bad" x="428" y="262" width="116" height="19" rx="4"/>
+<text class="t-bad" x="486" y="276" text-anchor="middle">3 / 16系列</text>
+<text class="t-good" x="18" y="298">※ 上の5つは、4通りの頼み方すべてで0だった。済の印そのものは、素朴に頼んでも壊れない。</text>
+<text class="t-bad" x="18" y="319">※ 最後の1つだけが事故で、しかも起きたのは「印を固定して1文字も変えるな」と縛った回だけ。</text>
+<text class="t-xs" x="18" y="340">架空データでの実測（全32回）。生の返りは docs/evidence/ に置いてある。</text>
+</svg>

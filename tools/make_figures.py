@@ -7714,6 +7714,168 @@ def breaking_checks_who_finds_holes_chart() -> None:
         _svg(height, alt, "".join(parts)), encoding="utf-8"
     )
 
+
+def queue_blocked_row_where_it_goes_chart() -> None:
+    """毎日1件ずつ回す待ち行列で、「処理できない行」がどこへ行ったかを頼み方4通りで並べる。
+
+    実測（2026-08-19・材料2本×各2回＝4系列ずつ、各系列を2回転）。
+    並びは、2回転目に必ず「処理できない行」が未処理の先頭に来るよう固定してある。
+    値は split.py と pos.py の出力。
+    """
+    rows = [
+        ("そのまま「済の印を付けて」", 4, 0, 0),
+        ("＋印を固定・ほかの行は1文字も変えない", 1, 3, 0),
+        ("＋「できない行は - [!] にして理由を書く」", 4, 0, 0),
+        ("＋「できない行はいちばん下に移す」", 1, 0, 4),
+    ]
+    label_x, label_w = 18, 292
+    col_x = [label_x + label_w + 52, label_x + label_w + 168, label_x + label_w + 288]
+    col_names = [["できない印が", "付いた"], ["行き先が無い", "（そのまま）"], ["いちばん下へ", "移った"]]
+    row_h = 34
+    top = 118
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "縛りを足したほうで、「処理できない行」の行き先が消えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の待ち行列12行（済4・前回できなかった2・未処理6）を作り、"
+        "1回転目の返りをそのまま2回転目に渡した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "未処理の2番目は、資料が取れていなくてどうしても処理できない行にしてある。"
+        "1つの頼み方につき4系列。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 26 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, ok_mark, none, moved in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for cx, v, good in zip(col_x, (ok_mark, none, moved), (True, False, True)):
+            if v == 0:
+                parts.append(
+                    f'<line class="line" x1="{cx - 8}" y1="{ty - 5}" '
+                    f'x2="{cx + 8}" y2="{ty - 5}"/>\n'
+                )
+                continue
+            box = "box-good" if good else "box-bad"
+            mcls = "t-good" if good else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 26}" y="{ty - 14}" '
+                f'width="52" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{v} / 4</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 2行目だけが事故。印を固定して「ほかの行は1文字も変えないで」と縛ると、"),
+        ("t-bad", "　 できない行は - [ ] のまま同じ位置に残り、明日もまた先頭で引っかかる。"),
+        ("t-good", "※ 1行目は、指示文で - [!] と言っていないのに4系列とも付けた。"),
+        ("t-good", "　 待ち行列にもとから - [!] の行が2件あり、それに倣っている。"),
+        ("t-xs", "架空データでの実測（全32回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎日1件ずつ処理する待ち行列で、どうしても処理できない行が2回転目にどうなったかを"
+        "頼み方4通りで並べた表。1つの頼み方につき4系列ある。"
+        "そのまま済の印を付けてと頼んだ4系列は、4系列ともできない印が付いた。"
+        "印を固定してほかの行は1文字も変えないでと縛った4系列は、"
+        "できない印が付いたのは1系列だけで、残る3系列は行き先が無くそのまま残った。"
+        "できない行はハイフン角かっこびっくりにして理由を書くと足した4系列は、4系列とも印が付いた。"
+        "できない行はいちばん下に移すと足した4系列は、4系列とも待ち行列のいちばん下へ移った。"
+        "縛りを足したほうだけで、できない行の行き先が消えている。"
+    )
+    (OUT / "queue-blocked-row-where-it-goes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def queue_what_never_broke_chart() -> None:
+    """心配していた事故が、32回とも起きなかったことを並べる。
+
+    実測（2026-08-19）。真値はすべて0または1で、check.py が突き合わせた。
+    """
+    rows = [
+        ("処理できない行に「済」が付いた", "0 / 32回", True),
+        ("済にした行が、次の回でまた未処理に戻った", "0 / 32回", True),
+        ("もとから済・できなかった印だった6行が変わった", "0 / 32回", True),
+        ("待ち行列の行が消えた（12行が保たれなかった）", "0 / 32回", True),
+        ("1回で処理された件数が1件でなかった", "0 / 16系列", True),
+        ("できない行の行き先が無くなった", "3 / 16系列", False),
+    ]
+    label_x, label_w = 18, 392
+    val_x = label_x + label_w + 76
+    row_h = 30
+    top = 108
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "心配していた事故は起きなかった。起きたのは1つだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「済の印を付けさせると、失敗した行にも済が付いて永久に飛ばされる」"
+        "という見立てで測りはじめた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "真値はすべて機械が出している（済4行・できなかった2行・未処理6行の12行を、"
+        "1行ずつ突き合わせた）。</text>\n",
+        f'<text class="t-xs" x="{val_x}" y="{top - 12}" text-anchor="middle">'
+        "実測</text>\n",
+    ]
+
+    y = top
+    for label, val, good in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        box = "box-good" if good else "box-bad"
+        mcls = "t-good" if good else "t-bad"
+        parts.append(
+            f'<rect class="{box}" x="{val_x - 58}" y="{ty - 14}" '
+            f'width="116" height="19" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{mcls}" x="{val_x}" y="{ty}" '
+            f'text-anchor="middle">{_esc(val)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 上の5つは、4通りの頼み方すべてで0だった。"
+                   "済の印そのものは、素朴に頼んでも壊れない。"),
+        ("t-bad", "※ 最後の1つだけが事故で、しかも起きたのは"
+                  "「印を固定して1文字も変えるな」と縛った回だけ。"),
+        ("t-xs", "架空データでの実測（全32回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "待ち行列を毎日1件ずつ処理させる形で、起こりうる事故を6つ数えた表。"
+        "処理できない行に済が付いたのは32回中0回。"
+        "済にした行が次の回でまた未処理に戻ったのも0回。"
+        "もとから済またはできなかった印だった6行が変わったのも0回。"
+        "待ち行列の行が消えたのも0回。"
+        "1回で処理された件数が1件でなかったのは16系列中0系列。"
+        "唯一起きたのは、できない行の行き先が無くなったことで、16系列中3系列。"
+        "その3系列はすべて、印を固定してほかの行は1文字も変えないでと縛った頼み方だった。"
+    )
+    (OUT / "queue-what-never-broke.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
 def month_boundary_two_runs_chart() -> None:
     """出す形を固定して2回ずつ走らせたときの、またぎ欄の件数と合計。
 
@@ -7895,4 +8057,6 @@ if __name__ == "__main__":
     receipt_inside_or_outside_material_chart()
     breaking_checks_what_rings_chart()
     breaking_checks_who_finds_holes_chart()
+    queue_blocked_row_where_it_goes_chart()
+    queue_what_never_broke_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
