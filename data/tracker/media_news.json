@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T13:12:14.812278+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの推論を高速化するシステムを開発しているCerebrasが、ラックスケールソリューションの「CS-4」を公開しました。単純なGPUシステムと比較して最大30倍高速な推論処理が可能とうたわれています。 続きを読む...",
+      "title": "GPUと比較して最大30倍高速にAIを動かすCerebrasの「CS-4」ラックスケールソリューションが登場",
+      "uid": "4b967f63b005b011",
+      "url": "https://gigazine.net/news/20260819-cerebras-cs-4/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T11:43:13.577944+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "a32841012a6610f1",
       "url": "https://ai.watch.impress.co.jp/docs/news/2132067.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-10T08:18:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "ネットで精力的に活動するクリエイターのハンク・グリーン氏は、自身のAI利用をじっくり見直したと語り、「（大規模言語モデルに）助言や編集、情報源探しの面で頼りすぎていた」と認めた。",
-      "title": "「AIに頼りすぎた」人気ユーチューバーが反省、活動を縮小へ",
-      "uid": "a79b188cfc7c245b",
-      "url": "https://japan.cnet.com/article/35251470/",
-      "vendor": "CNET Japan"
     }
   ]
 }
