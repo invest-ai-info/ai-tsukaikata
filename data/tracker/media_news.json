@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T01:54:36.684092+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T01:32:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "13歳～17歳のユーザーを対象にした「ChatGPT for Teens」が登場しました。ChatGPTの応答が年齢を考慮したものに最適化されるほか、学習モードやペアレンタルコントロールなども利用できます。 続きを読む...",
+      "title": "18歳未満のためのChatGPTが登場、学習支援や保護者による管理機能などを搭載",
+      "uid": "14c3787b38c0a712",
+      "url": "https://gigazine.net/news/20260819-chatgpt-for-teens/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T01:54:36.684092+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-19T01:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "マネックス証券は8月19日、「ChatGPT」や「Claude」から同社の口座情報を確認できる「MONEX MCP Server」の提供を始めた。AIに「現在の資産状況を教えて」「今月の入出金履歴を確認したい」と話しかけるだけで、同社のウェブサイトやアプリを開かずに必要な情報を確認できる。",
+      "title": "マネックス証券、ChatGPTに話しかけて「評価損益」などを確認できる新機能　主要証券で初",
+      "uid": "73643e95b812d5a9",
+      "url": "https://japan.cnet.com/article/35251689/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-19T01:54:36.684092+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-19T01:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "モジュール式で修理しやすく、競合製品よりもサステナブルなスマートフォンをうたう「Fairphone (Gen. 6+)」が米国で発売された。",
+      "title": "自力で修理できる究極のエコスマホ「Fairphone (Gen. 6+)」発売",
+      "uid": "a4bd11451a3be6fe",
+      "url": "https://japan.cnet.com/article/35251673/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-19T01:54:36.684092+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T00:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ゴーデルブロックは、計算力学の国際会議「WCCM ECCOMAS Munich 2026」で冷間鍛造シミュレーション向けAIサロゲートモデル「ForgeNet」の研究成果を発表した。解析結果を固定オイラー格子へ投影することで、適応的リメッシュに伴う節点対応の課題に対処する。",
+      "title": "冷間鍛造FEMをAIで高速予測するサロゲートモデル「ForgeNet」を発表",
+      "uid": "40c4cdd87b2ea72b",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/19/news030.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-18T23:39:50.245321+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2350,18 +2398,6 @@
       "title": "KubernetesはAIを動かすプラットフォームに。横浜でKubeCon＋CloudNativeCon Japan 2026が開幕",
       "uid": "f3057e853b79f700",
       "url": "https://www.publickey1.jp/blog/26/kubernetesaikubeconcloudnativecon_japan_2026.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Publickey",
-      "published": "2026-07-28T15:54:06+00:00",
-      "source_id": "media-publickey",
-      "summary": "Google Cloudは、コードの脆弱性の検出、リスクの検証と報告、修正までを自律的に実行するAIエージェント「CodeMender」のプレビュー公開を発表しました。 複雑な脆弱性まで発見し、サンドボックス内でリスク検証 CodeMend...",
-      "title": "Google Cloud、AIが自律的にコードの脆弱性検出からサンドボックス内でのリスク検証、修正までを自動実行。「CodeMender」プレビュー公開",
-      "uid": "f7375ae747e0e40b",
-      "url": "https://www.publickey1.jp/blog/26/google_cloudaicodemender.html",
       "vendor": "Publickey"
     }
   ]
