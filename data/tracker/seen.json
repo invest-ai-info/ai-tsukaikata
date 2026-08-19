@@ -9,7 +9,7 @@
   "failures": {},
   "latest": {
     "anthropic-news": "2026-08-14T19:16:00+00:00",
-    "anthropic-sdk": "2026-08-19T13:31:54+00:00",
+    "anthropic-sdk": "2026-08-19T16:51:20+00:00",
     "claude-code": "2026-08-18T20:38:54+00:00",
     "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
@@ -21,7 +21,7 @@
     "media-impress-ai": "2026-08-19T08:46:39+00:00",
     "media-itmedia-aiplus": "2026-08-19T08:00:48+00:00",
     "media-publickey": "2026-08-19T17:43:24+00:00",
-    "openai-news": "2026-08-19T07:00:00+00:00",
+    "openai-news": "2026-08-19T19:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-14T15:55:10+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -60,6 +60,17 @@
       "title": "Replit expands access to software creation with GPT-5.6 Luna",
       "uid": "828aa1662b982be2",
       "url": "https://openai.com/index/replit",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-19T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+      "title": "Offering Zero Data Retention for frontier models",
+      "uid": "953f20cfa9ff8e7f",
+      "url": "https://openai.com/index/our-commitment-to-zero-data-retention",
       "vendor": "OpenAI"
     }
   ],
@@ -274,6 +285,7 @@
     "398c3d749429dce1": "2026-08-01T12:16:42.309603+00:00",
     "39e1872cad240a0e": "2026-08-14T13:46:27.161883+00:00",
     "3a1e722f477e828f": "2026-08-04T11:04:53.115730+00:00",
+    "3a63a35cfc7a0c57": "2026-08-19T17:43:17.097023+00:00",
     "3afa31ee69dfc749": "2026-08-17T14:47:24.398008+00:00",
     "3b45fcd949fb0724": "2026-08-01T12:16:42.309603+00:00",
     "3b6ec06c2797d05a": "2026-08-19T07:08:12.848731+00:00",
@@ -576,6 +588,7 @@
     "94bacfb37e6ab800": "2026-08-13T12:01:33.145239+00:00",
     "94cb30dca96821d4": "2026-08-17T05:52:28.010678+00:00",
     "94ea464771b94ad8": "2026-08-01T12:16:42.309603+00:00",
+    "953f20cfa9ff8e7f": "2026-08-19T17:43:17.097023+00:00",
     "95903e7fee1802dd": "2026-08-14T02:48:19.675404+00:00",
     "9591d7f0b45db34b": "2026-08-13T12:01:33.145239+00:00",
     "960fbfb3aed3600e": "2026-08-14T11:59:16.623121+00:00",

@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T17:43:17.097023+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-19T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+      "summary_ja": "OpenAIがAPI利用顧客向けに「データ保持なし」を改めて提供。\n加えて「プライベート安全処理」を発表。\nデータプライバシーを守りつつ、AIの安全性を高める仕組み。",
+      "summary_source": "gemini",
+      "title": "Offering Zero Data Retention for frontier models",
+      "uid": "953f20cfa9ff8e7f",
+      "url": "https://openai.com/index/our-commitment-to-zero-data-retention",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-19T17:43:17.097023+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-19T16:51:20+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "0.124.0 (2026-08-19) Full Changelog: v0.123.0...v0.124.0 Features api: Files and Skills APIs are now GA; add computer use and browser use toolsets ( 9a09e84 )",
+      "title": "v0.124.0",
+      "uid": "3a63a35cfc7a0c57",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.124.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-19T13:59:23.932772+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
