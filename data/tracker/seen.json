@@ -10,7 +10,7 @@
   "latest": {
     "anthropic-news": "2026-08-14T19:16:00+00:00",
     "anthropic-sdk": "2026-08-19T16:51:20+00:00",
-    "claude-code": "2026-08-18T20:38:54+00:00",
+    "claude-code": "2026-08-19T20:02:05+00:00",
     "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-19T19:00:00+00:00",
@@ -83,6 +83,28 @@
       "uid": "8509d6e94064675a",
       "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-19T20:02:05+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added ANTHROPIC_DEFAULT_MODEL environment variable: sets the model new sessions start on, while a /model pick still overrides it and persists across restarts (unlike ANTHROPIC_MODEL ) …",
+      "title": "v2.1.236",
+      "uid": "b893f8a4932982f9",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.236",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-19T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+      "title": "Offering Zero Data Retention for frontier models",
+      "uid": "a83219eb67b2bf01",
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -668,6 +690,7 @@
     "a7d16ccc94839459": "2026-08-01T12:16:42.309603+00:00",
     "a7e56fbae6ec3889": "2026-08-18T22:43:44.829078+00:00",
     "a7fc64dce9e3cfb7": "2026-08-17T03:14:24.845062+00:00",
+    "a83219eb67b2bf01": "2026-08-19T20:47:52.348282+00:00",
     "a867dc6cc38cc8c2": "2026-08-13T19:28:08.765068+00:00",
     "a8c1cf1d8f43840e": "2026-08-18T23:39:50.245321+00:00",
     "a8e707f4bb44f981": "2026-08-17T13:08:48.149000+00:00",
@@ -716,6 +739,7 @@
     "b7c293d22d9ee871": "2026-08-13T12:01:33.145239+00:00",
     "b7ffea20840fdeb1": "2026-08-01T12:16:42.309603+00:00",
     "b88c8a613400c6e3": "2026-08-13T12:01:33.145239+00:00",
+    "b893f8a4932982f9": "2026-08-19T20:47:52.348282+00:00",
     "b8d2e4bb66eaba76": "2026-08-17T03:14:24.845062+00:00",
     "b906ded8ea198335": "2026-08-02T11:35:58.106550+00:00",
     "b93a924e0aa01f70": "2026-08-13T12:01:33.145239+00:00",

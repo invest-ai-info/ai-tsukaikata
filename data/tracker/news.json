@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T20:47:52.348282+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-19T20:02:05+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added ANTHROPIC_DEFAULT_MODEL environment variable: sets the model new sessions start on, while a /model pick still overrides it and persists across restarts (unlike ANTHROPIC_MODEL ) …",
+      "title": "v2.1.236",
+      "uid": "b893f8a4932982f9",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.236",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-19T17:43:17.097023+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -27,6 +39,20 @@
       "uid": "8509d6e94064675a",
       "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-08-19T20:47:52.348282+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-19T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+      "summary_ja": "OpenAIがAPI顧客へのデータ利用方針を再確認。\n条件を満たす顧客のデータは保存しない「ゼロデータ保持」を保証。\nプライバシーを保護しつつAIの安全性を高める新機能も一部公開。",
+      "summary_source": "gemini",
+      "title": "Offering Zero Data Retention for frontier models",
+      "uid": "a83219eb67b2bf01",
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-08-19T17:43:17.097023+00:00",
@@ -3143,18 +3169,6 @@
       "uid": "da55c48d7516d3a5",
       "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-05-21T19:46:42+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks",
-      "uid": "81c406d631617721",
-      "url": "https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
