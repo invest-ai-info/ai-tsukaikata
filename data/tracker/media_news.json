@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T22:44:40.365901+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "生成AIの発達によって、これまでより大幅に少ない労力と時間で、本物と見間違うほど精巧な動画や画像、音声を生成できるようになりました。こうしたAI生成のディープフェイクがミステリー小説にも影響を与えていると、『＃ニーナに何があったのか？』などのミステリー小説で知られるオーストラリア人作家のダーヴラ・マクティアナン氏が解説しました。 続きを読む...",
+      "title": "AIによるディープフェイクがミステリー小説にも影響を与えていると推理小説家が解説",
+      "uid": "8086623b071355cf",
+      "url": "https://gigazine.net/news/20260820-ai-deepfakes-changing-rules-crime-fiction/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T22:44:40.365901+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-19T21:52:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは8月18日（現地時間）、英国政府と共同で、AIを使って航空機の飛行機雲の発生を抑える実証プログラム「Operation Blue Skies」を始めると発表した。舞台は北大西洋の洋上空域。空域全体で飛行機雲の抑制に取り組む国家支援の実証としては、世界初だとしている。",
+      "title": "Google、AIで「飛行機雲」を減らす実証実験　一体なぜやる？その意義とは",
+      "uid": "dc622d03e484113b",
+      "url": "https://japan.cnet.com/article/35251725/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-19T22:44:40.365901+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T21:45:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米国で自動運転車によるモビリティサービスを展開するWaymo（ウェイモ）が、2009年スタートの「Google Self-Driving Car Project」から開発を積み重ねてきた自動運転技術に基づく同社のAI戦略について説明した。",
+      "title": "Waymoが自動運転AI戦略を解説、「単一AIモデルのE2E方式には2つの問題がある」",
+      "uid": "28fd622c496a196a",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/20/news055.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-19T14:54:48.719000+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "63917da8a0b31995",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/12/news040.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-11T22:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "DeltaXは、塾選びサービス「塾選」において、「自由研究へのAI活用」に関する調査を行ない、その内容を公開した。調査は、小学生の保護者に対して行なわれ、有効回答数は100名。",
-      "title": "小学生の自由研究へのAI活用はOK？ NG？ それでも「AIは小学生から学ばせたい」が8割超",
-      "uid": "65f965a6ae922133",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131384.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Publickey",
-      "published": "2026-08-11T15:33:09+00:00",
-      "source_id": "media-publickey",
-      "summary": "ネット上にはたくさんのIT系のコンテンツがあふれています。そのほとんどは文章として書かれていますが、一部にはマンガの形で面白く分かりやすくしたものもあります。 ここでは、マンガ化されたITコンテンツを集めてみました。毎年夏休みの恒例企画、I...",
-      "title": "無料で読めるITまんが 2026年版 ～マンガでわかるAIの仕組み／DC業務のリアルを知るヤマダくん、ほか",
-      "uid": "44674aca945b54b5",
-      "url": "https://www.publickey1.jp/blog/26/content_4.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T10:17:04+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "スマートニュースは8月10日、iOS版地図アプリ「Wanderland（ワンダーランド）」の提供を開始した。",
-      "title": "スマートニュース、iOS版地図アプリ「Wanderland」を提供開始",
-      "uid": "97cb9ca2cc3c2031",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132103.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

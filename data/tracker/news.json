@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T22:44:40.365901+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-19T22:00:31+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "0.125.0 (2026-08-19) Full Changelog: v0.124.0...v0.125.0 Features api: managed agents web search config and self hosted sandbox memory ( b75afd6 )",
+      "title": "v0.125.0",
+      "uid": "d83ad24091ae8579",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.125.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-19T20:47:52.348282+00:00",
       "importance": "minor",
       "label": "Claude Code",
