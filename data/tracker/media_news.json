@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T13:59:23.932772+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T13:50:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Nous Researchが開発する「Hermes Agent」は、実際にAIモデルを作成する中で具体的にどういう機能がAIエージェントに求められているのか？という視点から、単なるチャットではなく「ターミナルでの操作」を前提に開発されており、ウェブ検索・ブラウザ操作・ファイル操作など複数のツールを組み合わせながらタスクを進められるオープンソースのAIエージェントです。さらに、複雑な作業で得た手順…",
+      "title": "使い込むほど成長するAIエージェント「Hermes Agent」をWindowsで実際に使ってみた、インストールからウェブ検索・ブラウザ操作まで",
+      "uid": "fc47575827263062",
+      "url": "https://gigazine.net/news/20260819-hermes-agent-first-use/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T13:12:14.812278+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "08904081274737c1",
       "url": "https://japan.cnet.com/article/35251480/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T09:02:37+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ウェザーニューズは8月10日、法人向け気象情報サービス「ウェザーニュース for business」に、業務の意思決定を多言語で支援するチャット形式のAIエージェントを搭載したと発表した。",
-      "title": "「ウェザーニュース for business」にAIエージェントを搭載",
-      "uid": "a32841012a6610f1",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132067.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

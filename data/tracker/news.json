@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T13:59:23.932772+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-19T13:31:54+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "0.123.0 (2026-08-18) Full Changelog: v0.122.0...v0.123.0 Features api: additions to files and memory stores ( 09ce187 ) api: updates to skill, files, and user profiles ( c6cbffd ) client: add helpers…",
+      "title": "v0.123.0",
+      "uid": "969e95f08578ab9c",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.123.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-19T05:48:17.932182+00:00",
       "importance": "minor",
       "label": "OpenAI News",
