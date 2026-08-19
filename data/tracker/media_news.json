@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T14:54:48.719000+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T14:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントとは与えられた目標に沿ってツールを使い、複数の手順からなる作業を自律的に進めるAIです。Anthropicは2026年8月13日、それぞれ異なる目標を与えられた複数のAIエージェントが明確な上下関係なしに同じコードベースを編集したり同じ市場で商品を販売したりする状況を再現し、協調や対立のパターンを調べた研究結果を公開しました。 続きを読む...",
+      "title": "Claudeエージェント同士が「縄張り争い」で互いを妨害したり価格について共謀したりする事例がAnthropicの実験で発生",
+      "uid": "bda791379ceab924",
+      "url": "https://gigazine.net/news/20260819-anthropic-claude-multiagent-turf-war/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T14:54:48.719000+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T14:10:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "飛行機雲(コントレイル)は、航空機が搭載しているジェットエンジンの排気ガスに含まれる煤粒子に水蒸気が凝結して形成されるもので、地球温暖化の原因の1つであり、航空業界による気候への影響のおよそ3分の1を占めています。このため、GoogleはAIを活用して北大西洋上の空路を飛行機雲が発生しにくいものにする試みに、イギリス政府や航空業界の協力を得て取り組んでいます。試みは「Operation Blue…",
+      "title": "AIにより飛行機雲発生の少ない空路を選んで地球温暖化緩和を目指す「Operation Blue Skies」をGoogleが始動",
+      "uid": "8a849d48d274648f",
+      "url": "https://gigazine.net/news/20260819-operation-blue-skies/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T13:59:23.932772+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "97cb9ca2cc3c2031",
       "url": "https://ai.watch.impress.co.jp/docs/news/2132103.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T09:55:45+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Metaは、最新モデル「Muse Spark 1.2」を搭載したターミナルコーディングエージェント「Muse Code」のベータ版をリリースした。",
-      "title": "Meta、Muse Spark 1.2を搭載した「Muse Code」（β版）をリリース",
-      "uid": "0de90869fa84c073",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132100.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-10T09:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "楽天グループは8月10日、決算説明会で、「楽天市場」の検索へのAI活用の成果を説明した。LLM（大規模言語モデル）でユーザーの検索クエリの文脈を理解し、情報を集めている探索段階か、購入の意思決定段階かを判別して検索結果を最適化する。",
-      "title": "楽天市場、検索AIが流通総額を押し上げ--購入意図を判別、年128億円の効果",
-      "uid": "08904081274737c1",
-      "url": "https://japan.cnet.com/article/35251480/",
-      "vendor": "CNET Japan"
     }
   ]
 }

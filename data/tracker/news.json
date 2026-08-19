@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-19T14:54:48.719000+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-19T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs.",
+      "summary_ja": "ReplitがAI開発の無料モードを開始しました\n強力なAI「GPT-5.6 Luna」を搭載し\nAI利用の費用を気にせずソフトウェア開発が可能です",
+      "summary_source": "gemini",
+      "title": "Replit expands access to software creation with GPT-5.6 Luna",
+      "uid": "828aa1662b982be2",
+      "url": "https://openai.com/index/replit",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-19T05:48:17.932182+00:00",
       "importance": "minor",
       "label": "OpenAI News",
