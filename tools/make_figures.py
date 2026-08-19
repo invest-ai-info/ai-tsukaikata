@@ -7905,6 +7905,109 @@ def work_grew_what_comes_with_it_chart() -> None:
     )
 
 
+
+def copy_ideas_that_pass_chart() -> None:
+    """「30案出して」で返る30案のうち、発注書の条件を通るのが何案かを頼み方6通りで並べる。
+
+    実測（2026-08-19・架空の商品2件×各2回＝1つの頼み方につき4回、全24回）。
+    条件は4つとも機械で○×が決まる（字数・必須語・禁止語・英数字）。
+    値は check.py の出力。棒は4回ぶんの最小〜最大。
+    """
+    rows = [
+        ("条件を渡さず「30案出して」", 0, 4),
+        ("条件を渡して「30案出して」", 30, 30),
+        ("＋「条件を満たさない案は出さないで」", 30, 30),
+        ("＋〔条件外〕の欄を作って落とさせる", 19, 22),
+        ("＋「私が確かめること」も添えさせる", 20, 22),
+        ("保存版（2見出しだけ・外れた条件の番号つき）", 19, 24),
+    ]
+    label_x, label_w = 18, 292
+    plot_x = label_x + label_w + 10
+    plot_w = 300
+    hi = 30
+    row_h = 34
+    top = 120
+    bar_h = 20
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / hi
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「三十案出して」の三十は、使える案の数ではない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の商品2件（勤怠管理アプリ・温泉旅館）と、"
+        "○×が機械で決まる4条件だけを並べた架空の発注書で実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "条件＝字数の上限／必ず入れる語／禁止語3語／英数字を使わない。"
+        "どの頼み方でも、返ってきた案は24回とも30案ちょうど。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "棒は、その30案のうち4条件をすべて通った数（4回ぶんの最小〜最大）。</text>\n",
+        f'<text class="t-xs" x="{px(0):.0f}" y="{top - 12}" text-anchor="middle">0</text>\n',
+        f'<text class="t-xs" x="{px(15):.0f}" y="{top - 12}" text-anchor="middle">15</text>\n',
+        f'<text class="t-xs" x="{px(30):.0f}" y="{top - 12}" text-anchor="middle">30案</text>\n',
+    ]
+
+    y = top
+    for label, lo, up in rows:
+        ty = y + 15
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{y}" '
+            f'width="{plot_w}" height="{bar_h}" rx="2"/>\n'
+        )
+        css = "bar-out" if lo >= 19 else "bar-in"
+        w = max(px(up) - px(0), 2.0)
+        parts.append(
+            f'<rect class="{css}" x="{px(0):.1f}" y="{y}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        if lo != up:
+            parts.append(
+                f'<rect class="bar-old" x="{px(lo):.1f}" y="{y}" '
+                f'width="{px(up) - px(lo):.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+        text = f"{lo}案" if lo == up else f"{lo}〜{up}案"
+        tc = "t-bad" if up < 19 else "t"
+        parts.append(
+            f'<text class="{tc}" x="{px(up) + 8:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 条件を渡さないと、温泉旅館の材料では2回とも0案。30案あって1案も使えない。"),
+        ("t-good", "※ 条件を渡せば、24回のうち条件つきの20回はすべて機械判定と一致した。"),
+        ("t-good", "　 〔条件外〕に落とした案が実は条件を満たしていた回は0件、逆の誤りも0件。"),
+        ("t-bad", "※ ただし〔条件外〕の欄を作ると、使える案は30案から19〜24案に減る。"),
+        ("t-bad", "　 減った8〜11案は、その欄を埋めるために作られた案だった。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "キャッチコピーを30案出させたとき、発注書の条件を通ったのが何案かを、"
+        "頼み方6通りで並べた横棒グラフ。架空の商品2件について各2回、1つの頼み方につき4回ずつ通した。"
+        "条件は、字数の上限、必ず入れる語、禁止語3語、英数字を使わないの4つで、すべて機械で○×が決まる。"
+        "返ってきた案は24回とも30案ちょうどだった。"
+        "条件を渡さずに30案出してと頼んだ4回は、条件を通ったのが0案から4案。"
+        "温泉旅館の材料では2回とも0案で、30案あって1案も使えない。"
+        "条件を渡して30案出してと頼んだ4回は、4回とも30案すべてが条件を通った。"
+        "条件を満たさない案は出さないでと足した4回も、4回とも30案すべて通った。"
+        "条件外の欄を作って落とさせた4回は、使える案が19案から22案に減った。"
+        "私が確かめることも添えさせた4回は20案から22案。"
+        "保存版は19案から24案。"
+        "つまり条件を渡すかどうかで0案から30案まで変わり、"
+        "条件外の欄を作ると、その欄を埋めるための案が8案から11案ぶん作られて、使える案はそのぶん減る。"
+    )
+    (OUT / "copy-ideas-that-pass.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def queue_blocked_row_where_it_goes_chart() -> None:
     """毎日1件ずつ回す待ち行列で、「処理できない行」がどこへ行ったかを頼み方4通りで並べる。
 
@@ -8251,4 +8354,5 @@ if __name__ == "__main__":
     queue_what_never_broke_chart()
     wrong_client_two_failures_chart()
     work_grew_what_comes_with_it_chart()
+    copy_ideas_that_pass_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

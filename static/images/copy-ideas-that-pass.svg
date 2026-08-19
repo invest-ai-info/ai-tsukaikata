@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="464" viewBox="0 0 720 464" role="img" aria-label="キャッチコピーを30案出させたとき、発注書の条件を通ったのが何案かを、頼み方6通りで並べた横棒グラフ。架空の商品2件について各2回、1つの頼み方につき4回ずつ通した。条件は、字数の上限、必ず入れる語、禁止語3語、英数字を使わないの4つで、すべて機械で○×が決まる。返ってきた案は24回とも30案ちょうどだった。条件を渡さずに30案出してと頼んだ4回は、条件を通ったのが0案から4案。温泉旅館の材料では2回とも0案で、30案あって1案も使えない。条件を渡して30案出してと頼んだ4回は、4回とも30案すべてが条件を通った。条件を満たさない案は出さないでと足した4回も、4回とも30案すべて通った。条件外の欄を作って落とさせた4回は、使える案が19案から22案に減った。私が確かめることも添えさせた4回は20案から22案。保存版は19案から24案。つまり条件を渡すかどうかで0案から30案まで変わり、条件外の欄を作ると、その欄を埋めるための案が8案から11案ぶん作られて、使える案はそのぶん減る。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="464"/>
+<text class="t-strong" x="18" y="26">「三十案出して」の三十は、使える案の数ではない</text>
+<text class="t-sm" x="18" y="45">架空の商品2件（勤怠管理アプリ・温泉旅館）と、○×が機械で決まる4条件だけを並べた架空の発注書で実測。</text>
+<text class="t-sm" x="18" y="64">条件＝字数の上限／必ず入れる語／禁止語3語／英数字を使わない。どの頼み方でも、返ってきた案は24回とも30案ちょうど。</text>
+<text class="t-sm" x="18" y="83">棒は、その30案のうち4条件をすべて通った数（4回ぶんの最小〜最大）。</text>
+<text class="t-xs" x="320" y="108" text-anchor="middle">0</text>
+<text class="t-xs" x="470" y="108" text-anchor="middle">15</text>
+<text class="t-xs" x="620" y="108" text-anchor="middle">30案</text>
+<text class="t" x="18" y="135">条件を渡さず「30案出して」</text>
+<rect class="box-quiet" x="320.0" y="120" width="300" height="20" rx="2"/>
+<rect class="bar-in" x="320.0" y="120" width="40.0" height="20" rx="2"/>
+<rect class="bar-old" x="320.0" y="120" width="40.0" height="20" rx="2"/>
+<text class="t-bad" x="368.0" y="135">0〜4案</text>
+<text class="t" x="18" y="169">条件を渡して「30案出して」</text>
+<rect class="box-quiet" x="320.0" y="154" width="300" height="20" rx="2"/>
+<rect class="bar-out" x="320.0" y="154" width="300.0" height="20" rx="2"/>
+<text class="t" x="628.0" y="169">30案</text>
+<text class="t" x="18" y="203">＋「条件を満たさない案は出さないで」</text>
+<rect class="box-quiet" x="320.0" y="188" width="300" height="20" rx="2"/>
+<rect class="bar-out" x="320.0" y="188" width="300.0" height="20" rx="2"/>
+<text class="t" x="628.0" y="203">30案</text>
+<text class="t" x="18" y="237">＋〔条件外〕の欄を作って落とさせる</text>
+<rect class="box-quiet" x="320.0" y="222" width="300" height="20" rx="2"/>
+<rect class="bar-out" x="320.0" y="222" width="220.0" height="20" rx="2"/>
+<rect class="bar-old" x="510.0" y="222" width="30.0" height="20" rx="2"/>
+<text class="t" x="548.0" y="237">19〜22案</text>
+<text class="t" x="18" y="271">＋「私が確かめること」も添えさせる</text>
+<rect class="box-quiet" x="320.0" y="256" width="300" height="20" rx="2"/>
+<rect class="bar-out" x="320.0" y="256" width="220.0" height="20" rx="2"/>
+<rect class="bar-old" x="520.0" y="256" width="20.0" height="20" rx="2"/>
+<text class="t" x="548.0" y="271">20〜22案</text>
+<text class="t" x="18" y="305">保存版（2見出しだけ・外れた条件の番号つき）</text>
+<rect class="box-quiet" x="320.0" y="290" width="300" height="20" rx="2"/>
+<rect class="bar-out" x="320.0" y="290" width="240.0" height="20" rx="2"/>
+<rect class="bar-old" x="510.0" y="290" width="50.0" height="20" rx="2"/>
+<text class="t" x="568.0" y="305">19〜24案</text>
+<text class="t-bad" x="18" y="338">※ 条件を渡さないと、温泉旅館の材料では2回とも0案。30案あって1案も使えない。</text>
+<text class="t-good" x="18" y="359">※ 条件を渡せば、24回のうち条件つきの20回はすべて機械判定と一致した。</text>
+<text class="t-good" x="18" y="380">　 〔条件外〕に落とした案が実は条件を満たしていた回は0件、逆の誤りも0件。</text>
+<text class="t-bad" x="18" y="401">※ ただし〔条件外〕の欄を作ると、使える案は30案から19〜24案に減る。</text>
+<text class="t-bad" x="18" y="422">　 減った8〜11案は、その欄を埋めるために作られた案だった。</text>
+<text class="t-xs" x="18" y="443">架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
