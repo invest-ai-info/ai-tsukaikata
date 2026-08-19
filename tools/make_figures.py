@@ -8131,6 +8131,120 @@ def monthly_check_carryover_chart() -> None:
     )
 
 
+def tilt_leaks_to_unwritten_judgment_chart() -> None:
+    """倒す方向を書いた判定と、書いていない判定で、返りがどう変わるかを4通りで並べる。
+
+    実測（2026-08-19・架空の30行を2本、1つの頼み方につき4回、全16回）。
+    値は check.py の出力。座標は計算で出す。
+    """
+    rows = [
+        ("倒す方向を言わない（土台だけ）", "8・7・7・7", "1・1・11・10", 2, False),
+        ("＋「迷ったら重要ではない側に倒して」", "5・5・5・6", "11・6・12・12", 2, False),
+        ("＋倒す理由を2文", "5・5・6・4", "12・11・12・12", 2, False),
+        ("＋ ! の判定にも倒す方向を書く", "5・5・3・3", "11・11・12・12", 4, True),
+    ]
+    label_x, label_w = 18, 250
+    col_x = [label_x + label_w + 112, label_x + label_w + 312]
+    col_names = [
+        ["書いていない判定", "! の件数（4回ぶん）"],
+        ["書いた判定", "境界12件のうち低へ（4回ぶん）"],
+    ]
+    row_h = 56
+    top = 132
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "倒す方向は、書いていない判定にも漏れる。ただし漏れ方は回ごとに違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の30行を2本（問い合わせメールの件名／ニュースの見出し）。"
+        "明らかに重要8件・明らかに重要でない10件・</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "どちらとも取れる境界12件。同じ回の中に、倒す方向を一度も書いていない"
+        "第2の判定（! を付ける）を混ぜてある。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "1つの頼み方につき4回（材料2本 × 各2回）、全16回。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 28 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, bang, mid, agree, good in rows:
+        ty = y + 18
+        parts.append(
+            f'<text class="{"t-good" if good else "t"}" x="{label_x}" y="{ty}">'
+            f"{_esc(label)}</text>\n"
+        )
+        parts.append(
+            f'<rect class="{"box-good" if good else "box-bad"}" x="{col_x[0] - 66}" '
+            f'y="{ty - 14}" width="132" height="19" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-good" if good else "t-bad"}" x="{col_x[0]}" y="{ty}" '
+            f'text-anchor="middle">{_esc(bang)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[1] - 108}" y="{ty - 14}" '
+            f'width="216" height="19" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{col_x[1]}" y="{ty}" '
+            f'text-anchor="middle">{_esc(mid)}</text>\n'
+        )
+        parts.append(
+            f'<text class="{"t-good" if agree == 4 else "t-bad"}" x="{label_x + 14}" '
+            f'y="{ty + 17}">2回転でそろった組: {agree}／4組</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 1行目→2行目＝! の指示は1文字も変えていないのに、! が 29件から21件に減った。"),
+        ("t-bad", "　 倒す方向は、書いた判定の外へ漏れる。"),
+        ("t-bad", "※ ただし漏れ方は安定しない。理由まで書いた3行目は、同じ材料の2回転で 6件と4件"),
+        ("t-bad", "　 （中身も2件ちがう）。漏れることを当てにはできない。"),
+        ("t-good", "※ ! の判定にも倒す方向を書いた4行目だけ、境界の割り当ても ! も、"),
+        ("t-good", "　 2回転で4組とも完全に一致した。"),
+        ("t-good", "※ 理由の2文が効いたのは「漏れ」ではなく「書いた判定の安定」のほう"),
+        ("t-good", "　 （2行目は 11・6・12・12 とばらつき、3行目は 12・11・12・12）。"),
+        ("t-xs", "架空データでの実測（全16回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "迷ったときに倒す方向を指示すると、指示していない別の判定まで影響を受けるかを、"
+        "頼み方4通りで並べた表。"
+        "架空の30行を2本（問い合わせメールの件名とニュースの見出し）作り、"
+        "明らかに重要8件、明らかに重要でない10件、どちらとも取れる境界12件を仕込んだ。"
+        "同じ回の中に、倒す方向を一度も書いていない第2の判定として、"
+        "いますぐ知らせたいものに感嘆符を付けるという指示を混ぜてある。"
+        "1つの頼み方につき材料2本かける各2回で4回ずつ、全部で16回。"
+        "倒す方向を言わない土台だけの4回は、感嘆符が8件7件7件7件で合計29件。"
+        "迷ったら重要ではない側に倒してくださいの1文を足した4回は、"
+        "感嘆符の指示を1文字も変えていないのに5件5件5件6件の合計21件まで減った。"
+        "つまり倒す方向は、書いた判定の外へ漏れる。"
+        "さらに倒す理由を2文足した4回も5件5件6件4件で合計20件と、数はほとんど変わらなかった。"
+        "しかも同じ材料の2回転で6件と4件になり、中身も2件ちがった。漏れ方は安定しない。"
+        "感嘆符の判定にも、その判定のための倒す方向を書いた4回だけが、"
+        "感嘆符5件5件3件3件で、境界12件の割り当ても感嘆符の集合も、"
+        "2回転で4組とも完全に一致した。"
+        "他の3通りは4組中2組しか一致していない。"
+        "また、境界12件のうち重要ではない側に入った件数は、"
+        "倒す方向を言わないと1件1件11件10件と材料によって正反対になり、"
+        "倒す方向を書くと11件6件12件12件、理由まで書くと12件11件12件12件になった。"
+        "理由の2文が効いたのは、書いていない判定への漏れではなく、書いた判定の安定のほうである。"
+    )
+    (OUT / "tilt-leaks-to-unwritten-judgment.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def queue_blocked_row_where_it_goes_chart() -> None:
     """毎日1件ずつ回す待ち行列で、「処理できない行」がどこへ行ったかを頼み方4通りで並べる。
 
@@ -8473,6 +8587,7 @@ if __name__ == "__main__":
     receipt_inside_or_outside_material_chart()
     breaking_checks_what_rings_chart()
     breaking_checks_who_finds_holes_chart()
+    tilt_leaks_to_unwritten_judgment_chart()
     queue_blocked_row_where_it_goes_chart()
     queue_what_never_broke_chart()
     wrong_client_two_failures_chart()

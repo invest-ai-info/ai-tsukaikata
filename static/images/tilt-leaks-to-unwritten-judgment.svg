@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="559" viewBox="0 0 720 559" role="img" aria-label="迷ったときに倒す方向を指示すると、指示していない別の判定まで影響を受けるかを、頼み方4通りで並べた表。架空の30行を2本（問い合わせメールの件名とニュースの見出し）作り、明らかに重要8件、明らかに重要でない10件、どちらとも取れる境界12件を仕込んだ。同じ回の中に、倒す方向を一度も書いていない第2の判定として、いますぐ知らせたいものに感嘆符を付けるという指示を混ぜてある。1つの頼み方につき材料2本かける各2回で4回ずつ、全部で16回。倒す方向を言わない土台だけの4回は、感嘆符が8件7件7件7件で合計29件。迷ったら重要ではない側に倒してくださいの1文を足した4回は、感嘆符の指示を1文字も変えていないのに5件5件5件6件の合計21件まで減った。つまり倒す方向は、書いた判定の外へ漏れる。さらに倒す理由を2文足した4回も5件5件6件4件で合計20件と、数はほとんど変わらなかった。しかも同じ材料の2回転で6件と4件になり、中身も2件ちがった。漏れ方は安定しない。感嘆符の判定にも、その判定のための倒す方向を書いた4回だけが、感嘆符5件5件3件3件で、境界12件の割り当ても感嘆符の集合も、2回転で4組とも完全に一致した。他の3通りは4組中2組しか一致していない。また、境界12件のうち重要ではない側に入った件数は、倒す方向を言わないと1件1件11件10件と材料によって正反対になり、倒す方向を書くと11件6件12件12件、理由まで書くと12件11件12件12件になった。理由の2文が効いたのは、書いていない判定への漏れではなく、書いた判定の安定のほうである。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="559"/>
+<text class="t-strong" x="18" y="26">倒す方向は、書いていない判定にも漏れる。ただし漏れ方は回ごとに違う</text>
+<text class="t-sm" x="18" y="45">架空の30行を2本（問い合わせメールの件名／ニュースの見出し）。明らかに重要8件・明らかに重要でない10件・</text>
+<text class="t-sm" x="18" y="64">どちらとも取れる境界12件。同じ回の中に、倒す方向を一度も書いていない第2の判定（! を付ける）を混ぜてある。</text>
+<text class="t-sm" x="18" y="83">1つの頼み方につき4回（材料2本 × 各2回）、全16回。</text>
+<text class="t-xs" x="380" y="104" text-anchor="middle">書いていない判定</text>
+<text class="t-xs" x="380" y="117" text-anchor="middle">! の件数（4回ぶん）</text>
+<text class="t-xs" x="580" y="104" text-anchor="middle">書いた判定</text>
+<text class="t-xs" x="580" y="117" text-anchor="middle">境界12件のうち低へ（4回ぶん）</text>
+<text class="t" x="18" y="150">倒す方向を言わない（土台だけ）</text>
+<rect class="box-bad" x="314" y="136" width="132" height="19" rx="4"/>
+<text class="t-bad" x="380" y="150" text-anchor="middle">8・7・7・7</text>
+<rect class="box-quiet" x="472" y="136" width="216" height="19" rx="4"/>
+<text class="t" x="580" y="150" text-anchor="middle">1・1・11・10</text>
+<text class="t-bad" x="32" y="167">2回転でそろった組: 2／4組</text>
+<text class="t" x="18" y="206">＋「迷ったら重要ではない側に倒して」</text>
+<rect class="box-bad" x="314" y="192" width="132" height="19" rx="4"/>
+<text class="t-bad" x="380" y="206" text-anchor="middle">5・5・5・6</text>
+<rect class="box-quiet" x="472" y="192" width="216" height="19" rx="4"/>
+<text class="t" x="580" y="206" text-anchor="middle">11・6・12・12</text>
+<text class="t-bad" x="32" y="223">2回転でそろった組: 2／4組</text>
+<text class="t" x="18" y="262">＋倒す理由を2文</text>
+<rect class="box-bad" x="314" y="248" width="132" height="19" rx="4"/>
+<text class="t-bad" x="380" y="262" text-anchor="middle">5・5・6・4</text>
+<rect class="box-quiet" x="472" y="248" width="216" height="19" rx="4"/>
+<text class="t" x="580" y="262" text-anchor="middle">12・11・12・12</text>
+<text class="t-bad" x="32" y="279">2回転でそろった組: 2／4組</text>
+<text class="t-good" x="18" y="318">＋ ! の判定にも倒す方向を書く</text>
+<rect class="box-good" x="314" y="304" width="132" height="19" rx="4"/>
+<text class="t-good" x="380" y="318" text-anchor="middle">5・5・3・3</text>
+<rect class="box-quiet" x="472" y="304" width="216" height="19" rx="4"/>
+<text class="t" x="580" y="318" text-anchor="middle">11・11・12・12</text>
+<text class="t-good" x="32" y="335">2回転でそろった組: 4／4組</text>
+<text class="t-bad" x="18" y="370">※ 1行目→2行目＝! の指示は1文字も変えていないのに、! が 29件から21件に減った。</text>
+<text class="t-bad" x="18" y="391">　 倒す方向は、書いた判定の外へ漏れる。</text>
+<text class="t-bad" x="18" y="412">※ ただし漏れ方は安定しない。理由まで書いた3行目は、同じ材料の2回転で 6件と4件</text>
+<text class="t-bad" x="18" y="433">　 （中身も2件ちがう）。漏れることを当てにはできない。</text>
+<text class="t-good" x="18" y="454">※ ! の判定にも倒す方向を書いた4行目だけ、境界の割り当ても ! も、</text>
+<text class="t-good" x="18" y="475">　 2回転で4組とも完全に一致した。</text>
+<text class="t-good" x="18" y="496">※ 理由の2文が効いたのは「漏れ」ではなく「書いた判定の安定」のほう</text>
+<text class="t-good" x="18" y="517">　 （2行目は 11・6・12・12 とばらつき、3行目は 12・11・12・12）。</text>
+<text class="t-xs" x="18" y="538">架空データでの実測（全16回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
