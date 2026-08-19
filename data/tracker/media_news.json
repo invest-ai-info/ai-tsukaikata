@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T07:08:12.848731+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T06:13:19+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "MintSparkは8月16日、Googleマップなどに表示される店舗の口コミ（Googleビジネスプロフィール）へのAI返信を支援するChrome拡張機能「coremeo - AI口コミ返信」を公開した。",
+      "title": "お店の「らしさ」をお手本から学ぶAI口コミ返信アシスタント「coremeo - AI口コミ返信」",
+      "uid": "e44154bb838e08c3",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133863.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T07:08:12.848731+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T06:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "情報公開を強要するのではなく、協力する姿勢を見せることで、AIの「Copilot」から脆弱(ぜいじゃく)性を聞き出すことに成功したとAI研究者が報告しました。 続きを読む...",
+      "title": "Copilotが騙されて自分自身のハッキング方法を教えてしまう",
+      "uid": "84ed04656966063c",
+      "url": "https://gigazine.net/news/20260819-copilot-leak-own-vulnerability/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T07:08:12.848731+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T05:43:21+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "セーフィーは8月19日、同社のクラウドカメラの映像とAIを掛け合わせ、クマの出没を自動で検知し即時に通知するサービス「AI-App（アイアップ） クマ検知」の提供を9月1日より開始すると発表した。",
+      "title": "クマの出没を自動で検知し即時通知するサービス「AI-App クマ検知」",
+      "uid": "2d9815517a918183",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133869.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-19T05:48:17.932182+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "cdca383eaa6ddea1",
       "url": "https://japan.cnet.com/article/35251453/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-08-09T15:19:33+00:00",
-      "source_id": "media-publickey",
-      "summary": "AWS、マイクロソフト、OpenAI、Anysphere、Vercelの各社は、AIエージェントのスキルやMCPサーバの設定を、AIエージェントが異なっていても共有できる業界標準の仕様「Agent Plugins 1.0.0」を発表しました...",
-      "title": "「Agent Plugins 1.0.0」発表、異なるAIエージェント間でもスキルやMCPサーバ設定が共通化へ。マイクロソフト、OpenAI、AWS、Googleらがサポート",
-      "uid": "871ef1283adff928",
-      "url": "https://www.publickey1.jp/blog/26/agent_plugins_100aimcpopenaiawsgoogle.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-07T11:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "auショップのスタッフはもう分厚いマニュアルと格闘しなくていい。KDDIが導入したAIエージェントが複雑な問い合わせに30秒で回答し、人材定着の妨げとなってきた「情報習得の重荷」を軽減しつつある。",
-      "title": "「かなりイケてる」KDDI社長が推すAI　auショップ全店の業務負荷を大幅低減",
-      "uid": "8781c1d1e049c5f0",
-      "url": "https://japan.cnet.com/article/35251431/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T10:40:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Akamaiは8月5日（現地時間）、エンタープライズ向けのセキュリティプラットフォーム「Akamai Workforce Protector」を発表した。",
-      "title": "AI技術で企業のセキュリティを強化する「Akamai Workforce Protector」",
-      "uid": "ff9c243edb0474fa",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131713.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
