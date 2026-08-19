@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T04:54:01.800747+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T04:20:16+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NTTアドバンステクノロジ（以下、NTT-AT）は、RPAツール「WinActor」の最新バージョン7.7.0の販売を9月1日に開始する。WinActorは、2010年にNTT研究所で開発された技術をベースに、NTT-ATが2014年に製品化したもの。",
+      "title": "NTT-AT、RPAツール「WinActor」の最新バージョンで「AIヘルプ」を搭載",
+      "uid": "d0d129f75060bec9",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133824.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T04:54:01.800747+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T04:12:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "オランダのスマートフォンメーカー・Fairphoneが、モジュール式のパーツを交換することによりユーザーが自分で修理可能なスマートフォン「Fairphone Gen 6+」を発表しました。 続きを読む...",
+      "title": "バッテリーやUSBポートを含めてモジュール交換で自力修理が可能なスマホ「Fairphone Gen 6+」",
+      "uid": "b79f6edfb2b00907",
+      "url": "https://gigazine.net/news/20260819-fairphone-gen-6-plus/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T04:54:01.800747+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T04:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIを使うかどうかだけではなく、どの程度使いこなせるかも問われる中、活用スキルの差は業務効率だけではなく、仕事やキャリアにも影響し始めているという。何が起きているのか。ITエンジニア572人の調査から探る。",
+      "title": "「AIを使える人か、使えない人か」で仕事や評価に差が？　6割のエンジニアが実感した“AI格差”の正体",
+      "uid": "4f5eb0d9d5f29694",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news047.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-19T04:02:09.383121+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2362,42 +2398,6 @@
       "title": "感情表現を忠実に再現する吹替えAIモデル「Dubbing v2」のAPI提供を開始",
       "uid": "9d01e8e190b5d676",
       "url": "https://ai.watch.impress.co.jp/docs/news/2131642.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T07:12:37+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "弥生は8月7日、会計事務所向けの新サービス「弥生の記帳代行AI」β版の提供を開始したと発表した。同サービスは、生成AIを活用した記帳ソリューションで、β版は「弥生PAP」会員向けとなり、無料で利用できる。",
-      "title": "会計事務所向けの新サービス「弥生の記帳代行AI」β版を提供",
-      "uid": "499bd77308d7783f",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131573.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T06:14:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "KAGAMIAI Holdingsは、「キャプテン翼」および画像・動画生成AI「PixVerse」と共に、IPのブランドや世界観を毀損することなく、生成AI上で利用・管理できるかを検証するために実施した実装検証の結果を公開した。",
-      "title": "KAGAMIAI、「キャプテン翼」×動画生成AI「PixVerse」で実施 ライセンス管理システム「Kagami Gate」による実装検証結果を公開",
-      "uid": "f913b84be1344b44",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131555.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T05:26:31+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは8月7日、Google マップの新機能「マップに相談」（Ask Maps）を日本で提供開始したと発表した。この機能は、3月に米国などで公開されていたもので、今後数週間かけて順次展開される。",
-      "title": "Geminiとの連携でGoogle マップの検索体験が広がる「マップに相談」",
-      "uid": "2d1833cfc292d039",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131533.html",
       "vendor": "Impress AI Watch"
     }
   ]
