@@ -7715,6 +7715,105 @@ def breaking_checks_who_finds_holes_chart() -> None:
     )
 
 
+
+def wrong_client_two_failures_chart() -> None:
+    """案件を取り違えて貼ったときの事故と、止めさせたときの誤停止を、頼み方ごとに並べる。
+
+    実測（2026-08-19・架空の案件2組×各2回＝1つの頼み方につき4回、全40回）。
+    値は check.py の出力。左は「別案件を貼ったのに成果物を作った回数」、
+    右は「正しい材料なのに止まった回数」。どちらも 0 でないと使えない。
+    """
+    rows = [
+        ("そのまま「納品の連絡メールを作って」", 4, None),
+        ("そのまま「検品の一覧を作って」", 4, None),
+        ("＋先頭に受け皿の1行", 0, 0),
+        ("＋かぶせる1枚（発注元と案件名を照合）", 0, 3),
+        ("＋かぶせる1枚（発注元だけを照合）", 0, 0),
+    ]
+    label_x, label_w = 18, 300
+    col_x = [label_x + label_w + 82, label_x + label_w + 268]
+    col_names = [
+        ["別案件を貼ったのに", "成果物を作った"],
+        ["正しい材料なのに", "止まった"],
+    ]
+    row_h = 34
+    top = 122
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "止めさせるまでは作ってしまう。止めさせすぎると、正しい材料でも止まる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の副業案件を2組（記事執筆・商品ページ制作）作り、"
+        "保存した指示文に「別の案件の発注書」を貼って通した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1つの頼み方につき、材料2組 × 各2回 ＝ 4回。数字はどちらも「事故が起きた回数」で、"
+        "0 でないと使えない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "※ 食い違いそのものは、そのまま頼んだ8回とも指摘された。作ってしまうかどうかは別。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 26 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, made, false_stop in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for cx, v in zip(col_x, (made, false_stop)):
+            if v is None:
+                parts.append(
+                    f'<line class="line" x1="{cx - 8}" y1="{ty - 5}" '
+                    f'x2="{cx + 8}" y2="{ty - 5}"/>\n'
+                )
+                continue
+            box = "box-good" if v == 0 else "box-bad"
+            mcls = "t-good" if v == 0 else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 26}" y="{ty - 14}" '
+                f'width="52" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{v} / 4</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 上の2行＝作られたメールには、別案件の6項目（発注元・担当者・納期・分量・"),
+        ("t-bad", "　 修正回数・納品形式）が4回とも6項目そのまま入っていた。正しい案件の値は社名だけ。"),
+        ("t-bad", "※ 4行目＝止める基準に「案件名」を入れた版は、正しい発注書でも4回中3回止まった。"),
+        ("t-bad", "　 保存側の案件名は「商品ページ制作」、発注書の案件名は「秋の保存容器」だったため。"),
+        ("t-good", "※ 止める基準を「発注元の会社名だけ」にすると、別案件で4/4止まり、誤停止は0/4。"),
+        ("t-xs", "架空データでの実測（全40回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "保存した指示文に別の案件の発注書を貼ったときに何が起きるかを、頼み方5通りで並べた表。"
+        "架空の副業案件を2組つくり、1つの頼み方につき材料2組かける各2回で4回ずつ通した。"
+        "左の列は、別案件を貼ったのに成果物を作ってしまった回数。"
+        "右の列は、正しい材料を貼ったのに誤って止まった回数。どちらも0でないと使えない。"
+        "そのまま納品の連絡メールを作ってと頼んだ4回は、4回とも作ってしまった。"
+        "そのまま検品の一覧を作ってと頼んだ4回も、4回とも作ってしまった。"
+        "指示文の先頭に受け皿を1行足した版は、作ってしまったのが0回で、誤って止まったのも0回。"
+        "かぶせる1枚で発注元と案件名の両方を照合させた版は、作ってしまったのは0回だが、"
+        "正しい材料なのに4回中3回も止まった。"
+        "かぶせる1枚で発注元だけを照合させた版は、作ってしまったのが0回で、誤って止まったのも0回。"
+        "なお、食い違いそのものは、そのまま頼んだ8回とも指摘されている。"
+        "指摘するかどうかと、作ってしまうかどうかは別の話だった。"
+    )
+    (OUT / "wrong-client-two-failures.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def queue_blocked_row_where_it_goes_chart() -> None:
     """毎日1件ずつ回す待ち行列で、「処理できない行」がどこへ行ったかを頼み方4通りで並べる。
 
@@ -8059,4 +8158,5 @@ if __name__ == "__main__":
     breaking_checks_who_finds_holes_chart()
     queue_blocked_row_where_it_goes_chart()
     queue_what_never_broke_chart()
+    wrong_client_two_failures_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" role="img" aria-label="保存した指示文に別の案件の発注書を貼ったときに何が起きるかを、頼み方5通りで並べた表。架空の副業案件を2組つくり、1つの頼み方につき材料2組かける各2回で4回ずつ通した。左の列は、別案件を貼ったのに成果物を作ってしまった回数。右の列は、正しい材料を貼ったのに誤って止まった回数。どちらも0でないと使えない。そのまま納品の連絡メールを作ってと頼んだ4回は、4回とも作ってしまった。そのまま検品の一覧を作ってと頼んだ4回も、4回とも作ってしまった。指示文の先頭に受け皿を1行足した版は、作ってしまったのが0回で、誤って止まったのも0回。かぶせる1枚で発注元と案件名の両方を照合させた版は、作ってしまったのは0回だが、正しい材料なのに4回中3回も止まった。かぶせる1枚で発注元だけを照合させた版は、作ってしまったのが0回で、誤って止まったのも0回。なお、食い違いそのものは、そのまま頼んだ8回とも指摘されている。指摘するかどうかと、作ってしまうかどうかは別の話だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="430"/>
+<text class="t-strong" x="18" y="26">止めさせるまでは作ってしまう。止めさせすぎると、正しい材料でも止まる</text>
+<text class="t-sm" x="18" y="45">架空の副業案件を2組（記事執筆・商品ページ制作）作り、保存した指示文に「別の案件の発注書」を貼って通した。</text>
+<text class="t-sm" x="18" y="64">1つの頼み方につき、材料2組 × 各2回 ＝ 4回。数字はどちらも「事故が起きた回数」で、0 でないと使えない。</text>
+<text class="t-sm" x="18" y="83">※ 食い違いそのものは、そのまま頼んだ8回とも指摘された。作ってしまうかどうかは別。</text>
+<text class="t-xs" x="400" y="96" text-anchor="middle">別案件を貼ったのに</text>
+<text class="t-xs" x="400" y="109" text-anchor="middle">成果物を作った</text>
+<text class="t-xs" x="586" y="96" text-anchor="middle">正しい材料なのに</text>
+<text class="t-xs" x="586" y="109" text-anchor="middle">止まった</text>
+<text class="t" x="18" y="140">そのまま「納品の連絡メールを作って」</text>
+<rect class="box-bad" x="374" y="126" width="52" height="19" rx="4"/>
+<text class="t-bad" x="400" y="140" text-anchor="middle">4 / 4</text>
+<line class="line" x1="578" y1="135" x2="594" y2="135"/>
+<text class="t" x="18" y="174">そのまま「検品の一覧を作って」</text>
+<rect class="box-bad" x="374" y="160" width="52" height="19" rx="4"/>
+<text class="t-bad" x="400" y="174" text-anchor="middle">4 / 4</text>
+<line class="line" x1="578" y1="169" x2="594" y2="169"/>
+<text class="t" x="18" y="208">＋先頭に受け皿の1行</text>
+<rect class="box-good" x="374" y="194" width="52" height="19" rx="4"/>
+<text class="t-good" x="400" y="208" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="560" y="194" width="52" height="19" rx="4"/>
+<text class="t-good" x="586" y="208" text-anchor="middle">0 / 4</text>
+<text class="t" x="18" y="242">＋かぶせる1枚（発注元と案件名を照合）</text>
+<rect class="box-good" x="374" y="228" width="52" height="19" rx="4"/>
+<text class="t-good" x="400" y="242" text-anchor="middle">0 / 4</text>
+<rect class="box-bad" x="560" y="228" width="52" height="19" rx="4"/>
+<text class="t-bad" x="586" y="242" text-anchor="middle">3 / 4</text>
+<text class="t" x="18" y="276">＋かぶせる1枚（発注元だけを照合）</text>
+<rect class="box-good" x="374" y="262" width="52" height="19" rx="4"/>
+<text class="t-good" x="400" y="276" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="560" y="262" width="52" height="19" rx="4"/>
+<text class="t-good" x="586" y="276" text-anchor="middle">0 / 4</text>
+<text class="t-bad" x="18" y="304">※ 上の2行＝作られたメールには、別案件の6項目（発注元・担当者・納期・分量・</text>
+<text class="t-bad" x="18" y="325">　 修正回数・納品形式）が4回とも6項目そのまま入っていた。正しい案件の値は社名だけ。</text>
+<text class="t-bad" x="18" y="346">※ 4行目＝止める基準に「案件名」を入れた版は、正しい発注書でも4回中3回止まった。</text>
+<text class="t-bad" x="18" y="367">　 保存側の案件名は「商品ページ制作」、発注書の案件名は「秋の保存容器」だったため。</text>
+<text class="t-good" x="18" y="388">※ 止める基準を「発注元の会社名だけ」にすると、別案件で4/4止まり、誤停止は0/4。</text>
+<text class="t-xs" x="18" y="409">架空データでの実測（全40回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
