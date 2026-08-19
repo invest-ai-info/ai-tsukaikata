@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T11:43:13.577944+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "BionicはクラウドAIサービスだけでなくローカルで実行するAIモデルにも対応したAIエージェントアプリです。新たにBionicがSkillsに対応し、CodexやClaude Codeなどで培われた大量のSkillsを活用できるようになりました。 続きを読む...",
+      "title": "ローカルAIエージェントアプリ「Bionic」がSkillsに対応しCodexやClaude Codeの使い勝手に近づく",
+      "uid": "c84fec0542312bf8",
+      "url": "https://gigazine.net/news/20260819-lm-studio-bionic-skills/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T10:47:48.925393+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "「AIに頼りすぎた」人気ユーチューバーが反省、活動を縮小へ",
       "uid": "a79b188cfc7c245b",
       "url": "https://japan.cnet.com/article/35251470/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-10T07:50:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "NECは8月10日、部門長から社員まですべての役割をAIが担う社内組織「コーポレートAI・Workforce部門」を新設したと発表した。設立は8月1日付。業務はAIが自律的に進め、最終的な評価や意思決定、品質・ガバナンスの統制は人が受け持つ。従業員数万人規模の国内企業では初の取り組みとなるという。",
-      "title": "NEC、部長も部下も「すべてAI」の新部門",
-      "uid": "1301c07e627806af",
-      "url": "https://japan.cnet.com/article/35251472/",
       "vendor": "CNET Japan"
     }
   ]
