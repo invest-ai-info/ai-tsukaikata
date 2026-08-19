@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T08:56:47.833795+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T08:46:39+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NVIDIAは、米国オハイオ州パイク郡にあるPORTS-Pike Technology Campusにおいて、SB Energyとの提携を通じ、NVIDIAのコンピューティング環境を運用するための土地や電力、建屋のキャパシティを確保したと発表した。OpenAIが顧客となり、SB EnergyはOpenAIとの20年間のリース契約を締結し、データセンターの建設、所有、および運営を行なっていく。",
+      "title": "NVIDIA、SB Energyのオハイオ州のキャンパスをNVIDIA AIコンピューティング専用拠点として確保",
+      "uid": "5c53cf615ac972d2",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133990.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T08:56:47.833795+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T08:45:15+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "トレンドマイクロは8月19日、個人の顧客向けビジネスのブランド「TrendLife（トレンドライフ）」より、家族全員が安心して利用できるよう設計されたAIサービス「TrendLife Kaleida」を提供すると発表した。",
+      "title": "トレンドマイクロ、個人の顧客向けAIサービス「TrendLife Kaleida」",
+      "uid": "017021067ba23a06",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133973.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T08:56:47.833795+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T08:32:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Twitter創業者のジャック・ドーシー氏が率いるBlockが、AIエージェントアプリ「Berd」をリリースしました。Berdでは複数のAIエージェントをキャラクターとして管理して作業を遂行できます。 続きを読む...",
+      "title": "ジャック・ドーシー率いるBlockがAIエージェントアプリ「Berd」をリリース、AIエージェントにキャラクターを割り当てて共同作業可能",
+      "uid": "aa0bddbb20d21bdf",
+      "url": "https://gigazine.net/news/20260819-berd-ai-agent/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T08:56:47.833795+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T08:31:44+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "OpenAIは、13歳から17歳の利用者向けに強化された安全対策を標準で備えた「ティーン向けChatGPT」を導入した。利用者が13歳から17歳だと申告した場合、もしくはシステムが利用者を18歳未満と推定した場合、自動的に「ティーン向けChatGPT」が適用される。",
+      "title": "子どもの家庭教師？ 学習支援を重視した設計の「ティーン向けChatGPT」登場 すぐに答えを求めても問題を自力で解くように導く",
+      "uid": "42c3b9c56abca991",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133958.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T08:56:47.833795+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T08:31:34+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "インプレスは、オンデマンド配信講座「Impress Books Academy（インプレス・ブックス・アカデミー）」の新講座として、「Visual Studio Codeで学ぶ！GitHub Copilot入門講座」の配信を8月19日に開始した。",
+      "title": "インプレス「Visual Studio Codeで学ぶ！GitHub Copilot入門講座」を配信開始",
+      "uid": "85af111055e6ca77",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133894.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T08:56:47.833795+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T08:00:48+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIの反論によって道徳的な判断の3割超が覆る――神戸大学がこのような研究結果を発表した。米OpenAIのチャットAI「ChatGPT」を利用し、AIの反論が正解のない道徳問題への回答に与える影響を調べた。",
+      "title": "ChatGPTの反論で「道徳的判断」の3割超が覆る　高齢者が説得されやすい傾向　神戸大",
+      "uid": "cb5a9d5c595fbad3",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000627/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-19T07:56:04.368894+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2326,78 +2398,6 @@
       "title": "AI model、テレビ朝日とテレビCMを生成AIで共同制作",
       "uid": "2a967c53f940250a",
       "url": "https://ai.watch.impress.co.jp/docs/news/2132008.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T05:56:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NECは、AIネイティブカンパニーへの変革に向け、人とAIの共創を実践するため、部門長から社員まですべての役割をAIが担い、自律的に業務を遂行する社内組織「コーポレートAI・Workforce部門」を8月1日に新設した。同組織では、AIが業務遂行を担い、最終的な評価・意思決定、品質・ガバナンスの統制は人が担う。",
-      "title": "人とAIの共創を実現するための社内組織「コーポレートAI・Workforce部門」",
-      "uid": "eaf137d5870f0c60",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131985.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T05:55:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTドコモとサムスン電子は、AIを使用しスマーフォン個々の状況に合わせユーザーごとに通信を最適化する技術を共同開発した。",
-      "title": "ドコモとSamsung、AIで通信速度低下を予測し通信を最適化！",
-      "uid": "5de68ea435cd449a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131981.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-10T05:15:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは米国時間8月7日、開発中の次期AIモデル「Astra」について、サイバー攻撃に使える能力が同社の安全指針で最も高い「Critical（臨界）」の水準に達した可能性を排除できないと公式ブログで発表した。モデルをCriticalとして扱うのは今回が初めてだ。開発を安全に続けるためのセキュリティ管理を強化し、要件を満たしていない社内のAstra関連活動を一時停止した。一方で、モデルを封じ…",
-      "title": "OpenAI、次期モデル「Astra」の開発を一部停止--「最高水準のサイバー攻撃能力に達した可能性」",
-      "uid": "0f904c9b22156470",
-      "url": "https://japan.cnet.com/article/35251464/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-10T04:50:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "AIが生成した文章よりも、人間が書いた文章の方が好きだと思っている人は多いだろう。しかし、新たな研究によると、実際にはそうではない可能性がある。",
-      "title": "「ChatGPTの小説」と「人間の小説」、人はどちらを好むのか？ 研究結果が公開",
-      "uid": "8dea6f512854a99a",
-      "url": "https://japan.cnet.com/article/35251461/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-10T04:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "VAIOは8月10日、PCの内蔵カメラで「血管情報」と「心拍情報」を測定できるアプリ「VAIO ウェルネスケア」の先行プレビュー版を、個人向けノートPC「VAIO SX14-R」（VJS4R2シリーズ）向けに提供開始した。同機の標準機能と位置づけ、無償で利用できる。",
-      "title": "VAIO、内蔵カメラに写る「顔」から心拍数や血管情報を推定する新機能　個人向けPCに搭載",
-      "uid": "8d628c3d3bc26282",
-      "url": "https://japan.cnet.com/article/35251463/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T04:35:54+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SB Intuitionsは、順天堂大学、ソフトバンク、HEMILLIONSと共に、臨床・研究・教育分野での生成AI（人工知能）の社会実装の推進を目的に、国産医療特化型LLM「Med-Sarashina（めど-さらしな）」を活用した共同研究を2026年6月に開始した。",
-      "title": "国産医療特化型LLM「Med-Sarashina」を活用した共同研究 SB Intuitions、順天堂大学、ソフトバンク、HEMILLIONSで6月に開始",
-      "uid": "8f4063bcde32d463",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131957.html",
       "vendor": "Impress AI Watch"
     }
   ]
