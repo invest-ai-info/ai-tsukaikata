@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="324" viewBox="0 0 720 324" role="img" aria-label="点検の5条に残した2つの抜け道を、3通りの頼み方がそれぞれ何回指したかを並べた表。1つの頼み方につき材料2本かける各2回で4回ある。壊れ例を作らせた回は、穴Aを4回中3回、穴Bを4回中4回指したが、該当する文は1回あたり0文から4文だった。記録を壊させず手順書のほうを読ませた回は、穴Aを4回中4回、穴Bを4回中3回指し、該当する文は1回あたり4文から11文と多い。こちらが作った記録を5条で判定させた回は、穴Aも穴Bも4回中4回で、判定表とは別の参考欄に書かれていた。その判定表そのものは、5条かける記録3本の15マスが4回とも全部真値と一致している。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="324"/>
+<text class="t-strong" x="18" y="26">点検の抜け道は、壊させるより「読ませた」ほうが出てきた</text>
+<text class="t-sm" x="18" y="45">5条のうち2条に、こちらが抜け道を残しておいた。抜けられることは走らせる前にコードで確かめてある。</text>
+<text class="t-sm" x="18" y="64">穴A＝条2は「いちばん新しい日付」しか見ないので、古い行が積み上がっても鳴らない。</text>
+<text class="t-sm" x="18" y="83">穴B＝条5は「1件以上あるか」しか見ないので、毎日10件ある種類が今日1件でも鳴らない。</text>
+<text class="t-xs" x="378" y="114" text-anchor="middle">穴Aを指した回</text>
+<text class="t-xs" x="508" y="114" text-anchor="middle">穴Bを指した回</text>
+<text class="t" x="18" y="146">壊れ例を作らせる（すり抜ける例も頼む）</text>
+<rect class="box-bad" x="348" y="132" width="60" height="19" rx="4"/>
+<text class="t-bad" x="378" y="146" text-anchor="middle">3 / 4</text>
+<rect class="box-good" x="478" y="132" width="60" height="19" rx="4"/>
+<text class="t-good" x="508" y="146" text-anchor="middle">4 / 4</text>
+<text class="t-xs" x="550" y="146">0〜4文</text>
+<text class="t" x="18" y="180">記録は壊させず、手順書のほうを読ませる</text>
+<rect class="box-good" x="348" y="166" width="60" height="19" rx="4"/>
+<text class="t-good" x="378" y="180" text-anchor="middle">4 / 4</text>
+<rect class="box-bad" x="478" y="166" width="60" height="19" rx="4"/>
+<text class="t-bad" x="508" y="180" text-anchor="middle">3 / 4</text>
+<text class="t-xs" x="550" y="180">4〜11文</text>
+<text class="t" x="18" y="214">こちらが作った記録を、5条で判定させる</text>
+<rect class="box-good" x="348" y="200" width="60" height="19" rx="4"/>
+<text class="t-good" x="378" y="214" text-anchor="middle">4 / 4</text>
+<rect class="box-good" x="478" y="200" width="60" height="19" rx="4"/>
+<text class="t-good" x="508" y="214" text-anchor="middle">4 / 4</text>
+<text class="t-xs" x="550" y="214">参考欄に</text>
+<text class="t-good" x="18" y="240">※ 判定をやらせた4回は、5条 × 記録3本 = 15マスが4回とも全部真値と一致した（60/60）。</text>
+<text class="t-good" x="18" y="261">　 そのうえで4回とも「判定には使っていない事実」という欄を自分から作り、</text>
+<text class="t-good" x="18" y="282">　 そこに、こちらが仕込んだ抜け道そのものを書いた。</text>
+<text class="t-xs" x="18" y="303">架空データでの実測（全24回）。生の返りは docs/evidence/ に置いてある。</text>
+</svg>

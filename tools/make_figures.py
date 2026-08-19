@@ -7552,6 +7552,168 @@ def receipt_inside_or_outside_material_chart() -> None:
         _svg(height, alt, "".join(parts)), encoding="utf-8"
     )
 
+
+def breaking_checks_what_rings_chart() -> None:
+    """AIに壊れ例を作らせたとき、実際に点検が鳴った例と鳴らなかった例を頼み方ごとに並べる。
+
+    実測（2026-08-19・材料2本×各2回＝4回ずつ）。5条は Python で実装し、
+    AIが返した「壊した記録の全文」に当てて数えた。値は check.py の出力。
+    """
+    rows = [
+        ("そのまま「わざと壊して確かめて」", 21, 6),
+        ("＋「6件作って、どの条か書いて」", 22, 2),
+        ("＋「すり抜ける例も3件」", 19, 12),
+        ("「条ごとに1件ずつ」に変える", 20, 0),
+    ]
+    label_x, label_w = 18, 252
+    bar_x = label_x + label_w + 12
+    unit = 340.0 / 31                # いちばん多い31例を基準に1例あたりの幅を出す
+    bar_h = 16
+    row_gap = 30
+    top = 112
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "AIが作った壊れ例のうち、点検が実際に鳴ったのはどれだけか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「毎朝の点検・5条」を文章で渡し、わざと壊した記録の全文を書かせた"
+        "（材料2本 × 各2回 = 4回ずつ）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "5条は Python で実装してあり、返ってきた記録に当てて数えている。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "濃い部分＝実際に鳴った例　薄い部分＝1条も鳴らなかった例</text>\n",
+    ]
+
+    y = top
+    for label, rang, silent in rows:
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + bar_h - 3}">{_esc(label)}</text>\n'
+        )
+        total = rang + silent
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y}" '
+            f'width="{total * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{bar_x}" y="{y}" '
+            f'width="{rang * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{bar_x + total * unit + 8:.1f}" '
+            f'y="{y + bar_h - 4}">{rang} / {total}例</text>\n'
+        )
+        y += bar_h + row_gap
+
+    notes = [
+        ("t-bad", "※「すり抜ける例も3件」と頼んだ4回だけ、鳴らない例が12件出た。"),
+        ("t-bad", "　 頼んだのは 4回 × 3件 ＝ ちょうど12件。作れないのではなく、頼まないと作らない。"),
+        ("t-good", "※「条ごとに1件ずつ」に変えた4回は、20例すべてが鳴り、"),
+        ("t-good", "　 AIの申告（どの条に当たるか）も 10件中10件が実際と一致した。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "AIが作った壊れ例のうち、点検の5条が実際に鳴った例の数を頼み方4通りで並べた横棒グラフ。"
+        "棒全体が作られた例の数、濃い部分が実際に鳴った例の数。"
+        "そのままわざと壊して確かめてと頼んだ4回は27例中21例が鳴った。"
+        "6件作ってどの条か書いてと足した4回は24例中22例。"
+        "すり抜ける例も3件と足した4回は31例中19例で、鳴らない例が12件出ている。"
+        "条ごとに1件ずつに変えた4回は20例すべてが鳴り、鳴らない例は0件だった。"
+        "鳴らない例が大きく出たのは、すり抜ける例を明示的に頼んだ回だけで、"
+        "その数は頼んだ数とちょうど同じ12件である。"
+    )
+    (OUT / "breaking-checks-what-rings.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def breaking_checks_who_finds_holes_chart() -> None:
+    """こちらが仕込んだ2つの抜け道を、どの頼み方が指したかを並べる。
+
+    実測（2026-08-19）。穴A＝条2は最新の日付しか見ない。穴B＝条5は1件あれば通る。
+    ○の数＝材料2本×各2回＝4回のうち、その穴を指した回の数。値は hole.py と q5check.py。
+    """
+    rows = [
+        ("壊れ例を作らせる（すり抜ける例も頼む）", 3, 4, "0〜4文"),
+        ("記録は壊させず、手順書のほうを読ませる", 4, 3, "4〜11文"),
+        ("こちらが作った記録を、5条で判定させる", 4, 4, "参考欄に"),
+    ]
+    label_x, label_w = 18, 300
+    col_x = [label_x + label_w + 60, label_x + label_w + 190]
+    row_h = 34
+    top = 128
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "点検の抜け道は、壊させるより「読ませた」ほうが出てきた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "5条のうち2条に、こちらが抜け道を残しておいた。"
+        "抜けられることは走らせる前にコードで確かめてある。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "穴A＝条2は「いちばん新しい日付」しか見ないので、古い行が積み上がっても鳴らない。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "穴B＝条5は「1件以上あるか」しか見ないので、毎日10件ある種類が今日1件でも鳴らない。"
+        "</text>\n",
+    ]
+    for cx, name in zip(col_x, ("穴Aを指した回", "穴Bを指した回")):
+        parts.append(
+            f'<text class="t-xs" x="{cx}" y="{top - 14}" '
+            f'text-anchor="middle">{_esc(name)}</text>\n'
+        )
+
+    y = top
+    for label, a, b, note in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for cx, v in zip(col_x, (a, b)):
+            box = "box-good" if v == 4 else "box-bad"
+            mcls = "t-good" if v == 4 else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 30}" y="{ty - 14}" '
+                f'width="60" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{v} / 4</text>\n'
+            )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[1] + 42}" y="{ty}">{_esc(note)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 判定をやらせた4回は、5条 × 記録3本 = 15マスが4回とも全部真値と一致した（60/60）。"),
+        ("t-good", "　 そのうえで4回とも「判定には使っていない事実」という欄を自分から作り、"),
+        ("t-good", "　 そこに、こちらが仕込んだ抜け道そのものを書いた。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "点検の5条に残した2つの抜け道を、3通りの頼み方がそれぞれ何回指したかを並べた表。"
+        "1つの頼み方につき材料2本かける各2回で4回ある。"
+        "壊れ例を作らせた回は、穴Aを4回中3回、穴Bを4回中4回指したが、"
+        "該当する文は1回あたり0文から4文だった。"
+        "記録を壊させず手順書のほうを読ませた回は、穴Aを4回中4回、穴Bを4回中3回指し、"
+        "該当する文は1回あたり4文から11文と多い。"
+        "こちらが作った記録を5条で判定させた回は、穴Aも穴Bも4回中4回で、"
+        "判定表とは別の参考欄に書かれていた。"
+        "その判定表そのものは、5条かける記録3本の15マスが4回とも全部真値と一致している。"
+    )
+    (OUT / "breaking-checks-who-finds-holes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
 def month_boundary_two_runs_chart() -> None:
     """出す形を固定して2回ずつ走らせたときの、またぎ欄の件数と合計。
 
@@ -7731,4 +7893,6 @@ if __name__ == "__main__":
     first_client_where_minutes_come_from_chart()
     receipt_category_drift_by_ask_chart()
     receipt_inside_or_outside_material_chart()
+    breaking_checks_what_rings_chart()
+    breaking_checks_who_finds_holes_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
