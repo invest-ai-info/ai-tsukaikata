@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="528" viewBox="0 0 720 528" role="img" aria-label="3か月とも同じ文字列で出てくる10件の行が、4通りの頼み方でどれだけ月をまたいで同じ費目に入ったかを並べた表。ひとつの枠の◆の数が、2回のうち3か月ともそろった回の数を表す。電気料金・ガス・交通系ICのチャージという、メモを読めば費目が決まる4行は、そのまま頼んだ回でも8回中8回そろった。コピー代・文庫本・のど飴とマスク・収納ケース・子どもの上履き・カフェでの作業という6行は、そのまま頼むと12回中11回がずれた。費目の一覧を固定すると多くがそろいはじめ、こちらが対応表を渡した列では10行すべてが2回とも3か月そろっている。そろうかどうかを分けたのは、費目がメモの中で決まるか、決めるのが自分しかいないかだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="528"/>
+<text class="t-strong" x="18" y="26">そろうかどうかは、費目が「メモの中で決まるか」で分かれた</text>
+<text class="t-sm" x="18" y="45">3か月とも1文字も同じ文字列で出てくる行を、材料2本に5件ずつ仕込んだ。◆の数＝2回のうち、3か月とも同じ費目に入った回の数。</text>
+<text class="t-sm" x="18" y="64">青い見出しの2行は、メモを読めば費目が決まる行。黒い3行は、決めるのが自分しかいない行。</text>
+<text class="t-xs" x="348" y="96" text-anchor="middle">そのまま</text>
+<text class="t-xs" x="432" y="96" text-anchor="middle">一覧を</text>
+<text class="t-xs" x="432" y="109" text-anchor="middle">固定</text>
+<text class="t-xs" x="516" y="96" text-anchor="middle">＋毎月</text>
+<text class="t-xs" x="516" y="109" text-anchor="middle">同じに</text>
+<text class="t-xs" x="600" y="96" text-anchor="middle">＋対応表</text>
+<text class="t-accent" x="18" y="132">材料A ＝ 家計簿アプリの書き出し（表形式）</text>
+<text class="t-accent" x="18" y="158">東京電力エナジーパートナー／電気料金</text>
+<rect class="box-good" x="322" y="144" width="52" height="19" rx="4"/>
+<text class="t-good" x="348" y="158" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="406" y="144" width="52" height="19" rx="4"/>
+<text class="t-good" x="432" y="158" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="490" y="144" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="158" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="144" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="158" text-anchor="middle">◆◆</text>
+<text class="t-accent" x="18" y="184">東京メトロ 新宿駅／ICカードチャージ</text>
+<rect class="box-good" x="322" y="170" width="52" height="19" rx="4"/>
+<text class="t-good" x="348" y="184" text-anchor="middle">◆◆</text>
+<rect class="box-bad" x="406" y="170" width="52" height="19" rx="4"/>
+<text class="t-bad" x="432" y="184" text-anchor="middle">◆－</text>
+<rect class="box-bad" x="490" y="170" width="52" height="19" rx="4"/>
+<text class="t-bad" x="516" y="184" text-anchor="middle">◆－</text>
+<rect class="box-good" x="574" y="170" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="184" text-anchor="middle">◆◆</text>
+<text class="t" x="18" y="210">セブン-イレブン 北口店／コピー代 20枚</text>
+<rect class="box-bad" x="322" y="196" width="52" height="19" rx="4"/>
+<text class="t-bad" x="348" y="210" text-anchor="middle">－－</text>
+<rect class="box-bad" x="406" y="196" width="52" height="19" rx="4"/>
+<text class="t-bad" x="432" y="210" text-anchor="middle">◆－</text>
+<rect class="box-good" x="490" y="196" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="210" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="196" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="210" text-anchor="middle">◆◆</text>
+<text class="t" x="18" y="236">丸善ジュンク堂書店／文庫本2冊</text>
+<rect class="box-bad" x="322" y="222" width="52" height="19" rx="4"/>
+<text class="t-bad" x="348" y="236" text-anchor="middle">－－</text>
+<rect class="box-good" x="406" y="222" width="52" height="19" rx="4"/>
+<text class="t-good" x="432" y="236" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="490" y="222" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="236" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="222" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="236" text-anchor="middle">◆◆</text>
+<text class="t" x="18" y="262">マツモトキヨシ 中央店／のど飴とマスク</text>
+<rect class="box-bad" x="322" y="248" width="52" height="19" rx="4"/>
+<text class="t-bad" x="348" y="262" text-anchor="middle">－－</text>
+<rect class="box-bad" x="406" y="248" width="52" height="19" rx="4"/>
+<text class="t-bad" x="432" y="262" text-anchor="middle">－－</text>
+<rect class="box-good" x="490" y="248" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="262" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="248" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="262" text-anchor="middle">◆◆</text>
+<text class="t-accent" x="18" y="284">材料B ＝ 手帳の走り書き</text>
+<text class="t-accent" x="18" y="310">ガス／都市ガス 引き落とし</text>
+<rect class="box-good" x="322" y="296" width="52" height="19" rx="4"/>
+<text class="t-good" x="348" y="310" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="406" y="296" width="52" height="19" rx="4"/>
+<text class="t-good" x="432" y="310" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="490" y="296" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="310" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="296" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="310" text-anchor="middle">◆◆</text>
+<text class="t-accent" x="18" y="336">スイカ／チャージ</text>
+<rect class="box-good" x="322" y="322" width="52" height="19" rx="4"/>
+<text class="t-good" x="348" y="336" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="406" y="322" width="52" height="19" rx="4"/>
+<text class="t-good" x="432" y="336" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="490" y="322" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="336" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="322" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="336" text-anchor="middle">◆◆</text>
+<text class="t" x="18" y="362">ダイソー／収納ケースとペン</text>
+<rect class="box-bad" x="322" y="348" width="52" height="19" rx="4"/>
+<text class="t-bad" x="348" y="362" text-anchor="middle">－－</text>
+<rect class="box-good" x="406" y="348" width="52" height="19" rx="4"/>
+<text class="t-good" x="432" y="362" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="490" y="348" width="52" height="19" rx="4"/>
+<text class="t-good" x="516" y="362" text-anchor="middle">◆◆</text>
+<rect class="box-good" x="574" y="348" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="362" text-anchor="middle">◆◆</text>
+<text class="t" x="18" y="388">イオン／子どもの上履き</text>
+<rect class="box-bad" x="322" y="374" width="52" height="19" rx="4"/>
+<text class="t-bad" x="348" y="388" text-anchor="middle">◆－</text>
+<rect class="box-good" x="406" y="374" width="52" height="19" rx="4"/>
+<text class="t-good" x="432" y="388" text-anchor="middle">◆◆</text>
+<rect class="box-bad" x="490" y="374" width="52" height="19" rx="4"/>
+<text class="t-bad" x="516" y="388" text-anchor="middle">◆－</text>
+<rect class="box-good" x="574" y="374" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="388" text-anchor="middle">◆◆</text>
+<text class="t" x="18" y="414">スタバ／ノートPC広げて作業</text>
+<rect class="box-bad" x="322" y="400" width="52" height="19" rx="4"/>
+<text class="t-bad" x="348" y="414" text-anchor="middle">－－</text>
+<rect class="box-bad" x="406" y="400" width="52" height="19" rx="4"/>
+<text class="t-bad" x="432" y="414" text-anchor="middle">◆－</text>
+<rect class="box-bad" x="490" y="400" width="52" height="19" rx="4"/>
+<text class="t-bad" x="516" y="414" text-anchor="middle">◆－</text>
+<rect class="box-good" x="574" y="400" width="52" height="19" rx="4"/>
+<text class="t-good" x="600" y="414" text-anchor="middle">◆◆</text>
+<text class="t-good" x="18" y="440">※ 青い4行（電気・ガス・交通系IC）は、そのまま頼んだだけでのべ8回とも3か月そろった。答えがメモの中にあるため。</text>
+<text class="t-bad" x="18" y="462">※ 黒い6行は、そのまま頼むと のべ12回中11回がずれた。コピー代を雑費に</text>
+<text class="t-bad" x="18" y="484">　 入れるか事務用品に入れるかは、メモのどこにも書いていない。</text>
+<text class="t-xs" x="18" y="506">架空データでの実測（全56回）。生の返りは docs/evidence/ に置いてある。</text>
+</svg>

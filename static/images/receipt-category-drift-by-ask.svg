@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="504" viewBox="0 0 720 504" role="img" aria-label="4通りの頼み方で、同じ店・同じ用途の行が月をまたいで違う費目に入った数を並べた横棒グラフ。1つの頼み方につき4系列ぶんの棒があり、棒1本の最大は5件。そのまま費目ごとに分けてと頼んだ4系列は3件・3件・3件・2件で、のべ20件中11件。費目の一覧9つを固定して受け皿を付けた4系列は3件・1件・1件・0件で、のべ5件。そこに毎月かならず同じ費目にという一文を足した4系列は0件・1件・0件・2件で、のべ3件。こちらが持つ店名とメモと費目の対応表を渡した4系列は4系列とも0件で、のべ0件。頼み方を変えるほど揺れは減るが、0になったのは対応表を渡した回だけだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="504"/>
+<text class="t-strong" x="18" y="26">同じ店・同じ用途の行が、月をまたいで違う費目に入った数</text>
+<text class="t-sm" x="18" y="45">架空の領収書メモを3か月ぶん・材料2本（表形式と走り書き）作り、3か月とも1文字も同じで出る行を5件ずつ仕込んだ。</text>
+<text class="t-sm" x="18" y="64">1つの頼み方につき、材料2本 × 各2回 = 4系列。棒1本が1系列ぶんで、長いほど月ごとにばらけている。</text>
+<text class="t-xs" x="298" y="100">棒の長さ＝5件の定点のうち、3か月そろわなかった件数（短いほうがよい）</text>
+<text class="t" x="18" y="136">そのまま「費目ごとに分けて」</text>
+<rect class="bar-old" x="298" y="112" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="112" width="168.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="122">3/5</text>
+<rect class="bar-old" x="298" y="127" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="127" width="168.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="137">3/5</text>
+<rect class="bar-old" x="298" y="142" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="142" width="168.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="152">3/5</text>
+<rect class="bar-old" x="298" y="157" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="157" width="112.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="167">2/5</text>
+<text class="t-accent" x="618.0" y="146">のべ 11/20</text>
+<text class="t" x="18" y="216">＋費目の一覧9つを固定・受け皿つき</text>
+<rect class="bar-old" x="298" y="192" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="192" width="168.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="202">3/5</text>
+<rect class="bar-old" x="298" y="207" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="207" width="56.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="217">1/5</text>
+<rect class="bar-old" x="298" y="222" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="222" width="56.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="232">1/5</text>
+<rect class="bar-old" x="298" y="237" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="247">0/5</text>
+<text class="t-accent" x="618.0" y="226">のべ 5/20</text>
+<text class="t" x="18" y="296">＋「毎月かならず同じ費目に」</text>
+<rect class="bar-old" x="298" y="272" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="282">0/5</text>
+<rect class="bar-old" x="298" y="287" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="287" width="56.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="297">1/5</text>
+<rect class="bar-old" x="298" y="302" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="312">0/5</text>
+<rect class="bar-old" x="298" y="317" width="280.0" height="11" rx="2"/>
+<rect class="bar-new" x="298" y="317" width="112.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="327">2/5</text>
+<text class="t-accent" x="618.0" y="306">のべ 3/20</text>
+<text class="t" x="18" y="376">＋こちらが持つ店名／メモ／費目の対応表</text>
+<rect class="bar-old" x="298" y="352" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="362">0/5</text>
+<rect class="bar-old" x="298" y="367" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="377">0/5</text>
+<rect class="bar-old" x="298" y="382" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="392">0/5</text>
+<rect class="bar-old" x="298" y="397" width="280.0" height="11" rx="2"/>
+<text class="t-xs" x="586.0" y="407">0/5</text>
+<text class="t-accent" x="618.0" y="386">のべ 0/20</text>
+<text class="t-bad" x="18" y="438">※ そのまま頼んだ12回では、費目の名前そのものが毎月作り直された（3か月ぶんでのべ18〜20種、3か月とも出たのは2〜4種）。</text>
+<text class="t-good" x="18" y="460">※ 対応表を渡して「あなたが選び直さないでください」と書いた12回だけが、4系列とも 0/5 だった。</text>
+<text class="t-xs" x="18" y="482">架空データでの実測（全56回）。生の返りは docs/evidence/ に置いてある。</text>
+</svg>

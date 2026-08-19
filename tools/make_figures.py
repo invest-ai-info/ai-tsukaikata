@@ -7365,6 +7365,193 @@ def month_boundary_where_rows_land_chart() -> None:
     )
 
 
+
+def receipt_category_drift_by_ask_chart() -> None:
+    """4つの頼み方で、3か月とも同じ費目に入らなかった定点の数を並べる。
+
+    実測（2026-08-19）。定点＝「店名＋メモ」が3か月とも1文字も同じ行で、材料ごとに5件。
+    1つの頼み方につき、材料2本 × 各2回 ＝ 4系列。棒1本が1系列ぶん（最大5件）。
+    値はすべて check.py／summary.py が出したもの。
+    """
+    rows = [
+        ("そのまま「費目ごとに分けて」", [3, 3, 3, 2], 11),
+        ("＋費目の一覧9つを固定・受け皿つき", [3, 1, 1, 0], 5),
+        ("＋「毎月かならず同じ費目に」", [0, 1, 0, 2], 3),
+        ("＋こちらが持つ店名／メモ／費目の対応表", [0, 0, 0, 0], 0),
+    ]
+    label_x, label_w = 18, 268
+    bar_x = label_x + label_w + 12
+    unit = 56.0                    # 1件あたりの幅（最大5件＝280px）
+    bar_h, bar_gap = 11, 4
+    row_gap = 20
+    top = 112
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ店・同じ用途の行が、月をまたいで違う費目に入った数</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の領収書メモを3か月ぶん・材料2本（表形式と走り書き）作り、"
+        "3か月とも1文字も同じで出る行を5件ずつ仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1つの頼み方につき、材料2本 × 各2回 = 4系列。棒1本が1系列ぶんで、"
+        "長いほど月ごとにばらけている。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "棒の長さ＝5件の定点のうち、3か月そろわなかった件数（短いほうがよい）</text>\n",
+    ]
+
+    y = top
+    for label, series, total in rows:
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + 24}">{_esc(label)}</text>\n'
+        )
+        for i, v in enumerate(series):
+            by = y + i * (bar_h + bar_gap)
+            parts.append(
+                f'<rect class="bar-old" x="{bar_x}" y="{by}" '
+                f'width="{5 * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            if v:
+                parts.append(
+                    f'<rect class="bar-new" x="{bar_x}" y="{by}" '
+                    f'width="{v * unit:.1f}" height="{bar_h}" rx="2"/>\n'
+                )
+            parts.append(
+                f'<text class="t-xs" x="{bar_x + 5 * unit + 8:.1f}" '
+                f'y="{by + bar_h - 1}">{v}/5</text>\n'
+            )
+        parts.append(
+            f'<text class="t-accent" x="{bar_x + 5 * unit + 40}" '
+            f'y="{y + 2 * (bar_h + bar_gap) + 4}">のべ {total}/20</text>\n'
+        )
+        y += 4 * (bar_h + bar_gap) + row_gap
+
+    notes = [
+        ("t-bad", "※ そのまま頼んだ12回では、費目の名前そのものが毎月作り直された"
+                  "（3か月ぶんでのべ18〜20種、3か月とも出たのは2〜4種）。"),
+        ("t-good", "※ 対応表を渡して「あなたが選び直さないでください」と書いた12回だけが、"
+                   "4系列とも 0/5 だった。"),
+        ("t-xs", "架空データでの実測（全56回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "4通りの頼み方で、同じ店・同じ用途の行が月をまたいで違う費目に入った数を並べた"
+        "横棒グラフ。1つの頼み方につき4系列ぶんの棒があり、棒1本の最大は5件。"
+        "そのまま費目ごとに分けてと頼んだ4系列は3件・3件・3件・2件で、のべ20件中11件。"
+        "費目の一覧9つを固定して受け皿を付けた4系列は3件・1件・1件・0件で、のべ5件。"
+        "そこに毎月かならず同じ費目にという一文を足した4系列は0件・1件・0件・2件で、のべ3件。"
+        "こちらが持つ店名とメモと費目の対応表を渡した4系列は4系列とも0件で、のべ0件。"
+        "頼み方を変えるほど揺れは減るが、0になったのは対応表を渡した回だけだった。"
+    )
+    (OUT / "receipt-category-drift-by-ask.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def receipt_inside_or_outside_material_chart() -> None:
+    """費目が材料の中で決まる行と、決まらない行を、定点10件ぶん並べる。
+
+    実測（2026-08-19）。○の数＝2試行のうち、3か月とも同じ費目に入った試行の数。
+    値は check.py が出したもの（材料2本 × 定点5件 ＝ 10行 × 頼み方4通り）。
+    """
+    rows_a = [
+        ("東京電力エナジーパートナー／電気料金", True, [2, 2, 2, 2]),
+        ("東京メトロ 新宿駅／ICカードチャージ", True, [2, 1, 1, 2]),
+        ("セブン-イレブン 北口店／コピー代 20枚", False, [0, 1, 2, 2]),
+        ("丸善ジュンク堂書店／文庫本2冊", False, [0, 2, 2, 2]),
+        ("マツモトキヨシ 中央店／のど飴とマスク", False, [0, 0, 2, 2]),
+    ]
+    rows_b = [
+        ("ガス／都市ガス 引き落とし", True, [2, 2, 2, 2]),
+        ("スイカ／チャージ", True, [2, 2, 2, 2]),
+        ("ダイソー／収納ケースとペン", False, [0, 2, 2, 2]),
+        ("イオン／子どもの上履き", False, [1, 2, 1, 2]),
+        ("スタバ／ノートPC広げて作業", False, [0, 1, 1, 2]),
+    ]
+    label_x, label_w = 18, 288
+    col_x = [label_x + label_w + 42 + i * 84 for i in range(4)]
+    col_names = [["そのまま"], ["一覧を", "固定"], ["＋毎月", "同じに"], ["＋対応表"]]
+    row_h = 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "そろうかどうかは、費目が「メモの中で決まるか」で分かれた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "3か月とも1文字も同じ文字列で出てくる行を、材料2本に5件ずつ仕込んだ。"
+        "◆の数＝2回のうち、3か月とも同じ費目に入った回の数。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "青い見出しの2行は、メモを読めば費目が決まる行。黒い3行は、"
+        "決めるのが自分しかいない行。</text>\n",
+    ]
+
+    head_y = 96
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{head_y + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = 132
+    for title, rows in (("材料A ＝ 家計簿アプリの書き出し（表形式）", rows_a),
+                        ("材料B ＝ 手帳の走り書き", rows_b)):
+        parts.append(f'<text class="t-accent" x="{label_x}" y="{y}">{_esc(title)}</text>\n')
+        y += 8
+        for label, obvious, vals in rows:
+            ty = y + 18
+            cls = "t-accent" if obvious else "t"
+            parts.append(
+                f'<text class="{cls}" x="{label_x}" y="{ty}">{_esc(label)}</text>\n'
+            )
+            for cx, v in zip(col_x, vals):
+                box = "box-good" if v == 2 else "box-bad"
+                mark = {2: "◆◆", 1: "◆－", 0: "－－"}[v]
+                mcls = "t-good" if v == 2 else "t-bad"
+                parts.append(
+                    f'<rect class="{box}" x="{cx - 26}" y="{ty - 14}" '
+                    f'width="52" height="19" rx="4"/>\n'
+                )
+                parts.append(
+                    f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                    f'text-anchor="middle">{mark}</text>\n'
+                )
+            y += row_h
+        y += 14
+
+    notes = [
+        ("t-good", "※ 青い4行（電気・ガス・交通系IC）は、そのまま頼んだだけで"
+                   "のべ8回とも3か月そろった。答えがメモの中にあるため。"),
+        ("t-bad", "※ 黒い6行は、そのまま頼むと のべ12回中11回がずれた。コピー代を雑費に"),
+        ("t-bad", "　 入れるか事務用品に入れるかは、メモのどこにも書いていない。"),
+        ("t-xs", "架空データでの実測（全56回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 4
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y
+    alt = (
+        "3か月とも同じ文字列で出てくる10件の行が、4通りの頼み方でどれだけ"
+        "月をまたいで同じ費目に入ったかを並べた表。ひとつの枠の◆の数が、"
+        "2回のうち3か月ともそろった回の数を表す。"
+        "電気料金・ガス・交通系ICのチャージという、メモを読めば費目が決まる4行は、"
+        "そのまま頼んだ回でも8回中8回そろった。"
+        "コピー代・文庫本・のど飴とマスク・収納ケース・子どもの上履き・"
+        "カフェでの作業という6行は、そのまま頼むと12回中11回がずれた。"
+        "費目の一覧を固定すると多くがそろいはじめ、"
+        "こちらが対応表を渡した列では10行すべてが2回とも3か月そろっている。"
+        "そろうかどうかを分けたのは、費目がメモの中で決まるか、"
+        "決めるのが自分しかいないかだった。"
+    )
+    (OUT / "receipt-inside-or-outside-material.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
 def month_boundary_two_runs_chart() -> None:
     """出す形を固定して2回ずつ走らせたときの、またぎ欄の件数と合計。
 
@@ -7542,4 +7729,6 @@ if __name__ == "__main__":
     month_boundary_two_runs_chart()
     brief_asked_side_only_chart()
     first_client_where_minutes_come_from_chart()
+    receipt_category_drift_by_ask_chart()
+    receipt_inside_or_outside_material_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
