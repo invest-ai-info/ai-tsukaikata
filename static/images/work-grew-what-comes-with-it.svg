@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="447" viewBox="0 0 720 447" role="img" aria-label="副業の往復メール12通から、自分がやることになっている作業を拾わせたときの結果を、頼み方6通りで並べた表。架空の案件2本を作り、1つの頼み方につき材料2本かける各2回で4回ずつ通した。左の列は、相手が希望を書いただけの作業が「やること」の欄に入ってしまった件数で、真値は0。中の列は、金額や報酬の語が出た回数。右の列は、交渉やおすすめが出た回数。そのままやることを全部挙げてと頼んだ4回は、左が0回、金額が4回、交渉が4回。相手の希望だけのものは入れないでと足した4回は、左が0回、金額が3回、交渉が4回。私が決めます、金額の話は書かないでと足した4回は、3つとも0回。4つに分けさせた4回も、3つとも0回。4つに分けて禁止も足した4回も、3つとも0回。保存版の4回も、3つとも0回。つまり拾い分けそのものは24回とも崩れず、崩れるかわりに、材料に1文字も書かれていない金額や交渉の話が、そのまま頼んだときだけ付いてきた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="447"/>
+<text class="t-strong" x="18" y="26">拾い分けは崩れない。崩れないかわりに、頼んでいない交渉の話が付いてくる</text>
+<text class="t-sm" x="18" y="45">架空の副業案件の往復メール12通を2本作り、自分が承諾した4件・相手の希望だけの3件・断った2件・発注書のぶん3件を仕込んだ。</text>
+<text class="t-sm" x="18" y="64">1つの頼み方につき、材料2本 × 各2回 ＝ 4回。左の列は事故の件数で、真値は0。</text>
+<text class="t-sm" x="18" y="83">※ 材料の中に、金額・報酬・単価の記載は1文字も無い。</text>
+<text class="t-xs" x="360" y="100" text-anchor="middle">相手の希望が</text>
+<text class="t-xs" x="360" y="113" text-anchor="middle">やること欄に入った</text>
+<text class="t-xs" x="494" y="100" text-anchor="middle">金額の語が</text>
+<text class="t-xs" x="494" y="113" text-anchor="middle">出た回</text>
+<text class="t-xs" x="622" y="100" text-anchor="middle">交渉・おすすめが</text>
+<text class="t-xs" x="622" y="113" text-anchor="middle">出た回</text>
+<text class="t" x="18" y="144">そのまま「やることを全部挙げて」</text>
+<rect class="box-good" x="334" y="130" width="52" height="19" rx="4"/>
+<text class="t-good" x="360" y="144" text-anchor="middle">0 / 4</text>
+<rect class="box-bad" x="468" y="130" width="52" height="19" rx="4"/>
+<text class="t-bad" x="494" y="144" text-anchor="middle">4 / 4</text>
+<rect class="box-bad" x="596" y="130" width="52" height="19" rx="4"/>
+<text class="t-bad" x="622" y="144" text-anchor="middle">4 / 4</text>
+<text class="t" x="18" y="178">＋「相手の希望だけのものは入れないで」</text>
+<rect class="box-good" x="334" y="164" width="52" height="19" rx="4"/>
+<text class="t-good" x="360" y="178" text-anchor="middle">0 / 4</text>
+<rect class="box-bad" x="468" y="164" width="52" height="19" rx="4"/>
+<text class="t-bad" x="494" y="178" text-anchor="middle">3 / 4</text>
+<rect class="box-bad" x="596" y="164" width="52" height="19" rx="4"/>
+<text class="t-bad" x="622" y="178" text-anchor="middle">4 / 4</text>
+<text class="t" x="18" y="212">＋「私が決めます。金額の話は書かないで」</text>
+<rect class="box-good" x="334" y="198" width="52" height="19" rx="4"/>
+<text class="t-good" x="360" y="212" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="468" y="198" width="52" height="19" rx="4"/>
+<text class="t-good" x="494" y="212" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="596" y="198" width="52" height="19" rx="4"/>
+<text class="t-good" x="622" y="212" text-anchor="middle">0 / 4</text>
+<text class="t" x="18" y="246">4つに分けさせる（判断はしないで）</text>
+<rect class="box-good" x="334" y="232" width="52" height="19" rx="4"/>
+<text class="t-good" x="360" y="246" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="468" y="232" width="52" height="19" rx="4"/>
+<text class="t-good" x="494" y="246" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="596" y="232" width="52" height="19" rx="4"/>
+<text class="t-good" x="622" y="246" text-anchor="middle">0 / 4</text>
+<text class="t" x="18" y="280">4つに分ける＋上の禁止も足す</text>
+<rect class="box-good" x="334" y="266" width="52" height="19" rx="4"/>
+<text class="t-good" x="360" y="280" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="468" y="266" width="52" height="19" rx="4"/>
+<text class="t-good" x="494" y="280" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="596" y="266" width="52" height="19" rx="4"/>
+<text class="t-good" x="622" y="280" text-anchor="middle">0 / 4</text>
+<text class="t" x="18" y="314">保存版（4見出し以外は書かない・引用つき）</text>
+<rect class="box-good" x="334" y="300" width="52" height="19" rx="4"/>
+<text class="t-good" x="360" y="314" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="468" y="300" width="52" height="19" rx="4"/>
+<text class="t-good" x="494" y="314" text-anchor="middle">0 / 4</text>
+<rect class="box-good" x="596" y="300" width="52" height="19" rx="4"/>
+<text class="t-good" x="622" y="314" text-anchor="middle">0 / 4</text>
+<text class="t-good" x="18" y="342">※ 左の列は24回とも0。相手が希望を書いただけのものが「やること」に入った回は0回だった。</text>
+<text class="t-bad" x="18" y="363">※ 上の2行では「報酬を確認したほうがよい」「再交渉を」が付く。材料に金額は1文字も無い。</text>
+<text class="t-bad" x="18" y="384">　 1回は「作業が5点増えている」と書いて、その直後に4点しか並べていなかった。</text>
+<text class="t-good" x="18" y="405">※ 4つに分ける形にすると、禁止を書かなくても金額も交渉も0回になった。</text>
+<text class="t-xs" x="18" y="426">架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

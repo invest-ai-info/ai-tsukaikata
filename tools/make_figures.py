@@ -7814,6 +7814,97 @@ def wrong_client_two_failures_chart() -> None:
     )
 
 
+
+def work_grew_what_comes_with_it_chart() -> None:
+    """往復メールから「増えた作業」を拾わせたとき、何が崩れて何が付いてくるかを頼み方6通りで並べる。
+
+    実測（2026-08-19・架空の往復メール12通を2本、1つの頼み方につき材料2本×各2回＝4回、全24回）。
+    値は check.py の出力。左は事故の件数（真値0）、中と右は「頼んでいないものが付いた回数」。
+    """
+    rows = [
+        ("そのまま「やることを全部挙げて」", 0, 4, 4),
+        ("＋「相手の希望だけのものは入れないで」", 0, 3, 4),
+        ("＋「私が決めます。金額の話は書かないで」", 0, 0, 0),
+        ("4つに分けさせる（判断はしないで）", 0, 0, 0),
+        ("4つに分ける＋上の禁止も足す", 0, 0, 0),
+        ("保存版（4見出し以外は書かない・引用つき）", 0, 0, 0),
+    ]
+    label_x, label_w = 18, 268
+    col_x = [label_x + label_w + 74, label_x + label_w + 208, label_x + label_w + 336]
+    col_names = [
+        ["相手の希望が", "やること欄に入った"],
+        ["金額の語が", "出た回"],
+        ["交渉・おすすめが", "出た回"],
+    ]
+    row_h = 34
+    top = 126
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "拾い分けは崩れない。崩れないかわりに、頼んでいない交渉の話が付いてくる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の副業案件の往復メール12通を2本作り、"
+        "自分が承諾した4件・相手の希望だけの3件・断った2件・発注書のぶん3件を仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1つの頼み方につき、材料2本 × 各2回 ＝ 4回。左の列は事故の件数で、真値は0。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "※ 材料の中に、金額・報酬・単価の記載は1文字も無い。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 26 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, wrong, money, advice in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for cx, v in zip(col_x, (wrong, money, advice)):
+            box = "box-good" if v == 0 else "box-bad"
+            mcls = "t-good" if v == 0 else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 26}" y="{ty - 14}" '
+                f'width="52" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{v} / 4</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 左の列は24回とも0。相手が希望を書いただけのものが「やること」に入った回は0回だった。"),
+        ("t-bad", "※ 上の2行では「報酬を確認したほうがよい」「再交渉を」が付く。材料に金額は1文字も無い。"),
+        ("t-bad", "　 1回は「作業が5点増えている」と書いて、その直後に4点しか並べていなかった。"),
+        ("t-good", "※ 4つに分ける形にすると、禁止を書かなくても金額も交渉も0回になった。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "副業の往復メール12通から、自分がやることになっている作業を拾わせたときの結果を、"
+        "頼み方6通りで並べた表。架空の案件2本を作り、1つの頼み方につき材料2本かける各2回で4回ずつ通した。"
+        "左の列は、相手が希望を書いただけの作業が「やること」の欄に入ってしまった件数で、真値は0。"
+        "中の列は、金額や報酬の語が出た回数。右の列は、交渉やおすすめが出た回数。"
+        "そのままやることを全部挙げてと頼んだ4回は、左が0回、金額が4回、交渉が4回。"
+        "相手の希望だけのものは入れないでと足した4回は、左が0回、金額が3回、交渉が4回。"
+        "私が決めます、金額の話は書かないでと足した4回は、3つとも0回。"
+        "4つに分けさせた4回も、3つとも0回。4つに分けて禁止も足した4回も、3つとも0回。"
+        "保存版の4回も、3つとも0回。"
+        "つまり拾い分けそのものは24回とも崩れず、崩れるかわりに、"
+        "材料に1文字も書かれていない金額や交渉の話が、そのまま頼んだときだけ付いてきた。"
+    )
+    (OUT / "work-grew-what-comes-with-it.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def queue_blocked_row_where_it_goes_chart() -> None:
     """毎日1件ずつ回す待ち行列で、「処理できない行」がどこへ行ったかを頼み方4通りで並べる。
 
@@ -8159,4 +8250,5 @@ if __name__ == "__main__":
     queue_blocked_row_where_it_goes_chart()
     queue_what_never_broke_chart()
     wrong_client_two_failures_chart()
+    work_grew_what_comes_with_it_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
