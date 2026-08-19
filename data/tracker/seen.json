@@ -13,7 +13,7 @@
     "claude-code": "2026-08-18T20:38:54+00:00",
     "deepmind-blog": "2026-08-13T17:04:18+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-08-17T08:00:00+00:00",
+    "google-ai-blog": "2026-08-19T19:00:00+00:00",
     "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-19T09:29:00+00:00",
@@ -72,6 +72,17 @@
       "uid": "953f20cfa9ff8e7f",
       "url": "https://openai.com/index/our-commitment-to-zero-data-retention",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-19T19:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "an illustrated image with icons and phrasing like \"Add Notebook\" and \"Ask Google\"",
+      "title": "5 new ways to level up your learning with Search",
+      "uid": "8509d6e94064675a",
+      "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -516,6 +527,7 @@
     "84a41b4e152051ce": "2026-08-14T00:01:18.717033+00:00",
     "84df6922381b5613": "2026-08-14T08:39:06.340012+00:00",
     "84ed04656966063c": "2026-08-19T07:08:12.848731+00:00",
+    "8509d6e94064675a": "2026-08-19T19:42:21.534279+00:00",
     "851445250326a908": "2026-08-01T12:16:42.309603+00:00",
     "85195a5aa5f182c0": "2026-08-14T06:44:28.601215+00:00",
     "853efa6073abd1f7": "2026-08-01T12:16:42.309603+00:00",
