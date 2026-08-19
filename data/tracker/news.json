@@ -3115,18 +3115,6 @@
       "uid": "81c406d631617721",
       "url": "https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Qwen 新モデル",
-      "published": "2026-05-21T15:21:01+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productiv…",
-      "title": "qwen/qwen3.7-max",
-      "uid": "98b23bca7b3c51b6",
-      "url": "https://openrouter.ai/qwen/qwen3.7-max",
-      "vendor": "Alibaba Qwen"
     }
   ]
 }
