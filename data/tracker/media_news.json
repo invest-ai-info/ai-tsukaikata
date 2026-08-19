@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T23:40:28.318168+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIモデルの利用料金の低下が、かえってAIの総コストを押し上げている。Gartnerはワークフロー1件当たりのAI推論コストが2028年までに5倍以上に上昇すると予測する。同社が「推論のパラドックス」と呼ぶ、この逆説の中身とは。また、AIコストが上昇する中でROIを確保するための方策は。",
+      "title": "モデルの利用料金は安くなっているのに、AIの総コスト上昇　「パラドクス」の背景を解説",
+      "uid": "c59f19ccddb3a1ab",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/20/news022.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-19T23:40:28.318168+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米AnthropicのAIモデル「Claude Mythos 5」をはじめとした高度なAIの登場により、サイバーセキュリティの在り方に注目が集まっている。企業に求められる対応を解説する。",
+      "title": "高度なAIのサイバー攻撃、どう対策？　企業が知るべき「スピード格差」の埋め方",
+      "uid": "b08c187708b668f4",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000584/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-19T23:40:28.318168+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-19T22:58:36+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは米国の新学期に合わせ、大学生向けに「Google AI Plus」などを12カ月無料で提供するキャンペーンを発表した。あわせてGeminiアプリに学生向けハブを新設し、授業資料から学習プランを生成する学習ノートブックや、3Dモデルの表示、Gemini LiveでのDeep Researchなどの新機能の提供を開始した。",
+      "title": "Google、大学生向けに「Google AI Plus」を1年間無料提供　「Gemini」アプリに学生向け新機能も",
+      "uid": "e2c40e9d5503e560",
+      "url": "https://www.itmedia.co.jp/news/article/2608/20/2000000634/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-19T22:44:40.365901+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "d5c75e7e7eafb282",
       "url": "https://ai.watch.impress.co.jp/docs/news/2130642.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-08-12T00:39:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Metaは、AIエージェント向けに特化して開発した最新モデル「Muse Glimmer」を公開した。",
-      "title": "Meta、ノートPCで動くAIエージェント向け新モデル「Muse Glimmer」を公開",
-      "uid": "2122bda6e186d2f8",
-      "url": "https://japan.cnet.com/article/35251497/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-11T23:46:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Anthropicは今週、Claudeが生成するテキストに、AI生成物だと分かるよう電子透かしを入れると発表した。",
-      "title": "Claudeが生成した文章に「電子透かし」、全世界で導入へ",
-      "uid": "afc79ff055e1a5cf",
-      "url": "https://japan.cnet.com/article/35251494/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-11T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "TWOSTONE＆SonsがBtoBの比較検討・発注担当者を対象とした意識調査結果を発表した。約9割がコンテンツに「AIっぽさ」を感じた経験があり、その後問い合わせや資料請求を取りやめたと回答する割合も示された。",
-      "title": "「AI生成コンテンツ、実は嫌いではない」　だが「客の半分が去る」本当の理由",
-      "uid": "63917da8a0b31995",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/12/news040.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
