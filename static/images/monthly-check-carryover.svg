@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="540" viewBox="0 0 720 540" role="img" aria-label="毎月の表の点検で、前月の指摘を一緒に渡すことと、返す形を決めることが、新しい異常の検出に効くかを頼み方6通りで並べた表。架空の月次表を2か月ぶん、2本作った。7月版に異常を5件仕込み、8月版では3件が直り2件が残り、7月の指摘に出てこない種類の異常を4件足した。8月に指摘すべきは6件で、セルの位置まで真値が決まる。1つの頼み方につき材料2本かける各2回で4回ずつ、全部で24回通した。前月の指摘を渡さず6種類の指示文だけで頼んだ4回は、4回とも6件中6件を指摘した。前月の指摘5件をそのまま貼った4回も4回とも6件中6件。前回の指摘は答えではありませんと足した4回も4回とも6件中6件だった。つまり前月の指摘を渡しても新しい種類の異常は見えなくならなかった。ところが、前月の指摘を渡したうえで毎月この形で返してくださいと返す形まで決めた4回だけは、4回とも6件中5件にとどまった。落ちたのは4回とも同じ種類で、ほかの異常と結び付かない足し算だけの小計のズレである。材料Aでは総務部の小計が5000円多い件、材料Bでは新宿店の小計が7000円多い件だった。この4回は代わりに、見つけた異常から派生した小計のほうを挙げていた。つまり気づいた異常の周りしか足し直していない。足し直した値と表の値を並べて書いてくださいと足した4回は、その1件も含めて4回とも6件中6件に戻った。来月そのまま貼れる形に短くしてくださいと足した4回も4回とも6件中6件だった。また、直った3件をまだありますと誤って書いた回は24回とも0件。前月の指摘を渡した12回は、7月の5件が直ったか残ったかの仕分けも12回とも5件中5件が真値と一致した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="540"/>
+<text class="t-strong" x="18" y="26">落ちたのは「前月の指摘を渡したから」ではなく「返す形を短く決めたから」</text>
+<text class="t-sm" x="18" y="45">架空の月次表を2か月ぶん・2本作った。7月に異常5件（桁2・空欄2・符号1）。8月は3件が直り、2件が残り、</text>
+<text class="t-sm" x="18" y="64">7月の指摘に出てこない種類の異常を4件（単位の混ざり・行の重複・小計の不一致・総計の不一致）足した。</text>
+<text class="t-sm" x="18" y="83">→ 8月に指摘すべきは6件。セルの位置まで真値が決まる。1つの頼み方につき4回、全24回。</text>
+<text class="t-xs" x="410" y="104" text-anchor="middle">8月の6件のうち</text>
+<text class="t-xs" x="410" y="117" text-anchor="middle">指摘した数（4回とも）</text>
+<text class="t-xs" x="586" y="104" text-anchor="middle">7月の5件の仕分け</text>
+<text class="t-xs" x="586" y="117" text-anchor="middle">が真値と一致</text>
+<text class="t" x="18" y="148">前月の指摘を渡さない（6種類の指示文だけ）</text>
+<rect class="box-good" x="336" y="134" width="148" height="19" rx="4"/>
+<text class="t-good" x="410" y="148" text-anchor="middle">4回とも 6/6</text>
+<line class="line" x1="578" y1="143" x2="594" y2="143"/>
+<text class="t-xs" x="586" y="161" text-anchor="middle">（渡していないので判定なし）</text>
+<text class="t" x="18" y="186">＋前月の指摘5件をそのまま貼る</text>
+<rect class="box-good" x="336" y="172" width="148" height="19" rx="4"/>
+<text class="t-good" x="410" y="186" text-anchor="middle">4回とも 6/6</text>
+<rect class="box-good" x="524" y="172" width="124" height="19" rx="4"/>
+<text class="t-good" x="586" y="186" text-anchor="middle">4回とも 5/5</text>
+<text class="t" x="18" y="224">＋「前回の指摘は答えではありません」</text>
+<rect class="box-good" x="336" y="210" width="148" height="19" rx="4"/>
+<text class="t-good" x="410" y="224" text-anchor="middle">4回とも 6/6</text>
+<rect class="box-good" x="524" y="210" width="124" height="19" rx="4"/>
+<text class="t-good" x="586" y="224" text-anchor="middle">4回とも 5/5</text>
+<text class="t-bad" x="18" y="262">＋「毎月この形で返して」と返す形まで決める</text>
+<rect class="box-bad" x="336" y="248" width="148" height="19" rx="4"/>
+<text class="t-bad" x="410" y="262" text-anchor="middle">4回とも 5/6</text>
+<rect class="box-good" x="524" y="248" width="124" height="19" rx="4"/>
+<text class="t-good" x="586" y="262" text-anchor="middle">4回とも 5/5</text>
+<text class="t" x="18" y="300">＋「足し直した値と表の値を並べて」</text>
+<rect class="box-good" x="336" y="286" width="148" height="19" rx="4"/>
+<text class="t-good" x="410" y="300" text-anchor="middle">4回とも 6/6</text>
+<line class="line" x1="578" y1="295" x2="594" y2="295"/>
+<text class="t-xs" x="586" y="313" text-anchor="middle">（渡していないので判定なし）</text>
+<text class="t" x="18" y="338">＋「来月そのまま貼れる形に短く」</text>
+<rect class="box-good" x="336" y="324" width="148" height="19" rx="4"/>
+<text class="t-good" x="410" y="338" text-anchor="middle">4回とも 6/6</text>
+<line class="line" x1="578" y1="333" x2="594" y2="333"/>
+<text class="t-xs" x="586" y="351" text-anchor="middle">（渡していないので判定なし）</text>
+<text class="t-good" x="18" y="372">※ 前月の指摘を貼っても貼らなくても 6/6。新しい種類の異常は見えなくならなかった。</text>
+<text class="t-good" x="18" y="393">※ 直った3件を「まだあります」と書いた回は、24回とも0件。</text>
+<text class="t-good" x="18" y="414">※ 渡して増えるのは検出ではなく「直った3件／残った2件」の仕分け。12回とも 5/5。</text>
+<text class="t-bad" x="18" y="435">※ 返す形まで短く決めた4回だけ 5/6。落ちたのは4回とも同じ種類＝ほかの異常と</text>
+<text class="t-bad" x="18" y="456">　 結び付かない、足し算だけの小計のズレ（総務部 +5,000／新宿店 +7,000）。</text>
+<text class="t-bad" x="18" y="477">　 代わりに、見つけた異常から派生した小計を挙げていた＝周りしか足し直していない。</text>
+<text class="t-good" x="18" y="498">※ 「足し直した値と表の値を並べて」を足すと、その1件も4回とも戻った。</text>
+<text class="t-xs" x="18" y="519">架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

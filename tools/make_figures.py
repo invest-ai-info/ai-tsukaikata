@@ -8008,6 +8008,129 @@ def copy_ideas_that_pass_chart() -> None:
     )
 
 
+
+def monthly_check_carryover_chart() -> None:
+    """毎月の点検で、前月の指摘を渡す／返す形を決める、が検出に効くかを頼み方6通りで並べる。
+
+    実測（2026-08-19・架空の月次表を2か月ぶん×2本、1つの頼み方につき4回、全24回）。
+    8月に指摘すべきは6件（7月から残った2件＋7月の指摘に出てこない種類の新種4件）。
+    値は check.py の出力（当て方2通りの和集合）。座標は計算で出す。
+    """
+    rows = [
+        ("前月の指摘を渡さない（6種類の指示文だけ）", 6, None, False),
+        ("＋前月の指摘5件をそのまま貼る", 6, 5, False),
+        ("＋「前回の指摘は答えではありません」", 6, 5, False),
+        ("＋「毎月この形で返して」と返す形まで決める", 5, 5, True),
+        ("＋「足し直した値と表の値を並べて」", 6, None, False),
+        ("＋「来月そのまま貼れる形に短く」", 6, None, False),
+    ]
+    label_x, label_w = 18, 300
+    col_x = [label_x + label_w + 92, label_x + label_w + 268]
+    col_names = [
+        ["8月の6件のうち", "指摘した数（4回とも）"],
+        ["7月の5件の仕分け", "が真値と一致"],
+    ]
+    row_h = 38
+    top = 130
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "落ちたのは「前月の指摘を渡したから」ではなく「返す形を短く決めたから」</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の月次表を2か月ぶん・2本作った。7月に異常5件（桁2・空欄2・符号1）。"
+        "8月は3件が直り、2件が残り、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "7月の指摘に出てこない種類の異常を4件（単位の混ざり・行の重複・小計の不一致・総計の不一致）足した。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "→ 8月に指摘すべきは6件。セルの位置まで真値が決まる。1つの頼み方につき4回、全24回。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 26 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, found, sort_ok, bad in rows:
+        ty = y + 18
+        parts.append(
+            f'<text class="{"t-bad" if bad else "t"}" x="{label_x}" y="{ty}">'
+            f"{_esc(label)}</text>\n"
+        )
+        parts.append(
+            f'<rect class="{"box-bad" if bad else "box-good"}" x="{col_x[0] - 74}" '
+            f'y="{ty - 14}" width="148" height="19" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-bad" if bad else "t-good"}" x="{col_x[0]}" y="{ty}" '
+            f'text-anchor="middle">4回とも {found}/6</text>\n'
+        )
+        if sort_ok is None:
+            parts.append(
+                f'<line class="line" x1="{col_x[1] - 8}" y1="{ty - 5}" '
+                f'x2="{col_x[1] + 8}" y2="{ty - 5}"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{col_x[1]}" y="{ty + 13}" '
+                f'text-anchor="middle">（渡していないので判定なし）</text>\n'
+            )
+        else:
+            parts.append(
+                f'<rect class="box-good" x="{col_x[1] - 62}" y="{ty - 14}" '
+                f'width="124" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{col_x[1]}" y="{ty}" '
+                f'text-anchor="middle">4回とも {sort_ok}/5</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 前月の指摘を貼っても貼らなくても 6/6。新しい種類の異常は見えなくならなかった。"),
+        ("t-good", "※ 直った3件を「まだあります」と書いた回は、24回とも0件。"),
+        ("t-good", "※ 渡して増えるのは検出ではなく「直った3件／残った2件」の仕分け。12回とも 5/5。"),
+        ("t-bad", "※ 返す形まで短く決めた4回だけ 5/6。落ちたのは4回とも同じ種類＝ほかの異常と"),
+        ("t-bad", "　 結び付かない、足し算だけの小計のズレ（総務部 +5,000／新宿店 +7,000）。"),
+        ("t-bad", "　 代わりに、見つけた異常から派生した小計を挙げていた＝周りしか足し直していない。"),
+        ("t-good", "※ 「足し直した値と表の値を並べて」を足すと、その1件も4回とも戻った。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎月の表の点検で、前月の指摘を一緒に渡すことと、返す形を決めることが、"
+        "新しい異常の検出に効くかを頼み方6通りで並べた表。"
+        "架空の月次表を2か月ぶん、2本作った。"
+        "7月版に異常を5件仕込み、8月版では3件が直り2件が残り、"
+        "7月の指摘に出てこない種類の異常を4件足した。"
+        "8月に指摘すべきは6件で、セルの位置まで真値が決まる。"
+        "1つの頼み方につき材料2本かける各2回で4回ずつ、全部で24回通した。"
+        "前月の指摘を渡さず6種類の指示文だけで頼んだ4回は、4回とも6件中6件を指摘した。"
+        "前月の指摘5件をそのまま貼った4回も4回とも6件中6件。"
+        "前回の指摘は答えではありませんと足した4回も4回とも6件中6件だった。"
+        "つまり前月の指摘を渡しても新しい種類の異常は見えなくならなかった。"
+        "ところが、前月の指摘を渡したうえで毎月この形で返してくださいと返す形まで決めた4回だけは、"
+        "4回とも6件中5件にとどまった。"
+        "落ちたのは4回とも同じ種類で、ほかの異常と結び付かない足し算だけの小計のズレである。"
+        "材料Aでは総務部の小計が5000円多い件、材料Bでは新宿店の小計が7000円多い件だった。"
+        "この4回は代わりに、見つけた異常から派生した小計のほうを挙げていた。"
+        "つまり気づいた異常の周りしか足し直していない。"
+        "足し直した値と表の値を並べて書いてくださいと足した4回は、"
+        "その1件も含めて4回とも6件中6件に戻った。"
+        "来月そのまま貼れる形に短くしてくださいと足した4回も4回とも6件中6件だった。"
+        "また、直った3件をまだありますと誤って書いた回は24回とも0件。"
+        "前月の指摘を渡した12回は、7月の5件が直ったか残ったかの仕分けも12回とも5件中5件が真値と一致した。"
+    )
+    (OUT / "monthly-check-carryover.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 def queue_blocked_row_where_it_goes_chart() -> None:
     """毎日1件ずつ回す待ち行列で、「処理できない行」がどこへ行ったかを頼み方4通りで並べる。
 
@@ -8355,4 +8478,5 @@ if __name__ == "__main__":
     wrong_client_two_failures_chart()
     work_grew_what_comes_with_it_chart()
     copy_ideas_that_pass_chart()
+    monthly_check_carryover_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
