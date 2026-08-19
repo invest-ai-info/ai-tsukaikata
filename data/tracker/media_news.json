@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T10:47:48.925393+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "近年はChatGPTやGeminiといったチャットAIの利用が一般的になり、仕事や勉強などにAIを活用する人々も増えています。ところがアメリカのピュー研究所が2026年6月に行った調査では、18～29歳の若者の過半数がAIについて期待よりもむしろ懸念を抱いていることが浮き彫りになりました。 続きを読む...",
+      "title": "AIの利用拡大を懸念しているアメリカの若者が過半数を突破、AIにより仕事が奪われると考える人も増加している",
+      "uid": "5b41a576a16cb31d",
+      "url": "https://gigazine.net/news/20260819-young-americans-increasingly-wary-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T08:56:47.833795+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "1301c07e627806af",
       "url": "https://japan.cnet.com/article/35251472/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-10T06:53:30+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "AI modelは、テレビ朝日 コンテンツ編成局「AIクリエイティブスタジオ」とともに、映像を全編生成AIで制作したテレビコマーシャル（テレビCM）を共同制作した。",
-      "title": "AI model、テレビ朝日とテレビCMを生成AIで共同制作",
-      "uid": "2a967c53f940250a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132008.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
