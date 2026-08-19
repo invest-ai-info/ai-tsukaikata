@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T04:02:09.383121+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T03:56:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIはテスト中モデルで他社サーバーに攻撃を仕掛けてしまうセキュリティインシデントを起こしたり、開発中の次期主力モデルであるAstraをサイバーリスク重大に指定したりと高性能AIによるセキュリティ上の問題に相次いで直面しています。この状況の中、安全対策を強化するために開発中モデルの強化学習を一時停止していたことが明らかになりました。 続きを読む...",
+      "title": "OpenAIが「安全のためにAIの強化学習を2週間停止した」と自社の安全対策をアピール",
+      "uid": "bdd0f58be7fb3a9c",
+      "url": "https://gigazine.net/news/20260819-openai-pacing-model/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T04:02:09.383121+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T03:40:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "掲示板型ソーシャルニュースサイト「Reddit」は2026年7月の第2四半期決算発表会で、投稿をAIで動画やポッドキャストに変換して視聴できる「新しい動画Reddit体験」に取り組んでいると発表していました。この機能が8月17日からウェブブラウザで、18日からiOSとAndroidにも対応してテスト開始となりました。 続きを読む...",
+      "title": "Redditが投稿やコメントをAI音声で読み上げる動画をテスト中",
+      "uid": "1ded8cf1a23ad62a",
+      "url": "https://gigazine.net/news/20260819-reddit-ai-video/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-19T04:02:09.383121+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T03:24:16+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "マクニカは8月19日、Prophet Securityと代理店契約を締結し、国内初となるAIを活用した次世代SOCプラットフォーム「Prophet Agentic AI SOC Platform」（以下、Prophet AI）の提供を開始すると発表した。",
+      "title": "マクニカ、AIを活用した次世代SOCプラットフォーム「Prophet AI」",
+      "uid": "05c09eec96b71225",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133791.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T04:02:09.383121+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T03:14:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "SamsungがAnthropicのAIコーデイングツール「Claude Code」を導入し、一部の半導体設計・検証作業の期間を大幅に短縮したことが分かりました。 続きを読む...",
+      "title": "SamsungがClaude Codeを導入し「1カ月かかる設計を2日に短縮した」と報告",
+      "uid": "86cf8d60c93319f2",
+      "url": "https://gigazine.net/news/20260819-samsung-claude-code/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T03:12:45.748785+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2350,54 +2398,6 @@
       "title": "Geminiとの連携でGoogle マップの検索体験が広がる「マップに相談」",
       "uid": "2d1833cfc292d039",
       "url": "https://ai.watch.impress.co.jp/docs/news/2131533.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T04:33:52+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは8月7日、「実践Easy Music ローカルPCで動かす音楽生成AI完全ガイド」（著者：上野由紀）をインプレス NextPublishingより発行した。",
-      "title": "音楽生成AI「ACE-Step 1.5」の活用法を解説する実践ガイドブック インプレス NextPublishingより発行",
-      "uid": "8ea8947ebb0954d9",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131511.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T04:28:08+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、ChatGPTのPlusおよびProユーザーに向け、チャット機能のGPT-5.6 Solをアップデートした。また、無料ユーザーに向け、デフォルトモデルをGPT-5.6 Lunaにアップデートし、テキストチャットを無制限に利用できるように拡張した。",
-      "title": "ChatGPTのPlusおよびProユーザーに向けGPT-5.6 Solをアップデート 無料ユーザーにはGPT-5.6 Lunaを解放",
-      "uid": "f3117fd13788a27c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131509.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T03:46:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ソフトバンクは、「AGENTIC STAR」において、8月上旬から「LLM Gateway」機能の標準搭載を開始した。すでに導入済みの企業にも順次適用していく。",
-      "title": "ソフトバンク、「AGENTIC STAR」SaaS版に「LLM Gateway」機能を標準搭載",
-      "uid": "039fb76ad56525b0",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131486.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T03:31:03+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTデータ経営研究所とアラヤは8月、NTTデータ経営研究所の「人間情報データベース」と、アラヤの「Persona Lab（ペルソナラボ）」が開発するAIエージェント技術を組み合わせ、人間の心理・行動特性を再現する「AIパネル」に関する共同研究を開始した。",
-      "title": "NTTデータ経営研究所とアラヤが共同研究を開始 人間の心理・行動特性を再現する「AIパネル」",
-      "uid": "22d1721841b767bc",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131468.html",
       "vendor": "Impress AI Watch"
     }
   ]
