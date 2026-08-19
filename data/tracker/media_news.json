@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T05:48:17.932182+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-19T05:37:26+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Google Cloud傘下のサイバーセキュリティ企業Mandiantは、「Agentic Vulnerability Discovery Harness (AVDH)」のアーキテクチャ ブループリント（設計図、フレームワーク）を公開した。",
+      "title": "Google、48時間で100件以上の深刻なソフトウェア脆弱性を発見したエージェンティックAIのブループリントを公開",
+      "uid": "ec85df3d78d0fb75",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2133833.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-19T05:48:17.932182+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-19T05:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントに過去の経験を「記憶」として大量に与えても、必ずしも性能が高くなるわけではないことがIBM Researchの実験で示されました。AIモデルによっては、すべての記憶を渡すより必要な情報だけを選んだ方が高い性能を発揮するとのことです。 続きを読む...",
+      "title": "AIエージェントは「記憶」が多いほど賢くなるわけではない、IBM Researchが8モデルで検証",
+      "uid": "ebb49c6072c601b8",
+      "url": "https://gigazine.net/news/20260819-ai-agent-memory/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T04:54:01.800747+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2374,30 +2398,6 @@
       "title": "AI技術で企業のセキュリティを強化する「Akamai Workforce Protector」",
       "uid": "ff9c243edb0474fa",
       "url": "https://ai.watch.impress.co.jp/docs/news/2131713.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T09:29:02+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ジェーシービーとトレンドマイクロは8月6日、フィッシング詐欺やクレジットカード不正利用などの対策に向け両社の連携を強化し、JCBカード会員専用WEBサービス「MyJCB」のスマートフォンアプリで、トレンドマイクロの生成AIによる詐欺判定チェック機能「トレンドマイクロ 詐欺チェック」を常時アクセス・利用できるようにした。",
-      "title": "JCBとトレンドマイクロ、クレジットカード不正利用の対策を強化",
-      "uid": "14cd72798251cb59",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131673.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-07T08:28:56+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ElevenLabsは8月6日、新しい吹き替えAIモデル「Dubbing v2」をElevenAPI経由で提供開始した。「Dubbing v2」のUI版は5月28日より先行提供されていたが、今回のAPI公開により、開発者や企業が自社プロダクトやワークフローに吹き替え機能を直接組み込めるようになる。",
-      "title": "感情表現を忠実に再現する吹替えAIモデル「Dubbing v2」のAPI提供を開始",
-      "uid": "9d01e8e190b5d676",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131642.html",
       "vendor": "Impress AI Watch"
     }
   ]

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-19T05:48:17.932182+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-18T22:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions.",
+      "summary_ja": "ChatGPTの広告機能がヨーロッパで拡大\n31の市場に展開されます\n広告主はユーザーの意思決定時にアプローチ可",
+      "summary_source": "gemini",
+      "title": "ChatGPT Ads expands across Europe",
+      "uid": "47589f54860f380c",
+      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-18T20:42:26.846917+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -3087,20 +3101,6 @@
       "uid": "98b23bca7b3c51b6",
       "url": "https://openrouter.ai/qwen/qwen3.7-max",
       "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "PFN 技術ブログ",
-      "published": "2026-05-21T05:17:04+00:00",
-      "source_id": "pfn-blog",
-      "summary": "本記事は、アルバイトとして勤務されている澤田恵里さんによる寄稿です。 はじめに 本記事では、Optuna v4.8からv4.9 にかけて段階的に導入される GPSampler の並列化強化について紹介します。 GPSam […] 投稿 評価中の点を考慮したOptunaのGPSamplerの並列化強化 は Preferred Networks Tech Blog に最初に表示されました。",
-      "summary_ja": "「Optuna」のAIモデルの性能を向上\n「GPSampler」というモデルの処理を高速化\nバージョン4.8から4.9で段階的に導入される",
-      "summary_source": "gemini",
-      "title": "評価中の点を考慮したOptunaのGPSamplerの並列化強化",
-      "uid": "a73523e68eb3461f",
-      "url": "https://tech.preferred.jp/ja/blog/optuna-gp-sampler-parallelization/",
-      "vendor": "Preferred Networks"
     }
   ]
 }
