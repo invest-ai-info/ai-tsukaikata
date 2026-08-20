@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="470" viewBox="0 0 720 470" role="img" aria-label="納品の連絡メールをAIに作らせたときの結果を、頼み方6通りで並べた表。架空の発注書8条件と、そのうち5条件しか満たしていない架空の原稿を2組作り、1つの頼み方につき材料2本かける各2回で4回ずつ通した。満たしていない3条件は、どちらの材料でも字数の下限割れ、禁止語が1回出る、指定キーワードの回数不足の3つ。左の列は、相手に送る文面の中に入ってしまった事実と違う充足の断定の件数で、分母は3条件かける4回の12。右の列は、返りのどこかで違反を名指しした件数で、同じく分母は12。そのまま納品の連絡メールを書いてと頼んだ4回は、断定が12件中8件、名指しが12件中9件。同じ指示文をもう4回通した結果は、断定が7件、名指しが10件。同じ指示文で原稿だけ貼らなかった対照の4回は、断定が4件、名指しは0件。条件ごとの一覧を添えてと足した4回は、断定が2件、名指しは12件すべて。確かめた項目だけ書き、残りを受け皿に残させた4回は、断定が0件、名指しが11件。本文と確認欄を分ける保存版の4回は、断定が0件、名指しが7件。つまり検品そのものは効いていて、崩れるのは送る文面のほうだけだった。字数について満たしたと書いた4件は、4件とも数字が空欄のままで、そのうしろの範囲内という判定だけが埋まっていた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="470"/>
+<text class="t-strong" x="18" y="26">検品は効く。それでも、送る文面のほうには「満たしています」と書かれる</text>
+<text class="t-sm" x="18" y="45">架空の発注書8条件と、そのうち5条件しか満たしていない架空の原稿を2組（記事執筆・商品ページ）作って通した。</text>
+<text class="t-sm" x="18" y="64">満たしていない3条件は、どちらの材料でも字数の下限割れ・禁止語1回・指定キーワードの回数不足。</text>
+<text class="t-sm" x="18" y="83">1つの頼み方につき、材料2本 × 各2回 ＝ 4回。分母はどちらも 3条件 × 4回 ＝ 12。</text>
+<text class="t-sm" x="18" y="102">※ 3行目は対照＝原稿を貼らない回。見ていないので名指しは0件だが、断定のほうは入る。</text>
+<text class="t-xs" x="418" y="102" text-anchor="middle">送る文面に入った</text>
+<text class="t-xs" x="418" y="115" text-anchor="middle">事実と違う断定</text>
+<text class="t-xs" x="598" y="102" text-anchor="middle">返りのどこかで</text>
+<text class="t-xs" x="598" y="115" text-anchor="middle">違反を名指し</text>
+<text class="t" x="18" y="146">そのまま「納品の連絡メールを書いて」</text>
+<rect class="box-bad" x="381" y="132" width="74" height="19" rx="4"/>
+<text class="t-bad" x="418" y="146" text-anchor="middle">8 / 12</text>
+<rect class="box-quiet" x="561" y="132" width="74" height="19" rx="4"/>
+<text class="t" x="598" y="146" text-anchor="middle">9 / 12</text>
+<text class="t" x="18" y="180">同じ指示文を、もう4回</text>
+<rect class="box-bad" x="381" y="166" width="74" height="19" rx="4"/>
+<text class="t-bad" x="418" y="180" text-anchor="middle">7 / 12</text>
+<rect class="box-quiet" x="561" y="166" width="74" height="19" rx="4"/>
+<text class="t" x="598" y="180" text-anchor="middle">10 / 12</text>
+<text class="t" x="18" y="214">同じ指示文で、原稿だけ貼らない</text>
+<rect class="box-bad" x="381" y="200" width="74" height="19" rx="4"/>
+<text class="t-bad" x="418" y="214" text-anchor="middle">4 / 12</text>
+<rect class="box-quiet" x="561" y="200" width="74" height="19" rx="4"/>
+<text class="t" x="598" y="214" text-anchor="middle">0 / 12</text>
+<text class="t" x="18" y="248">＋「条件ごとの一覧を添えて」</text>
+<rect class="box-bad" x="381" y="234" width="74" height="19" rx="4"/>
+<text class="t-bad" x="418" y="248" text-anchor="middle">2 / 12</text>
+<rect class="box-quiet" x="561" y="234" width="74" height="19" rx="4"/>
+<text class="t" x="598" y="248" text-anchor="middle">12 / 12</text>
+<text class="t" x="18" y="282">＋確かめた項目だけ書く（受け皿つき）</text>
+<rect class="box-good" x="381" y="268" width="74" height="19" rx="4"/>
+<text class="t-good" x="418" y="282" text-anchor="middle">0 / 12</text>
+<rect class="box-quiet" x="561" y="268" width="74" height="19" rx="4"/>
+<text class="t" x="598" y="282" text-anchor="middle">11 / 12</text>
+<text class="t" x="18" y="316">保存版＝【本文】と【確認欄】を分ける</text>
+<rect class="box-good" x="381" y="302" width="74" height="19" rx="4"/>
+<text class="t-good" x="418" y="316" text-anchor="middle">0 / 12</text>
+<rect class="box-quiet" x="561" y="302" width="74" height="19" rx="4"/>
+<text class="t" x="598" y="316" text-anchor="middle">7 / 12</text>
+<text class="t-bad" x="18" y="344">※ 同じ返りの中で起きる。上の1行目と2行目は同じ指示文で、合わせて8回。</text>
+<text class="t-bad" x="18" y="365">　 自分で「満たしていません」と書いた条件を、文面では「満たしています」と書いた件数が11件。</text>
+<text class="t-bad" x="18" y="386">※ 字数について「満たした」と書いた4件は、4件とも数字が空欄のままだった。</text>
+<text class="t-bad" x="18" y="407">　 「〇〇〇〇字（1,900〜2,200字の範囲内）」＝穴が空くのは数字だけで、判定のほうは埋まっている。</text>
+<text class="t-good" x="18" y="428">※ 下の2行は、指摘を減らさずに断定だけを0にした。受け皿と、様式で分けた版。</text>
+<text class="t-xs" x="18" y="449">架空データでの実測（全28回）。生の返りと判定コードは docs/evidence/ に全文置いてある。</text>
+</svg>
