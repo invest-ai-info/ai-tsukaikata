@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T07:08:56.756357+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T06:36:17+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ヒビノグラフィックスは、サムスン電子の「空間再現ディスプレイ」と生成AI技術を組み合わせた、等身大・3次元・双方向対話型「AI松尾芭蕉プロトタイプ」を開発した。10月1日～15日まで、芭蕉の故郷である三重県伊賀市中央図書館で、一般公開を兼ねた実証実験を行なう。",
+      "title": "伊賀市の地域住民と育てる対話型の等身大「AI松尾芭蕉プロトタイプ」",
+      "uid": "59d80f0263556a53",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134141.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-20T04:55:18.164229+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2386,18 +2398,6 @@
       "title": "SpaceXAI、「Grok 4.6」を発表　総合指標で「GPT-5.6 Sol Max」に並ぶと謳う",
       "uid": "fe45dcba2903fb1f",
       "url": "https://www.itmedia.co.jp/news/article/2608/13/2000000520/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T20:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「AIを使わない選択自体がビジネスリスク」と断言するメルカリ。同社は2026年5月、「Claude Code」「Claude Cowork」の全社展開に踏み切った。だが、ローカルファイルの操作やOSコマンドまで実行できる強力なツールの配布は、ガバナンスの課題も伴う。全社のAI活用を支える同社の「仕組み」に迫る。",
-      "title": "メルカリが明かす「Claude Code全社展開」「シャドーAI対策」を支える仕組み",
-      "uid": "d2e883e8effe5e82",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/04/news002.html",
       "vendor": "ITmedia AI+"
     }
   ]
