@@ -4,6 +4,7 @@ description: 2026年8月13日に発表された Gemini 3.7 Flash について、
 category: tools
 scene: choose
 published: 2026-08-14
+checked: 2026-08-14
 tags: [Gemini, モデル比較, 料金, AI最新情報]
 ---
 
