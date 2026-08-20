@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-20T00:54:41+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed prompt caching for sessions using an LLM gateway or custom base URL Added a built-in \"Concise\" output style: Claude leads with results and skips preamble and narration, while doi…",
+      "title": "v2.1.237",
+      "uid": "fc62a13fa30b435b",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-19T22:44:40.365901+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",

@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T01:06:24+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "iFLYTEK JAPAN AI SOLUTIONSは、AIスマートノート「iFLYTEK AINOTE 2」のソフトウェアをアップデート（XFDXB311EH_R_2.4.2）し、機能追加を行なった。",
+      "title": "AIスマートノート「iFLYTEK AINOTE 2」、ソフト更新で使い勝手向上",
+      "uid": "b91510b89c37e7c1",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134083.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T00:39:01+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、APIデータの非保持設定（ZDR）を維持したまま、複数のやり取りを横断して悪用の兆候を検知する新機構「Private Safety Processing」を発表した。顧客データを自社インフラ外や暗号化で保護しつつ、活動シグナルのみでリスクを判定する。9月に展開を開始する予定。",
+      "title": "OpenAI、ZDRを維持したまま悪用検知へ　ログ保持を求めるAnthropicに対抗",
+      "uid": "ac66dd9b3f3f4486",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000638/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T00:37:15+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ZERO ZERO ROBOTICSは、手持ち撮影と空撮が行なえる「HOVERAir VERSA」を発表した。",
+      "title": "手持ち撮影と空撮が1台で行なえる「HOVERAir VERSA」",
+      "uid": "b47b9719d443b669",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134076.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T00:11:55+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは8月19日、BTSとコラボレーションし、Geminiアプリ上で4つの体験の提供を開始した。期間限定での提供となる。",
+      "title": "BTSがGeminiとコラボ、期間限定で4つの体験を提供",
+      "uid": "2639c16e7edd5b62",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134072.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T00:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "PTCは、CAD／PDMプラットフォーム「Onshape」において新機能「FeatureScript MCP Server」の提供を開始した。エンジニアが自然言語とAI（人工知能）を用いて、カスタムCAD機能を作成できるようにする。",
+      "title": "PTC、「Onshape」でMCP連携　自然言語でカスタムCAD機能の作成が可能に",
+      "uid": "45d96dca0bd80f19",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/20/news021.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T01:53:51.496322+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "日常生活では「買いものリスト」や「仕事のタスク」などのメモとして記録しておきたい事柄が大量に発生しますが、スマートフォンアプリなどを使って手動で記録するのは手間がかかります。2026年8月19日に登場した「SwitchBot AIマインドクリップ」は音声を録音してAIで情報整理できるデバイスで、会話内容や音声メモを録音しておくだけでAIが自動的に内容をまとめてタスクリストや日次レポートを作成して…",
+      "title": "音声録音＆AI分析で知識をため込んでタスク管理も可能な装着型デバイス「SwitchBot AIマインドクリップ」を使ってみたよレビュー",
+      "uid": "65228e1b0794e790",
+      "url": "https://gigazine.net/news/20260820-switchbot-ai-mindclip/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-19T23:40:28.318168+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2327,78 +2399,6 @@
       "uid": "4546e5b353b77e34",
       "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000508/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T05:47:36+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Botが業務アプリにサインインして人間の操作と同じ手順で画面を動かし、仕事を最後まで仕上げるという。",
-      "title": "24時間働く“AI同僚”「Grok Bot」公開　業務アプリにログインして操作、「仕事を任せられる」",
-      "uid": "dc115b72ac37b0e1",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/12/2000000505/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T04:53:41+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "プレビュー版だが「待ちきれずにMacBookを注文してしまったなら、キャンセルしていい。それくらい出来がいい」という。",
-      "title": "ChatGPTデスクトップアプリにLinux版　「お待たせ。MacBookはキャンセルしていいよ」",
-      "uid": "782988d082924ccf",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/12/2000000504/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T03:55:52+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NVIDIAが30Bのオープンモデル「Nemotron 3.5 Lightning」を公開。「OpenClaw」など常時稼働エージェント向けに設計し、「gpt-oss-120b」同等の性能を約4分の1の規模で実現するという。",
-      "title": "NVIDIAが30Bのオープンモデル公開　「OpenClaw」など常時稼働エージェント向けに設計",
-      "uid": "c1e4c880a4709c24",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/12/2000000503/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-12T03:36:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "LTXは、オープンウェイトの世界モデルの最新版「LTX-2.5」を公開した。",
-      "title": "最新のオープンウェイト世界モデル「LTX-2.5」公開、動画生成やロボット開発に",
-      "uid": "0ed4dae02dd28a02",
-      "url": "https://japan.cnet.com/article/35251508/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-12T03:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "TaTapは、AI検索とSNSの関係を生活者データで明らかにするため「AI検索時代の購買行動調査」の調査を行ない、その結果を公開した。",
-      "title": "AI利用者の57.2％が“AIきっかけ”で購入。しかしAIの回答だけで買う人は2.4％",
-      "uid": "cccc837ec7ebecf6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132065.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-12T01:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Konoe Intelligenceは一般社団法人Nyx Foundationと、ハルシネーションしないAIの共同研究を開始した。",
-      "title": "「ハルシネーションしないAI」の実現に向けて数学的超知能の研究を開始",
-      "uid": "d5c75e7e7eafb282",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2130642.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
