@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="506" viewBox="0 0 720 506" role="img" aria-label="本文が取れなかった項目の要約に、読んでいないという断りが付くか、付くとしたら何行目に入るかを、頼み方5通りで並べた表。架空の一覧20件を4本作り、うち10件は本文あり、10件は本文が取れていない状態にした。分母は薄い10件かける回数。そのまま1件ずつ3行で要約してと頼んだ8回では、断りは80件中80件に付いたが、印は0件で、1行目に入ったのは0件だった。80件とも最終行である。本文を読んでいない前提で書いてを足した4回では、断りは40件中40件に付き、印は0件、1行目に入ったのは10件だった。残りは途中の行が10件、最終行が20件で、4回で3通りに割れている。1行目の先頭に本文未読と付けてを足した4回では、断り40件、印40件、1行目40件。断定しない書き方にしてを足した4回も同じく40件、40件、40件。本文の行そのものが無い一覧に印を頼んだ4回も、40件、40件、40件だった。心配していた事故は起きておらず、24回240件のうち、材料に無い数字が要約に出た件数は0件である。本文の行が無い一覧でも、頼まないうちから40件とも自分から断りを書いた。本文がある10件に誤って印が付いた件数も0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="506"/>
+<text class="t-strong" x="18" y="26">断りは付く。ただし、こちらが場所を決めるまで1行目には来ない</text>
+<text class="t-sm" x="18" y="45">架空の一覧20件を4本。うち10件は本文あり（平均233字）、10件は本文が取れていない。薄い10件の説明文には、</text>
+<text class="t-sm" x="18" y="64">あとで数えられる数字をちょうど1個だけ置いた。分母は「薄い10件 × 回数」。</text>
+<text class="t-sm" x="18" y="83">上4行は「本文: 取得できませんでした」と書いてある一覧。いちばん下は、本文の行そのものが無い一覧。</text>
+<text class="t-bad" x="18" y="105">※ 心配していた事故は起きなかった＝24回・240件のうち、材料に無い数字が要約に出た件数は0件。</text>
+<text class="t-bad" x="18" y="124">　 本文の行が無い一覧でも、頼まないうちから40件とも自分で断った。</text>
+<text class="t-xs" x="372" y="120" text-anchor="middle">読んでいないという</text>
+<text class="t-xs" x="372" y="133" text-anchor="middle">断りが付いた</text>
+<text class="t-xs" x="470" y="120" text-anchor="middle">〔本文未読〕</text>
+<text class="t-xs" x="470" y="133" text-anchor="middle">の印が付いた</text>
+<text class="t-xs" x="576" y="120" text-anchor="middle">断りが</text>
+<text class="t-xs" x="576" y="133" text-anchor="middle">1行目に入った</text>
+<text class="t" x="18" y="164">そのまま「1件ずつ3行で要約して」</text>
+<text class="t-xs" x="26" y="180">（同じ指示文を8回）</text>
+<rect class="box-good" x="332" y="150" width="80" height="19" rx="4"/>
+<text class="t-good" x="372" y="164" text-anchor="middle">80/80</text>
+<rect class="box-bad" x="430" y="150" width="80" height="19" rx="4"/>
+<text class="t-bad" x="470" y="164" text-anchor="middle">0/80</text>
+<rect class="box-bad" x="536" y="150" width="80" height="19" rx="4"/>
+<text class="t-bad" x="576" y="164" text-anchor="middle">0/80</text>
+<text class="t" x="18" y="208">＋「本文を読んでいない前提で書いて」</text>
+<text class="t-xs" x="26" y="224">（同じ指示文を4回）</text>
+<rect class="box-good" x="332" y="194" width="80" height="19" rx="4"/>
+<text class="t-good" x="372" y="208" text-anchor="middle">40/40</text>
+<rect class="box-bad" x="430" y="194" width="80" height="19" rx="4"/>
+<text class="t-bad" x="470" y="208" text-anchor="middle">0/40</text>
+<rect class="box-bad" x="536" y="194" width="80" height="19" rx="4"/>
+<text class="t-bad" x="576" y="208" text-anchor="middle">10/40</text>
+<text class="t-good" x="18" y="252">＋「1行目の先頭に〔本文未読〕と付けて」</text>
+<text class="t-xs" x="26" y="268">（同じ指示文を4回）</text>
+<rect class="box-good" x="332" y="238" width="80" height="19" rx="4"/>
+<text class="t-good" x="372" y="252" text-anchor="middle">40/40</text>
+<rect class="box-good" x="430" y="238" width="80" height="19" rx="4"/>
+<text class="t-good" x="470" y="252" text-anchor="middle">40/40</text>
+<rect class="box-good" x="536" y="238" width="80" height="19" rx="4"/>
+<text class="t-good" x="576" y="252" text-anchor="middle">40/40</text>
+<text class="t-good" x="18" y="296">＋「断定しない書き方にして」</text>
+<text class="t-xs" x="26" y="312">（同じ指示文を4回）</text>
+<rect class="box-good" x="332" y="282" width="80" height="19" rx="4"/>
+<text class="t-good" x="372" y="296" text-anchor="middle">40/40</text>
+<rect class="box-good" x="430" y="282" width="80" height="19" rx="4"/>
+<text class="t-good" x="470" y="296" text-anchor="middle">40/40</text>
+<rect class="box-good" x="536" y="282" width="80" height="19" rx="4"/>
+<text class="t-good" x="576" y="296" text-anchor="middle">40/40</text>
+<text class="t-good" x="18" y="340">本文の行が無い一覧＋〔本文未読〕の印</text>
+<text class="t-xs" x="26" y="356">（同じ指示文を4回）</text>
+<rect class="box-good" x="332" y="326" width="80" height="19" rx="4"/>
+<text class="t-good" x="372" y="340" text-anchor="middle">40/40</text>
+<rect class="box-good" x="430" y="326" width="80" height="19" rx="4"/>
+<text class="t-good" x="470" y="340" text-anchor="middle">40/40</text>
+<rect class="box-good" x="536" y="326" width="80" height="19" rx="4"/>
+<text class="t-good" x="576" y="340" text-anchor="middle">40/40</text>
+<text class="t-bad" x="18" y="380">※ 1行目が核。そのまま頼んだ8回では、断りは80件とも付いたのに、80件とも1行目ではなかった。</text>
+<text class="t-bad" x="18" y="401">　 一覧ページで1行目しか見せない形にすると、断りは読者に届かない。</text>
+<text class="t-bad" x="18" y="422">※ 「本文を読んでいない前提で書いて」だけだと、置き場所が4回で3通りに割れた</text>
+<text class="t-bad" x="18" y="443">　 （1行目10件・途中の行10件・最終行20件）。付くことは決まっても、場所は決まらない。</text>
+<text class="t-good" x="18" y="464">※ 置き場所を指定した16回は、160件とも1行目。本文がある10件に誤って印が付いた件数は0件。</text>
+<text class="t-xs" x="18" y="485">架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

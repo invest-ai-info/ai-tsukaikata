@@ -8777,6 +8777,198 @@ def broken_morning_causes_not_in_log_chart() -> None:
     )
 
 
+def unread_mark_where_it_lands_chart() -> None:
+    """本文が取れなかった項目の要約に「読んでいない」という断りが付くか、
+    付くとしたら何行目に入るかを、頼み方5通りで並べる。
+
+    実測（2026-08-20・架空の一覧20件を4本、全24回）。値は check2.py の出力。
+    """
+    rows = [
+        ("そのまま「1件ずつ3行で要約して」", "80/80", "0/80", "0/80", 8, False),
+        ("＋「本文を読んでいない前提で書いて」", "40/40", "0/40", "10/40", 4, False),
+        ("＋「1行目の先頭に〔本文未読〕と付けて」", "40/40", "40/40", "40/40", 4, True),
+        ("＋「断定しない書き方にして」", "40/40", "40/40", "40/40", 4, True),
+        ("本文の行が無い一覧＋〔本文未読〕の印", "40/40", "40/40", "40/40", 4, True),
+    ]
+    label_x = 18
+    col_x = [372, 470, 576]
+    col_names = [
+        ["読んでいないという", "断りが付いた"],
+        ["〔本文未読〕", "の印が付いた"],
+        ["断りが", "1行目に入った"],
+    ]
+    row_h = 44
+    top = 146
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "断りは付く。ただし、こちらが場所を決めるまで1行目には来ない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の一覧20件を4本。うち10件は本文あり（平均233字）、10件は本文が取れていない。"
+        "薄い10件の説明文には、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "あとで数えられる数字をちょうど1個だけ置いた。分母は「薄い10件 × 回数」。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "上4行は「本文: 取得できませんでした」と書いてある一覧。"
+        "いちばん下は、本文の行そのものが無い一覧。</text>\n",
+        '<text class="t-bad" x="18" y="105">'
+        "※ 心配していた事故は起きなかった＝24回・240件のうち、"
+        "材料に無い数字が要約に出た件数は0件。</text>\n",
+        '<text class="t-bad" x="18" y="124">'
+        "　 本文の行が無い一覧でも、頼まないうちから40件とも自分で断った。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 26 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, got, mark, first, n, good in rows:
+        ty = y + 18
+        parts.append(
+            f'<text class="{"t-good" if good else "t"}" x="{label_x}" y="{ty}">'
+            f"{_esc(label)}</text>\n"
+        )
+        parts.append(
+            f'<text class="t-xs" x="{label_x + 8}" y="{ty + 16}">'
+            f"（同じ指示文を{n}回）</text>\n"
+        )
+        for cx, val, ok in ((col_x[0], got, True),
+                            (col_x[1], mark, mark != "0/80" and mark != "0/40"),
+                            (col_x[2], first, good)):
+            box = "box-good" if ok else "box-bad"
+            cls = "t-good" if ok else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 40}" y="{ty - 14}" '
+                f'width="80" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{_esc(val)}</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 1行目が核。そのまま頼んだ8回では、断りは80件とも付いたのに、80件とも1行目ではなかった。"),
+        ("t-bad", "　 一覧ページで1行目しか見せない形にすると、断りは読者に届かない。"),
+        ("t-bad", "※ 「本文を読んでいない前提で書いて」だけだと、置き場所が4回で3通りに割れた"),
+        ("t-bad", "　 （1行目10件・途中の行10件・最終行20件）。付くことは決まっても、場所は決まらない。"),
+        ("t-good", "※ 置き場所を指定した16回は、160件とも1行目。本文がある10件に誤って印が付いた件数は0件。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "本文が取れなかった項目の要約に、読んでいないという断りが付くか、"
+        "付くとしたら何行目に入るかを、頼み方5通りで並べた表。"
+        "架空の一覧20件を4本作り、うち10件は本文あり、10件は本文が取れていない状態にした。"
+        "分母は薄い10件かける回数。"
+        "そのまま1件ずつ3行で要約してと頼んだ8回では、断りは80件中80件に付いたが、"
+        "印は0件で、1行目に入ったのは0件だった。80件とも最終行である。"
+        "本文を読んでいない前提で書いてを足した4回では、断りは40件中40件に付き、"
+        "印は0件、1行目に入ったのは10件だった。残りは途中の行が10件、最終行が20件で、"
+        "4回で3通りに割れている。"
+        "1行目の先頭に本文未読と付けてを足した4回では、断り40件、印40件、1行目40件。"
+        "断定しない書き方にしてを足した4回も同じく40件、40件、40件。"
+        "本文の行そのものが無い一覧に印を頼んだ4回も、40件、40件、40件だった。"
+        "心配していた事故は起きておらず、24回240件のうち、"
+        "材料に無い数字が要約に出た件数は0件である。"
+        "本文の行が無い一覧でも、頼まないうちから40件とも自分から断りを書いた。"
+        "本文がある10件に誤って印が付いた件数も0件だった。"
+    )
+    (OUT / "unread-mark-where-it-lands.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def unread_mark_line_position_chart() -> None:
+    """断りが「何行目」に入ったかの内訳を、頼み方ごとに横棒で並べる。
+
+    実測（2026-08-20・全24回）。棒の長さは件数の割合から計算する。
+    """
+    rows = [
+        ("そのまま「3行で要約して」（8回・80件）", 0, 0, 80, 80),
+        ("＋「読んでいない前提で書いて」（4回・40件）", 10, 10, 20, 40),
+        ("＋「1行目の先頭に〔本文未読〕」（4回・40件）", 40, 0, 0, 40),
+        ("＋「断定しない書き方に」（4回・40件）", 40, 0, 0, 40),
+        ("本文の行が無い一覧＋印（4回・40件）", 40, 0, 0, 40),
+    ]
+    label_x = 18
+    plot_x = 330
+    plot_w = 300
+    top = 128
+    row_h = 52
+    bar_h = 22
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「本文を読んでいない」という断りは、何行目に入ったか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "3行の要約のうち、断りがどの行に入ったかを数えた。読者が一覧で見るのは1行目だけ、"
+        "という前提で読む。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "分母は「本文が取れていない10件 × 回数」。棒の中の数字は件数。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "濃い＝1行目　／　中間＝途中の行　／　薄い＝最終行</text>\n",
+    ]
+
+    y = top
+    for label, first, mid, last, total in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty + 6}">{_esc(label)}</text>\n')
+        x = plot_x
+        for val, klass in ((first, "bar-new"), (mid, "bar-in"), (last, "bar-old")):
+            if val == 0:
+                continue
+            w = plot_w * val / total
+            parts.append(
+                f'<rect class="{klass}" x="{x:.1f}" y="{ty - 8}" '
+                f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{x + w / 2:.1f}" y="{ty + 7}" '
+                f'text-anchor="middle">{val}件</text>\n'
+            )
+            x += w
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ そのまま頼むと、80件が80件とも最終行だった。1行目に入った回は1件も無い。"),
+        ("t-bad", "※ 前提だけを伝えた4回は、1行目・途中・最終行の3通りに割れた。同じ指示文で割れている。"),
+        ("t-good", "※ 「1行目の先頭に」まで指定した12回は、120件とも1行目。割れは無くなった。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "本文を読んでいないという断りが、3行の要約のうち何行目に入ったかを、"
+        "頼み方5通りで並べた横棒グラフ。"
+        "分母は本文が取れていない10件かける回数で、濃い部分が1行目、"
+        "中間の色が途中の行、薄い部分が最終行である。"
+        "そのまま3行で要約してと頼んだ8回・80件は、1行目が0件、途中が0件、最終行が80件。"
+        "読んでいない前提で書いてを足した4回・40件は、1行目が10件、途中の行が10件、最終行が20件で、"
+        "同じ指示文なのに3通りに割れた。"
+        "1行目の先頭に本文未読と付けてを足した4回・40件は、40件とも1行目。"
+        "断定しない書き方にを足した4回・40件も40件とも1行目。"
+        "本文の行そのものが無い一覧に印を頼んだ4回・40件も40件とも1行目だった。"
+        "つまり断りが付くかどうかは崩れておらず、崩れるのは置き場所のほうである。"
+        "一覧ページで1行目しか見せない形にすると、そのまま頼んだ場合の断りは読者に届かない。"
+    )
+    (OUT / "unread-mark-line-position.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -8892,4 +9084,6 @@ if __name__ == "__main__":
     monthly_check_carryover_chart()
     broken_morning_who_decides_chart()
     broken_morning_causes_not_in_log_chart()
+    unread_mark_where_it_lands_chart()
+    unread_mark_line_position_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

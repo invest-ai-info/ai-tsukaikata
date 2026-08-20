@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="478" viewBox="0 0 720 478" role="img" aria-label="本文を読んでいないという断りが、3行の要約のうち何行目に入ったかを、頼み方5通りで並べた横棒グラフ。分母は本文が取れていない10件かける回数で、濃い部分が1行目、中間の色が途中の行、薄い部分が最終行である。そのまま3行で要約してと頼んだ8回・80件は、1行目が0件、途中が0件、最終行が80件。読んでいない前提で書いてを足した4回・40件は、1行目が10件、途中の行が10件、最終行が20件で、同じ指示文なのに3通りに割れた。1行目の先頭に本文未読と付けてを足した4回・40件は、40件とも1行目。断定しない書き方にを足した4回・40件も40件とも1行目。本文の行そのものが無い一覧に印を頼んだ4回・40件も40件とも1行目だった。つまり断りが付くかどうかは崩れておらず、崩れるのは置き場所のほうである。一覧ページで1行目しか見せない形にすると、そのまま頼んだ場合の断りは読者に届かない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="478"/>
+<text class="t-strong" x="18" y="26">「本文を読んでいない」という断りは、何行目に入ったか</text>
+<text class="t-sm" x="18" y="45">3行の要約のうち、断りがどの行に入ったかを数えた。読者が一覧で見るのは1行目だけ、という前提で読む。</text>
+<text class="t-sm" x="18" y="64">分母は「本文が取れていない10件 × 回数」。棒の中の数字は件数。</text>
+<text class="t-sm" x="18" y="83">濃い＝1行目　／　中間＝途中の行　／　薄い＝最終行</text>
+<text class="t" x="18" y="150">そのまま「3行で要約して」（8回・80件）</text>
+<rect class="bar-old" x="330.0" y="136" width="300.0" height="22" rx="2"/>
+<text class="t-xs" x="480.0" y="151" text-anchor="middle">80件</text>
+<text class="t" x="18" y="202">＋「読んでいない前提で書いて」（4回・40件）</text>
+<rect class="bar-new" x="330.0" y="188" width="75.0" height="22" rx="2"/>
+<text class="t-xs" x="367.5" y="203" text-anchor="middle">10件</text>
+<rect class="bar-in" x="405.0" y="188" width="75.0" height="22" rx="2"/>
+<text class="t-xs" x="442.5" y="203" text-anchor="middle">10件</text>
+<rect class="bar-old" x="480.0" y="188" width="150.0" height="22" rx="2"/>
+<text class="t-xs" x="555.0" y="203" text-anchor="middle">20件</text>
+<text class="t" x="18" y="254">＋「1行目の先頭に〔本文未読〕」（4回・40件）</text>
+<rect class="bar-new" x="330.0" y="240" width="300.0" height="22" rx="2"/>
+<text class="t-xs" x="480.0" y="255" text-anchor="middle">40件</text>
+<text class="t" x="18" y="306">＋「断定しない書き方に」（4回・40件）</text>
+<rect class="bar-new" x="330.0" y="292" width="300.0" height="22" rx="2"/>
+<text class="t-xs" x="480.0" y="307" text-anchor="middle">40件</text>
+<text class="t" x="18" y="358">本文の行が無い一覧＋印（4回・40件）</text>
+<rect class="bar-new" x="330.0" y="344" width="300.0" height="22" rx="2"/>
+<text class="t-xs" x="480.0" y="359" text-anchor="middle">40件</text>
+<text class="t-bad" x="18" y="394">※ そのまま頼むと、80件が80件とも最終行だった。1行目に入った回は1件も無い。</text>
+<text class="t-bad" x="18" y="415">※ 前提だけを伝えた4回は、1行目・途中・最終行の3通りに割れた。同じ指示文で割れている。</text>
+<text class="t-good" x="18" y="436">※ 「1行目の先頭に」まで指定した12回は、120件とも1行目。割れは無くなった。</text>
+<text class="t-xs" x="18" y="457">架空データでの実測（全24回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
