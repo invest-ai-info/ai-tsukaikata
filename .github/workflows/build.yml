@@ -9,6 +9,9 @@ on:
     # seen.json だけの既読更新では動かない）
     paths:
       - "content/**"
+      # `_` 始まりはビルド対象外（content.py）なので、キュー・ログ・保管庫だけの
+      # コミット（毎晩の担当・毎朝の回転）で再デプロイしない
+      - "!content/_*.md"
       - "templates/**"
       - "static/**"
       - "src/**"

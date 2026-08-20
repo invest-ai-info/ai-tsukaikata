@@ -412,6 +412,39 @@ LESSON_RE = re.compile(r"^### (★?\d+[a-z]?)\. (.+)$", re.M)
 LESSON_REF_RE = re.compile(r"(\d+[a-z]?)\s*番(?:が)?(?:再発|の系列|の親戚|の実例)")
 
 
+# --- 生きているファイルの行数予算（2026-08-20 トークン食の設計）---
+#
+# 毎晩3〜4担当が読むファイルは、tools/rotate_archives.py が済んだ在庫を
+# 保管庫へ移して小さく保つ。予算超過＝「回転が止まった」のシグナル
+# （heartbeat と同じ思想＝ビルドは止めず、週次で人に知らせるだけ）。
+# 予算＝初回回転直後の実測（2026-08-20: 1649/352/997/506/762行）に
+# 5割前後の余裕を載せた値。実測より小さい予算は初日から偽陽性になる。
+FILE_BUDGETS = {
+    "content/_recipe_queue.md": 2500,
+    "content/_deepdive_queue.md": 600,
+    "content/_topic_ideas.md": 1500,
+    "content/_review_log.md": 800,
+    "content/_earn_research.md": 1200,
+}
+
+
+def file_budgets(texts: dict[str, str], budgets: dict[str, int] = FILE_BUDGETS):
+    """{相対パス: 中身} を受け取り、予算超過を問題の文字列にして返す。"""
+    problems = []
+    for rel, text in texts.items():
+        budget = budgets.get(rel)
+        if budget is None:
+            continue
+        n = text.count("\n") + (0 if text.endswith("\n") or not text else 1)
+        if n > budget:
+            problems.append(
+                f"{rel}: {n}行あります（予算{budget}行）。tools/rotate_archives.py の"
+                f"回転が止まっている可能性があります（毎日04:43 JST の rotate.yml。"
+                f"手で1回 `python tools/rotate_archives.py` を実行して減るか確かめること）"
+            )
+    return problems
+
+
 def lesson_promotions(ledger_text: str, slugs, cap: int = LEDGER_CAP):
     """台帳の「何本で出たか」を数えて、(problems, notes) を返す。
 
@@ -558,6 +591,12 @@ def main() -> int:
         )
         report.problems.extend(ledger_problems)
         report.notes.extend(ledger_notes)
+
+    # 生きているファイルの行数予算（回転が止まったことの検知）
+    report.problems.extend(file_budgets({
+        rel: (root / rel).read_text(encoding="utf-8")
+        for rel in FILE_BUDGETS if (root / rel).exists()
+    }))
 
     for problem in report.problems:
         print(problem)

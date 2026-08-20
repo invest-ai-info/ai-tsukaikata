@@ -1,0 +1,46 @@
+name: Rotate Archives
+
+# 済んだ在庫を保管庫ファイルへ機械回転する（LLM不要・逐語移動）。
+# 目的＝毎晩の担当が「終わった項目」を読み直すトークンを消す。
+# 設計＝docs/superpowers/specs/2026-08-20-token-diet-design.md
+#
+# ⚠️ 遅延しても壊れない設計（キューは在庫）。定刻性は要らない。
+# 回転が止まったことは check_freshness.py の file_budgets() が週次で検知する。
+
+on:
+  # 毎日 JST 4:43（UTC 19:43）。毎時0分を避ける。06:12 のネタ探しより前を狙うが、
+  # schedule は best-effort なので前後しても問題ない形にしてある
+  schedule:
+    - cron: "43 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      # 依存なし（標準ライブラリだけで動く）。pip install はしない
+
+      - name: 済んだ在庫を保管庫へ回転
+        run: python tools/rotate_archives.py
+
+      - name: 変更があればコミット
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add content/
+            git commit -m "chore: 済んだ在庫を保管庫へ回転した"
+            git pull --rebase origin main
+            git push
+          else
+            echo "回転するものはありませんでした"
+          fi
