@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T07:58:38.120608+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T07:49:30+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "MIXIは8月20日、会話AIロボット「Romi」と外部機器・サービスとの連携を可能にする開発基盤「RomiCore SDK β版」の提供を開始した。",
+      "title": "MIXI、会話AIロボット「Romi」と外部機器・サービスを連携させる開発基盤",
+      "uid": "fd048a0d32fa199d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134237.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T07:58:38.120608+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T07:39:30+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Sansanは8月20日、経理AXサービス「Bill One」の新機能として「AI自動起票」の提供を開始した。",
+      "title": "Sansan、全社の業務負担を軽減できる「AI自動起票」 経理AXサービス「Bill One」の新機能",
+      "uid": "2b3127438c0b081b",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134201.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T07:58:38.120608+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T07:24:31+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日立ソリューションズは8月20日、Allganize Japanの「対話型AIによる業務アプリケーション生成プラットフォーム」の提供を開始した。",
+      "title": "Allganizeの対話型AIによる業務アプリケーション生成プラットフォーム 日立ソリューションズが提供開始",
+      "uid": "5d01f1f7fc93a40b",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134170.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-20T07:08:56.756357+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2362,42 +2398,6 @@
       "title": "【注目記事まとめ】NEC、日立、富士通――Anthropicとの電撃的協業、その舞台裏　経営陣の狙いは？",
       "uid": "eea3a7a7e6463bc8",
       "url": "https://www.itmedia.co.jp/business/articles/2608/13/news025.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの利用が広がる一方、効率化と成果の間にはギャップも。企業のAI活用に関する調査データや事例をまとめた無償ブックレットを提供する。",
-      "title": "結局、AIで仕事はラクになった？　データで読む「効率化＝成果」の勘違い",
-      "uid": "7563040719cecc53",
-      "url": "https://kn.itmedia.co.jp/kn/articles/2608/13/news024.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-12T22:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "前回は、LAN内の別PCから「NVIDIA Sync」やリモートデスクトップを介してDGX Sparkにアクセスし、AIワークステーションとして使いやすくする方法を紹介しました。これでDGX Spark上のファイル操作やデスクトップ操作は簡単になったと思います。",
-      "title": "DGX Sparkでゼロから始めるAIワークステーション LM StudioとLM Linkでお手軽AIサーバー化、iPhoneで外からもアクセス。みんなに使ってもらえば高速に!?",
-      "uid": "6d474ee2a380bdef",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/dgxspark/2130976.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T21:32:01+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "SpaceXAIは、AIモデル「Grok 4.6」を発表した。前世代の「Grok 4.5」をベースに、多数の手順にまたがって作業を続けるエージェント用途と、対話的・視覚的な成果物の作成を強化した。「Cursor」、「Grok Build」、「Grok Bot」、APIで同日提供を始めた。API料金は入力100万トークン当たり2ドルから。",
-      "title": "SpaceXAI、「Grok 4.6」を発表　総合指標で「GPT-5.6 Sol Max」に並ぶと謳う",
-      "uid": "fe45dcba2903fb1f",
-      "url": "https://www.itmedia.co.jp/news/article/2608/13/2000000520/",
       "vendor": "ITmedia AI+"
     }
   ]
