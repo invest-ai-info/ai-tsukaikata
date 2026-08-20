@@ -29,52 +29,7 @@
     "pfn-blog": "2026-08-17T06:00:13+00:00",
     "sakana-blog": "2026-08-20T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-20T00:54:41+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed prompt caching for sessions using an LLM gateway or custom base URL Added a built-in \"Concise\" output style: Claude leads with results and skips preamble and narration, while doi…",
-      "title": "v2.1.237",
-      "uid": "fc62a13fa30b435b",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-20T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
-      "title": "How ChatGPT Work helps Stampli move ideas to market",
-      "uid": "65cbee7c753c4230",
-      "url": "https://openai.com/index/stampli",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-20T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Sakana Translateの翻訳モデルを新しい世代の「Sakana Namazu」へアップデート",
-      "uid": "5b9d6a719247b623",
-      "url": "/translate-update/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-20T20:33:51+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a keybindingFlavor setting: set it to \"readline\" to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default ( \"classic\" ) is unchanged Plugin ma…",
-      "title": "v2.1.238",
-      "uid": "fcd5d15e55eefe18",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
