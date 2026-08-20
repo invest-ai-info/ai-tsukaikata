@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T21:45:50.396572+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「ポテトチップス」や「じゃがりこ」など、カルビーの主力商品に欠かせないばれいしょには、収穫量の限界がある。後手の意思決定から脱却すべく、同社はAIを活用した全社最適シミュレーター「C-BOSS」を自社開発。いかにして現場定着の壁を越え、データに基づく攻めのサプライチェーンを構築したのか。",
+      "title": "カルビーが挑むジャガイモ収量の限界――自社開発AIでサプライチェーン最適化",
+      "uid": "fbe930231e4e7a86",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/21/news046.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T21:45:50.396572+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "生成AIはさまざまな現場で活用されており、法律の現場でも関係者がAIを使って提出書類を要約したり、裁判書類の作成をAIにサポートさせたりしています。そんな中、弁護人に依頼せず自ら本人訴訟を起こしたアメリカの男性が、裁判所への提出書類に「自分に有利な出力を生成するようにAIへ指示するテキスト」を隠していたことが発覚しました。 続きを読む...",
+      "title": "裁判の提出書類に「原告有利の出力を生成するようAIに指示するテキスト」が隠されていたことが発覚",
+      "uid": "7bcfdabb199d069a",
+      "url": "https://gigazine.net/news/20260821-hides-prompt-injection-legal-filing-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-20T20:49:03.412734+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2375,30 +2399,6 @@
       "uid": "f35d9564920f6bb1",
       "url": "https://gigazine.net/news/20260813-google-sl2t/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-13T02:30:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、8月13日14時に「Google Store 表参道」をオープンする。所在地は東京都渋谷区神宮前4-30-3東急プラザ表参道「オモカド」。",
-      "title": "「Google Store 表参道」8月13日14時オープン",
-      "uid": "bc3b06b5a6a3a884",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131975.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-13T02:14:31+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Sakana?AIは、無料のチャットAIサービス「Sakana?Chat」をアップデートしたと発表した。複数のAIモデルの“集合知”を利用するAI「Sakana?Fugu」が使えるようになった。",
-      "title": "「Sakana Fugu」が無料で試せるように　チャットAIをアップデート、Sakana?AI",
-      "uid": "214ca9ff4ebf1671",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000524/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
