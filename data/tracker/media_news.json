@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T14:01:50.236692+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "プログラミング言語の「Kotlin」などを開発するJetBrainsが、8837人の開発者にプログラミング言語の使用実態を質問しました。その結果、開発者が主に使用する言語や、過去1年でどの言語に乗り換えたのかが明らかになりました。 続きを読む...",
+      "title": "プログラマーはどの言語からどの言語へ移住しているのか？JetBrainsが8837人分の回答を分析",
+      "uid": "5d1748c0090ce699",
+      "url": "https://gigazine.net/news/20260820-jetbrains-programming-language-migration/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-20T13:13:27.135263+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "b7c293d22d9ee871",
       "url": "https://gigazine.net/news/20260813-google-pixel-watch-5/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-13T01:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本ドローンビジネスサポート協会（DBA）は、ドローンの運航支援アプリ「dronebiz.app」に新しい区分「AIコーチ」を開設した。カメラドローン「Phantom 4」シリーズなどDJI製ドローンの飛行ログを読み込み評価を返してくれる。",
-      "title": "ドローンの飛行ログを読み込みAIが操縦をアドバイス「AIコーチ」",
-      "uid": "786db0cfc3915266",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131927.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
