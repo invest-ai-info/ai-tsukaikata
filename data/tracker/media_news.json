@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T13:13:27.135263+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ウェブサイト上で人間の代わりに操作するAIエージェントを「マウスの動き」から見分ける手法をCDNやサイバーセキュリティサービスを提供するAkamaiが研究しています。人間とAIエージェントではマウス操作の回数や間隔に大きな違いがあり、Akamaiは少ない操作データでもAIエージェント特有の振る舞いを判別する仕組みを試作しました。 続きを読む...",
+      "title": "AIエージェントを「マウスの動き」で見抜く検知手法が研究されている",
+      "uid": "dce92490981a1f13",
+      "url": "https://gigazine.net/news/20260820-akamai-identify-agent/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-20T13:13:27.135263+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI企業のLiquid AIはノートPCやスマートフォンといった低スペックなデバイスでも実行できる小型AIモデルとしてLFM2.5シリーズを展開しています。新たにLFM2.5シリーズに量子化認識蒸留(QAD)という省メモリ化しつつ性能低下を抑える技術を適用したバージョンがオープンモデルとして公開されました。 続きを読む...",
+      "title": "スマホで動く小型AIモデル「LFM2.5」に省メモリ化を施しつつ性能低下を抑えたQAD版が登場",
+      "uid": "d2b845252c717a0e",
+      "url": "https://gigazine.net/news/20260820-lfm2-5-qad/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-20T10:49:23.859266+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2375,30 +2399,6 @@
       "uid": "786db0cfc3915266",
       "url": "https://ai.watch.impress.co.jp/docs/news/2131927.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T00:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "「環境の問題かもしれません」と言い訳したり、何回も同じコマンドを実行して「解決できません」と言ったりしてAIが処理をストップしてしまうことを防ぐAIエージェント向けプラグイン「pua」が公開されました。 続きを読む...",
-      "title": "AIの5大サボりパターンを自動的に解決し無理矢理限界突破させて働かせまくるAIエージェント向けプラグイン「pua」",
-      "uid": "5afd10fb5fbd5958",
-      "url": "https://gigazine.net/news/20260813-pua/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「諦めないで」「自分を信じて」と励ましたおかげで、AIが数学の未解決問題「リーマン予想」に関する新発見をした――米Anthropicはこのような報告をした。「AIも自身の進歩の速さを過小評価していたのかもしれない」と指摘している。",
-      "title": "AIが数学の未解決問題「リーマン予想」で新発見　当初苦戦も「諦めないで」との励まし受け　Anthropic「AIも自身を過小評価か」",
-      "uid": "ff9b2cb17ea4582a",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000511/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
