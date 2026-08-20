@@ -8574,6 +8574,209 @@ def month_boundary_two_runs_chart() -> None:
 
 
 
+def broken_morning_who_decides_chart() -> None:
+    """記録が途切れている朝（今朝の行が無い）に、頼み方4通りが何と答えたかを並べる。
+
+    実測（2026-08-20・架空の実行の記録3本、1つの頼み方につき材料3本×各2回＝6回、全24回）。
+    ここに出すのは材料A（今朝の行が無い＝記録だけでは決まらない朝）の2回ぶん。
+    値は check.py の出力。座標は計算で出す。
+    """
+    rows = [
+        ("そのまま「なぜ動かなかったのか教えて」",
+         "「実行そのものが記録に無い」", "2回", False),
+        ("＋3択だけ渡す（実行されていない／遅れた／取得0件）",
+         "4回とも「1. 実行されていない」", "4回", False),
+        ("＋「どれにも当たらないならそう書いて」",
+         "4回とも「どれにも当たらない」", "4回", True),
+        ("＋「根拠になった行をそのままコピーして」",
+         "2回とも「どれにも当たらない」", "2回", True),
+        ("保存版＝3行に固定（区分／根拠／記録に無いこと）",
+         "2回とも「この記録では決まらない」", "2回", True),
+    ]
+    label_x = 18
+    count_x = 640
+    ans_x = 38
+    row_h = 54
+    top = 138
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "記録が途切れている朝。候補を3つだけ渡すと、決まらないのに1つ選ぶ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「毎朝の実行の記録」14日ぶん。今朝（8/19）の行だけが無い。"
+        "行が無い状態は「実行されていない」とも</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「まだ書かれていない（遅れて走っている途中）」とも両立するので、"
+        "この記録だけでは3択のどれとも決まらない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "1つの頼み方につき2回。下の行の指示文は、上の行に足し重ねてある。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "※ 記録には「通信」「権限」「制限」「仕様変更」など24語の原因語が1語も出てこない"
+        "（走らせる前に検算）。</text>\n",
+    ]
+    parts.append(
+        f'<text class="t-xs" x="{label_x}" y="{top - 12}">'
+        "頼み方（下の行は、上の行に足し重ねてある）／その下は、今朝について返りが書いたこと</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{count_x}" y="{top - 12}">通した回数</text>\n'
+    )
+
+    y = top
+    for label, answer, count, good in rows:
+        ty = y + 16
+        parts.append(
+            f'<text class="{"t-good" if good else "t"}" x="{label_x}" y="{ty}">'
+            f"{_esc(label)}</text>\n"
+        )
+        parts.append(
+            f'<text class="t" x="{count_x}" y="{ty}">{_esc(count)}</text>\n'
+        )
+        box_w = len(answer) * 13.6 + 18
+        parts.append(
+            f'<rect class="{"box-good" if good else "box-bad"}" x="{ans_x}" '
+            f'y="{ty + 6}" width="{box_w:.0f}" height="21" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-good" if good else "t-bad"}" x="{ans_x + 9}" y="{ty + 21}">'
+            f"{_esc(answer)}</text>\n"
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 2行目が核。候補を3つ渡すと、記録がその3つを見分けられない朝でも、4回とも1つ選んだ。"),
+        ("t-good", "※ 「どれにも当たらないならそう書いて」を1行足すと、4回とも選ばずに理由を書いた。"),
+        ("t-good", "　 返り自身が「行が無いことは、実行されなかった証拠にも、まだ記録されていない証拠にもなります」。"),
+        ("t-good", "※ 記録の中で答えが決まる朝（遅れた／取得0件）は、4通りとも16回すべて当てた。ここは崩れない。"),
+        ("t-xs", "この表は「記録が途切れている朝」の14通ぶん。全体では9個の頼み方で56通。生の返りは docs/evidence/ に全文。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "自動実行が動かなかった朝に、実行の記録を貼って原因を聞いたときの返りを、"
+        "頼み方4通りで並べた表。"
+        "材料は架空の毎朝の実行の記録14日ぶんで、今朝の行だけが無い。"
+        "行が無い状態は、実行されていないとも、遅れてまだ書かれていないとも両立するので、"
+        "この記録だけでは3択のどれとも決まらない。1つの頼み方につき2回ずつ通した。"
+        "そのままなぜ動かなかったのか教えてと頼んだ2回は、実行そのものが記録に無いと書いた。"
+        "3択だけを渡した4回は、4回とも1の実行されていないを選んだ。"
+        "どれにも当たらないならそう書いてくださいという1行を足した4回は、"
+        "4回ともどれにも当たらないと答えた。"
+        "さらに根拠になった行をそのままコピーしてくださいを足した2回も、"
+        "2回ともどれにも当たらないと答えた。"
+        "保存版として区分と根拠と記録に無いことの3行に固定した2回も、"
+        "2回とも区分の欄にこの記録では決まらないと書いた。"
+        "核は2行目で、候補を3つ渡すと、記録がその3つを見分けられない朝でも1つ選ぶ。"
+        "受け皿の1行を足した4回は、選ばずに理由を書いた。"
+        "なお、記録の中で答えが決まる朝、つまり遅れた朝と取得0件の朝は、"
+        "4通りの頼み方すべてで16回とも当たっており、そこは崩れていない。"
+    )
+    (OUT / "broken-morning-who-decides.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def broken_morning_causes_not_in_log_chart() -> None:
+    """記録に1語も出てこない原因語を、原因として何件挙げたかを頼み方4通りで並べた棒グラフ。
+
+    実測（2026-08-20・全24回）。当て方を2通り変えても並びが同じかを見る（台帳★51）。
+    棒の長さは件数から計算する。
+    """
+    rows = [
+        ("そのまま「なぜ動かなかったのか教えて」", 26, 16),
+        ("＋3択だけ渡す", 10, 6),
+        ("＋「どれにも当たらないならそう書いて」", 5, 3),
+        ("＋「根拠になった行をそのままコピーして」", 0, 0),
+    ]
+    label_x, label_w = 18, 268
+    plot_x = label_x + label_w
+    plot_w = 330
+    top = 128
+    row_h = 58
+    unit = plot_w / 28.0
+    bar_h = 15
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "記録に1語も無い原因を、いくつ挙げたか（6回ぶんの合計・当て方2通り）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の実行の記録3本（今朝の行が無い／2時間遅れた／取得0件）に、"
+        "1つの頼み方につき材料3本 × 各2回 ＝ 6回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "記録には「通信」「権限」「制限」「仕様変更」など24語が1語も出てこない"
+        "（走らせる前に検算した）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "濃い棒＝24語で数えた件数。薄い棒＝「記録の外にしか根拠が無い」8語だけに絞って数えた件数。</text>\n",
+    ]
+    for v in (0, 10, 20):
+        gx = plot_x + v * unit
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + row_h * len(rows) - 26}" stroke-dasharray="3 4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{gx:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{v}件</text>\n'
+        )
+
+    y = top
+    for label, wide, narrow in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty + 9}">{_esc(label)}</text>\n')
+        for i, (val, klass) in enumerate(((wide, "bar-new"), (narrow, "bar-old"))):
+            by = ty + i * (bar_h + 4)
+            w = max(val * unit, 2.0)
+            parts.append(
+                f'<rect class="{klass}" x="{plot_x:.1f}" y="{by - 11}" '
+                f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            cls = "t-good" if val == 0 else "t"
+            parts.append(
+                f'<text class="{cls}" x="{plot_x + w + 8:.1f}" y="{by + 1}">'
+                f"{val}件</text>\n"
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ そのまま聞いた6回は、記録に根拠が1行も無い原因を26件並べた。うち1回は5つを「可能性の高い順」で。"),
+        ("t-bad", "　 順位の根拠も記録には無い。読む側からは、記録から決まったことと見分けがつかない。"),
+        ("t-good", "※ いちばん下の6回は0件。返り自身が「なぜ取得が0件になったのかは、この記録には書かれて"),
+        ("t-good", "　 いないので判断できません」と書いて止まった。"),
+        ("t-xs", "当て方を2通りに変えても並びは同じ（26>10>5>0 と 16>6>3>0）。生の返りは docs/evidence/ に全文。"),
+    ]
+    y += 2
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "自動実行が動かなかった朝に原因を聞いたとき、"
+        "実行の記録に1語も出てこない原因語をいくつ挙げたかを、頼み方4通りで並べた横棒グラフ。"
+        "架空の実行の記録3本、つまり今朝の行が無いもの、2時間遅れたもの、取得0件のものに、"
+        "1つの頼み方につき材料3本かける各2回で6回ずつ、全部で24回通した。"
+        "記録には通信、権限、制限、仕様変更など24語の原因語が1語も出てこないことを、"
+        "走らせる前に検算してある。"
+        "濃い棒は24語で数えた件数、薄い棒は記録の外にしか根拠が無い8語だけに絞って数えた件数。"
+        "そのままなぜ動かなかったのか教えてと頼んだ6回は26件と16件。"
+        "3択だけを渡した6回は10件と6件。"
+        "どれにも当たらないならそう書いてくださいを足した6回は5件と3件。"
+        "根拠になった行をそのままコピーしてくださいまで足した6回は、0件と0件だった。"
+        "当て方を2通りに変えても並びは同じで、26が10、5、0と減り、16が6、3、0と減る。"
+        "そのまま聞いた回では、記録に根拠が1行も無い原因が可能性の高い順として並ぶことがあり、"
+        "その順位の根拠も記録には書かれていない。"
+        "いちばん下の頼み方では、返り自身がなぜ取得が0件になったのかはこの記録には書かれていないので"
+        "判断できませんと書いて止まった。"
+    )
+    (OUT / "broken-morning-causes-not-in-log.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -8687,4 +8890,6 @@ if __name__ == "__main__":
     work_grew_what_comes_with_it_chart()
     copy_ideas_that_pass_chart()
     monthly_check_carryover_chart()
+    broken_morning_who_decides_chart()
+    broken_morning_causes_not_in_log_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

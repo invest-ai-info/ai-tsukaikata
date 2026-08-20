@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="467" viewBox="0 0 720 467" role="img" aria-label="自動実行が動かなかった朝に原因を聞いたとき、実行の記録に1語も出てこない原因語をいくつ挙げたかを、頼み方4通りで並べた横棒グラフ。架空の実行の記録3本、つまり今朝の行が無いもの、2時間遅れたもの、取得0件のものに、1つの頼み方につき材料3本かける各2回で6回ずつ、全部で24回通した。記録には通信、権限、制限、仕様変更など24語の原因語が1語も出てこないことを、走らせる前に検算してある。濃い棒は24語で数えた件数、薄い棒は記録の外にしか根拠が無い8語だけに絞って数えた件数。そのままなぜ動かなかったのか教えてと頼んだ6回は26件と16件。3択だけを渡した6回は10件と6件。どれにも当たらないならそう書いてくださいを足した6回は5件と3件。根拠になった行をそのままコピーしてくださいまで足した6回は、0件と0件だった。当て方を2通りに変えても並びは同じで、26が10、5、0と減り、16が6、3、0と減る。そのまま聞いた回では、記録に根拠が1行も無い原因が可能性の高い順として並ぶことがあり、その順位の根拠も記録には書かれていない。いちばん下の頼み方では、返り自身がなぜ取得が0件になったのかはこの記録には書かれていないので判断できませんと書いて止まった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="467"/>
+<text class="t-strong" x="18" y="26">記録に1語も無い原因を、いくつ挙げたか（6回ぶんの合計・当て方2通り）</text>
+<text class="t-sm" x="18" y="45">架空の実行の記録3本（今朝の行が無い／2時間遅れた／取得0件）に、1つの頼み方につき材料3本 × 各2回 ＝ 6回。</text>
+<text class="t-sm" x="18" y="64">記録には「通信」「権限」「制限」「仕様変更」など24語が1語も出てこない（走らせる前に検算した）。</text>
+<text class="t-sm" x="18" y="83">濃い棒＝24語で数えた件数。薄い棒＝「記録の外にしか根拠が無い」8語だけに絞って数えた件数。</text>
+<path class="line" d="M286.0 122 L286.0 334" stroke-dasharray="3 4"/>
+<text class="t-xs" x="286.0" y="116" text-anchor="middle">0件</text>
+<path class="line" d="M403.9 122 L403.9 334" stroke-dasharray="3 4"/>
+<text class="t-xs" x="403.9" y="116" text-anchor="middle">10件</text>
+<path class="line" d="M521.7 122 L521.7 334" stroke-dasharray="3 4"/>
+<text class="t-xs" x="521.7" y="116" text-anchor="middle">20件</text>
+<text class="t" x="18" y="151">そのまま「なぜ動かなかったのか教えて」</text>
+<rect class="bar-new" x="286.0" y="131" width="306.4" height="15" rx="2"/>
+<text class="t" x="600.4" y="143">26件</text>
+<rect class="bar-old" x="286.0" y="150" width="188.6" height="15" rx="2"/>
+<text class="t" x="482.6" y="162">16件</text>
+<text class="t" x="18" y="209">＋3択だけ渡す</text>
+<rect class="bar-new" x="286.0" y="189" width="117.9" height="15" rx="2"/>
+<text class="t" x="411.9" y="201">10件</text>
+<rect class="bar-old" x="286.0" y="208" width="70.7" height="15" rx="2"/>
+<text class="t" x="364.7" y="220">6件</text>
+<text class="t" x="18" y="267">＋「どれにも当たらないならそう書いて」</text>
+<rect class="bar-new" x="286.0" y="247" width="58.9" height="15" rx="2"/>
+<text class="t" x="352.9" y="259">5件</text>
+<rect class="bar-old" x="286.0" y="266" width="35.4" height="15" rx="2"/>
+<text class="t" x="329.4" y="278">3件</text>
+<text class="t" x="18" y="325">＋「根拠になった行をそのままコピーして」</text>
+<rect class="bar-new" x="286.0" y="305" width="2.0" height="15" rx="2"/>
+<text class="t-good" x="296.0" y="317">0件</text>
+<rect class="bar-old" x="286.0" y="324" width="2.0" height="15" rx="2"/>
+<text class="t-good" x="296.0" y="336">0件</text>
+<text class="t-bad" x="18" y="362">※ そのまま聞いた6回は、記録に根拠が1行も無い原因を26件並べた。うち1回は5つを「可能性の高い順」で。</text>
+<text class="t-bad" x="18" y="383">　 順位の根拠も記録には無い。読む側からは、記録から決まったことと見分けがつかない。</text>
+<text class="t-good" x="18" y="404">※ いちばん下の6回は0件。返り自身が「なぜ取得が0件になったのかは、この記録には書かれて</text>
+<text class="t-good" x="18" y="425">　 いないので判断できません」と書いて止まった。</text>
+<text class="t-xs" x="18" y="446">当て方を2通りに変えても並びは同じ（26&gt;10&gt;5&gt;0 と 16&gt;6&gt;3&gt;0）。生の返りは docs/evidence/ に全文。</text>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="525" viewBox="0 0 720 525" role="img" aria-label="自動実行が動かなかった朝に、実行の記録を貼って原因を聞いたときの返りを、頼み方4通りで並べた表。材料は架空の毎朝の実行の記録14日ぶんで、今朝の行だけが無い。行が無い状態は、実行されていないとも、遅れてまだ書かれていないとも両立するので、この記録だけでは3択のどれとも決まらない。1つの頼み方につき2回ずつ通した。そのままなぜ動かなかったのか教えてと頼んだ2回は、実行そのものが記録に無いと書いた。3択だけを渡した4回は、4回とも1の実行されていないを選んだ。どれにも当たらないならそう書いてくださいという1行を足した4回は、4回ともどれにも当たらないと答えた。さらに根拠になった行をそのままコピーしてくださいを足した2回も、2回ともどれにも当たらないと答えた。保存版として区分と根拠と記録に無いことの3行に固定した2回も、2回とも区分の欄にこの記録では決まらないと書いた。核は2行目で、候補を3つ渡すと、記録がその3つを見分けられない朝でも1つ選ぶ。受け皿の1行を足した4回は、選ばずに理由を書いた。なお、記録の中で答えが決まる朝、つまり遅れた朝と取得0件の朝は、4通りの頼み方すべてで16回とも当たっており、そこは崩れていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="525"/>
+<text class="t-strong" x="18" y="26">記録が途切れている朝。候補を3つだけ渡すと、決まらないのに1つ選ぶ</text>
+<text class="t-sm" x="18" y="45">架空の「毎朝の実行の記録」14日ぶん。今朝（8/19）の行だけが無い。行が無い状態は「実行されていない」とも</text>
+<text class="t-sm" x="18" y="64">「まだ書かれていない（遅れて走っている途中）」とも両立するので、この記録だけでは3択のどれとも決まらない。</text>
+<text class="t-sm" x="18" y="83">1つの頼み方につき2回。下の行の指示文は、上の行に足し重ねてある。</text>
+<text class="t-sm" x="18" y="102">※ 記録には「通信」「権限」「制限」「仕様変更」など24語の原因語が1語も出てこない（走らせる前に検算）。</text>
+<text class="t-xs" x="18" y="126">頼み方（下の行は、上の行に足し重ねてある）／その下は、今朝について返りが書いたこと</text>
+<text class="t-xs" x="640" y="126">通した回数</text>
+<text class="t" x="18" y="154">そのまま「なぜ動かなかったのか教えて」</text>
+<text class="t" x="640" y="154">2回</text>
+<rect class="box-bad" x="38" y="160" width="208" height="21" rx="4"/>
+<text class="t-bad" x="47" y="175">「実行そのものが記録に無い」</text>
+<text class="t" x="18" y="208">＋3択だけ渡す（実行されていない／遅れた／取得0件）</text>
+<text class="t" x="640" y="208">4回</text>
+<rect class="box-bad" x="38" y="214" width="249" height="21" rx="4"/>
+<text class="t-bad" x="47" y="229">4回とも「1. 実行されていない」</text>
+<text class="t-good" x="18" y="262">＋「どれにも当たらないならそう書いて」</text>
+<text class="t" x="640" y="262">4回</text>
+<rect class="box-good" x="38" y="268" width="222" height="21" rx="4"/>
+<text class="t-good" x="47" y="283">4回とも「どれにも当たらない」</text>
+<text class="t-good" x="18" y="316">＋「根拠になった行をそのままコピーして」</text>
+<text class="t" x="640" y="316">2回</text>
+<rect class="box-good" x="38" y="322" width="222" height="21" rx="4"/>
+<text class="t-good" x="47" y="337">2回とも「どれにも当たらない」</text>
+<text class="t-good" x="18" y="370">保存版＝3行に固定（区分／根拠／記録に無いこと）</text>
+<text class="t" x="640" y="370">2回</text>
+<rect class="box-good" x="38" y="376" width="249" height="21" rx="4"/>
+<text class="t-good" x="47" y="391">2回とも「この記録では決まらない」</text>
+<text class="t-bad" x="18" y="420">※ 2行目が核。候補を3つ渡すと、記録がその3つを見分けられない朝でも、4回とも1つ選んだ。</text>
+<text class="t-good" x="18" y="441">※ 「どれにも当たらないならそう書いて」を1行足すと、4回とも選ばずに理由を書いた。</text>
+<text class="t-good" x="18" y="462">　 返り自身が「行が無いことは、実行されなかった証拠にも、まだ記録されていない証拠にもなります」。</text>
+<text class="t-good" x="18" y="483">※ 記録の中で答えが決まる朝（遅れた／取得0件）は、4通りとも16回すべて当てた。ここは崩れない。</text>
+<text class="t-xs" x="18" y="504">この表は「記録が途切れている朝」の14通ぶん。全体では9個の頼み方で56通。生の返りは docs/evidence/ に全文。</text>
+</svg>
