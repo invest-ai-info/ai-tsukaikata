@@ -9560,7 +9560,108 @@ def delivery_note_claim_vs_flag_chart() -> None:
     )
 
 
+def conditions_changed_what_survives_chart() -> None:
+    """途中で条件を取り消して差し替えたあと、何が残り、何が増えるかを版4通りで並べる。
+
+    実測（2026-08-20・架空の発注書8条件を2本。1往復目に作業計画→2往復目に3件を差し替え→
+    条件に触れない依頼を3往復→もう一度作らせる。4版×材料2本×各2回＝16会話・76ターン）。
+    左＝取り消した3件が「いま使う値」として残った項目数（真値0）。分母は3項目×4回＝12。
+    中＝新しい値が入った項目数。右＝材料に1文字も無い金額の話が、依頼つきで出た行数（4回合計）。
+    """
+    rows = [
+        ("変更をそのまま伝えて作り直させる", 0, 12, 9),
+        ("＋「古い条件は使わないでください」", 0, 12, 5),
+        ("＋作り直す前に、いまの条件を書き出させる", 0, 12, 0),
+        ("新しい会話に、書き換えた条件表を貼り直す", 0, 12, 0),
+    ]
+    label_x, label_w = 18, 330
+    col_x = [label_x + label_w + 58, label_x + label_w + 180, label_x + label_w + 302]
+    col_names = [
+        ["取り消した値が", "残った"],
+        ["新しい値が", "入った"],
+        ["頼んでいない", "金額の話"],
+    ]
+    row_h = 36
+    top = 128
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "取り消した数字は残らない。残るのは「変更があった」という出来事のほう</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の発注書8条件を2本作り、作業計画を出させたあと、"
+        "2往復目で3件（分量・納期・修正回数）を取り消して差し替えた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "そのあと条件に一切触れない依頼を3往復はさんでから、もう一度おなじ作業計画を作らせている。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "1つの版につき、材料2本 × 各2回 ＝ 4会話。左と中の分母は 3項目 × 4回 ＝ 12。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "※ 材料には金額・単価・報酬の記載が1文字もない（走らせる前にコードで確認）。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 26 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, old, new, money in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        cells = [
+            ("box-good" if old == 0 else "box-bad",
+             "t-good" if old == 0 else "t-bad", f"{old} / 12"),
+            ("box-good", "t-good", f"{new} / 12"),
+            ("box-good" if money == 0 else "box-bad",
+             "t-good" if money == 0 else "t-bad", f"{money} 行"),
+        ]
+        for cx, (box, mcls, text) in zip(col_x, cells):
+            parts.append(
+                f'<rect class="{box}" x="{cx - 37}" y="{ty - 14}" '
+                f'width="74" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{mcls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{_esc(text)}</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 左は16会話・48項目とも0。変更の直後でも0/36。触っていない5条件も79/80そのまま残った。"),
+        ("t-bad", "※ 右は「金額の語」と「決めてください・ご提示ください」が同じ行にある数。材料に金額は無い。"),
+        ("t-bad", "　 1行目には「条件変更を受け入れた直後は、交渉がいちばん通りやすいタイミングです」まで入る。"),
+        ("t-good", "※ 会話を新しくすると0行。値のためではなく、変更というできごとを持ち越さないために効く。"),
+        ("t-xs", "架空データでの実測（16会話・のべ76ターン）。生の返りと判定コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "副業案件の条件を会話の途中で取り消して差し替えたあと、何が残り何が増えるかを、"
+        "頼み方4通りで並べた表。架空の発注書8条件を2本作り、まず作業計画を出させ、"
+        "2往復目で分量・納期・修正回数の3件を取り消して新しい値に差し替え、"
+        "そのあと条件に一切触れない依頼を3往復はさんでから、もう一度おなじ作業計画を作らせた。"
+        "1つの版につき材料2本かける各2回で4会話ずつ。"
+        "左の列は、取り消した3件が今使う値として成果物に残った項目数で、分母は3項目かける4回の12。"
+        "中の列は、新しい値が入った項目数。右の列は、材料に1文字も書かれていない金額の話が、"
+        "決めてくださいという依頼つきで出た行の数で、4会話の合計。"
+        "変更をそのまま伝えて作り直させた版は、取り消した値が0、新しい値が12、金額の話が9行。"
+        "古い条件は使わないでくださいと足した版は、0と12と5行。"
+        "作り直す前に今の条件を書き出させた版は、0と12と0行。"
+        "新しい会話に書き換えた条件表を貼り直した版は、0と12と0行。"
+        "つまり、取り消した数字が残る事故は4版とも一度も起きず、"
+        "版によって変わったのは、頼んでいない金額の話が付くかどうかだけだった。"
+    )
+    (OUT / "conditions-changed-what-survives.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    conditions_changed_what_survives_chart()
     delivery_note_claim_vs_flag_chart()
     price_chart()
     changed_chart()
