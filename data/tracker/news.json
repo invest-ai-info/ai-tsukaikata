@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-20T15:50:41.871329+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-20T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
+      "summary_ja": "Stampli社がChatGPTを使い製品準備を効率化\n開発支援AI「Codex」と「ChatGPT Work」を導入\n数週間かかる作業を数日に短縮し発売に成功",
+      "summary_source": "gemini",
+      "title": "How ChatGPT Work helps Stampli move ideas to market",
+      "uid": "65cbee7c753c4230",
+      "url": "https://openai.com/index/stampli",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-19T22:44:40.365901+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",

@@ -21,7 +21,7 @@
     "media-impress-ai": "2026-08-20T10:17:13+00:00",
     "media-itmedia-aiplus": "2026-08-20T08:10:55+00:00",
     "media-publickey": "2026-08-20T15:02:15+00:00",
-    "openai-news": "2026-08-19T19:00:00+00:00",
+    "openai-news": "2026-08-20T00:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-14T15:55:10+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -39,6 +39,17 @@
       "uid": "fc62a13fa30b435b",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
       "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-20T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
+      "title": "How ChatGPT Work helps Stampli move ideas to market",
+      "uid": "65cbee7c753c4230",
+      "url": "https://openai.com/index/stampli",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -407,6 +418,7 @@
     "65228e1b0794e790": "2026-08-20T01:53:51.496322+00:00",
     "65349b4475cfcb5e": "2026-08-01T12:16:42.309603+00:00",
     "657f2eee0dd348c9": "2026-08-01T12:16:42.309603+00:00",
+    "65cbee7c753c4230": "2026-08-20T15:50:41.871329+00:00",
     "65e60b3863e613f1": "2026-08-01T12:16:42.309603+00:00",
     "65f0780e184bc849": "2026-08-01T12:16:42.309603+00:00",
     "65f965a6ae922133": "2026-08-13T12:01:33.145239+00:00",
