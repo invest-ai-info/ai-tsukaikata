@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T14:57:36.616902+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-20T15:02:15+00:00",
+      "source_id": "media-publickey",
+      "summary": "Googleは、Dart言語によるアプリケーションフレームワークの最新版「Flutter 3.47」正式リリースを発表しました。 We’ve pieced together something special... Flutter 3.47...",
+      "title": "Fluter 3.47正式リリース。UIライブラリが分離され独立してアップデート可能、デフォルトでWebAssemblyを生成する方向に、など新機能",
+      "uid": "d1f5aff2b71954bb",
+      "url": "https://www.publickey1.jp/blog/26/fluter_347uiwebassembly.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-08-20T14:01:50.236692+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "AppleはSiri AIが時事問題にさらにアクセスできるようにするため出版社との提携を模索している",
       "uid": "46592e680c82af00",
       "url": "https://gigazine.net/news/20260813-apple-pay-publishers-improve-ai-siri/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T01:44:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "現地時間の2026年8月12日、Googleがスマートウォッチの「Google Pixel Watch 5」を発表しました。Google Pixel Watch 5はGemini IntelligenceとGoogle Health向けに設計されており、プロアクティブな提案と高度なヘルストラッキングが可能です。 続きを読む...",
-      "title": "Google Pixel Watch 5が登場、Geminiと話せるAI機能を強化",
-      "uid": "b7c293d22d9ee871",
-      "url": "https://gigazine.net/news/20260813-google-pixel-watch-5/",
       "vendor": "GIGAZINE"
     }
   ]
