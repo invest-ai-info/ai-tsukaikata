@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T04:01:20.445066+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-20T03:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIのCFOは全社集会で、同社が「2027年に上場企業になる」と語ったという。CNBCが報じた。",
+      "title": "OpenAI、「2027年に上場」方針をCFOが示す　成長加速なら前倒しも",
+      "uid": "c31a6ca205fe07f9",
+      "url": "https://japan.cnet.com/article/35251755/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-20T04:01:20.445066+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T03:09:23+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "アクセンチュアの世界20カ国調査で、AIによる生産性向上を実感する日本の従業員は57％と、世界平均の81％を大きく下回った。仕事の満足度や成果の実感でも世界との差が開き、人材と組織の変革が課題となっている。",
+      "title": "「AIで生産性向上」日本の従業員は57％、世界平均は81％　仕事の満足度でも大差──アクセンチュア調査",
+      "uid": "6e5c311460e9872d",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000641/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-20T03:11:50.731103+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "e213e321c73f6317",
       "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000516/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-12T14:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、スマートフォンの新モデル「Google Pixel 11」シリーズを8月20日に発売する。12日からオンラインで、13日からは店頭で予約を受け付ける。",
-      "title": "「Google Pixel 11」シリーズ、8月20日発売",
-      "uid": "66998b9426d9c7a3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132023.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-12T14:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "コーディングにAIを活用することは一般的なワークフローとなっていますが、「AIによってファイルが削除された」「AIが不正なコードを生成した」といった問題のある動作も多数報告されています。そんなAIによる危険な行動について、オンライン掲示板のRedditへの投稿を収集して分析した研究結果がプレプリントサーバーのarXivで公開されました。 続きを読む...",
-      "title": "AIエージェントの「不正なファイル操作」「危険なコード生成」といった問題をReddit投稿から抽出した研究結果",
-      "uid": "b93a924e0aa01f70",
-      "url": "https://gigazine.net/news/20260812-ai-agent-issue/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
