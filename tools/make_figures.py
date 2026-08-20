@@ -9660,7 +9660,297 @@ def conditions_changed_what_survives_chart() -> None:
     )
 
 
+def pfp9_arena_rank_chart() -> None:
+    """MLIP Arena の総合ランキング（合計点は小さいほど上位）。
+
+    出典＝Preferred Networks の技術ブログ「PFP v9のご紹介」の表1。
+    PFP v9 以外の値は 2026-03-01 時点の公開リーダーボードに基づく、と同ページに明記。
+    """
+    rows = [
+        ("PFP v9", 12, True),
+        ("MACE-MPA", 12, True),
+        ("MatterSim", 19, False),
+        ("MACE-MP(M)", 24, False),
+        ("CHGNet", 29, False),
+        ("ORB v2", 33, False),
+        ("SevenNet", 35, False),
+        ("M3GNet", 36, False),
+    ]
+    left, right = 210, 620
+    span = right - left
+    top, bar_h, pitch = 100, 20, 30
+    worst = max(value for _, value, _ in rows)
+    scale = span / worst
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "MLIP Arena の総合ランキング。PFP v9 は MACE-MPA と同率1位です</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "棒は5種目の順位を足した合計点。短いほど上位です（1位＝12点）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "PFP v9 以外の値は、2026年3月1日時点の公開リーダーボードにもとづくと"
+        "発表ページに書かれています。</text>\n",
+    ]
+    for index, (name, value, top_two) in enumerate(rows):
+        y = top + index * pitch
+        cls = "t-strong" if top_two else "t"
+        parts.append(f'<text class="{cls}" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        bar_w = max(2.0, value * scale)
+        parts.append(
+            f'<rect class="{"bar-new" if top_two else "bar-old"}" x="{left}" y="{y}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bar_w + 8:.1f}" y="{y + bar_h - 4}">'
+            f"{value}点</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 62
+    notes = [
+        "※ 5種目＝二原子分子・状態方程式・エネルギーと体積・安定性・燃焼。",
+        "※ 同じ表に「wbm_ev の1位は eSEN」という注記が付いています。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 42 + note_index * 19}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "MLIP Arena の総合ランキングを示した横棒グラフ。"
+        "棒は5種目の順位を足した合計点で、短いほど上位。"
+        "PFP v9 が12点、MACE-MPA も12点で同率1位。"
+        "以下 MatterSim が19点、MACE-MP(M) が24点、CHGNet が29点、ORB v2 が33点、"
+        "SevenNet が35点、M3GNet が36点。"
+        "PFP v9 以外の値は2026年3月1日時点の公開リーダーボードにもとづくと発表ページに書かれている。"
+        "5種目は二原子分子・状態方程式・エネルギーと体積・安定性・燃焼で、"
+        "同じ表にはエネルギーと体積の1位は eSEN という注記が付いている。"
+    )
+    (OUT / "pfp9-arena-rank.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def pfp9_five_tasks_chart() -> None:
+    """5種目それぞれの順位。PFP v9 と MACE-MPA を並べる。
+
+    出典＝Preferred Networks の技術ブログ「PFP v9のご紹介」の表1。
+    """
+    tasks = [
+        ("二原子分子のなめらかさ", "diatomics", 1, 2),
+        ("状態方程式", "eos_bulk", 1, 2),
+        ("エネルギーと体積", "wbm_ev", 5, 2),
+        ("高温・圧縮での安定性", "stability", 1, 4),
+        ("水素の燃焼", "combustion", 4, 2),
+    ]
+    label_x = 18
+    col_x = [400, 560]
+    col_w = 130
+    head_y = 96
+    top = 126
+    pitch = 44
+    cell_h = 32
+
+    assert col_x[1] + col_w + 18 <= WIDTH, col_x[1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同率1位でも、種目ごとに見ると3種目が1位・2種目は4位と5位です</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "数字は種目ごとの順位。緑＝その種目で1位、灰色＝2位以下。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "合計点はどちらも12点で並びますが、点の取り方はまったく違います。</text>\n",
+    ]
+    for index, name in enumerate(("PFP v9", "MACE-MPA")):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[index] + 10}" y="{head_y}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, code, mine, theirs) in enumerate(tasks):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + 14}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{label_x}" y="{y + 30}">{_esc(code)}</text>\n'
+        )
+        for col_index, rank in enumerate((mine, theirs)):
+            cls = "box-good" if rank == 1 else "box-quiet"
+            text_cls = "t-good" if rank == 1 else "t-sm"
+            parts.append(
+                f'<rect class="{cls}" x="{col_x[col_index]}" y="{y - 4}" '
+                f'width="{col_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_cls}" x="{col_x[col_index] + 52}" y="{y + 17}">'
+                f"{rank}位</text>\n"
+            )
+
+    height = top + len(tasks) * pitch + 60
+    notes = [
+        "※ 燃焼の値は、5回走らせた平均だと発表ページに書かれています。",
+        "※ 5種目の中身も測り方も別々です。順位を足した合計点に、精度の意味はありません。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 42 + note_index * 19}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "MLIP Arena の5種目それぞれの順位を、PFP v9 と MACE-MPA で並べた表。"
+        "二原子分子のなめらかさ（diatomics）は PFP v9 が1位、MACE-MPA が2位。"
+        "状態方程式（eos_bulk）も PFP v9 が1位、MACE-MPA が2位。"
+        "エネルギーと体積（wbm_ev）は PFP v9 が5位、MACE-MPA が2位。"
+        "高温・圧縮での安定性（stability）は PFP v9 が1位、MACE-MPA が4位。"
+        "水素の燃焼（combustion）は PFP v9 が4位、MACE-MPA が2位。"
+        "合計点はどちらも12点で同率1位だが、点の取り方はまったく違う。"
+        "燃焼の値は5回走らせた平均だと発表ページに書かれている。"
+        "5種目は中身も測り方も別々なので、順位を足した合計点に精度の意味はない。"
+    )
+    (OUT / "pfp9-five-tasks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def pfp9_h2_rmse_chart() -> None:
+    """水素燃焼19素反応の反応熱の誤差（RMSE・kcal/mol・小さいほど正確）。
+
+    出典＝Preferred Networks の技術ブログ「PFP v9のMLIP Arenaベンチマーク評価(詳細版)」。
+    """
+    rows = [
+        ("PFP v9（r2SCAN モード）", 3.10, "bar-new"),
+        ("PFP v9（PBE モード）", 7.88, "bar-in"),
+        ("MACE-MPA-0", 11.15, "bar-old"),
+    ]
+    left, right = 260, 600
+    span = right - left
+    top, bar_h, pitch = 108, 26, 46
+    worst = max(value for _, value, _ in rows)
+    scale = span / worst
+
+    assert right + 90 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "水素が燃える19本の反応。予測した熱と実験値のずれ（小さいほど正確）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "単位は kcal/mol。この数え方は、走らせるたびに結果が変わらないと"
+        "発表ページが説明しています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "実験値は、比較相手 MACE-MPA の論文の図から読み取ったものだと"
+        "同じページに書かれています。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 7}">{_esc(name)}</text>\n')
+        bar_w = max(2.0, value * scale)
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bar_w + 10:.1f}" y="{y + bar_h - 7}">'
+            f"{value:.2f}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 62
+    notes = [
+        "※ MLIP Arena の順位づけには、この数え方は入っていません。別に足した確認です。",
+        "※ 発表ページは「r2SCAN は PBE に対して誤差を56%低減」と書いています。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 42 + note_index * 19}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "水素が燃える19本の素反応について、予測した反応熱と実験値のずれを比べた横棒グラフ。"
+        "単位は kcal/mol で、短いほど正確。"
+        "PFP v9 の r2SCAN モードが3.10、PFP v9 の PBE モードが7.88、MACE-MPA-0 が11.15。"
+        "この数え方は走らせるたびに結果が変わらないと発表ページが説明しており、"
+        "実験値は比較相手 MACE-MPA の論文の図から読み取ったものだと同じページに書かれている。"
+        "MLIP Arena の順位づけには、この数え方は入っていない。"
+        "発表ページは r2SCAN は PBE に対して誤差を56パーセント低減と書いている。"
+    )
+    (OUT / "pfp9-h2-rmse.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def pfp9_elements_chart() -> None:
+    """r2SCAN モードで扱える元素の数が 70 から 96 へ増えた、という図。
+
+    出典＝Preferred Networks の技術ブログ「PFP v9のご紹介」。
+    """
+    bars = [("PFP v8", 70, "bar-old"), ("PFP v9", 96, "bar-new")]
+    left, right = 190, 600
+    span = right - left
+    top, bar_h, pitch = 96, 30, 48
+    scale = span / 96.0
+
+    box_top = top + len(bars) * pitch + 14
+    box_h = 96
+    height = box_top + box_h + 54
+
+    assert right + 70 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "実験値に近づける計算モードで扱える元素が、70種類から96種類になりました</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "水素（H）からキュリウム（Cm）まで。増えたのはランタノイドとアクチノイドの系列です。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(bars):
+        y = top + index * pitch
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 9}">{_esc(name)}</text>\n')
+        bar_w = value * scale
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bar_w + 10:.1f}" y="{y + bar_h - 9}">'
+            f"{value}種類</text>\n"
+        )
+
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{box_top}" '
+        f'width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n'
+    )
+    box_lines = [
+        ("t-strong", "学習データに新しく入ったもの"),
+        ("t", "表面構造・吸着構造・クラスター・金属錯体"),
+        ("t-sm", "触媒・電池材料・合金・多孔性材料で頻繁に出てくる形だと発表ページは説明しています。"),
+    ]
+    for line_index, (css, text) in enumerate(box_lines):
+        parts.append(
+            f'<text class="{css}" x="36" y="{box_top + 28 + line_index * 24}">{_esc(text)}</text>\n'
+        )
+
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ もう一方の計算モード（PBE）で扱える元素の数は、この発表ページには書かれていません。</text>\n"
+    )
+
+    alt = (
+        "実験値に近づける r2SCAN 計算モードで扱える元素の数を比べた横棒グラフ。"
+        "PFP v8 が70種類、PFP v9 が96種類で、水素（H）からキュリウム（Cm）まで。"
+        "増えたのはランタノイドとアクチノイドの系列。"
+        "また学習データには表面構造・吸着構造・クラスター・金属錯体が新しく入っており、"
+        "触媒・電池材料・合金・多孔性材料で頻繁に出てくる形だと発表ページは説明している。"
+        "もう一方の計算モードである PBE で扱える元素の数は、この発表ページには書かれていない。"
+    )
+    (OUT / "pfp9-elements.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    pfp9_arena_rank_chart()
+    pfp9_five_tasks_chart()
+    pfp9_h2_rmse_chart()
+    pfp9_elements_chart()
     conditions_changed_what_survives_chart()
     delivery_note_claim_vs_flag_chart()
     price_chart()

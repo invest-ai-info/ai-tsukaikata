@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="402" viewBox="0 0 720 402" role="img" aria-label="MLIP Arena の総合ランキングを示した横棒グラフ。棒は5種目の順位を足した合計点で、短いほど上位。PFP v9 が12点、MACE-MPA も12点で同率1位。以下 MatterSim が19点、MACE-MP(M) が24点、CHGNet が29点、ORB v2 が33点、SevenNet が35点、M3GNet が36点。PFP v9 以外の値は2026年3月1日時点の公開リーダーボードにもとづくと発表ページに書かれている。5種目は二原子分子・状態方程式・エネルギーと体積・安定性・燃焼で、同じ表にはエネルギーと体積の1位は eSEN という注記が付いている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="402"/>
+<text class="t-strong" x="18" y="26">MLIP Arena の総合ランキング。PFP v9 は MACE-MPA と同率1位です</text>
+<text class="t-sm" x="18" y="45">棒は5種目の順位を足した合計点。短いほど上位です（1位＝12点）。</text>
+<text class="t-sm" x="18" y="64">PFP v9 以外の値は、2026年3月1日時点の公開リーダーボードにもとづくと発表ページに書かれています。</text>
+<text class="t-strong" x="18" y="116">PFP v9</text>
+<rect class="bar-new" x="210" y="100" width="136.7" height="20" rx="2"/>
+<text class="t-sm" x="354.7" y="116">12点</text>
+<text class="t-strong" x="18" y="146">MACE-MPA</text>
+<rect class="bar-new" x="210" y="130" width="136.7" height="20" rx="2"/>
+<text class="t-sm" x="354.7" y="146">12点</text>
+<text class="t" x="18" y="176">MatterSim</text>
+<rect class="bar-old" x="210" y="160" width="216.4" height="20" rx="2"/>
+<text class="t-sm" x="434.4" y="176">19点</text>
+<text class="t" x="18" y="206">MACE-MP(M)</text>
+<rect class="bar-old" x="210" y="190" width="273.3" height="20" rx="2"/>
+<text class="t-sm" x="491.3" y="206">24点</text>
+<text class="t" x="18" y="236">CHGNet</text>
+<rect class="bar-old" x="210" y="220" width="330.3" height="20" rx="2"/>
+<text class="t-sm" x="548.3" y="236">29点</text>
+<text class="t" x="18" y="266">ORB v2</text>
+<rect class="bar-old" x="210" y="250" width="375.8" height="20" rx="2"/>
+<text class="t-sm" x="593.8" y="266">33点</text>
+<text class="t" x="18" y="296">SevenNet</text>
+<rect class="bar-old" x="210" y="280" width="398.6" height="20" rx="2"/>
+<text class="t-sm" x="616.6" y="296">35点</text>
+<text class="t" x="18" y="326">M3GNet</text>
+<rect class="bar-old" x="210" y="310" width="410.0" height="20" rx="2"/>
+<text class="t-sm" x="628.0" y="326">36点</text>
+<text class="t-xs" x="18" y="360">※ 5種目＝二原子分子・状態方程式・エネルギーと体積・安定性・燃焼。</text>
+<text class="t-xs" x="18" y="379">※ 同じ表に「wbm_ev の1位は eSEN」という注記が付いています。</text>
+</svg>

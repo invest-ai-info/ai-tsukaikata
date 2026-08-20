@@ -213,8 +213,18 @@
 - [x] https://deepmind.google/blog/introducing-gemini-3-7-flash/
   - →保管: 2026-08-13 自動追記（major・Google DeepMind「Introducing Gemini 3.7
 
-- [!] https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/
+- [x] https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/
   - 2026-08-17 自動追記（major・Preferred Networks「PFP v9のご紹介: MLIP Arenaでのベンチマーク評価とr2SCANによる実験値再現性の向上」）
+  - ✅ **2026-08-20 2回目（再試行）: 公開した** → `content/tools/matlantis-pfp-v9.md`
+    - **許可リストが直っていた。**1回目に `CONNECT tunnel failed` だった `tech.preferred.jp`・`aws.amazon.com`・
+      `docs.aws.amazon.com`・`arxiv.org` は**すべて 200**（実測）。⚠️ ただし `matlantis.com` と
+      `www.nature.com` と `papers.nips.cc` は**まだ通らない**（`http=000`）。
+    - 🔑 **「経路遮断なら再試行する」という規則が、実際に1本の記事になった2例目。**
+      1回目の記録に「どちらの遮断だったか」を書いてあったから拾い直せた。**この記録は続けること。**
+    - ⚠️ **表1・表2は本文テキストではなく PNG 画像**（`wp-content/uploads/2026/08/image10.png` と
+      `image4.png`）。HTMLをテキストに直しただけでは数字が1つも取れない。画像を落として直接読むこと。
+      そのため `grep` では照合できない（`eSEN` の注記も画像の中にある）。
+    - 切り口＝「材料の話」ではなく**「総合1位の読み方」**に寄せた（読者が非エンジニアのため）。
   - **2026-08-17 1回目: 下書きを作らずに停止した。**発表本文に到達できないため。
 
     **① `tech.preferred.jp` は経路の遮断（許可リスト）。先方の bot 判定ではない**
@@ -331,11 +341,54 @@
     - 読者（自動化したい非エンジニアの会社員）から遠い題材なので、**切り口を先に決めること。**
       「子どもに使わせるとき、会社で使うのと何が違うか」なら近づく。
 
-- [ ] https://openai.com/index/introducing-ai-futures
+- [!] https://openai.com/index/introducing-ai-futures
   - 2026-08-20 自動追記（major・OpenAI「Introducing AI Futures」）
+  - **2026-08-20 1回目: 記事を書かずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
+
+    **① `openai.com` の HTMLページは今日も403（Cloudflare の bot 判定）。5回連続で戻っていない**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `openai.com/index/introducing-ai-futures/`（スラッシュ有り） | **403**・9,746バイト |
+    | 同（スラッシュ無し） | **403**・9,743バイト |
+    | 同（`?x=1` 付き＝キャッシュ回避） | **403**・9,794バイト |
+    | `openai.com/ja-JP/index/introducing-ai-futures/`（日本語版） | **403**・9,785バイト |
+    | `openai.com/news/` | **403**・9,652バイト |
+    | `openai.com/news/rss.xml` | **200**・694,646バイト（1,143 item） |
+    | `developers.openai.com/api/docs/models` | **200**・345,602バイト |
+    | `model-spec.openai.com/2026-08-18.html` | **200**・2,662,295バイト |
+
+    - 応答ヘッダは毎回と同じ **`cf-mitigated: challenge`** ＋ `server: cloudflare`。⚠️**先方のbot判定であって
+      経路（許可リスト）の遮断ではない。許可リストに足しても直らない。**切り分けの根拠＝同じ `openai.com` の
+      RSS が 200 で返り、`developers.openai.com` も `model-spec.openai.com` も 200 で返っていること。
+      **UA偽装での迂回はしない。**
+    - 💡 **08-05（GPT-Live）→ 08-10（Daybreak legacy）→ 08-11（AWS）→ 08-18（ChatGPT for Teens）→ 08-20（本件）で
+      5回連続403。**15日たっても戻っていない。**`openai.com/index/...` が来たら、まずここを読むこと。**
+
+    **② そもそも題材に数字が1つも無い。①が解けても、このサイトの型では書けない可能性が高い**
+
+    - RSS の item は実在する。カテゴリは **`AI Futures`**（この1件だけ。RSS 全1,143 item 中、同カテゴリは他に無し）。
+      公開日 **2026-08-20 07:00 GMT**
+    - description 全文＝`Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape
+      power, governance, the economy, and individual freedom.`
+    - → **これは「新しいブログを始めます」という告知**であって、モデルでも料金でも機能でもない。
+      `developers.openai.com` に載る種類の数字（料金・コンテキスト長・ベンチマーク）は**構造的に存在しない**。
+      ①が解けても、書けるのは「OpenAI が統治・経済・自由についてのブログを始めた」の1行だけ。
+      **深掘り記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない。**
+    - 💡 **次にこの行を見る人へ**＝①が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
+      無ければ `- [x]` にせず、**題材として見送ったと明記して閉じる**のが正しい。
 
 ## 処理済み
 
+- https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/ → **公開済み** content/tools/matlantis-pfp-v9.md（2026-08-20・公開）
+  - 再試行で通った2件目（1回目は 2026-08-17 に `CONNECT tunnel failed`＝経路遮断）。図4枚
+    （`pfp9-arena-rank` / `pfp9-five-tasks` / `pfp9-h2-rmse` / `pfp9-elements`）。
+    `check_numbers.py` は照合できる数字3個のうち**2個が出典に存在**、残る1個（`61%`）は
+    記事が 3.10 と 7.88 から計算した値で、**そう明記して載せてある**（出典4件とも取得成功）。
+    pytest 555 passed・build 102ファイル。
+  - ⚠️ 一次情報は **PFNの技術ブログ2本**と **arXiv の v8 プレプリント**だけ。
+    **料金は書いていない**（`matlantis.com` に到達できず）。MLIP Arena の公開リーダーボードは
+    Streamlit の動的ページで、HTMLにモデル名も点数も入っていない＝**中身を読めない**。
 - https://openrouter.ai/qwen/qwen3.8-max → **公開済み** content/tools/qwen3-8-max.md（2026-08-20・公開）
   - 再試行で通った1件目。図4枚（`qwen38-two-weights` / `qwen38-vs-37` / `qwen38-not-first` / `qwen38-price-region`）。
     `check_numbers.py` は **6個すべて出典に存在**（出典9件とも取得成功）。pytest 529 passed・build 99ファイル。
