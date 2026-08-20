@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T23:42:54.211577+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "オートデスクは「Design & Make Summit Japan 2026」を東京都内で開催した。本稿では、米Autodeskのビック・ベダンサム氏による基調講演から、AI時代の製造業に求められるデータ基盤と設計／製造の変革について紹介する。",
+      "title": "データをつなぎ、AI活用へ――オートデスクが示す設計／製造DXの未来像",
+      "uid": "12d430085fe88d8a",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/21/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T23:42:54.211577+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "海外事務の標準化を進めている三菱UFJ銀行。熟練従業員に頼ってきた業務プロセスの精査を生成AIに置き換える過程で直面したのは、AI特有の誤情報や回答のバラつきだった。同行はこれをどう克服したのか。",
+      "title": "業務標準化の手間を9割減　三菱UFJ銀行は生成AIに「業務知識」をどう教えた？",
+      "uid": "b644d4825524e0cb",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/21/news019.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T23:42:54.211577+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "競合が同じ方向に走り出した今こそ、差別化はむしろ容易になっている――。SnowflakeのCEOが年次カンファレンスでこう言い切った根拠はどこにあるのか。AIエージェント時代のSnowflakeの戦略に迫る。",
+      "title": "Snowflakeが過去最高業績　CEOが「他社との差別化は容易になった」と語るワケ",
+      "uid": "c834642e10c23c4d",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/24/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T23:42:54.211577+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "DeepLは8月19日、法律事務所および企業法務部門向けAIプラットフォームのリーディングカンパニーであるHarveyが、同社のプラットフォームで高精度なAI文書翻訳を実現するためにDeepLの翻訳APIを採用したと発表した。",
+      "title": "DeepLの翻訳APIをHarveyのAIプラットフォームで採用",
+      "uid": "0ae63ef54a06a784",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134347.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T23:42:54.211577+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T22:55:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "マイナビは、2027年卒の就職活動で流行した用語を発表した。米OpenAIのチャットAI「ChatGPT」を示す「チャッピー」に加え、「チャピる」「ギュられる」といったAIに関する新語が登場した。",
+      "title": "「チャピる」「ギュられる」って何？　今年流行った「就活用語」にAI関連ワード　マイナビ調査",
+      "uid": "e2e44a8c33ff7d92",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/21/2000000663/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T23:42:54.211577+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-20T22:49:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "KDDIは8月20日、日本発スタートアップの米国進出を支援するアクセラレータープログラム「KDDI Beyond Borders Accelerator」を始めると発表した。第1期にはAIスタートアップ5社が参加し、米サンフランシスコに1カ月間滞在する。",
+      "title": "KDDI、日本発スタートアップの米国進出を支援する新プログラム　第1期はAI新興5社",
+      "uid": "f14409f617bd1e0b",
+      "url": "https://japan.cnet.com/article/35251785/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-08-20T22:47:29.624906+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2326,78 +2398,6 @@
       "title": "AIモデルに子ども向けの動物物語を作らせると女性キャラをほぼ完全に排除してしまう",
       "uid": "7e1888ae92113d1b",
       "url": "https://gigazine.net/news/20260813-ai-erase-female-characters-kids-stories/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T08:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "フランスのAI企業・Mistral AIが自社プラットフォームの「Vibe」などで、自社AIモデルだけでなくサードパーティー製のオープンモデルもサポートすることを明らかにしました。 続きを読む...",
-      "title": "Mistral AIのプラットフォームでサードパーティー製オープンモデルが選択可能に、まずはZ.aiのGLM-5.2から",
-      "uid": "ab951f875581ca6d",
-      "url": "https://gigazine.net/news/20260813-mistral-ai-third-party-open-model/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T07:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国のハッカーとみられる人物が、一般に公開されているAIツールを使って台湾の政府系ウェブサイトを侵害したことが報じられています。イスラエルのAI企業・Dreamの研究者によると、攻撃者はオープンソースのAIエージェントを使用して、連携のとれたサイバーチームのように振る舞う自律的なハッキングツールを構築したとのことです。 続きを読む...",
-      "title": "AIエージェントで構築した「自律型ハッキングツール」がアジアの政府機関を攻撃、中国による台湾政府への攻撃か",
-      "uid": "8930320ff3918cac",
-      "url": "https://gigazine.net/news/20260813-ai-government-cyberattack/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T06:25:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国のAIスタートアップであるDeepSeekが、最新AIモデルの「DeepSeek V4 Pro 0813」をひっそりとリリースしました。 続きを読む...",
-      "title": "中華AIスタートアップのDeepSeekが「DeepSeek V4 Pro 0813」をひっそりとリリース",
-      "uid": "4ad192c7cf9c5c3f",
-      "url": "https://gigazine.net/news/20260813-deepseek-v4-pro-0813/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-13T06:14:13+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Google共同創業者ブリン氏が、AI部門の従業員に「Gemini」へ全力を注ぐよう促していたという。旗艦モデルは競合への後れで公開が2カ月延期。「再帰的自己改善」への資源配分も進めている。",
-      "title": "Google、「Gemini」開発遅延で焦りか　共同創業者ブリン氏が“全力投球”促す",
-      "uid": "ce5fee6f498f6ce3",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000529/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "EUで施行される法律に基づき、AnthropicはAIが生成するコンテンツに「透かし(ウォーターマーク)」を入れることを決定しました。この決定に、一部のAIユーザーが反発しています。 続きを読む...",
-      "title": "ClaudeにAI透かしが追加されることで職場や学校でAIを使用していることがバレてしまうかもとユーザーが不満げ",
-      "uid": "b506a558e87f6a6e",
-      "url": "https://gigazine.net/news/20260813-claude-ai-watermark-mad/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T05:28:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "動画配信プラットフォームのTwitchが、コンテンツをAmazonのAIトレーニングに利用していく方針を明らかにしました。トレーニングに利用されたくないユーザー向けにオプトアウトするための設定が設けられています。 続きを読む...",
-      "title": "TwitchがコンテンツをAmazonのAIトレーニングに利用すると公表、利用されたくないユーザー向けにオプトアウト設定を追加",
-      "uid": "9908f6829c23de9f",
-      "url": "https://gigazine.net/news/20260813-twitch-amazon-ai-training/",
       "vendor": "GIGAZINE"
     }
   ]
