@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T19:02:40.366121+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-08-20T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana Translateの翻訳モデルを新しい世代の「Sakana Namazu」へアップデート",
+      "uid": "5b9d6a719247b623",
+      "url": "/translate-update/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-08-20T01:53:51.496322+00:00",
       "importance": "minor",
       "label": "Claude Code",
