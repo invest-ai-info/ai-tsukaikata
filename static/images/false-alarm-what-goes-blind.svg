@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="426" viewBox="0 0 720 426" role="img" aria-label="誤報を1件止めるよう直させた点検の条文を、翌日の記録に当てたときに、元の条文なら拾えたはずの桁落ちを何件拾えたかを、直し方3通りで並べた横棒グラフ。翌日の記録20行には、元の第3条が拾うはずの桁落ちを3件だけ入れてあり、1つの直し方につき4回なので3件かける4回で12件が満点である。ほかの4条に当たる違反は1件も入れていない。そのままこの誤検知が出ないように直してと頼んだ4回は12件中7件で、5件の見落とし。検査は消さないで1件だけを除く条件をと足した4回は8件で、4件の見落とし。直す前に鳴っていた行がまだ鳴るか確かめてと足した4回は9件で、3件の見落としだった。どの直し方でも満点にならず、12回で合わせて12件を見落としている。落ちたのはほぼ同じ1件で、12回中11回が誤報の種と同じ品目の桁落ちだった。品目名で除外すると、その品目の今後の異常が丸ごと見えなくなるためである。満点だったのは1回だけで、第3条を除外で直さず、同じ品目の多数派と違う金額の行を挙げる、という条文に書き換えた回だった。なお、誤報そのものが翌日に戻った回は12回とも0回である。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="426"/>
+<text class="t-strong" x="18" y="26">翌日の記録で、元の条文なら拾えたはずの桁落ちを何件拾えたか</text>
+<text class="t-sm" x="18" y="45">翌日の記録（20行）には、元の第3条が拾うはずの桁落ちを3件だけ入れてある。1つの直し方につき4回なので、</text>
+<text class="t-sm" x="18" y="64">3件 × 4回 ＝ 12件が満点。ほかの4条に当たる違反は1件も入れていない。</text>
+<text class="t-sm" x="18" y="83">濃い＝拾えた件数　／　薄い＝見落とした件数</text>
+<path class="line" d="M322.0 126 L322.0 272" stroke-dasharray="3 4"/>
+<text class="t-xs" x="322.0" y="120" text-anchor="middle">0件</text>
+<path class="line" d="M422.0 126 L422.0 272" stroke-dasharray="3 4"/>
+<text class="t-xs" x="422.0" y="120" text-anchor="middle">4件</text>
+<path class="line" d="M522.0 126 L522.0 272" stroke-dasharray="3 4"/>
+<text class="t-xs" x="522.0" y="120" text-anchor="middle">8件</text>
+<path class="line" d="M622.0 126 L622.0 272" stroke-dasharray="3 4"/>
+<text class="t-xs" x="622.0" y="120" text-anchor="middle">12件</text>
+<text class="t" x="18" y="154">そのまま「この誤検知が出ないように直して」</text>
+<rect class="bar-new" x="322.0" y="140" width="175.0" height="24" rx="2"/>
+<text class="t-xs" x="409.5" y="156" text-anchor="middle">7件</text>
+<rect class="bar-old" x="497.0" y="140" width="125.0" height="24" rx="2"/>
+<text class="t-xs" x="559.5" y="156" text-anchor="middle">5</text>
+<text class="t" x="18" y="208">＋「検査は消さないで。1件だけを除く条件を」</text>
+<rect class="bar-new" x="322.0" y="194" width="200.0" height="24" rx="2"/>
+<text class="t-xs" x="422.0" y="210" text-anchor="middle">8件</text>
+<rect class="bar-old" x="522.0" y="194" width="100.0" height="24" rx="2"/>
+<text class="t-xs" x="572.0" y="210" text-anchor="middle">4</text>
+<text class="t" x="18" y="262">＋「直す前に鳴っていた行がまだ鳴るか確かめて」</text>
+<rect class="bar-new" x="322.0" y="248" width="225.0" height="24" rx="2"/>
+<text class="t-xs" x="434.5" y="264" text-anchor="middle">9件</text>
+<rect class="bar-old" x="547.0" y="248" width="75.0" height="24" rx="2"/>
+<text class="t-xs" x="584.5" y="264" text-anchor="middle">3</text>
+<text class="t-bad" x="18" y="300">※ どの直し方でも満点にならない。12回で合わせて12件の見落とし。</text>
+<text class="t-bad" x="18" y="321">※ 落ちたのはほぼ同じ1件＝12回中11回が「誤報の種と同じ品目」の桁落ちだった。</text>
+<text class="t-bad" x="18" y="342">　 品目名で除外すると、その品目の今後の異常が丸ごと見えなくなる。</text>
+<text class="t-good" x="18" y="363">※ 満点だったのは1回だけ。第3条を除外で直さず、</text>
+<text class="t-good" x="18" y="384">　 「同じ品目の多数派と違う金額の行を挙げる」に書き換えた回。</text>
+<text class="t-xs" x="18" y="405">架空データでの実測（全12回）。誤報が翌日に戻った回は12回とも0回だった。</text>
+</svg>

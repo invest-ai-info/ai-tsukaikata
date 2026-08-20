@@ -8969,6 +8969,206 @@ def unread_mark_line_position_chart() -> None:
     )
 
 
+def false_alarm_today_vs_tomorrow_chart() -> None:
+    """誤報を1件止めたあと、今日の記録と翌日の記録で結果がどう違うかを並べる。
+
+    実測（2026-08-20・架空の点検5条と記録30行を2組、3通りの直し方 × 各2回 × 2組 ＝ 全12回）。
+    値は check.py / check2.py の出力。座標は計算で出す。
+    """
+    rows = [
+        ("そのまま「この誤検知が出ないように直して」", "10/10", "0件", "7/12", 4),
+        ("＋「検査は消さないで。この1件だけを除く条件を」", "10/10", "0件", "8/12", 4),
+        ("＋「直す前に鳴っていた行が全部まだ鳴るか確かめて」", "10/10", "0件", "9/12", 4),
+    ]
+    label_x = 18
+    col_x = [340, 436, 560]
+    col_names = [
+        ["今日の記録", "本物10件の検出"],
+        ["今日の記録", "巻き添え"],
+        ["翌日の記録", "桁落ち3件の検出"],
+    ]
+    row_h = 50
+    top = 150
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "誤報を1件止めても、今日は何も減らない。減るのは翌日から</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「毎朝の点検・5条」と記録30行を2組。各条に本物の異常を2件ずつ＝10件と、"
+        "第3条に当たってしまう</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "無害な行を1件（誤報の種）仕込んだ。①5条を当てる →"
+        "②誤報の1行だけ見せて直させる → ③同じ記録に当て直す</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "→ ④翌日の記録（別の20行）に当てる。1つの直し方につき、記録2組 × 各2回 ＝ 4回。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "翌日の記録には、元の第3条なら拾えるはずの桁落ちを3件だけ入れてある"
+        "（ほかの条の違反は0件）。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 28 + i * 13}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, keep, lost, tomorrow, n in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<text class="t-xs" x="{label_x + 8}" y="{ty + 16}">（{n}回）</text>\n'
+        )
+        for cx, val, good, w in ((col_x[0], keep, True, 60),
+                                 (col_x[1], lost, True, 50),
+                                 (col_x[2], tomorrow, False, 60)):
+            box = "box-good" if good else "box-bad"
+            cls = "t-good" if good else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - w // 2}" y="{ty - 14}" '
+                f'width="{w}" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{_esc(val)}</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 心配していた事故は今日の記録には出なかった＝12回とも、直す前に鳴っていた本物10件は全部まだ鳴る。"),
+        ("t-good", "　 誤報の1行は12回とも止まり、条文が丸ごと消えた回も0回（12回とも5条そろっている）。"),
+        ("t-bad", "※ 翌日の記録では、12回で合わせて12件を見落とした（3件 × 12回 ＝ 36件のうち24件しか拾えない）。"),
+        ("t-bad", "　 12回のうち11回が、同じ1件を落とした＝「誤報の種と同じ品目」の桁落ち。除外がその品目ごと効くため。"),
+        ("t-good", "※ 7/12回は、頼んでいないのに「その行は除外に当たるので挙がっていません」と自分から書いた。"),
+        ("t-xs", "架空データでの実測（全12回・各4段）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎朝の点検の誤報を1件だけ止めさせたあと、今日の記録と翌日の記録で結果がどう変わるかを、"
+        "直し方3通りで並べた表。"
+        "架空の点検5条と記録30行を2組作り、各条に本物の異常を2件ずつ合計10件と、"
+        "第3条に当たってしまう無害な行を1件仕込んだ。"
+        "手順は4段で、5条を当てる、誤報の1行だけ見せて直させる、同じ記録に当て直す、"
+        "翌日の別の記録に当てる。1つの直し方につき記録2組かける各2回で4回ずつ、全12回。"
+        "今日の記録では、3通りとも本物10件を10件とも検出し、巻き添えは0件だった。"
+        "誤報の1行は12回とも止まり、条文が丸ごと消えた回も0回である。"
+        "ところが翌日の記録では、そのまま直させた4回が桁落ち3件のうち7件しか拾えず、"
+        "検査は消さないでこの1件だけを除く条件をと足した4回が8件、"
+        "直す前に鳴っていた行が全部まだ鳴るか確かめてと足した4回が9件だった。"
+        "合わせて36件のうち24件しか拾えず、12件を見落としている。"
+        "しかも12回のうち11回が同じ1件を落としていて、それは誤報の種と同じ品目の桁落ちだった。"
+        "除外がその品目ごと効くためである。"
+        "なお7回は、頼んでいないのに、その行は除外に当たるので挙がっていませんと自分から書いた。"
+    )
+    (OUT / "false-alarm-today-vs-tomorrow.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
+def false_alarm_what_goes_blind_chart() -> None:
+    """翌日の記録で、桁落ち3件のうち何件を拾えたかを横棒で並べる。
+
+    実測（2026-08-20・全12回）。棒の長さは件数から計算する。
+    """
+    rows = [
+        ("そのまま「この誤検知が出ないように直して」", 7, 12),
+        ("＋「検査は消さないで。1件だけを除く条件を」", 8, 12),
+        ("＋「直す前に鳴っていた行がまだ鳴るか確かめて」", 9, 12),
+    ]
+    label_x = 18
+    plot_x = 322
+    plot_w = 300
+    top = 132
+    row_h = 54
+    bar_h = 24
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "翌日の記録で、元の条文なら拾えたはずの桁落ちを何件拾えたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "翌日の記録（20行）には、元の第3条が拾うはずの桁落ちを3件だけ入れてある。"
+        "1つの直し方につき4回なので、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3件 × 4回 ＝ 12件が満点。ほかの4条に当たる違反は1件も入れていない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "濃い＝拾えた件数　／　薄い＝見落とした件数</text>\n",
+    ]
+    for v in (0, 4, 8, 12):
+        gx = plot_x + plot_w * v / 12
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + row_h * len(rows) - 22}" stroke-dasharray="3 4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{gx:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{v}件</text>\n'
+        )
+
+    y = top
+    for label, got, total in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty + 4}">{_esc(label)}</text>\n')
+        w1 = plot_w * got / total
+        parts.append(
+            f'<rect class="bar-new" x="{plot_x:.1f}" y="{ty - 10}" '
+            f'width="{w1:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x + w1 / 2:.1f}" y="{ty + 6}" '
+            f'text-anchor="middle">{got}件</text>\n'
+        )
+        w2 = plot_w - w1
+        if w2 > 1:
+            parts.append(
+                f'<rect class="bar-old" x="{plot_x + w1:.1f}" y="{ty - 10}" '
+                f'width="{w2:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{plot_x + w1 + w2 / 2:.1f}" y="{ty + 6}" '
+                f'text-anchor="middle">{total - got}</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ どの直し方でも満点にならない。12回で合わせて12件の見落とし。"),
+        ("t-bad", "※ 落ちたのはほぼ同じ1件＝12回中11回が「誤報の種と同じ品目」の桁落ちだった。"),
+        ("t-bad", "　 品目名で除外すると、その品目の今後の異常が丸ごと見えなくなる。"),
+        ("t-good", "※ 満点だったのは1回だけ。第3条を除外で直さず、"),
+        ("t-good", "　 「同じ品目の多数派と違う金額の行を挙げる」に書き換えた回。"),
+        ("t-xs", "架空データでの実測（全12回）。誤報が翌日に戻った回は12回とも0回だった。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "誤報を1件止めるよう直させた点検の条文を、翌日の記録に当てたときに、"
+        "元の条文なら拾えたはずの桁落ちを何件拾えたかを、直し方3通りで並べた横棒グラフ。"
+        "翌日の記録20行には、元の第3条が拾うはずの桁落ちを3件だけ入れてあり、"
+        "1つの直し方につき4回なので3件かける4回で12件が満点である。"
+        "ほかの4条に当たる違反は1件も入れていない。"
+        "そのままこの誤検知が出ないように直してと頼んだ4回は12件中7件で、5件の見落とし。"
+        "検査は消さないで1件だけを除く条件をと足した4回は8件で、4件の見落とし。"
+        "直す前に鳴っていた行がまだ鳴るか確かめてと足した4回は9件で、3件の見落としだった。"
+        "どの直し方でも満点にならず、12回で合わせて12件を見落としている。"
+        "落ちたのはほぼ同じ1件で、12回中11回が誤報の種と同じ品目の桁落ちだった。"
+        "品目名で除外すると、その品目の今後の異常が丸ごと見えなくなるためである。"
+        "満点だったのは1回だけで、第3条を除外で直さず、"
+        "同じ品目の多数派と違う金額の行を挙げる、という条文に書き換えた回だった。"
+        "なお、誤報そのものが翌日に戻った回は12回とも0回である。"
+    )
+    (OUT / "false-alarm-what-goes-blind.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -9086,4 +9286,6 @@ if __name__ == "__main__":
     broken_morning_causes_not_in_log_chart()
     unread_mark_where_it_lands_chart()
     unread_mark_line_position_chart()
+    false_alarm_today_vs_tomorrow_chart()
+    false_alarm_what_goes_blind_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
