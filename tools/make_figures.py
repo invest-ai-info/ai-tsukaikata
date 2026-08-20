@@ -9169,6 +9169,287 @@ def false_alarm_what_goes_blind_chart() -> None:
     )
 
 
+def qwen38_two_weights_chart() -> None:
+    """公開された2つの重みは、名前が似ているだけで別物だという図。
+
+    出典＝HuggingFace のモデルカード（Qwen 自身が書いたもの）と、
+    同リポジトリが公開しているファイル一覧。ファイル合計はこの記事で足した値。
+    """
+    left_rows = [
+        ("ファイルの合計", "約4.9TB（4,892GB）"),
+        ("パラメータ数", "2.4T（うち95Bが動く）"),
+        ("ライセンス", "Qwen3.8-Max License"),
+        ("画像・動画", "読めない（文章だけ）"),
+        ("思考モード", "常にオン。切れない"),
+        ("一度に読める量", "262,144（最大101万）"),
+    ]
+    right_rows = [
+        ("ファイルの合計", "約55.6GB"),
+        ("パラメータ数", "27B"),
+        ("ライセンス", "Apache-2.0"),
+        ("画像・動画", "読める"),
+        ("思考モード", "切り替えられる"),
+        ("一度に読める量", "262,144（最大100万）"),
+    ]
+    box_x = (18, 366)
+    box_w = 336
+    box_top = 84
+    head_h = 30
+    row_top = box_top + head_h + 22
+    pitch = 38
+    box_h = head_h + 22 + len(left_rows) * pitch + 4
+    height = box_top + box_h + 62
+
+    assert box_x[1] + box_w + 18 <= WIDTH, box_x[1] + box_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ日に公開された2つは、名前が似ているだけで別物です</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "左＝最上位クラスの重み。右＝手元に置ける大きさの重み。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "どちらも Qwen 自身がモデルカードに書いている値です。</text>\n",
+    ]
+    for index, (rows, cls, name) in enumerate(
+        ((left_rows, "box-quiet", "Qwen3.8-2.4T-A95B"), (right_rows, "box-accent", "Qwen3.8-27B"))
+    ):
+        bx = box_x[index]
+        parts.append(
+            f'<rect class="{cls}" x="{bx}" y="{box_top}" '
+            f'width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{bx + 16}" y="{box_top + 24}">{_esc(name)}</text>\n'
+        )
+        for row_index, (label, value) in enumerate(rows):
+            y = row_top + row_index * pitch
+            parts.append(f'<text class="t-xs" x="{bx + 16}" y="{y}">{_esc(label)}</text>\n')
+            parts.append(f'<text class="t" x="{bx + 16}" y="{y + 18}">{_esc(value)}</text>\n')
+
+    notes = [
+        "※ ファイルの合計は、HuggingFace が出しているファイル一覧をこの記事で足した値です。",
+        "※ APIで使える Qwen3.8-Max は、左の重みをもとにした別仕様です（画像も読めます）。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 42 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "同じ日に公開された Qwen3.8 の2つの重みを比べた図。"
+        "左の Qwen3.8-2.4T-A95B はファイル合計が約4.9テラバイト（4,892ギガバイト）、"
+        "パラメータ数は2.4兆でうち950億が動き、ライセンスは Qwen3.8-Max License、"
+        "画像や動画は読めず文章だけ、思考モードは常にオンで切れない、"
+        "一度に読める量は262,144トークンで最大101万トークン。"
+        "右の Qwen3.8-27B はファイル合計が約55.6ギガバイト、パラメータ数は270億、"
+        "ライセンスは Apache-2.0、画像や動画を読める、思考モードは切り替えられる、"
+        "一度に読める量は262,144トークンで最大100万トークン。"
+        "ファイルの合計はファイル一覧を記事側で足した値。"
+    )
+    (OUT / "qwen38-two-weights.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def qwen38_vs_37_chart() -> None:
+    """前の世代 Qwen3.7-Max と Qwen3.8-Max の点数（0〜100で出ているものだけ）。"""
+    rows = [
+        ("DeepSWE 1.1", 21.6, 56.6),
+        ("PaperBench", 64.8, 93.0),
+        ("Terminal Bench 2.1", 74.5, 86.6),
+        ("JobBench", 31.3, 53.4),
+        ("SWE-bench Pro", 60.6, 67.7),
+        ("IFBench", 79.1, 82.8),
+        ("HLE", 41.4, 43.6),
+    ]
+    left, right = 250, 610
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "前の世代との比較。数字が出ている30項目すべてで上がっています</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "灰色＝Qwen3.7-Max、青＝Qwen3.8-Max。目盛りは0〜100で揃えてあります。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上がり幅の大きい順に7項目を抜き出しました。下がった項目は1つもありません。</text>\n",
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "3.7"), (new, "bar-new", "3.8"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="216" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ モデルカードには単位の記載がありません。数字はそのまま写しています。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ テストの中身も測り方も別々です。並べても平均は取れません。</text>\n"
+    )
+    alt = (
+        "前の世代 Qwen3.7-Max と Qwen3.8-Max の点数を比べた横棒グラフ。"
+        "DeepSWE 1.1 は21.6から56.6、PaperBench は64.8から93.0、"
+        "Terminal Bench 2.1 は74.5から86.6、JobBench は31.3から53.4、"
+        "SWE-bench Pro は60.6から67.7、IFBench は79.1から82.8、"
+        "HLE は41.4から43.6へ上がった。"
+        "モデルカードで数字が出ている30項目すべてで上がっており、下がった項目は1つもない。"
+        "モデルカードには単位の記載がなく、テストの中身も測り方も別々のため平均は取れない。"
+    )
+    (OUT / "qwen38-vs-37.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def qwen38_not_first_chart() -> None:
+    """Qwen 自身の比較表の中で、Qwen3.8-Max が一番ではなかった項目。"""
+    total, won = 30, 7
+    losses = [
+        ("SWE-bench Pro", "67.7", "Claude Fable 5　80.0"),
+        ("DeepSWE 1.1", "56.6", "GPT-5.6 Sol　73.0"),
+        ("FrontierSWE", "73.5", "Claude Fable 5　88.8"),
+        ("HLE", "43.6", "Claude Fable 5　53.3"),
+        ("GPQA Diamond", "92.6", "GPT-5.6 Sol　94.1"),
+    ]
+    bar_left, bar_right, bar_y, bar_h = 18, 702, 86, 26
+    cell_gap = 3
+    cell_w = (bar_right - bar_left + cell_gap) / total - cell_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Qwen 自身の表で、Qwen3.8-Max が一番だったのは30項目中7項目</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Qwen がモデルカードに載せた比較表を、この記事で1行ずつ数えたものです。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "青＝最高値だった項目、灰色＝他社のほうが上だった項目。</text>\n",
+    ]
+    for index in range(total):
+        x = bar_left + index * (cell_w + cell_gap)
+        cls = "bar-new" if index < won else "bar-old"
+        parts.append(
+            f'<rect class="{cls}" x="{x:.1f}" y="{bar_y}" '
+            f'width="{cell_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+    parts.append(f'<text class="t-accent" x="18" y="{bar_y + bar_h + 20}">7項目で最高</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="150" y="{bar_y + bar_h + 20}">'
+        "23項目は、他社のほうが上でした</text>\n"
+    )
+
+    head_y = bar_y + bar_h + 58
+    col1, col2, col3 = 18, 270, 396
+    parts.append(f'<text class="t-xs" x="{col1}" y="{head_y}">項目</text>\n')
+    parts.append(f'<text class="t-xs" x="{col2}" y="{head_y}">Qwen3.8-Max</text>\n')
+    parts.append(f'<text class="t-xs" x="{col3}" y="{head_y}">それより上だったモデル</text>\n')
+    for row_index, (name, mine, better) in enumerate(losses):
+        y = head_y + 24 + row_index * 22
+        parts.append(f'<text class="t" x="{col1}" y="{y}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t" x="{col2}" y="{y}">{_esc(mine)}</text>\n')
+        parts.append(f'<text class="t-bad" x="{col3}" y="{y}">{_esc(better)}</text>\n')
+
+    height = head_y + 24 + len(losses) * 22 + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 数字が5モデルぶん揃っていない項目は、勝ち負けの数に入れていません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 表を作ったのは Qwen です。相手の会社が同じ条件で測った値ではありません。</text>\n"
+    )
+    alt = (
+        "Qwen がモデルカードに載せた比較表で、Qwen3.8-Max が最高値だった項目の数を示した図。"
+        "30項目のうち7項目で最高、残り23項目は他社のほうが上だった。"
+        "上だった例として、SWE-bench Pro は Qwen3.8-Max の67.7に対し Claude Fable 5 が80.0、"
+        "DeepSWE 1.1 は56.6に対し GPT-5.6 Sol が73.0、"
+        "FrontierSWE は73.5に対し Claude Fable 5 が88.8、"
+        "HLE は43.6に対し Claude Fable 5 が53.3、"
+        "GPQA Diamond は92.6に対し GPT-5.6 Sol が94.1。"
+        "表を作ったのは Qwen であり、相手の会社が同じ条件で測った値ではない。"
+    )
+    (OUT / "qwen38-not-first.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def qwen38_price_region_chart() -> None:
+    """Qwen3.8-Max の単価は地域で違う（元建て・100万トークンあたり）。"""
+    rows = [
+        ("北京", 12.0, 36.0),
+        ("東京", 12.0, 36.0),
+        ("フランクフルト", 12.0, 36.0),
+        ("バージニア", 12.0, 36.0),
+        ("シンガポール", 14.988, 44.965),
+    ]
+    left, right = 210, 600
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 66, 15, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Qwen3.8-Max の単価は、置いてある場所で違います</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "入力＝薄い色 ／ 出力＝濃い色。100万トークンあたりの元（ドルではありません）。</text>\n",
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="178" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}元</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 68
+    notes = [
+        "※ シンガポールだけ表の「服务部署范围」が国际で、ほかの4か所は全球と書かれています。",
+        "※ 前の世代 qwen3.7-max は、同じ表で原価12元に「限时5折」が付いています。",
+        "※ 元とドルは、出典のどこにも換算レートが書かれていないので換算していません。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 48 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "Qwen3.8-Max の単価を置いてある場所ごとに比べた横棒グラフ。"
+        "100万トークンあたりの元。北京・東京・フランクフルト・バージニアはいずれも"
+        "入力12元・出力36元、シンガポールだけ入力14.988元・出力44.965元。"
+        "シンガポールの行だけ服务部署范围が国际で、ほかの4か所は全球と書かれている。"
+        "前の世代の qwen3.7-max は同じ表で原価12元に限时5折が付いている。"
+        "元とドルの換算レートは出典に書かれていないため換算していない。"
+    )
+    (OUT / "qwen38-price-region.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     price_chart()
     changed_chart()
@@ -9288,4 +9569,8 @@ if __name__ == "__main__":
     unread_mark_line_position_chart()
     false_alarm_today_vs_tomorrow_chart()
     false_alarm_what_goes_blind_chart()
+    qwen38_two_weights_chart()
+    qwen38_vs_37_chart()
+    qwen38_not_first_chart()
+    qwen38_price_region_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -97,8 +97,60 @@
     - → **比較相手の Gemini Live 側（`ai.google.dev` / `deepmind.google`）はまだ叩いていない。**
       発表本文が読めない以上、そちらだけ集めても記事の軸が立たないため。
 
-- [!] https://openrouter.ai/qwen/qwen3.8-max
-  - 2026-08-04 にトラッカーが即時メールで拾った Alibaba の最上位モデル。
+- [x] https://openrouter.ai/qwen/qwen3.8-max
+  - **2026-08-20 2回目（再試行）: 公開した** → `content/tools/qwen3-8-max.md`。図4枚。
+    🔑 **前回の停止理由「経路の遮断」が実際に直っていた。**`- [!]` の再試行が効いた最初の例。
+
+    **① 到達性が変わった（2026-08-20 実測）**
+
+    | ドメイン | 2026-08-05 | 2026-08-20 |
+    |---|---|---|
+    | `help.aliyun.com/zh/model-studio/model-pricing` | `CONNECT tunnel failed` | **200**・3.4MB |
+    | `help.aliyun.com/zh/model-studio/text-generation-model` | 同上 | **200**・370KB |
+    | `modelscope.cn` | 同上 | 302（未使用） |
+    | `qwen.ai` / `www.qwen.ai` / `qwenlm.github.io` | 同上 | **まだ `CONNECT tunnel failed`** |
+    | `www.alibabacloud.com` | 同上 | **まだ `CONNECT tunnel failed`** |
+    | `www.qwencloud.com`（モデルカードが案内する新しい公式API窓口） | 未確認 | **`CONNECT tunnel failed`** |
+
+    - ⚠️ **まだ許可リストに足す価値があるドメイン**＝`qwen.ai`（発表ブログ。`qwen.ai/blog?id=qwen3.8`）と
+      **`qwencloud.com`（モデルカードが「公式のAPIサービス」として案内している新ドメイン。料金はここにある見込み）**。
+      `qwenlm.github.io` と `www.alibabacloud.com`（`help.aliyun.com` の英語版）も未到達。
+    - ⚠️ 環境の Network access を Custom にして足すとき、**「Also include default list of common package managers」の
+      チェックを外さないこと**（外すと同じ環境の MarketWatch 側が全部壊れる）。
+
+    **② 🆕 前回「当面できない」と書いた HuggingFace のモデルカードが、実際には出ていた**
+
+    2026-08-05 の記録は「HuggingFace の `Qwen` org に Qwen3.8 は1件も無い」だったが、その後に公開された。
+    **結果として、この記事のいちばん濃い一次情報になった**（Alibaba のドキュメントより情報量が多い）。
+
+    - `Qwen/Qwen3.8-2.4T-A95B`（2026-08-08 作成）＝**最上位クラスの重み**。`license_name: qwen3.8-max`。
+      **他社比較表つき**（Opus 4.8 / Fable 5 / GPT 5.6 Sol / Qwen3.7-Max / Qwen3.8-Max の5列・31項目）
+    - `Qwen/Qwen3.8-27B`（2026-08-05 作成）＝**Apache-2.0**・画像/動画も読める
+    - 📌 **教訓＝「重みが未公開だから当面できない」も、日付が変われば覆る。**停止理由に書いた前提は、
+      再試行のたびに実際に測り直すこと（`help.aliyun.com` の経路と、この2つの両方が変わっていた）。
+
+    **③ 数字を取るときに効いたこと（次も同じ型が使える）**
+
+    - 🚨 **`help.aliyun.com` は素の `<tr>` を返さない。**本文は `window.__ICE_PAGE_PROPS__` の JSON の
+      `docDetailData.storeData.data.content` に**HTMLエスケープされて入っている**。ここを取り出してから
+      `<table>` を**セル単位**で解析する。⚠️ **平文化すると列がずれる**（`gemini-3-7-flash` と同じ罠）
+    - `help.aliyun.com/zh/model-studio/models`（カード一覧）**には料金が無い**。料金は
+      **`/zh/model-studio/model-pricing`**（`billing-for-model-studio` から 301）。仕様は
+      **`/zh/model-studio/text-generation-model`**。この2本が単一ソース
+    - 🚨 **単価が「元」建てで、他社は「ドル」。**換算レートは出典のどこにも無いので**換算しない**。
+      表を2本に分けた（プロンプトの「単位が違うものを1本の表に混ぜない」がそのまま効いた）
+    - 💡 **同じモデルなのに置いてある場所で単価が違う**＝北京・東京・フランクフルト・バージニアは
+      12元/36元、**シンガポールだけ 14.988元/44.965元**。表の「服务部署范围」欄がシンガポールだけ「国际」で
+      他は「全球」。**この2語の意味は料金ページに説明が無い**ので、記事にもそう書いた
+    - 💡 **前の世代のほうが安く見える**＝`qwen3.7-max` は「原価12元 限时5折」。`qwen3.8-max` に割引表示は無い。
+      ⚠️ **5折から6元/18元を計算して表に載せることはしなかった**（出典に「書いてある」のは原価と割引率だけ）
+
+  - **見つからなかった数字**＝Qwen3.8-Max の**一度に書ける量**と**学習データの締め切り**
+    （Alibaba のどのページにも無い）。発表日（`qwen.ai` が読めないため）。文脈キャッシュの割引率。
+  - 📌 **記事側の計算**＝重みのファイル合計（213個の safetensors を合計して 4,892.4GB）と、
+    「30項目中7項目で最高」「30項目すべてで前世代より上」の数え。`check_numbers.py` は $ と % しか
+    見ないので照合対象外。**どちらも記事本文に「この記事で数えた／足した」と明記してある**。
+  - 旧メモ（2026-08-04 追記時点）: 2026-08-04 にトラッカーが即時メールで拾った Alibaba の最上位モデル。
     ⚠️ OpenRouter は提供窓口であって一次情報ではない。**Alibaba/Qwen 自身の公式発表かモデルカードを探すこと**
     （HuggingFace の `Qwen` org は許可リストに入っている）。見つからなければ「公表されていない」と書く。
     比較相手は Claude Opus 5 / GPT-5.6 / Gemini 3.1 Pro。**単価・読める量・学習データの締め切り**が揃えば表になる。
@@ -450,6 +502,10 @@
 
 ## 処理済み
 
+- https://openrouter.ai/qwen/qwen3.8-max → **公開済み** content/tools/qwen3-8-max.md（2026-08-20・公開）
+  - 再試行で通った1件目。図4枚（`qwen38-two-weights` / `qwen38-vs-37` / `qwen38-not-first` / `qwen38-price-region`）。
+    `check_numbers.py` は **6個すべて出典に存在**（出典9件とも取得成功）。pytest 529 passed・build 99ファイル。
+    ⚠️ 一次情報は **HuggingFace のモデルカード**と **`help.aliyun.com`** の2つだけ。`qwen.ai` は今も読めない。
 - https://deepmind.google/blog/introducing-gemini-3-7-flash/ → content/_draft-gemini-3-7-flash.md（2026-08-14）
   - 図4枚（`gemini37-price-window` / `gemini37-vs-36` / `gemini37-four-prices` / `gemini37-not-first`）。
     `check_numbers.py` は **48個すべて出典に存在**（出典9件とも取得成功）。

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="352" viewBox="0 0 720 352" role="img" aria-label="Qwen がモデルカードに載せた比較表で、Qwen3.8-Max が最高値だった項目の数を示した図。30項目のうち7項目で最高、残り23項目は他社のほうが上だった。上だった例として、SWE-bench Pro は Qwen3.8-Max の67.7に対し Claude Fable 5 が80.0、DeepSWE 1.1 は56.6に対し GPT-5.6 Sol が73.0、FrontierSWE は73.5に対し Claude Fable 5 が88.8、HLE は43.6に対し Claude Fable 5 が53.3、GPQA Diamond は92.6に対し GPT-5.6 Sol が94.1。表を作ったのは Qwen であり、相手の会社が同じ条件で測った値ではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="352"/>
+<text class="t-strong" x="18" y="26">Qwen 自身の表で、Qwen3.8-Max が一番だったのは30項目中7項目</text>
+<text class="t-sm" x="18" y="45">Qwen がモデルカードに載せた比較表を、この記事で1行ずつ数えたものです。</text>
+<text class="t-sm" x="18" y="64">青＝最高値だった項目、灰色＝他社のほうが上だった項目。</text>
+<rect class="bar-new" x="18.0" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-new" x="40.9" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-new" x="63.8" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-new" x="86.7" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-new" x="109.6" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-new" x="132.5" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-new" x="155.4" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="178.3" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="201.2" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="224.1" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="247.0" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="269.9" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="292.8" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="315.7" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="338.6" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="361.5" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="384.4" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="407.3" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="430.2" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="453.1" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="476.0" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="498.9" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="521.8" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="544.7" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="567.6" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="590.5" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="613.4" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="636.3" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="659.2" y="86" width="19.9" height="26" rx="2"/>
+<rect class="bar-old" x="682.1" y="86" width="19.9" height="26" rx="2"/>
+<text class="t-accent" x="18" y="132">7項目で最高</text>
+<text class="t-sm" x="150" y="132">23項目は、他社のほうが上でした</text>
+<text class="t-xs" x="18" y="170">項目</text>
+<text class="t-xs" x="270" y="170">Qwen3.8-Max</text>
+<text class="t-xs" x="396" y="170">それより上だったモデル</text>
+<text class="t" x="18" y="194">SWE-bench Pro</text>
+<text class="t" x="270" y="194">67.7</text>
+<text class="t-bad" x="396" y="194">Claude Fable 5　80.0</text>
+<text class="t" x="18" y="216">DeepSWE 1.1</text>
+<text class="t" x="270" y="216">56.6</text>
+<text class="t-bad" x="396" y="216">GPT-5.6 Sol　73.0</text>
+<text class="t" x="18" y="238">FrontierSWE</text>
+<text class="t" x="270" y="238">73.5</text>
+<text class="t-bad" x="396" y="238">Claude Fable 5　88.8</text>
+<text class="t" x="18" y="260">HLE</text>
+<text class="t" x="270" y="260">43.6</text>
+<text class="t-bad" x="396" y="260">Claude Fable 5　53.3</text>
+<text class="t" x="18" y="282">GPQA Diamond</text>
+<text class="t" x="270" y="282">92.6</text>
+<text class="t-bad" x="396" y="282">GPT-5.6 Sol　94.1</text>
+<text class="t-xs" x="18" y="322">※ 数字が5モデルぶん揃っていない項目は、勝ち負けの数に入れていません。</text>
+<text class="t-xs" x="18" y="340">※ 表を作ったのは Qwen です。相手の会社が同じ条件で測った値ではありません。</text>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="503" viewBox="0 0 720 503" role="img" aria-label="前の世代 Qwen3.7-Max と Qwen3.8-Max の点数を比べた横棒グラフ。DeepSWE 1.1 は21.6から56.6、PaperBench は64.8から93.0、Terminal Bench 2.1 は74.5から86.6、JobBench は31.3から53.4、SWE-bench Pro は60.6から67.7、IFBench は79.1から82.8、HLE は41.4から43.6へ上がった。モデルカードで数字が出ている30項目すべてで上がっており、下がった項目は1つもない。モデルカードには単位の記載がなく、テストの中身も測り方も別々のため平均は取れない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="503"/>
+<text class="t-strong" x="18" y="26">前の世代との比較。数字が出ている30項目すべてで上がっています</text>
+<text class="t-sm" x="18" y="45">灰色＝Qwen3.7-Max、青＝Qwen3.8-Max。目盛りは0〜100で揃えてあります。</text>
+<text class="t-sm" x="18" y="64">上がり幅の大きい順に7項目を抜き出しました。下がった項目は1つもありません。</text>
+<text class="t" x="18" y="94">DeepSWE 1.1</text>
+<text class="t-xs" x="216" y="93">3.7</text>
+<rect class="bar-old" x="250" y="82" width="77.8" height="14" rx="2"/>
+<text class="t-sm" x="335.8" y="93">21.6</text>
+<text class="t-xs" x="216" y="112">3.8</text>
+<rect class="bar-new" x="250" y="101" width="203.8" height="14" rx="2"/>
+<text class="t-sm" x="461.8" y="112">56.6</text>
+<text class="t" x="18" y="147">PaperBench</text>
+<text class="t-xs" x="216" y="146">3.7</text>
+<rect class="bar-old" x="250" y="135" width="233.3" height="14" rx="2"/>
+<text class="t-sm" x="491.3" y="146">64.8</text>
+<text class="t-xs" x="216" y="165">3.8</text>
+<rect class="bar-new" x="250" y="154" width="334.8" height="14" rx="2"/>
+<text class="t-sm" x="592.8" y="165">93</text>
+<text class="t" x="18" y="200">Terminal Bench 2.1</text>
+<text class="t-xs" x="216" y="199">3.7</text>
+<rect class="bar-old" x="250" y="188" width="268.2" height="14" rx="2"/>
+<text class="t-sm" x="526.2" y="199">74.5</text>
+<text class="t-xs" x="216" y="218">3.8</text>
+<rect class="bar-new" x="250" y="207" width="311.8" height="14" rx="2"/>
+<text class="t-sm" x="569.8" y="218">86.6</text>
+<text class="t" x="18" y="253">JobBench</text>
+<text class="t-xs" x="216" y="252">3.7</text>
+<rect class="bar-old" x="250" y="241" width="112.7" height="14" rx="2"/>
+<text class="t-sm" x="370.7" y="252">31.3</text>
+<text class="t-xs" x="216" y="271">3.8</text>
+<rect class="bar-new" x="250" y="260" width="192.2" height="14" rx="2"/>
+<text class="t-sm" x="450.2" y="271">53.4</text>
+<text class="t" x="18" y="306">SWE-bench Pro</text>
+<text class="t-xs" x="216" y="305">3.7</text>
+<rect class="bar-old" x="250" y="294" width="218.2" height="14" rx="2"/>
+<text class="t-sm" x="476.2" y="305">60.6</text>
+<text class="t-xs" x="216" y="324">3.8</text>
+<rect class="bar-new" x="250" y="313" width="243.7" height="14" rx="2"/>
+<text class="t-sm" x="501.7" y="324">67.7</text>
+<text class="t" x="18" y="359">IFBench</text>
+<text class="t-xs" x="216" y="358">3.7</text>
+<rect class="bar-old" x="250" y="347" width="284.8" height="14" rx="2"/>
+<text class="t-sm" x="542.8" y="358">79.1</text>
+<text class="t-xs" x="216" y="377">3.8</text>
+<rect class="bar-new" x="250" y="366" width="298.1" height="14" rx="2"/>
+<text class="t-sm" x="556.1" y="377">82.8</text>
+<text class="t" x="18" y="412">HLE</text>
+<text class="t-xs" x="216" y="411">3.7</text>
+<rect class="bar-old" x="250" y="400" width="149.0" height="14" rx="2"/>
+<text class="t-sm" x="407.0" y="411">41.4</text>
+<text class="t-xs" x="216" y="430">3.8</text>
+<rect class="bar-new" x="250" y="419" width="157.0" height="14" rx="2"/>
+<text class="t-sm" x="415.0" y="430">43.6</text>
+<text class="t-xs" x="18" y="473">※ モデルカードには単位の記載がありません。数字はそのまま写しています。</text>
+<text class="t-xs" x="18" y="491">※ テストの中身も測り方も別々です。並べても平均は取れません。</text>
+</svg>
