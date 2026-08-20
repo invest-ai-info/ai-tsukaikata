@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T08:58:16.409338+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T08:08:10+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Unitreeのワン・シンシンCEOは世界ロボット大会で、ロボットの「ChatGPTモーメント」が近づいていると発言した。",
+      "title": "「ロボットのChatGPTモーメントが近づいている」　中国UnitreeのCEO、世界ロボット大会で言及",
+      "uid": "a24e92277664bcfa",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000656/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T08:58:16.409338+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T08:04:01+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Stripeは8月19日、AIモデルのゲートウェイおよびルーティングプラットフォームを提供するOpenRouterを買収することで合意したと発表した。",
+      "title": "StripeがOpenRouterを買収",
+      "uid": "6bcd69f3860f4b7c",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134282.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-20T07:58:38.120608+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -11,6 +35,18 @@
       "uid": "fd048a0d32fa199d",
       "url": "https://ai.watch.impress.co.jp/docs/news/2134237.html",
       "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T08:58:16.409338+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T07:47:56+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "人型ロボットを開発するスタートアップのアトムは、日本精工（NSK）と国産人型ロボットの開発・実装に向け、戦略的パートナーシップに関する基本合意書を締結したと発表した。",
+      "title": "日本精工が「国産人型ロボ」開発を後押し　スタートアップのアトムと協力、アクチュエータの検証など",
+      "uid": "1feafc1d14392d2a",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000655/",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-08-20T07:58:38.120608+00:00",
@@ -2362,42 +2398,6 @@
       "title": "「AIツール関連サイト」でサポート詐欺被害　PC遠隔操作で個人情報含む4000件のファイルが削除、漏えいの可能性も　葬祭事業者が発表",
       "uid": "a202b7bded482669",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000513/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIが業務で利用される中、従来別の職種が担っていた仕事が持ち込まれるようになった。OpenAIはこれを「タスクの越境」と呼ぶ。具体的にどの職種、どのタスクで越境が起きているのか。",
-      "title": "OpenAIが明かす、ユーザーはChatGPTを「こう使っている」",
-      "uid": "af02503bc1d7b526",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/12/news033.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-12T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Microsoftは次世代AIチップである「Maia 300」を早ければ2026年9月にも発表する予定であり、2027年中に30万個以上のチップを製造するために台湾のTSMCと交渉中だと、海外メディアのThe Informationが報じました。 続きを読む...",
-      "title": "Microsoftは次世代AIチップ「Maia 300」を早ければ2026年9月にも発表予定、2027年中に30万個以上の製造を目指しTSMCと交渉中",
-      "uid": "3c6993d062c6195a",
-      "url": "https://gigazine.net/news/20260813-microsoft-maia-300-ai-chip-fall/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T22:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NEC、日立製作所、富士通が相次いでAnthropicとの協業を発表した。その舞台裏とは。経営陣の狙いとは。注目の記事をまとめてお届けする。",
-      "title": "【注目記事まとめ】NEC、日立、富士通――Anthropicとの電撃的協業、その舞台裏　経営陣の狙いは？",
-      "uid": "eea3a7a7e6463bc8",
-      "url": "https://www.itmedia.co.jp/business/articles/2608/13/news025.html",
       "vendor": "ITmedia AI+"
     }
   ]
