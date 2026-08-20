@@ -13,6 +13,20 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-08-20T19:48:00.804720+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-08-20T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
+      "summary_ja": "OpenAIが新しいブログを公開しました。\n「AI Futures」という名前です。\nAIが社会や個人の自由をどう変えるか探ります。",
+      "summary_source": "gemini",
+      "title": "Introducing AI Futures",
+      "uid": "e491b63b4d5b0a3f",
+      "url": "https://openai.com/index/introducing-ai-futures",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-20T01:53:51.496322+00:00",
       "importance": "minor",
       "label": "Claude Code",

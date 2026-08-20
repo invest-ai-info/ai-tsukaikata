@@ -331,6 +331,9 @@
     - 読者（自動化したい非エンジニアの会社員）から遠い題材なので、**切り口を先に決めること。**
       「子どもに使わせるとき、会社で使うのと何が違うか」なら近づく。
 
+- [ ] https://openai.com/index/introducing-ai-futures
+  - 2026-08-20 自動追記（major・OpenAI「Introducing AI Futures」）
+
 ## 処理済み
 
 - https://openrouter.ai/qwen/qwen3.8-max → **公開済み** content/tools/qwen3-8-max.md（2026-08-20・公開）
