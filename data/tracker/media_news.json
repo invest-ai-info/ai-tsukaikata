@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T03:11:50.731103+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T02:43:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "現地時間の2026年8月19日、OpenAIがユーザーが入力したプロンプトもAIによる応答も保持しないという「Zero Data Retention(ZDR：ゼロデータ保持)」方針を維持しながら、安全性監視を強化することができる「Private Safety Processing」のプレビュー版を公開しました。 続きを読む...",
+      "title": "OpenAIがゼロデータ保持を維持したまま安全性監視を強化する「Private Safety Processing」のプレビュー版を提供開始",
+      "uid": "cff8e6694a6d8b71",
+      "url": "https://gigazine.net/news/20260820-openai-zero-data-retention-private-safety-processing/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-20T03:11:50.731103+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T02:33:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "決済サービス大手のStripeが、AIゲートウェイサービスを展開するOpenRouterとの買収契約に合意したことを現地時間の2026年8月19日に発表しました。 続きを読む...",
+      "title": "StripeがOpenRouterの買収を正式発表、AIのための経済インフラを構築へ",
+      "uid": "f0ef387224d5302e",
+      "url": "https://gigazine.net/news/20260820-stripe-acquire-openrouter/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-20T03:11:50.731103+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-20T02:17:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "グーグルは、AIアシスタント「Gemini」に各種AI学習ツールを集めた学生専用ハブを新設するほか、「Google検索」でも学習支援機能を提供すると発表した。",
+      "title": "グーグル、大学生に「Google AI Plus」1年間無料--Geminiの学習支援も強化",
+      "uid": "ee6d03917b956fb7",
+      "url": "https://japan.cnet.com/article/35251745/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-20T03:11:50.731103+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T01:57:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI研究組織のOrnithがAIモデル「Ornith-1.5」を2026年8月19日に公開しました。Ornith-1.5は「Ornith-1.5-397B」「Ornith-1.5-35B-A3B」「Ornith-1.5-9B」という3種類のモデルに分かれてリリースされており、最大規模のOrnith-1.5-397BはClaude Opus 4.8と同等のベンチマークスコアを達成しています。また、…",
+      "title": "AIモデル「Ornith-1.5」が登場、Claude Opus 4.8級の大型モデルからスマホ動作可能な軽量モデルまで網羅したオープンモデル",
+      "uid": "c378b7ee89e31d85",
+      "url": "https://gigazine.net/news/20260820-ornith-1-5/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-20T03:11:50.731103+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T01:54:24+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "SWITCHBOTは8月19日、ウェアラブルAIアシスタント「SwitchBot AIマインドクリップ」を発売した。価格は19,980円で、ボディカラーはディープスペース、ルナホワイトの2色から選べる。",
+      "title": "日々の会話を記録してくれる「SwitchBot AIマインドクリップ」",
+      "uid": "46e8906782a98055",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134103.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T03:11:50.731103+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T01:43:52+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Stripeは、AIモデルのゲートウェイを手掛けるOpenRouterを買収することで合意したと発表した。報道による買収額は約75億ドル。OpenRouterは単一APIで400超のモデル切り替えを可能にする。Stripeはトークンコスト最適化を強化し、OpenRouterは買収後も中立的な運営を継続する。",
+      "title": "Stripe、AIモデルゲートウェイのOpenRouter買収　400以上のAIモデルを束ねる中立基盤は維持",
+      "uid": "0d16047834bd3797",
+      "url": "https://www.itmedia.co.jp/news/article/2608/20/2000000639/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-20T01:53:51.496322+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2327,78 +2399,6 @@
       "uid": "b93a924e0aa01f70",
       "url": "https://gigazine.net/news/20260812-ai-agent-issue/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-12T11:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI開発企業のAnthropicが、未公開の研究版Claudeに数学上の超難問「リーマン予想」の解決を試みさせたところ、リーマン予想そのものの証明には失敗したものの、関連する問題で従来の記録を大幅に更新する結果を得たと発表しました。この研究では人間が数学的なアイデアをほとんど与えておらず、Claudeに「そのまま続けろ」「自分を信じろ」と繰り返し励ますことが人間側の主な役割だったという異例の経緯…",
-      "title": "AIに「そのまま続けろ！」「自分を信じろ！」と応援し続けることが人間の役目、Anthropicが未公開のClaudeによるリーマン予想解決の試みを公開",
-      "uid": "04252fa7360e089c",
-      "url": "https://gigazine.net/news/20260812-anthropic-claude-riemann-hypothesis/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T09:59:59+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "GoogleのGeminiアプリの月間アクティブユーザー数（MAU）が10億人を突破した。Google検索やWorkspaceなどの組み込み機能を除いたアプリ単体の数字で、同社として14番目の10億ユーザー到達製品となる。競合のChatGPTに続く大台達成で、iOSユーザー数や音声利用の比率なども公開された。",
-      "title": "GeminiアプリのMAUが10億人を突破　Googleで14番目の大台到達製品に",
-      "uid": "03c2b75829218374",
-      "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000500/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-12T09:21:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ChatGPTやClaudeなどのAIサービスには、回答を出力する前に回答内容を組み立てる「Reasoning(思考)」を実行する機能があります。この思考内容は暗号化された状態で管理されているのですが、暗号を解除して思考内容を読み取る手法がAI研究者たちによって編み出されました。 続きを読む...",
-      "title": "AIの暗号化された思考内容を盗み見る手法が開発される、「中国製AIの思考がアメリカ製AIとそっくり」「性能テストの答えを決め打ち」などの実情が浮き彫りに",
-      "uid": "5487fc38f116d728",
-      "url": "https://gigazine.net/news/20260812-ai-stolen-thoughts/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-12T07:45:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "SpotifyでAI生成アーティストと人間のアーティストを見分けたい音楽ファンは間もなく、新たな手段を利用できるようになる。",
-      "title": "Spotify、AI生成アーティストをおすすめから除外へ　9月に新ラベル導入",
-      "uid": "69fdcd62a358529b",
-      "url": "https://japan.cnet.com/article/35251512/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T06:33:57+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米SpaceXAIは8月11日（現地時間）、常時稼働型のAIエージェント「Grok Bot」（β版）を発表した。チャットでタスクを渡すとBotがアプリやWebサイトを操作して作業を進め、役割の異なる複数のBotを並列で働かせることもできる。",
-      "title": "SpaceXAI、AIエージェント「Grok Bot」発表　クラウド環境で常時稼働、GrokやCursorの有料ユーザー向けに",
-      "uid": "39547a09ab2694ea",
-      "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000506/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T06:09:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIエージェント「Manus」を提供するManusは8月11日（現地時間）、独立企業としての運営をまもなく再開すると発表した。米Metaからの分離に伴い、一部ユーザーのデータを23日から削除するとして、事前のバックアップを呼び掛けている。",
-      "title": "中国発AIエージェント「Manus」、Metaから独立へ　中国政府が買収に反発、一部ユーザーデータは削除に",
-      "uid": "4546e5b353b77e34",
-      "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000508/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
