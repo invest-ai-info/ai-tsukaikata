@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T20:49:03.412734+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "GoogleからAI研究の中心人物が相次いで去った。「Geminiは終わった」という見方に対し、「最先端ではなく、AIを社会全体に行き渡らせる“電力網”で勝つ賭けだ」という別の解釈もある。電気の歴史になぞらえながら整理する。",
+      "title": "GoogleはAI競争に負けたのか　「最強のAI」ではなく「AIの“電力網”」を選ぶ賭け",
+      "uid": "f3f9d7279cf46a2b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/21/news006.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-20T14:57:36.616902+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2387,18 +2399,6 @@
       "uid": "214ca9ff4ebf1671",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000524/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T02:08:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AppleがWWDC26で発表したSiri AIをよりスマートにするべく、Appleは出版社と報酬支払いについて協議を進めているとウォール・ストリート・ジャーナルが報じました。 続きを読む...",
-      "title": "AppleはSiri AIが時事問題にさらにアクセスできるようにするため出版社との提携を模索している",
-      "uid": "46592e680c82af00",
-      "url": "https://gigazine.net/news/20260813-apple-pay-publishers-improve-ai-siri/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

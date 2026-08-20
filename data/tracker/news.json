@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T20:49:03.412734+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-20T20:33:51+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a keybindingFlavor setting: set it to \"readline\" to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default ( \"classic\" ) is unchanged Plugin ma…",
+      "title": "v2.1.238",
+      "uid": "fcd5d15e55eefe18",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-20T20:49:03.412734+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-20T19:58:48+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.0.0 (2026-08-20) Full Changelog: v0.125.0...v1.0.0 ⚠ BREAKING CHANGES client: upgrade to httpx2 and some minor breaking changes. See MIGRATION.md for details Features client: upgrade to httpx2 and …",
+      "title": "v1.0.0",
+      "uid": "623b288b4e83247b",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.0.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-20T19:02:40.366121+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",
