@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T04:55:18.164229+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T04:16:18+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "エイベックスの松浦勝人会長は、8月13日から「note」に投稿している記事について、ほとんどAIで作成していたと自身のXアカウント（@maxmatsuuratwit）で明かした。",
+      "title": "エイベックス松浦会長、noteの“バズり記事”を「ほぼAI」で作成　「僕の60年分のデータを入れた」",
+      "uid": "6839b06d86bc5274",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000644/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T04:55:18.164229+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-20T04:16:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「SpaceXがAIコーディングのスタートアップ・Cognitionに買収打診を行った」という報道があり、Cognitionのスコット・ウーCEOが「そういった事実はなく、売却の予定はない」と否定しています。 続きを読む...",
+      "title": "SpaceXによる買収報道をAIスタートアップ・Cognitionのスコット・ウーCEOが否定、「売却予定なし」",
+      "uid": "480eb09850c463ce",
+      "url": "https://gigazine.net/news/20260820-cognition-is-not-for-sale/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-20T04:55:18.164229+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T04:04:05+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "KDDIとJR西日本SC開発は8月20日、法人向けのAIサービス「KDDI Market Compass」の提供を開始した。",
+      "title": "KDDIとJR西日本SC開発、商業施設開発をサポートするAIサービス",
+      "uid": "b525c624c9f0603f",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134177.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-20T04:01:20.445066+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2362,42 +2398,6 @@
       "title": "メルカリが明かす「Claude Code全社展開」「シャドーAI対策」を支える仕組み",
       "uid": "d2e883e8effe5e82",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/04/news002.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T20:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Polars公式が、pandasからPolarsへの移行戦略を3つに整理した記事を公開した。区間ごとに移す手順を整理しつつ、AIに任せれば片付くのかという疑問についても筆者の見解を述べる。",
-      "title": "［Python］Polars公式が「全部書き換えるな」と言う理由　pandasからの移行、3戦略",
-      "uid": "110fbcee8e39abdb",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/13/news008.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T14:10:09+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米Googleは8月12日、折りたたみスマートフォン「Pixel 11 Pro Fold」を国内発表した。前モデルより約10％軽く約1mm薄いが、新しいヒンジとセラミックガラスの採用で3倍の強度を実現したという。Googleストアでの価格は256GBモデルが27万9900円。8月20日に発売する。",
-      "title": "Google、折りたたみスマホ「Pixel 11 Pro Fold」発表　10％軽く、1mm薄くしつつ耐久性強化",
-      "uid": "c898a5afebb78051",
-      "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000517/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-12T14:03:56+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米Googleは8月12日、「Pixel 11」「Pixel 11 Pro」「Pixel 11 Pro XL」を発表した。新チップ「Google Tensor G6」を搭載し、カメラを刷新。Proには通知を光で知らせる「HiLight」を加えた。中核のAI機能「Gemini Intelligence」が目玉としている。8月20日に発予定。",
-      "title": "Google新スマホ「Pixel 11シリーズ」正式発表　「Gemini Intelligence」向けに設計　カメラも強化",
-      "uid": "e213e321c73f6317",
-      "url": "https://www.itmedia.co.jp/news/article/2608/12/2000000516/",
       "vendor": "ITmedia AI+"
     }
   ]
