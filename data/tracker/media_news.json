@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-20T22:47:29.624906+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ChatGPTに「おすすめの○○は？」と聞けば、いくつかのブランドや商品を教えてくれる。では、その候補はどうやって選ばれているのだろうか。どうやらChatGPTは、検索を始める前から「この分野ならこれ」と、ある程度の候補を持っているらしい。",
+      "title": "ChatGPTに「おすすめの○○は？」　実は答えが決まっているらしい：893rd Lap",
+      "uid": "a5b1ecbe270114e8",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/21/news043.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T22:47:29.624906+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "世界の半導体市場を台湾TSMCが席巻する中、7兆円規模の国家プロジェクトとして最先端「2ナノ」の量産化に挑むのがラピダスだ。同社はTSMCとの規模の勝負を避け、設計から前後工程を一棟で完結させる「RUMS」による多品種生産で勝負する。「たった14人」の同志でスタートした原点から、北海道を「次のシリコンバレー」へと変える小池淳義社長の戦略に迫る。",
+      "title": "「たった14人」の挑戦から7兆円の逆転劇へ　ラピダス小池社長の「TSMCとは戦わない」2ナノ半導体の勝算",
+      "uid": "60667d4a9566672f",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/21/news030.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T22:47:29.624906+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "SBIホールディングスが生成AI「Claude」を開発する米Anthropicとの全社提携を発表した。当面の最優先戦略にAI化を掲げ、社外から専門人材を起用。SBI証券では顧客対応のAIエージェント開発に5億円を投資し、口座再活性化などを通じて年27億円の増収を見込む。「孫正義氏はOpenAIだが僕はAnthropic」と語る北尾吉孝会長が、AIドリブン戦略の勝算を明かす。",
+      "title": "「孫さんはOpenAIだが、僕はAnthropic」　SBI北尾会長が語る「AI投資5億円→増収27億円」の勝算",
+      "uid": "ba37c24ae1debc0d",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/21/news038.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T22:47:29.624906+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「生成AIを何に使えばよいかわからない」という理由により、生成AIの活用が停滞してしまう企業は多い。安全を最優先する故に慎重な組織風土であった首都高速道路でも同様の課題を抱えていた。しかし同社では「Google Gemini」を起点としたある工夫により、劇的に活用状況を改善したという。その具体例を同社の推進担当者が語った。",
+      "title": "「Gemini Notebook」で利用者10倍　シニア社員をAIヘビーユーザーにした首都高の考え",
+      "uid": "f9dfb52d30d545ee",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/21/news044.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-20T22:47:29.624906+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-20T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 数時間かかる作業を「マルチエージェント」「自律型」で完走させてみよう",
+      "uid": "398b0b930e4b99d7",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2133708.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-20T22:47:29.624906+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-08-20T21:37:48+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Slackは、AIコーディングエージェントと協働するための新機能「Slack Code」を発表した。メンションで専用の「コードチャネル」が自動生成され、計画やコード差分、プレビューを確認しながら指示できる。ClaudeやDevinなど複数社のエージェントに対応し、人間の承認を経て安全に処理を実行する。",
+      "title": "Slack、AIとチームで協働する「Slack Code」を発表　ClaudeやDevinを専用チャネルで操作",
+      "uid": "90adcf0309bb454e",
+      "url": "https://www.itmedia.co.jp/news/article/2608/21/2000000667/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-20T21:45:50.396572+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2326,78 +2398,6 @@
       "title": "TwitchがコンテンツをAmazonのAIトレーニングに利用すると公表、利用されたくないユーザー向けにオプトアウト設定を追加",
       "uid": "9908f6829c23de9f",
       "url": "https://gigazine.net/news/20260813-twitch-amazon-ai-training/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-13T05:02:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "オーストラリアのある男性が、ジムのクラスを予約するようAIエージェントに頼んだ。しかし、ジムのシステムをハッキングし、キャンセル待ちで先行していた別の利用者をリストから外せとまでは言っていない。",
-      "title": "「ジムを予約して」とAIに頼んだら……予約システムをハッキングする想定外の事態に",
-      "uid": "64caf27ddda12db5",
-      "url": "https://japan.cnet.com/article/35251539/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T04:33:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "SpaceXAIは2026年8月12日にAIモデル「Grok 4.6」を発表しました。Grok 4.5をベースに同じ価格で大幅な改善を示しており、長時間実行されるAIエージェントの作業や、より高度なインタラクティブなビジュアル処理に重点を置いています。 続きを読む...",
-      "title": "「Grok 4.6」が登場、長時間のエージェント作業に強くなりGPT-5.6 SolやClaude Fable 5と並ぶ性能に",
-      "uid": "7fd2569690c21934",
-      "url": "https://gigazine.net/news/20260813-grok-4-6/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T03:09:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国企業・AlibabaのAI研究チームであるQwenがAIモデル「Qwen3.8-2.4T-A95B」をオープンモデルとして公開しました。AlibabaはすでにQwen3.8-2.4T-A95Bをベースとした「Qwen3.8 Max」を製品展開しており、OpenAIやAnthropicの最先端モデルに匹敵する性能として評価されています。 続きを読む...",
-      "title": "2.4兆パラメーターの中華AI「Qwen3.8」がオープンモデルとして無償公開される、OpenAIやAnthropicの最先端モデルに匹敵する性能",
-      "uid": "ca589c7058fbd4a4",
-      "url": "https://gigazine.net/news/20260813-alibaba-qwen-3-8-open/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-13T03:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "海馬は、昭和のダイヤル式黒電話に対話AIを搭載した「回想デンワ」のコンセプトモデルを、8月19日から東京ビッグサイトで開催される「CareTEX東京【夏】」にて公開する。",
-      "title": "コンセプトモデル「回想デンワ」昭和の黒電話が最先端AIの話し相手に！ 高齢者の「話す相手がいない」の悪循環を断つ",
-      "uid": "51081d0cb3666a0b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131331.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-13T02:39:02+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "",
-      "title": "OpenAI「Codex」1500万ユーザー突破　利用制限リセット「/fastでどうぞ」",
-      "uid": "4312b37dd72ed225",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000525/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T02:32:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Google DeepMindの手話チームが、手話の映像を文字に変換する「多言語手話・テキスト変換(sign-language-to-text：SL2T)翻訳モデル」を発表しました。2026年8月20日発売のPixel 11で、手話で文字を入力できるようになる予定です。 続きを読む...",
-      "title": "Googleが手話をテキストに変換するAIモデルをPixel 11に搭載",
-      "uid": "f35d9564920f6bb1",
-      "url": "https://gigazine.net/news/20260813-google-sl2t/",
       "vendor": "GIGAZINE"
     }
   ]
