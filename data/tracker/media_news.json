@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T09:53:28.617244+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-21T09:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ミーガン・フォックス主演の映画「ザ・ハウスメAIド 」が10月23日に日本で公開される。",
+      "title": "映画「ザ・ハウスメAIド &lt;服従&gt;」10月23日公開",
+      "uid": "7430992db6efdec8",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134548.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-21T09:00:17.887163+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "d8bef1abf2b38889",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/14/2000000545/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-14T08:39:06.340012+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T07:31:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国のAIスタートアップ・DeepSeekが、AIエージェントが安全かつ確実に動作するためのハーネス「DeepSeek Harness」を公開しました。MITライセンスのもと、オープンソースでコードベースも公開されています。 続きを読む...",
-      "title": "DeepSeekがAIエージェントのハーネス「DeepSeek Harness」v0.1を公開",
-      "uid": "2d74ecda98b13172",
-      "url": "https://gigazine.net/news/20260814-deepseek-harness-v0-1/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
