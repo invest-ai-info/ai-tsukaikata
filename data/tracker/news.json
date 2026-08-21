@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T13:13:14.784845+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-08-21T11:59:48+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+      "summary_ja": "Google DeepMindがゲーム会社と提携。\n15年のAI研究を活かし、新しいAIゲームを試作。\nAtariやEVE Onlineなどでの活用を目指す。",
+      "summary_source": "gemini",
+      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+      "uid": "7ddcd168ee28e4a9",
+      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-08-20T20:49:03.412734+00:00",
       "importance": "minor",
       "label": "Claude Code",

@@ -12,13 +12,13 @@
     "anthropic-news": "2026-08-14T19:16:00+00:00",
     "anthropic-sdk": "2026-08-20T19:58:48+00:00",
     "claude-code": "2026-08-20T20:33:51+00:00",
-    "deepmind-blog": "2026-08-13T17:04:18+00:00",
+    "deepmind-blog": "2026-08-21T11:59:48+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-19T19:00:00+00:00",
     "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-21T08:22:00+00:00",
-    "media-gigazine": "2026-08-21T11:00:00+00:00",
+    "media-gigazine": "2026-08-21T12:00:00+00:00",
     "media-impress-ai": "2026-08-21T09:00:00+00:00",
     "media-itmedia-aiplus": "2026-08-21T09:31:35+00:00",
     "media-publickey": "2026-08-20T15:02:15+00:00",
@@ -29,7 +29,19 @@
     "pfn-blog": "2026-08-17T06:00:13+00:00",
     "sakana-blog": "2026-08-20T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-08-21T11:59:48+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+      "uid": "7ddcd168ee28e4a9",
+      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+      "vendor": "Google DeepMind"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
@@ -486,6 +498,7 @@
     "75d171f5f5c7a531": "2026-08-17T09:02:55.699871+00:00",
     "7618db0568bfbea5": "2026-08-04T11:04:53.115730+00:00",
     "76854d6af5b1d07c": "2026-08-15T08:47:19.497531+00:00",
+    "76fce6b229008af2": "2026-08-21T13:13:14.784845+00:00",
     "774c5d6f111723ff": "2026-08-02T11:35:58.106550+00:00",
     "77a90f76487e9ea3": "2026-08-01T12:16:42.309603+00:00",
     "77b25b7604d79a99": "2026-08-18T22:43:44.829078+00:00",
@@ -517,6 +530,7 @@
     "7d5dc772904479c1": "2026-08-10T19:19:14.523366+00:00",
     "7dc1784dc6bf14f4": "2026-08-20T07:08:56.756357+00:00",
     "7dd03ef3c8389a86": "2026-08-17T21:43:13.697459+00:00",
+    "7ddcd168ee28e4a9": "2026-08-21T13:13:14.784845+00:00",
     "7e0103b4dc91fb0f": "2026-08-18T23:39:50.245321+00:00",
     "7e1888ae92113d1b": "2026-08-13T12:01:33.145239+00:00",
     "7e3d8cdaa6618b66": "2026-08-17T01:56:45.196273+00:00",
