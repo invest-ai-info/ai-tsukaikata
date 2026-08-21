@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T04:56:26.839358+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-21T04:28:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ウェブ版のGrok、iOSおよびAndroid版のGrokアプリでAIエージェントの「Grok Build」が利用可能となりました。 続きを読む...",
+      "title": "AIエージェント「Grok Build」がスマホアプリやウェブ版Grokでも利用可能に、アプリを作って固有URLで公開する機能もあり",
+      "uid": "b9bbc1f779a14f15",
+      "url": "https://gigazine.net/news/20260821-grok-build-web-mobile/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-21T04:56:26.839358+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-21T04:09:18+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "インプレスは8月21日、生成AIの全体像と技術の仕組み、業務活用の基礎知識をわかりやすく解説する書籍「図解でスッキリ 生成AIのきほんとしくみ」を発売した。",
+      "title": "「図解でスッキリ　生成AIのきほんとしくみ」、インプレスから",
+      "uid": "2287f3ab2f14f84d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134519.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-21T04:56:26.839358+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T04:08:48+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "成人向けECサイト「FANZA」を運営するデジタルコマースが、成人向けAIコンテンツプラットフォーム「FANZAスタジオ」の提供を始める予定だ。8月24日からβ版の先行体験を始める。",
+      "title": "FANZAで「成人向けAIコンテンツ制作サービス」開始　8月24日から先行体験",
+      "uid": "96fbe970b0b13130",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/21/2000000676/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-21T04:56:26.839358+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-21T03:23:22+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "デル・テクノロジーズは8月20日、AIコンピューティングをデスクで実現する「Dell Pro Max with GB300」の販売を開始した。",
+      "title": "デスク上でAIコンピューティングを実現する「Dell Pro Max with GB300」",
+      "uid": "bdc20bc9a44cc9d4",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134489.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-21T03:17:45.901339+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "cfa5ff17ae168be5",
       "url": "https://gigazine.net/news/20260814-teen-kill-family-chatgpt/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T02:48:19.675404+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T02:16:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国のAI開発企業であるMiniMaxが音楽生成AI「MiniMax-Music3」を日本時間の2026年8月14日に公開しました。MiniMax-Music3はテキストでの指示に沿ってボーカル付きの楽曲を生成可能で、日本語ボーカルの生成にも対応しています。モデルが無償で公開されており、ローカルで実行可能。さらに、ユーザーの短い入力をもとに長い歌詞やAIモデルに認識させやすい構造化されたプロンプ…",
-      "title": "MiniMaxが動画生成AIに続いて音楽生成AI「MiniMax-Music3」を無償公開、ローカルで最大5分の日本語ボーカル付き楽曲を生成可能",
-      "uid": "69cf5dff152cd4a1",
-      "url": "https://gigazine.net/news/20260814-minimax-music3/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T02:48:19.675404+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-14T01:32:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは、Linux向けに「ChatGPT」デスクトップアプリの提供を開始した。現在はプレビュー版で、Linux上でChatGPT、「ChatGPT Work」、「Codex」を利用できる。",
-      "title": "Linux版「ChatGPT」公式アプリが登場、UbuntuやDebianなどに対応",
-      "uid": "1985d27df1d8192d",
-      "url": "https://japan.cnet.com/article/35251554/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-14T02:48:19.675404+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-14T01:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "学生団体「イルカの耳研究会」は、AI・大学生・専門家が連携し、子どもの話を聞く体制を7月よりスタートさせた。今回のAI導入にあわせ「子どもが安心して話したくなるチャットAI」をテーマに研究を開始する。",
-      "title": "学生が“子どものためのチャットAI”を研究。独自のチャットAIの設計に活かす",
-      "uid": "59c2a12d58e78038",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131675.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-14T02:48:19.675404+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-14T00:51:06+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、複数のAIエージェントが同じ環境で働くとどうなるかを検証した実験結果を公開した。互いを妨害し合う“縄張り争い”や、示し合わせたような価格カルテル、全員が同じ判断をして資源を食い潰す現象などが確認された。個々のAIを安全にするだけでは防げない問題があると警告している。",
-      "title": "AIエージェント同士が“縄張り争い”、マルウェアで妨害も　Anthropicがマルチエージェント実験の結果を公開",
-      "uid": "d6a8d86b69e97a37",
-      "url": "https://www.itmedia.co.jp/news/article/2608/14/2000000538/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
