@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="588" viewBox="0 0 720 588" role="img" aria-label="架空の募集文2本から作った提案文24本について、同じ募集文・同じ頼み方の4本すべてに現れた文の数を、当て方2通りで並べた横棒グラフ。募集文だけを渡した版は、そのまま比べると記事執筆で2件、手順書の清書で3件。項目名と行頭の番号を落として比べると、それぞれ1件と2件に減る。素材メモを足した版は、そのまま比べても落として比べても、どちらの募集文でも2件。なぜこの案件かを1行書かせた版は、そのまま比べると記事執筆で5件、手順書の清書で4件だが、項目名と番号を落とすと どちらも2件に戻る。残った文の中身は、はじめまして、ご指定の5点という見出し、そして、これまでに書いた記事の有無はありますという行の3つだけだった。3つ目は素材メモを渡していない版にだけ出てくる。なお、はじめましては24本すべて、よろしくお願いいたしますも24本すべてに出ており、冒頭の1文はどの4本組でも4本とも同じである。なぜこの案件かを1行書かせた版でそのまま比べた数だけが増えるのは、素材を渡したぶん単価・時間・日数の行がまるごと一致するためで、中身が被ったからではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="588"/>
+<text class="t-strong" x="18" y="26">4本すべてに共通した文は、挨拶と見出しだけだった</text>
+<text class="t-sm" x="18" y="45">架空の募集文2本（記事執筆／手順書の清書）を一字一句そのまま固定し、渡すものだけを3通りに</text>
+<text class="t-sm" x="18" y="64">振って、それぞれ4本ずつ ＝ 全24本。突き合わせは Python の文字列照合だけ（AIには判定させていない）。</text>
+<text class="t-sm" x="18" y="83">全角半角と空白をそろえ、句点で文に分けてから、4本すべてに現れた文を数えた。</text>
+<text class="t-xs" x="445" y="126" text-anchor="middle">そのまま</text>
+<text class="t-xs" x="445" y="140" text-anchor="middle">比べる</text>
+<text class="t-xs" x="565" y="126" text-anchor="middle">項目名と番号を</text>
+<text class="t-xs" x="565" y="140" text-anchor="middle">落として比べる</text>
+<text class="t" x="18" y="172">(a) 募集文だけ／記事執筆</text>
+<rect class="bar-in" x="400" y="159" width="36" height="18" rx="3"/>
+<text class="t-sm" x="443" y="172">2件</text>
+<rect class="bar-out" x="520" y="159" width="18" height="18" rx="3"/>
+<text class="t-sm" x="545" y="172">1件</text>
+<text class="t" x="18" y="212">(a) 募集文だけ／手順書の清書</text>
+<rect class="bar-in" x="400" y="199" width="54" height="18" rx="3"/>
+<text class="t-sm" x="461" y="212">3件</text>
+<rect class="bar-out" x="520" y="199" width="36" height="18" rx="3"/>
+<text class="t-sm" x="563" y="212">2件</text>
+<text class="t" x="18" y="252">(b) ＋素材メモ／記事執筆</text>
+<rect class="bar-in" x="400" y="239" width="36" height="18" rx="3"/>
+<text class="t-sm" x="443" y="252">2件</text>
+<rect class="bar-out" x="520" y="239" width="36" height="18" rx="3"/>
+<text class="t-sm" x="563" y="252">2件</text>
+<text class="t" x="18" y="292">(b) ＋素材メモ／手順書の清書</text>
+<rect class="bar-in" x="400" y="279" width="36" height="18" rx="3"/>
+<text class="t-sm" x="443" y="292">2件</text>
+<rect class="bar-out" x="520" y="279" width="36" height="18" rx="3"/>
+<text class="t-sm" x="563" y="292">2件</text>
+<text class="t" x="18" y="332">(c) ＋なぜこの案件か1行／記事執筆</text>
+<rect class="bar-in" x="400" y="319" width="90" height="18" rx="3"/>
+<text class="t-sm" x="497" y="332">5件</text>
+<rect class="bar-out" x="520" y="319" width="36" height="18" rx="3"/>
+<text class="t-sm" x="563" y="332">2件</text>
+<text class="t" x="18" y="372">(c) ＋なぜこの案件か1行／手順書の清書</text>
+<rect class="bar-in" x="400" y="359" width="72" height="18" rx="3"/>
+<text class="t-sm" x="479" y="372">4件</text>
+<rect class="bar-out" x="520" y="359" width="36" height="18" rx="3"/>
+<text class="t-sm" x="563" y="372">2件</text>
+<rect class="box-quiet" x="18" y="406" width="678" height="72" rx="6"/>
+<text class="t-strong" x="34" y="430">残った文の中身</text>
+<text class="mono" x="34" y="452">「はじめまして」／「■ ご指定の5点」／「3. これまでに書いた記事の有無：あります」</text>
+<text class="t-sm" x="34" y="471">3つ目は、素材メモを渡していない版にだけ出てくる（渡した版では中身つきの文になる）。</text>
+<text class="t-bad" x="18" y="504">※ 「はじめまして」は 24/24本、「よろしくお願いいたします」も 24/24本。冒頭の1文は、どの4本組でも4本とも同じ。</text>
+<text class="t-sm" x="18" y="525">※ (c) だけ「そのまま比べる」が 4〜5件に増える。素材を渡したぶん単価・時間・日数の行がまるごと一致するため。</text>
+<text class="t-sm" x="18" y="546">　 項目名と番号を落とすと (b) と同じ2件に戻る。増えたのは中身が被ったからではない。</text>
+<text class="t-xs" x="18" y="567">架空データでの実測（全24本）。生の返りと照合コードは docs/evidence/ に全文置いてある。</text>
+</svg>

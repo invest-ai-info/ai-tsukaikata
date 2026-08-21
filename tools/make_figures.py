@@ -10784,7 +10784,225 @@ def take_home_by_version_chart() -> None:
     )
 
 
+def proposal_what_repeats_chart() -> None:
+    """同じ募集文・同じ頼み方の4本すべてに現れた文の数を、当て方2通りで並べる。
+
+    実測（2026-08-21・架空の募集文2本 × 3版 × 各4本 ＝ 24本）。値は check.py の B節。
+    """
+    rows = [
+        ("(a) 募集文だけ／記事執筆", 2, 1),
+        ("(a) 募集文だけ／手順書の清書", 3, 2),
+        ("(b) ＋素材メモ／記事執筆", 2, 2),
+        ("(b) ＋素材メモ／手順書の清書", 2, 2),
+        ("(c) ＋なぜこの案件か1行／記事執筆", 5, 2),
+        ("(c) ＋なぜこの案件か1行／手順書の清書", 4, 2),
+    ]
+    label_x = 18
+    col1, col2 = 400, 520
+    top = 156
+    row_h = 40
+    max_n = 5
+    bar_w = 90
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "4本すべてに共通した文は、挨拶と見出しだけだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の募集文2本（記事執筆／手順書の清書）を一字一句そのまま固定し、"
+        "渡すものだけを3通りに</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "振って、それぞれ4本ずつ ＝ 全24本。突き合わせは Python の文字列照合だけ"
+        "（AIには判定させていない）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "全角半角と空白をそろえ、句点で文に分けてから、4本すべてに現れた文を数えた。"
+        "</text>\n",
+        f'<text class="t-xs" x="{col1 + bar_w // 2}" y="{top - 30}" text-anchor="middle">'
+        "そのまま</text>\n",
+        f'<text class="t-xs" x="{col1 + bar_w // 2}" y="{top - 16}" text-anchor="middle">'
+        "比べる</text>\n",
+        f'<text class="t-xs" x="{col2 + bar_w // 2}" y="{top - 30}" text-anchor="middle">'
+        "項目名と番号を</text>\n",
+        f'<text class="t-xs" x="{col2 + bar_w // 2}" y="{top - 16}" text-anchor="middle">'
+        "落として比べる</text>\n",
+    ]
+
+    y = top
+    for label, n1, n2 in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for cx, n in ((col1, n1), (col2, n2)):
+            w = max(4, round(bar_w * n / max_n))
+            cls = "bar-in" if cx == col1 else "bar-out"
+            parts.append(
+                f'<rect class="{cls}" x="{cx}" y="{ty - 13}" '
+                f'width="{w}" height="18" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{cx + w + 7}" y="{ty}">{n}件</text>\n'
+            )
+        y += row_h
+
+    y += 10
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="72" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 24}">'
+        "残った文の中身</text>\n"
+    )
+    parts.append(
+        f'<text class="mono" x="34" y="{y + 46}">'
+        "「はじめまして」／「■ ご指定の5点」／「3. これまでに書いた記事の有無：あります」</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 65}">'
+        "3つ目は、素材メモを渡していない版にだけ出てくる（渡した版では中身つきの文になる）。</text>\n"
+    )
+    y += 72
+
+    notes = [
+        ("t-bad", "※ 「はじめまして」は 24/24本、「よろしくお願いいたします」も 24/24本。冒頭の1文は、どの4本組でも4本とも同じ。"),
+        ("t-sm", "※ (c) だけ「そのまま比べる」が 4〜5件に増える。素材を渡したぶん単価・時間・日数の行がまるごと一致するため。"),
+        ("t-sm", "　 項目名と番号を落とすと (b) と同じ2件に戻る。増えたのは中身が被ったからではない。"),
+        ("t-xs", "架空データでの実測（全24本）。生の返りと照合コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "架空の募集文2本から作った提案文24本について、"
+        "同じ募集文・同じ頼み方の4本すべてに現れた文の数を、当て方2通りで並べた横棒グラフ。"
+        "募集文だけを渡した版は、そのまま比べると記事執筆で2件、手順書の清書で3件。"
+        "項目名と行頭の番号を落として比べると、それぞれ1件と2件に減る。"
+        "素材メモを足した版は、そのまま比べても落として比べても、どちらの募集文でも2件。"
+        "なぜこの案件かを1行書かせた版は、そのまま比べると記事執筆で5件、手順書の清書で4件だが、"
+        "項目名と番号を落とすと どちらも2件に戻る。"
+        "残った文の中身は、はじめまして、ご指定の5点という見出し、"
+        "そして、これまでに書いた記事の有無はありますという行の3つだけだった。"
+        "3つ目は素材メモを渡していない版にだけ出てくる。"
+        "なお、はじめましては24本すべて、よろしくお願いいたしますも24本すべてに出ており、"
+        "冒頭の1文はどの4本組でも4本とも同じである。"
+        "なぜこの案件かを1行書かせた版でそのまま比べた数だけが増えるのは、"
+        "素材を渡したぶん単価・時間・日数の行がまるごと一致するためで、"
+        "中身が被ったからではない。"
+    )
+    (OUT / "proposal-what-repeats.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def proposal_answers_drift_chart() -> None:
+    """募集文が必須と指定した5項目の答えが、4本で何種類に分かれたかを並べる。
+
+    実測（2026-08-21）。値は check.py の D節2。種類が1なら4本とも同じ値。
+    """
+    rows = [
+        ("希望単価", 3, 4, 1, 1),
+        ("1週間に使える時間", 3, 3, 1, 1),
+        ("初稿までの日数", 2, 2, 1, 1),
+    ]
+    label_x = 18
+    cols = [(300, "素材なし\n記事執筆"), (400, "素材なし\n清書"),
+            (520, "素材あり\n記事執筆"), (620, "素材あり\n清書")]
+    top = 172
+    row_h = 52
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "他人と被る前に、自分の4本の中で割れていた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "募集文が「必ず書いてください」と指定した5項目のうち、"
+        "数字で比べられる3項目を数えたもの。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同じ募集文から作った4本の答えが、何種類に分かれたか。"
+        "1 なら4本とも同じ値、4 なら全部ばらばら。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "5項目に答えたかどうかで見れば、24本すべてが 5/5 で満点である。"
+        "割れているのは中身のほう。</text>\n",
+    ]
+    for cx, name in cols:
+        for i, ln in enumerate(name.split("\n")):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 34 + i * 14}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, *vals in rows:
+        ty = y + 17
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for (cx, _), n in zip(cols, vals):
+            if n == 1:
+                box, cls = "box-good", "t-good"
+            elif n >= 4:
+                box, cls = "box-bad", "t-bad"
+            else:
+                box, cls = "box-bad", "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 30}" y="{ty - 15}" '
+                f'width="60" height="23" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{cx}" y="{ty + 2}" '
+                f'text-anchor="middle">{n}種類</text>\n'
+            )
+        y += row_h
+
+    y += 8
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="678" height="72" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 24}">'
+        "素材メモを渡さない8本に出た、実際の値</text>\n"
+    )
+    parts.append(
+        f'<text class="mono" x="34" y="{y + 46}">'
+        "単価: 1文字1.2円 / 1.0円 / 1文字1.5円 / 1本4,000円 / 1本4,500円 / 1本5,000円</text>\n"
+    )
+    parts.append(
+        f'<text class="mono" x="34" y="{y + 65}">'
+        "時間: 8 / 10 / 12 時間　　日数: 3 / 4 日</text>\n"
+    )
+    y += 72
+
+    notes = [
+        ("t-bad", "※ 手順書の清書では、1本あたりの金額と1文字あたりの金額が混ざった。数え方そのものが4本で違う。"),
+        ("t-bad", "※ 「これまでに書いた記事の有無」は、素材を渡さない8本とも「あります」だけ。中身は 8本とも0件だった。"),
+        ("t-good", "※ 素材メモを渡した16本では、その「あります」だけの本は0本。5項目の答えも4本とも同じ値になる。"),
+        ("t-good", "※ 素材をまだ渡していないときは、〔私が決める：〕で空欄のまま残させると、4回とも5項目すべてが空欄で残った。"),
+        ("t-xs", "架空データでの実測（素材なし8本・素材あり16本・空欄版4回）。生の返りは docs/evidence/ にある。"),
+    ]
+    y += 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "架空の募集文が必ず書いてくださいと指定した5項目のうち、"
+        "数字で比べられる3項目について、同じ募集文から作った4本の答えが何種類に分かれたかを並べた表。"
+        "素材メモを渡さない場合、希望単価は記事執筆で3種類、手順書の清書で4種類。"
+        "1週間に使える時間はどちらも3種類。初稿までの日数はどちらも2種類だった。"
+        "素材メモを渡した場合は、単価も時間も日数も、どちらの募集文でも1種類、"
+        "つまり4本とも同じ値である。"
+        "5項目に答えたかどうかで見れば24本すべてが5項目中5項目で満点なので、"
+        "割れているのは答えの中身のほうだけである。"
+        "素材メモを渡さない8本に実際に出た値は、単価が1文字1.2円、1.0円、1文字1.5円、"
+        "1本4,000円、1本4,500円、1本5,000円。時間が8時間、10時間、12時間。日数が3日と4日だった。"
+        "手順書の清書では1本あたりの金額と1文字あたりの金額が混ざり、数え方そのものが4本で違っている。"
+        "これまでに書いた記事の有無は、素材を渡さない8本とも、あります、だけで中身は0件だった。"
+        "素材メモを渡した16本では、あります、だけの本は0本になる。"
+        "素材をまだ渡していないときに、私が決めるという形で空欄のまま残させると、"
+        "4回とも5項目すべてが空欄で残った。"
+    )
+    (OUT / "proposal-answers-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    proposal_what_repeats_chart()
+    proposal_answers_drift_chart()
     take_home_two_readings_chart()
     take_home_by_version_chart()
     formula_range_by_version_chart()

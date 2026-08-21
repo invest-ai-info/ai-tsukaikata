@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="539" viewBox="0 0 720 539" role="img" aria-label="架空の募集文が必ず書いてくださいと指定した5項目のうち、数字で比べられる3項目について、同じ募集文から作った4本の答えが何種類に分かれたかを並べた表。素材メモを渡さない場合、希望単価は記事執筆で3種類、手順書の清書で4種類。1週間に使える時間はどちらも3種類。初稿までの日数はどちらも2種類だった。素材メモを渡した場合は、単価も時間も日数も、どちらの募集文でも1種類、つまり4本とも同じ値である。5項目に答えたかどうかで見れば24本すべてが5項目中5項目で満点なので、割れているのは答えの中身のほうだけである。素材メモを渡さない8本に実際に出た値は、単価が1文字1.2円、1.0円、1文字1.5円、1本4,000円、1本4,500円、1本5,000円。時間が8時間、10時間、12時間。日数が3日と4日だった。手順書の清書では1本あたりの金額と1文字あたりの金額が混ざり、数え方そのものが4本で違っている。これまでに書いた記事の有無は、素材を渡さない8本とも、あります、だけで中身は0件だった。素材メモを渡した16本では、あります、だけの本は0本になる。素材をまだ渡していないときに、私が決めるという形で空欄のまま残させると、4回とも5項目すべてが空欄で残った。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="539"/>
+<text class="t-strong" x="18" y="26">他人と被る前に、自分の4本の中で割れていた</text>
+<text class="t-sm" x="18" y="45">募集文が「必ず書いてください」と指定した5項目のうち、数字で比べられる3項目を数えたもの。</text>
+<text class="t-sm" x="18" y="64">同じ募集文から作った4本の答えが、何種類に分かれたか。1 なら4本とも同じ値、4 なら全部ばらばら。</text>
+<text class="t-sm" x="18" y="83">5項目に答えたかどうかで見れば、24本すべてが 5/5 で満点である。割れているのは中身のほう。</text>
+<text class="t-xs" x="300" y="138" text-anchor="middle">素材なし</text>
+<text class="t-xs" x="300" y="152" text-anchor="middle">記事執筆</text>
+<text class="t-xs" x="400" y="138" text-anchor="middle">素材なし</text>
+<text class="t-xs" x="400" y="152" text-anchor="middle">清書</text>
+<text class="t-xs" x="520" y="138" text-anchor="middle">素材あり</text>
+<text class="t-xs" x="520" y="152" text-anchor="middle">記事執筆</text>
+<text class="t-xs" x="620" y="138" text-anchor="middle">素材あり</text>
+<text class="t-xs" x="620" y="152" text-anchor="middle">清書</text>
+<text class="t" x="18" y="189">希望単価</text>
+<rect class="box-bad" x="270" y="174" width="60" height="23" rx="4"/>
+<text class="t-bad" x="300" y="191" text-anchor="middle">3種類</text>
+<rect class="box-bad" x="370" y="174" width="60" height="23" rx="4"/>
+<text class="t-bad" x="400" y="191" text-anchor="middle">4種類</text>
+<rect class="box-good" x="490" y="174" width="60" height="23" rx="4"/>
+<text class="t-good" x="520" y="191" text-anchor="middle">1種類</text>
+<rect class="box-good" x="590" y="174" width="60" height="23" rx="4"/>
+<text class="t-good" x="620" y="191" text-anchor="middle">1種類</text>
+<text class="t" x="18" y="241">1週間に使える時間</text>
+<rect class="box-bad" x="270" y="226" width="60" height="23" rx="4"/>
+<text class="t-bad" x="300" y="243" text-anchor="middle">3種類</text>
+<rect class="box-bad" x="370" y="226" width="60" height="23" rx="4"/>
+<text class="t-bad" x="400" y="243" text-anchor="middle">3種類</text>
+<rect class="box-good" x="490" y="226" width="60" height="23" rx="4"/>
+<text class="t-good" x="520" y="243" text-anchor="middle">1種類</text>
+<rect class="box-good" x="590" y="226" width="60" height="23" rx="4"/>
+<text class="t-good" x="620" y="243" text-anchor="middle">1種類</text>
+<text class="t" x="18" y="293">初稿までの日数</text>
+<rect class="box-bad" x="270" y="278" width="60" height="23" rx="4"/>
+<text class="t-bad" x="300" y="295" text-anchor="middle">2種類</text>
+<rect class="box-bad" x="370" y="278" width="60" height="23" rx="4"/>
+<text class="t-bad" x="400" y="295" text-anchor="middle">2種類</text>
+<rect class="box-good" x="490" y="278" width="60" height="23" rx="4"/>
+<text class="t-good" x="520" y="295" text-anchor="middle">1種類</text>
+<rect class="box-good" x="590" y="278" width="60" height="23" rx="4"/>
+<text class="t-good" x="620" y="295" text-anchor="middle">1種類</text>
+<rect class="box-bad" x="18" y="336" width="678" height="72" rx="6"/>
+<text class="t-bad" x="34" y="360">素材メモを渡さない8本に出た、実際の値</text>
+<text class="mono" x="34" y="382">単価: 1文字1.2円 / 1.0円 / 1文字1.5円 / 1本4,000円 / 1本4,500円 / 1本5,000円</text>
+<text class="mono" x="34" y="401">時間: 8 / 10 / 12 時間　　日数: 3 / 4 日</text>
+<text class="t-bad" x="18" y="434">※ 手順書の清書では、1本あたりの金額と1文字あたりの金額が混ざった。数え方そのものが4本で違う。</text>
+<text class="t-bad" x="18" y="455">※ 「これまでに書いた記事の有無」は、素材を渡さない8本とも「あります」だけ。中身は 8本とも0件だった。</text>
+<text class="t-good" x="18" y="476">※ 素材メモを渡した16本では、その「あります」だけの本は0本。5項目の答えも4本とも同じ値になる。</text>
+<text class="t-good" x="18" y="497">※ 素材をまだ渡していないときは、〔私が決める：〕で空欄のまま残させると、4回とも5項目すべてが空欄で残った。</text>
+<text class="t-xs" x="18" y="518">架空データでの実測（素材なし8本・素材あり16本・空欄版4回）。生の返りは docs/evidence/ にある。</text>
+</svg>
