@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T09:00:17.887163+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-21T08:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Apple Musicで、AI生成であることを示す表示が義務化されることがわかりました。措置は2026年後半からスタートする見込みです。 続きを読む...",
+      "title": "Apple MusicがAI生成音楽へのタグ表示義務化を予告",
+      "uid": "4b7ea57d5514085c",
+      "url": "https://gigazine.net/news/20260821-apple-music-ai-labels/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-21T09:00:17.887163+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-21T08:22:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "私はこれまで何年にもわたり生成AIについて取材してきた。それだけに、AI「Claude」で生成したテキストに透かしを入れるというAnthropicの最近の発表が、一部の熱烈なAI支持者から激しい反発を招いたことには驚いた。",
+      "title": "Claudeの「透かし」導入、なぜ批判？ AI利用開示は当然の責務だ",
+      "uid": "2be320fe7e4b3ecb",
+      "url": "https://japan.cnet.com/article/35251814/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-21T09:00:17.887163+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T08:09:20+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「AIで仕事が楽になると思ってたけど、真逆でした」――エイベックスの松浦勝人会長は、自身のXアカウントでこのように投稿した。AIを活用したnoteの記事制作の一端を明かした。",
+      "title": "エイベックス松浦会長「AIで仕事が楽になると思ってたけど、真逆」　note記事作成の“苦労”明かす",
+      "uid": "bdef22b8f080f646",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/21/2000000684/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-21T07:59:31.514037+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "2d74ecda98b13172",
       "url": "https://gigazine.net/news/20260814-deepseek-harness-v0-1/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T08:39:06.340012+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-14T07:30:18+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIが「ChatGPT」「Codex」の新機能「Computer History」を発表。アプリやWebサイトの操作履歴を記録し、記憶とタイムラインとしてチャットで利用できる。Mac版デスクトップアプリで提供する。",
-      "title": "ChatGPTがPC操作を自動で記録、コンテキストとして利用可能に　Mac版デスクトップアプリで提供",
-      "uid": "0ce3832a21aabba5",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/14/2000000548/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-14T08:39:06.340012+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T07:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国ではインターネットのライブ配信を通じて商品を売り込むライブコマース市場が成熟しており、中にはAIで生成された「AIストリーマー(AI司会者)」によるライブコマースもあります。そんなAI司会者の「顔の魅力」が配信を視聴するユーザーに与える影響について調べた研究結果を、中国の研究チームが発表しました。 続きを読む...",
-      "title": "左右対称で典型的な「AIっぽいきれいな顔」は買い物客を遠ざけてしまう可能性",
-      "uid": "84df6922381b5613",
-      "url": "https://gigazine.net/news/20260814-perfect-ai-face-turning-shoppers-off/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T06:44:28.601215+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-14T06:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "一風変わったチャットボットサービス「ChatTJB」が注目を集めている。制作者であるアーティストの男性が、寄せられた質問のすべてに自ら答えていたのだ。",
-      "title": "AIチャットボット「ChatTJB」の正体は1人の男性、質問殺到で限界に--目的は？",
-      "uid": "85195a5aa5f182c0",
-      "url": "https://japan.cnet.com/article/35251560/",
-      "vendor": "CNET Japan"
     }
   ]
 }
