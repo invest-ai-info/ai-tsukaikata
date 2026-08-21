@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T07:09:56.315810+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-21T07:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「人命と自分のデータセンターどちらを助けるか」や「AIに殺人を犯したと告白したら警察に密告するのか」などAIのさまざまな検証をしているYouTubeチャンネルのAi Convoが、新たなシナリオとして「『6人を犠牲に1人を救う確実な方法』と『全員助かるか全員犠牲になるギャンブル』のどちらを選ぶのか」について複数のAIに尋ねた結果を報告しています。 続きを読む...",
+      "title": "AIは「確実に6人を犠牲に1人を救える方法」と「全員生還か全員犠牲のギャンブル」のどちらを選ぶのか？",
+      "uid": "4dbad46cd20ac218",
+      "url": "https://gigazine.net/news/20260821-ai-gamble-lives/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-21T07:09:56.315810+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T06:54:13+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIモデル「Kimi」を開発する中国Moonshot AIは、Kimiの日本語版公式X（@KimiAI_Japan）で「今日から、日本での歩みを始める」と投稿した。日本に本格進出するとみられる。",
+      "title": "中国AI「Kimi」が日本進出か　有料プランのプレゼントキャンペーンも　「はじめまして、日本」",
+      "uid": "393ee213c9d41ce6",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/21/2000000679/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-21T07:09:56.315810+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-21T06:51:34+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "OKIは8月21日、次世代コンタクトセンターシステム「CTstage シリーズ」の新商品として、AIを活用した「CTstage AIコンシェルジュ」（以下、同システム）を開発し、2027年1月より提供を開始すると発表した。",
+      "title": "OKI、生成AI活用でコンタクトセンター業務を標準化する新システム",
+      "uid": "7aceb9e43e4f8ee9",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134613.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-21T05:49:27.727019+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "b092e9116327a843",
       "url": "https://japan.cnet.com/article/35251557/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-14T05:06:15.076052+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-14T03:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Code and DESIGNは、macOS（Appleシリコン）用シミュレーションゲーム「コンセプトカフェシミュレーター」をSteamにて早期アクセスリリースした。価格は655円。",
-      "title": "ローカルLLM搭載でAIキャストとの会話を存分に楽しめる！ 「コンセプトカフェシミュレーター」",
-      "uid": "131d20c7731c52b9",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2131696.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-14T05:06:15.076052+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T02:59:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アプリの操作履歴やウェブでのアクティビティを記録し将来のタスクに役立てる機能「Computer History」がMac向けのChatGPTデスクトップアプリに追加されました。「将来のやり取りが最適化され、説明が少なく済む」とのことです。 続きを読む...",
-      "title": "ChatGPTに自分のPC操作履歴を学ばせる機能「Computer History」が登場",
-      "uid": "9afcdf0bf33a870c",
-      "url": "https://gigazine.net/news/20260814-chatgpt-computer-history/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T05:06:15.076052+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T02:57:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "現地時間の2026年8月13日、Googleはコーディングとエージェント向けに開発されたこれまでで最もインテリジェントなAIモデルの「Gemini 3.7 Flash」をリリースしました。 続きを読む...",
-      "title": "Googleが「Gemini 3.7 Flash」をリリース、Claude Sonnet 5やGPT-5.6 Terraに並ぶ性能で年末まではGemini 3.6 Flashの半額で利用可能",
-      "uid": "2767c05f6c97b4e6",
-      "url": "https://gigazine.net/news/20260814-google-gemini-3-7-flash/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
