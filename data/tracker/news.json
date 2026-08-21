@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T20:42:45.987204+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-21T19:54:23+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Cost estimates ( /cost , status line, --max-budget-usd ) now include the 1.1× US-only-inference premium for data-residency workspaces Added the one-time fullscreen renderer offer on Be…",
+      "title": "v2.1.239",
+      "uid": "d60272baf614570e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-21T13:13:14.784845+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",

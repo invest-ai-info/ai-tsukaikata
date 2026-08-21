@@ -11,7 +11,7 @@
   "latest": {
     "anthropic-news": "2026-08-14T19:16:00+00:00",
     "anthropic-sdk": "2026-08-20T19:58:48+00:00",
-    "claude-code": "2026-08-20T20:33:51+00:00",
+    "claude-code": "2026-08-21T19:54:23+00:00",
     "deepmind-blog": "2026-08-21T11:59:48+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-08-19T19:00:00+00:00",
@@ -40,6 +40,17 @@
       "uid": "7ddcd168ee28e4a9",
       "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
       "vendor": "Google DeepMind"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-21T19:54:23+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Cost estimates ( /cost , status line, --max-budget-usd ) now include the 1.1× US-only-inference premium for data-residency workspaces Added the one-time fullscreen renderer offer on Be…",
+      "title": "v2.1.239",
+      "uid": "d60272baf614570e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -884,6 +895,7 @@
     "d5271186f0dd8924": "2026-08-15T07:00:09.628260+00:00",
     "d53118720acc4013": "2026-08-01T12:16:42.309603+00:00",
     "d5c75e7e7eafb282": "2026-08-13T12:01:33.145239+00:00",
+    "d60272baf614570e": "2026-08-21T20:42:45.987204+00:00",
     "d62b2185320d2733": "2026-08-13T12:01:33.145239+00:00",
     "d6a8d86b69e97a37": "2026-08-14T02:48:19.675404+00:00",
     "d6c992cb1bcb79fa": "2026-08-01T12:16:42.309603+00:00",
