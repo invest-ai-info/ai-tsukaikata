@@ -29,30 +29,7 @@
     "pfn-blog": "2026-08-17T06:00:13+00:00",
     "sakana-blog": "2026-08-20T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-21T11:59:48+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
-      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-      "uid": "7ddcd168ee28e4a9",
-      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-21T19:54:23+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Cost estimates ( /cost , status line, --max-budget-usd ) now include the 1.1× US-only-inference premium for data-residency workspaces Added the one-time fullscreen renderer offer on Be…",
-      "title": "v2.1.239",
-      "uid": "d60272baf614570e",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
