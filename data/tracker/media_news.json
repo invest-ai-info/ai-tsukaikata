@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T22:44:06.741017+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T22:09:30+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、最上位モデル「Claude Mythos 5」をセキュリティサービス「Claude Security」の脆弱性検出に導入したと発表した。モデル本体への直接アクセスは開放せず、パッチ提案などの出力のみに限定して提供する。オープンソース保護に向けた総額3500万ドルの基金設立も公表した。",
+      "title": "Anthropic、「ミュトス 5」を脆弱性スキャンに開放──「Claude Security」経由でEnterprise顧客が利用可能に",
+      "uid": "514fe53c0915f645",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/22/2000000697/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-21T22:44:06.741017+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-21T22:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "デジタルコマースは8月17日、成人向けエンタメプラットフォーム「FANZA」で新サービス「FANZAスタジオ」を提供すると発表した。運営はデジタル・リンクが担う。つくり手はAIで成人向け作品をつくり、そのまま公開してファンに届けられる。正式ローンチを前に、8月24日から先行体験の参加者を募る。",
+      "title": "FANZA、成人向けAIコンテンツを作成→公開できる新サービス「スタジオ」24日から先行体験",
+      "uid": "dc8d5bfd58e15084",
+      "url": "https://japan.cnet.com/article/35251821/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-08-21T14:55:23.281482+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2374,30 +2398,6 @@
       "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明　「完全な書き直しなら消える」",
       "uid": "c0251da309eb1571",
       "url": "https://www.itmedia.co.jp/news/article/2608/16/2000000555/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-14T23:40:53.575715+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "生成AIはしばしば、聞かれたことに対して「分かりません」とは答えずに適当なでっち上げを返してくることがあります。生成AIを使う人間もこれに影響され、「分かりません」と言えなくなってしまっている可能性が見えてきました。 続きを読む...",
-      "title": "AIの「分かったふり」を見続けていると人間も「分からない」と言えなくなるという研究結果",
-      "uid": "755fde574c505783",
-      "url": "https://gigazine.net/news/20260815-ai-advice-suppresses-people-willingness-idk/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T18:08:44.543127+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-14T17:26:12+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "中国Alibaba傘下のAlibaba Cloudが、AIモデル「Qwen3.8-27B」のウェイト（重み）を公開した。Hugging FaceとModelScopeからダウンロード可能で、商用利用もできるライセンス「Apache 2.0」で提供する。一部のベンチマークでは、米Anthropicの「Claude Opus 4.6」の推論エフォート最大（以下、Opus 4.6 Max）を上回るスコ…",
-      "title": "「Qwen3.8-27B」ウェイト公開　一部「Opus 4.6 Max」超えか　ライセンスは商用可のApache 2.0",
-      "uid": "4bd27e355c847546",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/15/2000000554/",
       "vendor": "ITmedia AI+"
     }
   ]
