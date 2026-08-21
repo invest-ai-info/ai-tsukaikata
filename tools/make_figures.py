@@ -9946,7 +9946,221 @@ def pfp9_elements_chart() -> None:
     )
 
 
+def handoff_memo_length_vs_values_chart() -> None:
+    """引き継ぎメモの字数と、メモに残った「翌日が要る値」の数を版ごとに並べる。
+
+    実測（2026-08-21・架空の待ち行列10行を2本、4通りの頼み方 × 各2回 × 2本 ＝ 全16回）。
+    値は check.py の B節・C節の出力。棒の長さは値から計算する。
+    """
+    rows = [
+        ("そのまま「その旨を書いて」", 1004, 20),
+        ("＋「何が起きたか・何を試したか・次に何を」", 1254, 21),
+        ("＋「会話ではなくファイルにだけ書いて」", 1721, 21),
+        ("＋「行・ファイル名・出た文言をそのままコピー」", 2316, 24),
+    ]
+    label_x = 18
+    len_x = 330
+    len_w = 150
+    val_x = 512
+    val_w = 150
+    top = 148
+    row_h = 56
+    bar_h = 22
+    max_len = 2400
+    max_val = 24
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "メモは2.3倍に伸びた。翌日が要る値の数は、ほとんど動かない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の待ち行列10行を2本（調べもの／請求書の突き合わせ）。上から3行を毎朝処理させ、"
+        "そのうち</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2行が別々の理由で止まるように仕込んだ（資料が404／中身が別案件のもの）。"
+        "止まった2行について</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「行の名前・資料のファイル名・出た文言」の3つ＝計6個が、"
+        "メモに一字一句そのまま残ったかを数えた。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "1つの頼み方につき、材料2本 × 各2回 ＝ 4回。全16回。</text>\n",
+        f'<text class="t-xs" x="{len_x + len_w // 2}" y="{top - 36}" '
+        f'text-anchor="middle">メモの字数</text>\n',
+        f'<text class="t-xs" x="{len_x + len_w // 2}" y="{top - 22}" '
+        f'text-anchor="middle">（4回の平均）</text>\n',
+        f'<text class="t-xs" x="{val_x + val_w // 2}" y="{top - 36}" '
+        f'text-anchor="middle">翌日が要る6個の値</text>\n',
+        f'<text class="t-xs" x="{val_x + val_w // 2}" y="{top - 22}" '
+        f'text-anchor="middle">（4回で24個中）</text>\n',
+    ]
+
+    y = top
+    for label, n_len, n_val in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w1 = round(len_w * n_len / max_len)
+        parts.append(
+            f'<rect class="bar-old" x="{len_x}" y="{ty - 15}" '
+            f'width="{w1}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{len_x + w1 + 6}" y="{ty}">{n_len}字</text>\n'
+        )
+        w2 = round(val_w * n_val / max_val)
+        cls = "bar-new" if n_val == max_val else "bar-in"
+        parts.append(
+            f'<rect class="{cls}" x="{val_x}" y="{ty - 15}" '
+            f'width="{w2}" height="{bar_h}" rx="3"/>\n'
+        )
+        txt_cls = "t-good" if n_val == max_val else "t-sm"
+        parts.append(
+            f'<text class="{txt_cls}" x="{val_x + w2 + 6}" y="{ty}">{n_val}/24</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 上の3つは 20・21・21 でほとんど同じ。メモが1.7倍になっても、残る値は1個しか増えない。"),
+        ("t-bad", "　 落ちるものは決まっている＝調べものでは品目コード KX-2200 が6回とも、"),
+        ("t-bad", "　 請求書ではファイル名 seikyu-shinonome-06.txt が6回中4回。どちらも会社名や品名に言い換えられていた。"),
+        ("t-good", "※ 4つ目（そのままコピーさせる）だけが 24/24。落ちた値は0個だった。"),
+        ("t-xs", "架空データでの実測（全16回）。当て方を2通り（完全一致／ゆるい正規表現）試したが、"
+                 "16回とも同じ数だった。"),
+        ("t-xs", "生の返り16通は docs/evidence/memo-that-names-the-next-row.md に全文置いてある。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎朝の自動処理が止まった日に書かせた引き継ぎメモについて、"
+        "メモの字数と、翌日が必要とする値がメモに残った数を、頼み方4通りで並べた横棒グラフ。"
+        "架空の待ち行列10行を2本作り、上から3行を処理させ、そのうち2行が別々の理由で止まるように仕込んだ。"
+        "理由は、資料が404で取得できないことと、資料の中身が別案件のものだったこと。"
+        "止まった2行について、行の名前、資料のファイル名、画面に出た文言の3つ、"
+        "合わせて6個の文字列がメモに一字一句そのまま残ったかを数えた。"
+        "1つの頼み方につき材料2本かける各2回で4回ずつ、全16回である。"
+        "そのまま、その旨を書いてと頼んだ4回は、メモの平均が1004字で、値は24個中20個残った。"
+        "何が起きたか、何を試したか、次に何をすれば直るかの3つを入れてと足した4回は、"
+        "1254字で21個。"
+        "さらに、次に読む人は会話を見られないので会話ではなくファイルにだけ書いてと足した4回は、"
+        "1721字で21個。"
+        "行の文字列とファイル名と出た文言をそのままコピーしてと足した4回は、2316字で24個全部が残った。"
+        "つまりメモは2.3倍に伸びたのに、残る値は上の3つではほとんど動かない。"
+        "落ちるものは決まっていて、調べものの材料では品目コード KX-2200 が6回とも落ち、"
+        "請求書の材料ではファイル名 seikyu-shinonome-06.txt が6回中4回落ちた。"
+        "どちらもメモの中では会社名や品名に言い換えられていた。"
+        "4つ目のそのままコピーさせる頼み方だけが24個中24個で、落ちた値は0個だった。"
+    )
+    (OUT / "handoff-memo-length-vs-values.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def handoff_memo_next_row_chart() -> None:
+    """メモだけを渡した翌日の会話が、次に手を付ける行を名指しできたかを版ごとに並べる。
+
+    実測（2026-08-21・16通のメモをそれぞれ別のまっさらな会話に渡した）。
+    値は check.py の E節・F節の出力。位置は計算で出す。
+    """
+    rows = [
+        ("そのまま「その旨を書いて」", "2/4", "4/4"),
+        ("＋「何が起きたか・何を試したか・次に何を」", "1/4", "4/4"),
+        ("＋「会話ではなくファイルにだけ書いて」", "2/4", "4/4"),
+        ("＋「次はこの行から: 」を1行書かせる", "3/4", "4/4"),
+    ]
+    label_x = 18
+    col_x = [452, 606]
+    col_names = [
+        ["答えの書き出しで", "行を名指しした"],
+        ["答えのどこかに", "行の番号は出ている"],
+    ]
+    top = 168
+    row_h = 52
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "行の番号は16回とも書いてある。それでも半分は「決まらない」と答える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前の図と同じ16回で作らせたメモを、1通ずつ別のまっさらな会話に渡した"
+        "（待ち行列も資料も渡していない）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "聞いたのは3つ。①止まっている行はどれか ②それぞれ次に何をすればよいか"
+        "③まだ一度も手を付けて</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "いない行のうち、いちばん上はどれか。③は「メモから決まらないときは"
+        "そう書いて」と添えてある。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "①の答えは16回とも正解だった（止まった2行を2行とも名指し）。"
+        "下は③の結果。</text>\n",
+    ]
+    for cx, lines in zip(col_x, col_names):
+        for i, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 30 + i * 14}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, named, anywhere in rows:
+        ty = y + 17
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        good = named == "3/4"
+        for cx, val, box, cls, w in (
+            (col_x[0], named, "box-good" if good else "box-bad",
+             "t-good" if good else "t-bad", 52),
+            (col_x[1], anywhere, "box-quiet", "t-sm", 52),
+        ):
+            parts.append(
+                f'<rect class="{box}" x="{cx - w // 2}" y="{ty - 14}" '
+                f'width="{w}" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{cx}" y="{ty}" '
+                f'text-anchor="middle">{_esc(val)}</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 上の3つを合わせると 5/12。残る7回は「このメモからは決まらない」と答えた。"),
+        ("t-bad", "　 ところが右の列のとおり、16回とも答えの中には行の番号が出てくる。"),
+        ("t-bad", "　 断った理由は返り自身が書いている——「その行が本当に未着手かはメモに書かれていない」。"),
+        ("t-good", "※ 「次はこの行から: 」を1行書かせた4回は、4回ともその1行を根拠に答えた。"),
+        ("t-bad", "※ ただし4回のうち1回は、AIがその1行に止まっている行を書いた。翌日は正しく「決まらない」と答えた。"),
+        ("t-xs", "架空データでの実測（メモ16通・各1回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "止まった日の引き継ぎメモだけを、1通ずつ別のまっさらな会話に渡して、"
+        "次に手を付ける行を答えられるかを頼み方4通りで並べた表。"
+        "待ち行列そのものも資料も渡していない。"
+        "聞いたのは3つで、止まっている行はどれか、それぞれ次に何をすればよいか、"
+        "まだ一度も手を付けていない行のうちいちばん上はどれか、である。"
+        "3つ目には、メモから決まらないときはそう書いてくださいと添えてある。"
+        "1つ目の質問は16回とも正解で、止まった2行を2行とも名指しした。"
+        "3つ目の結果は、そのまま、その旨を書いてと頼んだメモが4回中2回、"
+        "何が起きたか、何を試したか、次に何をすれば直るかを入れさせたメモが4回中1回、"
+        "会話ではなくファイルにだけ書いてと足したメモが4回中2回で、合わせて12回中5回だった。"
+        "残る7回はこのメモからは決まらないと答えている。"
+        "ところが、答えのどこかに行の番号が出てくるかで数えると16回とも16回である。"
+        "断った理由は返り自身が書いていて、その行が本当に未着手かはメモに書かれていない、というものだった。"
+        "次はこの行からという1行を書かせた4回は、4回ともその1行を根拠に答えている。"
+        "ただしその4回のうち1回は、AIがその1行に止まっている行のほうを書いてしまい、"
+        "翌日は正しく決まらないと答えた。"
+    )
+    (OUT / "handoff-memo-next-row.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    handoff_memo_length_vs_values_chart()
+    handoff_memo_next_row_chart()
     pfp9_arena_rank_chart()
     pfp9_five_tasks_chart()
     pfp9_h2_rmse_chart()
