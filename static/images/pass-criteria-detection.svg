@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="513" viewBox="0 0 720 513" role="img" aria-label="毎朝の自動処理の出来上がりを判定させたとき、合格の条件を渡すかどうかで不良の検出と誤検出がどう変わるかを並べた横棒グラフ。架空の出来上がり20日ぶんを2本作り、どちらも10日を本物の成功、10日を成功に見える失敗にした。失敗の型は5つで、内訳が合わない、前日と1文字も同じ、日付だけ今日で中身は3日前、欄はそろっているが全部0、並び順だけ変えて中身は前日と同じ、を各2日ずつである。1つの頼み方につき材料2本かける各2回で4回、20日ぶんずつ判定させ、全12回のべ240判定を取った。条件を渡さずうまくいっていますかと聞いた4回は、不良40件のうち36件を検出し、誤検出が6件あった。先にAIに書かせた5つの条件を渡して判定させた4回は、検出24件で誤検出は0件。5条件に加えて条件の外で気になったことという欄を足した4回は、判定の欄では18件しか検出しなかったが、その欄の中身まで数えると40件すべてを拾っていた。誤検出は0件である。条件を渡さない版の誤検出6件は、4回とも同じ3日で、差し戻しが0件だが受け取りは25件という平常な朝だった。件数が多い日に不備が0件なのはおかしいという筋の通った理由が付いていたが、実際には正常な日である。条件を渡した版で落ちるのは条件に書かれていない型だけで、条件に書いてある内訳が合わない型は3つの版とも8件中8件で崩れていない。落ちたのは前日との重複と、全部0の朝だった。条件の外で気になったことの欄を足すと、4回とも欄の中に落ちたぶんが全部出てきている。ただし判定の欄は24件から18件へさらに減っており、欄を読まない人にはいちばん悪い版に見える。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="513"/>
+<text class="t-strong" x="18" y="26">条件を渡すと誤検出は消える。かわりに、条件の外の不良も消える</text>
+<text class="t-sm" x="18" y="45">架空の「毎朝の出来上がり」20日ぶんを2本（経費申請の仕分け／サイトのリンク切れ点検）。どちらも</text>
+<text class="t-sm" x="18" y="64">10日は本物の成功、10日は成功に見える失敗にした（内訳が合わない／前日と1文字も同じ／日付だけ</text>
+<text class="t-sm" x="18" y="83">今日で中身は3日前／欄はそろっているが全部0／並び順だけ変えて中身は前日と同じ、を各2日）。</text>
+<text class="t-sm" x="18" y="102">1つの頼み方につき材料2本 × 各2回 ＝ 4回、20日ぶんずつ判定させた。全12回・のべ240判定。</text>
+<text class="t-xs" x="336" y="128">不良40件のうち、判定の欄で「うまくいっていない」と答えた数</text>
+<text class="t" x="18" y="166">条件を渡さず「うまくいっていますか」</text>
+<rect class="bar-out" x="336" y="152" width="225" height="20" rx="3"/>
+<text class="t-accent" x="567" y="166">36/40</text>
+<text class="t-bad" x="336" y="186">誤検出 6/40</text>
+<text class="t" x="18" y="228">先にAIに書かせた5条件を渡して判定させる</text>
+<rect class="bar-out" x="336" y="214" width="150" height="20" rx="3"/>
+<text class="t-accent" x="492" y="228">24/40</text>
+<text class="t-good" x="336" y="248">誤検出 0/40</text>
+<text class="t" x="18" y="290">5条件＋〔条件の外で気になったこと〕の欄</text>
+<rect class="bar-out" x="336" y="276" width="112" height="20" rx="3"/>
+<text class="t-accent" x="454" y="290">18/40</text>
+<text class="t-good" x="336" y="310">誤検出 0/40</text>
+<rect class="box-good" x="336" y="316" width="250" height="20" rx="3"/>
+<text class="t-good" x="344" y="330">欄の中身まで数えると 40/40</text>
+<text class="t-bad" x="18" y="366">※ 条件を渡さない版の誤検出6件は、4回とも同じ3日＝「差し戻し0件だが受け取りは25件」の平常な朝。</text>
+<text class="t-bad" x="18" y="387">　 件数が多い日に不備0件なのはおかしい、という筋の通った理由が付いていた。それでも正常な日である。</text>
+<text class="t-bad" x="18" y="408">※ 条件を渡した版で落ちるのは、条件に書かれていない型だけ。条件に書いてある型（内訳が合わない）は</text>
+<text class="t-bad" x="18" y="429">　 3版とも 8/8 で崩れない。落ちたのは前日との重複と、全部0の朝。</text>
+<text class="t-good" x="18" y="450">※ 〔条件の外で気になったこと〕の欄を1つ足すと、4回とも欄の中に落ちたぶんが全部出てきた（10/10 × 4回）。</text>
+<text class="t-bad" x="18" y="471">🚨 ただし判定の欄は 24/40 → 18/40 にさらに減った。欄を読まない人には、いちばん悪い版に見える。</text>
+<text class="t-xs" x="18" y="492">架空データでの実測（全12回・のべ240判定）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

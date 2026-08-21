@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="505" viewBox="0 0 720 505" role="img" aria-label="毎朝の出来上がりに仕込んだ5種類の不良について、合格の条件を渡すかどうかで何件拾えたかを並べた表。1つの型につき2日かける材料2本かける各2回で8件ある。内訳が合わない型は、条件を渡さない版が8件中8件、5条件を渡した版が8件、5条件と条件の外の欄を足した版も8件で、3つとも崩れていない。欄はそろっているが全部0の型は、条件を渡さない版が8件、5条件を渡した版が4件、欄を足した版が4件。日付だけ今日で中身は3日前の型は、8件、4件、2件。前日と1文字も同じ型は、6件、4件、2件。並び順だけ変えて中身は前日と同じ型は、6件、4件、2件である。AIが先に書いた5条件には、材料2本かける2回の合わせて20条のうち、前日と同じ中身かどうかを見る条が1つも無かった。全部0を失敗と書いたのはリンク点検の側の2回だけで、経費の側は0件の朝も行が出ていれば合格と書いている。その結果、全部0の型は条件に書いた側では4件中4件を拾い、書かなかった側では4件中0件だった。同じ型でも、条件に書いたかどうかで結果が割れている。なおこの数はいずれも判定の欄だけを数えたもので、条件の外の欄は含めていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="505"/>
+<text class="t-strong" x="18" y="26">崩れない型が1つだけある。条件に書いてある型がそれ</text>
+<text class="t-sm" x="18" y="45">前の図と同じ12回を、仕込んだ不良の型ごとに数え直した。1つの型につき 2日 × 材料2本 × 各2回 ＝ 8件。</text>
+<text class="t-sm" x="18" y="64">AIが先に書いた5条件には、材料2本 × 2回の計20条のうち「前日と同じ中身か」を見る条が1つも無かった。</text>
+<text class="t-sm" x="18" y="83">「全部0」を失敗と書いたのは、リンク点検の側の2回だけ（経費の側は「0件の朝も行が出ていれば合格」と書いた）。</text>
+<text class="t-sm" x="18" y="102">下の数は、いずれも判定の欄だけを数えたもの。〔条件の外〕の欄は含めていない。</text>
+<text class="t-xs" x="420" y="128" text-anchor="middle">条件を</text>
+<text class="t-xs" x="420" y="142" text-anchor="middle">渡さない</text>
+<text class="t-xs" x="510" y="128" text-anchor="middle">5条件を</text>
+<text class="t-xs" x="510" y="142" text-anchor="middle">渡す</text>
+<text class="t-xs" x="610" y="128" text-anchor="middle">5条件＋</text>
+<text class="t-xs" x="610" y="142" text-anchor="middle">欄</text>
+<text class="t" x="18" y="175">内訳が合わない（合計が閉じない）</text>
+<rect class="box-good" x="396" y="161" width="48" height="19" rx="4"/>
+<text class="t-good" x="420" y="175" text-anchor="middle">8/8</text>
+<rect class="box-good" x="486" y="161" width="48" height="19" rx="4"/>
+<text class="t-good" x="510" y="175" text-anchor="middle">8/8</text>
+<rect class="box-good" x="586" y="161" width="48" height="19" rx="4"/>
+<text class="t-good" x="610" y="175" text-anchor="middle">8/8</text>
+<text class="t" x="18" y="221">欄はそろっているが全部0</text>
+<rect class="box-good" x="396" y="207" width="48" height="19" rx="4"/>
+<text class="t-good" x="420" y="221" text-anchor="middle">8/8</text>
+<rect class="box-quiet" x="486" y="207" width="48" height="19" rx="4"/>
+<text class="t-sm" x="510" y="221" text-anchor="middle">4/8</text>
+<rect class="box-quiet" x="586" y="207" width="48" height="19" rx="4"/>
+<text class="t-sm" x="610" y="221" text-anchor="middle">4/8</text>
+<text class="t" x="18" y="267">日付だけ今日で、中身は3日前</text>
+<rect class="box-good" x="396" y="253" width="48" height="19" rx="4"/>
+<text class="t-good" x="420" y="267" text-anchor="middle">8/8</text>
+<rect class="box-quiet" x="486" y="253" width="48" height="19" rx="4"/>
+<text class="t-sm" x="510" y="267" text-anchor="middle">4/8</text>
+<rect class="box-bad" x="586" y="253" width="48" height="19" rx="4"/>
+<text class="t-bad" x="610" y="267" text-anchor="middle">2/8</text>
+<text class="t" x="18" y="313">前日と1文字も同じ</text>
+<rect class="box-quiet" x="396" y="299" width="48" height="19" rx="4"/>
+<text class="t-sm" x="420" y="313" text-anchor="middle">6/8</text>
+<rect class="box-quiet" x="486" y="299" width="48" height="19" rx="4"/>
+<text class="t-sm" x="510" y="313" text-anchor="middle">4/8</text>
+<rect class="box-bad" x="586" y="299" width="48" height="19" rx="4"/>
+<text class="t-bad" x="610" y="313" text-anchor="middle">2/8</text>
+<text class="t" x="18" y="359">並び順だけ変えて、中身は前日と同じ</text>
+<rect class="box-quiet" x="396" y="345" width="48" height="19" rx="4"/>
+<text class="t-sm" x="420" y="359" text-anchor="middle">6/8</text>
+<rect class="box-quiet" x="486" y="345" width="48" height="19" rx="4"/>
+<text class="t-sm" x="510" y="359" text-anchor="middle">4/8</text>
+<rect class="box-bad" x="586" y="345" width="48" height="19" rx="4"/>
+<text class="t-bad" x="610" y="359" text-anchor="middle">2/8</text>
+<text class="t-good" x="18" y="400">※ いちばん上の「内訳が合わない」だけが、3つの版とも 8/8。条件を書かせた4回とも、この型を見る条がある。</text>
+<text class="t-bad" x="18" y="421">※ 下の3つは、条件を渡すほど下がる。条件に無い型は、判定の欄では話題にならない。</text>
+<text class="t-bad" x="18" y="442">※ 「全部0」は、条件に書いた側（リンク点検）では 4/4 で拾い、書かなかった側（経費）では 0/4 だった。</text>
+<text class="t-bad" x="18" y="463">　 同じ型でも、条件に書いたかどうかで結果が割れる。AIの賢さではなく、条文の側で決まっている。</text>
+<text class="t-xs" x="18" y="484">架空データでの実測（全12回）。型ごとの件数は判定の一覧から数え直したもので、手で数えていない。</text>
+</svg>
