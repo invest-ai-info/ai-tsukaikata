@@ -10360,7 +10360,233 @@ def pass_criteria_by_fault_type_chart() -> None:
     )
 
 
+def formula_range_by_version_chart() -> None:
+    """頼み方4通りごとに、最後に勧められた数式の参照範囲の形を並べる。
+
+    実測（2026-08-21・架空の売上表2本 × 4版 × 各2回 ＝ 全16回）。
+    値は check.py の C節（16回それぞれから「最後に勧められた数式」を1本ずつ拾い、
+    実際に SUMIF を計算して31行目を足した表の真値と突き合わせたもの）。
+    """
+    rows = [
+        ("そのまま「担当ごとの合計を出す数式を」", 4, 0, 0, 4),
+        ("＋「この表は毎月行が増えます」", 2, 2, 0, 2),
+        ("＋「行が増えても直さなくていい形に」", 0, 3, 1, 0),
+        ("＋㋐㋑㋒に分けて書かせる（受け皿つき）", 0, 4, 0, 0),
+    ]
+    label_x = 18
+    plot_x = 330
+    cell_w = 56
+    top = 156
+    row_h = 54
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "そのまま頼むと、4回とも範囲が「渡した表の最終行」で止まる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の売上表を2本（きれいな30行／列の形を変えて空欄と表記ゆれを混ぜた30行）。"
+        "1つの頼み方に</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "つき材料2本 × 各2回 ＝ 4回。全16回。"
+        "1行足したあとの正しい答えは、走らせる前に Python で確定させた。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "下の数は、16回それぞれから「最後にこれを使ってと勧められた数式」を"
+        "1本ずつ拾って分類したもの。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "いちばん右は、その数式を実際に計算して、31行目を1行足した表の真値と"
+        "合わなくなった回の数。</text>\n",
+    ]
+    heads = [
+        ["最終行で", "固定"],
+        ["列ぜんぶ", "$B:$B"],
+        ["テーブル", "参照"],
+        ["1行足すと", "合わない"],
+    ]
+    for i, lines in enumerate(heads):
+        cx = plot_x + i * (cell_w + 22) + cell_w // 2
+        for j, ln in enumerate(lines):
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{top - 32 + j * 14}" '
+                f'text-anchor="middle">{_esc(ln)}</text>\n'
+            )
+
+    y = top
+    for label, fixed, whole, table, broken in rows:
+        ty = y + 17
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for i, n in enumerate((fixed, whole, table, broken)):
+            cx = plot_x + i * (cell_w + 22)
+            if i == 3:
+                box = "box-bad" if n else "box-good"
+                cls = "t-bad" if n else "t-good"
+            elif i == 0:
+                box = "box-bad" if n else "box-quiet"
+                cls = "t-bad" if n else "t-sm"
+            else:
+                box = "box-good" if n else "box-quiet"
+                cls = "t-good" if n else "t-sm"
+            parts.append(
+                f'<rect class="{box}" x="{cx}" y="{ty - 14}" '
+                f'width="{cell_w}" height="19" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{cx + cell_w // 2}" y="{ty}" '
+                f'text-anchor="middle">{n}/4</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ そのまま頼んだ4回は、返した SUMIF 12本が12本とも $B$2:$B$31 の形だった。渡した30行では真値と一致する。"),
+        ("t-sm", "※ 「毎月行が増えます」と前提だけ伝えると、4回中2回しか直らない。残る2回は固定のまま、"),
+        ("t-sm", "　 「行を足したら『31』を最終行の番号に書き換えてください」と自分から書き添えてくる。"),
+        ("t-good", "※ 「行が増えても直さなくていい形にしてください」まで書くと、4回とも固定が消えた（列ぜんぶ／テーブル参照）。"),
+        ("t-good", "※ ㋒「その範囲は行を足したときにどうなるか」の欄を作ると、㋑に固定を書いた2回が、直後の㋒で自分で打ち消した。"),
+        ("t-xs", "架空データでの実測（全16回）。生の返りと照合コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "架空の売上表2本に担当ごとの売上合計を出す数式を書かせた全16回について、"
+        "頼み方4通りごとに、最後に勧められた数式の参照範囲の形を数えた表。"
+        "1つの頼み方につき材料2本かける各2回で4回ある。"
+        "そのまま担当ごとの合計を出す数式をと頼んだ4回は、4回とも最終行で固定の形で、"
+        "列ぜんぶもテーブル参照も0回、31行目を1行足すと真値と合わなくなった回が4回。"
+        "この表は毎月行が増えますと前提を足した4回は、最終行で固定が2回、列ぜんぶが2回、"
+        "合わなくなった回が2回。"
+        "行が増えても直さなくていい形にしてくださいまで書いた4回は、固定が0回、"
+        "列ぜんぶが3回、テーブル参照が1回で、合わなくなった回は0回。"
+        "入れるセルと参照する範囲と行を足したときにどうなるかを分けて書かせ、"
+        "範囲が決められないものを別の欄に残させた4回も、固定が0回、列ぜんぶが4回、"
+        "合わなくなった回は0回だった。"
+        "そのまま頼んだ4回が返した SUMIF は12本あり、12本とも最終行で固定の形である。"
+        "渡した30行の範囲では、いずれも真値と一致していた。"
+        "毎月行が増えますと前提だけ伝えた版で固定のままだった2回は、"
+        "行を足したら31を最終行の番号に書き換えてくださいと自分から書き添えている。"
+        "範囲の説明を分けて書かせた版では、参照する範囲の欄に固定の形を書いた2回が、"
+        "直後の行を足したときどうなるかの欄で自分でそれを打ち消し、列ぜんぶに直した。"
+    )
+    (OUT / "formula-range-by-version.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def formula_added_row_invisible_chart() -> None:
+    """1行足したときに、参照範囲の形で答えがどう動くかを並べる。
+
+    実測（2026-08-21・材料A）。値は check.py の C節と truth.json。
+    検算の合計も同じ範囲で書かれているので、内訳と合計が一致したままになる。
+    """
+    cols = [("足す前（30行）", 320), ("1行足したあと", 452), ("その表の真値", 584)]
+    rows = [
+        ("範囲を最終行で固定", "=SUMIF($B$2:$B$31, H3, $F$2:$F$31)", "269,500", "269,500", "305,500", True),
+        ("列ぜんぶを見る", "=SUMIF($B:$B, H3, $F:$F)", "269,500", "305,500", "305,500", False),
+    ]
+    top = 168
+    row_h = 64
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "足した1行は、エラーも警告も出さずにどこにも入らない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の売上表（30行）に、佐藤さんの 36,000 円の行を1行足した。"
+        "担当ごとの合計がどう動くかを、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "参照範囲の形ごとに並べたもの。数字は SUMIF を実際に計算して出した"
+        "（表計算ソフトで目視していない）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "1行足したあとの佐藤さんの正しい合計は 305,500 円。"
+        "足す前は 269,500 円で、差は 36,000 円ちょうど。</text>\n",
+    ]
+    for name, cx in cols:
+        parts.append(
+            f'<text class="t-xs" x="{cx}" y="{top - 26}" '
+            f'text-anchor="middle">{_esc(name)}</text>\n'
+        )
+
+    y = top
+    for label, formula, before, after, truth, bad in rows:
+        ty = y + 17
+        parts.append(f'<text class="t-strong" x="18" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="mono" x="18" y="{ty + 21}">{_esc(formula)}</text>\n')
+        for i, (value, (_, cx)) in enumerate(zip((before, after, truth), cols)):
+            if i == 1:
+                box = "box-bad" if bad else "box-good"
+                cls = "t-bad" if bad else "t-good"
+            else:
+                box, cls = "box-quiet", "t-sm"
+            parts.append(
+                f'<rect class="{box}" x="{cx - 58}" y="{ty - 15}" '
+                f'width="116" height="24" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{cls}" x="{cx}" y="{ty + 2}" '
+                f'text-anchor="middle">{_esc(value)} 円</text>\n'
+            )
+        if bad:
+            parts.append(
+                f'<text class="t-bad" x="18" y="{ty + 42}">'
+                "🚨 足した 36,000 円がどこにも入らない（範囲が31行目で切れているため）</text>\n"
+            )
+        y += row_h + (10 if bad else 0)
+
+    y += 8
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="666" height="80" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 25}">'
+        "検算も同じ範囲で書かれている</text>\n"
+    )
+    parts.append(
+        f'<text class="t" x="34" y="{y + 48}">'
+        "返りが添えてくる =SUM($F$2:$F$31) も31行目までなので、合計は 837,500 のまま。"
+        "</text>\n"
+    )
+    parts.append(
+        f'<text class="t" x="34" y="{y + 69}">'
+        "内訳の3人ぶんを足しても 837,500。一致するので、36,000 円足りないことが画面から分からない。"
+        "</text>\n"
+    )
+    y += 80
+
+    notes = [
+        ("t-good", "※ 「さきほどの数式は直さないでください」＋「数字が変わらない担当がいたら、その理由も書いてください」"),
+        ("t-good", "　 と頼んだ4回は、4回とも「変わりません」と答え、4回とも理由に範囲を挙げ、4回とも正しい合計を書いた。"),
+        ("t-sm", "※ 「この数式で大丈夫ですか」ではなく、変わらなかったこと自体を説明させると、範囲の話が出てくる。"),
+        ("t-xs", "架空データでの実測（検算の頼み方は材料2本 × 各2回 ＝ 4回）。生の返りは docs/evidence/ にある。"),
+    ]
+    y += 22
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "架空の売上表30行に佐藤さんの36,000円の行を1行足したとき、"
+        "数式の参照範囲の形で答えがどう動くかを並べた図。"
+        "範囲を最終行で固定した数式、つまりSUMIFのB2からB31とF2からF31を参照する形では、"
+        "佐藤さんの合計が足す前も足したあとも269,500円のまま変わらない。"
+        "その表の真値は305,500円なので、36,000円ぶん足りない。"
+        "列ぜんぶを見る数式、つまりSUMIFのB列全体とF列全体を参照する形では、"
+        "足す前が269,500円、足したあとが305,500円になり、真値と一致する。"
+        "さらに、返りが添えてくる検算の数式も同じ範囲で書かれている。"
+        "SUMのF2からF31は31行目までしか見ないので、合計は837,500円のまま変わらず、"
+        "内訳の3人ぶんを足しても837,500円になる。"
+        "合計と内訳が一致してしまうため、36,000円足りないことが画面からは分からない。"
+        "なお、さきほどの数式は直さないでくださいと断ったうえで、"
+        "数字が変わらない担当がいたらその理由も書いてくださいと頼んだ4回は、"
+        "4回とも変わりませんと答え、4回とも理由に参照範囲を挙げ、"
+        "4回ともその表の正しい合計を書いた。"
+    )
+    (OUT / "formula-added-row-invisible.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    formula_range_by_version_chart()
+    formula_added_row_invisible_chart()
     pass_criteria_detection_chart()
     pass_criteria_by_fault_type_chart()
     handoff_memo_length_vs_values_chart()

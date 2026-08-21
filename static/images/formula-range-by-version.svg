@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="506" viewBox="0 0 720 506" role="img" aria-label="架空の売上表2本に担当ごとの売上合計を出す数式を書かせた全16回について、頼み方4通りごとに、最後に勧められた数式の参照範囲の形を数えた表。1つの頼み方につき材料2本かける各2回で4回ある。そのまま担当ごとの合計を出す数式をと頼んだ4回は、4回とも最終行で固定の形で、列ぜんぶもテーブル参照も0回、31行目を1行足すと真値と合わなくなった回が4回。この表は毎月行が増えますと前提を足した4回は、最終行で固定が2回、列ぜんぶが2回、合わなくなった回が2回。行が増えても直さなくていい形にしてくださいまで書いた4回は、固定が0回、列ぜんぶが3回、テーブル参照が1回で、合わなくなった回は0回。入れるセルと参照する範囲と行を足したときにどうなるかを分けて書かせ、範囲が決められないものを別の欄に残させた4回も、固定が0回、列ぜんぶが4回、合わなくなった回は0回だった。そのまま頼んだ4回が返した SUMIF は12本あり、12本とも最終行で固定の形である。渡した30行の範囲では、いずれも真値と一致していた。毎月行が増えますと前提だけ伝えた版で固定のままだった2回は、行を足したら31を最終行の番号に書き換えてくださいと自分から書き添えている。範囲の説明を分けて書かせた版では、参照する範囲の欄に固定の形を書いた2回が、直後の行を足したときどうなるかの欄で自分でそれを打ち消し、列ぜんぶに直した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="506"/>
+<text class="t-strong" x="18" y="26">そのまま頼むと、4回とも範囲が「渡した表の最終行」で止まる</text>
+<text class="t-sm" x="18" y="45">架空の売上表を2本（きれいな30行／列の形を変えて空欄と表記ゆれを混ぜた30行）。1つの頼み方に</text>
+<text class="t-sm" x="18" y="64">つき材料2本 × 各2回 ＝ 4回。全16回。1行足したあとの正しい答えは、走らせる前に Python で確定させた。</text>
+<text class="t-sm" x="18" y="83">下の数は、16回それぞれから「最後にこれを使ってと勧められた数式」を1本ずつ拾って分類したもの。</text>
+<text class="t-sm" x="18" y="102">いちばん右は、その数式を実際に計算して、31行目を1行足した表の真値と合わなくなった回の数。</text>
+<text class="t-xs" x="358" y="124" text-anchor="middle">最終行で</text>
+<text class="t-xs" x="358" y="138" text-anchor="middle">固定</text>
+<text class="t-xs" x="436" y="124" text-anchor="middle">列ぜんぶ</text>
+<text class="t-xs" x="436" y="138" text-anchor="middle">$B:$B</text>
+<text class="t-xs" x="514" y="124" text-anchor="middle">テーブル</text>
+<text class="t-xs" x="514" y="138" text-anchor="middle">参照</text>
+<text class="t-xs" x="592" y="124" text-anchor="middle">1行足すと</text>
+<text class="t-xs" x="592" y="138" text-anchor="middle">合わない</text>
+<text class="t" x="18" y="173">そのまま「担当ごとの合計を出す数式を」</text>
+<rect class="box-bad" x="330" y="159" width="56" height="19" rx="4"/>
+<text class="t-bad" x="358" y="173" text-anchor="middle">4/4</text>
+<rect class="box-quiet" x="408" y="159" width="56" height="19" rx="4"/>
+<text class="t-sm" x="436" y="173" text-anchor="middle">0/4</text>
+<rect class="box-quiet" x="486" y="159" width="56" height="19" rx="4"/>
+<text class="t-sm" x="514" y="173" text-anchor="middle">0/4</text>
+<rect class="box-bad" x="564" y="159" width="56" height="19" rx="4"/>
+<text class="t-bad" x="592" y="173" text-anchor="middle">4/4</text>
+<text class="t" x="18" y="227">＋「この表は毎月行が増えます」</text>
+<rect class="box-bad" x="330" y="213" width="56" height="19" rx="4"/>
+<text class="t-bad" x="358" y="227" text-anchor="middle">2/4</text>
+<rect class="box-good" x="408" y="213" width="56" height="19" rx="4"/>
+<text class="t-good" x="436" y="227" text-anchor="middle">2/4</text>
+<rect class="box-quiet" x="486" y="213" width="56" height="19" rx="4"/>
+<text class="t-sm" x="514" y="227" text-anchor="middle">0/4</text>
+<rect class="box-bad" x="564" y="213" width="56" height="19" rx="4"/>
+<text class="t-bad" x="592" y="227" text-anchor="middle">2/4</text>
+<text class="t" x="18" y="281">＋「行が増えても直さなくていい形に」</text>
+<rect class="box-quiet" x="330" y="267" width="56" height="19" rx="4"/>
+<text class="t-sm" x="358" y="281" text-anchor="middle">0/4</text>
+<rect class="box-good" x="408" y="267" width="56" height="19" rx="4"/>
+<text class="t-good" x="436" y="281" text-anchor="middle">3/4</text>
+<rect class="box-good" x="486" y="267" width="56" height="19" rx="4"/>
+<text class="t-good" x="514" y="281" text-anchor="middle">1/4</text>
+<rect class="box-good" x="564" y="267" width="56" height="19" rx="4"/>
+<text class="t-good" x="592" y="281" text-anchor="middle">0/4</text>
+<text class="t" x="18" y="335">＋㋐㋑㋒に分けて書かせる（受け皿つき）</text>
+<rect class="box-quiet" x="330" y="321" width="56" height="19" rx="4"/>
+<text class="t-sm" x="358" y="335" text-anchor="middle">0/4</text>
+<rect class="box-good" x="408" y="321" width="56" height="19" rx="4"/>
+<text class="t-good" x="436" y="335" text-anchor="middle">4/4</text>
+<rect class="box-quiet" x="486" y="321" width="56" height="19" rx="4"/>
+<text class="t-sm" x="514" y="335" text-anchor="middle">0/4</text>
+<rect class="box-good" x="564" y="321" width="56" height="19" rx="4"/>
+<text class="t-good" x="592" y="335" text-anchor="middle">0/4</text>
+<text class="t-bad" x="18" y="380">※ そのまま頼んだ4回は、返した SUMIF 12本が12本とも $B$2:$B$31 の形だった。渡した30行では真値と一致する。</text>
+<text class="t-sm" x="18" y="401">※ 「毎月行が増えます」と前提だけ伝えると、4回中2回しか直らない。残る2回は固定のまま、</text>
+<text class="t-sm" x="18" y="422">　 「行を足したら『31』を最終行の番号に書き換えてください」と自分から書き添えてくる。</text>
+<text class="t-good" x="18" y="443">※ 「行が増えても直さなくていい形にしてください」まで書くと、4回とも固定が消えた（列ぜんぶ／テーブル参照）。</text>
+<text class="t-good" x="18" y="464">※ ㋒「その範囲は行を足したときにどうなるか」の欄を作ると、㋑に固定を書いた2回が、直後の㋒で自分で打ち消した。</text>
+<text class="t-xs" x="18" y="485">架空データでの実測（全16回）。生の返りと照合コードは docs/evidence/ に全文置いてある。</text>
+</svg>
