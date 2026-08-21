@@ -9946,6 +9946,289 @@ def pfp9_elements_chart() -> None:
     )
 
 
+def daybreak_bedrock_vs_direct_chart() -> None:
+    """同じモデルの単価を、OpenAI と直接／AWS 経由（Amazon Bedrock）で並べる。
+
+    出典＝OpenAI の料金ページ（Cyber models の表）と、
+    Amazon Bedrock のモデルカード2枚（In-Region・Standard・100万トークンあたり）。
+    倍率はこの記事が割り算した値。
+    """
+    rows = [
+        ("Daybreak Red の入力", 12.50, 13.75),
+        ("Daybreak Red の出力", 75.00, 82.50),
+        ("Daybreak Blue の入力", 4.00, 5.50),
+        ("Daybreak Blue の出力", 20.00, 33.00),
+    ]
+    left, right = 262, 606
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 96, 15, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / max(max(a, b) for _, a, b in rows)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じモデルでも、AWS 経由のほうが高くなっています</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "灰色＝OpenAI と直接契約したとき ／ 青＝Amazon Bedrock 経由のとき。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "100万トークンあたりのドル。どちらも標準（Standard）の値です。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "Red は短い入力だけ、Blue も短い入力（27.2万トークンまで）の行で揃えています。</text>\n",
+    ]
+    for index, (name, direct, aws) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((direct, "bar-old", "直接"), (aws, "bar-new", "AWS"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="228" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:.2f}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 66
+    notes = [
+        "※ Red は 1.1倍。Blue は入力が 1.375倍・出力が 1.65倍。倍率はこの記事の割り算です。",
+        "※ OpenAI の料金ページには「Sol の割引価格は少なくとも2026年11月21日まで」とあります。",
+        "※ 上げ幅がなぜ揃っていないのかは、どちらのページにも書かれていません。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 54 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "OpenAI と直接契約したときと Amazon Bedrock 経由のときで、"
+        "同じモデルの単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "Daybreak Red の入力は直接12.50ドルに対し AWS 経由が13.75ドル、"
+        "出力は直接75.00ドルに対し AWS 経由が82.50ドル。"
+        "Daybreak Blue の入力は直接4.00ドルに対し AWS 経由が5.50ドル、"
+        "出力は直接20.00ドルに対し AWS 経由が33.00ドル。"
+        "Red は 1.1倍だが、Blue は入力が 1.375倍・出力が 1.65倍で、上げ幅が揃っていない。"
+        "倍率は記事側の割り算で、上げ幅が揃わない理由はどちらのページにも書かれていない。"
+    )
+    (OUT / "daybreak-bedrock-vs-direct.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def daybreak_blue_same_price_chart() -> None:
+    """Bedrock 上で、安全装置つきの Blue と汎用の Sol が同額であることを示す。
+
+    出典＝Amazon Bedrock のモデルカード2枚。
+    In-Region・Standard・短い文脈（27.2万トークン）・100万トークンあたりのドル。
+    """
+    rows = [
+        ("汎用の Sol（Global 経路）", 5.00, 30.00),
+        ("汎用の Sol（同一リージョン）", 5.50, 33.00),
+        ("Daybreak Blue（同一のみ）", 5.50, 33.00),
+    ]
+    left, right = 262, 600
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 96, 15, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / max(max(a, b) for _, a, b in rows)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "安全装置がついても、値段は汎用モデルと同じです</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力 ／ 濃い青＝出力。100万トークンあたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "どれも Amazon Bedrock のモデルカードに載っている標準（Standard）の値です。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "ただし Daybreak Blue は、一番安い Global 経路を選べません。</text>\n",
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="228" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:.2f}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 66
+    notes = [
+        "※ 汎用の Sol は Global 経路なら $5.00 / $30.00。Daybreak は「Not supported」です。",
+        "※ つまり同じ中身でも、Daybreak 側は一番安い選び方が最初から消えています。",
+        "※ 長い文脈（100万トークン）の行は Blue にだけあり、$11.00 / $49.50 です。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 54 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "Amazon Bedrock 上での単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "汎用の GPT-5.6 Sol は Global 経路なら入力5.00ドル・出力30.00ドル、"
+        "同じリージョン内で処理する経路なら入力5.50ドル・出力33.00ドル。"
+        "安全装置つきの Daybreak Blue も入力5.50ドル・出力33.00ドルで、汎用と同額。"
+        "ただし Daybreak Blue は Geo 経路も Global 経路も Not supported と書かれており、"
+        "一番安い Global 経路を選べない。"
+        "長い文脈（100万トークン）の行は Blue にだけあり、入力11.00ドル・出力49.50ドル。"
+    )
+    (OUT / "daybreak-blue-same-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def daybreak_what_is_closed_chart() -> None:
+    """審査・リージョン・層・微調整で、選べる幅がどれだけ狭いかを並べる。
+
+    出典＝Amazon Bedrock のモデルカード3枚（汎用 Sol・Daybreak Blue・Daybreak Red）。
+    """
+    positive = {"要らない", "表にある", "使える", "米欧亜に多数"}
+    negative = {"要る", "表にない", "使えない", "できない", "オハイオだけ"}
+    rows = [
+        ("事前の審査", "要らない", "要る", "要る"),
+        ("使えるリージョン", "米欧亜に多数", "オハイオだけ", "オハイオだけ"),
+        ("東京リージョン", "表にある", "表にない", "表にない"),
+        ("Geo・Global 経路", "使える", "使えない", "使えない"),
+        ("速い層・安い層", "使えない", "使えない", "使えない"),
+        ("微調整（Fine-tuning）", "記載なし", "できない", "できない"),
+        ("一度に読める量", "100万", "100万", "27.2万"),
+    ]
+    col_label, col_a, col_b, col_c = 18, 292, 428, 566
+    head_y = 106
+    row_top = head_y + 28
+    pitch = 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "値段より先に、選べる幅のほうが狭くなっています</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Amazon Bedrock のモデルカード3枚に書かれていることを並べたものです。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "汎用＝GPT-5.6 Sol、Blue＝Daybreak Blue、Red＝Daybreak Red。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「使えない」は、モデルカードに Not supported と書かれているという意味です。</text>\n",
+        f'<text class="t-xs" x="{col_label}" y="{head_y}">見るところ</text>\n',
+        f'<text class="t-xs" x="{col_a}" y="{head_y}">汎用の Sol</text>\n',
+        f'<text class="t-xs" x="{col_b}" y="{head_y}">Blue</text>\n',
+        f'<text class="t-xs" x="{col_c}" y="{head_y}">Red</text>\n',
+    ]
+    for index, (name, plain, blue, red) in enumerate(rows):
+        y = row_top + index * pitch
+        parts.append(f'<text class="t" x="{col_label}" y="{y}">{_esc(name)}</text>\n')
+        for x, value in ((col_a, plain), (col_b, blue), (col_c, red)):
+            cls = "t-bad" if value in negative else "t-good" if value in positive else "t"
+            parts.append(f'<text class="{cls}" x="{x}" y="{y}">{_esc(value)}</text>\n')
+
+    height = row_top + len(rows) * pitch + 60
+    notes = [
+        "※ 審査＝OpenAI の Trusted Access for Cyber への登録。承認後に AWS 側で申請します。",
+        "※ 速い層（Priority）と安い層（Flex）は、汎用の Sol でも使えないと書かれています。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 40 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "Amazon Bedrock のモデルカード3枚に書かれている条件を並べた表。"
+        "汎用の GPT-5.6 Sol は事前の審査が要らず、米国・欧州・アジアの多数のリージョンの表があり、"
+        "東京もその表にあり、Geo 経路と Global 経路が使えて、一度に100万トークン読める。"
+        "Daybreak Blue と Daybreak Red はどちらも事前の審査が要り、"
+        "リージョンの表は米国東部オハイオの1行だけで東京は無く、"
+        "Geo 経路も Global 経路も使えず、微調整もできない。"
+        "一度に読める量は Blue が100万トークン、Red は27.2万トークン。"
+        "速い層（Priority）と安い層（Flex）は、汎用の Sol を含む3つとも使えないと書かれている。"
+        "審査は OpenAI の Trusted Access for Cyber への登録で、"
+        "承認後に AWS 側で申請する必要がある。"
+    )
+    (OUT / "daybreak-what-is-closed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def daybreak_vendor_shapes_chart() -> None:
+    """同じ「防御側にAIを渡す」話を、3社がどういう形で出しているか。
+
+    出典＝AWS の発表ブログ、Anthropic の発表ページ、Google のモデル一覧。
+    """
+    cards = [
+        (
+            "box-accent",
+            "OpenAI（AWS 経由）",
+            "審査を通った相手だけに、専用のモデルを別料金で開く",
+            "Daybreak Red は $13.75 / $82.50、Blue は $5.50 / $33.00",
+            "2026年8月11日発表・オハイオのみ・Trusted Access for Cyber が必要",
+        ),
+        (
+            "box-quiet",
+            "Anthropic",
+            "専用モデルではなく、Claude Code に組み込んだ機能として出す",
+            "Claude Code Security。限定リサーチプレビュー",
+            "2026年2月20日発表・Enterprise と Team 向け・別料金の記載なし",
+        ),
+        (
+            "box-quiet",
+            "Google",
+            "Gemini API のモデル一覧に、専用モデルの掲載はありません",
+            "同じ形の発表は、この記事を書いた時点では見つかっていません",
+            "確認したのは ai.google.dev のモデル一覧ページだけです",
+        ),
+    ]
+    box_x, box_w = 18, 684
+    box_top = 86
+    box_h = 96
+    box_gap = 12
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ「防御側にAIを渡す」話でも、出し方が3社で違います</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページに書かれていることだけを並べています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "値段は100万トークンあたりのドル（Amazon Bedrock・同一リージョン・標準）。</text>\n",
+    ]
+    for index, (cls, name, line1, line2, line3) in enumerate(cards):
+        by = box_top + index * (box_h + box_gap)
+        parts.append(
+            f'<rect class="{cls}" x="{box_x}" y="{by}" '
+            f'width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{by + 26}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t" x="{box_x + 16}" y="{by + 48}">{_esc(line1)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{box_x + 16}" y="{by + 68}">{_esc(line2)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{box_x + 16}" y="{by + 87}">{_esc(line3)}</text>\n')
+
+    height = box_top + len(cards) * (box_h + box_gap) + 44
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ 「見つかっていません」は、確かめたページに載っていなかったという意味です。</text>\n"
+    )
+    alt = (
+        "同じサイバー防御向けの取り組みを、3社がどういう形で出しているかを並べた図。"
+        "OpenAI は AWS 経由で、審査を通った相手だけに専用モデルを別料金で開いており、"
+        "Amazon Bedrock の同一リージョンでの標準価格は100万トークンあたり"
+        "Daybreak Red が入力13.75ドル・出力82.50ドル、"
+        "Daybreak Blue が入力5.50ドル・出力33.00ドル。"
+        "2026年8月11日発表で、米国東部オハイオのみ、Trusted Access for Cyber への登録が必要。"
+        "Anthropic は専用モデルではなく Claude Code に組み込んだ機能 Claude Code Security として出しており、"
+        "2026年2月20日発表の限定リサーチプレビューで、Enterprise と Team 向け、別料金の記載はない。"
+        "Google は Gemini API のモデル一覧に専用モデルを載せておらず、"
+        "同じ形の発表はこの記事を書いた時点では見つかっていない。"
+    )
+    (OUT / "daybreak-vendor-shapes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def handoff_memo_length_vs_values_chart() -> None:
     """引き継ぎメモの字数と、メモに残った「翌日が要る値」の数を版ごとに並べる。
 
@@ -11015,6 +11298,10 @@ if __name__ == "__main__":
     pfp9_five_tasks_chart()
     pfp9_h2_rmse_chart()
     pfp9_elements_chart()
+    daybreak_bedrock_vs_direct_chart()
+    daybreak_blue_same_price_chart()
+    daybreak_what_is_closed_chart()
+    daybreak_vendor_shapes_chart()
     conditions_changed_what_survives_chart()
     delivery_note_claim_vs_flag_chart()
     price_chart()

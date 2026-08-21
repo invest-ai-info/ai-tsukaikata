@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="333" viewBox="0 0 720 333" role="img" aria-label="Amazon Bedrock 上での単価を比べた横棒グラフ。100万トークンあたりのドル。汎用の GPT-5.6 Sol は Global 経路なら入力5.00ドル・出力30.00ドル、同じリージョン内で処理する経路なら入力5.50ドル・出力33.00ドル。安全装置つきの Daybreak Blue も入力5.50ドル・出力33.00ドルで、汎用と同額。ただし Daybreak Blue は Geo 経路も Global 経路も Not supported と書かれており、一番安い Global 経路を選べない。長い文脈（100万トークン）の行は Blue にだけあり、入力11.00ドル・出力49.50ドル。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="333"/>
+<text class="t-strong" x="18" y="26">安全装置がついても、値段は汎用モデルと同じです</text>
+<text class="t-sm" x="18" y="45">薄い青＝入力 ／ 濃い青＝出力。100万トークンあたりのドル。</text>
+<text class="t-sm" x="18" y="64">どれも Amazon Bedrock のモデルカードに載っている標準（Standard）の値です。</text>
+<text class="t-sm" x="18" y="83">ただし Daybreak Blue は、一番安い Global 経路を選べません。</text>
+<text class="t" x="18" y="108">汎用の Sol（Global 経路）</text>
+<text class="t-xs" x="228" y="107">入力</text>
+<rect class="bar-in" x="262" y="96" width="51.2" height="15" rx="2"/>
+<text class="t-sm" x="321.2" y="108">$5.00</text>
+<text class="t-xs" x="228" y="127">出力</text>
+<rect class="bar-out" x="262" y="116" width="307.3" height="15" rx="2"/>
+<text class="t-sm" x="577.3" y="128">$30.00</text>
+<text class="t" x="18" y="165">汎用の Sol（同一リージョン）</text>
+<text class="t-xs" x="228" y="164">入力</text>
+<rect class="bar-in" x="262" y="153" width="56.3" height="15" rx="2"/>
+<text class="t-sm" x="326.3" y="165">$5.50</text>
+<text class="t-xs" x="228" y="184">出力</text>
+<rect class="bar-out" x="262" y="173" width="338.0" height="15" rx="2"/>
+<text class="t-sm" x="608.0" y="185">$33.00</text>
+<text class="t" x="18" y="222">Daybreak Blue（同一のみ）</text>
+<text class="t-xs" x="228" y="221">入力</text>
+<rect class="bar-in" x="262" y="210" width="56.3" height="15" rx="2"/>
+<text class="t-sm" x="326.3" y="222">$5.50</text>
+<text class="t-xs" x="228" y="241">出力</text>
+<rect class="bar-out" x="262" y="230" width="338.0" height="15" rx="2"/>
+<text class="t-sm" x="608.0" y="242">$33.00</text>
+<text class="t-xs" x="18" y="279">※ 汎用の Sol は Global 経路なら $5.00 / $30.00。Daybreak は「Not supported」です。</text>
+<text class="t-xs" x="18" y="297">※ つまり同じ中身でも、Daybreak 側は一番安い選び方が最初から消えています。</text>
+<text class="t-xs" x="18" y="315">※ 長い文脈（100万トークン）の行は Blue にだけあり、$11.00 / $49.50 です。</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="454" viewBox="0 0 720 454" role="img" aria-label="同じサイバー防御向けの取り組みを、3社がどういう形で出しているかを並べた図。OpenAI は AWS 経由で、審査を通った相手だけに専用モデルを別料金で開いており、Amazon Bedrock の同一リージョンでの標準価格は100万トークンあたりDaybreak Red が入力13.75ドル・出力82.50ドル、Daybreak Blue が入力5.50ドル・出力33.00ドル。2026年8月11日発表で、米国東部オハイオのみ、Trusted Access for Cyber への登録が必要。Anthropic は専用モデルではなく Claude Code に組み込んだ機能 Claude Code Security として出しており、2026年2月20日発表の限定リサーチプレビューで、Enterprise と Team 向け、別料金の記載はない。Google は Gemini API のモデル一覧に専用モデルを載せておらず、同じ形の発表はこの記事を書いた時点では見つかっていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="454"/>
+<text class="t-strong" x="18" y="26">同じ「防御側にAIを渡す」話でも、出し方が3社で違います</text>
+<text class="t-sm" x="18" y="45">各社の公式ページに書かれていることだけを並べています。</text>
+<text class="t-sm" x="18" y="64">値段は100万トークンあたりのドル（Amazon Bedrock・同一リージョン・標準）。</text>
+<rect class="box-accent" x="18" y="86" width="684" height="96" rx="6"/>
+<text class="t-strong" x="34" y="112">OpenAI（AWS 経由）</text>
+<text class="t" x="34" y="134">審査を通った相手だけに、専用のモデルを別料金で開く</text>
+<text class="t-sm" x="34" y="154">Daybreak Red は $13.75 / $82.50、Blue は $5.50 / $33.00</text>
+<text class="t-xs" x="34" y="173">2026年8月11日発表・オハイオのみ・Trusted Access for Cyber が必要</text>
+<rect class="box-quiet" x="18" y="194" width="684" height="96" rx="6"/>
+<text class="t-strong" x="34" y="220">Anthropic</text>
+<text class="t" x="34" y="242">専用モデルではなく、Claude Code に組み込んだ機能として出す</text>
+<text class="t-sm" x="34" y="262">Claude Code Security。限定リサーチプレビュー</text>
+<text class="t-xs" x="34" y="281">2026年2月20日発表・Enterprise と Team 向け・別料金の記載なし</text>
+<rect class="box-quiet" x="18" y="302" width="684" height="96" rx="6"/>
+<text class="t-strong" x="34" y="328">Google</text>
+<text class="t" x="34" y="350">Gemini API のモデル一覧に、専用モデルの掲載はありません</text>
+<text class="t-sm" x="34" y="370">同じ形の発表は、この記事を書いた時点では見つかっていません</text>
+<text class="t-xs" x="34" y="389">確認したのは ai.google.dev のモデル一覧ページだけです</text>
+<text class="t-xs" x="18" y="428">※ 「見つかっていません」は、確かめたページに載っていなかったという意味です。</text>
+</svg>

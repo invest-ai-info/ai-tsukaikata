@@ -135,7 +135,23 @@
     - → 料金と位置づけだけなら書ける。**が、発表本文（何ができるようになったか・誰に提供されるか・制限）が
       読めないので、記事の軸が立たない。**二次情報で埋めるくらいなら書かない（GPT-Live と同じ判断）。
 
-- [!] https://openai.com/index/daybreak-models-are-now-available-on-aws
+- [x] https://openai.com/index/daybreak-models-are-now-available-on-aws
+  - ✅ **2026-08-21 2回目（再試行）: 公開した** → `content/tools/daybreak-on-bedrock.md`
+    **再試行の理由＝前回の停止理由②が「経路遮断（CONNECT tunnel failed）」だったから**（手順1の条件どおり）。
+    実際に**AWS 系ドメインが到達できるようになっていた**（`aws.amazon.com` 200・`docs.aws.amazon.com` 200）。
+    🔑 **これが「一時的な失敗を永続的な状態にしない」設計が効いた2例目。**足された許可リストを
+    誰も拾い直さなければ、この題材は永久に埋まったままだった。
+  - ⚠️ **①（`openai.com` の bot 判定）は今日も直っていない。7回連続403**（`cf-mitigated: challenge`）。
+    それでも書けたのは、**発表本文を AWS 側から取れたから**。この発表は AWS との共同発表で、
+    **AWS 自身が同じ日に出したブログに本文がある**（著者3人のうち1人は OpenAI の担当者）:
+    `https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/`
+    💡 **次に `openai.com/index/...` が来たときの新しい逃げ道**＝**発表の相手方を探すこと。**
+    共同発表なら、もう一方の当事者の公式ブログは一次情報であって二次情報ではない。
+  - 📌 **値段は `aws.amazon.com/bedrock/pricing/` ではなく、そこからリンクされている
+    `docs.aws.amazon.com` のモデルカードに載っている。**料金ページ側の最上位モデルの値は
+    `{priceOf!...}` の差し込みで、静的HTMLには入っていない（gpt-oss の一部だけ静的）。
+    ⚠️ 料金ページのリンク `model-card-openai-daybreak-blue.html` は302で index に飛ぶ（先方のリンク切れ）。
+    正しいのは **`model-card-openai-gpt-daybreak-blue-56-sol.html`**（Red 側のページの次ページリンクから拾える）。
   - 2026-08-11 自動追記（major・OpenAI「Daybreak models are now available on AWS」）
   - **2026-08-11 1回目: 下書きを作らずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
     ⚠️ 前回（`-legacy` の件）と違い、**このURLは現在のRSSに実在する**。消えたのではなく、読めないだけ。
@@ -326,6 +342,18 @@
 
 ## 処理済み
 
+- https://openai.com/index/daybreak-models-are-now-available-on-aws → **公開済み** content/tools/daybreak-on-bedrock.md（2026-08-21・公開）
+  - 再試行で通った3件目（1回目は 2026-08-11 に停止。理由②が `CONNECT tunnel failed`＝経路遮断だった）。
+    図4枚（`daybreak-bedrock-vs-direct` / `daybreak-blue-same-price` / `daybreak-what-is-closed` /
+    `daybreak-vendor-shapes`）。`check_numbers.py` は **13個すべて出典に存在**（出典8件とも取得成功）。
+    pytest 555 passed・build 108ファイル。
+  - ⚠️ **`openai.com` の本文は今日も読めていない（7回連続403）。**発表本文は **AWS 側の公式ブログ**から取った。
+    数字は `docs.aws.amazon.com` のモデルカード3枚と `developers.openai.com` の料金ページ。
+  - 📌 記事の芯＝**同じモデルでも AWS 経由のほうが高く、上げ幅が揃っていない**
+    （Red は 1.1倍、Blue は入力 1.375倍・出力 1.65倍）。倍率は記事側の割り算だと明記した。
+  - 🔍 **書きながら1件、自分の誤りを潰した**＝図の下書きで「速い層（Priority）・安い層（Flex）は
+    汎用モデルなら使える」と書きかけたが、**汎用 Sol のモデルカードにも「Priority and Flex tiers are
+    not supported」と書いてあった**。生の行を見て直した。
 - https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/ → **公開済み** content/tools/matlantis-pfp-v9.md（2026-08-20・公開）
   - 再試行で通った2件目（1回目は 2026-08-17 に `CONNECT tunnel failed`＝経路遮断）。図4枚
     （`pfp9-arena-rank` / `pfp9-five-tasks` / `pfp9-h2-rmse` / `pfp9-elements`）。

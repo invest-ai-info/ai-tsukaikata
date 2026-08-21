@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="376" viewBox="0 0 720 376" role="img" aria-label="Amazon Bedrock のモデルカード3枚に書かれている条件を並べた表。汎用の GPT-5.6 Sol は事前の審査が要らず、米国・欧州・アジアの多数のリージョンの表があり、東京もその表にあり、Geo 経路と Global 経路が使えて、一度に100万トークン読める。Daybreak Blue と Daybreak Red はどちらも事前の審査が要り、リージョンの表は米国東部オハイオの1行だけで東京は無く、Geo 経路も Global 経路も使えず、微調整もできない。一度に読める量は Blue が100万トークン、Red は27.2万トークン。速い層（Priority）と安い層（Flex）は、汎用の Sol を含む3つとも使えないと書かれている。審査は OpenAI の Trusted Access for Cyber への登録で、承認後に AWS 側で申請する必要がある。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="376"/>
+<text class="t-strong" x="18" y="26">値段より先に、選べる幅のほうが狭くなっています</text>
+<text class="t-sm" x="18" y="45">Amazon Bedrock のモデルカード3枚に書かれていることを並べたものです。</text>
+<text class="t-sm" x="18" y="64">汎用＝GPT-5.6 Sol、Blue＝Daybreak Blue、Red＝Daybreak Red。</text>
+<text class="t-sm" x="18" y="83">「使えない」は、モデルカードに Not supported と書かれているという意味です。</text>
+<text class="t-xs" x="18" y="106">見るところ</text>
+<text class="t-xs" x="292" y="106">汎用の Sol</text>
+<text class="t-xs" x="428" y="106">Blue</text>
+<text class="t-xs" x="566" y="106">Red</text>
+<text class="t" x="18" y="134">事前の審査</text>
+<text class="t-good" x="292" y="134">要らない</text>
+<text class="t-bad" x="428" y="134">要る</text>
+<text class="t-bad" x="566" y="134">要る</text>
+<text class="t" x="18" y="160">使えるリージョン</text>
+<text class="t-good" x="292" y="160">米欧亜に多数</text>
+<text class="t-bad" x="428" y="160">オハイオだけ</text>
+<text class="t-bad" x="566" y="160">オハイオだけ</text>
+<text class="t" x="18" y="186">東京リージョン</text>
+<text class="t-good" x="292" y="186">表にある</text>
+<text class="t-bad" x="428" y="186">表にない</text>
+<text class="t-bad" x="566" y="186">表にない</text>
+<text class="t" x="18" y="212">Geo・Global 経路</text>
+<text class="t-good" x="292" y="212">使える</text>
+<text class="t-bad" x="428" y="212">使えない</text>
+<text class="t-bad" x="566" y="212">使えない</text>
+<text class="t" x="18" y="238">速い層・安い層</text>
+<text class="t-bad" x="292" y="238">使えない</text>
+<text class="t-bad" x="428" y="238">使えない</text>
+<text class="t-bad" x="566" y="238">使えない</text>
+<text class="t" x="18" y="264">微調整（Fine-tuning）</text>
+<text class="t" x="292" y="264">記載なし</text>
+<text class="t-bad" x="428" y="264">できない</text>
+<text class="t-bad" x="566" y="264">できない</text>
+<text class="t" x="18" y="290">一度に読める量</text>
+<text class="t" x="292" y="290">100万</text>
+<text class="t" x="428" y="290">100万</text>
+<text class="t" x="566" y="290">27.2万</text>
+<text class="t-xs" x="18" y="336">※ 審査＝OpenAI の Trusted Access for Cyber への登録。承認後に AWS 側で申請します。</text>
+<text class="t-xs" x="18" y="354">※ 速い層（Priority）と安い層（Flex）は、汎用の Sol でも使えないと書かれています。</text>
+</svg>
