@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T01:59:48.566742+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-21T01:42:43+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "KDDI、NTT、1FINITY（富士通）、NEC、楽天モバイル、沖電気工業、住友電気工業の7社は、「AI時代を支える低遅延・低消費電力なネットワークの設計指針」を策定をリードし、8月13日にITU-T（国際電気通信連合電気通信標準化部門）において国際標準化されたと発表した。",
+      "title": "オール光ネットワークの設計指針、国内7社主導でITU-Tで国際標準化",
+      "uid": "66573459ddd9d9fa",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134422.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-21T01:59:48.566742+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-21T01:33:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIの開発するチャットAIのChatGPTが、新しいプラグインの「Apple Messages Plugin」を発表しました。Apple Messages Pluginを利用することで、Mac上のChatGPTでメッセージアプリを管理することが可能となります。 続きを読む...",
+      "title": "ChatGPTでAppleのメッセージアプリを管理できる「Apple Messages Plugin」が登場、メッセージの返信・分類・管理が可能",
+      "uid": "9a224d7f4a7a9b12",
+      "url": "https://gigazine.net/news/20260821-openai-apple-messages-plugin/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-21T01:59:48.566742+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T01:14:33+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、オープンモデル「Gemma」ファミリーの累計ダウンロード数が10億回を突破したと発表した。派生モデルは10万種を超え、公式リポジトリ「Awesome Gemma」をGitHubで公開。宇宙空間での衛星データ解析や新規のがん治療経路の発見など、多様な活用事例を紹介している。",
+      "title": "Googleのオープンモデル「Gemma」、累計10億ダウンロード超　GitHubに公式ディレクトリ公開",
+      "uid": "af02bc025f09b196",
+      "url": "https://www.itmedia.co.jp/news/article/2608/21/2000000670/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-21T01:59:48.566742+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T00:22:19+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、macOS版ChatGPT向けにAppleの「メッセージ」アプリと連携するプラグインを公開した。CodexやChatGPT Workのチャット上で過去の会話検索や下書き作成、送信が可能になる。誤送信防止のため都度承認フローを備える。Appleシリコン搭載Mac向けだ。",
+      "title": "macOS版ChatGPT、Appleの「メッセージ」と連携　会話検索や下書き、送信に対応",
+      "uid": "c40edb21e6fe9029",
+      "url": "https://www.itmedia.co.jp/news/article/2608/21/2000000669/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-21T01:59:48.566742+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-21T00:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米政府の輸出管理で「Claude Fable 5」の提供が突如停止し、業務が止まった実体験を基に、単一AIモデル依存の地政学リスクを指摘。オンプレミス化やマルチモデル統合基盤など、日本企業が取るべき分散戦略を整理する。",
+      "title": "「Fable禁止」で仕事が止まったあの日々を振り返る　日本企業が取るべき「脱・単一モデル」戦略",
+      "uid": "2ed5555414e882fc",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/21/2000000666/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-20T23:42:54.211577+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2339,66 +2399,6 @@
       "uid": "169ea30b99063e3b",
       "url": "https://www.itmedia.co.jp/business/articles/2608/14/news019.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T22:05:19.093205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-13T21:25:13+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、コーディングやエージェント用途に特化したAIモデル「Gemini 3.7 Flash」を発表した。前モデルからわずか3週間での投入だ。従来比半額の導入価格で提供し、個人向けエージェント機能「Gemini Spark」など各種プロダクトへ適用される。",
-      "title": "Google、「Gemini 3.7 Flash」公開　年内は半額の導入価格",
-      "uid": "0b2a09675d6057f8",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/14/2000000534/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T15:17:40.171847+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-13T14:12:24+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "中国DeepSeekは8月13日（日本時間、以下同）、AIモデルのAPI料金を値上げすると発表した。通常より2倍高いピーク時価格も導入する。新たな料金体系は17日午前1時から適用する。",
-      "title": "中国DeepSeek、API料金を「最大12倍」に値上げ　ピーク時価格も導入　8月17日から",
-      "uid": "6aaca9ae77098ee8",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/13/2000000533/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-13T15:17:40.171847+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T14:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "寄付者情報データベース「PatronView」を運営するニック・グレイ氏が、ウェブサイトに押し寄せるAIクローラーやスクレイパーと約1年間にわたって続けてきた攻防を公開しました。サーバーが配信したページ数とアクセス解析の数字を比べると、「人間が1回ページ読み込んだ」と記録される間に、AIによるページ読み込みがおよそ214回発生していたとのことです。 続きを読む...",
-      "title": "ウェブサイトへのアクセスの99％超がボットに、人間1回に対して214回もページを読み込むAIスクレイパーとの攻防",
-      "uid": "287306b4f1e3d029",
-      "url": "https://gigazine.net/news/20260813-traffic-bot-percent/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T12:01:33.145239+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T11:08:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIを使ってオンライン会議の録画・文字起こし・要約を行うサービス「tl;dv」で、全ユーザーの会議メタデータを横断して18万1874件の会議記録を取得できる脆弱(ぜいじゃく)性が存在したと独立系セキュリティ研究者が報告しました。研究者はtl;dv運営者にこの件を報告したものの6カ月の間修正されていないと非難しましたが、tl;dv側は「修正されなかったのではなく複数の攻撃経路が存在していた」と説明…",
-      "title": "AI会議録サービス「tl;dv」で18万件超の会議メタデータにアクセス可能だったと研究者が報告、会社側は「別々の2つの脆弱性」と説明",
-      "uid": "9d59fd11c408a9da",
-      "url": "https://gigazine.net/news/20260813-tldv-data-hack/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-13T11:07:14.813723+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-13T10:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "生成AIはさまざまなタスクを自動化するだけでなく、生徒の学力に合わせてパーソナライズした教材を作成したり、子どもの好みに合った絵本や物語を作ったりすることもできます。ところが、アメリカのワシントン大学の研究チームが行ったテストにより、AIモデルに子ども向けの動物物語を作らせると「女性(メス)のキャラをほとんど排除してしまう」ことが明らかになりました。 続きを読む...",
-      "title": "AIモデルに子ども向けの動物物語を作らせると女性キャラをほぼ完全に排除してしまう",
-      "uid": "7e1888ae92113d1b",
-      "url": "https://gigazine.net/news/20260813-ai-erase-female-characters-kids-stories/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
