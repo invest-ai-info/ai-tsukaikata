@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="432" viewBox="0 0 720 432" role="img" aria-label="架空の契約金額12万円（税抜）について、手数料の段を分ける基準を税込の132,000円で見るか税抜の120,000円で見るかで、手取りが2通りに分かれることを示した図。税込の132,000円で分けると、10万円までの100,000円に20パーセントで20,000円、残りの32,000円に10パーセントで3,200円、システム利用料は23,200円に消費税2,320円を足して25,520円となり、手取りは106,480円になる。税抜の120,000円で分けると、10万円までの100,000円に20パーセントで20,000円、残りの20,000円に10パーセントで2,000円、利用料は22,000円に消費税2,200円を足して24,200円となり、手取りは107,800円になる。差は1,320円で、契約額の1.1パーセントにあたる。どちらが正しいかは料率のページに書かれていない。2026年8月21日に開いて確認したところ、表の見出しは報酬額とだけあり、税込か税抜かを示す行が無かった。公式の計算例は契約10,000円（税抜）の1通りだけで、この額は10万円を超えないため、段を分ける場面が例には出てこない。なお、書かれていますか、書かれていれば行を写して、なければ書かれていませんとだけ、と聞いた3回は3回とも正解した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="432"/>
+<text class="t-strong" x="18" y="26">同じ契約額から、手取りが2通り出る</text>
+<text class="t-sm" x="18" y="45">架空の契約金額 120,000円（税抜）。公表されている料率（10万円以下の部分 20%／10万円超20万円</text>
+<text class="t-sm" x="18" y="64">以下の部分 10%）と、公式の計算例の順（税込にしてから率を掛ける）を、そのまま当てはめた。</text>
+<text class="t-sm" x="18" y="83">分かれ目は1点だけ——段を分ける「10万円」を、税込の額で見るか税抜の額で見るか。</text>
+<text class="t-bad" x="18" y="107">🚨 どちらが正しいかは、料率のページに書かれていない（2026-08-21 に開いて確認）。</text>
+<rect class="box-quiet" x="18" y="138" width="330" height="118" rx="6"/>
+<text class="t-strong" x="32" y="164">段の基準を「税込 132,000円」で分ける</text>
+<text class="mono" x="32" y="188">10万円まで  100,000 × 20% = 20,000</text>
+<text class="mono" x="32" y="207">残り         32,000 × 10% =  3,200</text>
+<text class="t-sm" x="32" y="230">利用料 23,200 ＋ 消費税 2,320 ＝ 25,520</text>
+<text class="t-accent" x="32" y="249">手取り 106,480 円</text>
+<rect class="box-quiet" x="366" y="138" width="330" height="118" rx="6"/>
+<text class="t-strong" x="380" y="164">段の基準を「税抜 120,000円」で分ける</text>
+<text class="mono" x="380" y="188">10万円まで  100,000 × 20% = 20,000</text>
+<text class="mono" x="380" y="207">残り         20,000 × 10% =  2,000</text>
+<text class="t-sm" x="380" y="230">利用料 22,000 ＋ 消費税 2,200 ＝ 24,200</text>
+<text class="t-accent" x="380" y="249">手取り 107,800 円</text>
+<rect class="box-bad" x="18" y="276" width="678" height="46" rx="6"/>
+<text class="t-bad" x="34" y="305">差 1,320 円。契約額の 1.1% にあたる。どちらで計算したかを書かないと、受け取ってから気づく。</text>
+<text class="t-sm" x="18" y="348">※ 表の見出しは「報酬額」とだけあり、税込か税抜かを示す行が無い。</text>
+<text class="t-sm" x="18" y="369">※ 公式の計算例は契約 10,000円（税抜）の1通りだけ。この額は10万円を超えないので、段を分ける場面が出てこない。</text>
+<text class="t-good" x="18" y="390">※ 「書かれていますか。書かれていれば行を写して、なければ『書かれていません』とだけ」と聞いた3回は、3回とも正解した。</text>
+<text class="t-xs" x="18" y="411">架空データでの実測（全26回）。生の返りと照合コードは docs/evidence/ に全文置いてある。料率は変わるので、使う前に開いて確かめること。</text>
+</svg>
