@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T14:55:23.281482+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-21T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "前回、AIエージェント「Hermes Agent」をインストールしてGIGAZINEの記事を調査させてみたところ、ブラウザ操作に失敗したり、選んだものとは別の記事を開いてしまったりと試行錯誤しつつも最終的には目的の記事を見つけて内容をまとめることに成功しました。Hermes Agentにはこうして実際に行った作業の手順やトラブルの解決方法を「スキル」として保存し、別のセッションでも再利用できるよ…",
+      "title": "使い込むほど成長するAIエージェント「Hermes Agent」で実際に行った作業をスキル化して再利用してみた",
+      "uid": "f01c009d237f5fee",
+      "url": "https://gigazine.net/news/20260821-hermes-agent-skill/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-21T13:13:14.784845+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "4bd27e355c847546",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/15/2000000554/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-14T11:59:16.623121+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T11:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ChatGPTで知られるOpenAIの社内には、サム・アルトマンCEOや社長のグレッグ・ブロックマン氏など経営陣に直接業務における問題を報告して迅速な解決を求める「friction」というメールアドレスがあると元従業員が明かしました。 続きを読む...",
-      "title": "OpenAIにはサム・アルトマンCEOや経営陣に直接苦情を送ることができる専用のメールアドレスがある",
-      "uid": "b9fe5513c0e3f042",
-      "url": "https://gigazine.net/news/20260814-openai-special-address/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
