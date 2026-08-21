@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-21T05:49:27.727019+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-21T05:16:20+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "京王電鉄バスおよび京王バスは8月21日、日野自動車のAI搭載型「車内事故防止システム」を同社が運行する路線バスに導入すると発表した。",
+      "title": "京王バスの路線バス、AI搭載型「車内事故防止システム」を導入",
+      "uid": "2ecfc498a6c545bc",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134562.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-21T04:56:26.839358+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "Googleが「Gemini 3.7 Flash」をリリース、Claude Sonnet 5やGPT-5.6 Terraに並ぶ性能で年末まではGemini 3.6 Flashの半額で利用可能",
       "uid": "2767c05f6c97b4e6",
       "url": "https://gigazine.net/news/20260814-google-gemini-3-7-flash/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-14T02:48:19.675404+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-14T02:28:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "マサチューセッツ州に住む17歳の少年が、母親と弟を殺害した容疑で起訴されました。捜査により、この少年はChatGPTに「家族殺しを題材にした小説のアイデア」を聞いていたことが明らかになりました。 続きを読む...",
-      "title": "母と弟を殺害した10代の少年がChatGPTにアイデアを求めていたことが判明",
-      "uid": "cfa5ff17ae168be5",
-      "url": "https://gigazine.net/news/20260814-teen-kill-family-chatgpt/",
       "vendor": "GIGAZINE"
     }
   ]
