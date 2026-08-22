@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-22T08:50:00.837629+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-22T08:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Googleのコーディングエージェント「Antigravity」がウェブブラウザからのリモートコントロールに対応しました。ユーザーの操作が必要になった際にスマートフォンに通知を届ける機能も提供されています。 続きを読む...",
+      "title": "GoogleのAIエージェント「Antigravity」が別デバイスからのリモートコントロールに対応",
+      "uid": "6f930547fc19b524",
+      "url": "https://gigazine.net/news/20260822-antigravity-remote-control/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-22T03:09:39.722320+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "AI生成テキストの「透かし」が埋め込まれる仕組み",
       "uid": "b60b147154002e8e",
       "url": "https://gigazine.net/news/20260816-ai-text-watermarking/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-16T08:48:35.468196+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-16T08:45:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国・アリババ(阿里巴巴)が展開しているオープンウェイトAIモデル「Qwen」シリーズが、過去6カ月間で30億回ダウンロードされたことがわかりました。この数字は国外各社や国内のライバルを上回るものです。 続きを読む...",
-      "title": "アリババのAI「Qwen」が6カ月間に30億回ダウンロードされる世界1位のAIモデルに",
-      "uid": "92e732d846928dd3",
-      "url": "https://gigazine.net/news/20260816-alibaba-qwen-3-billion-downloads/",
       "vendor": "GIGAZINE"
     }
   ]
