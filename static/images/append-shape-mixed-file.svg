@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="445" viewBox="0 0 720 445" role="img" aria-label="ファイルの1行目にスラッシュ区切りのお手本を置き、指示文ではカンマ区切りだと説明した版で、3日たったあとのファイルの実物を並べた図。1行目の見出しの下に、2026-07-31のお手本の行だけがスラッシュ区切りで残り、8月1日、8月2日、8月3日に追記された3行はすべてカンマ区切りになっている。同じことが4系列とも起き、ファイルの中に2通りの形が混ざったまま残ったのは4系列中4系列で、食い違いを直した回は0回だった。AIは毎日きちんと指示文どおりに書いており、間違えてはいない。直らないのは、こちら側が、すでにある行は1文字も変えないでください、と書いているためである。見つけるほうは効いた。3日目のファイルを別の新しい会話に渡して形のそろわない行を聞くと、混ざったファイル4回とも、この1行を一字一句そのままコピーして返した。そろっているファイル4回では4回ともありませんと答え、誤検出は0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="445"/>
+<text class="t-strong" x="18" y="26">食い違わせると、置いたお手本の行だけが取り残される。3日たっても直らない</text>
+<text class="t-sm" x="18" y="45">ファイルの1行目にはスラッシュ区切りのお手本を置き、指示文ではカンマ区切りだと説明した版（(e)）。</text>
+<text class="t-sm" x="18" y="64">毎日の依頼文は3日とも一字一句同じ。下は3日目のファイル（材料A・1系列ぶんの実物）。</text>
+<text class="t-xs" x="18" y="112">3日たったファイル</text>
+<text class="t-xs" x="372" y="112">その行の区切り</text>
+<rect class="box" x="10" y="120" width="330" height="146" rx="4"/>
+<text class="mono" x="18" y="142"># 副業の作業記録（1日1行）</text>
+<text class="mono" x="18" y="168">2026-07-31 / C社 / 記事の下書き / 90分</text>
+<text class="t-bad" x="372" y="168">スラッシュ（お手本のまま・1行だけ）</text>
+<text class="mono" x="18" y="194">2026-08-01,C社,記事の下書き,90分</text>
+<text class="t-sm" x="372" y="194">カンマ（指示文どおり）</text>
+<text class="mono" x="18" y="220">2026-08-02,D社,打ち合わせメモ起こし,45分</text>
+<text class="t-sm" x="372" y="220">カンマ（指示文どおり）</text>
+<text class="mono" x="18" y="246">2026-08-03,C社,修正対応,60分</text>
+<text class="t-sm" x="372" y="246">カンマ（指示文どおり）</text>
+<text class="t-bad" x="18" y="298">🚨 4系列とも同じことが起きた。ファイルの中に2通りの形が混ざったまま残ったのは 4/4。</text>
+<text class="t-bad" x="18" y="319">   食い違いを直したのは0回。AIは毎日きちんと指示文どおりに書いており、間違えていない。</text>
+<text class="t-bad" x="18" y="340">   直らないのは、こちらが「すでにある行は1文字も変えないでください」と書いているため。</text>
+<text class="t-good" x="18" y="361">※ 見つけるほうは効く。3日目のファイルを別の新しい会話に渡して形のそろわない行を聞くと、</text>
+<text class="t-good" x="18" y="382">   混ざったファイル4回とも、この1行を一字一句そのままコピーして返した。</text>
+<text class="t-good" x="18" y="403">   そろっているファイル4回では、4回とも「ありません」＝誤検出0件。</text>
+<text class="t-xs" x="18" y="424">架空データでの実測（追記72回＋点検8回＝全80回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
