@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-22T09:44:54.841501+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-22T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Hugging Faceは多数のAIモデルを共有していますが、AIモデルを選定する際にはどのAIモデルが内部的にどのような動きをしているのか、モデルの違いによって何が変わるのかが気になるところです。「modelmap」はAIモデルがどのような構造をしていて動作中にどのような処理フローをおこなっているのかを視覚的に確認することのできるサイトです。 続きを読む...",
+      "title": "AIモデルを選ぶ時に「実際に何をしているのか？」という内部構造や処理フローをアニメーションで視覚化して確認できる「modelmap」",
+      "uid": "cd7524ef42e03086",
+      "url": "https://gigazine.net/news/20260822-modelmap/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-22T08:50:00.837629+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "a1945b94ba57a46e",
       "url": "https://www.publickey1.jp/blog/26/zeddeltaai.html",
       "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-16T10:42:33.692092+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-16T10:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIが生成したコンテンツに目印を埋め込んで区別できるようにする「ウォーターマーク」が注目されており、OpenAIが試験的に導入したりAnthropicが導入を発表したりしています。画像と違ってデータを隠すためのピクセルがないテキストにはどのようにウォーターマークを入れるのかという仕組みについて、人間とAIの関係性について調査・研究するNOPEが解説しています。 続きを読む...",
-      "title": "AI生成テキストの「透かし」が埋め込まれる仕組み",
-      "uid": "b60b147154002e8e",
-      "url": "https://gigazine.net/news/20260816-ai-text-watermarking/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
