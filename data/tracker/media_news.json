@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-22T22:41:14.710340+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-22T21:54:23+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、フラグシップモデル「GPT-5.6 Sol」のAPI利用料金を期間限定で最大33％引き下げた。入力4ドル、出力20ドルとするプロモーション価格を少なくとも3カ月間適用し、ChatGPT WorkやCodexのクレジット消費量も削減。利用量や支出上限を追跡・制御できる管理機能も告知している。",
+      "title": "OpenAI、「GPT-5.6 Sol」のAPI料金を値下げ　入力20％出力33％安く、11月21日まで",
+      "uid": "b1e95d65ff74a244",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/23/2000000700/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-22T10:42:39.821346+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "7bdac4316094a5f7",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/17/news020.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-16T14:42:12.391002+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-08-16T15:10:13+00:00",
-      "source_id": "media-publickey",
-      "summary": "CloudflareはAIエージェントによる操作専用のヘッドレスなWebブラウザ「Kitesurf」を発表しました。 現在ベータ版として公開されています。 Kitesurfは主にRust言語で記述されWebAssemblyにコンパイルされた...",
-      "title": "タブもテーマも拡張機能もないAI専用の超軽量ヘッドレスブラウザ「Kitesurf」、Cloudflareが発表",
-      "uid": "9ce6aec7a56c96db",
-      "url": "https://www.publickey1.jp/blog/26/aikitesurfcloudflare.html",
-      "vendor": "Publickey"
     }
   ]
 }
