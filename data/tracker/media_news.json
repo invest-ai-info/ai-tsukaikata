@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-22T03:09:39.722320+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-22T02:07:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ダークファンタジー漫画の大作「ベルセルク」の主人公・ガッツが狂戦士の甲冑をまとい、血にまみれた姿を立体化した彩色見本が、Good Smile Fest 2026 大阪の会場に展示されています。 続きを読む...",
+      "title": "血みどろ姿の「ガッツ[狂戦士の甲胄] Bloody Paint Ver. L size」がGood Smile Fest 2026 大阪会場に出現",
+      "uid": "189e904d99f4d921",
+      "url": "https://gigazine.net/news/20260822-berserk-gsf2026/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-21T22:44:06.741017+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "92e732d846928dd3",
       "url": "https://gigazine.net/news/20260816-alibaba-qwen-3-billion-downloads/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-15T23:36:14.908146+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-15T22:58:11+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、「Claude」が生成するテキストに埋め込む電子透かしの仕組みを公表した。乱数生成に秘密鍵を用いて統計的パターンを残す手法で、品質や速度、料金に影響を与えない。「EU AI Act」への準拠を目的とするが全世界で適用され、コードや短文などでは入りにくいといった限界も明示している。",
-      "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明　「完全な書き直しなら消える」",
-      "uid": "c0251da309eb1571",
-      "url": "https://www.itmedia.co.jp/news/article/2608/16/2000000555/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
