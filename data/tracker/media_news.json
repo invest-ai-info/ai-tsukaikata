@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-23T03:16:58.763447+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-23T03:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ゼロショットコンピュータビジョンモデルとは事前の追加学習やアノテーションデータなしで訓練時に見たことのない 新しいオブジェクトやクラスを認識・検出できるAIモデルです。ゼロショットコンピュータビジョンモデルを比較検討するには最新モデルの調査・クラウドAPIを呼び出すコードの記述・オープンウェイトモデル用インフラ整備といった時間のかかる作業が不可欠であり、下手をすると結果が出るまでに新しいモデルが…",
+      "title": "無料で多種多彩なビジョンAIモデルを試用・比較・評価できる「Roboflow Playground」",
+      "uid": "1e3943c61bcee430",
+      "url": "https://gigazine.net/news/20260823-roboflow-playground/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-22T23:37:45.558876+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "雪印メグミルク、ChatAIや社長AIで社内知見を活用　DX認定取得企業から“DXっぽさ”を探る",
       "uid": "a743c8793a15dc0b",
       "url": "https://kn.itmedia.co.jp/kn/articles/2608/17/news030.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-16T22:39:52.834360+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIブームを追い風に、半導体市場の成長が止まらない。今、半導体市場で何が起きているのか。注目記事をまとめた。",
-      "title": "【読まれた記事1位】「AI需要で半導体不足」の裏で本当に起きていること――2026年前半まとめ",
-      "uid": "53a6026dceb6fa10",
-      "url": "https://www.itmedia.co.jp/business/articles/2608/17/news045.html",
       "vendor": "ITmedia AI+"
     }
   ]
