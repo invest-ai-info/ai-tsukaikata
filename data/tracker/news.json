@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-23T23:37:43.394611+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-08-23T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana AI、防衛省から「総合分析業務に必要なAI機能の調査・実証」を受注",
+      "uid": "cf313473384aa866",
+      "url": "/defense-integrated-analysis/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-08-23T02:01:45.025281+00:00",
       "importance": "minor",
       "label": "Claude Code",

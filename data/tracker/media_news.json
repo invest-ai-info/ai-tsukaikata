@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-23T23:37:43.394611+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "WhatsAppからAIエージェントに指示を出す――。個人の趣味から始まったツールは今、Microsoftの製品基盤にまで使われている。「OpenClaw」開発者がSnowflakeのイベントで語った、コーディングエージェントとの向き合い方をまとめた。",
+      "title": "「非エンジニアに役立つかで価値が決まる」　たった1時間で開発したツール、なぜGitHub史上最速で伸びた？",
+      "uid": "636b3c5f6328f79f",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/24/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-23T23:37:43.394611+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "アクセンチュアの調査によれば、日本企業の78％がAI投資拡大に意欲を示す一方、全社的な成果を実感する企業は13％にとどまり、世界平均を大きく下回っている。何が足りていないのか。",
+      "title": "日本企業のAI投資「成果あり」はわずか13％　アクセンチュアが指摘する“人任せ”の限界",
+      "uid": "50795f5347db4b21",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/24/news047.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-23T23:37:43.394611+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-23T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Google DeepMindは2025年、画像とテキストによる説明文を与えると画像がAI生成かどうかを判別し、これまでにどのような文脈で使われた画像なのかを調べるAIツール「Backstory」を発表しました。このBackstoryがメディアのファクトチェックを迅速化していると、ハーバード大学のジャーナリズム機関であるNieman Journalism Labが報じています。 続きを読む...",
+      "title": "画像がAI生成かどうかを判別して出どころを調べるGoogleのAIツール「Backstory」はメディアのファクトチェックを迅速化している",
+      "uid": "3bfd5aa95493019b",
+      "url": "https://gigazine.net/news/20260824-googles-backstory-ai-generated-detection/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-23T22:40:47.689469+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "351a47e82d99dd5e",
       "url": "https://gigazine.net/news/20260817-anthropic-claude-text-watermark/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T03:14:24.845062+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T02:03:10+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "チェンジホールディングス（以下、チェンジHD）と同社の子会社、東光コンピュータ・サービス（以下、TCS）、エアロネクストと同社の子会社、NEXT DELIVERYの4社は8月12日、共同企業体（JV）を組成し、秋田県が実施する「ドローン等を活用したクマ対策実証事業業務委託」に採択されたと発表した。",
-      "title": "チェンジHDら4社、AI×ドローンで広域クマ対策を低コストで実現",
-      "uid": "5b40ff0cf87a4869",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2132252.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T01:56:45.196273+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T01:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "金融サービスプラットフォームのStripeが、AIゲートウェイサービス・OpenRouterの買収契約を締結したとBloombergが報じています。買収額は70億ドル(約1兆1000億円)を超える模様です。 続きを読む...",
-      "title": "1.1兆円超でStripeがAIゲートウェイサービスのOpenRouterを買収か",
-      "uid": "ea08338c412e6081",
-      "url": "https://gigazine.net/news/20260817-stripe-acquire-openrouter-7-billion/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T01:56:45.196273+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T23:42:45+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Hugging Faceは、オープンモデル動向をまとめたレポートを公開した。中国勢が2兆パラメータ超の大規模モデルを相次いで公開するなど台頭する一方、実際のダウンロードの8割以上は10億パラメータ未満の小型モデルが占めた。Alibabaの「Qwen」は派生モデル数でMetaを上回り、開発者コミュニティの事実上の基盤モデルになりつつある。",
-      "title": "Hugging Face分析、中国のオープンモデルが台頭　Qwenは派生モデル15万件超",
-      "uid": "bf0028cbcaba046c",
-      "url": "https://www.itmedia.co.jp/news/article/2608/17/2000000557/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
