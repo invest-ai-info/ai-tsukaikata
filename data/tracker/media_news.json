@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-23T22:40:47.689469+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T22:10:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI分析しようにも「社内用語」が壁になる――多くの企業が抱えるこの課題に、ニトリが挑んだ。地道な作業を積み重ねてつかんだのは、誰もが使いやすいデータ分析基盤だった。",
+      "title": "「社内用語」がAI分析を邪魔する……ニトリが“力技”で解決　「赤羽店の寝具の売上高を出して」可能にできたワケ",
+      "uid": "eaab4c1c43e605ca",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/24/news058.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-23T22:40:47.689469+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T22:05:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "カインズは、ユーザーによる口コミ投稿の作文をAIでサポートしている。その機能を開発する上で「AI代筆の文章はユーザーの声なのか」という問いに直面。どのように解決したのだろうか。",
+      "title": "口コミ増やしたい、でも“AIが書いた感”は抑えめに……カインズ、「自社商品の投稿」促すAI機能どう開発した？",
+      "uid": "fb4a379fceb77e83",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/24/news059.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-23T22:40:47.689469+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "愛知県西尾市は、職員の生成AI活用を促す少人数研修を開始した。情報政策課長が年間約100回の講師役を担う。担当業務別の助言や受講後の相談、専用端末による成果物の作成や検証を支え、日常業務への定着と庁内での活用拡大を図る。",
+      "title": "AIを日常使いに　西尾市役所が取り組む「少人数対話型」生成AI研修の狙い",
+      "uid": "fcbafcb497b50a78",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/24/news032.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-23T22:40:47.689469+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "社内の誰がどのAIを使っているのか、正確に把握できている企業は多くない。しかも問題は、たいてい事後に発覚する。約500社の商談分析と複数の実例から、野良AIとの現実的な付き合い方を探る。",
+      "title": "こんなところに野良AIが？　事例で解説、実際にあった2つの発覚パターンと防衛策",
+      "uid": "0b58f575fa9bf7dd",
+      "url": "https://kn.itmedia.co.jp/kn/articles/2608/24/news039.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-23T22:40:47.689469+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-23T21:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "インテルがロボティクス導入に関する調査結果を発表。同調査では60％が5年以内に自社で多数のロボットを運用すると予想し、67％が2030年までに人間とロボットが協働する労働力の管理体制が整うと回答した一方で、人間とロボットの協働に関する正式な戦略を策定している組織が40％にとどまるなどギャップが存在することが明らかになった。",
+      "title": "ロボットの費用対効果が3年以内に人手を上回る――インテルが調査結果から洞察",
+      "uid": "d24bd45c9e8ccd3f",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/24/news061.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-23T14:42:38.996363+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2338,66 +2398,6 @@
       "title": "Hugging Face分析、中国のオープンモデルが台頭　Qwenは派生モデル15万件超",
       "uid": "bf0028cbcaba046c",
       "url": "https://www.itmedia.co.jp/news/article/2608/17/2000000557/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T01:56:45.196273+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-16T23:36:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Googleは8月13日、Google Meetの自動メモ機能「Take notes for me」を対面の会議でも使えるようにしたと発表した。ビデオ通話に入らなくても、ウェブ版かモバイルアプリのホーム画面から録音を始めるだけで、Geminiが会議の要約や文字起こしを作り、Googleドキュメントに保存する。",
-      "title": "Google Meet、リアル会議の議事録生成も可能に　スマホ1つで録音→要約",
-      "uid": "7e3d8cdaa6618b66",
-      "url": "https://japan.cnet.com/article/35251588/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-16T23:35:41.759149+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-16T23:23:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは、macOS版「ChatGPT」デスクトップアプリに新機能「Computer History」を追加した。アプリやウェブサイトでのクリックや文字入力といった操作履歴を、画面を撮影せずに記録して記憶とタイムラインに変換し、ChatGPTと「Codex」が参照できるようにする。「休憩の前に何をしていた？」「今日探していた提案書はどこ？」といった質問に、パソコン上の作業履歴をもとに答える。",
-      "title": "ChatGPT、Macでのクリックや文字入力を記憶する新機能--「あのファイルはどこ？」にも回答",
-      "uid": "ae589e99ffdce023",
-      "url": "https://japan.cnet.com/article/35251587/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-16T23:35:41.759149+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIの普及によってITシステム開発の“垣根”が崩れつつある中、外資のAIベンダーがFDEを掲げて日本市場に参入してきた。SIerを取り巻く環境が急激に変わる中、TISとインテックが合併して発足したTISIはどのように自社の強みを打ち出そうとしているのか。",
-      "title": "外資AIベンダー襲来、システム開発の“垣根”消失……　新生TISIはどう対抗する？",
-      "uid": "ff8b15cfd405dd14",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2607/29/news010.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-16T23:35:41.759149+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "組み込み開発の業務でもAI活用に対する期待は大きく高まっている。本稿では、現役の組み込みエンジニアが本業である筆者が、日々の業務にAIを組み込み続けてきて見えてきたAI活用の限界と現実解について解説する。",
-      "title": "現役組み込みエンジニアがAIを業務利用して分かったこと――期待と限界と現実解",
-      "uid": "d31416290b24328d",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/17/news019.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-16T23:35:41.759149+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「RAGを導入すれば業務が変わる」。そう信じて始めたのに、検索精度は上がらず、複雑な権限制御にも阻まれる――。Skyもまた、その壁にぶつかった一社だ。だが同社は「取りあえずRAG」を捨てることで前に進んだ。何でもベクトル化するのをやめたSkyの判断とは。",
-      "title": "「社内情報をAIに食わせればいい」だけでは足りない、情報検索精度向上の鉄則",
-      "uid": "7e5b6dc71433a350",
-      "url": "https://kn.itmedia.co.jp/kn/articles/2608/17/news010.html",
       "vendor": "ITmedia AI+"
     }
   ]
