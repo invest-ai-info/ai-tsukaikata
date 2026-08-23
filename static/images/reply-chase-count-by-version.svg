@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="426" viewBox="0 0 720 426" role="img" aria-label="送信済み一覧と受信一覧から「返事が来ていないもの」を挙げさせたとき、催促の一覧に挙がった件数を6通りの頼み方で並べた図。架空の送信済み30行と受信25行を2本、会社の総務課とお祭りの事務局で用意した。催促すべきは6件で、本当に未返信の5件と、同じ用件を2回送った1組である。6版かける材料2本かける各2回で全24回。そのまま頼んだ版は4回とも6件ちょうど。出す形を決めた版は11件、5件、9件、7件。同じ用件を2回送ったら1行にまとめてを足した版は8件、11件、9件、9件。件名の一致で決めないでを足した版は8件、12件、14件、9件。決められないの欄を足した版は6件、13件、6件、9件。毎朝そのまま貼る保存版は7件、8件、8件、6件。本当に未返信の5件は24回のうち23回で5件とも挙がり、落ちたのは出す形を決めた版の1回だけである。増えたぶんは、返事の要らない送信と、返事が来ている相手だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="426"/>
+<text class="t-strong" x="18" y="26">そのまま頼んだ4回は4回とも6件ちょうど。出す形を決めてから、件数が回ごとに割れた</text>
+<text class="t-sm" x="18" y="45">架空の「送信済み30行」と「受信25行」を2本（会社の総務課／お祭りの事務局）。催促すべきは</text>
+<text class="t-sm" x="18" y="64">6件（本当に未返信の5件＋同じ用件を2回送った1組）で、走らせる前にコードで確かめてある。</text>
+<text class="t-sm" x="18" y="83">6版 × 材料2本 × 各2回 ＝ 全24回。帯は4回の最小から最大まで、縦棒はその4回の値。</text>
+<text class="t-xs" x="352.0" y="118">催促すべきは6件 →</text>
+<path class="line" d="M398.0 124 L398.0 324" stroke-dasharray="4 3"/>
+<text class="t" x="18" y="142">① そのまま頼む</text>
+<rect class="bar-old" x="398.0" y="130" width="2.0" height="16" rx="3"/>
+<path class="line" d="M398.0 129 L398.0 147" stroke-width="2.4"/>
+<text class="t-accent" x="574.0" y="142">6・6・6・6件</text>
+<text class="t" x="18" y="176">② ＋出す形を決める</text>
+<rect class="bar-old" x="379.3" y="164" width="112.0" height="16" rx="3"/>
+<path class="line" d="M379.3 163 L379.3 181" stroke-width="2.4"/>
+<path class="line" d="M416.7 163 L416.7 181" stroke-width="2.4"/>
+<path class="line" d="M454.0 163 L454.0 181" stroke-width="2.4"/>
+<path class="line" d="M491.3 163 L491.3 181" stroke-width="2.4"/>
+<text class="t-bad" x="574.0" y="176">11・5・9・7件</text>
+<text class="t" x="18" y="210">③ ＋「2回送ったら1行に」</text>
+<rect class="bar-old" x="435.3" y="198" width="56.0" height="16" rx="3"/>
+<path class="line" d="M435.3 197 L435.3 215" stroke-width="2.4"/>
+<path class="line" d="M454.0 197 L454.0 215" stroke-width="2.4"/>
+<path class="line" d="M491.3 197 L491.3 215" stroke-width="2.4"/>
+<text class="t-bad" x="574.0" y="210">8・11・9・9件</text>
+<text class="t" x="18" y="244">④ ＋「件名で決めないで」</text>
+<rect class="bar-old" x="435.3" y="232" width="112.0" height="16" rx="3"/>
+<path class="line" d="M435.3 231 L435.3 249" stroke-width="2.4"/>
+<path class="line" d="M454.0 231 L454.0 249" stroke-width="2.4"/>
+<path class="line" d="M510.0 231 L510.0 249" stroke-width="2.4"/>
+<path class="line" d="M547.3 231 L547.3 249" stroke-width="2.4"/>
+<text class="t-bad" x="574.0" y="244">8・12・14・9件</text>
+<text class="t" x="18" y="278">⑤ ＋〔決められない〕の欄</text>
+<rect class="bar-old" x="398.0" y="266" width="130.7" height="16" rx="3"/>
+<path class="line" d="M398.0 265 L398.0 283" stroke-width="2.4"/>
+<path class="line" d="M454.0 265 L454.0 283" stroke-width="2.4"/>
+<path class="line" d="M528.7 265 L528.7 283" stroke-width="2.4"/>
+<text class="t-bad" x="574.0" y="278">6・13・6・9件</text>
+<text class="t" x="18" y="312">⑥ 保存版（短く畳む）</text>
+<rect class="bar-old" x="398.0" y="300" width="37.3" height="16" rx="3"/>
+<path class="line" d="M398.0 299 L398.0 317" stroke-width="2.4"/>
+<path class="line" d="M416.7 299 L416.7 317" stroke-width="2.4"/>
+<path class="line" d="M435.3 299 L435.3 317" stroke-width="2.4"/>
+<text class="t-bad" x="574.0" y="312">7・8・8・6件</text>
+<text class="t-good" x="18" y="342">※ 本当に未返信の5件は、24回のうち23回で5件とも挙がった。落ちたのは②の1回だけ。</text>
+<text class="t-bad" x="18" y="363">🚨 ①以外で増えたぶんは、返事の要らない送信（お礼・周知）と、返事が来ている相手。</text>
+<text class="t-bad" x="18" y="384">   ②④⑤では、同じ指示文の2回が 11件と5件・8件と12件・6件と13件に割れた。</text>
+<text class="t-xs" x="18" y="405">架空データでの実測（全24回）。生の返り24通は docs/evidence/ に全文置いてある。</text>
+</svg>

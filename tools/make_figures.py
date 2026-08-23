@@ -11457,6 +11457,192 @@ def append_shape_mixed_file_chart() -> None:
     )
 
 
+def reply_chase_count_by_version_chart() -> None:
+    """催促の一覧に挙がった件数を、6版 × 各4回で並べる。真値は6件。
+
+    実測（2026-08-23・架空の送信済み30行と受信25行を2本、6版 × 材料2本 × 各2回 ＝ 全24回）。
+    値は check.py の「催促の一覧に挙がった送信」。帯は4回の最小から最大まで。
+    """
+    rows = [
+        ("① そのまま頼む", [6, 6, 6, 6]),
+        ("② ＋出す形を決める", [11, 5, 9, 7]),
+        ("③ ＋「2回送ったら1行に」", [8, 11, 9, 9]),
+        ("④ ＋「件名で決めないで」", [8, 12, 14, 9]),
+        ("⑤ ＋〔決められない〕の欄", [6, 13, 6, 9]),
+        ("⑥ 保存版（短く畳む）", [7, 8, 8, 6]),
+    ]
+    label_x = 18
+    plot_x = 286
+    plot_w = 280
+    axis_max = 15
+    scale = plot_w / axis_max
+    top = 128
+    row_h = 34
+    bar_h = 16
+    truth = 6
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "そのまま頼んだ4回は4回とも6件ちょうど。出す形を決めてから、件数が回ごとに割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「送信済み30行」と「受信25行」を2本（会社の総務課／お祭りの事務局）。"
+        "催促すべきは</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "6件（本当に未返信の5件＋同じ用件を2回送った1組）で、走らせる前にコードで確かめてある。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "6版 × 材料2本 × 各2回 ＝ 全24回。帯は4回の最小から最大まで、縦棒はその4回の値。</text>\n",
+        f'<text class="t-xs" x="{px(truth) - 46:.1f}" y="{top - 10}">催促すべきは6件 →</text>\n',
+    ]
+
+    plot_bottom = top + len(rows) * row_h - 8
+    tx = px(truth)
+    parts.append(
+        f'<path class="line" d="M{tx:.1f} {top - 4} L{tx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    y = top
+    for label, values in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        lo, hi = min(values), max(values)
+        left, right = px(lo), px(hi)
+        parts.append(
+            f'<rect class="bar-old" x="{left:.1f}" y="{ty - 12}" '
+            f'width="{max(right - left, 2):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        for v in sorted(set(values)):
+            vx = px(v)
+            parts.append(
+                f'<path class="line" d="M{vx:.1f} {ty - 13} L{vx:.1f} {ty + 5}" '
+                f'stroke-width="2.4"/>\n'
+            )
+        text = "・".join(str(v) for v in values) + "件"
+        cls = "t-accent" if lo == hi == truth else "t-bad"
+        parts.append(
+            f'<text class="{cls}" x="{px(axis_max) + 8:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 本当に未返信の5件は、24回のうち23回で5件とも挙がった。落ちたのは②の1回だけ。"),
+        ("t-bad", "🚨 ①以外で増えたぶんは、返事の要らない送信（お礼・周知）と、返事が来ている相手。"),
+        ("t-bad", "   ②④⑤では、同じ指示文の2回が 11件と5件・8件と12件・6件と13件に割れた。"),
+        ("t-xs", "架空データでの実測（全24回）。生の返り24通は docs/evidence/ に全文置いてある。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "送信済み一覧と受信一覧から「返事が来ていないもの」を挙げさせたとき、"
+        "催促の一覧に挙がった件数を6通りの頼み方で並べた図。"
+        "架空の送信済み30行と受信25行を2本、会社の総務課とお祭りの事務局で用意した。"
+        "催促すべきは6件で、本当に未返信の5件と、同じ用件を2回送った1組である。"
+        "6版かける材料2本かける各2回で全24回。"
+        "そのまま頼んだ版は4回とも6件ちょうど。"
+        "出す形を決めた版は11件、5件、9件、7件。"
+        "同じ用件を2回送ったら1行にまとめてを足した版は8件、11件、9件、9件。"
+        "件名の一致で決めないでを足した版は8件、12件、14件、9件。"
+        "決められないの欄を足した版は6件、13件、6件、9件。"
+        "毎朝そのまま貼る保存版は7件、8件、8件、6件。"
+        "本当に未返信の5件は24回のうち23回で5件とも挙がり、落ちたのは出す形を決めた版の1回だけである。"
+        "増えたぶんは、返事の要らない送信と、返事が来ている相手だった。"
+    )
+    (OUT / "reply-chase-count-by-version.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def reply_changed_subject_chased_chart() -> None:
+    """件名を変えて戻ってきた返事を、催促の一覧に入れた件数を版ごとに並べる。
+
+    実測（2026-08-23）。分母は 3件 × 4回 ＝ 12。真値は0件。
+    値は check.py の X_chase。当て方2通り（件名／宛先）で同じ数だった。
+    """
+    rows = [
+        ("① そのまま頼む", 0, "0/12"),
+        ("② ＋出す形を決める", 0, "0/12"),
+        ("③ ＋「2回送ったら1行に」", 6, "6/12"),
+        ("④ ＋「件名で決めないで」", 1, "1/12"),
+        ("⑤ ＋〔決められない〕の欄", 2, "2/12"),
+        ("⑥ 保存版（短く畳む）", 2, "2/12"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 240
+    max_n = 12
+    top = 132
+    row_h = 34
+    bar_h = 19
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "件名を変えて戻ってきた返事は、散文で返る回には1件も混ざらない。混ざるのは形を決めてから"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料には、こちらの問い合わせに答えているのに件名が別物になっている返信を、"
+        "1本につき3件</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "仕込んである（「Re:」が付かず、こちらの件名を1文字も含まない）。"
+        "この3件は返事が来ているので、</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "催促してはいけない。分母は 3件 × 4回 ＝ 12。真値は0件。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 14}">'
+        "催促の一覧に入れてしまった件数（少ないほどよい）</text>\n",
+    ]
+
+    y = top
+    for label, hit, text in rows:
+        ty = y + 15
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = round(plot_w * hit / max_n)
+        if w:
+            parts.append(
+                f'<rect class="box-bad" x="{plot_x}" y="{ty - 14}" '
+                f'width="{w}" height="{bar_h}" rx="3"/>\n'
+            )
+        cls = "t-good" if hit == 0 else "t-bad"
+        parts.append(
+            f'<text class="{cls}" x="{plot_x + w + 6}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "🚨 ③がいちばん悪い。「同じ用件は1行にまとめて」を足しただけで、4回とも混ざった。"),
+        ("t-bad", "   ④で「件名の一致で決めないで」と書いても、0件にはならなかった（1/12）。"),
+        ("t-good", "※ 同じ相手から来た別件のメール3件を「返事」と取り違えた回は、24回で0件だった。"),
+        ("t-xs", "当て方は2通り（件名で数える／宛先で数える）とも同じ数。架空データでの実測（全24回）。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "こちらの問い合わせに答えているのに件名が別物になって戻ってきた返信を、"
+        "催促の一覧に入れてしまった件数を6通りの頼み方で並べた横棒グラフ。"
+        "その返信は1本の材料につき3件仕込んであり、Reが付かず、こちらの件名を1文字も含まない。"
+        "返事は来ているので催促してはいけない。分母は3件かける4回で12、真値は0件である。"
+        "そのまま頼んだ版は12回中0件。出す形を決めた版も12回中0件。"
+        "同じ用件を2回送ったら1行にまとめてを足した版は12回中6件で、4回とも混ざった。"
+        "件名の一致で決めないでを足した版は12回中1件。"
+        "決められないの欄を足した版は12回中2件。毎朝そのまま貼る保存版は12回中2件。"
+        "同じ相手から来た別件のメール3件を返事と取り違えた回は、24回で0件だった。"
+        "当て方は件名で数える方法と宛先で数える方法の2通りとも同じ数だった。"
+    )
+    (OUT / "reply-changed-subject-chased.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
@@ -11602,4 +11788,6 @@ if __name__ == "__main__":
     qwen38_price_region_chart()
     append_shape_by_version_chart()
     append_shape_mixed_file_chart()
+    reply_chase_count_by_version_chart()
+    reply_changed_subject_chased_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

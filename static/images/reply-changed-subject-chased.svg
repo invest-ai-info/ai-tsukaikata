@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="432" viewBox="0 0 720 432" role="img" aria-label="こちらの問い合わせに答えているのに件名が別物になって戻ってきた返信を、催促の一覧に入れてしまった件数を6通りの頼み方で並べた横棒グラフ。その返信は1本の材料につき3件仕込んであり、Reが付かず、こちらの件名を1文字も含まない。返事は来ているので催促してはいけない。分母は3件かける4回で12、真値は0件である。そのまま頼んだ版は12回中0件。出す形を決めた版も12回中0件。同じ用件を2回送ったら1行にまとめてを足した版は12回中6件で、4回とも混ざった。件名の一致で決めないでを足した版は12回中1件。決められないの欄を足した版は12回中2件。毎朝そのまま貼る保存版は12回中2件。同じ相手から来た別件のメール3件を返事と取り違えた回は、24回で0件だった。当て方は件名で数える方法と宛先で数える方法の2通りとも同じ数だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="432"/>
+<text class="t-strong" x="18" y="26">件名を変えて戻ってきた返事は、散文で返る回には1件も混ざらない。混ざるのは形を決めてから</text>
+<text class="t-sm" x="18" y="45">材料には、こちらの問い合わせに答えているのに件名が別物になっている返信を、1本につき3件</text>
+<text class="t-sm" x="18" y="64">仕込んである（「Re:」が付かず、こちらの件名を1文字も含まない）。この3件は返事が来ているので、</text>
+<text class="t-sm" x="18" y="83">催促してはいけない。分母は 3件 × 4回 ＝ 12。真値は0件。</text>
+<text class="t-xs" x="300" y="118">催促の一覧に入れてしまった件数（少ないほどよい）</text>
+<text class="t" x="18" y="147">① そのまま頼む</text>
+<text class="t-good" x="306" y="147">0/12</text>
+<text class="t" x="18" y="181">② ＋出す形を決める</text>
+<text class="t-good" x="306" y="181">0/12</text>
+<text class="t" x="18" y="215">③ ＋「2回送ったら1行に」</text>
+<rect class="box-bad" x="300" y="201" width="120" height="19" rx="3"/>
+<text class="t-bad" x="426" y="215">6/12</text>
+<text class="t" x="18" y="249">④ ＋「件名で決めないで」</text>
+<rect class="box-bad" x="300" y="235" width="20" height="19" rx="3"/>
+<text class="t-bad" x="326" y="249">1/12</text>
+<text class="t" x="18" y="283">⑤ ＋〔決められない〕の欄</text>
+<rect class="box-bad" x="300" y="269" width="40" height="19" rx="3"/>
+<text class="t-bad" x="346" y="283">2/12</text>
+<text class="t" x="18" y="317">⑥ 保存版（短く畳む）</text>
+<rect class="box-bad" x="300" y="303" width="40" height="19" rx="3"/>
+<text class="t-bad" x="346" y="317">2/12</text>
+<text class="t-bad" x="18" y="348">🚨 ③がいちばん悪い。「同じ用件は1行にまとめて」を足しただけで、4回とも混ざった。</text>
+<text class="t-bad" x="18" y="369">   ④で「件名の一致で決めないで」と書いても、0件にはならなかった（1/12）。</text>
+<text class="t-good" x="18" y="390">※ 同じ相手から来た別件のメール3件を「返事」と取り違えた回は、24回で0件だった。</text>
+<text class="t-xs" x="18" y="411">当て方は2通り（件名で数える／宛先で数える）とも同じ数。架空データでの実測（全24回）。</text>
+</svg>
