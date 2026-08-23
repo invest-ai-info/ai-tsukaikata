@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-23T13:47:27.235192+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-23T13:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "人間が演奏したピアノ楽曲の続きをAIで自動生成できるiPhoneアプリ「RollTab」が登場しました。RollTabの開発者であるサイモン・エドワードソン氏がアプリや独自AIモデルの開発プロセスについて解説しています。 続きを読む...",
+      "title": "ピアノ演奏の続きをAIで自動生成できるアプリ「RollTab」が登場",
+      "uid": "2c3aae9654bfbcf1",
+      "url": "https://gigazine.net/news/20260823-transformer-piano/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-23T13:47:27.235192+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-23T13:05:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "次々に新たなAIモデルが登場してベンチマークスコアの最高記録を更新し続けていますが、タスクによってはそれほど高性能なAIでなくとも十分な場合が多々あります。AIを活用した文書管理サービスを開発するAlphaSenseは、「財務に関するタスクにおいて、オープンモデルのGemma 4 31BがClaude Sonnet 5と同等の性能を発揮する」というテスト結果を公開しています。 続きを読む...",
+      "title": "オープンモデルの「Gemma 4 31B」がタスクによっては「Claude Sonnet 5」と同じ品質を40分の1のコストで実現可能",
+      "uid": "be531073830bb960",
+      "url": "https://gigazine.net/news/20260823-gemma-4-benchmark/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-23T03:16:58.763447+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2374,30 +2398,6 @@
       "title": "「欧州のAI主権」任された“34歳の天才”　パリの新星、AI企業Mistralは「救世主」になれるのか",
       "uid": "8d7936acf0d4e225",
       "url": "https://www.itmedia.co.jp/business/articles/2608/17/news037.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-16T22:39:52.834360+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "他組織がツールを導入した際の効果を知ることは、自社での導入を検討する際の大きな参考となる。中でも自治体における導入例は、組織の公共性もあり、詳細な効果を知ることが可能だ。本ブックレットでは、千代田区のCopilot全庁導入による月2000時間削減や、舞鶴市の脱WindowsからGoogleツール移行による6億円削減の事例を掲載した。",
-      "title": "自治体のコスト削減事例　舞鶴市「脱Windows」で6億円、千代田区Copilotで月2000時間",
-      "uid": "6129b7e056280b4a",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/17/news028.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-16T22:39:52.834360+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-16T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "どのような活動をすればDX推進と言えるのか。DXという言葉が普及した現在でも、その答えを一つに定めることは難しい。今回の記事では、経済産業省から「DX認定事業者」の認定を受けた雪印メグミルクの例を参考に、DX推進の具体像を探る。",
-      "title": "雪印メグミルク、ChatAIや社長AIで社内知見を活用　DX認定取得企業から“DXっぽさ”を探る",
-      "uid": "a743c8793a15dc0b",
-      "url": "https://kn.itmedia.co.jp/kn/articles/2608/17/news030.html",
       "vendor": "ITmedia AI+"
     }
   ]
