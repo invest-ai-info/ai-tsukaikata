@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="582" viewBox="0 0 720 582" role="img" aria-label="毎朝の処理を3つの工程に分けて回したとき、工程1が下流へ「何についての問い合わせか」をどれだけ渡したかと、その先で起きたことを並べた横棒グラフ。工程1に頼んだのは期限が書いてあるものだけ抜き出してということだけで、何を添えるかは書いていない。棒は、工程1の出力にその1件にしか出てこない文字列が残っていた件数で、12件が満点である。分けただけの版は、丁寧な長文の材料で2回とも12件を渡して最終12件になったが、短い口語の材料では2回とも0件しか渡さず、2回とも下流が一覧を作らずに断った。毎回もとの24件も渡した版は12件、8件、1件、0件を渡し、最終はそれぞれ24件、12件、24件、24件で、3回は絞り込みが消えた。各工程に受け取った件数を書かせた版は8件、12件、12件、8件を渡し、4回とも最終12件で真値どおりだった。同じ指示文なのに、工程1が渡した量は220字から875字まで開いている。用件が8件ぶんしか渡らなかった回でも最終は12件そろっており、要旨のほうは残っていた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="582"/>
+<text class="t-strong" x="18" y="26">止まった2回は、どちらも工程1が「何についての問い合わせか」を1件も渡していない</text>
+<text class="t-sm" x="18" y="45">工程1に頼んだのは「期限が書いてあるものだけ抜き出して」だけで、何を添えるかは書いていない。</text>
+<text class="t-sm" x="18" y="64">棒は、工程1の出力に「その1件にしか出てこない文字列」が残っていた件数（12件が満点）。</text>
+<text class="t-sm" x="18" y="83">手がかりの文字列は各件の本文から機械で取り出したもので、手で語を選んでいない。</text>
+<text class="t-xs" x="152" y="118">工程1が渡した用件の手がかり</text>
+<text class="t-xs" x="344" y="118">その先で起きたこと</text>
+<text class="t" x="18" y="142">(b) 材料A・1回目</text>
+<rect class="bar-out" x="152" y="129" width="150" height="17" rx="3"/>
+<text class="t-sm" x="308" y="142">12/12</text>
+<text class="t-good" x="344" y="142">→ 最終12件（真値どおり）</text>
+<text class="t" x="18" y="172">(b) 材料A・2回目</text>
+<rect class="bar-out" x="152" y="159" width="150" height="17" rx="3"/>
+<text class="t-sm" x="308" y="172">12/12</text>
+<text class="t-good" x="344" y="172">→ 最終12件（真値どおり）</text>
+<text class="t" x="18" y="202">(b) 材料B・1回目</text>
+<text class="t-sm" x="158" y="202">0/12</text>
+<text class="t-bad" x="344" y="202">→ 止まった（一覧を作らず断った）</text>
+<text class="t" x="18" y="232">(b) 材料B・2回目</text>
+<text class="t-sm" x="158" y="232">0/12</text>
+<text class="t-bad" x="344" y="232">→ 止まった（一覧を作らず断った）</text>
+<text class="t" x="18" y="262">(c) 材料A・1回目</text>
+<rect class="bar-out" x="152" y="249" width="150" height="17" rx="3"/>
+<text class="t-sm" x="308" y="262">12/12</text>
+<text class="t-bad" x="344" y="262">→ 最終24件（絞り込みが消えた）</text>
+<text class="t" x="18" y="292">(c) 材料A・2回目</text>
+<rect class="bar-out" x="152" y="279" width="100" height="17" rx="3"/>
+<text class="t-sm" x="258" y="292">8/12</text>
+<text class="t-good" x="344" y="292">→ 最終12件（真値どおり）</text>
+<text class="t" x="18" y="322">(c) 材料B・1回目</text>
+<rect class="bar-out" x="152" y="309" width="12" height="17" rx="3"/>
+<text class="t-sm" x="170" y="322">1/12</text>
+<text class="t-bad" x="344" y="322">→ 最終24件（絞り込みが消えた）</text>
+<text class="t" x="18" y="352">(c) 材料B・2回目</text>
+<text class="t-sm" x="158" y="352">0/12</text>
+<text class="t-bad" x="344" y="352">→ 最終24件（絞り込みが消えた）</text>
+<text class="t" x="18" y="382">(d) 材料A・1回目</text>
+<rect class="bar-out" x="152" y="369" width="100" height="17" rx="3"/>
+<text class="t-sm" x="258" y="382">8/12</text>
+<text class="t-good" x="344" y="382">→ 最終12件（真値どおり）</text>
+<text class="t" x="18" y="412">(d) 材料A・2回目</text>
+<rect class="bar-out" x="152" y="399" width="150" height="17" rx="3"/>
+<text class="t-sm" x="308" y="412">12/12</text>
+<text class="t-good" x="344" y="412">→ 最終12件（真値どおり）</text>
+<text class="t" x="18" y="442">(d) 材料B・1回目</text>
+<rect class="bar-out" x="152" y="429" width="150" height="17" rx="3"/>
+<text class="t-sm" x="308" y="442">12/12</text>
+<text class="t-good" x="344" y="442">→ 最終12件（真値どおり）</text>
+<text class="t" x="18" y="472">(d) 材料B・2回目</text>
+<rect class="bar-out" x="152" y="459" width="100" height="17" rx="3"/>
+<text class="t-sm" x="258" y="472">8/12</text>
+<text class="t-good" x="344" y="472">→ 最終12件（真値どおり）</text>
+<text class="t-bad" x="18" y="498">🚨 同じ指示文なのに、工程1が渡した量は 220字から875字まで開いた。</text>
+<text class="t-bad" x="18" y="519">   材料が短い口語だと、工程1は「番号と期限だけ」に畳んで渡すことがある。</text>
+<text class="t-good" x="18" y="540">※ 用件が8件ぶんしか渡らなかった回でも、最終は12件そろっている（要旨は残っていた）。</text>
+<text class="t-xs" x="18" y="561">架空データでの実測。工程に分けた12通しぶん（(a) は1回で終わるのでこの表には無い）。</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="407" viewBox="0 0 720 407" role="img" aria-label="毎朝の処理を工程に分けて回したとき、最終に出た件数を4通りの切り方で並べた図。架空の問い合わせ24件を2本、事務機器メーカーの窓口の丁寧な長文と、公共施設の窓口の短い口語で用意した。やらせる中身は4版とも同じで、期限が書いてあるものだけ抜き、3つに分け、1件3行にまとめる。抜くべきは12件である。4版かける材料2本かける各2回で16通し、のべ40回。1回で全部やらせた版は4回とも12件で真値どおり。3回に分けた版は12件、12件、0件、1件で、短い口語の材料の2回は下流が中身が渡っていないと断って一覧を作らなかった。分けたうえで毎回もとの24件も渡した版は24件、12件、24件、24件で、4回中3回は下流が上流の絞り込みを捨てて24件全部をやり直している。分けたうえで各工程に受け取った件数を書かせた版は4回とも12件で真値どおり。材料に無い型番が出た回は40回で0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="407"/>
+<text class="t-strong" x="18" y="26">工程に分けても精度は上がらなかった。1回で全部やらせた4回が、4回とも真値どおり</text>
+<text class="t-sm" x="18" y="45">架空の問い合わせ24件を2本（A＝事務機器メーカーの窓口・丁寧な長文／B＝公共施設の窓口・短い口語）。</text>
+<text class="t-sm" x="18" y="64">やらせる中身は4版とも同じ＝①期限が書いてあるものだけ抜く ②3つに分ける ③1件3行にまとめる。</text>
+<text class="t-sm" x="18" y="83">振ったのは工程の切り方だけ。抜くべきは12件で、走らせる前にコードで確かめてある。</text>
+<text class="t-sm" x="18" y="102">4版 × 材料2本 × 各2回 ＝ 16通し・のべ40回。帯は4回の最小から最大まで。</text>
+<text class="t-xs" x="300.8" y="126">抜くべきは12件 →</text>
+<path class="line" d="M342.8 132 L342.8 282" stroke-dasharray="4 3"/>
+<text class="t" x="18" y="150">(a) 1回で全部やらせる</text>
+<rect class="bar-old" x="342.8" y="138" width="2.0" height="16" rx="3"/>
+<path class="line" d="M342.8 137 L342.8 155" stroke-width="2.4"/>
+<text class="t-accent" x="480.0" y="150">12・12・12・12件</text>
+<text class="t-sm" x="30" y="167">4回とも真値どおり</text>
+<text class="t" x="18" y="190">(b) 3回に分ける</text>
+<rect class="bar-old" x="232.0" y="178" width="110.8" height="16" rx="3"/>
+<path class="line" d="M232.0 177 L232.0 195" stroke-width="2.4"/>
+<path class="line" d="M241.2 177 L241.2 195" stroke-width="2.4"/>
+<path class="line" d="M342.8 177 L342.8 195" stroke-width="2.4"/>
+<text class="t-bad" x="480.0" y="190">12・12・0・1件</text>
+<text class="t-sm" x="30" y="207">材料Bの2回は止まった</text>
+<text class="t" x="18" y="230">(c) 分ける＋毎回もとの24件も</text>
+<rect class="bar-old" x="342.8" y="218" width="110.8" height="16" rx="3"/>
+<path class="line" d="M342.8 217 L342.8 235" stroke-width="2.4"/>
+<path class="line" d="M453.5 217 L453.5 235" stroke-width="2.4"/>
+<text class="t-bad" x="480.0" y="230">24・12・24・24件</text>
+<text class="t-sm" x="30" y="247">4回中3回で24件全部</text>
+<text class="t" x="18" y="270">(d) 分ける＋件数を書かせる</text>
+<rect class="bar-old" x="342.8" y="258" width="2.0" height="16" rx="3"/>
+<path class="line" d="M342.8 257 L342.8 275" stroke-width="2.4"/>
+<text class="t-accent" x="480.0" y="270">12・12・12・12件</text>
+<text class="t-sm" x="30" y="287">4回とも真値どおり</text>
+<text class="t-bad" x="18" y="302">🚨 (b) の0件と1件は「間違えた」ではない。下流が「中身が渡っていません」と断って</text>
+<text class="t-bad" x="18" y="323">   一覧を作らなかった回。毎朝ひとりでに走らせていれば、その朝は何も出ない。</text>
+<text class="t-bad" x="18" y="344">🚨 (c) の24件は、下流が上流の絞り込みを捨てて、もとの24件を全部やり直したもの。</text>
+<text class="t-good" x="18" y="365">※ 材料に無い型番が出た回は、40回で0件。作り話は1件も混ざらなかった。</text>
+<text class="t-xs" x="18" y="386">架空データでの実測（16通し・のべ40回）。40通の生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

@@ -11643,6 +11643,204 @@ def reply_changed_subject_chased_chart() -> None:
     )
 
 
+def chain_final_count_by_version_chart() -> None:
+    """工程の切り方を4通りに振って、最終に出た件数を並べる。真値は12件。
+
+    実測（2026-08-23・架空の問い合わせ24件を2本、4版 × 材料2本 × 各2回 ＝ 16通し・全40回）。
+    値は check.py の「最終件数」。帯は4回の最小から最大まで。
+    """
+    rows = [
+        ("(a) 1回で全部やらせる", [12, 12, 12, 12], "4回とも真値どおり"),
+        ("(b) 3回に分ける", [12, 12, 0, 1], "材料Bの2回は止まった"),
+        ("(c) 分ける＋毎回もとの24件も", [24, 12, 24, 24], "4回中3回で24件全部"),
+        ("(d) 分ける＋件数を書かせる", [12, 12, 12, 12], "4回とも真値どおり"),
+    ]
+    label_x = 18
+    plot_x = 232
+    plot_w = 240
+    axis_max = 26
+    scale = plot_w / axis_max
+    top = 136
+    row_h = 40
+    bar_h = 16
+    truth = 12
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "工程に分けても精度は上がらなかった。1回で全部やらせた4回が、4回とも真値どおり</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の問い合わせ24件を2本（A＝事務機器メーカーの窓口・丁寧な長文／"
+        "B＝公共施設の窓口・短い口語）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "やらせる中身は4版とも同じ＝①期限が書いてあるものだけ抜く ②3つに分ける "
+        "③1件3行にまとめる。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "振ったのは工程の切り方だけ。抜くべきは12件で、走らせる前にコードで確かめてある。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "4版 × 材料2本 × 各2回 ＝ 16通し・のべ40回。帯は4回の最小から最大まで。</text>\n",
+        f'<text class="t-xs" x="{px(truth) - 42:.1f}" y="{top - 10}">抜くべきは12件 →</text>\n',
+    ]
+
+    plot_bottom = top + len(rows) * row_h - 14
+    tx = px(truth)
+    parts.append(
+        f'<path class="line" d="M{tx:.1f} {top - 4} L{tx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    y = top
+    for label, values, note in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        lo, hi = min(values), max(values)
+        parts.append(
+            f'<rect class="bar-old" x="{px(lo):.1f}" y="{ty - 12}" '
+            f'width="{max(px(hi) - px(lo), 2):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        for v in sorted(set(values)):
+            vx = px(v)
+            parts.append(
+                f'<path class="line" d="M{vx:.1f} {ty - 13} L{vx:.1f} {ty + 5}" '
+                f'stroke-width="2.4"/>\n'
+            )
+        text = "・".join(str(v) for v in values) + "件"
+        cls = "t-accent" if lo == hi == truth else "t-bad"
+        parts.append(
+            f'<text class="{cls}" x="{px(axis_max) + 8:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        parts.append(f'<text class="t-sm" x="{label_x + 12}" y="{ty + 17}">{_esc(note)}</text>\n')
+        y += row_h
+
+    notes = [
+        ("t-bad", "🚨 (b) の0件と1件は「間違えた」ではない。下流が「中身が渡っていません」と断って"),
+        ("t-bad", "   一覧を作らなかった回。毎朝ひとりでに走らせていれば、その朝は何も出ない。"),
+        ("t-bad", "🚨 (c) の24件は、下流が上流の絞り込みを捨てて、もとの24件を全部やり直したもの。"),
+        ("t-good", "※ 材料に無い型番が出た回は、40回で0件。作り話は1件も混ざらなかった。"),
+        ("t-xs", "架空データでの実測（16通し・のべ40回）。40通の生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎朝の処理を工程に分けて回したとき、最終に出た件数を4通りの切り方で並べた図。"
+        "架空の問い合わせ24件を2本、事務機器メーカーの窓口の丁寧な長文と、"
+        "公共施設の窓口の短い口語で用意した。"
+        "やらせる中身は4版とも同じで、期限が書いてあるものだけ抜き、3つに分け、1件3行にまとめる。"
+        "抜くべきは12件である。4版かける材料2本かける各2回で16通し、のべ40回。"
+        "1回で全部やらせた版は4回とも12件で真値どおり。"
+        "3回に分けた版は12件、12件、0件、1件で、短い口語の材料の2回は下流が中身が渡っていないと断って"
+        "一覧を作らなかった。"
+        "分けたうえで毎回もとの24件も渡した版は24件、12件、24件、24件で、4回中3回は下流が"
+        "上流の絞り込みを捨てて24件全部をやり直している。"
+        "分けたうえで各工程に受け取った件数を書かせた版は4回とも12件で真値どおり。"
+        "材料に無い型番が出た回は40回で0件だった。"
+    )
+    (OUT / "chain-final-count-by-version.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def chain_what_stage_one_passed_chart() -> None:
+    """工程1が下流へ「用件」を渡したかと、その先で何が起きたかを並べる。
+
+    実測（2026-08-23）。手がかりは、各件の本文からその1件にしか出てこない4文字以上の
+    文字列を機械で取り出したもの（手で語を選んでいない）。値は carry.py と check.py。
+    """
+    rows = [
+        ("(b) 材料A・1回目", 12, "→ 最終12件（真値どおり）", "good"),
+        ("(b) 材料A・2回目", 12, "→ 最終12件（真値どおり）", "good"),
+        ("(b) 材料B・1回目", 0, "→ 止まった（一覧を作らず断った）", "bad"),
+        ("(b) 材料B・2回目", 0, "→ 止まった（一覧を作らず断った）", "bad"),
+        ("(c) 材料A・1回目", 12, "→ 最終24件（絞り込みが消えた）", "bad"),
+        ("(c) 材料A・2回目", 8, "→ 最終12件（真値どおり）", "good"),
+        ("(c) 材料B・1回目", 1, "→ 最終24件（絞り込みが消えた）", "bad"),
+        ("(c) 材料B・2回目", 0, "→ 最終24件（絞り込みが消えた）", "bad"),
+        ("(d) 材料A・1回目", 8, "→ 最終12件（真値どおり）", "good"),
+        ("(d) 材料A・2回目", 12, "→ 最終12件（真値どおり）", "good"),
+        ("(d) 材料B・1回目", 12, "→ 最終12件（真値どおり）", "good"),
+        ("(d) 材料B・2回目", 8, "→ 最終12件（真値どおり）", "good"),
+    ]
+    label_x = 18
+    plot_x = 152
+    plot_w = 150
+    max_n = 12
+    top = 128
+    row_h = 30
+    bar_h = 17
+    text_x = plot_x + plot_w + 42
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "止まった2回は、どちらも工程1が「何についての問い合わせか」を1件も渡していない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "工程1に頼んだのは「期限が書いてあるものだけ抜き出して」だけで、"
+        "何を添えるかは書いていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒は、工程1の出力に「その1件にしか出てこない文字列」が残っていた件数"
+        "（12件が満点）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "手がかりの文字列は各件の本文から機械で取り出したもので、手で語を選んでいない。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 10}">工程1が渡した用件の手がかり</text>\n',
+        f'<text class="t-xs" x="{text_x}" y="{top - 10}">その先で起きたこと</text>\n',
+    ]
+
+    y = top
+    for label, hit, outcome, kind in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = round(plot_w * hit / max_n)
+        if w:
+            parts.append(
+                f'<rect class="bar-out" x="{plot_x}" y="{ty - 13}" '
+                f'width="{w}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="t-sm" x="{plot_x + w + 6}" y="{ty}">{_esc(f"{hit}/12")}</text>\n'
+        )
+        parts.append(
+            f'<text class="{"t-good" if kind == "good" else "t-bad"}" '
+            f'x="{text_x}" y="{ty}">{_esc(outcome)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "🚨 同じ指示文なのに、工程1が渡した量は 220字から875字まで開いた。"),
+        ("t-bad", "   材料が短い口語だと、工程1は「番号と期限だけ」に畳んで渡すことがある。"),
+        ("t-good", "※ 用件が8件ぶんしか渡らなかった回でも、最終は12件そろっている（要旨は残っていた）。"),
+        ("t-xs", "架空データでの実測。工程に分けた12通しぶん（(a) は1回で終わるのでこの表には無い）。"),
+    ]
+    y += 10
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎朝の処理を3つの工程に分けて回したとき、工程1が下流へ「何についての問い合わせか」を"
+        "どれだけ渡したかと、その先で起きたことを並べた横棒グラフ。"
+        "工程1に頼んだのは期限が書いてあるものだけ抜き出してということだけで、"
+        "何を添えるかは書いていない。"
+        "棒は、工程1の出力にその1件にしか出てこない文字列が残っていた件数で、12件が満点である。"
+        "分けただけの版は、丁寧な長文の材料で2回とも12件を渡して最終12件になったが、"
+        "短い口語の材料では2回とも0件しか渡さず、2回とも下流が一覧を作らずに断った。"
+        "毎回もとの24件も渡した版は12件、8件、1件、0件を渡し、最終はそれぞれ24件、12件、24件、24件で、"
+        "3回は絞り込みが消えた。"
+        "各工程に受け取った件数を書かせた版は8件、12件、12件、8件を渡し、4回とも最終12件で真値どおりだった。"
+        "同じ指示文なのに、工程1が渡した量は220字から875字まで開いている。"
+        "用件が8件ぶんしか渡らなかった回でも最終は12件そろっており、要旨のほうは残っていた。"
+    )
+    (OUT / "chain-what-stage-one-passed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
@@ -11790,4 +11988,6 @@ if __name__ == "__main__":
     append_shape_mixed_file_chart()
     reply_chase_count_by_version_chart()
     reply_changed_subject_chased_chart()
+    chain_final_count_by_version_chart()
+    chain_what_stage_one_passed_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
