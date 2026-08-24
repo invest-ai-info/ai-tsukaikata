@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="326" viewBox="0 0 720 326" role="img" aria-label="受注日4件（9/4金・9/7月・9/18金・9/28月）に「中5営業日で」と逆算させた結果を、版ごとに並べたマス目。休みを言わない版aは、翌営業日にずらす・暦日のまま使う・非営業日を着手日にする・答えた着手日と計算が矛盾する、と4件とも別々の挙動だった。架空の祝日表を渡した版bと、さらに数え方の定義文を足した版cは、どちらも4件とも真値と一致し、結果の内容も完全に同じだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="326"/>
+<text class="t-strong" x="18" y="26">休みを言わない版だけ、4件とも起算日の決め方が違った</text>
+<text class="t-sm" x="18" y="45">受注日4件（金曜／連休直前の金曜／祝日前日の月曜／月をまたぐ月曜）に「中5営業日で」とだけ頼んだ（版a）。</text>
+<text class="t-sm" x="18" y="64">同じ4件に、架空の祝日表を渡した版（版b）と、数え方の定義文まで足した版（版c）も試した。</text>
+<text class="t-sm" x="18" y="83">版b・版cは、返ってきた着手日・納品日が4件とも真値と一致し、内容も完全に同じだった。</text>
+<text class="t-xs" x="236.0" y="118">9/4(金)</text>
+<text class="t-xs" x="342.0" y="118">9/7(月)</text>
+<text class="t-xs" x="448.0" y="118">9/18(金)</text>
+<text class="t-xs" x="554.0" y="118">9/28(月)</text>
+<text class="t-sm" x="18" y="150">版a　休みを言わない</text>
+<rect class="box-accent" x="210" y="130" width="96" height="32" rx="4"/>
+<text class="t-accent" x="235.6" y="150">翌営業日</text>
+<rect class="box-accent" x="316" y="130" width="96" height="32" rx="4"/>
+<text class="t-accent" x="336.0" y="150">暦日のまま</text>
+<rect class="box-bad" x="422" y="130" width="96" height="32" rx="4"/>
+<text class="t-bad" x="447.6" y="150">非営業日</text>
+<rect class="box-bad" x="528" y="130" width="96" height="32" rx="4"/>
+<text class="t-bad" x="548.0" y="150">答えと矛盾</text>
+<text class="t-sm" x="18" y="192">版b　＋架空の祝日表</text>
+<rect class="box-good" x="210" y="172" width="96" height="32" rx="4"/>
+<text class="t-good" x="246.8" y="192">一致</text>
+<rect class="box-good" x="316" y="172" width="96" height="32" rx="4"/>
+<text class="t-good" x="352.8" y="192">一致</text>
+<rect class="box-good" x="422" y="172" width="96" height="32" rx="4"/>
+<text class="t-good" x="458.8" y="192">一致</text>
+<rect class="box-good" x="528" y="172" width="96" height="32" rx="4"/>
+<text class="t-good" x="564.8" y="192">一致</text>
+<text class="t-sm" x="18" y="234">版c　＋数え方の定義文</text>
+<rect class="box-good" x="210" y="214" width="96" height="32" rx="4"/>
+<text class="t-good" x="246.8" y="234">一致</text>
+<rect class="box-good" x="316" y="214" width="96" height="32" rx="4"/>
+<text class="t-good" x="352.8" y="234">一致</text>
+<rect class="box-good" x="422" y="214" width="96" height="32" rx="4"/>
+<text class="t-good" x="458.8" y="234">一致</text>
+<rect class="box-good" x="528" y="214" width="96" height="32" rx="4"/>
+<text class="t-good" x="564.8" y="234">一致</text>
+<text class="t-xs" x="18" y="289">※ 版aの真値は「週末のみ除いた場合」。版b・cの真値は架空の祝日表ありの場合で、両者は別の値になる。</text>
+<text class="t-xs" x="18" y="310">架空データでの実測。生の返り12回は docs/evidence/ に全文置いてある。</text>
+</svg>

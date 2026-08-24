@@ -12357,6 +12357,86 @@ def date_decides_downstream_chart() -> None:
     )
 
 
+def deadline_holiday_grid_chart() -> None:
+    """4件の受注日で「中5営業日」を逆算させた結果を、版ごとに並べたマス目。
+
+    実測（2026-08-24・4件×3版＝12回。独立した新規エージェントに送った）。
+    版aは休みの情報を渡していないので、真値そのものが版ごとに違う
+    （版aは週末のみを除いた場合の値、版b・cは架空の祝日表ありの値と比べる）。
+    ここで比べるのは「その版の中で、4件が同じ数え方に揃ったか」。
+    """
+    cols = ["9/4(金)", "9/7(月)", "9/18(金)", "9/28(月)"]
+    row_a = ["翌営業日", "暦日のまま", "非営業日", "答えと矛盾"]
+    row_a_ok = [True, True, False, False]
+    row_b = ["一致", "一致", "一致", "一致"]
+    row_c = ["一致", "一致", "一致", "一致"]
+
+    label_w = 210
+    cell_w, cell_h, gap = 96, 32, 10
+    top = 130
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 40 <= WIDTH - 18, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "休みを言わない版だけ、4件とも起算日の決め方が違った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "受注日4件（金曜／連休直前の金曜／祝日前日の月曜／月をまたぐ月曜）に「中5営業日で」とだけ頼んだ（版a）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同じ4件に、架空の祝日表を渡した版（版b）と、数え方の定義文まで足した版（版c）も試した。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "版b・版cは、返ってきた着手日・納品日が4件とも真値と一致し、内容も完全に同じだった。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 22:.1f}" y="{top - 12}">{name}</text>\n'
+        )
+
+    rows = [
+        ("版a　休みを言わない", row_a, [("box-accent" if ok else "box-bad") for ok in row_a_ok],
+         ["t-accent" if ok else "t-bad" for ok in row_a_ok]),
+        ("版b　＋架空の祝日表", row_b, ["box-good"] * 4, ["t-good"] * 4),
+        ("版c　＋数え方の定義文", row_c, ["box-good"] * 4, ["t-good"] * 4),
+    ]
+    for row_index, (label, cells, boxes, tones) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[col_index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="{tones[col_index]}" x="{tx:.1f}" y="{y + 20}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 16
+    notes = [
+        ("t-xs", "※ 版aの真値は「週末のみ除いた場合」。版b・cの真値は架空の祝日表ありの場合で、両者は別の値になる。"),
+        ("t-xs", "架空データでの実測。生の返り12回は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "受注日4件（9/4金・9/7月・9/18金・9/28月）に「中5営業日で」と逆算させた結果を、"
+        "版ごとに並べたマス目。休みを言わない版aは、翌営業日にずらす・暦日のまま使う・"
+        "非営業日を着手日にする・答えた着手日と計算が矛盾する、と4件とも別々の挙動だった。"
+        "架空の祝日表を渡した版bと、さらに数え方の定義文を足した版cは、"
+        "どちらも4件とも真値と一致し、結果の内容も完全に同じだった。"
+    )
+    (OUT / "deadline-holiday-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
@@ -12512,4 +12592,5 @@ if __name__ == "__main__":
     reply_template_grid_chart()
     date_decides_detect_and_decide_chart()
     date_decides_downstream_chart()
+    deadline_holiday_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
