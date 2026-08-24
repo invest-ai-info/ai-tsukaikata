@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T14:06:31.310163+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "さまざまな企業がリリースしているAIモデルは、モデル自体は非公開でサービスのみが提供される「クローズドモデル」と、モデル自体が公開されている「オープンモデル」に分かれています。オープンモデルは最先端クローズドモデルより性能が低いのが一般的とされてきましたが、オープンモデルがクローズドモデルの性能に追いつく時間はAI分野のステージごとに飛躍的に縮まっていると、半導体分野のブログ・Semi Anal…",
+      "title": "AI分野では「オープンモデルがクローズドモデルに追いつく時間」が飛躍的に縮まっているとの指摘",
+      "uid": "c95cb0aaf0681480",
+      "url": "https://gigazine.net/news/20260824-open-ai-models-catching-up/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-24T13:15:37.392843+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "Cursor、コードホスティング機能「Origin」の初期βを提供開始　GitHubとの双方向同期に対応",
       "uid": "c98a4cf360ad2e7a",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/18/2000000575/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T23:40:28.907861+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "アスノシステムが「仕事の生産性向上・業務改善に関する実態調査2026」の結果を発表。6割が勤務先の業務効率に不満を抱いており、改善を阻む要因や改善に効く取り組み、「業務効率化したら何をしたいか」などが示された。",
-      "title": "業務効率に「不満」6割　なのに最も効くのは「生成AI」でも「ツール」でもなかった",
-      "uid": "263f6e4412685c16",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/18/news044.html",
       "vendor": "ITmedia AI+"
     }
   ]
