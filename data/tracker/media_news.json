@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T10:55:58.329117+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T10:07:22+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "西宮市と阪神電気鉄道は8月24日、国土交通省の「地域公共交通確保維持改善事業費補助金（自動運転社会実装推進事業）」を活用し、8月31日から甲子園エリアでEVバスを用いた自動運転レベル2の実証実験を実施すると発表した。",
+      "title": "西宮市と阪神電気鉄道、EVバスを活用した自動運転レベル2の実証実験",
+      "uid": "ff2b3766cee486db",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135155.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-24T09:07:01.906974+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2387,18 +2399,6 @@
       "uid": "1cc6c5ba7411d9e4",
       "url": "https://gigazine.net/news/20260818-apple-alibaba-model/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T22:43:50.182334+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ZEALSが発表したコンパクトヒューマノイド「D1」は、市場相場の半額となる「1台500万円」を実現し注目を集めている。2足歩行を捨て台車構造を選び、手には中国製パーツを用いるなど「準国産」で割り切ることで開発コストを大幅に削減。米中が開発スピードで先行する中、安全性重視の設計と医療・保険・リース・商社を巻き込んだ4領域アライアンスを武器に、日本発の「ユースケース先進国」を目指す清水正大社長の戦…",
-      "title": "なぜ「相場の半額」にできた？　「ヒューマノイド界のトヨタ」目指すZEALSの“したたか”な戦略",
-      "uid": "40b14137df68d7cd",
-      "url": "https://www.itmedia.co.jp/business/articles/2608/17/news051.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
