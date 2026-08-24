@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="509" viewBox="0 0 720 509" role="img" aria-label="毎朝の出来ばえを30件すべて判定させたときと、保存版で判定させたときに、どのグループを「よくない」と呼んだかを材料ごとに並べた表。仕込みは3つに分かれ、誰が見ても不良の5件、材料0行の日の空要約2件、1文だけだが数字は入っている3件である。誰が見ても不良の5件は、8回とも5件すべてがよくないと呼ばれた。材料0行の空要約は、ニュース要約の材料では2回とも2件ともよくないに入り、問い合わせ日報の材料では2回とも0件、保存版では4回とも0件だった。1文だけだが数字のある3件は、ニュース要約では2回とも0件、問い合わせ日報では2回とも3件ともよくないに入り、保存版では4回とも0件だった。つまり2つの列が材料をまたぐと逆に動いている。ふつうの良品20件をよくないと呼んだ回は8回で0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="509"/>
+<text class="t-strong" x="18" y="26">拾い漏れは起きない。割れるのは、どこから先を「よくない」と呼ぶかの線</text>
+<text class="t-sm" x="18" y="45">30件すべてを1行ずつ判定させた版（⑤）と、毎朝そのまま貼る保存版（⑥）の、合わせて8回ぶん。</text>
+<text class="t-sm" x="18" y="64">仕込みは3つに分かれる＝誰が見ても不良の5件／材料0行の日の空要約2件／1文だけだが数字は入って</text>
+<text class="t-sm" x="18" y="83">いる3件。数字は「よくない」と呼ばれた件数で、いちばん左の列だけが真値どおりの5件になる。</text>
+<text class="t-xs" x="300" y="126">埋め草＋読んでいません</text>
+<text class="t-xs" x="300" y="142">（5件・不良で正しい）</text>
+<text class="t-xs" x="452" y="126">材料0行の空要約</text>
+<text class="t-xs" x="452" y="142">（2件・線引きが割れる）</text>
+<text class="t-xs" x="588" y="126">1文だけだが数字あり</text>
+<text class="t-xs" x="588" y="142">（3件・呼んだら誤り）</text>
+<text class="t" x="18" y="167">⑤ 全件判定・ニュース要約 1回目</text>
+<rect class="box-good" x="296" y="152" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="167">5 / 5</text>
+<rect class="box-quiet" x="448" y="152" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="167">2 / 2</text>
+<rect class="box-good" x="584" y="152" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="167">0 / 3</text>
+<text class="t" x="18" y="197">⑤ 全件判定・ニュース要約 2回目</text>
+<rect class="box-good" x="296" y="182" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="197">5 / 5</text>
+<rect class="box-quiet" x="448" y="182" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="197">2 / 2</text>
+<rect class="box-good" x="584" y="182" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="197">0 / 3</text>
+<text class="t" x="18" y="227">⑤ 全件判定・問い合わせ日報 1回目</text>
+<rect class="box-good" x="296" y="212" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="227">5 / 5</text>
+<rect class="box-quiet" x="448" y="212" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="227">0 / 2</text>
+<rect class="box-bad" x="584" y="212" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="227">3 / 3</text>
+<text class="t" x="18" y="257">⑤ 全件判定・問い合わせ日報 2回目</text>
+<rect class="box-good" x="296" y="242" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="257">5 / 5</text>
+<rect class="box-quiet" x="448" y="242" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="257">0 / 2</text>
+<rect class="box-bad" x="584" y="242" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="257">3 / 3</text>
+<text class="t" x="18" y="287">⑥ 保存版・ニュース要約 1回目</text>
+<rect class="box-good" x="296" y="272" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="287">5 / 5</text>
+<rect class="box-quiet" x="448" y="272" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="287">0 / 2</text>
+<rect class="box-good" x="584" y="272" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="287">0 / 3</text>
+<text class="t" x="18" y="317">⑥ 保存版・ニュース要約 2回目</text>
+<rect class="box-good" x="296" y="302" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="317">5 / 5</text>
+<rect class="box-quiet" x="448" y="302" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="317">0 / 2</text>
+<rect class="box-good" x="584" y="302" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="317">0 / 3</text>
+<text class="t" x="18" y="347">⑥ 保存版・問い合わせ日報 1回目</text>
+<rect class="box-good" x="296" y="332" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="347">5 / 5</text>
+<rect class="box-quiet" x="448" y="332" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="347">0 / 2</text>
+<rect class="box-good" x="584" y="332" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="347">0 / 3</text>
+<text class="t" x="18" y="377">⑥ 保存版・問い合わせ日報 2回目</text>
+<rect class="box-good" x="296" y="362" width="124" height="21" rx="3"/>
+<text class="t" x="306" y="377">5 / 5</text>
+<rect class="box-quiet" x="448" y="362" width="124" height="21" rx="3"/>
+<text class="t" x="458" y="377">0 / 2</text>
+<rect class="box-good" x="584" y="362" width="124" height="21" rx="3"/>
+<text class="t" x="594" y="377">0 / 3</text>
+<text class="t-bad" x="18" y="404">🚨 真ん中と右が、材料をまたぐと逆に動く。ニュース要約では空要約を「よくない」に入れて</text>
+<text class="t-bad" x="18" y="425">   薄い3件を通し、問い合わせ日報では空要約を通して薄い3件を「よくない」に入れた。</text>
+<text class="t-good" x="18" y="446">※ 左の列（誰が見ても不良の5件）は、8回とも 5/5。拾い漏れは1件も無い。</text>
+<text class="t-good" x="18" y="467">※ ふつうの良品20件を「よくない」と呼んだ回は、8回で0件。</text>
+<text class="t-xs" x="18" y="488">灰色は真値を決めていない列（材料0行の日に空の要約を出すことを不良と呼ぶかは、決める人の側の話）。</text>
+</svg>

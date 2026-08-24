@@ -11841,6 +11841,187 @@ def chain_what_stage_one_passed_chart() -> None:
     )
 
 
+def three_samples_what_gets_shown_chart() -> None:
+    """「3件見せて」の見せ方を6通りに振って、その3件に不良が何件入ったかを並べる。
+
+    実測（2026-08-23・架空の毎朝の出来ばえ30日ぶんを2本、6版 × 材料2本 × 各2回 ＝ 全24回）。
+    値は check.py。真値＝30件中7件が不良（うち5件は誰が見ても不良、2件は線引きが割れる）。
+    """
+    rows = [
+        ("① そのまま「3件見せて」", [2, 2, 2, 2]),
+        ("② 1件目・15件目・30件目", [1, 1, 1, 1]),
+        ("③ 出来のよくないほうから3件", [3, 3, 3, 3]),
+        ("④ 先に件数を数えてから3件", [3, 3, 3, 3]),
+        ("⑥ 保存版（不良の識別子だけ）", [3, 3, 3, 3]),
+    ]
+    label_x = 18
+    plot_x = 268
+    cell = 46
+    top = 132
+    row_h = 34
+    bar_h = 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「見せてくる3件に、失敗した回は入らない」は外れた。20回とも入っている</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「毎朝ひとりでにAIが作った要約」を30日ぶん、2本（ニュース要約／問い合わせ日報）用意し、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "不良を7件仕込んだ（数字が1つも無い埋め草3件／「本文は読んでいません」2件／材料0行の空要約2件）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "振ったのは「どう見せさせるか」の1つだけ。6版 × 材料2本 × 各2回 ＝ 全24回。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 12}">'
+        "見せてきた3件のうち、仕込んだ不良だった数（材料2本×各2回の4回ぶん）</text>\n",
+    ]
+
+    y = top
+    for label, values in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for k, v in enumerate(values):
+            x = plot_x + k * cell
+            w = round(cell * 0.72 * v / 3)
+            if w:
+                parts.append(
+                    f'<rect class="bar-out" x="{x}" y="{ty - 13}" '
+                    f'width="{w}" height="{bar_h}" rx="3"/>\n'
+                )
+            parts.append(
+                f'<text class="t-xs" x="{x + w + 4}" y="{ty}">{v}</text>\n'
+            )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ どの版でも、見せてきた3件に不良が1件も入らなかった回は 20回中0回。"),
+        ("t-good", "   当て方2通り（識別子で数える／不良の本文がそのまま引用されたか）でも同じ。"),
+        ("t-bad", "🚨 ②が毎回1件なのは、こちらが指定した15件目がたまたま不良だったから。"),
+        ("t-bad", "   位置を決めると、結果はその位置に何があるかで決まる。指示文の手柄ではない。"),
+        ("t-xs", "⑤（30件すべてを1行ずつ判定させる版）は3件を選ばせていないので、この表には無い。"),
+        ("t-xs", "架空データでの実測（全24回）。24通の生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎朝の出来ばえをAIに3件見せさせたとき、その3件に仕込んだ不良が何件入ったかを"
+        "見せ方6通りで並べた図。"
+        "架空の毎朝の要約を30日ぶん、ニュース要約と問い合わせ日報の2本用意し、不良を7件仕込んだ。"
+        "内訳は数字が1つも無い埋め草3件、本文は読んでいませんという断り付き2件、材料0行の空要約2件である。"
+        "6版かける材料2本かける各2回で全24回。"
+        "そのまま3件見せてと頼んだ版は4回とも3件のうち2件が不良。"
+        "1件目15件目30件目と位置を指定した版は4回とも1件。"
+        "出来のよくないほうから3件と頼んだ版は4回とも3件。"
+        "先に件数を数えてから3件と頼んだ版も4回とも3件。"
+        "保存版も4回とも3件。"
+        "見せてきた3件に不良が1件も入らなかった回は20回中0回で、"
+        "当て方を識別子で数える方法と不良の本文がそのまま引用されたかで数える方法の2通りに変えても同じだった。"
+        "位置を指定した版が毎回1件なのは、指定した15件目がたまたま不良だったためである。"
+    )
+    (OUT / "three-samples-what-gets-shown.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def three_samples_line_flips_chart() -> None:
+    """全件判定させたとき、どのグループを「よくない」に入れたかを材料ごとに並べる。
+
+    実測（2026-08-23）。⑤＝30件すべてを1行ずつ判定させた版、⑥＝保存版。
+    値は check.py の flagged。
+    """
+    rows = [
+        ("⑤ 全件判定・ニュース要約 1回目", 5, 2, 0),
+        ("⑤ 全件判定・ニュース要約 2回目", 5, 2, 0),
+        ("⑤ 全件判定・問い合わせ日報 1回目", 5, 0, 3),
+        ("⑤ 全件判定・問い合わせ日報 2回目", 5, 0, 3),
+        ("⑥ 保存版・ニュース要約 1回目", 5, 0, 0),
+        ("⑥ 保存版・ニュース要約 2回目", 5, 0, 0),
+        ("⑥ 保存版・問い合わせ日報 1回目", 5, 0, 0),
+        ("⑥ 保存版・問い合わせ日報 2回目", 5, 0, 0),
+    ]
+    cols = [
+        ("埋め草＋読んでいません", 5, "不良で正しい"),
+        ("材料0行の空要約", 2, "線引きが割れる"),
+        ("1文だけだが数字あり", 3, "呼んだら誤り"),
+    ]
+    label_x = 18
+    col_x = [300, 452, 588]
+    col_w = 132
+    top = 152
+    row_h = 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "拾い漏れは起きない。割れるのは、どこから先を「よくない」と呼ぶかの線</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "30件すべてを1行ずつ判定させた版（⑤）と、毎朝そのまま貼る保存版（⑥）の、"
+        "合わせて8回ぶん。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "仕込みは3つに分かれる＝誰が見ても不良の5件／材料0行の日の空要約2件／"
+        "1文だけだが数字は入って</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "いる3件。数字は「よくない」と呼ばれた件数で、いちばん左の列だけが真値どおりの5件になる。</text>\n",
+    ]
+
+    for x, (name, denom, note) in zip(col_x, cols):
+        parts.append(f'<text class="t-xs" x="{x}" y="{top - 26}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{x}" y="{top - 10}">（{denom}件・{_esc(note)}）</text>\n')
+
+    y = top
+    for label, a, b, c in rows:
+        ty = y + 15
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for x, (val, denom, good_is_full) in zip(
+            col_x, ((a, 5, True), (b, 2, None), (c, 3, False))
+        ):
+            if good_is_full is True:
+                cls = "box-good" if val == denom else "box-bad"
+            elif good_is_full is False:
+                cls = "box-good" if val == 0 else "box-bad"
+            else:
+                cls = "box-quiet"
+            parts.append(
+                f'<rect class="{cls}" x="{x - 4}" y="{ty - 15}" '
+                f'width="{col_w - 8}" height="21" rx="3"/>\n'
+            )
+            parts.append(f'<text class="t" x="{x + 6}" y="{ty}">{val} / {denom}</text>\n')
+        y += row_h
+
+    notes = [
+        ("t-bad", "🚨 真ん中と右が、材料をまたぐと逆に動く。ニュース要約では空要約を「よくない」に入れて"),
+        ("t-bad", "   薄い3件を通し、問い合わせ日報では空要約を通して薄い3件を「よくない」に入れた。"),
+        ("t-good", "※ 左の列（誰が見ても不良の5件）は、8回とも 5/5。拾い漏れは1件も無い。"),
+        ("t-good", "※ ふつうの良品20件を「よくない」と呼んだ回は、8回で0件。"),
+        ("t-xs", "灰色は真値を決めていない列（材料0行の日に空の要約を出すことを不良と呼ぶかは、決める人の側の話）。"),
+    ]
+    y += 12
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎朝の出来ばえを30件すべて判定させたときと、保存版で判定させたときに、"
+        "どのグループを「よくない」と呼んだかを材料ごとに並べた表。"
+        "仕込みは3つに分かれ、誰が見ても不良の5件、材料0行の日の空要約2件、"
+        "1文だけだが数字は入っている3件である。"
+        "誰が見ても不良の5件は、8回とも5件すべてがよくないと呼ばれた。"
+        "材料0行の空要約は、ニュース要約の材料では2回とも2件ともよくないに入り、"
+        "問い合わせ日報の材料では2回とも0件、保存版では4回とも0件だった。"
+        "1文だけだが数字のある3件は、ニュース要約では2回とも0件、"
+        "問い合わせ日報では2回とも3件ともよくないに入り、保存版では4回とも0件だった。"
+        "つまり2つの列が材料をまたぐと逆に動いている。"
+        "ふつうの良品20件をよくないと呼んだ回は8回で0件だった。"
+    )
+    (OUT / "three-samples-line-flips.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
@@ -11990,4 +12171,6 @@ if __name__ == "__main__":
     reply_changed_subject_chased_chart()
     chain_final_count_by_version_chart()
     chain_what_stage_one_passed_chart()
+    three_samples_what_gets_shown_chart()
+    three_samples_line_flips_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
