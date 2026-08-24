@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-24T08:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIはこのほど、アップルユーザーのプライバシーをめぐる懸念を呼び起こしかねない新機能を「ChatGPT」に導入した。ChatGPTは、ユーザーが許可すればアップルの「メッセージ」アプリと連携し、ユーザーに代わってメッセージを読み、文面を作成し、送信できるようになった。",
+      "title": "ChatGPTでアップルの「メッセージ」代筆が可能に　でも本当に使いたいと思いますか？",
+      "uid": "e34fd3c046bc8327",
+      "url": "https://japan.cnet.com/article/35251863/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T08:08:10+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "京セラは8月24日、先端半導体やAIデータセンター関連の同社製品に関する説明会を開催した。",
+      "title": "京セラ、AIデータセンターや半導体製造を支える最新技術を説明 今後は次世代光通信や基板埋め込みコンデンサーに注力",
+      "uid": "4c447423a36351bd",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135097.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T08:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日本精工（以下、NSK）とアトムは、国産ヒューマノイドAIロボットの開発・実装に向けた包括的なパートナーシップに関する基本合意書（以下、同MOU）を8月20日に締結した。",
+      "title": "NSKとアトム、国産ヒューマノイドAIロボットの開発・実装でMOUを締結",
+      "uid": "e92a0b47d1fe180a",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135052.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T07:48:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "NVIDIAが一部の顧客に対して、「Vera Rubin」や「Grace Blackwell」を含むAIチップ搭載サーバーの価格を15％以上引き上げると通知したことがわかりました。2027年出荷分から値上げ後の価格が適用される見通しです。 続きを読む...",
+      "title": "NVIDIAが大手顧客に対してAI関連製品を15％以上値上げすると通知、「Vera Rubin」や「Grace Blackwell」などにも影響か",
+      "uid": "b8748bdb089fcdd5",
+      "url": "https://gigazine.net/news/20260824-nvidia-price-hike-ai-related-products/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T07:45:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "インプレスは、編集部が厳選した「この夏読んでほしい本」30冊を全文無料公開し、さらに電子書籍が30％OFFで購入できるキャンペーン「インプレスブックス夏の30冊」を8月24日～8月31日に開催する。",
+      "title": "全文無料公開＆30％OFF「インプレスブックス夏の30冊」キャンペーン",
+      "uid": "07408fef1e911a7d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134991.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T07:31:41+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Paradoxは8月24日、実用性に特化し毎日使える快適性を追求した「Beifa AIスマートグラス GE01-3」を、クラウドファンディングサイト「Makuake」で8月下旬より先行販売すると発表した。一般販売予定価格37,400円のところ、先行販売期間中は最大38%OFFの23,188円から購入できる。一般販売は2027年1月に開始予定。",
+      "title": "Chat GPT搭載AIスマートグラス、Makuakeで8月下旬より先行販売",
+      "uid": "e130b9ac01a79291",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135034.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-24T09:07:01.906974+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T07:30:16+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "MetaとNVIDIA、Alibabaが30Bクラスのオープンモデルを相次ぎ公開し、国産の「LLM-jp-4 33B」も登場した。このサイズのモデルが今“熱い”理由と留意点を考察する。",
+      "title": "なぜいま30Bクラスのオープンモデルが“熱い”のか　「27BパラメータでOpus 4.6超え」も",
+      "uid": "57f1ae54ee77bf3b",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/24/2000000723/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-24T07:30:45.265644+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2315,90 +2399,6 @@
       "uid": "40b14137df68d7cd",
       "url": "https://www.itmedia.co.jp/business/articles/2608/17/news051.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T22:43:50.182334+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T21:55:32+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NVIDIAは、オハイオ州で建設中のAIデータセンター「PORTS-Pike Technology Campus」に計算基盤を独占提供すると発表した。OpenAIがテナントとなり、SB Energyが運営する。NVIDIAは最大1050億ドルの債務保証を負い、最大8GW規模のAIファクトリーを段階的に展開する。",
-      "title": "NVIDIA、OpenAIのオハイオAIデータセンターに最大1050億ドルの債務保証──SB Energyと提携",
-      "uid": "8df54010e96a1e89",
-      "url": "https://www.itmedia.co.jp/news/article/2608/18/2000000572/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T22:43:50.182334+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T21:50:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "マネーフォワードは、AIサービスの利用量とコストを一元管理できる法人向けサービス「マネーフォワード クラウドAIトークン管理」の提供を始めた。同社サービスの共通ID「マネーフォワードID」を取得すれば無料で使える。",
-      "title": "ChatGPTやClaudeの利用量とコストを一元管理、無料で使える法人向け新サービス　マネーフォワード",
-      "uid": "e8ed0098cbcb5081",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/18/2000000571/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T22:43:50.182334+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T21:45:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "キャディは次世代版「製造業AIデータプラットフォームCADDi」を発表した。AIと人が共有するデータ／セマンティクス基盤で現場の暗黙知を構造化し、直列工程の並列化でモノづくりの加速を目指す。",
-      "title": "「AI進化の裏でモノづくりは30年止まっている」、直列工程を並列化する産業OS",
-      "uid": "2423e6dd355cdf71",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/18/news045.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T13:54:47.131963+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-08-17T15:42:34+00:00",
-      "source_id": "media-publickey",
-      "summary": "マイクロソフトはオープンソースで開発されているコードエディタの最新版「Visual Studio Code 1.133」（以下、VS Code 1.133）の正式リリースを発表しました。 The latest @code release b...",
-      "title": "Visual Studio Code 1.133正式リリース。プロンプトを見失わない固定スクロール、ローカルHTMLファイルの自動リロード、ClaudeとCopilotの混在可能など新機能",
-      "uid": "d48b9d5807f431a0",
-      "url": "https://www.publickey1.jp/blog/26/visual_studio_code_1133htmlclaudecopilot.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-17T13:08:48.149000+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AnthropicがAIに関するリスクレポートを公開しました。その中で、一般公開されている最高性能のモデル「Claude Mythos 5」よりも性能が高い謎のモデルが登場することが話題になっています。 続きを読む...",
-      "title": "実はAnthropicには最上位のMythosよりも強力な「Model 2」というAIモデルがあるがリリース予定はない",
-      "uid": "1da891e1b70cbd41",
-      "url": "https://gigazine.net/news/20260817-anthropic-model-2/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T10:49:31.020743+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T10:27:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Uber Japanは、2026年後半に予定している東京でのロボタクシー（自動運転タクシー）の試験運行で、日々の運行を担うパートナーとして、提携タクシー事業者である日の丸交通と運行パートナーシップ契約を締結したことを発表した。",
-      "title": "Uber、自動運転タクシーの試験運行で日の丸交通とパートナーシップ契約締結",
-      "uid": "00bae19be60ef244",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133281.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T10:49:31.020743+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T10:26:57+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Pudu Roboticsは、小規模商業空間向けのAI搭載オールインワン小型掃除ロボット「PUDU ET1」を発表した。",
-      "title": "小規模商業空間向けAI搭載オールインワン小型掃除ロボット「PUDU ET1」",
-      "uid": "36cc04fe0afd5c7f",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133275.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
