@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T13:15:37.392843+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenRouterやOpenCodeが謎の匿名AI「Ox Alpha」の無料テストを実施しています。Ox Alphaの開発組織や詳細な仕様は不明で、複数のユーザーが性能検証結果を報告しています。 続きを読む...",
+      "title": "謎のAI「Ox Alpha」が出現し無料テスト中、コンテキストウィンドウは100万トークンで1日数兆トークンを処理できる匿名ラボがAPIを提供",
+      "uid": "06dcfc494892ffab",
+      "url": "https://gigazine.net/news/20260824-ox-alpha/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-24T11:45:43.499439+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2386,18 +2398,6 @@
       "title": "業務効率に「不満」6割　なのに最も効くのは「生成AI」でも「ツール」でもなかった",
       "uid": "263f6e4412685c16",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/18/news044.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T23:40:28.907861+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "一国の判断で主要なAIサービスの提供が止まる時代に、日本企業はAI主権をどう守ればよいのか。さくらインターネットの田中邦裕社長とSakana AIの石井順也氏にそれぞれの考えを聞いた。",
-      "title": "なぜ「純国産AIは無理」なのか？　さくらとSakana AIが示す「ソブリンAI」の現実解",
-      "uid": "30adcdb4d991a413",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/18/2000000544/",
       "vendor": "ITmedia AI+"
     }
   ]
