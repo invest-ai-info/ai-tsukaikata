@@ -22,7 +22,7 @@
     "media-impress-ai": "2026-08-24T11:38:58+00:00",
     "media-itmedia-aiplus": "2026-08-24T08:55:15+00:00",
     "media-publickey": "2026-08-24T15:29:33+00:00",
-    "openai-news": "2026-08-20T07:00:00+00:00",
+    "openai-news": "2026-08-24T12:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-14T15:55:10+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -40,6 +40,17 @@
       "uid": "cf313473384aa866",
       "url": "/defense-integrated-analysis/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-24T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance.",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+      "uid": "58b08ebf28cbcc5d",
+      "url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -428,6 +439,7 @@
     "5820e38c0d2303f0": "2026-08-01T12:16:42.309603+00:00",
     "583ebf288460be03": "2026-08-19T04:54:01.800747+00:00",
     "58522e413ff04509": "2026-08-01T12:16:42.309603+00:00",
+    "58b08ebf28cbcc5d": "2026-08-24T20:50:31.202024+00:00",
     "593fc6f99979b06a": "2026-08-01T12:16:42.309603+00:00",
     "5959eb6872218a94": "2026-08-24T10:06:37.497656+00:00",
     "59c2a12d58e78038": "2026-08-14T02:48:19.675404+00:00",
