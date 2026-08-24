@@ -29,30 +29,7 @@
     "pfn-blog": "2026-08-17T06:00:13+00:00",
     "sakana-blog": "2026-08-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-23T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Sakana AI、防衛省から「総合分析業務に必要なAI機能の調査・実証」を受注",
-      "uid": "cf313473384aa866",
-      "url": "/defense-integrated-analysis/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-24T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance.",
-      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
-      "uid": "58b08ebf28cbcc5d",
-      "url": "https://openai.com/index/gpt-5-6-in-kiro",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
