@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T07:30:45.265644+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T07:15:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Google DeepMindが宇宙MMORPG「EVE Online」の開発元であるFenris Creationsと進めている研究提携について、EVEシリーズをAI研究に活用する具体的な取り組みを明らかにしました。20年以上にわたってプレイヤーが経済や戦争、外交を作り上げてきたEVE Onlineの世界を使い、AIが長期間にわたって学習・記憶・計画しながら人間と関わるための技術を研究するとの…",
+      "title": "Google DeepMindが「EVE Online」でAI研究、20年以上続く仮想宇宙を「知能を映す鏡」として活用へ",
+      "uid": "48ca4953a1510776",
+      "url": "https://gigazine.net/news/20260824-google-deepmind-eve-online-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T07:30:45.265644+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T07:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ビジネス向けSNSとして知られるLinkedInは2026年7月に、「AIが生成した低品質な投稿」を通報するためのボタン「Seems Like AI Slop(AIスロップと思われる)」を追加しました。 LinkedInの最高製品責任者であるハリ・スリニヴァサン氏は、この「AIスロップ通報ボタン」が約1カ月で100万人以上にクリックされたとLinkedInで報告しています。 続きを読む...",
+      "title": "LinkedInの「AIスロップ通報ボタン」が100万人に使用されたと責任者が明かす",
+      "uid": "3eaa7b0e3b3213de",
+      "url": "https://gigazine.net/news/20260824-ai-slop-button-million/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T07:30:45.265644+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T06:02:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI開発においては、データを処理する「データセンター」の新設が急務となっています。ここで、新たに電力供給に必要な「ガスタービン」が不足していて、データセンターへの電力供給が滞る可能性が出てきました。 続きを読む...",
+      "title": "AI開発の新たなボトルネックは「ガスタービン不足」",
+      "uid": "636767e7bd1027e3",
+      "url": "https://gigazine.net/news/20260824-gas-turbine-shortage/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T07:30:45.265644+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T05:43:10+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米AnthropicのAIサービス「Claude」「Claude Code」などで障害が発生している。同社のステータスサイトによると、日本時間の8月24日午後2時27分時点でエラーの原因を特定し、修正作業中という。",
+      "title": "「Claude」で障害発生中",
+      "uid": "ae5216edee180246",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/24/2000000719/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-24T05:55:29.604074+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "36cc04fe0afd5c7f",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133275.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T09:59:27.614141+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T09:15:25+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "マネーフォワードは8月17日、法人のAI利用コストをダッシュボードで可視化する新プロダクト「マネーフォワード クラウドAIトークン管理」とAIツールの決済専用カードとして活用し、AI関連支出を集約・一元化できる仕組み「マネーフォワード ビジネスカード」の提供を開始した。",
-      "title": "マネーフォワード、法人のAI利用コストを一元管理できる新プロダクト",
-      "uid": "ec821c82cbc43032",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133255.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T09:59:27.614141+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T09:07:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "コロプラは、全社員によるAI活用の定着を経て、「個人の業務効率化」から「組織の仕組み」と「お客様に届ける新たな感動体験の創作」の再設計へと移すフェーズへ入ったと発表した。",
-      "title": "コロプラ、社内AI活用率98％。AI活用を前提とした仕事の再設計を推進",
-      "uid": "a7886ccef0db9d79",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133251.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T09:02:55.699871+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T07:58:35+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ロボット開発企業の中国Unitree Roboticsは、開発中の新型ヒューマノイドのデモ動画を公開した。助走なしで高さ2mのジャンプをしたほか、最高で秒速12.66m（時速45.576km）で走る姿を披露した。",
-      "title": "人型ロボが“人間超え”――助走なしで高さ2mのジャンプ、時速45kmで走行も　中国Unitreeが開発中の新モデルを公開",
-      "uid": "d0462c0f0126e19a",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/17/2000000567/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T09:02:55.699871+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-17T07:25:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "ビザ・ワールドワイド・ジャパンは8月17日、オンラインでの買い物にAIやAIエージェントをどこまで任せられるかを尋ねた消費者調査の結果を発表した。AIを活用した購買体験への関心は高まる一方、購入判断や決済までAIに委ねることへの受け入れは「極めて限定的」だったという。普及には利便性だけでなく「信頼と安心」と、利用者が自分で管理・選べる仕組みが求められるとしている。",
-      "title": "「あなたはAIエージェントに買い物を任せたいですか」 Visaが調査--消費者の回答は",
-      "uid": "8d684faf3ec9faaf",
-      "url": "https://japan.cnet.com/article/35251620/",
-      "vendor": "CNET Japan"
     }
   ]
 }
