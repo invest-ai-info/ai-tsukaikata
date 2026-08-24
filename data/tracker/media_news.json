@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T03:18:15.258698+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T02:54:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ライブ配信サービスのTwitchと、その親会社であるAmazonに対し、配信者のウォーレン・パンディシア氏が集団訴訟を起こしました。パンディシア氏は自身の動画が勝手にAIのトレーニングに使われたことを問題視しています。 続きを読む...",
+      "title": "TwitchとAmazonがストリーマーのコンテンツをAIに学習させたとして訴えられる",
+      "uid": "7ebee7c6d70e8612",
+      "url": "https://gigazine.net/news/20260824-twitch-sued-streamer-ai-training/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T03:18:15.258698+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-24T02:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "チャットボット「Grok Lite」を先週に利用した人は、まったく意味をなさない長大な回答にさぞ驚いたはずだ。",
+      "title": "AI「Grok」が一時暴走、意味不明な回答を連発",
+      "uid": "624627535c476a03",
+      "url": "https://japan.cnet.com/article/35251853/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-24T03:18:15.258698+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T01:55:50+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Gensparkは、個人（Plus・Pro）および法人プランの利用者を対象に、4つのプロダクトを最大100％OFFで利用できるキャンペーンを開始した。期間は10月1日15時59分まで。",
+      "title": "Genspark、4つのプロダクトを割引料金で試せるキャンペーン",
+      "uid": "1face1921b9676b2",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134898.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-24T01:59:34.827532+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2362,42 +2398,6 @@
       "title": "GoogleがGeminiとFlowにAIが生成した画像・動画・音楽から目に見える「透かし」を削除する切り替え機能を追加、ただしSynthID透かしとC2PAメタデータは残る",
       "uid": "ca8304dee8ff5fa9",
       "url": "https://gigazine.net/news/20260817-google-visible-watermarks/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T05:00:16.701147+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T04:02:29+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTドコモビジネスとエクサウィザーズは8月17日、専用環境で企業の重要データを安全に活用できる「クローズドAIエージェント」の提供を開始した。",
-      "title": "企業の重要データを安全に活用できる「クローズドAIエージェント」",
-      "uid": "bf3b9382bfcb545b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133096.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T05:00:16.701147+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T03:55:19+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "味の素は8月16日、レシピサイト「味の素パーク」の公式Xで14日に投稿した画像について謝罪した。生成AIによる加工のため、商品のラベルや文字の一部が乱れていたという。",
-      "title": "「ほんだし」のラベルがAIでぐちゃぐちゃに……　味の素、公式Xの投稿画像について謝罪",
-      "uid": "86e7b4cb4af114d0",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/17/2000000564/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T03:14:24.845062+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T03:05:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国のAI企業・Z.ai(北京智譜華章科技)が、コーディング能力に優れ、サイバーセキュリティタスクでは「これまでで最も有能なモデル」だというAIモデル「GLM-5.3」をリリースしました。 続きを読む...",
-      "title": "Z.aiがコーディング能力に優れたオープンウェイトAIモデル「GLM-5.3」リリース、前モデル比で50％の性能向上",
-      "uid": "08020d6209edf834",
-      "url": "https://gigazine.net/news/20260817-z-ai-glm-5-3/",
       "vendor": "GIGAZINE"
     }
   ]
