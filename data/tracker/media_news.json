@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T23:39:49.823706+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T23:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "PTCジャパンは日本橋の新オフィスに開設したデモセンター「JXC」において、ランボルギーニのSDV開発や建機のAI設計改善のデモンストレーションを披露した。",
+      "title": "ランボルギーニのSDV開発やAI設計改善も、PTCが“アジア初”デモ機公開",
+      "uid": "b64e2bab46f68dca",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/25/news043.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T23:39:49.823706+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "建築AI経営研究会は、「建築AI経営実態調査」の結果を公開した。特定部署以上でAIを活用する企業が68.5％に達したことが判明した。課題は導入初期の試行錯誤から「新たな壁」にシフトしている。",
+      "title": "建築業でも「Claudeの有料導入」が急増　AI導入レベルが上がった企業を悩ます「新たな壁」とは",
+      "uid": "5162462edacf95a7",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/25/news041.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T23:39:49.823706+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "NVIDIAが開発するAIエージェントシステム「Agentic Variation Operators(AVO)」が、AIが未知の環境とやり取りしながら推論する能力を測るベンチマーク「ARC-AGI-3」の公開セットで100％のスコアを達成しました。ベースに使われたClaude Opus 5について、ARC-AGI-3を開発したARC Prizeが別条件のモデル評価でのスコアを約30％と報告して…",
+      "title": "NVIDIAのAIエージェント「AVO」がARC-AGI-3で100％を達成、同じベースモデルの別条件での評価は約30％で「実行基盤(ハーネス)」の重要性が示される",
+      "uid": "d6c3fb9f6736f28d",
+      "url": "https://gigazine.net/news/20260825-nvidia-avo/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-24T22:46:51.219946+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "baff6d513517b290",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133412.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T04:00:09.864899+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T03:13:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "「AIが自分で考えてコードを書き、業務をこなしてくれる」──AIエージェントが急速に進化しています。一方で、「もしAIが暴走して、取り返しのつかない事故を起こしたら？」という心配も出てきました。",
-      "title": "AI用語の基礎知識 【第19回】「ガードレール」とは──AIの“暴走・脱線”を防ぐ安全装置",
-      "uid": "51bfd2373806fea4",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2133397.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T03:10:26.176978+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T02:43:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Amazonが大量の物理書籍を購入し、AIの学習データとして利用するために背表紙を切り落としてスキャンしていることが、テクノロジーメディアの404 Mediaによる調査で明らかになりました。404 Mediaが大量注文された希少本の1冊に追跡装置を仕込んだところ、最終的にAmazonが書籍をデジタル化しているラスベガスの施設へ到着したとのことです。 続きを読む...",
-      "title": "希少本の輸送状況を追跡したらAmazonのAIトレーニング施設に到着していたことが判明",
-      "uid": "05a804cb48a232c2",
-      "url": "https://gigazine.net/news/20260818-amazon-ai-training-with-rare-books/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T03:10:26.176978+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T02:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ソフトバンクグループの傘下企業であるSB Energyはアメリカのオハイオ州に「PORTS-Pike Technology Campus」と呼ばれる大規模データセンターを建設する計画を進めています。新たに、NVIDIAがSB Energyに15億ドル(約2400億円)を投資し、PORTS-Pike Technology CampusにおけるAIインフラストラクチャーの独占的プロバイダーとなる契約…",
-      "title": "OpenAIの大規模データセンターを作るべくNVIDIAがソフトバンク関連企業に2400億円を投資、2030年までに約96兆円のビジネスチャンスをもたらす計画",
-      "uid": "cce11ba4434bba5d",
-      "url": "https://gigazine.net/news/20260818-nvidia-sb-energy-openai-ports-pike/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
