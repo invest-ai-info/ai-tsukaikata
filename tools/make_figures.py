@@ -12178,6 +12178,185 @@ def reply_template_grid_chart() -> None:
     )
 
 
+def date_decides_detect_and_decide_chart() -> None:
+    """4組の矛盾を、版ごとに「確定できたか（回数／6）」で並べたマス目。
+
+    実測（2026-08-24・架空のメモ12枚、3版 × 各6回 ＝ 全18回。独立した claude -p
+    サブプロセスに送って機械照合）。検出そのものはほぼ全回で4組とも出た
+    （18回中17回。詳しくは記事本文）。ここに出すのは「要確認と書かずに
+    片方を『いま使う内容』として確定できたか」の回数。
+    """
+    rows = [
+        ("経費精算の承認ライン（日付あり）", [0, 6, 6]),
+        ("見積書を送る順番（日付あり）", [0, 6, 6]),
+        ("資料へのグラフ（日付なし）", [0, 0, 0]),
+        ("問い合わせ返信の宛先（日付なし）", [0, 0, 0]),
+    ]
+    cols = ["版a：そのまま", "版b：＋日付ルール", "版c：＋下流課題"]
+    label_w = 228
+    cell_w, cell_h, gap = 132, 34, 10
+    top = 132
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "確定できるのは日付がある組だけ。日付が無い組は、どの版でも確定しない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のメモ12枚に矛盾4組（うち2組は各メモに絶対日付あり）を仕込み、"
+        "指示文を3版・各6回＝全18回、独立したサブプロセスに送った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "セルの数＝「要確認」と書かずに片方を『いま使う内容』として確定できた回数（6回中）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "版b＝「日付が新しいほうを採る。日付が無い組は決めない」を追加。"
+        "版c＝版bのあと同じ会話で、決めた内容を実際の経費一覧に使わせた。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 34:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, values) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, v in enumerate(values):
+            x = grid_x + col_index * (cell_w + gap)
+            resolved = v > 0
+            box = "box-accent" if resolved else "box-quiet"
+            tone = "t-accent" if resolved else "t-sm"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            mark = f"確定 {v}／6" if resolved else "要確認のまま"
+            parts.append(
+                f'<text class="{tone}" x="{x + cell_w / 2 - 30:.1f}" '
+                f'y="{y + cell_h / 2 + 5:.0f}">{mark}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 8 + 21 * 3 + 16
+    notes = [
+        ("t-sm", "※ 版bの1回だけ、問い合わせ返信の宛先という組自体に触れなかった（18回中1回）。"),
+        ("t-good", "※ 日付がある2組を古い方の値で確定した回は、版b・cとも12回中0回。"),
+        ("t-xs", "架空データでの実測。生の返り18通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 3 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "4組の矛盾を版ごとに確定できた回数で並べたマス目。行は経費精算の承認ライン（日付あり）・"
+        "見積書を送る順番（日付あり）・資料へのグラフ（日付なし）・問い合わせ返信の宛先（日付なし）。"
+        "列は版a（そのまま）・版b（日付ルールを追加）・版c（同じ会話で下流課題）。"
+        "日付がある2組は版aで6回中0回しか確定せず要確認のままだったが、版bと版cでは6回とも確定した。"
+        "日付が無い2組は3版とも6回中0回で、確定せず要確認のままだった。"
+        "日付がある2組を古い方の値で確定した回は版b・cとも12回中0回だった。"
+    )
+    (OUT / "date-decides-detect-and-decide.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def date_decides_downstream_chart() -> None:
+    """版cの2ターン目＝決めたルールを実際の経費一覧に使わせた6回の結果。
+
+    実測（2026-08-24・全6回。棒の長さ＝「要確認」に挙げた件数）。
+    古い基準（1万円）のままなら6件、更新後の基準（3万円）なら2件になるように
+    経費一覧（8件）を作ってある。
+    """
+    rows = [f"c-{i}回目" for i in range(1, 7)]
+    values = [2, 2, 2, 2, 2, 2]
+    label_w = 70
+    left = 18 + label_w
+    right = WIDTH - 190
+    span = right - left
+    axis_max = 8
+    scale = span / axis_max
+    top = 118
+    row_h = 30
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return left + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "決まったルールは、同じ会話の次の作業でも6回とも正しく使われた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "版bのやり取りに続けて、同じ会話で「このルールを使って、次の経費一覧から"
+        "要確認を挙げて」と頼んだ（全6回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "経費一覧は8件。古い基準（1万円）のままなら6件、更新後の基準（3万円）なら2件が挙がる作り。</text>\n",
+    ]
+    for i in range(axis_max + 1):
+        gx = px(i)
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + len(rows) * row_h - 6}" stroke-width="1" opacity="0.3"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{gx - 3:.1f}" y="{top - 12}">{i}</text>\n')
+
+    old_x, new_x = px(6), px(2)
+    parts.append(
+        f'<path class="line" d="M{old_x:.1f} {top - 20} L{old_x:.1f} '
+        f'{top + len(rows) * row_h - 6}" stroke-width="1.6" stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="{old_x - 66:.1f}" y="{top - 24}">古い基準なら6件（0回）</text>\n'
+    )
+    parts.append(
+        f'<path class="line" d="M{new_x:.1f} {top - 36} L{new_x:.1f} '
+        f'{top + len(rows) * row_h - 6}" stroke-width="1.6"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{new_x - 40:.1f}" y="{top - 40}">新しい基準なら2件（6回とも）</text>\n'
+    )
+
+    y = top
+    for label, value in zip(rows, values):
+        by = y + (row_h - bar_h) / 2
+        parts.append(
+            f'<text class="t-xs" x="18" y="{y + row_h / 2 + 4:.0f}">{_esc(label)}</text>\n'
+        )
+        bw = max(2.0, value * scale)
+        parts.append(
+            f'<rect class="bar-in" x="{left}" y="{by:.1f}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{left + bw + 8:.1f}" y="{by + bar_h - 3:.1f}">{value}件</text>\n'
+        )
+        y += row_h
+
+    height = y + 16 + 21 * 2 + 12
+    notes = [
+        ("t-good", "※ 6回とも、要確認に挙げた金額は35,000円と40,000円の2件でそろった。"),
+        ("t-xs", "架空データでの実測。生の返り6通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = y + 20
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "決まったルールを同じ会話の次の作業に使わせた6回の結果を並べた横棒グラフ。"
+        "経費一覧8件のうち、古い基準（1万円以上）のままなら6件、"
+        "更新後の基準（3万円以上）なら2件が要確認に挙がる作りにしてある。"
+        "c-1回目からc-6回目まで、6回ともきっちり2件が挙がり、"
+        "古い基準の6件になった回は1回も無かった。"
+        "挙げた金額も6回とも35,000円と40,000円の2件でそろっていた。"
+    )
+    (OUT / "date-decides-downstream.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
@@ -12331,4 +12510,6 @@ if __name__ == "__main__":
     three_samples_line_flips_chart()
     reply_template_line_by_version_chart()
     reply_template_grid_chart()
+    date_decides_detect_and_decide_chart()
+    date_decides_downstream_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
