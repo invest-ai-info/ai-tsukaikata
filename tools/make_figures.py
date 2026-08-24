@@ -12022,6 +12022,162 @@ def three_samples_line_flips_chart() -> None:
     )
 
 
+def reply_template_line_by_version_chart() -> None:
+    """『ほぼ同じ』の結びの一文を、誤って固定した回数（6回中）。版ごと。
+
+    実測（2026-08-24・架空の返信12通を2本、3版 × 材料2本 × 各3回 ＝ 全18回、
+    独立した新規セッションに指示文を送って機械照合）。
+    その種類の4通中3通にしか出ない一文（言い回しが1通だけ違う）を、
+    「4通全部で一字一句一致」の条件を付けずに固定してしまった回数。
+    """
+    rows = [
+        ("版a　そのまま", 5, True),
+        ("版b　＋「4通全部で一致」", 0, False),
+        ("版c　＋通数を申告させる", 0, False),
+    ]
+    label_w = 210
+    left = 18 + label_w
+    right = WIDTH - 90
+    span = right - left
+    axis_max = 6
+    scale = span / axis_max
+    top = 96
+    row_h = 40
+    bar_h = 20
+
+    def px(n: float) -> float:
+        return left + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「4通全部で一致」を付けるだけで、誤固定は6回中5回→0回になった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の返信12通を2本。同じ種類の4通のうち3通にしか出ない結びの一文（1通だけ言い回しが違う）を、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「毎回同じ文」として固定してしまった回数。3版 × 材料2本 × 各3回＝全18回、独立した新規セッションで実施。</text>\n",
+    ]
+    for i in range(axis_max + 1):
+        gx = px(i)
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + len(rows) * row_h - 10}" stroke-width="1" opacity="0.35"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{gx - 3:.1f}" y="{top - 12}">{i}</text>\n')
+
+    y = top
+    for label, value, bad in rows:
+        by = y + (row_h - bar_h) / 2
+        parts.append(f'<text class="t" x="18" y="{y + row_h / 2 + 5:.0f}">{_esc(label)}</text>\n')
+        cls = "box-bad" if bad else "box-good"
+        bw = max(2.0, value * scale)
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{by:.1f}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="4"/>\n'
+        )
+        tone = "t-bad" if bad else "t-good"
+        parts.append(
+            f'<text class="{tone}" x="{left + bw + 8:.1f}" y="{by + bar_h - 5:.1f}">'
+            f"{value}／6件</text>\n"
+        )
+        y += row_h
+
+    height = y + 16 + 21 * 3 + 12
+    notes = [
+        ("t-sm", "※ 版a（記事 mail-needs-reply.md の一文そのまま）だけが「毎回同じ文は固定して」としか言っていない。"),
+        ("t-good", "※ 版b・cは18回中12回とも0件。他の客の固有名詞が固定部に残った回数は、3版とも18回中0回。"),
+        ("t-xs", "架空データでの実測。生の返り18通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = y + 20
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "『ほぼ同じ』の結びの一文を誤って固定した回数を、3つの版で比べた横棒グラフ。"
+        "版a（そのまま）は6回中5回、版b（＋『4通全部で一致』の条件）は6回中0回、"
+        "版c（＋通数を申告させる）は6回中0回。"
+        "他の客の固有名詞が固定部に残った回数は、3版とも18回中0回だった。"
+    )
+    (OUT / "reply-template-line-by-version.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def reply_template_grid_chart() -> None:
+    """18回すべての結果を、版×回で並べたマス目。
+
+    実測（2026-08-24・全18回。青＝誤って固定しなかった／赤＝1通しか無い言い回しを固定した）。
+    """
+    rows = [
+        ("版a　そのまま", [True, False, False, False, False, False]),
+        ("版b　＋「4通全部で一致」", [True, True, True, True, True, True]),
+        ("版c　＋通数を申告させる", [True, True, True, True, True, True]),
+    ]
+    cols = ["A-1", "A-2", "A-3", "B-1", "B-2", "B-3"]
+    label_w = 200
+    cell_w, cell_h, gap = 60, 30, 8
+    top = 118
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 60 <= WIDTH - 18, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "18回すべての結果。青＝正しく空欄にした／赤＝誤って固定した</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "A＝副業ライターの返信12通、B＝ハンドメイド作家の返信12通。それぞれ独立した新規セッションに送った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "誤って固定した＝その種類の4通中3通にしか出ない結びの一文を「毎回同じ文」として型に残した。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "各セルは1回ぶんの返り。同じ版でも6回すべてを別々に数えている（まとめていない）。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 12:.1f}" y="{top - 10}">{name}</text>\n'
+        )
+
+    for row_index, (name, oks) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(name)}</text>\n')
+        for col_index, ok in enumerate(oks):
+            x = grid_x + col_index * (cell_w + gap)
+            klass = "box-accent" if ok else "box-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            mark = "空欄" if ok else "固定"
+            tone = "t-accent" if ok else "t-bad"
+            parts.append(
+                f'<text class="{tone}" x="{x + cell_w / 2 - 13:.1f}" y="{y + 20}">{mark}</text>\n'
+            )
+        ok_n = sum(oks)
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 14}" y="{y + 20}">{ok_n}／6</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 版aの1回目だけ、固定せずに両方の言い回しを併記していた（正しい側に数えた）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 13}">'
+        "架空データでの実測。生の返り18通は docs/evidence/ に全文置いてある。</text>\n"
+    )
+
+    alt = (
+        "18回すべての結果を並べたマス目。A列3回・B列3回を版a・版b・版cで比べている。"
+        "版aはA-1だけ正しく空欄にし、A-2・A-3・B-1・B-2・B-3の5回は誤って固定した。"
+        "版bと版cはA-1からB-3まで6回とも正しく空欄にした。"
+    )
+    (OUT / "reply-template-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
@@ -12173,4 +12329,6 @@ if __name__ == "__main__":
     chain_what_stage_one_passed_chart()
     three_samples_what_gets_shown_chart()
     three_samples_line_flips_chart()
+    reply_template_line_by_version_chart()
+    reply_template_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
