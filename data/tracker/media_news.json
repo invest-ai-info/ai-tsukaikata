@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T11:45:43.499439+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T11:38:58+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは8月21日、AIエージェント型開発プラットフォーム（統合開発環境）「Google Antigravity」で、Webブラウザを通じて各端末のセッションに接続・操作可能とするリモートコントロール機能を発表した。",
+      "title": "Google Antigravityに複数端末で接続・操作可能なリモートコントロール機能",
+      "uid": "de119f6f0a79c594",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135177.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-24T10:55:58.329117+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "30adcdb4d991a413",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/18/2000000544/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T23:40:28.907861+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Appleが中国のIT大手であるアリババと提携し、中国市場向けに独自のAIモデルを開発していたことが事情に詳しい関係者らの証言で明らかになりました。Appleは中国で販売されているiPhone向けに中国のパートナー企業が開発したAIモデルを利用する方針でしたが、今後数か月以内に中国でiOSのアップデートが適用された際に、独自AIモデルがリリースされる予定であると関係者らは述べています。 続きを読…",
-      "title": "Appleがアリババの支援を受けて中国専用のAIモデルを作成中、中国で独自のAIモデルを提供する最初の外国企業となる可能性大",
-      "uid": "1cc6c5ba7411d9e4",
-      "url": "https://gigazine.net/news/20260818-apple-alibaba-model/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
