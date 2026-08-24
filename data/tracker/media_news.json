@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T22:46:51.219946+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "中国で人型ロボットの競技大会が開催された。100メートル走では、人類最速のウサイン・ボルト選手が持つ記録を上回った。しかし、走るのが速いとはいえ実際の現場作業で役に立つのだろうか。",
+      "title": "中国で“ロボットの運動会”　100メートル走で“ボルト超え”……で、走るのは速いけど仕事はできるの？",
+      "uid": "08010e594f36b127",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/25/news048.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T22:46:51.219946+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "DGX SparkのようなローカルAIを存分に扱えるマシンのメリットは、複数のAIエージェントを並列で動かす「マルチエージェント」を遠慮なく回し続けられることにもあると思います。",
+      "title": "DGX Sparkでゼロから始めるAIワークステーション 「魔王軍ゲーム」でOpenClawのマルチエージェントを体感したい！",
+      "uid": "34993fc0a5a04213",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/dgxspark/2133653.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-24T14:06:31.310163+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "cce11ba4434bba5d",
       "url": "https://gigazine.net/news/20260818-nvidia-sb-energy-openai-ports-pike/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T01:52:33.611856+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T00:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "データ・デザインは、製造現場向けのAIエージェント活用に関する研究開発と実証実験を開始した。CADやCAMなどのツールを連携させ、設計から品質管理までの業務プロセスの自動化と効率化を目指す。",
-      "title": "AIエージェントでCADやCAMを連携、製造プロセス自動化へ",
-      "uid": "573703a9990b4fc7",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/18/news015.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T01:52:33.611856+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T23:40:47+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anysphereは、AIコードエディタ「Cursor」上でコードをホストできる新サービス「Origin」の初期β提供を有料プラン向けに開始した。GitHubリポジトリとの双方向同期やプルリクエストの共同レビューに対応する。VercelやCIツールとも連携し、AIエージェント規模の開発を想定した基盤を提供する。",
-      "title": "Cursor、コードホスティング機能「Origin」の初期βを提供開始　GitHubとの双方向同期に対応",
-      "uid": "c98a4cf360ad2e7a",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/18/2000000575/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
