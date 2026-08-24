@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T05:55:29.604074+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T05:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIアプリと外部のデータやツールを共通の方法で接続するオープン規格「Model Context Protocol(MCP)」が2026年8月22日に新たなロードマップを公開しました。ロードマップでは単純なツール呼び出しにとどまらず、長時間動作するAIエージェントの処理やエージェント自身の認証、大量のツールを効率よく扱う仕組みなどを今後6～12カ月の重点分野として掲げています。 続きを読む...",
+      "title": "MCPが新ロードマップを公開、長時間処理やAIエージェント認証など5分野を重点化",
+      "uid": "efb77aa7677e2fe4",
+      "url": "https://gigazine.net/news/20260824-mcp-roadmap/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-24T05:04:19.511269+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "8d684faf3ec9faaf",
       "url": "https://japan.cnet.com/article/35251620/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-17T07:18:13.464827+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T07:05:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "アマゾン ウェブ サービス ジャパン（以下、AWSジャパン）は8月17日、新プログラム「AWS ジャパン地域創生支援プログラム」（以下、LEAP by AWS ジャパン）を発表した。",
-      "title": "AWS ジャパン地域創生支援プログラムで地域企業のAI・クラウド活用を支援",
-      "uid": "0d6be78e303c0b17",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133170.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
