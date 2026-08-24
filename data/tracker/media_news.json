@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T04:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "企業にとってはあらかじめAI利用コストを想定できないと投資が決まらない。そうなると予算が立てられず、ROIの見通しもつかない。そんな企業のAIエージェント活用に立ちはだかる“予算の壁”を打破するにはどうすればよいのか。セールスフォース、IBM、マネーフォワードが提供を開始した最新機能はその打開策となるのか。",
+      "title": "AIエージェント活用を阻む“予算の壁”　セールスフォースらの新機能は打開策になり得るか？",
+      "uid": "298bd2952350a54a",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/24/news075.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T04:09:41+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "【第15回】「トークンとは」では、AIが文章を処理するときの単位である「トークン」を解説しました。また、【第8回】「RAGとは」では、社内資料などから質問に関係する情報を検索し、AIに渡して回答させる仕組みを紹介しました。",
+      "title": "AI用語の基礎知識 【第20回】「エンベディング」とは──言葉や文章を“意味の座標”に変える技術",
+      "uid": "efcd7aa9a13db95c",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2134936.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T04:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "主要なAIチャットサービスの「ChatGPT」「Gemini」「Claude Sonnet 5」の中で、応答速度が一番速いのはどれなのか。時間帯によって速度は変わるのか。測定値はどれだけ安定しているのか。実測を基に検証する。",
+      "title": "ChatGPT、Gemini、Claude Sonnet 5の“最強”は？　「速度」と「安定性」を実測して比べてみた",
+      "uid": "70146c6a9d9299f6",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/24/news049.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T04:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの出力を別のAIが評価する手法「LLM as a Judge」。その基礎をdotDataがブログで解説した。AIにAIを評価させながら、その品質を確保するにはどのような手法が有効なのか。",
+      "title": "生成AIの品質を“AIで測る”――「LLM as a Judge」を機能させる3つの要素",
+      "uid": "4358a71ef207b88a",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/24/news048.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T03:44:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI企業のAnthropicが、サイバーセキュリティ分野で高い能力を持つAIモデル「Claude Mythos 5」をセキュリティ製品「Claude Security」で利用可能になったと発表しました。これまでは攻撃への悪用リスクが懸念されて利用が制限されていたものの、Mythos 5を裏側で決められた処理だけに使用する形式にし、脆弱(ぜいじゃく)性の修正案やセキュリティ警告など決められた結果だ…",
+      "title": "「Claude Mythos 5」の提供範囲が拡大、直接プロンプトを入力できない仕組みで悪用リスクを抑制し「Claude Security」で利用可能に＆外部サービスにも提供へ",
+      "uid": "54c0d1c76d087e0d",
+      "url": "https://gigazine.net/news/20260824-claude-mythos-5-defence/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-24T03:33:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AIボットが書いた文章がネット上で増えているのだろうか。Pew Research Centerが先週発表した調査結果によると、その可能性はかなり高いという。",
+      "title": "ウェブページの1割がAI生成、「ChatGPT」登場後に増加　Pew調べ",
+      "uid": "33caba6815e68270",
+      "url": "https://japan.cnet.com/article/35251856/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T03:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "MONOistに掲載した主要な記事を、読みやすいPDF形式の電子ブックレットに再編集した「エンジニア電子ブックレット」。今回は、設計や解析など製品開発の現場で活用が進みつつあるAI関連のニュースをまとめた「AI×設計開発ニュースまとめ（2026年5～6月）」をお送りします。",
+      "title": "AI×設計開発ニュースまとめ（2026年5～6月）",
+      "uid": "3af330e39f1d312c",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/24/news020.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T05:04:19.511269+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T03:17:22+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Sakana AIは、防衛省における情報の分析業務を支援するAIの開発に関する契約を締結したと発表した。",
+      "title": "Sakana AI、防衛省の「情報分析」をAIで支援　自衛隊の指揮統制システム高度化に続き",
+      "uid": "c8e39d6484394dd7",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/24/2000000711/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-24T03:18:15.258698+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2303,102 +2399,6 @@
       "uid": "0d6be78e303c0b17",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133170.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T07:18:13.464827+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T06:12:13+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LINEヤフーは、「Yahoo!ニュース」において専門家の知見を、Agent iとの対話で得られる「エキスパートAI」の提供を開始した。このエージェントは、AIエージェント「Agent i」内で利用可能。提供期間は、8月17日～9月30日。",
-      "title": "LINEヤフー、専門家の知見を「Agent i」で提供開始 料理専門家「脱サラ料理家ふらお」さんエージェント",
-      "uid": "306d9525b17359b5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133162.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T07:18:13.464827+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T05:59:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "国立精神・神経医療研究センター（NCNP）と早稲田大学の研究グループは8月17日、脳理論に基づいたAIモデルをヒューマノイドロボットに実装し、高次元の視覚・固有受容感覚（身体感覚）を統合しながら、複数の介護動作を学習できることを実証したと発表した。",
-      "title": "脳理論に基づくAIモデルでヒューマノイドロボットが介護動作を学習 NCNPと早稲田大学が実証",
-      "uid": "97bc0a7023c06b63",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133147.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T05:52:28.010678+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T05:33:43+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Microsoft 365 Copilotを起動すると、左上に表示される「Work IQ」という表示。昨今、Microsoft関連の情報で、よく目にするが、果たしてこれが何なのか？ と疑問に思っている人も少なくないことだろう。そこで、今回は、実際にWork IQから情報を取得して、既存のMicrosoft GraphやMicrosoft 365のデータ（メールや会議など）とどう違うのかを実際に確…",
-      "title": "清水理史の「AI道場」 Copilotの「Work IQ」を直感的に理解する 「私の今の仕事は何ですか？」に適切に答えられるスゴさ",
-      "uid": "542a7a358648db3e",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/dojo/2133138.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T05:00:16.701147+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T04:47:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アリババのQwenチームが270億パラメーターのAIモデル「Qwen3.8-27B」を公開しました。モデルのウェイトはApache License 2.0で公開されており、条件を守れば商用利用も可能。手元のPCに導入できるオープンウェイトモデルながら、一部の性能テストではAnthropicの高性能モデル「Claude Opus 4.6 Max」を上回る結果も報告されています。 続きを読む...",
-      "title": "ローカルで動かせる「Qwen3.8-27B」が無償公開、一部ベンチマークでClaude Opus 4.6 Max超え",
-      "uid": "4b46d6da12a4d63c",
-      "url": "https://gigazine.net/news/20260817-qwen3-8-27b/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T05:52:28.010678+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T04:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "マーケティングにAIを活用することで、どのような課題をどう解消できるのか。キーワードは「AIペルソナ」だ。NECのBestMoveを利用する、味の素冷凍食品の事例から探る。",
-      "title": "「データがない」「スキルがない」「発想が広がらない」　味の素冷凍食品は“3つのない”をどう解消した？",
-      "uid": "1b06eefe3633e778",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/17/news071.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T05:00:16.701147+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T04:29:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIがAIがもたらす深刻なリスクを評価・軽減することを目的とした危機管理チーム「Preparedness」を解散したと報じられています。 続きを読む...",
-      "title": "OpenAIがAIのもたらす深刻なリスクを評価・軽減することを目的とした危機管理チーム",
-      "uid": "470fd5d76665556e",
-      "url": "https://gigazine.net/news/20260817-openai-reportedly-disbanded-preparedness-team/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T05:00:16.701147+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T04:26:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicのダリオ・アモデイCEOは、カリフォルニア州で成立したAI規制法に賛成の立場を示し、AIが危険になり得るというメッセージを発信しています。このことが一部の人に「AIを中央集権化して独占したいと考えているのでは」と捉えられたため、アモデイCEOが発言意図について説明しました。 続きを読む...",
-      "title": "Anthropicのダリオ・アモデイCEOが「AIの規制」について物申す、規制が中央集権化につながるという指摘に反論",
-      "uid": "29a43e0524b555eb",
-      "url": "https://gigazine.net/news/20260817-dario-amodei-comment/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T05:00:16.701147+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T04:13:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "GoogleのAIで生成した画像・動画に表示される透かし(ウォーターマーク)を削除できる機能がGeminiとFlowに追加されます。削除されるのは目に見える透かしのみで、目に見えない「SynthID」と「C2PAメタデータ」には影響しないため、Geminiに問い合わせたり専用のサービスを用いたりすることで引き続きAI生成画像かどうか識別することができます。 続きを読む...",
-      "title": "GoogleがGeminiとFlowにAIが生成した画像・動画・音楽から目に見える「透かし」を削除する切り替え機能を追加、ただしSynthID透かしとC2PAメタデータは残る",
-      "uid": "ca8304dee8ff5fa9",
-      "url": "https://gigazine.net/news/20260817-google-visible-watermarks/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
