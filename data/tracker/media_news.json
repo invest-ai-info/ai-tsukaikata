@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-24T01:59:34.827532+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-24T01:52:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "JetBrains Researchは世界中の1万5000人以上のプロの開発者を対象とした調査結果を「Developer Ecosystem Survey 2026」として発表しました。特徴的なのはClaude Codeの急上昇であり、これまでトップであったGitHub Copilotの2倍に迫るシェアとなっています。 続きを読む...",
+      "title": "プロ開発者の90％がAIコーディングエージェントを週1回以上利用、Claude CodeのシェアがGitHub Copilotを逆転して約2倍差の1位",
+      "uid": "1aef28d2484e6661",
+      "url": "https://gigazine.net/news/20260824-ai-coding-agent-adoption-trends/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-24T01:59:34.827532+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-24T00:58:17+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "一部ユーザーで使用量が想定より早く消費される問題が確認されたことを受けた対応。",
+      "title": "Codex、使用量をまたリセットへ　“消費早すぎ”問題に対応",
+      "uid": "7e1197d9f5b3db43",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/24/2000000703/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-24T01:59:34.827532+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-24T00:36:36+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Anthropicは8月20日、Claudeの各種サービスを中心にAIの使い方が学べるサイト「Claude Academy」をオープンした。さまざまな学習コースが用意されており、いずれも無料で学習できる。",
+      "title": "Anthropic、AIの使い方を無料で学べる「Claude Academy」",
+      "uid": "a3cb60cb0d9080ce",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2134870.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-23T23:37:43.394611+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2362,42 +2398,6 @@
       "title": "Z.aiがコーディング能力に優れたオープンウェイトAIモデル「GLM-5.3」リリース、前モデル比で50％の性能向上",
       "uid": "08020d6209edf834",
       "url": "https://gigazine.net/news/20260817-z-ai-glm-5-3/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-17T04:06:30.822328+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-17T03:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「国産」をうたうAIモデルをゼロから開発するPreferred Networks。なぜフルスクラッチにこだわるのか聞いた。",
-      "title": "なぜPFNは「国産AI」をゼロから開発するのか　担当者に聞く“自家製ならではの利点”",
-      "uid": "afcb3841b5c719b9",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/17/2000000441/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-17T03:14:24.845062+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-17T02:48:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、コーディングとエージェント向け主力モデルの最新版「Gemini 3.7 Flash」をリリースした。Gemini Sparkも、すでにGemini 3.7 Flashを使用している。",
-      "title": "最新モデルGemini 3.7 Flashリリース、利用価格は、Gemini 3.6 Flashの実に半額",
-      "uid": "1d73cbc417a9099a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133057.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-17T03:14:24.845062+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-17T02:43:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "EUの法律に準拠するため、AnthropicはClaudeが生成したコンテンツに「透かし(ウォーターマーク)」を追加する予定です。Anthropicが、「文章」に追加する透かしの仕組みを解説しました。 続きを読む...",
-      "title": "「AIが生成した文章であることを示す電子透かし」についてAnthropicが公式解説",
-      "uid": "351a47e82d99dd5e",
-      "url": "https://gigazine.net/news/20260817-anthropic-claude-text-watermark/",
       "vendor": "GIGAZINE"
     }
   ]
