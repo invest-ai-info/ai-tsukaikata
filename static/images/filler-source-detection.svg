@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="466" viewBox="0 0 720 466" role="img" aria-label="保存指示文3本に仕込んだ8種類の「下限を強制する指定」を、3つの頼み方×材料3本×各2回＝18回でいくつ見つけたかを、横棒グラフで並べた図。「必ず3つ挙げて」型は18回中18回、「候補から必ず1つ選んで」型は16回、「良い点と悪い点を同数で」型は12回、「原因を3つ書いて」型は12回、「表の全欄を埋めて」型は10回見つかった。一方「◯行でまとめて」型は3回、「5段階で点数を」型は2回、「各項目に一言添えて」型は2回しか見つからず、赤で示している。安全な8個の指定（上限のみ）を危険と間違えて挙げた回は、18回×8個=144件中0件だった。見つけた項目の直し方は、すべて「下限を外す・逃げ道を足す」方向で、「言葉を強める」という提案は1件も無かった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="466"/>
+<text class="t-strong" x="18" y="26">8種類の埋め草のもと、18回でいくつ見つかったか</text>
+<text class="t-sm" x="18" y="45">保存指示文3本（受信箱の仕分け／表の点検／記録の要約）に、同じ8個の危険な指定と、8個の安全な指定を1個ずつ仕込んだ。</text>
+<text class="t-sm" x="18" y="64">3つの頼み方 × 材料3本 × 各2回 ＝ 18回。棒は「見つかった回数」。</text>
+<text class="t-bad" x="18" y="86">※ 安全な8個（上限のみの指定）を「危険」と間違えて挙げた回は、18回×8個＝144件中0件だった。</text>
+<text class="t-bad" x="18" y="105">　 見つけた項目の直し方は、すべて「下限を外す・逃げ道を足す」方向。「言葉を強める」提案は1件も無かった。</text>
+<path class="line" d="M250.0 144 L250.0 404" stroke-dasharray="3 4"/>
+<text class="t-xs" x="250.0" y="138" text-anchor="middle">0回</text>
+<path class="line" d="M350.0 144 L350.0 404" stroke-dasharray="3 4"/>
+<text class="t-xs" x="350.0" y="138" text-anchor="middle">6回</text>
+<path class="line" d="M450.0 144 L450.0 404" stroke-dasharray="3 4"/>
+<text class="t-xs" x="450.0" y="138" text-anchor="middle">12回</text>
+<path class="line" d="M550.0 144 L550.0 404" stroke-dasharray="3 4"/>
+<text class="t-xs" x="550.0" y="138" text-anchor="middle">18回</text>
+<text class="t" x="18" y="169">「必ず3つ挙げて」型</text>
+<rect class="bar-new" x="250.0" y="153" width="300.0" height="16" rx="2"/>
+<text class="t" x="558.0" y="166">18/18</text>
+<text class="t" x="18" y="203">「候補から必ず1つ選んで」型</text>
+<rect class="bar-new" x="250.0" y="187" width="266.7" height="16" rx="2"/>
+<text class="t" x="524.7" y="200">16/18</text>
+<text class="t" x="18" y="237">「良い点と悪い点を同数で」型</text>
+<rect class="bar-new" x="250.0" y="221" width="200.0" height="16" rx="2"/>
+<text class="t" x="458.0" y="234">12/18</text>
+<text class="t" x="18" y="271">「原因を3つ書いて」型</text>
+<rect class="bar-new" x="250.0" y="255" width="200.0" height="16" rx="2"/>
+<text class="t" x="458.0" y="268">12/18</text>
+<text class="t" x="18" y="305">「表の全欄を埋めて」型</text>
+<rect class="bar-new" x="250.0" y="289" width="166.7" height="16" rx="2"/>
+<text class="t" x="424.7" y="302">10/18</text>
+<text class="t" x="18" y="339">「◯行でまとめて」型</text>
+<rect class="box-bad" x="250.0" y="323" width="50.0" height="16" rx="2"/>
+<text class="t-bad" x="308.0" y="336">3/18</text>
+<text class="t" x="18" y="373">「5段階で点数を」型</text>
+<rect class="box-bad" x="250.0" y="357" width="33.3" height="16" rx="2"/>
+<text class="t-bad" x="291.3" y="370">2/18</text>
+<text class="t" x="18" y="407">「各項目に一言添えて」型</text>
+<rect class="box-bad" x="250.0" y="391" width="33.3" height="16" rx="2"/>
+<text class="t-bad" x="291.3" y="404">2/18</text>
+<text class="t-xs" x="18" y="428">赤い3本（◯行でまとめて／5段階で点数を／各項目に一言添えて）が、見えにくい埋め草のもと。</text>
+<text class="t-xs" x="18" y="447">生の返り18回ぶんは docs/evidence/ に全文置いてある。</text>
+</svg>

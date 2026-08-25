@@ -12437,7 +12437,193 @@ def deadline_holiday_grid_chart() -> None:
     )
 
 
+def filler_source_detection_chart() -> None:
+    """保存指示文に仕込んだ「下限を強制する指定」8個を、3つの頼み方で18回試して
+    いくつ見つかったかを、指定の種類ごとに並べた横棒グラフ。
+
+    実測（2026-08-25）。保存指示文3本（受信箱の仕分け／表の点検／記録の要約）に、
+    同じ8個の指定を1個ずつ仕込み、3つの頼み方（そのまま聞く／下限だけ挙げて／
+    ＋書くことが無い日に何が出るか）× 材料3本 × 各2回 ＝ 18回を通した。
+    仕込みには「最大3行」「該当が無い種類はその旨」など安全な8個も混ぜてある
+    （下の②の分母）。値は grade.py の集計＋手作業での読み合わせ。
+    """
+    rows = [
+        ("「必ず3つ挙げて」型", 18),
+        ("「候補から必ず1つ選んで」型", 16),
+        ("「良い点と悪い点を同数で」型", 12),
+        ("「原因を3つ書いて」型", 12),
+        ("「表の全欄を埋めて」型", 10),
+        ("「◯行でまとめて」型", 3),
+        ("「5段階で点数を」型", 2),
+        ("「各項目に一言添えて」型", 2),
+    ]
+    label_x, label_w = 18, 232
+    plot_x = label_x + label_w
+    plot_w = 300
+    top = 150
+    row_h = 34
+    unit = plot_w / 18.0
+    bar_h = 16
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "8種類の埋め草のもと、18回でいくつ見つかったか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "保存指示文3本（受信箱の仕分け／表の点検／記録の要約）に、"
+        "同じ8個の危険な指定と、8個の安全な指定を1個ずつ仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3つの頼み方 × 材料3本 × 各2回 ＝ 18回。棒は「見つかった回数」。</text>\n",
+        '<text class="t-bad" x="18" y="86">'
+        "※ 安全な8個（上限のみの指定）を「危険」と間違えて挙げた回は、"
+        "18回×8個＝144件中0件だった。</text>\n",
+        '<text class="t-bad" x="18" y="105">'
+        "　 見つけた項目の直し方は、すべて「下限を外す・逃げ道を足す」方向。"
+        "「言葉を強める」提案は1件も無かった。</text>\n",
+    ]
+    for v in (0, 6, 12, 18):
+        gx = plot_x + v * unit
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + row_h * len(rows) - 18}" stroke-dasharray="3 4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{gx:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{v}回</text>\n'
+        )
+
+    y = top
+    for label, val in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty + 5}">{_esc(label)}</text>\n')
+        w = max(val * unit, 2.0)
+        klass = "bar-new" if val >= 10 else ("bar-old" if val >= 5 else "box-bad")
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x:.1f}" y="{ty - 11}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        cls = "t-bad" if val < 5 else "t"
+        parts.append(
+            f'<text class="{cls}" x="{plot_x + w + 8:.1f}" y="{ty + 2}">{val}/18</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-xs", "赤い3本（◯行でまとめて／5段階で点数を／各項目に一言添えて）が、見えにくい埋め草のもと。"),
+        ("t-xs", "生の返り18回ぶんは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y
+    alt = (
+        "保存指示文3本に仕込んだ8種類の「下限を強制する指定」を、"
+        "3つの頼み方×材料3本×各2回＝18回でいくつ見つけたかを、横棒グラフで並べた図。"
+        "「必ず3つ挙げて」型は18回中18回、「候補から必ず1つ選んで」型は16回、"
+        "「良い点と悪い点を同数で」型は12回、「原因を3つ書いて」型は12回、"
+        "「表の全欄を埋めて」型は10回見つかった。"
+        "一方「◯行でまとめて」型は3回、「5段階で点数を」型は2回、"
+        "「各項目に一言添えて」型は2回しか見つからず、赤で示している。"
+        "安全な8個の指定（上限のみ）を危険と間違えて挙げた回は、18回×8個=144件中0件だった。"
+        "見つけた項目の直し方は、すべて「下限を外す・逃げ道を足す」方向で、"
+        "「言葉を強める」という提案は1件も無かった。"
+    )
+    (OUT / "filler-source-detection.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def filler_source_five_scale_chart() -> None:
+    """見つけにくかった代表例「5段階で点数をつけてください」を、
+    頼み方5通りでいくつ見つけたかを並べた横棒グラフ。
+
+    実測（2026-08-25）。開いて聞く／下限だけ挙げて／＋書くことが無い日に何が出るか
+    は各6回（材料3本×2回）。一括で「全部見直して」まで含めて一度に頼むのは
+    材料3本×1回＝3回（新規エージェント）。もう一度全部見直してと重ねて聞くのは、
+    最初に開いて聞いた3つの会話に、材料ごと1回だけ追加で聞いた。
+    """
+    rows = [
+        ("そのまま開いて聞く", 0, 6),
+        ("「下限だけ挙げて」と絞る", 1, 6),
+        ("＋書くことが無い日に何が出るか", 1, 6),
+        ("一度に「全部見直して」まで頼む", 0, 3),
+        ("あとから「もう一度全部見直して」", 3, 3),
+    ]
+    label_x, label_w = 18, 250
+    plot_x = label_x + label_w
+    plot_w = 280
+    top = 130
+    row_h = 40
+    unit = plot_w / 6.0
+    bar_h = 17
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「5段階で点数をつけてください」は、聞き方でこれだけ変わる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "見つけにくかった8個中の1つを取り出した図。上4つは新規の会話、"
+        "いちばん下だけは同じ会話への重ね聞き。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "近くにある「無ければ空欄でよい」という逃げ道は、実は隣の指定にかかっていて、"
+        "この指定自身には届いていなかった。</text>\n",
+    ]
+    for v in (0, 3, 6):
+        gx = plot_x + v * unit
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + row_h * len(rows) - 22}" stroke-dasharray="3 4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{gx:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{v}回</text>\n'
+        )
+
+    y = top
+    for label, val, denom in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty + 5}">{_esc(label)}</text>\n')
+        w = max(val * unit, 2.0)
+        klass = "box-good" if val == denom else ("bar-old" if val else "box-bad")
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x:.1f}" y="{ty - 11}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        cls = "t-good" if val == denom else ("t" if val else "t-bad")
+        parts.append(
+            f'<text class="{cls}" x="{plot_x + w + 8:.1f}" y="{ty + 3}">{val}/{denom}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 一番下だけ緑＝あとから同じ会話に重ねて聞くと、3つの会話とも見つけた。"),
+        ("t-xs", "生の返り（5通り・21回ぶん）は docs/evidence/ に全文置いてある。"),
+    ]
+    y += 4
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y
+    alt = (
+        "見つけにくかった埋め草のもとの代表例「5段階で点数をつけてください」を、"
+        "頼み方5通りでいくつ見つけたかを並べた横棒グラフ。"
+        "そのまま開いて聞くと6回中0回、「下限だけ挙げて」と絞ると6回中1回、"
+        "＋書くことが無い日に何が出るかを足しても6回中1回しか見つからなかった。"
+        "一度に「全部見直して」まで含めて新規の会話で頼んでも3回中0回。"
+        "ところが、最初に開いて聞いた同じ会話に、あとから"
+        "「もう一度全部見直して」と重ねて聞くと、3回中3回とも見つけた。"
+        "近くにあった「無ければ空欄でよい」という逃げ道は、"
+        "実は隣の指定にかかっていて、この指定自身には届いていなかったことが分かった。"
+    )
+    (OUT / "filler-source-five-scale.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    filler_source_detection_chart()
+    filler_source_five_scale_chart()
     proposal_what_repeats_chart()
     proposal_answers_drift_chart()
     take_home_two_readings_chart()
