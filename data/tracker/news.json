@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T16:03:10.619977+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-25T07:05:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost.",
+      "summary_ja": "OpenAIのCFOがAI進歩の仕組みを説明\nチップや計算力、AIモデル、製品の改良が連携\nより有用なAIを大規模かつ低コストで提供",
+      "summary_source": "gemini",
+      "title": "The full stack behind abundant intelligence",
+      "uid": "b9a91e7b61e40fe7",
+      "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-25T15:07:57.999147+00:00",
       "importance": "minor",
       "label": "OpenAI News",

@@ -22,7 +22,7 @@
     "media-impress-ai": "2026-08-25T10:17:20+00:00",
     "media-itmedia-aiplus": "2026-08-25T10:42:15+00:00",
     "media-publickey": "2026-08-25T17:58:38+00:00",
-    "openai-news": "2026-08-25T07:00:00+00:00",
+    "openai-news": "2026-08-25T07:05:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-14T15:55:10+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -83,6 +83,17 @@
       "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
       "uid": "36a303db949829a0",
       "url": "https://openai.com/index/jalapeno-first-results",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-25T07:05:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost.",
+      "title": "The full stack behind abundant intelligence",
+      "uid": "b9a91e7b61e40fe7",
+      "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
       "vendor": "OpenAI"
     }
   ],
@@ -940,6 +951,7 @@
     "b906ded8ea198335": "2026-08-02T11:35:58.106550+00:00",
     "b91510b89c37e7c1": "2026-08-20T01:53:51.496322+00:00",
     "b93a924e0aa01f70": "2026-08-13T12:01:33.145239+00:00",
+    "b9a91e7b61e40fe7": "2026-08-25T16:03:10.619977+00:00",
     "b9bbc1f779a14f15": "2026-08-21T04:56:26.839358+00:00",
     "b9fe5513c0e3f042": "2026-08-14T11:59:16.623121+00:00",
     "ba37c24ae1debc0d": "2026-08-20T22:47:29.624906+00:00",
