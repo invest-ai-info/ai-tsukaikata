@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T01:54:23.504301+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T01:00:38+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日本にも拠点を置くRLWRLD（リアルワールド）は、フィジカルAI分野で注目を集める国際企業だ。産業用ロボットの導入もかなり進んでいる日本市場で最近起こった変化について聞いた。",
+      "title": "「今からロボットを現場投入できないか？」　増えた日本企業からの問い合わせ　“頭脳”を作る韓国企業が感じた国内の変化",
+      "uid": "463abd3e72630e60",
+      "url": "https://www.itmedia.co.jp/news/article/2608/25/2000000731/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-25T01:54:23.504301+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T00:39:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントの登場により、深夜のインシデント発生時における人間のエンジニアの役割を劇的に変えつつあります。従来はアラーム発生時のトリアージ(原因および影響範囲の特定)作業はエンジニアが担ってきましたが、トリアージをAIが肩代わりすることにより人間は最終的な意思決定に集中できるようになるというビジョンが現実味を帯びてきました。 続きを読む...",
+      "title": "AIエージェントが24時間体制で本番障害の一次調査を自動化、人間の役割は「判断」のみに",
+      "uid": "0a7e8ae2f475d5be",
+      "url": "https://gigazine.net/news/20260825-trust-agent-triage/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-24T23:39:49.823706+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2374,30 +2398,6 @@
       "title": "NEC、Microsoft Marketplaceで業務自動化AIエージェント「NEC cotomi Agent」を販売開始",
       "uid": "a3fd225eeca9f71e",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133450.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T04:00:09.864899+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T03:22:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが経営破綻した格安航空会社スピリット航空の社内データを1000万ドル(約16億円)で取得する見通しであることが分かりました。購入対象には約1億件のメールや約5億件のMicrosoft Teamsのチャットなどが含まれており、Googleは製品開発やAIモデルの改善に利用する方針です。 続きを読む...",
-      "title": "Googleが倒産したスピリット航空のメール1億件・Teamsチャット5億件を約16億円で購入へ、AIモデルの学習などに利用",
-      "uid": "1abaac12930647cf",
-      "url": "https://gigazine.net/news/20260818-google-buy-bankrupt-airline/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T04:00:09.864899+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T03:19:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "DeepLは、開発者向けのポータルページ「DeepL for Developers」を新設した。無料のAPIキーは、クレジットカードの登録なしに取得することができる。",
-      "title": "DeepL、開発者向けポータルページ「DeepL for Developers」を新設",
-      "uid": "baff6d513517b290",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133412.html",
       "vendor": "Impress AI Watch"
     }
   ]

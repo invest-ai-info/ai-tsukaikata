@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T01:54:23.504301+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-24T23:40:26+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a Loops breakdown to /usage : per-loop run count, total tokens, tokens per run, and last run, so runaway or chatty /loop tasks are easy to spot Added modelPicker setting: curate …",
+      "title": "v2.1.243",
+      "uid": "ccc5f931853e9877",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.243",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-24T20:50:31.202024+00:00",
       "importance": "minor",
       "label": "OpenAI News",
