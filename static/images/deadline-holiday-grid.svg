@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="326" viewBox="0 0 720 326" role="img" aria-label="受注日4件（9/4金・9/7月・9/18金・9/28月）に「中5営業日で」と逆算させた結果を、版ごとに並べたマス目。休みを言わない版aは、翌営業日にずらす・暦日のまま使う・非営業日を着手日にする・答えた着手日と計算が矛盾する、と4件とも別々の挙動だった。架空の祝日表を渡した版bと、さらに数え方の定義文を足した版cは、どちらも4件とも真値と一致し、結果の内容も完全に同じだった。">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="347" viewBox="0 0 720 347" role="img" aria-label="受注日4件（9/4金・9/7月・9/18金・9/28月）に「中5営業日で」と逆算させた結果を、版ごとに並べたマス目。休みを言わない版aは、起算日の決め方が3通りに割れた——9/4と9/7は翌営業日にずらす規則で説明でき区別できない、9/18は非営業日を着手日にする、9/28は答えた着手日と計算が矛盾する。架空の祝日表を渡した版bと、さらに数え方の定義文を足した版cは、どちらも4件とも真値と一致し、結果の内容も完全に同じだった。">
 <style>
   .bg { fill: #fbfcfd; }
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
@@ -41,9 +41,9 @@
     .bar-new { fill: #7ab0ff; }
   }
 </style>
-<rect class="bg" x="0" y="0" width="720" height="326"/>
-<text class="t-strong" x="18" y="26">休みを言わない版だけ、4件とも起算日の決め方が違った</text>
-<text class="t-sm" x="18" y="45">受注日4件（金曜／連休直前の金曜／祝日前日の月曜／月をまたぐ月曜）に「中5営業日で」とだけ頼んだ（版a）。</text>
+<rect class="bg" x="0" y="0" width="720" height="347"/>
+<text class="t-strong" x="18" y="26">休みを言わない版は、起算日の決め方が3通りに割れた</text>
+<text class="t-sm" x="18" y="45">受注日4件（金曜／祝日前日の月曜／連休直前の金曜／月をまたぐ月曜）に「中5営業日で」とだけ頼んだ（版a）。</text>
 <text class="t-sm" x="18" y="64">同じ4件に、架空の祝日表を渡した版（版b）と、数え方の定義文まで足した版（版c）も試した。</text>
 <text class="t-sm" x="18" y="83">版b・版cは、返ってきた着手日・納品日が4件とも真値と一致し、内容も完全に同じだった。</text>
 <text class="t-xs" x="236.0" y="118">9/4(金)</text>
@@ -54,7 +54,7 @@
 <rect class="box-accent" x="210" y="130" width="96" height="32" rx="4"/>
 <text class="t-accent" x="235.6" y="150">翌営業日</text>
 <rect class="box-accent" x="316" y="130" width="96" height="32" rx="4"/>
-<text class="t-accent" x="336.0" y="150">暦日のまま</text>
+<text class="t-accent" x="341.6" y="150">翌営業日</text>
 <rect class="box-bad" x="422" y="130" width="96" height="32" rx="4"/>
 <text class="t-bad" x="447.6" y="150">非営業日</text>
 <rect class="box-bad" x="528" y="130" width="96" height="32" rx="4"/>
@@ -77,6 +77,7 @@
 <text class="t-good" x="458.8" y="234">一致</text>
 <rect class="box-good" x="528" y="214" width="96" height="32" rx="4"/>
 <text class="t-good" x="564.8" y="234">一致</text>
-<text class="t-xs" x="18" y="289">※ 版aの真値は「週末のみ除いた場合」。版b・cの真値は架空の祝日表ありの場合で、両者は別の値になる。</text>
-<text class="t-xs" x="18" y="310">架空データでの実測。生の返り12回は docs/evidence/ に全文置いてある。</text>
+<text class="t-xs" x="18" y="289">※ 9/4と9/7は、どちらも「翌営業日」の規則で説明でき、この2件だけでは区別できない。</text>
+<text class="t-xs" x="18" y="310">※ 版aの真値は「週末のみ除いた場合」。版b・cの真値は架空の祝日表ありの場合で、両者は別の値になる。</text>
+<text class="t-xs" x="18" y="331">架空データでの実測。生の返り12回は docs/evidence/ に全文置いてある。</text>
 </svg>
