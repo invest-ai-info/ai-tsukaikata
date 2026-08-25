@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T07:10:25.158045+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T06:38:38+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NECパーソナルコンピュータ（NEC PC）は8月25日、個人向けパソコンおよびタブレットの2026年夏モデル全6機種を発表した。",
+      "title": "NEC PC、「LAVIE N16」など2026年夏モデルを発表 独自のAIサポート機能を強化",
+      "uid": "dbec62b147f9d794",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135391.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T07:10:25.158045+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T06:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NTTは8月25日、AIとロボット技術を連携させた「解釈可能な自律成膜」技術を実証し、次世代パワー半導体材料とされるβ型酸化ガリウムの高品質な単結晶薄膜をスパッタ法で世界で初めて作製することに成功したと発表した。",
+      "title": "NTT、「AI駆動型ラボ」で次世代パワー半導体素材の自律成膜に成功",
+      "uid": "915e000741820212",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135171.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T07:10:25.158045+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T05:51:52+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "OpenAIは、ChatGPT Imagesを使い、自分だけのステッカーパックを作成できるようになったと発表した。",
+      "title": "OpenAI、ChatGPTでパーソナライズできるステッカーを提供開始",
+      "uid": "a432939a2be24810",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135355.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T07:10:25.158045+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T05:35:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ある調査によると、社内IT環境の不備によって従業員1人あたり年147時間が失われるという。しかも、この損失はほとんど可視化されておらず、運用課題のずれや、採用・離職へ影響している可能性もある。",
+      "title": "社内ITの不備で1人年18営業日の時間ロス、100人企業で約4400万円の損失換算に",
+      "uid": "efc5fa13cdab132b",
+      "url": "https://kn.itmedia.co.jp/kn/article/2608/25/2000000716/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-25T05:49:35.979180+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "e2e21ea9abd3b976",
       "url": "https://gigazine.net/news/20260819-egpu-dock-chestnut/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T20:42:26.846917+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T20:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "手に汗握るホラー映画を観た後では、観る前よりも握力が強くなったような気がしませんか？ 同じ人の2回の測定値の差を求め、ベイズ統計により検定します。事前分布のパラメーターを変えても結果が安定するかどうかを調べる「感度分析」にも触れます。『社会人1年生から学ぶ、やさしいデータ分析』ベイズ統計編の第7回です。",
-      "title": "【Pythonで学ぶデータ分析】対応のあるデータの母平均に差があるかどうかをベイズt検定で調べる ～ ホラー映画を観ると握力は上がるのか？",
-      "uid": "506522ed54584f2e",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news004.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T14:54:17.878970+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-08-18T15:55:25+00:00",
-      "source_id": "media-publickey",
-      "summary": "Googleは、完全準同型暗号を利用したAIモデル用のオープンソースコンパイラ「HEIR」を発表しました。 AIモデルをコンパイルする「HEIR」 HEIRはAIモデル用のコンパイラとツールチェーンであり、これを用いて学習済みAIモデルのP...",
-      "title": "Google、AIモデルをコンパイルして暗号データを復号せずに扱えるように変換する「HEIR」発表。完全準同型暗号を利用し、AIでのセキュリティやプライバシー保護など実現へ",
-      "uid": "0ac02b70cb8fa0e0",
-      "url": "https://www.publickey1.jp/blog/26/googleaiheirai.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-18T13:58:51.108779+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-08-18T15:43:29+00:00",
-      "source_id": "media-publickey",
-      "summary": "AIコードエディタのCursorなどを提供するAnysphereは、Gitに対応したコードホスティングサービス「Origin」を発表しました。 Origin, our code hosting platform, is now live.I...",
-      "title": "AIエージェント時代のGitホスティングサービス「Origin」、Cursorが発表。Cursorとの統合、コマンドラインでの操作、GitHubとの同期など提供",
-      "uid": "fa4116ea6546df70",
-      "url": "https://www.publickey1.jp/blog/26/aigitorigincursorcursorgithub.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-18T10:48:44.525538+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T10:13:33+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "イメージ・マジックは8月18日、Mimaki UVプリンター「UJF-7151 plusII」専用のAIカメラシステム「IM-V7 PRO MAX」を発売した。",
-      "title": "治具不要でUVプリント業務を自動化するAIカメラ「IM-V7 PRO MAX」",
-      "uid": "bc522cd98c6fdf3d",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133640.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
