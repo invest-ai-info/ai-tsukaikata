@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T03:14:16.175949+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T03:12:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "NVIDIA製CPU「Vera CPU」がSpaceXAIによって大規模導入されることが明らかになりました。また、2027年中にVera Rubin NVL72をベースとしたAIシステムを軌道上に打ち上げる計画も進んでいます。 続きを読む...",
+      "title": "SpaceXAIがNVIDIAと協力して宇宙空間で動作するAIシステムを本格化＆NVIDIA製AIエージェント用CPU「Vera CPU」の大規模導入も発表",
+      "uid": "b82f06818b0f4957",
+      "url": "https://gigazine.net/news/20260825-nvidia-spacexai-vera-space/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T03:14:16.175949+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T02:53:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Metaが2026年8月24日、100万GPU規模のAIインフラをEthernetで接続することを想定した新しいプロトコル「MetaRoCE」を発表しました。従来のRoCEv2が前提としていた「パケットを順番通りに届ける」「できるだけパケットを失わせない」という考え方を見直し、パケットの到着順が入れ替わったり一部が失われたりする大規模ネットワークでも高い通信性能を維持できるよう設計されています。…",
+      "title": "Metaが100万GPU規模を想定した新通信プロトコル「MetaRoCE」を発表、パケットロスを前提にEthernetでAIクラスタを高速接続",
+      "uid": "93ee7c2b27f1799a",
+      "url": "https://gigazine.net/news/20260825-meta-rdma-protocol-metaroce/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T03:14:16.175949+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T02:26:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ローカルで実行可能なAIモデルの中にはスマートフォンでの動作も可能な小型モデルも存在します。新たに、AIの性能分析を行っているArtificial Analysisが「iPhone 17 Proでどのように動作するか」に着目したベンチマーク結果を公開しました。 続きを読む...",
+      "title": "各種AIのiPhoneでの動作性能を測定した結果がArtificial Analysisによって公開される、コンテキスト長や応答時間を制限して実環境に近い性能を測定",
+      "uid": "b5652c0266d5cb58",
+      "url": "https://gigazine.net/news/20260825-iphone-ai-benchmark/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T03:14:16.175949+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T02:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "シャープは、対話AIキャラクター「ポケとも」の第2弾を12月に発売する。",
+      "title": "シャープ、対話AIキャラクター「ポケとも」第2弾を12月発売",
+      "uid": "7ae01a4c429092ae",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135242.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-25T01:54:23.504301+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2351,54 +2399,6 @@
       "uid": "de14ce397966e53d",
       "url": "https://gigazine.net/news/20260818-telegram-pirates/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T07:06:54.679285+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T05:54:07+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SB C&Sが展開するオーディオブランド「GLIDiC」は、AIを搭載した次世代型イヤホン「GLIDiC AI +uBuds」を8月18日よりオンラインショップにて一般販売を開始した。価格はオープン価格だが、オンラインショップ限定で29,800円。",
-      "title": "音声録音はもちろん、アドバイスしてくれるAIイヤホン「GLIDiC AI +u Buds」 8月18日よりオンラインショップにて一般販売開始",
-      "uid": "d148769090c9a0a5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133497.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T05:46:53.344840+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-18T05:05:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "SB C&Sは8月18日、AIイヤホン「GLIDiC AI +u Buds」を一般発売した。会議や通話をワンプッシュで録音し、AIが文字起こしと要約を行い、「次の一手」まで助言するのが特徴だ。同日から「トレテク！ソフトバンクセレクション」など各オンラインショップで販売し、9月4日には全国のソフトバンクショップでも取り扱いを始める。希望小売価格は税込2万9800円。",
-      "title": "ソフトバンク系、AIイヤホン「GLIDiC AI +u Buds」一般販売　会議や商談も要約",
-      "uid": "9f065f1cadf1c8d2",
-      "url": "https://japan.cnet.com/article/35251643/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-18T04:54:30.671033+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T04:43:58+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本エイサーは8月18日、薄型軽量ノートパソコンブランド「Swift（スイフト）」より、AMD Ryzen AI 7 345プロセッサーを搭載し、16型の大画面ながら重量約990gを実現した「Swift Air 16（SFA16-61M-N73Y）」を、Acer公式オンラインストアおよびAcerダイレクト各店、ならびにAmazonで発売した。",
-      "title": "AMD Ryzen AI 7 345CPU搭載のCopilot+ PC「Swift Air 16」新モデル",
-      "uid": "d71b638eec0baad7",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133468.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T04:54:30.671033+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T04:13:51+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本電気（NEC）は、企業のデジタル業務を自動化するAIエージェント「NEC cotomi Agent」を、8月よりMicrosoft Marketplaceにて販売開始した。まずは日本市場向けに展開し、今後はグローバル市場へ展開していく予定。",
-      "title": "NEC、Microsoft Marketplaceで業務自動化AIエージェント「NEC cotomi Agent」を販売開始",
-      "uid": "a3fd225eeca9f71e",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133450.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
