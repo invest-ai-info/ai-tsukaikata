@@ -9,12 +9,12 @@
   },
   "failures": {},
   "latest": {
-    "anthropic-news": "2026-08-14T19:16:00+00:00",
+    "anthropic-news": "2026-08-25T17:00:00+00:00",
     "anthropic-sdk": "2026-08-20T19:58:48+00:00",
     "claude-code": "2026-08-25T05:13:24+00:00",
     "deepmind-blog": "2026-08-21T11:59:48+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-08-19T19:00:00+00:00",
+    "google-ai-blog": "2026-08-25T16:00:00+00:00",
     "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-25T09:37:00+00:00",
@@ -95,6 +95,28 @@
       "uid": "b9a91e7b61e40fe7",
       "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-25T17:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re launching a $5 million grant program to fund independent research into how AI impacts users’ wellbeing.",
+      "title": "Funding better evaluations of AI’s impact on wellbeing",
+      "uid": "481d8ed51bc55b5e",
+      "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-25T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Illustration of ombre rainbow furniture items like a sofa, lamp, and chair against a purple background",
+      "title": "5 ways to upgrade your home decor with Google Search",
+      "uid": "a24044a4d9cfa29a",
+      "url": "https://blog.google/products-and-platforms/products/search/home-decor-tips/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -441,6 +463,7 @@
     "47589f54860f380c": "2026-08-19T05:48:17.932182+00:00",
     "47768a276e7fb997": "2026-08-21T07:59:31.514037+00:00",
     "480eb09850c463ce": "2026-08-20T04:55:18.164229+00:00",
+    "481d8ed51bc55b5e": "2026-08-25T16:58:07.451889+00:00",
     "4831eb0f4620e41c": "2026-08-10T23:52:14.190919+00:00",
     "4853f3433bc25365": "2026-08-04T11:04:53.115730+00:00",
     "48967fc9840a5ddc": "2026-08-24T11:45:43.499439+00:00",
@@ -836,6 +859,7 @@
     "a1d68b672d017794": "2026-08-01T12:16:42.309603+00:00",
     "a202b7bded482669": "2026-08-13T12:01:33.145239+00:00",
     "a21a4a50aa103b6e": "2026-08-01T12:16:42.309603+00:00",
+    "a24044a4d9cfa29a": "2026-08-25T16:58:07.451889+00:00",
     "a24e92277664bcfa": "2026-08-20T08:58:16.409338+00:00",
     "a24f8c5763daf39c": "2026-08-01T12:16:42.309603+00:00",
     "a308efebc7f4e70d": "2026-08-07T00:17:27.231353+00:00",

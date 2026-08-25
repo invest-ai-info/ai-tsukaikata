@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T16:58:07.451889+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-25T17:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re launching a $5 million grant program to fund independent research into how AI impacts users’ wellbeing.",
+      "summary_ja": "AIが利用者の幸福度への影響研究を助成開始\n独立研究に総額500万ドルを資金提供",
+      "summary_source": "gemini",
+      "title": "Funding better evaluations of AI’s impact on wellbeing",
+      "uid": "481d8ed51bc55b5e",
+      "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-25T16:58:07.451889+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-08-25T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Illustration of ombre rainbow furniture items like a sofa, lamp, and chair against a purple background",
+      "summary_ja": "グラデーションの家具のイラストを公開\nソファやランプ、椅子などが描かれている\n背景は紫色",
+      "summary_source": "gemini",
+      "title": "5 ways to upgrade your home decor with Google Search",
+      "uid": "a24044a4d9cfa29a",
+      "url": "https://blog.google/products-and-platforms/products/search/home-decor-tips/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-08-25T16:03:10.619977+00:00",
       "importance": "minor",
       "label": "OpenAI News",
