@@ -252,6 +252,9 @@
     - 💡 **次にこの行を見る人へ**＝①が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
       無ければ `- [x]` にせず、**題材として見送ったと明記して閉じる**のが正しい。
 
+- [ ] https://openai.com/index/introducing-admin-plugin
+  - 2026-08-25 自動追記（major・OpenAI「Introducing the Admin plugin for ChatGPT Work and Codex」）
+
 ## 処理済み
 
 - https://openai.com/index/daybreak-models-are-now-available-on-aws → **公開済み** content/tools/daybreak-on-bedrock.md（2026-08-21・公開）

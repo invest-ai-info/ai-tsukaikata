@@ -97,6 +97,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-08-25T17:47:02.362853+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-08-25T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests.",
+      "summary_ja": "ChatGPT WorkとCodexに管理機能が追加。\nワークスペースの利用状況分析、メンバー管理が可能に。\n利用制限の調整や管理者要望への対応もできます。",
+      "summary_source": "gemini",
+      "title": "Introducing the Admin plugin for ChatGPT Work and Codex",
+      "uid": "1bfef5e8c32e8074",
+      "url": "https://openai.com/index/introducing-admin-plugin",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-25T01:54:23.504301+00:00",
       "importance": "minor",
       "label": "Claude Code",
