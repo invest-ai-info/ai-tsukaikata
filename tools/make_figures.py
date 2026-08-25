@@ -12437,6 +12437,84 @@ def deadline_holiday_grid_chart() -> None:
     )
 
 
+def material_match_vs_facts_chart() -> None:
+    """「言い換えて」の強さを3段階にしたとき、資料との20字以上一致と、
+    社名・地名・数字などの事実の残り方が、それぞれどう動いたかを並べたマス目。
+
+    実測（2026-08-25）。架空の紹介資料3本（各1社ぶん）に、同じ依頼文を
+    版a（そのまま）／版b（＋自分の言葉で書き直して）／版c（＋20字以上つながらないように、
+    ただし固有名詞と数字はそのまま）の3版で送った。資料3本×3版×2試行＝18回。
+    20字以上の一致は Python の difflib で機械判定。事実は社名・地名・創業年・人数・
+    数量・締め日など資料ごと6項目（計36項目）を正規表現で照合した。
+    """
+    cols = ["20字以上の一致（6回合計）", "事実の保持（36項目中）", "慣用句の一致（30個中）"]
+    rows = [
+        ("版a　そのまま頼む", ["19件", "36/36", "7/30"], ["box-bad", "box-good", "box-quiet"], ["t-bad", "t-good", "t-sm"]),
+        ("版b　＋自分の言葉で", ["6件", "36/36", "0/30"], ["box-accent", "box-good", "box-quiet"], ["t-accent", "t-good", "t-sm"]),
+        ("版c　＋20字以上つなげない", ["0件", "34/36", "0/30"], ["box-good", "box-accent", "box-quiet"], ["t-good", "t-accent", "t-sm"]),
+    ]
+
+    label_w = 190
+    cell_w, cell_h, gap = 150, 34, 10
+    top = 138
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "言い換えを強めるほど一致は消えたが、事実はほとんど残った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の紹介資料3本に「この資料をもとに紹介文を書いて」と頼み、言い換えの指示を3段階で足した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "版cで欠けた2件は、いずれも同じ資料の「横浜市」から「市」が落ちた回だった（本文参照）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "慣用句（決まり文句5個）は、言い換えを頼んだ版b・cでは1件も残らなかった。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, cells, boxes, tones) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 22}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[col_index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="{tones[col_index]}" x="{tx:.1f}" y="{y + 22}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 16
+    notes = [
+        ("t-xs", "※ 事実の項目＝社名・所在地・創業年・人数・数量・締め日など資料1本につき6項目。正規表現で照合。"),
+        ("t-xs", "架空データでの実測。生の返り18回は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "架空の紹介資料3本をもとに紹介文を書かせ、言い換えの指示を3段階にしたときの、"
+        "20字以上の一致件数と、事実の保持数を並べたマス目。"
+        "版a（そのまま頼む）は6回合計で19件の一致があり、事実は36項目中36件が残った。"
+        "版b（自分の言葉で書き直して、を足す）は一致が6件に減り、事実は36件のまま残った。"
+        "版c（20字以上つながらないように、ただし固有名詞と数字はそのまま、を足す）は一致が0件になったが、"
+        "事実は36項目中34件に減った。慣用句5個の一致は、版b・cではいずれも0件だった。"
+    )
+    (OUT / "material-match-vs-facts.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def filler_source_detection_chart() -> None:
     """保存指示文に仕込んだ「下限を強制する指定」8個を、3つの頼み方で18回試して
     いくつ見つかったかを、指定の種類ごとに並べた横棒グラフ。
@@ -12779,4 +12857,5 @@ if __name__ == "__main__":
     date_decides_detect_and_decide_chart()
     date_decides_downstream_chart()
     deadline_holiday_grid_chart()
+    material_match_vs_facts_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
