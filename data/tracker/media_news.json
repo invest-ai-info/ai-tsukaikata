@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T04:04:08.570654+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T03:28:57+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米Figure AIの人型ロボットが本社周辺の屋外を歩き回る様子を捉えた動画がXで話題だ。同社のブレット・アドコックCEOは「FigureのキャンパスはSF映画だ」とコメントした。",
+      "title": "人型ロボットが本社周辺をうろうろ　米Figureの目撃動画が話題、CEO「キャンパスは“SF映画”」",
+      "uid": "dc9ed4a706c0fde9",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000738/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-25T04:04:08.570654+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T03:26:32+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NVIDIAは、AI推論性能を大幅に向上させるインタラクティブAI推論アクセラレーター「NVIDIA Groq 3 LPX」の量産を開始したと発表した。",
+      "title": "エージェント型AI向けに世界トップクラスの処理速度を実現するNVIDIA Groq 3 LPX量産開始",
+      "uid": "f3c920a0da79bacf",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135286.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T04:04:08.570654+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T03:13:21+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "博報堂およびインキュデータは8月24日、独自のAIエージェントを活用した新たなサービス開発を支援するプログラム「AI Service Design Program」の提供を開始した。",
+      "title": "企業の新たなサービス開発を支援する「AI Service Design Program」",
+      "uid": "1822b58d1b193cc0",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135278.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-25T03:14:16.175949+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -11,6 +47,18 @@
       "uid": "b82f06818b0f4957",
       "url": "https://gigazine.net/news/20260825-nvidia-spacexai-vera-space/",
       "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T04:04:08.570654+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T03:10:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "8月13日午後から夜にかけて千葉県を襲った記録的な大雨「令和8年8月千葉豪雨」。線状降水帯が繰り返し発生し、千葉市では観測史上1位となる雨量を記録、死者・行方不明者が出る大きな災害となった。現代の天気予報は、なぜこれほどの豪雨を直前まで捉えられなかったのか。ウェザーニューズ（千葉市美浜区）の気象予報士・内藤邦裕氏に聞いた。",
+      "title": "千葉豪雨、なぜ当日昼前まで予測できなかったのか　ウェザーニューズに聞く「天気予報のメカニズム」のイマ",
+      "uid": "fa4ca7d126877d4a",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000689/",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-08-25T03:14:16.175949+00:00",
@@ -2351,54 +2399,6 @@
       "uid": "8d970617a6b94375",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133537.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T07:56:05.033057+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T07:10:03+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Mizkan（以下、ミツカン）とOISSYは8月18日、味覚センサーAI「レオ」を用い、ソース・醤油・塩など、たこ焼きにつけて食べられる調味料との相性度を測定したと発表した。",
-      "title": "ミツカンとOISSY、味覚センサーAI「レオ」でたこ焼きに合う調味料を測定",
-      "uid": "c173c011a1d099f2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133513.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T07:06:54.679285+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T07:05:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIは2026年7月に「テスト中の自社製モデルがHugging Faceに対するサイバー攻撃を実行してしまった」というセキュリティインシデントを報告しました。この「AIによって自律的にサイバー攻撃が実行された」という事例を受けて、OpenAIの共同創業者であり社長も務めるグレッグ・ブロックマン氏が「AIからの攻撃を防止するために取り組むべき10の事柄」を解説する記事を公開しました。解説記…",
-      "title": "Hugging Faceを攻撃してしまったOpenAIが「AIからの攻撃を防止する方法10選」を公開、CodexなどのAIツールの活用を呼びかけ",
-      "uid": "929f585366e58db3",
-      "url": "https://gigazine.net/news/20260818-ai-security/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T07:06:54.679285+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T06:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIアシスタント「Claude」を開発するAnthropicの年換算収益が650億ドル(約10兆円)を突破したことがわかりました。2025年末時点では約90億ドル(約1兆4400億円)だったため、わずか7カ月ほどで約7倍に拡大した計算です。 続きを読む...",
-      "title": "Anthropicの年換算収益が10兆円超で2025年末実績の約7倍に、四半期売上高は前年同期比14倍以上",
-      "uid": "7d25b8530a2c54cd",
-      "url": "https://gigazine.net/news/20260818-anthropic-revenue-run-rate/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-18T07:06:54.679285+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T06:16:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ロシアの起業家が開発したメッセージアプリ「Telegram」は、ロシアやウクライナで主要なメッセージングサービスとして使われているほか、映画やテレビ番組などの海賊版コンテンツを共有するプラットフォームとして使われている側面があります。ルイジアナ州立大学とテキサス大学アーリントン校の研究者らは、「Telegram上の動画海賊行為に関する最初の大規模な研究」と表現するTelegramの分析結果を発表…",
-      "title": "Telegramの海賊版配信者をAIで自動検出するツールを研究者らが開発、61日間で海賊版チャンネル524件とボット71件の削除に役立つ",
-      "uid": "de14ce397966e53d",
-      "url": "https://gigazine.net/news/20260818-telegram-pirates/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
