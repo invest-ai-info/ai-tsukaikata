@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T10:51:45.257904+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T10:40:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "中国への高性能AIチップおよびAIサーバーの密輸取り締まりを行っていた台湾基隆地方検察署が、NVIDIA台湾支社の従業員やPC機器メーカー・Supermicroの従業員を含む9名を起訴したことを発表しました。 続きを読む...",
+      "title": "台湾検察がNVIDIAとSupermicroの従業員ら9人を起訴、中国へAIサーバーを密輸した疑い",
+      "uid": "050b169a2ce6a870",
+      "url": "https://gigazine.net/news/20260825-taiwan-employees-export-ai-servers-to-china/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T10:51:45.257904+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T10:17:20+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "パナソニック コネクトは8月25日、複数メーカーの協働ロボットや周辺機器をノーコードで制御できる「Robo Sync（ロボシンク）」の名称を、プロダクト群の拡充にあわせ、協働ロボット制御サービス「Robo Sync for Cobot（ロボシンク フォー コボット）」へ変更したと発表した。また、Robo Sync for Cobotの機能を拡充した。",
+      "title": "パナソニック コネクト、「Robo Sync for Cobot」の機能を拡充",
+      "uid": "82030e6db90bc0ee",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135500.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T10:51:45.257904+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T10:05:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "GMOペパボは、1つのAPIキーで複数のAIモデルを利用できるマネージドAIゲートウェイ「ロリポップ！AIゲートウェイ byGMOペパボ」の提供を8月25日より開始した。",
+      "title": "最安モデルの自動選択「ロリポップ！AIゲートウェイ byGMOペパボ」提供開始 APIキー1つでAnthropic、OpenAI、Googleなど14社のAIモデルをスムースに導入",
+      "uid": "00c0575a1ca793f8",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135486.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-25T09:53:18.249227+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2362,42 +2398,6 @@
       "title": "冷間鍛造FEMをAIで高速予測するサロゲートモデル「ForgeNet」を発表",
       "uid": "40c4cdd87b2ea72b",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2608/19/news030.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T23:39:50.245321+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-18T23:11:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは、若年層による生成AIツールの利用をめぐって懸念が高まる中、「ティーン向けChatGPT」の提供を開始したと発表した。",
-      "title": "「ティーン向けChatGPT」登場、依存リスクを軽減し学習を支援",
-      "uid": "a4eedbe3e378da16",
-      "url": "https://japan.cnet.com/article/35251667/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-18T23:39:50.245321+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "JetBrainsは、AIエージェントの応答を圧縮するスキル「Caveman」の効果を検証したした結果を公式ブログで公開した。Cavemanは、「エージェントの応答を原始人のような簡潔な言葉に変えることで、トークンを65％削減する」と主張しているスキルだ。",
-      "title": "「AIに原始人っぽく話すとトークン65％削減」は本当か？　JetBrainsが検証してみた",
-      "uid": "a8c1cf1d8f43840e",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news042.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T23:39:50.245321+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "話題の職種「FDE」の実態はどのようなものか。米OpenAIでFDEとして働く2人に聞いた。",
-      "title": "話題の職種「FDE」、実際何をやってるの？　OpenAIの現役2人に聞いた",
-      "uid": "cb914de8e13708de",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000560/",
       "vendor": "ITmedia AI+"
     }
   ]
