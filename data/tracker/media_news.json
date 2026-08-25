@@ -13,6 +13,18 @@
       "vendor": "GIGAZINE"
     },
     {
+      "first_seen": "2026-08-25T11:46:27.111504+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T10:28:22+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "政府は、生成AI事業者向けに透明性の確保と知的財産権の保護を促す「プリンシプル・コード」を策定した。",
+      "title": "政府、AI事業者向け「知財保護ルール」策定　対象範囲・運用方針は？",
+      "uid": "70c90212ac2d61dd",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000767/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-25T10:51:45.257904+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "a4bd11451a3be6fe",
       "url": "https://japan.cnet.com/article/35251673/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-19T01:54:36.684092+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-19T00:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ゴーデルブロックは、計算力学の国際会議「WCCM ECCOMAS Munich 2026」で冷間鍛造シミュレーション向けAIサロゲートモデル「ForgeNet」の研究成果を発表した。解析結果を固定オイラー格子へ投影することで、適応的リメッシュに伴う節点対応の課題に対処する。",
-      "title": "冷間鍛造FEMをAIで高速予測するサロゲートモデル「ForgeNet」を発表",
-      "uid": "40c4cdd87b2ea72b",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/19/news030.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
