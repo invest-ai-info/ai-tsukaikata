@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T09:02:04.959371+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T08:54:31+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日立は、膨大な画像データをAIで扱う際の処理を高速化する「領域選択エンコード技術」を開発した。",
+      "title": "膨大な画像データを扱うAI処理を高速化「領域選択エンコード技術」を開発",
+      "uid": "95545fb7baf10766",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135449.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T09:02:04.959371+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T08:22:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI開発企業のLiquid AIがスマートフォンのAI実行性能を測定するベンチマークアプリ「Pipette」をリリースしました。無料でGemmaシリーズやQwenシリーズなど複数のAIモデルを用いたテストが可能とのことなので、実際にiPhone 17 Proにインストールして使ってみました。 続きを読む...",
+      "title": "自分のスマホのAI実行性能を測定できるベンチマークアプリ「Pipette」を使ってみた",
+      "uid": "f6986aeeca774d53",
+      "url": "https://gigazine.net/news/20260825-pipette-phone-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T09:02:04.959371+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T07:50:42+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "開発元を伏せたまま米OpenRouterで無料公開されたAIモデル「Ox Alpha」が話題だ。一部の開発ツールでは利用シェア1位に。確認できる事実と、中国Z.aiの「GLM」系とみる有力なうわさを整理した。",
+      "title": "話題のステルスモデル「Ox Alpha」はナニモノか　うわさをまとめてみた",
+      "uid": "c907bf854f9e494b",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000748/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-25T08:00:22.440112+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "1523d190ab391d21",
       "url": "https://japan.cnet.com/article/35251664/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-18T22:43:44.829078+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T22:06:14+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、外部侵害インシデントや次期モデルの高いサイバー能力を受け、開発・テスト段階の安全対策を強化すると発表した。一部の大規模モデルの強化学習を一時停止し、研究環境の隔離や内部活動の監視多段化、アラインメント手法の拡張を実施。安全性基準を満たした上で開発を進める姿勢を示した。",
-      "title": "OpenAI、フロンティアAIの強化学習を一部停止　安全対策を強化",
-      "uid": "2799bca519c90df9",
-      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000605/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T22:43:44.829078+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AI営業電話に迷惑を被ったという声が少なくない。SNSでは迷惑がる声も……。",
-      "title": "「害悪すぎる」「バカ迷惑」──嫌われまくる“AI営業電話”、今すぐ取れる自衛策は",
-      "uid": "77b25b7604d79a99",
-      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000583/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T22:43:44.829078+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "レガシーシステムの解析、通信の遅延、現場ナレッジの活用。IT部門が抱える難題を、先進企業はどう突破したのか。3社の事例から、IT課題解決のための具体的なアプローチを紹介する。",
-      "title": "ニンテンドーシステムズ開発者が明かす、通信「低遅延・安定運用」のコツ【事例集】",
-      "uid": "4e1691996ccd7bd2",
-      "url": "https://kn.itmedia.co.jp/kn/articles/2608/19/news046.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

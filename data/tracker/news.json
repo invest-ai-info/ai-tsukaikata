@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-25T09:02:04.959371+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-25T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West.",
+      "summary_ja": "OpenAIがAIを使ったロシアの情報操作を停止\nロシア発のアカウントを停止処分にした。\n偽のシンクタンク宣伝や西側批判に使われた。",
+      "summary_source": "gemini",
+      "title": "Disrupting a new covert influence campaign from Russia",
+      "uid": "3df17887de2dbdfe",
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-25T01:54:23.504301+00:00",
       "importance": "minor",
       "label": "Claude Code",
