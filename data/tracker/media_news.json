@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T22:47:34.840984+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントがCAEツールを操作し、解析作業を担うようになれば、人の役割はどう変わるのか。「CAEユニバーシティ 特別公開フォーラム 2026」で行われたサイバネットシステムの講演では、AIエージェントによるCAE解析の実験を通じて、AIに任せられることと人に残る仕事、CAE教育の在り方が紹介された。",
+      "title": "AIエージェントがCAEを動かすとどうなる？　人に残る役割は？",
+      "uid": "a72ffa50836eb9be",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/26/news007.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-25T22:47:34.840984+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "UnslothUnslothはAIモデルの量子化に取り組んでいる企業で、GoogleやAlibabaなどのAI企業がオープンモデルを公開すると数日以内にUnslothによる量子化版が公開されるのが恒例となっています。そんなUnslothが新たな量子化手法「Unsloth Dynamic 3.0 GGUF(以下Dynamic 3.0)」を開発し、その詳細を公開しました。Dynamic 3.0は既に…",
+      "title": "UnslothがAIの性能をなるべく維持しつつ省メモリ化する次世代量子化手法「Unsloth Dynamic 3.0 GGUF」を開発",
+      "uid": "1fb7bc87f7ac8f49",
+      "url": "https://gigazine.net/news/20260826-dynamic-3.0-ggufs/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-25T21:46:15.498662+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2375,30 +2399,6 @@
       "uid": "c1bbf03ccc5f100b",
       "url": "https://gigazine.net/news/20260819-apple-pulls-ai-nudify-app-promoted-meta-ads/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T03:12:45.748785+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T02:47:07+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Waymoは8月19日、オンライン記者会見を開催し、オンボードソフトウェア担当ヴァイスプレジデントのシュリカンス・ティルマライ氏が完全自動運転3億km超の走行データに基づくAI開発の知見と同社の戦略を説明した。",
-      "title": "Waymoティルマライ氏が語る自動運転AIの最前線と日本展開",
-      "uid": "22e89ac9e6b1e128",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133773.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T03:12:45.748785+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-19T02:43:39+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米OpenAIが法人向けパートナーネットワークの日本での拡充を進めている。メディア向け座談会に登壇した新規パートナー3社が語ったのは、「うちの会社にAIなんて」と謙遜する中小企業にこそ眠る“伸びしろ”だった。",
-      "title": "「うちの会社にAIなんて」――謙遜する中小企業に眠る伸びしろ　OpenAIがパートナー網拡充、新規3社が語る",
-      "uid": "2b3ae64eae86fa4e",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000615/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

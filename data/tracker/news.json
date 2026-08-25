@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T22:47:34.840984+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-25T22:31:52+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a startup warning for Bash allow rules with a wildcard before the subcommand (e.g. Bash(git * main) ), since they also match options inserted before the subcommand Added an Auto …",
+      "title": "v2.1.246",
+      "uid": "f6d6b7695db8112d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.246",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-25T16:58:07.451889+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
