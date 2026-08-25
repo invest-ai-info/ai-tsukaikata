@@ -252,8 +252,39 @@
     - 💡 **次にこの行を見る人へ**＝①が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
       無ければ `- [x]` にせず、**題材として見送ったと明記して閉じる**のが正しい。
 
-- [ ] https://openai.com/index/introducing-admin-plugin
+- [!] https://openai.com/index/introducing-admin-plugin
   - 2026-08-25 自動追記（major・OpenAI「Introducing the Admin plugin for ChatGPT Work and Codex」）
+  - **2026-08-25 1回目: 下書きを作らずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
+
+    **① `openai.com` の発表ページは今日も403（Cloudflare の bot 判定）。6回連続で戻っていない**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `openai.com/index/introducing-admin-plugin`（スラッシュ無し） | **403** |
+    | 同（スラッシュ有り） | **403** |
+    | `openai.com/news/rss.xml` | **200**（該当item実在） |
+
+    - **今回はじめて `help.openai.com` の当該記事も同じ判定だった**＝`help.openai.com/en/articles/20001275-chatgpt-work-and-codex`
+      （ChatGPT Work and Codex の解説記事・Web検索で見つけた）も **403**。2026-08-18 の「ChatGPT for Teens」のときの
+      `help.openai.com` 403と一致し、たまたまではないことが濃くなった。**先方のbot判定であって経路（許可リスト）の
+      遮断ではない。**切り分けの根拠＝同じ `openai.com` の RSS が200で返っていること。**UA偽装での迂回はしない。**
+    - 💡 08-05→08-10→08-11→08-18→08-20→08-25 で6回連続403。**`openai.com/index/...` が来たら、まずここを読むこと。**
+
+    **② 🆕 新しい発見＝`developers.openai.com/codex/enterprise/admin-setup` は `learn.chatgpt.com` へ308転送されるが、
+    `learn.chatgpt.com` はこの環境の許可リストに無い（`EGRESS_BLOCKED`）**
+
+    - これは①とは**別種の遮断**（`cf-mitigated` の応答ヘッダ付き403ではなく、明確な `EGRESS_BLOCKED` エラー）。
+      **経路（許可リスト）の遮断＝ドメインを足せば直る可能性がある種類。**次に `learn.chatgpt.com` を叩く行が
+      来たら、まずここに記録した「経路遮断」を見て再試行の対象にすること。
+    - Web検索では `help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-for-plugins-and-apps`
+      や `developers.openai.com/codex/plugins` 等の関連ページも見つかったが、**要約だけを信じて数字を書くことはしない**
+      （SESSION_HANDOFF「要約は書いてあることを消すこともある」の教訓）。生ページを開けなければ書かない。
+    - RSS の description は `Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage
+      members and permissions, adjust limits, and act on admin requests.` の1文のみ。**対象プラン・提供時期・
+      具体的にできることの範囲は、この1文からは1つも取れない。**
+    - ⚠️ そもそも題材が**ワークスペース管理機能の告知**で、モデルでも料金でもない。数字（料金・性能）による
+      比較という記事の型に、①②が解けても当てはまらない可能性が高い（2026-08-20「AI Futures」と同じ構造）。
+      次にこの行を見る人へ＝①②が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
 
 ## 処理済み
 
