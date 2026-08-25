@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T15:07:57.999147+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T14:42:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Windowsのお絵描きアプリ「ペイント」や画像管理アプリ「Microsoftフォト」にはAIを利用した画像生成・編集機能が搭載されています。これらのAI機能を使うと、サーバーからGUID(グローバル一意識別子)が発行されて目に見えない電子透かしとして画像に埋め込まれることがわかりました。 続きを読む...",
+      "title": "WindowsのペイントやMicrosoftフォトのAI生成画像に電子透かしが埋め込まれていることが判明",
+      "uid": "153692c99a3c64a1",
+      "url": "https://gigazine.net/news/20260825-microsoft-embed-invisible-watermarks/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-25T14:07:40.960208+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "Claude Codeの週次制限枠「50％増」、8月31日まで延長　「恒久化したいものの……」",
       "uid": "25f01927a241180d",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000611/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-19T03:12:45.748785+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-19T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "デジタル人材育成が急務になる中、ガートナーが人材育成に関する課題を調査した。同社が指摘する、「学ぶ時間がない」の先にある課題とは。",
-      "title": "人材育成を邪魔する、「忙しすぎる現場」以外の要因は？　ガートナーが指摘",
-      "uid": "96f317ed8bfae2c0",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/17/news086.html",
       "vendor": "ITmedia AI+"
     }
   ]

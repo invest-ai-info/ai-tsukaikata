@@ -18,11 +18,11 @@
     "hf-deepseek": "2026-08-13T03:05:06+00:00",
     "hf-zhipu": "2026-06-16T07:39:20+00:00",
     "media-cnet-japan": "2026-08-25T09:37:00+00:00",
-    "media-gigazine": "2026-08-25T14:00:00+00:00",
+    "media-gigazine": "2026-08-25T14:42:00+00:00",
     "media-impress-ai": "2026-08-25T10:17:20+00:00",
     "media-itmedia-aiplus": "2026-08-25T10:42:15+00:00",
     "media-publickey": "2026-08-25T17:58:38+00:00",
-    "openai-news": "2026-08-25T00:00:00+00:00",
+    "openai-news": "2026-08-25T07:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-08-14T15:55:10+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -73,6 +73,17 @@
       "uid": "b5620f2d11a85b5f",
       "url": "https://tech.preferred.jp/ja/blog/pfn-materials-seminar2026/",
       "vendor": "Preferred Networks"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-25T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models.",
+      "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+      "uid": "36a303db949829a0",
+      "url": "https://openai.com/index/jalapeno-first-results",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -181,6 +192,7 @@
     "150bd4129532568e": "2026-08-01T12:16:42.309603+00:00",
     "151a22ba840a79e3": "2026-08-01T12:16:42.309603+00:00",
     "1523d190ab391d21": "2026-08-18T22:43:44.829078+00:00",
+    "153692c99a3c64a1": "2026-08-25T15:07:57.999147+00:00",
     "158d34a456620440": "2026-08-17T13:54:47.131963+00:00",
     "15a4b41f4e7c9866": "2026-08-13T12:01:33.145239+00:00",
     "15a7c321d9726640": "2026-08-18T03:10:26.176978+00:00",
@@ -347,6 +359,7 @@
     "34993fc0a5a04213": "2026-08-24T22:46:51.219946+00:00",
     "351a47e82d99dd5e": "2026-08-17T03:14:24.845062+00:00",
     "35f471c92620f131": "2026-08-01T12:16:42.309603+00:00",
+    "36a303db949829a0": "2026-08-25T15:07:57.999147+00:00",
     "36b14285e162c33c": "2026-08-16T14:42:12.391002+00:00",
     "36cc04fe0afd5c7f": "2026-08-17T10:49:31.020743+00:00",
     "37ae539724a5d7ab": "2026-08-18T11:43:24.359213+00:00",

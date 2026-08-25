@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T15:07:57.999147+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-25T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models.",
+      "summary_ja": "OpenAIが独自チップ「Jalapeño」の成果を発表\nAIの判断処理を速く、省電力で行えるように\n最新のAIモデルで高い処理能力と低い遅延を実現",
+      "summary_source": "gemini",
+      "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+      "uid": "36a303db949829a0",
+      "url": "https://openai.com/index/jalapeno-first-results",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-25T05:49:35.979180+00:00",
       "importance": "minor",
       "label": "Claude Code",
