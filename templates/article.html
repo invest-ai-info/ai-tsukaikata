@@ -6,7 +6,17 @@
   {% endif %}
 
   {% if article.slug in eyecatches %}
-  <p class="eyecatch"><img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" width="720" height="180"></p>
+  <p class="eyecatch">{% if article.series %}<span class="eyecatch-frame"><img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" width="720" height="180"><span class="eyecatch-no">{{ article.series_no }}</span></span>{% else %}<img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" width="720" height="180">{% endif %}</p>
+  {% endif %}
+
+  {% if article.series %}
+  <aside class="series-band">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 2.5 H7 A1.5 1.5 0 0 1 8.5 4 V13.5 A1.5 1.5 0 0 0 7 12 H2.5 Z"></path><path d="M13.5 2.5 H9 A1.5 1.5 0 0 0 7.5 4 V13.5 A1.5 1.5 0 0 1 9 12 H13.5 Z"></path></svg>
+    <span class="series-band-body">
+      <strong>連載 {{ article.series }}</strong>
+      <span class="series-band-sub">{% if article.series_total %}全{{ article.series_total }}回の予定 ｜ {% endif %}この記事は第{{ article.series_no }}回</span>
+    </span>
+  </aside>
   {% endif %}
 
   <h1 class="article-title">{{ article.title }}</h1>
@@ -37,6 +47,21 @@
 
   {% if article.tags %}
   <p class="tags">{% for tag in article.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</p>
+  {% endif %}
+
+  {% if article.series and (series_prev or series_next) %}
+  <nav class="series-nav" aria-label="連載の前後">
+    <div class="series-nav-cell">
+      <p class="series-nav-label">前の回</p>
+      {% if series_prev %}<p class="series-nav-title"><a href="{{ series_prev.url }}">{{ series_prev.title }}</a></p>
+      {% else %}<p class="series-nav-empty">（第1回のため無し）</p>{% endif %}
+    </div>
+    <div class="series-nav-cell series-nav-next">
+      <p class="series-nav-label">次の回</p>
+      {% if series_next %}<p class="series-nav-title"><a href="{{ series_next.url }}">{{ series_next.title }}</a></p>
+      {% else %}<p class="series-nav-empty">（ここが最新回）</p>{% endif %}
+    </div>
+  </nav>
   {% endif %}
 </article>
 {% endblock %}

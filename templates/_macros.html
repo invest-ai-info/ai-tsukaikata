@@ -1,13 +1,22 @@
+{% macro scene_icon(scene) -%}
+<svg class="scene-icon" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ scene_icons[scene] | safe }}</svg>
+{%- endmacro %}
+
+{% macro series_chip(article) -%}
+<span class="series-chip"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 2.5 H7 A1.5 1.5 0 0 1 8.5 4 V13.5 A1.5 1.5 0 0 0 7 12 H2.5 Z"></path><path d="M13.5 2.5 H9 A1.5 1.5 0 0 0 7.5 4 V13.5 A1.5 1.5 0 0 1 9 12 H13.5 Z"></path></svg>連載 {{ article.series }} 第{{ article.series_no }}回</span>
+{%- endmacro %}
+
 {% macro card(article) %}
 <article class="card">
   {% if article.slug in eyecatches %}
-  <a class="card-thumb" href="{{ article.url }}" tabindex="-1" aria-hidden="true"><img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" loading="lazy"></a>
+  <a class="card-thumb" href="{{ article.url }}" tabindex="-1" aria-hidden="true"><img src="/static/images/eyecatch/{{ article.slug }}.svg" alt="" loading="lazy">{% if article.series %}<span class="thumb-no">{{ article.series_no }}</span>{% endif %}</a>
   {% endif %}
   <div class="card-body">
     <h2 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
     <p class="card-description">{{ article.description }}</p>
     <p class="card-meta">
-      {% if article.scene %}<a class="card-scene" href="/scenes/{{ article.scene }}/">{{ scenes[article.scene].label }}</a>{% endif %}
+      {% if article.series %}{{ series_chip(article) }}{% endif %}
+      {% if article.scene %}<a class="card-scene sc-{{ article.scene }}" href="/scenes/{{ article.scene }}/">{{ scene_icon(article.scene) }}{{ scenes[article.scene].label }}</a>{% endif %}
       <time datetime="{{ article.published.isoformat() }}">{{ article.published | jp_date }}</time>
       {% if article.time_required %}<span class="card-badge">{{ article.time_required }}</span>{% endif %}
       {% if article.cost %}<span class="card-badge">{{ article.cost }}</span>{% endif %}

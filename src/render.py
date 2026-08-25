@@ -87,6 +87,7 @@ def render_site(
         for name in active_scenes
     ]
     env.globals["scenes"] = config.SCENES
+    env.globals["scene_icons"] = config.SCENE_ICONS
 
     # カテゴリーボタン（2026-08-13 設計書 §1）。/scenes/ を指すボタンは、
     # その場面に記事が入るまで隠す——0本の場面ページは作られず404になるため。
@@ -163,9 +164,24 @@ def render_site(
             articles=[a for a in listed if a.category == name],
         )
 
+    # 連載の前後（2026-08-25 提案A）。同じ series の公開済み記事を series_no 順に
+    # つなぐ。前後は「実在する回」だけ＝未公開の回へのリンク切れを構造的に作らない
+    by_series: dict[str, list[Article]] = {}
+    for a in articles:
+        if a.series:
+            by_series.setdefault(a.series, []).append(a)
+    for chain in by_series.values():
+        chain.sort(key=lambda a: a.series_no)
+
     article_template = env.get_template("article.html")
     for article in articles:
         meta = config.CATEGORIES[article.category]
+        series_prev = series_next = None
+        if article.series:
+            chain = by_series[article.series]
+            i = chain.index(article)
+            series_prev = chain[i - 1] if i > 0 else None
+            series_next = chain[i + 1] if i + 1 < len(chain) else None
         pages[article.output_path] = article_template.render(
             page_title=article.title,
             description=article.description,
@@ -176,6 +192,8 @@ def render_site(
             category_url=f"/{article.category}/",
             scene_label=config.SCENES[article.scene]["label"] if article.scene else None,
             scene_url=f"/scenes/{article.scene}/" if article.scene else None,
+            series_prev=series_prev,
+            series_next=series_next,
         )
 
     return pages

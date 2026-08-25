@@ -232,3 +232,45 @@ def test_quoted_checked_is_rejected():
     )
     with pytest.raises(ArticleError):
         parse_article(Path("content/pages/x.md"), text)
+
+
+# --- 連載（2026-08-25 デザイン承認・提案A） ---
+
+
+def _recipe_with(extra):
+    head, body = RECIPE.split("---", 2)[1], RECIPE.split("---", 2)[2]
+    return "---" + head + extra + "---" + body
+
+
+def test_series_fields_are_parsed():
+    text = _recipe_with("series: 売る場所の原文から" + chr(10) + "series_no: 2" + chr(10) + "series_total: 4" + chr(10))
+    article = parse_article(Path("content/recipes/sample-series.md"), text)
+    assert article.series == "売る場所の原文から"
+    assert article.series_no == 2
+    assert article.series_total == 4
+
+
+def test_series_without_no_is_rejected():
+    """番号の無い連載札は表示が壊れる。片方だけの状態を入口で止める。"""
+    text = _recipe_with("series: 売る場所の原文から" + chr(10))
+    with pytest.raises(ArticleError):
+        parse_article(Path("content/recipes/broken.md"), text)
+
+
+def test_series_no_without_series_is_rejected():
+    text = _recipe_with("series_no: 1" + chr(10))
+    with pytest.raises(ArticleError):
+        parse_article(Path("content/recipes/broken.md"), text)
+
+
+def test_series_no_must_be_a_positive_integer():
+    for bad in ("series_no: 0", "series_no: いち", "series_no: true"):
+        text = _recipe_with("series: テスト連載" + chr(10) + bad + chr(10))
+        with pytest.raises(ArticleError):
+            parse_article(Path("content/recipes/broken.md"), text)
+
+
+def test_article_without_series_has_none():
+    article = parse_article(Path("content/recipes/plain.md"), RECIPE)
+    assert article.series is None
+    assert article.series_no is None

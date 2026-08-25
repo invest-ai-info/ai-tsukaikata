@@ -329,3 +329,49 @@ def test_index_caps_articles_at_six():
     assert 'href="/recipes/a5/"' in html
     assert 'href="/recipes/a6/"' not in html
     assert "すべてのレシピ" in html
+
+
+# --- 場面の色分けと連載（2026-08-25 デザイン承認・提案A） ---
+
+
+def test_every_scene_has_an_icon():
+    """SCENES に場面を足してアイコンを忘れると、その場面の札だけ壊れる。
+    アイキャッチのclass照合と同じ思想で、対応を機械で守る。"""
+    from src import config
+    assert set(config.SCENE_ICONS) == set(config.SCENES)
+
+
+def test_card_scene_chip_carries_scene_class_and_icon():
+    pages = render_site([_article(scene="earn")])
+    html = pages["recipes/index.html"]
+    assert "card-scene sc-earn" in html
+    assert "scene-icon" in html
+
+
+def test_series_card_shows_chip_and_article_shows_band():
+    a1 = _article(slug="s1", title="連載1回目", series="テスト連載", series_no=1, series_total=2)
+    a2 = _article(slug="s2", title="連載2回目", series="テスト連載", series_no=2, series_total=2)
+    pages = render_site([a1, a2])
+    assert "連載 テスト連載 第1回" in pages["recipes/index.html"]
+    html1 = pages["recipes/s1/index.html"]
+    assert "series-band" in html1
+    assert "全2回の予定" in html1
+    assert "この記事は第1回" in html1
+
+
+def test_series_nav_links_only_to_published_rounds():
+    """前後は実在する回だけ＝未公開の回へのリンク切れを構造的に作らない。"""
+    a1 = _article(slug="s1", title="連載1回目", series="テスト連載", series_no=1)
+    a2 = _article(slug="s2", title="連載2回目", series="テスト連載", series_no=2)
+    pages = render_site([a1, a2])
+    html1 = pages["recipes/s1/index.html"]
+    html2 = pages["recipes/s2/index.html"]
+    assert "/recipes/s2/" in html1 and "（第1回のため無し）" in html1
+    assert "/recipes/s1/" in html2 and "（ここが最新回）" in html2
+
+
+def test_plain_article_has_no_series_parts():
+    pages = render_site([_article()])
+    html = pages["recipes/sample/index.html"]
+    assert "series-band" not in html
+    assert "series-nav" not in html

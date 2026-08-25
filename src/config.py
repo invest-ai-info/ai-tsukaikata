@@ -95,3 +95,56 @@ SCENES = {
         "lead": "どのAIを使うか。公式発表の数字だけで比べています。",
     },
 }
+
+
+# 場面アイコン（2026-08-25 デザイン承認・提案A）。16pxグリッドの線画SVGの中身だけを持つ。
+# 描画は templates/_macros.html の scene_icon マクロ（stroke=currentColor＝場面の文字色を継承）。
+# ⚠️ SCENES に場面を足したら、ここにも必ず足すこと。漏れは tests/test_render.py の
+# test_every_scene_has_an_icon が機械で検出する（アイキャッチのclass照合と同じ思想）。
+SCENE_ICONS = {
+    "start": (  # 芽
+        '<path d="M8 13.5 V7"></path>'
+        '<path d="M8 9 C6 9 4.5 7.5 4 5.5 C6 5.5 7.5 6.5 8 8.5"></path>'
+        '<path d="M8 7 C8 5 9.5 3.5 11.5 3 C11.5 5 10 6.8 8 7"></path>'
+    ),
+    "work": (  # 鉛筆
+        '<path d="M11 3 L13 5 L6 12 L3.5 12.5 L4 10 Z"></path>'
+    ),
+    "research": (  # 虫めがね
+        '<circle cx="6.5" cy="6.5" r="4"></circle>'
+        '<path d="M9.5 9.5 L13.5 13.5"></path>'
+    ),
+    "automate": (  # 歯車
+        '<circle cx="8" cy="8" r="3"></circle>'
+        '<path d="M8 2.5 V4.5 M8 11.5 V13.5 M2.5 8 H4.5 M11.5 8 H13.5"></path>'
+        '<path d="M4.1 4.1 L5.5 5.5 M10.5 10.5 L11.9 11.9 M11.9 4.1 L10.5 5.5 M5.5 10.5 L4.1 11.9"></path>'
+    ),
+    "life": (  # 家
+        '<path d="M3 8.5 L8 4 L13 8.5"></path>'
+        '<path d="M4.5 7.5 V13 H11.5 V7.5"></path>'
+    ),
+    "earn": (  # ¥硬貨
+        '<circle cx="8" cy="8" r="5.5"></circle>'
+        '<path d="M5.8 5 L8 8 M10.2 5 L8 8 M8 8 V11.2 M6.2 8.8 H9.8 M6.2 10.4 H9.8"></path>'
+    ),
+    "safety": (  # 盾
+        '<path d="M8 2.5 L13 4.5 V8 C13 11.5 10.8 13.2 8 14 C5.2 13.2 3 11.5 3 8 V4.5 Z"></path>'
+        '<path d="M5.8 8 L7.4 9.6 L10.4 6.6"></path>'
+    ),
+    "security": (  # 南京錠
+        '<rect x="4.5" y="7" width="7" height="6" rx="1"></rect>'
+        '<path d="M5.8 7 V5 C5.8 3.6 6.8 2.6 8 2.6 C9.2 2.6 10.2 3.6 10.2 5 V7"></path>'
+    ),
+    "fun": (  # パレット
+        '<path d="M8 2.8 C4.2 2.8 2.2 5.6 2.6 8.4 C3 11.4 5.6 13.2 8.2 13.2 '
+        'C9.4 13.2 9.8 12.4 9.4 11.6 C9 10.8 9.4 10 10.4 10 H12 C13 10 13.6 9 13.4 7.6 '
+        'C13 4.6 11 2.8 8 2.8 Z"></path>'
+        '<circle cx="5.4" cy="6" r="0.9" fill="currentColor" stroke="none"></circle>'
+        '<circle cx="8" cy="4.9" r="0.9" fill="currentColor" stroke="none"></circle>'
+        '<circle cx="10.6" cy="6.4" r="0.9" fill="currentColor" stroke="none"></circle>'
+    ),
+    "choose": (  # 分岐
+        '<path d="M8 13.5 V8 M8 8 L4.2 4.8 M8 8 L11.8 4.8"></path>'
+        '<path d="M4.2 7 V4.8 H6.4 M11.8 7 V4.8 H9.6"></path>'
+    ),
+}

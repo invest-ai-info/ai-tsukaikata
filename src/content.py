@@ -45,6 +45,11 @@ class Article:
     # 外部の公式ページを見て書いた記事が「いつ時点の話か」。
     # ⚠️ 古いことでビルドは止めない（週次の check_freshness.py が見る）。
     checked: date | None = None
+    # 連載（2026-08-25 デザイン承認・提案A）。series が同じ記事は series_no で
+    # つながり、カードに札・記事に連載帯と前後ナビが付く
+    series: str | None = None
+    series_no: int | None = None
+    series_total: int | None = None
 
     @property
     def url(self) -> str:
@@ -129,6 +134,23 @@ def parse_article(source_path: Path, text: str) -> Article:
                 f"知らない場面です: {scene}（{' / '.join(SCENES)} のいずれか）"
             )
 
+    # 連載。series を書いたら series_no（1始まりの整数）も必須——番号の無い
+    # 連載札は表示が壊れるので、片方だけの状態をここで止める
+    series = str(meta["series"]) if meta.get("series") else None
+    series_no = meta.get("series_no")
+    series_total = meta.get("series_total")
+    if series is not None:
+        if not isinstance(series_no, int) or isinstance(series_no, bool) or series_no < 1:
+            raise ArticleError(
+                f"series を書いたら series_no（1以上の整数）も必須です（今の値: {series_no!r}）"
+            )
+    elif series_no is not None:
+        raise ArticleError("series_no だけがあります。連載なら series（連載名）も書いてください")
+    if series_total is not None and (
+        not isinstance(series_total, int) or isinstance(series_total, bool) or series_total < 1
+    ):
+        raise ArticleError(f"series_total は1以上の整数で書いてください（今の値: {series_total!r}）")
+
     return Article(
         slug=slug,
         title=str(meta["title"]),
@@ -143,6 +165,9 @@ def parse_article(source_path: Path, text: str) -> Article:
         source_path=source_path,
         scene=scene,
         checked=_to_date(meta["checked"], "checked") if meta.get("checked") else None,
+        series=series,
+        series_no=series_no if series else None,
+        series_total=series_total if series else None,
     )
 
 

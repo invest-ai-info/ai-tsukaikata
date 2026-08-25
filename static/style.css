@@ -797,3 +797,142 @@ a { color: var(--accent); }
 
 .start-section { margin-bottom: 2.5rem; }
 .start-more { margin: 0; }
+
+/* --- 場面の色分けと連載の札（2026-08-25 デザイン承認・提案A） --- */
+
+/* 場面ごとの色（文字色/地色）。地色は見出し帯5色と同じ淡さ。
+   ⚠️ SCENES に場面を足したらここにも足すこと（tests/test_render.py が照合） */
+:root {
+  --sc-start-fg: #a8481d;    --sc-start-bg: #f9e7dc;
+  --sc-work-fg: #6b5636;     --sc-work-bg: #f3ebdd;
+  --sc-research-fg: #3e6b9e; --sc-research-bg: #e6eef7;
+  --sc-automate-fg: #4f7a1b; --sc-automate-bg: #eff3df;
+  --sc-life-fg: #b8446b;     --sc-life-bg: #fbeaf0;
+  --sc-earn-fg: #9a6a08;     --sc-earn-bg: #f8edd6;
+  --sc-safety-fg: #a32d2d;   --sc-safety-bg: #fcebeb;
+  --sc-security-fg: #2e6e64; --sc-security-bg: #e4f0ec;
+  --sc-fun-fg: #7b5ea7;      --sc-fun-bg: #f0eaf8;
+  --sc-choose-fg: #6d6155;   --sc-choose-bg: #edeae4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sc-start-fg: #f0997b;    --sc-start-bg: #33251b;
+    --sc-work-fg: #cbb38e;     --sc-work-bg: #2e2820;
+    --sc-research-fg: #8fb4dd; --sc-research-bg: #1f2733;
+    --sc-automate-fg: #a6c96a; --sc-automate-bg: #232a16;
+    --sc-life-fg: #e58fb0;     --sc-life-bg: #322028;
+    --sc-earn-fg: #ddb45c;     --sc-earn-bg: #2e2513;
+    --sc-safety-fg: #f09595;   --sc-safety-bg: #341d1b;
+    --sc-security-fg: #7bbfb2; --sc-security-bg: #1d2b28;
+    --sc-fun-fg: #b7a7e0;      --sc-fun-bg: #2a2433;
+    --sc-choose-fg: #b3a795;   --sc-choose-bg: #2a251e;
+  }
+}
+
+/* 場面の札＝アイコンつき。色は場面ごとの変数で上書きする */
+.card-scene {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.card-scene .scene-icon { flex: none; }
+.sc-start    { background: var(--sc-start-bg);    color: var(--sc-start-fg); }
+.sc-work     { background: var(--sc-work-bg);     color: var(--sc-work-fg); }
+.sc-research { background: var(--sc-research-bg); color: var(--sc-research-fg); }
+.sc-automate { background: var(--sc-automate-bg); color: var(--sc-automate-fg); }
+.sc-life     { background: var(--sc-life-bg);     color: var(--sc-life-fg); }
+.sc-earn     { background: var(--sc-earn-bg);     color: var(--sc-earn-fg); }
+.sc-safety   { background: var(--sc-safety-bg);   color: var(--sc-safety-fg); }
+.sc-security { background: var(--sc-security-bg); color: var(--sc-security-fg); }
+.sc-fun      { background: var(--sc-fun-bg);      color: var(--sc-fun-fg); }
+.sc-choose   { background: var(--sc-choose-bg);   color: var(--sc-choose-fg); }
+
+/* 連載の札。場面の札（丸い）と見分けるため角ばった枠線つき */
+.series-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.55rem 0.1rem 0.4rem;
+  border: 1.5px solid var(--sc-earn-fg);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--sc-earn-fg);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.series-chip svg { flex: none; }
+
+/* サムネ右上の回の番号 */
+.card-thumb { position: relative; }
+.thumb-no {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  background: #4a3f35;
+  color: #fffdf8;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 8px 0 8px;
+}
+
+/* 記事冒頭の連載帯 */
+.series-band {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1.5px solid var(--sc-earn-fg);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--sc-earn-fg);
+  padding: 0.55rem 0.85rem;
+  margin: 0 0 1rem;
+}
+.series-band svg { flex: none; }
+.series-band-body { display: flex; flex-direction: column; min-width: 0; }
+.series-band-body strong { font-size: 0.85rem; }
+.series-band-sub { font-size: 0.8rem; color: var(--muted); }
+
+/* 記事アイキャッチ右上の回の番号 */
+.eyecatch-frame { position: relative; display: block; }
+.eyecatch-no {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: #4a3f35;
+  color: #fffdf8;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 0 12px;
+}
+
+/* 記事末尾の前後の回ナビ */
+.series-nav {
+  display: flex;
+  gap: 0.6rem;
+  margin: 2rem 0 0;
+}
+.series-nav-cell {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+}
+.series-nav-next { text-align: right; }
+.series-nav-label { margin: 0; font-size: 0.75rem; color: var(--muted); }
+.series-nav-title { margin: 0; font-size: 0.85rem; font-weight: 600; line-height: 1.6; }
+.series-nav-title a { text-decoration: none; }
+.series-nav-title a:hover { text-decoration: underline; }
+.series-nav-empty { margin: 0; font-size: 0.85rem; color: var(--line); }
