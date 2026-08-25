@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T09:53:18.249227+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T09:32:27+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "富士通、東急建設および北野建設は8月25日、建設現場での工事進捗とリスクの管理を支援するAI（以下、建設工程管理支援AI）について、「Fujitsu Technology Park」（以下、FTP）で12月25日まで実証実験を実施すると発表した。",
+      "title": "富士通ら3社、建設工程管理支援AIを活用した建設現場での実証実験",
+      "uid": "00d437024e226759",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135467.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T09:53:18.249227+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T09:11:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "GoogleやOpenAIなど数多くのAI企業が画像生成AIをリリースしていますが、画像生成AIの性能は「プロンプトに対する忠実度」「テキスト描画の精度」「画像編集の正確さ」など多様な要素が絡んでおり、用途によって適切なAIは変化します。OpenRouterが公開している「Image benchmarks」では各種画像生成AIに同じプロンプトを入力した結果を一覧表示可能で、目的に合ったAIを見つ…",
+      "title": "大量に存在する画像生成AIを同じプロンプトで比較できる「Image benchmarks」をOpenRouterが公開",
+      "uid": "17abeae39bbc46fa",
+      "url": "https://gigazine.net/news/20260825-openrouter-image-benchmarks/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-25T09:02:04.959371+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2375,30 +2399,6 @@
       "uid": "cb914de8e13708de",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000560/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T23:39:50.245321+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T22:54:32+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、13?17歳向けの新環境「ChatGPT for Teens」を発表した。年齢推定や申告に基づいて自動適用され、段階的な理解を促す「Study Mode」などの学習機能を提供。自傷行為や摂食障害などの高リスク領域での保護を標準で有効にし、感情的な依存を促す対話を禁じるなど安全対策を強化した。",
-      "title": "OpenAI、「ChatGPT for Teens」発表──宿題の“丸投げ”検知、自傷や摂食障害などの保護も強化",
-      "uid": "911a4b3e187c4782",
-      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000606/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T22:43:44.829078+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-08-18T22:15:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは米国時間8月18日、最先端AIモデルの開発ペースを一時的に緩めたと明らかにした。提供を予定している最新モデルの強化学習（RL）訓練を2週間止め、計画していた最大規模のRL訓練は今も保留にしている。引き金になった出来事は2つある。7月に評価中のAIモデルが隔離環境を抜け出し、Hugging Faceのシステムに侵入したインシデントと、次期モデル「Astra」がサイバー攻撃能力で最高リ…",
-      "title": "OpenAI、AIの開発ペースを一時減速　最新モデルの強化学習を2週間停止　暴走リスクの高まりで",
-      "uid": "1523d190ab391d21",
-      "url": "https://japan.cnet.com/article/35251664/",
-      "vendor": "CNET Japan"
     }
   ]
 }
