@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T05:49:35.979180+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T05:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AlibabaがAI動画生成モデル「Wan3.0」の一般提供を8月24日に開始しました。Wan3.0は文章や画像に加えて文書・スプレッドシート・スライド・ウェブページなども読み込み可能で、1回の生成で最大30秒の動画を作成できます。 続きを読む...",
+      "title": "動画生成AI「Wan3.0」が正式リリースされる、最大30秒生成可能で「製品企画スライドを読み込ませてPV作成」など情報分析精度が大幅に向上",
+      "uid": "59448d1e96b420ae",
+      "url": "https://gigazine.net/news/20260825-alibaba-wan-3-0/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-25T05:49:35.979180+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T05:11:59+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「5時間制限により計算資源の負荷を平準化でき、週単位の利用枠を手厚く維持できる」",
+      "title": "「ChatGPT Plus」で5時間制限復活、Work／Codex対象　Proは「数カ月は対象外」",
+      "uid": "e25ab673cd33dfb6",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000744/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-25T05:49:35.979180+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T04:57:30+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "SpaceXAI（xAI）は、次世代のエージェント型AIアプリケーションの開発のために、エージェント向けのCPU「NVIDIA Vera」を導入すると発表した。これにより、AIエージェント向けに構築されたCPUが、AI導入の1つに採用されたことになる。",
+      "title": "SpaceXAI、大規模なエージェント型AI開発に向けNVIDIA Vera CPUを採用 Grokを支えるAIインフラを拡大",
+      "uid": "88b11bfd66bf79db",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135330.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-25T04:56:07.479594+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "bc522cd98c6fdf3d",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133640.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T10:48:44.525538+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T09:42:48+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本電気（NEC）は8月18日、防衛装備庁防衛イノベーション科学技術研究所が実施する「革新型ブレークスルー研究」において、デュアルユースを視野に入れた「自己教師あり学習による水中音響基盤モデルに関わる研究委託（その1）」を受注し、研究を開始したと発表した。同基盤モデルについて、2027年度までの構築を目指す。",
-      "title": "NEC、AIを利用し防衛用途など水中音響基盤モデルの構築に向けた研究を開始",
-      "uid": "758d45a5fff0f7c9",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133626.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T08:55:15.152162+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-18T08:48:05+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "じそく１じかんは、カシオ計算機のAIペットロボット“Moflin”と東京・渋谷の「パンとエスプレッソとまちあわせ」の期間限定コラボカフェを、9月5日より9月13日まで開催する。",
-      "title": "AIペットロボット「Moflin」が渋谷・MIYASHITA PARKのカフェとコラボ 「パンとエスプレッソとMoflinとまちあわせ」",
-      "uid": "9f6cb9ffdb65a744",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133586.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-18T08:55:15.152162+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T08:28:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "イスラエルのハノーバー公共政策研究所が、わずか1週間強の間にAIチャットボットを欺く目的で、100本近くの記事を公開していることが明らかになったと、外交政策シンクタンクのクインシー研究所が公開しているオンラインマガジン・Responsible Statecraftが報じています。 続きを読む...",
-      "title": "イスラエルでAIチャットボットを欺く目的で設立された偽のシンクタンクが出現、わずか1週間強の間にAIチャットボットに影響を与えることを目的としたと思われる記事を少なくとも100本公開",
-      "uid": "53197274131f8d5a",
-      "url": "https://gigazine.net/news/20260818-israel-creates-fake-think-tank-dupe-ai-chatbots/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
