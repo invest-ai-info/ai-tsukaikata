@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T20:48:36.942089+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Arena AIのコーディング性能ランキングでは、上位20モデルのうち8つを中国発が占める。AIモデルの中継サービスOpenRouterでも、米企業が中国モデルに流すトークンの比率は58％に達した。利用者からは見えないAIサービスの「中身」で、いま何が起きているのかを追う。",
+      "title": "あなたが使うAIの「中身」、実は中国モデルかも　米企業のAPI利用で58％",
+      "uid": "fbab0d617948be70",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/26/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-25T19:47:42.946880+00:00",
       "importance": "major",
       "label": "CNET Japan",
@@ -2386,18 +2398,6 @@
       "title": "なぜNTTは「小型LLM」にこだわるのか　国産AI「tsuzumi 2」に込めた狙い",
       "uid": "22db8d5e46f0c087",
       "url": "https://kn.itmedia.co.jp/kn/articles/2607/14/news012.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-19T03:12:45.748785+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-19T02:09:16+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、英政府や航空管制大手NATSなどと共同で、AIを用いて飛行機雲を回避する実証プログラムを開始すると発表した。北大西洋のシャンウィック洋上空域を対象に、航路をわずかに変更して温暖化影響を抑える。空域規模での協調的回避の実証は世界初となり、Googleは計算基盤などを現物提供する。",
-      "title": "Googleや英政府、AIで飛行機雲を回避する大規模実証開始　航空業界の温暖化影響を減らす狙い",
-      "uid": "6a11ebac4ffeaede",
-      "url": "https://www.itmedia.co.jp/news/article/2608/19/2000000613/",
       "vendor": "ITmedia AI+"
     }
   ]
