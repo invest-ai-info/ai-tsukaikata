@@ -10,6 +10,8 @@ from check_freshness import (  # noqa: E402
     Reached,
     check_articles,
     external_links,
+    earn_demand_gaps,
+    hypothesis_registration_gaps,
     earn_queue_shortage,
     earn_research_heartbeat,
     evidence_gaps,
@@ -243,6 +245,162 @@ def test_earn_queue_shortage_warns_when_the_section_is_missing():
     problem = earn_queue_shortage(queue, floor=3)
     assert problem is not None
     assert "見つかりません" in problem
+
+
+# --- 需要語の裏取り（2026-08-25 オーナー判断）---
+
+
+def _queue(*lines: str) -> str:
+    """待ち行列の断片を組み立てる（テスト用）。"""
+    return chr(10).join(lines)
+
+
+def test_earn_demand_gaps_fires_when_the_backing_is_missing():
+    """需要を調べずに採った題材は、静かに通さない（閉じた輪の再発防止）。"""
+    queue = _queue(
+        "### 副業（テスト）",
+        "- [ ] 裏取りのある題材",
+        "  - 需要: 実質186語（生282から英語のnote 92を引いた）",
+        "- [ ] 裏取りの無い題材",
+        "  - 源③＝既存記事が書き残した問いから",
+        "### 次の節",
+    )
+    problems = earn_demand_gaps(queue)
+    assert len(problems) == 1
+    assert "裏取りの無い題材" in problems[0]
+
+
+def test_earn_demand_gaps_has_no_word_count_floor():
+    """薄いと分かった題材は通す。禁じるのは調べないことで、薄いことではない。"""
+    queue = _queue(
+        "### 副業（テスト）",
+        "- [ ] 薄いと分かっている題材",
+        "  - 需要: 3語しかない。それでも既存に乗らない核があるので採る",
+        "### 次の節",
+    )
+    assert earn_demand_gaps(queue) == []
+
+
+def test_earn_demand_gaps_ignores_held_and_done_items():
+    """`- [!]`（保留）と `- [x]`（済み）は対象外＝書く順番が来ていない/終わっている。"""
+    queue = _queue(
+        "### 副業（テスト）",
+        "- [!] 保留の題材",
+        "  - 理由: 弁護士相談待ち",
+        "- [x] 済んだ題材",
+        "  - →保管: 公開: `some-slug`",
+        "### 次の節",
+    )
+    assert earn_demand_gaps(queue) == []
+
+
+def test_earn_demand_gaps_counts_only_inside_the_section():
+    """節の外の未処理は対象外（副業の節だけの縛り）。"""
+    queue = _queue(
+        "- [ ] 外の題材",
+        "### 副業（テスト）",
+        "### 次の節",
+        "- [ ] 外の題材",
+    )
+    assert earn_demand_gaps(queue) == []
+
+
+def test_earn_demand_gaps_is_quiet_when_the_section_is_missing():
+    """節の欠落は earn_queue_shortage が鳴らす。同じことで二重に鳴らさない。"""
+    assert earn_demand_gaps("- [ ] 題材") == []
+
+
+# --- 仮説キューの事前登録（2026-08-25）---
+
+
+def test_hypothesis_registration_is_quiet_when_every_field_is_filled():
+    assert hypothesis_registration_gaps(_queue(
+        "### H1 個数指定は使える案の数と相関しない",
+        "- 状態: ⏳未着手",
+        "- 仮説: ◯案出しての◯を増やしても通る案は増えない",
+        "- 材料: ①架空のコピー ②架空の機能名",
+        "- 測り方: 採用線を先に固定して通過数を数える",
+        "- 試行回数: 18回",
+        "- 反証条件: 30案の通過が5案の2倍以上なら棄却",
+        "- 需要: 12語",
+    )) == []
+
+
+def test_hypothesis_registration_fires_on_the_frozen_fields():
+    """反証条件と試行回数は、結果を見てから決めると何とでも言える欄。"""
+    queue = _queue(
+        "### H2 欠落は1つだけのとき素通りする",
+        "- 状態: ⏳未着手",
+        "- 仮説: 欠落が1つのときだけ素通りする",
+        "- 材料: ①週次報告 ②見積もり",
+        "- 測り方: 止まったか進んだかの2値",
+        "- 需要: 0語。それでも既存に乗らない核があるので採る",
+    )
+    problems = hypothesis_registration_gaps(queue)
+    assert len(problems) == 1
+    assert "試行回数" in problems[0]
+    assert "反証条件" in problems[0]
+
+
+def test_hypothesis_registration_treats_an_empty_field_as_missing():
+    """欄だけ置いて中身を書かない、を通さない。"""
+    queue = _queue(
+        "### H3 誇張は約束欄に出る",
+        "- 状態: ⏳未着手",
+        "- 仮説: 検証できない欄だけが足される",
+        "- 材料: ①応募文 ②謝罪文",
+        "- 測り方: 欄ごとに元原稿に無い記述を数える",
+        "- 試行回数: 10回",
+        "- 反証条件: ",
+        "- 需要: 8語",
+    )
+    problems = hypothesis_registration_gaps(queue)
+    assert len(problems) == 1
+    assert "反証条件" in problems[0]
+
+
+def test_hypothesis_registration_ignores_the_format_sample():
+    """書式見本は `### H<番号>` なので当たらない（番人が見本で鳴らない）。"""
+    queue = _queue(
+        "### H<番号> <名前>",
+        "- 状態: ⏳未着手 / 🔬検証中 / ✅生存 / ❌棄却",
+    )
+    assert hypothesis_registration_gaps(queue) == []
+
+
+def test_hypothesis_demand_may_be_unchecked_before_starting():
+    """着手前(⏳)は「未調査」を許す。調べるのは動かし始める前でよい。"""
+    assert hypothesis_registration_gaps(_queue(
+        "### H1 個数指定は使える案の数と相関しない",
+        "- 状態: ⏳未着手",
+        "- 仮説: ◯案出しての◯を増やしても通る案は増えない",
+        "- 材料: ①架空のコピー ②架空の機能名",
+        "- 測り方: 採用線を先に固定して通過数を数える",
+        "- 試行回数: 18回",
+        "- 反証条件: 30案の通過が5案の2倍以上なら棄却",
+        "- 需要: 未調査。登録前に調べること",
+    )) == []
+
+
+def test_hypothesis_demand_must_be_filled_once_started():
+    """着手したのに未調査のままなら鳴らす＝調べずに走り出すことを禁じる。"""
+    queue = _queue(
+        "### H1 個数指定は使える案の数と相関しない",
+        "- 状態: 🔬検証中",
+        "- 仮説: ◯案出しての◯を増やしても通る案は増えない",
+        "- 材料: ①架空のコピー ②架空の機能名",
+        "- 測り方: 採用線を先に固定して通過数を数える",
+        "- 試行回数: 18回",
+        "- 反証条件: 30案の通過が5案の2倍以上なら棄却",
+        "- 需要: 未調査。登録前に調べること",
+    )
+    problems = hypothesis_registration_gaps(queue)
+    assert len(problems) == 1
+    assert "着手済みなのに需要が未調査" in problems[0]
+
+def test_hypothesis_registration_is_quiet_without_a_file():
+    assert hypothesis_registration_gaps(None) == []
+    assert hypothesis_registration_gaps("") == []
 
 
 # --- 弁護士相談の期日ゲート（2026-08-14・収入エンジン設計 D-4）---

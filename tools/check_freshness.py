@@ -312,6 +312,113 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
     return None
 
 
+# --- 需要語の裏取り（2026-08-25 オーナー判断）---
+#
+# 🚨 2026-08-25 の診断＝scene:earn は28本まで増えたのに表示17回・クリック0だった。
+# 技術側は正常（robots オープン・sitemap 118本・canonical 有・noindex 無し）。
+# 原因は補充の記録に自分で書いてあった——8/15「6件は1件をのぞいて需要語から来ていない」・
+# 8/16「4件とも需要語から来ていない」。源③（既存記事の隣）と源①（自分の台帳）だけで
+# 題材が回り、**サイトが自分自身を掘る閉じた輪**になっていた。それが素通りしていた。
+# 🔑 詰まりは供給の速さではなく、需要と繋がっていない題材が通ることのほう。
+#
+# ⚠️ 語数の下限は課さない。課すのは「調べた形跡があるか」だけ。
+# 「調べたが薄かった」と書いてあれば通る＝薄い題材を禁じるのではなく、
+# **調べずに採ることを禁じる**。下限を課すと永久に消えない偽陽性になり、
+# 検査全体の信用が落ちる（`validate.py` で下限を課さなかったのと同じ判断）。
+DEMAND_WORD = "需要"
+
+
+def _detail_lines(lines: list[str], start: int) -> list[str]:
+    """マーカー行に続く字下げ行（間の空行は、次に字下げ行が来るなら中身）。"""
+    detail = []
+    j = start + 1
+    while j < len(lines):
+        if lines[j].startswith((" ", "\t")):
+            detail.append(lines[j])
+        elif lines[j] == "" and j + 1 < len(lines) and lines[j + 1].startswith((" ", "\t")):
+            pass
+        else:
+            break
+        j += 1
+    return detail
+
+
+def earn_demand_gaps(queue_text: str) -> list[str]:
+    """「副業」の節の未処理で、需要語の裏取りが書かれていないものを挙げる。"""
+    m = EARN_HEADING_RE.search(queue_text)
+    if m is None:
+        return []  # 節の欠落は earn_queue_shortage が鳴らす。二重に鳴らさない
+    rest = queue_text[m.end():]
+    nxt = re.search(r"^### ", rest, re.M)
+    lines = (rest[: nxt.start()] if nxt else rest).splitlines()
+
+    problems = []
+    for i, line in enumerate(lines):
+        if not line.startswith("- [ ] "):
+            continue
+        if any(DEMAND_WORD in d for d in _detail_lines(lines, i)):
+            continue
+        problems.append(
+            f"{QUEUE_PATH}: 「副業」の未処理に需要語の裏取りがありません＝"
+            f"{line[6:][:40]}"
+            f"（研究パックの様式9番。調べて薄かったならそう書けば通る＝語数の下限は無い）"
+        )
+    return problems
+
+
+# --- 仮説キューの事前登録（2026-08-25 オーナー判断「我々で研究してアイデアを出す」）---
+#
+# 機械は投資側の巨匠仮説キューから借りた。あちらが「順張り生存ゼロ」という結論を
+# 出せたのは、棄却を正直に積んだから。借りたいのはその規律のほう。
+#
+# 🔑 関門に置くのは「反証条件」と「試行回数」＝**結果を見てから決めると
+# 何とでも言える欄**。先に凍らせておかないと、何を投げても必ず失敗が見つかる
+# （投資側で1本失った同語反復の罠のAI版）。
+#
+# ⚠️ 統計の道具は持ち込まない。標本が数十回の手作業なので有意差の話にすると嘘になる。
+HYPOTHESIS_PATH = "content/_hypothesis_queue.md"
+HYPOTHESIS_HEAD_RE = re.compile(r"^### (H[0-9]+) (.+)$", re.M)
+HYPOTHESIS_STATE_RE = re.compile(r"^- 状態: *(.+)$", re.M)
+HYPOTHESIS_REQUIRED = ("仮説", "材料", "測り方", "試行回数", "反証条件", "需要")
+HYPOTHESIS_UNCHECKED = "未調査"
+HYPOTHESIS_NOT_STARTED = "⏳"
+
+
+def hypothesis_registration_gaps(text: str | None) -> list[str]:
+    """仮説ブロックの必須欄の欠けを挙げる。書式見本（```の中）は H<番号> なので当たらない。"""
+    if not text:
+        return []
+    heads = list(HYPOTHESIS_HEAD_RE.finditer(text))
+    problems = []
+    for i, head in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(text)
+        block = text[head.end():end]
+        number, name = head.group(1), head.group(2)
+
+        # ⚠️ 欄だけ置いて中身が空、を見逃さない（行末までを取って strip で判定する。
+        # 文字クラスで書くと改行に当たって空欄が通る＝テストが捕まえた）
+        missing = []
+        for field in HYPOTHESIS_REQUIRED:
+            found = re.search(rf"^- {field}: *(.*)$", block, re.M)
+            if found is None or not found.group(1).strip():
+                missing.append(field)
+        if missing:
+            problems.append(
+f"{HYPOTHESIS_PATH}: {number} の必須欄が空です＝{'・'.join(missing)}"
+f"（{name}）。設計が固まっていないなら「## バックログ」へ移してH番号を発行しない"
+            )
+
+        # 需要の「未調査」は、着手前(⏳)のあいだだけ許す。動かし始めたら埋まっていること
+        state = HYPOTHESIS_STATE_RE.search(block)
+        started = state is not None and HYPOTHESIS_NOT_STARTED not in state.group(1)
+        demand = re.search(r"^- 需要: *(.+)$", block, re.M)
+        if started and demand is not None and HYPOTHESIS_UNCHECKED in demand.group(1):
+            problems.append(
+f"{HYPOTHESIS_PATH}: {number} が着手済みなのに需要が未調査のままです（{name}）。"
+f"0語でも採ってよいが、調べた記録は残すこと（様式9番と同じ扱い）"
+            )
+    return problems
+
 # --- 稼ぎ方研究担当の heartbeat（2026-08-14 稼ぎ方研究の設計）---
 #
 # 担当は0件の日も1行書く（沈黙禁止）。だから「ログが止まった＝担当が止まった」。
@@ -425,6 +532,7 @@ FILE_BUDGETS = {
     "content/_topic_ideas.md": 1500,
     "content/_review_log.md": 800,
     "content/_earn_research.md": 1200,
+    "content/_hypothesis_queue.md": 900,
 }
 
 
@@ -566,6 +674,8 @@ def main() -> int:
             shortage = check(queue_text)
             if shortage:
                 report.problems.append(shortage)
+        # 需要語の裏取り（2026-08-25 オーナー判断）。閉じた輪の再発を止める
+        report.problems.extend(earn_demand_gaps(queue_text))
 
     # 弁護士相談の期日ゲート（収入エンジン設計 D-4）
     gate_problems, gate_notes = lawyer_deadline_gate(date.today())
@@ -581,6 +691,12 @@ def main() -> int:
     if heartbeat:
         report.problems.append(heartbeat)
     report.problems.extend(money_note_staleness(articles, date.today()))
+
+    # 仮説キューの事前登録（2026-08-25）。反証条件と試行回数を結果より先に凍らせる
+    hypothesis_file = root / "content" / "_hypothesis_queue.md"
+    report.problems.extend(hypothesis_registration_gaps(
+        hypothesis_file.read_text(encoding="utf-8") if hypothesis_file.exists() else None
+    ))
 
     # 台帳の昇格判定。輪2（月曜）が数え直さずに済むように、数はここで出す。
     ledger_file = root / "content" / "_lessons.md"
