@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T08:00:22.440112+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-25T07:13:24+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "パナソニックは8月25日、ハイパースペクトルカメラ「AG-HSV10M」で取得した画像をAIで解析し、人の眼やRGBカメラでは判別が難しい違いを自動で検査・判定するAI検査ソフトNTシリーズ「AG-HSS10」を10月上旬に発売すると発表した。",
+      "title": "画像を自動で検査・判定するAI検査ソフトNTシリーズ「AG-HSS10」",
+      "uid": "de6df24c60cebcae",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135372.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-25T08:00:22.440112+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-08-25T06:56:11+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "シャープは対話型のAIロボット「ポケとも」の新モデルを発表した。従来のモデルとは性格を変え、あえてユーザーを“全肯定しないキャラクター”にした。",
+      "title": "シャープ、対話型AIロボ「ポケとも」に新モデル　あえて“全肯定しないキャラ”に　「暇だなー」と話しかけると……",
+      "uid": "0225333f6984298d",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000747/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-25T07:10:25.158045+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
@@ -2375,30 +2399,6 @@
       "uid": "4e1691996ccd7bd2",
       "url": "https://kn.itmedia.co.jp/kn/articles/2608/19/news046.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T22:43:44.829078+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-18T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「インテル・ロボティクス・ワークショップ2026」のレポート記事をお送りする。今回の後編では、ヒューマノイドとフィジカルAIをテーマにした、三菱UFJ銀行、Preferred Networks（PFN）、トヨタ自動車 未来創生センターの講演内容を紹介する。",
-      "title": "フィジカルAIとヒューマノイドの可能性、PFNの見立てとトヨタのアプローチ",
-      "uid": "a7e56fbae6ec3889",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/19/news019.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-18T22:43:44.829078+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-18T22:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "天才的なプログラミング能力を買われてFacebookやGoogleで働いた経験もあるジョージ・ホッツ氏が2016年に立ち上げたスタートアップComma.aiは、自動車に取り付けるだけで運転支援機能を追加できるデバイスを開発しています。そんなComma.aiが新たに、より大型のドライビングモデルを車が実行できるようにGPUを車載コンピューターにつなぐためのeGPUドック「Chestnut」をリリー…",
-      "title": "車に運転支援機能を追加できるデバイスをGPUで強化するためのeGPUドック「Chestnut」をComma.aiがリリース",
-      "uid": "e2e21ea9abd3b976",
-      "url": "https://gigazine.net/news/20260819-egpu-dock-chestnut/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
