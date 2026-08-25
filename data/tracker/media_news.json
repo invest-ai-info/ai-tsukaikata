@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-25T14:07:40.960208+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-25T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェント関連で「ハーネス」という言葉が使われる機会が増えています。AI関連ソフトウェアを開発するEarendilがハーネスについて解説する記事を投稿しています。 続きを読む...",
+      "title": "AIエージェントの「ハーネス」とは？AIモデルを実際に働かせる4つの仕組み",
+      "uid": "3acaf068c7491bbe",
+      "url": "https://gigazine.net/news/20260825-what-is-harness/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-25T13:13:37.045068+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "96f317ed8bfae2c0",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2608/17/news086.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-19T01:54:36.684092+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T01:32:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "13歳～17歳のユーザーを対象にした「ChatGPT for Teens」が登場しました。ChatGPTの応答が年齢を考慮したものに最適化されるほか、学習モードやペアレンタルコントロールなども利用できます。 続きを読む...",
-      "title": "18歳未満のためのChatGPTが登場、学習支援や保護者による管理機能などを搭載",
-      "uid": "14c3787b38c0a712",
-      "url": "https://gigazine.net/news/20260819-chatgpt-for-teens/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
