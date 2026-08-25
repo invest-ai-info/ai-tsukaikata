@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-25T13:13:37.045068+00:00",
+      "importance": "minor",
+      "label": "PFN 技術ブログ",
+      "published": "2026-08-25T02:43:35+00:00",
+      "source_id": "pfn-blog",
+      "summary": "Materials＆Drug Discovery事業本部の竹永と申します。普段はビジネス開発担当として、材料分野における社内外プロジェクト立上げや推進、新規パートナー様の開拓等、ビジネス面の幅広い業務に従事しています。2 […] 投稿 材料研究AIエージェント、粗視化ポテンシャル最適化など材料分野の最新研究を紹介 ―PFN Materialsセミナー2026開催報告 は Preferred Ne…",
+      "summary_ja": "PFN Materialsセミナー2026が開催されました。\n材料研究AIエージェントなど最新の研究を紹介。\n「粗視化ポテンシャル最適化」も発表されました。",
+      "summary_source": "gemini",
+      "title": "材料研究AIエージェント、粗視化ポテンシャル最適化など材料分野の最新研究を紹介 ―PFN Materialsセミナー2026開催報告",
+      "uid": "b5620f2d11a85b5f",
+      "url": "https://tech.preferred.jp/ja/blog/pfn-materials-seminar2026/",
+      "vendor": "Preferred Networks"
+    },
+    {
       "first_seen": "2026-08-25T09:02:04.959371+00:00",
       "importance": "minor",
       "label": "OpenAI News",
