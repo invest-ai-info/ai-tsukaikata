@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="454" viewBox="0 0 720 454" role="img" aria-label="KDPの印税をAIに計算させた実測で、原文を貼ると直る項目と、貼らなくても出る項目を並べた図。3回中の該当回数で、版Aはそのまま聞いた3回、版Bは原文を貼って聞いた3回。35%と70%の選択制に触れたのは版A3回・版B3回。配信コストに触れたのは両方とも3回。10MBルールに触れたのは版A1回・版B3回で、原文どおり引かれないと述べたのは版A0回・版B3回。日本の70%条件をKDPセレクトと正しく結んだのは版A0回・版B3回。70%の価格帯を数字で言い切らなかったのは版A0回・版B3回で、言い切った3回とも上限が原文と違っていた。渡していないことを書かれていないと断ったのは版A0回・版B3回。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="454"/>
+<text class="t-strong" x="18" y="26">原文を貼ると直るもの、貼らなくても出るもの</text>
+<text class="t-sm" x="18" y="45">同じ質問を、そのまま聞いた3回（版A）と、KDPの原文を貼って聞いた3回（版B）。各項目は3回中の該当回数。</text>
+<text class="t-sm" x="18" y="64">配信コストは貼らなくても出る。落ちるのは、その配信コストが日本では10MB以上だと引かれないという例外のほう。</text>
+<text class="t-sm" x="470" y="114">版A そのまま</text>
+<text class="t-accent" x="590" y="114">版B 原文あり</text>
+<text class="t-sm" x="18" y="142">35%と70%の選択制に触れた</text>
+<rect class="bar-old" x="470" y="148" width="84" height="15" rx="3"/>
+<text class="t-good" x="560" y="160">3/3</text>
+<rect class="bar-out" x="590" y="148" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="160">3/3</text>
+<text class="t-sm" x="18" y="182">配信コストに触れた</text>
+<rect class="bar-old" x="470" y="188" width="84" height="15" rx="3"/>
+<text class="t-good" x="560" y="200">3/3</text>
+<rect class="bar-out" x="590" y="188" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="200">3/3</text>
+<text class="t-sm" x="18" y="222">10MBルールに触れた</text>
+<rect class="bar-old" x="470" y="228" width="28" height="15" rx="3"/>
+<text class="t-bad" x="504" y="240">1/3</text>
+<rect class="bar-out" x="590" y="228" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="240">3/3</text>
+<text class="t-sm" x="18" y="262">10MBルールを原文どおり（引かれない）</text>
+<rect class="bar-old" x="470" y="268" width="4" height="15" rx="3"/>
+<text class="t-bad" x="480" y="280">0/3</text>
+<rect class="bar-out" x="590" y="268" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="280">3/3</text>
+<text class="t-sm" x="18" y="302">日本の70%条件＝KDPセレクトと正しく結んだ</text>
+<rect class="bar-old" x="470" y="308" width="4" height="15" rx="3"/>
+<text class="t-bad" x="480" y="320">0/3</text>
+<rect class="bar-out" x="590" y="308" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="320">3/3</text>
+<text class="t-sm" x="18" y="342">70%の価格帯を数字で言い切らなかった（言い切った3回は上限が誤り）</text>
+<rect class="bar-old" x="470" y="348" width="4" height="15" rx="3"/>
+<text class="t-bad" x="480" y="360">0/3</text>
+<rect class="bar-out" x="590" y="348" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="360">3/3</text>
+<text class="t-sm" x="18" y="382">渡していないことを、資料に無いと断った</text>
+<rect class="bar-old" x="470" y="388" width="4" height="15" rx="3"/>
+<text class="t-bad" x="480" y="400">0/3</text>
+<rect class="bar-out" x="590" y="388" width="84" height="15" rx="3"/>
+<text class="t-good" x="680" y="400">3/3</text>
+<text class="t-xs" x="18" y="412">⚠️ 「触れた」は、その語が返りに出たかどうかだけを機械照合したもの。正しく使えたかは別の行で数えている。</text>
+<text class="t-xs" x="18" y="430">実測 2026-08-26・全6回。生の返りと判定コードは docs/evidence/ に全文置いてある。</text>
+</svg>

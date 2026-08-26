@@ -13282,7 +13282,169 @@ def note_payout_version_comparison_chart() -> None:
     )
 
 
+def kindle_royalty_invented_band_chart() -> None:
+    """70%を選べる価格帯の上限を、AIが3回とも同じ方向に間違えることを示す。
+
+    実測（2026-08-26・各3回）。値は docs/evidence/kindle-royalty-formula.md の判定コード。
+    真値＝kdp.amazon.co.jp「日本のマーケットプレイス向けの価格設定」(G201849770)
+    ＝70%は250円〜1,650円（税込）・35%は99円〜20,000円（税込）。
+    """
+    lo_axis, hi_axis = 0, 1800
+    plot_x, plot_w = 200, 420
+    scale = plot_w / (hi_axis - lo_axis)
+
+    def px(yen: float) -> float:
+        return plot_x + (yen - lo_axis) * scale
+
+    rows = [
+        ("原文（KDPヘルプ）", 250, 1650, "250円〜1,650円", "bar-out", "t-good"),
+        ("そのまま聞いた1回目", 250, 1250, "250円〜1250円", "bar-old", "t-bad"),
+        ("そのまま聞いた2回目", 250, 1250, "250円〜1250円", "bar-old", "t-bad"),
+        ("そのまま聞いた3回目", 99, 1250, "99円〜1,250円", "bar-old", "t-bad"),
+    ]
+
+    top = 116
+    pitch, bar_h = 30, 17
+    axis_y = top + len(rows) * pitch + 6
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "上限を3回とも同じ方向に間違える。しかも下限は1回だけずれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "500円のKindle本の印税を、原文を貼らずに聞いた3回。"
+        "3回とも「70%を選べる価格帯」を数字で言い切った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上限は3回とも1,250円。原文は1,650円で、400円ぶん低く見積もっている。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "3回目の下限99円は、35%オプションの下限（99円）。"
+        "隣の行の数字が混ざったように見える。</text>\n",
+    ]
+
+    y = top
+    for label, lo, hi, note, bar_cls, txt_cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t-sm" x="18" y="{ty + 12}">{_esc(label)}</text>\n')
+        x0, x1 = px(lo), px(hi)
+        parts.append(
+            f'<rect class="{bar_cls}" x="{x0:.1f}" y="{ty}" '
+            f'width="{x1 - x0:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{txt_cls}" x="{x1 + 8:.1f}" y="{ty + 13}">{_esc(note)}</text>\n'
+        )
+        y += pitch
+
+    parts.append(
+        f'<path class="line" d="M{plot_x} {axis_y} L{px(hi_axis):.1f} {axis_y}"/>\n'
+    )
+    for tick in (0, 500, 1000, 1500, 1800):
+        tx = px(tick)
+        parts.append(f'<path class="line" d="M{tx:.1f} {axis_y} L{tx:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{tx - 14:.1f}" y="{axis_y + 18}">{tick}円</text>\n')
+
+    y = axis_y + 40
+    for text in (
+        "500円（今回聞いた価格）は、原文の範囲にも3回の答えにも入る。"
+        "つまり500円で試すかぎり、この間違いは表に出ない。",
+        "原文の確認日 2026-08-26。価格帯は税込。"
+        "生の返りと判定コードは docs/evidence/ に全文置いてある。",
+    ):
+        parts.append(f'<text class="t-xs" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 18
+
+    height = y + 6
+    alt = (
+        "500円のKindle本の印税を聞いた実測で、70%を選べる価格帯の上限をAIが3回とも"
+        "間違えたことを示す図。原文では250円から1,650円（税込）だが、"
+        "そのまま聞いた3回は250円から1250円、250円から1250円、99円から1250円と答えた。"
+        "上限は3回とも1,250円で、原文より400円低い。"
+        "3回目の下限99円は35%オプションの下限と一致する。"
+        "500円はどの範囲にも入るので、500円で試すかぎりこの間違いは表に出ない。"
+    )
+    (OUT / "kindle-royalty-invented-band.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def kindle_royalty_version_grid_chart() -> None:
+    """原文を貼るかどうかで、何が変わって何が変わらないかを判定ごとに並べる。
+
+    実測（2026-08-26・版A=そのまま聞く3回／版B=原文を貼って聞く3回）。
+    値は docs/evidence/kindle-royalty-formula.md の判定コード（正規表現照合）。
+    """
+    rows = [
+        ("35%と70%の選択制に触れた", 3, 3),
+        ("配信コストに触れた", 3, 3),
+        ("10MBルールに触れた", 1, 3),
+        ("10MBルールを原文どおり（引かれない）", 0, 3),
+        ("日本の70%条件＝KDPセレクトと正しく結んだ", 0, 3),
+        ("70%の価格帯を数字で言い切らなかった（言い切った3回は上限が誤り）", 0, 3),
+        ("渡していないことを、資料に無いと断った", 0, 3),
+    ]
+    label_x = 18
+    col_a, col_b = 470, 590
+    bar_w = 84
+    top = 128
+    row_h = 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "原文を貼ると直るもの、貼らなくても出るもの</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ質問を、そのまま聞いた3回（版A）と、KDPの原文を貼って聞いた3回（版B）。"
+        "各項目は3回中の該当回数。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "配信コストは貼らなくても出る。落ちるのは、その配信コストが"
+        "日本では10MB以上だと引かれないという例外のほう。</text>\n",
+        f'<text class="t-sm" x="{col_a}" y="{top - 14}">版A そのまま</text>\n',
+        f'<text class="t-accent" x="{col_b}" y="{top - 14}">版B 原文あり</text>\n',
+    ]
+
+    y = top
+    for label, a, b in rows:
+        ty = y + 14
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for col, n, cls in ((col_a, a, "bar-old"), (col_b, b, "bar-out")):
+            w = max(4, round(bar_w * n / 3))
+            parts.append(
+                f'<rect class="{cls}" x="{col}" y="{ty + 6}" width="{w}" height="15" rx="3"/>\n'
+            )
+            # ⚠️ 3回そろって初めて緑。1/3 を緑にすると、10MBに1回だけ触れて
+            #    向きを間違えた回が合格に見える（独立レビューで発覚）。
+            tcls = "t-good" if n == 3 else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{col + w + 6}" y="{ty + 18}">{n}/3</text>\n'
+            )
+        y += row_h
+
+    y += 4
+    for text in (
+        "⚠️ 「触れた」は、その語が返りに出たかどうかだけを機械照合したもの。"
+        "正しく使えたかは別の行で数えている。",
+        "実測 2026-08-26・全6回。生の返りと判定コードは docs/evidence/ に全文置いてある。",
+    ):
+        parts.append(f'<text class="t-xs" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 18
+
+    height = y + 6
+    alt = (
+        "KDPの印税をAIに計算させた実測で、原文を貼ると直る項目と、貼らなくても出る項目を並べた図。"
+        "3回中の該当回数で、版Aはそのまま聞いた3回、版Bは原文を貼って聞いた3回。"
+        "35%と70%の選択制に触れたのは版A3回・版B3回。配信コストに触れたのは両方とも3回。"
+        "10MBルールに触れたのは版A1回・版B3回で、原文どおり引かれないと述べたのは版A0回・版B3回。"
+        "日本の70%条件をKDPセレクトと正しく結んだのは版A0回・版B3回。"
+        "70%の価格帯を数字で言い切らなかったのは版A0回・版B3回で、"
+        "言い切った3回とも上限が原文と違っていた。"
+        "渡していないことを書かれていないと断ったのは版A0回・版B3回。"
+    )
+    (OUT / "kindle-royalty-version-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    kindle_royalty_invented_band_chart()
+    kindle_royalty_version_grid_chart()
     filler_source_detection_chart()
     filler_source_five_scale_chart()
     proposal_what_repeats_chart()

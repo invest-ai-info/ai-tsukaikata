@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="324" viewBox="0 0 720 324" role="img" aria-label="500円のKindle本の印税を聞いた実測で、70%を選べる価格帯の上限をAIが3回とも間違えたことを示す図。原文では250円から1,650円（税込）だが、そのまま聞いた3回は250円から1250円、250円から1250円、99円から1250円と答えた。上限は3回とも1,250円で、原文より400円低い。3回目の下限99円は35%オプションの下限と一致する。500円はどの範囲にも入るので、500円で試すかぎりこの間違いは表に出ない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="324"/>
+<text class="t-strong" x="18" y="26">上限を3回とも同じ方向に間違える。しかも下限は1回だけずれる</text>
+<text class="t-sm" x="18" y="45">500円のKindle本の印税を、原文を貼らずに聞いた3回。3回とも「70%を選べる価格帯」を数字で言い切った。</text>
+<text class="t-sm" x="18" y="64">上限は3回とも1,250円。原文は1,650円で、400円ぶん低く見積もっている。</text>
+<text class="t-sm" x="18" y="83">3回目の下限99円は、35%オプションの下限（99円）。隣の行の数字が混ざったように見える。</text>
+<text class="t-sm" x="18" y="141">原文（KDPヘルプ）</text>
+<rect class="bar-out" x="258.3" y="129" width="326.7" height="17" rx="3"/>
+<text class="t-good" x="593.0" y="142">250円〜1,650円</text>
+<text class="t-sm" x="18" y="171">そのまま聞いた1回目</text>
+<rect class="bar-old" x="258.3" y="159" width="233.3" height="17" rx="3"/>
+<text class="t-bad" x="499.7" y="172">250円〜1250円</text>
+<text class="t-sm" x="18" y="201">そのまま聞いた2回目</text>
+<rect class="bar-old" x="258.3" y="189" width="233.3" height="17" rx="3"/>
+<text class="t-bad" x="499.7" y="202">250円〜1250円</text>
+<text class="t-sm" x="18" y="231">そのまま聞いた3回目</text>
+<rect class="bar-old" x="223.1" y="219" width="268.6" height="17" rx="3"/>
+<text class="t-bad" x="499.7" y="232">99円〜1,250円</text>
+<path class="line" d="M200 242 L620.0 242"/>
+<path class="line" d="M200.0 242 L200.0 247"/>
+<text class="t-xs" x="186.0" y="260">0円</text>
+<path class="line" d="M316.7 242 L316.7 247"/>
+<text class="t-xs" x="302.7" y="260">500円</text>
+<path class="line" d="M433.3 242 L433.3 247"/>
+<text class="t-xs" x="419.3" y="260">1000円</text>
+<path class="line" d="M550.0 242 L550.0 247"/>
+<text class="t-xs" x="536.0" y="260">1500円</text>
+<path class="line" d="M620.0 242 L620.0 247"/>
+<text class="t-xs" x="606.0" y="260">1800円</text>
+<text class="t-xs" x="18" y="282">500円（今回聞いた価格）は、原文の範囲にも3回の答えにも入る。つまり500円で試すかぎり、この間違いは表に出ない。</text>
+<text class="t-xs" x="18" y="300">原文の確認日 2026-08-26。価格帯は税込。生の返りと判定コードは docs/evidence/ に全文置いてある。</text>
+</svg>

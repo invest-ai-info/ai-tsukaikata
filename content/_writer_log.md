@@ -45,6 +45,16 @@
 
 ## 記録
 
+### 2026-08-27
+- 公開: 1本（kindle-royalty-formula）
+- 実測: Agentツール `general-purpose`（記事の実測17回。前日に取り終えたぶんの追い計測を含む）
+- 実測: Agentツール `general-purpose`（公開前の独立レビュー10回。判定コードを毎回、生回答に回し直させた）
+
+📌 **1本に絞ったのはオーナー指示**（「質が高くなるまでクオリティを上げて、1本できたらまた次に行く」）。
+レビュー10回で、公開したら誤っていた数字を2つ止めた——追い①の価格帯再掲が **2/3ではなく3/3**
+（証拠の中略が判定行を落としていた）、図の色が主役の行だけ意味と逆（でたらめな価格帯を3回言い切った
+版Aが緑）。⚠️ **中略した抜粋で判定を出すと、判定そのものが変わる。**
+
 ### 2026-08-26
 - 公開: 4本（convert-dates-keep-comparison-words / note-fee-before-you-sell /
   kindle-ai-disclosure-check / note-payout-depends-on-payment-method）
