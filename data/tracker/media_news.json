@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T07:10:42.731832+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T07:03:30+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "アトムは8月26日、東京・豊洲にフィジカルAIの学習データを生産する開発拠点「アトム フィジカルAIファウンドリ」を開設したと発表した。",
+      "title": "学習データ収集センター「アトム フィジカルAIファウンドリ」を開設",
+      "uid": "8a3ae54b9639bd84",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135807.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-26T05:52:10.881394+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2386,18 +2398,6 @@
       "title": "子どもの家庭教師？ 学習支援を重視した設計の「ティーン向けChatGPT」登場 すぐに答えを求めても問題を自力で解くように導く",
       "uid": "42c3b9c56abca991",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133958.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T08:56:47.833795+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T08:31:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは、オンデマンド配信講座「Impress Books Academy（インプレス・ブックス・アカデミー）」の新講座として、「Visual Studio Codeで学ぶ！GitHub Copilot入門講座」の配信を8月19日に開始した。",
-      "title": "インプレス「Visual Studio Codeで学ぶ！GitHub Copilot入門講座」を配信開始",
-      "uid": "85af111055e6ca77",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133894.html",
       "vendor": "Impress AI Watch"
     }
   ]
