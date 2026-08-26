@@ -8,7 +8,12 @@
     "e491b63b4d5b0a3f": "2026-08-20",
     "e5867c4dc76ca063": "2026-08-17"
   },
-  "failures": {},
+  "failures": {
+    "elyza-note": {
+      "count": 1,
+      "last_error": "TimeoutError: The read operation timed out"
+    }
+  },
   "latest": {
     "anthropic-news": "2026-08-25T17:00:00+00:00",
     "anthropic-sdk": "2026-08-26T17:14:40+00:00",
