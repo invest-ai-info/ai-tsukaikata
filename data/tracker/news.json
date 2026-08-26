@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T17:51:15.758122+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-08-26T17:14:40+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.1.0 (2026-08-26) Full Changelog: v1.0.0...v1.1.0 Features api: add updates thinking display mode (beta) ( eb4a73f ) api: add missing anthropic-beta values ( dbebd15 ) api: add support for Organizat…",
+      "title": "v1.1.0",
+      "uid": "8760d57483998862",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.1.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-26T17:51:15.758122+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-08-26T17:01:00+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe.",
+      "summary_ja": "新しい音声認識サービスが登場\n「Gemini 3.5 Transcribe」を提供開始\n音声をより賢く文字に変換できるように",
+      "summary_source": "gemini",
+      "title": "Intelligent transcription with Gemini 3.5 Transcribe",
+      "uid": "a66166d1c0dfde78",
+      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-08-26T17:51:15.758122+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-26T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
+      "summary_ja": "教育向けChatGPTの提供が拡大\nアメリカの学校55地区で利用開始\n10万人以上の先生向けにAIツールなどを提供",
+      "summary_source": "gemini",
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+      "uid": "efe9ba7d59094141",
+      "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-26T17:51:15.758122+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-26T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom.",
+      "summary_ja": "OpenAIが教育に関する報告書を公開\nChatGPTで学習が継続しやすくなることを調査\n教室外での活用方法なども紹介",
+      "summary_source": "gemini",
+      "title": "Learning never stops: How AI makes learning continuous",
+      "uid": "8ea264cbd3a0c691",
+      "url": "https://openai.com/index/learning-never-stops",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-26T09:59:37.152037+00:00",
       "importance": "minor",
       "label": "OpenAI News",
