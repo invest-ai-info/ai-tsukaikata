@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T05:52:10.881394+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T05:38:27+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "富士通は、生成AIの進化や企業システムの複雑化に対応し、企業のサイバー防衛能力を継続的に進化させるサイバーセキュリティ戦略を策定した。",
+      "title": "富士通、AI時代の企業のサイバーセキュリティ戦略を策定 サイバーセキュリティ戦略の中核となるバーチャル組織も設立",
+      "uid": "10ab18053eff7823",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135775.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-26T05:52:10.881394+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T05:32:58+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "山善が参画するコンソーシアム「J-HRTI（Japan Humanoid Robot Training & Implementation/ジェイハーティ）」は8月26日、日本初となる民間企業だけで運営するヒューマノイドロボットの学習データ収集拠点「J-HRTI 関東データファクトリー」を千葉県習志野市内に開所し、稼働開始したと発表した。",
+      "title": "フィジカルAI学習データの収集拠点「J-HRTI 関東データファクトリー」 最大40台のヒューマノイドロボットが稼働",
+      "uid": "ff235a8868fddda5",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135758.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-26T04:57:41.122753+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "85af111055e6ca77",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133894.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T08:56:47.833795+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-19T08:00:48+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの反論によって道徳的な判断の3割超が覆る――神戸大学がこのような研究結果を発表した。米OpenAIのチャットAI「ChatGPT」を利用し、AIの反論が正解のない道徳問題への回答に与える影響を調べた。",
-      "title": "ChatGPTの反論で「道徳的判断」の3割超が覆る　高齢者が説得されやすい傾向　神戸大",
-      "uid": "cb5a9d5c595fbad3",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000627/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-19T07:56:04.368894+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T07:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIを使ってプログラミングを支援する「AIコーディングエージェント」では、危険なコマンドを実行する前にユーザーへ確認を求める仕組みが使われています。しかしDockerは2026年8月18日に、安全に見えるコマンドをユーザーが承認しても攻撃者のコードが実行される可能性がある事例を紹介しました。 続きを読む...",
-      "title": "AIエージェントに「安全なコマンド」を許可しただけで任意コード実行、Dockerが解説するコマンド承認の落とし穴",
-      "uid": "69827ce80a564af5",
-      "url": "https://gigazine.net/news/20260819-ai-agent-command/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
