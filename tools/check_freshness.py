@@ -18,6 +18,15 @@ code.claude.com へのリダイレクトになっていた。**リダイレク�
 そのURLが正式であることは別。
 
 使い方: python tools/check_freshness.py
+        python tools/check_freshness.py --writer  # レシピ担当の心拍だけ（日次）
+
+⚠️ `--writer` は 2026-08-26 に足した。担当の停止（★91）は**週次では最大6日遅れる**ので、
+「気づいたのは4日後」が直らない。毎日回すための口。
+
+🚨 **わざと「担当の心拍だけ」に絞ってある。**ここに他の検査を相乗りさせないこと——
+足した日に実測したら、週次の検査は**その時点で既に5件赤かった**（需要語の裏取り4件・
+台帳の行数1件）。それを日次に載せると**初日から毎日赤い番人**になり、鳴っても読まれなくなる。
+**日次の番人は「鳴ったら本当に異常」を保つ**（下限を課さないのと同じ判断）。
 """
 from __future__ import annotations
 
@@ -466,6 +475,114 @@ def earn_research_heartbeat(log_text, today: date,
     return None
 
 
+# --- レシピ担当の日次ログ（★91の環境停止を捕まえる・2026-08-26 オーナー指示）---
+#
+# 🚨 守りたい失敗＝**実測の相手を立てられず、静かに0本に戻る夜**。
+# 2026-08-22 と 08-24 に実際に起きた（★91）。`create_session` が
+# `the parent session's permission mode is not yet available` で4回とも失敗し、
+# Agentツールもその晩は使えなかった。担当は0番のとおり正しく止まったが、
+# **オーナーが気づいたのは4日後**だった。ここはその遅れを潰すための番人。
+#
+# 🔑 **既存の成果物だけを見る番人では捕まらない**（2026-08-26 に実測して確かめた）:
+#   ・停止記録 `docs/evidence/_*-not-published.md` は4件中3件が健全な題材停止＝偽陽性75%
+#   ・08-24 の環境停止は**証拠ファイルを1つも残していない**（材料を作る前に止めたため）
+#   ・公開本数でも鳴らない（08-22=1本・08-24=3本。別の回が成功するので0日にならない）
+# → だから稼ぎ方研究担当と同じ**沈黙禁止の日次ログ**を置き、そこを見る。
+#   ⚠️ コミット時刻ではなく**ログに書かれた日付**で測る（8/16 の素通りと同じ罠）。
+#
+# ⚠️ 環境停止と題材停止を必ず分ける。題材なら題材を替えれば直るので鳴らす必要がない。
+# 混ぜると4件中3件が偽陽性になり、検査全体の信用が落ちる（下限を課さないのと同じ判断）。
+WRITER_LOG_PATH = "content/_writer_log.md"
+WRITER_LOG_MAX_DAYS = 2      # 1晩休んでも鳴らない（0番による正常な停止があるため）
+WRITER_BLOCKED_DAYS = 7      # 直った後も鳴り続けさせない
+WRITER_LOG_DATE_RE = re.compile(r"^### (\d{4})-(\d{2})-(\d{2})", re.M)
+WRITER_MEASURE_RE = re.compile(r"^- 実測: *(.+)$", re.M)
+WRITER_BLOCKED_MARK = "❌環境"
+
+# 打つ手をメッセージに畳んで持たせる。★91を読み直さないと動けない番人にしない。
+WRITER_BLOCKED_REMEDIES = (
+    "①`claude --safe-mode --tools \"\" -p \"<指示文>\"`（実績あり。"
+    "`--bare` は認証が通らない）／②Agentツール `general-purpose`／"
+    "③`create_session`"
+)
+
+
+def _writer_entries(text: str) -> list[tuple[date, str]]:
+    """日付節ごとに (日付, その節の本文) を返す。次の日付節の手前までが1節。"""
+    heads = list(WRITER_LOG_DATE_RE.finditer(text))
+    entries = []
+    for i, head in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(text)
+        entries.append((
+            date(int(head.group(1)), int(head.group(2)), int(head.group(3))),
+            text[head.end():end],
+        ))
+    return entries
+
+
+def writer_log_heartbeat(log_text, today: date,
+                         max_days: int = WRITER_LOG_MAX_DAYS) -> str | None:
+    """レシピ担当の日次ログが止まっていたら、知らせる文字列を返す。
+
+    log_text はログの中身。ファイルが無ければ None を渡す。
+    """
+    tail = ("（沈黙禁止＝0本の夜も1行書く設計。担当は毎晩21:00 JSTの"
+            "クラウドルーティン。動いたか確認すること）")
+    if log_text is None:
+        return f"{WRITER_LOG_PATH} が見つかりません。レシピ担当の日次ログです{tail}"
+
+    entries = _writer_entries(log_text)
+    if not entries:
+        return (
+            f"{WRITER_LOG_PATH}: 日付の節（### YYYY-MM-DD）が1つもありません"
+            f"（見出しの形を変えたなら WRITER_LOG_DATE_RE も直すこと）"
+        )
+
+    latest = max(day for day, _ in entries)
+    gap = (today - latest).days
+    if gap > max_days:
+        return (
+            f"{WRITER_LOG_PATH}: 最後の記録が{latest}で、{gap}日ぶん空いています"
+            f"（上限{max_days}日）。レシピ担当が止まっている可能性があります{tail}"
+        )
+    return None
+
+
+def writer_measurement_gaps(log_text, today: date,
+                            within_days: int = WRITER_BLOCKED_DAYS) -> list[str]:
+    """実測の欄の欠けと、直近の環境停止（★91）を挙げる。
+
+    ⚠️ 題材が理由の停止は健全なので挙げない。ファイルの不在は heartbeat の担当。
+    """
+    if not log_text:
+        return []
+
+    problems = []
+    for day, block in _writer_entries(log_text):
+        # ⚠️ 1日に複数の回がある（実測: 14:15の回=CLI・21:00の回=Agent）。
+        # 先頭1行だけ見ると、2回目が塞がった夜を丸ごと見落とす（テストが捕まえた）
+        measured = [m.group(1).strip() for m in WRITER_MEASURE_RE.finditer(block)
+                    if m.group(1).strip()]
+        if not measured:
+            problems.append(
+                f"{WRITER_LOG_PATH}: {day} の記録に「- 実測:」の欄がありません。"
+                f"何で実測したか（または止めた理由）を必ず書くこと"
+                f"——欄が消えると、この番人は空回りする"
+            )
+            continue
+        if (today - day).days > within_days:
+            continue
+        for line in measured:
+            if WRITER_BLOCKED_MARK in line:
+                problems.append(
+                    f"🚨 {WRITER_LOG_PATH}: {day} に実測の相手を立てられませんでした"
+                    f"（★91の再発）＝{line}。"
+                    f"**直るまで実測を伴うレシピは1本も書けません。**試す順＝"
+                    f"{WRITER_BLOCKED_REMEDIES}"
+                )
+    return problems
+
+
 # --- 金額目安ブロックの鮮度（2026-08-14 稼ぎ方研究の設計）---
 #
 # 相場・プラットフォームの規約は変わるので、古い金額の目安は再確認へ出す。
@@ -655,8 +772,33 @@ def lawyer_deadline_gate(today: date,
     ])
 
 
-def main() -> int:
+def writer_problems(root: Path, today: date) -> list[str]:
+    """レシピ担当の心拍と実測の詰まりだけを挙げる（日次の番人が呼ぶ）。"""
+    writer_file = root / "content" / "_writer_log.md"
+    text = writer_file.read_text(encoding="utf-8") if writer_file.exists() else None
+    problems = []
+    beat = writer_log_heartbeat(text, today)
+    if beat:
+        problems.append(beat)
+    problems.extend(writer_measurement_gaps(text, today))
+    return problems
+
+
+def main(argv: list[str] | None = None) -> int:
     root = Path(__file__).resolve().parent.parent
+
+    # --writer ＝担当の心拍だけ。日次で回す口（冒頭のコメント参照）。
+    # ⚠️ ここに他の検査を足さないこと。毎日赤い番人は読まれなくなる
+    if "--writer" in (sys.argv[1:] if argv is None else argv):
+        problems = writer_problems(root, date.today())
+        for problem in problems:
+            print(problem)
+        if problems:
+            print(f"\n{len(problems)}件の問題があります")
+            return 1
+        print("レシピ担当は動いています（実測の詰まりもありません）")
+        return 0
+
     articles, errors = load_articles(root / "content")
     for error in errors:
         print(f"記事が読めません: {error}")
@@ -691,6 +833,10 @@ def main() -> int:
     if heartbeat:
         report.problems.append(heartbeat)
     report.problems.extend(money_note_staleness(articles, date.today()))
+
+    # レシピ担当の日次ログ（2026-08-26）。日次の `--writer` と同じものを週次でも見る
+    # （日次のワークフローが止まっていても、週次で必ず拾えるように二重にしておく）
+    report.problems.extend(writer_problems(root, date.today()))
 
     # 仮説キューの事前登録（2026-08-25）。反証条件と試行回数を結果より先に凍らせる
     hypothesis_file = root / "content" / "_hypothesis_queue.md"

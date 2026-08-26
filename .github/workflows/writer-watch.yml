@@ -1,0 +1,40 @@
+name: Writer Watch
+
+# レシピ担当が止まっていないかを毎日見る。
+#
+# 🔑 なぜ週次の Freshness Check と別に要るか＝★91（実測の相手を立てられない）が
+# 2026-08-22 と 08-24 に起きたとき、オーナーが気づいたのは4日後だった。
+# 週次だけだと**最悪6日遅れる**ので、「4日後に気づいた」がそのまま残る。
+#
+# 🚨 **わざと「担当の心拍だけ」に絞ってある**（`--writer`）。他の検査を相乗りさせないこと——
+# 作った日に実測したら、週次の検査はその時点で既に5件赤かった（需要語4件・台帳の行数1件）。
+# それを日次に載せると**初日から毎日赤い番人**になり、鳴っても読まれなくなる。
+# ⚠️ ネットには出ない。書き込みもしない（`contents: read`）＝push 衝突の心配が無い。
+on:
+  # JST 11:36（UTC 02:36）。前夜21:00の回と当日14:15の回の**あと**に見る。
+  # 毎時0分と既存の cron（:17 :22 :23 :40 :43）を避けた分にしてある
+  schedule:
+    - cron: "36 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: 依存をインストール
+        run: pip install -r requirements.txt
+
+      # ⚠️ 失敗したら GitHub の標準の失敗通知メールで気づく形。
+      # 専用の通知コードは足さない（サイトの検査がトラッカーに依存するのを避ける＝
+      # freshness.yml と同じ判断）。
+      - name: 担当の心拍と実測の詰まりを見る
+        run: python tools/check_freshness.py --writer

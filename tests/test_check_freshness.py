@@ -15,6 +15,8 @@ from check_freshness import (  # noqa: E402
     earn_queue_shortage,
     earn_research_heartbeat,
     evidence_gaps,
+    writer_log_heartbeat,
+    writer_measurement_gaps,
     lawyer_deadline_gate,
     lesson_promotions,
     money_note_staleness,
@@ -650,3 +652,114 @@ def test_money_note_without_a_date_is_silently_skipped():
         body_html='<div class="money-note">出典はあるが日付が無い</div>',
     )]
     assert money_note_staleness(articles, date(2026, 9, 1)) == []
+
+
+# --- レシピ担当の日次ログ（★91の環境停止を捕まえる番人・2026-08-26）---
+#
+# 🚨 較正の結果、**既存の成果物だけを見る番人では捕まらない**ことが分かっている。
+# ・停止記録 `_*-not-published.md` は4件中3件が健全な題材停止（偽陽性75%）
+# ・8/24 の環境停止は**証拠ファイルを1つも残していない**（材料を作る前に止めたため）
+# ・公開本数でも鳴らない（8/22=1本・8/24=3本＝別の回が成功しているので0にならない）
+# → 稼ぎ方研究担当と同じ「沈黙禁止の日次ログ」を置き、そこを見るしかない。
+
+def _wlog(*entries):
+    """(日, 実測欄) の並びから担当ログを組む。実測欄が None なら欄ごと落とす。"""
+    head = "# レシピ担当の日次ログ\n\n## 記録\n\n"
+    out = []
+    for day, measured in entries:
+        block = f"### 2026-08-{day}\n- 公開: 1本\n"
+        if measured is not None:
+            block += f"- 実測: {measured}\n"
+        out.append(block + "\n")
+    return head + "".join(out)
+
+
+_OK = "Agentツール（general-purpose）"
+
+
+def test_writer_log_today_is_silent():
+    assert writer_log_heartbeat(_wlog(("26", _OK)), date(2026, 8, 26)) is None
+
+
+def test_writer_log_is_quiet_at_exactly_the_boundary():
+    # 上限は2日。1晩休んでも鳴らない（0番による正常な停止があるため）
+    assert writer_log_heartbeat(_wlog(("24", _OK)), date(2026, 8, 26)) is None
+
+
+def test_writer_log_silent_too_long_is_detected():
+    message = writer_log_heartbeat(_wlog(("23", _OK)), date(2026, 8, 26))
+    assert message is not None
+    assert "2026-08-23" in message and "3日" in message
+
+
+def test_writer_log_uses_the_newest_dated_entry():
+    assert writer_log_heartbeat(
+        _wlog(("20", _OK), ("26", _OK), ("22", _OK)), date(2026, 8, 26)) is None
+
+
+def test_writer_log_ignores_unrelated_edits():
+    # ★91の系列＝ファイルが触られただけで心拍が戻ってはいけない（8/16の素通りと同型）
+    stale = _wlog(("23", _OK)) + "\n無関係な追記。日付節ではない。\n"
+    assert writer_log_heartbeat(stale, date(2026, 8, 26)) is not None
+
+
+def test_writer_log_missing_file_is_detected():
+    message = writer_log_heartbeat(None, date(2026, 8, 26))
+    assert message is not None and "見つかりません" in message
+
+
+def test_writer_log_without_dated_section_is_detected():
+    message = writer_log_heartbeat("日付の節が無い本文", date(2026, 8, 26))
+    assert message is not None and "日付の節" in message
+
+
+def test_environment_blockage_is_detected():
+    """🚨 これが本体。★91（実測の相手を立てられない）を、その日のうちに鳴らす。"""
+    problems = writer_measurement_gaps(
+        _wlog(("26", "❌環境 — create_session が4回とも permission_mode エラー")),
+        date(2026, 8, 26),
+    )
+    assert len(problems) == 1
+    assert "★91" in problems[0] and "2026-08-26" in problems[0]
+    # 打つ手を必ず添える（記録だけ残して次の担当が探し直すのを防ぐ）
+    assert "--safe-mode" in problems[0]
+
+
+def test_topic_stop_is_not_an_alarm():
+    """⚠️ 偽陽性の本体。題材が理由の停止は健全なので鳴らさない（4件中3件がこれ）。"""
+    problems = writer_measurement_gaps(
+        _wlog(("26", "❌題材 — 見立てた症状が再現しなかった")), date(2026, 8, 26))
+    assert problems == []
+
+
+def test_successful_measurement_is_silent():
+    assert writer_measurement_gaps(_wlog(("26", _OK)), date(2026, 8, 26)) == []
+
+
+def test_old_environment_blockage_is_not_repeated_forever():
+    # 直った後も鳴り続けると一覧が読まれなくなる（下限を課さないのと同じ判断）
+    problems = writer_measurement_gaps(
+        _wlog(("18", "❌環境 — 別セッションを立てられなかった")), date(2026, 8, 26))
+    assert problems == []
+
+
+def test_missing_measurement_field_is_detected():
+    """欄ごと消えたら鳴る。消えたまま素通りすると番人が空回りする。"""
+    problems = writer_measurement_gaps(_wlog(("26", None)), date(2026, 8, 26))
+    assert len(problems) == 1 and "実測" in problems[0]
+
+
+def test_every_run_of_the_day_is_checked_not_just_the_first():
+    """🚨 1日に複数回ある（実測 14:15の回=CLI・21:00の回=Agent が実在）。
+    先頭の1行だけ見ると、2回目が塞がった夜を丸ごと見落とす。"""
+    log = ("# レシピ担当の日次ログ\n\n## 記録\n\n"
+           "### 2026-08-26\n- 公開: 1本\n"
+           f"- 実測: {_OK}\n"
+           "- 実測: ❌環境 — 2回目の担当は立てられなかった\n\n")
+    problems = writer_measurement_gaps(log, date(2026, 8, 26))
+    assert len(problems) == 1 and "★91" in problems[0]
+
+
+def test_writer_measurement_gaps_without_a_file_is_silent():
+    """ファイルの不在は heartbeat 側の担当。ここで二重に鳴らさない。"""
+    assert writer_measurement_gaps(None, date(2026, 8, 26)) == []
