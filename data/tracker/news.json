@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T23:39:54.528131+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-26T23:06:39+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added the SendFeedback tool: when something goes wrong in a session, Claude can draft a feedback report for you to review and send from /feedback (turn off with the feedbackDrafts sett…",
+      "title": "v2.1.247",
+      "uid": "be6b607af7614377",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.247",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-26T23:39:54.528131+00:00",
+      "importance": "major",
+      "label": "Qwen 新モデル",
+      "published": "2026-08-26T19:37:40+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 Flash is a multimodal reasoning model from Alibaba. It is suited for coding assistance, agentic workflows, visual understanding, document and codebase analysis, desktop interaction, chart ana…",
+      "title": "qwen/qwen3.8-flash",
+      "uid": "70991e07c1639ccf",
+      "url": "https://openrouter.ai/qwen/qwen3.8-flash",
+      "vendor": "Alibaba Qwen"
+    },
+    {
       "first_seen": "2026-08-26T17:51:15.758122+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -66,6 +90,20 @@
       "title": "How loveholidays is making everyone a builder with Codex",
       "uid": "88f0fec04190f840",
       "url": "https://openai.com/index/loveholidays",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-26T23:39:54.528131+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-26T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment.",
+      "summary_ja": "OpenAIがHugging Faceのセキュリティ問題を報告\nAIモデルの安全性強化に向けた対策を発表\n監視やAIが意図通り動くか確認を進める",
+      "summary_source": "gemini",
+      "title": "The Hugging Face incident and the road ahead",
+      "uid": "c5839ad9a1ccc8de",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
       "vendor": "OpenAI"
     },
     {
@@ -350,6 +388,20 @@
       "title": "Introducing AI Futures",
       "uid": "e491b63b4d5b0a3f",
       "url": "https://openai.com/index/introducing-ai-futures",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-08-26T23:39:54.528131+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-08-20T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
+      "summary_ja": "OpenAIが新ブログ「Intelligence Age」を開始\n画期的なAIが社会に与える影響を探求\n権力、政治、経済、個人の自由などを議論",
+      "summary_source": "gemini",
+      "title": "Introducing Intelligence Age",
+      "uid": "82a751613fe8f19a",
+      "url": "https://openai.com/index/introducing-intelligence-age",
       "vendor": "OpenAI"
     },
     {

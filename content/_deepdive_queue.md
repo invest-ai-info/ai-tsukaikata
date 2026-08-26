@@ -286,6 +286,9 @@
       比較という記事の型に、①②が解けても当てはまらない可能性が高い（2026-08-20「AI Futures」と同じ構造）。
       次にこの行を見る人へ＝①②が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
 
+- [ ] https://openai.com/index/introducing-intelligence-age
+  - 2026-08-26 自動追記（major・OpenAI「Introducing Intelligence Age」）
+
 ## 処理済み
 
 - https://openai.com/index/daybreak-models-are-now-available-on-aws → **公開済み** content/tools/daybreak-on-bedrock.md（2026-08-21・公開）
