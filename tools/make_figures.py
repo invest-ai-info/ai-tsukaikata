@@ -13191,6 +13191,97 @@ def kindle_disclosure_no_citation_chart() -> None:
     )
 
 
+def note_payout_version_comparison_chart() -> None:
+    """1,000円の記事が3件売れたときの手取りを、3通りの聞き方で比較する。
+
+    実測（2026-08-26・各3回）。真の幅は決済手段6種類での計算結果
+    （携帯キャリア2,025円〜クレジットカード2,295円）。値は check.py。
+    """
+    axis_lo, axis_hi = 1900, 2650
+    axis_x, axis_w = 160, 380
+
+    def sx(v: int) -> int:
+        return axis_x + round(axis_w * (v - axis_lo) / (axis_hi - axis_lo))
+
+    rows = [
+        ("① 率を貼らずに聞く（3回とも別々の値）", [(2400, 2600), (2300, 2550), (2300, 2600)], False),
+        ("② 料率表を貼るだけ", [(2025, 2295)] * 3, True),
+        ("③ ②＋「決まらない変数があれば挙げて」", [(2025, 2295)] * 3, True),
+    ]
+
+    top = 130
+    group_h = 74
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "率を貼らない3回は、真の幅からズレる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「noteで1,000円の有料記事が3件売れました。手取りはいくらになりますか」を3通りの聞き方で、"
+        "各3回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "真の幅（決済手段6種類での計算・携帯キャリア決済〜クレジットカード決済）は"
+        "2,025円〜2,295円。</text>\n",
+    ]
+
+    # 真値の帯を全体の背景に薄く描く
+    true_x0, true_x1 = sx(2025), sx(2295)
+    parts.append(
+        f'<rect class="box-good" x="{true_x0}" y="{top - 14}" width="{true_x1 - true_x0}" '
+        f'height="{len(rows) * group_h + 6}" rx="4" opacity="0.35"/>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="{(true_x0 + true_x1) // 2}" y="{top - 20}" text-anchor="middle">'
+        "真の幅</text>\n"
+    )
+
+    y = top
+    for label, ranges, matched in rows:
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(label)}</text>\n')
+        for i, (lo, hi) in enumerate(ranges):
+            ry = y + 24 + i * 16
+            x0, x1 = sx(lo), sx(hi)
+            parts.append(
+                f'<line class="line" x1="{x0}" y1="{ry}" x2="{x1}" y2="{ry}" '
+                f'stroke="{"#1a7f37" if matched else "#b02020"}" stroke-width="5" '
+                f'stroke-linecap="round"/>\n'
+            )
+            tcls = "t-good" if matched else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{x1 + 8}" y="{ry + 4}">{lo:,}〜{hi:,}円</text>\n'
+            )
+        y += group_h
+
+    y += 6
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="678" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 25}">'
+        "🚨 ①の3本は、真の幅（緑の帯）と1本も重ならない。独自に発明した料率で計算しているため。</text>\n"
+    )
+    y += 40
+
+    notes = [
+        ("t-sm", "※ ②③は3回とも、真値と1円単位で一致（クレジットカード2,295円〜携帯キャリア2,025円）。"),
+        ("t-xs", "架空の実測ではなくAIの知識そのものを聞いた回。生の返りと照合コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 24
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 8
+    alt = (
+        "noteで1,000円の記事が3件売れたときの手取りを、率を貼らずに聞いた3回・"
+        "料率表を貼って聞いた3回・料率表に加えて決まらない変数を挙げてと頼んだ3回で比較した図。"
+        "真の幅は2,025円から2,295円で、決済手段6種類（クレジットカード・携帯キャリア・PayPay・"
+        "Amazon Pay・noteポイント・PayPal）での計算結果の範囲を示す。"
+        "率を貼らない3回は2,300円台から2,600円台の、真の幅と重ならないズレた独自の範囲を返した。"
+        "料率表を貼った6回（版2・版3）は3回ずつとも真の幅と1円単位で一致した。"
+    )
+    (OUT / "note-payout-version-comparison.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     filler_source_detection_chart()
     filler_source_five_scale_chart()
@@ -13356,4 +13447,5 @@ if __name__ == "__main__":
     note_fee_rate_match_chart()
     kindle_disclosure_scenario_grid_chart()
     kindle_disclosure_no_citation_chart()
+    note_payout_version_comparison_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
