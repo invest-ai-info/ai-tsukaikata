@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="412" viewBox="0 0 720 412" role="img" aria-label="noteで1,000円の記事がクレジットカード決済で1件売れたときの振込額の内訳を示す図。売上1,000円から事務手数料5%の50円が引かれて950円になり、そこからプラットフォーム利用料10%の95円が引かれて855円になり、さらに振込手数料270円が1回ぶん引かれて、最終的な振込額は585円になる。1,000円に対して58.5パーセントが手元に残る計算。事務手数料の料率は決済手段によって変わり、クレジットカード5パーセント・携帯キャリア15パーセント・PayPay 7パーセント・Amazon Pay 7パーセント・noteポイント10パーセント・PayPal 6.5パーセントで、この図はクレジットカード決済の場合を示している。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="412"/>
+<text class="t-strong" x="18" y="26">1,000円の売上から、振込までに3回引かれる</text>
+<text class="t-sm" x="18" y="45">クレジットカード決済で1,000円の記事が1件売れた場合。原文の公式例の順に、事務手数料→プラットフォーム利用料→振込手数料の順で当てはめた。</text>
+<text class="t-sm" x="18" y="64">プラットフォーム利用料は「売上そのもの」ではなく「事務手数料を引いた残り」に掛かる。</text>
+<text class="t-xs" x="280" y="88">残額（円）</text>
+<text class="t" x="18" y="126">売上</text>
+<rect class="bar-out" x="280" y="111" width="300" height="20" rx="3"/>
+<text class="t-strong" x="588" y="126">1,000円</text>
+<text class="t" x="18" y="172">事務手数料 5%（クレカ決済）を引く</text>
+<rect class="bar-in" x="280" y="157" width="285" height="20" rx="3"/>
+<text class="t-strong" x="573" y="172">950円（－50円）</text>
+<text class="t" x="18" y="218">プラットフォーム利用料 10% を引く</text>
+<rect class="bar-in" x="280" y="203" width="256" height="20" rx="3"/>
+<text class="t-strong" x="544" y="218">855円（－95円）</text>
+<text class="t" x="18" y="264">振込手数料 270円/回 を引く</text>
+<rect class="bar-out" x="280" y="249" width="176" height="20" rx="3"/>
+<text class="t-strong" x="464" y="264">585円（－270円）</text>
+<rect class="box-accent" x="18" y="300" width="678" height="40" rx="6"/>
+<text class="t-accent" x="34" y="325">振込額 585円（1,000円の58.5%）。振込手数料270円は1回あたりなので、まとめて申請するほど比率が下がる。</text>
+<text class="t-sm" x="18" y="364">※ 事務手数料の料率は決済手段で変わる（クレカ以外は次の図）。この図はクレカ決済の場合。</text>
+<text class="t-xs" x="18" y="383">原文の公式例（2026-08-25確認）から計算。料率は変わるため、使う前に開いて確かめること。</text>
+</svg>

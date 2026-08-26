@@ -12877,6 +12877,170 @@ def handoff_wrong_touch_total_chart() -> None:
     )
 
 
+def note_fee_payout_waterfall_chart() -> None:
+    """1,000円の記事がクレカ決済で1件売れたとき、振込までに3回引かれる様子を階段状に見せる。
+
+    実測ではなく原文の式の転記（2026-08-25確認）。事務手数料5%→プラットフォーム利用料10%
+    （残額に掛ける）→振込手数料270円/回、の順。
+    """
+    stages = [
+        ("売上", 1000, ""),
+        ("事務手数料 5%（クレカ決済）を引く", 950, "－50円"),
+        ("プラットフォーム利用料 10% を引く", 855, "－95円"),
+        ("振込手数料 270円/回 を引く", 585, "－270円"),
+    ]
+    label_x = 18
+    bar_x = 280
+    max_bar_w = 300
+    top = 108
+    row_h = 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "1,000円の売上から、振込までに3回引かれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "クレジットカード決済で1,000円の記事が1件売れた場合。原文の公式例の順に、"
+        "事務手数料→プラットフォーム利用料→振込手数料の順で当てはめた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "プラットフォーム利用料は「売上そのもの」ではなく「事務手数料を引いた残り」に掛かる。"
+        "</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 20}">残額（円）</text>\n',
+    ]
+
+    y = top
+    for label, amount, delta in stages:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 1000))
+        cls = "bar-out" if amount in (1000, 585) else "bar-in"
+        parts.append(
+            f'<rect class="{cls}" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n'
+        )
+        amount_label = f"{amount:,}円" + (f"（{delta}）" if delta else "")
+        parts.append(
+            f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{_esc(amount_label)}</text>\n'
+        )
+        y += row_h
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 25}">'
+        "振込額 585円（1,000円の58.5%）。振込手数料270円は1回あたりなので、まとめて申請するほど比率が下がる。</text>\n"
+    )
+    y += 40
+
+    notes = [
+        ("t-sm", "※ 事務手数料の料率は決済手段で変わる（クレカ以外は次の図）。この図はクレカ決済の場合。"),
+        ("t-xs", "原文の公式例（2026-08-25確認）から計算。料率は変わるため、使う前に開いて確かめること。"),
+    ]
+    y += 24
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 10
+    alt = (
+        "noteで1,000円の記事がクレジットカード決済で1件売れたときの振込額の内訳を示す図。"
+        "売上1,000円から事務手数料5%の50円が引かれて950円になり、"
+        "そこからプラットフォーム利用料10%の95円が引かれて855円になり、"
+        "さらに振込手数料270円が1回ぶん引かれて、最終的な振込額は585円になる。"
+        "1,000円に対して58.5パーセントが手元に残る計算。"
+        "事務手数料の料率は決済手段によって変わり、クレジットカード5パーセント・携帯キャリア15パーセント・"
+        "PayPay 7パーセント・Amazon Pay 7パーセント・noteポイント10パーセント・PayPal 6.5パーセントで、"
+        "この図はクレジットカード決済の場合を示している。"
+    )
+    (OUT / "note-fee-payout-waterfall.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def note_fee_rate_match_chart() -> None:
+    """noteの決済手段別の事務手数料6種類のうち、AIの回答が正しく言えた個数を6回ぶん並べる。
+
+    実測（2026-08-26・「noteで有料記事を売ると手数料はいくら引かれますか」を版2通り×各3回）。
+    真値の6種類＝クレカ5%・キャリア15%・PayPay 7%・Amazon Pay 7%・noteポイント10%・PayPal 6.5%。
+    値は check.py の A/B節。
+    """
+    rows = [
+        ("① 率を貼らずに聞く・1回目", 1),
+        ("① 率を貼らずに聞く・2回目", 2),
+        ("① 率を貼らずに聞く・3回目", 2),
+        ("② 出典URLも書いてと足す・1回目", 2),
+        ("② 出典URLも書いてと足す・2回目", 2),
+        ("② 出典URLも書いてと足す・3回目", 2),
+    ]
+    label_x = 18
+    plot_x = 380
+    plot_w = 200
+    total = 6
+    top = 150
+    row_h = 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "6種類ある決済手段のうち、6回とも2つ止まり</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「noteで有料記事を売ると手数料はいくら引かれますか」を、率を貼らずに3回・"
+        "出典URLも足して3回、計6回聞いた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "下の数は、6種類の事務手数料（クレカ5%・キャリア15%・PayPay 7%・Amazon Pay 7%・"
+        "noteポイント10%・PayPal 6.5%）のうち、</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "正しく出てきた個数。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 22}">6種類のうち一致した数</text>\n',
+    ]
+
+    y = top
+    for label, n in rows:
+        ty = y + 15
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(plot_w * n / total))
+        cls = "bar-in"
+        parts.append(
+            f'<rect class="{cls}" x="{plot_x}" y="{ty - 13}" width="{w}" height="18" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{plot_x + w + 8}" y="{ty}">{n}/{total}種</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="678" height="44" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 18}">'
+        "🚨 6回とも出たのはクレジットカードと携帯キャリアの2つだけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 36}">'
+        "PayPay・Amazon Pay・noteポイント・PayPalは、6回とも1回も出なかった。</text>\n"
+    )
+    y += 44
+
+    notes = [
+        ("t-sm", "※ 「購読者の決済手段によります（クリエイターは選べない）」という原文の一言も、6回とも出なかった。"),
+        ("t-xs", "架空の実測ではなくAIの知識そのものを聞いた6回。生の返りと照合コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 24
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 10
+    alt = (
+        "noteの決済手段別の事務手数料6種類（クレジットカード5パーセント・携帯キャリア15パーセント・"
+        "PayPay 7パーセント・Amazon Pay 7パーセント・noteポイント10パーセント・PayPal 6.5パーセント）のうち、"
+        "AIの回答に正しく出てきた個数を6回ぶん並べた棒グラフ。"
+        "率を貼らずに聞いた3回はそれぞれ1個・2個・2個、出典URLを求めた3回はいずれも2個で、"
+        "6回ともクレジットカードと携帯キャリアの2つ止まりだった。"
+        "PayPay・Amazon Pay・noteポイント・PayPalは6回とも0回だった。"
+        "「決済手段は購読者が選ぶ」という原文の一言も6回とも出なかった。"
+    )
+    (OUT / "note-fee-rate-match.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     filler_source_detection_chart()
     filler_source_five_scale_chart()
@@ -13038,4 +13202,6 @@ if __name__ == "__main__":
     material_match_vs_facts_chart()
     handoff_relative_terms_grid_chart()
     handoff_wrong_touch_total_chart()
+    note_fee_payout_waterfall_chart()
+    note_fee_rate_match_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
