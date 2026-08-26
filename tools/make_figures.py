@@ -13041,6 +13041,156 @@ def note_fee_rate_match_chart() -> None:
     )
 
 
+def kindle_disclosure_scenario_grid_chart() -> None:
+    """4つの作業パターンについて、AIの判定が原文の線と一致したかを格子で見せる。
+
+    実測（2026-08-26・4シナリオを聞く2版×各2回＝16判定）。値は check.py。
+    真値: ①要申告 ②不要 ③不要 ④要申告（原文＝KDPコンテンツガイドライン、2026-08-25確認）。
+    """
+    scenarios = [
+        "① AIに本文を書かせ、自分で大幅に編集",
+        "② 自分で本文を書き、AIは校正だけ",
+        "③ AIでアイデア出し、文章は自分で執筆",
+        "④ 表紙の画像をAIで生成",
+    ]
+    truth = ["要申告", "不要", "不要", "要申告"]
+    runs = ["①そのまま聞く・1回目", "①そのまま聞く・2回目", "②原文を貼る・1回目", "②原文を貼る・2回目"]
+    # 全16判定が真値と一致（実測結果）
+    grid = [[True] * 4 for _ in runs]
+
+    label_w = 190
+    col_w = 118
+    top = 132
+    row_h = 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "4つの場面×4通りの聞き方＝16判定。全16判定が原文の線と一致</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "真値（KDPコンテンツガイドライン・2026-08-25確認）＝①要申告 ②不要 ③不要 ④要申告。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「大幅に編集した」①も、4回とも正しく「要申告」側に判定した。</text>\n",
+    ]
+
+    for i, s in enumerate(scenarios):
+        x = 18 + label_w + i * col_w
+        parts.append(
+            f'<text class="t-xs" x="{x + col_w // 2}" y="{top - 34}" text-anchor="middle">{_esc(s[:2])}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x + col_w // 2}" y="{top - 18}" text-anchor="middle">（真値{_esc(truth[i])}）</text>\n'
+        )
+
+    y = top
+    for r, run in enumerate(runs):
+        ty = y + 17
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(run)}</text>\n')
+        for i in range(4):
+            x = 18 + label_w + i * col_w
+            ok = grid[r][i]
+            cls = "box-good" if ok else "box-bad"
+            tcls = "t-good" if ok else "t-bad"
+            parts.append(
+                f'<rect class="{cls}" x="{x + 14}" y="{ty - 15}" width="{col_w - 28}" height="20" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcls}" x="{x + col_w // 2}" y="{ty}" text-anchor="middle">一致</text>\n'
+            )
+        y += row_h + 6
+
+    y += 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 25}">'
+        "16/16判定が一致。ただし根拠の一字一句の引用は2回とも「引用できません」（次の図）。</text>\n"
+    )
+    y += 40 + 18
+
+    height = y + 8
+    alt = (
+        "Kindleダイレクトパブリッシングで、4つの作業パターンについて申告が必要か不要かを"
+        "AIに4通りの聞き方（率を貼らずに聞く2回・原文を貼って聞く2回）で聞いた結果の格子図。"
+        "AIに本文を書かせて自分で大幅に編集した場合は申告が必要、"
+        "自分で本文を書きAIには校正だけしてもらった場合は申告不要、"
+        "AIにアイデア出しを手伝ってもらい最終的な文章はすべて自分で書いた場合は申告不要、"
+        "表紙の画像をAIで生成した場合は申告が必要というのが原文の線であり、"
+        "4通りの聞き方すべてで、4つの場面すべての判定が原文の線と一致した。合計16判定中16判定が一致。"
+    )
+    (OUT / "kindle-disclosure-scenario-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def kindle_disclosure_no_citation_chart() -> None:
+    """判定は当たっても、根拠の一字一句の引用と出典URLは出てこないことを示す。
+
+    実測（2026-08-26）。値は check.py。
+    """
+    rows = [
+        ("4シナリオを聞いた4回で、出典URLを書いた回", 0, 4),
+        ("根拠の一字一句の引用を求めた2回で、引用できた回", 0, 2),
+        ("根拠の一字一句の引用を求めた2回で、正直に「引用できません」と答えた回", 2, 2),
+    ]
+    label_x = 18
+    plot_x = 460
+    plot_w = 130
+    top = 110
+    row_h = 48
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "判定は当たっても、原文の言葉そのものは持っていない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "16判定は原文と一致したが、それとは別に「根拠を一字一句引用して」と求めると別の顔を見せる。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同じ連載のnoteの回では、出典URLを求めると実在しないURLが3回とも返った"
+        "（前の回を参照）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "こちらは、無いものは「無い」と答えた。</text>\n",
+    ]
+
+    y = top
+    for label, n, total in rows:
+        ty = y + 15
+        # ラベルは折り返さず、複数行に分けて置く
+        words = label
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty}">{_esc(words)}</text>\n')
+        w = max(4, round(plot_w * n / total)) if total else 4
+        cls = "bar-old" if n == 0 else "bar-out"
+        parts.append(
+            f'<rect class="{cls}" x="{plot_x}" y="{ty + 6}" width="{w}" height="18" rx="3"/>\n'
+        )
+        tcls = "t-bad" if n == 0 else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{plot_x + w + 8}" y="{ty + 20}">{n}/{total}回</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-xs", "架空の実測ではなくAIの知識そのものを聞いた回。生の返りと照合コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 10
+    alt = (
+        "Kindleダイレクトパブリッシングの申告について、AIの判定は原文と一致したが、"
+        "根拠の一字一句の引用や出典URLは出てこないことを示す図。"
+        "4シナリオを聞いた4回のうち出典URLを書いた回は0回。"
+        "根拠の一字一句の引用を求めた2回のうち、引用できた回は0回で、"
+        "正直に「引用できません」と答えた回が2回。"
+        "同じ連載のnoteの回では出典URLを求めると実在しないURLが3回とも返ったのに対し、"
+        "こちらは無いものは無いと答えた。"
+    )
+    (OUT / "kindle-disclosure-no-citation.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     filler_source_detection_chart()
     filler_source_five_scale_chart()
@@ -13204,4 +13354,6 @@ if __name__ == "__main__":
     handoff_wrong_touch_total_chart()
     note_fee_payout_waterfall_chart()
     note_fee_rate_match_chart()
+    kindle_disclosure_scenario_grid_chart()
+    kindle_disclosure_no_citation_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
