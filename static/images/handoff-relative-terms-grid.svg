@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-label="絶対日付に直す指示文4版で、触ってはいけない4項目が2回中何回誤変換されたかのマス目。先週号は版a・bで2回とも誤変換、版c・dでは2回中1回（もう1回は基準日不明の逃げ道）。先月比は版a・b・cで2回とも誤変換されたが、比較語を残す指示を足した版dでは2回とも0件。前年同月比は版a・bで2回中1回、版c・dでは0回。翌月初は版bで2回中1回のみ、他は0回。変換すべき12件は4版とも8回中8回、96件中96件が正解だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="420"/>
+<text class="t-strong" x="18" y="26">「先月比」だけは、版を変えても誤変換が消えなかった</text>
+<text class="t-sm" x="18" y="45">引き継ぎメモ20行（変換すべき日付12件＋触ってはいけない語8件）に、指示文を4版・各2回＝8回、独立したプロセスに送った。</text>
+<text class="t-sm" x="18" y="64">版a＝そのまま。版b＝＋「先週/来月まで/最近を禁止」（記事の推奨そのまま）。</text>
+<text class="t-sm" x="18" y="83">版c＝＋基準日と〔基準日不明〕の逃げ道。版d＝＋「○○比は残せ」を明記。</text>
+<text class="t-sm" x="18" y="102">セルの数＝誤って絶対日付に書き換えた回数（2回中）。0が誤変換なし。</text>
+<text class="t-sm" x="18" y="121">※ 変換すべき12件は4版とも8回中8回、96／96件が正解だった（別枠）。</text>
+<text class="t-xs" x="245.0" y="145">版a</text>
+<text class="t-xs" x="373.0" y="145">版b</text>
+<text class="t-xs" x="501.0" y="145">版c</text>
+<text class="t-xs" x="629.0" y="145">版d</text>
+<text class="t-sm" x="18" y="179">「先週号」（固有名詞）</text>
+<rect class="box-bad" x="194" y="157" width="118" height="34" rx="4"/>
+<text class="t-bad" x="236.8" y="179">2／2</text>
+<rect class="box-bad" x="322" y="157" width="118" height="34" rx="4"/>
+<text class="t-bad" x="364.8" y="179">2／2</text>
+<rect class="box-bad" x="450" y="157" width="118" height="34" rx="4"/>
+<text class="t-bad" x="492.8" y="179">1／2</text>
+<rect class="box-bad" x="578" y="157" width="118" height="34" rx="4"/>
+<text class="t-bad" x="620.8" y="179">1／2</text>
+<text class="t-sm" x="18" y="223">「先月比」（比較の言葉）</text>
+<rect class="box-bad" x="194" y="201" width="118" height="34" rx="4"/>
+<text class="t-bad" x="236.8" y="223">2／2</text>
+<rect class="box-bad" x="322" y="201" width="118" height="34" rx="4"/>
+<text class="t-bad" x="364.8" y="223">2／2</text>
+<rect class="box-bad" x="450" y="201" width="118" height="34" rx="4"/>
+<text class="t-bad" x="492.8" y="223">2／2</text>
+<rect class="box-good" x="578" y="201" width="118" height="34" rx="4"/>
+<text class="t-good" x="620.8" y="223">0／2</text>
+<text class="t-sm" x="18" y="267">「前年同月比」（同上）</text>
+<rect class="box-bad" x="194" y="245" width="118" height="34" rx="4"/>
+<text class="t-bad" x="236.8" y="267">1／2</text>
+<rect class="box-bad" x="322" y="245" width="118" height="34" rx="4"/>
+<text class="t-bad" x="364.8" y="267">1／2</text>
+<rect class="box-good" x="450" y="245" width="118" height="34" rx="4"/>
+<text class="t-good" x="492.8" y="267">0／2</text>
+<rect class="box-good" x="578" y="245" width="118" height="34" rx="4"/>
+<text class="t-good" x="620.8" y="267">0／2</text>
+<text class="t-sm" x="18" y="311">「翌月初」（規則）</text>
+<rect class="box-good" x="194" y="289" width="118" height="34" rx="4"/>
+<text class="t-good" x="236.8" y="311">0／2</text>
+<rect class="box-bad" x="322" y="289" width="118" height="34" rx="4"/>
+<text class="t-bad" x="364.8" y="311">1／2</text>
+<rect class="box-good" x="450" y="289" width="118" height="34" rx="4"/>
+<text class="t-good" x="492.8" y="311">0／2</text>
+<rect class="box-good" x="578" y="289" width="118" height="34" rx="4"/>
+<text class="t-good" x="620.8" y="311">0／2</text>
+<text class="t-xs" x="18" y="362">※「先週号」は版c・dで各2回中1回、誤変換せず〔基準日不明〕の逃げ道が働いた（もう1回は誤変換）。</text>
+<text class="t-bad" x="18" y="383">※「先月比」は版cまで2回とも誤変換。版dで初めて2回とも0件になった。</text>
+<text class="t-xs" x="18" y="404">架空データでの実測。生の返り8通は docs/evidence/ に全文置いてある。</text>
+</svg>

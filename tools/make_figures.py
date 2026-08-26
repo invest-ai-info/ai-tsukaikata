@@ -12705,6 +12705,178 @@ def filler_source_five_scale_chart() -> None:
     )
 
 
+def handoff_relative_terms_grid_chart() -> None:
+    """絶対日付に直す4版で、触ってはいけない4項目が何回誤変換されたかのマス目。
+
+    実測（2026-08-26・引き継ぎメモ20行・4版×各2回＝8回。独立した
+    `claude --safe-mode` サブプロセスに送って機械照合）。変換すべき12件は
+    8回とも全問正解（96/96）だったので、ここに出すのは触ってはいけない
+    8件のうち、実際に誤変換が出た4件だけ。
+    """
+    rows = [
+        ("「先週号」（固有名詞）", [2, 2, 1, 1]),
+        ("「先月比」（比較の言葉）", [2, 2, 2, 0]),
+        ("「前年同月比」（同上）", [1, 1, 0, 0]),
+        ("「翌月初」（規則）", [0, 1, 0, 0]),
+    ]
+    cols = ["版a", "版b", "版c", "版d"]
+    label_w = 176
+    cell_w, cell_h, gap = 118, 34, 10
+    top = 157
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「先月比」だけは、版を変えても誤変換が消えなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "引き継ぎメモ20行（変換すべき日付12件＋触ってはいけない語8件）に、"
+        "指示文を4版・各2回＝8回、独立したプロセスに送った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "版a＝そのまま。版b＝＋「先週/来月まで/最近を禁止」（記事の推奨そのまま）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "版c＝＋基準日と〔基準日不明〕の逃げ道。版d＝＋「○○比は残せ」を明記。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "セルの数＝誤って絶対日付に書き換えた回数（2回中）。0が誤変換なし。</text>\n",
+        '<text class="t-sm" x="18" y="121">'
+        "※ 変換すべき12件は4版とも8回中8回、96／96件が正解だった（別枠）。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 8:.1f}" y="{top - 12}">{name}</text>\n'
+        )
+
+    for row_index, (label, values) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, v in enumerate(values):
+            x = grid_x + col_index * (cell_w + gap)
+            bad = v > 0
+            box = "box-bad" if bad else "box-good"
+            tone = "t-bad" if bad else "t-good"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            text = f"{v}／2"
+            tx = x + cell_w / 2 - len(text) * 5.4
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 8 + 21 * 3 + 16
+    notes = [
+        ("t-xs", "※「先週号」は版c・dで各2回中1回、誤変換せず〔基準日不明〕の逃げ道が働いた（もう1回は誤変換）。"),
+        ("t-bad", "※「先月比」は版cまで2回とも誤変換。版dで初めて2回とも0件になった。"),
+        ("t-xs", "架空データでの実測。生の返り8通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * len(notes) + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "絶対日付に直す指示文4版で、触ってはいけない4項目が2回中何回誤変換されたかのマス目。"
+        "先週号は版a・bで2回とも誤変換、版c・dでは2回中1回（もう1回は基準日不明の逃げ道）。"
+        "先月比は版a・b・cで2回とも誤変換されたが、比較語を残す指示を足した版dでは2回とも0件。"
+        "前年同月比は版a・bで2回中1回、版c・dでは0回。翌月初は版bで2回中1回のみ、他は0回。"
+        "変換すべき12件は4版とも8回中8回、96件中96件が正解だった。"
+    )
+    (OUT / "handoff-relative-terms-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def handoff_wrong_touch_total_chart() -> None:
+    """触ってはいけない8件（×2回＝16件）のうち、版ごとに誤変換した合計件数。
+
+    実測（2026-08-26）。記事の推奨（先週/来月まで/最近を禁止＝版b）は
+    版aより件数が減らず、むしろ1件増えた。減ったのは基準日と逃げ道を
+    足した版c、0件近くまで落ちたのは誤変換の対象そのもの
+    （比較の言葉）を名指しした版dだけだった。
+    """
+    rows = [
+        "版a：そのまま",
+        "版b：＋「先週/来月まで/最近」を禁止",
+        "版c：＋基準日と〔基準日不明〕",
+        "版d：＋「○○比は残せ」を明記",
+    ]
+    values = [5, 6, 3, 1]
+    label_w = 190
+    left = 18 + label_w
+    right = WIDTH - 60
+    span = right - left
+    axis_max = 8
+    scale = span / axis_max
+    top = 128
+    row_h = 34
+    bar_h = 18
+
+    def px(n: float) -> float:
+        return left + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "記事の推奨（版b）は減らなかった。減らしたのは基準日と、名指しの一文</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "触ってはいけない8件×2回＝16件のうち、絶対日付へ誤って書き換えた件数の合計。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "版b＝このサイトの別記事が勧める「先週/来月まで/最近を禁止」をそのまま追加した版。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "版d＝誤変換の対象そのもの（「○○比」のような比較の言葉）を名指しして残すよう頼んだ版。</text>\n",
+    ]
+    for i in range(0, axis_max + 1, 2):
+        gx = px(i)
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + len(rows) * row_h - 10}" stroke-width="1" opacity="0.3"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{gx - 3:.1f}" y="{top - 12}">{i}</text>\n')
+
+    y = top
+    for label, value in zip(rows, values):
+        by = y + (row_h - bar_h) / 2
+        parts.append(
+            f'<text class="t-xs" x="18" y="{y + row_h / 2 + 4:.0f}">{_esc(label)}</text>\n'
+        )
+        bar_cls = "bar-out" if value >= 5 else ("bar-in" if value >= 2 else "bar-new")
+        bw = max(2.0, value * scale)
+        parts.append(
+            f'<rect class="{bar_cls}" x="{left}" y="{by:.1f}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{left + bw + 8:.1f}" y="{by + bar_h - 4:.1f}">{value}／16件</text>\n'
+        )
+        y += row_h
+
+    height = y + 16 + 21 * 2 + 12
+    notes = [
+        ("t-xs", "※ 変換すべき12件×2回＝24件はどの版も24／24で正解（この図には含めない）。"),
+        ("t-xs", "架空データでの実測。生の返り8通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = y + 20
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "触ってはいけない8件×2回＝16件のうち、版ごとに絶対日付へ誤って書き換えた件数の合計を示す横棒グラフ。"
+        "版a（そのまま）は5件、版b（先週/来月まで/最近を禁止を追加）は6件でむしろ増え、"
+        "版c（基準日と基準日不明の逃げ道を追加）は3件に減り、"
+        "版d（比較の言葉は残せと名指しした）は1件まで下がった。"
+        "変換すべき12件×2回＝24件は、どの版も24件中24件が正解だった。"
+    )
+    (OUT / "handoff-wrong-touch-total.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     filler_source_detection_chart()
     filler_source_five_scale_chart()
@@ -12864,4 +13036,6 @@ if __name__ == "__main__":
     date_decides_downstream_chart()
     deadline_holiday_grid_chart()
     material_match_vs_facts_chart()
+    handoff_relative_terms_grid_chart()
+    handoff_wrong_touch_total_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

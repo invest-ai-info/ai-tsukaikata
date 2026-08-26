@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="334" viewBox="0 0 720 334" role="img" aria-label="触ってはいけない8件×2回＝16件のうち、版ごとに絶対日付へ誤って書き換えた件数の合計を示す横棒グラフ。版a（そのまま）は5件、版b（先週/来月まで/最近を禁止を追加）は6件でむしろ増え、版c（基準日と基準日不明の逃げ道を追加）は3件に減り、版d（比較の言葉は残せと名指しした）は1件まで下がった。変換すべき12件×2回＝24件は、どの版も24件中24件が正解だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="334"/>
+<text class="t-strong" x="18" y="26">記事の推奨（版b）は減らなかった。減らしたのは基準日と、名指しの一文</text>
+<text class="t-sm" x="18" y="45">触ってはいけない8件×2回＝16件のうち、絶対日付へ誤って書き換えた件数の合計。</text>
+<text class="t-sm" x="18" y="64">版b＝このサイトの別記事が勧める「先週/来月まで/最近を禁止」をそのまま追加した版。</text>
+<text class="t-sm" x="18" y="83">版d＝誤変換の対象そのもの（「○○比」のような比較の言葉）を名指しして残すよう頼んだ版。</text>
+<path class="line" d="M208.0 122 L208.0 254" stroke-width="1" opacity="0.3"/>
+<text class="t-xs" x="205.0" y="116">0</text>
+<path class="line" d="M321.0 122 L321.0 254" stroke-width="1" opacity="0.3"/>
+<text class="t-xs" x="318.0" y="116">2</text>
+<path class="line" d="M434.0 122 L434.0 254" stroke-width="1" opacity="0.3"/>
+<text class="t-xs" x="431.0" y="116">4</text>
+<path class="line" d="M547.0 122 L547.0 254" stroke-width="1" opacity="0.3"/>
+<text class="t-xs" x="544.0" y="116">6</text>
+<path class="line" d="M660.0 122 L660.0 254" stroke-width="1" opacity="0.3"/>
+<text class="t-xs" x="657.0" y="116">8</text>
+<text class="t-xs" x="18" y="149">版a：そのまま</text>
+<rect class="bar-out" x="208" y="136.0" width="282.5" height="18" rx="3"/>
+<text class="t-xs" x="498.5" y="150.0">5／16件</text>
+<text class="t-xs" x="18" y="183">版b：＋「先週/来月まで/最近」を禁止</text>
+<rect class="bar-out" x="208" y="170.0" width="339.0" height="18" rx="3"/>
+<text class="t-xs" x="555.0" y="184.0">6／16件</text>
+<text class="t-xs" x="18" y="217">版c：＋基準日と〔基準日不明〕</text>
+<rect class="bar-in" x="208" y="204.0" width="169.5" height="18" rx="3"/>
+<text class="t-xs" x="385.5" y="218.0">3／16件</text>
+<text class="t-xs" x="18" y="251">版d：＋「○○比は残せ」を明記</text>
+<rect class="bar-new" x="208" y="238.0" width="56.5" height="18" rx="3"/>
+<text class="t-xs" x="272.5" y="252.0">1／16件</text>
+<text class="t-xs" x="18" y="284">※ 変換すべき12件×2回＝24件はどの版も24／24で正解（この図には含めない）。</text>
+<text class="t-xs" x="18" y="305">架空データでの実測。生の返り8通は docs/evidence/ に全文置いてある。</text>
+</svg>
