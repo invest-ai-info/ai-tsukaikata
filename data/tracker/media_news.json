@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T02:00:47.625526+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-08-26T01:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Appleシリコン「M6」と「M5 Ultra」が現地時間の2026年8月25日に発表されました。M6は2nmプロセスで生産されるSoCでM5と比べてCPUコアとGPUコアが増加しているのが特徴。M5 Ultraは最大512GBのユニファイドメモリを搭載可能でローカルで大型のAIモデルを実行してエージェントタスクやコンテンツ生成に利用できることがアピールされています。 続きを読む...",
+      "title": "AppleがM6とM5 Ultraを発表、M5 Ultraは最大512GBのメモリを搭載し大型AIモデルをローカル実行可能",
+      "uid": "3d35de468f92cc7a",
+      "url": "https://gigazine.net/news/20260826-apple-m6-m5-ultra/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-26T02:00:47.625526+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-08-26T01:21:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AnthropicのAIアシスタント「Claude」のメモリ機能が大幅に強化され、「Cowork」に切り替えてもClaudeとの過去の会話で蓄積されたメモリが引き継がれるようになった。",
+      "title": "ClaudeとCoworkのメモリが統合、過去の会話で蓄積した情報を引き継ぎ",
+      "uid": "ed5853142a7f0bfd",
+      "url": "https://japan.cnet.com/article/35251918/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-08-26T02:00:47.625526+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-26T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの普及によりさまざまなAIおよびAIツールが登場していますが、そこで気になるのが「みんなは一体どのAIを使っているのか？」という点です。どんな人がどんなAIを使っているのか、その傾向を2026年夏のプレゼントアンケートで調べてみました。 続きを読む...",
+      "title": "GIGAZINE読者のAI利用率がついに80％を突破、最も使われているAIや勢いのあるAIは？",
+      "uid": "92f9e1dbbff9fc38",
+      "url": "https://gigazine.net/news/20260826-gigazine-user-ai-usage/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-25T22:47:34.840984+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "05c09eec96b71225",
       "url": "https://ai.watch.impress.co.jp/docs/news/2133791.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T04:02:09.383121+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T03:14:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "SamsungがAnthropicのAIコーデイングツール「Claude Code」を導入し、一部の半導体設計・検証作業の期間を大幅に短縮したことが分かりました。 続きを読む...",
-      "title": "SamsungがClaude Codeを導入し「1カ月かかる設計を2日に短縮した」と報告",
-      "uid": "86cf8d60c93319f2",
-      "url": "https://gigazine.net/news/20260819-samsung-claude-code/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T03:12:45.748785+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T03:08:25+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本気象協会およびソフトバンクは、農林水産省の「令和6年度 食品ロス削減緊急対策モデル支援事業」の公募に採択され、気象データ・人流データ・AIを活用し、バローホールディングスおよび中部フーズの協力の下、食品スーパーの惣菜部門における食品ロスの削減と業務の効率化を目指した実証実験を1月23日から3月12日まで共同で実施した。",
-      "title": "食品スーパーの食品ロス削減と生産性向上を実現 気象データ・人流データ・AIを活用し需要予測と商品値引きを最適化",
-      "uid": "f9de022d9b971f1c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133775.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T03:12:45.748785+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T03:04:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "FacebookやInstagramといったSNSを展開するMetaは、自社プラットフォームで横断的に広告を配信できるMeta広告という広告サービスを展開しています。このMeta広告で広告が掲出されたAIヌード化アプリの「Kromix」を、AppleがApp Storeから削除したことが明らかになりました。 続きを読む...",
-      "title": "AIヌード化アプリがInstagramやFacebookの広告で宣伝されていたことが判明、Appleの審査を掻い潜り公式ストアで配信されていた",
-      "uid": "c1bbf03ccc5f100b",
-      "url": "https://gigazine.net/news/20260819-apple-pulls-ai-nudify-app-promoted-meta-ads/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
