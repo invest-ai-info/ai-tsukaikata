@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T04:57:41.122753+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-26T04:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIがBroadcomと共同開発した推論システム向けカスタムチップ「Jalapeño(ハラペーニョ)」についてのブリーフィングを行い、ベンチマークスコアを公表しました。Jalapeñoは通常であればトレードオフの関係にある高スループットと低レイテンシを単一アーキテクチャで実現しているとのことです。 続きを読む...",
+      "title": "OpenAIがカスタム推論チップ「Jalapeño」のベンチマーク結果を公開、高スループットと低レイテンシを単一アーキテクチャで両立",
+      "uid": "4d7621bfc0a20559",
+      "url": "https://gigazine.net/news/20260826-jalapeno-ai-inference-results/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-26T04:57:41.122753+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T04:21:22+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "電通の子どものためのAI活用の研究・実践に取り組む社内横断チーム「AIうえおラボ（あいうえおらぼ）」は、子どもと保護者を対象にした体験型の特別イベント「みらいのたまご」を、9月9日から23日まで屋内キッズパーク「PLAY! PARK」にて開催する。",
+      "title": "電通「AIうえおラボ」、子どもの想像力を育むAI体験展示「みらいのたまご」を開催",
+      "uid": "76f475d129078847",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135730.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-26T04:57:41.122753+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T04:14:07+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "エフサステクノロジーズとNTT西日本は8月26日、エフサステクノロジーズのオンプレミス生成AI基盤「Private AI Platform on PRIMERGY」を活用し、NTTグループが開発した純国産LLM「tsuzumi 2」を安定的に運用するための動作検証を完了したと発表した。NTT西日本がAIモデルやAI基盤を国内で管理・運用可能なソリューションとして、9月より提供を開始する。",
+      "title": "生成AI基盤「Private AI Platform on PRIMERGY」で「tsuzumi 2」を活用可能に",
+      "uid": "3e81bc206755e335",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135729.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-26T04:57:41.122753+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-26T04:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントなど自律型AIを本番運用している日本企業は17％にとどまることが、Confluentの調査で分かった。活用を進める上での課題とは何か。その解決策とは。",
+      "title": "「AIエージェントを本番運用中」日本が最下位　“PoC止まり”の原因と、抜け出す方法は？",
+      "uid": "0d1693b0ffb2e5f4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/26/news040.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-26T04:57:41.122753+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-26T04:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Okta Japanは、企業におけるAIツールの利用実態をまとめたレポートを発表した。Okta Platformの2万以上の組織における4年間の匿名化されたアクセスデータを分析したものだ。",
+      "title": "「取りあえずChatGPT」はもう古い？　2社に1社が複数AIを併用、企業はどう管理すべきか",
+      "uid": "e3351f8d17727cff",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/26/news044.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-26T03:27:09.606981+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2339,66 +2399,6 @@
       "uid": "69827ce80a564af5",
       "url": "https://gigazine.net/news/20260819-ai-agent-command/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T07:56:04.368894+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-19T07:09:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Mozillaは「Firefox」のAI機能「Smart Window」に、作業を中断したところから再開しやすくする複数の新機能を追加すると発表した。",
-      "title": "FirefoxのAI機能「Smart Window」が進化、AIウェブ検索やタブの自動グループ化など",
-      "uid": "eb03134dc915e2f8",
-      "url": "https://japan.cnet.com/article/35251709/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-19T07:56:04.368894+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-19T06:55:19+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "国立情報学研究所（NII）が、オープンな国産LLMの新バージョン「LLM-jp-4 33B」を公開。約332億パラメータのDense型モデルで、4種類のベンチマーク全てで従来モデルを上回るスコアを記録したという。",
-      "title": "「オープンな国産モデル」に33Bパラメータの新バージョン　国立情報学研究所",
-      "uid": "cf41e0c1a1d65ba2",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/19/2000000626/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-19T07:08:12.848731+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T06:13:19+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "MintSparkは8月16日、Googleマップなどに表示される店舗の口コミ（Googleビジネスプロフィール）へのAI返信を支援するChrome拡張機能「coremeo - AI口コミ返信」を公開した。",
-      "title": "お店の「らしさ」をお手本から学ぶAI口コミ返信アシスタント「coremeo - AI口コミ返信」",
-      "uid": "e44154bb838e08c3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133863.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T07:08:12.848731+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "情報公開を強要するのではなく、協力する姿勢を見せることで、AIの「Copilot」から脆弱(ぜいじゃく)性を聞き出すことに成功したとAI研究者が報告しました。 続きを読む...",
-      "title": "Copilotが騙されて自分自身のハッキング方法を教えてしまう",
-      "uid": "84ed04656966063c",
-      "url": "https://gigazine.net/news/20260819-copilot-leak-own-vulnerability/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T07:08:12.848731+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T05:43:21+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "セーフィーは8月19日、同社のクラウドカメラの映像とAIを掛け合わせ、クマの出没を自動で検知し即時に通知するサービス「AI-App（アイアップ） クマ検知」の提供を9月1日より開始すると発表した。",
-      "title": "クマの出没を自動で検知し即時通知するサービス「AI-App クマ検知」",
-      "uid": "2d9815517a918183",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133869.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
