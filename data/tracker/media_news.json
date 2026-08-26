@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T10:53:12.058332+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T10:47:10+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Anthropicは8月25日、Claudeのチャットで使用されるメモリ（記憶）は、Claude Coworkと同じものになると発表した。これにより、Claudeをどこで使用しても、Claudeは既にユーザーについて知っている情報を基に作業を開始する。",
+      "title": "Claudeで使用される記憶を統合。いつでもどこでも作業は引き続き実行可能に",
+      "uid": "e32b6729b137a059",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135864.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-26T10:53:12.058332+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T10:32:25+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは、金融サービス向けGemini Enterpriseにおいて、エージェント型AIを資本市場や法人向け銀行業務のワークフローに直接導入すると発表した。",
+      "title": "Google、金融サービスの専門向けGemini Enterpriseをローンチ",
+      "uid": "bd00ea364a91a197",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135852.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-26T10:53:12.058332+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-26T10:23:33+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "西武建設、スリーフィールズおよびサイバートラストの3社は8月26日、国際標準規格「C2PA」技術をベースにした「映像真正性保証ソリューション」の実証実験を、西武建設の道路工事現場で開始したと発表した。",
+      "title": "AI映像改ざん対策に向けた「映像真正性保証ソリューション」の実証実験",
+      "uid": "de281e57eeace54f",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2135910.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-26T10:53:12.058332+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-26T09:10:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "フィジカルAI用の学習データを収集する施設「J-HRTI 関東データファクトリー」が稼働した。内部には、約30体のロボットが並び、作業を繰り返している。同施設の全容と狙いを、潜入レポートとして紹介する。",
+      "title": "非公開の「AI学習データ工場」に潜入　人型ロボ30台超が稼働、意外と知らない「データ収集」の裏側とは",
+      "uid": "b087564def82e831",
+      "url": "https://www.itmedia.co.jp/business/articles/2608/26/news082.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-26T09:59:37.152037+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2350,54 +2398,6 @@
       "title": "ローカルAIエージェントアプリ「Bionic」がSkillsに対応しCodexやClaude Codeの使い勝手に近づく",
       "uid": "c84fec0542312bf8",
       "url": "https://gigazine.net/news/20260819-lm-studio-bionic-skills/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T10:47:48.925393+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T10:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "近年はChatGPTやGeminiといったチャットAIの利用が一般的になり、仕事や勉強などにAIを活用する人々も増えています。ところがアメリカのピュー研究所が2026年6月に行った調査では、18～29歳の若者の過半数がAIについて期待よりもむしろ懸念を抱いていることが浮き彫りになりました。 続きを読む...",
-      "title": "AIの利用拡大を懸念しているアメリカの若者が過半数を突破、AIにより仕事が奪われると考える人も増加している",
-      "uid": "5b41a576a16cb31d",
-      "url": "https://gigazine.net/news/20260819-young-americans-increasingly-wary-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T08:56:47.833795+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T08:46:39+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NVIDIAは、米国オハイオ州パイク郡にあるPORTS-Pike Technology Campusにおいて、SB Energyとの提携を通じ、NVIDIAのコンピューティング環境を運用するための土地や電力、建屋のキャパシティを確保したと発表した。OpenAIが顧客となり、SB EnergyはOpenAIとの20年間のリース契約を締結し、データセンターの建設、所有、および運営を行なっていく。",
-      "title": "NVIDIA、SB Energyのオハイオ州のキャンパスをNVIDIA AIコンピューティング専用拠点として確保",
-      "uid": "5c53cf615ac972d2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133990.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T08:56:47.833795+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T08:45:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "トレンドマイクロは8月19日、個人の顧客向けビジネスのブランド「TrendLife（トレンドライフ）」より、家族全員が安心して利用できるよう設計されたAIサービス「TrendLife Kaleida」を提供すると発表した。",
-      "title": "トレンドマイクロ、個人の顧客向けAIサービス「TrendLife Kaleida」",
-      "uid": "017021067ba23a06",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133973.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-19T08:56:47.833795+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T08:32:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Twitter創業者のジャック・ドーシー氏が率いるBlockが、AIエージェントアプリ「Berd」をリリースしました。Berdでは複数のAIエージェントをキャラクターとして管理して作業を遂行できます。 続きを読む...",
-      "title": "ジャック・ドーシー率いるBlockがAIエージェントアプリ「Berd」をリリース、AIエージェントにキャラクターを割り当てて共同作業可能",
-      "uid": "aa0bddbb20d21bdf",
-      "url": "https://gigazine.net/news/20260819-berd-ai-agent/",
       "vendor": "GIGAZINE"
     }
   ]
