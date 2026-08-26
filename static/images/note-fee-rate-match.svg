@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="noteの決済手段別の事務手数料6種類（クレジットカード5パーセント・携帯キャリア15パーセント・PayPay 7パーセント・Amazon Pay 7パーセント・noteポイント10パーセント・PayPal 6.5パーセント）のうち、AIの回答に正しく出てきた個数を6回ぶん並べた棒グラフ。率を貼らずに聞いた3回はそれぞれ1個・2個・2個、出典URLを求めた3回はいずれも2個で、6回ともクレジットカードと携帯キャリアの2つ止まりだった。PayPay・Amazon Pay・noteポイント・PayPalは6回とも0回だった。「決済手段は購読者が選ぶ」という原文の一言も6回とも出なかった。">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="noteの決済手段別の事務手数料6種類（クレジットカード5パーセント・携帯キャリア15パーセント・PayPay 7パーセント・Amazon Pay 7パーセント・noteポイント10パーセント・PayPal 6.5パーセント）のうち、AIの回答に正しく出てきた個数を6回ぶん並べた棒グラフ。率を貼らずに聞いた3回はそれぞれ1個・2個・2個、出典URLを求めた3回はいずれも2個で、6回ともクレジットカードと携帯キャリアの2つ止まりだった。PayPay・Amazon Pay・noteポイント・PayPalは6回とも0回だった。「決済手段は購読者が選ぶ」という原文の一言は、率を貼らずに聞いた3回では一度も出なかった。">
 <style>
   .bg { fill: #fbfcfd; }
   .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
@@ -66,8 +66,8 @@
 <rect class="bar-in" x="380" y="322" width="67" height="18" rx="3"/>
 <text class="t-sm" x="455" y="335">2/6種</text>
 <rect class="box-bad" x="18" y="364" width="678" height="44" rx="6"/>
-<text class="t-bad" x="34" y="382">🚨 6回とも出たのはクレジットカードと携帯キャリアの2つだけ。</text>
+<text class="t-bad" x="34" y="382">🚨 6回を通じて出たのは、クレジットカードと携帯キャリアの2つだけ。</text>
 <text class="t-bad" x="34" y="400">PayPay・Amazon Pay・noteポイント・PayPalは、6回とも1回も出なかった。</text>
-<text class="t-sm" x="18" y="432">※ 「購読者の決済手段によります（クリエイターは選べない）」という原文の一言も、6回とも出なかった。</text>
-<text class="t-xs" x="18" y="451">架空の実測ではなくAIの知識そのものを聞いた6回。生の返りと照合コードは docs/evidence/ に全文置いてある。</text>
+<text class="t-sm" x="18" y="432">※ 「購読者の決済手段によります（クリエイターは選べない）」の一言は、率を貼らずに聞いた3回では一度も出なかった。</text>
+<text class="t-xs" x="18" y="451">架空の実測ではなくAIの知識そのものを聞いた6回。送った指示文と返りは docs/evidence/ に置いてある。</text>
 </svg>

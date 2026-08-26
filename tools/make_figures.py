@@ -13009,7 +13009,7 @@ def note_fee_rate_match_chart() -> None:
     parts.append(f'<rect class="box-bad" x="18" y="{y}" width="678" height="44" rx="6"/>\n')
     parts.append(
         f'<text class="t-bad" x="34" y="{y + 18}">'
-        "🚨 6回とも出たのはクレジットカードと携帯キャリアの2つだけ。</text>\n"
+        "🚨 6回を通じて出たのは、クレジットカードと携帯キャリアの2つだけ。</text>\n"
     )
     parts.append(
         f'<text class="t-bad" x="34" y="{y + 36}">'
@@ -13018,8 +13018,8 @@ def note_fee_rate_match_chart() -> None:
     y += 44
 
     notes = [
-        ("t-sm", "※ 「購読者の決済手段によります（クリエイターは選べない）」という原文の一言も、6回とも出なかった。"),
-        ("t-xs", "架空の実測ではなくAIの知識そのものを聞いた6回。生の返りと照合コードは docs/evidence/ に全文置いてある。"),
+        ("t-sm", "※ 「購読者の決済手段によります（クリエイターは選べない）」の一言は、率を貼らずに聞いた3回では一度も出なかった。"),
+        ("t-xs", "架空の実測ではなくAIの知識そのものを聞いた6回。送った指示文と返りは docs/evidence/ に置いてある。"),
     ]
     y += 24
     for css, text in notes:
@@ -13034,7 +13034,7 @@ def note_fee_rate_match_chart() -> None:
         "率を貼らずに聞いた3回はそれぞれ1個・2個・2個、出典URLを求めた3回はいずれも2個で、"
         "6回ともクレジットカードと携帯キャリアの2つ止まりだった。"
         "PayPay・Amazon Pay・noteポイント・PayPalは6回とも0回だった。"
-        "「決済手段は購読者が選ぶ」という原文の一言も6回とも出なかった。"
+        "「決済手段は購読者が選ぶ」という原文の一言は、率を貼らずに聞いた3回では一度も出なかった。"
     )
     (OUT / "note-fee-rate-match.svg").write_text(
         _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
