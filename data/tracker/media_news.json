@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T13:18:27.322342+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-26T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェント時代向けのコーディングテクニックを、エンジニアのファビアン・サングラール氏が紹介しています。 続きを読む...",
+      "title": "AIエージェント時代のコーディングテクニック「コーディングルールをAGENTS.mdにまとめる」「品質が低下したらAGENTS.mdの読み直しを指示」",
+      "uid": "846ecd175a08ac42",
+      "url": "https://gigazine.net/news/20260826-agent-improve-llm-code-quality/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-26T13:18:27.322342+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-26T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "NVIDIAが2026年3月に開催した開発者向けカンファレンス「GTC 2026」で、AdobeのCTOであるエリー・グリーンフィールド氏がカスタム大規模生成AIモデルを構築するまでの道のりやパイプラインについて講演を行い、初期のトレーニング実行時に数千基のGPUのうち約3分の2がアイドル状態となっていたことが明かされました。この問題について、クラウドストレージサービスを提供するBackblaz…",
+      "title": "AIトレーニングでGPUが無駄に待機状態になってしまっている理由とAdobeが行った対処とは？",
+      "uid": "9cbed6d1949eb6c2",
+      "url": "https://gigazine.net/news/20260826-gpu-idle/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-26T10:53:12.058332+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2374,30 +2398,6 @@
       "title": "使い込むほど成長するAIエージェント「Hermes Agent」をWindowsで実際に使ってみた、インストールからウェブ検索・ブラウザ操作まで",
       "uid": "fc47575827263062",
       "url": "https://gigazine.net/news/20260819-hermes-agent-first-use/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T13:12:14.812278+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIの推論を高速化するシステムを開発しているCerebrasが、ラックスケールソリューションの「CS-4」を公開しました。単純なGPUシステムと比較して最大30倍高速な推論処理が可能とうたわれています。 続きを読む...",
-      "title": "GPUと比較して最大30倍高速にAIを動かすCerebrasの「CS-4」ラックスケールソリューションが登場",
-      "uid": "4b967f63b005b011",
-      "url": "https://gigazine.net/news/20260819-cerebras-cs-4/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T11:43:13.577944+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T11:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "BionicはクラウドAIサービスだけでなくローカルで実行するAIモデルにも対応したAIエージェントアプリです。新たにBionicがSkillsに対応し、CodexやClaude Codeなどで培われた大量のSkillsを活用できるようになりました。 続きを読む...",
-      "title": "ローカルAIエージェントアプリ「Bionic」がSkillsに対応しCodexやClaude Codeの使い勝手に近づく",
-      "uid": "c84fec0542312bf8",
-      "url": "https://gigazine.net/news/20260819-lm-studio-bionic-skills/",
       "vendor": "GIGAZINE"
     }
   ]
