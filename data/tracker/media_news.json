@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T09:59:37.152037+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-26T08:55:22+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "韓国半導体大手SKハイニックスが宮城県にメモリー工場を建設する計画が浮上したことについて、宮城県の村井嘉浩知事は26日の定例記者会見で「いろんな半導体関連企業にアプローチしたのは事実だが、今回の件で県として何か知り得ているものはない」と述べ、今後も動向を注視する考えを示した。",
+      "title": "韓国SK Hynix、宮城県に半導体工場の計画浮上　「何か知り得ているものはない」と村井知事",
+      "uid": "e66b241ec1b4ea63",
+      "url": "https://www.itmedia.co.jp/news/article/2608/26/2000000820/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-26T07:10:42.731832+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "aa0bddbb20d21bdf",
       "url": "https://gigazine.net/news/20260819-berd-ai-agent/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T08:56:47.833795+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-19T08:31:44+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、13歳から17歳の利用者向けに強化された安全対策を標準で備えた「ティーン向けChatGPT」を導入した。利用者が13歳から17歳だと申告した場合、もしくはシステムが利用者を18歳未満と推定した場合、自動的に「ティーン向けChatGPT」が適用される。",
-      "title": "子どもの家庭教師？ 学習支援を重視した設計の「ティーン向けChatGPT」登場 すぐに答えを求めても問題を自力で解くように導く",
-      "uid": "42c3b9c56abca991",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2133958.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
