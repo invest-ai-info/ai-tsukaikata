@@ -83,6 +83,30 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-08-26T15:54:29.559920+00:00",
+      "importance": "major",
+      "label": "GLM 新モデル",
+      "published": "2026-08-25T06:45:05+00:00",
+      "source_id": "hf-zhipu",
+      "summary": "HuggingFace に新しいモデル zai-org/GLM-5.3-Flash-BF16 が公開されました。",
+      "title": "zai-org/GLM-5.3-Flash-BF16",
+      "uid": "735322beceb88e55",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
+      "vendor": "Zhipu AI"
+    },
+    {
+      "first_seen": "2026-08-26T15:54:29.559920+00:00",
+      "importance": "major",
+      "label": "GLM 新モデル",
+      "published": "2026-08-25T06:43:14+00:00",
+      "source_id": "hf-zhipu",
+      "summary": "HuggingFace に新しいモデル zai-org/GLM-5.3-Flash が公開されました。",
+      "title": "zai-org/GLM-5.3-Flash",
+      "uid": "92b6ca328073eeee",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "vendor": "Zhipu AI"
+    },
+    {
       "first_seen": "2026-08-25T05:49:35.979180+00:00",
       "importance": "minor",
       "label": "Claude Code",

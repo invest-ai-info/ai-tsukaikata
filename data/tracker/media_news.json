@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-26T15:54:29.559920+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-08-26T15:29:13+00:00",
+      "source_id": "media-publickey",
+      "summary": "Linux Foundation傘下でMCP（Model Context Protocol）の仕様策定を行っている「Agentic AI Foundation（AAIF）」は、今後のMCPの進化について、その方向性を示す新たなロードマップを...",
+      "title": "MCPの新ロードマップ公開、今後はAIエージェント対応、HTTP通信への統一、アイデンティティ、よりよいデベロッパー体験などに注力",
+      "uid": "5bbb3fbb737bbafc",
+      "url": "https://www.publickey1.jp/blog/26/mcpaihttp.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-08-26T13:18:27.322342+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "AIにより飛行機雲発生の少ない空路を選んで地球温暖化緩和を目指す「Operation Blue Skies」をGoogleが始動",
       "uid": "8a849d48d274648f",
       "url": "https://gigazine.net/news/20260819-operation-blue-skies/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-19T13:59:23.932772+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-19T13:50:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Nous Researchが開発する「Hermes Agent」は、実際にAIモデルを作成する中で具体的にどういう機能がAIエージェントに求められているのか？という視点から、単なるチャットではなく「ターミナルでの操作」を前提に開発されており、ウェブ検索・ブラウザ操作・ファイル操作など複数のツールを組み合わせながらタスクを進められるオープンソースのAIエージェントです。さらに、複雑な作業で得た手順…",
-      "title": "使い込むほど成長するAIエージェント「Hermes Agent」をWindowsで実際に使ってみた、インストールからウェブ検索・ブラウザ操作まで",
-      "uid": "fc47575827263062",
-      "url": "https://gigazine.net/news/20260819-hermes-agent-first-use/",
       "vendor": "GIGAZINE"
     }
   ]
