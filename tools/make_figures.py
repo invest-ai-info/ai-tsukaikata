@@ -13442,6 +13442,181 @@ def kindle_royalty_version_grid_chart() -> None:
     )
 
 
+def handoff_summary_format_drift_grid_chart() -> None:
+    """8ルールのうち、版によって崩れたのは形式の3つだけ（ルール⑧は崩れず）。
+
+    実測（2026-08-27・毎朝の日報作成に8ルールを渡し、材料2本×2回＝
+    のべ4試行。版a=会話を続ける／版b=要約して新しい会話に貼る／
+    版c=対照版・ルール原文を貼りなおす）。1回も出番の無かったルール⑧
+    （情報不足・矛盾の行を保留にする）は24／24件で崩れなかった一方、
+    形式まわりの3項目は版bに集中して崩れた。
+    """
+    rows = [
+        ("見出しが12字を超えた", [0, 2, 0]),
+        ("IDの通し番号を落とした", [0, 1, 0]),
+        ("合計の後に新しい話題を足した", [1, 3, 0]),
+    ]
+    cols = ["版a 続ける", "版b 要約して貼る", "版c 貼りなおす"]
+    label_w = 220
+    cell_w, cell_h, gap = 140, 34, 8
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "崩れたのはルールではなく、形式だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "毎朝の日報作成に8ルールを渡し、材料2本×2回＝4試行を独立したプロセスに送った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "版a＝会話を切らずに続ける。版b＝「引き継ぎメモを作って」に応じた返りだけを新しい会話に貼る。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "版c＝対照版。8ルールの原文をそのまま新しい会話に貼りなおす。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "セルの数＝4試行中に崩れた回数。0が崩れなし。</text>\n",
+        '<text class="t-sm" x="18" y="121">'
+        "※ ①②④⑤⑥⑦・とくに1回も出番の無かった⑧（保留処理）は、どの版も4試行24／24件で崩れなかった（別枠）。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - len(name) * 3.2:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, values) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, v in enumerate(values):
+            x = grid_x + col_index * (cell_w + gap)
+            bad = v > 0
+            box = "box-bad" if bad else "box-good"
+            tone = "t-bad" if bad else "t-good"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            text = f"{v}／4"
+            tx = x + cell_w / 2 - len(text) * 5.4
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 8 + 21 * 2 + 16
+    notes = [
+        ("t-bad", "※「見出しが12字を超えた」の2回は39字・21字——上限の2〜3倍だった。"),
+        ("t-xs", "架空データでの実測。生の返り16通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * len(notes) + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "毎朝の日報作成に8ルールを渡した実測で、版ごとに何回崩れたかを示すマス目。"
+        "見出しが12字を超えたのは版aで0/4・版bで2/4・版cで0/4。"
+        "IDの通し番号を落としたのは版aで0/4・版bで1/4・版cで0/4。"
+        "合計の後に新しい話題を足したのは版aで1/4・版bで3/4・版cで0/4。"
+        "1回も出番の無かったルール⑧（保留処理）は、どの版も4試行24/24件で崩れなかった。"
+    )
+    (OUT / "handoff-summary-format-drift-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def handoff_summary_heading_length_chart() -> None:
+    """見出しの字数を試行ごとに並べる。上限12字を超えたのは版bだけ。
+
+    実測（2026-08-27）。①見出しは全角12字以内、という同じルールを
+    渡しても、版bだけが39字・21字という、本文の説明文のような
+    見出しを2回返した。
+    """
+    trials = ["材料1・1回目", "材料1・2回目", "材料2・1回目", "材料2・2回目"]
+    data = {
+        "版a 続ける": [11, 7, 5, 7],
+        "版b 要約して貼る": [39, 5, 7, 21],
+        "版c 貼りなおす": [7, 5, 2, 7],
+    }
+    label_w = 108
+    left = 18 + label_w
+    right = WIDTH - 60
+    span = right - left
+    axis_max = 40
+    scale = span / axis_max
+    top = 150
+    group_h = 96
+    bar_h = 16
+    bar_gap = 6
+
+    def px(n: float) -> float:
+        return left + n * scale
+
+    limit_x = px(12)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "見出しが12字を超えたのは、版bの2回だけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ「見出しは全角12字以内」というルールを渡した、材料2本×2回＝4試行の見出しの字数。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "版b（要約して新しい会話に貼る）だけが、本文の説明文のような見出しを返す回があった。</text>\n",
+    ]
+
+    y = top
+    for trial, label in zip(trials, [None] * 4):
+        parts.append(f'<text class="t-strong" x="18" y="{y - 8}">{_esc(trial)}</text>\n')
+        row_y = y
+        for name, values in data.items():
+            v = values[trials.index(trial)]
+            over = v > 12
+            cls = "bar-out" if not over else "bar-old"
+            parts.append(
+                f'<text class="t-xs" x="18" y="{row_y + bar_h - 4}">{_esc(name)}</text>\n'
+            )
+            bw = max(2.0, v * scale)
+            box = "box-bad" if over else "box-good"
+            parts.append(
+                f'<rect class="{box}" x="{left}" y="{row_y}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            tone = "t-bad" if over else "t-good"
+            parts.append(
+                f'<text class="{tone}" x="{left + bw + 8:.1f}" y="{row_y + bar_h - 3:.1f}">{v}字</text>\n'
+            )
+            row_y += bar_h + bar_gap
+        y += group_h
+
+    total_height = top + 4 * group_h
+    parts.append(
+        f'<path class="line" d="M{limit_x:.1f} {top - 20} L{limit_x:.1f} {total_height - 20}" '
+        f'stroke-width="1.4" stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(f'<text class="t-xs" x="{limit_x - 10:.1f}" y="{top - 26}">上限12字</text>\n')
+
+    height = total_height + 8 + 21 * 2
+    notes = [
+        ("t-bad", "※ 版bの2回（39字・21字）は、上限の2〜3倍——見出しではなく説明文になっていた。"),
+        ("t-xs", "架空データでの実測。生の返り12通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * len(notes) + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "毎朝の日報作成で見出しの字数を試行ごとに並べた横棒グラフ。上限12字に破線を引いてある。"
+        "材料1・1回目は版a11字・版b39字・版c7字。材料1・2回目は版a7字・版b5字・版c5字。"
+        "材料2・1回目は版a5字・版b7字・版c2字。材料2・2回目は版a7字・版b21字・版c7字。"
+        "版bだけ、39字と21字という上限の2〜3倍の見出しを2回返した。他はすべて12字以内だった。"
+    )
+    (OUT / "handoff-summary-heading-length.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     kindle_royalty_invented_band_chart()
     kindle_royalty_version_grid_chart()
@@ -13610,4 +13785,6 @@ if __name__ == "__main__":
     kindle_disclosure_scenario_grid_chart()
     kindle_disclosure_no_citation_chart()
     note_payout_version_comparison_chart()
+    handoff_summary_format_drift_grid_chart()
+    handoff_summary_heading_length_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

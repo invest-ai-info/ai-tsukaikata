@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="584" viewBox="0 0 720 584" role="img" aria-label="毎朝の日報作成で見出しの字数を試行ごとに並べた横棒グラフ。上限12字に破線を引いてある。材料1・1回目は版a11字・版b39字・版c7字。材料1・2回目は版a7字・版b5字・版c5字。材料2・1回目は版a5字・版b7字・版c2字。材料2・2回目は版a7字・版b21字・版c7字。版bだけ、39字と21字という上限の2〜3倍の見出しを2回返した。他はすべて12字以内だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="584"/>
+<text class="t-strong" x="18" y="26">見出しが12字を超えたのは、版bの2回だけ</text>
+<text class="t-sm" x="18" y="45">同じ「見出しは全角12字以内」というルールを渡した、材料2本×2回＝4試行の見出しの字数。</text>
+<text class="t-sm" x="18" y="64">版b（要約して新しい会話に貼る）だけが、本文の説明文のような見出しを返す回があった。</text>
+<text class="t-strong" x="18" y="142">材料1・1回目</text>
+<text class="t-xs" x="18" y="162">版a 続ける</text>
+<rect class="box-good" x="126" y="150" width="146.8" height="16" rx="3"/>
+<text class="t-good" x="280.9" y="163.0">11字</text>
+<text class="t-xs" x="18" y="184">版b 要約して貼る</text>
+<rect class="box-bad" x="126" y="172" width="520.6" height="16" rx="3"/>
+<text class="t-bad" x="654.6" y="185.0">39字</text>
+<text class="t-xs" x="18" y="206">版c 貼りなおす</text>
+<rect class="box-good" x="126" y="194" width="93.5" height="16" rx="3"/>
+<text class="t-good" x="227.4" y="207.0">7字</text>
+<text class="t-strong" x="18" y="238">材料1・2回目</text>
+<text class="t-xs" x="18" y="258">版a 続ける</text>
+<rect class="box-good" x="126" y="246" width="93.5" height="16" rx="3"/>
+<text class="t-good" x="227.4" y="259.0">7字</text>
+<text class="t-xs" x="18" y="280">版b 要約して貼る</text>
+<rect class="box-good" x="126" y="268" width="66.8" height="16" rx="3"/>
+<text class="t-good" x="200.8" y="281.0">5字</text>
+<text class="t-xs" x="18" y="302">版c 貼りなおす</text>
+<rect class="box-good" x="126" y="290" width="66.8" height="16" rx="3"/>
+<text class="t-good" x="200.8" y="303.0">5字</text>
+<text class="t-strong" x="18" y="334">材料2・1回目</text>
+<text class="t-xs" x="18" y="354">版a 続ける</text>
+<rect class="box-good" x="126" y="342" width="66.8" height="16" rx="3"/>
+<text class="t-good" x="200.8" y="355.0">5字</text>
+<text class="t-xs" x="18" y="376">版b 要約して貼る</text>
+<rect class="box-good" x="126" y="364" width="93.5" height="16" rx="3"/>
+<text class="t-good" x="227.4" y="377.0">7字</text>
+<text class="t-xs" x="18" y="398">版c 貼りなおす</text>
+<rect class="box-good" x="126" y="386" width="26.7" height="16" rx="3"/>
+<text class="t-good" x="160.7" y="399.0">2字</text>
+<text class="t-strong" x="18" y="430">材料2・2回目</text>
+<text class="t-xs" x="18" y="450">版a 続ける</text>
+<rect class="box-good" x="126" y="438" width="93.5" height="16" rx="3"/>
+<text class="t-good" x="227.4" y="451.0">7字</text>
+<text class="t-xs" x="18" y="472">版b 要約して貼る</text>
+<rect class="box-bad" x="126" y="460" width="280.3" height="16" rx="3"/>
+<text class="t-bad" x="414.3" y="473.0">21字</text>
+<text class="t-xs" x="18" y="494">版c 貼りなおす</text>
+<rect class="box-good" x="126" y="482" width="93.5" height="16" rx="3"/>
+<text class="t-good" x="227.4" y="495.0">7字</text>
+<path class="line" d="M286.2 130 L286.2 514" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text class="t-xs" x="276.2" y="124">上限12字</text>
+<text class="t-bad" x="18" y="547">※ 版bの2回（39字・21字）は、上限の2〜3倍——見出しではなく説明文になっていた。</text>
+<text class="t-xs" x="18" y="568">架空データでの実測。生の返り12通は docs/evidence/ に全文置いてある。</text>
+</svg>
