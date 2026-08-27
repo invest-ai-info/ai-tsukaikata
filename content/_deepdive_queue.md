@@ -286,8 +286,39 @@
       比較という記事の型に、①②が解けても当てはまらない可能性が高い（2026-08-20「AI Futures」と同じ構造）。
       次にこの行を見る人へ＝①②が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
 
-- [ ] https://openai.com/index/introducing-intelligence-age
+- [!] https://openai.com/index/introducing-intelligence-age
   - 2026-08-26 自動追記（major・OpenAI「Introducing Intelligence Age」）
+  - **2026-08-27 1回目: 記事を書かずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
+
+    **① `openai.com` の発表ページは今日も403（Cloudflare の bot 判定）。7回連続で戻っていない**
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `openai.com/index/introducing-intelligence-age/`（スラッシュ有り） | **403**・9,785バイト |
+    | 同（スラッシュ無し） | **403** |
+    | `openai.com/index/introducing-ai-futures`（旧名と思われるURL） | **403** |
+    | `openai.com/news/rss.xml` | **200**・該当item実在 |
+
+    - 応答ヘッダは毎回と同じ **`cf-mitigated: challenge`** ＋ `server: cloudflare`。**先方のbot判定であって
+      経路（許可リスト）の遮断ではない。許可リストに足しても直らない。**切り分けの根拠＝同じ `openai.com` の
+      RSS が200で返っていること。**UA偽装での迂回はしない。**
+    - 💡 08-05→08-10→08-11→08-18→08-20→08-25→08-27 で7回連続403。**`openai.com/index/...` が来たら、
+      まずここを読むこと。**
+
+    **② 🆕 これは2026-08-20に見送り済みの「AI Futures」の告知と、ほぼ同一の内容（改名後の可能性が高い）**
+
+    - RSS の description 全文＝`Introducing Intelligence Age, a new OpenAI blog exploring how transformative
+      AI could reshape power, governance, the economy, and individual freedom.`
+    - これは **08-20 の「Introducing AI Futures」の description と一字一句同じ文面**（ブログ名の部分だけ
+      「AI Futures」→「Intelligence Age」に変わっている）。公開日も同じ **2026-08-20 07:00 GMT**。
+      カテゴリも `AI Futures` → `Intelligence Age` に変わっている。
+    - → **同じ新ブログ立ち上げの告知が、名前を変えて再度キューに入ってきたと考えるのが自然。**
+      「AI Futures」の行はオーナーが 2026-08-21 に**独立検証のうえ見送りで確定・再試行しない**と決めている
+      （理由＝①bot判定で本文が読めない ②数字が1つも無い告知 ③二次情報だけで書くのはこのサイトが
+      一番やってはいけない形）。この3点はどれも今回のURLにそのまま当てはまる。
+    - 💡 **次にこの行を見る人へ**＝オーナーに「AI Futures と同一の告知が改名して再度来た」と一言確認を
+      仰いでから、`- [x]`（見送り確定）にするか判断するのがよい。担当の判断だけで確定にはしない
+      （AI Futures のときも人間の確認を経て確定させた前例に合わせる）。
 
 ## 処理済み
 
