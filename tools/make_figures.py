@@ -13617,9 +13617,164 @@ def handoff_summary_heading_length_chart() -> None:
     )
 
 
+def job_ai_policy_verdict_chart() -> None:
+    """AI利用が一言も書かれていない募集文で、頼み方ごとに可否を断定した回数を示す。
+
+    実測（2026-08-27・各2回）。値は docs/evidence/job-ai-policy-check.md の判定コード。
+    「断定」＝可否のどちらかを判断語で答えたこと（真値＝募集文には何も書かれていない）。
+    """
+    rows = [
+        ("そのまま聞く", 2, "留保つき許容/自作グレー判定", "bar-old", "t-bad"),
+        ("抜き出すだけを頼む", 0, "「書かれていない」", "bar-out", "t-good"),
+        ("＋確認文の下書き", 0, "「書かれていない」", "bar-out", "t-good"),
+        ("＋規約を別枠で挙げる", 0, "「書かれていない」", "bar-out", "t-good"),
+    ]
+
+    plot_x, plot_w = 230, 380
+    scale = plot_w / 2  # 0〜2回
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    top = 108
+    pitch, bar_h = 34, 18
+    axis_y = top + len(rows) * pitch + 6
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "AI利用が一言も書かれていない募集文でも、そのまま聞くと判断が生まれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ募集文（AI利用について何も書いていない）に、頼み方だけを変えて2回ずつ実測。"
+        "縦軸＝可否を断定した回数。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "真値＝募集文には何も書かれていない。正しい答えは「書かれていない」で、"
+        "可否のどちらにも決めないこと。</text>\n",
+    ]
+
+    y = top
+    for label, n, note, bar_cls, txt_cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t-sm" x="18" y="{ty + 12}">{_esc(label)}</text>\n')
+        x0, x1 = px(0), px(n)
+        w = max(4, x1 - x0)
+        parts.append(
+            f'<rect class="{bar_cls}" x="{x0:.1f}" y="{ty}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{txt_cls}" x="{x0 + w + 8:.1f}" y="{ty + 13}">{n}/2</text>\n'
+        )
+        y += pitch
+
+    parts.append(
+        f'<path class="line" d="M{plot_x} {axis_y} L{px(2):.1f} {axis_y}"/>\n'
+    )
+    for tick in (0, 1, 2):
+        tx = px(tick)
+        parts.append(f'<path class="line" d="M{tx:.1f} {axis_y} L{tx:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{tx - 6:.1f}" y="{axis_y + 18}">{tick}回</text>\n')
+
+    y = axis_y + 40
+    for text in (
+        "そのまま聞いた2回＝1回は留保つき許容、1回は自作のグレー判定。",
+        "抜き出すだけの3版は、いずれも2回とも「書かれていない」。",
+        "実測 2026-08-27・全32回（募集文4パターン×頼み方4通り×2回）。"
+        "生の返りと判定コードは docs/evidence/ に全文置いてある。",
+    ):
+        parts.append(f'<text class="t-xs" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 18
+
+    height = y + 6
+    alt = (
+        "AI利用について何も書かれていない募集文に4通りの頼み方をした実測で、"
+        "可否を断定した回数を版ごとに示す図。そのまま聞いた版は2回中2回で可否を断定した"
+        "（1回は留保つきの許容、1回は自作のグレー判定）。抜き出すだけを頼んだ版・"
+        "確認文の下書きを頼んだ版・規約を別枠で挙げさせた版は、いずれも2回中0回で、"
+        "2回とも「書かれていない」と正しく答えた。"
+    )
+    (OUT / "job-ai-policy-verdict-vs-version.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def job_ai_policy_v4_citation_chart() -> None:
+    """規約を別枠で挙げさせた頼み方（版④）で、出典を辞退した回数と作り話した回数を示す。
+
+    実測（2026-08-27・全8回＝4群×各2回）。値は docs/evidence/job-ai-policy-check.md の集計⑤。
+    架空の募集文にはプラットフォーム名を書いていないため、真値＝出典は挙げられないはず。
+    """
+    rows = [
+        ("実在しない規約を作り話した", 0, "bar-old", "t-good"),
+        ("「特定できない」と正直に辞退した", 8, "bar-out", "t-good"),
+    ]
+
+    plot_x, plot_w = 260, 350
+    scale = plot_w / 8  # 0〜8回
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    top = 112
+    pitch, bar_h = 34, 18
+    axis_y = top + len(rows) * pitch + 6
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "版④（規約を別枠で挙げさせる）＝出典を辞退した回数と作り話した回数</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の募集文にはプラットフォーム名を書いていない。真値＝規約の出典は挙げられないはず。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "8回＝4群（禁止・要申告・可・一言も書かれていない）×各2回。</text>\n",
+    ]
+
+    y = top
+    for label, n, bar_cls, txt_cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t-sm" x="18" y="{ty + 12}">{_esc(label)}</text>\n')
+        x0, x1 = px(0), px(n)
+        w = max(4, x1 - x0)
+        parts.append(
+            f'<rect class="{bar_cls}" x="{x0:.1f}" y="{ty}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{txt_cls}" x="{x0 + w + 8:.1f}" y="{ty + 13}">{n}/8</text>\n'
+        )
+        y += pitch
+
+    parts.append(
+        f'<path class="line" d="M{plot_x} {axis_y} L{px(8):.1f} {axis_y}"/>\n'
+    )
+    for tick in (0, 2, 4, 6, 8):
+        tx = px(tick)
+        parts.append(f'<path class="line" d="M{tx:.1f} {axis_y} L{tx:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{tx - 6:.1f}" y="{axis_y + 18}">{tick}回</text>\n')
+
+    y = axis_y + 40
+    for text in (
+        "8回とも、募集文からはどのプラットフォームか特定できないため規約は挙げられない、",
+        "という趣旨で正直に答えた。実在しない規約を作り話した回は0回。",
+        "⚠️ これは「プラットフォーム名を書かなかった場合」の実測。実在の名前があった場合は試していない。",
+    ):
+        parts.append(f'<text class="t-xs" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 18
+
+    height = y + 6
+    alt = (
+        "AI利用について書かれた文に加えてプラットフォームの規約も別枠で挙げるよう頼んだ実測で、"
+        "出典を辞退した回数と作り話した回数を示す図。8回中8回が、募集文からはどのプラットフォームか"
+        "特定できないため規約は挙げられない、という趣旨で正直に答え、実在しない規約を作り話した回は0回だった。"
+    )
+    (OUT / "job-ai-policy-v4-citation.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     kindle_royalty_invented_band_chart()
     kindle_royalty_version_grid_chart()
+    job_ai_policy_verdict_chart()
+    job_ai_policy_v4_citation_chart()
     filler_source_detection_chart()
     filler_source_five_scale_chart()
     proposal_what_repeats_chart()
