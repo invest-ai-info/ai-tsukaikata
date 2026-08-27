@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="342" viewBox="0 0 720 342" role="img" aria-label="週次の時給レポート8週分を見せて「何週連続で下がっているか」を尋ねた実測で、第3・6週が欠測でもっとも数えにくいP社サイトについて、答えが「制作と修正のみ」の週と「全部含める」の週をまたいだかどうかを示す図。そのまま頼んだ版aは3回中3回ともまたいでいた。「線引きが違う週は比べないでください」を足した版bは3回中0回、「比べた週と線引きを書いてください」を足した版cも3回中0回で、またがなかった。版aは3回とも、線引きが変わったこと自体は文中で言及していたが、答えの数字には反映されていなかった。表に行が無い週を0円として扱った回は9回を通じて0回だった。版aの答えの1つを、別の独立した回答に「境界をまたいだ案件がないか点検して」と貼ったところ、またいだ3案件を1回で正しく指摘できた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="342"/>
+<text class="t-strong" x="18" y="26">「何週連続で下がっているか」は、P社サイトで境界をまたいだか</text>
+<text class="t-sm" x="18" y="45">P社サイトは第3週と第6週が欠測で、線引きが変わる第4週の前後をまたぎやすい案件。3版×各3回＝9回。</text>
+<text class="t-sm" x="18" y="64">×＝「制作と修正のみ」の週（第1〜3週）と「全部含める」の週（第5〜8週）を同じ「連続」に数えた（赤）。○＝またいでいない（緑）。</text>
+<text class="t" x="18" y="136">そのまま頼む</text>
+<text class="t-xs" x="208" y="136">版a</text>
+<rect class="box-bad" x="300" y="118" width="34" height="28" rx="4"/>
+<text class="t-bad" x="317.0" y="138" text-anchor="middle" style="font-size:15px;font-weight:700">×</text>
+<rect class="box-bad" x="346" y="118" width="34" height="28" rx="4"/>
+<text class="t-bad" x="363.0" y="138" text-anchor="middle" style="font-size:15px;font-weight:700">×</text>
+<rect class="box-bad" x="392" y="118" width="34" height="28" rx="4"/>
+<text class="t-bad" x="409.0" y="138" text-anchor="middle" style="font-size:15px;font-weight:700">×</text>
+<text class="t-bad" x="452" y="136">3/3</text>
+<text class="t" x="18" y="182">＋「線引きが違う週は比べない」</text>
+<text class="t-xs" x="208" y="182">版b</text>
+<rect class="box-good" x="300" y="164" width="34" height="28" rx="4"/>
+<text class="t-good" x="317.0" y="184" text-anchor="middle" style="font-size:15px;font-weight:700">○</text>
+<rect class="box-good" x="346" y="164" width="34" height="28" rx="4"/>
+<text class="t-good" x="363.0" y="184" text-anchor="middle" style="font-size:15px;font-weight:700">○</text>
+<rect class="box-good" x="392" y="164" width="34" height="28" rx="4"/>
+<text class="t-good" x="409.0" y="184" text-anchor="middle" style="font-size:15px;font-weight:700">○</text>
+<text class="t-good" x="452" y="182">0/3</text>
+<text class="t" x="18" y="228">＋「比べた週と線引きを書く」</text>
+<text class="t-xs" x="208" y="228">版c</text>
+<rect class="box-good" x="300" y="210" width="34" height="28" rx="4"/>
+<text class="t-good" x="317.0" y="230" text-anchor="middle" style="font-size:15px;font-weight:700">○</text>
+<rect class="box-good" x="346" y="210" width="34" height="28" rx="4"/>
+<text class="t-good" x="363.0" y="230" text-anchor="middle" style="font-size:15px;font-weight:700">○</text>
+<rect class="box-good" x="392" y="210" width="34" height="28" rx="4"/>
+<text class="t-good" x="409.0" y="230" text-anchor="middle" style="font-size:15px;font-weight:700">○</text>
+<text class="t-good" x="452" y="228">0/3</text>
+<text class="t-xs" x="18" y="276">※ 版aは3回とも、それとは別に「線引きが変わった」こと自体は文中で自分から書いていた。気づいてはいたが、答えの数字には反映されなかった。</text>
+<text class="t-xs" x="18" y="296">※ 表に行が無い週（第3・4・6週）を0円として扱った回は、9回を通じて0回だった。</text>
+<text class="t-xs" x="18" y="316">※ 版aの答えの1つを、別の独立した回答に「境界をまたいだ案件がないか点検して」と貼ったところ、またいだ3案件を1回で正しく指摘できた。</text>
+</svg>

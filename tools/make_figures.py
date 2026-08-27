@@ -13770,7 +13770,92 @@ def job_ai_policy_v4_citation_chart() -> None:
     )
 
 
+def weekly_rate_boundary_crossed_chart() -> None:
+    """「何週連続で下がっているか」の答えが、線引きの違う週をまたいだか。
+
+    実測（2026-08-27・3版×各3回＝9回）。P社サイト（第3・6週が欠測で、
+    第4週の前後に線引きの変わり目が来る案件）の「連続」判定を、正規表現で
+    機械判定した（第3週以下と第5週以上の週番号が同じ1文に同時に出るか）。
+    値は docs/evidence/weekly-rate-crosses-the-line.md の判定コード。
+    """
+    rows = [
+        ("そのまま頼む", "版a", [True, True, True]),
+        ("＋「線引きが違う週は比べない」", "版b", [False, False, False]),
+        ("＋「比べた週と線引きを書く」", "版c", [False, False, False]),
+    ]
+    label_x, sub_x = 18, 208
+    box_x0, box_gap, box_w = 300, 46, 34
+    top = 118
+    row_h = 46
+    height = top + len(rows) * row_h + 92
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「何週連続で下がっているか」は、P社サイトで境界をまたいだか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "P社サイトは第3週と第6週が欠測で、線引きが変わる第4週の前後をまたぎやすい案件。"
+        "3版×各3回＝9回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "×＝「制作と修正のみ」の週（第1〜3週）と「全部含める」の週（第5〜8週）を"
+        "同じ「連続」に数えた（赤）。○＝またいでいない（緑）。</text>\n",
+    ]
+
+    y = top
+    for label, sub, verdicts in rows:
+        cy = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{cy + 4}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{sub_x}" y="{cy + 4}">{_esc(sub)}</text>\n')
+        crossed = sum(1 for v in verdicts if v)
+        for i, v in enumerate(verdicts):
+            cx = box_x0 + i * box_gap
+            cls = "box-bad" if v else "box-good"
+            tcls = "t-bad" if v else "t-good"
+            parts.append(
+                f'<rect class="{cls}" x="{cx}" y="{y}" width="{box_w}" height="28" rx="4"/>\n'
+            )
+            mark = "×" if v else "○"
+            parts.append(
+                f'<text class="{tcls}" x="{cx + box_w / 2:.1f}" y="{y + 20}" '
+                f'text-anchor="middle" style="font-size:15px;font-weight:700">{mark}</text>\n'
+            )
+        count_cls = "t-bad" if crossed else "t-good"
+        parts.append(
+            f'<text class="{count_cls}" x="{box_x0 + 3 * box_gap + 14}" y="{y + 18}">'
+            f"{crossed}/3</text>\n"
+        )
+        y += row_h
+
+    notes_y = y + 20
+    for text in (
+        "※ 版aは3回とも、それとは別に「線引きが変わった」こと自体は文中で自分から書いていた。"
+        "気づいてはいたが、答えの数字には反映されなかった。",
+        "※ 表に行が無い週（第3・4・6週）を0円として扱った回は、9回を通じて0回だった。",
+        "※ 版aの答えの1つを、別の独立した回答に「境界をまたいだ案件がないか点検して」と貼ったところ、"
+        "またいだ3案件を1回で正しく指摘できた。",
+    ):
+        parts.append(f'<text class="t-xs" x="18" y="{notes_y}">{_esc(text)}</text>\n')
+        notes_y += 20
+
+    height = notes_y + 6
+    alt = (
+        "週次の時給レポート8週分を見せて「何週連続で下がっているか」を尋ねた実測で、"
+        "第3・6週が欠測でもっとも数えにくいP社サイトについて、答えが「制作と修正のみ」の週と"
+        "「全部含める」の週をまたいだかどうかを示す図。"
+        "そのまま頼んだ版aは3回中3回ともまたいでいた。"
+        "「線引きが違う週は比べないでください」を足した版bは3回中0回、"
+        "「比べた週と線引きを書いてください」を足した版cも3回中0回で、またがなかった。"
+        "版aは3回とも、線引きが変わったこと自体は文中で言及していたが、答えの数字には反映されていなかった。"
+        "表に行が無い週を0円として扱った回は9回を通じて0回だった。"
+        "版aの答えの1つを、別の独立した回答に「境界をまたいだ案件がないか点検して」と貼ったところ、"
+        "またいだ3案件を1回で正しく指摘できた。"
+    )
+    (OUT / "weekly-rate-boundary-crossed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    weekly_rate_boundary_crossed_chart()
     kindle_royalty_invented_band_chart()
     kindle_royalty_version_grid_chart()
     job_ai_policy_verdict_chart()
