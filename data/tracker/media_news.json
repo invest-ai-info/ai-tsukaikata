@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-27T20:33:26.631798+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-27T14:15:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Anthropicが、PC操作支援AI「Claude Cowork」に独自のブラウザを搭載しました。サブスクリプションプランの有料ユーザー向けに順次提供されることになっています。 続きを読む...",
+      "title": "AnthropicがClaude Coworkに独自の内蔵ブラウザを搭載、「Claude in Chrome」と使い分け可能",
+      "uid": "6ba6d9c04fa78d28",
+      "url": "https://gigazine.net/news/20260827-claude-cowork-built-in-browser/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-27T20:33:26.631798+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-27T14:05:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Metaのマーク・ザッカーバーグCEOが、2026年に「大量の従業員を解雇・再配置してAIに置き換える」という計画を実行する予定だったと、海外メディアのロイターが報じました。ロイターは「Project OT」というコードネームで呼ばれたこの計画が生まれた経緯や、計画が漏れたことによる社内での反発、そして計画が頓挫するまでの流れについてまとめています。 続きを読む...",
+      "title": "Metaが従業員を大量解雇してAIに置き換えようとした「Project OT」はいかにして頓挫したのか？",
+      "uid": "358e09cfd4662b95",
+      "url": "https://gigazine.net/news/20260827-meta-zuckerberg-replace-staff-ai-imploded/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-27T20:33:26.631798+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-27T10:27:40+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは、Gemini Enterpriseのエージェントワークロード、ならびにGoogle Antigravity in Gemini EnterpriseやAndroid Studioなどのデベロッパーツール向けに、請求を柔軟にする支払いオプションと新しい費用管理ツールを提供すると発表した。",
+      "title": "Google、Gemini Enterpriseならびにデベロッパーツール向けに、支払いオプションと新しい費用管理ツールを発表",
+      "uid": "da38c642d8bdf8e7",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2136281.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-27T20:33:26.631798+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-08-27T10:21:07+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "AuthenticAIは、生成AIプラットフォーム「Maison AI」において、AIモデルの最新化および、ユーザーが迷わず最適なAIを活用できるUI・機能改善のアップデートを実施した。",
+      "title": "最適なモデルを自動で判定する「自動でえらぶ」生成AIプラットフォーム「Maison AI」 GPT-5.6-Luna、GPT-5.6-Terra、Grok-4.6など最新モデルを搭載",
+      "uid": "180f1c7b02596682",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2136246.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-08-27T20:33:26.631798+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-08-27T10:18:48+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは8月26日、音声認識モデル「Gemini 3.5 Transcribe」を発表した。現在、開発者向けのパブリックプレビュー版をGoogle AI StudioとGoogle Antigravityで、企業向けにはGemini Enterprise Agent Platformを通じてパブリックプレビュー版を、一般向けにはmacOS版Geminiアプリ（英語）や、Android版Gb…",
+      "title": "Google、最大3人の話者認識も可能な「Gemini 3.5 Transcribe」",
+      "uid": "6e5917cfa524f4d7",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2136284.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-08-27T09:54:30.419398+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2339,66 +2399,6 @@
       "uid": "fd048a0d32fa199d",
       "url": "https://ai.watch.impress.co.jp/docs/news/2134237.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-20T08:58:16.409338+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-20T07:47:56+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "人型ロボットを開発するスタートアップのアトムは、日本精工（NSK）と国産人型ロボットの開発・実装に向け、戦略的パートナーシップに関する基本合意書を締結したと発表した。",
-      "title": "日本精工が「国産人型ロボ」開発を後押し　スタートアップのアトムと協力、アクチュエータの検証など",
-      "uid": "1feafc1d14392d2a",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000655/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-20T07:58:38.120608+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-20T07:39:30+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Sansanは8月20日、経理AXサービス「Bill One」の新機能として「AI自動起票」の提供を開始した。",
-      "title": "Sansan、全社の業務負担を軽減できる「AI自動起票」 経理AXサービス「Bill One」の新機能",
-      "uid": "2b3127438c0b081b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2134201.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-20T07:58:38.120608+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-20T07:24:31+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立ソリューションズは8月20日、Allganize Japanの「対話型AIによる業務アプリケーション生成プラットフォーム」の提供を開始した。",
-      "title": "Allganizeの対話型AIによる業務アプリケーション生成プラットフォーム 日立ソリューションズが提供開始",
-      "uid": "5d01f1f7fc93a40b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2134170.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-20T07:08:56.756357+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-20T06:36:17+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ヒビノグラフィックスは、サムスン電子の「空間再現ディスプレイ」と生成AI技術を組み合わせた、等身大・3次元・双方向対話型「AI松尾芭蕉プロトタイプ」を開発した。10月1日～15日まで、芭蕉の故郷である三重県伊賀市中央図書館で、一般公開を兼ねた実証実験を行なう。",
-      "title": "伊賀市の地域住民と育てる対話型の等身大「AI松尾芭蕉プロトタイプ」",
-      "uid": "59d80f0263556a53",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2134141.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-20T04:55:18.164229+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-20T04:16:18+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "エイベックスの松浦勝人会長は、8月13日から「note」に投稿している記事について、ほとんどAIで作成していたと自身のXアカウント（@maxmatsuuratwit）で明かした。",
-      "title": "エイベックス松浦会長、noteの“バズり記事”を「ほぼAI」で作成　「僕の60年分のデータを入れた」",
-      "uid": "6839b06d86bc5274",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/20/2000000644/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
