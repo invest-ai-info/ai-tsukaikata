@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-28T05:26:34.338455+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-28T00:49:16+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Bug fixes and reliability improvements",
+      "title": "v2.1.250",
+      "uid": "911c5071c541eecf",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-28T05:26:34.338455+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-27T22:12:20+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added --restricted (or CLAUDE_CODE_RESTRICTED=1 ): removes the built-in tools that run commands or code and WebFetch (unless named in --tools ), keeps file tools inside the working dir…",
+      "title": "v2.1.248",
+      "uid": "6ad48bab95d34a0e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.248",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-27T20:33:26.631798+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
