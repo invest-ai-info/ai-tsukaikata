@@ -13978,6 +13978,100 @@ def handoff_todo_position_hits_chart() -> None:
     )
 
 
+def role_prompt_grid_chart() -> None:
+    """役割を付ける・付けないの6版で、正答・検出・「条文名の書き添え」がどう動いたか。
+
+    実測（2026-08-28・6版×各2回＝12回・計72問）。値は
+    docs/evidence/role-prompt-same-answer.md の判定コード。
+    正答（問1〜3の条文番号の一致）と検出（問4〜6の「記載なし」表明）は
+    12回すべてで満点（各6/6）。聞いていない「条文名の書き添え」だけが版によって揺れた。
+    """
+    rows = [
+        ("a. 役割なし", "6/6", "6/6", 0),
+        ("b. 「あなたは担当者です」", "6/6", "6/6", 0),
+        ("c. 「20年の専門家です」", "6/6", "6/6", 2),
+        ("d. 念押しの一文を外す", "6/6", "6/6", 0),
+        ("e. 逐語引用を求める", "6/6", "6/6", 1),
+        ("f. c＋逐語引用を求める", "6/6", "6/6", 0),
+    ]
+    label_w = 210
+    col_w = 150
+    col_x = [18 + label_w, 18 + label_w + col_w, 18 + label_w + col_w * 2]
+    top = 130
+    row_h = 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "正答と検出はどの版も満点。動いたのは「条文名の書き添え」だけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "6版×各2回＝12回・計72問。正答＝問1〜3で条文番号が正しい。検出＝問4〜6で"
+        "「規程に記載がない」と明言。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "条文名の書き添え＝聞いていないのに「第2条（出張旅費）」のように名前を添えた回数（／2回）。"
+        "</text>\n",
+    ]
+
+    headers = ["正答（問1〜3）", "検出（問4〜6）", "条文名の書き添え"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, correct, detect, name_hits in rows:
+        ty = y + 19
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for i, val in enumerate((correct, detect)):
+            x = col_x[i]
+            parts.append(
+                f'<rect class="box-good" x="{x + 20}" y="{y}" width="{col_w - 40}" height="26" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{_esc(val)}</text>\n'
+            )
+        x = col_x[2]
+        klass = "box-accent" if name_hits else "box-quiet"
+        tcls = "t-accent" if name_hits else "t-sm"
+        parts.append(
+            f'<rect class="{klass}" x="{x + 20}" y="{y}" width="{col_w - 40}" height="26" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{x + col_w / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{name_hits}／2</text>\n'
+        )
+        y += row_h + 6
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="46" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "72問中72問が正答・検出とも満点。捏造引用（未記載の問に実在条文を当てた数）も0件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 37}">'
+        "条文名の書き添えは「20年の専門家」で2／2回。ただし同じ役割＋逐語引用（f）では0／2回で、一貫しない。</text>\n"
+    )
+    y += 46 + 16
+
+    height = y + 8
+    alt = (
+        "役割を付ける・付けないの6版（役割なし、あなたは担当者です、20年の専門家です、"
+        "念押しの一文を外す、逐語引用を求める、専門家＋逐語引用）について、各2回・"
+        "計12回72問を実測した結果の表。正答（問1〜3の条文番号一致）と検出（問4〜6の"
+        "「記載がない」明言）はどの版も6／6で満点、12回全体では72問中72問が正答・検出とも"
+        "満点だった。捏造引用（記載のない問に実在の条文番号を当てた数）も0件。"
+        "聞いていないのに条文名を書き添えた回数だけが版によって違い、"
+        "役割なし・担当者・念押しなし・専門家＋逐語引用の4版は2回とも0回、"
+        "逐語引用を求めた版は2回中1回、20年の専門家を付けた版だけ2回とも書き添えた。"
+        "ただし同じ役割に逐語引用を重ねた版では0回に戻っており、一貫した効果とは言えない。"
+    )
+    (OUT / "role-prompt-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     handoff_todo_version_hits_chart()
     handoff_todo_position_hits_chart()
@@ -14153,4 +14247,5 @@ if __name__ == "__main__":
     note_payout_version_comparison_chart()
     handoff_summary_format_drift_grid_chart()
     handoff_summary_heading_length_chart()
+    role_prompt_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="424" viewBox="0 0 720 424" role="img" aria-label="役割を付ける・付けないの6版（役割なし、あなたは担当者です、20年の専門家です、念押しの一文を外す、逐語引用を求める、専門家＋逐語引用）について、各2回・計12回72問を実測した結果の表。正答（問1〜3の条文番号一致）と検出（問4〜6の「記載がない」明言）はどの版も6／6で満点、12回全体では72問中72問が正答・検出とも満点だった。捏造引用（記載のない問に実在の条文番号を当てた数）も0件。聞いていないのに条文名を書き添えた回数だけが版によって違い、役割なし・担当者・念押しなし・専門家＋逐語引用の4版は2回とも0回、逐語引用を求めた版は2回中1回、20年の専門家を付けた版だけ2回とも書き添えた。ただし同じ役割に逐語引用を重ねた版では0回に戻っており、一貫した効果とは言えない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="424"/>
+<text class="t-strong" x="18" y="26">正答と検出はどの版も満点。動いたのは「条文名の書き添え」だけ</text>
+<text class="t-sm" x="18" y="45">6版×各2回＝12回・計72問。正答＝問1〜3で条文番号が正しい。検出＝問4〜6で「規程に記載がない」と明言。</text>
+<text class="t-sm" x="18" y="64">条文名の書き添え＝聞いていないのに「第2条（出張旅費）」のように名前を添えた回数（／2回）。</text>
+<text class="t-xs" x="303.0" y="116" text-anchor="middle">正答（問1〜3）</text>
+<text class="t-xs" x="453.0" y="116" text-anchor="middle">検出（問4〜6）</text>
+<text class="t-xs" x="603.0" y="116" text-anchor="middle">条文名の書き添え</text>
+<text class="t" x="18" y="149">a. 役割なし</text>
+<rect class="box-good" x="248" y="130" width="110" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="149" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-good" x="398" y="130" width="110" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="149" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-quiet" x="548" y="130" width="110" height="26" rx="4"/>
+<text class="t-sm" x="603.0" y="149" text-anchor="middle" style="font-weight:700">0／2</text>
+<text class="t" x="18" y="185">b. 「あなたは担当者です」</text>
+<rect class="box-good" x="248" y="166" width="110" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="185" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-good" x="398" y="166" width="110" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="185" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-quiet" x="548" y="166" width="110" height="26" rx="4"/>
+<text class="t-sm" x="603.0" y="185" text-anchor="middle" style="font-weight:700">0／2</text>
+<text class="t" x="18" y="221">c. 「20年の専門家です」</text>
+<rect class="box-good" x="248" y="202" width="110" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="221" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-good" x="398" y="202" width="110" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="221" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-accent" x="548" y="202" width="110" height="26" rx="4"/>
+<text class="t-accent" x="603.0" y="221" text-anchor="middle" style="font-weight:700">2／2</text>
+<text class="t" x="18" y="257">d. 念押しの一文を外す</text>
+<rect class="box-good" x="248" y="238" width="110" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="257" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-good" x="398" y="238" width="110" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="257" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-quiet" x="548" y="238" width="110" height="26" rx="4"/>
+<text class="t-sm" x="603.0" y="257" text-anchor="middle" style="font-weight:700">0／2</text>
+<text class="t" x="18" y="293">e. 逐語引用を求める</text>
+<rect class="box-good" x="248" y="274" width="110" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="293" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-good" x="398" y="274" width="110" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="293" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-accent" x="548" y="274" width="110" height="26" rx="4"/>
+<text class="t-accent" x="603.0" y="293" text-anchor="middle" style="font-weight:700">1／2</text>
+<text class="t" x="18" y="329">f. c＋逐語引用を求める</text>
+<rect class="box-good" x="248" y="310" width="110" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="329" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-good" x="398" y="310" width="110" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="329" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-quiet" x="548" y="310" width="110" height="26" rx="4"/>
+<text class="t-sm" x="603.0" y="329" text-anchor="middle" style="font-weight:700">0／2</text>
+<rect class="box-accent" x="18" y="354" width="678" height="46" rx="6"/>
+<text class="t-accent" x="34" y="373">72問中72問が正答・検出とも満点。捏造引用（未記載の問に実在条文を当てた数）も0件。</text>
+<text class="t-accent" x="34" y="391">条文名の書き添えは「20年の専門家」で2／2回。ただし同じ役割＋逐語引用（f）では0／2回で、一貫しない。</text>
+</svg>
