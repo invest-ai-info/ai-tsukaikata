@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="290" viewBox="0 0 720 290" role="img" aria-label="架空スレッド2本に読み方を変えた4版を各2回通した16機会を、宿題がスレッドの中で生まれた順番（1〜4番目）でまとめ直した横棒グラフ。いちばん古い宿題は16機会中5回、2番目に古い宿題は16回中15回、3番目に古い宿題は16回中6回、直前のやり取りの宿題は16回中15回拾われた。直前の宿題は「最後の1往復だけ見て」という絞り込みの版でもほぼ拾われるが、いちばん古い宿題はどの版でも拾われにくい。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="290"/>
+<text class="t-strong" x="18" y="26">宿題は、生まれた順番が古いほど拾われにくい（直前の宿題は別）</text>
+<text class="t-sm" x="18" y="45">版a〜dの16機会を、スレッドの中で宿題が出てきた順番（1〜4番目）でまとめ直した。</text>
+<text class="t-sm" x="18" y="64">④は「最後の1往復」に入るので、版cでもほぼ拾われている。①はそこに入らない。</text>
+<text class="t" x="18" y="122.0">① いちばん古い宿題</text>
+<rect class="bar-old" x="260" y="108" width="115.6" height="20" rx="3"/>
+<text class="t-accent" x="383.6" y="122.0">5/16</text>
+<text class="t" x="18" y="156.0">② 2番目に古い宿題</text>
+<rect class="bar-out" x="260" y="142" width="346.9" height="20" rx="3"/>
+<text class="t-accent" x="614.9" y="156.0">15/16</text>
+<text class="t" x="18" y="190.0">③ 3番目に古い宿題</text>
+<rect class="bar-in" x="260" y="176" width="138.8" height="20" rx="3"/>
+<text class="t-accent" x="406.8" y="190.0">6/16</text>
+<text class="t" x="18" y="224.0">④ 直前のやり取りの宿題</text>
+<rect class="bar-out" x="260" y="210" width="346.9" height="20" rx="3"/>
+<text class="t-accent" x="614.9" y="224.0">15/16</text>
+<text class="t-xs" x="18" y="264">※ ②が15/16と高いのは、この教材で②の宿題が「検討中です」という言い切りの一文を持っていたため（他の宿題より目立ちやすかった可能性がある）。</text>
+</svg>

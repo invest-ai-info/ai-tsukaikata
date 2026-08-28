@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="314" viewBox="0 0 720 314" role="img" aria-label="架空の案件スレッド2本（宿題9件のうち未解決4件）に、読み方だけを変えた4つの版を各2回・のべ16機会通した実測で、版ごとに拾えた宿題の件数を横棒グラフで示す図。版a（そのまま聞く）は8/16、版b（まず経緯を要約してから）は16/16で漏れ0件、版c（最後の1往復だけ見て。元の記事の指示文そのまま）は6/16でもっとも低く、版d（版cに保険の一文を足したもの）は11/16で漏れ0件だった。版bで、すでに終わった仕事を宿題として書いてしまった回は8機会を通じて0回だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="314"/>
+<text class="t-strong" x="18" y="26">宿題4件×教材2本×2回＝16機会のうち、版ごとに何件拾えたか</text>
+<text class="t-sm" x="18" y="45">架空の案件スレッド2本（各14通・宿題9件のうち未解決4件）に、読み方だけを変えて通した実測。</text>
+<text class="t-sm" x="18" y="64">「漏れ」は、すでに終わった仕事を宿題として書いてしまった件数（下の注に別枠で書く）。</text>
+<text class="t" x="18" y="122.0">版a　そのまま聞く</text>
+<rect class="bar-in" x="210" y="108" width="190.0" height="20" rx="3"/>
+<text class="t-accent" x="408.0" y="122.0">8/16</text>
+<text class="t" x="18" y="156.0">版b　まず経緯を要約してから</text>
+<rect class="bar-out" x="210" y="142" width="380.0" height="20" rx="3"/>
+<text class="t-accent" x="598.0" y="156.0">16/16</text>
+<text class="t" x="18" y="190.0">版c　最後の1往復だけ見て（元の記事の指示文）</text>
+<rect class="bar-old" x="210" y="176" width="142.5" height="20" rx="3"/>
+<text class="t-accent" x="360.5" y="190.0">6/16</text>
+<text class="t" x="18" y="224.0">版d　c＋保険の一文</text>
+<rect class="bar-in" x="210" y="210" width="261.2" height="20" rx="3"/>
+<text class="t-accent" x="479.2" y="224.0">11/16</text>
+<text class="t-xs" x="18" y="268">※ 版cは元の記事「長いスレッドで、いま何を求められているのか分からない」の指示文そのもの。</text>
+<text class="t-xs" x="18" y="288">※ 終わった仕事を宿題として書いてしまった「漏れ」は、版a〜dのどれも0件だった。</text>
+</svg>

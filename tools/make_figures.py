@@ -13854,7 +13854,133 @@ def weekly_rate_boundary_crossed_chart() -> None:
     )
 
 
+def handoff_todo_version_hits_chart() -> None:
+    """架空スレッド2本×2回＝16機会のうち、版ごとに宿題を何件拾えたか。
+
+    実測（2026-08-28）。宿題は1材料あたり4件（未解決）。
+    版c（この記事の元になった記事「最後の1往復だけ見て」の指示文そのまま）が
+    いちばん低く、版b（「まず経緯を要約してから」）が16/16で最も高かった。
+    """
+    max_val = 16
+    bar_x, bar_w = 210, 380
+    scale = bar_w / max_val
+    rows = [
+        ("版a　そのまま聞く", "bar-in", 8),
+        ("版b　まず経緯を要約してから", "bar-out", 16),
+        ("版c　最後の1往復だけ見て（元の記事の指示文）", "bar-old", 6),
+        ("版d　c＋保険の一文", "bar-in", 11),
+    ]
+    top = 108
+    pitch, bar_h = 34, 20
+    height = top + len(rows) * pitch + 78
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "宿題4件×教材2本×2回＝16機会のうち、版ごとに何件拾えたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の案件スレッド2本（各14通・宿題9件のうち未解決4件）に、読み方だけを変えて通した実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「漏れ」は、すでに終わった仕事を宿題として書いてしまった件数（下の注に別枠で書く）。</text>\n",
+    ]
+
+    y = top
+    for label, klass, value in rows:
+        cy = y + bar_h / 2 + 4
+        parts.append(f'<text class="t" x="18" y="{cy:.1f}">{_esc(label)}</text>\n')
+        w = value * scale
+        parts.append(
+            f'<rect class="{klass}" x="{bar_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{bar_x + w + 8:.1f}" y="{cy:.1f}">{value}/16</text>\n'
+        )
+        y += pitch
+
+    notes_y = y + 24
+    for text in (
+        "※ 版cは元の記事「長いスレッドで、いま何を求められているのか分からない」の指示文そのもの。",
+        "※ 終わった仕事を宿題として書いてしまった「漏れ」は、版a〜dのどれも0件だった。",
+    ):
+        parts.append(f'<text class="t-xs" x="18" y="{notes_y}">{_esc(text)}</text>\n')
+        notes_y += 20
+
+    height = notes_y + 6
+    alt = (
+        "架空の案件スレッド2本（宿題9件のうち未解決4件）に、読み方だけを変えた4つの版を"
+        "各2回・のべ16機会通した実測で、版ごとに拾えた宿題の件数を横棒グラフで示す図。"
+        "版a（そのまま聞く）は8/16、版b（まず経緯を要約してから）は16/16で漏れ0件、"
+        "版c（最後の1往復だけ見て。元の記事の指示文そのまま）は6/16でもっとも低く、"
+        "版d（版cに保険の一文を足したもの）は11/16で漏れ0件だった。"
+        "版bで、すでに終わった仕事を宿題として書いてしまった回は8機会を通じて0回だった。"
+    )
+    (OUT / "handoff-todo-version-hits.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def handoff_todo_position_hits_chart() -> None:
+    """宿題が生まれた順番（スレッドの中の古さ）ごとに、拾われた回数。
+
+    実測（2026-08-28）。4版×教材2本×2回＝16機会を、宿題の生まれた順番でまとめ直した。
+    """
+    max_val = 16
+    bar_x, bar_w = 260, 370
+    scale = bar_w / max_val
+    rows = [
+        ("① いちばん古い宿題", "bar-old", 5),
+        ("② 2番目に古い宿題", "bar-out", 15),
+        ("③ 3番目に古い宿題", "bar-in", 6),
+        ("④ 直前のやり取りの宿題", "bar-out", 15),
+    ]
+    top = 108
+    pitch, bar_h = 34, 20
+    height = top + len(rows) * pitch + 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "宿題は、生まれた順番が古いほど拾われにくい（直前の宿題は別）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "版a〜dの16機会を、スレッドの中で宿題が出てきた順番（1〜4番目）でまとめ直した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "④は「最後の1往復」に入るので、版cでもほぼ拾われている。①はそこに入らない。</text>\n",
+    ]
+
+    y = top
+    for label, klass, value in rows:
+        cy = y + bar_h / 2 + 4
+        parts.append(f'<text class="t" x="18" y="{cy:.1f}">{_esc(label)}</text>\n')
+        w = value * scale
+        parts.append(
+            f'<rect class="{klass}" x="{bar_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{bar_x + w + 8:.1f}" y="{cy:.1f}">{value}/16</text>\n'
+        )
+        y += pitch
+
+    notes_y = y + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{notes_y}">'
+        "※ ②が15/16と高いのは、この教材で②の宿題が「検討中です」という言い切りの一文を"
+        "持っていたため（他の宿題より目立ちやすかった可能性がある）。</text>\n"
+    )
+    height = notes_y + 26
+    alt = (
+        "架空スレッド2本に読み方を変えた4版を各2回通した16機会を、宿題がスレッドの中で"
+        "生まれた順番（1〜4番目）でまとめ直した横棒グラフ。"
+        "いちばん古い宿題は16機会中5回、2番目に古い宿題は16回中15回、"
+        "3番目に古い宿題は16回中6回、直前のやり取りの宿題は16回中15回拾われた。"
+        "直前の宿題は「最後の1往復だけ見て」という絞り込みの版でもほぼ拾われるが、"
+        "いちばん古い宿題はどの版でも拾われにくい。"
+    )
+    (OUT / "handoff-todo-position-hits.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    handoff_todo_version_hits_chart()
+    handoff_todo_position_hits_chart()
     weekly_rate_boundary_crossed_chart()
     kindle_royalty_invented_band_chart()
     kindle_royalty_version_grid_chart()
