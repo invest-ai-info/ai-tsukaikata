@@ -36,74 +36,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-08-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-28T18:19:32+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added PreModelSwitch and PostModelSwitch hook events (block, confirm, or annotate a model switch); SessionStart resume hooks now receive session staleness and the estimated re-cache co…",
-      "title": "v2.1.251",
-      "uid": "b9c5ce40bf5d1b5c",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.251",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-28T02:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
-      "title": "Supporting Thailand’s next generation of AI startups",
-      "uid": "61c0f65d83e04710",
-      "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-12T16:21:42+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion to…",
-      "title": "qwen/qwen3.8-2.4t-a95b:batch",
-      "uid": "397b77064a7f8f2f",
-      "url": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b:batch",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-28T06:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
-      "title": "Our decision on Cursor following its acquisition by SpaceX",
-      "uid": "7630f78d6d92f7a2",
-      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-03-10T14:19:56+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unifie…",
-      "title": "qwen/qwen3.5-9b:batch",
-      "uid": "c591adff3c17fbe1",
-      "url": "https://openrouter.ai/qwen/qwen3.5-9b:batch",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "importance": "minor",
-      "label": "Kimi 新モデル",
-      "published": "2026-07-16T15:30:58+00:00",
-      "source_id": "openrouter-moonshot",
-      "summary": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at…",
-      "title": "moonshotai/kimi-k3:batch",
-      "uid": "8c6ba0a69b8e1409",
-      "url": "https://openrouter.ai/moonshotai/kimi-k3:batch",
-      "vendor": "Moonshot AI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
