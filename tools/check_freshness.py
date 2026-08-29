@@ -739,10 +739,20 @@ LAWYER_GATE_DEADLINE = date(2026, 10, 31)
 LAWYER_CONSULT_DONE = False
 LAWYER_GATE_RAMP_DAYS = 28  # 期日の4週前から週次メールに昇格する
 
+# 🆕 2026-08-29 オーナー判断: **弁護士相談は実施しない（見送り）**。
+# これはゲートの無効化ではなく、設計の2分岐のうち「相談しない」側を確定させたということ。
+# したがって:
+#   ・期日のカウントダウンと最終月の週次催促は止める（決着した件を催促しても直せない）
+#   ・グレー全域の「白のみで設計」は**恒久**（期日超過を待たずに今から確定）
+#   ・DONE は False のまま＝**実施していない事実をコードで偽らない**
+# 方針を戻すなら、この定数を None にして LAWYER_GATE_DEADLINE を置き直す。
+LAWYER_CONSULT_DECLINED = date(2026, 8, 29)
+
 
 def lawyer_deadline_gate(today: date,
                          deadline: date = LAWYER_GATE_DEADLINE,
-                         done: bool = LAWYER_CONSULT_DONE):
+                         done: bool = LAWYER_CONSULT_DONE,
+                         declined: "date | None" = LAWYER_CONSULT_DECLINED):
     """(problems, notes) を返す。
 
     鳴り方は3段階。⚠️ 遠いうちから problems で鳴らさない——直せない警告を
@@ -751,9 +761,20 @@ def lawyer_deadline_gate(today: date,
       期日まで4週超 : notes（表示のみ・失敗させない）
       期日まで4週以内: problems（毎週メール＝最後の1か月だけ急かす）
       期日超過      : problems（格下げの宣言。以後は毎週これが出る）
+
+    実施済み(done)は完全に黙る。見送り(declined)は**催促だけ止めて制限は残す**
+    ＝ note を1行だけ出し続ける（「決めない状態の禁止」は満たされているが、
+    グレーが白のみ設計であることは忘れられてはいけないため）。
     """
     if done:
         return ([], [])
+    if declined:
+        return ([], [
+            f"弁護士相談は見送り（{declined} オーナー判断）。"
+            f"設計どおり、グレー全域は恒久的に「白のみで設計」。"
+            f"方針を戻すなら tools/check_freshness.py の LAWYER_CONSULT_DECLINED を None に戻し、"
+            f"LAWYER_GATE_DEADLINE を置き直す"
+        ])
     days_left = (deadline - today).days
     if days_left < 0:
         return ([

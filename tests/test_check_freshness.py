@@ -411,7 +411,7 @@ def test_hypothesis_registration_is_quiet_without_a_file():
 def test_lawyer_gate_is_a_note_while_the_deadline_is_far():
     """遠いうちは表示のみ。直せない警告を毎週メールすると一覧が読まれなくなる。"""
     problems, notes = lawyer_deadline_gate(
-        date(2026, 8, 15), deadline=date(2026, 10, 31), done=False)
+        date(2026, 8, 15), deadline=date(2026, 10, 31), done=False, declined=None)
     assert problems == []
     assert len(notes) == 1
     assert "残り77日" in notes[0]
@@ -419,7 +419,7 @@ def test_lawyer_gate_is_a_note_while_the_deadline_is_far():
 
 def test_lawyer_gate_escalates_in_the_final_month():
     problems, notes = lawyer_deadline_gate(
-        date(2026, 10, 10), deadline=date(2026, 10, 31), done=False)
+        date(2026, 10, 10), deadline=date(2026, 10, 31), done=False, declined=None)
     assert notes == []
     assert len(problems) == 1
     assert "残り21日" in problems[0]
@@ -428,7 +428,7 @@ def test_lawyer_gate_escalates_in_the_final_month():
 def test_lawyer_gate_declares_the_downgrade_after_the_deadline():
     """期日超過＝グレー全域の格下げ宣言。どちらに転んでも浮遊状態が消える。"""
     problems, _ = lawyer_deadline_gate(
-        date(2026, 11, 1), deadline=date(2026, 10, 31), done=False)
+        date(2026, 11, 1), deadline=date(2026, 10, 31), done=False, declined=None)
     assert len(problems) == 1
     assert "白のみで設計" in problems[0]
 
@@ -436,7 +436,7 @@ def test_lawyer_gate_declares_the_downgrade_after_the_deadline():
 def test_lawyer_gate_boundary_day_is_still_the_ramp_not_the_downgrade():
     """期日当日はまだ格下げではない（過ぎたら、が仕様）。"""
     problems, _ = lawyer_deadline_gate(
-        date(2026, 10, 31), deadline=date(2026, 10, 31), done=False)
+        date(2026, 10, 31), deadline=date(2026, 10, 31), done=False, declined=None)
     assert "残り0日" in problems[0]
     assert "格下げされます" in problems[0]
     assert "格下げです" not in problems[0]  # 宣言文（超過後）とは別の文
@@ -444,7 +444,31 @@ def test_lawyer_gate_boundary_day_is_still_the_ramp_not_the_downgrade():
 
 def test_lawyer_gate_goes_silent_once_the_consultation_is_done():
     """済んだら黙る。済んだ後も鳴り続ける検査は読まれなくなる。"""
-    assert lawyer_deadline_gate(date(2026, 11, 1), done=True) == ([], [])
+    assert lawyer_deadline_gate(date(2026, 11, 1), done=True, declined=None) == ([], [])
+
+
+def test_lawyer_gate_stops_nagging_when_the_consultation_is_declined():
+    """見送り（2026-08-29 オーナー判断）＝催促は止める。直せない催促は読まれなくなる。"""
+    problems, notes = lawyer_deadline_gate(
+        date(2026, 10, 10), deadline=date(2026, 10, 31), done=False,
+        declined=date(2026, 8, 29))
+    assert problems == []          # 最終月でも problems にしない＝週次メールで急かさない
+    assert len(notes) == 1
+    assert "見送り" in notes[0]
+
+
+def test_lawyer_gate_keeps_the_white_only_restriction_after_declining():
+    """見送りでも制限は消えない。『相談しない』は設計の2分岐の片方＝白のみ設計の確定。"""
+    _, notes = lawyer_deadline_gate(
+        date(2026, 11, 30), deadline=date(2026, 10, 31), done=False,
+        declined=date(2026, 8, 29))
+    assert "白のみで設計" in notes[0]
+
+
+def test_lawyer_gate_declined_does_not_claim_the_consultation_happened():
+    """見送りは『実施済み』ではない＝DONE を True にして事実を偽らない。"""
+    from tools.check_freshness import LAWYER_CONSULT_DONE
+    assert LAWYER_CONSULT_DONE is False
 
 
 # --- 台帳の昇格判定（2026-08-14）---
