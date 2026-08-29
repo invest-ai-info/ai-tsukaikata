@@ -14435,6 +14435,103 @@ def money_map_gates_timing_chart() -> None:
     )
 
 
+def estimate_basis_count_chart() -> None:
+    """申告した件数が、自分で列挙した日付の数・真値と一致したかを版ごとに並べる。
+
+    実測（20回・材料2本×5版×各2回）。○＝件数・日付とも真値と一致。
+    ×＝申告した件数が、自分が列挙した日付の数とも真値とも食い違った
+    （2回とも「下調べ」を4件のところ5件と申告）。
+    △＝いったん数え間違えたが、同じ回答の中で自分から数え直して訂正した
+    （「修正」を6件→7件に、応答の中で訂正）。
+    """
+    rows = [
+        ("a 素朴に「件数と日付を」", ["○", "×", "○", "○"]),
+        ("b 先に「最大値だけ基準に」", ["○", "○", "○", "○"]),
+        ("c 先に「2工程だけに絞って」", ["○", "×", "○", "○"]),
+        ("d 先に無関係な雑談を挟む", ["○", "○", "△", "○"]),
+        ("e ＋「何件から選んだか」念押し", ["○", "○", "○", "○"]),
+    ]
+    label_x, label_w = 18, 250
+    col_w, col_gap = 96, 10
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(4)]
+    head_y = 96
+    row_h, row_gap = 40, 10
+    row_y = [head_y + 28 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["材料A 1回目", "材料A 2回目", "材料B 1回目", "材料B 2回目"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「件数が少ない順に、件数と日付も」と頼んだ20回の一致・不一致</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "○＝申告した件数・列挙した日付・真値がすべて一致。"
+        "×＝申告した件数が日付の数とも真値とも食い違った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "△＝いったん数え間違えたが、同じ回答の中で自分から数え直して訂正した。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.0f}" y="{head_y + 14}" '
+            f'text-anchor="middle">{_esc(name)}</text>\n'
+        )
+    for r, (label, values) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12px">{_esc(label)}</text>\n'
+        )
+        for c, value in enumerate(values):
+            if value == "○":
+                klass, tone = "box-good", "t-good"
+            elif value == "×":
+                klass, tone = "box-bad", "t-bad"
+            else:
+                klass, tone = "box-accent", "t-accent"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + col_w / 2:.0f}" '
+                f'y="{y + row_h / 2 + 6:.0f}" text-anchor="middle" '
+                f'style="font-size:15px;font-weight:700">{_esc(value)}</text>\n'
+            )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        ("t-bad", "※ ×の2回はどちらも「下調べ」を4件のところ5件と申告し、"
+                  "自分で挙げた日付は4つしか書けていなかった。"),
+        ("t-accent", "※ △は「修正」をいったん6件と書いたあと、"
+                     "同じ回答の中で「数え直すと7件でした」と自分で訂正した回。"),
+        ("t-xs", "架空データでの実測。20回とも、会話の文脈を引き継がない独立した回答。"
+                 "生の回答は docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "「この見積もりで、いちばん外れやすい工程はどれですか。根拠にした記録の件数が"
+        "少ない順に並べてください。件数と、根拠にした記録の日付も書いてください」と、"
+        "5通りの前置き（素朴に聞く・先に最大値だけを基準にする質問を挟む・"
+        "先に2工程だけに絞る質問を挟む・先に無関係な雑談を挟む・"
+        "「何件から選んだかを書いてください」を念押しで足す）×材料2本×各2回＝20回試した結果の表。"
+        "素朴に聞いた回は、材料Aの1回目は件数・日付とも真値と一致したが、"
+        "2回目は「下調べ」を4件のところ5件と申告し、自分で挙げた日付は4つしか書けていなかった。"
+        "材料Bは1回目・2回目とも一致。"
+        "先に最大値だけを基準にする質問を挟んだ回は、材料A・材料Bとも1回目・2回目とも一致。"
+        "先に2工程だけに絞る質問を挟んだ回は、材料Aの2回目でまた"
+        "「下調べ」を5件と申告する同じ誤りが起きたが、他の3回は一致。"
+        "先に無関係な雑談を挟んだ回は、材料Bの1回目で「修正」をいったん6件と申告したあと、"
+        "同じ回答の中で「数え直すと7件でした」と自分で訂正した。他の3回は一致。"
+        "「何件から選んだかを書いてください」を念押しで足した回は、材料A・材料Bとも"
+        "1回目・2回目とも一致し、この4回だけは食い違いが1件も起きなかった。"
+    )
+    (OUT / "estimate-basis-count-check.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     money_map_three_routes_chart()
     money_map_gates_timing_chart()
@@ -14615,4 +14712,5 @@ if __name__ == "__main__":
     handoff_summary_format_drift_grid_chart()
     handoff_summary_heading_length_chart()
     role_prompt_grid_chart()
+    estimate_basis_count_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
