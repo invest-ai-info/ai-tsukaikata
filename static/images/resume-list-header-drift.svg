@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="365" viewBox="0 0 720 365" role="img" aria-label="見出し行を繰り返すかどうかを、頼み方a・b・cごとに材料A・材料Bの各2回、計4回ずつ並べた表。「続きを書いて」と「すでに出したIDは書かないで」は、どちらも材料A・材料Bの2回ずつ計4回とも見出しなしで一貫していた。「16件目から40件目までを出してください」だけは、材料Aで2回とも見出しあり、材料Bでは1回目が見出しなし・2回目が見出しありと割れた。強調した枠は、同じ頼み方の中で割れた回に見出しが付いたケース。件数と内容はどの回でも正しく、崩れたのは見出しの有無という書式だけだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="365"/>
+<text class="t-strong" x="18" y="26">見出し行を繰り返すかどうかは、「◯件目から」だけが回によって割れた</text>
+<text class="t-sm" x="18" y="45">実測2026-08-29。a・bは4回とも見出し行を</text>
+<text class="t-sm" x="18" y="64">繰り返さず一貫。cは材料Aで2回とも見出し付き、</text>
+<text class="t-sm" x="18" y="83">材料Bは1回目が無し・2回目が有りと回によって割れた。</text>
+<text class="t-xs" x="287.0" y="115" text-anchor="middle">材料A 1回目</text>
+<text class="t-xs" x="405.0" y="115" text-anchor="middle">材料A 2回目</text>
+<text class="t-xs" x="523.0" y="115" text-anchor="middle">材料B 1回目</text>
+<text class="t-xs" x="641.0" y="115" text-anchor="middle">材料B 2回目</text>
+<text class="t" x="18" y="149">a. 続きを書いて</text>
+<rect class="box-quiet" x="240" y="127" width="94" height="28" rx="4"/>
+<text class="t-sm" x="287.0" y="149" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-quiet" x="358" y="127" width="94" height="28" rx="4"/>
+<text class="t-sm" x="405.0" y="149" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-quiet" x="476" y="127" width="94" height="28" rx="4"/>
+<text class="t-sm" x="523.0" y="149" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-quiet" x="594" y="127" width="94" height="28" rx="4"/>
+<text class="t-sm" x="641.0" y="149" text-anchor="middle" style="font-weight:700">見出し無</text>
+<text class="t" x="18" y="191">b. ＋すでに出したIDは書かない</text>
+<rect class="box-quiet" x="240" y="169" width="94" height="28" rx="4"/>
+<text class="t-sm" x="287.0" y="191" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-quiet" x="358" y="169" width="94" height="28" rx="4"/>
+<text class="t-sm" x="405.0" y="191" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-quiet" x="476" y="169" width="94" height="28" rx="4"/>
+<text class="t-sm" x="523.0" y="191" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-quiet" x="594" y="169" width="94" height="28" rx="4"/>
+<text class="t-sm" x="641.0" y="191" text-anchor="middle" style="font-weight:700">見出し無</text>
+<text class="t" x="18" y="233">c. 「16件目から40件目まで」</text>
+<rect class="box-accent" x="240" y="211" width="94" height="28" rx="4"/>
+<text class="t-accent" x="287.0" y="233" text-anchor="middle" style="font-weight:700">見出し有</text>
+<rect class="box-accent" x="358" y="211" width="94" height="28" rx="4"/>
+<text class="t-accent" x="405.0" y="233" text-anchor="middle" style="font-weight:700">見出し有</text>
+<rect class="box-quiet" x="476" y="211" width="94" height="28" rx="4"/>
+<text class="t-sm" x="523.0" y="233" text-anchor="middle" style="font-weight:700">見出し無</text>
+<rect class="box-accent" x="594" y="211" width="94" height="28" rx="4"/>
+<text class="t-accent" x="641.0" y="233" text-anchor="middle" style="font-weight:700">見出し有</text>
+<rect class="box-accent" x="18" y="259" width="678" height="82" rx="6"/>
+<text class="t-accent" x="34" y="278">「続きを書いて」系は8回とも見出しなしで安定。</text>
+<text class="t-accent" x="34" y="296">「◯件目から」は4回中3回が見出し付き、</text>
+<text class="t-accent" x="34" y="314">材料Bの1回目だけ見出しなしで割れた。</text>
+<text class="t-accent" x="34" y="332">件数と内容は割れた回でも正しく、崩れたのは書式だけ。</text>
+</svg>

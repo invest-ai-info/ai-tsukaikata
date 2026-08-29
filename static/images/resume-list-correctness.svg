@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-label="続きを書いて・すでに出したIDは書かないで・16件目から40件目までの3通りの頼み方について、架空の名簿2本（領収書40件・問い合わせ40件）を各2回、計12回試した結果の表。続きの25件ぶんで判定した欠落は3通りとも0／100件、重複も0／100件。同じ金額・区分や部署・件名で日付とIDだけ違う紛らわしい組を3組ずつ仕込み、後ろ側が誤って省かれないかを機会数12で見たが、取りこぼしは0／12件だった。最初から2回に分けて頼んだ健全性の下限（40件）でも欠落・重複は0件。3通りとも中身は崩れず、崩れたのは書式のほうだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="340"/>
+<text class="t-strong" x="18" y="26">続け方を3通り変えても、欠落・重複は1件も起きなかった</text>
+<text class="t-sm" x="18" y="45">架空の名簿2本（領収書40件・問い合わせ40件）×各2回＝12回。15件目で切れた続きの25件ぶんを判定。</text>
+<text class="t-sm" x="18" y="64">紛らわしい組＝同じ金額・区分（部署・件名）が同じで、日付とIDだけ違う行を3組仕込み、取りこぼしも数えた。</text>
+<text class="t-xs" x="303.0" y="104" text-anchor="middle">欠落（件）</text>
+<text class="t-xs" x="453.0" y="104" text-anchor="middle">重複（件）</text>
+<text class="t-xs" x="603.0" y="104" text-anchor="middle">紛らわしい組の取りこぼし</text>
+<text class="t" x="18" y="137">a. 続きを書いて</text>
+<rect class="box-good" x="243" y="118" width="120" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="137" text-anchor="middle" style="font-weight:700">0／100</text>
+<rect class="box-good" x="393" y="118" width="120" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="137" text-anchor="middle" style="font-weight:700">0／100</text>
+<rect class="box-good" x="543" y="118" width="120" height="26" rx="4"/>
+<text class="t-good" x="603.0" y="137" text-anchor="middle" style="font-weight:700">0／12</text>
+<text class="t" x="18" y="173">b. ＋すでに出したIDは書かない</text>
+<rect class="box-good" x="243" y="154" width="120" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="173" text-anchor="middle" style="font-weight:700">0／100</text>
+<rect class="box-good" x="393" y="154" width="120" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="173" text-anchor="middle" style="font-weight:700">0／100</text>
+<rect class="box-good" x="543" y="154" width="120" height="26" rx="4"/>
+<text class="t-good" x="603.0" y="173" text-anchor="middle" style="font-weight:700">0／12</text>
+<text class="t" x="18" y="209">c. 「16件目から40件目まで」</text>
+<rect class="box-good" x="243" y="190" width="120" height="26" rx="4"/>
+<text class="t-good" x="303.0" y="209" text-anchor="middle" style="font-weight:700">0／100</text>
+<rect class="box-good" x="393" y="190" width="120" height="26" rx="4"/>
+<text class="t-good" x="453.0" y="209" text-anchor="middle" style="font-weight:700">0／100</text>
+<rect class="box-good" x="543" y="190" width="120" height="26" rx="4"/>
+<text class="t-good" x="603.0" y="209" text-anchor="middle" style="font-weight:700">0／12</text>
+<rect class="box-accent" x="18" y="234" width="678" height="82" rx="6"/>
+<text class="t-accent" x="34" y="253">3通りとも、続きの25件は欠落・重複なし。</text>
+<text class="t-accent" x="34" y="271">紛らわしい組の取りこぼしも0件だった。</text>
+<text class="t-accent" x="34" y="289">最初から2分割した下限も欠落・重複0件。</text>
+<text class="t-accent" x="34" y="307">崩れたのは中身ではなく書式のほう（次の図）。</text>
+</svg>
