@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-29T02:14:31.599661+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-28T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
+      "summary_ja": "OpenAIがCursorへのAIモデル提供を停止。\n背景にSpaceXによるCursor買収があり、\nOpenAIはモデル提供契約を打ち切ると決定。",
+      "summary_source": "gemini",
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "uid": "7630f78d6d92f7a2",
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-28T18:46:16.087122+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -2666,6 +2680,18 @@
       "title": "moonshotai/kimi-k3",
       "uid": "f54f39c5e842f6cf",
       "url": "https://openrouter.ai/moonshotai/kimi-k3",
+      "vendor": "Moonshot AI"
+    },
+    {
+      "first_seen": "2026-08-29T02:14:31.599661+00:00",
+      "importance": "minor",
+      "label": "Kimi 新モデル",
+      "published": "2026-07-16T15:30:58+00:00",
+      "source_id": "openrouter-moonshot",
+      "summary": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at…",
+      "title": "moonshotai/kimi-k3:batch",
+      "uid": "8c6ba0a69b8e1409",
+      "url": "https://openrouter.ai/moonshotai/kimi-k3:batch",
       "vendor": "Moonshot AI"
     },
     {

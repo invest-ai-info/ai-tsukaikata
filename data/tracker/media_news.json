@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-29T02:14:31.599661+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-28T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "2026年8月24日～28日に公開された記事の中から、MONOist編集部が厳選した今週のニュースをお届けします。",
+      "title": "キオクシア5兆円投資、日米中韓の半導体投資競争はどこへゆく",
+      "uid": "fbe091d344668560",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/29/news012.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-28T18:46:16.087122+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "4b7ea57d5514085c",
       "url": "https://gigazine.net/news/20260821-apple-music-ai-labels/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-21T09:00:17.887163+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-21T08:22:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "私はこれまで何年にもわたり生成AIについて取材してきた。それだけに、AI「Claude」で生成したテキストに透かしを入れるというAnthropicの最近の発表が、一部の熱烈なAI支持者から激しい反発を招いたことには驚いた。",
-      "title": "Claudeの「透かし」導入、なぜ批判？ AI利用開示は当然の責務だ",
-      "uid": "2be320fe7e4b3ecb",
-      "url": "https://japan.cnet.com/article/35251814/",
-      "vendor": "CNET Japan"
     }
   ]
 }
