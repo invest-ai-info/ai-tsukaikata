@@ -14072,7 +14072,184 @@ def role_prompt_grid_chart() -> None:
     )
 
 
+def resume_list_correctness_chart() -> None:
+    """3つの続け方（続きを書いて／＋IDは書かないで／件目で指定）で、
+
+    欠落・重複・紛らわしい組の取りこぼしがどれだけ起きたかを並べる。
+    実測（2026-08-29・架空の名簿2本×各2回＝12回、続きの25件ぶん）。
+    値は docs/evidence/resume-a-cut-off-list.md の判定コード。
+    """
+    rows = [
+        ("a. 続きを書いて", "0／100", "0／100", "0／12"),
+        ("b. ＋すでに出したIDは書かない", "0／100", "0／100", "0／12"),
+        ("c. 「16件目から40件目まで」", "0／100", "0／100", "0／12"),
+    ]
+    label_w = 210
+    col_w = 150
+    col_x = [18 + label_w, 18 + label_w + col_w, 18 + label_w + col_w * 2]
+    top = 118
+    row_h = 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "続け方を3通り変えても、欠落・重複は1件も起きなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の名簿2本（領収書40件・問い合わせ40件）×各2回＝12回。"
+        "15件目で切れた続きの25件ぶんを判定。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "紛らわしい組＝同じ金額・区分（部署・件名）が同じで、"
+        "日付とIDだけ違う行を3組仕込み、取りこぼしも数えた。</text>\n",
+    ]
+
+    headers = ["欠落（件）", "重複（件）", "紛らわしい組の取りこぼし"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, missing, dup, pair in rows:
+        ty = y + 19
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for i, val in enumerate((missing, dup, pair)):
+            x = col_x[i]
+            parts.append(
+                f'<rect class="box-good" x="{x + 15}" y="{y}" width="{col_w - 30}" height="26" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{_esc(val)}</text>\n'
+            )
+        y += row_h + 6
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="82" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "3通りとも、続きの25件は欠落・重複なし。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 37}">'
+        "紛らわしい組の取りこぼしも0件だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 55}">'
+        "最初から2分割した下限も欠落・重複0件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 73}">'
+        "崩れたのは中身ではなく書式のほう（次の図）。</text>\n"
+    )
+    y += 82 + 16
+
+    height = y + 8
+    alt = (
+        "続きを書いて・すでに出したIDは書かないで・16件目から40件目までの3通りの頼み方について、"
+        "架空の名簿2本（領収書40件・問い合わせ40件）を各2回、計12回試した結果の表。"
+        "続きの25件ぶんで判定した欠落は3通りとも0／100件、重複も0／100件。"
+        "同じ金額・区分や部署・件名で日付とIDだけ違う紛らわしい組を3組ずつ仕込み、"
+        "後ろ側が誤って省かれないかを機会数12で見たが、取りこぼしは0／12件だった。"
+        "最初から2回に分けて頼んだ健全性の下限（40件）でも欠落・重複は0件。"
+        "3通りとも中身は崩れず、崩れたのは書式のほうだった。"
+    )
+    (OUT / "resume-list-correctness.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def resume_list_header_drift_chart() -> None:
+    """見出し行を繰り返すかどうかが、頼み方と回によってどう割れたかを見せる。
+
+    実測（2026-08-29）。a・bは4回とも見出しなしで一貫。cだけ、素材と回によって
+    見出しの有無が割れた（材料Aは2回とも有、材料Bは1回だけ有）。
+    """
+    rows = [
+        ("a. 続きを書いて", ["無", "無", "無", "無"]),
+        ("b. ＋すでに出したIDは書かない", ["無", "無", "無", "無"]),
+        ("c. 「16件目から40件目まで」", ["有", "有", "無", "有"]),
+    ]
+    col_labels = ["材料A 1回目", "材料A 2回目", "材料B 1回目", "材料B 2回目"]
+    label_w = 210
+    col_w = 118
+    col_x = [18 + label_w + col_w * i for i in range(4)]
+    top = 127
+    row_h = 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "見出し行を繰り返すかどうかは、「◯件目から」だけが回によって割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-08-29。a・bは4回とも見出し行を</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "繰り返さず一貫。cは材料Aで2回とも見出し付き、</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "材料Bは1回目が無し・2回目が有りと回によって割れた。</text>\n",
+    ]
+
+    for i, h in enumerate(col_labels):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, cells in rows:
+        ty = y + 22
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        has_split = len(set(cells)) > 1
+        for i, val in enumerate(cells):
+            x = col_x[i]
+            is_present = val == "有"
+            klass = "box-accent" if (has_split and is_present) else ("box-quiet" if not is_present else "box")
+            tcls = "t-accent" if (has_split and is_present) else "t-sm"
+            parts.append(
+                f'<rect class="{klass}" x="{x + 12}" y="{y}" width="{col_w - 24}" height="28" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcls}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">見出し{val}</text>\n'
+            )
+        y += row_h + 8
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="82" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "「続きを書いて」系は8回とも見出しなしで安定。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 37}">'
+        "「◯件目から」は4回中3回が見出し付き、</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 55}">'
+        "材料Bの1回目だけ見出しなしで割れた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 73}">'
+        "件数と内容は割れた回でも正しく、崩れたのは書式だけ。</text>\n"
+    )
+    y += 82 + 16
+
+    height = y + 8
+    alt = (
+        "見出し行を繰り返すかどうかを、頼み方a・b・cごとに材料A・材料Bの各2回、"
+        "計4回ずつ並べた表。「続きを書いて」と「すでに出したIDは書かないで」は、"
+        "どちらも材料A・材料Bの2回ずつ計4回とも見出しなしで一貫していた。"
+        "「16件目から40件目までを出してください」だけは、材料Aで2回とも見出しあり、"
+        "材料Bでは1回目が見出しなし・2回目が見出しありと割れた。強調した枠は、"
+        "同じ頼み方の中で割れた回に見出しが付いたケース。件数と内容はどの回でも"
+        "正しく、崩れたのは見出しの有無という書式だけだった。"
+    )
+    (OUT / "resume-list-header-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    resume_list_correctness_chart()
+    resume_list_header_drift_chart()
     handoff_todo_version_hits_chart()
     handoff_todo_position_hits_chart()
     weekly_rate_boundary_crossed_chart()
