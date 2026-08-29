@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-29T09:08:25.973712+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-29T06:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIがAIコーディングツール・Cursorとの提携関係を終了し、モデル提供を2026年11月12日で終えることを明らかにしました。理由はCursorがSpaceXに買収されたことです。 続きを読む...",
+      "title": "OpenAIがCursorとの提携・モデル提供の終了を通達、「SpaceXがOpenAIの利用規約に従って技術を使うという確信が持てないため」",
+      "uid": "35a12bdf5fbbe019",
+      "url": "https://gigazine.net/news/20260829-openai-decided-to-end-partnership-with-cursor/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-29T02:14:31.599661+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "7430992db6efdec8",
       "url": "https://ai.watch.impress.co.jp/docs/news/2134548.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-21T09:00:17.887163+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-21T08:45:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Apple Musicで、AI生成であることを示す表示が義務化されることがわかりました。措置は2026年後半からスタートする見込みです。 続きを読む...",
-      "title": "Apple MusicがAI生成音楽へのタグ表示義務化を予告",
-      "uid": "4b7ea57d5514085c",
-      "url": "https://gigazine.net/news/20260821-apple-music-ai-labels/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
