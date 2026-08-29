@@ -14247,7 +14247,197 @@ def resume_list_header_drift_chart() -> None:
     )
 
 
+def money_map_three_routes_chart() -> None:
+    """副業のお金が届く3つの流れ（誰が払い、どこを経由して、自分に届くか）。
+
+    実測ではなく各公式ページの記述の整理（2026-08-29確認）。
+    ①運営から配られる（X・YouTube）②買い手から直接（note・Kindle）
+    ③発注者から（クラウドワークス等）。
+    """
+    rows = [
+        (
+            "①運営から配られる（X・YouTube）",
+            "広告主など",
+            "運営が集めて、門を通った人に配る",
+            "門＝X: Premium加入＋3か月500万表示（オーガニック）＋認証済みフォロワー500人／YouTube: 登録者1,000人ほか",
+        ),
+        (
+            "②買い手から直接（note・Kindle）",
+            "買い手（読者）",
+            "売り場が手数料を引いて渡す",
+            "門＝実績の数字ではなく事務手続き（note: 振込申請は売上1,000円から／Kindle: 出版前に税の手続き）",
+        ),
+        (
+            "③発注者から（クラウドワークスなど）",
+            "発注者",
+            "仲介の場が手数料を引く（5〜20%）",
+            "門＝応募して選ばれる（受注）。金額は受注時の契約で決まる",
+        ),
+    ]
+    a_x, a_w = 18, 150
+    b_x, b_w = 190, 300
+    c_x, c_w = 512, 190
+    box_h = 40
+    assert c_x + c_w == WIDTH - 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "副業のお金は、3つの流れのどれかで届く</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "違いは「誰の財布から出るか」。出どころが違えば、門（受け取る条件）の場所も違う。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "各公式ページの記述の整理（2026-08-29確認）。条件は変わるため、始める前に原文を開くこと。</text>\n",
+    ]
+
+    y = 92
+    for title, src, via, gate in rows:
+        parts.append(f'<text class="t-accent" x="18" y="{y + 14}">{_esc(title)}</text>\n')
+        by = y + 24
+        mid = by + box_h / 2 + 4
+        parts.append(f'<rect class="box" x="{a_x}" y="{by}" width="{a_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="t" x="{a_x + 12}" y="{mid}">{_esc(src)}</text>\n')
+        parts.append(f'<path class="line" d="M{a_x + a_w + 4} {by + box_h / 2} L{b_x - 4} {by + box_h / 2}"/>\n')
+        parts.append(f'<rect class="box-accent" x="{b_x}" y="{by}" width="{b_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="t" x="{b_x + 12}" y="{mid}">{_esc(via)}</text>\n')
+        parts.append(f'<path class="line" d="M{b_x + b_w + 4} {by + box_h / 2} L{c_x - 4} {by + box_h / 2}"/>\n')
+        parts.append(f'<rect class="box-good" x="{c_x}" y="{by}" width="{c_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="t" x="{c_x + 12}" y="{mid}">自分の口座</text>\n')
+        parts.append(f'<text class="t-xs" x="{a_x}" y="{by + box_h + 18}">{_esc(gate)}</text>\n')
+        y = by + box_h + 34
+
+    y += 4
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="46" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "①は先に条件、②は先に商品、③は先に受注。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "「AIで稼ぐ」と一言で言っても、始め方はこの3つで別物になる。</text>\n"
+    )
+    y += 46 + 14
+
+    height = y + 8
+    alt = (
+        "副業のお金が自分の口座に届くまでの3つの流れを並べた図。"
+        "1つ目は運営から配られる型で、XやYouTubeが当てはまる。広告主などのお金を"
+        "運営が集めて、門を通った人に配る。門はXならPremium加入と3か月で500万回の"
+        "オーガニックな表示と認証済みフォロワー500人、YouTubeなら登録者1,000人などが"
+        "公式ページに書いてある。"
+        "2つ目は買い手から直接の型で、noteやKindleが当てはまる。買い手が払ったお金から"
+        "売り場が手数料を引いて渡す。門は実績の数字ではなく事務手続きで、"
+        "noteは振込申請が売上1,000円から、Kindleは出版の前に税に関するインタビューの完了が必要。"
+        "3つ目は発注者からの型で、クラウドワークスなどが当てはまる。発注者が払ったお金から"
+        "仲介の場が5から20パーセントの手数料を引く。門は応募して選ばれること、"
+        "つまり受注で、金額は受注時の契約で決まる。"
+        "まとめると、1つ目は先に条件、2つ目は先に商品、3つ目は先に受注が要る。"
+    )
+    (OUT / "money-map-three-routes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def money_map_gates_timing_chart() -> None:
+    """4つのサービスの「門」と「受け取り」を、公式ページの記述だけでカードに並べる。
+
+    実測ではなく原文の転記（2026-08-29確認）。noteの数字だけは
+    2026-08-25確認の既存記事（note-fee-before-you-sell）と同じ出典。
+    """
+    cards = [
+        (
+            "X（クリエイター収益配分）",
+            [
+                ("t", "門: Premium加入＋認証済みフォロワー500人"),
+                ("t", "　　＋3か月で500万オーガニック表示"),
+                ("t-sm", "受け取り: Stripe経由・2週間ごと・最低10ドル"),
+                ("t-sm", "本人確認の完了が必要"),
+            ],
+        ),
+        (
+            "YouTube（パートナープログラム）",
+            [
+                ("t", "門: 登録者1,000人＋12か月で4,000時間"),
+                ("t", "　　（またはショート90日で1,000万回）"),
+                ("t-sm", "受け取り: YouTube向けAdSense経由"),
+                ("t-sm", "原資は「広告掲載から得られる収益」の分配"),
+            ],
+        ),
+        (
+            "Kindle（KDP）",
+            [
+                ("t", "門: 銀行情報＋税に関するインタビュー"),
+                ("t", "　　（出版の前に完了する）"),
+                ("t-sm", "受け取り: 売上月の末日から約60日後"),
+                ("t-sm", "最低売上金額を満たした月が対象"),
+            ],
+        ),
+        (
+            "クラウドワークス（受託）",
+            [
+                ("t", "門: 応募して受注する"),
+                ("t", "　　（金額は契約で決まる）"),
+                ("t-sm", "手数料: 10万円以下の部分が20%（段階制）"),
+                ("t-sm", "振込手数料: 楽天100円・他行500円"),
+            ],
+        ),
+    ]
+    card_w, card_h = 333, 130
+    xs = [18, 369]
+    top = 92
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「門」の中身と受け取りの形は、公式ページで確かめられる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "門は①型（X・YouTube）＝実績の数字、②型（Kindle）＝事務手続きと振込条件、"
+        "③型（受託）＝受注。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2026-08-29に各公式ページで確認した記述の整理（noteは2026-08-25確認の既存記事と同じ出典）。</text>\n",
+    ]
+
+    for index, (name, lines) in enumerate(cards):
+        x = xs[index % 2]
+        y = top + (index // 2) * (card_h + 14)
+        parts.append(f'<rect class="box" x="{x}" y="{y}" width="{card_w}" height="{card_h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{x + 14}" y="{y + 24}">{_esc(name)}</text>\n')
+        ly = y + 48
+        for css, text in lines:
+            parts.append(f'<text class="{css}" x="{x + 14}" y="{ly}">{_esc(text)}</text>\n')
+            ly += 20
+    y = top + 2 * card_h + 14
+
+    y += 14
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="28" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "条件と料率は変わる（国・規約遵守などの前提条件も別にある）。始める前に必ず原文を開くこと。</text>\n"
+    )
+    y += 28 + 12
+
+    height = y + 8
+    alt = (
+        "4つのサービスの門と受け取りの形を、公式ページの記述だけでカードに並べた図。"
+        "Xのクリエイター収益配分は、門がPremium加入と認証済みフォロワー500人と"
+        "3か月で500万回のオーガニックな表示で、受け取りはStripe経由で2週間ごと、最低10ドル、"
+        "本人確認の完了が必要。YouTubeパートナープログラムは、門が登録者1,000人と"
+        "12か月で4,000時間、またはショート動画90日で1,000万回で、受け取りはYouTube向け"
+        "AdSense経由、原資は広告掲載から得られる収益の分配と書いてある。"
+        "KindleのKDPは、門が銀行情報と税に関するインタビューで出版の前に完了し、"
+        "受け取りは売上月の末日から約60日後、最低売上金額を満たした月が対象。"
+        "クラウドワークスの受託は、門が応募して受注することで金額は契約で決まり、"
+        "手数料は10万円以下の部分が20パーセントの段階制、振込手数料は楽天銀行100円・"
+        "他行500円。いずれも2026年8月29日に各公式ページで確認した記述の整理で、"
+        "国・規約遵守などの前提条件は別にあり、条件と料率は変わるため"
+        "始める前に原文を開いて確かめること。"
+    )
+    (OUT / "money-map-gates-timing.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    money_map_three_routes_chart()
+    money_map_gates_timing_chart()
     resume_list_correctness_chart()
     resume_list_header_drift_chart()
     handoff_todo_version_hits_chart()

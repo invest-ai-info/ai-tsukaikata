@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="428" viewBox="0 0 720 428" role="img" aria-label="4つのサービスの門と受け取りの形を、公式ページの記述だけでカードに並べた図。Xのクリエイター収益配分は、門がPremium加入と認証済みフォロワー500人と3か月で500万回のオーガニックな表示で、受け取りはStripe経由で2週間ごと、最低10ドル、本人確認の完了が必要。YouTubeパートナープログラムは、門が登録者1,000人と12か月で4,000時間、またはショート動画90日で1,000万回で、受け取りはYouTube向けAdSense経由、原資は広告掲載から得られる収益の分配と書いてある。KindleのKDPは、門が銀行情報と税に関するインタビューで出版の前に完了し、受け取りは売上月の末日から約60日後、最低売上金額を満たした月が対象。クラウドワークスの受託は、門が応募して受注することで金額は契約で決まり、手数料は10万円以下の部分が20パーセントの段階制、振込手数料は楽天銀行100円・他行500円。いずれも2026年8月29日に各公式ページで確認した記述の整理で、国・規約遵守などの前提条件は別にあり、条件と料率は変わるため始める前に原文を開いて確かめること。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="428"/>
+<text class="t-strong" x="18" y="26">「門」の中身と受け取りの形は、公式ページで確かめられる</text>
+<text class="t-sm" x="18" y="45">門は①型（X・YouTube）＝実績の数字、②型（Kindle）＝事務手続きと振込条件、③型（受託）＝受注。</text>
+<text class="t-sm" x="18" y="64">2026-08-29に各公式ページで確認した記述の整理（noteは2026-08-25確認の既存記事と同じ出典）。</text>
+<rect class="box" x="18" y="92" width="333" height="130" rx="6"/>
+<text class="t-strong" x="32" y="116">X（クリエイター収益配分）</text>
+<text class="t" x="32" y="140">門: Premium加入＋認証済みフォロワー500人</text>
+<text class="t" x="32" y="160">　　＋3か月で500万オーガニック表示</text>
+<text class="t-sm" x="32" y="180">受け取り: Stripe経由・2週間ごと・最低10ドル</text>
+<text class="t-sm" x="32" y="200">本人確認の完了が必要</text>
+<rect class="box" x="369" y="92" width="333" height="130" rx="6"/>
+<text class="t-strong" x="383" y="116">YouTube（パートナープログラム）</text>
+<text class="t" x="383" y="140">門: 登録者1,000人＋12か月で4,000時間</text>
+<text class="t" x="383" y="160">　　（またはショート90日で1,000万回）</text>
+<text class="t-sm" x="383" y="180">受け取り: YouTube向けAdSense経由</text>
+<text class="t-sm" x="383" y="200">原資は「広告掲載から得られる収益」の分配</text>
+<rect class="box" x="18" y="236" width="333" height="130" rx="6"/>
+<text class="t-strong" x="32" y="260">Kindle（KDP）</text>
+<text class="t" x="32" y="284">門: 銀行情報＋税に関するインタビュー</text>
+<text class="t" x="32" y="304">　　（出版の前に完了する）</text>
+<text class="t-sm" x="32" y="324">受け取り: 売上月の末日から約60日後</text>
+<text class="t-sm" x="32" y="344">最低売上金額を満たした月が対象</text>
+<rect class="box" x="369" y="236" width="333" height="130" rx="6"/>
+<text class="t-strong" x="383" y="260">クラウドワークス（受託）</text>
+<text class="t" x="383" y="284">門: 応募して受注する</text>
+<text class="t" x="383" y="304">　　（金額は契約で決まる）</text>
+<text class="t-sm" x="383" y="324">手数料: 10万円以下の部分が20%（段階制）</text>
+<text class="t-sm" x="383" y="344">振込手数料: 楽天100円・他行500円</text>
+<rect class="box-accent" x="18" y="380" width="684" height="28" rx="6"/>
+<text class="t-accent" x="34" y="399">条件と料率は変わる（国・規約遵守などの前提条件も別にある）。始める前に必ず原文を開くこと。</text>
+</svg>

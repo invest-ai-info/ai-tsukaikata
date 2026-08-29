@@ -547,6 +547,89 @@ def test_old_article_keeps_its_title():
     assert validate([article]) == []
 
 
+# --- タイトルの具体性（2026-08-29 オーナー承認）---
+#
+# 読める題（note手数料585円／Kindleの70%）には固有名詞と数字があり、
+# 読めない題（毎朝の出来ばえを見張る）にはどちらも無い、という実物診断から。
+# ⚠️ 「——以降は記事未読の人に通じる言葉だけ」の後半は機械では判定できない
+# ＝人の目（確認担当）に残す。ここで見るのは前半だけ。
+
+def test_new_tools_title_without_number_or_proper_noun_is_detected():
+    article = _article(
+        title="出来ばえの見張り方を確かめる",
+        category="tools", published=date(2026, 8, 29),
+    )
+    errors = validate([article])
+    assert any("固有名詞" in e for e in errors)
+
+
+def test_title_concreteness_applies_to_recipes_too():
+    article = _article(
+        title="毎朝の出来ばえを見張る", category="recipes",
+        published=date(2026, 8, 29), body_html=_thick_body(),
+    )
+    errors = validate([article])
+    assert any("固有名詞" in e for e in errors)
+
+
+def test_pages_are_exempt_from_title_concreteness():
+    # 固定ページ（「このサイトについて」等）の題を巻き込まない
+    article = _article(title="このサイトについて", published=date(2026, 8, 29))
+    assert validate([article]) == []
+
+
+def test_new_title_with_number_passes():
+    article = _article(
+        title="毎朝の出来ばえを3件で見張る",
+        category="tools", published=date(2026, 8, 29),
+    )
+    assert not any("固有名詞" in e for e in validate([article]))
+
+
+def test_new_title_with_kanji_number_passes():
+    # 漢数字も数字。「三つの頼み方」を落とすと誤検知になる
+    article = _article(
+        title="三つの頼み方を見比べる",
+        category="tools", published=date(2026, 8, 29),
+    )
+    assert not any("固有名詞" in e for e in validate([article]))
+
+
+def test_new_title_with_proper_noun_passes():
+    article = _article(
+        title="noteの手数料を原文で確かめる",
+        category="tools", published=date(2026, 8, 29),
+    )
+    assert not any("固有名詞" in e for e in validate([article]))
+
+
+def test_new_title_with_katakana_proper_noun_passes():
+    article = _article(
+        title="ココナラの手数料を原文で確かめる",
+        category="tools", published=date(2026, 8, 29),
+    )
+    assert not any("固有名詞" in e for e in validate([article]))
+
+
+def test_ai_alone_does_not_count_as_proper_noun():
+    # 「AI」はほぼ全題に入る汎用語なので、これだけでは具体的にならない
+    article = _article(
+        title="AIに出来ばえを見張らせる",
+        category="tools", published=date(2026, 8, 29),
+    )
+    errors = validate([article])
+    assert any("固有名詞" in e for e in errors)
+
+
+def test_title_concreteness_not_applied_before_era():
+    # 既存記事は published でゲートする（2026-08-29 より前は対象外）
+    article = _article(
+        title="出来ばえの見張り方を確かめる",
+        category="tools", published=date(2026, 8, 28),
+    )
+    assert not any("固有名詞" in e for e in validate([article]))
+
+
 def test_money_note_broken_by_indent_is_detected():
     # 🚨 4スペース以上字下げると Markdown がコードブロックとして出す。
     # 読者には生HTMLが見え、しかも「ブロックが無い」ので検査も素通りしていた

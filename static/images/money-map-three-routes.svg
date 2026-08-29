@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="458" viewBox="0 0 720 458" role="img" aria-label="副業のお金が自分の口座に届くまでの3つの流れを並べた図。1つ目は運営から配られる型で、XやYouTubeが当てはまる。広告主などのお金を運営が集めて、門を通った人に配る。門はXならPremium加入と3か月で500万回のオーガニックな表示と認証済みフォロワー500人、YouTubeなら登録者1,000人などが公式ページに書いてある。2つ目は買い手から直接の型で、noteやKindleが当てはまる。買い手が払ったお金から売り場が手数料を引いて渡す。門は実績の数字ではなく事務手続きで、noteは振込申請が売上1,000円から、Kindleは出版の前に税に関するインタビューの完了が必要。3つ目は発注者からの型で、クラウドワークスなどが当てはまる。発注者が払ったお金から仲介の場が5から20パーセントの手数料を引く。門は応募して選ばれること、つまり受注で、金額は受注時の契約で決まる。まとめると、1つ目は先に条件、2つ目は先に商品、3つ目は先に受注が要る。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="458"/>
+<text class="t-strong" x="18" y="26">副業のお金は、3つの流れのどれかで届く</text>
+<text class="t-sm" x="18" y="45">違いは「誰の財布から出るか」。出どころが違えば、門（受け取る条件）の場所も違う。</text>
+<text class="t-sm" x="18" y="64">各公式ページの記述の整理（2026-08-29確認）。条件は変わるため、始める前に原文を開くこと。</text>
+<text class="t-accent" x="18" y="106">①運営から配られる（X・YouTube）</text>
+<rect class="box" x="18" y="116" width="150" height="40" rx="6"/>
+<text class="t" x="30" y="140.0">広告主など</text>
+<path class="line" d="M172 136.0 L186 136.0"/>
+<rect class="box-accent" x="190" y="116" width="300" height="40" rx="6"/>
+<text class="t" x="202" y="140.0">運営が集めて、門を通った人に配る</text>
+<path class="line" d="M494 136.0 L508 136.0"/>
+<rect class="box-good" x="512" y="116" width="190" height="40" rx="6"/>
+<text class="t" x="524" y="140.0">自分の口座</text>
+<text class="t-xs" x="18" y="174">門＝X: Premium加入＋3か月500万表示（オーガニック）＋認証済みフォロワー500人／YouTube: 登録者1,000人ほか</text>
+<text class="t-accent" x="18" y="204">②買い手から直接（note・Kindle）</text>
+<rect class="box" x="18" y="214" width="150" height="40" rx="6"/>
+<text class="t" x="30" y="238.0">買い手（読者）</text>
+<path class="line" d="M172 234.0 L186 234.0"/>
+<rect class="box-accent" x="190" y="214" width="300" height="40" rx="6"/>
+<text class="t" x="202" y="238.0">売り場が手数料を引いて渡す</text>
+<path class="line" d="M494 234.0 L508 234.0"/>
+<rect class="box-good" x="512" y="214" width="190" height="40" rx="6"/>
+<text class="t" x="524" y="238.0">自分の口座</text>
+<text class="t-xs" x="18" y="272">門＝実績の数字ではなく事務手続き（note: 振込申請は売上1,000円から／Kindle: 出版前に税の手続き）</text>
+<text class="t-accent" x="18" y="302">③発注者から（クラウドワークスなど）</text>
+<rect class="box" x="18" y="312" width="150" height="40" rx="6"/>
+<text class="t" x="30" y="336.0">発注者</text>
+<path class="line" d="M172 332.0 L186 332.0"/>
+<rect class="box-accent" x="190" y="312" width="300" height="40" rx="6"/>
+<text class="t" x="202" y="336.0">仲介の場が手数料を引く（5〜20%）</text>
+<path class="line" d="M494 332.0 L508 332.0"/>
+<rect class="box-good" x="512" y="312" width="190" height="40" rx="6"/>
+<text class="t" x="524" y="336.0">自分の口座</text>
+<text class="t-xs" x="18" y="370">門＝応募して選ばれる（受注）。金額は受注時の契約で決まる</text>
+<rect class="box-accent" x="18" y="390" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="410">①は先に条件、②は先に商品、③は先に受注。</text>
+<text class="t-accent" x="34" y="428">「AIで稼ぐ」と一言で言っても、始め方はこの3つで別物になる。</text>
+</svg>

@@ -141,6 +141,25 @@ INCOME_PHRASE_EXEMPT_SCENES = frozenset({"safety"})
 TITLE_ERA = date(2026, 8, 16)
 TITLE_METHOD_FINDING_RE = re.compile(r"(?:する|させる|せる|なる)と、")
 
+# --- タイトルの具体性（2026-08-29 オーナー承認）---
+#
+# オーナー指摘（2026-08-28）＝「タイトルだけでは何が書かれているのか分からない」。
+# 実物を並べた診断＝読める題（note手数料585円／Kindleの70%）には固有名詞と数字があり、
+# 読めない題（毎朝の出来ばえを見張る）にはどちらも無い＝記事を読んだ人にしか通じない内輪語。
+# 2026-08-16 リサーチの「具体化は曖昧な題のときだけ効く」とも整合する（今の題は曖昧側）。
+#
+# ⚠️ 誤検知を出さない側に倒す＝数字は漢数字まで広く取り、英字は「AI」だけを除外する。
+# 見逃し（「一手」の「一」で通る等）は確認担当の観点7が拾う。
+# 「——以降は記事未読の人に通じる言葉だけ」の後半は機械では判定できない＝人の目に残す。
+TITLE_CONCRETE_ERA = date(2026, 8, 29)
+TITLE_NUMBER_RE = re.compile(r"[0-9０-９一二三四五六七八九十百千万]")
+TITLE_LATIN_RE = re.compile(r"[A-Za-zＡ-Ｚａ-ｚ]")
+# カタカナの固有名詞は英字でも数字でもないので、既知のものだけ名指しで通す。
+# ⚠️ ここに無い固有名詞でも数字を足せば通る＝リストが足りなくても書き手は困らない。
+TITLE_KNOWN_PROPER = ("ココナラ", "クラウドワークス", "ランサーズ", "メルカリ")
+# 「AI」はほぼ全題に入る汎用語。これだけでは具体的にならない
+TITLE_GENERIC_LATIN = ("AI", "ＡＩ")
+
 # 煽り語（2026-08-16）。行動経済学とキャッチコピーを調べた結果、
 # 🔑 **このサイトが倫理的に使えない技法は、そもそも証拠も無かった**＝
 # 希少性・緊急性はメタ分析で有意でなく、最上級はクリックベイト検出の典型シグナル。
@@ -352,6 +371,28 @@ def _title_errors(where: str, article: Article) -> list[str]:
             f"「副業の本当の時給を出す——AIは線引きを書かない」。"
             f"content/_recipe_queue.md の「タイトルの付け方」）"
         )
+
+    # 具体性（2026-08-29〜）。記事（recipes / tools）だけに当てる。
+    # 固定ページ（「このサイトについて」等）の題を巻き込まないため。
+    if (
+        article.published >= TITLE_CONCRETE_ERA
+        and article.category in ("recipes", "tools")
+    ):
+        stripped = article.title
+        for word in TITLE_GENERIC_LATIN:
+            stripped = stripped.replace(word, "")
+        if not (
+            TITLE_NUMBER_RE.search(stripped)
+            or TITLE_LATIN_RE.search(stripped)
+            or any(name in article.title for name in TITLE_KNOWN_PROPER)
+        ):
+            errors.append(
+                f"{where}: タイトルに固有名詞も具体的な数字もありません。"
+                f"読める題には固有名詞と数字が入ります"
+                f"（例:「noteで売る前に、引かれる手数料を原文で確かめる——"
+                f"1,000円の記事の振込は585円から始まる」。"
+                f"content/_recipe_queue.md の「タイトルの付け方」）"
+            )
 
     # 🚨 詐欺を防ぐ場面は勧誘文句を引用するのが仕事なので、収益断定と同じく除外する
     if article.scene not in INCOME_PHRASE_EXEMPT_SCENES:
