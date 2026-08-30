@@ -286,6 +286,17 @@
       比較という記事の型に、①②が解けても当てはまらない可能性が高い（2026-08-20「AI Futures」と同じ構造）。
       次にこの行を見る人へ＝①②が解けたら、まず本文を読んで「比較できる数字があるか」を確かめること。
 
+  - **2026-08-30 2回目（再試行）: まだ読めない。**未処理（`- [ ]`）が0件だったため、停止理由が「経路遮断」だった
+    本行を上から見て再試行した。結果は**両方とも変わらず**:
+    - `openai.com/index/introducing-admin-plugin`（スラッシュ有り／無し） → **403**（変わらず、`cf-mitigated`
+      の bot 判定。8/25 から数えて7回連続）
+    - `learn.chatgpt.com/` → **`CONNECT tunnel failed, response 403`**（変わらず、経路＝許可リストの遮断。
+      `developers.openai.com/codex/enterprise/admin-setup` の308転送先は今日も届かない）
+    - `help.openai.com/en/articles/20001275-chatgpt-work-and-codex` → **403**（変わらず、bot 判定）
+    - → **①②とも解けていない。**引き続き `- [!]` のまま据え置く。次に見る人へ＝`learn.chatgpt.com` が
+      許可リストに追加されたら、まずここを再試行すること。①（openai.com本体・help.openai.com）はbot判定なので
+      許可リストを足しても直らない点は変わらない。
+
 - [!] https://openai.com/index/introducing-intelligence-age
   - 2026-08-26 自動追記（major・OpenAI「Introducing Intelligence Age」）
   - **2026-08-27 1回目: 記事を書かずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
