@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-30T06:43:56.234331+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-30T03:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「ThoughtDAG」はLLMとの対話をグラフ構造で直感的に編集でき、AIとの対話における「コンテキスト」の扱い方を根本から変える革新的なツールです。 続きを読む...",
+      "title": "無料でAIチャットを編集可能なノードのつながりに変えてくれる「ThoughtDAG」",
+      "uid": "7adb713ef96d87a9",
+      "url": "https://gigazine.net/news/20260830-thoughtdag/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-30T00:23:30.333768+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2386,18 +2398,6 @@
       "title": "使い込むほど成長するAIエージェント「Hermes Agent」で実際に行った作業をスキル化して再利用してみた",
       "uid": "f01c009d237f5fee",
       "url": "https://gigazine.net/news/20260821-hermes-agent-skill/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-21T13:13:14.784845+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-21T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ChatGPTなどのAIは、仕組み上、自分が出力した文章の正誤ないしは真偽を確認できません。できているように見えても実際は違うので、最終的には人間がその正確性を確認する必要があります。ところが、この仕組みを知らずにAIが生成した文章をそのままコピペする人間が存在し、そのような文章を受け取った人間にはまずその文章が正しいのかどうかを確認しなければならないという不要な負担が生じています。こうした「A…",
-      "title": "AIの回答をコピペしないでくれと頼む運動「Don’t paste the AI, please.(AIが書いたものをコピペしないでください)」",
-      "uid": "76fce6b229008af2",
-      "url": "https://gigazine.net/news/20260821-dont-paste-the-ai-please/",
       "vendor": "GIGAZINE"
     }
   ]
