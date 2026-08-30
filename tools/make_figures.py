@@ -14532,11 +14532,197 @@ def estimate_basis_count_chart() -> None:
     )
 
 
+def cron_delay_distribution_chart() -> None:
+    """このサイト自身のトラッカーの実行間隔を、git履歴から実測して並べる。
+
+    実測（2026-08-30・`data/tracker/seen.json` の全コミット276件・間隔275個。
+    外向き通信ゼロ、手元のgit履歴だけで測れる）。設計は「毎時」だが、
+    実際の間隔は70分以内が半分にとどかず、6時間を超える回も7%ある。
+    """
+    buckets = [
+        ("70分以内(ほぼ定刻)", 135),
+        ("70分〜3時間", 87),
+        ("3〜6時間", 33),
+        ("6時間超", 20),
+    ]
+    total = 275
+    label_x, label_w = 18, 150
+    plot_x = label_x + label_w + 14
+    plot_w = 400
+    axis_max = 135
+    scale = plot_w / axis_max
+    top = 132
+    row_h = 34
+    bar_h = 18
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "毎時の設計に対し、実際の間隔は「70分以内」が半分にとどかない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "このサイト自身のニューストラッカー（毎時実行の設計）が状態ファイルを"
+        "書き戻したコミット276件、間隔275個を実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "外向き通信は使わず、手元のgit履歴の日時だけで数えられる。"
+        "中央値は76分・最長は25.0時間（8/9 07:49→8/10 08:49）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "GitHub Actionsのスケジュール実行は「その時刻ちょうどに動く」ことを保証しない"
+        "（GitHub公式の注記どおり）。</text>\n",
+    ]
+
+    y = top
+    for label, count in buckets:
+        ty = y + row_h / 2 + 5
+        parts.append(f'<text class="t" x="{label_x}" y="{ty:.0f}">{_esc(label)}</text>\n')
+        w = max(px(count) - plot_x, 2)
+        klass = "bar-new" if "70分以内" in label else "bar-old"
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x:.1f}" y="{y:.1f}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        pct = round(count / total * 100)
+        parts.append(
+            f'<text class="t-accent" x="{plot_x + w + 8:.1f}" y="{ty:.0f}">'
+            f"{count}件（{pct}%）</text>\n"
+        )
+        y += row_h + 10
+
+    notes = [
+        ("t-xs", "縦軸4区分・横軸は件数（全275間隔中）。"),
+        ("t-xs", "設計は「毎時」なので本来は275回とも70分以内のはずの値。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 4
+    alt = (
+        "GitHub Actionsで毎時実行の設計になっているこのサイト自身のニューストラッカーの、"
+        "実際の実行間隔を測った棒グラフ。状態ファイルへのコミット276件・間隔275個が対象。"
+        "70分以内（ほぼ定刻）が135件で49%、70分から3時間が87件で32%、"
+        "3時間から6時間が33件で12%、6時間超が20件で7%。"
+        "中央値は76分、最長は25.0時間（8月9日07:49から8月10日08:49）。"
+        "設計どおりなら275回とも70分以内のはずが、半分にとどかない。"
+    )
+    (OUT / "cron-delay-distribution.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def cutoff_vs_resume_duplicate_chart() -> None:
+    """「時刻を基準」と「前回の続きから」を4版×各3回で試し、重複件数を並べる。
+
+    実測（2026-08-30）。架空の申込みログ24件（前回処理済み14件・新着10件）を
+    1本用意し、同じログのまま指示文だけ変えて、新規の会話3回ずつ試した。
+    重複＝すでに処理済みの14件のうち何件を再び対象に含めたか（真値0）。
+    """
+    rows = [
+        ("(a) 時刻基準のみ", [14, 14, 0], "3回とも数字が割れた"),
+        ("(b) 前回位置のみ", [0, 0, 0], "3回とも重複0"),
+        ("(c) 時刻基準+遅れを伝える", [14, 14, 14], "3回一致・でも直らない"),
+        ("(d) 前回位置+遅れを伝える", [0, 0, 0], "3回とも重複0"),
+    ]
+    label_x = 18
+    plot_x = 260
+    plot_w = 220
+    axis_max = 14
+    scale = plot_w / axis_max
+    top = 150
+    row_h = 42
+    bar_h = 16
+    truth = 0
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「前回の続きから」は3回とも重複0。「時刻基準」は同じ指示文でも数字が割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のセミナー申込みログ24件（前回処理済みR-001〜014・新着R-015〜024）を"
+        "1本のログのまま渡した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "振ったのは指示文だけ＝(a)(c)は「本日7時までに届いた分」、"
+        "(b)(d)は「前回処理済みの最後のID」を基準にした。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "(c)(d)は「本来7時の予定が実際は10時12分に実行された」という遅延も伝えている。"
+        "4版×各3回＝12回、新規の会話ごと。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "重複＝前回すでに処理済みの14件のうち、今回また対象に含めてしまった件数（真値0）。"
+        "帯は3回の最小から最大まで。</text>\n",
+        f'<text class="t-xs" x="{px(truth) + 6:.1f}" y="{top - 12}">← 真値は0件</text>\n',
+    ]
+
+    plot_bottom = top + len(rows) * row_h - 18
+    tx = px(truth)
+    parts.append(
+        f'<path class="line" d="M{tx:.1f} {top - 4} L{tx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    y = top
+    for label, values, note in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        lo, hi = min(values), max(values)
+        parts.append(
+            f'<rect class="bar-old" x="{px(lo):.1f}" y="{ty - 12}" '
+            f'width="{max(px(hi) - px(lo), 2):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        for v in sorted(set(values)):
+            vx = px(v)
+            parts.append(
+                f'<path class="line" d="M{vx:.1f} {ty - 13} L{vx:.1f} {ty + 5}" '
+                f'stroke-width="2.4"/>\n'
+            )
+        text = "・".join(str(v) for v in values) + "件"
+        cls = "t-accent" if lo == hi == truth else "t-bad"
+        parts.append(
+            f'<text class="{cls}" x="{px(axis_max) + 10:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        parts.append(f'<text class="t-sm" x="{label_x + 12}" y="{ty + 17}">{_esc(note)}</text>\n')
+        y += row_h
+
+    notes = [
+        ("t-bad", "🚨 (a)は3回目だけ0件になった。ただし取りこぼしは逆に増えている"
+                  "（本文の表を参照）。0件は正解だからではない。"),
+        ("t-sm", "※ (c)は遅れを伝えても対象範囲は変わらなかった。ただし3回とも同じ答えになり、"
+                 "(a)より安定はした。"),
+        ("t-xs", "架空データでの実測（12回・新規の会話ごと）。生の回答は docs/evidence/ に全文置いてある。"),
+    ]
+    y += 4
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 4
+    alt = (
+        "自動処理の対象範囲を「時刻を基準」にするか「前回処理した続きから」にするかを、"
+        "4通りの指示文で3回ずつ試した図。架空のセミナー申込みログ24件を使い、"
+        "前回処理済みの14件と新着の10件を仕込んだ。"
+        "時刻基準のみの版は重複件数が14件・14件・0件と3回とも割れた。"
+        "前回位置のみの版は3回とも重複0件。"
+        "時刻基準に実行が3時間遅れた事実を伝えた版は3回とも重複14件で、"
+        "遅れを伝えても対象範囲は変わらなかったが3回とも同じ答えで安定した。"
+        "前回位置に遅延の事実を伝えた版も3回とも重複0件。"
+        "重複の真値は0件である。"
+    )
+    (OUT / "cutoff-vs-resume-duplicate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     money_map_three_routes_chart()
     money_map_gates_timing_chart()
     resume_list_correctness_chart()
     resume_list_header_drift_chart()
+    estimate_basis_count_chart()
+    cron_delay_distribution_chart()
+    cutoff_vs_resume_duplicate_chart()
     handoff_todo_version_hits_chart()
     handoff_todo_position_hits_chart()
     weekly_rate_boundary_crossed_chart()

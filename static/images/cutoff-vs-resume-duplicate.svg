@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="自動処理の対象範囲を「時刻を基準」にするか「前回処理した続きから」にするかを、4通りの指示文で3回ずつ試した図。架空のセミナー申込みログ24件を使い、前回処理済みの14件と新着の10件を仕込んだ。時刻基準のみの版は重複件数が14件・14件・0件と3回とも割れた。前回位置のみの版は3回とも重複0件。時刻基準に実行が3時間遅れた事実を伝えた版は3回とも重複14件で、遅れを伝えても対象範囲は変わらなかったが3回とも同じ答えで安定した。前回位置に遅延の事実を伝えた版も3回とも重複0件。重複の真値は0件である。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">「前回の続きから」は3回とも重複0。「時刻基準」は同じ指示文でも数字が割れた</text>
+<text class="t-sm" x="18" y="45">架空のセミナー申込みログ24件（前回処理済みR-001〜014・新着R-015〜024）を1本のログのまま渡した。</text>
+<text class="t-sm" x="18" y="64">振ったのは指示文だけ＝(a)(c)は「本日7時までに届いた分」、(b)(d)は「前回処理済みの最後のID」を基準にした。</text>
+<text class="t-sm" x="18" y="83">(c)(d)は「本来7時の予定が実際は10時12分に実行された」という遅延も伝えている。4版×各3回＝12回、新規の会話ごと。</text>
+<text class="t-sm" x="18" y="102">重複＝前回すでに処理済みの14件のうち、今回また対象に含めてしまった件数（真値0）。帯は3回の最小から最大まで。</text>
+<text class="t-xs" x="266.0" y="138">← 真値は0件</text>
+<path class="line" d="M260.0 146 L260.0 300" stroke-dasharray="4 3"/>
+<text class="t" x="18" y="164">(a) 時刻基準のみ</text>
+<rect class="bar-old" x="260.0" y="152" width="220.0" height="16" rx="3"/>
+<path class="line" d="M260.0 151 L260.0 169" stroke-width="2.4"/>
+<path class="line" d="M480.0 151 L480.0 169" stroke-width="2.4"/>
+<text class="t-bad" x="490.0" y="164">14・14・0件</text>
+<text class="t-sm" x="30" y="181">3回とも数字が割れた</text>
+<text class="t" x="18" y="206">(b) 前回位置のみ</text>
+<rect class="bar-old" x="260.0" y="194" width="2.0" height="16" rx="3"/>
+<path class="line" d="M260.0 193 L260.0 211" stroke-width="2.4"/>
+<text class="t-accent" x="490.0" y="206">0・0・0件</text>
+<text class="t-sm" x="30" y="223">3回とも重複0</text>
+<text class="t" x="18" y="248">(c) 時刻基準+遅れを伝える</text>
+<rect class="bar-old" x="480.0" y="236" width="2.0" height="16" rx="3"/>
+<path class="line" d="M480.0 235 L480.0 253" stroke-width="2.4"/>
+<text class="t-bad" x="490.0" y="248">14・14・14件</text>
+<text class="t-sm" x="30" y="265">3回一致・でも直らない</text>
+<text class="t" x="18" y="290">(d) 前回位置+遅れを伝える</text>
+<rect class="bar-old" x="260.0" y="278" width="2.0" height="16" rx="3"/>
+<path class="line" d="M260.0 277 L260.0 295" stroke-width="2.4"/>
+<text class="t-accent" x="490.0" y="290">0・0・0件</text>
+<text class="t-sm" x="30" y="307">3回とも重複0</text>
+<text class="t-bad" x="18" y="322">🚨 (a)は3回目だけ0件になった。ただし取りこぼしは逆に増えている（本文の表を参照）。0件は正解だからではない。</text>
+<text class="t-sm" x="18" y="342">※ (c)は遅れを伝えても対象範囲は変わらなかった。ただし3回とも同じ答えになり、(a)より安定はした。</text>
+<text class="t-xs" x="18" y="362">架空データでの実測（12回・新規の会話ごと）。生の回答は docs/evidence/ に全文置いてある。</text>
+</svg>
