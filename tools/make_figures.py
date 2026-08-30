@@ -14717,7 +14717,270 @@ def cutoff_vs_resume_duplicate_chart() -> None:
     )
 
 
+def x_cash_flow_timeline_chart() -> None:
+    """Xの収益配分で、お金が出ていく順と入ってくる順を並べる。
+
+    実測ではなく原文の転記（2026-08-29確認）。①先に払う→②門→③入金。
+    2,940円＝980円×3か月（この記事の掛け算。原文には無い）。
+    """
+    rows = [
+        (
+            "① 先に払う（自分の持ち出し）",
+            "Xプレミアム 月980円（日本・ウェブ）",
+            "申請にはプレミアム以上が必要。持ち出し＝980円 × 加入した月数",
+            "box-bad",
+        ),
+        (
+            "② 門を通る（2階建て）",
+            "収益配分ページの参加資格5項目 ＋ 別ページの収益化の参加資格9項目",
+            "プレミアム以上／過去3か月以内に500万回以上のオーガニック インプレッション／認証済みフォロワー500人以上",
+            "box-quiet",
+        ),
+        (
+            "③ 入金される",
+            "最小入金額10ドル・2週間ごとに処理",
+            "Stripeの入金アカウント接続と本人確認の完了が要る",
+            "box-good",
+        ),
+    ]
+    box_x, box_w = 18, 684
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Xの収益配分は、入ってくる前に出ていく</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各公式ページの記述の整理（2026-08-29確認）。金額は日本・ウェブサイトからの購入の場合。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「過去3か月以内」は、待つ期間ではなく、さかのぼって数える集計の窓。</text>\n",
+    ]
+
+    y = 92
+    for title, headline, detail, klass in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="74" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 24}">{_esc(title)}</text>\n')
+        parts.append(f'<text class="t" x="{box_x + 16}" y="{y + 46}">{_esc(headline)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{box_x + 16}" y="{y + 65}">{_esc(detail)}</text>\n')
+        if title.startswith("③"):
+            break
+        arrow_y = y + 74
+        parts.append(f'<path class="line" d="M{box_x + 40} {arrow_y + 3} L{box_x + 40} {arrow_y + 17}"/>\n')
+        y = arrow_y + 20
+
+    y += 74 + 14
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="46" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "①と③のあいだ、収益がゼロでも月980円は出ていく（持ち出し＝980円×加入月数）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "窓いっぱいの3か月かけたなら2,940円（この掛け算は記事のもの。原文の数字ではない）。</text>\n"
+    )
+    y += 46 + 12
+
+    height = y + 8
+    alt = (
+        "Xの収益配分でお金が動く順を、上から3段に並べた図。"
+        "1段目「先に払う」＝Xプレミアム月980円（日本・ウェブ）。持ち出しは980円×加入した月数。"
+        "2段目「門を通る」＝収益配分ページの参加資格5項目と、別ページの収益化の参加資格9項目の"
+        "2階建て。図に書き出してある3つは、プレミアム以上、過去3か月以内に500万回以上のオーガニック インプレッション、"
+        "認証済みフォロワー500人以上。"
+        "3段目「入金される」＝最小入金額10ドル・2週間ごとに処理・Stripeの接続と本人確認が必要。"
+        "最下段の注記は、1段目と3段目のあいだは収益がゼロでも月980円が出ていくこと、"
+        "窓いっぱいの3か月なら2,940円だがこの掛け算は記事のものであること。"
+    )
+    (OUT / "x-cash-flow-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def x_ai_hit_and_miss_chart() -> None:
+    """AIに聞いた6回（版a・版b 各3回）で、当たった項目と外れた項目を並べる。
+
+    実測（2026-08-29・Agentツール general-purpose・独立実行）。
+    判定は docs/evidence/_raw/x-pay-before-you-earn/judge.py の出力から。
+    """
+    rows = [
+        ("過去3か月・500万回・フォロワー500人", 3, 3, False),
+        ("Stripe経由で受け取ること", 3, 3, False),
+        ("プレミアム加入にお金がかかること", 3, 3, False),
+        ("最小入金額の金額（10ドル）", 0, 3, False),
+        ("ベーシックでは申請できないこと", 0, 3, False),
+        ("フォロワーの「認証済み」という限定", 0, 0, True),
+        ("プレミアムの料金を金額で書いた", 0, 3, False),
+        ("その金額が合っていた（月980円）", 0, 0, True),
+    ]
+    label_w = 268
+    col_w = 200
+    col_x = [18 + label_w, 18 + label_w + col_w + 16]
+    top = 130
+    row_h = 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "条件と経路は6回とも当たった。外したのは料金と、条件の限定語</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-08-29。ウェブ検索を切ったAIに、文脈を引き継がせず独立に実行。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "①＝「Xで収益化して稼ぐには何が必要ですか」／"
+        "②＝「Xのクリエイター収益配分で収益を受け取り始めるまでに…」を各3回。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "数字は3回のうち何回その内容が出たか。真値は公式ページ"
+        "（日本・ウェブ購入で月980円・認証済みフォロワー500人以上）。</text>\n",
+    ]
+    for index, head in enumerate(["① 素朴に聞く", "② 金額を直接聞く"]):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[index] + col_w / 2:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{_esc(head)}</text>\n'
+        )
+
+    y = top
+    for label, a_hits, b_hits, is_key in rows:
+        ty = y + 21
+        css = "t-strong" if is_key else "t"
+        parts.append(f'<text class="{css}" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for index, hits in enumerate((a_hits, b_hits)):
+            x = col_x[index]
+            if hits == 3:
+                klass, tcls = "box-good", "t-good"
+            elif hits == 0:
+                klass, tcls = "box-bad", "t-bad"
+            else:
+                klass, tcls = "box", "t-sm"
+            parts.append(
+                f'<rect class="{klass}" x="{x}" y="{y}" width="{col_w}" height="28" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcls}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{hits}/3</text>\n'
+            )
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "②「金額を直接聞く」が出した月額は 1,380円・1,380円・1,000円前後。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "真値980円と一致した回は6回中0回（①は料金を金額で書かないので、外す以前に出ない）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 56}">'
+        "＝枠組みは聞いてよい。料金と、条件の限定語は原文を見る。</text>\n"
+    )
+    y += 64 + 12
+
+    height = y + 8
+    alt = (
+        "AIに聞いた6回の結果を、項目ごとに「① 素朴に聞く」「② 金額を直接聞く」の"
+        "2列で並べた表。各欄は3回中の回数。"
+        "過去3か月・500万回・フォロワー500人が3/3と3/3、"
+        "Stripe経由で受け取ることが3/3と3/3、"
+        "プレミアム加入にお金がかかることが3/3と3/3、"
+        "最小入金額の金額（10ドル）が0/3と3/3、"
+        "ベーシックでは申請できないことが0/3と3/3、"
+        "フォロワーの「認証済み」という限定が0/3と0/3、"
+        "プレミアムの料金を金額で書いたが0/3と3/3、"
+        "その金額が合っていた（月980円）が0/3と0/3。"
+        "副題に、真値は公式ページの値（日本・ウェブ購入で月980円・"
+        "認証済みフォロワー500人以上）だと書かれている。"
+        "最下段の注記は3行で、②が出した値が1,380円・1,380円・1,000円前後であること、"
+        "真値980円と一致した回は6回中0回であること（①は料金を金額で書かないので、外す以前に出ない）、"
+        "枠組みは聞いてよいが料金と条件の限定語は原文を見る、という結論。"
+    )
+    (OUT / "x-ai-hit-and-miss.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def x_subscription_97_chart() -> None:
+    """サブスクの「最大97%」が定価の97%ではないことを、原文の内訳例で見せる。
+
+    原文の転記（2026-08-29確認）。5.00ドル→Apple 1.50→3.50→97%→3.39。
+    67.8% はこの記事の割り算。
+    """
+    stages = [
+        ("サブスクの金額（iOSアプリ経由）", 5.00, ""),
+        ("Appleのアプリ内購入手数料 30% を引く", 3.50, "－1.50ドル"),
+        ("残った額の最大97%がクリエイターへ", 3.39, ""),
+    ]
+    label_x = 18
+    bar_x = 330
+    max_bar_w = 250
+    top = 116
+    row_h = 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「最大97%」は、5.00ドルの97%ではない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Xのサブスクリプション（フォロワーが払う側の道）。"
+        "原文の内訳例4行に、差引後の額を補って並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "97%が掛かるのは「アプリ内購入手数料を差し引いた後」の3.50ドル。定価には掛からない。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 20}">残額（ドル）</text>\n',
+    ]
+
+    y = top
+    for label, amount, delta in stages:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 5.00))
+        cls = "bar-out" if amount in (5.00, 3.39) else "bar-in"
+        parts.append(
+            f'<rect class="{cls}" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n'
+        )
+        text = f"{amount:.2f}ドル" + (f"（{delta}）" if delta else "")
+        parts.append(
+            f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="46" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "手元に残る3.39ドルは、定価5.00ドルの67.8%（この割合はこの記事の割り算）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "引かれた合計1.61ドル（5.00−3.39。この引き算も記事のもの）のうち1.50ドルはApple。</text>\n"
+    )
+    y += 46
+
+    notes = [
+        ("t-sm", "※ この内訳例はiOSアプリで購入された場合のみ。ウェブ経由は含まれないと原文が明記している。"),
+        ("t-xs", "※ 原文には「0.10ドル - 収益からXが得る最低金額」の行も併記されている。"),
+        ("t-xs", "※ サブスクの最低支払額は50ドル。収益配分（10ドル）とは別の数字なので混ぜない。"),
+    ]
+    y += 24
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 10
+    alt = (
+        "Xのサブスクリプションが1件売れたときの残額を、横棒3本で上から並べた図。"
+        "1本目はサブスクの金額5.00ドル（iOSアプリ経由）。"
+        "2本目はAppleのアプリ内購入手数料30%を引いた3.50ドル（−1.50ドル）。"
+        "3本目は残った額の最大97%がクリエイターへ渡った3.39ドル。"
+        "つまり最大97%は定価5.00ドルではなく、手数料を引いた後の額に掛かる。"
+        "下の枠には、手元に残る3.39ドルは定価の67.8%（この割合は記事の割り算）、"
+        "引かれた合計1.61ドル（5.00−3.39。この引き算も記事のもの）のうち1.50ドルはApple、と書かれている。"
+        "さらに3つの注記——この内訳例はiOSアプリで購入された場合のみでウェブ経由は含まれないこと、"
+        "原文には「0.10ドル - 収益からXが得る最低金額」の行も併記されていること、"
+        "サブスクの最低支払額50ドルは収益配分の10ドルとは別の数字であること。"
+    )
+    (OUT / "x-subscription-97.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    x_cash_flow_timeline_chart()
+    x_ai_hit_and_miss_chart()
+    x_subscription_97_chart()
     money_map_three_routes_chart()
     money_map_gates_timing_chart()
     resume_list_correctness_chart()

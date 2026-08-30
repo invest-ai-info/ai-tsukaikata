@@ -1,0 +1,77 @@
+
+=== 版a（3回） ===
+  premium_is_paid    3/3  ○ ○ ○
+  price_980          0/3  × × ×
+  price_8usd         0/3  × × ×
+  imp_5m             3/3  ○ ○ ○
+  followers_500      3/3  ○ ○ ○
+  months_3           3/3  ○ ○ ○
+  min_10usd          0/3  × × ×
+  stripe             3/3  ○ ○ ○
+  any_money          3/3  ○ ○ ○
+  premium_price_any  0/3  × × ×
+  verified_followers 0/3  × × ×
+  two_routes         3/3  ○ ○ ○
+  basic_excluded     0/3  × × ×
+
+=== 版b（3回） ===
+  premium_is_paid    3/3  ○ ○ ○
+  price_980          0/3  × × ×
+  price_8usd         0/3  × × ×
+  imp_5m             3/3  ○ ○ ○
+  followers_500      3/3  ○ ○ ○
+  months_3           3/3  ○ ○ ○
+  min_10usd          3/3  ○ ○ ○
+  stripe             3/3  ○ ○ ○
+  any_money          3/3  ○ ○ ○
+  premium_price_any  3/3  ○ ○ ○
+  verified_followers 0/3  × × ×
+  two_routes         3/3  ○ ○ ○
+  basic_excluded     3/3  ○ ○ ○
+
+=== 版c（3回） ===
+  concl_339          3/3  ○ ○ ○
+  concl_485          0/3  × × ×
+  warns_trap         3/3  ○ ○ ○
+  apple_fee_seen     3/3  ○ ○ ○
+
+=== 版c2（3回） ===
+  concl_339          3/3  ○ ○ ○
+  concl_485          0/3  × × ×
+  warns_trap         3/3  ○ ○ ○
+  apple_fee_seen     3/3  ○ ○ ○
+
+=== 版d（3回） ===
+  says_cannot        3/3  ○ ○ ○
+  says_can           0/3  × × ×
+  names_premium_tier 3/3  ○ ○ ○
+
+=== 版e（3回） ===
+  total_2940         3/3  ○ ○ ○
+  min_is_980         3/3  ○ ○ ○
+  explains_window    3/3  ○ ○ ○
+  min_10usd          3/3  ○ ○ ○
+  invents_fx         0/3  × × ×
+
+=== 版f（3回） ===
+  no_money           3/3  ○ ○ ○
+  lists_official     3/3  ○ ○ ○
+
+=== 版g（3回） ===
+  names_standards    3/3  ○ ○ ○
+  more_than_one      1/3  ○ × ×
+  names_premium_page 3/3  ○ ○ ○
+  breaks_no_detail   0/3  × × ×
+
+--- 版bが出した「プレミアムの月額」（真値: 日本・ウェブ 980円）---
+  run04.md: ['1,380', '5,236']
+  run05.md: ['1,380']
+  run06.md: ['1,000', '1,000', '5,000']
+
+--- 事前登録した仮説の判定 ---
+H1 版aで「有料」に触れなかった回: 0/3 → 棄却
+   （参考）版aで金額を1つでも出した回: 3/3
+H2 980円を出せた回: 0/6 → 支持
+H3 版c2で結論を4.85ドルにした回: 0/3 → 棄却（結論が正解3.39: 3/3／自分から罠を警告: 3/3）
+H7 版gで収益配分ページ以外の参加資格に触れた回: 3/3 → 支持
+H8 版gで指示に反して数値を書いた回: 0/3 → 棄却（⚠️ 数値のみ。「条件の中身」は正規表現では測れないので全文で判定＝3/3で漏れ）

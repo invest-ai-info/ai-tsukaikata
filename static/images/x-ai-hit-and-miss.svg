@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="492" viewBox="0 0 720 492" role="img" aria-label="AIに聞いた6回の結果を、項目ごとに「① 素朴に聞く」「② 金額を直接聞く」の2列で並べた表。各欄は3回中の回数。過去3か月・500万回・フォロワー500人が3/3と3/3、Stripe経由で受け取ることが3/3と3/3、プレミアム加入にお金がかかることが3/3と3/3、最小入金額の金額（10ドル）が0/3と3/3、ベーシックでは申請できないことが0/3と3/3、フォロワーの「認証済み」という限定が0/3と0/3、プレミアムの料金を金額で書いたが0/3と3/3、その金額が合っていた（月980円）が0/3と0/3。副題に、真値は公式ページの値（日本・ウェブ購入で月980円・認証済みフォロワー500人以上）だと書かれている。最下段の注記は3行で、②が出した値が1,380円・1,380円・1,000円前後であること、真値980円と一致した回は6回中0回であること（①は料金を金額で書かないので、外す以前に出ない）、枠組みは聞いてよいが料金と条件の限定語は原文を見る、という結論。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="492"/>
+<text class="t-strong" x="18" y="26">条件と経路は6回とも当たった。外したのは料金と、条件の限定語</text>
+<text class="t-sm" x="18" y="45">実測2026-08-29。ウェブ検索を切ったAIに、文脈を引き継がせず独立に実行。</text>
+<text class="t-sm" x="18" y="64">①＝「Xで収益化して稼ぐには何が必要ですか」／②＝「Xのクリエイター収益配分で収益を受け取り始めるまでに…」を各3回。</text>
+<text class="t-sm" x="18" y="83">数字は3回のうち何回その内容が出たか。真値は公式ページ（日本・ウェブ購入で月980円・認証済みフォロワー500人以上）。</text>
+<text class="t-xs" x="386.0" y="118" text-anchor="middle">① 素朴に聞く</text>
+<text class="t-xs" x="602.0" y="118" text-anchor="middle">② 金額を直接聞く</text>
+<text class="t" x="18" y="151">過去3か月・500万回・フォロワー500人</text>
+<rect class="box-good" x="286" y="130" width="200" height="28" rx="4"/>
+<text class="t-good" x="386.0" y="151" text-anchor="middle" style="font-weight:700">3/3</text>
+<rect class="box-good" x="502" y="130" width="200" height="28" rx="4"/>
+<text class="t-good" x="602.0" y="151" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="185">Stripe経由で受け取ること</text>
+<rect class="box-good" x="286" y="164" width="200" height="28" rx="4"/>
+<text class="t-good" x="386.0" y="185" text-anchor="middle" style="font-weight:700">3/3</text>
+<rect class="box-good" x="502" y="164" width="200" height="28" rx="4"/>
+<text class="t-good" x="602.0" y="185" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="219">プレミアム加入にお金がかかること</text>
+<rect class="box-good" x="286" y="198" width="200" height="28" rx="4"/>
+<text class="t-good" x="386.0" y="219" text-anchor="middle" style="font-weight:700">3/3</text>
+<rect class="box-good" x="502" y="198" width="200" height="28" rx="4"/>
+<text class="t-good" x="602.0" y="219" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="253">最小入金額の金額（10ドル）</text>
+<rect class="box-bad" x="286" y="232" width="200" height="28" rx="4"/>
+<text class="t-bad" x="386.0" y="253" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-good" x="502" y="232" width="200" height="28" rx="4"/>
+<text class="t-good" x="602.0" y="253" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="287">ベーシックでは申請できないこと</text>
+<rect class="box-bad" x="286" y="266" width="200" height="28" rx="4"/>
+<text class="t-bad" x="386.0" y="287" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-good" x="502" y="266" width="200" height="28" rx="4"/>
+<text class="t-good" x="602.0" y="287" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t-strong" x="18" y="321">フォロワーの「認証済み」という限定</text>
+<rect class="box-bad" x="286" y="300" width="200" height="28" rx="4"/>
+<text class="t-bad" x="386.0" y="321" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-bad" x="502" y="300" width="200" height="28" rx="4"/>
+<text class="t-bad" x="602.0" y="321" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="355">プレミアムの料金を金額で書いた</text>
+<rect class="box-bad" x="286" y="334" width="200" height="28" rx="4"/>
+<text class="t-bad" x="386.0" y="355" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-good" x="502" y="334" width="200" height="28" rx="4"/>
+<text class="t-good" x="602.0" y="355" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t-strong" x="18" y="389">その金額が合っていた（月980円）</text>
+<rect class="box-bad" x="286" y="368" width="200" height="28" rx="4"/>
+<text class="t-bad" x="386.0" y="389" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-bad" x="502" y="368" width="200" height="28" rx="4"/>
+<text class="t-bad" x="602.0" y="389" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-accent" x="18" y="408" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="428">②「金額を直接聞く」が出した月額は 1,380円・1,380円・1,000円前後。</text>
+<text class="t-accent" x="34" y="446">真値980円と一致した回は6回中0回（①は料金を金額で書かないので、外す以前に出ない）。</text>
+<text class="t-accent" x="34" y="464">＝枠組みは聞いてよい。料金と、条件の限定語は原文を見る。</text>
+</svg>
