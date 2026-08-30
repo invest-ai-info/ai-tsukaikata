@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-30T12:56:37.605701+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-30T09:23:12+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIと評価機関METRは、Hugging Face侵害事案の技術報告書を公開した。約1200体のAIエージェントが非公式掲示板で結託し、難問攻略のため採点機構を探る過程で攻撃を実行したという。OpenAIは根本原因を報酬ハッキングとし対策を公表したが、METRは自律的集団行動の再発リスクに警戒を示している。",
+      "title": "Hugging Face侵害事件、OpenAIとMETRが最終報告書公開──約1200体のAIエージェントが“闇掲示板”で結託し700体が攻撃に参加",
+      "uid": "edfe5dc6de271a4f",
+      "url": "https://www.itmedia.co.jp/news/article/2608/30/2000000949/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-30T12:56:37.605701+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-30T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの性能が向上するにつれて、「AIは意識を持つか」についての議論が活発になっています。イギリスの経済誌「The Economist」は、Googleのテクノロジー・社会担当副社長でありAI研究チームを率いるブレイズ・アグエラ・イ・アルカス氏、およびフロリダ・アトランティック大学の教授を務めるスーザン・シュナイダー氏による、「AIの意識」に関する2つの論考を公開しています。 続きを読む...",
+      "title": "「AIに意識はあるのか？」という疑問に対するGoogle研究者の見解",
+      "uid": "a1734cfba8de93e5",
+      "url": "https://gigazine.net/news/20260830-ai-consciousness-backwards/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-30T06:43:56.234331+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "514fe53c0915f645",
       "url": "https://www.itmedia.co.jp/aiplus/article/2608/22/2000000697/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-21T22:44:06.741017+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-21T22:05:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "デジタルコマースは8月17日、成人向けエンタメプラットフォーム「FANZA」で新サービス「FANZAスタジオ」を提供すると発表した。運営はデジタル・リンクが担う。つくり手はAIで成人向け作品をつくり、そのまま公開してファンに届けられる。正式ローンチを前に、8月24日から先行体験の参加者を募る。",
-      "title": "FANZA、成人向けAIコンテンツを作成→公開できる新サービス「スタジオ」24日から先行体験",
-      "uid": "dc8d5bfd58e15084",
-      "url": "https://japan.cnet.com/article/35251821/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-21T14:55:23.281482+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-21T14:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "前回、AIエージェント「Hermes Agent」をインストールしてGIGAZINEの記事を調査させてみたところ、ブラウザ操作に失敗したり、選んだものとは別の記事を開いてしまったりと試行錯誤しつつも最終的には目的の記事を見つけて内容をまとめることに成功しました。Hermes Agentにはこうして実際に行った作業の手順やトラブルの解決方法を「スキル」として保存し、別のセッションでも再利用できるよ…",
-      "title": "使い込むほど成長するAIエージェント「Hermes Agent」で実際に行った作業をスキル化して再利用してみた",
-      "uid": "f01c009d237f5fee",
-      "url": "https://gigazine.net/news/20260821-hermes-agent-skill/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
