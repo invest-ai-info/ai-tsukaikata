@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="410" viewBox="0 0 720 410" role="img" aria-label="YouTubeの収益が銀行口座に届くまでにある、金額の関所を5段で上から並べた図。①税務情報＝なし、②認証（本人確認PIN）＝10ドル相当額、③お支払い方法選択＝1,000円、④お支払い（実際の振込）＝8,000円、⑤キャンセル＝1,000円。④だけが緑で強調され、実際に銀行口座へ振り込まれるラインだと注記されている。下の枠には、AIに「金額の基準は何段階ありますか」と3回聞くと3回とも「2段階」と答えたこと、挙げたのは②と④だけで③と⑤には3回とも触れなかったこと、米ドル口座の④は100ドルで①〜③・⑤は米ドルでも別の額であることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="410"/>
+<text class="t-strong" x="18" y="26">振込までの「金額の関所」は、5段ある</text>
+<text class="t-sm" x="18" y="45">AdSense「お支払い基準額」ページの日本円の表を、そのまま5行として並べた（2026-08-30確認）。</text>
+<text class="t-sm" x="18" y="64">実際に銀行口座へ振り込まれるラインは④だけ。①〜③・⑤は別の目的の基準額。</text>
+<rect class="box-quiet" x="18" y="96" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="120">① 税務情報</text>
+<text class="t" x="552" y="120" style="font-weight:700">なし</text>
+<rect class="box-quiet" x="18" y="140" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="164">② 認証（本人確認PIN）</text>
+<text class="t" x="552" y="164" style="font-weight:700">$10 相当額</text>
+<rect class="box-quiet" x="18" y="184" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="208">③ お支払い方法選択</text>
+<text class="t" x="552" y="208" style="font-weight:700">¥1,000</text>
+<rect class="box-good" x="18" y="228" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="252">④ お支払い（実際の振込）</text>
+<text class="t-good" x="552" y="252" style="font-weight:700">¥8,000</text>
+<rect class="box-quiet" x="18" y="272" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="296">⑤ キャンセル</text>
+<text class="t" x="552" y="296" style="font-weight:700">¥1,000</text>
+<rect class="box-accent" x="18" y="326" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="346">AIに「金額の基準は何段階ありますか」と3回聞くと、3回とも「2段階」と答えた。</text>
+<text class="t-accent" x="34" y="364">挙げたのは②（PIN確認）と④（お支払い）だけ。③と⑤には3回とも触れなかった。</text>
+<text class="t-accent" x="34" y="382">米ドル口座の④は$100。①〜③・⑤は米ドルでも別の額（原文の別表）。</text>
+</svg>

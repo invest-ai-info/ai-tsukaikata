@@ -3596,3 +3596,16 @@ n=24 の実測記事の中に、同じ強さの断定として紛れ込む。
 指示文に読み違いを書かなかったので正しい答えが返っただけで、
 **予想と違ったら原文へ戻る**というこちら側の手順とセットでしか効かない。判定に `min_is_980` / `explains_window` を足して
 機械で確認してから記事を直した（★91の実測をそのまま記事の訂正に使った初めての回）。
+
+📌 **★91が再発した（2026-08-30夜・`youtube-payout-thresholds`）。**`create_session` は今回も
+4回とも同じ `permission_mode is not yet available` で失敗した。加えて今回新しく分かったこと＝
+**`permission_mode` を明示指定すると、エラーの種類が変わる**（`exceeds parent session's "default"`
+＝この時点で parent の mode 自体は「default」だと読めているのに、`permission_mode` を**省略**するか
+**"default" を明示**すると相変わらず「not yet available」で落ちる）。**バグの形が一貫していない。**
+この夜はAgentツールも `claude --safe-mode` も試す前に、素の `claude -p` に
+`--disallowedTools "WebSearch,WebFetch,Bash,Read,Write,Edit,Glob,Grep,Task"` を付けて
+リポジトリ外の空ディレクトリ（`mktemp -d`）で動かす方法で独立回答が取れた（21回・全成功）。
+⚠️ **`--safe-mode` のほうが厳密**（CLAUDE.md・skills・plugins・hooks・過去の会話を丸ごと無効化する）
+ので、次に同じ壁に当たったら**まず `--safe-mode` を試すこと**。`--disallowedTools` だけの方法は
+CLAUDE.mdやプロジェクトのコンテキストを読める状態のままなので、汚染の心配が`--safe-mode`より残る
+（今回は空ディレクトリを作業先にしたので実害は無かったはずだが、確認はしていない）。

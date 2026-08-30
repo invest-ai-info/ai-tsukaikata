@@ -14977,7 +14977,161 @@ def x_subscription_97_chart() -> None:
     )
 
 
+def youtube_payout_ladder_chart() -> None:
+    """YouTubeの振込までにある、金額の関所（しきい値）を5段で並べる。
+
+    原文の転記（2026-08-30確認・support.google.com/adsense/answer/1709871）。
+    5行あるうち「お支払い」だけが実際の振込ライン。
+    """
+    rows = [
+        ("① 税務情報", "なし", "box-quiet", "t"),
+        ("② 認証（本人確認PIN）", "$10 相当額", "box-quiet", "t"),
+        ("③ お支払い方法選択", "¥1,000", "box-quiet", "t"),
+        ("④ お支払い（実際の振込）", "¥8,000", "box-good", "t-good"),
+        ("⑤ キャンセル", "¥1,000", "box-quiet", "t"),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 44
+    top = 96
+    amount_x = box_x + box_w - 150  # 左端から固定距離。最長の amount 文字列でも右にはみ出さない幅を確保
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "振込までの「金額の関所」は、5段ある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "AdSense「お支払い基準額」ページの日本円の表を、そのまま5行として並べた（2026-08-30確認）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "実際に銀行口座へ振り込まれるラインは④だけ。①〜③・⑤は別の目的の基準額。</text>\n",
+    ]
+
+    y = top
+    for label, amount, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 8}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 24}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<text class="{tcls}" x="{amount_x}" y="{y + 24}" style="font-weight:700">{_esc(amount)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "AIに「金額の基準は何段階ありますか」と3回聞くと、3回とも「2段階」と答えた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "挙げたのは②（PIN確認）と④（お支払い）だけ。③と⑤には3回とも触れなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 56}">'
+        "米ドル口座の④は$100。①〜③・⑤は米ドルでも別の額（原文の別表）。</text>\n"
+    )
+    y += 64 + 12
+
+    height = y + 8
+    alt = (
+        "YouTubeの収益が銀行口座に届くまでにある、金額の関所を5段で上から並べた図。"
+        "①税務情報＝なし、②認証（本人確認PIN）＝10ドル相当額、③お支払い方法選択＝1,000円、"
+        "④お支払い（実際の振込）＝8,000円、⑤キャンセル＝1,000円。④だけが緑で強調され、"
+        "実際に銀行口座へ振り込まれるラインだと注記されている。"
+        "下の枠には、AIに「金額の基準は何段階ありますか」と3回聞くと3回とも「2段階」と答えたこと、"
+        "挙げたのは②と④だけで③と⑤には3回とも触れなかったこと、"
+        "米ドル口座の④は100ドルで①〜③・⑤は米ドルでも別の額であることが書かれている。"
+    )
+    (OUT / "youtube-payout-ladder.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def youtube_ai_hit_and_miss_chart() -> None:
+    """YouTubeの各質問で、AIの答えが真値と何回一致したかを並べる。
+
+    実測（2026-08-30・claude -p を空ディレクトリで独立実行・各3回）。
+    判定は docs/evidence/_raw/youtube-payout-thresholds/judge.py の出力から。
+    """
+    # (label, 3回中の回数, "good"=多いほど良い / "bad"=多いほど問題)
+    rows = [
+        ("ウォッチページ広告＝55%が正解", 3, "good"),
+        ("Shorts広告＝45%が正解", 2, "good"),
+        ("メンバーシップ等＝70%が正解", 3, "good"),
+        ("振込の最低額＝8,000円が正解", 3, "good"),
+        ("しきい値は5段階（真値）と答えた", 0, "good"),
+        ("Shorts＝55%と誤答（長尺と混同）", 1, "bad"),
+        ("現行に無い「登録者500人」条件", 1, "bad"),
+    ]
+    label_w = 330
+    col_w = 200
+    col_x = 18 + label_w
+    top = 122
+    row_h = 32
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "枠組みと料率は当たる。「何段階あるか」は外れる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-08-30。ウェブ検索を切ったAI（claude -p・独立プロセス）に、各質問を3回ずつ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上5行＝真値と一致した回数（多いほど良い）。下2行＝誤り・作り話をした回数（少ないほど良い）。</text>\n",
+    ]
+    parts.append(
+        f'<text class="t-xs" x="{col_x + col_w / 2:.1f}" y="{top - 14}" '
+        f'text-anchor="middle">3回中</text>\n'
+    )
+
+    y = top
+    for label, hits, kind in rows:
+        ty = y + 21
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        if kind == "good":
+            klass, tcls = ("box-good", "t-good") if hits == 3 else (
+                ("box-bad", "t-bad") if hits == 0 else ("box", "t-sm")
+            )
+        else:
+            klass, tcls = ("box-good", "t-good") if hits == 0 else ("box-bad", "t-bad")
+        parts.append(f'<rect class="{klass}" x="{col_x}" y="{y}" width="{col_w}" height="26" rx="4"/>\n')
+        parts.append(
+            f'<text class="{tcls}" x="{col_x + col_w / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{hits}/3</text>\n'
+        )
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "料率と最低額は3回中2〜3回、正確に当たった（Shortsの45%だけ1回が長尺と同じ55%に化けた）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "「段階数」を聞くと3回とも2段階どまりで、公式の表にある5行には届かなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 56}">'
+        "＝率と最低額は聞いてよい。「これで全部か」は原文の表を自分で見る。</text>\n"
+    )
+    y += 64 + 12
+
+    height = y + 8
+    alt = (
+        "YouTubeについてAIに聞いた各質問の結果を並べた表。上5行は真値と一致した回数（3回中）で、"
+        "ウォッチページ広告＝55%が3/3、Shorts広告＝45%が2/3、メンバーシップ等＝70%が3/3、"
+        "振込の最低額＝8,000円が3/3、しきい値は5段階（真値）と答えた回数は0/3で赤。"
+        "下2行は誤り・作り話をした回数（少ないほど良い）で、"
+        "Shorts＝55%と長尺の55%を混同して誤答した回数が1/3、"
+        "現行の公式ページに無い「登録者500人」条件を書いた回数が1/3、いずれも赤。"
+        "下の枠には、料率と最低額は3回中2〜3回正確に当たったこと、"
+        "段階数を聞くと3回とも2段階どまりで公式の表の5行には届かなかったこと、"
+        "率と最低額は聞いてよいが「これで全部か」は原文の表を自分で見る、という結論が書かれている。"
+    )
+    (OUT / "youtube-ai-hit-and-miss.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    youtube_payout_ladder_chart()
+    youtube_ai_hit_and_miss_chart()
     x_cash_flow_timeline_chart()
     x_ai_hit_and_miss_chart()
     x_subscription_97_chart()

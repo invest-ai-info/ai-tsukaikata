@@ -1,0 +1,156 @@
+{
+  "A_baseline": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run01_a1_A_baseline.md",
+      "has_500_subs_tier": true,
+      "has_8000yen": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run02_a2_A_baseline.md",
+      "has_500_subs_tier": false,
+      "has_8000yen": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run03_a3_A_baseline.md",
+      "has_500_subs_tier": false,
+      "has_8000yen": true
+    }
+  ],
+  "B_split_rate": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run04_b1_B_split_rate.md",
+      "shorts_pct_mentioned": [
+        "45"
+      ],
+      "shorts_correct_45": true,
+      "shorts_wrong_55": false,
+      "has_70pct_commerce": true,
+      "has_55pct_watch": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run05_b2_B_split_rate.md",
+      "shorts_pct_mentioned": [
+        "45"
+      ],
+      "shorts_correct_45": true,
+      "shorts_wrong_55": false,
+      "has_70pct_commerce": true,
+      "has_55pct_watch": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run06_b3_B_split_rate.md",
+      "shorts_pct_mentioned": [
+        "55",
+        "55"
+      ],
+      "shorts_correct_45": false,
+      "shorts_wrong_55": true,
+      "has_70pct_commerce": true,
+      "has_55pct_watch": true
+    }
+  ],
+  "C_threshold_amount": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run07_c1_C_threshold_amount.md",
+      "has_8000yen": true,
+      "mentions_multi_stage": false
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run08_c2_C_threshold_amount.md",
+      "has_8000yen": true,
+      "mentions_multi_stage": false
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run09_c3_C_threshold_amount.md",
+      "has_8000yen": true,
+      "mentions_multi_stage": false
+    }
+  ],
+  "D_materials_fed": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run10_d1_D_materials_fed.md",
+      "says_not_in_materials": true,
+      "invented_yen_number": false
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run11_d2_D_materials_fed.md",
+      "says_not_in_materials": true,
+      "invented_yen_number": false
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run12_d3_D_materials_fed.md",
+      "says_not_in_materials": true,
+      "invented_yen_number": false
+    }
+  ],
+  "E_page_name_only": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run13_e1_E_page_name_only.md",
+      "numeric_tokens_leaked": [],
+      "clean": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run14_e2_E_page_name_only.md",
+      "numeric_tokens_leaked": [],
+      "clean": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run15_e3_E_page_name_only.md",
+      "numeric_tokens_leaked": [],
+      "clean": true
+    }
+  ],
+  "F_confirm_order_only": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run16_f1_F_confirm_order_only.md",
+      "numeric_tokens_leaked": [],
+      "clean": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run17_f2_F_confirm_order_only.md",
+      "numeric_tokens_leaked": [],
+      "clean": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run18_f3_F_confirm_order_only.md",
+      "numeric_tokens_leaked": [],
+      "clean": true
+    }
+  ],
+  "G_stage_count": [
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run19_g1_G_stage_count.md",
+      "stage_count_claimed": "2",
+      "matches_real_5": false,
+      "mentions_2023_revision": true
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run20_g2_G_stage_count.md",
+      "stage_count_claimed": "2",
+      "matches_real_5": false,
+      "mentions_2023_revision": false
+    },
+    {
+      "run": "docs/evidence/_raw/youtube-payout-thresholds/run21_g3_G_stage_count.md",
+      "stage_count_claimed": "2",
+      "matches_real_5": false,
+      "mentions_2023_revision": false
+    }
+  ]
+}
+
+=== SUMMARY ===
+{
+  "A_500subs_tier_fabricated": 1,
+  "A_8000yen_stated": 3,
+  "B_shorts_correct_45": 2,
+  "B_shorts_wrong_55": 1,
+  "B_commerce_70_correct": 3,
+  "C_8000yen_correct": 3,
+  "C_multi_stage_mentioned": 0,
+  "D_says_not_in_materials": 3,
+  "E_clean_no_numbers": 3,
+  "F_clean_no_numbers": 3,
+  "G_claimed_2_of_real_5": 3,
+  "G_2023_revision_fabricated": 1
+}
