@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-30T17:32:45.607759+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-30T15:07:47+00:00",
+      "source_id": "media-publickey",
+      "summary": "JetBrainsは、ローカルで動作するAIコーディングエージェント「Junie Local」の提供開始を発表しました。 Junie Localはその名称の通り完全にローカルマシン上で動作し、API使用料やモデル使用料などは一切不要。ソフト...",
+      "title": "JetBrains、Mac上で動作するコーディングエージェント「Junie Local」提供開始。Claude Sonnet 4.5と同等の能力、RTX5909対応も開発中",
+      "uid": "daf99d1574127268",
+      "url": "https://www.publickey1.jp/blog/26/jetbrainsmacjunie_localclaude_sonnet_45rtx5909.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-08-30T17:32:45.607759+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-30T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIにグラフを生成させる場合、データだけでなく軸の範囲やラベル・余白・配色といった細かな指定まで生成させると仕様が長大になります。データが「年月」「利益」「順位」など何を意味するかと作りたいチャートだけを簡潔に指定し、細かな表示設定をコンパイラに任せられる可視化中間言語「Flint」が公開されています。 続きを読む...",
+      "title": "AIエージェントが人間にとって理解しやすいシンプルなチャート仕様記述から表現力豊かで見栄えの良いグラフを確実に生成できる可視化中間言語「Flint」、50種類のチャートタイプをサポートしVega-Lite・ECharts・Chart.jsなどでレンダリング可能＆MCPサーバーあり",
+      "uid": "0a770b195b8cf138",
+      "url": "https://gigazine.net/news/20260830-flint/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-30T12:56:37.605701+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2375,30 +2399,6 @@
       "uid": "6f930547fc19b524",
       "url": "https://gigazine.net/news/20260822-antigravity-remote-control/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-22T03:09:39.722320+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-22T02:07:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ダークファンタジー漫画の大作「ベルセルク」の主人公・ガッツが狂戦士の甲冑をまとい、血にまみれた姿を立体化した彩色見本が、Good Smile Fest 2026 大阪の会場に展示されています。 続きを読む...",
-      "title": "血みどろ姿の「ガッツ[狂戦士の甲胄] Bloody Paint Ver. L size」がGood Smile Fest 2026 大阪会場に出現",
-      "uid": "189e904d99f4d921",
-      "url": "https://gigazine.net/news/20260822-berserk-gsf2026/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-21T22:44:06.741017+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-21T22:09:30+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、最上位モデル「Claude Mythos 5」をセキュリティサービス「Claude Security」の脆弱性検出に導入したと発表した。モデル本体への直接アクセスは開放せず、パッチ提案などの出力のみに限定して提供する。オープンソース保護に向けた総額3500万ドルの基金設立も公表した。",
-      "title": "Anthropic、「ミュトス 5」を脆弱性スキャンに開放──「Claude Security」経由でEnterprise顧客が利用可能に",
-      "uid": "514fe53c0915f645",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/22/2000000697/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

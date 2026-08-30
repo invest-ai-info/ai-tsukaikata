@@ -3803,20 +3803,6 @@
       "uid": "93e399a963858213",
       "url": "https://www.anthropic.com/news/expanding-project-glasswing",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-01T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "A collage of I/O-related images, including the Antigravity Coffee Co. pop-up, a colorful jellyfish and a still from the Timmy TPU video. The word AI repeats three times on the left of the image, and …",
-      "summary_ja": "Google I/O 2026の準備にGeminiを活用",
-      "summary_source": "gemini",
-      "title": "How we used Gemini to build Google I/O 2026",
-      "uid": "d7566d14fd510e1a",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
-      "vendor": "Google"
     }
   ]
 }
