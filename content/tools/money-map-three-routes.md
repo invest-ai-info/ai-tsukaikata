@@ -5,6 +5,9 @@ category: tools
 scene: earn
 published: 2026-08-29
 checked: 2026-08-29
+series: お金の流れ
+series_no: 1
+series_total: 3
 tags: [副業, 収益化, X, YouTube, Kindle, クラウドソーシング, お金の流れ]
 ---
 
