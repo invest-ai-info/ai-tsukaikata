@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-31T13:58:05.785698+00:00",
+      "importance": "major",
+      "label": "DeepSeek 新モデル",
+      "published": "2026-08-31T06:16:18+00:00",
+      "source_id": "hf-deepseek",
+      "summary": "HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4-Flash-Vision-Exp が公開されました。",
+      "title": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "uid": "f9c2b6679fd1c8d0",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "vendor": "DeepSeek"
+    },
+    {
       "first_seen": "2026-08-28T18:46:16.087122+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -3788,20 +3800,6 @@
       "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
       "uid": "8d40a858cfb46bba",
       "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-02T11:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.",
-      "summary_ja": "「プロジェクト グラスウィング」を拡大\n15カ国以上、約150の新しい組織に提供対象を広げる",
-      "summary_source": "gemini",
-      "title": "Expanding Project Glasswing",
-      "uid": "93e399a963858213",
-      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
       "vendor": "Anthropic"
     }
   ]
