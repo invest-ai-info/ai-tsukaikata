@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="446" viewBox="0 0 720 446" role="img" aria-label="キャッチコピーの二巡目を頼むとき、一巡目と似た案が何件混ざるかを、二巡目の言い方5通りで並べた横棒グラフ。架空の商品2件について各2回、1つの頼み方につき4回ずつ、合わせて20回通した。一巡目の指示文は5通りとも同じで、振ったのは二巡目の言い方だけ。二巡目に返った案は20回とも30案ちょうどで、発注書の4条件も20回とも30案すべて通った。もっと案をくださいと頼んだ4回は、似た案が0件から3件、一字一句同じ案は0件。あと30案出してくださいと頼んだ4回は、似た案が0件から2件、同じ案は0件から1件。一つも重ならない案を30案と頼んだ4回は、似た案も同じ案も4回とも0件。同じ指示文を同じ会話でもう一度通した4回は、似た案が2件から3件、同じ案は0件。同じ指示文を新しい会話でもう一度通した4回は、似た案が4件から7件、同じ案が0件から3件で、5通りの中でいちばん重なった。二巡目の中で完全に重複した案は、20回とも0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="446"/>
+<text class="t-strong" x="18" y="26">二巡目の三十案のうち、一巡目と似た案が何件混ざるか</text>
+<text class="t-sm" x="18" y="45">架空の商品2件（冷凍パンの定期便・領収書の読み取り）に、同じ一巡目の指示文を通してから、二巡目の言い方だけを振った実測。</text>
+<text class="t-sm" x="18" y="64">1つの頼み方につき4回（材料2本×各2回）、全20回。二巡目に返った案は20回とも30案ちょうどで、4条件も20回とも30案すべて通った。</text>
+<text class="t-sm" x="18" y="83">棒＝一巡目の案と文字の重なりが七割以上だった案の数（4回ぶんの最小〜最大）。その下の行は、一字一句そのまま同じだった案の数。</text>
+<text class="t-xs" x="296" y="116" text-anchor="middle">0</text>
+<text class="t-xs" x="446" y="116" text-anchor="middle">5</text>
+<text class="t-xs" x="596" y="116" text-anchor="middle">10案</text>
+<text class="t" x="18" y="143">「もっと案をください。」</text>
+<rect class="box-quiet" x="296.0" y="128" width="300" height="20" rx="2"/>
+<rect class="bar-in" x="296.0" y="128" width="90.0" height="20" rx="2"/>
+<rect class="bar-old" x="296.0" y="128" width="90.0" height="20" rx="2"/>
+<text class="t" x="394.0" y="143">0〜3件</text>
+<text class="t-xs" x="18" y="158">　うち一字一句そのまま同じ案: 0件</text>
+<text class="t" x="18" y="187">「あと30案出してください。」</text>
+<rect class="box-quiet" x="296.0" y="172" width="300" height="20" rx="2"/>
+<rect class="bar-in" x="296.0" y="172" width="60.0" height="20" rx="2"/>
+<rect class="bar-old" x="296.0" y="172" width="60.0" height="20" rx="2"/>
+<text class="t" x="364.0" y="187">0〜2件</text>
+<text class="t-xs" x="18" y="202">　うち一字一句そのまま同じ案: 0〜1件</text>
+<text class="t" x="18" y="231">「一つも重ならない案を、30案」</text>
+<rect class="box-quiet" x="296.0" y="216" width="300" height="20" rx="2"/>
+<rect class="bar-in" x="296.0" y="216" width="2.0" height="20" rx="2"/>
+<text class="t-good" x="304.0" y="231">0件</text>
+<text class="t-xs" x="18" y="246">　うち一字一句そのまま同じ案: 0件</text>
+<text class="t" x="18" y="275">同じ指示文をもう一度（同じ会話）</text>
+<rect class="box-quiet" x="296.0" y="260" width="300" height="20" rx="2"/>
+<rect class="bar-in" x="296.0" y="260" width="90.0" height="20" rx="2"/>
+<rect class="bar-old" x="356.0" y="260" width="30.0" height="20" rx="2"/>
+<text class="t" x="394.0" y="275">2〜3件</text>
+<text class="t-xs" x="18" y="290">　うち一字一句そのまま同じ案: 0件</text>
+<text class="t" x="18" y="319">同じ指示文をもう一度（新しい会話）</text>
+<rect class="box-quiet" x="296.0" y="304" width="300" height="20" rx="2"/>
+<rect class="bar-out" x="296.0" y="304" width="210.0" height="20" rx="2"/>
+<rect class="bar-old" x="416.0" y="304" width="90.0" height="20" rx="2"/>
+<text class="t-bad" x="514.0" y="319">4〜7件</text>
+<text class="t-xs" x="18" y="334">　うち一字一句そのまま同じ案: 0〜3件</text>
+<text class="t-good" x="18" y="362">※ 二巡目の中で完全に重複した案は、20回とも0件だった。</text>
+<text class="t-bad" x="18" y="383">※ いちばん重なるのは、会話を切って同じ指示文をやり直した回（4〜7件・同じ案が最大3件）。</text>
+<text class="t-good" x="18" y="404">※ 二巡目に「一つも重ならない案を」と書いた4回だけ、似た案も同じ案も0件。</text>
+<text class="t-xs" x="18" y="425">架空データでの実測（全20回）。生の返りと判定コードは docs/evidence/ に全文置いてある。</text>
+</svg>
