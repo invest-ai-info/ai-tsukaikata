@@ -6,7 +6,9 @@
 """
 from datetime import datetime, timezone
 
-from tracker.deepdive import DAILY_LIMIT, append_lines, queued_urls, select_candidates
+from tracker.deepdive import (
+    DAILY_LIMIT, append_lines, is_unreadable, queued_urls, select_candidates,
+)
 from tracker.models import Update
 from tracker.run import run_check
 from tracker.store import load_state
@@ -75,6 +77,59 @@ def test_append_lines_inserts_before_done_section():
 def test_append_lines_without_done_section_appends_at_end():
     result = append_lines("## 待ち行列\n", [_update("a")], NOW)
     assert result.endswith("  - 2026-08-06 自動追記（major・V「題a」）\n")
+
+
+
+# --- 読めないホストに枠を取らせない（2026-08-31）---
+#
+# 直近5件の自動追記が全部 openai.com で、そのどれも先方の bot 判定で読めず、
+# tools/ の自動公開が2026-08-21で止まっていた。枠は1日3件しかないので、
+# 「読めないと分かっているものが枠を取る」ことそのものが事故になる。
+
+
+def test_is_unreadable_matches_the_host_and_www():
+    assert is_unreadable("https://openai.com/index/a")
+    assert is_unreadable("https://www.openai.com/index/a")
+
+
+def test_is_unreadable_does_not_match_subdomains():
+    """⚠️ developers/platform は200を実測済み。まとめて締め出すと読める出典まで捨てる。"""
+    assert not is_unreadable("https://developers.openai.com/api/docs/pricing")
+    assert not is_unreadable("https://platform.openai.com/docs/models")
+    assert not is_unreadable("https://notopenai.com/index/a")
+
+
+def test_select_skips_unreadable_and_gives_the_slot_to_a_readable_one():
+    updates = [
+        _update("blocked", url="https://openai.com/index/blocked"),
+        _update("ok", url="https://deepmind.google/blog/ok"),
+    ]
+    picked = select_candidates(
+        updates, SOURCE_TYPES, queued_uids=set(), queued_urls_=set(), today_count=2,
+    )
+    # today_count=2 ＝残り枠は1つ。読めないほうが取ってしまわないこと
+    assert [u.uid for u in picked] == ["ok"]
+
+
+def test_select_reports_what_it_skipped():
+    """黙って捨てない。呼び出し側が件数を出せるように受け皿へ入る。"""
+    skipped = []
+    picked = select_candidates(
+        [_update("blocked", url="https://openai.com/index/blocked")],
+        SOURCE_TYPES, queued_uids=set(), queued_urls_=set(), today_count=0,
+        skipped=skipped,
+    )
+    assert picked == []
+    assert [u.uid for u in skipped] == ["blocked"]
+
+
+def test_select_without_skipped_list_still_works():
+    """受け皿を渡さない呼び出し（既存の使い方）が壊れないこと。"""
+    picked = select_candidates(
+        [_update("blocked", url="https://openai.com/index/blocked")],
+        SOURCE_TYPES, queued_uids=set(), queued_urls_=set(), today_count=0,
+    )
+    assert picked == []
 
 
 # --- run_check への配線 ---
@@ -154,3 +209,22 @@ def test_run_check_without_queue_path_still_works(tmp_path):
         fetcher=_fetcher([_major("a")]), mailer=mailer, now=NOW,
     )
     assert len(mailer.sent) == 1
+
+
+def test_run_check_does_not_queue_unreadable_sources(tmp_path):
+    """読めないホストのお知らせは、キューにもstateにも入らない。"""
+    queue = _queue_file(tmp_path)
+    state_path = tmp_path / "seen.json"
+    blocked = Update(
+        uid="b", source_id="ann", vendor="V", label="L",
+        title="Introducing b", url="https://openai.com/index/b",
+        published=NOW, summary="",
+    )
+    run_check(
+        sources=SOURCES, state_path=state_path,
+        fetcher=_fetcher([blocked]), mailer=Mailer(), now=NOW,
+        queue_path=queue,
+    )
+    text = queue.read_text(encoding="utf-8")
+    assert "openai.com" not in text
+    assert load_state(state_path).get("deepdive_queued", {}) == {}

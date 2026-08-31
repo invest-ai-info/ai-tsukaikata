@@ -331,6 +331,51 @@
       仰いでから、`- [x]`（見送り確定）にするか判断するのがよい。担当の判断だけで確定にはしない
       （AI Futures のときも人間の確認を経て確定させた前例に合わせる）。
 
+### 🆕 2026-08-31 の補充（枠の詰まりを外すため・手動追記）
+
+**なぜ足したか＝キューの未処理が0件で、保留6件が全部 `openai.com`（先方のbot判定・再試行の対象外）
+だったから。**この状態だと毎朝のルーティンは手順1で「未処理なし」を見て38秒で帰る。実際
+`content/tools/` の自動公開は **2026-08-21 の `daybreak-on-bedrock` が最後**（10日間ゼロ）。
+
+🔑 **枠の取り合いが原因だった。**自動追記は1日3件までで、8/18・8/20×2・8/25・8/26 の
+**5回連続が全部 `openai.com`**（発表語「Introducing …」にいちばんよく当たるため）。
+読める会社のお知らせが来ても、枠が空いていない日があった。
+→ `tracker/deepdive.py` に `UNREADABLE_HOSTS` を足し、**読めないと実測済みのホストには枠を取らせない**
+ようにした（2026-08-31）。⚠️ 載せるのは**先方のbot判定**だけ。経路遮断は載せない（許可リストで直るので、
+直った日に自動で戻ってほしい）。⚠️ サブドメインは含めない（`developers.openai.com` は200を実測済み）。
+
+⚠️ **下の3件の到達性は、私の手元のPCで測った値。**クラウド側の結果は別（CLAUDE.md 2026-08-05 の実例）。
+**この行に当たる担当は、自分の環境で測り直してから進めること。**
+
+- [ ] https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/
+  - 2026-08-31 手動追記（補充1件目。`news.json` の major お知らせのうち、読めるホストで未処理のもの）
+  - **このサイトの読者にいちばん近い題材**＝AIが画面を操作する＝コードを書かずに自動化する話そのもの
+  - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約379KB を実測）。
+    最終URL＝`blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/`。
+    **`deepmind.google` だけでなく `blog.google` にも届く必要がある。**届かなければ、それは経路遮断
+    （＝許可リストに足せば直る種類）なので、そう書いて止まること
+  - 集めたい数字＝**対応している操作の種類・制限・料金・使えるモデル**。
+    比較相手は Anthropic の computer use（`docs.claude.com` は許可リストに入っている）
+- [ ] https://www.anthropic.com/news/introducing-claude-tag
+  - 2026-08-31 手動追記（補充2件目）
+  - 会社員の日常（Slack）に入る話。**`www.anthropic.com` は 2026-08-04 の `claude-opus-5` で
+    実際に記事化できている**（手元では200を実測）
+  - 集めたい数字＝**使える場所・必要な権限・料金の扱い**。⚠️ 数字が1つも無い告知だったら、
+    「AI Futures」（2026-08-21 オーナー見送り）と同じ形なので、比較できる数字があるかを先に確かめる
+- [ ] https://www.anthropic.com/news/reflect-with-claude
+  - 2026-08-31 手動追記（補充3件目）
+  - 「自分の使い方を測る」＝このサイトの`verify-before-report`系と噛み合う。手元では200を実測
+  - 集めたい数字＝**何を集計するのか・誰に見えるのか・切れるのか**。
+    ⚠️ プライバシーに触れる題材なので、**書いていないことを書かない**（推測で補わない）
+
+📌 **同じ条件（読めるホスト・major のお知らせ・未処理）で残っている候補**——枠が空いたらここから足す。
+`news.json` を `importance=major` かつ お知らせ系ソースで絞れば同じ一覧が出る:
+`www.anthropic.com`＝Claude Sonnet 5(6/30)・Claude for Teachers(7/14)／
+`deepmind.google`＝Gemma 4 12B(6/9)・Gemini Robotics ER 2(7/30)・Lyria 3.5(7/29)／
+`tech.preferred.jp`＝PLaMo 3.0 Prime(6/22。⚠️ 301で `www.preferred.jp` へ飛ぶ・手元で最終200)。
+⚠️ **古い告知でも構わない**（`tools/` は速報ではなく「このツールは何ができるか」の調べ物）。
+ただし**記事に `checked` の日付を必ず入れる**こと。
+
 ## 処理済み
 
 - https://openai.com/index/daybreak-models-are-now-available-on-aws → **公開済み** content/tools/daybreak-on-bedrock.md（2026-08-21・公開）

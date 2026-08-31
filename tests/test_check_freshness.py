@@ -12,6 +12,8 @@ from check_freshness import (  # noqa: E402
     external_links,
     earn_demand_gaps,
     hypothesis_registration_gaps,
+    hypothesis_stock_empty,
+    deepdive_queue_shortage,
     earn_queue_shortage,
     earn_research_heartbeat,
     evidence_gaps,
@@ -787,3 +789,91 @@ def test_every_run_of_the_day_is_checked_not_just_the_first():
 def test_writer_measurement_gaps_without_a_file_is_silent():
     """ファイルの不在は heartbeat 側の担当。ここで二重に鳴らさない。"""
     assert writer_measurement_gaps(None, date(2026, 8, 26)) == []
+
+
+# --- 枯渇を鳴らす番人（2026-08-31 追加）---
+#
+# 3系統とも「空なのに緑」だった。数え方を直すだけでは足りず、
+# 「空である」ことをファイルが言い表せるかどうかが本体だった。
+
+
+def test_earn_queue_shortage_does_not_count_paused_items():
+    """⏸（いま着手できない）は在庫に数えない。床を支えるのは書けるものだけ。"""
+    queue = _queue(
+        "### 副業（テスト）",
+        "- [ ] 書ける題材A",
+        "- [ ] 届かない出典の題材",
+        "  - ⏸ いま着手できない＝出典に到達できない",
+        "- [ ] 前提待ちの題材 ⏸ いま着手できない＝確認待ち",
+        "### 次の節",
+    )
+    problem = earn_queue_shortage(queue, floor=3)
+    assert problem is not None
+    assert "1件" in problem
+    assert "⏸付きが2件" in problem
+
+
+def test_earn_queue_shortage_still_quiet_when_enough_are_workable():
+    queue = _queue(
+        "### 副業（テスト）",
+        "- [ ] A", "- [ ] B", "- [ ] C",
+        "- [ ] 届かない題材",
+        "  - ⏸ いま着手できない",
+        "### 次の節",
+    )
+    assert earn_queue_shortage(queue, floor=3) is None
+
+
+def test_deepdive_queue_shortage_fires_when_empty():
+    """毎朝38秒で帰る状態には、これまで番人がいなかった。"""
+    problem = deepdive_queue_shortage(_queue("## 待ち行列", "", "- [x] 済み"))
+    assert problem is not None
+    assert "0件" in problem
+
+
+def test_deepdive_queue_shortage_does_not_count_blocked_items():
+    """⚠️ `- [!]` は再試行の対象外が混ざる。あることが在庫の証明にならない。"""
+    problem = deepdive_queue_shortage(_queue("- [!] https://a", "- [!] https://b"))
+    assert problem is not None
+    assert "保留" in problem and "2件" in problem
+
+
+def test_deepdive_queue_shortage_is_quiet_with_one_unprocessed():
+    assert deepdive_queue_shortage(_queue("- [ ] https://a", "- [!] https://b")) is None
+    assert deepdive_queue_shortage(None) is None
+
+
+def _hypothesis(state: str, backlog: int = 0) -> str:
+    lines = [
+        "## 優先キュー",
+        "### H1 なにか",
+        f"- 状態: {state}",
+        "- 登録日: 2026-08-25",
+        "- 仮説: あ", "- 材料: い", "- 測り方: う",
+        "- 試行回数: 10回", "- 反証条件: え", "- 需要: 実質9語",
+        "",
+        "## バックログ",
+    ] + [f"- 案{i}" for i in range(backlog)]
+    return _queue(*lines)
+
+
+def test_hypothesis_stock_empty_fires_when_everything_was_handed_over():
+    """📤変換済みだけになったら鳴る＝源0が空。これが今まで無音だった。"""
+    problem = hypothesis_stock_empty(_hypothesis("📤変換済み", backlog=7))
+    assert problem is not None
+    assert "0件" in problem
+    assert "バックログに7件" in problem
+
+
+def test_hypothesis_stock_empty_is_quiet_while_one_is_unstarted():
+    assert hypothesis_stock_empty(_hypothesis("⏳未着手", backlog=7)) is None
+
+
+def test_hypothesis_stock_empty_is_quiet_without_a_file():
+    assert hypothesis_stock_empty(None) is None
+    assert hypothesis_stock_empty("") is None
+
+
+def test_hypothesis_stock_empty_does_not_break_the_registration_guard():
+    """状態語彙を増やしても、必須欄の判定は変わらない。"""
+    assert hypothesis_registration_gaps(_hypothesis("📤変換済み")) == []

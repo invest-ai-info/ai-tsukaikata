@@ -15,6 +15,7 @@ import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from . import deepdive
 from . import fetch as fetch_module
@@ -97,13 +98,23 @@ def _enqueue_deepdive(major, sources, state, now, queue_path) -> None:
             s["id"]: s["type"] for s in sources if s.get("id") and s.get("type")
         }
         text = queue_path.read_text(encoding="utf-8")
+        # ⚠️ 飛ばしたぶんは必ず出す。枠を静かに削るのが一番まずい壊れ方（2026-08-31）
+        skipped: list = []
         picked = deepdive.select_candidates(
             major,
             source_types,
             queued_uids=store.deepdive_queued_uids(state),
             queued_urls_=deepdive.queued_urls(text),
             today_count=store.deepdive_queued_today(state, now),
+            skipped=skipped,
         )
+        if skipped:
+            hosts = sorted({urlsplit(u.url).hostname or "?" for u in skipped})
+            print(
+                f"深掘りキューに入れなかったお知らせ {len(skipped)}件"
+                f"（出典が読めないホスト＝{'・'.join(hosts)}）。"
+                f"枠は読める会社へ回した"
+            )
         if not picked:
             return
         queue_path.write_text(
