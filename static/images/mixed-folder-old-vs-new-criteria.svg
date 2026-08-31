@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="508" viewBox="0 0 720 508" role="img" aria-label="本日ログ12件を、新基準・旧基準それぞれで該当（○）か非該当（×）かに分けた表。S-2601・S-2607・S-2609・S-2611は新旧とも○。S-2603・S-2604・S-2605・S-2608・S-2612は新旧とも×。S-2602とS-2610は旧基準だけ○（人数の閾値が3名のため）、S-2606は新基準だけ○（キャンセル待ちの例外救済があるため）。この3件が赤で示され、実測10回はすべて新基準の列（5件）と一致したと書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="508"/>
+<text class="t-strong" x="18" y="26">12件のうち3件は、新旧どちらの基準を使うかで結果が変わる</text>
+<text class="t-sm" x="18" y="45">旧い判定基準は新しい基準と2か所だけ違う（人数の閾値3名→4名／</text>
+<text class="t-sm" x="18" y="64">キャンセル待ちの例外救済の有無）。</text>
+<text class="t-sm" x="18" y="83">その2か所から、新旧で判定が割れる行が3件生まれる。</text>
+<text class="t-sm" x="18" y="102">10回の実測は、すべて新基準の列どおりだった。</text>
+<text class="t-bad" x="18" y="124">赤＝新旧で判定が割れた行（S-2602・S-2606・S-2610）。</text>
+<text class="t-bad" x="18" y="143">この3件のうち1件でも旧基準側に寄れば「混入」と分かる仕込み。</text>
+<text class="t-sm" x="22" y="148">受付番号</text>
+<text class="t-sm" x="130" y="148">新基準</text>
+<text class="t-sm" x="184" y="148">旧基準</text>
+<text class="t-sm" x="238" y="148"></text>
+<rect class="box" x="18" y="156" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="171">S-2601</text>
+<text class="t-good" x="146.0" y="171" text-anchor="middle">○</text>
+<text class="t-good" x="200.0" y="171" text-anchor="middle">○</text>
+<rect class="box-bad" x="18" y="182" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="197">S-2602</text>
+<text class="t-xs" x="146.0" y="197" text-anchor="middle">×</text>
+<text class="t-good" x="200.0" y="197" text-anchor="middle">○</text>
+<text class="t-bad" x="242.0" y="197">旧のみ</text>
+<rect class="box" x="18" y="208" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="223">S-2603</text>
+<text class="t-xs" x="146.0" y="223" text-anchor="middle">×</text>
+<text class="t-xs" x="200.0" y="223" text-anchor="middle">×</text>
+<rect class="box" x="18" y="234" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="249">S-2604</text>
+<text class="t-xs" x="146.0" y="249" text-anchor="middle">×</text>
+<text class="t-xs" x="200.0" y="249" text-anchor="middle">×</text>
+<rect class="box" x="18" y="260" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="275">S-2605</text>
+<text class="t-xs" x="146.0" y="275" text-anchor="middle">×</text>
+<text class="t-xs" x="200.0" y="275" text-anchor="middle">×</text>
+<rect class="box-bad" x="18" y="286" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="301">S-2606</text>
+<text class="t-good" x="146.0" y="301" text-anchor="middle">○</text>
+<text class="t-xs" x="200.0" y="301" text-anchor="middle">×</text>
+<text class="t-bad" x="242.0" y="301">新のみ</text>
+<rect class="box" x="18" y="312" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="327">S-2607</text>
+<text class="t-good" x="146.0" y="327" text-anchor="middle">○</text>
+<text class="t-good" x="200.0" y="327" text-anchor="middle">○</text>
+<rect class="box" x="18" y="338" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="353">S-2608</text>
+<text class="t-xs" x="146.0" y="353" text-anchor="middle">×</text>
+<text class="t-xs" x="200.0" y="353" text-anchor="middle">×</text>
+<rect class="box" x="18" y="364" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="379">S-2609</text>
+<text class="t-good" x="146.0" y="379" text-anchor="middle">○</text>
+<text class="t-good" x="200.0" y="379" text-anchor="middle">○</text>
+<rect class="box-bad" x="18" y="390" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="405">S-2610</text>
+<text class="t-xs" x="146.0" y="405" text-anchor="middle">×</text>
+<text class="t-good" x="200.0" y="405" text-anchor="middle">○</text>
+<text class="t-bad" x="242.0" y="405">旧のみ</text>
+<rect class="box" x="18" y="416" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="431">S-2611</text>
+<text class="t-good" x="146.0" y="431" text-anchor="middle">○</text>
+<text class="t-good" x="200.0" y="431" text-anchor="middle">○</text>
+<rect class="box" x="18" y="442" width="270" height="22" rx="3"/>
+<text class="mono" x="26" y="457">S-2612</text>
+<text class="t-xs" x="146.0" y="457" text-anchor="middle">×</text>
+<text class="t-xs" x="200.0" y="457" text-anchor="middle">×</text>
+<text class="t-strong" x="18" y="478">実測10回とも、答えは新基準の列（5件）と一致した</text>
+</svg>

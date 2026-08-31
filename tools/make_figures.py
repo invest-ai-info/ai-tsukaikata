@@ -15129,7 +15129,184 @@ def youtube_ai_hit_and_miss_chart() -> None:
     )
 
 
+def mixed_folder_count_vs_leak_chart() -> None:
+    """無関係な資料を増やしても、答えに紛れ込んだ受付番号は0のままだったことを示す横棒グラフ。
+
+    実測（2026-08-31）。当日の受付ログ・連絡メモ・判定基準の3点に、
+    無関係な資料（献立表・先月ログ・別部署メモ・旧判定基準）を0〜4本足した
+    5つの版を、各2回・計10回試した。棒は「混ぜた無関係資料の本数」、
+    右のラベルが「答えに紛れ込んだ件数（分母は試行回数）」。
+    """
+    rows = [
+        ("(a) 関係する3本だけ", 0, "0/2"),
+        ("(b) ＋献立表を1本", 1, "0/2"),
+        ("(c) ＋無関係4本を混ぜる", 4, "0/2"),
+        ("(d) (c)＋「使わないで」を明記", 4, "0/2"),
+        ("(e) (c)＋「使った資料を書いて」", 4, "0/2"),
+    ]
+    label_x, label_w = 18, 250
+    plot_x = label_x + label_w
+    plot_w = 260
+    top = 130
+    row_h = 40
+    unit = plot_w / 4.0
+    bar_h = 16
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "無関係な資料を4本まで増やしても、混入は0のままだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "当日の受付ログ・連絡メモ・判定基準の3点に、無関係な資料を0〜4本混ぜた5つの版を、"
+        "各2回・計10回試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒＝混ぜた無関係資料の本数。右の分数＝答えに紛れ込んだ件数／試行回数。</text>\n",
+        '<text class="t-bad" x="18" y="86">'
+        "※ 先月ログには、今日の基準に当てはめると該当しそうに見える5件を仕込んだが、"
+        "10回とも1件も出てこなかった。</text>\n",
+    ]
+    for v in (0, 1, 2, 3, 4):
+        gx = plot_x + v * unit
+        parts.append(
+            f'<path class="line" d="M{gx:.1f} {top - 6} L{gx:.1f} '
+            f'{top + row_h * len(rows) - 22}" stroke-dasharray="3 4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{gx:.1f}" y="{top - 12}" '
+            f'text-anchor="middle">{v}本</text>\n'
+        )
+
+    y = top
+    for label, val, frac in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty + 5}">{_esc(label)}</text>\n')
+        w = max(val * unit, 2.0)
+        parts.append(
+            f'<rect class="bar-old" x="{plot_x:.1f}" y="{ty - 11}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{plot_x + plot_w + 14:.1f}" y="{ty + 2}">'
+            f"混入 {frac}</text>\n"
+        )
+        y += row_h
+
+    y += 4
+    notes = [
+        "5版とも、該当5件（S-2601・S-2606・S-2607・S-2609・S-2611）は10回とも一致した。",
+        "旧い判定基準（2か所だけ新基準と違う）を使ってしまった回も、10回中0回だった。",
+    ]
+    for text in notes:
+        parts.append(f'<text class="t-xs" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 6
+    alt = (
+        "無関係な資料を混ぜた本数（0〜4本）を横棒で示し、その右に答えに紛れ込んだ件数を"
+        "試行回数分の分数で示した図。関係する3本だけの版・献立表を1本足した版・"
+        "無関係4本を混ぜた版・使わないでと明記した版・使った資料を書かせた版の5つとも、"
+        "混入は0/2で、10回通しても0/10だった。先月ログには今日の基準に当てはめると"
+        "該当しそうに見える5件をわざと仕込んだが、10回とも1件も答えに出てこなかった。"
+        "5版とも該当5件は10回とも一致し、旧い判定基準を使ってしまった回も0回だった。"
+    )
+    (OUT / "mixed-folder-count-vs-leak.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def mixed_folder_old_vs_new_criteria_chart() -> None:
+    """当日の12件を、新基準・旧基準それぞれで該当/非該当に分けた内訳グリッド。
+
+    実測（2026-08-31）。旧い判定基準は新しい基準と2か所だけ違う
+    （人数の閾値と、キャンセル待ちの例外救済の有無）。その差から、
+    新旧で判定が割れる行が3件生まれるように材料を作った。
+    """
+    cols = [
+        ("S-2601", "○", "○", ""),
+        ("S-2602", "×", "○", "旧のみ"),
+        ("S-2603", "×", "×", ""),
+        ("S-2604", "×", "×", ""),
+        ("S-2605", "×", "×", ""),
+        ("S-2606", "○", "×", "新のみ"),
+        ("S-2607", "○", "○", ""),
+        ("S-2608", "×", "×", ""),
+        ("S-2609", "○", "○", ""),
+        ("S-2610", "×", "○", "旧のみ"),
+        ("S-2611", "○", "○", ""),
+        ("S-2612", "×", "×", ""),
+    ]
+    top = 156
+    col_w = 54
+    left = 18
+    row_h = 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "12件のうち3件は、新旧どちらの基準を使うかで結果が変わる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "旧い判定基準は新しい基準と2か所だけ違う（人数の閾値3名→4名／</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "キャンセル待ちの例外救済の有無）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "その2か所から、新旧で判定が割れる行が3件生まれる。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "10回の実測は、すべて新基準の列どおりだった。</text>\n",
+        '<text class="t-bad" x="18" y="124">'
+        "赤＝新旧で判定が割れた行（S-2602・S-2606・S-2610）。</text>\n",
+        '<text class="t-bad" x="18" y="143">'
+        "この3件のうち1件でも旧基準側に寄れば「混入」と分かる仕込み。</text>\n",
+    ]
+
+    headers = ["受付番号", "新基準", "旧基準", ""]
+    hx = left
+    for h in headers:
+        w = col_w * 2 if h == "受付番号" else col_w
+        parts.append(f'<text class="t-sm" x="{hx + 4}" y="{top - 8}">{_esc(h)}</text>\n')
+        hx += w
+
+    y = top
+    for rid, new_v, old_v, diff in cols:
+        row_bg = "box-bad" if diff else "box"
+        parts.append(
+            f'<rect class="{row_bg}" x="{left}" y="{y}" width="{col_w * 5}" '
+            f'height="{row_h - 4}" rx="3"/>\n'
+        )
+        parts.append(f'<text class="mono" x="{left + 8}" y="{y + 15}">{rid}</text>\n')
+        for i, val in enumerate((new_v, old_v)):
+            cls = "t-good" if val == "○" else "t-xs"
+            parts.append(
+                f'<text class="{cls}" x="{left + col_w * 2 + col_w * i + 20:.1f}" '
+                f'y="{y + 15}" text-anchor="middle">{val}</text>\n'
+            )
+        if diff:
+            parts.append(
+                f'<text class="t-bad" x="{left + col_w * 4 + 8:.1f}" y="{y + 15}">'
+                f"{_esc(diff)}</text>\n"
+            )
+        y += row_h
+
+    y += 10
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "実測10回とも、答えは新基準の列（5件）と一致した</text>\n"
+    )
+    y += 22
+
+    height = y + 8
+    alt = (
+        "本日ログ12件を、新基準・旧基準それぞれで該当（○）か非該当（×）かに分けた表。"
+        "S-2601・S-2607・S-2609・S-2611は新旧とも○。S-2603・S-2604・S-2605・S-2608・"
+        "S-2612は新旧とも×。S-2602とS-2610は旧基準だけ○（人数の閾値が3名のため）、"
+        "S-2606は新基準だけ○（キャンセル待ちの例外救済があるため）。"
+        "この3件が赤で示され、実測10回はすべて新基準の列（5件）と一致したと書かれている。"
+    )
+    (OUT / "mixed-folder-old-vs-new-criteria.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    mixed_folder_count_vs_leak_chart()
+    mixed_folder_old_vs_new_criteria_chart()
     youtube_payout_ladder_chart()
     youtube_ai_hit_and_miss_chart()
     x_cash_flow_timeline_chart()
