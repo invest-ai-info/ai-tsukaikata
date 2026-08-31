@@ -13,6 +13,32 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-08-31T15:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "",
+      "title": "Improving our alignment and security efforts",
+      "uid": "37ceb0820d3e35d8",
+      "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-31T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development.",
+      "summary_ja": "Polimillが次世代公共AI基盤を構築\nOpenAIのGPTやCodexを活用し\n自治体の行政知識活用や開発を支援",
+      "summary_source": "gemini",
+      "title": "Polimill builds Japan's next-generation public AI infrastructure",
+      "uid": "625c51f7723daf46",
+      "url": "https://openai.com/index/polimill",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-31T13:58:05.785698+00:00",
       "importance": "major",
       "label": "DeepSeek 新モデル",

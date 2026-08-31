@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-31T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの業務利用が広がるにつれ、AI向けの「社員証」と「委任状」に注目が集まっている。これらはどのような仕組みで、何を防げるのか。実際の事故や各社の動きを整理し、今からできる対策を解説する。",
+      "title": "「AIが勝手にやった」は通用しない？　AIエージェントにも“社員証”と“委任状”が要るワケ　今からできる対策も解説",
+      "uid": "433c1a1117dec125",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/01/2000000898/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-31T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、AI投資の成果を測る指標として「1ドル当たりの有用なインテリジェンス」を提唱した。購入したシート数や利用者数といった導入状況ではなく、完了した仕事の量と品質、成功したタスク1件当たりのコストで評価する考え方だ。",
+      "title": "「安いモデルで3回やり直し」と「高いモデルで一発完了」　コストが低いのはどっち？",
+      "uid": "7fe96095fffa879a",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/01/news018.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-31T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "三菱ケミカルが、半導体パッケージ向けに「温めると縮む新材料」を開発した。AI時代に無視できない「熱問題」を解決できるという。何がすごいのか。",
+      "title": "三菱ケミカル、半導体向けに「温めると縮む新材料」開発　AI時代の課題に光明、何がすごいのか？",
+      "uid": "4179b9135be4815a",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/01/news039.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-31T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "オープンソース開発者のサイモン・ウィリソン氏が、2026年7月に登場した「ChatGPT ワーク」について調査を行い、わかった仕組みについてブログで情報を公開しました。 続きを読む...",
+      "title": "「ChatGPT Work」の仕組みに関する考察",
+      "uid": "98e9de6234801878",
+      "url": "https://gigazine.net/news/20260901-understanding-chatgpt-work/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-31T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「LLMを導入したのに生産性が上がらない」「レビューに追われる」 現場が直面する“限界”に対し、トップランナーたちが口をそろえて語るのが「ハーネスエンジニアリング」だ。先行者が明かす知見・ノウハウからハーネスエンジニアリングの実相に迫る。",
+      "title": "AI開発はプロンプトからコンテキスト、ハーネスへと向かう　ハーネス成熟度を測る3つのチェックリスト",
+      "uid": "cd3b7b2ceb6bbe3e",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/01/news012.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-08-31T23:53:13.286183+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-08-31T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIがChatGPT BusinessでPremiumシートの提供を開始した。Anthropic、Cursorに続き、主要な企業向けAIで、利用量の多い社員だけ上位シートを割り当てられる仕組みがそろった。3社の料金や利用枠、実際の設定方法を比較し、企業のAI利用で何が変わるのかを考える。",
+      "title": "AIをよく使う社員だけ5倍に　Claude、ChatGPT／Codex、Cursorで企業がAIを本格運用できる時代へ",
+      "uid": "6fd8066f5a71d8c9",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/01/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-08-31T20:08:43.772152+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2327,78 +2399,6 @@
       "uid": "e92a0b47d1fe180a",
       "url": "https://ai.watch.impress.co.jp/docs/news/2135052.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-24T09:07:01.906974+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-24T07:48:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "NVIDIAが一部の顧客に対して、「Vera Rubin」や「Grace Blackwell」を含むAIチップ搭載サーバーの価格を15％以上引き上げると通知したことがわかりました。2027年出荷分から値上げ後の価格が適用される見通しです。 続きを読む...",
-      "title": "NVIDIAが大手顧客に対してAI関連製品を15％以上値上げすると通知、「Vera Rubin」や「Grace Blackwell」などにも影響か",
-      "uid": "b8748bdb089fcdd5",
-      "url": "https://gigazine.net/news/20260824-nvidia-price-hike-ai-related-products/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-24T09:07:01.906974+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-24T07:45:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは、編集部が厳選した「この夏読んでほしい本」30冊を全文無料公開し、さらに電子書籍が30％OFFで購入できるキャンペーン「インプレスブックス夏の30冊」を8月24日～8月31日に開催する。",
-      "title": "全文無料公開＆30％OFF「インプレスブックス夏の30冊」キャンペーン",
-      "uid": "07408fef1e911a7d",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2134991.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-24T09:07:01.906974+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-24T07:31:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Paradoxは8月24日、実用性に特化し毎日使える快適性を追求した「Beifa AIスマートグラス GE01-3」を、クラウドファンディングサイト「Makuake」で8月下旬より先行販売すると発表した。一般販売予定価格37,400円のところ、先行販売期間中は最大38%OFFの23,188円から購入できる。一般販売は2027年1月に開始予定。",
-      "title": "Chat GPT搭載AIスマートグラス、Makuakeで8月下旬より先行販売",
-      "uid": "e130b9ac01a79291",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135034.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-24T09:07:01.906974+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-24T07:30:16+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "MetaとNVIDIA、Alibabaが30Bクラスのオープンモデルを相次ぎ公開し、国産の「LLM-jp-4 33B」も登場した。このサイズのモデルが今“熱い”理由と留意点を考察する。",
-      "title": "なぜいま30Bクラスのオープンモデルが“熱い”のか　「27BパラメータでOpus 4.6超え」も",
-      "uid": "57f1ae54ee77bf3b",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/24/2000000723/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-24T07:30:45.265644+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-24T07:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Google DeepMindが宇宙MMORPG「EVE Online」の開発元であるFenris Creationsと進めている研究提携について、EVEシリーズをAI研究に活用する具体的な取り組みを明らかにしました。20年以上にわたってプレイヤーが経済や戦争、外交を作り上げてきたEVE Onlineの世界を使い、AIが長期間にわたって学習・記憶・計画しながら人間と関わるための技術を研究するとの…",
-      "title": "Google DeepMindが「EVE Online」でAI研究、20年以上続く仮想宇宙を「知能を映す鏡」として活用へ",
-      "uid": "48ca4953a1510776",
-      "url": "https://gigazine.net/news/20260824-google-deepmind-eve-online-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-24T07:30:45.265644+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-24T07:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ビジネス向けSNSとして知られるLinkedInは2026年7月に、「AIが生成した低品質な投稿」を通報するためのボタン「Seems Like AI Slop(AIスロップと思われる)」を追加しました。 LinkedInの最高製品責任者であるハリ・スリニヴァサン氏は、この「AIスロップ通報ボタン」が約1カ月で100万人以上にクリックされたとLinkedInで報告しています。 続きを読む...",
-      "title": "LinkedInの「AIスロップ通報ボタン」が100万人に使用されたと責任者が明かす",
-      "uid": "3eaa7b0e3b3213de",
-      "url": "https://gigazine.net/news/20260824-ai-slop-button-million/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
