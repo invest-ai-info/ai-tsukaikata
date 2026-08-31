@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="410" viewBox="0 0 720 410" role="img" aria-label="同じ取引先・同じ金額の案件が2件あるとき、その2件が返りのどの欄に置かれたかを、頼み方3通りで並べた積み上げ横棒グラフ。架空の納品記録12件と入金明細9行を2組作り、3通り×各6回、合わせて18回通した。素で「まだ入金されていない案件を挙げて」と頼んだ6回は、6回とも未入金の一覧の中に置かれた。内訳は、片方だけを未入金の表に載せた回が1回、2件まとめてどちらか一方と添えた回が5回、確かめるの欄に移した回が0回。決められない案件は確かめるに分けてくださいと一文足した6回は、6回とも確かめるの欄。さらに対応させた明細の行番号も書かせた6回も、6回とも確かめるの欄。一文を足した12回では、未入金の一覧に残ったのは入金が1行も無い案件1件だけだった。片方だけを未入金にした1回は、18回のうちその回だけ、どちらか特定できないという断りを書いていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="410"/>
+<text class="t-strong" x="18" y="26">同じ金額の二件は、頼み方ひとつで置かれる欄が変わる</text>
+<text class="t-sm" x="18" y="45">架空の納品記録12件と入金明細9行を2組作り、同じ取引先・同じ金額の案件を2件だけ仕込んだ実測。</text>
+<text class="t-sm" x="18" y="64">明細にはその金額の入金が1行しかないので、どちらの案件に対応するかは材料からは決まらない。</text>
+<text class="t-sm" x="18" y="83">頼み方3通り × 材料2組 × 各3回 ＝ 全18回。棒はその2件が置かれた欄の内訳（6回ぶん）。</text>
+<rect class="bar-old" x="18" y="95" width="14" height="11" rx="2"/>
+<text class="t-xs" x="38" y="104">未入金の一覧に、片方だけ（もう片方は黙って入金済み側へ）</text>
+<rect class="bar-in" x="18" y="112" width="14" height="11" rx="2"/>
+<text class="t-xs" x="38" y="121">未入金の一覧に、2件まとめて（「どちらか一方」と添えて）</text>
+<rect class="bar-new" x="18" y="129" width="14" height="11" rx="2"/>
+<text class="t-xs" x="38" y="138">「確かめる」の欄（未入金の一覧からは外れる）</text>
+<text class="t" x="18" y="166">(a) 素「まだ入金されていない案件を挙げて」</text>
+<rect class="box-quiet" x="324.0" y="150" width="300" height="22" rx="2"/>
+<rect class="bar-old" x="324.0" y="150" width="50.0" height="22" rx="2"/>
+<rect class="bar-in" x="374.0" y="150" width="250.0" height="22" rx="2"/>
+<text class="t-bad" x="632.0" y="166">1／5／0</text>
+<text class="t" x="18" y="206">(b) ＋「決められない案件は『確かめる』に」</text>
+<rect class="box-quiet" x="324.0" y="190" width="300" height="22" rx="2"/>
+<rect class="bar-new" x="324.0" y="190" width="300.0" height="22" rx="2"/>
+<text class="t-good" x="632.0" y="206">0／0／6</text>
+<text class="t" x="18" y="246">(c) (b)＋対応させた明細の行番号も書かせる</text>
+<rect class="box-quiet" x="324.0" y="230" width="300" height="22" rx="2"/>
+<rect class="bar-new" x="324.0" y="230" width="300.0" height="22" rx="2"/>
+<text class="t-good" x="632.0" y="246">0／0／6</text>
+<text class="t-bad" x="18" y="284">※ 素で頼んだ6回は、6回とも「未入金」の一覧の中に置かれた。</text>
+<text class="t-bad" x="18" y="305">　 うち1回は、片方だけを未入金の表に載せて、もう片方には何も書かなかった。</text>
+<text class="t-bad" x="18" y="326">　 その回だけ「どちらか特定できない」という断りも書いていない（18回中この1回だけ）。</text>
+<text class="t-good" x="18" y="347">※ 一文足した12回は、12回とも「確かめる」の欄に移り、</text>
+<text class="t-good" x="18" y="368">　 未入金の一覧には、入金が1行も無い案件1件だけが残った（12回とも）。</text>
+<text class="t-xs" x="18" y="389">架空データでの実測（全18回）。生の返りと判定コードは docs/evidence/ に全文置いてある。</text>
+</svg>
