@@ -15304,7 +15304,315 @@ def mixed_folder_old_vs_new_criteria_chart() -> None:
     )
 
 
+def second_round_overlap_chart() -> None:
+    """2巡目の30案のうち、1巡目と重なった案が何件かを、頼み方5通りで並べる。
+
+    実測（2026-08-31・架空の商品2件×各2回＝1つの頼み方につき4回、全20回）。
+    1巡目は5版とも同じ指示文（条件を渡して30案）。振ったのは2巡目の言い方だけ。
+    棒＝1巡目の案と文字の2つ組が7割以上重なった案の数（4回ぶんの最小〜最大）。
+    値は check.py の出力。座標は計算で出す。
+    """
+    rows = [
+        ("「もっと案をください。」", 0, 3, 0, 0),
+        ("「あと30案出してください。」", 0, 2, 0, 1),
+        ("「一つも重ならない案を、30案」", 0, 0, 0, 0),
+        ("同じ指示文をもう一度（同じ会話）", 2, 3, 0, 0),
+        ("同じ指示文をもう一度（新しい会話）", 4, 7, 0, 3),
+    ]
+    label_x, label_w = 18, 268
+    plot_x, plot_w = label_x + label_w + 10, 300
+    hi = 10
+    row_h, bar_h, top = 44, 20, 128
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / hi
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "二巡目の三十案のうち、一巡目と似た案が何件混ざるか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の商品2件（冷凍パンの定期便・領収書の読み取り）に、"
+        "同じ一巡目の指示文を通してから、二巡目の言い方だけを振った実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1つの頼み方につき4回（材料2本×各2回）、全20回。"
+        "二巡目に返った案は20回とも30案ちょうどで、4条件も20回とも30案すべて通った。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "棒＝一巡目の案と文字の重なりが七割以上だった案の数（4回ぶんの最小〜最大）。"
+        "その下の行は、一字一句そのまま同じだった案の数。</text>\n",
+        f'<text class="t-xs" x="{px(0):.0f}" y="{top - 12}" text-anchor="middle">0</text>\n',
+        f'<text class="t-xs" x="{px(5):.0f}" y="{top - 12}" text-anchor="middle">5</text>\n',
+        f'<text class="t-xs" x="{px(10):.0f}" y="{top - 12}" text-anchor="middle">10案</text>\n',
+    ]
+
+    y = top
+    for label, lo, up, ex_lo, ex_up in rows:
+        ty = y + 15
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{y}" '
+            f'width="{plot_w}" height="{bar_h}" rx="2"/>\n'
+        )
+        css = "bar-out" if up >= 4 else "bar-in"
+        parts.append(
+            f'<rect class="{css}" x="{px(0):.1f}" y="{y}" '
+            f'width="{max(px(up) - px(0), 2.0):.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        if lo != up:
+            parts.append(
+                f'<rect class="bar-old" x="{px(lo):.1f}" y="{y}" '
+                f'width="{px(up) - px(lo):.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+        text = f"{lo}件" if lo == up else f"{lo}〜{up}件"
+        tc = "t-bad" if up >= 4 else "t-good" if up == 0 else "t"
+        parts.append(
+            f'<text class="{tc}" x="{px(up) + 8:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        same = f"{ex_lo}件" if ex_lo == ex_up else f"{ex_lo}〜{ex_up}件"
+        parts.append(
+            f'<text class="t-xs" x="{label_x}" y="{ty + 15}">'
+            f'{_esc("　うち一字一句そのまま同じ案: " + same)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-good", "※ 二巡目の中で完全に重複した案は、20回とも0件だった。"),
+        ("t-bad", "※ いちばん重なるのは、会話を切って同じ指示文をやり直した回（4〜7件・同じ案が最大3件）。"),
+        ("t-good", "※ 二巡目に「一つも重ならない案を」と書いた4回だけ、似た案も同じ案も0件。"),
+        ("t-xs", "架空データでの実測（全20回）。生の返りと判定コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "キャッチコピーの二巡目を頼むとき、一巡目と似た案が何件混ざるかを、"
+        "二巡目の言い方5通りで並べた横棒グラフ。"
+        "架空の商品2件について各2回、1つの頼み方につき4回ずつ、合わせて20回通した。"
+        "一巡目の指示文は5通りとも同じで、振ったのは二巡目の言い方だけ。"
+        "二巡目に返った案は20回とも30案ちょうどで、発注書の4条件も20回とも30案すべて通った。"
+        "もっと案をくださいと頼んだ4回は、似た案が0件から3件、一字一句同じ案は0件。"
+        "あと30案出してくださいと頼んだ4回は、似た案が0件から2件、同じ案は0件から1件。"
+        "一つも重ならない案を30案と頼んだ4回は、似た案も同じ案も4回とも0件。"
+        "同じ指示文を同じ会話でもう一度通した4回は、似た案が2件から3件、同じ案は0件。"
+        "同じ指示文を新しい会話でもう一度通した4回は、似た案が4件から7件、同じ案が0件から3件で、"
+        "5通りの中でいちばん重なった。"
+        "二巡目の中で完全に重複した案は、20回とも0件だった。"
+    )
+    (OUT / "second-round-overlap.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def unpaid_same_amount_pair_chart() -> None:
+    """同じ金額の2案件が、返りのどの欄に置かれたかを頼み方3通りで並べる。
+
+    実測（2026-08-31・架空の納品記録12件と入金明細9行を2組、3版×各6回＝全18回）。
+    区分は18回の全文を読んで人が付けた（見出しの当て方が回ごとに変わるため機械では
+    1通りに決まらない＝★55・★116）。数字は check.py の印字を見ながら数えた。
+    """
+    rows = [
+        ("(a) 素「まだ入金されていない案件を挙げて」", 1, 5, 0),
+        ("(b) ＋「決められない案件は『確かめる』に」", 0, 0, 6),
+        ("(c) (b)＋対応させた明細の行番号も書かせる", 0, 0, 6),
+    ]
+    keys = [
+        ("bar-old", "未入金の一覧に、片方だけ（もう片方は黙って入金済み側へ）"),
+        ("bar-in", "未入金の一覧に、2件まとめて（「どちらか一方」と添えて）"),
+        ("bar-new", "「確かめる」の欄（未入金の一覧からは外れる）"),
+    ]
+    label_x, label_w = 18, 296
+    plot_x, plot_w = label_x + label_w + 10, 300
+    total = 6
+    row_h, bar_h, top = 40, 22, 150
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / total
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ金額の二件は、頼み方ひとつで置かれる欄が変わる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の納品記録12件と入金明細9行を2組作り、"
+        "同じ取引先・同じ金額の案件を2件だけ仕込んだ実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "明細にはその金額の入金が1行しかないので、"
+        "どちらの案件に対応するかは材料からは決まらない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "頼み方3通り × 材料2組 × 各3回 ＝ 全18回。棒はその2件が置かれた欄の内訳（6回ぶん）。</text>\n",
+    ]
+    ky = 104
+    for css, text in keys:
+        parts.append(
+            f'<rect class="{css}" x="18" y="{ky - 9}" width="14" height="11" rx="2"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="38" y="{ky}">{_esc(text)}</text>\n')
+        ky += 17
+
+    y = top
+    for label, only_one, both, checked in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{y}" '
+            f'width="{plot_w}" height="{bar_h}" rx="2"/>\n'
+        )
+        x = 0
+        for css, n in (("bar-old", only_one), ("bar-in", both), ("bar-new", checked)):
+            if n:
+                parts.append(
+                    f'<rect class="{css}" x="{px(x):.1f}" y="{y}" '
+                    f'width="{px(x + n) - px(x):.1f}" height="{bar_h}" rx="2"/>\n'
+                )
+                x += n
+        text = f"{only_one}／{both}／{checked}"
+        tc = "t-bad" if checked == 0 else "t-good"
+        parts.append(
+            f'<text class="{tc}" x="{px(total) + 8:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 素で頼んだ6回は、6回とも「未入金」の一覧の中に置かれた。"),
+        ("t-bad", "　 うち1回は、片方だけを未入金の表に載せて、もう片方には何も書かなかった。"),
+        ("t-bad", "　 その回だけ「どちらか特定できない」という断りも書いていない（18回中この1回だけ）。"),
+        ("t-good", "※ 一文足した12回は、12回とも「確かめる」の欄に移り、"),
+        ("t-good", "　 未入金の一覧には、入金が1行も無い案件1件だけが残った（12回とも）。"),
+        ("t-xs", "架空データでの実測（全18回）。生の返りと判定コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "同じ取引先・同じ金額の案件が2件あるとき、その2件が返りのどの欄に置かれたかを、"
+        "頼み方3通りで並べた積み上げ横棒グラフ。"
+        "架空の納品記録12件と入金明細9行を2組作り、3通り×各6回、合わせて18回通した。"
+        "素で「まだ入金されていない案件を挙げて」と頼んだ6回は、"
+        "6回とも未入金の一覧の中に置かれた。"
+        "内訳は、片方だけを未入金の表に載せた回が1回、"
+        "2件まとめてどちらか一方と添えた回が5回、確かめるの欄に移した回が0回。"
+        "決められない案件は確かめるに分けてくださいと一文足した6回は、6回とも確かめるの欄。"
+        "さらに対応させた明細の行番号も書かせた6回も、6回とも確かめるの欄。"
+        "一文を足した12回では、未入金の一覧に残ったのは入金が1行も無い案件1件だけだった。"
+        "片方だけを未入金にした1回は、18回のうちその回だけ、"
+        "どちらか特定できないという断りを書いていない。"
+    )
+    (OUT / "unpaid-same-amount-pair.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def edited_draft_added_where_chart() -> None:
+    """「読みやすく整えて」で、事実の欄と約束の欄にそれぞれ何件足されたかを並べる。
+
+    実測（2026-08-31・欄が2つに分かれた架空の下書き2本。本体は各5回＝10回、
+    後半の指示文は各2回＝4回ずつ）。
+    足された件数＝先に決めた約束語24語・詫びの語9語（どちらも原稿に0語であることを
+    走らせる前に assert）と、原稿に無い数字の、のべ件数。値は check.py の出力。
+    """
+    rows = [
+        ("そのまま「読みやすく整えて」・応募文（5回）", 0, 0),
+        ("そのまま「読みやすく整えて」・謝罪文（5回）", 0, 7),
+        ("＋「書いていないことは足さないで」（4回）", 0, 0),
+        ("＋〔足した文〕の欄を作らせる（4回）", 0, 0),
+        ("事実欄は1文字も変えるな／約束欄だけ整えて（4回）", 0, 0),
+    ]
+    label_x, label_w = 18, 300
+    plot_x, plot_w = label_x + label_w + 10, 280
+    hi = 8
+    row_h, bar_h, top = 40, 10, 148
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / hi
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "整えさせても数字は動かない。増えるのは約束の欄だけだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "欄が二つに分かれた架空の下書き2本（応募文＝実績／抱負、謝罪文＝経緯／今後の対応）に、"
+        "「読みやすく整えてください。」だけを各5回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数えたのは、原稿に一語も無いことを先に確かめた約束語24語・詫びの語9語と、"
+        "原稿に無い数字の、のべ件数。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "事実の欄は、追加も欠落も全回0件。事実欄の数字が1つでも消えた回も0回。</text>\n",
+    ]
+    keys = [("bar-old", "事実の欄に足された件数"), ("bar-new", "約束の欄に足された件数")]
+    ky = 106
+    for css, text in keys:
+        parts.append(
+            f'<rect class="{css}" x="18" y="{ky - 9}" width="14" height="11" rx="2"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="38" y="{ky}">{_esc(text)}</text>\n')
+        ky += 17
+    for n in (0, 4, 8):
+        parts.append(
+            f'<text class="t-xs" x="{px(n):.0f}" y="{top - 10}" text-anchor="middle">'
+            f'{n}{"件" if n == 8 else ""}</text>\n'
+        )
+
+    y = top
+    for label, fact, promise in rows:
+        parts.append(f'<text class="t" x="{label_x}" y="{y + 16}">{_esc(label)}</text>\n')
+        for i, (css, n) in enumerate((("bar-old", fact), ("bar-new", promise))):
+            by = y + i * (bar_h + 4)
+            parts.append(
+                f'<rect class="box-quiet" x="{px(0):.1f}" y="{by}" '
+                f'width="{plot_w}" height="{bar_h}" rx="2"/>\n'
+            )
+            if n:
+                parts.append(
+                    f'<rect class="{css}" x="{px(0):.1f}" y="{by}" '
+                    f'width="{px(n) - px(0):.1f}" height="{bar_h}" rx="2"/>\n'
+                )
+        tc = "t-bad" if promise else "t-good"
+        parts.append(
+            f'<text class="{tc}" x="{px(hi) + 8:.1f}" y="{y + 16}">'
+            f'{_esc(f"{fact}件／{promise}件")}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 足されたのは謝罪文の側だけ（再発防止4回・徹底1回・申し訳1回・ご迷惑1回）。"),
+        ("t-good", "※ 応募文では、そのまま整えさせた5回とも0件だった。同じ指示文でも材料で違う。"),
+        ("t-good", "※ 「書いていないことは足さないで」の一文で、4回とも0件になった。"),
+        ("t-xs", "架空データでの実測（本体10回＋後半の指示文20回）。"
+                 "生の返りと判定コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "欄が二つに分かれた下書きをAIに整えさせたとき、"
+        "事実の欄と約束の欄にそれぞれ何件足されたかを並べた横棒グラフ。"
+        "架空の応募文（実績の欄と抱負の欄）と架空の謝罪文（経緯の欄と今後の対応の欄）に、"
+        "「読みやすく整えてください。」だけを各5回、合わせて10回通した。"
+        "数えたのは、原稿に一語も無いことを先に確かめた約束語24語と詫びの語9語、"
+        "および原稿に無い数字の、のべ件数。"
+        "応募文の5回は、事実の欄も約束の欄も0件。"
+        "謝罪文の5回は、事実の欄が0件で、約束の欄だけが7件。"
+        "内訳は再発防止が4回、徹底が1回、申し訳が1回、ご迷惑が1回。"
+        "書いていないことは足さないでと一文を足した4回は、両方の欄とも0件。"
+        "足した文の欄を作らせた4回も、両方とも0件。"
+        "事実欄は1文字も変えるなと指定した4回も、両方とも0件。"
+        "事実の欄は、追加も欠落も全回0件で、事実欄の数字が1つでも消えた回は0回だった。"
+    )
+    (OUT / "edited-draft-added-where.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    edited_draft_added_where_chart()
+    unpaid_same_amount_pair_chart()
+    second_round_overlap_chart()
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
     youtube_payout_ladder_chart()
