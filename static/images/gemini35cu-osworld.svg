@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="366" viewBox="0 0 720 366" role="img" aria-label="OSWorld-Verified（画面操作の実力を測るベンチマーク）の点数を6モデルで比べた横棒グラフ。GPT-5.5が78.7%、Gemini 3.5 Flashが78.4%、Claude Opus 4.7が78.0%、Gemini 3.1 Proが76.2%、Claude Sonnet 4.6が72.5%、Gemini 3 Flashが65.1%。Gemini 3.5 Flashは自社の旧世代（Gemini 3 Flash・3.1 Pro）より高く、他社の当時の最上位（GPT-5.5・Claude Opus 4.7）とほぼ並ぶ。表を作ったのはGoogleであり、他社が同じ条件で測った値ではない。比較に使われた他社モデルは2026年5月時点の世代。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="366"/>
+<text class="t-strong" x="18" y="26">画面操作の実力テストで、3.5 Flashは自社の旧世代より他社に近い</text>
+<text class="t-sm" x="18" y="45">OSWorld-Verified（パソコンを実際に操作させて採点するテスト）の点数。Googleのモデルカードに載っている6モデルです。</text>
+<text class="t" x="18" y="104">GPT-5.5</text>
+<rect class="bar-old" x="232" y="88" width="329.0" height="22" rx="3"/>
+<text class="t-sm" x="569.0" y="104">78.7%</text>
+<text class="t" x="18" y="140">Gemini 3.5 Flash</text>
+<rect class="bar-new" x="232" y="124" width="327.7" height="22" rx="3"/>
+<text class="t-sm" x="567.7" y="140">78.4%</text>
+<text class="t" x="18" y="176">Claude Opus 4.7</text>
+<rect class="bar-old" x="232" y="160" width="326.0" height="22" rx="3"/>
+<text class="t-sm" x="566.0" y="176">78%</text>
+<text class="t" x="18" y="212">Gemini 3.1 Pro</text>
+<rect class="bar-old" x="232" y="196" width="318.5" height="22" rx="3"/>
+<text class="t-sm" x="558.5" y="212">76.2%</text>
+<text class="t" x="18" y="248">Claude Sonnet 4.6</text>
+<rect class="bar-old" x="232" y="232" width="303.0" height="22" rx="3"/>
+<text class="t-sm" x="543.0" y="248">72.5%</text>
+<text class="t" x="18" y="284">Gemini 3 Flash</text>
+<rect class="bar-old" x="232" y="268" width="272.1" height="22" rx="3"/>
+<text class="t-sm" x="512.1" y="284">65.1%</text>
+<text class="t-xs" x="18" y="320">※ 表を作ったのはGoogleです。他社が同じ条件で測った値ではありません。</text>
+<text class="t-xs" x="18" y="338">※ 比較に使われた他社モデルは2026年5月時点の世代です（Claude Sonnet 4.6・Opus 4.7、GPT-5.5）。今の最新世代ではありません。</text>
+<text class="t-xs" x="18" y="356">※ このテストの名前はOSWorld-Verified。別記事のOSWorld-2.0とは版が違うため、そちらの数字とは並べていません。</text>
+</svg>

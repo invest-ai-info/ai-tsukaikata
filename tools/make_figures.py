@@ -15304,6 +15304,219 @@ def mixed_folder_old_vs_new_criteria_chart() -> None:
     )
 
 
+def gemini35cu_timeline_chart() -> None:
+    """画面操作が3.5 Flashに載ってから、推奨モデルの座を3.7 Flashに渡すまでの日数。
+
+    出典＝Google の発表ページ（画面操作の標準搭載・2026-06-24）、
+    Gemini 3.5 Flash モデルカード（発表日 2026-05-19）、
+    Gemini 3.7 Flash 発表（2026-08-13）、
+    ai.google.dev の Computer use ドキュメント（最終更新 2026-08-26）。
+    日数はいずれも暦日の単純な引き算（この記事で計算）。
+    """
+    rows = [
+        ("2026年5月19日", "Gemini 3.5 Flash を発表", "この時点では、画面操作（Computer Use）は搭載されていない"),
+        ("2026年6月24日（36日後）", "画面操作を標準搭載", "Gemini API・Gemini Enterprise Agent Platform ですぐ使える"),
+        ("2026年8月13日（+50日）", "Gemini 3.7 Flash を発表", "ドキュメントの「推奨モデル」が3.7 Flashに交代"),
+        ("2026年8月26日（この記事の確認時点）", "ドキュメント最終更新", "3.5 Flashは「Previous stable model」と説明されている"),
+    ]
+    dot_x = 26
+    text_x = 50
+    top = 96
+    row_h = 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "画面操作が標準搭載されてから、推奨モデルが交代するまで50日</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Gemini 3.5 Flash に画面操作が載ったのは発表の36日後。そこから50日で、"
+        "公式ドキュメントの推奨モデルは次の世代に移りました。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "日数はいずれも暦日の引き算です（この記事で計算）。</text>\n",
+    ]
+
+    last_y = top + (len(rows) - 1) * row_h
+    parts.append(
+        f'<line class="line" x1="{dot_x}" y1="{top}" x2="{dot_x}" y2="{last_y}"/>\n'
+    )
+    for index, (date_label, title, desc) in enumerate(rows):
+        cy = top + index * row_h
+        cls = "box-accent" if index in (1, 2) else "box-quiet"
+        parts.append(f'<circle class="{cls}" cx="{dot_x}" cy="{cy}" r="7"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{text_x}" y="{cy - 8}">{_esc(date_label)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{text_x}" y="{cy + 10}">{_esc(title)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{text_x}" y="{cy + 27}">{_esc(desc)}</text>\n'
+        )
+
+    height = last_y + 56
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 「推奨モデル」はドキュメントの Model versions 節の記載です。"
+        "3.5 Flash 自体が使えなくなったわけではありません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 3.6 Flash・3.5 Flash-Lite も画面操作に対応していますが、"
+        "この図では日付が確認できた3点だけを示しています。</text>\n"
+    )
+
+    alt = (
+        "Gemini の画面操作機能の年表。2026年5月19日にGemini 3.5 Flashを発表"
+        "（この時点では画面操作は搭載されていない）。その36日後の6月24日、"
+        "画面操作をGemini API・Gemini Enterprise Agent Platform経由で標準搭載。"
+        "さらに50日後の8月13日にGemini 3.7 Flashを発表し、公式ドキュメントの"
+        "推奨モデルが3.7 Flashに交代した。8月26日（この記事の確認時点）でも"
+        "ドキュメントは3.5 Flashを「Previous stable model」と説明している。"
+        "日数はいずれも暦日の単純な引き算。"
+    )
+    (OUT / "gemini35cu-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini35cu_osworld_chart() -> None:
+    """OSWorld-Verified（画面操作の実力を測るベンチマーク）の6モデル比較。
+
+    出典＝Gemini 3.5 Flash モデルカード（deepmind.google/models/model-cards/gemini-3-5-flash）。
+    「Results as of May, 2026」の表から、UI Control / OSWorld-Verified の行をそのまま写した。
+    """
+    rows = [
+        ("GPT-5.5", 78.7, "bar-old"),
+        ("Gemini 3.5 Flash", 78.4, "bar-new"),
+        ("Claude Opus 4.7", 78.0, "bar-old"),
+        ("Gemini 3.1 Pro", 76.2, "bar-old"),
+        ("Claude Sonnet 4.6", 72.5, "bar-old"),
+        ("Gemini 3 Flash", 65.1, "bar-old"),
+    ]
+    left, right = 232, 650
+    span = right - left
+    scale = span / 100.0
+    top, bar_h, row_gap = 88, 22, 14
+    pitch = bar_h + row_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "画面操作の実力テストで、3.5 Flashは自社の旧世代より他社に近い</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "OSWorld-Verified（パソコンを実際に操作させて採点するテスト）の点数。"
+        "Googleのモデルカードに載っている6モデルです。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        bw = value * scale
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 6}">'
+            f"{value:g}%</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 62
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 46}">'
+        "※ 表を作ったのはGoogleです。他社が同じ条件で測った値ではありません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ 比較に使われた他社モデルは2026年5月時点の世代です"
+        "（Claude Sonnet 4.6・Opus 4.7、GPT-5.5）。今の最新世代ではありません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ このテストの名前はOSWorld-Verified。別記事のOSWorld-2.0とは版が違うため、"
+        "そちらの数字とは並べていません。</text>\n"
+    )
+    alt = (
+        "OSWorld-Verified（画面操作の実力を測るベンチマーク）の点数を6モデルで比べた横棒グラフ。"
+        "GPT-5.5が78.7%、Gemini 3.5 Flashが78.4%、Claude Opus 4.7が78.0%、"
+        "Gemini 3.1 Proが76.2%、Claude Sonnet 4.6が72.5%、Gemini 3 Flashが65.1%。"
+        "Gemini 3.5 Flashは自社の旧世代（Gemini 3 Flash・3.1 Pro）より高く、"
+        "他社の当時の最上位（GPT-5.5・Claude Opus 4.7）とほぼ並ぶ。"
+        "表を作ったのはGoogleであり、他社が同じ条件で測った値ではない。"
+        "比較に使われた他社モデルは2026年5月時点の世代。"
+    )
+    (OUT / "gemini35cu-osworld.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini35cu_actions_chart() -> None:
+    """3社の「画面操作」ツールで、1回に呼べる操作の種類がいくつあるか。
+
+    出典＝Gemini: ai.google.dev/gemini-api/docs/computer-use の環境別の表を数えた。
+    Anthropic: platform.claude.com の computer use tool ページ「17 member tools」。
+    OpenAI: developers.openai.com の computer use ガイド「Possible Computer use actions」の列挙。
+    """
+    rows = [
+        ("Gemini（ブラウザ環境）", 20, "bar-new"),
+        ("Gemini（デスクトップ環境）", 17, "bar-new"),
+        ("Anthropic（デスクトップのみ）", 17, "bar-in"),
+        ("Gemini（モバイル環境）", 10, "bar-new"),
+        ("OpenAI（gpt-5.6のcomputerツール）", 9, "bar-old"),
+    ]
+    left, right = 288, 650
+    span = right - left
+    biggest = max(v for _, v, _ in rows)
+    scale = span / biggest
+    top, bar_h, row_gap = 88, 22, 14
+    pitch = bar_h + row_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ「画面操作」でも、1回に呼べる操作の数は会社ごとに違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社のドキュメントに列挙されている操作（クリック・型・スクロール等）の総数です。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        bw = value * scale
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 6}">'
+            f"{value}個</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 62
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 46}">'
+        "※ OpenAIのclickは1つの操作にボタン（左/右/中央）を渡す形なので、"
+        "右クリックや中央クリックのぶんは別の操作として数えていません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ Anthropicは画面操作（デスクトップ）とは別に、ブラウザ専用の"
+        "「browser use tool」を別立てで用意しています（この図には含めていません）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 操作の粒度が違うので、数が多いほど高性能というわけではありません。</text>\n"
+    )
+    alt = (
+        "3社の画面操作ツールで、1回に呼べる操作の種類の数を比べた横棒グラフ。"
+        "Geminiのブラウザ環境が20個、Geminiのデスクトップ環境が17個、"
+        "Anthropicのデスクトップ専用ツールが17個、Geminiのモバイル環境が10個、"
+        "OpenAIのgpt-5.6のcomputerツールが9個。"
+        "OpenAIのclickはボタン（左・右・中央）を引数で渡す形なので、"
+        "右クリックや中央クリックは別の操作として数えていない。"
+        "Anthropicは画面操作とは別にブラウザ専用のbrowser use toolを持つが、"
+        "この図には含めていない。"
+    )
+    (OUT / "gemini35cu-actions.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -15495,4 +15708,7 @@ if __name__ == "__main__":
     handoff_summary_heading_length_chart()
     role_prompt_grid_chart()
     estimate_basis_count_chart()
+    gemini35cu_timeline_chart()
+    gemini35cu_osworld_chart()
+    gemini35cu_actions_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

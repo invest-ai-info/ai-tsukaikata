@@ -347,7 +347,9 @@
 ⚠️ **下の3件の到達性は、私の手元のPCで測った値。**クラウド側の結果は別（CLAUDE.md 2026-08-05 の実例）。
 **この行に当たる担当は、自分の環境で測り直してから進めること。**
 
-- [ ] https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/
+- [x] https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/
+  - →保管: ✅ **2026-08-31 1回目: 公開した** → `content/tools/gemini-computer-use.md`
+    （`blog.google` へ302転送・到達できた。図3枚・出典8件すべて取得成功・check_numbers.py は12/12が出典に存在）
   - 2026-08-31 手動追記（補充1件目。`news.json` の major お知らせのうち、読めるホストで未処理のもの）
   - **このサイトの読者にいちばん近い題材**＝AIが画面を操作する＝コードを書かずに自動化する話そのもの
   - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約379KB を実測）。
@@ -378,6 +380,14 @@
 
 ## 処理済み
 
+- https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/ → **公開済み** content/tools/gemini-computer-use.md（2026-08-31・公開）
+  - `blog.google`（転送先）に到達できた。図3枚（`gemini35cu-timeline` / `gemini35cu-osworld` / `gemini35cu-actions`）。
+    `check_numbers.py` は **12個すべて出典に存在**（出典8件とも取得成功）。pytest 618 passed・build 135ファイル。
+  - 📌 記事の芯＝**「専用モデル→主力モデルへの内蔵」という設計変更は Google も OpenAI も同じ**で、
+    しかも Gemini 側は標準搭載からわずか50日で「推奨モデル」の座を次の世代（3.7 Flash）に譲っている。
+  - ⚠️ Anthropic・OpenAI の数字は、この記事のために `platform.claude.com` と `developers.openai.com` を
+    新たに読んだ（キューの元メモには無かった調査）。OSWorld のベンチマーク名が **OSWorld-Verified と
+    OSWorld-2.0 で版違い**だったので、記事では混ぜずに書き分けた。
 - https://openai.com/index/daybreak-models-are-now-available-on-aws → **公開済み** content/tools/daybreak-on-bedrock.md（2026-08-21・公開）
   - 再試行で通った3件目（1回目は 2026-08-11 に停止。理由②が `CONNECT tunnel failed`＝経路遮断だった）。
     図4枚（`daybreak-bedrock-vs-direct` / `daybreak-blue-same-price` / `daybreak-what-is-closed` /
