@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-31T20:08:43.772152+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-08-31T15:54:46+00:00",
+      "source_id": "media-publickey",
+      "summary": "Ruby on Railsの作者として知られるDHH氏は、同氏が開発するデスクトップ向けLinux OS「Omarchy」の最新バージョンとなる「Omarchy 4.0」（Omarchy Quattro）をリリースしました。 Omarchy...",
+      "title": "DHH氏が開発するLinux OS「Omarchy Quattro」リリース。AIエージェントとをOSと統合、スキルによりAIエージェントがOSの設定や操作、プラグイン作成まで支援",
+      "uid": "a9b67097f34ebd53",
+      "url": "https://www.publickey1.jp/blog/26/dhhlinux_osomarchy_quattroaiosaios.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-08-31T20:08:43.772152+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-08-31T14:35:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ロシアなど一部の政府がAIでプロパガンダを生み出して拡散しているのではないかという懸念に対して、アメリカの公共放送局・NPRとオンラインニュースソースの信頼性について評価を行っているNewsGuardが共同検証を行い、人気のAIチャットボットの多くはプロパガンダを鵜呑みにせず反論していることが明らかになりました。 続きを読む...",
+      "title": "AIチャットボットは外国によるプロパガンダの流布をある程度食い止めることが判明",
+      "uid": "f29583646f6deb5a",
+      "url": "https://gigazine.net/news/20260831-npr-chatbot-propaganda/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-08-31T13:58:05.785698+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2375,30 +2399,6 @@
       "uid": "3eaa7b0e3b3213de",
       "url": "https://gigazine.net/news/20260824-ai-slop-button-million/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-24T07:30:45.265644+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-24T06:02:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI開発においては、データを処理する「データセンター」の新設が急務となっています。ここで、新たに電力供給に必要な「ガスタービン」が不足していて、データセンターへの電力供給が滞る可能性が出てきました。 続きを読む...",
-      "title": "AI開発の新たなボトルネックは「ガスタービン不足」",
-      "uid": "636767e7bd1027e3",
-      "url": "https://gigazine.net/news/20260824-gas-turbine-shortage/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-24T07:30:45.265644+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-24T05:43:10+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米AnthropicのAIサービス「Claude」「Claude Code」などで障害が発生している。同社のステータスサイトによると、日本時間の8月24日午後2時27分時点でエラーの原因を特定し、修正作業中という。",
-      "title": "「Claude」で障害発生中",
-      "uid": "ae5216edee180246",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/24/2000000719/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-08-31T20:08:43.772152+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-08-31T19:46:55+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed Bash commands failing with \"task output swap refused (tasks dir moved or linked)\" on some Macs Fixed \"always allow\" not saving in a project that has no .claude/settings.local.jso…",
+      "title": "v2.1.252",
+      "uid": "f0394e146fe2c31e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.252",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-31T13:58:05.785698+00:00",
       "importance": "major",
       "label": "DeepSeek 新モデル",
@@ -11,6 +23,20 @@
       "uid": "f9c2b6679fd1c8d0",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
       "vendor": "DeepSeek"
+    },
+    {
+      "first_seen": "2026-08-31T20:08:43.772152+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-31T04:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options.",
+      "summary_ja": "ChatGPT広告の年間売上見込みが10億ドルに\n世界展開し、無料や安価な選択肢でAI利用を拡大。",
+      "summary_source": "gemini",
+      "title": "A milestone in expanding access to AI",
+      "uid": "84469385fbefea78",
+      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-08-28T18:46:16.087122+00:00",
