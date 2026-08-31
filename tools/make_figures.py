@@ -15506,7 +15506,111 @@ def unpaid_same_amount_pair_chart() -> None:
     )
 
 
+def edited_draft_added_where_chart() -> None:
+    """「読みやすく整えて」で、事実の欄と約束の欄にそれぞれ何件足されたかを並べる。
+
+    実測（2026-08-31・欄が2つに分かれた架空の下書き2本。本体は各5回＝10回、
+    後半の指示文は各2回＝4回ずつ）。
+    足された件数＝先に決めた約束語24語・詫びの語9語（どちらも原稿に0語であることを
+    走らせる前に assert）と、原稿に無い数字の、のべ件数。値は check.py の出力。
+    """
+    rows = [
+        ("そのまま「読みやすく整えて」・応募文（5回）", 0, 0),
+        ("そのまま「読みやすく整えて」・謝罪文（5回）", 0, 7),
+        ("＋「書いていないことは足さないで」（4回）", 0, 0),
+        ("＋〔足した文〕の欄を作らせる（4回）", 0, 0),
+        ("事実欄は1文字も変えるな／約束欄だけ整えて（4回）", 0, 0),
+    ]
+    label_x, label_w = 18, 300
+    plot_x, plot_w = label_x + label_w + 10, 280
+    hi = 8
+    row_h, bar_h, top = 40, 10, 148
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / hi
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "整えさせても数字は動かない。増えるのは約束の欄だけだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "欄が二つに分かれた架空の下書き2本（応募文＝実績／抱負、謝罪文＝経緯／今後の対応）に、"
+        "「読みやすく整えてください。」だけを各5回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数えたのは、原稿に一語も無いことを先に確かめた約束語24語・詫びの語9語と、"
+        "原稿に無い数字の、のべ件数。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "事実の欄は、追加も欠落も全回0件。事実欄の数字が1つでも消えた回も0回。</text>\n",
+    ]
+    keys = [("bar-old", "事実の欄に足された件数"), ("bar-new", "約束の欄に足された件数")]
+    ky = 106
+    for css, text in keys:
+        parts.append(
+            f'<rect class="{css}" x="18" y="{ky - 9}" width="14" height="11" rx="2"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="38" y="{ky}">{_esc(text)}</text>\n')
+        ky += 17
+    for n in (0, 4, 8):
+        parts.append(
+            f'<text class="t-xs" x="{px(n):.0f}" y="{top - 10}" text-anchor="middle">'
+            f'{n}{"件" if n == 8 else ""}</text>\n'
+        )
+
+    y = top
+    for label, fact, promise in rows:
+        parts.append(f'<text class="t" x="{label_x}" y="{y + 16}">{_esc(label)}</text>\n')
+        for i, (css, n) in enumerate((("bar-old", fact), ("bar-new", promise))):
+            by = y + i * (bar_h + 4)
+            parts.append(
+                f'<rect class="box-quiet" x="{px(0):.1f}" y="{by}" '
+                f'width="{plot_w}" height="{bar_h}" rx="2"/>\n'
+            )
+            if n:
+                parts.append(
+                    f'<rect class="{css}" x="{px(0):.1f}" y="{by}" '
+                    f'width="{px(n) - px(0):.1f}" height="{bar_h}" rx="2"/>\n'
+                )
+        tc = "t-bad" if promise else "t-good"
+        parts.append(
+            f'<text class="{tc}" x="{px(hi) + 8:.1f}" y="{y + 16}">'
+            f'{_esc(f"{fact}件／{promise}件")}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "※ 足されたのは謝罪文の側だけ（再発防止4回・徹底1回・申し訳1回・ご迷惑1回）。"),
+        ("t-good", "※ 応募文では、そのまま整えさせた5回とも0件だった。同じ指示文でも材料で違う。"),
+        ("t-good", "※ 「書いていないことは足さないで」の一文で、4回とも0件になった。"),
+        ("t-xs", "架空データでの実測（本体10回＋後半の指示文20回）。"
+                 "生の返りと判定コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "欄が二つに分かれた下書きをAIに整えさせたとき、"
+        "事実の欄と約束の欄にそれぞれ何件足されたかを並べた横棒グラフ。"
+        "架空の応募文（実績の欄と抱負の欄）と架空の謝罪文（経緯の欄と今後の対応の欄）に、"
+        "「読みやすく整えてください。」だけを各5回、合わせて10回通した。"
+        "数えたのは、原稿に一語も無いことを先に確かめた約束語24語と詫びの語9語、"
+        "および原稿に無い数字の、のべ件数。"
+        "応募文の5回は、事実の欄も約束の欄も0件。"
+        "謝罪文の5回は、事実の欄が0件で、約束の欄だけが7件。"
+        "内訳は再発防止が4回、徹底が1回、申し訳が1回、ご迷惑が1回。"
+        "書いていないことは足さないでと一文を足した4回は、両方の欄とも0件。"
+        "足した文の欄を作らせた4回も、両方とも0件。"
+        "事実欄は1文字も変えるなと指定した4回も、両方とも0件。"
+        "事実の欄は、追加も欠落も全回0件で、事実欄の数字が1つでも消えた回は0回だった。"
+    )
+    (OUT / "edited-draft-added-where.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    edited_draft_added_where_chart()
     unpaid_same_amount_pair_chart()
     second_round_overlap_chart()
     mixed_folder_count_vs_leak_chart()

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="446" viewBox="0 0 720 446" role="img" aria-label="欄が二つに分かれた下書きをAIに整えさせたとき、事実の欄と約束の欄にそれぞれ何件足されたかを並べた横棒グラフ。架空の応募文（実績の欄と抱負の欄）と架空の謝罪文（経緯の欄と今後の対応の欄）に、「読みやすく整えてください。」だけを各5回、合わせて10回通した。数えたのは、原稿に一語も無いことを先に確かめた約束語24語と詫びの語9語、および原稿に無い数字の、のべ件数。応募文の5回は、事実の欄も約束の欄も0件。謝罪文の5回は、事実の欄が0件で、約束の欄だけが7件。内訳は再発防止が4回、徹底が1回、申し訳が1回、ご迷惑が1回。書いていないことは足さないでと一文を足した4回は、両方の欄とも0件。足した文の欄を作らせた4回も、両方とも0件。事実欄は1文字も変えるなと指定した4回も、両方とも0件。事実の欄は、追加も欠落も全回0件で、事実欄の数字が1つでも消えた回は0回だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="446"/>
+<text class="t-strong" x="18" y="26">整えさせても数字は動かない。増えるのは約束の欄だけだった</text>
+<text class="t-sm" x="18" y="45">欄が二つに分かれた架空の下書き2本（応募文＝実績／抱負、謝罪文＝経緯／今後の対応）に、「読みやすく整えてください。」だけを各5回。</text>
+<text class="t-sm" x="18" y="64">数えたのは、原稿に一語も無いことを先に確かめた約束語24語・詫びの語9語と、原稿に無い数字の、のべ件数。</text>
+<text class="t-sm" x="18" y="83">事実の欄は、追加も欠落も全回0件。事実欄の数字が1つでも消えた回も0回。</text>
+<rect class="bar-old" x="18" y="97" width="14" height="11" rx="2"/>
+<text class="t-xs" x="38" y="106">事実の欄に足された件数</text>
+<rect class="bar-new" x="18" y="114" width="14" height="11" rx="2"/>
+<text class="t-xs" x="38" y="123">約束の欄に足された件数</text>
+<text class="t-xs" x="328" y="138" text-anchor="middle">0</text>
+<text class="t-xs" x="468" y="138" text-anchor="middle">4</text>
+<text class="t-xs" x="608" y="138" text-anchor="middle">8件</text>
+<text class="t" x="18" y="164">そのまま「読みやすく整えて」・応募文（5回）</text>
+<rect class="box-quiet" x="328.0" y="148" width="280" height="10" rx="2"/>
+<rect class="box-quiet" x="328.0" y="162" width="280" height="10" rx="2"/>
+<text class="t-good" x="616.0" y="164">0件／0件</text>
+<text class="t" x="18" y="204">そのまま「読みやすく整えて」・謝罪文（5回）</text>
+<rect class="box-quiet" x="328.0" y="188" width="280" height="10" rx="2"/>
+<rect class="box-quiet" x="328.0" y="202" width="280" height="10" rx="2"/>
+<rect class="bar-new" x="328.0" y="202" width="245.0" height="10" rx="2"/>
+<text class="t-bad" x="616.0" y="204">0件／7件</text>
+<text class="t" x="18" y="244">＋「書いていないことは足さないで」（4回）</text>
+<rect class="box-quiet" x="328.0" y="228" width="280" height="10" rx="2"/>
+<rect class="box-quiet" x="328.0" y="242" width="280" height="10" rx="2"/>
+<text class="t-good" x="616.0" y="244">0件／0件</text>
+<text class="t" x="18" y="284">＋〔足した文〕の欄を作らせる（4回）</text>
+<rect class="box-quiet" x="328.0" y="268" width="280" height="10" rx="2"/>
+<rect class="box-quiet" x="328.0" y="282" width="280" height="10" rx="2"/>
+<text class="t-good" x="616.0" y="284">0件／0件</text>
+<text class="t" x="18" y="324">事実欄は1文字も変えるな／約束欄だけ整えて（4回）</text>
+<rect class="box-quiet" x="328.0" y="308" width="280" height="10" rx="2"/>
+<rect class="box-quiet" x="328.0" y="322" width="280" height="10" rx="2"/>
+<text class="t-good" x="616.0" y="324">0件／0件</text>
+<text class="t-bad" x="18" y="362">※ 足されたのは謝罪文の側だけ（再発防止4回・徹底1回・申し訳1回・ご迷惑1回）。</text>
+<text class="t-good" x="18" y="383">※ 応募文では、そのまま整えさせた5回とも0件だった。同じ指示文でも材料で違う。</text>
+<text class="t-good" x="18" y="404">※ 「書いていないことは足さないで」の一文で、4回とも0件になった。</text>
+<text class="t-xs" x="18" y="425">架空データでの実測（本体10回＋後半の指示文20回）。生の返りと判定コードは docs/evidence/ に全文置いてある。</text>
+</svg>
