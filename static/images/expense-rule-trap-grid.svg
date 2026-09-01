@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="511" viewBox="0 0 720 511" role="img" aria-label="OR条件の見落とし・姻族の一親等・キーワードに引っ張られる誤読を狙って仕込んだ申請8件を、3回ずつ判定させた結果のマス目。8件×3回＝24セルすべてが「○ 一致」（真値と一致）で、「× 不一致」は1件も無かった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="511"/>
+<text class="t-strong" x="18" y="26">わざと仕込んだ「罠」8件も、3回とも正しく読めた</text>
+<text class="t-sm" x="18" y="45">OR条件の見落とし・姻族の一親等・キーワードに引っ張られる誤読を、狙って仕込んだ8件。</text>
+<text class="t-sm" x="18" y="64">例：「22時以降なら電車が使えてもタクシー代は対象」というOR条件の読み違いを狙った1件目。</text>
+<text class="t-sm" x="18" y="83">新規の会話で3回判定させ、セルの◯＝その回で真値と一致（×は不一致・今回は0件）。</text>
+<text class="t-sm" x="18" y="102">※ 判定コードが正しいかどうかは別に確かめてある（★24＝計測器も先に疑う）。</text>
+<text class="t-xs" x="325.0" y="133">1回目</text>
+<text class="t-xs" x="443.0" y="133">2回目</text>
+<text class="t-xs" x="561.0" y="133">3回目</text>
+<text class="t-sm" x="18" y="165">深夜だが電車もあった(1条)</text>
+<rect class="box-good" x="280" y="145" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="165">○ 一致</text>
+<rect class="box-good" x="398" y="145" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="165">○ 一致</text>
+<rect class="box-good" x="516" y="145" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="165">○ 一致</text>
+<text class="t-sm" x="18" y="203">配偶者の父(義父)の死亡(5条)</text>
+<rect class="box-good" x="280" y="183" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="203">○ 一致</text>
+<rect class="box-good" x="398" y="183" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="203">○ 一致</text>
+<rect class="box-good" x="516" y="183" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="203">○ 一致</text>
+<text class="t-sm" x="18" y="241">社内送別会+取引先1名(3条)</text>
+<rect class="box-good" x="280" y="221" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="241">○ 一致</text>
+<rect class="box-good" x="398" y="221" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="241">○ 一致</text>
+<rect class="box-good" x="516" y="221" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="241">○ 一致</text>
+<text class="t-sm" x="18" y="279">21:55・他に手段なし(1条)</text>
+<rect class="box-good" x="280" y="259" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="279">○ 一致</text>
+<rect class="box-good" x="398" y="259" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="279">○ 一致</text>
+<rect class="box-good" x="516" y="259" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="279">○ 一致</text>
+<text class="t-sm" x="18" y="317">私物WiFiルーター代(6条)</text>
+<rect class="box-good" x="280" y="297" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="317">○ 一致</text>
+<rect class="box-good" x="398" y="297" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="317">○ 一致</text>
+<rect class="box-good" x="516" y="297" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="317">○ 一致</text>
+<text class="t-sm" x="18" y="355">貸与端末の私用分請求(該当なし)</text>
+<rect class="box-good" x="280" y="335" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="355">○ 一致</text>
+<rect class="box-good" x="398" y="335" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="355">○ 一致</text>
+<rect class="box-good" x="516" y="335" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="355">○ 一致</text>
+<text class="t-sm" x="18" y="393">宿泊キャンセル料(該当なし)</text>
+<rect class="box-good" x="280" y="373" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="393">○ 一致</text>
+<rect class="box-good" x="398" y="373" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="393">○ 一致</text>
+<rect class="box-good" x="516" y="373" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="393">○ 一致</text>
+<text class="t-sm" x="18" y="431">資格の再受験料(7条)</text>
+<rect class="box-good" x="280" y="411" width="110" height="30" rx="4"/>
+<text class="t-good" x="314.2" y="431">○ 一致</text>
+<rect class="box-good" x="398" y="411" width="110" height="30" rx="4"/>
+<text class="t-good" x="432.2" y="431">○ 一致</text>
+<rect class="box-good" x="516" y="411" width="110" height="30" rx="4"/>
+<text class="t-good" x="550.2" y="431">○ 一致</text>
+<text class="t-xs" x="18" y="474">架空の経費規程での実測。生の回答24件ぶんは docs/evidence/ に全文置いてある。</text>
+<text class="t-xs" x="18" y="495">この材料・この件数での結果であり、「AIは規程の罠を読み違えない」と一般化はしない。</text>
+</svg>

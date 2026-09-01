@@ -15517,6 +15517,150 @@ def gemini35cu_actions_chart() -> None:
     )
 
 
+def expense_rule_category_agreement_chart() -> None:
+    """経費規程の判定を3回とって見比べた結果。カテゴリ別・食い違いゼロ。
+
+    実測（2026-09-01・架空の経費規程7条×申請一覧2本、各24件）。同じ指示文を
+    新規のサブエージェントで材料ごとに3回ずつ＝6回、のべ144件の判定を送った。
+    3回の答えが割れた項目・真値と食い違った項目とも0件だった。
+    """
+    rows = [
+        ("素直に1条へ当たる申請（20件）", 20, 20),
+        ("隣接条・除外条項と紛らわしい申請（12件）", 12, 12),
+        ("規程のどこにも無い申請（16件）", 16, 16),
+    ]
+    left, right = 300, 620
+    span = right - left
+    top, bar_h, gap = 108, 32, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "3回そろって正解した件数（材料A・Bあわせて48件）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の経費規程7条に照らして、申請一覧24件×2本を、新規の会話で3回ずつ判定させた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3回の答えが割れた項目、真値と食い違った項目は、どちらも0件だった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「紛らわしい」12件には、除外条項に当たる5件・上限超過でも条文自体は該当する1件を含む。</text>\n",
+    ]
+    for index, (label, hit, total) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 10}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        ratio = hit / total
+        parts.append(
+            f'<rect class="box-good" x="{left}" y="{y}" '
+            f'width="{span * ratio:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{right + 12}" y="{y + bar_h - 10}">'
+            f"{hit} / {total}件</text>\n"
+        )
+
+    height = top + len(rows) * (bar_h + gap) + 26
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 判定はのべ144件（24件×2材料×3回）。生の回答は docs/evidence/ に全文置いてある。</text>\n"
+    )
+    alt = (
+        "経費規程の該当条文を3回ずつ判定させた結果を、カテゴリ別に示した横棒グラフ。"
+        "素直に1条へ当たる申請20件は20件とも3回そろって正解、"
+        "隣接条・除外条項と紛らわしい申請12件も12件とも正解、"
+        "規程のどこにも無い申請16件も16件とも正解で、3種類とも100%だった。"
+        "判定はのべ144件で、3回の答えが割れた項目・真値と食い違った項目はどちらも0件。"
+    )
+    (OUT / "expense-rule-category-agreement.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def expense_rule_trap_grid_chart() -> None:
+    """わざと誤読しやすくした申請8件が、3回とも正しく判定できたかのマス目。
+
+    実測（2026-09-01）。OR条件の見落とし・姻族の一親等・キーワードに
+    引っ張られる誤読など、あらかじめ狙いを決めた「罠」を8件仕込んだが、
+    3回×8件＝24回の判定は24回とも真値と一致した。
+    """
+    rows = [
+        ("深夜だが電車もあった(1条)", [1, 1, 1]),
+        ("配偶者の父(義父)の死亡(5条)", [1, 1, 1]),
+        ("社内送別会+取引先1名(3条)", [1, 1, 1]),
+        ("21:55・他に手段なし(1条)", [1, 1, 1]),
+        ("私物WiFiルーター代(6条)", [1, 1, 1]),
+        ("貸与端末の私用分請求(該当なし)", [1, 1, 1]),
+        ("宿泊キャンセル料(該当なし)", [1, 1, 1]),
+        ("資格の再受験料(7条)", [1, 1, 1]),
+    ]
+    cols = ["1回目", "2回目", "3回目"]
+    label_w = 262
+    cell_w, cell_h, gap = 110, 30, 8
+    top = 145
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "わざと仕込んだ「罠」8件も、3回とも正しく読めた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "OR条件の見落とし・姻族の一親等・キーワードに引っ張られる誤読を、狙って仕込んだ8件。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "例：「22時以降なら電車が使えてもタクシー代は対象」というOR条件の読み違いを狙った1件目。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "新規の会話で3回判定させ、セルの◯＝その回で真値と一致（×は不一致・今回は0件）。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "※ 判定コードが正しいかどうかは別に確かめてある（★24＝計測器も先に疑う）。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 10:.1f}" y="{top - 12}">{name}</text>\n'
+        )
+
+    for row_index, (label, values) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, v in enumerate(values):
+            x = grid_x + col_index * (cell_w + gap)
+            ok = v == 1
+            box = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            text = "○ 一致" if ok else "× 不一致"
+            tx = x + cell_w / 2 - len(text) * 5.2
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 8 + 21 * 2 + 12
+    notes = [
+        ("t-xs", "架空の経費規程での実測。生の回答24件ぶんは docs/evidence/ に全文置いてある。"),
+        ("t-xs", "この材料・この件数での結果であり、「AIは規程の罠を読み違えない」と一般化はしない。"),
+    ]
+    ny = height - 21 * len(notes) + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "OR条件の見落とし・姻族の一親等・キーワードに引っ張られる誤読を狙って仕込んだ申請8件を、"
+        "3回ずつ判定させた結果のマス目。8件×3回＝24セルすべてが「○ 一致」（真値と一致）で、"
+        "「× 不一致」は1件も無かった。"
+    )
+    (OUT / "expense-rule-trap-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -15711,4 +15855,6 @@ if __name__ == "__main__":
     gemini35cu_timeline_chart()
     gemini35cu_osworld_chart()
     gemini35cu_actions_chart()
+    expense_rule_category_agreement_chart()
+    expense_rule_trap_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
