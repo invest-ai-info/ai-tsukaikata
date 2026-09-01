@@ -36,52 +36,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-08-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-31T19:46:55+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed Bash commands failing with \"task output swap refused (tasks dir moved or linked)\" on some Macs Fixed \"always allow\" not saving in a project that has no .claude/settings.local.jso…",
-      "title": "v2.1.252",
-      "uid": "f0394e146fe2c31e",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.252",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-31T04:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options.",
-      "title": "A milestone in expanding access to AI",
-      "uid": "84469385fbefea78",
-      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-31T15:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Improving our alignment and security efforts",
-      "uid": "37ceb0820d3e35d8",
-      "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-31T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development.",
-      "title": "Polimill builds Japan's next-generation public AI infrastructure",
-      "uid": "625c51f7723daf46",
-      "url": "https://openai.com/index/polimill",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
