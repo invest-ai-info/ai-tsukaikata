@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-01T14:56:39.446506+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-01T15:07:04+00:00",
+      "source_id": "media-publickey",
+      "summary": "Amazon Web Services（AWS）は、同社がフルマネージドで提供するデータウェアハウスサービス「Amazon Redshift」が、Agent Toolkit for AWSと統合されたことを明らかにしました。 Agent T...",
+      "title": "AIエージェントがRedshiftを操作してDWH構築や集計分析など可能に、Amazon RedshiftがAgent Toolkit for AWSと統合",
+      "uid": "9de42bd7b69028b2",
+      "url": "https://www.publickey1.jp/blog/26/airedshiftdwhamazon_redshiftagent_toolkit_for_aws.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-01T14:56:39.446506+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-01T15:01:52+00:00",
+      "source_id": "media-publickey",
+      "summary": "オープンソースで開発されているコードエディタ「Visual Studio Code」（以下、VS Code）の最新版となる「VS Code 1.135」で、開発に関するセカンドオピニオンをメインのAIエージェントとは別のAIエージェントに依...",
+      "title": "VS Code上で開発のセカンドオピニオンを別のAIエージェントから得られる「Rubber Duck」機能が実験的実装",
+      "uid": "b2895748a01e57db",
+      "url": "https://www.publickey1.jp/blog/26/vs_codeairubber_duck.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-01T14:56:39.446506+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-01T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "前回、AIエージェント「Hermes Agent」で「GIGAZINEから記事を探して内容をまとめる」という作業の手順や、途中で発生したトラブルの解決方法を「スキル」として保存してみたところ、新しいセッションでも作成したスキルが自動的に読み込まれ、同じ作業をスムーズに実行できるようになりました。 続きを読む...",
+      "title": "使い込むほど成長するAIエージェント「Hermes Agent」でタスクを自動実行させてみた、PCを放置していても時間になれば勝手に実行",
+      "uid": "b0e13b49dd66a19c",
+      "url": "https://gigazine.net/news/20260901-hermes-agent-cron-automation/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-01T14:56:39.446506+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-01T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "韓国の研究者が、スマートフォンとLEDライトを用いた隠しカメラ検出技術を開発しました。安価なLEDライトをスマートフォンに取り付けて光の反射でカメラを見つけ出します。 続きを読む...",
+      "title": "スマホとライトとAIで隠しカメラを発見する技術が開発される",
+      "uid": "7ad06983d30bd628",
+      "url": "https://gigazine.net/news/20260901-sweepled-detecting-hidden-cameras/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-01T14:56:39.446506+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-01T10:38:03+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NVIDIAとMediaTekは8月31日、AIインフラ、ローカルAIコンピューティング、自動車分野にわたる次世代AIコンピューティングプラットフォームの構築に向け、協業関係を強化すると発表した。",
+      "title": "NVIDIA、MediaTekに35億ドル投資～AI協業を拡大",
+      "uid": "b9e65fe27b5c39c3",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2137421.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-01T14:56:39.446506+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T10:37:56+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "林芳正総務大臣は、9月1日の会見で、総務省に「AX・新技術戦略室」を新設すると発表した。同省におけるAI推進施策の取りまとめや、関係省庁との連携を担う。",
+      "title": "総務省、「AX・新技術戦略室」を新設　AI推進に注力",
+      "uid": "ab649dff50e7ae2e",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/01/2000001044/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-01T10:12:33.666975+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2327,78 +2399,6 @@
       "uid": "17abeae39bbc46fa",
       "url": "https://gigazine.net/news/20260825-openrouter-image-benchmarks/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-25T09:02:04.959371+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-25T08:54:31+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立は、膨大な画像データをAIで扱う際の処理を高速化する「領域選択エンコード技術」を開発した。",
-      "title": "膨大な画像データを扱うAI処理を高速化「領域選択エンコード技術」を開発",
-      "uid": "95545fb7baf10766",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135449.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-25T09:02:04.959371+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-25T08:22:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI開発企業のLiquid AIがスマートフォンのAI実行性能を測定するベンチマークアプリ「Pipette」をリリースしました。無料でGemmaシリーズやQwenシリーズなど複数のAIモデルを用いたテストが可能とのことなので、実際にiPhone 17 Proにインストールして使ってみました。 続きを読む...",
-      "title": "自分のスマホのAI実行性能を測定できるベンチマークアプリ「Pipette」を使ってみた",
-      "uid": "f6986aeeca774d53",
-      "url": "https://gigazine.net/news/20260825-pipette-phone-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-25T09:02:04.959371+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-25T07:50:42+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "開発元を伏せたまま米OpenRouterで無料公開されたAIモデル「Ox Alpha」が話題だ。一部の開発ツールでは利用シェア1位に。確認できる事実と、中国Z.aiの「GLM」系とみる有力なうわさを整理した。",
-      "title": "話題のステルスモデル「Ox Alpha」はナニモノか　うわさをまとめてみた",
-      "uid": "c907bf854f9e494b",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000748/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-25T08:00:22.440112+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-25T07:13:24+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "パナソニックは8月25日、ハイパースペクトルカメラ「AG-HSV10M」で取得した画像をAIで解析し、人の眼やRGBカメラでは判別が難しい違いを自動で検査・判定するAI検査ソフトNTシリーズ「AG-HSS10」を10月上旬に発売すると発表した。",
-      "title": "画像を自動で検査・判定するAI検査ソフトNTシリーズ「AG-HSS10」",
-      "uid": "de6df24c60cebcae",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135372.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-25T08:00:22.440112+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-08-25T06:56:11+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "シャープは対話型のAIロボット「ポケとも」の新モデルを発表した。従来のモデルとは性格を変え、あえてユーザーを“全肯定しないキャラクター”にした。",
-      "title": "シャープ、対話型AIロボ「ポケとも」に新モデル　あえて“全肯定しないキャラ”に　「暇だなー」と話しかけると……",
-      "uid": "0225333f6984298d",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000747/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-25T07:10:25.158045+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-25T06:38:38+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NECパーソナルコンピュータ（NEC PC）は8月25日、個人向けパソコンおよびタブレットの2026年夏モデル全6機種を発表した。",
-      "title": "NEC PC、「LAVIE N16」など2026年夏モデルを発表 独自のAIサポート機能を強化",
-      "uid": "dbec62b147f9d794",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135391.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

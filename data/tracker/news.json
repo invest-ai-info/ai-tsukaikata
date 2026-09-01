@@ -3815,58 +3815,6 @@
       "uid": "7c4a5a0094bf952f",
       "url": "https://note.com/elyza/n/n3a80c391f823",
       "vendor": "ELYZA"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Qwen 新モデル",
-      "published": "2026-06-03T13:03:03+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...",
-      "title": "qwen/qwen3.7-plus",
-      "uid": "dce652f432b6a45a",
-      "url": "https://openrouter.ai/qwen/qwen3.7-plus",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-03T13:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
-      "uid": "3a1e722f477e828f",
-      "url": "https://www.anthropic.com/news/services-track-partner-hub",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-03T13:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "A colorful, grain-textured collage of various items scattered across a light blue background. The items include a green bucket hat, a wooden clothes hanger, a blue-and-red striped collar, blue sungla…",
-      "summary_ja": "Google検索の古着・ビンテージ品活用術を紹介。",
-      "summary_source": "gemini",
-      "title": "5 ways Google Search can level up your thrift and vintage shopping",
-      "uid": "6343efa02f30d00e",
-      "url": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-03T10:55:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up? In a new report, we seek to answer that question.",
-      "summary_ja": "AIを使ったサイバー攻撃への対応を調査\n1年間の攻撃データを分析し、報告書にまとめた",
-      "summary_source": "gemini",
-      "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
-      "uid": "8d40a858cfb46bba",
-      "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
-      "vendor": "Anthropic"
     }
   ]
 }
