@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="432" viewBox="0 0 720 432" role="img" aria-label="架空の社内お知らせを作らせるタスクで、機械で判定できる12条件のうち先頭から3個・6個・9個・12個を積んだ4版と、同じ12個を逆順に並べた版を、それぞれ2回ずつ実測した表。3個版・6個版・9個版・12個版・逆順版のいずれも、2回とも条件の数ぶん満点だった（3／3、6／6、9／9、12／12、12／12）。10回・84問すべてで条件を満たし、条件を増やしても崩れは見えなかった。AIの自己申告は10回とも「すべて満たしています」で、実際の判定と一致していた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="432"/>
+<text class="t-strong" x="18" y="26">条件を3→6→9→12個と積んでも、逆順にしても、崩れは1件も無かった</text>
+<text class="t-sm" x="18" y="45">架空の社内お知らせ1本を、条件数を変えた5版×各2回＝10回作らせ、12条件をPythonで判定。</text>
+<text class="t-sm" x="18" y="64">「12個・逆順」は同じ12条件を逆の順番で並べた版。数字は「満たした数／条件の数」。</text>
+<text class="t-xs" x="283.0" y="114" text-anchor="middle">1回目</text>
+<text class="t-xs" x="433.0" y="114" text-anchor="middle">2回目</text>
+<text class="t" x="18" y="150">3個</text>
+<rect class="box-good" x="224" y="128" width="118" height="28" rx="4"/>
+<text class="t-good" x="283.0" y="150" text-anchor="middle" style="font-weight:700">3／3</text>
+<rect class="box-good" x="374" y="128" width="118" height="28" rx="4"/>
+<text class="t-good" x="433.0" y="150" text-anchor="middle" style="font-weight:700">3／3</text>
+<text class="t" x="18" y="192">6個</text>
+<rect class="box-good" x="224" y="170" width="118" height="28" rx="4"/>
+<text class="t-good" x="283.0" y="192" text-anchor="middle" style="font-weight:700">6／6</text>
+<rect class="box-good" x="374" y="170" width="118" height="28" rx="4"/>
+<text class="t-good" x="433.0" y="192" text-anchor="middle" style="font-weight:700">6／6</text>
+<text class="t" x="18" y="234">9個</text>
+<rect class="box-good" x="224" y="212" width="118" height="28" rx="4"/>
+<text class="t-good" x="283.0" y="234" text-anchor="middle" style="font-weight:700">9／9</text>
+<rect class="box-good" x="374" y="212" width="118" height="28" rx="4"/>
+<text class="t-good" x="433.0" y="234" text-anchor="middle" style="font-weight:700">9／9</text>
+<text class="t" x="18" y="276">12個</text>
+<rect class="box-good" x="224" y="254" width="118" height="28" rx="4"/>
+<text class="t-good" x="283.0" y="276" text-anchor="middle" style="font-weight:700">12／12</text>
+<rect class="box-good" x="374" y="254" width="118" height="28" rx="4"/>
+<text class="t-good" x="433.0" y="276" text-anchor="middle" style="font-weight:700">12／12</text>
+<text class="t" x="18" y="318">12個・逆順</text>
+<rect class="box-good" x="224" y="296" width="118" height="28" rx="4"/>
+<text class="t-good" x="283.0" y="318" text-anchor="middle" style="font-weight:700">12／12</text>
+<rect class="box-good" x="374" y="296" width="118" height="28" rx="4"/>
+<text class="t-good" x="433.0" y="318" text-anchor="middle" style="font-weight:700">12／12</text>
+<rect class="box-accent" x="18" y="344" width="678" height="64" rx="6"/>
+<text class="t-accent" x="34" y="364">10回・84問すべて（100%）が条件を満たした。12個まで積んでも、条件そのものによる劣化は見えなかった。</text>
+<text class="t-accent" x="34" y="383">9個版・12個版・逆順版のいずれも2回とも満点。「後に書いた条件から落ちる」も裏づけられなかった。</text>
+<text class="t-accent" x="34" y="402">AIの自己申告は10回とも「すべて満たしています」で、実際の判定と一致した（崩れが無かったため）。</text>
+</svg>

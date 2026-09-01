@@ -14072,6 +14072,89 @@ def role_prompt_grid_chart() -> None:
     )
 
 
+def condition_count_satisfied_chart() -> None:
+    """条件を3・6・9・12個と積んだ版（12個は逆順版も）で、実際に満たした条件数を並べる。
+
+    実測（2026-09-01・架空の社内お知らせ1本×各2回、12条件を判定するPythonコード）。
+    値は docs/evidence/how-many-conditions-actually-hold.md の判定コード。
+    5版×各2回＝10回・84問すべてで満点だった（崩れは1件も無し）。
+    """
+    rows = [
+        ("3個", "3／3", "3／3"),
+        ("6個", "6／6", "6／6"),
+        ("9個", "9／9", "9／9"),
+        ("12個", "12／12", "12／12"),
+        ("12個・逆順", "12／12", "12／12"),
+    ]
+    label_w = 190
+    col_w = 150
+    col_x = [18 + label_w, 18 + label_w + col_w]
+    top = 128
+    row_h = 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "条件を3→6→9→12個と積んでも、逆順にしても、崩れは1件も無かった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の社内お知らせ1本を、条件数を変えた5版×各2回＝10回作らせ、12条件をPythonで判定。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「12個・逆順」は同じ12条件を逆の順番で並べた版。数字は「満たした数／条件の数」。"
+        "</text>\n",
+    ]
+
+    headers = ["1回目", "2回目"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, v1, v2 in rows:
+        ty = y + 22
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for i, val in enumerate((v1, v2)):
+            x = col_x[i]
+            parts.append(
+                f'<rect class="box-good" x="{x + 16}" y="{y}" width="{col_w - 32}" height="28" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{_esc(val)}</text>\n'
+            )
+        y += row_h + 8
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="64" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "10回・84問すべて（100%）が条件を満たした。12個まで積んでも、条件そのものによる劣化は見えなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 39}">'
+        "9個版・12個版・逆順版のいずれも2回とも満点。「後に書いた条件から落ちる」も裏づけられなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 58}">'
+        "AIの自己申告は10回とも「すべて満たしています」で、実際の判定と一致した（崩れが無かったため）。</text>\n"
+    )
+    y += 64 + 16
+
+    height = y + 8
+    alt = (
+        "架空の社内お知らせを作らせるタスクで、機械で判定できる12条件のうち先頭から"
+        "3個・6個・9個・12個を積んだ4版と、同じ12個を逆順に並べた版を、それぞれ2回ずつ実測した表。"
+        "3個版・6個版・9個版・12個版・逆順版のいずれも、2回とも条件の数ぶん満点だった"
+        "（3／3、6／6、9／9、12／12、12／12）。10回・84問すべてで条件を満たし、"
+        "条件を増やしても崩れは見えなかった。AIの自己申告は10回とも「すべて満たしています」で、"
+        "実際の判定と一致していた。"
+    )
+    (OUT / "condition-count-satisfied.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def resume_list_correctness_chart() -> None:
     """3つの続け方（続きを書いて／＋IDは書かないで／件目で指定）で、
 
@@ -15857,4 +15940,5 @@ if __name__ == "__main__":
     gemini35cu_actions_chart()
     expense_rule_category_agreement_chart()
     expense_rule_trap_grid_chart()
+    condition_count_satisfied_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
