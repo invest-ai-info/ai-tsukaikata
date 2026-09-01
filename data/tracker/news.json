@@ -39,6 +39,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-01T10:12:33.666975+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-08-31T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore.",
+      "summary_ja": "OpenAIが若者のAI利用の安全確保法案を支持\nカリフォルニア州のSB 1119で、ティーン向けに強力な安全策を進める\n学習や創造の機会は奪わない形で進める",
+      "summary_source": "gemini",
+      "title": "OpenAI supports California’s bill to advance youth AI safety",
+      "uid": "ed0def82a1d4e1d9",
+      "url": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-31T13:58:05.785698+00:00",
       "importance": "major",
       "label": "DeepSeek 新モデル",
