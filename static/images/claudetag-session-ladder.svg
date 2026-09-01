@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="304" viewBox="0 0 720 304" role="img" aria-label="会話が止まってから何が起きるかを示した3段の図。①サンドボックス（1スレッドの作業部屋）を片づけるのは最後のやり取りから数分後。②チャンネル全体の会話を仕切り直すのは、無音のまま約1時間、または最初の会話から約1日。③チャンネルの読み込みを止めるのは、誰にも返信しないまま約100件たまったとき。下の枠には、3つとも既定値で公式ドキュメントが「変わることがあるので目安として扱ってほしい」と明記していること、②はチャンネルの設定が変わったときも仕切り直されることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="304"/>
+<text class="t-strong" x="18" y="26">会話が止まってから、忘れ始めるまでの3つの境目</text>
+<text class="t-sm" x="18" y="45">公式ドキュメント「What survives between replies」に書かれている3つの既定値。</text>
+<text class="t-sm" x="18" y="64">①は1スレッドの作業環境、②はチャンネル全体の会話、③は読み込み対象の範囲。</text>
+<rect class="box-quiet" x="18" y="96" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="120">① サンドボックス（作業部屋）を片づける</text>
+<text class="t" x="552" y="120" style="font-weight:700">数分</text>
+<rect class="box-quiet" x="18" y="140" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="164">② チャンネルの会話を仕切り直す</text>
+<text class="t" x="552" y="164" style="font-weight:700">約1時間／約1日</text>
+<rect class="box-good" x="18" y="184" width="684" height="36" rx="6"/>
+<text class="t-strong" x="34" y="208">③ チャンネルの先読みを止める</text>
+<text class="t-good" x="552" y="208" style="font-weight:700">約100件</text>
+<rect class="box-accent" x="18" y="238" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="257">3つとも既定値。公式ドキュメントは「変わることがあるので目安として扱ってほしい」と明記している。</text>
+<text class="t-accent" x="34" y="275">②はチャンネルの設定が変わったときも仕切り直される（時間・日数だけが条件ではない）。</text>
+</svg>

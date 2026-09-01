@@ -15661,6 +15661,236 @@ def expense_rule_trap_grid_chart() -> None:
     )
 
 
+def claudetag_position_grid_chart() -> None:
+    """Claude Tag・Cowork・Claude Codeの位置づけを4項目で比べた表。
+
+    出典＝claude.com/docs/claude-tag/concepts/how-it-works の
+    「How Claude Tag differs from Cowork and Claude Code」表を、そのまま日本語にした。
+    3つとも同じ会社（Anthropic）の製品。
+    """
+    rows = [
+        ("どこで", "Slackのチャンネル", "claude.aiのチャット", "端末やIDE"),
+        ("誰の権限で", "管理者が設定した共通の権限", "自分のOAuth連携", "自分のローカル環境"),
+        ("誰に見えるか", "チャンネルの全員", "自分だけ", "自分だけ"),
+        ("向いている用途", "チームで見て動かす作業", "個人の調査・下書き", "自分の手元でのコーディング"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 128
+    pitch, box_h = 36, 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Claude Tag・Cowork・Claude Codeは、同じ会社でも役目が違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "公式ドキュメントが「Claude Tagの違い」として挙げている4項目を、そのまま並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3つとも Anthropic 自身の製品どうしの比較で、他社の製品ではない。</text>\n",
+    ]
+    headers = ["Claude Tag", "Cowork", "Claude Code"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, tag_v, cowork_v, code_v in rows:
+        ty = y + 19
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for i, val in enumerate((tag_v, cowork_v, code_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else "box-quiet"
+            tcls = "t-accent" if i == 0 else "t-sm"
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            parts.append(f'<text class="{tcls}" x="{x + 8:.1f}" y="{ty}">{_esc(val)}</text>\n')
+        y += pitch
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "公式は「用途で使い分ける」ことを勧めている。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 37}">'
+        "チームで共有→Claude Tag／個人の下書き→Cowork／自分のコード→Claude Code。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 55}">'
+        "3つとも同じ会社の製品。他社と並べた公式の比較表は見つかっていない。</text>\n"
+    )
+    y += 64 + 16
+
+    height = y + 8
+    alt = (
+        "Claude Tag・Cowork・Claude Codeを4項目で比べた表。"
+        "どこで＝Claude TagはSlackのチャンネル、Coworkはclaude.aiのチャット、"
+        "Claude Codeは端末やIDE。誰の権限で＝Claude Tagは管理者が設定した共通の権限、"
+        "Coworkは自分のOAuth連携、Claude Codeは自分のローカル環境。"
+        "誰に見えるか＝Claude Tagはチャンネルの全員、Coworkと Claude Codeは自分だけ。"
+        "向いている用途＝Claude Tagはチームで見て動かす作業、Coworkは個人の調査・下書き、"
+        "Claude Codeは自分の手元でのコーディング。下の枠には、公式が用途で使い分けることを"
+        "勧めていること（チームで共有→Claude Tag、個人の下書き→Cowork、自分のコード→Claude Code）、"
+        "3つとも同じ会社の製品で他社と並べた公式の比較表は見つかっていないことが書かれている。"
+    )
+    (OUT / "claudetag-position-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def claudetag_billing_boundary_chart() -> None:
+    """チャンネル作業とDMで、請求先と上限がどう分かれるか。
+
+    出典＝claude.com/docs/claude-tag/admins/set-spend-limit。
+    Teamは残高を入金するまで反応しない、Enterprise（請求書払い）は
+    上限を自分で設定するまで上限が無い、という2点をそのまま書いた。
+    """
+    card_w = (684 - 20) / 2
+    card_x = [18, 18 + card_w + 20]
+    card_y = 96
+    card_h = 100
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "請求先は、チャンネル作業とDMで別の財布に分かれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "公式ドキュメント「Set a spend limit」に書かれている請求の仕組みをそのまま並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上限を決めていない場合、何が起きるかは2つの財布で違う。</text>\n",
+    ]
+
+    cards = [
+        (
+            card_x[0], "box-accent", "t-accent",
+            "チャンネルでの作業",
+            [
+                "請求先＝組織の使用残高（usage balance）",
+                "上限＝管理者が決めた spend limit",
+                "Team は残高を入金するまで反応しない",
+            ],
+        ),
+        (
+            card_x[1], "box-quiet", "t",
+            "DM（個人チャット）",
+            [
+                "請求先＝送った本人のシート",
+                "上限＝そのシートのふだんの利用上限",
+                "組織の spend limit とは無関係",
+            ],
+        ),
+    ]
+    for x, cls, tcls, title, lines in cards:
+        parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h}" rx="6"/>\n')
+        parts.append(f'<text class="{tcls}" x="{x + 16:.1f}" y="{card_y + 24}" style="font-weight:700">{_esc(title)}</text>\n')
+        for i, line in enumerate(lines):
+            parts.append(
+                f'<text class="t-sm" x="{x + 16:.1f}" y="{card_y + 46 + i * 19}">{_esc(line)}</text>\n'
+            )
+
+    y = card_y + card_h + 16
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="684" height="58" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 22}">'
+        "Team は残高を入金するまで、チャンネルで一切返信しない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 42}">'
+        "Enterprise（請求書払い）は、自分で上限を決めない限り、上限が無い。</text>\n"
+    )
+    y += 58 + 12
+    parts.append(
+        f'<text class="t-xs" x="18" y="{y}">'
+        "※ spend limit は「定価」で数える。値引き契約があっても、上限には反映されず"
+        "請求時にだけ反映される（同ページ）。</text>\n"
+    )
+    y += 18
+    parts.append(
+        f'<text class="t-xs" x="18" y="{y}">'
+        "※ DMは組織の spend limit を消費しない。消費するのは、送った本人のふだんの利用上限だけ。</text>\n"
+    )
+    y += 18
+
+    height = y + 8
+    alt = (
+        "チャンネルでの作業とDMで、請求先と上限がどう分かれるかを示した図。"
+        "チャンネルでの作業は、組織の使用残高（usage balance）に請求され、"
+        "上限は管理者が決めるspend limit。Teamプランは残高を入金するまで反応しない。"
+        "DM（個人チャット）は、送った本人のシートに請求され、上限はそのシートのふだんの"
+        "利用上限で、組織のspend limitとは無関係。下の警告枠には、Teamは残高を入金するまで"
+        "チャンネルで一切返信しないこと、Enterprise（請求書払い）は自分で上限を決めない限り"
+        "上限が無いことが書かれている。注釈として、spend limitは定価で数えるため値引き契約が"
+        "あっても上限には反映されず請求時にだけ反映されること、DMは組織のspend limitを"
+        "消費せず送った本人のふだんの利用上限だけが働くことが添えられている。"
+    )
+    (OUT / "claudetag-billing-boundary.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def claudetag_session_ladder_chart() -> None:
+    """作業部屋・チャンネルの会話・読み込みが、それぞれ何を境にリセットされるか。
+
+    出典＝claude.com/docs/claude-tag/concepts/how-it-works
+    「What survives between replies」節。数字はいずれも既定値で、
+    公式が「変わることがあるので目安として扱ってほしい」と明記している。
+    """
+    rows = [
+        ("① サンドボックス（作業部屋）を片づける", "数分", "box-quiet", "t"),
+        ("② チャンネルの会話を仕切り直す", "約1時間／約1日", "box-quiet", "t"),
+        ("③ チャンネルの先読みを止める", "約100件", "box-good", "t-good"),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 44
+    top = 96
+    amount_x = box_x + box_w - 150
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "会話が止まってから、忘れ始めるまでの3つの境目</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "公式ドキュメント「What survives between replies」に書かれている3つの既定値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "①は1スレッドの作業環境、②はチャンネル全体の会話、③は読み込み対象の範囲。</text>\n",
+    ]
+
+    y = top
+    for label, amount, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 8}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 24}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<text class="{tcls}" x="{amount_x}" y="{y + 24}" style="font-weight:700">{_esc(amount)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="46" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "3つとも既定値。公式ドキュメントは「変わることがあるので目安として扱ってほしい」と"
+        "明記している。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 37}">'
+        "②はチャンネルの設定が変わったときも仕切り直される（時間・日数だけが条件ではない）。</text>\n"
+    )
+    y += 46 + 12
+
+    height = y + 8
+    alt = (
+        "会話が止まってから何が起きるかを示した3段の図。①サンドボックス（1スレッドの作業部屋）"
+        "を片づけるのは最後のやり取りから数分後。②チャンネル全体の会話を仕切り直すのは、"
+        "無音のまま約1時間、または最初の会話から約1日。③チャンネルの読み込みを止めるのは、"
+        "誰にも返信しないまま約100件たまったとき。下の枠には、3つとも既定値で公式ドキュメントが"
+        "「変わることがあるので目安として扱ってほしい」と明記していること、②はチャンネルの設定が"
+        "変わったときも仕切り直されることが書かれている。"
+    )
+    (OUT / "claudetag-session-ladder.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -15857,4 +16087,7 @@ if __name__ == "__main__":
     gemini35cu_actions_chart()
     expense_rule_category_agreement_chart()
     expense_rule_trap_grid_chart()
+    claudetag_position_grid_chart()
+    claudetag_billing_boundary_chart()
+    claudetag_session_ladder_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

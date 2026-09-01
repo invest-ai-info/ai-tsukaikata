@@ -358,12 +358,19 @@
     （＝許可リストに足せば直る種類）なので、そう書いて止まること
   - 集めたい数字＝**対応している操作の種類・制限・料金・使えるモデル**。
     比較相手は Anthropic の computer use（`docs.claude.com` は許可リストに入っている）
-- [ ] https://www.anthropic.com/news/introducing-claude-tag
-  - 2026-08-31 手動追記（補充2件目）
-  - 会社員の日常（Slack）に入る話。**`www.anthropic.com` は 2026-08-04 の `claude-opus-5` で
-    実際に記事化できている**（手元では200を実測）
-  - 集めたい数字＝**使える場所・必要な権限・料金の扱い**。⚠️ 数字が1つも無い告知だったら、
-    「AI Futures」（2026-08-21 オーナー見送り）と同じ形なので、比較できる数字があるかを先に確かめる
+- [x] https://www.anthropic.com/news/introducing-claude-tag
+  - →保管: ✅ **2026-09-01 1回目: 公開した** → `content/tools/claude-tag-slack.md`
+    （`www.anthropic.com` に到達・図3枚。`check_numbers.py` は照合できる数字1個〈65%〉が出典に存在。
+    出典4件すべて取得成功。pytest 618 passed・build 137ファイル）
+  - 📌 公開日は2026-06-23（発表ページの表示日付）。待ち行列に積まれたのは2026-08-31だが、
+    「古い告知でも構わない」の方針どおり、checked日付を入れて処理した
+  - ⚠️ **他社比較は保留にした。**OpenAI（`openai.com`・`help.openai.com`）はbot判定の403、
+    Microsoft（`learn.microsoft.com`）・Salesforce（`help.salesforce.com`）は経路遮断
+    （`CONNECT tunnel failed`）で到達できず。Google（`cloud.google.com/gemini-enterprise`）は
+    本体ページのみ200で、料金・連携の詳細は確認できなかった。二次情報は使わず、
+    記事内で「比較できなかった」とそのまま書いた
+  - 🚨 旧アプリ「Claude in Slack」の詳細ページ（`support.claude.com`）は経路遮断で到達不可。
+    次にこのドメインを叩く行が来たら、まずここに記録した経路遮断を再試行対象にすること
 - [ ] https://www.anthropic.com/news/reflect-with-claude
   - 2026-08-31 手動追記（補充3件目）
   - 「自分の使い方を測る」＝このサイトの`verify-before-report`系と噛み合う。手元では200を実測
@@ -383,6 +390,18 @@
 
 ## 処理済み
 
+- https://www.anthropic.com/news/introducing-claude-tag → **公開済み** content/tools/claude-tag-slack.md（2026-09-01・公開）
+  - `www.anthropic.com` に到達できた。図3枚（`claudetag-position-grid` / `claudetag-billing-boundary` /
+    `claudetag-session-ladder`）。`check_numbers.py` は照合できる数字1個（65%）が出典に存在
+    （出典4件とも取得成功）。pytest 618 passed・build 137ファイル。
+  - 📌 記事の芯＝**Enterprise（請求書払い）は、自分で spend limit を設定するまで上限が無いと
+    公式ドキュメントに明記されている**（Teamは逆に、残高を入金するまで一切反応しない）。
+  - ⚠️ 他社比較は保留にした。OpenAI（`openai.com`・`help.openai.com`）はbot判定の403、
+    Microsoft・Salesforceは経路遮断（`CONNECT tunnel failed`）で到達できず、
+    Google（`cloud.google.com/gemini-enterprise`）は本体ページのみ200で詳細は確認できなかった。
+    二次情報は使わず、記事内に「比較できなかった」とそのまま書いた。
+  - ⚠️ 旧アプリ「Claude in Slack」の詳細（`support.claude.com`）も経路遮断で到達不可。
+    次にこのドメインが来たら再試行対象にすること。
 - https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/ → **公開済み** content/tools/gemini-computer-use.md（2026-08-31・公開）
   - `blog.google`（転送先）に到達できた。図3枚（`gemini35cu-timeline` / `gemini35cu-osworld` / `gemini35cu-actions`）。
     `check_numbers.py` は **12個すべて出典に存在**（出典8件とも取得成功）。pytest 618 passed・build 135ファイル。

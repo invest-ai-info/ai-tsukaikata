@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="Claude Tag・Cowork・Claude Codeを4項目で比べた表。どこで＝Claude TagはSlackのチャンネル、Coworkはclaude.aiのチャット、Claude Codeは端末やIDE。誰の権限で＝Claude Tagは管理者が設定した共通の権限、Coworkは自分のOAuth連携、Claude Codeは自分のローカル環境。誰に見えるか＝Claude Tagはチャンネルの全員、Coworkと Claude Codeは自分だけ。向いている用途＝Claude Tagはチームで見て動かす作業、Coworkは個人の調査・下書き、Claude Codeは自分の手元でのコーディング。下の枠には、公式が用途で使い分けることを勧めていること（チームで共有→Claude Tag、個人の下書き→Cowork、自分のコード→Claude Code）、3つとも同じ会社の製品で他社と並べた公式の比較表は見つかっていないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">Claude Tag・Cowork・Claude Codeは、同じ会社でも役目が違う</text>
+<text class="t-sm" x="18" y="45">公式ドキュメントが「Claude Tagの違い」として挙げている4項目を、そのまま並べた。</text>
+<text class="t-sm" x="18" y="64">3つとも Anthropic 自身の製品どうしの比較で、他社の製品ではない。</text>
+<text class="t-accent" x="134.0" y="114">Claude Tag</text>
+<text class="t-accent" x="328.0" y="114">Cowork</text>
+<text class="t-accent" x="522.0" y="114">Claude Code</text>
+<text class="t-sm" x="18" y="147">どこで</text>
+<rect class="box-accent" x="126.0" y="128" width="188.0" height="26" rx="4"/>
+<text class="t-accent" x="134.0" y="147">Slackのチャンネル</text>
+<rect class="box-quiet" x="320.0" y="128" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="328.0" y="147">claude.aiのチャット</text>
+<rect class="box-quiet" x="514.0" y="128" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="522.0" y="147">端末やIDE</text>
+<text class="t-sm" x="18" y="183">誰の権限で</text>
+<rect class="box-accent" x="126.0" y="164" width="188.0" height="26" rx="4"/>
+<text class="t-accent" x="134.0" y="183">管理者が設定した共通の権限</text>
+<rect class="box-quiet" x="320.0" y="164" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="328.0" y="183">自分のOAuth連携</text>
+<rect class="box-quiet" x="514.0" y="164" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="522.0" y="183">自分のローカル環境</text>
+<text class="t-sm" x="18" y="219">誰に見えるか</text>
+<rect class="box-accent" x="126.0" y="200" width="188.0" height="26" rx="4"/>
+<text class="t-accent" x="134.0" y="219">チャンネルの全員</text>
+<rect class="box-quiet" x="320.0" y="200" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="328.0" y="219">自分だけ</text>
+<rect class="box-quiet" x="514.0" y="200" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="522.0" y="219">自分だけ</text>
+<text class="t-sm" x="18" y="255">向いている用途</text>
+<rect class="box-accent" x="126.0" y="236" width="188.0" height="26" rx="4"/>
+<text class="t-accent" x="134.0" y="255">チームで見て動かす作業</text>
+<rect class="box-quiet" x="320.0" y="236" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="328.0" y="255">個人の調査・下書き</text>
+<rect class="box-quiet" x="514.0" y="236" width="188.0" height="26" rx="4"/>
+<text class="t-sm" x="522.0" y="255">自分の手元でのコーディング</text>
+<rect class="box-accent" x="18" y="280" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="299">公式は「用途で使い分ける」ことを勧めている。</text>
+<text class="t-accent" x="34" y="317">チームで共有→Claude Tag／個人の下書き→Cowork／自分のコード→Claude Code。</text>
+<text class="t-accent" x="34" y="335">3つとも同じ会社の製品。他社と並べた公式の比較表は見つかっていない。</text>
+</svg>
