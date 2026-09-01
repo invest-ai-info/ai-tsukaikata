@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-01T21:49:02.248481+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "バイクに乗る若い人の運転はどうも危なっかしく感じられることがあります。そこで、手軽に乗れる原付一種（かつての排気量50ccまでのバイク）を対象に、年齢と交通事故死傷者数との間に関係があるかどうかを調べてみたいと思います。つまり、相関のベイズ検定に取り組もうというわけです。『社会人1年生から学ぶやさしいデータ分析』ベイズ統計編の第8回です。",
+      "title": "【Pythonで学ぶデータ分析】相関があるかどうかをベイズ統計で調べる ～ 年齢と原付事故死傷者数に関係はあるのか？",
+      "uid": "7403c265569bb161",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/02/news002.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-01T14:56:39.446506+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2387,18 +2399,6 @@
       "uid": "00d437024e226759",
       "url": "https://ai.watch.impress.co.jp/docs/news/2135467.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-25T09:53:18.249227+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-25T09:11:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "GoogleやOpenAIなど数多くのAI企業が画像生成AIをリリースしていますが、画像生成AIの性能は「プロンプトに対する忠実度」「テキスト描画の精度」「画像編集の正確さ」など多様な要素が絡んでおり、用途によって適切なAIは変化します。OpenRouterが公開している「Image benchmarks」では各種画像生成AIに同じプロンプトを入力した結果を一覧表示可能で、目的に合ったAIを見つ…",
-      "title": "大量に存在する画像生成AIを同じプロンプトで比較できる「Image benchmarks」をOpenRouterが公開",
-      "uid": "17abeae39bbc46fa",
-      "url": "https://gigazine.net/news/20260825-openrouter-image-benchmarks/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

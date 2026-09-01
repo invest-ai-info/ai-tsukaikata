@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-09-01T21:49:02.248481+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-01T20:45:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Transitioning cards: 1. Text \"Gemini 3.7 Flash\" next to the Gemini logo icon; 2. a photo of a pixel phone; 3. Google Gemini logo above the text \"Claim your student plan for 1 year at no cost\"",
+      "summary_ja": "Geminiの新しい情報が発表されました\n新AIモデル「Gemini 3.7 Flash」が登場\n学生向けに1年間無料の利用プランを提供",
+      "summary_source": "gemini",
+      "title": "The latest AI news we announced in August 2026",
+      "uid": "d41bda715d432ffb",
+      "url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-01T18:35:06.616532+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -75,6 +89,20 @@
       "uid": "8bcc535e0ef396b1",
       "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-01T21:49:02.248481+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-01T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Astra is the first OpenAI model to meet the Critical cybersecurity capability threshold under the Preparedness Framework, with stronger safeguards for release.",
+      "summary_ja": "OpenAIが新AIモデル「Astra」を発表\n極めて高いサイバー安全基準を初めてクリア\nこれまでより強力な安全対策を導入しています",
+      "summary_source": "gemini",
+      "title": "Path to Astra: critical capabilities and frontier safeguards",
+      "uid": "20782b38a559b323",
+      "url": "https://openai.com/index/path-to-astra",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-01T18:35:06.616532+00:00",
