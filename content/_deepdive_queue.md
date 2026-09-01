@@ -378,6 +378,9 @@
 ⚠️ **古い告知でも構わない**（`tools/` は速報ではなく「このツールは何ができるか」の調べ物）。
 ただし**記事に `checked` の日付を必ず入れる**こと。
 
+- [ ] https://deepmind.google/blog/introducing-agentic-video-in-gemini/
+  - 2026-09-01 自動追記（major・Google DeepMind「Introducing agentic video understanding with Gemini」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/ → **公開済み** content/tools/gemini-computer-use.md（2026-08-31・公開）
