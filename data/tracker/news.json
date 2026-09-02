@@ -13,6 +13,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-01T22:33:20+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed Claude Code failing to launch on macOS 12 (Monterey), a regression introduced in 2.1.255 Fixed remote and scheduled sessions failing with \"user messages must have non-empty conte…",
+      "title": "v2.1.258",
+      "uid": "8ce36e416ad36b61",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.258",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-01T21:49:02.248481+00:00",
       "importance": "minor",
       "label": "Google AI Blog",

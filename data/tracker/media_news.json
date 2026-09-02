@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-02T00:06:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Anthropicは9月1日（現地時間）、AIモデル「Claude Fable 5.1」と「Claude Mythos 5.1」を発表した。両者は中身が同じモデルで、安全策の水準だけが異なる。",
+      "title": "Anthropic、「Claude Fable 5.1」「Mythos 5.1」公開　AI透かしも導入",
+      "uid": "049b4f85e7df61b1",
+      "url": "https://japan.cnet.com/article/35252149/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T23:06:30+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、ゼロデータ保持（ZDR）と同等のプライバシーを確保しつつ不正利用を検知する企業向け新機能「Enterprise Frontier Safeguards」（EFS）を発表した。活動データを顧客自身のクラウドに保存し、フラグも顧客へ直接送信することで社外の人的レビューを排除する。今秋提供開始予定。",
+      "title": "Anthropic、企業向け「Enterprise Frontier Safeguards」発表　ログは顧客のクラウドに保存し、人手による確認も顧客側で",
+      "uid": "ec31f9f0bce68473",
+      "url": "https://www.itmedia.co.jp/news/article/2609/02/2000001049/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "脳梗塞などで声を出せなくなった患者の意思疎通を、AI技術とスマートグラスで支援するシステム「CommunicationBoard+AI」。仕組みや開発背景、今後の展望を開発元のロケットスタジオなどに聞いた。",
+      "title": "「こんなのやっても」と拒んだ患者が夢中になったAIメガネ　声を失っても“話せる”仕組みとは",
+      "uid": "5aafdd76d283a07b",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/02/2000000979/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "設計スキルのレベルアップを目指す設計者の皆さんを“冒険者”に見立て、さまざまな“問（モン）スター”に挑む「テルえもんクエストII」の世界へようこそ。【レベル15】では、AIと3D CADを活用した椅子の設計に挑戦する。設計条件の検討から3Dモデルの作成まで、人間とAIの役割分担を考えながら攻略していく。",
+      "title": "【レベル15】3D CADとAIで椅子をデザインせよ！",
+      "uid": "78016d9c516e9ee2",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/02/news001.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T22:23:30+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは新LLM「Claude Fable 5.1」と「Claude Mythos 5.1」を発表した。科学研究やコーディング性能が大幅に向上し、一般提供のFableに対し、Mythosは厳格な審査制を採用。System Cardでは高度な推論力に伴うエクスプロイト成功率や監視困難性などのリスクも報告されている。",
+      "title": "Anthropic、「Claude Fable 5.1」と「Claude Mythos 5.1」発表　「監視の難しさ」への懸念も開示",
+      "uid": "487039d9b6aaa16c",
+      "url": "https://www.itmedia.co.jp/news/article/2609/02/2000001048/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-02T00:17:44.256959+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-01T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIによるコーディングで、開発スピードは飛躍的に高まっている。一方で、その効率化が組織全体の生産性や成果につながるとは限らない。なぜ「速く作れる」のに、企業の弱点になり得るのか。",
+      "title": "「AIコーディングで高速開発」が、なぜ企業の弱点に？　開発部門のAIとの付き合い方",
+      "uid": "bbdad491d4888024",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/02/2000001034/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-01T21:49:02.248481+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2327,78 +2399,6 @@
       "uid": "faf5cf8d4875d801",
       "url": "https://gigazine.net/news/20260825-anthropic-best-ai-model-struggles/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-25T13:13:37.045068+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-25T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Amazonのタブレット「Amazon Fire HD 10」を2022年に購入し使用していたところ、使用3年目ほどで24時間365日電源に接続しているのに勝手に電源が切れるようになったことに悩まされていた開発者のericpardee氏が、複数のAIを使って端末を修理したプロセスについて解説しています。 続きを読む...",
-      "title": "勝手に電源が切れるようになった「Amazon Fire HD 10」をAIで修理",
-      "uid": "2e5a50f7f68de367",
-      "url": "https://gigazine.net/news/20260825-fire-hd-10-shutting-down/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-25T10:51:45.257904+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-25T10:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国への高性能AIチップおよびAIサーバーの密輸取り締まりを行っていた台湾基隆地方検察署が、NVIDIA台湾支社の従業員やPC機器メーカー・Supermicroの従業員を含む9名を起訴したことを発表しました。 続きを読む...",
-      "title": "台湾検察がNVIDIAとSupermicroの従業員ら9人を起訴、中国へAIサーバーを密輸した疑い",
-      "uid": "050b169a2ce6a870",
-      "url": "https://gigazine.net/news/20260825-taiwan-employees-export-ai-servers-to-china/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-25T11:46:27.111504+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-25T10:28:22+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "政府は、生成AI事業者向けに透明性の確保と知的財産権の保護を促す「プリンシプル・コード」を策定した。",
-      "title": "政府、AI事業者向け「知財保護ルール」策定　対象範囲・運用方針は？",
-      "uid": "70c90212ac2d61dd",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/25/2000000767/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-25T10:51:45.257904+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-25T10:17:20+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "パナソニック コネクトは8月25日、複数メーカーの協働ロボットや周辺機器をノーコードで制御できる「Robo Sync（ロボシンク）」の名称を、プロダクト群の拡充にあわせ、協働ロボット制御サービス「Robo Sync for Cobot（ロボシンク フォー コボット）」へ変更したと発表した。また、Robo Sync for Cobotの機能を拡充した。",
-      "title": "パナソニック コネクト、「Robo Sync for Cobot」の機能を拡充",
-      "uid": "82030e6db90bc0ee",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135500.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-25T10:51:45.257904+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-08-25T10:05:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GMOペパボは、1つのAPIキーで複数のAIモデルを利用できるマネージドAIゲートウェイ「ロリポップ！AIゲートウェイ byGMOペパボ」の提供を8月25日より開始した。",
-      "title": "最安モデルの自動選択「ロリポップ！AIゲートウェイ byGMOペパボ」提供開始 APIキー1つでAnthropic、OpenAI、Googleなど14社のAIモデルをスムースに導入",
-      "uid": "00c0575a1ca793f8",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135486.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-25T09:53:18.249227+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-25T09:32:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "富士通、東急建設および北野建設は8月25日、建設現場での工事進捗とリスクの管理を支援するAI（以下、建設工程管理支援AI）について、「Fujitsu Technology Park」（以下、FTP）で12月25日まで実証実験を実施すると発表した。",
-      "title": "富士通ら3社、建設工程管理支援AIを活用した建設現場での実証実験",
-      "uid": "00d437024e226759",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2135467.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
