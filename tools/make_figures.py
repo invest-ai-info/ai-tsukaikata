@@ -16294,6 +16294,82 @@ def facts_stay_promises_grow_totals_chart() -> None:
     )
 
 
+def combined_payment_missed_as_unpaid_chart() -> None:
+    """架空の納品記録12件・入金明細10行を突き合わせる4つの頼み方で、
+    同額2件の誤配分と、合算入金の発見率を並べたマス目。
+
+    実測（2026-09-02）。版a（素朴）・b（確かめる欄）・c（行番号つき）は各3回、
+    版d（合算チェックを明記）は2回。真値は日付窓つきの金額総当たり（Python）で確定。
+    """
+    cols = ["同額2件を誤配分", "合算入金を発見"]
+    rows = [
+        ("版a　素朴に聞く（3回）", ["0/3", "0/3"], ["box-good", "box-bad"], ["t-good", "t-bad"]),
+        ("版b　＋確かめる欄（3回）", ["0/3", "1/3"], ["box-good", "box-bad"], ["t-good", "t-bad"]),
+        ("版c　＋行番号つき（3回）", ["0/3", "1/3"], ["box-good", "box-bad"], ["t-good", "t-bad"]),
+        ("版d　＋合算チェック明記（2回）", ["0/2", "2/2"], ["box-good", "box-good"], ["t-good", "t-good"]),
+    ]
+
+    label_w = 230
+    cell_w, cell_h, gap = 165, 34, 10
+    top = 138
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同額の取り違えは0件のまま。動いたのは合算への気づき</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の納品記録12件・入金明細10行を突き合わせ「まだ入金の無い案件」を挙げさせた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同額2件（甲社・戊商店、どちらも30,000円）をどちらかに決めつけた回は、全13回で0件。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "合算入金（LP制作F＋動画編集G＝80,000円の1行）は、「確認して」と明記した版dだけ2回とも発見。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, cells, boxes, tones) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 22}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[col_index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="{tones[col_index]}" x="{tx:.1f}" y="{y + 22}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 16
+    notes = [
+        ("t-xs", "※ 真値は日付窓つきの金額総当たり（Python）で確定。手数料500円までの差引は「確かめる」扱い。"),
+        ("t-xs", "架空データでの実測（全13回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "架空の納品記録12件と入金明細10行を突き合わせる4つの頼み方を並べたマス目。"
+        "同額の2件（甲社・戊商店、どちらも30,000円）をどちらかに決めつけて誤配分した回は、"
+        "版a（素朴）・版b（確かめる欄）・版c（行番号つき）・版d（合算チェック明記）のいずれも0件だった。"
+        "合算入金（LP制作Fと動画編集Gの2件ぶん、48,000円＋32,000円＝80,000円の1行）を"
+        "正しく発見した回は、版aで3回中0回、版bで3回中1回、版cで3回中1回、"
+        "版dで2回中2回だった。"
+    )
+    (OUT / "combined-payment-missed-as-unpaid-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -16499,4 +16575,5 @@ if __name__ == "__main__":
     fable51_bench_chart()
     facts_stay_promises_grow_grid_chart()
     facts_stay_promises_grow_totals_chart()
+    combined_payment_missed_as_unpaid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="384" viewBox="0 0 720 384" role="img" aria-label="架空の納品記録12件と入金明細10行を突き合わせる4つの頼み方を並べたマス目。同額の2件（甲社・戊商店、どちらも30,000円）をどちらかに決めつけて誤配分した回は、版a（素朴）・版b（確かめる欄）・版c（行番号つき）・版d（合算チェック明記）のいずれも0件だった。合算入金（LP制作Fと動画編集Gの2件ぶん、48,000円＋32,000円＝80,000円の1行）を正しく発見した回は、版aで3回中0回、版bで3回中1回、版cで3回中1回、版dで2回中2回だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="384"/>
+<text class="t-strong" x="18" y="26">同額の取り違えは0件のまま。動いたのは合算への気づき</text>
+<text class="t-sm" x="18" y="45">架空の納品記録12件・入金明細10行を突き合わせ「まだ入金の無い案件」を挙げさせた。</text>
+<text class="t-sm" x="18" y="64">同額2件（甲社・戊商店、どちらも30,000円）をどちらかに決めつけた回は、全13回で0件。</text>
+<text class="t-sm" x="18" y="83">合算入金（LP制作F＋動画編集G＝80,000円の1行）は、「確認して」と明記した版dだけ2回とも発見。</text>
+<text class="t-xs" x="230.0" y="126">同額2件を誤配分</text>
+<text class="t-xs" x="405.0" y="126">合算入金を発見</text>
+<text class="t-sm" x="18" y="160">版a　素朴に聞く（3回）</text>
+<rect class="box-good" x="230" y="138" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="160">0/3</text>
+<rect class="box-bad" x="405" y="138" width="165" height="34" rx="4"/>
+<text class="t-bad" x="470.7" y="160">0/3</text>
+<text class="t-sm" x="18" y="204">版b　＋確かめる欄（3回）</text>
+<rect class="box-good" x="230" y="182" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="204">0/3</text>
+<rect class="box-bad" x="405" y="182" width="165" height="34" rx="4"/>
+<text class="t-bad" x="470.7" y="204">1/3</text>
+<text class="t-sm" x="18" y="248">版c　＋行番号つき（3回）</text>
+<rect class="box-good" x="230" y="226" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="248">0/3</text>
+<rect class="box-bad" x="405" y="226" width="165" height="34" rx="4"/>
+<text class="t-bad" x="470.7" y="248">1/3</text>
+<text class="t-sm" x="18" y="292">版d　＋合算チェック明記（2回）</text>
+<rect class="box-good" x="230" y="270" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="292">0/2</text>
+<rect class="box-good" x="405" y="270" width="165" height="34" rx="4"/>
+<text class="t-good" x="470.7" y="292">2/2</text>
+<text class="t-xs" x="18" y="347">※ 真値は日付窓つきの金額総当たり（Python）で確定。手数料500円までの差引は「確かめる」扱い。</text>
+<text class="t-xs" x="18" y="368">架空データでの実測（全13回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
