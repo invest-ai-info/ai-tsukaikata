@@ -343,3 +343,14 @@
     → **①だけなら「発表本文が読めない」で済むが、②があるので、許可リストを直しても今日は書けなかった。**
       **次にやるべきは AWS 系ドメインの追加。**それが済めば、AWS の Bedrock 料金ページ・対応リージョン表という
       一次情報が使えるようになり、`developers.openai.com` 側と突き合わせて比較記事が成立する。
+
+## 2026-09-03 回転
+
+- [x] https://www.anthropic.com/claude-fable-and-mythos-5-1
+  - ✅ **2026-09-02: 公開した**（オーナーのローカルセッションで作成） → `content/tools/claude-fable-5-1.md`
+    （図3枚 `fable51-price-grid` / `fable51-cost-index` / `fable51-bench`・出典6件すべて取得成功・
+    `check_numbers.py` は照合できる数字 **47/47** が出典に存在・pytest 618 passed・build 139ファイル）
+  - 📌 記事の芯＝**入力・出力の単価は Fable 5 と同じ $10/$50 で、下がったのはキャッシュ読み取り
+    $1→$0.25 の1項目だけ。それで「約25%（最大約45%）安い」と公式が説明している**
+  - ⚠️ 手元では `www.anthropic.com` 200・約450KB。クラウド側は 9/1 に `/news/introducing-claude-tag` へ
+    到達できているので同じホストは通るはず（未測定）
