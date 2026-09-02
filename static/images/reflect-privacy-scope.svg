@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="298" viewBox="0 0 720 298" role="img" aria-label="レポートに使われる会話と、使われない会話を対比した図。使われるのは通常のチャット履歴（過去1〜12ヶ月）と、使い方のパターン・取り組んだタスクの種類の分類。使われないのはシークレットチャットと、健康連携ツールに繋がった会話（完全に除外）。下の枠には、設計にMIT Media LabのAHAプログラムとボストン小児病院のDigital Wellness Labが協力したと説明されていること、対象はメモリ機能をオンにしたFree・Pro・Maxのユーザーであることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="298"/>
+<text class="t-strong" x="18" y="26">レポートの材料から、最初に外される会話がある</text>
+<text class="t-sm" x="18" y="45">発表ページに書かれている、レポートに使う会話・使わない会話の境目。</text>
+<text class="t-sm" x="18" y="64">接続ツールの中身（ファイル本体など）も取得しないと説明されている。</text>
+<rect class="box-quiet" x="18.0" y="96" width="332.0" height="90" rx="6"/>
+<text class="t" x="34.0" y="120" style="font-weight:700">レポートに使われる</text>
+<text class="t-sm" x="34.0" y="142">通常のチャット履歴（過去1〜12ヶ月）</text>
+<text class="t-sm" x="34.0" y="161">使い方のパターン・取り組んだ</text>
+<text class="t-sm" x="34.0" y="180">タスクの種類の分類</text>
+<rect class="box-bad" x="370.0" y="96" width="332.0" height="90" rx="6"/>
+<text class="t-bad" x="386.0" y="120" style="font-weight:700">レポートに使われない</text>
+<text class="t-sm" x="386.0" y="142">シークレットチャット</text>
+<text class="t-sm" x="386.0" y="161">健康連携ツールに繋がった</text>
+<text class="t-sm" x="386.0" y="180">会話（完全に除外）</text>
+<rect class="box-accent" x="18" y="202" width="684" height="58" rx="6"/>
+<text class="t-accent" x="34" y="224">設計にはMIT Media LabのAHAプログラム、ボストン小児病院の</text>
+<text class="t-accent" x="34" y="242">Digital Wellness Labが協力したと説明されている。</text>
+<text class="t-xs" x="18" y="272">※ 対象は、メモリ機能をオンにしたFree・Pro・Maxのユーザー（同ページ）。</text>
+</svg>

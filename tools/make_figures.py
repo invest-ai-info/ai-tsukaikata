@@ -16370,7 +16370,216 @@ def combined_payment_missed_as_unpaid_chart() -> None:
     )
 
 
+def reflect_4d_framework_chart() -> None:
+    """Reflectのレポートが軸にする「AI Fluency Framework」の4つの観点。
+
+    出典＝anthropic.com/news/reflect-with-claude 本文の4項目の英語説明を、
+    そのまま日本語にした。英語表記（Delegation等）が公式の名称。
+    """
+    rows = [
+        ("① 委任（Delegation）", "目標を決め、AIにどう関わるか・そもそも関わるかを判断すること"),
+        ("② 説明（Description）", "AIから役に立つ働きを引き出せるよう、目標を的確に言葉にすること"),
+        ("③ 識別（Discernment）", "AIの出力がどれだけ役に立つかを、正確に見極めること"),
+        ("④ 勤勉（Diligence）", "AIを使って行ったことに、自分で責任を持つこと"),
+    ]
+    box_x, box_w = 18, 684
+    row_h, gap = 50, 8
+    pitch = row_h + gap
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "レポートは「AI Fluency Framework」の4つの観点で振り返る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "発表ページが挙げている4つの観点をそのまま並べた。英語表記が公式の名称。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Reflectの説明は、この4つの軸でAIとの関わり方を振り返れるとしている。</text>\n",
+    ]
+
+    y = top
+    for label, desc in rows:
+        parts.append(f'<rect class="box-quiet" x="{box_x}" y="{y}" width="{box_w}" height="{row_h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{box_x + 16}" y="{y + 38}">{_esc(desc)}</text>\n')
+        y += pitch
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 25}">'
+        "4つとも「使い方の質」の観点で、性能や料金の比較軸ではない。</text>\n"
+    )
+    y += 40 + 12
+
+    height = y + 8
+    alt = (
+        "Reflectのレポートが軸にする4つの観点を示した図。①委任（Delegation）＝目標を決め、"
+        "AIにどう関わるか・そもそも関わるかを判断すること。②説明（Description）＝AIから役に立つ"
+        "働きを引き出せるよう、目標を的確に言葉にすること。③識別（Discernment）＝AIの出力が"
+        "どれだけ役に立つかを、正確に見極めること。④勤勉（Diligence）＝AIを使って行ったことに、"
+        "自分で責任を持つこと。下の枠には、4つとも使い方の質の観点であり、性能や料金の比較軸"
+        "ではないことが書かれている。"
+    )
+    (OUT / "reflect-4d-framework.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def reflect_privacy_scope_chart() -> None:
+    """レポートに使われる会話と、使われない会話の境目。
+
+    出典＝anthropic.com/news/reflect-with-claude。
+    「シークレットチャットは含まれない」「健康連携ツールに繋がった会話は
+    完全に除外される」の2点を、そのまま並べた。
+    """
+    card_w = (684 - 20) / 2
+    card_x = [18, 18 + card_w + 20]
+    card_y = 96
+    card_h = 90
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "レポートの材料から、最初に外される会話がある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "発表ページに書かれている、レポートに使う会話・使わない会話の境目。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "接続ツールの中身（ファイル本体など）も取得しないと説明されている。</text>\n",
+    ]
+
+    cards = [
+        (
+            card_x[0], "box-quiet", "t",
+            "レポートに使われる",
+            [
+                "通常のチャット履歴（過去1〜12ヶ月）",
+                "使い方のパターン・取り組んだ",
+                "タスクの種類の分類",
+            ],
+        ),
+        (
+            card_x[1], "box-bad", "t-bad",
+            "レポートに使われない",
+            [
+                "シークレットチャット",
+                "健康連携ツールに繋がった",
+                "会話（完全に除外）",
+            ],
+        ),
+    ]
+    for x, cls, tcls, title, lines in cards:
+        parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h}" rx="6"/>\n')
+        parts.append(f'<text class="{tcls}" x="{x + 16:.1f}" y="{card_y + 24}" style="font-weight:700">{_esc(title)}</text>\n')
+        for i, line in enumerate(lines):
+            parts.append(
+                f'<text class="t-sm" x="{x + 16:.1f}" y="{card_y + 46 + i * 19}">{_esc(line)}</text>\n'
+            )
+
+    y = card_y + card_h + 16
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="58" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 22}">'
+        "設計にはMIT Media LabのAHAプログラム、ボストン小児病院の</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 40}">'
+        "Digital Wellness Labが協力したと説明されている。</text>\n"
+    )
+    y += 58 + 12
+    parts.append(
+        f'<text class="t-xs" x="18" y="{y}">'
+        "※ 対象は、メモリ機能をオンにしたFree・Pro・Maxのユーザー（同ページ）。</text>\n"
+    )
+    y += 18
+
+    height = y + 8
+    alt = (
+        "レポートに使われる会話と、使われない会話を対比した図。使われるのは通常のチャット履歴"
+        "（過去1〜12ヶ月）と、使い方のパターン・取り組んだタスクの種類の分類。使われないのは"
+        "シークレットチャットと、健康連携ツールに繋がった会話（完全に除外）。下の枠には、"
+        "設計にMIT Media LabのAHAプログラムとボストン小児病院のDigital Wellness Labが協力したと"
+        "説明されていること、対象はメモリ機能をオンにしたFree・Pro・Maxのユーザーであることが"
+        "書かれている。"
+    )
+    (OUT / "reflect-privacy-scope.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def reflect_roadmap_chart() -> None:
+    """いま使える範囲と、まだ来ていない範囲。
+
+    出典＝anthropic.com/news/reflect-with-claude。
+    「使った時間の表示」「Coworkの会話の振り返り」は、本文に
+    "soon" / "will be available soon" と明記されている＝まだ無い機能。
+    """
+    card_w = (684 - 20) / 2
+    card_x = [18, 18 + card_w + 20]
+    card_y = 96
+    card_h = 100
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「使った時間」と「Coworkの振り返り」は、まだ来ていない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "発表ページの本文で、公式が「soon」と書いている2つを分けて並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "ベータ版なので、いま見えている画面がそのまま完成形ではない。</text>\n",
+    ]
+
+    cards = [
+        (
+            card_x[0], "box-good", "t-good",
+            "いま使える（ベータ）",
+            [
+                "設定＞reflect on your usageでレポート作成",
+                "過去1・3・6・12ヶ月の振り返り",
+                "quiet hoursの設定・休憩の通知(nudge)",
+            ],
+        ),
+        (
+            card_x[1], "box-quiet", "t",
+            "まだ来ていない（soon）",
+            [
+                "使った時間（time spent）の表示",
+                "Coworkの会話の振り返り",
+                "（本文に明記された2点のみ）",
+            ],
+        ),
+    ]
+    for x, cls, tcls, title, lines in cards:
+        parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{card_y}" width="{card_w:.1f}" height="{card_h}" rx="6"/>\n')
+        parts.append(f'<text class="{tcls}" x="{x + 16:.1f}" y="{card_y + 24}" style="font-weight:700">{_esc(title)}</text>\n')
+        for i, line in enumerate(lines):
+            parts.append(
+                f'<text class="t-sm" x="{x + 16:.1f}" y="{card_y + 46 + i * 19}">{_esc(line)}</text>\n'
+            )
+
+    y = card_y + card_h + 16
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="684" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 25}">'
+        "発表ページに、Team・Enterpriseプランについての記載はない。</text>\n"
+    )
+    y += 40 + 12
+
+    height = y + 8
+    alt = (
+        "いま使える機能と、まだ来ていない機能を対比した図。いま使える（ベータ）のは、"
+        "設定のreflect on your usageからレポートを作成できること、過去1・3・6・12ヶ月の"
+        "振り返り、quiet hoursの設定と休憩の通知（nudge）。まだ来ていない（soon）のは、"
+        "使った時間（time spent）の表示と、Coworkの会話の振り返りの2点で、本文にそう明記"
+        "されている。下の警告枠には、発表ページにTeam・Enterpriseプランについての記載が"
+        "ないことが書かれている。"
+    )
+    (OUT / "reflect-roadmap.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    reflect_4d_framework_chart()
+    reflect_privacy_scope_chart()
+    reflect_roadmap_chart()
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
     youtube_payout_ladder_chart()

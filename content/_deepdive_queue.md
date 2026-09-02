@@ -371,11 +371,16 @@
     記事内で「比較できなかった」とそのまま書いた
   - 🚨 旧アプリ「Claude in Slack」の詳細ページ（`support.claude.com`）は経路遮断で到達不可。
     次にこのドメインを叩く行が来たら、まずここに記録した経路遮断を再試行対象にすること
-- [ ] https://www.anthropic.com/news/reflect-with-claude
-  - 2026-08-31 手動追記（補充3件目）
-  - 「自分の使い方を測る」＝このサイトの`verify-before-report`系と噛み合う。手元では200を実測
-  - 集めたい数字＝**何を集計するのか・誰に見えるのか・切れるのか**。
-    ⚠️ プライバシーに触れる題材なので、**書いていないことを書かない**（推測で補わない）
+- [x] https://www.anthropic.com/news/reflect-with-claude
+  - →保管: ✅ **2026-09-02: 公開した** → `content/tools/reflect-with-claude.md`
+    （`www.anthropic.com` に到達。図3枚。出典は発表ページ1件のみ〈他は経路遮断・bot判定で
+    到達できず〉。数字が薄い題材で `check_numbers.py` は照合対象0個〈$・%が本文に無い〉。
+    pytest 618 passed・build 142ファイル）
+  - ⚠️ `help.openai.com`（OpenAIの個人利用分析ページ想定）は403（bot判定の可能性が高いが
+    ヘッダは未確認）。`knowledge.workspace.google.com`（GoogleのGemini利用レポート）は
+    `CONNECT tunnel failed`＝**経路遮断**。次にこのドメインを叩く行が来たら再試行対象にすること
+  - 📌 `support.claude.com` も引き続き経路遮断（Claude Tagの回と同じ）。Team・Enterpriseプランの
+    対象可否は発表ページに記載がなく、確認できていない
 
 📌 **同じ条件（読めるホスト・major のお知らせ・未処理）で残っている候補**——枠が空いたらここから足す。
 `news.json` を `importance=major` かつ お知らせ系ソースで絞れば同じ一覧が出る:
@@ -419,6 +424,16 @@
   - 2026-09-02 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Flash and 3.8 Flash Cyber」）
 
 ## 処理済み
+
+- https://www.anthropic.com/news/reflect-with-claude → **公開済み** content/tools/reflect-with-claude.md（2026-09-02・公開）
+  - `www.anthropic.com` に到達できた。図3枚（`reflect-4d-framework` / `reflect-privacy-scope` /
+    `reflect-roadmap`）。出典は発表ページ1件のみ。`check_numbers.py` は照合対象0個（本文に $・% が無い題材）。
+    pytest 618 passed・build 142ファイル。
+  - 📌 記事の芯＝**対象はメモリ機能をオンにしたFree・Pro・Maxのみ**（発表ページにTeam・Enterpriseの
+    記載は無い）。「使った時間の表示」「Coworkの振り返り」は本文に "soon" と明記され、まだ来ていない。
+  - ⚠️ 他社比較は保留にした。OpenAI（`help.openai.com`）は403（bot判定の可能性が高いがヘッダ未確認）、
+    Google（`knowledge.workspace.google.com`）は経路遮断（`CONNECT tunnel failed`）で到達できず。
+    `support.claude.com` も経路遮断（Claude Tagの回と同じ）で、旧機能との違いは確認できなかった。
 
 - https://www.anthropic.com/claude-fable-and-mythos-5-1 → **公開済み** content/tools/claude-fable-5-1.md（2026-09-02・公開）
   - 手元のセッションで作成（オーナー指示「ニュースの方からも1件深掘り」）。図3枚。
