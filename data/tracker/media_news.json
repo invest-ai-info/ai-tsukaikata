@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-02T22:40:55.964913+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-02T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIのアカウントを社員に付与しても使われない――。AIの社内定着は大きな課題だ。長野県のみそメーカー、ハナマルキは「Geminiの利用率が86％」という数字を誇る。導入時の工夫とは。",
+      "title": "70代会長も動いた　創業108年みそメーカーがGemini利用率86％を達成した「3つの工夫」",
+      "uid": "c7f2f50a5fc6391f",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/03/news017.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-02T22:40:55.964913+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-02T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NECの幹部は、AI時代のセキュリティを巡り「AI対AIになる」と述べた。同社は、Anthropicなど米AI企業のフロンティアAIを活用し、対策に挑む。その勝ち筋とは。",
+      "title": "無差別攻撃時代に「AI対AI」で挑む　NECがAnthropicと描く、日本サイバー防衛の「勝ち筋」",
+      "uid": "e6768608140b2dc0",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/03/news052.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-02T22:40:55.964913+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-09-02T21:34:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Googleは9月1日（現地時間）、AIで画像を生成・編集するツール「Google Pics」を発表した。Google AI ProとAI Ultraの加入者、およびGoogle Workspaceを契約する法人の大半に向けて、今後数週間かけて順次提供する",
+      "title": "Google、AI画像作成ツール「Google Pics」発表　Nano Banana活用",
+      "uid": "55cacc3c9cca7e02",
+      "url": "https://japan.cnet.com/article/35252209/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-02T22:40:55.964913+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-02T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "限られた職員で行政サービスをどう維持するか――。鹿嶋市は本格的に「生成AI」の活用に乗り出した。まずは公式Webサイトと「Claude」で市民対応業務を改善。「Claude Code」による内製化にも着手している。狙いやその仕組みについて同市に取材した。",
+      "title": "茨城県鹿嶋市は「公式Web×Claude」で市民対応をどう変えた？　Claude Codeで内製化も",
+      "uid": "4e455cf08dd205af",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/03/news019.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-02T16:37:54.824038+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2351,54 +2399,6 @@
       "uid": "f65a78b0f28f44f2",
       "url": "https://www.itmedia.co.jp/news/article/2608/27/2000000831/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-26T23:39:54.528131+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-26T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "もはや生活に欠かせない存在となりつつある生成AI。毎日の仕事においても例外でなく、便利に使っている人が多いでしょう。しかし、機密情報をむやみにAIに共有してしまうと、思わぬリスクにつながるかもしれません。",
-      "title": "個人で契約したChatGPTに、会社の情報を入力していいの？　超初心者向けAI解説",
-      "uid": "a9b9085f98167a54",
-      "url": "https://www.itmedia.co.jp/news/article/2608/27/2000000827/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-26T23:39:54.528131+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-26T21:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIが人間の仕事を奪うとの懸念が高まる一方、労働市場全体を見ただけではどの層が影響を受けているのかは分かりません。スタンフォード大学デジタルエコノミー研究所の研究チームが、生成AIの普及後に起きた雇用の変化を年齢や職種ごとに分析した結果を報告しています。 続きを読む...",
-      "title": "AIの普及による雇用への影響は若年層に集中しているとの研究結果",
-      "uid": "aa308a80da8091b6",
-      "url": "https://gigazine.net/news/20260827-ai-entry-level-employment/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-26T15:54:29.559920+00:00",
-      "importance": "minor",
-      "label": "Publickey",
-      "published": "2026-08-26T15:29:13+00:00",
-      "source_id": "media-publickey",
-      "summary": "Linux Foundation傘下でMCP（Model Context Protocol）の仕様策定を行っている「Agentic AI Foundation（AAIF）」は、今後のMCPの進化について、その方向性を示す新たなロードマップを...",
-      "title": "MCPの新ロードマップ公開、今後はAIエージェント対応、HTTP通信への統一、アイデンティティ、よりよいデベロッパー体験などに注力",
-      "uid": "5bbb3fbb737bbafc",
-      "url": "https://www.publickey1.jp/blog/26/mcpaihttp.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-08-26T13:18:27.322342+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-26T13:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIエージェント時代向けのコーディングテクニックを、エンジニアのファビアン・サングラール氏が紹介しています。 続きを読む...",
-      "title": "AIエージェント時代のコーディングテクニック「コーディングルールをAGENTS.mdにまとめる」「品質が低下したらAGENTS.mdの読み直しを指示」",
-      "uid": "846ecd175a08ac42",
-      "url": "https://gigazine.net/news/20260826-agent-improve-llm-code-quality/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
