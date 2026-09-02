@@ -13,7 +13,7 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 28,
+      "count": 29,
       "last_error": "HTTPError: HTTP Error 404: Not Found"
     }
   },
