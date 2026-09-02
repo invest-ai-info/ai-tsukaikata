@@ -388,7 +388,48 @@
 - [ ] https://deepmind.google/blog/introducing-agentic-video-in-gemini/
   - 2026-09-01 自動追記（major・Google DeepMind「Introducing agentic video understanding with Gemini」）
 
+### 🆕 2026-09-02 の補充（オーナー指示「ニュースの方からも深掘り」・手動追記）
+
+**なぜ足したか＝オーナーが例に挙げた2件（Fable 5.1・Gemini の新モデル）のうち、Fable 5.1 は
+トラッカーに入っておらず、Gemini の2件は `minor` 判定で自動追記の対象外だったから。**
+
+🚨 **Fable 5.1 の発表ページは `news.json` に入っていない。**理由＝URLが `/news/` の下ではなく
+`www.anthropic.com/claude-fable-and-mythos-5-1` で、RSC ペイロード上の型が `featuredGridLink`
+（`date`/`url` を持つ）。`parse_anthropic_news` が拾うのは `publishedOn`+`slug` を持つ
+`post` だけなので、**この形の「目玉発表」は構造的に落ちる**（2026-09-02 実測・1件だけ出現）。
+トラッカー側の直しは別件（記事の作業では触らない）。
+
+- [x] https://www.anthropic.com/claude-fable-and-mythos-5-1
+  - ✅ **2026-09-02: 公開した**（オーナーのローカルセッションで作成） → `content/tools/claude-fable-5-1.md`
+    （図3枚 `fable51-price-grid` / `fable51-cost-index` / `fable51-bench`・出典6件すべて取得成功・
+    `check_numbers.py` は照合できる数字 **47/47** が出典に存在・pytest 618 passed・build 139ファイル）
+  - 📌 記事の芯＝**入力・出力の単価は Fable 5 と同じ $10/$50 で、下がったのはキャッシュ読み取り
+    $1→$0.25 の1項目だけ。それで「約25%（最大約45%）安い」と公式が説明している**
+  - ⚠️ 手元では `www.anthropic.com` 200・約450KB。クラウド側は 9/1 に `/news/introducing-claude-tag` へ
+    到達できているので同じホストは通るはず（未測定）
+- [ ] https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/
+  - 2026-09-02 手動追記（オーナー指示の例「Gemini の新しいモデル」。`news.json` では `minor`）
+  - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約418KB を実測）。最終URL＝
+    `blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/`。
+    8/31 の computer-use の回で `blog.google` へ到達できているので、同じ経路で読めるはず
+  - 集めたい数字＝**何ができるモデルか（音声・画像・動画のどれを扱うか）・料金・使えるモデル名・
+    前の Omni Flash から何が変わったか**。料金は `ai.google.dev/gemini-api/docs/pricing`
+- [ ] https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/
+  - 2026-09-02 手動追記（同上。`news.json` では `minor`）
+  - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約401KB を実測）。最終URL＝
+    `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/`
+  - 集めたい数字＝**文字起こしの料金（分課金かトークン課金か。⚠️ 単位が違うなら表を分ける）・
+    対応言語・話者分離の有無**。このサイトの読者に近い題材＝会議の文字起こしを自動化する話
+
 ## 処理済み
+
+- https://www.anthropic.com/claude-fable-and-mythos-5-1 → **公開済み** content/tools/claude-fable-5-1.md（2026-09-02・公開）
+  - 手元のセッションで作成（オーナー指示「ニュースの方からも1件深掘り」）。図3枚。
+    `check_numbers.py` は照合できる数字47個すべてが出典6件のいずれかに存在。pytest 618 passed・build 139ファイル。
+  - 📌 記事の芯＝**単価は据え置き（$10/$50）で、値下げはキャッシュ読み取り $1→$0.25 の1項目だけ。**
+    「約25%」「最大約45%」は Anthropic が2026年8月の4週間の利用を集計した比率。
+  - ⚠️ この発表は `news.json` に入っていない（`/news/` の外にある `featuredGridLink` 型のため）。
+    トラッカーの `parse_anthropic_news` が拾えない構造＝別件で直す。
 
 - https://www.anthropic.com/news/introducing-claude-tag → **公開済み** content/tools/claude-tag-slack.md（2026-09-01・公開）
   - `www.anthropic.com` に到達できた。図3枚（`claudetag-position-grid` / `claudetag-billing-boundary` /

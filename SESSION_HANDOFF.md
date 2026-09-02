@@ -1,8 +1,28 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-08-31 JST
+最終更新: 2026-09-02 JST
 
 ## 🚩 次のセッションは、ここから
+
+### 🆕 2026-09-02 ニュース側の深掘りを手元で1本公開した（Fable 5.1）
+
+オーナー指示「AIアップデート側だけでなく、ニュースの方からも1件深掘りを。Fable 5.1 の性能や
+Gemini の新モデルなど。毎日1件ニュースから選んで書けるか」。
+
+- **公開**: `content/tools/claude-fable-5-1.md`（図3枚・出典6件・`check_numbers.py` 47/47・
+  pytest 618・build 139・ブラウザ厳密計測 0問題）。記事の芯＝**単価は据え置き $10/$50、
+  値下げはキャッシュ読み取り $1→$0.25 の1項目だけ。それで公式は「約25%（最大約45%）安い」**
+- 🔑 **「毎日1件」は既にある**＝`ai-tsukaikata-deepdive`（毎朝 08:05 JST・**実機は sonnet-5**。
+  ⚠️ CLAUDE.md の「model=opus-5」は実態と違う）。8/31 の枯渇対策以降、8/31・9/1 と連日 `tools/` を
+  公開している。**止まるとしたら題材の供給側**（自動追記は `major` のお知らせだけ・1日3件・
+  読めるホストのみ）
+- 🚨 **Fable 5.1 の発表は `news.json` に入っていなかった。**URLが `/news/` の外
+  （`/claude-fable-and-mythos-5-1`）で、RSC 上の型が `featuredGridLink`。`parse_anthropic_news` は
+  `publishedOn`+`slug` の `post` しか拾わないので**目玉発表ほど落ちる**。直しは別件
+  （spawn 済み・記事作業では `tracker/` を触っていない）
+- Gemini の2件（Omni 1.1 Flash・3.5 Transcribe）は `minor` 判定で自動追記の対象外だったので、
+  キューに**手動で `- [ ]` を2件追加**（到達性の注記つき）。未処理は 4件（reflect / agentic-video /
+  omni-1-1 / transcribe）＝4日ぶんの在庫
 
 ### 🆕 2026-08-31 シリーズの枯渇を直した（オーナー指示「枯渇したままで終わらせない」）
 

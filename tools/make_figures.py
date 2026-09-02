@@ -15954,6 +15954,183 @@ def homework_split_example_accuracy_chart() -> None:
     )
 
 
+def fable51_price_grid_chart() -> None:
+    """Fable 5 から Fable 5.1 で、単価のうち据え置きのもの／変わったもの（2026-09-02）。"""
+    same = [
+        "入力 $10 → $10",
+        "出力 $50 → $50",
+        "キャッシュ書き込み（5分） $12.50 → $12.50",
+        "キャッシュ書き込み（1時間） $20 → $20",
+        "まとめ処理（Batch） $5 / $25 → 同じ",
+        "読める量 100万トークン・書ける量 12.8万",
+    ]
+    diff = [
+        "キャッシュ読み取り $1 → $0.25（75%減）",
+        "学習データの締め切り 2026年6月",
+        "セキュリティ系の誤検知 約60%減",
+        "初歩的な生物・医療の誤検知 85%減",
+    ]
+
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(same), len(diff))
+    box_h = 30 + rows * row_h
+    height = first_y + rows * row_h + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Fable 5 から Fable 5.1 で何が変わったか（100万トークンあたり）</text>\n',
+        '<text class="t-sm" x="18" y="45">入力も出力も単価は同じ。値下げは「一度読んだものを読み直す」料金の1項目だけ。</text>\n',
+        f'<rect class="box-quiet" x="{left_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-accent" x="{right_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-strong" x="{left_x + 14}" y="{head_y - 2}">変わらないもの</text>\n',
+        f'<text class="t-accent" x="{right_x + 14}" y="{head_y - 2}">変わったもの</text>\n',
+    ]
+    for index, text in enumerate(same):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(diff):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: Anthropic の料金ページ・モデル一覧・発表ページ（2026年9月2日に確認）。誤検知の減り方は Anthropic の説明。</text>\n"
+    )
+    alt = (
+        "Fable 5 から Fable 5.1 への単価の変化を2列で比べた図。100万トークンあたり。"
+        "変わらないもの＝入力10ドル、出力50ドル、キャッシュ書き込みは5分が12.50ドル・1時間が20ドル、"
+        "まとめ処理は入力5ドル・出力25ドル、読める量100万トークン、書ける量12.8万トークン。"
+        "変わったもの＝キャッシュ読み取りが1ドルから0.25ドルへ75%減、学習データの締め切りが2026年6月、"
+        "セキュリティ系の安全装置の誤検知が約60%減、初歩的な生物・医療の質問での誤検知が85%減。"
+    )
+    (OUT / "fable51-price-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fable51_cost_index_chart() -> None:
+    """公式が示した「約25%減」「最大約45%減」を、Fable 5 を100とした棒にしたもの。"""
+    rows = [
+        ("ふつうの使い方", 100.0, 75.0, "約25%減"),
+        ("長く自動で作業させる使い方", 100.0, 55.0, "最大で約45%減"),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 16, 6, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じ仕事をさせたときの費用（Fable 5 を 100 とする）</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝Fable 5、青＝Fable 5.1。公式が発表ページに書いた比率を、そのまま棒の長さにしています。</text>\n',
+        '<text class="t-sm" x="18" y="64">読み直し（キャッシュ読み取り）が費用の大半を占める使い方ほど、下がり幅が大きくなります。</text>\n',
+    ]
+    for index, (name, old, new, note) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 13}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "5"), (new, "bar-new", "5.1"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            label = f"{value:g}" if offset == 0 else f"{value:g}（{note}）"
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_esc(label)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 2026年8月の4週間の実際の利用（Claude Enterprise・Claude Code・API）を Anthropic が集計した値。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 短い質問を1回ずつする使い方は読み直しがほとんど無いので、この図のようには下がりません。</text>\n"
+    )
+    alt = (
+        "同じ仕事をさせたときの費用を Fable 5 を100として比べた横棒グラフ。"
+        "ふつうの使い方は Fable 5.1 で75（約25%減）、長く自動で作業させる使い方は55（最大で約45%減）。"
+        "いずれも Anthropic が2026年8月の4週間の実際の利用から集計した比率で、"
+        "読み直しが費用の大半を占める使い方ほど下がり幅が大きい。"
+        "短い質問を1回ずつする使い方では読み直しがほとんど無いので、このようには下がらない。"
+    )
+    (OUT / "fable51-cost-index.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fable51_bench_chart() -> None:
+    """Fable 5 と Fable 5.1 の、公式が挙げた点数（％のものだけ）。"""
+    rows = [
+        ("Terminal-Bench-Science 0.1", 24.7, 52.6),
+        ("Terminal-Bench 4.0", 42.0, 55.8),
+        ("OSWorld 2.0（部分点あり）", 72.9, 77.9),
+        ("OSWorld 2.0（完全一致のみ）", 36.1, 41.7),
+        ("Humanity's Last Exam（道具なし）", 57.8, 60.9),
+        ("AutomationBench", 17.1, 31.4),
+        ("CursorBench 3.2.0", 70.5, 73.4),
+    ]
+    left, right = 262, 640
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">公式が挙げた点数（Fable 5 → Fable 5.1）</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝Fable 5、青＝Fable 5.1。目盛りは0〜100％で揃えてあります。</text>\n',
+        '<text class="t-sm" x="18" y="64">どれも Anthropic が自社で測った値です。他社が同じ条件で測った値ではありません。</text>\n',
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "5"), (new, "bar-new", "5.1"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="234" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ テストの中身も測り方も別々です。並べても平均は取れません。安全装置が働いた課題は0点として数えられています。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Terminal-Bench-Science 0.1 の標準誤差は、公式によるとモデルあたり ±3.5〜4.5 ポイント。</text>\n"
+    )
+    alt = (
+        "Fable 5 と Fable 5.1 の点数を比べた横棒グラフ。"
+        "Terminal-Bench-Science 0.1 は24.7％から52.6％、Terminal-Bench 4.0 は42.0％から55.8％、"
+        "OSWorld 2.0 の部分点ありは72.9％から77.9％、完全一致のみは36.1％から41.7％、"
+        "Humanity's Last Exam の道具なしは57.8％から60.9％、AutomationBench は17.1％から31.4％、"
+        "CursorBench 3.2.0 は70.5％から73.4％。いずれも Anthropic が自社で測った値で、"
+        "テストの中身も測り方も別々のため平均は取れない。安全装置が働いた課題は0点として数えられている。"
+    )
+    (OUT / "fable51-bench.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -16154,4 +16331,7 @@ if __name__ == "__main__":
     claudetag_billing_boundary_chart()
     claudetag_session_ladder_chart()
     homework_split_example_accuracy_chart()
+    fable51_price_grid_chart()
+    fable51_cost_index_chart()
+    fable51_bench_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
