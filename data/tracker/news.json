@@ -131,6 +131,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-02T05:51:57.834877+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-01T01:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how Gilbert + Tobin combines CEO-led commitment, rigorous governance, and human accountability to scale ChatGPT Enterprise and Codex across the firm.",
+      "summary_ja": "法律事務所がOpenAIのAIを全社導入\nChatGPT EnterpriseとCodexを活用\nCEO主導、厳格な管理、人の責任を重視",
+      "summary_source": "gemini",
+      "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+      "uid": "93e6ea507e2980b4",
+      "url": "https://openai.com/index/gilbert-tobin",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-08-31T20:08:43.772152+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -3931,20 +3945,6 @@
       "uid": "d27d91efbf192886",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "ELYZA note",
-      "published": "2026-06-04T03:03:03+00:00",
-      "source_id": "elyza-note",
-      "summary": "組織の人数規模が2025年4月の約50人から、2026年3月までの一年間で約80人まで増えたELYZA。それを支えるバックオフィス機能を司るコーポレートグループはどのような業務を有し、どのようなマインドで仕事に向き合っているのか。今後もELYZAが成長する上で重要な機能となるグループについて、マネージャーの市川さんに部署の紹介をしてもらいました。 まずはELYZAのコーポレートグループが担う業務…",
-      "summary_ja": "ELYZAがコーポレートグループの業務内容を紹介。\n従業員が1年で約50人から80人に増加した同社を支援。\n成長を支えるバックオフィス機能の役割を説明。",
-      "summary_source": "gemini",
-      "title": "【部門紹介】バックオフィスが取り組む事業成長の加速と会社基盤の整備。バランス感で最適解をつくりだすコーポレートグループ",
-      "uid": "7c4a5a0094bf952f",
-      "url": "https://note.com/elyza/n/n3a80c391f823",
-      "vendor": "ELYZA"
     }
   ]
 }
