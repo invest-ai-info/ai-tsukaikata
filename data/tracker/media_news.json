@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-02T16:37:54.824038+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-02T15:55:28+00:00",
+      "source_id": "media-publickey",
+      "summary": "Amazon Web Services（AWS）は、3DオープンワールドでAWSを学べるオンラインゲーム「AWS Cloud Quest」の新バージョン「AWS Cloud Quest 2.0」の提供を開始しました。 AWS Cloud Q...",
+      "title": "AWSをゲームで学べる「AWS Cloud Quest」に新バージョン「AWS Cloud Quest 2.0」登場！ AIによるバーチャル顧客と対話し、要件を聞き出して正しくソリューションに落とし込め",
+      "uid": "c1ed1c6af3700d03",
+      "url": "https://www.publickey1.jp/blog/26/awsaws_cloud_questaws_cloud_quest_20_ai.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-09-02T11:23:56.563756+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2386,18 +2398,6 @@
       "title": "AIエージェント時代のコーディングテクニック「コーディングルールをAGENTS.mdにまとめる」「品質が低下したらAGENTS.mdの読み直しを指示」",
       "uid": "846ecd175a08ac42",
       "url": "https://gigazine.net/news/20260826-agent-improve-llm-code-quality/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-26T13:18:27.322342+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-26T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "NVIDIAが2026年3月に開催した開発者向けカンファレンス「GTC 2026」で、AdobeのCTOであるエリー・グリーンフィールド氏がカスタム大規模生成AIモデルを構築するまでの道のりやパイプラインについて講演を行い、初期のトレーニング実行時に数千基のGPUのうち約3分の2がアイドル状態となっていたことが明かされました。この問題について、クラウドストレージサービスを提供するBackblaz…",
-      "title": "AIトレーニングでGPUが無駄に待機状態になってしまっている理由とAdobeが行った対処とは？",
-      "uid": "9cbed6d1949eb6c2",
-      "url": "https://gigazine.net/news/20260826-gpu-idle/",
       "vendor": "GIGAZINE"
     }
   ]

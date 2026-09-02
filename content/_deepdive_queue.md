@@ -421,6 +421,9 @@
   - 集めたい数字＝**文字起こしの料金（分課金かトークン課金か。⚠️ 単位が違うなら表を分ける）・
     対応言語・話者分離の有無**。このサイトの読者に近い題材＝会議の文字起こしを自動化する話
 
+- [ ] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
+  - 2026-09-02 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Flash and 3.8 Flash Cyber」）
+
 ## 処理済み
 
 - https://www.anthropic.com/claude-fable-and-mythos-5-1 → **公開済み** content/tools/claude-fable-5-1.md（2026-09-02・公開）

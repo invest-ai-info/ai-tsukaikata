@@ -1,6 +1,44 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-02T16:37:54.824038+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-09-02T16:24:24+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "uid": "69c62d1167d63cc8",
+      "url": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-02T16:37:54.824038+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-09-02T16:18:31+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "uid": "ba60733df59624f3",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-02T16:37:54.824038+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-02T15:40:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Introducing Fairwind Program",
+      "summary_ja": "Fairwindプログラムが発表されました。\n政府や企業向けに、サイバー攻撃を未然に防ぐものです。",
+      "summary_source": "gemini",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "uid": "48681c0ade51f281",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-01T18:35:06.616532+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
