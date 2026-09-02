@@ -23,7 +23,8 @@ TIMEOUT = 20
 MAX_ENTRIES = 30
 HF_API = "https://huggingface.co/api/models"
 OPENROUTER_API = "https://openrouter.ai/api/v1/models"
-ANTHROPIC_NEWS_BASE = "https://www.anthropic.com/news/"
+ANTHROPIC_SITE_BASE = "https://www.anthropic.com"
+ANTHROPIC_NEWS_BASE = ANTHROPIC_SITE_BASE + "/news/"
 
 
 def load_sources(path: Path) -> list[dict]:
@@ -154,6 +155,24 @@ _NEWS_ITEM_RE = re.compile(
 )
 _SUMMARY_RE = re.compile(rf'"summary":"(?P<summary>{_JSON_STR})"')
 
+# /news/ の外にある目玉発表は post として出てこない。2026-09-01 の
+# 「Introducing Claude Fable 5.1 and Claude Mythos 5.1」は URL が
+# /claude-fable-and-mythos-5-1 で、newsページ上では featuredGridLink という
+# オブジェクトとして1回だけ現れた（date / subject / summary / title / url）。
+# post だけ拾うと目玉発表ほど落ちる。
+# ⚠️ 実物は {"_key":"73aded5a605c","_type":"featuredGridLink",...} と _type の前に
+# _key が付く。先頭の波括弧に _type を密着させると0件になる（2026-09-02 に実際に踏んだ）。
+# フィールドの並び順に依存しないよう「入れ子の無いオブジェクトで、本体のどこかに
+# _type=featuredGridLink があるもの」を切り出してから、フィールドを個別に拾う。
+_GRID_LINK_RE = re.compile(
+    rf'\{{(?P<body>(?:"{_JSON_STR}"|[^{{}}"])*?"_type":"featuredGridLink"'
+    rf'(?:"{_JSON_STR}"|[^{{}}"])*)\}}'
+)
+_GRID_FIELD_RES = {
+    name: re.compile(rf'"{name}":"(?P<value>{_JSON_STR})"')
+    for name in ("date", "title", "url", "summary")
+}
+
 
 def _json_unescape(text: str) -> str:
     """JSON文字列としての復号。壊れていたら元をそのまま返す。"""
@@ -161,6 +180,29 @@ def _json_unescape(text: str) -> str:
         return json.loads(f'"{text}"')
     except ValueError:
         return text
+
+
+def _grid_link_key_and_url(url: str) -> tuple[str, str] | None:
+    """featuredGridLink の url から（重複判定キー, 絶対URL）を作る。
+
+    /news/<slug> なら post と同じ slug をキーにして、同じ記事が両方に
+    出たときに畳めるようにする。それ以外はパス全体がキー。
+    サイト外へのリンクは対象外（None）。
+    """
+    if url.startswith(ANTHROPIC_SITE_BASE):
+        url = url[len(ANTHROPIC_SITE_BASE):]
+    if not url.startswith("/"):
+        return None
+    path = url.split("?", 1)[0].split("#", 1)[0].strip("/")
+    if not path:
+        return None
+    key = path[len("news/"):] if path.startswith("news/") else path
+    return key, f"{ANTHROPIC_SITE_BASE}/{path}"
+
+
+def _grid_link_field(body: str, name: str) -> str:
+    found = _GRID_FIELD_RES[name].search(body)
+    return _json_unescape(found.group("value")).strip() if found else ""
 
 
 def parse_anthropic_news(source: dict, raw: bytes) -> list[Update]:
@@ -181,7 +223,8 @@ def parse_anthropic_news(source: dict, raw: bytes) -> list[Update]:
         raise ValueError("埋め込みデータが見つからない（サイト構造の変更を疑う）")
 
     payload = "".join(parts)
-    items: dict[str, tuple[datetime, str, str]] = {}
+    # key -> (published, title, summary, url)
+    items: dict[str, tuple[datetime, str, str, str]] = {}
     for match in _NEWS_ITEM_RE.finditer(payload):
         published = _to_utc(match.group("published"))
         slug = match.group("slug")
@@ -191,7 +234,18 @@ def parse_anthropic_news(source: dict, raw: bytes) -> list[Update]:
         found = _SUMMARY_RE.search(match.group("middle"))
         summary = _json_unescape(found.group("summary")) if found else ""
         # 同じ記事が「注目」と一覧の両方に入るので重複する。先勝ちで一意にする。
-        items.setdefault(slug, (published, title, summary))
+        items.setdefault(slug, (published, title, summary, f"{ANTHROPIC_NEWS_BASE}{slug}"))
+
+    for match in _GRID_LINK_RE.finditer(payload):
+        body = match.group("body")
+        published = _to_utc(_grid_link_field(body, "date"))
+        title = _grid_link_field(body, "title")
+        resolved = _grid_link_key_and_url(_grid_link_field(body, "url"))
+        if published is None or not title or resolved is None:
+            continue
+        key, url = resolved
+        # post 側が先勝ち（同じ記事が /news/ の一覧と目玉枠の両方に出る）
+        items.setdefault(key, (published, title, _grid_link_field(body, "summary"), url))
 
     if not items:
         raise ValueError("埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）")
@@ -203,11 +257,11 @@ def parse_anthropic_news(source: dict, raw: bytes) -> list[Update]:
             vendor=source["vendor"],
             label=source["label"],
             title=title,
-            url=f"{ANTHROPIC_NEWS_BASE}{slug}",
+            url=url,
             published=published,
             summary=summary,
         )
-        for slug, (published, title, summary) in items.items()
+        for slug, (published, title, summary, url) in items.items()
     ]
     updates.sort(key=lambda u: u.published, reverse=True)
     return updates[:MAX_ENTRIES]

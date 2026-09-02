@@ -290,3 +290,57 @@ def test_fetch_source_uses_openrouter_api(monkeypatch):
     assert error is None
     assert captured["url"] == "https://openrouter.ai/api/v1/models"
     assert all(u.title.startswith("x-ai/") for u in updates)
+
+
+# ---- featuredGridLink（/news/ の外にある目玉発表）----
+# 2026-09-01 の「Introducing Claude Fable 5.1 and Claude Mythos 5.1」は URL が
+# /claude-fable-and-mythos-5-1（/news/ の外）で、newsページ上では post ではなく
+# featuredGridLink というオブジェクトで1回だけ現れる。post だけ拾うと目玉発表ほど落ちる。
+
+# 実物（2026-09-02 取得）は _type の前に _key が付く。先頭の波括弧に _type を密着させて
+# 引っかけると0件になる（実際にそうなった）。
+_GRID_CHUNK = (
+    b'<script>self.__next_f.push([1,"{\\"_key\\":\\"73aded5a605c\\",'
+    b'\\"_type\\":\\"featuredGridLink\\",'
+    b'\\"date\\":\\"2026-09-01\\",\\"subject\\":\\"Announcements\\",'
+    b'\\"summary\\":\\"Our most capable models.\\",'
+    b'\\"title\\":\\"Introducing Claude Fable 5.1 and Claude Mythos 5.1\\",'
+    b'\\"url\\":\\"/claude-fable-and-mythos-5-1\\"}"])</script>'
+)
+
+
+def _news_with(chunk):
+    html = _read("sample_anthropic_news.html")
+    return parse_anthropic_news(NEWS_SOURCE, html.replace(b"</body>", chunk + b"</body>"))
+
+
+def test_parse_anthropic_news_picks_up_featured_grid_link():
+    item = _news_with(_GRID_CHUNK)[0]  # 2026-09-01 なので先頭に来る
+    assert item.title == "Introducing Claude Fable 5.1 and Claude Mythos 5.1"
+    assert item.url == "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    assert item.summary == "Our most capable models."
+    assert (item.published.year, item.published.month, item.published.day) == (2026, 9, 1)
+    assert item.published.tzinfo is not None
+
+
+def test_parse_anthropic_news_grid_link_uid_is_derived_from_path():
+    from tracker.models import make_uid
+
+    item = _news_with(_GRID_CHUNK)[0]
+    assert item.uid == make_uid("anthropic-news", "claude-fable-and-mythos-5-1")
+
+
+def test_parse_anthropic_news_grid_link_dedupes_against_post_with_same_slug():
+    chunk = _GRID_CHUNK.replace(b"/claude-fable-and-mythos-5-1", b"/news/introducing-thing")
+    chunk = chunk.replace(b"2026-09-01", b"2026-08-01")
+    updates = _news_with(chunk)
+    same = [u for u in updates if u.url.endswith("/introducing-thing")]
+    assert len(same) == 1
+    assert same[0].url == "https://www.anthropic.com/news/introducing-thing"
+    assert same[0].title == "Introducing Thing"  # post 側が先勝ち
+
+
+def test_parse_anthropic_news_grid_link_alone_is_not_zero_items():
+    html = b"<html><body>" + _GRID_CHUNK + b"</body></html>"
+    updates = parse_anthropic_news(NEWS_SOURCE, html)
+    assert [u.url for u in updates] == ["https://www.anthropic.com/claude-fable-and-mythos-5-1"]

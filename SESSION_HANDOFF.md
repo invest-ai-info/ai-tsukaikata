@@ -34,6 +34,30 @@ OpenAI の **GPT-6 Astra**（API 名 `gpt-6-astra`）。
 gpt-6-astra 424px / claude-fable-5-1 399px / gemini-computer-use 421px に対し画面は360px）。
 原因は**出典の長いURLと横に広い表**で、図は枠内に収まっている（設計どおり）。
 CLAUDE.md の「スマホ幅375pxで横スクロールなし」は**いまは成立していない**。別件として登録済み。
+### 🆕 2026-09-02 `anthropic_news` が `/news/` の外の目玉発表（featuredGridLink）も拾うようになった
+
+**症状**＝Fable 5.1 / Mythos 5.1 の発表（2026-09-01・`/claude-fable-and-mythos-5-1`）が
+`news.json` に0件・major メール無し・深掘りの自動追記にも乗らなかった。newsページ上では
+`post`（`publishedOn`+`slug`）ではなく **`featuredGridLink`** というオブジェクトで1回だけ現れるため。
+
+**直したこと**（`tracker/fetch.py` の `parse_anthropic_news`・テストは `tests/test_fetch.py` の
+`grid_link` 4本・pytest **622 passed**）:
+
+- `featuredGridLink`（`date` / `title` / `url` / `summary`）も拾う。URLは `https://www.anthropic.com` + `url`
+  （`/news/` は付けない）。uid は URL のパスから作る（`/news/<slug>` なら post と同じ slug＝両方に出ても畳む・post 側が先勝ち）
+- ⚠️ **実物は `{"_key":"…","_type":"featuredGridLink",…}` と `_type` の前に `_key` が付く。**
+  タスクの写しどおり先頭の波括弧に `_type` を密着させて書いたら**本番ページで0件**だった（手元で実測して発見）。
+  並び順に依存しない形に直してテストにも `_key` を入れてある。**CSSクラス名では拾わない・0件なら例外**は従来どおり
+- 手元で本番ページを実際に読ませた結果＝30件中、`/news/` の外は **2件**:
+  `/claude-fable-and-mythos-5-1`（2026-09-01・**major**）と `/features/making-of-claude-code`（2026-07-06・minor）
+
+🚨 **次の毎時 `--mode check` で、この2件は「新着」として扱われる（意図してそうしている）。**
+
+- Fable 5.1 は本物の major 発表で、オーナーが見たかったもの＝**1通だけメールが飛ぶのを容認**する
+- `making-of-claude-code` は minor＝`pending_minor` に溜まり、翌朝のダイジェストに1行出るだけ
+- **`--mode bootstrap` は走らせない**（`pending_minor` を空にする）。`seen.json` にも手を入れていない
+- 深掘りの自動追記は**重複しない**＝`select_candidates` がキュー内のURLを見て飛ばし、Fable のURLは既に
+  `- [x]`（公開済み `content/tools/claude-fable-5-1.md`）で並んでいることを `queued_urls` で確認済み
 
 ### 🆕 2026-09-02 ニュース側の深掘りを手元で1本公開した（Fable 5.1）
 
@@ -49,8 +73,7 @@ Gemini の新モデルなど。毎日1件ニュースから選んで書けるか
   読めるホストのみ）
 - 🚨 **Fable 5.1 の発表は `news.json` に入っていなかった。**URLが `/news/` の外
   （`/claude-fable-and-mythos-5-1`）で、RSC 上の型が `featuredGridLink`。`parse_anthropic_news` は
-  `publishedOn`+`slug` の `post` しか拾わないので**目玉発表ほど落ちる**。直しは別件
-  （spawn 済み・記事作業では `tracker/` を触っていない）
+  `publishedOn`+`slug` の `post` しか拾わないので**目玉発表ほど落ちる**。→ **同日に直した**（上の節）
 - Gemini の2件（Omni 1.1 Flash・3.5 Transcribe）は `minor` 判定で自動追記の対象外だったので、
   キューに**手動で `- [ ]` を2件追加**（到達性の注記つき）。未処理は 4件（reflect / agentic-video /
   omni-1-1 / transcribe）＝4日ぶんの在庫
