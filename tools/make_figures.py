@@ -16131,6 +16131,169 @@ def fable51_bench_chart() -> None:
     )
 
 
+def facts_stay_promises_grow_grid_chart() -> None:
+    """「読みやすく整えて」だけを頼んだ10回で、事実欄と約束欄それぞれに
+    元原稿に無い記述が足されたかを、回ごとに並べたマス目。
+
+    実測（2026-09-02）。架空の応募文（実績欄／抱負欄）と架空の謝罪文
+    （経緯欄／今後の対応欄）に、独立したAgent呼び出し（会話の文脈なし）で
+    各5回ずつ「この文章を読みやすく整えてください」とだけ頼んだ。
+    判定は Python（元の数字がすべて残っているか、元原稿に無い文が
+    増えているか）。
+    """
+    cols = ["事実欄に新しい記述", "約束欄に新しい記述", "元の数字はすべて残ったか"]
+    rows = [
+        ("応募文 1回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("応募文 2回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("応募文 3回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("応募文 4回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("応募文 5回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("謝罪文 1回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("謝罪文 2回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("謝罪文 3回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("謝罪文 4回目", ["0件", "0件", "4/4"], ["box-good", "box-good", "box-good"], ["t-good", "t-good", "t-good"]),
+        ("謝罪文 5回目", ["0件", "1件", "4/4"], ["box-good", "box-bad", "box-good"], ["t-good", "t-bad", "t-good"]),
+    ]
+
+    label_w = 130
+    cell_w, cell_h, gap = 175, 30, 8
+    top = 128
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "増えたのは10回中1回だけ。しかも増えたのは約束欄だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の応募文（実績欄・抱負欄）と架空の謝罪文（経緯欄・今後の対応欄）に、"
+        "独立した10回で「読みやすく整えて」とだけ頼んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "元の数字（6年3か月・75回・32社・47件など）は10回とも1つも欠けず、"
+        "新しい数字も1つも出てこなかった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "変化が起きたのは謝罪文の5回目だけ。「このたびの事態を重く受け止め、」が"
+        "今後の対応欄に足された。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 10}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, cells, boxes, tones) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[col_index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.2
+            parts.append(
+                f'<text class="{tones[col_index]}" x="{tx:.1f}" y="{y + 20}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 14
+    notes = [
+        ("t-xs", "※ 事実欄・約束欄の追加数は、元原稿の各文とのdifflib照合＋目視の二重判定。"),
+        ("t-xs", "架空データでの実測（全10回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "架空の応募文5回・架空の謝罪文5回、合計10回に「読みやすく整えて」とだけ頼み、"
+        "事実欄への追加・約束欄への追加・元の数字が全部残ったかを回ごとに並べたマス目。"
+        "事実欄への新しい記述は10回とも0件で、元の数字も10回とも4個または4個すべて残った。"
+        "約束欄への新しい記述は、謝罪文の5回目だけ1件だった。"
+    )
+    (OUT / "facts-stay-promises-grow-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def facts_stay_promises_grow_totals_chart() -> None:
+    """10回のうち、どこかに何かが足された回数を、足された場所ごとに並べた横棒グラフ。
+
+    実測（2026-09-02）。上のマス目と同じ10回から集計。
+    「配送」のような語句だけの補い（謝罪文のみ・3回）は、文まるごとの追加とは別枠にした。
+    """
+    rows = [
+        ("事実欄に新しい文", 0, "bar-in"),
+        ("約束欄に語句だけ補われる（「配送」等）", 3, "bar-old"),
+        ("約束欄に新しい文まるごと", 1, "bar-out"),
+        ("書類の外側にあいさつ文が足される", 1, "bar-out"),
+    ]
+    label_x, label_w = 18, 330
+    plot_x = label_x + label_w + 10
+    plot_w = 300
+    hi = 10
+    row_h = 34
+    top = 118
+    bar_h = 20
+
+    def px(n: float) -> float:
+        return plot_x + plot_w * n / hi
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "10回のうち、何かが足された回数は場所によって偏る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ10回（応募文5・謝罪文5）を、足された場所で数え直した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "事実欄（実績・経緯）に新しい文が足された回は0回。"
+        "書類の外側に定型のあいさつ文が足されたのは1回だけ。</text>\n",
+        f'<text class="t-xs" x="{px(0):.0f}" y="{top - 12}" text-anchor="middle">0</text>\n',
+        f'<text class="t-xs" x="{px(5):.0f}" y="{top - 12}" text-anchor="middle">5</text>\n',
+        f'<text class="t-xs" x="{px(10):.0f}" y="{top - 12}" text-anchor="middle">10回</text>\n',
+    ]
+
+    y = top
+    for label, value, css in rows:
+        ty = y + 15
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{y}" '
+            f'width="{plot_w}" height="{bar_h}" rx="2"/>\n'
+        )
+        w = max(px(value) - px(0), 2.0)
+        parts.append(
+            f'<rect class="{css}" x="{px(0):.1f}" y="{y}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{px(value) + 8:.1f}" y="{ty}">{value}回</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-xs", "※ 「語句だけ補われる」は文まるごとの追加ではなく、既存の1文に単語を挟んだもの（謝罪文のみ）。"),
+        ("t-xs", "架空データでの実測（全10回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "架空の応募文5回・謝罪文5回、合計10回で「読みやすく整えて」を試したとき、"
+        "何かが足された回数を場所ごとに並べた横棒グラフ。"
+        "事実欄に新しい文が足された回は0回。"
+        "約束欄に語句だけ補われた回（「配送」等）は3回（いずれも謝罪文）。"
+        "約束欄に新しい文がまるごと足された回は1回。"
+        "書類の外側にあいさつ文が足された回も1回。"
+    )
+    (OUT / "facts-stay-promises-grow-totals.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -16334,4 +16497,6 @@ if __name__ == "__main__":
     fable51_price_grid_chart()
     fable51_cost_index_chart()
     fable51_bench_chart()
+    facts_stay_promises_grow_grid_chart()
+    facts_stay_promises_grow_totals_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

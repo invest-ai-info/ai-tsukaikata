@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="576" viewBox="0 0 720 576" role="img" aria-label="架空の応募文5回・架空の謝罪文5回、合計10回に「読みやすく整えて」とだけ頼み、事実欄への追加・約束欄への追加・元の数字が全部残ったかを回ごとに並べたマス目。事実欄への新しい記述は10回とも0件で、元の数字も10回とも4個または4個すべて残った。約束欄への新しい記述は、謝罪文の5回目だけ1件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="576"/>
+<text class="t-strong" x="18" y="26">増えたのは10回中1回だけ。しかも増えたのは約束欄だった</text>
+<text class="t-sm" x="18" y="45">架空の応募文（実績欄・抱負欄）と架空の謝罪文（経緯欄・今後の対応欄）に、独立した10回で「読みやすく整えて」とだけ頼んだ。</text>
+<text class="t-sm" x="18" y="64">元の数字（6年3か月・75回・32社・47件など）は10回とも1つも欠けず、新しい数字も1つも出てこなかった。</text>
+<text class="t-sm" x="18" y="83">変化が起きたのは謝罪文の5回目だけ。「このたびの事態を重く受け止め、」が今後の対応欄に足された。</text>
+<text class="t-xs" x="130.0" y="118">事実欄に新しい記述</text>
+<text class="t-xs" x="313.0" y="118">約束欄に新しい記述</text>
+<text class="t-xs" x="496.0" y="118">元の数字はすべて残ったか</text>
+<text class="t-sm" x="18" y="148">応募文 1回目</text>
+<rect class="box-good" x="130" y="128" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="148">0件</text>
+<rect class="box-good" x="313" y="128" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="148">0件</text>
+<rect class="box-good" x="496" y="128" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="148">4/4</text>
+<text class="t-sm" x="18" y="186">応募文 2回目</text>
+<rect class="box-good" x="130" y="166" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="186">0件</text>
+<rect class="box-good" x="313" y="166" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="186">0件</text>
+<rect class="box-good" x="496" y="166" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="186">4/4</text>
+<text class="t-sm" x="18" y="224">応募文 3回目</text>
+<rect class="box-good" x="130" y="204" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="224">0件</text>
+<rect class="box-good" x="313" y="204" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="224">0件</text>
+<rect class="box-good" x="496" y="204" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="224">4/4</text>
+<text class="t-sm" x="18" y="262">応募文 4回目</text>
+<rect class="box-good" x="130" y="242" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="262">0件</text>
+<rect class="box-good" x="313" y="242" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="262">0件</text>
+<rect class="box-good" x="496" y="242" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="262">4/4</text>
+<text class="t-sm" x="18" y="300">応募文 5回目</text>
+<rect class="box-good" x="130" y="280" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="300">0件</text>
+<rect class="box-good" x="313" y="280" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="300">0件</text>
+<rect class="box-good" x="496" y="280" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="300">4/4</text>
+<text class="t-sm" x="18" y="338">謝罪文 1回目</text>
+<rect class="box-good" x="130" y="318" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="338">0件</text>
+<rect class="box-good" x="313" y="318" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="338">0件</text>
+<rect class="box-good" x="496" y="318" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="338">4/4</text>
+<text class="t-sm" x="18" y="376">謝罪文 2回目</text>
+<rect class="box-good" x="130" y="356" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="376">0件</text>
+<rect class="box-good" x="313" y="356" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="376">0件</text>
+<rect class="box-good" x="496" y="356" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="376">4/4</text>
+<text class="t-sm" x="18" y="414">謝罪文 3回目</text>
+<rect class="box-good" x="130" y="394" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="414">0件</text>
+<rect class="box-good" x="313" y="394" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="414">0件</text>
+<rect class="box-good" x="496" y="394" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="414">4/4</text>
+<text class="t-sm" x="18" y="452">謝罪文 4回目</text>
+<rect class="box-good" x="130" y="432" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="452">0件</text>
+<rect class="box-good" x="313" y="432" width="175" height="30" rx="4"/>
+<text class="t-good" x="390.1" y="452">0件</text>
+<rect class="box-good" x="496" y="432" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="452">4/4</text>
+<text class="t-sm" x="18" y="490">謝罪文 5回目</text>
+<rect class="box-good" x="130" y="470" width="175" height="30" rx="4"/>
+<text class="t-good" x="207.1" y="490">0件</text>
+<rect class="box-bad" x="313" y="470" width="175" height="30" rx="4"/>
+<text class="t-bad" x="390.1" y="490">1件</text>
+<rect class="box-good" x="496" y="470" width="175" height="30" rx="4"/>
+<text class="t-good" x="567.9" y="490">4/4</text>
+<text class="t-xs" x="18" y="539">※ 事実欄・約束欄の追加数は、元原稿の各文とのdifflib照合＋目視の二重判定。</text>
+<text class="t-xs" x="18" y="560">架空データでの実測（全10回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>
