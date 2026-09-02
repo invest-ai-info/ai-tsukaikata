@@ -15891,6 +15891,69 @@ def claudetag_session_ladder_chart() -> None:
     )
 
 
+def homework_split_example_accuracy_chart() -> None:
+    """作業分担を頼む指示文4種類の、人にしかできない8件の正答率。
+
+    実測（2026-09-02・架空の20項目の作業一覧×2プロジェクト×新規の会話2回）。
+    括弧の例を書かない版は32件中27件、記事どおり例を書いた版は32件中32件、
+    決まらない欄を足した版は32件中28件、アクセス許可を足した版は32件中32件。
+    どの版でも「あなた」列に誤って入った件数は0件。
+    """
+    rows = [
+        ("括弧の例なし", 27, 32),
+        ("括弧の例あり（記事の指示文）", 32, 32),
+        ("例あり＋「決まらない」欄", 28, 32),
+        ("例あり＋アクセス許可の一文", 32, 32),
+    ]
+    left, right = 300, 620
+    span = right - left
+    top, bar_h, gap = 108, 32, 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「私にしかできない」に正しく入った件数（32件＝8件×2プロジェクト×2回）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "作業分担を頼む指示文を4種類に変えて、人にしかできない8件がどの列に入るかを試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "括弧の中に例（アカウントの登録、支払い、権限の設定など）を書くと32件中32件が正解。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "どの版でも「あなた（AI）」の列に誤って入った件数は0件だった。</text>\n",
+    ]
+    for index, (label, hit, total) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 10}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        ratio = hit / total
+        cls = "box-good" if hit == total else "box-accent"
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{span * ratio:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{right + 12}" y="{y + bar_h - 10}">'
+            f"{hit}/{total}件</text>\n"
+        )
+
+    height = top + len(rows) * (bar_h + gap) + 26
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 判定はのべ128件（32件×4版）。生の回答は docs/evidence/ に全文置いてある。</text>\n"
+    )
+    alt = (
+        "作業分担を頼む指示文4種類について、人にしかできない8件が「私にしかできない」列へ"
+        "正しく入った件数を横棒グラフで示す。括弧の中に例を書かない版は32件中27件（84%）、"
+        "記事どおり例を書いた版は32件中32件（100%）、例に加えて「決まらない」欄も足した版は"
+        "32件中28件（88%）、例に加えてアクセス権が無くてもよいと言い添えた版は32件中32件（100%）。"
+        "どの版でも、人にしかできない8件がAI側の列に入った件数は0件。"
+    )
+    (OUT / "homework-split-example-accuracy.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
@@ -16090,4 +16153,5 @@ if __name__ == "__main__":
     claudetag_position_grid_chart()
     claudetag_billing_boundary_chart()
     claudetag_session_ladder_chart()
+    homework_split_example_accuracy_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

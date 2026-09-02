@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="366" viewBox="0 0 720 366" role="img" aria-label="作業分担を頼む指示文4種類について、人にしかできない8件が「私にしかできない」列へ正しく入った件数を横棒グラフで示す。括弧の中に例を書かない版は32件中27件（84%）、記事どおり例を書いた版は32件中32件（100%）、例に加えて「決まらない」欄も足した版は32件中28件（88%）、例に加えてアクセス権が無くてもよいと言い添えた版は32件中32件（100%）。どの版でも、人にしかできない8件がAI側の列に入った件数は0件。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="366"/>
+<text class="t-strong" x="18" y="26">「私にしかできない」に正しく入った件数（32件＝8件×2プロジェクト×2回）</text>
+<text class="t-sm" x="18" y="45">作業分担を頼む指示文を4種類に変えて、人にしかできない8件がどの列に入るかを試した。</text>
+<text class="t-sm" x="18" y="64">括弧の中に例（アカウントの登録、支払い、権限の設定など）を書くと32件中32件が正解。</text>
+<text class="t-sm" x="18" y="83">どの版でも「あなた（AI）」の列に誤って入った件数は0件だった。</text>
+<text class="t" x="18" y="130">括弧の例なし</text>
+<rect class="box-quiet" x="300" y="108" width="320" height="32" rx="3"/>
+<rect class="box-accent" x="300" y="108" width="270.0" height="32" rx="3"/>
+<text class="t-strong" x="632" y="130">27/32件</text>
+<text class="t" x="18" y="188">括弧の例あり（記事の指示文）</text>
+<rect class="box-quiet" x="300" y="166" width="320" height="32" rx="3"/>
+<rect class="box-good" x="300" y="166" width="320.0" height="32" rx="3"/>
+<text class="t-strong" x="632" y="188">32/32件</text>
+<text class="t" x="18" y="246">例あり＋「決まらない」欄</text>
+<rect class="box-quiet" x="300" y="224" width="320" height="32" rx="3"/>
+<rect class="box-accent" x="300" y="224" width="280.0" height="32" rx="3"/>
+<text class="t-strong" x="632" y="246">28/32件</text>
+<text class="t" x="18" y="304">例あり＋アクセス許可の一文</text>
+<rect class="box-quiet" x="300" y="282" width="320" height="32" rx="3"/>
+<rect class="box-good" x="300" y="282" width="320.0" height="32" rx="3"/>
+<text class="t-strong" x="632" y="304">32/32件</text>
+<text class="t-xs" x="18" y="352">※ 判定はのべ128件（32件×4版）。生の回答は docs/evidence/ に全文置いてある。</text>
+</svg>
