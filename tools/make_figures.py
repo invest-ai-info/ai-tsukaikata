@@ -16918,6 +16918,192 @@ def second_thirty_how_many_angles_chart() -> None:
     )
 
 
+def agentic_video_gains_chart() -> None:
+    """エージェント型の動画理解が、静的処理と比べてどれだけ変わるか。
+
+    出典＝Google の発表ページ（blog.google/.../introducing-agentic-video-in-gemini）。
+    「標準的なベンチマークで、コスト最大66%減・トークン最大88%減・精度最大7%向上」という
+    見出しの3つの数字をそのまま並べた。個々のベンチマーク名や中間の数値は公表されていない。
+    """
+    rows = [
+        ("トークン消費", 88, "bar-new", "最大88%減"),
+        ("コスト", 66, "bar-in", "最大66%減"),
+        ("精度（品質）", 7, "bar-old", "最大7%向上"),
+    ]
+    left, right = 160, 650
+    span = right - left
+    scale = span / 100.0
+    top, bar_h, row_gap = 96, 24, 16
+    pitch = bar_h + row_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "エージェント型に切り替えると、トークンは最大88%減る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Googleが発表ページで挙げた3つの数字。標準的な動画分析ベンチマークで、"
+        "静的処理（1FPSで一律に読む）と比べた「最大」の値です。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "個々のベンチマーク名や中間の数値は公表されていません。</text>\n",
+    ]
+    for index, (name, value, cls, label) in enumerate(rows):
+        y = top + index * pitch
+        bw = value * scale
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 6}">{_esc(label)}</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 60
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 40}">'
+        "※ 「最大」なので、動画の長さや内容によってはここまで変わりません。"
+        "3つの数字は同じ1本の動画で同時に出た値とは限りません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 20}">'
+        "※ 対象は Gemini 3.7 Flash・3.6 Flash・3.5 Flash-Lite。効果が最も大きいのは長尺の動画です。</text>\n"
+    )
+    alt = (
+        "エージェント型の動画理解に切り替えたときの3つの変化を示した横棒グラフ。"
+        "トークン消費は最大88%減、コストは最大66%減、精度（品質）は最大7%向上。"
+        "いずれもGoogleが発表ページで挙げた「標準的なベンチマークでの最大値」で、"
+        "個々のベンチマーク名や中間の数値は公表されていない。"
+        "対象はGemini 3.7 Flash・3.6 Flash・3.5 Flash-Liteで、効果は長尺の動画ほど大きい。"
+    )
+    (OUT / "agentic-video-gains.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def agentic_video_timeline_chart() -> None:
+    """「エージェント型」がGeminiに広がった順番。画像が先、動画が217日後。
+
+    出典＝Agentic Vision の発表（blog.google・2026-01-27）、
+    Agentic Video の発表（blog.google・2026-09-01）、
+    Gemini API のドキュメント（ai.google.dev/gemini-api/docs/video-understanding・
+    確認日時点でGemini 3.8 Flashも対応と追記されていることを実測）。
+    日数は暦日の単純な引き算（この記事で計算）。
+    """
+    rows = [
+        ("2026年1月27日", "Agentic Vision を発表（画像・Gemini 3 Flash）", "コード実行で画像を拡大・注釈し、精度が最大10%上がると説明"),
+        ("2026年9月1日（217日後）", "Agentic Video を発表（動画・3モデル）", "対象は Gemini 3.7 Flash・3.6 Flash・3.5 Flash-Lite の3つ"),
+        ("2026年9月3日（この記事の確認時点）", "公式ドキュメントの対応モデルが4つに増加", "発表に無かった Gemini 3.8 Flash も対応と追記されている"),
+    ]
+    dot_x = 26
+    text_x = 50
+    top = 96
+    row_h = 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "画像の「エージェント型」が動画に広がるまで217日</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Gemini 3 Flash に画像向けの Agentic Vision が載ったのが2026年1月27日。"
+        "動画向けの Agentic Video は、その217日後の9月1日でした。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "日数はいずれも暦日の引き算です（この記事で計算）。</text>\n",
+    ]
+
+    last_y = top + (len(rows) - 1) * row_h
+    parts.append(f'<line class="line" x1="{dot_x}" y1="{top}" x2="{dot_x}" y2="{last_y}"/>\n')
+    for index, (date_label, title, desc) in enumerate(rows):
+        cy = top + index * row_h
+        cls = "box-accent" if index == 1 else "box-quiet"
+        parts.append(f'<circle class="{cls}" cx="{dot_x}" cy="{cy}" r="7"/>\n')
+        parts.append(f'<text class="t-xs" x="{text_x}" y="{cy - 8}">{_esc(date_label)}</text>\n')
+        parts.append(f'<text class="t-strong" x="{text_x}" y="{cy + 10}">{_esc(title)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{text_x}" y="{cy + 27}">{_esc(desc)}</text>\n')
+
+    height = last_y + 56
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ Agentic Vision（画像）と Agentic Video（動画）は別の機能で、対象モデルも仕組みも別です。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 3.8 Flash が対応に加わった正確な日付は、ドキュメントに記載がなく分かりません。</text>\n"
+    )
+
+    alt = (
+        "GeminiのAgentic機能が広がった年表。2026年1月27日、Gemini 3 Flashに画像向けの"
+        "Agentic Visionを発表（コード実行で画像を拡大・注釈し、精度が最大10%上がると説明）。"
+        "その217日後の9月1日、動画向けのAgentic Videoを発表。対象はGemini 3.7 Flash・"
+        "3.6 Flash・3.5 Flash-Liteの3つ。9月3日（この記事の確認時点）では、公式ドキュメントの"
+        "対応モデルが4つに増えており、発表には無かったGemini 3.8 Flashも対応と追記されている。"
+        "217日という日数は暦日の単純な引き算。Agentic VisionとAgentic Videoは別の機能で、"
+        "対象モデルも仕組みも別。3.8 Flashが対応に加わった正確な日付はドキュメントに記載がない。"
+    )
+    (OUT / "agentic-video-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def agentic_video_modality_chart() -> None:
+    """動画ファイルを直接読み込めるのは3社のうちどこか。
+
+    出典＝Gemini: ai.google.dev/gemini-api/docs/video-understanding。
+    Claude: platform.claude.com/docs/en/about-claude/models/overview
+    （「All current models support text and image input... vision」＝video の記載なし）。
+    GPT: developers.openai.com/api/docs/models
+    （「All latest OpenAI models support text and image input...」＝同じく video の記載なし）。
+    """
+    positive = {"できる", "ある"}
+    negative = {"記載なし", "ない"}
+    rows = [
+        ("動画ファイルの直接入力", "できる", "記載なし", "記載なし"),
+        ("動画の中を動的に探索", "ある", "ない", "ない"),
+    ]
+    col_label, col_a, col_b, col_c = 18, 292, 428, 566
+    head_y = 106
+    row_top = head_y + 28
+    pitch = 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "動画ファイルを直接読み込めるのは、いまのところGeminiだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ドキュメントが「対応する入力」として挙げている形式を確かめた結果。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Claude・GPTのページはどちらも「文章と画像に対応」とだけ書かれ、動画の記載がありません。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「記載なし」は、その機能が無いと明言されているわけではなく、公式ページに書かれていないという意味です。</text>\n",
+        f'<text class="t-xs" x="{col_label}" y="{head_y}">見るところ</text>\n',
+        f'<text class="t-xs" x="{col_a}" y="{head_y}">Gemini</text>\n',
+        f'<text class="t-xs" x="{col_b}" y="{head_y}">Claude</text>\n',
+        f'<text class="t-xs" x="{col_c}" y="{head_y}">GPT</text>\n',
+    ]
+    for index, (name, gem, claude, gpt) in enumerate(rows):
+        y = row_top + index * pitch
+        parts.append(f'<text class="t" x="{col_label}" y="{y}">{_esc(name)}</text>\n')
+        for x, value in ((col_a, gem), (col_b, claude), (col_c, gpt)):
+            cls = "t-bad" if value in negative else "t-good" if value in positive else "t"
+            parts.append(f'<text class="{cls}" x="{x}" y="{y}">{_esc(value)}</text>\n')
+
+    height = row_top + len(rows) * pitch + 60
+    notes = [
+        "※ Geminiの列は Gemini 3.7 Flash・3.6 Flash・3.5 Flash-Lite（3.8 Flashも後日追加）の話です。",
+        "※ Claude・GPTにも画像・音声を扱う機能はありますが、動画ファイルそのものを読み込む形式ではありません。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 40 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "動画ファイルを直接読み込めるかを3社で比べた表。Geminiは動画ファイルの直接入力が"
+        "できる、動画の中を動的に探索する機能もある。Claude・GPTはどちらも公式ページに"
+        "動画の記載がなく、動的に探索する機能もない。「記載なし」は機能が無いと明言されている"
+        "わけではなく、公式ページに書かれていないという意味。Geminiの話はGemini 3.7 Flash・"
+        "3.6 Flash・3.5 Flash-Lite（後日3.8 Flashも追加）についてで、Claude・GPTにも"
+        "画像・音声を扱う機能はあるが、動画ファイルそのものを読み込む形式ではない。"
+    )
+    (OUT / "agentic-video-modality.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
@@ -17131,4 +17317,7 @@ if __name__ == "__main__":
     fix_ai_drafts_second_pass_chart()
     second_thirty_overlap_by_version_chart()
     second_thirty_how_many_angles_chart()
+    agentic_video_gains_chart()
+    agentic_video_timeline_chart()
+    agentic_video_modality_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

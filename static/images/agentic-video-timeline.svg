@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="272" viewBox="0 0 720 272" role="img" aria-label="GeminiのAgentic機能が広がった年表。2026年1月27日、Gemini 3 Flashに画像向けのAgentic Visionを発表（コード実行で画像を拡大・注釈し、精度が最大10%上がると説明）。その217日後の9月1日、動画向けのAgentic Videoを発表。対象はGemini 3.7 Flash・3.6 Flash・3.5 Flash-Liteの3つ。9月3日（この記事の確認時点）では、公式ドキュメントの対応モデルが4つに増えており、発表には無かったGemini 3.8 Flashも対応と追記されている。217日という日数は暦日の単純な引き算。Agentic VisionとAgentic Videoは別の機能で、対象モデルも仕組みも別。3.8 Flashが対応に加わった正確な日付はドキュメントに記載がない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="272"/>
+<text class="t-strong" x="18" y="26">画像の「エージェント型」が動画に広がるまで217日</text>
+<text class="t-sm" x="18" y="45">Gemini 3 Flash に画像向けの Agentic Vision が載ったのが2026年1月27日。動画向けの Agentic Video は、その217日後の9月1日でした。</text>
+<text class="t-sm" x="18" y="64">日数はいずれも暦日の引き算です（この記事で計算）。</text>
+<line class="line" x1="26" y1="96" x2="26" y2="216"/>
+<circle class="box-quiet" cx="26" cy="96" r="7"/>
+<text class="t-xs" x="50" y="88">2026年1月27日</text>
+<text class="t-strong" x="50" y="106">Agentic Vision を発表（画像・Gemini 3 Flash）</text>
+<text class="t-sm" x="50" y="123">コード実行で画像を拡大・注釈し、精度が最大10%上がると説明</text>
+<circle class="box-accent" cx="26" cy="156" r="7"/>
+<text class="t-xs" x="50" y="148">2026年9月1日（217日後）</text>
+<text class="t-strong" x="50" y="166">Agentic Video を発表（動画・3モデル）</text>
+<text class="t-sm" x="50" y="183">対象は Gemini 3.7 Flash・3.6 Flash・3.5 Flash-Lite の3つ</text>
+<circle class="box-quiet" cx="26" cy="216" r="7"/>
+<text class="t-xs" x="50" y="208">2026年9月3日（この記事の確認時点）</text>
+<text class="t-strong" x="50" y="226">公式ドキュメントの対応モデルが4つに増加</text>
+<text class="t-sm" x="50" y="243">発表に無かった Gemini 3.8 Flash も対応と追記されている</text>
+<text class="t-xs" x="18" y="238">※ Agentic Vision（画像）と Agentic Video（動画）は別の機能で、対象モデルも仕組みも別です。</text>
+<text class="t-xs" x="18" y="256">※ 3.8 Flash が対応に加わった正確な日付は、ドキュメントに記載がなく分かりません。</text>
+</svg>

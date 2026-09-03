@@ -390,8 +390,23 @@
 ⚠️ **古い告知でも構わない**（`tools/` は速報ではなく「このツールは何ができるか」の調べ物）。
 ただし**記事に `checked` の日付を必ず入れる**こと。
 
-- [ ] https://deepmind.google/blog/introducing-agentic-video-in-gemini/
+- [x] https://deepmind.google/blog/introducing-agentic-video-in-gemini/
+  - →保管: ✅ **2026-09-03: 公開した** → `content/tools/gemini-agentic-video.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`agentic-video-gains` /
+    `agentic-video-timeline` / `agentic-video-modality`）。出典7件すべて取得成功
+    （うち1件は転送元URL）。`check_numbers.py` は照合できる数字10個すべてが出典に存在。
+    pytest 618 passed・build 146ファイル）
   - 2026-09-01 自動追記（major・Google DeepMind「Introducing agentic video understanding with Gemini」）
+  - 📌 記事の芯＝**静的処理（1FPS一律）に対しエージェント型は必要な部分だけ動的に探索し、
+    長尺動画でトークン最大88%減・コスト最大66%減・精度最大7%向上（Google発表の「最大」値）。
+    ただし短い動画（5分未満）は探索のぶん最初の応答が遅くなるとドキュメントに明記されている**。
+    追加料金は無く標準トークン単価のまま
+  - ⚠️ **開発者ガイド（`ai.dev/learn/agentic-video-understanding-with-gemini`）は経路遮断**
+    （`Host not in allowlist: ai.dev`）。本文の数字はすべて `ai.google.dev`（別ホスト・到達可）と
+    発表ページ・料金ページから取れたため、この記事は止めずに書けた。次に `ai.dev` を叩く行が
+    来たら、まずここに記録した経路遮断を再試行対象にすること
+  - 他社比較は Anthropic（`platform.claude.com`）・OpenAI（`developers.openai.com`）とも到達でき、
+    どちらのモデル一覧にも「動画」の語が無いことを確認できた（二次情報は使っていない）
 
 ### 🆕 2026-09-02 の補充（オーナー指示「ニュースの方からも深掘り」・手動追記）
 
@@ -428,6 +443,20 @@
 
 ## 処理済み
 
+- https://deepmind.google/blog/introducing-agentic-video-in-gemini/ → **公開済み** content/tools/gemini-agentic-video.md（2026-09-03・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`agentic-video-gains` /
+    `agentic-video-timeline` / `agentic-video-modality`）。`check_numbers.py` は**10個すべて出典に存在**
+    （出典7件すべて取得成功。うち1件は転送元URL）。pytest 618 passed・build 146ファイル。
+  - 📌 記事の芯＝**静的処理（1FPS一律）に対しエージェント型は必要な部分だけ動的に探索し、
+    長尺動画でトークン最大88%減・コスト最大66%減・精度最大7%向上**（Google発表の「最大」値、
+    追加料金は無く標準トークン単価のまま）。**ただし短い動画（5分未満）は探索のぶん
+    最初の応答が遅くなる**とドキュメントに明記されている。
+  - ⚠️ 開発者ガイド（`ai.dev/learn/agentic-video-understanding-with-gemini`）は経路遮断
+    （`Host not in allowlist: ai.dev`）。別ホストの `ai.google.dev` が到達できたので、
+    数字はそちらと発表ページ・料金ページから取れた。次に `ai.dev` を叩く行が来たら
+    ここに記録した経路遮断を再試行対象にすること。
+  - 他社比較は Anthropic（`platform.claude.com`）・OpenAI（`developers.openai.com`）とも到達でき、
+    どちらのモデル一覧にも「動画」の語が無いことを一次情報で確認できた。
 - https://www.anthropic.com/news/reflect-with-claude → **公開済み** content/tools/reflect-with-claude.md（2026-09-02・公開）
   - `www.anthropic.com` に到達できた。図3枚（`reflect-4d-framework` / `reflect-privacy-scope` /
     `reflect-roadmap`）。出典は発表ページ1件のみ。`check_numbers.py` は照合対象0個（本文に $・% が無い題材）。
