@@ -1210,3 +1210,53 @@ WebFetchで本文まで開くと、その主張は原文のどこにも無かっ
    （`help.x.com`・`support.google.com`）に依存しており、8/29夜の到達不能から状況は変わっていない
 
 - →保管: 2026-08-30 研究パックは0件。促進項目4件（画像生成・note・GPTs・YouTube）の一次情報はいずれも遮断/bot判定で到達できず、既存キューに変更なし
+
+## 2026-09-04 回転
+
+### 2026-08-31 — 研究パックは0件。`support.google.com` が開通したが、そこはすでに既存記事が汲んでいた
+
+**在庫チェック＝未処理5件**（床3件は超え、9件未満）だったので研究に進んだ。**新しいパックは足していない。**
+
+#### ✅ 今日の到達
+
+| 試した先 | 8/30 | 8/31 |
+|---|---|---|
+| `support.google.com`（YouTube/AdSense） | EGRESS_BLOCKED | 🆕 **200**（`youtube/answer/72851?hl=ja` を実際に取得） |
+| `help-note.com` | EGRESS_BLOCKED | EGRESS_BLOCKED（変化なし） |
+| 🆕 `terms.help-note.com`（`note.com/terms` の301先） | （未測定） | EGRESS_BLOCKED |
+| `help.openai.com` | 403（bot判定寄り） | 403（変化なし。複数の記事パスで再確認） |
+| 🆕 `developers.openai.com/api/docs/gpts/revenue`（`platform.openai.com` の301先） | （未測定） | **404**（ページ自体が存在しない。GPT Storeの収益共有プログラムのURLが変わったか未公開の可能性） |
+| `helpx.adobe.com` | EGRESS_BLOCKED | EGRESS_BLOCKED（変化なし） |
+| 🆕 `stock.adobe.com` | （未測定） | EGRESS_BLOCKED |
+
+#### 🔑 `support.google.com` が開通した先は、すでに `youtube-payout-thresholds` が汲んでいた
+
+促進項目「画像生成・note・GPTs・YouTube の収益化条件」のYouTube分（`support.google.com/youtube/answer/72851?hl=ja`＝YPPの参加要件6前提＋登録者1,000人＋4,000時間/1,000万回）を
+日本語ページで再取得し、内容を確認した。**同じURL・同じ数字が、8/30公開の
+`recipes/youtube-payout-thresholds`（125行目）に `checked: 2026-08-30` で既に逐語引用されている。**
+🚨 **4サービスのうちYouTube分は、この記事で実質的に満たされている**——新しい記事は不要。
+📌 **残り3サービス（画像生成・note・GPTs）だけが未確認のまま。**キュー側の注記に反映した。
+
+GPT Storeの収益共有については、`platform.openai.com` の想定パス（`/docs/gpts/revenue`）が
+`developers.openai.com` に301で転送された先が **404**（ページが存在しない）だった。WebSearchの
+要約は「2026年にengagementベースの分配が始まった」等と書いてくるが、**出典がすべて非公式の
+まとめブログ**（`gptstorerevenueprogram.com` 等）で、OpenAI自身の一次情報は今日も見つからなかった。
+8/28の教訓（検索要約は作り話をすることがある）どおり、この段では採用しない。
+
+#### 見送ったもの
+
+| 題材 | 見送りの理由 |
+|---|---|
+| note「2026年版AI副業ロードマップ」型（複数件） | 🚫 「月5万円」「作業時間90%削減」等の見出しだが、8/27・8/28と同じく出どころの無い金額の宣伝文句で、単価はプラットフォーム発注相場ではなく執筆者の自己申告。既存（`too-good-offer-checklist`等）が既に警告している型そのもの |
+
+#### 詰まったところ
+
+1. **促進項目は3/4サービス（画像生成・note・GPTs）が今日も一次情報に届かない。**
+   note・Adobe系は経路遮断（`EGRESS_BLOCKED`）、GPT Storeは想定URLが404＝**そもそも
+   正しいURLが分かっていない**（`help.openai.com`は403でbot判定寄り）。次の担当は
+   OpenAIのGPT Store収益プログラムの正しい一次情報URLをWebSearchではなくOpenAI公式ドメイン内の
+   別パス（`openai.com/policies/` 系など）で探すところから始めること
+2. **「画像生成」の対象URLは今日も確定しなかった。**候補にしていたAdobe Stockは経路遮断のまま。
+   8/30の宿題（ストック素材サイトなのか生成ツール自体の商用利用規約なのか、オーナーに意図確認）は
+   今日も未解消
+3. 📌 副業節は在庫据え置き（未処理5件のまま。床3件は超えていない）
