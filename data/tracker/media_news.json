@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-03T16:29:05.225191+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T15:48:44+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日本時間の2026年9月4日午前0時30分現在、複数のAIサービスで障害が発生しており、接続しにくい、もしくは接続できない状態となっている。少なくとも、米OpenAIの「ChatGPT」、米Anthropicの「Claude」、米SpaceXAIの「Grok」で障害が報告されている。",
+      "title": "複数のAIサービスで障害発生　ChatGPT／Claude／Grok",
+      "uid": "363dc14c93e896dc",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/04/2000001152/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T16:29:05.225191+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T14:09:57+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "KDDIグループのAI開発企業ELYZAは、法人向けAIツール「ELYZA Works」において、業務アプリをAIで作成する仕組みの特許を取得したと発表した。一方、X上の一部では批判の声も上がっている。",
+      "title": "「AIで業務アプリを作成する仕組み」で特許取得、KDDI傘下のELYZA　X上では一部批判も【追記あり】",
+      "uid": "206654028dd42bd6",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/03/2000001144/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T16:29:05.225191+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T13:34:49+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米NVIDIAが、AI開発プラットフォームを運営する米Hugging Faceを129億3030万ドルで買収することに合意したと発表した。",
+      "title": "NVIDIAがHugging Face買収で合意　約2兆円　ジェンスン・フアンCEOはオープンモデルの重要性に言及",
+      "uid": "3a0bb6827d35f316",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/03/2000001150/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T16:29:05.225191+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-03T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2022年にChatGPTが登場して以来、生成AIの存在が広く認知され利便性が拡大していきました。ただ、当時からAIに懐疑的な見方をする人がいて、中には影響力のある人がAIの没落を予想するケースもありました。GoogleやMicrosoftに在職経験があり、エッセイストとしても人気があるソフトウェアエンジニアのダン・ルー氏が、有名なAI懐疑論者であるエドワード・ジトロン氏の発言を検証しています。…",
+      "title": "AI懐疑論者の予測はどれぐらい正確だったか？",
+      "uid": "cb535b9d7d5dc161",
+      "url": "https://gigazine.net/news/20260903-ai-skeptic-predictions/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-03T11:20:05.613883+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "ee3f3f303f563fc0",
       "url": "https://japan.cnet.com/article/35252008/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-28T00:07:14+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、動画の生成や編集に対応するマルチモーダルAI「Gemini Omni 1.1 Flash」を発表した。直前10秒の文脈を参照した最大40秒のシーン延長や、開始・終了フレームの指定生成に対応。360pの高速プレビューから4Kアップスケールまでをカバーし、APIやツール経由で提供する。",
-      "title": "Google、動画生成AI「Gemini Omni 1.1 Flash」公開　10秒分の文脈を参照して最長40秒まで延長",
-      "uid": "9b17e0871f5ba1f6",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/28/2000000878/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-27T23:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ZEALSとタイミーは、ヒューマノイドなどフィジカルAI学習に必要な現場データを収集する、「データ収集スポットワーク」の創出に向けて共創パートナーシップを締結した。",
-      "title": "ヒューマノイドを育てるバイト!?　タイミーとジールスが現場データ収集で協業",
-      "uid": "21442288ac0b1f42",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2608/28/news061.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-27T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「クビにはならないが、専門性に合う仕事が消滅する」――。過去の技術転換期に起きたことは、AI時代にも起こり得る。ガートナーの亦賀忠明氏にAI時代にIT部門が果たすべき役割と、個人としてのキャリア構築の在り方を聞いた。",
-      "title": "「情シスはまだ実力の1割しか発揮していない」　AIリストラ時代のキャリアを考える",
-      "uid": "db8e5a8662125ee3",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/27/news042.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-27T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "上級IT人材を確保できない企業は多く、人材育成の壁もまた高い――ITRとガートナーの2つの調査からIT人材不足の全体像に迫る。",
-      "title": "とにかく足りない上級IT人材　需給ギャップの背景を2つの調査から読み解く",
-      "uid": "6e5a6a053808464a",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/28/news045.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

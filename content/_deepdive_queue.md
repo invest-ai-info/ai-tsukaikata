@@ -423,6 +423,9 @@
 - [ ] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
   - 2026-09-02 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Flash and 3.8 Flash Cyber」）
 
+- [ ] https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
+  - 2026-09-03 自動追記（major・Google DeepMind「Introducing WeatherNext 3, our most advanced and accurate global weather AI model」）
+
 ## 処理済み
 
 - https://www.anthropic.com/news/reflect-with-claude → **公開済み** content/tools/reflect-with-claude.md（2026-09-02・公開）
