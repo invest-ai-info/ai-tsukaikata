@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-09-03T22:22:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは9月3日（米国時間）、新世代のAIモデル「GPT-6 Astra」を発表した。人に代わってPCの画面上でブラウザなどを操作し、フォーム入力や資料作成といった日常業務をこなす能力を大幅に高めたという。",
+      "title": "OpenAI、「GPT-6 Astra」正式発表--数日中にChatGPTへ展開　追加料金不要",
+      "uid": "f1a266ae4752cfd7",
+      "url": "https://japan.cnet.com/article/35252269/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日立は、フィジカルAIを活用して「自律進化するデジタルインフラ」を目指す。競争が激化するAI領域で、日本そして日立ならではの“勝ち筋”について徳永俊昭社長が語った。",
+      "title": "日立社長が熱弁を振るう「フィジカルAI革命」　英の産業革命、米のネット革命、次は日本から起こせるか",
+      "uid": "948b28cd7c5382c9",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/04/news058.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AppleのCEOを15年務めたティム・クック氏が退任し、ハードウェア責任者のジョン・ターナス氏が新CEOに就任した。クック氏は時価総額を4.5兆ドル超へ膨らませるなど業績をけん引した一方、EV断念やAIでの遅れといった課題も残した。新体制となったAppleには、急速に進むAI時代での巻き返しと、米中対立に伴うサプライチェーンの「脱・中国依存」という2つの試練が突きつけられている。",
+      "title": "時価総額720兆円のApple、クックCEO退任で新体制へ　AI遅れと中国依存を脱せるか",
+      "uid": "35a7d927677e84e0",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/04/news020.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「Microsoft Copilot」が仕事で使われるようになるなか、Word文書を介して感染が広がる、これまでとは少し違った脅威が見つかった。生成AIを仕事で使う企業が増えているだけに、警戒した方が良さそうだ。",
+      "title": "「Copilot、Word文書まとめて」で社内全滅？　勝手に増殖するAIウイルスで大騒ぎ：895th Lap",
+      "uid": "f7e7a08c9ef95660",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/04/2000001139/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-03T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 今すぐ仕事に使える「AIワークフロー」がたったの3ステップで試せるツール",
+      "uid": "db8ab9abe6a8136e",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2138037.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-03T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ChatGPTのような大規模言語モデル(LLM)に外部の文書を検索させ、見つけた情報を基に回答を作らせる仕組みが「検索拡張生成(RAG)」です。Hugging FaceやDatabricksでの勤務経験を持つAIエンジニアのラファエル・ピエール氏が、RAGを単純な全文検索から始めて段階的に高度化する6つの方法を紹介しています。 続きを読む...",
+      "title": "AIの検索を強化する「RAG」をシンプルに始めて高度化する6つの方法",
+      "uid": "ec94d857c91881d2",
+      "url": "https://gigazine.net/news/20260904-rag-is-simple/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "キオクシアは、2026年8月4～6日に米国サンタクララで開催されたメモリとストレージのイベント「FMS: the Future of Memory and Storage」の展示内容を中心に、AIデータセンター向け製品の最新技術について説明した。",
+      "title": "キオクシアのフラッシュメモリとSSDはなぜAIデータセンターに必要とされるのか",
+      "uid": "9691c2d9193e8819",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/04/news059.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T22:37:08.568544+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AnthropicやOpenAIでは、研究者とエンジニアをまたぐ共通の社内肩書きとして「Member of Technical Staff（技術スタッフの一員）」が使われている。元CTOたちが次々とこの肩書きに転じている現象から、肩書きが専門性を証明しなくなった時代に何が価値を決めるのかを考える。",
+      "title": "なぜAI企業は社内で「ソフトウェアエンジニア」と呼ばなくなったのか　広がる「MTS」と職種の未来",
+      "uid": "edf5df4a2fc0af39",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/04/news003.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-03T16:29:05.225191+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2303,102 +2399,6 @@
       "uid": "799e5b8bee67a89a",
       "url": "https://ai.watch.impress.co.jp/docs/news/2136449.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-28T03:12:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが動画生成AI「Gemini Omni 1.1 Flash」を現地時間の2026年8月27日にリリースしました。 続きを読む...",
-      "title": "Googleが動画生成AI「Gemini Omni 1.1 Flash」をリリース、「最大4Kアップスケール」「動画の続きを生成」「低解像度で高速プレビュー」など",
-      "uid": "7992d3e0b334e499",
-      "url": "https://gigazine.net/news/20260828-gemini-omni-1-1-flash/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-28T03:02:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "AIボイスレコーダー大手のPlaudは、業界最高水準のエージェント型AIを組み込んだイヤホン「Plaud One」を発表した。",
-      "title": "AIイヤホン「Plaud One」登場　会話を自動で文字起こし、要約やAIとの対話も",
-      "uid": "660f04b3f64891c1",
-      "url": "https://japan.cnet.com/article/35252019/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-28T02:46:42+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、「Gemini Omni 1.1 Flash」を発表した。今回のアップデートにより、鮮明な4Kアップスケーリング、高速なプロトタイピングなど、スタジオ品質のビデオ制作が可能となった。Omni 1.1はGoogle AI StudioのGemini APIを介して使用可能。",
-      "title": "スタジオ品質のビデオ制作が可能となった「Gemini Omni 1.1 Flash」",
-      "uid": "cea885e515e3c9ec",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2136419.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-28T02:24:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIモデルが高性能化するにつれてAIを利用したサイバー攻撃のリスクも高まっていることから、既存のシステムを見直して防御力を高めることが急務とされています。こうした防御力を先端AI企業が率先して提供すべきだとして、OpenAI、Anthropic、Googleなどが共同で声明を発表しました。 続きを読む...",
-      "title": "OpenAI・Anthropic・GoogleなどがAIによるサイバー攻撃の防御に関する共同声明を発表",
-      "uid": "e877a6c4a1dd3396",
-      "url": "https://gigazine.net/news/20260828-ai-frontier-companies-signed-cyber-defense/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-28T02:16:36+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Alibaba Cloudは、今後リリースが予定される「Qwen4」で使用されるアーキテクチャの早期プレビューとしても機能するマルチモーダルMoEモデル「Qwen3.8-Flash-Next」を発表した。Qwen3.8-Flash-Nextは、Hugging FaceとModelScopeで利用可能。デフォルトで100万のコンテキストと公式の組み込みツールを備えた製品版は、QwenCloud上で…",
-      "title": "究極のコスト構造を目指したAIモデル「Qwen3.8-Flash-Next」",
-      "uid": "a9b0ab657e7a7574",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2136372.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-28T01:57:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AMDはNVIDIAのCUDAに対抗するGPU計算処理ソフトウェアスタックとしてROCmを展開しています。2026年8月27日には「ROCm 10」がリリースされました。AI駆動型開発プラットフォーム「ROCm.AI」が目玉機能とされているほか、ComfyUIでの画像・動画生成を高速化する最適化も実施されています。 続きを読む...",
-      "title": "AMD製GPUのAI処理能力を向上させる「ROCm 10」がリリースされる＆AI開発用のスキルなどを整備した「ROCm.AI」も登場",
-      "uid": "b8d005d871591d62",
-      "url": "https://gigazine.net/news/20260828-amd-rocm-10/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-28T01:07:35+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIで成果を出せる人と出せない人の違いは何か。差がつくスキルと思考法、その育て方をパーソル総合研究所の小林祐児氏に聞いた。",
-      "title": "“AI離れ”こそ重要？　AIで成果を出す人の共通点　「差がつくスキルと思考法」を専門家に聞いた",
-      "uid": "e31e9429a10fba59",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/28/2000000873/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-08-28T00:33:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "サムスンは、新型スマートフォン「Galaxy S26 FE」を発表した。",
-      "title": "サムスン「Galaxy S26 FE」発表、AIカメラ機能充実もコスパに陰り",
-      "uid": "ee3f3f303f563fc0",
-      "url": "https://japan.cnet.com/article/35252008/",
-      "vendor": "CNET Japan"
     }
   ]
 }
