@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="442" viewBox="0 0 720 442" role="img" aria-label="海外案内を日本時間に直す実測で、指示文の版ごとに〔要確認〕の要不要を間違えた割合を示した横棒グラフ。素のまま頼った版と、時差・夏時間を申告させた版は、材料2本×各2回＝288件中0件で間違えなかった。決められないものは換算せず〔要確認〕にしてと足した版は、96件中5件で、略号により答えが決まっている項目を1/4回だけ誤って疑った。略号を優先してと先に指定して直そうとした版は、材料2本×各1回＝48件中10件で、2回ともかえって悪化し、今度は夏時間の判定が暦から決まる別の5件を巻き込んだ。止まった行だけを貼り直して聞き直す言い直し方は、10件中0件で2回とも全部直った。仕上げに二重変換していないか自己点検させる版も48件中0件で、自己点検自体も2回とも正しかった。日付・時刻の計算そのものの間違いは、全394件を通じて0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="442"/>
+<text class="t-strong" x="18" y="26">日付・時刻の計算は394件とも合っていた。誤りは全部〔要確認〕の要不要だった</text>
+<text class="t-sm" x="18" y="45">架空の英文案内24通を2セット用意し、3通りの指示文（a・b・c）を材料2本×各2回＝のべ288件、機械で照合した。</text>
+<text class="t-sm" x="18" y="64">日付が変わる回・夏時間の判定・30分刻みの時差・すでに日本時間の項目は、全288件で1件も間違えなかった。</text>
+<text class="t-sm" x="18" y="83">崩れたのは「決められないものは換算せず〔要確認〕にして」を足した(c)だけ。略号で答えが決まっている5件を、1/4回だけ疑った。</text>
+<text class="t-sm" x="18" y="102">先回りして直そうとした(d)は材料2本×各1回で、2回とも別の5件（〔要確認〕にしなくてよいものの側）を巻き込んで悪化した。</text>
+<text class="t-sm" x="18" y="121">効いたのは、止まった行だけを貼り直して聞き直す(e)——2回とも5件全部が直った。仕上げの自己点検(f)も2回とも正しかった。</text>
+<text class="t-xs" x="18" y="140">横軸＝〔要確認〕の要不要を間違えた割合（対象件数のうち）。日付・時刻の計算間違いは含まない。</text>
+<text class="t" x="18" y="181">(a) 素のまま</text>
+<text class="t-good" x="318.0" y="181">0/96件</text>
+<text class="t-xs" x="18" y="197">確認の仕組み自体が無い</text>
+<text class="t" x="18" y="221">(b) 時差・夏時間を申告させる</text>
+<text class="t-good" x="318.0" y="221">0/96件</text>
+<text class="t-xs" x="18" y="237">確認の仕組み自体が無い</text>
+<text class="t" x="18" y="261">(c) 決められないものは〔要確認〕</text>
+<rect class="bar-old" x="310.0" y="249" width="71.0" height="16" rx="3"/>
+<text class="t-bad" x="389.0" y="261">5/96件</text>
+<text class="t-xs" x="18" y="277">1/4回で、決まっている5件を疑った</text>
+<text class="t" x="18" y="301">(d) 略号を優先してと先に指定</text>
+<rect class="bar-old" x="310.0" y="289" width="284.1" height="16" rx="3"/>
+<text class="t-bad" x="602.1" y="301">10/48件</text>
+<text class="t-xs" x="18" y="317">2/2回とも、別の5件を巻き込んだ</text>
+<text class="t" x="18" y="341">(e) 止まった行だけ貼り直して聞く</text>
+<text class="t-good" x="318.0" y="341">0/10件</text>
+<text class="t-xs" x="18" y="357">2/2回とも直った</text>
+<text class="t" x="18" y="381">(f) 仕上げに二重変換を確認させる</text>
+<text class="t-good" x="318.0" y="381">0/48件</text>
+<text class="t-xs" x="18" y="397">自己点検も2/2回とも正しかった</text>
+<path class="line" d="M310 412 L610.0 412"/>
+<path class="line" d="M310.0 412 L310.0 417"/>
+<text class="t-xs" x="304.0" y="430">0%</text>
+<path class="line" d="M446.4 412 L446.4 417"/>
+<text class="t-xs" x="440.4" y="430">10%</text>
+<path class="line" d="M582.7 412 L582.7 417"/>
+<text class="t-xs" x="576.7" y="430">20%</text>
+</svg>

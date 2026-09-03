@@ -16576,6 +16576,102 @@ def reflect_roadmap_chart() -> None:
     )
 
 
+def overseas_notice_escape_valve_chart() -> None:
+    """海外案内のJST変換で、版ごとの誤り率を並べる。
+
+    実測（2026-09-03）。架空の英文案内24通×2材料。(a)(b)(c)は材料2本×各2回＝
+    のべ288件、(d)は材料2本×各1回＝のべ48件、(e)は要確認になった5件を貼り直す
+    追試×2回＝のべ10件、(f)は材料2本×各1回＝のべ48件。誤りはすべて〔要確認〕の
+    要不要の判定で、日付・時刻そのものの計算間違いは394件中0件。
+    """
+    rows = [
+        ("(a) 素のまま", 0, 96, "確認の仕組み自体が無い"),
+        ("(b) 時差・夏時間を申告させる", 0, 96, "確認の仕組み自体が無い"),
+        ("(c) 決められないものは〔要確認〕", 5, 96, "1/4回で、決まっている5件を疑った"),
+        ("(d) 略号を優先してと先に指定", 10, 48, "2/2回とも、別の5件を巻き込んだ"),
+        ("(e) 止まった行だけ貼り直して聞く", 0, 10, "2/2回とも直った"),
+        ("(f) 仕上げに二重変換を確認させる", 0, 48, "自己点検も2/2回とも正しかった"),
+    ]
+    label_w = 300
+    plot_x = label_w + 10
+    plot_w = 300
+    axis_max = 22  # %
+    scale = plot_w / axis_max
+
+    def px(pct: float) -> float:
+        return plot_x + pct * scale
+
+    top = 168
+    row_h = 40
+    bar_h = 16
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "日付・時刻の計算は394件とも合っていた。誤りは全部〔要確認〕の要不要だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の英文案内24通を2セット用意し、3通りの指示文（a・b・c）を材料2本×各2回＝"
+        "のべ288件、機械で照合した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "日付が変わる回・夏時間の判定・30分刻みの時差・すでに日本時間の項目は、"
+        "全288件で1件も間違えなかった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "崩れたのは「決められないものは換算せず〔要確認〕にして」を足した(c)だけ。"
+        "略号で答えが決まっている5件を、1/4回だけ疑った。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "先回りして直そうとした(d)は材料2本×各1回で、2回とも別の5件（〔要確認〕にしなくてよい"
+        "ものの側）を巻き込んで悪化した。</text>\n",
+        '<text class="t-sm" x="18" y="121">'
+        "効いたのは、止まった行だけを貼り直して聞き直す(e)——2回とも5件全部が直った。"
+        "仕上げの自己点検(f)も2回とも正しかった。</text>\n",
+        '<text class="t-xs" x="18" y="140">'
+        "横軸＝〔要確認〕の要不要を間違えた割合（対象件数のうち）。日付・時刻の計算間違いは含まない。</text>\n",
+    ]
+
+    y = top
+    for label, wrong, total, note in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        pct = wrong / total * 100
+        bad = wrong > 0
+        bar_cls = "bar-old" if bad else "bar-out"
+        txt_cls = "t-bad" if bad else "t-good"
+        w = max(px(pct) - plot_x, 2) if wrong else 0
+        if wrong:
+            parts.append(
+                f'<rect class="{bar_cls}" x="{plot_x:.1f}" y="{ty - bar_h + 4:.0f}" '
+                f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="{txt_cls}" x="{plot_x + max(w, 0) + 8:.1f}" y="{ty}">'
+            f"{wrong}/{total}件</text>\n"
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{ty + 16}">{_esc(note)}</text>\n')
+        y += row_h
+
+    axis_y = y + 4
+    parts.append(f'<path class="line" d="M{plot_x} {axis_y} L{px(axis_max):.1f} {axis_y}"/>\n')
+    for tick in (0, 10, 20):
+        tx = px(tick)
+        parts.append(f'<path class="line" d="M{tx:.1f} {axis_y} L{tx:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{tx - 6:.1f}" y="{axis_y + 18}">{tick}%</text>\n')
+
+    height = axis_y + 30
+    alt = (
+        "海外案内を日本時間に直す実測で、指示文の版ごとに〔要確認〕の要不要を間違えた割合を"
+        "示した横棒グラフ。素のまま頼った版と、時差・夏時間を申告させた版は、材料2本×各2回＝"
+        "288件中0件で間違えなかった。決められないものは換算せず〔要確認〕にしてと足した版は、"
+        "96件中5件で、略号により答えが決まっている項目を1/4回だけ誤って疑った。略号を優先してと"
+        "先に指定して直そうとした版は、材料2本×各1回＝48件中10件で、2回ともかえって悪化し、"
+        "今度は夏時間の判定が暦から決まる別の5件を巻き込んだ。止まった行だけを貼り直して"
+        "聞き直す言い直し方は、10件中0件で2回とも全部直った。仕上げに二重変換していないか"
+        "自己点検させる版も48件中0件で、自己点検自体も2回とも正しかった。日付・時刻の計算そのものの"
+        "間違いは、全394件を通じて0件だった。"
+    )
+    (OUT / "overseas-notice-escape-valve.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
@@ -16785,4 +16881,5 @@ if __name__ == "__main__":
     facts_stay_promises_grow_grid_chart()
     facts_stay_promises_grow_totals_chart()
     combined_payment_missed_as_unpaid_chart()
+    overseas_notice_escape_valve_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
