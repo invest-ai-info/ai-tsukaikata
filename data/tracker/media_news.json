@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-03T01:08:30.967641+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T00:40:04+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIはサイバー攻撃のほぼ全工程に浸透しつつある。中でもベンダーの制御が効きにくいオープンウェイトモデルは、攻撃のハードルを大きく下げる。GTIGの報告やアクセンチュアへの取材を基に、防御側が今取るべき対策を探る。",
+      "title": "オープンモデル普及で“お手軽”になるサイバー攻撃　防御側が今すべき「侵入前提」の対策",
+      "uid": "6b449ac73dd5fcc8",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/03/2000001098/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T01:08:30.967641+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-02T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI活用に伴う「仕事が楽にならない」の声。得られたはずの削減効果はどこに消えているのか……。",
+      "title": "「AI導入したのに、仕事が楽にならないんだが？」の正体　虚空に消えるあなたの“削減時間”、その行き先は……",
+      "uid": "af7837e98aa61253",
+      "url": "https://www.itmedia.co.jp/news/article/2609/03/2000000990/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-03T01:08:30.967641+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-02T22:50:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Anthropicは、ファイルをアップロードするとAIアシスタント「Claude」で作成・編集されたものかどうかを判定できるWebページ「claude.com/check-content」を公開した。Claudeが生成するテキストに電子透かしを導入すると発表してから、約2週間での公開となる。ただし現時点で判定できるのは画像・音声・動画ファイルのみで、テキスト形式は対象外だ。",
+      "title": "Anthropic、Claudeの「AI透かし」を判別するツール公開--現時点でテキストは未対応",
+      "uid": "96af46a997b0693d",
+      "url": "https://japan.cnet.com/article/35252211/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-03T01:08:30.967641+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-02T22:42:19+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "GoogleはAIモデル「Gemini 3.8 Flash」と、サイバー防御に特化した「Gemini 3.8 Flash Cyber」を発表した。推論とコーディング性能を大幅に向上させつつ価格は据え置いた。サイバー版は政府やインフラ企業など信頼できる防御側に限定提供され、脆弱性発見やパッチ自動生成を支援する。",
+      "title": "Google、「Gemini 3.8 Flash」公開　3.7から3週間、価格据え置きで防御特化の「Cyber」も",
+      "uid": "605633f01148186f",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/03/2000001096/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-02T22:40:55.964913+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2351,54 +2399,6 @@
       "uid": "5cf050c458ae6dbd",
       "url": "https://ai.watch.impress.co.jp/docs/news/2136047.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-27T09:54:30.419398+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-27T02:41:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国に拠点を置くAI企業のZ.aiがAIモデル「GLM-5.3-Flash」を2026年8月26日に発表しました。GLM-5.3-Flashは「Ox Alpha」という仮称でテストされていたモデルで、Claude Opus 4.8に匹敵する性能であることがアピールされています。 続きを読む...",
-      "title": "謎の高性能AI「Ox Alpha」の正体は「GLM-5.3-Flash」だったことが判明、Claude Opus 4.8と同等性能のオープンモデル＆中国製チップで運用可能",
-      "uid": "f397ca7467d23451",
-      "url": "https://gigazine.net/news/20260827-glm-5-3-flash/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-27T09:54:30.419398+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-27T02:30:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、7月に発生したセキュリティインシデントについて、技術報告書を公開した。",
-      "title": "OpenAI、7月に発生したセキュリティインシデントに関する技術報告書を公開",
-      "uid": "912e82aa9aa4aa92",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2136007.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-27T09:54:30.419398+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-27T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ヒューマノイドロボットの開発において、通信インタフェースの重要性が増している。MIPI AllianceはフィジカルAI分野の専門グループを立ち上げ、インタフェースの標準化を急ぐ。",
-      "title": "ヒューマノイド開発、「標準インタフェース」が不可欠に",
-      "uid": "ed12e4cbf27b2512",
-      "url": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news061.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-27T09:54:30.419398+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-27T01:25:36+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Linux Foundation傘下でMCP（Model Context Protocol）の仕様策定を行っている「Agentic AI Foundation（AAIF）」は、今後のMCPの進化について、その方向性を示す新たなロードマップを発表しました。",
-      "title": "MCPの新たなロードマップ公開　今後はAIエージェント対応、HTTP通信への統一などに注力",
-      "uid": "f65a78b0f28f44f2",
-      "url": "https://www.itmedia.co.jp/news/article/2608/27/2000000831/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

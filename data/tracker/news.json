@@ -51,6 +51,20 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-09-03T01:08:30.967641+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-02T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ATV Big Air Tour uses ChatGPT Work to speed up marketing, merchandising, and more. It even turned merchandise photos into an inventory website in 15 minutes.",
+      "summary_ja": "ATV Big Air Tour が ChatGPT で業務を効率化\n3日かかった作業が3時間で完了する事例も出た\nグッズ写真から15分で在庫サイトを構築できた",
+      "summary_source": "gemini",
+      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+      "uid": "55a86e61ec4a1732",
+      "url": "https://openai.com/index/atv-big-air-tour",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-01T18:35:06.616532+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
