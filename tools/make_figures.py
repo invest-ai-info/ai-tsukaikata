@@ -16672,6 +16672,99 @@ def overseas_notice_escape_valve_chart() -> None:
     )
 
 
+def fix_ai_drafts_second_pass_chart() -> None:
+    """AI下書きの直し依頼で、一覧を1回出させた後に「もう一度見直して」と
+    足したら、見つかる数がどう増えるか。
+
+    実測（2026-09-03・架空のコワーキングスペース紹介文1本・問題を10件仕込み）。
+    同じ会話の続きで2回目を頼んだ1回だけの試行。重複を除いた実数は
+    `docs/evidence/fix-ai-drafts-for-pay.md` の指示文6に記録。
+    """
+    bar_x, bar_max = 300, 300
+    row_h, gap_y = 30, 22
+    top = 96
+    bars = [
+        ("1巡目（一覧を1回出させただけ）", 11, 16, "11件"),
+        ("2巡目（もう一度見直してと足す）", 16, 16, "16件（+5）"),
+    ]
+    height = top + len(bars) * (row_h + gap_y) - gap_y + 210
+    assert bar_x + bar_max + 90 <= WIDTH - 18, bar_x + bar_max + 90
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "AI下書きの直しを一覧にさせる — もう一度見直させると、さらに見つかる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のコワーキングスペース紹介文に問題を10件仕込み、直さずに一覧化させた。"
+        "重複2件は除いてある。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同じ会話で「これで全部ですか」と聞き直すと、1巡目には無かった指摘が"
+        "5件、新たに増えた。</text>\n",
+    ]
+    for index, (label, value, total, note) in enumerate(bars):
+        y = top + index * (row_h + gap_y)
+        width = round(bar_max * value / total)
+        full = value == total
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="bar-old" x="{bar_x}" y="{y + 4}" '
+            f'width="{bar_max}" height="{row_h - 8}" rx="3" opacity="0.35"/>\n'
+        )
+        parts.append(
+            f'<rect class="{"bar-new" if full else "bar-in"}" x="{bar_x}" y="{y + 4}" '
+            f'width="{max(width, 3)}" height="{row_h - 8}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-accent" if full else "t"}" '
+            f'x="{bar_x + max(width, 3) + 10}" y="{y + 20}">{_esc(note)}</text>\n'
+        )
+    box_top = top + len(bars) * (row_h + gap_y) + 14
+    added = [
+        "「新規オープン」と「多数の企業様の声」が矛盾している",
+        "「企業様の声」に、声の中身が1つも紹介されていない",
+        "「ご用意しております」が2文連続で単調になっている",
+        "「アクセス」と「ロケーション」の意味が重複している",
+        "「利用者様」という言い回しがやや不自然（誤りとまでは言えない）",
+    ]
+    box_h = len(added) * 19 + 40
+    parts.append(
+        f'<text class="t-accent" x="18" y="{box_top - 6}">'
+        "↓ 2巡目にだけ出てきた5件（1巡目の仕込み10件には無い指摘）</text>\n"
+    )
+    parts.append(f'<rect class="box" x="18" y="{box_top}" width="684" height="{box_h}" rx="8"/>\n')
+    for i, item in enumerate(added):
+        parts.append(
+            f'<text class="t-sm" x="34" y="{box_top + 24 + i * 19}">・{_esc(item)}</text>\n'
+        )
+    note_top = box_top + box_h + 22
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_top}">'
+        "※ 1巡目で見つからなかったのは、誤字や矛盾のような白黒つく問題ではなく、"
+        "単調さや意味の重複など「読めば分かるが指摘しにくい」もの。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_top + 18}">'
+        "※ 仕込んだ10件のうち9件は1巡目で発見（1件は2種類の分類に重複計上されていた）。"
+        "2巡目は新しい種類の指摘だけを増やした。</text>\n"
+    )
+    height = note_top + 34
+    alt = (
+        "AI下書きの直しを受ける仕事で、原稿の問題点を一覧にさせたあと、"
+        "もう一度見直してと頼むと見つかる数がどう増えるかを示した横棒グラフ。"
+        "架空のコワーキングスペース紹介文に問題を10件仕込み、直さずに一覧化させた。"
+        "1巡目は重複を除いて11件を指摘した。同じ会話で「これで全部ですか、"
+        "もう一度見直してください」と頼むと、1巡目には無かった指摘が5件増え、"
+        "合計16件になった。増えた5件は、仕込んだ10件の中には無い、こちらが"
+        "意図していなかった指摘で、内容は「新規オープン」と「多数の企業様の声」の矛盾、"
+        "企業様の声の中身が紹介されていないこと、同じ言い回しの2文連続、"
+        "アクセスとロケーションの意味の重複、利用者様という言い回しへの違和感、の5つ。"
+        "誤字や数字の矛盾のように白黒がはっきりした問題は1巡目でほぼ出そろい、"
+        "2巡目で増えたのは単調さや意味の重複など、指摘しにくい種類の問題だった。"
+    )
+    (OUT / "fix-ai-drafts-second-pass.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
@@ -16882,4 +16975,5 @@ if __name__ == "__main__":
     facts_stay_promises_grow_totals_chart()
     combined_payment_missed_as_unpaid_chart()
     overseas_notice_escape_valve_chart()
+    fix_ai_drafts_second_pass_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

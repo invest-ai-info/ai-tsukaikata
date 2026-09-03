@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="405" viewBox="0 0 720 405" role="img" aria-label="AI下書きの直しを受ける仕事で、原稿の問題点を一覧にさせたあと、もう一度見直してと頼むと見つかる数がどう増えるかを示した横棒グラフ。架空のコワーキングスペース紹介文に問題を10件仕込み、直さずに一覧化させた。1巡目は重複を除いて11件を指摘した。同じ会話で「これで全部ですか、もう一度見直してください」と頼むと、1巡目には無かった指摘が5件増え、合計16件になった。増えた5件は、仕込んだ10件の中には無い、こちらが意図していなかった指摘で、内容は「新規オープン」と「多数の企業様の声」の矛盾、企業様の声の中身が紹介されていないこと、同じ言い回しの2文連続、アクセスとロケーションの意味の重複、利用者様という言い回しへの違和感、の5つ。誤字や数字の矛盾のように白黒がはっきりした問題は1巡目でほぼ出そろい、2巡目で増えたのは単調さや意味の重複など、指摘しにくい種類の問題だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="405"/>
+<text class="t-strong" x="18" y="26">AI下書きの直しを一覧にさせる — もう一度見直させると、さらに見つかる</text>
+<text class="t-sm" x="18" y="45">架空のコワーキングスペース紹介文に問題を10件仕込み、直さずに一覧化させた。重複2件は除いてある。</text>
+<text class="t-sm" x="18" y="64">同じ会話で「これで全部ですか」と聞き直すと、1巡目には無かった指摘が5件、新たに増えた。</text>
+<text class="t-sm" x="18" y="116">1巡目（一覧を1回出させただけ）</text>
+<rect class="bar-old" x="300" y="100" width="300" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-in" x="300" y="100" width="206" height="22" rx="3"/>
+<text class="t" x="516" y="116">11件</text>
+<text class="t-sm" x="18" y="168">2巡目（もう一度見直してと足す）</text>
+<rect class="bar-old" x="300" y="152" width="300" height="22" rx="3" opacity="0.35"/>
+<rect class="bar-new" x="300" y="152" width="300" height="22" rx="3"/>
+<text class="t-accent" x="610" y="168">16件（+5）</text>
+<text class="t-accent" x="18" y="208">↓ 2巡目にだけ出てきた5件（1巡目の仕込み10件には無い指摘）</text>
+<rect class="box" x="18" y="214" width="684" height="135" rx="8"/>
+<text class="t-sm" x="34" y="238">・「新規オープン」と「多数の企業様の声」が矛盾している</text>
+<text class="t-sm" x="34" y="257">・「企業様の声」に、声の中身が1つも紹介されていない</text>
+<text class="t-sm" x="34" y="276">・「ご用意しております」が2文連続で単調になっている</text>
+<text class="t-sm" x="34" y="295">・「アクセス」と「ロケーション」の意味が重複している</text>
+<text class="t-sm" x="34" y="314">・「利用者様」という言い回しがやや不自然（誤りとまでは言えない）</text>
+<text class="t-xs" x="18" y="371">※ 1巡目で見つからなかったのは、誤字や矛盾のような白黒つく問題ではなく、単調さや意味の重複など「読めば分かるが指摘しにくい」もの。</text>
+<text class="t-xs" x="18" y="389">※ 仕込んだ10件のうち9件は1巡目で発見（1件は2種類の分類に重複計上されていた）。2巡目は新しい種類の指摘だけを増やした。</text>
+</svg>
