@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="394" viewBox="0 0 720 394" role="img" aria-label="キャッチコピーを30案出させたあと、2巡目にもう30案出させるときの頼み方5通りで、1巡目とどれだけ重なるかを比べた横棒グラフ。架空の発注書2本×5版×各2回＝20回の実測で、各版の2巡目は合計120案。棒の長さは言い回しが近い案の数で、一つも重ならない案を30案と頼んだ版が8件と最も少なく、もっと案をくださいが18件、あと30案出してくださいが20件、新しい会話で最初の指示文をもう一度送った版が40件、同じ会話で最初の指示文をもう一度送った版が43件だった。文字列が完全に一致した案は、順に0件・0件・0件・5件・1件で、どの版でもごくわずか。返ってきた案の数は20回とも1巡目30案・2巡目30案ちょうどで、発注書の4条件は1,200案すべてが通った。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="394"/>
+<text class="t-strong" x="18" y="26">2巡目の30案は、1巡目とどれだけ重なるか（頼み方5通り・各120案）</text>
+<text class="t-sm" x="18" y="45">架空の発注書2本×5版×各2回＝20回。1巡目の指示文は全版まったく同じで、振ったのは2巡目の言い方だけ。</text>
+<text class="t-sm" x="18" y="64">棒＝言い回しが近い案の数（difflib の類似度0.7以上）。括弧＝文字列が完全に一致した案の数。</text>
+<text class="t-sm" x="18" y="83">🚨 いちばん重なるのは「同じ指示文をもう一度」と「新しい会話でやり直す」の2つだった。</text>
+<text class="t-xs" x="312" y="114">0件 ←────────────→ 50件（120案中）</text>
+<text class="t" x="18" y="141">(c)「一つも重ならない案を30案」</text>
+<rect class="bar-out" x="312" y="129" width="44.8" height="16" rx="3"/>
+<text class="t-good" x="364.8" y="141">8件（完全一致0件）</text>
+<text class="t" x="18" y="179">(a)「もっと案をください」</text>
+<rect class="bar-out" x="312" y="167" width="100.8" height="16" rx="3"/>
+<text class="t-good" x="420.8" y="179">18件（完全一致0件）</text>
+<text class="t" x="18" y="217">(b)「あと30案出してください」</text>
+<rect class="bar-out" x="312" y="205" width="112.0" height="16" rx="3"/>
+<text class="t-good" x="432.0" y="217">20件（完全一致0件）</text>
+<text class="t" x="18" y="255">(e) 新しい会話で最初の指示文をもう一度</text>
+<rect class="bar-old" x="312" y="243" width="224.0" height="16" rx="3"/>
+<text class="t-bad" x="544.0" y="255">40件（完全一致5件）</text>
+<text class="t" x="18" y="293">(d) 同じ会話で最初の指示文をもう一度</text>
+<rect class="bar-old" x="312" y="281" width="240.8" height="16" rx="3"/>
+<text class="t-bad" x="560.8" y="293">43件（完全一致1件）</text>
+<path class="line" d="M312 320 L592 320"/>
+<path class="line" d="M312.0 320 L312.0 325"/>
+<text class="t-xs" x="304.0" y="338">0件</text>
+<path class="line" d="M452.0 320 L452.0 325"/>
+<text class="t-xs" x="444.0" y="338">25件</text>
+<path class="line" d="M592.0 320 L592.0 325"/>
+<text class="t-xs" x="584.0" y="338">50件</text>
+<text class="t-xs" x="18" y="360">※ 返ってきた案の数は、20回とも1巡目30案・2巡目30案ちょうど。発注書の4条件も、1,200案すべてが通った。</text>
+<text class="t-xs" x="18" y="378">※ 「近い」の線は0.7で引いた。0.8で引くと (c)2件 / (a)6件 / (b)2件 / (e)21件 / (d)20件。順番は変わらない。</text>
+</svg>

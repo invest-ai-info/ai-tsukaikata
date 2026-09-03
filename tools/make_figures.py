@@ -16765,6 +16765,159 @@ def fix_ai_drafts_second_pass_chart() -> None:
     )
 
 
+def second_thirty_overlap_by_version_chart() -> None:
+    """2巡目の頼み方5通りで、1巡目とどれだけ重なるか。
+
+    実測（2026-09-03）。架空の発注書2本（パン屋の食パン／オンラインヨガ教室）×
+    5版×各2回＝20回。2巡目は各120案。判定は Python（完全一致は正規化して照合、
+    「近い案」は difflib の類似度）。証拠＝`docs/evidence/second-thirty-not-new.md`。
+    """
+    rows = [
+        ("(c)「一つも重ならない案を30案」", 8, 0),
+        ("(a)「もっと案をください」", 18, 0),
+        ("(b)「あと30案出してください」", 20, 0),
+        ("(e) 新しい会話で最初の指示文をもう一度", 40, 5),
+        ("(d) 同じ会話で最初の指示文をもう一度", 43, 1),
+    ]
+    label_w = 300
+    plot_x = label_w + 12
+    plot_w = 280
+    axis_max = 50  # 件（120案中）
+    scale = plot_w / axis_max
+    top = 128
+    row_h = 38
+    bar_h = 16
+    assert plot_x + plot_w + 90 <= WIDTH - 18, plot_x + plot_w + 90
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "2巡目の30案は、1巡目とどれだけ重なるか（頼み方5通り・各120案）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の発注書2本×5版×各2回＝20回。1巡目の指示文は全版まったく同じで、"
+        "振ったのは2巡目の言い方だけ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒＝言い回しが近い案の数（difflib の類似度0.7以上）。"
+        "括弧＝文字列が完全に一致した案の数。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "🚨 いちばん重なるのは「同じ指示文をもう一度」と「新しい会話でやり直す」の2つだった。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 14}">'
+        "0件 ←────────────→ 50件（120案中）</text>\n",
+    ]
+    y = top
+    for label, near, exact in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        w = max(near * scale, 2)
+        cls = "bar-old" if near >= 40 else "bar-out"
+        parts.append(
+            f'<rect class="{cls}" x="{plot_x}" y="{ty - bar_h + 4:.0f}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        txt_cls = "t-bad" if near >= 40 else "t-good"
+        parts.append(
+            f'<text class="{txt_cls}" x="{plot_x + w + 8:.1f}" y="{ty}">'
+            f"{near}件（完全一致{exact}件）</text>\n"
+        )
+        y += row_h
+
+    axis_y = y + 2
+    parts.append(f'<path class="line" d="M{plot_x} {axis_y} L{plot_x + plot_w} {axis_y}"/>\n')
+    for tick in (0, 25, 50):
+        tx = plot_x + tick * scale
+        parts.append(f'<path class="line" d="M{tx:.1f} {axis_y} L{tx:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{tx - 8:.1f}" y="{axis_y + 18}">{tick}件</text>\n')
+    note_y = axis_y + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_y}">'
+        "※ 返ってきた案の数は、20回とも1巡目30案・2巡目30案ちょうど。"
+        "発注書の4条件も、1,200案すべてが通った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_y + 18}">'
+        "※ 「近い」の線は0.7で引いた。0.8で引くと (c)2件 / (a)6件 / (b)2件 / (e)21件 / (d)20件。"
+        "順番は変わらない。</text>\n"
+    )
+    height = note_y + 34
+    alt = (
+        "キャッチコピーを30案出させたあと、2巡目にもう30案出させるときの頼み方5通りで、"
+        "1巡目とどれだけ重なるかを比べた横棒グラフ。架空の発注書2本×5版×各2回＝20回の実測で、"
+        "各版の2巡目は合計120案。棒の長さは言い回しが近い案の数で、"
+        "一つも重ならない案を30案と頼んだ版が8件と最も少なく、"
+        "もっと案をくださいが18件、あと30案出してくださいが20件、"
+        "新しい会話で最初の指示文をもう一度送った版が40件、"
+        "同じ会話で最初の指示文をもう一度送った版が43件だった。"
+        "文字列が完全に一致した案は、順に0件・0件・0件・5件・1件で、どの版でもごくわずか。"
+        "返ってきた案の数は20回とも1巡目30案・2巡目30案ちょうどで、"
+        "発注書の4条件は1,200案すべてが通った。"
+    )
+    (OUT / "second-thirty-overlap-by-version.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def second_thirty_how_many_angles_chart() -> None:
+    """60案が、切り口としては何通りだったか。
+
+    実測（2026-09-03）。同じ会話の3ターン目で、まとめさせた回（材料2本×各2回）と、
+    1巡目と発想が重なる案を挙げさせた回（同）。証拠＝`docs/evidence/second-thirty-not-new.md`。
+    """
+    top = 96
+    box_w, box_h = 216, 96
+    gap = 18
+    xs = [18, 18 + box_w + gap, 18 + (box_w + gap) * 2]
+    assert xs[2] + box_w <= WIDTH - 18, xs[2] + box_w
+    boxes = [
+        ("box-good", "数えた案の数", "60案", "1巡目30案＋2巡目30案。", "20回とも数はぴったり。"),
+        ("box-quiet", "AI自身が「重なる」と挙げた数", "19〜28案", "2巡目の30案のうち。", "4回の実測（材料2本×各2回）。"),
+        ("box-bad", "まとめさせた後の切り口の数", "13〜16通り", "60案をまとめさせると。", "4回の実測（同上）。"),
+    ]
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「30案＋30案＝60案」を、切り口の数で数え直すと</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の発注書2本（パン屋の食パン／オンラインヨガ教室）。同じ会話の続きで、"
+        "まとめさせた回と、重なりを挙げさせた回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "文字列としては重複ゼロに近いのに、切り口として数え直すと4分の1近くに減る。</text>\n",
+    ]
+    for x, (cls, title, big, l1, l2) in zip(xs, boxes):
+        parts.append(f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="8"/>\n')
+        parts.append(f'<text class="t-sm" x="{x + 14}" y="{top + 22}">{_esc(title)}</text>\n')
+        parts.append(f'<text class="t-strong" x="{x + 14}" y="{top + 50}">{_esc(big)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{x + 14}" y="{top + 70}">{_esc(l1)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{x + 14}" y="{top + 86}">{_esc(l2)}</text>\n')
+    note_y = top + box_h + 32
+    parts.append(
+        f'<text class="t-accent" x="18" y="{note_y}">'
+        "「本当に新しい案」として残ったのは、4回とも2〜11案だった（30案中）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="18" y="{note_y + 22}">'
+        "※ この数はAI自身の判定。機械で数えた完全一致は0件、"
+        "言い回しの近さで数えても2〜9件で、どちらもこれより小さい。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="18" y="{note_y + 42}">'
+        "※ つまり「重なっているか」は、文字列で数えるか発想で数えるかで、答えが1桁変わる。</text>\n"
+    )
+    height = note_y + 62
+    alt = (
+        "30案の次にもう30案出させて合計60案にしたとき、その60案が切り口としては"
+        "何通りだったかを並べた図。数えた案の数は60案で、1巡目30案と2巡目30案が"
+        "20回とも数はぴったり返ってきた。ところが同じ会話でAI自身に、"
+        "2巡目の30案のうち1巡目と発想が重なっているものを挙げさせると、"
+        "4回の実測で19案から28案が重なると答えた。さらに60案を言い回しの近いものどうしで"
+        "まとめさせると、13通りから16通りの切り口にしかならなかった。"
+        "本当に新しい案として残ったのは、4回とも2案から11案である。"
+        "この数はAI自身の判定で、機械で数えた完全一致は0件、"
+        "言い回しの近さで数えても2件から9件にとどまる。"
+        "重なっているかどうかは、文字列で数えるか発想で数えるかで答えが1桁変わる。"
+    )
+    (OUT / "second-thirty-how-many-angles.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
@@ -16976,4 +17129,6 @@ if __name__ == "__main__":
     combined_payment_missed_as_unpaid_chart()
     overseas_notice_escape_valve_chart()
     fix_ai_drafts_second_pass_chart()
+    second_thirty_overlap_by_version_chart()
+    second_thirty_how_many_angles_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
