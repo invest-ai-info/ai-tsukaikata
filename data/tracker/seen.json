@@ -14,14 +14,14 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 41,
+      "count": 42,
       "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   },
   "latest": {
     "anthropic-news": "2026-09-01T23:31:00+00:00",
-    "anthropic-sdk": "2026-09-01T17:36:55+00:00",
-    "claude-code": "2026-09-03T23:48:12+00:00",
+    "anthropic-sdk": "2026-09-04T22:20:20+00:00",
+    "claude-code": "2026-09-04T19:58:10+00:00",
     "deepmind-blog": "2026-09-03T15:02:08+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-02T15:40:00+00:00",
@@ -61,6 +61,17 @@
       "uid": "fad3c4494aa6e20d",
       "url": "https://openrouter.ai/x-ai/grok-4.3:batch",
       "vendor": "xAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-04T19:58:10+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added an \"Organization policy\" line to /status and claude doctor that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through Added ba…",
+      "title": "v2.1.261",
+      "uid": "d611f158558fb7c6",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -260,6 +271,7 @@
     "1aff48fd298dbf6d": "2026-08-20T22:47:29.624906+00:00",
     "1b06eefe3633e778": "2026-08-17T05:52:28.010678+00:00",
     "1b3478c54c2622bc": "2026-08-25T14:07:40.960208+00:00",
+    "1b391eea0897f3c3": "2026-09-04T22:22:55.965817+00:00",
     "1b488bc2843ac659": "2026-08-13T12:01:33.145239+00:00",
     "1b544dc74ce815a0": "2026-08-28T18:46:16.087122+00:00",
     "1ba916774616196b": "2026-08-26T03:27:09.606981+00:00",
@@ -1537,6 +1549,7 @@
     "d5c75e7e7eafb282": "2026-08-13T12:01:33.145239+00:00",
     "d60272baf614570e": "2026-08-21T20:42:45.987204+00:00",
     "d60603ce070013c9": "2026-08-27T09:54:30.419398+00:00",
+    "d611f158558fb7c6": "2026-09-04T22:22:55.965817+00:00",
     "d62b2185320d2733": "2026-08-13T12:01:33.145239+00:00",
     "d6a8d86b69e97a37": "2026-08-14T02:48:19.675404+00:00",
     "d6c3fb9f6736f28d": "2026-08-24T23:39:49.823706+00:00",

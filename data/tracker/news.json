@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-04T22:22:55.965817+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-04T22:20:20+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.4.0 (2026-09-04) Full Changelog: v1.3.0...v1.4.0 Features api: add Claude Tag category and user breakdowns to usage reports ( 9fce1e4 ) api: add named types for organization compliance settings sta…",
+      "title": "v1.4.0",
+      "uid": "1b391eea0897f3c3",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.4.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-04T22:22:55.965817+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-04T19:58:10+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added an \"Organization policy\" line to /status and claude doctor that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through Added ba…",
+      "title": "v2.1.261",
+      "uid": "d611f158558fb7c6",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-04T01:01:16.873601+00:00",
       "importance": "minor",
       "label": "Claude Code",
