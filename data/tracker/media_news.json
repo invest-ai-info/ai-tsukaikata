@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-04T16:25:10.290522+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-04T15:25:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "今回はHermes Agentにメールアカウントを設定し、メールを通じてHermes Agentとやりとりできるのかを確認していきます。 続きを読む...",
+      "title": "使い込むほど成長するAIエージェント「Hermes Agent」の実行結果をメールで受け取ってみた",
+      "uid": "cfb2ab34c79636fc",
+      "url": "https://gigazine.net/news/20260905-hermes-agent-mail/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-04T11:23:18.866777+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "「AI時代、業務の再設計が必要」　それ、DXの時も言っていましたよね……本当にできる？　日本IBMの答えは",
       "uid": "3c824695f6288ee0",
       "url": "https://www.itmedia.co.jp/business/articles/2608/31/news016.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-30T23:32:54.951033+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-30T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "フランスの大学病院「Lille University Hospital」などに所属する研究者らが発表した論文「Hallucination by proxy in LLM-assisted differential diagnosis」は、大規模言語モデル（LLM）がもっともらしく提示した架空の病名が医師にどのような影響を与えるかを検証した研究報告だ。",
-      "title": "AIが生成した“存在しない病名”、研修医の44％が信用　見抜けた医師との差は？　仏大学病院が検証",
-      "uid": "8055b760902081ba",
-      "url": "https://www.itmedia.co.jp/news/article/2608/31/2000000865/",
       "vendor": "ITmedia AI+"
     }
   ]
