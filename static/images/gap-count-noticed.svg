@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="426" viewBox="0 0 720 426" role="img" aria-label="材料が欠けた個数と、AIが欠落に気づいて止まった回の割合を並べた図。欠落0個（対照）は4回中4回とも誤って止まることなく通常どおり応答した。欠落1個は6回中1回しか、欠けたものを名指しして止まらなかった。欠落2個になると6回中5回、欠落5個（全部）では4回中4回、欠けたものを全部名指しして止まった。欠けた個数が増えるほど気づかれやすくなり、1個だけの欠落がいちばん見逃されやすい。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="426"/>
+<text class="t-strong" x="18" y="26">欠けた個数が増えるほど、むしろ気づかれやすくなる</text>
+<text class="t-sm" x="18" y="45">週次報告の材料5点・見積書の材料5点。それぞれ0／1／2／5個を欠けさせて、計20回試した。</text>
+<text class="t-sm" x="18" y="64">青＝欠けたものを全部、名前で挙げて止まった回。灰＝1つでも触れずに完成品を返した回。</text>
+<text class="t-sm" x="18" y="83">指示文はどの欠落数でも一字一句同じ。振ったのは、貼った材料の個数だけ。</text>
+<text class="t-xs" x="228" y="116">欠けたものを全部名指しして止まった回</text>
+<text class="t-sm" x="18" y="148">欠落0個（対照。誤って止まらないか）</text>
+<rect class="box-quiet" x="228" y="128" width="300" height="30" rx="4"/>
+<rect class="bar-new" x="228" y="128" width="300.0" height="30" rx="4"/>
+<text class="t-strong" x="532" y="148">4／4回</text>
+<text class="t-sm" x="18" y="200">欠落1個</text>
+<rect class="box-quiet" x="228" y="180" width="300" height="30" rx="4"/>
+<rect class="bar-in" x="228" y="180" width="50.0" height="30" rx="4"/>
+<text class="t-strong" x="532" y="200">1／6回</text>
+<text class="t-sm" x="18" y="252">欠落2個</text>
+<rect class="box-quiet" x="228" y="232" width="300" height="30" rx="4"/>
+<rect class="bar-in" x="228" y="232" width="250.0" height="30" rx="4"/>
+<text class="t-strong" x="532" y="252">5／6回</text>
+<text class="t-sm" x="18" y="304">欠落5個（全部）</text>
+<rect class="box-quiet" x="228" y="284" width="300" height="30" rx="4"/>
+<rect class="bar-new" x="228" y="284" width="300.0" height="30" rx="4"/>
+<text class="t-strong" x="532" y="304">4／4回</text>
+<text class="t-bad" x="18" y="344">※ 1個だけ欠けた6回のうち5回は、欠けたことに一言も触れず完成品を返した</text>
+<text class="t-bad" x="18" y="366">（例＝数値表が無いのに「集計はありませんでした」、割引条件が無いのに割引前の金額のまま）。</text>
+<text class="t-xs" x="18" y="388">※ 「先に確認してください」と一文を前に足すと、1個欠落の回も6回中5回まで上がる。</text>
+<text class="t-xs" x="18" y="410">架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>
+</svg>

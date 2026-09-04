@@ -17192,7 +17192,95 @@ def manual_catchup_duplicate_chart() -> None:
     )
 
 
+def gap_count_noticed_chart() -> None:
+    """欠けた材料の個数と、名前を挙げて止まった回の割合を並べる。
+
+    実測（2026-09-04）。週次報告5点・見積書5点、それぞれ0/1/2/5個を欠けさせて計20回。
+    青の帯＝欠けたものを「全部」名前で挙げて止まった回の割合。
+    0個は対照（誤って止まった回が無いことの確認）。
+    """
+    rows = [
+        ("欠落0個（対照。誤って止まらないか）", 4, 4),
+        ("欠落1個", 1, 6),
+        ("欠落2個", 5, 6),
+        ("欠落5個（全部）", 4, 4),
+    ]
+    left = 18
+    label_w = 210
+    bar_x = left + label_w
+    bar_max = 300
+    right_x = bar_x + bar_max + 16
+    top = 128
+    row_h = 30
+    gap = 22
+    pitch = row_h + gap
+
+    parts = [
+        f'<text class="t-strong" x="{left}" y="26">'
+        "欠けた個数が増えるほど、むしろ気づかれやすくなる</text>\n",
+        f'<text class="t-sm" x="{left}" y="45">'
+        "週次報告の材料5点・見積書の材料5点。それぞれ0／1／2／5個を欠けさせて、計20回試した。</text>\n",
+        f'<text class="t-sm" x="{left}" y="64">'
+        "青＝欠けたものを全部、名前で挙げて止まった回。灰＝1つでも触れずに完成品を返した回。</text>\n",
+        f'<text class="t-sm" x="{left}" y="83">'
+        "指示文はどの欠落数でも一字一句同じ。振ったのは、貼った材料の個数だけ。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 12}">'
+        "欠けたものを全部名指しして止まった回</text>\n",
+    ]
+
+    for index, (name, named, total) in enumerate(rows):
+        y = top + index * pitch
+        parts.append(
+            f'<text class="t-sm" x="{left}" y="{y + 20}">{_esc(name)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{bar_x}" y="{y}" '
+            f'width="{bar_max}" height="{row_h}" rx="4"/>\n'
+        )
+        filled = bar_max * named / total
+        if named:
+            cls = "bar-new" if named == total else "bar-in"
+            parts.append(
+                f'<rect class="{cls}" x="{bar_x}" y="{y}" '
+                f'width="{filled:.1f}" height="{row_h}" rx="4"/>\n'
+            )
+        parts.append(
+            f'<text class="t-strong" x="{bar_x + bar_max + 4}" y="{y + 20}">'
+            f"{named}／{total}回</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 8 + 22 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-bad" x="{left}" y="{height - 82}">'
+        "※ 1個だけ欠けた6回のうち5回は、欠けたことに一言も触れず完成品を返した</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="{left}" y="{height - 60}">'
+        "（例＝数値表が無いのに「集計はありませんでした」、割引条件が無いのに割引前の金額のまま）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left}" y="{height - 38}">'
+        "※ 「先に確認してください」と一文を前に足すと、1個欠落の回も6回中5回まで上がる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="{left}" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "材料が欠けた個数と、AIが欠落に気づいて止まった回の割合を並べた図。"
+        "欠落0個（対照）は4回中4回とも誤って止まることなく通常どおり応答した。"
+        "欠落1個は6回中1回しか、欠けたものを名指しして止まらなかった。"
+        "欠落2個になると6回中5回、欠落5個（全部）では4回中4回、欠けたものを全部名指しして止まった。"
+        "欠けた個数が増えるほど気づかれやすくなり、1個だけの欠落がいちばん見逃されやすい。"
+    )
+    (OUT / "gap-count-noticed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    gap_count_noticed_chart()
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
     reflect_roadmap_chart()
