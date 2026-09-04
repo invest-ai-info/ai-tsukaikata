@@ -17104,6 +17104,94 @@ def agentic_video_modality_chart() -> None:
     )
 
 
+def manual_catchup_duplicate_chart() -> None:
+    """人の手動処理を自動側に書き戻したかどうかで、重複件数がどう変わるかを並べる。
+
+    実測（2026-09-04）。架空の受付ログ2本（問い合わせ24件・PC故障受付24件）に、
+    前回処理済み14件・新着10件（うち人が手動で5件処理）を仕込んだ。
+    重複＝人がすでに処理した5件のうち、次の自動実行がまた対象に含めた件数（真値0）。
+    材料2本×3回ずつ。
+    """
+    rows = [
+        ("書き戻し忘れ・材料A（問い合わせ）", [5, 5, 5], "box-bad"),
+        ("書き戻し忘れ・材料B（PC故障受付）", [5, 5, 5], "box-bad"),
+        ("書き戻し済み・材料A（問い合わせ）", [0, 0, 0], "box-good"),
+        ("書き戻し済み・材料B（PC故障受付）", [0, 0, 0], "box-good"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 200
+    axis_max = 5
+    scale = plot_w / axis_max
+    top = 132
+    row_h = 40
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "人が手動処理した5件、書き戻し忘れだと3回とも5件が再び対象に含まれた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の受付ログ2本（問い合わせ24件・PC故障受付24件）。前回処理済み14件・新着10件のうち、"
+        "人が手動で5件を処理した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "自動側に渡す指示文はどちらの状況でも一字一句同じ。違うのは「前回位置」の記録の値だけ。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "重複＝人がすでに処理した5件のうち、次の自動実行がまた対象に含めた件数（真値0）。"
+        "材料2本×各3回。</text>\n",
+        f'<text class="t-xs" x="{px(0) + 6:.1f}" y="{top - 12}">← 真値は0件</text>\n',
+    ]
+
+    plot_bottom = top + len(rows) * row_h - 18
+    zx = px(0)
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 4} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    y = top
+    for label, values, cls in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        lo, hi = min(values), max(values)
+        parts.append(
+            f'<rect class="{cls}" x="{px(lo):.1f}" y="{ty - 12}" '
+            f'width="{max(px(hi) - px(lo), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        text = "・".join(str(v) for v in values) + "件"
+        tcls = "t-accent" if lo == hi == 0 else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 10:.1f}" y="{ty}">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-sm", "※ 上2本＝人が処理した5件の書き戻しを忘れたまま次の自動実行を迎えた。"
+                 "下2本＝人が処理した最新IDまで記録を更新してから迎えた。"),
+        ("t-xs", "架空データでの実測（材料2本×3パターン×各3回＝18回、うち上下4本は各3回）。"
+                 "生の回答は docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 4
+    alt = (
+        "自動処理の前回位置を、人の手動処理後に書き戻したかどうかで、重複件数を比べた図。"
+        "人が処理した5件のうち、書き戻し忘れの材料A（問い合わせ）は3回とも5件、"
+        "材料B（PC故障受付）も3回とも5件が、次の自動実行でまた対象に含まれた。"
+        "書き戻し済みの材料A・材料Bはどちらも3回とも0件で、重複は起きなかった。"
+        "重複の真値は0件である。"
+    )
+    (OUT / "manual-catchup-duplicate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
@@ -17320,4 +17408,5 @@ if __name__ == "__main__":
     agentic_video_gains_chart()
     agentic_video_timeline_chart()
     agentic_video_modality_chart()
+    manual_catchup_duplicate_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
