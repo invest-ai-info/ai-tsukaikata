@@ -17494,6 +17494,194 @@ def omni11_scene_extension_chart() -> None:
     )
 
 
+def astra_habits_grid_chart() -> None:
+    """GPT-6 Astra の5つの癖と、公式が勧めている対処（2026-09-05）。"""
+    rows = [
+        ("聞き返して止まる", "「読み取って最後までやる」と先に書く"),
+        ("指示書の細部に引っかかる", "「利用者の指示を最優先」と順位を書く"),
+        ("箇条書きと表を多用する", "「段落で書く」と型を指定する"),
+        ("手分けを控えめにする", "どこを並行させるかを書く"),
+        ("小さな用でも確認を厚くする", "確認の範囲を先に決めて渡す"),
+    ]
+
+    col_w, gap, pad = 328, 20, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 92, 124, 32
+    box_h = 28 + len(rows) * row_h
+    height = first_y + len(rows) * row_h + 58
+
+    assert right_x + col_w + pad <= WIDTH, right_x + col_w + pad
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "OpenAI が公式ガイドに挙げている「Astra の癖」と、その直し方</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "5つとも「賢くなった副作用」として公式が明記しているもの。使う側が指示文で調整する前提で書かれています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "左＝そのまま頼んだときに起きること。右＝公式が勧めている言い足し。</text>\n",
+        f'<rect class="box-bad" x="{left_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-good" x="{right_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-bad" x="{left_x + 14}" y="{head_y + 2}">そのまま頼むと</text>\n',
+        f'<text class="t-good" x="{right_x + 14}" y="{head_y + 2}">公式が勧める言い足し</text>\n',
+    ]
+    for index, (bad, good) in enumerate(rows):
+        y = first_y + index * row_h
+        parts.append(f'<text class="t" x="{left_x + 14}" y="{y}">{_esc(bad)}</text>\n')
+        parts.append(f'<text class="t" x="{right_x + 14}" y="{y}">{_esc(good)}</text>\n')
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: OpenAI「Using GPT-6 Astra」（developers.openai.com・2026年9月5日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 実際に使った感想ではなく、公式ガイドに書かれている内容です。</text>\n"
+    )
+    alt = (
+        "GPT-6 Astra の癖と対処を2列で並べた図。左＝そのまま頼むと起きること、"
+        "右＝OpenAI 公式ガイドが勧める言い足し。"
+        "聞き返して止まる、には「読み取って最後までやる」と先に書く。"
+        "指示書の細部に引っかかる、には「利用者の指示を最優先」と順位を書く。"
+        "箇条書きと表を多用する、には「段落で書く」と型を指定する。"
+        "手分けを控えめにする、にはどこを並行させるかを書く。"
+        "小さな用でも確認を厚くする、には確認の範囲を先に決めて渡す。"
+        "5つとも OpenAI が公式ガイドに明記しているもの。"
+    )
+    (OUT / "astra-habits-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def astra_output_price_tier_chart() -> None:
+    """同じ gpt-6-astra でも、出力の単価が窓口と入力の長さで開く（2026-09-05）。"""
+    rows = [
+        ("まとめ処理（Batch / Flex）・短い入力", 25.0),
+        ("ふつう（Standard）・短い入力", 50.0),
+        ("ふつう（Standard）・長い入力", 75.0),
+        ("急ぎ（Fast mode）・短い入力", 100.0),
+        ("急ぎ（Fast mode）・長い入力", 150.0),
+    ]
+    top_value = 150.0
+
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 20, 32
+    scale = span / top_value
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ GPT-6 Astra でも、出力の単価は 6 倍まで開く（100万トークンあたり）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "モデルは1つでも、どの窓口を使うかと入力の長さで請求が変わります。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "急ぎ（Fast mode）はふつうの2倍、まとめ処理は半額。長い入力はさらに上がります。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        cls = "bar-new" if value == 50.0 else "bar-old"
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 4}">'
+            f"${value:g}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 52
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 青＝いちばん基本の窓口（Standard・短い入力）。入力の単価も同じ比率で動きます。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: OpenAI の料金ページ（developers.openai.com・2026年9月5日に確認）。"
+        "EU のデータ所在地を指定すると急ぎは使えません。</text>\n"
+    )
+    alt = (
+        "GPT-6 Astra の出力単価を窓口ごとに比べた横棒グラフ。100万トークンあたり。"
+        "まとめ処理（BatchとFlex）の短い入力が25ドル、ふつう（Standard）の短い入力が50ドル、"
+        "ふつうの長い入力が75ドル、急ぎ（Fast mode）の短い入力が100ドル、急ぎの長い入力が150ドル。"
+        "同じモデルでも窓口と入力の長さで6倍まで開く。"
+        "出典は OpenAI の料金ページで、EU のデータ所在地を指定すると急ぎは使えない。"
+    )
+    (OUT / "astra-output-price-tier.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def astra_vs_sol_price_chart() -> None:
+    """GPT-6 Astra と GPT-5.6 Sol の単価（Standard・短い入力）を並べる（2026-09-05）。"""
+    rows = [
+        ("入力", 4.0, 10.0),
+        ("読み直し（キャッシュ読み取り）", 0.4, 1.0),
+        ("出力", 20.0, 50.0),
+    ]
+    top_value = 50.0
+
+    left, right = 288, 592
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 106, 17, 6, 28
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / top_value
+
+    assert right + 80 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "1つ前の主力（GPT-5.6 Sol）と比べると、単価はどれも 2.5 倍</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "100万トークンあたり。ふつうの窓口（Standard）で、入力が短いときの値です。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "灰色＝GPT-5.6 Sol、青＝GPT-6 Astra。入力・読み直し・出力の3つとも同じ倍率です。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "ただし公式は「出力の量が減るので1件あたりは安くなる」と書いています（数字は非公開）。</text>\n",
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 13}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "Sol"), (new, "bar-new", "Astra"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="244" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 4}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 58
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: OpenAI の料金ページ（developers.openai.com・2026年9月5日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ GPT-5.6 Sol の値段は「少なくとも2026年11月21日までの販促価格」と書かれています。</text>\n"
+    )
+    alt = (
+        "GPT-6 Astra と GPT-5.6 Sol の単価を比べた横棒グラフ。100万トークンあたり、"
+        "ふつうの窓口で入力が短いときの値。入力は Sol が4ドルで Astra が10ドル、"
+        "読み直し（キャッシュ読み取り）は Sol が0.4ドルで Astra が1ドル、"
+        "出力は Sol が20ドルで Astra が50ドル。3つとも2.5倍。"
+        "公式は出力の量が減るので1件あたりは安くなると書いているが、その数字は公開されていない。"
+        "GPT-5.6 Sol の値段は少なくとも2026年11月21日までの販促価格と明記されている。"
+    )
+    (OUT / "astra-vs-sol-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
@@ -17715,4 +17903,7 @@ if __name__ == "__main__":
     omni11_resolution_price_chart()
     omni11_vendor_720p_price_chart()
     omni11_scene_extension_chart()
+    astra_habits_grid_chart()
+    astra_output_price_tier_chart()
+    astra_vs_sol_price_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -37,11 +37,30 @@ _PERCENT_RE = re.compile(r"(?<![\d.,])(\d+(?:,\d{3})*(?:\.\d+)?)\s?%")
 
 _TAG_RE = re.compile(r"<[^>]+>")
 
+# ⚠️ CDATA をタグとして落とさないこと。`<![CDATA[ ... ]]>` の中身には `>` が
+# 無いことが多く、_TAG_RE から見ると全体が1個のタグに見える。RSS の要旨が
+# まるごと消えて、そこにしか無い数字が「出典に無い」と誤報される
+# （2026-09-05 に実際に踏んだ＝OpenAI の RSS にある 40% を報告した）。
+# OpenAI の発表ページは bot 判定で読めず、RSS が正規の振替先なので
+# ここが効かないと OpenAI 記事の照合がほぼ機能しない。
+_CDATA_RE = re.compile(r"<!\[CDATA\[(.*?)\]\]>", re.S)
+
 # ⚠️ 型（ドル額／パーセント）を落として「ページのどこかに出る数字」と照合すると
 # 検出力がゼロになる。実測（2026-08-05）＝出典10ページぶんの数字を1つのプールに
 # まとめたら、捏造された $60 と $270 が「どこかに 60 と 270 がある」で通ってしまった。
 # ページ側も同じ型で拾って突き合わせる。
 _KINDS = {"$": _DOLLAR_RE, "%": _PERCENT_RE}
+
+
+def strip_markup(raw: str) -> str:
+    """ページの生テキストから、数字を数えられる本文を作る。
+
+    CDATA は中身を残してから、ふつうのタグを落とす。順番が逆だと
+    CDATA ごと本文が消える。タグは空白に置き換える（詰めると
+    隣り合う数字がつながって別の値になる）。
+    """
+    unwrapped = _CDATA_RE.sub(lambda m: f" {m.group(1)} ", raw)
+    return _TAG_RE.sub(" ", unwrapped)
 
 
 def cited_urls(text: str) -> list[str]:
@@ -127,7 +146,7 @@ def fetch(url: str) -> str | None:
     except Exception as error:  # noqa: BLE001 - 1件の失敗で全体を止めない
         print(f"  取得できず: {url}  ({type(error).__name__})")
         return None
-    return _TAG_RE.sub(" ", raw.decode("utf-8", "replace"))
+    return strip_markup(raw.decode("utf-8", "replace"))
 
 
 def main(argv: list[str] | None = None) -> int:

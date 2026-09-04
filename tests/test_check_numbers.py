@@ -13,6 +13,7 @@ from decimal import Decimal
 import pytest
 
 from tools.check_numbers import (
+    strip_markup,
     checkable_numbers,
     cited_urls,
     numbers_in_page,
@@ -133,3 +134,30 @@ def test_unverified_does_not_accept_a_bare_number_of_a_different_kind():
     article = "長い入力は $60 です（出典: <https://a.example>）"
     pages = {"https://a.example": "context window 60k tokens, 60 languages, 60% faster"}
     assert unverified(article, pages) == [(("$", Decimal("60")), ["$60"])]
+
+
+# --- RSS の CDATA（2026-09-05 に踏んだ実物の壊れ方）---
+# OpenAI の発表ページは bot 判定で読めず、CLAUDE.md は振替先を
+# openai.com/news/rss.xml と決めている。ところが本文抽出が
+# <![CDATA[ ... ]]> をタグとして丸ごと落としていたので、RSS を出典に
+# した記事の数字が「出典に無い」と誤報された（実際に 40% で踏んだ）。
+
+
+def test_strip_markup_keeps_text_inside_cdata():
+    raw = (
+        "<item><title><![CDATA[Legora]]></title>"
+        "<description><![CDATA[improve performance by nearly 40% "
+        "in this financial-review workflow.]]></description></item>"
+    )
+    assert ("%", Decimal("40")) in numbers_in_page(strip_markup(raw))
+
+
+def test_strip_markup_still_removes_ordinary_tags():
+    raw = '<div class="price">$10.00</div>'
+    text = strip_markup(raw)
+    assert ("$", Decimal("10")) in numbers_in_page(text)
+    assert "div" not in text
+
+
+def test_strip_markup_does_not_join_words_across_a_tag():
+    assert "40%50%" not in strip_markup("<b>40%</b><b>50%</b>")

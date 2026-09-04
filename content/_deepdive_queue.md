@@ -408,6 +408,40 @@
   - 他社比較は Anthropic（`platform.claude.com`）・OpenAI（`developers.openai.com`）とも到達でき、
     どちらのモデル一覧にも「動画」の語が無いことを確認できた（二次情報は使っていない）
 
+### 🆕 2026-09-05 の補充（オーナー指示「ChatGPT-6・アストラの深掘り」・手動追記）
+
+**「ChatGPT-6」「アストラ」は同じもの＝OpenAI の GPT-6 Astra**（API 名 `gpt-6-astra`）。
+2026-09-03 にプレビュー、9/5 に一般公開。⚠️ `news.json` には 9/1 の `path-to-astra` など
+6件が入っているが、**自動追記の対象にならない**＝`deepdive.py` の `UNREADABLE_HOSTS` に
+`openai.com` が入っているため（意図どおり。下の実測のとおり本当に読めない）。
+
+🚨 **openai.com の記事ページは、手元からも読めない**（2026-09-05 実測）。
+`openai.com/index/path-to-astra` は `Cf-Mitigated: challenge` 付きの **403**。
+`help.openai.com` も 403。**先方の bot 判定なので許可リストでは直らない。UA偽装での迂回はしない。**
+
+⭕️ **CLAUDE.md の振替ルートは、実測で両方とも生きている**:
+
+| URL | 結果（2026-09-05 手元） |
+|---|---|
+| `openai.com/news/rss.xml` | **200**・約711KB（発表の公式要旨が入る。全文は入らない） |
+| `developers.openai.com/api/docs/models` | **200**・約364KB |
+| `developers.openai.com/api/docs/pricing` | **200**・約558KB |
+| `developers.openai.com/api/docs/guides/latest-model` | **200**・約382KB（「Using GPT-6 Astra」） |
+| `platform.openai.com/docs/models` | 301 → `developers.openai.com/api/docs/models` |
+
+- [x] https://developers.openai.com/api/docs/guides/latest-model
+  - ✅ **2026-09-05: 公開した**（オーナーのローカルセッションで作成） → `content/tools/gpt-6-astra.md`
+    （図3枚 `astra-habits-grid` / `astra-vs-sol-price` / `astra-output-price-tier`・出典4件すべて取得成功・
+    `check_numbers.py` は照合できる数字 **17/17** が出典に存在・pytest 625 passed・build 140ファイル・
+    ブラウザ厳密計測 0問題）
+  - 📌 記事の芯＝**いちばん大きな変更は性能ではなく「聞き返して止まりやすくなった」こと。
+    OpenAI 自身が公式ガイドでそう書き、直すための指示文を公開している**。記事はその指示文を
+    日本語に直して並べたもの＝このサイトの型（プロンプト中心）にそのまま乗る
+  - 📌 単価は GPT-5.6 Sol の **2.5倍**（入力 $10 / 出力 $50）。ただし公式は「出力トークンが減るので
+    1件あたりの費用は下がる」と書いている。⚠️ **その数字は公開されていない**ので記事では比率を出していない
+  - ⚠️ **発表ページ本体は読めていない**ので、安全性の話（Preparedness Framework で Critical に達した
+    最初のモデル）は **RSS の公式要旨の範囲だけ**にとどめ、記事にもそう明記した
+
 ### 🆕 2026-09-02 の補充（オーナー指示「ニュースの方からも深掘り」・手動追記）
 
 **なぜ足したか＝オーナーが例に挙げた2件（Fable 5.1・Gemini の新モデル）のうち、Fable 5.1 は
