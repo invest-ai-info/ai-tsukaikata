@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-03T23:48:12+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a diff panel that opens beside the conversation in fullscreen mode and shows your uncommitted changes as Claude edits; toggle it with /diff Added a likely cause for prompt-cache …",
+      "title": "v2.1.260",
+      "uid": "4f178aa183d1bd32",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.260",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-03T16:29:05.225191+00:00",
       "importance": "major",
       "label": "DeepMind Blog",

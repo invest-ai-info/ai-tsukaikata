@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-04T00:31:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "開発元企業の従業員によるものを含むオンラインの報告によると、特に人気の高いAIサービスであるOpenAIの「ChatGPT」、Anthropicの「Claude」、グーグルの「Gemini」、xAIの「Grok」で一時障害が発生した。",
+      "title": "ChatGPT、Claude、Grokで同時に障害　復旧済み",
+      "uid": "5611366df5a9ec89",
+      "url": "https://japan.cnet.com/article/35252276/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T23:54:03+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Adobeは、アニル・チャクラバーシー氏が12月1日付で社長兼CEOに就任すると発表した。2007年からCEOを務めたシャンタヌ・ナラヤン氏は執行会長に就き、新体制を支援する。また、クリエイティビティ＆プロダクティビティ事業を率いるデビッド・ワドワニ社長が退社する意向を明らかにした。",
+      "title": "Adobe、次期CEOにアニル・チャクラバーシー氏　ナラヤン氏は12月1日付で会長に",
+      "uid": "f83e53b0276d406f",
+      "url": "https://www.itmedia.co.jp/news/article/2609/04/2000001155/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T23:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ホルスAIは、2D図面からの3D CADモデル生成や3Dアセンブリからのバラシ図面作成を行うWebサービス「Zumen AI」の先行提供を開始した。AIでCAD作業を効率化し、後工程への移行を早める。",
+      "title": "AIで2D図面を3D CADモデル化、アセンブリからバラシ図面の作成も",
+      "uid": "dc79c5bace89fd43",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/04/news033.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T23:19:48+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは新モデル「GPT-6 Astra」を公開した。サイバーセキュリティ能力が自社基準で最高の「Critical」に達した初のモデル。提供版は悪用防止のため防御用途に限定し、高度な機能は防御側支援プログラム「Daybreak」で段階的に開放する。数学やコーディング、PC操作など各領域で最高水準を記録した。",
+      "title": "OpenAI、「GPT-6 Astra」を一部組織向けに公開　サイバー能力が初の「Critical」に",
+      "uid": "8e3814f1920323da",
+      "url": "https://www.itmedia.co.jp/news/article/2609/04/2000001153/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ガートナージャパンは、2026年の日本における未来志向型インフラテクノロジーのハイプサイクルを発表した。7項目が「過度な期待」のピーク期に位置付けられている。",
+      "title": "Gartner、2026年版「未来志向型インフラ」ハイプサイクル発表　注目すべき技術は？",
+      "uid": "8cd491aa2f2f866b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/04/news030.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「DX銘柄」に初めて選ばれた三井倉庫ホールディングス。同社はどのような考えのもとで、DXを進めてきたのか。物流業界ならではのDXの難しさや青写真について、上級執行役員・情報システム担当の佐野直人氏に聞いた。",
+      "title": "目新しいものだけがDXじゃない　三井倉庫HD、DXに投じた200億円の“意外な配分”",
+      "uid": "eaeb3da525d73d80",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/04/news046.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-04T01:01:16.873601+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-03T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "2026年10月1日に施行される改正労働施策総合推進法により、企業にはカスハラへの対策が求められる。アイフォーカスは、AI音声データ解析機能を備えたLTE通信スマートウォッチ「カスハラ対策Watch」を2026年10月1日から提供開始すると発表した。",
+      "title": "10月1日「カスハラ対策」義務化　暴言をAIが検知する腕時計型デバイスが登場",
+      "uid": "0a09090126557152",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/04/news045.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-03T22:37:08.568544+00:00",
       "importance": "major",
       "label": "CNET Japan",
@@ -2315,90 +2399,6 @@
       "uid": "69bef510357632fa",
       "url": "https://www.itmedia.co.jp/news/article/2608/28/2000000897/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-28T05:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "文書・音声・動画をAIで分析して内容を整理してまとめてくれるGoogleのツール「Gemini Notebook(旧：NotebookLM)」の新しい取り組みとして、購入済みの書籍を取り込んで質問したり議論したりできる「Expert Intelligence」が発表されました。 続きを読む...",
-      "title": "購入した電子書籍をGeminiに読ませて質問できる「Expert Intelligence」が登場、10万冊超に対応",
-      "uid": "8428973b19ceac83",
-      "url": "https://gigazine.net/news/20260828-expert-intelligence-gemini/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-28T04:25:21+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、信頼できる情報源をAI製品で活用する取り組み「Expert Intelligence」を発表した。第1弾として「Google Playブックス」の対象電子書籍を「Gemini Notebook」のソースに追加可能にした。大手出版社の10万冊以上が対象で、今後は他サービスにも拡大する。",
-      "title": "Google、「Gemini Notebook」に購入済み電子書籍を追加できる「Expert Intelligence」",
-      "uid": "3b8b2b203daa7287",
-      "url": "https://www.itmedia.co.jp/news/article/2608/28/2000000893/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-28T04:21:32+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Amazon Web Services（以下、AWS）とNVIDIAは8月26日、戦略的協業を拡大すると発表した。今回の協業拡大は、AIインフラストラクチャに対する世界的な需要の急増に対応するためのもの。",
-      "title": "AWSとNVIDIA、AIインフラの需要拡大に向けた戦略的協業拡大 AWSのグローバルインフラ全体に200万個のNVIDIA GPU",
-      "uid": "df4c526c05118f67",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2136488.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-28T03:48:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "学生に生成AIを使わせるべきなのか、一律で禁止すべきなのかという議論は世界中で絶えず行われています。OpenAIが大学と共同で行った新たな実験では、AIを使う場合でも一定のメリットがあることが明らかになりました。 続きを読む...",
-      "title": "学生がAIを使うと論理が明確で専門家に近い回答になることがOpenAIの実験で判明",
-      "uid": "814fcd4e5268236a",
-      "url": "https://gigazine.net/news/20260828-student-gain-from-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-28T03:45:20+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "YMTRENDは、HENGBOTが開発する次世代AIロボットドッグ「Sirius（シリウス）」の日本向けプロジェクトを、8月28日11時より応援購入サービス「Makuake」で開始した。プロジェクトの期間は10月31日までで、販売価格は199,980円。発送時期は12月頃を予定している。",
-      "title": "犬らしい動き、表情、音声で飼い主に応える！次世代AIロボットドッグ「Sirius」",
-      "uid": "79a396f8beb7f0c6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2136464.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-08-28T03:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIが顕微鏡やロボットアームなどの物理機器を操作するための共通規格「Model Hardware Standard(MHS)」の研究プレビューをAnthropicが発表しました。MHSを使うことで、メーカーや種類が異なる機器をAIが共通の方法で扱いやすくなるとされています。 続きを読む...",
-      "title": "AnthropicがAIに顕微鏡やロボットアームを操作させる共通規格「Model Hardware Standard」を発表",
-      "uid": "ec00905a1364073c",
-      "url": "https://gigazine.net/news/20260828-anthropic-model-hardware-standard/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-08-28T03:21:59+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "大阪市高速電気軌道、KDDI、AVITAは8月28日、8月31日～9月15日まで、フィジカルAIを活用したヒューマノイドをOsaka Metroの接客案内サービスに導入する実証実験を実施すると発表した。",
-      "title": "Osaka MetroでフィジカルAIを活用したヒューマノイドの実証実験",
-      "uid": "799e5b8bee67a89a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2136449.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
