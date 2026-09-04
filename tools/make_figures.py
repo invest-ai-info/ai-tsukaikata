@@ -17279,6 +17279,221 @@ def gap_count_noticed_chart() -> None:
     )
 
 
+def omni11_resolution_price_chart() -> None:
+    """Gemini Omni 1.1 Flash の解像度別・秒あたり価格。360pから4Kで10倍。
+
+    出典＝発表ページ（blog.google・2026-08-27）に埋め込まれた価格表の画像。
+    数字は本文のテキストではなく画像内の表なので、check_numbers.py では
+    自動照合できない。この記事を書いた担当が画像を直接開いて目視で確認した。
+    """
+    rows = [
+        ("360p（下書き）", 0.03),
+        ("720p（標準）", 0.10),
+        ("1080p", 0.15),
+        ("4K", 0.30),
+    ]
+    left, right = 210, 620
+    span = right - left
+    top, bar_h, gap = 78, 26, 20
+    pitch = bar_h + gap
+    biggest = max(v for _, v in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">解像度が上がるほど、秒あたりの値段は上がる</text>\n',
+        '<text class="t-sm" x="18" y="45">Gemini Omni 1.1 Flash の動画1秒あたりの価格（ドル）。</text>\n',
+        '<text class="t-sm" x="18" y="64">360pの下書きと4Kの本番出力では、同じ長さでも10倍の差になる。</text>\n',
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        cls = "bar-new" if name.startswith("4K") else "bar-in"
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 8:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 8:.1f}">'
+            f"{_usd(value)}／秒</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 80
+    notes = [
+        "※ 価格は発表ページに埋め込まれた表の画像から読み取った（本文のテキストではない）。",
+        "※ 40秒のフル尺を作ると、360pなら$1.20、4Kなら$12になる（この記事の計算）。",
+        "※ トークン単位の課金では、720pは秒あたり約$0.10相当と公式ドキュメントが説明している。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 56 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "Gemini Omni 1.1 Flash の解像度別・動画1秒あたりの価格を示した横棒グラフ。"
+        "360p（下書き）は0.03ドル、720p（標準）は0.10ドル、1080pは0.15ドル、4Kは0.30ドル。"
+        "360pから4Kまでで価格は10倍になる。"
+        "価格は発表ページに埋め込まれた表の画像から読み取ったもので、本文のテキストではない。"
+        "40秒のフル尺を作ると360pなら1.20ドル、4Kなら12ドルになる（この記事の計算）。"
+        "トークン単位の課金では、720pは秒あたり約0.10ドル相当と公式ドキュメントが説明している。"
+    )
+    (OUT / "omni11-resolution-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def omni11_vendor_720p_price_chart() -> None:
+    """720p・音声付き動画1秒あたりの価格を、同じ条件（720p）で6モデル並べる。
+
+    出典＝Gemini/VeoはGoogleの料金ページ（ai.google.dev/gemini-api/docs/pricing）、
+    Sora 2 / Sora 2 Pro はOpenAIの料金ページ（developers.openai.com/api/docs/pricing）。
+    いずれもテキストで確認済み（2026-09-04時点）。Sora 2系はAPIが2026年9月24日に
+    終了予定と公式が告知している（developers.openai.com/api/docs/deprecations）。
+    """
+    rows = [
+        ("Gemini Omni 1.1 Flash", 0.10, False),
+        ("Veo 3.1 Lite", 0.05, False),
+        ("Veo 3.1 Fast", 0.10, False),
+        ("Veo 3.1 Standard", 0.40, False),
+        ("Sora 2", 0.10, True),
+        ("Sora 2 Pro", 0.30, True),
+    ]
+    label_w = 190
+    left = 18
+    bar_left = left + label_w
+    right = 620
+    span = right - bar_left
+    top, bar_h, gap = 90, 22, 15
+    pitch = bar_h + gap
+    biggest = max(v for _, v, _ in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">720pの動画1秒ぶんを、同じ条件で6モデル並べる</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "音声付き・720p出力のときの秒単価（ドル）。各社の公式料金ページに書かれている値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Sora 2 系（赤字）はAPIが2026年9月24日に終了予定と公式が告知している。</text>\n",
+    ]
+    for index, (name, value, warn) in enumerate(rows):
+        y = top + index * pitch
+        cls = "bar-new" if name == "Gemini Omni 1.1 Flash" else "bar-old"
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="{left}" y="{y + bar_h - 6:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        value_cls = "t-bad" if warn else "t-sm"
+        suffix = "／秒（終了予定）" if warn else "／秒"
+        parts.append(
+            f'<text class="{value_cls}" x="{bar_left + bw + 8:.1f}" y="{y + bar_h - 6:.1f}">'
+            f"{_usd(value)}{suffix}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 80
+    notes = [
+        "※ Sora 2 / Sora 2 Pro は、Videos APIごと2026年9月24日に提供終了と2026年3月24日付で告知済み。",
+        "※ 同ページに後継モデルの案内は無い（この記事の確認時点）。",
+        "※ Anthropicは動画生成モデルを提供していない（公式ドキュメントで確認）。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 56 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "720p・音声付き動画1秒あたりの価格を6モデルで比べた横棒グラフ。"
+        "Gemini Omni 1.1 Flashは0.10ドル、Veo 3.1 Liteは0.05ドル、Veo 3.1 Fastは0.10ドル、"
+        "Veo 3.1 Standardは0.40ドル、Sora 2は0.10ドル、Sora 2 Proは0.30ドル。"
+        "Sora 2とSora 2 Proは、Videos APIごと2026年9月24日に提供終了と公式が告知しており、"
+        "同ページに後継モデルの案内は無い。Anthropicは動画生成モデルを提供していない。"
+    )
+    (OUT / "omni11-vendor-720p-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def omni11_scene_extension_chart() -> None:
+    """従来モデルは直前1秒だけを参照していたが、Omni 1.1は10秒を参照する。
+    延長も10秒刻みで、合計40秒まで積み増せる。
+
+    出典＝発表ページ（blog.google・2026-08-27）。
+    """
+    left = 18
+    label_w = 190
+    bar_left = left + label_w
+    right = 620
+    bar_span = right - bar_left
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">直前1秒しか見ていなかった延長が、10秒を見るようになった</text>\n',
+        '<text class="t-sm" x="18" y="45">シーン延長のとき、モデルが参照する直前の秒数。</text>\n',
+        '<text class="t-sm" x="18" y="64">'
+        "10倍の長さを踏まえるので、続きの動きや構図が前の場面と繋がりやすくなる。</text>\n",
+    ]
+
+    # 上段: 参照する秒数（1秒 vs 10秒）
+    ref_top, ref_bar_h, ref_gap = 90, 24, 14
+    ref_rows = [("従来のモデル", 1), ("Gemini Omni 1.1 Flash", 10)]
+    ref_scale = bar_span / 10
+    for index, (name, secs) in enumerate(ref_rows):
+        y = ref_top + index * (ref_bar_h + ref_gap)
+        cls = "bar-new" if secs == 10 else "bar-old"
+        bw = max(4.0, secs * ref_scale)
+        parts.append(f'<text class="t" x="{left}" y="{y + ref_bar_h - 6:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{ref_bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_left + bw + 8:.1f}" y="{y + ref_bar_h - 6:.1f}">{secs}秒</text>\n'
+        )
+
+    # 下段: 延長の積み上げ（10秒刻みで4回・合計40秒）
+    ext_title_y = ref_top + len(ref_rows) * (ref_bar_h + ref_gap) + 28
+    ext_top = ext_title_y + 14
+    block_h = 30
+    block_gap = 3
+    block_w = (bar_span - block_gap * 3) / 4
+    parts.append(
+        f'<text class="t-strong" x="{left}" y="{ext_title_y}">'
+        "延長は10秒刻みで、合計40秒まで積み増せる</text>\n"
+    )
+    parts.append(f'<text class="t" x="{left}" y="{ext_top + block_h - 8:.1f}">延長</text>\n')
+    for i in range(4):
+        bx = bar_left + i * (block_w + block_gap)
+        parts.append(
+            f'<rect class="bar-new" x="{bx:.1f}" y="{ext_top}" '
+            f'width="{block_w:.1f}" height="{block_h}" rx="3"/>\n'
+        )
+    tick_y = ext_top + block_h + 16
+    for i in range(4):
+        cumulative = (i + 1) * 10
+        bx = bar_left + (i + 1) * (block_w + block_gap) - block_gap
+        parts.append(f'<text class="t-xs" x="{bx - 20:.1f}" y="{tick_y}">{cumulative}秒</text>\n')
+
+    height = tick_y + 76
+    notes = [
+        "※ 延長は動画の最後にしか継ぎ足せない。途中への挿入や先頭への追加はできないと明記されている。",
+        "※ アップロードした動画の延長は、EU・スイス・英国では利用できないと明記されている",
+        "　（モデルが生成した動画の延長・複数ターンでの継続は全地域で利用可）。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 56 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "シーン延長のとき、モデルが参照する直前の秒数を示した図。"
+        "従来のモデルは1秒、Gemini Omni 1.1 Flashは10秒を参照する。"
+        "延長は10秒刻みで、10秒・20秒・30秒・40秒と合計40秒まで積み増せる。"
+        "延長は動画の最後にしか継ぎ足せず、途中への挿入や先頭への追加はできないと明記されている。"
+        "アップロードした動画の延長はEU・スイス・英国では利用できないが、"
+        "モデルが生成した動画の延長・複数ターンでの継続は全地域で利用できる。"
+    )
+    (OUT / "omni11-scene-extension.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
@@ -17497,4 +17712,7 @@ if __name__ == "__main__":
     agentic_video_timeline_chart()
     agentic_video_modality_chart()
     manual_catchup_duplicate_chart()
+    omni11_resolution_price_chart()
+    omni11_vendor_720p_price_chart()
+    omni11_scene_extension_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

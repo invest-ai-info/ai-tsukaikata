@@ -421,13 +421,22 @@
 
 - [x] https://www.anthropic.com/claude-fable-and-mythos-5-1
   - →保管: ✅ **2026-09-02: 公開した**（オーナーのローカルセッションで作成） → `content/tools/c
-- [ ] https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/
+- [x] https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/
+  - →保管: ✅ **2026-09-04: 公開した** → `content/tools/gemini-omni-1-1-flash.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`omni11-resolution-price` /
+    `omni11-vendor-720p-price` / `omni11-scene-extension`）。出典9件すべて取得成功。
+    `check_numbers.py` は照合できる数字11個すべてが出典に存在。pytest 618 passed・build 149ファイル）
+  - ⚠️ **価格表（360p/720p/1080p/4K）は発表ページのテキストではなく埋め込み画像**。
+    担当が画像を直接開いて目視で確認した（`gemini-omni-1.1-flash-pricing-ta...webp` を取得しPNG変換して読んだ）。
+    `check_numbers.py` は複数出典をまとめて照合するため、$0.03・$0.15 等は他ページの無関係な値と
+    偶然一致して「照合できた」扱いになっている可能性がある——**この記事の数字は画像の目視確認が根拠**であり、
+    自動照合はその裏付けにはなっていない。次にこの種の「価格が画像埋め込み」のページが来たら同じ手順
+    （画像URLを`curl`で取得→ PNG変換 → Read で目視）を使うとよい
+  - 📌 記事の芯＝**解像度で秒単価が10倍**（360p $0.03 〜 4K $0.30）。延長は10秒刻みで合計40秒が上限、
+    EU・スイス・英国はアップロード動画の延長が利用不可。比較したOpenAI Sora 2/Sora 2 Proは
+    2026年9月24日にAPI提供終了と告知されており（この記事の確認時点で20日後）、Anthropicは
+    動画生成モデルを提供していない
   - 2026-09-02 手動追記（オーナー指示の例「Gemini の新しいモデル」。`news.json` では `minor`）
-  - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約418KB を実測）。最終URL＝
-    `blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/`。
-    8/31 の computer-use の回で `blog.google` へ到達できているので、同じ経路で読めるはず
-  - 集めたい数字＝**何ができるモデルか（音声・画像・動画のどれを扱うか）・料金・使えるモデル名・
-    前の Omni Flash から何が変わったか**。料金は `ai.google.dev/gemini-api/docs/pricing`
 - [ ] https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/
   - 2026-09-02 手動追記（同上。`news.json` では `minor`）
   - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約401KB を実測）。最終URL＝
@@ -443,6 +452,16 @@
 
 ## 処理済み
 
+- https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/ → **公開済み** content/tools/gemini-omni-1-1-flash.md（2026-09-04・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`omni11-resolution-price` /
+    `omni11-vendor-720p-price` / `omni11-scene-extension`）。`check_numbers.py` は**11個すべて出典に存在**
+    （出典9件すべて取得成功）。pytest 618 passed・build 149ファイル。
+  - ⚠️ 価格表（360p/720p/1080p/4K）は発表ページの本文テキストではなく埋め込み画像。
+    画像を`curl`で取得しPNGに変換して目視で確認した（要約させずに生の表を見た）。
+  - 📌 記事の芯＝**解像度で秒単価が10倍**（360p $0.03〜4K $0.30）。延長は10秒刻みで合計40秒が上限、
+    アップロードした動画の延長はEU・スイス・英国では利用不可。比較したOpenAI Sora 2/Sora 2 Proは
+    2026年9月24日にAPI提供終了と告知されており（確認時点で20日後）、Anthropicは動画生成モデルを
+    提供していない。
 - https://deepmind.google/blog/introducing-agentic-video-in-gemini/ → **公開済み** content/tools/gemini-agentic-video.md（2026-09-03・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`agentic-video-gains` /
     `agentic-video-timeline` / `agentic-video-modality`）。`check_numbers.py` は**10個すべて出典に存在**
