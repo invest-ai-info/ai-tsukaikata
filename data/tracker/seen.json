@@ -39,63 +39,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-08-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-02T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "ATV Big Air Tour uses ChatGPT Work to speed up marketing, merchandising, and more. It even turned merchandise photos into an inventory website in 15 minutes.",
-      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
-      "uid": "55a86e61ec4a1732",
-      "url": "https://openai.com/index/atv-big-air-tour",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-03T13:15:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, training, and support for essential services.",
-      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
-      "uid": "1758c474a6e44ae5",
-      "url": "https://openai.com/index/daybreak-for-frontline-defenders",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-03T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow.",
-      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
-      "uid": "704b4ad52cd3f59f",
-      "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-03T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model.",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "uid": "30435936f633d29a",
-      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-03T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "GPT-6 Astra is our most capable broadly deployed model and our first to reach the Critical level of cybersecurity capability under our Preparedness Framework.",
-      "title": "Safety overview: GPT-6 Astra",
-      "uid": "fe61d71fd4545004",
-      "url": "https://openai.com/index/safety-overview-gpt-6-astra",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
