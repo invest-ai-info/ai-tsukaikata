@@ -17859,6 +17859,223 @@ def unknown_field_marked_anomaly_chart() -> None:
     )
 
 
+def transcribe_price_per_min_chart() -> None:
+    """文字起こしモデルの推定分単価を、事前録音系・配信系に分けてGemini/OpenAIで並べる。
+
+    出典＝Gemini は ai.google.dev/gemini-api/docs/pricing、OpenAI は
+    developers.openai.com/api/docs/pricing。どちらも「Estimated（推定）」と
+    明記した分単価の列があり、その値をそのまま使った（この記事側で計算した値ではない）。
+    表示文字列は浮動小数の丸め誤差を避けるため、値ごとに文字列を直接指定している。
+    """
+    rows = [
+        ("Gemini 3.5 Transcribe（事前録音）", 0.0050, "$0.005／分", False),
+        ("GPT-Transcribe（事前録音向け）", 0.0045, "$0.0045／分", True),
+        ("GPT-4o Transcribe", 0.0060, "$0.006／分", True),
+        ("GPT-4o Transcribe Diarize（話者分離つき）", 0.0060, "$0.006／分", True),
+        ("GPT-4o mini Transcribe", 0.0030, "$0.003／分", True),
+        ("Gemini 3.5 Transcribe Live（配信）", 0.0090, "$0.009／分", False),
+        ("GPT-Live-Transcribe（配信）", 0.0170, "$0.017／分", True),
+        ("GPT-Realtime-Whisper（配信）", 0.0170, "$0.017／分", True),
+    ]
+    label_w = 250
+    left = 18
+    bar_left = left + label_w
+    right = 620
+    span = right - bar_left
+    top, bar_h, gap = 96, 20, 12
+    pitch = bar_h + gap
+    top_value = 0.020
+    scale = span / top_value
+
+    assert right <= WIDTH - 18, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "配信（リアルタイム）は、事前録音より単価が上がる。上がり幅はOpenAIのほうが大きい</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式料金ページに載っている「推定・分あたり」の値（ドル）。上5行が事前録音、下3行が配信。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "実際の課金はトークン数で決まり、この分単価は目安として各社が自分で示した推定値。</text>\n",
+    ]
+    for index, (name, value, display, is_openai) in enumerate(rows):
+        y = top + index * pitch
+        if index == 5:
+            y += 10  # 事前録音グループと配信グループの間を少し空ける
+        cls = "bar-old" if is_openai else "bar-new"
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t-sm" x="{left}" y="{y + bar_h - 5:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_left + bw + 8:.1f}" y="{y + bar_h - 5:.1f}">{display}</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 10 + 76
+    notes = [
+        "※ 濃い青＝Google（Gemini）、薄い灰＝OpenAI。同じ「推定・分あたり」の列どうしの比較。",
+        "※ Geminiの推定は「音声入力・秒25トークン、テキスト出力・分175トークン」を前提にした値と注記あり。",
+        "※ Anthropicは文字起こし専用のモデルを公式ページに載せていない。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 58 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "文字起こしモデル8種の推定分単価を比べた横棒グラフ。ドルの分あたり。事前録音向けは、"
+        "Gemini 3.5 Transcribeが0.005ドル、GPT-Transcribeが0.0045ドル、GPT-4o Transcribeが0.006ドル、"
+        "GPT-4o Transcribe Diarize（話者分離つき）が0.006ドル、GPT-4o mini Transcribeが0.003ドル。"
+        "配信向けは、Gemini 3.5 Transcribe Liveが0.009ドル、GPT-Live-Transcribeが0.017ドル、"
+        "GPT-Realtime-Whisperが0.017ドル。配信に切り替えると単価は上がるが、上がり幅はGeminiが約1.8倍、"
+        "OpenAIの2モデルは事前録音の最安値からおよそ3倍と、OpenAI側で上がり幅が大きい。"
+        "いずれも各社の公式料金ページに載っている『推定・分あたり』の値をそのまま使ったもので、"
+        "実際の課金はトークン数で決まる。Anthropicは文字起こし専用のモデルを公式ページに載せていない。"
+    )
+    (OUT / "transcribe-price-per-min.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def transcribe_wer_by_benchmark_chart() -> None:
+    """Gemini 3.5 Transcribe の誤り率（WER）は、測り方で2通りの数字が出ている。
+
+    出典＝発表ページ（blog.google・2026-08-26）。「全体平均」と「FLEURSベンチマーク
+    （上位言語のみ）」は、同じ発表ページの別々の文で挙げられている別条件の数字で、
+    Google自身が単一の数字として合成していない。
+    """
+    groups = [
+        ("公式発表の全体平均", [
+            ("ストリーミング", 4.0),
+            ("非ストリーミング", 2.6),
+        ]),
+        ("FLEURSベンチマーク（上位言語のみ）", [
+            ("ストリーミング", 5.50),
+            ("非ストリーミング", 5.04),
+        ]),
+    ]
+    label_x = 18
+    bar_left = 220
+    right = 560
+    span = right - bar_left
+    top_value = 6.0
+    scale = span / top_value
+    top = 108
+    bar_h, gap, group_gap = 22, 12, 26
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「誤り率4.0%」と「同5.50%」、どちらも同じモデルの公式発表値</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Word Error Rate（音声を文字にしたときの誤り率）。低いほど正確。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「全体平均」と「FLEURS（上位言語のみ）」は測り方が違う数字で、Googleは合算していない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "この2組を足し引きして精度を比べることはできない。</text>\n",
+    ]
+
+    y = top
+    for title, items in groups:
+        parts.append(f'<text class="t-accent" x="{label_x}" y="{y + 14}">{_esc(title)}</text>\n')
+        y += bar_h + gap
+        for label, value in items:
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-sm" x="{label_x + 12}" y="{y + bar_h - 6:.1f}">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="bar-in" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{bar_left + bw + 8:.1f}" y="{y + bar_h - 6:.1f}">'
+                f"{value:g}%</text>\n"
+            )
+            y += bar_h + gap
+        y += group_gap - gap
+
+    height = y + 54
+    notes = [
+        "※ Chirp 3（前の転写モデル）の同じ数値は発表ページに書かれていないため、比較できない。",
+        "※ 「最終的な文字起こしまでの時間はChirp 3比70%改善」という発表もあるが、この図の数字とは別の指標。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 34 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "Gemini 3.5 Transcribeの誤り率（WER）を、測り方が違う2組で比べた横棒グラフ。"
+        "公式発表の全体平均はストリーミング4.0%、非ストリーミング2.6%。"
+        "FLEURSベンチマーク（上位言語のみ）はストリーミング5.50%、非ストリーミング5.04%。"
+        "低いほど正確。2組は測り方が違うため単純に比較できず、Google自身も合算していない。"
+        "前の転写モデルChirp 3の同じ数値は発表ページに書かれておらず比較できない。"
+        "『最終的な文字起こしまでの時間はChirp 3比70%改善』という発表もあるが、この図の数字とは別の指標。"
+    )
+    (OUT / "transcribe-wer-by-benchmark.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def transcribe_vendor_grid_chart() -> None:
+    """文字起こし機能を3社の公式ページで比べた表。
+
+    出典＝Gemini は発表ページ（blog.google）、OpenAI は developers.openai.com の
+    料金・モデルページ、Anthropic は platform.claude.com のモデル一覧
+    （音声入力への言及自体が無いことを確認）。
+    """
+    rows = [
+        ("文字起こし専用モデル", "あり（2機種）", "あり（4機種＋Whisper）", "記載なし"),
+        ("対応言語数", "85言語以上", "記載なし", "—"),
+        ("話者分離", "最大3人（3人超は試験的）", "diarize版のみ対応・上限は記載なし", "—"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 128
+    pitch, box_h = 46, 36
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "文字起こし専用モデルを持たないのは、3社のうちAnthropicだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（料金・モデル一覧）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「記載なし」「—」は、機能が無いと明言されているわけではなく、公式ページに書かれていない意味。</text>\n",
+    ]
+    headers = ["Gemini（Google）", "GPT（OpenAI）", "Claude（Anthropic）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, gemini_v, openai_v, anthropic_v in rows:
+        ty = y + box_h / 2 + 5
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((gemini_v, openai_v, anthropic_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else ("box-quiet" if i == 1 else "box-bad")
+            tcls = "t-accent" if i == 0 else ("t-sm" if i == 1 else "t-bad")
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            parts.append(f'<text class="{tcls}" x="{x + 8:.1f}" y="{ty:.1f}">{_esc(val)}</text>\n')
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "文字起こし機能を3社で比べた表。文字起こし専用モデル＝Geminiはあり（2機種）、"
+        "GPTはあり（4機種＋Whisper）、Claudeは記載なし。対応言語数＝Geminiは85言語以上、"
+        "GPTは記載なし、Claudeは—。話者分離＝Geminiは最大3人（3人超は試験的）、"
+        "GPTはdiarize版のみ対応で上限は記載なし、Claudeは—。"
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。"
+    )
+    (OUT / "transcribe-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def stuck_flag_proceed_verdict_chart() -> None:
     """「実行中」のまま止まったフラグに対して、AIが「進める」と判断した割合を版ごとに並べる。
 
@@ -18265,4 +18482,7 @@ if __name__ == "__main__":
     astra_vendor_price_chart()
     unknown_field_marked_anomaly_chart()
     stuck_flag_proceed_verdict_chart()
+    transcribe_price_per_min_chart()
+    transcribe_wer_by_benchmark_chart()
+    transcribe_vendor_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

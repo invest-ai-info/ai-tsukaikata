@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="394" viewBox="0 0 720 394" role="img" aria-label="Gemini 3.5 Transcribeの誤り率（WER）を、測り方が違う2組で比べた横棒グラフ。公式発表の全体平均はストリーミング4.0%、非ストリーミング2.6%。FLEURSベンチマーク（上位言語のみ）はストリーミング5.50%、非ストリーミング5.04%。低いほど正確。2組は測り方が違うため単純に比較できず、Google自身も合算していない。前の転写モデルChirp 3の同じ数値は発表ページに書かれておらず比較できない。『最終的な文字起こしまでの時間はChirp 3比70%改善』という発表もあるが、この図の数字とは別の指標。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="394"/>
+<text class="t-strong" x="18" y="26">「誤り率4.0%」と「同5.50%」、どちらも同じモデルの公式発表値</text>
+<text class="t-sm" x="18" y="45">Word Error Rate（音声を文字にしたときの誤り率）。低いほど正確。</text>
+<text class="t-sm" x="18" y="64">「全体平均」と「FLEURS（上位言語のみ）」は測り方が違う数字で、Googleは合算していない。</text>
+<text class="t-sm" x="18" y="83">この2組を足し引きして精度を比べることはできない。</text>
+<text class="t-accent" x="18" y="122">公式発表の全体平均</text>
+<text class="t-sm" x="30" y="158.0">ストリーミング</text>
+<rect class="bar-in" x="220" y="142" width="226.7" height="22" rx="3"/>
+<text class="t-sm" x="454.7" y="158.0">4%</text>
+<text class="t-sm" x="30" y="192.0">非ストリーミング</text>
+<rect class="bar-in" x="220" y="176" width="147.3" height="22" rx="3"/>
+<text class="t-sm" x="375.3" y="192.0">2.6%</text>
+<text class="t-accent" x="18" y="238">FLEURSベンチマーク（上位言語のみ）</text>
+<text class="t-sm" x="30" y="274.0">ストリーミング</text>
+<rect class="bar-in" x="220" y="258" width="311.7" height="22" rx="3"/>
+<text class="t-sm" x="539.7" y="274.0">5.5%</text>
+<text class="t-sm" x="30" y="308.0">非ストリーミング</text>
+<rect class="bar-in" x="220" y="292" width="285.6" height="22" rx="3"/>
+<text class="t-sm" x="513.6" y="308.0">5.04%</text>
+<text class="t-xs" x="18" y="360">※ Chirp 3（前の転写モデル）の同じ数値は発表ページに書かれていないため、比較できない。</text>
+<text class="t-xs" x="18" y="378">※ 「最終的な文字起こしまでの時間はChirp 3比70%改善」という発表もあるが、この図の数字とは別の指標。</text>
+</svg>

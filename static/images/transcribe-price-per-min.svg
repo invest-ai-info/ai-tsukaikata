@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="438" viewBox="0 0 720 438" role="img" aria-label="文字起こしモデル8種の推定分単価を比べた横棒グラフ。ドルの分あたり。事前録音向けは、Gemini 3.5 Transcribeが0.005ドル、GPT-Transcribeが0.0045ドル、GPT-4o Transcribeが0.006ドル、GPT-4o Transcribe Diarize（話者分離つき）が0.006ドル、GPT-4o mini Transcribeが0.003ドル。配信向けは、Gemini 3.5 Transcribe Liveが0.009ドル、GPT-Live-Transcribeが0.017ドル、GPT-Realtime-Whisperが0.017ドル。配信に切り替えると単価は上がるが、上がり幅はGeminiが約1.8倍、OpenAIの2モデルは事前録音の最安値からおよそ3倍と、OpenAI側で上がり幅が大きい。いずれも各社の公式料金ページに載っている『推定・分あたり』の値をそのまま使ったもので、実際の課金はトークン数で決まる。Anthropicは文字起こし専用のモデルを公式ページに載せていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="438"/>
+<text class="t-strong" x="18" y="26">配信（リアルタイム）は、事前録音より単価が上がる。上がり幅はOpenAIのほうが大きい</text>
+<text class="t-sm" x="18" y="45">各社の公式料金ページに載っている「推定・分あたり」の値（ドル）。上5行が事前録音、下3行が配信。</text>
+<text class="t-sm" x="18" y="64">実際の課金はトークン数で決まり、この分単価は目安として各社が自分で示した推定値。</text>
+<text class="t-sm" x="18" y="111.0">Gemini 3.5 Transcribe（事前録音）</text>
+<rect class="bar-new" x="268" y="96" width="88.0" height="20" rx="3"/>
+<text class="t-sm" x="364.0" y="111.0">$0.005／分</text>
+<text class="t-sm" x="18" y="143.0">GPT-Transcribe（事前録音向け）</text>
+<rect class="bar-old" x="268" y="128" width="79.2" height="20" rx="3"/>
+<text class="t-sm" x="355.2" y="143.0">$0.0045／分</text>
+<text class="t-sm" x="18" y="175.0">GPT-4o Transcribe</text>
+<rect class="bar-old" x="268" y="160" width="105.6" height="20" rx="3"/>
+<text class="t-sm" x="381.6" y="175.0">$0.006／分</text>
+<text class="t-sm" x="18" y="207.0">GPT-4o Transcribe Diarize（話者分離つき）</text>
+<rect class="bar-old" x="268" y="192" width="105.6" height="20" rx="3"/>
+<text class="t-sm" x="381.6" y="207.0">$0.006／分</text>
+<text class="t-sm" x="18" y="239.0">GPT-4o mini Transcribe</text>
+<rect class="bar-old" x="268" y="224" width="52.8" height="20" rx="3"/>
+<text class="t-sm" x="328.8" y="239.0">$0.003／分</text>
+<text class="t-sm" x="18" y="281.0">Gemini 3.5 Transcribe Live（配信）</text>
+<rect class="bar-new" x="268" y="266" width="158.4" height="20" rx="3"/>
+<text class="t-sm" x="434.4" y="281.0">$0.009／分</text>
+<text class="t-sm" x="18" y="303.0">GPT-Live-Transcribe（配信）</text>
+<rect class="bar-old" x="268" y="288" width="299.2" height="20" rx="3"/>
+<text class="t-sm" x="575.2" y="303.0">$0.017／分</text>
+<text class="t-sm" x="18" y="335.0">GPT-Realtime-Whisper（配信）</text>
+<rect class="bar-old" x="268" y="320" width="299.2" height="20" rx="3"/>
+<text class="t-sm" x="575.2" y="335.0">$0.017／分</text>
+<text class="t-xs" x="18" y="380">※ 濃い青＝Google（Gemini）、薄い灰＝OpenAI。同じ「推定・分あたり」の列どうしの比較。</text>
+<text class="t-xs" x="18" y="398">※ Geminiの推定は「音声入力・秒25トークン、テキスト出力・分175トークン」を前提にした値と注記あり。</text>
+<text class="t-xs" x="18" y="416">※ Anthropicは文字起こし専用のモデルを公式ページに載せていない。</text>
+</svg>

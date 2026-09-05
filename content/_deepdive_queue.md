@@ -461,12 +461,22 @@
     2026年9月24日にAPI提供終了と告知されており（この記事の確認時点で20日後）、Anthropicは
     動画生成モデルを提供していない
   - 2026-09-02 手動追記（オーナー指示の例「Gemini の新しいモデル」。`news.json` では `minor`）
-- [ ] https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/
+- [x] https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/
+  - →保管: ✅ **2026-09-05: 公開した** → `content/tools/gemini-3-5-transcribe.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`transcribe-price-per-min` /
+    `transcribe-wer-by-benchmark` / `transcribe-vendor-grid`）。出典7件すべて取得成功。
+    `check_numbers.py` は照合できる数字21個すべてが出典に存在。pytest 625 passed・build 154ファイル）
   - 2026-09-02 手動追記（同上。`news.json` では `minor`）
   - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約401KB を実測）。最終URL＝
     `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/`
   - 集めたい数字＝**文字起こしの料金（分課金かトークン課金か。⚠️ 単位が違うなら表を分ける）・
     対応言語・話者分離の有無**。このサイトの読者に近い題材＝会議の文字起こしを自動化する話
+  - 📌 記事の芯＝**話者分離は最大3人まで正式対応、それを超えると試験的だと発表ページに明記**。
+    誤り率（WER）は「全体平均」と「FLEURSベンチマーク（上位言語のみ）」で異なる2つの数字が
+    公式発表内に別々に載っており、単一の精度として合成できないため両方併記した。
+    料金は発表ページになく `ai.google.dev/gemini-api/docs/pricing` から取得。
+    配信版は事前録音版よりGeminiで約1.8倍、OpenAIの配信2モデルは事前録音の最安値の3倍以上
+    （いずれもこの記事の計算）。Anthropicは文字起こし専用モデルを公式ページに載せていない
 
 - [ ] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
   - 2026-09-02 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Flash and 3.8 Flash Cyber」）
@@ -476,6 +486,18 @@
 
 ## 処理済み
 
+- https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/ → **公開済み** content/tools/gemini-3-5-transcribe.md（2026-09-05・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`transcribe-price-per-min` /
+    `transcribe-wer-by-benchmark` / `transcribe-vendor-grid`）。`check_numbers.py` は**21個すべて出典に存在**
+    （出典7件すべて取得成功）。pytest 625 passed・build 154ファイル。
+  - 📌 記事の芯＝**話者分離は最大3人まで正式対応、それを超えると試験的**と発表ページに明記。
+    誤り率（WER）は「全体平均」と「FLEURSベンチマーク（上位言語のみ）」で異なる数字が
+    公式発表内に別々に載っており、単一の精度として合成せず両方を併記した。
+  - ⚠️ 料金は発表ページになく、`ai.google.dev/gemini-api/docs/pricing` から別途取得した
+    （両モデルとも「トークン単価」と「推定・分あたり」の両方が公式に併記されている）。
+    配信版は事前録音版よりGeminiで約1.8倍、OpenAIの配信2モデル（GPT-Live-Transcribe・
+    GPT-Realtime-Whisper）は事前録音の最安値の3倍以上（いずれもこの記事の計算と明記）。
+    Anthropicは文字起こし専用モデルを公式ページに載せていない（音声への言及自体が無い）。
 - https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/ → **公開済み** content/tools/gemini-omni-1-1-flash.md（2026-09-04・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`omni11-resolution-price` /
     `omni11-vendor-720p-price` / `omni11-scene-extension`）。`check_numbers.py` は**11個すべて出典に存在**
