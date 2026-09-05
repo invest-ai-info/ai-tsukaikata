@@ -37,6 +37,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-09-05T05:48:01.490384+00:00",
+      "importance": "major",
+      "label": "Qwen 新モデル",
+      "published": "2026-09-03T21:08:24+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,...",
+      "title": "qwen/qwen3.8-max-0902",
+      "uid": "75a4c63b0b9b4c4d",
+      "url": "https://openrouter.ai/qwen/qwen3.8-max-0902",
+      "vendor": "Alibaba Qwen"
+    },
+    {
       "first_seen": "2026-09-03T16:29:05.225191+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -88,6 +100,20 @@
       "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
       "uid": "30435936f633d29a",
       "url": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-05T05:48:01.490384+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-03T11:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science.",
+      "summary_ja": "GPT-6 Astraという新しいAIモデルを発表\nこれまでで最も賢く調整されたモデルとして登場\nコンピューター操作、プログラミング等で最先端の能力を持つ",
+      "summary_source": "gemini",
+      "title": "GPT-6 Astra: A new generation of intelligence",
+      "uid": "6fd4757d80edd8c2",
+      "url": "https://openai.com/index/gpt-6-astra",
       "vendor": "OpenAI"
     },
     {
