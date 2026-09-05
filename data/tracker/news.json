@@ -313,6 +313,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-05T01:00:47.840577+00:00",
+      "importance": "major",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-01T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Our most advanced models for coding and knowledge work. Their research capabilities also offer an early glimpse of how AI models will contribute to scientific progress.",
+      "summary_ja": "Claude Fable 5.1とMythos 5.1が登場\nプログラミングや知的作業に最適化した最先端AI\n科学研究へのAI貢献の可能性を示す",
+      "summary_source": "gemini",
+      "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+      "uid": "b5a1737090521442",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-08-31T20:08:43.772152+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -3362,6 +3376,20 @@
       "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
       "uid": "e2f89661ee8c7381",
       "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-05T01:00:47.840577+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-07-06T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "The inside story of how Claude Code went from an internal CLI to Anthropic's coding agent, told by researchers, engineers and early users who built it.",
+      "summary_ja": "AI『Claude Code』の開発秘話が公開\n社内ツールからAnthropicのAIツールへ進化\n開発者や初期ユーザーがその道のりを語る",
+      "summary_source": "gemini",
+      "title": "The Making of Claude Code",
+      "uid": "5d4f111caeb586a7",
+      "url": "https://www.anthropic.com/features/making-of-claude-code",
       "vendor": "Anthropic"
     },
     {
