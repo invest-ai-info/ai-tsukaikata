@@ -14,7 +14,7 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 47,
+      "count": 48,
       "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   },
