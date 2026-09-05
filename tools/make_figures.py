@@ -17859,6 +17859,94 @@ def unknown_field_marked_anomaly_chart() -> None:
     )
 
 
+def stuck_flag_proceed_verdict_chart() -> None:
+    """「実行中」のまま止まったフラグに対して、AIが「進める」と判断した割合を版ごとに並べる。
+
+    実測（2026-09-05）。架空の実行記録2本（3日経過・30時間経過、いずれも異常終了を疑う
+    べき状態）に、①無指定 ②経過時間を計算させても ③6時間の閾値を明示 ④閾値明示＋書き戻し
+    ⑤閾値明示＋計算＋書き戻し（推奨版）を通した。参考として、閾値版を「本当にまだ実行中」の
+    材料（2時間経過）に通した回も置く。
+    """
+    rows = [
+        ("① 無指定（素朴に判断）", 0, 4, True),
+        ("② ①＋経過時間を計算させても", 0, 4, True),
+        ("③ 6時間の閾値を明示", 4, 4, True),
+        ("④ ③＋書き戻しも指示", 4, 4, True),
+        ("⑤ ③＋計算＋書き戻し（推奨版）", 2, 2, True),
+        ("参考：本当にまだ実行中の材料に③を使う", 0, 2, False),
+    ]
+    label_x = 18
+    plot_x = 340
+    plot_w = 160
+    top = 130
+    row_h = 40
+    bar_h = 16
+
+    def px(frac: float) -> float:
+        return plot_x + frac * plot_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「進めるべきか判断して」と開いた聞き方では、8回中0回しか自分から進めなかった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の実行記録2本（開始から3日・30時間が経過、いずれも異常終了を疑うべき状態）。"
+        "版ごとに材料2本×各2回。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は「今回の処理を進める」と判定した回の割合。①②は「進める」が正解の場面での結果、"
+        "参考行だけ「待つ」が正解の場面。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "① と ② は理由も経過時間の計算も示したうえで、それでも「調査すべき」「待つべき」で"
+        "止まった。</text>\n",
+    ]
+
+    y = top
+    for label, num, den, want_proceed in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        frac = num / den
+        # 判定の良し悪し＝「進めるのが正解の行は進めた割合が高いほど良い」
+        # 「参考行（待つのが正解）は進めた割合が低いほど良い」
+        is_good = (frac == 1.0) if want_proceed else (frac == 0.0)
+        cls = "box-good" if is_good else "box-bad"
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(frac) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-accent" if is_good else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(1) + 12:.1f}" y="{ty}">{num}/{den}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-sm", "※ 灰色の枠いっぱいが「全回で進めた」。①②が0本、③④⑤が満杯、"
+                 "参考行が0本なのが正解の並び。"),
+        ("t-xs", "架空データでの実測（材料2本×5版×各2回＝18回、うち⑤は各1回、"
+                 "参考行は閾値版を材料違いで各1回）。生の回答は docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "「実行中」のまま止まったフラグに対して、AIが「今回の処理を進める」と判定した割合を、"
+        "版ごとに横棒で示した図。無指定で素朴に判断させた版は4回中0回、経過時間を計算させても"
+        "4回中0回しか進めなかった。6時間の閾値を明示した版は4回中4回、書き戻しも指示した版は"
+        "4回中4回、計算と書き戻しを両方指示した推奨版は2回中2回、いずれも正しく進めた。"
+        "参考として、本当にまだ実行中で経過2時間の材料に閾値版を使った場合は2回中0回しか"
+        "進めず、これは正しい判断である（本来は待つべき場面のため）。"
+    )
+    (OUT / "stuck-flag-proceed-verdict.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
@@ -18085,4 +18173,5 @@ if __name__ == "__main__":
     astra_vs_sol_price_chart()
     astra_vendor_price_chart()
     unknown_field_marked_anomaly_chart()
+    stuck_flag_proceed_verdict_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
