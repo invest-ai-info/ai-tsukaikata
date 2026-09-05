@@ -39,41 +39,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-08-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-03T23:48:12+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a diff panel that opens beside the conversation in fullscreen mode and shows your uncommitted changes as Claude edits; toggle it with /diff Added a likely cause for prompt-cache …",
-      "title": "v2.1.260",
-      "uid": "4f178aa183d1bd32",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.260",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Grok 新モデル",
-      "published": "2026-04-30T23:30:21+00:00",
-      "source_id": "openrouter-xai",
-      "summary": "Grok 4.3 is a reasoning model from SpaceXAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factu…",
-      "title": "x-ai/grok-4.3:batch",
-      "uid": "fad3c4494aa6e20d",
-      "url": "https://openrouter.ai/x-ai/grok-4.3:batch",
-      "vendor": "xAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-04T19:58:10+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added an \"Organization policy\" line to /status and claude doctor that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through Added ba…",
-      "title": "v2.1.261",
-      "uid": "d611f158558fb7c6",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
