@@ -17947,7 +17947,98 @@ def stuck_flag_proceed_verdict_chart() -> None:
     )
 
 
+def take_home_repeat_no_split_chart() -> None:
+    """同じ指示文を繰り返したとき、手取り額がどれだけ割れるかを3本で比べる。
+
+    実測（2026-09-05）。元記事 take-home-from-the-contract-amount は、料率のページを
+    丸ごと貼った契約12万円で、同じ指示文の2回が106,480円と107,800円に割れた（差1,320円）。
+    この記事は、材料の要点（税抜/税込を明示しない契約92,000円と料率の説明1文）だけを渡し、
+    段階制（クラウドワークス型）と一律16.5%（ランサーズ型）を各15回ずつ独立に試した。
+    どちらも15回とも同じ額で、差は0円だった。
+    """
+    rows = [
+        ("元記事・料率ページを貼った契約12万円", 1320, "1,320円(2回)", "box-bad"),
+        ("この記事・段階制（契約9.2万円）", 0, "0円(15回)", "box-good"),
+        ("この記事・一律16.5%（契約9.2万円）", 0, "0円(15回)", "box-good"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 280
+    axis_max = 1500
+    scale = plot_w / axis_max
+    top = 128
+    row_h = 40
+    bar_h = 16
+
+    def px(yen: float) -> float:
+        return plot_x + yen * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "同じ指示文を繰り返しても、割れたのは元記事の1回だけだった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "横軸は、同じ指示文を繰り返したときの最大額と最小額の差（円）。"
+        "元記事は契約12万円・料率ページを全文貼った回。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "この記事は契約9.2万円・材料の要点（税抜/税込は書かない）だけを渡した回。"
+        "金額の水準が違うので、比べるのは差の有無だけ。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "この記事の2本は、段階制も一律16.5%も、15回とも同じ額（73,600円／76,820円）が返った。"
+        "</text>\n",
+        f'<text class="t-xs" x="{px(0):.1f}" y="{top - 10}">0円</text>\n',
+    ]
+
+    plot_bottom = top + len(rows) * row_h - 18
+    zx = px(0)
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 4} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    y = top
+    for label, diff, tail, cls in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        width = max(px(diff) - px(0), 3)
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{width:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if diff else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 10:.1f}" y="{ty}">{_esc(tail)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-sm", "※ 元記事は率のページを丸ごと貼る形。この記事は率の要点を1文で渡す形。"),
+        ("t-sm", "渡した情報の量が違うので、割れなかった理由もそこにある可能性がある。"),
+        ("t-xs", "架空データでの実測（この記事は2材料×各15回＝30回）。生の回答は"
+                 "docs/evidence/ に全文置いてある。"),
+    ]
+    y += 6
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 4
+    alt = (
+        "同じ指示文を繰り返したとき、手取り計算の答えがどれだけ割れたかを3本の横棒で比べた図。"
+        "横軸は、同じ指示文を繰り返したときの最大額と最小額の差（円）。"
+        "元記事（料率ページを全文貼った契約12万円・2回）は差1,320円で、"
+        "106,480円と107,800円という別の額が返った。"
+        "この記事（材料の要点だけを渡した契約9.2万円）は、段階制（クラウドワークス型）"
+        "15回・一律16.5%（ランサーズ型）15回のどちらも差0円で、"
+        "段階制は15回とも73,600円、一律16.5%は15回とも76,820円が返った。"
+        "金額の水準が違うため、比べているのは差が出たかどうかだけである。"
+    )
+    (OUT / "take-home-repeat-no-split.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
