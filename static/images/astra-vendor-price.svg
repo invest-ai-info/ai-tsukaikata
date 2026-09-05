@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="416" viewBox="0 0 720 416" role="img" aria-label="3社の最上位モデルの単価を並べた横棒グラフ。100万トークンあたり、2026年9月5日時点。GPT-6 Astra は入力10ドル・出力50ドル。Claude Fable 5.1 も入力10ドル・出力50ドルで同じ。Claude Opus 5 は入力5ドル・出力25ドル。Gemini 3.1 Pro Preview は入力2ドル・出力12ドルで、20万トークンを超えると入力4ドル・出力18ドルに上がる。各社の公式料金ページに載っている値だけを並べたもので、賢さの比較ではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="416"/>
+<text class="t-strong" x="18" y="26">3社の最上位モデルの単価（100万トークンあたり・2026年9月5日）</text>
+<text class="t-sm" x="18" y="45">薄い青＝入力、濃い青＝出力。各社の公式料金ページに載っている値だけを並べています。</text>
+<text class="t-sm" x="18" y="64">GPT-6 Astra と Claude Fable 5.1 は、入力も出力も同じ値段です。</text>
+<text class="t-sm" x="18" y="83">⚠️ これは値段の比較で、賢さの比較ではありません。測り方の違う性能テストは並べていません。</text>
+<text class="t" x="18" y="118">GPT-6 Astra（OpenAI）</text>
+<text class="t-xs" x="244" y="118">入力</text>
+<rect class="bar-in" x="288" y="106" width="60.8" height="16" rx="2"/>
+<text class="t-sm" x="356.8" y="118">$10</text>
+<text class="t-xs" x="244" y="139">出力</text>
+<rect class="bar-out" x="288" y="127" width="304.0" height="16" rx="2"/>
+<text class="t-sm" x="600.0" y="139">$50</text>
+<text class="t" x="18" y="181">Claude Fable 5.1（Anthropic）</text>
+<text class="t-xs" x="244" y="181">入力</text>
+<rect class="bar-in" x="288" y="169" width="60.8" height="16" rx="2"/>
+<text class="t-sm" x="356.8" y="181">$10</text>
+<text class="t-xs" x="244" y="202">出力</text>
+<rect class="bar-out" x="288" y="190" width="304.0" height="16" rx="2"/>
+<text class="t-sm" x="600.0" y="202">$50</text>
+<text class="t" x="18" y="244">Claude Opus 5（Anthropic）</text>
+<text class="t-xs" x="244" y="244">入力</text>
+<rect class="bar-in" x="288" y="232" width="30.4" height="16" rx="2"/>
+<text class="t-sm" x="326.4" y="244">$5</text>
+<text class="t-xs" x="244" y="265">出力</text>
+<rect class="bar-out" x="288" y="253" width="152.0" height="16" rx="2"/>
+<text class="t-sm" x="448.0" y="265">$25</text>
+<text class="t" x="18" y="307">Gemini 3.1 Pro Preview（Google）</text>
+<text class="t-xs" x="244" y="307">入力</text>
+<rect class="bar-in" x="288" y="295" width="12.2" height="16" rx="2"/>
+<text class="t-sm" x="308.2" y="307">$2</text>
+<text class="t-xs" x="244" y="328">出力</text>
+<rect class="bar-out" x="288" y="316" width="73.0" height="16" rx="2"/>
+<text class="t-sm" x="369.0" y="328">$12</text>
+<text class="t-xs" x="18" y="386">※ Gemini は20万トークン以下のときの値。超えると入力 $4・出力 $18 に上がります。</text>
+<text class="t-xs" x="18" y="404">※ 出典: 各社の公式料金ページ（OpenAI・Anthropic・Google／2026年9月5日に確認）。</text>
+</svg>

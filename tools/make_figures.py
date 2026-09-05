@@ -17682,6 +17682,77 @@ def astra_vs_sol_price_chart() -> None:
     )
 
 
+def astra_vendor_price_chart() -> None:
+    """3社の最上位モデルの単価を、公式料金ページの値だけで並べる（2026-09-05）。
+
+    ⚠️ 賢さの比較ではない。各社が自社ページに載せている単価だけを、
+    同じ目盛りに置いたもの。測り方の違う性能テストは並べない。
+    """
+    rows = [
+        ("GPT-6 Astra（OpenAI）", 10.0, 50.0),
+        ("Claude Fable 5.1（Anthropic）", 10.0, 50.0),
+        ("Claude Opus 5（Anthropic）", 5.0, 25.0),
+        ("Gemini 3.1 Pro Preview（Google）", 2.0, 12.0),
+    ]
+    top_value = 50.0
+
+    left, right = 288, 592
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 106, 16, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / top_value
+
+    assert right + 80 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "3社の最上位モデルの単価（100万トークンあたり・2026年9月5日）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力、濃い青＝出力。各社の公式料金ページに載っている値だけを並べています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "GPT-6 Astra と Claude Fable 5.1 は、入力も出力も同じ値段です。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "⚠️ これは値段の比較で、賢さの比較ではありません。測り方の違う性能テストは並べていません。</text>\n",
+    ]
+    for index, (name, inp, out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((inp, "bar-in", "入力"), (out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="244" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 4}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 58
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Gemini は20万トークン以下のときの値。超えると入力 $4・出力 $18 に上がります。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: 各社の公式料金ページ（OpenAI・Anthropic・Google／2026年9月5日に確認）。</text>\n"
+    )
+    alt = (
+        "3社の最上位モデルの単価を並べた横棒グラフ。100万トークンあたり、2026年9月5日時点。"
+        "GPT-6 Astra は入力10ドル・出力50ドル。Claude Fable 5.1 も入力10ドル・出力50ドルで同じ。"
+        "Claude Opus 5 は入力5ドル・出力25ドル。"
+        "Gemini 3.1 Pro Preview は入力2ドル・出力12ドルで、20万トークンを超えると入力4ドル・出力18ドルに上がる。"
+        "各社の公式料金ページに載っている値だけを並べたもので、賢さの比較ではない。"
+    )
+    (OUT / "astra-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
@@ -17906,4 +17977,5 @@ if __name__ == "__main__":
     astra_habits_grid_chart()
     astra_output_price_tier_chart()
     astra_vs_sol_price_chart()
+    astra_vendor_price_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

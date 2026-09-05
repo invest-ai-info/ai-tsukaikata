@@ -107,7 +107,7 @@ Astra は放っておくと箇条書きと表で返してきます。報告書�
 「Xではなく、Yです」のように、私が聞いていない対比を持ち出さないでください。
 やらないことや、変わらない部分の説明を足さないでください。</div>
 
-**なぜこの言い方か。**<mark>禁止する言い回しを具体的に列挙するのが要点です</mark>。「簡潔に書いて」と頼んでも、AIは短い決まり文句を足して長くします。公式ガイドが英語の禁止語を名指しで並べているのは、そのためです。
+**なぜこの言い方か。**禁止する言い回しを具体的に列挙するのが要点です。「簡潔に書いて」と頼んでも、AIは短い決まり文句を足して長くします。公式ガイドが英語の禁止語を名指しで並べているのは、そのためです。
 
 ### 指示書どうしが矛盾したときの順位を決める
 
@@ -217,6 +217,45 @@ RSS には、企業の利用例も2件入っています。どちらも OpenAI �
 
 この2件は、利用した会社が自己申告した数字を、OpenAI が自社の宣伝ページに載せたものです。第三者が同じ条件で測ったものではありません。本文ページは読めていないので、測り方も分かりません。参考の域を出ませんが、「どういう仕事に向くと会社側が言っているか」は読み取れます。書類の突き合わせと、試作の作り直しです。
 
+## 他社の最上位モデルとの比較
+
+各社が自社の料金ページに載せている数字だけを並べます。**賢さの比較ではありません。**
+性能テストは各社が自社で測っていて、測り方も対象も違うので並べても比べられません。
+
+| モデル | 提供元 | 入力（100万トークン） | 出力（100万トークン） | 読み直し（キャッシュ読み取り） |
+|---|---|---|---|---|
+| GPT-6 Astra | OpenAI | $10.00 | $50.00 | $1.00 |
+| Claude Fable 5.1 | Anthropic | $10 | $50 | $0.25 |
+| Claude Opus 5 | Anthropic | $5 | $25 | $0.50 |
+| Gemini 3.1 Pro Preview | Google | $2.00（20万トークン以下）/ $4.00（超過時） | $12.00（20万トークン以下）/ $18.00（超過時） | $0.20（20万トークン以下）/ $0.40（超過時） |
+
+出典: OpenAI は <https://developers.openai.com/api/docs/pricing>、Claude は <https://docs.claude.com/en/docs/about-claude/pricing>、Gemini は <https://ai.google.dev/gemini-api/docs/pricing>
+
+<figure class="figure">
+<img src="/static/images/astra-vendor-price.svg" alt="3社の最上位モデルの単価を並べた横棒グラフ。100万トークンあたり、2026年9月5日時点。GPT-6 Astra は入力10ドル・出力50ドル。Claude Fable 5.1 も入力10ドル・出力50ドルで同じ。Claude Opus 5 は入力5ドル・出力25ドル。Gemini 3.1 Pro Preview は入力2ドル・出力12ドルで、20万トークンを超えると入力4ドル・出力18ドルに上がる。各社の公式料金ページに載っている値だけを並べたもので、賢さの比較ではない。">
+<figcaption>薄い青が入力、濃い青が出力です</figcaption>
+</figure>
+
+読むときの注意が3つあります。
+
+**1つめ。GPT-6 Astra と Claude Fable 5.1 は、入力も出力も同じ値段です。**どちらも入力 $10・出力 $50 で、偶然ではなく各社が同じ水準に置いています。違うのは読み直しの料金で、Astra が $1.00、Fable 5.1 が $0.25 です。長い資料を何度も読ませる使い方では、ここが効いてきます。
+
+**2つめ。Gemini は桁が1つ違います。**入力で5分の1、出力で4分の1ほどです。ただし20万トークンを超えると単価が上がる仕組みで、Astra と Claude には、この段階分けがありません。
+
+**3つめ。「Preview」の付いたモデルは値段が変わりえます。**Gemini 3.1 Pro Preview は名前のとおり試用版です。GPT-5.6 Sol も販促価格でした。長く使う前提で比べるなら、この2つは正式な値段が出てから見直したほうが安全です。
+
+読める量と書ける量も並べます。Gemini の料金ページにはこの3項目が載っていないので、表には入れていません。
+
+| | GPT-6 Astra | Claude Fable 5.1 | Claude Opus 5 |
+|---|---|---|---|
+| 一度に読める量 | 105万トークン | 100万トークン | 100万トークン |
+| 一度に書ける量 | 12.8万トークン | 12.8万トークン | 12.8万トークン |
+| 学習データの締め切り | 2026年4月30日 | 2026年6月 | 2026年5月 |
+
+出典: OpenAI は <https://developers.openai.com/api/docs/models>、Claude は <https://docs.claude.com/en/docs/about-claude/models/overview>
+
+<mark>読める量は3つともほぼ同じで、学習データの締め切りは Claude Fable 5.1 のほうが2か月新しくなっています</mark>。この3つのモデルを「読める量」で選び分ける意味は、いまのところありません。
+
 ## どういう人に効くか
 
 **乗り換えを検討していい人**
@@ -241,12 +280,18 @@ RSS には、企業の利用例も2件入っています。どちらも OpenAI �
 
 ## 出典一覧
 
-すべて OpenAI の公式ページです。まとめ記事・ニュースサイト・個人ブログは1件も使っていません。
+すべて各社の公式ページです。まとめ記事・ニュースサイト・個人ブログは1件も使っていません。
 
 1. モデル一覧と仕様（OpenAI 公式ドキュメント）: <https://developers.openai.com/api/docs/models>
 2. API の料金（OpenAI 公式ドキュメント）: <https://developers.openai.com/api/docs/pricing>
 3. Using GPT-6 Astra（OpenAI 公式ガイド。指示文はすべてここから）: <https://developers.openai.com/api/docs/guides/latest-model>
 4. OpenAI 公式ニュースの配信（発表の要旨と利用例はここから）: <https://openai.com/news/rss.xml>
+
+他社との比較に使った、他社の公式ページです。
+
+5. 料金（Anthropic 公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/pricing>
+6. モデル一覧と仕様（Anthropic 公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/models/overview>
+7. Gemini API の料金（Google 公式）: <https://ai.google.dev/gemini-api/docs/pricing>
 
 **読めなかったページ**（この記事では出典に使っていません）: `openai.com/index/path-to-astra`、`openai.com/index/safety-overview-gpt-6-astra`、`help.openai.com`。いずれも自動アクセス対策により 403 が返ります。中身を推測して書くことはしていません。
 
