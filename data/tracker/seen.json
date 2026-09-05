@@ -14,8 +14,8 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 46,
-      "last_error": "HTTPError: HTTP Error 404: Not Found"
+      "count": 47,
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   },
   "latest": {
