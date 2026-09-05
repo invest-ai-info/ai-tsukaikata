@@ -17753,6 +17753,112 @@ def astra_vendor_price_chart() -> None:
     )
 
 
+def unknown_field_marked_anomaly_chart() -> None:
+    """あとから足した監視項目に「列が無い」古い記録を、AIがどこへ倒したかを並べる。
+
+    実測（2026-09-05）。架空の更新監視ログ2本（各15項目、うち列が無い項目5件）に、
+    ①無指定の素朴な指示文 ②①＋「判定の根拠も一言添えて」③「記録が無い項目はまだ
+    分からないとして分けて」と明示した指示文、の3版を材料2本×各2回＝各4回・計12回通した。
+    数えているのは、列が無い5件のうち「異常」に誤分類された件数（真値0）。
+    """
+    groups = [
+        ("無指定", [
+            ("材料A・1回目", 0),
+            ("材料A・2回目", 0),
+            ("材料B・1回目", 0),
+            ("材料B・2回目", 5),
+        ]),
+        ("① ＋根拠も一言添えて", [
+            ("材料A・1回目", 5),
+            ("材料A・2回目", 5),
+            ("材料B・1回目", 0),
+            ("材料B・2回目", 5),
+        ]),
+        ("受け皿を明示", [
+            ("材料A・1回目", 0),
+            ("材料A・2回目", 0),
+            ("材料B・1回目", 0),
+            ("材料B・2回目", 0),
+        ]),
+    ]
+    label_x = 18
+    plot_x = 320
+    plot_w = 180
+    axis_max = 5
+    scale = plot_w / axis_max
+    top = 138
+    row_h = 26
+    group_gap = 12
+    bar_h = 14
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「根拠も一言添えて」を足すと、誤分類は1/4回から3/4回に増えた</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の更新監視ログ2本（各15項目、あとから足した列が無い古い項目5件を含む）。"
+        "材料2本×各2回＝4回を、指示文3版で通した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は列が無い5件のうち「異常」に誤分類された件数（真値0件）。"
+        "誤って「正常」に含めた件数は、12回を通じて0件だった。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "① は「最終更新日から30日以上経っているものは異常として」の無指定版。"
+        "</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for gi, (gname, rows) in enumerate(groups):
+        parts.append(f'<text class="t-accent" x="{label_x}" y="{y - 6}">{_esc(gname)}</text>\n')
+        group_top = y
+        for label, value in rows:
+            ty = y + 12
+            parts.append(f'<text class="t" x="{label_x + 10}" y="{ty}">{_esc(label)}</text>\n')
+            cls = "box-good" if value == 0 else "box-bad"
+            parts.append(
+                f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            tcls = "t-accent" if value == 0 else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{px(axis_max) + 10:.1f}" y="{ty}">{value}件</text>\n'
+            )
+            y += row_h
+        group_bottom = y - row_h + bar_h - 8
+        parts.append(
+            f'<path class="line" d="M{zx:.1f} {group_top - 2} L{zx:.1f} {group_bottom}" '
+            f'stroke-dasharray="4 3"/>\n'
+        )
+        y += group_gap
+
+    notes = [
+        ("t-sm", "※ 縦の点線は真値0件の位置。"),
+        ("t-xs", "架空データでの実測（材料2本×3版×各2回＝12回、のべ180件）。"
+                 "生の回答と判定コードは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 2
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "あとから足した監視項目の列が無い古い記録を、AIが誤って「異常」に分類した件数を、"
+        "指示文の版ごとに12本の横棒で示した図。無指定のまま頼った版は、材料Aの1・2回目と"
+        "材料Bの1回目は0件だったが、材料Bの2回目だけ、列が無い5件の全部を「異常」に分類した"
+        "（4回中1回）。無指定に「判定の根拠も一言添えて」を足した版は、材料Aの1・2回目と"
+        "材料Bの2回目の3回で5件全部を「異常」に分類し、材料Bの1回目だけ0件だった"
+        "（4回中3回に悪化）。「記録が無い項目はまだ分からないとして分けて」と明示した版は、"
+        "材料A・材料Bとも1・2回目すべてで0件だった。誤って「正常」に含めた件数は、"
+        "12回を通じて0件だった。真値は0件である。"
+    )
+    (OUT / "unknown-field-marked-anomaly.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
@@ -17978,4 +18084,5 @@ if __name__ == "__main__":
     astra_output_price_tier_chart()
     astra_vs_sol_price_chart()
     astra_vendor_price_chart()
+    unknown_field_marked_anomaly_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
