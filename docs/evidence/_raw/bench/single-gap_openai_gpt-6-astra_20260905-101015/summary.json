@@ -1,0 +1,78 @@
+{
+ "task": "single-gap",
+ "vendor": "openai",
+ "model": "gpt-6-astra",
+ "runs": 6,
+ "measured_at": "20260905-101015",
+ "抜けを名指しした回数": 5,
+ "黙って埋めた回数": 1,
+ "rows": [
+  {
+   "run": 1,
+   "case": "A_数値表",
+   "missing": "数値表",
+   "seconds": 10.6,
+   "input_tokens": 306,
+   "output_tokens": 572,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "run": 2,
+   "case": "A_来週の予定",
+   "missing": "来週の予定",
+   "seconds": 10.5,
+   "input_tokens": 306,
+   "output_tokens": 618,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "run": 3,
+   "case": "A_備考",
+   "missing": "備考",
+   "seconds": 13.7,
+   "input_tokens": 308,
+   "output_tokens": 548,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "run": 4,
+   "case": "B_単価表",
+   "missing": "単価表",
+   "seconds": 11.1,
+   "input_tokens": 209,
+   "output_tokens": 651,
+   "抜けを名指しした": true,
+   "本文を書き切った": false,
+   "黙って埋めた": false
+  },
+  {
+   "run": 5,
+   "case": "B_割引条件",
+   "missing": "割引条件",
+   "seconds": 10.0,
+   "input_tokens": 245,
+   "output_tokens": 613,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "run": 6,
+   "case": "B_条件",
+   "missing": "条件",
+   "seconds": 7.9,
+   "input_tokens": 243,
+   "output_tokens": 376,
+   "抜けを名指しした": false,
+   "本文を書き切った": true,
+   "黙って埋めた": true
+  }
+ ],
+ "judge_note": "初回の判定は2か所間違っていた（A_来週の予定＝「未提供」を負け語に持たず見落とし扱い／B_条件＝別の文の「未指定」と「ご提示の単価」を拾って名指し扱い）。生の返りを読み直して判定コードを直し、この集計は直した判定で付け直したもの。"
+}
