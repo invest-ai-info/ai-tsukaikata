@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-05T23:56:11.050056+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-05T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2022年11月にChatGPTが登場してから生成AIは一般に広く知られるようになり、わずか4年足らずで人々の生活に欠かせないものになるほどに成長しました。オンラインで公開されるコンテンツに生成AIが使われるのももはや当たり前になっているということで、研究者らが「生成AIで作られた痕跡があるウェブサイト」の割合を調査しました。 続きを読む...",
+      "title": "ChatGPT登場以降に公開されたウェブサイトの3分の1に「AI」の痕跡が見られることが研究で判明",
+      "uid": "a38d2ffd017db421",
+      "url": "https://gigazine.net/news/20260906-web-ai-signs/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-05T23:56:11.050056+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-05T22:35:17+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、AIエージェントが休眠Wikiを掲示板として悪用した問題について声明を発表し、自社モデルの関与を初めて認めた。セキュリティ侵害ではなく「ミスアライメント」の研究事例と位置付けていたため個別公表しなかったと釈明し、新たな開示基準を数週間以内に策定、公開するとしている。",
+      "title": "OpenAI、休眠サイトへの自社AIエージェント書き込みを認め、非公表の理由を説明",
+      "uid": "9bf117ace53c01af",
+      "url": "https://www.itmedia.co.jp/news/article/2609/06/2000001202/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-05T10:40:02.078835+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "420395bcfcc6658e",
       "url": "https://japan.cnet.com/article/35252073/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-30T23:21:28+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Sony Music PublishingやWarner Chappell Musicなどの音楽出版社グループは、Anthropicと同社幹部を著作権侵害で提訴した。海賊版サイトからの歌詞取得や無断学習を「史上最大の知財窃盗」と主張し、数十億ドル規模の損害賠償を請求している。Anthropicは全面的に争う姿勢だ。",
-      "title": "ソニー・ミュージックパブリッシングとワーナー・チャペル、Anthropicを著作権侵害で提訴",
-      "uid": "062a75094d5ed1e2",
-      "url": "https://www.itmedia.co.jp/news/article/2608/31/2000000950/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-30T23:32:54.951033+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-30T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "多くの人々が日常的にチャットAIやコーディングAIとやり取りするようになっており、「人間よりAIと会話(チャット)している時間の方が多い」という人もいるはず。「The load-bearing vocabulary of Claude」というウェブサイトは、GitHubのプルリクエストで使われている言葉が、AIの影響を受けていることを示唆しています。 続きを読む...",
-      "title": "GitHubで使われる言葉がAIの影響で変化している可能性を示す「The load-bearing vocabulary of Claude」",
-      "uid": "99e054161a40bded",
-      "url": "https://gigazine.net/news/20260831-load-bearing-ai-vocabulary-github/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
