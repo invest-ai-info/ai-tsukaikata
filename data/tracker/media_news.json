@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-06T04:44:40.211281+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-06T04:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「AIによって仕事が奪われる」と言われるとき、エンジニアや力仕事など男性の割合が多い職業が影響を受けると考えられる一方で、女性の割合が多い育児や看護、介護といった職種ではAIの影響を受けにくいと考えられることがあります。しかし、オーストラリアの政府機関がまとめたデータを分析した研究では、AIによる自動化の影響を最も受けやすいのは、女性の割合が多い職種であることが示されました。 続きを読む...",
+      "title": "女性の割合が多い仕事の方がAIによる自動化の影響を受けやすい可能性がある",
+      "uid": "2546c3bdd499d1ad",
+      "url": "https://gigazine.net/news/20260906-female-jobs-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-06T04:44:40.211281+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-06T03:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「データの圧縮」と「大規模言語モデル(LLM)」は一見すると全く異なる分野ですが、根幹では「データの予測」という同じ課題を解決しようとしています。いずれも「データの冗長性を削減」「より効率的な表現」を目指すものであり、ひいては情報理論におけるエントロピーという数学的枠組みで結びついています。ngrokのデベロッパー・エデュケーターであるアニー・セクストン氏は「圧縮は予測」と題したブログを公開し、…",
+      "title": "圧縮とLLMに共通する本質は「データの予測」",
+      "uid": "c3bd7578c71edfb1",
+      "url": "https://gigazine.net/news/20260906-compression-is-prediction/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-05T23:56:11.050056+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "e5388ec90357f22e",
       "url": "https://gigazine.net/news/20260831-hy4-preview-tencent/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-31T00:51:04+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、コーディング支援「Claude Code」の週間利用上限を標準比25％増に恒久設定すると発表した。現在は期間限定で50％増が適用されているため、9月14日の切り替え後は現状比で約17％の減少となる。同社は利用状況の可視性や管理性を高める改善も進めているとしている。",
-      "title": "「Claude Code」の週次制限枠、9月14日に\"25％引き上げ\"　実質は現状比17％減に",
-      "uid": "d2b804afb13079a3",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2608/31/2000000951/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-08-31T00:34:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "AIによる広範なサイバー攻撃への防御を強化できる「時間は限られている」として、OpenAIら150以上の組織が、企業や政府、その他の機関に対し、サイバーセキュリティー強化へ迅速に行動するよう呼びかけた。",
-      "title": "AIによる大規模サイバー攻撃に備えよ--OpenAIら155組織が防衛強化を呼びかけ",
-      "uid": "420395bcfcc6658e",
-      "url": "https://japan.cnet.com/article/35252073/",
-      "vendor": "CNET Japan"
     }
   ]
 }
