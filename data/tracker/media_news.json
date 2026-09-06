@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-06T23:58:22.518989+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-06T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、「Gemini 3.8 Flash」と防衛特化の「Gemini 3.8 Flash Cyber」を発表した。3.7と同等の低価格を維持しながら、コーディングや推論、脆弱性検知／修正の性能を大幅に向上させた。",
+      "title": "Google「Gemini 3.8 Flash」発表　プロンプト1つで3Dゲーム生成、価格据え置きで大規模モデルに迫る",
+      "uid": "bd5470e111aba55b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/07/news031.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-06T23:58:22.518989+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-06T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIコーディングエージェントを使用する場合に出力の品質と並んで重要視すべきなのは効率であり、作業を迅速かつ効率的に適切なコンテキストで完了することが効率の向上につながります。つまり、個々のインタラクションのトークン数を減らすことよりも、適切な量のコンテキストを活用してタスクを進めることを目標にすべきです。GitHubが、「ツールの呼び出しではなく結果に焦点を当てた最適化」に基づいてCopilot…",
+      "title": "コスト削減のためにAIエージェントの出力を短くすると逆にコストがかさむ事例をGitHubが公開、うまくコスト効率を向上するにはどうすればいいのか",
+      "uid": "4fddee95e37099b4",
+      "url": "https://gigazine.net/news/20260907-ai-coding-cost-efficient/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-06T17:07:09.968572+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2374,30 +2398,6 @@
       "title": "OpenAIが数万台のMac miniとMac Studioを買い占め",
       "uid": "58fe0937f2e28819",
       "url": "https://gigazine.net/news/20260831-openai-tens-of-thousands-apple-mac-mini-studio/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-31T02:58:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AnthropicはSlackにClaudeを参加させて各種タスクを依頼できるようにする「Claude Tag」を2026年6月にリリースしました。このClaude Tagについて、Anthropic社内での活用事例が公式ブログに掲載されています。 続きを読む...",
-      "title": "AnthropicがSlackとの会話でClaudeを使える「Claude Tag」の社内活用事例を公開",
-      "uid": "fd6f7b4935769d15",
-      "url": "https://gigazine.net/news/20260831-claude-tag-example/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-31T02:49:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ユーザーのPCを乗っ取ってAnthropicのAI「Claude」を不正に使用するマルウェアが確認されました。Anthropicはこうしたマルウェアを検知し、ユーザーを強制ログアウトする措置を取っています。 続きを読む...",
-      "title": "Anthropicがマルウェア感染の疑いがあるユーザーを強制ログアウトさせ支払い方法を削除し返金処理を実施",
-      "uid": "1fc4f5673f1138cd",
-      "url": "https://gigazine.net/news/20260831-anthropic-warn-malware/",
       "vendor": "GIGAZINE"
     }
   ]
