@@ -478,14 +478,43 @@
     配信版は事前録音版よりGeminiで約1.8倍、OpenAIの配信2モデルは事前録音の最安値の3倍以上
     （いずれもこの記事の計算）。Anthropicは文字起こし専用モデルを公式ページに載せていない
 
-- [ ] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
+- [x] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
+  - →保管: ✅ **2026-09-06: 公開した** → `content/tools/gemini-3-8-flash.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`gemini38-price-three-gens` /
+    `gemini38-safety-delta` / `gemini38-vendor-top-price`）。出典8件すべて取得成功。
+    `check_numbers.py` は照合できる数字24個中23個が出典に存在、残る1個（`7.5%`）は
+    出典の生の行に `+7.5-9.7%` という結合表記であることを直接確認して残した
+    （消していない）。pytest 625 passed・build 158ファイル）
   - 2026-09-02 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Flash and 3.8 Flash Cyber」）
+  - 📌 記事の芯＝**3.6・3.7・3.8の3世代とも導入価格が入力$0.75・出力$3.75で完全に同じ**
+    （2027年1月1日に3世代いっせいに$1.50/$7.50へ）。性能の比較表はモデルカードに
+    画像として埋め込まれており、配信元 `lh3.googleusercontent.com` に**経路遮断**
+    （`CONNECT tunnel failed, response 403`）で到達できず、本文中の数字だけで記事を書いた。
+    次にこのホストを叩く行が来たら、まずここに記録した経路遮断を再試行対象にすること
+  - ⚠️ **`deepmind.com`（`deepmind.google` ではない）も経路遮断**（evals-methodology ページ）。
+    こちらも次に来たら再試行対象
+  - ⚠️ Cyber版のモデルカードは404で存在せず、料金ページにも掲載が無い（Fairwind Program
+    経由の限定提供のみ・一般には使えない）ことを実際にURLを叩いて確認した
 
 - [ ] https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
   - 2026-09-03 自動追記（major・Google DeepMind「Introducing WeatherNext 3, our most advanced and accurate global weather AI model」）
 
 ## 処理済み
 
+- https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/ → **公開済み** content/tools/gemini-3-8-flash.md（2026-09-06・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`gemini38-price-three-gens` /
+    `gemini38-safety-delta` / `gemini38-vendor-top-price`）。`check_numbers.py` は**24個中23個が出典に存在**
+    （出典8件すべて取得成功）。pytest 625 passed・build 158ファイル。
+  - 📌 記事の芯＝**Gemini 3.6・3.7・3.8の3世代とも導入価格がまったく同じ**（入力$0.75・出力$3.75）で、
+    2027年1月1日に3世代いっせいに$1.50/$7.50へ上がる。単価だけ見ると3.8が特別安いのではなく、
+    「導入期間中は前の世代と同額で出す」運用が3回続いているだけ。
+  - ⚠️ 性能の比較表（3.7 Flashとの点数比較）はモデルカードに**画像として埋め込まれており**、
+    配信元 `lh3.googleusercontent.com` が**経路遮断**（`CONNECT tunnel failed, response 403`）で
+    読めなかった。本文に文章として書かれている数字（HLE-Verified 54.9%・Cyberのベンチマーク数値）と、
+    文字で書かれている安全性評価表（3.7 Flashとの差・pp）だけで記事を組み立てた。
+    `deepmind.com`（`deepmind.google` とは別ホスト）も経路遮断で読めなかった。
+  - ⚠️ Cyber版はモデルカードが404・料金ページにも掲載が無いことを実際にURLを叩いて確認し、
+    「Fairwind Program」経由の限定提供（一般には使えない）と記事に明記した。
 - https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/ → **公開済み** content/tools/gemini-3-5-transcribe.md（2026-09-05・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`transcribe-price-per-min` /
     `transcribe-wer-by-benchmark` / `transcribe-vendor-grid`）。`check_numbers.py` は**21個すべて出典に存在**

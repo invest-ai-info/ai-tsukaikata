@@ -18566,6 +18566,223 @@ def condition_count_heading_blindspot_chart() -> None:
     )
 
 
+def gemini38_price_three_gens_chart() -> None:
+    """Flash 3世代（3.6/3.7/3.8）の導入価格が同額であることを示す（2026-09-06）。"""
+    rows = [
+        ("Gemini 3.6 Flash", 0.75, 3.75),
+        ("Gemini 3.7 Flash", 0.75, 3.75),
+        ("Gemini 3.8 Flash", 0.75, 3.75),
+    ]
+    left, right = 250, 610
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 100, 16, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    assert right + 90 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Flash は3世代連続で、導入価格がまったく同じ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力、濃い青＝出力。100万トークンあたりのドル、2026年12月31日までの値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3.6・3.7・3.8のどれも $0.75 と $3.75 で、バーの長さは3世代とも同じです。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "⚠️ 2027年1月1日から、3世代いっせいに入力 $1.50・出力 $7.50 に上がります。</text>\n",
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: Google の Gemini API 料金ページ（ai.google.dev・2026年9月6日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 3.8 が安いのではなく、3世代とも同じ「導入期間」の値段です。</text>\n"
+    )
+    alt = (
+        "Gemini 3.6 Flash・3.7 Flash・3.8 Flash の3世代の単価を比べた横棒グラフ。"
+        "100万トークンあたりのドル、2026年12月31日までの値。"
+        "3世代とも入力0.75ドル・出力3.75ドルで、バーの長さはまったく同じ。"
+        "2027年1月1日から、3世代いっせいに入力1.50ドル・出力7.50ドルに上がる。"
+        "3.8が安いのではなく、3世代とも同じ導入期間の値段であることを示す図。"
+    )
+    (OUT / "gemini38-price-three-gens.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38_vendor_top_price_chart() -> None:
+    """他社の最上位モデルとは、そもそも価格の階層が違うことを示す（2026-09-06）。
+
+    ⚠️ 賢さの比較ではない。各社が自社ページに載せている単価だけを、
+    同じ目盛りに置いたもの。3.8 Flash は Google の主力（Flash）で、
+    Google 自身の最上位（Pro）ではないことに注意。
+    """
+    rows = [
+        ("GPT-6 Astra（OpenAI）", 10.0, 50.0),
+        ("Claude Fable 5.1（Anthropic）", 10.0, 50.0),
+        ("Gemini 3.1 Pro Preview（Google）", 2.0, 12.0),
+        ("Gemini 3.8 Flash（対象・Google）", 0.75, 3.75),
+    ]
+    top_value = 50.0
+
+    left, right = 288, 592
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 106, 16, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / top_value
+
+    assert right + 80 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "他社の最上位モデルとは、そもそも価格の階層が違う（100万トークンあたり）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力、濃い青＝出力。各社の公式料金ページに載っている値だけを並べています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Gemini 3.8 Flash は Google の主力モデルで、Google 自身の最上位（3.1 Pro Preview）でもありません。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "⚠️ これは値段の比較で、賢さの比較ではありません。</text>\n",
+    ]
+    for index, (name, inp, out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((inp, "bar-in", "入力"), (out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="256" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 4}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 58
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Gemini 3.1 Pro Preview は20万トークン以下のときの値。超えると入力 $4・出力 $18 に上がります。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: 各社の公式料金ページ（OpenAI・Anthropic・Google／2026年9月6日に確認）。</text>\n"
+    )
+    alt = (
+        "GPT-6 Astra・Claude Fable 5.1・Gemini 3.1 Pro Preview・Gemini 3.8 Flash の"
+        "単価を並べた横棒グラフ。100万トークンあたり。"
+        "GPT-6 Astra は入力10ドル・出力50ドル、Claude Fable 5.1 も入力10ドル・出力50ドルで同じ。"
+        "Gemini 3.1 Pro Preview（Google自身の最上位）は入力2ドル・出力12ドルで、"
+        "20万トークンを超えると入力4ドル・出力18ドルに上がる。"
+        "この記事の対象である Gemini 3.8 Flash は入力0.75ドル・出力3.75ドルで、"
+        "他社の最上位はもちろん Google 自身の最上位よりも安い、価格帯が違うモデルであることを示す図。"
+    )
+    (OUT / "gemini38-vendor-top-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38_safety_delta_chart() -> None:
+    """3.7 Flash と比べた自動安全評価の差（pp）。モデルカードに実測値として掲載（2026-09-06）。
+
+    ⚠️ 「良い方向」が項目ごとに違う（下がるほど良い項目と、上がるほど良い項目が混在）ので、
+    バーの長さは差の大きさだけを表し、色（緑＝改善／赤＝悪化）で方向を示す。
+    """
+    # (ラベル, 3.7 Flash との差[pp], どちらが良いか)
+    rows = [
+        ("Text to Text Safety", -0.4, "low"),
+        ("Multilingual Safety", 5.4, "low"),
+        ("Image to Text Safety", 0.0, "low"),
+        ("Tone", 0.2, "high"),
+        ("Unjustified-refusals", 1.1, "low"),
+    ]
+    left, right = 250, 555
+    span = right - left
+    top, bar_h, pitch = 112, 22, 42
+    biggest = max(abs(delta) for _, delta, _ in rows) or 1.0
+    scale = span / biggest
+    label_x = right + 16
+
+    assert label_x + 110 <= WIDTH, label_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "自動安全評価は、3.7 Flash とほぼ同じ——ただし多言語だけ悪化</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "モデルカードに載っている、3.7 Flash との差（ポイント）。緑＝改善、赤＝悪化。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「良い方向」は項目ごとに違います（下がるほど良い項目と、上がるほど良い項目が混在）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "自動評価であり、人手のレッドチーム評価ではありません。</text>\n",
+    ]
+    for index, (label, delta, direction) in enumerate(rows):
+        y = top + index * pitch
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(label)}</text>\n')
+        if delta == 0:
+            cls, tcls, verdict = "box-quiet", "t-sm", "同じ"
+        else:
+            improved = (delta < 0 and direction == "low") or (delta > 0 and direction == "high")
+            cls = "box-good" if improved else "box-bad"
+            tcls = "t-good" if improved else "t-bad"
+            verdict = "改善" if improved else "悪化"
+        bw = max(3.0, abs(delta) * scale)
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        value_text = f"{delta:+.1f}pp" if delta != 0 else "0.0pp"
+        parts.append(
+            f'<text class="{tcls}" x="{label_x}" y="{y + bar_h - 6}">'
+            f"{value_text}（{verdict}）</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: Gemini 3.8 Flash モデルカード（deepmind.google・2026年9月2日公開分）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Text to Text／Multilingual／Image to Text／Unjustified-refusalsは下がるほど良く、"
+        "Toneは上がるほど良いとカードに明記。</text>\n"
+    )
+    alt = (
+        "Gemini 3.8 Flash の自動安全評価が、3.7 Flash と比べて何ポイント動いたかを示す図。"
+        "Text to Text Safety はマイナス0.4ポイントで改善、"
+        "Multilingual Safety はプラス5.4ポイントで悪化（この項目は下がるほど良いため）、"
+        "Image to Text Safety は変化なし、"
+        "Tone はプラス0.2ポイントで改善（この項目は上がるほど良いため）、"
+        "Unjustified-refusals はプラス1.1ポイントで悪化（この項目は下がるほど良いため）。"
+        "モデルカードに記載された自動評価の値で、人手のレッドチーム評価ではない。"
+    )
+    (OUT / "gemini38-safety-delta.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -18800,4 +19017,7 @@ if __name__ == "__main__":
     fetch_failure_not_zero_chart()
     flat_threshold_misfires_chart()
     condition_count_heading_blindspot_chart()
+    gemini38_price_three_gens_chart()
+    gemini38_vendor_top_price_chart()
+    gemini38_safety_delta_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
