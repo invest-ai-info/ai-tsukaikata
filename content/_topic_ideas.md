@@ -1259,6 +1259,12 @@ WebFetch は `www.maruzenjunkudo.co.jp`・`www.hanmoto.com`・`qiita.com` の3�
     `count-the-material-every-run`・`monthly-check-from-last-findings`・
     `split-into-stages-what-breaks`・`who-has-not-replied-yet`・`unrelated-material-stayed-out`を
     確認。担当が全根拠を実物で再検算＝引用箇所5件・grep実測3件）のみ
+- 2026-09-06 在庫十分（未処理23件）のためスキップ。内訳＝副業7件（うち🔁自動化枠1件・床3を超過）・
+  補充08-13床割れ6件・もとから5件・セキュリティ2件・補充（自動化枠08-17）1件（🔁）・詐欺1件・
+  定説を実測する1件。手順1.5どおり床(20)を超えているため探索なしで終了した。
+  ⚠️ 🔁自動化枠は`- [ ] 🔁`で数えて**2件**（9/3:2→9/4:1→9/5:0→9/5補充3件→今日2、
+  `count-the-material-every-run`の逆向き記事が9/5〜9/6の間に公開され1件消費とみられる）。
+  9/1・9/3の申し送りどおり床(2件)を確認したが下回っていないため、今日は例外の補充をしない。
 
 ---
 
