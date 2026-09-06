@@ -18254,6 +18254,143 @@ def take_home_repeat_no_split_chart() -> None:
     )
 
 
+def fetch_failure_not_zero_chart() -> None:
+    """「取得できませんでした」の日を、後段のAIが平均計算に0件として混ぜたかを並べる。
+
+    実測（2026-09-06）。架空の毎日の受信記録2本（各14日分、うち3日は取得失敗・2日は
+    本当の0件・9日は通常の件数）に、①無指定 ②「取得失敗の日は含めないで」と明示
+    ③②＋「除外した日数も書いて」④「0件だった日は何日か」と曖昧に聞く、の4版を
+    材料2本×各2回＝16回通した。取得失敗の3日を0件として合計・平均に混ぜた回は
+    16回中0回。下段は、もし混ぜていたら平均がどれだけ低く出ていたかの参考値。
+    """
+    label_x = 18
+    plot_x = 310
+    plot_w = 140
+    axis_max = 4
+    scale = plot_w / axis_max
+    top = 151
+    row_h = 28
+    bar_h = 15
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        "① 無指定（平均と少なかった日を聞くだけ）",
+        "② 「取得失敗の日は含めないで」と明示",
+        "③ ②＋「除外した日数も書いて」",
+        "④ 「0件だった日は何日か」と曖昧に聞く",
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "取得失敗の日を0件に混ぜた回は、指示の有無にかかわらず16回中0回だった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の毎日の受信記録2本（各14日分。取得失敗3日・本当の0件2日・通常9日）に、"
+        "頼み方4版を材料2本×各2回＝16回通した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は、取得失敗の3日を「0件」として合計・平均に混ぜてしまった回数（真値0）。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "④は明示の指示なしで「0件の日」とだけ聞いた版。"
+        "取得失敗と本当の0件は16回とも区別して答えている。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "（本当の0件は2日、取得失敗は3日と別枠で回答）。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{px(axis_max) + 12:.1f}" y="{ty}">0/4</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    y += 14
+    sep_y = y
+    parts.append(f'<line class="line" x1="18" y1="{sep_y}" x2="{WIDTH - 18}" y2="{sep_y}"/>\n')
+    y += 22
+
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "参考：もし0件として混ぜていたら、平均はどれだけ低く出たか</text>\n"
+    )
+    y += 24
+
+    plot2_x = 190
+    plot2_w = 260
+    axis2_max = 7
+    scale2 = plot2_w / axis2_max
+
+    def px2(n: float) -> float:
+        return plot2_x + n * scale2
+
+    groups2 = [
+        ("材料A・実際の答え", 6.09, "box-good", "6.1件/日（÷11日）"),
+        ("材料A・0件に含めた場合", 4.79, "box-bad", "4.8件/日（÷14日）"),
+        ("材料B・実際の答え", 3.91, "box-good", "3.9件/日（÷11日）"),
+        ("材料B・0件に含めた場合", 3.07, "box-bad", "3.1件/日（÷14日）"),
+    ]
+    row2_h = 28
+    bar2_h = 15
+    top2 = y
+    zx2 = px2(0)
+    for label, value, cls, tail in groups2:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{px2(0):.1f}" y="{ty - 11}" '
+            f'width="{max(px2(value) - px2(0), 3):.1f}" height="{bar2_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t" x="{px2(axis2_max) + 12:.1f}" y="{ty}">{_esc(tail)}</text>\n'
+        )
+        y += row2_h
+    plot2_bottom = y - row2_h + bar2_h
+    parts.append(
+        f'<path class="line" d="M{zx2:.1f} {top2 - 6} L{zx2:.1f} {plot2_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ 上段の帯は0〜4回の目盛り。すべて0/4のまま右端まで空欄。"),
+        ("t-sm", "※ 下段は参考値。「0件に含めた場合」の値は実測では一度も返ってきていない。"),
+        ("t-xs", "架空データでの実測（材料2本×4版×各2回＝16回）。生の回答は"
+                 "docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "架空の毎日の受信記録（各14日分、取得失敗3日・本当の0件2日・通常9日）を2本用意し、"
+        "「取得できませんでした」と書かれた日を後段のAIが平均計算に0件として混ぜてしまうかを、"
+        "頼み方4版×材料2本×各2回＝16回で確かめた図。上段は4版それぞれの混入回数を横棒で示し、"
+        "無指定で聞いた版、除外を明示した版、除外した日数も書かせた版、"
+        "「0件だった日は何日か」と曖昧に聞いた版のいずれも、混入は0/4で、16回を通じて0回だった。"
+        "曖昧に聞いた版でも、取得失敗の3日と本当の0件2日は16回とも別枠で回答された。"
+        "下段は参考値で、もし取得失敗の3日を0件として14日で割っていたら、"
+        "材料Aは1日あたり6.1件から4.8件へ、材料Bは3.9件から3.1件へ、"
+        "どちらも約2割低い平均になっていたはずだが、実測でこの値が返ってきたことは無い。"
+    )
+    (OUT / "fetch-failure-not-zero.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -18485,4 +18622,5 @@ if __name__ == "__main__":
     transcribe_price_per_min_chart()
     transcribe_wer_by_benchmark_chart()
     transcribe_vendor_grid_chart()
+    fetch_failure_not_zero_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
