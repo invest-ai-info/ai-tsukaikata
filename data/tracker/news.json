@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-06T17:07:09.968572+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-06T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination.",
+      "summary_ja": "AI開発者がAIの制御に関する考えを表明\n開発者のJakub Pachocki氏は賢くなるAIの\n制御の難しさを指摘し対策と国際連携を訴えた",
+      "summary_source": "gemini",
+      "title": "An Alien Mind",
+      "uid": "3a9223e666ff62f2",
+      "url": "https://openai.com/index/an-alien-mind",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-06T17:07:09.968572+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-06T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration.",
+      "summary_ja": "OpenAIでAIを使った研究の加速が報告された\n「コーディングAI」が研究を変革しつつあり\nAIの利用状況や実験速度に関する初期データを示した",
+      "summary_source": "gemini",
+      "title": "Research acceleration: The view inside OpenAI",
+      "uid": "3309fbf04da1b60c",
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-06T04:44:40.211281+00:00",
       "importance": "minor",
       "label": "Claude Code",

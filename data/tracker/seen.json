@@ -14,8 +14,8 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 53,
-      "last_error": "HTTPError: HTTP Error 404: Not Found"
+      "count": 54,
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   },
   "latest": {
@@ -28,11 +28,11 @@
     "hf-deepseek": "2026-08-31T06:16:18+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-09-05T03:00:00+00:00",
-    "media-gigazine": "2026-09-06T12:11:00+00:00",
+    "media-gigazine": "2026-09-06T14:00:00+00:00",
     "media-impress-ai": "2026-09-04T09:55:46+00:00",
     "media-itmedia-aiplus": "2026-09-05T22:35:17+00:00",
-    "media-publickey": "2026-09-03T15:27:07+00:00",
-    "openai-news": "2026-09-03T13:15:00+00:00",
+    "media-publickey": "2026-09-06T15:07:10+00:00",
+    "openai-news": "2026-09-06T09:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-03T21:08:24+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -50,6 +50,28 @@
       "uid": "6f33e61be7356e91",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.263",
       "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-06T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination.",
+      "title": "An Alien Mind",
+      "uid": "3a9223e666ff62f2",
+      "url": "https://openai.com/index/an-alien-mind",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-06T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration.",
+      "title": "Research acceleration: The view inside OpenAI",
+      "uid": "3309fbf04da1b60c",
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -437,6 +459,7 @@
     "32c07dc4b24962d9": "2026-08-01T12:16:42.309603+00:00",
     "32d307c84fee5e72": "2026-08-14T13:46:27.161883+00:00",
     "32fac3bb2225345f": "2026-09-04T05:57:33.223134+00:00",
+    "3309fbf04da1b60c": "2026-09-06T17:07:09.968572+00:00",
     "332ee0d179f1027c": "2026-08-01T12:16:42.309603+00:00",
     "3354062cd5ba6f95": "2026-08-01T12:16:42.309603+00:00",
     "3380dbec625f2419": "2026-08-15T01:52:13.409322+00:00",
@@ -478,6 +501,7 @@
     "3a1c31cef30ebdaa": "2026-09-04T05:57:33.223134+00:00",
     "3a1e722f477e828f": "2026-08-04T11:04:53.115730+00:00",
     "3a63a35cfc7a0c57": "2026-08-19T17:43:17.097023+00:00",
+    "3a9223e666ff62f2": "2026-09-06T17:07:09.968572+00:00",
     "3acaf068c7491bbe": "2026-08-25T14:07:40.960208+00:00",
     "3ae679e0b7c70d8d": "2026-09-03T11:20:05.613883+00:00",
     "3af330e39f1d312c": "2026-08-24T05:04:19.511269+00:00",
@@ -555,6 +579,7 @@
     "462189030ea9ae16": "2026-08-01T12:16:42.309603+00:00",
     "4621a2b11b85b075": "2026-08-17T05:52:28.010678+00:00",
     "463abd3e72630e60": "2026-08-25T01:54:23.504301+00:00",
+    "465232c4e0d6eb02": "2026-09-06T17:07:09.968572+00:00",
     "4657f0cf286ee3f7": "2026-08-15T09:43:13.168238+00:00",
     "46592e680c82af00": "2026-08-13T12:01:33.145239+00:00",
     "46cc615752e5cc9a": "2026-08-01T12:16:42.309603+00:00",
@@ -651,6 +676,7 @@
     "53b34aceafc27349": "2026-08-24T23:39:49.823706+00:00",
     "53ed9cf1bc8fddae": "2026-08-02T11:35:58.106550+00:00",
     "540824f7c5e758f3": "2026-08-01T12:16:42.309603+00:00",
+    "541580f621274486": "2026-09-06T17:07:09.968572+00:00",
     "542a7a358648db3e": "2026-08-17T05:52:28.010678+00:00",
     "5445248a641b5f37": "2026-08-28T18:46:16.087122+00:00",
     "545117c70491ae7e": "2026-08-31T05:41:42.559558+00:00",
@@ -691,6 +717,7 @@
     "59c2a12d58e78038": "2026-08-14T02:48:19.675404+00:00",
     "59d80f0263556a53": "2026-08-20T07:08:56.756357+00:00",
     "5a17e2fb402cb427": "2026-08-19T03:12:45.748785+00:00",
+    "5a2409dbbbd1deea": "2026-09-06T17:07:09.968572+00:00",
     "5a7f04ad895f9075": "2026-08-07T00:17:27.231353+00:00",
     "5a806d7a1b1dfe91": "2026-08-13T12:01:33.145239+00:00",
     "5a85baf67dec9e46": "2026-08-13T12:01:33.145239+00:00",

@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-06T17:07:09.968572+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-06T15:04:34+00:00",
+      "source_id": "media-publickey",
+      "summary": "JavaScriptを事前コンパイルしてC言語に変換するコンパイラ「porffor」（発音はpoor-for）がアルファ版に到達したことが発表されました（公式サイト、GitHubリポジトリ）。 作者のOliver Medhurst氏が明らか...",
+      "title": "JavaScriptをC言語にコンパイルする「porffor」がアルファ版に到達。ネイティブやWASMを生成可能",
+      "uid": "541580f621274486",
+      "url": "https://www.publickey1.jp/blog/26/javascriptcporfforwasm.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-09-06T09:28:31.101694+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "1fc4f5673f1138cd",
       "url": "https://gigazine.net/news/20260831-anthropic-warn-malware/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-08-31T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIにコードを書かせる時代が来た。では、開発者は不要になるのか。ビル・ゲイツ氏は、ソフトウェア開発がAIによる大きな変化にさらされる一方、新たな需要も生まれると指摘する。その先にあるのは、開発者の「仕事」そのものの再定義だ。",
-      "title": "ビル・ゲイツが語る「AIで開発者はいらなくなる」の先にある話",
-      "uid": "8d241a53f654ba27",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/31/news039.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
