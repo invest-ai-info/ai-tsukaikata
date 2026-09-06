@@ -39,41 +39,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-08-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-06T02:54:20+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Bug fixes and reliability improvements",
-      "title": "v2.1.263",
-      "uid": "6f33e61be7356e91",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.263",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-06T09:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination.",
-      "title": "An Alien Mind",
-      "uid": "3a9223e666ff62f2",
-      "url": "https://openai.com/index/an-alien-mind",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-06T08:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration.",
-      "title": "Research acceleration: The view inside OpenAI",
-      "uid": "3309fbf04da1b60c",
-      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "00655e61e711924e": "2026-08-01T12:16:42.309603+00:00",
