@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="341" viewBox="0 0 720 341" role="img" aria-label="架空の更新履歴3系統（①週次で変動が8日以内に収まる相手、②月次で28〜34日と変動が大きい相手、③実際に65日間更新が止まっている相手）をまとめて、異常判定の基準を決める5通りの頼み方を各2回・計10回試した図。縦軸は、正常なはずの①②を誤って「異常」と判定した回数を2回中で示す。無指定で丸投げした版は0/2、直近6回の間隔から平均+2標準偏差で計算させた版は、変動の小さい①だけを2回とも誤って異常と判定し2/2、固定14日をどの相手にも使った版は、変動の大きい②だけを2回とも誤って異常と判定し2/2、固定35日をどの相手にも使った版は0/2、相手ごとに過去の最大間隔にバッファを足す推奨の言い方は0/2だった。本当に止まっている③を見逃した回は、5版10回を通じて0回だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="341"/>
+<text class="t-strong" x="18" y="24">「間隔から計算」も「固定14日」も、正常な相手を2回中2回とも誤検知した</text>
+<text class="t-sm" x="18" y="43">架空の更新履歴3系統（①週次・変動小さい8日以内 ②月次・変動大きい28〜34日</text>
+<text class="t-sm" x="18" y="62">③実際に65日停止）を1回にまとめ、5通りの頼み方を各2回＝10回試した。</text>
+<text class="t-xs" x="18" y="81">縦軸は正常なはずの①②を誤って「異常」と判定した回数（2回中）。見逃し（③を正常と誤判定）は5版10回とも0回だった。</text>
+<text class="t" x="18" y="164">① 無指定（丸投げ）</text>
+<rect class="box-quiet" x="260.0" y="153" width="170.0" height="15" rx="3"/>
+<rect class="box-good" x="260.0" y="153" width="3.0" height="15" rx="3"/>
+<text class="t-accent" x="442.0" y="164">0/2</text>
+<text class="t" x="18" y="192">② 直近6回の間隔から計算</text>
+<rect class="box-quiet" x="260.0" y="181" width="170.0" height="15" rx="3"/>
+<rect class="box-bad" x="260.0" y="181" width="170.0" height="15" rx="3"/>
+<text class="t-bad" x="442.0" y="192">2/2</text>
+<text class="t" x="18" y="220">③ 固定14日をどの相手にも使う</text>
+<rect class="box-quiet" x="260.0" y="209" width="170.0" height="15" rx="3"/>
+<rect class="box-bad" x="260.0" y="209" width="170.0" height="15" rx="3"/>
+<text class="t-bad" x="442.0" y="220">2/2</text>
+<text class="t" x="18" y="248">④ 固定35日をどの相手にも使う</text>
+<rect class="box-quiet" x="260.0" y="237" width="170.0" height="15" rx="3"/>
+<rect class="box-good" x="260.0" y="237" width="3.0" height="15" rx="3"/>
+<text class="t-accent" x="442.0" y="248">0/2</text>
+<text class="t" x="18" y="276">⑤ 相手ごとに最大間隔＋バッファ</text>
+<rect class="box-quiet" x="260.0" y="265" width="170.0" height="15" rx="3"/>
+<rect class="box-good" x="260.0" y="265" width="3.0" height="15" rx="3"/>
+<text class="t-accent" x="442.0" y="276">0/2</text>
+<path class="line" d="M260.0 145 L260.0 278" stroke-dasharray="4 3"/>
+<text class="t-sm" x="18" y="299">※ ②は週次（変動±1日）を「基準からわずかにはみ出た」と判定、③は月次（28〜34日）を「14日を超えた」と機械的に判定した。</text>
+<text class="t-xs" x="18" y="318">架空データでの実測（5版×各2回＝10回）。生の回答はdocs/evidence/ に全文置いてある。</text>
+</svg>

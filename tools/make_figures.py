@@ -18391,6 +18391,99 @@ def fetch_failure_not_zero_chart() -> None:
     )
 
 
+def flat_threshold_misfires_chart() -> None:
+    """異常判定の閾値を決める5つの言い方で、正常な相手を誤って異常と判定した回数を並べる。
+
+    実測（2026-09-06）。架空の更新履歴3系統（①週次・変動小さい ②月次・変動大きい
+    ③実際に65日停止）を1回の依頼にまとめ、①無指定（丸投げ）②直近6回の間隔から
+    μ+2σで計算③固定14日④固定35日⑤相手ごとに最大間隔＋バッファ（推奨）の5版を
+    各2回＝10回試した。縦軸は、正常な①②を誤って「異常」と判定した回数（2回中）。
+    """
+    label_x = 18
+    plot_x = 260
+    plot_w = 170
+    axis_max = 2
+    scale = plot_w / axis_max
+    top = 151
+    row_h = 28
+    bar_h = 15
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("① 無指定（丸投げ）", 0, "box-good"),
+        ("② 直近6回の間隔から計算", 2, "box-bad"),
+        ("③ 固定14日をどの相手にも使う", 2, "box-bad"),
+        ("④ 固定35日をどの相手にも使う", 0, "box-good"),
+        ("⑤ 相手ごとに最大間隔＋バッファ", 0, "box-good"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「間隔から計算」も「固定14日」も、正常な相手を2回中2回とも誤検知した</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の更新履歴3系統（①週次・変動小さい8日以内 ②月次・変動大きい28〜34日"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "③実際に65日停止）を1回にまとめ、5通りの頼み方を各2回＝10回試した。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "縦軸は正常なはずの①②を誤って「異常」と判定した回数（2回中）。"
+        "見逃し（③を正常と誤判定）は5版10回とも0回だった。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value, cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-accent" if value == 0 else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/2</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ ②は週次（変動±1日）を「基準からわずかにはみ出た」と判定、"
+                 "③は月次（28〜34日）を「14日を超えた」と機械的に判定した。"),
+        ("t-xs", "架空データでの実測（5版×各2回＝10回）。生の回答は"
+                 "docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "架空の更新履歴3系統（①週次で変動が8日以内に収まる相手、②月次で28〜34日と変動が大きい相手、"
+        "③実際に65日間更新が止まっている相手）をまとめて、異常判定の基準を決める5通りの頼み方を"
+        "各2回・計10回試した図。縦軸は、正常なはずの①②を誤って「異常」と判定した回数を2回中で示す。"
+        "無指定で丸投げした版は0/2、直近6回の間隔から平均+2標準偏差で計算させた版は、"
+        "変動の小さい①だけを2回とも誤って異常と判定し2/2、固定14日をどの相手にも使った版は、"
+        "変動の大きい②だけを2回とも誤って異常と判定し2/2、固定35日をどの相手にも使った版は0/2、"
+        "相手ごとに過去の最大間隔にバッファを足す推奨の言い方は0/2だった。"
+        "本当に止まっている③を見逃した回は、5版10回を通じて0回だった。"
+    )
+    (OUT / "flat-threshold-misfires.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -18623,4 +18716,5 @@ if __name__ == "__main__":
     transcribe_wer_by_benchmark_chart()
     transcribe_vendor_grid_chart()
     fetch_failure_not_zero_chart()
+    flat_threshold_misfires_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
