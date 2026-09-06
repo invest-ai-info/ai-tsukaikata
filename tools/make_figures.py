@@ -18484,6 +18484,88 @@ def flat_threshold_misfires_chart() -> None:
     )
 
 
+def condition_count_heading_blindspot_chart() -> None:
+    """条件を3・6・9・12個と積んだとき、実際に守られた条件の割合を並べる。
+
+    実測（2026-09-06・架空の社内お知らせ文1本）。条件を3個・6個・9個・12個と
+    積んだ4版を各2回、さらに12個の条件を逆順にした版を1回、計9回・のべ72件の
+    条件チェックを実行（`claude -p` を空ディレクトリで独立実行）。3個・6個の版は
+    全件が守られ、9個・12個の版でも崩れたのは毎回同じ1条件（見出しを15字以内に
+    する）だけだった。自己申告は9回とも「全部満たした」と答えたが、
+    その1条件が崩れた4回はどれも見抜けなかった。
+    """
+    rows = [
+        ("3個の条件（2回・6件）", 6, 6),
+        ("6個の条件（2回・12件）", 12, 12),
+        ("9個の条件（2回・18件）", 17, 18),
+        ("12個の条件・記載順（2回・24件）", 22, 24),
+        ("12個の条件・順番を逆に（1回・12件）", 11, 12),
+    ]
+    left, right = 300, 620
+    span = right - left
+    top, bar_h, gap = 108, 30, 28
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "3個・6個は全件が守られた。9個からは、毎回同じ1条件だけが崩れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の社内お知らせ文で、条件を3・6・9・12個と積んだ版を各2回、"
+        "12個を逆順にした版を1回試した（計9回・のべ72件）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "崩れたのは常に「見出し（1行目）を15字以内にする」の1条件のみ。他の11条件は崩れなかった。</text>\n",
+    ]
+    for index, (label, hit, total) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 9}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        ratio = hit / total
+        cls = "box-good" if hit == total else "box-bad"
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{max(span * ratio, 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-good" if hit == total else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{right + 12}" y="{y + bar_h - 9}">'
+            f"{hit}／{total}件</text>\n"
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="64" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "自己申告は9回とも「全部満たした」と回答。実際は72件中68件（94%）だった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "崩れた4回はすべて同じ理由——見出しに付けた**や#の記号を、自分で文字数に数えていなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 56}">'
+        "条件の並び順を逆にしても崩れる条件は変わらず、「後に書いた条件から崩れる」という見立ては外れた。</text>\n"
+    )
+    y += 64 + 16
+
+    height = y + 4
+    alt = (
+        "架空の社内お知らせ文で、条件を3個・6個・9個・12個と積んだ4版を各2回、"
+        "さらに12個の条件を逆順に並べた版を1回、計9回・のべ72件の条件チェックを"
+        "試した横棒グラフ。3個の条件（6件中6件）と6個の条件（12件中12件）は"
+        "全件が守られて満点。9個の条件は18件中17件、12個の条件（記載順）は"
+        "24件中22件、12個の条件（順番を逆に）は12件中11件で、いずれも崩れたのは"
+        "同じ1条件（見出しを15字以内にする）だけだった。自己申告は9回とも"
+        "「全部満たした」と回答したが、実際は72件中68件（94%）で、崩れた4回は"
+        "見出しに付けた**や#の記号を自分で文字数に数えていなかったことが原因。"
+        "条件の並び順を逆にしても崩れる条件は変わらなかった。"
+    )
+    (OUT / "condition-count-heading-blindspot.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -18717,4 +18799,5 @@ if __name__ == "__main__":
     transcribe_vendor_grid_chart()
     fetch_failure_not_zero_chart()
     flat_threshold_misfires_chart()
+    condition_count_heading_blindspot_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

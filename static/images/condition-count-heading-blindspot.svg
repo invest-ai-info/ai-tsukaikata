@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="488" viewBox="0 0 720 488" role="img" aria-label="架空の社内お知らせ文で、条件を3個・6個・9個・12個と積んだ4版を各2回、さらに12個の条件を逆順に並べた版を1回、計9回・のべ72件の条件チェックを試した横棒グラフ。3個の条件（6件中6件）と6個の条件（12件中12件）は全件が守られて満点。9個の条件は18件中17件、12個の条件（記載順）は24件中22件、12個の条件（順番を逆に）は12件中11件で、いずれも崩れたのは同じ1条件（見出しを15字以内にする）だけだった。自己申告は9回とも「全部満たした」と回答したが、実際は72件中68件（94%）で、崩れた4回は見出しに付けた**や#の記号を自分で文字数に数えていなかったことが原因。条件の並び順を逆にしても崩れる条件は変わらなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="488"/>
+<text class="t-strong" x="18" y="26">3個・6個は全件が守られた。9個からは、毎回同じ1条件だけが崩れた</text>
+<text class="t-sm" x="18" y="45">架空の社内お知らせ文で、条件を3・6・9・12個と積んだ版を各2回、12個を逆順にした版を1回試した（計9回・のべ72件）。</text>
+<text class="t-sm" x="18" y="64">崩れたのは常に「見出し（1行目）を15字以内にする」の1条件のみ。他の11条件は崩れなかった。</text>
+<text class="t" x="18" y="129">3個の条件（2回・6件）</text>
+<rect class="box-quiet" x="300" y="108" width="320" height="30" rx="3"/>
+<rect class="box-good" x="300" y="108" width="320.0" height="30" rx="3"/>
+<text class="t-good" x="632" y="129">6／6件</text>
+<text class="t" x="18" y="187">6個の条件（2回・12件）</text>
+<rect class="box-quiet" x="300" y="166" width="320" height="30" rx="3"/>
+<rect class="box-good" x="300" y="166" width="320.0" height="30" rx="3"/>
+<text class="t-good" x="632" y="187">12／12件</text>
+<text class="t" x="18" y="245">9個の条件（2回・18件）</text>
+<rect class="box-quiet" x="300" y="224" width="320" height="30" rx="3"/>
+<rect class="box-bad" x="300" y="224" width="302.2" height="30" rx="3"/>
+<text class="t-bad" x="632" y="245">17／18件</text>
+<text class="t" x="18" y="303">12個の条件・記載順（2回・24件）</text>
+<rect class="box-quiet" x="300" y="282" width="320" height="30" rx="3"/>
+<rect class="box-bad" x="300" y="282" width="293.3" height="30" rx="3"/>
+<text class="t-bad" x="632" y="303">22／24件</text>
+<text class="t" x="18" y="361">12個の条件・順番を逆に（1回・12件）</text>
+<rect class="box-quiet" x="300" y="340" width="320" height="30" rx="3"/>
+<rect class="box-bad" x="300" y="340" width="293.3" height="30" rx="3"/>
+<text class="t-bad" x="632" y="361">11／12件</text>
+<rect class="box-accent" x="18" y="404" width="678" height="64" rx="6"/>
+<text class="t-accent" x="34" y="424">自己申告は9回とも「全部満たした」と回答。実際は72件中68件（94%）だった。</text>
+<text class="t-accent" x="34" y="442">崩れた4回はすべて同じ理由——見出しに付けた**や#の記号を、自分で文字数に数えていなかった。</text>
+<text class="t-accent" x="34" y="460">条件の並び順を逆にしても崩れる条件は変わらず、「後に書いた条件から崩れる」という見立ては外れた。</text>
+</svg>
