@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-06T09:28:31.101694+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-06T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Claude CodeやCodexなど複数のAIエージェントへ同時に仕事を任せる場合、それぞれのターミナルを開いて進行状況を確認する作業が必要になります。複数のターミナルを1つのターミナル画面へまとめ、作業中・入力待ち・完了といった状態の確認やAIエージェント同士の連携も可能な「Herdr」が公開されています。 続きを読む...",
+      "title": "複数のAIエージェントを1つのターミナルから統括できる「Herdr」",
+      "uid": "5cee0f78dd70949a",
+      "url": "https://gigazine.net/news/20260906-herdr/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-06T04:44:40.211281+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "8d241a53f654ba27",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/31/news039.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-08-31T05:41:42.559558+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-08-31T01:44:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国の大手テクノロジー企業であるTencentがAIモデル「Hy4 preview」を2026年8月28日に公開しました。GPT-5.6 Solなどの最先端モデルに匹敵する性能を備えており、オープンモデルとして無償公開されています。 続きを読む...",
-      "title": "TencentがAIモデル「Hy4 preview」を公開、一部テストでGPT-5.6 Solを上回る＆213GBまで軽量化した1bit量子化版も公開される",
-      "uid": "e5388ec90357f22e",
-      "url": "https://gigazine.net/news/20260831-hy4-preview-tencent/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
