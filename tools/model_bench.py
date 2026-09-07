@@ -7,10 +7,16 @@
 
 このファイルが守っていること:
 
-- **SDKを使わない。**依存5個の流儀に合わせて urllib 直叩き（`tracker/fetch.py`・
-  `tracker/summarize.py` と同じ）。鍵は環境変数から読み、**値は絶対に出力しない**。
-- **道具を渡さない・システムプロンプトを足さない。**各社の素のAPIに、同じ本文だけを送る。
-  片方だけ足すと、比べているのがモデルではなく足回りになる。
+- 🔑 **APIキーを持たない**（2026-09-07 オーナー指示「APIはセキュリティが不安」）。
+  鍵は長生きする秘密で、置き場所が**手元の環境変数・GitHub Secrets・各社の管理画面**の
+  3か所に増える。**持たなければ漏れない。**代わりに、課題をファイルに書き出して
+  人がチャット画面に貼り、返ってきた本文を保存して、同じ判定コードで測る。
+- ⚠️ **測っているのは「製品」であって「素のモデル」ではない。**チャット画面には
+  各社の指示文・記憶・検索が乗っている。ただし**読者が実際に触るのはそちら**なので、
+  このサイトではむしろそのほうが意味がある。**記事にはこの但し書きを必ず書く。**
+- **足回りを全モデルで揃える。**片方だけAPI、片方だけチャット画面にしない。
+  比べているのがモデルではなく経路になる。
+- **道具を足さない。**検索・ファイル添付・カスタム指示は使わない。一時チャットで測る。
 - **判定は機械。**目視で「良くなった」と書かない。判定コードは
   `docs/evidence/single-gap-goes-unnoticed.md` に載っているものと同じ規則。
 - **返りは生のまま保存する。**要約すると「書いてあることを消す」ことがある。
@@ -19,105 +25,23 @@
 （実測＝経費規程の判定は Claude が24/24・8/8で天井。欠落1個の見落としは6回中5回で余地がある）。
 
 使い方:
-    python tools/model_bench.py --vendor openai --model gpt-6-astra --runs 6
+    python tools/model_bench.py --emit --label gpt-6-astra
+        → docs/evidence/_raw/bench/<課題>_<名前>_<日時>/ に課題6件と 手順.md が出る
+    （手順.md のとおりにチャット画面へ貼り、返りを *.reply.txt として保存する）
+    python tools/model_bench.py --score docs/evidence/_raw/bench/<そのフォルダ>
     python tools/model_bench.py --list-tasks
 """
 from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import sys
-import time
-import urllib.error
-import urllib.request
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
-TIMEOUT = 300
 OUT_DIR = Path(__file__).resolve().parent.parent / "docs" / "evidence" / "_raw" / "bench"
-
-
-# ---------------------------------------------------------------- 各社の窓口
-
-@dataclass
-class Reply:
-    text: str
-    input_tokens: int | None
-    output_tokens: int | None
-    raw: dict
-
-
-def _post(url: str, payload: dict, headers: dict) -> dict:
-    body = json.dumps(payload).encode("utf-8")
-    head = {"Content-Type": "application/json", **headers}
-    request = urllib.request.Request(url, data=body, headers=head, method="POST")
-    with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-        return json.loads(response.read().decode("utf-8"))
-
-
-def _key(name: str) -> str:
-    """環境変数から鍵を読む。無ければ落とす（黙って空文字で送ると認証エラーになり、
-    「鍵が無い」ではなく「拒否された」という分かりにくい失敗になる）。"""
-    value = os.environ.get(name)
-    if not value:
-        raise SystemExit(f"環境変数 {name} が設定されていません")
-    return value
-
-
-def ask_openai(model: str, prompt: str) -> Reply:
-    data = _post(
-        "https://api.openai.com/v1/responses",
-        {"model": model, "input": prompt},
-        {"Authorization": f"Bearer {_key('OPENAI_API_KEY')}"},
-    )
-    parts = []
-    for item in data.get("output", []):
-        if item.get("type") != "message":
-            continue
-        for chunk in item.get("content", []):
-            if chunk.get("type") in ("output_text", "text"):
-                parts.append(chunk.get("text", ""))
-    usage = data.get("usage") or {}
-    return Reply("".join(parts), usage.get("input_tokens"), usage.get("output_tokens"), data)
-
-
-def ask_anthropic(model: str, prompt: str) -> Reply:
-    data = _post(
-        "https://api.anthropic.com/v1/messages",
-        {"model": model, "max_tokens": 4096,
-         "messages": [{"role": "user", "content": prompt}]},
-        {"x-api-key": _key("ANTHROPIC_API_KEY"), "anthropic-version": "2023-06-01"},
-    )
-    parts = [c.get("text", "") for c in data.get("content", []) if c.get("type") == "text"]
-    usage = data.get("usage") or {}
-    return Reply("".join(parts), usage.get("input_tokens"), usage.get("output_tokens"), data)
-
-
-def ask_gemini(model: str, prompt: str) -> Reply:
-    # 鍵はヘッダで渡す＝URLクエリに載せない（summarize.py と同じ流儀）
-    data = _post(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-        {"contents": [{"parts": [{"text": prompt}]}]},
-        {"x-goog-api-key": _key("GEMINI_API_KEY")},
-    )
-    parts = []
-    for cand in data.get("candidates", []):
-        for chunk in cand.get("content", {}).get("parts", []):
-            if "text" in chunk:
-                parts.append(chunk["text"])
-    usage = data.get("usageMetadata") or {}
-    return Reply(
-        "".join(parts),
-        usage.get("promptTokenCount"),
-        usage.get("candidatesTokenCount"),
-        data,
-    )
-
-
-VENDORS = {"openai": ask_openai, "anthropic": ask_anthropic, "gemini": ask_gemini}
 
 
 # ---------------------------------------------------------------- 判定（機械）
@@ -340,41 +264,123 @@ def judge(case: Case, text: str) -> dict:
     }
 
 
-def run(vendor: str, model: str, task: Task, runs: int, out_dir: Path) -> list[dict]:
-    ask = VENDORS[vendor]
+PROCEDURE = """# {title}
+
+対象: **{label}**　／　課題: {task_id}（{count}件）
+
+⚠️ **1件につき「新しいチャット」を開く。**同じチャットで続けて貼ると、2件目からは
+「材料の抜けを探す課題だ」と気づいてしまい、以降が全部当たる。測るものが変わってしまう。
+
+## やること
+
+1. チャット画面で**新しいチャット**を開く。できれば「一時チャット」
+   （ChatGPT＝一時的なチャット / Gemini＝一時的なチャット）＝記憶を持ち込まない設定にする
+2. `{first}.prompt.txt` を開き、**中身をそのまま全部**貼って送る
+   - ⚠️ 「これを評価して」などを**足さない**。1文字でも足すと課題が変わる
+   - ⚠️ 検索・ファイル添付・カスタム指示は**使わない**
+3. 返ってきた**本文だけ**を `{first}.reply.txt` という名前で同じフォルダに保存する
+   - 考え中の表示・引用元の一覧・自分の感想は入れない
+4. 1〜3を残り{rest}件くり返す（毎回、新しいチャット）
+5. 全部そろったら採点する:
+
+```
+python tools/model_bench.py --score {folder}
+```
+
+## 貼る順番（ファイル名のとおり）
+
+{listing}
+
+## 記事に書くときの但し書き（必須）
+
+- どのモデルを、**いつ・どの画面で**測ったか（チャット画面の中身は黙って変わる）
+- **点数ではなく、何を落としたか**を書く
+- 測ったのは「製品」であって「素のモデルの賢さ」ではない
+"""
+
+
+def _display_path(path: Path) -> str:
+    """手順に載せる採点コマンド用の見せ方。リポジトリ内なら相対で書く
+    （絶対パスだと、この worktree が消えた時点で貼っても動かなくなる）。"""
+    root = Path(__file__).resolve().parent.parent
+    try:
+        return path.resolve().relative_to(root).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def emit_prompts(task: Task, label: str, out_dir: Path) -> Path:
+    """課題を1件1ファイルで書き出し、貼り方の手順を添える。"""
     out_dir.mkdir(parents=True, exist_ok=True)
-    results = []
-    for index in range(runs):
-        case = task.cases[index % len(task.cases)]
-        started = time.time()
-        try:
-            reply = ask(model, case.prompt)
-        except urllib.error.HTTPError as error:
-            detail = error.read().decode("utf-8", "replace")[:400]
-            raise SystemExit(f"{vendor} が {error.code} を返しました: {detail}")
-        seconds = time.time() - started
-        verdict = judge(case, reply.text)
-        stem = f"{task.task_id}_{vendor}_{model}_{case.case_id}_r{index + 1}"
-        (out_dir / f"{stem}.txt").write_text(reply.text, encoding="utf-8")
-        row = {
-            "run": index + 1, "case": case.case_id, "missing": case.missing,
-            "seconds": round(seconds, 1),
-            "input_tokens": reply.input_tokens, "output_tokens": reply.output_tokens,
-            **verdict,
-        }
-        results.append(row)
-        mark = "◯" if verdict["抜けを名指しした"] else "✕"
-        print(f"  {index + 1}/{runs} {case.case_id:<12} {mark} "
-              f"({seconds:.0f}秒 / 出力{reply.output_tokens}トークン)")
-    return results
+    stems = []
+    for index, case in enumerate(task.cases, start=1):
+        stem = f"{index}_{case.case_id}"
+        # ⚠️ 説明を混ぜない。ファイルの中身がそのまま送られる前提にする
+        (out_dir / f"{stem}.prompt.txt").write_text(case.prompt, encoding="utf-8")
+        stems.append(stem)
+
+    (out_dir / "meta.json").write_text(json.dumps({
+        "task": task.task_id,
+        "label": label,
+        "title": task.title,
+        "route": "chat-ui-paste",
+        "created": datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S"),
+        "stems": stems,
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    listing = "\n".join(
+        f"{i}. `{stem}.prompt.txt` → `{stem}.reply.txt`"
+        for i, stem in enumerate(stems, start=1)
+    )
+    (out_dir / "手順.md").write_text(PROCEDURE.format(
+        title=task.title, label=label, task_id=task.task_id,
+        count=len(stems), first=stems[0], rest=len(stems) - 1,
+        folder=_display_path(out_dir), listing=listing,
+    ), encoding="utf-8")
+    return out_dir
+
+
+def score_dir(out_dir: Path) -> dict:
+    """貼って保存した返りを、機械の判定コードで採点する。"""
+    meta = json.loads((out_dir / "meta.json").read_text(encoding="utf-8"))
+    task = TASKS[meta["task"]]()
+    rows, absent = [], []
+    for index, case in enumerate(task.cases, start=1):
+        stem = f"{index}_{case.case_id}"
+        path = out_dir / f"{stem}.reply.txt"
+        if not path.exists():
+            absent.append(f"{stem}.reply.txt")
+            continue
+        body = path.read_text(encoding="utf-8")
+        rows.append({"case": case.case_id, "missing": case.missing,
+                     "chars": len(body), **judge(case, body)})
+    if absent:
+        # ⚠️ 空欄のまま集計しない。貼り忘れが「見落とした」に化けて結果になる
+        raise SystemExit("返りが保存されていません: " + " / ".join(absent))
+
+    named = sum(1 for r in rows if r["抜けを名指しした"])
+    silent = sum(1 for r in rows if r["黙って埋めた"])
+    summary = {
+        "task": meta["task"], "label": meta["label"],
+        "route": meta.get("route", "chat-ui-paste"),
+        "runs": len(rows),
+        "scored_at": datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S"),
+        "抜けを名指しした回数": named,
+        "黙って埋めた回数": silent,
+        "rows": rows,
+    }
+    (out_dir / "summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8"
+    )
+    return summary
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--vendor", choices=sorted(VENDORS))
-    parser.add_argument("--model")
+    parser.add_argument("--emit", action="store_true", help="課題を書き出す")
+    parser.add_argument("--label", help="測る相手の名前（例: gpt-6-astra）")
+    parser.add_argument("--score", help="返りを保存したフォルダ")
     parser.add_argument("--task", default="single-gap", choices=sorted(TASKS))
-    parser.add_argument("--runs", type=int, default=6)
     parser.add_argument("--list-tasks", action="store_true")
     args = parser.parse_args(argv)
 
@@ -383,32 +389,31 @@ def main(argv: list[str] | None = None) -> int:
             task = build()
             print(f"{name}: {task.title}（{len(task.cases)}通り）")
         return 0
-    if not args.vendor or not args.model:
-        parser.error("--vendor と --model は必須です")
 
-    task = TASKS[args.task]()
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
-    out_dir = OUT_DIR / f"{args.task}_{args.vendor}_{args.model}_{stamp}"
+    if args.score:
+        summary = score_dir(Path(args.score))
+        print(f"{summary['label']}（{summary['task']}・チャット画面に貼って測定）")
+        for row in summary["rows"]:
+            mark = "◯ 名指しした" if row["抜けを名指しした"] else "✕ 黙って埋めた"
+            print(f"  {row['case']:<14}{mark}　（{row['chars']}字）")
+        print(f"\n抜けを名指しした: {summary['抜けを名指しした回数']}/{summary['runs']}"
+              f"　黙って埋めた: {summary['黙って埋めた回数']}/{summary['runs']}")
+        return 0
 
-    print(f"課題: {task.title}")
-    print(f"モデル: {args.vendor} / {args.model}　実行: {args.runs}回")
-    results = run(args.vendor, args.model, task, args.runs, out_dir)
+    if args.emit:
+        if not args.label:
+            parser.error("--emit には --label が必要です")
+        task = TASKS[args.task]()
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+        out_dir = OUT_DIR / f"{args.task}_{args.label}_{stamp}"
+        emit_prompts(task, args.label, out_dir)
+        print(f"課題: {task.title}")
+        print(f"{len(task.cases)}件を書き出しました: {out_dir}")
+        print(f"貼り方は {out_dir / '手順.md'} を読んでください")
+        return 0
 
-    named = sum(1 for r in results if r["抜けを名指しした"])
-    silent = sum(1 for r in results if r["黙って埋めた"])
-    summary = {
-        "task": args.task, "vendor": args.vendor, "model": args.model,
-        "runs": args.runs, "measured_at": stamp,
-        "抜けを名指しした回数": named,
-        "黙って埋めた回数": silent,
-        "rows": results,
-    }
-    (out_dir / "summary.json").write_text(
-        json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8"
-    )
-    print(f"\n抜けを名指しした: {named}/{args.runs}　黙って埋めた: {silent}/{args.runs}")
-    print(f"生の返りと集計: {out_dir}")
-    return 0
+    parser.error("--emit か --score のどちらかを指定してください")
+    return 1
 
 
 if __name__ == "__main__":

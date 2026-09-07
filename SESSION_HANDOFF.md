@@ -1,8 +1,31 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-09-05 JST
+最終更新: 2026-09-07 JST
 
 ## 🚩 次のセッションは、ここから
+
+### 🆕 2026-09-07 性能比較からAPIキーを外した（貼り付け方式に変更）
+
+オーナー指示「**各社のAPIを使うのはセキュリティの面で少し不安なので、使わずにできる比較で**」。
+
+- `tools/model_bench.py` から**鍵と通信を丸ごと削除**した。`--emit` で課題6件を
+  フォルダに書き出し、人がチャット画面に貼り、返りを `*.reply.txt` で保存 → `--score` で採点
+- **判定コードは1文字も変えていない**＝物差しは同じ。テスト 652 → 654 passed
+- 🔒 再発防止＝`test_module_never_touches_api_keys` /
+  `test_module_makes_no_network_calls` が、鍵の名前・`os.environ`・`urllib` の再登場で落ちる
+
+📌 **オーナーに伝えてある後片付け**: 2026-09-05 に作った `OPENAI_API_KEY` は
+**OpenAI の管理画面で失効させる**（手元の環境変数と GitHub Secrets の削除は、その後）。
+Anthropic の鍵は**作らないことにした**。
+
+📌 **貼る準備は済んでいる**（`docs/evidence/_raw/bench/` に3フォルダ・各6件）:
+`single-gap_gpt-6-astra_*` / `single-gap_claude-fable-5-1_*` / `single-gap_gemini-3-1-pro_*`。
+各フォルダの `手順.md` が単一ソース。⚠️ **1件につき新しいチャット**（同じチャットで
+続けると2件目から課題に気づいて全部当たる）。
+
+⚠️ 2026-09-05 にAPIで測った GPT-6 Astra の 5/6 は、**チャット画面の結果と並べない**
+（足回りが違う）。当該フォルダに `README.md` で明記した。
+
 
 ### 🆕 2026-09-05 ニュース側の深掘りをもう1本公開した（GPT-6 Astra）＋照合ツールのCDATA不具合を直した
 

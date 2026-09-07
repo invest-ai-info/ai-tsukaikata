@@ -160,3 +160,127 @@ def test_negation_in_the_same_sentence_still_counts():
     ):
         label = next(l for l in ("数値表", "単価表", "備考") if l in text)
         assert has_nearby_negation(text, label), text
+
+
+# --- 2026-09-07 オーナー指示「各社のAPIは使わずに比べたい」 ---
+# 鍵を持たない＝漏れようがない。代わりに、課題を書き出して人がチャット画面に貼り、
+# 返ってきた本文をファイルに保存して、同じ判定コードで測る。
+
+
+def _module_source() -> str:
+    from pathlib import Path
+    return (Path(__file__).resolve().parent.parent
+            / "tools" / "model_bench.py").read_text(encoding="utf-8")
+
+
+def test_module_never_touches_api_keys():
+    # 鍵を読む道が残っていると、いつか誰かが使う。道ごと消す
+    source = _module_source()
+    for name in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GEMINI_API_KEY"):
+        assert name not in source, name
+    assert "os.environ" not in source
+
+
+def test_module_makes_no_network_calls():
+    source = _module_source()
+    assert "urllib" not in source
+    assert "api.openai.com" not in source
+
+
+# --- 課題の書き出し ---
+
+
+def test_emit_writes_one_prompt_file_per_case(tmp_path):
+    from tools.model_bench import emit_prompts
+    out = emit_prompts(single_gap_task(), "gpt-6-astra", tmp_path)
+    assert len(sorted(out.glob("*.prompt.txt"))) == 6
+
+
+def test_emit_prompt_file_holds_the_prompt_and_nothing_else(tmp_path):
+    # 手順の説明が混ざると、そのまま貼ったときにモデルへの指示が変わる
+    from tools.model_bench import emit_prompts
+    task = single_gap_task()
+    out = emit_prompts(task, "x", tmp_path)
+    first = sorted(out.glob("*.prompt.txt"))[0]
+    assert first.read_text(encoding="utf-8") == task.cases[0].prompt
+
+
+def test_emit_tells_you_to_open_a_new_chat_for_each_case(tmp_path):
+    # 同じチャットで6件続けると、2件目からは「抜けを探す課題」だと気づいてしまう
+    from tools.model_bench import emit_prompts
+    out = emit_prompts(single_gap_task(), "x", tmp_path)
+    guide = (out / "手順.md").read_text(encoding="utf-8")
+    assert "新しいチャット" in guide
+
+
+def test_emit_records_the_label_and_task(tmp_path):
+    import json
+    from tools.model_bench import emit_prompts
+    out = emit_prompts(single_gap_task(), "gemini-3-1-pro", tmp_path)
+    meta = json.loads((out / "meta.json").read_text(encoding="utf-8"))
+    assert meta["label"] == "gemini-3-1-pro"
+    assert meta["task"] == "single-gap"
+
+
+# --- 貼った返りの採点 ---
+
+
+def _prepare(tmp_path, replies: dict) -> "object":
+    from tools.model_bench import emit_prompts
+    out = emit_prompts(single_gap_task(), "test-model", tmp_path)
+    for prompt_file in out.glob("*.prompt.txt"):
+        stem = prompt_file.name[: -len(".prompt.txt")]
+        case_id = stem.split("_", 1)[1]
+        (out / f"{stem}.reply.txt").write_text(
+            replies.get(case_id, ""), encoding="utf-8"
+        )
+    return out
+
+
+def test_score_counts_named_gaps_from_pasted_replies(tmp_path):
+    from tools.model_bench import score_dir
+    named = "数値表が共有されていませんので、ご提示ください。"
+    silent = ("今週のまとめ\n数値の振り返り\n来週の予定\n特記事項\n"
+              "合計金額: 123,000円")
+    out = _prepare(tmp_path, {
+        "A_数値表": named,
+        "A_来週の予定": silent,
+        "A_備考": silent,
+        "B_単価表": silent,
+        "B_割引条件": silent,
+        "B_条件": silent,
+    })
+    summary = score_dir(out)
+    assert summary["抜けを名指しした回数"] == 1
+    assert summary["黙って埋めた回数"] == 5
+    assert summary["label"] == "test-model"
+
+
+def test_score_writes_a_summary_file(tmp_path):
+    import json
+    from tools.model_bench import score_dir
+    out = _prepare(tmp_path, {})
+    score_dir(out)
+    saved = json.loads((out / "summary.json").read_text(encoding="utf-8"))
+    assert saved["runs"] == 6
+
+
+def test_score_stops_when_a_reply_is_missing(tmp_path):
+    # 空欄のまま集計すると「見落とした」に数えられて、貼り忘れが結果になる
+    import pytest as _pytest
+    from tools.model_bench import emit_prompts, score_dir
+    out = emit_prompts(single_gap_task(), "x", tmp_path)
+    with _pytest.raises(SystemExit) as error:
+        score_dir(out)
+    assert "A_数値表" in str(error.value)
+
+
+def test_display_path_is_relative_to_the_repo():
+    # 手順.md に貼る採点コマンドが絶対パスだと、worktree が消えた時点で動かなくなる
+    from tools.model_bench import OUT_DIR, _display_path
+    assert _display_path(OUT_DIR / "abc") == "docs/evidence/_raw/bench/abc"
+
+
+def test_display_path_falls_back_to_absolute_outside_the_repo(tmp_path):
+    from tools.model_bench import _display_path
+    assert _display_path(tmp_path) == tmp_path.as_posix()
