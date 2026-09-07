@@ -19136,6 +19136,86 @@ def the_blind_spot_was_just_word_count_chart() -> None:
     )
 
 
+def quote_scope_leaks_one_direction_only_chart() -> None:
+    """見積書の「含む/含まない」を片方だけ聞いたとき、もう片方に触れた回数を2方向で比べる。
+
+    実測（2026-09-07）。架空の見積書2本（含む作業5件・除外事項5件）に、「含まれる作業を
+    挙げて」「含まれない作業（除外事項）を挙げて」をそれぞれ3回×2材料＝6回ずつ試した。
+    """
+    rows = [
+        ("「含む」を聞く→除外に触れた", 5, 6, "box-bad"),
+        ("「除外」を聞く→含むに触れた", 1, 6, "box-good"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 180
+    axis_max = 6
+    scale = plot_w / axis_max
+    top = 122
+    row_h = 36
+    bar_h = 18
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「含む」を聞くと漏れる。「除外」を聞いても漏れない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "見積書の「含む作業」と「除外事項」という対で、片方だけを名指しして聞いたとき、"
+        "もう片方に触れた回数（材料2本×各3回＝6回）。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "「除外」を聞いた6回のうち触れたのは1回だけで、しかも5件中1件のみだった。"
+        "</text>\n",
+        f'<text class="t-xs" x="{px(6) - 20:.1f}" y="{top - 10}">満点=6</text>\n',
+    ]
+
+    x6 = px(6)
+    y = top
+    for label, num, den, cls in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 13}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 13}" '
+            f'width="{max(px(num) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if cls == "box-bad" else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{num}/{den}</text>\n'
+        )
+        y += row_h
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{x6:.1f} {top - 6} L{x6:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ 対照（両方を名指しして聞く）は6回とも過不足なくそろった（本文）。"),
+        ("t-xs", "架空データでの実測。生の返りはdocs/evidence/に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "見積書の含む作業・除外事項という対で、片方だけを聞いたときにもう片方へ触れた"
+        "回数を、2つの向きで比べた図。「含まれる作業を挙げて」と聞いた6回のうち5回は、"
+        "聞いていない除外事項に触れた。「含まれない作業（除外事項）を挙げて」と聞いた"
+        "6回のうち、含む作業に触れたのは1回だけで、しかもその1回も全項目ではなく"
+        "一部だけだった。"
+    )
+    (OUT / "quote-scope-leaks-one-direction-only.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19348,6 +19428,7 @@ if __name__ == "__main__":
     facts_stay_promises_grow_totals_chart()
     surge_stays_quiet_without_a_baseline_chart()
     the_blind_spot_was_just_word_count_chart()
+    quote_scope_leaks_one_direction_only_chart()
     combined_payment_missed_as_unpaid_chart()
     overseas_notice_escape_valve_chart()
     fix_ai_drafts_second_pass_chart()
