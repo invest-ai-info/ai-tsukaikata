@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-07T23:31:58.052633+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-07T22:02:55+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "バイオテクノロジー企業のInsilico Medicineは、生成AIで設計した特発性肺線維症の治療薬候補「レントセルチブ」のデータを再解析した結果を発表した。血中タンパク質から測る6種の「老化時計」すべてで、患者の生物学的年齢が最大約6歳分低下したという。老化への直接的な作用を確認するには更なる検証が必要としている。",
+      "title": "AI創薬候補、6種の「老化時計」で生物学的年齢の低下を示唆",
+      "uid": "7b883f5db5680a88",
+      "url": "https://www.itmedia.co.jp/news/article/2609/08/2000001239/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-07T23:31:58.052633+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-07T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIに仕事を手伝わせるだけでなく、仕事そのものを自動化するにはどうすればいいのか。Google Workspace Studioを使った4つの実例から、日々の業務を効率化する具体的な方法を紹介する。",
+      "title": "Googleの自動化ツール「Workspace Studio」とは？　他ツールとの違いと活用法",
+      "uid": "0dd6b45139522eb5",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/08/2000001168/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-07T23:31:58.052633+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-07T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "近年、中国の新興自動車メーカーを中心に、従来の枠組みとは異なる新たなAIアーキテクチャが台頭しつつある。それが「LBM」である。今回は、このLBMが中国の新興自動車メーカーに限定された一過性の技術潮流にとどまるのか、あるいは将来的に多くの自動車メーカーへと波及していくのかを考察してみたい。",
+      "title": "中国新興自動車メーカーが取り組むAIアーキテクチャ「LBM」は本流となるか",
+      "uid": "f00bd0774640d94b",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/08/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-07T23:31:58.052633+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-07T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIは膨大な数の化合物から薬になりそうな候補を探し、創薬にかかる時間や費用を大幅に減らす技術として期待されています。しかし、AIを使った研究成果は相次いでいるものの実際に患者へ届く薬の開発につながっているのかは判然としません。AI創薬に詳しい研究者らがこれまでのAI創薬の進展を検討しています。 続きを読む...",
+      "title": "AIによる創薬は実際どこまで進んでいるのか？",
+      "uid": "23581bc4e394581d",
+      "url": "https://gigazine.net/news/20260908-ai-drug-discovery-reality/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-07T16:29:44.983394+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "1d221b924d053007",
       "url": "https://ai.watch.impress.co.jp/docs/news/2137296.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-01T10:12:33.666975+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-01T05:29:19+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "カシオ計算機は9月1日、AIペットロボット「Moflin（モフリン）」を活用し、生徒および教員の心理状態や来室行動への影響を検証するプロジェクトを、立命館守山中学校・高等学校の保健室で2027年3月31日まで実施すると発表した。",
-      "title": "「Moflin」を立命館守山中高の保健室に導入、心理的影響検証へ",
-      "uid": "0ab4cd584fc90751",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137284.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-01T10:12:33.666975+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-01T05:28:42+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "つながりAIは、神奈川県横須賀市で提供されている生成AIを活用した傾聴相談サービス「よこすかAIフレンド AI（あい）ちゃん」について、Web版の提供を9月より開始する。",
-      "title": "横須賀市、スマホを持たない子でも傾聴相談サービス「AIちゃん」に相談可能に！ Web版の提供を9月より開始",
-      "uid": "89b4a0af62a71a2c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137270.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-01T10:12:33.666975+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-01T05:15:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「ChatGPT」に広告を表示できるようになった。OpenAIの広告事業は年換算の売上高10億ドルに達したという。“Web広告の巨人”であるGoogleに対抗できるのか。",
-      "title": "「ChatGPT」一部プランに広告表示、売上高は年1600億円ペース　「Google」「Meta」の牙城を崩せるか",
-      "uid": "5544f7d2c97b6184",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/01/news074.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-01T05:15:14.598999+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-01T05:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "電通、電通デジタル、SB Intuitionsの3社は9月1日、生成AIに日本語の広告コピーの良し悪しを判定させる研究の成果を発表した。電通のコピーライター64人が採点した11万件超の評価データを使って検証したところ、AIを学習・最適化した業種や商材では、人間による評価と一定の正の相関がみられた。一方、対象外の業種や商材では相関が低下し、汎用化には課題が残った。",
-      "title": "AIは「良い広告コピー」を見抜けるか　電通など3社、11万件超の評価データで検証",
-      "uid": "97b9900e08b79820",
-      "url": "https://japan.cnet.com/article/35252125/",
-      "vendor": "CNET Japan"
     }
   ]
 }
