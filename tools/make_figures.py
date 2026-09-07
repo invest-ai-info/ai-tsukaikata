@@ -18783,6 +18783,185 @@ def gemini38_safety_delta_chart() -> None:
     )
 
 
+def same_name_stayed_apart_main_chart() -> None:
+    """似た名前・似た文言の項目を、AIが誤って1つに畳んだ回数を、難易度別に並べる。
+
+    実測（2026-09-06）。①店舗コード×商品名（構造化ラベルあり・材料2本×3版×各2回＝
+    12回＋「手短に」版2本×各2回＝4回＝16回）と、②取引先名の名寄せ（住所という
+    決め手あり・材料2本×3版×各2回＝12回＋28行に増やしトラップを離した版2回＝14回、
+    合計30回）を①②あわせて「手がかりが十分にある」に集計。③は取引先名の名寄せで、
+    住所欄が1件だけ無い版（材料2本×各2回＝4回）。④は住所欄がまるごと無い一覧
+    （素朴2回＋言い直し2回＝4回）。数えているのは、別々に扱うべき組み合わせを
+    1つに畳んでしまった回数（真値0）。
+    """
+    rows = [
+        ("① 区別できる手がかりが全部の行にある（店舗コード・住所など）", 0, 30),
+        ("② 手がかりが一部の行だけ無い（住所不明1件を混入）", 0, 4),
+        ("③ 手がかりが全部の行で無い（住所欄そのものが無い一覧）", 0, 4),
+    ]
+    label_x = 18
+    plot_x = 400
+    plot_w = 120
+    axis_max = 3
+    scale = plot_w / axis_max
+    top = 132
+    row_h = 40
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "似た項目を1つに畳んでしまった回数は、38回を通じて0回だった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の在庫アラート・取引先請求一覧で、名前や文言は同じでも別々に扱うべき"
+        "組み合わせ（店舗違い・別会社）を仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は、その組み合わせを1つに畳んでしまった回数（真値0）。「まとめて」"
+        "と頼んでも、指示していなくても畳まれなかった。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "①は店舗コード×商品名、または取引先名×住所のように、区別できる情報が"
+        "全部の行に書かれている場合。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "②③は取引先名の名寄せで、住所という決め手が一部または全部の行に無い場合。"
+        "</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, num, den in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{px(axis_max) + 12:.1f}" y="{ty}">{num}/{den}</text>\n'
+        )
+        y += row_h
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ 帯はすべて0〜3回の目盛り。3行とも右端まで空欄のまま。"),
+        ("t-xs", "架空データでの実測（①②③あわせて材料6本・のべ38回）。生の回答は"
+                 "docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "似た名前・似た文言の項目を、AIが誤って1つに畳んでしまった回数を、"
+        "難易度別に3本の横棒で示した図。①区別できる手がかり（店舗コード・住所など）が"
+        "全部の行にある場合は、店舗コード×商品名の実験16回と取引先名×住所の実験14回を"
+        "あわせた30回のうち0回。②取引先名の名寄せで住所欄が1件だけ無い場合は4回のうち"
+        "0回。③住所欄がまるごと無い一覧でも4回のうち0回。3本とも右端まで空欄で、"
+        "38回を通じて誤って畳んだ回数は0回だった。"
+    )
+    (OUT / "same-name-stayed-apart.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def same_name_stayed_apart_granularity_chart() -> None:
+    """住所欄がまるごと無いとき、確実に区別できる会社をいくつに分けられたかを並べる。
+
+    実測（2026-09-06）。架空の請求一覧（住所欄を全行から削除。「フジタ商会」とだけ
+    書かれた2件は、本来「株式会社フジタ商会」2件・「有限会社フジタ商会」1件とは
+    別に「不明」とすべき）に、素朴な指示文を2回、「確定できるものと、本当に決め
+    られないものを分けて」と言い直した指示文を2回、独立に通した。数えているのは、
+    法人格が分かる行から確実に区別できたグループの数（正解2＝株式会社／有限会社）。
+    """
+    rows = [
+        ("素朴・1回目", 1, "box-bad"),
+        ("素朴・2回目", 2, "box-good"),
+        ("言い直し・1回目", 2, "box-good"),
+        ("言い直し・2回目", 2, "box-good"),
+    ]
+    label_x = 18
+    plot_x = 280
+    plot_w = 200
+    axis_max = 2
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "同じ素朴な指示文でも、2回に1回は分けられる部分まで「要確認」にまとめた</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の請求一覧から住所欄を削除し、「フジタ商会」とだけ書かれた2件は"
+        "どちらの法人か本当に決められない状態にした。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は、法人格が分かる行から確実に区別できたグループの数（正解2）。"
+        "1回目だけ、両方をまとめて1グループの「要確認」にした。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "「確定できるものと、本当に決められないものを分けて」と一文足すと、"
+        "2回とも正解の2グループに分かれた。</text>\n",
+        f'<text class="t-xs" x="{px(2) - 14:.1f}" y="{top - 10}">正解=2</text>\n',
+    ]
+
+    x2 = px(2)
+    y = top
+    for label, value, cls in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if cls == "box-bad" else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}グループ</text>\n'
+        )
+        y += row_h
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{x2:.1f} {top - 6} L{x2:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ 点線は正解の2グループ。素朴・1回目だけ左に届いていない。"),
+        ("t-xs", "架空データでの実測（材料1本×2版×各2回＝4回）。生の回答は"
+                 "docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "住所欄がまるごと無い請求一覧で、確実に区別できた会社のグループ数を、"
+        "4本の横棒で示した図。縦の点線は正解の2グループ（株式会社フジタ商会と"
+        "有限会社フジタ商会）。素朴な指示文の1回目だけ1グループにとどまり、"
+        "法人格が分かる行まで「フジタ商会グループ・要確認」として一緒にまとめて"
+        "しまった。素朴な指示文の2回目は2グループに正しく分かれた。"
+        "「確定できるものと、本当に決められないものを分けて」と言い直した版は"
+        "2回とも2グループに正しく分かれた。"
+    )
+    (OUT / "same-name-stayed-apart-granularity.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19020,4 +19199,6 @@ if __name__ == "__main__":
     gemini38_price_three_gens_chart()
     gemini38_vendor_top_price_chart()
     gemini38_safety_delta_chart()
+    same_name_stayed_apart_main_chart()
+    same_name_stayed_apart_granularity_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

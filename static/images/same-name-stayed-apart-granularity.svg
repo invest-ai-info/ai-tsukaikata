@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="316" viewBox="0 0 720 316" role="img" aria-label="住所欄がまるごと無い請求一覧で、確実に区別できた会社のグループ数を、4本の横棒で示した図。縦の点線は正解の2グループ（株式会社フジタ商会と有限会社フジタ商会）。素朴な指示文の1回目だけ1グループにとどまり、法人格が分かる行まで「フジタ商会グループ・要確認」として一緒にまとめてしまった。素朴な指示文の2回目は2グループに正しく分かれた。「確定できるものと、本当に決められないものを分けて」と言い直した版は2回とも2グループに正しく分かれた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="316"/>
+<text class="t-strong" x="18" y="24">同じ素朴な指示文でも、2回に1回は分けられる部分まで「要確認」にまとめた</text>
+<text class="t-sm" x="18" y="43">架空の請求一覧から住所欄を削除し、「フジタ商会」とだけ書かれた2件はどちらの法人か本当に決められない状態にした。</text>
+<text class="t-sm" x="18" y="62">縦軸は、法人格が分かる行から確実に区別できたグループの数（正解2）。1回目だけ、両方をまとめて1グループの「要確認」にした。</text>
+<text class="t-xs" x="18" y="81">「確定できるものと、本当に決められないものを分けて」と一文足すと、2回とも正解の2グループに分かれた。</text>
+<text class="t-xs" x="466.0" y="120">正解=2</text>
+<text class="t" x="18" y="144">素朴・1回目</text>
+<rect class="box-quiet" x="280.0" y="132" width="200.0" height="16" rx="3"/>
+<rect class="box-bad" x="280.0" y="132" width="100.0" height="16" rx="3"/>
+<text class="t-bad" x="492.0" y="144">1グループ</text>
+<text class="t" x="18" y="178">素朴・2回目</text>
+<rect class="box-quiet" x="280.0" y="166" width="200.0" height="16" rx="3"/>
+<rect class="box-good" x="280.0" y="166" width="200.0" height="16" rx="3"/>
+<text class="t-accent" x="492.0" y="178">2グループ</text>
+<text class="t" x="18" y="212">言い直し・1回目</text>
+<rect class="box-quiet" x="280.0" y="200" width="200.0" height="16" rx="3"/>
+<rect class="box-good" x="280.0" y="200" width="200.0" height="16" rx="3"/>
+<text class="t-accent" x="492.0" y="212">2グループ</text>
+<text class="t" x="18" y="246">言い直し・2回目</text>
+<rect class="box-quiet" x="280.0" y="234" width="200.0" height="16" rx="3"/>
+<rect class="box-good" x="280.0" y="234" width="200.0" height="16" rx="3"/>
+<text class="t-accent" x="492.0" y="246">2グループ</text>
+<path class="line" d="M480.0 124 L480.0 248" stroke-dasharray="4 3"/>
+<text class="t-sm" x="18" y="274">※ 点線は正解の2グループ。素朴・1回目だけ左に届いていない。</text>
+<text class="t-xs" x="18" y="293">架空データでの実測（材料1本×2版×各2回＝4回）。生の回答はdocs/evidence/ に全文置いてある。</text>
+</svg>
