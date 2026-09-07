@@ -299,3 +299,14 @@ def test_score_reads_replies_saved_with_a_bom(tmp_path):
     summary = score_dir(out)
     assert summary["rows"][0]["chars"] == len(body)
     assert summary["抜けを名指しした回数"] == 1
+
+
+def test_past_tense_negation_counts_as_named():
+    # 2026-09-07 実測（ChatGPT 一時チャット・1件目）＝★12 の3例目。
+    # 実物:「今週の問い合わせ件数・成約件数などの数値表は記載がなかったため、
+    # 確認できる範囲でまとめています。」——名指しなのに「なかった」が表に無く見落とし扱い。
+    # 「ない」は含むが「なかった」は部分一致しない（な-か-っ-た）
+    assert has_nearby_negation(
+        "今週の問い合わせ件数・成約件数などの数値表は記載がなかったため、"
+        "確認できる範囲でまとめています。", "数値表")
+    assert has_nearby_negation("単価表の記載が無かったため、合計は出せません。", "単価表")
