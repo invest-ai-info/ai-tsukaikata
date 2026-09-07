@@ -18962,6 +18962,95 @@ def same_name_stayed_apart_granularity_chart() -> None:
     )
 
 
+def surge_stays_quiet_without_a_baseline_chart() -> None:
+    """基準を渡すかどうかで、35件の急増を自分から報告した回数を4本の横棒で比べる。
+
+    実測（2026-09-07）。架空の「今日ぶんの一覧」35件（ふだんは1日3〜5件）を、
+    社内ヘルプデスクの問い合わせ（材料A）と通販サイトの返品申請（材料B）の
+    2種類で用意し、基準を渡さない版・「ふだんは1日3〜5件程度です」と一言足した版を
+    各3回ずつ試した。数えているのは、35件という総数の異常に自分から触れた回数
+    （満点3）。
+    """
+    rows = [
+        ("材料A・基準なし", 0, "box-bad"),
+        ("材料B・基準なし", 0, "box-bad"),
+        ("材料A・基準あり", 2, "box-good"),
+        ("材料B・基準あり", 3, "box-good"),
+    ]
+    label_x = 18
+    plot_x = 280
+    plot_w = 200
+    axis_max = 3
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "基準を渡さなければ0対6。渡すと5対6まで上がる</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の「今日ぶんの一覧」35件（ふだんは1日3〜5件）を2種類用意し、"
+        "同じ集計の指示文を各3回試した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は、35件という総数の異常に自分から触れた回数（満点3）。"
+        "「ふだんは1日3〜5件程度です」の一言があるかどうかだけが違う。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "基準ありの材料Aは1回だけ、渡された基準に一言も触れなかった。"
+        "件数そのものを減らして返した回は12回とも0回。</text>\n",
+        f'<text class="t-xs" x="{px(3) - 14:.1f}" y="{top - 10}">満点=3</text>\n',
+    ]
+
+    x3 = px(3)
+    y = top
+    for label, value, cls in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if cls == "box-bad" else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/3</text>\n'
+        )
+        y += row_h
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{x3:.1f} {top - 6} L{x3:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ 点線は満点の3。基準なしの2本だけが左端のままである。"),
+        ("t-xs", "架空データでの実測（材料2本×2版×各3回＝12回）。生の返りは"
+                 "docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "ふだんの目安を渡すかどうかで、35件の急増を自分から報告した回数を"
+        "4本の横棒で比べた図。縦軸は3件満点。材料A（ヘルプデスク）は基準なしが"
+        "0/3、基準ありが2/3。材料B（返品申請）は基準なしが0/3、基準ありが3/3。"
+        "2材料を合わせると、基準なしは6回中0回、基準ありは6回中5回が"
+        "「通常の7〜10倍」のように自分から報告した。"
+    )
+    (OUT / "surge-stays-quiet-without-a-baseline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19172,6 +19261,7 @@ if __name__ == "__main__":
     fable51_bench_chart()
     facts_stay_promises_grow_grid_chart()
     facts_stay_promises_grow_totals_chart()
+    surge_stays_quiet_without_a_baseline_chart()
     combined_payment_missed_as_unpaid_chart()
     overseas_notice_escape_valve_chart()
     fix_ai_drafts_second_pass_chart()
