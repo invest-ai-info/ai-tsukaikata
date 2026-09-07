@@ -4129,20 +4129,6 @@
       "uid": "2e8141af925bcb75",
       "url": "https://note.com/elyza/n/ne01109db3704",
       "vendor": "ELYZA"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-09T17:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Our next generation of intelligence for the hardest knowledge work and coding problems.",
-      "summary_ja": "新しいAIモデル「Claude Fable 5」と\n「Claude Mythos 5」が登場。\n難しい知識作業やプログラミングの問題に対応。",
-      "summary_source": "gemini",
-      "title": "Claude Fable 5 and Claude Mythos 5",
-      "uid": "16200bdc6dfde3ee",
-      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-      "vendor": "Anthropic"
     }
   ]
 }
