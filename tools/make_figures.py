@@ -19051,6 +19051,91 @@ def surge_stays_quiet_without_a_baseline_chart() -> None:
     )
 
 
+def the_blind_spot_was_just_word_count_chart() -> None:
+    """「差を出してください」という開いた質問で、真の判別要因を数えて検出した割合を比べる。
+
+    実測（2026-09-07）。既存記事`too-few-records-no-trend`（真の要因=字数）は4回中0回。
+    本記事の材料1（真の要因=送信までの日数）は5回中5回、材料2（真の要因=入札額の相場比）
+    は5回中5回、いずれも数値を1件ずつ書き出して正しく検出した。
+    """
+    rows = [
+        ("既存記事：字数が要因", 0, 4, "box-bad"),
+        ("材料1：日数が要因", 5, 5, "box-good"),
+        ("材料2：価格比が要因", 5, 5, "box-good"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 180
+    axis_max = 100
+    scale = plot_w / axis_max
+    top = 122
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "要因が字数のときだけ0点。日数と価格比は満点だった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        '「通った提案と通らなかった提案の差を出してください」という同じ開いた質問で、'
+        "真の判別要因を数えて検出できた割合。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "既存記事は字数が真の要因だった回、材料1・2は今回、日数・価格比に差し替えた回。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "字数だけを名指しして聞き直すと、字数についても2/2が数えてから否定した"
+        "（本文の指示文4）。</text>\n",
+        f'<text class="t-xs" x="{px(100) - 20:.1f}" y="{top - 10}">満点</text>\n',
+    ]
+
+    x100 = px(100)
+    y = top
+    for label, num, den, cls in rows:
+        ty = y + 14
+        pct = 100 * num / den
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(pct) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if cls == "box-bad" else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{num}/{den}</text>\n'
+        )
+        y += row_h
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{x100:.1f} {top - 6} L{x100:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        ("t-sm", "※ 点線は満点（100%）。既存記事だけが左端のままである。"),
+        ("t-xs", "架空データでの実測。生の返りはdocs/evidence/に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 19
+
+    height = y + 4
+    alt = (
+        "同じ「差を出してください」という開いた質問で、真の判別要因を検出し数値の根拠まで"
+        "示した割合を、既存記事の字数と今回の日数・価格比で比べた図。既存記事（字数が真の"
+        "要因）は4回中0回しか数えて検出できなかった。今回の日数（材料1）は5回中5回、"
+        "価格比（材料2）は5回中5回、いずれも数値を1件ずつ書き出して正しく検出した。"
+    )
+    (OUT / "the-blind-spot-was-just-word-count.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19262,6 +19347,7 @@ if __name__ == "__main__":
     facts_stay_promises_grow_grid_chart()
     facts_stay_promises_grow_totals_chart()
     surge_stays_quiet_without_a_baseline_chart()
+    the_blind_spot_was_just_word_count_chart()
     combined_payment_missed_as_unpaid_chart()
     overseas_notice_escape_valve_chart()
     fix_ai_drafts_second_pass_chart()
