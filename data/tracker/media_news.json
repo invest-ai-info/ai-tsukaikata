@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-07T16:29:44.983394+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-07T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIは人間には処理しきれない大量のデータを分析するのが得意なため、さまざまな科学研究に役立てられています。近年ではAIを使って録音された動物の鳴き声を処理し、動物とのコミュニケーションを実現しようとする試みが進んでいますが、この研究分野にAIを持ち込むことが倫理的懸念を引き起こしていると、海外メディアのBloombergが報じています。 続きを読む...",
+      "title": "「動物と人間のコミュニケーション」を実現するためにAIを使うことで動物を搾取したり傷つけたりする危険があるとの指摘",
+      "uid": "fb51f2bbe82c4cfa",
+      "url": "https://gigazine.net/news/20260907-ai-ethical-dilemma-talk-to-animals/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-07T16:29:44.983394+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-07T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIモデルの性能を独自に評価しているArtificial Analysisが、OpenAIの「GPT-6 Astra」のベンチマーク結果を公開しました。コーディングエージェントとしての性能を測る「Artificial Analysis Coding Agent Index」でGPT-6 Astraは67点を記録し、Claude Opus 5やFable 5、Muse Spark 1.3とほぼ同等…",
+      "title": "GPT-6 AstraがAIコーディング性能でトップ級の67点、圧倒的なトークン効率を示すもFable 5.1には届かず",
+      "uid": "f150a1e7a26e9c3d",
+      "url": "https://gigazine.net/news/20260907-artificial-analysis-gpt-6-astra/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-07T16:29:44.983394+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-07T10:28:57+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "山口県とKDDIは9月2日、地域課題の解決および持続可能な地域社会の実現を目的とした包括連携協定を締結した。",
+      "title": "山口県とKDDI、山口衛星通信所を活用し地域課題解決へ",
+      "uid": "8ed51211c7aa4340",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2138890.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-09-07T10:24:07.119095+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "97b9900e08b79820",
       "url": "https://japan.cnet.com/article/35252125/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-01T05:15:14.598999+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-01T05:07:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIの急速な発展に伴い、ユーザーからの質問に回答するAIチャットボットや、生成AIによる自動音声サポートを導入する企業が増えています。そんな中、人間がAIとのやり取りを重ねるにつれて、「まるでロボットのように振る舞い始めてしまう可能性がある」と研究者らが指摘しました。 続きを読む...",
-      "title": "AIとやり取りし続けると人間が「ロボットのように」振る舞い始めてしまう可能性",
-      "uid": "a9dcec6ad0f40215",
-      "url": "https://gigazine.net/news/20260901-interacting-ai-people-act-like-robots/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-01T05:15:14.598999+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-01T04:22:06+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SEQSENSEは、自律移動型警備ロボット「SQ-2（エスキューツー）」に新たなAI機能「変化検知機能」を正式リリースした。",
-      "title": "放置物や異常を自動検知する新AI機能「変化検知機能」 自律移動型警備ロボット「SQ-2」に追加",
-      "uid": "93329cf9a304777e",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137250.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-01T05:15:14.598999+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-01T03:23:06+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "モスフードサービスは、店舗の空調機器をAIで制御する実証実験を行なうなど、イートイン体験の進化を目指す、郊外立地の次世代型店舗として、「モスバーガー 八潮店」を9月3日に埼玉県八潮市にオープンする。",
-      "title": "「モスバーガー 八潮店」郊外の新型店舗で“AIドライブスルー”など実証実験を展開",
-      "uid": "40d59d408d17fe45",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137223.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

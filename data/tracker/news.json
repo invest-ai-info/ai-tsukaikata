@@ -4143,44 +4143,6 @@
       "uid": "16200bdc6dfde3ee",
       "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-06-09T15:16:25+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Gemini 3.5 Live Translate brings near real-time, natural speech translation to Google AI Studio, Google Translate and Google Meet.",
-      "summary_ja": "Gemini 3.5 Live Translateで\n自然な音声翻訳が可能に。\nGoogle AI Studioなどでほぼリアルタイム翻訳を提供。",
-      "summary_source": "gemini",
-      "title": "Fluid, natural voice translation with Gemini 3.5 Live Translate",
-      "uid": "305c5fc17130f11f",
-      "url": "https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-06-09T14:10:19+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Introducing Gemma 4 12B: a unified, encoder-free multimodal model",
-      "uid": "ef57589bf3600a88",
-      "url": "https://deepmind.google/blog/introducing-gemma-4-12b-a-unified-encoder-free-multimodal-model/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-06-09T14:02:33+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Powering the future of robotics in Europe",
-      "uid": "fb635ba6fad696ed",
-      "url": "https://deepmind.google/blog/powering-the-future-of-robotics-in-europe/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
