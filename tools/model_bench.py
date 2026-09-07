@@ -351,7 +351,9 @@ def score_dir(out_dir: Path) -> dict:
         if not path.exists():
             absent.append(f"{stem}.reply.txt")
             continue
-        body = path.read_text(encoding="utf-8")
+        # utf-8-sig で読む＝Windows の Set-Content -Encoding utf8 が付ける
+        # BOM を落とす。付いたまま数えると字数がずれる
+        body = path.read_text(encoding="utf-8-sig")
         rows.append({"case": case.case_id, "missing": case.missing,
                      "chars": len(body), **judge(case, body)})
     if absent:

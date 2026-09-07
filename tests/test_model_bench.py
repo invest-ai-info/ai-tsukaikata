@@ -284,3 +284,18 @@ def test_display_path_is_relative_to_the_repo():
 def test_display_path_falls_back_to_absolute_outside_the_repo(tmp_path):
     from tools.model_bench import _display_path
     assert _display_path(tmp_path) == tmp_path.as_posix()
+
+
+def test_score_reads_replies_saved_with_a_bom(tmp_path):
+    # Windows の Set-Content -Encoding utf8 は BOM 付きで書く。
+    # 先頭に \ufeff が残ったまま数えると、字数がずれるし判定も当てにならない
+    from tools.model_bench import emit_prompts, score_dir
+    out = emit_prompts(single_gap_task(), "bom", tmp_path)
+    body = "数値表が共有されていませんので、ご提示ください。"
+    for index, case in enumerate(single_gap_task().cases, start=1):
+        (out / f"{index}_{case.case_id}.reply.txt").write_text(
+            body, encoding="utf-8-sig"
+        )
+    summary = score_dir(out)
+    assert summary["rows"][0]["chars"] == len(body)
+    assert summary["抜けを名指しした回数"] == 1
