@@ -496,8 +496,24 @@
   - ⚠️ Cyber版のモデルカードは404で存在せず、料金ページにも掲載が無い（Fairwind Program
     経由の限定提供のみ・一般には使えない）ことを実際にURLを叩いて確認した
 
-- [ ] https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
-  - 2026-09-03 自動追記（major・Google DeepMind「Introducing WeatherNext 3, our most advanced and accurate global weather AI model」）
+- [x] https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
+  - →保管: ✅ **2026-09-07: 公開した** → `content/tools/weathernext-3.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`weathernext3-resolution-grid` /
+    `weathernext3-precip-gain` / `weathernext3-vs-aurora`）。出典6件すべて取得成功。
+    `check_numbers.py` は照合できる数字7個すべてが出典に存在。pytest 655 passed・build 163ファイル）
+  - 📌 記事の芯＝**「全体でおよそ5倍鮮明」の中身は変数によって差がある**。気温・水分は25km→5km、
+    その他の地表変数は25km→10kmに上がった一方、大気の変数（上空の風速など）は前の世代と
+    同じ25kmのまま。降水精度の改善幅もIMERG比60%・MRMS比30%・雨量計比10%とバラバラ
+  - ⚠️ 他社比較はAnthropic・OpenAIに気象AI製品が無いため、同時期（2026-07-09）に大型更新を
+    発表したMicrosoftの「Aurora 1.5」を選んだ。更新頻度（両方1時間ごと）と予測手法
+    （両方アンサンブル・確率的）は同じ方向だが、公開の形（Googleは製品統合・Microsoftは
+    オープンソース）は正反対。自社発表の比較指標（CRPS改善率 vs ECMWF ENSに対する勝率）は
+    測り方が違うため1本の数字では比較できないと明記した
+  - ⚠️ Aurora 1.5の空間解像度は発表ブログに具体的な数値の記載が無かったため、2024年の
+    旧Aurora（0.1度・約11km）の数値とWeatherNext 3を直接比べることはしなかった
+  - 🚨 独立評価機関「Brightband」（`brightband.com`）と Google の実験公開プラットフォーム
+    「Weather Lab」（`weatherlab.deepmind.google`）は**経路遮断**（`CONNECT tunnel failed`）で
+    到達できず。次にこれらのドメインを叩く行が来たら再試行対象にすること
 
 ## 処理済み
 

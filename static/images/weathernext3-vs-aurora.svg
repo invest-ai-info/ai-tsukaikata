@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="Google の WeatherNext 3（2026年9月3日発表）と Microsoft の Aurora 1.5（2026年7月9日発表）を、公式発表に書かれている型で並べた表。発表日・更新頻度（両方とも1時間ごと。Auroraは1.5で新規追加）・予測の出し方（両方ともアンサンブル・確率的で、Auroraは1.5で新規追加）・公開の形（Googleは自社製品への統合とクラウドでの提供、Microsoftはオープンソース）・自社発表の比較指標（GoogleはIMERGとの比較でCRPS最大60%改善、MicrosoftはECMWF ENSを88.9%の項目で上回る）を比べている。比較指標は測り方が別で、1本の数字としては比べられない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">GoogleとMicrosoftの気象AI、どちらも「1時間ごと」「確率的」に来た</text>
+<text class="t-sm" x="18" y="45">WeatherNext 3（2026年9月3日発表）とAurora 1.5（2026年7月9日発表）を、公式発表に書かれている型で並べた。</text>
+<text class="t-sm" x="18" y="64">比較の物差し（CRPSの改善率と、ECMWFに対する勝敗の割合）は測り方が別で、1本の数字としては比べられない。</text>
+<text class="t-sm" x="18" y="83">両社とも料金は自社サービスの通常課金に従うとしか書かれておらず、専用の価格表は無い。</text>
+<text class="t-accent" x="198.0" y="124">WeatherNext 3（Google）</text>
+<text class="t-accent" x="457.0" y="124">Aurora 1.5（Microsoft）</text>
+<text class="t-sm" x="18" y="157">発表日</text>
+<rect class="box-accent" x="190.0" y="138" width="253.0" height="28" rx="4"/>
+<text class="t-accent" x="198.0" y="157">2026年9月3日</text>
+<rect class="box-quiet" x="449.0" y="138" width="253.0" height="28" rx="4"/>
+<text class="t-sm" x="457.0" y="157">2026年7月9日</text>
+<text class="t-sm" x="18" y="195">更新頻度</text>
+<rect class="box-accent" x="190.0" y="176" width="253.0" height="28" rx="4"/>
+<text class="t-accent" x="198.0" y="195">1時間ごと</text>
+<rect class="box-quiet" x="449.0" y="176" width="253.0" height="28" rx="4"/>
+<text class="t-sm" x="457.0" y="195">1時間ごと（新規追加）</text>
+<text class="t-sm" x="18" y="233">予測の出し方</text>
+<rect class="box-accent" x="190.0" y="214" width="253.0" height="28" rx="4"/>
+<text class="t-accent" x="198.0" y="233">アンサンブル（確率的）</text>
+<rect class="box-quiet" x="449.0" y="214" width="253.0" height="28" rx="4"/>
+<text class="t-sm" x="457.0" y="233">アンサンブル（確率的・新規追加）</text>
+<text class="t-sm" x="18" y="271">公開の形</text>
+<rect class="box-accent" x="190.0" y="252" width="253.0" height="28" rx="4"/>
+<text class="t-accent" x="198.0" y="271">自社製品に統合＋クラウドで提供</text>
+<rect class="box-quiet" x="449.0" y="252" width="253.0" height="28" rx="4"/>
+<text class="t-sm" x="457.0" y="271">オープンソース（GitHub・HF）</text>
+<text class="t-sm" x="18" y="309">自社発表の比較指標</text>
+<rect class="box-accent" x="190.0" y="290" width="253.0" height="28" rx="4"/>
+<text class="t-accent" x="198.0" y="309">IMERG比でCRPS最大60%改善</text>
+<rect class="box-quiet" x="449.0" y="290" width="253.0" height="28" rx="4"/>
+<text class="t-sm" x="457.0" y="309">ECMWF ENS比88.9%の項目で上回る</text>
+<text class="t-xs" x="18" y="348">※ 「新規追加」は、前のバージョンには無かった機能であることを示す（発表ページに明記）。</text>
+</svg>

@@ -19216,6 +19216,195 @@ def quote_scope_leaks_one_direction_only_chart() -> None:
     )
 
 
+def weathernext3_resolution_grid_chart() -> None:
+    """WeatherNext 3の解像度・更新頻度を、前の世代と比べる。
+
+    出典＝Google の発表ページ（blog.google/.../introducing-weathernext-3）。
+    「全体で前の世代よりおよそ5倍鮮明」という説明の中身を分解すると、
+    気温・水分は25kmから5km、その他の地表変数は25kmから10kmに上がった一方、
+    大気の変数（上空の風速など）は前の世代と同じ25kmのまま、と書かれている。
+    """
+    rows = [
+        ("気温・水分（地表）", "25km", "5km", True),
+        ("その他の地表変数（風など）", "25km", "10km", True),
+        ("大気の変数（上空の風速など）", "25km", "25km（変わらず）", False),
+        ("更新頻度", "6時間ごと", "1時間ごと", True),
+    ]
+    col_label, col_a, col_b = 18, 380, 540
+    head_y = 96
+    row_top = head_y + 30
+    pitch = 32
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「5倍鮮明」の中身は変数によって違う。大気の変数は25kmのまま</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Googleは「全体で前の世代のおよそ5倍鮮明」と説明しているが、上がったのは"
+        "気温・水分と地表変数だけ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上空の風速などの「大気の変数」は、前の世代WeatherNext 2と同じ25kmのまま。</text>\n",
+        f'<text class="t-xs" x="{col_label}" y="{head_y}">項目</text>\n',
+        f'<text class="t-xs" x="{col_a}" y="{head_y}">WeatherNext 2</text>\n',
+        f'<text class="t-xs" x="{col_b}" y="{head_y}">WeatherNext 3</text>\n',
+    ]
+    for index, (name, old, new, improved) in enumerate(rows):
+        y = row_top + index * pitch
+        parts.append(f'<text class="t" x="{col_label}" y="{y}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{col_a}" y="{y}">{_esc(old)}</text>\n')
+        cls = "t-good" if improved else "t-bad"
+        parts.append(f'<text class="{cls}" x="{col_b}" y="{y}">{_esc(new)}</text>\n')
+
+    height = row_top + len(rows) * pitch + 60
+    notes = [
+        "※ 数値はGoogleの発表ページに書かれている値。「5倍」は全体をならした値で、変数ごとの倍率ではない。",
+        "※ WeatherNext 2は25kmグリッド・6時間ごとの更新だったと発表ページに明記されている。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 40 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    alt = (
+        "WeatherNext 2とWeatherNext 3の解像度・更新頻度を比べた表。気温・水分（地表）は"
+        "25kmから5kmへ、その他の地表変数（風など）は25kmから10kmへ改善した。いっぽう"
+        "大気の変数（上空の風速など）は25kmのままで変わっていない。更新頻度は6時間ごとから"
+        "1時間ごとになった。Googleは「全体でおよそ5倍鮮明」と説明しているが、内訳を見ると"
+        "変数によって改善の度合いが違う。"
+    )
+    (OUT / "weathernext3-resolution-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def weathernext3_precip_gain_chart() -> None:
+    """雨・雪の予報精度が、比較対象によってどれだけ上がったか。
+
+    出典＝Google の発表ページ（blog.google/.../introducing-weathernext-3）。
+    「中期予報でCRPS（正解との近さを測る指標）が、IMERGに対して最大60%・MRMSに対して
+    最大30%・雨量計の観測に対して最大10%改善」という文をそのまま並べた。
+    """
+    rows = [
+        ("衛星観測（IMERG）との比較", 60, "bar-new", "最大60%改善"),
+        ("レーダー観測網（MRMS）との比較", 30, "bar-in", "最大30%改善"),
+        ("雨量計の観測との比較", 10, "bar-old", "最大10%改善"),
+    ]
+    left, right = 280, 650
+    span = right - left
+    scale = span / 100.0
+    top, bar_h, row_gap = 96, 24, 16
+    pitch = bar_h + row_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "降水の予報精度は、何と比べるかで改善幅が違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Googleが発表ページで挙げた、中期予報でのCRPS（正解との近さを測る指標）の"
+        "改善幅。比較対象によって60%・30%・10%と差がある。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "早い予報時間（early lead times）での値で、いずれも「最大」の数字。</text>\n",
+    ]
+    for index, (name, value, cls, label) in enumerate(rows):
+        y = top + index * pitch
+        bw = value * scale
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 6}">{_esc(label)}</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 60
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 40}">'
+        "※ CRPSは値が小さいほど正確という指標。「改善」はCRPSが小さくなったという意味です。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 20}">'
+        "※ 3つの数字は同じ地域・同じ予報時間で同時に出た値とは限りません。</text>\n"
+    )
+    alt = (
+        "WeatherNext 3の降水予報の精度改善を、比較対象別に示した横棒グラフ。"
+        "衛星観測（IMERG）との比較では最大60%改善、レーダー観測網（MRMS）との比較では"
+        "最大30%改善、雨量計の観測との比較では最大10%改善。いずれも中期予報の早い予報時間での"
+        "CRPS（正解との近さを測る指標）の改善幅で、Google発表の「最大」の値。"
+    )
+    (OUT / "weathernext3-precip-gain.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def weathernext3_vs_aurora_chart() -> None:
+    """Google WeatherNext 3とMicrosoft Aurora 1.5を、公表されている型で並べる。
+
+    出典＝Google の発表ページ（blog.google/.../introducing-weathernext-3）と
+    Microsoft Research のブログ（Aurora 1.5・2026-07-09）。
+    テスト内容も基準もそれぞれ別なので、比較指標の数字を1本の軸には並べていない。
+    """
+    rows = [
+        ("発表日", "2026年9月3日", "2026年7月9日"),
+        ("更新頻度", "1時間ごと", "1時間ごと（新規追加）"),
+        ("予測の出し方", "アンサンブル（確率的）", "アンサンブル（確率的・新規追加）"),
+        ("公開の形", "自社製品に統合＋クラウドで提供", "オープンソース（GitHub・HF）"),
+        ("自社発表の比較指標", "IMERG比でCRPS最大60%改善", "ECMWF ENS比88.9%の項目で上回る"),
+    ]
+    label_w = 172
+    col_gap = 6
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(2)]
+    top = 138
+    pitch, box_h = 38, 28
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GoogleとMicrosoftの気象AI、どちらも「1時間ごと」「確率的」に来た</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "WeatherNext 3（2026年9月3日発表）とAurora 1.5（2026年7月9日発表）を、"
+        "公式発表に書かれている型で並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "比較の物差し（CRPSの改善率と、ECMWFに対する勝敗の割合）は測り方が別で、"
+        "1本の数字としては比べられない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "両社とも料金は自社サービスの通常課金に従うとしか書かれておらず、専用の価格表は無い。</text>\n",
+    ]
+    headers = ["WeatherNext 3（Google）", "Aurora 1.5（Microsoft）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, a, b in rows:
+        ty = y + 19
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for i, val in enumerate((a, b)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else "box-quiet"
+            tcls = "t-accent" if i == 0 else "t-sm"
+            parts.append(
+                f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            parts.append(f'<text class="{tcls}" x="{x + 8:.1f}" y="{ty}">{_esc(val)}</text>\n')
+        y += pitch
+
+    height = y + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 20}">'
+        "※ 「新規追加」は、前のバージョンには無かった機能であることを示す（発表ページに明記）。</text>\n"
+    )
+    alt = (
+        "Google の WeatherNext 3（2026年9月3日発表）と Microsoft の Aurora 1.5"
+        "（2026年7月9日発表）を、公式発表に書かれている型で並べた表。発表日・更新頻度"
+        "（両方とも1時間ごと。Auroraは1.5で新規追加）・予測の出し方（両方ともアンサンブル・"
+        "確率的で、Auroraは1.5で新規追加）・公開の形（Googleは自社製品への統合とクラウドでの"
+        "提供、Microsoftはオープンソース）・自社発表の比較指標（GoogleはIMERGとの比較で"
+        "CRPS最大60%改善、MicrosoftはECMWF ENSを88.9%の項目で上回る）を比べている。"
+        "比較指標は測り方が別で、1本の数字としては比べられない。"
+    )
+    (OUT / "weathernext3-vs-aurora.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19458,4 +19647,7 @@ if __name__ == "__main__":
     gemini38_safety_delta_chart()
     same_name_stayed_apart_main_chart()
     same_name_stayed_apart_granularity_chart()
+    weathernext3_resolution_grid_chart()
+    weathernext3_precip_gain_chart()
+    weathernext3_vs_aurora_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
