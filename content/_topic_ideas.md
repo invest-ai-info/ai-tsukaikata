@@ -1290,6 +1290,35 @@ WebFetch は `www.maruzenjunkudo.co.jp`・`www.hanmoto.com`・`qiita.com` の3�
     `convert-dates-keep-comparison-words.md`）のみ
   - 追記後の内訳＝総数22件（🔁自動化枠2件・副業5件・補充08-13床割れ6件・もとから5件・
     セキュリティ2件・詐欺1件・定説を実測する1件）
+- 2026-09-08 総数20件（目安の20と同数。手順1.5どおりなら本来スキップ）で、🔁自動化枠を
+  `- [ ] 🔁` で数えると**1件**（9/6:2→9/7補充2件→今日1、`zero-alarm-needs-a-holiday-list`が
+  9/7〜9/8の間に公開され1件消費とみられる）。9/1・9/2・9/4・9/5・9/7の申し送りに従い、
+  手順1.5の例外として自動化枠だけを源①（既存記事の発展）で補充した。サブエージェント出力2件を
+  担当が全根拠grep実測で再検算し、両方採用。⚠️ 源②③④は今日は回していない（総数十分・自動化枠
+  のみの補充のため）。
+  - 採用①「連休明けの数日分、日別集計は何日にまとめて乗るか」＝08-21に一度「連休明けの溜まりを
+    1日分と混同しないか」として見送られた案の再挑戦。前回の見送り理由は「個別行の日付欄が
+    『本日』に丸められる崩れは目視で気づきやすい」で、今回は測る対象を**個別行の表示ではなく、
+    あとから週次・月次の比較に流れ込む集計値そのものが化けるか**に絞り直した。
+    `resume-from-last-not-clock-time.md`・`manual-catchup-without-writeback.md`とも「発生日」
+    「複数日」「営業日」が0件であることを担当がgrep実測で確認。`month-boundary-double-count.md`
+    は月単位の帰属ずれで、今回は日単位の配分という点でスケールが異なる
+  - 採用②「記録のIDが少しずれていると、既読判定はすり抜けるか」＝`resume-from-last-not-clock-time.md`
+    ３部作（`resume-from-last-not-clock-time`／`manual-catchup-without-writeback`）の隣に置く、
+    カーソルの値そのものの表記ゆれ（全角半角・大文字小文字・ゼロ埋め・末尾空白）が既読照合を
+    すり抜けるかという新しい軸。両記事とも「全角」「半角」「大文字」「小文字」「ゼロ埋め」が
+    0件であることを担当がgrep実測で確認。`count-the-material-every-run.md:229`の「AIがタブを
+    全角空白に置き換える」現象とは、AI自身の出力書き換えか既読照合の精度かという点で別の論点
+  - 見送りなし（サブエージェントは2件のみ返し、3件目相当は`_recipe_queue.md:391`の表計算セル
+    整形案とscene違いで重複するとして自ら除外していた）
+  - 使った源: ①（general-purpose agent 1体・`_recipe_queue.md`自動化節739〜1346行全体＋
+    `content/recipes/`の自動化・監視・ループ系記事を確認。担当が全根拠をgrep実測で再検算＝
+    `resume-from-last-not-clock-time.md`・`manual-catchup-without-writeback.md`・
+    `weekly-report-loop-without-drift.md`・`daily-append-same-shape.md`・
+    `inbox-loop-new-since-yesterday.md`・`month-boundary-double-count.md`・
+    `queue-done-marks-that-survive.md`・`count-the-material-every-run.md`）のみ
+  - 追記後の内訳＝総数22件（🔁自動化枠3件・副業4件・補充08-13床割れ6件・もとから5件・
+    セキュリティ2件・詐欺1件・定説を実測する1件）
 
 ---
 
