@@ -14,8 +14,8 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 65,
-      "last_error": "HTTPError: HTTP Error 404: Not Found"
+      "count": 66,
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   },
   "latest": {
@@ -72,6 +72,28 @@
       "uid": "21f09c755466587c",
       "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
       "vendor": "Google DeepMind"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-08T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "uid": "0db8b8342702ee04",
+      "url": "https://openai.com/index/navier-stokes-solution",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-08T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Apply now for OpenAI’s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety.",
+      "title": "Funding grants for new research into AI and teen development",
+      "uid": "18cd18ae1fabb4c9",
+      "url": "https://openai.com/index/teen-development-research-grants",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -185,6 +207,7 @@
     "0d6be78e303c0b17": "2026-08-17T07:18:13.464827+00:00",
     "0d867d7880e0011a": "2026-09-05T01:00:47.840577+00:00",
     "0d90ae269c044a48": "2026-08-01T12:16:42.309603+00:00",
+    "0db8b8342702ee04": "2026-09-08T18:43:51.366032+00:00",
     "0dc37b5cf66459a3": "2026-08-28T05:26:34.338455+00:00",
     "0dcb3f36a045a787": "2026-09-07T04:47:57.358551+00:00",
     "0dd6b45139522eb5": "2026-09-07T23:31:58.052633+00:00",
@@ -265,6 +288,7 @@
     "181cc8f5f1a8c9d1": "2026-08-01T12:16:42.309603+00:00",
     "1822b58d1b193cc0": "2026-08-25T04:04:08.570654+00:00",
     "189e904d99f4d921": "2026-08-22T03:09:39.722320+00:00",
+    "18cd18ae1fabb4c9": "2026-09-08T18:43:51.366032+00:00",
     "18ce57d944095c92": "2026-09-01T10:12:33.666975+00:00",
     "18e45127a9994d22": "2026-08-01T12:16:42.309603+00:00",
     "193a3501d6f826e2": "2026-08-26T09:04:44.593909+00:00",
@@ -805,6 +829,7 @@
     "5e3d57c35c0004bc": "2026-09-03T05:51:49.745761+00:00",
     "5e48a4b4959af2e0": "2026-08-13T12:01:33.145239+00:00",
     "5ec103ea690ae68a": "2026-08-01T12:16:42.309603+00:00",
+    "5f0843ef8135739c": "2026-09-08T18:43:51.366032+00:00",
     "5f54c97bc158def1": "2026-08-27T20:33:26.631798+00:00",
     "5f7edc200f877ab5": "2026-09-04T05:57:33.223134+00:00",
     "5f8682ad5327b967": "2026-08-22T23:37:45.558876+00:00",
