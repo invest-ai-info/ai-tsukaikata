@@ -19607,6 +19607,80 @@ def long_conversation_keeps_rules_chart() -> None:
     )
 
 
+def long_report_checkable_facts_chart() -> None:
+    """位置（冒頭/中央/末尾）別の検出率と、照合できない単発の数字だけが見落とされたことを示す。
+
+    実測（2026-09-08）。架空の月次業務報告書2,624字・イベント運営報告書2,345字に、
+    冒頭/中央/末尾へ照合可能な仕込みを2個ずつ計6個（2材料×5回＝60回判定）。
+    どのゾーンも検出率100%。一方、原稿内に照合できる手がかりが無い単発の数字
+    （会場面積の書き換え）は、中央ゾーンに置いても5回中0回だった。
+    """
+    rows = [("冒頭", 20, 20), ("中央", 20, 20), ("末尾", 20, 20)]
+    left, right = 140, 560
+    span = right - left
+    top, bar_h, gap = 108, 34, 22
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "位置による差は無かった。見落としたのは「照合できない数字」だけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の業務報告書2本（2,624字・2,345字）に、原稿内で照合できる仕込みを冒頭・中央・末尾へ"
+        "2個ずつ計6個。2材料×5回＝60回判定。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「検品してください」と素朴に頼んだだけで、位置による見落としの差は出なかった。</text>\n",
+    ]
+    for index, (label, hit, total) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 10}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="box-good" x="{left}" y="{y}" '
+            f'width="{span:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{right + 10}" y="{y + bar_h - 10}">'
+            f"{hit}/{total}（100%）</text>\n"
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 92
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 22}">'
+        "対照：中央ゾーンに置いた「照合できない単発の数字」（会場面積480→460平方メートル）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 42}">'
+        "検出 0／5件（0%）——原稿の他の記述と足し算・引き算しても、正誤を判定する手がかりが無い</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 64}">'
+        "同じ中央ゾーンでも、照合できる数字（スタッフ18→17名。12+6=18と食い違う）に差し替えると5／5で検出された。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 82}">'
+        "見落としを決めているのは位置ではなく、原稿の中に答え合わせできる手がかりがあるかどうか。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "架空の業務報告書2本（月次業務報告書2,624字・イベント運営報告書2,345字）に、"
+        "原稿内で照合できる仕込みを冒頭・中央・末尾へ2個ずつ計6個仕込み、2材料×5回＝60回判定した結果を示す図。"
+        "冒頭20/20（100%）、中央20/20（100%）、末尾20/20（100%）で、位置による検出率の差は無かった。"
+        "一方、対照として中央ゾーンに置いた「照合できない単発の数字」（会場面積480→460平方メートルへの書き換え）は"
+        "検出0/5（0%）で、原稿の他の記述と照合する手がかりが無いため見落とされた。"
+        "同じ中央ゾーンでも、照合できる数字（スタッフ人数18→17名、12+6=18と食い違う）に差し替えると5/5で検出された。"
+        "見落としを決めているのは仕込んだ位置ではなく、原稿の中に答え合わせできる手がかりがあるかどうかだった。"
+    )
+    (OUT / "long-report-checkable-facts-survive-position.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19854,4 +19928,5 @@ if __name__ == "__main__":
     weathernext3_vs_aurora_chart()
     holiday_alarm_matrix_chart()
     long_conversation_keeps_rules_chart()
+    long_report_checkable_facts_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
