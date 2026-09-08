@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-08T14:36:06.739205+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-08T13:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Adobeは9月8日、「Adobe Premiere」「Adobe After Effects」にタイムライン上で直接コンテンツを生成および調整するAI機能を導入したと発表した。これにあわせて、Adobe Premiereが2026年の「テクノロジー&エンジニアリング・エミー賞」に選出されたことも公表された。",
+      "title": "「Adobe Premiere」「Adobe After Effects」に新AI機能導入 タイムライン上で直接コンテンツを生成・調整可能に",
+      "uid": "5594cea158c3cb92",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2139234.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-08T14:36:06.739205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T11:43:34+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "鹿児島県指宿市のマラソン大会を告知するポスターに、「生成AIで描かれているようだ」などの指摘が相次ぎ、同事務局が9月8日に声明を発表した",
+      "title": "マラソン大会のポスターが“AIっぽい”と波紋　「説明に不適切な部分があった」と事務局声明",
+      "uid": "439eac2e27344ec5",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/08/2000001291/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-08T14:36:06.739205+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-08T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIを活用した製薬会社のInsilico Medicineが、AIによって設計した「レントセルチブ」という薬で人間の生物学的年齢が若返ったと報告しました。 続きを読む...",
+      "title": "AIが設計した薬「レントセルチブ」が人間の生物学的年齢を若返らせたことが判明",
+      "uid": "306adaff15cebd0f",
+      "url": "https://gigazine.net/news/20260908-ai-assisted-medicine-age-reversal/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-08T09:45:19.651566+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "dda538c96778a899",
       "url": "https://gigazine.net/news/20260902-deepseek-v4-flash-vision-exp/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-02T02:58:21+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Dysonは、カメラとAIを搭載した電動歯ブラシ「Dyson CameraJet」を発表した。マクロカメラが歯間を検知してマウスリンスを自動噴射し、ブラッシングとフロスを同時に行える。日本でも公式サイトで7万9800円で発売。アプリ連携や口腔内カメラ機能も備え、傾けても噴射できるタンク構造を採用する。",
-      "title": "Dyson、カメラ搭載の電動歯ブラシ「CameraJet」　日本での販売価格は7万9800円",
-      "uid": "71a0fd25680ff870",
-      "url": "https://www.itmedia.co.jp/news/article/2609/02/2000001060/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-02T02:50:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Google DeepMindが2026年9月1日、Geminiの動画分析を自律的に進める新機能「Agentic Video Understanding」を発表しました。Geminiが質問内容に応じて動画内の必要な場面を探し、映像を見直したり音声の文字起こしを確認したりしながら回答を組み立てる仕組みで、Gemini 3.7 Flash、Gemini 3.6 Flash、Gemini 3.5 Fl…",
-      "title": "Geminiが動画を自律的に分析する「Agentic Video Understanding」登場、文字起こしや再確認を繰り返して長時間動画を詳しく分析しつつ安価に回答を生成",
-      "uid": "223a8fbb5759a03a",
-      "url": "https://gigazine.net/news/20260902-gemini-agentic-video/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-09-02T02:43:59+00:00",
-      "source_id": "media-publickey",
-      "summary": "SalesforceとAnthropicが「Claudeforce」を発表しました。 第一弾となる「Salesforce in Claude」では、Claudeの画面からプロンプトを入力するだけで、Salesforceのデータやワークフロー...",
-      "title": "ClaudeにSalesforceを統合した「Claudeforce」、AnthropicとSalesforceが発表。Claudeから営業データ分析や顧客対応を実現",
-      "uid": "114402d77348c210",
-      "url": "https://www.publickey1.jp/blog/26/claudesalesforceclaudeforceanthropicsalesforceclaude.html",
-      "vendor": "Publickey"
     }
   ]
 }
