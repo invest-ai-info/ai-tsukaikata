@@ -19511,6 +19511,102 @@ def holiday_alarm_matrix_chart() -> None:
     )
 
 
+def long_conversation_keeps_rules_chart() -> None:
+    """5往復（既存記事）と15往復（今回）で、5つの縛りがどれだけ守られたかを比べる。
+
+    実測（2026-09-08）。材料2組（受講者名簿15行／せどり在庫15行）×各2会話＝4会話で、
+    縛りに触れない追加依頼を15往復送った。5つの縛りは4会話・60回すべてで崩れなかった
+    （既存記事 `list-survives-many-turns` の5往復目・6会話30回との比較）。
+    """
+    rows = [
+        ("① 全部の行を1行ずつ", "6/6", "good", "60/60", "good"),
+        ("② 数字は原本のまま", "5/6", "warn", "60/60", "good"),
+        ("③ 原本に無い評価語を書かない", "6/6", "good", "60/60", "good"),
+        ("④ 言い回しを整えない", "6/6", "good", "60/60", "good"),
+        ("⑤「未確認」を残す", "6/6", "good", "60/60", "good"),
+    ]
+    klass = {"good": "box-good", "warn": "box-accent", "bad": "box-bad"}
+    text_klass = {"good": "t-good", "warn": "t-accent", "bad": "t-bad"}
+
+    label_x, label_w = 18, 210
+    col_w, col_gap = 200, 10
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(2)]
+    head_y, head_h = 108, 36
+    row_h, row_gap = 40, 10
+    row_y = [head_y + head_h + row_gap + i * (row_h + row_gap) for i in range(5)]
+
+    cols = [
+        ("5往復目（既存記事）", "list-survives-many-turns・6会話"),
+        ("15往復目（今回）", "4会話・のべ60回"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "往復を5から15へ伸ばしても、崩れ方は変わらなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の受講者名簿・せどり在庫リストに5つの縛りを渡し、縛りに触れない追加依頼だけを"
+        "15往復送った（4会話・のべ60回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "左＝既存記事が5往復目に測った結果。右＝今回、同じ5つの縛りを15往復目まで測った結果。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "分母は「縛り×会話（今回はさらに×往復）」の総数。崩れた回はそのまま数えている。</text>\n",
+    ]
+
+    for i, (head, sub) in enumerate(cols):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="{head_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + 8}" y="{head_y + 16}" '
+            f'style="font-size:11.5px">{_esc(head)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 30}">{_esc(sub)}</text>\n'
+        )
+
+    for r, (label, v5, k5, v15, k15) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for c, (value, kind) in enumerate([(v5, k5), (v15, k15)]):
+            parts.append(
+                f'<rect class="{klass[kind]}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_klass[kind]}" x="{col_x[c] + col_w / 2 - 16:.0f}" '
+                f'y="{y + row_h / 2 + 5:.0f}">{value}件</text>\n'
+            )
+
+    bottom = row_y[-1] + row_h
+    notes = [
+        ("t-sm", "※ ②が既存記事の5往復目だけ5/6なのは、表にした回に1件だけ数字が変わったため"
+                 "（その回自身が気づいたが、訂正の数字も違っていた）。"),
+        ("t-xs", "架空データでの実測。往復ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 2
+    alt = (
+        "5往復目（既存記事list-survives-many-turns・6会話）と15往復目（今回・4会話のべ60回）"
+        "で、5つの縛りがどれだけ守られたかを比べた表。"
+        "①全部の行を1行ずつは5往復目6/6→15往復目60/60。"
+        "②数字は原本のままは5往復目5/6（1件だけ数字が変わった）→15往復目60/60（崩れなし）。"
+        "③原本に無い評価語を書かないは5往復目6/6→15往復目60/60。"
+        "④言い回しを整えないは5往復目6/6→15往復目60/60。"
+        "⑤「未確認」を残すは5往復目6/6→15往復目60/60。"
+        "往復を5から15へ3倍に伸ばしても、5つの縛りは4会話・60回すべてで一度も崩れなかった。"
+    )
+    (OUT / "long-conversation-keeps-rules.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19757,4 +19853,5 @@ if __name__ == "__main__":
     weathernext3_precip_gain_chart()
     weathernext3_vs_aurora_chart()
     holiday_alarm_matrix_chart()
+    long_conversation_keeps_rules_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

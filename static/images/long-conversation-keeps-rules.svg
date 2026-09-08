@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="462" viewBox="0 0 720 462" role="img" aria-label="5往復目（既存記事list-survives-many-turns・6会話）と15往復目（今回・4会話のべ60回）で、5つの縛りがどれだけ守られたかを比べた表。①全部の行を1行ずつは5往復目6/6→15往復目60/60。②数字は原本のままは5往復目5/6（1件だけ数字が変わった）→15往復目60/60（崩れなし）。③原本に無い評価語を書かないは5往復目6/6→15往復目60/60。④言い回しを整えないは5往復目6/6→15往復目60/60。⑤「未確認」を残すは5往復目6/6→15往復目60/60。往復を5から15へ3倍に伸ばしても、5つの縛りは4会話・60回すべてで一度も崩れなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="462"/>
+<text class="t-strong" x="18" y="26">往復を5から15へ伸ばしても、崩れ方は変わらなかった</text>
+<text class="t-sm" x="18" y="45">架空の受講者名簿・せどり在庫リストに5つの縛りを渡し、縛りに触れない追加依頼だけを15往復送った（4会話・のべ60回）。</text>
+<text class="t-sm" x="18" y="64">左＝既存記事が5往復目に測った結果。右＝今回、同じ5つの縛りを15往復目まで測った結果。</text>
+<text class="t-sm" x="18" y="83">分母は「縛り×会話（今回はさらに×往復）」の総数。崩れた回はそのまま数えている。</text>
+<rect class="box-quiet" x="238" y="108" width="200" height="36" rx="3"/>
+<text class="t-strong" x="246" y="124" style="font-size:11.5px">5往復目（既存記事）</text>
+<text class="t-xs" x="246" y="138">list-survives-many-turns・6会話</text>
+<rect class="box-quiet" x="448" y="108" width="200" height="36" rx="3"/>
+<text class="t-strong" x="456" y="124" style="font-size:11.5px">15往復目（今回）</text>
+<text class="t-xs" x="456" y="138">4会話・のべ60回</text>
+<text class="t" x="18" y="179">① 全部の行を1行ずつ</text>
+<rect class="box-good" x="238" y="154" width="200" height="40" rx="3"/>
+<text class="t-good" x="322" y="179">6/6件</text>
+<rect class="box-good" x="448" y="154" width="200" height="40" rx="3"/>
+<text class="t-good" x="532" y="179">60/60件</text>
+<text class="t" x="18" y="229">② 数字は原本のまま</text>
+<rect class="box-accent" x="238" y="204" width="200" height="40" rx="3"/>
+<text class="t-accent" x="322" y="229">5/6件</text>
+<rect class="box-good" x="448" y="204" width="200" height="40" rx="3"/>
+<text class="t-good" x="532" y="229">60/60件</text>
+<text class="t" x="18" y="279">③ 原本に無い評価語を書かない</text>
+<rect class="box-good" x="238" y="254" width="200" height="40" rx="3"/>
+<text class="t-good" x="322" y="279">6/6件</text>
+<rect class="box-good" x="448" y="254" width="200" height="40" rx="3"/>
+<text class="t-good" x="532" y="279">60/60件</text>
+<text class="t" x="18" y="329">④ 言い回しを整えない</text>
+<rect class="box-good" x="238" y="304" width="200" height="40" rx="3"/>
+<text class="t-good" x="322" y="329">6/6件</text>
+<rect class="box-good" x="448" y="304" width="200" height="40" rx="3"/>
+<text class="t-good" x="532" y="329">60/60件</text>
+<text class="t" x="18" y="379">⑤「未確認」を残す</text>
+<rect class="box-good" x="238" y="354" width="200" height="40" rx="3"/>
+<text class="t-good" x="322" y="379">6/6件</text>
+<rect class="box-good" x="448" y="354" width="200" height="40" rx="3"/>
+<text class="t-good" x="532" y="379">60/60件</text>
+<text class="t-sm" x="18" y="420">※ ②が既存記事の5往復目だけ5/6なのは、表にした回に1件だけ数字が変わったため（その回自身が気づいたが、訂正の数字も違っていた）。</text>
+<text class="t-xs" x="18" y="440">架空データでの実測。往復ごとの生の返りは docs/evidence/ に置いてある。</text>
+</svg>
