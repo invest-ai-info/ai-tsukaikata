@@ -14,25 +14,25 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 66,
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "count": 67,
+      "last_error": "HTTPError: HTTP Error 404: Not Found"
     }
   },
   "latest": {
     "anthropic-news": "2026-09-01T23:31:00+00:00",
     "anthropic-sdk": "2026-09-04T22:20:20+00:00",
-    "claude-code": "2026-09-06T02:54:20+00:00",
+    "claude-code": "2026-09-08T20:37:31+00:00",
     "deepmind-blog": "2026-09-08T14:00:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-02T15:40:00+00:00",
     "hf-deepseek": "2026-08-31T06:16:18+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-09-08T09:03:00+00:00",
-    "media-gigazine": "2026-09-08T14:00:00+00:00",
+    "media-gigazine": "2026-09-08T21:00:00+00:00",
     "media-impress-ai": "2026-09-08T13:00:00+00:00",
     "media-itmedia-aiplus": "2026-09-08T11:43:34+00:00",
     "media-publickey": "2026-09-08T15:54:55+00:00",
-    "openai-news": "2026-09-08T13:00:00+00:00",
+    "openai-news": "2026-09-08T17:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-03T21:08:24+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -93,6 +93,39 @@
       "title": "Funding grants for new research into AI and teen development",
       "uid": "18cd18ae1fabb4c9",
       "url": "https://openai.com/index/teen-development-research-grants",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-08T20:37:31+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added user.email and user.groups to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions Added support for pointing --plugin-dir at a …",
+      "title": "v2.1.265",
+      "uid": "aceda12e39358788",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.265",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-08T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+      "uid": "b320466795ac2ed8",
+      "url": "https://openai.com/index/codex-quantum-computing-experiments",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-08T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Engineers at 1Password use Codex to rapidly build new features and internal tools, reaching production-readiness while maintaining rigorous security policies.",
+      "title": "1Password increases engineering productivity 21% with Codex",
+      "uid": "3e3da7cb9e6a4975",
+      "url": "https://openai.com/index/1password",
       "vendor": "OpenAI"
     }
   ],
@@ -352,6 +385,7 @@
     "1fc4f5673f1138cd": "2026-08-31T05:41:42.559558+00:00",
     "1feafc1d14392d2a": "2026-08-20T08:58:16.409338+00:00",
     "201bd41b22abff1a": "2026-09-02T05:51:57.834877+00:00",
+    "202a9ab9f5abd45c": "2026-09-08T21:53:36.719703+00:00",
     "206654028dd42bd6": "2026-09-03T16:29:05.225191+00:00",
     "20782b38a559b323": "2026-09-01T21:49:02.248481+00:00",
     "209677d95165b060": "2026-08-16T11:36:48.273111+00:00",
@@ -588,6 +622,7 @@
     "3dc87c239859818f": "2026-09-07T10:24:07.119095+00:00",
     "3df17887de2dbdfe": "2026-08-25T09:02:04.959371+00:00",
     "3e2faa7146c71aeb": "2026-08-01T12:16:42.309603+00:00",
+    "3e3da7cb9e6a4975": "2026-09-08T21:53:36.719703+00:00",
     "3e55c7a377fda163": "2026-08-28T18:46:16.087122+00:00",
     "3e81bc206755e335": "2026-08-26T04:57:41.122753+00:00",
     "3eaa7b0e3b3213de": "2026-08-24T07:30:45.265644+00:00",
@@ -1430,6 +1465,7 @@
     "ac3b5f8f8fff0e26": "2026-09-03T05:51:49.745761+00:00",
     "ac66dd9b3f3f4486": "2026-08-20T01:53:51.496322+00:00",
     "ac99de2b2df8fe8c": "2026-09-08T04:43:11.821528+00:00",
+    "aceda12e39358788": "2026-09-08T21:53:36.719703+00:00",
     "ad3a052c792198a9": "2026-08-14T08:39:06.340012+00:00",
     "ad63ab923562d98c": "2026-08-27T09:54:30.419398+00:00",
     "ade659fa79ff9f6f": "2026-08-17T22:43:50.182334+00:00",
@@ -1476,6 +1512,7 @@
     "b2c6f5d24d63e5c3": "2026-08-04T11:04:53.115730+00:00",
     "b2e181ae74ffb79c": "2026-08-27T09:54:30.419398+00:00",
     "b2f55fe3e00bb9d6": "2026-08-25T07:10:25.158045+00:00",
+    "b320466795ac2ed8": "2026-09-08T21:53:36.719703+00:00",
     "b32aea8623b71aa6": "2026-08-20T11:45:36.980352+00:00",
     "b34f32f75668b122": "2026-08-01T12:16:42.309603+00:00",
     "b3c9b6bf747a0136": "2026-08-27T09:54:30.419398+00:00",

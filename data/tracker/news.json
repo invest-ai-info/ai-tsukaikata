@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-08T21:53:36.719703+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-08T20:37:31+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added user.email and user.groups to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions Added support for pointing --plugin-dir at a …",
+      "title": "v2.1.265",
+      "uid": "aceda12e39358788",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.265",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-08T21:53:36.719703+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-08T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits.",
+      "summary_ja": "MITの研究者がAIを使い量子実験を自動化\nGPT-5.6 SolとCodexで実行・分析・調整\n量子ビットの調整まで自動で可能に",
+      "summary_source": "gemini",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+      "uid": "b320466795ac2ed8",
+      "url": "https://openai.com/index/codex-quantum-computing-experiments",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-08T14:36:06.739205+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",
@@ -80,6 +106,20 @@
       "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
       "uid": "f645a994fe78cf53",
       "url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-08T21:53:36.719703+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-08T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Engineers at 1Password use Codex to rapidly build new features and internal tools, reaching production-readiness while maintaining rigorous security policies.",
+      "summary_ja": "1PasswordがAIで開発効率を21%向上\n「Codex」を使用し新機能や社内ツール開発を加速\n高いセキュリティ基準も維持しつつ実現",
+      "summary_source": "gemini",
+      "title": "1Password increases engineering productivity 21% with Codex",
+      "uid": "3e3da7cb9e6a4975",
+      "url": "https://openai.com/index/1password",
       "vendor": "OpenAI"
     },
     {
