@@ -19405,6 +19405,112 @@ def weathernext3_vs_aurora_chart() -> None:
     )
 
 
+def holiday_alarm_matrix_chart() -> None:
+    """休業日を教える・教えない×表形式・手書きメモで、0件アラームがどう動いたか。
+
+    実測（2026-09-08・架空の14営業日ぶんの受付ログ2本＝表形式と手書きメモ）。
+    真値は材料を作ったコードから機械で確定。本当の異常は8/18の1日だけ、
+    8/13・8/14は休業日で0件が正常。
+    """
+    rows = [
+        ("表形式", "休業日を教えない（3回）", "2/3", "warn", "2/3", "bad", "1/3", "bad"),
+        ("表形式", "休業日を教える（2回）", "2/2", "good", "0/2", "good", "0/2", "good"),
+        ("手書きメモ", "休業日を教えない（2回）", "2/2", "warn", "2/2", "bad", "0/2", "good"),
+        ("手書きメモ", "休業日を教える（3回）", "1/3", "bad", "0/3", "good", "2/3", "bad"),
+        ("手書きメモ", "休業日を教える＋先に数えさせる（3回）", "3/3", "good", "0/3", "good", "1/3", "warn"),
+    ]
+    cols = [
+        ("異常日を検出", "（8/18・本当は鳴らすべき日）"),
+        ("休業日も一緒に鳴らす", "（見分けられない）"),
+        ("無関係の日を誤検知", "（実在するのに0件と誤申告）"),
+    ]
+    klass = {"good": "box-good", "warn": "box-accent", "bad": "box-bad"}
+    text_klass = {"good": "t-good", "warn": "t-accent", "bad": "t-bad"}
+
+    label_x, label_w = 18, 226
+    col_w, col_gap = 142, 8
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(3)]
+    head_y, head_h = 108, 40
+    row_h, row_gap = 52, 8
+    row_y = [head_y + head_h + row_gap + i * (row_h + row_gap) for i in range(5)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "休業日を教えると、0件アラームはどう動いたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の14営業日ぶんの受付ログ（表形式・手書きメモ）。休業日2日・"
+        "本当の異常1日を仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「休業日を教える」版では、次の日付だけを休業日として伝えた："
+        "2026-08-13、2026-08-14。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "分母はその条件を走らせた回数。同じ指示文・同じ材料で、割れた回はそのまま数えている。</text>\n",
+    ]
+
+    for i, (head, sub) in enumerate(cols):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="{head_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + 8}" y="{head_y + 17}" '
+            f'style="font-size:11.5px">{_esc(head)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 32}">{_esc(sub)}</text>\n'
+        )
+
+    for r, (fmt, cond, *cells) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t-strong" x="{label_x}" y="{y + 20}" '
+            f'style="font-size:12.5px">{_esc(fmt)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 38}">{_esc(cond)}</text>\n'
+        )
+        for c in range(3):
+            value, kind = cells[c * 2], cells[c * 2 + 1]
+            parts.append(
+                f'<rect class="{klass[kind]}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_klass[kind]}" x="{col_x[c] + col_w / 2 - 14:.0f}" '
+                f'y="{y + row_h / 2 + 5:.0f}">{value}</text>\n'
+            )
+
+    bottom = row_y[-1] + row_h
+    notes = [
+        ("t-bad", "※ 手書きメモに休業日を教えた3回中2回は、実在する08/17・08/19を"),
+        ("t-bad", "　「納期0件」と誤って報告し、肝心の08/18を一度も報告しなかった。"),
+        ("t-xs", "※ 表形式に休業日を教えた回は2回とも、異常日だけを正しく検出した。"
+                 "材料の形式で結果が変わっている。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "休業日を教えるかどうかと、材料が表形式か手書きメモかで、0件アラームの結果を並べた表。"
+        "表形式・休業日を教えない3回は、異常日の検出2/3、休業日も一緒に鳴らした2/3、"
+        "無関係の日を誤検知1/3。表形式・休業日を教える2回は、異常日の検出2/2、"
+        "休業日を鳴らした0/2、無関係の日の誤検知0/2で、2回とも正しかった。"
+        "手書きメモ・休業日を教えない2回は、異常日の検出2/2、休業日も一緒に鳴らした2/2、"
+        "無関係の日の誤検知0/2。手書きメモ・休業日を教える3回は、異常日の検出1/3、"
+        "休業日を鳴らした0/3、無関係の日の誤検知2/3で、3回中2回は実在する日を"
+        "誤って0件と報告し、肝心の異常日を報告しなかった。"
+        "手書きメモ・休業日を教えて先に数えさせた3回は、異常日の検出3/3、"
+        "休業日を鳴らした0/3、無関係の日の誤検知1/3まで改善した。"
+    )
+    (OUT / "holiday-alarm-matrix.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
@@ -19650,4 +19756,5 @@ if __name__ == "__main__":
     weathernext3_resolution_grid_chart()
     weathernext3_precip_gain_chart()
     weathernext3_vs_aurora_chart()
+    holiday_alarm_matrix_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

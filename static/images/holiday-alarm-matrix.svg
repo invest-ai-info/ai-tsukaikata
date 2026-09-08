@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="564" viewBox="0 0 720 564" role="img" aria-label="休業日を教えるかどうかと、材料が表形式か手書きメモかで、0件アラームの結果を並べた表。表形式・休業日を教えない3回は、異常日の検出2/3、休業日も一緒に鳴らした2/3、無関係の日を誤検知1/3。表形式・休業日を教える2回は、異常日の検出2/2、休業日を鳴らした0/2、無関係の日の誤検知0/2で、2回とも正しかった。手書きメモ・休業日を教えない2回は、異常日の検出2/2、休業日も一緒に鳴らした2/2、無関係の日の誤検知0/2。手書きメモ・休業日を教える3回は、異常日の検出1/3、休業日を鳴らした0/3、無関係の日の誤検知2/3で、3回中2回は実在する日を誤って0件と報告し、肝心の異常日を報告しなかった。手書きメモ・休業日を教えて先に数えさせた3回は、異常日の検出3/3、休業日を鳴らした0/3、無関係の日の誤検知1/3まで改善した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="564"/>
+<text class="t-strong" x="18" y="26">休業日を教えると、0件アラームはどう動いたか</text>
+<text class="t-sm" x="18" y="45">架空の14営業日ぶんの受付ログ（表形式・手書きメモ）。休業日2日・本当の異常1日を仕込んだ。</text>
+<text class="t-sm" x="18" y="64">「休業日を教える」版では、次の日付だけを休業日として伝えた：2026-08-13、2026-08-14。</text>
+<text class="t-sm" x="18" y="83">分母はその条件を走らせた回数。同じ指示文・同じ材料で、割れた回はそのまま数えている。</text>
+<rect class="box-quiet" x="252" y="108" width="142" height="40" rx="3"/>
+<text class="t-strong" x="260" y="125" style="font-size:11.5px">異常日を検出</text>
+<text class="t-xs" x="260" y="140">（8/18・本当は鳴らすべき日）</text>
+<rect class="box-quiet" x="402" y="108" width="142" height="40" rx="3"/>
+<text class="t-strong" x="410" y="125" style="font-size:11.5px">休業日も一緒に鳴らす</text>
+<text class="t-xs" x="410" y="140">（見分けられない）</text>
+<rect class="box-quiet" x="552" y="108" width="142" height="40" rx="3"/>
+<text class="t-strong" x="560" y="125" style="font-size:11.5px">無関係の日を誤検知</text>
+<text class="t-xs" x="560" y="140">（実在するのに0件と誤申告）</text>
+<text class="t-strong" x="18" y="176" style="font-size:12.5px">表形式</text>
+<text class="t-sm" x="18" y="194">休業日を教えない（3回）</text>
+<rect class="box-accent" x="252" y="156" width="142" height="52" rx="3"/>
+<text class="t-accent" x="309" y="187">2/3</text>
+<rect class="box-bad" x="402" y="156" width="142" height="52" rx="3"/>
+<text class="t-bad" x="459" y="187">2/3</text>
+<rect class="box-bad" x="552" y="156" width="142" height="52" rx="3"/>
+<text class="t-bad" x="609" y="187">1/3</text>
+<text class="t-strong" x="18" y="236" style="font-size:12.5px">表形式</text>
+<text class="t-sm" x="18" y="254">休業日を教える（2回）</text>
+<rect class="box-good" x="252" y="216" width="142" height="52" rx="3"/>
+<text class="t-good" x="309" y="247">2/2</text>
+<rect class="box-good" x="402" y="216" width="142" height="52" rx="3"/>
+<text class="t-good" x="459" y="247">0/2</text>
+<rect class="box-good" x="552" y="216" width="142" height="52" rx="3"/>
+<text class="t-good" x="609" y="247">0/2</text>
+<text class="t-strong" x="18" y="296" style="font-size:12.5px">手書きメモ</text>
+<text class="t-sm" x="18" y="314">休業日を教えない（2回）</text>
+<rect class="box-accent" x="252" y="276" width="142" height="52" rx="3"/>
+<text class="t-accent" x="309" y="307">2/2</text>
+<rect class="box-bad" x="402" y="276" width="142" height="52" rx="3"/>
+<text class="t-bad" x="459" y="307">2/2</text>
+<rect class="box-good" x="552" y="276" width="142" height="52" rx="3"/>
+<text class="t-good" x="609" y="307">0/2</text>
+<text class="t-strong" x="18" y="356" style="font-size:12.5px">手書きメモ</text>
+<text class="t-sm" x="18" y="374">休業日を教える（3回）</text>
+<rect class="box-bad" x="252" y="336" width="142" height="52" rx="3"/>
+<text class="t-bad" x="309" y="367">1/3</text>
+<rect class="box-good" x="402" y="336" width="142" height="52" rx="3"/>
+<text class="t-good" x="459" y="367">0/3</text>
+<rect class="box-bad" x="552" y="336" width="142" height="52" rx="3"/>
+<text class="t-bad" x="609" y="367">2/3</text>
+<text class="t-strong" x="18" y="416" style="font-size:12.5px">手書きメモ</text>
+<text class="t-sm" x="18" y="434">休業日を教える＋先に数えさせる（3回）</text>
+<rect class="box-good" x="252" y="396" width="142" height="52" rx="3"/>
+<text class="t-good" x="309" y="427">3/3</text>
+<rect class="box-good" x="402" y="396" width="142" height="52" rx="3"/>
+<text class="t-good" x="459" y="427">0/3</text>
+<rect class="box-accent" x="552" y="396" width="142" height="52" rx="3"/>
+<text class="t-accent" x="609" y="427">1/3</text>
+<text class="t-bad" x="18" y="474">※ 手書きメモに休業日を教えた3回中2回は、実在する08/17・08/19を</text>
+<text class="t-bad" x="18" y="496">　「納期0件」と誤って報告し、肝心の08/18を一度も報告しなかった。</text>
+<text class="t-xs" x="18" y="518">※ 表形式に休業日を教えた回は2回とも、異常日だけを正しく検出した。材料の形式で結果が変わっている。</text>
+<text class="t-xs" x="18" y="540">架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>
+</svg>
