@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-08T23:55:14+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented CLAUDE_CODE_USE_GATEWAY environment variable, previously ignored unless ANTHROPIC_BASE_URL and ANTHR…",
+      "title": "v2.1.266",
+      "uid": "95d3e0d2155f7ef8",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.266",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-08T21:53:36.719703+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -75,6 +87,8 @@
       "published": "2026-09-08T10:00:00+00:00",
       "source_id": "openai-news",
       "summary": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean.",
+      "summary_ja": "AIがミレニアム懸賞問題の解答を公開\nナビエ・ストークス方程式の解法を提示\n解説書と証明システムLeanでの厳密な証明も公開",
+      "summary_source": "gemini",
       "title": "On the Navier–Stokes Millennium Prize Problem",
       "uid": "0db8b8342702ee04",
       "url": "https://openai.com/index/navier-stokes-solution",

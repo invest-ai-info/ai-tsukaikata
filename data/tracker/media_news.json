@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-09T00:01:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Metaは、新たなAIエージェント「Muse」を発表した。ユーザーの習慣や目標を理解する「パーソナルエージェント」としている。",
+      "title": "Metaの個人向けAIエージェント「Muse」登場、買い物やメール返信を自律的に代行",
+      "uid": "2333b5959f329908",
+      "url": "https://japan.cnet.com/article/35252404/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T23:13:49+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Google DeepMindは、ヒトゲノムで起こり得る約90億通り全ての一塩基変異の影響を事前予測したデータベース「AlphaGenome Atlas」を公開した。影響度を数値化するスコアも導入し、未解明な非コード領域の変異解析を加速させる。学術研究向けにWebから無償提供する。",
+      "title": "Google DeepMind、90億通りの全塩基変異の影響を予測した「AlphaGenome Atlas」　学術向けに無償提供",
+      "uid": "fa88262e1ddf2d82",
+      "url": "https://www.itmedia.co.jp/news/article/2609/09/2000001296/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Armが3つの新プロダクトを発表した。モバイル機器向けソリューション「Arm CSS for Mobile 2」とインフラストラクチャ向けソリューション「Arm Neoverse CSS N4」、半導体製品の市場投入期間を短縮するサービスをフィジカルAI向けに拡大する「Arm Total Design for Physical AI」である。",
+      "title": "Armが3つの新プロダクトを発表、モバイルとAIインフラ、フィジカルAI向け",
+      "uid": "470d0e143315e62e",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/09/news059.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Linux Foundationは、エージェント型AIのセキュリティインシデントを業界で共有するためのガイドライン「SAFE」について意見募集を始めた。NVIDIAやCisco、CrowdStrikeなどが初期案の作成に参加している。",
+      "title": "「AIエージェントはモデルだけじゃない」　NVIDIAらが説く“エージェント防御”の勘所と共有の仕組み",
+      "uid": "f90e1db442dd2a57",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/09/news038.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "SAPの認定試験が、知識を問う従来型から実践型へと大きく変わった。さらに一部の試験ではAIの利用も可能になった。30年続くSAP認定試験で、知識よりも求めていることとは。",
+      "title": "新SAP認定試験は「AIの利用OK」　実践型の新方式で備えるべきことは？",
+      "uid": "bf9d957c2f4db1f0",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/09/2000001278/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「ChatGPT」などの生成AIに企業選びを相談する求職者が増えている。AIの回答が応募や選考辞退を左右する可能性もあるなか、企業には「AIからどう見られているか」という新たな採用対策が求められている。",
+      "title": "求職者がAIで会社を選ぶ時代、AIの「企業評価」が採用にも影響　企業はどう対策すべき？",
+      "uid": "7cbdbd45a221fd3a",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/09/2000001267/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T00:18:03.279528+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-08T21:41:57+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Metaは、日常の作業を代行するパーソナルAIエージェント「Muse」を発表した。専用アプリやWhatsAppから操作でき、メール送信や旅行予約、Webフォーム入力などを自律して行う。専用VMや別エージェントによる多層防御で安全性を高め、決済やログイン情報との連携にも対応する。基本機能は無料。",
+      "title": "Meta、パーソナルAIエージェント「Muse」発表　メール送信や買い物も代行（まずは米国で無料提供開始）",
+      "uid": "70b69b6477f7a8e3",
+      "url": "https://www.itmedia.co.jp/news/article/2609/09/2000001294/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-08T14:36:06.739205+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2314,90 +2398,6 @@
       "title": "OpenAIが次期主力AIモデル「Astra」の開発状況を報告",
       "uid": "512d21481fd3ae0c",
       "url": "https://gigazine.net/news/20260902-path-to-astra/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-02T04:38:45+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本HPは9月2日、「AI PCで自由研究」キャンペーンの一環として渋谷でシニアの新しい働き方を発信する店舗「G-CHA & Ba-CHA」（東京都渋谷区渋谷1-12-24707渋谷ビル1F）と連携して進めてきた店舗スタッフ3名による取り組みの成果発表会を開催した。",
-      "title": "70代のカフェ店員がHPのAI PCで取り組んだ自由研究の成果を発表",
-      "uid": "6cd8a66c2bed0b3c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137608.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-02T04:30:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Rokidは、次世代AIグラス「Rokid Ai Glasses Style」を9月15日に公式オンラインショップ限定で発売する。予約受付は9月1日に開始しており、価格は64,999円。カラーは、ブラック／トランスペアレントグレーの2色展開。プロセッサは、Qualcomm Snapdragon AR1を搭載している。",
-      "title": "38.5gのディスプレイレスグラス「Rokid Ai Glasses Style」を新発売",
-      "uid": "1cb044ff55b58674",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137590.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-02T04:18:44+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Metaは、リアルタイム音声認識モデル「Muse Voice Transcribe」を発表した。単一モデルで音声認識、話者分離、発話終了検知を処理し、20人以上の話者識別や日本語を含む多言語に対応する。「Meta Model API」で提供するほか、Mac版「Meta AI」」アプリや「Muse Code」でも利用可能だ。",
-      "title": "Meta、初のリアルタイム音声認識モデル「Muse Voice Transcribe」　20人超の話者識別と多言語混在に対応",
-      "uid": "4709ca3706140b97",
-      "url": "https://www.itmedia.co.jp/news/article/2609/02/2000001062/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-02T03:24:17+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LINEヤフーの「Yahoo!ショッピング」で、「Yahoo!ショッピング AIエージェント」の新機能として、ファッション商品のコーディネートや着用イメージの提案を通じてオンラインでの洋服選びをサポートする「AIおまかせコーディネート」を一部ストアの対象商品で先行提供する。",
-      "title": "Yahoo!ショッピング、コーディネートをAIにおまかせ！ 着用イメージの提案を通じてオンラインでの洋服選びをサポート",
-      "uid": "1eebf0a369c2e561",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137547.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-02T03:20:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの普及を背景に、デジタル人材育成への機運が高まっている。多くの企業が教育施策に取り組む一方、従業員の過半数が自社のデジタル・スキル教育に不満を抱く実態がGartnerの調査で浮かんだ。人材育成施策を成果につなげるための方法をアナリストが提言する。",
-      "title": "eラーニングが成果に結びつかないのはなぜ？　従業員の55％、デジタル教育に「不満」",
-      "uid": "e1de054c889ddebe",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/02/news025.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-02T03:20:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIOpsによって運用の負荷が減る一方で別の仕事が生まれている。担当者の9割が「負担」と感じるその仕事は何か。2本の調査からAIが仕事に与える影響を読み解く。",
-      "title": "AIが生んだ新たな業務、9割が「負担」　AIOpsの不都合な真実",
-      "uid": "201bd41b22abff1a",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/02/news047.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-02T05:51:57.834877+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-02T03:03:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国企業のDeepSeekが「DeepSeek-V4-Flash-Vision-Exp」をオープンモデルとして公開しました。DeepSeek-V4-Flash-Vision-ExphはDeepSeek-V4シリーズとして初めて画像の入力に対応したマルチモーダルモデルで、画像認識を含むタスクでClaude Opus 4.8と同等のベンチマークスコアを記録しています。 続きを読む...",
-      "title": "DeepSeekが画像認識に対応した「DeepSeek-V4-Flash-Vision-Exp」をオープンモデルとして公開、画像認識を含むタスクでClaude Opus 4.8と同等の性能",
-      "uid": "dda538c96778a899",
-      "url": "https://gigazine.net/news/20260902-deepseek-v4-flash-vision-exp/",
       "vendor": "GIGAZINE"
     }
   ]
