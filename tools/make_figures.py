@@ -19780,7 +19780,90 @@ def late_correction_heading_matrix_chart() -> None:
     )
 
 
+def fx_rate_not_in_material_chart() -> None:
+    """「材料に無い数字は使わないで」の一文の有無で、為替レートを自分で作った回数が変わる。
+
+    実測（2026-09-09）。架空の海外サービス案内文2本（Global Panel Research＝ポイント制、
+    SonicVault＝ユーロ建てロイヤリティ。どちらも為替レートの記載なし）に「日本円にすると
+    何円ですか」とだけ聞いた10回（材料2本×各5回）と、末尾に「材料に無い数字（為替レート
+    など）は使わないでください」を足した10回を比べた。
+    """
+    rows = [
+        ("材料①：Global Panel Research", "そのまま聞く", 5, 5, "bad"),
+        ("材料①：Global Panel Research", "一文を足す", 1, 5, "good"),
+        ("材料②：SonicVault", "そのまま聞く", 5, 5, "bad"),
+        ("材料②：SonicVault", "一文を足す", 0, 5, "good"),
+    ]
+    left, right = 210, 560
+    span = right - left
+    top, bar_h, gap = 108, 30, 16
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「材料に無い数字は使わないで」の一文で、作った回数が10/10→1/10へ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の海外サービス案内文2本（どちらも為替レートの記載なし）に「日本円にすると何円ですか」"
+        "と聞いた10回と、一文を足した10回を比較。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数えたのは、返りに具体的な円換算額（◯◯円）が書かれたかどうか。</text>\n",
+    ]
+    for index, (material, cond, hit, total, kind) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        w = span * hit / total
+        box_cls = "box-bad" if kind == "bad" else "box-good"
+        text_cls = "t-bad" if kind == "bad" else "t-good"
+        parts.append(
+            f'<text class="t-xs" x="18" y="{y - 4}">{_esc(material)}</text>\n'
+        )
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 9}">{_esc(cond)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{box_cls}" x="{left}" y="{y}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{right + 10}" y="{y + bar_h - 9}">'
+            f"{hit}/{total}</text>\n"
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 70
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "合計：そのまま聞く 10/10 ／ 一文を足す 1/10（差90ポイント）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 42}">'
+        "「一文を足す」の1回も、答えとして数字を出したのではなく、"
+        "「仮の例としても書かない」と断ったうえで例に挙げた1回。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 60}">'
+        "そのまま聞いた10回は、断りを入れつつも見出しの答えとして円換算額を出していた。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "架空の海外サービス案内文2本（Global Panel Research＝ポイント制の覆面調査モニター、"
+        "SonicVault＝ユーロ建てのストック音源サイトのロイヤリティ規定。どちらも為替レートの記載なし）に"
+        "「日本円にすると何円ですか」とだけ聞いた場合と、末尾に「材料に無い数字（為替レートなど）は"
+        "使わないでください」という一文を足した場合を、材料2本×各5回で比較した図。"
+        "そのまま聞いた場合は材料①5/5・材料②5/5で、合計10/10が具体的な円換算額を書いた。"
+        "一文を足した場合は材料①1/5・材料②0/5で、合計1/10に減った（差90ポイント）。"
+        "唯一の1回も、実際の答えとしてではなく「仮の例としても書かない」と断ったうえで挙げた例だった。"
+    )
+    (OUT / "fx-rate-not-in-the-material.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    fx_rate_not_in_material_chart()
     late_correction_heading_matrix_chart()
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()

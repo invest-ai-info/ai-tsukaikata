@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="390" viewBox="0 0 720 390" role="img" aria-label="架空の海外サービス案内文2本（Global Panel Research＝ポイント制の覆面調査モニター、SonicVault＝ユーロ建てのストック音源サイトのロイヤリティ規定。どちらも為替レートの記載なし）に「日本円にすると何円ですか」とだけ聞いた場合と、末尾に「材料に無い数字（為替レートなど）は使わないでください」という一文を足した場合を、材料2本×各5回で比較した図。そのまま聞いた場合は材料①5/5・材料②5/5で、合計10/10が具体的な円換算額を書いた。一文を足した場合は材料①1/5・材料②0/5で、合計1/10に減った（差90ポイント）。唯一の1回も、実際の答えとしてではなく「仮の例としても書かない」と断ったうえで挙げた例だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="390"/>
+<text class="t-strong" x="18" y="26">「材料に無い数字は使わないで」の一文で、作った回数が10/10→1/10へ</text>
+<text class="t-sm" x="18" y="45">架空の海外サービス案内文2本（どちらも為替レートの記載なし）に「日本円にすると何円ですか」と聞いた10回と、一文を足した10回を比較。</text>
+<text class="t-sm" x="18" y="64">数えたのは、返りに具体的な円換算額（◯◯円）が書かれたかどうか。</text>
+<text class="t-xs" x="18" y="104">材料①：Global Panel Research</text>
+<text class="t" x="18" y="129">そのまま聞く</text>
+<rect class="box-quiet" x="210" y="108" width="350" height="30" rx="3"/>
+<rect class="box-bad" x="210" y="108" width="350.0" height="30" rx="3"/>
+<text class="t-bad" x="570" y="129">5/5</text>
+<text class="t-xs" x="18" y="150">材料①：Global Panel Research</text>
+<text class="t" x="18" y="175">一文を足す</text>
+<rect class="box-quiet" x="210" y="154" width="350" height="30" rx="3"/>
+<rect class="box-good" x="210" y="154" width="70.0" height="30" rx="3"/>
+<text class="t-good" x="570" y="175">1/5</text>
+<text class="t-xs" x="18" y="196">材料②：SonicVault</text>
+<text class="t" x="18" y="221">そのまま聞く</text>
+<rect class="box-quiet" x="210" y="200" width="350" height="30" rx="3"/>
+<rect class="box-bad" x="210" y="200" width="350.0" height="30" rx="3"/>
+<text class="t-bad" x="570" y="221">5/5</text>
+<text class="t-xs" x="18" y="242">材料②：SonicVault</text>
+<text class="t" x="18" y="267">一文を足す</text>
+<rect class="box-quiet" x="210" y="246" width="350" height="30" rx="3"/>
+<rect class="box-good" x="210" y="246" width="0.0" height="30" rx="3"/>
+<text class="t-good" x="570" y="267">0/5</text>
+<rect class="box-quiet" x="18" y="296" width="678" height="70" rx="6"/>
+<text class="t-strong" x="34" y="318">合計：そのまま聞く 10/10 ／ 一文を足す 1/10（差90ポイント）</text>
+<text class="t-sm" x="34" y="338">「一文を足す」の1回も、答えとして数字を出したのではなく、「仮の例としても書かない」と断ったうえで例に挙げた1回。</text>
+<text class="t-sm" x="34" y="356">そのまま聞いた10回は、断りを入れつつも見出しの答えとして円換算額を出していた。</text>
+</svg>
