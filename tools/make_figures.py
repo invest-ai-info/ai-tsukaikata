@@ -19862,7 +19862,81 @@ def fx_rate_not_in_material_chart() -> None:
     )
 
 
+def reused_instruction_crosses_material_types_chart() -> None:
+    """保存指示文2本を、想定どおり／想定と違う材料で試したとき、縛りと形の崩れが0だったことを示す。
+
+    実測（2026-09-09）。提案文の保存指示文（募集要項に無い実績を書き足さない）を
+    実績欄が厚い/ほぼ空欄の募集要項で各5回、検品の保存指示文（原稿に無い数字を書き足さない）を
+    完成稿/粗い下書きで各5回、さらに応募条件（500枚）に届かない案件で5回。
+    どの条件でも縛り違反・形違反ともに0件だった。
+    """
+    rows = [
+        ("提案文", "募集要項：実績欄が厚い（想定どおり）", 5),
+        ("提案文", "募集要項：実績欄がほぼ空欄（想定と違う）", 5),
+        ("提案文", "応募条件（500枚）に届かない案件", 5),
+        ("検品", "原稿：完成稿（想定どおり）", 5),
+        ("検品", "原稿：粗い下書き（想定と違う）", 5),
+    ]
+    left, right = 300, 600
+    span = right - left
+    top, bar_h, gap = 118, 28, 16
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "材料の種類を変えても、縛り違反・形違反はどちらも0件だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "保存指示文2本（提案文＝実績を書き足さない・検品＝数字を書き足さない）を、"
+        "想定どおりの材料と想定と違う材料で各5回試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "縛り違反（書かれていない実績・数字を書き足した件数）は、5条件×各5回＝25回すべてで0件。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "棒は「縛り違反0件・形違反0件」を表す（崩れなかったことを示す図）。"
+        "</text>\n",
+    ]
+    for index, (kind, label, n) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t-xs" x="18" y="{y - 3}">{_esc(kind)}</text>\n')
+        parts.append(f'<text class="t" x="70" y="{y + bar_h - 8}" style="font-size:11.5px">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="box-good" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{right + 10}" y="{y + bar_h - 8}">0/{n}</text>\n'
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 50
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "合計：縛り違反0/25・形違反0/25。崩れたのは「材料が変われば崩れる」という前提のほう。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "実績が届かない案件（応募条件500枚・実績320枚）でも、正直に不足を報告し、水増しは0件だった。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "保存指示文2本（提案文＝募集要項に無い実績を書き足さない・検品＝原稿に無い数字を書き足さない）を、"
+        "想定どおりの材料と想定と違う種類の材料で試した結果を示す図。提案文は実績欄が厚い募集要項5回・"
+        "ほぼ空欄の募集要項5回・応募条件500枚に届かない案件5回、検品は完成稿5回・粗い下書き5回の"
+        "合計25回すべてで、縛り違反（書かれていない実績・数字を書き足した件数）も形違反（指定した"
+        "段落数・分類ラベルから外れた件数）も0件だった。応募条件に届かない案件でも、実績320枚を"
+        "水増しせず正直に不足を報告した。材料の種類を変えても縛りだけが特別弱いという結果にはならなかった。"
+    )
+    (OUT / "reused-instruction-crosses-material-types.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    reused_instruction_crosses_material_types_chart()
     fx_rate_not_in_material_chart()
     late_correction_heading_matrix_chart()
     take_home_repeat_no_split_chart()
