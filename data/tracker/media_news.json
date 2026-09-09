@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-09T15:30:50+00:00",
+      "source_id": "media-publickey",
+      "summary": "Amazon Web Services（AWS）は、AIがフルスタックのAWSアプリケーションに必要なアプリケーションの基本的なコードに加えて、セキュリティや可観測性などの要件も備えたインフラ構成のコードもまとめて生成してくれるツール「Nx...",
+      "title": "AWS、AIがフルスタックAWSアプリの基本コードを、セキュリティ、可観測性、インフラまで一気通貫で生成する「Nx Plugin for AWS 1.0」、オープンソースで公開",
+      "uid": "bb4f23bd9cd68187",
+      "url": "https://www.publickey1.jp/blog/26/awsaiawsnx_plugin_for_aws_10.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-09T13:35:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "これまでAIエージェント「Hermes Agent」を使って、ウェブ検索やブラウザ操作を行ったり、実際に行った作業を「スキル」として保存したり、指定した時刻にタスクを自動実行させたり、その実行結果をメールで受け取ったりしてきました。Hermes Agentにはこうした作業方法を保存するスキルとは別に、ユーザーの好みや作業環境などを長期的に覚えておく「記憶(Memory)」機能が搭載されています。…",
+      "title": "使い込むほど成長するAIエージェント「Hermes Agent」に好みを覚えさせて新しいチャットでも記憶を引き継げる「記憶(Memory)」機能を試してみた",
+      "uid": "aa1d40a9dbbe5f3b",
+      "url": "https://gigazine.net/news/20260909-hermes-agent-memory/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-09T12:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ChatGPTのデスクトップアプリに、オープンソースのオフィスソフト「LibreOffice」が同梱されていることが分かりました。ライセンス料なしでMicrosoft Office形式のファイルを扱えることから選ばれたのではないかと考えられています。 続きを読む...",
+      "title": "ChatGPTのデスクトップアプリにはLibreOfficeの完全版が同梱されている",
+      "uid": "9518dd8d5b4e2786",
+      "url": "https://gigazine.net/news/20260909-chatgpt-desktop-app-libreoffice/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-09T12:01:05+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NECは9日、8月1日付で新設した社内組織「コーポレートAI・Workforce部門」に関するメディア説明会を開催した。執行役 コーポレートEVP 兼 CAXOの小玉浩氏が登壇し、同組織での取り組みを説明した。",
+      "title": "NECが“AI自律型組織”新設、質疑応答にはAI社員も参加",
+      "uid": "faf769e56c25b820",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2139622.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-09T11:35:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIの創業者であるサム・アルトマン氏が2023年、OpenAIの取締役会によって退任させられたのち2週間足らずで復帰した出来事を中心として描く映画『Artificial』のティザー予告編が公開されました。本作はすでに完成していて2026年6月に公開される予定でしたが、Amazon MGMスタジオの配給撤退で宙に浮いていました。 続きを読む...",
+      "title": "OpenAI創業者サム・アルトマンを描く映画『Artificial』ティザー予告編公開、Amazon撤退後にNeonが推定30億円で購入",
+      "uid": "ec774f19354d569e",
+      "url": "https://gigazine.net/news/20260909-artificial-teaser-trailer/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-09T11:28:50.861492+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2339,66 +2399,6 @@
       "uid": "68ef9e9ce5ae1017",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2609/03/news041.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-03T02:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIを個人の業務効率化ツールで終わらせず、全社規模での活用を推進し、競争優位につなげるには何が必要なのか。生成AI活用に取り組む住友化学、LINEヤフー、ディップの見解をまとめた。",
-      "title": "「あえてAIと声高に言うな」　住友化学、LINEヤフー、ディップに学ぶ“生成AI全社定着”の極意",
-      "uid": "e43d83951ca14336",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/03/news043.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-03T02:14:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "MetaがAIモデル「Muse Spark 1.3」を現地時間の2026年9月2日にリリースしました。Muse Spark 1.3は長期的なコーディングタスクに対応できるようにトレーニングされており、コーディング性能を測定するベンチマークテストでGPT-5.6 SolやClaude Opus 5を超えるスコアを記録しています。 続きを読む...",
-      "title": "Metaが「Muse Spark 1.3」を発表、ついにAnthropicやOpenAIの最先端モデルに追いつく性能を達成",
-      "uid": "765bcfa68e5f57e0",
-      "url": "https://gigazine.net/news/20260903-meta-muse-spark-1-3/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T02:02:26+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "KDDIは、東京都高輪の「TAKANAWA GATEWAY Convention Center」およびオンライン配信にて、ビジネスイベント「KDDI SUMMIT 2026」を10月27日と10月28日に開催する。参加費は無料。",
-      "title": "AI社会を体感できるビジネスイベント「KDDI SUMMIT 2026」10月27日・28日に開催",
-      "uid": "9bee2be7433666a4",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137841.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-03T02:01:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米トランプ政権は、報道機関とOpenAIの間で争われている一連の著作権訴訟に意見を表明し、パブリッシャーのコンテンツを使ったAIモデルの学習はフェアユースに当たるとするOpenAIの主張を支持した。",
-      "title": "トランプ政権、OpenAIを支持　メディアとの著作権訴訟でAI学習は「フェアユース」",
-      "uid": "f6e34b1eb9103e53",
-      "url": "https://japan.cnet.com/article/35252236/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-09-03T01:45:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Googleは9月2日（米国時間）、AIモデル「Gemini 3.8 Flash」を発表した。3週間前の「Gemini 3.7 Flash」に続く新モデルで、Flash系の刷新は6週間で3度目になる。推論とコーディングの性能を引き上げる一方、速度と料金は3.7 Flashから変えていない。ただし料金は年内限りの導入価格で、2027年1月には引き上げる。",
-      "title": "Google、「Gemini 3.8 Flash」発表",
-      "uid": "143a574150427a9c",
-      "url": "https://japan.cnet.com/article/35252238/",
-      "vendor": "CNET Japan"
     }
   ]
 }

@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-09T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "An illustrated graphic set against a vibrant green background featuring American football elements, including a gold trophy, a blue helmet, a silver whistle, a football, a mini scoreboard, and play d…",
+      "summary_ja": "検索機能にアメフト関連の新機能が登場",
+      "summary_source": "gemini",
+      "title": "Get ready for the game with new football features in Search",
+      "uid": "8f24a50185403b9f",
+      "url": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-09T16:42:11.740885+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-09T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "An elderly couple sitting in a movie theater. Overlayed are \"Teulluride Film Festival\" and \"Love, Rendered\"",
+      "summary_ja": "70年のラブストーリーが映像で再現された\n映画祭「Teulluride Film Festival」で公開\nタイトルは「Love, Rendered」",
+      "summary_source": "gemini",
+      "title": "Recreating a 70-year love story frame by frame",
+      "uid": "5298b6d6d25c7026",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-09T00:18:03.279528+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -4210,20 +4238,6 @@
       "title": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
       "uid": "a45be18d406b833f",
       "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-11T13:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.",
-      "summary_ja": "全米でAIの普及を担うフェローシップを開始。\n「Claude Corps」として初期キャリアの人材を育成。\nAIの利点をアメリカ各地のコミュニティに広げる。",
-      "summary_source": "gemini",
-      "title": "Introducing Claude Corps",
-      "uid": "44e661cdec0139b2",
-      "url": "https://www.anthropic.com/news/claude-corps",
       "vendor": "Anthropic"
     }
   ]
