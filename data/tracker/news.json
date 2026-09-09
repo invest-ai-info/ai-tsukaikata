@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-09T19:58:14+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added maxEffortLevel setting (top-level or per model under modelSettings ): caps the effort level on every provider, including Bedrock, Vertex and Foundry; users can still pick a lower…",
+      "title": "v2.1.267",
+      "uid": "31a554259e815a82",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.267",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-09T19:48:15.908322+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -41,6 +53,20 @@
       "uid": "5298b6d6d25c7026",
       "url": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-09T11:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Meet GPT-6 Astra, OpenAI’s most capable model for business, with advanced reasoning, computer use, and stronger writing and design judgment.",
+      "summary_ja": "OpenAIがビジネス向けAI「GPT-6 Astra」を発表\n企業向けで最も高性能なモデルとして登場\n高度な推論、PC操作、文章・デザイン判断を強化",
+      "summary_source": "gemini",
+      "title": "GPT-6 Astra: The next generation in intelligence for work",
+      "uid": "328a4bc206969fae",
+      "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-09T00:18:03.279528+00:00",
@@ -4225,20 +4251,6 @@
       "uid": "3fa92a15da863e80",
       "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code:batch",
       "vendor": "Moonshot AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-11T20:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "We’re helping build the state’s next-generation workforce and investing in energy programs.",
-      "summary_ja": "バージニア州で地域社会への投資を実施。\n次世代の人材育成やエネルギープログラムに投資する。",
-      "summary_source": "gemini",
-      "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
-      "uid": "3e2faa7146c71aeb",
-      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
-      "vendor": "Google"
     }
   ]
 }

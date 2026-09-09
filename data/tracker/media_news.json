@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T21:26:33+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicの研究幹部2人が、超知能開発への危機感を訴えて退社した研究員の主張に同意する見解を個人として投稿した。10年以内に人類が滅亡する確率を10％超と試算する声や、堅牢な安全制御手法がないまま開発競争が続いている実態を指摘し、減速の必要性を改めて訴えている。",
+      "title": "Anthropic在籍の研究者2人も同調──「AIが人類を滅ぼしかねないと本気で考えている」",
+      "uid": "e047e677be047590",
+      "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001342/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-09-09T21:23:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "アップルは、フィットネス重視の新型スマートウォッチ「Apple Watch Ultra 4」を発表した。",
+      "title": "「Apple Watch Ultra 4」発表、Siri AIや音声検知に対応　9月18日発売へ",
+      "uid": "670c6c2b8751e9f3",
+      "url": "https://japan.cnet.com/article/35252452/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T21:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "経済産業省とNEDOの下で国内の生成AI開発を推進するGENIACは、「ロボット基盤モデルの研究開発事業（多用途ロボット等）」と「データエコシステムの構築等に関する研究開発事業・第4回公募」の採択事業者を発表した。",
+      "title": "GENIACの活動はAI×ロボティクスへ、ロボット基盤モデル開発の採択事業者を発表",
+      "uid": "ab2afaf0a3b8b093",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/10/news053.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "400以上のAIモデルを1つのAPIで呼べる中継サービス「OpenRouter」の週間トークン処理量が、1年で20倍を超え、なお加速している。なぜ伸びているのか、私たちも使うべきなのか。仕組みと注意点を整理し、筆者自身の使い方も交えて考える。",
+      "title": "OpenRouterの利用量が1年で20倍超　今も加速する「AI共通API」について私たちが知るべきこと",
+      "uid": "f8b884f2d56f88b0",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news011.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-09T22:35:14.494679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「AI前提の組織へ」という号令のもと、現場で多発する「業務部門の暴走」や「ITと現場の不健全な対立」――誰でも手軽にAIを使えるようになったからこそ生じる課題にどう向き合うべきなのか。複数の事業会社で現場のAI定着に取り組む変革実務家・西野大介氏に「信頼関係構築」のポイントを聞いた。",
+      "title": "「誰でもAIを使える時代」の功罪　業務部門の暴走、現場と統制の対立を防ぐために必要な「覚悟」",
+      "uid": "b6dd669be2f842e4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news012.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-09T19:48:15.908322+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2338,66 +2398,6 @@
       "title": "KDDI、高輪ゲートウェイシティのローソンにAI自動分別ボックスを設置 リチウムイオン電池の回収を実施",
       "uid": "31ce8f7690cbc6b7",
       "url": "https://ai.watch.impress.co.jp/docs/news/2137933.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-03T04:05:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AnthropicがオンラインストアにAIを組み込むための開発者向けエージェント「commerce agents」を公開しました。commerce agentsを使うことで「ユーザーの質問に応じて商品を提案するAI」や「販売実績を分析して価格設定や値引きキャンペーンを提案するAI」を開発することができます。 続きを読む...",
-      "title": "Anthropicが「オンラインストアに商品提案AIを組み込んで売上アップ」を実現するためのエージェントをオープンソースで公開",
-      "uid": "ef08918094670ee5",
-      "url": "https://gigazine.net/news/20260903-claude-commerce-agents/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-03T03:52:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleは2026年9月2日、AIモデル「Gemini 3.8 Flash」とサイバーセキュリティ向けの「Gemini 3.8 Flash Cyber」を発表しました。Gemini 3.8 Flashはソフトウェア開発やAIエージェントとしての性能、複数段階の推論能力を強化したモデルで、Gemini 3.8 Flash Cyberは脆弱(ぜいじゃく)性の発見から修正までを支援するセキュリティ…",
-      "title": "Googleが「Gemini 3.8 Flash」をリリース、2027年から価格2倍に",
-      "uid": "e0ae51787ddb0bb9",
-      "url": "https://gigazine.net/news/20260903-gemini-3-8-flash-cyber/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T03:48:33+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Meta Superintelligence Labsは9月1日、リアルタイム音声認識モデル「Muse Voice Transcribe」を発表した。現在、Meta Model API、Meta AI for MacおよびMuse Codeを通じて利用できる。",
-      "title": "Meta、リアルタイム音声認識モデル「Muse Voice Transcribe」発表",
-      "uid": "2ee7fceb40feda00",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137915.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T03:15:04+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ロボットバンクは、会話して歩く恐竜ロボット「ガオくん」の販売およびレンタルを開始した。",
-      "title": "会話して歩く恐竜ロボット「ガオくん」登場！ ロボットバンクが販売・レンタル開始",
-      "uid": "f53bbbccd7f2d83d",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137883.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T02:55:58+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、「Gemini 3.8 Flash」と「Gemini 3.8 Flash Cyber」をリリースした。",
-      "title": "Gemini 3.8 Flashと3.8 Flash Cyberリリース Googleにおいて最も高性能なサイバーセキュリティモデル",
-      "uid": "993d45e9e7df23a8",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137886.html",
       "vendor": "Impress AI Watch"
     }
   ]
