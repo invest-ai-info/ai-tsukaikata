@@ -309,6 +309,19 @@
       許可リストに追加されたら、まずここを再試行すること。①（openai.com本体・help.openai.com）はbot判定なので
       許可リストを足しても直らない点は変わらない。
 
+  - **2026-09-09 4回目（再試行）: まだ読めない。**未処理（`- [ ]`）が0件だったため、停止理由が「経路遮断」だった
+    本行を上から見て再試行した。結果は**引き続き変わらず**:
+    - `openai.com/index/introducing-admin-plugin` → **403**（変わらず、`cf-mitigated: challenge` の bot 判定）
+    - `learn.chatgpt.com/` → **`CONNECT tunnel failed, response 403`**（変わらず、経路＝許可リストの遮断。
+      エージェントプロキシのログでも `connect_rejected (organization policy)` と明記されている）
+    - `developers.openai.com/codex/enterprise/admin-setup` → **200 → 308転送**（転送先は今日も
+      `learn.chatgpt.com/docs/enterprise/admin-setup`。転送元・`developers.openai.com/api/docs/models` は
+      到達できるが、転送先が許可リストに無いので本文には届かない）
+    - `help.openai.com/en/articles/20001275-chatgpt-work-and-codex` → **403**（変わらず、bot 判定）
+    - → **①②とも解けていない（8/25初回から15日・4回連続で同じ結果）。**引き続き `- [!]` のまま据え置く。
+      次に見る人へ＝`learn.chatgpt.com` が許可リストに追加されたら、まずここを再試行すること。
+      ①（openai.com本体・help.openai.com）はbot判定なので許可リストを足しても直らない点は変わらない。
+
 - [!] https://openai.com/index/introducing-intelligence-age
   - 2026-08-26 自動追記（major・OpenAI「Introducing Intelligence Age」）
   - **2026-08-27 1回目: 記事を書かずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
