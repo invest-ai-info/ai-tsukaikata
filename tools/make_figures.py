@@ -19681,7 +19681,107 @@ def long_report_checkable_facts_chart() -> None:
     )
 
 
+def late_correction_heading_matrix_chart() -> None:
+    """見出しの一言で、後から見つかった先月分の訂正が前月比に反映されるかが変わる。
+
+    実測（2026-09-09）。架空の月次記録2本（材料A＝相談受付件数、材料B＝売上金額）で、
+    「後から見つかった記録」欄の見出しと指示文を4通りに変えて各材料2回ずつ＝14回。
+    真値は材料を作ったコードから計算（手で書いていない）。
+    """
+    rows = [
+        ("見出しに「まだ反映されていません」\nそのまま頼む", "28件（2/2）", "good", "▲6.1%（2/2）", "good"),
+        ("同じ見出し＋「直してから比較して」\nと明示的に頼む", "28件（2/2）", "good", "▲6.1%（2/2）", "good"),
+        ("見出しを「メモ」に変える\n（反映済みかは書かない）", "26件（2/2）", "bad", "保留・要確認（2/2）", "warn"),
+        ("「メモ」のまま＋理由によらず\n必ず加算してと指示", "28件（2/2）", "good", "未実施", "quiet"),
+    ]
+    klass = {"good": "box-good", "warn": "box-accent", "bad": "box-bad", "quiet": "box-quiet"}
+    text_klass = {"good": "t-good", "warn": "t-accent", "bad": "t-bad", "quiet": "t-xs"}
+
+    label_x, label_w = 18, 258
+    col_w, col_gap = 190, 12
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(2)]
+    head_y, head_h = 118, 34
+    row_h, row_gap = 60, 12
+    row_y = [head_y + head_h + row_gap + i * (row_h + row_gap) for i in range(4)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "見出しの一言で、先月分の訂正が前月比に反映されるかが変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の月次記録2本（材料A＝相談受付件数、材料B＝売上金額）。先月の確定値には無い"
+        "3件の訂正を、後から見つかった記録として同じ材料に含めた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "正しい前月比は材料A＝▲14.3%（28件→24件）、材料B＝▲6.1%（97,000円→91,100円）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "訂正を無視すると材料Aは▲4.0%、材料Bは符号が逆転して+10.3%になる。"
+        "頼み方4通り×材料2本×各2回＝14回試した。</text>\n",
+    ]
+
+    for i, head in enumerate(("材料A（件数）", "材料B（金額）")):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="{head_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + col_w / 2 - 40:.0f}" y="{head_y + 22}" '
+            f'style="font-size:12.5px">{_esc(head)}</text>\n'
+        )
+
+    for r, (cond, a_val, a_kind, b_val, b_kind) in enumerate(rows):
+        y = row_y[r]
+        lines = cond.split("\n")
+        parts.append(
+            f'<text class="t-strong" x="{label_x}" y="{y + 20}" '
+            f'style="font-size:12px">{_esc(lines[0])}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + 38}">{_esc(lines[1])}</text>\n'
+        )
+        for c, (value, kind) in enumerate(((a_val, a_kind), (b_val, b_kind))):
+            parts.append(
+                f'<rect class="{klass[kind]}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_klass[kind]}" x="{col_x[c] + 14}" '
+                f'y="{y + row_h / 2 + 5:.0f}" style="font-size:12.5px">{_esc(value)}</text>\n'
+            )
+
+    bottom = row_y[-1] + row_h
+    notes = [
+        ("t-bad", "※ 見出しを「メモ」に変えただけで、材料Aは「二重登録扱い」という一言を"),
+        ("t-bad", "　引き算の理由と読み、2回とも28件ではなく26件で止まった。"),
+        ("t-sm", "※ 材料Bは数字を確定させず、2回とも先に確認を求めた。うち1回は訂正額"
+                 "そのものの合計を間違えた（14,400円のはずが8,600円）。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 4
+    alt = (
+        "見出しと指示文を4通り変えたときに、後から見つかった先月分の訂正が前月比へ反映されたかを示す表。"
+        "材料Aは相談受付件数、材料Bは売上金額。正しい前月比は材料Aが▲14.3%、材料Bが▲6.1%で、"
+        "訂正を無視すると材料Aは▲4.0%、材料Bは符号が逆転して+10.3%になる。"
+        "見出しに「まだ反映されていません」と明記してそのまま頼んだ2回は、材料A・材料Bとも2回中2回で"
+        "正しい訂正後の値（28件・▲6.1%）を使った。同じ見出しで「直してから比較して」と明示的に頼んだ"
+        "2回も同じ結果だった。見出しを「メモ」に変えて反映済みかどうかを書かなかった2回は、"
+        "材料Aが2回とも26件（正しくは28件）で止まり、これは「二重登録扱い」という備考の一言を"
+        "引き算の理由と読み違えたため。材料Bは2回とも数字を確定させず先に確認を求め、"
+        "うち1回は訂正額の合計そのものを14,400円ではなく8,600円と計算違いした。"
+        "「メモ」の見出しのまま「理由の書き方によらず必ず加算してください」と指示を足すと、"
+        "材料Aは2回とも正しい28件に戻った（材料Bは未実施）。"
+    )
+    (OUT / "late-correction-heading-matrix.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    late_correction_heading_matrix_chart()
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()
     reflect_4d_framework_chart()
