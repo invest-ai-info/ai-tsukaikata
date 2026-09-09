@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T19:48:15.908322+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-09T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards.",
+      "summary_ja": "OpenAIの財団理事にPaul Christiano氏が就任\n財団の安全保障委員会にも参加。\nAIの安全性や基準策定の経験を持つ。",
+      "summary_source": "gemini",
+      "title": "Paul Christiano joins OpenAI Foundation Board",
+      "uid": "287a8f4c27ba4405",
+      "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-09T16:42:11.740885+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -4225,20 +4239,6 @@
       "uid": "3e2faa7146c71aeb",
       "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-11T18:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re announcing a multi-year global alliance with DXC Technology, one of the world’s largest IT services companies.",
-      "summary_ja": "DXC TechnologyがAI「Claude」をシステムに統合へ。\n銀行や航空会社など規制業種のシステムに組み込む。\n世界最大級のITサービス会社DXCと複数年の提携。",
-      "summary_source": "gemini",
-      "title": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
-      "uid": "a45be18d406b833f",
-      "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
-      "vendor": "Anthropic"
     }
   ]
 }

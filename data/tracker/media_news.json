@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-09T19:48:15.908322+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T18:40:27+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Appleは同社デバイスの音声アシスタント「Siri AI」の日本語版を10月に提供すると発表した。",
+      "title": "「Siri AI」日本語版は10月提供　AI機能組み込んだ音声アシスタント　専用アプリも【追記あり】",
+      "uid": "6177325d308fb8fa",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001338/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-09T16:42:11.740885+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2387,18 +2399,6 @@
       "uid": "993d45e9e7df23a8",
       "url": "https://ai.watch.impress.co.jp/docs/news/2137886.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-03T02:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの進化は、業務効率化をもたらした半面、サイバー攻撃の手口も増やしてしまっている。2026年はどのような攻撃に気を付けるべきなのか。元警視庁職員などの専門家が示す最新のボイスフィッシングや、ランサムウェア攻撃の最新トレンドまで、組織が今すぐ取るべき備えを紹介する。",
-      "title": "「社長の声」悪用で被害45億円　元警視庁が明かす「AI詐欺」の手口",
-      "uid": "68ef9e9ce5ae1017",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/03/news041.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
