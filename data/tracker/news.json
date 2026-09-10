@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T06:01:05.671464+00:00",
+      "importance": "major",
+      "label": "DeepSeek 新モデル",
+      "published": "2026-09-10T02:17:58+00:00",
+      "source_id": "hf-deepseek",
+      "summary": "HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4.1-Flash が公開されました。",
+      "title": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "uid": "b5bb02768d91e7ac",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "vendor": "DeepSeek"
+    },
+    {
       "first_seen": "2026-09-09T22:35:14.494679+00:00",
       "importance": "minor",
       "label": "Claude Code",
