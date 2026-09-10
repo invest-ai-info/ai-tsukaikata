@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T19:44:31.507839+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-10T17:45:22+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.5.0 (2026-09-10) Full Changelog: v1.4.0...v1.5.0 Features api: add auto mode tool permissions for Managed Agents ( 62aa21b ) api: add content_too_large web_fetch tool error code ( 4b5dec6 ) api: ad…",
+      "title": "v1.5.0",
+      "uid": "334fdcc9b955cbee",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.5.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-10T16:28:03.909484+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -57,6 +69,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-10T19:44:31.507839+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-10T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials.",
+      "summary_ja": "金融業界向けChatGPTが発表されました\n金融データとGPT-6 Astraを組み合わせ\n調査、モデル作成、資料作成に活用できます",
+      "summary_source": "gemini",
+      "title": "Introducing ChatGPT for Financial Services",
+      "uid": "8e8339dfe9ef6ed9",
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-10T06:01:05.671464+00:00",
       "importance": "major",
       "label": "DeepSeek 新モデル",
@@ -67,6 +93,34 @@
       "uid": "b5bb02768d91e7ac",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
       "vendor": "DeepSeek"
+    },
+    {
+      "first_seen": "2026-09-10T19:44:31.507839+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-10T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Over the past eight months, our Threat Intelligence team identified and disrupted operations in which threat actors tried to use Claude for malicious activity. In this report, we share case studies f…",
+      "summary_ja": "AI悪用への対策状況が報告されました\n過去8ヶ月で脅威情報チームが\nClaudeを悪用する活動を発見し阻止しました",
+      "summary_source": "gemini",
+      "title": "Detecting and countering misuse of AI: September 2026",
+      "uid": "966a0b745e5beba1",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-10T19:44:31.507839+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+      "summary_ja": "GPT-Live-1がAPIで利用可能になりました\n自然な双方向の音声会話ができ\n指示への追従性向上や電話機能に対応します",
+      "summary_source": "gemini",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+      "uid": "b7ae1869fe1003b9",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-09T22:35:14.494679+00:00",
@@ -4306,20 +4360,6 @@
       "title": "Results from the first Anthropic Public Record",
       "uid": "7618db0568bfbea5",
       "url": "https://www.anthropic.com/news/anthropic-public-record",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-12T18:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re announcing a partnership with Tata Consultancy Services (TCS). TCS will provide Claude to 50,000 of its own employees across 56 countries; build Claude-powered products for clients in financial…",
-      "summary_ja": "TCSがAI「Claude」を規制業種に提供開始。\nTCSとパートナーシップを締結し、56か国5万人の従業員に提供。\n金融などの顧客向けにClaudeを使った製品を開発。",
-      "summary_source": "gemini",
-      "title": "TCS and Anthropic partner to bring Claude to regulated industries",
-      "uid": "45686ecb6e4a26aa",
-      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
       "vendor": "Anthropic"
     }
   ]

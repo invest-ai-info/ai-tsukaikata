@@ -14,13 +14,13 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 77,
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "count": 78,
+      "last_error": "HTTPError: HTTP Error 404: Not Found"
     }
   },
   "latest": {
-    "anthropic-news": "2026-09-01T23:31:00+00:00",
-    "anthropic-sdk": "2026-09-04T22:20:20+00:00",
+    "anthropic-news": "2026-09-10T00:00:00+00:00",
+    "anthropic-sdk": "2026-09-10T17:45:22+00:00",
     "claude-code": "2026-09-09T19:58:14+00:00",
     "deepmind-blog": "2026-09-08T14:00:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
@@ -105,6 +105,28 @@
       "uid": "82185d69ff32fc8b",
       "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-10T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Over the past eight months, our Threat Intelligence team identified and disrupted operations in which threat actors tried to use Claude for malicious activity. In this report, we share case studies f…",
+      "title": "Detecting and countering misuse of AI: September 2026",
+      "uid": "966a0b745e5beba1",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+      "uid": "b7ae1869fe1003b9",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -562,6 +584,7 @@
     "32fac3bb2225345f": "2026-09-04T05:57:33.223134+00:00",
     "3309fbf04da1b60c": "2026-09-06T17:07:09.968572+00:00",
     "332ee0d179f1027c": "2026-08-01T12:16:42.309603+00:00",
+    "334fdcc9b955cbee": "2026-09-10T19:44:31.507839+00:00",
     "3354062cd5ba6f95": "2026-08-01T12:16:42.309603+00:00",
     "337ea0624bfcbb44": "2026-09-09T06:01:22.694805+00:00",
     "3380dbec625f2419": "2026-08-15T01:52:13.409322+00:00",
@@ -1285,6 +1308,7 @@
     "8e2351755d381540": "2026-09-02T11:23:56.563756+00:00",
     "8e252f0ef1805792": "2026-08-01T12:16:42.309603+00:00",
     "8e3814f1920323da": "2026-09-04T01:01:16.873601+00:00",
+    "8e8339dfe9ef6ed9": "2026-09-10T19:44:31.507839+00:00",
     "8e8e3e26780328ea": "2026-08-02T11:35:58.106550+00:00",
     "8ea1802710b4e059": "2026-08-28T18:46:16.087122+00:00",
     "8ea264cbd3a0c691": "2026-08-26T17:51:15.758122+00:00",
@@ -1366,6 +1390,7 @@
     "9601a02b294e9096": "2026-08-26T03:27:09.606981+00:00",
     "960fbfb3aed3600e": "2026-08-14T11:59:16.623121+00:00",
     "96552263e28620f5": "2026-08-01T12:16:42.309603+00:00",
+    "966a0b745e5beba1": "2026-09-10T19:44:31.507839+00:00",
     "967c66fc3222ab17": "2026-08-01T12:16:42.309603+00:00",
     "968ae143914dda15": "2026-08-01T12:16:42.309603+00:00",
     "9691c2d9193e8819": "2026-09-03T22:37:08.568544+00:00",
@@ -1627,6 +1652,7 @@
     "b754ec83a531574a": "2026-08-25T03:14:16.175949+00:00",
     "b79f6edfb2b00907": "2026-08-19T04:54:01.800747+00:00",
     "b7ae0383bfd3f5c1": "2026-08-18T20:42:26.846917+00:00",
+    "b7ae1869fe1003b9": "2026-09-10T19:44:31.507839+00:00",
     "b7bcf7936080829c": "2026-08-26T09:04:44.593909+00:00",
     "b7c293d22d9ee871": "2026-08-13T12:01:33.145239+00:00",
     "b7ffea20840fdeb1": "2026-08-01T12:16:42.309603+00:00",
