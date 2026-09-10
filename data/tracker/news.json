@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T22:37:54.055949+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-10T20:30:54+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added to the Claude apps gateway: with pricing: set in gateway.yaml , signed-in Claude Code clients receive the same rates through managed settings, so /cost and telemetry match the sp…",
+      "title": "v2.1.268",
+      "uid": "baff8207ac1bb004",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.268",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-10T19:44:31.507839+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -120,6 +132,20 @@
       "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
       "uid": "b7ae1869fe1003b9",
       "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-10T22:37:54.055949+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use.",
+      "summary_ja": "クラウドエージェントを作る「Agents API」が登場。\n連携、長時間の処理、ツールの利用が可能に。\n管理サービスとして提供され、Codexハーネスが基盤。",
+      "summary_source": "gemini",
+      "title": "Introducing the Agents API",
+      "uid": "815b124bbff8ee35",
+      "url": "https://openai.com/index/introducing-the-agents-api",
       "vendor": "OpenAI"
     },
     {
@@ -4348,18 +4374,6 @@
       "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
       "uid": "4853f3433bc25365",
       "url": "https://www.anthropic.com/news/fable-mythos-access",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-12T21:51:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Results from the first Anthropic Public Record",
-      "uid": "7618db0568bfbea5",
-      "url": "https://www.anthropic.com/news/anthropic-public-record",
       "vendor": "Anthropic"
     }
   ]

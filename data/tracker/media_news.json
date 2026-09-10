@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T22:37:54.055949+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-10T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "業績絶好調の独立系インフラベンダー・ネットワンシステムズが、自ら上場を廃止しSCSK傘下に入る「攻めの統合」を決断した。身売りではなく、自らの手で次世代IT企業へと進化するための戦略的ディールだ。インフラ（NI）とアプリ（SI）の壁を壊しワンストップ化を目指す両社。文化の異なる大企業同士がいかに融合し事業領域を拡大するのか。最先端拠点「netone valley」で田中拓也COOに直撃した。",
+      "title": "好業績なのに“上場廃止”　なぜネットワンはSCSKとの「攻めの統合」に賭けたのか",
+      "uid": "0e977e1ab925b88e",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/11/news020.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-10T22:37:54.055949+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-10T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIのトークン利用料金は90％下落しているのに、支出が増加する――こうしたAIコストを巡る議論では「ジェボンズのパラドックス」が注目されている。どのような考え方なのか。",
+      "title": "「AI利用料は90％下落、でも支出増」の怪――AIコスト問題で注目の「ジェボンズのパラドックス」から考える",
+      "uid": "93186b73fa4e9bca",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/11/news030.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-10T22:37:54.055949+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-10T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 ChatGPTの「サイト」機能で、自社サイトからWebアプリ、ECサイトまで作れる！",
+      "uid": "94e9f7af06e3ff1a",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2139041.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-10T22:37:54.055949+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-10T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "他社の華やかな「インスタ映え」するAI成功事例を追うのは、今すぐ辞めるべき――。「AIを使え」というトップダウンの号令だけで空回りする組織が、過去の「失敗DX」と同じ轍を踏まないための現実的なアプローチとは何か。",
+      "title": "「『過去の失敗DX』を学ぶべき」　専門家に聞く現実的な「AI変革推進法」",
+      "uid": "a3dd5abdaf83c7d1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/11/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-10T16:28:03.909484+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "c67d574e814cf418",
       "url": "https://www.itmedia.co.jp/aiplus/article/2609/04/2000001166/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-04T05:57:33.223134+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-04T03:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "NVIDIAが発表した「NVIDIA PAIR」は、多くの人がまだ直面していない問題を巧みに解決する仕組みだ。",
-      "title": "余っているPCのリソースをAIに、NVIDIA「PAIR」がもたらす新しいAI環境",
-      "uid": "5f7edc200f877ab5",
-      "url": "https://japan.cnet.com/article/35252298/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-04T05:57:33.223134+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-09-04T03:25:16+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "新AIモデル「GPT-6 Astra」を使えるようになるまで、「ChatGPT」の利用制限枠のリセット権を有料ユーザー向けに毎日提供する――米OpenAIのティボ・ソティオ氏は、自身のXアカウントでこのように投稿した。",
-      "title": "ChatGPTの利用制限、新モデル「Astra」提供まで“毎日リセット”　有料ユーザー向け",
-      "uid": "e41bf2b1d3a9fa12",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/04/2000001165/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-04T05:57:33.223134+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-04T03:11:50+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NVIDIAは9月3日、300万以上のモデル・50万のデータセット100万のアプリケーションを共有するAIプラットフォーム「Hugging Face」を約129億3,000万ドルで買収すると発表した。Hugging Faceは1,800万人超の開発者が利用し、20万社以上の企業が同プラットフォームを活用し、AIの発見、評価、カスタマイズ、導入を行なっている。",
-      "title": "NVIDIA、約129億3,000万ドルで「Hugging Face」を買収すると発表",
-      "uid": "0766425711a27ee9",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138239.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-04T05:57:33.223134+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-04T03:11:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "60の言語を自動で検知して文字起こしするという音声認識モデル「MAI-Transcribe-2」をMicrosoftがリリースしました。OpenAIやGoogleの最新モデルより高性能かつ高速なことがアピールされています。 続きを読む...",
-      "title": "Microsoftが文字起こしAI「MAI-Transcribe-2」をリリース、Gemini 3.5 Transcribeより5倍高速＆GPT-Transcribeより10倍高速",
-      "uid": "2b368f396419b2aa",
-      "url": "https://gigazine.net/news/20260904-mai-transcribe-2/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
