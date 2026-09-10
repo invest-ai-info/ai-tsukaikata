@@ -1,6 +1,62 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T16:28:03.909484+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
+      "summary_ja": "研究者がAIで新たな抗菌物質を探し始めた。\n「Codex」と「ChatGPT」を使い感染症と闘う。\n生き物や絶滅生物の遺伝子を分析する。",
+      "summary_source": "gemini",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "uid": "7e8083a851436346",
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-10T16:28:03.909484+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-10T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
+      "summary_ja": "検索機能で次のレース準備３つの方法が公開された。",
+      "summary_source": "gemini",
+      "title": "3 ways to prep for your next big race with Search",
+      "uid": "82185d69ff32fc8b",
+      "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-10T16:28:03.909484+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T15:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+      "summary_ja": "「ChatGPT Work」にデータ活用AIが登場した。\n会社のデータをAIにつなげ分析や発見ができる。\n対話形式で動く情報画面も作れる。",
+      "summary_source": "gemini",
+      "title": "Now everyone can put data to work",
+      "uid": "77d959194b055e07",
+      "url": "https://openai.com/index/put-data-to-work",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-10T16:28:03.909484+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support.",
+      "summary_ja": "OpenAIとGSAが政府機関向けにAI利用を拡大。\nライセンス料は無料、利用料が50%割引。\nサイバー攻撃対策の支援も強化される。",
+      "summary_source": "gemini",
+      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
+      "uid": "7b459373a371c69b",
+      "url": "https://openai.com/index/expanding-ai-access-us-government",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-10T06:01:05.671464+00:00",
       "importance": "major",
       "label": "DeepSeek 新モデル",
@@ -4265,30 +4321,6 @@
       "uid": "45686ecb6e4a26aa",
       "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Kimi 新モデル",
-      "published": "2026-06-12T12:12:41+00:00",
-      "source_id": "openrouter-moonshot",
-      "summary": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-o…",
-      "title": "moonshotai/kimi-k2.7-code",
-      "uid": "2eea59f66f030b75",
-      "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
-      "vendor": "Moonshot AI"
-    },
-    {
-      "first_seen": "2026-08-07T00:17:27.231353+00:00",
-      "importance": "minor",
-      "label": "Kimi 新モデル",
-      "published": "2026-06-12T12:12:41+00:00",
-      "source_id": "openrouter-moonshot",
-      "summary": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-o…",
-      "title": "moonshotai/kimi-k2.7-code:batch",
-      "uid": "3fa92a15da863e80",
-      "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code:batch",
-      "vendor": "Moonshot AI"
     }
   ]
 }

@@ -14,8 +14,8 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 76,
-      "last_error": "HTTPError: HTTP Error 404: Not Found"
+      "count": 77,
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   },
   "latest": {
@@ -24,15 +24,15 @@
     "claude-code": "2026-09-09T19:58:14+00:00",
     "deepmind-blog": "2026-09-08T14:00:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-09-09T16:00:00+00:00",
+    "google-ai-blog": "2026-09-10T16:00:00+00:00",
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-09-10T08:50:00+00:00",
-    "media-gigazine": "2026-09-10T11:00:00+00:00",
+    "media-gigazine": "2026-09-10T12:00:00+00:00",
     "media-impress-ai": "2026-09-10T10:17:30+00:00",
     "media-itmedia-aiplus": "2026-09-10T09:23:08+00:00",
-    "media-publickey": "2026-09-09T15:30:50+00:00",
-    "openai-news": "2026-09-09T17:00:00+00:00",
+    "media-publickey": "2026-09-10T15:42:50+00:00",
+    "openai-news": "2026-09-10T16:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-03T21:08:24+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
@@ -61,6 +61,50 @@
       "uid": "d93675cf6b469cf6",
       "url": "/scsk-sc-partnership/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "uid": "7e8083a851436346",
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T15:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+      "title": "Now everyone can put data to work",
+      "uid": "77d959194b055e07",
+      "url": "https://openai.com/index/put-data-to-work",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-10T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support.",
+      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
+      "uid": "7b459373a371c69b",
+      "url": "https://openai.com/index/expanding-ai-access-us-government",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-10T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
+      "title": "3 ways to prep for your next big race with Search",
+      "uid": "82185d69ff32fc8b",
+      "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -671,6 +715,7 @@
     "48681c0ade51f281": "2026-09-02T16:37:54.824038+00:00",
     "487039d9b6aaa16c": "2026-09-02T00:17:44.256959+00:00",
     "4871073c2393129b": "2026-09-02T05:51:57.834877+00:00",
+    "4873e4200e9d8e04": "2026-09-10T16:28:03.909484+00:00",
     "48967fc9840a5ddc": "2026-08-24T11:45:43.499439+00:00",
     "489cfa8978beb818": "2026-08-04T11:04:53.115730+00:00",
     "48ca4953a1510776": "2026-08-24T07:30:45.265644+00:00",
@@ -1045,6 +1090,7 @@
     "77993f40afd07974": "2026-09-08T04:43:11.821528+00:00",
     "77a90f76487e9ea3": "2026-08-01T12:16:42.309603+00:00",
     "77b25b7604d79a99": "2026-08-18T22:43:44.829078+00:00",
+    "77d959194b055e07": "2026-09-10T16:28:03.909484+00:00",
     "77eb62ee9f40ebdc": "2026-08-01T12:16:42.309603+00:00",
     "77fbb2bfedd4adf1": "2026-09-01T18:35:06.616532+00:00",
     "77fe70ea12d0cf42": "2026-09-09T11:28:50.861492+00:00",
@@ -1083,6 +1129,7 @@
     "7adfe74a554b52fb": "2026-08-21T09:00:17.887163+00:00",
     "7ae01a4c429092ae": "2026-08-25T03:14:16.175949+00:00",
     "7afe8e69d002132f": "2026-08-17T11:43:40.518684+00:00",
+    "7b459373a371c69b": "2026-09-10T16:28:03.909484+00:00",
     "7b4738a272c16ec9": "2026-08-27T09:54:30.419398+00:00",
     "7b6c7f08f549bda0": "2026-09-08T09:45:19.651566+00:00",
     "7b6f4d29a4ed16ed": "2026-09-07T10:24:07.119095+00:00",
@@ -1114,6 +1161,7 @@
     "7e3d8cdaa6618b66": "2026-08-17T01:56:45.196273+00:00",
     "7e4e1f94bff948cc": "2026-08-01T12:16:42.309603+00:00",
     "7e5b6dc71433a350": "2026-08-16T23:35:41.759149+00:00",
+    "7e8083a851436346": "2026-09-10T16:28:03.909484+00:00",
     "7e8a5a9b8be50359": "2026-08-04T11:04:53.115730+00:00",
     "7ea8570463ae2234": "2026-08-01T12:16:42.309603+00:00",
     "7ebee7c6d70e8612": "2026-08-24T03:18:15.258698+00:00",
@@ -1137,6 +1185,7 @@
     "81c406d631617721": "2026-08-01T12:16:42.309603+00:00",
     "82030e6db90bc0ee": "2026-08-25T10:51:45.257904+00:00",
     "8211415a6fdaaaea": "2026-09-01T18:35:06.616532+00:00",
+    "82185d69ff32fc8b": "2026-09-10T16:28:03.909484+00:00",
     "8227ec13170458e0": "2026-08-22T01:52:29.955255+00:00",
     "824437c33f989e40": "2026-08-15T03:56:20.048752+00:00",
     "826c44743d33cf0f": "2026-08-30T12:56:37.605701+00:00",
@@ -2052,6 +2101,7 @@
     "f3117fd13788a27c": "2026-08-13T12:01:33.145239+00:00",
     "f3427b5386b8b6a3": "2026-08-30T23:32:54.951033+00:00",
     "f35d9564920f6bb1": "2026-08-13T12:01:33.145239+00:00",
+    "f391101525c122cc": "2026-09-10T16:28:03.909484+00:00",
     "f397ca7467d23451": "2026-08-27T09:54:30.419398+00:00",
     "f39b79e6aa08c9d7": "2026-08-21T03:17:45.901339+00:00",
     "f3c920a0da79bacf": "2026-08-25T04:04:08.570654+00:00",

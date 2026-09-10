@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T16:28:03.909484+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-10T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Anthropicが2026年7月に発表した「Claude Opus 5」は、同社が2026年6月にリリースしたClaude Fable 5と同等の性能を半分の価格で実現したというAIモデルです。そんなClaude Opus 5を使ってオンラインショッピングサイトなどで配置されている「カートに追加」ボタンを青色にしようとした際の苛立たしいAIとのやり取りを、ノルウェーのビジネススクールで働くミロ…",
+      "title": "チャットAIのClaudeに「カートに追加するボタンを青色にして」とウェブデザインの変更を依頼すると堂々巡りで全く完成しない様子を再現した「Opusfived」",
+      "uid": "4873e4200e9d8e04",
+      "url": "https://gigazine.net/news/20260910-opusfived/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-10T11:25:23.718331+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "2b368f396419b2aa",
       "url": "https://gigazine.net/news/20260904-mai-transcribe-2/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-04T05:57:33.223134+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-04T02:58:36+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "DataPrism Technologiesは、電力用地探索エージェント「Prime Potential」において、衛星画像のAI解析によって既設の太陽光発電所を検出し、日本全国を対象としたレイヤーとして地図上に可視化する機能を追加した。",
-      "title": "AIが衛星画像から太陽光発電所を自動検出。「Prime Potential」に新機能",
-      "uid": "1d4c12ec03f62bd6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138203.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
