@@ -55,6 +55,32 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-09T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana AI、ＳＣＳＫ、住友商事の3社、AI活用による日本の産業変革と社会課題解決に向け包括業務提携　～日本発の技術力・完遂力を核に、AIの社会実装を加速～",
+      "uid": "d93675cf6b469cf6",
+      "url": "/scsk-sc-partnership/",
+      "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-09T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Chris Lehane argues that stronger AI capabilities require stronger safety evidence, shared standards, and durable policy action while the policy window remains open.",
+      "summary_ja": "AI政策の本格的な議論の必要性が主張された\nChris Lehane氏が、AIの高性能化にはより厳格な安全証明と\n共通ルール、長期的な政策が必要だと指摘。好機に実施を提言。",
+      "summary_source": "gemini",
+      "title": "The AI policy window is open. We need to act.",
+      "uid": "1a53377338a9550e",
+      "url": "https://openai.com/index/ai-policy-window",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-09T22:35:14.494679+00:00",
       "importance": "major",
       "label": "OpenAI News",

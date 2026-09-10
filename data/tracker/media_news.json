@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-10T00:07:49+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、AIモデル「Claude」が評価中に実在システムに不正侵入した事案に関するアライメント分析報告書を公開した。新たに判明した1件を含む計4件を精査し、運用上の不備ではなくモデルの「偏った推論」や「無謀さ」に起因すると見解を修正。第三者評価機関METRによる独立調査の実施も公表した。",
+      "title": "「Claude」による不正アクセス、4件目が判明──Anthropic、「アライメントの失敗」と評価を修正",
+      "uid": "e12ffb5afa7eaeda",
+      "url": "https://www.itmedia.co.jp/news/article/2609/10/2000001346/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "角川アスキー総合研究所が企業の生成AI導入に関する調査結果を公表。AI投資の拡大やAI統制の実態などを明らかにした。",
+      "title": "ルールを作る「管理職」ほどシャドーAI　「AI白書2026」調査が映す“ガイドライン”の限界",
+      "uid": "dcff852875611f46",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news027.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日立製作所がフィジカルAIの実装を加速させる新サービスを発表した。変化が激しいAIの動向をどう読み取り、顧客が必要とするサービスを開発したのか。そこに日立の覚悟が見えた。",
+      "title": "「かすり傷を負ってでも歩く」　日立が見せる覚悟　売り上げ5000億円見込む“AI事業”の拡大にどう挑むか",
+      "uid": "3086391f43699be6",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/10/news028.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIが出す「80点の正解」から感動や熱狂は生まれない──。吉本興業元会長の大﨑洋氏と、STARTO ENTERTAINMENT創業CEOを務めた福田淳氏が対談。「新人はあえてAI禁止」「芸人は管理せず暴れさせる」など、効率化の先にある「偏愛」や「人間くささ」の価値を提言する。尖った個の才能を解き放つ「失敗を許容する環境づくり」こそが、AI時代に他社を凌駕する勝ち筋だと明かす。",
+      "title": "新人はあえてAI禁止！　吉本興業元会長とSTARTO創業CEOが明かす「熱狂を生む現場主義」",
+      "uid": "19ce123ca21597c0",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/10/news031.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-10T01:07:11.826079+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-09T21:55:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「（2026年の）上期中に5分の1、下期中に10分の1に下げる」――NECの小玉浩氏（執行役 Corporate EVP 兼 CAXO）は、全社のAI利用に掛かる“実質的なトークンコスト”の削減目標を明かした。",
+      "title": "NEC、社内の“AIトークン節約”に注力　「同じ使われ方なら10分の1に」と小玉CAXO",
+      "uid": "0d7e486b4449ae48",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001333/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-09T22:35:14.494679+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2339,66 +2399,6 @@
       "uid": "2121cc843176ced2",
       "url": "https://gigazine.net/news/20260903-nyc-school-system-ban-ai-middle-school/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-03T04:55:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アメリカの大手日刊紙であるニューヨーク・タイムズがOpenAIとMicrosoftを著作権侵害で訴えた訴訟で、アメリカの司法省が「AIのトレーニングで著作権保護対象の資料を使うのは著作権法違反ではない」と主張し、OpenAIを支持する意見書を提出しました。 続きを読む...",
-      "title": "著作権を巡るOpenAIとニューヨーク・タイムズの訴訟について司法省が「AIトレーニングはフェアユース」と主張する書面を提出",
-      "uid": "457bdf4c8967e537",
-      "url": "https://gigazine.net/news/20260903-trump-administration-sides-with-openai-in-lawsuit-against-nyt/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-09-03T04:51:58+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Adobeは、Slack上で「Photoshop」や「Firefly」など70種以上のツールを使える「Adobe for Slack」の提供を開始した。Slackbot経由で指示を出し、チャットやcanvasの内容を文脈として反映した画像や資料を制作できる。業務チャットをAIの実行基盤とする動きが加速している。",
-      "title": "Adobe、Slackから「Photoshop」などのツールを使える「Adobe for Slack」提供開始　会話からPDFや動画を生成",
-      "uid": "0c1d2411fcbb25b3",
-      "url": "https://www.itmedia.co.jp/news/article/2609/03/2000001114/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T04:49:25+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立製作所は、AIエージェントを安全に業務へ適用するための「AI品質維持サイクル」技術を開発した。",
-      "title": "日立、AIを重要業務へ安全に適用する「AI品質維持サイクル」技術を開発",
-      "uid": "e52b422af9ddad7e",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137935.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T04:26:09+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本電気（以下、NEC）と三菱重工業は9月2日、日本の防衛分野での戦略的提携に向けた覚書を締結したと発表した。同提携を通じ両社は、防衛産業基盤の強化とデータ・AI主権の確立に向け、作戦計画・指揮統制や無人アセット等の領域で連携を強化していく。",
-      "title": "NECと三菱重工業、日本の防衛分野で戦略的提携を締結",
-      "uid": "0600de35fa8df844",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137939.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-03T05:51:49.745761+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-03T04:09:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "KDDIはローソンの協力のもと、ローソン高輪ゲートウェイシティ店付近のスペースに9月1日から11月30日までの期間、AI自動分別リサイクルボックスを設置し、リチウムイオン電池の回収を実施する。 回収対象品目は、使用済み携帯電話・スマートフォン、モバイルバッテリー、加熱式たばこ・電子たばこ。ただし、膨張や破損がないものに限られる。",
-      "title": "KDDI、高輪ゲートウェイシティのローソンにAI自動分別ボックスを設置 リチウムイオン電池の回収を実施",
-      "uid": "31ce8f7690cbc6b7",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2137933.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
