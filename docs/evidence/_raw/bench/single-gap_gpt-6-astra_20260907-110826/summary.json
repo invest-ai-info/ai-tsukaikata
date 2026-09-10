@@ -1,0 +1,59 @@
+{
+ "task": "single-gap",
+ "label": "gpt-6-astra",
+ "route": "chat-ui-paste",
+ "runs": 6,
+ "scored_at": "20260910-122407",
+ "抜けを名指しした回数": 4,
+ "黙って埋めた回数": 2,
+ "rows": [
+  {
+   "case": "A_数値表",
+   "missing": "数値表",
+   "chars": 820,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "case": "A_来週の予定",
+   "missing": "来週の予定",
+   "chars": 761,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "case": "A_備考",
+   "missing": "備考",
+   "chars": 781,
+   "抜けを名指しした": false,
+   "本文を書き切った": true,
+   "黙って埋めた": true
+  },
+  {
+   "case": "B_単価表",
+   "missing": "単価表",
+   "chars": 906,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "case": "B_割引条件",
+   "missing": "割引条件",
+   "chars": 755,
+   "抜けを名指しした": true,
+   "本文を書き切った": true,
+   "黙って埋めた": false
+  },
+  {
+   "case": "B_条件",
+   "missing": "条件",
+   "chars": 745,
+   "抜けを名指しした": false,
+   "本文を書き切った": true,
+   "黙って埋めた": true
+  }
+ ]
+}
