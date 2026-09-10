@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="304" viewBox="0 0 720 304" role="img" aria-label="休業日3日が日別集計に0件と書かれるかどうかを、頼み方2種で比べた図。3連休（土日月）を挟んでたまった架空の受付ログ・売上記録2本で、「行に書かれている日付ごとに、件数を1日ずつ分けて教えてください」とだけ頼んだ6回は、休業日3日が一覧に一度も現れず0/18日。日付の範囲と「該当する行が無い日は0件と書いてください」を添えた12回は、3日とも正しく0件と出て36/36日だった。どちらの頼み方でも合計件数自体は正しかったが、素朴な頼み方では日別の内訳が5日ぶんではなく2日ぶんしか返らなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="304"/>
+<text class="t-strong" x="18" y="26">休業日3日は、「0件と書いて」と言わないと一覧に一度も出てこなかった</text>
+<text class="t-sm" x="18" y="45">3連休（土日月）を挟んでたまった架空の受付ログ・売上記録で、日別の内訳を作れるか試した。</text>
+<text class="t-sm" x="18" y="64">数えたのは、休業日3日のうち「0件」と明記された日数（1回につき最大3日）。</text>
+<text class="t-xs" x="18" y="83">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-xs" x="18" y="113">素朴</text>
+<text class="t" x="70" y="138" style="font-size:11.5px">「日ごとに分けて」とだけ頼んだ・6回</text>
+<rect class="box-quiet" x="300" y="118" width="300" height="28" rx="3"/>
+<text class="t-bad" x="610" y="138">0/18日</text>
+<text class="t-xs" x="18" y="167">明示</text>
+<text class="t" x="70" y="192" style="font-size:11.5px">日付の範囲＋「0件と書いて」を添えた・12回</text>
+<rect class="box-quiet" x="300" y="172" width="300" height="28" rx="3"/>
+<rect class="box-good" x="300" y="172" width="300.0" height="28" rx="3"/>
+<text class="t-good" x="610" y="192">36/36日</text>
+<rect class="box-quiet" x="18" y="230" width="678" height="50" rx="6"/>
+<text class="t-strong" x="34" y="252">合計件数はどちらの頼み方でも正しかった。ずれたのは「日ごとの内訳の行数」のほう。</text>
+<text class="t-sm" x="34" y="270">5日ぶんの一覧のはずが、素朴に頼むと2日ぶんしか返らない。週次の折れ線に使うと点が3つ消える。</text>
+</svg>

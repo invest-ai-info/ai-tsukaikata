@@ -19935,7 +19935,83 @@ def reused_instruction_crosses_material_types_chart() -> None:
     )
 
 
+def closed_days_vanish_chart() -> None:
+    """休業日3日が、日別集計に「0件」と書かれず一覧から消えるかを、頼み方2種で比べる。
+
+    実測（2026-09-10）。3連休（土日月）を挟んでたまった架空の受付ログ・売上記録2本で、
+    「行に書かれている日付ごとに、件数を1日ずつ分けて教えてください」とだけ頼むと、
+    休業日3日は6回とも一覧に一度も現れなかった（0/18日＝2本×各6回×3日）。
+    日付の範囲と「該当する行が無い日は0件と書いてください」を添えると、12回とも
+    3日とも正しく0件と出た（36/36日＝12回×3日）。
+    """
+    rows = [
+        ("素朴", "「日ごとに分けて」とだけ頼んだ・6回", 0, 18, "box-bad", "t-bad"),
+        ("明示", "日付の範囲＋「0件と書いて」を添えた・12回", 36, 36, "box-good", "t-good"),
+    ]
+    left, right = 300, 600
+    span = right - left
+    top, bar_h, gap = 118, 28, 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "休業日3日は、「0件と書いて」と言わないと一覧に一度も出てこなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "3連休（土日月）を挟んでたまった架空の受付ログ・売上記録で、日別の内訳を作れるか試した。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数えたのは、休業日3日のうち「0件」と明記された日数（1回につき最大3日）。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+    for index, (kind, label, val, n, cls, tcls) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        w = span * (val / n) if n else 0.0
+        parts.append(f'<text class="t-xs" x="18" y="{y - 5}">{_esc(kind)}</text>\n')
+        parts.append(
+            f'<text class="t" x="70" y="{y + bar_h - 8}" style="font-size:11.5px">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" width="{max(w, 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="{tcls}" x="{right + 10}" y="{y + bar_h - 8}">{val}/{n}日</text>\n'
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 50
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "合計件数はどちらの頼み方でも正しかった。ずれたのは「日ごとの内訳の行数」のほう。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "5日ぶんの一覧のはずが、素朴に頼むと2日ぶんしか返らない。週次の折れ線に使うと点が3つ消える。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "休業日3日が日別集計に0件と書かれるかどうかを、頼み方2種で比べた図。"
+        "3連休（土日月）を挟んでたまった架空の受付ログ・売上記録2本で、「行に書かれている日付ごとに、"
+        "件数を1日ずつ分けて教えてください」とだけ頼んだ6回は、休業日3日が一覧に一度も現れず0/18日。"
+        "日付の範囲と「該当する行が無い日は0件と書いてください」を添えた12回は、3日とも正しく"
+        "0件と出て36/36日だった。どちらの頼み方でも合計件数自体は正しかったが、素朴な頼み方では"
+        "日別の内訳が5日ぶんではなく2日ぶんしか返らなかった。"
+    )
+    (OUT / "closed-days-vanish-not-zero.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    closed_days_vanish_chart()
     reused_instruction_crosses_material_types_chart()
     fx_rate_not_in_material_chart()
     late_correction_heading_matrix_chart()
