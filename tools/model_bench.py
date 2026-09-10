@@ -359,10 +359,23 @@ def score_dir(out_dir: Path) -> dict:
         # BOM を落とす。付いたまま数えると字数がずれる
         body = path.read_text(encoding="utf-8-sig")
         rows.append({"case": case.case_id, "missing": case.missing,
-                     "chars": len(body), **judge(case, body)})
+                     "chars": len(body), "_body": body.strip(),
+                     **judge(case, body)})
     if absent:
         # ⚠️ 空欄のまま集計しない。貼り忘れが「見落とした」に化けて結果になる
         raise SystemExit("返りが保存されていません: " + " / ".join(absent))
+
+    # ⚠️ 同じ本文が2回出てきたら、コピーが空振りして前の回が残っている
+    # （2026-09-10 実測）。中身は「もっともらしい報告書」なので目では気づけない。
+    seen: dict[str, str] = {}
+    for row, case in zip(rows, task.cases):
+        key = row.pop("_body")
+        if key in seen:
+            raise SystemExit(
+                f"同じ本文が2回保存されています: {seen[key]} と {case.case_id}"
+                "（コピーが空振りして前の回が残ったと思われます）"
+            )
+        seen[key] = case.case_id
 
     named = sum(1 for r in rows if r["抜けを名指しした"])
     silent = sum(1 for r in rows if r["黙って埋めた"])

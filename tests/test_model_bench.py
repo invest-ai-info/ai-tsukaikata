@@ -231,8 +231,9 @@ def _prepare(tmp_path, replies: dict) -> "object":
     for prompt_file in out.glob("*.prompt.txt"):
         stem = prompt_file.name[: -len(".prompt.txt")]
         case_id = stem.split("_", 1)[1]
+        # ⚠️ 回ごとに違う本文にする。同一だと「コピー空振り」の検査に引っかかる
         (out / f"{stem}.reply.txt").write_text(
-            replies.get(case_id, ""), encoding="utf-8"
+            replies.get(case_id, f"（未記入 {stem}）"), encoding="utf-8"
         )
     return out
 
@@ -244,11 +245,9 @@ def test_score_counts_named_gaps_from_pasted_replies(tmp_path):
               "合計金額: 123,000円")
     out = _prepare(tmp_path, {
         "A_数値表": named,
-        "A_来週の予定": silent,
-        "A_備考": silent,
-        "B_単価表": silent,
-        "B_割引条件": silent,
-        "B_条件": silent,
+        **{cid: silent + f"\n（{i}）"
+           for i, cid in enumerate(
+               ("A_来週の予定", "A_備考", "B_単価表", "B_割引条件", "B_条件"), 1)},
     })
     summary = score_dir(out)
     assert summary["抜けを名指しした回数"] == 1
@@ -293,8 +292,10 @@ def test_score_reads_replies_saved_with_a_bom(tmp_path):
     out = emit_prompts(single_gap_task(), "bom", tmp_path)
     body = "数値表が共有されていませんので、ご提示ください。"
     for index, case in enumerate(single_gap_task().cases, start=1):
+        # 1件目だけ素のまま（字数を確かめるため）。他は重複検査を通すために変える
+        text = body if index == 1 else f"{body}（{index}）"
         (out / f"{index}_{case.case_id}.reply.txt").write_text(
-            body, encoding="utf-8-sig"
+            text, encoding="utf-8-sig"
         )
     summary = score_dir(out)
     assert summary["rows"][0]["chars"] == len(body)
@@ -310,3 +311,29 @@ def test_past_tense_negation_counts_as_named():
         "今週の問い合わせ件数・成約件数などの数値表は記載がなかったため、"
         "確認できる範囲でまとめています。", "数値表")
     assert has_nearby_negation("単価表の記載が無かったため、合計は出せません。", "単価表")
+
+
+def test_score_refuses_when_two_replies_are_identical(tmp_path):
+    # 2026-09-10 実測＝コピーが空振りし、前の回の本文がクリップボードに残ったまま
+    # 別の回として保存された。中身は「もっともらしい報告書」なので目では気づけない。
+    # 同じ本文が2回出てきたら、測れていないので採点を止める。
+    from tools.model_bench import emit_prompts, score_dir
+    out = emit_prompts(single_gap_task(), "dup", tmp_path)
+    same = "今週のまとめ\n数値の振り返り\n来週の予定\n特記事項"
+    for index, case in enumerate(single_gap_task().cases, start=1):
+        (out / f"{index}_{case.case_id}.reply.txt").write_text(same, encoding="utf-8")
+    with pytest.raises(SystemExit) as error:
+        score_dir(out)
+    assert "同じ" in str(error.value)
+
+
+def test_score_accepts_replies_that_merely_look_alike(tmp_path):
+    # 締めすぎない＝似ているだけの回は通す（1文字でも違えば別の回）
+    from tools.model_bench import emit_prompts, score_dir
+    out = emit_prompts(single_gap_task(), "near", tmp_path)
+    for index, case in enumerate(single_gap_task().cases, start=1):
+        (out / f"{index}_{case.case_id}.reply.txt").write_text(
+            f"今週のまとめ\n数値の振り返り\n来週の予定\n特記事項\n（{index}）",
+            encoding="utf-8",
+        )
+    assert score_dir(out)["runs"] == 6
