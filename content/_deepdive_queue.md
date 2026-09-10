@@ -322,6 +322,21 @@
       次に見る人へ＝`learn.chatgpt.com` が許可リストに追加されたら、まずここを再試行すること。
       ①（openai.com本体・help.openai.com）はbot判定なので許可リストを足しても直らない点は変わらない。
 
+  - **2026-09-10 5回目（再試行）: まだ読めない。**未処理（`- [ ]`）が0件だったため、停止理由が「経路遮断」だった
+    本行を上から見て再試行した。結果は**引き続き変わらず**:
+    - `openai.com/index/introducing-admin-plugin` → **403**（変わらず、`cf-mitigated: challenge` の bot 判定）
+    - `learn.chatgpt.com/`・`learn.chatgpt.com/docs/enterprise/admin-setup` → **`CONNECT tunnel failed, response 403`**
+      （変わらず、経路＝許可リストの遮断。エージェントプロキシのログでも `connect_rejected (organization policy)` と明記）
+    - `developers.openai.com/codex/enterprise/admin-setup` → **308転送**（転送先は今日も
+      `learn.chatgpt.com/docs/enterprise/admin-setup`。転送元は到達できるが、転送先が許可リストに無いので
+      本文には届かない）
+    - `help.openai.com/en/articles/20001275-chatgpt-work-and-codex` → **403**（変わらず、bot 判定）
+    - → **①②とも解けていない（8/25初回から16日・5回連続で同じ結果）。**引き続き `- [!]` のまま据え置く。
+      次に見る人へ＝`learn.chatgpt.com` が許可リストに追加されたら、まずここを再試行すること。
+      ①（openai.com本体・help.openai.com）はbot判定なので許可リストを足しても直らない点は変わらない。
+      💡 **5回連続で経路遮断だけが変わらず残っている。**このドメインの許可リスト追加は自動では起きないので、
+      オーナー側での対応（環境のNetwork accessに `learn.chatgpt.com` を追加）を待つ状態になっている。
+
 - [!] https://openai.com/index/introducing-intelligence-age
   - 2026-08-26 自動追記（major・OpenAI「Introducing Intelligence Age」）
   - **2026-08-27 1回目: 記事を書かずに停止した。**理由は2つあり、どちらも単独で停止の理由になる。
