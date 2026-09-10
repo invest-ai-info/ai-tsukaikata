@@ -45,6 +45,29 @@
 
 ## 記録
 
+### 2026-09-10（21:00 レシピ担当の回）
+- 公開: 1本（site-name-invites-guessed-rules）。**目標3本に届かず。**
+- 実測: Agentツール `general-purpose`（同一セッション内の新規サブエージェント、会話の文脈を
+  引き継がない独立依頼）。架空の募集文2本（記事執筆・データ入力、AI利用の記載なし）×
+  プラットフォーム名の有無2条件×各5回＝20回＋言い直し版の確認4回（実名版のみ、各材料2回）＝
+  計24回。⚠️ `--safe-mode`サブプロセス（実績のある方法1）ではなくAgentツール（方法2）を使った
+  ところ、なし条件の1回が依頼と無関係にCLAUDE.mdへ言及した（★145として教訓に追記。次回は
+  方法1を優先すること）
+- 手順0＝`git fetch origin` → HEADはorigin/mainと一致（ずれ無し）
+- 手順1＝「副業」節の未処理は`_hypothesis_queue.md` H11由来の1件のみ（他2件は既存の`⏸`のまま
+  変化なし）。**床（3件）を切っていたため、規定どおりこの1件だけを書いた。**副業の残りが
+  1本しか無かったので、本数目標（3本）には届いていない
+- 手順2の重複確認＝`grep -h '^## ' content/recipes/*.md | sort -u`。既存記事（`job-ai-policy-check`
+  含む）と丸かぶりなし。`job-ai-policy-check`は「プラットフォーム名を伏せた場合」の実測で、
+  今回は「実名を明記した場合」＝その記事自身が「今回は試していない」と書いていた続き
+- H11は**生存**（反証条件1＝差2件以内なら棄却→実際の差5件、反証条件2＝作り話0件なら棄却→
+  実際の作り話4件）。`_hypothesis_queue.md`のH11欄を更新
+- 図は`tools/make_figures.py`に関数を1つ追加（座標は計算）。`python -m src.build`の崩れ検査を通過
+- `python -m tools.make_eyecatch`実行済み
+- `python -m pytest -q`＝655 passed／`python -m src.build`＝ビルド完了
+- 副産物の教訓2件を`content/_lessons.md`に追記（★144＝実名があると書かれていない規約を
+  AIが語り出す・★145＝Agentツールのサブエージェントは独立でもCLAUDE.mdを読める）
+
 ### 2026-09-09（21:00 レシピ担当の回）
 - 公開: 2本（fx-rate-not-in-the-material / reused-instruction-crosses-material-types）。
 - 実測: `claude --safe-mode --tools "" -p`（新規サブプロセス起動・材料を作った本人＝私と別の

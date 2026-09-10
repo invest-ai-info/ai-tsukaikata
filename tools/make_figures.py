@@ -20010,7 +20010,95 @@ def closed_days_vanish_chart() -> None:
     )
 
 
+def named_platform_invites_guessed_rules_chart() -> None:
+    """プラットフォーム名を明記すると、AIは規約に自分から言及するか（あり／なし・各10回）。
+
+    実測（2026-09-10）。架空の募集文2パターン（記事執筆・データ入力）に「クラウドワークス」と
+    明記した版と、「オンラインの受発注サイト」に伏せた版で、同じ質問を各5回×2パターン＝各10回
+    試した。真値との突き合わせは docs/evidence/site-name-invites-guessed-rules.md。
+    """
+    rows = [
+        ("伏せた（オンラインの受発注サイト）", "規約に言及した回数・10回中0回", 0, 10, "box-good", "t-good"),
+        ("クラウドワークスと明記", "規約に言及した回数・10回中4回（のべ5件）", 4, 10, "box-bad", "t-bad"),
+    ]
+    left, right = 300, 600
+    span = right - left
+    top, bar_h, gap = 138, 28, 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "サイト名を明記すると、AIは規約に自分から触れにいった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の募集文2パターン（記事執筆・データ入力）に、AI利用についての記載は一切入れていない。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「クラウドワークスで募集しています」と明記した版と、「オンラインの受発注サイト」に"
+        "置き換えた版で、同じ質問を各5回ずつ試した（計20回）。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数えたのは、返りの中でクラウドワークスの規約の具体的な中身に断定的に触れた回数。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答と判定は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+    for index, (kind, label, val, n, cls, tcls) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        w = span * (val / n) if n else 0.0
+        parts.append(f'<text class="t-xs" x="18" y="{y - 5}">{_esc(kind)}</text>\n')
+        parts.append(
+            f'<text class="t" x="70" y="{y + bar_h - 8}" style="font-size:11.5px">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" width="{max(w, 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="{tcls}" x="{right + 10}" y="{y + bar_h - 8}">{val}/{n}回</text>\n'
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 90
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "言及した5件のうち、原文どおりだったのは1件だけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 42}">'
+        "残り4件は、原文が「心がけてください」「留意してください」と依頼の強さで書いている項目を、"
+        "</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 60}">'
+        "「規約違反」「禁止されているのが一般的」のように、禁止事項であるかのような強さに"
+        "言い換えていた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="34" y="{y + 78}">'
+        "名指しされた案件で規約の中身を語られても、原文の強さまでは信じないほうがよい。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "実在のプラットフォーム名を募集文に明記すると、AIが規約に自分から言及するかを比べた図。"
+        "架空の募集文2パターン（記事執筆・データ入力、どちらもAI利用の記載なし）に「クラウドワークス」"
+        "と明記した版と「オンラインの受発注サイト」に伏せた版で、同じ質問を各5回ずつ計20回試した。"
+        "伏せた版は10回中0回、クラウドワークスと明記した版は10回中4回（のべ5件）で規約の具体的な"
+        "中身に自分から触れた。言及した5件のうち原文どおりだったのは1件だけで、残り4件は原文が"
+        "「心がけてください」「留意してください」と依頼の強さで書いている項目を、「規約違反」"
+        "「禁止されているのが一般的」のように禁止事項であるかのような強さに言い換えていた。"
+    )
+    (OUT / "named-platform-invites-guessed-rules.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    named_platform_invites_guessed_rules_chart()
     closed_days_vanish_chart()
     reused_instruction_crosses_material_types_chart()
     fx_rate_not_in_material_chart()
