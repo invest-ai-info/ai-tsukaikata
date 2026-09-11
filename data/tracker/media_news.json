@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-11T22:37:39.745844+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-11T22:13:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米プリンストンプラズマ物理研究所（PPPL）は9月2日、核融合実験で特定の異常をAIで予測し、装置を制御して回避したと発表した。米国の実験装置「DIII-D」で試し、異常の発生を約0.2秒前に予測した。核融合に必要な高温のプラズマを安定して保つための技術だ。",
+      "title": "核融合の異常、AIが0.2秒前に予測して回避　米PPPLが実験",
+      "uid": "eabff1fd34eae6ff",
+      "url": "https://japan.cnet.com/article/35252555/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-11T16:32:04.630782+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "7186b30f942e4a27",
       "url": "https://gigazine.net/news/20260907-kenya-ghost-writing-ended/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T04:41:31+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ワンダーシェアーソフトウェアは、日本国内の在職者を対象に、仕事でのPC利用、文書作成、PDF作業、生成AI・自動化ツールの活用実態に関する調査を実施した。第1段階の調査では2,000名、第2段階の詳細調査では355名が回答している。",
-      "title": "ワンダーシェアーソフトウェア、オフィスワーカーのPDF・生成AI活用を調査 ファイル作業の自動化への活用は23.3%に",
-      "uid": "1d7749b1162e49f1",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138742.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
