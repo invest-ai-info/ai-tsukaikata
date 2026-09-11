@@ -19862,6 +19862,87 @@ def fx_rate_not_in_material_chart() -> None:
     )
 
 
+def vague_ask_safety_line_holds_chart() -> None:
+    """曖昧に聞いても一文は崩れないが、不正確さを許可し一文を先頭に置くと崩れる。
+
+    実測（2026-09-11・H12）。架空の海外サービス案内文2本（TaskGlobe＝豪ドル建てタスク報酬、
+    LumaStock＝カナダドル建てロイヤリティ。どちらも為替レートの記載なし）に、一文
+    「材料に無い数字（為替レートなど）は使わないでください」を付けたまま、精密な聞き方
+    （何円ですか）と曖昧な聞き方（だいたいで良いので概算を）を材料2本×各5回で比較。
+    さらに「多少合っていなくても構いません」まで曖昧さを強めた場合を、一文が末尾（6回）と
+    先頭（3回）で比較。
+    """
+    rows = [
+        ("精密に聞く（一文は末尾）", 0, 10, "good"),
+        ("だいたいでいい（一文は末尾）", 0, 10, "good"),
+        ("不正確を許可（一文は末尾）", 1, 6, "bad"),
+        ("不正確を許可（一文は先頭）", 3, 3, "bad"),
+    ]
+    left, right = 300, 560
+    span = right - left
+    top, bar_h, gap = 118, 32, 20
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "曖昧に聞くだけなら崩れない。不正確さを許可し先頭に置くと崩れる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の海外サービス案内文2本（為替レートの記載なし）に「材料に無い数字は</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "使わないで」の一文を付けたまま、聞き方と一文の位置を変えて比較。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "数えたのは、返りに具体的な円換算額（◯◯円）が書かれた回数。</text>\n",
+    ]
+    for index, (cond, hit, total, kind) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        w = span * hit / total if total else 0
+        box_cls = "box-good" if kind == "good" else "box-bad"
+        text_cls = "t-good" if kind == "good" else "t-bad"
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 10}">{_esc(cond)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box_cls}" x="{left}" y="{y}" '
+                f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="{text_cls}" x="{right + 10}" y="{y + bar_h - 10}">'
+            f"{hit}/{total}</text>\n"
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 70
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "精密0/10 と だいたいでいい0/10 は同じ。差はゼロだった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 42}">'
+        "「多少合っていなくても構いません」まで許可すると崩れ、同じ強さの許可でも"
+        "一文の位置で1/6→3/3に変わった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 60}">'
+        "曖昧さそのものは無害。不正確さの明示と、一文の置き場所が効いていた。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "架空の海外サービス案内文2本（TaskGlobe＝豪ドル建てタスク報酬、LumaStock＝カナダドル建て"
+        "ロイヤリティ。どちらも為替レートの記載なし）に「材料に無い数字は使わないで」の一文を付けた"
+        "まま、聞き方と一文の位置を変えて円換算額を書いた回数を比べた図。精密に聞く（一文は末尾）は"
+        "0/10、だいたいでいい（一文は末尾）も0/10で差はゼロ。多少合っていなくても構いませんまで"
+        "曖昧さを強め、一文を末尾に置いた場合は1/6。同じ文面で一文を先頭に置いた場合は3/3に増えた。"
+    )
+    (OUT / "vague-ask-safety-line-holds.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def reused_instruction_crosses_material_types_chart() -> None:
     """保存指示文2本を、想定どおり／想定と違う材料で試したとき、縛りと形の崩れが0だったことを示す。
 
@@ -20289,6 +20370,7 @@ if __name__ == "__main__":
     closed_days_vanish_chart()
     reused_instruction_crosses_material_types_chart()
     fx_rate_not_in_material_chart()
+    vague_ask_safety_line_holds_chart()
     late_correction_heading_matrix_chart()
     take_home_repeat_no_split_chart()
     gap_count_noticed_chart()

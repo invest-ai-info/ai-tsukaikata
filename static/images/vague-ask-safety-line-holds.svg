@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="424" viewBox="0 0 720 424" role="img" aria-label="架空の海外サービス案内文2本（TaskGlobe＝豪ドル建てタスク報酬、LumaStock＝カナダドル建てロイヤリティ。どちらも為替レートの記載なし）に「材料に無い数字は使わないで」の一文を付けたまま、聞き方と一文の位置を変えて円換算額を書いた回数を比べた図。精密に聞く（一文は末尾）は0/10、だいたいでいい（一文は末尾）も0/10で差はゼロ。多少合っていなくても構いませんまで曖昧さを強め、一文を末尾に置いた場合は1/6。同じ文面で一文を先頭に置いた場合は3/3に増えた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="424"/>
+<text class="t-strong" x="18" y="26">曖昧に聞くだけなら崩れない。不正確さを許可し先頭に置くと崩れる</text>
+<text class="t-sm" x="18" y="45">架空の海外サービス案内文2本（為替レートの記載なし）に「材料に無い数字は</text>
+<text class="t-sm" x="18" y="64">使わないで」の一文を付けたまま、聞き方と一文の位置を変えて比較。</text>
+<text class="t-sm" x="18" y="83">数えたのは、返りに具体的な円換算額（◯◯円）が書かれた回数。</text>
+<text class="t" x="18" y="140">精密に聞く（一文は末尾）</text>
+<rect class="box-quiet" x="300" y="118" width="260" height="32" rx="3"/>
+<text class="t-good" x="570" y="140">0/10</text>
+<text class="t" x="18" y="192">だいたいでいい（一文は末尾）</text>
+<rect class="box-quiet" x="300" y="170" width="260" height="32" rx="3"/>
+<text class="t-good" x="570" y="192">0/10</text>
+<text class="t" x="18" y="244">不正確を許可（一文は末尾）</text>
+<rect class="box-quiet" x="300" y="222" width="260" height="32" rx="3"/>
+<rect class="box-bad" x="300" y="222" width="43.3" height="32" rx="3"/>
+<text class="t-bad" x="570" y="244">1/6</text>
+<text class="t" x="18" y="296">不正確を許可（一文は先頭）</text>
+<rect class="box-quiet" x="300" y="274" width="260" height="32" rx="3"/>
+<rect class="box-bad" x="300" y="274" width="260.0" height="32" rx="3"/>
+<text class="t-bad" x="570" y="296">3/3</text>
+<rect class="box-quiet" x="18" y="330" width="678" height="70" rx="6"/>
+<text class="t-strong" x="34" y="352">精密0/10 と だいたいでいい0/10 は同じ。差はゼロだった。</text>
+<text class="t-sm" x="34" y="372">「多少合っていなくても構いません」まで許可すると崩れ、同じ強さの許可でも一文の位置で1/6→3/3に変わった。</text>
+<text class="t-sm" x="34" y="390">曖昧さそのものは無害。不正確さの明示と、一文の置き場所が効いていた。</text>
+</svg>
