@@ -67,6 +67,18 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-11T06:03:40.950848+00:00",
+      "importance": "major",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-10T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Introducing Fugu Max and Fugu Ultra v2: Orchestrating the Pareto Frontier",
+      "uid": "0142ff57a6111b2d",
+      "url": "/fugu-max-release/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-09-10T16:28:03.909484+00:00",
       "importance": "minor",
       "label": "OpenAI News",

@@ -555,6 +555,9 @@
     「Weather Lab」（`weatherlab.deepmind.google`）は**経路遮断**（`CONNECT tunnel failed`）で
     到達できず。次にこれらのドメインを叩く行が来たら再試行対象にすること
 
+- [ ] /fugu-max-release/
+  - 2026-09-11 自動追記（major・Sakana AI「Introducing Fugu Max and Fugu Ultra v2: Orchestrating the Pareto Frontier」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/ → **公開済み** content/tools/gemini-3-8-flash.md（2026-09-06・公開）
