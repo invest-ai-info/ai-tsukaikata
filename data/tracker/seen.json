@@ -15,14 +15,14 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 83,
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "count": 84,
+      "last_error": "HTTPError: HTTP Error 404: Not Found"
     }
   },
   "latest": {
     "anthropic-news": "2026-09-10T00:00:00+00:00",
     "anthropic-sdk": "2026-09-10T17:45:22+00:00",
-    "claude-code": "2026-09-10T20:30:54+00:00",
+    "claude-code": "2026-09-11T19:17:55+00:00",
     "deepmind-blog": "2026-09-08T14:00:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-10T16:00:00+00:00",
@@ -33,14 +33,37 @@
     "media-impress-ai": "2026-09-11T10:51:53+00:00",
     "media-itmedia-aiplus": "2026-09-11T10:18:00+00:00",
     "media-publickey": "2026-09-10T15:42:50+00:00",
-    "openai-news": "2026-09-10T16:00:00+00:00",
+    "openai-news": "2026-09-11T10:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-03T21:08:24+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-09-10T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-11T19:17:55+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added claude plugin eval : run a plugin's eval suite against Claude Code and get scored, reproducible results (JSON + HTML report); see claude plugin eval --help Added /output-style [n…",
+      "title": "v2.1.269",
+      "uid": "8ac76a00e2ecae82",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.269",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-11T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "uid": "0e69404c3f9ed9bd",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "vendor": "OpenAI"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
@@ -169,6 +192,7 @@
     "0de90869fa84c073": "2026-08-13T12:01:33.145239+00:00",
     "0e405135d324c146": "2026-08-02T11:35:58.106550+00:00",
     "0e685010fece824f": "2026-08-01T12:16:42.309603+00:00",
+    "0e69404c3f9ed9bd": "2026-09-11T19:45:45.170106+00:00",
     "0e73be39796919bb": "2026-08-19T05:48:17.932182+00:00",
     "0e8ef27a92755963": "2026-09-01T18:35:06.616532+00:00",
     "0e977e1ab925b88e": "2026-09-10T22:37:54.055949+00:00",
@@ -1229,6 +1253,7 @@
     "8aaae05e7b6bc05f": "2026-08-28T18:46:16.087122+00:00",
     "8ab5119082de1e96": "2026-08-01T12:16:42.309603+00:00",
     "8abcedc2590082cd": "2026-08-01T12:16:42.309603+00:00",
+    "8ac76a00e2ecae82": "2026-09-11T19:45:45.170106+00:00",
     "8accb5317b3e5c32": "2026-08-18T05:46:53.344840+00:00",
     "8b02754d8f49cb9d": "2026-09-07T04:47:57.358551+00:00",
     "8b16dc340b32d229": "2026-09-05T05:48:01.490384+00:00",
