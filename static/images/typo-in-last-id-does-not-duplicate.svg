@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="432" viewBox="0 0 720 432" role="img" aria-label="前回処理済みのIDに表記ゆれ・完全な誤りがあったとき、4通りの指示文がどう対応したかを比べたマス目。10パターンの表記ゆれは合計20回とも誤検出・取りこぼしなく正しいIDに解決できた。「安全策なし」は表記ゆれの正しいIDを2/2で処理でき、本当に無いIDも2/2で質問して止まった。「質問できませんと明記」は正しいIDは2/2で処理できたが、無いIDへの対応は1/2に割れた(1回は全件を未処理として処理し直した)。「完全一致でしか確認しない」は無いIDを2/2で正しく止めたが、表記ゆれのある正しいIDまで0/2で誤って「見つかりません」と止めてしまった。「表記ゆれを許可した上で存在確認し、説明を省いて最終出力だけを出す」よう指示した最終形だけが両方の列で2/2を達成した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="432"/>
+<text class="t-strong" x="18" y="26">危ないのは表記ゆれではなく、本当に存在しないIDのほう</text>
+<text class="t-sm" x="18" y="45">架空の受付ログの「前回処理済みのID」に、ゼロ埋め・全角・小文字・末尾空白など10通りの</text>
+<text class="t-sm" x="18" y="64">表記ゆれを仕込んだ20回は、新規の会話でも全部正しいIDに解決した（誤検出・取りこぼし0）。</text>
+<text class="t-sm" x="18" y="83">ログに無いID(Q-99)を渡したときの対応は、指示文の書き方によって割れた。</text>
+<text class="t-xs" x="18" y="102">数字は2回中何回、期待どおりの対応（正しいIDは処理・無いIDは止まる）ができたか。</text>
+<text class="t-xs" x="18" y="121">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-xs" x="317.0" y="146">表記ゆれの正しいID</text>
+<text class="t-xs" x="530.8" y="146">本当に無いID</text>
+<text class="t-sm" x="18" y="180">安全策なし(自由に任せる)</text>
+<rect class="box-good" x="268" y="158" width="190" height="34" rx="4"/>
+<text class="t-good" x="318.0" y="180">2/2 期待どおり</text>
+<rect class="box-good" x="468" y="158" width="190" height="34" rx="4"/>
+<text class="t-good" x="518.0" y="180">2/2 期待どおり</text>
+<text class="t-sm" x="18" y="224">「質問できません」と明記</text>
+<rect class="box-good" x="268" y="202" width="190" height="34" rx="4"/>
+<text class="t-good" x="318.0" y="224">2/2 期待どおり</text>
+<rect class="box-bad" x="468" y="202" width="190" height="34" rx="4"/>
+<text class="t-bad" x="518.0" y="224">1/2 期待どおり</text>
+<text class="t-sm" x="18" y="268">完全一致でしか確認しない</text>
+<rect class="box-bad" x="268" y="246" width="190" height="34" rx="4"/>
+<text class="t-bad" x="318.0" y="268">0/2 期待どおり</text>
+<rect class="box-good" x="468" y="246" width="190" height="34" rx="4"/>
+<text class="t-good" x="518.0" y="268">2/2 期待どおり</text>
+<text class="t-sm" x="18" y="312">表記ゆれを許可+説明省略(最終形)</text>
+<rect class="box-good" x="268" y="290" width="190" height="34" rx="4"/>
+<text class="t-good" x="318.0" y="312">2/2 期待どおり</text>
+<rect class="box-good" x="468" y="290" width="190" height="34" rx="4"/>
+<text class="t-good" x="518.0" y="312">2/2 期待どおり</text>
+<rect class="box-quiet" x="18" y="338" width="678" height="70" rx="6"/>
+<text class="t-strong" x="34" y="360">両方の列で2/2を取れたのは、最後の「表記ゆれ許可+説明省略」だけ。</text>
+<text class="t-sm" x="34" y="378">完全一致だけで確認すると、正しいIDまで「無い」と誤って止めてしまう(左列0/2)。</text>
+<text class="t-sm" x="34" y="396">「質問できません」と書いても、2回に1回はそれでも聞き直すか、逆に無いIDのまま全件処理した。</text>
+</svg>

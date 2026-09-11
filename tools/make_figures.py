@@ -20097,6 +20097,107 @@ def named_platform_invites_guessed_rules_chart() -> None:
     )
 
 
+def typo_in_last_id_grid_chart() -> None:
+    """前回位置のIDに表記ゆれ・完全な誤りがあったとき、4通りの指示文がどう対応したかのマス目。
+
+    実測（2026-09-11）。架空の受付ログ2本・10パターンの表記ゆれ（ゼロ埋め・全角・
+    小文字・末尾空白・数字だけ・区切り違いなど）は、新規の会話×各2回＝計20回すべてで
+    正しいIDに解決できた（誤検出0・取りこぼし0）。一方、ログに存在しないIDを渡すと、
+    指示文の書き方によって対応が割れた。
+    """
+    rows = [
+        ("安全策なし(自由に任せる)", [2, 2]),
+        ("「質問できません」と明記", [2, 1]),
+        ("完全一致でしか確認しない", [0, 2]),
+        ("表記ゆれを許可+説明省略(最終形)", [2, 2]),
+    ]
+    cols = ["表記ゆれの正しいID", "本当に無いID"]
+    label_w = 250
+    cell_w, cell_h, gap = 190, 34, 10
+    top = 158
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "危ないのは表記ゆれではなく、本当に存在しないIDのほう</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の受付ログの「前回処理済みのID」に、ゼロ埋め・全角・小文字・末尾空白など10通りの"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "表記ゆれを仕込んだ20回は、新規の会話でも全部正しいIDに解決した（誤検出・取りこぼし0）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "ログに無いID(Q-99)を渡したときの対応は、指示文の書き方によって割れた。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "数字は2回中何回、期待どおりの対応（正しいIDは処理・無いIDは止まる）ができたか。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="121">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - len(name) * 4.6:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, values) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, v in enumerate(values):
+            x = grid_x + col_index * (cell_w + gap)
+            ok = v == 2
+            box = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            text = f"{v}/2 期待どおり"
+            tx = x + cell_w / 2 - len(text) * 5.0
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+            )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 70
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "両方の列で2/2を取れたのは、最後の「表記ゆれ許可+説明省略」だけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "完全一致だけで確認すると、正しいIDまで「無い」と誤って止めてしまう(左列0/2)。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 58}">'
+        "「質問できません」と書いても、2回に1回はそれでも聞き直すか、逆に無いIDのまま全件処理した。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "前回処理済みのIDに表記ゆれ・完全な誤りがあったとき、4通りの指示文がどう対応したかを比べた"
+        "マス目。10パターンの表記ゆれは合計20回とも誤検出・取りこぼしなく正しいIDに解決できた。"
+        "「安全策なし」は表記ゆれの正しいIDを2/2で処理でき、本当に無いIDも2/2で質問して"
+        "止まった。「質問できませんと明記」は正しいIDは2/2で処理できたが、無いIDへの対応は1/2に"
+        "割れた(1回は全件を未処理として処理し直した)。「完全一致でしか確認しない」は無いIDを2/2で"
+        "正しく止めたが、表記ゆれのある正しいIDまで0/2で誤って「見つかりません」と止めてしまった。"
+        "「表記ゆれを許可した上で存在確認し、説明を省いて最終出力だけを出す」よう指示した最終形だけが"
+        "両方の列で2/2を達成した。"
+    )
+    (OUT / "typo-in-last-id-does-not-duplicate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     named_platform_invites_guessed_rules_chart()
     closed_days_vanish_chart()
@@ -20350,4 +20451,5 @@ if __name__ == "__main__":
     holiday_alarm_matrix_chart()
     long_conversation_keeps_rules_chart()
     long_report_checkable_facts_chart()
+    typo_in_last_id_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
