@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="482" viewBox="0 0 720 482" role="img" aria-label="毎日の一覧が凍結（前日と内容が完全一致）したとき、AIが気になる点として指摘できたかを比べたマス目。凍結2日目・4日目・7日目はいずれも生成的な聞き方・前日比較を明示した聞き方の計4回とも指摘できた（4/4）。8品中1品だけが凍結する紛らわしい材料でも3〜7日間の計4回とも指摘できた（4/4）。本当は凍っていない対照日は4回とも誤って凍結と言わなかった（4/4）。一方、監視の枠組みを外して「今日の数字を教えて」と範囲を絞ると、同じ凍結データでも2回とも見逃した（0/2）。「ついでに、気になる点があれば教えて」を1文足すと2/2に戻った。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="482"/>
+<text class="t-strong" x="18" y="26">毎日の一覧が凍結しても、AIは早い段階で気づいた</text>
+<text class="t-sm" x="18" y="45">架空の在庫アラート一覧で、値が凍結して何日も一字一句同じ内容が続く状態を再現した。</text>
+<text class="t-sm" x="18" y="64">「気になる点があれば教えて」というだけの聞き方でも、2日連続で同じになった時点で指摘できた。</text>
+<text class="t-xs" x="18" y="83">数字は、期待どおりの反応（凍結時は指摘・凍っていない時は指摘しない）ができた回数。</text>
+<text class="t-xs" x="18" y="102">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-sm" x="18" y="171">凍結2日目(生成的+前日比較)</text>
+<rect class="box-good" x="288" y="150" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="171">4/4 期待どおり</text>
+<text class="t-sm" x="18" y="213">凍結4日目(同上)</text>
+<rect class="box-good" x="288" y="192" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="213">4/4 期待どおり</text>
+<text class="t-sm" x="18" y="255">凍結7日目(同上)</text>
+<rect class="box-good" x="288" y="234" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="255">4/4 期待どおり</text>
+<text class="t-sm" x="18" y="297">8品中1品だけ凍結・3〜7日間</text>
+<rect class="box-good" x="288" y="276" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="297">4/4 期待どおり</text>
+<text class="t-sm" x="18" y="339">本当は凍っていない対照日</text>
+<rect class="box-good" x="288" y="318" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="339">4/4 期待どおり</text>
+<text class="t-sm" x="18" y="381">監視の枠組みを外した聞き方</text>
+<rect class="box-bad" x="288" y="360" width="170" height="32" rx="4"/>
+<text class="t-bad" x="328.0" y="381">0/2 期待どおり</text>
+<rect class="box-quiet" x="18" y="406" width="678" height="52" rx="6"/>
+<text class="t-strong" x="34" y="428">崩れたのは1行だけ。「今日の数字を教えて」と範囲を絞ると見逃した。</text>
+<text class="t-sm" x="34" y="446">「ついでに、気になる点があれば」を1文足すだけで、同じデータでも2/2に戻った。</text>
+</svg>

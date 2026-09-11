@@ -20198,6 +20198,92 @@ def typo_in_last_id_grid_chart() -> None:
     )
 
 
+def frozen_feed_grid_chart() -> None:
+    """毎日の一覧が凍結(内容が前日と完全一致)したとき、AIが気になる点として指摘できたかの一覧。
+
+    実測（2026-09-11）。架空の在庫アラート一覧で、値が凍結して何日も一字一句同じ内容が
+    続く状態を再現した。生成的な聞き方・前日比較を明示した聞き方とも、2日目からすでに
+    指摘できた。8品中1品だけが凍結する紛らわしい材料でも指摘できた。ただし「今日の
+    残数を教えて」と聞き方の範囲を絞ると、同じ凍結データでも2回とも見逃した。
+    """
+    rows = [
+        ("凍結2日目(生成的+前日比較)", 4, 4),
+        ("凍結4日目(同上)", 4, 4),
+        ("凍結7日目(同上)", 4, 4),
+        ("8品中1品だけ凍結・3〜7日間", 4, 4),
+        ("本当は凍っていない対照日", 4, 4),
+        ("監視の枠組みを外した聞き方", 0, 2),
+    ]
+    label_w = 270
+    cell_w, cell_h, gap = 170, 32, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "毎日の一覧が凍結しても、AIは早い段階で気づいた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の在庫アラート一覧で、値が凍結して何日も一字一句同じ内容が続く状態を再現した。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「気になる点があれば教えて」というだけの聞き方でも、2日連続で同じになった時点で指摘できた。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、期待どおりの反応（凍結時は指摘・凍っていない時は指摘しない）ができた回数。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 期待どおり"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 52
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "崩れたのは1行だけ。「今日の数字を教えて」と範囲を絞ると見逃した。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "「ついでに、気になる点があれば」を1文足すだけで、同じデータでも2/2に戻った。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "毎日の一覧が凍結（前日と内容が完全一致）したとき、AIが気になる点として指摘できたかを"
+        "比べたマス目。凍結2日目・4日目・7日目はいずれも生成的な聞き方・前日比較を明示した聞き方の"
+        "計4回とも指摘できた（4/4）。8品中1品だけが凍結する紛らわしい材料でも3〜7日間の計4回とも"
+        "指摘できた（4/4）。本当は凍っていない対照日は4回とも誤って凍結と言わなかった（4/4）。"
+        "一方、監視の枠組みを外して「今日の数字を教えて」と範囲を絞ると、同じ凍結データでも"
+        "2回とも見逃した（0/2）。「ついでに、気になる点があれば教えて」を1文足すと2/2に戻った。"
+    )
+    (OUT / "frozen-feed-does-not-go-unnoticed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     named_platform_invites_guessed_rules_chart()
     closed_days_vanish_chart()
@@ -20452,4 +20538,5 @@ if __name__ == "__main__":
     long_conversation_keeps_rules_chart()
     long_report_checkable_facts_chart()
     typo_in_last_id_grid_chart()
+    frozen_feed_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
