@@ -4361,20 +4361,6 @@
       "uid": "657f2eee0dd348c9",
       "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-12T23:38:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "The US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.",
-      "summary_ja": "米国政府が特定AIへのアクセス停止を指示。\nFable 5とMythos 5への全アクセスを停止する。",
-      "summary_source": "gemini",
-      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
-      "uid": "4853f3433bc25365",
-      "url": "https://www.anthropic.com/news/fable-mythos-access",
-      "vendor": "Anthropic"
     }
   ]
 }
