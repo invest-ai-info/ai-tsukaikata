@@ -555,8 +555,26 @@
     「Weather Lab」（`weatherlab.deepmind.google`）は**経路遮断**（`CONNECT tunnel failed`）で
     到達できず。次にこれらのドメインを叩く行が来たら再試行対象にすること
 
-- [ ] /fugu-max-release/
+- [!] /fugu-max-release/
   - 2026-09-11 自動追記（major・Sakana AI「Introducing Fugu Max and Fugu Ultra v2: Orchestrating the Pareto Frontier」）
+  - 完全なURL＝`https://sakana.ai/fugu-max-release/`（`tracker/sources.yml` の `sakana-blog` は
+    `https://sakana.ai/feed.xml`。`news.json` の `url` はサイトルート相対なので補って読むこと）
+  - **2026-09-11 1回目: 下書きを作らずに停止した。**理由＝**経路遮断（`CONNECT tunnel failed, response 403`）**。
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `sakana.ai/fugu-max-release/` | **`CONNECT tunnel failed, response 403`** |
+    | `sakana.ai/feed.xml` | **`CONNECT tunnel failed, response 403`** |
+    | `sakana.ai/`（ルート） | **`CONNECT tunnel failed, response 403`** |
+
+    - `sakana.ai` ドメイン全体がこの環境のプロキシで止まっている（3パスとも同じエラー）。
+      **応答ヘッダに `cf-mitigated` は無く、先方のbot判定を示す形跡も無い**——プロキシが
+      CONNECT自体を拒否しており、先方に届く前に止まっている。**経路（許可リスト）の遮断**と判定した。
+    - ⚠️ **許可リストに `sakana.ai` を足せば直る可能性がある種類。**次にこの行（または同ドメインの別記事）
+      を見る人へ＝まずここに記録した経路遮断を再試行対象にすること。UA偽装での迂回はしていない。
+    - このサイトで Sakana AI の記事は初めて（`tools/` にまだ0本）。他社比較の候補は未調査
+      （①が解けてから、Anthropic・OpenAI・Google に同種の製品〈オーケストレーション／複数モデル切替〉が
+      あるかを確認すること）。
 
 ## 処理済み
 
