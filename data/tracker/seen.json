@@ -15,7 +15,7 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 85,
+      "count": 86,
       "last_error": "HTTPError: HTTP Error 404: Not Found"
     }
   },
@@ -29,18 +29,41 @@
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-09-11T22:13:00+00:00",
-    "media-gigazine": "2026-09-11T14:00:00+00:00",
+    "media-gigazine": "2026-09-12T01:00:00+00:00",
     "media-impress-ai": "2026-09-11T10:51:53+00:00",
     "media-itmedia-aiplus": "2026-09-11T10:18:00+00:00",
     "media-publickey": "2026-09-10T15:42:50+00:00",
-    "openai-news": "2026-09-11T10:00:00+00:00",
+    "openai-news": "2026-09-14T00:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-03T21:08:24+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-09-10T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-14T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "uid": "8bd5d91041776b7e",
+      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-11T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "uid": "b53ecc8b2fb462f7",
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "vendor": "OpenAI"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
@@ -85,6 +108,7 @@
     "048bfa24487178f8": "2026-09-09T22:35:14.494679+00:00",
     "049b4f85e7df61b1": "2026-09-02T00:17:44.256959+00:00",
     "04a4355d7313fc04": "2026-09-09T22:35:14.494679+00:00",
+    "04c738e1b710e452": "2026-09-12T01:10:34.433427+00:00",
     "050b169a2ce6a870": "2026-08-25T10:51:45.257904+00:00",
     "0542c4a2a55ebb89": "2026-08-17T15:43:06.217480+00:00",
     "055754e127351ef2": "2026-08-01T12:16:42.309603+00:00",
@@ -1238,6 +1262,7 @@
     "8b5cf9986bbc1621": "2026-08-01T12:16:42.309603+00:00",
     "8b869d59090ad152": "2026-09-06T13:41:43.502295+00:00",
     "8bcc535e0ef396b1": "2026-09-01T18:35:06.616532+00:00",
+    "8bd5d91041776b7e": "2026-09-12T01:10:34.433427+00:00",
     "8c099460ba115f8f": "2026-08-01T12:16:42.309603+00:00",
     "8c6ba0a69b8e1409": "2026-08-29T02:14:31.599661+00:00",
     "8c6d398a1c16aeaf": "2026-08-01T12:16:42.309603+00:00",
@@ -1598,6 +1623,7 @@
     "b47b9719d443b669": "2026-08-20T01:53:51.496322+00:00",
     "b506a558e87f6a6e": "2026-08-13T12:01:33.145239+00:00",
     "b525c624c9f0603f": "2026-08-20T04:55:18.164229+00:00",
+    "b53ecc8b2fb462f7": "2026-09-12T01:10:34.433427+00:00",
     "b559c5e1d8c5795f": "2026-08-01T12:16:42.309603+00:00",
     "b5620f2d11a85b5f": "2026-08-25T13:13:37.045068+00:00",
     "b5652c0266d5cb58": "2026-08-25T03:14:16.175949+00:00",
@@ -2196,6 +2222,7 @@
     "fb4a379fceb77e83": "2026-08-23T22:40:47.689469+00:00",
     "fb51f2bbe82c4cfa": "2026-09-07T16:29:44.983394+00:00",
     "fb635ba6fad696ed": "2026-08-01T12:16:42.309603+00:00",
+    "fb9c7889edbb711c": "2026-09-12T01:10:34.433427+00:00",
     "fb9d6d34681cd771": "2026-09-06T23:58:22.518989+00:00",
     "fbab0d617948be70": "2026-08-25T20:48:36.942089+00:00",
     "fbb8442b97daea2e": "2026-08-11T21:06:02.039062+00:00",

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-12T01:10:34.433427+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-14T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
+      "summary_ja": "Perplexityが業務にGPT-6 Astraを導入\n文書作成やプログラム修正、システム監視に活用\n従来モデルより人の確認作業が大幅に減る",
+      "summary_source": "gemini",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "uid": "8bd5d91041776b7e",
+      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-11T19:45:45.170106+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -11,6 +25,20 @@
       "uid": "8ac76a00e2ecae82",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.269",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-12T01:10:34.433427+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-11T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.",
+      "summary_ja": "CognitionがDevinのテストにGPT-6 Astraを活用\nDevinのプログラム検証能力が向上した\n技術者の確認作業を減らし開発を加速する",
+      "summary_source": "gemini",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "uid": "b53ecc8b2fb462f7",
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-11T19:45:45.170106+00:00",
