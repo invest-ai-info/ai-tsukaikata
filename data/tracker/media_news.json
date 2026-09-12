@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-12T22:23:20.866067+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-12T22:01:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Anthropicの最高経営責任者（CEO）、ダリオ・アモデイ氏は9月12日、AI業界に開発の減速を求める論考「We Must Pace the Frontier」を公開した。AIの能力向上に安全対策が追いつく時間を確保するため、第三者による評価や企業間、政府間の協調からなる3つの取り組みを提案している。",
+      "title": "Anthoropic CEOが「AI開発の減速」提言　OpenAIアルトマン氏、イーロン・マスク氏も賛同",
+      "uid": "882ee16cba9fa3e4",
+      "url": "https://japan.cnet.com/article/35252564/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-12T10:52:17.517285+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "bdfd9bcc50728984",
       "url": "https://japan.cnet.com/article/35252353/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T05:52:22+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GAZAIは、Android/iOS用AIキャラクターチャットアプリ「anini」において、イラストレーター・ぼんじん氏とのコラボレーションを開始した。",
-      "title": "AIチャット「anini」、ぼんじん氏描き下ろし「メイド男子」「ギャル幼馴染」が登場",
-      "uid": "4e5fc6a644db07f3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138778.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

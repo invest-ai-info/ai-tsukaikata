@@ -15,20 +15,20 @@
   },
   "failures": {
     "pfn-blog": {
-      "count": 91,
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "count": 92,
+      "last_error": "HTTPError: HTTP Error 404: Not Found"
     }
   },
   "latest": {
     "anthropic-news": "2026-09-10T00:00:00+00:00",
     "anthropic-sdk": "2026-09-10T17:45:22+00:00",
-    "claude-code": "2026-09-11T19:17:55+00:00",
+    "claude-code": "2026-09-12T19:45:44+00:00",
     "deepmind-blog": "2026-09-08T14:00:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-10T16:00:00+00:00",
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
-    "media-cnet-japan": "2026-09-12T08:52:00+00:00",
+    "media-cnet-japan": "2026-09-12T22:01:00+00:00",
     "media-gigazine": "2026-09-12T14:00:00+00:00",
     "media-impress-ai": "2026-09-11T10:51:53+00:00",
     "media-itmedia-aiplus": "2026-09-11T10:18:00+00:00",
@@ -73,6 +73,17 @@
       "uid": "acf19e2d36a51332",
       "url": "/world-models-royal-society-issue/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-12T19:45:44+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
+      "title": "v2.1.270",
+      "uid": "faacea1d00f09334",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.270",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -1247,6 +1258,7 @@
     "8781c1d1e049c5f0": "2026-08-13T12:01:33.145239+00:00",
     "878e074db4fa320c": "2026-08-01T12:16:42.309603+00:00",
     "87b493eadab5ae08": "2026-09-05T05:48:01.490384+00:00",
+    "882ee16cba9fa3e4": "2026-09-12T22:23:20.866067+00:00",
     "885a48041b855f62": "2026-08-13T12:01:33.145239+00:00",
     "88604715e73f2ef3": "2026-08-11T17:14:43.158523+00:00",
     "88957b27497d3dc3": "2026-09-04T11:23:18.866777+00:00",
@@ -2231,6 +2243,7 @@
     "fa4116ea6546df70": "2026-08-18T13:58:51.108779+00:00",
     "fa4ca7d126877d4a": "2026-08-25T04:04:08.570654+00:00",
     "fa88262e1ddf2d82": "2026-09-09T00:18:03.279528+00:00",
+    "faacea1d00f09334": "2026-09-12T22:23:20.866067+00:00",
     "fac989ed5445b9ac": "2026-09-02T05:51:57.834877+00:00",
     "fad3c4494aa6e20d": "2026-09-04T05:57:33.223134+00:00",
     "fae644712cd98322": "2026-08-21T09:00:17.887163+00:00",

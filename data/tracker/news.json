@@ -15,6 +15,18 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-12T22:23:20.866067+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-12T19:45:44+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
+      "title": "v2.1.270",
+      "uid": "faacea1d00f09334",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.270",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-11T19:45:45.170106+00:00",
       "importance": "minor",
       "label": "Claude Code",
