@@ -20365,6 +20365,93 @@ def frozen_feed_grid_chart() -> None:
     )
 
 
+def unseen_does_not_mean_new_chart() -> None:
+    """監視対象を追加したとき、その対象の過去分を「新着」に含めずに済んだ回数の一覧。
+
+    実測（2026-09-12）。架空のSNS監視・入金監視の2本に、新しい監視対象を1件ずつ
+    追加し、その対象の過去分（9件・7件、いずれも本日付は0件）を新着に含めてしまうかを
+    数えた。日付を主役にして聞いた8回は8回とも正しく0件だったが、「既読リストに無い
+    ものを新着として」という自動処理そのままの聞き方にすると、4回とも過去分を丸ごと
+    新着に数えた。一文を足すと、明示的でも軽い注意でも4回とも0件に戻った。
+    """
+    rows = [
+        ("日付ベースで聞く（未読なし）", 8, 8),
+        ("「既読リストに無い＝新着」のまま", 0, 4),
+        ("「本日の日付のものだけ」と一文", 4, 4),
+        ("「過去分は含めないで」と一文", 4, 4),
+    ]
+    label_w = 270
+    cell_w, cell_h, gap = 170, 32, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「未読」だけで聞くと、追加した対象の過去分が新着に化けた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のSNS監視・入金監視の2本に、新しい監視対象を1件ずつ追加した。過去分は"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "9件・7件とも本日付は0件で、正しい答えはどちらも「本日の新着は0件」である。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、正しく0件と判定できた回数（材料2本×各2回、日付ベースのみ材料2本×各4回）。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 正しく0件"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 52
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "崩れたのは「既読/未読」の枠組みで聞いたときだけ。日付では崩れなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "一文を足せば、短い注意でも明示的なルールでも、4回とも0件に戻った。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "監視対象を1件追加したとき、その対象の過去分（本日付は0件）を「本日の新着」に"
+        "含めずに済んだ回数を、聞き方4通りで比べたマス目。日付を主役にして聞いた8回は"
+        "8回とも正しく0件だった（8/8）。「既読リストに無いものを新着として」という、"
+        "自動処理の内部ロジックに近い聞き方をそのまま使うと、4回とも過去分（9件または"
+        "7件）を丸ごと新着として数えてしまった（0/4）。「追加時点より前は本日の日付の"
+        "ものだけを新着として数えてください」という明示的な一文を足すと4回とも0件に"
+        "戻り（4/4）、「過去の記録まで新着に含めないよう注意してください」という短い"
+        "注意を足すだけでも同じく4回とも0件に戻った（4/4）。"
+    )
+    (OUT / "unseen-does-not-mean-new.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     named_platform_invites_guessed_rules_chart()
     closed_days_vanish_chart()
@@ -20621,4 +20708,5 @@ if __name__ == "__main__":
     long_report_checkable_facts_chart()
     typo_in_last_id_grid_chart()
     frozen_feed_grid_chart()
+    unseen_does_not_mean_new_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

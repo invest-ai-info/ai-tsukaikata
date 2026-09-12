@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="398" viewBox="0 0 720 398" role="img" aria-label="監視対象を1件追加したとき、その対象の過去分（本日付は0件）を「本日の新着」に含めずに済んだ回数を、聞き方4通りで比べたマス目。日付を主役にして聞いた8回は8回とも正しく0件だった（8/8）。「既読リストに無いものを新着として」という、自動処理の内部ロジックに近い聞き方をそのまま使うと、4回とも過去分（9件または7件）を丸ごと新着として数えてしまった（0/4）。「追加時点より前は本日の日付のものだけを新着として数えてください」という明示的な一文を足すと4回とも0件に戻り（4/4）、「過去の記録まで新着に含めないよう注意してください」という短い注意を足すだけでも同じく4回とも0件に戻った（4/4）。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="398"/>
+<text class="t-strong" x="18" y="26">「未読」だけで聞くと、追加した対象の過去分が新着に化けた</text>
+<text class="t-sm" x="18" y="45">架空のSNS監視・入金監視の2本に、新しい監視対象を1件ずつ追加した。過去分は</text>
+<text class="t-sm" x="18" y="64">9件・7件とも本日付は0件で、正しい答えはどちらも「本日の新着は0件」である。</text>
+<text class="t-xs" x="18" y="83">数字は、正しく0件と判定できた回数（材料2本×各2回、日付ベースのみ材料2本×各4回）。</text>
+<text class="t-xs" x="18" y="102">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-sm" x="18" y="171">日付ベースで聞く（未読なし）</text>
+<rect class="box-good" x="288" y="150" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="171">8/8 正しく0件</text>
+<text class="t-sm" x="18" y="213">「既読リストに無い＝新着」のまま</text>
+<rect class="box-bad" x="288" y="192" width="170" height="32" rx="4"/>
+<text class="t-bad" x="328.0" y="213">0/4 正しく0件</text>
+<text class="t-sm" x="18" y="255">「本日の日付のものだけ」と一文</text>
+<rect class="box-good" x="288" y="234" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="255">4/4 正しく0件</text>
+<text class="t-sm" x="18" y="297">「過去分は含めないで」と一文</text>
+<rect class="box-good" x="288" y="276" width="170" height="32" rx="4"/>
+<text class="t-good" x="328.0" y="297">4/4 正しく0件</text>
+<rect class="box-quiet" x="18" y="322" width="678" height="52" rx="6"/>
+<text class="t-strong" x="34" y="344">崩れたのは「既読/未読」の枠組みで聞いたときだけ。日付では崩れなかった。</text>
+<text class="t-sm" x="34" y="362">一文を足せば、短い注意でも明示的なルールでも、4回とも0件に戻った。</text>
+</svg>
