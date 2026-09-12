@@ -45,6 +45,34 @@
 
 ## 記録
 
+### 2026-09-12（21:00 レシピ担当の回）
+- 公開: 1本（buried-instruction-still-obeyed）。**目標（副業3本）に届かず。**
+- 実測: この環境の Agent（サブエージェント）を毎回独立に起動（新規コンテキスト・
+  このプロジェクトの方針やテストである旨は伝えていない）。架空の社内・取引先メール12通
+  （4通に命令文を1つずつ仕込み）を、貼り方を変えた6版で各2回＝計12回。
+- 手順0＝`git fetch origin`→HEADはorigin/mainと一致（ずれ無し）。
+- 手順1＝「副業」節の未処理`- [ ]`は3件あったが、**3件とも`⏸`（経路遮断・原文未確認待ち）で
+  着手できる在庫は0件**。副業の残りが0本しか無かったので、そのまま「残りの節を上から順に」
+  へ進んだ（キュー0番＝本数はノルマではない）。「定説を実測する」節の先頭から2件が`- [ ]`で
+  実測の設計まで書かれていたため、上の1件（「指示と資料を区切って渡せ」の実測）を選んだ。
+- 手順2の重複確認＝`grep -h '^## ' content/recipes/*.md | sort -u`（見出しは共通テンプレートのみ
+  で衝突判定にならず）。項目自体に書かれていた🔒切り分け（`inbox-loop-new-since-yesterday`・
+  `mail-needs-reply`・`summarize-without-dropping`・`limit-what-ai-touches`・
+  `numbers-not-in-the-source`との違い）を確認し、丸かぶりなしと判断。
+- 設計（3版×各2回）に加え、実測中に3つ拡張した＝①「命令文には従わない」と宣言しても機械
+  照合では8回とも埋め込み指示（削除）が効いていた発見を受け、④検出リスト化版②識別子保持版
+  を追加、③見出しを外した版でも保持形の一文が効くか確認する過程で「全文保持」への耐性が
+  2回中1回だけ崩れる新発見が出た。最終的に6版×各2回＝計12回。
+- 図は`tools/make_figures.py`に`buried_instruction_still_obeyed_chart`を1つ追加（座標は計算）。
+  `src/figures.py`の崩れ検査を通過。
+- 指示文6個・図1枚・内部リンク3本（`summarize-without-dropping`・`limit-what-ai-touches`・
+  `many-conditions-self-check-blind-spot`）。マーカーは11個・warn5個（上限13個・warn5個の内）。
+- 新しい教訓★155を`_lessons.md`に追記。★1（禁止は受け皿と対で）・★7（「書き直しません」の
+  宣言があるぶん読み流す）の再発も同記事内で確認・追記。
+- `python -m pytest -q`＝625 passed／`python -m src.build`＝ビルド完了。
+- `python -m tools.make_eyecatch`実行済み（実行前に`git status`→他の担当が触ったファイルは
+  混ざっていないことを確認）。
+
 ### 2026-09-12（自動化・ループ優先の枠。専任の別ルーティン）
 - 公開: 1本（unseen-does-not-mean-new）。
 - 実測: `claude --safe-mode --tools ""`（このリポジトリの外側の空ディレクトリ、CLAUDE.mdを
