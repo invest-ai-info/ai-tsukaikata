@@ -40,30 +40,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-09-10T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-11T19:17:55+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added claude plugin eval : run a plugin's eval suite against Claude Code and get scored, reproducible results (JSON + HTML report); see claude plugin eval --help Added /output-style [n…",
-      "title": "v2.1.269",
-      "uid": "8ac76a00e2ecae82",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.269",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-11T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
-      "uid": "0e69404c3f9ed9bd",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
