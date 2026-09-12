@@ -778,3 +778,16 @@
 誰にも読み直されないまま公開されている。**9/9〜9/12 は `content/tools/` への追加が0本だったので
 新しい未読は増えていないが、**既存の5本（`weathernext-3` ほか）は未読のまま**。
 手順1の `git log` を `-- content/recipes/ content/tools/` に広げるだけで届く（オーナー判断が要るので、こちらでは変えない）。
+
+### 📌 運用の📌（2026-09-12・手順6で踏んだ）
+
+**`git push origin main` が `non-fast-forward` で弾かれた。原因はリモートではなく、この作業環境の
+ブランチ状態。**HEAD が**detached**（`refs/heads/main` から外れた状態）で、
+**ローカルの `main` ブランチだけが古い別系統（`ac5dbb6`・ahead 52 / behind 50）を指していた**。
+`git push origin main` は**そのローカル `main`** を送ろうとするので、中身と無関係に弾かれる。
+
+- ⭕️ **`git push origin HEAD:main` で通った**（`b8bc23a..2d7ef18`・fast-forward）
+- ⚠️ **ローカル `main` には触っていない**（52件の別系統が乗っているので、force push も reset もしない）
+- 🔑 **手順0の「HEAD が `origin/main` の続きか」は正しく通っていた**（detached HEAD＝`b8bc23a`＝`origin/main`）。
+  **ずれていたのはブランチ名のほうだけ**なので、この検査では出ない
+- → 次に同じ拒否に当たったら、まず `git branch -vv` を見る。`(HEAD detached)` なら `HEAD:main` で押す
