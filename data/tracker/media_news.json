@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-12T10:52:17.517285+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-12T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントを使い始めると、用途や料金に応じてOpenAI・Claude・Google Gemini・ローカルLLMなどを使い分けたいケースがあります。そこで複数のAIプロバイダーを自由に切り替えながら、デスクトップアプリ・CLI・APIなどからMCPによるツール連携や自動化まで1つの環境で利用できるオープンソースのAIエージェント「goose」が公開されています。 続きを読む...",
+      "title": "無料のオープンソースAIエージェント「goose」、デスクトップアプリ・CLI・APIなどコード・ワークフロー・その他あらゆる用途に対応",
+      "uid": "09666a5932c1c9d0",
+      "url": "https://gigazine.net/news/20260912-goose/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-12T10:52:17.517285+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-12T08:52:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米AnthropicがAI開発に反対する活動家を監視し、犯罪を起こす恐れがあるとして警察に通報していると、米誌The American Prospectが9日（現地時間）に報じた。「Claude」を手がける同社は「活動家を監視するための予測型監視システムを構築してはいない」と反論している。",
+      "title": "Anthropicが「AI反対派」を監視・通報しているとの報道　同社は反論",
+      "uid": "4295cdf98f1b318a",
+      "url": "https://japan.cnet.com/article/35252557/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-12T10:52:17.517285+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-12T08:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "音楽ストリーミングサービスのSpotifyが、Claude Codeで大量のトークンを消費する単純作業を別のAIモデルに任せることでトークン消費を大幅に削減する手法を公開しました。Spotifyのディミトリ・マズマノフ氏は、この手法を検証した結果、大量のファイル読み込みを委譲するテストでClaude側のトークン消費を平均約90％削減できたと報告しています。 Portal by Spotify c…",
+      "title": "SpotifyのエンジニアがClaude Codeのトークン消費を約90％削減した方法とは?",
+      "uid": "e8cb0bf8f7d1ea75",
+      "url": "https://gigazine.net/news/20260912-spotify-cut-claude-code-token-usage/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-11T22:37:39.745844+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2363,42 +2399,6 @@
       "uid": "4e5fc6a644db07f3",
       "url": "https://ai.watch.impress.co.jp/docs/news/2138778.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-07T05:10:57+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Tesla Japanが自動運転タクシー専用車両「Cybercab」を日本初公開。9月11日から東京・大阪・名古屋の4会場で「Cybercab Japan Tour」を開き、ハンドルもペダルもない2人乗りの実車を展示する。",
-      "title": "Teslaのロボタクシー「Cybercab」が日本で実車初公開　東京・大阪・名古屋で",
-      "uid": "7c0622a7acab7f05",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/07/2000001207/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T05:03:29+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Highlandersは、国産4足歩行ロボット「HLQ EDGE」を9月7日に発表した。",
-      "title": "4足歩行ロボット「HLQ EDGE」耐荷重60kgでロボットアームなど装着可能 フィジカルAIにより段差・溝地形を走破",
-      "uid": "196447057184c3f7",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138759.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-07T05:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ケニアでは、欧米の大学に通う学生の代わりに論文を執筆するゴーストライターが成立していましたが、2022年のChatGPT登場後、壊滅状態にあると報告されています。 続きを読む...",
-      "title": "ケニアの一大ビジネスになっていた「論文のゴーストライター」ビジネスがAIの登場で崩壊",
-      "uid": "7186b30f942e4a27",
-      "url": "https://gigazine.net/news/20260907-kenya-ghost-writing-ended/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
