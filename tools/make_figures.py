@@ -20452,6 +20452,148 @@ def unseen_does_not_mean_new_chart() -> None:
     )
 
 
+def urgent_wording_detection_chart() -> None:
+    """「重要です・見逃すと困ります」を足しても、検出できた数は変わらなかった（2026-09-13）。
+
+    実測。架空のメルマガ下書き12件・セミナー案内下書き12件の2種に、割引率／参加費の
+    件名と本文の食い違い・過去日・決まり文句の条件抜けを3件ずつ仕込み、材料2本×各2回＝
+    8回を、念押しなし／ありの2版で比較した。3種類とも念押しの有無で数字は1つも動かず、
+    差が出たのは材料の作り方のほう（条件を一部だけ削った号は0/4、文をまるごと削った号は
+    4/4）。条件が一部だけ抜けたメルマガに絞ると、「一言一句比べて」で1/2、数字の突合・
+    文言比較・日付確認をまとめた本番用の指示で2/2に戻ったが、後者は新しい誤検知を1回生んだ。
+    """
+    rows1 = [
+        ("件名と本文で数字が食い違う号", 4, 4),
+        ("配信・開催日が過去になっている号", 4, 4),
+        ("決まり文句の条件が一部だけ抜けた号", 2, 4),
+    ]
+    label_w = 300
+    col_w = 170
+    col_x = [18 + label_w, 18 + label_w + col_w]
+    top1 = 126
+    row_h = 30
+    pitch = row_h + 8
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "念押しの一文を足しても、検出できた数はどの組も変わらなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のメルマガ下書き12件・セミナー案内下書き12件の2種に、割引率や参加費の食い違い・"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "過去日・決まり文句の条件抜けを3件ずつ仕込んだ。材料2本×各2回＝8回を、念押しの"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "有無で比較した。数字は「検出できた回数／試した回数」（材料2本×各2回＝4回ずつ）。"
+        "</text>\n",
+    ]
+    headers = ["念押しなし", "念押しあり"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top1 - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    y = top1
+    for label, val, n in rows1:
+        ty = y + row_h - 9
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for x in col_x:
+            parts.append(
+                f'<rect class="{box}" x="{x + 15}" y="{y}" width="{col_w - 30}" height="{row_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{val}／{n}</text>\n'
+            )
+        y += pitch
+
+    y += 8
+    box_h1 = 50
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h1}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "3種とも、念押しの有無でびた一つ変わらなかった（4／4と4／4、2／4と2／4）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "差が出たのは材料のほう。文をまるごと削った号は4／4、条件だけを削った号は0／4だった。</text>\n"
+    )
+    y += box_h1 + 24
+
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "条件が一部だけ抜けた号（メルマガ）に絞ると、直し方で差が出た</text>\n"
+    )
+    y += 20
+
+    rows2 = [
+        ("念押しなし", 0, 2),
+        ("念押しあり", 0, 2),
+        ("「一言一句比べて」と一文足す", 1, 2),
+        ("数字の突合・文言比較・日付確認（本番用）", 2, 2),
+    ]
+    label_w2 = 400
+    box_x2 = 18 + label_w2
+    box_w2 = 620 - box_x2
+    row_h2 = 28
+    pitch2 = row_h2 + 8
+    top2 = y
+    for label, val, n in rows2:
+        ty = y + row_h2 - 8
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box}" x="{box_x2}" y="{y}" width="{box_w2}" height="{row_h2}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{box_x2 + box_w2 / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{val}／{n}</text>\n'
+        )
+        y += pitch2
+    assert box_x2 + box_w2 <= WIDTH - 18, box_x2 + box_w2
+
+    y += 8
+    box_h2 = 50
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h2}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 20}">'
+        "「比べて」の一文は1／2しか戻らなかった。本番用の指示は2／2に戻ったが、</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "正しい号（10%オフ）の割引計算を1回だけ誤って指摘した（新しい誤検知）。</text>\n"
+    )
+    y += box_h2 + 16
+
+    height = y + 8
+    alt = (
+        "「重要です・見逃すと困ります・よく確認してください」という念押しの一文を足しても、"
+        "検出できた件数は1つも変わらなかったことを示す図。架空のメルマガ下書き12件・"
+        "セミナー案内下書き12件の2種に、件名と本文で割引率や参加費が食い違う号・配信や"
+        "開催の日付が過去になっている号・決まり文句の条件が一部だけ抜けた号を3件ずつ仕込み、"
+        "材料2本×各2回＝8回を念押しなし・ありの2版で比較した。件名と本文の数字の食い違いは"
+        "念押しなし4／4・あり4／4、過去日は念押しなし4／4・あり4／4で、どちらも満点かつ"
+        "念押しの有無で差が無かった。決まり文句の条件が一部だけ抜けた号は念押しなし2／4・"
+        "あり2／4で、これも念押しの有無では変わらなかった。差が出たのは材料の作り方のほうで、"
+        "決まり文句の一文をまるごと削った号（セミナー案内）は4／4で気づけたのに対し、"
+        "条件の一部（金額の下限）だけを削った号（メルマガ）は0／4で気づけなかった。この"
+        "メルマガに絞って直し方を比べると、念押しなし・ありはどちらも0／2のまま、"
+        "「似たような文言は他の号と一言一句そろっているか比べて」という一文を足すと1／2、"
+        "件名と本文の数字を突き合わせ・決まり文句の一致・配信日を本日と比べることをまとめた"
+        "本番用の指示にすると2／2まで戻った。ただしこの本番用の指示は、正しく10%オフだった"
+        "号の割引計算を1回だけ誤って指摘するという、新しい誤検知を生んだ。"
+    )
+    (OUT / "urgent-wording-detection.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def buried_instruction_still_obeyed_chart() -> None:
     """4つの埋め込み指示のうち、従った痕跡が出た回数を比べる（2026-09-12）。
 
@@ -20796,4 +20938,5 @@ if __name__ == "__main__":
     typo_in_last_id_grid_chart()
     frozen_feed_grid_chart()
     unseen_does_not_mean_new_chart()
+    urgent_wording_detection_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

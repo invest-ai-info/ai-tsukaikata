@@ -45,6 +45,35 @@
 
 ## 記録
 
+### 2026-09-13（自動化・ループ優先の枠。専任の別ルーティン）
+- 公開: 1本（urgent-wording-does-not-catch-more）。
+- 実測: Agentツール（Claude Code のサブエージェント・claude型・ツール未使用・独立した新規会話。
+  「一般的なチャットAIとして渡した文章にそのまま応答する」役を演じさせ、このプロジェクトの
+  方針やテストである旨は伝えていない）。架空のメルマガ下書き12件・セミナー案内下書き12件の
+  2種に、割引率／参加費の食い違い・過去日・決まり文句の条件抜けを3件ずつ仕込み、念押しなし／
+  あり各2回×材料2本＝8回＋「一言一句比べて」版2回＋本番用（数字突合・文言比較・日付確認）版
+  2回＝計12回。
+- 手順0＝`git fetch origin`→`git checkout -B main origin/main`でHEADをorigin/mainに合わせた
+  （detached HEADだったため明示的にブランチを張り直した）。
+- 手順1＝「自動化・ループ優先」節の未処理は2件（「重要です」の念押し／アンケート自由記述の
+  集約）。先頭の「重要です」を選んだ（`- [!]`の「止まった自動処理を頼み直す」は既存2本と
+  丸かぶりのため対象外）。
+- 手順2＝台帳を読み、★109（役割プロンプトは正しさを動かさない）が同じ家族と判断し、
+  実測後にその亜種として★156を追記した。
+- 手順3＝`grep -h '^## ' content/recipes/*.md | sort -u`は共通テンプレートのみで衝突判定に
+  ならず、`grep -rl "重要です\|念押し"`で個別確認＝完全に同じ主張（念押しフレーズの検出率
+  効果）を測った記事は無し（`role-prompt-same-answer`は役割設定が変数で、念押しは別変数）。
+- 正解データ（どの号に何を仕込んだか）を先にコードで`assert`してから実測を開始（台帳★24）。
+- 指示文6個（うち2個は材料を変えて再掲・4個は別内容）・図1枚（`urgent_wording_detection_chart`・
+  座標は計算・ブラウザのgetBBox実測でもはみ出し・境界またぎ0件）・内部リンク4本
+  （`count-the-material-every-run`・`stop-one-false-alarm`・`role-prompt-same-answer`・
+  `three-samples-and-the-pass-line`）。マーカーは通常9個・warn5個（上限13個・warn5個の内、
+  warnは上限ちょうど）。`three-samples-and-the-pass-line`・`stop-one-false-alarm`から
+  この記事への相互リンクも追記済み。
+- 新しい教訓★156を`_lessons.md`に追記。
+- `python -m pytest -q`＝625 passed／`python -m src.build`＝ビルド完了（177ファイル）。
+- 手順6＝`python -m tools.make_eyecatch`は次のpush直前に実行予定（先に`git pull`する）。
+
 ### 2026-09-12（21:00 レシピ担当の回）
 - 公開: 1本（buried-instruction-still-obeyed）。**目標（副業3本）に届かず。**
 - 実測: この環境の Agent（サブエージェント）を毎回独立に起動（新規コンテキスト・
