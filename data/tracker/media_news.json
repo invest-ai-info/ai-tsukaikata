@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-13T01:03:50.448341+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-13T01:01:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Amazon Adsは9月10日、同社を通じて出稿する企業が「ChatGPT」にも広告を配信できる仕組みを発表した。米国の一部の広告主が試験的に利用している。",
+      "title": "Amazon、「ChatGPT」に広告を配信　AIで商品探しのニーズに対応",
+      "uid": "acec34a96042c4ce",
+      "url": "https://japan.cnet.com/article/35252569/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-13T01:03:50.448341+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-12T23:06:11+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AnthropicのアモデイCEOは、AIの急速な自己改善や安全上の脅威を踏まえ、モデルの能力向上ペースを抑える3段階の計画を提言した。第三者の常駐評価者の導入や民主主義国間での協調を訴えている。これに対し、OpenAIのアルトマンCEOやマスク氏も同調し、同様の評価体制を導入する意向を示した。",
+      "title": "AnthropicのアモデイCEO、AI開発の「ペース調整」訴えるエッセイ公開　アルトマン氏とマスク氏も賛同",
+      "uid": "667340c3447b7dcb",
+      "url": "https://www.itmedia.co.jp/news/article/2609/13/2000001432/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-13T01:03:50.448341+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-12T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIやAIエージェントの活用が広がる一方、トークン課金による想定外のコスト増が企業を悩ませています。なぜ浪費が起こるのか、その原因と、現場で取り組める対策を5本の記事から探ります。",
+      "title": "「AIコーディングより人を雇う方が安い」時代が来る？　生成AIの予算超過を防ぐトークン浪費対策の全て",
+      "uid": "1577fc2f94763cd1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/13/news005.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-13T01:03:50.448341+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-12T22:59:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米国がAI開発を減速すれば、中国が先行するのではないか。Anthropicの最高経営責任者（CEO）、Dario Amodei氏は、開発の減速を訴える論考「We Must Pace the Frontier」で、この懸念への対策を示した。対中規制で技術的な差を広げ、米国が安全対策に時間をかける余地を確保するという。",
+      "title": "米国がAI開発を減速→中国がAIで先行してしまう問題　どう対策？ Anthropic CEOの回答は",
+      "uid": "bb2c9ef053f17c0b",
+      "url": "https://japan.cnet.com/article/35252567/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-13T01:03:50.448341+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-12T22:37:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Anthropicは9月10日、人間との出会いをうたう20超のアプリで、同社のAI「Claude」が架空の相手として利用者と会話していたと発表した。4月の2週間で4700超のAIの人格が、少なくとも2万5000人とやり取りしていたという。",
+      "title": "出会い系の相手はAIだった　4700超の偽人格、2万5000人と会話",
+      "uid": "4516b337544f6d8b",
+      "url": "https://japan.cnet.com/article/35252565/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-12T22:23:20.866067+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2339,66 +2399,6 @@
       "uid": "5dcbd68911f6469d",
       "url": "https://gigazine.net/news/20260907-claude-fermat-last-theorem-formalizing/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-07T06:32:17+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Microsoftは、OpenAIの新モデル「GPT-6 Astra」を「Copilot Cowork」と「Copilot Studio」で提供開始。作業を細かく分けて指示せずとも、より大きなタスクを委任できるとうたう。",
-      "title": "M365 Copilotでも「GPT-6 Astra」利用可能に　「Fable 5.1」も可　Work IQと合わせて「より的確な応答」に",
-      "uid": "8c811ad8c87ac175",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/07/2000001217/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-07T06:31:29+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "福島といえば喜多方ラーメン。毎日でも飽きないスープのように、生成AIも職員が日常的に使う存在にできるのか。有償アカウント100件と研修を用意しても利用が二極化した福島県が、それでも約6000人への全庁展開に踏み切った理由を追う。",
-      "title": "M365 Copilotを配っても「使われない」 でもAI活用が進んだ福島県庁の\"逆張り\"戦略",
-      "uid": "1a15bff5d25c531e",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/07/2000000807/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T06:14:24+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTモビリティは、愛知県豊田市が9月14日より順次開始する「市街地・山村・郊外の異なる交通環境における自動走行実証実験」に参画する。",
-      "title": "次世代モビリティ「e-Palette」などを活用した自動運転実証を開始 愛知県豊田市で9月14日より",
-      "uid": "fb0e87e8f9931fb7",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138783.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-07T06:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "GitHubは2026年9月4日、GitHub Copilotでタスクに応じて複数のAIモデルを使い分ける「Project HydraFusion」を研究プレビューとして発表しました。GitHubによる評価では、TerminalBench 2.1でClaude Opus 5と比べて推定コストを67％削減しながら正しく完了できたタスクの割合が4.9ポイント高くなったとのことです。 続きを読む...",
-      "title": "GitHub Copilotが複数AIモデルを自動で使い分ける「HydraFusion」を公開、TerminalBench 2.1でClaude Opus 5比コスト67％減・スコア4.9ポイント向上",
-      "uid": "709f57f34a05cb2e",
-      "url": "https://gigazine.net/news/20260907-github-copilot-hydrafusion/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-07T06:02:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "デザインを重視する英国のスタートアップNothingを離れたメンバーたちが、音声操作の未来へ少なくとも1歩近づくAIマイク「Relay Q」を生み出した。",
-      "title": "キーボード不要の未来へ　Nothing出身者が開発したAIマイク「Relay Q」とは",
-      "uid": "bdfd9bcc50728984",
-      "url": "https://japan.cnet.com/article/35252353/",
-      "vendor": "CNET Japan"
     }
   ]
 }
