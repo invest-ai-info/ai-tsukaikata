@@ -40,52 +40,7 @@
     "pfn-blog": "2026-08-25T02:43:35+00:00",
     "sakana-blog": "2026-09-11T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-14T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
-      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
-      "uid": "8bd5d91041776b7e",
-      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-11T16:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.",
-      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
-      "uid": "b53ecc8b2fb462f7",
-      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-09-11T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "英国王立協会特集号に見る、世界モデルの最前線とAIの未来",
-      "uid": "acf19e2d36a51332",
-      "url": "/world-models-royal-society-issue/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-12T19:45:44+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
-      "title": "v2.1.270",
-      "uid": "faacea1d00f09334",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.270",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
