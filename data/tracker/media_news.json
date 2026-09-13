@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-13T16:22:46.770941+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-09-13T15:20:00+00:00",
+      "source_id": "media-publickey",
+      "summary": "CSSフレームワーク「Tailwind CSS」の開発元であるTailwind Labsは、ECサイト構築サービスを提供しているShopifyによって買収されると発表しました。 下記はTailwindの作者であるAdam Wathan氏によ...",
+      "title": "AIのせいでエンジニアの75％を解雇したCSSフレームワークのTailwind、Shopifyによる買収を発表。今後も安定的な開発を維持すると",
+      "uid": "1c691b914b381125",
+      "url": "https://www.publickey1.jp/blog/26/ai75csstailwindshopify.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-13T16:22:46.770941+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-09-13T15:08:50+00:00",
+      "source_id": "media-publickey",
+      "summary": "メッシュ型のVPNサービスを提供するTailscaleは、AIゲートウェイサービス「Aperture」の正式リリースを発表しました。 Aperture is officially GA.Give AI agents the models, ...",
+      "title": "TailscaleのVPNにAIエージェントを組み込める「Aperture」正式リリース。AIによるTailscaleやノードの操作も可能に",
+      "uid": "536f0765a0a48ed5",
+      "url": "https://www.publickey1.jp/blog/26/tailscalevpnaiapertureaitailscale.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-09-13T01:03:50.448341+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2375,30 +2399,6 @@
       "uid": "d0ffb6bdcadbd7fd",
       "url": "https://ai.watch.impress.co.jp/docs/news/2138803.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-07T07:03:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "グラフィックデザインやインテリアデザインなど「デザイン業」の倒産が急増している。東京商工リサーチの調査によると、2026年上半期に発生したデザイン業の倒産は40件（前年同期比166.6％増）だった。",
-      "title": "生成AIの普及だけじゃない　「デザイン業の倒産」が前年同期比166％増になった意外な理由",
-      "uid": "90f1664755aae6c9",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/07/news075.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-07T06:37:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI開発企業のAnthropicは2026年9月4日、AI「Claude」がフェルマーの最終定理について最初から最後までコンピューターで検証できる証明を完成させたと発表しました。Claudeは11日間にわたってほぼ自律的に作業し、証明支援システム「Lean 4」で約1300万行のコードを生成。Anthropicはフェルマーの最終定理について初の完全な機械検証済み証明だと説明しています。 続きを読…",
-      "title": "Claudeがフェルマーの最終定理を11日で形式化、1300万行のLeanコードで初の完全な機械検証済み証明を完成",
-      "uid": "5dcbd68911f6469d",
-      "url": "https://gigazine.net/news/20260907-claude-fermat-last-theorem-formalizing/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

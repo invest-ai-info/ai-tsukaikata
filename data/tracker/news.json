@@ -4437,20 +4437,6 @@
       "uid": "ea275c28714596ce",
       "url": "https://huggingface.co/zai-org/GLM-5.2-FP8",
       "vendor": "Zhipu AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-15T15:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Google has announced a $1.5 billion investment for 2026 and 2027 to expand its data center campus in Jackson County, Alabama. Operating since 2019 on a repurposed former…",
-      "summary_ja": "Googleがアラバマ州に大規模な投資を発表。\nジャクソン郡のデータセンター拡張のため15億ドルを投資。\n投資は2026年と2027年に行われ、2019年から稼働中。",
-      "summary_source": "gemini",
-      "title": "We’re strengthening our presence in Alabama through new investments and community support.",
-      "uid": "657f2eee0dd348c9",
-      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
-      "vendor": "Google"
     }
   ]
 }
