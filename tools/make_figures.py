@@ -20680,7 +20680,86 @@ def buried_instruction_still_obeyed_chart() -> None:
     )
 
 
+def estimate_gap_leaks_on_money_ask_chart() -> None:
+    """前提が材料に無いとき、位置(先頭/末尾)より聞く中身(期間/金額)で崩れ方が変わる（2026-09-13）。
+
+    実測（H13）。「見積もりに必要な前提が書かれていない場合は、勝手に前提を置かず
+    『前提が材料に無い』と書いてください」という一文を、架空の募集文2本（納期＝期間を
+    聞く／月収＝金額を聞く）に対し、一文の位置（末尾・先頭・両方）を変えて比較した。
+    位置による差（先頭2/6・末尾3/6）より、期間か金額かという聞き方の差（1/6対4/6）が大きかった。
+    """
+    rows = [
+        ("納期（期間）・一文は末尾", 0, 3, False),
+        ("納期（期間）・一文は先頭", 1, 3, True),
+        ("収入（金額）・一文は末尾", 3, 3, True),
+        ("収入（金額）・一文は先頭", 1, 3, True),
+        ("収入（金額）・先頭と末尾の両方", 1, 2, True),
+    ]
+    left, right = 320, 620
+    span = right - left
+    top, bar_h, gap = 108, 30, 22
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "位置より、期間を聞いたか金額を聞いたかで崩れ方が変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「前提が材料に無ければ、勝手に置かずそう書いて」という一文を、架空の募集文2本"
+        "（納期・月収）に対し位置を変えて試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数字は「具体的な数値（日数・金額）を書いた回数／試した回数」。</text>\n",
+    ]
+    for index, (label, hit, total, bad) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 9}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        ratio = hit / total
+        cls = "box-bad" if bad and hit > 0 else "box-good"
+        if hit > 0:
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" '
+                f'width="{max(span * ratio, 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        tcls = "t-bad" if bad and hit > 0 else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{right + 12}" y="{y + bar_h - 9}">'
+            f"{hit}／{total}回</text>\n"
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 6
+    box_h = 66
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "位置（先頭2/6・末尾3/6）による差は17ポイント。事前に決めた反証条件（20ポイント）を下回り棄却。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "期間（1/6）と金額（4/6）の差は50ポイント。位置よりずっと大きく効いていた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 56}">'
+        "一文を先頭と末尾の両方に重ねても、金額の質問は2回に1回漏れた。</text>\n"
+    )
+    y += box_h + 16
+
+    height = y + 4
+    alt = (
+        "見積もりに必要な前提が材料に無いとき、AIが勝手に数字を計算するかを比較した図。"
+        "納期(期間)を聞いた場合、一文は末尾で0/3・先頭で1/3が具体的な日数を書いた。"
+        "収入(金額)を聞いた場合、一文は末尾で3/3・先頭で1/3・先頭と末尾の両方に置いても1/2が、"
+        "具体的な金額を書いた。位置による差(先頭2/6・末尾3/6、17ポイント)より、"
+        "期間か金額かという聞き方の違い(1/6対4/6、50ポイント)のほうが大きかった。"
+    )
+    (OUT / "estimate-gap-leaks-on-money-ask.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    estimate_gap_leaks_on_money_ask_chart()
     buried_instruction_still_obeyed_chart()
     named_platform_invites_guessed_rules_chart()
     closed_days_vanish_chart()
