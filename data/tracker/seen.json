@@ -20,7 +20,7 @@
     "claude-code": "2026-09-12T19:45:44+00:00",
     "deepmind-blog": "2026-09-08T14:00:15+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-09-10T16:00:00+00:00",
+    "google-ai-blog": "2026-09-14T16:00:00+00:00",
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-09-14T08:40:00+00:00",
@@ -28,13 +28,47 @@
     "media-impress-ai": "2026-09-14T10:42:20+00:00",
     "media-itmedia-aiplus": "2026-09-14T11:16:05+00:00",
     "media-publickey": "2026-09-14T15:55:18+00:00",
-    "openai-news": "2026-09-14T00:00:00+00:00",
+    "openai-news": "2026-09-14T12:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-03T21:08:24+00:00",
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
-    "sakana-blog": "2026-09-11T15:00:00+00:00"
+    "sakana-blog": "2026-09-16T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-14T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "uid": "21d50a4daa01db27",
+      "url": "https://openai.com/index/fyxer",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-14T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Animation of the text \"{DevFest} 2026 Join us! Google Developer Groups\" with a globe icon, asterisk icon, icon",
+      "title": "DevFest is back",
+      "uid": "b928bf8d8d7e918b",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
+      "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-16T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Inside Sakana AI’s Product Team",
+      "uid": "dbf59bc4ee052860",
+      "url": "https://sakana.ai/inside-product-team/",
+      "vendor": "Sakana AI"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
@@ -352,6 +386,7 @@
     "219513ed5bf25d8b": "2026-08-18T09:50:19.854738+00:00",
     "21a11c09cb82f2f2": "2026-08-01T12:16:42.309603+00:00",
     "21b197e450f44243": "2026-08-01T12:16:42.309603+00:00",
+    "21d50a4daa01db27": "2026-09-14T19:25:37.289624+00:00",
     "21db4baf973adf95": "2026-09-07T04:47:57.358551+00:00",
     "21e98414ac022d16": "2026-09-14T14:08:28.662401+00:00",
     "21f09c755466587c": "2026-09-08T14:36:06.739205+00:00",
@@ -1703,6 +1738,7 @@
     "b8d2e4bb66eaba76": "2026-08-17T03:14:24.845062+00:00",
     "b906ded8ea198335": "2026-08-02T11:35:58.106550+00:00",
     "b91510b89c37e7c1": "2026-08-20T01:53:51.496322+00:00",
+    "b928bf8d8d7e918b": "2026-09-14T19:25:37.289624+00:00",
     "b93a924e0aa01f70": "2026-08-13T12:01:33.145239+00:00",
     "b99815dc06e7fe19": "2026-09-04T05:57:33.223134+00:00",
     "b9a91e7b61e40fe7": "2026-08-25T16:03:10.619977+00:00",
@@ -1994,6 +2030,7 @@
     "db8e5a8662125ee3": "2026-08-28T05:26:34.338455+00:00",
     "dbb2afd9652eaf45": "2026-08-13T12:01:33.145239+00:00",
     "dbec62b147f9d794": "2026-08-25T07:10:25.158045+00:00",
+    "dbf59bc4ee052860": "2026-09-14T19:25:37.289624+00:00",
     "dbfab0a437eb5e03": "2026-09-08T09:45:19.651566+00:00",
     "dc0ad20d81d4604e": "2026-08-07T09:17:20.213476+00:00",
     "dc115b72ac37b0e1": "2026-08-13T12:01:33.145239+00:00",

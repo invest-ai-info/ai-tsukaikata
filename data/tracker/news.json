@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-14T19:25:37.289624+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-16T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Inside Sakana AI’s Product Team",
+      "uid": "dbf59bc4ee052860",
+      "url": "https://sakana.ai/inside-product-team/",
+      "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-09-14T19:25:37.289624+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-14T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Animation of the text \"{DevFest} 2026 Join us! Google Developer Groups\" with a globe icon, asterisk icon, icon",
+      "summary_ja": "DevFestが2026年に開催されます\nGoogle Developer Groupsが主催します",
+      "summary_source": "gemini",
+      "title": "DevFest is back",
+      "uid": "b928bf8d8d7e918b",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-14T19:25:37.289624+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-14T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
+      "summary_ja": "Fyxerが信頼されるAI秘書を開発しました\nOpenAIのAIモデルなどを使い受信箱を整理\n利用者ごとの文章スタイルでメールを作成します",
+      "summary_source": "gemini",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "uid": "21d50a4daa01db27",
+      "url": "https://openai.com/index/fyxer",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-12T01:10:34.433427+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -4398,20 +4438,6 @@
       "title": "Unlocking UK house-building with AI-accelerated planning",
       "uid": "a24f8c5763daf39c",
       "url": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-06-16T15:46:31+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Securing internal systems with an AI Control Roadmap, combining traditional safeguards and real-time monitoring.",
-      "summary_ja": "AIの安全性を高めるための計画が発表された。\n社内システム保護のため、「AI制御ロードマップ」を導入。\n従来の安全対策に加え、リアルタイム監視も組み合わせる。",
-      "summary_source": "gemini",
-      "title": "Securing the future of AI agents",
-      "uid": "6c1a4bdb0dda8146",
-      "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
       "vendor": "Google DeepMind"
     }
   ]
