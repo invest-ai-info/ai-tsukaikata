@@ -57,6 +57,9 @@ sources:
     label: Grok 新モデル
     type: openrouter
     org: x-ai
+    # 実測の間隔（2026）: 04-30 → 05-20 → 07-08 → 08-12 ＝ 20〜49日おき。
+    # 30日では通常の間隔でも鳴る。実物を確認のうえ延ばした（2026-09-14）
+    stale_days: 60
 
   # --- 中国系 ---
   # HuggingFace の org フィードは研究成果物リポジトリが大量に混ざるうえ、
@@ -74,6 +77,9 @@ sources:
     label: Kimi 新モデル
     type: openrouter
     org: moonshotai
+    # 実測の間隔（2026）: 04-20 → 06-12 → 07-16 ＝ 53日・34日おき。
+    # 30日では毎回鳴る。実物を確認のうえ延ばした（2026-09-14）
+    stale_days: 90
 
   # DeepSeek は HuggingFace 側が生きている（実測2日）ので触らない。
   - id: hf-deepseek
@@ -98,17 +104,21 @@ sources:
     type: rss
     url: https://sakana.ai/feed.xml
 
-  - id: pfn-blog
-    vendor: Preferred Networks
-    label: PFN 技術ブログ
-    type: rss
-    url: https://tech.preferred.jp/ja/blog/feed/
+  # ⚠️ PFN 技術ブログ（pfn-blog）は 2026-09-14 に外した。フィードが廃止されたため。
+  # 旧 https://tech.preferred.jp/ja/blog/feed/ は 301 → www.preferred.jp/ja/blog/tech/feed で
+  # 404。新サイト（Next.js）は候補15経路がすべて 404 か HTML で、HTML 内に RSS の宣言も無い。
+  # 外すまで 100回連続（約8日）404 を返し続けていた。
+  # 復活させるなら sitemap.xml（200・application/xml・blog/tech 配下 1,000件超）を
+  # 起点にした専用パーサが要る（記事タイトルは各ページの <title> から取る）。
 
   - id: elyza-note
     vendor: ELYZA
     label: ELYZA note
     type: rss
     url: https://note.com/elyza/rss
+    # 会社の広報 note で間隔が不定期。実測（2026）: 06-04・06-10・07-15・07-22 の
+    # あと 54日沈黙。フィード自体は生きている（200・25件）。確認のうえ延ばした（2026-09-14）
+    stale_days: 90
 
   # --- メディアのAIニュース（lane: media・2026-08-13 設計書 §2）---
   # サイトのトップ「AIニュース」欄と /ainews/ 用。メール・深掘りには入れない

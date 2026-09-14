@@ -106,7 +106,10 @@ def take_pending_minor(state: dict) -> list[Update]:
     return items
 
 
-def record_result(state: dict, source_id: str, error: str | None, count: int) -> None:
+def record_result(
+    state: dict, source_id: str, error: str | None, count: int,
+    now: datetime | None = None,
+) -> None:
     """取得結果を記録する。成功かつ1件以上なら失敗カウントをリセットする。
 
     ⚠️ count には「そのポーリングで取得できた生の件数」を渡すこと。
@@ -120,17 +123,39 @@ def record_result(state: dict, source_id: str, error: str | None, count: int) ->
     entry = state["failures"].get(source_id, {"count": 0, "last_error": ""})
     entry["count"] += 1
     entry["last_error"] = error or "0件"
+    # 失敗の始まりを覚える。「100回連続」は読み手に日数が伝わらない
+    # （2026-09-14 実測＝pfn-blog の 404 が100回・約8日、放置された）
+    if now is not None and "since" not in entry:
+        entry["since"] = now.isoformat()
     state["failures"][source_id] = entry
 
 
-def dead_sources(state: dict) -> list[tuple[str, int, str]]:
+def _days_since(since: str | None, now: datetime | None) -> int | None:
+    """失敗が始まってからの日数。記録が無い（この機能より前の seen.json）なら None。"""
+    if not since or now is None:
+        return None
+    try:
+        started = datetime.fromisoformat(since)
+    except (TypeError, ValueError):
+        return None
+    if started.tzinfo is None:
+        started = started.replace(tzinfo=timezone.utc)
+    return max((now - started).days, 0)
+
+
+def dead_sources(
+    state: dict, now: datetime | None = None
+) -> list[tuple[str, int, str, int | None]]:
     """FAILURE_THRESHOLD 回以上連続で失敗しているソースを返す。
 
     フィードURLは予告なく変わる。これが無いと「静かに情報が来なくなって
     いたことに数ヶ月気づかない」という最悪の壊れ方をする。
+
+    4つ目は失敗が始まってからの日数（now と記録の両方があるとき。無ければ None）。
     """
     return [
-        (source_id, entry["count"], entry["last_error"])
+        (source_id, entry["count"], entry["last_error"],
+         _days_since(entry.get("since"), now))
         for source_id, entry in sorted(state["failures"].items())
         if entry["count"] >= FAILURE_THRESHOLD
     ]
@@ -159,11 +184,17 @@ def record_latest(state: dict, source_id: str, updates: list[Update]) -> None:
     state["latest"][source_id] = newest.isoformat()
 
 
-def stale_sources(state: dict, now: datetime) -> list[tuple[str, int]]:
+def stale_sources(
+    state: dict, now: datetime, thresholds: dict[str, int] | None = None
+) -> list[tuple[str, int]]:
     """STALE_DAYS 以上あたらしい記事の出ていないソースを、古い順に返す。
 
     記録の無いソースは出さない。「止まっている」ではなく「まだ分からない」で、
     この機能より前に書かれた seen.json には latest が無いため。
+
+    thresholds はソースごとの閾値（sources.yml の stale_days）。先方の実測ペースが
+    30日より長いソース（Moonshot は 34〜53日おき）を、確認したうえで静かに保つ。
+    無いソースは STALE_DAYS。
     """
     result: list[tuple[str, int]] = []
     for source_id, seen_at in state["latest"].items():
@@ -174,7 +205,7 @@ def stale_sources(state: dict, now: datetime) -> list[tuple[str, int]]:
         if latest.tzinfo is None:
             latest = latest.replace(tzinfo=timezone.utc)
         days = (now - latest).days
-        if days >= STALE_DAYS:
+        if days >= (thresholds or {}).get(source_id, STALE_DAYS):
             result.append((source_id, days))
     result.sort(key=lambda item: (-item[1], item[0]))
     return result

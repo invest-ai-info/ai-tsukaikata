@@ -220,3 +220,27 @@ def test_send_mail_propagates_smtp_errors(monkeypatch):
 
     with pytest.raises(smtplib.SMTPAuthenticationError):
         send_mail("件名", "本文", "<p>本文</p>")
+
+
+# --- 2026-09-14: 取得失敗は日数で伝える。404 には移転の可能性を添える ---
+
+
+def test_body_shows_days_when_failures_began_is_known():
+    plain, html_body = build_body(
+        [], [("pfn-blog", 100, "HTTPError: HTTP Error 404: Not Found", 8)]
+    )
+    for text in (plain, html_body):
+        assert "8日" in text
+        assert "100回" in text
+
+
+def test_body_hints_url_change_on_404():
+    plain, _ = build_body(
+        [], [("pfn-blog", 100, "HTTPError: HTTP Error 404: Not Found", 8)]
+    )
+    assert "URL" in plain
+
+
+def test_body_still_accepts_dead_tuples_without_days():
+    plain, _ = build_body([], [("s1", 3, "Timeout")])
+    assert "3回連続" in plain

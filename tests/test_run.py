@@ -412,3 +412,29 @@ def test_check_archives_even_when_mail_fails(tmp_path):
             mailer=_boom, now=NOW,
         )
     assert len(load_news(news_path_for(state))["items"]) == 1
+
+
+# --- 2026-09-14: 停止の閾値をソースごとに持つ／失敗の始まりを記録する ---
+
+
+def test_digest_uses_stale_days_from_sources(tmp_path):
+    # 確認済みで先方が静かなだけのソースは、sources.yml の stale_days で閾値を延ばせる
+    path = tmp_path / "seen.json"
+    state = empty_state()
+    state["latest"]["s1"] = (NOW - timedelta(days=45)).isoformat()
+    save_state(path, state)
+
+    mailer = Mailer()
+    run_digest(state_path=path, mailer=mailer, now=NOW,
+               sources=[dict(SOURCES[0], stale_days=90)])
+    assert mailer.sent == []
+
+
+def test_check_records_when_a_source_started_failing(tmp_path):
+    path = tmp_path / "seen.json"
+    run_check(
+        sources=SOURCES, state_path=path,
+        fetcher=_fetcher([], error="HTTPError: 404"),
+        mailer=Mailer(), now=NOW,
+    )
+    assert load_state(path)["failures"]["s1"]["since"] == NOW.isoformat()

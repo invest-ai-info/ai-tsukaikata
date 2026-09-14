@@ -109,7 +109,7 @@ def test_dead_sources_requires_three_consecutive_failures():
         record_result(state, "s1", "Timeout", 0)
     assert dead_sources(state) == []
     record_result(state, "s1", "Timeout", 0)
-    assert dead_sources(state) == [("s1", 3, "Timeout")]
+    assert dead_sources(state) == [("s1", 3, "Timeout", None)]
 
 
 def test_prune_removes_entries_older_than_retention():
@@ -460,3 +460,38 @@ def test_load_news_raises_on_corrupt_file_rather_than_resetting(tmp_path):
     path.write_text("{壊れている", encoding="utf-8")
     with pytest.raises(json.JSONDecodeError):
         load_news(path)
+
+
+# --- 2026-09-14: 失敗の始まりを覚える（「100回連続」では日数が伝わらない） ---
+
+
+def test_record_result_remembers_when_failures_began():
+    # 実測: pfn-blog の 404 が100回連続（約8日）放置された。回数は読み手に伝わらない
+    state = empty_state()
+    record_result(state, "s1", "HTTPError: 404", 0, now=NOW)
+    record_result(state, "s1", "HTTPError: 404", 0, now=NOW + timedelta(days=2))
+    assert state["failures"]["s1"]["since"] == NOW.isoformat()
+
+
+def test_dead_sources_reports_days_since_failures_began():
+    state = empty_state()
+    for _ in range(3):
+        record_result(state, "s1", "Timeout", 0, now=NOW - timedelta(days=8))
+    assert dead_sources(state, now=NOW) == [("s1", 3, "Timeout", 8)]
+
+
+def test_dead_sources_tolerates_records_without_since():
+    # この機能より前の seen.json には since が無い。落とさず None で返す
+    state = empty_state()
+    state["failures"]["old"] = {"count": 5, "last_error": "Timeout"}
+    assert dead_sources(state, now=NOW) == [("old", 5, "Timeout", None)]
+
+
+def test_stale_sources_uses_a_per_source_threshold():
+    # 先方の実測ペースが30日より長いソースがある（Moonshot は 34〜53日おき）。
+    # 確認済みのものはソース定義側で閾値を延ばし、警告欄を静かに保つ
+    state = empty_state()
+    state["latest"]["slow"] = (NOW - timedelta(days=59)).isoformat()
+    state["latest"]["fast"] = (NOW - timedelta(days=59)).isoformat()
+    result = store_module.stale_sources(state, NOW, thresholds={"slow": 90})
+    assert [sid for sid, _ in result] == ["fast"]

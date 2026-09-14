@@ -43,7 +43,7 @@ def build_subject(
 
 def build_body(
     updates: list[Update],
-    dead: list[tuple[str, int, str]],
+    dead: list[tuple],
     stale: list[tuple[str, int]] = (),
 ) -> tuple[str, str]:
     """(plain, html) を返す。新しい順に並べる。
@@ -96,11 +96,20 @@ def build_body(
     if dead:
         plain += "\n--- 取得できていないソース ---\n"
         dead_items = []
-        for source_id, count, error in dead:
-            plain += f"⚠️ {source_id}: {count}回連続で失敗 ({error})\n"
+        for source_id, count, error, *rest in dead:
+            # 4つ目は失敗が始まってからの日数（古い記録には無い）。
+            # 「100回連続」は読み手に伝わらない。日数で書く
+            days = rest[0] if rest else None
+            if days is not None and days >= 1:
+                head = f"{days}日間 取得できていません（{count}回連続）"
+            else:
+                head = f"{count}回連続で失敗"
+            # 404 は URL の変更かフィードの廃止がほとんど（実測: PFN は移転先で 404）
+            hint = " ※URLが変わったかフィードが廃止された可能性" if "404" in error else ""
+            plain += f"⚠️ {source_id}: {head} ({error}){hint}\n"
             dead_items.append(
-                f"<li>⚠️ {html_mod.escape(source_id)}: {count}回連続で失敗 "
-                f"({html_mod.escape(error)})</li>"
+                f"<li>⚠️ {html_mod.escape(source_id)}: {head} "
+                f"({html_mod.escape(error)}){html_mod.escape(hint)}</li>"
             )
         body_html += (
             "<h3 style='font-size:14px'>取得できていないソース</h3>"

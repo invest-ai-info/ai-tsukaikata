@@ -344,3 +344,34 @@ def test_parse_anthropic_news_grid_link_alone_is_not_zero_items():
     html = b"<html><body>" + _GRID_CHUNK + b"</body></html>"
     updates = parse_anthropic_news(NEWS_SOURCE, html)
     assert [u.url for u in updates] == ["https://www.anthropic.com/claude-fable-and-mythos-5-1"]
+
+
+# --- 2026-09-14: 404 のとき転送先を残す ---
+# 実測: PFN のフィードが 301 で新サイトへ飛び、その先が 404 だった。元URLしか
+# 記録されないと「移転した」と分からず、100回連続（約8日）放置された。
+
+
+def test_fetch_source_reports_redirect_target_on_404(monkeypatch):
+    import urllib.error
+
+    def boom(url):
+        raise urllib.error.HTTPError(
+            "https://www.preferred.jp/ja/blog/tech/feed", 404, "Not Found", None, None
+        )
+
+    monkeypatch.setattr("tracker.fetch._http_get", boom)
+    _, error = fetch_source(dict(RSS_SOURCE, url="https://tech.preferred.jp/ja/blog/feed/"))
+    assert error.startswith("HTTPError: ")
+    assert "404" in error
+    assert "www.preferred.jp/ja/blog/tech/feed" in error
+
+
+def test_fetch_source_omits_redirect_note_when_url_did_not_change(monkeypatch):
+    import urllib.error
+
+    def boom(url):
+        raise urllib.error.HTTPError(url, 404, "Not Found", None, None)
+
+    monkeypatch.setattr("tracker.fetch._http_get", boom)
+    _, error = fetch_source(dict(RSS_SOURCE, url="https://example.com/feed"))
+    assert "転送先" not in error

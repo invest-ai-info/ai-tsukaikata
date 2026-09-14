@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -284,5 +285,15 @@ def fetch_source(source: dict) -> tuple[list[Update], str | None]:
             )
             return parse_huggingface(source, _http_get(url)), None
         return parse_feed(source, _http_get(source["url"])), None
+    except urllib.error.HTTPError as error:
+        # 転送先で 404 になることがある（2026-09-14 実測＝PFN のフィードが 301 で
+        # 新サイトへ飛び、その先が 404）。元URLだけ記録すると「移転した」と読めず、
+        # 100回連続（約8日）放置された。転送先が元と違うときは添える
+        message = f"HTTPError: {error}"
+        landed = getattr(error, "filename", None) or ""
+        origin = source.get("url") or ""
+        if landed and origin and landed.rstrip("/") != origin.rstrip("/"):
+            message += f" 転送先={landed}"
+        return [], message[:200]
     except Exception as error:  # noqa: BLE001 - 全ソースを止めないため握る
         return [], f"{type(error).__name__}: {str(error)[:80]}"

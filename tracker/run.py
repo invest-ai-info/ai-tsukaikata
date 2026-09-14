@@ -45,7 +45,7 @@ def _source_label(source: dict, index: int) -> str:
     return source.get("id") or f"sources[{index}]"
 
 
-def _valid_sources(sources: list[dict], state: dict) -> list[dict]:
+def _valid_sources(sources: list[dict], state: dict, now=None) -> list[dict]:
     """必須キーの揃ったソースだけを返し、壊れた定義は死活記録に落とす。
 
     sources.yml は手書きなので誤字が入る。1件の誤字で全ソースの取得が
@@ -58,7 +58,7 @@ def _valid_sources(sources: list[dict], state: dict) -> list[dict]:
         if missing:
             label = _source_label(source, index)
             reason = f"定義エラー: {'/'.join(missing)} が無い"
-            store.record_result(state, label, reason, 0)
+            store.record_result(state, label, reason, 0, now=now)
             # 絵文字は使わない。cp932 コンソール（PYTHONUTF8 未設定の Windows）では
             # "⚠️" の実行時 print が UnicodeEncodeError で落ちる。既存の他の
             # print はどれも絵文字を含まないのと合わせる。
@@ -68,16 +68,16 @@ def _valid_sources(sources: list[dict], state: dict) -> list[dict]:
     return valid
 
 
-def _collect(sources: list[dict], state: dict, fetcher) -> list:
+def _collect(sources: list[dict], state: dict, fetcher, now=None) -> list:
     """全ソースを取得し、重要度を付けた Update のリストを返す。
 
     record_result には select_unseen 前の生の件数を渡す。新着件数を渡すと、
     更新の少ないソースが数時間で死亡扱いになる。
     """
     collected = []
-    for source in _valid_sources(sources, state):
+    for source in _valid_sources(sources, state, now):
         updates, error = fetcher(source)
-        store.record_result(state, source["id"], error, len(updates))
+        store.record_result(state, source["id"], error, len(updates), now=now)
         store.record_latest(state, source["id"], updates)
         collected.extend(classify(u, source["type"]) for u in updates)
     return collected
@@ -156,7 +156,7 @@ def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
     media_new = 0
     if media_sources:
         by_id = {s.get("id"): s for s in media_sources}
-        m_collected = _collect(media_sources, state, fetcher)
+        m_collected = _collect(media_sources, state, fetcher, now=now)
         m_fresh = store.select_unseen(state, m_collected)
         m_kept = [u for u in m_fresh
                   if _media_keep(u, by_id.get(u.source_id, {}))]
@@ -170,7 +170,7 @@ def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
         # フィルタで落とした分も既読にする——毎回同じ記事を再判定しないため
         store.mark_seen(state, m_fresh, now)
 
-    collected = _collect(sources, state, fetcher)
+    collected = _collect(sources, state, fetcher, now=now)
     fresh = store.select_unseen(state, collected)
 
     # アーカイブは送信より先に書く。送信に失敗した回の記事が抜けると、
@@ -209,17 +209,45 @@ def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
     return len(fresh)
 
 
-def run_digest(*, state_path, mailer, now) -> int:
+def _stale_thresholds(sources: list[dict]) -> dict[str, int]:
+    """sources.yml の stale_days をソースごとの停止閾値にする。無ければ既定。
+
+    先方の実測ペースが30日より長いソースを、確認したうえで静かに保つため
+    （2026-09-14＝Moonshot 34〜53日おき・ELYZA の note は不定期）。
+    ⚠️ 実物を確かめていないソースに付けないこと。警告を消すための値ではない。
+    """
+    thresholds: dict[str, int] = {}
+    for source in sources:
+        value = source.get("stale_days")
+        if value is None or not source.get("id"):
+            continue
+        try:
+            days = int(value)
+        except (TypeError, ValueError):
+            days = 0
+        if days <= 0:
+            print(f"[警告] {source['id']}: stale_days={value!r} は使えないので"
+                  f"既定の{store.STALE_DAYS}日にします")
+            continue
+        thresholds[source["id"]] = days
+    return thresholds
+
+
+def run_digest(*, state_path, mailer, now, sources=None) -> int:
     """毎朝のダイジェスト。溜まった minor と異常なソースを1通にまとめる。
 
     異常は2種類ある。取得できていない(dead)ものと、取得はできるが中身が
     止まっている(stale)もの。後者は失敗カウントが0のままなので、公開日を
     見ないと永久に気づけない。
+
+    sources は停止閾値（stale_days）を読むためだけに使う。無くても動く。
     """
     state = store.load_state(state_path)
     pending = store.take_pending_minor(state)
-    dead = store.dead_sources(state)
-    stale = store.stale_sources(state, now)
+    dead = store.dead_sources(state, now=now)
+    stale = store.stale_sources(
+        state, now, thresholds=_stale_thresholds(sources or [])
+    )
 
     if not pending and not dead and not stale:
         print("ダイジェスト対象なし。送信しません")
@@ -268,7 +296,7 @@ def run_bootstrap(*, sources, state_path, fetcher, mailer, now) -> int:
     通知が飛ぶ。
     """
     state = store.load_state(state_path)
-    collected = _collect(sources, state, fetcher)
+    collected = _collect(sources, state, fetcher, now=now)
     store.mark_seen(state, collected, now)
     state["pending_minor"] = []
     store.save_state(state_path, state)
@@ -298,7 +326,14 @@ def main(argv=None) -> int:
     now = datetime.now(timezone.utc)
 
     if args.mode == "digest":
-        run_digest(state_path=args.state, mailer=_default_mailer, now=now)
+        # ⚠️ sources.yml が読めなくてもダイジェストは止めない。閾値が既定に戻るだけ
+        try:
+            digest_sources = fetch_module.load_sources(args.sources)
+        except Exception as error:  # noqa: BLE001 - 送信を止めないため握る
+            print(f"[警告] sources.yml を読めないため停止閾値は既定にします: {error}")
+            digest_sources = []
+        run_digest(state_path=args.state, mailer=_default_mailer, now=now,
+                   sources=digest_sources)
         return 0
 
     if args.mode == "summarize":
