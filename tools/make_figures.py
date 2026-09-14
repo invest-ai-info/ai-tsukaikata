@@ -20873,8 +20873,140 @@ def survey_condition_blends_in_chart() -> None:
     )
 
 
+def estimate_leak_follows_missing_number_chart() -> None:
+    """見積もりの漏れは「期間か金額か」より「数字がどれだけ埋まっているか」で決まる（2026-09-14）。
+
+    実測（H15）。「見積もりに必要な前提が書かれていない場合は、勝手に前提を置かず
+    『前提が材料に無い』と書いてください」という一文を、期間を聞く材料・金額を聞く材料の
+    それぞれに、材料の数字が「ゼロ」か「部分的に埋まっている」かを変えて試した（末尾条件のみ）。
+    期間・数値ゼロ＝0/3、金額・部分数値あり＝3/3は `estimate-gap-leaks-on-money-ask`
+    （H13）からの流用。期間・部分数値あり＝3/5、金額・数値ゼロ＝1/5がこの記事の新規測定。
+    期間/金額で束ねた差（12.5ポイント）より、数値ゼロ/部分数値ありで束ねた差
+    （62.5ポイント）のほうが大きかった。
+    """
+    label_w = 210
+    col_w = 200
+    col_x = [18 + label_w, 18 + label_w + col_w]
+    top1 = 130
+    row_h = 34
+    pitch = row_h + 10
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "崩れ方を分けたのは「期間か金額か」より「数字の埋まり具合」だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「前提が材料に無ければ、勝手に置かずそう書いて」という一文を、期間を聞く材料・"
+        "金額を聞く材料それぞれに、材料の数字が</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "ゼロの版と部分的に埋まっている版で試した（一文は末尾で統一）。数字は「具体的な"
+        "数値を書いた回数／試した回数」。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "期間・数値ゼロと金額・部分数値ありは前の記事（estimate-gap-leaks-on-money-ask）"
+        "からの流用。他の2セルが今回の新規測定。</text>\n",
+    ]
+    headers = ["数値ゼロ", "部分数値あり"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top1 - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    grid_rows = [
+        ("期間を聞く（納期）", (0, 3, False), (3, 5, True)),
+        ("金額を聞く（報酬）", (1, 5, True), (3, 3, True)),
+    ]
+    y = top1
+    for label, cell1, cell2 in grid_rows:
+        ty = y + row_h - 11
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for x, (val, n, bad) in zip(col_x, (cell1, cell2)):
+            box = "box-bad" if bad else "box-good"
+            tone = "t-bad" if bad else "t-good"
+            parts.append(
+                f'<rect class="{box}" x="{x + 12}" y="{y}" width="{col_w - 24}" '
+                f'height="{row_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{val}／{n}</text>\n'
+            )
+        y += pitch
+
+    y += 10
+    box_h1 = 68
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h1}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t" x="34" y="{y + 20}">'
+        "期間か金額かで束ねると 37.5%（3／8）対 50%（4／8）＝差12.5ポイント。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 40}" style="font-weight:700">'
+        "数値ゼロか部分数値ありかで束ねると 12.5%（1／8）対 75%（6／8）＝差62.5ポイント。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 58}">'
+        "束ね方を変えると、効いていた軸が入れ替わった。</text>\n"
+    )
+    y += box_h1 + 24
+
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "「他の数字が分かっていても」と名指しした一文（材料A）</text>\n"
+    )
+    y += 22
+    rows2 = [
+        ("素朴な一文（末尾）", 3, 5),
+        ("改良版の一文（末尾）", 1, 3),
+    ]
+    label_w2 = 300
+    box_x2 = 18 + label_w2
+    box_w2 = 620 - box_x2
+    row_h2 = 28
+    for lbl, val, n in rows2:
+        ty = y + row_h2 - 8
+        bad = val > 0
+        box = "box-bad" if bad else "box-good"
+        tone = "t-bad" if bad else "t-good"
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(lbl)}</text>\n')
+        parts.append(
+            f'<rect class="{box}" x="{box_x2}" y="{y}" width="{box_w2}" height="{row_h2}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{box_x2 + box_w2 / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{val}／{n}</text>\n'
+        )
+        y += row_h2 + 8
+    assert box_x2 + box_w2 <= WIDTH - 18, box_x2 + box_w2
+
+    y += 8
+    box_h2 = 40
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h2}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 24}">'
+        "60%から33%まで下がったが、ゼロにはならなかった。</text>\n"
+    )
+    y += box_h2 + 16
+
+    height = y + 8
+    alt = (
+        "見積もりの前提が材料に無いとき、AIが勝手に数字を計算するかを、期間を聞いたか"
+        "金額を聞いたかと、材料の数字がゼロか部分的に埋まっているかの2軸で比較した図。"
+        "期間・数値ゼロは0／3(前の記事から流用)、期間・部分数値ありは3／5(今回測定)、"
+        "金額・数値ゼロは1／5(今回測定)、金額・部分数値ありは3／3(前の記事から流用)。"
+        "期間か金額かで束ねると37.5%対50%で差は12.5ポイントだったが、数値ゼロか"
+        "部分数値ありかで束ねると12.5%対75%で差は62.5ポイントと、5倍近く大きかった。"
+        "「他の数字が分かっていても、勝手に前提を置いて計算を完成させないで」と名指しした"
+        "改良版の一文を材料A(期間・部分数値あり)に足すと、漏れは3／5(60%)から1／3(33%)まで"
+        "下がったが、ゼロにはならなかった。"
+    )
+    (OUT / "estimate-leak-follows-missing-number.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     estimate_gap_leaks_on_money_ask_chart()
+    estimate_leak_follows_missing_number_chart()
     buried_instruction_still_obeyed_chart()
     named_platform_invites_guessed_rules_chart()
     closed_days_vanish_chart()
