@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-13T23:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日立製作所は、製造業の部門間スケジュール調整を自動化する「AIオーケストレーション技術」の具体的な運用シナリオを公開した。部門特化型のAI群と計画最適化エンジンを連携させ、人は最終的な意思決定に集中する。2027年提供予定だ。",
+      "title": "日立HMAX新技術「AIオーケストレーション」、特急注文など部門間調整を自動化",
+      "uid": "4da24da7837cdd73",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/14/news041.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-13T23:14:08+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "大統領科学技術諮問委員会のデビッド・サックス共同議長は、AnthropicとOpenAIのトップによるAI開発減速の提案を批判した。減速を望むなら規制や他者の許可を待たずに自ら実行すべきだと指摘。減速を条件に規制の枠組みを要求する姿勢は政治への脅迫に見えると述べ、利己的な動機を装うのをやめるよう求めた。",
+      "title": "トランプ政権のサックス氏、AI「ペース調整」論に苦言　「規制がなければできないふりをやめろ」",
+      "uid": "5b76553942e8494f",
+      "url": "https://www.itmedia.co.jp/news/article/2609/14/2000001433/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-13T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "さまざまな業務を一手に担う“最強”の万能型エージェントが、なぜ期待を下回る結果しか返せないのか。NTTドコモソリューションズのIT運用部門のトップに、AIエージェント実装を成功させた道のりを聞いた。",
+      "title": "“最強エージェント”は、まさかのポンコツだった　業務の30％をAIに任せるIT運用部門が明かす「つまずきポイント」",
+      "uid": "b0148ffe05340fac",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/21/news015.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-13T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "生成AIが業務に欠かせない状況になった現代。ビジネスシーンでは新たな悩みのタネが生まれ始めている。利用量に応じて膨らむクラウドAIのコスト、組織外に持ち出せない機密情報のAIでの扱い、ネットワークを利用できない環境での作業効率低下など、思い当たる点がある人も少なくないだろう。",
+      "title": "時代はクラウドAI＋ローカルAIの「ハイブリッドAI」へ Lemonade＋AnythingLLMで始める法人向けAI環境構築術[Sponsored]",
+      "uid": "f44b31d29340028f",
+      "url": "https://ai.watch.impress.co.jp/docs/topic/special/2137745.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-13T22:34:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米大統領のドナルド・トランプ氏は9月13日、AI開発の減速に消極的な姿勢を示した。AP通信などが同日報じた。中国に対する米国の優位を維持したいとの考えを強調したという。",
+      "title": "トランプ氏、AI開発減速に消極姿勢　中国への優位維持を理由に",
+      "uid": "fc4f03aa12ba8d05",
+      "url": "https://japan.cnet.com/article/35252580/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-13T22:26:35.131205+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -11,6 +71,30 @@
       "uid": "1953121ae64be47c",
       "url": "https://gigazine.net/news/20260914-shopify-back-to-native-mobile-ai/",
       "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-13T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI分野で「オープン化」が進んでいる。企業はなぜ、自社技術を無料で公開するのか。そこには、AI企業のしたたかな戦略があった。",
+      "title": "AI技術を“無料で公開”、なぜ？　米IT業界の文化「オープン化」の裏にしたたかな戦略、日本は追随できるか",
+      "uid": "a334e38073d1857b",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/14/news047.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T01:09:49.842769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-13T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleの「Gemini Notebook」が、資料を読むためのAIから、データ分析や成果物の作成までを任せられるツールへと変わりつつある。NotebookLMから何が変わったのか。2026年の主な機能追加と最新動向を整理する。",
+      "title": "「Gemini Notebook」になって何が変わった？　NotebookLMからの変更点をおさらい",
+      "uid": "9140acfd53d711ce",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/14/2000001421/",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-09-13T16:22:46.770941+00:00",
@@ -2315,90 +2399,6 @@
       "uid": "40e4f2c5667f5157",
       "url": "https://ai.watch.impress.co.jp/docs/news/2138887.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-07T10:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国のAI企業であるDeepSeekが内モンゴル自治区でデータセンター建設計画を進めていることがBloombergによって報じられています。データセンターにはHuawei製AIチップ「Ascend 950DT」が最大16万基導入される予定とのことです。 続きを読む...",
-      "title": "DeepSeekが内モンゴル自治区にデータセンターを建設してHuawei製AIチップを16万基導入予定との報道、中国製GPUでAIを開発・運用する動きが加速",
-      "uid": "663a31663ad177d3",
-      "url": "https://gigazine.net/news/20260907-deepseek-data-center-inner-mongolia/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T09:30:52+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NVIDIAは、IFA 2026でローカルAIに関する話題をいくつか公開した。",
-      "title": "ローカルAIを加速するNVIDIA RTX Spark搭載PCが10月登場",
-      "uid": "02494f4fd63924d8",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138877.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T09:21:39+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "飛鳥出版は、全国の書店にて、AI動画クリエイター専門誌「『AI動画最前線』AI動画の現在と未来像」を10月6日に発売する。価格は1,760円。",
-      "title": "AI動画専門誌「AI動画最前線」10月6日発売、制作手法や最新ツール解説を掲載",
-      "uid": "2fae0a43c8748638",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138869.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T09:04:04+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "国連開発計画（United Nations Development Programme 以下、UNDP）と日本電気（以下、NEC）は9月7日、AIに代表されるデジタル技術を活用した自然資本の保全と気候変動への対応を推進するため、協力覚書（Memorandum of Understanding、以下MOU）を締結したと発表した。",
-      "title": "UNDPとNEC、AIデジタル技術を活用し自然保全と気候変動に対応",
-      "uid": "343192d379995948",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138865.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T08:52:09+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GitHubは米国時間の9月4日、GitHub Copilot向けに、タスクに応じて複数のAIモデルを使い分ける「Project HydraFusion（以下、HydraFusion）」をリサーチプレビューとして発表した。",
-      "title": "AIモデルを自動で使い分け。GitHub、Copilot向け新機能「HydraFusion」を発表",
-      "uid": "78e13d4582e208da",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138842.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-07T08:33:59+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ZERO ZERO ROBOTICSは9月7日、手持ちのポケットカメラと空を飛ぶフライングカメラの機能を1台に融合した「HOVERAir VERSA（ホバーエア・バーサ）」に関する国内発表会を開催した。発表会では創業者兼CEOのMQ Wang氏が登壇し、開発の背景や製品に搭載したAI技術などについてのプレゼンテーションを行なった。",
-      "title": "創業者兼CEOのMQ Wang氏が語る「HOVERAir VERSA」の魅力",
-      "uid": "975e3e09febd0e1e",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2138852.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-07T10:24:07.119095+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-07T07:58:42+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ロボット開発企業のHighlandersは、国産をうたう四足歩行ロボット「HLQ EDGE」を発表した。同日に公開したデモ動画では、段差を昇降する姿などを披露した。",
-      "title": "独自AI搭載の「国産四足歩行ロボ」、デモ動画を公開　東大発スタートアップのHighlanders",
-      "uid": "3dc87c239859818f",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/07/2000001223/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
