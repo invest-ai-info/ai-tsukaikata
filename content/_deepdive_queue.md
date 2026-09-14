@@ -600,11 +600,15 @@
     「Weather Lab」（`weatherlab.deepmind.google`）は**経路遮断**（`CONNECT tunnel failed`）で
     到達できず。次にこれらのドメインを叩く行が来たら再試行対象にすること
 
-- [!] /fugu-max-release/
+- [x] /fugu-max-release/
+  - →保管: ✅ **2026-09-14 2回目（再試行）: 公開した** → `content/tools/sakana-fugu-max.md`
+    （経路遮断が解消。`sakana.ai/fugu-max-release/` は WebFetch・curl とも200。図4枚、
+    出典4件すべて取得成功、`check_numbers.py` は照合できる数字14個すべてが出典に存在）
   - 2026-09-11 自動追記（major・Sakana AI「Introducing Fugu Max and Fugu Ultra v2: Orchestrating the Pareto Frontier」）
   - 完全なURL＝`https://sakana.ai/fugu-max-release/`（`tracker/sources.yml` の `sakana-blog` は
     `https://sakana.ai/feed.xml`。`news.json` の `url` はサイトルート相対なので補って読むこと）
   - **2026-09-11 1回目: 下書きを作らずに停止した。**理由＝**経路遮断（`CONNECT tunnel failed, response 403`）**。
+    2026-09-14 に再試行したところ解消していた（下記）。
 
     | 叩いた先 | 結果 |
     |---|---|
@@ -615,13 +619,25 @@
     - `sakana.ai` ドメイン全体がこの環境のプロキシで止まっている（3パスとも同じエラー）。
       **応答ヘッダに `cf-mitigated` は無く、先方のbot判定を示す形跡も無い**——プロキシが
       CONNECT自体を拒否しており、先方に届く前に止まっている。**経路（許可リスト）の遮断**と判定した。
-    - ⚠️ **許可リストに `sakana.ai` を足せば直る可能性がある種類。**次にこの行（または同ドメインの別記事）
-      を見る人へ＝まずここに記録した経路遮断を再試行対象にすること。UA偽装での迂回はしていない。
     - このサイトで Sakana AI の記事は初めて（`tools/` にまだ0本）。他社比較の候補は未調査
       （①が解けてから、Anthropic・OpenAI・Google に同種の製品〈オーケストレーション／複数モデル切替〉が
       あるかを確認すること）。
 
 ## 処理済み
+
+- https://sakana.ai/fugu-max-release/ → **公開済み** content/tools/sakana-fugu-max.md（2026-09-14・公開）
+  - 再試行で通った（1回目は2026-09-11に経路遮断で停止。今回 `sakana.ai` が WebFetch・curl とも200に
+    なっているのを確認してから着手）。図4枚（`fugu-max-price-vs-flagships` / `fugu-max-bench-wins` /
+    `fugu-ultra-v2-vs-v11` / `fugu-ultra-v2-vendor-grid`）。`check_numbers.py` は**14個すべて出典に存在**
+    （出典4件とも取得成功）。pytest 646 passed・build 181ファイル。
+  - 📌 記事の芯＝**Fugu Max・Fugu Ultra v2は単独モデルではなく、複数の既存モデルを自動で使い分ける
+    「オーケストレーション」**。Fugu Maxの出力単価$6はSakana自身が比較したSonnet 5($10)・
+    GPT 5.6 Terra($12)より安いが、この記事で独自にGemini 3.8 Flash($3.75)を突き合わせたところ
+    そちらのほうが安かった。Fugu Ultra v2はClaude Opus 5・GPT-6 Astra等と並べた8項目中7項目で
+    上位2位だが、ProgramBenchだけ3社に次ぐ4位だった。ベンチマーク比較の数値は発表ページのグラフ画像を
+    直接開いて目視で読み取った（要約させずに生の表を見る、の手順どおり）。
+  - ⚠️ 他社に同種の「複数モデルを横断オーケストレーション」する製品があるかは未調査のまま
+    （時間の都合で見送り）。次にこの題材を掘り下げる人がいれば、そこから始めるとよい。
 
 - https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/ → **公開済み** content/tools/gemini-3-8-flash.md（2026-09-06・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`gemini38-price-three-gens` /

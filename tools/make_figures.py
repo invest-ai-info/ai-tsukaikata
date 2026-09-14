@@ -21004,7 +21004,285 @@ def estimate_leak_follows_missing_number_chart() -> None:
     )
 
 
+def fugu_max_price_output_chart() -> None:
+    """Fugu Max の単価を、公式料金ページで確認できる3モデルと並べる。
+
+    Fugu Max は Sakana AI の発表ページ（2026-09-11）。他の3モデルは各社の
+    公式料金ページ（2026-09-14 実測）。Sonnet 5・GPT 5.6 Terra は Sakana 自身が
+    発表ページで比較に挙げた相手。Gemini 3.8 Flash はこの記事で足した
+    （同じ「100万トークンあたりのドル」表記のため）。
+    """
+    rows = [
+        ("Fugu Max", 2.0, 6.0),
+        ("Gemini 3.8 Flash", 0.75, 3.75),
+        ("Claude Sonnet 5", 2.0, 10.0),
+        ("GPT 5.6 Terra", 2.0, 12.0),
+    ]
+    left, right = 230, 610
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 15, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Fugu Max の出力単価は Sonnet 5 より安いが、Gemini 3.8 Flash より高い</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "入力＝薄い色 ／ 出力＝濃い色。100万トークンあたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Sonnet 5・GPT 5.6 Terra は Sakana 自身が比較に挙げた相手。Gemini はこの記事で足した。</text>\n",
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="198" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 66
+    notes = [
+        "※ Fugu Max は Sakana AI の発表ページ、他の3モデルは各社の公式料金ページ（2026-09-14 実測）。",
+        "※ GPT 5.6 Terra は入力が短いときの値。入力が長くなると入力$4・出力$18に上がる。",
+        "※ Gemini 3.8 Flash の価格は2026年12月31日までの導入価格。2027年1月1日から入力$1.50・出力$7.50。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 54 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    assert left + span + 40 <= WIDTH
+
+    alt = (
+        "Fugu Max・Gemini 3.8 Flash・Claude Sonnet 5・GPT 5.6 Terra の単価を比べた横棒グラフ。"
+        "100万トークンあたりのドル。Fugu Max は入力2ドル・出力6ドル、"
+        "Gemini 3.8 Flash は入力0.75ドル・出力3.75ドル、"
+        "Claude Sonnet 5 は入力2ドル・出力10ドル、"
+        "GPT 5.6 Terra（入力が短いとき）は入力2ドル・出力12ドル。"
+        "GPT 5.6 Terra は入力が長いと入力4ドル・出力18ドルに上がる。"
+        "Gemini 3.8 Flashの価格は2026年12月31日までの導入価格で、2027年1月1日から1.50ドルと7.50ドルになる。"
+    )
+    (OUT / "fugu-max-price-vs-flagships.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fugu_max_bench_wins_chart() -> None:
+    """Sakana 自身の比較表で、Fugu Max が最高値だった項目とそうでなかった項目。"""
+    total, won = 10, 6
+    losses = [
+        ("HLE (text)", "44.7", "Kimi K3　46.9"),
+        ("DeepSWE", "70.8", "Gemini 3.8 Flash　73.7"),
+        ("CharXiv Reasoning（道具なし）", "88.1", "Qwen3.8-max　88.4"),
+        ("Chartography", "37.0", "Gemini 3.8 Flash　40.9"),
+    ]
+    bar_left, bar_right, bar_y, bar_h = 18, 702, 86, 26
+    cell_gap = 4
+    cell_w = (bar_right - bar_left + cell_gap) / total - cell_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Sakana 自身の表で、Fugu Max が最高値だったのは10項目中6項目</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Sakana AI が発表ページに載せた比較グラフを、この記事で1項目ずつ数えたものです。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "青＝Fugu Max が最高値だった項目、灰色＝他のモデルのほうが上だった項目。</text>\n",
+    ]
+    for index in range(total):
+        x = bar_left + index * (cell_w + cell_gap)
+        cls = "bar-new" if index < won else "bar-old"
+        parts.append(
+            f'<rect class="{cls}" x="{x:.1f}" y="{bar_y}" '
+            f'width="{cell_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+    parts.append(f'<text class="t-accent" x="18" y="{bar_y + bar_h + 20}">6項目で最高</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="150" y="{bar_y + bar_h + 20}">'
+        "4項目は、他のモデルのほうが上でした</text>\n"
+    )
+
+    head_y = bar_y + bar_h + 58
+    col1, col2, col3 = 18, 320, 440
+    parts.append(f'<text class="t-xs" x="{col1}" y="{head_y}">項目</text>\n')
+    parts.append(f'<text class="t-xs" x="{col2}" y="{head_y}">Fugu Max</text>\n')
+    parts.append(f'<text class="t-xs" x="{col3}" y="{head_y}">それより上だったモデル</text>\n')
+    for row_index, (name, mine, better) in enumerate(losses):
+        y = head_y + 24 + row_index * 22
+        parts.append(f'<text class="t" x="{col1}" y="{y}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t" x="{col2}" y="{y}">{_esc(mine)}</text>\n')
+        parts.append(f'<text class="t-bad" x="{col3}" y="{y}">{_esc(better)}</text>\n')
+
+    height = head_y + 24 + len(losses) * 22 + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 表を作ったのは Sakana AI です。相手の会社が同じ条件で測った値ではありません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 単価（コストあたりの効率）ではなく、点数そのものが最高だったかで数えています。</text>\n"
+    )
+    alt = (
+        "Sakana AI が発表ページに載せた比較グラフで、Fugu Max が最高値だった項目の数を示した図。"
+        "10項目のうち6項目で最高、残り4項目は他のモデルのほうが上だった。"
+        "上だった例として、HLE(text)はFugu Maxの44.7に対しKimi K3が46.9、"
+        "DeepSWEは70.8に対しGemini 3.8 Flashが73.7、"
+        "CharXiv Reasoning（道具なし）は88.1に対しQwen3.8-maxが88.4、"
+        "Chartographyは37.0に対しGemini 3.8 Flashが40.9。"
+        "表を作ったのはSakana AIであり、相手の会社が同じ条件で測った値ではない。"
+    )
+    (OUT / "fugu-max-bench-wins.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fugu_ultra_v2_vs_v11_chart() -> None:
+    """前のバージョン Fugu Ultra v1.1 と v2 の点数（Sakana 発表ページのグラフより）。"""
+    rows = [
+        ("HLE (text)", 53.5, 56.3),
+        ("GDP.pdf", 30.0, 34.3),
+        ("Chartography", 47.0, 48.3),
+        ("SWEFish", 68.5, 71.8),
+        ("DeepSWE", 72.3, 74.3),
+        ("ProgramBench", 79.8, 81.0),
+        ("GPQA-D", 95.6, 95.5),
+        ("Toolathon", 75.0, 80.6),
+    ]
+    left, right = 250, 610
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "前のバージョンとの比較。8項目中7項目で上がったが、GPQA-Dだけ下がった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "灰色＝Fugu Ultra v1.1、青＝Fugu Ultra v2。目盛りは0〜100で揃えてあります。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Sakana AI が発表ページのグラフに書き添えた数字をそのまま並べました。</text>\n",
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        regressed = new < old
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "v1.1"), (new, "bar-new", "v2"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            label_cls = "t-bad" if (regressed and tag == "v2") else "t-sm"
+            parts.append(
+                f'<text class="{label_cls}" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 60
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ GPQA-Dだけ前のバージョンより0.1点下がっている（95.6→95.5・赤字）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ テストの中身も測り方も別々です。並べても平均は取れません。</text>\n"
+    )
+    alt = (
+        "前のバージョン Fugu Ultra v1.1 と Fugu Ultra v2 の点数を比べた横棒グラフ。"
+        "HLE(text)は53.5から56.3、GDP.pdfは30.0から34.3、Chartographyは47.0から48.3、"
+        "SWEFishは68.5から71.8、DeepSWEは72.3から74.3、ProgramBenchは79.8から81.0、"
+        "Toolathonは75.0から80.6へ上がった。GPQA-Dだけ95.6から95.5へわずかに下がった。"
+        "Sakana AI が発表ページのグラフに書き添えた数字をそのまま並べたもの。"
+    )
+    (OUT / "fugu-ultra-v2-vs-v11.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fugu_ultra_v2_vendor_grid_chart() -> None:
+    """Fugu Ultra v2 が、他社の最上位モデルと並べて上位2位に入れた項目の数。"""
+    total, top2 = 8, 7
+    detail = [
+        ("1位　GPT-6 Astra", "85.4"),
+        ("2位　Claude Fable 5.1", "82.7"),
+        ("3位　Claude Opus 5", "82.3"),
+        ("4位　Fugu Ultra v2", "81.0"),
+    ]
+    bar_left, bar_right, bar_y, bar_h = 18, 702, 86, 26
+    cell_gap = 4
+    cell_w = (bar_right - bar_left + cell_gap) / total - cell_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "他社の最上位モデルと並べた8項目中、上位2位に入れなかったのは1項目</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "比較相手は Claude Opus 5・Claude Fable 5.1・GPT-6 Astra・GPT 5.6 Sol・Kimi K3。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "青＝上位2位、灰色＝3位以下。前バージョン Fugu Ultra v1.1 は順位から外しています。</text>\n",
+    ]
+    for index in range(total):
+        x = bar_left + index * (cell_w + cell_gap)
+        cls = "bar-new" if index < top2 else "bar-old"
+        parts.append(
+            f'<rect class="{cls}" x="{x:.1f}" y="{bar_y}" '
+            f'width="{cell_w:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+    parts.append(f'<text class="t-accent" x="18" y="{bar_y + bar_h + 20}">7項目で上位2位</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="180" y="{bar_y + bar_h + 20}">'
+        "残り1項目（ProgramBench）は4位でした</text>\n"
+    )
+
+    head_y = bar_y + bar_h + 58
+    col1, col2 = 18, 360
+    parts.append(f'<text class="t-xs" x="{col1}" y="{head_y}">ProgramBench の順位</text>\n')
+    for row_index, (label, score) in enumerate(detail):
+        y = head_y + 24 + row_index * 22
+        klass = "t-bad" if "Fugu Ultra v2" in label else "t"
+        parts.append(f'<text class="{klass}" x="{col1}" y="{y}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{klass}" x="{col2}" y="{y}">{_esc(score)}</text>\n')
+
+    height = head_y + 24 + len(detail) * 22 + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 表を作ったのは Sakana AI です。相手の会社が同じ条件で測った値ではありません。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ GPQA-D では前バージョンの Fugu Ultra v1.1（95.6）が v2（95.5）よりわずかに上でした。</text>\n"
+    )
+    alt = (
+        "Fugu Ultra v2 を、Claude Opus 5・Claude Fable 5.1・GPT-6 Astra・GPT 5.6 Sol・Kimi K3 と"
+        "並べた8つのベンチマークで、上位2位に入った項目の数を示した図。"
+        "8項目のうち7項目で上位2位に入り、残り1項目のProgramBenchだけ4位だった。"
+        "ProgramBenchの順位は、1位GPT-6 Astra 85.4、2位Claude Fable 5.1 82.7、"
+        "3位Claude Opus 5 82.3、4位Fugu Ultra v2 81.0。"
+        "前バージョンのFugu Ultra v1.1は順位から除いて数えている。"
+        "表を作ったのはSakana AIであり、相手の会社が同じ条件で測った値ではない。"
+    )
+    (OUT / "fugu-ultra-v2-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    fugu_max_price_output_chart()
+    fugu_max_bench_wins_chart()
+    fugu_ultra_v2_vs_v11_chart()
+    fugu_ultra_v2_vendor_grid_chart()
     estimate_gap_leaks_on_money_ask_chart()
     estimate_leak_follows_missing_number_chart()
     buried_instruction_still_obeyed_chart()

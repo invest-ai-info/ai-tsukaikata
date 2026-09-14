@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="330" viewBox="0 0 720 330" role="img" aria-label="Sakana AI が発表ページに載せた比較グラフで、Fugu Max が最高値だった項目の数を示した図。10項目のうち6項目で最高、残り4項目は他のモデルのほうが上だった。上だった例として、HLE(text)はFugu Maxの44.7に対しKimi K3が46.9、DeepSWEは70.8に対しGemini 3.8 Flashが73.7、CharXiv Reasoning（道具なし）は88.1に対しQwen3.8-maxが88.4、Chartographyは37.0に対しGemini 3.8 Flashが40.9。表を作ったのはSakana AIであり、相手の会社が同じ条件で測った値ではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="330"/>
+<text class="t-strong" x="18" y="26">Sakana 自身の表で、Fugu Max が最高値だったのは10項目中6項目</text>
+<text class="t-sm" x="18" y="45">Sakana AI が発表ページに載せた比較グラフを、この記事で1項目ずつ数えたものです。</text>
+<text class="t-sm" x="18" y="64">青＝Fugu Max が最高値だった項目、灰色＝他のモデルのほうが上だった項目。</text>
+<rect class="bar-new" x="18.0" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-new" x="86.8" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-new" x="155.6" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-new" x="224.4" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-new" x="293.2" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-new" x="362.0" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-old" x="430.8" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-old" x="499.6" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-old" x="568.4" y="86" width="64.8" height="26" rx="2"/>
+<rect class="bar-old" x="637.2" y="86" width="64.8" height="26" rx="2"/>
+<text class="t-accent" x="18" y="132">6項目で最高</text>
+<text class="t-sm" x="150" y="132">4項目は、他のモデルのほうが上でした</text>
+<text class="t-xs" x="18" y="170">項目</text>
+<text class="t-xs" x="320" y="170">Fugu Max</text>
+<text class="t-xs" x="440" y="170">それより上だったモデル</text>
+<text class="t" x="18" y="194">HLE (text)</text>
+<text class="t" x="320" y="194">44.7</text>
+<text class="t-bad" x="440" y="194">Kimi K3　46.9</text>
+<text class="t" x="18" y="216">DeepSWE</text>
+<text class="t" x="320" y="216">70.8</text>
+<text class="t-bad" x="440" y="216">Gemini 3.8 Flash　73.7</text>
+<text class="t" x="18" y="238">CharXiv Reasoning（道具なし）</text>
+<text class="t" x="320" y="238">88.1</text>
+<text class="t-bad" x="440" y="238">Qwen3.8-max　88.4</text>
+<text class="t" x="18" y="260">Chartography</text>
+<text class="t" x="320" y="260">37.0</text>
+<text class="t-bad" x="440" y="260">Gemini 3.8 Flash　40.9</text>
+<text class="t-xs" x="18" y="300">※ 表を作ったのは Sakana AI です。相手の会社が同じ条件で測った値ではありません。</text>
+<text class="t-xs" x="18" y="318">※ 単価（コストあたりの効率）ではなく、点数そのものが最高だったかで数えています。</text>
+</svg>
