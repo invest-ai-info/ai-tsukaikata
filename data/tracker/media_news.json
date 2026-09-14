@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-14T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年9月、生成AIツールのClaudeを開発するAnthropicの脅威インテリジェンスチームが、Claudeを悪用しようとした事例についてまとめたレポートを公開しました。このレポートの中で、「科学者が生物兵器の設計を試みた可能性がある事例」についても報告されていますが、科学者らの反応はさまざまだと学術誌のScienceが報じています。 続きを読む...",
+      "title": "「科学者がAIで生物兵器の設計を試みている可能性がある」とAnthropicが報告するも専門家の見解はさまざま",
+      "uid": "252bd566f5c8b3d8",
+      "url": "https://gigazine.net/news/20260915-ai-bioweapons-report-anthropic-divides-experts/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T22:30:10+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "トランプ米大統領はSNSへの投稿で、AIに必要なガードレールは強く賢い大統領だけで十分だと述べ、AI企業に対する刑事・規制上の強い権限を強調した。AnthropicのアモデイCEOを名指しで批判し、AI開発を妨げる動きを中国を利する陰謀だと非難して、米国の優位性を維持する姿勢を示した。",
+      "title": "トランプ大統領、アモデイ氏を名指しで「完璧な小さい天使のふり」　「AIに必要なガードレールは強く賢い大統領だけ」",
+      "uid": "486b6603b73208a4",
+      "url": "https://www.itmedia.co.jp/news/article/2609/15/2000001470/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIの普及で変わり始めているのは、企業の業務だけではない。Googleの最新セキュリティレポートからは、攻撃者がAIエージェントを攻撃活動に組み込み、侵入先のクラウドや開発環境を新たな「AI攻撃基盤」として悪用する実態が見えてきた。",
+      "title": "「AIを盗む」のではなく「AIを動かす」ために　Googleが捉えた攻撃者の異変",
+      "uid": "747689048bda4b03",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/15/2000001459/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T21:21:49+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "中国外務省の郭副報道局長は定例会見で、米AI企業トップらが訴える開発減速論について問われ、脅威論や悪質な競争はグローバルなAIガバナンスを阻害するだけだと反論した。また、BRICS首脳会議で習近平国家主席がオープンソースAIコミュニティの設立を提唱したことも明らかにした。",
+      "title": "中国外務省、AI開発「減速論」に反応　「恐怖をあおることや対立、悪性の競争は誰の利益にもならない」",
+      "uid": "a57e35df80c8426e",
+      "url": "https://www.itmedia.co.jp/news/article/2609/15/2000001469/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-14T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "大規模言語モデル(LLM)の数学的能力は目覚ましい進歩を遂げており、数々の難問を解けるレベルにまで到達しました。しかしその一方で、AI企業が数学的問題解決をベンチマークとして推進する動きについては数学という学問そのものや数学コミュニティにとって有害であると、フィールズ賞受賞者25名からなる数学者たちが公開書簡を通じて警鐘を鳴らしています。 続きを読む...",
+      "title": "AIベンチマークに数学を使うのは有害だとして数学者たちが反発",
+      "uid": "73c6c97918d4b390",
+      "url": "https://gigazine.net/news/20260915-misalignment-of-ai-in-mathematics/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの活用が広がり、その裏側で増殖するのがAPIキーやトークンなどの認証情報です。これまで当たり前だったAPIキーの管理方法が、AIエージェントの登場によって限界を迎えつつあります。",
+      "title": "その.envのAPIキーが、AIエージェントを「内通者」に変える――“人間前提のやり方”は破綻した",
+      "uid": "21ae5c64120ef41f",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/16/news013.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-14T14:08:28.662401+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2326,78 +2398,6 @@
       "title": "Arm、インフラ、CPU、ロボット分野における新たなAI技術を発表",
       "uid": "67e3795ad3747f03",
       "url": "https://ai.watch.impress.co.jp/docs/news/2139143.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-08T07:22:28+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTスマートコネクトはOneAIの協力のもと、東振テクニカルが運営する製品紹介サイトにおいて、AIアバターを活用したWeb接客・顧客サポートの実証実験を9月8日より開始した。",
-      "title": "NTTスマートコネクト、AIアバターによるWeb接客の実証実験",
-      "uid": "dbfab0a437eb5e03",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139138.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-08T07:06:21+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "日立製作所は9月3日、社会インフラ向けAIソリューション群「HMAX」を拡充し、データセンター運用やサイバー防御などの新サービスを発表。2026年を「フィジカルAI元年」と位置付け、HMAXを売上高5000億円の事業に育てる見込み。",
-      "title": "「2026年はフィジカルAI元年」　日立、AIサービス群全体で売上5000億円へ　ミュトス利用の知見を基にした新サービスも",
-      "uid": "1003d992ae0ca218",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/08/2000001272/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-08T06:39:43+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GMOインターネットグループのGMO AI&ロボティクス商事（GMO AIR）は、人型ロボット（ヒューマノイド）専用の保守車両「GMOヒューマノイド救急車」を9月に導入し、GMO AIRが導入を手がけた機体の保守を行なう。出動の可否は機体の状況や同社の運用体制に応じて個別に判断する。",
-      "title": "人型ロボット専用の「GMOヒューマノイド救急車」",
-      "uid": "e6946b95ceabbbb5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139125.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-08T06:03:35+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは、書籍「図解でスッキリ 生成AIのきほんとしくみ」の発売を記念し、本書の全文無料公開キャンペーンを9月10日～9月13日に開催する。",
-      "title": "生成AI入門書「図解でスッキリ　生成AIのきほんとしくみ」無料公開キャンペーンが開催決定",
-      "uid": "6230ae8d2b4afbbe",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139105.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-08T05:45:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "航空機が搭載しているジェットエンジンの排気ガスに含まれる粒子に水蒸気が凝結して形成される飛行機雲(コントレイル)は、地球温暖化の原因の1つであり、航空業界による気候への影響のおよそ3分の1を占めているとされています。Googleは、AIを利用して飛行機雲による地球温暖化を緩和するための研究「Project Contrails」に取り組んでおり、その一環として航空会社パートナーであるキャセイパシフ…",
-      "title": "Googleが「AIで飛行機雲を避ける」実証実験を航空会社と連携して実施、温暖化影響を約40％削減",
-      "uid": "56540acc282fbde6",
-      "url": "https://gigazine.net/news/20260908-contrail-avoidance-trial/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-08T05:22:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GMOインターネットグループのGMO AI&ロボティクス商事（GMO AIR）は、人型ロボット（ヒューマノイド）の稼働データを活用し、動作精度を継続的に高め続けるサービス「GMO LOOP for Physical AI」の提供を9月8日に開始した。",
-      "title": "GMO AIR、人型ロボットの動作精度を高める「GMO LOOP for Physical AI」",
-      "uid": "1e7565dc942133c2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139089.html",
       "vendor": "Impress AI Watch"
     }
   ]

@@ -13,6 +13,32 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-14T22:12:54+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or /fast typed in the session applies where your organization allows it Add…",
+      "title": "v2.1.271",
+      "uid": "90851688cd0d5cbf",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-14T23:10:08.125153+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-14T19:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, Labs, Technology & Society.",
+      "summary_ja": "宇宙飛行士とGoogle幹部が対談\n宇宙飛行士クリスティーナ・コック氏と\nGoogleのマニーカ副社長が語り合う",
+      "summary_source": "gemini",
+      "title": "Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.",
+      "uid": "5929e3bbcded8ade",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-14T19:25:37.289624+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -4425,20 +4451,6 @@
       "uid": "41208f4ee4f0d528",
       "url": "https://tech.preferred.jp/ja/blog/plamo-3-0-prime-beta-usecase/",
       "vendor": "Preferred Networks"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-06-16T21:29:50+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "UK government partners with Google DeepMind to build a new AI-powered prototype aimed at faster housing decisions.",
-      "summary_ja": "英国政府が住宅建設を速めるAI開発を開始。\nGoogle DeepMindと協力し、住宅決定を早める試作システムを開発。",
-      "summary_source": "gemini",
-      "title": "Unlocking UK house-building with AI-accelerated planning",
-      "uid": "a24f8c5763daf39c",
-      "url": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
