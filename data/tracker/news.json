@@ -4413,30 +4413,6 @@
       "uid": "6c1a4bdb0dda8146",
       "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "GLM 新モデル",
-      "published": "2026-06-16T07:39:20+00:00",
-      "source_id": "hf-zhipu",
-      "summary": "HuggingFace に新しいモデル zai-org/GLM-5.2 が公開されました。",
-      "title": "zai-org/GLM-5.2",
-      "uid": "5b982cab5b748faf",
-      "url": "https://huggingface.co/zai-org/GLM-5.2",
-      "vendor": "Zhipu AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "GLM 新モデル",
-      "published": "2026-06-16T07:20:33+00:00",
-      "source_id": "hf-zhipu",
-      "summary": "HuggingFace に新しいモデル zai-org/GLM-5.2-FP8 が公開されました。",
-      "title": "zai-org/GLM-5.2-FP8",
-      "uid": "ea275c28714596ce",
-      "url": "https://huggingface.co/zai-org/GLM-5.2-FP8",
-      "vendor": "Zhipu AI"
     }
   ]
 }
