@@ -375,3 +375,36 @@ def test_fetch_source_omits_redirect_note_when_url_did_not_change(monkeypatch):
     monkeypatch.setattr("tracker.fetch._http_get", boom)
     _, error = fetch_source(dict(RSS_SOURCE, url="https://example.com/feed"))
     assert "転送先" not in error
+
+
+# --- 相対URLはフィードのURLで補う（2026-09-14）---
+#
+# 実測: sakana.ai/feed.xml の <link> が "/fugu-max-release/" とサイトルート相対で、
+# そのまま深掘りキューに「- [ ] /fugu-max-release/」と入り、担当が手で補っていた。
+
+RELATIVE_LINK_RSS = b"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>S</title>
+<item><title>Introducing Fugu Max</title><link>/fugu-max-release/</link>
+<pubDate>Thu, 10 Sep 2026 09:00:00 GMT</pubDate><description>x</description></item>
+</channel></rss>"""
+
+
+def test_parse_feed_resolves_a_relative_link_against_the_feed_url():
+    source = dict(RSS_SOURCE, url="https://sakana.ai/feed.xml")
+    [item] = parse_feed(source, RELATIVE_LINK_RSS)
+    assert item.url == "https://sakana.ai/fugu-max-release/"
+
+
+def test_parse_feed_keeps_the_uid_of_a_relative_link_unchanged():
+    """既読の記録（seen.json）は生のリンクから作った uid で持っている。補完後に uid が
+    変わると、既読の記事が全部「新着」に戻ってメールと自動追記が二重になる。"""
+    from tracker.models import make_uid
+    source = dict(RSS_SOURCE, url="https://sakana.ai/feed.xml")
+    [item] = parse_feed(source, RELATIVE_LINK_RSS)
+    assert item.uid == make_uid("sample", "/fugu-max-release/")
+
+
+def test_parse_feed_leaves_absolute_links_alone():
+    source = dict(RSS_SOURCE, url="https://sakana.ai/feed.xml")
+    updates = parse_feed(source, _read("sample_rss.xml"))
+    assert updates[0].url == "https://example.com/news/1"

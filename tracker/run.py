@@ -83,8 +83,8 @@ def _collect(sources: list[dict], state: dict, fetcher, now=None) -> list:
     return collected
 
 
-def _enqueue_deepdive(major, sources, state, now, queue_path) -> None:
-    """major のお知らせを深掘りキューへ自動追記する。
+def _enqueue_deepdive(updates, sources, state, now, queue_path) -> None:
+    """お知らせを深掘りキューへ自動追記する（major と、opt-in した会社の minor）。
 
     キューは派生データなので、ここの失敗でメール送信や既読の保存を
     巻き込まない（要約と同じ扱い）。失敗はログに出して次へ進む。
@@ -97,16 +97,22 @@ def _enqueue_deepdive(major, sources, state, now, queue_path) -> None:
         source_types = {
             s["id"]: s["type"] for s in sources if s.get("id") and s.get("type")
         }
+        # minor も候補にする会社（sources.yml の deepdive_minor: true）。
+        # 実測で記事になった会社にだけ付ける＝雑記の多いフィードは枠を取らせない
+        minor_sources = {
+            s["id"] for s in sources if s.get("id") and s.get("deepdive_minor")
+        }
         text = queue_path.read_text(encoding="utf-8")
         # ⚠️ 飛ばしたぶんは必ず出す。枠を静かに削るのが一番まずい壊れ方（2026-08-31）
         skipped: list = []
         picked = deepdive.select_candidates(
-            major,
+            updates,
             source_types,
             queued_uids=store.deepdive_queued_uids(state),
             queued_urls_=deepdive.queued_urls(text),
             today_count=store.deepdive_queued_today(state, now),
             skipped=skipped,
+            minor_sources=minor_sources,
         )
         if skipped:
             hosts = sorted({urlsplit(u.url).hostname or "?" for u in skipped})
@@ -192,8 +198,11 @@ def run_check(*, sources, state_path, fetcher, mailer, now, news_path=None,
         # 捨てると「情報は失われず最大24時間遅れるだけ」の原則が壊れる。
         newest_first = sorted(major, key=lambda u: u.published, reverse=True)
         minor = minor + newest_first[notify.MAX_ITEMS:]
-        if queue_path is not None:
-            _enqueue_deepdive(major, sources, state, now, queue_path)
+
+    # 深掘りの候補は major に限らない（読める会社は minor も・2026-09-14）。
+    # メール送信の後に置く＝送信に失敗した回はここまで来ない（従来と同じ順序）
+    if queue_path is not None and fresh:
+        _enqueue_deepdive(fresh, sources, state, now, queue_path)
 
     store.mark_seen(state, fresh, now)
     store.queue_minor(state, minor)

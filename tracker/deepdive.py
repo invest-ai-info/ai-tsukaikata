@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-"""major のお知らせを深掘り待ち行列（content/_deepdive_queue.md）へ自動追記する。
+"""お知らせを深掘り待ち行列（content/_deepdive_queue.md）へ自動追記する。
+
+対象は major のお知らせと、sources.yml で `deepdive_minor: true` を付けた会社の minor。
+⚠️ major だけだった間、8/25〜9/14 の3週間で読める会社の候補は5件しか無く、tools/ の
+自動公開は 9/7 で止まった。手で入れた minor 2件（Gemini Omni 1.1・3.5 Transcribe）は
+記事になっている＝minor を切ることが供給を止めていた（2026-09-14）。
 
 キューは人間もスマホから編集する生きたファイルなので、ここでは「行を足す」
 以上のことをしない。出典が読めないときに書かずに止まる判断はルーティン側の
@@ -68,21 +73,26 @@ def select_candidates(
     today_count: int,
     limit: int = DAILY_LIMIT,
     skipped: list[Update] | None = None,
+    minor_sources: set[str] | frozenset[str] = frozenset(),
 ) -> list[Update]:
-    """自動追記してよい major のお知らせを選ぶ。
+    """自動追記してよいお知らせを選ぶ。
+
+    major は全部、minor は `minor_sources`（sources.yml で `deepdive_minor: true` を
+    付けた会社）のものだけ。枠が足りない日は major が先に取る。
 
     モデル系は選ばない——「出たこと」自体はニュース欄で足りていて、
-    深掘りは発表文がある告知にだけ意味があるため。
+    深掘りは発表文がある告知にだけ意味があるため（opt-in しても同じ）。
 
     出典が読めないホスト（UNREADABLE_HOSTS）も選ばない。⚠️ **黙って捨てない**＝
     `skipped` を渡すと飛ばしたぶんがそこに入るので、呼び出し側が件数を必ず出すこと。
     枠を静かに削るのが、この仕組みで一番まずい壊れ方（No silent caps）。
     """
     picked: list[Update] = []
-    for update in updates:
+    # major を先に。sorted は安定なので、major 同士・minor 同士の順は崩れない
+    for update in sorted(updates, key=lambda u: u.importance != "major"):
         if today_count + len(picked) >= limit:
             break
-        if update.importance != "major":
+        if update.importance != "major" and update.source_id not in minor_sources:
             continue
         if source_types.get(update.source_id) not in ANNOUNCEMENT_TYPES:
             continue
@@ -101,7 +111,7 @@ def append_lines(text: str, updates: list[Update], now: datetime) -> str:
     date = now.date().isoformat()
     block = "".join(
         f"- [ ] {update.url}\n"
-        f"  - {date} 自動追記（major・{update.vendor}「{update.title}」）\n"
+        f"  - {date} 自動追記（{update.importance}・{update.vendor}「{update.title}」）\n"
         for update in updates
     )
     marker = f"\n{DONE_HEADING}"

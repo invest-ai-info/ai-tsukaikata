@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -68,13 +69,17 @@ def parse_feed(source: dict, raw: bytes) -> list[Update]:
         link = entry.get("link", "")
         if published is None or not link:
             continue
+        # サイトルート相対の <link>（実測: sakana.ai の "/fugu-max-release/"）はフィードの
+        # URLで補う。uid は生のリンクから作る＝既読の記録（seen.json）と同じ uid を保つ。
+        # 変えると既読の記事が全部「新着」に戻り、メールと自動追記が二重になる
+        url = urllib.parse.urljoin(source.get("url") or "", link)
         updates.append(Update(
             uid=make_uid(source["id"], entry.get("id") or link),
             source_id=source["id"],
             vendor=source["vendor"],
             label=source["label"],
             title=(entry.get("title") or "").strip(),
-            url=link,
+            url=url,
             published=published,
             summary=entry.get("summary", "") or entry.get("description", ""),
         ))

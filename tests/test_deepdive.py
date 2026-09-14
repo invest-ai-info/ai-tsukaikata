@@ -228,3 +228,91 @@ def test_run_check_does_not_queue_unreadable_sources(tmp_path):
     text = queue.read_text(encoding="utf-8")
     assert "openai.com" not in text
     assert load_state(state_path).get("deepdive_queued", {}) == {}
+
+
+# --- 読める会社の minor も候補にする（2026-09-14）---
+#
+# 自動追記が major だけだったため、8/25〜9/14 の3週間で読める会社の候補は5件しか無く、
+# tools/ の自動公開は 9/7 で止まった。手で入れた minor 2件（Gemini Omni 1.1・
+# 3.5 Transcribe）は記事になっている＝minor を切ることが供給を止めていた。
+# ⚠️ opt-in はソース単位（sources.yml の deepdive_minor）。雑記の多いフィードまで
+# 広げると、1日3件の枠と担当の朝を雑記が取る。
+
+
+def test_select_takes_minor_from_sources_that_opted_in():
+    picked = select_candidates(
+        [_update("m", importance="minor")], SOURCE_TYPES,
+        queued_uids=set(), queued_urls_=set(), today_count=0,
+        minor_sources={"ann"},
+    )
+    assert [u.uid for u in picked] == ["m"]
+
+
+def test_select_still_ignores_minor_from_sources_that_did_not_opt_in():
+    types = dict(SOURCE_TYPES, other="rss")
+    picked = select_candidates(
+        [_update("m", importance="minor"),
+         _update("o", source_id="other", importance="minor")],
+        types, queued_uids=set(), queued_urls_=set(), today_count=0,
+        minor_sources={"ann"},
+    )
+    assert [u.uid for u in picked] == ["m"]
+
+
+def test_select_gives_majors_the_slots_before_minors():
+    """枠が足りない日は major が先。並び順（minor が先に来ていても）に依存しない。"""
+    updates = [
+        _update("m1", importance="minor"),
+        _update("M"),
+        _update("m2", importance="minor"),
+    ]
+    picked = select_candidates(
+        updates, SOURCE_TYPES, queued_uids=set(), queued_urls_=set(),
+        today_count=DAILY_LIMIT - 2, minor_sources={"ann"},
+    )
+    assert [u.uid for u in picked] == ["M", "m1"]
+
+
+def test_select_never_takes_minor_from_model_sources_even_if_opted_in():
+    """モデル系は minor でも major でも選ばない（出たこと自体はニュース欄で足りる）。"""
+    picked = select_candidates(
+        [_update("x", source_id="mod", importance="minor")], SOURCE_TYPES,
+        queued_uids=set(), queued_urls_=set(), today_count=0,
+        minor_sources={"mod"},
+    )
+    assert picked == []
+
+
+def test_append_lines_records_the_importance_of_each_item():
+    result = append_lines("## 待ち行列\n", [_update("a", importance="minor")], NOW)
+    assert "2026-08-06 自動追記（minor・V「題a」）" in result
+
+
+def _minor(uid):
+    """発表語を含まない題＝classify で minor になる。"""
+    return Update(
+        uid=uid, source_id="ann", vendor="V", label="L",
+        title=f"Weekly notes {uid}", url=f"https://example.com/{uid}",
+        published=NOW, summary="",
+    )
+
+
+def test_run_check_appends_minor_when_the_source_opted_in(tmp_path):
+    queue = _queue_file(tmp_path)
+    mailer = Mailer()
+    run_check(
+        sources=[dict(SOURCES[0], deepdive_minor=True)],
+        state_path=tmp_path / "seen.json",
+        fetcher=_fetcher([_minor("a")]), mailer=mailer, now=NOW, queue_path=queue,
+    )
+    assert "- [ ] https://example.com/a" in queue.read_text(encoding="utf-8")
+    assert mailer.sent == []  # minor は従来どおり即時メールにしない
+
+
+def test_run_check_keeps_minor_out_of_the_queue_without_opt_in(tmp_path):
+    queue = _queue_file(tmp_path)
+    run_check(
+        sources=SOURCES, state_path=tmp_path / "seen.json",
+        fetcher=_fetcher([_minor("a")]), mailer=Mailer(), now=NOW, queue_path=queue,
+    )
+    assert "https://example.com/a" not in queue.read_text(encoding="utf-8")

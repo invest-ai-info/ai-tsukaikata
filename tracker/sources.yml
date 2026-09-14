@@ -11,6 +11,9 @@ sources:
     label: Anthropic 公式ニュース
     type: anthropic_news
     url: https://www.anthropic.com/news
+    # deepdive_minor は付けていない（2026-09-14）。8/25〜9/14 の minor 6件は助成・安全性・
+    # 報告書で、読者（自動化したい非エンジニア）向けの記事になったものが0件。
+    # 機能の発表は「Introducing …」で major になるので、major だけで足りている
 
   # ⚠️ Claude Code のリリースは、実測で100件中 major 判定が0件（タイトルが
   # "v2.1.221" という素のバージョン文字列で、patch番号も0にならないため）。
@@ -41,12 +44,18 @@ sources:
     label: Google AI Blog
     type: rss
     url: https://blog.google/technology/ai/rss/
+    # deepdive_minor は付けない（2026-09-14）。検索の小ネタ（レース準備・インテリア等）が
+    # 混ざり、実測 8件中5件が雑記。枠（1日3件）と担当の朝を雑記に取られる
 
   - id: deepmind-blog
     vendor: Google DeepMind
     label: DeepMind Blog
     type: rss
     url: https://deepmind.google/blog/rss.xml
+    # minor も深掘りの候補にする（2026-09-14）。実測: 8/25〜9/14 の minor 5件のうち
+    # 2件（Gemini Omni 1.1 Flash・3.5 Transcribe）は手で入れて記事になった。
+    # ⚠️ 付けるのは「minor が実際に記事になった」会社だけ。警告や在庫を増やすためではない
+    deepdive_minor: true
 
   # --- xAI ---
   # x.ai/news は403でbotブロック。迂回はしない。
@@ -103,6 +112,9 @@ sources:
     label: Sakana AI Blog
     type: rss
     url: https://sakana.ai/feed.xml
+    # deepdive_minor は付けていない（2026-09-14）。minor 2件（提携の発表・特集号の紹介）は
+    # どちらも記事の型に合わない。モデルの発表は major で入る。
+    # ⚠️ クラウド側の許可リストに sakana.ai が無く、major も読めていない（オーナー作業待ち）
 
   # ⚠️ PFN 技術ブログ（pfn-blog）は 2026-09-14 に外した。フィードが廃止されたため。
   # 旧 https://tech.preferred.jp/ja/blog/feed/ は 301 → www.preferred.jp/ja/blog/tech/feed で
