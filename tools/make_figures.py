@@ -20758,6 +20758,121 @@ def estimate_gap_leaks_on_money_ask_chart() -> None:
     )
 
 
+def survey_condition_blends_in_chart() -> None:
+    """アンケート自由記述の集計で、条件付きの意見が別の意見に紛れた件数（2026-09-14）。
+
+    実測。架空の勤怠アプリ満足度アンケート20件（材料A）・研修感想アンケート22件
+    （材料B）に、無条件の賛成/満足・条件付きの賛成/満足（「〜すれば」）・理由の違う
+    複数の反対/不満を仕込んだ。素朴に「似た意見をまとめて件数を教えて」と頼むと、
+    材料Aは条件付きの意見4件×2回＝8件とも正しく別グループに分かれたが、材料Bは
+    2回の実行で条件付きの意見4件×2回＝8件中5件が、近いテーマの別グループ（無条件の
+    賛成や、別の理由の不満）に紛れ込んだ。「条件付きの意見は無条件の意見と別のグループに
+    してください」という一文を足すと、材料A・材料Bとも8件中0件に戻り、価格や操作性の
+    条件付き意見と理由付きの不満が紛らわしく重なる材料C（10件）でも0件のままだった。
+    """
+    label_w = 340
+    box_x = 18 + label_w
+    box_w = 702 - box_x
+    row_h = 30
+    pitch = row_h + 8
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「条件付きの意見は別グループに」の一文で、紛れ込みが消えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の勤怠アプリ満足度アンケート20件（材料A）・研修感想アンケート22件（材料B）に、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "無条件の賛成/満足・条件付きの賛成/満足・理由の違う複数の不満を仕込んだ。数字は"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "「条件付きの意見が別の意見に紛れた件数／条件付きの意見の件数」（材料ごと各2回・計8件）。"
+        "</text>\n",
+    ]
+
+    y = 112
+    parts.append(f'<text class="t-strong" x="18" y="{y}">素朴に「似た意見をまとめて」と頼んだとき</text>\n')
+    y += 20
+    rows1 = [("材料A（勤怠アプリ・20件）", 0, 8), ("材料B（研修感想・22件）", 5, 8)]
+    for label, val, n in rows1:
+        ty = y + row_h - 9
+        ok = val == 0
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(f'<rect class="{box}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h}" rx="4"/>\n')
+        parts.append(
+            f'<text class="{tone}" x="{box_x + box_w / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{val}／{n}</text>\n'
+        )
+        y += pitch
+
+    y += 6
+    box_h1 = 46
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="684" height="{box_h1}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 19}" style="font-weight:700">'
+        "材料Bだけ、条件付きの意見が近いテーマの別グループに5／8件紛れ込んだ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 37}">'
+        "件数の合計はどちらの材料も22件のまま合っていた——崩れたのは中身の振り分けだけ。</text>\n"
+    )
+    y += box_h1 + 30
+
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "「条件付きの意見は無条件の意見と別のグループに」を足したとき</text>\n"
+    )
+    y += 20
+    rows2 = [
+        ("材料A（勤怠アプリ・20件）", 0, 8),
+        ("材料B（研修感想・22件）", 0, 8),
+        ("材料C（価格・操作性が紛らわしい10件）", 0, 8),
+    ]
+    for label, val, n in rows2:
+        ty = y + row_h - 9
+        box = "box-good"
+        tone = "t-good"
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(f'<rect class="{box}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h}" rx="4"/>\n')
+        parts.append(
+            f'<text class="{tone}" x="{box_x + box_w / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{val}／{n}</text>\n'
+        )
+        y += pitch
+
+    y += 6
+    box_h2 = 46
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h2}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 19}">'
+        "一文を足すと3本の材料とも0／8件に戻った。理由別の反対/不満は指示していなくても</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 37}">'
+        "元から分かれていたので、効いていたのは「条件付きを分けて」の一文だけだった。</text>\n"
+    )
+    y += box_h2 + 16
+
+    height = y + 4
+    alt = (
+        "アンケート自由記述の集計で、条件付きの意見が別のグループに紛れた件数を、素朴に頼んだ"
+        "ときと一文を足したときで比較した図。架空の勤怠アプリ満足度アンケート20件（材料A）・"
+        "研修感想アンケート22件（材料B）に、無条件の賛成/満足・条件付きの賛成/満足（「〜すれば」）・"
+        "理由の違う複数の反対/不満を仕込んだ。素朴に「似た意見をまとめて件数を教えて」と頼むと、"
+        "材料Aは条件付きの意見（各2回・計8件）が8件とも正しく別グループに分かれたが、材料Bは"
+        "8件中5件が、近いテーマの無条件の賛成や、別の理由の不満に紛れ込んだ。件数の合計はどちらの"
+        "材料も元の総数（20件・22件）のまま合っていて、崩れたのは中身の振り分けだけだった。"
+        "「条件付きの意見は無条件の意見と別のグループにしてください」という一文を足すと、材料A・"
+        "材料Bとも0／8件に戻り、価格や操作性の条件付き意見と理由付きの不満が紛らわしく重なる"
+        "材料C（10件）でも0／8件のままだった。"
+    )
+    (OUT / "survey-condition-blends-in.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     estimate_gap_leaks_on_money_ask_chart()
     buried_instruction_still_obeyed_chart()
@@ -21018,4 +21133,5 @@ if __name__ == "__main__":
     frozen_feed_grid_chart()
     unseen_does_not_mean_new_chart()
     urgent_wording_detection_chart()
+    survey_condition_blends_in_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -45,6 +45,34 @@
 
 ## 記録
 
+### 2026-09-14（自動化・ループ優先の枠。専任の別ルーティン）
+- 公開: 1本（conditional-opinion-joins-the-wrong-group）。
+- 実測: `claude --safe-mode --tools ""` CLI（新規サブプロセスを毎回起動。CLAUDE.md・skills・
+  plugins・履歴を全部無効化）。架空の勤怠アプリ満足度アンケート20件・研修感想アンケート22件・
+  価格/操作性が紛らわしい第3材料10件に、無条件の賛成/満足・条件付きの賛成/満足・理由の違う
+  複数の反対/不満を仕込み、素朴な指示文（材料2本×各2回＝4回）→「条件付きは別グループに」の
+  一文を足した版（材料3本×各2回＝6回）→「理由が違えば分けて・件数を全部足して」まで足した版
+  （材料3本×各2回＝6回、うち2回を記事本文で使用）で計16回。
+- 手順0＝`git fetch origin`→`git checkout -B main origin/main`でHEADをorigin/mainに合わせた
+  （detached HEADだったため明示的にブランチを張り直した）。
+- 手順1＝「自動化・ループ優先」節の未処理4件のうち、最上位の「アンケートの自由記述をまとめる」
+  を選んだ。
+- 手順2＝台帳を読み、実測後に新しい教訓★158（効きそうな一文の積み増しは、崩れていない箇所には
+  伸びしろが無い）を追記。12番（判定スクリプトが返りの「補足」説明文中のID共起を誤って1グループと
+  判定）も再発として追記した——自分の書いた判定コードの初版がまさにこれを踏み、修正して直した。
+- 手順3＝`grep -h '^## ' content/recipes/*.md | sort -u`は共通テンプレートのみで衝突判定に
+  ならず、`grep -l "アンケート\|条件付き"`で個別確認＝`same-name-stayed-apart`（名前の同一性）・
+  `summarize-without-dropping`（1文書の要約からの脱落）とは核が異なることを確認。
+- 正解データ（どのIDが条件付きか）を先にPythonの辞書で固定し、機械照合スクリプト
+  （`check_merge.py`）で判定。初版の誤検知（上記）に気づいて直してから確定させた（台帳12番の実践）。
+- 指示文6個（うち3個は同一文言を材料違いで再掲）・図1枚（`survey_condition_blends_in_chart`・
+  座標は計算・`src/figures.py`のcheck_svgでエラー0件）・内部リンク2本（`same-name-stayed-apart`・
+  `summarize-without-dropping`）。マーカーは通常2個・warn1個（上限13個・警告5個の内）。
+  `same-name-stayed-apart`側にもこの記事への相互リンクを追記済み。
+- `python -m pytest -q`＝625 passed／`python -m src.build`＝ビルド完了（179ファイル）／
+  `tools/check_numbers.py`＝出典0件（自己完結の実測記事のため対象なし、他の実測系記事と同様）。
+- 手順6＝`python -m tools.make_eyecatch`はこの後の push 直前に実行する（先に`git pull`する）。
+
 ### 2026-09-13（21:00 レシピ担当の回）
 - 公開: 1本（estimate-gap-leaks-on-money-ask）。**目標（副業3本）に届かず。**
 - 実測: この環境の Agent（サブエージェント・general-purpose型）を毎回独立に起動（新規コンテキスト・
