@@ -20178,6 +20178,98 @@ def named_platform_invites_guessed_rules_chart() -> None:
     )
 
 
+def platform_name_guesses_the_rule_backwards_chart() -> None:
+    """実際に禁止されているカテゴリでも、名前を出すと規約を語るが中身が違う（各5回）。
+
+    実測（2026-09-15）。架空の募集文2パターン（イラスト制作＝ココナラが実際に禁止している
+    カテゴリ／レシピコラム執筆＝禁止対象外）に「ココナラ」と明記した版と、「オンラインの
+    スキルマーケット」に伏せた版で、同じ質問を各5回×2パターン×2条件＝計20回試した。
+    真値との突き合わせは docs/evidence/platform-name-guesses-the-rule-backwards.md。
+    """
+    rows = [
+        ("イラスト制作・伏せた", "規約に言及した回数・5回中0回", 0, 5, "box-good", "t-good"),
+        ("イラスト制作・ココナラと明記", "規約に言及した回数・5回中5回（うち真値と一致0件）", 5, 5, "box-bad", "t-bad"),
+        ("レシピコラム・伏せた", "規約に言及した回数・5回中0回", 0, 5, "box-good", "t-good"),
+        ("レシピコラム・ココナラと明記", "規約に言及した回数・5回中0回", 0, 5, "box-good", "t-good"),
+    ]
+    left, right = 300, 600
+    span = right - left
+    top, bar_h, gap = 138, 28, 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "実際に禁止されているカテゴリでは、名前を出すと5回とも規約を語った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の募集文2パターン（イラスト制作＝ココナラが実際にAI生成物の出品を禁止しているカテゴリ／"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "レシピコラム執筆＝禁止対象外）に、AI利用についての記載は一切入れていない。"
+        "「ココナラで募集しています」と</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "明記した版と、「オンラインのスキルマーケット」に置き換えた版で、同じ質問を各5回ずつ試した（計20回）。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答と真値との突き合わせは docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+    for index, (kind, label, val, n, cls, tcls) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        w = span * (val / n) if n else 0.0
+        parts.append(f'<text class="t-xs" x="18" y="{y - 5}">{_esc(kind)}</text>\n')
+        parts.append(
+            f'<text class="t" x="70" y="{y + bar_h - 8}" style="font-size:11px">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" width="{max(w, 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="{tcls}" x="{right + 10}" y="{y + bar_h - 8}">{val}/{n}回</text>\n'
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    box_h = 108
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "言及した5件のうち、真値(公式ガイドライン原文)と一致したのは0件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 42}">'
+        "真値は「AI技術を利用したイラスト生成サービスは、一律で出品を禁止しています」。"
+        "</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 60}">'
+        "3件は「禁止されていない」という正反対の断定、2件は「明示すれば出品できる」という"
+        "</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 78}">'
+        "実際には無い開示制度への言い換えだった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="34" y="{y + 96}">'
+        "話題が当たっていても、中身まで合っているとは限らない。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "実際にAIイラスト出品を禁止しているプラットフォーム名を募集文に明記したときと、伏せたときの比較。"
+        "イラスト制作案件(禁止対象カテゴリ)にプラットフォーム名を明記した5回は、5回とも規約の具体的な"
+        "中身を自分から語ったが、真値(公式ガイドライン原文)と一致したのは0件で、3回は禁止されていない"
+        "という正反対、2回は開示すれば足りるという弱い説明だった。名前を伏せた5回は具体的な言及が0件。"
+        "レシピコラム案件(禁止対象外カテゴリ)は、名前を明記しても伏せても具体的な言及は0件だった。"
+    )
+    (OUT / "platform-name-guesses-the-rule-backwards.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def typo_in_last_id_grid_chart() -> None:
     """前回位置のIDに表記ゆれ・完全な誤りがあったとき、4通りの指示文がどう対応したかのマス目。
 
@@ -21372,6 +21464,7 @@ if __name__ == "__main__":
     estimate_leak_follows_missing_number_chart()
     buried_instruction_still_obeyed_chart()
     named_platform_invites_guessed_rules_chart()
+    platform_name_guesses_the_rule_backwards_chart()
     closed_days_vanish_chart()
     reused_instruction_crosses_material_types_chart()
     fx_rate_not_in_material_chart()
