@@ -623,10 +623,36 @@
       （①が解けてから、Anthropic・OpenAI・Google に同種の製品〈オーケストレーション／複数モデル切替〉が
       あるかを確認すること）。
 
-- [ ] https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/
+- [x] https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/
+  - →保管: ✅ **2026-09-15: 公開した** → `content/tools/gemini-3-8-live.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚
+    （`gemini38live-benchmarks` / `gemini38live-price-same` / `gemini38live-vendor-grid`）。
+    出典10件すべて取得成功。`check_numbers.py` は照合できる数字16個すべてが出典に存在。
+    pytest 646 passed・build 184ファイル）
   - 2026-09-15 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking」）
 
 ## 処理済み
+
+- https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/ → **公開済み** content/tools/gemini-3-8-live.md（2026-09-15・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`gemini38live-benchmarks` /
+    `gemini38live-price-same` / `gemini38live-vendor-grid`）。`check_numbers.py` は**16個すべて出典に存在**
+    （出典10件すべて取得成功）。pytest 646 passed・build 184ファイル。
+  - 📌 記事の芯＝**料金ページでは `gemini-3.1-flash-live-preview`（旧・プレビュー版）と
+    `gemini-3.8-live` / `gemini-3.8-live-extended-thinking`（新・正式版）の3モデルIDが
+    同じ価格の行にまとめられており、テキスト単価は入力$0.75・出力$4.50で完全に同額**。
+    読める量（131,072トークン）・書ける量（65,536トークン）も前世代から変わっていない。
+    いちばんの変化は「プレビューが正式版になったこと」と「97言語を会話の途中でも自動で
+    切り替える」機能。モデルカードの学習データ締め切りは2026年1月（発表日は2026年9月15日）。
+  - ⚠️ モデルカードのFrontier Safety評価は、前の音声モデル（3.1 Flash Live Preview）ではなく
+    テキスト系の3.7 Flashを基準にしている（「3.7 Flashと比べて意味のある新しい能力・性能向上は
+    無いと判断」と明記）。発表ページの「知性の大幅な向上」という宣伝文句と、この安全性評価の
+    前提は一見矛盾するため、両方をそのまま書いた。
+  - ⚠️ OpenAIのGPT-Live 1（$0.05/分・セッション課金）とGeminiの音声単価（トークン課金＋分換算併記）は
+    課金の仕組み自体が違う（GPT-Live 1は「頭脳」のバックエンドモデルが別料金）ため、
+    単純な安い高いの比較はできないと明記し、表を分けた。
+  - Artificial Analysis（`artificialanalysis.ai`）は**経路遮断**（`CONNECT tunnel failed, response 403`・
+    `cf-mitigated`ヘッダなし）で到達できず、Googleが発表ページで引用したベンチマーク値の
+    独立検証はできなかった。次にこのドメインを叩く行が来たら再試行対象にすること。
 
 - https://sakana.ai/fugu-max-release/ → **公開済み** content/tools/sakana-fugu-max.md（2026-09-14・公開）
   - 再試行で通った（1回目は2026-09-11に経路遮断で停止。今回 `sakana.ai` が WebFetch・curl とも200に

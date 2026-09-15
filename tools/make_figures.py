@@ -21455,11 +21455,222 @@ def fugu_ultra_v2_vendor_grid_chart() -> None:
     )
 
 
+def gemini38live_benchmarks_chart() -> None:
+    """Gemini 3.8 Live / Live Extended Thinking の発表にある第三者ベンチマークの値を並べる。
+
+    出典＝発表ページ本文（blog.google・2026-09-15）。指数・パーセント・順位が混在し、
+    満点や測り方も指標ごとに違うため、バーの長さで大小を表さず、値をそのまま箱で並べる。
+    """
+    rows = [
+        ("Speech to Speech Quality Index", "82.6（総合1位）",
+         "Artificial Analysis調べ・3.8 Live Extended Thinking"),
+        ("τ-Voice（複雑な作業をやりきる力）", "68.6%", "3.8 Live Extended Thinking"),
+        ("τ-Voice-banking（銀行業務のシナリオ）", "35.1%", "Sierra調べ・3.8 Live Extended Thinking"),
+        ("Big Bench Audio", "97.7%", "3.8 Live Extended Thinking"),
+        ("Speech Agent Arena", "2位", "3.8 Live（Extended Thinkingではない）"),
+    ]
+    left = 18
+    box_w = WIDTH - left * 2
+    value_x = 440
+    top, box_h, gap = 118, 40, 10
+    pitch = box_h + gap
+
+    assert value_x < WIDTH - 18, value_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "5つの指標は、満点も測り方もバラバラ——足し引きでは比べられない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "発表ページに書かれている第三者ベンチマークの値をそのまま並べた（指数・％・順位が混在）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上4つは3.8 Live Extended Thinkingの値。Speech Agent Arenaだけ、"
+        "Extended Thinkingではない3.8 Liveの値。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "評価したのはArtificial AnalysisやSierraなどの第三者だが、この記事では独自に検証していない。</text>\n",
+    ]
+    for index, (name, value, tag) in enumerate(rows):
+        y = top + index * pitch
+        parts.append(
+            f'<rect class="box-accent" x="{left}" y="{y}" width="{box_w}" height="{box_h}" rx="5"/>\n'
+        )
+        parts.append(f'<text class="t" x="{left + 12}" y="{y + 17}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{left + 12}" y="{y + 33}">{_esc(tag)}</text>\n')
+        parts.append(f'<text class="t-accent" x="{value_x}" y="{y + 25}">{_esc(value)}</text>\n')
+
+    height = top + len(rows) * pitch + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: Gemini 3.8 Live / 3.8 Live Extended Thinking の発表ページ（blog.google・2026年9月15日）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 前世代（3.1 Flash Live Preview）の同じ指標での値は発表ページに無く、比較できない。</text>\n"
+    )
+    alt = (
+        "Gemini 3.8 Live / 3.8 Live Extended Thinking の発表ページにある第三者ベンチマーク5つを"
+        "箱で並べた図。Speech to Speech Quality Indexは82.6で総合1位（Artificial Analysis調べ）、"
+        "τ-Voiceは68.6%、τ-Voice-banking（Sierra調べ）は35.1%、Big Bench Audioは97.7%——"
+        "この4つはいずれも3.8 Live Extended Thinkingの値。Speech Agent Arenaは2位で、"
+        "こちらはExtended Thinkingではない3.8 Liveの値。指数・％・順位が混在し満点や測り方も"
+        "指標ごとに違うため、値をそのまま並べており、足し引きや平均はしていない。"
+        "評価したのは第三者だが、この記事では独自に検証していない。"
+    )
+    (OUT / "gemini38live-benchmarks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38live_price_same_chart() -> None:
+    """新旧のGemini Liveモデルが、料金ページで同じ価格の行にまとめられていることを示す。
+
+    出典＝Gemini API 料金ページ（ai.google.dev・2026-09-15確認）。
+    `gemini-3.1-flash-live-preview`・`gemini-3.8-live`・`gemini-3.8-live-extended-thinking`の
+    3モデルIDが同じ価格表の1行に並んでおり、テキストの単価はどちらも入力$0.75・出力$4.50。
+    """
+    rows = [
+        ("旧世代　Gemini 3.1 Flash Live Preview（プレビュー版）", 0.75, 4.50),
+        ("新世代　Gemini 3.8 Live / 3.8 Live Extended Thinking（正式版）", 0.75, 4.50),
+    ]
+    left, right = 250, 610
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 110, 16, 5, 30
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    assert right + 70 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "プレビュー版から正式版になっても、テキストの単価は変わっていない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力、濃い青＝出力。100万トークンあたりのドル（テキストの標準単価）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "料金ページでは3モデルIDが同じ価格の行にまとめられており、バーの長さは2つとも同じ。</text>\n",
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        for line_no, line in enumerate(_wrap_label(name, 40)):
+            parts.append(f'<text class="t" x="18" y="{y + 12 + line_no * 15}">{_esc(line)}</text>\n')
+        y += (len(_wrap_label(name, 40)) - 1) * 15
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 20 + 54
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 出典: Gemini API 料金ページ（ai.google.dev・2026年9月15日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 音声の単価も分あたり換算で公式に併記されており、こちらも入力$0.005/分・"
+        "出力$0.018/分で同額。</text>\n"
+    )
+    alt = (
+        "Gemini 3.1 Flash Live Preview（旧世代・プレビュー版）と "
+        "Gemini 3.8 Live / 3.8 Live Extended Thinking（新世代・正式版）の、"
+        "テキストの単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "どちらも入力0.75ドル・出力4.50ドルで、バーの長さは2つとも同じ。"
+        "料金ページでは3つのモデルIDが同じ価格の行にまとめられている。"
+        "音声の単価も分あたり換算（入力0.005ドル・出力0.018ドル毎分）で同額。"
+    )
+    (OUT / "gemini38live-price-same.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def _wrap_label(text: str, max_chars: int) -> list[str]:
+    """日本語ラベルを、全角換算のおおよその文字数で2行までに折り返す。"""
+    if len(text) <= max_chars:
+        return [text]
+    for sep in ("　", "（"):
+        idx = text.rfind(sep, 0, max_chars + 4)
+        if idx > 0:
+            head, tail = text[:idx].rstrip(), text[idx:].lstrip("　")
+            return [head, tail]
+    return [text[:max_chars], text[max_chars:]]
+
+
+def gemini38live_vendor_grid_chart() -> None:
+    """音声対話モデルの有無・課金の仕組み・言語自動切替を3社の公式ページで比べた表。
+
+    出典＝Gemini は発表ページ・料金ページ（blog.google / ai.google.dev）、
+    OpenAI は developers.openai.com の料金・モデルページ、Anthropic は
+    platform.claude.com のモデル一覧（voice/audio/speechへの言及自体が無いことを確認）。
+    """
+    rows = [
+        ("音声対話モデル", "3.8 Live / 3.8 Live\nExtended Thinking", "GPT-Live 1\n（頭脳は別モデル）", "記載なし"),
+        ("課金の単位", "トークン単位\n（音声は分換算も併記）", "音声は分単位\n頭脳のモデルは別課金", "—"),
+        ("言語の自動切替", "97言語\n（会話の途中でも自動検出）", "記載なし", "—"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 128
+    pitch, box_h = 58, 48
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "音声対話の専用モデルを持たないのは、3社のうちAnthropicだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・料金・モデル一覧）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。</text>\n",
+    ]
+    headers = ["Gemini（Google）", "GPT（OpenAI）", "Claude（Anthropic）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, gemini_v, openai_v, anthropic_v in rows:
+        ty = y + 18
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((gemini_v, openai_v, anthropic_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else ("box-quiet" if i == 1 else "box-bad")
+            tcls = "t-accent" if i == 0 else ("t-sm" if i == 1 else "t-bad")
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "音声対話モデルの有無を3社で比べた表。音声対話モデル＝Geminiは3.8 Live / "
+        "3.8 Live Extended Thinkingあり、GPTはGPT-Live 1あり（頭脳は別モデル）、"
+        "Claudeは記載なし。課金の単位＝Geminiはトークン単位（音声は分換算も併記）、"
+        "GPTは音声は分単位で頭脳のモデルは別課金、Claudeは—。言語の自動切替＝Geminiは97言語"
+        "（会話の途中でも自動検出）、GPTは記載なし、Claudeは—。"
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。"
+    )
+    (OUT / "gemini38live-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    fugu_max_price_output_chart()
-    fugu_max_bench_wins_chart()
-    fugu_ultra_v2_vs_v11_chart()
-    fugu_ultra_v2_vendor_grid_chart()
+    gemini38live_benchmarks_chart()
+    gemini38live_price_same_chart()
+    gemini38live_vendor_grid_chart()
     estimate_gap_leaks_on_money_ask_chart()
     estimate_leak_follows_missing_number_chart()
     buried_instruction_still_obeyed_chart()

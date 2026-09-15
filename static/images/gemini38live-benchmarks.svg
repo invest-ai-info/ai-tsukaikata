@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="418" viewBox="0 0 720 418" role="img" aria-label="Gemini 3.8 Live / 3.8 Live Extended Thinking の発表ページにある第三者ベンチマーク5つを箱で並べた図。Speech to Speech Quality Indexは82.6で総合1位（Artificial Analysis調べ）、τ-Voiceは68.6%、τ-Voice-banking（Sierra調べ）は35.1%、Big Bench Audioは97.7%——この4つはいずれも3.8 Live Extended Thinkingの値。Speech Agent Arenaは2位で、こちらはExtended Thinkingではない3.8 Liveの値。指数・％・順位が混在し満点や測り方も指標ごとに違うため、値をそのまま並べており、足し引きや平均はしていない。評価したのは第三者だが、この記事では独自に検証していない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="418"/>
+<text class="t-strong" x="18" y="26">5つの指標は、満点も測り方もバラバラ——足し引きでは比べられない</text>
+<text class="t-sm" x="18" y="45">発表ページに書かれている第三者ベンチマークの値をそのまま並べた（指数・％・順位が混在）。</text>
+<text class="t-sm" x="18" y="64">上4つは3.8 Live Extended Thinkingの値。Speech Agent Arenaだけ、Extended Thinkingではない3.8 Liveの値。</text>
+<text class="t-sm" x="18" y="83">評価したのはArtificial AnalysisやSierraなどの第三者だが、この記事では独自に検証していない。</text>
+<rect class="box-accent" x="18" y="118" width="684" height="40" rx="5"/>
+<text class="t" x="30" y="135">Speech to Speech Quality Index</text>
+<text class="t-xs" x="30" y="151">Artificial Analysis調べ・3.8 Live Extended Thinking</text>
+<text class="t-accent" x="440" y="143">82.6（総合1位）</text>
+<rect class="box-accent" x="18" y="168" width="684" height="40" rx="5"/>
+<text class="t" x="30" y="185">τ-Voice（複雑な作業をやりきる力）</text>
+<text class="t-xs" x="30" y="201">3.8 Live Extended Thinking</text>
+<text class="t-accent" x="440" y="193">68.6%</text>
+<rect class="box-accent" x="18" y="218" width="684" height="40" rx="5"/>
+<text class="t" x="30" y="235">τ-Voice-banking（銀行業務のシナリオ）</text>
+<text class="t-xs" x="30" y="251">Sierra調べ・3.8 Live Extended Thinking</text>
+<text class="t-accent" x="440" y="243">35.1%</text>
+<rect class="box-accent" x="18" y="268" width="684" height="40" rx="5"/>
+<text class="t" x="30" y="285">Big Bench Audio</text>
+<text class="t-xs" x="30" y="301">3.8 Live Extended Thinking</text>
+<text class="t-accent" x="440" y="293">97.7%</text>
+<rect class="box-accent" x="18" y="318" width="684" height="40" rx="5"/>
+<text class="t" x="30" y="335">Speech Agent Arena</text>
+<text class="t-xs" x="30" y="351">3.8 Live（Extended Thinkingではない）</text>
+<text class="t-accent" x="440" y="343">2位</text>
+<text class="t-xs" x="18" y="388">※ 出典: Gemini 3.8 Live / 3.8 Live Extended Thinking の発表ページ（blog.google・2026年9月15日）。</text>
+<text class="t-xs" x="18" y="406">※ 前世代（3.1 Flash Live Preview）の同じ指標での値は発表ページに無く、比較できない。</text>
+</svg>
