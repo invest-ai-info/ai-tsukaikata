@@ -4449,20 +4449,6 @@
       "uid": "2200288597890194",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "PFN 技術ブログ",
-      "published": "2026-06-17T02:08:04+00:00",
-      "source_id": "pfn-blog",
-      "summary": "Preferred Networks では、大規模言語モデル PLaMo の開発を継続して行っています。 LLMの開発には、単に大規模なモデルを学習するだけでなく、さまざまな作業が含まれます。高性能なLLMを学習するため […] 投稿 PLaMo-3.0-Prime-β を LLM 開発の現場で使う は Preferred Networks Tech Blog に最初に表示されました。",
-      "summary_ja": "PFNが大規模言語モデルの活用例を紹介\n「PLaMo-3.0-Prime-β」を開発現場で利用\n高性能なモデルを開発するための方法を示す",
-      "summary_source": "gemini",
-      "title": "PLaMo-3.0-Prime-β を LLM 開発の現場で使う",
-      "uid": "41208f4ee4f0d528",
-      "url": "https://tech.preferred.jp/ja/blog/plamo-3-0-prime-beta-usecase/",
-      "vendor": "Preferred Networks"
     }
   ]
 }
