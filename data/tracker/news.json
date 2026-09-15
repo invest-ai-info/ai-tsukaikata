@@ -13,6 +13,18 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-09-15T21:28:25.537882+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-15T20:23:03+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added x-claude-code-request-class , x-claude-code-agent-type , x-claude-code-prev-tool-durations , x-claude-code-compaction and x-claude-code-context-compacted request headers for LLM …",
+      "title": "v2.1.273",
+      "uid": "e40c37de3a8a841a",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-15T18:14:36.215237+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -77,6 +89,18 @@
       "uid": "6ec2757fa3320187",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.6.0",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-15T21:28:25.537882+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-15T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana Marlinアップデート：レポートと対話する「Interactive Reading」と、出力スライドのPowerPoint対応",
+      "uid": "be80f7b7ff73adca",
+      "url": "https://sakana.ai/marlin-update/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-09-15T13:36:52.400656+00:00",
@@ -4503,18 +4527,6 @@
       "uid": "81187291e1a23685",
       "url": "https://tech.preferred.jp/ja/blog/plamo-3-0-prime-release/",
       "vendor": "Preferred Networks"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-17T19:34:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem",
-      "uid": "bc065ead304a940c",
-      "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
-      "vendor": "Anthropic"
     }
   ]
 }

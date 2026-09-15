@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-15T21:28:25.537882+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-15T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ウェブサイトを閲覧していると「スマートフォンの容量不足」や「ウイルス感染」を知らせる画面に偽装した詐欺広告が高頻度で表示されます。また、詐欺広告の中には「次へ」とか「ダウンロード」といったウェブサイトのUIの一部に偽装したものも存在しており、非常に悪質です。ソフトウェア開発者のクリス・グリーニング氏は、YouTubeで見かけた警告風の広告をGoogleへ報告した経緯を自身のブログにつづり、Goo…",
+      "title": "Googleは自社製高性能AIで怪しい広告をブロックできるはずなのに一体なぜ配信し続けているのか？",
+      "uid": "417b826a2252b021",
+      "url": "https://gigazine.net/news/20260916-google-dodgy-ads-gemini/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-15T21:28:25.537882+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-15T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "その人が行事に参加すると高い確率で雨が降る、そんな「雨男・雨女」が身近にいるという人は少なくないと思います。冷静に考えれば、そういう印象が強いだけかもしれません。そこで、本当に雨男・雨女がいるのかをベイズ検定してみましょう。いわゆる独立性の検定に当たります。『社会人1年生から学ぶやさしいデータ分析』ベイズ統計編の第9回です。",
+      "title": "【Pythonで学ぶデータ分析】独立性の検定をベイズ統計で行う ～ 雨男・雨女は本当にいるのか？",
+      "uid": "022722a59799fdd5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/16/news003.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-15T21:28:25.537882+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-15T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの活用が広がるのと同時に、APIキーやトークンなどの認証情報も増殖。セキュリティリスクは高まり、従来の認証情報の管理方法は限界を迎えつつあります。では、どう守ればよいのでしょうか。",
+      "title": "「APIキーは.envに」はもはや通用しない　AIエージェントの“内通者化”をどう防ぐ？",
+      "uid": "b30ccca642e9093b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news006.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-15T18:14:36.215237+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2362,42 +2398,6 @@
       "title": "使い込むほど成長するAIエージェント「Hermes Agent」に好みを覚えさせて新しいチャットでも記憶を引き継げる「記憶(Memory)」機能を試してみた",
       "uid": "aa1d40a9dbbe5f3b",
       "url": "https://gigazine.net/news/20260909-hermes-agent-memory/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-09T16:42:11.740885+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-09T12:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ChatGPTのデスクトップアプリに、オープンソースのオフィスソフト「LibreOffice」が同梱されていることが分かりました。ライセンス料なしでMicrosoft Office形式のファイルを扱えることから選ばれたのではないかと考えられています。 続きを読む...",
-      "title": "ChatGPTのデスクトップアプリにはLibreOfficeの完全版が同梱されている",
-      "uid": "9518dd8d5b4e2786",
-      "url": "https://gigazine.net/news/20260909-chatgpt-desktop-app-libreoffice/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-09T16:42:11.740885+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-09T12:01:05+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NECは9日、8月1日付で新設した社内組織「コーポレートAI・Workforce部門」に関するメディア説明会を開催した。執行役 コーポレートEVP 兼 CAXOの小玉浩氏が登壇し、同組織での取り組みを説明した。",
-      "title": "NECが“AI自律型組織”新設、質疑応答にはAI社員も参加",
-      "uid": "faf769e56c25b820",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139622.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-09T16:42:11.740885+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-09T11:35:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIの創業者であるサム・アルトマン氏が2023年、OpenAIの取締役会によって退任させられたのち2週間足らずで復帰した出来事を中心として描く映画『Artificial』のティザー予告編が公開されました。本作はすでに完成していて2026年6月に公開される予定でしたが、Amazon MGMスタジオの配給撤退で宙に浮いていました。 続きを読む...",
-      "title": "OpenAI創業者サム・アルトマンを描く映画『Artificial』ティザー予告編公開、Amazon撤退後にNeonが推定30億円で購入",
-      "uid": "ec774f19354d569e",
-      "url": "https://gigazine.net/news/20260909-artificial-teaser-trailer/",
       "vendor": "GIGAZINE"
     }
   ]
