@@ -13,6 +13,20 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-09-15T13:36:52.400656+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-15T13:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Text \"AI & Economy Atlas v1.0 2026\" with the Google G and a spinning globe illustration",
+      "summary_ja": "GoogleがAIと経済に関する分析書を公開\n書名は「AI & Economy Atlas v1.0 2026」",
+      "summary_source": "gemini",
+      "title": "New insights from Google’s AI & Economy ATLAS",
+      "uid": "363e5e7915e079c2",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-15T01:31:41.645080+00:00",
       "importance": "minor",
       "label": "Claude Code",
