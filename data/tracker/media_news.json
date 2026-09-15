@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-15T01:31:41.645080+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-15T00:42:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIモデル「Claude」で知られるAnthropicの新規株式公開(IPO)が2026年11月に行われる見込みであることがわかりました。IPOでは約1000億ドル(約15兆5000億円)を調達予定で、そのうち100億ドル(約1兆5000億円)分をNVIDIAがアンカー投資家として出資するか検討していると報じられています。 続きを読む...",
+      "title": "Anthropicの新規株式公開に対してNVIDIAがアンカー投資家として1.5兆円の出資を検討か",
+      "uid": "e1036e3e42fee5dc",
+      "url": "https://gigazine.net/news/20260915-anthropic-mega-ipo/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-14T23:10:08.125153+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -11,6 +23,42 @@
       "uid": "252bd566f5c8b3d8",
       "url": "https://gigazine.net/news/20260915-ai-bioweapons-report-anthropic-divides-experts/",
       "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-15T01:31:41.645080+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIの活用が広がる一方、最も定着している業務でも、7割は業務システムとは別の画面で生成AIを利用していた。こうした状況は、生成AI活用にどのような影響を及ぼしているのか。調査結果から実態を探る。",
+      "title": "生成AIを「別画面」で使い続けて本当によいのか？　300人調査で見えた活用定着の“壁”",
+      "uid": "aa438663dba2370d",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news042.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-15T01:31:41.645080+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "国内の会議支援AI市場は2025年度に前年度比35.1％増と急伸した。汎用（はんよう）の生成AIツールでも議事録を作成できるのに、なぜ会議支援AIのニーズは伸び続けるのか。ITRの調査が示す、需要の変化とは。",
+      "title": "なぜ、会議支援AI市場が35・1％も成長？　「議事録作成」で終わらないニーズとは",
+      "uid": "ba09e1029a9175e9",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/14/news023.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-15T01:31:41.645080+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-14T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "毎日の安全で快適な生活を陰で支えてきた、ビルメンテナンス業界の在り方が大きく変わろうとしている。昨今の人手不足に加え、長年の課題である「ワンマン管理による属人化」の影響で、ノウハウの継承や若手育成が危ぶまれているのだ。",
+      "title": "ビル管理で進む「属人化」解消なるか　東京建物らが開設、新たな「基地」が持つ5つの機能",
+      "uid": "41864eade1617766",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/15/news052.html",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-09-14T23:10:08.125153+00:00",
@@ -2350,54 +2398,6 @@
       "title": "NTTPCなど3社、水冷GPU搭載のコンテナ型AI基盤を提供開始。初期費用3億円から",
       "uid": "cf1eb75eff5528ac",
       "url": "https://ai.watch.impress.co.jp/docs/news/2139191.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-08T08:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "日立製作所の徳永社長が講演で「フィジカルAI」について熱弁を振るった。その講演は、社員にも響いたようだ。社内外に刺さるトップメッセージの核心とは。",
-      "title": "日立社長の“フィジカルAI”熱弁に「あれは、叱咤激励だ」　社内外に刺さるトップメッセージの核心とは",
-      "uid": "02d7ec7433d14911",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/08/news028.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-09-08T08:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、次世代AIモデル「GPT-6 Astra」を発表した。PC自律操作やコーディング、セキュリティ検証などの能力が大幅に向上し、抽象推論ベンチマークテスト「ARC-AGI-3」で99.9％のスコアを達成したという。",
-      "title": "OpenAI「GPT-6 Astra」発表　Codexのコーディングは前世代からどれだけ進化？",
-      "uid": "a8644d4f1fc7c154",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/08/news035.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-08T07:58:18+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "GMO AI&ロボティクス商事は人型ロボットの故障・トラブル時に診断や修理、代替機の提供などを行う「GMOヒューマノイド救急車」を導入すると発表した。",
-      "title": "「人型ロボット向け救急車」登場、国内初うたう　世界の救急車両を参考にデザイン　GMO傘下",
-      "uid": "a54cdf2ec9582fbc",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/08/2000001279/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-08T09:45:19.651566+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-08T07:30:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Armは9月8日にオンラインイベント「Arm Everywhere China」を開催した。同イベントでは、「Neoverse CSS N4」「CSS for Mobile 2」「Arm Total Design for Physical AI」の3つのテーマを掲げ、同社のエージェント型AIを支えるコンピューティングプラットフォームを発表した。",
-      "title": "Arm、インフラ、CPU、ロボット分野における新たなAI技術を発表",
-      "uid": "67e3795ad3747f03",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139143.html",
       "vendor": "Impress AI Watch"
     }
   ]

@@ -13,6 +13,18 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-09-15T01:31:41.645080+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-15T00:42:25+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Bug fixes and reliability improvements",
+      "title": "v2.1.272",
+      "uid": "8868b602a14ee484",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.272",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-14T23:10:08.125153+00:00",
       "importance": "minor",
       "label": "Claude Code",
