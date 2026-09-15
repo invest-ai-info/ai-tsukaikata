@@ -20452,6 +20452,91 @@ def unseen_does_not_mean_new_chart() -> None:
     )
 
 
+def record_date_does_not_roll_back_chart() -> None:
+    """最終確認日を更新させるとき、古い資料が混ざっても日付が過去に巻き戻らなかった回数。
+
+    実測（2026-09-15）。架空の取引先10社・案件10件に、記録より古い日付の資料が
+    2件ずつ混ざる状態を仕込んだ。「更新してください」「表だけ出して」は材料2本×各2回
+    の計4回ずつすべてで正しく据え置けたが、「日付に置き換えてください」だけは、
+    案件10件のほうで2回に1回、表の値そのものが古い日付に書き換わった。比較条件を
+    1文足すと、崩れた材料でも4回とも正しく据え置けた。
+    """
+    rows = [
+        ("「更新してください」(材料2本×各2回)", 4, 4),
+        ("「表だけ出して」(材料2本×各2回)", 4, 4),
+        ("「日付に置き換えて」(材料2本×各2回)", 3, 4),
+        ("＋「新しくなければ据え置き」(崩れた材料に4回)", 4, 4),
+    ]
+    label_w = 320
+    cell_w, cell_h, gap = 140, 32, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「置き換えて」だけ、古い資料の日付が表に残った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の取引先10社・案件10件に、記録より古い日付の資料を2件ずつ仕込んだ。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "正しい答えは、どちらもその2件だけ記録を据え置くこと。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、古い日付で上書きせず正しく据え置けた回数。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 据え置き"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 52
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "崩れたのは「置き換えて」だけ。しかも同じ指示文で2回に1回だけだった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "「新しくなければ据え置き」を1文足せば、同じ動詞のままでも4/4に戻った。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "取引先ごとの最終確認日を更新させる頼み方を、材料2本(取引先10社・案件10件)×各2回"
+        "=計4回ずつ試し、記録が正しく据え置けた回数を比べたマス目。素直に「更新してください」"
+        "と頼んだ4回、出力を「表だけ」に絞った4回はいずれも4/4で正しく据え置けた。"
+        "「日付に置き換えてください」という最も機械的な言い方だけ4回中3回(3/4)にとどまり、"
+        "材料の案件10件のほうで2回に1回、古い日付が表にそのまま残った。崩れた材料に"
+        "「新しくなければ更新しない」を1文足した4回では、4/4に戻った。"
+    )
+    (OUT / "record-date-does-not-roll-back.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def urgent_wording_detection_chart() -> None:
     """「重要です・見逃すと困ります」を足しても、検出できた数は変わらなかった（2026-09-13）。
 
@@ -21544,4 +21629,5 @@ if __name__ == "__main__":
     unseen_does_not_mean_new_chart()
     urgent_wording_detection_chart()
     survey_condition_blends_in_chart()
+    record_date_does_not_roll_back_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

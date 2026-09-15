@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="398" viewBox="0 0 720 398" role="img" aria-label="取引先ごとの最終確認日を更新させる頼み方を、材料2本(取引先10社・案件10件)×各2回=計4回ずつ試し、記録が正しく据え置けた回数を比べたマス目。素直に「更新してください」と頼んだ4回、出力を「表だけ」に絞った4回はいずれも4/4で正しく据え置けた。「日付に置き換えてください」という最も機械的な言い方だけ4回中3回(3/4)にとどまり、材料の案件10件のほうで2回に1回、古い日付が表にそのまま残った。崩れた材料に「新しくなければ更新しない」を1文足した4回では、4/4に戻った。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="398"/>
+<text class="t-strong" x="18" y="26">「置き換えて」だけ、古い資料の日付が表に残った</text>
+<text class="t-sm" x="18" y="45">架空の取引先10社・案件10件に、記録より古い日付の資料を2件ずつ仕込んだ。</text>
+<text class="t-sm" x="18" y="64">正しい答えは、どちらもその2件だけ記録を据え置くこと。</text>
+<text class="t-xs" x="18" y="83">数字は、古い日付で上書きせず正しく据え置けた回数。</text>
+<text class="t-xs" x="18" y="102">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-sm" x="18" y="171">「更新してください」(材料2本×各2回)</text>
+<rect class="box-good" x="338" y="150" width="140" height="32" rx="4"/>
+<text class="t-good" x="368.0" y="171">4/4 据え置き</text>
+<text class="t-sm" x="18" y="213">「表だけ出して」(材料2本×各2回)</text>
+<rect class="box-good" x="338" y="192" width="140" height="32" rx="4"/>
+<text class="t-good" x="368.0" y="213">4/4 据え置き</text>
+<text class="t-sm" x="18" y="255">「日付に置き換えて」(材料2本×各2回)</text>
+<rect class="box-bad" x="338" y="234" width="140" height="32" rx="4"/>
+<text class="t-bad" x="368.0" y="255">3/4 据え置き</text>
+<text class="t-sm" x="18" y="297">＋「新しくなければ据え置き」(崩れた材料に4回)</text>
+<rect class="box-good" x="338" y="276" width="140" height="32" rx="4"/>
+<text class="t-good" x="368.0" y="297">4/4 据え置き</text>
+<rect class="box-quiet" x="18" y="322" width="678" height="52" rx="6"/>
+<text class="t-strong" x="34" y="344">崩れたのは「置き換えて」だけ。しかも同じ指示文で2回に1回だけだった。</text>
+<text class="t-sm" x="34" y="362">「新しくなければ据え置き」を1文足せば、同じ動詞のままでも4/4に戻った。</text>
+</svg>
