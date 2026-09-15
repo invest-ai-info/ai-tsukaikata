@@ -623,6 +623,9 @@
       （①が解けてから、Anthropic・OpenAI・Google に同種の製品〈オーケストレーション／複数モデル切替〉が
       あるかを確認すること）。
 
+- [ ] https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/
+  - 2026-09-15 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking」）
+
 ## 処理済み
 
 - https://sakana.ai/fugu-max-release/ → **公開済み** content/tools/sakana-fugu-max.md（2026-09-14・公開）

@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-09-15T15:49:38+00:00",
+      "source_id": "media-publickey",
+      "summary": "オラクルは、これまで3カ月ごとに提供してきたJavaのアップデートパッチのサイクルを速め、1カ月ごとにセキュリティパッチを提供することを発表。先月（2026年8月）から実際にセキュリティパッチの提供が開始されていることを明らかにしました。 ...",
+      "title": "オラクル、Javaのセキュリティパッチを毎月提供開始、AIが脆弱性の発見を加速しているとして",
+      "uid": "4ae2d3f86477299d",
+      "url": "https://www.publickey1.jp/blog/26/javaai.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-09-15T15:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Metaは9月16日、新しいサブスクリプションサービス「Meta One」を発表した。価格体系は、単体プランが月額239円から、個人向けバンドルプランが月額949円から、クリエイター・ビジネス向けバンドルプランが月額2,000円から。",
+      "title": "Meta、AI機能を拡張した新サブスク「Meta One」を発表。インスタ運用が便利に",
+      "uid": "cd5b71b980a1ed31",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2141019.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-15T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIに文章作成や調査を任せるだけでなく、会社の経営そのものをAIエージェントに任せるためのプラットフォーム「Pion」をAndon Labsが発表しました。PionではAIエージェントが長時間動き続け、メールや電話、ブラウザ、銀行機能などを使いながら事業運営を進めます。 続きを読む...",
+      "title": "会社を丸ごとAIに経営させるAIエージェント「Pion」が登場、メール・電話・銀行機能まで使って事業を自律運営",
+      "uid": "daa70617550dfb9c",
+      "url": "https://gigazine.net/news/20260915-pion/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-15T13:36:52.400656+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "ec774f19354d569e",
       "url": "https://gigazine.net/news/20260909-artificial-teaser-trailer/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-09T11:28:50.861492+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-09T10:55:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Google DeepMind（GDM）は9月9日、東京拠点における研究開発の取り組みやグローバル展開の戦略に関する報道関係者向けのラウンドテーブルを開催し、プリンシパルサイエンティスト 兼 東京拠点リードの全炳河氏がプレゼンテーションを行なった。",
-      "title": "Google DeepMind東京拠点の全貌、音声AI基盤開発から高齢化社会の課題解決まで",
-      "uid": "788ab860c1419155",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139615.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-09T11:28:50.861492+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-09T10:51:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "早稲田大学の甲藤二郎教授らの研究グループは9月9日、NECネッツエスアイとの共同研究で将来の電波状況をAIでリアルタイムに予測し、安定性を優先して映像の途切れを防ぐ軽量なモデルを開発したと発表した。実際に映像の途切れを抑えつつ安定して再生できることが、5Gネットワークを用いた検証で確認されている。",
-      "title": "早稲田大学の研究グループ、ローカル5G経由での放送を安定化",
-      "uid": "ad825b666dd95178",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139616.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-09T11:28:50.861492+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-09T10:40:23+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、ヒトゲノムにおける90億個のあらゆる一塩基変化の影響予測を収録したプラットフォーム「AlphaGenome Atlas」を公開した。遺伝子変異が分子生物学に及ぼす影響を網羅した包括的なカタログで、誰でもWebサイトを通じ学術研究のために無料で利用することができる。",
-      "title": "Google、ヒトゲノムの全一塩基変異の影響を予測する「AlphaGenome Atlas」",
-      "uid": "9bdcbc7c4674bf12",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139610.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

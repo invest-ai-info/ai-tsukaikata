@@ -13,6 +13,72 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-09-15T17:05:57+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+      "uid": "e7c4e5e484b85e66",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-15T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share the opportunity of AI.",
+      "summary_ja": "AIを使って社会を良くする取り組みが紹介された。\n専門家や地域のリーダーがAI技術を活用し\n誰もがAIの恩恵を受けられるようにする。",
+      "summary_source": "gemini",
+      "title": "AI for Societal Impact",
+      "uid": "ff4681171a776d30",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-15T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "B-roll showing diverse environments and people, including a teacher and students in a classroom and a patient with a doctor",
+      "summary_ja": "AIで科学を発展させ生活を改善する様子が公開された。\n教師と生徒の教室や、医師と患者の姿など\n様々な場面でAI活用が示されている。",
+      "summary_source": "gemini",
+      "title": "Building AI to accelerate science and improve lives",
+      "uid": "ebb9f25ebfba94cc",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-15T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Animation of several words in different languages slowly zooming past",
+      "summary_ja": "あらゆる言語に対応したAIが発表された。\n様々な言語の単語が流れるアニメーションで\nその多言語対応が表現されている。",
+      "summary_source": "gemini",
+      "title": "AI for everyone in every language",
+      "uid": "1cdeb185087ad596",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-15T18:14:36.215237+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-15T15:14:42+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.6.0 (2026-09-15) Full Changelog: v1.5.0...v1.6.0 Features api: add auto mode tool permissions for Managed Agents ( 909d92f ) api: add compaction parameter and signed compaction blocks (beta) ( 8689…",
+      "title": "v1.6.0",
+      "uid": "6ec2757fa3320187",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.6.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-15T13:36:52.400656+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -4449,20 +4515,6 @@
       "uid": "bc065ead304a940c",
       "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-17T15:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Research in “Nature” shows our conversational AI system matches primary care physicians in complex disease management.",
-      "summary_ja": "医療AI「AMIE」の新研究結果が公開された\n複雑な病気の管理で開業医と同等の能力を示す\nこの内容は科学誌「Nature」に掲載された",
-      "summary_source": "gemini",
-      "title": "New research shows how AMIE, our medical AI, could help manage health conditions.",
-      "uid": "2200288597890194",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
-      "vendor": "Google"
     }
   ]
 }
