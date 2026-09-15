@@ -34,63 +34,7 @@
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
     "sakana-blog": "2026-09-16T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-14T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
-      "title": "How Fyxer built an AI executive assistant people trust",
-      "uid": "21d50a4daa01db27",
-      "url": "https://openai.com/index/fyxer",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-09-14T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Animation of the text \"{DevFest} 2026 Join us! Google Developer Groups\" with a globe icon, asterisk icon, icon",
-      "title": "DevFest is back",
-      "uid": "b928bf8d8d7e918b",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-09-16T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Inside Sakana AI’s Product Team",
-      "uid": "dbf59bc4ee052860",
-      "url": "https://sakana.ai/inside-product-team/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-14T22:12:54+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or /fast typed in the session applies where your organization allows it Add…",
-      "title": "v2.1.271",
-      "uid": "90851688cd0d5cbf",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-09-14T19:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, Labs, Technology & Society.",
-      "title": "Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.",
-      "uid": "5929e3bbcded8ade",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/",
-      "vendor": "Google"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
