@@ -21762,6 +21762,85 @@ def gemini38live_vendor_grid_chart() -> None:
     )
 
 
+def multi_platform_payout_mixing_chart() -> None:
+    """note・Kindle・YouTubeの架空売上3行をまとめて聞いたときの、料率の取り違えと
+    書かれていない振込条件の作り話を並べたマス目。
+
+    実測（2026-09-16）。版1（素朴にまとめる）・版2（＋補わない指定）は各3回。
+    版3（Kindleだけ単独）も3回、版4（単独＋補わない指定）は2回。
+    版3・4は比べる相手がいないため「料率の取り違え」列は—（対象外）。
+    """
+    cols = ["料率の取り違え", "振込条件の作り話"]
+    rows = [
+        ("版1　まとめて素朴に聞く（3回）", ["0/3", "2/3"], ["box-good", "box-bad"], ["t-good", "t-bad"]),
+        ("版2　＋『補わない』を明記（3回）", ["0/3", "0/3"], ["box-good", "box-good"], ["t-good", "t-good"]),
+        ("版3　Kindleだけ単独で（3回）", ["—", "3/3"], ["box-quiet", "box-bad"], ["t-sm", "t-bad"]),
+        ("版4　単独＋『補わない』（2回）", ["—", "0/2"], ["box-quiet", "box-good"], ["t-sm", "t-good"]),
+    ]
+
+    label_w = 230
+    cell_w, cell_h, gap = 165, 34, 10
+    top = 138
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "料率は混ざらない。ただし書かれていない条件は、実在名だと作り話で埋める</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "note・Kindle・YouTubeの架空売上3行をまとめ、手取りと振込の有無を計15回試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "他社の料率（note5%・YouTube45%など）を取り違えた回は、まとめても単独でも0回。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "Kindleの振込条件だけ材料に書かず単独で聞くと、3回とも実在KDPの周期で埋めた。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, cells, boxes, tones) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 22}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[col_index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="{tones[col_index]}" x="{tx:.1f}" y="{y + 22}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 16
+    notes = [
+        ("t-xs", "※「振込条件の作り話」＝材料に無い実在サービスの支払い周期・最低額を断定した回。"),
+        ("t-xs", "架空データでの実測（全15回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "note・Kindle・YouTubeの架空売上3行をまとめて聞いたときの、料率の取り違えと"
+        "書かれていない振込条件の作り話を並べたマス目。版1（まとめて素朴に聞く・3回）は"
+        "料率の取り違えが0/3、振込条件の作り話が2/3。版2（＋『補わない』を明記・3回）は"
+        "取り違え0/3、作り話0/3。版3（Kindleだけ単独で・3回）は比べる相手がいないため"
+        "取り違えは対象外（—）、作り話は3/3。版4（単独＋『補わない』・2回）も取り違えは"
+        "対象外（—）、作り話は0/2。プラットフォーム固有の料率が行をまたいで混ざることは"
+        "どの版でも起きなかったが、材料に書いていない振込条件は、実在のKindle(KDP)について"
+        "単独で聞くほど作り話で埋められやすかった。"
+    )
+    (OUT / "multi-platform-payout-mixing.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     gemini38live_benchmarks_chart()
     gemini38live_price_same_chart()
@@ -21792,6 +21871,7 @@ if __name__ == "__main__":
     money_map_gates_timing_chart()
     resume_list_correctness_chart()
     resume_list_header_drift_chart()
+    multi_platform_payout_mixing_chart()
     estimate_basis_count_chart()
     cron_delay_distribution_chart()
     cutoff_vs_resume_duplicate_chart()
