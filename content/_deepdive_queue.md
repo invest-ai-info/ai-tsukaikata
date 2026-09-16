@@ -631,6 +631,9 @@
     pytest 646 passed・build 184ファイル）
   - 2026-09-15 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking」）
 
+- [ ] https://sakana.ai/chat-fugumax/
+  - 2026-09-16 自動追記（major・Sakana AI「Sakana Chatをアップデート：最新モデルに刷新、メモリー機能を追加」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/ → **公開済み** content/tools/gemini-3-8-live.md（2026-09-15・公開）

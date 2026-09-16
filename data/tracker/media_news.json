@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-16T22:58:53.568048+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-16T21:45:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIRoA（AIロボット協会）は、「フィジカル AI Summit」において、「国産汎用ロボット開発コンペティション」に参加する7社のロボットの試作機を公開した。",
+      "title": "国産汎用ロボットによるフィジカルAIのデータ収集で7社が競う、試作機を披露",
+      "uid": "eb42ca4290c39403",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/17/news053.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-16T22:58:53.568048+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-16T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIモデル「Claude Fable 5.1」が370年以上未解読とされてきた謎の暗号「Cyphral Distich」をわずか1日足らずで解読したというニュースが飛び込んできました。1899年に「Notes and Queries」誌で未解決問題として提示されて以来、「Cyphral Distich」は多くの暗号研究者たちの挑戦を退けてきた難問でした。AIが具体的にどのようにして暗号を解読した…",
+      "title": "Claude Fable 5.1が370年前の未解読暗号「Cyphral Distich」を1日足らずで解読",
+      "uid": "d053e4a9fe186521",
+      "url": "https://gigazine.net/news/20260917-fable-solves-cyphral-distich/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-16T17:03:30.481149+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2374,30 +2398,6 @@
       "title": "近畿大学が約2万人に「Google AI Pro for Education」を導入 Google Cloudとともに「AIネイティブ大学」を目指す",
       "uid": "aebebca31234e715",
       "url": "https://ai.watch.impress.co.jp/docs/news/2139903.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-10T07:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "長距離を走るランナーは時にランナーズハイと呼ばれる状態になり、長く走ったことで疲労や痛みがあるにもかかわらず、快感や恍惚(こうこつ)感を覚えることが知られています。マラソン中のランナーの血液を分析した新たな研究により、ランナーの体内では大麻の生理活性物質に似た成分が生成されていることが示されました。 続きを読む...",
-      "title": "マラソン中のランナーの体内では大麻成分に似た物質が生成され続けているとの研究結果",
-      "uid": "29d9c6c07095a5d2",
-      "url": "https://gigazine.net/news/20260910-marathon-runner-cannabis-like-chemicals/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-10T06:50:48+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GMOペパボは、AIと作ったWebアプリをすぐに公開できるホスティングサービス「ロリポップ！デプロイナウ byGMOペパボ」において、「デプロイナウコンテスト byGMOペパボ」を9月10日より開催する。応募期間は12月8日まで。結果発表は2027年1月予定。",
-      "title": "GMOペパボ、賞金100万円のWebアプリ/Webサイトコンテストを開催",
-      "uid": "d806fbb7afb08090",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139897.html",
       "vendor": "Impress AI Watch"
     }
   ]

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-16T22:58:53.568048+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior.",
+      "summary_ja": "OpenAIがAIの誤作動を報告する仕組みを公開\n併せて、AIの想定外の振る舞い6件を報告",
+      "summary_source": "gemini",
+      "title": "Our framework for reporting model misalignment",
+      "uid": "93bbb093edbd807c",
+      "url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-16T17:03:30.481149+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -24,6 +38,18 @@
       "title": "Inside Sakana AI’s Product Team",
       "uid": "dbf59bc4ee052860",
       "url": "https://sakana.ai/inside-product-team/",
+      "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-09-16T22:58:53.568048+00:00",
+      "importance": "major",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-16T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana Chatをアップデート：最新モデルに刷新、メモリー機能を追加",
+      "uid": "5253dbb6d1f21188",
+      "url": "https://sakana.ai/chat-fugumax/",
       "vendor": "Sakana AI"
     },
     {
