@@ -21841,7 +21841,207 @@ def multi_platform_payout_mixing_chart() -> None:
     )
 
 
+def sakana_chat_timeline_chart() -> None:
+    """Sakana Chatの搭載モデルが増えた年表。3月にNamazu単体で公開、8月にFuguを追加、
+    9月にFugu Maxへ切替とメモリー機能が加わった。
+
+    出典＝Sakana Chatの更新発表ページ（sakana.ai/chat-fugumax/・2026-09-17表示）本文。
+    6日という日数は、Fugu MaxのAPI発表（2026-09-11・sakana.ai/fugu-max-release/）と
+    この更新の暦日の引き算（この記事で計算）。
+    """
+    rows = [
+        ("2026年3月", "Sakana Chatを公開", "Sakana Namazuのα版とともに提供開始"),
+        ("2026年8月", "Sakana Fuguを追加", "モデルを選べるようになり、コード実行・画像/文書添付にも対応"),
+        ("2026年9月17日（API公開の6日後）", "Fugu Maxとメモリーを追加", "搭載モデルをFugu Maxに切替、会話の好みを次回に引き継げるように"),
+    ]
+    dot_x = 26
+    text_x = 50
+    top = 96
+    row_h = 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Sakana ChatにFugu Maxが届くまで、API公開から6日</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Sakana Chatは2026年3月にNamazuのα版として始まり、8月にFuguが加わり、"
+        "9月17日にFuguがFugu Maxへ切り替わった。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "6日はFugu MaxのAPI発表（9月11日）からこの更新までの暦日の引き算です。</text>\n",
+    ]
+
+    last_y = top + (len(rows) - 1) * row_h
+    parts.append(f'<line class="line" x1="{dot_x}" y1="{top}" x2="{dot_x}" y2="{last_y}"/>\n')
+    for index, (date_label, title, desc) in enumerate(rows):
+        cy = top + index * row_h
+        cls = "box-accent" if index == len(rows) - 1 else "box-quiet"
+        parts.append(f'<circle class="{cls}" cx="{dot_x}" cy="{cy}" r="7"/>\n')
+        parts.append(f'<text class="t-xs" x="{text_x}" y="{cy - 8}">{_esc(date_label)}</text>\n')
+        parts.append(f'<text class="t-strong" x="{text_x}" y="{cy + 10}">{_esc(title)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{text_x}" y="{cy + 27}">{_esc(desc)}</text>\n')
+
+    height = last_y + 56
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 8月のアップデートの正確な日付は発表ページに記載がなく「8月のアップデートでは」とだけ書かれています。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ Namazuは9月の更新後も引き続き使えます（メモリー機能はNamazu・Fugu Max両方が対象）。</text>\n"
+    )
+
+    alt = (
+        "Sakana Chatに搭載されるモデルが増えた年表。2026年3月、Sakana Namazuのα版とともに"
+        "Sakana Chatを公開。2026年8月、Sakana Fuguを追加し、モデルを選べるようになり、"
+        "コード実行・画像/文書添付にも対応。2026年9月17日（Fugu MaxのAPI公開の6日後）、"
+        "搭載モデルをFugu Maxに切替え、会話の好みを次回に引き継げるメモリー機能を追加した。"
+        "8月のアップデートの正確な日付は発表ページに記載がない。Namazuは9月の更新後も"
+        "引き続き使え、メモリー機能はNamazu・Fugu Maxの両方が対象。"
+    )
+    (OUT / "sakana-chat-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sakana_chat_model_lineup_chart() -> None:
+    """Sakana Chatで選べたモデルの移り変わり（3月・8月・9月17日の3時点）。
+
+    出典＝更新発表ページ（sakana.ai/chat-fugumax/）本文（3段落目までの経緯部分）。
+    """
+    cols = ["2026年3月", "2026年8月", "2026年9月17日"]
+    rows = [
+        ("Sakana Namazu", ["○", "○", "○"]),
+        ("Sakana Fugu", ["—", "○", "—"]),
+        ("Fugu Max", ["—", "—", "○"]),
+    ]
+    label_w = 150
+    col_gap = 10
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 118
+    pitch, box_h = 40, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Sakana Fuguは短い期間しか選べず、Fugu Maxに置き換わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "○＝そのモデルが選択肢にあった時点。Namazuは3月からずっと選べます。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Sakana Chatの更新発表ページに書かれている経緯だけを並べたものです。</text>\n",
+    ]
+    for i, h in enumerate(cols):
+        parts.append(f'<text class="t-xs" x="{col_x[i] + col_w / 2 - len(h) * 4.6:.1f}" y="{top - 14}">{_esc(h)}</text>\n')
+
+    y = top
+    for label, values in rows:
+        ty = y + 20
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for i, value in enumerate(values):
+            x = col_x[i]
+            present = value == "○"
+            cls = "box-good" if present else "box-quiet"
+            tcls = "t-good" if present else "t-xs"
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            parts.append(
+                f'<text class="{tcls}" x="{x + col_w / 2 - 6:.1f}" y="{ty}">{_esc(value)}</text>\n'
+            )
+        y += pitch
+
+    height = y + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 22}">'
+        "※ Sakana Fuguは2026年8月に加わり、9月17日にFugu Maxへ切り替わって選択肢から消えました。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ Fugu・Fugu MaxとはAPI向けの製品ページ（sakana.ai/fugu/）は別で、価格はこの記事では突き合わせていません。</text>\n"
+    )
+    alt = (
+        "Sakana Chatで選べたモデルの移り変わりを示した表。2026年3月時点はSakana Namazuのみ。"
+        "2026年8月にSakana Fuguが加わり、Namazu・Fuguの2つから選べるようになった。"
+        "2026年9月17日、FuguがFugu Maxに切り替わり、Namazu・Fugu Maxの2つになった。"
+        "Namazuは3月からずっと選択肢にある。Sakana Fuguは8月から9月17日までの短い期間だけ"
+        "選択肢にあり、Fugu Maxに置き換わって消えた。"
+    )
+    (OUT / "sakana-chat-model-lineup.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sakana_chat_memory_grid_chart() -> None:
+    """3社のメモリー機能を「過去の会話を含むか」「使えるアカウント」「オフ・管理」の3項目で比べる。
+
+    出典＝Sakana Chatの更新発表ページ（sakana.ai/chat-fugumax/）、
+    Googleのヘルプ「Get personalization with memory of your past Gemini chats」
+    （support.google.com/gemini/answer/16598469）、
+    Anthropicの発表「Bringing memory to Claude」（claude.com/blog/memory。
+    www.anthropic.com/news/memory から転送された先）。
+    """
+    rows = [
+        ("過去の会話を\n含むか", "含まない\nアップデート以降のみ", "含む\n過去チャットが前提", "含められる\n初期設定時に生成可"),
+        ("使える\nアカウント", "制限の記載なし", "個人のみ・18歳以上\n職場/学校は不可", "Team/Enterprise\nPro/Maxにも拡大"),
+        ("オフ・管理", "設定でオフ可\n個別削除の記載なし", "オン/オフ切替可\n該当チャット削除で解除", "オフ可\n管理者が組織で無効化可"),
+    ]
+    label_w = 92
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 138
+    pitch, box_h = 58, 48
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "過去の会話を思い出すのは3社のうち2社。Sakana Chatは今日からだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・ヘルプ・ブログ）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "OpenAI（ChatGPT）にも記憶機能はあるが、この記事を書いた環境からは公式ページを確認できなかった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「記載なし」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。</text>\n",
+    ]
+    headers = ["Sakana Chat", "Gemini（Google）", "Claude（Anthropic）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, sakana_v, gemini_v, claude_v in rows:
+        for line_no, line in enumerate(label.split("\n")):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n')
+        for i, val in enumerate((sakana_v, gemini_v, claude_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else "box-quiet"
+            tcls = "t-accent" if i == 0 else "t-sm"
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "Sakana Chat・Gemini（Google）・Claude（Anthropic）のメモリー機能を3項目で比べた表。"
+        "過去の会話を含むか＝Sakana Chatは含まない（アップデート以降の会話のみ）、"
+        "Geminiは含む（過去チャットの記憶が前提）、Claudeは含められる（初期設定時に過去チャットから生成可）。"
+        "使えるアカウント＝Sakana Chatは制限の記載なし、Geminiは個人アカウントのみ・18歳以上で"
+        "職場/学校アカウントは不可、ClaudeはTeam/Enterpriseで始まりPro/Maxプランにも拡大。"
+        "オフ・管理＝Sakana Chatは設定画面でオフ可能で個別削除の記載はなし、Geminiはオン/オフ切替可能で"
+        "該当チャットを削除すると記憶も解除される、Claudeはオフ可能で管理者が組織単位で無効化できる。"
+        "OpenAI（ChatGPT）にも記憶機能はあるが、この記事を書いた環境からは公式ページを確認できなかった。"
+        "「記載なし」は機能が無いと明言されているのではなく、公式ページに書かれていない、という意味。"
+    )
+    (OUT / "sakana-chat-memory-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    sakana_chat_timeline_chart()
+    sakana_chat_model_lineup_chart()
+    sakana_chat_memory_grid_chart()
     gemini38live_benchmarks_chart()
     gemini38live_price_same_chart()
     gemini38live_vendor_grid_chart()

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="272" viewBox="0 0 720 272" role="img" aria-label="Sakana Chatに搭載されるモデルが増えた年表。2026年3月、Sakana Namazuのα版とともにSakana Chatを公開。2026年8月、Sakana Fuguを追加し、モデルを選べるようになり、コード実行・画像/文書添付にも対応。2026年9月17日（Fugu MaxのAPI公開の6日後）、搭載モデルをFugu Maxに切替え、会話の好みを次回に引き継げるメモリー機能を追加した。8月のアップデートの正確な日付は発表ページに記載がない。Namazuは9月の更新後も引き続き使え、メモリー機能はNamazu・Fugu Maxの両方が対象。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="272"/>
+<text class="t-strong" x="18" y="26">Sakana ChatにFugu Maxが届くまで、API公開から6日</text>
+<text class="t-sm" x="18" y="45">Sakana Chatは2026年3月にNamazuのα版として始まり、8月にFuguが加わり、9月17日にFuguがFugu Maxへ切り替わった。</text>
+<text class="t-sm" x="18" y="64">6日はFugu MaxのAPI発表（9月11日）からこの更新までの暦日の引き算です。</text>
+<line class="line" x1="26" y1="96" x2="26" y2="216"/>
+<circle class="box-quiet" cx="26" cy="96" r="7"/>
+<text class="t-xs" x="50" y="88">2026年3月</text>
+<text class="t-strong" x="50" y="106">Sakana Chatを公開</text>
+<text class="t-sm" x="50" y="123">Sakana Namazuのα版とともに提供開始</text>
+<circle class="box-quiet" cx="26" cy="156" r="7"/>
+<text class="t-xs" x="50" y="148">2026年8月</text>
+<text class="t-strong" x="50" y="166">Sakana Fuguを追加</text>
+<text class="t-sm" x="50" y="183">モデルを選べるようになり、コード実行・画像/文書添付にも対応</text>
+<circle class="box-accent" cx="26" cy="216" r="7"/>
+<text class="t-xs" x="50" y="208">2026年9月17日（API公開の6日後）</text>
+<text class="t-strong" x="50" y="226">Fugu Maxとメモリーを追加</text>
+<text class="t-sm" x="50" y="243">搭載モデルをFugu Maxに切替、会話の好みを次回に引き継げるように</text>
+<text class="t-xs" x="18" y="238">※ 8月のアップデートの正確な日付は発表ページに記載がなく「8月のアップデートでは」とだけ書かれています。</text>
+<text class="t-xs" x="18" y="256">※ Namazuは9月の更新後も引き続き使えます（メモリー機能はNamazu・Fugu Max両方が対象）。</text>
+</svg>

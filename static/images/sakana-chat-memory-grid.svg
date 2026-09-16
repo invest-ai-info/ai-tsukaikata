@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="336" viewBox="0 0 720 336" role="img" aria-label="Sakana Chat・Gemini（Google）・Claude（Anthropic）のメモリー機能を3項目で比べた表。過去の会話を含むか＝Sakana Chatは含まない（アップデート以降の会話のみ）、Geminiは含む（過去チャットの記憶が前提）、Claudeは含められる（初期設定時に過去チャットから生成可）。使えるアカウント＝Sakana Chatは制限の記載なし、Geminiは個人アカウントのみ・18歳以上で職場/学校アカウントは不可、ClaudeはTeam/Enterpriseで始まりPro/Maxプランにも拡大。オフ・管理＝Sakana Chatは設定画面でオフ可能で個別削除の記載はなし、Geminiはオン/オフ切替可能で該当チャットを削除すると記憶も解除される、Claudeはオフ可能で管理者が組織単位で無効化できる。OpenAI（ChatGPT）にも記憶機能はあるが、この記事を書いた環境からは公式ページを確認できなかった。「記載なし」は機能が無いと明言されているのではなく、公式ページに書かれていない、という意味。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="336"/>
+<text class="t-strong" x="18" y="26">過去の会話を思い出すのは3社のうち2社。Sakana Chatは今日からだけ</text>
+<text class="t-sm" x="18" y="45">各社の公式ページ（発表・ヘルプ・ブログ）に書かれている範囲だけを並べた。</text>
+<text class="t-sm" x="18" y="64">OpenAI（ChatGPT）にも記憶機能はあるが、この記事を書いた環境からは公式ページを確認できなかった。</text>
+<text class="t-sm" x="18" y="83">「記載なし」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。</text>
+<text class="t-accent" x="118.0" y="124">Sakana Chat</text>
+<text class="t-accent" x="317.3" y="124">Gemini（Google）</text>
+<text class="t-accent" x="516.7" y="124">Claude（Anthropic）</text>
+<text class="t-sm" x="18" y="156">過去の会話を</text>
+<text class="t-sm" x="18" y="172">含むか</text>
+<rect class="box-accent" x="110.0" y="138" width="193.3" height="48" rx="4"/>
+<text class="t-accent" x="118.0" y="156">含まない</text>
+<text class="t-accent" x="118.0" y="172">アップデート以降のみ</text>
+<rect class="box-quiet" x="309.3" y="138" width="193.3" height="48" rx="4"/>
+<text class="t-sm" x="317.3" y="156">含む</text>
+<text class="t-sm" x="317.3" y="172">過去チャットが前提</text>
+<rect class="box-quiet" x="508.7" y="138" width="193.3" height="48" rx="4"/>
+<text class="t-sm" x="516.7" y="156">含められる</text>
+<text class="t-sm" x="516.7" y="172">初期設定時に生成可</text>
+<text class="t-sm" x="18" y="214">使える</text>
+<text class="t-sm" x="18" y="230">アカウント</text>
+<rect class="box-accent" x="110.0" y="196" width="193.3" height="48" rx="4"/>
+<text class="t-accent" x="118.0" y="214">制限の記載なし</text>
+<rect class="box-quiet" x="309.3" y="196" width="193.3" height="48" rx="4"/>
+<text class="t-sm" x="317.3" y="214">個人のみ・18歳以上</text>
+<text class="t-sm" x="317.3" y="230">職場/学校は不可</text>
+<rect class="box-quiet" x="508.7" y="196" width="193.3" height="48" rx="4"/>
+<text class="t-sm" x="516.7" y="214">Team/Enterprise</text>
+<text class="t-sm" x="516.7" y="230">Pro/Maxにも拡大</text>
+<text class="t-sm" x="18" y="272">オフ・管理</text>
+<rect class="box-accent" x="110.0" y="254" width="193.3" height="48" rx="4"/>
+<text class="t-accent" x="118.0" y="272">設定でオフ可</text>
+<text class="t-accent" x="118.0" y="288">個別削除の記載なし</text>
+<rect class="box-quiet" x="309.3" y="254" width="193.3" height="48" rx="4"/>
+<text class="t-sm" x="317.3" y="272">オン/オフ切替可</text>
+<text class="t-sm" x="317.3" y="288">該当チャット削除で解除</text>
+<rect class="box-quiet" x="508.7" y="254" width="193.3" height="48" rx="4"/>
+<text class="t-sm" x="516.7" y="272">オフ可</text>
+<text class="t-sm" x="516.7" y="288">管理者が組織で無効化可</text>
+</svg>

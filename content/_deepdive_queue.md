@@ -631,10 +631,39 @@
     pytest 646 passed・build 184ファイル）
   - 2026-09-15 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking」）
 
-- [ ] https://sakana.ai/chat-fugumax/
+- [x] https://sakana.ai/chat-fugumax/
+  - →保管: ✅ **2026-09-16: 公開した** → `content/tools/sakana-chat-memory.md`
+    （`sakana.ai` に到達（200）。図3枚（`sakana-chat-timeline` / `sakana-chat-model-lineup` /
+    `sakana-chat-memory-grid`）。出典6件すべて取得成功。`check_numbers.py` は照合対象0個
+    （$・%が本文に無い題材）。pytest 646 passed・build 187ファイル）
   - 2026-09-16 自動追記（major・Sakana AI「Sakana Chatをアップデート：最新モデルに刷新、メモリー機能を追加」）
+  - 📌 記事の芯＝**メモリーで記憶されるのは更新以降の会話だけで、過去の会話は対象外**と発表ページに
+    明記されている。Google Gemini（過去チャットの記憶が前提）・Anthropic Claude（初期設定時に過去
+    チャットから生成可）と対比すると、Sakana Chatだけが過去に遡らない設計だと分かった。
+  - ⚠️ **Sakana Chat自体の料金ページ（`chat.sakana.ai`）は経路遮断**（`CONNECT tunnel failed, response 403`）。
+    `sakana.ai`（メインドメイン）は到達できるが、`chat.` サブドメインは別扱い。次にこのドメインを
+    叩く行が来たら再試行対象にすること。API向けの `sakana.ai/fugu/`（Fugu/Fugu Ultra/Fugu Maxの
+    料金FAQ）は到達できたが、Sakana Chat自体の価格とは別物のため記事では使っていない。
+  - ⚠️ OpenAI（ChatGPT）のメモリー機能は、公式ニュースRSS（`openai.com/news/rss.xml`）で見出しと
+    日付（2024-02-13・2026-06-04）だけ確認。本文（`openai.com`・`help.openai.com`・`chatgpt.com`）は
+    今回もすべてbot判定の403で、詳細は比較に使っていない。
 
 ## 処理済み
+
+- https://sakana.ai/chat-fugumax/ → **公開済み** content/tools/sakana-chat-memory.md（2026-09-16・公開）
+  - `sakana.ai` に到達（200）。図3枚（`sakana-chat-timeline` / `sakana-chat-model-lineup` /
+    `sakana-chat-memory-grid`）。出典6件すべて取得成功。`check_numbers.py` は**照合対象0個**
+    （本文に $・% が無い題材）。pytest 646 passed・build 187ファイル。
+  - 📌 記事の芯＝**Sakana Chatのメモリーは、更新以降の会話しか対象にしない**と発表ページに明記されている。
+    Google Gemini（過去チャットの記憶が前提）・Anthropic Claude（初期設定時に過去チャットから生成可）と
+    対比すると、3社のうちSakana Chatだけが過去に遡らない設計だった。搭載モデルは2026年9月11日にAPI
+    公開されたばかりの Fugu Max に切り替わり（Chatへの搭載はその6日後）、旧モデル「Sakana Fugu」は
+    2026年8月に加わってから短い期間で置き換わって消えた。
+  - ⚠️ Sakana Chat自体の料金ページ（`chat.sakana.ai`）は経路遮断（`CONNECT tunnel failed`）で到達できず、
+    料金は「発表ページに記載なし」のまま。`sakana.ai`（メインドメイン）とは別扱いなので、次にこの
+    サブドメインを叩く行が来たら再試行対象にすること。
+  - ⚠️ OpenAI（ChatGPT）のメモリー機能は、公式ニュースRSSで見出しと日付だけ確認できたが、本文
+    （`openai.com`・`help.openai.com`・`chatgpt.com`）は今回もすべてbot判定の403だった。
 
 - https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/ → **公開済み** content/tools/gemini-3-8-live.md（2026-09-15・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`gemini38live-benchmarks` /
