@@ -73,6 +73,39 @@
   `tools/check_numbers.py`＝出典0件（自己完結の実測記事のため対象なし、他の実測系記事と同様）。
 - 手順6＝`python -m tools.make_eyecatch`はこの後の push 直前に実行する（先に`git pull`する）。
 
+### 2026-09-16（自動化・ループ優先の枠。専任の別ルーティン）
+- 公開: 1本（one-rule-does-not-fit-every-sender）。
+- 実測: `claude --safe-mode --tools ""` CLI（新規サブプロセスを毎回起動。CLAUDE.md・skills・
+  plugins・履歴を全部無効化）。架空の取引先5社×5件を2セット（計50件）に、緊急の伝え方の型を
+  社ごとに変えて（件名の慣習語／本文冒頭の一文／返信期限の日付だけ／毎回付く形骸化した慣習語）
+  仕込んだ。「件名に緊急を示す言葉があれば教えて」（材料2本×各2回＝4回）→「まず各社の書き方の
+  癖を確認してから」（材料2本×各2回＝4回）→軽い注意版（材料1のみ×2回）→表形式に強制した3版
+  （件名だけ基準・癖確認版・軽い注意版、材料1のみ各×2回＝計6回）で計16回。
+- 手順0＝`git fetch origin`後、HEADがdetachedだったため`git checkout main`→`git reset --hard origin/main`
+  でorigin/mainに合わせた（ローカルmainが25コミット遅れていた）。
+- 手順1＝「自動化・ループ優先」節の未処理2件のうち、最上位の「複数の相手を1つの基準で仕分ける」を
+  選んだ。もう1件（監視対象を1件増やして初期化する）は今夜は着手せず`- [ ]`のまま残す。
+- 手順2＝台帳（5,213行）を全部読み、実測後に新しい教訓★165（1つの基準は「ある特定の相手の型」を
+  前提にしており、型に合わない相手では見落とし、型が慣習化した相手では誤検知という2種類の壊れ方を
+  する）・★166（AIは自分から矛盾に気づいて注意書きを添えるが、要求した一覧・表そのものは直らない。
+  出力を表だけに強制すると注意書きという逃げ場が消え、欠陥がそのまま値として固定される）を追記。
+- 手順3＝`grep -h '^## ' content/recipes/*.md | sort -u`は共通テンプレートのみで衝突判定にならず、
+  `urgent-wording-does-not-catch-more`（読む側の念押しが変数）・`tilt-direction-per-judgment`
+  （同一判定内での倒れ方の漏れが核）・`unseen-does-not-mean-new`（監視対象1件の過去分混入が核）を
+  読み直して核が別であることを確認し、3本と相互リンクした。
+- 正解データ（材料A: A1,A4,B1,B3,C1,C3,D2,D4／材料B: F1,F4,G1,G3,H1,H3,I2,I4）を先に固定し、
+  各回の生回答から一次回答の一覧・表を書き出してPythonの集合演算（`check.py`）で機械照合した。
+  材料B・指示文2・2回目の回答で通し番号の書き間違いを1件検出したが、内容（件名の文字列）は
+  正しく判定には影響しないことを確認し、証拠ファイルに注記した（台帳12番の実践）。
+- 指示文6個（うち2個は同一文言を材料違いで再掲）・図1枚（`one_rule_does_not_fit_every_sender_chart`・
+  座標は計算・`src/figures.py`のcheck_svgでエラー0件）・内部リンク4本（`urgent-wording-does-not-catch-more`・
+  `tilt-direction-per-judgment`・`unseen-does-not-mean-new`・`github-actions-daily-cron`）。
+  マーカーは通常5個・warn5個（上限13個・警告5個ちょうど）。3本の既存記事側にもこの記事への
+  相互リンクを追記済み。
+- `python -m pytest -q`＝646 passed／`python -m src.build`＝ビルド完了（185ファイル）／
+  `tools/check_numbers.py`＝出典0件（自己完結の実測記事のため対象なし、他の実測系記事と同様）。
+- 手順6＝`python -m tools.make_eyecatch`はこの後の push 直前に実行する（先に`git pull`する）。
+
 ### 2026-09-15（自動化・ループ優先の枠。専任の別ルーティン）
 - 公開: 1本（record-date-does-not-roll-back）。
 - 実測: `claude --safe-mode --tools ""` CLI（新規サブプロセスを毎回起動。CLAUDE.md・skills・

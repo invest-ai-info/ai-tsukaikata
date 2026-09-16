@@ -20771,6 +20771,101 @@ def urgent_wording_detection_chart() -> None:
     )
 
 
+def one_rule_does_not_fit_every_sender_chart() -> None:
+    """件名だけを基準にすると、本文にしか緊急のサインがない相手の分がまるごと消える（2026-09-16）。
+
+    実測。架空の取引先5社×5件を2セット（材料1・材料2、計50件）用意し、社ごとに
+    緊急の伝え方の型を変えた（件名の慣習語／本文冒頭の一文／返信期限の日付だけ／
+    毎回付く形骸化した慣習語）。「件名に緊急を示す言葉があれば教えて」という1つの
+    基準だけでは、材料2本×各2回＝4回とも、正解8件中4件しか検出できず、誤って
+    3件を緊急に含めた。「まず各社の書き方の癖を確認してから」と1文加えると、
+    4回とも8件全部を過不足なく検出できた。
+    """
+    rows = [
+        ("材料1・件名だけを基準（1回目）", 4, 8),
+        ("材料1・件名だけを基準（2回目）", 4, 8),
+        ("材料1・まず癖を確認（1回目）", 8, 8),
+        ("材料1・まず癖を確認（2回目）", 8, 8),
+        ("材料2・件名だけを基準（1回目）", 4, 8),
+        ("材料2・件名だけを基準（2回目）", 4, 8),
+        ("材料2・まず癖を確認（1回目）", 8, 8),
+        ("材料2・まず癖を確認（2回目）", 8, 8),
+    ]
+    label_w = 300
+    cell_w, cell_h, gap = 140, 28, 8
+    top = 130
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "件名だけを基準にすると、真の緊急8件中4件しか検出できなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の取引先5社×5件を2セット用意し、社ごとに緊急の伝え方の型を変えた"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "（件名の慣習語／本文冒頭の一文／返信期限の日付だけ／毎回付く形骸化した慣習語）。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、真の緊急8件のうち正しく検出できた件数（材料2本×各2回＝4回の内訳）。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 件検出"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 68
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 20}">'
+        "件名だけを基準にした4回は、どれも本文にしか緊急のサインがない相手の分（各4件）を</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "まるごと見落とし、逆に毎回【至急】を付ける相手の分（各3件）を誤って含めた（誤検知）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 56}">'
+        "「まず癖を確認してから」の1文を足すと、4回とも過不足なく8件全部を検出した。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "複数の取引先からの連絡に緊急度を1つの基準で仕分けたとき、真の緊急8件のうち"
+        "正しく検出できた件数を、材料2本×各2回（計8回）の内訳で比べた図。「件名に"
+        "緊急を示す言葉があれば教えて」という件名だけを基準にした指示では、材料1・"
+        "材料2とも1回目2回目ともに4/8件しか検出できず（4回とも同じ4件を見落とし、"
+        "同じ3件を誤って緊急に含めた）。「相手によって緊急の伝え方が違うかもしれない"
+        "ので、まず各社の書き方の癖を確認してから」と1文加えた指示では、材料1・"
+        "材料2とも1回目2回目ともに8/8件で過不足なく検出できた。"
+    )
+    (OUT / "one-rule-does-not-fit-every-sender.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def buried_instruction_still_obeyed_chart() -> None:
     """4つの埋め込み指示のうち、従った痕跡が出た回数を比べる（2026-09-12）。
 
@@ -21934,4 +22029,5 @@ if __name__ == "__main__":
     urgent_wording_detection_chart()
     survey_condition_blends_in_chart()
     record_date_does_not_roll_back_chart()
+    one_rule_does_not_fit_every_sender_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
