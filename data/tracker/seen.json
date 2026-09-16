@@ -68,6 +68,17 @@
       "uid": "9a04ae592b56881c",
       "url": "https://openai.com/index/unlocking-new-ways-of-working",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes.",
+      "title": "How to connect AI usage to business value",
+      "uid": "b06b2ddd4e965ade",
+      "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -1760,6 +1771,7 @@
     "b0482341b4ee07ac": "2026-08-22T13:02:41.877901+00:00",
     "b04d60c62b8219c5": "2026-09-11T01:08:41.487408+00:00",
     "b05a2a9f785b5469": "2026-08-26T03:27:09.606981+00:00",
+    "b06b2ddd4e965ade": "2026-09-16T20:11:22.250824+00:00",
     "b087564def82e831": "2026-08-26T10:53:12.058332+00:00",
     "b08c187708b668f4": "2026-08-19T23:40:28.318168+00:00",
     "b092e9116327a843": "2026-08-14T05:06:15.076052+00:00",

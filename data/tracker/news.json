@@ -41,6 +41,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-16T20:11:22.250824+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes.",
+      "summary_ja": "AI利用の状況分析で事業成果につなげる方法を紹介\nChatGPT WorkやCodexの分析ツールが役立つ\n利用状況や費用、研修ニーズを把握し導入を支援",
+      "summary_source": "gemini",
+      "title": "How to connect AI usage to business value",
+      "uid": "b06b2ddd4e965ade",
+      "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-16T17:03:30.481149+00:00",
       "importance": "minor",
       "label": "OpenAI News",
