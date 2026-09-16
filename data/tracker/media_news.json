@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-16T17:03:30.481149+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-09-16T16:00:51+00:00",
+      "source_id": "media-publickey",
+      "summary": "コーディングAIエージェントを提供するDevinが、Devinがホストする仮想環境内でのmacOSの提供を開始しました。 Devinはこれまで仮想環境内でUbuntu LinuxおよびWindowsを提供しており、ここにmacOSが加わりま...",
+      "title": "Devinが仮想環境でmacOSの提供開始。Macの実機不要でDevinがコード生成、テスト、デバッグ、実行、AppStore配信前のベータ公開まで実行",
+      "uid": "61d5ef96373ee5af",
+      "url": "https://www.publickey1.jp/blog/26/devinmacosmacdevinappstore.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-16T17:03:30.481149+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-16T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Hermes Agentでは以前からOllamaやllama.cppなどで起動したローカルAIモデルを利用できましたが、2026年9月上旬のアップデートでHermes Agent自身がllama.cppやモデルのダウンロード・管理まで行う「Local Models」機能が利用可能になりました。今回はLocal Models機能を使ってローカルでAIモデルを実行してみます。 続きを読む...",
+      "title": "AIエージェント「Hermes Agent」新機能「Local Models」でローカルAIモデル「Qwen3.8 27B」を直接動かしてみた、16GBのVRAMでも量子化で高速動作",
+      "uid": "47766db25bd6b1e0",
+      "url": "https://gigazine.net/news/20260916-hermes-agent-local-ai-model/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-16T17:03:30.481149+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-16T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "アプリの操作画面や画像、保存データを1つのファイルにまとめ、文書のように持ち運べる無料ツール「Capsule」が公開されています。クラウドやアカウント登録を必要とせず、オフラインで利用できることが特徴です。Windows・macOS・Linux向けに提供されており、Android・iOSへの対応も予定されています。 続きを読む...",
+      "title": "AIで作ったアプリをUIもデータも単一ファイルで持ち運べる無料ツール「Capsule」、クラウド不要で完全オフラインで動作",
+      "uid": "d6b35e1952d7f61a",
+      "url": "https://gigazine.net/news/20260916-capsule/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-16T11:42:05.182927+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "d806fbb7afb08090",
       "url": "https://ai.watch.impress.co.jp/docs/news/2139897.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-10T06:27:42+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "VAIOは、独自のマルチフリップ機構を採用したトリプルスタイルPC「VAIO T」（個人向け）および「VAIO T work」（法人向け）を発表した。9月18日10時より順次受注を開始し、ノジマ店舗での発売日は9月22日、VAIO直営オンラインストアは9月30日となっている。",
-      "title": "VAIO、AI時代の新しいPC体験とは？トリプルスタイルPC「VAIO T」",
-      "uid": "b60235c0897f8a7b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139905.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-10T06:03:57+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTは9月9日、6月10日に組成を発表した「IOWN AI Fund」が、初の投資として、AIデータセンター向けのプログラマブル光ネットワーク技術を開発するiPronicsに出資したと発表した。同ファンドは、総額1億2,500万米ドルのシリーズB資金調達に参画した。この資金調達には、NVIDIAを含む新規・既存投資家が参加している。",
-      "title": "NTT、次世代AIインフラとIOWNエコシステムの構築を推進 NVIDIAらとともに総額1億2,500万米ドルの資金調達に参画、iPronicsへ出資",
-      "uid": "05ad998c1b652ab4",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139862.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-10T05:37:21+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicの経済チームがAIの米国経済への影響を3つのシナリオで予測。AIが知識労働の半分を担えても失業率は歴史的範囲内で、知識労働者の賃金は横ばい。急速に普及する「極端」なシナリオに限り失業率は11.9％に上がる。",
-      "title": "結局、AIはどれだけ人間の労働を代替し給料を下げるのか　Anthropicが提示する「米国経済3つのシナリオ」",
-      "uid": "6d9c43c32e6f1046",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001363/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

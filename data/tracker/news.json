@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-16T17:03:30.481149+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely.",
+      "summary_ja": "高齢者向けのAI体験講座が開催される。\nOpenAIとAARPが協力し、ChatGPTを学べる。\nアメリカの10都市で1,000人を対象に無料実施。",
+      "summary_source": "gemini",
+      "title": "Helping older adults use AI in everyday life",
+      "uid": "5541bee768deee17",
+      "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-14T19:25:37.289624+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",
@@ -11,6 +25,34 @@
       "uid": "dbf59bc4ee052860",
       "url": "https://sakana.ai/inside-product-team/",
       "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-09-16T17:03:30.481149+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
+      "summary_ja": "OpenAIがAIを使った広告の新サービスを発表。\n新機能「Sponsored Agents」や広告主向けツールを提供。\nHubSpotやShopifyと連携し利用可能になる。",
+      "summary_source": "gemini",
+      "title": "Reimagining advertising with AI",
+      "uid": "11ed23e17e1582ba",
+      "url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-16T17:03:30.481149+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work.",
+      "summary_ja": "AIが仕事の新しい使い方を生み出している。\nOpenAIの調査で、従来の役割を超えた活用が判明。\nAIが業務の一部として定着しつつある。",
+      "summary_source": "gemini",
+      "title": "How workers are unlocking new ways of working",
+      "uid": "9a04ae592b56881c",
+      "url": "https://openai.com/index/unlocking-new-ways-of-working",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-15T21:28:25.537882+00:00",
