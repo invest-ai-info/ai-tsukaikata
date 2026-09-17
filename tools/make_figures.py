@@ -20866,6 +20866,103 @@ def one_rule_does_not_fit_every_sender_chart() -> None:
     )
 
 
+def reinitialize_list_does_not_stay_scoped_chart() -> None:
+    """「一覧をいったん初期化して」は、新対象自身の扱いを8回中5回間違えた（2026-09-17）。
+
+    実測。架空のSNS対応待ち一覧・取引先未対応一覧の2本に、新しい監視対象を1件追加する
+    場面を仕込んだ（過去分7件、いずれも本日分・今週分は0件）。追加した対象の名前を
+    主語にして「〇〇を追加したので、初期化して」と頼む4回は4回とも、既存の対象を
+    そのまま・新対象を正しく0件にできた。一方、対象名を出さず「この一覧をいったん
+    初期化して」とだけ頼む8回では、正しく0件にできたのは3回のみ。残り5回のうち4回は
+    新対象の過去分7件をそのまま対応待ちとして数え、1回は新対象だけでなく既存5件すべて
+    まで0件に巻き戻った。範囲を明示する一文（詳しい版・短い版・対象名だけ挙げる版）は
+    合わせて12回とも正しく戻り、同時に2件追加した場合でも範囲明示は2回とも崩れなかった。
+    """
+    rows = [
+        ("対象名を主語にする（材料2本×各2回）", 4, 4),
+        ("「この一覧をいったん初期化して」（材料2本×各4回）", 3, 8),
+        ("範囲を明示する一文を足す（材料2本×各4回）", 8, 8),
+        ("短い一言・他は変更しないで（材料2本×各2回）", 4, 4),
+        ("対象名だけ挙げて0件にして（材料2本×各2回）", 4, 4),
+        ("同時に2件追加・範囲明示（材料1本×2回）", 2, 2),
+    ]
+    label_w = 340
+    cell_w, cell_h, gap = 150, 32, 10
+    top = 160
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "対象名を出さずに「一覧を初期化して」と頼むと、8回中5回で数え違えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のSNS対応待ち一覧・取引先未対応一覧の2本に、新しい監視対象を1件追加する"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "場面を仕込んだ（過去分7件、本日分・今週分はどちらも0件）。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、新対象を正しく「対応待ち0件」にでき、かつ既存の対象を壊さなかった回数。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 正しく処理"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 68
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 20}">'
+        "崩れた5回の中身は2通り。4回は新対象の過去分7件をそのまま対応待ちに数え、</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "1回は新対象だけでなく既存5件（3・0・5・2・1件）まで、まとめて0件に巻き戻った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 56}">'
+        "範囲を一文で明示するか対象名だけ挙げれば、残り18回は同時追加も含め崩れなかった。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "新しい監視対象を1件追加する場面で、「初期化」の頼み方6通りを比べたマス目。"
+        "追加した対象の名前を主語にして「〇〇を追加したので、初期化して」と頼んだ"
+        "材料2本×各2回＝4回は4/4で、新対象を正しく対応待ち0件にでき、既存の対象も"
+        "壊れなかった。対象名を出さず「この一覧をいったん初期化して」とだけ頼んだ"
+        "材料2本×各4回＝8回では3/8にとどまり、残り5回のうち4回は新対象の過去分7件を"
+        "そのまま対応待ちとして数え、1回は既存5件（3・0・5・2・1件）までまとめて0件に"
+        "巻き戻った。範囲を明示する一文を足した詳しい版（8回）、他は変更しないでと"
+        "一言足す版（4回）、対象名だけ挙げて0件にしてと頼む版（4回）、同時に2件"
+        "追加して範囲を明示した版（2回）は、合わせて18回とも正しく処理できた。"
+    )
+    (OUT / "reinitialize-list-does-not-stay-scoped.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def buried_instruction_still_obeyed_chart() -> None:
     """4つの埋め込み指示のうち、従った痕跡が出た回数を比べる（2026-09-12）。
 
@@ -22310,4 +22407,5 @@ if __name__ == "__main__":
     survey_condition_blends_in_chart()
     record_date_does_not_roll_back_chart()
     one_rule_does_not_fit_every_sender_chart()
+    reinitialize_list_does_not_stay_scoped_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
