@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-17T18:17:25.881543+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-17T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIコーディングエージェントは同じAIモデルを使っていても、モデルを動かすハーネスによって費用や性能が変わる可能性があります。カリフォルニア大学バークレー校とAIランキングサイト「Arena」の共同研究チームは、7つのモデルと3つのハーネスを組み合わせた21通りを2種類のベンチマークで比較しました。その結果、タスクの成功率は大きく変わらない一方、費用には最大5倍の差が生じ、モデル本来の提供元とは…",
+      "title": "AIコーディングエージェントにとってハーネスはどれほど重要なのか？",
+      "uid": "de42b88d7f0f1a60",
+      "url": "https://gigazine.net/news/20260917-harnesstax-ai-coding-agents/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-17T18:17:25.881543+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-17T13:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIのテストモデルによるHugging Faceへの攻撃事件では、OpenAIが対応の一環としてAI監査組織「METR(Model Evaluation and Threat Research：モデルの評価と脅威の調査)」に監査を依頼しています。また、AnthropicもAIの安全性強化のためにMETRと提携したことを発表しています。このMETRが一体どんな組織なのかについて、代表を務め…",
+      "title": "OpenAIのHugging Face攻撃事件などで調査を担当しているAI監査組織「METR」とは何なのか？",
+      "uid": "a57a994ca51e1960",
+      "url": "https://gigazine.net/news/20260917-model-evaluation-and-threat-research/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-17T18:17:25.881543+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T12:55:04+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "九州国立博物館は特別展「卑弥呼の鏡」のポスターとチラシのイラスト制作において、一部に生成AIを使用していることが分かったと報告した。当初、外部からの問い合わせに対して「使用していない」と回答していた。",
+      "title": "九州国立博物館、特別展ポスターに生成AI使用　当初「使用していない」と説明",
+      "uid": "a5f4bec7ce49b8b8",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/17/2000001595/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-17T13:31:44.679361+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2362,42 +2398,6 @@
       "title": "Genspark、資料作成に特化した初のAIモデル「Gen-1 Slides」",
       "uid": "5ae954340f24e8f5",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140166.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-11T03:21:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが音声エージェントの話し方や動作をより細かく制御できる音声モデル「GPT-Live-1」のAPIを発表しました。開発者が用途に合わせて音声エクスペリエンスを制御することができます。 続きを読む...",
-      "title": "OpenAIが音声会話AI「GPT-Live-1」のAPIをリリース",
-      "uid": "cace6007f2501d29",
-      "url": "https://gigazine.net/news/20260911-gpt-live-1/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-11T03:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIがAIエージェントの構築に役立つ「Agents API」のパブリックベータ版をリリースしました。 続きを読む...",
-      "title": "Codexと同じハーネスを使ってAIエージェントを作れる「Agents API」が登場",
-      "uid": "bdad6f3dc85eea03",
-      "url": "https://gigazine.net/news/20260911-openai-agents-api/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T02:45:42+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LINEヤフーは9月11日、AIエージェント「Agent i」において、新機能「タスク機能」の提供を開始した。",
-      "title": "趣味や仕事の最新情報を自動追跡。LINEヤフーのAI「Agent i」に新機能 気になる商品の値下げも通知",
-      "uid": "2d536a39ec367726",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140121.html",
       "vendor": "Impress AI Watch"
     }
   ]

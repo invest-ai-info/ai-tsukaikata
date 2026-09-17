@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-17T18:17:25.881543+00:00",
+      "importance": "major",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-17T15:56:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "The Life Sciences Verification Program (LSVP) gives life science professionals access to Claude Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related wo…",
+      "summary_ja": "AI「Claude」が生命科学分野向けに提供される\n専門家は「Mythos」「Opus」などモデルを利用可能。\n生物学関連の作業で利用制限が緩和される。",
+      "summary_source": "gemini",
+      "title": "Introducing the Life Sciences Verification Program",
+      "uid": "335cac6c2b15e967",
+      "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-17T01:28:36.895933+00:00",
       "importance": "minor",
       "label": "Claude Code",

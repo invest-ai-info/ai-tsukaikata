@@ -648,6 +648,9 @@
     日付（2024-02-13・2026-06-04）だけ確認。本文（`openai.com`・`help.openai.com`・`chatgpt.com`）は
     今回もすべてbot判定の403で、詳細は比較に使っていない。
 
+- [ ] https://www.anthropic.com/news/life-sciences-verification-program
+  - 2026-09-17 自動追記（major・Anthropic「Introducing the Life Sciences Verification Program」）
+
 ## 処理済み
 
 - https://sakana.ai/chat-fugumax/ → **公開済み** content/tools/sakana-chat-memory.md（2026-09-16・公開）
