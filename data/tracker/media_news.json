@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-17T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 Claudeの「アーティファクト」って何？ Webや提案書の「ひな形」に使ってみよう",
+      "uid": "aec1c71f269ff5b0",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2140975.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T21:46:04+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NVIDIAとGoogleは新興企業Emerald AIとともに、電力網の状況に応じて消費電力を動的に制御する「柔軟なデータセンター」の普及を目指す新団体「AEMA」を設立した。送電網の容量不足や住民の電気料金高騰懸念がAIインフラ拡充の壁となる中、計算処理の分散や専用ソフトを活用し、既存電力網の効率運用と接続期間の短縮を図る。",
+      "title": "NVIDIA、Google、Emerald AIがAIデータセンターの電力消費調整を目指すアライアンス設立　Anthropicも参加",
+      "uid": "492c0b6edba21cbe",
+      "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001599/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-17T21:27:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AIが人類を絶滅させかねないという「終末論」が、一部の専門家だけの議論ではなく、広く注目を集めるようになっている。米Anthropicと米Googleの研究者が相次いで退職し、最先端AIを開発する企業が、人類を危険にさらしながら競争を続けていると警告したためだ。だが、こうした「実存的リスク」をめぐる議論は、AIを安全にするどころか、大手テック企業の力を強める方向に働いている。",
+      "title": "「AIで人類絶滅論」がAnthropicらの権力を強化　「規制される者が規制を作る」構図に",
+      "uid": "64e83f478ba5ddca",
+      "url": "https://japan.cnet.com/article/35252760/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-17T18:17:25.881543+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2362,42 +2398,6 @@
       "title": "OpenAI、金融機関向け「ChatGPT for Financial Services」を発表",
       "uid": "66693cbbd8679635",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140178.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-11T03:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "NASAとIBMは、アルテミス計画などの月探査を支援するためのAIモデル「NASA-IBM Lunar Foundation Model」を一般公開した。",
-      "title": "NASAとIBM、月探査向けAIモデルをオープンソースで公開",
-      "uid": "346a1db9f7d9c128",
-      "url": "https://japan.cnet.com/article/35252541/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-11T03:34:06+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "フィジカルAI・ロボットのデータファクトリー「J-HRTI 関東データファクトリー」が千葉県習志野市内で稼働を開始した。運営するのは業種の異なる民間5社のコンソーシアム「J-HRTI」で、集めたデータは参画企業が共同で使う。実際、データはどう集められているのか。実機写真を基に解説する。",
-      "title": "フィジカルAI向け「データ収集工場」に\"潜入\"　実機写真で学習データ生成の流れを解説",
-      "uid": "ba68d2f814915230",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/11/2000001402/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T03:28:28+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Gensparkは、同社初のAIモデル「Gen-1 Slides」を発表した。このモデルは、AIスライドの「Standard（スタンダード）モード」のデフォルトモデルとなる。同機能は、個人・法人を問わず、すべてのプランで現行価格のまま利用できる。",
-      "title": "Genspark、資料作成に特化した初のAIモデル「Gen-1 Slides」",
-      "uid": "5ae954340f24e8f5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140166.html",
       "vendor": "Impress AI Watch"
     }
   ]

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-17T20:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "UN System Data Commons Data webpage",
+      "summary_ja": "国際機関のデータ探索が容易に\n「UN System Data Commons Data」ページ公開\n世界のデータをより簡単に利用可能に",
+      "summary_source": "gemini",
+      "title": "Making global data easier to explore",
+      "uid": "be59e38bff220dec",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-17T18:17:25.881543+00:00",
       "importance": "major",
       "label": "Anthropic 公式ニュース",
@@ -25,6 +39,34 @@
       "uid": "a52e12d79b83bda8",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-17T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Today, the world can’t see what’s going on inside AI labs. Anthropic is proposing new metrics that would give the public visibility into frontier AI development.",
+      "summary_ja": "AI開発状況の可視化が提案された\nAnthropicが新しい評価基準を提示\n一般の人も先端AIの進捗を確認可能に",
+      "summary_source": "gemini",
+      "title": "Measurements for understanding the pace of AI development inside frontier labs",
+      "uid": "253922528b2c71e2",
+      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-17T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work.",
+      "summary_ja": "法律業界向けAIサービスが発表\nOpenAIの「Astra for Law」が提供開始\n最先端AIと機密管理機能で業務効率化",
+      "summary_source": "gemini",
+      "title": "Introducing Astra for Law",
+      "uid": "ba87cf3180f1a4bc",
+      "url": "https://openai.com/index/astra-for-law",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-16T22:58:53.568048+00:00",
@@ -2200,6 +2242,18 @@
       "title": "qwen/qwen3.8-27b",
       "uid": "3380dbec625f2419",
       "url": "https://openrouter.ai/qwen/qwen3.8-27b",
+      "vendor": "Alibaba Qwen"
+    },
+    {
+      "first_seen": "2026-09-17T22:13:16.175456+00:00",
+      "importance": "minor",
+      "label": "Qwen 新モデル",
+      "published": "2026-08-14T15:55:10+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
+      "title": "qwen/qwen3.8-27b:free",
+      "uid": "e0e92fbfb33ca169",
+      "url": "https://openrouter.ai/qwen/qwen3.8-27b:free",
       "vendor": "Alibaba Qwen"
     },
     {
