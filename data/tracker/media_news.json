@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-16T23:05:35+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AnthropicがAIアシスタント「Claude」のチャットと作業環境「Claude Cowork」を統合した。簡単な対話から複数手順の複雑な作業までを1つの会話内で完結でき、文書作成「Claude Docs」やスライド作成機能も追加。ProやMax向けから段階的に展開する。",
+      "title": "Anthropic、Claudeの「チャット」と「Cowork」を統合　資料作成の「Docs」「Slides」も",
+      "uid": "ce38dade9b8f0e71",
+      "url": "https://www.itmedia.co.jp/news/article/2609/17/2000001565/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "三菱重工業とPreferred Networksが資本業務提携契約を締結。三菱重工はPFNに100億円を出資し、社会インフラや国家安全保障分野で機械・システムの知能化・自律化に向けたAI技術の共同開発を本格化する。",
+      "title": "三菱重工、インフラ・防衛向けAIでPFNと資本業務提携　100億円出資し共同開発",
+      "uid": "d0e6e6462e69c88e",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/17/2000001563/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、「Claude Code」でトークンを効率的に使用し、セッションから最大限の価値を引き出す方法を解説した。",
+      "title": "なぜ「Claude Code」で想定外のコストになるのか？　「トークン浪費」を防ぐポイントまとめ",
+      "uid": "e1b1712896affca7",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news030.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米国のNSA、CISA、FBIは、中国AI企業が米国のフロンティアモデルから組織的に「知識蒸留」を行っているとして共同勧告を公開した。プロキシ経由で推論機能などを抽出していると指摘し、対抗措置を推奨している。",
+      "title": "「中国AIがClaudeやGPTから数十億トークン抽出」　米当局が暴いた「知識蒸留」の実態",
+      "uid": "7879b783ab6ed088",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news038.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-16T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "千代田区は生成AIの全庁展開に着手し、年間で4000時間の業務削減を実現するという成果をあげている。同区のデジタル政策課 デジタル政策係長 岡本翼氏が、自治体における生成AI活用の現状と今後について語った。",
+      "title": "千代田区、生成AI全庁展開で「年間4000時間」を削減　次の一歩は「打倒・美しい紙の資料」、そのワケは？",
+      "uid": "a39442766fa76b24",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/17/news035.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-16T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIを支える半導体の多くを供給するのは、アメリカの半導体企業であるNVIDIAです。AIの普及に伴いNVIDIAの時価総額は上昇し続けており、2025年10月には世界で初めて5兆ドル(約780兆円)に到達しています。そんなNVIDIAが「AIの中央銀行と化している」と経済メディアのThe Economistが報じました。 続きを読む...",
+      "title": "NVIDIAはAIの中央銀行と化している",
+      "uid": "49466a258de720cc",
+      "url": "https://gigazine.net/news/20260917-nvidia-central-bank-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-16T22:58:53.568048+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2326,78 +2398,6 @@
       "title": "Anthropic、Claudeによる不正アクセス「4件目」を発表",
       "uid": "e91cda97b4a17675",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140002.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-09-10T09:23:08+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「Googleはもはやフロンティアモデルを持っていない」というX上の意見に対してGoogle DeepMindのエンジニアが「最新モデルはセキュリティでMythos超え」だと反論した。",
-      "title": "“Google弱体化説”にDeepMindエンジニアが反論　「最新モデルはセキュリティでMythos超え」、「Gemini 4」にも言及",
-      "uid": "9f51202f731ba1d4",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001381/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-10T09:16:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "シャープは、Android 16を搭載したオープンマーケット向けSIMフリースマートフォン「AQUOS wish6（SH-M36）」を9月17日より順次販売する。CPUは、MediaTek Dimensity 6300（オクタコア 2.4GHz×2 + 2.0GHz×6）、内蔵メモリは、RAM 4GB、ROM 128GB。Wi-Fiは、IEEE802.11a/b/g/n/acに対応する。",
-      "title": "SIMフリースマートフォン「AQUOS wish6」9月17日より順次販売",
-      "uid": "e8866e54c5a333e7",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139986.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-10T08:16:19+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「人生で初めてAIが面接に来た」――AIベンチャーKOWRO（コヲロ、東京都港区）の原田祐二CEOは、自身のXアカウントでこのような動画を公開した。",
-      "title": "まさかの「AIが面接に来た」　話し方に“違和感”　AIベンチャー代表が動画公開し注意喚起",
-      "uid": "de7a7ced1096e677",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001378/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-09-10T08:16:11+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "中国のAI開発会社DeepSeekは新モデル「DeepSeek-V4.1-Flash」を発表。新しいアーキテクチャや学習方法を採用することで、同社フラッグシップの「DeepSeek-V4-Pro」や米OpenAIの「GPT-5.6 Sol」、米Anthropicの「Claude Opus 5」などを一部超える性能を実現したとうたう。",
-      "title": "「DeepSeek-V4.1-Flash」発表　値上げから一転「より低コストでフラッグシップ超え」うたう",
-      "uid": "32c55a37a3fe6a70",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001374/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-10T08:10:30+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "DMM.comは、AIチャットサービス「DMMキャラトーク」において、新たに「ガンバード」と「戦国ブレード」の世界観を楽しめるストーリーチャットを追加する。追加日は「ガンバード」が9月10日、「戦国ブレード」が9月15日。",
-      "title": "彩京STG「ガンバード」「戦国ブレード」がAIチャット「DMMキャラトーク」に登場",
-      "uid": "5447a5c730545fcf",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139954.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-10T11:25:23.718331+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-10T07:38:29+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Google Cloudは9月10日、AI人材育成モデルの確立ならびに生成AIを活用した大学運営、学生・研究支援の高度化に向け、近畿大学と包括連携協定を締結した。",
-      "title": "近畿大学が約2万人に「Google AI Pro for Education」を導入 Google Cloudとともに「AIネイティブ大学」を目指す",
-      "uid": "aebebca31234e715",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2139903.html",
       "vendor": "Impress AI Watch"
     }
   ]

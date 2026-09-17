@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-17T01:28:36.895933+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-17T00:12:02+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a visible warning when memory usage is critical, with steps to free memory or restart safely Added CLAUDE_CODE_MCP_STARTUP_WAIT_MS to bound how long the first non-interactive tur…",
+      "title": "v2.1.274",
+      "uid": "a52e12d79b83bda8",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-16T22:58:53.568048+00:00",
       "importance": "minor",
       "label": "OpenAI News",
