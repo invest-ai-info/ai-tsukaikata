@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" role="img" aria-label="分割入金の完済判定を3つの条件で試した結果を並べた表。通常の分割払い（甲社・丁社・庚社の3件、素朴な聞き方3種×3回＝9回）は未入金と誤判定した回が0/9、二重計上した回も0/9。本当に一部（着手金）だけ入金されていて残金が未収の回（3回）も、未入金と誤判定した回・二重計上した回とも0/3で、「一部入金」として正しく区別した。分割の残金と無関係の一括請求がたまたま同額になり、摘要も会社名を欠くケース（3回）でも、誤判定・二重計上とも0/3だった。このケースでは、摘要が会社名でない入金について3回とも自分から「要確認」と添えた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="360"/>
+<text class="t-strong" x="18" y="26">分割入金を完済と結びつける誤判定・二重計上は、15回中0回だった</text>
+<text class="t-sm" x="18" y="45">架空の請求10件・入金明細12行で、着手金＋残金の2回払い案件を素朴に聞いた。</text>
+<text class="t-sm" x="18" y="64">残金がまだ届いていない本当の一部入金も、「未入金」と「一部入金」を取り違えなかった。</text>
+<text class="t-sm" x="18" y="83">残金と同額の別請求がたまたまぶつかっても、2件の入金を1件に付け替える誤りは0件。</text>
+<text class="t-sm" x="18" y="102">その代わり、摘要が会社名でない入金（フリコミ）は3回とも自分から「要確認」と添えた。</text>
+<text class="t-xs" x="230.0" y="146">未入金と誤判定した回</text>
+<text class="t-xs" x="405.0" y="146">二重計上した回</text>
+<text class="t-sm" x="18" y="180">通常の分割払い（9回）</text>
+<rect class="box-good" x="230" y="158" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="180">0/9</text>
+<rect class="box-good" x="405" y="158" width="165" height="34" rx="4"/>
+<text class="t-good" x="470.7" y="180">0/9</text>
+<text class="t-sm" x="18" y="224">本当に一部だけ未収（3回）</text>
+<rect class="box-good" x="230" y="202" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="224">0/3</text>
+<rect class="box-good" x="405" y="202" width="165" height="34" rx="4"/>
+<text class="t-good" x="470.7" y="224">0/3</text>
+<text class="t-sm" x="18" y="268">金額が衝突するケース（3回）</text>
+<rect class="box-good" x="230" y="246" width="165" height="34" rx="4"/>
+<text class="t-good" x="295.7" y="268">0/3</text>
+<rect class="box-good" x="405" y="246" width="165" height="34" rx="4"/>
+<text class="t-good" x="470.7" y="268">0/3</text>
+<text class="t-xs" x="18" y="323">※「二重計上」＝着手金・残金の2回の入金を、2件の別々の請求として数えた回。</text>
+<text class="t-xs" x="18" y="344">架空データでの実測（全15回）。生の返りは docs/evidence/ に全文置いてある。</text>
+</svg>

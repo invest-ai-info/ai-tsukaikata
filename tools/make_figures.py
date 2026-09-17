@@ -22135,10 +22135,89 @@ def sakana_chat_memory_grid_chart() -> None:
     )
 
 
+def installment_payment_reconciliation_chart() -> None:
+    """分割入金（着手金＋残金）が絡む入金消込を、素朴に聞いたときの誤判定と二重計上を数える。
+
+    実測（2026-09-17）。①通常の分割払い3件を含む請求一覧で素朴に聞いた回（版1〜3・
+    3回×3種＝9回）②同じ材料の1件だけ実際に着手金しか入金されていない回（3回）
+    ③分割の残金と無関係の一括請求がたまたま同額になり、摘要も会社名を欠く回（3回）。
+    """
+    cols = ["未入金と誤判定した回", "二重計上した回"]
+    rows = [
+        ("通常の分割払い（9回）", ["0/9", "0/9"]),
+        ("本当に一部だけ未収（3回）", ["0/3", "0/3"]),
+        ("金額が衝突するケース（3回）", ["0/3", "0/3"]),
+    ]
+
+    label_w = 230
+    cell_w, cell_h, gap = 165, 34, 10
+    top = 158
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "分割入金を完済と結びつける誤判定・二重計上は、15回中0回だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の請求10件・入金明細12行で、着手金＋残金の2回払い案件を素朴に聞いた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "残金がまだ届いていない本当の一部入金も、「未入金」と「一部入金」を取り違えなかった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "残金と同額の別請求がたまたまぶつかっても、2件の入金を1件に付け替える誤りは0件。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "その代わり、摘要が会社名でない入金（フリコミ）は3回とも自分から「要確認」と添えた。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, (label, cells) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + 22}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="box-good" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="t-good" x="{tx:.1f}" y="{y + 22}">{text}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 12 + 21 * 2 + 16
+    notes = [
+        ("t-xs", "※「二重計上」＝着手金・残金の2回の入金を、2件の別々の請求として数えた回。"),
+        ("t-xs", "架空データでの実測（全15回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "分割入金の完済判定を3つの条件で試した結果を並べた表。通常の分割払い（甲社・丁社・"
+        "庚社の3件、素朴な聞き方3種×3回＝9回）は未入金と誤判定した回が0/9、二重計上した回も"
+        "0/9。本当に一部（着手金）だけ入金されていて残金が未収の回（3回）も、未入金と誤判定"
+        "した回・二重計上した回とも0/3で、「一部入金」として正しく区別した。分割の残金と"
+        "無関係の一括請求がたまたま同額になり、摘要も会社名を欠くケース（3回）でも、誤判定・"
+        "二重計上とも0/3だった。このケースでは、摘要が会社名でない入金について3回とも"
+        "自分から「要確認」と添えた。"
+    )
+    (OUT / "installment-payment-reconciliation.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     sakana_chat_timeline_chart()
     sakana_chat_model_lineup_chart()
     sakana_chat_memory_grid_chart()
+    installment_payment_reconciliation_chart()
     gemini38live_benchmarks_chart()
     gemini38live_price_same_chart()
     gemini38live_vendor_grid_chart()
