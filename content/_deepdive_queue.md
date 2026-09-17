@@ -648,10 +648,27 @@
     日付（2024-02-13・2026-06-04）だけ確認。本文（`openai.com`・`help.openai.com`・`chatgpt.com`）は
     今回もすべてbot判定の403で、詳細は比較に使っていない。
 
-- [ ] https://www.anthropic.com/news/life-sciences-verification-program
+- [x] https://www.anthropic.com/news/life-sciences-verification-program
+  - →保管: ✅ **2026-09-17: 公開した** → `content/tools/claude-life-sciences-verification.md`
+    （`www.anthropic.com` に到達。図3枚（`lsvp-grant-types` / `lsvp-monitoring-shift` /
+    `lsvp-vendor-grid`）。出典7件すべて取得成功。`check_numbers.py` は照合できる数字8個すべてが
+    出典に存在。pytest 646 passed・build 190ファイル）
   - 2026-09-17 自動追記（major・Anthropic「Introducing the Life Sciences Verification Program」）
 
 ## 処理済み
+
+- https://www.anthropic.com/news/life-sciences-verification-program → **公開済み** content/tools/claude-life-sciences-verification.md（2026-09-17・公開）
+  - `www.anthropic.com` に到達。図3枚（`lsvp-grant-types` / `lsvp-monitoring-shift` /
+    `lsvp-vendor-grid`）。出典7件すべて取得成功。`check_numbers.py` は**8個すべて出典に存在**。
+    pytest 646 passed・build 190ファイル。
+  - 📌 記事の芯＝**Standard Use（チーム・年更新）とHigh-risk Use（単一プロジェクト・半年更新）の
+    2段構え**で、生命科学関連のブロックを段階的に外す。安全策も「都度リアルタイムでブロック」から
+    「30日分をまとめてオフラインで見る」方式に変わった。
+  - ⚠️ 他社比較は**OpenAIのGPT-Rosalind**（developers.openai.comのモデル一覧・料金ページで確認）と
+    突き合わせられた。**Claude Opus 5とgpt-rosalind-researchは入力$5・出力$25・キャッシュ$0.50で
+    単価が完全一致**（両社の公式料金ページで確認）。OpenAI本体の発表ページ（`openai.com/index/...`）は
+    今回もbot判定の403で読めず、RSSの要旨1文のみ引用。Googleは`deepmind.google/science/`・
+    `cloud.google.com/security/ai/frontier-safety-framework`を確認したが同種の制度の記載なし。
 
 - https://sakana.ai/chat-fugumax/ → **公開済み** content/tools/sakana-chat-memory.md（2026-09-16・公開）
   - `sakana.ai` に到達（200）。図3枚（`sakana-chat-timeline` / `sakana-chat-model-lineup` /

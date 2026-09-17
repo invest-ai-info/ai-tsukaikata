@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="424" viewBox="0 0 720 424" role="img" aria-label="Standard UseとHigh-risk Useの違いを示した表。対象範囲＝Standard Useはチーム全体で毎日の幅広い業務向け、High-risk Useは研究プロジェクト単位で1件ずつの申請。更新周期＝Standard Useは年に1回、High-risk Useは半年に1回。対象モデル＝Standard UseはMythos 5.1・Opus 5・Sonnet 5（将来のモデルにも適用）、High-risk UseはOpus 5・Sonnet 5で、Mythosは米政府の追加審査を受けた団体のみ。セーフガード＝Standard Useは科学タスク向けに分類器を緩和、High-risk Useは生命科学関連のブロックをすべて解除。サイバー攻撃対策などの安全策は、どちらのグラントでも維持されると明記されている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="424"/>
+<text class="t-strong" x="18" y="26">Standard Useは年1回更新、High-risk Useは半年ごとに更新</text>
+<text class="t-sm" x="18" y="45">検証を受けた団体が申請できる2種類のグラント。数字は発表ページに書かれている範囲。</text>
+<text class="t-sm" x="18" y="64">High-risk Useは生命科学関連のブロックを全解除する追加グラントで、単一の研究プロジェクトに限られる。</text>
+<text class="t-accent" x="126.0" y="124">Standard Use</text>
+<text class="t-accent" x="422.0" y="124">High-risk Use</text>
+<text class="t-sm" x="18" y="158.0">対象範囲</text>
+<rect class="box-good" x="118.0" y="138" width="284.0" height="50" rx="4"/>
+<text class="t-good" x="128.0" y="158">チーム全体</text>
+<text class="t-good" x="128.0" y="175">毎日の幅広い業務向け</text>
+<rect class="box-bad" x="414.0" y="138" width="284.0" height="50" rx="4"/>
+<text class="t-bad" x="424.0" y="158">研究プロジェクト単位</text>
+<text class="t-bad" x="424.0" y="175">1件ずつの申請</text>
+<text class="t-sm" x="18" y="218.0">更新周期</text>
+<rect class="box-good" x="118.0" y="198" width="284.0" height="50" rx="4"/>
+<text class="t-good" x="128.0" y="218">年に1回</text>
+<rect class="box-bad" x="414.0" y="198" width="284.0" height="50" rx="4"/>
+<text class="t-bad" x="424.0" y="218">半年に1回</text>
+<text class="t-sm" x="18" y="278.0">対象モデル</text>
+<rect class="box-good" x="118.0" y="258" width="284.0" height="50" rx="4"/>
+<text class="t-good" x="128.0" y="278">Mythos 5.1・Opus 5・Sonnet 5</text>
+<text class="t-good" x="128.0" y="295">（将来のモデルにも適用）</text>
+<rect class="box-bad" x="414.0" y="258" width="284.0" height="50" rx="4"/>
+<text class="t-bad" x="424.0" y="278">Opus 5・Sonnet 5</text>
+<text class="t-bad" x="424.0" y="295">Mythosは米政府審査済み団体のみ</text>
+<text class="t-sm" x="18" y="338.0">セーフガード</text>
+<rect class="box-good" x="118.0" y="318" width="284.0" height="50" rx="4"/>
+<text class="t-good" x="128.0" y="338">科学タスク向けに</text>
+<text class="t-good" x="128.0" y="355">分類器を緩和</text>
+<rect class="box-bad" x="414.0" y="318" width="284.0" height="50" rx="4"/>
+<text class="t-bad" x="424.0" y="338">生命科学関連のブロックを</text>
+<text class="t-bad" x="424.0" y="355">すべて解除</text>
+<text class="t-xs" x="18" y="410">※ サイバー攻撃対策などの安全策は、生命科学に関係しないためどちらのグラントでも維持されると明記されている。</text>
+</svg>

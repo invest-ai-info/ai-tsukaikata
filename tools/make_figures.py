@@ -22213,6 +22213,218 @@ def installment_payment_reconciliation_chart() -> None:
     )
 
 
+def lsvp_grant_types_chart() -> None:
+    """Standard UseとHigh-risk Useの違い（対象範囲・更新周期・対象モデル・セーフガード）。
+
+    出典＝Anthropic「Introducing the Life Sciences Verification Program」
+    （www.anthropic.com/news/life-sciences-verification-program・2026-09-17表示）本文。
+    """
+    rows = [
+        ("対象範囲", "チーム全体\n毎日の幅広い業務向け", "研究プロジェクト単位\n1件ずつの申請"),
+        ("更新周期", "年に1回", "半年に1回"),
+        ("対象モデル", "Mythos 5.1・Opus 5・Sonnet 5\n（将来のモデルにも適用）", "Opus 5・Sonnet 5\nMythosは米政府審査済み団体のみ"),
+        ("セーフガード", "科学タスク向けに\n分類器を緩和", "生命科学関連のブロックを\nすべて解除"),
+    ]
+    label_w = 100
+    col_gap = 12
+    col_w = 284.0
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 138
+    pitch, box_h = 60, 50
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Standard Useは年1回更新、High-risk Useは半年ごとに更新</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "検証を受けた団体が申請できる2種類のグラント。数字は発表ページに書かれている範囲。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "High-risk Useは生命科学関連のブロックを全解除する追加グラントで、単一の研究プロジェクトに限られる。</text>\n",
+    ]
+    headers = ["Standard Use", "High-risk Use"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, std_v, hi_v in rows:
+        ty = y + 20
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((std_v, hi_v)):
+            x = col_x[i]
+            cls = "box-good" if i == 0 else "box-bad"
+            tcls = "t-good" if i == 0 else "t-bad"
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 10:.1f}" y="{y + 20 + line_no * 17}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24 + 22
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ サイバー攻撃対策などの安全策は、生命科学に関係しないためどちらのグラントでも維持されると明記されている。</text>\n"
+    )
+
+    alt = (
+        "Standard UseとHigh-risk Useの違いを示した表。対象範囲＝Standard Useはチーム全体で"
+        "毎日の幅広い業務向け、High-risk Useは研究プロジェクト単位で1件ずつの申請。"
+        "更新周期＝Standard Useは年に1回、High-risk Useは半年に1回。対象モデル＝Standard Useは"
+        "Mythos 5.1・Opus 5・Sonnet 5（将来のモデルにも適用）、High-risk UseはOpus 5・Sonnet 5で、"
+        "Mythosは米政府の追加審査を受けた団体のみ。セーフガード＝Standard Useは科学タスク向けに"
+        "分類器を緩和、High-risk Useは生命科学関連のブロックをすべて解除。サイバー攻撃対策などの"
+        "安全策は、どちらのグラントでも維持されると明記されている。"
+    )
+    (OUT / "lsvp-grant-types.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def lsvp_monitoring_shift_chart() -> None:
+    """安全策の仕組みの変化（違反の検知・データの保持・見つかったら）。
+
+    出典＝同上（Life Sciences Verification Programの発表ページ）本文の
+    「How monitoring works in LSVP」節。
+    """
+    rows = [
+        ("違反の検知", "申請のたびに\nリアルタイムでブロック", "行動パターンを\nオフラインでまとめて分析"),
+        ("データの保持", "個々の申請で完結\n（保持の記載なし）", "30日間保持\n学習利用・内部チーム閲覧は禁止"),
+        ("見つかったら", "その場でブロックして\n終了", "管理者に通知し\n合意した期限内に対応"),
+    ]
+    label_w = 112
+    col_gap = 12
+    col_w = 278.0
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 158
+    pitch, box_h = 60, 50
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "都度ブロックから、30日分をまとめて見る方式に変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "従来の一般提供モデルの安全策と、LSVPのグラントでの安全策の違い。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "生命科学に関係しない安全策（サイバー攻撃対策など）は、引き続き有効なまま。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "発表ページの「How monitoring works in LSVP」節に書かれている範囲だけを並べた。</text>\n",
+    ]
+    headers = ["従来（一般提供モデル）", "LSVPのグラント"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, before_v, after_v in rows:
+        ty = y + 20
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((before_v, after_v)):
+            x = col_x[i]
+            cls = "box-quiet" if i == 0 else "box-accent"
+            tcls = "t-sm" if i == 0 else "t-accent"
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 10:.1f}" y="{y + 20 + line_no * 17}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24 + 22
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 保持したデータはモデルの学習に使われず、Anthropicの生命科学研究チームもアクセスできないと明記されている。</text>\n"
+    )
+
+    alt = (
+        "安全策の仕組みの変化を示した表。違反の検知＝従来は申請のたびにリアルタイムでブロック、"
+        "LSVPでは行動パターンをオフラインでまとめて分析。データの保持＝従来は個々の申請で完結し"
+        "保持の記載なし、LSVPでは30日間保持し学習利用・内部チームの閲覧は禁止。見つかったら＝"
+        "従来はその場でブロックして終了、LSVPでは組織の管理者に通知し合意した期限内に対応。"
+        "保持したデータはモデルの学習に使われず、Anthropicの生命科学研究チームもアクセスできないと"
+        "明記されている。"
+    )
+    (OUT / "lsvp-monitoring-shift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def lsvp_vendor_grid_chart() -> None:
+    """生命科学向けのアクセス制度を3社で比べる（アプローチ・対象・価格の目安）。
+
+    出典＝Anthropicは発表ページ本文、OpenAIはdevelopers.openai.comのモデル一覧・
+    料金ページ（gpt-rosalind-research）、Googleはdeepmind.google/science/と
+    cloud.google.com/security/ai/frontier-safety-frameworkを確認したが記載なし。
+    """
+    rows = [
+        ("アプローチ", "一般提供モデルに\n検証者向け緩和策を適用", "生命科学専用の\nGPT-Rosalindを新設", "確認できず"),
+        ("対象", "研究資格などを\n審査した団体・チーム", "Trusted Access\nProgramの承認組織", "—"),
+        ("価格の目安\n(100万トークン)", "既存モデルの通常価格\n$2/$10〜$10/$50", "gpt-rosalind-research\n$5/$25（10月5日課金開始）", "—"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 138
+    pitch, box_h = 58, 48
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Claude Opus 5とOpenAIの専用モデルは、単価が同額だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・モデル一覧・料金）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "OpenAIは生命科学専用のGPT-Rosalindを新設し、承認した組織にだけ提供している。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "Googleの公式ページには、同種の検証済みアクセス制度についての記載を確認できなかった。</text>\n",
+    ]
+    headers = ["Anthropic", "OpenAI", "Google"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, anthropic_v, openai_v, google_v in rows:
+        for line_no, line in enumerate(label.split("\n")):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n')
+        for i, val in enumerate((anthropic_v, openai_v, google_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else ("box-quiet" if i == 1 else "box-bad")
+            tcls = "t-accent" if i == 0 else ("t-sm" if i == 1 else "t-bad")
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※「確認できず」「—」は機能が無いと明言されているのではなく、公式ページに記載が見当たらなかった意味。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "生命科学向けのアクセス制度を3社で比べた表。アプローチ＝Anthropicは一般提供モデルに"
+        "検証者向けの緩和策を適用、OpenAIは生命科学専用のGPT-Rosalindを新設、Googleは確認できず。"
+        "対象＝Anthropicは研究資格などを審査した団体・チーム、OpenAIはTrusted Access Programの"
+        "承認組織、Googleは記載なし。価格の目安（100万トークンあたり）＝Anthropicは既存モデルの"
+        "通常価格で入力2〜10ドル・出力10〜50ドル、OpenAIはgpt-rosalind-researchが入力5ドル・"
+        "出力25ドルで2026年10月5日に課金開始、Googleは記載なし。"
+    )
+    (OUT / "lsvp-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     sakana_chat_timeline_chart()
     sakana_chat_model_lineup_chart()
@@ -22487,4 +22699,7 @@ if __name__ == "__main__":
     record_date_does_not_roll_back_chart()
     one_rule_does_not_fit_every_sender_chart()
     reinitialize_list_does_not_stay_scoped_chart()
+    lsvp_grant_types_chart()
+    lsvp_monitoring_shift_chart()
+    lsvp_vendor_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
