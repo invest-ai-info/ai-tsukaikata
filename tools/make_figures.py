@@ -20963,6 +20963,125 @@ def reinitialize_list_does_not_stay_scoped_chart() -> None:
     )
 
 
+def prep_method_invents_the_missing_before_chart() -> None:
+    """PREP法（結論→理由→具体例→結論）を指定すると、資料に無い内容を作るか（2026-09-18）。
+
+    実測。架空のお知らせ2本（材料A＝送料改定・550円のみ明記／材料B＝受付時間変更・
+    19時までのみ明記、どちらも理由・変更前の状態は書いていない）に、PREP法を指定する
+    条件・型を指定しない条件・PREP法に「書かれていない情報は補うな」を足した条件を
+    各3回ずつ試した（計18回）。「理由」の捏造は材料Aでは型に関係なく3/3だったが、
+    材料Bでは型指定なしだと0/3、PREP法を指定すると3/3に変わった。「変更前の時刻」の
+    捏造は材料BのPREP法だけで3/3起き、しかも回ごとに18時・17時・9時と食い違った。
+    禁止の一文を足すと、どちらも0/3に戻った。
+    """
+    cols = ["PREP法指定", "型指定なし", "＋禁止の一文"]
+    rows1 = [
+        ("送料改定（材料A）", ["3/3", "3/3", "0/3"]),
+        ("受付時間変更（材料B）", ["3/3", "0/3", "0/3"]),
+    ]
+
+    label_w = 190
+    cell_w, cell_h, gap = 140, 32, 10
+    top1 = 132
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    def _grid(y0: int, rows: list[tuple[str, list[str]]]) -> int:
+        for index, name in enumerate(cols):
+            x = grid_x + index * (cell_w + gap)
+            parts.append(
+                f'<text class="t-xs" x="{x:.1f}" y="{y0 - 12}">{_esc(name)}</text>\n'
+            )
+        y = y0
+        for label, cells in rows:
+            parts.append(f'<text class="t-sm" x="18" y="{y + 21}">{_esc(label)}</text>\n')
+            for col_index, text in enumerate(cells):
+                x = grid_x + col_index * (cell_w + gap)
+                bad = not text.startswith("0/")
+                box = "box-bad" if bad else "box-good"
+                tone = "t-bad" if bad else "t-good"
+                parts.append(
+                    f'<rect class="{box}" x="{x}" y="{y}" '
+                    f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+                )
+                tx = x + cell_w / 2 - len(text) * 5.6
+                parts.append(
+                    f'<text class="{tone}" x="{tx:.1f}" y="{y + 21}">{text}</text>\n'
+                )
+            y += pitch
+        return y
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「理由」の捏造は型と無関係。「変更前」の捏造はPREP法で起きた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "資料には無い「理由」を書いた回数（架空のお知らせ2本・各条件3回）。"
+        "送料改定は型を指定しなくても3/3捏造した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "受付時間変更だけは、型を指定しない回は0/3で理由に触れず、"
+        "PREP法を指定すると3/3が理由を作り出した。</text>\n",
+    ]
+    y = _grid(top1, rows1)
+
+    y += 26
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "「変更前の受付時間」の捏造（材料Bのみ・書いた数字は回ごとに食い違った）</text>\n"
+    )
+    y += 22
+    top2 = y + 14
+    rows2 = [
+        ("PREP法指定", ["3/3"]),
+        ("型指定なし", ["1/3"]),
+        ("＋禁止の一文", ["0/3"]),
+    ]
+    label_w2 = 190
+    cell_w2, cell_h2, gap2 = 140, 30, 8
+    pitch2 = cell_h2 + gap2
+    y2 = top2
+    for label, cells in rows2:
+        parts.append(f'<text class="t-sm" x="18" y="{y2 + 20}">{_esc(label)}</text>\n')
+        text = cells[0]
+        bad = not text.startswith("0/")
+        box = "box-bad" if bad else "box-good"
+        tone = "t-bad" if bad else "t-good"
+        x = label_w2
+        parts.append(
+            f'<rect class="{box}" x="{x}" y="{y2}" width="{cell_w2}" height="{cell_h2}" rx="4"/>\n'
+        )
+        tx = x + cell_w2 / 2 - len(text) * 5.6
+        parts.append(f'<text class="{tone}" x="{tx:.1f}" y="{y2 + 20}">{text}</text>\n')
+        y2 += pitch2
+    y = y2
+
+    notes = [
+        "※PREP法の「変更前」は回ごとに18時・17時・9時と食い違い、どれも資料に書いていない。",
+        "※「＋禁止の一文」＝PREP法の指示に「書かれていない情報は補わないで」を足した条件。",
+        "架空データでの実測（計18回）。生の返りは docs/evidence/ に全文置いてある。",
+    ]
+    y += 10
+    for text in notes:
+        y += 21
+        parts.append(f'<text class="t-xs" x="18" y="{y}">{_esc(text)}</text>\n')
+
+    height = y + 14
+    alt = (
+        "PREP法（結論→理由→具体例→結論）を指定すると、資料に無い内容を作るかを試した図。"
+        "送料改定のお知らせ（理由は書かれていない）では、PREP法指定・型指定なしのどちらも"
+        "3/3が理由を捏造した。受付時間変更のお知らせでは、型指定なしは0/3で理由に触れな"
+        "かったが、PREP法を指定すると3/3が理由を作り出した。さらに受付時間変更では、PREP法"
+        "の「具体例」欄が変更前の時刻を3/3捏造し、しかも18時・17時・9時と回ごとに数字が"
+        "食い違った。型指定なしでは変更前の時刻を書いた回は1/3にとどまった。PREP法の指示に"
+        "「書かれていない情報は補わないで」という一文を足すと、理由の捏造・変更前の捏造とも"
+        "0/3に戻った。"
+    )
+    (OUT / "prep-method-invents-the-missing-before.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def buried_instruction_still_obeyed_chart() -> None:
     """4つの埋め込み指示のうち、従った痕跡が出た回数を比べる（2026-09-12）。
 
@@ -22589,6 +22708,7 @@ if __name__ == "__main__":
     gemini38live_vendor_grid_chart()
     estimate_gap_leaks_on_money_ask_chart()
     estimate_leak_follows_missing_number_chart()
+    prep_method_invents_the_missing_before_chart()
     buried_instruction_still_obeyed_chart()
     named_platform_invites_guessed_rules_chart()
     platform_name_guesses_the_rule_backwards_chart()

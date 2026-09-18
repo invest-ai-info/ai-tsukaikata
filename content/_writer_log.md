@@ -82,6 +82,38 @@
 - `python -m tools.make_eyecatch`実行済み（実行前に`git fetch`→他の担当の新規pushなしを確認）。
   同時に、既存記事`claude-life-sciences-verification`のアイキャッチが欠けていたのを補充。
 
+### 2026-09-18（21:00 レシピ担当の回）
+- 公開: 1本（prep-method-invents-the-missing-before）。**目標（副業3本）に届かず。**
+- 実測: `claude --safe-mode --tools ""` CLI（新規プロセスを毎回起動。会話の継続なし）。
+  架空のお知らせ2本（材料A＝送料改定550円のみ明記／材料B＝受付時間変更19時までのみ明記。
+  どちらも理由・変更前の状態は書いていない）に、PREP法指定・型指定なし・PREP法+「補うな」の
+  一文を各3回＝計18回。加えて、材料BのPREP法指定の直後に同じ会話で出典を聞き返す1回
+  （`--session-id`で発行し`--resume`で継続。★91・★145への配慮として指示文1〜6とは別枠）。
+- 手順0＝`git fetch origin`→forced updateで新しい参照。HEADはorigin/mainと一致（同一コミット）。
+- 手順1＝副業節の未処理（⏸を除く）は5件。前回の担当の申し送りどおり③（PREP法）から着手。
+- 手順2の重複確認＝`grep -h '^## ' content/recipes/*.md | sort -u`。PREP法・具体例に言及する
+  見出しは既存記事に無く、丸かぶりなし。
+- 🔑 **仮説（PREP法は具体例欄で捏造を増やす）は一部生存・一部棄却の混合結果。**「理由」の
+  捏造は材料Aでは型と無関係に3/3（値上げの文書ジャンルの慣習が主因）、材料Bでは型指定なし
+  0/3→PREP法指定3/3と型を指定して初めて起きた。「変更前の時刻」の捏造（具体例欄そのもの）は
+  PREP法指定3/3（回ごとに18時・17時・9時と食い違う）・型指定なし1/3。「補うな」の一文で
+  両方とも0/3に戻った。
+- ⚠️ 自動判定コードで台帳12番（計測器のほうを先に疑う）を2件踏んだ＝①「2時間延長」の「2」を
+  時刻と誤認識②AIの否定文（「記載がなかったため含めていません」）を「税込」という文字列だけで
+  陽性と誤判定。どちらも手動で発見し、正規表現・除外条件を直してから記事に反映した。
+  `_lessons.md`の12番系列・★12b系列に再発として追記。
+- 図は`tools/make_figures.py`に`prep_method_invents_the_missing_before_chart`を1つ追加
+  （座標は計算）。`src/figures.py`の崩れ検査を通過。
+- 指示文7個（うち1個は言い直し方の応用例・実測条件には数えない）・図1枚・内部リンク6本
+  （life-paperwork・verify-before-report・stop-when-material-is-missing・
+  writing-check-against-spec・estimate-leak-follows-missing-number・role-prompt-same-answer）。
+  マーカーは13個・warn4個（上限13個・warn5個ちょうど、または以内）。
+- キューの該当行を`[x]`に変更し→保管欄に記録。④〜⑦は未着手のまま次の回へ引き継ぐ。
+  🚨 **申し送り＝⑥と⑦がほぼ同一内容（H19を参照する重複の疑い）。次の担当は着手前に
+  読み比べて確認すること。**詳細はキュー本文の申し送りに記載。
+- `python -m pytest -q`＝646 passed／`python -m src.build`＝ビルド完了（192ファイル）。
+- `python -m tools.make_eyecatch`実行済み（実行前に`git fetch`→他の担当の新規pushなしを確認）。
+
 ### 2026-09-17（21:00 レシピ担当の回）
 - 公開: 1本（installment-payments-add-up-correctly）。**目標（副業3本）に届かず。**
 - 実測: この環境の Agent（サブエージェント・`claude`型・subagent_type="claude"）を毎回独立に
