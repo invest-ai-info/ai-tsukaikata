@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T22:37:04.827143+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "業務規定や商品知識など、金融機関には日々参照する情報が多い。必要な情報を探したり、詳しい職員に確認したりする時間も課題となる。ココペリは、こうした情報検索を生成AIで支援する「SAF」を豊川信用金庫に導入した。",
+      "title": "「規定を探す時間」をAIで短縮　豊川信用金庫が生成AIを職員のFAQに活用",
+      "uid": "eb3671d91563db60",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/19/2000001616/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T22:37:04.827143+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIでスライドや図解を手軽に作れるようになった一方、作成物が増えるほど「どれが何の資料か分からない」「目的の資料を探せない」といった問題が起きやすい。",
+      "title": "「AIで資料は作れるけど、増えすぎた」を解消するNotebook機能とは？",
+      "uid": "0a9990f7ba1bcdc0",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/19/2000001614/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T22:37:04.827143+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「AIを導入したが、チャットに使うだけ」。そんな中小企業は少なくない。クラウドワークスの調査では、AI利用企業の8割超がチャット利用にとどまった。業務自動化を阻む原因は何か。",
+      "title": "AI導入は6割、でも8割超が「チャット止まり」　業務自動化まで進まない原因は？",
+      "uid": "8ed0b0a342cfe3e9",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/19/2000001624/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-18T16:28:04.341211+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "bf46b119964f9efe",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140552.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T02:23:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicのダリオ・アモデイCEOが「We Must Pace the Frontier(フロンティアを慎重に進めるべき)」と題したブログ記事を公開し、「AIのリスクが高まっており、開発ペースを減速させる必要がある」と主張しました。アモデイCEOの意見にはSpaceXのイーロン・マスクCEO、OpenAIのサム・アルトマンCEO、Google DeepMindのデミス・ハサビス会長らも賛…",
-      "title": "Anthropicのダリオ・アモデイCEOが「6～12カ月以内にAIがインターネットを乗っ取る可能性あり」「AI開発を減速させるべき」と主張、イーロン・マスクやサム・アルトマンやデミス・ハサビスらも賛同",
-      "uid": "348b54292aea49f7",
-      "url": "https://gigazine.net/news/20260914-ai-pace-slow-down/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-14T02:17:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "MetaのAIソフトウェア「Meta AI」が、子どもの情報を含む個人情報の収集や開示につながる質問をユーザーに提案するという問題が指摘された。同社はこの問題を修正済みだという。",
-      "title": "「この子は誰？」「どこに住んでいる？」Meta AIの質問提案に母親が猛抗議",
-      "uid": "bc0df437a73467fa",
-      "url": "https://japan.cnet.com/article/35252586/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-09-14T02:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "楽天モバイルは、AIが基地局のアンテナを自律的に調整する「フィジカルAI」の導入を明らかにした。三木谷浩史氏が自身のXで紹介した。通信環境の変化に応じてアンテナをリアルタイムに最適化し、人の介入を減らしながら通信品質を保つネットワークを目指す。",
-      "title": "楽天モバイルが「フィジカルAI」導入を発表　その中身とは",
-      "uid": "40d07bdbad59c613",
-      "url": "https://japan.cnet.com/article/35252592/",
-      "vendor": "CNET Japan"
     }
   ]
 }

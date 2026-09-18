@@ -25,6 +25,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-09-18T22:37:04.827143+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-18T16:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "",
+      "title": "Partnering with Accenture on embedded evaluation",
+      "uid": "8e16ea08c36ba1df",
+      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-18T16:28:04.341211+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -248,6 +260,20 @@
       "title": "How to connect AI usage to business value",
       "uid": "b06b2ddd4e965ade",
       "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-18T22:37:04.827143+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-16T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share.",
+      "summary_ja": "Hexが難しい分析を視覚レポート化\nGPT-6 Astraが分析結果を図解化し\n社員が共有したくなる報告書を作れる",
+      "summary_source": "gemini",
+      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+      "uid": "4d62a028e1ea31b1",
+      "url": "https://openai.com/index/hex-gpt-6-astra",
       "vendor": "OpenAI"
     },
     {
