@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T16:28:04.341211+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-18T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIネイティブなデザインツールを開発しているFormasが、言葉による指示やスケッチなどの資料を基にAIで3Dモデルを作成できるツール「Cartesian」を発表しました。 続きを読む...",
+      "title": "言葉による指示やスケッチで建物や家具を自由自在に3D化できるAI搭載3Dモデリングツール「Cartesian」",
+      "uid": "2ed8f40812bb270f",
+      "url": "https://gigazine.net/news/20260918-cartesian-formas-ai-3d-model/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-18T16:28:04.341211+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-18T11:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Google DeepMindのデミス・ハサビスCEOが提唱した最先端AIを規制するための独立した標準化団体の設立について、Metaのマーク・ザッカーバーグCEOやSpaceXAIのイーロン・マスクCEO、NVIDIAのジェンスン・フアンCEOがトランプ大統領にロビー活動を行い、設立に反対する方向で同調していることがわかりました。 続きを読む...",
+      "title": "AI標準化団体設立をめぐりザッカーバーグ＆マスク＆フアンがトランプ大統領とともに反対の方針で同調",
+      "uid": "2015ee0f7a02120a",
+      "url": "https://gigazine.net/news/20260918-trump-ai-regulation/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-18T11:21:48.616520+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "40d07bdbad59c613",
       "url": "https://japan.cnet.com/article/35252592/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-14T01:55:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "ソニー銀行と富士通は9月14日、預金や振込などを処理する銀行の基幹システムの開発に生成AIを使い、基本設計からプログラムを組み合わせて動作を確認する「結合テスト」までの期間を従来比30％短縮したと発表した。同じ範囲の工数も40％削減したという。",
-      "title": "銀行の基幹システム、生成AIを活用して開発　工数大幅減　富士通ら",
-      "uid": "80fe80303ffb0768",
-      "url": "https://japan.cnet.com/article/35252591/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T01:51:29+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "明日香出版社は、書籍「会社AIの『やってはいけない』」（長尾一洋氏、横田顕氏著）を9月14日に発売した。価格は2,090円。",
-      "title": "中小企業のAI活用リスクを防ぐ実務ガイド「会社AIの『やってはいけない』」発売",
-      "uid": "f71a93a7d10e91f3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140497.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

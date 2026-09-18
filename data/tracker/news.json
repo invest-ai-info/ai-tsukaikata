@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T16:28:04.341211+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-18T16:12:53+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.7.0 (2026-09-18) Full Changelog: v1.6.0...v1.7.0 Features api: add group with display_name to rate limits, deprecate group_type ( 28f0a83 ) tools: add compact_before_next_turn() to the tool runner …",
+      "title": "v1.7.0",
+      "uid": "73de77b4448dcfd2",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.7.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-18T16:28:04.341211+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-18T14:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Text \"AI & Economy Research Program\" all over a green grid background, with the Google G logo in the bottom right corner",
+      "summary_ja": "GoogleのAI経済チームに新しい専門家が加わった。",
+      "summary_source": "gemini",
+      "title": "New experts join Google’s AI & Economy team",
+      "uid": "f6ce9ccb6fd06832",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-18T16:28:04.341211+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-09-18T13:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Jane Wade and Sergio Hudson",
+      "summary_ja": "Googleがファッションの未来を共同で作る取り組みを開始。\nデザイナーのJane Wade氏とSergio Hudson氏が参加する。",
+      "summary_source": "gemini",
+      "title": "Co-creating the future of fashion with Google",
+      "uid": "01325ef17ce263db",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-09-18T05:58:12.647888+00:00",
       "importance": "minor",
       "label": "Claude Code",
