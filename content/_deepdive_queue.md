@@ -655,8 +655,33 @@
     出典に存在。pytest 646 passed・build 190ファイル）
   - 2026-09-17 自動追記（major・Anthropic「Introducing the Life Sciences Verification Program」）
 
-- [ ] https://sakana.ai/frontier-intelligence-group/
+- [!] https://sakana.ai/frontier-intelligence-group/
   - 2026-09-18 自動追記（major・Sakana AI「Introducing Sakana AI’s Frontier Intelligence Group (FIG)」）
+  - **2026-09-18 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」。
+
+    **① ページ自体は問題なく読めた（`sakana.ai` は200・36,837バイト、日英併記の全文を取得済み）**
+
+    - 経路遮断でもbot判定でもない。本文（英語版・日本語版とも）を最後まで取得できている。
+
+    **② 🆕 中身が「研究チームの発足・採用告知」で、モデルでも料金でも製品機能でもない**
+
+    - FIG（Frontier Intelligence Group）は社内の研究者コミュニティの紹介。主旨＝「知能はまだ解決していない、
+      Transformer一辺倒でないパラダイムを探す」という研究哲学と、5つの研究事例（Continuous Thought
+      Machines・Augmented Lagrangian Predictive Coding・NVIDIAとのスパースTransformer共同研究・
+      AI Picbreeder実験・Smart Cellular Bricks）の紹介。締めは「興味があれば Sakana AI に応募してほしい」
+      という採用告知
+    - 出典ページに出てくる数字（例＝フィードフォワード層のニューロンの95%以上が非活性・最大1,000層・
+      物理ブロック約200個・ICML 2026採択・Nature Communications掲載）は、いずれも**単一の研究成果を
+      説明する文脈の数字**で、料金でも性能ベンチマークでもなく、他社の公式ページと突き合わせて
+      比較できる性質のものではない
+    - 比較相手（他社の同種の「基礎研究チーム」発表）も無く、読者（自動化したい非エンジニアの会社員）が
+      「どういう人に効くか」を判断できる要素が無い。プロダクトでもモデルでもないため、
+      このサイトの記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **これは 2026-08-20 の「AI Futures」（OpenAIの新ブログ立ち上げ告知）とほぼ同じ構造**
+      （①は解けている点が違うが、②＝数字はあっても比較できない・プロダクトではない、という
+      停止理由は同一）。「AI Futures」はオーナーが独立検証のうえ 2026-08-21 に見送りで確定させた前例がある。
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。
+      オーナーに一言確認を仰いでから確定させるのが、AI Futuresのときの前例に合わせたやり方。
 
 ## 処理済み
 
