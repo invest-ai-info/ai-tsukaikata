@@ -21,7 +21,7 @@
   "latest": {
     "anthropic-news": "2026-09-17T15:56:00+00:00",
     "anthropic-sdk": "2026-09-18T16:12:53+00:00",
-    "claude-code": "2026-09-18T02:12:26+00:00",
+    "claude-code": "2026-09-18T18:06:32+00:00",
     "deepmind-blog": "2026-09-15T17:05:57+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-18T14:00:00+00:00",
@@ -93,6 +93,17 @@
       "uid": "01325ef17ce263db",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-18T18:06:32+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under \"Project instructions\" in /config (not yet on Bedrock, Vertex or Foundry) …",
+      "title": "v2.1.277",
+      "uid": "d662a12e039c3d1a",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.277",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -2267,6 +2278,7 @@
     "d611f158558fb7c6": "2026-09-04T22:22:55.965817+00:00",
     "d62b2185320d2733": "2026-08-13T12:01:33.145239+00:00",
     "d63791100943559d": "2026-09-09T06:01:22.694805+00:00",
+    "d662a12e039c3d1a": "2026-09-18T19:40:05.592936+00:00",
     "d68104a413d56a4c": "2026-09-09T16:42:11.740885+00:00",
     "d6a8d86b69e97a37": "2026-08-14T02:48:19.675404+00:00",
     "d6b35e1952d7f61a": "2026-09-16T17:03:30.481149+00:00",

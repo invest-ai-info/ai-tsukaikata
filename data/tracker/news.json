@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T19:40:05.592936+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-18T18:06:32+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under \"Project instructions\" in /config (not yet on Bedrock, Vertex or Foundry) …",
+      "title": "v2.1.277",
+      "uid": "d662a12e039c3d1a",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.277",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-18T16:28:04.341211+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
