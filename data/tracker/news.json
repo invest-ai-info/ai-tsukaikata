@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T05:58:12.647888+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-18T02:12:26+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed every request failing with 400 … Input tag 'advisor_20260301' when ANTHROPIC_BASE_URL points at a proxy or gateway (2.1.275 regression)",
+      "title": "v2.1.276",
+      "uid": "fc704ac01bee2e51",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.276",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-18T00:25:04.694205+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -39,6 +51,18 @@
       "uid": "335cac6c2b15e967",
       "url": "https://www.anthropic.com/news/life-sciences-verification-program",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-18T05:58:12.647888+00:00",
+      "importance": "major",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-17T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Introducing Sakana AI’s Frontier Intelligence Group (FIG)",
+      "uid": "a06e06733197e516",
+      "url": "https://sakana.ai/frontier-intelligence-group/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-09-18T00:25:04.694205+00:00",

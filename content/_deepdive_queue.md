@@ -655,6 +655,9 @@
     出典に存在。pytest 646 passed・build 190ファイル）
   - 2026-09-17 自動追記（major・Anthropic「Introducing the Life Sciences Verification Program」）
 
+- [ ] https://sakana.ai/frontier-intelligence-group/
+  - 2026-09-18 自動追記（major・Sakana AI「Introducing Sakana AI’s Frontier Intelligence Group (FIG)」）
+
 ## 処理済み
 
 - https://www.anthropic.com/news/life-sciences-verification-program → **公開済み** content/tools/claude-life-sciences-verification.md（2026-09-17・公開）
