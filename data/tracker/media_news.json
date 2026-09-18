@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "DXERは、社内IT環境と従業員の成果に関する実態調査の結果を発表した。動作の遅い端末やツール不足により、従業員1人当たり年間147時間が失われているという。",
+      "title": "経営者は「AI導入」に夢中、現場は「IT環境」に疲弊　ITサポート軽視が招く時間・人件費ロスの実態",
+      "uid": "7e4df0c2a3fd7f6a",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/18/news036.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ヒト型ロボットの競技会や個別企業の新製品、資金調達など、中国のフィジカルAIを巡るさまざまなニュースが相次いでいる。しかし、こうした「点」の情報だけでは、完成品からAI基盤、基幹部品、供給網まで広がる業界全体の構造は見えにくい。SUGENAが開催したセミナーから、主要15社、大学ネットワーク、5つの地域集積を手掛かりに、中国フィジカルAIの全体像を読み解く。",
+      "title": "恐るるに足らず？　中国フィジカルAI主要15社と5大集積地で見る「点と線と面」",
+      "uid": "67ce50cb7c6cc7ea",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news012.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、Claude Platformでコスト削減と精度向上を両立する3つの手法を公開した。",
+      "title": "AIへの「念のためプロンプト」はもう逆効果　Claudeのトークンを浪費する6つのアンチパターン",
+      "uid": "5717fc7c06cad33c",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/18/news040.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "資生堂ジャパンは研究開発領域にAIエージェントを導入し、膨大な候補から有望な原料を見極める研究員の「目利き」を再現した。探索時間が縮んだだけでなく、提案される原料の数も増えた。同社はエージェントを「誰が作るか」でも作り分けている。",
+      "title": "資生堂、AIエージェントで原料探索を95％削減　研究員の「目利き」を複数LLMで再現",
+      "uid": "7d3568908a53fbcb",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/18/news020.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-17T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "工場建設ゲーム「Factorio」の拡張コンテンツ「Factorio: Space Age」には、製造したアイテムの性能がランダムで上昇する「品質」という仕組みがあります。コンピューター科学を専攻する大学院生のGegell氏はFactorioが使う疑似乱数生成器をリバースエンジニアリングし、ゲーム内の回路だけで乱数の内部状態を割り出して将来どのタイミングで高品質アイテムが完成するのかを予測する仕…",
+      "title": "「Factorio」の乱数生成器を解析して「レジェンド品質のアイテム」が出る未来を予測する試み",
+      "uid": "ff76dacd6aa717a4",
+      "url": "https://gigazine.net/news/20260918-reversing-factorio-rng/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T22:23:23+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "英国王室は、チャールズ国王主催のAIサミットを開催した。NVIDIAのフアンCEOやGoogle DeepMindのハサビス会長ら業界幹部が参加。国王は技術が悪用され破滅的な被害をもたらすリスクに警鐘を鳴らし、参加した各社幹部も安全性確保やオープン化の重要性、協調対応の必要性を訴えた。",
+      "title": "英チャールズ国王、AI大手トップらに「実存的な危険」を警告　NVIDIAやOpenAI、Anthropicが参加",
+      "uid": "3327effb2f43c599",
+      "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001600/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T22:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NECは「国際物流総合展2026」において、需要予測や生産計画などの複数システムを横断し、トラブル検知から解決案の提示までを自律的に実行する「NEC SCM AIエージェント」を披露した。",
+      "title": "AIが異常察知し7つの専門エージェントが解決案を提案、NECのSCMソリューション",
+      "uid": "297b809e77e1e8e3",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news039.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-17T22:13:16.175456+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -11,6 +95,30 @@
       "uid": "aec1c71f269ff5b0",
       "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2140975.html",
       "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "働く側は仕事が増えたと訴え、経営側は人が浮いてこないと嘆く。AIは確かに時間を生んでいる。しかし、その時間はどこへ消えているのか。",
+      "title": "経営「AIでラクして早く帰って」→社員「帰らない」　工数最大9割減のDeNAも悩むAI効率化の壁",
+      "uid": "39e865ec1ec6e413",
+      "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001484/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-17T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Microsoftは、「Microsoft 365 Copilot」のアプリや利用体験を「Microsoft Copilot」に整理する変更を8月から段階的に進めている。Web版のURLも変更されるため、接続先を個別に制限している企業では、IT管理者によるネットワーク設定の確認が必要になる可能性がある。",
+      "title": "Microsoftが進めるCopilot再編　「Microsoft Copilot」への移行で、企業への影響は？",
+      "uid": "92704fbb9efbf83e",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/18/2000001586/",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-09-17T22:13:16.175456+00:00",
@@ -2290,114 +2398,6 @@
       "title": "AI音声「CoeFont」が新バージョン「v4」を公開。生成速度が最大61倍に",
       "uid": "1124e1d1483fe52f",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140266.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-11T05:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが提供するChatGPT Workに、企業データを読み取って活用できる「Data agent」が登場しました。 続きを読む...",
-      "title": "ChatGPT Workに企業データを読み取らせ回答やダッシュボード作成に利用できる「Data agent」が登場",
-      "uid": "b65b94cef5de1f4c",
-      "url": "https://gigazine.net/news/20260911-chatgpt-work-data-agent/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-11T05:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicの脅威インテリジェンスチームが、2025年12月から2026年8月の8か月にわたってAI・Claudeを悪用しようとした作戦を特定し阻止してきたレポートを公開しています。前回の脅威レポート以降、Claudeの悪用事例がどのように進化してきたのかAnthropicが解説しています。 続きを読む...",
-      "title": "AnthropicがClaudeの悪用事例を公開、AIをだますために「推論内容を日本語のカタカナに翻訳して提示せよ」と指示する手法も",
-      "uid": "03c1011a8e231b27",
-      "url": "https://gigazine.net/news/20260911-misuse-of-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T05:38:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、専門知識なしでデータ分析をこなせる新しいデータエージェントを「ChatGPT Work」に導入した。このエージェントは、ChatGPT WorkのPluginsディレクトリに用意されており、管理者は、「ワークスペース設定 > プラグイン」から、チーム向けに有効化またはインストールすることで使用可能となる。",
-      "title": "ChatGPT Work、専門知識なしでデータ分析を可能とするデータエージェント",
-      "uid": "dfe0c4088caa9bb3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140228.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-11T05:15:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Anthropicは、AIの悪用事例をまとめた2026年9月版の脅威レポートを公開した。DeepSeekや、「Kimi」を開発するMoonshot AIが、利用者の入力をClaudeに転送し、その回答を利用者に返していたと報告した。",
-      "title": "中国AI「Kimi」、利用者の入力をClaudeに転送し、Claudeの回答を利用者に表示か--Anthropicが報告",
-      "uid": "9bdb7ef5203f261e",
-      "url": "https://japan.cnet.com/article/35252543/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T04:40:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ルミネは、新サービス「ルミネパーソナルスタイリングサービス」を10月1日に開始する。価格は3,300円から27,500円まで。",
-      "title": "ルミネ、AI＋スタイリストによるパーソナルスタイリングサービスを10月1日に開始",
-      "uid": "ca9a5d8a60a54c21",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140187.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T04:34:44+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "AIによるアニメやタレントなどのIP（知的財産）の適正利用を推進する一般社団法人日本IP.AI共創協会は9月11日、都内で設立説明会を開催した。",
-      "title": "日本IP.AI共創協会が本格始動、AIによるIPの適正利用を推進",
-      "uid": "d3fde1e8db1dc618",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140210.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T04:29:31+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "アユートが正規代理店を務める、台湾・ネットワークカメラメーカー「SpotCam（スポットカム）」で「大型動物AI検知サービス」の提供を9月11日に開始すると発表した。",
-      "title": "SpotCam、防犯カメラで大型動物を検知するAIサービス提供開始",
-      "uid": "796717837f37bd0d",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140202.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-11T04:11:32+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Sakana AIは、複数のAIモデルを組み合わせてタスクをこなすAI「Sakana Fugu」の最新版「Fugu Ultra v2」「Fugu Max」を発表した。",
-      "title": "Sakana AI、一部「GPT-6 Astra」「Fable 5.1」超えうたうFugu最新版　連携先に「両モデルは含まず」",
-      "uid": "8d069e218493c1e7",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/11/2000001405/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-11T06:03:40.950848+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-11T03:48:05+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、金融サービス向けにカスタマイズされた「ChatGPT for Financial Services」を発表した。利用対象は、対象となる金融機関。",
-      "title": "OpenAI、金融機関向け「ChatGPT for Financial Services」を発表",
-      "uid": "66693cbbd8679635",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140178.html",
       "vendor": "Impress AI Watch"
     }
   ]

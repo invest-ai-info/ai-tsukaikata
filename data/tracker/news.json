@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-17T22:33:17+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and /status shows it Added a send-now key (ctrl+en…",
+      "title": "v2.1.275",
+      "uid": "0e4262b28619c4ca",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.275",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-17T22:13:16.175456+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -27,6 +39,20 @@
       "uid": "335cac6c2b15e967",
       "url": "https://www.anthropic.com/news/life-sciences-verification-program",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-18T00:25:04.694205+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-17T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most.",
+      "summary_ja": "CooleyがIPO業務を効率化するシステムを開発\n「GO Public」というシステムにChatGPTを活用\n弁護士は問題の早期発見と重要判断に集中できる",
+      "summary_source": "gemini",
+      "title": "How Cooley is accelerating IPO work with ChatGPT",
+      "uid": "6cbff7f600362987",
+      "url": "https://openai.com/index/cooley-gopublic",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-17T01:28:36.895933+00:00",
