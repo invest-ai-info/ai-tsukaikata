@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="3つの聞き方（無指定・打つ手基準・前日比較）で、新しい1件の警告を古い3件の停止警告と区別して示せたかを、初出（当日）と定着（14日目）で比べたマス目。無指定は初出4/4・定着4/4で区別を保てた。打つ手があるかどうかで分けてと聞いた版は初出3/4（1回だけ新しい警告を古い3件と同じ「打つ手なし」に含めた）・定着4/4。前日のダイジェストと比べさせる版は初出4/4で最も安定していたが、定着では0/4——同じ警告が変わらず続いていることは分かるが、それが「まだ対応が必要な1件」だとは4回とも答えなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="380"/>
+<text class="t-strong" x="18" y="26">前日と比べる聞き方は、警告が定着すると0/4で見失った</text>
+<text class="t-sm" x="18" y="45">架空の監視対象5件（3件は打つ手のない停止警告、1件は健康、1件が新種の警告）を</text>
+<text class="t-sm" x="18" y="64">2組つくり、3つの聞き方を各2組×各2回=4回で試した。数字は「新しい1件を、</text>
+<text class="t-sm" x="18" y="83">他の3件と区別して対応が必要と示せた回数」。</text>
+<text class="t-xs" x="18" y="102">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-xs" x="393.0" y="156" text-anchor="middle">初出（当日）</text>
+<text class="t-xs" x="563.0" y="156" text-anchor="middle">定着（14日目）</text>
+<text class="t-sm" x="18" y="192">無指定で「対応が必要なものは？」と聞く</text>
+<rect class="box-good" x="318" y="170" width="150" height="34" rx="4"/>
+<text class="t-good" x="376.8" y="192">4/4</text>
+<rect class="box-good" x="488" y="170" width="150" height="34" rx="4"/>
+<text class="t-good" x="546.8" y="192">4/4</text>
+<text class="t-sm" x="18" y="236">「打つ手があるかどうかで分けて」と聞く</text>
+<rect class="box-bad" x="318" y="214" width="150" height="34" rx="4"/>
+<text class="t-bad" x="376.8" y="236">3/4</text>
+<rect class="box-good" x="488" y="214" width="150" height="34" rx="4"/>
+<text class="t-good" x="546.8" y="236">4/4</text>
+<text class="t-sm" x="18" y="280">前日のダイジェストと比べさせる</text>
+<rect class="box-good" x="318" y="258" width="150" height="34" rx="4"/>
+<text class="t-good" x="376.8" y="280">4/4</text>
+<rect class="box-bad" x="488" y="258" width="150" height="34" rx="4"/>
+<text class="t-bad" x="546.8" y="280">0/4</text>
+<rect class="box-quiet" x="18" y="306" width="678" height="50" rx="6"/>
+<text class="t-strong" x="34" y="326">前日比較は初出の検知では最も安定していたが、定着後は「変化なし」とだけ答え、</text>
+<text class="t-sm" x="34" y="344">未解決のままの1件を4回とも見失った（他の2版は定着後も区別を保てた）。</text>
+</svg>

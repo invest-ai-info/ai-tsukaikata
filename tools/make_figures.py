@@ -22425,7 +22425,161 @@ def lsvp_vendor_grid_chart() -> None:
     )
 
 
+def daily_warning_new_one_grid_chart() -> None:
+    """3つの聞き方で、新しい1件を古い3件と区別して示せたかを「初出/定着」で比べる。
+
+    実測（2026-09-18）。架空の監視対象5件（3件は打つ手のない停止警告を毎日一字一句
+    同じ文言で出し続け、1件は健康、残り1件が新種の警告を出す）を2組つくり、
+    「無指定」「打つ手基準」「前日比較」の3版を各2組×各2回=4回で試した。
+    「初出」は新種の警告が出た当日、「定着」は同じ警告が変わらず続いて14日目。
+    """
+    rows = [
+        ("無指定で「対応が必要なものは？」と聞く", 4, 4, 4, 4),
+        ("「打つ手があるかどうかで分けて」と聞く", 3, 4, 4, 4),
+        ("前日のダイジェストと比べさせる", 4, 4, 0, 4),
+    ]
+    label_w = 300
+    cell_w, cell_h, gap = 150, 34, 10
+    top = 170
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    col_gap = 20
+    col_w = cell_w + col_gap
+    right_edge = grid_x + 2 * col_w - col_gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "前日と比べる聞き方は、警告が定着すると0/4で見失った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の監視対象5件（3件は打つ手のない停止警告、1件は健康、1件が新種の警告）を"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2組つくり、3つの聞き方を各2組×各2回=4回で試した。数字は「新しい1件を、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "他の3件と区別して対応が必要と示せた回数」。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+    headers = ["初出（当日）", "定着（14日目）"]
+    for col_index, header in enumerate(headers):
+        x = grid_x + col_index * col_w
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2:.1f}" y="{top - 14}" '
+            f'text-anchor="middle">{_esc(header)}</text>\n'
+        )
+
+    for row_index, (label, first_val, first_n, persisted_val, persisted_n) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, (val, n) in enumerate(((first_val, first_n), (persisted_val, persisted_n))):
+            x = grid_x + col_index * col_w
+            ok = val == n
+            box = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            text = f"{val}/{n}"
+            tx = x + cell_w / 2 - len(text) * 5.4
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+            )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 50
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 20}">'
+        "前日比較は初出の検知では最も安定していたが、定着後は「変化なし」とだけ答え、</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "未解決のままの1件を4回とも見失った（他の2版は定着後も区別を保てた）。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "3つの聞き方（無指定・打つ手基準・前日比較）で、新しい1件の警告を古い3件の"
+        "停止警告と区別して示せたかを、初出（当日）と定着（14日目）で比べたマス目。"
+        "無指定は初出4/4・定着4/4で区別を保てた。打つ手があるかどうかで分けてと"
+        "聞いた版は初出3/4（1回だけ新しい警告を古い3件と同じ「打つ手なし」に含めた）・"
+        "定着4/4。前日のダイジェストと比べさせる版は初出4/4で最も安定していたが、"
+        "定着では0/4——同じ警告が変わらず続いていることは分かるが、それが「まだ"
+        "対応が必要な1件」だとは4回とも答えなかった。"
+    )
+    (OUT / "daily-warning-new-one-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def diff_forgets_open_warning_chart() -> None:
+    """前日比較だけと、そこに「継続中の未対応」を足した版を、定着シナリオで比べる。
+
+    実測（2026-09-18）。警告が変わらず14日続いた場面で、「前日との差分」だけを
+    聞いた版と、「差分」と「継続中で未対応のもの」を分けて聞いた版を、
+    架空材料2組×各2回=4回ずつ試した。
+    """
+    groups = [
+        ("前日との差分だけを聞く", 0, 4, "box-bad", "t-bad"),
+        ("差分と「継続中の未対応」を分けて聞く", 4, 4, "box-good", "t-good"),
+    ]
+    top = 150
+    bar_h = 44
+    pitch = bar_h + 26
+    plot_x, plot_w = 260, 380
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「継続中の未対応」を分けて聞くと、定着後も4/4で見失わなくなった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "警告が変わらず14日続いた場面で、材料2組×各2回=4回ずつ試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数字は「まだ対応が必要な1件だと教えてくれた回数」。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, box, tone) in enumerate(groups):
+        y = top + index * pitch
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    height = top + len(groups) * pitch + 10
+    alt = (
+        "定着シナリオ（警告が変わらず14日続いた場面）で、前日との差分だけを聞いた版と、"
+        "差分と継続中の未対応を分けて聞いた版を比べた横棒グラフ。材料2組×各2回=4回ずつ。"
+        "差分だけを聞いた版は0/4——「変化なし」とだけ答え、未解決のままの1件を"
+        "見失った。差分と継続中の未対応を分けて聞いた版は4/4——4回とも、その1件を"
+        "「まだ対応が必要」と正しく答えた。"
+    )
+    (OUT / "diff-forgets-open-warning.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    daily_warning_new_one_grid_chart()
+    diff_forgets_open_warning_chart()
     sakana_chat_timeline_chart()
     sakana_chat_model_lineup_chart()
     sakana_chat_memory_grid_chart()
