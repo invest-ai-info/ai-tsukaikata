@@ -37,63 +37,7 @@
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
     "sakana-blog": "2026-09-16T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-17T00:12:02+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a visible warning when memory usage is critical, with steps to free memory or restart safely Added CLAUDE_CODE_MCP_STARTUP_WAIT_MS to bound how long the first non-interactive tur…",
-      "title": "v2.1.274",
-      "uid": "a52e12d79b83bda8",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "ELYZA note",
-      "published": "2024-09-11T05:36:23+00:00",
-      "source_id": "elyza-note",
-      "summary": "【Profile】原田 拓也 Takuya Harada ／ 早稲田大学 法学部卒 SOMPOホールディングス デジタル戦略部、Accenture Hong Kong社にて先端技術のR&Dを軸にDX推進業務に従事。ELYZAでは複数の共同研究プロジェクトや、事業開発をリードしている。 香港での経験が転機に。先端技術、そして誰かの熱量を社会に役立てる力になりたい 続きをみる",
-      "title": "【インタビュー】「技術と熱量を社会に活かす」大企業のDX部門から来た原田さんが担う\"橋渡し\"とは？",
-      "uid": "656cdfc443749f69",
-      "url": "https://note.com/elyza/n/nad792f74619d",
-      "vendor": "ELYZA"
-    },
-    {
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-09-17T00:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Today, the world can’t see what’s going on inside AI labs. Anthropic is proposing new metrics that would give the public visibility into frontier AI development.",
-      "title": "Measurements for understanding the pace of AI development inside frontier labs",
-      "uid": "253922528b2c71e2",
-      "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-09-17T20:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "UN System Data Commons Data webpage",
-      "title": "Making global data easier to explore",
-      "uid": "be59e38bff220dec",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-14T15:55:10+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
-      "title": "qwen/qwen3.8-27b:free",
-      "uid": "e0e92fbfb33ca169",
-      "url": "https://openrouter.ai/qwen/qwen3.8-27b:free",
-      "vendor": "Alibaba Qwen"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
