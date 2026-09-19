@@ -22938,10 +22938,128 @@ def few_records_still_count_the_numbers_chart() -> None:
     )
 
 
+def estimate_leak_steps_with_fill_count_chart() -> None:
+    """見積もりの漏れは、埋まった数字の個数（0/1/2個）で段階的に増える。
+
+    実測（2026-09-19・担当本人が指示文どおりの入力に自分でAIとして応答した記録。
+    仮説キューH19）。「見積もりに必要な前提が書かれていない場合は、勝手に前提を
+    置かず『前提が材料に無い』と書いてください」という一文を、計算に要る3つの
+    数値のうち0個/1個/2個を埋めた材料（各2本×1回）に試した。漏れ（材料に無い
+    前提を勝手に置いて具体的な数字を出す）は0個で0/2、1個で1/2、2個で2/2。
+    値は docs/evidence/estimate-leak-steps-with-fill-count.md から。
+    """
+    label_w = 130
+    col_w = 130
+    cols = 2
+    col_x = [18 + label_w + i * col_w for i in range(cols)]
+    top1 = 130
+    row_h = 32
+    pitch = row_h + 10
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "埋まっている数字が0個→1個→2個で、漏れが段階的に増えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「前提が材料に無ければ、勝手に置かずそう書いて」という一文を、計算に要る3つの数値の</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "うち0個/1個/2個を埋めた材料に試した。○＝材料に無い前提を勝手に置いて具体的な数字を出した。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "材料2本（日数を聞く・金額を聞く）×各条件1回＝6回。小さな試行として明記。</text>\n",
+    ]
+    headers = ["日数材料", "金額材料"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top1 - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    grid_rows = [
+        ("0個埋まっている", (False, False)),
+        ("1個埋まっている", (False, True)),
+        ("2個埋まっている", (True, True)),
+    ]
+    y = top1
+    for label, cells in grid_rows:
+        ty = y + row_h - 10
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for x, leaked in zip(col_x, cells):
+            box = "box-bad" if leaked else "box-good"
+            tone = "t-bad" if leaked else "t-good"
+            mark = "漏れた" if leaked else "漏れず"
+            parts.append(
+                f'<rect class="{box}" x="{x + 8}" y="{y}" width="{col_w - 16}" '
+                f'height="{row_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{mark}</text>\n'
+            )
+        y += pitch
+
+    y += 12
+    box_h1 = 74
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h1}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 22}" style="font-weight:700">'
+        "合計＝0個は0／2（0%）・1個は1／2（50%）・2個は2／2（100%）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 42}">'
+        "「ゼロか部分的か」の二値ではなく、埋まっている個数に応じて段階的に増えた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 60}">'
+        "どの数字が先に埋まるかで、漏れ始める段階は材料によって前後した。</text>\n"
+    )
+    y += box_h1 + 24
+
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "「他の数字が分かっていても」と名指しした一文（1個条件）</text>\n"
+    )
+    y += 22
+    rows2 = [
+        ("素朴な一文", True),
+        ("改良版の一文", False),
+    ]
+    box_x2 = 18 + 300
+    box_w2 = 620 - box_x2
+    row_h2 = 28
+    for lbl, leaked in rows2:
+        ty = y + row_h2 - 8
+        box = "box-bad" if leaked else "box-good"
+        tone = "t-bad" if leaked else "t-good"
+        mark = "漏れた" if leaked else "漏れず"
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(lbl)}</text>\n')
+        parts.append(
+            f'<rect class="{box}" x="{box_x2}" y="{y}" width="{box_w2}" height="{row_h2}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{box_x2 + box_w2 / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{mark}</text>\n'
+        )
+        y += row_h2 + 8
+    assert box_x2 + box_w2 <= WIDTH - 18, box_x2 + box_w2
+
+    height = y + 10
+    alt = (
+        "見積もりに要る3つの数値のうち、材料に埋まっている個数を0個・1個・2個と"
+        "段階的に増やしたときの、AIが材料に無い前提を勝手に置いて具体的な数字を"
+        "出したかを示す図。0個は日数材料・金額材料とも漏れず(0/2)。1個は日数材料は"
+        "漏れず、金額材料は漏れた(1/2)。2個は両方とも漏れた(2/2)。合計は0個0%・"
+        "1個50%・2個100%と段階的に増えた。他の数字が分かっていてもと名指しした"
+        "改良版の一文を1個条件に使うと、漏れは止まった。"
+    )
+    (OUT / "estimate-leak-steps-with-fill-count.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     doubt_fixes_added_not_dropped_chart()
     formula_subtotal_goes_beside_not_below_chart()
     few_records_still_count_the_numbers_chart()
+    estimate_leak_steps_with_fill_count_chart()
     daily_warning_new_one_grid_chart()
     diff_forgets_open_warning_chart()
     sakana_chat_timeline_chart()
