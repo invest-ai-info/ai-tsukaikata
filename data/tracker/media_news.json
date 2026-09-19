@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-19T11:05:17.815226+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-19T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "大規模言語モデル(LLM)や画像・動画生成AIを高速実行するにはモデル全体を高速なVRAMに収める必要があります。しかし、AI需要に伴うグラフィックボードの価格高騰によって、VRAM容量32GBのNVIDIA GeForce RTX 5090は100万円を超えるようになってしまいました。一方で、Intel製GPU「Intel Arc Pro B70」を搭載したVRAM容量32GBのASRock製…",
+      "title": "VRAM容量32GBで30万円未満なIntelグラボ「Intel Arc Pro B70 Creator 32GB」でローカルLLM「Qwen3.8 27B」や動画生成AI「MiniMax H3」を実行して生成速度を確かめてみた",
+      "uid": "3e047e59fb06e31e",
+      "url": "https://gigazine.net/news/20260919-arc-pro-b70-llm-review/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-19T11:05:17.815226+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-19T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIアプリの開発ではLLMが生成した回答を確認するだけでなく、どの処理を経由して回答に到達したのかを追跡し、改善後の結果を比較する作業も必要になります。これらの検証に必要なトレーシング・評価・プロンプト管理・本番監視を1つの画面にまとめたオープンソースの「Opik」が公開されています。 続きを読む...",
+      "title": "無料でAIエージェントの追跡・評価・プロンプト管理・本番環境の監視ができる「Opik」、セルフホスト可能",
+      "uid": "9f1cb8fcd0ac5ad7",
+      "url": "https://gigazine.net/news/20260919-opik/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-19T11:05:17.815226+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-19T07:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年8月より欧州連合(EU)でAI法が施行され、EU域内ではAIによって生成されたコンテンツであることを検出可能にする義務が課されるようになり、EU域内で事業を行う大規模言語モデル(LLM)プロバイダーに対してAI生成物であることを示す「ウォーターマーク」の適用が事実上義務付けられるようになりました。しかしながら、テキストに対するAIウォーターマーク技術には技術的な難しさに加えて実効性に関…",
+      "title": "テキストAIの透かし・ウォーターマークは技術的に困難な上に簡単に削除できる",
+      "uid": "da848f28def39afa",
+      "url": "https://gigazine.net/news/20260919-text-ai-watermarks/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-19T05:58:18.432398+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "aeb598dce40e20d1",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140634.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T04:32:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Benevoは、ユナイテッド・シネマ お台場にて、上映イベント「AIgekijo2026」を9月20日10時30分より17時まで開催する。チケット価格は3,000円。",
-      "title": "生成AI映像フェス「AIgekijo2026」9月20日開催 ショートフィルム40本を一挙上映",
-      "uid": "3701e32c434d2e9a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140617.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T04:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "GitHubは、ソフトウェア開発の現場で急速に広がるAI関連の新用語を解説するガイドを公開した。「FDE」「ハーネス」「オープンウェイト」など、主要な10の用語を整理している。",
-      "title": "「FDE」「ハーネス」「オープンウェイト」って何？　AI時代に現場で飛び交う10用語をGitHubが整理",
-      "uid": "25bdffbc89bac8e5",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/14/news037.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T03:56:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIエージェントの「Devin」を開発するCognitionが、OpenAIの「GPT-6 Astra」やAnthropicの「Claude Fable」の性能を引き出すハーネス「Fusion」を開発しました。 続きを読む...",
-      "title": "GPT-6 AstraとClaude Fableの性能を引き出すハーネス「Fusion」が登場、Claude CodeやCodexで使う場合と同等の性能を示しつつコストを最大39％削減",
-      "uid": "dee2c74f18e83f46",
-      "url": "https://gigazine.net/news/20260914-cognition-fusion/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
