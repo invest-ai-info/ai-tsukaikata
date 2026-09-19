@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-19T23:10:18.600197+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIを導入しても、現場で使いこなせなければ業務改善にはつながらない。中小企業ではAI人材の不足や研修、費用が壁となる中、専門人材を常時抱えるのではなく、「必要な時だけ活用する」という選択肢を提供するベンダーがある。",
+      "title": "AI人材を採用できない中小企業、専門家を「必要な時だけ」活用する支援サービス",
+      "uid": "5b3ec93831c9906c",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/20/2000001626/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-19T23:10:18.600197+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの導入が進む一方、企業固有の業務を任せるには、社内に分散する知識や個人の経験則をAIが使える形に整える必要がある。アビームとNotionは、ナレッジを起点に業務と組織を変える。",
+      "title": "AIを入れても仕事は変わらない？　アビームとNotionが「企業ナレッジ」に注目する理由",
+      "uid": "9319cce6e582bffc",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/20/2000001660/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-19T23:10:18.600197+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "RPAや生成AIを導入しても、例外処理や目視確認、システム更新など「最後に人がやる仕事」は残る。Generative Partnersは、こうした自動化しきれない業務をAIと人力で分担し、BPOとして丸ごと引き受けるサービスを始めた。",
+      "title": "AIを入れても「最後は人頼み」　自動化の穴を「AI＋人」で埋める新たなBPOサービス",
+      "uid": "9244968db117c815",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/20/2000001625/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-19T23:10:18.600197+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIを導入したくても、「どの業務から始めるか分からない」「AI人材がいない」と悩む中小企業は少なくない。ただツールを導入するだけでは業務は変わらない。",
+      "title": "AI導入でつまずく中小企業、「何を・誰が・どう変えるか」を丸ごと支援",
+      "uid": "2b9af565d3d2125a",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/20/2000001627/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-19T23:10:18.600197+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIによってサイバー攻撃のスピードが増す一方、企業の防御現場では人が大量のアラートを調査し、対応を判断している。人手不足も重なる中、ゼットスケーラーはAIエージェントを活用し、検知から調査、対応までを自動化する新たなSOCを打ち出した。",
+      "title": "AI攻撃は「調べて対応」では間に合わない　ゼットスケーラーがSOCをAIエージェント化",
+      "uid": "9dfb1f0758b5bb1c",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/20/2000001661/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-19T11:05:17.815226+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2339,66 +2399,6 @@
       "uid": "bc1d4647f43cde1f",
       "url": "https://www.itmedia.co.jp/aiplus/article/2609/14/2000001449/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T05:58:51+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立製作所は、産業、エネルギー、モビリティ分野などの社会インフラにおけるフィジカルAIの安全運用に向けたガードレール技術を開発した。",
-      "title": "日立、フィジカルAIがリアルタイムに制御ガードレールで監視・補正 安全運用に向けた技術を開発",
-      "uid": "7036bada3032b103",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140662.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T05:41:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "大日本印刷（以下、DNP）は9月14日、Lydsec Keypasco Digital Technology（以下、Keypasco）と人やAIエージェントによるデジタルサービスの安全な利用を支える認証の基盤づくりに向けて協業すると発表した。DNPはその一環として金融サービス事業者向けに、本人確認やデバイス認証、リスクベース認証等を組み合わせた「DNPマルチトラスト認証」サービスの提供を11月に…",
-      "title": "DNP、AI時代の金融機関向け「マルチトラスト認証」11月提供開始 Keypasco独自のデバイス認証技術で不正取引対策を強化",
-      "uid": "cb3c8916f09c48db",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140658.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T05:41:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Instagramに娘の動画を投稿したところ、これまで投稿した記憶のない「娘の氏名」や「生年月日」といった個人情報を、MetaのAIアシスタントであるMeta AIが正確に提示してきたという恐怖体験が投稿され話題となっています。 続きを読む...",
-      "title": "「投稿した記憶のない娘の個人情報」をMeta AIが知人の投稿などから正確に推測するという恐怖体験を母親が告白",
-      "uid": "758256c499a69e05",
-      "url": "https://gigazine.net/news/20260914-meta-ai-instagram-facebook-invasive-information/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T05:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが訓練・評価していたAIエージェントが、プログラミング言語「Ruby」のパッケージ配布サービス「RubyGems.org」への大規模な攻撃に関与していた可能性があることが分かりました。セキュリティ研究者らによると、2026年5月に2000件を超えるパッケージが投稿され、RubyDoc.infoのサーバー上で任意のコードを実行したほか、一部では利用者のAPIキーを取得しようとする処理も…",
-      "title": "OpenAIのAIエージェントがRubyGemsへの攻撃に関与か、2000件超のパッケージ投稿やAPIキー窃取の試みが判明",
-      "uid": "ce948b3a107695b0",
-      "url": "https://gigazine.net/news/20260914-openai-agent-cyber-attack-rubygems/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T04:42:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ネットワンシステムズは、社内用の個人向けAIエージェント「NetOne Claw」を独自開発し8月から全社展開を開始した。",
-      "title": "ネットワン、自社開発のAIエージェント「NetOne Claw」を全社展開 社員・組織・業務の“文脈”をAIに提供し回答精度を向上",
-      "uid": "aeb598dce40e20d1",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140634.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
