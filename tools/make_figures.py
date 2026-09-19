@@ -22760,8 +22760,115 @@ def doubt_fixes_added_not_dropped_chart() -> None:
     )
 
 
+def formula_subtotal_goes_beside_not_below_chart() -> None:
+    """集計欄をデータの真下に置くと、AIは6回中5回、二重計上・循環参照の危険に気づかない。
+
+    実測（2026-09-19・担当本人が指示文どおりの入力に自分でAIとして応答した記録。
+    仮説キューH16）。集計欄（合計3行）をデータのすぐ下・同じ列に置いた架空の表2本
+    （経費精算・倉庫入出庫）に、「行が増えても直さなくていい形にしてください」と頼んだ。
+    集計行自身が参照範囲に含まれる問題に自分から触れたのは、材料2本×各3回=6回のうち1回だけ。
+    値は docs/evidence/formula-subtotal-goes-beside-not-below.md の「照合（機械）」節から。
+    """
+    label_w = 170
+    col_w = 150
+    cols = 3
+    col_x = [18 + label_w + i * col_w for i in range(cols)]
+    top1 = 130
+    row_h = 32
+    pitch = row_h + 10
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "集計欄をデータの真下・同じ列に置くと、6回中5回すり抜けた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「行が増えても直さなくていい形にしてください」と頼んだ。集計行自身が参照範囲に</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "含まれる問題（循環参照・二重計上）に、AIが自分から触れたかを○×で示す。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "材料2本（経費精算・倉庫入出庫）×各3回=6回。前の記事ではこの注意を4回とも"
+        "自分から言えていた。</text>\n",
+    ]
+    headers = ["1回目", "2回目", "3回目"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top1 - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    grid_rows = [
+        ("経費精算（部署ごと）", (False, False, True)),
+        ("倉庫入出庫（倉庫ごと）", (False, False, False)),
+    ]
+    y = top1
+    for label, cells in grid_rows:
+        ty = y + row_h - 10
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for x, caught in zip(col_x, cells):
+            box = "box-good" if caught else "box-bad"
+            tone = "t-good" if caught else "t-bad"
+            mark = "気づいた" if caught else "気づかず"
+            parts.append(
+                f'<rect class="{box}" x="{x + 10}" y="{y}" width="{col_w - 20}" '
+                f'height="{row_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{mark}</text>\n'
+            )
+        y += pitch
+
+    y += 12
+    box_h1 = 60
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h1}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 24}" style="font-weight:700">'
+        "6回のうち、自分から気づいたのは1回だけ（17%）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 44}">'
+        "残り5回は列全体参照の数式をそのまま返した。</text>\n"
+    )
+    y += box_h1 + 24
+
+    parts.append(
+        f'<text class="t-strong" x="18" y="{y}">'
+        "気づかなかった数式を、実際にExcelへ入れると</text>\n"
+    )
+    y += 22
+    box_h2 = 78
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="678" height="{box_h2}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 22}" style="font-weight:700">'
+        "①循環参照の警告が出る（数式のセル自身が参照範囲に含まれるため）</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="34" y="{y + 44}" style="font-weight:700">'
+        "②合計行の部署名・倉庫名が検索条件と一致し、合計に自分自身が混入する</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 64}">'
+        "どちらの場合も、正しい合計（例: 営業部54,700円）にはならない。</text>\n"
+    )
+    y += box_h2 + 16
+
+    height = y + 8
+    alt = (
+        "集計欄をデータのすぐ下・同じ列に置いた架空の表2本（経費精算・倉庫入出庫）に、"
+        "行が増えても直さなくていい数式を頼んだ結果を示す図。経費精算は1回目・2回目は"
+        "気づかず、3回目は気づいた。倉庫入出庫は3回とも気づかなかった。6回のうち、"
+        "集計行自身が範囲に含まれる問題に自分から気づいたのは1回だけ(17%)。"
+        "気づかなかった数式を実際にExcelへ入れると、①数式のセル自身が参照範囲に"
+        "含まれるため循環参照の警告が出る、②合計行の部署名・倉庫名が検索条件と一致し、"
+        "合計に自分自身が混入する、のどちらかが起き、正しい合計にはならない。"
+    )
+    (OUT / "formula-subtotal-goes-beside-not-below.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     doubt_fixes_added_not_dropped_chart()
+    formula_subtotal_goes_beside_not_below_chart()
     daily_warning_new_one_grid_chart()
     diff_forgets_open_warning_chart()
     sakana_chat_timeline_chart()
