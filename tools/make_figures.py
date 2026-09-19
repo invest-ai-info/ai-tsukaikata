@@ -22696,7 +22696,72 @@ def diff_forgets_open_warning_chart() -> None:
     )
 
 
+def doubt_fixes_added_not_dropped_chart() -> None:
+    """工程2に「本当に該当するか確認して」と足すと、何が直り何が直らなかったか。
+
+    実測（2026-09-19・独立のサブエージェント4回、架空の問い合わせ16件を2本）。
+    値は docs/evidence/doubt-fixes-added-not-dropped.md の「照合（機械）」節から。
+    """
+    groups = [
+        ("意図的に挿入した誤りを、確認版が検出", 4, 4, "box-good", "t-good", "見つけたこと自体は毎回成功"),
+        ("健全な5件だけでも、確認版が正しい項目を誤除外", 4, 4, "box-bad", "t-bad", "誤りが無いときに新しい誤りを生んだ"),
+        ("工程1が落とした行（のべ8機会）・確認を足しても", 0, 8, "box-bad", "t-bad", "工程2には渡っていないので戻らない"),
+    ]
+    top = 150
+    bar_h = 40
+    pitch = bar_h + 40
+    plot_x, plot_w = 300, 340
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "確認は誤りを見つけたが、健全なときほど正しい項目も一緒に落とした</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の問い合わせ16件を2本、独立のサブエージェントで各2回=4回（材料2本×2回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "工程1が黙って落とした行は、確認あり／なしのどちらでも一度も戻らなかった。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の返りは docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, box, tone, note) in enumerate(groups):
+        y = top + index * pitch
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "工程1の判定ミスが、工程2の確認でどれだけ直ったかを示す横棒グラフ。"
+        "意図的に挿入した誤り（本当は解決済みなのに「至急」という語が本文に残っていた行）を、"
+        "確認を一言足した版は独立の実測4回中4回で正しく検出した。"
+        "ところが同じ確認の一言は、何も間違っていない健全な5件だけを渡した回でも、"
+        "4回中4回で正しい項目を1件ずつ誤って除外した。"
+        "一方、工程1が最初から抜き出さなかった行（本文に至急を示す語が無いだけで、"
+        "実際には今日中の対応が要る内容）は、確認あり・確認なしのどちらでも、"
+        "のべ8機会中0回しか最終の一覧に戻らなかった。工程2に渡されていない行は、"
+        "確認のしようがないため。"
+    )
+    (OUT / "doubt-fixes-added-not-dropped.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    doubt_fixes_added_not_dropped_chart()
     daily_warning_new_one_grid_chart()
     diff_forgets_open_warning_chart()
     sakana_chat_timeline_chart()
