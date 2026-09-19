@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-19T05:58:18.432398+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-19T03:10:40+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Changed auto mode for Claude API and Enterprise users, and on Bedrock, Vertex, Foundry and gateways, to default to the server-side classifier, which does not charge for classifier over…",
+      "title": "v2.1.278",
+      "uid": "1f1b9768d218f289",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.278",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-18T19:40:05.592936+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -63,6 +75,20 @@
       "uid": "01325ef17ce263db",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-09-19T05:58:18.432398+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-18T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people.",
+      "summary_ja": "OpenAIが「オーストラリア青少年安全ブループリント」を発表\n若者を保護し力を与えるための、6つの柱からなる指針。\nAIをより安全に利用できるように目指すものです。",
+      "summary_source": "gemini",
+      "title": "Introducing the Australian Youth Safety Blueprint",
+      "uid": "95da83dd4c3af8ac",
+      "url": "https://openai.com/index/australian-youth-safety-blueprint",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-09-18T05:58:12.647888+00:00",
