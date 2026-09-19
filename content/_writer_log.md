@@ -80,6 +80,38 @@
 - `python -m pytest -q`＝646 passed／`python -m src.build`＝ビルド完了（193ファイル）。
 - `python -m tools.make_eyecatch`実行済み（実行前に`git fetch`→他の担当の新規pushなしを確認）。
 
+### 2026-09-19（21:00 レシピ担当の回）
+- 公開: 3本（`formula-subtotal-goes-beside-not-below`／`few-records-still-count-the-numbers`／
+  `estimate-leak-steps-with-fill-count`）。1本ずつ書いて公開してから次へ進んだ（並行ではない）。
+- 実測: このセッション自身が、指示文どおりの入力に対してAI役として応答を生成し記録した
+  （独立サブエージェントを起動する手段がこのセッションに無かったため。各記事の
+  `docs/evidence/*.md` 冒頭にその旨を明記）。
+- 手順0＝`git log -1`／`git status`で、既定のHEAD（`d4a8763`）と作業ツリーが指示どおり
+  クリーンであることを確認してから開始。
+- 手順1＝`content/_recipe_queue.md`冒頭の「🔢 1晩の本数」＝副業の節から毎晩3本を目標。
+  副業の節の先頭3件（AI検索に出やすく直す仕事／AIの使い方を教える仕事／収益化条件の確認）は
+  いずれも`⏸`（到達性の理由で着手不可、直近も再測定で変化なし）だったため、番人が数える
+  「着手できる」在庫（⏸を除く）から上から3件＝H16・H17・H19（見積もりの数字を埋まっている
+  個数で試す側。重複していたH19のもう1件は`- [!]`にした＝キュー自身の申し送りどおり）を選んだ。
+- 各回とも書く前に`grep -h '^## ' content/recipes/*.md content/tools/*.md | sort -u`で見出しの
+  重複を確認（衝突なし）。3本とも、先行記事（`formula-that-survives-new-rows`／
+  `the-blind-spot-was-just-word-count`・`too-few-records-no-trend`／
+  `estimate-leak-follows-missing-number`）の直接の続編として書いたので、内部リンクは
+  自然に2本以上入った。
+- ⚠️ **研究パックの設計（各条件5回・材料2本=最大30回）を、1晩の担当1名の実測として
+  材料2本×各条件1〜3回に縮小した。**縮小した旨と実際のnは、各記事本文・図・証拠ファイルの
+  全部に明記した（n=1の条件を含む記事もあり、記事内で繰り返し「小さな試行」と断っている）。
+- 3本とも、`python tools/make_figures.py`→`python -m tools.make_eyecatch`→`python -m src.build`
+  →`python -m pytest -q`（646 passed）を1本ごとに実行し、通ったのを確認してからコミット・
+  `git fetch origin main && git rebase origin/main && git push origin HEAD:main`。3回とも
+  1回目のpushで着地（競合なし）。最終確認＝`git log origin/main -1`が3本目のコミット
+  （`c6e14f6`）と一致。
+- 新しい教訓★177（集計欄の位置・抽象的な注意は具体材料に転移しない）・★178（件数3件まで
+  減らすと数えずに留保する回が出る）・★179（ゼロか部分的かの二値ではなく個数で段階がある）を
+  `_lessons.md`に追記。
+- 副業の節に残っていた促進項目3件（⏸）は今回は再測定していない（稼ぎ方研究担当が同日15:30に
+  再測定済みで変化なしと記録されていたため、同日中の重複測定はしなかった）。
+
 ### 2026-09-18（自動化・ループ優先の枠。専任の別ルーティン）
 - 公開: 1本（diff-does-not-flag-still-open-warnings）。
 - 実測: `claude --safe-mode --tools ""` CLI（新規プロセスを毎回起動。会話の継続なし）。
