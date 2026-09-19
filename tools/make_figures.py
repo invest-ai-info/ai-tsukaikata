@@ -22866,9 +22866,82 @@ def formula_subtotal_goes_beside_not_below_chart() -> None:
     )
 
 
+def few_records_still_count_the_numbers_chart() -> None:
+    """件数を12件から3件に減らすと、数えずに留保する回が0回から2回に増えた。
+
+    実測（2026-09-19・担当本人が指示文どおりの入力に自分でAIとして応答した記録。
+    仮説キューH17）。既存記事（`the-blind-spot-was-just-word-count`・12件・
+    材料2本×各5回=10回）は開いた質問でも10回とも数値を書いた。今回（3件・
+    材料2本×各3回=6回）は、数値を書いたのが4回、留保のみで数値を書かなかった回が
+    2回。値は docs/evidence/few-records-still-count-the-numbers.md から。
+    """
+    rows = [
+        ("既存記事（12件・材料2本×各5回=10回）", 10, 10, "box-good", "t-good"),
+        ("今回（3件・材料2本×各3回=6回）", 4, 6, "box-bad", "t-bad"),
+    ]
+    top = 140
+    bar_h = 42
+    pitch = bar_h + 34
+    plot_x, plot_w = 300, 340
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "件数を12件から3件に減らすと、数えずに留保する回が増えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「通った1件（または3件）と通らなかった分の差を出してください」という開いた質問に、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "具体的な数値を書いて答えた回の割合。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "既存記事は採用3・不採用9の12件。今回は採用1・不採用2の3件。どちらも2種類の"
+        "材料で試した。</text>\n",
+    ]
+
+    for index, (label, val, n, box, tone) in enumerate(rows):
+        y = top + index * pitch
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        parts.append(
+            f'<text class="{tone}" x="{plot_x + plot_w + 14}" y="{y + bar_h / 2 + 5:.0f}" '
+            f'style="font-weight:700">{val}／{n}</text>\n'
+        )
+
+    y = top + len(rows) * pitch
+    box_h = 62
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 24}" style="font-weight:700">'
+        "数えずに留保だけで終えた回は、12件で0回→3件で2回に増えた</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 44}">'
+        "要因を名指しして聞き直すと、留保だけで終えた2回とも数値つきの答えに変わった。</text>\n"
+    )
+    y += box_h + 16
+
+    height = y + 8
+    alt = (
+        "応募記録の件数を12件から3件に減らしたときに、AIが開いた質問に対して具体的な"
+        "数値を書いたかを比較した横棒グラフ。既存記事(12件・材料2本×各5回=10回)は"
+        "10回とも数値を書いた。今回(3件・材料2本×各3回=6回)は数値を書いたのが4回、"
+        "留保のみで数値を書かなかった回が2回だった。要因を名指しして聞き直すと、"
+        "この2回とも数値つきの答えに変わった。"
+    )
+    (OUT / "few-records-still-count-the-numbers.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     doubt_fixes_added_not_dropped_chart()
     formula_subtotal_goes_beside_not_below_chart()
+    few_records_still_count_the_numbers_chart()
     daily_warning_new_one_grid_chart()
     diff_forgets_open_warning_chart()
     sakana_chat_timeline_chart()
