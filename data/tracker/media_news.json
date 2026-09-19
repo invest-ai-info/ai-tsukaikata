@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-19T01:13:24.180276+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-18T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "出展2000社超の過半数が中国勢、そして長年メイン会場の“顔”だったサムスン電子の電撃的な撤退──。欧州最大の家電見本市「IFA」の会場には、中国勢の巨大ブースと50モデルものヒューマノイドなど地殻変動の熱気が渦巻いていた。主役の交代と「脱・家電」シフトが加速する中、IFA運営トップのライフ・リントナーCEOを現地ベルリンで単独直撃。サムスン離脱の本当の理由から、パナソニックがブースを壁で覆った…",
+      "title": "パナソニック・サムスン撤退の裏で「中国勢5割」　独IT見本市「IFA」トップが明かす舞台裏",
+      "uid": "0597b67915ff0117",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/19/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-18T22:37:04.827143+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2386,18 +2398,6 @@
       "title": "高度なAI推論性能の次世代CPU「FUJITSU-MONAKA」 国産サーバー「Fujitsu MONAKA Server」もデータセンター事業者に販売",
       "uid": "f05f36af64c4f468",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140574.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T06:22:09.221023+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T02:51:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SpiralAIは、9月17日から21日まで幕張メッセで開催される「東京ゲームショウ2026」のコーエーテクモゲームスブースにて、「『RyzaChat:AI』TGSスペシャルステージ 〜最新情報＆初解禁情報発表〜」を9月18日13時20分より開催する。",
-      "title": "「RyzaChat:AI」TGS2026でステージ開催決定。最新情報や実機プレイも",
-      "uid": "bf46b119964f9efe",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140552.html",
       "vendor": "Impress AI Watch"
     }
   ]
