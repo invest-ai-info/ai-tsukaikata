@@ -4829,20 +4829,6 @@
       "uid": "c48934e22b87504b",
       "url": "https://www.anthropic.com/news/introducing-claude-tag",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "PFN 技術ブログ",
-      "published": "2026-06-22T01:50:48+00:00",
-      "source_id": "pfn-blog",
-      "summary": "はじめに みなさん、こんにちは。PLaMo事後学習チームの今村です。我々は本日、国産生成AI基盤モデルPLaMo™︎の新たなフラグシップモデルPLaMo 3.0 Primeをリリースしました。PLaMo 3.0 Prim […] 投稿 PLaMo 3.0 Primeをリリースしました は Preferred Networks Tech Blog に最初に表示されました。",
-      "summary_ja": "国産生成AIモデル「PLaMo」新版が公開\n「PLaMo 3.0 Prime」がフラッグシップモデル",
-      "summary_source": "gemini",
-      "title": "PLaMo 3.0 Primeをリリースしました",
-      "uid": "81187291e1a23685",
-      "url": "https://tech.preferred.jp/ja/blog/plamo-3-0-prime-release/",
-      "vendor": "Preferred Networks"
     }
   ]
 }
