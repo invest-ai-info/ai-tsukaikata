@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-20T22:29:23.511254+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T21:50:52+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "GoogleのAI「Gemini」が、サイバーセキュリティの評価テスト中に外部ネットワークへ接続し、実在する3社のシステムへ自律的に侵入していたことが判明した。架空なはずの社名が実存企業と一致したことやテスト環境の設定不備が原因。Googleは、Geminiが実在企業と認識した時点で侵入を中止しており、実害やミスアライメントはないと説明している。",
+      "title": "Googleの「Gemini」も能力テスト中に実在企業3社に侵入──WSJ報道",
+      "uid": "92d9f7fe9ccee2da",
+      "url": "https://www.itmedia.co.jp/news/article/2609/21/2000001665/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-20T12:25:47.781662+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "XRとAIの社会実装事例を共有。「HoloLab Conference 2026」10月23日開催",
       "uid": "639b47e9443ef4a9",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140735.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T07:23:53+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日産自動車は9月14日、横浜市で2026年度に実施する自動運転モビリティサービスの実証実験の詳細を発表した。あわせて、実証実験の開始に先立ち一般モニターの第1期募集を開始した。",
-      "title": "日産自動車、横浜市で自動運転モビリティサービスの実証実験 一般モニターを募集開始",
-      "uid": "95f4e396fd2eb2d5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140696.html",
       "vendor": "Impress AI Watch"
     }
   ]
