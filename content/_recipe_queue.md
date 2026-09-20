@@ -1969,28 +1969,7 @@ grep実測で既出0件を確認。5点とも書けた）＝サブエージェ�
   - 実測の芯: AIに「このページをAI検索に出やすく直して」と頼み、**返ってきた施策のうち、
     本人が結果を確かめられるものが何件あるか**を数える。⚠️ 効果の断定は書かない
 - [x] AIの使い方を教える仕事を受ける ― 教える前に、自分の手順が他人の手で再現するか
-  - ✅ **2026-09-18 公開**＝`recipes/teaching-ai-runbook-stops-where`（実測18回・ストアカ／ココナラの率は実ブラウザで確認。
-    ⏸の理由だった `www.street-academy.com` は手元の実ブラウザで到達＝クラウドの到達性は未測定のまま）
-  - ⏸ **いま着手できない**（2026-09-03・レシピ担当）＝需要と価格の出どころ
-    `www.street-academy.com` が、この環境から `CONNECT tunnel failed, response 403`＝**経路の遮断**
-    （許可リストの問題。先方のbot判定ではない）。⚠️ 既に書かれているとおり、拾えている数字は
-    **受講料であって講師の取り分ではない**ので、開けないまま書くと🎯（いくら入るか）に答えられない。
-    **印を消す条件**＝`www.street-academy.com`（または講師募集ページなど講師側の取り分が分かる一次情報）に
-    クラウドから到達できたこと。実測して日付を行に書き足すこと。
-    📌 同じ日に `coconala.com` は200だったので、**ドメインごとに結果が違う**（一律ではない）
-  - 🔁 **2026-09-06 に再測定・変化なし**＝`curl -sS -o /dev/null -w "%{http_code}"
-    https://www.street-academy.com/zenkoku/chatgpt` は `CONNECT tunnel failed, response 403`
-    のまま。**⏸ は消さない。**
-  - 需要: **検索結果の要約のみの水準（2026-08-31 取得）。**個人が講師として登壇できる場として
-    <https://www.street-academy.com/zenkoku/chatgpt>（全国のChatGPT講座一覧）が実在。
-    受講側の価格として月額9,800〜14,800円・単発 8,000〜9,800円という記述があった。
-    🚨 **これは受講料であって、講師の取り分ではない。**プラットフォームの手数料も未確認
-    （＝上の「手数料を引く前か後か」に該当。**分からないなら書かない**）
-  - 4番（既存との切り分け）: `try-the-runbook` は**自分の手順書の穴を見つける**話。
-    この回は**他人に渡して料金を取れる形にする**話で、切り分けの核は「**再現しなかった手順**を
-    どう数えるか」。⚠️ ここが1文で書けないなら落とす（4番の関門）
-  - 実測の芯: 自分の手順をAIに渡して「書かれているとおりにだけやって」と頼み、
-    **止まった箇所と、勝手に補われた箇所**を数える
+  - →保管: ✅ **2026-09-18 公開**＝`recipes/teaching-ai-runbook-stops-where
 
 📌 **まだ変換していない残り6区分**（`- [ ]` にしない＝需要の裏取りが済んでいないため。
 研究担当が様式9点でパック化したら、上に `- [ ]` として足す）:
@@ -2015,33 +1994,7 @@ grep実測で既出0件を確認。5点とも書けた）＝サブエージェ�
 - [!] 副業の売上・経費の一覧化（確定申告の下ごしらえ）をAIに手伝わせる
   - →保管: 需要: 「確定申告」系**35語**。⚠️ 税務の**判断**はさせない・税理士ではない旨を明記（グレー）
 - [x] 画像生成・note・GPTs の「収益化の条件」を規約の原文で確かめる
-  - ✅ **2026-09-18 公開（3本に分割）**＝GPTs `recipes/gpts-retirement-check-the-source`／画像生成 `recipes/ai-stock-images-adobe-vs-pixta`／
-    Instagram `recipes/instagram-two-gates-500-and-10000`（note は既存 N1/N2 と 2026-09-18 の `note-membership-monthly-formula` が消化）。
-    いずれも実ブラウザで原文を確認（`helpx.adobe.com`・`help.openai.com`・`help.instagram.com` は urllib では本文が取れない＝
-    `check_numbers.py` の機械照合は効かない。クラウドの到達性は未測定）
-  - ⏸ **いま着手できない**＝2026-08-30 の研究担当の実測で、残る3件の一次情報に本文まで届かなかった（`help-note.com`・`helpx.adobe.com` が EGRESS_BLOCKED、`help.openai.com` は素の403）。この項目は「書く前に原文確認」が条件なので、届くまで着手できない。
-    ⚠️ **1回の測定で諦めないこと**＝同じ 2026-08-30 に `support.google.com` が15:30 は EGRESS_BLOCKED・21:00 は200だった（**時刻で到達性が変わる**）。時間を置いて測り直し、**どれか1つでも通ったらこの ⏸ 行を消す**
-  - 需要: 「収益化」系**53語**。プラットフォーム規約が主役＝全文 `checked` 必須のグレー
-  - 🆕 **2026-08-28 オーナー指示で保留解除・先頭へ昇格**（AdSenseはもう保留理由ではない。
-    earnの目的＝「AIと協力してどう収入を得るか」の具体例なので、この節の🎯にいちばん直接答える）。
-    ⚠️ **書く前に研究担当（15:30）が原文を新規に確認すること**（N1/K1と同じ手順＝
-    実ブラウザで到達・引用と `checked` 日付をパック化してから書き手へ渡す。書き手が代行で
-    取得しない）。1本に詰め込まず、note/Kindleシリーズと同じ粒度で割ってよい
-  - 🔁 **2026-08-31 にYouTube分は対象から外した**＝`support.google.com` が今日開通し
-    `youtube/answer/72851?hl=ja` を再取得したところ、同じURL・同じ数字が
-    `recipes/youtube-payout-thresholds`（`checked: 2026-08-30`）に既に逐語引用済みだった。
-    **残るのは画像生成・note・GPTsの3サービス**（詳細は `_earn_research.md` 2026-08-31）。
-    画像生成は対象URL自体が未確定（ストック素材サイトか生成ツール規約か、オーナー確認が要る）。
-    note・Adobe系は経路遮断、GPT Storeは想定URL(`developers.openai.com/api/docs/gpts/revenue`)が404で
-    正しい一次情報URLが未特定
-  - 🔁 **2026-09-01 に再測定・変化なし**＝`help-note.com`・`helpx.adobe.com`・`stock.adobe.com`・
-    `www.lancers.co.jp`・`help.instagram.com` は全て `CONNECT tunnel failed, response 403`（経路遮断）。
-    `help.openai.com`は403（bot判定寄り・変化なし）、`developers.openai.com/api/docs/gpts/revenue`は
-    404（変化なし）。`openai.com/policies/`・`openai.com/index/gpt-store/`も403で試した（🆕新規に試した
-    経路だが同じくbot判定）。**⏸ は消さない。**次の担当は許可リストの変化を先に確認すること
-  - 🔁 **2026-09-06 に再測定・変化なし**＝`help-note.com`・`helpx.adobe.com`・`help.openai.com` を
-    `curl` で再確認したが、いずれも前回と同じ結果（`help-note.com`・`helpx.adobe.com` は
-    `CONNECT tunnel failed, response 403`、`help.openai.com` は403）。**⏸ は消さない。**
+  - →保管: ✅ **2026-09-18 公開（3本に分割）**＝GPTs `recipes/gpts-retirement-che
 - [x] 売るスキルの棚卸しを、AIに聞き役をさせて作る
   - →保管: 公開: `sell-what-you-already-do`
 - [x] 動画の台本と構成案の下ごしらえを、AIに組ませる
