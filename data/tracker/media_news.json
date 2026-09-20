@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-20T12:25:47.781662+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-20T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ネットワーク越しに文字列やファイルなどのデータを送ったり、指定したポートへ直接接続したりできる「netcat」を利用する場合、IPアドレスの確認やルーターのポート開放・NAT越えなどネットワーク側の準備が必要になります。そこで、netcatのようなシンプルな操作感を保ちながら、Tailscaleが持つWireGuardによる暗号化とNAT越えの仕組みを使い、生成されたアドレスを相手に渡すだけで2…",
+      "title": "netcatと同様だがTailscaleのデータプレーン上で動作する「Tailcat」",
+      "uid": "c9a1ebe895ddc303",
+      "url": "https://gigazine.net/news/20260920-tailcat/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-20T12:25:47.781662+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T07:00:26+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米スタートアップのTypeSafe AIが9月15日（現地時間）に発表したAIモデル「Jev」（ジェヴ）が、海外や日本のAIコミュニティで大きな注目を集めている。この記事では、Jevとは何か、LLMとはどう違うのかなどを整理する。",
+      "title": "「Jev」とは　“文章を書かないAI”がなぜ話題に？　元OpenAI研究者が開発、「“スマートなif文”と考えてみて」",
+      "uid": "2f199f68f73d453d",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/20/2000001664/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-19T23:10:18.600197+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2375,30 +2399,6 @@
       "uid": "95f4e396fd2eb2d5",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140696.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T06:53:59+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "冷凍食品PR連盟は、PC専用ブラウザゲーム「冷凍食品タイピング工場」を9月14日に公開した。無料で利用できる。",
-      "title": "冷食専門家が生成AIで制作、「冷凍食品タイピング工場」無料公開",
-      "uid": "14e2a78276667bb3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140685.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T05:59:09+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米トランプ大統領はAI規制論に対して「われわれはAIで中国をリードしており、その状態を維持したい」「ガードレールを設けることはできるが、実際に起こらないことを議論に持ち出す人々がいる」と述べた。",
-      "title": "米トランプ大統領、広がるAI規制論に反論　「中国へのリードを維持したい」",
-      "uid": "bc1d4647f43cde1f",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/14/2000001449/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
