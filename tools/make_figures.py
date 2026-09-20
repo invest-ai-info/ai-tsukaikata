@@ -24413,7 +24413,101 @@ def subsidy_ai_hit_and_miss_chart() -> None:
     )
 
 
+def dummy_row_holds_real_row_breaks_chart() -> None:
+    """見本行を実データにするかダミーにするかで、2日目の追記が崩れた回数（実測2026-09-20）。
+
+    独立のサブエージェント（Agentツール general-purpose）で材料2本×2版×各4回=16回。
+    値は docs/evidence/dummy-row-holds-real-row-breaks.md の「照合（機械）」節から。
+    """
+    groups = [
+        ("実データの見本行（副業の作業記録）", 0, 4, "box-bad", "t-bad"),
+        ("ダミーの見本行（副業の作業記録）", 4, 4, "box-good", "t-good"),
+        ("実データの見本行（家計の買い物メモ）", 4, 4, "box-good", "t-good"),
+        ("ダミーの見本行（家計の買い物メモ）", 4, 4, "box-good", "t-good"),
+    ]
+    top = 150
+    bar_h = 40
+    pitch = bar_h + 30
+    plot_x, plot_w = 300, 340
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "2日目の追記が正しい形式だった回数——副業の記録だけ、実データの見本が0/4</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "独立のサブエージェントで材料2本×見本2版×各4回=16回。指示文はどの回も同じ文字列。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "崩れた4回は、走り書きが一切変換されずそのまま最後の行に貼られていた。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の返りは docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, box, tone) in enumerate(groups):
+        y = top + index * pitch
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 24
+    alt = (
+        "見本行を実データにするかダミーにするかで、記録ファイルへの2日目の追記が正しい形式だった"
+        "回数を並べた横棒グラフ。独立のサブエージェントで材料2本（副業の作業記録・家計の買い物メモ）"
+        "×見本2版（実データ由来・ダミーのプレースホルダー）×各4回=16回試した。指示文はどの回も"
+        "同じ文字列。副業の作業記録で実データの見本行を使った場合だけ0/4で、走り書きが一切変換されず"
+        "そのまま最後の行に貼られていた。副業の記録でダミーの見本行を使った場合は4/4、家計の買い物"
+        "メモでは実データ・ダミーどちらの見本行でも4/4で正しい形式だった。"
+    )
+    (OUT / "dummy-row-holds-real-row-breaks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def dummy_row_holds_real_row_aftermath_chart() -> None:
+    """崩れは3日目に伝わるか・点検で見つかるか・言い直しで防げるか（実測2026-09-20）。
+
+    値は docs/evidence/dummy-row-holds-real-row-breaks.md の該当節から。
+    """
+    _hit_and_miss_rows_chart(
+        "dummy-row-holds-real-row-aftermath.svg",
+        "崩れた行は自動では直らないが、広がりもしない。点検は逆にダミー行を誤検出する",
+        "実測2026-09-20。崩れた記録ファイルをそのまま3日目に使い、点検・修正・言い直しの指示文を試した。",
+        "上2行＝3日目の伝播。中2行＝点検の当たり外れ。下1行＝言い直しの効果。",
+        [
+            ("3日目、崩れた行が自動で直った", 0, 2, "good"),
+            ("3日目、新しい行が崩れを巻き込んだ", 0, 2, "bad"),
+            ("点検＝崩れた行を正しく発見", 2, 2, "good"),
+            ("点検＝崩れていないダミー見本行を誤って指摘", 2, 2, "bad"),
+            ("指示文に一文足すと2日目から崩れなくなった", 2, 2, "good"),
+        ],
+        [
+            "崩れた1行は3日目になっても自分では直らない。ただし後続の行を巻き込むこともない。",
+            "「どの行が変か」と聞く点検は、書式としては正しいダミーの見本行を2/2で誤って名指しした。",
+            "指示文に「追記する行もそろえてください」の一文を足すと、同じ材料で2/2とも崩れなかった。",
+        ],
+        "崩れの3日目への伝播・点検の当たり外れ・言い直しの効果を並べた表。3日目に崩れた行が自動で"
+        "直った回数は0/2で赤、新しい行が崩れを巻き込んだ回数は0/2で緑（起きなかったので良い）。"
+        "点検で崩れた行を正しく発見した回数は2/2で緑、点検が崩れていないダミー見本行を誤って"
+        "指摘した回数は2/2で赤。指示文に「追記する行もそろえてください」を足すと2日目から崩れが"
+        "起きなかった回数は2/2で緑。下の枠には、崩れた行は自分では直らないが後続を巻き込まないこと、"
+        "点検はダミーの見本行を誤検出すること、指示文に一文足すと同じ材料で崩れなくなったことが"
+        "書かれている。",
+        label_w=420,
+    )
+
+
 if __name__ == "__main__":
+    dummy_row_holds_real_row_breaks_chart()
+    dummy_row_holds_real_row_aftermath_chart()
     doubt_fixes_added_not_dropped_chart()
     formula_subtotal_goes_beside_not_below_chart()
     few_records_still_count_the_numbers_chart()
