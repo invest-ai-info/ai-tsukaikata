@@ -18,6 +18,10 @@
   足した（`8d13086`）。OpenAI の2件は `developers.openai.com` の料金・仕様ページ（URL に `.md` を付けると
   Markdown で読める）へ出典を振り替える前提。到達性は手元で測った値＝担当がクラウド側で測り直す
 
+- **サイト内検索を作った**（設計 `docs/superpowers/specs/2026-09-20-site-search-design.md`・計画
+  `docs/superpowers/plans/2026-09-20-site-search.md`）。全ページのヘッダーに窓＋`/search/?q=`。索引は `search.json`
+  （タイトル・説明文・タグ・見出し。予算 400KB をテストが見る）。運用メモは CLAUDE.md「🔎 サイト内検索」
+
 🔎 **見るもの**＝9/21 08:00 JST の深掘りが `introducing-chatgpt-images-2-5` の行で記事を書けたか
 （発表ページは読めない前提。`developers.openai.com` だけで書けたか、止まったなら理由）。
 FIG（`sakana.ai/frontier-intelligence-group/`）は**オーナーが見送りを決めるまで `[!]` のまま**。

@@ -37,7 +37,7 @@
 - Create: `src/search.py`
 - Test: `tests/test_search.py`
 
-- [ ] **Step 1: 失敗するテストを書く**
+- [x] **Step 1: 失敗するテストを書く**
 
 `tests/test_search.py` を新規作成:
 
@@ -127,12 +127,12 @@ def test_real_content_index_is_within_budget_and_clean():
     assert size <= INDEX_BUDGET_BYTES, f"search.json が {size} バイト（予算 {INDEX_BUDGET_BYTES}）"
 ```
 
-- [ ] **Step 2: 失敗を確かめる**
+- [x] **Step 2: 失敗を確かめる**
 
 Run: `PYTHONUTF8=1 python -m pytest -q tests/test_search.py`
 Expected: `ModuleNotFoundError: No module named 'src.search'`（収集の時点で落ちる）
 
-- [ ] **Step 3: 実装する**
+- [x] **Step 3: 実装する**
 
 `src/search.py` を新規作成:
 
@@ -201,12 +201,12 @@ def search_json(articles: list[Article]) -> str:
     return json.dumps(build_index(articles), ensure_ascii=False, separators=(",", ":")) + "\n"
 ```
 
-- [ ] **Step 4: 通ることを確かめる**
+- [x] **Step 4: 通ることを確かめる**
 
 Run: `PYTHONUTF8=1 python -m pytest -q tests/test_search.py`
 Expected: `6 passed`
 
-- [ ] **Step 5: コミット**
+- [x] **Step 5: コミット**
 
 ```bash
 git add src/search.py tests/test_search.py
@@ -221,7 +221,7 @@ git commit -m "feat(search): 記事から検索の索引を作る src/search.py�
 - Modify: `src/build.py`（`collect()`・`files["robots.txt"] = ...` の直後）
 - Test: `tests/test_build.py`（末尾に追加）
 
-- [ ] **Step 1: 失敗するテストを書く**
+- [x] **Step 1: 失敗するテストを書く**
 
 `tests/test_build.py` の末尾に追加（`import json` を先頭の import に足す）:
 
@@ -238,12 +238,12 @@ def test_collect_emits_search_index_and_search_page(tmp_path):
     assert "/search/" not in files["sitemap.xml"]
 ```
 
-- [ ] **Step 2: 失敗を確かめる**
+- [x] **Step 2: 失敗を確かめる**
 
 Run: `PYTHONUTF8=1 python -m pytest -q tests/test_build.py -k search`
 Expected: `KeyError: 'search.json'`
 
-- [ ] **Step 3: 実装する**
+- [x] **Step 3: 実装する**
 
 `src/build.py` の import に `search` を足す:
 
@@ -262,13 +262,13 @@ from . import config, feeds, news, render, search
 ⚠️ `section_paths` には `/search/` を**足さない**（sitemap に載せない）。`search/index.html` 自体は Task 3 の
 `render_site()` が返す。
 
-- [ ] **Step 4: 通ることを確かめる（Task 3 が済むまで `search/index.html` の assert だけ落ちる）**
+- [x] **Step 4: 通ることを確かめる（Task 3 が済むまで `search/index.html` の assert だけ落ちる）**
 
 Run: `PYTHONUTF8=1 python -m pytest -q tests/test_build.py -k search`
 Expected: `AssertionError: assert 'search/index.html' in files`（`search.json` の2つの assert は通っている。
 Task 3 の Step 4 で全部通る）
 
-- [ ] **Step 5: コミット（Task 3 と一緒でもよい）**
+- [x] **Step 5: コミット（Task 3 と一緒でもよい）**
 
 ```bash
 git add src/build.py tests/test_build.py
@@ -286,7 +286,7 @@ git commit -m "feat(search): ビルドが search.json を書き出す（sitemap 
 - Modify: `tests/test_render.py:95-102`（全ページの集合に `search/index.html` を足す）と `:165-173`（docstring）
 - Test: `tests/test_search.py`（末尾に追加）
 
-- [ ] **Step 1: 失敗するテストを書く**
+- [x] **Step 1: 失敗するテストを書く**
 
 `tests/test_search.py` の import に `from src.render import render_site` を足し、末尾に追加:
 
@@ -317,13 +317,13 @@ def test_other_pages_do_not_load_search_js():
     assert "search.js" not in pages["index.html"]
 ```
 
-- [ ] **Step 2: 失敗を確かめる**
+- [x] **Step 2: 失敗を確かめる**
 
 Run: `PYTHONUTF8=1 python -m pytest -q tests/test_search.py`
 Expected: `KeyError: 'search/index.html'`（noindex のテスト）と `assert 'action="/search/"' in header`（窓のテスト）の
 **2 failed, 7 passed**（`test_other_pages_do_not_load_search_js` は実装前から通る＝退行を見張るテスト）
 
-- [ ] **Step 3: `templates/base.html` を直す**
+- [x] **Step 3: `templates/base.html` を直す**
 
 `<script src="/static/js/copy.js" defer></script>` の直後に差し込み口を足す:
 
@@ -347,7 +347,7 @@ Expected: `KeyError: 'search/index.html'`（noindex のテスト）と `assert '
 </header>
 ```
 
-- [ ] **Step 4: `templates/search.html` を作る**
+- [x] **Step 4: `templates/search.html` を作る**
 
 ```html
 {% extends "base.html" %}
@@ -369,7 +369,7 @@ Expected: `KeyError: 'search/index.html'`（noindex のテスト）と `assert '
 {% endblock %}
 ```
 
-- [ ] **Step 5: `src/render.py` に検索ページを足す**
+- [x] **Step 5: `src/render.py` に検索ページを足す**
 
 `pages["index.html"] = ...` の直前に:
 
@@ -385,7 +385,7 @@ Expected: `KeyError: 'search/index.html'`（noindex のテスト）と `assert '
     )
 ```
 
-- [ ] **Step 6: `tests/test_render.py` を現状に合わせる**
+- [x] **Step 6: `tests/test_render.py` を現状に合わせる**
 
 `test_output_paths_use_trailing_slash_structure`（95〜102行）は全ページの集合を固定しているので、検索ページを足す:
 
@@ -409,7 +409,7 @@ def test_header_has_no_nav_links():
     ヘッダーに残るのはサイト名のリンクと、2026-09-20 に足した検索の窓（site-search）だけ。"""
 ```
 
-- [ ] **Step 7: 通ることを確かめる**
+- [x] **Step 7: 通ることを確かめる**
 
 Run: `PYTHONUTF8=1 python -m pytest -q tests/test_search.py tests/test_build.py tests/test_render.py`
 Expected: すべて `passed`（`test_collect_emits_search_index_and_search_page` も通る）
@@ -417,7 +417,7 @@ Expected: すべて `passed`（`test_collect_emits_search_index_and_search_page`
 Run: `PYTHONUTF8=1 python -m pytest -q`
 Expected: `656 passed`（646＋新規10本）。落ちるものが無いこと
 
-- [ ] **Step 8: コミット**
+- [x] **Step 8: コミット**
 
 ```bash
 git add templates/base.html templates/search.html src/render.py src/build.py tests/test_search.py tests/test_build.py tests/test_render.py
@@ -433,7 +433,7 @@ git commit -m "feat(search): ヘッダーの検索窓と /search/ ページ（no
 
 CSS に自動テストは無い。ビルドの検査（`python -m src.build`）と Task 6 のブラウザ確認で見る。
 
-- [ ] **Step 1: `static/style.css` の末尾に追加**
+- [x] **Step 1: `static/style.css` の末尾に追加**
 
 ```css
 /* --- サイト内検索（2026-09-20）。ヘッダーの窓は素のフォーム＝JS無しでも /search/ へ飛ぶ --- */
@@ -494,12 +494,12 @@ CSS に自動テストは無い。ビルドの検査（`python -m src.build`）�
 .search-noscript { color: var(--muted); }
 ```
 
-- [ ] **Step 2: ビルドが通ることを確かめる**
+- [x] **Step 2: ビルドが通ることを確かめる**
 
 Run: `PYTHONUTF8=1 python -m src.build`
 Expected: `ビルド完了: 208ファイルを ... に出力しました`（206＋`search.json`＋`search/index.html`）
 
-- [ ] **Step 3: コミット**
+- [x] **Step 3: コミット**
 
 ```bash
 git add static/style.css
@@ -515,7 +515,7 @@ git commit -m "feat(search): ヘッダーの窓と検索ページの見た目（
 
 自動テストは無い（この環境に Node が無い）。Task 6 でブラウザで実際に打って確かめる。
 
-- [ ] **Step 1: `static/js/search.js` を作る（前半）**
+- [x] **Step 1: `static/js/search.js` を作る（前半）**
 
 ```javascript
 // サイト内検索（/search/ だけで読む）。
@@ -603,7 +603,7 @@ git commit -m "feat(search): ヘッダーの窓と検索ページの見た目（
   }
 ```
 
-- [ ] **Step 2: `static/js/search.js` の後半（前半の続きに書く。最後の `})();` で閉じる）**
+- [x] **Step 2: `static/js/search.js` の後半（前半の続きに書く。最後の `})();` で閉じる）**
 
 ```javascript
   function el(tag, className, text) {
@@ -715,17 +715,17 @@ git commit -m "feat(search): ヘッダーの窓と検索ページの見た目（
 })();
 ```
 
-- [ ] **Step 3: 括弧の対応だけ先に確かめる（Node が無いので Python で数える）**
+- [x] **Step 3: 括弧の対応だけ先に確かめる（Node が無いので Python で数える）**
 
 Run: `PYTHONUTF8=1 python -c "t=open('static/js/search.js',encoding='utf-8').read(); print(t.count('{')==t.count('}'), t.count('(')==t.count(')'))"`
 Expected: `True True`
 
-- [ ] **Step 4: ビルドして static にコピーされることを確かめる**
+- [x] **Step 4: ビルドして static にコピーされることを確かめる**
 
 Run: `PYTHONUTF8=1 python -m src.build && ls build/static/js/ build/search/ && ls -l build/search.json`
 Expected: `copy.js  search.js`・`index.html`・`search.json`（約250KB）
 
-- [ ] **Step 5: コミット**
+- [x] **Step 5: コミット**
 
 ```bash
 git add static/js/search.js
@@ -741,22 +741,22 @@ git commit -m "feat(search): 検索ページのJS（NFKC正規化・AND部分一
 プレビューは `.claude/launch.json` の `site`（`python -m http.server 8877 --directory build`）。**`build/` を配信するので、
 直したら必ず `python -m src.build` を先に走らせる。**
 
-- [ ] **Step 1: ビルドしてプレビューを開く**
+- [x] **Step 1: ビルドしてプレビューを開く**
 
 Run: `PYTHONUTF8=1 python -m src.build`
 そのあと `preview_start {name: "site"}` → `navigate` で `http://localhost:8877/search/?q=Gmail`
 
-- [ ] **Step 2: 直リンク `?q=Gmail` で結果が出る**
+- [x] **Step 2: 直リンク `?q=Gmail` で結果が出る**
 
 `read_page` で確かめる: 窓に `Gmail` が入っている／状態行が「「Gmail」に当たる記事: N件」（N ≥ 1）／
 結果カードにタイトル・説明文・札（レシピ／ツール）・日付がある。`read_console_messages {onlyErrors: true}` が空。
 
-- [ ] **Step 3: 入力で絞り直せる・URL が追従する**
+- [x] **Step 3: 入力で絞り直せる・URL が追従する**
 
 `find` で窓の ref を取り、`triple_click` → `type "副業"` → 状態行が「「副業」に当たる記事: N件」に変わり、
 `javascript_tool` で `location.search` が `?q=%E5%89%AF%E6%A5%AD` になっている。
 
-- [ ] **Step 4: 正規化と AND**
+- [x] **Step 4: 正規化と AND**
 
 - `ｇｍａｉｌ`（全角小文字）で Step 2 と同じ件数になる
 - `GitHub Actions`（2語）で、両方を含む記事だけが出る（`javascript_tool` で
@@ -764,17 +764,17 @@ Run: `PYTHONUTF8=1 python -m src.build`
 - `見出しにしか無い言葉`＝索引から見出しだけにある語を1つ選ぶ（`javascript_tool` で `fetch('/search.json')` を読んで、
   title/description/tags に無く headings にだけある語を探す）→ その語で検索して「見出し『…』に一致」の行が出る
 
-- [ ] **Step 5: 0件と空欄**
+- [x] **Step 5: 0件と空欄**
 
 - `zzzzqqqq` → 状態行「0件」＋「見つかりませんでした」＋レシピ一覧／深掘り記事の一覧のリンク
 - 窓を空にする（`triple_click` → `key "Backspace"`）→ 状態行が案内文に戻り、結果が消え、URL が `/search/` になる
 
-- [ ] **Step 6: ヘッダーの窓（JS無しの経路）**
+- [x] **Step 6: ヘッダーの窓（JS無しの経路）**
 
 `navigate` で `http://localhost:8877/recipes/` → ヘッダーの窓に `Gmail` を入れて Enter（`find` で `name="q"` の input →
 `type` → `key "Return"`）→ `/search/?q=Gmail` へ遷移し、結果が出る。
 
-- [ ] **Step 7: スマホ幅とダークモード**
+- [x] **Step 7: スマホ幅とダークモード**
 
 - `resize_window {preset: "mobile"}` → `/search/?q=Gmail` と `/recipes/` で `javascript_tool`:
   `document.documentElement.scrollWidth <= window.innerWidth`（横スクロール無し）。ヘッダーの窓が2行目に回っている
@@ -782,7 +782,7 @@ Run: `PYTHONUTF8=1 python -m src.build`
 - `resize_window {colorScheme: "dark"}` → 窓とボタンの配色が暗い紙に馴染んでいる（`screenshot`）
 - 終わったら `resize_window {preset: "desktop"}` に戻す
 
-- [ ] **Step 8: 直したものがあればコミット**
+- [x] **Step 8: 直したものがあればコミット**
 
 ```bash
 git add static/js/search.js static/style.css templates/search.html
@@ -797,7 +797,7 @@ git commit -m "fix(search): ブラウザ確認で見つかった崩れを直す�
 - Modify: `CLAUDE.md`（「2段目（サイト本体）」の「できているもの」表の下に短い節）
 - Modify: `SESSION_HANDOFF.md`（冒頭の 2026-09-20 節に1項目）
 
-- [ ] **Step 1: CLAUDE.md に運用メモを足す**
+- [x] **Step 1: CLAUDE.md に運用メモを足す**
 
 「### 記事の書き方（2026-08-02 に方針変更）」の直前に:
 
@@ -812,7 +812,7 @@ git commit -m "fix(search): ブラウザ確認で見つかった崩れを直す�
 - JS に自動テストは無い。直したらプレビュー（`site`・`build/` を配信）で `?q=Gmail`・全角・2語・0件・375px を手で確かめる
 ```
 
-- [ ] **Step 2: SESSION_HANDOFF.md の 2026-09-20 節に1項目**
+- [x] **Step 2: SESSION_HANDOFF.md の 2026-09-20 節に1項目**
 
 「- **深掘りの材料切れ**＝…」の項目の後に:
 
@@ -821,7 +821,7 @@ git commit -m "fix(search): ブラウザ確認で見つかった崩れを直す�
   `docs/superpowers/plans/2026-09-20-site-search.md`）。ヘッダーの窓＋`/search/`。索引は `search.json`（予算 400KB をテストが見る）
 ```
 
-- [ ] **Step 3: 全部の検査を通す**
+- [x] **Step 3: 全部の検査を通す**
 
 Run: `PYTHONUTF8=1 python -m pytest -q`
 Expected: 全部 `passed`（656）
@@ -829,7 +829,7 @@ Expected: 全部 `passed`（656）
 Run: `PYTHONUTF8=1 python -m src.build`
 Expected: `ビルド完了: 208ファイル`
 
-- [ ] **Step 4: コミットして push**
+- [x] **Step 4: コミットして push**
 
 ```bash
 git add CLAUDE.md SESSION_HANDOFF.md docs/superpowers/plans/2026-09-20-site-search.md
@@ -837,7 +837,7 @@ git commit -m "docs: サイト内検索の運用メモと実装計画"
 git push origin main
 ```
 
-- [ ] **Step 5: 配信と本番を確かめる**
+- [x] **Step 5: 配信と本番を確かめる**
 
 GitHub API を1回だけ叩く（未認証は60回/時。連打しない）:
 
