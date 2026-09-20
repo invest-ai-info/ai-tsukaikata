@@ -24,7 +24,8 @@
 - **見出し**＝`body_html` の `<h2>`/`<h3>` の文字だけ（タグを剥がし、実体参照を戻し、空白を1つに畳む）。
   `{: .what}` のような印は Markdown 変換の時点で class になっているので文字には残らない
 - **生の文字だけ入れる。**正規化（§4）は表示側で行う。索引を2倍にしないため。
-  `published` は `YYYY-MM-DD` の文字列、`scene` は無ければ `null`、`tags`/`headings` は空でも配列
+  `published` は `YYYY-MM-DD` の文字列、`scene` は無ければ `null`、`tags`/`headings` は空でも配列。
+  表示用の札 `category_label`／`scene_label` も入れる（config の日本語を JS 側に持たせないため）
 - 全カテゴリを入れる（`pages` の about/privacy/start も）。特別扱いの分岐を作らない
 - 実測（2026-09-20・187本）: 248KB・gzip 約70KB。**検索ページを開いたときだけ読む**ので他のページは重くならない
 - `build.py` の `collect()` が `files["search.json"]` に足す（検証エラーがあれば他と同じく何も出さない）
