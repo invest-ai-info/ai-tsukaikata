@@ -11,7 +11,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from . import config, feeds, news, render
+from . import config, feeds, news, render, search
 from .content import load_articles
 from .figures import check_svg
 from .validate import validate
@@ -135,6 +135,11 @@ def collect(
     files["feed.xml"] = feeds.build_rss(articles)
     files["sitemap.xml"] = feeds.build_sitemap(articles, section_paths)
     files["robots.txt"] = feeds.build_robots()
+
+    # サイト内検索の索引（2026-09-20）。/search/ を開いたときだけブラウザが読む。
+    # 記事と同じ検証を通った内容から作るので、ここより上で errors が出ていれば出ない。
+    # ⚠️ section_paths には /search/ を足さない（sitemap に載せない）
+    files["search.json"] = search.search_json(articles)
 
     # 生成HTMLをコミットしない方式では、CNAME を artifact に含めないと
     # デプロイのたびに独自ドメインの設定が外れる

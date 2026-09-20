@@ -99,6 +99,7 @@ def test_output_paths_use_trailing_slash_structure():
         "recipes/index.html",
         "recipes/sample/index.html",
         "about/index.html",
+        "search/index.html",   # サイト内検索（2026-09-20）。記事が何本でも必ず出る
     }
 
 
@@ -166,7 +167,7 @@ def test_without_news_index_has_no_news_section():
 
 def test_header_has_no_nav_links():
     """ヘッダーのナビは 2026-08-13 に廃止（カテゴリーボタンと重複するため）。
-    ヘッダーに残るのはサイト名のリンクだけ。"""
+    ヘッダーに残るのはサイト名のリンクと、2026-09-20 に足した検索の窓（site-search）だけ。"""
     pages = render_site([_article()], news=_news_top())
     html = pages["recipes/sample/index.html"]
     header = html.split("</header>")[0]

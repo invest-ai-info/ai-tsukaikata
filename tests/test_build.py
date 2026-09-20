@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 from pathlib import Path
 
 from src import build
@@ -188,3 +189,15 @@ def test_collect_without_news_paths_keeps_old_behavior(tmp_path):
     files, errors = build.collect(_content_dir(tmp_path))
     assert errors == []
     assert "news/index.html" in files  # 既定は本物の data/tracker/news.json を読む
+
+
+def test_collect_emits_search_index_and_search_page(tmp_path):
+    """検索の索引は記事と同じ検証を通った内容から作る。sitemap には入れない（検索結果ページを
+    Google に拾わせない）。"""
+    files, errors = build.collect(_content_dir(tmp_path))
+    assert errors == []
+    index = json.loads(files["search.json"])
+    assert [entry["url"] for entry in index] == ["/recipes/sample/"]
+    assert index[0]["title"] == "テスト記事"
+    assert "search/index.html" in files
+    assert "/search/" not in files["sitemap.xml"]

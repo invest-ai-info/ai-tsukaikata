@@ -21,12 +21,20 @@
 <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 <link rel="stylesheet" href="/static/style.css">
 <script src="/static/js/copy.js" defer></script>
+{% block head %}{% endblock %}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{{ site.adsense_publisher_id }}"
      crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
   <a class="site-name" href="/">{{ site.name }}</a>
+  {% if not hide_header_search %}
+  {# 素のフォーム＝JS無しでも /search/?q=… へ飛ぶ。JS はヘッダーに足さない（2026-09-20） #}
+  <form class="site-search" action="/search/" method="get" role="search">
+    <input class="site-search-input" type="search" name="q" placeholder="記事を探す" aria-label="記事を探す">
+    <button class="site-search-button" type="submit">検索</button>
+  </form>
+  {% endif %}
 </header>
 
 <main class="site-main">

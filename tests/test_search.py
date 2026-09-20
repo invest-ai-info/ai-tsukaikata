@@ -4,6 +4,7 @@ from datetime import date
 from pathlib import Path
 
 from src.content import Article, load_articles, render_markdown
+from src.render import render_site
 from src.search import INDEX_BUDGET_BYTES, build_index, headings, plain_text, search_json
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -81,3 +82,29 @@ def test_real_content_index_is_within_budget_and_clean():
             assert "<" not in heading, (entry["url"], heading)
     size = len(search_json(articles).encode("utf-8"))
     assert size <= INDEX_BUDGET_BYTES, f"search.json が {size} バイト（予算 {INDEX_BUDGET_BYTES}）"
+
+
+def test_search_page_is_rendered_with_noindex_and_script():
+    pages = render_site([_article()])
+    html = pages["search/index.html"]
+    assert '<meta name="robots" content="noindex">' in html
+    assert '<script src="/static/js/search.js" defer></script>' in html
+    assert 'id="search-input"' in html and 'id="search-results"' in html
+    assert "<noscript>" in html and 'href="/recipes/"' in html
+    assert '<link rel="canonical" href="https://ai-tsukaikata.com/search/">' in html
+
+
+def test_header_search_form_is_on_every_page_except_search():
+    pages = render_site([_article()])
+    for path in ("index.html", "recipes/index.html", "recipes/sample/index.html"):
+        header = pages[path].split("</header>")[0]
+        assert 'action="/search/"' in header, path
+        assert 'name="q"' in header, path
+    header = pages["search/index.html"].split("</header>")[0]
+    assert "site-search" not in header      # 同じ窓が2つ並ばない
+
+
+def test_other_pages_do_not_load_search_js():
+    pages = render_site([_article()])
+    assert "search.js" not in pages["recipes/sample/index.html"]
+    assert "search.js" not in pages["index.html"]

@@ -111,6 +111,16 @@ def render_site(
 
     pages: dict[str, str] = {}
 
+    # サイト内検索（2026-09-20）。記事ではないので /news/ と同じく template から直接組む。
+    # noindex＋sitemap 外（build.py の section_paths に入れない）＝検索結果ページを Google に拾わせない
+    pages["search/index.html"] = env.get_template("search.html").render(
+        page_title="記事を探す",
+        description="タイトル・説明文・タグ・見出しから記事を探します。",
+        canonical=f"{config.SITE_URL}/search/",
+        og_type="website",
+        hide_header_search=True,   # 本文の大きい窓だけにする（同じ窓が2つ並ばない）
+    )
+
     pages["index.html"] = env.get_template("index.html").render(
         page_title=None,
         description=config.SITE_DESCRIPTION,

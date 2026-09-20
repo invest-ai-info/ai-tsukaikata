@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+<meta name="robots" content="noindex">
+<script src="/static/js/search.js" defer></script>
+{% endblock %}
+{% block content %}
+<section class="search-page">
+  <h1 class="article-title">記事を探す</h1>
+  <form id="search-form" class="search-form" action="/search/" method="get" role="search">
+    <input id="search-input" class="search-input" type="search" name="q" placeholder="例: Gmail、副業、GitHub Actions" aria-label="記事を探す" autocomplete="off">
+    <button class="search-button" type="submit">検索</button>
+  </form>
+  <p id="search-status" class="search-status" aria-live="polite">言葉を入れると、タイトル・説明文・タグ・見出しから探します。</p>
+  <div id="search-results" class="article-list"></div>
+  <noscript><p class="search-noscript">検索には JavaScript が必要です。<a href="/recipes/">レシピ一覧</a>・<a href="/tools/">深掘り記事の一覧</a>から探せます。</p></noscript>
+</section>
+{% endblock %}
