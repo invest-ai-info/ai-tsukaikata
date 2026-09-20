@@ -682,6 +682,53 @@
       停止理由は同一）。「AI Futures」はオーナーが独立検証のうえ 2026-08-21 に見送りで確定させた前例がある。
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。
       オーナーに一言確認を仰いでから確定させるのが、AI Futuresのときの前例に合わせたやり方。
+    - 2026-09-20: オーナー指示「二件とも進めて」は材料の補充（下の節）であって、この行の見送り確定ではない。
+      技術的な遮断ではないので再試行の対象外のまま＝オーナー確認待ちを継続
+
+### 🆕 2026-09-20 の補充（材料切れ・オーナー指示「二件とも進めて」・手動追記）
+
+**なぜ足したか＝未処理が0件で、保留は `openai.com` の bot 判定6件＋FIG 1件（オーナー確認待ち）。
+`news.json` には 9/18 以降「読めるホストの major お知らせ」が無く、自動追記は構造的に止まっていた**
+（`tools/` の自動公開は 9/17 の `claude-life-sciences-verification` が最後）。
+
+- `openai.com` 本体に枠を取らせない `UNREADABLE_HOSTS` は正しい。ただし CLAUDE.md の
+  「OpenAI は出典を振り替える」（① `openai.com/news/rss.xml` ② `developers.openai.com`）が使える発表は、
+  **手で足せば書ける**。下の2件は developers.openai.com 側に料金と仕様の表があることを手元で確かめた
+- ⚠️ 到達性は**手元のPC（2026-09-20）で測った値**。クラウド側は担当が測り直すこと（CLAUDE.md 2026-08-05）
+
+- [ ] https://openai.com/index/introducing-chatgpt-images-2-5
+  - 2026-09-20 手動追記（`news.json` では 9/8 の major。`UNREADABLE_HOSTS` のため自動追記されなかった行）
+  - 🚨 発表ページは bot 判定で読めない前提（確かめるのは1回でよい）。出典は振り替える＝
+    ① `openai.com/news/rss.xml` の description（1文だけ。手元実測）
+    ② `developers.openai.com/api/docs/models/gpt-image-2.5-sunburst.md`・同 `gpt-image-2.5-flare.md`・
+    `developers.openai.com/api/docs/pricing.md`（「Image generation models」＝Prices per 1M tokens。手元で 200 を実測）
+  - 集めたい数字＝画像生成の単価を Sunburst／Flare／gpt-image-2／gpt-image-1.5 で並べる
+    （手元実測: Standard の表で Sunburst・Flare・gpt-image-2 は Image 入力 $8.00／キャッシュ $2.00／出力 $30.00 で同額、
+    gpt-image-1.5 は出力 $32.00）。⚠️ 同じページに **Batch の半額表**があるので混ぜない（表の見出しで区別する）
+  - 比較相手＝Google の画像生成の料金（`ai.google.dev/gemini-api/docs/pricing`）。Anthropic が画像生成を
+    提供していなければ「提供していない」と書く（無理に並べない）
+  - ⚠️ ChatGPT 内での見え方（どのプランで使えるか等）は読めない（`chatgpt.com`・`help.openai.com` は bot 判定）。
+    **API 側の数字だけで書く。**書けないことは「発表ページが読めないため確認できなかった」と明記する
+- [ ] https://openai.com/index/introducing-gpt-live-1-in-the-api
+  - 2026-09-20 手動追記（`news.json` では 9/10 の minor。8/5 の `[!]` 行（ChatGPT 側の GPT-Live）とは別＝API 提供の発表）
+  - 出典の振り替え＝① RSS の description（「full-duplex voice conversations … custom voices, and telephony support」）
+    ② `developers.openai.com/api/docs/models/gpt-live-1.md`（手元実測: $0.05/分・秒単位課金・
+    「Backend model and tool usage is billed separately」・同時セッション数 Tier 1=25〜Tier 5=500・Free は不可）
+    ③ `developers.openai.com/api/docs/pricing.md` の GPT-Live 1 の行 ④ 音声ガイド `/api/docs/guides/live`（`.md` を付けて読む）
+  - 集めたい数字＝セッション単価・頭脳側モデルの別料金・同時セッション上限・telephony／カスタム音声の記載
+  - 比較相手＝Gemini 3.8 Live（`content/tools/gemini-3-8-live.md` の出典を再利用）。
+    ⚠️ **課金の単位が違う（分課金 vs トークン課金）なら表を分ける**＝3.8 Live 記事の前例どおり
+- [ ] https://sakana.ai/marlin-update/
+  - 2026-09-20 手動追記（`news.json` では 9/15 の minor。`sakana.ai` は 9/14・9/16 にクラウドから到達できている）
+  - 集めたい数字＝発表ページ（最大8時間・数十ページ・今年6月公開）と、料金ページ `sakana.ai/marlin/`
+    （手元実測 200: 1実行100クレジット・追加クレジット ¥98／¥90／¥85・毎月2,000／6,000クレジット付与・
+    プランは4つ・無料トライアルあり）。⚠️ `chat.sakana.ai` は経路遮断の前例あり＝叩かない
+  - 記事の芯＝「AIに調べさせて報告書にする」型の道具が、**読む側の手間**（裏取り・スライド化）まで
+    面倒を見るようになった話。読者に近い使い方＝会議前の調査を任せる
+  - 比較相手＝OpenAI の deep research（`developers.openai.com` の該当ガイド）・Google の Deep Research。
+    読めなければ「比較できなかった」と書く（無理に並べない）
+  - 📌 この minor が記事になれば、`sources.yml` の `sakana-blog` に `deepdive_minor: true` を付ける根拠になる
+    （CLAUDE.md「付けるのは minor が実際に記事になった会社だけ」）
 
 ## 処理済み
 

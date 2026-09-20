@@ -114,7 +114,8 @@ sources:
     url: https://sakana.ai/feed.xml
     # deepdive_minor は付けていない（2026-09-14）。minor 2件（提携の発表・特集号の紹介）は
     # どちらも記事の型に合わない。モデルの発表は major で入る。
-    # ⚠️ クラウド側の許可リストに sakana.ai が無く、major も読めていない（オーナー作業待ち）
+    # 📌 経路遮断は 2026-09-14 に解消（fugu-max・chat-fugumax を公開済み）。minor の marlin-update は
+    #    2026-09-20 に手で待ち行列へ入れた＝記事になれば deepdive_minor を付ける根拠になる
 
   # ⚠️ PFN 技術ブログ（pfn-blog）は 2026-09-14 に外した。フィードが廃止されたため。
   # 旧 https://tech.preferred.jp/ja/blog/feed/ は 301 → www.preferred.jp/ja/blog/tech/feed で
