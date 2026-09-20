@@ -1,8 +1,35 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-09-14 JST
+最終更新: 2026-09-20 JST
 
 ## 🚩 次のセッションは、ここから
+
+### ✅ 2026-09-20 稼ぎ方の研究パック10件を公開・ルーティン確認・深掘りの材料を補充
+
+- **9/16〜9/18 の研究（A〜J）を記事10本にした**（レシピ6本・`tools/` 4本・図26枚・証拠111回）。
+  9/20 に `23fdeef` でコミット→push→**Build & Deploy 成功・本番で 200 を確認**。
+  推定の月収・年収は「本人の頑張り次第なので推定で」というオーナー指示どおり、根拠の数字（JILPT 等）に
+  紐づけて書いた。作業の記録は `_writer_log.md`（9/18）・`_earn_research.md`（9/16・9/18）・`_lessons.md`（★176〜★181）
+- **ルーティンは全部正常**（Actions・claude.ai の6本とも定刻に起動しコミットあり）。
+  トラッカーの1〜3時間間隔・ダイジェストの約2時間遅れは CLAUDE.md の実測どおり
+- **深掘りの材料切れ**＝未処理0件・保留は `openai.com` の bot 判定6件＋FIG（オーナー確認待ち）で、
+  `news.json` の 9/18 以降に「読めるホストの major お知らせ」が無く自動追記が止まっていた。
+  → `_deepdive_queue.md` に**手で3件**（ChatGPT Images 2.5・GPT-Live-1 in the API・Sakana Marlin 更新）を
+  足した（`8d13086`）。OpenAI の2件は `developers.openai.com` の料金・仕様ページ（URL に `.md` を付けると
+  Markdown で読める）へ出典を振り替える前提。到達性は手元で測った値＝担当がクラウド側で測り直す
+
+🔎 **見るもの**＝9/21 08:00 JST の深掘りが `introducing-chatgpt-images-2-5` の行で記事を書けたか
+（発表ページは読めない前提。`developers.openai.com` だけで書けたか、止まったなら理由）。
+FIG（`sakana.ai/frontier-intelligence-group/`）は**オーナーが見送りを決めるまで `[!]` のまま**。
+
+⚠️ **残っている小さな件**（どれも壊れてはいない）:
+
+- `_deepdive_queue.md` が **925行**で予算600行を超えている（9/20 の追記前から 878行）。中身の大半は
+  `openai.com` の `[!]` 6件（bot 判定＝再試行対象外）。回転は `- [x]` しか移さないので、これらを
+  保管庫へ移すかどうかはオーナー判断（週次の `check_freshness.py` が予算超過を毎週報告する）
+- 既存記事の note のリンクが `www.help-note.com` へ転送されるようになった（内容は同じ。週次で赤くなったら最終URLに直す）
+- Adobe（`helpx.adobe.com`）はクラウドから**経路遮断**（`CONNECT tunnel failed, response 403`）＝週次の到達確認で
+  赤くなりうる。記事の数字は 9/16・9/18 に実ブラウザで確認済み（`docs/evidence/ai-stock-images-adobe-vs-pixta.md`）
 
 ### ✅ 2026-09-14 死活警告を直した（pfn-blog 廃止・日数表示・ソース別閾値）
 
