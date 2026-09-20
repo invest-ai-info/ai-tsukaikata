@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="312" viewBox="0 0 720 312" role="img" aria-label="画像出力トークンの単価（100万トークンあたり）を4モデルで比べた横棒グラフ。OpenAIのgpt-image-2.5 Sunburst/Flareは30ドル、Googleのnano Banana 2 Liteも同じ30ドル、Nano Banana 2は60ドル、Googleの最上位Nano Banana Proは120ドルで一番高い。Nano Banana Proの120ドルは1K/2K画像あたり0.134ドル、4K画像あたり0.24ドルに相当すると公式ページが併記している。Anthropicは画像生成モデルを公式ページに載せていない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="312"/>
+<text class="t-strong" x="18" y="26">画像出力トークンの単価は、Googleの最上位が一番高い</text>
+<text class="t-sm" x="18" y="45">100万 画像出力トークンあたりのドル。各社の公式料金ページに書かれている値。</text>
+<text class="t-sm" x="18" y="64">OpenAIのSunburst/FlareはGoogleの下位モデル（Lite）と同額。</text>
+<text class="t-sm" x="18" y="83">Anthropicは画像生成モデルを公式ページに載せていない。</text>
+<text class="t" x="18" y="122.0">Sunburst / Flare（対象・OpenAI）</text>
+<rect class="bar-new" x="248" y="106" width="93.0" height="22" rx="3"/>
+<text class="t-sm" x="349.0" y="122.0">$30.00</text>
+<text class="t" x="18" y="159.0">Nano Banana 2 Lite（Google）</text>
+<rect class="bar-old" x="248" y="143" width="93.0" height="22" rx="3"/>
+<text class="t-sm" x="349.0" y="159.0">$30.00</text>
+<text class="t" x="18" y="196.0">Nano Banana 2（Google）</text>
+<rect class="bar-old" x="248" y="180" width="186.0" height="22" rx="3"/>
+<text class="t-sm" x="442.0" y="196.0">$60.00</text>
+<text class="t" x="18" y="233.0">Nano Banana Pro（Google の最上位）</text>
+<rect class="bar-out" x="248" y="217" width="372.0" height="22" rx="3"/>
+<text class="t-sm" x="628.0" y="233.0">$120.00</text>
+<text class="t-xs" x="18" y="282">※ Nano Banana Proの$120は1K/2K画像相当で0.134ドル、4Kは0.24ドルと公式が併記。</text>
+<text class="t-xs" x="18" y="300">※ 出典: OpenAIとGoogleの公式料金ページ（2026年9月20日に確認）。</text>
+</svg>

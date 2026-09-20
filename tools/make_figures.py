@@ -24542,7 +24542,228 @@ def installment_scale_hit_and_miss_chart() -> None:
     )
 
 
+def chatgpt_images25_price_lineage_chart() -> None:
+    """画像出力トークンの単価が、世代を経て $40→$32→$30 と下がってきたことを示す。
+
+    出典＝OpenAI の料金ページ（developers.openai.com/api/docs/pricing・2026-09-20確認）。
+    Standardティア、100万 画像出力トークンあたりのドル。
+    """
+    rows = [
+        ("gpt-image-1", 40.0, False),
+        ("gpt-image-1.5", 32.0, False),
+        ("旧ChatGPTモデル", 32.0, False),
+        ("gpt-image-2", 30.0, False),
+        ("gpt-image-2.5 Sunburst", 30.0, True),
+        ("gpt-image-2.5 Flare", 30.0, True),
+    ]
+    left = 18
+    label_w = 190
+    bar_left = left + label_w
+    right = 620
+    span = right - bar_left
+    top, bar_h, gap = 100, 22, 15
+    pitch = bar_h + gap
+    biggest = max(v for _, v, _ in rows)
+    scale = span / biggest
+
+    assert right + 80 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">画像出力トークンの単価は、世代を経て下がってきた</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "100万 画像出力トークンあたりのドル（Standardティア）。テキスト側は別建て。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "gpt-image-2.5（青）は gpt-image-2 と同額で、旧ChatGPTモデルより安い。</text>\n",
+    ]
+    for index, (name, value, is_new) in enumerate(rows):
+        y = top + index * pitch
+        cls = "bar-new" if is_new else "bar-old"
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="{left}" y="{y + bar_h - 6:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_left + bw + 8:.1f}" y="{y + bar_h - 6:.1f}">'
+            f"{_usd(value)}</text>\n"
+        )
+
+    bars_bottom = top + (len(rows) - 1) * pitch + bar_h
+    notes_top = bars_bottom + 34
+    notes = [
+        "※ 旧ChatGPTモデル（chatgpt-image-latest）は「以前ChatGPTで使われて",
+        "　いたスナップショット」と公式ドキュメントに明記。同じページで",
+        "　API利用には Sunburst を推奨、と書かれている。",
+        "※ 出典: OpenAI の料金ページ（developers.openai.com・2026年9月20日に確認）。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{notes_top + note_index * 18}">{_esc(note)}</text>\n'
+        )
+    height = notes_top + (len(notes) - 1) * 18 + 16
+
+    alt = (
+        "OpenAIの画像生成モデルの、画像出力トークン単価（100万トークンあたり）を"
+        "世代順に並べた横棒グラフ。gpt-image-1は40ドル、gpt-image-1.5は32ドル、"
+        "旧ChatGPTモデル（chatgpt-image-latest）も32ドル、gpt-image-2は30ドル、"
+        "新しいgpt-image-2.5 Sunburstとgpt-image-2.5 Flareもどちらも30ドル。"
+        "旧ChatGPTモデルは公式ドキュメントで「以前ChatGPTで使われていたスナップショット」と"
+        "説明されており、同じページでAPI利用にはSunburstを推奨すると書かれている。"
+    )
+    (OUT / "chatgpt-images25-price-lineage.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def chatgpt_images25_old_vs_new_chart() -> None:
+    """旧世代（chatgpt-image-latest / gpt-image-1.5）と新世代（Sunburst / Flare）を並べる。
+
+    出典＝OpenAI の各モデルページと料金ページ（developers.openai.com・2026-09-20確認）。
+    """
+    rows = [
+        ("画質の選択肢", "low / medium / high\n（3段階）", "low/medium/high/xhigh/max\n（5段階＋auto）"),
+        ("画像出力単価", "$32／100万トークン", "$30／100万トークン"),
+        ("テキスト出力", "$10／100万トークン", "課金対象外\n（画像しか出力しない）"),
+        ("まとめ処理（Batch）", "対応（半額になる）", "非対応"),
+    ]
+    label_w = 96
+    col_gap = 12
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 130
+    pitch, box_h = 62, 50
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "画質は増え値段は下がったが、半額のBatchが使えなくなった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "旧ChatGPTモデル（chatgpt-image-latest・gpt-image-1.5）と新モデルの違い。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数字はどちらもOpenAIの公式ページに書かれている値。</text>\n",
+    ]
+    headers = ["旧世代", "gpt-image-2.5（新）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, old_v, new_v in rows:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((old_v, new_v)):
+            x = col_x[i]
+            if val == "非対応":
+                cls, tcls = "box-bad", "t-bad"
+            else:
+                cls = "box-quiet" if i == 0 else "box-accent"
+                tcls = "t-sm" if i == 0 else "t-accent"
+            parts.append(
+                f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 10:.1f}" y="{y + 20 + line_no * 17}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24 + 22
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ Batch非対応は、両モデルのページの「Endpoints」表（v1/batch）で確認。</text>\n"
+    )
+
+    alt = (
+        "旧世代（chatgpt-image-latest・gpt-image-1.5）と新しいgpt-image-2.5系を比べた表。"
+        "画質の選択肢＝旧世代はlow/medium/highの3段階、新世代はlow/medium/high/xhigh/maxの"
+        "5段階に加えてauto。画像出力単価＝旧世代は100万トークンあたり32ドル、新世代は30ドル。"
+        "テキスト出力＝旧世代は100万トークンあたり10ドルの課金があるが、新世代は画像しか"
+        "出力しないため課金対象外。まとめ処理（Batch）＝旧世代は対応していて半額になるが、"
+        "新世代（Sunburst・Flare）はどちらも非対応（赤枠で強調）。Batch非対応は両モデルの"
+        "公式ページのEndpoints表で確認したもので、画質は増え値段は下がったが、"
+        "半額のBatchが使えなくなったことを示す図。"
+    )
+    (OUT / "chatgpt-images25-old-vs-new.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def chatgpt_images25_vendor_price_chart() -> None:
+    """OpenAIの新モデルと、Googleの画像生成3モデル（Nano Banana系）の出力単価を比べる。
+
+    出典＝OpenAI: developers.openai.com/api/docs/pricing、
+    Google: ai.google.dev/gemini-api/docs/pricing（いずれも2026-09-20確認）。
+    Anthropicは公式ページに画像生成モデルの記載が無い（確認済み）。
+    """
+    rows = [
+        ("Sunburst / Flare（対象・OpenAI）", 30.0, True),
+        ("Nano Banana 2 Lite（Google）", 30.0, False),
+        ("Nano Banana 2（Google）", 60.0, False),
+        ("Nano Banana Pro（Google の最上位）", 120.0, False),
+    ]
+    left = 18
+    label_w = 230
+    bar_left = left + label_w
+    right = 620
+    span = right - bar_left
+    top, bar_h, gap = 106, 22, 15
+    pitch = bar_h + gap
+    biggest = max(v for _, v, _ in rows)
+    scale = span / biggest
+
+    assert right + 80 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "画像出力トークンの単価は、Googleの最上位が一番高い</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "100万 画像出力トークンあたりのドル。各社の公式料金ページに書かれている値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "OpenAIのSunburst/FlareはGoogleの下位モデル（Lite）と同額。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "Anthropicは画像生成モデルを公式ページに載せていない。</text>\n",
+    ]
+    for index, (name, value, is_target) in enumerate(rows):
+        y = top + index * pitch
+        cls = "bar-new" if is_target else ("bar-old" if value < 100 else "bar-out")
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="{left}" y="{y + bar_h - 6:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{bar_left + bw + 8:.1f}" y="{y + bar_h - 6:.1f}">'
+            f"{_usd(value)}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 58
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Nano Banana Proの$120は1K/2K画像相当で0.134ドル、4Kは0.24ドルと公式が併記。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: OpenAIとGoogleの公式料金ページ（2026年9月20日に確認）。</text>\n"
+    )
+
+    alt = (
+        "画像出力トークンの単価（100万トークンあたり）を4モデルで比べた横棒グラフ。"
+        "OpenAIのgpt-image-2.5 Sunburst/Flareは30ドル、Googleのnano Banana 2 Liteも"
+        "同じ30ドル、Nano Banana 2は60ドル、Googleの最上位Nano Banana Proは120ドルで"
+        "一番高い。Nano Banana Proの120ドルは1K/2K画像あたり0.134ドル、4K画像あたり"
+        "0.24ドルに相当すると公式ページが併記している。Anthropicは画像生成モデルを"
+        "公式ページに載せていない。"
+    )
+    (OUT / "chatgpt-images25-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    chatgpt_images25_price_lineage_chart()
+    chatgpt_images25_old_vs_new_chart()
+    chatgpt_images25_vendor_price_chart()
     installment_scale_hit_and_miss_chart()
     dummy_row_holds_real_row_breaks_chart()
     dummy_row_holds_real_row_aftermath_chart()

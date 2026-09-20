@@ -696,7 +696,19 @@
   **手で足せば書ける**。下の2件は developers.openai.com 側に料金と仕様の表があることを手元で確かめた
 - ⚠️ 到達性は**手元のPC（2026-09-20）で測った値**。クラウド側は担当が測り直すこと（CLAUDE.md 2026-08-05）
 
-- [ ] https://openai.com/index/introducing-chatgpt-images-2-5
+- [x] https://openai.com/index/introducing-chatgpt-images-2-5
+  - →保管: ✅ **2026-09-20: 公開した** → `content/tools/chatgpt-images-2-5.md`
+    （発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金ページ・
+    ガイドで執筆。図3枚（`chatgpt-images25-price-lineage` / `chatgpt-images25-old-vs-new` /
+    `chatgpt-images25-vendor-price`）。出典11件すべて取得成功。`check_numbers.py` は照合できる数字16個
+    すべてが出典に存在。pytest 656 passed・build 211ファイル）
+  - 📌 記事の芯＝**新モデル（Sunburst/Flare）は画質の選択肢が3→5段階に増え、出力単価も$32→$30に
+    下がったが、まとめて半額になる「Batch」処理には対応していない**（両モデルのEndpoints表で
+    `v1/batch: Not supported` と確認）。旧モデル（chatgpt-image-latest）が「以前ChatGPTで使われていた
+    スナップショット」と明記され、後継としてSunburstが公式に名指しされていることも確認した
+  - 他社比較はGoogleのNano Banana系3モデル（Lite/2/Pro）と突き合わせ、新モデルの単価はGoogleの
+    下位モデル（Lite）と同額・Google自身の最上位（Pro）の1/4だった。Anthropicはモデル一覧・料金ページ
+    のどちらにも画像生成モデルの記載が無いことを確認し「提供していない」と明記
   - 2026-09-20 手動追記（`news.json` では 9/8 の major。`UNREADABLE_HOSTS` のため自動追記されなかった行）
   - 🚨 発表ページは bot 判定で読めない前提（確かめるのは1回でよい）。出典は振り替える＝
     ① `openai.com/news/rss.xml` の description（1文だけ。手元実測）
@@ -731,6 +743,19 @@
     （CLAUDE.md「付けるのは minor が実際に記事になった会社だけ」）
 
 ## 処理済み
+
+- https://openai.com/index/introducing-chatgpt-images-2-5 → **公開済み** content/tools/chatgpt-images-2-5.md（2026-09-20・公開）
+  - 発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金ページ・
+    ガイドで執筆。図3枚（`chatgpt-images25-price-lineage` / `chatgpt-images25-old-vs-new` /
+    `chatgpt-images25-vendor-price`）。出典11件すべて取得成功。`check_numbers.py` は**16個すべて出典に存在**。
+    pytest 656 passed・build 211ファイル。
+  - 📌 記事の芯＝**新モデル（Sunburst/Flare）は画質の選択肢が3→5段階に増え、出力単価も$32→$30に
+    下がったが、まとめて半額になる「Batch」処理には対応していない**（両モデルのEndpoints表で
+    `v1/batch: Not supported` と確認）。旧モデル（chatgpt-image-latest）のページには「以前ChatGPTで
+    使われていたスナップショット」「API利用にはSunburstを推奨」と明記されており、後継関係を確認した。
+  - ⚠️ 他社比較はGoogleのNano Banana系3モデル（Lite $30／2 $60／Pro $120）と突き合わせ、新モデルの
+    単価はGoogleの下位モデル（Lite）と同額・Google自身の最上位（Pro）の1/4だった。Anthropicはモデル
+    一覧・料金ページのどちらにも画像生成モデルの記載が無いことを確認し「提供していない」と明記した。
 
 - https://www.anthropic.com/news/life-sciences-verification-program → **公開済み** content/tools/claude-life-sciences-verification.md（2026-09-17・公開）
   - `www.anthropic.com` に到達。図3枚（`lsvp-grant-types` / `lsvp-monitoring-shift` /

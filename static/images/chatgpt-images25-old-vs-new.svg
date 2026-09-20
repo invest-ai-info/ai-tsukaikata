@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="424" viewBox="0 0 720 424" role="img" aria-label="旧世代（chatgpt-image-latest・gpt-image-1.5）と新しいgpt-image-2.5系を比べた表。画質の選択肢＝旧世代はlow/medium/highの3段階、新世代はlow/medium/high/xhigh/maxの5段階に加えてauto。画像出力単価＝旧世代は100万トークンあたり32ドル、新世代は30ドル。テキスト出力＝旧世代は100万トークンあたり10ドルの課金があるが、新世代は画像しか出力しないため課金対象外。まとめ処理（Batch）＝旧世代は対応していて半額になるが、新世代（Sunburst・Flare）はどちらも非対応（赤枠で強調）。Batch非対応は両モデルの公式ページのEndpoints表で確認したもので、画質は増え値段は下がったが、半額のBatchが使えなくなったことを示す図。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="424"/>
+<text class="t-strong" x="18" y="26">画質は増え値段は下がったが、半額のBatchが使えなくなった</text>
+<text class="t-sm" x="18" y="45">旧ChatGPTモデル（chatgpt-image-latest・gpt-image-1.5）と新モデルの違い。</text>
+<text class="t-sm" x="18" y="64">数字はどちらもOpenAIの公式ページに書かれている値。</text>
+<text class="t-accent" x="122.0" y="116">旧世代</text>
+<text class="t-accent" x="422.0" y="116">gpt-image-2.5（新）</text>
+<text class="t-sm" x="18" y="150.0">画質の選択肢</text>
+<rect class="box-quiet" x="114.0" y="130" width="288.0" height="50" rx="4"/>
+<text class="t-sm" x="124.0" y="150">low / medium / high</text>
+<text class="t-sm" x="124.0" y="167">（3段階）</text>
+<rect class="box-accent" x="414.0" y="130" width="288.0" height="50" rx="4"/>
+<text class="t-accent" x="424.0" y="150">low/medium/high/xhigh/max</text>
+<text class="t-accent" x="424.0" y="167">（5段階＋auto）</text>
+<text class="t-sm" x="18" y="212.0">画像出力単価</text>
+<rect class="box-quiet" x="114.0" y="192" width="288.0" height="50" rx="4"/>
+<text class="t-sm" x="124.0" y="212">$32／100万トークン</text>
+<rect class="box-accent" x="414.0" y="192" width="288.0" height="50" rx="4"/>
+<text class="t-accent" x="424.0" y="212">$30／100万トークン</text>
+<text class="t-sm" x="18" y="274.0">テキスト出力</text>
+<rect class="box-quiet" x="114.0" y="254" width="288.0" height="50" rx="4"/>
+<text class="t-sm" x="124.0" y="274">$10／100万トークン</text>
+<rect class="box-accent" x="414.0" y="254" width="288.0" height="50" rx="4"/>
+<text class="t-accent" x="424.0" y="274">課金対象外</text>
+<text class="t-accent" x="424.0" y="291">（画像しか出力しない）</text>
+<text class="t-sm" x="18" y="336.0">まとめ処理（Batch）</text>
+<rect class="box-quiet" x="114.0" y="316" width="288.0" height="50" rx="4"/>
+<text class="t-sm" x="124.0" y="336">対応（半額になる）</text>
+<rect class="box-bad" x="414.0" y="316" width="288.0" height="50" rx="4"/>
+<text class="t-bad" x="424.0" y="336">非対応</text>
+<text class="t-xs" x="18" y="410">※ Batch非対応は、両モデルのページの「Endpoints」表（v1/batch）で確認。</text>
+</svg>
