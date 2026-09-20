@@ -38,19 +38,7 @@
     "openrouter-xai": "2026-08-12T15:35:57+00:00",
     "sakana-blog": "2026-09-17T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-19T03:10:40+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Changed auto mode for Claude API and Enterprise users, and on Bedrock, Vertex, Foundry and gateways, to default to the server-side classifier, which does not charge for classifier over…",
-      "title": "v2.1.278",
-      "uid": "1f1b9768d218f289",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.278",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
