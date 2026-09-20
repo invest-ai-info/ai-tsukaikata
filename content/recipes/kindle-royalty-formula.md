@@ -7,7 +7,7 @@ published: 2026-08-27
 checked: 2026-08-26
 series: 売る場所の原文から
 series_no: 4
-series_total: 4
+series_total: 6
 tags: [副業, Kindle, 出版, 手数料, プロンプト]
 time_required: 15分
 cost: 無料

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="508" viewBox="0 0 720 508" role="img" aria-label="会議の文字起こしから決定事項を3行にまとめる6手順の手順書を、AIに「初めて読む人として書かれているとおりにだけ実行して」と3回頼んだ結果を手順ごとに並べた図。手順1（ChatGPTを開き新しいチャットを始める）は実行できる（アカウントがある前提）で緑、手順2（会議の文字起こしファイルを用意する）は3回とも止まり、どの会議か・どこにあるか・形式が無いためで赤、手順3（本文をチャットに貼り付ける）は条件付きで、文字のファイルがあればできるが長すぎるときの指示が無い、手順4（決定事項を3行で書いてくださいと入力して送る）は3回とも実行でき、文言が一字一句書いてあるためで緑、手順5（返ってきた3行が正しいか確認する）は3回とも止まり、正しいの基準と外れたときの戻り方が無いためで赤、手順6（報告用の形に整えて上司に送る）は3回とも止まり、報告用の形・宛先・手段が無いためで赤。下の枠には、足りないものは材料の入手先・合否の基準と戻り方・届け先と書式の3つに集約されたこと、やってみてと頼んだ3回も3回とも手順2で止まり架空の文字起こしを作って進むことはなかったこと、教える前に手順書の穴を他人の手で探せ、穴は書いた本人には見えないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="508"/>
+<text class="t-strong" x="18" y="26">手順書を「初めて読む人」として実行させると、6手順のうち3つで止まった</text>
+<text class="t-sm" x="18" y="45">実測2026-09-18。ウェブ検索を切ったAI（独立実行）に「書かれているとおりにだけ実行し、足りなければ止まって」と3回。</text>
+<text class="t-sm" x="18" y="64">手順書は会議の文字起こしから決定事項を3行にまとめる6手順（記事本文と同じ）。止まった理由は3回とも同じ3種類だった。</text>
+<rect class="box-good" x="18" y="96" width="684" height="46" rx="6"/>
+<text class="t-strong" x="32" y="115">1. ChatGPTを開き、新しいチャットを始める</text>
+<text class="t-good" x="32" y="134">実行できる（アカウントがある前提）</text>
+<rect class="box-bad" x="18" y="150" width="684" height="46" rx="6"/>
+<text class="t-strong" x="32" y="169">2. 会議の文字起こしファイルを用意する</text>
+<text class="t-bad" x="32" y="188">3回とも止まる＝どの会議か・どこにあるか・形式が無い</text>
+<rect class="box" x="18" y="204" width="684" height="46" rx="6"/>
+<text class="t-strong" x="32" y="223">3. 文字起こしの本文をチャットに貼り付ける</text>
+<text class="t" x="32" y="242">条件付き（文字のファイルがあれば。長すぎるときの指示が無い）</text>
+<rect class="box-good" x="18" y="258" width="684" height="46" rx="6"/>
+<text class="t-strong" x="32" y="277">4. 「決定事項を3行で書いてください」と入力して送る</text>
+<text class="t-good" x="32" y="296">3回とも実行できる＝文言が一字一句書いてある</text>
+<rect class="box-bad" x="18" y="312" width="684" height="46" rx="6"/>
+<text class="t-strong" x="32" y="331">5. 返ってきた3行が正しいか確認する</text>
+<text class="t-bad" x="32" y="350">3回とも止まる＝「正しい」の基準と、外れたときの戻り方が無い</text>
+<rect class="box-bad" x="18" y="366" width="684" height="46" rx="6"/>
+<text class="t-strong" x="32" y="385">6. 報告用の形に整えて、上司に送る</text>
+<text class="t-bad" x="32" y="404">3回とも止まる＝「報告用の形」・宛先・手段が無い</text>
+<rect class="box-accent" x="18" y="424" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="444">足りないものは3つに集約された＝材料の入手先（2）／合否の基準と戻り方（5）／届け先と書式（6）。</text>
+<text class="t-accent" x="34" y="462">「やってみて」と頼んだ3回も、3回とも手順2で止まり、架空の文字起こしを作って先に進むことはなかった。</text>
+<text class="t-accent" x="34" y="480">＝教える前に、手順書の穴を他人（AI）の手で探せる。穴は書いた本人には見えない。</text>
+</svg>

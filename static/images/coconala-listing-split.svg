@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="416" viewBox="0 0 720 416" role="img" aria-label="ココナラの「AI業務効率化・自動化」634件のうち、ランキング順の1ページ目60件をタイトルの語で6区分に分けた横棒グラフ。2026年9月18日18時35分の表示。注文で作る（開発・構築・制作・アプリ化など）が21件で価格の中央値50,000円、「自動化します」だけで形がタイトルに無いものが20件で中央値22,500円、既製ツールを渡す（提供・販売）が8件で中央値12,500円、代行・伴走・成果物（運用代行・投稿作成など）が6件で中央値40,000円、教える・相談が4件で中央値9,750円、指示書・プロンプトが1件で20,000円。区分はタイトルの語で機械的に分け、説明文は読んでいないと注記。下の枠には、タイトルに道具名があるのは12件でn8n 3・WordPress 3・Claude 2・GAS 1・MCP 1・NotebookLM 1・MF/freee 1、Zapier・Make・Difyは0件、60件とも価格は1件単位で時間単位の表示は無いこと、見積り必須が20件で注文で作る型に8件・自動化します型に7件あること、出品者名と個別の出品は引いておらず売れた数の出典は無いことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="416"/>
+<text class="t-strong" x="18" y="26">60件の中身＝「注文で作る」21件・「自動化します」だけ20件・既製ツール8件</text>
+<text class="t-sm" x="18" y="45">ココナラ「AI業務効率化・自動化」634件の1ページ目（ランキング順・60件）。2026年9月18日18時35分の表示を写した。</text>
+<text class="t-sm" x="18" y="64">区分はタイトルの語で機械的に分けた（規則は上から順に当てる）。説明文は読んでいない。</text>
+<text class="t-xs" x="330" y="86">件数（60件中）　右＝その区分の価格の中央値</text>
+<text class="t-sm" x="18" y="120">A 注文で作る（開発・構築・制作・アプリ化…）</text>
+<rect class="bar-in" x="330" y="107" width="250" height="18" rx="3"/>
+<text class="t-strong" x="588" y="120">21件　50,000円</text>
+<text class="t-sm" x="18" y="154">C 「自動化します」だけ（形はタイトルに無い）</text>
+<rect class="bar-old" x="330" y="141" width="238" height="18" rx="3"/>
+<text class="t-strong" x="576" y="154">20件　22,500円</text>
+<text class="t-sm" x="18" y="188">B 既製ツールを渡す（提供・販売）</text>
+<rect class="bar-in" x="330" y="175" width="95" height="18" rx="3"/>
+<text class="t-strong" x="433" y="188">8件　12,500円</text>
+<text class="t-sm" x="18" y="222">E 代行・伴走・成果物（運用代行・投稿作成…）</text>
+<rect class="bar-in" x="330" y="209" width="71" height="18" rx="3"/>
+<text class="t-strong" x="409" y="222">6件　40,000円</text>
+<text class="t-sm" x="18" y="256">D 教える・相談</text>
+<rect class="bar-in" x="330" y="243" width="48" height="18" rx="3"/>
+<text class="t-strong" x="386" y="256">4件　9,750円</text>
+<text class="t-sm" x="18" y="290">F 指示書・プロンプト</text>
+<rect class="bar-in" x="330" y="277" width="12" height="18" rx="3"/>
+<text class="t-strong" x="350" y="290">1件　20,000円</text>
+<rect class="box-accent" x="18" y="314" width="684" height="82" rx="6"/>
+<text class="t-accent" x="34" y="334">道具名が題にあるのは12件＝n8n 3・WordPress 3・Claude 2・GAS 1・MCP 1・NotebookLM 1・MF/freee 1。</text>
+<text class="t-accent" x="34" y="352">Zapier・Make・Dify は0件。60件とも価格は「◯円」の1件単位で、「/60分」のような時間単位の表示は無い。</text>
+<text class="t-accent" x="34" y="370">「見積り必須」（先に見積もりを取る出品）は20件。注文で作る型に8件・「自動化します」型に7件。</text>
+<text class="t-accent" x="34" y="388">出品者名と個別の出品は引いていない。実在の証明は区分と件数まで。売れた数の出典は無い。</text>
+</svg>

@@ -112,6 +112,22 @@
 - 副業の節に残っていた促進項目3件（⏸）は今回は再測定していない（稼ぎ方研究担当が同日15:30に
   再測定済みで変化なしと記録されていたため、同日中の重複測定はしなかった）。
 
+### 2026-09-18（オーナーの手動セッション。稼ぎ方の研究パック10件をすべて記事化）
+- 公開: 10本（gpts-retirement-check-the-source / ai-stock-images-adobe-vs-pixta /
+  instagram-two-gates-500-and-10000 / note-membership-monthly-formula /
+  udemy-97-or-37-who-brings-the-student / teaching-ai-runbook-stops-where /
+  tools: coconala-ai-automation-634-listings / mercor-ai-evaluation-job-anatomy /
+  mercor-hourly-week20-formula / sell-ai-to-companies-subsidy-gate）
+- 実測: Agentツール `general-purpose`（新規サブエージェントを1回ずつ起動・`tool_uses: 0` を確認）。
+  レシピ6本×18回＋法人向け1本×3回＝111回。`claude -p` は CLI の OAuth トークン失効で不可（★91の順の1が使えず2で実施）。
+- 実測: 実ブラウザ（内蔵ブラウザ）で一次情報を再確認＝Adobe・PIXTA・OpenAI・Instagram・note・ストアカ・ココナラ・Udemy・
+  Mercor（3回目の観測）・国民生活センター。JILPT No.245 は本文PDFを取得して図表2-4-21／2-4-14 を pypdf で照合。
+- ⚠️ Agent の出力ファイルが0バイトになる回があり、完了通知の本文（一部はセッションの JSONL）から転記した。
+  ⚠️ `check_numbers.py` は help.instagram.com・work.mercor.com（JSアプリ）・help.coconala.com（HTTPError）・
+  helpx.adobe.com・help.openai.com・JILPT の PDF を照合できない＝それらは実ブラウザ／pypdf で確認した数字。
+- 図: 26枚を `tools/make_figures.py` に追加（ビルドの検査＋ブラウザの `getBBox()` 厳密計測で0件）。
+- 2026-09-20 にコミット・push（オーナー指示「二件とも進めて」）。
+
 ### 2026-09-18（自動化・ループ優先の枠。専任の別ルーティン）
 - 公開: 1本（diff-does-not-flag-still-open-warnings）。
 - 実測: `claude --safe-mode --tools ""` CLI（新規プロセスを毎回起動。会話の継続なし）。

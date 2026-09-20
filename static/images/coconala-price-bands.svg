@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="354" viewBox="0 0 720 354" role="img" aria-label="ココナラ「AI業務効率化・自動化」の1ページ目60件の価格表示を4つの帯に分けた横棒グラフ。3,000〜9,999円が14件、10,000〜49,999円が23件、50,000〜99,999円が16件、100,000円以上（最大490,000円）が7件。最小3,000円・中央値27,500円・最大490,000円。一覧の価格は最低表示で、20件は見積り必須のため実際の代金は相談で決まること、中央値は相場ではなく2026年9月18日の1ページ目だけを数えたことを注記。下の枠には、ココナラの取り分は販売時の手数料20%×1.1＝税込22%で、27,500円の出品なら売上金は21,450円（×0.78）になること、公式の計算例が125,000円−125,000円×0.2×1.1＝97,500円であること、価格は3,000円から490,000円まで約160倍の幅があり1つの相場は無いことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="354"/>
+<text class="t-strong" x="18" y="26">価格の表示＝最小3,000円・中央値27,500円・最大490,000円（60件）</text>
+<text class="t-sm" x="18" y="45">一覧に出る価格は「この額から」の最低表示で、20件は「見積り必須」＝実際の代金は相談で決まる。</text>
+<text class="t-sm" x="18" y="64">中央値は「60件を並べた真ん中」であって相場ではない。2026年9月18日の1ページ目だけを数えた。</text>
+<text class="t-xs" x="260" y="86">件数（60件中）</text>
+<text class="t-strong" x="18" y="120">3,000〜9,999円</text>
+<rect class="bar-in" x="260" y="107" width="201" height="18" rx="3"/>
+<text class="t-strong" x="469" y="120">14件</text>
+<text class="t-strong" x="18" y="160">10,000〜49,999円</text>
+<rect class="bar-in" x="260" y="147" width="330" height="18" rx="3"/>
+<text class="t-strong" x="598" y="160">23件</text>
+<text class="t-strong" x="18" y="200">50,000〜99,999円</text>
+<rect class="bar-in" x="260" y="187" width="230" height="18" rx="3"/>
+<text class="t-strong" x="498" y="200">16件</text>
+<text class="t-strong" x="18" y="240">100,000円以上（最大490,000円）</text>
+<rect class="bar-in" x="260" y="227" width="100" height="18" rx="3"/>
+<text class="t-strong" x="368" y="240">7件</text>
+<rect class="box-accent" x="18" y="270" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="290">ココナラの取り分は「販売時の手数料20%×1.1＝税込22%」。27,500円の出品なら売上金は21,450円（×0.78）。</text>
+<text class="t-accent" x="34" y="308">公式の計算例＝125,000円 − 125,000円×0.2×1.1 ＝ 97,500円（販売時の手数料のページ・2026年9月18日確認）。</text>
+<text class="t-accent" x="34" y="326">同じ「AI業務効率化・自動化」でも、価格は3,000円から490,000円まで約160倍の幅がある。1つの相場は無い。</text>
+</svg>

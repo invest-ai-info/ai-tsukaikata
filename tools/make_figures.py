@@ -23055,6 +23055,1364 @@ def estimate_leak_steps_with_fill_count_chart() -> None:
     )
 
 
+def _hit_and_miss_rows_chart(
+    filename: str,
+    title: str,
+    sub1: str,
+    sub2: str,
+    rows: list,
+    notes: list,
+    alt: str,
+    label_w: int = 380,
+) -> None:
+    """「3回中何回」型の一覧図の共通部品（2026-09-18〜・稼ぎ方シリーズ用）。
+
+    rows は (label, hits, total, kind)。kind="good" は多いほど良い、"bad" は多いほど問題。
+    total が行ごとに違ってもよい（9回の質問と3回の質問を同じ図に並べるため）。
+    youtube_ai_hit_and_miss_chart と同じ見た目で、分母だけ行ごとに持たせた。
+    """
+    col_w = 160
+    col_x = 18 + label_w
+    top = 104
+    row_h = 32
+
+    parts = [
+        f'<text class="t-strong" x="18" y="26">{_esc(title)}</text>\n',
+        f'<text class="t-sm" x="18" y="45">{_esc(sub1)}</text>\n',
+        f'<text class="t-sm" x="18" y="64">{_esc(sub2)}</text>\n',
+        f'<text class="t-xs" x="{col_x + col_w / 2:.1f}" y="{top - 12}" '
+        f'text-anchor="middle">当たった回数／聞いた回数</text>\n',
+    ]
+    y = top
+    for label, hits, total, kind in rows:
+        ty = y + 21
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        if kind == "good":
+            klass, tcls = ("box-good", "t-good") if hits == total else (
+                ("box-bad", "t-bad") if hits == 0 else ("box", "t-sm")
+            )
+        else:
+            klass, tcls = ("box-good", "t-good") if hits == 0 else ("box-bad", "t-bad")
+        parts.append(f'<rect class="{klass}" x="{col_x}" y="{y}" width="{col_w}" height="26" rx="4"/>\n')
+        parts.append(
+            f'<text class="{tcls}" x="{col_x + col_w / 2:.1f}" y="{ty}" '
+            f'text-anchor="middle" style="font-weight:700">{hits}/{total}</text>\n'
+        )
+        y += row_h
+
+    y += 6
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    (OUT / filename).write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def gpts_retirement_timeline_chart() -> None:
+    """GPTs の「門」が閉じる予定を、原文の日付どおりに時系列で並べる。
+
+    原文の転記（2026-09-16 に help.openai.com を確認・記事 20001519 / 8554397）。
+    原文自身が「Note that the dates are subject to change.」と書いているので、
+    日付には (planned) / Scheduled を添える。
+    """
+    rows = [
+        ("いま（2026-09-18 確認時点）", "個人プラン（Free・Go・Plus・Pro）では新規作成・公開が不可", "box-bad", "t-bad"),
+        ("2026-09-25（planned）", "新しいカスタムGPTの作成が終了する予定", "box-quiet", "t"),
+        ("2026-12-11（Scheduled）", "カスタムGPTが停止する予定（stop running）", "box-quiet", "t"),
+        ("収益化FAQ（記事 9119255）", "開くと別記事へ転送され、本文に revenue / monetiz / earn / payout は0件", "box-bad", "t-bad"),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 60
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GPTsで稼ぐ門は、原文の予定表では閉じている</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "OpenAIヘルプ「Custom GPT retirement and migration FAQ」ほかの記載を、日付順に4行で並べた（2026-09-18確認）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "日付はEnterprise向けの予定で「他のプランも同じ日程に従う見込み」。原文自身が「subject to change」と書く。</text>\n",
+    ]
+    y = top
+    for when, what, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(when)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 40}">{_esc(what)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">「GPTsで稼ぐ」の一般記事は今も検索に出るが、個人が新しく作る入口は原文の時点で無い。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">後継として案内される Plugins も、個人がChatGPTの中で有料販売して受け取る仕組みは未提供。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">＝この門の推定収入は 0円。確かめる先は原文3ページ（本文の「開く順番」）。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "ChatGPTのカスタムGPT（GPTs）で収入を得る門が閉じていることを、OpenAIヘルプの記載どおりに日付順で並べた図。"
+        "1行目＝いま（2026年9月18日確認時点）、個人プラン（Free・Go・Plus・Pro）では新規作成と公開が不可で赤。"
+        "2行目＝2026年9月25日（planned）に新しいカスタムGPTの作成が終了する予定。"
+        "3行目＝2026年12月11日（Scheduled）にカスタムGPTが停止する予定。"
+        "4行目＝収益化FAQ（記事9119255）は開くと別記事へ転送され、本文に revenue・monetiz・earn・payout の語が0件で赤。"
+        "日付はEnterprise向けの予定で他のプランも同じ日程に従う見込みとされ、原文自身が「subject to change」と書いているため予定であって確定ではないと注記。"
+        "下の枠には、一般記事は今も検索に出るが個人が新しく作る入口は無いこと、後継のPluginsにも個人がChatGPTの中で有料販売して受け取る仕組みは未提供であること、"
+        "この門の推定収入は0円で、確かめる先は原文3ページであることが書かれている。"
+    )
+    (OUT / "gpts-retirement-timeline.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def gpts_ai_hit_and_miss_chart() -> None:
+    """GPTs の各質問で、AIの答えが原文と何回一致したか（2026-09-18・Agent独立実行・各3回）。
+
+    判定は docs/evidence/_raw/gpts-retirement-check-the-source/judge.py の出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "gpts-ai-hit-and-miss.svg",
+        "「作れない」「止まる」は9回とも出ず、3回は逆を言った",
+        "実測2026-09-18。ウェブ検索を切ったAI（独立実行）に、素朴・収益化プログラム・廃止予定の3通りを各3回。",
+        "上4行＝原文と一致した回数（多いほど良い）。下2行＝原文と逆・原文に無いことを言った回数（少ないほど良い）。",
+        [
+            ("個人プランでは新しく作れない、と述べた", 0, 9, "good"),
+            ("廃止・停止の日付（9/25・12/11）を挙げた", 0, 9, "good"),
+            ("材料を貼った回：「今からは収入を得られない」と答えた", 3, 3, "good"),
+            ("材料を貼った回：材料に無い金額を作らなかった", 3, 3, "good"),
+            ("「廃止・終了の予定は出ていない」と述べた（原文と逆）", 3, 9, "bad"),
+            ("「Plus以上の有料プランなら作れる」と述べた（原文と逆）", 3, 9, "bad"),
+        ],
+        [
+            "素朴に聞いた9回は、収益化プログラムを「米国限定・招待制の試験」と丁寧に説明した（7/9）。",
+            "「もう作れない」「12月に止まる」には1回も触れず、廃止予定を聞いた3回は「予定は無い」と答えた。",
+            "＝AIが知っている「昔の条件」を、今の条件として読まないこと。予定は原文で確かめる。",
+        ],
+        "ChatGPTのGPTsについてAIに聞いた結果を並べた表。上4行は原文と一致した回数で、"
+        "個人プランでは新しく作れないと述べた回数が0/9で赤、廃止・停止の日付（9月25日・12月11日）を挙げた回数が0/9で赤、"
+        "原文を貼って聞いた回に「今からは収入を得られない」と答えた回数が3/3で緑、材料に無い金額を作らなかった回数が3/3で緑。"
+        "下2行は原文と逆のことを言った回数で、「廃止・終了の予定は出ていない」と述べた回数が3/9、"
+        "「Plus以上の有料プランなら作れる」と述べた回数が3/9、いずれも赤。"
+        "下の枠には、素朴に聞いた9回は収益化プログラムを米国限定・招待制の試験と説明したが（7/9）、"
+        "「もう作れない」「12月に止まる」には1回も触れず、廃止予定を聞いた3回は「予定は無い」と答えたこと、"
+        "AIが知っている昔の条件を今の条件として読まず、予定は原文で確かめるという結論が書かれている。",
+        label_w=430,
+    )
+
+
+def ai_stock_images_split_chart() -> None:
+    """同じ「AI画像を売る」で、2026年に Adobe Stock と PIXTA が真逆に割れたことを左右に並べる。
+
+    原文の転記（2026-09-16 確認・helpx.adobe.com 3ページ＝最終更新 2026-09-02／pixta.jp/guide/?p=73832）。
+    """
+    left = [
+        ("受け入れ", "受け入れる（生成AIのラベル必須）", "t-good"),
+        ("ロイヤリティ", "写真・ベクター・イラスト 33%（ビデオ 35%）", "t"),
+        ("公式の計算例", "US$29.99 ÷ 10枚 × 33% ＝ 1枚 US$0.99", "t"),
+        ("支払い", "最低残高 US$25／初回の販売から45日", "t"),
+        ("", "日本での受け取りはプレミアムPayPal", "t"),
+        ("禁止", "実在の人物・作品名・政府機関・他社IP・ニュース性", "t-bad"),
+        ("量産", "同じ／類似プロンプトの複数バージョン提出は禁止", "t-bad"),
+    ]
+    right = [
+        ("受け入れ", "2026-04-20 で新規の審査申請を終了", "t-bad"),
+        ("販売", "2026-05-22 で販売中のAI生成素材も販売停止", "t-bad"),
+        ("範囲", "プロンプトのみ／Image to Image を含む全部", "t"),
+        ("理由（原文）", "短期間に大量アップロード／購入者のニーズとの", "t-sm"),
+        ("", "マッチングが困難な状況が継続", "t-sm"),
+        ("姿勢（原文）", "AIによる創作活動を否定する意図は", "t"),
+        ("", "一切ございません", "t"),
+    ]
+    col_w = 336
+    gap = 12
+    x_left = 18
+    x_right = 18 + col_w + gap
+    top = 96
+    row_h = 40
+    box_h = 34 + row_h * max(len(left), len(right))
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ「AI画像を売る」が、2026年に真逆へ割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "左＝Adobe Stock（コントリビューター向けヘルプ3ページ・最終更新2026-09-02）。右＝PIXTA（ガイドのお知らせ・2026-04-14告知）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "どちらも公式ページの記載をそのまま写した（2026-09-18確認）。率・日付は変わるので使う前に開くこと。</text>\n",
+    ]
+    parts.append(f'<rect class="box-good" x="{x_left}" y="{top}" width="{col_w}" height="{box_h}" rx="6"/>\n')
+    parts.append(f'<text class="t-strong" x="{x_left + 14}" y="{top + 22}">Adobe Stock＝33%で買い続ける</text>\n')
+    parts.append(f'<rect class="box-bad" x="{x_right}" y="{top}" width="{col_w}" height="{box_h}" rx="6"/>\n')
+    parts.append(f'<text class="t-strong" x="{x_right + 14}" y="{top + 22}">PIXTA＝AI生成素材の取扱いを停止</text>\n')
+    for col_x, rows in ((x_left, left), (x_right, right)):
+        y = top + 34
+        for head, body, tcls in rows:
+            if head:
+                parts.append(f'<text class="t-xs" x="{col_x + 14}" y="{y + 12}">{_esc(head)}</text>\n')
+            parts.append(f'<text class="{tcls}" x="{col_x + 14}" y="{y + 29}">{_esc(body)}</text>\n')
+            y += row_h
+    y = top + box_h + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="46" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">「AI画像で稼げるか」の答えは、売る場所で真逆になる。まず場所ごとの受け入れ可否を原文で見る。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">受け入れる側にも「量産」の禁止があり、同じプロンプトの派生を何十枚も出す作戦は規約の側で閉じている。</text>\n')
+    y += 46 + 12
+
+    alt = (
+        "同じ「AI画像を売る」が2026年に真逆へ割れたことを、左右2枚の枠で並べた図。"
+        "左の緑の枠はAdobe Stockで、生成AIのラベル必須で受け入れる、ロイヤリティは写真・ベクター・イラスト33%（ビデオ35%）、"
+        "公式の計算例はUS$29.99を10枚で割って33%を掛けた1枚US$0.99、支払いは最低残高US$25・初回販売から45日・日本はプレミアムPayPal、"
+        "禁止プロンプトは実在の人物・作品名・政府機関名・他社IP・ニュース性、同じまたは類似プロンプトの複数バージョン提出は禁止、と書かれている。"
+        "右の赤の枠はPIXTAで、2026年4月20日で新規の審査申請を終了、2026年5月22日で販売中のAI生成素材も販売停止、"
+        "範囲はプロンプトのみやImage to ImageなどAI生成素材の全部、理由は原文で短期間に大量アップロードされる一方で購入者のニーズとのマッチングが困難な状況が継続、"
+        "姿勢は「AIによる創作活動を否定する意図は一切ございません」と書かれている。"
+        "下の枠には、答えは売る場所で真逆になるのでまず場所ごとの受け入れ可否を原文で見ること、"
+        "受け入れる側にも量産の禁止があり、同じプロンプトの派生を何十枚も出す作戦は規約の側で閉じていることが書かれている。"
+    )
+    (OUT / "ai-stock-images-split-2026.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def ai_stock_images_hit_and_miss_chart() -> None:
+    """AI画像のストック販売について、AIの答えが原文と何回一致したか（2026-09-18・Agent独立実行）。
+
+    判定は docs/evidence/_raw/ai-stock-images-adobe-vs-pixta/judge.py の出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "ai-stock-images-ai-hit-and-miss.svg",
+        "禁止項目は最初から避ける。「いつから不可か」は外す",
+        "実測2026-09-18。ウェブ検索を切ったAI（独立実行）に、プロンプト作成2通り・可否と率・材料あり・派生量産・ページ名を各3回。",
+        "上6行＝原文と一致した回数（多いほど良い）。下2行＝原文に無いこと・違うことを言った回数（少ないほど良い）。",
+        [
+            ("規約を渡さずに作った30本に、禁止5項目に当たる語が無かった", 30, 30, "good"),
+            ("規約を渡して作った30本に、禁止5項目に当たる語が無かった", 30, 30, "good"),
+            ("Adobe Stock＝33%と述べた", 3, 3, "good"),
+            ("PIXTA＝AI生成素材は不可と述べた", 3, 3, "good"),
+            ("材料を貼った回：最低残高US$25は26枚ぶん、と計算した", 3, 3, "good"),
+            ("派生を何十枚も出すと不採用・停止の対象、と述べた", 3, 3, "good"),
+            ("PIXTAの停止を「2023年」の話として説明した（原文は2026年）", 2, 3, "bad"),
+            ("材料を貼った回に、材料に無いドル額・％を足した", 1, 3, "bad"),
+        ],
+        [
+            "作らせたプロンプト60本に、実在の人物名・作品名・政府機関名・他社IP・ニュース性は0本だった。",
+            "「どこが買うか」「率はいくらか」は当たる。「いつ止まったか」は2/3が2023年と答え、2026年の日付は0/3。",
+            "＝禁止項目と率はAIに聞いてよい。「いま受け入れているか」と日付は、原文で見る。",
+        ],
+        "AI画像のストック販売についてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、"
+        "規約を渡さずに作った30本のプロンプトに禁止5項目に当たる語が無かったのが30/30、規約を渡して作った30本も30/30、"
+        "Adobe Stockは33%と述べたのが3/3、PIXTAはAI生成素材は不可と述べたのが3/3、"
+        "材料を貼った回に最低残高US$25は26枚ぶんと計算したのが3/3、派生を何十枚も出すと不採用・停止の対象と述べたのが3/3で、いずれも緑。"
+        "下2行は原文に無いこと・違うことを言った回数で、PIXTAの停止を2023年の話として説明したのが2/3、"
+        "材料を貼った回に材料に無いドル額・パーセントを足したのが1/3で、いずれも赤。"
+        "下の枠には、作らせたプロンプト60本に実在の人物名・作品名・政府機関名・他社IP・ニュース性は0本だったこと、"
+        "どこが買うか・率はいくらかは当たるが、いつから止まったかは2/3が2023年と答え2026年の日付は0/3だったこと、"
+        "禁止項目と率はAIに聞いてよいが、いま受け入れているかと日付は原文で見るという結論が書かれている。",
+        label_w=440,
+    )
+
+
+def ai_stock_images_estimate_ladder_chart() -> None:
+    """Adobe Stock の公式例の単価（1枚 US$0.99）に、月の枚数を前提として掛けた推定の段。
+
+    単価は原文（2026-09-16 確認）。枚数の出典は無い＝前提として3段置く。最低残高 US$25 は 26枚ぶん。
+    """
+    rows = [
+        ("月に10枚ライセンスされたら（前提）", 9.90, "副業帯の入口にも届かない"),
+        ("月に30枚（前提）", 29.70, "最低残高 US$25 を初めて超える"),
+        ("月に100枚（前提）", 99.00, "それでも月1万円台（1ドル150円で）"),
+    ]
+    label_x = 18
+    bar_x = 300
+    max_bar_w = 260
+    top = 104
+    row_h = 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝1枚 US$0.99 × 月に売れた枚数（枚数は前提）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "単価は Adobe Stock の公式の計算例（月額US$29.99・10枚プラン経由で1枚US$0.99・33%）。2026-09-18確認。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "月に何枚売れるかの出典は無い。3段の枚数はこちらが置いた前提で、枚数はご自身の実績に置き換えること。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">月のロイヤリティ（源泉徴収・PayPal手数料を引く前）</text>\n',
+    ]
+    y = top
+    for label, amount, note in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 99.0))
+        parts.append(f'<rect class="bar-in" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">US${amount:,.2f}</text>\n')
+        parts.append(f'<text class="t-xs" x="{label_x}" y="{ty + 16}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">最低残高 US$25 に届くのは、公式例の単価で26枚ぶん（US$0.99×26＝US$25.74）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">初回の支払いはさらに「最初の販売から45日」の待機と、日本ではプレミアムPayPalが要る。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">税務フォーム未提出だと最大30%が源泉徴収される（原文）。手取りは上の額より減る。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "Adobe Stockの公式の計算例の単価（1枚US$0.99）に、月に売れた枚数を前提として掛けた推定の横棒グラフ。"
+        "月に10枚なら US$9.90 で副業帯の入口にも届かない、月に30枚なら US$29.70 で最低残高US$25を初めて超える、"
+        "月に100枚なら US$99.00 でそれでも1ドル150円なら月1万円台、と3段で示している。"
+        "月に何枚売れるかの出典は無く、枚数はこちらが置いた前提だと注記。"
+        "下の枠には、最低残高US$25に届くのは公式例の単価で26枚ぶん（0.99ドル×26＝25.74ドル）であること、"
+        "初回の支払いには最初の販売から45日の待機と日本ではプレミアムPayPalが要ること、"
+        "税務フォーム未提出だと最大30%が源泉徴収され手取りは上の額より減ることが書かれている。"
+    )
+    (OUT / "ai-stock-images-estimate-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def instagram_two_gates_chart() -> None:
+    """Instagram の収益化の「門」を2つ並べ、その先の支払いの関所と禁止フォーマットを添える。
+
+    原文の転記（2026-09-16 と 09-18 に help.instagram.com の4ページを実ブラウザで確認。4ページとも更新日の記載なし）。
+    """
+    gates = [
+        ("門①ギフト", "フォロワー 500人以上", "スター1個＝US$0.01 をクリエイターに", "アプリ内購入の手数料は通常30%（購入時）"),
+        ("門②サブスクリプション", "フォロワー 10,000人以上＋18歳以上", "プロアカウントが必要", "対象国に日本あり（ギフトも同じ）"),
+    ]
+    col_w = 336
+    gap = 12
+    top = 96
+    gate_h = 118
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Instagramの収益化は、門が2つある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "公式ヘルプ4ページ（サブスク要件・ギフト・支払い・コンテンツ収益化ポリシー）の記載をそのまま写した（2026-09-18確認）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "4ページとも更新日の記載が無い。人数・単価・最低額は変わるので、使う前に開くこと。</text>\n",
+    ]
+    for i, (name, cond, line2, line3) in enumerate(gates):
+        x = 18 + i * (col_w + gap)
+        parts.append(f'<rect class="box-accent" x="{x}" y="{top}" width="{col_w}" height="{gate_h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{x + 14}" y="{top + 24}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-accent" x="{x + 14}" y="{top + 50}">{_esc(cond)}</text>\n')
+        parts.append(f'<text class="t" x="{x + 14}" y="{top + 76}">{_esc(line2)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{x + 14}" y="{top + 98}">{_esc(line3)}</text>\n')
+
+    y = top + gate_h + 14
+    parts.append(f'<rect class="box" x="18" y="{y}" width="684" height="92" rx="6"/>\n')
+    parts.append(f'<text class="t-strong" x="34" y="{y + 22}">門の先の関所（米国以外の支払い）</text>\n')
+    parts.append(f'<text class="t" x="34" y="{y + 44}">電信送金＝残高 US$100 以上で月1回／他の支払い方法＝残高 US$25 以上で月1回／毎月21日ごろ</text>\n')
+    parts.append(f'<text class="t" x="34" y="{y + 64}">支払いアカウント無しで貯められるのは1ツール最大 US$500。6か月以内に追加しないと権利を喪失</text>\n')
+    parts.append(f'<text class="t-sm" x="34" y="{y + 82}">ボーナス（招待制）は原文を今回開いていないので、この図には含めていない。</text>\n')
+    y += 92 + 12
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="684" height="70" rx="6"/>\n')
+    parts.append(f'<text class="t-bad" x="34" y="{y + 22}">収益化ポリシーで「禁止されているフォーマット」（AIの語は1つも無い）</text>\n')
+    parts.append(f'<text class="t" x="34" y="{y + 44}">動きの乏しい動画／静止画像を使ったアンケート／画像のスライドショー／ループ動画</text>\n')
+    parts.append(f'<text class="t" x="34" y="{y + 62}">主にテキストを組み合わせたコンテンツ／埋め込み広告。禁止カテゴリに「オリジナルでないコンテンツ」</text>\n')
+    y += 70 + 12
+
+    alt = (
+        "Instagramの収益化の門を2つ並べた図。門①ギフトはフォロワー500人以上で、スター1個＝US$0.01をクリエイターに提供し、"
+        "アプリ内購入の手数料は通常30%が購入時にかかる。門②サブスクリプションはフォロワー10,000人以上かつ18歳以上で、プロアカウントが必要、"
+        "対象国に日本があり、ギフトも同じ。その下の枠は門の先の関所（米国以外の支払い）で、電信送金は残高US$100以上で月1回、"
+        "他の支払い方法は残高US$25以上で月1回、毎月21日ごろに支払われ、支払いアカウント無しで貯められるのは1ツール最大US$500で、"
+        "6か月以内に追加しないと権利を喪失する。ボーナス（招待制）は原文を開いていないので含めていないと注記。"
+        "いちばん下の赤い枠は収益化ポリシーで禁止されているフォーマットで、動きの乏しい動画、静止画像を使ったアンケート、画像のスライドショー、"
+        "ループ動画、主にテキストを組み合わせたコンテンツ、埋め込み広告が並び、禁止カテゴリに「オリジナルでないコンテンツ」があると書かれている。"
+        "公式ヘルプ4ページの記載を2026年9月18日に確認して写したもので、4ページとも更新日の記載が無い。"
+    )
+    (OUT / "instagram-two-gates.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def instagram_ai_hit_and_miss_chart() -> None:
+    """Instagram の各質問で、AIの答えが原文と何回一致したか（2026-09-18・Agent独立実行）。
+
+    判定は docs/evidence/_raw/instagram-two-gates-500-and-10000/judge.py の出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "instagram-ai-hit-and-miss.svg",
+        "サブスクの1万人は当たる。ギフトの500人は6回中1回",
+        "実測2026-09-18。ウェブ検索を切ったAIに、素朴・門の種類・スター単価・材料あり・禁止フォーマット・ページ名を各3回。",
+        "上6行＝原文と一致した回数（多いほど良い）。下3行＝原文に無いこと・ぼかしを言った回数（少ないほど良い）。",
+        [
+            ("サブスク＝フォロワー10,000人と述べた", 6, 6, "good"),
+            ("ギフト＝フォロワー500人と述べた", 1, 6, "good"),
+            ("スター1個＝US$0.01 と述べた", 5, 6, "good"),
+            ("最低支払額 US$25 を挙げた", 6, 6, "good"),
+            ("材料を貼った回：600人ならギフトだけ・2,500個で US$25 と計算", 3, 3, "good"),
+            ("スライドショー・ループ・文字主体は収益化の対象外、と述べた", 3, 3, "good"),
+            ("ギフトの人数を「数百人〜数千人」「下限なし」とぼかした", 5, 6, "bad"),
+            ("「1フォロワー1〜3円」等、出典に無い相場を出した", 3, 3, "bad"),
+            ("「Metaが2025年に発表」等、出典に無い経緯を書いた", 4, 6, "bad"),
+        ],
+        [
+            "1万人の門は6/6で当たる。500人の門は6回中1回しか出ず、5回は「数百人〜数千人」「下限未公表」とぼかした。",
+            "素朴に聞いた3回は「1フォロワー1〜3円」のような出典に無い相場を3回とも出した。",
+            "＝人数の門は原文の数字を貼る。相場は聞かない。材料を貼れば3/3で正しく数えた。",
+        ],
+        "InstagramについてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、サブスクはフォロワー10,000人と述べたのが6/6で緑、"
+        "ギフトはフォロワー500人と述べたのが1/6、スター1個はUS$0.01と述べたのが5/6、最低支払額US$25を挙げたのが6/6で緑、"
+        "材料を貼った回に600人ならギフトだけで2,500個でUS$25と計算したのが3/3で緑、スライドショー・ループ・文字主体は収益化の対象外と述べたのが3/3で緑。"
+        "下3行は原文に無いことやぼかしを言った回数で、ギフトの人数を数百人から数千人や下限なしとぼかしたのが5/6、"
+        "1フォロワー1〜3円のような出典に無い相場を出したのが3/3、Metaが2025年に発表といった出典に無い経緯を書いたのが4/6で、いずれも赤。"
+        "下の枠には、1万人の門は6/6で当たるが500人の門は6回中1回しか出ず5回はぼかしたこと、素朴に聞いた3回は出典に無い相場を3回とも出したこと、"
+        "人数の門は原文の数字を貼り相場は聞かず、材料を貼れば3/3で正しく数えたという結論が書かれている。",
+        label_w=440,
+    )
+
+
+def instagram_gift_estimate_ladder_chart() -> None:
+    """ギフトの単価（スター1個 US$0.01）に、月に受け取るスター数を前提として掛けた推定の段。
+
+    単価と最低額は原文（2026-09-18 確認）。スター数の出典は無い＝前提として3段置く。
+    """
+    rows = [
+        ("月に2,500スター（前提）", 25, "「他の支払い方法」の最低額 US$25 にちょうど届く"),
+        ("月に10,000スター（前提）", 100, "電信送金の最低額 US$100 に届く"),
+        ("月に50,000スター（前提）", 500, "支払いアカウント無しで貯められる上限 US$500"),
+    ]
+    label_x = 18
+    bar_x = 300
+    max_bar_w = 260
+    top = 104
+    row_h = 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝スター1個 US$0.01 × 月に受け取るスター数（数は前提）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "単価は公式ヘルプ「ファンから受け取ったスター1個につき$0.01 (米ドル)をクリエイターに提供します」（2026-09-18確認）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1本の投稿に何スター来るかの出典は無い。3段のスター数はこちらが置いた前提で、ご自身の実績に置き換えること。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">月のクリエイター受取額（米ドル・為替と送金手数料を引く前）</text>\n',
+    ]
+    y = top
+    for label, amount, note in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 500))
+        parts.append(f'<rect class="bar-in" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">US${amount:,}</text>\n')
+        parts.append(f'<text class="t-xs" x="{label_x}" y="{ty + 16}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">スターは視聴者が買う。US$0.01は「クリエイターに渡る額」。購入時の手数料（通常30%）は別途引かれている。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">月1回・毎月21日ごろの支払い。支払いアカウントを6か月以内に追加しないと、貯めた分の権利を失う。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">1ドル150円なら US$25＝3,750円・US$100＝15,000円・US$500＝75,000円（為替は前提）。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "Instagramのギフトの単価（スター1個US$0.01）に、月に受け取るスター数を前提として掛けた推定の横棒グラフ。"
+        "月に2,500スターならUS$25で「他の支払い方法」の最低額US$25にちょうど届く、月に10,000スターならUS$100で電信送金の最低額に届く、"
+        "月に50,000スターならUS$500で支払いアカウント無しで貯められる上限、と3段で示している。"
+        "1本の投稿に何スター来るかの出典は無く、スター数はこちらが置いた前提だと注記。"
+        "下の枠には、スターは視聴者が買い、US$0.01はクリエイターに渡る額で購入時の手数料（通常30%）は別途引かれていること、"
+        "月1回・毎月21日ごろの支払いで、支払いアカウントを6か月以内に追加しないと貯めた分の権利を失うこと、"
+        "1ドル150円ならUS$25は3,750円・US$100は15,000円・US$500は75,000円で為替は前提であることが書かれている。"
+    )
+    (OUT / "instagram-gift-estimate-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def note_membership_waterfall_chart() -> None:
+    """月額1,000円×300人（全員クレカ決済）の売上から、振込までに3回引かれる様子を階段状に見せる。
+
+    原文の式の転記（2026-09-18 確認）。事務手数料5%→プラットフォーム利用料10%（残額に掛ける）→振込手数料270円/回。
+    人数（300人）はこちらが置いた前提。
+    """
+    stages = [
+        ("売上（1,000円 × 300人）", 300000, ""),
+        ("事務手数料 5%（クレカ決済）を引く", 285000, "－15,000円"),
+        ("プラットフォーム利用料 10% を引く", 256500, "－28,500円"),
+        ("振込手数料 270円/回 を引く", 256230, "－270円"),
+    ]
+    label_x = 18
+    bar_x = 300
+    max_bar_w = 250
+    top = 108
+    row_h = 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "月額1,000円×300人の売上から、振込までに3回引かれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "全員がクレジットカード決済の月。原文の公式例の順に、事務手数料→プラットフォーム利用料→振込手数料の順で当てはめた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "プラットフォーム利用料は「売上そのもの」ではなく「事務手数料を引いた残り」に掛かる。300人は前提。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 20}">残額（円）</text>\n',
+    ]
+    y = top
+    for label, amount, delta in stages:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 300000))
+        cls = "bar-out" if amount in (300000, 256230) else "bar-in"
+        parts.append(f'<rect class="{cls}" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        amount_label = f"{amount:,}円" + (f"（{delta}）" if delta else "")
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{_esc(amount_label)}</text>\n')
+        y += row_h
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">振込額 256,230円（売上の85.4%）。全員が携帯キャリア決済（事務手数料15%）なら 229,230円＝差 27,000円。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">決済手段を選ぶのは会員で、書き手には選べない。だから手取りは「幅」でしか言えない。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">AIに素朴に聞いた3回のうち1回は、事務手数料を10%で計算して 242,730円 と答えた（原文は5%）。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "noteのメンバーシップで月額1,000円のプランに300人が加入し、全員がクレジットカード決済だった月の振込額の内訳を示す図。"
+        "売上300,000円から事務手数料5%の15,000円が引かれて285,000円になり、"
+        "そこからプラットフォーム利用料10%の28,500円が引かれて256,500円になり、"
+        "さらに振込手数料270円が1回ぶん引かれて、最終的な振込額は256,230円になる。売上の85.4%が手元に残る計算。"
+        "全員が携帯キャリア決済（事務手数料15%）なら229,230円で差は27,000円。決済手段を選ぶのは会員で書き手には選べないため、手取りは幅でしか言えない。"
+        "AIに素朴に聞いた3回のうち1回は事務手数料を10%で計算して242,730円と答えた（原文は5%）。300人はこちらが置いた前提。"
+    )
+    (OUT / "note-membership-waterfall-300.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def note_membership_estimate_ladder_chart() -> None:
+    """月額1,000円のメンバーシップで、人数を前提として置いたときの月の振込額（全員クレカ決済）を4段で並べる。
+
+    式は原文（2026-09-18 確認）。人数の出典は無い＝前提。帯の境目は稼ぎ方研究の3帯（副業帯＝月数万円／準本業帯＝月数十万円／事業帯＝月百万円超）。
+    """
+    rows = [
+        ("30人（前提）", 25380, "副業帯", "box-quiet"),
+        ("100人（前提）", 85230, "副業帯（JILPT 副業者の平均 92,445円/月 に近い）", "box-quiet"),
+        ("300人（前提）", 256230, "準本業帯（副業で月20万円以上は10.8%・JILPT 2022年調査）", "box-accent"),
+        ("1,000人（前提）", 854730, "事業帯の手前（到達するのはごく一部）", "box-bad"),
+    ]
+    label_x = 18
+    bar_x = 200
+    max_bar_w = 330
+    top = 104
+    row_h = 52
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝月額1,000円 × 人数 → −5% → ×0.9 → −270円（人数は前提）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "全員がクレジットカード決済の場合。式は note ヘルプの手数料ページと「メンバーシップとは」から（2026-09-18確認）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "何人集まるかの出典は無い。4段の人数はこちらが置いた前提で、ご自身の会員数に置き換えること。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">月の振込額（円）</text>\n',
+    ]
+    y = top
+    for label, amount, note, klass in rows:
+        ty = y + 18
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 854730))
+        parts.append(f'<rect class="bar-in" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{amount:,}円</text>\n')
+        parts.append(f'<text class="t-xs" x="{bar_x}" y="{ty + 18}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">同じ式で、人数が変わると帯が動く。会員制は「作業量」ではなく「人数」が前提になる稼ぎ方。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">携帯キャリア決済（15%）の会員が混ざるぶん、実際の振込額は上の数字より下がる（会員が選ぶので幅になる）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">人数の増やし方はこの記事に無い。式の出典だけを原文で確かめられる形にしてある。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "noteのメンバーシップで月額1,000円のプランに何人加入したかを前提として置き、全員クレジットカード決済のときの月の振込額を4段で並べた横棒グラフ。"
+        "30人なら25,380円で副業帯、100人なら85,230円で副業帯（JILPTの副業者の平均92,445円/月に近い）、"
+        "300人なら256,230円で準本業帯（副業で月20万円以上は10.8%・JILPT 2022年調査）、1,000人なら854,730円で事業帯の手前（到達するのはごく一部）。"
+        "何人集まるかの出典は無く、人数はこちらが置いた前提だと注記。"
+        "下の枠には、同じ式で人数が変わると帯が動き、会員制は作業量ではなく人数が前提になる稼ぎ方であること、"
+        "携帯キャリア決済（15%）の会員が混ざるぶん実際の振込額は下がり幅になること、人数の増やし方はこの記事に無く式の出典だけを原文で確かめられる形にしてあることが書かれている。"
+    )
+    (OUT / "note-membership-estimate-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def note_membership_hit_and_miss_chart() -> None:
+    """note メンバーシップの各質問で、AIの答えが原文と何回一致したか（2026-09-18・Agent独立実行）。
+
+    判定は docs/evidence/_raw/note-membership-monthly-formula/judge.py の出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "note-membership-ai-hit-and-miss.svg",
+        "順番と率は当たる。素朴に聞くと3回に1回、率を間違えて計算した",
+        "実測2026-09-18。ウェブ検索を切ったAIに、300人の手取り・手数料の種類・材料あり・ページ名・振込・確認の順番を各3回。",
+        "上6行＝原文と一致した回数（多いほど良い）。下2行＝原文に無いこと・違うことを言った回数（少ないほど良い）。",
+        [
+            ("素朴に聞いた回：最終額 256,230円（真値）", 2, 3, "good"),
+            ("引く順番＝事務手数料→利用料→振込、と述べた", 6, 6, "good"),
+            ("利用料10%は「事務手数料を引いた後」に掛かる、と述べた", 3, 3, "good"),
+            ("振込手数料 270円・申請は売上1,000円以上", 3, 3, "good"),
+            ("材料を貼った回：クレカ 256,230円／キャリア 229,230円", 3, 3, "good"),
+            ("「数字は書かないで」の回：率・金額の数字ゼロ", 6, 6, "good"),
+            ("素朴に聞いた回：クレカの事務手数料を10%で計算（原文は5%）", 1, 3, "bad"),
+            ("振込の質問：出典に無い過去の額や期限（260円・失効）を述べた", 2, 3, "bad"),
+        ],
+        [
+            "3段の順番（事務手数料→利用料→振込）は6/6。率の数字も、手数料の種類を聞いた3回は3回とも原文どおり。",
+            "ただし素朴に「300人なら手取りは」と聞いた3回のうち1回は、クレカ5%を10%として 242,730円 と答えた。",
+            "＝式と順番は聞いてよい。率の数字は原文を貼る。貼れば3/3で1円単位まで一致した。",
+        ],
+        "noteのメンバーシップについてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、素朴に聞いた回に最終額256,230円（真値）を出したのが2/3、"
+        "引く順番を事務手数料→利用料→振込と述べたのが6/6で緑、利用料10%は事務手数料を引いた後に掛かると述べたのが3/3で緑、"
+        "振込手数料270円と申請は売上1,000円以上を挙げたのが3/3で緑、材料を貼った回にクレカ256,230円とキャリア229,230円を出したのが3/3で緑、"
+        "数字は書かないでの回に率・金額の数字がゼロだったのが6/6で緑。"
+        "下2行は原文と違うことを言った回数で、素朴に聞いた回にクレカの事務手数料を10%で計算したのが1/3、"
+        "振込の質問で出典に無い過去の額や期限（260円・失効）を述べたのが2/3で、いずれも赤。"
+        "下の枠には、3段の順番は6/6で率の数字も手数料の種類を聞いた3回は原文どおりだったこと、"
+        "素朴に300人なら手取りはと聞いた3回のうち1回はクレカ5%を10%として242,730円と答えたこと、"
+        "式と順番は聞いてよいが率の数字は原文を貼り、貼れば3/3で1円単位まで一致したという結論が書かれている。",
+        label_w=440,
+    )
+
+
+def udemy_97_or_37_split_chart() -> None:
+    """同じ講座1本が、誰が客を連れてきたかで 97% と 37% に割れることを、3,000円×100本の例で並べる。
+
+    率は原文（2026-09-18 確認・support.udemy.com「Instructor revenue share」）。本数はこちらが置いた前提。
+    """
+    rows = [
+        ("講師のクーポン・紹介リンク経由（instructor promotions）", 97, 291000, "box-good", "t-good"),
+        ("Udemyの検索・広告経由（紹介リンクなし）", 37, 111000, "box", "t"),
+    ]
+    box_x, box_w = 18, 684
+    top = 96
+    row_h = 72
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ講座が、誰が客を連れてきたかで 97% と 37% に割れる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Udemy ヘルプ「Instructor revenue share」の率を、3,000円の講座が月に100本売れた場合（前提）に当てはめた。2026-09-18確認。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "率が掛かるのは Net Amount（税やアプリ手数料を引いた後の額）。iOS・Androidアプリ経由の販売は先に30%が引かれる。</text>\n",
+    ]
+    y = top
+    for label, pct, amount, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 24}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 48}" style="font-weight:700">講師 {pct}% ＝ 300,000円 × {pct / 100:.2f} ＝ {amount:,}円／月（前提: 3,000円×100本）</text>\n')
+        y += row_h
+
+    parts.append(f'<rect class="box-quiet" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+    parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 24}">Udemy Business（法人向け定額）で見られた場合</text>\n')
+    parts.append(f'<text class="t" x="{box_x + 16}" y="{y + 48}">1本いくらではない。月の定額収入の15%を講師全体のプールにし、視聴された分数の割合で按分</text>\n')
+    y += row_h
+
+    y += 4
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">差は 180,000円／月＝2.6倍。講座の中身は同じで、変わったのは「誰が客を連れてきたか」だけ。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">講座を「作って置く」型は、置いた後の集客をどちらがするかで、同じ本数でも取り分が割れる。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">本数（100本）は前提。原文に載っているのは率だけで、何本売れるかの出典は無い。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "Udemyの講座1本が、誰が客を連れてきたかで講師の取り分が97%と37%に割れることを、3,000円の講座が月に100本売れた場合（前提）で並べた図。"
+        "講師のクーポン・紹介リンク経由なら講師97%で300,000円×0.97＝291,000円／月（緑）、Udemyの検索・広告経由（紹介リンクなし）なら講師37%で111,000円／月。"
+        "率が掛かるのはNet Amount（税やアプリ手数料を引いた後の額）で、iOS・Androidアプリ経由の販売は先に30%が引かれる。"
+        "3段目はUdemy Business（法人向け定額）で見られた場合で、1本いくらではなく月の定額収入の15%を講師全体のプールにして視聴された分数の割合で按分する。"
+        "下の枠には、差は月180,000円で2.6倍、講座の中身は同じで変わったのは誰が客を連れてきたかだけであること、"
+        "作って置く型は置いた後の集客をどちらがするかで同じ本数でも取り分が割れること、本数は前提で何本売れるかの出典は無いことが書かれている。"
+    )
+    (OUT / "udemy-97-or-37-split.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def udemy_estimate_ladder_chart() -> None:
+    """3,000円の講座が月に何本売れたか（前提）×2つの経路で、月の取り分を並べる。"""
+    rows = [
+        ("10本（前提）", 29100, 11100),
+        ("30本（前提）", 87300, 33300),
+        ("100本（前提）", 291000, 111000),
+    ]
+    label_x = 18
+    bar_x = 150
+    max_bar_w = 300
+    top = 110
+    row_h = 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝3,000円 × 本数 × 97%（自分の集客）または 37%（Udemyの集客）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "率は原文（2026-09-18確認）。本数はこちらが置いた前提で、何本売れるかの出典は無い。税・アプリ手数料は考えない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "濃い棒＝紹介リンク・クーポン経由（97%）、薄い棒＝Udemyの検索経由（37%）。月の取り分（円）。</text>\n",
+    ]
+    y = top
+    for label, a97, a37 in rows:
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y + 16}">{_esc(label)}</text>\n')
+        w1 = max(4, round(max_bar_w * a97 / 291000))
+        w2 = max(4, round(max_bar_w * a37 / 291000))
+        parts.append(f'<rect class="bar-out" x="{bar_x}" y="{y + 2}" width="{w1}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w1 + 8}" y="{y + 16}">{a97:,}円（97%）</text>\n')
+        parts.append(f'<rect class="bar-old" x="{bar_x}" y="{y + 26}" width="{w2}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t" x="{bar_x + w2 + 8}" y="{y + 40}">{a37:,}円（37%）</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">同じ100本でも、自分で集客すれば準本業帯（291,000円）、Udemy任せなら副業帯（111,000円）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">実際は2つの経路が混ざる。自分の紹介リンク経由の割合が、そのまま取り分の割合を決める。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">支払いは PayPal／Payoneer（米国外）。最低額と時期は今回の出典に無いので書いていない。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "Udemyで3,000円の講座が月に何本売れたかを前提として置き、講師の取り分を2つの経路で並べた横棒グラフ。"
+        "10本なら紹介リンク経由（97%）で29,100円・Udemy経由（37%）で11,100円、30本なら87,300円と33,300円、100本なら291,000円と111,000円。"
+        "率は原文で本数はこちらが置いた前提、税やアプリ手数料は考えないと注記。"
+        "下の枠には、同じ100本でも自分で集客すれば準本業帯（291,000円）でUdemy任せなら副業帯（111,000円）であること、"
+        "実際は2つの経路が混ざり自分の紹介リンク経由の割合がそのまま取り分の割合を決めること、"
+        "支払いはPayPalまたはPayoneer（米国外）で最低額と時期は今回の出典に無いので書いていないことが書かれている。"
+    )
+    (OUT / "udemy-estimate-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def udemy_hit_and_miss_chart() -> None:
+    """Udemy の各質問で、AIの答えが原文と何回一致したか（2026-09-18・Agent独立実行）。
+
+    判定は docs/evidence/_raw/udemy-97-or-37-who-brings-the-student/judge.py の出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "udemy-ai-hit-and-miss.svg",
+        "97%と37%は当たる。「いつ変わったか」は原文に無い話が付く",
+        "実測2026-09-18。ウェブ検索を切ったAIに、取り分・Udemy Business・材料あり・ページ名・変更の経緯・確認の順番を各3回。",
+        "上6行＝原文と一致した回数（多いほど良い）。下2行＝原文に無いこと・違うことを言った回数（少ないほど良い）。",
+        [
+            ("紹介リンク経由＝97%・Udemy経由＝37%、と述べた", 3, 3, "good"),
+            ("Net Amount（アプリ手数料30%を引いた後）に触れた", 3, 3, "good"),
+            ("Udemy Business＝プールを視聴分数で按分、と述べた", 3, 3, "good"),
+            ("材料を貼った回：291,000円／111,000円（差180,000円）", 3, 3, "good"),
+            ("ページ名だけ→数字ゼロ・「Instructor Revenue Share」", 3, 3, "good"),
+            ("「数字は書かないで」の確認順→率・金額の数字ゼロ", 3, 3, "good"),
+            ("過去の率・変更時期を述べた（原文に載っていない）", 9, 9, "bad"),
+            ("Udemy Business の率を「現在17.5%」と述べた（原文は15%）", 1, 3, "bad"),
+        ],
+        [
+            "現在の率（97%・37%・プール15%）は素朴に聞いても当たり、材料を貼れば1円単位で一致した。",
+            "ただし過去の率や変更時期（50%・25%・20%・17.5%、2020〜27年）は9回とも添えられ、原文に無い。",
+            "＝率は原文を貼って計算だけさせる。「いつ変わったか」は聞かない（確かめる手段が原文に無い）。",
+        ],
+        "UdemyについてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、紹介リンク経由97%・Udemy経由37%と述べたのが3/3、"
+        "Net Amount（アプリ手数料30%を引いた後）に触れたのが3/3、Udemy Businessはプールを視聴分数で按分と述べたのが3/3、"
+        "材料を貼った回に291,000円と111,000円（差180,000円）を出したのが3/3、ページ名だけの回に数字ゼロでInstructor Revenue Shareを挙げたのが3/3、"
+        "数字は書かないでの確認順の回に率・金額の数字がゼロだったのが3/3で、いずれも緑。"
+        "下2行は原文に無いこと・違うことを言った回数で、過去の率・変更時期を述べたのが9/9、Udemy Businessの率を現在17.5%と述べたのが1/3で、いずれも赤。"
+        "下の枠には、現在の率は素朴に聞いても当たり材料を貼れば1円単位で一致したこと、過去の率や変更時期は9回とも添えられ原文には載っていないこと、"
+        "率は原文を貼って計算だけさせ、いつ変わったかは聞かないという結論が書かれている。",
+        label_w=440,
+    )
+
+
+def teaching_runbook_stops_map_chart() -> None:
+    """6手順の手順書を「初めて読む人」として実行させたとき、どの手順で止まったかを並べる。
+
+    実測（2026-09-18・Agent独立実行・指示文A 3回）。判定は docs/evidence/_raw/teaching-ai-runbook-stops-where/judge.py。
+    """
+    rows = [
+        ("1. ChatGPTを開き、新しいチャットを始める", "実行できる（アカウントがある前提）", "box-good", "t-good"),
+        ("2. 会議の文字起こしファイルを用意する", "3回とも止まる＝どの会議か・どこにあるか・形式が無い", "box-bad", "t-bad"),
+        ("3. 文字起こしの本文をチャットに貼り付ける", "条件付き（文字のファイルがあれば。長すぎるときの指示が無い）", "box", "t"),
+        ("4. 「決定事項を3行で書いてください」と入力して送る", "3回とも実行できる＝文言が一字一句書いてある", "box-good", "t-good"),
+        ("5. 返ってきた3行が正しいか確認する", "3回とも止まる＝「正しい」の基準と、外れたときの戻り方が無い", "box-bad", "t-bad"),
+        ("6. 報告用の形に整えて、上司に送る", "3回とも止まる＝「報告用の形」・宛先・手段が無い", "box-bad", "t-bad"),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 54
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "手順書を「初めて読む人」として実行させると、6手順のうち3つで止まった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-09-18。ウェブ検索を切ったAI（独立実行）に「書かれているとおりにだけ実行し、足りなければ止まって」と3回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "手順書は会議の文字起こしから決定事項を3行にまとめる6手順（記事本文と同じ）。止まった理由は3回とも同じ3種類だった。</text>\n",
+    ]
+    y = top
+    for step, verdict, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 8}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 14}" y="{y + 19}">{_esc(step)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 14}" y="{y + 38}">{_esc(verdict)}</text>\n')
+        y += row_h
+
+    y += 4
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">足りないものは3つに集約された＝材料の入手先（2）／合否の基準と戻り方（5）／届け先と書式（6）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">「やってみて」と頼んだ3回も、3回とも手順2で止まり、架空の文字起こしを作って先に進むことはなかった。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">＝教える前に、手順書の穴を他人（AI）の手で探せる。穴は書いた本人には見えない。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "会議の文字起こしから決定事項を3行にまとめる6手順の手順書を、AIに「初めて読む人として書かれているとおりにだけ実行して」と3回頼んだ結果を手順ごとに並べた図。"
+        "手順1（ChatGPTを開き新しいチャットを始める）は実行できる（アカウントがある前提）で緑、"
+        "手順2（会議の文字起こしファイルを用意する）は3回とも止まり、どの会議か・どこにあるか・形式が無いためで赤、"
+        "手順3（本文をチャットに貼り付ける）は条件付きで、文字のファイルがあればできるが長すぎるときの指示が無い、"
+        "手順4（決定事項を3行で書いてくださいと入力して送る）は3回とも実行でき、文言が一字一句書いてあるためで緑、"
+        "手順5（返ってきた3行が正しいか確認する）は3回とも止まり、正しいの基準と外れたときの戻り方が無いためで赤、"
+        "手順6（報告用の形に整えて上司に送る）は3回とも止まり、報告用の形・宛先・手段が無いためで赤。"
+        "下の枠には、足りないものは材料の入手先・合否の基準と戻り方・届け先と書式の3つに集約されたこと、"
+        "やってみてと頼んだ3回も3回とも手順2で止まり架空の文字起こしを作って進むことはなかったこと、"
+        "教える前に手順書の穴を他人の手で探せ、穴は書いた本人には見えないことが書かれている。"
+    )
+    (OUT / "teaching-runbook-stops-map.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def teaching_fee_comparison_chart() -> None:
+    """受講料5,800円（ストアカのChatGPT講座1ページ目の中央値）が、売る場所と経路でいくら残るかを並べる。
+
+    率は原文（2026-09-18 確認・street-academy.com/fee／help.coconala.com 230180287）。
+    """
+    rows = [
+        ("ストアカ・検索経由の初回（送客30%＋消費税）", 3886, "－1,914円"),
+        ("ココナラ・ビデオチャット（27.5%＝25%×1.1）", 4205, "－1,595円"),
+        ("ストアカ・自分のSNS経由の初回（自己集客10%＋消費税）", 5162, "－638円"),
+        ("ストアカ・同じ生徒の2回目以降（リピート10%＋消費税）", 5162, "－638円"),
+    ]
+    label_x = 18
+    bar_x = 350
+    max_bar_w = 220
+    top = 104
+    row_h = 46
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ5,800円の講座が、売る場所と経路で 3,886円〜5,162円に割れる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "5,800円＝ストアカ「ChatGPT講座」一覧1ページ目の価格の中央値（実在の証明であって相場ではない・2026-09-16）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "率は各社の公式ページ（2026-09-18確認）。ストアカは手数料に別途消費税、ココナラの27.5%は消費税込みの率。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">手元に残る額（円・振込手数料は別）</text>\n',
+    ]
+    y = top
+    for label, amount, delta in rows:
+        ty = y + 18
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 5800))
+        cls = "bar-out" if amount == 5162 else "bar-in"
+        parts.append(f'<rect class="{cls}" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{amount:,}円（{delta}）</text>\n')
+        y += row_h
+
+    y += 8
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">「誰が生徒を連れてきたか」で差が1,276円。同じ生徒の2回目からは経路にかかわらず10%に下がる。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">ストアカは登録費・掲載費・月額費が0円、未開催・キャンセル時は手数料なし（原文）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">AIに材料を貼って計算させた3回は、3つとも1円単位で一致し、27.5%に消費税を二重に掛けなかった。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "受講料5,800円の講座が、売る場所と経路でいくら手元に残るかを並べた横棒グラフ。"
+        "ストアカで検索経由の初回（送客手数料30%＋消費税）は3,886円で1,914円引かれ、ココナラのビデオチャット（27.5%）は4,205円で1,595円引かれ、"
+        "ストアカで自分のSNS経由の初回（自己集客手数料10%＋消費税）は5,162円で638円引かれ、同じ生徒の2回目以降（リピート手数料10%＋消費税）も5,162円。"
+        "5,800円はストアカのChatGPT講座一覧1ページ目の価格の中央値で、実在の証明であって相場ではないと注記。"
+        "下の枠には、誰が生徒を連れてきたかで差が1,276円あり同じ生徒の2回目からは経路にかかわらず10%に下がること、"
+        "ストアカは登録費・掲載費・月額費が0円で未開催・キャンセル時は手数料なしであること、"
+        "AIに材料を貼って計算させた3回は3つとも1円単位で一致し27.5%に消費税を二重に掛けなかったことが書かれている。"
+    )
+    (OUT / "teaching-fee-comparison.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def teaching_estimate_ladder_chart() -> None:
+    """受講料5,800円×月の延べ受講人数（前提）×手取り率で、月の推定を4段で並べる（自己集客・送客の2本）。"""
+    rows = [
+        ("月に延べ2人（前提）", 10324, 7772, "副業帯の入口"),
+        ("月に延べ8人（前提）", 41296, 31088, "副業帯"),
+        ("月に延べ20人（前提）", 103240, 77720, "副業帯（JILPT 副業者の平均 92,445円 前後）"),
+        ("月に延べ40人（前提・週20時間相当）", 206480, 155440, "準本業帯（1回90分＋準備30分×週10回として）"),
+    ]
+    label_x = 18
+    bar_x = 250
+    max_bar_w = 250
+    top = 110
+    row_h = 66
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝5,800円 × 月の延べ受講人数 × 手取り率（人数は前提）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "濃い棒＝自分の集客・リピート（手取り5,162円/人）、薄い棒＝ストアカ検索経由の初回（3,886円/人）。率は原文（2026-09-18確認）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "月に何人受講するかの出典は無い。4段の人数はこちらが置いた前提で、ご自身の申し込み数に置き換えること。</text>\n",
+    ]
+    y = top
+    for label, a_self, a_st, note in rows:
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y + 16}">{_esc(label)}</text>\n')
+        w1 = max(4, round(max_bar_w * a_self / 206480))
+        w2 = max(4, round(max_bar_w * a_st / 206480))
+        parts.append(f'<rect class="bar-out" x="{bar_x}" y="{y + 2}" width="{w1}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w1 + 8}" y="{y + 16}">{a_self:,}円</text>\n')
+        parts.append(f'<rect class="bar-old" x="{bar_x}" y="{y + 26}" width="{w2}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t" x="{bar_x + w2 + 8}" y="{y + 40}">{a_st:,}円</text>\n')
+        parts.append(f'<text class="t-xs" x="{label_x}" y="{y + 36}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">「時間を売る」型なので、人数はそのまま自分の作業時間になる。40人の段は週20時間相当の前提を置いた。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">副業で月20万円以上は10.8%（JILPT 2022年調査・副業者1万1,358人）。準本業帯に届くのは一部。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">受講料5,800円は一覧の中央値で相場ではない。集客の方法はこの記事に無い。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "受講料5,800円の講座で、月に延べ何人が受講したかを前提として置き、手取り率を掛けた月の推定を4段で並べた横棒グラフ。"
+        "濃い棒は自分の集客またはリピート（手取り5,162円/人）、薄い棒はストアカの検索経由の初回（3,886円/人）。"
+        "月に延べ2人なら10,324円と7,772円で副業帯の入口、延べ8人なら41,296円と31,088円で副業帯、"
+        "延べ20人なら103,240円と77,720円で副業帯（JILPTの副業者の平均92,445円前後）、"
+        "延べ40人（週20時間相当）なら206,480円と155,440円で準本業帯（1回90分＋準備30分×週10回として）。"
+        "月に何人受講するかの出典は無く人数はこちらが置いた前提だと注記。"
+        "下の枠には、時間を売る型なので人数はそのまま自分の作業時間になり40人の段は週20時間相当の前提を置いたこと、"
+        "副業で月20万円以上は10.8%（JILPT 2022年調査・副業者1万1,358人）で準本業帯に届くのは一部であること、"
+        "受講料5,800円は一覧の中央値で相場ではなく集客の方法はこの記事に無いことが書かれている。"
+    )
+    (OUT / "teaching-estimate-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def coconala_listing_split_chart() -> None:
+    """ココナラ「AI業務効率化・自動化」1ページ目60件（ランキング順・2026-09-18 18:35 JST）を、タイトルの語で6区分に分けた件数。
+
+    分け方は docs/evidence/_raw/coconala-ai-automation-634/classify.py（規則は上から順・人の裁量なし）。
+    """
+    rows = [
+        ("A 注文で作る（開発・構築・制作・アプリ化…）", 21, "50,000円", "bar-in"),
+        ("C 「自動化します」だけ（形はタイトルに無い）", 20, "22,500円", "bar-old"),
+        ("B 既製ツールを渡す（提供・販売）", 8, "12,500円", "bar-in"),
+        ("E 代行・伴走・成果物（運用代行・投稿作成…）", 6, "40,000円", "bar-in"),
+        ("D 教える・相談", 4, "9,750円", "bar-in"),
+        ("F 指示書・プロンプト", 1, "20,000円", "bar-in"),
+    ]
+    label_x = 18
+    bar_x = 330
+    max_bar_w = 250
+    top = 104
+    row_h = 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "60件の中身＝「注文で作る」21件・「自動化します」だけ20件・既製ツール8件</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "ココナラ「AI業務効率化・自動化」634件の1ページ目（ランキング順・60件）。2026年9月18日18時35分の表示を写した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "区分はタイトルの語で機械的に分けた（規則は上から順に当てる）。説明文は読んでいない。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">件数（60件中）　右＝その区分の価格の中央値</text>\n',
+    ]
+    y = top
+    for label, n, median, klass in rows:
+        ty = y + 16
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * n / 21))
+        parts.append(f'<rect class="{klass}" x="{bar_x}" y="{ty - 13}" width="{w}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{n}件　{median}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="82" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">道具名が題にあるのは12件＝n8n 3・WordPress 3・Claude 2・GAS 1・MCP 1・NotebookLM 1・MF/freee 1。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">Zapier・Make・Dify は0件。60件とも価格は「◯円」の1件単位で、「/60分」のような時間単位の表示は無い。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">「見積り必須」（先に見積もりを取る出品）は20件。注文で作る型に8件・「自動化します」型に7件。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 74}">出品者名と個別の出品は引いていない。実在の証明は区分と件数まで。売れた数の出典は無い。</text>\n')
+    y += 82 + 12
+
+    alt = (
+        "ココナラの「AI業務効率化・自動化」634件のうち、ランキング順の1ページ目60件をタイトルの語で6区分に分けた横棒グラフ。2026年9月18日18時35分の表示。"
+        "注文で作る（開発・構築・制作・アプリ化など）が21件で価格の中央値50,000円、「自動化します」だけで形がタイトルに無いものが20件で中央値22,500円、"
+        "既製ツールを渡す（提供・販売）が8件で中央値12,500円、代行・伴走・成果物（運用代行・投稿作成など）が6件で中央値40,000円、"
+        "教える・相談が4件で中央値9,750円、指示書・プロンプトが1件で20,000円。区分はタイトルの語で機械的に分け、説明文は読んでいないと注記。"
+        "下の枠には、タイトルに道具名があるのは12件でn8n 3・WordPress 3・Claude 2・GAS 1・MCP 1・NotebookLM 1・MF/freee 1、Zapier・Make・Difyは0件、"
+        "60件とも価格は1件単位で時間単位の表示は無いこと、見積り必須が20件で注文で作る型に8件・自動化します型に7件あること、"
+        "出品者名と個別の出品は引いておらず売れた数の出典は無いことが書かれている。"
+    )
+    (OUT / "coconala-listing-split.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def coconala_price_band_chart() -> None:
+    """同じ60件の価格表示を4つの帯に分けた件数。価格は「◯円〜」の最低表示を含む＝相場ではない。"""
+    bands = [
+        ("3,000〜9,999円", 14),
+        ("10,000〜49,999円", 23),
+        ("50,000〜99,999円", 16),
+        ("100,000円以上（最大490,000円）", 7),
+    ]
+    label_x = 18
+    bar_x = 260
+    max_bar_w = 330
+    top = 104
+    row_h = 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "価格の表示＝最小3,000円・中央値27,500円・最大490,000円（60件）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "一覧に出る価格は「この額から」の最低表示で、20件は「見積り必須」＝実際の代金は相談で決まる。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "中央値は「60件を並べた真ん中」であって相場ではない。2026年9月18日の1ページ目だけを数えた。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">件数（60件中）</text>\n',
+    ]
+    y = top
+    for label, n in bands:
+        ty = y + 16
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * n / 23))
+        parts.append(f'<rect class="bar-in" x="{bar_x}" y="{ty - 13}" width="{w}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{n}件</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">ココナラの取り分は「販売時の手数料20%×1.1＝税込22%」。27,500円の出品なら売上金は21,450円（×0.78）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">公式の計算例＝125,000円 − 125,000円×0.2×1.1 ＝ 97,500円（販売時の手数料のページ・2026年9月18日確認）。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">同じ「AI業務効率化・自動化」でも、価格は3,000円から490,000円まで約160倍の幅がある。1つの相場は無い。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "ココナラ「AI業務効率化・自動化」の1ページ目60件の価格表示を4つの帯に分けた横棒グラフ。3,000〜9,999円が14件、10,000〜49,999円が23件、"
+        "50,000〜99,999円が16件、100,000円以上（最大490,000円）が7件。最小3,000円・中央値27,500円・最大490,000円。"
+        "一覧の価格は最低表示で、20件は見積り必須のため実際の代金は相談で決まること、中央値は相場ではなく2026年9月18日の1ページ目だけを数えたことを注記。"
+        "下の枠には、ココナラの取り分は販売時の手数料20%×1.1＝税込22%で、27,500円の出品なら売上金は21,450円（×0.78）になること、"
+        "公式の計算例が125,000円−125,000円×0.2×1.1＝97,500円であること、価格は3,000円から490,000円まで約160倍の幅があり1つの相場は無いことが書かれている。"
+    )
+    (OUT / "coconala-price-bands.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def coconala_estimate_ladder_chart() -> None:
+    """1件27,500円（1ページ目の中央値）× 月の件数（前提）× 0.78 の推定を3段で並べる。件数の出典は無い。"""
+    rows = [
+        ("月1件（前提）", 21450, "副業帯の入口（1件あたりの売上金）", "box-quiet"),
+        ("月3件（前提）", 64350, "副業帯（JILPT 副業者の中央値 50,000円/月 に近い）", "box-quiet"),
+        ("月15件（前提）", 321750, "準本業帯（副業で月20万円以上は10.8%・JILPT 2022年調査）", "box-accent"),
+    ]
+    label_x = 18
+    bar_x = 200
+    max_bar_w = 330
+    top = 104
+    row_h = 52
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝27,500円 × 月の件数 × 0.78（件数は前提・価格は1ページ目の中央値）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "0.78＝ココナラの販売時の手数料22%を引いた残り（2026年9月18日確認）。1件を作る時間の出典は無い。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "何件売れるかの出典も無い。3段の件数はこちらが置いた前提で、ご自身の件数に置き換えること。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">月の売上金（円・振込手数料を引く前）</text>\n',
+    ]
+    y = top
+    for label, amount, note, klass in rows:
+        ty = y + 18
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 321750))
+        parts.append(f'<rect class="bar-in" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{amount:,}円</text>\n')
+        parts.append(f'<text class="t-xs" x="{bar_x}" y="{ty + 18}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">月15件は、1件に丸1日かけるなら平日のほとんどを使う量。準本業帯は「作業量の前提」と一緒にしか書けない。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">価格を10,000円に置けば同じ件数で 7,800円／23,400円／117,000円。価格の前提で帯が1つ下がる。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">売れる方法はこの記事に無い。式の部品（中央値・22%）だけを原文と一覧で確かめられる形にしてある。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "ココナラで作った自動化を売るときの推定を3段で並べた横棒グラフ。式は1件27,500円（1ページ目60件の中央値）×月の件数×0.78で、0.78はココナラの販売時の手数料22%を引いた残り。"
+        "月1件なら21,450円で副業帯の入口、月3件なら64,350円で副業帯（JILPTの副業者の中央値50,000円/月に近い）、月15件なら321,750円で準本業帯（副業で月20万円以上は10.8%・JILPT 2022年調査）。"
+        "1件を作る時間や何件売れるかの出典は無く、件数はこちらが置いた前提だと注記。"
+        "下の枠には、月15件は1件に丸1日かけるなら平日のほとんどを使う量で準本業帯は作業量の前提と一緒にしか書けないこと、"
+        "価格を10,000円に置けば同じ件数で7,800円・23,400円・117,000円となり価格の前提で帯が1つ下がること、売れる方法はこの記事に無く式の部品だけを確かめられる形にしてあることが書かれている。"
+    )
+    (OUT / "coconala-estimate-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def mercor_listing_change_chart() -> None:
+    """Mercor で「Japanese」を検索した結果の、日本語を名指しした案件の3回の観測（2026-09-16／09-18 朝／09-18 夕）。
+
+    数字は表示のまま（content/_earn_research.md 17・25枚目、docs/evidence/_raw/mercor-japanese-listings/）。
+    """
+    cols = [("9/16", 0), ("9/18 朝", 0), ("9/18 夕", 0)]
+    rows = [
+        ("PDF Annotation & Transcription – Japanese", "$33.58 / hour", ["118", "217", "217"], "box-accent"),
+        ("Japanese Professional Voice Actor", "$40 - $200 / hour", ["32", "109", "109"], "box"),
+        ("Bilingual Japanese Generalist — AI Safety", "$48 - $52 / hour", ["5", "8", "8"], "box"),
+        ("Bilingual Japanese STEM Expert (PhD)", "$68 - $72 / hour", ["9", "9", "9"], "box"),
+        ("Bilingual Writer – Japanese (Japan)", "$18 / task", ["179", "消えた", "消えた"], "box-bad"),
+        ("In-House Counsel／Lawyer (Japan)", "$140 - $150 / hour", ["表示あり", "消えた", "消えた"], "box-bad"),
+    ]
+    top = 104
+    row_h = 40
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ検索語「Japanese」で3回開いた＝2件が消え、採用数は2日で118→217に増えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "work.mercor.com（ログイン不要）の一覧表示のまま。数字は「hired this month」（今月の採用数）の表示。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2026年9月16日・9月18日朝・9月18日夕方（18時38分）の3回。単価はその日の1案件の表示で、相場ではない。</text>\n",
+        f'<text class="t-xs" x="18" y="{top - 18}">案件名（表示のまま）</text>\n',
+        f'<text class="t-xs" x="330" y="{top - 18}">単価表示</text>\n',
+    ]
+    xs = [470, 560, 640]
+    for (label, _), x in zip(cols, xs):
+        parts.append(f'<text class="t-xs" x="{x}" y="{top - 18}">{_esc(label)}</text>\n')
+    y = top
+    for name, rate, vals, klass in rows:
+        parts.append(f'<rect class="{klass}" x="18" y="{y - 14}" width="684" height="{row_h - 6}" rx="4"/>\n')
+        ty = y + 8
+        parts.append(f'<text class="t-sm" x="26" y="{ty}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-sm" x="330" y="{ty}">{_esc(rate)}</text>\n')
+        for v, x in zip(vals, xs):
+            cls = "t-bad" if v == "消えた" else "t-strong"
+            parts.append(f'<text class="{cls}" x="{x}" y="{ty}">{_esc(v)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">「案件は消える」も「採用は続いている」も、この3回の観測で言える。3日目以降は観測していない。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">案件文には「Projects can be extended, shortened, or concluded early」＝短縮・早期終了ありと書いてある。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">検索は部分一致で、他言語の同種案件（$12.68 / hour のインド系言語など）も同じ一覧に混ざる。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "Mercorの案件一覧で検索語「Japanese」を2026年9月16日・9月18日朝・9月18日夕方の3回開き、日本語を名指しした案件の単価表示と今月の採用数を並べた表。"
+        "PDF Annotation &amp; Transcription – Japaneseは$33.58/hourで採用数が118→217→217、Japanese Professional Voice Actorは$40-$200/hourで32→109→109、"
+        "Bilingual Japanese Generalist — AI Safetyは$48-$52/hourで5→8→8、Bilingual Japanese STEM Expert (PhD)は$68-$72/hourで9→9→9。"
+        "Bilingual Writer – Japanese (Japan)は$18/taskで179だったが9月18日には検索結果から消え、In-House Counsel／Lawyer (Japan)は$140-$150/hourで表示があったが同じく消えた。"
+        "単価はその日の1案件の表示で相場ではないと注記。下の枠には、案件は消えることも採用が続いていることもこの3回の観測で言えるが3日目以降は観測していないこと、"
+        "案件文に短縮・早期終了ありと書いてあること、検索は部分一致で他言語の同種案件も混ざることが書かれている。"
+    )
+    (OUT / "mercor-listing-change.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def mercor_six_questions_chart() -> None:
+    """「AIの回答・資料を評価する仕事」を、うちの6つの質問（原資・門・金額の決まり方・入金・引かれるもの・必要なもの）で埋めた図。
+
+    出典＝案件ページ（PDF Annotation & Transcription Experts – Japanese）と支払いページ。2026-09-18 確認。
+    """
+    rows = [
+        ("① 原資", "AI企業（「Mercor partners with leading AI labs and enterprises」）。買い手も広告主もいない"),
+        ("② 門", "応募3段＝Resume／Bilingual Competency（CORE）／Work Authorization。所在地に Japan が入っている"),
+        ("③ 金額の決まり方", "時間制「$33.58 per hour」。時間は監視ソフト（Insightful）と Spend ページで数える。USD建て"),
+        ("④ 入金の経路と時期", "毎週水曜 12:00 PM PST ごろ、前週（土〜金 IST）ぶん。Stripe か Wise（地域で自動決定・選べない）"),
+        ("⑤ 引かれるもの", "通常の振込は無料・即時振込は1.0%。為替は Stripe／Wise が支払い時に換算。初回は7日保留（Stripe）"),
+        ("⑥ 必要なもの", "本人名義の銀行口座・SMS の2段階認証・Stripe の本人確認と税務情報。契約は独立した個人事業（contractor）"),
+    ]
+    top = 96
+    row_h = 46
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "評価の仕事を6つの質問で埋める＝払うのはAI企業、門は応募3段、金額は時間×単価</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "案件ページ（PDF Annotation &amp; Transcription Experts – Japanese）と支払いページの記載から。2026年9月18日確認。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "6つの質問は総論「副業のお金は3つの流れで届く」と同じ。この仕事は③発注者からの型で、発注者がAI企業。</text>\n",
+    ]
+    y = top
+    for label, text in rows:
+        parts.append(f'<rect class="box-quiet" x="18" y="{y - 14}" width="684" height="{row_h - 6}" rx="4"/>\n')
+        parts.append(f'<text class="t-strong" x="26" y="{y + 4}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="t-xs" x="26" y="{y + 22}">{_esc(text)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-bad" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-bad" x="34" y="{y + 20}">「こちらが払う」場面はゼロ＝登録無料・支払いは向こうから週次。稼ぐはずが振り込みを求められたら別物。</text>\n')
+    parts.append(f'<text class="t-bad" x="34" y="{y + 38}">国民生活センター（2026年5月19日）＝「お金を稼ぐはずが振り込みを求められても、言われたとおりに振り込まず」。</text>\n')
+    parts.append(f'<text class="t-bad" x="34" y="{y + 56}">案件文＝「performed by people, not generated by parsing models」。AIに答えさせて貼る仕事ではない。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "AIの回答や資料を評価する仕事（Mercorの案件）を6つの質問で埋めた図。①原資はAI企業で買い手も広告主もいない。②門は応募3段（Resume・Bilingual Competency・Work Authorization）で所在地にJapanが入っている。"
+        "③金額の決まり方は時間制で$33.58 per hour、時間は監視ソフト（Insightful）とSpendページで数え、USD建て。④入金は毎週水曜12:00 PM PSTごろに前週（土〜金IST）ぶんがStripeかWiseで届き、提供元は地域で自動決定され選べない。"
+        "⑤引かれるものは通常の振込は無料で即時振込は1.0%、為替はStripe／Wiseが支払い時に換算し、初回は7日保留。⑥必要なものは本人名義の銀行口座・SMSの2段階認証・Stripeの本人確認と税務情報で、契約は独立した個人事業（contractor）。"
+        "2026年9月18日確認。下の赤い枠には、こちらが払う場面はゼロで登録無料・支払いは向こうから週次であり、稼ぐはずが振り込みを求められたら別物であること、"
+        "国民生活センターの2026年5月19日公表の注意喚起の一文、案件文が「performed by people, not generated by parsing models」と書いておりAIに答えさせて貼る仕事ではないことが書かれている。"
+    )
+    (OUT / "mercor-six-questions.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def mercor_hours_ladder_chart() -> None:
+    """$33.58/時（2026-09-18 の1案件の表示）× 週の時間（前提）× 52 ÷ 12 の推定を4段で並べる。円換算は1ドル150円の前提。"""
+    rows = [
+        ("週5時間（前提）", 727.57, 109135, "副業帯（JILPT 副業者の中央値は週10時間）", "box-quiet"),
+        ("週10時間（前提）", 1455.13, 218270, "副業帯の上のほう（副業者の中央値と同じ作業量）", "box-quiet"),
+        ("週20時間（前提）", 2910.27, 436540, "準本業帯（副業者の中央値の2倍。週20時間以上は副業者の23.5%）", "box-accent"),
+        ("週40時間（前提）", 5820.53, 873080, "本業の作業量（副業ではない。案件は早期終了ありと明記）", "box-bad"),
+    ]
+    label_x = 18
+    bar_x = 200
+    max_bar_w = 300
+    top = 104
+    row_h = 52
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "推定＝$33.58 × 週の時間 × 52 ÷ 12（時間は前提・単価は9月18日の1案件の表示）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "USD建て・週払い。円は1ドル150円と置いた前提の換算で、実際は Stripe／Wise が支払い時の相場で換算する。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "時間はこちらが置いた前提。案件が続く保証は無い（「Projects can be … concluded early」）。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">月の受け取り（USD・振込前）　右＝1ドル150円なら</text>\n',
+    ]
+    y = top
+    for label, usd, yen, note, klass in rows:
+        ty = y + 18
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * usd / 5820.53))
+        parts.append(f'<rect class="bar-in" x="{bar_x}" y="{ty - 15}" width="{w}" height="20" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">US${usd:,.0f}　約{yen:,}円</text>\n')
+        parts.append(f'<text class="t-xs" x="{bar_x}" y="{ty + 18}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">同じ単価で、時間の前提だけで帯が動く。時間制の仕事は「作業量の前提」を書かないと金額が書けない。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">単価は日々入れ替わる（$18/task の案件は2日で消えた）。この表の単価を「相場」と読まないこと。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">週20時間は副業者の中央値（週10時間）の2倍。JILPT 2022年調査（n=11,358）の分布で上位23.5%に入る量。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "Mercorの時間制案件の単価$33.58/時（2026年9月18日の1案件の表示）に週の作業時間を前提として掛け、52週÷12で月に直した推定を4段で並べた横棒グラフ。"
+        "週5時間ならUS$728で約109,135円（副業帯・JILPTの副業者の中央値は週10時間）、週10時間ならUS$1,455で約218,270円（副業帯の上のほう）、"
+        "週20時間ならUS$2,910で約436,540円（準本業帯・副業者の中央値の2倍で週20時間以上は副業者の23.5%）、週40時間ならUS$5,821で約873,080円（本業の作業量で副業ではない）。"
+        "USD建て・週払いで、円は1ドル150円と置いた前提の換算であり、実際はStripe／Wiseが支払い時の相場で換算すること、時間は前提で案件が続く保証は無いことを注記。"
+        "下の枠には、同じ単価で時間の前提だけで帯が動き時間制の仕事は作業量の前提を書かないと金額が書けないこと、単価は日々入れ替わり相場と読まないこと、"
+        "週20時間は副業者の中央値の2倍でJILPT 2022年調査の分布で上位23.5%に入る量であることが書かれている。"
+    )
+    (OUT / "mercor-hours-ladder.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def mercor_hours_position_chart() -> None:
+    """JILPT 調査シリーズNo.245 図表2-4-14（副業の1週間あたりの実労働時間・n=11,358）に、週20時間の前提を重ねる。"""
+    bands = [
+        ("5時間未満", 22.3, "bar-old"),
+        ("5〜10時間未満", 27.6, "bar-old"),
+        ("10〜20時間未満", 26.7, "bar-old"),
+        ("20〜30時間未満", 11.0, "bar-in"),
+        ("30〜40時間未満", 4.7, "bar-in"),
+        ("40時間以上", 7.8, "bar-in"),
+    ]
+    label_x = 18
+    bar_x = 200
+    max_bar_w = 360
+    top = 104
+    row_h = 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "週20時間の前提は、副業者のどこに位置するか＝上位23.5%（週20時間以上の合計）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "JILPT 調査シリーズNo.245「副業者の就労に関する調査」図表2-4-14（副業の1週間あたりの実労働時間・n=11,358）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2022年10月のインターネット調査。中央値10時間・平均14.3時間。本文PDFを2026年9月18日に取得して確認。</text>\n",
+        f'<text class="t-xs" x="{bar_x}" y="{top - 18}">副業者に占める割合（%）　濃い色＝週20時間以上</text>\n',
+    ]
+    y = top
+    for label, pct, klass in bands:
+        ty = y + 16
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * pct / 27.6))
+        parts.append(f'<rect class="{klass}" x="{bar_x}" y="{ty - 13}" width="{w}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{pct}%</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">週20時間以上は 11.0＋4.7＋7.8＝23.5%。準本業帯の前提は「副業者の4人に1人より多い作業量」と読める。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">調査自身が「副業を『行った週』のみの平均で回答していると思われるものも一定数」と注記＝上振れの可能性。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 56}">この分布は「何時間働いたか」で、「何時間で幾ら」ではない。時給の話は自分の記録から出すこと。</text>\n')
+    y += 64 + 12
+
+    alt = (
+        "JILPT調査シリーズNo.245「副業者の就労に関する調査」図表2-4-14の副業の1週間あたりの実労働時間（n=11,358・2022年10月のインターネット調査）を横棒グラフにした図。"
+        "5時間未満22.3%、5〜10時間未満27.6%、10〜20時間未満26.7%、20〜30時間未満11.0%、30〜40時間未満4.7%、40時間以上7.8%。中央値10時間・平均14.3時間。"
+        "週20時間以上の3つの帯を濃い色で示し、合計23.5%であることを示す。本文PDFを2026年9月18日に取得して確認。"
+        "下の枠には、週20時間以上は11.0＋4.7＋7.8＝23.5%で準本業帯の前提は副業者の4人に1人より多い作業量と読めること、"
+        "調査自身が副業を行った週のみの平均で回答していると思われるものも一定数あると注記しており上振れの可能性があること、"
+        "この分布は何時間働いたかであって何時間で幾らではなく時給の話は自分の記録から出すことが書かれている。"
+    )
+    (OUT / "mercor-hours-position.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def subsidy_money_flow_chart() -> None:
+    """デジタル化・AI導入補助金2026（通常枠）のお金の流れ＝補助金は導入する中小企業に入り、個人事業主は支援事業者の構成員としてのみ関われる。
+
+    原文＝通常枠ページ・支援事業者ページ（2026-09-18 確認・公募要領の表示「更新日：2026年8月28日」）。
+    """
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "補助金は「導入する会社」に入る。売る側の個人事業主は、単独では窓口になれない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "デジタル化・AI導入補助金2026（旧IT導入補助金）通常枠。公式ページを2026年9月18日確認（公募要領の更新日：2026年8月28日）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上段＝お金の流れ。下段＝売る側の登録形態。矢印は「誰が誰に払うか」。</text>\n",
+    ]
+    # 上段: 3つの箱
+    y0 = 90
+    boxes = [
+        (18, 200, "box-quiet", ["国（事務局）", "補助率 1/2以内・2/3以内", "補助額 5万円以上〜450万円以下", "（1プロセス以上／4プロセス以上）"]),
+        (260, 200, "box-accent", ["導入する中小企業（申請者）", "補助金を受け取るのはこちら", "ソフト・クラウド利用料（最大2年分）", "＋導入コンサル・研修・保守が対象"]),
+        (502, 200, "box", ["IT導入支援事業者", "法人（単独）か コンソーシアム", "「汎用プロセスのみは不可」", "＝自動化ツール単体では申請不可"]),
+    ]
+    for x, w, klass, lines in boxes:
+        parts.append(f'<rect class="{klass}" x="{x}" y="{y0}" width="{w}" height="92" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{x + 10}" y="{y0 + 22}">{_esc(lines[0])}</text>\n')
+        for k, line in enumerate(lines[1:]):
+            parts.append(f'<text class="t-xs" x="{x + 10}" y="{y0 + 42 + 16 * k}">{_esc(line)}</text>\n')
+    # 矢印（線＋ラベル）
+    parts.append(f'<line class="line" x1="220" y1="{y0 + 46}" x2="250" y2="{y0 + 46}"/>\n')
+    parts.append(f'<polygon class="bar-out" points="250,{y0 + 41} 258,{y0 + 46} 250,{y0 + 51}"/>\n')
+    parts.append(f'<text class="t-xs" x="222" y="{y0 + 40}">補助</text>\n')
+    parts.append(f'<line class="line" x1="462" y1="{y0 + 46}" x2="492" y2="{y0 + 46}"/>\n')
+    parts.append(f'<polygon class="bar-out" points="492,{y0 + 41} 500,{y0 + 46} 492,{y0 + 51}"/>\n')
+    parts.append(f'<text class="t-xs" x="464" y="{y0 + 40}">支払い</text>\n')
+
+    # 下段: 登録形態
+    y1 = y0 + 92 + 24
+    parts.append(f'<text class="t-strong" x="18" y="{y1}">売る側の登録形態（支援事業者ページの原文）</text>\n')
+    y2 = y1 + 12
+    parts.append(f'<rect class="box" x="18" y="{y2}" width="330" height="74" rx="6"/>\n')
+    parts.append(f'<text class="t-strong" x="28" y="{y2 + 22}">法人（単独）</text>\n')
+    parts.append(f'<text class="t-xs" x="28" y="{y2 + 42}">「登録形態は「法人（単独）」「コンソーシアム」の2つ」</text>\n')
+    parts.append(f'<text class="t-xs" x="28" y="{y2 + 58}">個人事業主の単独登録は、この2つのどちらにも無い</text>\n')
+    parts.append(f'<rect class="box-bad" x="372" y="{y2}" width="330" height="74" rx="6"/>\n')
+    parts.append(f'<text class="t-bad" x="382" y="{y2 + 22}">コンソーシアムの構成員（個人事業主はここだけ）</text>\n')
+    parts.append(f'<text class="t-xs" x="382" y="{y2 + 42}">「単独で要件を満たすことができない法人および個人事業主等は、</text>\n')
+    parts.append(f'<text class="t-xs" x="382" y="{y2 + 58}">構成員の要件を満たしていれば構成員として参画できます。」</text>\n')
+
+    y3 = y2 + 74 + 16
+    parts.append(f'<rect class="box-accent" x="18" y="{y3}" width="684" height="64" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y3 + 20}">「AIの使い方を教える」代金（導入コンサルティング・導入研修）は補助対象の役務として名指しされている。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y3 + 38}">ただし最大450万円は「導入する会社」への補助で、売る側が受け取る額ではない。売る側の額は制度に無い。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y3 + 56}">個人が補助金付きで売る形は無い。法人側に立つか、幹事社（法人）のコンソーシアムに構成員で入るかの2つ。</text>\n')
+    y = y3 + 64 + 12
+
+    alt = (
+        "デジタル化・AI導入補助金2026（旧IT導入補助金）通常枠のお金の流れと、売る側の登録形態を示した図。上段は3つの箱で、国（事務局）が補助率1/2以内・2/3以内、補助額5万円以上〜450万円以下（1プロセス以上／4プロセス以上）を、"
+        "導入する中小企業（申請者）に補助し、補助金を受け取るのはその会社で、対象はソフト・クラウド利用料（最大2年分）と導入コンサル・研修・保守。中小企業がIT導入支援事業者に支払い、支援事業者は法人（単独）かコンソーシアムで、汎用プロセスのみは不可＝自動化ツール単体では申請できない。"
+        "下段は登録形態で、原文に「登録形態は「法人（単独）」「コンソーシアム」の2つ」とあり個人事業主の単独登録はどちらにも無く、"
+        "「単独で要件を満たすことができない法人および個人事業主等は、構成員の要件を満たしていれば構成員として参画できます」とあるので個人事業主はコンソーシアムの構成員としてのみ関われる。"
+        "公式ページの記載を2026年9月18日に確認（公募要領の更新日は2026年8月28日）。下の枠には、AIの使い方を教える代金（導入コンサルティング・導入研修）が補助対象の役務として名指しされていること、"
+        "最大450万円は導入する会社への補助で売る側が受け取る額ではなく売る側の額はこの制度に書いていないこと、個人が補助金付きで売る形は無く法人の側に立つか幹事社のコンソーシアムに構成員として入るかの2つであることが書かれている。"
+    )
+    (OUT / "subsidy-money-flow.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def subsidy_ai_hit_and_miss_chart() -> None:
+    """「個人事業主が単独でIT導入支援事業者に登録できるか」をウェブ検索を切ったAIに3回聞いた結果（2026-09-18・Agent独立実行）。
+
+    判定は docs/evidence/_raw/sell-ai-to-companies-subsidy-gate/judge.py の出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "subsidy-ai-hit-and-miss.svg",
+        "「個人で単独登録は不可・構成員なら可」は3回とも当たった。細目は原文で確かめていない",
+        "実測2026-09-18。ウェブ検索を切ったAI（独立実行）に「個人事業主として単独で登録できますか」と3回。原文は支援事業者ページ。",
+        "上5行＝原文と一致した回数（多いほど良い）。下1行＝開いた原文には無い細目を足した回数（少ないほど良い）。",
+        [
+            ("単独登録＝できない（法人のみ）と述べた", 3, 3, "good"),
+            ("コンソーシアムの構成員なら関われると述べた", 3, 3, "good"),
+            ("補助を受ける側（申請者）にはなれると述べた", 3, 3, "good"),
+            ("「申請代行は不正扱い」に触れた", 3, 3, "good"),
+            ("「登録要領で確認を」と断った", 3, 3, "good"),
+            ("開いた原文に無い細目（gBizID・決算書など）を足した", 3, 3, "bad"),
+        ],
+        [
+            "構造（単独不可・構成員のみ）は3/3。ここはAIに聞いても原文と一致した。",
+            "ただし3回とも gBizID や決算書などの細目を足した。開いた2ページには無く、正しいかは登録要領で確かめる。",
+            "「関われるか」はAIに聞いてよい。「何が要るか」は年度の登録要領を開く。",
+        ],
+        "IT導入支援事業者に個人事業主が単独で登録できるかをAIに3回聞いた結果を並べた表。上5行は原文と一致した回数で、単独登録はできない（法人のみ）と述べたのが3/3、"
+        "コンソーシアムの構成員なら関われると述べたのが3/3、補助を受ける側（申請者）にはなれると述べたのが3/3、申請代行は不正扱いに触れたのが3/3、登録要領で確認をと断ったのが3/3で、いずれも緑。"
+        "下1行は開いた原文に無い細目（gBizID・決算書など）を足した回数で3/3の赤。下の枠には、構造は3/3で原文と一致したこと、"
+        "3回とも細目を足したが担当が開いた2ページには無く正しいかは登録要領で確かめること、関われるかはAIに聞いてよいが何が要るかは年度の登録要領を開くことが書かれている。",
+        label_w=400,
+    )
+
+
 if __name__ == "__main__":
     doubt_fixes_added_not_dropped_chart()
     formula_subtotal_goes_beside_not_below_chart()
@@ -23339,4 +24697,30 @@ if __name__ == "__main__":
     lsvp_grant_types_chart()
     lsvp_monitoring_shift_chart()
     lsvp_vendor_grid_chart()
+    subsidy_money_flow_chart()
+    subsidy_ai_hit_and_miss_chart()
+    mercor_hours_ladder_chart()
+    mercor_hours_position_chart()
+    mercor_listing_change_chart()
+    mercor_six_questions_chart()
+    coconala_listing_split_chart()
+    coconala_price_band_chart()
+    coconala_estimate_ladder_chart()
+    teaching_runbook_stops_map_chart()
+    teaching_fee_comparison_chart()
+    teaching_estimate_ladder_chart()
+    udemy_97_or_37_split_chart()
+    udemy_estimate_ladder_chart()
+    udemy_hit_and_miss_chart()
+    note_membership_waterfall_chart()
+    note_membership_estimate_ladder_chart()
+    note_membership_hit_and_miss_chart()
+    instagram_two_gates_chart()
+    instagram_ai_hit_and_miss_chart()
+    instagram_gift_estimate_ladder_chart()
+    ai_stock_images_split_chart()
+    ai_stock_images_hit_and_miss_chart()
+    ai_stock_images_estimate_ladder_chart()
+    gpts_retirement_timeline_chart()
+    gpts_ai_hit_and_miss_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

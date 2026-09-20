@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="464" viewBox="0 0 720 464" role="img" aria-label="受講料5,800円の講座で、月に延べ何人が受講したかを前提として置き、手取り率を掛けた月の推定を4段で並べた横棒グラフ。濃い棒は自分の集客またはリピート（手取り5,162円/人）、薄い棒はストアカの検索経由の初回（3,886円/人）。月に延べ2人なら10,324円と7,772円で副業帯の入口、延べ8人なら41,296円と31,088円で副業帯、延べ20人なら103,240円と77,720円で副業帯（JILPTの副業者の平均92,445円前後）、延べ40人（週20時間相当）なら206,480円と155,440円で準本業帯（1回90分＋準備30分×週10回として）。月に何人受講するかの出典は無く人数はこちらが置いた前提だと注記。下の枠には、時間を売る型なので人数はそのまま自分の作業時間になり40人の段は週20時間相当の前提を置いたこと、副業で月20万円以上は10.8%（JILPT 2022年調査・副業者1万1,358人）で準本業帯に届くのは一部であること、受講料5,800円は一覧の中央値で相場ではなく集客の方法はこの記事に無いことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="464"/>
+<text class="t-strong" x="18" y="26">推定＝5,800円 × 月の延べ受講人数 × 手取り率（人数は前提）</text>
+<text class="t-sm" x="18" y="45">濃い棒＝自分の集客・リピート（手取り5,162円/人）、薄い棒＝ストアカ検索経由の初回（3,886円/人）。率は原文（2026-09-18確認）。</text>
+<text class="t-sm" x="18" y="64">月に何人受講するかの出典は無い。4段の人数はこちらが置いた前提で、ご自身の申し込み数に置き換えること。</text>
+<text class="t-strong" x="18" y="126">月に延べ2人（前提）</text>
+<rect class="bar-out" x="250" y="112" width="12" height="18" rx="3"/>
+<text class="t-strong" x="270" y="126">10,324円</text>
+<rect class="bar-old" x="250" y="136" width="9" height="18" rx="3"/>
+<text class="t" x="267" y="150">7,772円</text>
+<text class="t-xs" x="18" y="146">副業帯の入口</text>
+<text class="t-strong" x="18" y="192">月に延べ8人（前提）</text>
+<rect class="bar-out" x="250" y="178" width="50" height="18" rx="3"/>
+<text class="t-strong" x="308" y="192">41,296円</text>
+<rect class="bar-old" x="250" y="202" width="38" height="18" rx="3"/>
+<text class="t" x="296" y="216">31,088円</text>
+<text class="t-xs" x="18" y="212">副業帯</text>
+<text class="t-strong" x="18" y="258">月に延べ20人（前提）</text>
+<rect class="bar-out" x="250" y="244" width="125" height="18" rx="3"/>
+<text class="t-strong" x="383" y="258">103,240円</text>
+<rect class="bar-old" x="250" y="268" width="94" height="18" rx="3"/>
+<text class="t" x="352" y="282">77,720円</text>
+<text class="t-xs" x="18" y="278">副業帯（JILPT 副業者の平均 92,445円 前後）</text>
+<text class="t-strong" x="18" y="324">月に延べ40人（前提・週20時間相当）</text>
+<rect class="bar-out" x="250" y="310" width="250" height="18" rx="3"/>
+<text class="t-strong" x="508" y="324">206,480円</text>
+<rect class="bar-old" x="250" y="334" width="188" height="18" rx="3"/>
+<text class="t" x="446" y="348">155,440円</text>
+<text class="t-xs" x="18" y="344">準本業帯（1回90分＋準備30分×週10回として）</text>
+<rect class="box-accent" x="18" y="380" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="400">「時間を売る」型なので、人数はそのまま自分の作業時間になる。40人の段は週20時間相当の前提を置いた。</text>
+<text class="t-accent" x="34" y="418">副業で月20万円以上は10.8%（JILPT 2022年調査・副業者1万1,358人）。準本業帯に届くのは一部。</text>
+<text class="t-accent" x="34" y="436">受講料5,800円は一覧の中央値で相場ではない。集客の方法はこの記事に無い。</text>
+</svg>

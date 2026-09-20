@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="392" viewBox="0 0 720 392" role="img" aria-label="デジタル化・AI導入補助金2026（旧IT導入補助金）通常枠のお金の流れと、売る側の登録形態を示した図。上段は3つの箱で、国（事務局）が補助率1/2以内・2/3以内、補助額5万円以上〜450万円以下（1プロセス以上／4プロセス以上）を、導入する中小企業（申請者）に補助し、補助金を受け取るのはその会社で、対象はソフト・クラウド利用料（最大2年分）と導入コンサル・研修・保守。中小企業がIT導入支援事業者に支払い、支援事業者は法人（単独）かコンソーシアムで、汎用プロセスのみは不可＝自動化ツール単体では申請できない。下段は登録形態で、原文に「登録形態は「法人（単独）」「コンソーシアム」の2つ」とあり個人事業主の単独登録はどちらにも無く、「単独で要件を満たすことができない法人および個人事業主等は、構成員の要件を満たしていれば構成員として参画できます」とあるので個人事業主はコンソーシアムの構成員としてのみ関われる。公式ページの記載を2026年9月18日に確認（公募要領の更新日は2026年8月28日）。下の枠には、AIの使い方を教える代金（導入コンサルティング・導入研修）が補助対象の役務として名指しされていること、最大450万円は導入する会社への補助で売る側が受け取る額ではなく売る側の額はこの制度に書いていないこと、個人が補助金付きで売る形は無く法人の側に立つか幹事社のコンソーシアムに構成員として入るかの2つであることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="392"/>
+<text class="t-strong" x="18" y="26">補助金は「導入する会社」に入る。売る側の個人事業主は、単独では窓口になれない</text>
+<text class="t-sm" x="18" y="45">デジタル化・AI導入補助金2026（旧IT導入補助金）通常枠。公式ページを2026年9月18日確認（公募要領の更新日：2026年8月28日）。</text>
+<text class="t-sm" x="18" y="64">上段＝お金の流れ。下段＝売る側の登録形態。矢印は「誰が誰に払うか」。</text>
+<rect class="box-quiet" x="18" y="90" width="200" height="92" rx="6"/>
+<text class="t-strong" x="28" y="112">国（事務局）</text>
+<text class="t-xs" x="28" y="132">補助率 1/2以内・2/3以内</text>
+<text class="t-xs" x="28" y="148">補助額 5万円以上〜450万円以下</text>
+<text class="t-xs" x="28" y="164">（1プロセス以上／4プロセス以上）</text>
+<rect class="box-accent" x="260" y="90" width="200" height="92" rx="6"/>
+<text class="t-strong" x="270" y="112">導入する中小企業（申請者）</text>
+<text class="t-xs" x="270" y="132">補助金を受け取るのはこちら</text>
+<text class="t-xs" x="270" y="148">ソフト・クラウド利用料（最大2年分）</text>
+<text class="t-xs" x="270" y="164">＋導入コンサル・研修・保守が対象</text>
+<rect class="box" x="502" y="90" width="200" height="92" rx="6"/>
+<text class="t-strong" x="512" y="112">IT導入支援事業者</text>
+<text class="t-xs" x="512" y="132">法人（単独）か コンソーシアム</text>
+<text class="t-xs" x="512" y="148">「汎用プロセスのみは不可」</text>
+<text class="t-xs" x="512" y="164">＝自動化ツール単体では申請不可</text>
+<line class="line" x1="220" y1="136" x2="250" y2="136"/>
+<polygon class="bar-out" points="250,131 258,136 250,141"/>
+<text class="t-xs" x="222" y="130">補助</text>
+<line class="line" x1="462" y1="136" x2="492" y2="136"/>
+<polygon class="bar-out" points="492,131 500,136 492,141"/>
+<text class="t-xs" x="464" y="130">支払い</text>
+<text class="t-strong" x="18" y="206">売る側の登録形態（支援事業者ページの原文）</text>
+<rect class="box" x="18" y="218" width="330" height="74" rx="6"/>
+<text class="t-strong" x="28" y="240">法人（単独）</text>
+<text class="t-xs" x="28" y="260">「登録形態は「法人（単独）」「コンソーシアム」の2つ」</text>
+<text class="t-xs" x="28" y="276">個人事業主の単独登録は、この2つのどちらにも無い</text>
+<rect class="box-bad" x="372" y="218" width="330" height="74" rx="6"/>
+<text class="t-bad" x="382" y="240">コンソーシアムの構成員（個人事業主はここだけ）</text>
+<text class="t-xs" x="382" y="260">「単独で要件を満たすことができない法人および個人事業主等は、</text>
+<text class="t-xs" x="382" y="276">構成員の要件を満たしていれば構成員として参画できます。」</text>
+<rect class="box-accent" x="18" y="308" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="328">「AIの使い方を教える」代金（導入コンサルティング・導入研修）は補助対象の役務として名指しされている。</text>
+<text class="t-accent" x="34" y="346">ただし最大450万円は「導入する会社」への補助で、売る側が受け取る額ではない。売る側の額は制度に無い。</text>
+<text class="t-accent" x="34" y="364">個人が補助金付きで売る形は無い。法人側に立つか、幹事社（法人）のコンソーシアムに構成員で入るかの2つ。</text>
+</svg>

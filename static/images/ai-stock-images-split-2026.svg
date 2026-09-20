@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="488" viewBox="0 0 720 488" role="img" aria-label="同じ「AI画像を売る」が2026年に真逆へ割れたことを、左右2枚の枠で並べた図。左の緑の枠はAdobe Stockで、生成AIのラベル必須で受け入れる、ロイヤリティは写真・ベクター・イラスト33%（ビデオ35%）、公式の計算例はUS$29.99を10枚で割って33%を掛けた1枚US$0.99、支払いは最低残高US$25・初回販売から45日・日本はプレミアムPayPal、禁止プロンプトは実在の人物・作品名・政府機関名・他社IP・ニュース性、同じまたは類似プロンプトの複数バージョン提出は禁止、と書かれている。右の赤の枠はPIXTAで、2026年4月20日で新規の審査申請を終了、2026年5月22日で販売中のAI生成素材も販売停止、範囲はプロンプトのみやImage to ImageなどAI生成素材の全部、理由は原文で短期間に大量アップロードされる一方で購入者のニーズとのマッチングが困難な状況が継続、姿勢は「AIによる創作活動を否定する意図は一切ございません」と書かれている。下の枠には、答えは売る場所で真逆になるのでまず場所ごとの受け入れ可否を原文で見ること、受け入れる側にも量産の禁止があり、同じプロンプトの派生を何十枚も出す作戦は規約の側で閉じていることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="488"/>
+<text class="t-strong" x="18" y="26">同じ「AI画像を売る」が、2026年に真逆へ割れた</text>
+<text class="t-sm" x="18" y="45">左＝Adobe Stock（コントリビューター向けヘルプ3ページ・最終更新2026-09-02）。右＝PIXTA（ガイドのお知らせ・2026-04-14告知）。</text>
+<text class="t-sm" x="18" y="64">どちらも公式ページの記載をそのまま写した（2026-09-18確認）。率・日付は変わるので使う前に開くこと。</text>
+<rect class="box-good" x="18" y="96" width="336" height="314" rx="6"/>
+<text class="t-strong" x="32" y="118">Adobe Stock＝33%で買い続ける</text>
+<rect class="box-bad" x="366" y="96" width="336" height="314" rx="6"/>
+<text class="t-strong" x="380" y="118">PIXTA＝AI生成素材の取扱いを停止</text>
+<text class="t-xs" x="32" y="142">受け入れ</text>
+<text class="t-good" x="32" y="159">受け入れる（生成AIのラベル必須）</text>
+<text class="t-xs" x="32" y="182">ロイヤリティ</text>
+<text class="t" x="32" y="199">写真・ベクター・イラスト 33%（ビデオ 35%）</text>
+<text class="t-xs" x="32" y="222">公式の計算例</text>
+<text class="t" x="32" y="239">US$29.99 ÷ 10枚 × 33% ＝ 1枚 US$0.99</text>
+<text class="t-xs" x="32" y="262">支払い</text>
+<text class="t" x="32" y="279">最低残高 US$25／初回の販売から45日</text>
+<text class="t" x="32" y="319">日本での受け取りはプレミアムPayPal</text>
+<text class="t-xs" x="32" y="342">禁止</text>
+<text class="t-bad" x="32" y="359">実在の人物・作品名・政府機関・他社IP・ニュース性</text>
+<text class="t-xs" x="32" y="382">量産</text>
+<text class="t-bad" x="32" y="399">同じ／類似プロンプトの複数バージョン提出は禁止</text>
+<text class="t-xs" x="380" y="142">受け入れ</text>
+<text class="t-bad" x="380" y="159">2026-04-20 で新規の審査申請を終了</text>
+<text class="t-xs" x="380" y="182">販売</text>
+<text class="t-bad" x="380" y="199">2026-05-22 で販売中のAI生成素材も販売停止</text>
+<text class="t-xs" x="380" y="222">範囲</text>
+<text class="t" x="380" y="239">プロンプトのみ／Image to Image を含む全部</text>
+<text class="t-xs" x="380" y="262">理由（原文）</text>
+<text class="t-sm" x="380" y="279">短期間に大量アップロード／購入者のニーズとの</text>
+<text class="t-sm" x="380" y="319">マッチングが困難な状況が継続</text>
+<text class="t-xs" x="380" y="342">姿勢（原文）</text>
+<text class="t" x="380" y="359">AIによる創作活動を否定する意図は</text>
+<text class="t" x="380" y="399">一切ございません</text>
+<rect class="box-accent" x="18" y="422" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="442">「AI画像で稼げるか」の答えは、売る場所で真逆になる。まず場所ごとの受け入れ可否を原文で見る。</text>
+<text class="t-accent" x="34" y="460">受け入れる側にも「量産」の禁止があり、同じプロンプトの派生を何十枚も出す作戦は規約の側で閉じている。</text>
+</svg>

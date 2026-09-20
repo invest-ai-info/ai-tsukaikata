@@ -7,7 +7,7 @@ published: 2026-08-26
 checked: 2026-08-25
 series: 売る場所の原文から
 series_no: 1
-series_total: 4
+series_total: 6
 tags: [副業, note, 手数料, 出典確認, プロンプト]
 time_required: 15分
 cost: 無料

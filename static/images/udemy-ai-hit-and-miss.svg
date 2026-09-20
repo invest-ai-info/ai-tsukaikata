@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450" role="img" aria-label="UdemyについてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、紹介リンク経由97%・Udemy経由37%と述べたのが3/3、Net Amount（アプリ手数料30%を引いた後）に触れたのが3/3、Udemy Businessはプールを視聴分数で按分と述べたのが3/3、材料を貼った回に291,000円と111,000円（差180,000円）を出したのが3/3、ページ名だけの回に数字ゼロでInstructor Revenue Shareを挙げたのが3/3、数字は書かないでの確認順の回に率・金額の数字がゼロだったのが3/3で、いずれも緑。下2行は原文に無いこと・違うことを言った回数で、過去の率・変更時期を述べたのが9/9、Udemy Businessの率を現在17.5%と述べたのが1/3で、いずれも赤。下の枠には、現在の率は素朴に聞いても当たり材料を貼れば1円単位で一致したこと、過去の率や変更時期は9回とも添えられ原文には載っていないこと、率は原文を貼って計算だけさせ、いつ変わったかは聞かないという結論が書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="450"/>
+<text class="t-strong" x="18" y="26">97%と37%は当たる。「いつ変わったか」は原文に無い話が付く</text>
+<text class="t-sm" x="18" y="45">実測2026-09-18。ウェブ検索を切ったAIに、取り分・Udemy Business・材料あり・ページ名・変更の経緯・確認の順番を各3回。</text>
+<text class="t-sm" x="18" y="64">上6行＝原文と一致した回数（多いほど良い）。下2行＝原文に無いこと・違うことを言った回数（少ないほど良い）。</text>
+<text class="t-xs" x="538.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">紹介リンク経由＝97%・Udemy経由＝37%、と述べた</text>
+<rect class="box-good" x="458" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="125" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="157">Net Amount（アプリ手数料30%を引いた後）に触れた</text>
+<rect class="box-good" x="458" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="157" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="189">Udemy Business＝プールを視聴分数で按分、と述べた</text>
+<rect class="box-good" x="458" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="189" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="221">材料を貼った回：291,000円／111,000円（差180,000円）</text>
+<rect class="box-good" x="458" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="221" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="253">ページ名だけ→数字ゼロ・「Instructor Revenue Share」</text>
+<rect class="box-good" x="458" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="253" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="285">「数字は書かないで」の確認順→率・金額の数字ゼロ</text>
+<rect class="box-good" x="458" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="285" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="317">過去の率・変更時期を述べた（原文に載っていない）</text>
+<rect class="box-bad" x="458" y="296" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="317" text-anchor="middle" style="font-weight:700">9/9</text>
+<text class="t" x="18" y="349">Udemy Business の率を「現在17.5%」と述べた（原文は15%）</text>
+<rect class="box-bad" x="458" y="328" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="349" text-anchor="middle" style="font-weight:700">1/3</text>
+<rect class="box-accent" x="18" y="366" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="386">現在の率（97%・37%・プール15%）は素朴に聞いても当たり、材料を貼れば1円単位で一致した。</text>
+<text class="t-accent" x="34" y="404">ただし過去の率や変更時期（50%・25%・20%・17.5%、2020〜27年）は9回とも添えられ、原文に無い。</text>
+<text class="t-accent" x="34" y="422">＝率は原文を貼って計算だけさせる。「いつ変わったか」は聞かない（確かめる手段が原文に無い）。</text>
+</svg>

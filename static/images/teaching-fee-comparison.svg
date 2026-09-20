@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="受講料5,800円の講座が、売る場所と経路でいくら手元に残るかを並べた横棒グラフ。ストアカで検索経由の初回（送客手数料30%＋消費税）は3,886円で1,914円引かれ、ココナラのビデオチャット（27.5%）は4,205円で1,595円引かれ、ストアカで自分のSNS経由の初回（自己集客手数料10%＋消費税）は5,162円で638円引かれ、同じ生徒の2回目以降（リピート手数料10%＋消費税）も5,162円。5,800円はストアカのChatGPT講座一覧1ページ目の価格の中央値で、実在の証明であって相場ではないと注記。下の枠には、誰が生徒を連れてきたかで差が1,276円あり同じ生徒の2回目からは経路にかかわらず10%に下がること、ストアカは登録費・掲載費・月額費が0円で未開催・キャンセル時は手数料なしであること、AIに材料を貼って計算させた3回は3つとも1円単位で一致し27.5%に消費税を二重に掛けなかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="380"/>
+<text class="t-strong" x="18" y="26">同じ5,800円の講座が、売る場所と経路で 3,886円〜5,162円に割れる</text>
+<text class="t-sm" x="18" y="45">5,800円＝ストアカ「ChatGPT講座」一覧1ページ目の価格の中央値（実在の証明であって相場ではない・2026-09-16）。</text>
+<text class="t-sm" x="18" y="64">率は各社の公式ページ（2026-09-18確認）。ストアカは手数料に別途消費税、ココナラの27.5%は消費税込みの率。</text>
+<text class="t-xs" x="350" y="86">手元に残る額（円・振込手数料は別）</text>
+<text class="t" x="18" y="122">ストアカ・検索経由の初回（送客30%＋消費税）</text>
+<rect class="bar-in" x="350" y="107" width="147" height="20" rx="3"/>
+<text class="t-strong" x="505" y="122">3,886円（－1,914円）</text>
+<text class="t" x="18" y="168">ココナラ・ビデオチャット（27.5%＝25%×1.1）</text>
+<rect class="bar-in" x="350" y="153" width="160" height="20" rx="3"/>
+<text class="t-strong" x="518" y="168">4,205円（－1,595円）</text>
+<text class="t" x="18" y="214">ストアカ・自分のSNS経由の初回（自己集客10%＋消費税）</text>
+<rect class="bar-out" x="350" y="199" width="196" height="20" rx="3"/>
+<text class="t-strong" x="554" y="214">5,162円（－638円）</text>
+<text class="t" x="18" y="260">ストアカ・同じ生徒の2回目以降（リピート10%＋消費税）</text>
+<rect class="bar-out" x="350" y="245" width="196" height="20" rx="3"/>
+<text class="t-strong" x="554" y="260">5,162円（－638円）</text>
+<rect class="box-accent" x="18" y="296" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="316">「誰が生徒を連れてきたか」で差が1,276円。同じ生徒の2回目からは経路にかかわらず10%に下がる。</text>
+<text class="t-accent" x="34" y="334">ストアカは登録費・掲載費・月額費が0円、未開催・キャンセル時は手数料なし（原文）。</text>
+<text class="t-accent" x="34" y="352">AIに材料を貼って計算させた3回は、3つとも1円単位で一致し、27.5%に消費税を二重に掛けなかった。</text>
+</svg>

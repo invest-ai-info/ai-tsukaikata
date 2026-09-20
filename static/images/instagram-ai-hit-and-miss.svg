@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="482" viewBox="0 0 720 482" role="img" aria-label="InstagramについてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、サブスクはフォロワー10,000人と述べたのが6/6で緑、ギフトはフォロワー500人と述べたのが1/6、スター1個はUS$0.01と述べたのが5/6、最低支払額US$25を挙げたのが6/6で緑、材料を貼った回に600人ならギフトだけで2,500個でUS$25と計算したのが3/3で緑、スライドショー・ループ・文字主体は収益化の対象外と述べたのが3/3で緑。下3行は原文に無いことやぼかしを言った回数で、ギフトの人数を数百人から数千人や下限なしとぼかしたのが5/6、1フォロワー1〜3円のような出典に無い相場を出したのが3/3、Metaが2025年に発表といった出典に無い経緯を書いたのが4/6で、いずれも赤。下の枠には、1万人の門は6/6で当たるが500人の門は6回中1回しか出ず5回はぼかしたこと、素朴に聞いた3回は出典に無い相場を3回とも出したこと、人数の門は原文の数字を貼り相場は聞かず、材料を貼れば3/3で正しく数えたという結論が書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="482"/>
+<text class="t-strong" x="18" y="26">サブスクの1万人は当たる。ギフトの500人は6回中1回</text>
+<text class="t-sm" x="18" y="45">実測2026-09-18。ウェブ検索を切ったAIに、素朴・門の種類・スター単価・材料あり・禁止フォーマット・ページ名を各3回。</text>
+<text class="t-sm" x="18" y="64">上6行＝原文と一致した回数（多いほど良い）。下3行＝原文に無いこと・ぼかしを言った回数（少ないほど良い）。</text>
+<text class="t-xs" x="538.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">サブスク＝フォロワー10,000人と述べた</text>
+<rect class="box-good" x="458" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="125" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="157">ギフト＝フォロワー500人と述べた</text>
+<rect class="box" x="458" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="538.0" y="157" text-anchor="middle" style="font-weight:700">1/6</text>
+<text class="t" x="18" y="189">スター1個＝US$0.01 と述べた</text>
+<rect class="box" x="458" y="168" width="160" height="26" rx="4"/>
+<text class="t-sm" x="538.0" y="189" text-anchor="middle" style="font-weight:700">5/6</text>
+<text class="t" x="18" y="221">最低支払額 US$25 を挙げた</text>
+<rect class="box-good" x="458" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="221" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="253">材料を貼った回：600人ならギフトだけ・2,500個で US$25 と計算</text>
+<rect class="box-good" x="458" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="253" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="285">スライドショー・ループ・文字主体は収益化の対象外、と述べた</text>
+<rect class="box-good" x="458" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="285" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="317">ギフトの人数を「数百人〜数千人」「下限なし」とぼかした</text>
+<rect class="box-bad" x="458" y="296" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="317" text-anchor="middle" style="font-weight:700">5/6</text>
+<text class="t" x="18" y="349">「1フォロワー1〜3円」等、出典に無い相場を出した</text>
+<rect class="box-bad" x="458" y="328" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="349" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="381">「Metaが2025年に発表」等、出典に無い経緯を書いた</text>
+<rect class="box-bad" x="458" y="360" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="381" text-anchor="middle" style="font-weight:700">4/6</text>
+<rect class="box-accent" x="18" y="398" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="418">1万人の門は6/6で当たる。500人の門は6回中1回しか出ず、5回は「数百人〜数千人」「下限未公表」とぼかした。</text>
+<text class="t-accent" x="34" y="436">素朴に聞いた3回は「1フォロワー1〜3円」のような出典に無い相場を3回とも出した。</text>
+<text class="t-accent" x="34" y="454">＝人数の門は原文の数字を貼る。相場は聞かない。材料を貼れば3/3で正しく数えた。</text>
+</svg>

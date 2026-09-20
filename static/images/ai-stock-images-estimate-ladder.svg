@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="332" viewBox="0 0 720 332" role="img" aria-label="Adobe Stockの公式の計算例の単価（1枚US$0.99）に、月に売れた枚数を前提として掛けた推定の横棒グラフ。月に10枚なら US$9.90 で副業帯の入口にも届かない、月に30枚なら US$29.70 で最低残高US$25を初めて超える、月に100枚なら US$99.00 でそれでも1ドル150円なら月1万円台、と3段で示している。月に何枚売れるかの出典は無く、枚数はこちらが置いた前提だと注記。下の枠には、最低残高US$25に届くのは公式例の単価で26枚ぶん（0.99ドル×26＝25.74ドル）であること、初回の支払いには最初の販売から45日の待機と日本ではプレミアムPayPalが要ること、税務フォーム未提出だと最大30%が源泉徴収され手取りは上の額より減ることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="332"/>
+<text class="t-strong" x="18" y="26">推定＝1枚 US$0.99 × 月に売れた枚数（枚数は前提）</text>
+<text class="t-sm" x="18" y="45">単価は Adobe Stock の公式の計算例（月額US$29.99・10枚プラン経由で1枚US$0.99・33%）。2026-09-18確認。</text>
+<text class="t-sm" x="18" y="64">月に何枚売れるかの出典は無い。3段の枚数はこちらが置いた前提で、枚数はご自身の実績に置き換えること。</text>
+<text class="t-xs" x="300" y="86">月のロイヤリティ（源泉徴収・PayPal手数料を引く前）</text>
+<text class="t" x="18" y="122">月に10枚ライセンスされたら（前提）</text>
+<rect class="bar-in" x="300" y="107" width="26" height="20" rx="3"/>
+<text class="t-strong" x="334" y="122">US$9.90</text>
+<text class="t-xs" x="18" y="138">副業帯の入口にも届かない</text>
+<text class="t" x="18" y="168">月に30枚（前提）</text>
+<rect class="bar-in" x="300" y="153" width="78" height="20" rx="3"/>
+<text class="t-strong" x="386" y="168">US$29.70</text>
+<text class="t-xs" x="18" y="184">最低残高 US$25 を初めて超える</text>
+<text class="t" x="18" y="214">月に100枚（前提）</text>
+<rect class="bar-in" x="300" y="199" width="260" height="20" rx="3"/>
+<text class="t-strong" x="568" y="214">US$99.00</text>
+<text class="t-xs" x="18" y="230">それでも月1万円台（1ドル150円で）</text>
+<rect class="box-accent" x="18" y="248" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="268">最低残高 US$25 に届くのは、公式例の単価で26枚ぶん（US$0.99×26＝US$25.74）。</text>
+<text class="t-accent" x="34" y="286">初回の支払いはさらに「最初の販売から45日」の待機と、日本ではプレミアムPayPalが要る。</text>
+<text class="t-accent" x="34" y="304">税務フォーム未提出だと最大30%が源泉徴収される（原文）。手取りは上の額より減る。</text>
+</svg>

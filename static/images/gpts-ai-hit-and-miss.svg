@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="ChatGPTのGPTsについてAIに聞いた結果を並べた表。上4行は原文と一致した回数で、個人プランでは新しく作れないと述べた回数が0/9で赤、廃止・停止の日付（9月25日・12月11日）を挙げた回数が0/9で赤、原文を貼って聞いた回に「今からは収入を得られない」と答えた回数が3/3で緑、材料に無い金額を作らなかった回数が3/3で緑。下2行は原文と逆のことを言った回数で、「廃止・終了の予定は出ていない」と述べた回数が3/9、「Plus以上の有料プランなら作れる」と述べた回数が3/9、いずれも赤。下の枠には、素朴に聞いた9回は収益化プログラムを米国限定・招待制の試験と説明したが（7/9）、「もう作れない」「12月に止まる」には1回も触れず、廃止予定を聞いた3回は「予定は無い」と答えたこと、AIが知っている昔の条件を今の条件として読まず、予定は原文で確かめるという結論が書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">「作れない」「止まる」は9回とも出ず、3回は逆を言った</text>
+<text class="t-sm" x="18" y="45">実測2026-09-18。ウェブ検索を切ったAI（独立実行）に、素朴・収益化プログラム・廃止予定の3通りを各3回。</text>
+<text class="t-sm" x="18" y="64">上4行＝原文と一致した回数（多いほど良い）。下2行＝原文と逆・原文に無いことを言った回数（少ないほど良い）。</text>
+<text class="t-xs" x="528.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">個人プランでは新しく作れない、と述べた</text>
+<rect class="box-bad" x="448" y="104" width="160" height="26" rx="4"/>
+<text class="t-bad" x="528.0" y="125" text-anchor="middle" style="font-weight:700">0/9</text>
+<text class="t" x="18" y="157">廃止・停止の日付（9/25・12/11）を挙げた</text>
+<rect class="box-bad" x="448" y="136" width="160" height="26" rx="4"/>
+<text class="t-bad" x="528.0" y="157" text-anchor="middle" style="font-weight:700">0/9</text>
+<text class="t" x="18" y="189">材料を貼った回：「今からは収入を得られない」と答えた</text>
+<rect class="box-good" x="448" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="528.0" y="189" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="221">材料を貼った回：材料に無い金額を作らなかった</text>
+<rect class="box-good" x="448" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="528.0" y="221" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="253">「廃止・終了の予定は出ていない」と述べた（原文と逆）</text>
+<rect class="box-bad" x="448" y="232" width="160" height="26" rx="4"/>
+<text class="t-bad" x="528.0" y="253" text-anchor="middle" style="font-weight:700">3/9</text>
+<text class="t" x="18" y="285">「Plus以上の有料プランなら作れる」と述べた（原文と逆）</text>
+<rect class="box-bad" x="448" y="264" width="160" height="26" rx="4"/>
+<text class="t-bad" x="528.0" y="285" text-anchor="middle" style="font-weight:700">3/9</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">素朴に聞いた9回は、収益化プログラムを「米国限定・招待制の試験」と丁寧に説明した（7/9）。</text>
+<text class="t-accent" x="34" y="340">「もう作れない」「12月に止まる」には1回も触れず、廃止予定を聞いた3回は「予定は無い」と答えた。</text>
+<text class="t-accent" x="34" y="358">＝AIが知っている「昔の条件」を、今の条件として読まないこと。予定は原文で確かめる。</text>
+</svg>

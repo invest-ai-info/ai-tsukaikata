@@ -7,7 +7,7 @@ published: 2026-08-30
 checked: 2026-08-30
 series: お金の流れ
 series_no: 3
-series_total: 3
+series_total: 4
 tags: [副業, YouTube, 収益化, お金の流れ, プロンプト]
 time_required: 20分
 cost: 無料（原文の確認のみ）

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="450" viewBox="0 0 720 450" role="img" aria-label="AI画像のストック販売についてAIに聞いた結果を並べた表。上6行は原文と一致した回数で、規約を渡さずに作った30本のプロンプトに禁止5項目に当たる語が無かったのが30/30、規約を渡して作った30本も30/30、Adobe Stockは33%と述べたのが3/3、PIXTAはAI生成素材は不可と述べたのが3/3、材料を貼った回に最低残高US$25は26枚ぶんと計算したのが3/3、派生を何十枚も出すと不採用・停止の対象と述べたのが3/3で、いずれも緑。下2行は原文に無いこと・違うことを言った回数で、PIXTAの停止を2023年の話として説明したのが2/3、材料を貼った回に材料に無いドル額・パーセントを足したのが1/3で、いずれも赤。下の枠には、作らせたプロンプト60本に実在の人物名・作品名・政府機関名・他社IP・ニュース性は0本だったこと、どこが買うか・率はいくらかは当たるが、いつから止まったかは2/3が2023年と答え2026年の日付は0/3だったこと、禁止項目と率はAIに聞いてよいが、いま受け入れているかと日付は原文で見るという結論が書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="450"/>
+<text class="t-strong" x="18" y="26">禁止項目は最初から避ける。「いつから不可か」は外す</text>
+<text class="t-sm" x="18" y="45">実測2026-09-18。ウェブ検索を切ったAI（独立実行）に、プロンプト作成2通り・可否と率・材料あり・派生量産・ページ名を各3回。</text>
+<text class="t-sm" x="18" y="64">上6行＝原文と一致した回数（多いほど良い）。下2行＝原文に無いこと・違うことを言った回数（少ないほど良い）。</text>
+<text class="t-xs" x="538.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">規約を渡さずに作った30本に、禁止5項目に当たる語が無かった</text>
+<rect class="box-good" x="458" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="125" text-anchor="middle" style="font-weight:700">30/30</text>
+<text class="t" x="18" y="157">規約を渡して作った30本に、禁止5項目に当たる語が無かった</text>
+<rect class="box-good" x="458" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="157" text-anchor="middle" style="font-weight:700">30/30</text>
+<text class="t" x="18" y="189">Adobe Stock＝33%と述べた</text>
+<rect class="box-good" x="458" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="189" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="221">PIXTA＝AI生成素材は不可と述べた</text>
+<rect class="box-good" x="458" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="221" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="253">材料を貼った回：最低残高US$25は26枚ぶん、と計算した</text>
+<rect class="box-good" x="458" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="253" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="285">派生を何十枚も出すと不採用・停止の対象、と述べた</text>
+<rect class="box-good" x="458" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="285" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="317">PIXTAの停止を「2023年」の話として説明した（原文は2026年）</text>
+<rect class="box-bad" x="458" y="296" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="317" text-anchor="middle" style="font-weight:700">2/3</text>
+<text class="t" x="18" y="349">材料を貼った回に、材料に無いドル額・％を足した</text>
+<rect class="box-bad" x="458" y="328" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="349" text-anchor="middle" style="font-weight:700">1/3</text>
+<rect class="box-accent" x="18" y="366" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="386">作らせたプロンプト60本に、実在の人物名・作品名・政府機関名・他社IP・ニュース性は0本だった。</text>
+<text class="t-accent" x="34" y="404">「どこが買うか」「率はいくらか」は当たる。「いつ止まったか」は2/3が2023年と答え、2026年の日付は0/3。</text>
+<text class="t-accent" x="34" y="422">＝禁止項目と率はAIに聞いてよい。「いま受け入れているか」と日付は、原文で見る。</text>
+</svg>

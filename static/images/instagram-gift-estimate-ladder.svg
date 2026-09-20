@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="332" viewBox="0 0 720 332" role="img" aria-label="Instagramのギフトの単価（スター1個US$0.01）に、月に受け取るスター数を前提として掛けた推定の横棒グラフ。月に2,500スターならUS$25で「他の支払い方法」の最低額US$25にちょうど届く、月に10,000スターならUS$100で電信送金の最低額に届く、月に50,000スターならUS$500で支払いアカウント無しで貯められる上限、と3段で示している。1本の投稿に何スター来るかの出典は無く、スター数はこちらが置いた前提だと注記。下の枠には、スターは視聴者が買い、US$0.01はクリエイターに渡る額で購入時の手数料（通常30%）は別途引かれていること、月1回・毎月21日ごろの支払いで、支払いアカウントを6か月以内に追加しないと貯めた分の権利を失うこと、1ドル150円ならUS$25は3,750円・US$100は15,000円・US$500は75,000円で為替は前提であることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="332"/>
+<text class="t-strong" x="18" y="26">推定＝スター1個 US$0.01 × 月に受け取るスター数（数は前提）</text>
+<text class="t-sm" x="18" y="45">単価は公式ヘルプ「ファンから受け取ったスター1個につき$0.01 (米ドル)をクリエイターに提供します」（2026-09-18確認）。</text>
+<text class="t-sm" x="18" y="64">1本の投稿に何スター来るかの出典は無い。3段のスター数はこちらが置いた前提で、ご自身の実績に置き換えること。</text>
+<text class="t-xs" x="300" y="86">月のクリエイター受取額（米ドル・為替と送金手数料を引く前）</text>
+<text class="t" x="18" y="122">月に2,500スター（前提）</text>
+<rect class="bar-in" x="300" y="107" width="13" height="20" rx="3"/>
+<text class="t-strong" x="321" y="122">US$25</text>
+<text class="t-xs" x="18" y="138">「他の支払い方法」の最低額 US$25 にちょうど届く</text>
+<text class="t" x="18" y="168">月に10,000スター（前提）</text>
+<rect class="bar-in" x="300" y="153" width="52" height="20" rx="3"/>
+<text class="t-strong" x="360" y="168">US$100</text>
+<text class="t-xs" x="18" y="184">電信送金の最低額 US$100 に届く</text>
+<text class="t" x="18" y="214">月に50,000スター（前提）</text>
+<rect class="bar-in" x="300" y="199" width="260" height="20" rx="3"/>
+<text class="t-strong" x="568" y="214">US$500</text>
+<text class="t-xs" x="18" y="230">支払いアカウント無しで貯められる上限 US$500</text>
+<rect class="box-accent" x="18" y="248" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="268">スターは視聴者が買う。US$0.01は「クリエイターに渡る額」。購入時の手数料（通常30%）は別途引かれている。</text>
+<text class="t-accent" x="34" y="286">月1回・毎月21日ごろの支払い。支払いアカウントを6か月以内に追加しないと、貯めた分の権利を失う。</text>
+<text class="t-accent" x="34" y="304">1ドル150円なら US$25＝3,750円・US$100＝15,000円・US$500＝75,000円（為替は前提）。</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="402" viewBox="0 0 720 402" role="img" aria-label="noteのメンバーシップで月額1,000円のプランに何人加入したかを前提として置き、全員クレジットカード決済のときの月の振込額を4段で並べた横棒グラフ。30人なら25,380円で副業帯、100人なら85,230円で副業帯（JILPTの副業者の平均92,445円/月に近い）、300人なら256,230円で準本業帯（副業で月20万円以上は10.8%・JILPT 2022年調査）、1,000人なら854,730円で事業帯の手前（到達するのはごく一部）。何人集まるかの出典は無く、人数はこちらが置いた前提だと注記。下の枠には、同じ式で人数が変わると帯が動き、会員制は作業量ではなく人数が前提になる稼ぎ方であること、携帯キャリア決済（15%）の会員が混ざるぶん実際の振込額は下がり幅になること、人数の増やし方はこの記事に無く式の出典だけを原文で確かめられる形にしてあることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="402"/>
+<text class="t-strong" x="18" y="26">推定＝月額1,000円 × 人数 → −5% → ×0.9 → −270円（人数は前提）</text>
+<text class="t-sm" x="18" y="45">全員がクレジットカード決済の場合。式は note ヘルプの手数料ページと「メンバーシップとは」から（2026-09-18確認）。</text>
+<text class="t-sm" x="18" y="64">何人集まるかの出典は無い。4段の人数はこちらが置いた前提で、ご自身の会員数に置き換えること。</text>
+<text class="t-xs" x="200" y="86">月の振込額（円）</text>
+<text class="t-strong" x="18" y="122">30人（前提）</text>
+<rect class="bar-in" x="200" y="107" width="10" height="20" rx="3"/>
+<text class="t-strong" x="218" y="122">25,380円</text>
+<text class="t-xs" x="200" y="140">副業帯</text>
+<text class="t-strong" x="18" y="174">100人（前提）</text>
+<rect class="bar-in" x="200" y="159" width="33" height="20" rx="3"/>
+<text class="t-strong" x="241" y="174">85,230円</text>
+<text class="t-xs" x="200" y="192">副業帯（JILPT 副業者の平均 92,445円/月 に近い）</text>
+<text class="t-strong" x="18" y="226">300人（前提）</text>
+<rect class="bar-in" x="200" y="211" width="99" height="20" rx="3"/>
+<text class="t-strong" x="307" y="226">256,230円</text>
+<text class="t-xs" x="200" y="244">準本業帯（副業で月20万円以上は10.8%・JILPT 2022年調査）</text>
+<text class="t-strong" x="18" y="278">1,000人（前提）</text>
+<rect class="bar-in" x="200" y="263" width="330" height="20" rx="3"/>
+<text class="t-strong" x="538" y="278">854,730円</text>
+<text class="t-xs" x="200" y="296">事業帯の手前（到達するのはごく一部）</text>
+<rect class="box-accent" x="18" y="318" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="338">同じ式で、人数が変わると帯が動く。会員制は「作業量」ではなく「人数」が前提になる稼ぎ方。</text>
+<text class="t-accent" x="34" y="356">携帯キャリア決済（15%）の会員が混ざるぶん、実際の振込額は上の数字より下がる（会員が選ぶので幅になる）。</text>
+<text class="t-accent" x="34" y="374">人数の増やし方はこの記事に無い。式の出典だけを原文で確かめられる形にしてある。</text>
+</svg>

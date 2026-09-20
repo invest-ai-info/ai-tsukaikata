@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="398" viewBox="0 0 720 398" role="img" aria-label="JILPT調査シリーズNo.245「副業者の就労に関する調査」図表2-4-14の副業の1週間あたりの実労働時間（n=11,358・2022年10月のインターネット調査）を横棒グラフにした図。5時間未満22.3%、5〜10時間未満27.6%、10〜20時間未満26.7%、20〜30時間未満11.0%、30〜40時間未満4.7%、40時間以上7.8%。中央値10時間・平均14.3時間。週20時間以上の3つの帯を濃い色で示し、合計23.5%であることを示す。本文PDFを2026年9月18日に取得して確認。下の枠には、週20時間以上は11.0＋4.7＋7.8＝23.5%で準本業帯の前提は副業者の4人に1人より多い作業量と読めること、調査自身が副業を行った週のみの平均で回答していると思われるものも一定数あると注記しており上振れの可能性があること、この分布は何時間働いたかであって何時間で幾らではなく時給の話は自分の記録から出すことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="398"/>
+<text class="t-strong" x="18" y="26">週20時間の前提は、副業者のどこに位置するか＝上位23.5%（週20時間以上の合計）</text>
+<text class="t-sm" x="18" y="45">JILPT 調査シリーズNo.245「副業者の就労に関する調査」図表2-4-14（副業の1週間あたりの実労働時間・n=11,358）。</text>
+<text class="t-sm" x="18" y="64">2022年10月のインターネット調査。中央値10時間・平均14.3時間。本文PDFを2026年9月18日に取得して確認。</text>
+<text class="t-xs" x="200" y="86">副業者に占める割合（%）　濃い色＝週20時間以上</text>
+<text class="t-strong" x="18" y="120">5時間未満</text>
+<rect class="bar-old" x="200" y="107" width="291" height="18" rx="3"/>
+<text class="t-strong" x="499" y="120">22.3%</text>
+<text class="t-strong" x="18" y="154">5〜10時間未満</text>
+<rect class="bar-old" x="200" y="141" width="360" height="18" rx="3"/>
+<text class="t-strong" x="568" y="154">27.6%</text>
+<text class="t-strong" x="18" y="188">10〜20時間未満</text>
+<rect class="bar-old" x="200" y="175" width="348" height="18" rx="3"/>
+<text class="t-strong" x="556" y="188">26.7%</text>
+<text class="t-strong" x="18" y="222">20〜30時間未満</text>
+<rect class="bar-in" x="200" y="209" width="143" height="18" rx="3"/>
+<text class="t-strong" x="351" y="222">11.0%</text>
+<text class="t-strong" x="18" y="256">30〜40時間未満</text>
+<rect class="bar-in" x="200" y="243" width="61" height="18" rx="3"/>
+<text class="t-strong" x="269" y="256">4.7%</text>
+<text class="t-strong" x="18" y="290">40時間以上</text>
+<rect class="bar-in" x="200" y="277" width="102" height="18" rx="3"/>
+<text class="t-strong" x="310" y="290">7.8%</text>
+<rect class="box-accent" x="18" y="314" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="334">週20時間以上は 11.0＋4.7＋7.8＝23.5%。準本業帯の前提は「副業者の4人に1人より多い作業量」と読める。</text>
+<text class="t-accent" x="34" y="352">調査自身が「副業を『行った週』のみの平均で回答していると思われるものも一定数」と注記＝上振れの可能性。</text>
+<text class="t-accent" x="34" y="370">この分布は「何時間働いたか」で、「何時間で幾ら」ではない。時給の話は自分の記録から出すこと。</text>
+</svg>
