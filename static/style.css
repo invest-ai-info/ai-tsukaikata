@@ -91,11 +91,17 @@ a { color: var(--accent); }
 }
 
 .site-name {
+  display: inline-flex;          /* ロゴと文字を縦中央で並べる（2026-09-21） */
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
   color: var(--fg);
 }
+
+/* サイト名の左のロボット（static/images/logo.png・背景は透明。width/height 属性でレイアウトシフトを防ぐ） */
+.site-logo { width: 34px; height: 34px; display: block; }
 
 .site-nav a {
   margin-right: 1rem;

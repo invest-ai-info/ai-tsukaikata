@@ -27,7 +27,7 @@
 </head>
 <body>
 <header class="site-header">
-  <a class="site-name" href="/">{{ site.name }}</a>
+  <a class="site-name" href="/"><img class="site-logo" src="/static/images/logo.png" alt="" width="34" height="34">{{ site.name }}</a>
   {% if not hide_header_search %}
   {# 素のフォーム＝JS無しでも /search/?q=… へ飛ぶ。JS はヘッダーに足さない（2026-09-20） #}
   <form class="site-search" action="/search/" method="get" role="search">

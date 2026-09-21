@@ -175,6 +175,16 @@ def test_header_has_no_nav_links():
     assert "site-nav" not in header
 
 
+def test_header_logo_sits_left_of_site_name():
+    """サイト名の左にロボットのロゴ（2026-09-21 オーナー指示）。alt は空＝読み上げではサイト名だけ。"""
+    pages = render_site([_article()])
+    header = pages["recipes/sample/index.html"].split("</header>")[0]
+    logo = '<img class="site-logo" src="/static/images/logo.png" alt="" width="34" height="34">'
+    anchor = header.split('class="site-name"')[1]      # <title> の「AIの使い方」を見ないよう a 要素の中だけ見る
+    assert logo in anchor
+    assert anchor.index(logo) < anchor.index("AIの使い方")
+
+
 def test_card_shows_eyecatch_only_when_available():
     with_img = render_site([_article(slug="sample")], eyecatches={"sample"})
     without = render_site([_article(slug="sample")])
