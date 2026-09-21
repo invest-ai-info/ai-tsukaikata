@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-21T00:45:19+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "トランプ大統領はSNSへの投稿で、AIを担当する新組織「AI Force」の創設と責任者“AI皇帝”の指名を表明した。AI脅威論を否定して業界の成長支援を掲げ、AIの新たな呼称案の投票も呼び掛けた。Anthropicなどの経営陣から開発のペース調整や安全性を求める声が相次ぐ中、規制に否定的な姿勢を鮮明にしている。",
+      "title": "トランプ大統領、「AI Force」創設を表明　「AI脅威論はでっちあげだ」",
+      "uid": "913c1d602c176ff7",
+      "url": "https://www.itmedia.co.jp/news/article/2609/21/2000001666/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NVIDIAのフアンCEOが「私がどこで夕食を食べるのか、そして誰と夕食を食べるのかを調べることだ。そうすると、相手の株価が翌日に2倍になる」と語った。GPUを巡る巨額マネーの行方は。",
+      "title": "エヌビディアCEO「誰かと夕食をすると、その翌日に相手の株価が2倍になる」　GPUを巡る巨額マネーの行方",
+      "uid": "9404158bcd109f1f",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/21/news024.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-20T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ChatGPTなどの生成AIを使って何かを作らせてみたら、もっともらしい成果物ができてきた。でも、よく読むと「指示したはずの内容が一部抜け落ちている」「最初の前提が間違ったまま回答が最後まで進んでいる」。そこで「ここを直して」と何度も指示して直す――。生成AIを使っていると割とありがちな経験ですよね。",
+      "title": "AI用語の基礎知識 【第23回】「エージェントワークフロー」とは――AIにPDCAさせる仕事の進め方",
+      "uid": "ee0b4e54e213d640",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2142000.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-20T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "外観レビューに続いて「Google Pixel Watch 5」を実際に使ってみました。ワークアウトや睡眠測定を行っています。 続きを読む...",
+      "title": "Geminiが使えるスマートウォッチ「Google Pixel Watch 5」を使ってみた",
+      "uid": "c5435d7eef6accad",
+      "url": "https://gigazine.net/news/20260921-google-pixel-watch-review/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ベテラン社員の退職で、会社に蓄積された経験やノウハウが失われる。そんな中小企業の「知識の属人化」に向き合い、社長の経験や現場の知恵を蓄積する専用AIが登場した。",
+      "title": "「社長の頭の中」をAIに　経営と現場をつなぐ専用AIとは？",
+      "uid": "4cb2498ffd9d04a3",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/21/2000001651/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "企業でAI活用やDX推進が求められる一方、職場でそれらが話題にならず、研修を受ける機会も限られている。調査では、研修未経験者が9割に達する一方、4割超がAI・デジタルスキルの習得を希望している。学ぶ意欲と機会のギャップが浮かんだ。",
+      "title": "AI研修を受けた人は1割未満　「学びたい」4割超なのに、なぜ？",
+      "uid": "63a59303f1bcde2e",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/21/2000001604/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "SaaSの増加に伴い、ライセンスの利用状況やコスト管理が複雑になっていた大和鋼管工業。部署ごとに分散していたSaaSやアカウント情報の一元化に動いた。",
+      "title": "大和鋼管工業、SaaS増加で複雑化したライセンス管理を「情シスAI」でどう解決？",
+      "uid": "6a8be3973b421391",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/21/2000001655/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-21T01:09:44.936886+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-20T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "双日テックイノベーションの調査によると、Copilot・M365導入企業の78％が社内情報の検索・活用を「カバーできている」と回答。一方、87.5％が情報の分散を課題に挙げ、96.2％が社内情報を横断的に検索・活用できるAI環境によって、AI活用が広がると回答した。",
+      "title": "双日調査、Copilot導入企業の87.5％が「情報分散」を課題　「横断検索AI」に期待か",
+      "uid": "ccaea075d90575b2",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/21/2000001657/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-20T22:29:23.511254+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2303,102 +2399,6 @@
       "uid": "b5f883a2014c3058",
       "url": "https://www.publickey1.jp/blog/26/anthropicmcpmcpagntconmcpcon_japan_2026.html",
       "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Publickey",
-      "published": "2026-09-14T15:51:16+00:00",
-      "source_id": "media-publickey",
-      "summary": "MCPやAGENTS.md、Agent2AgentプロトコルなどのAIエージェントに関する関連技術の標準化推進や開発などを行うLinux Foundation傘下のAgentic AI Foundation（AAIF）は、オープンソースとし...",
-      "title": "OpenAIやAnthropicなどAIベンダごとのAPIの違いを吸収し統合する「Agent Router」、Linux Foundation傘下で業界標準へ",
-      "uid": "8472b7fb103cfd0d",
-      "url": "https://www.publickey1.jp/blog/26/openaianthropicapiagent_routerlinux_foundation.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIは時にウソをついたり、不正行為を行ったりします。「なぜAIエージェントはウソをつき、不正行為を行い、協調するのか？」について、2018年にチューリング賞を受賞したAI研究の第一人者であるヨシュア・ベンジオ氏が解説しています。 続きを読む...",
-      "title": "なぜAIエージェントはウソをつき不正行為を行い協調するのか？",
-      "uid": "95673b9f3b000731",
-      "url": "https://gigazine.net/news/20260914-why-ai-agents-lying-cheating-coordinating/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T11:16:05+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米国の最先端AIモデルを開発する企業が、人類への脅威を防ぐためには開発ペースを落とす必要があると警告したことを受け、ソフトバンクやキオクシア、東京エレクトロンといったAI関連株が急落した。",
-      "title": "AI開発“減速論”過熱でソフトバンク、キオクシア株急落　その他AI関連株も",
-      "uid": "2a592fb25ae41dc5",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/14/2000001462/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T10:42:20+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Sakana AI、SCSKおよび住友商事は、AI活用を通じた日本の産業変革と社会課題解決に向け、包括業務提携を行なうことで合意した。同提携では、3社それぞれの強みを生かし、AI技術の活用から企業の実業務への実装、幅広い産業への展開までを一気通貫で推進する。",
-      "title": "AIで日本の産業変革へ、Sakana AIら3社が包括業務提携",
-      "uid": "5a0c9445db8599f1",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140814.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T09:42:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "エプソンダイレクトは9月14日、会議や商談などの音声をリアルタイムに文字起こし・翻訳できるAIアプリ「スピーチコネクト」のインストーラーを搭載したCopilot+ PC対応ノートPC「Endeavor NL3000E」の出荷を開始した。",
-      "title": "エプソン、文字起こしAIアプリ標準搭載の「Endeavor NL3000E」",
-      "uid": "8eb34c480845eb3b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140783.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T09:12:14+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTは、屋外環境（伝送距離100m）において、光ファイバーと同等レベルの超大容量データ転送を無線で実現するミリ波・サブテラヘルツ帯で世界最高速となる毎秒2テラビット（2Tbit/s）の無線伝送に成功した。",
-      "title": "NTT、サブテラヘルツ帯で2Tbps無線伝送に成功 AIデータセンター内やRANネットワークにおけるデータ転送容量増加に対応",
-      "uid": "04aca99c0502b0ef",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140762.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T08:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "インドで開催されたBRICS首脳会議で、中国の習近平国家主席がBRICSの飛躍的発展のために5つのイニシアチブを提唱しました。このうち、AIのオープンソース化と普及に関するイニシアチブでは、中国が率先してBRICS諸国向けのAI特区を設置し、AIのオープンエコシステムを構築していくことを表明しています。 続きを読む...",
-      "title": "中国がBRICS向けにAI特区を作りAIオープンエコシステム構築を提唱",
-      "uid": "b1edc3a313e2fceb",
-      "url": "https://gigazine.net/news/20260914-china-build-an-open-ecosystem-for-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-14T08:21:20+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ホロラボは、東京・大崎ブライトコアホールにて、XR/スマートグラス x AIの社会実装や3DGS/BIM/CADなど3Dデータ活用に向けた情報・事例・体験の共有を行なう「HoloLab Conference 2026」を10月23日10時から21時に開催する。",
-      "title": "XRとAIの社会実装事例を共有。「HoloLab Conference 2026」10月23日開催",
-      "uid": "639b47e9443ef4a9",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140735.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
