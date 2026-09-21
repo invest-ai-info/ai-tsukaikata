@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-21T06:25:21.527248+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-21T06:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "アドビとえちごトキめき鉄道は、共催イベント「楽しく撮り鉄！生成AIで鉄道写真がもっと簡単に！」を10月12日に開催する。9月24日17時30分まで同イベントの参加者24名を募集中。応募者多数の場合は抽選とし、当選者には9月25日までにメールで通知される。",
+      "title": "アドビ＆えちごトキめき鉄道「楽しく撮り鉄！生成AIで鉄道写真がもっと簡単に！」開催",
+      "uid": "d8e7ee6e50776e92",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2141125.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-21T06:25:21.527248+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-21T03:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "10億人以上いるというChatGPTのユーザーを支えているもののひとつに、高速で信頼性の高いデータアクセスがある。OpenAIは、このシステム「Habitat」の開発運用について興味深いブログを掲載した。",
+      "title": "OpenAI、10億人以上のChatGPTユーザーのためのオンラインストレージの苦労話を披露",
+      "uid": "f8ad85992090e88c",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2140809.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-21T06:25:21.527248+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-21T03:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "MetaがリリースしたばかりのAIエージェント「Muse」が、アクセスを許可していないはずのメッセージを勝手に閲覧して提案を行ってきたと、テクノロジーライターのジェイソン・アテン氏が報告しています。 続きを読む...",
+      "title": "MetaのAIエージェント「Muse」が許可していないはずのメッセージを勝手に読んでいるとの指摘",
+      "uid": "b488e549246497a0",
+      "url": "https://gigazine.net/news/20260921-meta-muse-ai-agent-read-private-messages/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-21T01:09:44.936886+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "a57e35df80c8426e",
       "url": "https://www.itmedia.co.jp/news/article/2609/15/2000001469/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T23:10:08.125153+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T21:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "大規模言語モデル(LLM)の数学的能力は目覚ましい進歩を遂げており、数々の難問を解けるレベルにまで到達しました。しかしその一方で、AI企業が数学的問題解決をベンチマークとして推進する動きについては数学という学問そのものや数学コミュニティにとって有害であると、フィールズ賞受賞者25名からなる数学者たちが公開書簡を通じて警鐘を鳴らしています。 続きを読む...",
-      "title": "AIベンチマークに数学を使うのは有害だとして数学者たちが反発",
-      "uid": "73c6c97918d4b390",
-      "url": "https://gigazine.net/news/20260915-misalignment-of-ai-in-mathematics/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T23:10:08.125153+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T20:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIエージェントの活用が広がり、その裏側で増殖するのがAPIキーやトークンなどの認証情報です。これまで当たり前だったAPIキーの管理方法が、AIエージェントの登場によって限界を迎えつつあります。",
-      "title": "その.envのAPIキーが、AIエージェントを「内通者」に変える――“人間前提のやり方”は破綻した",
-      "uid": "21ae5c64120ef41f",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/16/news013.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T14:08:28.662401+00:00",
-      "importance": "minor",
-      "label": "Publickey",
-      "published": "2026-09-14T15:55:18+00:00",
-      "source_id": "media-publickey",
-      "summary": "AIエージェントおよびMCP（Model Context Protocol）を主題としたイベント「AGNTCon＋MCPCon Japan 2026」が9月10日に東京渋谷のイベントホールで開催されました。主催はLinux Foundati...",
-      "title": "AnthropicのMCP共同作者が来日、基調講演で語るこれからのMCP注力領域。AGNTCon＋MCPCon Japan 2026",
-      "uid": "b5f883a2014c3058",
-      "url": "https://www.publickey1.jp/blog/26/anthropicmcpmcpagntconmcpcon_japan_2026.html",
-      "vendor": "Publickey"
     }
   ]
 }
