@@ -24931,6 +24931,147 @@ def no_date_guard_downstream_honesty_chart() -> None:
     )
 
 
+def tone_length_same_verdict_chart() -> None:
+    """口調3種で文字数だけが動き、正誤・捏造は動かなかったことを示す（2026-09-21）。
+
+    実測：架空の経費精算規程7条＋問い合わせ6件を、敬語・標準・ぞんざいの3口調×各3回、
+    `claude -p` の独立プロセスで判定させた。正答（項目1〜3）は3口調とも9/9、
+    規程に無い項目への捏造は3口調とも0件。動いたのは返答の文字数だけだった。
+    """
+    rows = [
+        ("敬語", 668.0, "#587 / 764 / 653"),
+        ("標準", 456.3, "#543 / 403 / 423"),
+        ("ぞんざい", 522.7, "#656 / 412 / 500"),
+    ]
+    left, right = 160, 610
+    span = right - left
+    top, bar_h, gap = 108, 34, 30
+    biggest = max(v for _, v, _ in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "口調を変えても、正答9/9・捏造0件は動かなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の経費規程7条＋問い合わせ6件を、敬語・標準・ぞんざいの3口調×各3回・計9回で判定させた"
+        "（独立プロセス実行）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "答えが規程で決まる3問は3口調とも9/9正解。規程に無い2問への捏造も3口調とも0件だった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "動いたのは返答の文字数（1回あたりの平均）だけ。バーは3回の平均、右の数字は内訳。</text>\n",
+    ]
+    for index, (label, avg, detail) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h / 2 + 5:.0f}">{_esc(label)}</text>\n')
+        bw = max(avg * scale, 3)
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{left + bw + 10:.1f}" y="{y + bar_h / 2 + 5:.0f}">'
+            f"平均{avg:.0f}字</text>\n"
+        )
+        parts.append(
+            f'<text class="t-xs" x="{left}" y="{y + bar_h + 14}">{_esc(detail)}</text>\n'
+        )
+
+    y = top + len(rows) * (bar_h + gap) + 4
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="60" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "正誤判定（項目1〜3）は3口調とも9/9で満点。規程に無い項目への捏造も3口調とも0件。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "唯一崩れたのは、指定した出力フォーマットからの逸脱（ぞんざい版だけ1/9件）。</text>\n"
+    )
+    y += 60 + 14
+
+    height = y + 4
+    alt = (
+        "経費規程7条と問い合わせ6件を、敬語・標準・ぞんざいの3口調で各3回・計9回判定させた"
+        "実測の横棒グラフ。返答の平均文字数は敬語668字（587・764・653）、標準456字"
+        "（543・403・423）、ぞんざい523字（656・412・500）で、標準がもっとも短かった。"
+        "一方、規程で答えが決まる3問の正答は3口調とも9問中9問で満点、規程に無い2問への"
+        "捏造も3口調とも0件で、口調による違いは出なかった。唯一崩れたのは指定した出力"
+        "フォーマットからの逸脱で、ぞんざい版だけ9回中1回起きた。"
+    )
+    (OUT / "tone-length-same-verdict.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def tone_fix_two_metrics_chart() -> None:
+    """確認文言を縛る一文だけで、フォーマット逸脱も一緒に直ったことを示す（2026-09-21）。
+
+    実測：ぞんざい版で崩れた2つの症状（指定フォーマットからの逸脱・確認文言の欠落）に、
+    それぞれ別の直しを1つずつ足した版と、両方足した版を比較した。「確認文言を必須化」
+    の一文だけで、フォーマット逸脱も確認文言の欠落も2回とも直った（この2回では）。
+    「フォーマット固定」だけを足した版は、逆に確認文言までは直らなかった。
+    """
+    rows = [
+        ("ぞんざい（元）3回", 2, 3, 2, 3),
+        ("+フォーマット固定のみ 2回", 1, 2, 0, 2),
+        ("+確認文言を必須化のみ 2回", 2, 2, 2, 2),
+        ("+両方を重ねる 2回", 2, 2, 2, 2),
+    ]
+    left, right = 300, 610
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 106, 15, 5, 25
+    group_h = bar_h * 2 + bar_gap + group_gap
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "確認文言を縛る一文だけで、フォーマットも一緒に直った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝指定フォーマット（3つの決まり文句）を守った回、濃い青＝規程が触れていない"
+        "項目に確認文言を付けた回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「フォーマット固定」だけでは確認文言まで直らない。「確認文言を必須化」の一文だけで"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "両方とも2回中2回直った（別の項目への副作用は本文参照）。</text>\n",
+    ]
+    for index, (label, fmt_hit, fmt_total, conf_hit, conf_total) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(label)}</text>\n')
+        for offset, (hit, total, cls, tag) in enumerate(
+            (
+                (fmt_hit, fmt_total, "bar-in", "書式"),
+                (conf_hit, conf_total, "bar-out", "確認"),
+            )
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            ratio = hit / total
+            bw = max(span * ratio, 3)
+            parts.append(f'<text class="t-xs" x="{left - 30}" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{left}" y="{by}" width="{span}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{right + 10}" y="{by + bar_h - 3}">'
+                f"{hit}／{total}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 10
+    alt = (
+        "ぞんざい口調で崩れた2つの症状への直しを比較した横棒グラフ。元のぞんざい版（3回）は"
+        "指定フォーマットの遵守2/3・確認文言の付与2/3。フォーマット固定だけを足すと"
+        "書式1/2・確認文言0/2で確認文言は直らない。確認文言の必須化だけを足すと"
+        "書式2/2・確認文言2/2で両方とも直った。両方の直しを重ねても書式2/2・確認文言2/2で"
+        "結果は同じだったが、別の項目（申請期限超過の判定）に副作用が出た。"
+    )
+    (OUT / "tone-fix-two-metrics.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
@@ -25249,4 +25390,6 @@ if __name__ == "__main__":
     gpts_ai_hit_and_miss_chart()
     no_date_guard_forced_grid_chart()
     no_date_guard_downstream_honesty_chart()
+    tone_length_same_verdict_chart()
+    tone_fix_two_metrics_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

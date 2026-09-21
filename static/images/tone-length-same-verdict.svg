@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="382" viewBox="0 0 720 382" role="img" aria-label="経費規程7条と問い合わせ6件を、敬語・標準・ぞんざいの3口調で各3回・計9回判定させた実測の横棒グラフ。返答の平均文字数は敬語668字（587・764・653）、標準456字（543・403・423）、ぞんざい523字（656・412・500）で、標準がもっとも短かった。一方、規程で答えが決まる3問の正答は3口調とも9問中9問で満点、規程に無い2問への捏造も3口調とも0件で、口調による違いは出なかった。唯一崩れたのは指定した出力フォーマットからの逸脱で、ぞんざい版だけ9回中1回起きた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="382"/>
+<text class="t-strong" x="18" y="26">口調を変えても、正答9/9・捏造0件は動かなかった</text>
+<text class="t-sm" x="18" y="45">架空の経費規程7条＋問い合わせ6件を、敬語・標準・ぞんざいの3口調×各3回・計9回で判定させた（独立プロセス実行）。</text>
+<text class="t-sm" x="18" y="64">答えが規程で決まる3問は3口調とも9/9正解。規程に無い2問への捏造も3口調とも0件だった。</text>
+<text class="t-sm" x="18" y="83">動いたのは返答の文字数（1回あたりの平均）だけ。バーは3回の平均、右の数字は内訳。</text>
+<text class="t" x="18" y="130">敬語</text>
+<rect class="box-quiet" x="160" y="108" width="450" height="34" rx="4"/>
+<rect class="bar-new" x="160" y="108" width="450.0" height="34" rx="4"/>
+<text class="t-strong" x="620.0" y="130">平均668字</text>
+<text class="t-xs" x="160" y="156">#587 / 764 / 653</text>
+<text class="t" x="18" y="194">標準</text>
+<rect class="box-quiet" x="160" y="172" width="450" height="34" rx="4"/>
+<rect class="bar-new" x="160" y="172" width="307.4" height="34" rx="4"/>
+<text class="t-strong" x="477.4" y="194">平均456字</text>
+<text class="t-xs" x="160" y="220">#543 / 403 / 423</text>
+<text class="t" x="18" y="258">ぞんざい</text>
+<rect class="box-quiet" x="160" y="236" width="450" height="34" rx="4"/>
+<rect class="bar-new" x="160" y="236" width="352.1" height="34" rx="4"/>
+<text class="t-strong" x="522.1" y="258">平均523字</text>
+<text class="t-xs" x="160" y="284">#656 / 412 / 500</text>
+<rect class="box-accent" x="18" y="304" width="678" height="60" rx="6"/>
+<text class="t-accent" x="34" y="324">正誤判定（項目1〜3）は3口調とも9/9で満点。規程に無い項目への捏造も3口調とも0件。</text>
+<text class="t-accent" x="34" y="342">唯一崩れたのは、指定した出力フォーマットからの逸脱（ぞんざい版だけ1/9件）。</text>
+</svg>
