@@ -27,6 +27,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-21T23:19:56.757982+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-21T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
+      "summary_ja": "Higgsfield AIがGPT-6 Astraで動画機能を1日で追加\n中小企業向けに動画広告作成を簡素化します\n新しい制作ツールを速やかに市場投入できます",
+      "summary_source": "gemini",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+      "uid": "61c6a9451185268e",
+      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-21T19:33:20.574647+00:00",
       "importance": "minor",
       "label": "OpenAI News",

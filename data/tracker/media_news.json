@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-21T23:19:56.757982+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-21T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "LeaguEは、AIスマートゴルフボール「GINOVO」の先行販売を、GREEN FUNDINGで9月30日まで行なっている。最安リターン価格は59,400円。",
+      "title": "9軸センサー搭載AIスマートゴルフボール「GINOVO」でパット練習をデータ化",
+      "uid": "e5af1e61606d17ac",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2141546.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-21T23:19:56.757982+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-21T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "カリフォルニア州の大学生3人が、カリフォルニア州北部に位置する標高4321.8mのシャスタ山を登山中に救助されました。この大学生はAIで登頂計画を立てていて、ルートから外れてしまったとのことです。 続きを読む...",
+      "title": "AIに頼って登山計画を立てた登山者たちが救助される",
+      "uid": "6b657b85c3882db6",
+      "url": "https://gigazine.net/news/20260922-ai-climber-rescued/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-21T23:19:56.757982+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-21T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの活用が広がる中、企業固有の「仕事の進め方」をどうAIに教えるかが課題になっている。Teams会議に埋もれた判断や経験則を、AIが扱える業務知識へどう変換するか。",
+      "title": "Teams会議をAIエージェントの「教材」に　埋もれた経験則を資産に変える新たな手法とは",
+      "uid": "32c85a2148b196d1",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/22/2000001658/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-21T14:14:39.880727+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2362,42 +2398,6 @@
       "title": "トランプ大統領、アモデイ氏を名指しで「完璧な小さい天使のふり」　「AIに必要なガードレールは強く賢い大統領だけ」",
       "uid": "486b6603b73208a4",
       "url": "https://www.itmedia.co.jp/news/article/2609/15/2000001470/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T22:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ファナックは、部品の図面を読み取りロボットがアーク溶接を行う「AI溶接エージェント」を開発した。",
-      "title": "ファナックがAI溶接エージェント開発、溶接条件やロボット動作を自動生成",
-      "uid": "eb45dba13224edff",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/15/news026.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T22:15:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ユニバーサルロボットは、フィジカルAI対応を推進する新たな協働ロボットプラットフォームとして「Gen 7」を発表した。フィジカルAIの成果を実際の製造現場へ円滑に展開するための基盤として設計されており、2026年10月以降に順次出荷を開始する。",
-      "title": "フィジカルAI支えるURの新たな協働ロボット基盤の全貌、2027年にはGPU搭載",
-      "uid": "fb809e337775004c",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/15/news056.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T23:10:08.125153+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの普及で変わり始めているのは、企業の業務だけではない。Googleの最新セキュリティレポートからは、攻撃者がAIエージェントを攻撃活動に組み込み、侵入先のクラウドや開発環境を新たな「AI攻撃基盤」として悪用する実態が見えてきた。",
-      "title": "「AIを盗む」のではなく「AIを動かす」ために　Googleが捉えた攻撃者の異変",
-      "uid": "747689048bda4b03",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/15/2000001459/",
       "vendor": "ITmedia AI+"
     }
   ]
