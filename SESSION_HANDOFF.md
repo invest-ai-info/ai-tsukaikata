@@ -1,8 +1,33 @@
 # SESSION_HANDOFF — AIの使い方（ai-tsukaikata.com）
 
-最終更新: 2026-09-20 JST
+最終更新: 2026-09-21 JST
 
 ## 🚩 次のセッションは、ここから
+
+### ✅ 2026-09-21 トップ画像とロゴを差し替え・「視覚要素を多く」の決まり・記事内イラストの相談（ChatGPT連携は保留）
+
+- **深掘りは 9/21 08:06 JST に動いた**＝9/20 に手で足した `introducing-chatgpt-images-2-5` の行で
+  `content/tools/chatgpt-images-2-5.md` を公開（図3枚・要旨は RSS、数字は `developers.openai.com`）。
+  発表ページが読めなくても振り替え経路で書ける、が実際に確かめられた
+- **検索は本番で確認済み**（`?q=Gmail` 1件・`副業` 72件・`github actions` 4件・`メール` 15件＝Python の索引と一致）
+- **トップの画像**を差し替え（`3ad28d2`・`hero-photo.jpg` と `og-image.jpg` は同じ絵・1200×686）。
+  **ロゴ**（切り抜いたロボット）をサイト名の左に置き、favicon / apple-touch-icon も同じ絵にした（`3e0a9b5`）。
+  どちらもオーナー提供の絵。古い絵は git の履歴にある
+- **「記事を書くときに図解・画像・リスト・グラフなど視覚で見てわかるものを多く」**（オーナー指示）を
+  CLAUDE.md「図は既定で入れる」・`_recipe_queue.md` 規則4・`_writer_sop.md`・auto-memory に書いた（`746e001`）。
+  CLAUDE.md はクラウドのルーティンにも読み込まれるので全担当に届く。⚠️ ルーティンのプロンプト本体には
+  まだ書き足していない（足すかはオーナー判断。深掘りのプロンプトは元から「図2枚以上」）
+- **記事の中に絵（イラスト）を入れる相談** → 🛑 **ChatGPT との連携は保留（2026-09-21 オーナー判断）**。
+  「プログラムから ChatGPT に頼む」には API キーが要ること（チャット画面の自動操作は規約違反で壊れやすく、
+  クラウドからは chatgpt.com に届かない）を説明したうえでの判断。⚠️ **次のセッションで蒸し返さない。**
+  再開の合図があったときの選択肢だけ残す:
+  1. ChatGPT の「タスク」機能で毎朝作らせ、届いた絵を GitHub に `static/images/illust/<slug>.png` として置く（鍵不要）
+  2. 既存の `GEMINI_API_KEY` で GitHub Actions が生成する（新しい鍵は不要・無料枠か課金かは実物で確認）
+  3. OpenAI の API（新しい鍵が要る。GPT Image 2 の Medium で1枚 $0.041＝約6円）
+  - **表示の仕組み（ファイルがあれば記事に出す）は未実装**。作るなら `render.py` で `static/images/illust/<slug>.*` の
+    有無を見て `article.html` に差し込み、CSS は `.article-body .figure img` の `min-width: 600px` を継がない別クラスにする
+  - Claude Design（Artifact の Design 型）は使える（デザインシステム未登録）が、作れるのは図解・ベクター調で、
+    いただいた2枚のような絵柄の画像生成ではない
 
 ### ✅ 2026-09-20 稼ぎ方の研究パック10件を公開・ルーティン確認・深掘りの材料を補充
 
@@ -22,7 +47,7 @@
   `docs/superpowers/plans/2026-09-20-site-search.md`）。全ページのヘッダーに窓＋`/search/?q=`。索引は `search.json`
   （タイトル・説明文・タグ・見出し。予算 400KB をテストが見る）。運用メモは CLAUDE.md「🔎 サイト内検索」
 
-🔎 **見るもの**＝9/21 08:00 JST の深掘りが `introducing-chatgpt-images-2-5` の行で記事を書けたか
+🔎 **見るもの**（→ ✅ 9/21 に書けた。上の節）＝9/21 08:00 JST の深掘りが `introducing-chatgpt-images-2-5` の行で記事を書けたか
 （発表ページは読めない前提。`developers.openai.com` だけで書けたか、止まったなら理由）。
 FIG（`sakana.ai/frontier-intelligence-group/`）は**オーナーが見送りを決めるまで `[!]` のまま**。
 
