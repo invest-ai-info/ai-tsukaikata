@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-21T19:33:20.574647+00:00",
+      "importance": "major",
+      "label": "Grok 新モデル",
+      "published": "2026-09-21T16:19:01+00:00",
+      "source_id": "openrouter-xai",
+      "summary": "Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work,…",
+      "title": "x-ai/grok-4.7",
+      "uid": "e1a43342eb8fde28",
+      "url": "https://openrouter.ai/x-ai/grok-4.7",
+      "vendor": "xAI"
+    },
+    {
+      "first_seen": "2026-09-21T19:33:20.574647+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-21T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
+      "summary_ja": "OpenAIが数学とAIの諮問グループと協力\n独立したグループが新しいAI成果の評価\n情報発信について指導する",
+      "summary_source": "gemini",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "uid": "7f2fa3462c72253f",
+      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-21T19:33:20.574647+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-21T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
+      "summary_ja": "OpenAIがAIの国際的な基準作りを提案\n安全性向上のため世界共通の道筋を示す\n評価、報告、管理の協調を呼びかけ",
+      "summary_source": "gemini",
+      "title": "Building standards for the next phase of AI",
+      "uid": "366671333716a82f",
+      "url": "https://openai.com/index/building-standards-next-phase-ai",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-21T19:33:20.574647+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-21T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
+      "summary_ja": "OpenAI Academyに新しい学習コースが追加\n従業員や開発者、学生など向け\n実用的なAIスキル習得と証明が可能に",
+      "summary_source": "gemini",
+      "title": "Expanding OpenAI Academy with new learning paths",
+      "uid": "7e8fdfd4fe62664f",
+      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-21T14:14:39.880727+00:00",
       "importance": "minor",
       "label": "OpenAI News",
