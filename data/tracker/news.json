@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-21T14:14:39.880727+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-21T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Using GPT-5.6, V7 turns scattered company files into context agents can use to complete complex, source-linked work.",
+      "summary_ja": "V7がAIに社内の情報を活用させる新技術を提供しました\nGPT-5.6を使い、散らばった社内文書をAIが利用できる情報に変換\nAIは情報源をたどれる複雑な仕事をこなせるようになります",
+      "summary_source": "gemini",
+      "title": "How V7 gives AI agents institutional memory",
+      "uid": "889d69a37f19e277",
+      "url": "https://openai.com/index/v7",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-19T05:58:18.432398+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -4815,20 +4829,6 @@
       "uid": "37fe44527834b514",
       "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-06-23T14:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Claude Tag is a new way for teams to work with Claude.",
-      "summary_ja": "新機能「Claude Tag」が導入された\nチームでAI「Claude」を使う新しい方法を提供",
-      "summary_source": "gemini",
-      "title": "Introducing Claude Tag",
-      "uid": "c48934e22b87504b",
-      "url": "https://www.anthropic.com/news/introducing-claude-tag",
-      "vendor": "Anthropic"
     }
   ]
 }

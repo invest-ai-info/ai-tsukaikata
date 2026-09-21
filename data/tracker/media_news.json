@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-21T14:14:39.880727+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-21T10:12:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年9月に登場したiOS 27やmacOS 27にはApple製AIモデル「Apple Foundation Models」のアップデート版が含まれており、各種アプリでAI機能をオフライン実行できるようになっています。このApple Foundation Modelsとチャットできる機能がAI実行アプリ「Locally AI」に追加されたので、テキストでのチャット機能や画像認識機能を試して…",
+      "title": "iPhoneに搭載されたApple製AIとチャットする方法、無料アプリで「Apple Foundation Models」のローカル処理能力を試せる",
+      "uid": "f00f9cfc9cc81695",
+      "url": "https://gigazine.net/news/20260921-locally-ai-apple-foundation-models/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-21T14:14:39.880727+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-21T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAI・Anthropic・Geminiなど複数のAIモデルを使い分ける場合、APIキーや料金、利用状況の管理もサービスごとに分散します。クラウドやローカルのAIモデルをOpenAI互換の単一APIにまとめ、利用量や予算を一元管理できるオープンソースのAIゲートウェイ「Experiential」が公開されています。 続きを読む...",
+      "title": "無料でクラウド・ローカルの各AIモデルをOpenAI互換の単一APIでまとめて品質・速度・コストで最適化して管理しAIエージェントがどれだけの金額を使用できるかも制御できるオープンソースのゲートウェイ・ルーター「Experiential」",
+      "uid": "a27f70396fa1d412",
+      "url": "https://gigazine.net/news/20260921-experiential/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-21T06:25:21.527248+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2374,30 +2398,6 @@
       "title": "「AIを盗む」のではなく「AIを動かす」ために　Googleが捉えた攻撃者の異変",
       "uid": "747689048bda4b03",
       "url": "https://kn.itmedia.co.jp/kn/article/2609/15/2000001459/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T21:50:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "製造現場でのAI活用への期待は高まっているが、実際に効果を得るためにはデータの整備や知見の形式知化が必要だ。その作業負荷が重くなるためになかなかAI活用に至らないケースも多い。その中で、工場の現場状況のデータ化を地道に進め、今では複数のAIエージェントを組み合わせた作業支援などを実現しているのが、パナソニック インダストリーの山口拠点だ。その取り組みを紹介する。",
-      "title": "なぜ現場でAIを使いこなせるのか、パナソニック インダストリー山口拠点の10年",
-      "uid": "893e063d2408689a",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/15/news058.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T23:10:08.125153+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T21:21:49+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "中国外務省の郭副報道局長は定例会見で、米AI企業トップらが訴える開発減速論について問われ、脅威論や悪質な競争はグローバルなAIガバナンスを阻害するだけだと反論した。また、BRICS首脳会議で習近平国家主席がオープンソースAIコミュニティの設立を提唱したことも明らかにした。",
-      "title": "中国外務省、AI開発「減速論」に反応　「恐怖をあおることや対立、悪性の競争は誰の利益にもならない」",
-      "uid": "a57e35df80c8426e",
-      "url": "https://www.itmedia.co.jp/news/article/2609/15/2000001469/",
       "vendor": "ITmedia AI+"
     }
   ]
