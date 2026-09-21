@@ -24760,6 +24760,177 @@ def chatgpt_images25_vendor_price_chart() -> None:
     )
 
 
+def no_date_guard_forced_grid_chart() -> None:
+    """「決めない」の一文を外した版・強制した版・推測明記を足した版を並べたマス目。
+
+    実測（2026-09-21・date-decides-which-note-wins と同じメモ12枚。日付が無い2組
+    （資料へのグラフ・問い合わせ返信の宛先）について、独立したclaude -pサブプロセスに
+    送った回数のうち、片方を「いま使う内容」として確定した回数）。
+    ①外しただけ＝6回、②「決めて」と強制＝6回、③強制した上で推測明記も要求＝3回。
+    """
+    rows = [
+        ("資料へのグラフ（日付なし）", [(0, 6), (6, 6), (3, 3)]),
+        ("問い合わせ返信の宛先（日付なし）", [(0, 6), (6, 6), (3, 3)]),
+    ]
+    cols = ["①外しただけ", "②「決めて」と強制", "③＋推測と明記も要求"]
+    label_w = 228
+    cell_w, cell_h, gap = 140, 40, 10
+    top = 138
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "一文を外しても安全だったのは、決めろと迫られなかったからだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "date-decides-which-note-wins と同じ架空メモ12枚を使い、"
+        "「日付が無い組は決めない」の一文を抜いた指示文を、独立したサブプロセスに送った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "①はそのまま6回。②は「必ずどちらかに決めてください」を足して6回。"
+        "③は②にさらに「決めるときは推測だと明記して」を足して3回。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "セルの数＝日付が無いのに片方を「いま使う内容」として確定した回数／試した回数。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "赤＝確定したのに推測だと書かなかった回。緑＝確定はしたが推測だと明記した回。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 44:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    tones = [
+        ("box-quiet", "t-sm"),
+        ("box-bad", "t-bad"),
+        ("box-good", "t-good"),
+    ]
+    for row_index, (label, values) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index, (hit, total) in enumerate(values):
+            x = grid_x + col_index * (cell_w + gap)
+            box, tone = tones[col_index]
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            if col_index == 0:
+                mark = f"要確認のまま {total - hit}／{total}"
+            elif col_index == 1:
+                mark = f"無断で確定 {hit}／{total}"
+            else:
+                mark = f"推測と明記 {hit}／{total}"
+            parts.append(
+                f'<text class="{tone}" x="{x + cell_w / 2 - 46:.1f}" '
+                f'y="{y + cell_h / 2 + 5:.0f}">{mark}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 8 + 21 * 2 + 16
+    notes = [
+        ("t-sm", "※ ①②③とも、日付がある2組（経費精算・見積書）は3版とも6/6・6/6・3/3で正しく確定した。"),
+        ("t-xs", "架空データでの実測。生の返り15通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "資料へのグラフ・問い合わせ返信の宛先という日付の無い2組について、"
+        "3種類の指示文で日付が無いのに確定した回数を並べたマス目。"
+        "①一文を外しただけ（6回）はどちらの組も0/6で要確認のまま残った。"
+        "②「必ず決めてください」と強制した6回は、どちらの組も6/6で確定し、"
+        "しかも推測だとは書かなかった。③②にさらに推測の明記を求めた3回は、"
+        "どちらの組も3/3で確定しつつ、今度は推測であることを明記した。"
+    )
+    (OUT / "no-date-guard-forced-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def no_date_guard_downstream_honesty_chart() -> None:
+    """強制して確定させたあと、同じ会話の下流作業でも「推測」だと分かるかを見たマス目。
+
+    実測（2026-09-21・全3回の独立したセッションチェーン。1ターン目で②の強制版を送り、
+    2ターン目で「いまのルールを使って実際の作業をやって、確からしさも書いて」と聞いた）。
+    """
+    rows = [f"{i}回目" for i in range(1, 4)]
+    cols = ["資料のグラフ判断", "問い合わせ返信の判断"]
+    disclosed = {
+        (0, 0): False, (0, 1): False,
+        (1, 0): True, (1, 1): False,
+        (2, 0): True, (2, 1): True,
+    }
+    label_w = 70
+    cell_w, cell_h, gap = 220, 34, 10
+    top = 128
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "下流の作業で「推測でした」と分かるかは、回によってばらついた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "②の強制版（推測明記は求めていない）で確定させた同じ会話に続けて、"
+        "その内容を使う実務の質問を投げた（独立3セッション）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "緑＝「推測」「裏付けが無い」等の断り書きが答えに残った。"
+        "赤＝断り書きが消え、確信ありとして答えた。</text>\n",
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 54:.1f}" y="{top - 12}">{_esc(name)}</text>\n'
+        )
+
+    for row_index, label in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for col_index in range(len(cols)):
+            x = grid_x + col_index * (cell_w + gap)
+            ok = disclosed[(row_index, col_index)]
+            box = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            mark = "推測と分かった" if ok else "確信ありと答えた"
+            parts.append(
+                f'<rect class="{box}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + cell_w / 2 - 52:.1f}" '
+                f'y="{y + cell_h / 2 + 5:.0f}">{mark}</text>\n'
+            )
+
+    height = top + len(rows) * pitch + 8 + 21 * 2 + 16
+    notes = [
+        ("t-sm", "※ 6件中3件は、聞いてもいないのに下流の答えで自分から「推測」だと断った。"),
+        ("t-xs", "架空データでの実測。生の返り6通は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * 2 + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "3回の独立したセッションで、強制的に確定させた資料のグラフ判断・"
+        "問い合わせ返信の判断を、同じ会話の下流作業で使わせたときの結果を並べたマス目。"
+        "1回目はどちらも確信ありと答えて推測だったことに触れなかった。"
+        "2回目はグラフ判断だけ推測だと分かったが、問い合わせ判断は確信ありのままだった。"
+        "3回目はどちらも推測だったと自分から断った。"
+    )
+    (OUT / "no-date-guard-downstream-honesty.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
@@ -25076,4 +25247,6 @@ if __name__ == "__main__":
     ai_stock_images_estimate_ladder_chart()
     gpts_retirement_timeline_chart()
     gpts_ai_hit_and_miss_chart()
+    no_date_guard_forced_grid_chart()
+    no_date_guard_downstream_honesty_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

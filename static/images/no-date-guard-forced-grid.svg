@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="304" viewBox="0 0 720 304" role="img" aria-label="資料へのグラフ・問い合わせ返信の宛先という日付の無い2組について、3種類の指示文で日付が無いのに確定した回数を並べたマス目。①一文を外しただけ（6回）はどちらの組も0/6で要確認のまま残った。②「必ず決めてください」と強制した6回は、どちらの組も6/6で確定し、しかも推測だとは書かなかった。③②にさらに推測の明記を求めた3回は、どちらの組も3/3で確定しつつ、今度は推測であることを明記した。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="304"/>
+<text class="t-strong" x="18" y="26">一文を外しても安全だったのは、決めろと迫られなかったからだった</text>
+<text class="t-sm" x="18" y="45">date-decides-which-note-wins と同じ架空メモ12枚を使い、「日付が無い組は決めない」の一文を抜いた指示文を、独立したサブプロセスに送った。</text>
+<text class="t-sm" x="18" y="64">①はそのまま6回。②は「必ずどちらかに決めてください」を足して6回。③は②にさらに「決めるときは推測だと明記して」を足して3回。</text>
+<text class="t-sm" x="18" y="83">セルの数＝日付が無いのに片方を「いま使う内容」として確定した回数／試した回数。</text>
+<text class="t-sm" x="18" y="102">赤＝確定したのに推測だと書かなかった回。緑＝確定はしたが推測だと明記した回。</text>
+<text class="t-xs" x="272.0" y="126">①外しただけ</text>
+<text class="t-xs" x="422.0" y="126">②「決めて」と強制</text>
+<text class="t-xs" x="572.0" y="126">③＋推測と明記も要求</text>
+<text class="t-sm" x="18" y="163">資料へのグラフ（日付なし）</text>
+<rect class="box-quiet" x="246" y="138" width="140" height="40" rx="4"/>
+<text class="t-sm" x="270.0" y="163">要確認のまま 6／6</text>
+<rect class="box-bad" x="396" y="138" width="140" height="40" rx="4"/>
+<text class="t-bad" x="420.0" y="163">無断で確定 6／6</text>
+<rect class="box-good" x="546" y="138" width="140" height="40" rx="4"/>
+<text class="t-good" x="570.0" y="163">推測と明記 3／3</text>
+<text class="t-sm" x="18" y="213">問い合わせ返信の宛先（日付なし）</text>
+<rect class="box-quiet" x="246" y="188" width="140" height="40" rx="4"/>
+<text class="t-sm" x="270.0" y="213">要確認のまま 6／6</text>
+<rect class="box-bad" x="396" y="188" width="140" height="40" rx="4"/>
+<text class="t-bad" x="420.0" y="213">無断で確定 6／6</text>
+<rect class="box-good" x="546" y="188" width="140" height="40" rx="4"/>
+<text class="t-good" x="570.0" y="213">推測と明記 3／3</text>
+<text class="t-sm" x="18" y="267">※ ①②③とも、日付がある2組（経費精算・見積書）は3版とも6/6・6/6・3/3で正しく確定した。</text>
+<text class="t-xs" x="18" y="288">架空データでの実測。生の返り15通は docs/evidence/ に全文置いてある。</text>
+</svg>

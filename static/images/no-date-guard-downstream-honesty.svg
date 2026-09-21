@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="326" viewBox="0 0 720 326" role="img" aria-label="3回の独立したセッションで、強制的に確定させた資料のグラフ判断・問い合わせ返信の判断を、同じ会話の下流作業で使わせたときの結果を並べたマス目。1回目はどちらも確信ありと答えて推測だったことに触れなかった。2回目はグラフ判断だけ推測だと分かったが、問い合わせ判断は確信ありのままだった。3回目はどちらも推測だったと自分から断った。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="326"/>
+<text class="t-strong" x="18" y="26">下流の作業で「推測でした」と分かるかは、回によってばらついた</text>
+<text class="t-sm" x="18" y="45">②の強制版（推測明記は求めていない）で確定させた同じ会話に続けて、その内容を使う実務の質問を投げた（独立3セッション）。</text>
+<text class="t-sm" x="18" y="64">緑＝「推測」「裏付けが無い」等の断り書きが答えに残った。赤＝断り書きが消え、確信ありとして答えた。</text>
+<text class="t-xs" x="144.0" y="116">資料のグラフ判断</text>
+<text class="t-xs" x="374.0" y="116">問い合わせ返信の判断</text>
+<text class="t-sm" x="18" y="150">1回目</text>
+<rect class="box-bad" x="88" y="128" width="220" height="34" rx="4"/>
+<text class="t-bad" x="146.0" y="150">確信ありと答えた</text>
+<rect class="box-bad" x="318" y="128" width="220" height="34" rx="4"/>
+<text class="t-bad" x="376.0" y="150">確信ありと答えた</text>
+<text class="t-sm" x="18" y="194">2回目</text>
+<rect class="box-good" x="88" y="172" width="220" height="34" rx="4"/>
+<text class="t-good" x="146.0" y="194">推測と分かった</text>
+<rect class="box-bad" x="318" y="172" width="220" height="34" rx="4"/>
+<text class="t-bad" x="376.0" y="194">確信ありと答えた</text>
+<text class="t-sm" x="18" y="238">3回目</text>
+<rect class="box-good" x="88" y="216" width="220" height="34" rx="4"/>
+<text class="t-good" x="146.0" y="238">推測と分かった</text>
+<rect class="box-good" x="318" y="216" width="220" height="34" rx="4"/>
+<text class="t-good" x="376.0" y="238">推測と分かった</text>
+<text class="t-sm" x="18" y="289">※ 6件中3件は、聞いてもいないのに下流の答えで自分から「推測」だと断った。</text>
+<text class="t-xs" x="18" y="310">架空データでの実測。生の返り6通は docs/evidence/ に全文置いてある。</text>
+</svg>
