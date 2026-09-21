@@ -721,15 +721,23 @@
     提供していなければ「提供していない」と書く（無理に並べない）
   - ⚠️ ChatGPT 内での見え方（どのプランで使えるか等）は読めない（`chatgpt.com`・`help.openai.com` は bot 判定）。
     **API 側の数字だけで書く。**書けないことは「発表ページが読めないため確認できなかった」と明記する
-- [ ] https://openai.com/index/introducing-gpt-live-1-in-the-api
+- [x] https://openai.com/index/introducing-gpt-live-1-in-the-api
+  - →保管: ✅ **2026-09-21: 公開した** → `content/tools/gpt-live-1-api.md`
+    （発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金・
+    ガイドページで執筆。図3枚（`gptlive1-architecture-grid` / `gptlive1-concurrent-tiers` /
+    `gptlive1-vendor-voice-price`）。出典10件すべて取得成功。`check_numbers.py` は照合できる数字10個
+    すべてが出典に存在。pytest 657 passed・build 214ファイル）
+  - 📌 記事の芯＝**GPT-Live 1は「音声」と「頭脳」を分けた新しいアーキテクチャで、$0.05/分の
+    音声セッション料金にはバックエンドのモデル代が含まれない**（Realtime APIは1モデルで完結する
+    別エンドポイント。相互に差し替え不可）。電話（SIP・G.711）に公式対応、同時セッションはTierで
+    25〜500。Free プランは対象外
+  - 他社比較はGemini 3.8 Liveの分あたり音声単価（入力$0.005・出力$0.018）と突き合わせ、GPT-Live 1の
+    セッション料金だけで既にどちらより高いことを確認。Anthropicは音声対話モデルの記載なし
+    （platform.claude.comを今回改めて確認・fontクラス名以外にvoiceの言及なし）
+  - ⚠️ 「custom voices」はRSS要旨にあるが、GPT-Live 1自身のガイドに説明が無く、見つかったのは
+    Realtime向け別ガイドの「承認された顧客のみ」の記載。GPT-Live 1に同じ制限が及ぶかは確認できず、
+    記事にもそう明記した
   - 2026-09-20 手動追記（`news.json` では 9/10 の minor。8/5 の `[!]` 行（ChatGPT 側の GPT-Live）とは別＝API 提供の発表）
-  - 出典の振り替え＝① RSS の description（「full-duplex voice conversations … custom voices, and telephony support」）
-    ② `developers.openai.com/api/docs/models/gpt-live-1.md`（手元実測: $0.05/分・秒単位課金・
-    「Backend model and tool usage is billed separately」・同時セッション数 Tier 1=25〜Tier 5=500・Free は不可）
-    ③ `developers.openai.com/api/docs/pricing.md` の GPT-Live 1 の行 ④ 音声ガイド `/api/docs/guides/live`（`.md` を付けて読む）
-  - 集めたい数字＝セッション単価・頭脳側モデルの別料金・同時セッション上限・telephony／カスタム音声の記載
-  - 比較相手＝Gemini 3.8 Live（`content/tools/gemini-3-8-live.md` の出典を再利用）。
-    ⚠️ **課金の単位が違う（分課金 vs トークン課金）なら表を分ける**＝3.8 Live 記事の前例どおり
 - [ ] https://sakana.ai/marlin-update/
   - 2026-09-20 手動追記（`news.json` では 9/15 の minor。`sakana.ai` は 9/14・9/16 にクラウドから到達できている）
   - 集めたい数字＝発表ページ（最大8時間・数十ページ・今年6月公開）と、料金ページ `sakana.ai/marlin/`
@@ -744,6 +752,15 @@
 
 ## 処理済み
 
+- https://openai.com/index/introducing-gpt-live-1-in-the-api → **公開済み** content/tools/gpt-live-1-api.md（2026-09-21・公開）
+  - 発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金・
+    ガイドページで執筆。図3枚（`gptlive1-architecture-grid` / `gptlive1-concurrent-tiers` /
+    `gptlive1-vendor-voice-price`）。出典10件すべて取得成功。`check_numbers.py` は**10個すべて出典に存在**。
+    pytest 657 passed・build 214ファイル。
+  - 📌 記事の芯＝GPT-Live 1は「音声」と「頭脳」を分けた新アーキテクチャで、$0.05/分の音声セッション
+    料金にはバックエンドのモデル代が含まれない。電話（SIP）に公式対応、同時セッションはTierで25〜500・
+    Freeプラン対象外。他社比較ではGemini 3.8 Liveの分あたり音声単価より、GPT-Live 1のセッション料金
+    だけで既に高いことを確認した。
 - https://openai.com/index/introducing-chatgpt-images-2-5 → **公開済み** content/tools/chatgpt-images-2-5.md（2026-09-20・公開）
   - 発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金ページ・
     ガイドで執筆。図3枚（`chatgpt-images25-price-lineage` / `chatgpt-images25-old-vs-new` /

@@ -25072,6 +25072,199 @@ def tone_fix_two_metrics_chart() -> None:
     )
 
 
+def gptlive1_architecture_grid_chart() -> None:
+    """GPT-Live・Realtime API・連結パイプラインの3つの音声アーキテクチャを比べる表。
+
+    出典＝OpenAI公式ドキュメント「Voice agents」（developers.openai.com・2026-09-21確認）の
+    比較表（Architecture / Best for / Why choose it）を、そのまま3列に並べたもの。
+    """
+    rows = [
+        ("向いている場面", "全二重の会話+\n別モデルの頭脳", "音声・思考・道具を\n1セッションで完結",
+         "各段階を自分で\n検査・置換したい時"),
+        ("選ぶ理由", "既存の処理はそのまま\n頭脳だけ選べる", "1つのモデルが\n音声のまま応答",
+         "中間のテキストを\n検査・置換できる"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 128
+    pitch, box_h = 58, 48
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GPT-Liveは「音声」と「頭脳」を分けた、3つ目の音声アーキテクチャ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "OpenAI公式ドキュメント「Voice agents」の比較表に書かれている3つの選択肢を並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "GPT-Liveは会話を続けながら、頭脳役のモデルを独立して選べる点が他の2つと違う。</text>\n",
+    ]
+    headers = ["GPT-Live（新）", "Realtime API", "連結パイプライン"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, gptlive_v, realtime_v, chained_v in rows:
+        ty = y + 18
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((gptlive_v, realtime_v, chained_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else "box-quiet"
+            tcls = "t-accent" if i == 0 else "t-sm"
+            parts.append(
+                f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "GPT-Live・Realtime API・連結パイプラインという3つの音声アーキテクチャを比べた表。"
+        "向いている場面＝GPT-Liveは全二重の会話+別モデルの頭脳、Realtime APIは音声・思考・"
+        "道具を1セッションで完結、連結パイプラインは各段階を自分で検査・置換したい時。"
+        "選ぶ理由＝GPT-Liveは既存の処理はそのまま頭脳だけ選べる、Realtime APIは1つのモデルが"
+        "音声のまま応答、連結パイプラインは中間のテキストを検査・置換できる。"
+        "出典はOpenAI公式ドキュメント「Voice agents」の比較表。"
+    )
+    (OUT / "gptlive1-architecture-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gptlive1_concurrent_tiers_chart() -> None:
+    """GPT-Live 1の同時セッション数が、契約Tierごとにどう増えるかを示す。
+
+    出典＝GPT-Live 1のモデルページ（developers.openai.com・2026-09-21確認）の
+    Rate limits表。Freeプランはそもそも対象外（Unsupported usage tiers: Free）。
+    """
+    rows = [
+        ("Tier 1", 25),
+        ("Tier 2", 50),
+        ("Tier 3", 200),
+        ("Tier 4", 300),
+        ("Tier 5", 500),
+    ]
+    top_value = 500.0
+
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 20, 32
+    scale = span / top_value
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GPT-Live 1の同時通話数は、契約Tierで25から500まで20倍広がる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同時に開けるライブセッションの数（Concurrent sessions）。上のTierほど枠が広い。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Freeプランはそもそも利用できない（Unsupported usage tiers: Free）。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 4}">'
+            f"{value:g}セッション</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 52
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: GPT-Live 1のモデルページ（developers.openai.com・2026年9月21日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ バックエンド（頭脳役）のモデル呼び出しは、これとは別のレート制限に従う。</text>\n"
+    )
+    alt = (
+        "GPT-Live 1の同時セッション数を契約Tierごとに比べた横棒グラフ。"
+        "Tier 1は25セッション、Tier 2は50セッション、Tier 3は200セッション、"
+        "Tier 4は300セッション、Tier 5は500セッションで、上位ほど枠が広がる。"
+        "Freeプランはそもそも利用できない。バックエンド（頭脳役）のモデル呼び出しは"
+        "これとは別のレート制限に従う。"
+    )
+    (OUT / "gptlive1-concurrent-tiers.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gptlive1_vendor_voice_price_chart() -> None:
+    """GPT-Live 1のセッション料金と、Gemini 3.8 Liveの音声単価（分あたり換算）を並べる。
+
+    出典＝GPT-Live 1はモデルページ（developers.openai.com）、Geminiは料金ページ
+    （ai.google.dev）。どちらも公式が「1分あたり」で明記している値だけを使い、
+    トークン単価からの換算はしていない（2026-09-21確認）。
+    """
+    rows = [
+        ("GPT-Live 1（音声のみ・頭脳代別）", 0.05, "bar-new"),
+        ("Gemini 3.8 Live（音声入力）", 0.005, "bar-old"),
+        ("Gemini 3.8 Live（音声出力）", 0.018, "bar-old"),
+    ]
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 20, 32
+    biggest = max(value for _, value, _ in rows)
+    scale = span / biggest
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GPT-Live 1のセッション料金は、頭脳代を足す前からGeminiの音声単価より高い</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "どちらも公式が「1分あたり」で明記している値。トークン単価からの換算はしていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "GPT-Live 1の$0.05は音声のやり取りだけの値段で、頭脳役の別モデルの代金は含まれていない。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 4}">'
+            f"{_usd(value)}/分</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 52
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: GPT-Live 1はdevelopers.openai.comのモデルページ、Geminiはai.google.dev"
+        "の料金ページ（いずれも2026年9月21日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Geminiは音声も頭脳も1つの料金にまとまっており、課金の仕組みが違うため単純比較はできない。</text>\n"
+    )
+    alt = (
+        "GPT-Live 1のセッション料金と、Gemini 3.8 Liveの音声単価を比べた横棒グラフ。"
+        "1分あたりのドル。GPT-Live 1（音声のみ・頭脳代は別）は0.05ドル、"
+        "Gemini 3.8 Liveの音声入力は0.005ドル、音声出力は0.018ドル。"
+        "GPT-Live 1の0.05ドルは音声のやり取りだけの値段で、頭脳役の別モデルの代金は含まれていない。"
+        "Geminiは音声も頭脳も1つの料金にまとまっており、課金の仕組みが違うため単純比較はできない。"
+    )
+    (OUT / "gptlive1-vendor-voice-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
@@ -25392,4 +25585,7 @@ if __name__ == "__main__":
     no_date_guard_downstream_honesty_chart()
     tone_length_same_verdict_chart()
     tone_fix_two_metrics_chart()
+    gptlive1_architecture_grid_chart()
+    gptlive1_concurrent_tiers_chart()
+    gptlive1_vendor_voice_price_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

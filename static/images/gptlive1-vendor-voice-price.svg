@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="244" viewBox="0 0 720 244" role="img" aria-label="GPT-Live 1のセッション料金と、Gemini 3.8 Liveの音声単価を比べた横棒グラフ。1分あたりのドル。GPT-Live 1（音声のみ・頭脳代は別）は0.05ドル、Gemini 3.8 Liveの音声入力は0.005ドル、音声出力は0.018ドル。GPT-Live 1の0.05ドルは音声のやり取りだけの値段で、頭脳役の別モデルの代金は含まれていない。Geminiは音声も頭脳も1つの料金にまとまっており、課金の仕組みが違うため単純比較はできない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="244"/>
+<text class="t-strong" x="18" y="26">GPT-Live 1のセッション料金は、頭脳代を足す前からGeminiの音声単価より高い</text>
+<text class="t-sm" x="18" y="45">どちらも公式が「1分あたり」で明記している値。トークン単価からの換算はしていない。</text>
+<text class="t-sm" x="18" y="64">GPT-Live 1の$0.05は音声のやり取りだけの値段で、頭脳役の別モデルの代金は含まれていない。</text>
+<text class="t" x="18" y="112">GPT-Live 1（音声のみ・頭脳代別）</text>
+<rect class="bar-new" x="268" y="96" width="348.0" height="20" rx="2"/>
+<text class="t-sm" x="624.0" y="112">$0.05/分</text>
+<text class="t" x="18" y="144">Gemini 3.8 Live（音声入力）</text>
+<rect class="bar-old" x="268" y="128" width="34.8" height="20" rx="2"/>
+<text class="t-sm" x="310.8" y="144">$0.005/分</text>
+<text class="t" x="18" y="176">Gemini 3.8 Live（音声出力）</text>
+<rect class="bar-old" x="268" y="160" width="125.3" height="20" rx="2"/>
+<text class="t-sm" x="401.3" y="176">$0.018/分</text>
+<text class="t-xs" x="18" y="214">※ 出典: GPT-Live 1はdevelopers.openai.comのモデルページ、Geminiはai.google.devの料金ページ（いずれも2026年9月21日に確認）。</text>
+<text class="t-xs" x="18" y="232">※ Geminiは音声も頭脳も1つの料金にまとまっており、課金の仕組みが違うため単純比較はできない。</text>
+</svg>
