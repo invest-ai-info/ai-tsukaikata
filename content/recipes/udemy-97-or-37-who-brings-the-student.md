@@ -124,9 +124,17 @@ Udemyは講座を「作って置く」型です。置いたあと、**誰が客�
 **推定は「3,000円 × 本数 × 97%（自分の集客）または 37%（Udemyの集客）」で、本数と経路の割合が本人の頑張り次第の前提です。**
 
 <div class="money-note">
-金額の目安（推定・3,000円の講座・税とアプリ手数料は考えない）: 月10本なら 29,100円（全部が自分の紹介リンク経由）〜11,100円（全部がUdemy経由）／月30本なら 87,300円〜33,300円／月100本なら 291,000円（準本業帯）〜111,000円（副業帯）。年に直すと 100本で 3,492,000円〜1,332,000円
+金額の目安（推定・3,000円の講座・税とアプリ手数料は考えない）:
+
+| 月の本数 | 全部が自分の紹介リンク経由 | 全部がUdemy経由 |
+|---|---|---|
+| 10本 | 29,100円 | 11,100円 |
+| 30本 | 87,300円 | 33,300円 |
+| 100本 | 291,000円（準本業帯） | 111,000円（副業帯） |
+
+年に直すと 100本で 3,492,000円〜1,332,000円
 根拠: 「instructors receive 97% of the revenue when the student purchases their content using an instructor's coupon or referral link」「instructors receive 37% of the revenue for any Udemy sales where no instructor coupon or course referral link was used」「revenue shares on the Net Amount, which is the amount a student paid less any applicable taxes or fees, such as the 30% fee imposed by Apple or Google」（出典: <a href="https://support.udemy.com/hc/en-us/articles/229605008-Instructor-revenue-share">Instructor revenue share</a>・2026-09-18確認）× 本数（10・30・100本はこちらが置いた前提。何本売れるかの出典は無い）
-Udemy Business（定額）で見られた分は「15% of monthly subscription revenue」のプールを視聴分数で按分するので、本数の式に入れていません（出典: <a href="https://support.udemy.com/hc/en-us/articles/115013221767-How-do-I-earn-revenue-from-Udemy-Business-and-subscription-plans">How do I earn revenue from Udemy Business and subscription plans?</a>・2026-09-18確認）。支払いはPayPal／Payoneer（米国外）で、最低額と時期は今回開いた出典に無いので書いていません。副業で月20万円以上を得ている人は、副業者1万1,358人の調査で10.8%（20万〜25万円未満3.9%＋25万円以上6.9%）です（出典: <a href="https://www.jil.go.jp/institute/research/2024/documents/0245_01.pdf">JILPT 調査シリーズNo.245「副業者の就労に関する調査」本文PDF</a> 図表2-4-21・2022年10月実施のインターネット調査・2026-09-18確認）。この金額は目安であり、収益を保証するものではありません。
+Udemy Business（定額）で見られた分は、本数の式に入れていません。「15% of monthly subscription revenue」のプールを視聴分数で按分する仕組みだからです（出典: <a href="https://support.udemy.com/hc/en-us/articles/115013221767-How-do-I-earn-revenue-from-Udemy-Business-and-subscription-plans">How do I earn revenue from Udemy Business and subscription plans?</a>・2026-09-18確認）。支払いはPayPal／Payoneer（米国外）で、最低額と時期は今回開いた出典に無いので書いていません。副業で月20万円以上を得ている人は、副業者1万1,358人の調査で10.8%でした（20万〜25万円未満3.9%＋25万円以上6.9%）。出典は<a href="https://www.jil.go.jp/institute/research/2024/documents/0245_01.pdf">JILPT 調査シリーズNo.245「副業者の就労に関する調査」本文PDF</a>の図表2-4-21です（2022年10月実施のインターネット調査・2026-09-18確認）。この金額は目安であり、収益を保証するものではありません。
 </div>
 
 <figure class="figure">

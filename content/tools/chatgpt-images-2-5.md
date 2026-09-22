@@ -13,12 +13,12 @@ tags: [ChatGPT, OpenAI, 画像生成, 料金, AI最新情報]
 OpenAIは2026年9月8日、ChatGPTの画像生成を刷新したと発表しました（出典: <https://openai.com/news/rss.xml>）。3行にすると、こうなります。
 
 - **新しいAPIモデルは「gpt-image-2.5 Sunburst」（編集精度重視）と「gpt-image-2.5 Flare」（速さ重視）の2本立て**です（出典: <https://developers.openai.com/api/docs/guides/image-generation>）。
-- 画像出力トークンの単価は100万トークンあたり **$30**。以前ChatGPTで使われていたモデル（`chatgpt-image-latest`）の **$32** より下がりました（出典: <https://developers.openai.com/api/docs/pricing>）。
+- 画像出力トークンの単価は100万トークンあたり **$30**。以前ChatGPTで使われていたモデル（`chatgpt-image-latest`）は **$32** でした（出典: <https://developers.openai.com/api/docs/pricing>）。
 - <mark class="warn">ただし新モデルは、まとめて安く処理する「Batch」に対応していません</mark>。旧モデルは対応していて半額になります（出典: <https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst>）。
 
 先に断っておきます。**この記事は運営者がこの機能を実際に試した記録ではありません。**公式ドキュメントに書かれていることを読んで整理したものです。「きれいになった」「思い通りに描けた」といった使用感は一切書いていません。
 
-🚨 **この発表のページ（`openai.com/index/introducing-chatgpt-images-2-5`）は、この記事を書いた環境からCloudflareのbot判定で読めませんでした**（実際に叩くと `cf-mitigated: challenge` というヘッダ付きの403が返ってきます。同じ `openai.com` のRSSは200で返るので、経路の問題ではなく先方の判定です）。そのため、この記事は次の2つだけで書いています。
+🚨 **この発表のページ（`openai.com/index/introducing-chatgpt-images-2-5`）は、この記事を書いた環境からCloudflareのbot判定で読めませんでした。**実際に叩くと `cf-mitigated: challenge` というヘッダ付きの403が返ってきます。同じ `openai.com` のRSSは200で返るので、経路の問題ではなく先方の判定です。そのため、この記事は次の2つだけで書いています。
 
 1. OpenAIの公式ニュースRSS（<https://openai.com/news/rss.xml>）に載っている要旨1文
 2. `developers.openai.com` のモデルページ・料金ページ・開発者ガイド（いずれも200で読めました）

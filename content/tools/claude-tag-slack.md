@@ -50,9 +50,9 @@ Claude Tagは、Slack上にいる既存の「Claude in Slack」アプリを置�
 
 この記事の型では、他社の最上位モデルや同等の製品と料金・仕様を突き合わせます。ただし今回は**その比較ができませんでした**。理由を正直に書きます。
 
-- OpenAIがSlack向けに提供しているとされる連携機能について、`openai.com` と `help.openai.com` のページはこの記事を書いた環境からはいずれも403でした（URLが正しく現存するかどうかも含めて確認できていません）。応答ヘッダーに `cf-mitigated: challenge` が付いており、これは<mark>先方のbot判定であって、経路の遮断ではありません</mark>。同じ `openai.com` のRSSフィード（`openai.com/news/rss.xml`）は200で返るのが切り分けの根拠です。
+- OpenAIがSlack向けに提供しているとされる連携機能について、`openai.com` と `help.openai.com` のページはこの記事を書いた環境からはいずれも403でした。URLが正しく現存するかどうかも含めて確認できていません。応答ヘッダーに `cf-mitigated: challenge` が付いており、これは<mark>先方のbot判定であって、経路の遮断ではありません</mark>。同じ `openai.com` のRSSフィード（`openai.com/news/rss.xml`）は200で返るのが切り分けの根拠です。
 - Microsoftの「Microsoft 365 Copilot」やSalesforceの「Agentforce」に関連すると思われる公式ページ（`learn.microsoft.com`・`help.salesforce.com` など）は、`CONNECT tunnel failed` で止まりました。この環境の許可リストによる経路の遮断で、bot判定とは別種の理由です。
-- Googleの「Gemini Enterprise」（`cloud.google.com/gemini-enterprise`）は本体ページには到達できましたが、料金ページは中身が見つからず、Slackとの連携について具体的な数字は確認できませんでした。
+- Googleの「Gemini Enterprise」（`cloud.google.com/gemini-enterprise`）は本体ページには到達できました。ただし料金ページは中身が見つからず、Slackとの連携について具体的な数字は確認できませんでした。
 
 つまり、**チャンネルに常駐してチーム全員から仕事を任せられるAI**という同じ土俵の製品を、他社の公式ページの数字で突き合わせることが、この環境からはできませんでした。二次情報（まとめ記事や個人ブログ）の数字を写すことはしないので、この記事では比較を保留にしています。
 

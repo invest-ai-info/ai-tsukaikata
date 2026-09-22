@@ -32,7 +32,7 @@ Sakana AI は発表ページに、Fugu の展開をこう振り返っていま�
 | 2026年8月 | Sakana Chatの提供・**NVIDIA Nemotron**ファミリーとの連携開始 |
 | 2026年9月（今回） | Fugu Max・Fugu Ultra v2 |
 
-<mark>Fugu Max は「Sakana Fugu がオーケストレーションできるモデルの数を増やした」もので、NVIDIA との連携で Nemotron ファミリーを含む、オープンウェイトと専門モデルの組み合わせをこれまでで最も多く統合したと公式は説明しています</mark>（出典: 同上）。
+<mark>Fugu Max は「Sakana Fugu がオーケストレーションできるモデルの数を増やした」ものです。</mark>NVIDIA との連携で Nemotron ファミリーを含む、オープンウェイトと専門モデルの組み合わせをこれまでで最も多く統合したと公式は説明しています（出典: 同上）。
 
 ### Fugu Ultra v1.1 → v2 のベンチマーク
 
@@ -106,7 +106,12 @@ Fugu Ultra v2 のグラフには、Claude Opus 5・Claude Fable 5.1・GPT-6 Astr
 <figcaption>8項目中7項目で上位2位。ProgramBenchだけ4位だった</figcaption>
 </figure>
 
-<mark>8項目のうち7項目で上位2位に入っていますが、ProgramBenchだけは GPT-6 Astra（85.4）・Claude Fable 5.1（82.7）・Claude Opus 5（82.3）の3モデルに次ぐ4位（81.0）でした</mark>（出典: 同上）。「Fugu Ultra v2は複雑な多段タスクで新しい基準を作った」という発表文の中でも、この1項目だけは他社の3モデルすべてに及んでいません。
+<mark>8項目のうち7項目で上位2位に入っています。</mark>ただしProgramBenchだけは4位（81.0）でした。上にいるのは次の3モデルです（出典: 同上）。
+
+- GPT-6 Astra（85.4）
+- Claude Fable 5.1（82.7）
+- Claude Opus 5（82.3）
+「Fugu Ultra v2は複雑な多段タスクで新しい基準を作った」という発表文の中でも、この1項目だけは他社の3モデルすべてに及んでいません。
 
 比較に使った各社の最上位モデルの単価も、公式ページで確認できる範囲で並べておきます。
 
