@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-22T03:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ナレッジホールディングスは、AI検索・生成AIの利用状況と職場でどこまでオープンにしているかについて、男女301名を対象にインターネット調査を実施した。",
+      "title": "仕事でAIを使っていること上司や同僚に伝えている？調査結果が明らかに 伝えない理由は「手を抜いていそうと思われそう」",
+      "uid": "4fff41d53945e7c4",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2141154.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T02:49:24+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、数学者が設立した独立組織「AGMAI」と連携し、AIによる数学的成果の評価や公表方法について助言を受けると発表した。社内モデルによる100件以上の未解決問題解決を受けた動きで、急速な成果発表や帰属問題を巡る数学界からの批判に対応する。組織は独立して運営され、他社への助言も行う方針だ。",
+      "title": "OpenAI、数学者の独立諮問グループと連携　内部モデルは「100件超の未解決問題を解決」",
+      "uid": "ef0210697aa64f9e",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001671/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T01:51:09+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "た。各国のAI安全性研究所の連携などを提案し、制御不能な自律的進化を防ぐ枠組みを求める。アルトマンCEOは国連安保理の公開会合でも発言する予定だ。",
+      "title": "OpenAI、フロンティアAIの国際標準づくりを米国主導で進めるよう提言　「RSIはまだ起きていない」",
+      "uid": "ce6b4830d2eef80a",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001670/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-22T01:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "プログラムの作成や修正をAIに任せるとき、単価の安いAIモデルを選べば費用も抑えられると思いがちです。ところが、AIの動作監視や評価を手がけるFiddlerの研究チームが複数のAIモデルに不具合を修正させて比べたところ、単価が安くても、正しく修正するための費用はかえって高くなる場合があることが分かりました。 続きを読む...",
+      "title": "単価の安いAIモデルを使うとかえってコストが高くつくことがあるという研究結果",
+      "uid": "db20c77f1ca2911f",
+      "url": "https://gigazine.net/news/20260922-cheaper-ai-coding-cost/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T00:43:43+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AmazonがMetaのAIエージェント「Muse」による自社サイトでの代理購入をブロックしたと報じられた。無断アクセスやセキュリティ上のリスクを理由としている。一方、MetaはShopify全ストアへの対応を発表するなど連携拡大を進める。自社サイトでのAIエージェント排除を強めるAmazonとの対立が鮮明になっている。",
+      "title": "Amazon、MetaのAIエージェント「Muse」による代理購入をブロック　Shopifyは全店舗で対応へ",
+      "uid": "27b5e10ab2e51f50",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001669/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-21T23:46:47+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "SpaceXAIはAIモデル「Grok 4.7」を発表した。前モデルと同価格・同速度を維持しつつ大規模なベースモデルを採用し、コーディングや長時間の業務タスク性能、安全性を強化した。[Cursor](https://www.itmedia.co.jp/news/article/2606/17/1260617066/)やAPI経由で即日提供し、競合の最新モデルと比べ大幅な低コストと高速性を打ち出し…",
+      "title": "SpaceXAI、「Grok 4.7」発表　コーディングと知識労働向けで同社最高性能、価格は据え置き",
+      "uid": "f5598a272a0be24a",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001668/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-21T23:19:56.757982+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -23,6 +95,30 @@
       "uid": "6b657b85c3882db6",
       "url": "https://gigazine.net/news/20260922-ai-climber-rescued/",
       "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-21T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "製造業では工場シミュレーションが重要な役割を果たす。しかしシミュレーションモデルの構築には専用ソフトウェアと専門言語の高度な知識が要り、属人化しやすい。キユーピーでは、生成AIによる高度化、効率化を目指していたが、それには3つの課題があった。どう対応したのか。",
+      "title": "キユーピー、AIで工場シミュレーションモデルの開発工数を8割削減　3つの壁をどう乗り越えた？",
+      "uid": "ee4ab958e040ffea",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/22/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-22T05:03:14.351666+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-21T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIがあればレガシー刷新は楽になる――。この期待に冷や水を浴びせる予測が発表されました。2026年度上半期（4～9月）のシステム刷新関連記事トップ10を紹介し、「システム刷新における生成AIの現在地」と「AI時代に人に残る役割」に迫ります。",
+      "title": "脱メインフレーム、7割超が失敗　背景に「生成AIへの過信」　2026年度上半期システム刷新記事ランキング",
+      "uid": "fa4dc1aa3b0c4f41",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/22/news018.html",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-09-21T23:19:56.757982+00:00",
@@ -2303,102 +2399,6 @@
       "uid": "5d353b984571ad1e",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140926.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-15T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NVIDIAが、韓国のスタートアップで推論用NPU（Neural Processing Unit）に強みを持つRebellionsと協議を行っているという。技術提携のみならず、出資や買収も視野に入れているとされる。",
-      "title": "推論領域への野心強めるNVIDIA　韓国新興と協議か",
-      "uid": "6bdd070d09d03d6f",
-      "url": "https://eetimes.itmedia.co.jp/ee/articles/2609/15/news061.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-15T01:28:40+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "GMOインターネットグループのGMO天秤AIは、東京大学発行のメールアドレスを持つ学生にAIを無料提供すると発表。GMOインターネットグループ代表の熊谷正寿氏も、自身で開発したAIサービスと合わせて利用していると公言している。",
-      "title": "「東大生無料」AIサービスが話題　GMO系列　「本サービスは東京大学とは無関係」",
-      "uid": "0ab5f72a8064ce8c",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/15/2000001473/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T01:31:41.645080+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T00:42:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIモデル「Claude」で知られるAnthropicの新規株式公開(IPO)が2026年11月に行われる見込みであることがわかりました。IPOでは約1000億ドル(約15兆5000億円)を調達予定で、そのうち100億ドル(約1兆5000億円)分をNVIDIAがアンカー投資家として出資するか検討していると報じられています。 続きを読む...",
-      "title": "Anthropicの新規株式公開に対してNVIDIAがアンカー投資家として1.5兆円の出資を検討か",
-      "uid": "e1036e3e42fee5dc",
-      "url": "https://gigazine.net/news/20260915-anthropic-mega-ipo/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-14T23:10:08.125153+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-14T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年9月、生成AIツールのClaudeを開発するAnthropicの脅威インテリジェンスチームが、Claudeを悪用しようとした事例についてまとめたレポートを公開しました。このレポートの中で、「科学者が生物兵器の設計を試みた可能性がある事例」についても報告されていますが、科学者らの反応はさまざまだと学術誌のScienceが報じています。 続きを読む...",
-      "title": "「科学者がAIで生物兵器の設計を試みている可能性がある」とAnthropicが報告するも専門家の見解はさまざま",
-      "uid": "252bd566f5c8b3d8",
-      "url": "https://gigazine.net/news/20260915-ai-bioweapons-report-anthropic-divides-experts/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T01:31:41.645080+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの活用が広がる一方、最も定着している業務でも、7割は業務システムとは別の画面で生成AIを利用していた。こうした状況は、生成AI活用にどのような影響を及ぼしているのか。調査結果から実態を探る。",
-      "title": "生成AIを「別画面」で使い続けて本当によいのか？　300人調査で見えた活用定着の“壁”",
-      "uid": "aa438663dba2370d",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news042.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T01:31:41.645080+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "国内の会議支援AI市場は2025年度に前年度比35.1％増と急伸した。汎用（はんよう）の生成AIツールでも議事録を作成できるのに、なぜ会議支援AIのニーズは伸び続けるのか。ITRの調査が示す、需要の変化とは。",
-      "title": "なぜ、会議支援AI市場が35・1％も成長？　「議事録作成」で終わらないニーズとは",
-      "uid": "ba09e1029a9175e9",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/14/news023.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T01:31:41.645080+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "毎日の安全で快適な生活を陰で支えてきた、ビルメンテナンス業界の在り方が大きく変わろうとしている。昨今の人手不足に加え、長年の課題である「ワンマン管理による属人化」の影響で、ノウハウの継承や若手育成が危ぶまれているのだ。",
-      "title": "ビル管理で進む「属人化」解消なるか　東京建物らが開設、新たな「基地」が持つ5つの機能",
-      "uid": "41864eade1617766",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/15/news052.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-14T23:10:08.125153+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-14T22:30:10+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "トランプ米大統領はSNSへの投稿で、AIに必要なガードレールは強く賢い大統領だけで十分だと述べ、AI企業に対する刑事・規制上の強い権限を強調した。AnthropicのアモデイCEOを名指しで批判し、AI開発を妨げる動きを中国を利する陰謀だと非難して、米国の優位性を維持する姿勢を示した。",
-      "title": "トランプ大統領、アモデイ氏を名指しで「完璧な小さい天使のふり」　「AIに必要なガードレールは強く賢い大統領だけ」",
-      "uid": "486b6603b73208a4",
-      "url": "https://www.itmedia.co.jp/news/article/2609/15/2000001470/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
