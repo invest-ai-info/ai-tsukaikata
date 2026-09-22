@@ -56,7 +56,7 @@ WeatherNext 3は、風力発電のタービンの高さに近い**上空100mの�
 
 発表ページによると、WeatherNext 3は2026年9月3日から、Google検索・Gemini アプリ・Google マップ・Google Maps Platform Weather API・Google Earth Engineに組み込まれ始めています（出典: 同上）。開発者・企業向けには、BigQueryとEarth Engineでのクエリ、Google Cloud Storageからの一括ダウンロードが用意されています（出典: 同上）。
 
-料金については、WeatherNext専用の価格表は発表ページに見当たりません。Earth Engineの一般的な料金ページには、非営利団体・研究者は「非営利・研究目的のプロジェクトであれば追加料金なしで利用できる」と明記されています（出典: <https://cloud.google.com/earth-engine/pricing>）。商用利用の計算課金は利用量に応じた段階制で、たとえば同ページには「1時間あたり0.40ドル〜0.16ドル（利用量が多いほど単価が下がる）」という計算単位（EECU時間）の料金が載っていますが、これはEarth Engine全体の一般料金であり、WeatherNextのデータ取得だけに絞った専用の金額ではありません（出典: 同上）。
+料金については、WeatherNext専用の価格表は発表ページに見当たりません。Earth Engineの一般的な料金ページには、非営利団体・研究者は「非営利・研究目的のプロジェクトであれば追加料金なしで利用できる」と明記されています（出典: <https://cloud.google.com/earth-engine/pricing>）。商用利用の計算課金は、利用量に応じた段階制です。同ページには「1時間あたり0.40ドル〜0.16ドル（利用量が多いほど単価が下がる）」という計算単位（EECU時間）の料金が載っています（出典: 同上）。⚠️ これはEarth Engine全体の一般料金であって、WeatherNextのデータ取得だけに絞った専用の金額ではありません。
 
 ## 他社の最上位モデルとの比較
 
@@ -75,11 +75,22 @@ Anthropic・OpenAIの公式ページを確認しましたが、両社とも気�
 
 **一方で、公開の仕方は正反対です。**Aurora 1.5は「Released as open source on GitHub with model checkpoints on Hugging Face」と明記されていて、モデルの重み自体をダウンロードして使える形で公開されています（出典: 同上）。<mark>WeatherNext 3は、GoogleのSearch・Maps・Gemini・クラウドサービスに統合される形で提供され、モデル自体を配布する記述は発表ページにありません。</mark>
 
-**自社発表の比較指標も、測り方がまったく違います。**Googleは「IMERGとの比較でCRPSが最大60%改善」と説明し、Microsoftは「Aurora 1.5の確率的な予報は、ECMWFの最先端のアンサンブル予報（ECMWF ENS）に対して、評価対象の88.9%の項目で上回った」と説明しています（出典: 同上）。<mark class="warn">CRPSの改善率と、比較対象を上回った項目の割合は、そもそも単位も基準も違う数字です。「どちらの精度が高いか」をこの2つの数字から言い切ることはできません。</mark>
+**自社発表の比較指標も、測り方がまったく違います。**それぞれの説明はこうです（出典: 同上）。
 
-なお、Aurora 1.5より前の「Aurora」（2024年6月3日公開・Natureに2025年掲載）は、0.1度（赤道付近でおよそ11km）の空間解像度、13億パラメータ、数値予報システムIFSに対しておよそ5,000倍の計算速度、GraphCastというAIモデルに対して94%の項目で同等以上、大気汚染予測ではCAMSという指標に対して74%の項目で上回ったと発表されています（出典: <https://www.microsoft.com/en-us/research/blog/introducing-aurora-the-first-large-scale-foundation-model-of-the-atmosphere/>）。<mark class="warn">ただし、この解像度の数字は2024年時点の（1.5より前の）Auroraのものです。Aurora 1.5の発表ブログには、空間解像度を具体的な数値で言い直した記述が見当たりませんでした。</mark>そのため、WeatherNext 3の「5km/10km/25km」とAurora 1.5の解像度を、そのまま並べて比べることはできません。
+- Google「IMERGとの比較でCRPSが最大60%改善」
+- Microsoft「Aurora 1.5の確率的な予報は、ECMWFの最先端のアンサンブル予報（ECMWF ENS）に対して、評価対象の88.9%の項目で上回った」
+<mark class="warn">CRPSの改善率と、比較対象を上回った項目の割合は、そもそも単位も基準も違う数字です。「どちらの精度が高いか」をこの2つの数字から言い切ることはできません。</mark>
 
-Aurora 1.5の発表ページには、2024〜2025年に発生した熱帯低気圧すべてに対する評価で、進路の予測誤差が元のAuroraに比べて「およそ3分の1」小さくなった（アンサンブルの中央値、5日先の予測で最も改善幅が大きい）とも書かれています（出典: 同上）。これはWeatherNext 3側に対応する数字が発表ページに見当たらないため、比較のしようがない項目としてそのまま書いておきます。
+なお、Aurora 1.5より前の「Aurora」（2024年6月3日公開・Natureに2025年掲載）は、次のように発表されています（出典: <https://www.microsoft.com/en-us/research/blog/introducing-aurora-the-first-large-scale-foundation-model-of-the-atmosphere/>）。
+
+- 空間解像度は0.1度（赤道付近でおよそ11km）
+- 13億パラメータ
+- 数値予報システムIFSに対しておよそ5,000倍の計算速度
+- GraphCastというAIモデルに対して94%の項目で同等以上
+- 大気汚染予測ではCAMSという指標に対して74%の項目で上回った
+<mark class="warn">ただし、この解像度の数字は2024年時点の（1.5より前の）Auroraのものです。Aurora 1.5の発表ブログには、空間解像度を具体的な数値で言い直した記述が見当たりませんでした。</mark>そのため、WeatherNext 3の「5km/10km/25km」とAurora 1.5の解像度を、そのまま並べて比べることはできません。
+
+Aurora 1.5の発表ページには、進路の予測誤差についても書かれています（出典: 同上）。2024〜2025年に発生した熱帯低気圧すべてに対する評価で、元のAuroraに比べて「およそ3分の1」小さくなったとのことです（アンサンブルの中央値、5日先の予測で最も改善幅が大きい）。これはWeatherNext 3側に対応する数字が発表ページに見当たらないため、比較のしようがない項目としてそのまま書いておきます。
 
 料金についても、Microsoft側に専用の価格表は見当たりません。商用利用は「Aurora 1.5 on Microsoft Foundry」への案内と、公式ブログに記載されたメールでの問い合わせ先が書かれているだけです（出典: 同上）。**両社とも、気象AI単体の料金をドルで明示したページは見つかりませんでした。**
 
@@ -112,6 +123,10 @@ Aurora 1.5の発表ページには、2024〜2025年に発生した熱帯低気�
 4. Aurora 1.5の発表（Microsoft Research・2026年7月9日）: <https://www.microsoft.com/en-us/research/blog/aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applications/>
 5. Auroraの発表（Microsoft Research・2024年6月3日）: <https://www.microsoft.com/en-us/research/blog/introducing-aurora-the-first-large-scale-foundation-model-of-the-atmosphere/>
 
-なお、独立の気象AI評価機関「Brightband」のサイトと、Googleの実験公開プラットフォーム「Weather Lab」は、この記事を書いた環境からは到達できませんでした（許可リストに無いホストという理由で、先方のブロックではありません）。発表ページが引用している「独立評価による『最も高精度』」という評価そのものは、この記事では検証していません。この記事で使った数字は、すべて上記5件の到達できたページから確認しています。
+なお、次の2つは、この記事を書いた環境からは到達できませんでした（許可リストに無いホストという理由で、先方のブロックではありません）。
+
+- 独立の気象AI評価機関「Brightband」のサイト
+- Googleの実験公開プラットフォーム「Weather Lab」
+発表ページが引用している「独立評価による『最も高精度』」という評価そのものは、この記事では検証していません。この記事で使った数字は、すべて上記5件の到達できたページから確認しています。
 
 料金と仕様は変わります。実際に使う前に、必ず上記の公式ページで現在の値を確認してください。
