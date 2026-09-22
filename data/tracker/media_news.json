@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-22T14:58:53.077478+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-22T12:22:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIはChatGPTやCodexといったサービスを展開しており、ユーザー数は2026年7月末時点で10億人に達しています。OpenAIは10億人を超えるユーザーのデータを自社製オンラインストレージシステム「Habitat」で管理しているとのこと。このHabitatの詳細がOpenAIの公式ブログで解説されています。 続きを読む...",
+      "title": "OpenAIが10億人以上・40ペタバイト超えのユーザーデータを扱う自社製ストレージシステム「Habitat」について解説",
+      "uid": "d4fd11bebd9e6d78",
+      "url": "https://gigazine.net/news/20260922-openai-storage-habitat/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-22T10:02:14.932272+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "Microsoftが「人間はAIより重要」とするAI行動規範を発表、AIの意識や権利を否定",
       "uid": "a887083b50bdeaa8",
       "url": "https://gigazine.net/news/20260915-microsoft-humanist-ai-code-of-conduct/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T02:16:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年9月14日、Appleが「iOS 27」「iPadOS 27」「macOS 27」「watchOS 27」「visionOS 27」「tvOS 27」を順次展開すると発表しました。今回のメジャーアップデートでiPhone、iPad、Mac、Apple Watch、Apple Vision ProでSiri AIが利用可能となります。ただし、記事作成時点でSiri AIは英語のベータ版の…",
-      "title": "「iOS 27」「macOS 27」「iPadOS 27」など一斉リリース、ただしAI Siriの日本語対応は後日",
-      "uid": "3643ede7e5cb9d84",
-      "url": "https://gigazine.net/news/20260915-ios-27-macos-ipados/",
       "vendor": "GIGAZINE"
     }
   ]
