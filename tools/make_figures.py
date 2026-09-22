@@ -22918,6 +22918,153 @@ def backlog_scale_holds_brevity_breaks_it_fixes_chart() -> None:
     )
 
 
+def narrowed_criteria_fixes_dirty_not_clean_conditions_chart() -> None:
+    """基準を固定する対策は、誤りが実在するときだけ効き、健全なときの巻き添えは消えない。
+
+    実測（2026-09-22）。架空の社内ヘルプデスク問い合わせを2本、独立したAIの新規プロセスで
+    各2回ずつ実行した。健全な5件だけを渡す条件と、誤り1件を混ぜた6件を渡す条件の両方で、
+    確認あり版（対策なし／基準を固定する対策あり）を比較した。
+    """
+    rows = [
+        ("確認あり・対策なし（健全5件）", 0, 4),
+        ("確認あり・対策なし（誤り混入6件）", 3, 4),
+        ("確認あり＋基準固定（健全5件）", 0, 4),
+        ("確認あり＋基準固定（誤り混入6件）", 4, 4),
+    ]
+    label_w = 270
+    cell_w, cell_h, gap = 170, 32, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "対策は、誤りが実在するときだけ効いた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の問い合わせを2本、独立したAIの新規プロセスで各2回ずつ実行した（材料2本×各2回=4回）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「健全5件」は誤りを含まない一覧、「誤り混入6件」は解決済みの至急を1件混ぜた一覧。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、健全な項目を巻き込まず正しく処理できた回数。生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 正しく処理"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 56
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "対策は誤り混入6件を3/4→4/4に上げたが、健全5件は0/4のままだった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "健全5件で除外される項目は変わったが、巻き添えの件数そのものは減らなかった。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "工程2の確認指示に「除外の基準を固定する」対策を足したとき、健全な5件だけの条件と、"
+        "誤りを1件混ぜた6件の条件で、正しく処理できた回数を比べたマス目。対策なしの確認版は、"
+        "健全5件で材料2本×各2回=4回中0回しか正しく処理できず、誤り混入6件では4回中3回だった。"
+        "基準を固定する対策を足すと、誤り混入6件では4回中4回に上がったが、健全5件は対策後も"
+        "4回中0回のままで、巻き添えは無くならなかった。"
+    )
+    (OUT / "narrowed-criteria-fixes-dirty-not-clean-conditions.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def narrowed_criteria_fixes_dirty_not_clean_all_versions_chart() -> None:
+    """6つの指示文それぞれで、健全な項目を巻き込まず正しく処理できた回数。
+
+    実測（2026-09-22）。指示文1〜6の全体像を横棒グラフで並べる。
+    """
+    groups = [
+        ("1. 確認あり・対策なし（健全5件）", 0, 4, "誤って1件を毎回除外"),
+        ("2. 確認あり・対策なし（誤り6件）", 3, 4, "誤りは検出。1回だけ健全な項目も巻き添え"),
+        ("3. 確認あり＋基準固定（健全5件）", 0, 4, "除外される項目が変わっただけ"),
+        ("4. 確認あり＋基準固定（誤り6件）", 4, 4, "誤りだけを正しく除外"),
+        ("5. 確認あり＋軽い基準固定（健全5件）", 1, 4, "4回中1回だけ安定"),
+        ("6. 確認あり＋基準固定＋引用（誤り6件）", 4, 4, "誤りだけを除外。根拠を引用つきで確認可能"),
+    ]
+    top = 168
+    bar_h = 34
+    pitch = bar_h + 32
+    plot_x, plot_w = 330, 310
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "指示文1〜6を並べると、条件で効き方が分かれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "健全5件・誤り混入6件それぞれに、材料2本×各2回=4回ずつ通した。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "正しい答えは、どの回も「健全な項目を1件も巻き込まないこと」。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, note) in enumerate(groups):
+        y = top + index * pitch
+        ok = val == n
+        box = "box-good" if ok else ("box-bad" if val == 0 else "box-accent")
+        tone = "t-good" if ok else "t-bad"
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "指示文1〜6それぞれで、健全な項目を巻き込まず正しく処理できた回数を比べた横棒グラフ。"
+        "確認あり・対策なしは健全5件で0/4（毎回1件を誤って除外）、誤り混入6件で3/4"
+        "（誤りは4回とも検出したが1回だけ健全な項目も巻き添え）。基準を固定する対策を足すと、"
+        "健全5件は0/4のまま（除外される項目が変わっただけ）で、誤り混入6件は4/4に上がった。"
+        "軽い言い方に変えた基準固定は健全5件で1/4にとどまった。基準固定に引用の指定を"
+        "加えた版は誤り混入6件で4/4を維持し、除外の根拠を本文の語句で確認できた。"
+    )
+    (OUT / "narrowed-criteria-fixes-dirty-not-clean-all-versions.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def formula_subtotal_goes_beside_not_below_chart() -> None:
     """集計欄をデータの真下に置くと、AIは6回中5回、二重計上・循環参照の危険に気づかない。
 
@@ -25433,6 +25580,8 @@ if __name__ == "__main__":
     doubt_fixes_added_not_dropped_chart()
     backlog_scale_holds_brevity_breaks_it_scale_chart()
     backlog_scale_holds_brevity_breaks_it_fixes_chart()
+    narrowed_criteria_fixes_dirty_not_clean_conditions_chart()
+    narrowed_criteria_fixes_dirty_not_clean_all_versions_chart()
     formula_subtotal_goes_beside_not_below_chart()
     few_records_still_count_the_numbers_chart()
     estimate_leak_steps_with_fill_count_chart()
