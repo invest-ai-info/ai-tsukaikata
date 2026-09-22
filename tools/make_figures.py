@@ -25943,7 +25943,209 @@ def prep_second_blank_format_shift_chart() -> None:
     )
 
 
+def _yen(value: float) -> str:
+    """1234567 のような円額を「¥1,234,567」の形にする（小数は四捨五入）。"""
+    return f"¥{round(value):,}"
+
+
+def marlin_run_cost_by_plan_chart() -> None:
+    """Sakana Marlinのプランごとに、リサーチ1回あたりの実質金額を比べる。
+
+    出典＝料金ページ（sakana.ai/marlin/・2026-09-22確認）の「1実行100クレジット」と
+    プランごとのクレジット単価・月額・付与クレジット数。1回あたりの金額は、
+    月額を「月内に付与されるクレジットでまかなえる回数」で割ったもので、
+    ページにそのまま書かれている数字ではなくこの記事の計算（Team=¥400,000÷60回）。
+    """
+    rows = [
+        ("従量課金（都度払い）", 9_800, "100クレジット×¥98/クレジット"),
+        ("Pro（月¥150,000）", 7_500, "月2,000クレジット付与＝20回ぶん"),
+        ("Team（月¥400,000）", 6_667, "月6,000クレジット付与＝60回ぶん"),
+    ]
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 20, 40
+    biggest = max(value for _, value, _ in rows)
+    scale = span / biggest
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Sakana Marlinは、月極めプランほど1回あたりが安くなる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "1回のリサーチは3プランとも100クレジットを使う。差はクレジット単価と月額の内訳。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "月額の内訳（¥150,000÷20回・¥400,000÷60回）はページの数字からこの記事が計算した。</text>\n",
+    ]
+    for index, (name, value, note) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        cls = "bar-new" if index > 0 else "bar-old"
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 4}">'
+            f"{_yen(value)}/回</text>\n"
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{y + bar_h + 12}">{_esc(note)}</text>\n')
+
+    height = top + len(rows) * pitch + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 22}">'
+        "※ 出典: Sakana Marlin 料金ページ（sakana.ai/marlin/・2026年9月22日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ 1回あたりの円額はこの記事の計算（月額÷月内に使い切れる回数）。ページに直接の記載はない。</text>\n"
+    )
+    alt = (
+        "Sakana Marlinのプランごとに、リサーチ1回あたりの実質金額を比べた横棒グラフ。"
+        "従量課金（都度払い）は100クレジット×98円で9,800円/回。"
+        "Pro（月15万円）は月2,000クレジット付与で20回ぶんに相当し7,500円/回。"
+        "Team（月40万円）は月6,000クレジット付与で60回ぶんに相当し6,667円/回。"
+        "1回あたりの円額は記事側の計算（月額÷月内に使い切れる回数）で、ページに直接の記載はない。"
+    )
+    (OUT / "marlin-run-cost-by-plan.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def marlin_vendor_grid_chart() -> None:
+    """Sakana Marlin・OpenAI Deep Research・Google Gemini Deep Researchの3つを、
+    提供形態・実行時間・最安の始め方で比べる表。
+
+    出典＝Sakana Marlinは料金ページ（sakana.ai/marlin/）、OpenAIは開発者ガイド
+    「Deep research」（developers.openai.com）とモデル料金ページ、Googleは
+    Deep Researchの紹介ページ（gemini.google/overview/deep-research/）とプラン
+    ページ（gemini.google/subscriptions/）（いずれも2026-09-22確認）。
+    """
+    rows = [
+        ("提供形態", "法人向けSaaS\n（クレジット制）", "開発者向けAPI\n（トークン課金）", "個人向けアプリの\n機能（無料枠あり）"),
+        ("実行時間の目安", "最大8時間\n（公式の表現）", "数十分\n（公式の表現）", "数分\n（公式の表現）"),
+        ("最安で始める値段", "1回¥9,800\n（従量課金）", "単価は非公開\n（モデル単体は$10/百万\nトークン〜）", "$0/月\nFreeプランに含む"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 128
+    pitch, box_h = 72, 62
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「AIに調べさせる」の値段は、3社で単位からして違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Sakana Marlinはリサーチ1回ごとの課金、OpenAIは開発者向けのトークン課金、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Googleは個人向けサブスクの一機能。単位が違うため1本の表には並べられない。</text>\n",
+    ]
+    headers = ["Sakana Marlin", "OpenAI Deep Research", "Google Gemini\nDeep Research"]
+    for i, h in enumerate(headers):
+        for line_no, line in enumerate(h.split("\n")):
+            parts.append(
+                f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 28 + line_no * 15}">'
+                f"{_esc(line)}</text>\n"
+            )
+
+    y = top
+    for label, marlin_v, openai_v, google_v in rows:
+        ty = y + 18
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        for i, val in enumerate((marlin_v, openai_v, google_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else "box-quiet"
+            tcls = "t-accent" if i == 0 else "t-sm"
+            parts.append(
+                f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 15}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "Sakana Marlin・OpenAI Deep Research・Google Gemini Deep Researchの3つを、"
+        "提供形態・実行時間の目安・最安で始める値段で比べた表。提供形態＝Sakana Marlinは"
+        "法人向けSaaS（クレジット制）、OpenAIは開発者向けAPI（トークン課金）、Googleは"
+        "個人向けアプリの機能（無料枠あり）。実行時間の目安＝Sakana Marlinは最大8時間、"
+        "OpenAIは数十分、Googleは数分（いずれも各社公式の表現）。最安で始める値段＝"
+        "Sakana Marlinは1回9,800円（従量課金）、OpenAIは単価非公開でモデル単体は"
+        "百万トークンあたり10ドルから、Googleは0ドル/月（Freeプランに含む）。"
+        "単位がそれぞれ違うため1本の表には並べられない。"
+    )
+    (OUT / "marlin-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def marlin_update_timeline_chart() -> None:
+    """Sakana Marlinが公開されてから、今回の更新までの年表。
+
+    出典＝更新発表ページ（sakana.ai/marlin-update/・2026-09-22確認）本文。
+    「3か月後」は「今年6月に公開」と「2026年9月16日に更新」からこの記事が計算した
+    月数で、発表ページに直接の記載はない（6月の正確な日付は書かれていない）。
+    """
+    rows = [
+        ("2026年6月", "Sakana Marlinを公開", "AB-MCTSで最大8時間の自律リサーチ、レポートを自動生成"),
+        ("2026年9月16日（公開の3か月後）", "Interactive Reading／PowerPoint出力を追加", "対話しながら出典を確認・編集可能なスライドで共有"),
+    ]
+    dot_x = 26
+    text_x = 50
+    top = 96
+    row_h = 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Sakana Marlinは、公開から3か月で「読む」ための機能を足した</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "2026年6月に公開し、9月16日に読み解き・共有まわりを補強するアップデートが来た。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「3か月後」は6月と9月16日からこの記事が計算した月数（6月の正確な日付は非公開）。</text>\n",
+    ]
+
+    last_y = top + (len(rows) - 1) * row_h
+    parts.append(f'<line class="line" x1="{dot_x}" y1="{top}" x2="{dot_x}" y2="{last_y}"/>\n')
+    for index, (date_label, title, desc) in enumerate(rows):
+        cy = top + index * row_h
+        cls = "box-accent" if index == len(rows) - 1 else "box-quiet"
+        parts.append(f'<circle class="{cls}" cx="{dot_x}" cy="{cy}" r="7"/>\n')
+        parts.append(f'<text class="t-xs" x="{text_x}" y="{cy - 8}">{_esc(date_label)}</text>\n')
+        parts.append(f'<text class="t-strong" x="{text_x}" y="{cy + 10}">{_esc(title)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{text_x}" y="{cy + 27}">{_esc(desc)}</text>\n')
+
+    height = last_y + 56
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 出典: Sakana Marlinの更新発表ページ（sakana.ai/marlin-update/・2026年9月22日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 「3か月後」はこの記事の計算。発表ページは公開月を「今年6月」とだけ書いている。</text>\n"
+    )
+
+    alt = (
+        "Sakana Marlinが公開されてから今回の更新までの年表。2026年6月、AB-MCTSで最大8時間の"
+        "自律リサーチを行いレポートを自動生成するSakana Marlinを公開。2026年9月16日"
+        "（公開の3か月後）、対話しながら出典を確認できるInteractive Readingと、編集可能な"
+        "PowerPoint出力を追加した。「3か月後」は記事側の計算で、発表ページは公開月を"
+        "「今年6月」とだけ書いている。"
+    )
+    (OUT / "marlin-update-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
+    marlin_run_cost_by_plan_chart()
+    marlin_vendor_grid_chart()
+    marlin_update_timeline_chart()
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
     chatgpt_images25_vendor_price_chart()

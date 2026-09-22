@@ -211,23 +211,29 @@
   - →保管: ✅ **2026-09-20: 公開した** → `content/tools/chatgpt-images-2-5.m
 - [x] https://openai.com/index/introducing-gpt-live-1-in-the-api
   - →保管: ✅ **2026-09-21: 公開した** → `content/tools/gpt-live-1-api.md`
-- [ ] https://sakana.ai/marlin-update/
-  - 2026-09-20 手動追記（`news.json` では 9/15 の minor。`sakana.ai` は 9/14・9/16 にクラウドから到達できている）
-  - 集めたい数字＝発表ページ（最大8時間・数十ページ・今年6月公開）と、料金ページ `sakana.ai/marlin/`
-    （手元実測 200: 1実行100クレジット・追加クレジット ¥98／¥90／¥85・毎月2,000／6,000クレジット付与・
-    プランは4つ・無料トライアルあり）。⚠️ `chat.sakana.ai` は経路遮断の前例あり＝叩かない
-  - 記事の芯＝「AIに調べさせて報告書にする」型の道具が、**読む側の手間**（裏取り・スライド化）まで
-    面倒を見るようになった話。読者に近い使い方＝会議前の調査を任せる
-  - 比較相手＝OpenAI の deep research（`developers.openai.com` の該当ガイド）・Google の Deep Research。
-    読めなければ「比較できなかった」と書く（無理に並べない）
-  - 📌 この minor が記事になれば、`sources.yml` の `sakana-blog` に `deepdive_minor: true` を付ける根拠になる
-    （CLAUDE.md「付けるのは minor が実際に記事になった会社だけ」）
+- [x] https://sakana.ai/marlin-update/
+  - →保管: ✅ **2026-09-22: 公開した** → `content/tools/sakana-marlin-interactive-reading.md`
 
 - [ ] https://www.anthropic.com/claude-opus-5-5
   - 2026-09-22 自動追記（major・Anthropic「Introducing Claude Opus 5.5」）
 
 ## 処理済み
 
+- https://sakana.ai/marlin-update/ → **公開済み** content/tools/sakana-marlin-interactive-reading.md（2026-09-22・公開）
+  - `sakana.ai/marlin-update/` と `sakana.ai/marlin/`（料金）に到達（いずれも200）。図3枚
+    （`marlin-run-cost-by-plan` / `marlin-vendor-grid` / `marlin-update-timeline`）。出典6件すべて取得成功。
+    `check_numbers.py` は**5個すべて出典に存在**。pytest 736 passed・build 220ファイル。
+  - 📌 記事の芯＝**Sakana Marlinの1回あたり実質コストは、月極めプランで使い切れる会社ほど下がる**
+    （従量課金¥9,800/回・Pro実質¥7,500/回・Team実質¥6,667/回。プラン別の実質額はページの数字から
+    この記事が計算した値）。
+  - ⚠️ 他社比較はOpenAI（`developers.openai.com`のDeep researchガイド・料金ページ）とGoogle
+    （`gemini.google/overview/deep-research/`・`gemini.google/subscriptions/`）で到達できたが、
+    **3社の提供形態そのものが違う**（Marlin=B2B SaaSのクレジット制、OpenAI=開発者向けAPIのトークン課金、
+    Google=個人向けサブスクの一機能で無料枠あり）ため1本の表には並べず、比較不能とそのまま明記した。
+    OpenAIの公式ガイドは`o3-deep-research`／`o4-mini-deep-research`と明記するが、料金ページには
+    この2モデル名の価格行が無く、単価は「公表されていない」と書いた。
+  - 📌 `sakana.ai` のminorがそのまま記事になった実例が増えた（`sources.yml`の`sakana-blog`に
+    `deepdive_minor: true`を付ける根拠になりうるが、`tracker/`は今回のスコープ外なので触っていない）。
 - https://openai.com/index/introducing-gpt-live-1-in-the-api → **公開済み** content/tools/gpt-live-1-api.md（2026-09-21・公開）
   - 発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金・
     ガイドページで執筆。図3枚（`gptlive1-architecture-grid` / `gptlive1-concurrent-tiers` /
