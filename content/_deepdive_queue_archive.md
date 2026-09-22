@@ -369,3 +369,217 @@
     1件あたりの費用は下がる」と書いている。⚠️ **その数字は公開されていない**ので記事では比率を出していない
   - ⚠️ **発表ページ本体は読めていない**ので、安全性の話（Preparedness Framework で Critical に達した
     最初のモデル）は **RSS の公式要旨の範囲だけ**にとどめ、記事にもそう明記した
+
+## 2026-09-22 回転
+
+- [x] https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/
+  - →保管: ✅ **2026-08-31 1回目: 公開した** → `content/tools/gemini-computer-use.md`
+    （`blog.google` へ302転送・到達できた。図3枚・出典8件すべて取得成功・check_numbers.py は12/12が出典に存在）
+  - 2026-08-31 手動追記（補充1件目。`news.json` の major お知らせのうち、読めるホストで未処理のもの）
+  - **このサイトの読者にいちばん近い題材**＝AIが画面を操作する＝コードを書かずに自動化する話そのもの
+  - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約379KB を実測）。
+    最終URL＝`blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/`。
+    **`deepmind.google` だけでなく `blog.google` にも届く必要がある。**届かなければ、それは経路遮断
+    （＝許可リストに足せば直る種類）なので、そう書いて止まること
+  - 集めたい数字＝**対応している操作の種類・制限・料金・使えるモデル**。
+    比較相手は Anthropic の computer use（`docs.claude.com` は許可リストに入っている）
+- [x] https://www.anthropic.com/news/introducing-claude-tag
+  - →保管: ✅ **2026-09-01 1回目: 公開した** → `content/tools/claude-tag-slack.md`
+    （`www.anthropic.com` に到達・図3枚。`check_numbers.py` は照合できる数字1個〈65%〉が出典に存在。
+    出典4件すべて取得成功。pytest 618 passed・build 137ファイル）
+  - 📌 公開日は2026-06-23（発表ページの表示日付）。待ち行列に積まれたのは2026-08-31だが、
+    「古い告知でも構わない」の方針どおり、checked日付を入れて処理した
+  - ⚠️ **他社比較は保留にした。**OpenAI（`openai.com`・`help.openai.com`）はbot判定の403、
+    Microsoft（`learn.microsoft.com`）・Salesforce（`help.salesforce.com`）は経路遮断
+    （`CONNECT tunnel failed`）で到達できず。Google（`cloud.google.com/gemini-enterprise`）は
+    本体ページのみ200で、料金・連携の詳細は確認できなかった。二次情報は使わず、
+    記事内で「比較できなかった」とそのまま書いた
+  - 🚨 旧アプリ「Claude in Slack」の詳細ページ（`support.claude.com`）は経路遮断で到達不可。
+    次にこのドメインを叩く行が来たら、まずここに記録した経路遮断を再試行対象にすること
+- [x] https://www.anthropic.com/news/reflect-with-claude
+  - →保管: ✅ **2026-09-02: 公開した** → `content/tools/reflect-with-claude.md`
+    （`www.anthropic.com` に到達。図3枚。出典は発表ページ1件のみ〈他は経路遮断・bot判定で
+    到達できず〉。数字が薄い題材で `check_numbers.py` は照合対象0個〈$・%が本文に無い〉。
+    pytest 618 passed・build 142ファイル）
+  - ⚠️ `help.openai.com`（OpenAIの個人利用分析ページ想定）は403（bot判定の可能性が高いが
+    ヘッダは未確認）。`knowledge.workspace.google.com`（GoogleのGemini利用レポート）は
+    `CONNECT tunnel failed`＝**経路遮断**。次にこのドメインを叩く行が来たら再試行対象にすること
+  - 📌 `support.claude.com` も引き続き経路遮断（Claude Tagの回と同じ）。Team・Enterpriseプランの
+    対象可否は発表ページに記載がなく、確認できていない
+- [x] https://deepmind.google/blog/introducing-agentic-video-in-gemini/
+  - →保管: ✅ **2026-09-03: 公開した** → `content/tools/gemini-agentic-video.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`agentic-video-gains` /
+    `agentic-video-timeline` / `agentic-video-modality`）。出典7件すべて取得成功
+    （うち1件は転送元URL）。`check_numbers.py` は照合できる数字10個すべてが出典に存在。
+    pytest 618 passed・build 146ファイル）
+  - 2026-09-01 自動追記（major・Google DeepMind「Introducing agentic video understanding with Gemini」）
+  - 📌 記事の芯＝**静的処理（1FPS一律）に対しエージェント型は必要な部分だけ動的に探索し、
+    長尺動画でトークン最大88%減・コスト最大66%減・精度最大7%向上（Google発表の「最大」値）。
+    ただし短い動画（5分未満）は探索のぶん最初の応答が遅くなるとドキュメントに明記されている**。
+    追加料金は無く標準トークン単価のまま
+  - ⚠️ **開発者ガイド（`ai.dev/learn/agentic-video-understanding-with-gemini`）は経路遮断**
+    （`Host not in allowlist: ai.dev`）。本文の数字はすべて `ai.google.dev`（別ホスト・到達可）と
+    発表ページ・料金ページから取れたため、この記事は止めずに書けた。次に `ai.dev` を叩く行が
+    来たら、まずここに記録した経路遮断を再試行対象にすること
+  - 他社比較は Anthropic（`platform.claude.com`）・OpenAI（`developers.openai.com`）とも到達でき、
+    どちらのモデル一覧にも「動画」の語が無いことを確認できた（二次情報は使っていない）
+- [x] https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/
+  - →保管: ✅ **2026-09-04: 公開した** → `content/tools/gemini-omni-1-1-flash.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`omni11-resolution-price` /
+    `omni11-vendor-720p-price` / `omni11-scene-extension`）。出典9件すべて取得成功。
+    `check_numbers.py` は照合できる数字11個すべてが出典に存在。pytest 618 passed・build 149ファイル）
+  - ⚠️ **価格表（360p/720p/1080p/4K）は発表ページのテキストではなく埋め込み画像**。
+    担当が画像を直接開いて目視で確認した（`gemini-omni-1.1-flash-pricing-ta...webp` を取得しPNG変換して読んだ）。
+    `check_numbers.py` は複数出典をまとめて照合するため、$0.03・$0.15 等は他ページの無関係な値と
+    偶然一致して「照合できた」扱いになっている可能性がある——**この記事の数字は画像の目視確認が根拠**であり、
+    自動照合はその裏付けにはなっていない。次にこの種の「価格が画像埋め込み」のページが来たら同じ手順
+    （画像URLを`curl`で取得→ PNG変換 → Read で目視）を使うとよい
+  - 📌 記事の芯＝**解像度で秒単価が10倍**（360p $0.03 〜 4K $0.30）。延長は10秒刻みで合計40秒が上限、
+    EU・スイス・英国はアップロード動画の延長が利用不可。比較したOpenAI Sora 2/Sora 2 Proは
+    2026年9月24日にAPI提供終了と告知されており（この記事の確認時点で20日後）、Anthropicは
+    動画生成モデルを提供していない
+  - 2026-09-02 手動追記（オーナー指示の例「Gemini の新しいモデル」。`news.json` では `minor`）
+- [x] https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/
+  - →保管: ✅ **2026-09-05: 公開した** → `content/tools/gemini-3-5-transcribe.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`transcribe-price-per-min` /
+    `transcribe-wer-by-benchmark` / `transcribe-vendor-grid`）。出典7件すべて取得成功。
+    `check_numbers.py` は照合できる数字21個すべてが出典に存在。pytest 625 passed・build 154ファイル）
+  - 2026-09-02 手動追記（同上。`news.json` では `minor`）
+  - ⚠️ **302 で `blog.google` へ飛ぶ**（手元で最終200・約401KB を実測）。最終URL＝
+    `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/`
+  - 集めたい数字＝**文字起こしの料金（分課金かトークン課金か。⚠️ 単位が違うなら表を分ける）・
+    対応言語・話者分離の有無**。このサイトの読者に近い題材＝会議の文字起こしを自動化する話
+  - 📌 記事の芯＝**話者分離は最大3人まで正式対応、それを超えると試験的だと発表ページに明記**。
+    誤り率（WER）は「全体平均」と「FLEURSベンチマーク（上位言語のみ）」で異なる2つの数字が
+    公式発表内に別々に載っており、単一の精度として合成できないため両方併記した。
+    料金は発表ページになく `ai.google.dev/gemini-api/docs/pricing` から取得。
+    配信版は事前録音版よりGeminiで約1.8倍、OpenAIの配信2モデルは事前録音の最安値の3倍以上
+    （いずれもこの記事の計算）。Anthropicは文字起こし専用モデルを公式ページに載せていない
+- [x] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
+  - →保管: ✅ **2026-09-06: 公開した** → `content/tools/gemini-3-8-flash.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`gemini38-price-three-gens` /
+    `gemini38-safety-delta` / `gemini38-vendor-top-price`）。出典8件すべて取得成功。
+    `check_numbers.py` は照合できる数字24個中23個が出典に存在、残る1個（`7.5%`）は
+    出典の生の行に `+7.5-9.7%` という結合表記であることを直接確認して残した
+    （消していない）。pytest 625 passed・build 158ファイル）
+  - 2026-09-02 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Flash and 3.8 Flash Cyber」）
+  - 📌 記事の芯＝**3.6・3.7・3.8の3世代とも導入価格が入力$0.75・出力$3.75で完全に同じ**
+    （2027年1月1日に3世代いっせいに$1.50/$7.50へ）。性能の比較表はモデルカードに
+    画像として埋め込まれており、配信元 `lh3.googleusercontent.com` に**経路遮断**
+    （`CONNECT tunnel failed, response 403`）で到達できず、本文中の数字だけで記事を書いた。
+    次にこのホストを叩く行が来たら、まずここに記録した経路遮断を再試行対象にすること
+  - ⚠️ **`deepmind.com`（`deepmind.google` ではない）も経路遮断**（evals-methodology ページ）。
+    こちらも次に来たら再試行対象
+  - ⚠️ Cyber版のモデルカードは404で存在せず、料金ページにも掲載が無い（Fairwind Program
+    経由の限定提供のみ・一般には使えない）ことを実際にURLを叩いて確認した
+- [x] https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/
+  - →保管: ✅ **2026-09-07: 公開した** → `content/tools/weathernext-3.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚（`weathernext3-resolution-grid` /
+    `weathernext3-precip-gain` / `weathernext3-vs-aurora`）。出典6件すべて取得成功。
+    `check_numbers.py` は照合できる数字7個すべてが出典に存在。pytest 655 passed・build 163ファイル）
+  - 📌 記事の芯＝**「全体でおよそ5倍鮮明」の中身は変数によって差がある**。気温・水分は25km→5km、
+    その他の地表変数は25km→10kmに上がった一方、大気の変数（上空の風速など）は前の世代と
+    同じ25kmのまま。降水精度の改善幅もIMERG比60%・MRMS比30%・雨量計比10%とバラバラ
+  - ⚠️ 他社比較はAnthropic・OpenAIに気象AI製品が無いため、同時期（2026-07-09）に大型更新を
+    発表したMicrosoftの「Aurora 1.5」を選んだ。更新頻度（両方1時間ごと）と予測手法
+    （両方アンサンブル・確率的）は同じ方向だが、公開の形（Googleは製品統合・Microsoftは
+    オープンソース）は正反対。自社発表の比較指標（CRPS改善率 vs ECMWF ENSに対する勝率）は
+    測り方が違うため1本の数字では比較できないと明記した
+  - ⚠️ Aurora 1.5の空間解像度は発表ブログに具体的な数値の記載が無かったため、2024年の
+    旧Aurora（0.1度・約11km）の数値とWeatherNext 3を直接比べることはしなかった
+  - 🚨 独立評価機関「Brightband」（`brightband.com`）と Google の実験公開プラットフォーム
+    「Weather Lab」（`weatherlab.deepmind.google`）は**経路遮断**（`CONNECT tunnel failed`）で
+    到達できず。次にこれらのドメインを叩く行が来たら再試行対象にすること
+- [x] /fugu-max-release/
+  - →保管: ✅ **2026-09-14 2回目（再試行）: 公開した** → `content/tools/sakana-fugu-max.md`
+    （経路遮断が解消。`sakana.ai/fugu-max-release/` は WebFetch・curl とも200。図4枚、
+    出典4件すべて取得成功、`check_numbers.py` は照合できる数字14個すべてが出典に存在）
+  - 2026-09-11 自動追記（major・Sakana AI「Introducing Fugu Max and Fugu Ultra v2: Orchestrating the Pareto Frontier」）
+  - 完全なURL＝`https://sakana.ai/fugu-max-release/`（`tracker/sources.yml` の `sakana-blog` は
+    `https://sakana.ai/feed.xml`。`news.json` の `url` はサイトルート相対なので補って読むこと）
+  - **2026-09-11 1回目: 下書きを作らずに停止した。**理由＝**経路遮断（`CONNECT tunnel failed, response 403`）**。
+    2026-09-14 に再試行したところ解消していた（下記）。
+
+    | 叩いた先 | 結果 |
+    |---|---|
+    | `sakana.ai/fugu-max-release/` | **`CONNECT tunnel failed, response 403`** |
+    | `sakana.ai/feed.xml` | **`CONNECT tunnel failed, response 403`** |
+    | `sakana.ai/`（ルート） | **`CONNECT tunnel failed, response 403`** |
+
+    - `sakana.ai` ドメイン全体がこの環境のプロキシで止まっている（3パスとも同じエラー）。
+      **応答ヘッダに `cf-mitigated` は無く、先方のbot判定を示す形跡も無い**——プロキシが
+      CONNECT自体を拒否しており、先方に届く前に止まっている。**経路（許可リスト）の遮断**と判定した。
+    - このサイトで Sakana AI の記事は初めて（`tools/` にまだ0本）。他社比較の候補は未調査
+      （①が解けてから、Anthropic・OpenAI・Google に同種の製品〈オーケストレーション／複数モデル切替〉が
+      あるかを確認すること）。
+- [x] https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/
+  - →保管: ✅ **2026-09-15: 公開した** → `content/tools/gemini-3-8-live.md`
+    （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚
+    （`gemini38live-benchmarks` / `gemini38live-price-same` / `gemini38live-vendor-grid`）。
+    出典10件すべて取得成功。`check_numbers.py` は照合できる数字16個すべてが出典に存在。
+    pytest 646 passed・build 184ファイル）
+  - 2026-09-15 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking」）
+- [x] https://sakana.ai/chat-fugumax/
+  - →保管: ✅ **2026-09-16: 公開した** → `content/tools/sakana-chat-memory.md`
+    （`sakana.ai` に到達（200）。図3枚（`sakana-chat-timeline` / `sakana-chat-model-lineup` /
+    `sakana-chat-memory-grid`）。出典6件すべて取得成功。`check_numbers.py` は照合対象0個
+    （$・%が本文に無い題材）。pytest 646 passed・build 187ファイル）
+  - 2026-09-16 自動追記（major・Sakana AI「Sakana Chatをアップデート：最新モデルに刷新、メモリー機能を追加」）
+  - 📌 記事の芯＝**メモリーで記憶されるのは更新以降の会話だけで、過去の会話は対象外**と発表ページに
+    明記されている。Google Gemini（過去チャットの記憶が前提）・Anthropic Claude（初期設定時に過去
+    チャットから生成可）と対比すると、Sakana Chatだけが過去に遡らない設計だと分かった。
+  - ⚠️ **Sakana Chat自体の料金ページ（`chat.sakana.ai`）は経路遮断**（`CONNECT tunnel failed, response 403`）。
+    `sakana.ai`（メインドメイン）は到達できるが、`chat.` サブドメインは別扱い。次にこのドメインを
+    叩く行が来たら再試行対象にすること。API向けの `sakana.ai/fugu/`（Fugu/Fugu Ultra/Fugu Maxの
+    料金FAQ）は到達できたが、Sakana Chat自体の価格とは別物のため記事では使っていない。
+  - ⚠️ OpenAI（ChatGPT）のメモリー機能は、公式ニュースRSS（`openai.com/news/rss.xml`）で見出しと
+    日付（2024-02-13・2026-06-04）だけ確認。本文（`openai.com`・`help.openai.com`・`chatgpt.com`）は
+    今回もすべてbot判定の403で、詳細は比較に使っていない。
+- [x] https://www.anthropic.com/news/life-sciences-verification-program
+  - →保管: ✅ **2026-09-17: 公開した** → `content/tools/claude-life-sciences-verification.md`
+    （`www.anthropic.com` に到達。図3枚（`lsvp-grant-types` / `lsvp-monitoring-shift` /
+    `lsvp-vendor-grid`）。出典7件すべて取得成功。`check_numbers.py` は照合できる数字8個すべてが
+    出典に存在。pytest 646 passed・build 190ファイル）
+  - 2026-09-17 自動追記（major・Anthropic「Introducing the Life Sciences Verification Program」）
+- [x] https://openai.com/index/introducing-chatgpt-images-2-5
+  - →保管: ✅ **2026-09-20: 公開した** → `content/tools/chatgpt-images-2-5.md`
+    （発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金ページ・
+    ガイドで執筆。図3枚（`chatgpt-images25-price-lineage` / `chatgpt-images25-old-vs-new` /
+    `chatgpt-images25-vendor-price`）。出典11件すべて取得成功。`check_numbers.py` は照合できる数字16個
+    すべてが出典に存在。pytest 656 passed・build 211ファイル）
+  - 📌 記事の芯＝**新モデル（Sunburst/Flare）は画質の選択肢が3→5段階に増え、出力単価も$32→$30に
+    下がったが、まとめて半額になる「Batch」処理には対応していない**（両モデルのEndpoints表で
+    `v1/batch: Not supported` と確認）。旧モデル（chatgpt-image-latest）が「以前ChatGPTで使われていた
+    スナップショット」と明記され、後継としてSunburstが公式に名指しされていることも確認した
+  - 他社比較はGoogleのNano Banana系3モデル（Lite/2/Pro）と突き合わせ、新モデルの単価はGoogleの
+    下位モデル（Lite）と同額・Google自身の最上位（Pro）の1/4だった。Anthropicはモデル一覧・料金ページ
+    のどちらにも画像生成モデルの記載が無いことを確認し「提供していない」と明記
+  - 2026-09-20 手動追記（`news.json` では 9/8 の major。`UNREADABLE_HOSTS` のため自動追記されなかった行）
+  - 🚨 発表ページは bot 判定で読めない前提（確かめるのは1回でよい）。出典は振り替える＝
+    ① `openai.com/news/rss.xml` の description（1文だけ。手元実測）
+    ② `developers.openai.com/api/docs/models/gpt-image-2.5-sunburst.md`・同 `gpt-image-2.5-flare.md`・
+    `developers.openai.com/api/docs/pricing.md`（「Image generation models」＝Prices per 1M tokens。手元で 200 を実測）
+  - 集めたい数字＝画像生成の単価を Sunburst／Flare／gpt-image-2／gpt-image-1.5 で並べる
+    （手元実測: Standard の表で Sunburst・Flare・gpt-image-2 は Image 入力 $8.00／キャッシュ $2.00／出力 $30.00 で同額、
+    gpt-image-1.5 は出力 $32.00）。⚠️ 同じページに **Batch の半額表**があるので混ぜない（表の見出しで区別する）
+  - 比較相手＝Google の画像生成の料金（`ai.google.dev/gemini-api/docs/pricing`）。Anthropic が画像生成を
+    提供していなければ「提供していない」と書く（無理に並べない）
+  - ⚠️ ChatGPT 内での見え方（どのプランで使えるか等）は読めない（`chatgpt.com`・`help.openai.com` は bot 判定）。
+    **API 側の数字だけで書く。**書けないことは「発表ページが読めないため確認できなかった」と明記する
+- [x] https://openai.com/index/introducing-gpt-live-1-in-the-api
+  - →保管: ✅ **2026-09-21: 公開した** → `content/tools/gpt-live-1-api.md`
+    （発表ページは今回もbot判定の403で読めず、RSS要旨1文＋developers.openai.comのモデル・料金・
+    ガイドページで執筆。図3枚（`gptlive1-architecture-grid` / `gptlive1-concurrent-tiers` /
+    `gptlive1-vendor-voice-price`）。出典10件すべて取得成功。`check_numbers.py` は照合できる数字10個
+    すべてが出典に存在。pytest 657 passed・build 214ファイル）
+  - 📌 記事の芯＝**GPT-Live 1は「音声」と「頭脳」を分けた新しいアーキテクチャで、$0.05/分の
+    音声セッション料金にはバックエンドのモデル代が含まれない**（Realtime APIは1モデルで完結する
+    別エンドポイント。相互に差し替え不可）。電話（SIP・G.711）に公式対応、同時セッションはTierで
+    25〜500。Free プランは対象外
+  - 他社比較はGemini 3.8 Liveの分あたり音声単価（入力$0.005・出力$0.018）と突き合わせ、GPT-Live 1の
+    セッション料金だけで既にどちらより高いことを確認。Anthropicは音声対話モデルの記載なし
+    （platform.claude.comを今回改めて確認・fontクラス名以外にvoiceの言及なし）
+  - ⚠️ 「custom voices」はRSS要旨にあるが、GPT-Live 1自身のガイドに説明が無く、見つかったのは
+    Realtime向け別ガイドの「承認された顧客のみ」の記載。GPT-Live 1に同じ制限が及ぶかは確認できず、
+    記事にもそう明記した
+  - 2026-09-20 手動追記（`news.json` では 9/10 の minor。8/5 の `[!]` 行（ChatGPT 側の GPT-Live）とは別＝API 提供の発表）
