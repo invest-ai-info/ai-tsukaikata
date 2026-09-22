@@ -18,10 +18,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 from rotate_archives import (  # noqa: E402
     append_archive,
     rotate_all,
+    rotate_hypotheses,
     rotate_daily_log,
     rotate_queue,
 )
-from check_freshness import earn_research_heartbeat, file_budgets  # noqa: E402
+from check_freshness import (  # noqa: E402
+    earn_research_heartbeat,
+    file_budgets,
+    hypothesis_registration_gaps,
+    hypothesis_stock_empty,
+)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from tracker.deepdive import queued_urls  # noqa: E402
@@ -320,6 +326,161 @@ class TestRotateQueueProse:
         new, _ = rotate_queue(PROSE, markers=("- [x] ", "- [!] "))
         assert "足した理由＝この節が今夜で実弾ゼロになるから" in new
         assert "いちばん古い日報。" in new
+
+HYPO = dedent("""\
+    # 🔬 仮説キュー
+
+    ## 書式（1仮説1ブロック）
+
+    ```
+    ### H<番号> <名前>
+    - 状態: ⏳未着手 / 📤変換済み / ✅生存 / ❌棄却
+    - 仮説: <1文>
+    ```
+
+    ---
+
+    ## 優先キュー
+
+    ### H1 個数指定は、使える案の個数と相関しない
+    - 状態: 📤変換済み
+    - 登録日: 2026-08-25
+    - 仮説: ◯案出しての◯を増やしても、採用線を通る案は増えない。
+    - 反証条件: 30案の通過数が5案の2倍以上なら棄却。
+
+    ### H2 欠落は「1つだけ無い」ほうが検出されない
+    - 状態: ❌棄却（2026-09-08・`long-report` で公開。反証条件を満たさず）
+    - 登録日: 2026-08-25
+    - 仮説: 1つだけ欠けた材料は見落とされる。
+
+    ### H3 まだ渡していない仮説
+    - 状態: ⏳未着手
+    - 登録日: 2026-09-22
+    - 仮説: これはこれから測る。
+
+    ### H4 いま測っている最中の仮説
+    - 状態: 🔬検証中
+    - 登録日: 2026-09-21
+    - 仮説: 測っている途中なので残す。
+
+    ## バックログ（H番号は発行しない）
+
+    - ~~済んだ候補~~ → H1で登録済み
+    """)
+
+
+class TestRotateHypotheses:
+    """済んだ仮説（📤変換済み・✅生存・❌棄却・🚫検定不能）を保管庫へ。
+
+    2026-09-22 実測: `_hypothesis_queue.md` は1,074行（予算900）で、毎日1件（約50行）
+    増えるのに減る仕組みが無かった（ファイル自身に「✅／❌は手で移す」と書いてあった）。
+    ⚠️ **⏳未着手と🔬検証中は動かさない**＝源0の在庫そのもの（`hypothesis_stock_empty()`
+    が数える）。⚠️ **書式見本とバックログは触らない**（見本の `### H<番号>` を拾うと壊れる）。
+    """
+
+    def test_finished_blocks_move_with_an_index_line(self):
+        new, chunks = rotate_hypotheses(HYPO)
+        assert "- 反証条件: 30案の通過数が5案の2倍以上なら棄却。" not in new
+        assert "- →保管: H1 個数指定は、使える案の個数と相関しない — 📤変換済み" in new
+        assert any("反証条件: 30案の通過数" in c for c in chunks)
+
+    def test_the_verdict_stays_readable_on_the_index_line(self):
+        new, _ = rotate_hypotheses(HYPO)
+        line = next(l for l in new.splitlines() if l.startswith("- →保管: H2"))
+        assert "❌棄却" in line and "long-report" in line
+
+    def test_unstarted_and_running_blocks_stay_whole(self):
+        new, _ = rotate_hypotheses(HYPO)
+        assert "### H3 まだ渡していない仮説\n- 状態: ⏳未着手" in new
+        assert "- 仮説: これはこれから測る。" in new
+        assert "### H4 いま測っている最中の仮説" in new
+        assert "- 仮説: 測っている途中なので残す。" in new
+
+    def test_format_sample_and_backlog_are_untouched(self):
+        new, _ = rotate_hypotheses(HYPO)
+        assert "### H<番号> <名前>" in new
+        assert "- ~~済んだ候補~~ → H1で登録済み" in new
+
+    def test_idempotent(self):
+        once, _ = rotate_hypotheses(HYPO)
+        twice, chunks = rotate_hypotheses(once)
+        assert twice == once
+        assert chunks == []
+
+    def test_guards_still_read_the_rotated_file(self):
+        """番人が壊れないこと＝在庫（⏳）は数えられ、必須欄の欠けは鳴らない。"""
+        new, _ = rotate_hypotheses(HYPO)
+        assert hypothesis_stock_empty(new) is None  # H3 が ⏳ で残っている
+        assert [p for p in hypothesis_registration_gaps(new) if "H1" in p or "H2" in p] == []
+
+    def test_numbers_stay_visible_for_the_next_registration(self):
+        """次のH番号は索引行から分かること（担当が H1〜H4 を見て H5 を発行できる）。"""
+        new, _ = rotate_hypotheses(HYPO)
+        for n in ("H1", "H2", "H3", "H4"):
+            assert n in new
+
+BLOCKED = dedent("""\
+    ## 待ち行列
+
+    - [!] https://openai.com/index/one
+      - 2026-08-26 自動追記（major・OpenAI）
+      - 🛑 再試行対象外（先方のbot判定）
+      - **2026-08-27 1回目: 記事を書かずに停止した。**長い調査の記録がここに続く。
+        表も含めて数十行ある。
+      - 2026-09-01 2回目: 変わらず。
+
+    - [!] https://sakana.ai/frontier-intelligence-group/
+      - 2026-09-18 自動追記（major・Sakana AI）
+      - **2026-09-18 1回目: 停止した。**経路遮断でもbot判定でもない＝記事の型に合わない。
+        オーナー確認待ち。
+
+    - [ ] https://example.com/next
+      - まだ処理していない
+    """)
+
+
+class TestRotateBlockedRows:
+    """`- [!]`（保留）のうち、**印の付いた行だけ**を回転する。
+
+    2026-09-22 オーナー判断「A」＝bot判定の行は再試行しないので、長い調査記録を
+    live に置いておく意味が無い（実測: 深掘りキュー784行のうち約390行がこれ）。
+    🚨 **語句で自動判定しない。**実測した7件はどれも本文に「bot判定」と「許可リスト」の
+    両方が出てくるうえ、Sakana FIG の行は**読めたが記事の型に合わない**（＝bot判定ではない）。
+    判定は担当が行に書いた印（`🛑 再試行対象外`）だけを見る。
+    """
+
+    def test_tagged_row_keeps_its_marker_and_the_reason(self):
+        new, chunks = rotate_queue(BLOCKED, markers=("- [x] ",), blocked_tag="🛑 再試行対象外")
+        assert "- [!] https://openai.com/index/one" in new
+        assert "  - →保管: 🛑 再試行対象外（先方のbot判定）" in new
+        assert "長い調査の記録がここに続く" not in new
+        assert any("長い調査の記録がここに続く" in c for c in chunks)
+
+    def test_untagged_row_is_untouched(self):
+        new, _ = rotate_queue(BLOCKED, markers=("- [x] ",), blocked_tag="🛑 再試行対象外")
+        assert "経路遮断でもbot判定でもない＝記事の型に合わない" in new
+        assert "オーナー確認待ち" in new
+
+    def test_open_item_is_untouched(self):
+        new, _ = rotate_queue(BLOCKED, markers=("- [x] ",), blocked_tag="🛑 再試行対象外")
+        assert "- [ ] https://example.com/next\n  - まだ処理していない" in new
+
+    def test_url_dedup_still_sees_every_row(self):
+        new, _ = rotate_queue(BLOCKED, markers=("- [x] ",), blocked_tag="🛑 再試行対象外")
+        urls = queued_urls(new)
+        assert "https://openai.com/index/one" in urls
+        assert "https://sakana.ai/frontier-intelligence-group/" in urls
+
+    def test_idempotent(self):
+        once, _ = rotate_queue(BLOCKED, markers=("- [x] ",), blocked_tag="🛑 再試行対象外")
+        twice, chunks = rotate_queue(once, markers=("- [x] ",), blocked_tag="🛑 再試行対象外")
+        assert twice == once
+        assert chunks == []
+
+    def test_without_the_tag_option_nothing_moves(self):
+        new, chunks = rotate_queue(BLOCKED, markers=("- [x] ",))
+        assert "長い調査の記録がここに続く" in new
+        assert chunks == []
 
 
 DAILY = dedent("""\

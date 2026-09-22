@@ -36,6 +36,16 @@ QUEUE_DONE = "## 処理済み"
 #    新しい種類の見出しを巻き込まないため。
 # ⚠️ **未処理（`- [ ]`）が1件でも残る節の散文は動かさない**＝並び順の指示など、まだ効く指示が
 #    混ざる（実測: 「下の4件はこの順に書くこと」）。
+# 🛑 再試行しないと担当が決めた `- [!]` の印（2026-09-22 追加・オーナー判断「A」）。
+#
+# 深掘りキューの `- [!]` は2種類ある＝経路遮断（再試行する・履歴が要る）と
+# 先方のbot判定（何度やっても同じ＝再試行しない）。後者の長い調査記録は live に置く意味が
+# 無い（実測: 784行のうち約390行）。
+# 🚨 **語句で自動判定しない。**実測7件はどれも本文に「bot判定」と「許可リスト」の両方が出る。
+#    しかも Sakana FIG の行は**読めたが記事の型に合わない**（＝bot判定ですらない）。
+#    担当が行に書いた印だけを見る。印は跡地の索引行にそのまま残す（再試行の決まりが読む）。
+BLOCKED_TAG = "🛑 再試行対象外"
+
 PROSE_HEADINGS = ("補充", "研究パック")  # 日付つきの補充・研究パック＝その日の経緯
 LOG_HEADINGS = (  # 担当の日誌。項目が無ければ節ごと移す（中身は各担当の作業ログと重複）
     "詰まったところ", "仮説キューの在庫補充", "源ごとの結果", "バックログの整理", "見送ったもの",
@@ -60,6 +70,19 @@ def _head_kind(heading: str) -> str | None:
     return None
 
 
+def _detail_end(lines: list[str], start: int) -> int:
+    """詳細ブロックの終わり＝続く字下げ行（間の空行は、次に字下げ行が来るなら中身）。"""
+    j = start + 1
+    while j < len(lines):
+        if lines[j].startswith((" ", "\t")):
+            j += 1
+        elif lines[j] == "" and j + 1 < len(lines) and lines[j + 1].startswith((" ", "\t")):
+            j += 1
+        else:
+            break
+    return j
+
+
 def _item_note(detail_lines: list[str]) -> str:
     """索引1行。slug があれば slug、無ければ詳細の1行目を切り出す（要約しない）。
 
@@ -77,12 +100,18 @@ def _item_note(detail_lines: list[str]) -> str:
 
 
 def rotate_queue(
-    text: str, markers: tuple[str, ...], prose: bool = False
+    text: str,
+    markers: tuple[str, ...],
+    prose: bool = False,
+    blocked_tag: str | None = None,
 ) -> tuple[str, list[str]]:
     """`## 待ち行列` 以降の済んだ項目の詳細を archive へ。マーカー行は残す。
 
     prose=True なら、済んだ節の散文（補充の経緯・担当の日誌）と `## 処理済み` の
     古い日報も移す（PROSE_HEADINGS のコメント参照）。既定は False ＝従来どおり。
+
+    blocked_tag を渡すと、`- [!]` のうち**その印が書かれた行だけ**も対象にする
+    （深掘りキューの「再試行対象外」＝bot判定の行。BLOCKED_TAG のコメント参照）。
     """
     if prose:
         text, prose_chunks = _rotate_prose(text)
@@ -99,16 +128,13 @@ def rotate_queue(
     i = start + 1
     while i < len(lines):
         line = lines[i]
-        if any(line.startswith(m) for m in markers):
-            # 詳細ブロック＝続く字下げ行（間の空行は、次に字下げ行が来るなら中身）
-            j = i + 1
-            while j < len(lines):
-                if lines[j].startswith((" ", "\t")):
-                    j += 1
-                elif lines[j] == "" and j + 1 < len(lines) and lines[j + 1].startswith((" ", "\t")):
-                    j += 1
-                else:
-                    break
+        targets = markers
+        if blocked_tag is not None and line.startswith("- [!] "):
+            j = _detail_end(lines, i)
+            if any(blocked_tag in l for l in lines[i + 1 : j]):
+                targets = markers + ("- [!] ",)
+        if any(line.startswith(m) for m in targets):
+            j = _detail_end(lines, i)
             details = lines[i + 1 : j]
             body = [l for l in details if l.strip()]
             # 「回転済み」＝索引行1本だけ。担当が自分で `→保管:` を書き、その下に長い報告を
@@ -118,7 +144,11 @@ def rotate_queue(
             if body and not already:
                 chunks.append("\n".join([line, *details]) + "\n")
                 out.append(line)
-                out.append(_item_note(body))
+                if blocked_tag is not None and line.startswith("- [!] "):
+                    tag = next(l for l in body if blocked_tag in l)
+                    out.append(f"  - {NOTE_PREFIX}: {tag.strip().lstrip('- ').strip()}")
+                else:
+                    out.append(_item_note(body))
                 i = j
                 continue
         out.append(line)
@@ -193,6 +223,68 @@ def _rotate_prose(text: str) -> tuple[str, list[str]]:
             continue
         if line == "" and out and out[-1] == "":
             continue  # 抜いた跡の空行が重ならないように
+        out.append(line)
+    new = "\n".join(out) + ("\n" if text.endswith("\n") else "")
+    return new, chunks
+
+
+# 🔬 仮説キューの回転（2026-09-22 追加・オーナー判断「A」）。
+#
+# ファイル自身に「✅／❌が付いたブロックは手で移す」と書いてあったが、手では動かなかった
+# （1,074行・予算900行。毎日1件≈50行増えるのに減る仕組みが無かった）。
+# ⚠️ **⏳未着手と🔬検証中は動かさない**＝源0の在庫そのもの（hypothesis_stock_empty が数える）。
+# ⚠️ **跡地に索引1行**＝H番号と題と状態を残す。次のH番号の発行と、済んだ仮説の一覧が
+#    live 側だけで分かるように（詳細＝設計の全欄は保管庫に逐語で残る）。
+# ⚠️ **範囲は「## 優先キュー」から「## バックログ」の手前まで**。書式見本の `### H<番号>` を
+#    拾うと壊れる（`## 書式` は冒頭にある）。
+HYPO_START = "## 優先キュー"
+HYPO_END = "## バックログ"
+HYPO_DONE_STATES = ("📤", "✅", "❌", "🚫")
+_HYPO_HEAD_RE = re.compile(r"^### (H[0-9]+) (.+)$")
+_HYPO_STATE_RE = re.compile(r"^- 状態: *(.+)$")
+
+
+def rotate_hypotheses(text: str) -> tuple[str, list[str]]:
+    """済んだ仮説のブロックを archive へ。跡地に索引1行を残す。"""
+    lines = text.splitlines()
+    try:
+        start = next(i for i, l in enumerate(lines) if l.startswith(HYPO_START))
+    except StopIteration:
+        return text, []
+    end = next(
+        (i for i, l in enumerate(lines) if l.startswith(HYPO_END)), len(lines)
+    )
+
+    heads = [i for i in range(start, end) if _HYPO_HEAD_RE.match(lines[i])]
+    chunks: list[str] = []
+    drop: set[int] = set()
+    notes: dict[int, str] = {}
+    for k, i in enumerate(heads):
+        stop = heads[k + 1] if k + 1 < len(heads) else end
+        head = _HYPO_HEAD_RE.match(lines[i])
+        state = next(
+            (_HYPO_STATE_RE.match(lines[x]) for x in range(i + 1, stop)
+             if _HYPO_STATE_RE.match(lines[x])), None
+        )
+        if state is None or not state.group(1).startswith(HYPO_DONE_STATES):
+            continue
+        chunks.append("\n".join(lines[i:stop]).rstrip("\n") + "\n")
+        drop.update(range(i, stop))
+        notes[i] = (
+            f"- {NOTE_PREFIX}: {head.group(1)} {head.group(2)} — {state.group(1)[:60]}"
+        )
+
+    if not chunks:
+        return text, []
+    out = []
+    for i, line in enumerate(lines):
+        if i in notes:
+            out.append(notes[i])
+            continue
+        if i in drop:
+            continue
+        if line == "" and out and out[-1] == "":
+            continue
         out.append(line)
     new = "\n".join(out) + ("\n" if text.endswith("\n") else "")
     return new, chunks
@@ -280,9 +372,11 @@ def append_archive(existing: str | None, chunks: list[str], today: date, name: s
 TARGETS = [
     ("content/_recipe_queue.md", "queue",
      {"markers": ("- [x] ", "- [!] "), "prose": True}),
-    ("content/_deepdive_queue.md", "queue", {"markers": ("- [x] ",)}),
+    ("content/_deepdive_queue.md", "queue",
+     {"markers": ("- [x] ",), "blocked_tag": BLOCKED_TAG}),
     ("content/_topic_ideas.md", "log", {"heading_prefix": "## "}),
     ("content/_review_log.md", "log", {"heading_prefix": "## "}),
+    ("content/_hypothesis_queue.md", "hypothesis", {}),
     ("content/_earn_research.md", "log", {"heading_prefix": "### "}),
 ]
 
@@ -297,6 +391,8 @@ def rotate_all(root: Path, today: date) -> dict[str, int]:
         text = live.read_text(encoding="utf-8")
         if kind == "queue":
             new, chunks = rotate_queue(text, **kwargs)
+        elif kind == "hypothesis":
+            new, chunks = rotate_hypotheses(text, **kwargs)
         else:
             new, chunks = rotate_daily_log(text, **kwargs)
         if not chunks:

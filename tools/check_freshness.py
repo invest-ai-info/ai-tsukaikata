@@ -789,7 +789,11 @@ FILE_BUDGETS = {
     "content/_deepdive_queue.md": 600,
     "content/_topic_ideas.md": 1500,
     "content/_review_log.md": 800,
-    "content/_earn_research.md": 1200,
+    # 1,200 → 1,500（2026-09-22 オーナー判断「A」）。回転は効いている（日付節は直近3日＝
+    # 約370行）のに超えていたのは、**指示・様式・源の台帳だけで約1,030行**あるから＝
+    # 回転で減る部分ではない。⚠️ 上げてよいのは「中身を見て、減らす余地が無い」と
+    # 確かめたときだけ（番人の役目は回転の停止検知で、黙らせるための数字ではない）。
+    "content/_earn_research.md": 1500,
     "content/_hypothesis_queue.md": 900,
 }
 
