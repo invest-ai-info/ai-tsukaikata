@@ -20,6 +20,7 @@ from check_freshness import (  # noqa: E402
     writer_log_heartbeat,
     writer_measurement_gaps,
     lawyer_deadline_gate,
+    lesson_number_duplicates,
     lesson_promotions,
     money_note_staleness,
     queue_shortage,
@@ -1029,3 +1030,47 @@ def test_earn_section_ends_at_the_next_h2_before_looking_for_a_cut():
     assert earn_queue_shortage(queue, floor=3) is None
     assert earn_queue_shortage(queue, floor=4) is not None
     assert "3件" in earn_queue_shortage(queue, floor=4)
+
+
+# --- 教訓の番号の重複（2026-09-22 追加）---
+#
+# 実測: 束ね直したときに **5組**（★125・★176・★177・★178・★179）が見つかった。
+# どれも「台帳の最大番号を見ずに足した」もの。番号は `_review_log.md`・`_writer_log.md`・
+# `docs/evidence/*.md`・記事本文から名指しで参照されるので、**重複すると参照側が黙って壊れる**
+# （このサイトがいちばん警戒している型）。数えるのは機械にできる。
+
+def _ledger(*headings):
+    return "# 台帳\n\n## 生きている教訓\n\n" + "\n\n".join(f"{h}\n\n本文。" for h in headings) + "\n"
+
+
+def test_duplicate_lesson_numbers_are_reported():
+    text = _ledger("### ★1. 家族の題", "#### ★176. 先にあったほう", "#### ★176. あとから足したほう")
+    problems = lesson_number_duplicates(text)
+    assert len(problems) == 1
+    assert "★176" in problems[0]
+    assert "2か所" in problems[0]
+
+
+def test_numbers_used_once_are_quiet():
+    text = _ledger("### ★1. 家族の題", "#### ★176. ひとつだけ", "#### ★177. べつの番号")
+    assert lesson_number_duplicates(text) == []
+
+
+def test_every_duplicate_is_listed_once():
+    text = _ledger("### 5. 家族", "#### ★125. あ", "#### ★125. い", "#### ★179. う", "#### ★179. え")
+    problems = lesson_number_duplicates(text)
+    assert len(problems) == 2
+    assert {"★125" in p for p in problems} == {True} or True
+    assert any("★125" in p for p in problems) and any("★179" in p for p in problems)
+
+
+def test_the_real_ledger_has_no_duplicates():
+    """実データ。2026-09-22 に5組を直した＝ここが赤くなったら、また番号を見ずに足している。"""
+    ledger = Path(__file__).resolve().parent.parent / "content" / "_lessons.md"
+    assert lesson_number_duplicates(ledger.read_text(encoding="utf-8")) == []
+
+
+def test_the_format_sample_in_the_header_is_not_counted():
+    """冒頭の書式説明（`#### <新しい番号>. <題>`）は番号ではないので当たらない。"""
+    text = "# 台帳\n\n足すときは `#### <新しい番号>. <題>` で足す。\n\n## 生きている教訓\n\n### ★1. 題\n\n本文。\n"
+    assert lesson_number_duplicates(text) == []

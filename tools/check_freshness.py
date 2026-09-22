@@ -773,6 +773,8 @@ def money_note_staleness(articles, today: date, max_age_days=MONEY_MAX_AGE_DAYS)
 LEDGER_PATH = "content/_lessons.md"
 LEDGER_CAP = 15  # 設計値。「長い台帳は読まれなくなって死ぬ」
 LESSON_RE = re.compile(r"^### (★?\d+[a-z]?)\. (.+)$", re.M)
+# 節（`###`）だけでなく、束ねた中の教訓（`####`/`#####`）も含めた全部の番号
+LESSON_ANY_RE = re.compile(r"^#{3,5} (★?\d+[a-z]?)\. ", re.M)
 # 「4番が再発」「1番の系列」「12番の親戚」「2番の実例が増えた」
 LESSON_REF_RE = re.compile(r"(\d+[a-z]?)\s*番(?:が)?(?:再発|の系列|の親戚|の実例)")
 
@@ -813,6 +815,26 @@ def file_budgets(texts: dict[str, str], budgets: dict[str, int] = FILE_BUDGETS):
                 f"手で1回 `python tools/rotate_archives.py` を実行して減るか確かめること）"
             )
     return problems
+
+
+def lesson_number_duplicates(ledger_text: str) -> list[str]:
+    """同じ番号が2か所以上で使われていたら挙げる。
+
+    🚨 2026-09-22 に束ね直したとき **5組**（★125・★176・★177・★178・★179）が見つかった。
+    どれも「台帳の最大番号を見ずに足した」もの。番号は `_review_log.md`・`_writer_log.md`・
+    `docs/evidence/*.md`・記事本文から名指しで参照されるので、**重複すると参照側が黙って壊れる**
+    （このサイトがいちばん警戒している型）。数えるのは機械にできるので、週次で見る。
+    ⚠️ 直し方＝**外から参照されている側は動かさず**、後から足したほうを最大番号+1へ振り直す。
+    """
+    seen: dict[str, int] = {}
+    for num in LESSON_ANY_RE.findall(ledger_text):
+        seen[num] = seen.get(num, 0) + 1
+    return [
+        f"{LEDGER_PATH}: 教訓の番号 {num} が{count}か所で使われています"
+        f"（参照している側が黙って壊れます。後から足したほうを"
+        f"「台帳の最大番号＋1」へ振り直すこと。外から参照されている側は動かさない）"
+        for num, count in seen.items() if count > 1
+    ]
 
 
 def lesson_promotions(ledger_text: str, slugs, cap: int = LEDGER_CAP):
@@ -1031,6 +1053,7 @@ def main(argv: list[str] | None = None) -> int:
             {p.stem for p in (root / "content" / "recipes").glob("*.md")},
         )
         report.problems.extend(ledger_problems)
+        report.problems.extend(lesson_number_duplicates(ledger_file.read_text(encoding="utf-8")))
         report.notes.extend(ledger_notes)
 
     # 生きているファイルの行数予算（回転が止まったことの検知）
