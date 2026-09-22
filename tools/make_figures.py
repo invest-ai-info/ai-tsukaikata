@@ -25570,6 +25570,133 @@ def gptlive1_vendor_voice_price_chart() -> None:
     )
 
 
+def safety_line_hit_and_miss_chart() -> None:
+    """「分からない場合は分からないと答えて」の一文が、範囲の質問と金額計算の質問で
+    効き方が違ったことを示す（2026-09-22）。
+
+    実測：Kindleロイヤリティの価格帯（範囲）を聞く質問と、印税の金額（計算）を聞く
+    質問に、同じ逃げ道の一文を足して比較。範囲では4/6→0/6・0/6（前後どちらでも）で
+    効いたが、金額計算では4/4→4/4で効かず、「計算例も出すな」まで名指しして初めて
+    0/4になった。判定は docs/evidence/safety-line-stops-range-not-calculation.md の
+    judge.py 出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "safety-line-hit-and-miss.svg",
+        "「分からないと答えて」は、範囲では効いたが金額計算では効かなかった",
+        "実測2026-09-22。Kindleロイヤリティの話題で、資料は一切見せていない。",
+        "すべて「具体的な数字を言い切った回数」（少ないほど逃げ道が効いている）。",
+        [
+            ("範囲を聞く・逃げ道なし（「いくらからいくらまで」）", 4, 6, "bad"),
+            ("範囲を聞く・逃げ道を末尾に追加", 0, 6, "bad"),
+            ("範囲を聞く・逃げ道を先頭に追加", 0, 6, "bad"),
+            ("金額を計算させる・逃げ道なし（「いくらですか」）", 4, 4, "bad"),
+            ("金額を計算させる・逃げ道を追加（「分からない場合は分からないと」）", 4, 4, "bad"),
+            ("金額を計算させる・「計算例も出すな」まで追加", 0, 4, "bad"),
+        ],
+        [
+            "範囲の質問では、逃げ道の一文だけで4/6→0/6に下がった（位置は前後どちらでも同じ）。",
+            "金額を計算させる質問では、同じ逃げ道の一文は4/4のまま動かなかった。",
+            "「分からない」と言いながら計算例だけは書いてくる。止めるには計算例そのものを名指しで禁止する必要があった。",
+        ],
+        "「分からない場合は分からないと答えて」という一文が、範囲を聞く質問と金額を計算させる質問で"
+        "効き方が違ったことを示す表。すべて具体的な数字を言い切った回数で、少ないほど逃げ道が効いている。"
+        "範囲を聞く質問（70%ロイヤリティを選べる価格帯はいくらからいくらまでか）は、逃げ道なしで6回中4回が"
+        "具体的な数字（250円〜1,250円、実際は1,650円で誤り）を言い切ったが、逃げ道の一文を末尾に足すと"
+        "6回中0回、先頭に足しても6回中0回に下がった。金額を計算させる質問（500円のKindle本の印税はいくらか）は、"
+        "逃げ道なしで4回中4回が具体的な金額（175円・350円など）を計算し、同じ逃げ道の一文を足しても4回中4回のまま"
+        "動かなかった。「計算例も出すな」まで名指しした一文を足して初めて4回中0回になった。下の枠には、範囲の質問では"
+        "逃げ道の一文だけで4/6から0/6に下がったこと（位置は前後どちらでも同じ）、金額を計算させる質問では同じ逃げ道の"
+        "一文が4/4のまま動かなかったこと、「分からない」と言いながら計算例だけは書いてくるので計算例そのものを"
+        "名指しで禁止する必要があったことが書かれている。",
+        label_w=460,
+    )
+
+
+def safety_line_question_type_chart() -> None:
+    """質問の種類（範囲／金額計算）ごとに、逃げ道の効き方を並べたグループ棒グラフ
+    （2026-09-22）。安全ラインの図の言い換え・強調版。
+    """
+    groups = [
+        (
+            "範囲を聞く質問",
+            [
+                ("逃げ道なし", 4, 6),
+                ("逃げ道を追加（末尾）", 0, 6),
+                ("逃げ道を追加（先頭）", 0, 6),
+            ],
+        ),
+        (
+            "金額を計算させる質問",
+            [
+                ("逃げ道なし", 4, 4),
+                ("逃げ道を追加", 4, 4),
+                ("＋計算例も禁止", 0, 4),
+            ],
+        ),
+    ]
+    left, right = 230, 610
+    span = right - left
+    bar_h, bar_gap, group_gap = 18, 6, 22
+    top = 118
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "質問の種類で、同じ一文の効き目が変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "バーは「具体的な数字を言い切った回数／聞いた回数」。短いほど逃げ道が効いている。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "範囲を聞く質問は一文だけで0になったが、金額を計算させる質問は「計算例も禁止」しないと0にならない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "資料はどの回にも見せていない（AIの記憶だけでの回答）。</text>\n",
+    ]
+    y = top
+    for group_label, rows in groups:
+        parts.append(f'<text class="t-strong" x="18" y="{y - 8}">{_esc(group_label)}</text>\n')
+        for label, hit, total in rows:
+            ratio = hit / total
+            bw = max(span * ratio, 3) if hit else 0
+            cls = "box-bad" if hit == total else ("box-good" if hit == 0 else "box")
+            parts.append(f'<text class="t-xs" x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+            )
+            if bw:
+                parts.append(
+                    f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+                )
+            parts.append(
+                f'<text class="t-sm" x="{right + 10}" y="{y + bar_h - 4}">{hit}／{total}</text>\n'
+            )
+            y += bar_h + bar_gap
+        y += group_gap
+
+    y += 4
+    box_h = 44
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "同じ一文（分からない場合は分からないと答えて）でも、質問の型で効き目が変わる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "計算をさせる質問には、「計算例も出すな」と計算という行為そのものを止める必要がある。</text>\n"
+    )
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "質問の種類ごとに、逃げ道の一文の効き目を比べたグループ横棒グラフ。範囲を聞く質問（70%ロイヤリティの"
+        "価格帯）は、逃げ道なしで6回中4回が具体的な数字を言い切ったが、逃げ道を末尾に足すと6回中0回、"
+        "先頭に足しても6回中0回に下がった。金額を計算させる質問（500円のKindle本の印税）は、逃げ道なしで"
+        "4回中4回が具体的な金額を出し、同じ逃げ道の一文を足しても4回中4回のまま変わらなかった。「計算例も"
+        "出すな」まで名指しした一文を足して初めて4回中0回になった。下の枠には、同じ一文でも質問の型で"
+        "効き目が変わること、計算をさせる質問には計算という行為そのものを止める一文が必要なことが書かれている。"
+    )
+    (OUT / "safety-line-question-type.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
@@ -25610,6 +25737,8 @@ if __name__ == "__main__":
     reflect_4d_framework_chart()
     reflect_privacy_scope_chart()
     reflect_roadmap_chart()
+    safety_line_hit_and_miss_chart()
+    safety_line_question_type_chart()
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
     youtube_payout_ladder_chart()
