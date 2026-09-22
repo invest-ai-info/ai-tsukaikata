@@ -115,7 +115,7 @@ Gemini 3.8 Flash は Google の「主力・省コスト」モデルで、Google�
 | Gemini 3.1 Pro Preview | Google（自社の最上位） | $2.00（20万トークン以下）/ $4.00（超過時） | $12.00（20万トークン以下）/ $18.00（超過時） |
 | Gemini 3.8 Flash | Google（この記事の対象） | $0.75（年内） | $3.75（年内） |
 
-出典: OpenAIは <https://developers.openai.com/api/docs/pricing>、Claudeは <https://docs.claude.com/en/docs/about-claude/pricing>、Geminiは <https://ai.google.dev/gemini-api/docs/pricing>
+出典: OpenAIは <https://developers.openai.com/api/docs/pricing>、Claudeは <https://platform.claude.com/docs/en/about-claude/pricing>、Geminiは <https://ai.google.dev/gemini-api/docs/pricing>
 
 <figure class="figure">
 <img src="/static/images/gemini38-vendor-top-price.svg" alt="GPT-6 Astra・Claude Fable 5.1・Gemini 3.1 Pro Preview・Gemini 3.8 Flash の単価を並べた横棒グラフ。100万トークンあたり。GPT-6 Astra は入力10ドル・出力50ドル、Claude Fable 5.1 も入力10ドル・出力50ドルで同じ。Gemini 3.1 Pro Preview（Google自身の最上位）は入力2ドル・出力12ドルで、20万トークンを超えると入力4ドル・出力18ドルに上がる。この記事の対象である Gemini 3.8 Flash は入力0.75ドル・出力3.75ドルで、他社の最上位はもちろん Google 自身の最上位よりも安い、価格帯が違うモデルであることを示す図。">
@@ -152,8 +152,8 @@ Gemini 3.8 Flash は Google の「主力・省コスト」モデルで、Google�
 2. Gemini 3.8 Flashのモデルカード（Google DeepMind公式）: <https://deepmind.google/models/model-cards/gemini-3-8-flash>
 3. Gemini APIの料金（Google公式）: <https://ai.google.dev/gemini-api/docs/pricing>
 4. Gemini Flashのモデルページ（Google DeepMind公式）: <https://deepmind.google/models/gemini/flash/>
-5. 料金（Anthropic公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/pricing>
-6. モデル一覧と仕様（Anthropic公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/models/overview>
+5. 料金（Anthropic公式ドキュメント）: <https://platform.claude.com/docs/en/about-claude/pricing>
+6. モデル一覧と仕様（Anthropic公式ドキュメント）: <https://platform.claude.com/docs/en/models/overview>
 7. APIの料金（OpenAI公式ドキュメント）: <https://developers.openai.com/api/docs/pricing>
 
 Gemini 3.8 Flash Cyberのモデルカードは、この記事を書いた時点では公開されていません（URLは404）。性能の比較表は画像として埋め込まれており、配信元ホストにこの記事を書いた環境から到達できなかったため、中身は確認できていません。

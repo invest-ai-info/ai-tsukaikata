@@ -12,7 +12,7 @@ tags: [Claude, モデル比較, 料金, AI最新情報]
 
 Anthropic は 2026年9月1日に **Claude Fable 5.1** と **Claude Mythos 5.1** を発表しました（出典: <https://www.anthropic.com/claude-fable-and-mythos-5-1>）。公式ページに書かれている数字だけを並べます。3行にすると、こうなります。
 
-- 単価は Fable 5 と同じで、入力100万トークンあたり **$10**、出力 **$50** です。<mark>値下げされたのは「キャッシュ読み取り」の1項目だけで、$1 から $0.25 になりました</mark>（出典: <https://docs.claude.com/en/docs/about-claude/pricing>）。
+- 単価は Fable 5 と同じで、入力100万トークンあたり **$10**、出力 **$50** です。<mark>値下げされたのは「キャッシュ読み取り」の1項目だけで、$1 から $0.25 になりました</mark>（出典: <https://platform.claude.com/docs/en/about-claude/pricing>）。
 - それでも公式は、<mark>ふつうの使い方で費用が約25%、長く自動で作業させる使い方では最大で約45%下がる</mark>と説明しています（出典: <https://www.anthropic.com/claude-fable-and-mythos-5-1>）。
 - 公式が挙げた性能テストは7種類すべてで Fable 5 を上回っています。例＝Terminal-Bench 4.0 が 42.0% から 55.8%、AutomationBench が 17.1% から 31.4%（出典: 同上）。
 
@@ -35,7 +35,7 @@ Fable 5.1 と Mythos 5.1 は同じモデルで、違いは安全装置の強さ�
 | **キャッシュ読み取り** | $1 | **$0.25** |
 | まとめ処理（Batch）の入力 / 出力 | $5 / $25 | $5 / $25 |
 
-出典: すべて <https://docs.claude.com/en/docs/about-claude/pricing>
+出典: すべて <https://platform.claude.com/docs/en/about-claude/pricing>
 
 <figure class="figure">
 <img src="/static/images/fable51-price-grid.svg" alt="Fable 5 から Fable 5.1 への単価の変化を2列で比べた図。100万トークンあたり。変わらないもの＝入力10ドル、出力50ドル、キャッシュ書き込みは5分が12.50ドル・1時間が20ドル、まとめ処理は入力5ドル・出力25ドル、読める量100万トークン、書ける量12.8万トークン。変わったもの＝キャッシュ読み取りが1ドルから0.25ドルへ75%減、学習データの締め切りが2026年6月、セキュリティ系の安全装置の誤検知が約60%減、初歩的な生物・医療の質問での誤検知が85%減。">
@@ -99,7 +99,7 @@ Fable 5.1 には「どれだけ考えてから答えるか」の設定（effort�
 | 学習データの締め切り | **2026年6月** | 2026年5月 |
 | モデルの呼び名（API） | `claude-fable-5-1` | `claude-opus-5` |
 
-出典: <https://docs.claude.com/en/docs/about-claude/models/overview>
+出典: <https://platform.claude.com/docs/en/models/overview>
 
 Fable 5 の行は、いまの公式一覧ページには載っていません。だから Fable 5 の学習データの締め切りは、この記事では比べていません。
 
@@ -126,7 +126,7 @@ Fable 5 の行は、いまの公式一覧ページには載っていません。
 | GPT-5.6 Sol | OpenAI | $4.00（短）/ $8.00（長） | $20.00（短）/ $30.00（長） | $0.40（短）/ $0.80（長） |
 | Gemini 3.1 Pro Preview | Google | $2.00（20万トークン以下）/ $4.00（超過時） | $12.00（20万トークン以下）/ $18.00（超過時） | $0.20（20万トークン以下）/ $0.40（超過時） |
 
-出典: Claude は <https://docs.claude.com/en/docs/about-claude/pricing>、GPT は <https://developers.openai.com/api/docs/pricing>、Gemini は <https://ai.google.dev/gemini-api/docs/pricing>
+出典: Claude は <https://platform.claude.com/docs/en/about-claude/pricing>、GPT は <https://developers.openai.com/api/docs/pricing>、Gemini は <https://ai.google.dev/gemini-api/docs/pricing>
 
 読むときの注意が3つあります。
 
@@ -140,7 +140,7 @@ Fable 5 の行は、いまの公式一覧ページには載っていません。
 | 一度に書ける量 | 12.8万トークン | 12.8万トークン | 12.8万トークン |
 | 学習データの締め切り | 2026年6月 | 2026年5月 | 2026年2月16日 |
 
-出典: Claude は <https://docs.claude.com/en/docs/about-claude/models/overview>、GPT は <https://developers.openai.com/api/docs/models>。Gemini 3.1 Pro Preview は、上で使った料金ページにこの3項目が載っていないので、この表には入れていません。
+出典: Claude は <https://platform.claude.com/docs/en/models/overview>、GPT は <https://developers.openai.com/api/docs/models>。Gemini 3.1 Pro Preview は、上で使った料金ページにこの3項目が載っていないので、この表には入れていません。
 
 ### 性能テスト（Anthropic の表に載っている範囲）
 
@@ -163,13 +163,13 @@ Fable 5 の行は、いまの公式一覧ページには載っていません。
 **乗り換えを検討していい人**
 
 - Fable 5 を、長い資料を読ませたり、長く自動で作業させたりする用途で使っている人。<mark>単価が同じなので、費用の再計算をせずに切り替えられます</mark>。読み直しが多い使い方ほど、下がり幅が大きくなります。
-- Opus 5 で足りずに困っている人。公式のモデル一覧は「まず Opus 5 から始め、手間の設定を上げても足りないときに Fable 5.1」と勧めています（出典: <https://docs.claude.com/en/docs/about-claude/models/overview>）。
+- Opus 5 で足りずに困っている人。公式のモデル一覧は「まず Opus 5 から始め、手間の設定を上げても足りないときに Fable 5.1」と勧めています（出典: <https://platform.claude.com/docs/en/models/overview>）。
 - 2026年6月までの出来事を扱わせたい人。学習データの締め切りが Opus 5 より1か月新しくなっています（出典: 同上）。
 
 **急がなくていい人**
 
 - 短い質問を1回ずつする使い方の人。読み直しがほとんど無いので、値下げが効きません。
-- 単価そのものを下げたい人。入力 $10・出力 $50 は Opus 5 の2倍のままです（出典: <https://docs.claude.com/en/docs/about-claude/pricing>）。
+- 単価そのものを下げたい人。入力 $10・出力 $50 は Opus 5 の2倍のままです（出典: <https://platform.claude.com/docs/en/about-claude/pricing>）。
 - 会社のルールで「データを保持させない」条件が要る人。EFS の提供は今年の秋以降と書かれているので、いまは対象の企業顧客だけです。
 
 **この記事で分からないこと**
@@ -181,8 +181,8 @@ Fable 5 の行は、いまの公式一覧ページには載っていません。
 すべて各社の公式ページです。まとめ記事・ニュースサイト・個人ブログは1件も使っていません。
 
 1. Claude Fable 5.1 と Claude Mythos 5.1 の発表（Anthropic・2026年9月1日）: <https://www.anthropic.com/claude-fable-and-mythos-5-1>
-2. 料金（Anthropic 公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/pricing>
-3. モデル一覧と仕様（Anthropic 公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/models/overview>
+2. 料金（Anthropic 公式ドキュメント）: <https://platform.claude.com/docs/en/about-claude/pricing>
+3. モデル一覧と仕様（Anthropic 公式ドキュメント）: <https://platform.claude.com/docs/en/models/overview>
 4. API の料金（OpenAI 公式ドキュメント）: <https://developers.openai.com/api/docs/pricing>
 5. モデル一覧（OpenAI 公式ドキュメント）: <https://developers.openai.com/api/docs/models>
 6. Gemini API の料金（Google 公式）: <https://ai.google.dev/gemini-api/docs/pricing>

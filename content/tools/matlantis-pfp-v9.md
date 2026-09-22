@@ -10,7 +10,7 @@ tags: [ベンチマーク, モデル比較, 材料開発, AI最新情報]
 
 ## 何が変わったか
 
-Preferred Networks（PFN）は 2026年8月17日に **Matlantis PFP v9** を公開しました（出典: <https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/>）。公式ページに書かれている数字だけを並べます。3行にすると、こうなります。
+Preferred Networks（PFN）は 2026年8月17日に **Matlantis PFP v9** を公開しました（出典: <https://www.preferred.jp/ja/blog/tech/introducing-matlantis-pfp-v9>）。公式ページに書かれている数字だけを並べます。3行にすると、こうなります。
 
 - これは文章を書くAIではありません。<mark>原子どうしにはたらく力を予測して、材料のふるまいを計算で出すAI</mark>です。公式は「機械学習原子間ポテンシャル（MLIP）」と呼んでいます（出典: 同上）。
 - 実験値に近づけるための計算モードで扱える元素が、**70種類から96種類**に増えました。水素（H）からキュリウム（Cm）までです（出典: 同上）。
@@ -45,7 +45,7 @@ MLIP Arena は、Chiang らが提案した公開のベンチマークです（�
 | SevenNet | 7 | 35 | 9 | 7 | 9 | 5 | 5 |
 | M3GNet | 8 | 36 | 5 | 8 | 7 | 8 | 8 |
 
-出典: すべて <https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/>（表1・総合ランキング）
+出典: すべて <https://www.preferred.jp/ja/blog/tech/introducing-matlantis-pfp-v9>（表1・総合ランキング）
 
 <figure class="figure">
 <img src="/static/images/pfp9-arena-rank.svg" alt="MLIP Arena の総合ランキングを示した横棒グラフ。棒は5種目の順位を足した合計点で、短いほど上位。PFP v9 が12点、MACE-MPA も12点で同率1位。以下 MatterSim が19点、MACE-MP(M) が24点、CHGNet が29点、ORB v2 が33点、SevenNet が35点、M3GNet が36点。PFP v9 以外の値は2026年3月1日時点の公開リーダーボードにもとづくと発表ページに書かれている。">
@@ -78,7 +78,7 @@ PFN はこの点を自分で説明していて、「PFP v9 が5つのタスク�
 <figcaption>増えたのは元素の数と、学習データに入れた構造の種類です</figcaption>
 </figure>
 
-公式が挙げている v8 からの変更は3つです（出典: <https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/>）。
+公式が挙げている v8 からの変更は3つです（出典: <https://www.preferred.jp/ja/blog/tech/introducing-matlantis-pfp-v9>）。
 
 **1つめ。実験値に近づけるための計算モード（r2SCAN）で扱える元素が 70 から 96 に増えました。**ランタノイドとアクチノイドの系列が新しく入り、水素（H）からキュリウム（Cm）までをカバーするとしています。
 
@@ -94,7 +94,7 @@ PFN はこの点を自分で説明していて、「PFP v9 が5つのタスク�
 
 ### 水素が燃える反応での誤差
 
-MLIP Arena の燃焼の種目とは別に、PFN はもう1つのベンチマークを足しています。MACE-MPA の論文にもとづく **19本の水素燃焼の素反応**について、予測した反応熱と実験値のずれ（RMSE）を測ったものです（出典: <https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/>）。
+MLIP Arena の燃焼の種目とは別に、PFN はもう1つのベンチマークを足しています。MACE-MPA の論文にもとづく **19本の水素燃焼の素反応**について、予測した反応熱と実験値のずれ（RMSE）を測ったものです（出典: <https://www.preferred.jp/ja/blog/tech/matlantis-pfp-v9-mlip-arena>）。
 
 | 何を測ったか | RMSE（kcal/mol・小さいほど正確） |
 |---|---|
@@ -102,7 +102,7 @@ MLIP Arena の燃焼の種目とは別に、PFN はもう1つのベンチマー�
 | PFP v9（PBE モード） | 7.88 |
 | MACE-MPA-0 | 11.15 |
 
-出典: すべて <https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/>
+出典: すべて <https://www.preferred.jp/ja/blog/tech/matlantis-pfp-v9-mlip-arena>
 
 <figure class="figure">
 <img src="/static/images/pfp9-h2-rmse.svg" alt="水素が燃える19本の素反応について、予測した反応熱と実験値のずれを比べた横棒グラフ。単位は kcal/mol で、短いほど正確。PFP v9 の r2SCAN モードが3.10、PFP v9 の PBE モードが7.88、MACE-MPA-0 が11.15。この数え方は走らせるたびに結果が変わらないと発表ページが説明しており、実験値は比較相手 MACE-MPA の論文の図から読み取ったものだと同じページに書かれている。">
@@ -117,20 +117,20 @@ MLIP Arena の燃焼の種目とは別に、PFN はもう1つのベンチマー�
 
 ### 安定性の種目で相手が上回っているところ
 
-高温と圧縮の条件でシミュレーションが破綻しないかを見る種目では、AUC という指標が使われています（出典: <https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/>）。PFN 自身が、相手のほうが上回っている箇所を書いています。
+高温と圧縮の条件でシミュレーションが破綻しないかを見る種目では、AUC という指標が使われています（出典: <https://www.preferred.jp/ja/blog/tech/matlantis-pfp-v9-mlip-arena>）。PFN 自身が、相手のほうが上回っている箇所を書いています。
 
 | | 加熱時の AUC | 圧縮時の AUC |
 |---|---|---|
 | PFP v9 | 0.981 | （全モデル中で最高と記載） |
 | ORB v2 | 0.985 | 0.772 |
 
-出典: すべて <https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/>
+出典: すべて <https://www.preferred.jp/ja/blog/tech/matlantis-pfp-v9-mlip-arena>
 
 <mark>加熱の条件だけ見れば ORB v2 のほうが上です</mark>（0.985 対 0.981）。ただし圧縮の条件では 0.772 まで落ちる、というのが PFN の説明です。**片方の条件だけを取り出せば順位は入れ替わります。**
 
 ### 値段は確かめられませんでした
 
-PFP は Matlantis というサービスを通じて提供されているものです（出典: <https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/>）。ただし料金は、この記事を書いた環境から製品サイトに到達できなかったため確かめられていません。二次情報の数字を写すことはしないので、値段はこの記事には書きません。
+PFP は Matlantis というサービスを通じて提供されているものです（出典: <https://www.preferred.jp/ja/blog/tech/introducing-matlantis-pfp-v9>）。ただし料金は、この記事を書いた環境から製品サイトに到達できなかったため確かめられていません。二次情報の数字を写すことはしないので、値段はこの記事には書きません。
 
 文章を書くAIのように「100万トークンあたり何ドル」という形で並べられる相手もいません。比較相手として名前が挙がっているモデル（MACE-MPA・MatterSim・CHGNet・ORB v2 など）は研究者が公開しているもので、課金の単位がそもそも違います。単位の違うものを1つの表に混ぜると壊れるので、この記事では並べていません。
 
@@ -160,8 +160,8 @@ PFP は Matlantis というサービスを通じて提供されているもの�
 
 すべて一次情報です。まとめ記事・ニュースサイト・個人ブログは1件も使っていません。
 
-1. PFP v9 の発表（Preferred Networks 公式技術ブログ・2026年8月17日）: <https://tech.preferred.jp/ja/blog/introducing-matlantis-pfp-v9/>
-2. PFP v9 のベンチマーク評価・詳細版（同・同日）: <https://tech.preferred.jp/ja/blog/matlantis-pfp-v9-mlip-arena/>
+1. PFP v9 の発表（Preferred Networks 公式技術ブログ・2026年8月17日）: <https://www.preferred.jp/ja/blog/tech/introducing-matlantis-pfp-v9>
+2. PFP v9 のベンチマーク評価・詳細版（同・同日）: <https://www.preferred.jp/ja/blog/tech/matlantis-pfp-v9-mlip-arena>
 3. PFP v8 の論文プレプリント（arXiv・2026年3月）: <https://arxiv.org/abs/2603.11063>
 4. MLIP Arena の公開リーダーボード（Hugging Face）: <https://huggingface.co/spaces/atomind/mlip-arena>
    （動的に描かれるページで、この記事を書いた環境からは中身を読み取れませんでした）

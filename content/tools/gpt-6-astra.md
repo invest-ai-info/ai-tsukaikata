@@ -229,7 +229,7 @@ RSS には、企業の利用例も2件入っています。どちらも OpenAI �
 | Claude Opus 5 | Anthropic | $5 | $25 | $0.50 |
 | Gemini 3.1 Pro Preview | Google | $2.00（20万トークン以下）/ $4.00（超過時） | $12.00（20万トークン以下）/ $18.00（超過時） | $0.20（20万トークン以下）/ $0.40（超過時） |
 
-出典: OpenAI は <https://developers.openai.com/api/docs/pricing>、Claude は <https://docs.claude.com/en/docs/about-claude/pricing>、Gemini は <https://ai.google.dev/gemini-api/docs/pricing>
+出典: OpenAI は <https://developers.openai.com/api/docs/pricing>、Claude は <https://platform.claude.com/docs/en/about-claude/pricing>、Gemini は <https://ai.google.dev/gemini-api/docs/pricing>
 
 <figure class="figure">
 <img src="/static/images/astra-vendor-price.svg" alt="3社の最上位モデルの単価を並べた横棒グラフ。100万トークンあたり、2026年9月5日時点。GPT-6 Astra は入力10ドル・出力50ドル。Claude Fable 5.1 も入力10ドル・出力50ドルで同じ。Claude Opus 5 は入力5ドル・出力25ドル。Gemini 3.1 Pro Preview は入力2ドル・出力12ドルで、20万トークンを超えると入力4ドル・出力18ドルに上がる。各社の公式料金ページに載っている値だけを並べたもので、賢さの比較ではない。">
@@ -252,7 +252,7 @@ RSS には、企業の利用例も2件入っています。どちらも OpenAI �
 | 一度に書ける量 | 12.8万トークン | 12.8万トークン | 12.8万トークン |
 | 学習データの締め切り | 2026年4月30日 | 2026年6月 | 2026年5月 |
 
-出典: OpenAI は <https://developers.openai.com/api/docs/models>、Claude は <https://docs.claude.com/en/docs/about-claude/models/overview>
+出典: OpenAI は <https://developers.openai.com/api/docs/models>、Claude は <https://platform.claude.com/docs/en/models/overview>
 
 <mark>読める量は3つともほぼ同じで、学習データの締め切りは Claude Fable 5.1 のほうが2か月新しくなっています</mark>。この3つのモデルを「読める量」で選び分ける意味は、いまのところありません。
 
@@ -289,8 +289,8 @@ RSS には、企業の利用例も2件入っています。どちらも OpenAI �
 
 他社との比較に使った、他社の公式ページです。
 
-5. 料金（Anthropic 公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/pricing>
-6. モデル一覧と仕様（Anthropic 公式ドキュメント）: <https://docs.claude.com/en/docs/about-claude/models/overview>
+5. 料金（Anthropic 公式ドキュメント）: <https://platform.claude.com/docs/en/about-claude/pricing>
+6. モデル一覧と仕様（Anthropic 公式ドキュメント）: <https://platform.claude.com/docs/en/models/overview>
 7. Gemini API の料金（Google 公式）: <https://ai.google.dev/gemini-api/docs/pricing>
 
 **読めなかったページ**（この記事では出典に使っていません）: `openai.com/index/path-to-astra`、`openai.com/index/safety-overview-gpt-6-astra`、`help.openai.com`。いずれも自動アクセス対策により 403 が返ります。中身を推測して書くことはしていません。
