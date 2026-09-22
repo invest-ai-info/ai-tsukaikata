@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-22T10:02:14.932272+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-22T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントを社員ごとに導入すると、それぞれの実行環境やAPIキー・利用できるサービス・権限などを個別に管理する必要があります。各メンバーに専用のAIエージェントを割り当てながら、認証情報やアクセスルールをチーム単位でまとめて管理できるオープンソースの「OneCLI」が公開されています。 続きを読む...",
+      "title": "無料でひとりでは無く複数人のチームで使うことができるAIエージェント「OneCLI」、オープンソースでセルフホスト可能",
+      "uid": "1b79fecaf5490d4a",
+      "url": "https://gigazine.net/news/20260922-onecli/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-22T05:03:14.351666+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "3643ede7e5cb9d84",
       "url": "https://gigazine.net/news/20260915-ios-27-macos-ipados/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T02:05:07+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "シャープは、AIサーバー事業への参入を発表した。2027年度にもNVIDIAのテクノロジーを搭載したAIサーバーの販売を開始する予定で、9月15日から受注を開始した。",
-      "title": "シャープがAIサーバー事業に参入、2027年度の販売に向け受注スタート",
-      "uid": "5d353b984571ad1e",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140926.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
