@@ -24,6 +24,7 @@ from check_freshness import (  # noqa: E402
     lesson_promotions,
     money_note_staleness,
     queue_shortage,
+    readability_drift,
 )
 
 from src.content import Article, render_markdown  # noqa: E402
@@ -1074,3 +1075,39 @@ def test_the_format_sample_in_the_header_is_not_counted():
     """冒頭の書式説明（`#### <新しい番号>. <題>`）は番号ではないので当たらない。"""
     text = "# 台帳\n\n足すときは `#### <新しい番号>. <題>` で足す。\n\n## 生きている教訓\n\n### ★1. 題\n\n本文。\n"
     assert lesson_number_duplicates(text) == []
+
+
+# --- 読みやすさの後戻り（2026-09-22）---
+
+def _readable(slug, published, body):
+    return SimpleNamespace(slug=slug, category="recipes", published=published,
+                           body_html=render_markdown(body))
+
+
+LONG = "あ" * 80 + "。"
+SHORT = "短い文です。"
+# ⚠️ 冒頭の TODAY を書き換えないこと（モジュール全体の既定値になっている）
+LATER = date(2026, 9, 30)
+
+
+def test_readability_drift_flags_a_hard_to_read_new_article():
+    art = _readable("new", date(2026, 9, 25), (LONG + "\n\n") * 3 + SHORT)
+    got = readability_drift([art], LATER)
+    assert len(got) == 1 and "new:" in got[0]
+    assert "箇条書き" in got[0]
+
+
+def test_readability_drift_stays_quiet_for_a_readable_article():
+    art = _readable("new", date(2026, 9, 25), (SHORT + "\n\n") * 10 + LONG)
+    assert readability_drift([art], LATER) == []
+
+
+def test_readability_drift_ignores_articles_written_before_the_rule():
+    """🚨 線を引かずに見たら46本が鳴った＝直さないと決めたものが毎週並ぶ。"""
+    art = _readable("old", date(2026, 9, 20), (LONG + "\n\n") * 3)
+    assert readability_drift([art], LATER) == []
+
+
+def test_readability_drift_ignores_articles_that_are_no_longer_recent():
+    art = _readable("new", date(2026, 9, 25), (LONG + "\n\n") * 3)
+    assert readability_drift([art], date(2026, 10, 31)) == []

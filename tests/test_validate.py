@@ -697,3 +697,79 @@ def test_money_note_without_frontmatter_checked_is_detected():
 
 def test_money_note_with_frontmatter_checked_passes():
     assert validate([_article(body=MONEY_OK, checked=date(2026, 8, 15))]) == []
+
+
+# --- 読みやすさ・題の形（2026-09-22 オーナー指摘「タイトルも文章も分かりづらい」）---
+
+NEW = date(2026, 9, 23)   # READABILITY_ERA。ここから新しく書く記事に効く
+
+
+def _long(n):
+    return "あ" * n + "。"
+
+
+def test_a_sentence_that_cannot_be_followed_is_stopped():
+    got = validate([_article(body=_long(130), published=NEW)])
+    assert any("1文が131字あります" in e for e in got), got
+    assert any("箇条書き" in e for e in got), got
+
+
+def test_a_long_but_readable_sentence_is_not_stopped():
+    """目安（60字）ではビルドを止めない。止めるのは追えない長さだけ。"""
+    assert validate([_article(body=_long(80), published=NEW)]) == []
+
+
+def test_old_articles_are_not_touched():
+    """既存記事は直さない（オーナー判断）。日付で線を引く。"""
+    assert validate([_article(body=_long(200), published=date(2026, 9, 22))]) == []
+
+
+def test_prompts_and_figures_are_not_measured():
+    """指示文はコピーされる原文。図の alt は長いのが正しい。"""
+    body = (
+        '<div class="prompt">' + "あ" * 300 + "</div>\n\n"
+        "ふつうの本文です。"
+    )
+    assert validate([_article(body=body, published=NEW)]) == []
+
+
+def test_english_source_quotes_are_not_measured():
+    body = "根拠: 「" + "instructors receive the revenue when the student purchases " * 3 + "」"
+    assert validate([_article(body=body, published=NEW)]) == []
+
+
+def test_title_separator_must_be_the_double_dash():
+    got = validate([_article(
+        title="予約が3倍になっても照合はゆるまない――12回とも誤判定0件",
+        category="recipes", slug="t1", published=NEW,
+        body="本文です。" * 400,
+    )])
+    assert any("区切り" in e and "——" in e for e in got), got
+
+
+def test_hyphen_inside_a_product_name_is_fine():
+    """`GPT-6` や `Flash-Lite` は語の中のハイフン。区切りではない。"""
+    got = validate([_article(
+        title="GPT-6 Astra の値段——Flash-Lite と並べる",
+        category="recipes", slug="t2", published=NEW,
+        body="本文です。" * 400,
+    )])
+    assert [e for e in got if "区切り" in e] == []
+
+
+def test_title_front_half_must_be_short_enough_to_stand_alone():
+    got = validate([_article(
+        title="AIの使い方を教える前に、手順書が他人の手で止まる場所を探す——6手順のうち3つで止まった",
+        category="recipes", slug="t3", published=NEW,
+        body="本文です。" * 400,
+    )])
+    assert any("前半が30字あります" in e for e in got), got
+
+
+def test_a_short_front_half_passes():
+    got = validate([_article(
+        title="数字の作り話を一文で止める——範囲では0/6だった",
+        category="recipes", slug="t4", published=NEW,
+        body="本文です。" * 400,
+    )])
+    assert [e for e in got if "前半" in e or "区切り" in e] == []

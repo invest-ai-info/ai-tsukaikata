@@ -12,7 +12,7 @@ import html
 import re
 from datetime import date
 
-from . import config
+from . import config, readability
 from .content import Article
 
 TOKEN_PATTERNS = (
@@ -171,6 +171,42 @@ BANNED_HYPE_WORDS = (
     "衝撃", "驚愕", "信じられない", "ヤバい", "やばい", "最強", "爆速",
     "必見", "話題沸騰", "今だけ", "期間限定", "数量限定", "残りわずか", "劇的",
 )
+
+# --- 読みやすさ（2026-09-22 オーナー指摘「タイトルも文章も分かりづらい」）---
+#
+# 実測で出た事実＝1文の平均が 28.3字（8/01〜8/12 の20本）から **44.7字**（9/15〜9/22 の20本）へ、
+# 60字以上の文が 2% → **21%** に伸びていた。🔑 **原因は「誠実さ」のほう**で、
+# 「試行回数を本文に書く」「条件を省かない」を守った結果、実測の条件が1文に流れ込んでいる。
+#
+# 基準の出どころ＝文化審議会建議「公用文作成の考え方」（令和4年1月7日）Ⅲ-3「文の書き方」。
+# 「50〜60字ほどになってきたら読みにくくなっていないか意識するとよい」（ア）、
+# 「三つ以上の情報を並べるときには、箇条書を利用する」（ウ）。
+# 直し方は**分割よりも箇条書き**のことが多い＝オーナーの「リスト・表・図を多く」とも一致する。
+#
+# 📌 日付で線を引く（既存記事は直さない＝オーナー判断）。目安（60字）はここでは止めず、
+# `tools/check_readability.py` が割合で見る。ここで止めるのは「構造が追えない1文」だけ。
+# ⚠️ 線は `src/readability.py` の `ERA` が単一ソース（週次の番人も同じ線を見る）
+READABILITY_ERA = readability.ERA
+
+# --- タイトルの区切り（同上）---
+#
+# 決まりは「便益 ——（ダッシュ）落とし穴」。⚠️ **区切りが揃っていないと、
+# 「前半だけで意味が通るか」を機械でも人でも見られない**（実測＝196本中11本が
+# `—` 1つ・`――`・`―`・` - ` を使っていて、前半の字数を測ると別物になる）。
+# ハイフンは `GPT-6` `Flash-Lite` のように語の中で正しく使われるので、
+# **区切りとして使われた形だけ**を見る（前後に空白のある `-`、ダッシュ類）。
+TITLE_BAD_SEPARATORS = (
+    ("―", "―（U+2015 の1つ書き）"),
+    ("–", "–（エンダッシュ）"),
+    ("─", "─（罫線）"),
+    (" - ", "前後に空白のあるハイフン"),
+    (" — ", "前後に空白のある —"),
+)
+# 先頭で意味が完結する目安は13〜16字（Yahoo!ニューストピックスの13字が根拠。
+# `content/_recipe_queue.md` の「字数」）。⚠️ **目安では止めない。**
+# ここで止めるのは「前半だけで読み切れない長さ」＝24字超。
+# 実測＝直近14日の52本で24字を超えたのは7本、うち2本は区切り記号の間違いだった
+TITLE_HEAD_MAX = 24
 
 TAG_RE = re.compile(r"<[^>]+>")
 
@@ -408,6 +444,51 @@ def _title_errors(where: str, article: Article) -> list[str]:
     return errors
 
 
+def _readability_errors(where: str, article: Article) -> list[str]:
+    """構造が追えないほど長い1文を止める。
+
+    ⚠️ **止めるのは「長い」ではなく「追えない」。**目安の60字はここでは見ない
+    （`tools/check_readability.py` が記事全体の割合で見る）。
+    ⚠️ 指示文・図・表・コード・英語の原文引用は数えない（`src/readability.py`）。
+    """
+    if article.published < READABILITY_ERA:
+        return []
+    return [
+        f"{where}: 1文が{len(sentence)}字あります（上限{readability.SENTENCE_MAX}字）。"
+        f"**三つ以上のことを並べているなら、文を分けるより箇条書きにしてください**"
+        f"（文化審議会建議「公用文作成の考え方」Ⅲ-3 ウ。"
+        f"`python tools/check_readability.py {article.source_path}` で全部出ます）"
+        f"\n    → {sentence[:60]}…"
+        for sentence in readability.long_sentences(article.body_html)
+    ]
+
+
+def _title_shape_errors(where: str, article: Article) -> list[str]:
+    """題の区切り記号と、前半の長さ。
+
+    🔑 **前半だけで意味が通ること**が決まり（検索結果では後半が切れる）。
+    区切りが揃っていないと、その前半がどこまでかを誰も測れない。
+    """
+    if article.published < READABILITY_ERA or article.category not in ("recipes", "tools"):
+        return []
+    errors = [
+        f"{where}: タイトルの区切りに {name} を使っています。"
+        f"区切りは `——`（ダッシュ2つ）に統一してください"
+        f"（content/_recipe_queue.md の「形は『便益 ——（ダッシュ）落とし穴』」）"
+        for mark, name in TITLE_BAD_SEPARATORS
+        if mark in article.title.replace("——", "")
+    ]
+    head = article.title.split("——")[0]
+    if len(head) > TITLE_HEAD_MAX:
+        errors.append(
+            f"{where}: タイトルの前半が{len(head)}字あります（上限{TITLE_HEAD_MAX}字）。"
+            f"**先頭13〜16字で意味が完結し、残りは切れてよい補足**にしてください"
+            f"（検索結果では後半が切れます。content/_recipe_queue.md の「字数」）"
+            f"\n    → {head}"
+        )
+    return errors
+
+
 def _money_note_errors(where: str, article: Article) -> list[str]:
     """金額目安ブロックの中身を検査する。
 
@@ -596,6 +677,8 @@ def validate(
         errors += _density_errors(where, article)
         errors += _checked_errors(where, article, today)
         errors += _title_errors(where, article)
+        errors += _title_shape_errors(where, article)
+        errors += _readability_errors(where, article)
         errors += _money_note_errors(where, article)
         errors += _income_phrase_errors(where, article)
 

@@ -42,6 +42,7 @@ from typing import NamedTuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from src import readability  # noqa: E402
 from src.content import load_articles  # noqa: E402
 
 USER_AGENT = "ai-tsukaikata-checker/1.0"
@@ -740,6 +741,45 @@ MONEY_DATE_RE = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
 MONEY_MAX_AGE_DAYS = 180
 
 
+# --- 読みやすさの後戻り（2026-09-22 オーナー指摘「タイトルも文章も分かりづらい」）---
+#
+# ビルド（src/validate.py）が止めるのは「追えない1文」だけで、
+# **記事全体がじわじわ読みにくくなること**は止まらない。実際それが起きた＝
+# 1文の平均が 28.3字（8月上旬の20本）→ **44.7字**（9月下旬の20本）。
+# 🔑 **1本ずつ見ていたら気づけない種類の壊れ方**なので、週次でまとめて見る。
+# ⚠️ **既存記事は直さない**（オーナー判断）ので、見るのは最近書いたものだけ。
+READABILITY_WATCH_DAYS = 14
+
+
+def readability_drift(articles, today: date, days: int = READABILITY_WATCH_DAYS) -> list[str]:
+    """最近の記事のうち、地の文が読みにくくなっているものを返す。
+
+    ⚠️ **決まりができた日（`readability.ERA`）より後の記事だけ**を見る。
+    線を引かずに直近2週間を見たら46本が鳴った＝直さないと決めたものが毎週並び、
+    週次が「打つ手のない赤」で埋まる（2026-09-14 の死活警告と同じ壊れ方）。
+    """
+    recent = [
+        a for a in articles
+        if (today - a.published).days <= days and a.published >= readability.ERA
+    ]
+    problems = []
+    for article in sorted(recent, key=lambda a: a.published):
+        stats = readability.stats(article.body_html)
+        if not stats["count"]:
+            continue
+        if stats["long_ratio"] <= readability.LONG_RATIO_MAX:
+            continue
+        problems.append(
+            f"{article.slug}: {readability.SENTENCE_WARN}字以上の文が"
+            f"{stats['long_ratio'] * 100:.0f}%あります"
+            f"（目安{readability.LONG_RATIO_MAX * 100:.0f}%以下・平均{stats['mean']:.0f}字・"
+            f"最長{stats['max']}字）。"
+            f"三つ以上を並べている文は箇条書きにしてください"
+            f"（python tools/check_readability.py content/{article.category}/{article.slug}.md）"
+        )
+    return problems
+
+
 def money_note_staleness(articles, today: date, max_age_days=MONEY_MAX_AGE_DAYS) -> list[str]:
     """金額目安ブロックの確認日が古い記事を、問題の文字列にして返す。
 
@@ -1029,6 +1069,9 @@ def main(argv: list[str] | None = None) -> int:
     if heartbeat:
         report.problems.append(heartbeat)
     report.problems.extend(money_note_staleness(articles, date.today()))
+
+    # 読みやすさの後戻り（2026-09-22）。直近2週間ぶんだけを見る
+    report.problems.extend(readability_drift(articles, date.today()))
 
     # レシピ担当の日次ログ（2026-08-26）。日次の `--writer` と同じものを週次でも見る
     # （日次のワークフローが止まっていても、週次で必ず拾えるように二重にしておく）
