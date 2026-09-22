@@ -20,9 +20,9 @@ on:
   workflow_dispatch:
     inputs:
       bank:
-        description: "種の束（automate / earn / safety / work）"
+        description: "種の束（空欄＝その週の束。automate / earn / safety / work で指定もできる）"
         required: false
-        default: "automate"
+        default: "auto"
 
 permissions:
   contents: write
@@ -36,8 +36,12 @@ jobs:
   suggest:
     runs-on: ubuntu-latest
     env:
-      # 束を指定しなければ automate（オーナーの優先順位＝自動化・ループ）
-      BANK: ${{ inputs.bank || 'automate' }}
+      # 🆕 2026-09-22: 既定を `auto`（その週の束）に変えた。
+      # 🚨 それまでは既定が `automate` 固定で、**毎週土曜の自動実行は automate しか回していなかった**。
+      # 実測＝`docs/topic-candidates/` は 8/29・9/5・9/12・9/19 と4本とも automate で、
+      # `earn`（副業）は 8/23 の手回し1本きり。「源③は副業を供給できない」の本体がこれ。
+      # 束の決め方は tools/suggest_topics.py の bank_for_week が単一ソース（ここには書かない）
+      BANK: ${{ inputs.bank || 'auto' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -45,8 +49,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      # ⚠️ 1,200回サジェストを叩く。失敗はスクリプト側が数えて先へ進むので、
-      # 途中で落ちて中途半端な表ができることはない（tools/suggest_topics.py）。
+      # ⚠️ 1,200回サジェストを叩く。数件の失敗は数えて先へ進むが、**2割を超えたら
+      # ファイルを書かずに異常終了する**（取れなかった回の少ない語数が「需要が無い」に
+      # 見えるため。tools/suggest_topics.py の FAIL_LIMIT）。ここが赤いときは通信の問題
       - name: 候補を集める
         run: python -m tools.suggest_topics "$BANK"
 
@@ -59,5 +64,8 @@ jobs:
             echo "候補に変化なし。コミットしません"
             exit 0
           fi
-          git commit -m "chore: 題材の候補を更新（$BANK）"
+          # ⚠️ $BANK は auto のことがあるので、実際に書かれたファイル名を使う
+          # （`2026-09-22-earn.md` ＝日付と束が両方入る）
+          FILES=$(git diff --cached --name-only | xargs -n1 basename | tr '\n' ' ')
+          git commit -m "chore: 題材の候補を更新（${FILES% }）"
           git push

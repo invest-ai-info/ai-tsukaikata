@@ -79,16 +79,47 @@ SEED_BANKS: dict[str, tuple[str, ...]] = {
     ),
 }
 
+# 🆕 束は週ごとに回す（2026-09-22 オーナー指示）。
+#
+# 🚨 それまで**毎週土曜の自動実行は必ず `automate`** だった
+# （`topics.yml` の `BANK: ${{ inputs.bank || 'automate' }}`）。実測＝`docs/topic-candidates/` は
+# 8/29・9/5・9/12・9/19 と**4本とも automate**で、`earn` は 8/23 の手回し1本だけ。
+# ネタ探し担当が 2026-08-16 に申し送っていた「源③は副業を永久に供給できない」の本体。
+# ⚠️ **同じ束は同じ語しか返さない**ので、ここを回しても新語が増えるのは4週に1回ぶんだけ。
+# 種そのものの入れ替え（この下の `SEED_BANKS` のコメント）は別の宿題として残っている。
+def bank_for_week(today: date) -> str:
+    """その週に回す束。ISO週番号で決める＝同じ週なら何回叩いても同じ束。"""
+    banks = tuple(SEED_BANKS)
+    return banks[today.isocalendar()[1] % len(banks)]
+
+
 # 情報収集・商用・無関係。8/10 の定型に、このサイトが書かない領域を足したもの。
 DROP_WORDS = (
     "とは", "料金", "無料", "値段", "口コミ", "評判", "求人", "転職", "資格", "検定",
     "株", "投資", "fx", "仮想通貨", "ビットコイン", "トレード", "競馬", "パチンコ",
     "危険", "違法", "訴訟", "逮捕", "なんj", "2ch", "5ch", "知恵袋",
     "ログイン", "ダウンロード", "解約", "退会", "アンインストール",
+    # 2026-09-22 追加（8/17 の申し送り）＝展示会名と情報商材の商品名
+    "インテックス", "ビッグサイト", "展示会", "コンプリート",
 )
 
 # ノイズ①: 種の ai がカタカナ「アイ」に転記された誤ヒット
 KATAKANA_AI_RE = re.compile(r"アイ ")
+
+# ノイズ③: 中国語（簡体字・繁体字）のサジェスト。2026-08-15（通知の束4語）と
+# 08-17（自動化の束6語）の2回、独立に出たのでノイズと認めた（担当の申し送り）。
+# 🚨 とくに `ai 自動化 接 案` は台湾華語の「案件を受ける」＝**副業語に見える**ので、
+# 副業の種を探している人が最初に拾う。実質語に算入されていた。
+#
+# ⚠️ **日本語を巻き込まない書き方にする**（落としすぎると需要が過小に出る）:
+#   - 文字は「現代日本語で使わない字」だけを見る（簡体字・繁体字の専用字）。
+#     `機`・`個`・`会`・`学`・`例` のような日本語と共通の字は**入れない**
+#     （`個` を入れて `ai 個人情報 取り扱い` を落とした。繁体字の語は `這`・`們` 側で拾える）
+#   - 漢字だけでは見分けられない語（`案例`・`排程`・`接案`）は、語そのもので落とす
+# 📌 既存の候補ファイル4,845語で試して、拾ったのは39語・すべて実際に中国語だった（誤検知0）
+NON_JAPANESE_CJK = "们这么动关应长门问见请让说这們這麼麽學說與應關灣鏈嗎吗哪怎"
+CHINESE_WORDS = ("案例", "排程", "排 程", "接案", "接 案", "教学", "什么")
+_CJK_RE = re.compile(f"[{NON_JAPANESE_CJK}]")
 
 # ノイズ②: AIツール自身の話（副業や仕事の作業ではない）
 SELF_TALK_RE = re.compile(
@@ -109,13 +140,23 @@ def suggest(query: str, timeout: int = 15) -> list[str]:
         return json.loads(response.read().decode("utf-8"))[1]
 
 
+def is_chinese(word: str) -> bool:
+    """中国語（簡体字・繁体字）のサジェストか。⚠️ 日本語を巻き込まないこと。"""
+    return bool(_CJK_RE.search(word)) or any(w in word for w in CHINESE_WORDS)
+
+
 def is_noise(word: str) -> bool:
     """採取した語が、数えるに値しないか。⚠️ 落とした語は必ず表に出すこと。"""
-    return bool(KATAKANA_AI_RE.search(word) or SELF_TALK_RE.search(word))
+    return bool(KATAKANA_AI_RE.search(word) or SELF_TALK_RE.search(word)) or is_chinese(word)
 
 
 def is_off_topic(word: str) -> bool:
     return any(drop in word for drop in DROP_WORDS)
+
+
+# 取れなかったクエリがこの割合を超えたら、その回は候補ファイルを書かない。
+# 2割＝「ネットワークが不調」と「たまたま数件こけた」の境目。実測の失敗は通常0件
+FAIL_LIMIT = 0.2
 
 
 def sweep(seeds, tools=TOOLS, suffixes=SUFFIXES, fetch=suggest, pause: float = 0.1):
@@ -183,6 +224,16 @@ def report(bank: str, rows, failures: int, queries: int, today: date) -> str:
         f"クエリ **{queries}**／失敗 {failures}／生 **{raw}**／実質 **{real}**"
         f"（ノイズと対象外を引いた残り）。",
         "",
+    ]
+    if failures:
+        # 🆕 2026-09-22: 失敗は数字の中に埋もれる（「失敗 412」は読み飛ばされる）。
+        # 取れなかった回は語数が小さく出るので、**需要が無いのと区別が付かない**のが怖い
+        lines += [
+            f"⚠️ **{failures}件のクエリが取れていません**（{queries}件中）。"
+            "この回の語数は実際より小さく出ます。**「需要が無い」と読まないこと。**",
+            "",
+        ]
+    lines += [
         "🚨 **これは候補であって決定ではない。**採否の理由は語数からは出てこない",
         "（2026-08-14 は実質語数の上位3つが1件も採用にならなかった）。",
         "**入れるときは、キューの各節の縛りと既存記事との切り分けを必ず書くこと。**",
@@ -203,12 +254,18 @@ def report(bank: str, rows, failures: int, queries: int, today: date) -> str:
         if len(r["real"]) < 10:
             continue
         lines += [f"## {r['seed']}（実質 {len(r['real'])}語）", ""]
+        # 🆕 2026-09-22: **1語も捨てない**。以前は60語で切って「…ほか N 語」としていたが、
+        # 見送った語が残らないので「なぜ採らなかったか」を後から確かめられなかった。
+        # 長い束は読むのが辛いので、61語目からは畳んで置く（消しはしない）。
         lines += [f"- {w}" for w in r["real"][:60]]
-        if len(r["real"]) > 60:
-            lines.append(f"- …ほか {len(r['real']) - 60} 語")
+        rest = r["real"][60:]
+        if rest:
+            lines += ["", f"<details><summary>残り {len(rest)}語</summary>", ""]
+            lines += [f"- {w}" for w in rest]
+            lines += ["", "</details>"]
         if r["noise"]:
             lines += ["", f"<details><summary>落としたノイズ {len(r['noise'])}語</summary>", ""]
-            lines += [f"- {w}" for w in r["noise"][:20]]
+            lines += [f"- {w}" for w in r["noise"]]
             lines += ["", "</details>"]
         lines.append("")
     return "\n".join(lines) + "\n"
@@ -222,6 +279,10 @@ def main(argv=None) -> int:
             print(f"  {name:<10} {len(seeds)}語  {'・'.join(seeds[:5])}…")
         return 0
     bank = argv[0]
+    # 🆕 `auto` ＝その週の束（ワークフローはこれを渡す）。束名の直接指定も従来どおり効く
+    if bank == "auto":
+        bank = bank_for_week(date.today())
+        print(f"auto: 今週の束は {bank}")
     if bank not in SEED_BANKS:
         print(f"知らない束: {bank}（--list で一覧）")
         return 1
@@ -231,6 +292,17 @@ def main(argv=None) -> int:
     print(f"{bank}: 種{len(seeds)} × ツール{len(TOOLS)} × 語尾{len(SUFFIXES)} = {queries} クエリ")
 
     collected, failures = sweep(seeds)
+
+    # 🆕 2026-09-22: 取れなかった回に**ファイルを書かない**。
+    # 🚨 それまでは何件失敗しても exit 0 でファイルを書いていた＝サジェストが総崩れした週も
+    # 「実質3語」の候補ファイルが `docs/topic-candidates/` に残り、**需要が無かったように見える**。
+    # 後から見分ける手立てが無いのが問題（ファイルにも失敗数は出るが、残っていれば読まれる）。
+    if failures > queries * FAIL_LIMIT:
+        print(f"\n🚨 {failures}/{queries} 件のクエリが取れませんでした"
+              f"（上限 {FAIL_LIMIT:.0%}）。候補ファイルは書きません。")
+        print("   ＝この回の語数は需要ではなく通信の失敗。残すと後から見分けが付きません。")
+        return 1
+
     rows = existing_coverage(classify(collected))
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

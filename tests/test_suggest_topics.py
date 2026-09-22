@@ -8,6 +8,7 @@ from datetime import date
 
 from tools.suggest_topics import (
     SEED_BANKS,
+    bank_for_week,
     TOOLS,
     SUFFIXES,
     classify,
@@ -143,3 +144,99 @@ def test_tools_are_the_same_five_as_the_earlier_runs():
 # report() は実ファイルを触らないので、既存の実物を使う（存在確認も兼ねる）
 from tools.suggest_topics import QUEUE_PATH as QUEUE_FIXTURE  # noqa: E402
 from tools.suggest_topics import RECIPES_DIR as RECIPES_FIXTURE  # noqa: E402
+
+
+# --- 2026-09-22 オーナー指示で直した4点（ネタ探し担当の申し送り 8/15〜8/17）---
+#
+# ①毎週の自動実行が automate の束しか回さない ②is_noise に CJK 判定が無い
+# ③report が実質語を60語で切る（61語目以降は実物がどこにも残らない）
+# ④失敗が多くても正常終了する（空の候補ファイルが「回した結果」に見える）
+
+def test_bank_rotates_week_by_week():
+    """①毎週ちがう束を回す。4週で4束ぜんぶに当たる。"""
+    weeks = [bank_for_week(date(2026, 9, 5 + 7 * i)) for i in range(4)]
+    assert len(set(weeks)) == 4
+    assert set(weeks) == set(SEED_BANKS)
+
+
+def test_bank_for_week_is_deterministic():
+    """同じ日なら同じ束（再実行で別の束にならない＝記録と突き合わせられる）。"""
+    assert bank_for_week(date(2026, 9, 26)) == bank_for_week(date(2026, 9, 26))
+
+
+def test_bank_for_week_is_stable_within_the_same_week():
+    """土曜に回す設計。週の途中で手回ししても同じ束になる。"""
+    assert bank_for_week(date(2026, 9, 21)) == bank_for_week(date(2026, 9, 26))
+
+
+def test_simplified_and_traditional_chinese_is_noise():
+    """②実測で素通りしていた語（2026-08-15 通知の束・08-17 自動化の束）。"""
+    for word in ("ai 主动通知", "ai 自動化 教學", "ai 自動化 是 什麼",
+                 "ai 機器人 自動化 相關 供應 鏈", "ai 自動化 這 個"):
+        assert is_noise(word), word
+
+
+def test_chinese_only_words_in_japanese_characters_are_noise():
+    """漢字だけでは見分けられない語は、語で落とす（`接 案`＝台湾華語の「案件を受ける」）。"""
+    for word in ("ai 自動化 接 案", "ai 自動化 排 程", "ai 自動化 案例"):
+        assert is_noise(word), word
+
+
+def test_japanese_words_are_not_mistaken_for_chinese():
+    """⚠️ 誤検知を出さない。日本語の語は落とさない（落とすと需要が過小に出る）。"""
+    for word in ("chatgpt 自動化 やり方", "ai 定期実行 方法", "生成ai 通知 設定",
+                 "ai 議事録 自動 作成", "ai 個人情報 取り扱い", "ai 会議 事例",
+                 "ai 機械学習 入門", "ai 英会話 学習"):
+        assert not is_noise(word), word
+
+
+def test_exhibition_and_infoproduct_names_are_off_topic():
+    """展示会名・情報商材の商品名は対象外（8/17 の申し送り＝DROP_WORDS に足す）。"""
+    assert is_off_topic("ai 業務 自動化 展 インテックス 大阪")
+    assert is_off_topic("ai 自動化 完全 フル コンプリート パック")
+
+
+def test_report_keeps_every_real_word():
+    """③60語で切らない。61語目以降が消えると、見送りの理由を後から確かめられない。"""
+    words = {f"ai 種 語{i:03}" for i in range(65)}
+    rows = existing_coverage(classify({"種": words}),
+                             recipes_dir=RECIPES_FIXTURE, queue_path=QUEUE_FIXTURE)
+    text = report("automate", rows, 0, 80, date(2026, 9, 22))
+    for i in (0, 59, 60, 64):
+        assert f"ai 種 語{i:03}" in text, i
+    assert "ほか" not in text
+
+
+def test_report_warns_when_some_queries_failed():
+    """失敗が1件でもあれば、表の前に警告を出す（数字だけだと読み飛ばされる）。"""
+    rows = existing_coverage(classify({"種": {"ai 種 やり方"}}),
+                             recipes_dir=RECIPES_FIXTURE, queue_path=QUEUE_FIXTURE)
+    assert "⚠️" in report("automate", rows, 3, 80, date(2026, 9, 22))
+
+
+def test_main_stops_when_too_many_queries_failed(tmp_path, monkeypatch):
+    """④失敗が多い回は、異常終了して候補ファイルを書かない。"""
+    import tools.suggest_topics as st
+    monkeypatch.setattr(st, "OUTPUT_DIR", tmp_path)
+    monkeypatch.setattr(st, "sweep", lambda seeds, **kw: ({"自動化": set()}, 1200))
+    assert st.main(["automate"]) == 1
+    assert list(tmp_path.glob("*.md")) == []
+
+
+def test_main_writes_the_file_when_the_sweep_worked(tmp_path, monkeypatch):
+    import tools.suggest_topics as st
+    monkeypatch.setattr(st, "OUTPUT_DIR", tmp_path)
+    monkeypatch.setattr(st, "sweep", lambda seeds, **kw: ({"自動化": {"ai 自動化 やり方"}}, 0))
+    assert st.main(["automate"]) == 0
+    assert len(list(tmp_path.glob("*.md"))) == 1
+
+
+def test_main_accepts_auto_and_picks_the_weeks_bank(tmp_path, monkeypatch, capsys):
+    """ワークフローは束を指定しない＝`auto` で週ごとに回す。"""
+    import tools.suggest_topics as st
+    monkeypatch.setattr(st, "OUTPUT_DIR", tmp_path)
+    monkeypatch.setattr(st, "sweep", lambda seeds, **kw: ({"種": {"ai 種 やり方"}}, 0))
+    assert st.main(["auto"]) == 0
+    out = capsys.readouterr().out
+    assert bank_for_week(date.today()) in out
+    assert list(tmp_path.glob(f"*-{bank_for_week(date.today())}.md"))
