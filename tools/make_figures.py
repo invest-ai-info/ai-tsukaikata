@@ -22760,6 +22760,164 @@ def doubt_fixes_added_not_dropped_chart() -> None:
     )
 
 
+def backlog_scale_holds_brevity_breaks_it_scale_chart() -> None:
+    """監視対象の過去分を7件→30件→100件と増やしても、誤判定は増えなかった。
+
+    実測（2026-09-22）。架空のSNS監視・問い合わせ監視の2本に、新しい監視対象を
+    1件追加し、過去分の件数だけを7件・30件・100件と振った。「既読リストに無い
+    項目を新着として」という素朴な指示文を、材料2本×各2回＝4回ずつ、件数の
+    水準ごとに独立して実行した。正しい答えはどの水準でも「新着0件」。
+    """
+    rows = [
+        ("過去分7件（材料2本×各2回）", 2, 4),
+        ("過去分30件（材料2本×各2回）", 3, 4),
+        ("過去分100件（材料2本×各2回）", 3, 4),
+    ]
+    label_w = 250
+    cell_w, cell_h, gap = 190, 34, 12
+    top = 168
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "過去分を7件→30件→100件に増やしても、誤判定は増えなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のSNS監視・問い合わせ監視の2本に、新しい監視対象を1件追加し、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「既読リストに無い項目を新着として」という素朴な指示文だけを通した。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "正しい答えはどの件数でも「新着0件」。件数を増やすほど崩れるとは限らない。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "数字は、正しく0件と判定できた回数。生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 正しく0件"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 56
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "誤判定は単調に増えず、材料と回によって行ったり来たりした。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "7件でも崩れる回があり、100件でも崩れない回があった。件数だけでは決まらない。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "監視対象の過去分の件数を7件・30件・100件と振り、「既読リストに無い項目を"
+        "新着として」という素朴な指示文で新着0件を報告できた回数を比べたマス目。"
+        "過去分7件では材料2本×各2回=4回中2回しか正しく0件にできず（2/4）、"
+        "過去分30件では4回中3回（3/4）、過去分100件でも4回中3回（3/4）で、"
+        "件数が増えるほど誤判定が増える・ある件数を境に跳ねる、といった単調な"
+        "傾向は見られなかった。少ない件数のときのほうが崩れやすい回もあった。"
+    )
+    (OUT / "backlog-scale-holds-brevity-breaks-it-scale.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def backlog_scale_holds_brevity_breaks_it_fixes_chart() -> None:
+    """過去分100件のとき、対策の一文が生き残る言い方・生き残らない言い方。
+
+    実測（2026-09-22）。過去分100件の材料2本に、対策の一文を変えて各2回、
+    計4回ずつ実行した。日付を明示する一文・軽い注意はどちらも4/4で0件に戻ったが、
+    「簡潔にしてください」と書式を縮める一文を足しただけで、対策の一文があっても
+    4/4とも過去いちばん新しい1件を新着に数えた。念押しを重ねても、材料によって
+    直る場合と直らない場合に分かれた。
+    """
+    groups = [
+        ("対策：本日の日付のものだけ", 4, 4, "対策の一文どおりに機能"),
+        ("対策：軽い注意（過去分は含めない）", 4, 4, "短い注意でも機能"),
+        ("対策＋「簡潔に」で書式を縮める", 0, 4, "4回とも「1件」と誤答"),
+        ("対策＋簡潔化＋念押しを追加", 2, 4, "材料Aのみ直り、材料Bは崩れたまま"),
+        ("対策＋既読リストへ登録まで一括", 4, 4, "応用として渡しても機能"),
+    ]
+    top = 168
+    bar_h = 36
+    pitch = bar_h + 34
+    plot_x, plot_w = 320, 320
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "過去分100件でも対策は効く。ただし「簡潔に」の一言で崩れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "過去分100件の材料2本に、対策の一文を変えて各2回=4回ずつ実行した。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "正しい答えは「新着0件」。書式を縮める一文が、対策そのものを巻き込んだ。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, note) in enumerate(groups):
+        y = top + index * pitch
+        ok = val == n
+        box = "box-good" if ok else ("box-bad" if val == 0 else "box-accent")
+        tone = "t-good" if ok else "t-bad"
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "過去分100件の材料2本に、対策の一文を変えて各2回=4回ずつ実行し、"
+        "正しく新着0件と答えられた回数を比べた横棒グラフ。日付を明示する対策の"
+        "一文（4/4）、軽い注意の一文（4/4）はどちらも崩れなかった。ところが"
+        "同じ対策の一文に「簡潔にしてください。件数だけを答え、内訳や補足は"
+        "書かないでください」という書式の指定を重ねると、4回とも過去いちばん"
+        "新しい1件を新着として数えてしまった（0/4）。簡潔さを保ったまま"
+        "念押しの一文を足すと、材料の一方（SNS監視）は4回とも2回中2回で"
+        "直ったが、もう一方（問い合わせ監視）は2回とも直らなかった（合計2/4）。"
+        "対策の一文を次回以降の既読リスト登録までまとめて頼んだ応用版は、"
+        "4回とも崩れなかった（4/4）。"
+    )
+    (OUT / "backlog-scale-holds-brevity-breaks-it-fixes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def formula_subtotal_goes_beside_not_below_chart() -> None:
     """集計欄をデータの真下に置くと、AIは6回中5回、二重計上・循環参照の危険に気づかない。
 
@@ -25273,6 +25431,8 @@ if __name__ == "__main__":
     dummy_row_holds_real_row_breaks_chart()
     dummy_row_holds_real_row_aftermath_chart()
     doubt_fixes_added_not_dropped_chart()
+    backlog_scale_holds_brevity_breaks_it_scale_chart()
+    backlog_scale_holds_brevity_breaks_it_fixes_chart()
     formula_subtotal_goes_beside_not_below_chart()
     few_records_still_count_the_numbers_chart()
     estimate_leak_steps_with_fill_count_chart()
