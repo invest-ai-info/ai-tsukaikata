@@ -877,3 +877,155 @@ def test_hypothesis_stock_empty_is_quiet_without_a_file():
 def test_hypothesis_stock_empty_does_not_break_the_registration_guard():
     """状態語彙を増やしても、必須欄の判定は変わらない。"""
     assert hypothesis_registration_gaps(_hypothesis("📤変換済み")) == []
+
+
+# --- head() の実網の癖（2026-09-22 の週次が赤かった原因の2つ）---
+#
+# 実測: support.google.com / cloud.google.com は HEAD に 404 を返して GET には 200 を返す。
+# helpx.adobe.com は Akamai の「Access Denied」定型ページ（403・Server: AkamaiGHost）で、
+# 人がブラウザで開けば見える＝cf-mitigated と同じ「こちらからは確かめられない」。
+import email.message  # noqa: E402
+import io  # noqa: E402
+import urllib.error  # noqa: E402
+
+import check_freshness as cf  # noqa: E402
+
+
+class _Response:
+    def __init__(self, status, url):
+        self.status, self.url = status, url
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+def _fake_urlopen(by_method):
+    """{"HEAD": (status, headers, body), "GET": ...} を返す urlopen の偽物。400以上は HTTPError。"""
+    def urlopen(request, timeout=None):
+        status, headers, body = by_method[request.get_method()]
+        if status >= 400:
+            msg = email.message.Message()
+            for k, v in headers.items():
+                msg[k] = v
+            raise urllib.error.HTTPError(request.full_url, status, "err", msg, io.BytesIO(body))
+        return _Response(status, request.full_url)
+    return urlopen
+
+
+AKAMAI_DENIED = (
+    b"<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n"
+    b"You don't have permission to access \"http&#58;&#47;&#47;helpx&#46;adobe&#46;com&#47;\""
+    b" on this server.<P>\nReference&#32;&#35;18&#46;66f83517&#46;1790065619&#46;36057c9c\n"
+)
+
+
+def test_head_falls_back_to_get_when_head_is_404(monkeypatch):
+    """HEAD に 404 を返して GET には 200 を返す相手がいる（実測: Google のヘルプ）。"""
+    monkeypatch.setattr(cf.urllib.request, "urlopen", _fake_urlopen({
+        "HEAD": (404, {}, b""),
+        "GET": (200, {}, b""),
+    }))
+    reached = cf.head("https://support.google.com/youtube/answer/72851?hl=ja")
+    assert reached.status == 200
+    assert reached.bot_blocked is False
+
+
+def test_head_reports_404_when_get_is_404_too(monkeypatch):
+    """本物の 404 は GET で開き直しても 404。握り潰さない。"""
+    monkeypatch.setattr(cf.urllib.request, "urlopen", _fake_urlopen({
+        "HEAD": (404, {}, b""),
+        "GET": (404, {}, b""),
+    }))
+    assert cf.head("https://example.com/gone").status == 404
+
+
+def test_akamai_access_denied_is_a_bot_block(monkeypatch):
+    """Akamai の定型「Access Denied」は cf-mitigated と同じ扱い（確かめられない・切れてはいない）。"""
+    monkeypatch.setattr(cf.urllib.request, "urlopen", _fake_urlopen({
+        "HEAD": (403, {"Server": "AkamaiGHost"}, AKAMAI_DENIED),
+        "GET": (403, {"Server": "AkamaiGHost"}, AKAMAI_DENIED),
+    }))
+    reached = cf.head("https://helpx.adobe.com/jp/stock/contributor/x.html")
+    assert reached.status == 403
+    assert reached.bot_blocked is True
+
+
+def test_akamai_403_without_the_denial_page_is_still_a_plain_403(monkeypatch):
+    """Server が Akamai というだけでは目印にしない。定型ページが無ければ本物の403。"""
+    monkeypatch.setattr(cf.urllib.request, "urlopen", _fake_urlopen({
+        "HEAD": (403, {"Server": "AkamaiGHost"}, b"<html>Forbidden</html>"),
+        "GET": (403, {"Server": "AkamaiGHost"}, b"<html>Forbidden</html>"),
+    }))
+    assert cf.head("https://example.com/private").bot_blocked is False
+
+
+# --- 「副業」の節が `###` の日付見出しで切れていた（2026-09-22）---
+#
+# 実測: 稼ぎ方研究担当とネタ探し担当が 2026-09-14 ごろから「### 2026-09-19 15:30 稼ぎ方研究担当」
+# 「### 補充（2026-09-19・ネタ探し担当…）」を副業の節の中に足すようになり（それまでは `####`）、
+# 番人はそこで節を打ち切って「着手できる 0件」と偽の赤を出していた（実際は3件）。
+# 数え間違いを黙って出すのではなく、切れていること自体を鳴らす。
+
+def test_earn_queue_shortage_names_the_heading_that_cuts_the_section():
+    queue = "\n".join([
+        "### 副業（テスト）",
+        "- [ ] 副業の題材A",
+        "### 2026-09-19 15:30 稼ぎ方研究担当",
+        "- [ ] 副業の題材B",
+        "- [ ] 副業の題材C",
+    ])
+    problem = earn_queue_shortage(queue, floor=3)
+    assert problem is not None
+    assert "### 2026-09-19 15:30 稼ぎ方研究担当" in problem
+    assert "####" in problem
+    assert "0件" not in problem and "1件" not in problem
+
+
+def test_earn_queue_shortage_treats_restock_heading_as_a_cut_too():
+    queue = "\n".join([
+        "### 副業（テスト）",
+        "- [ ] 副業の題材A",
+        "### 補充（2026-09-19・ネタ探し担当。副業が減ったため）",
+        "- [ ] 副業の題材B",
+    ])
+    problem = earn_queue_shortage(queue, floor=3)
+    assert problem is not None and "### 補充（2026-09-19" in problem
+
+
+def test_earn_queue_shortage_still_counts_h4_subblocks_inside_the_section():
+    """`####` の小見出し（補充・研究パック）は節の中身。従来どおり数える。"""
+    queue = "\n".join([
+        "### 副業（テスト）",
+        "- [ ] 副業の題材A",
+        "#### 補充（2026-08-14・金曜に枯れる予測が当たったので）",
+        "- [ ] 副業の題材B",
+        "#### 研究パック（2026-08-17・稼ぎ方研究担当）",
+        "- [ ] 副業の題材C",
+        "### 次の節",
+    ])
+    assert earn_queue_shortage(queue, floor=3) is None
+
+
+def test_earn_section_ends_at_the_next_h2_before_looking_for_a_cut():
+    """`## 処理済み` の下にある `### 2026-09-14 21:00 レシピ担当`（担当の日報）は節を切る見出しではない。
+
+    実物の並び＝`### 副業` … `## 処理済み` → `### 2026-09-14 21:00 レシピ担当`。
+    h2 で節は終わっているので、その先の日付見出しで「切れている」と鳴らさない。
+    """
+    queue = "\n".join([
+        "### 副業（テスト）",
+        "- [ ] 副業の題材A",
+        "- [ ] 副業の題材B",
+        "- [ ] 副業の題材C",
+        "",
+        "## 処理済み",
+        "",
+        "### 2026-09-14 21:00 レシピ担当",
+        "- [ ] 日報の中の行は数えない",
+    ])
+    assert earn_queue_shortage(queue, floor=3) is None
+    assert earn_queue_shortage(queue, floor=4) is not None
+    assert "3件" in earn_queue_shortage(queue, floor=4)

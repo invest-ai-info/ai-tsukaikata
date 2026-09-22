@@ -101,6 +101,25 @@ class Report(NamedTuple):
 # 「こちらからは確かめられない」。
 BOT_BLOCK_HEADER = "cf-mitigated"
 
+# Akamai が bot 判定で返す定型の拒否ページ（2026-09-22 実測・helpx.adobe.com の3本）。
+# 403・`Server: AkamaiGHost`・本文が `<TITLE>Access Denied</TITLE>` と `Reference #…`。
+# 人が実ブラウザで開けば見える（9/16・9/18 に確認済み）ので cf-mitigated と同じ扱い。
+# ⚠️ Server ヘッダだけでは目印にしない。定型ページが無い403は本物の403として鳴らす。
+AKAMAI_SERVER = "AkamaiGHost"
+AKAMAI_DENIED_MARK = "Access Denied"
+
+
+def _bot_blocked(error: urllib.error.HTTPError) -> bool:
+    """先方の bot 判定で弾かれた応答か（Cloudflare の目印ヘッダ、または Akamai の定型ページ）。"""
+    if error.headers.get(BOT_BLOCK_HEADER) is not None:
+        return True
+    if error.code == 403 and error.headers.get("Server") == AKAMAI_SERVER:
+        try:
+            return AKAMAI_DENIED_MARK in error.read(4096).decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001 - 本文が読めなければ目印なし
+            return False
+    return False
+
 
 def _moved_away(asked: str, reached: str) -> bool:
     """引っ越したとみなすのは「別のホストへ飛ばされたとき」だけ。
@@ -130,7 +149,10 @@ def _canonical(url: str) -> str:
 def head(url: str) -> Reached:
     """状態コードと、実際にたどり着いたURLを返す。
 
-    HEAD を拒む相手がいるので、拒まれたら GET で開き直す。
+    HEAD が失敗したら GET で開き直す。HEAD を拒む相手（403/405）だけでなく、
+    **HEAD に 404 を返して GET には 200 を返す相手**がいる（2026-09-22 実測:
+    support.google.com・cloud.google.com のヘルプ。週次が5本を「404」と誤報した）。
+    「開けない」と言うのは GET でも失敗したときだけ。
     """
     for method in ("HEAD", "GET"):
         request = urllib.request.Request(
@@ -140,8 +162,8 @@ def head(url: str) -> Reached:
             with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
                 return Reached(response.status, response.url)
         except urllib.error.HTTPError as error:
-            blocked = error.headers.get(BOT_BLOCK_HEADER) is not None
-            if method == "HEAD" and error.code in (403, 405) and not blocked:
+            blocked = _bot_blocked(error)
+            if method == "HEAD" and not blocked:
                 continue
             return Reached(error.code, getattr(error, "url", None) or url, blocked)
         except Exception:  # noqa: BLE001 - 1件の失敗で全体を止めない
@@ -305,6 +327,30 @@ EARN_FLOOR = 3  # 1晩ぶん。「副業も毎晩3本」（2026-08-13 オーナ�
 #    次の担当が「なぜ着手できないのか」を確かめられず、永久に外れたままになる。
 PARKED_MARK = "⏸"
 
+# 🚨 副業の節の「中」に足す小見出しは `####`（2026-09-22 追加）。
+#
+# 節は `### 副業` から次の `### ` までなので、担当が `### 2026-09-19 15:30 稼ぎ方研究担当` や
+# `### 補充（2026-09-19・ネタ探し担当…）` を節の中に足すと、そこで節が切れる。
+# 2026-09-14 ごろから両担当がこの形で足すようになり（それまでは `####`）、番人は
+# **3件あるのに「着手できる 0件」**と偽の赤を4週続けて出していた（研究担当が 9/20 に発見）。
+# 数え間違いを黙って出さず、切れていること自体を鳴らす。日付・補充・研究パックで始まる
+# `###` は「節を切る見出し」ではなく「節の中に足したつもりの見出し」とみなす。
+SUBBLOCK_HEADING_RE = re.compile(r"^### (?:\d{4}-\d{2}-\d{2}|補充|研究パック)")
+
+
+def _earn_section(queue_text: str) -> tuple[str | None, str | None]:
+    """「副業」の節の本文と、節を切っている小見出し（あれば）を返す。見出しが無ければ (None, None)。"""
+    m = EARN_HEADING_RE.search(queue_text)
+    if m is None:
+        return None, None
+    rest = queue_text[m.end():]
+    nxt = re.search(r"^##(?:#)? ", rest, re.M)  # 節は次の h2 か h3 で終わる
+    if nxt is None:
+        return rest, None
+    heading = rest[nxt.start():].splitlines()[0]
+    cut = heading if SUBBLOCK_HEADING_RE.match(heading) else None
+    return rest[: nxt.start()], cut
+
 
 def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
     """「副業」の節の**着手できる**未処理が1晩ぶんを切ったら、知らせる文字列を返す。
@@ -316,15 +362,19 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
     ⚠️ 節の見出しが見つからない場合も知らせる。見出しの改名で番人が
     黙って死ぬのが、このサイトが一番警戒している「静かな欠落」だから。
     """
-    m = EARN_HEADING_RE.search(queue_text)
-    if m is None:
+    body, cut = _earn_section(queue_text)
+    if body is None:
         return (
             f"{QUEUE_PATH}: 「### 副業」の節が見つかりません。"
             f"見出しを変えたなら tools/check_freshness.py の EARN_HEADING_RE も直すこと"
         )
-    rest = queue_text[m.end():]
-    nxt = re.search(r"^### ", rest, re.M)
-    lines = (rest[: nxt.start()] if nxt else rest).splitlines()
+    if cut is not None:
+        return (
+            f"{QUEUE_PATH}: 「副業」の節が `{cut}` で切れています"
+            f"（節の中に足す見出しは `####`。`###` だと番人はそこまでしか数えられず、"
+            f"その下の未処理が在庫に入りません）。見出しを `####` に下げてください"
+        )
+    lines = body.splitlines()
 
     ready, parked = 0, 0
     for i, line in enumerate(lines):
@@ -409,12 +459,10 @@ def _detail_lines(lines: list[str], start: int) -> list[str]:
 
 def earn_demand_gaps(queue_text: str) -> list[str]:
     """「副業」の節の未処理で、需要語の裏取りが書かれていないものを挙げる。"""
-    m = EARN_HEADING_RE.search(queue_text)
-    if m is None:
-        return []  # 節の欠落は earn_queue_shortage が鳴らす。二重に鳴らさない
-    rest = queue_text[m.end():]
-    nxt = re.search(r"^### ", rest, re.M)
-    lines = (rest[: nxt.start()] if nxt else rest).splitlines()
+    body, _cut = _earn_section(queue_text)
+    if body is None:
+        return []  # 節の欠落も、節が切れている件も earn_queue_shortage が鳴らす。二重に鳴らさない
+    lines = body.splitlines()
 
     problems = []
     for i, line in enumerate(lines):
