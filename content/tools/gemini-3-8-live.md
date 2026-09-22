@@ -10,7 +10,11 @@ tags: [Gemini, 音声AI, 料金, AI最新情報]
 
 ## 何が変わったか
 
-Google は 2026年9月15日に、音声で会話するための2つのモデル **Gemini 3.8 Live** と **Gemini 3.8 Live Extended Thinking** を発表しました（出典: <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/>）。公式の発表ページ・モデルカード・料金ページに書かれている数字だけを並べます。3行にすると、こうなります。
+Google は 2026年9月15日に、音声で会話するための2つのモデルを発表しました（出典: <https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/>）。
+
+- **Gemini 3.8 Live**
+- **Gemini 3.8 Live Extended Thinking**
+公式の発表ページ・モデルカード・料金ページに書かれている数字だけを並べます。3行にすると、こうなります。
 
 - **会話の途中でも、97言語を自動で認識して切り替えます。**発表ページに「97 supported languages」と明記されています（出典: 同上）。
 - **料金は、前世代の「Gemini 3.1 Flash Live Preview」とまったく同じ価格の行にまとめられています。**値上げも値下げもありません（出典: <https://ai.google.dev/gemini-api/docs/pricing>）。

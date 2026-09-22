@@ -113,6 +113,6 @@ Anthropicのモデル一覧ページには「現行モデルはすべて、文�
 5. モデル一覧と仕様（Anthropic公式ドキュメント）: <https://platform.claude.com/docs/en/about-claude/models/overview>
 6. モデル一覧（OpenAI公式ドキュメント）: <https://developers.openai.com/api/docs/models>
 
-なお、Googleの開発者ガイド（`ai.dev/learn/agentic-video-understanding-with-gemini`）は、この記事を書いた環境からは到達できませんでした（許可リストに無いホストという理由で、先方のブロックではありません）。この記事で使った数字は、すべて上記6件の到達できたページから確認しています。
+なお、Googleの開発者ガイド（`ai.dev/learn/agentic-video-understanding-with-gemini`）は、この記事を書いた環境からは到達できませんでした。許可リストに無いホストという理由で、先方のブロックではありません。この記事で使った数字は、すべて上記6件の到達できたページから確認しています。
 
 料金と仕様は変わります。実際に使う前に、必ず上記の公式ページで現在の値を確認してください。

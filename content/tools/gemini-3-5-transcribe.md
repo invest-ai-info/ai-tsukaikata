@@ -74,7 +74,7 @@ Google は 2026年8月26日、新しい文字起こし専用モデル **Gemini 3
 
 OpenAI の公式ドキュメントには、文字起こし専用のモデルが複数載っています（出典: <https://developers.openai.com/api/docs/models>）。話者分離ができると明記されているのは **GPT-4o Transcribe Diarize** で、説明文は「Transcription + diarization」です（出典: 同上）。ただし<mark class="warn">話者分離の上限人数は、モデルページを確認した範囲では書かれていません</mark>（出典: <https://developers.openai.com/api/docs/models/gpt-4o-transcribe-diarize>）。対応言語数も、確認した範囲では明記されていませんでした。
 
-Anthropic のモデル一覧ページには「現行モデルはすべて、文章と画像の入力・文章の出力・多言語・vision・ツール使用に対応する」と書かれていて、<mark class="warn">音声（audio）や文字起こし（transcription）という言葉は一度も出てきません</mark>（出典: <https://platform.claude.com/docs/en/about-claude/models/overview>）。**「記載なし」は「対応していないと明言されている」という意味ではありません。**公式ページに書かれていないので、この記事では確認できなかったこととして扱っています。
+Anthropic のモデル一覧ページには「現行モデルはすべて、文章と画像の入力・文章の出力・多言語・vision・ツール使用に対応する」と書かれています。<mark class="warn">音声（audio）や文字起こし（transcription）という言葉は一度も出てきません</mark>（出典: <https://platform.claude.com/docs/en/about-claude/models/overview>）。**「記載なし」は「対応していないと明言されている」という意味ではありません。**公式ページに書かれていないので、この記事では確認できなかったこととして扱っています。
 
 ### 単価も並べる
 

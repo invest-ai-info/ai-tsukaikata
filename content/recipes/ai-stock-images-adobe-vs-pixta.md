@@ -134,7 +134,11 @@ Adobeのページの数字をこちらが貼り、計算と整理だけを任せ
 
 <div class="money-note">
 金額の目安（推定・Adobe Stock・サブスク経由の公式例で計算）: 月に10枚ライセンスされたら US$9.90／月に30枚なら US$29.70／月に100枚なら US$99.00（源泉徴収・PayPal手数料を引く前）。年に直すと US$119／US$356／US$1,188
-根拠: 公式の計算例「ライセンスされた写真 1 枚あたり US$0.99（US$29.99 / 10 枚の写真 x 33％）」（出典: <a href="https://helpx.adobe.com/jp/stock/contributor/payments-earnings/royalties-pricing/royalty-rates-assets.html">ロイヤリティ料率</a>・2026-09-18確認）× 月の枚数（10・30・100枚はこちらが置いた前提。枚数の出典は無い）。支払いは「最低残高 25 ドル分のロイヤリティ」「Adobe Stock での最初の販売から 45 日」「日本で送金を受け取るためには、プレミアム PayPal アカウントが必要」（出典: <a href="https://helpx.adobe.com/jp/stock/contributor/payments-earnings/payment-taxes/payment-requirements.html">支払い要件</a>・2026-09-18確認）＝最低残高に届くのは26枚ぶん
+根拠は次のとおりです。
+
+- **1枚あたり**: 公式の計算例「ライセンスされた写真 1 枚あたり US$0.99（US$29.99 / 10 枚の写真 x 33％）」（出典: <a href="https://helpx.adobe.com/jp/stock/contributor/payments-earnings/royalties-pricing/royalty-rates-assets.html">ロイヤリティ料率</a>・2026-09-18確認）
+- **月の枚数**: 10・30・100枚はこちらが置いた前提。枚数の出典は無い
+- **支払いの条件**: 「最低残高 25 ドル分のロイヤリティ」「Adobe Stock での最初の販売から 45 日」「日本で送金を受け取るためには、プレミアム PayPal アカウントが必要」（出典: <a href="https://helpx.adobe.com/jp/stock/contributor/payments-earnings/payment-taxes/payment-requirements.html">支払い要件</a>・2026-09-18確認）＝最低残高に届くのは26枚ぶん
 PIXTAは2026-05-22でAI生成素材の販売を停止しているので、同じ枚数を出しても0円（出典: <a href="https://pixta.jp/guide/?p=73832">AI生成画像・動画素材の取扱い停止</a>・2026-09-18確認）。この金額は目安であり、収益を保証するものではありません。
 </div>
 
