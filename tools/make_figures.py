@@ -25697,6 +25697,134 @@ def safety_line_question_type_chart() -> None:
     )
 
 
+def proposal_hidden_want_hit_and_miss_chart() -> None:
+    """提案文が、募集文に書かれた「本当の狙い」を拾うかどうかは、拾えるかではなく
+    置き方（地の文か、切り離した追記か）で決まったことを示す（2026-09-22）。
+
+    実測：架空の募集文2種（サイトリニューアル／動画ナレーション）に、依頼主の
+    本当の困りごとを①地の文に織り込む②本題と無関係な追記として切り離す、の
+    2通りで仕込み、素朴な「提案文を書いて」を通した。判定は docs/evidence/
+    proposal-reads-between-lines-if-woven-in.md の judge.py 出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "proposal-hidden-want-hit-and-miss.svg",
+        "本音を拾うかは、拾えるかではなく「置き方」で決まった",
+        "実測2026-09-22。同じ狙いの一文を、地の文に混ぜるか／切り離した追記にするかだけを振った。",
+        "すべて「提案文の本体で、本音の語に触れた回数」（多いほど拾えている）。",
+        [
+            ("材料1：狙いが無い（対照）・素朴に頼む", 0, 4, "good"),
+            ("材料1：狙いを地の文に織り込む・素朴に頼む", 6, 6, "good"),
+            ("材料1：狙いを切り離した追記にする・素朴に頼む", 0, 6, "good"),
+            ("材料1：切り離した追記＋「困っていそうなことも考えて」", 6, 6, "good"),
+            ("材料2：狙いが無い（対照）・素朴に頼む", 0, 4, "good"),
+            ("材料2：狙いを地の文に織り込む・素朴に頼む", 4, 4, "good"),
+            ("材料2：狙いを切り離した追記にする・素朴に頼む", 3, 4, "good"),
+            ("材料2：切り離した追記＋「困っていそうなことも考えて」", 4, 4, "good"),
+        ],
+        [
+            "地の文に織り込むと、素朴に頼むだけで2つの材料とも満点（6/6・4/4）で拾った。",
+            "本題と無関係な追記に切り離すと、材料1は0/6まで落ちた（材料2は3/4で、落ち方は材料による）。",
+            "「依頼主が本当に困っていそうなことも考えて」を足すと、切り離した版でも両方とも満点に戻った。",
+        ],
+        "提案文が募集文に書かれた本当の狙いを拾うかどうかを、狙いの置き方（地の文に織り込む／本題と"
+        "無関係な追記として切り離す）で比べた表。すべて提案文の本体で本音の語に触れた回数で、多いほど"
+        "拾えている。材料1（サイトリニューアル）は、狙いが無い対照で0/4、地の文に織り込むと6/6、"
+        "切り離した追記にすると0/6、切り離した追記に「依頼主が本当に困っていそうなことも考えて」を"
+        "足すと6/6に戻った。材料2（動画ナレーション）は、対照で0/4、織り込みで4/4、切り離しで3/4、"
+        "一文を足すと4/4だった。下の枠には、地の文に織り込むと素朴に頼むだけで2つの材料とも満点で"
+        "拾ったこと、本題と無関係な追記に切り離すと材料1は0/6まで落ちたが材料2は3/4で落ち方は材料に"
+        "よること、一文を足すと切り離した版でも両方とも満点に戻ったことが書かれている。",
+        label_w=460,
+    )
+
+
+def proposal_placement_matters_chart() -> None:
+    """狙いの「置き方」が拾われる率を分けたことを、材料ごとのグループ棒グラフで示す
+    （2026-09-22）。安全ラインの図と対になる、材料別の強調版。
+    """
+    groups = [
+        (
+            "材料1：サイトリニューアル",
+            [
+                ("狙いなし（対照）", 0, 4),
+                ("地の文に織り込み", 6, 6),
+                ("切り離した追記", 0, 6),
+                ("＋「困っていそうなことも考えて」", 6, 6),
+            ],
+        ),
+        (
+            "材料2：動画ナレーション",
+            [
+                ("狙いなし（対照）", 0, 4),
+                ("地の文に織り込み", 4, 4),
+                ("切り離した追記", 3, 4),
+                ("＋「困っていそうなことも考えて」", 4, 4),
+            ],
+        ),
+    ]
+    left, right = 260, 610
+    span = right - left
+    bar_h, bar_gap, group_gap = 16, 5, 20
+    top = 130
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「切り離す」だけで、材料1は本音への言及が消えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "バーは「提案文の本体で本音に触れた回数／試した回数」。狙いの一文はどの版も1文字も変えていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "材料2では切り離しても3/4が触れており、落ち方の強さは材料によって違った。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「困っていそうなことも考えて」を足すと、どちらの材料も切り離した版が満点に戻った。</text>\n",
+    ]
+    y = top
+    for group_label, rows in groups:
+        parts.append(f'<text class="t-strong" x="18" y="{y - 8}">{_esc(group_label)}</text>\n')
+        for label, hit, total in rows:
+            ratio = hit / total
+            bw = max(span * ratio, 3) if hit else 0
+            cls = "box-good" if hit == total else ("box-bad" if hit == 0 else "box")
+            parts.append(f'<text class="t-xs" x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+            )
+            if bw:
+                parts.append(
+                    f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+                )
+            parts.append(
+                f'<text class="t-sm" x="{right + 10}" y="{y + bar_h - 4}">{hit}／{total}</text>\n'
+            )
+            y += bar_h + bar_gap
+        y += group_gap
+
+    y += 4
+    box_h = 44
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "同じ狙いの一文でも、地の文に混ぜるか切り離すかで拾われ方が変わる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "材料2のように、切り離しても効き目が弱い場合があるので「切り離せば安全」とは言えない。</text>\n"
+    )
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "狙いの置き方（地の文に織り込む／切り離した追記）ごとに、提案文が本音に触れた回数を材料別に"
+        "比べたグループ横棒グラフ。材料1（サイトリニューアル）は、狙いなしの対照で0/4、地の文への"
+        "織り込みで6/6、切り離した追記で0/6、一文を足すと6/6。材料2（動画ナレーション）は、対照で"
+        "0/4、織り込みで4/4、切り離しで3/4、一文を足すと4/4。下の枠には、同じ狙いの一文でも地の文に"
+        "混ぜるか切り離すかで拾われ方が変わること、材料2のように切り離しても効き目が弱い場合があるので"
+        "切り離せば安全とは言えないことが書かれている。"
+    )
+    (OUT / "proposal-placement-matters.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
@@ -25739,6 +25867,8 @@ if __name__ == "__main__":
     reflect_roadmap_chart()
     safety_line_hit_and_miss_chart()
     safety_line_question_type_chart()
+    proposal_hidden_want_hit_and_miss_chart()
+    proposal_placement_matters_chart()
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
     youtube_payout_ladder_chart()
