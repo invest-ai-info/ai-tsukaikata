@@ -38,63 +38,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-17T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-21T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Using GPT-5.6, V7 turns scattered company files into context agents can use to complete complex, source-linked work.",
-      "title": "How V7 gives AI agents institutional memory",
-      "uid": "889d69a37f19e277",
-      "url": "https://openai.com/index/v7",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-21T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results.",
-      "title": "Advisory Group on Mathematics and Artificial Intelligence",
-      "uid": "7f2fa3462c72253f",
-      "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-21T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety.",
-      "title": "Building standards for the next phase of AI",
-      "uid": "366671333716a82f",
-      "url": "https://openai.com/index/building-standards-next-phase-ai",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-21T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills.",
-      "title": "Expanding OpenAI Academy with new learning paths",
-      "uid": "7e8fdfd4fe62664f",
-      "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-21T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
-      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-      "uid": "61c6a9451185268e",
-      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
