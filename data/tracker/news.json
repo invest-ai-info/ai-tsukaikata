@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-22T22:13:40.421152+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-22T21:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
+      "summary_ja": "GPT-6のAIへの指示処理機能が向上\n指示を再利用しやすくなり、新しい診断機能を追加\n処理の遅延と利用コストを削減できるようになる",
+      "summary_source": "gemini",
+      "title": "Better prompt caching for GPT-6",
+      "uid": "d33202d7da1c5d55",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-22T22:13:40.421152+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-22T18:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.",
+      "summary_ja": "新しいAIモデル「GPT-6 SolとLuna」が登場\n日常業務向けの最先端AIとして提供される\n性能と利用コストの異なる2種類から選べる",
+      "summary_source": "gemini",
+      "title": "Introducing GPT-6 Sol and Luna",
+      "uid": "b33a9dcb89ea4706",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-22T18:57:17.477656+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -119,6 +147,18 @@
       "uid": "7e8fdfd4fe62664f",
       "url": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
       "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-22T22:13:40.421152+00:00",
+      "importance": "major",
+      "label": "Qwen 新モデル",
+      "published": "2026-09-21T03:05:54+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 Omni Flash is an omni-modal reasoning model from Alibaba, the first Qwen model built around agentic capabilities with native audio-video understanding. It is suited for audio-video analysis a…",
+      "title": "qwen/qwen3.8-omni-flash",
+      "uid": "546db30f09f618d5",
+      "url": "https://openrouter.ai/qwen/qwen3.8-omni-flash",
+      "vendor": "Alibaba Qwen"
     },
     {
       "first_seen": "2026-09-21T14:14:39.880727+00:00",

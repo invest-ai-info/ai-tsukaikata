@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-22T22:13:40.421152+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-22T20:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米OpenAIは9月22日（現地時間）、AIモデル「GPT-6 Sol」と「GPT-6 Luna」を発表した。9月初めに公開した最上位モデル「GPT-6 Astra」と同様の手法で学習させ、Astraで得た性能向上を、より高速で低価格なモデルにも反映したという。",
+      "title": "OpenAI、GPT-6の「Sol」と「Luna」公開　Astraの性能向上を低価格で",
+      "uid": "54674b28c52b92cb",
+      "url": "https://japan.cnet.com/article/35252853/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-22T22:13:40.421152+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-09-22T19:14:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Anthropicは9月22日（現地時間）、AIモデル「Claude Opus 5.5」を発表した。同社によると、多くの作業で上位モデル「Claude Fable 5.1」並みの性能を発揮する。それでいて利用料は下がり、一般的な使い方なら前モデル「Opus 5」より40％安くなるという。",
+      "title": "AnthropicがClaude新モデル「Opus 5.5」発表　Fable 5.1並みの性能をOpus 5より4割安く",
+      "uid": "e77ea0f115f44965",
+      "url": "https://japan.cnet.com/article/35252851/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-22T14:58:53.077478+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "15980a7fb08c5e99",
       "url": "https://ai.watch.impress.co.jp/docs/news/2140954.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-15T02:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "朝日新聞社は、国際シンポジウム「朝日地球会議2026」を10月23日に開幕する。全体テーマは「話そう AI時代の世界と持続可能な幸せ」。AIと幸福、民主主義、世論、認知症などをテーマに、各界の有識者や朝日新聞の記者らが議論する。",
-      "title": "「朝日地球会議2026」10月23日開幕--AI時代の幸福、民主主義、世論など議論",
-      "uid": "2abe26987e8c2f50",
-      "url": "https://japan.cnet.com/article/35252510/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T02:23:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Microsoft AIが2026年9月14日、同社が開発するAIモデル「MAI」の振る舞いや価値観を定める「Humanist AI Code of Conduct」の草案を公開しました。Microsoft AIは「人間はAIより重要」という考えを出発点とし、AIを人間の管理下にとどまる従属的な技術として設計すると表明しています。また、AIに意識を模倣させることや、AIに法的人格・福祉・権利を認…",
-      "title": "Microsoftが「人間はAIより重要」とするAI行動規範を発表、AIの意識や権利を否定",
-      "uid": "a887083b50bdeaa8",
-      "url": "https://gigazine.net/news/20260915-microsoft-humanist-ai-code-of-conduct/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
