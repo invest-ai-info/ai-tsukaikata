@@ -105,6 +105,79 @@ class TestRotateQueue:
         new, _ = rotate_queue(text, markers=("- [x] ",))
         assert "https://example.com/announce" in queued_urls(new)
 
+NOTED = dedent("""\
+    ## 待ち行列
+
+    - [x] 案件のAI利用ルールを確かめる
+      - →保管: 公開: `job-ai-policy-check`（2026-08-27。実測は全39回
+        ＋追加検証7回。証拠は `docs/evidence/job-ai-policy-check.md`）
+        🔑 企画仕様から意図的に外した2点、理由つき
+      - 2026-08-20 自動追記（major）
+    - [x] 回転済みの行
+      - →保管: 公開: `already-rotated`
+    - [!] 数字が1つ埋まっているだけで
+      - →保管: **重複のため保留（2026-09-19・レシピ担当）**。上の項目と同じ
+        根拠・実測の芯がほぼ一字一句同じ
+    """)
+
+
+class TestRotateQueueWhenTheNoteWasWrittenByHand:
+    """担当が自分で `→保管:` を書き、その下に長い報告を続ける形。
+
+    2026-09-22 実測: `_recipe_queue.md` で済んだ項目158件のうち66件がこの形で、
+    約2,300行が「回転済み」とみなされて回転をすり抜けていた（予算2500行に対して4594行）。
+    索引行1本だけ残して、残りは逐語で保管庫へ。
+    """
+
+    def test_long_body_under_a_hand_written_note_is_moved(self):
+        new, chunks = rotate_queue(NOTED, markers=("- [x] ", "- [!] "))
+        assert "追加検証7回" not in new
+        assert "企画仕様から意図的に外した" not in new
+        assert "2026-08-20 自動追記" not in new
+        assert any("追加検証7回" in c and "2026-08-20 自動追記" in c for c in chunks)
+
+    def test_index_line_is_rebuilt_from_the_slug_without_doubling_the_prefix(self):
+        new, _ = rotate_queue(NOTED, markers=("- [x] ", "- [!] "))
+        idx = new.index("- [x] 案件のAI利用ルールを確かめる")
+        note = new[idx:].splitlines()[1]
+        assert note == "  - →保管: 公開: `job-ai-policy-check`"
+
+    def test_note_without_slug_keeps_its_first_line_once(self):
+        new, _ = rotate_queue(NOTED, markers=("- [x] ", "- [!] "))
+        idx = new.index("- [!] 数字が1つ埋まっているだけで")
+        note = new[idx:].splitlines()[1]
+        assert note.startswith("  - →保管: **重複のため保留")
+        assert note.count("→保管") == 1
+        assert "根拠・実測の芯" not in new
+
+    def test_single_line_note_is_left_alone(self):
+        new, chunks = rotate_queue(NOTED, markers=("- [x] ", "- [!] "))
+        assert "- [x] 回転済みの行\n  - →保管: 公開: `already-rotated`\n" in new
+        assert not any("already-rotated" in c for c in chunks)
+
+    def test_idempotent(self):
+        once, _ = rotate_queue(NOTED, markers=("- [x] ", "- [!] "))
+        twice, chunks = rotate_queue(once, markers=("- [x] ", "- [!] "))
+        assert twice == once
+        assert chunks == []
+
+    def test_deepdive_style_note_survives_as_one_index_line(self):
+        text = dedent("""\
+            ## 待ち行列
+
+            - [x] https://deepmind.google/blog/introducing-agentic-video-in-gemini/
+              - →保管: ✅ **2026-09-03: 公開した** → `content/tools/gemini-agentic-video.md`
+                （`deepmind.google` → `blog.google` へ302転送・到達できた。図3枚）
+              - 2026-09-01 自動追記（major・Google DeepMind）
+            """)
+        new, chunks = rotate_queue(text, markers=("- [x] ",))
+        assert "https://deepmind.google/blog/introducing-agentic-video-in-gemini/" in queued_urls(new)
+        note = new.splitlines()[3]
+        assert note.startswith("  - →保管: ✅ **2026-09-03: 公開した**")
+        assert note.count("→保管") == 1
+        assert "302転送" not in new
+        assert any("302転送" in c for c in chunks)
+
 
 DAILY = dedent("""\
     # ネタ帳

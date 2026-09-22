@@ -27,12 +27,18 @@ QUEUE_START = "## 待ち行列"
 
 
 def _item_note(detail_lines: list[str]) -> str:
-    """索引1行。slug があれば slug、無ければ詳細の1行目を切り出す（要約しない）。"""
+    """索引1行。slug があれば slug、無ければ詳細の1行目を切り出す（要約しない）。
+
+    担当が自分で `→保管:` から書き始めていた行は、その接頭辞を剥がしてから切り出す
+    （剥がさないと `→保管: →保管: …` になる）。
+    """
     joined = "\n".join(detail_lines)
     m = _SLUG_RE.search(joined)
     if m:
         return f"  - {NOTE_PREFIX}: 公開: `{m.group(1)}`"
     first = detail_lines[0].strip().lstrip("- ").strip()
+    if first.startswith(NOTE_PREFIX):
+        first = first[len(NOTE_PREFIX):].lstrip(":： ").strip()
     return f"  - {NOTE_PREFIX}: {first[:60]}"
 
 
@@ -60,12 +66,15 @@ def rotate_queue(text: str, markers: tuple[str, ...]) -> tuple[str, list[str]]:
                 else:
                     break
             details = lines[i + 1 : j]
-            has_body = any(l.strip() for l in details)
-            already = details and details[0].strip().startswith(f"- {NOTE_PREFIX}")
-            if has_body and not already:
+            body = [l for l in details if l.strip()]
+            # 「回転済み」＝索引行1本だけ。担当が自分で `→保管:` を書き、その下に長い報告を
+            # 続けた項目は回転済みではない（2026-09-22 実測: `_recipe_queue.md` の済んだ項目
+            # 158件中66件・約2,300行がこの形ですり抜け、予算2500行に対して4594行になっていた）
+            already = len(body) == 1 and body[0].strip().startswith(f"- {NOTE_PREFIX}")
+            if body and not already:
                 chunks.append("\n".join([line, *details]) + "\n")
                 out.append(line)
-                out.append(_item_note([l for l in details if l.strip()]))
+                out.append(_item_note(body))
                 i = j
                 continue
         out.append(line)
