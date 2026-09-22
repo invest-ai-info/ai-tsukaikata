@@ -223,6 +223,9 @@
   - 📌 この minor が記事になれば、`sources.yml` の `sakana-blog` に `deepdive_minor: true` を付ける根拠になる
     （CLAUDE.md「付けるのは minor が実際に記事になった会社だけ」）
 
+- [ ] https://www.anthropic.com/claude-opus-5-5
+  - 2026-09-22 自動追記（major・Anthropic「Introducing Claude Opus 5.5」）
+
 ## 処理済み
 
 - https://openai.com/index/introducing-gpt-live-1-in-the-api → **公開済み** content/tools/gpt-live-1-api.md（2026-09-21・公開）

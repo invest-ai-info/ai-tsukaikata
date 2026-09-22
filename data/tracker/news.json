@@ -1,6 +1,58 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-22T18:57:17.477656+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-22T16:38:14+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added Claude Opus 5.5 ( claude-opus-5-5 ), now the default Opus model — 1M context, $4/$20 per Mtok with $0.20/Mtok cache reads Added mouse support to more lists in fullscreen mode: th…",
+      "title": "v2.1.280",
+      "uid": "a05a5f1807b572a5",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.280",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-22T18:57:17.477656+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-22T16:25:23+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.8.0 (2026-09-22) Full Changelog: v1.7.0...v1.8.0 Features api: add support for claude-opus-5-5, inline tool definitions and MCP tool-list pinning (beta) ( b5cc700 ) Bug Fixes api: share one evaluat…",
+      "title": "v1.8.0",
+      "uid": "85a7fa0aa1cb0b7c",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.8.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-22T18:57:17.477656+00:00",
+      "importance": "major",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-22T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Opus 5.5 performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5.",
+      "summary_ja": "新しいAIモデル「Claude Opus 5.5」が出た\n多くの作業で「Fable 5.1」と同等の性能を持つ\n旧モデル「Opus 5」より利用費用が40%安い",
+      "summary_source": "gemini",
+      "title": "Introducing Claude Opus 5.5",
+      "uid": "b662ab45e4f3a11f",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-22T18:57:17.477656+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-22T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI outlines priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards.",
+      "summary_ja": "OpenAIがAIの安全評価に関する指針を発表\n第三者機関による評価の優先事項と原則を示した\n最先端AIモデルとその安全対策が対象となる",
+      "summary_source": "gemini",
+      "title": "Priorities and principles for effective third party assessments",
+      "uid": "0bfaede3fcf1448f",
+      "url": "https://openai.com/index/priorities-principles-third-party-assessments",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-21T19:33:20.574647+00:00",
       "importance": "major",
       "label": "Grok 新モデル",
@@ -4885,18 +4937,6 @@
       "uid": "332ee0d179f1027c",
       "url": "https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-06-24T16:30:01+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Introducing computer use in Gemini 3.5 Flash",
-      "uid": "37fe44527834b514",
-      "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
