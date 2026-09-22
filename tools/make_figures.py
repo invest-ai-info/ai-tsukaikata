@@ -25825,6 +25825,124 @@ def proposal_placement_matters_chart() -> None:
     )
 
 
+def prep_second_blank_hit_and_miss_chart() -> None:
+    """PREP法の「具体例」欄が変更前の値を捏造する個数が、比較対象を2か所に増やすと
+    2倍ではなくゼロになったことを示す（2026-09-22・仮説キューH21・棄却）。
+
+    実測：架空の駐車場・ジムの時刻変更案内で、比較対象（変更点）を1か所／2か所に
+    振り、PREP法を指定して案内文を書かせた。判定は docs/evidence/
+    second-blank-empties-the-fabrication.md の judge.py 出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "prep-second-blank-hit-and-miss.svg",
+        "比較対象を2か所に増やすと、捏造は2倍ではなくゼロになった",
+        "実測2026-09-22（仮説キューH21）。駐車場・ジムの時刻変更案内、各5回。",
+        "すべて「変更前の時刻を具体的な数字で作った個数」（少ないほど良い）。",
+        [
+            ("材料1（駐車場）：1か所条件", 2, 5, "bad"),
+            ("材料1（駐車場）：2か所条件（満点10）", 0, 10, "bad"),
+            ("材料2（ジム）：1か所条件", 5, 5, "bad"),
+            ("材料2（ジム）：2か所条件（満点10）", 0, 10, "bad"),
+            ("1か所条件の合計（満点10）", 7, 10, "bad"),
+            ("2か所条件の合計（満点20）", 0, 20, "bad"),
+        ],
+        [
+            "反証条件＝2か所の合計が、1か所の合計×2（14）を下回るなら棄却。0<14で棄却。",
+            "比較対象が1か所→2か所に増えると、変更前の値を作る個数は2倍ではなくゼロになった。",
+            "返りの形が箇条書き＋ラベル（変更前より短縮／現行より変更）に変わり、具体的な旧数値を書かなくなった。",
+        ],
+        "PREP法の「具体例」欄が変更前の値を捏造する個数を、比較対象の数（1か所／2か所）ごとに示した表。"
+        "すべて変更前の時刻を具体的な数字で作った個数で、少ないほど良い。材料1（駐車場の出入庫時間）は"
+        "1か所条件で5回中2回捏造したが、精算窓口の対応時間を足して2か所にすると10枠中0回になった。"
+        "材料2（ジムの営業終了時刻）は1か所条件で5回中5回捏造したが、土日祝の開始時刻を足して2か所に"
+        "すると10枠中0回になった。1か所条件の合計は満点10中7、2か所条件の合計は満点20中0。下の枠には、"
+        "反証条件（2か所の合計が1か所の合計×2＝14を下回るなら棄却）が、0は14を下回るため成立して棄却されたこと、"
+        "比較対象が増えると捏造の個数は2倍ではなくゼロになったこと、返りの形が箇条書きとラベルに変わって"
+        "具体的な旧数値を書かなくなったことが書かれている。",
+        label_w=460,
+    )
+
+
+def prep_second_blank_format_shift_chart() -> None:
+    """比較対象が増えると、返りの形が「プローズで数字を語る」から「箇条書き＋ラベル」に
+    変わったことを、材料ごとのグループ棒グラフで示す（2026-09-22）。
+    """
+    groups = [
+        (
+            "材料1：駐車場の出入庫時間",
+            [
+                ("1か所条件（5回）", 2, 5),
+                ("2か所条件（5回・満点は2枠なので10）", 0, 10),
+            ],
+        ),
+        (
+            "材料2：ジムの営業終了時刻",
+            [
+                ("1か所条件（5回）", 5, 5),
+                ("2か所条件（5回・満点は2枠なので10）", 0, 10),
+            ],
+        ),
+    ]
+    left, right = 300, 610
+    span = right - left
+    bar_h, bar_gap, group_gap = 18, 6, 24
+    top = 118
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ変更でも、比較対象が増えると数字を書かなくなった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "バーは「変更前の値を具体的な数字で作った個数／満点」。短いほど捏造が少ない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2か所条件はどちらの材料も0——1か所条件で出ていた数字（24時間・20時）が1件も出なくなった。</text>\n",
+    ]
+    y = top
+    for group_label, rows in groups:
+        parts.append(f'<text class="t-strong" x="18" y="{y - 8}">{_esc(group_label)}</text>\n')
+        for label, hit, total in rows:
+            ratio = hit / total
+            bw = max(span * ratio, 3) if hit else 0
+            cls = "box-bad" if hit else "box-good"
+            parts.append(f'<text class="t-xs" x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+            )
+            if bw:
+                parts.append(
+                    f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+                )
+            parts.append(
+                f'<text class="t-sm" x="{right + 10}" y="{y + bar_h - 4}">{hit}／{total}</text>\n'
+            )
+            y += bar_h + bar_gap
+        y += group_gap
+
+    y += 4
+    box_h = 44
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "比較対象が増えると、返りは箇条書き＋ラベル（変更前より短縮／現行より変更）の形になった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "型が変わったことで、具体的な旧数値を書く場所そのものが無くなったと見られる。</text>\n"
+    )
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "比較対象の数（1か所／2か所）ごとに、変更前の値を具体的な数字で作った個数を材料別に比べた"
+        "グループ横棒グラフ。材料1（駐車場の出入庫時間）は1か所条件で5回中2回、2か所条件（満点10）で"
+        "0回。材料2（ジムの営業終了時刻）は1か所条件で5回中5回、2か所条件（満点10）で0回。下の枠には、"
+        "比較対象が増えると返りが箇条書きとラベルの形に変わったこと、型が変わったことで具体的な旧数値を"
+        "書く場所そのものが無くなったと見られることが書かれている。"
+    )
+    (OUT / "prep-second-blank-format-shift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     chatgpt_images25_price_lineage_chart()
     chatgpt_images25_old_vs_new_chart()
@@ -25869,6 +25987,8 @@ if __name__ == "__main__":
     safety_line_question_type_chart()
     proposal_hidden_want_hit_and_miss_chart()
     proposal_placement_matters_chart()
+    prep_second_blank_hit_and_miss_chart()
+    prep_second_blank_format_shift_chart()
     mixed_folder_count_vs_leak_chart()
     mixed_folder_old_vs_new_criteria_chart()
     youtube_payout_ladder_chart()
