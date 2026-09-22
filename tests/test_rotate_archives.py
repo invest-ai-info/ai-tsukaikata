@@ -178,6 +178,149 @@ class TestRotateQueueWhenTheNoteWasWrittenByHand:
         assert "302転送" not in new
         assert any("302転送" in c for c in chunks)
 
+PROSE = dedent("""\
+    # キュー
+
+    ## 待ち行列
+
+    ### 副業（2026-08-13・オーナー指示で新設。場面 `earn`）
+
+    🎯 この節の目的（オーナー指示）＝決まりなので、いつまでも残す。
+
+    - [x] 済んだ副業の題材
+      - →保管: 公開: `done-earn`
+
+    #### 補充（2026-08-19・ネタ探し担当。源①から4件）
+
+    🚨 **足した理由＝この節が今夜で実弾ゼロになるから。**
+    残量の説明がさらに数行続く。
+
+    - [x] 足した題材A
+      - →保管: 公開: `added-a`
+    - [!] 足した題材B
+      - →保管: 重複のため保留
+
+    #### 補充（2026-09-14・ネタ探し担当。床割れ対応）
+
+    🚨 足した理由。下の2件は**この順に**書くこと。
+
+    - [ ] まだ書いていない題材
+      - 切り口: これは残る
+    - [x] もう書いた題材
+      - →保管: 公開: `added-c`
+
+    #### 詰まったところ（2026-09-14）
+
+    促進項目3件は今日も一次情報に届かなかった。
+    明日の担当は環境の許可リストを確認すること。
+
+    ## 処理済み
+
+    ### 2026-09-14 21:00 レシピ担当
+
+    いちばん古い日報。
+
+    ### 2026-09-16 21:00 レシピ担当
+
+    2番目に古い日報。
+
+    ### 2026-09-17 21:00 レシピ担当
+
+    3番目の日報。
+
+    ### 2026-09-18 21:00 レシピ担当
+
+    最新の日報＝今夜の担当が「どこから着手するか」を読む。
+    """)
+
+
+class TestRotateQueueProse:
+    """待ち行列の散文（補充の経緯・担当の日誌）も回転の対象にする。
+
+    2026-09-22 実測: `_recipe_queue.md` の待ち行列 2,009行のうち **920行が散文**で、
+    項目でも索引でもないのに毎晩3〜4担当が読み直していた（中身は `_earn_research.md`・
+    `_writer_log.md`・`_hypothesis_queue.md` と重複）。
+    ⚠️ **未処理が残っている節の散文は動かさない**（並び順の指示など、まだ効く指示が混ざる）。
+    ⚠️ **場面の節（副業・詐欺を防ぐ等）の決まりは動かさない**（日付の付いた補充・研究パック・
+    担当の日誌だけを対象にする＝許可リスト方式。新しい種類の見出しを巻き込まない）。
+    """
+
+    def test_prose_of_a_finished_restock_moves(self):
+        new, chunks = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        assert "足した理由＝この節が今夜で実弾ゼロになるから" not in new
+        assert any("足した理由＝この節が今夜で実弾ゼロになるから" in c for c in chunks)
+        assert "#### 補充（2026-08-19・ネタ探し担当。源①から4件）" in new
+
+    def test_items_and_marker_lines_are_never_touched(self):
+        new, _ = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        for line in ("- [x] 足した題材A", "- [!] 足した題材B", "- [x] もう書いた題材",
+                     "- [ ] まだ書いていない題材", "  - 切り口: これは残る"):
+            assert line in new
+
+    def test_prose_stays_while_an_open_item_remains(self):
+        """並び順の指示など、まだ効く指示が混ざっているため。"""
+        new, _ = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        assert "下の2件は**この順に**書くこと" in new
+
+    def test_section_rules_stay(self):
+        """場面の節の決まりは、済んだ項目しか無くても残す。"""
+        new, _ = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        assert "この節の目的（オーナー指示）＝決まりなので、いつまでも残す" in new
+
+    def test_log_block_moves_whole_with_an_index_line(self):
+        new, chunks = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        assert "促進項目3件は今日も一次情報に届かなかった" not in new
+        assert "#### 詰まったところ（2026-09-14）" not in new
+        assert "- →保管: 詰まったところ（2026-09-14）" in new
+        assert any("促進項目3件" in c for c in chunks)
+
+    def test_processed_section_keeps_the_newest_three_days(self):
+        new, chunks = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        assert "最新の日報＝今夜の担当が" in new
+        assert "3番目の日報。" in new
+        assert "2番目に古い日報。" in new
+        assert "いちばん古い日報。" not in new
+        assert "- →保管: 2026-09-14 21:00 レシピ担当" in new
+        assert any("いちばん古い日報。" in c for c in chunks)
+
+    def test_idempotent(self):
+        once, _ = rotate_queue(PROSE, markers=("- [x] ", "- [!] "), prose=True)
+        twice, chunks = rotate_queue(once, markers=("- [x] ", "- [!] "), prose=True)
+        assert twice == once
+        assert chunks == []
+
+
+    def test_existing_index_lines_are_not_swallowed(self):
+        """担当が残した `- →保管:` の索引行は、済んだ節でも消さない。
+
+        2026-09-22 実測: 索引行は `- [` で始まらないので「散文」と判定され、
+        2回目の回転で保管庫へ吸い込まれていた（跡形が消える＝回転が非冪等になる）。
+        """
+        text = dedent("""\
+            ## 待ち行列
+
+            #### 補充（2026-08-19・ネタ探し担当）
+
+            🚨 足した理由の説明。
+
+            - →保管: 2026-09-20 研究パック1件（担当が自分で残した索引行）
+
+            - [x] 足した題材
+              - →保管: 公開: `added`
+            """)
+        once, chunks = rotate_queue(text, markers=("- [x] ",), prose=True)
+        assert "- →保管: 2026-09-20 研究パック1件（担当が自分で残した索引行）" in once
+        assert "🚨 足した理由の説明。" not in once
+        twice, chunks2 = rotate_queue(once, markers=("- [x] ",), prose=True)
+        assert twice == once
+        assert chunks2 == []
+
+    def test_prose_is_untouched_without_the_flag(self):
+        """深掘りキューなど、他のファイルの挙動は変えない。"""
+        new, _ = rotate_queue(PROSE, markers=("- [x] ", "- [!] "))
+        assert "足した理由＝この節が今夜で実弾ゼロになるから" in new
+        assert "いちばん古い日報。" in new
+
 
 DAILY = dedent("""\
     # ネタ帳

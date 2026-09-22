@@ -24,6 +24,40 @@ _DATE_HEAD_RE = re.compile(r"^(?:[#\s]*)(?:🚨\s*)?(\d{4})-(\d{2})-(\d{2})")
 KEEP_DAYS = 3
 EXEMPT_WORD = "申し送り"
 QUEUE_START = "## 待ち行列"
+QUEUE_DONE = "## 処理済み"
+
+# 🚨 待ち行列の中の「散文」も回転の対象にする（2026-09-22 追加）。
+#
+# 実測: `_recipe_queue.md` の待ち行列 2,009行のうち **920行が散文**（項目でも索引でもない）で、
+# 中身は `_earn_research.md`・`_writer_log.md`・`_hypothesis_queue.md` と重複していた。
+# 毎晩3〜4担当がこれを読み直していた＝トークン食の設計が狙った「死んだテキスト」そのもの。
+#
+# ⚠️ **許可リスト方式**＝下の見出しだけを対象にする。場面の節（副業・詐欺を防ぐ等）の決まりや、
+#    新しい種類の見出しを巻き込まないため。
+# ⚠️ **未処理（`- [ ]`）が1件でも残る節の散文は動かさない**＝並び順の指示など、まだ効く指示が
+#    混ざる（実測: 「下の4件はこの順に書くこと」）。
+PROSE_HEADINGS = ("補充", "研究パック")  # 日付つきの補充・研究パック＝その日の経緯
+LOG_HEADINGS = (  # 担当の日誌。項目が無ければ節ごと移す（中身は各担当の作業ログと重複）
+    "詰まったところ", "仮説キューの在庫補充", "源ごとの結果", "バックログの整理", "見送ったもの",
+)
+_HEAD_RE = re.compile(r"^(#{3,6}) *(.*)$")
+
+
+def _head_kind(heading: str) -> str | None:
+    """見出しの種類。'prose'＝経緯だけ移す / 'log'＝節ごと移す / None＝触らない。"""
+    m = _HEAD_RE.match(heading)
+    if not m:
+        return None
+    title = m.group(2).lstrip("🚨✅🛑📚🔑⚠️ ").strip()
+    if title.startswith(LOG_HEADINGS):
+        return "log"
+    if title.startswith(PROSE_HEADINGS):
+        return "prose"
+    if _DATE_HEAD_RE.match(title):  # `### 2026-09-22 15:30 稼ぎ方研究担当` のような日誌
+        return "log"
+    if heading.startswith("#####"):  # 節の中の出来事の報告（🛑 書けなかった・✅ 解決した）
+        return "log"
+    return None
 
 
 def _item_note(detail_lines: list[str]) -> str:
@@ -42,13 +76,23 @@ def _item_note(detail_lines: list[str]) -> str:
     return f"  - {NOTE_PREFIX}: {first[:60]}"
 
 
-def rotate_queue(text: str, markers: tuple[str, ...]) -> tuple[str, list[str]]:
-    """`## 待ち行列` 以降の済んだ項目の詳細を archive へ。マーカー行は残す。"""
+def rotate_queue(
+    text: str, markers: tuple[str, ...], prose: bool = False
+) -> tuple[str, list[str]]:
+    """`## 待ち行列` 以降の済んだ項目の詳細を archive へ。マーカー行は残す。
+
+    prose=True なら、済んだ節の散文（補充の経緯・担当の日誌）と `## 処理済み` の
+    古い日報も移す（PROSE_HEADINGS のコメント参照）。既定は False ＝従来どおり。
+    """
+    if prose:
+        text, prose_chunks = _rotate_prose(text)
+    else:
+        prose_chunks = []
     lines = text.splitlines()
     try:
         start = next(i for i, l in enumerate(lines) if l.startswith(QUEUE_START))
     except StopIteration:
-        return text, []
+        return text, prose_chunks
 
     out = lines[: start + 1]
     chunks: list[str] = []
@@ -79,6 +123,77 @@ def rotate_queue(text: str, markers: tuple[str, ...]) -> tuple[str, list[str]]:
                 continue
         out.append(line)
         i += 1
+    new = "\n".join(out) + ("\n" if text.endswith("\n") else "")
+    return new, prose_chunks + chunks
+
+
+def _rotate_prose(text: str) -> tuple[str, list[str]]:
+    """待ち行列の散文と、`## 処理済み` の古い日報を archive へ。項目には触らない。"""
+    lines = text.splitlines()
+    try:
+        start = next(i for i, l in enumerate(lines) if l.startswith(QUEUE_START))
+    except StopIteration:
+        return text, []
+    done_at = next(
+        (i for i, l in enumerate(lines) if l.startswith(QUEUE_DONE)), len(lines)
+    )
+
+    heads = [i for i in range(start, done_at) if _HEAD_RE.match(lines[i])]
+    drop: set[int] = set()
+    notes: dict[int, str] = {}  # 節ごと移したときに跡地へ置く索引行
+    chunks: list[str] = []
+    for k, i in enumerate(heads):
+        end = heads[k + 1] if k + 1 < len(heads) else done_at
+        kind = _head_kind(lines[i])
+        if kind is None:
+            continue
+        body = range(i + 1, end)
+        items = [x for x in body if lines[x].startswith("- [")]
+        if kind == "log" and not items:
+            if any(lines[x].strip() for x in body):
+                chunks.append("\n".join(lines[i:end]).rstrip("\n") + "\n")
+                drop.update(body)
+                drop.add(i)
+                notes[i] = f"- {NOTE_PREFIX}: {_HEAD_RE.match(lines[i]).group(2)}"
+            continue
+        if any(lines[x].startswith("- [ ] ") for x in body):
+            continue  # まだ効く指示が混ざる
+        # ⚠️ 索引行（`- →保管: …`）は散文ではない。担当が自分で残したものもあるので、
+        #    ここで拾うと2回目の回転で跡形ごと吸い込まれる（＝回転が非冪等になる）。
+        prose = [
+            x for x in body
+            if lines[x].strip()
+            and not lines[x].startswith((" ", "\t", "- [", f"- {NOTE_PREFIX}"))
+        ]
+        if not prose:
+            continue
+        chunks.append(lines[i] + "\n\n" + "\n".join(lines[x] for x in prose) + "\n")
+        drop.update(prose)
+
+    # `## 処理済み` の日報は直近 KEEP_DAYS 日ぶんを残す（他のログと同じ決まり）
+    done_heads = [i for i in range(done_at, len(lines)) if lines[i].startswith("### ")]
+    dated = [(i, _section_date(lines[i][4:])) for i in done_heads]
+    keep = sorted({d for _, d in dated if d}, reverse=True)[:KEEP_DAYS]
+    for k, (i, d) in enumerate(dated):
+        if d is None or d in keep:
+            continue
+        end = done_heads[k + 1] if k + 1 < len(done_heads) else len(lines)
+        chunks.append("\n".join(lines[i:end]).rstrip("\n") + "\n")
+        drop.update(range(i, end))
+        notes[i] = f"- {NOTE_PREFIX}: {lines[i][4:]}"
+
+    if not chunks:
+        return text, []
+    out = []
+    for i, line in enumerate(lines):
+        if i in notes:
+            out.append(notes[i])
+            continue
+        if i in drop:
+            continue
+        if line == "" and out and out[-1] == "":
+            continue  # 抜いた跡の空行が重ならないように
+        out.append(line)
     new = "\n".join(out) + ("\n" if text.endswith("\n") else "")
     return new, chunks
 
@@ -163,7 +278,8 @@ def append_archive(existing: str | None, chunks: list[str], today: date, name: s
 
 # (live ファイル, 回転の種類, 引数)
 TARGETS = [
-    ("content/_recipe_queue.md", "queue", {"markers": ("- [x] ", "- [!] ")}),
+    ("content/_recipe_queue.md", "queue",
+     {"markers": ("- [x] ", "- [!] "), "prose": True}),
     ("content/_deepdive_queue.md", "queue", {"markers": ("- [x] ",)}),
     ("content/_topic_ideas.md", "log", {"heading_prefix": "## "}),
     ("content/_review_log.md", "log", {"heading_prefix": "## "}),
