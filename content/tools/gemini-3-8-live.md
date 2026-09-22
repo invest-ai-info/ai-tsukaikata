@@ -80,7 +80,7 @@ Gemini の音声対話モデルは、これまで **Gemini 3.1 Flash Live Previe
 
 ### 安全性の評価は、前の音声モデルではなく3.7 Flashと比べている
 
-モデルカードのFrontier Safety（危険な能力がないかの評価）の項目には、こう書かれています。「Gemini 3.7 Flash（テキスト系のモデル）を評価した結果、追跡対象の危険な能力レベルに達していないことを確認した。Gemini 3.8 Live や 3.8 Live Extended Thinking は、3.7 Flash と比べて意味のある新しい能力や、性能の大きな向上を持たないと判断したため、3.7 Flash の評価結果をもとに、これらも危険な能力レベルに達していないと確信している」（出典: <https://deepmind.google/models/model-cards/gemini-3-8-audio/>・意訳）。
+モデルカードのFrontier Safety（危険な能力がないかの評価）の項目には、こう書かれています。「Gemini 3.7 Flash（テキスト系のモデル）を評価した結果、追跡対象の危険な能力レベルに達していないことを確認した。Gemini 3.8 Live や 3.8 Live Extended Thinking は、3.7 Flash と比べて意味のある新しい能力や、性能の大きな向上を持たないと判断した。そのため 3.7 Flash の評価結果をもとに、これらも危険な能力レベルに達していないと確信している」（出典: <https://deepmind.google/models/model-cards/gemini-3-8-audio/>・意訳）。
 
 <mark>つまり、安全性の比較対象は前の音声モデル（3.1 Flash Live Preview）ではなく、別系統のテキストモデル（3.7 Flash）です。</mark>発表ページは「知性の大幅な向上」とうたっていますが、公式の安全性評価の根拠は「3.7 Flash と大差ない」という前提に立っています。どちらも Google 自身の公式文書に書かれていることで、この記事ではどちらか一方だけを採用せず、両方をそのまま書いています。
 

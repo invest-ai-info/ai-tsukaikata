@@ -25,7 +25,7 @@ Google は 2026年6月24日、**画面操作（Computer Use）を Gemini 3.5 Fla
 
 <mark>Gemini 3.5 Flash 自体の発表は 2026年5月19日で、画面操作はその時点では載っていませんでした</mark>（出典: <https://deepmind.google/models/model-cards/gemini-3-5-flash>）。発表から36日後に、あとから機能として追加された形です。
 
-さらに、この記事を書いている時点で、ai.google.dev の Computer use ページは <mark class="warn">3.5 Flash を「Previous stable model」（前の安定版）と表記しています</mark>（2026年8月26日更新のドキュメントを確認。出典: <https://ai.google.dev/gemini-api/docs/computer-use>）。「推奨モデル」の座は、2026年8月13日に発表された Gemini 3.7 Flash に移っています（出典: 同上）。標準搭載の発表からわずか50日です。
+さらに、この記事を書いている時点で、ai.google.dev の Computer use ページは <mark class="warn">3.5 Flash を「Previous stable model」（前の安定版）と表記しています</mark>（出典: <https://ai.google.dev/gemini-api/docs/computer-use>。2026年8月26日更新のドキュメントを確認）。「推奨モデル」の座は、2026年8月13日に発表された Gemini 3.7 Flash に移っています（出典: 同上）。標準搭載の発表からわずか50日でした。
 
 ## 前のモデルとの違い
 

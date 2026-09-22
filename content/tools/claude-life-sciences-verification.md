@@ -61,7 +61,7 @@ LSVPでは、違反の見つけ方そのものが変わると説明されてい�
 
 <mark>OpenAIは同じ生命科学向けに、専用モデル「GPT-Rosalind」を新設しています</mark>（出典: <https://developers.openai.com/api/docs/models>。同ページの「Life sciences」の項目に「GPT-Rosalind Life sciences reasoning for approved organizations」と記載）。Anthropicが一般提供の3モデルに検証済み利用者向けの調整を加える設計なのに対し、OpenAIは生命科学専用のモデルを別枠で用意する設計です。
 
-OpenAIの公式ニュースRSS（<https://openai.com/news/rss.xml>）には、2026年5月29日付で「Rosalind Biodefense」という取り組みの要旨が載っています。「vetted developers and U.S. government partners（審査済みの開発者と米政府のパートナー）」に、生物防衛・公衆衛生・パンデミック対策向けにGPT-Rosalindへの信頼されたアクセスを広げる、と書かれています。⚠️ 出典は同RSSです。発表ページ本体〈openai.com〉はこの記事を書いた環境からは開けず、確認できたのはRSSの要旨1文だけでした。
+OpenAIの公式ニュースRSS（<https://openai.com/news/rss.xml>）には、2026年5月29日付で「Rosalind Biodefense」という取り組みの要旨が載っています。「vetted developers and U.S. government partners（審査済みの開発者と米政府のパートナー）」に、GPT-Rosalindへの信頼されたアクセスを広げる、と書かれています。用途は生物防衛・公衆衛生・パンデミック対策です。⚠️ 出典は同RSSです。発表ページ本体〈openai.com〉はこの記事を書いた環境からは開けず、確認できたのはRSSの要旨1文だけでした。
 
 料金ページでは、gpt-rosalind-researchの単価も確認できました。<mark>Claude Opus 5とOpenAIのgpt-rosalind-researchは、100万トークンあたり入力$5・出力$25で同額です</mark>（出典: <https://platform.claude.com/docs/en/about-claude/pricing>、<https://developers.openai.com/api/docs/pricing>）。文脈キャッシュの再利用価格も、Opus 5の「Cache hits and refreshes」が$0.50、gpt-rosalind-researchの「Cached input」が$0.50で一致しています。ただしキャッシュの仕組み（書き込み・読み取りの区分）は会社ごとに違うため、金額が同じでも課金の細かい条件までは一致しません。
 

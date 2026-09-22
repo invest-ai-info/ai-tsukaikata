@@ -1,5 +1,5 @@
 ---
-title: AIの始め方 — 何を用意して、どこから触るか
+title: AIの始め方——何を用意して、どこから触るか
 description: ChatGPT・Claude・Gemini・Claude Code の始め方を、必要なものとパソコンの条件から説明します。古いパソコンでも動くのか、足りないときはどうするかまで、公式に書いてある数字だけで書きました。
 category: pages
 published: 2026-08-09

@@ -75,7 +75,7 @@ OpenAIの画像生成モデルの単価を、発表順に並べます。すべ�
 <figcaption>画質は増え値段は下がったが、半額のBatchが使えなくなった</figcaption>
 </figure>
 
-もう1つ、テキスト出力の扱いも変わっています。`chatgpt-image-latest` と `gpt-image-1.5` は、画像に添えるテキストの出力にも100万トークンあたり$10.00の課金がありますが（出典: <https://developers.openai.com/api/docs/pricing>）、<mark>新しい2モデルの入出力は「Output modalities: image」のみで、テキスト出力自体がありません</mark>（出典: <https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst>）。画像しか出さない設計になった、ということです。
+もう1つ、テキスト出力の扱いも変わっています。`chatgpt-image-latest` と `gpt-image-1.5` は、画像に添えるテキストの出力にも100万トークンあたり$10.00の課金がありました（出典: <https://developers.openai.com/api/docs/pricing>）。一方、<mark>新しい2モデルの入出力は「Output modalities: image」のみで、テキスト出力自体がありません</mark>（出典: <https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst>）。画像しか出さない設計になった、ということです。
 
 ## 他社の最上位モデルとの比較
 
