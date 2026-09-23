@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T06:02:05.594533+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-09-23T05:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI企業のAnthropicが、新しいAIモデル「Claude Opus 5.5」を発表しました。Claude 5.5ファミリーで最初のモデルで、従来のClaude Opus 5から性能や効率、安全性を改善し、一般的な処理ではOpus 5より40％低いコストで利用できるとしています。また、出力速度もOpus 5より30％以上高速化しています。 続きを読む...",
+      "title": "AnthropicがAIモデル「Claude Opus 5.5」を発表、Opus 5よりコスト40％減・30％以上高速化しコーディング性能も向上",
+      "uid": "836bb0c17a80f7b9",
+      "url": "https://gigazine.net/news/20260923-claude-opus-5-5/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-23T06:02:05.594533+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-23T03:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Gakkenは、書籍「教育のプロが子育ての67のお悩みをまるっと解決 AI時代・グローバル社会を生き抜くための方法」を9月10日に発売した。価格は1,650円。",
+      "title": "AI時代の子育てを解決。書籍「AI時代・グローバル社会を生き抜くための方法」発売",
+      "uid": "2c73ded0de6a741d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2141797.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-23T06:02:05.594533+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-23T02:38:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Googleのリック・オスターロー氏は9月22日（現地時間）、米ハワイ州マウイ島で開催中の「Snapdragon Summit 2026」に登壇し、AI「Gemini」をスマートフォンやPC、自動車などに広げていく構想を説明した。",
+      "title": "GoogleのAndroid責任者「OSからインテリジェンスシステムへ」--Gemini時代の端末像を語る",
+      "uid": "ce5b5600a8f3a9ae",
+      "url": "https://japan.cnet.com/article/35252868/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-23T06:02:05.594533+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-23T01:36:07+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "トランプ米大統領は国連総会の一般討論演説で、AIの呼称を「Super Intelligence（SI）」に変更すると表明した。米国の全公文書で採用し、他国にも同調を促す。国際的なAI管理の枠組みを拒否し、地球温暖化論争になぞらえて脅威論を一蹴した上で、成長を支援して開発競争をリードする姿勢を強調した。",
+      "title": "トランプ大統領、国連演説で「AI」を「Super Intelligence」に改称すると表明",
+      "uid": "cc1b6347adfe8567",
+      "url": "https://www.itmedia.co.jp/news/article/2609/23/2000001676/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-23T06:02:05.594533+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-23T01:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "エスイレブンは、応援購入サービス「Makuake」にて、AIデバイス「PettiChat（ペティチャット）」の先行販売を9月25日12時より開始する。価格は未定。",
+      "title": "ペットの気持ちをAIが推測。首輪装着デバイス「PettiChat」9月25日より先行販売",
+      "uid": "bf0c18df355cfa34",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2142217.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-09-23T00:39:33.442023+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2339,66 +2399,6 @@
       "uid": "d2203ac1723510b6",
       "url": "https://ai.watch.impress.co.jp/docs/news/2141028.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T05:03:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年9月、Anthropicのダリオ・アモデイCEOが「AIのリスクが高まっており、開発ペースを減速させる必要がある」とする声明を発表しました。これにはOpenAIのサム・アルトマンCEOやGoogle DeepMindのデミス・ハサビス会長らも賛意を示したのですが、ドナルド・トランプ大統領は反発し、既に十分な安全対策が敷かれていると指摘しました。 続きを読む...",
-      "title": "トランプ大統領がAIの開発ペースを遅らせようとするAnthropicのダリオ・アモデイCEOを批判、「AIが人類を滅ぼすなどという考えはデマ」",
-      "uid": "ffb0a275f188fd8e",
-      "url": "https://gigazine.net/news/20260915-trump-reject-ai-guardrail/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T04:58:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicのダリオ・アモデイCEOが「AIのリスクが高まっており、開発ペースを減速させる必要がある」とする声明を発表した件で、中国側がこれに反発し、不要な対立をあおるべきではないとの考えを示しました。 続きを読む...",
-      "title": "中国外務省がAIリスクに関する警告を「恐怖を煽る行為で誰の利益にもならない」と批判",
-      "uid": "ec9b5f15e4fd3a9c",
-      "url": "https://gigazine.net/news/20260915-china-reject-ai-control/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T04:56:28+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "マクニカとElithは、特殊詐欺電話をEdge AIで検知する実証実験を実施した。BroadcomのNPU（AIの学習済みモデルによる推論処理に適したプロセッサ）を搭載したPON MAC SoC評価ボードを活用し、今回の検証用に構築したリアルタイム推論評価環境において90％以上の判定精度が確認された。",
-      "title": "マクニカとElith、Edge AIにより90％の判定精度で特殊詐欺電話を検知",
-      "uid": "e7a6f2b424944819",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141010.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T04:50:07+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "GO、Waymo、日本交通の3社は9月15日、東京において2027年中に自動運転レベル4の完全無人走行による商用タクシーの運行を目指し、戦略的パートナーシップに合意したと発表した。",
-      "title": "GO×Waymo×日本交通、2027年中に都内で完全無人走行による商用タクシー運行へ",
-      "uid": "6d452122e058c862",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141014.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T04:19:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI企業のOpenAIが、スマートフォン向けカメラを開発するGlass Imagingを3億ドル(約460億円)超で買収したと、ウォール・ストリート・ジャーナルが報じています。 続きを読む...",
-      "title": "OpenAIがスマホカメラメーカーのGlass Imagingを買収したとの報道",
-      "uid": "8feedf2f0140efa3",
-      "url": "https://gigazine.net/news/20260915-openai-buys-camera-startup-glass-imaging/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
