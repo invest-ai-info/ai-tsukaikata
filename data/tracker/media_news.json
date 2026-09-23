@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-23T15:23:11+00:00",
+      "source_id": "media-publickey",
+      "summary": "Anthropicは、Claude Codeの9月18日付けでアップデートが公開されたClaude Code 2.1.277で「AGENTS.md」の読み込みに対応したことを明らかにしました。 以下のように説明されています。 Added...",
+      "title": "Claude Codeが「AGENTS.md」に対応。CLAUDE.mdが存在しない場合、自動的に読み込み",
+      "uid": "27dda3f6ade2b1d5",
+      "url": "https://www.publickey1.jp/blog/26/claude_codeagentsmdclaudemd.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-23T15:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "GIGAZINEの記事を電子化した書籍を対象に「2026年8月に出版した中で最もたくさん読まれた記事は何なのか？」がわかるランキングを作ってみました。Google検索の影響が大きい普段のアクセス解析記事と違い、Amazonならではのランキングとなっています。 続きを読む...",
+      "title": "Vlogにぴったりな小型カメラ「Osmo Pocket 4」レビュー記事・SF作家のAI論などAmazonで売上トップ10のGIGAZINE記事ランキング2026年8月版はコレ！",
+      "uid": "161bcfca4dedb903",
+      "url": "https://gigazine.net/news/20260924-gigazine-kindle-ranking-2026-08/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-23T11:43:30.934941+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "c2cefacbec296ab3",
       "url": "https://www.itmedia.co.jp/aiplus/article/2609/15/2000001494/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIがChatGPTの応答品質を改善するため、実際のユーザーとChatGPTの会話を人間に読ませて評価する内部プロジェクト「Project Lily」を進めていると、海外メディアの404 Mediaが報じました。レビュー担当者にはユーザー名が表示されず、個人情報を隠す処理も行われますが、会話に含まれる個人的な情報が完全には取り除かれず、人間まで届く場合があるとのことです。 続きを読む...",
-      "title": "ChatGPTとの会話を人間が読む「Project Lily」が進行中、個人情報がレビュー担当者に届いてしまう可能性がある",
-      "uid": "d7de962423f4e21f",
-      "url": "https://gigazine.net/news/20260915-chatgpt-project-lily/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T05:58:40+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "分析屋は、既存の溶接ロボットや溶接ラインに後付けできる溶接専門AIソリューション「SAMURAI Analyzer for Welding」を9月にリリースする。",
-      "title": "既存の溶接ロボットに後付けできる溶接専門AI「SAMURAI Analyzer for Welding」",
-      "uid": "9794a704cdef24c6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141038.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

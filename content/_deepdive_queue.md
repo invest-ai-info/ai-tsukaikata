@@ -221,6 +221,11 @@
 - [ ] https://www.anthropic.com/claude-opus-5-5
   - 2026-09-22 自動追記（major・Anthropic「Introducing Claude Opus 5.5」）
 
+- [ ] https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
+  - 2026-09-23 自動追記（minor・Google DeepMind「Advancing Private AI Compute with secure, server-side memory」）
+- [ ] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
+  - 2026-09-23 自動追記（minor・Google DeepMind「Gemini 3.8 text-to-speech says hello」）
+
 ## 処理済み
 
 - https://sakana.ai/marlin-update/ → **公開済み** content/tools/sakana-marlin-interactive-reading.md（2026-09-22・公開）

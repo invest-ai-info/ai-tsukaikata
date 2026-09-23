@@ -1,6 +1,74 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-24T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.",
+      "summary_ja": "RinggのAIが顧客からの電話の最大65%を解決\nGPT-5.6を使い以前より90%安いコストに\n音声、チャット、ウェブで多言語対応も可能",
+      "summary_source": "gemini",
+      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+      "uid": "84aa162decd3d22d",
+      "url": "https://openai.com/index/ringg",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-09-23T16:00:57+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Introducing private, server-side memory to Private AI Compute for personal AI.",
+      "summary_ja": "個人のAI向けサービスに新機能が追加された\n安全な「サーバー側メモリ」が使えるように",
+      "summary_source": "gemini",
+      "title": "Advancing Private AI Compute with secure, server-side memory",
+      "uid": "29f5a8cd813bd979",
+      "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-23T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Marking two years of OpenAI Academy and bringing AI skills to even more communities.",
+      "summary_ja": "OpenAIのアカデミーが設立2周年を迎えた\nより多くの人にAIの技術を広げていく",
+      "summary_source": "gemini",
+      "title": "Two years of OpenAI Academy",
+      "uid": "782f89de4446549f",
+      "url": "https://openai.com/index/two-years-of-openai-academy",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-09-23T15:25:14+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Gemini 3.8 text-to-speech says hello",
+      "uid": "c184270205293e01",
+      "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-23T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
+      "summary_ja": "OpenAIがウクライナのサイバー防御を支援する\n「Daybreak」プログラムをウクライナ政府に提供\n民間インフラ保護が目的",
+      "summary_source": "gemini",
+      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+      "uid": "f5597fc188bdfb0d",
+      "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-23T11:43:30.934941+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -107,6 +175,20 @@
       "uid": "0bfaede3fcf1448f",
       "url": "https://openai.com/index/priorities-principles-third-party-assessments",
       "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-23T17:07:31.530680+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-09-22T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "A rare strain of Ebola, with no confirmed vaccine, is spreading through the east of the Democratic Republic of Congo. World health organizations are using Claude to move as fast as possible to combat…",
+      "summary_ja": "エボラ出血熱の対策にAI「Claude」が使われている\nコンゴ東部でワクチン未確認のエボラが拡大\n世界保健機関が早期対応でAIを活用",
+      "summary_source": "gemini",
+      "title": "The Situation Report",
+      "uid": "eb1cbeaccd8fcaed",
+      "url": "https://www.anthropic.com/features/ebola-response",
+      "vendor": "Anthropic"
     },
     {
       "first_seen": "2026-09-21T19:33:20.574647+00:00",
@@ -4991,20 +5073,6 @@
       "uid": "2c1efd9f55a9aaef",
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark",
       "vendor": "DeepSeek"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-25T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "The Google Finance logo, surrounded by elements of the user interface",
-      "summary_ja": "Google Financeが機能強化された\n新しいアプリがリリースされた",
-      "summary_source": "gemini",
-      "title": "Our latest Google Finance upgrades, including a new app",
-      "uid": "332ee0d179f1027c",
-      "url": "https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026/",
-      "vendor": "Google"
     }
   ]
 }
