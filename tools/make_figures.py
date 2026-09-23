@@ -26327,6 +26327,161 @@ def marlin_update_timeline_chart() -> None:
     )
 
 
+def synonym_wording_empties_the_collateral_conditions_chart() -> None:
+    """基準を固定する対策を「語そのもの」から「類義語・言い換えも含む」に言い換えると、
+    健全5件の巻き添えが0/4→4/4に変わった。誤り混入6件と、新しく試した紛らわしい語
+    混入6件はどちらも4/4のままだった。
+
+    実測（2026-09-23）。架空の社内ヘルプデスク問い合わせ2本を、独立したAIの新規プロセスで
+    各2回ずつ実行した（材料2本×各2回=4回／条件）。前の記事（narrowed-criteria-fixes-dirty-
+    not-clean）の「基準を固定（長い版）」の結果と、今回の「類義語も含める」版を並べる。
+    """
+    rows = [
+        ("前の記事＝基準を固定（健全5件）", 0, 4),
+        ("今回＝類義語も含める（健全5件）", 4, 4),
+        ("前の記事＝基準を固定（誤り混入6件）", 4, 4),
+        ("今回＝類義語も含める（誤り混入6件）", 4, 4),
+        ("今回＝類義語も含める（紛らわしい語混入6件）", 4, 4),
+    ]
+    label_w = 270
+    cell_w, cell_h, gap = 170, 32, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "言い換えると、健全5件の巻き添えが0/4→4/4に変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の問い合わせを2本、独立したAIの新規プロセスで各2回ずつ実行した（材料2本×各2回=4回）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "変えたのは「〜のように」を「〜に限らず、同じ意味を持つ表現も含めて」に言い換えた一点だけ。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は、正しい項目を1件も巻き込まず・見逃さず処理できた回数。生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 正しく処理"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 56
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "巻き添えが消えたのは、基準を狭めたからではなく緩めたから。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "誤り検出と、新しく試した紛らわしい語の除外は、どちらも崩れなかった。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "工程2の確認指示に足す対策の言い方を変えたとき、健全な5件だけの条件・誤りを1件混ぜた"
+        "6件の条件・紛らわしい語を1件混ぜた6件の条件で、正しく処理できた回数を比べたマス目。"
+        "前の記事の「除外の基準を固定する（語そのものの有無）」対策は、健全5件で材料2本×各2回"
+        "=4回中0回しか正しく処理できなかった。今回、同じ対策を「〜に限らず、同じ意味を持つ"
+        "表現（類義語・言い換え）も含めて」に言い換えると、健全5件は4回中4回に上がった。"
+        "誤り混入6件は前の記事も今回も4回中4回のまま。今回新しく試した、急ぎではない依頼を"
+        "紛らわしい語で混ぜた6件でも4回中4回で、言い換えが緩みすぎて余計なものまで拾う"
+        "様子は無かった。"
+    )
+    (OUT / "synonym-wording-empties-the-collateral-conditions.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def synonym_wording_empties_the_collateral_all_versions_chart() -> None:
+    """3条件×材料2本×各2回=12回の内訳を横棒グラフで並べる。
+
+    実測（2026-09-23）。健全5件・誤り混入6件・紛らわしい語混入6件の3条件、
+    それぞれ4回ずつ、合計12回とも正しく処理できた。
+    """
+    groups = [
+        ("1. 健全5件", 4, 4, "巻き添えゼロ。HD-2206も含め5件とも残った"),
+        ("2. 誤り混入6件", 4, 4, "挿入した誤りだけを正しく除外"),
+        ("3. 紛らわしい語混入6件", 4, 4, "至急の語が無い依頼も正しく除外"),
+        ("4. 誤り＋紛らわしい語の複合7件", 4, 4, "2件とも正しく除外、健全5件は全部残った"),
+        ("5. 引用の指定＋誤り混入6件", 4, 4, "根拠の引用も4回とも本文と一致"),
+        ("6. 引用の指定＋紛らわしい語混入6件", 4, 4, "根拠の引用も4回とも本文と一致"),
+    ]
+    top = 168
+    bar_h = 34
+    pitch = bar_h + 32
+    plot_x, plot_w = 330, 310
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "6条件×材料2本×各2回=24回。全部が正しく処理できた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "指示文はどれも、除外の基準に「類義語・言い換えも含める」を足した1本がもと。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "健全5件・誤り混入6件・紛らわしい語混入6件・その複合・引用の指定を足した版で試した。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, note) in enumerate(groups):
+        y = top + index * pitch
+        ok = val == n
+        box = "box-good" if ok else ("box-bad" if val == 0 else "box-accent")
+        tone = "t-good" if ok else "t-bad"
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "健全5件・誤り混入6件・紛らわしい語混入6件・その複合7件・引用の指定を足した誤り混入6件・"
+        "引用の指定を足した紛らわしい語混入6件の6条件それぞれで、材料2本×各2回=4回ずつ実行し、"
+        "正しく処理できた回数を比べた横棒グラフ。健全5件は4回とも巻き添えゼロ（HD-2206を含め"
+        "5件とも残った）。誤り混入6件・紛らわしい語混入6件・両方を混ぜた複合7件は、いずれも"
+        "4回とも該当項目だけを正しく除外し、健全5件は全部残った。引用の指定を足した2条件も"
+        "4回とも正しく除外し、除外の根拠として引用された語句は本文と一致していた。6条件24回"
+        "すべてで、健全な項目の巻き込みも、除外すべき項目の見逃しも起きなかった。"
+    )
+    (OUT / "synonym-wording-empties-the-collateral-all-versions.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     marlin_run_cost_by_plan_chart()
     marlin_vendor_grid_chart()
@@ -26666,4 +26821,6 @@ if __name__ == "__main__":
     opus55_what_changed_chart()
     opus55_bench_chart()
     opus55_vendor_price_chart()
+    synonym_wording_empties_the_collateral_conditions_chart()
+    synonym_wording_empties_the_collateral_all_versions_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
