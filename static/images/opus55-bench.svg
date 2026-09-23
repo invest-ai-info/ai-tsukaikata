@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="572" viewBox="0 0 720 572" role="img" aria-label="Opus 5 と Opus 5.5 の点数を比べた横棒グラフ。Terminal-Bench 4.0 は52.3％から66.4％、FrontierCode v1.1 は48.0％から54.4％、CursorBench 4.0 は46.6％から57.8％、AutomationBench は26.9％から40.0％、Humanity’s Last Exam の道具ありは63.6％から67.7％、Terminal-Bench-Science 0.1 は29.0％から58.7％、OSWorld 2.0 の部分点ありは74.0％から81.8％、Chartography の道具ありは83.4％から89.0％。AutomationBench は Zapier が、それ以外は Anthropic が自社で測った値で、テストの中身も測り方も別々のため平均は取れない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="572"/>
+<text class="t-strong" x="18" y="26">公式が挙げた点数（Opus 5 → Opus 5.5）</text>
+<text class="t-sm" x="18" y="45">灰色＝Opus 5、青＝Opus 5.5。目盛りは0〜100％で揃えてあります。</text>
+<text class="t-sm" x="18" y="64">AutomationBench は Zapier が測った値。それ以外は Anthropic が自社で測った値です。</text>
+<text class="t" x="18" y="94">Terminal-Bench 4.0</text>
+<text class="t-xs" x="234" y="93">5</text>
+<rect class="bar-old" x="262" y="82" width="197.7" height="14" rx="2"/>
+<text class="t-sm" x="467.7" y="93">52.3%</text>
+<text class="t-xs" x="234" y="112">5.5</text>
+<rect class="bar-new" x="262" y="101" width="251.0" height="14" rx="2"/>
+<text class="t-sm" x="521.0" y="112">66.4%</text>
+<text class="t" x="18" y="149">FrontierCode v1.1</text>
+<text class="t-xs" x="234" y="148">5</text>
+<rect class="bar-old" x="262" y="137" width="181.4" height="14" rx="2"/>
+<text class="t-sm" x="451.4" y="148">48.0%</text>
+<text class="t-xs" x="234" y="167">5.5</text>
+<rect class="bar-new" x="262" y="156" width="205.6" height="14" rx="2"/>
+<text class="t-sm" x="475.6" y="167">54.4%</text>
+<text class="t" x="18" y="204">CursorBench 4.0</text>
+<text class="t-xs" x="234" y="203">5</text>
+<rect class="bar-old" x="262" y="192" width="176.1" height="14" rx="2"/>
+<text class="t-sm" x="446.1" y="203">46.6%</text>
+<text class="t-xs" x="234" y="222">5.5</text>
+<rect class="bar-new" x="262" y="211" width="218.5" height="14" rx="2"/>
+<text class="t-sm" x="488.5" y="222">57.8%</text>
+<text class="t" x="18" y="259">AutomationBench</text>
+<text class="t-xs" x="234" y="258">5</text>
+<rect class="bar-old" x="262" y="247" width="101.7" height="14" rx="2"/>
+<text class="t-sm" x="371.7" y="258">26.9%</text>
+<text class="t-xs" x="234" y="277">5.5</text>
+<rect class="bar-new" x="262" y="266" width="151.2" height="14" rx="2"/>
+<text class="t-sm" x="421.2" y="277">40.0%</text>
+<text class="t" x="18" y="314">Humanity’s Last Exam（道具あり）</text>
+<text class="t-xs" x="234" y="313">5</text>
+<rect class="bar-old" x="262" y="302" width="240.4" height="14" rx="2"/>
+<text class="t-sm" x="510.4" y="313">63.6%</text>
+<text class="t-xs" x="234" y="332">5.5</text>
+<rect class="bar-new" x="262" y="321" width="255.9" height="14" rx="2"/>
+<text class="t-sm" x="525.9" y="332">67.7%</text>
+<text class="t" x="18" y="369">Terminal-Bench-Science 0.1</text>
+<text class="t-xs" x="234" y="368">5</text>
+<rect class="bar-old" x="262" y="357" width="109.6" height="14" rx="2"/>
+<text class="t-sm" x="379.6" y="368">29.0%</text>
+<text class="t-xs" x="234" y="387">5.5</text>
+<rect class="bar-new" x="262" y="376" width="221.9" height="14" rx="2"/>
+<text class="t-sm" x="491.9" y="387">58.7%</text>
+<text class="t" x="18" y="424">OSWorld 2.0（部分点あり）</text>
+<text class="t-xs" x="234" y="423">5</text>
+<rect class="bar-old" x="262" y="412" width="279.7" height="14" rx="2"/>
+<text class="t-sm" x="549.7" y="423">74.0%</text>
+<text class="t-xs" x="234" y="442">5.5</text>
+<rect class="bar-new" x="262" y="431" width="309.2" height="14" rx="2"/>
+<text class="t-sm" x="579.2" y="442">81.8%</text>
+<text class="t" x="18" y="479">Chartography（道具あり）</text>
+<text class="t-xs" x="234" y="478">5</text>
+<rect class="bar-old" x="262" y="467" width="315.3" height="14" rx="2"/>
+<text class="t-sm" x="585.3" y="478">83.4%</text>
+<text class="t-xs" x="234" y="497">5.5</text>
+<rect class="bar-new" x="262" y="486" width="336.4" height="14" rx="2"/>
+<text class="t-sm" x="606.4" y="497">89.0%</text>
+<text class="t-xs" x="18" y="542">※ テストの中身も測り方も別々です。並べても平均は取れません。Opus 5.5 は最大の設定（max）の値です。</text>
+<text class="t-xs" x="18" y="560">※ Terminal-Bench 4.0 の Opus 5.5 だけは xhigh の値。標準誤差は公式によると ±2.6 ポイント。</text>
+</svg>

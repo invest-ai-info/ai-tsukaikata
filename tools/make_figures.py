@@ -16131,6 +16131,191 @@ def fable51_bench_chart() -> None:
     )
 
 
+def opus55_what_changed_chart() -> None:
+    """Opus 5 から Opus 5.5 で、据え置きのもの／変わったもの（2026-09-23）。"""
+    same = [
+        "読める量 100万トークン",
+        "書ける量 12.8万トークン",
+        "読める形式 文章と画像",
+        "データを残さない契約（ZDR）で使える",
+    ]
+    diff = [
+        "入力 $5 → $4、出力 $25 → $20（20%減）",
+        "読み直し $0.50 → $0.20（60%減）",
+        "知識の締め切り 2026年5月 → 6月",
+        "考える量の既定値 high → medium",
+        "「考える」を切れなくなった",
+        "道具の強制指定ができなくなった",
+    ]
+
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(same), len(diff))
+    box_h = 30 + rows * row_h
+    height = first_y + rows * row_h + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Opus 5 から Opus 5.5 で何が変わったか</text>\n',
+        '<text class="t-sm" x="18" y="45">器の大きさは同じ。値段が下がり、使い方の決まりが少し変わった。</text>\n',
+        f'<rect class="box-quiet" x="{left_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-accent" x="{right_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-strong" x="{left_x + 14}" y="{head_y - 2}">変わらないもの</text>\n',
+        f'<text class="t-accent" x="{right_x + 14}" y="{head_y - 2}">変わったもの</text>\n',
+    ]
+    for index, text in enumerate(same):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(diff):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: Anthropic の発表ページ・モデルのページ・料金ページ（2026年9月23日に確認）。単価は100万トークンあたり。</text>\n"
+    )
+    alt = (
+        "Opus 5 から Opus 5.5 への変化を2列で比べた図。"
+        "変わらないもの＝読める量100万トークン、書ける量12.8万トークン、読める形式は文章と画像、"
+        "データを残さない契約で使えること。"
+        "変わったもの＝100万トークンあたりの入力が5ドルから4ドル、出力が25ドルから20ドルで20%減、"
+        "読み直しの料金が0.50ドルから0.20ドルで60%減、知識の締め切りが2026年5月から6月、"
+        "考える量の既定値が high から medium、考える機能を切れなくなった、道具の強制指定ができなくなった。"
+    )
+    (OUT / "opus55-what-changed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def opus55_bench_chart() -> None:
+    """Opus 5 と Opus 5.5 の、公式が挙げた点数（％のものだけ）。"""
+    rows = [
+        ("Terminal-Bench 4.0", 52.3, 66.4),
+        ("FrontierCode v1.1", 48.0, 54.4),
+        ("CursorBench 4.0", 46.6, 57.8),
+        ("AutomationBench", 26.9, 40.0),
+        ("Humanity’s Last Exam（道具あり）", 63.6, 67.7),
+        ("Terminal-Bench-Science 0.1", 29.0, 58.7),
+        ("OSWorld 2.0（部分点あり）", 74.0, 81.8),
+        ("Chartography（道具あり）", 83.4, 89.0),
+    ]
+    left, right = 262, 640
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">公式が挙げた点数（Opus 5 → Opus 5.5）</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝Opus 5、青＝Opus 5.5。目盛りは0〜100％で揃えてあります。</text>\n',
+        '<text class="t-sm" x="18" y="64">AutomationBench は Zapier が測った値。それ以外は Anthropic が自社で測った値です。</text>\n',
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "5"), (new, "bar-new", "5.5"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="234" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:.1f}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ テストの中身も測り方も別々です。並べても平均は取れません。Opus 5.5 は最大の設定（max）の値です。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Terminal-Bench 4.0 の Opus 5.5 だけは xhigh の値。標準誤差は公式によると ±2.6 ポイント。</text>\n"
+    )
+    alt = (
+        "Opus 5 と Opus 5.5 の点数を比べた横棒グラフ。"
+        "Terminal-Bench 4.0 は52.3％から66.4％、FrontierCode v1.1 は48.0％から54.4％、"
+        "CursorBench 4.0 は46.6％から57.8％、AutomationBench は26.9％から40.0％、"
+        "Humanity’s Last Exam の道具ありは63.6％から67.7％、Terminal-Bench-Science 0.1 は29.0％から58.7％、"
+        "OSWorld 2.0 の部分点ありは74.0％から81.8％、Chartography の道具ありは83.4％から89.0％。"
+        "AutomationBench は Zapier が、それ以外は Anthropic が自社で測った値で、"
+        "テストの中身も測り方も別々のため平均は取れない。"
+    )
+    (OUT / "opus55-bench.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def opus55_vendor_price_chart() -> None:
+    """各社の上位モデルと Opus 5.5 の単価（入力・出力の2本）。"""
+    rows = [
+        ("Claude Opus 5.5", 4, 20),
+        ("Claude Opus 5", 5, 25),
+        ("Claude Fable 5.1", 10, 50),
+        ("GPT-6 Astra", 10, 50),
+        ("GPT-6 Sol", 2, 10),
+        ("Gemini 3.1 Pro Preview", 2, 12),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">1トークンあたりの単価（100万トークンあたり・ドル）</text>\n',
+        '<text class="t-sm" x="18" y="45">入力＝薄い色 ／ 出力＝濃い色。GPT と Gemini は短い入力のときの値段です。</text>\n',
+        '<text class="t-sm" x="18" y="64">各社の公式料金ページの数字だけを並べています（2026年9月23日に確認）。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 単価が安い＝支払いが安い、ではありません。会社ごとにトークンの数え方が違います。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Gemini 3.1 Pro は試用版（Preview）の表示です。長く使うなら値段が変わりうると考えてください。</text>\n"
+    )
+    alt = (
+        "6つのモデルの単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "Claude Opus 5.5 は入力4ドル・出力20ドル、Claude Opus 5 は入力5ドル・出力25ドル、"
+        "Claude Fable 5.1 は入力10ドル・出力50ドル、GPT-6 Astra は入力10ドル・出力50ドル、"
+        "GPT-6 Sol は入力2ドル・出力10ドル、Gemini 3.1 Pro Preview は入力2ドル・出力12ドル。"
+        "GPT と Gemini は短い入力のときの値段。会社ごとにトークンの数え方が違うため、"
+        "単価の安さは支払額の安さを意味しない。"
+    )
+    (OUT / "opus55-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 def facts_stay_promises_grow_grid_chart() -> None:
     """「読みやすく整えて」だけを頼んだ10回で、事実欄と約束欄それぞれに
     元原稿に無い記述が足されたかを、回ごとに並べたマス目。
@@ -26478,4 +26663,7 @@ if __name__ == "__main__":
     gptlive1_architecture_grid_chart()
     gptlive1_concurrent_tiers_chart()
     gptlive1_vendor_voice_price_chart()
+    opus55_what_changed_chart()
+    opus55_bench_chart()
+    opus55_vendor_price_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
