@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T20:26:05.479613+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-23T19:50:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Metaの新しいAIエージェント「Muse」に深刻なゼロデイ脆弱性が見つかり、同社は今週、急きょ修正パッチを配布した。攻撃者がMuseをだまし、ユーザーの音声入力データやアクセストークンをMetaではなく攻撃者側のサーバーに送信させる恐れがあったという。MuseのmacOSアプリは公開初週で50万回以上ダウンロードされている。デジタル生活の「鍵」をエージェント型AIに預けることの危うさを改めて…",
+      "title": "Metaの人気AIエージェント「Muse」にゼロデイ脆弱性　音声データやトークン流出の恐れ",
+      "uid": "3119be1331dc0f1d",
+      "url": "https://japan.cnet.com/article/35252881/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-23T17:07:31.530680+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2387,18 +2399,6 @@
       "uid": "0a8f253144149369",
       "url": "https://japan.cnet.com/article/35252632/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-15T06:22:45+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "セブンイレブン店頭の“AIポップ”についてセブンイレブンに取材したところ「一部店舗が掲示物作成にAIを利用していることを確認している」との回答を得た。",
-      "title": "「きもい」「内部資料そのまま」と話題のAI生成掲示物についてセブンイレブンに聞いてみた　「本部提供ではない」",
-      "uid": "c2cefacbec296ab3",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/15/2000001494/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
