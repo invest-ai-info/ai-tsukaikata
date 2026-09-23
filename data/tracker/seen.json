@@ -39,41 +39,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-17T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-22T16:38:14+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added Claude Opus 5.5 ( claude-opus-5-5 ), now the default Opus model — 1M context, $4/$20 per Mtok with $0.20/Mtok cache reads Added mouse support to more lists in fullscreen mode: th…",
-      "title": "v2.1.280",
-      "uid": "a05a5f1807b572a5",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.280",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-22T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI outlines priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards.",
-      "title": "Priorities and principles for effective third party assessments",
-      "uid": "0bfaede3fcf1448f",
-      "url": "https://openai.com/index/priorities-principles-third-party-assessments",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-22T21:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs.",
-      "title": "Better prompt caching for GPT-6",
-      "uid": "d33202d7da1c5d55",
-      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
