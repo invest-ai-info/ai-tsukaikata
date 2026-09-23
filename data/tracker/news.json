@@ -149,6 +149,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-23T23:44:44.256252+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-23T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
+      "summary_ja": "OpenAIのCEOが国連安保理で発言\nAIの安全性や人間による管理を議論\n国際的な協力を呼びかけ",
+      "summary_source": "gemini",
+      "title": "Sam Altman’s remarks at the United Nations Security Council",
+      "uid": "33399a38405e8369",
+      "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-23T20:26:05.479613+00:00",
       "importance": "major",
       "label": "OpenAI News",
@@ -160,6 +174,20 @@
       "title": "Introducing MentalHealthBench",
       "uid": "e79c7cb1e4f3013d",
       "url": "https://openai.com/index/introducing-mentalhealthbench",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-23T23:44:44.256252+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-23T01:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.",
+      "summary_ja": "Airbnbが最新AIモデルの利用を拡大\n「GPT-6 Astra」などを技術担当チームに提供\n不具合解決や開発期間短縮に活用へ",
+      "summary_source": "gemini",
+      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
+      "uid": "5d4a51ed374d1be7",
+      "url": "https://openai.com/index/airbnb-gpt-6-astra",
       "vendor": "OpenAI"
     },
     {
