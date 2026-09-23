@@ -218,16 +218,41 @@
 - [x] https://sakana.ai/marlin-update/
   - →保管: ✅ **2026-09-22: 公開した** → `content/tools/sakana-marlin-interactive-reading.md`
 
-- [ ] https://www.anthropic.com/claude-opus-5-5
+- [x] https://www.anthropic.com/claude-opus-5-5
   - 2026-09-22 自動追記（major・Anthropic「Introducing Claude Opus 5.5」）
+  - →保管: ✅ **2026-09-22: 公開済みだった**（別セッションが同日中に作成・`768ea67`→`fc68081`）
+    → `content/tools/claude-opus-5-5.md`。🔑 **記録漏れ**＝記事は公開済みなのにこの行が
+    `- [ ]` のまま残っていた。今回のルーティンが手順1で気づいて `- [x]` に直した（重複執筆はしていない）
 
-- [ ] https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
+- [x] https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
   - 2026-09-23 自動追記（minor・Google DeepMind「Advancing Private AI Compute with secure, server-side memory」）
+  - →保管: ✅ **2026-09-23: 公開した** → `content/tools/private-ai-compute-memory.md`
+
 - [ ] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
   - 2026-09-23 自動追記（minor・Google DeepMind「Gemini 3.8 text-to-speech says hello」）
 
 ## 処理済み
 
+- https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/ → **公開済み** content/tools/private-ai-compute-memory.md（2026-09-23・公開）
+  - `deepmind.google` に到達（200）。関連ページとして初出発表（`blog.google`・2025-11-11）と
+    Anthropicの記憶機能のブログ（`claude.com/blog/memory`）にも到達。図3枚
+    （`pac-before-after` / `pac-architecture-flow` / `pac-vendor-grid`）。
+    `check_numbers.py` は**照合対象0個**（本文に $・% が無い題材。日付や製品名は照合対象外）。
+    pytest 736 passed・build 224ファイル。`check_readability.py` は60字以上2%（目安15%以下）。
+  - 📌 記事の芯＝**Private AI Compute（2025年11月に発表・当初はステートレスでPixel 10の
+    Magic CueとRecorderアプリだけに使用）に、永続的な記憶を追加すると発表**。記憶データは
+    クラウド上でも暗号化し、鍵は利用者の端末だけが持つため「Googleも読めない」と説明している。
+    ただし対象製品名・提供時期は発表に一切書かれていない（技術的な更新の告知に留まる）
+  - ⚠️ 技術文書（PDF・`services.google.com`）は経路遮断で到達できず、独立監査の中身までは
+    確認できなかった。次にこのドメインを叩く行が来たら再試行対象にすること
+  - ⚠️ 他社比較はAnthropicのClaude記憶機能（2025-09-11提供開始・暗号化方式の記載なし）と
+    突き合わせた。OpenAIのChatGPTメモリー機能は`openai.com`・`help.openai.com`とも
+    今回もbot判定の403（`cf-mitigated: challenge`実測）で確認できず
+- https://www.anthropic.com/claude-opus-5-5 → **公開済み（別セッション作成）** content/tools/claude-opus-5-5.md（2026-09-22・公開）
+  - 🔑 **今回のルーティンが手順1で発見した記録漏れ**＝記事は同日中に別セッションが作成・公開済み
+    （`768ea67`→構成を「結論が先」に組み替えた`fc68081`）だったが、待ち行列の行が`- [ ]`のまま
+    残っていた。中身は確認済み（Opus 5→5.5の費用40%減・4設定がエラーになる件・他社比較）。
+    重複執筆はせず、行を`- [x]`に直すだけにとどめた
 - https://sakana.ai/marlin-update/ → **公開済み** content/tools/sakana-marlin-interactive-reading.md（2026-09-22・公開）
   - `sakana.ai/marlin-update/` と `sakana.ai/marlin/`（料金）に到達（いずれも200）。図3枚
     （`marlin-run-cost-by-plan` / `marlin-vendor-grid` / `marlin-update-timeline`）。出典6件すべて取得成功。

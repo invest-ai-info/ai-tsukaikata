@@ -26599,6 +26599,193 @@ def two_tier_subtotal_survives_total_grid_chart() -> None:
     )
 
 
+def pac_before_after_chart() -> None:
+    """従来のPrivate AI Compute（ステートレス）と、今回の発表（永続記憶）の違い。
+
+    出典＝deepmind.google の発表ページ（2026-09-23）と、
+    blog.google の初出発表（2025-11-11）。今回の発表は「発表のみ」で、
+    対象製品・提供時期は書かれていない。
+    """
+    before = [
+        "処理が終わると記憶は消える",
+        "対象はPixel 10のMagic Cue",
+        "Recorderアプリの文字起こし要約",
+        "端末をまたぐ会話の継続は無い",
+    ]
+    after = [
+        "永続的な記憶の層を追加すると発表",
+        "暗号化した「金庫」にクラウド保存",
+        "鍵は利用者の端末だけが持つ",
+        "対象製品・提供時期は発表に無い",
+    ]
+
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(before), len(after))
+    box_h = 30 + rows * row_h
+    height = first_y + rows * row_h + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Private AI Computeは「消える記憶」から「残る記憶」へ</text>\n',
+        '<text class="t-sm" x="18" y="45">今回の発表は技術的な更新の説明で、対象の製品名や提供時期は書かれていない。</text>\n',
+        f'<rect class="box-quiet" x="{left_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-accent" x="{right_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-strong" x="{left_x + 14}" y="{head_y - 2}">従来（2025年11月〜）</text>\n',
+        f'<text class="t-accent" x="{right_x + 14}" y="{head_y - 2}">今回の発表（2026年9月23日）</text>\n',
+    ]
+    for index, text in enumerate(before):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(after):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: Google DeepMindの発表ページ（2026年9月23日）と、Private AI Compute初出の発表（2025年11月11日）。</text>\n"
+    )
+    alt = (
+        "従来のPrivate AI Computeと今回の発表を2列で比べた図。"
+        "従来（2025年11月〜）＝処理が終わると記憶は消える、対象はPixel 10のMagic CueとRecorderアプリの"
+        "文字起こし要約、端末をまたぐ会話の継続は無い。"
+        "今回の発表（2026年9月23日）＝永続的な記憶の層を追加すると発表、暗号化した「金庫」にクラウド保存、"
+        "鍵は利用者の端末だけが持つ、対象製品・提供時期は発表に無い。"
+    )
+    (OUT / "pac-before-after.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def pac_architecture_flow_chart() -> None:
+    """端末→セキュアエンクレーブ→暗号化保管庫、という発表ページの説明を図にする。
+
+    出典＝deepmind.google の発表ページ（2026-09-23）本文。
+    技術文書（PDF）自体は環境の許可リストに無く未確認（経路遮断）。
+    """
+    y0 = 96
+    boxes = [
+        (18, 210, "box-quiet", ["利用者の端末", "暗号の鍵はここだけに保管", "Googleのサーバーには渡さない"]),
+        (252, 210, "box-accent", ["セキュアエンクレーブ", "（クラウド側・隔離された領域）", "処理中だけ一時的に復号"]),
+        (486, 216, "box", ["暗号化された保管庫", "終わったらすぐ再暗号化", "鍵が無いと中身は読めない"]),
+    ]
+    parts = [
+        '<text class="t-strong" x="18" y="26">鍵は端末側だけが持ち、クラウドは復号したままでは保存しない</text>\n',
+        '<text class="t-sm" x="18" y="45">発表ページの説明を図にした。Googleは「Googleを含め第三者はアクセスできない」と書いている。</text>\n',
+    ]
+    for x, w, klass, lines in boxes:
+        parts.append(f'<rect class="{klass}" x="{x}" y="{y0}" width="{w}" height="88" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{x + 10}" y="{y0 + 22}">{_esc(lines[0])}</text>\n')
+        for k, line in enumerate(lines[1:]):
+            parts.append(f'<text class="t-xs" x="{x + 10}" y="{y0 + 42 + 16 * k}">{_esc(line)}</text>\n')
+    parts.append(f'<line class="line" x1="230" y1="{y0 + 44}" x2="248" y2="{y0 + 44}"/>\n')
+    parts.append(f'<polygon class="bar-out" points="248,{y0 + 39} 256,{y0 + 44} 248,{y0 + 49}"/>\n')
+    parts.append(f'<text class="t-xs" x="200" y="{y0 - 6}">暗号化した通信</text>\n')
+    parts.append(f'<line class="line" x1="464" y1="{y0 + 44}" x2="482" y2="{y0 + 44}"/>\n')
+    parts.append(f'<polygon class="bar-out" points="482,{y0 + 39} 490,{y0 + 44} 482,{y0 + 49}"/>\n')
+    parts.append(f'<text class="t-xs" x="440" y="{y0 - 6}">再暗号化して保存</text>\n')
+
+    y1 = y0 + 88 + 20
+    box_h2 = 62
+    parts.append(f'<rect class="box-accent" x="18" y="{y1}" width="684" height="{box_h2}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y1 + 22}">「独立監査の結果」と技術文書の更新も公開したとGoogleは書いている。</text>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="34" y="{y1 + 42}">ただしその技術文書（PDF）は、この記事を書いた環境からは開けなかった</text>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="34" y="{y1 + 58}">（経路遮断。監査の中身は発表ページに書かれた説明の範囲でしか確認できていない）。</text>\n'
+    )
+    height = y1 + box_h2 + 16
+
+    alt = (
+        "利用者の端末からセキュアエンクレーブを経て暗号化された保管庫に至る、Googleの説明を図にしたもの。"
+        "利用者の端末は暗号の鍵をここだけに保管しGoogleのサーバーには渡さない。"
+        "暗号化した通信でセキュアエンクレーブ（クラウド側・隔離された領域）に接続し、処理中だけ一時的に復号する。"
+        "終わったらすぐ再暗号化して、暗号化された保管庫に保存する。鍵が無いと中身は読めない。"
+        "下の枠には、独立監査の結果と技術文書の更新も公開したとGoogleが書いていること、"
+        "ただしその技術文書（PDF）はこの記事を書いた環境からは経路遮断で開けず、"
+        "監査の中身は発表ページの説明の範囲でしか確認できていないことが書かれている。"
+    )
+    (OUT / "pac-architecture-flow.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def pac_vendor_grid_chart() -> None:
+    """AIの「記憶」機能を、暗号化の説明・鍵の保管場所・現在使えるかで3社比べる。
+
+    出典＝Googleは発表ページ本文、Anthropicはclaude.com/blog/memory、
+    OpenAIはhelp.openai.com・openai.com/index/...ともbot判定の403で確認できず。
+    """
+    rows = [
+        ("暗号化の説明", "クラウド上でも\n暗号化すると説明", "発表ページに\n暗号化方式の記載なし", "確認できず"),
+        ("鍵の保管場所", "利用者の端末のみ\n（Googleは持たない）", "記載なし", "確認できず"),
+        ("現在使えるか", "発表のみ\n提供時期は未定", "Team/Enterprise・\nPro/Maxで提供中", "確認できず"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 138
+    pitch, box_h = 58, 48
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「記憶」の暗号化を明言しているのは、3社のうちGoogleだけだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・ブログ）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Anthropicの記憶機能は既に提供中だが、暗号化方式の記載は発表ページに無い。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "OpenAIの該当ページはbot判定の403で、この記事からは確認できなかった。</text>\n",
+    ]
+    headers = ["Google", "Anthropic", "OpenAI"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, google_v, anthropic_v, openai_v in rows:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 18}">{_esc(label)}</text>\n')
+        for i, val in enumerate((google_v, anthropic_v, openai_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else ("box-quiet" if i == 1 else "box-bad")
+            tcls = "t-accent" if i == 0 else ("t-sm" if i == 1 else "t-bad")
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※「確認できず」「記載なし」は機能が無いと明言されているのではなく、公式ページに記載が見当たらなかった意味。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "AIの「記憶」機能を、暗号化の説明・鍵の保管場所・現在使えるかで3社比べた表。"
+        "暗号化の説明＝Googleはクラウド上でも暗号化すると説明、Anthropicは発表ページに暗号化方式の記載なし、"
+        "OpenAIは確認できず。鍵の保管場所＝Googleは利用者の端末のみでGoogleは持たない、Anthropicは記載なし、"
+        "OpenAIは確認できず。現在使えるか＝Googleは発表のみで提供時期は未定、Anthropicは"
+        "Team/Enterprise・Pro/Maxで提供中、OpenAIは確認できず。"
+        "OpenAIの該当ページはbot判定の403でこの記事からは確認できなかった。"
+    )
+    (OUT / "pac-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     marlin_run_cost_by_plan_chart()
     marlin_vendor_grid_chart()
@@ -26942,4 +27129,7 @@ if __name__ == "__main__":
     synonym_wording_empties_the_collateral_all_versions_chart()
     two_tier_subtotal_survives_total_chart()
     two_tier_subtotal_survives_total_grid_chart()
+    pac_before_after_chart()
+    pac_architecture_flow_chart()
+    pac_vendor_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
