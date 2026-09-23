@@ -1,0 +1,582 @@
+[
+  {
+    "trial_id": "A_1dan_1",
+    "material": "A",
+    "condition": "1dan",
+    "rep": 1,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_1dan_1.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": null,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_1dan_2",
+    "material": "A",
+    "condition": "1dan",
+    "rep": 2,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_1dan_2.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": null,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_1dan_3",
+    "material": "A",
+    "condition": "1dan",
+    "rep": 3,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_1dan_3.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": null,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_1dan_4",
+    "material": "A",
+    "condition": "1dan",
+    "rep": 4,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_1dan_4.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": null,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_1dan_5",
+    "material": "A",
+    "condition": "1dan",
+    "rep": 5,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_1dan_5.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": null,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_2dan_1",
+    "material": "A",
+    "condition": "2dan",
+    "rep": 1,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_2dan_1.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": 16,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_2dan_2",
+    "material": "A",
+    "condition": "2dan",
+    "rep": 2,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_2dan_2.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": 16,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_2dan_3",
+    "material": "A",
+    "condition": "2dan",
+    "rep": 3,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_2dan_3.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": 16,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_2dan_4",
+    "material": "A",
+    "condition": "2dan",
+    "rep": 4,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_2dan_4.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": 16,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "A_2dan_5",
+    "material": "A",
+    "condition": "2dan",
+    "rep": 5,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/A_2dan_5.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "渋谷教室": 13,
+        "新宿教室": 14,
+        "池袋教室": 15
+      },
+      "subtotal_values": {
+        "渋谷教室": 102000,
+        "新宿教室": 100000,
+        "池袋教室": 84000
+      },
+      "total_row": 16,
+      "grand_total": 286000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_1dan_1",
+    "material": "B",
+    "condition": "1dan",
+    "rep": 1,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_1dan_1.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": null,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_1dan_2",
+    "material": "B",
+    "condition": "1dan",
+    "rep": 2,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_1dan_2.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": null,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_1dan_3",
+    "material": "B",
+    "condition": "1dan",
+    "rep": 3,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_1dan_3.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": null,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_1dan_4",
+    "material": "B",
+    "condition": "1dan",
+    "rep": 4,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_1dan_4.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": null,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_1dan_5",
+    "material": "B",
+    "condition": "1dan",
+    "rep": 5,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_1dan_5.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": null,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_2dan_1",
+    "material": "B",
+    "condition": "2dan",
+    "rep": 1,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_2dan_1.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": 16,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_2dan_2",
+    "material": "B",
+    "condition": "2dan",
+    "rep": 2,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_2dan_2.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": 16,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_2dan_3",
+    "material": "B",
+    "condition": "2dan",
+    "rep": 3,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_2dan_3.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": 16,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_2dan_4",
+    "material": "B",
+    "condition": "2dan",
+    "rep": 4,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_2dan_4.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": 16,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  },
+  {
+    "trial_id": "B_2dan_5",
+    "material": "B",
+    "condition": "2dan",
+    "rep": 5,
+    "prompt_path": "/tmp/claude-0/-home-user-ai-tsukaikata/b3449426-3d0d-5cb4-94f8-8ae7cc496b47/scratchpad/h22/prompts/B_2dan_5.txt",
+    "meta": {
+      "data_rows": [
+        2,
+        12
+      ],
+      "sub_start": 13,
+      "sub_end": 15,
+      "subtotal_rows": {
+        "豆・茶葉": 13,
+        "乳製品": 14,
+        "食材(パン・スイーツ用)": 15
+      },
+      "subtotal_values": {
+        "豆・茶葉": 156000,
+        "乳製品": 57000,
+        "食材(パン・スイーツ用)": 48000
+      },
+      "total_row": 16,
+      "grand_total": 261000,
+      "value_col_letter": "C",
+      "group_col_letter": "A"
+    }
+  }
+]

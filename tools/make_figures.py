@@ -26482,6 +26482,123 @@ def synonym_wording_empties_the_collateral_all_versions_chart() -> None:
     )
 
 
+def two_tier_subtotal_survives_total_chart() -> None:
+    """集計欄が2段(小計+総合計)でも、名指しの一文の効き方は段ごとに割れる。
+
+    実測（2026-09-23・`claude --safe-mode --tools "" -p` による独立実行。仮説キューH22）。
+    材料2本（学習塾の月謝管理表・カフェの仕入れ管理表）×各5回、1段条件（小計のみ）と
+    2段条件（小計+総合計）を比べた。値は docs/evidence/grand-total-survives-subtotal-does-not.md
+    の「照合（機械）」節（tools/grade_h22.py 相当のスクリプト出力）から。
+    """
+    _hit_and_miss_rows_chart(
+        "two-tier-subtotal-survives-total.svg",
+        "総合計欄は10回中7回正しいのに、小計欄は3割しか正しくない",
+        "実測2026-09-23。集計欄の位置を名指しした同じ一文で、1段条件（小計のみ）と2段条件（小計+総合計）を比較。",
+        "材料2本（学習塾・カフェ）×各5回。数式を実際に走らせた値で機械判定（自己参照・二重計上・範囲の過不足）。",
+        [
+            ("1段条件：小計欄が範囲外に出た", 5, 10, "good"),
+            ("2段条件：小計欄が範囲外に出た", 3, 10, "good"),
+            ("2段条件：総合計欄が二重計上せず正しい", 7, 10, "good"),
+            ("2段条件：小計・総合計の両方が正しい", 3, 10, "good"),
+        ],
+        [
+            "反証条件（凍結済み）＝2段条件の「両方正しい」×2が、1段条件の「小計が正しい」と",
+            "同じか上なら仮説（2段の方が悪化する）を棄却。実測は 3×2=6 ≧ 5 で棄却。",
+            "＝危ういのは「2段になったこと」ではなく、1段のときから半分近く外していた小計欄そのもの。",
+        ],
+        "集計欄が2段（小計+総合計）になったとき、AIが返した数式の的中率を表す表。"
+        "1段条件（小計のみ）で小計欄が範囲外に出せた回数は10回中5回。2段条件で小計欄が"
+        "範囲外に出せた回数は10回中3回。2段条件で総合計欄が二重計上せず正しかった回数は"
+        "10回中7回。2段条件で小計・総合計の両方が正しかった回数は10回中3回。下の枠には、"
+        "反証条件（2段条件の『両方正しい』を2倍した数が、1段条件の『小計が正しい』回数と"
+        "同じか上なら仮説を棄却）を適用すると3×2=6が5以上で棄却されたこと、"
+        "危ういのは2段になったことではなく1段のときから半分近く外していた小計欄そのものだった"
+        "ことが書かれている。",
+        label_w=340,
+    )
+
+
+def two_tier_subtotal_survives_total_grid_chart() -> None:
+    """20回の内訳を、材料×条件の4行×5回の一覧で示す。
+
+    実測（2026-09-23・仮説キューH22）。○＝小計欄が範囲外に出た（自己参照なし・値も正しい）、
+    ×＝自己参照または値の誤り（範囲の端が1行ずれて実データを取りこぼした回を含む）。
+    """
+    label_w = 220
+    col_w = 88
+    cols = 5
+    col_x = [18 + label_w + i * col_w for i in range(cols)]
+    top1 = 130
+    row_h = 30
+    pitch = row_h + 8
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "小計欄の的中は、材料や段数を問わず5割前後でばらついた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各回、小計欄の数式が「範囲外に出ている・値も正しい」なら○、"
+        "自己参照または値の誤りなら×。</text>\n",
+        '<text class="t-xs" x="18" y="64">'
+        "学習塾＝渋谷・新宿・池袋の3教室、カフェ＝豆茶葉・乳製品・食材の3カテゴリ。"
+        "材料2本×条件2水準×各5回=20回。</text>\n",
+    ]
+    headers = ["1回目", "2回目", "3回目", "4回目", "5回目"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + col_w / 2:.1f}" y="{top1 - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    grid_rows = [
+        ("学習塾・1段（小計のみ）", (False, True, True, False, False)),
+        ("学習塾・2段（小計+総合計）", (False, False, False, False, False)),
+        ("カフェ・1段（小計のみ）", (True, False, True, False, True)),
+        ("カフェ・2段（小計+総合計）", (True, False, True, False, True)),
+    ]
+    y = top1
+    for label, cells in grid_rows:
+        ty = y + row_h - 9
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for x, ok in zip(col_x, cells):
+            box = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            mark = "○" if ok else "×"
+            parts.append(
+                f'<rect class="{box}" x="{x + 8}" y="{y}" width="{col_w - 16}" '
+                f'height="{row_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{mark}</text>\n'
+            )
+        y += pitch
+
+    y += 10
+    box_h = 56
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 22}" style="font-weight:700">'
+        "学習塾は2/5→0/5に落ちたが、カフェは3/5→3/5で変わらず</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 42}">'
+        "材料によって崩れ方が違う＝「2段だから悪化する」と一括りにはできない。</text>\n"
+    )
+    y += box_h + 16
+
+    height = y + 8
+    alt = (
+        "小計欄の的中を、学習塾・カフェの2材料×1段・2段の2条件×各5回=20回で○×表示した図。"
+        "学習塾の1段は5回中2回○、2段は5回中0回○。カフェの1段は5回中3回○、"
+        "2段も5回中3回○で変わらなかった。下の枠には、学習塾は2/5から0/5に落ちたが"
+        "カフェは3/5のまま変わらなかったこと、材料によって崩れ方が違うので"
+        "『2段だから悪化する』とは一括りにできないことが書かれている。"
+    )
+    (OUT / "two-tier-subtotal-survives-total-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     marlin_run_cost_by_plan_chart()
     marlin_vendor_grid_chart()
@@ -26823,4 +26940,6 @@ if __name__ == "__main__":
     opus55_vendor_price_chart()
     synonym_wording_empties_the_collateral_conditions_chart()
     synonym_wording_empties_the_collateral_all_versions_chart()
+    two_tier_subtotal_survives_total_chart()
+    two_tier_subtotal_survives_total_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="322" viewBox="0 0 720 322" role="img" aria-label="集計欄が2段（小計+総合計）になったとき、AIが返した数式の的中率を表す表。1段条件（小計のみ）で小計欄が範囲外に出せた回数は10回中5回。2段条件で小計欄が範囲外に出せた回数は10回中3回。2段条件で総合計欄が二重計上せず正しかった回数は10回中7回。2段条件で小計・総合計の両方が正しかった回数は10回中3回。下の枠には、反証条件（2段条件の『両方正しい』を2倍した数が、1段条件の『小計が正しい』回数と同じか上なら仮説を棄却）を適用すると3×2=6が5以上で棄却されたこと、危ういのは2段になったことではなく1段のときから半分近く外していた小計欄そのものだったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="322"/>
+<text class="t-strong" x="18" y="26">総合計欄は10回中7回正しいのに、小計欄は3割しか正しくない</text>
+<text class="t-sm" x="18" y="45">実測2026-09-23。集計欄の位置を名指しした同じ一文で、1段条件（小計のみ）と2段条件（小計+総合計）を比較。</text>
+<text class="t-sm" x="18" y="64">材料2本（学習塾・カフェ）×各5回。数式を実際に走らせた値で機械判定（自己参照・二重計上・範囲の過不足）。</text>
+<text class="t-xs" x="438.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">1段条件：小計欄が範囲外に出た</text>
+<rect class="box" x="358" y="104" width="160" height="26" rx="4"/>
+<text class="t-sm" x="438.0" y="125" text-anchor="middle" style="font-weight:700">5/10</text>
+<text class="t" x="18" y="157">2段条件：小計欄が範囲外に出た</text>
+<rect class="box" x="358" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="438.0" y="157" text-anchor="middle" style="font-weight:700">3/10</text>
+<text class="t" x="18" y="189">2段条件：総合計欄が二重計上せず正しい</text>
+<rect class="box" x="358" y="168" width="160" height="26" rx="4"/>
+<text class="t-sm" x="438.0" y="189" text-anchor="middle" style="font-weight:700">7/10</text>
+<text class="t" x="18" y="221">2段条件：小計・総合計の両方が正しい</text>
+<rect class="box" x="358" y="200" width="160" height="26" rx="4"/>
+<text class="t-sm" x="438.0" y="221" text-anchor="middle" style="font-weight:700">3/10</text>
+<rect class="box-accent" x="18" y="238" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="258">反証条件（凍結済み）＝2段条件の「両方正しい」×2が、1段条件の「小計が正しい」と</text>
+<text class="t-accent" x="34" y="276">同じか上なら仮説（2段の方が悪化する）を棄却。実測は 3×2=6 ≧ 5 で棄却。</text>
+<text class="t-accent" x="34" y="294">＝危ういのは「2段になったこと」ではなく、1段のときから半分近く外していた小計欄そのもの。</text>
+</svg>

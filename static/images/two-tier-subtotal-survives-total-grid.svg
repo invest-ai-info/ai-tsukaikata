@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="372" viewBox="0 0 720 372" role="img" aria-label="小計欄の的中を、学習塾・カフェの2材料×1段・2段の2条件×各5回=20回で○×表示した図。学習塾の1段は5回中2回○、2段は5回中0回○。カフェの1段は5回中3回○、2段も5回中3回○で変わらなかった。下の枠には、学習塾は2/5から0/5に落ちたがカフェは3/5のまま変わらなかったこと、材料によって崩れ方が違うので『2段だから悪化する』とは一括りにできないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="372"/>
+<text class="t-strong" x="18" y="26">小計欄の的中は、材料や段数を問わず5割前後でばらついた</text>
+<text class="t-sm" x="18" y="45">各回、小計欄の数式が「範囲外に出ている・値も正しい」なら○、自己参照または値の誤りなら×。</text>
+<text class="t-xs" x="18" y="64">学習塾＝渋谷・新宿・池袋の3教室、カフェ＝豆茶葉・乳製品・食材の3カテゴリ。材料2本×条件2水準×各5回=20回。</text>
+<text class="t-xs" x="282.0" y="116" text-anchor="middle">1回目</text>
+<text class="t-xs" x="370.0" y="116" text-anchor="middle">2回目</text>
+<text class="t-xs" x="458.0" y="116" text-anchor="middle">3回目</text>
+<text class="t-xs" x="546.0" y="116" text-anchor="middle">4回目</text>
+<text class="t-xs" x="634.0" y="116" text-anchor="middle">5回目</text>
+<text class="t" x="18" y="151">学習塾・1段（小計のみ）</text>
+<rect class="box-bad" x="246" y="130" width="72" height="30" rx="4"/>
+<text class="t-bad" x="282.0" y="151" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-good" x="334" y="130" width="72" height="30" rx="4"/>
+<text class="t-good" x="370.0" y="151" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-good" x="422" y="130" width="72" height="30" rx="4"/>
+<text class="t-good" x="458.0" y="151" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-bad" x="510" y="130" width="72" height="30" rx="4"/>
+<text class="t-bad" x="546.0" y="151" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-bad" x="598" y="130" width="72" height="30" rx="4"/>
+<text class="t-bad" x="634.0" y="151" text-anchor="middle" style="font-weight:700">×</text>
+<text class="t" x="18" y="189">学習塾・2段（小計+総合計）</text>
+<rect class="box-bad" x="246" y="168" width="72" height="30" rx="4"/>
+<text class="t-bad" x="282.0" y="189" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-bad" x="334" y="168" width="72" height="30" rx="4"/>
+<text class="t-bad" x="370.0" y="189" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-bad" x="422" y="168" width="72" height="30" rx="4"/>
+<text class="t-bad" x="458.0" y="189" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-bad" x="510" y="168" width="72" height="30" rx="4"/>
+<text class="t-bad" x="546.0" y="189" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-bad" x="598" y="168" width="72" height="30" rx="4"/>
+<text class="t-bad" x="634.0" y="189" text-anchor="middle" style="font-weight:700">×</text>
+<text class="t" x="18" y="227">カフェ・1段（小計のみ）</text>
+<rect class="box-good" x="246" y="206" width="72" height="30" rx="4"/>
+<text class="t-good" x="282.0" y="227" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-bad" x="334" y="206" width="72" height="30" rx="4"/>
+<text class="t-bad" x="370.0" y="227" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-good" x="422" y="206" width="72" height="30" rx="4"/>
+<text class="t-good" x="458.0" y="227" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-bad" x="510" y="206" width="72" height="30" rx="4"/>
+<text class="t-bad" x="546.0" y="227" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-good" x="598" y="206" width="72" height="30" rx="4"/>
+<text class="t-good" x="634.0" y="227" text-anchor="middle" style="font-weight:700">○</text>
+<text class="t" x="18" y="265">カフェ・2段（小計+総合計）</text>
+<rect class="box-good" x="246" y="244" width="72" height="30" rx="4"/>
+<text class="t-good" x="282.0" y="265" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-bad" x="334" y="244" width="72" height="30" rx="4"/>
+<text class="t-bad" x="370.0" y="265" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-good" x="422" y="244" width="72" height="30" rx="4"/>
+<text class="t-good" x="458.0" y="265" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-bad" x="510" y="244" width="72" height="30" rx="4"/>
+<text class="t-bad" x="546.0" y="265" text-anchor="middle" style="font-weight:700">×</text>
+<rect class="box-good" x="598" y="244" width="72" height="30" rx="4"/>
+<text class="t-good" x="634.0" y="265" text-anchor="middle" style="font-weight:700">○</text>
+<rect class="box-accent" x="18" y="292" width="678" height="56" rx="6"/>
+<text class="t-accent" x="34" y="314" style="font-weight:700">学習塾は2/5→0/5に落ちたが、カフェは3/5→3/5で変わらず</text>
+<text class="t-sm" x="34" y="334">材料によって崩れ方が違う＝「2段だから悪化する」と一括りにはできない。</text>
+</svg>
