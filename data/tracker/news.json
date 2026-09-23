@@ -53,6 +53,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-22T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+      "summary_ja": "Parallel社が調査の効率を大幅に改善\n新AI「GPT-6 Astra」を導入し、\n労働市場データの調査・整理で時間と費用を半減",
+      "summary_source": "gemini",
+      "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+      "uid": "049caec63a8d7eed",
+      "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-22T18:57:17.477656+00:00",
       "importance": "major",
       "label": "Anthropic 公式ニュース",

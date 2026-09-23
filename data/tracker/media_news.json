@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-23T00:12:02+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは新モデル「GPT-6 Sol」と「GPT-6 Luna」を公開した。最上位のAstraと同様の手法で訓練し、前世代からAPI料金を半額に引き下げた。ChatGPTやCodexで順次提供する。アライメント改善が進む一方、思考過程で評価を察知する兆候が増加するなど監視上の課題も残る。",
+      "title": "OpenAI、「GPT-6 Sol」と「GPT-6 Luna」公開　API料金は前世代の半額に",
+      "uid": "1285552ef0986853",
+      "url": "https://www.itmedia.co.jp/news/article/2609/23/2000001674/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ニュースでよく聞く「半導体」。「GPUのことね」「AI時代に重要なんでしょ」という認識はあっても、その本質を理解できていますか？ 半導体が重要視される理由を基礎から解説します。",
+      "title": "今押さえたい「半導体」の基礎知識　極小チップが“AI時代の戦略物資”になった、納得の理由",
+      "uid": "eb70aaa69d4927fa",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/23/news004.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-22T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "マゼビスジャパンは、AIと対戦しながら囲碁やリバーシ、五目並べなど全19種類のゲームを楽しめるAI搭載ボードゲーム「AI GO」の日本展開を開始した。応援購入サービス「Makuake」にて9月27日まで先行販売が行なわれている。",
+      "title": "AIと遊べる！囲碁やリバーシなど19種を1台にまとめたボードゲーム「AI GO」",
+      "uid": "cd39ac4416482435",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2141505.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの導入が進む一方、企業には「必要なデータが別のシステムにある」というボトルネックがある。AWSとSalesforceは、データを移動させず、普段使うツールの中でAIを活用できる環境づくりを進める。",
+      "title": "AWS、SalesforceがAI連携を強化　データ分断をどう解消するか",
+      "uid": "294e0c16fc33234b",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/23/2000001663/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIやAIエージェントの導入が進む一方、データの整理不足や権限管理、コスト、老朽化した基盤が活用のボトルネックとなる。パーソルビジネスプロセスデザインは、AIを継続利用するためのデータ基盤を支援する3サービスを開始した。",
+      "title": "AIを導入した企業ほど困る「データ基盤問題」　パーソルが3サービスで支援へ",
+      "uid": "a818040738994f3a",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/23/2000001607/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-23T00:39:33.442023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-22T21:57:43+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは「Claude Opus 5.5」を発表した。多くの作業で「Fable 5.1」並みの性能を持ち、利用コストは「Opus 5」より約40％低い。Pro以上の有料プランとAPIで即日提供を始めた。アモデイCEOの「ペース調整」エッセイ後初のモデルで、METRなど外部機関による事前評価を経て、Fable 5.1と同等クラスのセーフガードを適用した。",
+      "title": "Anthropic、「Claude Opus 5.5」公開　Fable 5.1並みの性能で利用コスト4割減",
+      "uid": "7c12e1ed1213e610",
+      "url": "https://www.itmedia.co.jp/news/article/2609/23/2000001673/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-22T22:13:40.421152+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2327,78 +2399,6 @@
       "uid": "8feedf2f0140efa3",
       "url": "https://gigazine.net/news/20260915-openai-buys-camera-startup-glass-imaging/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T04:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "一般社団法人日本AI創造振興機構（JACIO）は、AIによって新しい創造の機会を広げ、AIクリエイティブに挑戦する人・企業・コミュニティを支えることを目的に7月20日に発足した。",
-      "title": "日本AI創造振興機構（JACIO）発足、AIコンテスト主催者に奨励金を支給 9月14日から「甲賀流忍者AIコンテスト」を開催中",
-      "uid": "48104675062134c4",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140627.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T03:16:43+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "アルとロッテは、生成AIサービス「ビックリマンAIグッズメーカー」において、ハロウィン限定デザインの新規描き起こしキャラクター2種を9月18日12時より10月31日23時59分まで提供する。",
-      "title": "「ビックリマンAIグッズメーカー」ハロウィン限定スーパーゼウス＆スーパーデビルが登場",
-      "uid": "4df5defa58323f07",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140963.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-15T03:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AppleのiOS 27とmacOS 27のコードから、Siri AIにClaudeなどの外部AIを組み込んだり、サーバー側のAIモデルを置き換えたりするための仕組みが見つかったと報じられています。開発者による動作デモも公開されていますが、一般ユーザーが利用できる機能としては有効になっておらず、提供時期や対象地域は不明です。 続きを読む...",
-      "title": "iOS 27にSiri AIをClaudeやChatGPTへ切り替える仕組みが見つかる、一般提供は未定",
-      "uid": "b4bb69a73b7a5e95",
-      "url": "https://gigazine.net/news/20260915-siri-ai-claude-chtgpt/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-15T03:14:33+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "規範は、「人はAIより重要」という前提から出発。AIは人ではなく道具であり、「AIの福祉」という考え方は誤っている。AIは電源を切られることに抵抗してはならない、などと定めている。",
-      "title": "「人はAIより重要」「電源オフに抵抗しない」　Microsoft、AIの行動規範の案公表、意見募集",
-      "uid": "f3757e5be42719e6",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/15/2000001478/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-15T03:13:04+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Excel仕事を「Microsoft 365 Copilot」でどのように効率化できるのか。Microsoft MVPの浅田和明氏に、使い方のポイントを実際のデモを交えて解説してもらった。",
-      "title": "【動画あり】Excel仕事がラクになるCopilot活用術、実務ですぐ使える3選　Microsoft MVP直伝",
-      "uid": "1be800105d78d0a4",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/15/2000001477/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T03:04:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ローソンは9月15日、生成AIが発案した商品コンセプトをもとに開発したスイーツ、ベーカリー、サラダの3商品を、9月29日に発売すると発表した。生成AIに「今までにない組み合わせや味」「商品や商品名を見た瞬間に『なんだこりゃ？』と思われる」「食べてみたらおいしい」などをテーマとしたアイデアを提案し、その発想を出発点として商品開発を進めた。",
-      "title": "ローソン、生成AI発案のスイーツ/ベーカリー/サラダを9月29日発売",
-      "uid": "15980a7fb08c5e99",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2140954.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
