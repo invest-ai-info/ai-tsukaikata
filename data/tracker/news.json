@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T11:43:30.934941+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-23T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
+      "summary_ja": "GrabとOpenAIがAIスキル習得プログラムを開始。\n「GO Forward with AI」の名称で展開し、\n東南アジアで3万人のパートナーに実用的なAIスキルを提供。",
+      "summary_source": "gemini",
+      "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
+      "uid": "3982e23c18f66afa",
+      "url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-22T22:13:40.421152+00:00",
       "importance": "minor",
       "label": "OpenAI News",

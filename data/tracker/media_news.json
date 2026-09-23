@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-23T11:43:30.934941+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-23T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "メールへの返信や顧客への連絡や定期的な情報収集など、毎日繰り返す作業には多くの時間がかかります。そこでAIエージェントごとに名前や役職だけでなく、メールアドレスや電話番号まで用意し、人間の従業員に近い形で任せることができるサービス「Geta.Team」が公開されています。 続きを読む...",
+      "title": "AI従業員を雇って定型作業をお任せできる「Geta.Team」、各AI従業員に個別にメールアドレス・電話番号を割り当てできてセルフホスト可能、機能限定の無料版もあり",
+      "uid": "01ff7aacd6136eb5",
+      "url": "https://gigazine.net/news/20260923-geta-team/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-23T06:02:05.594533+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "既存の溶接ロボットに後付けできる溶接専門AI「SAMURAI Analyzer for Welding」",
       "uid": "9794a704cdef24c6",
       "url": "https://ai.watch.impress.co.jp/docs/news/2141038.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-15T07:48:44.048889+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-15T05:35:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "パナソニック コネクトは9月15日、「堅牢」「長時間」「拡張性」で過酷な現場を支える堅牢PC、タフブック「FZ-34（12.4型）」を10月に発売すると発表した。",
-      "title": "「堅牢」「長時間」「拡張性」を備えるタフブック「FZ-34」 Copilot+ PC対応",
-      "uid": "d2203ac1723510b6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141028.html",
       "vendor": "Impress AI Watch"
     }
   ]
