@@ -177,6 +177,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-09-24T04:57:20.166847+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-23T02:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries.",
+      "summary_ja": "ChatGPT広告の提供地域が東南アジアと台湾に拡大\nこれにより対象企業は60以上の国で広告を出せます",
+      "summary_source": "gemini",
+      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
+      "uid": "a11b143fcc6f8ba3",
+      "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-23T23:44:44.256252+00:00",
       "importance": "minor",
       "label": "OpenAI News",
