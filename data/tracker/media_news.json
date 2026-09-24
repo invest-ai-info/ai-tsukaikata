@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-24T15:10:41.105378+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-24T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AmazonがMetaのパーソナルAIエージェント「Muse」によるAmazon.comでの買い物代行をブロックしたことが明らかになりました。AmazonはMuseが許可を得ないままAmazonへアクセスしているとして利用規約違反であることを訴えるとともに、プライバシーやセキュリティ上のリスクを指摘しています。 続きを読む...",
+      "title": "AmazonがMetaのAIエージェント「Muse」の買い物代行をブロック",
+      "uid": "130614a03481cf8a",
+      "url": "https://gigazine.net/news/20260924-amazon-block-muse/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-24T15:10:41.105378+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-09-24T10:27:09+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは9月23日、新たな音声生成AIモデル「Gemini 3.8 Flash TTS」「Gemini 3.8 Flash-Lite TTS」（Text-to-Speech）を発表した。これらのモデルは現在、Google AI StudioおよびGemini APIを通じて提供されている。Gemini NotebookやGoogle Vidsでも即日利用可能。Gemini Enterpri…",
+      "title": "Google、音声生成AI「Gemini 3.8 Flash/Flash-Lite TTS」を発表 30秒で声再現・SynthID対応",
+      "uid": "bb02eb49aecb8418",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2143048.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-09-24T10:05:27.403517+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2375,30 +2399,6 @@
       "uid": "9ec320e2c1e3a352",
       "url": "https://gigazine.net/news/20260916-image-playground-ios-27/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-16T11:42:05.182927+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-16T08:48:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIの安全性を研究するRedwood Researchのチーフサイエンティスト、ライアン・グリーンブラット氏が、AIから直接他のAIの問題行動についての情報を受け付ける窓口「AI Contact Hotline」を公開しています。 続きを読む...",
-      "title": "AIが「同僚AI」を密告するための専用ホットラインが本当に開設される",
-      "uid": "b35c5cbf495d89bf",
-      "url": "https://gigazine.net/news/20260916-ai-contact-hotline/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-16T11:42:05.182927+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-16T08:05:46+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "楽天グループは、定額制の音楽聴き放題サービス「Rakuten Music」において、エージェント型AIツール「Rakuten AI for Music」をスマートフォンアプリに搭載した。同機能の利用は「Rakuten Music」の有料プランを利用しているユーザーが対象。Android版は、一部のユーザーから順次配信を開始。",
-      "title": "楽天、エージェント型AIツール「Rakuten AI for Music」をスマホアプリに搭載",
-      "uid": "d198ac7ab1883f55",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141472.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
