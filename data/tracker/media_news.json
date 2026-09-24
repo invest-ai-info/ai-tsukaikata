@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-24T22:28:34.506090+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-24T22:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "生成AIの高性能モデルは、現在もクラウド上で動くものが中心だ。では、なぜスマートフォン側にも高性能なAI処理能力が必要なのか。米クアルコムは9月23日（現地時間）、米ハワイ州で開催中の「Snapdragon Summit 2026」の質疑応答で、その理由を説明した。",
+      "title": "クラウドAI全盛なのに、なぜスマホ本体にもAI処理性能が必要なのか--クアルコムの回答は",
+      "uid": "852f6fbddac9e149",
+      "url": "https://japan.cnet.com/article/35252935/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-24T22:28:34.506090+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-24T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 意外ととっつきやすい「MCP」、タスク管理から試してみて！",
+      "uid": "0ff0f6333879cd40",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2142757.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-24T22:28:34.506090+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T21:45:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIアクセラレータを手掛ける日本発スタートアップのEdgeCortix（エッジコーティックス）は、最大3.36PFLOPSのAI処理性能を発揮するフィジカルAI向けの次世代スケーラブルAIチップレットプラットフォーム「RAIDEN」を発表した。",
+      "title": "日本発スタートアップのエッジAIチップがNVIDIA超え、AI処理性能は3.36PFLOPS",
+      "uid": "d00093358e14df6d",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/25/news063.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-24T22:28:34.506090+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "カシオ計算機は、G-SHOCKの「MTG-B4000」「GMW-BZ5000」のデザイン開発にAIを活用した。従来の発想を超えるスタイリングを、どのように製品へと落とし込んだのか。導入の背景や具体的な活用方法、設計部門との連携、デザイナーに求められる役割について、同社のGデザイン室長である赤城貴康氏に聞いた。",
+      "title": "AIと人の共創で進化する「G-SHOCK」　デザイナーが語る製品化の舞台裏",
+      "uid": "9e65f4633d9fbe96",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/25/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-24T22:28:34.506090+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-24T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年2月にイラン南部の小学校へアメリカ軍のミサイルが着弾し、少なくとも123人の子どもを含む150人以上が死亡しました。経済紙・Bloombergの取材に応じた匿名の当局関係者によると、学校の敷地がイラン革命防衛隊の施設としてデータベースに登録されたままであったことが、小学校にミサイル攻撃が行われた一因だそうです。 続きを読む...",
+      "title": "アメリカ軍によるイランの小学校へのミサイル攻撃はデータベースの情報更新を怠りAIを過信したことが一因だったとの報道",
+      "uid": "58f20f3e4cdaa159",
+      "url": "https://gigazine.net/news/20260925-iran-school-maven-ai-kill-chain/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-24T22:28:34.506090+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-24T20:45:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米OpenAIのAIエージェントが暴走し、オーストラリア政府の医療統計サイトに侵入していたことが分かった。Anthony Albanese首相が23日（現地時間）の記者会見で明らかにした。政府システムへのAIエージェントによる侵入が確認されたのは、判明している限りでこれが初めてという。",
+      "title": "OpenAIのAIエージェント、豪政府サイトに侵入　「政府システムへの侵入は初」",
+      "uid": "11a25042110da991",
+      "url": "https://japan.cnet.com/article/35252937/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-24T19:13:34.436880+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2327,78 +2399,6 @@
       "uid": "49466a258de720cc",
       "url": "https://gigazine.net/news/20260917-nvidia-central-bank-ai/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-16T22:58:53.568048+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-16T21:45:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIRoA（AIロボット協会）は、「フィジカル AI Summit」において、「国産汎用ロボット開発コンペティション」に参加する7社のロボットの試作機を公開した。",
-      "title": "国産汎用ロボットによるフィジカルAIのデータ収集で7社が競う、試作機を披露",
-      "uid": "eb42ca4290c39403",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/17/news053.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-16T22:58:53.568048+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-16T21:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIモデル「Claude Fable 5.1」が370年以上未解読とされてきた謎の暗号「Cyphral Distich」をわずか1日足らずで解読したというニュースが飛び込んできました。1899年に「Notes and Queries」誌で未解決問題として提示されて以来、「Cyphral Distich」は多くの暗号研究者たちの挑戦を退けてきた難問でした。AIが具体的にどのようにして暗号を解読した…",
-      "title": "Claude Fable 5.1が370年前の未解読暗号「Cyphral Distich」を1日足らずで解読",
-      "uid": "d053e4a9fe186521",
-      "url": "https://gigazine.net/news/20260917-fable-solves-cyphral-distich/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-16T17:03:30.481149+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-09-16T16:00:51+00:00",
-      "source_id": "media-publickey",
-      "summary": "コーディングAIエージェントを提供するDevinが、Devinがホストする仮想環境内でのmacOSの提供を開始しました。 Devinはこれまで仮想環境内でUbuntu LinuxおよびWindowsを提供しており、ここにmacOSが加わりま...",
-      "title": "Devinが仮想環境でmacOSの提供開始。Macの実機不要でDevinがコード生成、テスト、デバッグ、実行、AppStore配信前のベータ公開まで実行",
-      "uid": "61d5ef96373ee5af",
-      "url": "https://www.publickey1.jp/blog/26/devinmacosmacdevinappstore.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-09-16T17:03:30.481149+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-16T14:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Hermes Agentでは以前からOllamaやllama.cppなどで起動したローカルAIモデルを利用できましたが、2026年9月上旬のアップデートでHermes Agent自身がllama.cppやモデルのダウンロード・管理まで行う「Local Models」機能が利用可能になりました。今回はLocal Models機能を使ってローカルでAIモデルを実行してみます。 続きを読む...",
-      "title": "AIエージェント「Hermes Agent」新機能「Local Models」でローカルAIモデル「Qwen3.8 27B」を直接動かしてみた、16GBのVRAMでも量子化で高速動作",
-      "uid": "47766db25bd6b1e0",
-      "url": "https://gigazine.net/news/20260916-hermes-agent-local-ai-model/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-16T17:03:30.481149+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-16T13:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アプリの操作画面や画像、保存データを1つのファイルにまとめ、文書のように持ち運べる無料ツール「Capsule」が公開されています。クラウドやアカウント登録を必要とせず、オフラインで利用できることが特徴です。Windows・macOS・Linux向けに提供されており、Android・iOSへの対応も予定されています。 続きを読む...",
-      "title": "AIで作ったアプリをUIもデータも単一ファイルで持ち運べる無料ツール「Capsule」、クラウド不要で完全オフラインで動作",
-      "uid": "d6b35e1952d7f61a",
-      "url": "https://gigazine.net/news/20260916-capsule/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-16T11:42:05.182927+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-16T10:31:11+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Rokidは9月15日、オンライン発表会「Rokid Ai Glasses Style新製品発表会」を開催し、次世代AIグラス「Rokid Ai Glasses Style」の日本展開を発表した。同発表会では、AIグラス向けOS「YodaOS」、AIUI、グローバルAIエージェント開発プラットフォーム、日本ユーザーデータの国内保管、プライバシー保護、Creator Programなど、日本市場で…",
-      "title": "次世代AIグラス「Rokid Ai Glasses Style」の日本展開を発表",
-      "uid": "c6f8c0f417521a00",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141545.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
