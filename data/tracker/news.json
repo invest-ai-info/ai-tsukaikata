@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-24T19:13:34.436880+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-24T18:38:05+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a maxProseWidth setting that caps the width of Claude's prose in wide terminals while tables and code blocks keep the full width Added a startup notice, and /status and claude do…",
+      "title": "v2.1.282",
+      "uid": "65f884d18679601b",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.282",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-24T19:13:34.436880+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-09-24T16:20:39+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Introducing Gemini 3.8 Live with Live Avatar",
+      "uid": "6225afd083971c41",
+      "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-09-23T17:07:31.530680+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -105,6 +129,18 @@
       "uid": "c184270205293e01",
       "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
       "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-24T19:13:34.436880+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-23T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "The Next Frontier: Welcoming AI Pioneer Jürgen Schmidhuber to Sakana AI",
+      "uid": "0a47057e7e180102",
+      "url": "https://sakana.ai/schmidhuber/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-09-23T17:07:31.530680+00:00",

@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-24T19:13:34.436880+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-24T18:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Metaは23日（現地時間）、年次イベント「Meta Connect」の基調講演で、キーホルダー型の小型端末「Muse Charm」を発表した。AIエージェント「Muse」に話しかけるための円形デバイスで、スマートフォンやパソコンを使わずにMuseを呼び出せる。Mark Zuckerberg CEOは、12月までに出荷できる見込みだと述べた。",
+      "title": "Meta、たまごっちのようなAIエージェント端末「Muse Charm」",
+      "uid": "2efd77a9ae58dc52",
+      "url": "https://japan.cnet.com/article/35252936/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-09-24T15:10:41.105378+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "c6f8c0f417521a00",
       "url": "https://ai.watch.impress.co.jp/docs/news/2141545.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-16T11:42:05.182927+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-16T10:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "日本時間の2026年9月15日にiOS 27が正式リリースされ、Apple製の画像生成AIアプリ「Image Playground」もアップデートされました。どれくらいの品質で画像を生成できるのか気になったので実際に使ってみました。 続きを読む...",
-      "title": "iPhoneの画像生成AIがアップデートされたので使ってみた、無料で使えるが品質はかなり低め",
-      "uid": "9ec320e2c1e3a352",
-      "url": "https://gigazine.net/news/20260916-image-playground-ios-27/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

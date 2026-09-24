@@ -231,6 +231,9 @@
 - [ ] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
   - 2026-09-23 自動追記（minor・Google DeepMind「Gemini 3.8 text-to-speech says hello」）
 
+- [ ] https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
+  - 2026-09-24 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live with Live Avatar」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/ → **公開済み** content/tools/private-ai-compute-memory.md（2026-09-23・公開）
