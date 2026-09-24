@@ -219,14 +219,10 @@
   - →保管: ✅ **2026-09-22: 公開した** → `content/tools/sakana-marlin-interactive-reading.md`
 
 - [x] https://www.anthropic.com/claude-opus-5-5
-  - 2026-09-22 自動追記（major・Anthropic「Introducing Claude Opus 5.5」）
-  - →保管: ✅ **2026-09-22: 公開済みだった**（別セッションが同日中に作成・`768ea67`→`fc68081`）
-    → `content/tools/claude-opus-5-5.md`。🔑 **記録漏れ**＝記事は公開済みなのにこの行が
-    `- [ ]` のまま残っていた。今回のルーティンが手順1で気づいて `- [x]` に直した（重複執筆はしていない）
+  - →保管: 2026-09-22 自動追記（major・Anthropic「Introducing Claude Opus 5.5」
 
 - [x] https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
-  - 2026-09-23 自動追記（minor・Google DeepMind「Advancing Private AI Compute with secure, server-side memory」）
-  - →保管: ✅ **2026-09-23: 公開した** → `content/tools/private-ai-compute-memory.md`
+  - →保管: 2026-09-23 自動追記（minor・Google DeepMind「Advancing Private AI C
 
 - [ ] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
   - 2026-09-23 自動追記（minor・Google DeepMind「Gemini 3.8 text-to-speech says hello」）
