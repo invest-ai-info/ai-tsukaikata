@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="分割回数を2回から3回に増やしても入金照合の誤判定が増えるかを実測した結果を示す表。すべて「起きた回数」で少ないほど良いが、最後の行だけ多いほど良い。2回払いを誤って未入金扱いした回数（全件入金済み・材料2種×5回）は10回中0回、3回払いを誤って未入金扱いした回数（全件入金済み・材料2種×5回）も10回中0回。本当に完成金だけ未入金の案件を見逃した回数は3回中0回、本当に中間金だけ未入金の案件を見逃した回数も3回中0回。健全な11件を巻き添えで未入金扱いした回数（上の2実測の合計）は6回中0回。対応する入金明細3件を重複・不足なく書けた回数は3回中3回。下の枠には、分割回数を2回から3回に増やしても誤判定は0のまま動かなかったこと、本当に1回分だけ足りない案件（完成金だけ・中間金だけ）も6回とも正しくその1件だけを言い当てたこと、この材料・この回数の範囲では分割の回数を増やしても入金照合の精度は落ちなかったという結論が書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">分割を2回から3回に増やしても、誤判定は0のまま動かなかった</text>
+<text class="t-sm" x="18" y="45">実測2026-09-24。リフォーム工事・結婚式場の架空データ、一括/2回/3回払いが混在する12件×2種。</text>
+<text class="t-sm" x="18" y="64">すべて「起きた回数」（少ないほど良い）。ただし最後の1行だけ多いほど良い。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">2回払いを誤って未入金扱いした回数（全件入金済み・材料2種×5回）</text>
+<rect class="box-good" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="125" text-anchor="middle" style="font-weight:700">0/10</text>
+<text class="t" x="18" y="157">3回払いを誤って未入金扱いした回数（全件入金済み・材料2種×5回）</text>
+<rect class="box-good" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="157" text-anchor="middle" style="font-weight:700">0/10</text>
+<text class="t" x="18" y="189">本当に完成金だけ未入金の案件を見逃した回数</text>
+<rect class="box-good" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="189" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="221">本当に中間金だけ未入金の案件を見逃した回数</text>
+<rect class="box-good" x="478" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="221" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="253">健全な11件を巻き添えで未入金扱いした回数（上の2実測の合計）</text>
+<rect class="box-good" x="478" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="253" text-anchor="middle" style="font-weight:700">0/6</text>
+<text class="t" x="18" y="285">対応する入金明細3件を重複・不足なく書けた回数</text>
+<rect class="box-good" x="478" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="285" text-anchor="middle" style="font-weight:700">3/3</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">分割回数を2回から3回に増やしても、誤判定は0のまま動かなかった。</text>
+<text class="t-accent" x="34" y="340">本当に1回分だけ足りない案件（完成金だけ・中間金だけ）も、6回とも正しくその1件だけを言い当てた。</text>
+<text class="t-accent" x="34" y="358">＝この材料・この回数の範囲では、分割の回数を増やしても入金照合の精度は落ちなかった。</text>
+</svg>
