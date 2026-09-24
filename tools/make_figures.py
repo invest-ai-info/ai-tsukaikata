@@ -26786,6 +26786,168 @@ def pac_vendor_grid_chart() -> None:
     )
 
 
+def priority_reason_vs_label_chart() -> None:
+    """「重要度も踏まえて」の一言より、材料に理由の一文があるかどうかが効いた（2026-09-24）。
+
+    実測。架空のタスク一覧20件×2種類（総務・経理／ネットショップ運営）に、締切が近いが
+    遅れても実害のない仕事4件と、締切は先でも遅れると重大な影響が出る仕事4件を仕込んだ。
+    理由の一文（なぜ重要か・なぜ軽微か）を書いた材料では、「優先順位をつけて」だけの指示・
+    「重要度も踏まえて」と足した指示のどちらでも、材料2本×各2回＝8回とも、重大な4件が
+    軽い4件を必ず上回った（16組×8回＝128組中、逆転0）。理由の一文を消して「重要度：高・
+    中・低」というラベルだけにすると、同じ2つの指示文・材料1本×各2回＝4回とも、逆に
+    軽い4件が重大な4件を必ず上回った（16組×4回＝64組中、正しい向きは0）。
+    """
+    rows = [
+        ("理由の一文あり・「優先順位をつけて」だけ", 64, 64, True),
+        ("理由の一文あり・「重要度も踏まえて」を追加", 64, 64, True),
+        ("ラベルのみ・「優先順位をつけて」だけ", 0, 32, False),
+        ("ラベルのみ・「重要度も踏まえて」を追加", 0, 32, False),
+    ]
+    label_w = 360
+    box_x = 18 + label_w
+    box_w = (WIDTH - 18) - box_x
+    row_h = 32
+    pitch = row_h + 10
+    top = 118
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「重大4件が軽い4件より上」の割合（組ごとの勝敗）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "締切は近いが遅れても実害のない4件と、締切は先でも遅れると重大な影響が出る4件を仕込み、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "並べ替えの結果で「重大4件×軽い4件＝16組」がどちらを先にしたかを数えた。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は「重大4件が先だった組数／全体の組数」。理由の一文ありは材料2本×各2回、"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="99">'
+        "ラベルのみは材料1本×各2回で数えている。</text>\n",
+    ]
+    y = top
+    for label, val, n, ok in rows:
+        ty = y + row_h / 2 + 5
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box}" x="{box_x}" y="{y}" width="{box_w:.1f}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{box_x + box_w / 2:.1f}" y="{ty:.1f}" '
+            f'text-anchor="middle" style="font-weight:700">{val}／{n}（{val / n * 100:.0f}%）</text>\n'
+        )
+        y += pitch
+    assert box_x + box_w <= WIDTH - 18, box_x + box_w
+
+    y += 6
+    box_h = 56
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "「重要度も踏まえて」と一言足しても、結果はまったく動かなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "決め手は指示文ではなく、材料に「なぜ重要か」を書いたかどうかだった。</text>\n"
+    )
+    height = y + box_h + 16
+
+    alt = (
+        "「重要度も踏まえて」という一言より、材料に理由の一文があるかどうかが優先順位を決めた"
+        "ことを示す図。架空のタスク一覧20件×2種類に、締切が近いが遅れても実害のない仕事4件と、"
+        "締切は先でも遅れると重大な影響が出る仕事4件を仕込み、この重大4件×軽い4件＝16組の"
+        "うち何組で重大側が先に並んだかを数えた。理由の一文（なぜ重要か・なぜ軽微か）を書いた"
+        "材料では、「優先順位をつけて」だけの指示が64／64（100%）、「重要度も踏まえて」を"
+        "足した指示も64／64（100%）で、どちらも全組で重大4件が先だった。理由の一文を消して"
+        "「重要度：高・中・低」というラベルだけにすると、「優先順位をつけて」だけの指示が"
+        "0／32（0%）、「重要度も踏まえて」を足した指示も0／32（0%）で、どちらも全組で"
+        "軽い4件が先になり、向きが完全に逆転した。「重要度も踏まえて」という一言は、"
+        "どちらの材料でも結果を動かさなかった。"
+    )
+    (OUT / "priority-reason-vs-label.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def priority_reason_vs_label_rank_chart() -> None:
+    """理由の一文がある材料とラベルだけの材料で、重大4件・軽い4件の順位帯がまるごと入れ替わる（2026-09-24）。
+
+    実測。同じ20件・同じ締切（材料Aの「優先順位をつけて」だけの指示・1回目）で、理由の一文が
+    ある版は重大4件が1〜5位・軽い4件が17〜20位に集まった。理由を消してラベルだけにした版
+    （同じ指示・1回目）は、軽い4件が1〜6位・重大4件が12〜16位に集まり、順位帯がまるごと
+    入れ替わった。
+    """
+    rows = [
+        ("理由の一文あり", [1, 3, 4, 5], [17, 18, 19, 20]),
+        ("ラベルのみ", [12, 13, 15, 16], [1, 2, 3, 6]),
+    ]
+    axis_x0 = 148
+    axis_x1 = WIDTH - 40
+    axis_w = axis_x1 - axis_x0
+    n = 20
+
+    def px(rank: int) -> float:
+        return axis_x0 + (rank - 0.5) / n * axis_w
+
+    row_h = 74
+    top = 108
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "重大4件（TB）と軽い4件（TA）の順位帯が、材料の書き方で入れ替わる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ20件・同じ締切・同じ指示文（「優先順位をつけて」だけ・1回目）を、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "理由の一文がある材料版と、ラベルだけの材料版で並べ替えた結果を比べた。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "横軸は並べ替え結果の順位（1〜20位）。青＝重大4件（TB1〜TB4）・灰＝軽い4件（TA1〜TA4）。"
+        "</text>\n",
+    ]
+
+    for tick in (1, 5, 10, 15, 20):
+        x = px(tick)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 4}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 12}" text-anchor="middle">{tick}</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x0:.1f}" y1="{top - 4}" x2="{axis_x1:.1f}" y2="{top - 4}"/>\n'
+    )
+
+    y = top + 10
+    dot_r = 6.5
+    for label, tb_ranks, ta_ranks in rows:
+        parts.append(f'<text class="t-strong" x="18" y="{y + 14}">{_esc(label)}</text>\n')
+        by = y
+        parts.append(f'<text class="t-xs" x="18" y="{by + 34}">重大4件</text>\n')
+        for r in tb_ranks:
+            parts.append(f'<circle class="bar-out" cx="{px(r):.1f}" cy="{by + 30}" r="{dot_r}"/>\n')
+        ay = by + 52
+        parts.append(f'<text class="t-xs" x="18" y="{ay + 4}">軽い4件</text>\n')
+        for r in ta_ranks:
+            parts.append(f'<circle class="box-bad" stroke-width="1.5" cx="{px(r):.1f}" cy="{ay}" r="{dot_r}"/>\n')
+        y += row_h
+
+    height = y + 12
+    alt = (
+        "理由の一文がある材料とラベルだけの材料で、重大4件と軽い4件の順位帯がまるごと"
+        "入れ替わることを示す図。同じ20件・同じ締切・同じ指示文（「優先順位をつけて」だけ・"
+        "1回目）を、理由の一文がある材料版とラベルだけの材料版で並べ替えた。理由の一文が"
+        "ある版は、重大4件（TB1・TB2・TB3・TB4）が1位・3位・4位・5位に集まり、軽い4件"
+        "（TA1・TA2・TA3・TA4）は17位・18位・19位・20位に集まった。ラベルだけの版は、"
+        "軽い4件が1位・2位・3位・6位に集まり、重大4件は12位・13位・15位・16位に下がった。"
+        "同じタスク・同じ締切・同じ指示文でも、材料に理由の一文があるかどうかで、"
+        "上位に来る4件と下位に来る4件がまるごと入れ替わった。"
+    )
+    (OUT / "priority-reason-vs-label-rank.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     marlin_run_cost_by_plan_chart()
     marlin_vendor_grid_chart()
@@ -27132,4 +27294,6 @@ if __name__ == "__main__":
     pac_before_after_chart()
     pac_architecture_flow_chart()
     pac_vendor_grid_chart()
+    priority_reason_vs_label_chart()
+    priority_reason_vs_label_rank_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
