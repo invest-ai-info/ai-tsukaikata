@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="327" viewBox="0 0 720 327" role="img" aria-label="3つのGemini音声合成モデルの単価を比べた横棒グラフ。100万トークンあたりのドル。Gemini 3.1 Flash TTS Preview（旧世代・レガシー）は入力1.00ドル・出力20.00ドル、Gemini 3.8 Flash TTS（新・スタジオ品質）は入力0.50ドル・出力9.00ドル、Gemini 3.8 Flash-Lite TTS（新・高効率）は入力0.50ドル・出力6.00ドル。新2モデルの値は2026年12月31日までの導入価格。下がり幅は入力50%、出力はFlash TTSが55%・Flash-Lite TTSが70%（この記事の計算）。3.1 Flash TTS Previewは新モデルの登場と同時にモデル一覧で「Legacy」表記になった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="327"/>
+<text class="t-strong" x="18" y="26">新しい2モデルは、レガシー化した前世代より入力・出力とも安い</text>
+<text class="t-sm" x="18" y="45">薄い青＝入力（テキスト）、濃い青＝出力（音声）。100万トークンあたりのドル。</text>
+<text class="t-sm" x="18" y="64">新2モデルの値は2026年12月31日までの導入価格（年明けに2倍になる。次の図）。</text>
+<text class="t-sm" x="18" y="83">3.1 Flash TTS Previewは新モデルの登場と同時にモデル一覧で「Legacy」表記になった。</text>
+<text class="t-sm" x="18" y="108">Gemini 3.1 Flash TTS Preview</text>
+<text class="t-sm" x="18" y="123">（旧世代・レガシー）</text>
+<text class="t-xs" x="214" y="122">入力</text>
+<rect class="bar-in" x="250" y="111" width="18.5" height="14" rx="2"/>
+<text class="t-sm" x="276.5" y="122">$1.00</text>
+<text class="t-xs" x="214" y="141">出力</text>
+<rect class="bar-out" x="250" y="130" width="370.0" height="14" rx="2"/>
+<text class="t-sm" x="628.0" y="141">$20.00</text>
+<text class="t-sm" x="18" y="167">Gemini 3.8 Flash TTS</text>
+<text class="t-sm" x="18" y="182">（新・スタジオ品質）</text>
+<text class="t-xs" x="214" y="181">入力</text>
+<rect class="bar-in" x="250" y="170" width="9.2" height="14" rx="2"/>
+<text class="t-sm" x="267.2" y="181">$0.50</text>
+<text class="t-xs" x="214" y="200">出力</text>
+<rect class="bar-out" x="250" y="189" width="166.5" height="14" rx="2"/>
+<text class="t-sm" x="424.5" y="200">$9.00</text>
+<text class="t-sm" x="18" y="226">Gemini 3.8 Flash-Lite TTS</text>
+<text class="t-sm" x="18" y="241">（新・高効率）</text>
+<text class="t-xs" x="214" y="240">入力</text>
+<rect class="bar-in" x="250" y="229" width="9.2" height="14" rx="2"/>
+<text class="t-sm" x="267.2" y="240">$0.50</text>
+<text class="t-xs" x="214" y="259">出力</text>
+<rect class="bar-out" x="250" y="248" width="111.0" height="14" rx="2"/>
+<text class="t-sm" x="369.0" y="259">$6.00</text>
+<text class="t-xs" x="18" y="293">※ 出典: Gemini API 料金ページ（ai.google.dev・2026年9月24日に確認）。</text>
+<text class="t-xs" x="18" y="311">※ 下がり幅は入力50%・出力はFlash TTSが55%・Flash-Lite TTSが70%（この記事の計算）。</text>
+</svg>

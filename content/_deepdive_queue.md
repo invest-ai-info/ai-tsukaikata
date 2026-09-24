@@ -224,13 +224,31 @@
 - [x] https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/
   - →保管: 2026-09-23 自動追記（minor・Google DeepMind「Advancing Private AI C
 
-- [ ] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
-  - 2026-09-23 自動追記（minor・Google DeepMind「Gemini 3.8 text-to-speech says hello」）
+- [x] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
+  - →保管: ✅ **2026-09-24: 公開した** → `content/tools/gemini-3-8-tts.md`
 
 - [ ] https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
   - 2026-09-24 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live with Live Avatar」）
 
 ## 処理済み
+
+- https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/ → **公開済み** content/tools/gemini-3-8-tts.md（2026-09-24・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/` へ到達（200）。
+    図3枚（`gemini38tts-price-old-vs-new` / `gemini38tts-price-doubles` / `gemini38tts-vendor-grid`）。
+    `check_numbers.py` は照合対象12個のうち**11個が出典に存在**、残る1個（`55%`）は
+    $20.00→$9.00から記事が計算した値で、そう明記してある（出典10件すべて取得成功）。
+    pytest 736 passed・build 227ファイル。`check_readability.py` は60字以上9%（目安15%以下、最長70字）。
+  - 📌 記事の芯＝**新2モデル（Flash TTS / Flash-Lite TTS）は前世代（3.1 Flash TTS Preview）より
+    入力50%・出力55〜70%安いが、2027年1月1日にどちらも2倍に戻る導入価格**。前世代はモデル一覧ページで
+    同時に「Legacy」表記になった。声の複製は同意録音を用意すれば申請なしで使えるが、
+    AI Studio経由はイリノイ・テキサス・EEA・UK・スイス・インドでは利用できないと発表ページに明記。
+  - ⚠️ 他社比較はOpenAI（`developers.openai.com`のモデル・料金・ガイド・custom voicesページ）と
+    突き合わせられた。**OpenAIの唯一のTTSモデル（GPT-4o Mini TTS）は最大入力2,000トークン**、
+    声の複製は「限定顧客のみ・要営業への問い合わせ」（自己申告制のGeminiと対照的）。
+    Anthropicはモデル一覧に audio/speech の言及が無いことを確認。
+  - 🔍 **Google自身の2つの公式ページで言語数の書き方が違う**（発表ページ本文「100以上の言語と方言」・
+    モデル一覧ページ「Flash TTSは130言語、Flash-Liteは101言語」）。より詳しいモデル一覧側の数字を採用し、
+    その旨を本文に明記した。
 
 - https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/ → **公開済み** content/tools/private-ai-compute-memory.md（2026-09-23・公開）
   - `deepmind.google` に到達（200）。関連ページとして初出発表（`blog.google`・2025-11-11）と

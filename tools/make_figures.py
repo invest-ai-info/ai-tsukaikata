@@ -26989,6 +26989,213 @@ def three_way_split_hit_and_miss_chart() -> None:
     )
 
 
+def gemini38tts_price_old_vs_new_chart() -> None:
+    """レガシー化した3.1 Flash TTS Previewと、新しい2モデルの導入価格を比べる。
+
+    出典＝Gemini API 料金ページ（ai.google.dev・2026-09-24確認）。
+    3.1 Flash TTS Previewは新モデルの登場と同時にモデル一覧ページで
+    「Legacy」表記になった（期限つきの導入価格ではなく通常価格）。
+    """
+    rows = [
+        ("Gemini 3.1 Flash TTS Preview\n（旧世代・レガシー）", 1.00, 20.00),
+        ("Gemini 3.8 Flash TTS\n（新・スタジオ品質）", 0.50, 9.00),
+        ("Gemini 3.8 Flash-Lite TTS\n（新・高効率）", 0.50, 6.00),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 96, 14, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    assert right + 70 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "新しい2モデルは、レガシー化した前世代より入力・出力とも安い</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力（テキスト）、濃い青＝出力（音声）。100万トークンあたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "新2モデルの値は2026年12月31日までの導入価格（年明けに2倍になる。次の図）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "3.1 Flash TTS Previewは新モデルの登場と同時にモデル一覧で「Legacy」表記になった。</text>\n",
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        for line_no, line in enumerate(name.split("\n")):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 12 + line_no * 15}">{_esc(line)}</text>\n')
+        y += (len(name.split("\n")) - 1) * 15
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 54
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 34}">'
+        "※ 出典: Gemini API 料金ページ（ai.google.dev・2026年9月24日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "※ 下がり幅は入力50%・出力はFlash TTSが55%・Flash-Lite TTSが70%（この記事の計算）。</text>\n"
+    )
+    alt = (
+        "3つのGemini音声合成モデルの単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "Gemini 3.1 Flash TTS Preview（旧世代・レガシー）は入力1.00ドル・出力20.00ドル、"
+        "Gemini 3.8 Flash TTS（新・スタジオ品質）は入力0.50ドル・出力9.00ドル、"
+        "Gemini 3.8 Flash-Lite TTS（新・高効率）は入力0.50ドル・出力6.00ドル。"
+        "新2モデルの値は2026年12月31日までの導入価格。"
+        "下がり幅は入力50%、出力はFlash TTSが55%・Flash-Lite TTSが70%（この記事の計算）。"
+        "3.1 Flash TTS Previewは新モデルの登場と同時にモデル一覧で「Legacy」表記になった。"
+    )
+    (OUT / "gemini38tts-price-old-vs-new.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38tts_price_doubles_chart() -> None:
+    """新2モデルの導入価格が、2027年1月1日に2倍になることを示す。
+
+    出典＝Gemini API 料金ページ（ai.google.dev・2026-09-24確認）。入力の単価は
+    Flash TTS・Flash-Lite TTSで共通。出力だけモデルごとに値が違う。
+    """
+    rows = [
+        ("入力（Flash TTS / Flash-Lite TTS 共通）", 0.50, 1.00),
+        ("出力（Flash TTS）", 9.00, 18.00),
+        ("出力（Flash-Lite TTS）", 6.00, 12.00),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "導入価格は2027年1月1日に2倍になります</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "青＝2026年12月31日までの導入価格、灰色＝2027年1月1日からの価格。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "100万トークンあたりのドル。まとめ処理（Batch）は別料金で、同じ倍率で上がります。</text>\n",
+    ]
+    for index, (name, intro, later) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((intro, "bar-new", "年内"), (later, "bar-old", "以降"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="204" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ 出典: Gemini API 料金ページ（ai.google.dev・2026年9月24日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 前世代（3.1 Flash TTS Preview）には導入期間の但し書きが無く、$1.00／$20.00のまま。</text>\n"
+    )
+    alt = (
+        "Gemini 3.8 Flash TTSとFlash-Lite TTSの単価が期間で変わることを示した横棒グラフ。"
+        "100万トークンあたりのドル。入力（両モデル共通）は2026年12月31日まで0.50ドル、"
+        "2027年1月1日から1.00ドル。出力はFlash TTSが9.00ドルから18.00ドル、"
+        "Flash-Lite TTSが6.00ドルから12.00ドル。いずれも2027年1月1日に2倍になる。"
+        "前世代の3.1 Flash TTS Previewには導入期間の但し書きが無く、1.00ドル／20.00ドルのまま。"
+    )
+    (OUT / "gemini38tts-price-doubles.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38tts_vendor_grid_chart() -> None:
+    """専用の音声合成（TTS）モデルの数・声の複製・対応言語・単価を3社で比べる。
+
+    出典＝Gemini は発表ページ・モデル一覧・料金ページ（blog.google / ai.google.dev）、
+    OpenAI は developers.openai.com のモデル・ガイド・料金ページ、
+    Anthropic は platform.claude.com のモデル一覧（audio/speech/voiceへの言及が
+    無いことを確認）。
+    """
+    rows = [
+        ("専用のTTSモデル", "2機種\nFlash TTS / Flash-Lite TTS", "1機種\nGPT-4o Mini TTS", "記載なし"),
+        ("自分の声を複製", "誰でも申請なしで使える\n（要30秒の同意録音）", "限定顧客のみ\n（要営業への問い合わせ）", "—"),
+        ("対応言語", "130言語\nFlash-Liteは101言語", "明記なし\n（声は英語向けに最適化）", "—"),
+        ("出力の単価（100万トークン）", "$6.00〜$9.00\n（2027年に2倍）", "$12.00\n（期限の記載なし）", "—"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 128
+    pitch, box_h = 62, 52
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "声の複製が申請なしで使えるのは、3社のうちGeminiだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・モデル一覧・料金・ガイド）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。</text>\n",
+    ]
+    headers = ["Gemini（Google）", "GPT（OpenAI）", "Claude（Anthropic）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, gemini_v, openai_v, anthropic_v in rows:
+        for line_no, line in enumerate(_wrap_label(label, 11)):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 20 + line_no * 15:.1f}">{_esc(line)}</text>\n')
+        for i, val in enumerate((gemini_v, openai_v, anthropic_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else ("box-quiet" if i == 1 else "box-bad")
+            tcls = "t-accent" if i == 0 else ("t-sm" if i == 1 else "t-bad")
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 20 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "音声合成（TTS）モデルを3社で比べた表。専用のTTSモデル＝Geminiは2機種"
+        "（Flash TTS / Flash-Lite TTS）、GPTは1機種（GPT-4o Mini TTS）、Claudeは記載なし。"
+        "自分の声を複製＝Geminiは誰でも申請なしで使える（要30秒の同意録音）、"
+        "GPTは限定顧客のみで要営業への問い合わせ、Claudeは—。"
+        "対応言語＝Geminiは130言語（Flash-Liteは101言語）、GPTは明記なし（声は英語向けに最適化）、"
+        "Claudeは—。出力の単価（100万トークンあたり）＝Geminiは6.00〜9.00ドルで2027年に2倍、"
+        "GPTは12.00ドルで期限の記載なし、Claudeは—。"
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。"
+    )
+    (OUT / "gemini38tts-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     marlin_run_cost_by_plan_chart()
     marlin_vendor_grid_chart()
@@ -27338,4 +27545,7 @@ if __name__ == "__main__":
     priority_reason_vs_label_chart()
     priority_reason_vs_label_rank_chart()
     three_way_split_hit_and_miss_chart()
+    gemini38tts_price_old_vs_new_chart()
+    gemini38tts_price_doubles_chart()
+    gemini38tts_vendor_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
