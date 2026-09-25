@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="256" viewBox="0 0 720 256" role="img" aria-label="Gemini 3.8 Live APIの出力単価を3種で比べた横棒グラフ。100万トークンあたりのドル。音声は12.00ドル、テキスト（応答・思考）は4.50ドル、動画（アバター）は1.00ドルで最も安い。この「動画（アバター）」の行はGemini Enterprise向け料金表のみに載っている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="256"/>
+<text class="t-strong" x="18" y="26">動画（アバター）の出力は、音声どころかテキストより安い</text>
+<text class="t-sm" x="18" y="45">Gemini 3.8 Live APIの出力単価。100万トークンあたりのドル（Non-global）。</text>
+<text class="t-sm" x="18" y="64">この3行は同じ料金表の中の別モダリティで、期限つきの導入価格の注記は無い。</text>
+<text class="t" x="18" y="112">音声</text>
+<rect class="bar-old" x="268" y="96" width="348.0" height="20" rx="2"/>
+<text class="t-sm" x="624.0" y="112">$12.00</text>
+<text class="t" x="18" y="152">テキスト（応答・思考）</text>
+<rect class="bar-old" x="268" y="136" width="130.5" height="20" rx="2"/>
+<text class="t-sm" x="406.5" y="152">$4.50</text>
+<text class="t" x="18" y="192">動画（アバター）</text>
+<rect class="bar-new" x="268" y="176" width="29.0" height="20" rx="2"/>
+<text class="t-sm" x="305.0" y="192">$1.00</text>
+<text class="t-xs" x="18" y="234">※ 出典: Google Cloud Agent Platform 料金ページ（2026年9月25日に確認）。</text>
+<text class="t-xs" x="18" y="250">※ この「動画（アバター）」の行は Gemini Enterprise 向け料金表のみに載っている。</text>
+</svg>

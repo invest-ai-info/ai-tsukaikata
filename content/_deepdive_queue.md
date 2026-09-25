@@ -227,10 +227,28 @@
 - [x] https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/
   - →保管: ✅ **2026-09-24: 公開した** → `content/tools/gemini-3-8-tts.md`
 
-- [ ] https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
-  - 2026-09-24 自動追記（major・Google DeepMind「Introducing Gemini 3.8 Live with Live Avatar」）
+- [x] https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
+  - →保管: ✅ **2026-09-25: 公開した** → `content/tools/gemini-3-8-live-avatar.md`
 
 ## 処理済み
+
+- https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/ → **公開済み** content/tools/gemini-3-8-live-avatar.md（2026-09-25・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/` へ到達（200）。
+    発表本体に加え、Google Cloud公式ブログの一般提供（GA）記事・Agent Platform料金ページ・モデルカードを読んで数字を取った。
+    図3枚（`gemini38avatar-output-price` / `gemini38avatar-output-budget` / `gemini38avatar-vendor-grid`）。
+    `check_numbers.py` は照合対象7個のうち**7個すべて出典に存在**（出典9件すべて取得成功）。
+    pytest 736 passed・build 230ファイル。`check_readability.py` は60字以上11%（目安15%以下、最長115字）。
+  - 📌 記事の芯＝**Gemini 3.8 Live（音声のみ・9/15発表）に動画出力を追加した新機能で、
+    使えるのはGemini Enterpriseだけ**（通常のGemini API・AI Studio・Gemini アプリでは使えない）。
+    動画を足すと出力トークン上限が64,000→24,000に62.5%減る（モデルカードの2数字からこの記事が計算）。
+    連続対話は「数分程度」とモデルカードの既知の制限に明記（具体的な分数は非公表）。
+  - 🔍 **料金表の中で、動画（アバター）出力が最安だった**（$1.00／百万トークン。テキスト出力$4.50・
+    音声出力$12.00より安い）。この行はGemini Enterprise向けの`cloud.google.com`料金ページにのみ存在し、
+    開発者向け`ai.google.dev`の料金ページには無いことを実際に確認した（Enterprise限定の裏付け）。
+  - ⚠️ 他社比較はOpenAI（`developers.openai.com`のモデル一覧・料金ページ）とAnthropic
+    （`platform.claude.com`のモデル一覧）で確認できた。OpenAIのリアルタイム音声モデル（GPT-Live 1ほか）は
+    音声・テキスト・画像のみで動画出力の記載なし。Anthropicはモデル一覧に「text and image input, text
+    output」とだけあり、音声・動画への言及自体が無くリアルタイム音声AI製品自体が存在しないことを確認した。
 
 - https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/ → **公開済み** content/tools/gemini-3-8-tts.md（2026-09-24・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/` へ到達（200）。

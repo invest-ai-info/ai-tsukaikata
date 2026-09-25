@@ -27856,7 +27856,200 @@ def postscript_lands_by_material_chart() -> None:
     )
 
 
+def gemini38avatar_output_price_chart() -> None:
+    """Gemini 3.8 Live APIの出力単価を、テキスト・音声・動画（アバター）の3種で比べる。
+
+    出典＝Google Cloud の Agent Platform 料金ページ（2026-09-25確認）。
+    「Output: video (avatar)」の行はこのページにのみ載っており、
+    開発者向けの ai.google.dev 料金ページには存在しない（Enterprise限定の裏付け）。
+    """
+    rows = [
+        ("音声", 12.00),
+        ("テキスト（応答・思考）", 4.50),
+        ("動画（アバター）", 1.00),
+    ]
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 20, 40
+    biggest = max(value for _, value in rows)
+    scale = span / biggest
+
+    assert right + 60 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "動画（アバター）の出力は、音声どころかテキストより安い</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "Gemini 3.8 Live APIの出力単価。100万トークンあたりのドル（Non-global）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "この3行は同じ料金表の中の別モダリティで、期限つきの導入価格の注記は無い。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        cls = "bar-new" if index == len(rows) - 1 else "bar-old"
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 4}">'
+            f"{_usd(value)}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 22}">'
+        "※ 出典: Google Cloud Agent Platform 料金ページ（2026年9月25日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ この「動画（アバター）」の行は Gemini Enterprise 向け料金表のみに載っている。</text>\n"
+    )
+    alt = (
+        "Gemini 3.8 Live APIの出力単価を3種で比べた横棒グラフ。100万トークンあたりのドル。"
+        "音声は12.00ドル、テキスト（応答・思考）は4.50ドル、動画（アバター）は1.00ドルで最も安い。"
+        "この「動画（アバター）」の行はGemini Enterprise向け料金表のみに載っている。"
+    )
+    (OUT / "gemini38avatar-output-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38avatar_output_budget_chart() -> None:
+    """アバターを足すと、一度に書ける出力トークンの上限がどれだけ減るかを示す。
+
+    出典＝モデルカード（deepmind.google/models/model-cards/gemini-3-8-audio/・
+    2026-09-25確認）。「Audio and text, with 64K token output」と
+    「With Live Avatar: Audio, video, and text, with 24K token output」の2行。
+    62.5%という下がり幅はこの記事の計算（1 - 24,000／64,000）。
+    """
+    rows = [
+        ("Live（音声・テキストのみ）", 64_000),
+        ("Live with Avatar（＋動画）", 24_000),
+    ]
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 20, 44
+    biggest = max(value for _, value in rows)
+    scale = span / biggest
+
+    assert right + 70 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "動画を足すと、書ける上限は64,000から24,000に減る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "一度の応答で書けるトークンの上限（音声・テキストも動画も、この中に収まる）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "62.5%という下がり幅は、モデルカードの2つの数字からこの記事が計算した値。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        cls = "bar-old" if index == 0 else "bar-new"
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 4}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 4}">'
+            f"{value:,}トークン</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 22}">'
+        "※ 出典: Gemini 3.8 Audio モデルカード（deepmind.google・2026年9月25日に確認）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ 62.5%の下がり幅はこの記事の計算（1－24,000／64,000）。ページに直接の記載はない。</text>\n"
+    )
+    alt = (
+        "アバターを足すと一度に書ける出力トークンの上限がどれだけ減るかを示した横棒グラフ。"
+        "Live（音声・テキストのみ）は64,000トークン、Live with Avatar（＋動画）は24,000トークン。"
+        "62.5%の下がり幅はモデルカードの2つの数字からこの記事が計算した値で、ページに直接の記載はない。"
+    )
+    (OUT / "gemini38avatar-output-budget.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gemini38avatar_vendor_grid_chart() -> None:
+    """リアルタイム音声モデルの有無・動画アバター出力・独自アバターの作りやすさを
+    3社の公式ページで比べた表。
+
+    出典＝Gemini は発表ページ・Cloud料金ページ（blog.google / cloud.google.com）、
+    OpenAI は developers.openai.com の料金・モデルページ、Anthropic は
+    platform.claude.com のモデル一覧（音声・動画への言及自体が無いことを確認）。
+    """
+    rows = [
+        ("リアルタイム\n音声モデル", "3.8 Live / 3.8 Live\nExtended Thinking", "GPT-Live 1\n（頭脳は別モデル）", "記載なし"),
+        ("動画のアバター出力", "あり（Live Avatar）\nGemini Enterprise限定", "記載なし\n（音声の入出力のみ）", "—"),
+        ("独自アバターを作れるか", "企業の許可制\n（アローリスト経由のみ）", "—", "—"),
+    ]
+    label_w = 108
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 138
+    pitch, box_h = 62, 52
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "動画のアバターを出せるのは、3社のうちGeminiだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・料金・モデル一覧）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Geminiの動画アバターも、使えるのはGemini Enterprise経由に限られる。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。</text>\n",
+    ]
+    headers = ["Gemini（Google）", "GPT（OpenAI）", "Claude（Anthropic）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, gemini_v, openai_v, anthropic_v in rows:
+        for line_no, line in enumerate(_wrap_label(label, 11)):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 20 + line_no * 15:.1f}">{_esc(line)}</text>\n')
+        for i, val in enumerate((gemini_v, openai_v, anthropic_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else ("box-quiet" if i == 1 else "box-bad")
+            tcls = "t-accent" if i == 0 else ("t-sm" if i == 1 else "t-bad")
+            parts.append(f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n')
+            for line_no, line in enumerate(val.split("\n")):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 20 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    alt = (
+        "リアルタイム音声モデルの有無・動画アバター出力・独自アバターの作りやすさを3社で比べた表。"
+        "リアルタイム音声モデル＝Geminiは3.8 Live / 3.8 Live Extended Thinkingあり、"
+        "GPTはGPT-Live 1あり（頭脳は別モデル）、Claudeは記載なし。"
+        "動画のアバター出力＝Geminiはあり（Live Avatar・Gemini Enterprise限定）、"
+        "GPTは記載なし（音声の入出力のみ）、Claudeは—。"
+        "独自アバターを作れるか＝Geminiは企業の許可制（アローリスト経由のみ）、GPTは—、Claudeは—。"
+        "「記載なし」「—」は機能が無いと明言されているのではなく、公式ページに書かれていない意味。"
+    )
+    (OUT / "gemini38avatar-vendor-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     postscript_lands_hit_and_miss_chart()
     postscript_lands_by_material_chart()
+    gemini38avatar_output_price_chart()
+    gemini38avatar_output_budget_chart()
+    gemini38avatar_vendor_grid_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
