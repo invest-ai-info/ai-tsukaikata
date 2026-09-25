@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-09-25T12:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "マイクロソフトは9月25日、「Home」「Code」「Autopilot」の3つの機能を備えた新たな「Microsoft Copilot」を発表した。HomeとCodeは今後数週間のうちにFrontierプログラムで順次提供が開始され、Autopilotは今月末にプライベートプレビューの対象が拡大される予定。",
+      "title": "マイクロソフトが新Copilot発表、「Home」「Code」「Autopilot」を一体提供",
+      "uid": "9b6b443ce44622e5",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2143295.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-25T10:50:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントにリアルタイムストラテジーゲーム「StarCraft: Brood War」を操作させて対戦能力を比較するベンチマーク「Brood War Bench」をソフトウェアエンジニアのベン・スワードロウ氏が公開しました。OpenAI系やAnthropicのClaude、xAIのGrokなどを含む19種類の構成が総当たりで対戦した結果、最上位のCodex Astraは18戦全勝を記録した…",
+      "title": "AIに「StarCraft」をリアルタイムで戦わせる「Brood War Bench」が登場、全モデルが初心者レベルながらCodex Astraは18戦全勝",
+      "uid": "ef65a5c1c9bb8050",
+      "url": "https://gigazine.net/news/20260925-starcraft-brood-war-bench/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-09-25T10:37:16+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "DPVRは、AIグラス「G5シリーズ」の全4モデル「G5 Carbon Black」「G5 Ice Black」「G5 Pilot」「G5 Crystal」向けに、ライブ配信機能の提供を開始した。G5シリーズで撮影した映像を、装着者の視点に近いアングルからリアルタイムで共有できる。",
+      "title": "DPVR、AIグラス「G5シリーズ」でライブ配信機能を提供開始",
+      "uid": "0b02b48419c424c1",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2143479.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-25T09:28:02+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "DeepLは、「Model Context Protocol（以下、MCP）」を通じて、Microsoft Copilot、ChatGPT、ClaudeをはじめとするAIアシスタントから、DeepLを直接利用可能になったと発表した。DeepLアカウントを連携するだけで、AIアシスタントを離れることなく、テキスト翻訳や文書翻訳に加え、組織の用語集やカスタムルールを適用可能になる。",
+      "title": "DeepL、MCPを介し各種AIアシスタントで利用可能に",
+      "uid": "fe88fe7585322a0c",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2143435.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-25T09:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "アップルが早ければ10月にも家庭用スマートディスプレイを発表する可能性があると、Bloombergのマーク・ガーマン氏が伝えている。",
+      "title": "アップルのSiri AI搭載スマートディスプレイ、10月にも登場か",
+      "uid": "46c5012a6510ec24",
+      "url": "https://japan.cnet.com/article/35252981/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-25T08:25:35+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "wash-plusは、アマノが開発した業務用ロボット掃除機「RAPiiTT（ラピット）」の取扱いを開始し、特設ページにて受付を開始した。",
+      "title": "エレベーターを自動で移動し隅々まできれいに！ 業務用AIロボット掃除機「RAPiiTT」",
+      "uid": "d13701a5e15bad5e",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2143401.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-25T08:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Black Forest LabsのマルチモーダルAIモデル「FLUX 3」から派生した、ロボット制御向けの世界行動モデル「FLUX 3 Action」が公開されました。 続きを読む...",
+      "title": "ロボット制御向けAIモデル「FLUX 3 Action」をBlack Forest Labsが公開",
+      "uid": "4fb3838f6e2cdcb5",
+      "url": "https://gigazine.net/news/20260925-flux-3-action/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-25T13:52:10.554946+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-25T08:11:47+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "カシオ計算機は、AIペットロボット「Moflin」を活用した実証導入を秋田県・玉川温泉にて開始する。",
+      "title": "AIペット「Moflin」と同泊。玉川温泉で特別プラン開始",
+      "uid": "0846314f217eedfa",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2143397.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-09-25T07:53:40.744678+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2303,102 +2399,6 @@
       "uid": "a57a994ca51e1960",
       "url": "https://gigazine.net/news/20260917-model-evaluation-and-threat-research/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-17T18:17:25.881543+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T12:55:04+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "九州国立博物館は特別展「卑弥呼の鏡」のポスターとチラシのイラスト制作において、一部に生成AIを使用していることが分かったと報告した。当初、外部からの問い合わせに対して「使用していない」と回答していた。",
-      "title": "九州国立博物館、特別展ポスターに生成AI使用　当初「使用していない」と説明",
-      "uid": "a5f4bec7ce49b8b8",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/17/2000001595/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-17T10:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "生成AIによって写実的な画像を作成できるようになり、写真の見た目だけで実際に撮影されたものかどうかを判断することは難しくなっています。Appleは2026年9月10日に開催された新製品発表イベント「Surprise and shine.」で、iPhone 18 Pro／Pro Maxと共に、iPhoneで撮影された写真が実際のカメラセンサーの記録に基づくことを示す新技術「Apple Refere…",
-      "title": "iPhoneで撮影した写真がAI生成されていない「本物」だと証明する「Apple Reference Image」はどういう仕組みなのか？",
-      "uid": "48d123306b0c62b7",
-      "url": "https://gigazine.net/news/20260917-apple-reference-image/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-17T09:42:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "マネーフォワードホームは9月17日、「マネーフォワード ME」の家計・資産データをChatGPTの会話内で参照できるアプリの提供を始めた。ChatGPTと外部サービスをつなぐOpenAIの「Apps in ChatGPT」向けに提供する。ユーザーが接続を許可すると、マネーフォワード MEに集めた銀行やカード、証券口座の入出金や資産のデータをChatGPTが読み込み、会話の中でそのまま家計や資産の…",
-      "title": "ChatGPTとマネーフォワードMEの連携がエグすぎる　サブスク・固定費・資産配分もAIが一発分析",
-      "uid": "d1945d816a00a112",
-      "url": "https://japan.cnet.com/article/35252757/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-17T09:30:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "9月17日から9月21日にかけ幕張メッセで開催される東京ゲームショウ2026。初日は朝から多くの来場者で会場は埋め尽くされ、一般日かと疑うくらいの盛況ぶりとなった。基本的にゲームの展示会なので、ゲームの体験プレイとイベントが中心となっているのだが、ホール1のGALLERIAブース（サードウェーブ）に気合の入ったAIコーナーが設置されていたので、体験してみた。",
-      "title": "東京ゲームショウ2026、GALLERIAブースで実は気合の入ったAIコーナーを体験してきた！",
-      "uid": "f39dc0ff57cf7247",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141926.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-17T08:59:38+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "マイクロソフトは9月17日、「Microsoft IQ」に関する記者説明会をオンライン開催した。説明会ではAzure Data担当エグゼクティブバイスプレジデントのアルーン・ウラグ氏が登壇し、企業内でのAI活用におけるMicrosoft IQの役割を説明した。",
-      "title": "AIエージェントに業務の文脈を与える「Microsoft IQ」の真価",
-      "uid": "dc2605364d05bc85",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141873.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-17T08:15:26+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SCENTMATICは、9月19日に新潟県長岡市「アオーレ長岡」で開催される日本酒イベント「越後長岡酒の陣2026」にて、ソムリエAI「KAORIUM for Sake & Wine」を活用した唎酒体験を行なう。",
-      "title": "ソムリエAIが好みの日本酒を提案、新潟「越後長岡酒の陣」で最新の唎酒体験",
-      "uid": "24101445cfcc0310",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141869.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-17T08:08:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "高市早苗首相は9月17日に内閣改造を行い、第2次高市改造内閣が発足した。自民党の古川俊治参院議員が初入閣し、デジタル大臣に就任した。古川氏は外科医と弁護士の両方の資格を持ち、前任の松本尚氏に続いて医師出身のデジタル相となる。改造前は経済安全保障担当相が担っていた科学技術政策や人工知能戦略も移り、AIや科学技術分野をデジタル相が一括して担う体制となった。",
-      "title": "新デジタル大臣に『医師で弁護士』の古川俊治氏　AIや宇宙、科学技術政策も担当",
-      "uid": "b0eb71781ec03257",
-      "url": "https://japan.cnet.com/article/35252750/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-17T13:31:44.679361+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-17T07:45:11+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Red Hatは、ハイブリッドクラウド環境におけるAI運用の基盤となる「Red Hat AI 3.5」の一般提供を開始した。Red Hat AI 3.5は、「Red Hat AI Factory with NVIDIA」の一部としても利用できる。",
-      "title": "企業AIの安全な運用基盤「Red Hat AI 3.5」一般提供開始",
-      "uid": "6f6034da23e70bb6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141857.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
