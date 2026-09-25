@@ -48,41 +48,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-23T02:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries.",
-      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
-      "uid": "a11b143fcc6f8ba3",
-      "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-24T18:38:05+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a maxProseWidth setting that caps the width of Claude's prose in wide terminals while tables and code blocks keep the full width Added a startup notice, and /status and claude do…",
-      "title": "v2.1.282",
-      "uid": "65f884d18679601b",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.282",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-09-23T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "The Next Frontier: Welcoming AI Pioneer Jürgen Schmidhuber to Sakana AI",
-      "uid": "0a47057e7e180102",
-      "url": "https://sakana.ai/schmidhuber/",
-      "vendor": "Sakana AI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
