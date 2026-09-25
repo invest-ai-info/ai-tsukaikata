@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="提案文が末尾に切り離した追記の話題を拾うかどうかを、話題の近さ（本題に近い／遠い）で比べた表。すべて提案文の本体で追記の話題に触れた回数で、多いほど拾えている。材料1（サイトリニューアル）は、近い話題（フォームの不具合）で6/6、遠い話題（展示会の案内係）で0/6、遠い話題に「困っていそうなことも考えて」を足すと5/6。材料2（動画ナレーション）は、近い話題（動画の字幕）で6/6、遠い話題（展示会の受付）で3/6、一文を足すと6/6。下の枠には、近い話題は2つの材料とも満点で拾い遠い話題は材料1が0/6・材料2が3/6にとどまったこと、近い条件12/12・遠い条件3/12で差が9あり反証条件の『差2以下なら棄却』は発火しなかったこと、一文を足すと遠い話題でも両材料とも5/6・6/6まで戻ったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">切り離した追記でも、話題が近ければ拾い、遠いと拾わなかった</text>
+<text class="t-sm" x="18" y="45">実測2026-09-25。募集文の本体・追記の位置・文の長さは、近い話題版と遠い話題版で統一した。</text>
+<text class="t-sm" x="18" y="64">すべて「提案文の本体で、追記の話題に触れた回数」（多いほど拾えている）。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">材料1：近い話題（フォームの不具合）・素朴に頼む</text>
+<rect class="box-good" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="125" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="157">材料1：遠い話題（展示会の案内係）・素朴に頼む</text>
+<rect class="box-bad" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-bad" x="558.0" y="157" text-anchor="middle" style="font-weight:700">0/6</text>
+<text class="t" x="18" y="189">材料1：遠い話題＋「困っていそうなことも考えて」</text>
+<rect class="box" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-sm" x="558.0" y="189" text-anchor="middle" style="font-weight:700">5/6</text>
+<text class="t" x="18" y="221">材料2：近い話題（動画の字幕）・素朴に頼む</text>
+<rect class="box-good" x="478" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="221" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="253">材料2：遠い話題（展示会の受付）・素朴に頼む</text>
+<rect class="box" x="478" y="232" width="160" height="26" rx="4"/>
+<text class="t-sm" x="558.0" y="253" text-anchor="middle" style="font-weight:700">3/6</text>
+<text class="t" x="18" y="285">材料2：遠い話題＋「困っていそうなことも考えて」</text>
+<rect class="box-good" x="478" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="285" text-anchor="middle" style="font-weight:700">6/6</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">近い話題は2つの材料とも6/6で拾い、遠い話題は材料1が0/6・材料2が3/6にとどまった。</text>
+<text class="t-accent" x="34" y="340">近い条件12/12・遠い条件3/12で、差は9（反証条件『差2以下なら棄却』は発火せず）。</text>
+<text class="t-accent" x="34" y="358">「困っていそうなことも考えて」を足すと、遠い話題でも両材料とも5/6・6/6まで戻った。</text>
+</svg>

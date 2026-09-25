@@ -27728,3 +27728,135 @@ if __name__ == "__main__":
     reminder_day_match_rate_chart()
     reminder_day_gap_zone_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def postscript_lands_hit_and_miss_chart() -> None:
+    """提案文が、末尾に切り離した追記の話題を拾うかどうかは、話題が本題と近いか
+    遠いかで大きく変わったことを示す（2026-09-25・H25）。
+
+    実測：架空の募集文2種（サイトリニューアル／動画ナレーション）の末尾に、
+    「話は変わりますが」と切り離した追記を、①本題と近い話題②本題と遠い話題
+    （展示会の対応が分かりにくい、で両材料そろえた）の2水準で仕込み、
+    素朴な「提案文を書いて」だけで拾うかを比べた。判定は docs/evidence/
+    postscript-lands-only-if-topic-is-close.md の judge.py 出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "postscript-lands-hit-and-miss.svg",
+        "切り離した追記でも、話題が近ければ拾い、遠いと拾わなかった",
+        "実測2026-09-25。募集文の本体・追記の位置・文の長さは、近い話題版と遠い話題版で統一した。",
+        "すべて「提案文の本体で、追記の話題に触れた回数」（多いほど拾えている）。",
+        [
+            ("材料1：近い話題（フォームの不具合）・素朴に頼む", 6, 6, "good"),
+            ("材料1：遠い話題（展示会の案内係）・素朴に頼む", 0, 6, "good"),
+            ("材料1：遠い話題＋「困っていそうなことも考えて」", 5, 6, "good"),
+            ("材料2：近い話題（動画の字幕）・素朴に頼む", 6, 6, "good"),
+            ("材料2：遠い話題（展示会の受付）・素朴に頼む", 3, 6, "good"),
+            ("材料2：遠い話題＋「困っていそうなことも考えて」", 6, 6, "good"),
+        ],
+        [
+            "近い話題は2つの材料とも6/6で拾い、遠い話題は材料1が0/6・材料2が3/6にとどまった。",
+            "近い条件12/12・遠い条件3/12で、差は9（反証条件『差2以下なら棄却』は発火せず）。",
+            "「困っていそうなことも考えて」を足すと、遠い話題でも両材料とも5/6・6/6まで戻った。",
+        ],
+        "提案文が末尾に切り離した追記の話題を拾うかどうかを、話題の近さ（本題に近い／遠い）で"
+        "比べた表。すべて提案文の本体で追記の話題に触れた回数で、多いほど拾えている。"
+        "材料1（サイトリニューアル）は、近い話題（フォームの不具合）で6/6、遠い話題"
+        "（展示会の案内係）で0/6、遠い話題に「困っていそうなことも考えて」を足すと5/6。"
+        "材料2（動画ナレーション）は、近い話題（動画の字幕）で6/6、遠い話題（展示会の受付）"
+        "で3/6、一文を足すと6/6。下の枠には、近い話題は2つの材料とも満点で拾い遠い話題は"
+        "材料1が0/6・材料2が3/6にとどまったこと、近い条件12/12・遠い条件3/12で差が9あり"
+        "反証条件の『差2以下なら棄却』は発火しなかったこと、一文を足すと遠い話題でも"
+        "両材料とも5/6・6/6まで戻ったことが書かれている。",
+        label_w=460,
+    )
+
+
+def postscript_lands_by_material_chart() -> None:
+    """話題の近さが拾われる率を分けたことを、材料ごとのグループ棒グラフで示す
+    （2026-09-25）。hit_and_miss の表と対になる、材料別の強調版。
+    """
+    groups = [
+        (
+            "材料1：サイトリニューアル",
+            [
+                ("近い話題（フォームの不具合）", 6, 6),
+                ("遠い話題（展示会の案内係）", 0, 6),
+                ("遠い話題＋「困っていそうなことも考えて」", 5, 6),
+            ],
+        ),
+        (
+            "材料2：動画ナレーション",
+            [
+                ("近い話題（動画の字幕）", 6, 6),
+                ("遠い話題（展示会の受付）", 3, 6),
+                ("遠い話題＋「困っていそうなことも考えて」", 6, 6),
+            ],
+        ),
+    ]
+    left, right = 300, 610
+    span = right - left
+    bar_h, bar_gap, group_gap = 16, 5, 20
+    top = 110
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "話題が近いだけで拾い、遠いだけで拾わない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "バーは「提案文の本体で追記の話題に触れた回数／試した回数」。追記の位置と長さはどの版も揃えた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "遠い話題の落ち方は材料によって強さが違う（材料1は0/6、材料2は3/6）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「困っていそうなことも考えて」を足すと、遠い話題でもどちらの材料も5/6・6/6に戻った。</text>\n",
+    ]
+    y = top
+    for group_label, rows in groups:
+        parts.append(f'<text class="t-strong" x="18" y="{y - 8}">{_esc(group_label)}</text>\n')
+        for label, hit, total in rows:
+            ratio = hit / total
+            bw = max(span * ratio, 3) if hit else 0
+            cls = "box-good" if hit == total else ("box-bad" if hit == 0 else "box")
+            parts.append(f'<text class="t-xs" x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+            )
+            if bw:
+                parts.append(
+                    f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+                )
+            parts.append(
+                f'<text class="t-sm" x="{right + 10}" y="{y + bar_h - 4}">{hit}／{total}</text>\n'
+            )
+            y += bar_h + bar_gap
+        y += group_gap
+
+    y += 4
+    box_h = 44
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "同じ追記の一文でも、本題とどれだけ話題が近いかで拾われ方が変わる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "確実に拾わせたいなら、話題を近づけるより名指しで頼むほうが安定する。</text>\n"
+    )
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "追記の話題の近さ（近い／遠い／遠い＋一文）ごとに、提案文が追記に触れた回数を材料別に"
+        "比べたグループ横棒グラフ。材料1（サイトリニューアル）は、近い話題（フォームの不具合）"
+        "で6/6、遠い話題（展示会の案内係）で0/6、一文を足すと5/6。材料2（動画ナレーション）は、"
+        "近い話題（動画の字幕）で6/6、遠い話題（展示会の受付）で3/6、一文を足すと6/6。"
+        "下の枠には、同じ追記の一文でも本題とどれだけ話題が近いかで拾われ方が変わること、"
+        "確実に拾わせたいなら話題を近づけるより名指しで頼むほうが安定することが書かれている。"
+    )
+    (OUT / "postscript-lands-by-material.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    postscript_lands_hit_and_miss_chart()
+    postscript_lands_by_material_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
