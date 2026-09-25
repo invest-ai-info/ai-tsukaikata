@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-25T01:18:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "プレイヤーの行動に応じてAIがゲームを変えていくとしたらどうだろうか。マイクロソフトが出願した特許は、将来の「Xbox」向けゲームで、まさにそうした仕組みを実現するかもしれない。",
+      "title": "生成AIがプレイヤー好みにゲームを書き換える　マイクロソフトが特許出願",
+      "uid": "de45b46e8d3cca02",
+      "url": "https://japan.cnet.com/article/35252952/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-25T00:10:33+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、リアルタイム音声対話と動画生成アバターを組み合わせた「Gemini 3.8 Live with Live Avatar」をGemini Enterpriseで提供を開始した。写真1枚から自然に応答するアバターを生成し、多言語や非同期ツール実行に対応。顧客対応や店頭端末などの商用展開を見込む。",
+      "title": "Google、リアルタイムで表情豊かに話すAIアバター「Gemini 3.8 Live with Live Avatar」提供開始　画像1枚で独自アバターも",
+      "uid": "70fbd9ee56c24127",
+      "url": "https://www.itmedia.co.jp/news/article/2609/25/2000001730/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "TypeSafe AIは、自動化に特化した新AIモデル「Jev」の早期アクセス提供を開始した。文字列生成を廃止し、従来のLLM比で最大200倍の高速化とハルシネーション排除を実現したという。",
+      "title": "ハルシネーション排除、最大200倍高速――元OpenAI研究者の新AI「Jev」は何が違うのか",
+      "uid": "6ee2b717fcb3a27f",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/25/news055.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "TWOSTONE&Sonsが、企業のAI内製化に関する実態調査の結果を公表。AI内製化の推進責任者の9割以上が競合との差に危機感を抱き、社内主導プロジェクトの停滞や頓挫を経験している実態が明らかとなった。",
+      "title": "AI内製化、9割超が「停滞、頓挫」を経験　つまずく原因は“技術”ではなかった",
+      "uid": "fecf95190ecc569e",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/25/news049.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-24T22:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米国ハワイ州で開催中の「Snapdragon Summit 2026」で、Googleの新たなノートPC「Googlebook」の実機デモが披露された。Googlebookは、生成AI「Gemini」をPC上の普段の作業に組み込み、画面に表示している画像やメールをその場でGeminiに渡したり、複数のアプリにまたがる情報をまとめて質問したりできる。",
+      "title": "「Googlebook」の実機を触ってみた--Geminiで効率化、Androidスマホとの垣根もほぼゼロに",
+      "uid": "55a3e6881fbe5f65",
+      "url": "https://japan.cnet.com/article/35252939/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T22:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "アイ・エル・シーは「産業オープンネット展2026」において、設備監視用ソリューションや組み込みソフトウェアPLCを紹介した。",
+      "title": "ソフトPLCがAIの「道具」に、簡単導入のPLCドラレコカメラも",
+      "uid": "b754ca66296a3397",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/25/news058.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-24T22:28:34.506090+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -23,6 +95,30 @@
       "uid": "0ff0f6333879cd40",
       "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2142757.html",
       "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントが企業の枠を超えて商品検索や発注、決済まで担う時代には、「誰が操作しているのか」「どこまで権限があるのか」を確認する仕組みが不可欠だ。",
+      "title": "AI同士が取引する時代、「相手は誰か」をどう確認する？　GMOが信頼基盤を実証",
+      "uid": "f7568158b43d3522",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/25/2000001724/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-25T01:34:07.269638+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-24T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "多言語を扱う業務では、翻訳のたびにAIと翻訳サービスを行き来する手間がある。DeepLはMCPに対応し、ChatGPTやMicrosoft Copilotなどから直接翻訳できる仕組みを提供する。",
+      "title": "ChatGPTやCopilotから直接翻訳　「DeepL」のMCP対応で多言語業務はどう変わる？",
+      "uid": "f2ab777be39b0fbb",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/25/2000001723/",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-09-24T22:28:34.506090+00:00",
@@ -2302,102 +2398,6 @@
       "title": "FirefoxのAI機能を拡充するべくMozillaがAI企業「Mistral AI」とパートナーシップを締結",
       "uid": "285719da89ff121d",
       "url": "https://gigazine.net/news/20260917-firefox-ai-mozilla-mistral/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-17T07:43:59.936479+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-17T01:35:33+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Metanomalyは9月17日、AI二次元創作プラットフォーム「PixAI」において、4周年テーマソング「UnLocking World」のミュージックビデオをPixAI公式YouTubeチャンネルで公開した。",
-      "title": "PixAI 4周年、「ガルクラ」主演・理名が歌う記念テーマソングMVを公開",
-      "uid": "92dad41b54e92157",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2141632.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-17T07:43:59.936479+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T01:23:50+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、AIモデルの開発過程などで確認されたミスアライメント事例を追跡・公表するための新枠組みを発表した。実害の有無を問わず迅速に情報共有する方針で、APIキーの無断探索やデータ捏造、不正な指示の書き込みなど、未公開モデルや「GPT-5.6 Sol」の訓練中に観測された6件の事例報告書も公開した。",
-      "title": "OpenAI、モデルの「ミスアライメント」報告の新フレームワーク公開　データ捏造など6件の事例も公表",
-      "uid": "676513391ecca7b3",
-      "url": "https://www.itmedia.co.jp/news/article/2609/17/2000001570/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T01:28:36.895933+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-16T23:05:35+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AnthropicがAIアシスタント「Claude」のチャットと作業環境「Claude Cowork」を統合した。簡単な対話から複数手順の複雑な作業までを1つの会話内で完結でき、文書作成「Claude Docs」やスライド作成機能も追加。ProやMax向けから段階的に展開する。",
-      "title": "Anthropic、Claudeの「チャット」と「Cowork」を統合　資料作成の「Docs」「Slides」も",
-      "uid": "ce38dade9b8f0e71",
-      "url": "https://www.itmedia.co.jp/news/article/2609/17/2000001565/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T01:28:36.895933+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "三菱重工業とPreferred Networksが資本業務提携契約を締結。三菱重工はPFNに100億円を出資し、社会インフラや国家安全保障分野で機械・システムの知能化・自律化に向けたAI技術の共同開発を本格化する。",
-      "title": "三菱重工、インフラ・防衛向けAIでPFNと資本業務提携　100億円出資し共同開発",
-      "uid": "d0e6e6462e69c88e",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/17/2000001563/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T01:28:36.895933+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、「Claude Code」でトークンを効率的に使用し、セッションから最大限の価値を引き出す方法を解説した。",
-      "title": "なぜ「Claude Code」で想定外のコストになるのか？　「トークン浪費」を防ぐポイントまとめ",
-      "uid": "e1b1712896affca7",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news030.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T01:28:36.895933+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米国のNSA、CISA、FBIは、中国AI企業が米国のフロンティアモデルから組織的に「知識蒸留」を行っているとして共同勧告を公開した。プロキシ経由で推論機能などを抽出していると指摘し、対抗措置を推奨している。",
-      "title": "「中国AIがClaudeやGPTから数十億トークン抽出」　米当局が暴いた「知識蒸留」の実態",
-      "uid": "7879b783ab6ed088",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news038.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T01:28:36.895933+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-16T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "千代田区は生成AIの全庁展開に着手し、年間で4000時間の業務削減を実現するという成果をあげている。同区のデジタル政策課 デジタル政策係長 岡本翼氏が、自治体における生成AI活用の現状と今後について語った。",
-      "title": "千代田区、生成AI全庁展開で「年間4000時間」を削減　次の一歩は「打倒・美しい紙の資料」、そのワケは？",
-      "uid": "a39442766fa76b24",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/17/news035.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T01:28:36.895933+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-16T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIを支える半導体の多くを供給するのは、アメリカの半導体企業であるNVIDIAです。AIの普及に伴いNVIDIAの時価総額は上昇し続けており、2025年10月には世界で初めて5兆ドル(約780兆円)に到達しています。そんなNVIDIAが「AIの中央銀行と化している」と経済メディアのThe Economistが報じました。 続きを読む...",
-      "title": "NVIDIAはAIの中央銀行と化している",
-      "uid": "49466a258de720cc",
-      "url": "https://gigazine.net/news/20260917-nvidia-central-bank-ai/",
       "vendor": "GIGAZINE"
     }
   ]
