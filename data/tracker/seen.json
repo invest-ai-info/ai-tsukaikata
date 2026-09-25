@@ -21,23 +21,17 @@
     "e5867c4dc76ca063": "2026-08-17",
     "e7c4e5e484b85e66": "2026-09-15"
   },
-  "failures": {
-    "deepmind-blog": {
-      "count": 1,
-      "last_error": "0件",
-      "since": "2026-09-25T18:40:14.512509+00:00"
-    }
-  },
+  "failures": {},
   "latest": {
     "anthropic-news": "2026-09-23T16:06:00+00:00",
     "anthropic-sdk": "2026-09-22T16:25:23+00:00",
-    "claude-code": "2026-09-24T18:38:05+00:00",
+    "claude-code": "2026-09-25T21:50:12+00:00",
     "deepmind-blog": "2026-09-24T16:20:39+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-23T18:00:00+00:00",
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
-    "media-cnet-japan": "2026-09-25T09:10:00+00:00",
+    "media-cnet-japan": "2026-09-25T21:00:00+00:00",
     "media-gigazine": "2026-09-25T13:00:00+00:00",
     "media-impress-ai": "2026-09-25T12:00:00+00:00",
     "media-itmedia-aiplus": "2026-09-25T02:53:22+00:00",
@@ -59,6 +53,17 @@
       "uid": "5cfbe0f27bc3e025",
       "url": "https://openai.com/index/proaction",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-25T21:50:12+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added x-claude-code-prompt-id to the gateway hint headers so LLM gateways can group the requests that serve one user prompt; opt in with CLAUDE_CODE_GATEWAY_HINT_HEADERS=1 Added availa…",
+      "title": "v2.1.283",
+      "uid": "96292ab7d973c873",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -696,6 +701,7 @@
     "35a7d927677e84e0": "2026-09-03T22:37:08.568544+00:00",
     "35cb40c4e23de534": "2026-09-16T00:25:06.560710+00:00",
     "35f471c92620f131": "2026-08-01T12:16:42.309603+00:00",
+    "36005a99311d9460": "2026-09-25T22:24:48.758475+00:00",
     "3606a08e08cd576a": "2026-09-17T07:43:59.936479+00:00",
     "361bab3448bef9c0": "2026-09-09T11:28:50.861492+00:00",
     "363dc14c93e896dc": "2026-09-03T16:29:05.225191+00:00",
@@ -1754,6 +1760,7 @@
     "9601a02b294e9096": "2026-08-26T03:27:09.606981+00:00",
     "960fbfb3aed3600e": "2026-08-14T11:59:16.623121+00:00",
     "9611df305522a0c2": "2026-09-23T23:44:44.256252+00:00",
+    "96292ab7d973c873": "2026-09-25T22:24:48.758475+00:00",
     "9636d77c8206b323": "2026-09-25T07:53:40.744678+00:00",
     "96552263e28620f5": "2026-08-01T12:16:42.309603+00:00",
     "966a0b745e5beba1": "2026-09-10T19:44:31.507839+00:00",

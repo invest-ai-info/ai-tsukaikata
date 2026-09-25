@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-25T22:24:48.758475+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-25T21:50:12+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added x-claude-code-prompt-id to the gateway hint headers so LLM gateways can group the requests that serve one user prompt; opt in with CLAUDE_CODE_GATEWAY_HINT_HEADERS=1 Added availa…",
+      "title": "v2.1.283",
+      "uid": "96292ab7d973c873",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-25T18:40:14.512509+00:00",
       "importance": "minor",
       "label": "OpenAI News",
