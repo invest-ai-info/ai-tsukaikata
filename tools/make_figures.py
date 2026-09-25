@@ -27548,4 +27548,183 @@ if __name__ == "__main__":
     gemini38tts_price_old_vs_new_chart()
     gemini38tts_price_doubles_chart()
     gemini38tts_vendor_grid_chart()
+def reminder_day_match_rate_chart() -> None:
+    """基準（日数）を渡すかどうかで、5日ルールとの一致率がどう変わるか（2026-09-25）。
+
+    実測。架空の送付記録2本（18件・12件）に、「催促する／しない」を今日2026-09-25の
+    日付から機械で判定できる形で仕込んだ。基準を渡さずに判定させると、AIは自分で
+    決めた日数（多くは7日）を一貫して使い、5日ルールとの一致率は83〜92%だった
+    （取りこぼしはすべて「5日ルールなら催促、AIの基準ではまだ」という片方向）。
+    「5日以上」と基準を明記すると、2本の材料・のべ4回とも一致率100%だった。
+    """
+    rows = [
+        ("基準なし・材料1（18件・4回とも同じ判定）", 15, 18, False),
+        ("基準なし・材料2・1回目（12件）", 10, 12, False),
+        ("基準なし・材料2・2回目（12件）", 11, 12, False),
+        ("基準「5日以上」を渡す・材料1（18件・2回とも）", 18, 18, True),
+        ("基準「5日以上」を渡す・材料2（12件・2回とも）", 12, 12, True),
+    ]
+    label_w = 340
+    box_x = 18 + label_w
+    box_w = (WIDTH - 18) - box_x
+    row_h = 30
+    pitch = row_h + 10
+    top = 116
+
+    assert box_x + box_w <= WIDTH - 18, box_x + box_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "基準を渡さないと83〜92%、「5日以上」と渡すと100%が、5日ルールと一致した</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の送付記録2本（18件・12件）に、今日2026-09-25の日付から機械で判定できる正解を仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "基準を渡さない場合はAIが自分で決めた日数（多くは7日）で判定し、5日ルールとの一致率を数えた。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "数字は「5日ルールと判定が一致した件数／全体の件数」。取りこぼしはすべて片方向"
+        "（5日ルールは催促だがAIはまだ）だった。</text>\n",
+    ]
+    y = top
+    for label, val, n, ok in rows:
+        ty = y + row_h / 2 + 5
+        box = "box-good" if ok else "box-quiet"
+        tone = "t-good" if ok else "t-strong"
+        parts.append(f'<text class="t-sm" x="18" y="{ty:.1f}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box}" x="{box_x}" y="{y}" width="{box_w:.1f}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{box_x + box_w / 2:.1f}" y="{ty:.1f}" '
+            f'text-anchor="middle" style="font-weight:700">{val}／{n}（{val / n * 100:.0f}%）</text>\n'
+        )
+        y += pitch
+
+    y += 6
+    box_h = 56
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "取りこぼしは全部同じ向き（AIのほうが甘い）。早すぎる催促は1件も出なかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "自分の会社の基準が5日なら、日数を書かないとAIの基準（多くは7日）に合わせられてしまう。</text>\n"
+    )
+    height = y + box_h + 16
+
+    alt = (
+        "基準となる日数を渡すかどうかで、5日ルールとの一致率がどう変わるかを示す横棒グラフ。"
+        "架空の送付記録2本（18件・12件）に、今日2026年9月25日の日付から機械で判定できる"
+        "正解を仕込んだ。基準を渡さずにAI自身に日数を決めさせた場合、材料1（18件）は4回とも"
+        "15／18件（83%）が5日ルールと一致し、材料2（12件）は1回目が10／12件（83%）、"
+        "2回目が11／12件（92%）だった。「最後にやりとりした日から5日以上」と基準を明記すると、"
+        "材料1・材料2ともに、のべ4回すべてで18／18件・12／12件（いずれも100%）が一致した。"
+        "基準を渡さなかったときの取りこぼしは全部同じ向きで、5日ルールなら催促すべきなのに"
+        "AIの基準ではまだ早いと判定されたケースだけで、早すぎる催促は1件も出なかった。"
+    )
+    (OUT / "reminder-day-match-rate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def reminder_day_gap_zone_chart() -> None:
+    """AIが自分で決めた基準（7日）と、5日ルールの間に3件が落ちる（2026-09-25）。
+
+    実測。材料1（18件）のうち返信済みでない14件を、送信（前回催促があればそこ）から
+    今日までの経過日数で並べた。基準を渡さない指示文4回とも、AIは「7日以上」を自分の
+    基準として使い、5〜6日の3件（R-04・R-07・R-16）は「まだ早い」に回した。この3件は
+    5日ルールでは催促に入る。
+    """
+    rows = [
+        ("R-14", 1, False), ("R-02", 1, False), ("R-10", 3, False),
+        ("R-05", 4, False), ("R-13", 4, False),
+        ("R-07", 5, False), ("R-16", 5, False), ("R-04", 6, False),
+        ("R-11", 7, True), ("R-06", 8, True), ("R-17", 11, True),
+        ("R-09", 13, True), ("R-15", 14, True), ("R-01", 17, True),
+    ]
+    label_x = 18
+    bar_x = 90
+    scale = 27.0
+    row_h = 22
+    pitch = 27
+    top = 128
+
+    max_x = bar_x + 18 * scale
+    assert max_x <= WIDTH - 90, max_x
+
+    line5_x = bar_x + 5 * scale
+    line7_x = bar_x + 7 * scale
+    last_y = top + (len(rows) - 1) * pitch
+    band_top = top - 14
+    band_bottom = last_y + row_h + 4
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "AIが自分で決めた「7日」と、5日ルールの間に3件が落ちる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料1（18件）のうち返信済みでない14件。バーの長さ＝最後にやりとりした日から今日までの経過日数。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "色＝基準を渡さない指示文（4回とも同じ）でAIが「催促する」と判定したかどうか。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "灰色の帯＝5日ルールでは催促に入るが、AIの基準（7日）ではまだ早いとされた範囲（5〜6日）。</text>\n",
+        f'<rect class="box-bad" x="{line5_x:.1f}" y="{band_top}" '
+        f'width="{line7_x - line5_x:.1f}" height="{band_bottom - band_top}" rx="4"/>\n',
+    ]
+
+    for index, (label, days, flagged) in enumerate(rows):
+        y = top + index * pitch
+        ty = y + row_h / 2 + 4
+        w = max(4, days * scale)
+        bar_class = "bar-out" if flagged else "bar-old"
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty:.1f}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{bar_class}" x="{bar_x}" y="{y}" width="{w:.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{bar_x + w + 6:.1f}" y="{ty:.1f}">{days}日</text>\n'
+        )
+
+    parts.append(
+        f'<line class="line" x1="{line5_x:.1f}" y1="{band_top}" x2="{line5_x:.1f}" y2="{band_bottom}" '
+        f'style="stroke-dasharray:4,3"/>\n'
+    )
+    parts.append(
+        f'<line class="line" x1="{line7_x:.1f}" y1="{band_top}" x2="{line7_x:.1f}" y2="{band_bottom}" '
+        f'style="stroke-dasharray:4,3"/>\n'
+    )
+    parts.append(f'<text class="t-xs" x="{line5_x - 10:.1f}" y="{band_top - 4}">5日</text>\n')
+    parts.append(f'<text class="t-xs" x="{line7_x - 10:.1f}" y="{band_top - 4}">7日</text>\n')
+
+    y = band_bottom + 14
+    box_h = 56
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "R-04・R-07・R-16の3件は、5日ルールなら催促するが、AIの基準（7日）ではまだ早い。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "自分の基準を書かないと、この3件はAIの基準に沿ってそのまま見送られる。</text>\n"
+    )
+    height = y + box_h + 16
+
+    alt = (
+        "AIが自分で決めた基準（7日）と、5日ルールの間に3件が落ちることを示す横棒グラフ。"
+        "架空の送付記録（18件）のうち返信済みでない14件を、最後にやりとりした日から今日"
+        "2026年9月25日までの経過日数で並べた。1日のR-14・R-02、3日のR-10、4日のR-05・R-13は、"
+        "基準を渡さない指示文でも5日ルールでもどちらも催促しないで一致した。5日のR-07・R-16、"
+        "6日のR-04の3件は、5日ルールでは催促に入るが、基準を渡さない指示文（4回とも同じ結果）"
+        "ではAIが自分で決めた基準「7日以上」に届かず、催促しないと判定された。7日のR-11、8日の"
+        "R-06、11日のR-17、13日のR-09、14日のR-15、17日のR-01は、どちらの基準でも催促するで"
+        "一致した。5日から7日までの範囲を灰色の帯で示し、この範囲に入る3件が取りこぼしの"
+        "対象であることを表している。"
+    )
+    (OUT / "reminder-day-gap-zone.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    reminder_day_match_rate_chart()
+    reminder_day_gap_zone_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

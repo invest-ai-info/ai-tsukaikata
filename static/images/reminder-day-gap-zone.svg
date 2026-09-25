@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="591" viewBox="0 0 720 591" role="img" aria-label="AIが自分で決めた基準（7日）と、5日ルールの間に3件が落ちることを示す横棒グラフ。架空の送付記録（18件）のうち返信済みでない14件を、最後にやりとりした日から今日2026年9月25日までの経過日数で並べた。1日のR-14・R-02、3日のR-10、4日のR-05・R-13は、基準を渡さない指示文でも5日ルールでもどちらも催促しないで一致した。5日のR-07・R-16、6日のR-04の3件は、5日ルールでは催促に入るが、基準を渡さない指示文（4回とも同じ結果）ではAIが自分で決めた基準「7日以上」に届かず、催促しないと判定された。7日のR-11、8日のR-06、11日のR-17、13日のR-09、14日のR-15、17日のR-01は、どちらの基準でも催促するで一致した。5日から7日までの範囲を灰色の帯で示し、この範囲に入る3件が取りこぼしの対象であることを表している。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="591"/>
+<text class="t-strong" x="18" y="26">AIが自分で決めた「7日」と、5日ルールの間に3件が落ちる</text>
+<text class="t-sm" x="18" y="45">材料1（18件）のうち返信済みでない14件。バーの長さ＝最後にやりとりした日から今日までの経過日数。</text>
+<text class="t-sm" x="18" y="64">色＝基準を渡さない指示文（4回とも同じ）でAIが「催促する」と判定したかどうか。</text>
+<text class="t-xs" x="18" y="83">灰色の帯＝5日ルールでは催促に入るが、AIの基準（7日）ではまだ早いとされた範囲（5〜6日）。</text>
+<rect class="box-bad" x="225.0" y="114" width="54.0" height="391" rx="4"/>
+<text class="t-sm" x="18" y="143.0">R-14</text>
+<rect class="bar-old" x="90" y="128" width="27.0" height="22" rx="3"/>
+<text class="t-xs" x="123.0" y="143.0">1日</text>
+<text class="t-sm" x="18" y="170.0">R-02</text>
+<rect class="bar-old" x="90" y="155" width="27.0" height="22" rx="3"/>
+<text class="t-xs" x="123.0" y="170.0">1日</text>
+<text class="t-sm" x="18" y="197.0">R-10</text>
+<rect class="bar-old" x="90" y="182" width="81.0" height="22" rx="3"/>
+<text class="t-xs" x="177.0" y="197.0">3日</text>
+<text class="t-sm" x="18" y="224.0">R-05</text>
+<rect class="bar-old" x="90" y="209" width="108.0" height="22" rx="3"/>
+<text class="t-xs" x="204.0" y="224.0">4日</text>
+<text class="t-sm" x="18" y="251.0">R-13</text>
+<rect class="bar-old" x="90" y="236" width="108.0" height="22" rx="3"/>
+<text class="t-xs" x="204.0" y="251.0">4日</text>
+<text class="t-sm" x="18" y="278.0">R-07</text>
+<rect class="bar-old" x="90" y="263" width="135.0" height="22" rx="3"/>
+<text class="t-xs" x="231.0" y="278.0">5日</text>
+<text class="t-sm" x="18" y="305.0">R-16</text>
+<rect class="bar-old" x="90" y="290" width="135.0" height="22" rx="3"/>
+<text class="t-xs" x="231.0" y="305.0">5日</text>
+<text class="t-sm" x="18" y="332.0">R-04</text>
+<rect class="bar-old" x="90" y="317" width="162.0" height="22" rx="3"/>
+<text class="t-xs" x="258.0" y="332.0">6日</text>
+<text class="t-sm" x="18" y="359.0">R-11</text>
+<rect class="bar-out" x="90" y="344" width="189.0" height="22" rx="3"/>
+<text class="t-xs" x="285.0" y="359.0">7日</text>
+<text class="t-sm" x="18" y="386.0">R-06</text>
+<rect class="bar-out" x="90" y="371" width="216.0" height="22" rx="3"/>
+<text class="t-xs" x="312.0" y="386.0">8日</text>
+<text class="t-sm" x="18" y="413.0">R-17</text>
+<rect class="bar-out" x="90" y="398" width="297.0" height="22" rx="3"/>
+<text class="t-xs" x="393.0" y="413.0">11日</text>
+<text class="t-sm" x="18" y="440.0">R-09</text>
+<rect class="bar-out" x="90" y="425" width="351.0" height="22" rx="3"/>
+<text class="t-xs" x="447.0" y="440.0">13日</text>
+<text class="t-sm" x="18" y="467.0">R-15</text>
+<rect class="bar-out" x="90" y="452" width="378.0" height="22" rx="3"/>
+<text class="t-xs" x="474.0" y="467.0">14日</text>
+<text class="t-sm" x="18" y="494.0">R-01</text>
+<rect class="bar-out" x="90" y="479" width="459.0" height="22" rx="3"/>
+<text class="t-xs" x="555.0" y="494.0">17日</text>
+<line class="line" x1="225.0" y1="114" x2="225.0" y2="505" style="stroke-dasharray:4,3"/>
+<line class="line" x1="279.0" y1="114" x2="279.0" y2="505" style="stroke-dasharray:4,3"/>
+<text class="t-xs" x="215.0" y="110">5日</text>
+<text class="t-xs" x="269.0" y="110">7日</text>
+<rect class="box-accent" x="18" y="519" width="684" height="56" rx="6"/>
+<text class="t-accent" x="34" y="539">R-04・R-07・R-16の3件は、5日ルールなら催促するが、AIの基準（7日）ではまだ早い。</text>
+<text class="t-sm" x="34" y="557">自分の基準を書かないと、この3件はAIの基準に沿ってそのまま見送られる。</text>
+</svg>
