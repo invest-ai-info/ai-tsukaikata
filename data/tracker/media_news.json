@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-26T01:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "勉強中に分からないところを気軽に聞ける家庭教師がいれば心強いものの、人間の専門家に1対1で教わるには高い指導料がかかります。AI家庭教師でも同じだけ学べるのかを調べるため、Handshake AI Researchのカーティス・ノースカット氏らはアメリカの大学院進学に使われる試験「GRE」の対策で学習効果と費用を比較しました。 続きを読む...",
+      "title": "「AI家庭教師と人間の専門家による指導の学習効果は同等」という研究結果、正答率の向上にかかる費用は918分の1",
+      "uid": "56040579d66e1a7a",
+      "url": "https://gigazine.net/news/20260926-ai-tutor-human-gre-cost/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-26T00:23:15+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ChatGPTなど他のサービスに影響はなかった。",
+      "title": "「Codex」全機能に障害　約1時間にわたり",
+      "uid": "5252fb2d9b7eff0a",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/26/2000001774/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-25T23:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Microsoftは9月25日（現地時間）、生成AIサービス「Microsoft Copilot」を刷新すると発表した。ユーザーが離れている間も自律的に仕事を進める「Autopilot」などを追加する。高度なAI機能には従量課金を導入し、企業向けのコスト管理機能も提供する。",
+      "title": "マイクロソフトが「Copilot」刷新　ユーザーが不在中も働くAIに",
+      "uid": "271b7faa7ee66304",
+      "url": "https://japan.cnet.com/article/35252993/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-25T23:15:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Googleは10月1日（現地時間）、米SpaceXの相乗り打ち上げミッション「Transporter-18」で試験衛星を打ち上げる。同社のAIチップ「TPU」を搭載し、打ち上げや軌道上の環境に耐え、宇宙空間で限定的なAI処理を実行できるかを確かめる。将来、データセンターそのものを宇宙に置く構想への一歩だ。",
+      "title": "Googleが「宇宙データセンター」実験へ　AIチップ搭載衛星を打ち上げ",
+      "uid": "b633557e058f546a",
+      "url": "https://japan.cnet.com/article/35252992/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-25T22:48:32+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Microsoftは「Microsoft Copilot」アプリの大幅な刷新を発表した。「Home」「Code」「Autopilot」の3タブ構成とし、Officeを直接統合する。自然言語でのアプリ構築や自律的な業務代行エージェントを導入し、日常機能は月額課金、高度なエージェントや最新モデルは従量課金に移行する。",
+      "title": "Microsoft、「Copilot」を刷新　「仕事のための新しいOS」とナデラCEO",
+      "uid": "e3049e3df328578c",
+      "url": "https://www.itmedia.co.jp/news/article/2609/26/2000001773/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-25T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "紙やPDFの請求書を受け取り、Excelに転記して承認、振込データを作成する。企業の経理現場には今なお手作業が残る。あいち銀行はLayerXと組み、請求書の受領から承認、振込までをデジタルでつなぐ取り組みに乗り出す。",
+      "title": "あいち銀行が経理DXを本格化　LayerXと「請求書受領から振込まで」をつなぐ",
+      "uid": "a30c2402dfca38d7",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/26/2000001731/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-26T01:37:25.082099+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-25T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIを導入しても、活用が一部の従業員の“個人技”にとどまれば、効果を組織全体へ広げるのは難しい。トラコムでは、現場の工夫を仕組み化して共有。資料作成や月次処理などを効率化し、業務時間の削減につなげている。",
+      "title": "資料作成が月32時間から4時間に　トラコムが生成AIで「月28時間削減」した方法",
+      "uid": "cfcc54657a9893ce",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/26/2000001725/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-25T13:52:10.554946+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
@@ -2315,90 +2399,6 @@
       "uid": "297b809e77e1e8e3",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news039.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T22:13:16.175456+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-17T22:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
-      "title": "日沼諭史の「AI活用入門塾」 Claudeの「アーティファクト」って何？ Webや提案書の「ひな形」に使ってみよう",
-      "uid": "aec1c71f269ff5b0",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2140975.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "働く側は仕事が増えたと訴え、経営側は人が浮いてこないと嘆く。AIは確かに時間を生んでいる。しかし、その時間はどこへ消えているのか。",
-      "title": "経営「AIでラクして早く帰って」→社員「帰らない」　工数最大9割減のDeNAも悩むAI効率化の壁",
-      "uid": "39e865ec1ec6e413",
-      "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001484/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Microsoftは、「Microsoft 365 Copilot」のアプリや利用体験を「Microsoft Copilot」に整理する変更を8月から段階的に進めている。Web版のURLも変更されるため、接続先を個別に制限している企業では、IT管理者によるネットワーク設定の確認が必要になる可能性がある。",
-      "title": "Microsoftが進めるCopilot再編　「Microsoft Copilot」への移行で、企業への影響は？",
-      "uid": "92704fbb9efbf83e",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/18/2000001586/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T22:13:16.175456+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T21:46:04+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NVIDIAとGoogleは新興企業Emerald AIとともに、電力網の状況に応じて消費電力を動的に制御する「柔軟なデータセンター」の普及を目指す新団体「AEMA」を設立した。送電網の容量不足や住民の電気料金高騰懸念がAIインフラ拡充の壁となる中、計算処理の分散や専用ソフトを活用し、既存電力網の効率運用と接続期間の短縮を図る。",
-      "title": "NVIDIA、Google、Emerald AIがAIデータセンターの電力消費調整を目指すアライアンス設立　Anthropicも参加",
-      "uid": "492c0b6edba21cbe",
-      "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001599/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-17T22:13:16.175456+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-17T21:27:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "AIが人類を絶滅させかねないという「終末論」が、一部の専門家だけの議論ではなく、広く注目を集めるようになっている。米Anthropicと米Googleの研究者が相次いで退職し、最先端AIを開発する企業が、人類を危険にさらしながら競争を続けていると警告したためだ。だが、こうした「実存的リスク」をめぐる議論は、AIを安全にするどころか、大手テック企業の力を強める方向に働いている。",
-      "title": "「AIで人類絶滅論」がAnthropicらの権力を強化　「規制される者が規制を作る」構図に",
-      "uid": "64e83f478ba5ddca",
-      "url": "https://japan.cnet.com/article/35252760/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-17T18:17:25.881543+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-17T14:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIコーディングエージェントは同じAIモデルを使っていても、モデルを動かすハーネスによって費用や性能が変わる可能性があります。カリフォルニア大学バークレー校とAIランキングサイト「Arena」の共同研究チームは、7つのモデルと3つのハーネスを組み合わせた21通りを2種類のベンチマークで比較しました。その結果、タスクの成功率は大きく変わらない一方、費用には最大5倍の差が生じ、モデル本来の提供元とは…",
-      "title": "AIコーディングエージェントにとってハーネスはどれほど重要なのか？",
-      "uid": "de42b88d7f0f1a60",
-      "url": "https://gigazine.net/news/20260917-harnesstax-ai-coding-agents/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-17T18:17:25.881543+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-17T13:45:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIのテストモデルによるHugging Faceへの攻撃事件では、OpenAIが対応の一環としてAI監査組織「METR(Model Evaluation and Threat Research：モデルの評価と脅威の調査)」に監査を依頼しています。また、AnthropicもAIの安全性強化のためにMETRと提携したことを発表しています。このMETRが一体どんな組織なのかについて、代表を務め…",
-      "title": "OpenAIのHugging Face攻撃事件などで調査を担当しているAI監査組織「METR」とは何なのか？",
-      "uid": "a57a994ca51e1960",
-      "url": "https://gigazine.net/news/20260917-model-evaluation-and-threat-research/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
