@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-26T13:09:27.137457+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-26T08:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIやAIエージェントの活用が広がる中、企業のAI利用コストも膨らんでいる。AI活用を減らすことなく、増加するコストを抑えるには何を見直せばいいのか。アクセンチュアの調査から、その実態が見えてきた。",
+      "title": "「AIトークンコスト増を44％抑制」できる可能性も　高性能モデルの“使い過ぎ”、どう減らす？",
+      "uid": "77ca6dfe1a6f7f8f",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/26/news011.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-26T07:47:01.421330+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "ff76dacd6aa717a4",
       "url": "https://gigazine.net/news/20260918-reversing-factorio-rng/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T22:23:23+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "英国王室は、チャールズ国王主催のAIサミットを開催した。NVIDIAのフアンCEOやGoogle DeepMindのハサビス会長ら業界幹部が参加。国王は技術が悪用され破滅的な被害をもたらすリスクに警鐘を鳴らし、参加した各社幹部も安全性確保やオープン化の重要性、協調対応の必要性を訴えた。",
-      "title": "英チャールズ国王、AI大手トップらに「実存的な危険」を警告　NVIDIAやOpenAI、Anthropicが参加",
-      "uid": "3327effb2f43c599",
-      "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001600/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
