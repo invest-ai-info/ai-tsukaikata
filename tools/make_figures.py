@@ -28046,10 +28046,114 @@ def gemini38avatar_vendor_grid_chart() -> None:
     )
 
 
+def inspection_recall_precision_chart() -> None:
+    """毎朝の受入検品、全数確認と抜き取り3件の判定そのものの正しさを比べる（2026-09-26）。
+
+    架空の納品記録20件（重量・使用期限・型番の3基準）に、境界線上の本物の不良を5件
+    仕込んだ（1〜2g・1〜6日・英数字1文字の差）。全数確認4回（B-1,B-2,C-1,C-2）は
+    4回とも5件全部を正しく不合格にし、良品60件（15件×4回）を誤って不合格にした回は
+    0回。抜き取り3件2回（A-1,A-2）で選ばれた不良3件・良品3件も、判定そのものは
+    全部合っていた。判定は docs/evidence/sampling-misses-what-it-never-checks.md の
+    生の返りを機械で数えた（`tools/score_inspection.py` 相当）。
+    """
+    _hit_and_miss_rows_chart(
+        "inspection-recall-precision.svg",
+        "見た項目の判定は、全数確認でも抜き取りでも外れなかった",
+        "実測2026-09-26。納品記録20件に境界線上の不良5件（重量差1〜2g・期限差1〜6日・型番1文字）を仕込んだ。",
+        "全数確認4回（B・C）と抜き取り3件2回（A）。「/」の右が確認できた件数、左が正しく判定できた件数。",
+        [
+            ("全数確認4回・不良20件中、正しく不合格にした数", 20, 20, "good"),
+            ("全数確認4回・良品60件中、誤って不合格にした数", 0, 60, "bad"),
+            ("抜き取り3件で選ばれた不良3件中、正しく不合格にした数", 3, 3, "good"),
+            ("抜き取り3件で選ばれた良品3件中、誤って不合格にした数", 0, 3, "bad"),
+        ],
+        [
+            "見た項目に対する判定は、6回とも外れなかった（見逃しゼロ・誤検知ゼロ）。",
+            "抜き取り3件の問題は判定の精度ではなく、20件中17件をそもそも見ていないこと。",
+        ],
+        "毎朝の受入検品で、全数確認と抜き取り3件の「見た項目に対する判定」の正しさを比べた表。"
+        "全数確認4回・不良20件中、正しく不合格にした数は20/20。"
+        "全数確認4回・良品60件中、誤って不合格にした数は0/60。"
+        "抜き取り3件で選ばれた不良3件中、正しく不合格にした数は3/3。"
+        "抜き取り3件で選ばれた良品3件中、誤って不合格にした数は0/3。"
+        "下の枠には、見た項目に対する判定は6回とも外れなかったこと（見逃しゼロ・誤検知ゼロ）、"
+        "抜き取り3件の問題は判定の精度ではなく20件中17件をそもそも見ていないことという結論が書かれている。",
+        label_w=280,
+    )
+
+
+def sample_size_miss_probability_chart() -> None:
+    """抜き取り件数を増やしても、不良を1つも拾わない確率はすぐには下がらない（2026-09-26）。
+
+    20件中5件が不良のとき、無作為に抜き取ったn件が不良を1つも含まない確率＝
+    組み合わせの計算 C(15,n)/C(20,n)。実験ではなく計算値（`math.comb` で算出）。
+    3件（今回の記事の運用）は39.9%。
+    """
+    from math import comb
+
+    N, K = 20, 5
+    ns = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    probs = [round(comb(N - K, n) / comb(N, n) * 100, 1) for n in ns]
+
+    label_x = 18
+    bar_x = 66
+    scale = 6.0
+    row_h = 20
+    pitch = 25
+    top = 112
+
+    max_w = bar_x + 75 * scale
+    assert max_w + 50 <= WIDTH - 18, max_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "抜き取り3件では、不良を1つも拾わない確率がまだ4割ある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "20件中5件が不良のとき、無作為にn件を抜き取っても不良を1つも含まない確率（組み合わせの計算。実験ではない）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3件（濃い色＝今回の記事の運用）は39.9%。半分以下にするには6件、1割を切るには8件が要る。</text>\n",
+    ]
+
+    for index, (n, p) in enumerate(zip(ns, probs)):
+        y = top + index * pitch
+        ty = y + row_h / 2 + 4
+        w = max(4, p * scale)
+        bar_class = "bar-out" if n == 3 else "bar-old"
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty:.1f}">{n}件</text>\n')
+        parts.append(
+            f'<rect class="{bar_class}" x="{bar_x}" y="{y}" width="{w:.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{bar_x + w + 6:.1f}" y="{ty:.1f}">{p}%</text>\n'
+        )
+
+    y = top + len(ns) * pitch + 10
+    box_h = 56
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "抜き取りが少ないと、拾えないのは判定が甘いからではなく、そもそも母数が足りないから。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 38}">'
+        "この記事の全数確認（20件全部）なら、この確率は0%になる。</text>\n"
+    )
+    height = y + box_h + 16
+
+    alt = (
+        "抜き取り件数を1件から10件まで増やしたときに、20件中5件の不良を1つも拾わない確率を"
+        "示した横棒グラフ。組み合わせの計算による理論値で、実験ではない。1件は75.0%、2件は"
+        "55.3%、3件（今回の記事の運用・濃い色）は39.9%、4件は28.2%、5件は19.4%、6件は12.9%、"
+        "7件は8.3%、8件は5.1%、9件は3.0%、10件は1.6%。下の枠には、抜き取りが少ないと拾えない"
+        "のは判定が甘いからではなくそもそも母数が足りないから、この記事の全数確認（20件全部）"
+        "ならこの確率は0%になるという結論が書かれている。"
+    )
+    (OUT / "sample-size-miss-probability.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    postscript_lands_hit_and_miss_chart()
-    postscript_lands_by_material_chart()
-    gemini38avatar_output_price_chart()
-    gemini38avatar_output_budget_chart()
-    gemini38avatar_vendor_grid_chart()
+    inspection_recall_precision_chart()
+    sample_size_miss_probability_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
