@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-26T22:54:55.475145+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-26T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NTTドコモが、顧客の短い質問から意図をくみ取り、必要な手続きへ導く対話AIを導入した。生成AIが顧客に聞き返しながら情報を絞り込むことで、FAQを探す負担を軽減。AIによる顧客対応の本番運用を支える仕組みも整える。",
+      "title": "NTTドコモ、「正しく質問させる」をやめ、“聞き返すAI”で変える顧客対応",
+      "uid": "66fba5c2f39ce17a",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/27/2000001764/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-26T13:09:27.137457+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "7d3568908a53fbcb",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2609/18/news020.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-17T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "工場建設ゲーム「Factorio」の拡張コンテンツ「Factorio: Space Age」には、製造したアイテムの性能がランダムで上昇する「品質」という仕組みがあります。コンピューター科学を専攻する大学院生のGegell氏はFactorioが使う疑似乱数生成器をリバースエンジニアリングし、ゲーム内の回路だけで乱数の内部状態を割り出して将来どのタイミングで高品質アイテムが完成するのかを予測する仕…",
-      "title": "「Factorio」の乱数生成器を解析して「レジェンド品質のアイテム」が出る未来を予測する試み",
-      "uid": "ff76dacd6aa717a4",
-      "url": "https://gigazine.net/news/20260918-reversing-factorio-rng/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
