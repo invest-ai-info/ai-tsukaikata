@@ -42,30 +42,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-25T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
-      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
-      "uid": "5cfbe0f27bc3e025",
-      "url": "https://openai.com/index/proaction",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-25T21:50:12+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added x-claude-code-prompt-id to the gateway hint headers so LLM gateways can group the requests that serve one user prompt; opt in with CLAUDE_CODE_GATEWAY_HINT_HEADERS=1 Added availa…",
-      "title": "v2.1.283",
-      "uid": "96292ab7d973c873",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
