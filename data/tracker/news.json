@@ -51,6 +51,18 @@
       "vendor": "Google DeepMind"
     },
     {
+      "first_seen": "2026-09-26T07:47:01.421330+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-09-24T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana AI、「日本スタートアップ大賞2026」で総務大臣賞（情報通信分野）を受賞",
+      "uid": "3ef81c37a9e3a0b5",
+      "url": "https://sakana.ai/japan-startup-award-2026/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-09-23T17:07:31.530680+00:00",
       "importance": "minor",
       "label": "OpenAI News",

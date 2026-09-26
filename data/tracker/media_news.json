@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-26T07:47:01.421330+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-26T04:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、AIモデルやエージェントのコーディング能力を測る「Android Bench 2.0」を公開した。エンジニアが数日を要する複雑な長期タスクを課す仕様に刷新。最高通過率は従来の約91％から約28％に急落した。",
+      "title": "「1週間の開発タスク」でAIの限界を検証　Googleが「Android Bench 2.0」公開",
+      "uid": "230bb0312fa0abbb",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/26/news013.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-26T01:37:25.082099+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "英チャールズ国王、AI大手トップらに「実存的な危険」を警告　NVIDIAやOpenAI、Anthropicが参加",
       "uid": "3327effb2f43c599",
       "url": "https://www.itmedia.co.jp/news/article/2609/18/2000001600/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T22:15:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NECは「国際物流総合展2026」において、需要予測や生産計画などの複数システムを横断し、トラブル検知から解決案の提示までを自律的に実行する「NEC SCM AIエージェント」を披露した。",
-      "title": "AIが異常察知し7つの専門エージェントが解決案を提案、NECのSCMソリューション",
-      "uid": "297b809e77e1e8e3",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news039.html",
       "vendor": "ITmedia AI+"
     }
   ]
