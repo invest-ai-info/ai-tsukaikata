@@ -5101,20 +5101,6 @@
       "uid": "713ece3c4acd78b3",
       "url": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/unlocking-britains-next-era-of-productivity-building-a-nation-of-ai-trailblazers/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-06-29T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "An illustration depicting a full-stack AI infrastructure against a dark background",
-      "summary_ja": "AI専門家への質問企画が公開された\n「フルスタック」という専門用語について説明",
-      "summary_source": "gemini",
-      "title": "Ask an AI expert: What exactly is the full stack?",
-      "uid": "a74604468732dd9e",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/",
-      "vendor": "Google"
     }
   ]
 }

@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-27T18:27:56.305107+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-09-27T16:02:18+00:00",
+      "source_id": "media-publickey",
+      "summary": "Docker社はAIエージェント向けのサンドボックス環境をクラウド上で提供する「Docker Cloud Sandboxes」を発表しました。 同社はすでにローカルで動作するサンドボックス環境の「Docker Sandboxes」を今年（2...",
+      "title": "「Docker Cloud Sandboxes」発表、AIエージェント向けサンドボックスをローカルとクラウド間で自由に移動可能に",
+      "uid": "e422c03fe39d944b",
+      "url": "https://www.publickey1.jp/blog/26/docker_cloud_snadboxesai.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-09-27T14:04:41.474471+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -11,6 +23,18 @@
       "uid": "96011aa0acdd3fe0",
       "url": "https://www.publickey1.jp/blog/26/copilot_managed_runtimemicrosoft_365.html",
       "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-27T18:27:56.305107+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-27T14:55:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "MicrosoftとQualcommが、特定のシステム要件を満たしたPCを対象として2024年から展開してきた「Copilot+ PC」ブランドが、公式な発表はあいものの実質的に消滅したことが明らかになりました。 続きを読む...",
+      "title": "MicrosoftとQualcommが展開してきた「Copilot+ PC」ブランドが実質的に消滅",
+      "uid": "2fc55d15261bb6c4",
+      "url": "https://gigazine.net/news/20260927-microsoft-copilot-plus-brand-is-dead/",
+      "vendor": "GIGAZINE"
     },
     {
       "first_seen": "2026-09-27T14:04:41.474471+00:00",
@@ -2375,30 +2399,6 @@
       "uid": "63f2767925cf5366",
       "url": "https://gigazine.net/news/20260918-bonsai-2-27b/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-18T01:14:10+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "コードキャンプは、小学生・中学生向けプログラミングスクール「CodeCampKIDS」において、生成AIについて体験的に学ぶ新たなオプションコース「AI活用コース」の提供を9月1日より開始した。",
-      "title": "CodeCampKIDS、Geminiを活用する小中学生向け「AI活用コース」新設",
-      "uid": "59ff68ec1436a0f6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2142034.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-18T00:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "トコシエは、East Venturesと個人投資家2人を引受先として資金調達を実施した。自然言語や画像から編集可能な3D CADモデルを作成できるAI 3D CAD「Ignite0」の開発体制を強化し、米国を起点としたグローバル展開を本格化する。",
-      "title": "自然言語や画像から3D CADモデルを生成、資金調達で開発と海外展開を加速",
-      "uid": "0c150787c0c047e5",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news015.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
