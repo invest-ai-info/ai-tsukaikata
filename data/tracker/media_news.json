@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-27T22:15:32.982746+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T21:45:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "安川電機は「2026国際ウエルディングショー」において、同社のAI（人工知能）ロボット「MOTOMAN NEXT」による熟練型アーク溶接のデモンストレーションを披露した。",
+      "title": "安川電機が熟練工の「感覚」をAIロボットで再現、カメラで見ながらアーク溶接",
+      "uid": "f3735e966471f85e",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/28/news049.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-27T22:15:32.982746+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T21:38:20+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米連邦政府は、習近平国家主席の国賓訪問に関するファクトシートを公開した。首脳会談でAIを「超知能（SI）」と呼ぶことで合意し、リスク対応の定期対話や連絡チャネルを創設した。公式晩餐会にはマスク氏やザッカーバーグ氏らIT首脳が集結した。",
+      "title": "トランプ大統領と習主席、AIを「超知能（SI）」と呼ぶことで合意　「米中SI対話」も創設",
+      "uid": "44d629ed69f1a588",
+      "url": "https://www.itmedia.co.jp/news/article/2609/28/2000001776/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-27T22:15:32.982746+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T21:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ファナックは「2026国際ウエルディングショー」において、部品の図面を読み取りロボットがアーク溶接を行うAI溶接エージェントのデモンストレーションなどを披露した。",
+      "title": "ファナックがAI溶接エージェント実演　ロボット制御装置が安全PLCに",
+      "uid": "3a92b33d69a50d4a",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/28/news038.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-27T18:27:56.305107+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2363,42 +2399,6 @@
       "uid": "c14be4c6d90614e5",
       "url": "https://ai.watch.impress.co.jp/docs/news/2142067.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-18T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "社内のさまざまなシステムに散在するデータを、AIで横断的に検索、分析できるようにするにはどうすればいいのか。AWSが航空業界を題材に、約29万ファイルを使ったレファレンス実装を公開した。",
-      "title": "散在する“29万ファイル”をAmazon S3に集約、「AIに聞くだけ」で検索可能に――AWSはどう実現？",
-      "uid": "26da6ed4e2de525a",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/18/news025.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-18T01:54:19+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "AnthropicのClaude Mythosがセキュリティ上の懸念から一般公開に待ったがかかり、OpenAIの開発中モデルが外部サービスに不正アクセスするなど、最先端AIがセキュリティ上の脅威、懸念事項にもなっている。",
-      "title": "AIが攻撃してくる時代～企業が検討すべきセキュリティ戦略とは？",
-      "uid": "7bfdd48de6118778",
-      "url": "https://ai.watch.impress.co.jp/docs/interview/2138660.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-18T01:45:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Alibabaの「Qwen3.8 27B」をベースに高いローカルスループットや優れたエネルギー効率を実現するモデル「Ternary Bonsai 2 27B」をアメリカ企業のPrismMLが発表しました。 続きを読む...",
-      "title": "Qwen3.8 27Bを5.9GBまで小型化しつつ性能は98.2％維持したAIモデル「Ternary Bonsai 2 27B」が登場",
-      "uid": "63f2767925cf5366",
-      "url": "https://gigazine.net/news/20260918-bonsai-2-27b/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
