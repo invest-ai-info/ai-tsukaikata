@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-27T01:31:01.868760+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-26T23:57:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Qualcommは、最新のスマートフォン向けSoC「Snapdragon 8 Elite Gen 6」で、AIを使った新しいグラフィックス技術「Adreno Neural Fusion（ANF）」を導入した。ゲームを低い解像度で描画してAIで高解像度化する「Super Resolution」と、フレームの間をAIで補う「Frame Generation」を組み合わせ、GPUの負荷を抑えながら画…",
+      "title": "スマホゲームにも「AI超解像」、Snapdragon 8 Elite Gen 6が対応　半分の解像度で描画→AIで高精細に",
+      "uid": "6cd37f11981bfcee",
+      "url": "https://japan.cnet.com/article/35252991/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-27T01:31:01.868760+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-26T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI搭載のカメラで監視されることを嫌った人物が、着ている人をAIが人と認識できなくなる特製の迷彩柄シャツを作り上げました。 続きを読む...",
+      "title": "AI搭載の監視カメラを混乱させる「デジタル迷彩シャツ」",
+      "uid": "a103392c4cf7565f",
+      "url": "https://gigazine.net/news/20260927-digital-camouflage-shirt/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-26T22:54:55.475145+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2374,30 +2398,6 @@
       "title": "恐るるに足らず？　中国フィジカルAI主要15社と5大集積地で見る「点と線と面」",
       "uid": "67ce50cb7c6cc7ea",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news012.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、Claude Platformでコスト削減と精度向上を両立する3つの手法を公開した。",
-      "title": "AIへの「念のためプロンプト」はもう逆効果　Claudeのトークンを浪費する6つのアンチパターン",
-      "uid": "5717fc7c06cad33c",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/18/news040.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "資生堂ジャパンは研究開発領域にAIエージェントを導入し、膨大な候補から有望な原料を見極める研究員の「目利き」を再現した。探索時間が縮んだだけでなく、提案される原料の数も増えた。同社はエージェントを「誰が作るか」でも作り分けている。",
-      "title": "資生堂、AIエージェントで原料探索を95％削減　研究員の「目利き」を複数LLMで再現",
-      "uid": "7d3568908a53fbcb",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/18/news020.html",
       "vendor": "ITmedia AI+"
     }
   ]
