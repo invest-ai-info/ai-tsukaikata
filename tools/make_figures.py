@@ -28218,9 +28218,140 @@ def secretary_gate_which_reversible_chart() -> None:
     )
 
 
+def cw_fee_safety_line_hit_and_miss_chart() -> None:
+    """クラウドワークスの手数料段階を材料に、「分からない場合は分からないと答えて」を
+    範囲を聞く質問と金額計算の質問の両方に足した実測（2026-09-27）。
+
+    先行記事（safety-line-stops-range-not-calculation.md・Kindleロイヤリティが材料）は
+    範囲の質問では逃げ道の一文だけで4/6→0/6に下がったが、この記事の材料（クラウドワークスの
+    手数料段階）では範囲の質問でも一文だけでは1回も「分かりません」にならなかった（5/5→5/5）。
+    強く名指しした言い直し（数字も目安も一切書くな）で、初めて両方の質問が0になった。
+    判定は docs/evidence/no-line-stops-range-either.md の judge.py 出力から。
+    """
+    _hit_and_miss_rows_chart(
+        "cw-fee-safety-line-hit-and-miss.svg",
+        "「分からないと答えて」は、範囲の質問でも1回も効かなかった",
+        "実測2026-09-27。クラウドワークスの手数料段階が材料。資料は一切見せていない。",
+        "すべて「具体的な数字を言い切った回数」（少ないほど逃げ道が効いている）。",
+        [
+            ("範囲を聞く・逃げ道なし（「区切りと率を教えて」）", 5, 5, "bad"),
+            ("範囲を聞く・逃げ道を追加（「分からない場合は分からないと」）", 5, 5, "bad"),
+            ("範囲を聞く・数字も目安も書くなまで追加", 0, 3, "bad"),
+            ("金額を計算させる・逃げ道なし（「手取りはいくら」）", 5, 5, "bad"),
+            ("金額を計算させる・逃げ道を追加", 5, 5, "bad"),
+            ("金額を計算させる・計算例も目安も書くなまで追加", 0, 3, "bad"),
+        ],
+        [
+            "先行記事（Kindle）は範囲だけ一文で4/6→0/6に下がったが、この材料では下がらない。",
+            "逃げ道の一文だけでは、範囲でも計算でも『分かりません』は1回も出なかった（10/10）。",
+            "『数字も目安も一切書くな』まで名指しして、初めて両方の質問が0/3になった。",
+        ],
+        "「分からない場合は分からないと答えてください」という一文を、クラウドワークスの手数料段階を"
+        "聞く範囲の質問と、手取り額を聞く計算の質問の両方に足した実測結果を示す表。すべて具体的な数字を"
+        "言い切った回数で、少ないほど逃げ道が効いている。範囲を聞く質問（手数料の区切りと率）は、"
+        "逃げ道なしで5回中5回が具体的な数字を言い切り、逃げ道の一文を足しても5回中5回のまま変わらなかった。"
+        "『数字も目安も一切書くな』まで名指しした一文を足すと3回中0回になった。金額を計算させる質問"
+        "（92,000円の手取り）も、逃げ道なしで5回中5回が具体的な金額を言い切り、逃げ道を足しても5回中5回のまま"
+        "変わらず、同じ強い言い直しでようやく3回中0回になった。下の枠には、先行記事のKindleロイヤリティでは"
+        "範囲の質問だけ一文で4/6から0/6に下がったのに、この材料では範囲の質問でも下がらなかったこと、"
+        "『分からない場合は分からないと答えて』だけでは範囲でも計算でも10回中0回しか『分かりません』に"
+        "ならなかったこと、『数字も目安も一切書くな』まで名指しして初めて両方の質問が0になったことが書かれている。",
+        label_w=460,
+    )
+
+
+def cw_fee_safety_line_question_type_chart() -> None:
+    """質問の種類（範囲／金額計算）ごとに、逃げ道の効き方を並べたグループ棒グラフ
+    （2026-09-27）。クラウドワークスの手数料段階が材料。
+    """
+    groups = [
+        (
+            "範囲を聞く質問（手数料の区切りと率）",
+            [
+                ("逃げ道なし", 5, 5),
+                ("逃げ道を追加", 5, 5),
+                ("＋数字も目安も禁止", 0, 3),
+            ],
+        ),
+        (
+            "金額を計算させる質問（92,000円の手取り）",
+            [
+                ("逃げ道なし", 5, 5),
+                ("逃げ道を追加", 5, 5),
+                ("＋計算例も目安も禁止", 0, 3),
+            ],
+        ),
+    ]
+    left, right = 260, 610
+    span = right - left
+    bar_h, bar_gap, group_gap = 18, 6, 22
+    top = 130
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "範囲の質問でも、計算の質問でも、同じ形で効かなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "バーは「具体的な数字を言い切った回数／聞いた回数」。短いほど逃げ道が効いている。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "先行記事（Kindleロイヤリティ）は範囲の質問だけ一文で0になったが、この材料では範囲も計算も"
+        "一文だけでは0にならなかった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "資料はどの回にも見せていない（AIの記憶だけでの回答）。</text>\n",
+    ]
+    y = top
+    for group_label, rows in groups:
+        parts.append(f'<text class="t-strong" x="18" y="{y - 8}">{_esc(group_label)}</text>\n')
+        for label, hit, total in rows:
+            ratio = hit / total
+            bw = max(span * ratio, 3) if hit else 0
+            cls = "box-bad" if hit == total else ("box-good" if hit == 0 else "box")
+            parts.append(f'<text class="t-xs" x="{left - 12}" y="{y + bar_h - 4}" text-anchor="end">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{left}" y="{y}" width="{span}" height="{bar_h}" rx="3"/>\n'
+            )
+            if bw:
+                parts.append(
+                    f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+                )
+            parts.append(
+                f'<text class="t-sm" x="{right + 10}" y="{y + bar_h - 4}">{hit}／{total}</text>\n'
+            )
+            y += bar_h + bar_gap
+        y += group_gap
+
+    y += 4
+    box_h = 44
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "同じ一文（分からない場合は分からないと答えて）が、範囲の質問にも計算の質問にも効かなかった。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "『数字も目安も一切書くな』と名指しして、初めて両方が0になった。</text>\n"
+    )
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "質問の種類ごとに、逃げ道の一文の効き目を比べたグループ横棒グラフ。範囲を聞く質問"
+        "（クラウドワークスの手数料段階の区切りと率）は、逃げ道なしで5回中5回が具体的な数字を"
+        "言い切り、逃げ道を追加しても5回中5回のまま変わらなかった。『数字も目安も禁止』を追加すると"
+        "3回中0回になった。金額を計算させる質問（92,000円の手取り）も、逃げ道なしで5回中5回が具体的な"
+        "金額を言い切り、逃げ道を追加しても5回中5回のまま変わらず、『計算例も目安も禁止』を追加して"
+        "初めて3回中0回になった。下の枠には、同じ一文が範囲の質問にも計算の質問にも効かなかったこと、"
+        "『数字も目安も一切書くな』と名指しして初めて両方が0になったことが書かれている。"
+    )
+    (OUT / "cw-fee-safety-line-question-type.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     inspection_recall_precision_chart()
     sample_size_miss_probability_chart()
     secretary_gate_hit_and_miss_chart()
     secretary_gate_which_reversible_chart()
+    cw_fee_safety_line_hit_and_miss_chart()
+    cw_fee_safety_line_question_type_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
