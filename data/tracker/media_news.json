@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-27T14:04:41.474471+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-09-27T15:59:50+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトは、AIコーディングエージェントのMicrosoft Copilotなどで開発した社内アプリケーションを実行するためのセキュアな基盤「Copilot Managed Runtime」をパブリックプレビューとして公開しました。 ...",
+      "title": "マイクロソフト、企業内アプリの実行基盤「Copilot Managed Runtime」プレビュー公開。Microsoft 365と同じテナント内でコード実行、管理者による集中管理も",
+      "uid": "96011aa0acdd3fe0",
+      "url": "https://www.publickey1.jp/blog/26/copilot_managed_runtimemicrosoft_365.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-09-27T14:04:41.474471+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-27T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "画像生成AIや動画生成AIをPCでローカル実行できるアプリ「ComfyUI」を開発するComfyが、サービスごとの画像・動画生成AIのAPIをまとめて扱えるようにする「Comfy Router」を2026年9月23日にリリースしました。 続きを読む...",
+      "title": "画像・動画生成AIのAPIを安さや制限の緩さで選んで簡単に使えるようにする「Comfy Router」が登場、OpenRouterのコンテンツ生成版",
+      "uid": "2624493f3fba43f4",
+      "url": "https://gigazine.net/news/20260927-comfy-router/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-09-27T01:31:01.868760+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2374,30 +2398,6 @@
       "title": "自然言語や画像から3D CADモデルを生成、資金調達で開発と海外展開を加速",
       "uid": "0c150787c0c047e5",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news015.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "DXERは、社内IT環境と従業員の成果に関する実態調査の結果を発表した。動作の遅い端末やツール不足により、従業員1人当たり年間147時間が失われているという。",
-      "title": "経営者は「AI導入」に夢中、現場は「IT環境」に疲弊　ITサポート軽視が招く時間・人件費ロスの実態",
-      "uid": "7e4df0c2a3fd7f6a",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/18/news036.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-18T00:25:04.694205+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-17T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ヒト型ロボットの競技会や個別企業の新製品、資金調達など、中国のフィジカルAIを巡るさまざまなニュースが相次いでいる。しかし、こうした「点」の情報だけでは、完成品からAI基盤、基幹部品、供給網まで広がる業界全体の構造は見えにくい。SUGENAが開催したセミナーから、主要15社、大学ネットワーク、5つの地域集積を手掛かりに、中国フィジカルAIの全体像を読み解く。",
-      "title": "恐るるに足らず？　中国フィジカルAI主要15社と5大集積地で見る「点と線と面」",
-      "uid": "67ce50cb7c6cc7ea",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/18/news012.html",
       "vendor": "ITmedia AI+"
     }
   ]
