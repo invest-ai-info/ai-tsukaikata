@@ -93,6 +93,36 @@
   `tools/make_figures.py`（座標計算・`_hit_and_miss_rows_chart` ヘルパーを再利用）で
   新規作成し、ビルドの崩れ検査を通過。
 
+### 2026-09-28（自動化専任枠）
+- 公開: 1本（`recipes/reason-on-either-side-holds-rank`）。
+- 実測: `claude --safe-mode --tools "" -p "<指示文>"`（独立サブプロセス。`--safe-mode` で
+  CLAUDE.md・skills・plugins・過去の会話を無効化）。材料2本（`priority-needs-a-reason-not-a-label`
+  と同じ総務経理／ネットショップ運営）×3条件（全部理由あり・再検証／重大4件だけ理由あり／
+  軽い4件だけ理由あり）×各2回＝12回。
+- 手順0＝`git fetch origin`。HEADがdetachedでorigin/mainと同一コミット（`41ed11d`）だったため
+  `git checkout main && git merge --ff-only origin/main` で追従。
+- 手順1＝`### 自動化・ループ優先` 節の未処理は3件（前夜の担当が残したもの）。先頭の
+  「理由を上位のタスクだけに書いても、順位は保てるか」を選定。残り2件
+  （誤検知を検算させて消えるか／取引先が増えても型の確認を続けるか）は今夜は着手せず
+  `- [ ]` のまま残した（0番＝本数はノルマではない、を優先。1本を厚く実測する方針）。
+- 手順2＝`content/_lessons.md` を全節見出しで確認。★204（「重要度も踏まえて」は理由の
+  有無が無いと効かない）が直結し、末尾の「⚠️ 一般化の範囲はこの材料・この回数に限る。
+  『高重要度だけ理由を書けば十分』かは未検証」が今回の実測の出発点。実測後、新しい教訓
+  ★213（理由は片方だけで足りた・★204の適用範囲を絞る）を追記。
+- 手順3＝`grep -h '^## ' content/recipes/*.md` で既存節見出しを確認（5ブロック構成の固定見出し
+  のみ、衝突なし）。`grep -rl "優先順位\|重要度" content/recipes/*.md` で
+  `priority-needs-a-reason-not-a-label` 以外に同テーマの記事が無いことを確認。
+  `reversible-post-stops-anyway`（重要度の話ではなく可逆性の話）とは別軸。
+- 実測の芯＝先行記事の材料A・B（各20件・重大4件／軽い4件／中間12件）を流用し、
+  中間12件の理由文は常に残したまま、重大4件・軽い4件のうちどちらか一方だけを
+  「重要度：高／低」のラベルに置き換えた。基準（全部理由あり）の再検証も含め3条件・
+  材料2本・各2回＝12回、16組×12回＝192組の比較すべてで重大4件が先（逆転0）。
+  判定は `analyze_partial.py`（RESULT行のIDから順位を求める文字列処理）で機械集計。
+- 検証: `pytest -q` 736 passed／`python -m src.build` 234ファイル出力・エラー0。
+  `tools/check_readability.py` は60字以上7%（目安15%以下・最長70字）で通過。図2枚は
+  `tools/make_figures.py`（座標計算・`_hit_and_miss_rows_chart` ヘルパーを再利用）で
+  新規作成し、ビルドの崩れ検査を通過。
+
 ### 2026-09-26（自動化専任枠）
 - 公開: 1本（`recipes/full-check-catches-it-sampling-still-misses-it`）。
 - 実測: Agentツール `general-purpose`（サブエージェント。ツール不使用・チャット直接応答のみを

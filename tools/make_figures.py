@@ -28347,6 +28347,125 @@ def cw_fee_safety_line_question_type_chart() -> None:
     )
 
 
+def priority_partial_reason_hit_and_miss_chart() -> None:
+    """理由を片側だけに書いても、重大4件が軽い4件より先に並ぶ割合は崩れない（2026-09-28）。
+
+    実測。priority-needs-a-reason-not-a-label と同じ材料A・B（各20件、重大4件・軽い4件・
+    中間12件）を使い、中間12件は常に理由文のまま、重大4件と軽い4件の**どちらか一方だけ**を
+    「重要度：高／低」のラベルに置き換えた。材料2本×各2回＝4回・16組×4回＝64組を、
+    「全部に理由あり」「重大4件だけ理由あり」「軽い4件だけ理由あり」の3条件で数えた。
+    参考行は前記事（両方ともラベルのみ・中間12件もラベル）の実測。
+    """
+    rows = [
+        ("全部に理由あり（この記事で再検証）", 64, 64, "good"),
+        ("重大4件だけ理由あり・軽い4件はラベルのみ", 64, 64, "good"),
+        ("軽い4件だけ理由あり・重大4件はラベルのみ", 64, 64, "good"),
+        ("参考: 両方ともラベルのみ（前記事・中間12件もラベル）", 0, 64, "good"),
+    ]
+    notes = [
+        "中間12件の理由文を残したままなら、重大4件と軽い4件のどちらか片方だけラベルにしても、",
+        "並び順は崩れなかった（192組中、逆転0）。崩れたのは前記事のとおり、全員がラベルだけになったときだけ。",
+    ]
+    _hit_and_miss_rows_chart(
+        "priority-partial-reason-hit-and-miss.svg",
+        "理由を片側だけに書いても、重大4件が先に並ぶ割合は変わらない",
+        "材料A・B（各20件）で、重大4件・軽い4件のどちらか一方だけを理由文からラベルに置き換えた。中間12件は常に理由文のまま。",
+        "数字は「重大4件が軽い4件より先だった組数／全体の組数」（16組×2回×2材料＝64組）。",
+        rows,
+        notes,
+        (
+            "理由を片側だけに書いても、重大4件が軽い4件より先に並ぶ割合が崩れないことを示す表形式の図。"
+            "4行とも「重大4件が先だった組数／全体の組数」（16組の比較×材料2本×各2回＝64組）。"
+            "「全部に理由あり（この記事で再検証）」は64／64（100%）。"
+            "「重大4件だけ理由あり・軽い4件はラベルのみ」も64／64（100%）。"
+            "「軽い4件だけ理由あり・重大4件はラベルのみ」も64／64（100%）。"
+            "参考行「両方ともラベルのみ（前記事・中間12件もラベル）」だけが0／64（0%）で赤く表示されている。"
+            "下の注記には、中間12件の理由文を残したままなら、重大4件と軽い4件のどちらか片方だけラベルにしても"
+            "並び順は崩れなかったこと（192組中、逆転0）、崩れたのは前記事のとおり全員がラベルだけになった"
+            "ときだけだったことが書かれている。"
+        ),
+        label_w=430,
+    )
+
+
+def priority_partial_reason_rank_bands_chart() -> None:
+    """3条件とも、重大4件は5〜11位・軽い4件は17〜20位の帯に収まる（2026-09-28）。
+
+    材料A・「優先順位をつけて」だけの指示・1回目の順位を、3条件（全部理由あり／重大4件だけ
+    理由あり／軽い4件だけ理由あり）で比べた。理由文をどちらに寄せても、重大4件と軽い4件の
+    順位帯そのものは同じ位置に留まった。
+    """
+    rows = [
+        ("全部に理由あり", [7, 8, 9, 10], [17, 18, 19, 20]),
+        ("重大4件だけ理由あり", [5, 6, 7, 8], [17, 18, 19, 20]),
+        ("軽い4件だけ理由あり", [8, 9, 10, 11], [17, 18, 19, 20]),
+    ]
+    axis_x0 = 176
+    axis_x1 = WIDTH - 40
+    axis_w = axis_x1 - axis_x0
+    n = 20
+
+    def px(rank: int) -> float:
+        return axis_x0 + (rank - 0.5) / n * axis_w
+
+    row_h = 74
+    top = 108
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "理由文をどちらに寄せても、重大4件・軽い4件の順位帯は同じ位置</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料A・「優先順位をつけて」だけの指示・1回目の並べ替え結果を、3条件で比べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "中間12件はどの条件でも理由文のまま。動かしたのは重大4件・軽い4件のどちらにラベルを使うかだけ。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "横軸は並べ替え結果の順位（1〜20位）。青＝重大4件（TB1〜TB4）・灰＝軽い4件（TA1〜TA4）。"
+        "</text>\n",
+    ]
+
+    for tick in (1, 5, 10, 15, 20):
+        x = px(tick)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 4}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 12}" text-anchor="middle">{tick}</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x0:.1f}" y1="{top - 4}" x2="{axis_x1:.1f}" y2="{top - 4}"/>\n'
+    )
+
+    y = top + 10
+    dot_r = 6.5
+    for label, tb_ranks, ta_ranks in rows:
+        parts.append(f'<text class="t-strong" x="18" y="{y + 14}">{_esc(label)}</text>\n')
+        by = y
+        parts.append(f'<text class="t-xs" x="18" y="{by + 34}">重大4件</text>\n')
+        for r in tb_ranks:
+            parts.append(f'<circle class="bar-out" cx="{px(r):.1f}" cy="{by + 30}" r="{dot_r}"/>\n')
+        ay = by + 52
+        parts.append(f'<text class="t-xs" x="18" y="{ay + 4}">軽い4件</text>\n')
+        for r in ta_ranks:
+            parts.append(f'<circle class="box-bad" stroke-width="1.5" cx="{px(r):.1f}" cy="{ay}" r="{dot_r}"/>\n')
+        y += row_h
+
+    height = y + 12
+    alt = (
+        "理由文をどちらに寄せても、重大4件と軽い4件の順位帯が同じ位置に留まることを示す図。"
+        "材料A・『優先順位をつけて』だけの指示・1回目の並べ替え結果を3条件で比べた。"
+        "横軸は並べ替え結果の順位（1〜20位）。"
+        "『全部に理由あり』は、重大4件（TB1・TB2・TB3・TB4）が7位・8位・9位・10位、"
+        "軽い4件（TA1・TA2・TA3・TA4）が17位・18位・19位・20位。"
+        "『重大4件だけ理由あり』は、重大4件が5位・6位・7位・8位、軽い4件が17位・18位・19位・20位。"
+        "『軽い4件だけ理由あり』は、重大4件が8位・9位・10位・11位、軽い4件が17位・18位・19位・20位。"
+        "3条件とも、重大4件は5位から11位の帯に、軽い4件は17位から20位の帯に収まり、"
+        "理由文をどちらに寄せても順位帯そのものは入れ替わらなかった。"
+    )
+    (OUT / "priority-partial-reason-rank-bands.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     inspection_recall_precision_chart()
     sample_size_miss_probability_chart()
@@ -28354,4 +28473,6 @@ if __name__ == "__main__":
     secretary_gate_which_reversible_chart()
     cw_fee_safety_line_hit_and_miss_chart()
     cw_fee_safety_line_question_type_chart()
+    priority_partial_reason_hit_and_miss_chart()
+    priority_partial_reason_rank_bands_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
