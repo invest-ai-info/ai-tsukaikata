@@ -833,3 +833,28 @@
 - **機械の側は全部緑**＝依存を入れた（今日も未インストール）あと `python -m pytest -q`（**736 passed**）・
   `python -m src.build`（**234ファイル**）・`check_readability.py`（✅ 61文・平均35字・60字以上7%・最長70字
   ＝直すとよいもの0本）
+
+### 🚩 運用（7件目・記事とは無関係。次の担当が必ず踏む）
+
+**🚩7 detached HEAD が再発し、`git push origin main` が「非fast-forward」で4回連続で拒否された。**
+
+- 手順0の時点で HEAD は `origin/main`（`8c791ba`）と同一だったので**中身は正しかった**が、
+  🚨 **HEAD は `refs/heads/main` から外れており（`HEAD detached from refs/heads/main`）、
+  ローカルの `main` ブランチは `d98c28d`（fetch 前の古い位置）に取り残されていた**
+- 🚨 だから `git push origin main` は**私のコミットではなくローカルの `main`（古い方）**を送ろうとして、
+  `Updates were rejected because a pushed branch tip is behind its remote counterpart` を返していた。
+  **エラーメッセージは最初から正しかった**＝「送ろうとしている枝の先が、遠い方より後ろにある」
+- ⚠️ **切り分けに時間を使った**＝API（`list_commits`）でも `git ls-remote` でも遠い方の先は `8c791ba` で、
+  自分のコミットの親も `8c791ba`。どこから見ても fast-forward なのに拒否されるので、
+  ブランチ保護・浅いクローン（実際に `--depth=1000` まで深くした）・中継の方針を順に疑った。
+  **どれも外れで、原因は手元の HEAD の位置だった**
+- ⭕️ **通った押し方＝`git push origin <SHA>:refs/heads/main`**（明示refspec）。
+  そのあと `git checkout -B main origin/main` で復帰した
+- 🔑 **教訓＝手順0の「HEAD が origin/main の続きか」は、SHA の比較だけでは足りない。**
+  `git branch --show-current` が空でないこと（detached でないこと）も見る。
+  📌 9/25 の欄は「detached HEAD の再発も無し」と書いていた＝**確認の観点としては既にあるのに、
+  今夜は手順0で見ていなかった**
+- 📌 **安全のために作った一時ブランチ `review/2026-09-28` が消せない**（`git push --delete` は
+  `the remote end hung up unexpectedly` で中継に拒否される）。中身は main に入っているので**無害な重複**だが、
+  同じ理由で残ったとみられる `review/2026-08-31`（8/31 の確認コミット・**main に未取り込み**）と並んで
+  溜まっていく。⚠️ **オーナーにしか消せない**
