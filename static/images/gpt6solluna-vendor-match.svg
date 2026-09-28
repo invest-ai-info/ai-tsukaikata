@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="491" viewBox="0 0 720 491" role="img" aria-label="5つのモデルの単価を並べた横棒グラフ。100万トークンあたり、2026年9月28日時点。GPT-6 Astra（OpenAI・最上位）は入力10ドル・出力50ドル。Claude Fable 5.1（Anthropic・最上位）も入力10ドル・出力50ドルで同じ。Gemini 3.1 Pro Preview（Google・最上位）は入力2ドル・出力12ドル。GPT-6 Sol（OpenAI）は入力2ドル・出力10ドル。Claude Sonnet 5.5（Anthropic）も入力2ドル・出力10ドルで、GPT-6 Solと完全に一致する。各社の公式料金ページに載っている値だけを並べたもので、賢さの比較ではない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="491"/>
+<text class="t-strong" x="18" y="26">GPT-6 Sol と Claude Sonnet 5.5 は、入力・出力とも同額</text>
+<text class="t-sm" x="18" y="45">薄い青＝入力、濃い青＝出力。各社の公式料金ページに載っている値だけを並べています。</text>
+<text class="t-sm" x="18" y="64">上3行は各社の最上位モデル。下2行がこの記事のGPT-6 Solと、単価が一致したClaude Sonnet 5.5。</text>
+<text class="t-sm" x="18" y="83">⚠️ これは値段の比較で、賢さの比較ではありません。測り方の違う性能テストは並べていません。</text>
+<text class="t" x="18" y="130">GPT-6 Astra（OpenAI・最上位）</text>
+<text class="t-xs" x="244" y="130">入力</text>
+<rect class="bar-in" x="288" y="118" width="60.8" height="16" rx="2"/>
+<text class="t-sm" x="356.8" y="130">$10</text>
+<text class="t-xs" x="244" y="151">出力</text>
+<rect class="bar-out" x="288" y="139" width="304.0" height="16" rx="2"/>
+<text class="t-sm" x="600.0" y="151">$50</text>
+<text class="t" x="18" y="193">Claude Fable 5.1（Anthropic・最上位）</text>
+<text class="t-xs" x="244" y="193">入力</text>
+<rect class="bar-in" x="288" y="181" width="60.8" height="16" rx="2"/>
+<text class="t-sm" x="356.8" y="193">$10</text>
+<text class="t-xs" x="244" y="214">出力</text>
+<rect class="bar-out" x="288" y="202" width="304.0" height="16" rx="2"/>
+<text class="t-sm" x="600.0" y="214">$50</text>
+<text class="t" x="18" y="256">Gemini 3.1 Pro Preview（Google・最上位）</text>
+<text class="t-xs" x="244" y="256">入力</text>
+<rect class="bar-in" x="288" y="244" width="12.2" height="16" rx="2"/>
+<text class="t-sm" x="308.2" y="256">$2</text>
+<text class="t-xs" x="244" y="277">出力</text>
+<rect class="bar-out" x="288" y="265" width="73.0" height="16" rx="2"/>
+<text class="t-sm" x="369.0" y="277">$12</text>
+<text class="t-accent" x="18" y="319">GPT-6 Sol（OpenAI）</text>
+<text class="t-xs" x="244" y="319">入力</text>
+<rect class="bar-in" x="288" y="307" width="12.2" height="16" rx="2"/>
+<text class="t-sm" x="308.2" y="319">$2</text>
+<text class="t-xs" x="244" y="340">出力</text>
+<rect class="bar-out" x="288" y="328" width="60.8" height="16" rx="2"/>
+<text class="t-sm" x="356.8" y="340">$10</text>
+<text class="t-accent" x="18" y="382">Claude Sonnet 5.5（Anthropic）</text>
+<text class="t-xs" x="244" y="382">入力</text>
+<rect class="bar-in" x="288" y="370" width="12.2" height="16" rx="2"/>
+<text class="t-sm" x="308.2" y="382">$2</text>
+<text class="t-xs" x="244" y="403">出力</text>
+<rect class="bar-out" x="288" y="391" width="60.8" height="16" rx="2"/>
+<text class="t-sm" x="356.8" y="403">$10</text>
+<text class="t-xs" x="18" y="461">※ Gemini は20万トークン以下のときの値。超えると入力 $4・出力 $18 に上がります。</text>
+<text class="t-xs" x="18" y="479">※ 出典: 各社の公式料金ページ（OpenAI・Anthropic・Google／2026年9月28日に確認）。</text>
+</svg>

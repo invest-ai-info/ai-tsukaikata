@@ -240,12 +240,30 @@
 （読める量・書ける量・知識の締め切り） ③ `developers.openai.com/api/docs/pricing`（単価）。
 ⚠️ 到達性はクラウド側で担当が測り直すこと（CLAUDE.md 2026-08-05）
 
-- [ ] https://openai.com/index/introducing-gpt-6-sol-and-luna
+- [x] https://openai.com/index/introducing-gpt-6-sol-and-luna
+  - →保管: ✅ **2026-09-28: 公開した** → `content/tools/gpt-6-sol-luna.md`
 
 - [ ] https://www.anthropic.com/claude-sonnet-5-5
   - 2026-09-28 自動追記（major・Anthropic「Introducing Claude Sonnet 5.5」）
 
 ## 処理済み
+
+- https://openai.com/index/introducing-gpt-6-sol-and-luna → **公開済み** content/tools/gpt-6-sol-luna.md（2026-09-28・公開）
+  - 発表ページ本体は今回もbot判定の403（`cf-mitigated: challenge`）で読めず、RSS要旨1文＋developers.openai.comの
+    モデルページ4枚（gpt-5.6-sol/gpt-5.6-luna/gpt-6-sol/gpt-6-luna）・料金ページ・Using GPT-6ガイドで執筆。
+    図3枚（`gpt6solluna-price-vs-prev` / `gpt6solluna-family` / `gpt6solluna-vendor-match`）。出典10件すべて取得成功。
+    `check_numbers.py` は照合対象18個のうち**16個が出典に存在**、残る2個（58%・58.3%）はLunaの出力値下げ幅を
+    この記事が計算した値で、そう明記してある。pytest 736 passed・build 235ファイル。
+    `check_readability.py` は60字以上9%（目安15%以下、最長74字）。
+  - 📌 記事の芯＝**SolとLunaは前世代からおおむね半額**（Solは入力・出力・読み直しの3項目とも正確に半額、
+    Lunaは出力だけ半額を超えて下がる58.3%減）。**旧「GPT-5.6 Sol」は廃止されず、防御的サイバーセキュリティ向け
+    「Daybreak Blue」のエイリアスが指す先として残っている**（料金ページの記載を確認）。既存コードで
+    `gpt-5.6-sol` を指定したままだと値下げの恩恵を受けられない、という実務上の注意点を中心に書いた。
+  - 🔍 **他社比較で単価の完全一致を発見**＝GPT-6 SolとClaude Sonnet 5.5は入力$2・出力$10・キャッシュ読み取り$0.20・
+    キャッシュ書き込み（5分保持）$2.50まで一致（両社の公式料金ページで確認）。Anthropicの「1時間保持」枠
+    （$4.00）にはOpenAI側の対応行が無いことも明記した。
+  - ⚠️ Using GPT-6ガイドに「GPT-6 Astra does not support the none reasoning effort; GPT-6 Sol and Luna do.」と
+    明記されており、AstraにはないreasoningEffort「none」（即答設定）にSol/Lunaが対応する点も出典つきで書いた。
 
 - https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/ → **公開済み** content/tools/gemini-3-8-live-avatar.md（2026-09-25・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/` へ到達（200）。

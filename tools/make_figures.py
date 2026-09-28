@@ -28466,6 +28466,223 @@ def priority_partial_reason_rank_bands_chart() -> None:
     )
 
 
+def gpt6solluna_price_vs_prev_chart() -> None:
+    """GPT-5.6 Sol/Luna → GPT-6 Sol/Luna の単価（2026-09-28）。
+
+    出典＝developers.openai.com のモデルカード（gpt-5.6-sol・gpt-5.6-luna・
+    gpt-6-sol・gpt-6-luna の4ページ）。Sol は入力・出力とも正確に半額。
+    Luna は入力が半額、出力は半額を超えて下がっている（58.3%減）。
+    """
+    groups = [
+        ("Sol 入力", 4.00, 2.00, 20.0),
+        ("Sol 出力", 20.00, 10.00, 20.0),
+        ("Luna 入力", 0.20, 0.10, 20.0),
+        ("Luna 出力", 1.20, 0.50, 20.0),
+    ]
+    left, right = 168, 560
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 96, 14, 5, 30
+    group_h = bar_h * 2 + bar_gap + group_gap
+    sol_scale = span / 20.0
+    luna_scale = span / 1.20
+
+    assert right + 90 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Sol も Luna も、前世代よりおおむね半額</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い灰＝前世代（GPT-5.6）、濃い青＝新モデル（GPT-6）。100万トークンあたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Sol は入力・出力とも正確に半額。Luna は入力が半額、出力はそれ以上（58.3%減）下がっている。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "※ Sol とLuna は目盛りの縮尺が違う（Luna の値が小さいため）。</text>\n",
+    ]
+    for index, (label, old, new, _cap) in enumerate(groups):
+        scale = sol_scale if label.startswith("Sol") else luna_scale
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(label)}</text>\n')
+        drop_pct = round((1 - new / old) * 100)
+        parts.append(f'<text class="t-xs" x="18" y="{y + 28}">{drop_pct}%減</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "旧"), (new, "bar-new", "新"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="144" y="{by + bar_h - 3}" text-anchor="end">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(groups) * group_h + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: developers.openai.com のモデルカード（gpt-5.6-sol・gpt-5.6-luna・gpt-6-sol・gpt-6-luna）。</text>\n"
+    )
+    alt = (
+        "GPT-5.6 Sol/Luna から GPT-6 Sol/Luna への単価の変化を示す横棒グラフ。100万トークンあたりのドル。"
+        "薄い灰＝前世代（GPT-5.6）、濃い青＝新モデル（GPT-6）。"
+        "Sol の入力は4.00ドルから2.00ドルへ50%減、Sol の出力は20.00ドルから10.00ドルへ50%減。"
+        "Luna の入力は0.20ドルから0.10ドルへ50%減、Luna の出力は1.20ドルから0.50ドルへ58%減。"
+        "Sol は入力・出力とも正確に半額だが、Luna の出力は半額を超えて下がっている。"
+    )
+    (OUT / "gpt6solluna-price-vs-prev.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gpt6solluna_family_chart() -> None:
+    """GPT-6 の3モデル（Astra・Sol・Luna）の単価と「none」設定の対応可否（2026-09-28）。
+
+    出典＝developers.openai.com の Using GPT-6 ガイド（「GPT-6 Astra does not
+    support the none reasoning effort; GPT-6 Sol and Luna do.」）とモデル一覧。
+    """
+    rows = [
+        ("GPT-6 Astra", 10.0, 50.0, "最上位", False),
+        ("GPT-6 Sol", 2.0, 10.0, "中位（この記事）", True),
+        ("GPT-6 Luna", 0.10, 0.50, "下位（この記事）", True),
+    ]
+    left, right = 168, 460
+    badge_right = WIDTH - 18
+    badge_w = 130
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 76, 15, 5, 34
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 50.0
+
+    assert badge_right - badge_w > right, (badge_right, badge_w, right)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GPT-6 の3モデル（100万トークンあたり・ドル）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力、濃い青＝出力。「none」は考えずに即答する設定。</text>\n",
+    ]
+    for index, (name, price_in, price_out, note, none_ok) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        parts.append(f'<text class="t-xs" x="18" y="{y + 30}">{_esc(note)}</text>\n')
+        badge_cls = "box-good" if none_ok else "box-bad"
+        badge_tcls = "t-good" if none_ok else "t-bad"
+        badge_text = "none 対応" if none_ok else "none 非対応"
+        parts.append(
+            f'<rect class="{badge_cls}" x="{badge_right - badge_w:.1f}" y="{y - 4}" '
+            f'width="{badge_w}" height="20" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{badge_tcls}" x="{badge_right - badge_w / 2:.1f}" y="{y + 10}" '
+            f'text-anchor="middle">{_esc(badge_text)}</text>\n'
+        )
+        for offset, (value, cls) in enumerate(((price_in, "bar-in"), (price_out, "bar-out"))):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ 出典: developers.openai.com（Using GPT-6 ガイド・モデル一覧・2026年9月28日に確認）。</text>\n"
+    )
+    alt = (
+        "GPT-6の3モデル（Astra・Sol・Luna）の単価と「none」設定への対応可否を示した横棒グラフ。"
+        "100万トークンあたりのドル。"
+        "GPT-6 Astra（最上位）は入力10ドル・出力50ドルで、none非対応。"
+        "GPT-6 Sol（中位）は入力2ドル・出力10ドルで、none対応。"
+        "GPT-6 Luna（下位）は入力0.1ドル・出力0.5ドルで、none対応。"
+        "「none」は考えずに即答する設定で、公式ガイドはAstraが非対応・SolとLunaは対応と明記している。"
+    )
+    (OUT / "gpt6solluna-family.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def gpt6solluna_vendor_match_chart() -> None:
+    """3社の単価を並べる。GPT-6 Sol と Claude Sonnet 5.5 は入力・出力とも同額（2026-09-28）。
+
+    出典＝developers.openai.com の料金ページ（GPT-6 Sol）と
+    platform.claude.com の料金ページ（Claude Sonnet 5.5・Claude Fable 5.1）、
+    ai.google.dev の料金ページ（Gemini 3.1 Pro Preview）。
+    """
+    rows = [
+        ("GPT-6 Astra（OpenAI・最上位）", 10.0, 50.0, False),
+        ("Claude Fable 5.1（Anthropic・最上位）", 10.0, 50.0, False),
+        ("Gemini 3.1 Pro Preview（Google・最上位）", 2.0, 12.0, False),
+        ("GPT-6 Sol（OpenAI）", 2.0, 10.0, True),
+        ("Claude Sonnet 5.5（Anthropic）", 2.0, 10.0, True),
+    ]
+    top_value = 50.0
+    left, right = 288, 592
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 118, 16, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / top_value
+
+    assert right + 80 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "GPT-6 Sol と Claude Sonnet 5.5 は、入力・出力とも同額</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い青＝入力、濃い青＝出力。各社の公式料金ページに載っている値だけを並べています。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上3行は各社の最上位モデル。下2行がこの記事のGPT-6 Solと、単価が一致したClaude Sonnet 5.5。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "⚠️ これは値段の比較で、賢さの比較ではありません。測り方の違う性能テストは並べていません。</text>\n",
+    ]
+    for index, (name, inp, out, matched) in enumerate(rows):
+        y = top + index * group_h
+        name_cls = "t-accent" if matched else "t"
+        parts.append(f'<text class="{name_cls}" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((inp, "bar-in", "入力"), (out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="244" y="{by + bar_h - 4}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 4}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 58
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Gemini は20万トークン以下のときの値。超えると入力 $4・出力 $18 に上がります。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: 各社の公式料金ページ（OpenAI・Anthropic・Google／2026年9月28日に確認）。</text>\n"
+    )
+    alt = (
+        "5つのモデルの単価を並べた横棒グラフ。100万トークンあたり、2026年9月28日時点。"
+        "GPT-6 Astra（OpenAI・最上位）は入力10ドル・出力50ドル。"
+        "Claude Fable 5.1（Anthropic・最上位）も入力10ドル・出力50ドルで同じ。"
+        "Gemini 3.1 Pro Preview（Google・最上位）は入力2ドル・出力12ドル。"
+        "GPT-6 Sol（OpenAI）は入力2ドル・出力10ドル。"
+        "Claude Sonnet 5.5（Anthropic）も入力2ドル・出力10ドルで、GPT-6 Solと完全に一致する。"
+        "各社の公式料金ページに載っている値だけを並べたもので、賢さの比較ではない。"
+    )
+    (OUT / "gpt6solluna-vendor-match.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     inspection_recall_precision_chart()
     sample_size_miss_probability_chart()
@@ -28475,4 +28692,7 @@ if __name__ == "__main__":
     cw_fee_safety_line_question_type_chart()
     priority_partial_reason_hit_and_miss_chart()
     priority_partial_reason_rank_bands_chart()
+    gpt6solluna_price_vs_prev_chart()
+    gpt6solluna_family_chart()
+    gpt6solluna_vendor_match_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
