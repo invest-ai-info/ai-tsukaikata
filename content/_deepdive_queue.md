@@ -242,6 +242,9 @@
 
 - [ ] https://openai.com/index/introducing-gpt-6-sol-and-luna
 
+- [ ] https://www.anthropic.com/claude-sonnet-5-5
+  - 2026-09-28 自動追記（major・Anthropic「Introducing Claude Sonnet 5.5」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/ → **公開済み** content/tools/gemini-3-8-live-avatar.md（2026-09-25・公開）
