@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-28T00:53:16.457456+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-28T00:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "MetaのAIエージェント「Muse」は、訓練を受けた人間のコンシェルジュに通話のタスクを回すことがあったと報じられている。",
+      "title": "Metaの最新AIエージェント、裏で「人間」が電話をかける試験運用が判明",
+      "uid": "831cd17f517a1800",
+      "url": "https://japan.cnet.com/article/35253015/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-28T00:53:16.457456+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-09-28T00:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Microsoftが2024年に打ち出したAI PCのブランド「Copilot+ PC」の名称が、新製品から姿を消し始めている。",
+      "title": "マイクロソフト、「Copilot+ PC」ブランド縮小か　新Surfaceで名称使わず",
+      "uid": "5ca6798e3d6c1d95",
+      "url": "https://japan.cnet.com/article/35253016/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-09-28T00:53:16.457456+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "IDCは、AIエージェントの普及に伴う「SaaS終焉論」を分析したレポートを公開した。AIはSaaSを代替するのではなくデータモデルを拡張すると指摘。市場ごとの浸透格差や成果型課金の急増など、真の構造変化を解説した。",
+      "title": "「AIがSaaSを消す」は根本的な誤解　IDCが示す“本当に起こる変化”とは",
+      "uid": "3daa9f84b78bb49b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/28/news036.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-28T00:53:16.457456+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "アサヒビールやニチレイ、アスクルなど、日本企業を狙うサイバー攻撃が相次いでいる。米HPのマイケル・ボイルSVPに、日本市場における新たなセキュリティ戦略を聞いた。社員の意識向上を支援する「コンサル型営業」への変革や、クラウド非接続で情報漏えいを防ぐエッジAI搭載PC「HP IQ」の投入など、単なるハードウェア販売からの脱却を図る。",
+      "title": "「アサヒ・ニチレイの惨劇」はどう防げた？　米HP幹部が語る“ネット遮断AI”と日本攻略",
+      "uid": "6bb3116656b053d9",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/28/news053.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-28T00:53:16.457456+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIロボットを工場や物流現場に導入しても、それだけで現場が変わるわけではない。システム統合や設備の自動化、導入後の運用・保守など、さまざまな企業の力が必要になる。Listerの分析から、フィジカルAIの実装を支える構造が見えてきた。",
+      "title": "ロボットを入れれば終わりじゃない　フィジカルAIを現場で動かす企業の役割とは",
+      "uid": "ad90907382cb8020",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/28/2000001734/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-28T00:53:16.457456+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-27T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "離職防止にAIを活用する医療現場がある。筑波記念病院では、組織分析AIで部署ごとの職場課題を可視化し、具体的な改善策につなげている。看護職員の離職率は2021年度の16.2％から2025年度には6.7％に低下したという。",
+      "title": "離職率16.2％から6.7％へ　筑波記念病院がAIで見つけた「職場の見えない課題」",
+      "uid": "c22eca175de8f2fa",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/28/2000001765/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-27T22:15:32.982746+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2326,78 +2398,6 @@
       "title": "Anthropic、AI開発ペースを測る3指標を公開",
       "uid": "4fdf262817d14b7a",
       "url": "https://ai.watch.impress.co.jp/docs/news/2142120.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-18T03:06:43+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "KDDIは9月18日、「KDDI AIエージェント開発支援」の提供を開始した。",
-      "title": "KDDI、Gemini活用のAIエージェント開発支援を開始",
-      "uid": "5dc4808e4486b2f3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2142083.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-18T02:50:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIの中継サービス「OpenRouter」などで、開発元を隠匿した「ステルスモデル」として「Union Alpha」というモデルが公開されています。ベンチマークスコアでGPT-6 Astraと同レベルのスコアを出していて、後にunbiased.aiの新モデル「Pareto 26.9」であることが特定されました。 続きを読む...",
-      "title": "謎の高性能AIモデル「Union Alpha」が公開される、GPT-6 AstraやClaude Fable 5.1と同等ベンチマークスコア",
-      "uid": "c50edecdb3f60f71",
-      "url": "https://gigazine.net/news/20260918-union-alpha/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-18T02:34:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが法律関係のタスクに特化したAIモデル「Astra for Law」を発表しました。GPT-6 Astraを法律業務向けに調整したものだとのことです。 続きを読む...",
-      "title": "法務向けAI「Astra for Law」が登場、GPT-6 Astraより法務タスクがとても上手",
-      "uid": "aee05d6bb2d46c64",
-      "url": "https://gigazine.net/news/20260918-openai-astra-for-law/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-18T02:21:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2023年12月、アメリカでの発行部数が第3位のThe New York Timesが、生成AIモデルのトレーニングに自社コンテンツを利用したとして、OpenAIとMicrosoftを著作権侵害で訴えました。この訴訟に関する資料から、Microsoftの幹部がAIによるデータスクレイピングを「人類史上最大の労働窃盗」と表現していたことが明らかになっています。 続きを読む...",
-      "title": "Microsoft幹部がAIによるデータスクレイピングを「人類史上最大の労働窃盗」と表現",
-      "uid": "3d5549a66b8efe60",
-      "url": "https://gigazine.net/news/20260918-microsoft-exec-called-ai-scraping-largest-theft-labor/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-09-18T02:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Huaweiが次世代AIチップ「Ascend 960DT」を2027年第1四半期に投入する計画を発表しました。同社は多数のチップを接続する大規模なAIシステムの開発も進めており、NVIDIAに対抗する方針です。 続きを読む...",
-      "title": "Huaweiが次世代AIチップ「Ascend 960DT」を2027年初めに前倒し投入、最大100万個のプロセッサーを連携させる構想も発表",
-      "uid": "136bb7449fb59ad0",
-      "url": "https://gigazine.net/news/20260918-huawei-ascend-960dt20260918-huawei-ascend-960dt/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-18T05:58:12.647888+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-18T02:13:54+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Salesforceに2021年に買収された後は子会社として運営されているSlack Technologies（以下、同社が提供するサービスも併せてSlack）は、Salesforceが9月15日からサンフランシスコ市内の会場で開催した年次イベント「Dreamforce」において、Slackの新機能などを発表した。",
-      "title": "Slack、チャンネル内で同僚のように動く「Slackbot in Channels」発表 音声会話や動画生成など新機能を追加",
-      "uid": "c14be4c6d90614e5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2142067.html",
       "vendor": "Impress AI Watch"
     }
   ]
