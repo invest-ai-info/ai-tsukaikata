@@ -230,6 +230,18 @@
 - [x] https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/
   - →保管: ✅ **2026-09-25: 公開した** → `content/tools/gemini-3-8-live-avatar.md`
 
+### 🆕 2026-09-28 の補充（週次の検査が赤＝未処理0件・手動追記）
+
+**なぜ足したか＝9/27 の週次（Freshness Check）が「未処理0件」で失敗。**`news.json` の 9/22 以降で
+読めるホストの major お知らせは Opus 5.5 と Gemini 3.8 Live Avatar だけで、どちらも処理済み。
+下の1件は `openai.com` 本体（bot判定の403）だが、CLAUDE.md の「OpenAI は出典を振り替える」で書ける。
+手元のPC（2026-09-28）で次の3つが 200 を返し、数字が載っていることを確かめた:
+① `openai.com/news/rss.xml`（要旨） ② `developers.openai.com/api/docs/models/gpt-6-sol` と `.../gpt-6-luna`
+（読める量・書ける量・知識の締め切り） ③ `developers.openai.com/api/docs/pricing`（単価）。
+⚠️ 到達性はクラウド側で担当が測り直すこと（CLAUDE.md 2026-08-05）
+
+- [ ] https://openai.com/index/introducing-gpt-6-sol-and-luna
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/ → **公開済み** content/tools/gemini-3-8-live-avatar.md（2026-09-25・公開）
