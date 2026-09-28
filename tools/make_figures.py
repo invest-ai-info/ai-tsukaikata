@@ -28466,6 +28466,130 @@ def priority_partial_reason_rank_bands_chart() -> None:
     )
 
 
+def youtube_ai_policy_f_hit_and_miss_chart() -> None:
+    """Fシナリオ（ニュース記事の読み上げ）の根拠政策を、正しく『再利用されたコンテンツ』と
+    言い当てた回数（2026-09-28）。
+
+    片方の政策（量産型のコンテンツ）の原文だけを貼ると0/3だったのが、両方の原文を貼って
+    どちらの政策かを名指しさせると3/3に直った。判定は
+    docs/evidence/right-verdict-wrong-policy-until-both-shown.md の指示文3・4・5・6から。
+    """
+    _hit_and_miss_rows_chart(
+        "youtube-ai-policy-f-hit-and-miss.svg",
+        "Fの根拠を「再利用されたコンテンツ」と正しく言い当てた回数",
+        "実測2026-09-28。Fは「ニュース記事をAIに読み上げさせるだけ」という場面。",
+        "量産型のコンテンツ（AI生成の量産）とは別の政策が根拠になる。",
+        [
+            ("6問まとめて・原文なし", 1, 3, "good"),
+            ("量産型の原文だけ貼る", 0, 3, "good"),
+            ("量産型＋再利用、両方貼る", 3, 3, "good"),
+            ("Fだけ単独・原文なし・保留可", 2, 2, "good"),
+        ],
+        [
+            "片方の原文だけ貼ると、対象外のFまでその理屈に押し込めて『不可』と判定した（0/3）。",
+            "両方の原文を貼って『どちらの政策か』と名指しさせると、3/3で正しく切り分けられた。",
+            "資料を見せなくても、Fだけ単独で『分からなくてよい』と添えると2/2で正解した。",
+        ],
+        "Fシナリオ（ニュース記事をAIに読み上げさせるだけの動画）の根拠政策を、正しく「再利用されたコンテンツ」と"
+        "言い当てた回数を4条件で比べた図。バーは「言い当てた回数／聞いた回数」。6問をまとめて原文なしで聞いた"
+        "条件は3回中1回。量産型のコンテンツの原文だけを貼った条件は3回中0回で、対象外のFまでその政策の理屈に"
+        "押し込めて『収益化できない』と判定した。量産型と再利用、両方の原文を貼ってどちらの政策かを名指しさせた"
+        "条件は3回中3回で正解した。Fだけを単独で、原文なしで『分からなくてよい』と添えて聞いた条件は2回中2回"
+        "正解した。下の枠には、片方の原文だけ貼ると対象外のFまでその理屈に押し込めて判定したこと、両方の原文を"
+        "貼ってどちらの政策かを名指しさせると正しく切り分けられたこと、資料を見せなくてもFだけ単独で聞くと"
+        "正解率が上がったことが書かれている。",
+        label_w=300,
+    )
+
+
+def youtube_ai_policy_three_boxes_chart() -> None:
+    """YouTubeの収益化ポリシーのうち、この記事が扱った3つの政策と、
+    6つの実験シナリオ（A〜F）がどこに属するかを示す図（2026-09-28）。
+
+    出典: support.google.com/youtube/answer/1311392?hl=ja（2026-09-28確認）。
+    """
+    box_x, box_w = 18, 684
+    row_h = 92
+    top = 100
+
+    def chip(x: float, y: float, label: str, ok: bool) -> str:
+        klass = "box-good" if ok else "box-bad"
+        tcls = "t-good" if ok else "t-bad"
+        w = 92
+        out = f'<rect class="{klass}" x="{x:.1f}" y="{y:.1f}" width="{w}" height="24" rx="4"/>\n'
+        out += (
+            f'<text class="{tcls}" x="{x + w / 2:.1f}" y="{y + 16:.1f}" text-anchor="middle" '
+            f'style="font-weight:700">{label}</text>\n'
+        )
+        return out
+
+    rows = [
+        (
+            "量産型のコンテンツ（旧称: 繰り返しの多いコンテンツ）",
+            "box-accent",
+            [("A 許可", True), ("B 許可", True), ("C 不許可", False), ("E 許可", True)],
+        ),
+        (
+            "再利用されたコンテンツ",
+            "box-accent",
+            [("F 不許可", False)],
+        ),
+        (
+            "満足度の低い、または不快なコンテンツ（この記事では原文を見せていない）",
+            "box-quiet",
+            [("D 不許可", False)],
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "6つの場面は、3つの別々の政策に分かれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "YouTubeのチャンネル収益化ポリシー（support.google.com/youtube/answer/1311392）2026-09-28確認。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「AI生成コンテンツ」の例は量産型のコンテンツの中にしかない。F・Dはそれぞれ別の政策の対象。</text>\n",
+    ]
+    y = top
+    for title, klass, chips in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 12}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(title)}</text>\n')
+        cx = box_x + 16
+        cy = y + 36
+        for label, ok in chips:
+            parts.append(chip(cx, cy, label, ok))
+            cx += 92 + 10
+        y += row_h
+
+    y += 6
+    box_h = 46
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "片方の政策の原文だけ見せると、対象外の場面までその政策の理屈で判定されやすい。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "関連する政策を全部見せて、どの政策かを名指しさせると、正しく切り分けられた。</text>\n"
+    )
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "YouTubeのチャンネル収益化ポリシーのうち、記事が扱った3つの政策と、6つの実験シナリオ（A〜F）が"
+        "どこに属するかを示す図。1段目「量産型のコンテンツ（旧称: 繰り返しの多いコンテンツ）」には、"
+        "Aオリジナルキャラクターの映像化（許可）、B台本編集・背景生成はAIでストーリーは自分で調査（許可）、"
+        "C同テーマのAI生成動画をテンプレートで毎日投稿（不許可）、Eイントロ・エンディングは同じで中身は"
+        "動画ごとに違う（許可）が属する。2段目「再利用されたコンテンツ」には、Fニュース記事をAIに読み上げ"
+        "させるだけ（不許可）が属する。3段目「満足度の低い、または不快なコンテンツ（この記事では原文を"
+        "見せていない）」には、D関連性の薄いAIクリップをつなぎ合わせるだけ（不許可）が属する。下の枠には、"
+        "片方の政策の原文だけ見せると対象外の場面までその政策の理屈で判定されやすいこと、関連する政策を"
+        "全部見せてどの政策かを名指しさせると正しく切り分けられたことが書かれている。"
+    )
+    (OUT / "youtube-ai-policy-three-boxes.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     inspection_recall_precision_chart()
     sample_size_miss_probability_chart()
@@ -28475,4 +28599,8 @@ if __name__ == "__main__":
     cw_fee_safety_line_question_type_chart()
     priority_partial_reason_hit_and_miss_chart()
     priority_partial_reason_rank_bands_chart()
+    youtube_ai_policy_f_hit_and_miss_chart()
+    youtube_ai_policy_three_boxes_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
