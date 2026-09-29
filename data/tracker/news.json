@@ -15,6 +15,32 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-09-29T08:36:30.590774+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-28T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences.",
+      "summary_ja": "OpenAIが豪政府ウェブサイト関連の問題で謝罪\n豪州のサイバー防御を強化するため安全対策を強化",
+      "summary_source": "gemini",
+      "title": "How we will do better for Australia",
+      "uid": "1ddd161d6aab3df0",
+      "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-29T08:36:30.590774+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-28T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "title": "Towards safety cases for frontier AI training",
+      "uid": "9580f3c584f53a77",
+      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-28T22:05:11.546634+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
