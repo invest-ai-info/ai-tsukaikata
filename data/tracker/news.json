@@ -1,6 +1,58 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-29T19:27:30+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added CLAUDE_CODE_DISABLE_WEB_FETCH environment variable to turn off the WebFetch tool Added claude --desktop to open the Claude desktop app on the current directory, or on a session w…",
+      "title": "v2.1.285",
+      "uid": "b267ce995068e122",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-29T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
+      "summary_ja": "OpenAIが開発者イベントで多数の新発表\n「DevDay 2026」で20以上の開発関連情報\nGPT-6 AstraやChatGPT、APIなどのツールを紹介",
+      "summary_source": "gemini",
+      "title": "DevDay 2026 Recap",
+      "uid": "374a685dc4c48b2c",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-29T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices.",
+      "summary_ja": "新AIモデル「GPT-6.1 Sol」が登場\nAstraに近い賢さで、仕事やPC作業に活用可能\n利用料金はAstraの5分の1になる",
+      "summary_source": "gemini",
+      "title": "Introducing GPT-6.1 Sol",
+      "uid": "897be7a558057623",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-09-29T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Dots by OpenAI are a proactive assistant that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
+      "title": "Introducing dots",
+      "uid": "e16224e1ee18641c",
+      "url": "https://openai.com/index/introducing-dots",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-28T22:05:11.546634+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -5125,34 +5177,6 @@
       "uid": "ca632fc035d4d4de",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.115.1",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-01T18:15:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "June Pixel Drop hero",
-      "summary_ja": "2026年6月に最新のAI関連ニュースが発表された。",
-      "summary_source": "gemini",
-      "title": "The latest AI news we announced in June 2026",
-      "uid": "54fde1b0fdd2cb49",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-01T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Google, the New York Jobs CEO Council and Urban Assembly hosted an AI summit for 150 education and industry leaders.",
-      "summary_ja": "ニューヨーク市で教育におけるAI活用に関する会議が開催された。\nGoogle、New York Jobs CEO Councilなどが主催し、\n150人の教育者や産業界リーダーが参加した。",
-      "summary_source": "gemini",
-      "title": "New York City educators and industry leaders gathered at Google’s offices to shape the future of AI in classrooms.",
-      "uid": "8cd77978c122fb1d",
-      "url": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
-      "vendor": "Google"
     }
   ]
 }

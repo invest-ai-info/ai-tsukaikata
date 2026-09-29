@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-29T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "元メルカリCTOが日本企業のグローバル開発とAI時代の組織づくりについて、当事者としての経験を語る連載。第2回は、「暗黙知」を無意識のうちに生み出している日本の「ハイコンテクスト」な文化について。",
+      "title": "コードが「新しいアセンブリ言語」になるAI時代、日本の「職人気質」がソフトウェア開発の足かせになる理由",
+      "uid": "d2290c0878a8a7bd",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/30/news019.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-29T19:08:07+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは新モデル「GPT?6.1 Sol」を発表。「GPT?6 Astra」に迫る性能を5分の1の料金で提供するとうたう。",
+      "title": "「GPT-6.1 Sol」登場　「一部Astra並み」性能をコスト5分の1で提供　先代モデルからわずか1週間で公開",
+      "uid": "58914c3a0f1fe6ee",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/30/2000001867/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-29T18:42:13+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米OpenAIは9月29日（現地時間）、開発者向けカンファレンス「OpenAI DevDay 2026」の中で、リアルタイムの意思決定を提供する「Decisions API」のプレビュー版を発表した。直近で話題になっていたAIモデル「Jev」へ追従する動きとみられる。",
+      "title": "OpenAIが「Jev」に追従、「Decisions API」　Lunaで“リアルタイムに意思決定”",
+      "uid": "f33bd17f1ddf2efd",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/30/2000001866/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-29T18:09:11+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米OpenAIは9月29日（現地時間）、フロンティアモデル「GPT-6 Astra」を通常の最大8倍高速に推論できる「Ultrafast」モードを発表した。利用には、最上位の新プラン「Pro 500」（月額500ドル、約7万8000円）もしくは従量課金のAPIが必要。",
+      "title": "ChatGPTに「Ultrafast」、Astraを8倍高速に　利用には「月500ドル」最上位プランが必須",
+      "uid": "81481e055b046e06",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/30/2000001865/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-29T20:51:21.481663+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-29T18:02:40+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは常時稼働エージェント機能「dots」を発表。「GPT-6 Astra」を搭載し、ユーザーが定義した目標に応じて、クラウド上のコンピュータで24時間自律的に稼働するとうたう。",
+      "title": "OpenAI、「24時間働く」エージェント「dots」発表　Astra搭載、クラウド上で常時稼働",
+      "uid": "9b094d9225ea9cdb",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/30/2000001864/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-29T15:55:59.129583+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2339,66 +2399,6 @@
       "uid": "a00a9590b55e9091",
       "url": "https://gigazine.net/news/20260924-grok-4-7/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-24T04:57:20.166847+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-09-24T02:20:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米クアルコムは9月23日（現地時間）、イヤホンやヘッドホンなどのオーディオ機器向けプラットフォーム「Snapdragon Sound Elite Gen 2」を発表した。低消費電力のWi-Fi 6EとAI処理機能を統合し、対応機器からクラウド上のAIエージェントやサービスへ直接接続できる。",
-      "title": "スマホ不要、クラウドAIへ直接つながるイヤホン登場へ--「Snapdragon Sound Elite Gen 2」発表",
-      "uid": "dc4448451bc8277d",
-      "url": "https://japan.cnet.com/article/35252900/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-24T04:57:20.166847+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-24T02:15:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "ドナルド・トランプ米大統領は国連総会で演説し、今後の米政府文書では「artificial intelligence（人工知能）」の代わりに「super intelligence（スーパーインテリジェンス）」、略して「SI」という言葉を使うと述べた。",
-      "title": "トランプ大統領、AIを「SI」に改称宣言　ネットでは皮肉が続々",
-      "uid": "24f848f77c6ebb80",
-      "url": "https://japan.cnet.com/article/35252898/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-24T04:57:20.166847+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-24T01:36:40+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "スプリングスプレッドは、台湾発の“春風系AI VTuber”「春咲ちの（はるさき ちの）」を発表した。初配信は10月10日21時より、YouTubeにて実施。",
-      "title": "台湾発AI VTuber「春咲ちの」登場。視聴者との対話で人間の心や文化を学ぶ",
-      "uid": "eecd4cbcc197ebe2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2142728.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-24T04:57:20.166847+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-24T00:47:12+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは「Google AI」の各プランに、「Google Colab」の有料特典を組み込むと発表した。",
-      "title": "Google AIサブスクに「Colab」有料特典をバンドル　「高性能GPU」にアクセス可能に",
-      "uid": "fa6086a3937ad3da",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2609/24/2000001685/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-23T23:44:44.256252+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-23T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、Webブラウザの拡張機能「Claude in Chrome」を全ての有料プランで一般提供した。操作ごとの承認を求めず、AIエージェントが自律的にWebブラウザを操作する。実行の前に安全性分類器が各操作を検証する。",
-      "title": "Claudeがブラウザを自律操作する「Claude in Chrome」一般提供　プロンプトインジェクションをどう防ぐ？",
-      "uid": "9536cfcf73088088",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/24/news024.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
