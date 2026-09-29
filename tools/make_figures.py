@@ -28683,6 +28683,164 @@ def gpt6solluna_vendor_match_chart() -> None:
     )
 
 
+def recheck_removes_only_the_miscalc_survival_chart() -> None:
+    """検算を頼んでも、本物の指摘3件は4回とも1件も消えなかった。
+
+    実測（2026-09-29）。`urgent-wording-does-not-catch-more` の指示文4（本番用の
+    数字突合）を教材Aで2回試した過去の生の指摘結果（1回目＝誤検知なし・
+    2回目＝誤検知1件あり）に対して、「指摘した号だけ計算をやり直して確認して」
+    （具体的）と「指摘した号をもう一度確認して」（曖昧）の2通りの検算指示を、
+    独立のサブエージェントでそれぞれ新規に試した（計4回）。
+    """
+    rows = [
+        ("計算をやり直して×誤検知なしの回", 3, 3),
+        ("計算をやり直して×誤検知ありの回", 3, 3),
+        ("もう一度確認して×誤検知なしの回", 3, 3),
+        ("もう一度確認して×誤検知ありの回", 3, 3),
+    ]
+    label_w = 300
+    cell_w, cell_h, gap = 190, 34, 12
+    top = 168
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    right_edge = grid_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "検算を頼んでも、本物の指摘は1件も消えなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「重要です」を足しても見逃しは減らないの指示文4（数字の突合をまとめた指示）を"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "教材Aで2回試した過去の生の指摘結果（誤検知なし1回・誤検知1件あり1回）に、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「計算をやり直して」（具体的）と「もう一度確認して」（曖昧）の2通りの検算を"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "独立の新規会話でそれぞれ試した。本物の欠陥3件（割引率・過去日・条件抜け）の生存数。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="121">'
+        "生の回答は docs/evidence/ に全文置いてある。"
+        "</text>\n",
+    ]
+
+    for row_index, (label, val, n) in enumerate(rows):
+        y = top + row_index * pitch
+        ok = val == n
+        box = "box-good" if ok else "box-bad"
+        tone = "t-good" if ok else "t-bad"
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="{box}" x="{grid_x}" y="{y}" '
+            f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        text = f"{val}/{n} 本物の指摘が生存"
+        tx = grid_x + cell_w / 2 - len(text) * 5.0
+        parts.append(
+            f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    y = top + len(rows) * pitch + 4
+    box_h = 56
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "誤検知（1件）が含まれていた2回は、2回とも正しく取り下げられた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "検算の言い方（具体的・曖昧）による差は、この4回では出なかった。</text>\n"
+    )
+    y += box_h + 20
+
+    height = y + 4
+    alt = (
+        "検算を頼んでも本物の指摘が消えなかったことを示すマス目。"
+        "「重要です」を足しても見逃しは減らないの指示文4（数字の突合をまとめた指示）を"
+        "架空のメルマガ下書き12件（教材A）で2回試した過去の生の指摘結果（1回目は誤検知なし、"
+        "2回目は正しく10%オフだった号を誤って8.2%オフと指摘した誤検知が1件あり）に対して、"
+        "「指摘した号だけ計算をやり直して確認して」という具体的な検算指示と、"
+        "「指摘した号をもう一度確認して」という曖昧な検算指示を、それぞれ独立の新規会話で試した。"
+        "本物の欠陥3件（割引率の食い違い・過去日・条件抜け）は、具体的×誤検知なし3/3、"
+        "具体的×誤検知あり3/3、曖昧×誤検知なし3/3、曖昧×誤検知あり3/3と、4回とも1件も"
+        "消えなかった。誤検知が含まれていた2回は、具体的・曖昧のどちらの検算でも"
+        "正しく取り下げられ、検算の言い方による差はこの4回では見られなかった。"
+    )
+    (OUT / "recheck-removes-only-the-miscalc-survival.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def recheck_removes_only_the_miscalc_arithmetic_chart() -> None:
+    """誤検知の中身＝AI自身の引き算の間違いを、正しい計算と並べて見せる。
+
+    実測（`urgent-wording-does-not-catch-more` の指示文4・教材A・2回目より）。
+    正しくは 11,000円−9,900円＝1,100円で、1,100÷11,000＝10%（本文の「10%オフ」と一致）。
+    誤検知は、この引き算を900円と間違え「約8.2%オフ」と指摘していた。
+    """
+    box_w, box_h, gap = 330, 150, 20
+    top = 130
+    left_x = 18
+    right_x = left_x + box_w + gap
+    assert right_x + box_w <= WIDTH - 18, right_x + box_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "誤検知の中身は、AI自身の引き算の間違いだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "教材Aの1号（通常11,000円が期間限定で9,900円）は、正しく10%オフだった。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "指示文4の2回目は、この号を「約8.2%オフ」と誤って指摘した。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の指摘文は docs/evidence/urgent-wording-does-not-catch-more.md にある。"
+        "</text>\n",
+    ]
+
+    parts.append(f'<rect class="box-good" x="{left_x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    parts.append(f'<text class="t-good" x="{left_x + 16}" y="{top + 26}">正しい計算（検算後）</text>\n')
+    parts.append(f'<text class="mono" x="{left_x + 16}" y="{top + 56}">11,000円 − 9,900円 = 1,100円</text>\n')
+    parts.append(f'<text class="mono" x="{left_x + 16}" y="{top + 82}">1,100 ÷ 11,000 = 10%</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="{left_x + 16}" y="{top + 112}">→ 本文の「10%オフ」と一致する</text>\n'
+    )
+
+    parts.append(f'<rect class="box-bad" x="{right_x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    parts.append(f'<text class="t-bad" x="{right_x + 16}" y="{top + 26}">誤検知（元の指摘）</text>\n')
+    parts.append(f'<text class="mono" x="{right_x + 16}" y="{top + 56}">「実際は900円引き」</text>\n')
+    parts.append(f'<text class="mono" x="{right_x + 16}" y="{top + 82}">「＝約8.2%オフ」</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="{right_x + 16}" y="{top + 112}">→ 1,100円を900円と誤って計算</text>\n'
+    )
+
+    y = top + box_h + 30
+    box2_h = 40
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="678" height="{box2_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 25}">'
+        "検算で計算をやり直させると、この引き算の間違いに気づけた（前図）。</text>\n"
+    )
+    y += box2_h + 20
+
+    height = y + 4
+    alt = (
+        "誤検知の中身を、正しい計算と並べて示した図。左の「正しい計算」は、"
+        "11,000円−9,900円=1,100円、1,100÷11,000=10%で、本文の「10%オフ」という"
+        "表記と一致する。右の「誤検知（元の指摘）」は、同じ1,100円の値引きを"
+        "900円と取り違え、「実際は900円引き＝約8.2%オフ」と誤って指摘していた。"
+        "誤りの正体は、AI自身の引き算の間違い（11,000−9,900を900と計算した）である。"
+        "下の注記には、検算で計算をやり直させると、この引き算の間違いに気づけたことが書かれている。"
+    )
+    (OUT / "recheck-removes-only-the-miscalc-arithmetic.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     inspection_recall_precision_chart()
     sample_size_miss_probability_chart()
@@ -28695,4 +28853,6 @@ if __name__ == "__main__":
     gpt6solluna_price_vs_prev_chart()
     gpt6solluna_family_chart()
     gpt6solluna_vendor_match_chart()
+    recheck_removes_only_the_miscalc_survival_chart()
+    recheck_removes_only_the_miscalc_arithmetic_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

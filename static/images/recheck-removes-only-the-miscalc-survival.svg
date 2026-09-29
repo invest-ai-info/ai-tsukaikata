@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="436" viewBox="0 0 720 436" role="img" aria-label="検算を頼んでも本物の指摘が消えなかったことを示すマス目。「重要です」を足しても見逃しは減らないの指示文4（数字の突合をまとめた指示）を架空のメルマガ下書き12件（教材A）で2回試した過去の生の指摘結果（1回目は誤検知なし、2回目は正しく10%オフだった号を誤って8.2%オフと指摘した誤検知が1件あり）に対して、「指摘した号だけ計算をやり直して確認して」という具体的な検算指示と、「指摘した号をもう一度確認して」という曖昧な検算指示を、それぞれ独立の新規会話で試した。本物の欠陥3件（割引率の食い違い・過去日・条件抜け）は、具体的×誤検知なし3/3、具体的×誤検知あり3/3、曖昧×誤検知なし3/3、曖昧×誤検知あり3/3と、4回とも1件も消えなかった。誤検知が含まれていた2回は、具体的・曖昧のどちらの検算でも正しく取り下げられ、検算の言い方による差はこの4回では見られなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="436"/>
+<text class="t-strong" x="18" y="26">検算を頼んでも、本物の指摘は1件も消えなかった</text>
+<text class="t-sm" x="18" y="45">「重要です」を足しても見逃しは減らないの指示文4（数字の突合をまとめた指示）を</text>
+<text class="t-sm" x="18" y="64">教材Aで2回試した過去の生の指摘結果（誤検知なし1回・誤検知1件あり1回）に、</text>
+<text class="t-sm" x="18" y="83">「計算をやり直して」（具体的）と「もう一度確認して」（曖昧）の2通りの検算を</text>
+<text class="t-sm" x="18" y="102">独立の新規会話でそれぞれ試した。本物の欠陥3件（割引率・過去日・条件抜け）の生存数。</text>
+<text class="t-xs" x="18" y="121">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-sm" x="18" y="190">計算をやり直して×誤検知なしの回</text>
+<rect class="box-good" x="318" y="168" width="190" height="34" rx="4"/>
+<text class="t-good" x="353.0" y="190">3/3 本物の指摘が生存</text>
+<text class="t-sm" x="18" y="236">計算をやり直して×誤検知ありの回</text>
+<rect class="box-good" x="318" y="214" width="190" height="34" rx="4"/>
+<text class="t-good" x="353.0" y="236">3/3 本物の指摘が生存</text>
+<text class="t-sm" x="18" y="282">もう一度確認して×誤検知なしの回</text>
+<rect class="box-good" x="318" y="260" width="190" height="34" rx="4"/>
+<text class="t-good" x="353.0" y="282">3/3 本物の指摘が生存</text>
+<text class="t-sm" x="18" y="328">もう一度確認して×誤検知ありの回</text>
+<rect class="box-good" x="318" y="306" width="190" height="34" rx="4"/>
+<text class="t-good" x="353.0" y="328">3/3 本物の指摘が生存</text>
+<rect class="box-quiet" x="18" y="356" width="678" height="56" rx="6"/>
+<text class="t-strong" x="34" y="378">誤検知（1件）が含まれていた2回は、2回とも正しく取り下げられた。</text>
+<text class="t-sm" x="34" y="396">検算の言い方（具体的・曖昧）による差は、この4回では出なかった。</text>
+</svg>
