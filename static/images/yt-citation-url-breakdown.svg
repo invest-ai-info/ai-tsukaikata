@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="448" viewBox="0 0 720 448" role="img" aria-label="「判断の根拠にしたページのURLも書いて」と頼んだ2回の返りで出てきた、計5件のURLの内訳を示す図。①answer/72851(1回目)は実在するがYPP資格要件の概要ページで反復コンテンツの規定ではない。②answer/6162278(1回目)は実在するが広告掲載ガイドラインのページで無関係。③answer/9997383(2回目)はURLが存在せず404で、回答は「本件の直接の根拠」と説明していた。④answer/1311392(2回目)は実在し、実際に量産型のコンテンツの規定が書かれている正しいページ。⑤answer/6162278(2回目)は実在するが①②と同じ広告掲載ガイドラインのページで無関係。下の枠には、5件のうち実在してかつ内容も一致していたのは④の1件だけで、③は存在しないURL、①②⑤は実在するが別の話題のページだったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="448"/>
+<text class="t-strong" x="18" y="26">出典URLを求めた2回・計5件のうち、内容まで合っていたのは1件</text>
+<text class="t-sm" x="18" y="45">「理由と、判断の根拠にしたページのURLも書いて」に対する返り（架空チャンネルS2・原文なし）。</text>
+<text class="t-sm" x="18" y="64">HTTPステータスは全件curlで確認。ステータスが200でも、書いてある内容が違う・存在しないURLがある。</text>
+<text class="t-xs" x="18" y="83">実在するかどうかだけではリンク切れ検査は通ってしまう＝開いて中身を読むしかない。</text>
+<rect class="box-bad" x="18" y="108" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="128">① answer/72851（1回目の回答）</text>
+<text class="t-bad" x="34" y="146">実在するが、YPP資格要件の概要ページ（反復コンテンツの規定ではない）</text>
+<rect class="box-bad" x="18" y="162" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="182">② answer/6162278（1回目の回答）</text>
+<text class="t-bad" x="34" y="200">実在するが、広告掲載ガイドラインのページ（無関係）</text>
+<rect class="box-bad" x="18" y="216" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="236">③ answer/9997383（2回目の回答）</text>
+<text class="t-bad" x="34" y="254">URLが存在しない（404）。「本件の直接の根拠」と説明していた</text>
+<rect class="box-good" x="18" y="270" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="290">④ answer/1311392（2回目の回答）</text>
+<text class="t-good" x="34" y="308">実在し、実際に「量産型のコンテンツ」の規定が書かれている正しいページ</text>
+<rect class="box-bad" x="18" y="324" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="344">⑤ answer/6162278（2回目の回答）</text>
+<text class="t-bad" x="34" y="362">実在するが、広告掲載ガイドラインのページ（①②と同じ無関係ページ）</text>
+<rect class="box-accent" x="18" y="384" width="684" height="44" rx="6"/>
+<text class="t-accent" x="34" y="404">5件のうち、実在してかつ内容も一致していたのは④の1件だけ。</text>
+<text class="t-accent" x="34" y="422">③は存在しないURL、①②⑤は実在するが別の話題のページだった。</text>
+</svg>

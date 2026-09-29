@@ -28856,3 +28856,100 @@ if __name__ == "__main__":
     recheck_removes_only_the_miscalc_survival_chart()
     recheck_removes_only_the_miscalc_arithmetic_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def yt_policy_name_hit_and_miss_chart() -> None:
+    """YouTubeの収益化ポリシーの正式名称を尋ねた回で、原文の有無だけを揃えて比べる
+    （2026-09-29）。指示文3（原文なし・S2×2＋S4×2）と指示文6（原文あり・S4×2）の結果。
+    現行の正式名称は「量産型のコンテンツ」（旧称「繰り返しの多いコンテンツ」）。
+    判定は docs/evidence/youtube-citation-one-of-five-correct.md より。
+    """
+    _hit_and_miss_rows_chart(
+        "yt-policy-name-hit-and-miss.svg",
+        "規定の正式名称は、原文を見せないと言い当てられない",
+        "「正式名称と、最後の改定時期も書いて」と同じ聞き方をして、原文の有無だけを変えた実測。",
+        "「量産型のコンテンツ」（現行の正式名称）と答えられたかどうか。",
+        [
+            ("原文なしで聞く（架空チャンネル2種×2回＝4回）", 0, 4, "good"),
+            ("原文を貼ってから聞く（架空チャンネル1種×2回＝2回）", 2, 2, "good"),
+        ],
+        [
+            "原文なしの4回は、4回とも「反復コンテンツ」「reused content」など改称前の名前だった。",
+            "判定（収益化できるか）そのものは、原文の有無に関わらず今回の全26回とも正しい方向だった。",
+            "当たっているのは『収益化できるか』の結論で、規定の『名前』は別に確かめないと古いまま。",
+        ],
+        "YouTubeの収益化ポリシーの正式名称を尋ねた実測結果を示す表。原文を見せずに聞いた4回"
+        "（架空のチャンネル2種を2回ずつ）は、4回とも現行の正式名称『量産型のコンテンツ』を"
+        "言い当てられず、『反復コンテンツ』『reused content』など改称前の古い名前を答えた。"
+        "原文を貼ってから聞いた2回は、2回とも現行の正式名称を正しく答えた。下の枠には、"
+        "収益化できるかどうかの判定そのものは原文の有無に関わらず今回の全26回とも正しい方向"
+        "だったこと、当たっているのは結論であって規定の名前は別に確かめないと古いままである"
+        "ことが書かれている。",
+        label_w=460,
+    )
+
+
+def yt_citation_url_breakdown_chart() -> None:
+    """「判断の根拠にしたページのURLも書いて」と頼んだ2回で返ってきた、
+    5件のURLの内訳（2026-09-29）。実際にcurlで開いて確認した結果。
+    """
+    rows = [
+        ("① answer/72851（1回目の回答）", "実在するが、YPP資格要件の概要ページ（反復コンテンツの規定ではない）", "box-bad", "t-bad"),
+        ("② answer/6162278（1回目の回答）", "実在するが、広告掲載ガイドラインのページ（無関係）", "box-bad", "t-bad"),
+        ("③ answer/9997383（2回目の回答）", "URLが存在しない（404）。「本件の直接の根拠」と説明していた", "box-bad", "t-bad"),
+        ("④ answer/1311392（2回目の回答）", "実在し、実際に「量産型のコンテンツ」の規定が書かれている正しいページ", "box-good", "t-good"),
+        ("⑤ answer/6162278（2回目の回答）", "実在するが、広告掲載ガイドラインのページ（①②と同じ無関係ページ）", "box-bad", "t-bad"),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 54
+    top = 108
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "出典URLを求めた2回・計5件のうち、内容まで合っていたのは1件</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「理由と、判断の根拠にしたページのURLも書いて」に対する返り（架空チャンネルS2・原文なし）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "HTTPステータスは全件curlで確認。ステータスが200でも、書いてある内容が違う・存在しないURLがある。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "実在するかどうかだけではリンク切れ検査は通ってしまう＝開いて中身を読むしかない。</text>\n",
+    ]
+    y = top
+    for label, detail, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 38}">{_esc(detail)}</text>\n')
+        y += row_h
+
+    y += 6
+    box_h = 44
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="{box_x + 16}" y="{y + 20}">'
+        "5件のうち、実在してかつ内容も一致していたのは④の1件だけ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="{box_x + 16}" y="{y + 38}">'
+        "③は存在しないURL、①②⑤は実在するが別の話題のページだった。</text>\n"
+    )
+    y += box_h + 12
+
+    alt = (
+        "「判断の根拠にしたページのURLも書いて」と頼んだ2回の返りで出てきた、計5件のURLの内訳を示す図。"
+        "①answer/72851(1回目)は実在するがYPP資格要件の概要ページで反復コンテンツの規定ではない。"
+        "②answer/6162278(1回目)は実在するが広告掲載ガイドラインのページで無関係。"
+        "③answer/9997383(2回目)はURLが存在せず404で、回答は「本件の直接の根拠」と説明していた。"
+        "④answer/1311392(2回目)は実在し、実際に量産型のコンテンツの規定が書かれている正しいページ。"
+        "⑤answer/6162278(2回目)は実在するが①②と同じ広告掲載ガイドラインのページで無関係。"
+        "下の枠には、5件のうち実在してかつ内容も一致していたのは④の1件だけで、③は存在しないURL、"
+        "①②⑤は実在するが別の話題のページだったことが書かれている。"
+    )
+    (OUT / "yt-citation-url-breakdown.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    yt_policy_name_hit_and_miss_chart()
+    yt_citation_url_breakdown_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
