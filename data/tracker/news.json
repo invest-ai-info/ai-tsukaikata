@@ -35,6 +35,8 @@
       "published": "2026-09-28T19:00:00+00:00",
       "source_id": "openai-news",
       "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+      "summary_ja": "最先端AI訓練の安全性確保のための初期指針を公開\n技術的な安全策、運用、不具合調査を含む",
+      "summary_source": "gemini",
       "title": "Towards safety cases for frontier AI training",
       "uid": "9580f3c584f53a77",
       "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
