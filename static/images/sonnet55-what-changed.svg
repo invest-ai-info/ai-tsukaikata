@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="358" viewBox="0 0 720 358" role="img" aria-label="Sonnet 5 から Sonnet 5.5 への変化を2列で比べた図。変わらないもの＝読める量100万トークン、書ける量12.8万トークン、単価は入力2ドル・出力10ドルでSonnet 5と同額、読める形式は文章と画像。変わったもの＝出力速度が30%以上速い、1つの仕事の費用が最大30%減る（使うトークン数が減るため）、知識の締め切りが2026年1月から6月、「考える」を切る指定がエラーになる、道具を強制する指定ができなくなった、旧computer useの道具が使えなくなった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="358"/>
+<text class="t-strong" x="18" y="26">Sonnet 5 から Sonnet 5.5 で何が変わったか</text>
+<text class="t-sm" x="18" y="45">器の大きさと単価は同じ。トークンの使い方と、一部の設定が変わった。</text>
+<rect class="box-quiet" x="18" y="62" width="330" height="234" rx="6"/>
+<rect class="box-accent" x="372" y="62" width="330" height="234" rx="6"/>
+<text class="t-strong" x="32" y="82">変わらないもの</text>
+<text class="t-accent" x="386" y="82">変わったもの</text>
+<text class="t" x="32" y="114">読める量 100万トークン</text>
+<text class="t" x="32" y="148">書ける量 12.8万トークン</text>
+<text class="t" x="32" y="182">単価 入力$2・出力$10（Sonnet 5と同額）</text>
+<text class="t" x="32" y="216">読める形式 文章と画像</text>
+<text class="t" x="386" y="114">出力速度 30%以上速い</text>
+<text class="t" x="386" y="148">1つの仕事の費用 最大30%減（使うトークン数が減る）</text>
+<text class="t" x="386" y="182">知識の締め切り 2026年1月 → 6月</text>
+<text class="t" x="386" y="216">「考える」を切る指定がエラーになる</text>
+<text class="t" x="386" y="250">道具を強制する指定ができなくなった</text>
+<text class="t" x="386" y="284">旧 computer use の道具が使えなくなった</text>
+<text class="t-xs" x="18" y="346">※ 出典: Anthropic の発表ページ・モデルのページ・What's newページ（2026年9月29日に確認）。単価は100万トークンあたり。</text>
+</svg>

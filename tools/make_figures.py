@@ -28949,7 +28949,190 @@ def yt_citation_url_breakdown_chart() -> None:
     )
 
 
+def sonnet55_what_changed_chart() -> None:
+    """Sonnet 5 から Sonnet 5.5 で、据え置きのもの／変わったもの（2026-09-29）。"""
+    same = [
+        "読める量 100万トークン",
+        "書ける量 12.8万トークン",
+        "単価 入力$2・出力$10（Sonnet 5と同額）",
+        "読める形式 文章と画像",
+    ]
+    diff = [
+        "出力速度 30%以上速い",
+        "1つの仕事の費用 最大30%減（使うトークン数が減る）",
+        "知識の締め切り 2026年1月 → 6月",
+        "「考える」を切る指定がエラーになる",
+        "道具を強制する指定ができなくなった",
+        "旧 computer use の道具が使えなくなった",
+    ]
+
+    col_w, gap, pad = 330, 24, 18
+    left_x, right_x = pad, pad + col_w + gap
+    head_y, first_y, row_h = 84, 114, 34
+    rows = max(len(same), len(diff))
+    box_h = 30 + rows * row_h
+    height = first_y + rows * row_h + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Sonnet 5 から Sonnet 5.5 で何が変わったか</text>\n',
+        '<text class="t-sm" x="18" y="45">器の大きさと単価は同じ。トークンの使い方と、一部の設定が変わった。</text>\n',
+        f'<rect class="box-quiet" x="{left_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<rect class="box-accent" x="{right_x}" y="{head_y - 22}" '
+        f'width="{col_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-strong" x="{left_x + 14}" y="{head_y - 2}">変わらないもの</text>\n',
+        f'<text class="t-accent" x="{right_x + 14}" y="{head_y - 2}">変わったもの</text>\n',
+    ]
+    for index, text in enumerate(same):
+        parts.append(
+            f'<text class="t" x="{left_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    for index, text in enumerate(diff):
+        parts.append(
+            f'<text class="t" x="{right_x + 14}" y="{first_y + index * row_h}">{_esc(text)}</text>\n'
+        )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: Anthropic の発表ページ・モデルのページ・What's newページ（2026年9月29日に確認）。単価は100万トークンあたり。</text>\n"
+    )
+    alt = (
+        "Sonnet 5 から Sonnet 5.5 への変化を2列で比べた図。"
+        "変わらないもの＝読める量100万トークン、書ける量12.8万トークン、"
+        "単価は入力2ドル・出力10ドルでSonnet 5と同額、読める形式は文章と画像。"
+        "変わったもの＝出力速度が30%以上速い、1つの仕事の費用が最大30%減る（使うトークン数が減るため）、"
+        "知識の締め切りが2026年1月から6月、「考える」を切る指定がエラーになる、"
+        "道具を強制する指定ができなくなった、旧computer useの道具が使えなくなった。"
+    )
+    (OUT / "sonnet55-what-changed.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sonnet55_bench_chart() -> None:
+    """Sonnet 5 と Sonnet 5.5 の、公式が挙げた点数（％のものだけ）。"""
+    rows = [
+        ("Terminal-Bench 4.0", 10.3, 70.6),
+        ("FrontierCode 1.1（Max効果）", 42.4, 46.2),
+        ("CursorBench 4.0", 34.1, 55.5),
+        ("Humanity’s Last Exam（道具あり）", 54.9, 64.5),
+        ("OSWorld 2.1（部分点あり）", 57.0, 80.1),
+        ("Chartography（道具なし）", 15.6, 61.6),
+    ]
+    left, right = 262, 640
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">公式が挙げた点数（Sonnet 5 → Sonnet 5.5）</text>\n',
+        '<text class="t-sm" x="18" y="45">灰色＝Sonnet 5、青＝Sonnet 5.5。目盛りは0〜100％で揃えてあります。</text>\n',
+        '<text class="t-sm" x="18" y="64">Sonnet 5.5 は既定（Medium効果）の値です。数値以外の点数（GDPval-AA等）は別表にしてあります。</text>\n',
+    ]
+    for index, (name, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "5"), (new, "bar-new", "5.5"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="234" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:.1f}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ テストの中身も測り方も別々です。並べても平均は取れません。FrontierCode は Xhigh効果では52.1%。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ Terminal-Bench 4.0 の Sonnet 5 は10.3%。同じ表でOpus 5.5は66.4%（Xhigh効果）です。</text>\n"
+    )
+    alt = (
+        "Sonnet 5 と Sonnet 5.5 の点数を比べた横棒グラフ。"
+        "Terminal-Bench 4.0 は10.3％から70.6％、FrontierCode 1.1（Max効果）は42.4％から46.2％、"
+        "CursorBench 4.0 は34.1％から55.5％、Humanity’s Last Examの道具ありは54.9％から64.5％、"
+        "OSWorld 2.1の部分点ありは57.0％から80.1％、Chartographyの道具なしは15.6％から61.6％。"
+        "いずれもAnthropicが自社で測った値で、テストの中身も測り方も別々のため平均は取れない。"
+    )
+    (OUT / "sonnet55-bench.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sonnet55_vendor_price_chart() -> None:
+    """各社のモデルと Sonnet 5.5 の単価（入力・出力の2本）。"""
+    rows = [
+        ("Claude Sonnet 5.5", 2, 10),
+        ("Claude Sonnet 5", 2, 10),
+        ("Claude Opus 5.5", 4, 20),
+        ("GPT-6 Astra", 10, 50),
+        ("GPT-6 Sol", 2, 10),
+        ("Gemini 3.1 Pro Preview", 2, 12),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">1トークンあたりの単価（100万トークンあたり・ドル）</text>\n',
+        '<text class="t-sm" x="18" y="45">入力＝薄い色 ／ 出力＝濃い色。Geminiは20万トークン以下のときの値段です。</text>\n',
+        '<text class="t-sm" x="18" y="64">各社の公式料金ページの数字だけを並べています（2026年9月29日に確認）。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="214" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Sonnet 5.5・Sonnet 5・GPT-6 Sol は入力2ドル・出力10ドルで単価が一致しています。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 単価が安い＝支払いが安い、ではありません。会社ごとにトークンの数え方が違います。</text>\n"
+    )
+    alt = (
+        "6つのモデルの単価を比べた横棒グラフ。100万トークンあたりのドル。"
+        "Claude Sonnet 5.5 は入力2ドル・出力10ドル、Claude Sonnet 5 も入力2ドル・出力10ドルで同額、"
+        "Claude Opus 5.5 は入力4ドル・出力20ドル、GPT-6 Astra は入力10ドル・出力50ドル、"
+        "GPT-6 Sol は入力2ドル・出力10ドルでSonnet 5.5と完全に一致、"
+        "Gemini 3.1 Pro Previewは入力2ドル・出力12ドル。"
+        "Geminiは20万トークン以下のときの値段。会社ごとにトークンの数え方が違うため、"
+        "単価の安さは支払額の安さを意味しない。"
+    )
+    (OUT / "sonnet55-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    yt_policy_name_hit_and_miss_chart()
-    yt_citation_url_breakdown_chart()
+    sonnet55_what_changed_chart()
+    sonnet55_bench_chart()
+    sonnet55_vendor_price_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

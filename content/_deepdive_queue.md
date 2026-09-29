@@ -243,12 +243,32 @@
 - [x] https://openai.com/index/introducing-gpt-6-sol-and-luna
   - →保管: ✅ **2026-09-28: 公開した** → `content/tools/gpt-6-sol-luna.md`
 
-- [ ] https://www.anthropic.com/claude-sonnet-5-5
-  - 2026-09-28 自動追記（major・Anthropic「Introducing Claude Sonnet 5.5」）
+- [x] https://www.anthropic.com/claude-sonnet-5-5
+  - →保管: ✅ **2026-09-29: 公開した** → `content/tools/claude-sonnet-5-5.md`
 
 ## 処理済み
 
-- https://openai.com/index/introducing-gpt-6-sol-and-luna → **公開済み** content/tools/gpt-6-sol-luna.md（2026-09-28・公開）
+- https://www.anthropic.com/claude-sonnet-5-5 → **公開済み** content/tools/claude-sonnet-5-5.md（2026-09-29・公開）
+  - `www.anthropic.com` に到達（200・素のUAで問題なく読める）。発表ページのRSCペイロードから
+    ベンチマーク表（`BenchmarkGrid`）と脚注（`MobyFootnotes`）を生データで抽出し、要約に頼らず
+    実際の行を確認した。図3枚（`sonnet55-what-changed` / `sonnet55-bench` / `sonnet55-vendor-price`）。
+    出典10件すべて取得成功。`check_numbers.py` は**28個すべて出典に存在**。
+    pytest 736 passed・build 238ファイル。`check_readability.py` は60字以上7%（目安15%以下、最長72字。
+    初稿は19%だったため列挙文を箇条書き・文分割で直してから公開）。
+  - 📌 記事の芯＝**単価はSonnet 5から1円も変わらず（入力$2・出力$10・キャッシュ読み取り$0.20・
+    キャッシュ書き込み$2.50/$4）、Anthropic自身のテストでは1つの仕事あたりの費用が最大30%減り、
+    出力は30%以上速い**。ただし「考える」を切る・道具を強制する・旧computer use・advisorの助言役指定の
+    4設定はエラーで止まる。thinking blockがモデルと会話に紐づく変更は即エラーにはならないが、
+    2026-08-31以降作成のアカウントでは条件付きで400エラーになると公式ドキュメントに明記されていた。
+  - 🔍 **単価の完全一致を発見**＝Claude Sonnet 5.5とOpenAI GPT-6 Solは入力$2・出力$10・
+    キャッシュ読み取り$0.20・キャッシュ書き込み(5分)$2.50まで一致（`gpt-6-sol-luna.md`の記述を
+    developers.openai.comの現在のpricingウィジェット埋め込みJSONで再確認）。GPT-6 Astraは
+    現在の公式料金ページでは短文/長文の区別なく単一値（入力$10・出力$50）になっていた
+    （`claude-opus-5-5.md`公開時点の短/長の2段階表示から変わった可能性があるが、この記事は
+    今日確認できた値だけを書いた）。
+  - ⚠️ GDPval-AAとAA-Briefcaseは、Anthropicの脚注によると外部の計測会社(Artificial Analysis)が
+    Sonnet 5.5の公開前の版（構造化出力が劣化するバグを含む、修正済み）で測った値だったため、
+    その旨を明記した。
   - 発表ページ本体は今回もbot判定の403（`cf-mitigated: challenge`）で読めず、RSS要旨1文＋developers.openai.comの
     モデルページ4枚（gpt-5.6-sol/gpt-5.6-luna/gpt-6-sol/gpt-6-luna）・料金ページ・Using GPT-6ガイドで執筆。
     図3枚（`gpt6solluna-price-vs-prev` / `gpt6solluna-family` / `gpt6solluna-vendor-match`）。出典10件すべて取得成功。
