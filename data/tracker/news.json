@@ -47,6 +47,8 @@
       "published": "2026-09-29T00:00:00+00:00",
       "source_id": "openai-news",
       "summary": "Dots by OpenAI are a proactive assistant that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
+      "summary_ja": "OpenAIが新しいAIアシスタント「Dots」を導入\n複雑な業務や日常の仕事を継続して処理\n作業を進めつつ利用者が管理できる",
+      "summary_source": "gemini",
       "title": "Introducing dots",
       "uid": "e16224e1ee18641c",
       "url": "https://openai.com/index/introducing-dots",
@@ -5164,18 +5166,6 @@
       "title": "v0.116.0",
       "uid": "fb1a448d56eeb734",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.116.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-01T21:54:06+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.115.1 (2026-07-01) Full Changelog: v0.115.0...v0.115.1 Chores api: remove some nonfunctional types from the SDKs ( 5e7c431 )",
-      "title": "v0.115.1",
-      "uid": "ca632fc035d4d4de",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.115.1",
       "vendor": "Anthropic"
     }
   ]
