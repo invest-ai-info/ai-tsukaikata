@@ -270,6 +270,9 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。
       オーナーに一言確認を仰いでから確定させるのが、FIGのときの前例に合わせたやり方。
 
+- [ ] https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
+  - 2026-09-30 自動追記（major・Google DeepMind「Gemini 4 Argon: our next era of frontier intelligence」）
+
 ## 処理済み
 
 - https://www.anthropic.com/claude-sonnet-5-5 → **公開済み** content/tools/claude-sonnet-5-5.md（2026-09-29・公開）

@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-30T22:58:09+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.11.0 (2026-09-30) Full Changelog: v1.10.0...v1.11.0 Features api: add list spend limits endpoint ( e8f0cac ) Chores client: deprecate sonnet 4.5 ( 22b36b1 )",
+      "title": "v1.11.0",
+      "uid": "6975092497dcfc6a",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.11.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-09-30T20:01:45+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "uid": "c8d2a0c48c3bb051",
+      "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-09-30T19:25:04.163217+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5209,18 +5233,6 @@
       "uid": "40c3de421023636e",
       "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-02T21:07:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "More details on Fable 5’s cyber safeguards and our jailbreak framework",
-      "uid": "f710021f9a9c245a",
-      "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
-      "vendor": "Anthropic"
     }
   ]
 }

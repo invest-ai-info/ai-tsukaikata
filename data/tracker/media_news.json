@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-30T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの活用が進むほど、企業は外部のサービスやインフラへの依存を深める。データやモデルへのコントロールを保ち、自らの意思で選択できる状態を守る「AI主権」はなぜ経営課題になったのか、4つの観点から解説する。",
+      "title": "AI主権はなぜ「切実な経営課題」になったのか　モデル“禁輸”問題が示した「選択肢を持つこと」の重要性",
+      "uid": "8ed688c4bad91084",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/01/2000001909/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-30T22:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日立製作所とファナックはフィジカルAI（人工知能）実装の共同事業化に向けた戦略的パートナーシップを締結した。日立のAI技術とファナックの産業用ロボットを組み合わせたフィジカルAIの共同実証と共同展開を推進する。共同実証で得られたフィジカルAIの実装／運用ノウハウを生かして、2027年度からグローバルなインストールベースを活用して展開する。",
+      "title": "日立とファナックがフィジカルAI協業　日立エッジAI×ファナックロボ有効性も検証",
+      "uid": "9a178af58f40fe5b",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/01/news031.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-09-30T22:16:25+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、次世代フロンティアモデル「Gemini 4 Argon」を発表した。最大出力100万トークンに対応し、長時間に及ぶ業務処理や自律的なサイバー脆弱性修正に強みを持つ。安全対策を強化した上で、まずは信頼できるサイバー防御組織に先行提供し、有料APIなどで順次拡大する。",
+      "title": "Google、「Gemini 4 Pro」ではなく「Gemini 4 Agron」発表　まずはサイバー防御組織に限定提供、出力上限は100万トークンに",
+      "uid": "b8d01c270f6fbe2a",
+      "url": "https://www.itmedia.co.jp/news/article/2610/01/2000001912/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-30T22:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "富士ソフトは経営体制「富士ソフト Gen.2」に基づく、製造業向けスマート工場事業戦略を発表した。既存設備を生かし、データをデジタルスレッドで統合しフィジカルAIで現場を動かす4つのオファリングを展開する。同事業で10％以上の成長を目指す。",
+      "title": "「デジタルスレッドとAIで動かす」　富士ソフトがスマート工場で10％成長狙う",
+      "uid": "c6d1914f1ac89e01",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/01/news034.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-30T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "高性能AIの登場によって“人月商売の死”が叫ばれる中、大手SIerが「FDE」の実装に力を入れている。一部では「常駐SEの言い換えに過ぎない」という指摘がある中、SIerは勝機をどこに見いだせば良いのか。",
+      "title": "「FDE」は常駐SEのすげ替えなのか　“人月商売の死”を打破したい国内SIer、打開策は意外なところに？",
+      "uid": "3b4e5afc313b1769",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/01/news040.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-30T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Microsoftの創業者であり億万長者のビル・ゲイツ氏は近年、さまざまな場面でAIに対する懸念を表明しています。日刊紙のニューヨーク・タイムズに掲載されたジャーナリストのエズラ・クライン氏とのインタビューでも、ゲイツ氏はAIのさまざまなリスクや必要な対策、そしてAIが人類にもたらす利益について語っています。 続きを読む...",
+      "title": "ビル・ゲイツが「AI規制はサイバー攻撃やバイオテロを防ぐために必要」「AIは人間の仕事を奪う」とインタビューで語る",
+      "uid": "51839b0398e1002e",
+      "url": "https://gigazine.net/news/20261001-bill-gates-warning-ai-ezra-klein/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-30T23:54:33.788131+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-09-30T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Ruby on Railsの作者DHHがRails World 2026の基調講演で、37signalsでは手書きコードをやめたと宣言した。一方で「ソフトウェア開発の未来は明るい」とも言う。手書きが例外になった現場で開発者は何をするのか、講演の要点と筆者の考えを紹介する。",
+      "title": "Rails作者DHH「Pencils Down、もう手でコードは書かない」　それでもソフトウェア開発の未来は明るい理由",
+      "uid": "54c703e727c6e901",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/01/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-09-30T13:48:28.583155+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2315,90 +2399,6 @@
       "uid": "b754ca66296a3397",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2609/25/news058.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-24T22:28:34.506090+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-24T22:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "生成AIの高性能モデルは、現在もクラウド上で動くものが中心だ。では、なぜスマートフォン側にも高性能なAI処理能力が必要なのか。米クアルコムは9月23日（現地時間）、米ハワイ州で開催中の「Snapdragon Summit 2026」の質疑応答で、その理由を説明した。",
-      "title": "クラウドAI全盛なのに、なぜスマホ本体にもAI処理性能が必要なのか--クアルコムの回答は",
-      "uid": "852f6fbddac9e149",
-      "url": "https://japan.cnet.com/article/35252935/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-24T22:28:34.506090+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-24T22:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
-      "title": "日沼諭史の「AI活用入門塾」 意外ととっつきやすい「MCP」、タスク管理から試してみて！",
-      "uid": "0ff0f6333879cd40",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2142757.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-25T01:34:07.269638+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-24T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIエージェントが企業の枠を超えて商品検索や発注、決済まで担う時代には、「誰が操作しているのか」「どこまで権限があるのか」を確認する仕組みが不可欠だ。",
-      "title": "AI同士が取引する時代、「相手は誰か」をどう確認する？　GMOが信頼基盤を実証",
-      "uid": "f7568158b43d3522",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/25/2000001724/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-25T01:34:07.269638+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-24T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "多言語を扱う業務では、翻訳のたびにAIと翻訳サービスを行き来する手間がある。DeepLはMCPに対応し、ChatGPTやMicrosoft Copilotなどから直接翻訳できる仕組みを提供する。",
-      "title": "ChatGPTやCopilotから直接翻訳　「DeepL」のMCP対応で多言語業務はどう変わる？",
-      "uid": "f2ab777be39b0fbb",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/25/2000001723/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-24T22:28:34.506090+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-24T21:45:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIアクセラレータを手掛ける日本発スタートアップのEdgeCortix（エッジコーティックス）は、最大3.36PFLOPSのAI処理性能を発揮するフィジカルAI向けの次世代スケーラブルAIチップレットプラットフォーム「RAIDEN」を発表した。",
-      "title": "日本発スタートアップのエッジAIチップがNVIDIA超え、AI処理性能は3.36PFLOPS",
-      "uid": "d00093358e14df6d",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/25/news063.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-24T22:28:34.506090+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-24T21:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "カシオ計算機は、G-SHOCKの「MTG-B4000」「GMW-BZ5000」のデザイン開発にAIを活用した。従来の発想を超えるスタイリングを、どのように製品へと落とし込んだのか。導入の背景や具体的な活用方法、設計部門との連携、デザイナーに求められる役割について、同社のGデザイン室長である赤城貴康氏に聞いた。",
-      "title": "AIと人の共創で進化する「G-SHOCK」　デザイナーが語る製品化の舞台裏",
-      "uid": "9e65f4633d9fbe96",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2609/25/news009.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-24T22:28:34.506090+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-24T21:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年2月にイラン南部の小学校へアメリカ軍のミサイルが着弾し、少なくとも123人の子どもを含む150人以上が死亡しました。経済紙・Bloombergの取材に応じた匿名の当局関係者によると、学校の敷地がイラン革命防衛隊の施設としてデータベースに登録されたままであったことが、小学校にミサイル攻撃が行われた一因だそうです。 続きを読む...",
-      "title": "アメリカ軍によるイランの小学校へのミサイル攻撃はデータベースの情報更新を怠りAIを過信したことが一因だったとの報道",
-      "uid": "58f20f3e4cdaa159",
-      "url": "https://gigazine.net/news/20260925-iran-school-maven-ai-kill-chain/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
