@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-30T13:48:28.583155+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-30T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年9月、Anthropicのダリオ・アモデイCEOがAIの急速な進歩によるリスクが高まっているとして、AIが壊滅的な被害をもたらす危険性があると警告しました。これに対しアメリカのドナルド・トランプ大統領は「デマだ」と否定し、NVIDIAのジェンスン・フアンCEOもAI研究所のリーダーらは誠実さに欠けると非難しています。そんな中でローマ教皇のレオ14世が、AIへの懸念は真剣に受け止めるべき…",
+      "title": "ローマ教皇レオ14世がAIの危険性に関する主張を否定したトランプ大統領やNVIDIAのジェンスン・フアンを非難",
+      "uid": "7ea6fa3b9d12b08d",
+      "url": "https://gigazine.net/news/20260930-pope-leo-nvidia-trump-ai-threat/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-30T13:48:28.583155+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-09-30T09:37:17+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ナレッジセンスは9月30日、複雑に絡み合ったスパゲッティコードのモダン化や、VBAを読み解いたうえでの改修・実装を支援する国産AIエージェント「CodeSense」を数週間以内にリリースすると発表した。現在、β版ユーザーを募集している。",
+      "title": "既存コード改修支援AIエージェント「CodeSense」がリリースへ",
+      "uid": "a999e9cd81310080",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2144624.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-30T13:48:28.583155+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-09-30T08:10:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ChatGPTなどに使われる汎用(はんよう)AIモデルに本物の自動車のハンドル・アクセル・ブレーキを任せてみる実験を、サンフランシスコ・ベイエリアの技術者3人によるプロジェクト「DrivingBench」が実施しました。 続きを読む...",
+      "title": "ChatGPTなどの汎用AIに本物の車を運転させたら「実車では？」と気付いて運転を拒否、最終的に走らせた方法とは",
+      "uid": "9ea1f4b5d7585291",
+      "url": "https://gigazine.net/news/20260930-chatgpt-drive-car/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-09-30T13:48:28.583155+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-09-30T07:22:22+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "韓国の半導体スタートアップRebellions（リベリオンズ）は、9月30日に東京都内で記者会見を開催し、同社の主力製品であるNPU（Neural Processing Unit）となる「Rebel100」を、AIデータセンターのスタートアップ企業である「ai&」（エーアイアンド）が大規模に採用することを決定したことを明らかにした。",
+      "title": "GPUよりも高速で高効率なRebellionsのNPU、ai&のAI DCに導入されAI推論性能を大幅に引き上げ",
+      "uid": "cb81394144d533f6",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2144538.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-09-30T13:48:28.583155+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-09-30T07:12:03+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "エレクトロニック・ライブラリー（以下、ELNET）とNTTドコモビジネスは、最新の新聞記事を横断的に活用し、効率的な情報整理を実現する法人向け生成AIサービス「ELNET AI」を共同開発した。4月からのパイロット版運用を経て、ELNETのクリッピングサービスを利用中の企業を対象にオプションとして正式版の提供を10月1日に開始する。",
+      "title": "新聞記事の情報を整理する生成AI「ELNET AI」が10月1日提供開始 ELNETとNTTドコモビジネスが共同開発",
+      "uid": "6d87f0f6f55a2c77",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2144535.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-09-30T06:46:49.248383+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2339,66 +2399,6 @@
       "uid": "58f20f3e4cdaa159",
       "url": "https://gigazine.net/news/20260925-iran-school-maven-ai-kill-chain/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-24T22:28:34.506090+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-24T20:45:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米OpenAIのAIエージェントが暴走し、オーストラリア政府の医療統計サイトに侵入していたことが分かった。Anthony Albanese首相が23日（現地時間）の記者会見で明らかにした。政府システムへのAIエージェントによる侵入が確認されたのは、判明している限りでこれが初めてという。",
-      "title": "OpenAIのAIエージェント、豪政府サイトに侵入　「政府システムへの侵入は初」",
-      "uid": "11a25042110da991",
-      "url": "https://japan.cnet.com/article/35252937/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-24T19:13:34.436880+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-24T18:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Metaは23日（現地時間）、年次イベント「Meta Connect」の基調講演で、キーホルダー型の小型端末「Muse Charm」を発表した。AIエージェント「Muse」に話しかけるための円形デバイスで、スマートフォンやパソコンを使わずにMuseを呼び出せる。Mark Zuckerberg CEOは、12月までに出荷できる見込みだと述べた。",
-      "title": "Meta、たまごっちのようなAIエージェント端末「Muse Charm」",
-      "uid": "2efd77a9ae58dc52",
-      "url": "https://japan.cnet.com/article/35252936/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-24T15:10:41.105378+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-24T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AmazonがMetaのパーソナルAIエージェント「Muse」によるAmazon.comでの買い物代行をブロックしたことが明らかになりました。AmazonはMuseが許可を得ないままAmazonへアクセスしているとして利用規約違反であることを訴えるとともに、プライバシーやセキュリティ上のリスクを指摘しています。 続きを読む...",
-      "title": "AmazonがMetaのAIエージェント「Muse」の買い物代行をブロック",
-      "uid": "130614a03481cf8a",
-      "url": "https://gigazine.net/news/20260924-amazon-block-muse/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-24T15:10:41.105378+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-24T10:27:09+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは9月23日、新たな音声生成AIモデル「Gemini 3.8 Flash TTS」「Gemini 3.8 Flash-Lite TTS」（Text-to-Speech）を発表した。これらのモデルは現在、Google AI StudioおよびGemini APIを通じて提供されている。Gemini NotebookやGoogle Vidsでも即日利用可能。Gemini Enterpri…",
-      "title": "Google、音声生成AI「Gemini 3.8 Flash/Flash-Lite TTS」を発表 30秒で声再現・SynthID対応",
-      "uid": "bb02eb49aecb8418",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143048.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-24T10:05:27.403517+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-24T09:59:18+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "エムエスアイコンピュータージャパンは、Copilot+ PC「Cubi NUC AI+ 3MG-033JP」の販売を10月1日より開始する。価格は290,200円前後。",
-      "title": "MSI、AIを活用できるCopilot+ PC「Cubi NUC AI+ 3MG-033JP」",
-      "uid": "c09a8a2b1b3e7dbe",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143025.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
