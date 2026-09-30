@@ -1,6 +1,72 @@
 {
   "items": [
     {
+      "first_seen": "2026-09-30T19:25:04.163217+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-09-30T19:10:13+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a count such as \"2 of 5\" to the permission prompt when several permission requests stack up Added mouse support for the \"N more\" rows of lists in fullscreen mode: click one to ju…",
+      "title": "v2.1.286",
+      "uid": "dab29fa04a21cd5b",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.286",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-30T19:25:04.163217+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-09-30T18:28:45+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.10.0 (2026-09-30) Full Changelog: v1.9.0...v1.10.0 Features api: add a refusal stop reason and stop_details to Managed Agents session idle events ( cba653f ) api: add Claude Enterprise analytics, s…",
+      "title": "v1.10.0",
+      "uid": "1c226c2aa64a0f82",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.10.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-09-30T19:25:04.163217+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-09-30T15:03:07+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Proof of concept for watermarking AI-generated proteins while preserving biological function.",
+      "summary_ja": "AIが作ったタンパク質に識別情報を埋め込む実験に成功\n生体機能を保ったまま、目に見えない透かしを埋め込める",
+      "summary_source": "gemini",
+      "title": "Introducing SynthID Bio",
+      "uid": "e57f8fb25ce46c78",
+      "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-09-30T19:25:04.163217+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-30T10:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation.",
+      "summary_ja": "OpenAIがAIの情報を盗む攻撃を阻止した\nAIの思考過程を不正に引き出す活動を阻止\nAIに対する防御策をさらに強化している",
+      "summary_source": "gemini",
+      "title": "Disrupting a coordinated model-distillation campaign",
+      "uid": "d4b6632f466eb6a6",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-09-30T19:25:04.163217+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-30T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI.",
+      "summary_ja": "OpenAIが中小企業向けにAI活用支援を開始した\nアメリカのSBDCと組み、AIの体験学習や地域支援を提供\n中小チームのAI活用に関する新しい報告書も公開した",
+      "summary_source": "gemini",
+      "title": "Helping small businesses put AI to work",
+      "uid": "5d068456834d506b",
+      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-29T20:51:21.481663+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5154,18 +5220,6 @@
       "title": "More details on Fable 5’s cyber safeguards and our jailbreak framework",
       "uid": "f710021f9a9c245a",
       "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-02T19:07:55+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.116.0 (2026-07-02) Full Changelog: v0.115.1...v0.116.0 Features api: add agent-memory-2026-07-22 beta header ( e181d5c )",
-      "title": "v0.116.0",
-      "uid": "fb1a448d56eeb734",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.116.0",
       "vendor": "Anthropic"
     }
   ]

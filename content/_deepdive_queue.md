@@ -246,6 +246,9 @@
 - [x] https://www.anthropic.com/claude-sonnet-5-5
   - →保管: ✅ **2026-09-29: 公開した** → `content/tools/claude-sonnet-5-5.md`
 
+- [ ] https://deepmind.google/blog/introducing-synthid-bio/
+  - 2026-09-30 自動追記（major・Google DeepMind「Introducing SynthID Bio」）
+
 ## 処理済み
 
 - https://www.anthropic.com/claude-sonnet-5-5 → **公開済み** content/tools/claude-sonnet-5-5.md（2026-09-29・公開）
