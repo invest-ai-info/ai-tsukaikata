@@ -29131,8 +29131,201 @@ def sonnet55_vendor_price_chart() -> None:
     )
 
 
+def date_only_sender_slips_at_twenty_scale_chart() -> None:
+    """取引先を10社・20社に増やしたとき、真の緊急件数に対する検出件数を6回ぶん比べる。
+
+    実測（2026-09-30）。土台は one-rule-does-not-fit-every-sender の4パターン
+    ＋対照群を機械で10社・20社に増やしたもの。同じ「まず各社の書き方の癖を確認して
+    から」という指示文を、材料と回を変えて6回試した。
+    """
+    rows = [
+        ("10社(50件・真の緊急16件)\n元記事と同じ指示文", (16, 16), (16, 16)),
+        ("20社(100件・真の緊急32件)\n元記事と同じ指示文", (32, 32), (28, 32)),
+        ("20社(100件)\n＋「1つの一覧にまとめて」", (28, 32), (32, 32)),
+    ]
+    label_w = 232
+    cell_w, cell_h, gap = 200, 40, 16
+    col_gap = 16
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+    col1_x = grid_x
+    col2_x = grid_x + cell_w + col_gap
+    right_edge = col2_x + cell_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "10社では崩れず、20社では6回中2回崩れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「まず各社の書き方の癖を確認してから」という同じ指示文を、材料の社数と"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "回を変えて6回試した。数字は「検出件数／真の緊急件数」。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "誤検知（緊急でないものを緊急と誤答）は6回とも0件。生の回答は docs/evidence/ に置いてある。"
+        "</text>\n",
+        f'<text class="t-sm" x="{col1_x + cell_w / 2 - 16:.0f}" y="{top - 18}">1回目</text>\n',
+        f'<text class="t-sm" x="{col2_x + cell_w / 2 - 16:.0f}" y="{top - 18}">2回目</text>\n',
+    ]
+
+    for row_index, (label, r1, r2) in enumerate(rows):
+        y = top + row_index * pitch
+        label_y = y + cell_h / 2 - 3
+        for line_index, line in enumerate(label.split("\n")):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{label_y + line_index * 15:.0f}">{_esc(line)}</text>\n'
+            )
+        for (val, n), cx in ((r1, col1_x), (r2, col2_x)):
+            ok = val == n
+            box = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            parts.append(
+                f'<rect class="{box}" x="{cx}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            text = f"{val}/{n}"
+            tx = cx + cell_w / 2 - len(text) * 5.5
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+            )
+
+    y = top + len(rows) * pitch + 10
+    box_h = 56
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-strong" x="34" y="{y + 22}">'
+        "崩れるのはいつも20社のときだけ。10社では4回とも過不足なし。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 40}">'
+        "「1つにまとめて」と念を押しても、崩れる回数自体は変わらなかった。</text>\n"
+    )
+    y += box_h + 16
+
+    height = y + 4
+    alt = (
+        "取引先の数を10社・20社に増やしたとき、真の緊急件数に対する検出件数を6回ぶん比べた図。"
+        "10社(材料50件・真の緊急16件)は元記事と同じ指示文で1回目16/16・2回目16/16といずれも"
+        "過不足なく検出。20社(材料100件・真の緊急32件)は同じ指示文で1回目32/32だったが"
+        "2回目は28/32で4件の見落としがあった。20社に「1つの一覧にまとめて、参考行や別枠には"
+        "分けないでください」を足した指示文では、1回目が28/32で4件の見落とし、2回目は32/32"
+        "だった。6回とも誤検知(緊急でないものを緊急と誤答)は0件。崩れるのは20社のときだけで、"
+        "しかも検出漏れの方向だけだった。"
+    )
+    (OUT / "date-only-sender-slips-at-twenty-scale.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def date_only_sender_slips_at_twenty_detail_chart() -> None:
+    """「日付だけ型」の5件のうち、どちらの真の緊急がどの回で漏れたかを示す。
+
+    実測（2026-09-30）。タグも「至急」の語も使わない取引先（03・08・13・18）の
+    5件は、1件目(翌日締切)と3件目(本日締切)が真の緊急。元記事と同じ指示文の
+    20社2回目は1件目が、「1つにまとめて」を足した指示文の20社1回目は3件目が、
+    それぞれ本題の一覧から漏れた。
+    """
+    col_w = 196
+    col_gap = 12
+    row_h = 30
+    top = 168
+    label_w = 60
+    cols = [
+        ("正解", None),
+        ("元記事と同じ指示文\n20社・2回目", 1),
+        ("＋「1つにまとめて」\n20社・1回目", 3),
+    ]
+    items = [
+        (1, True, "契約書等の確認（翌日10/1締切）"),
+        (2, False, "見積書等の送付（期限に余裕）"),
+        (3, True, "修正版等の確認（本日締切）"),
+        (4, False, "資料等の送付（期限の記載なし）"),
+        (5, False, "次回発注等について（期限に余裕）"),
+    ]
+
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(len(cols))]
+    right_edge = col_x[-1] + col_w
+    assert right_edge <= WIDTH - 18, right_edge
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「日付だけ型」4社(03・08・13・18)の5件のうち、漏れたのはいつも真の緊急側</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "タグも「至急」の語も使わない取引先の型。1件目・3件目が真の緊急で、"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "2件目・4件目・5件目は期限に余裕がある、または期限の記載が無い。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "4社とも同じ型なので、1社ぶんの5件で代表させている。生の一覧は docs/evidence/ に置いてある。"
+        "</text>\n",
+    ]
+
+    for ci, (header, _miss) in enumerate(cols):
+        x = col_x[ci]
+        for li, line in enumerate(header.split("\n")):
+            parts.append(
+                f'<text class="t-sm" x="{x:.0f}" y="{top - 34 + li * 15}">{_esc(line)}</text>\n'
+            )
+
+    row_pitch = row_h + 26
+    for ri, (num, urgent, desc) in enumerate(items):
+        y = top + ri * row_pitch
+        parts.append(f'<text class="t-sm" x="18" y="{y + row_h / 2 + 4:.0f}">{num}件目</text>\n')
+        for ci, (header, miss_num) in enumerate(cols):
+            x = col_x[ci]
+            if ci == 0:
+                cls = "box-good" if urgent else "box-quiet"
+                tone = "t-good" if urgent else "t-sm"
+                label = "真の緊急" if urgent else "緊急でない"
+            elif not urgent:
+                cls, tone, label = "box-quiet", "t-sm", "対象外"
+            elif num == miss_num:
+                cls, tone, label = "box-bad", "t-bad", "漏れた"
+            else:
+                cls, tone, label = "box-good", "t-good", "一覧に残った"
+            parts.append(
+                f'<rect class="{cls}" x="{x}" y="{y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+            )
+            tx = x + col_w / 2 - len(label) * 5.2
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + row_h / 2 + 4:.0f}">{label}</text>\n'
+            )
+        desc_y = y + row_h + 16
+        parts.append(f'<text class="t-xs" x="{18 + label_w}" y="{desc_y}">{_esc(desc)}</text>\n')
+
+    y = top + (len(items) - 1) * row_pitch + row_h + 34
+    box_h = 40
+    parts.append(f'<rect class="box-quiet" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-sm" x="34" y="{y + 24}">'
+        "どちらの回も、漏れたのは真の緊急2件のうち片方だけ。誤検知（緊急でない3件）は0件。</text>\n"
+    )
+    y += box_h + 16
+
+    height = y + 4
+    alt = (
+        "日付だけで緊急を伝える取引先(タグや「至急」の言葉を一切使わない型)の5件について、"
+        "正解・元記事と同じ指示文の20社2回目・「1つにまとめて」を足した指示文の20社1回目の"
+        "3列で状態を比べた図。1件目(翌日10/1締切・条件が変わる)は正解が真の緊急で、"
+        "元記事と同じ指示文の回では「漏れた」、まとめて指示の回では「一覧に残った」。"
+        "2件目(期限に余裕)は正解が緊急でなく、どちらの回も対象外。"
+        "3件目(本日締切・翌日の予定に必要)は正解が真の緊急で、元記事と同じ指示文の回では"
+        "「一覧に残った」、まとめて指示の回では「漏れた」。4件目(期限の記載なし)と5件目"
+        "(期限に余裕)は正解が緊急でなく、どちらの回も対象外。どちらの回も、漏れたのは"
+        "真の緊急2件のうち片方だけで、緊急でない3件を誤って含めたことは無かった。"
+    )
+    (OUT / "date-only-sender-slips-at-twenty-detail.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     sonnet55_what_changed_chart()
     sonnet55_bench_chart()
     sonnet55_vendor_price_chart()
+    date_only_sender_slips_at_twenty_scale_chart()
+    date_only_sender_slips_at_twenty_detail_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="516" viewBox="0 0 720 516" role="img" aria-label="日付だけで緊急を伝える取引先(タグや「至急」の言葉を一切使わない型)の5件について、正解・元記事と同じ指示文の20社2回目・「1つにまとめて」を足した指示文の20社1回目の3列で状態を比べた図。1件目(翌日10/1締切・条件が変わる)は正解が真の緊急で、元記事と同じ指示文の回では「漏れた」、まとめて指示の回では「一覧に残った」。2件目(期限に余裕)は正解が緊急でなく、どちらの回も対象外。3件目(本日締切・翌日の予定に必要)は正解が真の緊急で、元記事と同じ指示文の回では「一覧に残った」、まとめて指示の回では「漏れた」。4件目(期限の記載なし)と5件目(期限に余裕)は正解が緊急でなく、どちらの回も対象外。どちらの回も、漏れたのは真の緊急2件のうち片方だけで、緊急でない3件を誤って含めたことは無かった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="516"/>
+<text class="t-strong" x="18" y="26">「日付だけ型」4社(03・08・13・18)の5件のうち、漏れたのはいつも真の緊急側</text>
+<text class="t-sm" x="18" y="45">タグも「至急」の語も使わない取引先の型。1件目・3件目が真の緊急で、</text>
+<text class="t-sm" x="18" y="64">2件目・4件目・5件目は期限に余裕がある、または期限の記載が無い。</text>
+<text class="t-xs" x="18" y="83">4社とも同じ型なので、1社ぶんの5件で代表させている。生の一覧は docs/evidence/ に置いてある。</text>
+<text class="t-sm" x="78" y="134">正解</text>
+<text class="t-sm" x="286" y="134">元記事と同じ指示文</text>
+<text class="t-sm" x="286" y="149">20社・2回目</text>
+<text class="t-sm" x="494" y="134">＋「1つにまとめて」</text>
+<text class="t-sm" x="494" y="149">20社・1回目</text>
+<text class="t-sm" x="18" y="187">1件目</text>
+<rect class="box-good" x="78" y="168" width="196" height="30" rx="4"/>
+<text class="t-good" x="155.2" y="187">真の緊急</text>
+<rect class="box-bad" x="286" y="168" width="196" height="30" rx="4"/>
+<text class="t-bad" x="368.4" y="187">漏れた</text>
+<rect class="box-good" x="494" y="168" width="196" height="30" rx="4"/>
+<text class="t-good" x="560.8" y="187">一覧に残った</text>
+<text class="t-xs" x="78" y="214">契約書等の確認（翌日10/1締切）</text>
+<text class="t-sm" x="18" y="243">2件目</text>
+<rect class="box-quiet" x="78" y="224" width="196" height="30" rx="4"/>
+<text class="t-sm" x="150.0" y="243">緊急でない</text>
+<rect class="box-quiet" x="286" y="224" width="196" height="30" rx="4"/>
+<text class="t-sm" x="368.4" y="243">対象外</text>
+<rect class="box-quiet" x="494" y="224" width="196" height="30" rx="4"/>
+<text class="t-sm" x="576.4" y="243">対象外</text>
+<text class="t-xs" x="78" y="270">見積書等の送付（期限に余裕）</text>
+<text class="t-sm" x="18" y="299">3件目</text>
+<rect class="box-good" x="78" y="280" width="196" height="30" rx="4"/>
+<text class="t-good" x="155.2" y="299">真の緊急</text>
+<rect class="box-good" x="286" y="280" width="196" height="30" rx="4"/>
+<text class="t-good" x="352.8" y="299">一覧に残った</text>
+<rect class="box-bad" x="494" y="280" width="196" height="30" rx="4"/>
+<text class="t-bad" x="576.4" y="299">漏れた</text>
+<text class="t-xs" x="78" y="326">修正版等の確認（本日締切）</text>
+<text class="t-sm" x="18" y="355">4件目</text>
+<rect class="box-quiet" x="78" y="336" width="196" height="30" rx="4"/>
+<text class="t-sm" x="150.0" y="355">緊急でない</text>
+<rect class="box-quiet" x="286" y="336" width="196" height="30" rx="4"/>
+<text class="t-sm" x="368.4" y="355">対象外</text>
+<rect class="box-quiet" x="494" y="336" width="196" height="30" rx="4"/>
+<text class="t-sm" x="576.4" y="355">対象外</text>
+<text class="t-xs" x="78" y="382">資料等の送付（期限の記載なし）</text>
+<text class="t-sm" x="18" y="411">5件目</text>
+<rect class="box-quiet" x="78" y="392" width="196" height="30" rx="4"/>
+<text class="t-sm" x="150.0" y="411">緊急でない</text>
+<rect class="box-quiet" x="286" y="392" width="196" height="30" rx="4"/>
+<text class="t-sm" x="368.4" y="411">対象外</text>
+<rect class="box-quiet" x="494" y="392" width="196" height="30" rx="4"/>
+<text class="t-sm" x="576.4" y="411">対象外</text>
+<text class="t-xs" x="78" y="438">次回発注等について（期限に余裕）</text>
+<rect class="box-quiet" x="18" y="456" width="684" height="40" rx="6"/>
+<text class="t-sm" x="34" y="480">どちらの回も、漏れたのは真の緊急2件のうち片方だけ。誤検知（緊急でない3件）は0件。</text>
+</svg>

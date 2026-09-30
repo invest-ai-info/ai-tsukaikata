@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="404" viewBox="0 0 720 404" role="img" aria-label="取引先の数を10社・20社に増やしたとき、真の緊急件数に対する検出件数を6回ぶん比べた図。10社(材料50件・真の緊急16件)は元記事と同じ指示文で1回目16/16・2回目16/16といずれも過不足なく検出。20社(材料100件・真の緊急32件)は同じ指示文で1回目32/32だったが2回目は28/32で4件の見落としがあった。20社に「1つの一覧にまとめて、参考行や別枠には分けないでください」を足した指示文では、1回目が28/32で4件の見落とし、2回目は32/32だった。6回とも誤検知(緊急でないものを緊急と誤答)は0件。崩れるのは20社のときだけで、しかも検出漏れの方向だけだった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="404"/>
+<text class="t-strong" x="18" y="26">10社では崩れず、20社では6回中2回崩れた</text>
+<text class="t-sm" x="18" y="45">「まず各社の書き方の癖を確認してから」という同じ指示文を、材料の社数と</text>
+<text class="t-sm" x="18" y="64">回を変えて6回試した。数字は「検出件数／真の緊急件数」。</text>
+<text class="t-xs" x="18" y="83">誤検知（緊急でないものを緊急と誤答）は6回とも0件。生の回答は docs/evidence/ に置いてある。</text>
+<text class="t-sm" x="334" y="132">1回目</text>
+<text class="t-sm" x="550" y="132">2回目</text>
+<text class="t-sm" x="18" y="167">10社(50件・真の緊急16件)</text>
+<text class="t-sm" x="18" y="182">元記事と同じ指示文</text>
+<rect class="box-good" x="250" y="150" width="200" height="40" rx="4"/>
+<text class="t-good" x="322.5" y="175">16/16</text>
+<rect class="box-good" x="466" y="150" width="200" height="40" rx="4"/>
+<text class="t-good" x="538.5" y="175">16/16</text>
+<text class="t-sm" x="18" y="223">20社(100件・真の緊急32件)</text>
+<text class="t-sm" x="18" y="238">元記事と同じ指示文</text>
+<rect class="box-good" x="250" y="206" width="200" height="40" rx="4"/>
+<text class="t-good" x="322.5" y="231">32/32</text>
+<rect class="box-bad" x="466" y="206" width="200" height="40" rx="4"/>
+<text class="t-bad" x="538.5" y="231">28/32</text>
+<text class="t-sm" x="18" y="279">20社(100件)</text>
+<text class="t-sm" x="18" y="294">＋「1つの一覧にまとめて」</text>
+<rect class="box-bad" x="250" y="262" width="200" height="40" rx="4"/>
+<text class="t-bad" x="322.5" y="287">28/32</text>
+<rect class="box-good" x="466" y="262" width="200" height="40" rx="4"/>
+<text class="t-good" x="538.5" y="287">32/32</text>
+<rect class="box-quiet" x="18" y="328" width="684" height="56" rx="6"/>
+<text class="t-strong" x="34" y="350">崩れるのはいつも20社のときだけ。10社では4回とも過不足なし。</text>
+<text class="t-sm" x="34" y="368">「1つにまとめて」と念を押しても、崩れる回数自体は変わらなかった。</text>
+</svg>
