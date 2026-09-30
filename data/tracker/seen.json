@@ -49,52 +49,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-27T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-28T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences.",
-      "title": "How we will do better for Australia",
-      "uid": "1ddd161d6aab3df0",
-      "url": "https://openai.com/index/how-we-will-do-better-for-australia",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-28T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
-      "title": "Towards safety cases for frontier AI training",
-      "uid": "9580f3c584f53a77",
-      "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-29T19:27:30+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added CLAUDE_CODE_DISABLE_WEB_FETCH environment variable to turn off the WebFetch tool Added claude --desktop to open the Claude desktop app on the current directory, or on a session w…",
-      "title": "v2.1.285",
-      "uid": "b267ce995068e122",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-29T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders.",
-      "title": "DevDay 2026 Recap",
-      "uid": "374a685dc4c48b2c",
-      "url": "https://openai.com/index/devday-2026-recap",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
