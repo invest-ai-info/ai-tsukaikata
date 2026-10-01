@@ -45,41 +45,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-27T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-09-30T19:10:13+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a count such as \"2 of 5\" to the permission prompt when several permission requests stack up Added mouse support for the \"N more\" rows of lists in fullscreen mode: click one to ju…",
-      "title": "v2.1.286",
-      "uid": "dab29fa04a21cd5b",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.286",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-30T10:30:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation.",
-      "title": "Disrupting a coordinated model-distillation campaign",
-      "uid": "d4b6632f466eb6a6",
-      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-30T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI.",
-      "title": "Helping small businesses put AI to work",
-      "uid": "5d068456834d506b",
-      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
