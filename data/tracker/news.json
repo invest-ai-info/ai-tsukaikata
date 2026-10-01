@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-01T13:25:12.197462+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-01T15:19:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.",
+      "summary_ja": "BarclaysがAI活用を拡大します\nAnthropic社のAIを全世界で導入し\n業務改善と顧客サービス向上を狙います",
+      "summary_source": "gemini",
+      "title": "Barclays scales Claude to upgrade operations and improve client experience",
+      "uid": "ea4b5b0c1c827a0a",
+      "url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-09-30T23:54:33.788131+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
