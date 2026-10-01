@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-01T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの「粘り強さ」が原因となって、米OpenAIの評価環境から数百体のエージェントが外部システムに侵入する事件が起きた。この事件が示したリスクの変化と、企業に求められる対応を解説する。",
+      "title": "「長く働くAI」が裏目に？　OpenAIの“脱走事件”が示すリスクの変化　企業に求められる対応は",
+      "uid": "282004f9a1ad70e8",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/02/2000001900/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-01T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、人間とAIエージェントによる効果的なチームを構築するためのベストプラクティスをまとめたブログ記事を公開した。Slack社の最高製品責任者（CPO）へのインタビューに基づいている。",
+      "title": "「DMに逃げる理由は秘密保持ではない」　人とAIエージェントの“最強チーム”を作るベストプラクティス",
+      "uid": "e1b4970ea6aecd22",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/02/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-01T22:17:12+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、ChatGPTにバーチャル試着やお気に入り保存などの新機能を追加した。商品情報カードから自身の写真を使って服やアクセサリーを着用した姿を生成できる。気になった商品の整理機能も備える。また、iOSアプリに、連続撮影した書類を自動で1つのPDFにまとめて送信できるスキャン機能も導入した。",
+      "title": "ChatGPTにAIでバーチャル試着機能とカメラでの書類スキャン→PDF化機能",
+      "uid": "2966db5daccd2016",
+      "url": "https://www.itmedia.co.jp/news/article/2610/02/2000001945/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-01T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「2週間で約3倍高速化」という驚きの成果を上げたClaude。いったい、Anthropicの開発者たちは何を変えたのか。短期間での高速化を支えたのは、ある開発アプローチだった。",
+      "title": "「Claude」3倍高速化の裏で、Anthropic開発者が「あえてしなかったこと」：899th Lap",
+      "uid": "b4cf37f94d83ccce",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/02/2000001932/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-01T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 地図アプリの新しい使い方「マップに相談」を使いこなそう",
+      "uid": "74d98d30ca5c5d18",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2143933.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-01T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIが生物兵器や核戦争、社会の崩壊などを通じて人類を滅ぼす可能性を、ニューサウスウェールズ大学のAI研究者であるトビー・ウォルシュ教授が5つのシナリオに分けて論じています。 続きを読む...",
+      "title": "AIが人類を滅ぼすとしたら？研究者が考える5つのシナリオ",
+      "uid": "61ce367bce5f5983",
+      "url": "https://gigazine.net/news/20261002-ai-human-extinction-five-scenarios/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-01T19:34:31.151246+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2327,78 +2399,6 @@
       "uid": "96011aa0acdd3fe0",
       "url": "https://www.publickey1.jp/blog/26/copilot_managed_runtimemicrosoft_365.html",
       "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-09-27T18:27:56.305107+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-27T14:55:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "MicrosoftとQualcommが、特定のシステム要件を満たしたPCを対象として2024年から展開してきた「Copilot+ PC」ブランドが、公式な発表はあいものの実質的に消滅したことが明らかになりました。 続きを読む...",
-      "title": "MicrosoftとQualcommが展開してきた「Copilot+ PC」ブランドが実質的に消滅",
-      "uid": "2fc55d15261bb6c4",
-      "url": "https://gigazine.net/news/20260927-microsoft-copilot-plus-brand-is-dead/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-27T14:04:41.474471+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-27T10:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "画像生成AIや動画生成AIをPCでローカル実行できるアプリ「ComfyUI」を開発するComfyが、サービスごとの画像・動画生成AIのAPIをまとめて扱えるようにする「Comfy Router」を2026年9月23日にリリースしました。 続きを読む...",
-      "title": "画像・動画生成AIのAPIを安さや制限の緩さで選んで簡単に使えるようにする「Comfy Router」が登場、OpenRouterのコンテンツ生成版",
-      "uid": "2624493f3fba43f4",
-      "url": "https://gigazine.net/news/20260927-comfy-router/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-27T01:31:01.868760+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-26T23:57:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Qualcommは、最新のスマートフォン向けSoC「Snapdragon 8 Elite Gen 6」で、AIを使った新しいグラフィックス技術「Adreno Neural Fusion（ANF）」を導入した。ゲームを低い解像度で描画してAIで高解像度化する「Super Resolution」と、フレームの間をAIで補う「Frame Generation」を組み合わせ、GPUの負荷を抑えながら画…",
-      "title": "スマホゲームにも「AI超解像」、Snapdragon 8 Elite Gen 6が対応　半分の解像度で描画→AIで高精細に",
-      "uid": "6cd37f11981bfcee",
-      "url": "https://japan.cnet.com/article/35252991/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-27T01:31:01.868760+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-26T23:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI搭載のカメラで監視されることを嫌った人物が、着ている人をAIが人と認識できなくなる特製の迷彩柄シャツを作り上げました。 続きを読む...",
-      "title": "AI搭載の監視カメラを混乱させる「デジタル迷彩シャツ」",
-      "uid": "a103392c4cf7565f",
-      "url": "https://gigazine.net/news/20260927-digital-camouflage-shirt/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-26T22:54:55.475145+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-26T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NTTドコモが、顧客の短い質問から意図をくみ取り、必要な手続きへ導く対話AIを導入した。生成AIが顧客に聞き返しながら情報を絞り込むことで、FAQを探す負担を軽減。AIによる顧客対応の本番運用を支える仕組みも整える。",
-      "title": "NTTドコモ、「正しく質問させる」をやめ、“聞き返すAI”で変える顧客対応",
-      "uid": "66fba5c2f39ce17a",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/27/2000001764/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-26T13:09:27.137457+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-26T08:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIやAIエージェントの活用が広がる中、企業のAI利用コストも膨らんでいる。AI活用を減らすことなく、増加するコストを抑えるには何を見直せばいいのか。アクセンチュアの調査から、その実態が見えてきた。",
-      "title": "「AIトークンコスト増を44％抑制」できる可能性も　高性能モデルの“使い過ぎ”、どう減らす？",
-      "uid": "77ca6dfe1a6f7f8f",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/26/news011.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

@@ -55,6 +55,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-01T23:55:07.714679+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-01T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days.",
+      "summary_ja": "ソーシャルクラブ「The Den」がAIを導入\n週10～15時間分の業務時間短縮に成功\n助成金申請が3日→2時間、酒類許可が4日→3日に",
+      "summary_source": "gemini",
+      "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+      "uid": "24c3f7e7831ad691",
+      "url": "https://openai.com/index/the-den-family-social",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-30T23:54:33.788131+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
