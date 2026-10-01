@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-01T19:34:31.151246+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-10-01T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIではAIエージェントが社内テスト中に誤ってHugging Faceをハッキングしてしまった事例など、複数のインシデントが発生しています。OpenAIのAIモデルが暴走を始める数か月前に、従業員が経営幹部に警告を送っていたものの、経営幹部はその警告を無視していたことが社内メールから明らかになりました。 続きを読む...",
+      "title": "OpenAIはテストの監視が不十分であるという社内警告を繰り返し無視して追加のセキュリティ対策をせず迅速なリリースを優先していた",
+      "uid": "38e137f1c70e8e7b",
+      "url": "https://gigazine.net/news/20261001-openai-ignored-warnings/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-01T13:25:12.197462+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "「AIトークンコスト増を44％抑制」できる可能性も　高性能モデルの“使い過ぎ”、どう減らす？",
       "uid": "77ca6dfe1a6f7f8f",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/26/news011.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-26T07:47:01.421330+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-26T04:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、AIモデルやエージェントのコーディング能力を測る「Android Bench 2.0」を公開した。エンジニアが数日を要する複雑な長期タスクを課す仕様に刷新。最高通過率は従来の約91％から約28％に急落した。",
-      "title": "「1週間の開発タスク」でAIの限界を検証　Googleが「Android Bench 2.0」公開",
-      "uid": "230bb0312fa0abbb",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/26/news013.html",
       "vendor": "ITmedia AI+"
     }
   ]

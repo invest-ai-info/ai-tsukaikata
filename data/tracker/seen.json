@@ -24,28 +24,22 @@
     "e5867c4dc76ca063": "2026-08-17",
     "e7c4e5e484b85e66": "2026-09-15"
   },
-  "failures": {
-    "deepmind-blog": {
-      "count": 1,
-      "last_error": "HTTPError: HTTP Error 500: Internal Server Error",
-      "since": "2026-10-01T13:25:12.197462+00:00"
-    }
-  },
+  "failures": {},
   "latest": {
     "anthropic-news": "2026-10-01T15:19:00+00:00",
     "anthropic-sdk": "2026-09-30T22:58:09+00:00",
-    "claude-code": "2026-09-30T19:10:13+00:00",
+    "claude-code": "2026-10-01T18:43:19+00:00",
     "deepmind-blog": "2026-09-30T20:01:45+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-09-28T19:00:00+00:00",
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-10-01T09:35:00+00:00",
-    "media-gigazine": "2026-10-01T13:00:00+00:00",
+    "media-gigazine": "2026-10-01T14:00:00+00:00",
     "media-impress-ai": "2026-10-01T10:05:46+00:00",
     "media-itmedia-aiplus": "2026-10-01T09:01:23+00:00",
-    "media-publickey": "2026-09-30T15:22:55+00:00",
-    "openai-news": "2026-09-30T10:30:00+00:00",
+    "media-publickey": "2026-10-01T18:28:43+00:00",
+    "openai-news": "2026-10-01T17:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-23T19:20:28+00:00",
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
@@ -62,6 +56,39 @@
       "uid": "ea4b5b0c1c827a0a",
       "url": "https://www.anthropic.com/news/barclays-scales-claude",
       "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-01T18:43:19+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added Claude Mods: plugins may now modify deeper behavior Added You should know, a built-in mod where a side agent watches your back and flags things you or Claude might miss. Turn it …",
+      "title": "v2.1.287",
+      "uid": "4e5a6625ff6c061e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.287",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-01T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress.",
+      "title": "The eternal complement",
+      "uid": "068eb43b0a2ee008",
+      "url": "https://openai.com/index/the-eternal-complement",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-01T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers.",
+      "title": "How Albertsons Companies is reimagining retail from the inside out",
+      "uid": "457d1be7ffe48cdc",
+      "url": "https://openai.com/index/albertsons-reimagining-retail",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -147,6 +174,7 @@
     "06672f50c64a4a74": "2026-08-19T04:02:09.383121+00:00",
     "06678975dc0f4479": "2026-09-01T05:15:14.598999+00:00",
     "0669274cf1395c18": "2026-09-10T06:01:05.671464+00:00",
+    "068eb43b0a2ee008": "2026-10-01T19:34:31.151246+00:00",
     "06965757817330ed": "2026-09-02T05:51:57.834877+00:00",
     "06c9e4d2881602ed": "2026-09-28T06:59:28.240897+00:00",
     "06dcfc494892ffab": "2026-08-24T13:15:37.392843+00:00",
@@ -803,6 +831,7 @@
     "38c599edc397a3d4": "2026-09-17T07:43:59.936479+00:00",
     "38cc616fb06dbc7e": "2026-08-28T05:26:34.338455+00:00",
     "38de3545026842b6": "2026-09-02T05:51:57.834877+00:00",
+    "38e137f1c70e8e7b": "2026-10-01T19:34:31.151246+00:00",
     "390d1cff8cecfdbc": "2026-09-20T01:13:15.987957+00:00",
     "393ee213c9d41ce6": "2026-08-21T07:09:56.315810+00:00",
     "39547a09ab2694ea": "2026-08-13T12:01:33.145239+00:00",
@@ -956,6 +985,7 @@
     "456c0d11558fe20a": "2026-09-16T06:05:38.313847+00:00",
     "457b4b35027bae37": "2026-08-23T02:01:45.025281+00:00",
     "457bdf4c8967e537": "2026-09-03T05:51:49.745761+00:00",
+    "457d1be7ffe48cdc": "2026-10-01T19:34:31.151246+00:00",
     "458fa723ead5ce3c": "2026-10-01T13:25:12.197462+00:00",
     "45d96dca0bd80f19": "2026-08-20T01:53:51.496322+00:00",
     "45e0227e9c86633e": "2026-09-28T06:59:28.240897+00:00",
@@ -1061,6 +1091,7 @@
     "4e1691996ccd7bd2": "2026-08-18T22:43:44.829078+00:00",
     "4e1c511b29477465": "2026-08-13T12:01:33.145239+00:00",
     "4e455cf08dd205af": "2026-09-02T22:40:55.964913+00:00",
+    "4e5a6625ff6c061e": "2026-10-01T19:34:31.151246+00:00",
     "4e5fc6a644db07f3": "2026-09-07T10:24:07.119095+00:00",
     "4ebe4ef76e10f8a9": "2026-08-27T20:33:26.631798+00:00",
     "4ebfcabc12a75258": "2026-08-28T18:46:16.087122+00:00",
@@ -2965,6 +2996,7 @@
     "e5d78dbd10b6f68f": "2026-08-22T10:42:39.821346+00:00",
     "e5da95b142ee0bf1": "2026-09-03T05:51:49.745761+00:00",
     "e61831064147b868": "2026-09-29T08:36:30.590774+00:00",
+    "e6193b53c8cdd488": "2026-10-01T19:34:31.151246+00:00",
     "e65e791a2466e2d7": "2026-09-05T10:40:02.078835+00:00",
     "e65f27ba1fd30da7": "2026-09-23T06:02:05.594533+00:00",
     "e66b241ec1b4ea63": "2026-08-26T09:59:37.152037+00:00",
