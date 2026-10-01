@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="仕込んだ複製の作り方を示す図。材料Aの1組目を実例として、2026-07-07付け #K-8488「小売各社の値上げは平均4.2%。対象品目は1,800品目。実施は8月1日から。」という行と、3日後の2026-07-10付け #K-8524が、日付も識別子も違うのに文章だけ一字一句同じであることを示す。数字も固有名詞もあり、単体で読めば完全に正常な良品にしか見えない。仕込んだ複製は材料Aに4組あり、07-07の#K-8488から3日後の07-10の#K-8524へ、07-17の#K-8590から1週間後の07-24の#K-8645へ、07-30の#K-8699から6日後の08-05の#K-8753へ、08-04の#K-8740から4日後の08-08の#K-8794へ、それぞれ文章を複製した。材料Bも同じ日付の間隔で別の4組を同じ形で仕込んである。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="380"/>
+<text class="t-strong" x="18" y="26">複製は、日付も識別子も違う行の文章だけを同じにした</text>
+<text class="t-sm" x="18" y="45">例：材料Aの1組目。3日後の行が、文章だけ一字一句同じになっている。</text>
+<text class="t-sm" x="18" y="64">数字も固有名詞もあり、単体で読めば完全に正常な「良品」にしか見えない。</text>
+<rect class="box" x="18" y="92" width="330" height="92" rx="6"/>
+<text class="t-accent" x="32" y="116">2026-07-07 #K-8488</text>
+<text class="t-sm" x="32" y="140">小売各社の値上げは平均4.2%。対象品目は</text>
+<text class="t-sm" x="32" y="160">1,800品目。実施は8月1日から。</text>
+<rect class="box-bad" x="372" y="92" width="330" height="92" rx="6"/>
+<text class="t-accent" x="386" y="116">2026-07-10 #K-8524</text>
+<text class="t-bad" x="386" y="140">小売各社の値上げは平均4.2%。対象品目は</text>
+<text class="t-bad" x="386" y="160">1,800品目。実施は8月1日から。</text>
+<text class="t-xs" x="26" y="84">複製元（前の日付）</text>
+<text class="t-xs" x="380" y="84">複製先（後の日付・仕込んだ行）</text>
+<line class="line" x1="352" y1="138.0" x2="360" y2="138.0"/>
+<path class="line" d="M 356 133.0 L 366 138.0 L 356 143.0"/>
+<text class="t-xs" x="360.0" y="128.0" text-anchor="middle">同じ文章</text>
+<text class="t-strong" x="18" y="210">仕込んだ複製4組（材料A）</text>
+<text class="mono" x="18" y="242">07-07 #K-8488</text>
+<text class="t-xs" x="190" y="242">→</text>
+<text class="mono" x="210" y="242">07-10 #K-8524</text>
+<text class="t-sm" x="400" y="242">3日後</text>
+<text class="mono" x="18" y="266">07-17 #K-8590</text>
+<text class="t-xs" x="190" y="266">→</text>
+<text class="mono" x="210" y="266">07-24 #K-8645</text>
+<text class="t-sm" x="400" y="266">1週間後</text>
+<text class="mono" x="18" y="290">07-30 #K-8699</text>
+<text class="t-xs" x="190" y="290">→</text>
+<text class="mono" x="210" y="290">08-05 #K-8753</text>
+<text class="t-sm" x="400" y="290">6日後</text>
+<text class="mono" x="18" y="314">08-04 #K-8740</text>
+<text class="t-xs" x="190" y="314">→</text>
+<text class="mono" x="210" y="314">08-08 #K-8794</text>
+<text class="t-sm" x="400" y="314">4日後</text>
+<rect class="box-quiet" x="18" y="332" width="684" height="36" rx="6"/>
+<text class="t-sm" x="34" y="355">材料Bも同じ日付の間隔で、別の4組を同じ形で仕込んである（本文参照）。</text>
+</svg>

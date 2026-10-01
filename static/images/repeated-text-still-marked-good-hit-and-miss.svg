@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="322" viewBox="0 0 720 322" role="img" aria-label="良品20件に他の日の文章をそのまま複製した行を4件仕込み、3件抜き取り＋提案の指示文と、全30件を1行ずつ判定させる指示文のどちらが拾うかを比べた結果を示す表。すべて「当たった回数／聞いた回数」で、多いほど良い。3件抜き取り＋提案の指示文で、本文のどこかで複製4件が名指しされた数は16回中16回（材料2本×各2回×4件）。全30件判定の指示文で、判定欄が「よくない」になった数は、材料Aの2回ぶんでは8回中8回だったが、材料Bの2回ぶんでは8回中0回だった。ただし材料Bでは、判定欄が「良い」のままでも本文のどこかで複製に触れた回が2回中2回あった。下の枠には、3件しか見せない指示文でも全30件を読んでから選ぶため複製4件は4回とも全部名指しされたこと、全30件を判定させる指示文は材料Aでは判定欄が2回とも複製を正しく拾ったが材料Bでは2回とも「良い」に分類され気づいていても欄には出なかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="322"/>
+<text class="t-strong" x="18" y="26">全件判定の「良い／よくない」欄は、材料によって複製を見逃した</text>
+<text class="t-sm" x="18" y="45">実測2026-10-01。three-samples-and-the-pass-line の材料に、良品4件を他の日の文章と</text>
+<text class="t-sm" x="18" y="64">同文へ差し替えて仕込んだ（材料2本×各2回＝8回。新しい仕込みは1回あたり4件）。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">①3件抜き取り＋提案：本文のどこかで複製4件が名指しされた数</text>
+<rect class="box-good" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="125" text-anchor="middle" style="font-weight:700">16/16</text>
+<text class="t" x="18" y="157">⑤全30件判定：判定欄で「よくない」になった数（材料A・2回ぶん）</text>
+<rect class="box-good" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="157" text-anchor="middle" style="font-weight:700">8/8</text>
+<text class="t" x="18" y="189">⑤全30件判定：判定欄で「よくない」になった数（材料B・2回ぶん）</text>
+<rect class="box-bad" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-bad" x="558.0" y="189" text-anchor="middle" style="font-weight:700">0/8</text>
+<text class="t" x="18" y="221">⑤全30件判定：判定欄は「良い」でも本文中で複製に触れた回（材料B）</text>
+<rect class="box-good" x="478" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="221" text-anchor="middle" style="font-weight:700">2/2</text>
+<rect class="box-accent" x="18" y="238" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="258">3件しか見せない①でも、全30件を読んでから選ぶため複製4件は4回とも全部名指しされた。</text>
+<text class="t-accent" x="34" y="276">全30件を判定させる⑤は、材料Aでは判定欄が2回とも複製を正しく拾ったが、</text>
+<text class="t-accent" x="34" y="294">材料Bでは2回とも「良い」に分類＝気づいていても欄には出なかった（本文の説明では触れていた）。</text>
+</svg>

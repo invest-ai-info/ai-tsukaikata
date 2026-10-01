@@ -29462,3 +29462,134 @@ def three_tier_subtotal_hit_and_miss_chart() -> None:
 if __name__ == "__main__":
     three_tier_subtotal_hit_and_miss_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def repeated_text_still_marked_good_hit_and_miss_chart() -> None:
+    """良品20件に「他の日の文章をそのまま複製した行」を4件仕込み、
+
+    3件抜き取り＋提案（①）と全30件判定（⑤）のどちらが拾うかを実測（2026-10-01）。
+    判定は docs/evidence/repeated-text-still-marked-good.md の生の返りを機械照合した。
+    """
+    _hit_and_miss_rows_chart(
+        "repeated-text-still-marked-good-hit-and-miss.svg",
+        "全件判定の「良い／よくない」欄は、材料によって複製を見逃した",
+        "実測2026-10-01。three-samples-and-the-pass-line の材料に、良品4件を他の日の文章と",
+        "同文へ差し替えて仕込んだ（材料2本×各2回＝8回。新しい仕込みは1回あたり4件）。",
+        [
+            ("①3件抜き取り＋提案：本文のどこかで複製4件が名指しされた数", 16, 16, "good"),
+            ("⑤全30件判定：判定欄で「よくない」になった数（材料A・2回ぶん）", 8, 8, "good"),
+            ("⑤全30件判定：判定欄で「よくない」になった数（材料B・2回ぶん）", 0, 8, "good"),
+            ("⑤全30件判定：判定欄は「良い」でも本文中で複製に触れた回（材料B）", 2, 2, "good"),
+        ],
+        [
+            "3件しか見せない①でも、全30件を読んでから選ぶため複製4件は4回とも全部名指しされた。",
+            "全30件を判定させる⑤は、材料Aでは判定欄が2回とも複製を正しく拾ったが、",
+            "材料Bでは2回とも「良い」に分類＝気づいていても欄には出なかった（本文の説明では触れていた）。",
+        ],
+        "良品20件に他の日の文章をそのまま複製した行を4件仕込み、3件抜き取り＋提案の指示文と、"
+        "全30件を1行ずつ判定させる指示文のどちらが拾うかを比べた結果を示す表。"
+        "すべて「当たった回数／聞いた回数」で、多いほど良い。"
+        "3件抜き取り＋提案の指示文で、本文のどこかで複製4件が名指しされた数は16回中16回"
+        "（材料2本×各2回×4件）。全30件判定の指示文で、判定欄が「よくない」になった数は、"
+        "材料Aの2回ぶんでは8回中8回だったが、材料Bの2回ぶんでは8回中0回だった。"
+        "ただし材料Bでは、判定欄が「良い」のままでも本文のどこかで複製に触れた回が2回中2回あった。"
+        "下の枠には、3件しか見せない指示文でも全30件を読んでから選ぶため複製4件は4回とも"
+        "全部名指しされたこと、全30件を判定させる指示文は材料Aでは判定欄が2回とも複製を正しく"
+        "拾ったが材料Bでは2回とも「良い」に分類され気づいていても欄には出なかったことが書かれている。",
+        label_w=460,
+    )
+
+
+def repeated_text_still_marked_good_pair_chart() -> None:
+    """仕込んだ複製4組のうち1組を実例として示し、残り3組を一覧にする図。"""
+    pair_examples = [
+        ("2026-07-07 #K-8488", "小売各社の値上げは平均4.2%。対象品目は", "1,800品目。実施は8月1日から。"),
+        ("2026-07-10 #K-8524", "小売各社の値上げは平均4.2%。対象品目は", "1,800品目。実施は8月1日から。"),
+    ]
+    box_w = 330
+    box_h = 92
+    gap = 24
+    left_x = 18
+    right_x = left_x + box_w + gap
+    top = 92
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "複製は、日付も識別子も違う行の文章だけを同じにした</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "例：材料Aの1組目。3日後の行が、文章だけ一字一句同じになっている。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "数字も固有名詞もあり、単体で読めば完全に正常な「良品」にしか見えない。</text>\n",
+    ]
+
+    for i, (head, line1, line2) in enumerate(pair_examples):
+        bx = left_x if i == 0 else right_x
+        klass = "box" if i == 0 else "box-bad"
+        tklass = "t-sm" if i == 0 else "t-bad"
+        parts.append(f'<rect class="{klass}" x="{bx}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="t-accent" x="{bx + 14}" y="{top + 24}">{_esc(head)}</text>\n')
+        parts.append(f'<text class="{tklass}" x="{bx + 14}" y="{top + 48}">{_esc(line1)}</text>\n')
+        parts.append(f'<text class="{tklass}" x="{bx + 14}" y="{top + 68}">{_esc(line2)}</text>\n')
+    label = "複製元（前の日付）" if True else ""
+    parts.append(f'<text class="t-xs" x="{left_x + 8}" y="{top - 8}">複製元（前の日付）</text>\n')
+    parts.append(f'<text class="t-xs" x="{right_x + 8}" y="{top - 8}">複製先（後の日付・仕込んだ行）</text>\n')
+
+    arrow_y = top + box_h / 2
+    arrow_x1 = left_x + box_w + 4
+    arrow_x2 = right_x - 4
+    parts.append(f'<line class="line" x1="{arrow_x1}" y1="{arrow_y}" x2="{arrow_x2 - 8}" y2="{arrow_y}"/>\n')
+    parts.append(
+        f'<path class="line" d="M {arrow_x2 - 12} {arrow_y - 5} L {arrow_x2 - 2} {arrow_y} '
+        f'L {arrow_x2 - 12} {arrow_y + 5}"/>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="{(arrow_x1 + arrow_x2) / 2:.1f}" y="{arrow_y - 10}" '
+        f'text-anchor="middle">同じ文章</text>\n'
+    )
+
+    list_top = top + box_h + 40
+    parts.append(f'<text class="t-strong" x="18" y="{list_top - 14}">仕込んだ複製4組（材料A）</text>\n')
+    rows = [
+        ("07-07 #K-8488", "07-10 #K-8524", "3日後"),
+        ("07-17 #K-8590", "07-24 #K-8645", "1週間後"),
+        ("07-30 #K-8699", "08-05 #K-8753", "6日後"),
+        ("08-04 #K-8740", "08-08 #K-8794", "4日後"),
+    ]
+    row_h = 24
+    y = list_top
+    for src, dst, gap_label in rows:
+        ty = y + 18
+        parts.append(f'<text class="mono" x="18" y="{ty}">{_esc(src)}</text>\n')
+        parts.append(f'<text class="t-xs" x="190" y="{ty}">→</text>\n')
+        parts.append(f'<text class="mono" x="210" y="{ty}">{_esc(dst)}</text>\n')
+        parts.append(f'<text class="t-sm" x="400" y="{ty}">{_esc(gap_label)}</text>\n')
+        y += row_h
+
+    note_y = y + 12
+    parts.append(f'<rect class="box-quiet" x="18" y="{note_y}" width="684" height="36" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-sm" x="34" y="{note_y + 23}">'
+        "材料Bも同じ日付の間隔で、別の4組を同じ形で仕込んである（本文参照）。</text>\n"
+    )
+
+    height = note_y + 36 + 12
+    alt = (
+        "仕込んだ複製の作り方を示す図。材料Aの1組目を実例として、"
+        "2026-07-07付け #K-8488「小売各社の値上げは平均4.2%。対象品目は1,800品目。"
+        "実施は8月1日から。」という行と、3日後の2026-07-10付け #K-8524が、"
+        "日付も識別子も違うのに文章だけ一字一句同じであることを示す。"
+        "数字も固有名詞もあり、単体で読めば完全に正常な良品にしか見えない。"
+        "仕込んだ複製は材料Aに4組あり、07-07の#K-8488から3日後の07-10の#K-8524へ、"
+        "07-17の#K-8590から1週間後の07-24の#K-8645へ、07-30の#K-8699から6日後の"
+        "08-05の#K-8753へ、08-04の#K-8740から4日後の08-08の#K-8794へ、"
+        "それぞれ文章を複製した。材料Bも同じ日付の間隔で別の4組を同じ形で仕込んである。"
+    )
+    (OUT / "repeated-text-still-marked-good-pair.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    repeated_text_still_marked_good_hit_and_miss_chart()
+    repeated_text_still_marked_good_pair_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
