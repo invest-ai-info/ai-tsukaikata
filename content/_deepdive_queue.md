@@ -270,10 +270,35 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。
       オーナーに一言確認を仰いでから確定させるのが、FIGのときの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
-  - 2026-09-30 自動追記（major・Google DeepMind「Gemini 4 Argon: our next era of frontier intelligence」）
+- [x] https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
+  - →保管: ✅ **2026-10-01: 公開した** → `content/tools/gemini-4-argon.md`
 
 ## 処理済み
+
+- https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/ → **公開済み** content/tools/gemini-4-argon.md（2026-10-01・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/` へ到達（200）。
+    モデルカード・料金ページとも未公開（`deepmind.google/models/model-cards/gemini-4-argon` は404、
+    `ai.google.dev/gemini-api/docs/pricing` にArgonの行は無し）＝限定提供のため一般公開のページ自体が無い。
+    図4枚（`argon-output-limit` / `argon-benchmarks` / `argon-price-tiers` / `argon-vendor-price`）。
+    出典9件すべて取得成功。`check_numbers.py` は照合対象19個のうち**19個が出典に存在**、残る1個（90%）は
+    3.1 Proのキャッシュ割引率をこの記事が計算した値（$0.20÷$2.00）で、そう明記してある。
+    pytest 736 passed・build 247ファイル。`check_readability.py` は60字以上11%（目安15%以下、最長86字）。
+  - 📌 記事の芯＝**Gemini 4 Argonは出力トークン上限が前のモデル（3.1 Pro Preview・65,536）の約15.3倍
+    （100万トークン）に広がった一方、一般提供はされておらず、使えるのはFairwind Program経由の
+    信頼されたサイバー防御担当者とGoogle社内だけ**。価格（導入$2/$10・導入後$4/$20）はすでに
+    発表されているが、導入価格が終わる日付は過去のFlashモデルと違い明記されていない。入力トークンの
+    上限・知識の締め切りも発表に記載が無く「公表されていない」とした。
+  - 🔑 **同じ構造の前例あり**＝2026年9月6日公開のGemini 3.8 Flash Cyberも同じFairwind Program経由の
+    限定提供のまま一般の料金ページに載っていない（この記事を書いた時点で確認）。Argonはこの枠組みを
+    主力モデル本体にまで広げた形、と本文に明記。
+  - ⚠️ 性能4項目（DeepSWE v1.1 77.9%・LVBench 91.7%・CWE-bench v1 68%・AutomationBench 51.3%）は
+    いずれもGoogle自身の測定で、他社モデルを同条件で測った数字が発表に無いため、サイトの方針どおり
+    性能の横並び比較はしていない（単価・仕様のみ他社比較）。CWE-bench v1は「3.8 Flash Cyberの
+    CWE-bench v0での性能の上に積み上げた」という記述はあるが、3.8 Flash Cyberの具体的な点数は
+    発表に書かれておらず「書かれていない」とした。
+  - ⚠️ 他社比較はClaude Opus 5.5（`platform.claude.com`）とGPT-6 Astra（`developers.openai.com`）。
+    Argonの導入価格は両社より入力・出力とも安く見えるが、まだ誰でも契約できる値段ではない点を
+    本文・マークの両方で強調した。
 
 - https://www.anthropic.com/claude-sonnet-5-5 → **公開済み** content/tools/claude-sonnet-5-5.md（2026-09-29・公開）
   - `www.anthropic.com` に到達（200・素のUAで問題なく読める）。発表ページのRSCペイロードから

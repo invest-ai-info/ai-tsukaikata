@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="352" viewBox="0 0 720 352" role="img" aria-label="Gemini 4 Argon（導入価格）と各社の現時点の最上位モデルの単価を比べた横棒グラフ。100万トークンあたりのドル。Gemini 4 Argon（導入価格）は入力2ドル・出力10ドル、前のモデルGemini 3.1 Pro Previewは入力2ドル・出力12ドル、Claude Opus 5.5（Anthropic最上位）は入力4ドル・出力20ドル、GPT-6 Astra（OpenAI最上位）は入力10ドル・出力50ドル。Argonはまだ一般提供されておらず導入価格の値。会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しない。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="352"/>
+<text class="t-strong" x="18" y="26">各社・現時点の最上位モデルとの単価（100万トークンあたり）</text>
+<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。Argonはまだ一般提供されておらず、導入価格の値。</text>
+<text class="t-sm" x="18" y="64">各社の公式ページの数字だけを並べている（2026年10月1日に確認）。</text>
+<text class="t" x="18" y="94">Gemini 4 Argon（導入価格）</text>
+<text class="t-xs" x="226" y="93">入力</text>
+<rect class="bar-in" x="262" y="82" width="14.3" height="14" rx="2"/>
+<text class="t-sm" x="284.3" y="93">$2</text>
+<text class="t-xs" x="226" y="112">出力</text>
+<rect class="bar-out" x="262" y="101" width="71.6" height="14" rx="2"/>
+<text class="t-sm" x="341.6" y="112">$10</text>
+<text class="t" x="18" y="149">Gemini 3.1 Pro Preview（前のモデル）</text>
+<text class="t-xs" x="226" y="148">入力</text>
+<rect class="bar-in" x="262" y="137" width="14.3" height="14" rx="2"/>
+<text class="t-sm" x="284.3" y="148">$2</text>
+<text class="t-xs" x="226" y="167">出力</text>
+<rect class="bar-out" x="262" y="156" width="85.9" height="14" rx="2"/>
+<text class="t-sm" x="355.9" y="167">$12</text>
+<text class="t" x="18" y="204">Claude Opus 5.5（Anthropic最上位）</text>
+<text class="t-xs" x="226" y="203">入力</text>
+<rect class="bar-in" x="262" y="192" width="28.6" height="14" rx="2"/>
+<text class="t-sm" x="298.6" y="203">$4</text>
+<text class="t-xs" x="226" y="222">出力</text>
+<rect class="bar-out" x="262" y="211" width="143.2" height="14" rx="2"/>
+<text class="t-sm" x="413.2" y="222">$20</text>
+<text class="t" x="18" y="259">GPT-6 Astra（OpenAI最上位）</text>
+<text class="t-xs" x="226" y="258">入力</text>
+<rect class="bar-in" x="262" y="247" width="71.6" height="14" rx="2"/>
+<text class="t-sm" x="341.6" y="258">$10</text>
+<text class="t-xs" x="226" y="277">出力</text>
+<rect class="bar-out" x="262" y="266" width="358.0" height="14" rx="2"/>
+<text class="t-sm" x="628.0" y="277">$50</text>
+<text class="t-xs" x="18" y="322">※ Argonの入力単価($2)は3.1 Proの20万トークン以下の単価と同額。出力は$12→$10に下がる。</text>
+<text class="t-xs" x="18" y="340">※ 会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しない。</text>
+</svg>

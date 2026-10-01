@@ -29724,3 +29724,261 @@ def find_500_yen_gap_hit_and_miss_chart() -> None:
 
 if __name__ == "__main__":
     find_500_yen_gap_hit_and_miss_chart()
+
+
+def argon_output_limit_chart() -> None:
+    """Gemini 4 Argonの出力上限（100万トークン）を、前のモデル（3.1 Pro・64K）と比べる。
+
+    出典＝発表ページ（blog.google・2026-09-30）が明記する「64K→100万トークン」の変化。
+    3.1 Proの65,536は公式モデルページの実測値（発表側の「64K」はこの丸めた言い方）。
+    比率（約15.3倍）はこの記事の計算（1,000,000÷65,536）。
+    """
+    rows = [
+        ("Gemini 3.1 Pro Preview（前のモデル）", 65_536, "出典: Gemini API 公式モデルページ"),
+        ("Gemini 4 Argon", 1_000_000, "出典: 発表ページ（blog.google）"),
+    ]
+    left, right = 268, 616
+    span = right - left
+    top, bar_h, pitch = 96, 22, 42
+    biggest = max(value for _, value, _ in rows)
+    scale = span / biggest
+
+    assert right + 90 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "出力の上限が、前のモデルの約15.3倍に広がった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "一度の応答で生成できるトークン数（出力トークン上限）。入力側の上限は発表に記載がない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Argonの「100万」は発表ページの表記。3.1 Proの65,536は公式モデルページの実測値。</text>\n",
+    ]
+    for index, (name, value, note) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        cls = "bar-new" if index > 0 else "bar-old"
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 6}">'
+            f"{value:,}</text>\n"
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{y + bar_h + 12}">{_esc(note)}</text>\n')
+
+    height = top + len(rows) * pitch + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 22}">'
+        "※ 15.3倍はこの記事の計算（1,000,000 ÷ 65,536）。発表ページに倍率の記載はない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ 出力トークン上限が増えても、一度に読み込める入力の上限が同じとは限らない（未公表）。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argonの出力トークン上限を、前のモデルGemini 3.1 Pro Previewと比べた横棒グラフ。"
+        "Gemini 3.1 Pro Previewは65,536トークン、Gemini 4 Argonは1,000,000トークンで、"
+        "約15.3倍に広がった（この記事の計算）。出力トークン上限が増えても、入力側の上限が"
+        "同じとは限らない（Argonの入力上限は発表に記載がなく未公表）。"
+    )
+    (OUT / "argon-output-limit.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def argon_benchmarks_chart() -> None:
+    """Gemini 4 Argonが発表ページで挙げた、自社測定のみの点数4つ。
+
+    出典＝発表ページ（blog.google・2026-09-30）。いずれもGoogle自身の測定で、
+    他社モデルの同じ条件での点数は発表に無い。テストの中身も測り方も別々。
+    """
+    rows = [
+        ("DeepSWE v1.1（新記録）", 77.9, "長時間のソフト開発作業"),
+        ("LVBench（新記録）", 91.7, "長い動画の理解"),
+        ("CWE-bench v1（同率1位）", 68.0, "セキュリティ脆弱性の修復"),
+        ("AutomationBench（1位）", 51.3, "Zapier運営・業務自動化の実行力"),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, pitch = 100, 20, 42
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "発表ページが挙げた点数は、どれもGoogle自身の測定</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "目盛りは0〜100%で揃えているが、テストの中身も対象も別々で平均は取れない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "他社モデルを同じ条件で測った数字は発表に無い。単価以外の「どちらが賢いか」は比較できない。</text>\n",
+    ]
+    for index, (name, value, note) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 5}">'
+            f"{value:g}%</text>\n"
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{y + bar_h + 12}">{_esc(note)}</text>\n')
+
+    height = top + len(rows) * pitch + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 出典: Gemini 4 Argon の発表ページ（blog.google・2026年9月30日）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 8}">'
+        "※ 比較相手（他社・前のモデル）の同条件の点数は発表に無い。鵜呑みにしない。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argonの発表ページが挙げた点数4つを並べた横棒グラフ。"
+        "DeepSWE v1.1（長時間のソフト開発作業）は77.9%で新記録、"
+        "LVBench（長い動画の理解）は91.7%で新記録、"
+        "CWE-bench v1（セキュリティ脆弱性の修復）は68%で同率1位、"
+        "AutomationBench（Zapier運営・業務自動化の実行力）は51.3%で1位。"
+        "いずれもGoogle自身の測定で、他社モデルを同じ条件で測った数字は発表に無い。"
+    )
+    (OUT / "argon-benchmarks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def argon_price_tiers_chart() -> None:
+    """Gemini 4 Argonの「導入価格→導入後」と、前のモデル3.1 Proの「20万トークン以下→超過時」を並べる。
+
+    出典＝Argonは発表ページの本文と脚注1（blog.google・2026-09-30）、
+    3.1 Proは Gemini API 公式料金ページ（ai.google.dev）。
+    """
+    rows = [
+        ("Argon（導入価格・期限の記載なし）", 2, 10),
+        ("Argon（導入後。開始日は未公表）", 4, 20),
+        ("3.1 Pro（20万トークン以下）", 2, 12),
+        ("3.1 Pro（20万トークン超過時）", 4, 18),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">単価（100万トークンあたり・ドル）</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。Argonの導入価格が終わる時期は発表に書かれていない。</text>\n',
+        '<text class="t-sm" x="18" y="64">3.1 Proの「超過時」は20万トークンを超えるプロンプトに適用される料金。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ キャッシュ済み入力はArgonが入力価格の95%引き、3.1 Proは90%引き（$0.20/$2.00）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: Argonは発表ページ本文・脚注1、3.1 Proは ai.google.dev の料金ページ。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argonの導入価格と導入後、前のモデルGemini 3.1 Proの2段階の単価を比べた横棒グラフ。"
+        "100万トークンあたりのドル。Argon（導入価格）は入力2ドル・出力10ドル、"
+        "Argon（導入後）は入力4ドル・出力20ドル、3.1 Pro（20万トークン以下）は入力2ドル・出力12ドル、"
+        "3.1 Pro（20万トークン超過時）は入力4ドル・出力18ドル。Argonの導入価格が終わる時期は発表に書かれていない。"
+        "キャッシュ済み入力はArgonが入力価格の95%引き、3.1 Proは90%引き。"
+    )
+    (OUT / "argon-price-tiers.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def argon_vendor_price_chart() -> None:
+    """Gemini 4 Argon（導入価格）と、各社の現時点の最上位モデルの単価を比べる。
+
+    出典＝Argonは発表ページ、Gemini 3.1 Proは ai.google.dev、
+    Claude Opus 5.5は platform.claude.com、GPT-6 Astraは developers.openai.com（いずれも2026-10-01確認）。
+    """
+    rows = [
+        ("Gemini 4 Argon（導入価格）", 2, 10),
+        ("Gemini 3.1 Pro Preview（前のモデル）", 2, 12),
+        ("Claude Opus 5.5（Anthropic最上位）", 4, 20),
+        ("GPT-6 Astra（OpenAI最上位）", 10, 50),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">各社・現時点の最上位モデルとの単価（100万トークンあたり）</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。Argonはまだ一般提供されておらず、導入価格の値。</text>\n',
+        '<text class="t-sm" x="18" y="64">各社の公式ページの数字だけを並べている（2026年10月1日に確認）。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ Argonの入力単価($2)は3.1 Proの20万トークン以下の単価と同額。出力は$12→$10に下がる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しない。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argon（導入価格）と各社の現時点の最上位モデルの単価を比べた横棒グラフ。"
+        "100万トークンあたりのドル。Gemini 4 Argon（導入価格）は入力2ドル・出力10ドル、"
+        "前のモデルGemini 3.1 Pro Previewは入力2ドル・出力12ドル、"
+        "Claude Opus 5.5（Anthropic最上位）は入力4ドル・出力20ドル、"
+        "GPT-6 Astra（OpenAI最上位）は入力10ドル・出力50ドル。"
+        "Argonはまだ一般提供されておらず導入価格の値。会社ごとにトークンの数え方が違うため、"
+        "単価の安さは支払額の安さを意味しない。"
+    )
+    (OUT / "argon-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    argon_output_limit_chart()
+    argon_benchmarks_chart()
+    argon_price_tiers_chart()
+    argon_vendor_price_chart()
