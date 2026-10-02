@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-02T18:27:27.101114+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-02T13:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NVIDIAは10月2日、ローカルAIマシン「DGX Spark」について、OEMパートナー経由で64GBモデルの提供を開始すると発表した。",
+      "title": "NVIDIA、ローカルAIマシン「DGX Spark」の64GB版をOEM経由で販売",
+      "uid": "7595ff9ea32f41d9",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2145259.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-10-02T12:42:43.536621+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "d2960fb9b66bf168",
       "url": "https://ai.watch.impress.co.jp/docs/news/2143727.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-28T06:59:28.240897+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-28T04:55:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "富士通がITサービス事業で従来の人月計算から価値起点のプライシングへとビジネスモデルの転換を進めている。AI時代に向けて必須となるこの動きは、ITベンダーもさることながらユーザーにとってもAIを使いこなしてROIを向上させるための戦略を左右する要素になりそうだ。",
-      "title": "富士通が脱人月モデルへ　CROが説く「AI時代のバリュープライシングへの転換」とは",
-      "uid": "aa0e084aa6af3f0d",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/28/news080.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
