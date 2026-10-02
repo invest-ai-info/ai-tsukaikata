@@ -11,7 +11,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from . import config, feeds, news, render, search
+from . import config, feeds, news, render, search, videos
 from .content import load_articles
 from .figures import check_svg
 from .validate import validate
@@ -53,6 +53,7 @@ NEWS_PATH = ROOT / "data" / "tracker" / "news.json"
 MEDIA_NEWS_PATH = ROOT / "data" / "tracker" / "media_news.json"
 SOURCES_PATH = ROOT / "tracker" / "sources.yml"
 EVIDENCE_DIR = ROOT / "docs" / "evidence"
+CHANNELS_PATH = ROOT / "videos" / "channels.yml"
 
 
 def load_evidence(directory: Path) -> dict[str, str]:
@@ -73,6 +74,7 @@ def collect(
     sources_path: Path = SOURCES_PATH,
     media_news_path: Path | None = None,
     evidence_dir: Path = EVIDENCE_DIR,
+    videos_path: Path | None = None,
 ) -> tuple[dict[str, str], list[str]]:
     """書き出す内容を全部メモリ上で作る。(files, errors) を返す。"""
     articles, errors = load_articles(content_dir)
@@ -111,6 +113,17 @@ def collect(
     except news.NewsError as error:
         errors = errors + [str(error)]
 
+    # AI動画まとめ（2026-10-02）。ファイルが無い・要約済みが0本＝ページごと出さない。
+    # 壊れている＝ビルドを止める。既定は data/tracker/ の隣の data/videos/＝
+    # テストが news_path を tmp に向ければ動画も隔離される（media と同じ考え方）
+    if videos_path is None:
+        videos_path = Path(news_path).parent.parent / "videos" / "videos.json"
+    videos_data = None
+    try:
+        videos_data = videos.load_videos(videos_path, CHANNELS_PATH)
+    except videos.VideoError as error:
+        errors = errors + [str(error)]
+
     if errors:
         return {}, errors
 
@@ -121,10 +134,12 @@ def collect(
         if path.startswith("/static/images/eyecatch/") and path.endswith(".svg")
     }
     files = render.render_site(articles, news=news_data, eyecatches=eyecatches,
-                               media=media_data)
+                               media=media_data, videos=videos_data)
 
     section_paths = ("/", "/news/") + (
         ("/ainews/",) if media_data else ()
+    ) + (
+        ("/videos/",) if videos_data else ()
     ) + tuple(
         f"/{name}/" for name in config.LISTED_CATEGORIES
         if any(a.category == name for a in articles)

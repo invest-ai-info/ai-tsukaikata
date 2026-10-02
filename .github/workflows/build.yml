@@ -19,6 +19,9 @@ on:
       - ".github/workflows/build.yml"
       - "data/tracker/news.json"
       - "data/tracker/media_news.json"
+      # AI動画まとめ（6時間おきに更新）。チャンネル一覧はページの注意書きにも使う
+      - "data/videos/videos.json"
+      - "videos/channels.yml"
       - "tracker/sources.yml"
   workflow_dispatch:
 

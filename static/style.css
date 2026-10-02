@@ -999,3 +999,124 @@ a { color: var(--accent); }
 .search-status { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
 .search-hint { margin: 0 0 0.6rem; color: var(--muted); font-size: 0.88rem; }
 .search-noscript { color: var(--muted); }
+
+/* --- AI動画まとめ（/videos/・2026-10-02） --- */
+
+.video-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.video-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.95rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--card-bg);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.video-tab:hover {
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.video-tab-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.video-section {
+  margin-bottom: 2.8rem;
+  scroll-margin-top: 1rem;
+}
+
+.video-lead { color: var(--muted); font-size: 0.92rem; }
+
+.video-warning {
+  padding: 0.6rem 0.85rem;
+  border-left: 4px solid var(--mark-warn-fg);
+  background: var(--card-bg);
+  color: var(--mark-warn-fg);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.video-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.video-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.video-thumb {
+  flex: 0 0 200px;
+  align-self: flex-start;
+}
+
+.video-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--code-bg);
+}
+
+.video-body { flex: 1 1 auto; min-width: 0; }
+
+.video-title {
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.video-meta {
+  margin: 0.25rem 0 0.4rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.video-summary {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.video-for {
+  margin: 0.45rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.video-caution {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--mark-warn-fg);
+}
+
+.video-empty { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 560px) {
+  .video-card { flex-direction: column; gap: 0.6rem; }
+  .video-thumb { flex-basis: auto; width: 100%; }
+}

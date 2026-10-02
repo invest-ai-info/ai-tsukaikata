@@ -1,0 +1,72 @@
+name: AI Videos
+
+# AI動画まとめ（/videos/）。YouTube の RSS を見て、新しい動画を Gemini に要約させる。
+# 設計は docs/superpowers/specs/2026-10-02-ai-videos-design.md。
+#
+# ⚠️ schedule は定刻に来ない（CLAUDE.md「schedule は定刻に来ない」）。6時間おきの設計でも
+# 実際はもっと空く。要約は1回4本まで＝来た回数ぶんだけ進む。
+# ⚠️ 要約ステップは continue-on-error。Gemini が落ちても、集めた動画（pending）は
+# コミットして次の回に持ち越す。
+
+on:
+  schedule:
+    - cron: "41 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      # チャンネルを足した・外したら、次の定期実行を待たずに一度回す
+      - "videos/channels.yml"
+      - ".github/workflows/videos.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: videos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: 依存をインストール
+        run: pip install -r requirements.txt
+
+      - name: 動画を集めて要約する
+        continue-on-error: true
+        run: python -m videos.run
+
+      - name: 動画の一覧をコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/videos/
+          if git diff --staged --quiet; then
+            echo "変更なし。コミットしません"
+            exit 0
+          fi
+          git commit -m "chore: AI動画まとめを更新"
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "push 成功（${attempt}回目）"
+              exit 0
+            fi
+            echo "push が拒否されたので rebase して再試行します（${attempt}回目）"
+            git pull --rebase --no-edit || {
+              git rebase --abort || true
+              echo "rebase が衝突しました。data/videos/ を人が見てください" >&2
+              exit 1
+            }
+          done
+          echo "3回試しても push できませんでした" >&2
+          exit 1

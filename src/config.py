@@ -20,6 +20,7 @@ TOP_NAV = [
     {"label": "AI詐欺を防ぐ", "url": "/scenes/safety/"},
     {"label": "セキュリティ対策", "url": "/scenes/security/"},
     {"label": "最新アップデート情報", "url": "/news/"},
+    {"label": "AI動画まとめ", "url": "/videos/"},
     {"label": "AIレシピ", "url": "/recipes/"},
     {"label": "深掘り記事", "url": "/tools/"},
 ]

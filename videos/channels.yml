@@ -1,0 +1,145 @@
+# AI動画まとめ（/videos/）で集める YouTube チャンネル。
+#
+# 2026-10-02 に3分類×候補を調べ、すべて RSS が実際に取れることを確かめてから載せた
+# （オーナー承認）。足すときも同じく、channel_id を @ハンドルのページで確かめ、
+# `https://www.youtube.com/feeds/videos.xml?channel_id=<ID>` が <entry> を返すのを見てから。
+# ⚠️ 正しい ID でも 404 が何回も続くことがある。1回の 404 で「ID違い」と決めない。
+#
+# category は「既定の分類」。最終的な分類は動画ごとに Gemini が決める
+# （技術系のチャンネルが稼ぐ話をする回もあるため）。
+#   tech = AI技術系 / earn = AIで稼ぐ系 / news = AI最新情報系
+# note は、カードに出す注意書き（チャンネル単位で確かめた事実だけ書く）。
+
+channels:
+  # --- AI技術系 ---
+  - key: nyanta
+    name: にゃんたのAIチャンネル
+    channel_id: UCZQVTC3uLCyuJUOcRlguazA
+    category: tech
+    lang: ja
+
+  - key: keito
+    name: KEITO【AI&WEB ch】
+    channel_id: UCfapRkagDtoQEkGeyD3uERQ
+    category: tech
+    lang: ja
+
+  - key: saki
+    name: 【さき】のAIでええやん。
+    channel_id: UCCIPlDofGZVef3HArQBRrEw
+    category: tech
+    lang: ja
+
+  - key: kosuke-google
+    name: こーすけ先生のGoogle塾
+    channel_id: UC_kTlZMryHFPMc7QMi4g0VQ
+    category: tech
+    lang: ja
+
+  - key: jeff-su
+    name: Jeff Su
+    channel_id: UCwAnu01qlnVg1Ai2AbtTMaA
+    category: tech
+    lang: en
+
+  - key: two-minute-papers
+    name: Two Minute Papers
+    channel_id: UCbfYPyITQ-7l4upoX8nvctg
+    category: tech
+    lang: en
+
+  # --- AI最新情報系 ---
+  - key: iketomo
+    name: いけともch
+    channel_id: UCpUQnk6MaY4o3NdgJmv10cw
+    category: news
+    lang: ja
+
+  - key: ai-daigaku
+    name: AI大学【AI&ChatGPT最新情報】
+    channel_id: UCXo1SsIDZ_dke2Nr1r3qk6w
+    category: news
+    lang: ja
+
+  - key: masao
+    name: まさおAIじっくり解説ch
+    channel_id: UCvHpETRVi1tXeRJoYiXHJqw
+    category: news
+    lang: ja
+
+  - key: openai
+    name: OpenAI（公式）
+    channel_id: UCXZCJLdBC09xxGZ6gcdrc6A
+    category: news
+    lang: en
+
+  - key: claude
+    name: Claude（Anthropic 公式）
+    channel_id: UCV03SRZXJEz-hchIAogeJOg
+    category: news
+    lang: en
+
+  - key: google-deepmind
+    name: Google DeepMind（公式）
+    channel_id: UCP7jMXSY2xbc3KCAE0MHQ-A
+    category: news
+    lang: en
+
+  - key: ai-explained
+    name: AI Explained
+    channel_id: UCNJ1Ymd5yFuUPtn21xtRbbw
+    category: news
+    lang: en
+
+  # --- AIで稼ぐ系（2026-10-02 オーナー判断＝注意書きを付けて載せる）---
+  # 誇大さの評価は調査時のもの（概要欄の誘導・題の金額）。
+  - key: shizuma
+    name: ガチ検証｜シズマ
+    channel_id: UCRq1Vlt4TTkgR75Qm5_XJHg
+    category: earn
+    lang: ja
+
+  - key: yuimama
+    name: 飽き性主婦ゆいママの人気副業チャレンジ日記
+    channel_id: UC6NyO8meJAlUHslb-bIIQ1A
+    category: earn
+    lang: ja
+
+  - key: honami
+    name: ほなみ【在宅ワーク・副業のトリセツ】
+    channel_id: UCuYMryAo53r6fi7-mK62lQA
+    category: earn
+    lang: ja
+
+  - key: uto
+    name: うと-在宅スキルアップの講座
+    channel_id: UCL_4-AMtK1q3plz7UGmXTfA
+    category: earn
+    lang: ja
+    note: このチャンネルは概要欄で公式LINEの登録と特典へ誘導しています（2026年10月時点）
+
+  - key: muttyo
+    name: むっちょの副業月5万攻略
+    channel_id: UCOhO6FWFoySY1UmadRD0v4g
+    category: earn
+    lang: ja
+    note: このチャンネルは概要欄で公式LINEの登録と特典へ誘導しています（2026年10月時点）
+
+  - key: haruto
+    name: Haruto｜AI自動化副業ラボ
+    channel_id: UCo3eo7zwygnn-I1a3ZY0Jdw
+    category: earn
+    lang: ja
+    note: このチャンネルは概要欄で公式LINEの登録へ誘導しています。紹介される金額の多くは視聴者の体験談です（2026年10月時点）
+
+  - key: starter-story
+    name: Starter Story
+    channel_id: UChhw6DlKKTQ9mYSpTfXUYqA
+    category: earn
+    lang: en
+
+  - key: greg-isenberg
+    name: Greg Isenberg
+    channel_id: UCPjNBjflYl0-HQtUvOx0Ibw
+    category: earn
+    lang: en

@@ -47,6 +47,7 @@ def render_site(
     eyecatches: set[str] | None = None,
     env: Environment | None = None,
     media: dict | None = None,
+    videos: dict | None = None,
 ) -> dict[str, str]:
     """全ページを組み立てる。キーは build/ からの相対パス。
 
@@ -54,6 +55,7 @@ def render_site(
     None ならニュース欄も /news/ も出さない（テスト・部分ビルド用）。
     media はメディアのAIニュース {"top": ..., "days": ...}。None または
     空ならトップの欄も /ainews/ も出さない（トラッカー初回前が正常にこの状態）。
+    videos は AI動画まとめ（src/videos.py の load_videos）。None なら /videos/ もボタンも出さない。
     eyecatches はアイキャッチSVGが実在する slug の集合。無い記事は
     画像なしで組む（壊れた img を出さない）。
     """
@@ -99,6 +101,8 @@ def render_site(
             return news is not None
         if url == "/ainews/":
             return bool(media and media.get("days"))
+        if url == "/videos/":
+            return videos is not None
         if url.startswith("/scenes/"):
             name = url.strip("/").split("/")[-1]
             return name in active_scenes
@@ -149,6 +153,16 @@ def render_site(
             canonical=f"{config.SITE_URL}/ainews/",
             og_type="website",
             media=media,
+        )
+
+    if videos:
+        pages["videos/index.html"] = env.get_template("videos.html").render(
+            page_title="AI動画まとめ",
+            description="YouTube の AI 関連の動画を、AI技術・AIで稼ぐ・AI最新情報の3つに分け、"
+                        "Gemini が動画を見て日本語で要約した一覧。",
+            canonical=f"{config.SITE_URL}/videos/",
+            og_type="website",
+            videos=videos,
         )
 
     for scene in active_scenes:

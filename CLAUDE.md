@@ -368,6 +368,23 @@ major で絞っても37件が25件になるだけで絞り込みにならない�
 | コピー | `static/js/copy.js` が指示文にコピーボタンを足す。JSが無くても指示文は読める |
 | 配信 | `.github/workflows/build.yml` — push で テスト → ビルド → Pages |
 
+### 🎬 AI動画まとめ（/videos/・2026-10-02）
+
+YouTube の AI 動画を集め、Gemini に**動画そのものを見せて**日本語で要約する。分類は AI技術／AIで稼ぐ／AI最新情報。
+設計＝`docs/superpowers/specs/2026-10-02-ai-videos-design.md`（オーナーの決定事項もここ）。
+
+- **トラッカーとは別の仕組み**（`videos/`・`.github/workflows/videos.yml`・6時間おき）。メール通知を巻き込まないため
+- チャンネル＝`videos/channels.yml`（21本・2026-10-02 オーナー承認）。足すときは RSS が `<entry>` を返すのを見てから
+- 🚨 **YouTube の RSS は正しい ID でも 404/500 を何回も返す**（調査で最大30回）。`feed.py` が再試行する。
+  1回の 404 で「ID違い」と決めない。チャンネルごとの連続失敗は `videos.json` の `channels` に残る
+- 要約＝1回4本・最初の30分だけ（無料枠は YouTube 動画が1日8時間）。枠切れ（429）は失敗回数に数えない。
+  3回失敗した動画は `failed`。**要約できない動画は載せない**（題と説明文から要約を作らない）
+- 稼ぐ系＝**注意書きを付けて載せる**（オーナー判断）。Gemini の `caution`＋`channels.yml` の `note`
+- 🚨 **Gemini の呼び方は手元で試せていない**（鍵が GitHub にしか無い）。2026 年の公式は interactions API で、
+  駄目なら generateContent で取り直す作り。**確認＝`data/videos/videos.json` に `status: done` が増えているか**。
+  増えずに `last_error` が並んでいたら、そこに呼び方の失敗が書いてある
+- `data/videos/videos.json` が無い・要約済み0本＝ページもトップのボタンも出ない（`/ainews/` と同じ）
+
 ### 🔎 サイト内検索（2026-09-20）
 
 - ヘッダーの窓は素のフォーム（JS無しでも `/search/?q=` へ飛ぶ）。探すのは `/search/` の `static/js/search.js` だけ
