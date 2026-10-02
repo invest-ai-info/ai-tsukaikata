@@ -105,19 +105,6 @@
    "attempts": 0
   },
   {
-   "video_id": "nWY_-5u4RUI",
-   "title": "話題のAI『Jev（ジェブ）』を解説！文章生成できないのに便利？【活用事例まとめ】",
-   "url": "https://www.youtube.com/watch?v=nWY_-5u4RUI",
-   "published": "2026-09-18T10:40:04+00:00",
-   "channel_key": "keito",
-   "channel_name": "KEITO【AI&WEB ch】",
-   "default_category": "tech",
-   "description": "文章生成を捨てた話題のAI「Jev（ジェブ）」を徹底解説！絶対今すぐ導入すべきだと思うので、ぜひ見てください。活用事例も色々まとめてみました。\n\nKEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n★プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nChatGPT むちゃぶり仕事術\n→ https://amzn.to/46u5zjd\nやりたい！ができる生成AIでアプリづくり\n→ https://amzn.to/46sdQT4\n\n▼目次\n「Jev」の概要 00:00\n判定型LLMの仕組みとメリット 00:52\n生成AIと組み合わせる意義 02:21\nAIっぽさを判定するデモ 03:29\nJevの設計と生成AIとの役割分担 05:47\nJevの主な活用事例 08:56\nJevの利用方法と導入手順 22:13\n動画のまとめ 24:18\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nClaude Code × Obsidianが相性抜群\nhttps://youtu.be/TU8DSyuMto4\n今すぐ作るべきエージェントスキル10選\nhttps://youtu.be/D3Ftx4KjLyw\nChatGPT Workを完全解説\nhttps://youtu.be/U74PHw-h59Q\nCodexの便利なプラグイン２４選\nhttps://youtu.be/Rf5K3reQWIM\nOpenAI「Codex」完全ガイド\nhttps://youtu.be/ESGl8Juwytc\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼はXのDMもしくは以下メールへ。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twitter.com/keitowebai\nnote：https://blog.procevo.biz/\nInstagram：https://instagram.com/keitowebai/\nTikTok：https://tiktok.com/@keito_cc\nメルマガ：https://kt-life.net/sns-links/newsletter.html\n\n#keito \n#ai \n#jev",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "peP_o66u-vM",
    "title": "Stop Organizing Files Yourself.",
    "url": "https://www.youtube.com/watch?v=peP_o66u-vM",
@@ -152,19 +139,6 @@
    "channel_name": "Two Minute Papers",
    "default_category": "tech",
    "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 Jev:\nhttps://typesafe.ai/blog/introducing-system-one-models-and-jev\n\nFull song: https://www.youtube.com/watch?v=4RtUJkjrKMI\n\nPrevious papers, implementations, models:\nhttps://huggingface.co/convaiinnovations/laya\nhttps://arxiv.org/abs/2503.23303\nhttps://huggingface.co/DeepMostInnovations/sales-conversion-model-reinf-learning\nhttps://huggingface.co/datasets/DeepMostInnovations/saas-sales-conversations\nhttps://arxiv.org/abs/2510.01237\nhttps://huggingface.co/blog/setfit\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html\n\nSources:\nhttps://x.com/alexisgallagher/status/2100312082491322873?s=46\nhttps://x.com/tamarajtran/status/2100694549362553153?s=46\nhttps://x.com/maubaron/status/2100738237237002706?s=46\nhttps://x.com/elvissun/status/2100951347080421409?s=46\nhttps://x.com/completeskeptic/status/2099925684256899543?s=46\nhttps://x.com/completeskeptic/status/2099925685720760404?s=46\nhttps://x.com/filippkowalski/status/2100864984448147770?s=46\nhttps://x.com/egafni/status/2100770895325524242?s=46\nhttps://x.com/mizorewww/status/2101473552956555427\nhttps://x.com/miu21590/status/2101857866378362926?s=46\nhttps://x.com/atomic_chat_hq/status/2102160983409955244?s=46\nhttps://x.com/HugoDuprez/status/2100953089003921543?s=20\nhttps://x.com/heyxviraj/status/2102048070649405592?s=20\n\n🙏 We would like to thank our generous Patreon supporters who make Two",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "vIHw_2VjSUw",
-   "title": "DeepSeek’s Insane New Architecture",
-   "url": "https://www.youtube.com/watch?v=vIHw_2VjSUw",
-   "published": "2026-09-18T07:03:46+00:00",
-   "channel_key": "two-minute-papers",
-   "channel_name": "Two Minute Papers",
-   "default_category": "tech",
-   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 The DeepSeek V4.1 Flash paper is available here:\nhttps://www.deepseek.com/en/news/deepseek-v4-1-flash/\n\nErratum: Opus 5.1 label at 3:23 should have been Opus 5. Apologies!\n\nSources:\nhttps://x.com/flowith/status/2099446892174406055/video/1\nhttps://x.com/loktar00/status/2097761803291726137\nhttps://x.com/loktar00/status/2099171901746688079\nhttps://x.com/loktar00/status/2097557594239897837\nhttps://x.com/loktar00/status/2097342670620291430\nhttps://x.com/RealFedeURU/status/2097804481068941679\nhttps://x.com/ItsmeAjayKV/status/2099875889454739801\nhttps://x.com/ItsmeAjayKV/status/2100434059675709683/video/1\nhttps://x.com/DanielPPFW/status/2100016621251338732/video/1\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -795,91 +769,599 @@
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "Uc8EakO8hYM",
+   "title": "【基礎】AIのClaudeCodeを会社に導入して仕事を自動化をするための始め方を分かりやすく解説するで！",
+   "url": "https://www.youtube.com/watch?v=Uc8EakO8hYM",
+   "published": "2026-09-21T09:00:33+00:00",
+   "channel_key": "saki",
+   "channel_name": "【さき】のAIでええやん。",
+   "default_category": "tech",
+   "description": "100社以上のAI研修・コンサル実績ノウハウを詰め込んだ\n📊自分の会社の今の状態を知れる💬\n【無料】企業様向けのAI活用診断はコチラ⬇️\nhttps://ai-shindan-drab.vercel.app/biz\n\n🏢企業様向けのAI研修のお問い合わせはコチラから🏢\nhttps://jiso-ai.com/contact/\n\n何となく聞きに来るのは勿体ない/本気の人向けAI勉強会\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=p442w2wLFa0K\n\n\n今AI活用やマネタイズの仕方がわからない人🤦やAI初心者の人も必見！\n\n🚨無料期間限定🚨で\n✨Youtubeでは出せないさきのAI最新情報✨&\n👩‍💻AIノウハウ100大特典🎁を勉強会参加後にLINEで受け取れます！\n\nAIスキルを身につけて【社内評価⏫UP⏫】や【収益化💰】\n業務効率化🗒️できるココでしか手に入らない情報を\n現在期間限定でしかも、無料配布しているので興味ある方は是非！！\n↓↓↓\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=p442w2wLFa0K\nーーーーーーーーーーーーーー\n\n約10,000人以上の人が登録中！\n⬇️さきのAI最新情報公式LINE⬇️\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=p442w2wLFa0K\n\nーーーーーーーーーーーーーー\n🎁”LINE登録者限定\"のAI特別セミナー開催\n🎁”LINE登録者限定\"のAI勉強会\n🎁”勉強会参加者限定\"のAI豪華100大特典配布\n🎁”勉強会参加者限定\"の特別な案内\n\n【⬇️無料登録はこちら⬇️】\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=p442w2wLFa0K\n\n🧑‍💻企業様向けのAI研修のお問い合わせはこちらから🧑‍💻\nhttps://jiso-ai.com/contact/\n\n━━━━━━━━━━━━━━━━━━\n↓↓本日紹介したツールや動画📚などはこちら↓↓\n\n【Claude】\nhttps://claude.ai/\n\n【ClaudeCodeの概要】\nhttps://code.claude.com/docs/ja/overview\n━━━━━━━━━━━━━━━━━━\n#chatgpt    #gemini    #ai活用  #claude #claudecode",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Bk7wTz7I-Mw",
+   "title": "【緊急解説】実は神アプデ！新機能『Skills』への統合でGemがもっと進化します！",
+   "url": "https://www.youtube.com/watch?v=Bk7wTz7I-Mw",
+   "published": "2026-10-02T09:00:02+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemsが「Skills」という新機能に統合・進化すると説明されています。",
+    "Skillsでは、一つのチャット内で複数のスキルを組み合わせて利用可能になります。",
+    "SkillsはAIが文脈を自動認識し、最適なスキルを自動的に発動すると説明されています。"
+   ],
+   "for_whom": "Google Geminiの「Gems」機能の廃止・移行に関心がある人",
+   "caution": "ナレッジとしてアップロードできるファイル形式には現在の制約があり、今後のアップデートで改善される予定です。GemsからSkillsへの移行スケジュールは個人アカウントとWorkspaceの種類によって異なるため、ご自身の利用状況を確認してく",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-10-02T13:06:52.178708+00:00"
+  },
+  {
+   "video_id": "r0Dyczj8rs8",
+   "title": "【Studio×GAS】自動化の限界を突破！今すぐ使える「神カスタムステップ5選」を完全無償公開！",
+   "url": "https://www.youtube.com/watch?v=r0Dyczj8rs8",
+   "published": "2026-09-30T09:00:00+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "Workspace Studio×GASで使える自作カスタムステップ「5選」を無償配布します💥\n\n開発コード量を激減させる「Studioラッパー」に加え、ファイルまたはフォルダを移動（本家よりもっと柔軟に使えます）、追加したアイテムが指定フォルダ直下かどうかを判定、PDFのページ分割、JSONデータからの行一括追加＆ドキュメント差し込み印刷機能まで実演解説していきます！\n\n導入手順やコードはGitHubで完全無償公開中！Workspace Studioの自動化を劇的に進化させる神機能をぜひご活用ください😎\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:13 「Workspace Studio」とは\n03:02 前回動画のおさらい\n03:37 Google Workspace Studioを拡張する\n06:24 ラッパー作りました！\n08:15 GitHub紹介\n09:06 ①ファイルまたはフォルダを移動ex\n12:12 ②追加したアイテムが指定フォルダ直下かどうかを判定\n14:16 ③PDFファイルを指定ページ数で分割\n15:29 ④JSONデータから行を追加\n16:14 ⑤JSONデータからドキュメントに差し込み印刷\n23:21 GitHubの導入手順おさらい\n24:11 まとめ\n26:00 ゆるトーク\n\n【GitHub：Workspace Studio Toolkit】\nhttps://github.com/kotakahashi-4u/gas-workspace-studio-toolkit\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【関連動画】\n「Workspace Studio」からGASが直接動く！Salesforce・Slack連携も解禁！\nhttps://youtu.be/774iU5fsCS0\n\n【※個人アカウントの方向け「Google Workspace Experiments」】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.c",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "774iU5fsCS0",
+   "title": "【アプデ】「Workspace Studio」からGASが直接動く！Salesforce・Slack連携も解禁！",
+   "url": "https://www.youtube.com/watch?v=774iU5fsCS0",
+   "published": "2026-09-28T09:00:04+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "Workspace Studioが神進化！注目の最新アプデ情報を徹底解説します。 SalesforceやSlackなどサードパーティ連携やWebhook対応に加え、待望の「GAS（Google Apps Script）」連携カスタムステップが登場！\n\nこれによってStudio内で自作のGASアクションを実行できるようになり、自動化の自由度が文字通り無限大に！標準機能の「痒い所に手が届かない」という課題を解消します。設定手順から実用例まで、ぜひ動画でチェックしてください💥\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:58 「Workspace Studio」とは\n01:43 アプデ情報\n03:14 ①サードパーティ統合\n04:24 ②外部エンドポイントにHTTPリクエストを送信\n05:12 ③カスタムスターターとカスタムステップの利用\n06:39 管理コンソールからカスタムステップをオンにする\n08:14 appscript.jsonを記載する\n10:45 appscript.jsonに合わせたjsonファイルを作る\n13:28 デプロイをテスト\n17:27 マスターするとこんなこともできる\n20:32 今後の話\n22:15 まとめ\n23:03 ゆるトーク\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【Google Apps Script を使用して計算機ステップを作成する】\nhttps://developers.google.com/workspace/add-ons/studio/quickstart-calculator?hl=ja\n\n【Google Workspace Experiments】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Mk3OnJsQkK0",
+   "title": "【衝撃】AI画像生成＆編集ができる「Google Pics」の実力を徹底解説！",
+   "url": "https://www.youtube.com/watch?v=Mk3OnJsQkK0",
+   "published": "2026-09-25T09:00:02+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "Google Workspaceに待望のAI画像生成・編集アプリ「Google Pics」がついに登場！ プロンプトによる高精度な画像生成に加え、画像内のテキストやオブジェクトを個別に認識して精密に編集できる最新機能をご紹介します。 Googleスライドやドキュメントとのシームレスな連携についても徹底解説します！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:46 「Google Pics」とは\n02:02 「Google Pics」\n04:58 公式ソース「Google Picsは、プロレベルのAI画像作成と編集機能をGoogle Workspaceにもたらします」\n06:06 コラボレーション機能\n07:00 Googleサービスとのシームレスな連携\n10:55 オブジェクトの理解と編集\n14:31 検証「Gemini Notebook」のスライドは編集できるのか？\n19:32 まとめ\n20:41 ゆるトーク\n\n【関連動画：Say hello to Google Pics from Google Workspace】\nhttps://youtu.be/S18L1NFTda8?si=0OQoO4ZnaiwNEz8K\n\n【関連記事：Google Picsは、プロレベルのAI画像作成と編集機能をGoogle Workspaceにもたらします】\nhttps://workspaceupdates.googleblog.com/2026/09/google-pics-brings-pro-level-ai-image-creation-and-editing-to-Google-Workspace.html\n\n【関連動画：画像生成を200%活用するためのプロンプトを公開します】\nhttps://youtu.be/3K--p0YCSww\n\n【NanoBananaマン】\nhttps://gemini.google.com/gem/1n7mKXNmsRXlGeVpDoAcBZQDzLfq47s3E?usp=sharing\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "-ffdhkePJAo",
+   "title": "【無料で使える】ミドルクラスながら世界2位の性能を誇るAIモデル「Claude Sonnet 5.5」の性能・使い方・活用事例！",
+   "url": "https://www.youtube.com/watch?v=-ffdhkePJAo",
+   "published": "2026-10-02T09:06:40+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Anthropicが公開したClaude Sonnet 5.5は前モデル比で速度が30%以上向上しコストも削減されたと紹介している。",
+    "複数のベンチマークで上位モデルOpus 5.5に匹敵し、総合ランキングで全AI中2位の性能を記録したと説明している。",
+    "無料チャットやClaude Codeで利用可能で、3Dゲーム実装やスライド資料作成にも高い性能を発揮すると解説している。"
+   ],
+   "for_whom": "最新のClaudeモデルの性能や、業務効率化・開発への活用方法を知りたい会社員やエンジニア。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-02T13:06:52.178708+00:00"
+  },
+  {
+   "video_id": "-HEcGHCWSXA",
+   "title": "【Googleの本気AI】最先端AIモデル「Gemini 4 Argon」発表！ ～GPT-6 Astra・Claude Opus 5.5より凄いのか？～",
+   "url": "https://www.youtube.com/watch?v=-HEcGHCWSXA",
+   "published": "2026-10-01T09:06:21+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)10月1日、Googleは、新しい最先端AIモデル\n「Gemini 4 Argon(アルゴン)」を発表しました\nこのモデルは、長時間の複雑な作業\n大規模なコーディング\n金融や法律などの専門業務\nサイバーセキュリティを重視したモデルで\n複数のAIベンチマークで、OpenAIの「GPT-6 Astra」\nAnthropicの「Claude Opus 5.5」などの\n他社の最先端モデルのスコアを上回っており\n強力すぎるためか、安全対策を固めながら\n段階的に公開されて行く方針を取っています\n\n今回の動画では\nGoogleの新しい最先端AIモデル「Gemini 4 Argon」について\nその特徴や、一般ユーザーが使えるようになるタイミングなど\n今わかっている情報をまとめて紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:45　動画のもくじ\n1:07　Gemini 4 Argonの概要\n1:34　①、Gemini 4 Argonの特徴\n3:08　②、Gemini 4 Argonのベンチマークスコア\n5:44　③、Gemini 4 Argonの安全性\n7:50　④、Gemini 4 Argonの使い方\n9:17　エンディングムービー\n\n◆動画の中で紹介している内容\nClaude Fable 5.1、プロンプトインジェクション、Google AI Ultra\n\n◆参考サイト\nhttps://blog.google/intl/ja-jp/company-news/technology/gemini4argon/\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\nhttps://arena.ai/\nhttps://artificialanalysis.ai/\nhttps://deepmind.google/fairwind-program/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイン、Hooks、Subagents)をやさしく解説！\nhttps://youtu.be/gKtw6tuTuJ0\n【すぐに使える活用事例20例】画像生成・編集AI「ChatGPT Images 2.5」完全攻略！ 日",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "YrTVpJ1ebUk",
+   "title": "【OpenAI DevDay 2026速報】24時間働くAI「dots」など新しいAIが大量発表！ ～GPT-6.1 Sol・Astra最大8倍速・OpenAI版のJevほか完全ガイド～",
+   "url": "https://www.youtube.com/watch?v=YrTVpJ1ebUk",
+   "published": "2026-09-30T09:06:51+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\nAnthropicは、(2026年)9月下旬\n最新AIモデル「Claude Opus 5.5」を公開しました\nこのモデルは、各種AIベンチマークで、同社の最上位AIモデル\n「Claude Fable 5.1」や、OpenAIの最上位AIモデル\n「GPT-6 Astra」のスコアを圧倒し\nAIモデルの有名ランキングサイトでも\nすべてのAIモデルの中でダントツの1位となっていて\nスライド資料や文書の作成はもちろん\nこれまでのモデルでは作るのが難しかったような\n細かい部分まで精密な3D系のゲームやアプリ\n実際の仕事場でも使えるような\n高品質なアニメーション動画を\n手軽に生成できるようになりました\n\n今回の動画では\n第一章：Claude Opus 5.5の概要と使い方\n第二章：Opus 5.5の活用事例10選 ～開発編～\n第三章：Opus 5.5の活用事例10選 ～実務編～\nの3章構成で、Anthropicの公開した\nAIモデル「Claude Opus 5.5」の最新の概要と使い方から\nAIエージェント「Claude Code」やAIチャット「Claude」を組み合わせて\nClaude Opus 5.5を使いこなす為の活用事例を\n開発編と実務編に分けて、計10例ほど紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:49　動画のもくじ\n1:24　第一章：dots・GPT-6.1 Sol・Ultrafast\n1:42　①、dots\n2:39　②、GPT-6.1 Sol\n3:56　③、Ultrafastモード\n4:41　第二章：ChatGPTとCodex関連ツール\n5:06　①、月額500ドルのProプラン\n5:39　②、Codexクラウド\n6:11　③、ChatGPT Space\n7:06　④、Codexのその他新機能\n8:11　第三章：開発系の新ツール\n8:29　①、Decisions API\n9:03　②、OpenAI Marketplace\n9:27　③、プラグイン拡張機能\n10:31　エンディングムービー\n\n◆動画の中で紹介している内容\nJev、Codex CLI、Codex Security Cloud、Daybreak Blue\nHermes Agents、Notion\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://openai.com/ja-JP/index/devday-2026-recap/\nhttps://openai.com/ja-JP/index/introducing-dots/\nhttps://openai.com/ja-JP/api/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-1-sol/\nhttps://artificialanalysis.ai/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "4hIh1-4ScZk",
+   "title": "【暫定世界1位のAI】アンソロピックの最新AIモデル「Claude Opus 5.5」徹底解説！ ～性能・使い方・Claude Codeを使った活用事例10選～",
+   "url": "https://www.youtube.com/watch?v=4hIh1-4ScZk",
+   "published": "2026-09-29T09:07:18+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\nAnthropicは、(2026年)9月下旬\n最新AIモデル「Claude Opus 5.5」を公開しました\nこのモデルは、各種AIベンチマークで、同社の最上位AIモデル\n「Claude Fable 5.1」や、OpenAIの最上位AIモデル\n「GPT-6 Astra」のスコアを圧倒し\nAIモデルの有名ランキングサイトでも\nすべてのAIモデルの中でダントツの1位となっていて\nスライド資料や文書の作成はもちろん\nこれまでのモデルでは作るのが難しかったような\n細かい部分まで精密な3D系のゲームやアプリ\n実際の仕事場でも使えるような\n高品質なアニメーション動画を\n手軽に生成できるようになりました\n\n今回の動画では\n第一章：Claude Opus 5.5の概要と使い方\n第二章：Opus 5.5の活用事例10選 ～開発編～\n第三章：Opus 5.5の活用事例10選 ～実務編～\nの3章構成で、Anthropicの公開した\nAIモデル「Claude Opus 5.5」の最新の概要と使い方から\nAIエージェント「Claude Code」やAIチャット「Claude」を組み合わせて\nClaude Opus 5.5を使いこなす為の活用事例を\n開発編と実務編に分けて、計10例ほど紹介します\n\n◆動画のもくじ\n0:00　Opus 5.5＋Claude Codeのサンプル\n0:30　動画について\n1:23　動画のもくじ\n2:13　第一章：Claude Opus 5.5の概要と使い方\n2:35　①、Claude Opus 5.5の特徴\n4:12　②、Claude Opus 5.5のベンチマーク\n6:01　③、Claude Opus 5.5の使い方\n7:08　第二章：Opus 5.5の活用事例10選 ～開発編～\n7:38　3Dゲームの生成\n8:48　webサイトの生成\n10:00　複雑なwebアプリの生成\n11:10　デスクトップアプリとChrome拡張機能の生成\n12:14　高品質な3Dモデルの生成\n13:19　第三章：Opus 5.5の活用事例10選 ～実務編～\n13:50　解説動画の生成\n15:22　アニメーション動画の生成\n17:03　スライド資料の生成\n17:56　レポートの生成\n18:46　日本語のライティング\n20:43　エンディングムービー\n\n◆動画の中で紹介している内容\nClaude Fable 5.1、GPT-5.6 Sol、Claude Design、three.js\nJavaScript、Blender、Gemini 3.8 Flash TTS\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://www.anthropic.com/claude-opus-5-5\nhttps://www.anthropic.com/claude-fable-and-mythos-5-1\nhttps://threejs.org/\nhttps://artificialanalysis.ai/\n\n※動画内のずんだもんのVRMは↓で借りました\nhttps://booth.pm/ja/items/4823014\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini N",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "NWWQbSwHaww",
+   "title": "【今週のAIツール・ニュース総まとめ】暫定世界一! Anthropicの最新AI「Claude Opus 5.5」/高性能で安いOpenAIの最新AI「GPT-6 SolとLuna」など",
+   "url": "https://www.youtube.com/watch?v=NWWQbSwHaww",
+   "published": "2026-09-27T09:05:54+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n今回の動画では\nAIモデルの性能を測る\n有名AIランキングで世界一位のスコアを出した\nAnthropicの最新AIモデル「Claude Opus 5.5」\n最上位AIモデル「GPT‑6 Astra」の技術を\nもっと速く安く使えるようにした\nOpenAIの最新AIモデル「GPT-6 SolとLuna」\nテキストから超リアルな日本語音声を生成できる\nGoogleの音声生成AIモデル\n「Gemini 3.8 Flash TTS」など\n今週公開されたり発表された\nAIエージェントやAIツールのリリース・更新情報\nMetaが年次イベントでAI系の新製品を大量発表\nAI大手3社の幹部が安保理でAIのリスクに関して警告など\n最新AIニュースをまとめて紹介します\n\n◆動画のもくじ\n0:00　動画について\n1:06　最新AIツール\n1:16　Anthropicの最新AIモデル「Claude Opus 5.5」\n2:36　OpenAIの最新AIモデル「GPT-6 SolとLuna」\n4:12　Googleの音声生成AIモデル「Gemini 3.8 Flash TTS」\n5:59　ChatGPT Voiceがアップグレード\n6:43　SpaceXAIの最新AIモデル「Grok 4.7」\n7:51　Xiaomiの最新AIモデル「MiMo-V2.6シリーズ」\n8:50　Claude Codeの2つの新機能\n9:51　Tencent Hyの画像生成AIモデル「Hy Image3.5 preview」etc.\n11:38　最新AIニュース\n11:47　Metaが年次イベントでAI系の新製品を大量発表\n12:44　AI大手3社の幹部が安保理でAIのリスクに関して警告\n13:20　OpenAIのAIがオーストラリア政府のwebサイトに侵入\n14:07　アリババがパラメータ数5兆～10兆のAIモデルを計画\n14:57　トランプ大統領がAIフォースの創設を表明\n15:31　OpenAIが数学者らによる独立組織と連携\n16:17　トランプ大統領がAIをSIに改称宣言\n16:53　GoogleのAI実装PCプラットフォーム「Googlebook」etc.\n19:00　エンディングムービー\n\n◆動画の中で紹介している内容\nCodex、Gemini 3.8 Flash-Lite TTS、Astra、Cursor、Agora-2\nGrok Build、Hy Image3.5 preview、Qwen-Image-2.1、Gemini Notebook\nMeta VR Glasses、GPT-5.6 Sol、Claude Opus 5\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://youtu.be/NnzD6fT3u48\nhttps://youtu.be/n-ASBxV0T8o\nhttps://youtu.be/cARZ48ija0M\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "NnzD6fT3u48",
+   "title": "アンソロピックの最新AI「Claude Opus 5.5」が最上位モデルFable 5.1を超えた！ ～性能・使い方・活用事例を徹底解説～",
+   "url": "https://www.youtube.com/watch?v=NnzD6fT3u48",
+   "published": "2026-09-24T09:06:34+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)9月23日、Anthropicは\n上位AIモデルの最新版\n「Claude Opus 5.5」を公開しました\nこのモデルは、複雑なコーディングやリサーチ\n業務作業を得意とし、AIベンチマークの大半で\n同社の最上位AIモデル「Claude Fable 5.1」に匹敵する性能を持ち\n前のモデル(Opus 5)と比べ\n一般的な作業の実行コストは約40％低く\n出力速度は30％以上速くなっており\nAIモデルの有名ベンチマークサイトでは\n現存する全てのAIモデルの中で1位につけています\n\n今回の動画では\n第一章：Claude Opus 5.5の概要\n第二章：Opus 5.5の使い方と活用事例\nの二章構成で、Anthropicの公開したAIモデル\n「Claude Opus 5.5」の概要、Claude Opus 5.5を使えるツール\nAIエージェント「Claude Code」を使った簡単な活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:46　動画のもくじ\n1:21　第一章：Claude Opus 5.5の概要\n1:46　①、Claude Opus 5.5の特徴\n2:52　②、Claude Opus 5.5のAIベンチマーク\n4:07　③、Claude Opus 5.5の安全性\n5:37　第二章：Opus 5.5の使い方と活用事例\n5:54　Claude Opus 5.5を使う方法\n7:02　Claude Opus 5.5の活用事例\n9:43　エンディングムービー\n\n◆動画の中で紹介している内容\nClaude Fable 5.1、Claude Opus 5、GPT-6 Astra、GPT-5.6 Sol\nOpenAI、Claude Mythos 5.1、Three.js、スキル\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://www.anthropic.com/claude-opus-5-5\nhttps://www.anthropic.com/claude-fable-and-mythos-5-1\nhttps://artificialanalysis.ai/\nhttps://platform.claude.com/dashboard\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MC",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "n-ASBxV0T8o",
+   "title": "【性能UPでも半額】OpenAIの新AIモデル「GPT-6 Sol・Luna」リリース！～Codex・ChatGPTワークでの使い方＆活用事例まとめ～",
+   "url": "https://www.youtube.com/watch?v=n-ASBxV0T8o",
+   "published": "2026-09-23T09:05:53+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)9月23日、OpenAIは\n(2026年)9月上旬に公開した同社の最上位AIモデル\n「GPT‑6 Astra」の技術をもっと速く・安く使えるようにした\n上位モデル「GPT-6 Sol」と\n軽量モデル「GPT-6 Luna」を公開しました\nこれらのモデルは、Astraと同じ手法で訓練されており\nタスクの処理・正確さ・コーディング\nパソコンの操作・安全性の進化を\n前のモデル(GPT-5.6 Sol)の半額という\n手頃な価格で使うことができます\n\n今回の動画では\n第一章：GPT-6 Sol・Lunaの概要\n第二章：GPT-6 Solの使い方と活用事例\nの二章構成で、OpenAIの公開した最新AIモデル\n「GPT-6 Sol」と「GPT-6 Luna」の概要\nAIエージェント「Codex」と「ChatGPTワーク」で\nGPT-6 Sol(Luna)を使う方法と\nGPT-6 Solを使った簡単な活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:41　動画のもくじ\n1:24　第一章：GPT-6 Sol・Lunaの概要\n1:51　①、GPT-6 SolとLunaの特徴\n3:18　②、GPT-6 SolとLunaのAIベンチマーク\n4:56　③、GPT-6 SolとLunaの安全性\n5:35　第二章：GPT-6 Solの使い方と活用事例\n5:53　GPT-6 SolとGPT-6 Lunaを使う方法\n7:11　GPT-6 Solの活用事例\n8:56　エンディングムービー\n\n◆動画の中で紹介している内容\nCodex、ChatGPTワーク、Claude Opus 5(max)、GPT-5.6\nClaude Fable 5、Anthropic\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://openai.com/index/introducing-gpt-6-sol-and-luna/\nhttps://openai.com/ja-JP/index/gpt-6-astra/\nhttps://openai.com/ja-JP/api/\nhttps://developers.openai.com/api/docs/models/gpt-6-sol\nhttps://developers.openai.com/api/docs/pricing\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claud",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "cARZ48ija0M",
+   "title": "安い・速い・賢いSpaceXAIの新AIモデル「Grok 4.7」の実力は？ ～GPT-5.6 Sol超えの性能をCursorで徹底検証～",
+   "url": "https://www.youtube.com/watch?v=cARZ48ija0M",
+   "published": "2026-09-22T09:06:03+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)9月22日、SpaceXAIは\n同社の最上位AIモデルの最新版「Grok 4.7」を公開しました\nGrok 4.7は、コーディングや知識作業の性能を強化し\n難しいタスクへの対応力や自己チェック能力\nさらに安全性も向上したモデルで\n価格(API)と処理速度は\n前のモデルの「Grok 4.6」と同じながら\n同じクラスのAIモデルと比べて\n約2倍高速で半分の価格で提供されており\nAIモデルの有名ベンチマークサイトでは\n全てのAIモデルの中で6位につけており\n性能とコストの両面で注目を集めています\n\n今回の動画では\n第一章：Grok 4.7の概要\n第二章：Grok 4.7の使い方と活用事例\nの二章構成で、SpaceXAIの公開したAIモデル\n「Grok 4.7」の概要、Grok 4.7を使えるツール\nAIエージェント「Cursor」を使った簡単な活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:49　動画のもくじ\n1:23　第一章：Grok 4.7の概要\n1:47　①、Grok 4.7の特徴\n2:54　②、Grok 4.7のAIベンチマーク\n4:24　③、Grok 4.7の安全対策\n5:24　第二章：Grok 4.7の使い方と活用事例\n5:37　Grok 4.7を使う方法\n6:34　Grok 4.7の活用事例\n8:33　エンディングムービー\n\n◆動画の中で紹介している内容\nGrok 4.6、Grok Bot、Anthropic、GPT-5.6 Sol、Grok Build\nAnthropic、Claude Fable 5.1、Grok 4.8、Grok 5.0\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://x.ai/news/grok-4-7\nhttps://docs.x.ai/developers/grok-4-7\nhttps://artificialanalysis.ai/\nhttps://media.x.ai/v1/website/4p7card-5eccc980.pdf\nhttps://x.com/elonmusk/status/2099458047408013751\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイン、Hooks、Subage",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "JV3z5nJ4clQ",
+   "title": "【無料で試せる】文章を書かない話題のAIモデル「Jev」を分かりやすく解説！ ～普通のAIの200倍速で答えを返す、判断特化の格安モデルの使い方～",
+   "url": "https://www.youtube.com/watch?v=JV3z5nJ4clQ",
+   "published": "2026-09-21T09:06:31+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\nAI企業のTypeSafe AIは、(2026年)9月16日\nAIモデル「Jev」を公開しました\nGPT-5.6 SolやClaude Opus 5のような一般的なAIモデルは\nユーザーの質問に対して文章を生成し\nその答えを出力します\n一方、Jevは文章を生成するのではなく\nユーザーから与えられた質問に対して\n超高速で「判定結果」を返すことに特化したAIです\nさらに、AI特有のハルシネーション(AIの幻覚)を排除し\n超低コストで使えることもあって\n多数の選択肢の中から正確に答えを選ぶタスクや\n一瞬の応答速度が求められるゲームやアプリなど\n幅広い分野での活用が期待されています\n\n今回の動画では\n第一章：Jevの概要と使い方\n第二章：Jevの活用事例と類似ツール\nの二章構成で、TypeSafe AIのAIモデル「Jev」の概要と使い方\n具体的に何ができるかの活用事例やJevに似たツールの紹介まで\n非エンジニアの方にも分かりやすく解説します\n\n◆動画のもくじ\n0:00　動画について\n0:55　動画のもくじ\n1:27　第一章：Jevの概要と使い方\n1:45　①、TypeSafe AIとは？\n2:29　②、Jevの特徴\n5:00　③、Jevの料金と使い方\n6:25　第二章：Jevの活用事例と類似ツール\n6:40　Jevの活用事例\n8:44　Jevの類似ツール\n9:33　エンディングムービー\n\n◆動画の中で紹介している内容\nDiogo Almeida、OpenAI、System One Model、Noul、Choice、Score\nSystem 1、System 2、ダニエル・カーネマン、ファスト&スロー\nOpenRouter、Vercel AI Gateway\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://typesafe.ai/\nhttps://console.typesafe.ai/home\nhttps://docs.typesafe.ai/introduction\nhttps://openrouter.ai/~typesafe/jev-latest\nhttps://vercel.com/ai-gateway/models/jev\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイ",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Nvq2fvRM9QA",
+   "title": "【今週のAIツール・ニュース総まとめ】ClaudeとClaude Coworkが合体/文章を書けない判断特化の新型AI「Jev」/Claude Codeに複数の新機能実装",
+   "url": "https://www.youtube.com/watch?v=Nvq2fvRM9QA",
+   "published": "2026-09-20T09:07:40+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n今回の動画では\nClaude Coworkと統合され\nデザイン・スライド・ドキュメント\n生成特化ツールも実装されたAIチャット「Claude」\n高速で低コストにタスクを処理できる\nTypeSafe AIのAIモデル「Jev」\n複数作業の自動実行機能の実装や\nAGENTS.mdが正式にサポートされ\n大きくパワーアップしたClaude Codeなど\n今週公開されたり発表された\nAIエージェントやAIツールのリリース・更新情報\n中国紙がAnthropicのAI開発減速提言を\n冷戦の手法と批判\nEUが15歳未満のAIチャットボットの\n利用禁止を提案へなど\n最新AIニュースをまとめて紹介します\n\n◆動画のもくじ\n0:00　動画について\n1:00　最新AIツール\n1:10　ClaudeとClaude Coworkが統合し新機能も実装\n2:22　タスクを超高速に実行できるAIモデル「Jev」\n3:41　Claude Codeに複数作業自動実行機能など実装\n4:57　Googleの新しいAI音声会話モデル「Gemini 3.8 Live」\n6:06　Sakana ChatでFugu Maxが無料公開\n7:01　AIエージェント「Cline」のデスクトップアプリ\n7:51　ChatGPTとCodex関連の新機能\n9:20　ステルスモデル「Union Alpha」が無料公開中etc.\n11:04　最新AIニュース　\n11:13　中国紙がAnthropicのAI開発減速提言を冷戦の手法と批判\n12:01　EUが15歳未満のAIチャットボットの利用禁止を提案へ\n12:32　OpenAIが評価額1兆2000億ドル超で資金調達を検討\n13:09　MicrosoftのAI責任者が人間らしい「Claude」のリスクを警告\n13:46　Metaのザッカーバーグ氏がAnthropicの警告に反論\n14:21　製薬会社がAnthropicと協力して医薬品開発を加速\n14:59　Anthropicがアクセンチュアと提携\n15:36　シャープがAIサーバー事業に参入etc.\n17:35　エンディングムービー\n\n◆動画の中で紹介している内容\nClaude Design、Salesforce、TypeSafe AI、AGENTS.md\nCLAUDE.md、Gemini 3.8 Live Extended Thinking、Grok Bot\nAffinity、Gemini Notebook、NoLang、YuE2、Qwen3.8-Omni-Flash\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「K",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "ChOJ7cg-19Y",
+   "title": "【UIUX最高】AIエージェント基盤『T3 Code』が登場！ClaudeCodeもCodexもCursorもこれ1つで管理！",
+   "url": "https://www.youtube.com/watch?v=ChOJ7cg-19Y",
+   "published": "2026-10-02T10:06:03+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude CodeやCursor等のコーディングエージェントを一元管理できるオープンソース基盤「T3 Code」を紹介している。",
+    "複数モデルへ同時に指示を出して並行作業させたり、画面上でプレビューしながら作業を進められると説明している。",
+    "QRコードを使ったスマホ連携やトークン利用量の確認など、シンプルで直感的な操作感の特徴を解説している。"
+   ],
+   "for_whom": "複数のAIコーディングツールを1つの画面でまとめて管理・運用したいエンジニア",
+   "caution": "概要欄でnoteのメンバーシップ（有料コミュニティ）への加入案内が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-02T13:06:52.178708+00:00"
+  },
+  {
+   "video_id": "yGz63F9yq0Y",
+   "title": "【遂に来る】『Gemini 4 Argon』が登場！大幅なベンチ向上とまさかの出力1Mを徹底解説",
+   "url": "https://www.youtube.com/watch?v=yGz63F9yq0Y",
+   "published": "2026-10-01T02:33:02+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Google から登場した新モデル「Gemini 4 Argon」について、公式ベンチマークや外部の評価サイトの情報をもとに、現時点で分かっていることを解説しました。\nまだ限定的なアクセスですが、Vals Index ではトップクラス、Artificial Analysis でも GPT-6 Astra と GPT-6.1 Sol に挟まれる位置につけていて、出力トークンが従来の 64K から 1M になりそうという点も気になるところです。\n僕としては、動画認識や音声認識など Gemini らしいマルチモーダル性能がどうなるのかが一番気になっています。一般公開されたら実際に使って、また動画にする予定です。\nみなさんは Gemini 4 Argon に何を期待していますか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Gemini 4 Argon 登場と今回の概要\n01:00 第一報と性能の傾向・出力1Mトークン\n01:53 API 価格とキャッシュ割引\n02:22 公開範囲と Google 社内での活用\n02:47 公式ベンチマークの強みと弱み\n03:48 Vals AI で高評価・中堅の位置づけ\n04:12 コスト比較と Text Arena の順位\n05:01 Gemini Pro の新世代という見立て\n05:24 トークン単価とハルシネーション\n06:05 海外の反応と Vending-Bench\n07:03 動画・音声認識への期待\n07:52 まとめとメンバーシップのお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "pmgGMUqHQd4",
+   "title": "【DevDay目玉】24時間働くAIエージェント、ChatGPTの「Dots」が登場！実際に触って分かったところを解説！",
+   "url": "https://www.youtube.com/watch?v=pmgGMUqHQd4",
+   "published": "2026-09-30T10:45:34+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、ChatGPT に新しく登場した「Dots」を実際に触ってみて、Grok Bot と何が違うのかを解説しました。\nDots では、自分の PC や OpenAI が用意した VM の操作、Slack 連携、@メンションでの呼び出し、リアルタイムの電話などができます。実際に電話をかけて「このお茶を調べて」と頼むと、話しながらコンピューターを操作してくれて、これはかなり面白い体験でした。\n\nDots と Grok Bot、みなさんはどちらの方向が好みでしょうか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/ja-JP/index/introducing-dots/\n\n\n🎁無料プレゼントは公式LINEから🎁\n『devday』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://lin.ee/cJtJ8Y3\n\n\ntimestamp:\n00:00 オープニング - ChatGPT の新機能 Dots\n01:00 Dots の画面と主な機能を紹介\n01:36 Grok Bot とはハーネスの設計思想が違う\n02:18 Gmail 連携やメモリで ChatGPT と統合\n02:56 複数ボット不可、自由度は Grok Bot が上\n04:32 Slack 連携と @メンションでやり取り\n04:49 電話機能でリアルタイム音声デモ\n06:13 Codex の /voice から広がる音声体験\n06:30 ChatGPT アプリでの操作と自由度の制約\n07:28 安全設計とヒューマンインザループ\n07:58 まとめ - GPT の UI/UX の進化に期待\n09:00 メンバーシップと勉強会のお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "ICa11eWgStw",
+   "title": "【徹底まとめ】OpenAI DevDay 2026で大量リリースがあったので解説！DotsとAPI群が中心！",
+   "url": "https://www.youtube.com/watch?v=ICa11eWgStw",
+   "published": "2026-09-30T03:55:48+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、OpenAI DevDay 2026 で発表された内容を、「実際に僕らが使えるのはどれか」「僕が注目しているのはどこか」という視点で一本にまとめて解説しました。\n\n一番の目玉は、Mac を閉じても動き続ける 24 時間稼働のエージェント「Dots」。ほかにも GPT-6.1 Sol、Ultrafast、Pro 500 プラン、ChatGPT Space、Agents API、Decisions API、ChatGPT の利用枠を他社アプリから使える仕組みなど、盛りだくさんでした。\n\nみなさんが一番気になった発表はどれでしたか？ よろしければコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/ja-JP/index/devday-2026-recap/\n\n\n🎁無料プレゼントは公式LINEから🎁\n『devday』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://lin.ee/cJtJ8Y3\n\ntimestamp:\n00:00 オープニング - DevDay 2026 の全体像\n00:47 目玉は Dots、Sol・Pro 500 も登場\n03:50 Codex CLI の /voice を実演\n05:42 コードレビューと Security Cloud\n06:31 Agents API で Codex に仕事を渡す\n07:49 プラグインと MCP Events・職場向け機能\n09:27 注目ポイント整理と Ultrafast の価格\n11:17 ChatGPT の利用枠を他社アプリで\n12:42 Dots の中身と専用クラウドPC\n14:11 ChatGPT Space はプチNotion\n15:24 Decisions API は選択専用のAPI\n16:07 Dots が目指す AI 組織とまとめ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "u5oo-41kVjk",
+   "title": "【予想以上】これはほぼAstra！『GPT-6.1 Sol』が登場！中堅最上位のパフォーマンスを徹底解説",
+   "url": "https://www.youtube.com/watch?v=u5oo-41kVjk",
+   "published": "2026-09-29T21:10:28+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、OpenAI の DevDay で発表された新モデル「GPT-6.1 Sol」について解説しました。\n入力・出力の料金は 6 Sol から据え置きのまま、キャッシュ読み込みが 1M トークンあたり 0.1 ドルと半額になり、GPT-6 Astra の 1/10 です。\n\nエージェントのように何度も送り直すタスクでは、1 タスクあたりのコストがかなり下がります。ベンチマークでも OSWorld などで 6 Sol から大きく伸びていて、DeepSWE では一部 Astra を超えています。\n\n皆さんは GPT-6.1 Sol と Claude の Opus / Sonnet、どれをメインに使っていますか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/ja-JP/index/introducing-gpt-6-1-sol/\n\ntimestamp:\n00:00 オープニング - GPT-6.1 Sol はプチ Astra\n00:56 3D マサオキャラで見る Astra との近さ\n01:30 料金改定 - キャッシュリードが半額に\n03:13 公式ベンチマーク - 低コストで Astra に迫る\n06:24 安全性・Ultrafast・公式の使い分け\n07:37 Artificial Analysis での立ち位置\n08:23 エフォート別に 3D ゲームを作って比較\n10:02 LP 作成を 6 Sol・Opus 5.5 と比較\n12:46 ピンボール・ゴブリンなどゲームの比較\n14:30 解説スライド・サムネイル・SVG の比較\n16:50 まとめ - Sol のイメージを改めたい理由\n17:41 お知らせ - ノートのメンバーシップと勉強会\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "sp7gNLljsZk",
+   "title": "【公式直伝】『Claude Sonnet 5.5』をフル活用する方法！前世代からしっかり進化したので特徴を解説",
+   "url": "https://www.youtube.com/watch?v=sp7gNLljsZk",
+   "published": "2026-09-29T10:30:20+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Claude の Sonnet 5.5 をフル活用するために押さえておきたいポイントを、公式のプロンプトガイドや開発者ブログ、Claude Code のチェンジログをもとに解説しました。\n\n「怠けるな」のような昔の回避策を消す、CLAUDE.md の細かいルールや矛盾する指示を減らしてシンプルにする、「よく考えて」と書く代わりにエフォートで思考量を調整する、そして /doctor prompt-audit で削れる部分を洗い出す、といった内容です。\n\nみなさんは Sonnet と Opus をどう使い分けていますか？ エフォートの設定のコツなども、ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5\n\n\ntimestamp:\n00:00 オープニング - Sonnet 5.5 活用術\n01:21 Sonnet 5 からの移行と「怠けるな」の削除\n02:18 CLAUDE.md をシンプルに見直す流れ\n02:59 矛盾・細かすぎる指示は注意力を分散させる\n04:28 「よく考えて」より effort で思考量を調整\n06:02 /doctor prompt-audit で削る\n07:08 effort は見落としを減らすが方針は変えない\n08:04 Sonnet 頼みにせず Opus と使い分ける\n09:14 考える量は役割で決める - 症状別の対策\n10:28 プロンプトインジェクション判定と道具の設計\n11:41 まとめ - モデルルーターでコストと速度を最適化\n12:57 エンディング - 今後の展望とメンバーシップ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://sound",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "ApirM3nX8wM",
+   "title": "【最高です】『Claude Sonnet 5.5』、世界が絶賛の名作モデルへ！本当に良かったので徹底解説",
+   "url": "https://www.youtube.com/watch?v=ApirM3nX8wM",
+   "published": "2026-09-29T02:30:11+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、新しく登場した「Claude Sonnet 5.5」について、公式情報のポイントと僕が実際に作らせてみたデモを交えて解説しました。\nOpus 5.5 とほぼ同じくらいのベンチマークなのに単価は半額、速度も僕の環境で 150〜180 TPS ほど出ていました\neffort (low / medium / high / xhigh / max) でトークン消費と品質が大きく変わるので、その使い分けも実例で比べています。20ドルプランでも Sonnet を選べば十分戦える時代になってきたと感じました。\n皆さんは Sonnet 5.5 と Opus 5.5、どう使い分けていますか？ ぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://www.anthropic.com/claude-sonnet-5-5\n\n\ntimestamp:\n00:00 オープニング - Claude Sonnet 5.5 登場\n00:56 SVG 比較で見える Sonnet の新世代感\n02:03 ナレッジカットオフとエフォートの扱い\n03:04 Sonnet 5 とは別物になったベンチ結果\n04:02 外ループや Best-of-N に Sonnet を交ぜる\n05:27 公式情報 - Opus 5.5 並みの性能で単価半額\n08:12 ベンチマークとエフォートの使い分け\n11:20 エフォート別の TPS とトークン消費量\n12:53 宇宙シューティングと迷路をエフォート別に比較\n14:32 LP・ゲームを Opus 5.5 と作り比べ\n21:41 資料・SVG・文章を GPT-6 Sol と比較\n25:01 総評 - Sonnet 5.5 で十分な時代へ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "qPuDbewU6E4",
+   "title": "【本音】Opus5.5で加速する誰でも開発・発信の時代！この先 残る価値は何なのか？",
+   "url": "https://www.youtube.com/watch?v=qPuDbewU6E4",
+   "published": "2026-09-28T10:15:06+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、AI で誰でも高クオリティな解説動画を作れるようになった今、これから人間の発信に何が残るのかについて、僕の考えをお話ししました。\nその先、「誰がどう感じるか」という評価関数の部分さえ、いずれモデルやハーネスに吸収されていくのではないか。そう考えたとき、最後に残るのは「どうありたいか」「どんな世界を作りたいか」という思想のような、とてもプリミティブな部分だけなのでは、というのが今の僕の直感です。\n\n逆に「これは AI に置き換わらずに残る」と思うものがあれば、ぜひコメント欄で教えてください。一緒に議論できたら嬉しいです。\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n評価関数\nhttps://note.com/masa_wunder/n/n344036762607\n\ntimestamp:\n00:00 オープニング - AI 解説動画は誰でも作れる時代\n00:39 ワンショットで作った解説動画を見る\n02:22 半年前との違い - Claude の Opus で一発\n04:11 部品の進化 - 音声・SVG アニメ・画像生成\n05:19 ボーナスタイムの終わりと供給過多\n07:31 Opus 5.5 の先 - 95 点が当たり前の世界\n09:36 評価関数の価値もいずれ消えていく\n11:41 Claude・ChatGPT で評価関数も民主化\n12:49 最後に残るのは思想とアート\n15:17 非エンジニアでも作れる現実を受け止める\n16:33 YouTube は「どうありたいか」への共感で戦う\n17:41 まとめ - コメント募集とメンバーシップ告知\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "0-BAGXHsRXE",
+   "title": "【徹底解説】『Grok Bot』を実際に運用する上で押さえたい 3つの鉄則！関心ごと・メモリ・ルールを本質から解説",
+   "url": "https://www.youtube.com/watch?v=0-BAGXHsRXE",
+   "published": "2026-09-27T09:45:16+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Grok Bot を実際に運用してみて感じた「強くするための 3 つの鉄則」について解説しました。\nGrok Bot は、16GB RAM・128GB ディスクのクラウド環境を丸ごと用意してくれるので、Mac mini を買わなくても 24 時間エージェントに働いてもらえる環境がすぐに作れます。中で Claude Code や Codex を動かせば「ハーネスを操作するハーネス」としても使えます。\n\n皆さんは Grok Bot でどんなボットのチームを組んでみたいですか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://x.ai/bot\n\n\n🎁無料プレゼントは公式LINEから🎁\n『grokbot』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://lin.ee/cJtJ8Y3\n\ntimestamp:\n00:00 Grok Bot を強くする3つの鉄則\n01:03 Grok Bot の魅力はクラウドのVM\n02:40 24時間動く環境で Mac mini の代わりに\n05:19 VMの中で複数のBotが動く仕組み\n06:51 ルーチンとマーケットプレイスで拡張\n09:08 鉄則① 役割ごとにBotを分ける\n11:47 Bot同士の会議と赤ペンでの指摘\n12:36 鉄則② Botごとにメモリを育てる\n14:01 鉄則③ ルールは1ファイルに置く\n15:17 ハマった点：崩れた画面へのチェック\n16:17 Tailscale で手元PCからVMへ入る\n18:15 まとめと勉強会・メンバーシップ案内\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "NPGo-OxWfqk",
+   "title": "【必見】Opus 5.5中心にAIモデル勢力図が激変！ハーネスでも見直すべき点を実体験ベースで解説",
+   "url": "https://www.youtube.com/watch?v=NPGo-OxWfqk",
+   "published": "2026-09-26T09:45:06+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Opus 5.5 や GPT-6 Sol / Luna の登場で変わりつつあるモデルの勢力図と、それに合わせて見直したいハーネスの作り方について解説しました。\n\nOpus 5.5 は目の良さやコンピューターユース、ロングランの粘り強さに加えて文章の読みやすさまで伸びていて、実際に使ってみて「とりあえず Opus 5.5 があれば何でもできる」と感じるほどでした。コストも下がったことで、スクリーンショットを使った確認や前提を知らない別エージェントによるレビューなど、成果物ベースの検証を積極的に回せるようになっています。一方で、動画や音声の検証には Gemini 3.8 Flash や MiMo-V2.6-Flash、大量の定型判定には Luna といった形で、手札の使い分けも広がってきました。\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n\ntimestamp:\n00:00 オープニング - モデル勢力図が変わった\n01:20 9月時点の使い分けと新モデル\n02:24 守備範囲が広がった Opus 5.5\n04:27 ナレッジワークのベンチマーク比較\n05:18 動画・音声の検証は Gemini と MiMo\n06:28 低コスト化で質も量もこなせる時代\n07:06 OSWorld とコンピューターユースの進化\n08:15 量をさばくなら Opus か GPT か\n09:20 画面・音声で成果物ベース評価へ\n11:11 用途別のモデル使い分けまとめ\n12:33 限界の先を試しハーネスを見直す\n14:40 メンバーシップとまとめ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "7tkp4GO1TM8",
+   "title": "【公式が語る】Claude Opus 5.5の目玉「長時間作業ほど安くなる」仕組みと活かす技術を徹底解説！",
+   "url": "https://www.youtube.com/watch?v=7tkp4GO1TM8",
+   "published": "2026-09-25T10:10:39+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Anthropic 公式ブログで紹介された「Claude の Opus 5.5 は長い作業ほど安くなる」という話について解説しました。\n\nOpus 5 と比べてキャッシュリードの価格が 1M トークンあたり 0.5 ドルから 0.2 ドルへと 60% 下がり、Claude Code のハーネス側でもキャッシュが壊れにくくなっています。エージェントが長く自律的に動くのが当たり前になった今、効いてくるのはこのキャッシュの部分です。\n公式おすすめの習慣も紹介しています。\n\n僕も実際に Opus 5.5 を使っていて、答えの決まっていない作業でも迷いが減り、思ったより早く仕事が終わると感じています。\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context\n\ntimestamp:\n00:00 Opus 5.5 が長い作業ほど安くなる話\n00:40 結論: 価格とキャッシュ読み込みの値下げ\n01:12 週の上限終了と Opus 5.5 登場の背景\n02:04 キャッシュ値下げが長い作業ほど得な理由\n02:25 公式データ: ロングラン化と介入68%減\n03:33 ツール呼び出しの上達と読む量2.6倍\n05:06 人とエージェントのすり合わせが鍵に\n05:52 キャッシュ読み込み60%安と Claude Code 改善\n07:45 Opus 5.5 は賢く30%速い\n08:59 キャッシュを守る習慣 /usage・/compact\n10:09 まとめ - Opus 5.5 の使いどころ\n11:09 告知 - note メンバーシップと勉強会\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "sRPF896FERI",
+   "title": "【スゴすぎ】『Gemini 3.8 Flash TTS』登場！流石に人間すぎて驚いたので解説します",
+   "url": "https://www.youtube.com/watch?v=sRPF896FERI",
+   "published": "2026-09-24T10:00:17+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Google から新しく登場した音声合成モデル「Gemini 3.8 Flash TTS」について解説しました。\n\n品質重視の Flash TTS と、速さとコスパ重視の Flash-Lite TTS の 2 モデルがあり、Google AI Studio や OpenRouter から試せます。前世代の Gemini 3.1 Flash TTS Preview より出力料金が安くなり、20 分くらいの音声でも数十円で作れるのは驚きでした。\n関西弁のような方言のアクセントや、笑いなどの感情タグ、文章で指示して新しい声を作る機能まであって、AI エージェントに動画や音声で解説してもらう用途にはかなり現実的な選択肢だと感じています。\n皆さんは AI の音声解説をどんな場面で使ってみたいですか？ よろしければコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 オープニング - Gemini 3.8 Flash TTS 登場\n01:23 OpenRouter と Google AI Studio で使える\n02:17 料金の目安は20分で数十円\n02:42 Flash と Flash-Lite の違いと価格\n03:13 声の保存期間と前モデルとの比較\n03:57 声の複製・30種類の声・演技タグ\n04:15 Flash-Lite の日本語を Whisper で検証\n04:36 デモ - Gemini で作った TTS 音声\n15:39 まとめ - 価格と速度の印象\n16:22 メンバーシップと勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "lcvyzvqWUVw",
+   "title": "【完全解説】Claude Opus 5.5の公式が語る特徴とは？プロンプトやEffort設定など変更多数！",
+   "url": "https://www.youtube.com/watch?v=lcvyzvqWUVw",
+   "published": "2026-09-24T03:10:06+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Claude の Opus 5.5 について、公式のプロンプトガイドやブログで共有された使い方のポイントを解説しました。\nOpus 5.5 はロングランが得意で報告もはっきりしているモデルなので、プロンプトで「よく考えて」と書くよりも、考える量はエフォートで調節し、完了条件と止まって良い条件を CLAUDE.md などにしっかり書いておくことが大事になります。\n\n僕もいつも Fable で進めている作業を Opus 5.5 に切り替えて試してみましたが、出力が速くて「あれ、もうできたの？」と驚く場面が増えた一方で、深いメタな対話ではまだ Fable に届かないかな、とも感じました。\n皆さんは Opus 5.5 をどんな場面で使っていますか？ 使ってみた感想や、エフォートはどのくらいに設定しているかなど、ぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5\nhttps://claude.dev/blog/getting-the-most-out-of-opus-5-5/\n\nakapen\nhttps://www.youtube.com/watch?v=KgUhKw_P2GE\n\ntimestamp:\n00:00 オープニング - Opus 5.5 の使い方\n00:58 結論: ゴールと止まり方を決める\n01:34 Opus 5 からの移行と Effort の調整\n04:26 完了条件を決めて赤ペンで擦り合わせ\n05:02 はっきりした報告と図表の読み取り力\n06:49 完了条件の書き方と AI っぽさ対策\n09:12 止まってよい条件を CLAUDE.md に書く\n10:05 大きい作業はサブエージェントに分ける\n11:39 タスクリストのファイル化と途中報告\n16:33 まとめ - 基礎を徹底しよう\n18:01 感想: Opus 5.5 と Fable の使い分け\n19:58 メンバーシップのお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Z2-Btkv3K9k",
+   "title": "【正直評価】GPT 6 SolとLunaが登場！公式はコスパ版Astra級と語るが本命はコスト効率の大幅改善か",
+   "url": "https://www.youtube.com/watch?v=Z2-Btkv3K9k",
+   "published": "2026-09-23T03:17:24+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、OpenAI から登場した GPT-6 Sol と GPT-6 Luna について、同じ日に出た Claude Opus 5.5 と比べながら解説しました。\nAPI 価格は GPT-5.6 と比べて半額になり、Luna は Opus 5.5 の 1/40 という激安ぶりです。一方で Artificial Analysis などのベンチマークを見ると、賢さはあまり変わっておらず、性能の飛躍というよりコスパ寄りの進化だと感じました。\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/index/introducing-gpt-6-sol-and-luna/\n\ntimestamp:\n00:00 導入 - GPT-6 Sol / Luna 登場\n01:14 Sol / Luna の概要と API 価格半額\n04:28 スペック - effort・キャッシュ等\n05:07 ベンチマークと公式の訴求ポイント\n07:58 賢さは据え置き？Opus 5.5 との差\n10:29 世界の反応 - 話題は Opus 5.5 へ\n11:28 Artificial Analysis のコスト比較\n12:35 デモ - LP・UI の作り込み比較\n16:01 デモ - ピンボール・マーブルラン・水槽\n17:39 デモ - ゴブリンゲーム・スライド・サムネ\n19:00 デモ - 3D / SVG キャラ再現と文章\n21:22 まとめ・メンバーシップ案内\n\n\n---\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "HkhCUPoLv6M",
+   "title": "【感動級】Claude Opus5.5が登場！Fable5.1から大幅進化&AI臭やコスト効率も大幅改善、俺たちのOpusが帰ってきたので徹底解説",
+   "url": "https://www.youtube.com/watch?v=HkhCUPoLv6M",
+   "published": "2026-09-22T23:35:17+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Anthropic から登場した新モデル「Claude Opus 5.5」について解説しました。\n入力 100 万トークンあたり料金やキャッシュの値下げ、Terminal-Bench 4.0 で medium が Opus 5 の max を上回る結果、Artificial Analysis での第三者の評価を整理したうえで、いつものデモ を Fable 5.1 や GPT-6 Astra と比べています。\n\n実際に使ってみて、コストが下がったのに情報の整理がうまくなり、人が読みやすい画面や文章に仕上げてくれる点に「一世代上がった」と感じました。皆さんは Opus 5.5 をどんな場面で使ってみたいですか？ 使ってみた感想もぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://www.anthropic.com/claude-opus-5-5\nhttps://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-opus-5-5.html\n\ntimestamp:\n00:00 Claude Opus 5.5 が登場\n01:33 エフォート別の出力量とゲーム比較\n05:00 料金・キャッシュ単価とナレッジカットオフ\n07:23 公式ベンチマークで見る性能の伸び\n10:52 文章スタイル・安全性・第三者の評価\n12:19 Artificial Analysis の評価\n14:27 Fable 5.1 と文章を読み比べ\n16:23 恒例デモ① LP・Notion 風・Figma 風\n21:28 恒例デモ② ゲーム・3D の世代差\n23:56 図解・3D を GPT-6 Astra と比較\n26:30 Fable 5.5 への期待と SVG 比較\n29:45 総評 - Opus 中心の使い方へ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: h",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "iiyGrn1mp-0",
+   "title": "AI動画生成マネタイズ勉強会前日LIVE！Claude CodeもCodexも最近エグいね！",
+   "url": "https://www.youtube.com/watch?v=iiyGrn1mp-0",
+   "published": "2026-10-02T08:33:24+00:00",
+   "channel_key": "muttyo",
+   "channel_name": "むっちょの副業月5万攻略",
+   "default_category": "earn",
+   "description": "AI動画生成マネタイズ勉強会の参加予約はこちら！\nhttps://utage-system.com/p/qSo5YU9j1LD6\n\n勉強会日程\n・10/3(土)20:00\n・10/4(日)20:00",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "CBnv-czrX6I",
+   "title": "【初心者でもできる】Claude Codeを使って0から月30万狙うならこれをやります【AI副業】",
+   "url": "https://www.youtube.com/watch?v=CBnv-czrX6I",
+   "published": "2026-10-01T09:00:24+00:00",
+   "channel_key": "muttyo",
+   "channel_name": "むっちょの副業月5万攻略",
+   "default_category": "earn",
+   "description": "今回は「Claude Codeを使って0から月30万狙うならこれをやります」ってテーマで話しました！\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=9OAg5rbOCbwr\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=9OAg5rbOCbwr\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n00:00 Claude Codeを使ったおすすめ副業\n00:55 Claude Code副業の3タイプ\n01:47 AI動画生成がおすすめな理由1つ目\n04:09 AI動画生成がおすすめな理由2つ目\n07:36 AI動画生成がおすすめな理由3つ目\n10:36 AI動画生成がおすすめな理由4つ目\n11:56 AI動画生成がおすすめな理由5つ目\n13:26 AI動画生成がおすすめな理由6つ目\n14:31 AI動画生成がおすすめな理由7つ目\n\n#ClaudeCode #おすすめ副業 #クロードコード",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "wCjhGNkXnfA",
+   "title": "【最新】Claude Codeを使って月20万を狙えるおすすめ副業を完全解説【AI副業を実演】",
+   "url": "https://www.youtube.com/watch?v=wCjhGNkXnfA",
+   "published": "2026-09-24T09:00:39+00:00",
+   "channel_key": "muttyo",
+   "channel_name": "むっちょの副業月5万攻略",
+   "default_category": "earn",
+   "description": "今回は「Claude Codeを使って月20万を狙えるおすすめ副業」を実演付きで解説しました！\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/pWn86lBcV5I7?mtid=hlBQZyY0uIiN\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/pWn86lBcV5I7?mtid=hlBQZyY0uIiN\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/aXveuWL-0yI\n\n・Claude Codeの神連携\nhttps://youtu.be/YoX-CSxtLNg\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n00:00 Claude Codeを使ったおすすめ副業を解説します\n01:45 Claude Codeを使ったおすすめ副業1つ目\n10:49 Claude Codeを使ったおすすめ副業2つ目\n\n#おすすめ副業 #ClaudeCode #ひとり起業",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "UVzVVRf2yUo",
+   "title": "【5人中月88万】間違い探し本が売れまくる唯一の要素を言語化してみると、とんでもない事実が見えてきました……【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=UVzVVRf2yUo",
+   "published": "2026-10-02T09:00:24+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTを活用して高齢者向けの間違い探し本を制作し、Amazon KDPでペーパーバックとして出版・販売する副業を紹介している。",
+    "モニター事例として12か月目に月収88万円超を達成した例を挙げ、即効性ではなく継続的な出版による積み上げが重要だと説明している。",
+    "ChatGPTの画像編集で起きる意図しない変更「幽霊まちがい」を防ぐため、プロンプト設定や変更部分のみを合成する手順を解説している。"
+   ],
+   "for_whom": "生成AIを活用してAmazonで間違い探し本を出版・収益化したい人",
+   "caution": "動画内では月収88万円などの実績が語られていますが成果を保証するものではありません。また、特典配布を名目とした公式LINEへの登録誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-02T13:06:52.178708+00:00"
+  },
+  {
+   "video_id": "vyYsdD1DRVE",
+   "title": "【ジグソーパズルが売れる理由】センス不要！1柄13分で“2個目も買われる”AIジグソーパズルを積みあげ、月46万を達成させた、とあるユーザーの体験談【AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=vyYsdD1DRVE",
+   "published": "2026-09-29T09:00:05+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=hj5SXTdJxh\n※もしLINE登録が上手く行かない方は「@223etryz」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🧩【同じ“注文が入った時だけ工場で作る”回、このチャンネルにあります】\n今日はAIで作った絵を、アメリカの工場とEtsyを使って、在庫を持たずに売る話でした。\n同じ仕組みを、別の商品・別の角度から通した回を並べておきます↓\n\n▼本編でちらっと出てきた“庭に立てる旗”の回。同じ工場とEtsyで、季節ごとに売れる棚の作り方\nhttps://youtu.be/9PRzJCWL378\n\n▼同じ工場とEtsyで、壁一面の布を売る回。超特大タペストリー\nhttps://youtu.be/icblXzctaDU\n\n▼同じEtsyで、形のないデータを売る回。アメリカで流行っている“テレビに映す絵”\nhttps://youtu.be/G5MpQKyP_uc\n\n▼日本の絵が海外で売れるのか気になった人へ。Etsyで穴場の市場を特定する激レア手法\nhttps://youtu.be/zRhMGQ_Bxcg\n\n▼一人で黙々とやりたい人向け。Etsyで孤独なリスナー3名中3名が成果を出した回\nhttps://youtu.be/sJPF92izwy4\n\n▼AIの絵を金属のポスターにして売る回。審査に通す方法まで1年分の検証\nhttps://youtu.be/eRPC2D4lkAM\n\n▼売れない時期が続いて心が折れかけている人へ。月500円から月42万まで抜け出した記録\nhttps://youtu.be/yw6ujlK07aI\n\n▼漢字が読めるだけで強い。世界各国に“自動販売機”を置く、海外向けの無在庫販売\nhttps://youtu.be/dOF8EPYoaqU\n\n▼なぜ手作りですらない1枚に5,500円払う人がいるのか。作らないハンドメイドの証拠を出した回\nhttps://youtu.be/jyfLXRm5WFk\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=hj5SXTdJxh\n\n----------------------",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "DgK8p_yOz54",
+   "title": "ぬり絵がクッソ売れる、真の共通点を見つけました。4人中3人が10冊で月49万に届いた、手取りを18倍にする俺の必殺テクニックを全部公開【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=DgK8p_yOz54",
+   "published": "2026-09-27T09:00:19+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=LCfd4CBqeW\n※もしLINE登録が上手く行かない方は「@347jlwgo」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n📚【本編11:52と46:33で「概要欄に置いておく」と言った塗り絵の回、ここです】\n今日は作り方より「どう売り出すか」の話でした。\nAmazonへの出品手順や、絵そのものの作り方は、このチャンネルの過去回で1本ずつ通してやっています↓\n\n▼出品の手順を一から見たい人はまずここ。塗り絵の作り方と売り方を全部通した回\nhttps://youtu.be/fDHXWKKOFsQ\n\n▼たった1冊で人生が変わった60代主婦。これぞ塗り絵副業の完全版\nhttps://youtu.be/Q8OsAdAsghs\n\n▼1冊の中で絵柄がバラつく人へ。「世界観保持」という塗り絵専用テクニック\nhttps://youtu.be/1BZV9fHt6pA\n\n▼浮世絵×現代×ぬり絵で1.4万冊。99%が気づいていない収益化の裏ルート\nhttps://youtu.be/sFAQF8Wv-8I\n\n▼AIの性能を100倍に引き上げて、売れ続ける和風塗り絵を錬成する必殺技\nhttps://youtu.be/Y0zpScAwTn8\n\n▼塗り絵が伸びない人へ。売れる塗り絵を錬成する魔法のプロンプト\nhttps://youtu.be/2PLLEYBscsk\n\n▼AIド素人10人中10人が成果を出した、再現性の高い塗り絵カテゴリー\nhttps://youtu.be/89CjKmNrGRU\n\n▼塗り絵×ASMRで40万。お客様が思わず衝動買いしてしまう売り出し方\nhttps://youtu.be/ExMHSrVyfVo\n\n▼99%が知らないAIの裏技。“心地よい空間”を描く塗り絵のマネーマシン\nhttps://youtu.be/6Ln3hjzjNKQ\n\n▼これから始める人向け。シンプル作業で回るAI塗り絵副業3選\nhttps://youtu.be/YLsyO_ClXs0\n\n▼同じAmazonで売る知育アイテム（塗り絵・ドリル）。売れる作り方の回\nhttps://youtu.be/aX48UKzgfQw\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲ",
+   "first_seen": "2026-10-02T13:06:52.178708+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": null,
-   "fail_streak": 1
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": null,
-   "fail_streak": 1
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": null,
-   "fail_streak": 1
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": null,
-   "fail_streak": 1
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": null,
-   "fail_streak": 1
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": null,
-   "fail_streak": 1
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-02T05:58:54.988105+00:00",
+   "last_ok": "2026-10-02T13:06:52.178708+00:00",
    "fail_streak": 0
   }
  }
