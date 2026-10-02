@@ -178,8 +178,11 @@ def test_response_text_extractors():
 
 def test_prompt_includes_description_and_caution_rules():
     prompt = gemini.build_prompt({"title": "題", "channel_name": "ch",
-                                  "default_category": "earn", "description": "LINE登録"})
+                                  "default_category": "earn", "description": "LINE登録"},
+                                 today="2026-10-02")
     assert "LINE登録" in prompt and "出演者の主張" in prompt
+    # 知らないモデル名を「架空」と書かせない（初回実行で実際に起きた）
+    assert "今日は 2026-10-02" in prompt and "実在するもの" in prompt
 
 
 def test_client_falls_back_and_keeps_key_out_of_url():

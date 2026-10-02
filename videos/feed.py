@@ -17,8 +17,9 @@ from datetime import datetime
 FEED_URL = "https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
 USER_AGENT = "ai-tsukaikata-videos/1.0 (+https://ai-tsukaikata.com)"
 TIMEOUT = 20
-# 待ち時間（秒）。合計で約1分。全部失敗したらその回は飛ばす（次の回でまた試す）
-RETRY_WAITS = (3, 5, 8, 12, 15, 20)
+# 待ち時間（秒）。合計で約2分。全部失敗したらその回は飛ばす（次の回でまた試す）。
+# 2026-10-02 の初回実行（GitHub 上）では、合計約1分の待ちで21本中6本が取れなかった
+RETRY_WAITS = (3, 5, 8, 12, 15, 20, 25, 30)
 
 NS = {
     "atom": "http://www.w3.org/2005/Atom",

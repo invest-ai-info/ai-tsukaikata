@@ -13,6 +13,7 @@ from __future__ import annotations
 import json
 import re
 import urllib.request
+from datetime import datetime, timezone
 
 MODELS = ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-2.5-flash")
 BASE = "https://generativelanguage.googleapis.com/v1beta"
@@ -34,7 +35,10 @@ class QuotaError(Exception):
     """枠を使い切った（429）。動画のせいではないので、失敗回数に数えない。"""
 
 
-def build_prompt(video: dict) -> str:
+def build_prompt(video: dict, today: str | None = None) -> str:
+    """today は「今日の日付」。Gemini は学習より後のモデル名・出来事を知らないので、
+    渡さないと「架空の未来のモデル」と注意書きを付ける（2026-10-02 の初回実行で実際に起きた）。"""
+    today = today or datetime.now(timezone.utc).date().isoformat()
     description = video.get("description", "").strip() or "（なし）"
     return f"""あなたは、AIで仕事を自動化したい日本の会社員向けサイトの編集者です。
 渡したYouTube動画を見て、次のJSONだけを返してください。説明や前置きは書かないでください。
@@ -58,6 +62,8 @@ def build_prompt(video: dict) -> str:
   - 有料講座・コミュニティ・LINE登録などへ誘導している（下の概要欄も見ること）
   金額を書くときは「出演者の主張」であることが分かるように書く
 - 動画が長いときは、最初の30分の内容だけで要約してよい
+- 今日は {today} です。動画に出てくるAIのモデル名・製品名・出来事は、あなたが知らないものでも
+  実在するものとして扱ってください。「架空」「未来の想定」「思考実験」のように書かない
 
 動画の題: {video.get("title", "")}
 チャンネル: {video.get("channel_name", "")}
