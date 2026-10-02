@@ -355,6 +355,29 @@ def test_build_renders_videos_page_and_button(tmp_path):
     assert "出演者の主張" in page
     assert 'href="/videos/"' in files["index.html"]
     assert "/videos/" in files["sitemap.xml"]
+    assert 'id="v-AAAAAAAAAAA"' in page                 # 検索結果の飛び先
+
+
+def test_build_puts_videos_in_search_index(tmp_path):
+    files, errors = _tmp_build(tmp_path, _done_data())
+    assert errors == []
+    index = json.loads(files["search.json"])
+    hits = [e for e in index if e["category"] == "videos"]
+    assert len(hits) == 1
+    hit = hits[0]
+    assert hit["url"] == "/videos/#v-AAAAAAAAAAA"        # YouTube ではなく要約のあるカードへ
+    assert hit["title"] == "題<b>"                        # JS 側が textContent で出す
+    assert "一" in hit["description"] and "二" in hit["description"]
+    assert "ch" in hit["tags"] and "AIで稼ぐ" in hit["tags"]
+    assert hit["published"] == "2026-10-01"
+    # 記事の索引と同じ形（JS が同じ描き方で出せる）
+    article = next(e for e in index if e["category"] != "videos")
+    assert set(hit) == set(article)
+
+
+def test_search_index_has_no_videos_without_data(tmp_path):
+    files, _ = _tmp_build(tmp_path, None)
+    assert all(e["category"] != "videos" for e in json.loads(files["search.json"]))
 
 
 def test_build_without_videos_has_no_page_or_button(tmp_path):

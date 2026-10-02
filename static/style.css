@@ -1063,6 +1063,15 @@ a { color: var(--accent); }
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 1rem;
+}
+
+/* 検索結果から飛んできた動画（/videos/#v-…）を目立たせる */
+.video-card:target {
+  margin: 0 -0.6rem;
+  padding: 1rem 0.6rem;
+  background: var(--prompt-bg);
+  border-radius: 8px;
 }
 
 .video-thumb {

@@ -154,7 +154,7 @@ def collect(
     # サイト内検索の索引（2026-09-20）。/search/ を開いたときだけブラウザが読む。
     # 記事と同じ検証を通った内容から作るので、ここより上で errors が出ていれば出ない。
     # ⚠️ section_paths には /search/ を足さない（sitemap に載せない）
-    files["search.json"] = search.search_json(articles)
+    files["search.json"] = search.search_json(articles, videos=videos_data)
 
     # 生成HTMLをコミットしない方式では、CNAME を artifact に含めないと
     # デプロイのたびに独自ドメインの設定が外れる

@@ -384,6 +384,8 @@ YouTube の AI 動画を集め、Gemini に**動画そのものを見せて**日
   駄目なら generateContent で取り直す作り。**確認＝`data/videos/videos.json` に `status: done` が増えているか**。
   増えずに `last_error` が並んでいたら、そこに呼び方の失敗が書いてある
 - `data/videos/videos.json` が無い・要約済み0本＝ページもトップのボタンも出ない（`/ainews/` と同じ）
+- サイト内検索にも入る（2026-10-02）＝題・要約・チャンネル名。行き先は YouTube ではなく `/videos/#v-<動画ID>`
+  （要約と注意書きを先に見せる）。索引に入るのは `/videos/` に並んでいる動画だけ
 
 ### 🔎 サイト内検索（2026-09-20）
 

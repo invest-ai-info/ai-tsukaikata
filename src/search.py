@@ -57,6 +57,34 @@ def build_index(articles: list[Article]) -> list[dict]:
     ]
 
 
-def search_json(articles: list[Article]) -> str:
+def video_index(videos: dict | None) -> list[dict]:
+    """AI動画まとめ（src/videos.py の load_videos の結果）の動画を索引にする（2026-10-02）。
+
+    行き先は YouTube ではなく /videos/ の該当カード（#v-<動画ID>）＝要約と注意書きを先に見せる。
+    載せるのは /videos/ に実際に並んでいる動画だけ（ページに無い動画へ飛ばさない）。
+    探せる文字＝題（タイトル枠）・要約（説明文枠）・チャンネル名と分類（タグ枠）。
+    """
+    if not videos:
+        return []
+    return [
+        {
+            "url": f"/videos/#v-{video['video_id']}",
+            "title": video["title"],
+            "description": " ".join(video["summary"]),
+            "tags": [video["channel_name"], section["label"], "動画", "YouTube"],
+            "headings": [],
+            "category": "videos",
+            "category_label": "AI動画",
+            "scene": None,
+            "scene_label": None,
+            "published": video["published"].date().isoformat(),
+        }
+        for section in videos["sections"]
+        for video in section["entries"]
+    ]
+
+
+def search_json(articles: list[Article], videos: dict | None = None) -> str:
     """search.json の本文。日本語をそのまま書き、区切りは詰める（gzip 後は差が無いが生の大きさが読みやすい）。"""
-    return json.dumps(build_index(articles), ensure_ascii=False, separators=(",", ":")) + "\n"
+    index = build_index(articles) + video_index(videos)
+    return json.dumps(index, ensure_ascii=False, separators=(",", ":")) + "\n"

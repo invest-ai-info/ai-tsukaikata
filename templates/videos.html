@@ -19,7 +19,7 @@
   {% if section.entries %}
   <ul class="video-list">
     {% for video in section.entries %}
-    <li class="video-card">
+    <li class="video-card" id="v-{{ video.video_id }}">
       <a class="video-thumb" href="{{ video.url }}" rel="noopener"><img src="{{ video.thumbnail }}" alt="" width="320" height="180" loading="lazy"></a>
       <div class="video-body">
         <a class="video-title" href="{{ video.url }}" rel="noopener">{{ video.title }}</a>

@@ -1,6 +1,7 @@
 // サイト内検索（/search/ だけで読む）。
 //
 // 索引は /search.json（ビルドが記事から作る。タイトル・説明文・タグ・見出し）。
+// 2026-10-02 から AI動画まとめの動画も入る（題・要約・チャンネル名。行き先は /videos/#v-…）。
 // 探し方は「部分一致の AND」。日本語は単語の切れ目が無いので、分かち書きせずに
 // 文字列の部分一致で当てるのがいちばん素直。全角・大文字は NFKC と小文字化で揃える
 // （索引側は生の文字なので、索引と入力の両方をここで同じ規則に通す）。
@@ -12,7 +13,7 @@
   var DEBOUNCE_MS = 150;
   // 当たり方の点。タイトル > タグ > 説明文 > 見出し。語ごとに最も高い当たり方を採る
   var WEIGHTS = { title: 4, tags: 3, description: 2, headings: 1 };
-  var EMPTY_HINT = "言葉を入れると、タイトル・説明文・タグ・見出しから探します。例: Gmail、副業、GitHub Actions";
+  var EMPTY_HINT = "言葉を入れると、記事（タイトル・説明文・タグ・見出し）と AI動画まとめの動画（題・要約・チャンネル名）から探します。例: Gmail、副業、GitHub Actions";
 
   var form = document.getElementById("search-form");
   var input = document.getElementById("search-input");
@@ -123,7 +124,7 @@
   }
 
   function renderEmpty(query) {
-    var p = el("p", "search-noscript", "「" + query + "」に当たる記事は見つかりませんでした。別の言葉で試すか、");
+    var p = el("p", "search-noscript", "「" + query + "」に当たる記事・動画は見つかりませんでした。別の言葉で試すか、");
     var recipes = el("a", null, "レシピ一覧");
     recipes.href = "/recipes/";
     var tools = el("a", null, "深掘り記事の一覧");
@@ -156,7 +157,7 @@
       results.appendChild(renderEmpty(query));
       return;
     }
-    status.textContent = "「" + query + "」に当たる記事: " + hits.length + "件";
+    status.textContent = "「" + query + "」に当たる記事・動画: " + hits.length + "件";
     hits.forEach(function (hit) { results.appendChild(renderHit(hit, words)); });
   }
 
