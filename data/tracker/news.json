@@ -15,6 +15,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-02T23:00:08.516568+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-02T20:19:57+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to cloud…",
+      "title": "v2.1.288",
+      "uid": "7a716b299793e42d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-02T18:27:27.101114+00:00",
       "importance": "minor",
       "label": "OpenAI News",

@@ -28,14 +28,14 @@
   "latest": {
     "anthropic-news": "2026-10-02T23:01:00+00:00",
     "anthropic-sdk": "2026-09-30T22:58:09+00:00",
-    "claude-code": "2026-10-01T18:43:19+00:00",
+    "claude-code": "2026-10-02T20:19:57+00:00",
     "deepmind-blog": "2026-09-30T20:01:45+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-10-02T15:00:00+00:00",
     "hf-deepseek": "2026-09-10T02:17:58+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-10-02T09:15:00+00:00",
-    "media-gigazine": "2026-10-02T13:00:00+00:00",
+    "media-gigazine": "2026-10-02T23:00:00+00:00",
     "media-impress-ai": "2026-10-02T13:00:00+00:00",
     "media-itmedia-aiplus": "2026-10-02T11:04:32+00:00",
     "media-publickey": "2026-10-01T18:28:43+00:00",
@@ -89,6 +89,17 @@
       "uid": "fbce879e1b68ed84",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
       "vendor": "Google"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-02T20:19:57+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to cloud…",
+      "title": "v2.1.288",
+      "uid": "7a716b299793e42d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
+      "vendor": "Anthropic"
     }
   ],
   "uids": {
@@ -944,6 +955,7 @@
     "411ccd59e01b2f53": "2026-09-24T04:57:20.166847+00:00",
     "41208f4ee4f0d528": "2026-08-01T12:16:42.309603+00:00",
     "41316133918bf927": "2026-09-29T15:55:59.129583+00:00",
+    "415ceeb5fc432a61": "2026-10-02T23:00:08.516568+00:00",
     "417576d357661347": "2026-09-26T07:47:01.421330+00:00",
     "4176b3ffa531bc36": "2026-08-01T12:16:42.309603+00:00",
     "4179b9135be4815a": "2026-08-31T23:53:13.286183+00:00",
@@ -1669,6 +1681,7 @@
     "79fd521beb99ab7d": "2026-09-26T13:09:27.137457+00:00",
     "79ff328bab0dbf07": "2026-09-10T06:01:05.671464+00:00",
     "7a61633a59ab7c8d": "2026-08-03T21:32:12.318301+00:00",
+    "7a716b299793e42d": "2026-10-02T23:00:08.516568+00:00",
     "7a7636f9cf57599b": "2026-08-23T14:42:38.996363+00:00",
     "7a9ce5fa264cc815": "2026-09-15T13:36:52.400656+00:00",
     "7aceb9e43e4f8ee9": "2026-08-21T07:09:56.315810+00:00",
