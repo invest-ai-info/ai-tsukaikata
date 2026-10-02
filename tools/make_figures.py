@@ -29982,3 +29982,116 @@ if __name__ == "__main__":
     argon_benchmarks_chart()
     argon_price_tiers_chart()
     argon_vendor_price_chart()
+
+
+def grown_file_hit_rate_chart() -> None:
+    """100行まで育てたファイルへの追記で、書式が規定どおりになった回数（2026-10-02）。
+
+    副業の作業記録・家計の買い物メモの2本×各2回。判定は
+    docs/evidence/more-example-rows-lower-the-hit-rate.md の生の返りを機械照合した。
+    """
+    _hit_and_miss_rows_chart(
+        "grown-file-hit-rate.svg",
+        "見本が100行に増えても、書式の的中は4本に3本どまりだった",
+        "実測2026-10-02。daily-append-same-shape と同じ2材料に、100行ぶんの記録を積んでから追記させた。",
+        "書式を1文字も書かない指示文では、お手本1行だけだった元記事の12/12より的中が下がった。",
+        [
+            ("クリーンな100行・書式の指示なし（C1）", 3, 4, "good"),
+            ("クリーンな100行・「ファイルに合わせて」と明示（C3）", 4, 4, "good"),
+            ("1行だけ乱れた100行・書式の指示なし・1日目（C2）", 1, 4, "good"),
+            ("C2の2日目も、1日目と同じ系列が同じ結果を継続", 4, 4, "good"),
+            ("点検専用の別会話が、乱れた行をすべて名指し", 3, 3, "good"),
+        ],
+        [
+            "書式を指示せず100行の見本を渡しても、的中は4本中3本どまり（元記事はお手本1行で12/12）。",
+            "1行だけ区切り記号の違う行を混ぜると、的中はさらに4本中1本へ落ちた。",
+            "そろった系列・崩れた系列とも、2日目は1日目と同じ結果をそのまま続けた（4系列とも）。",
+        ],
+        "見本が100行に増えても書式の的中は4本に3本どまりだったことを示す表。すべて「規定の書式になった回数／試した回数」。"
+        "クリーンな100行に書式を指示せず追記させた場合は4本中3本、同じクリーンな100行で「ファイルに合わせて」と"
+        "明示した場合は4本中4本。1行だけ区切り記号の違う行を混ぜた100行に書式を指示せず追記させた1日目は4本中1本。"
+        "その同じ系列が2日目も1日目と同じ結果（そろうかそろわないか）を続けた数は4系列中4系列。"
+        "点検専用の別会話に乱れた行を探させると、3系列中3系列で乱れた行をすべて名指しし、誤検知は無かった。"
+        "下の枠には、書式を指示せず100行の見本を渡しても的中は4本中3本どまりでお手本1行だけだった元記事の12/12より"
+        "低いこと、1行だけ区切り記号の違う行を混ぜると的中はさらに4本中1本へ落ちたこと、"
+        "そろった系列・崩れた系列とも2日目は1日目と同じ結果を続けたことが書かれている。",
+        label_w=430,
+    )
+
+
+def grown_file_sticky_pattern_chart() -> None:
+    """1日目にそろった系列・崩れた系列が、2日目も同じ形のまま続いたことを示す図。"""
+    col_w, box_h = 330, 48
+    gap = 24
+    left_x = 18
+    right_x = left_x + col_w + gap
+    top = 100
+    row_gap = 26
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "そろった系列はそろったまま、崩れた系列は崩れたまま続いた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ100行・同じ1行の乱れ・同じ指示文から出発した、材料Aの独立した2つの会話（2026-10-02）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1日目に規定の書式で返った系列は2日目も規定の書式。1日目に走り書きのままだった系列は2日目も走り書きのまま。</text>\n",
+        f'<text class="t-xs" x="{left_x + 8}" y="{top - 8}">系列A-rep2（1日目から規定の書式）</text>\n',
+        f'<text class="t-xs" x="{right_x + 8}" y="{top - 8}">系列A-rep1（1日目から走り書きのまま）</text>\n',
+    ]
+
+    left_rows = [
+        ("1日目", "2026-08-01 / C社 / 記事の下書き / 90分", "box-good", "t-good"),
+        ("2日目", "2026-08-02 / D社 / 打ち合わせメモ起こし / 45分", "box-good", "t-good"),
+    ]
+    right_rows = [
+        ("1日目", "2026年8月1日 C社 記事の下書き 90分", "box-bad", "t-bad"),
+        ("2日目", "2026年8月2日。D社の打ち合わせメモ起こし。45分。", "box-bad", "t-bad"),
+    ]
+
+    y = top
+    for (l_label, l_text, l_cls, l_tcls), (r_label, r_text, r_cls, r_tcls) in zip(left_rows, right_rows):
+        parts.append(f'<text class="t-xs" x="{left_x}" y="{y - 4}">{_esc(l_label)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{right_x}" y="{y - 4}">{_esc(r_label)}</text>\n')
+        parts.append(f'<rect class="{l_cls}" x="{left_x}" y="{y}" width="{col_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<rect class="{r_cls}" x="{right_x}" y="{y}" width="{col_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="{l_tcls} mono" x="{left_x + 12}" y="{y + box_h / 2 + 4:.1f}">{_esc(l_text)}</text>\n')
+        parts.append(f'<text class="{r_tcls} mono" x="{right_x + 12}" y="{y + box_h / 2 + 4:.1f}">{_esc(r_text)}</text>\n')
+        if l_label == "1日目":
+            ax = left_x + col_w / 2
+            ay1 = y + box_h + 4
+            ay2 = ay1 + row_gap - 8
+            parts.append(f'<line class="line" x1="{ax}" y1="{ay1}" x2="{ax}" y2="{ay2 - 6}"/>\n')
+            parts.append(
+                f'<path class="line" d="M {ax - 5} {ay2 - 10} L {ax} {ay2} L {ax + 5} {ay2 - 10}"/>\n'
+            )
+            bx = right_x + col_w / 2
+            parts.append(f'<line class="line" x1="{bx}" y1="{ay1}" x2="{bx}" y2="{ay2 - 6}"/>\n')
+            parts.append(
+                f'<path class="line" d="M {bx - 5} {ay2 - 10} L {bx} {ay2} L {bx + 5} {ay2 - 10}"/>\n'
+            )
+        y += box_h + row_gap
+
+    note_y = y + 6
+    parts.append(f'<rect class="box-accent" x="18" y="{note_y}" width="684" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{note_y + 24}">'
+        "どちらの系列も、2日目は1日目と同じ形を自分から続けた（指示文は2日間とも一字一句同じ）。</text>\n"
+    )
+
+    height = note_y + 40 + 12
+    alt = (
+        "そろった系列はそろったまま、崩れた系列は崩れたまま続いたことを示す図。材料Aの独立した2つの会話を比べている。"
+        "系列A-rep2は1日目に「2026-08-01 / C社 / 記事の下書き / 90分」という規定の書式で追記し、"
+        "2日目も「2026-08-02 / D社 / 打ち合わせメモ起こし / 45分」という同じ規定の書式のままだった。"
+        "系列A-rep1は1日目に「2026年8月1日 C社 記事の下書き 90分」という走り書きのまま追記し、"
+        "2日目も「2026年8月2日。D社の打ち合わせメモ起こし。45分。」という走り書きのままだった。"
+        "指示文はどちらの系列も2日間とも一字一句同じだった。"
+    )
+    (OUT / "grown-file-sticky-pattern.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    grown_file_hit_rate_chart()
+    grown_file_sticky_pattern_chart()
