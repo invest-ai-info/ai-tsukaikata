@@ -45,63 +45,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-27T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-10-02T23:01:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Anthropic is investing $100 million in Claude Frontier Academy to train 10,000 Frontier Deployed Engineers by the end of 2027, with cohorts from Accenture, Bain, CBA, Deloitte, McKinsey, Morgan Stanl…",
-      "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
-      "uid": "d8fe1a36c52aa438",
-      "url": "https://www.anthropic.com/news/claude-frontier-academy",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-02T16:15:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
-      "title": "A model guide for the GPT-6 family",
-      "uid": "c08de4ca68a617b2",
-      "url": "https://openai.com/index/practical-guide-building-gpt-6",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-02T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
-      "title": "Chatham scales its capital markets expertise with OpenAI",
-      "uid": "57e4c12769c0c36f",
-      "url": "https://openai.com/index/chatham-financial",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-10-02T15:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "A video showing the September AI updates",
-      "title": "The latest AI news we announced in September 2026",
-      "uid": "fbce879e1b68ed84",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-10-02T20:19:57+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to cloud…",
-      "title": "v2.1.288",
-      "uid": "7a716b299793e42d",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
