@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="出典URLの作り話を止めるための6つの条件で、番号を作らなかった回数を横棒で比べた図。①ヒントなしでそのままURLを聞くと、2回中0回しか作らずに止まらず、2回とも出した。②名前・日付には効いた「自信が持てなければ確認できませんと書いて」をそのままURL請求に使うと、10回中7回は止まったが、3回はまだ番号を作った。③作り話の実害を説明して言い方を強めると、2回中2回とも番号を作らなかった。④URLでなくページ名だけを求めると、2回中2回とも番号を作らなかった。⑤URLでなく検索語だけを求めると、2回中2回とも番号を作らなかった。⑥名前と条件付きURLを組み合わせ、番号の推測を明示的に禁止すると、4回中4回とも番号を作らなかった。下の枠には、①は4件中2件が存在しない404だったこと、②は名前・日付には完全に効いた同じ文言がURLでは7割にしか届かないこと、③④⑤⑥はどれも言い方や聞き方を変えると番号の作り話が0件になったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">ヒントの言葉と聞き方を変えると、URL番号の作り話は減った</text>
+<text class="t-sm" x="18" y="45">実測2026-10-03。架空チャンネル2種（S2・S4）に同じ収益化可否の質問をし、出典URLを求める部分だけを6条件で変えた。</text>
+<text class="t-sm" x="18" y="64">数字は「URLの番号を作らなかった回数／試した回数」。多いほど良い。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">①ヒントなしで、そのままURLを聞く</text>
+<rect class="box-bad" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-bad" x="558.0" y="125" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="157">②名前・日付に効いた文言を、そのままURL請求に使う</text>
+<rect class="box" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="558.0" y="157" text-anchor="middle" style="font-weight:700">7/10</text>
+<text class="t" x="18" y="189">③作り話の実害を説明して、言い方を強める</text>
+<rect class="box-good" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="189" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="221">④URLでなく、ページ名だけを求める</text>
+<rect class="box-good" x="478" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="221" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="253">⑤URLでなく、検索語だけを求める</text>
+<rect class="box-good" x="478" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="253" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="285">⑥名前＋条件付きURL（番号の推測を明示的に禁止）</text>
+<rect class="box-good" x="478" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="285" text-anchor="middle" style="font-weight:700">4/4</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">①は2回とも出し、4件中2件が存在しない404だった（指示文1）。</text>
+<text class="t-accent" x="34" y="340">②は名前・日付には2/2で効いた同じ文言なのに、URLでは7/10にしか届かない（指示文2）。</text>
+<text class="t-accent" x="34" y="358">③④⑤⑥はどれも、言い方や聞き方を変えると番号の作り話が0件になった（指示文3・4・5・6）。</text>
+</svg>
