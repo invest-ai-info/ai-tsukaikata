@@ -27,19 +27,6 @@
    "attempts": 0
   },
   {
-   "video_id": "BORAq995Ye4",
-   "title": "Claude Codeを日常業務で使いこなす！CLAUDE.mdの設定や最適なフォルダ設計を解説してみた",
-   "url": "https://www.youtube.com/watch?v=BORAq995Ye4",
-   "published": "2026-09-19T09:00:20+00:00",
-   "channel_key": "nyanta",
-   "channel_name": "にゃんたのAIチャンネル",
-   "default_category": "tech",
-   "description": "『ゼロからわかるClaude Code業務エージェントの教科書』\nAmazonで予約受付中！▶︎https://amzn.to/4yz0AZo\n\n『ゼロからわかるDifyの教科書 ～生成AI × ノーコードでかんたん業務効率化』\nAmazon ▶︎ https://amzn.to/3QMrFnY\n\n🏢【受付中】企業様向けAI活用の相談窓口を設置しています。\n「AIで業務効率化できるか一緒に考えてほしい」「AIがわかる人を育てたい」という企業様向けに、研修から業務改善の定着まで伴走支援いたします。\n▼登録はこちら（登録は1分ほど・本目的以外では営業しません）\nhttps://forms.gle/sPVYtBkZpeaJ7URS9 \n\n------------------------------------------------------------------------------------------------\n\nこんにちは、にゃんたです。\n今回は、私が普段の業務で実践している、Claude Codeを開発以外の仕事で活用するための「CLAUDE.md」の仕組みとフォルダ設計について解説しました！\n\n顧客ごとにフォルダを分けてCLAUDE.mdを正しく配置することで、それぞれの事情や前提情報をAIに迷わず読み込ませることができます。ただ、階層による読み込みタイミングの違いや、オートモード時のちょっとした罠など、実務で使いこなす上で知っておくべきポイントも詳しく紹介しています🙆‍♂️\n\n動画の最後でもお知らせしましたが、私が執筆したビジネスパーソン向けの書籍『ゼロからわかる Claude Code業務エージェントの教科書』も予約受付中です！ 仕事の中でどうやってClaude Codeを活用すればいいか悩んでいる方は、ぜひ概要欄からチェックしてみてください😊\n\n■LINE公式で限定コンテンツ配布中！\n▼登録はこちらから行えます▼\nhttps://liff.line.me/2004040861-3Jvq4bAG\n\n今ならキーワード「プレゼント」と入力すると\n・ChatGPTのプロンプトまとめ\n・Claudeのプロンプトまとめ\n・Difyのまとめ\nを無料でお渡ししています！\n\n■チャプター\n00:00 CLAUDE.md業務活用・設計の全体像\n00:52 Claude Codeの仕事を1つのWorkspaceに集約\n04:05 CLAUDE.mdの基本とファイル探索の効率化\n05:48 CLAUDE.mdの階層配置と読み込みタイミング\n08:25 Claude Code Autoモードで起きる読み込みの罠\n09:19 CLAUDE.mdを顧客別に階層設計する方法\n11:03 ルートCLAUDE.mdをフォルダの地図にする\n12:34 Claude Codeスキルの階層と読み込み仕様\n13:45 顧客別Workspace・フォルダ構成の実践例\n15:07 INDEX.mdとPROFILE.mdで参照先を最短化\n17:07 顧客別CLAUDE.mdとPROFILE.mdの運用\n20:12 対話ログからClaude Codeスキルを改善\n\n■関連動画\nhttps://youtu.be/2JOLh8vtJS0\n\n■Udemy\nChatGPTAPIの使い方講座も作成しているので興味があれば是非！(クーポン発行してます！)\nhttps://linktr.ee/nyanta_youtuber \n\n■X\nhttps://twitter.com/vtuber_n",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "Gp61r2ehrB0",
    "title": "ChatGPTに24時間働く新機能『Dots』登場！【OpenAI DevDay 2026まとめ】",
    "url": "https://www.youtube.com/watch?v=Gp61r2ehrB0",
@@ -634,19 +621,6 @@
    "channel_name": "ほなみ【在宅ワーク・副業のトリセツ】",
    "default_category": "earn",
    "description": "今回動画で紹介したプロンプトや豪華7大特典はこちらから受け取れます⬇️\nhttps://sub.re-tro.net/line/open/JDtqQ0pyJFPJ?mtid=Ec7ITVrb1qFN\n\n🎁 無料豪華7大特典の中身はこちら🎁\n① 月3万円までのやることリスト\n② 月10万円までのやることリスト\n③ 初心者でも失敗しない！おすすめ在宅ワーク10選\n④ これやると稼げない…NG習慣リスト\n⑤ 在宅ワーク体験記①\n⑥ 在宅ワーク体験記②\n⑦ 在宅ワーク体験記③\n\n━━━━━━━━━━━━━━━\n\n【動画の目次】\n00:00：オープニング\n01:12：この3つを選んだ理由\n02:11：①ステッカー販売\n04:03：Canva Dream Labでデザインを作る\n07:10：ステッカーの形に整える\n11:58：pixivFACTORYで商品化する\n13:05：BOOTHで販売する\n14:14：②Kindleの本の表紙を作る\n15:10：AIで表紙のイメージを作る\n16:28：Canvaで表紙に仕上げる\n21:00：お仕事の受け方と進め方\n21:22：③企業の資料作成\n23:05：AIで資料の中身を決める\n24:30：Canvaで資料に仕上げる\n26:49：AIが作ったものを手直しする\n28:32：クラウドワークスで案件を探す\n29:30：選ばれる応募文の書き方\n\n━━━━━━━━━━━━━━━\n\n#在宅ワーク #在宅副業  #AI副業",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "MsszirCjNKM",
-   "title": "月400万でもnoteメンバーシップは絶対やらない理由",
-   "url": "https://www.youtube.com/watch?v=MsszirCjNKM",
-   "published": "2026-09-19T08:00:25+00:00",
-   "channel_key": "uto",
-   "channel_name": "うと-在宅スキルアップの講座",
-   "default_category": "earn",
-   "description": "👑おうちnote 10日間実践ロードマップを含む5大特典がもらえる公式LINE→https://sub.uto-colorful.net/p/youtube_lowtest?ftid=WBzWvKeWioBy\n\nnoteメンバーシップは、本当に安定収入になる？\nメリット・デメリットや有料記事との違い、わたしがメンバーシップをやらない理由をお話しします。\n\n▼今回ご紹介した動画はこちら▼\n・【2026年最新】残念ながら副業初心者はnoteで稼げません！\nhttps://youtu.be/7hBzYOFoLo4\n\n【チャプター】\n00:00 オープニング\n00:59 noteメンバーシップは初心者にもおすすめ？\n02:21 note収益化の仕組み｜有料記事・マガジンとの違い\n05:03 noteメンバーシップのメリット・デメリット\n06:04 わたしがメンバーシップをやらない3つの理由\n11:19 note初心者が収益化のために最初にやること\n14:49 メンバーシップが向いている人・始める前の注意点\n18:05 質問回答\n\n\n🏆⬇有料級5大特典GET⬇🏆\n［うと公式LINE&メール講座］\nおうちnote 10日間実践ロードマップを含む5大特典\n↓↓↓\nhttps://sub.uto-colorful.net/p/youtube_lowtest?ftid=WBzWvKeWioBy\n\n✅おうちnote 10日間実践ロードマップ\n✅note完全攻略動画\n✅noteで売れやすいジャンル10選\n✅アフィリエイトリサーチシート\n✅無料noteアフィ記事作成GPTs\n\n\nオンラインでのスモールビジネスの\n作り方や最新のAI活用法を発信中！\n\n▼チャンネル登録で最新情報を見逃さない！▼\nhttps://www.youtube.com/@uto_marketing\n━━━━━━━━━━━━━━━━\n\n▼各SNS・メディアでも情報発信中！▼\n■𝕏(旧Twitter)：日々の気づきやAIの使い方、最新情報。\nhttps://twitter.com/uto_start\n\n■substack   : 最近始めました\nhttps://substack.com/@utosan\n\n■Instagram：動画やストーリーズでプライベートや等身大の発信を。\nhttps://www.instagram.com/uto_market_/\n\n◾️Threads：あまり広めたくない裏技とか呟きます\nhttps://www.threads.net/@uto_market_?hl=ja\n\n◾️note：𝕏やインスタで言えないことも。\nhttps://note.com/uto_99\n\n━━━━━━━━━━━━━━━━\n\n◆うと プロフィール◆\n1982年1月、北海道生まれ。\nSecondtone Inc 代表取締役。\n\n2019年8月から副業として\nSNS集客やマーケティングを学びはじめる。\n2020年3月に自社商品を販売、月25万達成。\n2021年8月に法人化。\n\nクライアントは30代〜40代の子持ちの女性が多数。\n看護師を始めとした在宅での仕事を希望する女性たちに\nオンライン講座の設計、集客方法、AIの最新情報や業務効率化、\nリスク低く挑戦できるnote副業やコンテンツ販売などを伝えている。\n\n※免責事項\n当チャンネルのコンテンツは、情報の正確性について万全を期しておりますが、その内容を保証するものではありません。\n当コンテンツを利用したことによって生じた損害等の一切の責任を負いかねますのでご",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -1318,91 +1292,183 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-02T22:31:24.782662+00:00"
+  },
+  {
+   "video_id": "NImFdpHOSPA",
+   "title": "ChatGPT Codex AI活用【総まとめ】これで一気にわかる！資料作成・PC操作・Web制作など",
+   "url": "https://www.youtube.com/watch?v=NImFdpHOSPA",
+   "published": "2026-10-03T10:00:15+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-03T11:58:36.088830+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Computer useでCanvaを操作して描画させたり、PC操作を録画・編集してマニュアル動画を作る活用例を紹介している。",
+    "ブラウザ操作画面のスクショを自動撮影させながら、解説入りのPowerPointスライド資料を生成する手順を実演している。",
+    "24時間稼働するAIエージェントやブラウザ操作機能、OS全体で動作する音声入力の活用法を解説している。"
+   ],
+   "for_whom": "AIのPC操作機能を使って日常業務や資料作成を自動化したい人",
+   "caution": "概要欄で自身が主宰する有料AIコミュニティや公式LINEへの誘導が行われている点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T11:58:36.088830+00:00"
+  },
+  {
+   "video_id": "X9Zk68AII4A",
+   "title": "【神機能】Claude Codeで『Evalの改善スキル』が登場！本当に教えたいSkillを徹底解説",
+   "url": "https://www.youtube.com/watch?v=X9Zk68AII4A",
+   "published": "2026-10-03T10:00:04+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-03T11:58:36.088830+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Anthropic公式ブログを基に、Claude Codeの「build-eval」や「hillclimb」コマンドを使った評価設計を解説している。",
+    "評価の点数だけが上がる過剰適合を防ぐため、問題をtrainとtestに分けて両方で改善した修正のみを残す重要性を説明している。",
+    "評価関数を正しく設計してプロンプト改善を回せば、低コストなモデルでも高い精度を出せる実例を紹介している。"
+   ],
+   "for_whom": "Claude CodeでAIエージェントの精度向上や評価自動化を行いたい開発者",
+   "caution": "動画内および概要欄にて、投稿者が運営する有料のnoteメンバーシップや勉強会への誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T11:58:36.088830+00:00"
+  },
+  {
+   "video_id": "bzfNuER9I-8",
+   "title": "【世界中が注目】ChatGPT DotsのOSS版『Open Dots』を正直レビュー！実際のところも語ります",
+   "url": "https://www.youtube.com/watch?v=bzfNuER9I-8",
+   "published": "2026-10-02T23:30:09+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-03T11:58:36.088830+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は、ChatGPTのDotsのOSS版「OpenDots」のUIやDockerによるComputer Use、音声機能などを実際に動かしてレビューしている",
+    "現状のOpenDotsはAPIを繋ぎ合わせた感が強く、音声通話からのタスク実行や進捗可視化などの体験には物足りなさがあると投稿者は指摘している。",
+    "投稿者は自身の理想形として、Claude Codeに音声を組み込んでリアルタイムに進捗を確認しながら作業させる「Claude Mods」を紹介している。"
+   ],
+   "for_whom": "AIエージェントのOSSや音声対話機能の実装・体験設計に関心があるエンジニアや開発者。",
+   "caution": "動画内で紹介された自作ツールのコード配布として公式LINEへの登録が案内されているほか、有料のnoteメンバーシップへの誘導があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T11:58:36.088830+00:00"
+  },
+  {
+   "video_id": "w9f3U2rLW0s",
+   "title": "【最新Canva副業】AI×Canvaで「犬の服」を作って海外で売る方法が想像以上に簡単だった【初心者向け副業】",
+   "url": "https://www.youtube.com/watch?v=w9f3U2rLW0s",
+   "published": "2026-10-03T10:14:21+00:00",
+   "channel_key": "honami",
+   "channel_name": "ほなみ【在宅ワーク・副業のトリセツ】",
+   "default_category": "earn",
+   "first_seen": "2026-10-03T11:58:36.088830+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTで服の柄を生成し、Canvaでサイズ調整や愛犬の名前入れを行ってデザインを整える手順を解説している。",
+    "オンデマンド印刷サイトPrintKKに登録し、デザインを犬服に配置してeBayやEtsyへ出品する流れを紹介している。",
+    "投稿者は月30着販売で約5万円の利益という試算を示し、最初は色違いなどで出品数を増やしていくコツを伝えている。"
+   ],
+   "for_whom": "AIやCanvaを活用して海外向けにオリジナル犬服のオンデマンド販売副業を始めたい人。",
+   "caution": "月5万円などの利益は投稿者の試算であり、実際の販売実績画面は示されていません。また、誰でも簡単にできると強調されており、概要欄や動画内で公式LINEへの登録誘導がある点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T11:58:36.088830+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-02T22:31:24.782662+00:00",
+   "last_ok": "2026-10-03T11:58:36.088830+00:00",
    "fail_streak": 0
   }
  }
