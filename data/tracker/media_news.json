@@ -13,6 +13,18 @@
       "vendor": "GIGAZINE"
     },
     {
+      "first_seen": "2026-10-03T08:11:44.784431+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-03T01:41:21+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Metaは、パーソナルAI「Muse」と連携するガジェットを自作できるプロジェクト「Muse Gadgets」を発表した。ESP32やRaspberry Pi向けSDKをGitHubでオープンソース公開。自作機器や家電と連携させる専用デバイス「Muse Home Link」も米国の有料会員向けに無償提供する。",
+      "title": "Meta、AIエージェント「Muse」とつながる自作ガジェット向けSDKをオープンソースで公開　「Raspberry Pi」などに対応",
+      "uid": "3ad624f1de886525",
+      "url": "https://www.itmedia.co.jp/news/article/2610/03/2000001984/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-03T02:02:04.281443+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "8d93f5d70e471f1f",
       "url": "https://gigazine.net/news/20260928-jev-pokemon-red/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-28T06:59:28.240897+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-28T05:38:10+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立製作所は9月28日、AIエージェントを活用した「脆弱性・パッチ探索分析レポートサービス」の提供を開始した。これは、フロンティアAIの進化に伴い高度化・巧妙化するサイバー攻撃から企業や社会インフラを守り、事業継続をサポートするオペレーショナルレジリエンスサービス「HMAX Cyber」のラインアップとして提供される。",
-      "title": "日立、AIエージェント活用の脆弱性分析サービス開始 JPXが先行導入、脆弱性対応の迅速化と8割の省力化を実現",
-      "uid": "27061c28893116c9",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143746.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
