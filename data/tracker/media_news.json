@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-03T13:27:15.968803+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-10-03T08:52:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AWSのマット・ガーマンCEOは、データセンター建設批判に反論する声明を出した。水資源枯渇などの懸念を「迷信”と否定しつつ、電力料金負担や自治体とのNDA撤廃を含む行動指針を発表。さらに地域支援として、資格取得や省エネ改修などを助成する10億ドル超の基金を立ち上げる。",
+      "title": "Amazon、データセンター批判に反論　10億ドル超の地域支援策も発表",
+      "uid": "17d646e5f82d3380",
+      "url": "https://www.itmedia.co.jp/news/article/2610/03/2000001985/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-03T02:02:04.281443+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "304dad753ed1bf85",
       "url": "https://ai.watch.impress.co.jp/docs/news/2143750.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-28T06:59:28.240897+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-28T05:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "意思決定AIモデル「Jev」に「ポケットモンスター 赤」をプレイさせる実験が行われ、37時間40分のプレイを経て殿堂入りを果たしました。ゲームクリアまでにJevが下した判断は合計1万6150回で、AIの利用料金は合計1.65ドル(約260円)だったとのことです。 続きを読む...",
-      "title": "AI「Jev」が「ポケモン赤」を37時間40分で殿堂入り、費用はわずか約260円だが補助システムが必要で完全自律だとマサラタウンから出られず",
-      "uid": "8d93f5d70e471f1f",
-      "url": "https://gigazine.net/news/20260928-jev-pokemon-red/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
