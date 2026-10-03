@@ -8,10 +8,20 @@
    "channel_key": "nyanta",
    "channel_name": "にゃんたのAIチャンネル",
    "default_category": "tech",
-   "description": "『ゼロからわかるClaude Code業務エージェントの教科書』\nAmazonで予約受付中！▶︎https://amzn.to/4yz0AZo\n\n『ゼロからわかるDifyの教科書 ～生成AI × ノーコードでかんたん業務効率化』\nAmazon ▶︎ https://amzn.to/3QMrFnY\n\n🏢【受付中】企業様向けAI活用の相談窓口を設置しています。\n「AIで業務効率化できるか一緒に考えてほしい」「AIがわかる人を育てたい」という企業様向けに、研修から業務改善の定着まで伴走支援いたします。\n▼登録はこちら（登録は1分ほど・本目的以外では営業しません）\nhttps://forms.gle/sPVYtBkZpeaJ7URS9 \n\n------------------------------------------------------------------------------------------------\n\nこんにちは、にゃんたです。\n今回は、年に1回のビッグイベント「OpenAI DevDay 2026」の発表内容から、普段の仕事で即戦力になりそうな新機能やアップデートを厳選して解説しました！\n\n24時間クラウドで働き続けるパーソナルAI「dots」や、圧倒的な検索精度とコスパを誇る新モデル「GPT-6.1 Sol」、チームで共同作業ができる「ChatGPT Space」など、私たちのAI活用がさらに一歩進むような実用的な内容ばかりです🙆‍♂️\n\nClaudeなどの他社モデルとの比較検証や、新しい料金プランに関する注意点も率直にお話ししているので、日々の業務でChatGPTを活用している方はぜひ参考にしてみてください！\n\n\n■LINE公式で限定コンテンツ配布中！\n▼登録はこちらから行えます▼\nhttps://liff.line.me/2004040861-3Jvq4bAG\n\n今ならキーワード「プレゼント」と入力すると\n・ChatGPTのプロンプトまとめ\n・Claudeのプロンプトまとめ\n・Difyのまとめ\nを無料でお渡ししています！\n\n■チャプター\n00:00 OpenAI DevDay 2026・Dots常時稼働AIの全体像\n07:38 GPT-6.1 Solの性能・料金・利用条件\n10:21 GPT-6.1 SolとClaude最新モデル比較\n14:29 ChatGPT Pro 500ドルとUltraFastモード\n17:18 ChatGPT Spaceの共同編集・資料作成\n18:44 Sign in with ChatGPTの仕組みと活用可能性\n21:48 Codex音声・Decisions API・Agent API\n22:34 ChatGPTプラグイン拡張とCanva連携\n\n■Udemy\nChatGPTAPIの使い方講座も作成しているので興味があれば是非！(クーポン発行してます！)\nhttps://linktr.ee/nyanta_youtuber \n\n■X, インスタグラム\nhttps://twitter.com/vtuber_nyanta\nhttps://www.instagram.com/vtuber_nyanta/\n\n■にゃんたの連絡先\nvtuber.nyanta@gmail.com\n\n※上記製品リンクURLはAmazonアソシエイトのリンクを使用しています。\n---------------------------------------------------------------------------\n",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "24時間クラウド上で自律的にタスクを進める常時稼働AIエージェント「dots」の特徴を紹介している。",
+    "性能とコストのバランスに優れる新モデル「GPT-6.1 Sol」の登場と、他社モデルとの性能比較を解説している。",
+    "月額500ドルの新プランや共同編集ツール「ChatGPT Space」などの最新機能を説明している。"
+   ],
+   "for_whom": "OpenAIの新機能や最新AIモデルを仕事で活用したいビジネスパーソン",
+   "caution": "概要欄でプロンプト配布をフックにした公式LINE登録への誘導がある点や、紹介されている新機能の多くが高額な有料プラン向けである点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T21:43:29.295081+00:00"
   },
   {
    "video_id": "uOtbNXMFs7w",
@@ -34,10 +44,20 @@
    "channel_key": "keito",
    "channel_name": "KEITO【AI&WEB ch】",
    "default_category": "tech",
-   "description": "OpenAI DevDay 2026で発表された最新アップデートを、非エンジニア向けにわかりやすく解説！24時間動くAIエージェント「Dots」をはじめ、GPT-6.1 Sol、超高速モード、ChatGPTスペース・ページ、Decisions API、外部サービス連携など注目機能を実際の画面を触りながら紹介します。ChatGPTが「指示して使うAI」から「仕事を任せるAI」へどう進化したのか、最新情報をまとめてチェック！\n\nKEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n★プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nChatGPT むちゃぶり仕事術\n→ https://amzn.to/46u5zjd\nやりたい！ができる生成AIでアプリづくり\n→ https://amzn.to/46sdQT4\n\n▼目次\n0:00 オープニング・DevDay 2026概要\n1:21 Dots：24時間動くAIエージェント\n16:12 GPT-6.1 Sol・新モデル・新プラン\n23:30 Ultra Fast・Pro 500\n30:13 Codex・API開発基盤の進化\n35:01 外部サービス連携・Sign in with ChatGPT\n37:45 プラグイン・MCP・Marketplace\n42:38 スペース・チーム向けAI機能\n45:39 注目機能まとめ・総括\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Workを完全解説\nhttps://youtu.be/U74PHw-h59Q\n【GPT 5.6 Sol】ChatGPT CodexとWorkを解説\nhttps://youtu.be/Qw6sOGhRg8U\nOpenAI「Codex」完全ガイド\nhttps://youtu.be/ESGl8Juwytc\nCodexの便利なプラグイン２４選！\nhttps://youtu.be/Rf5K3reQWIM\nOpenAI CodexのPC操作の便利な使い方\nhttps://youtu.be/w8TRpmOEpMk\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼はXのDMもしくは以下メールへ。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://tw",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "目標を伝えると専用クラウドPC上で24時間自律的にタスクをこなす新機能「dots」の仕組みや操作例を紹介している。",
+    "GPT-6 Astra並みの性能を5分の1の料金で扱える新モデル「GPT-6.1 Sol」の特徴やベンチマーク結果を解説している。",
+    "最大8倍の速さで動くUltrafast機能や、利用枠が大幅に拡大される月額500ドルの最上位プラン「Pro 500」を紹介している。"
+   ],
+   "for_whom": "OpenAIの最新発表内容や新モデル、自律型AIエージェントの活用に関心がある会社員向け。",
+   "caution": "概要欄で公式LINEや自身が運営するAIコミュニティ・スクールへの誘導が行われているため、参加や契約の際は条件を確認してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T21:43:29.295081+00:00"
   },
   {
    "video_id": "PZVc6b046Ik",
@@ -867,10 +887,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\nAnthropicは、(2026年)9月下旬\n最新AIモデル「Claude Opus 5.5」を公開しました\nこのモデルは、各種AIベンチマークで、同社の最上位AIモデル\n「Claude Fable 5.1」や、OpenAIの最上位AIモデル\n「GPT-6 Astra」のスコアを圧倒し\nAIモデルの有名ランキングサイトでも\nすべてのAIモデルの中でダントツの1位となっていて\nスライド資料や文書の作成はもちろん\nこれまでのモデルでは作るのが難しかったような\n細かい部分まで精密な3D系のゲームやアプリ\n実際の仕事場でも使えるような\n高品質なアニメーション動画を\n手軽に生成できるようになりました\n\n今回の動画では\n第一章：Claude Opus 5.5の概要と使い方\n第二章：Opus 5.5の活用事例10選 ～開発編～\n第三章：Opus 5.5の活用事例10選 ～実務編～\nの3章構成で、Anthropicの公開した\nAIモデル「Claude Opus 5.5」の最新の概要と使い方から\nAIエージェント「Claude Code」やAIチャット「Claude」を組み合わせて\nClaude Opus 5.5を使いこなす為の活用事例を\n開発編と実務編に分けて、計10例ほど紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:49　動画のもくじ\n1:24　第一章：dots・GPT-6.1 Sol・Ultrafast\n1:42　①、dots\n2:39　②、GPT-6.1 Sol\n3:56　③、Ultrafastモード\n4:41　第二章：ChatGPTとCodex関連ツール\n5:06　①、月額500ドルのProプラン\n5:39　②、Codexクラウド\n6:11　③、ChatGPT Space\n7:06　④、Codexのその他新機能\n8:11　第三章：開発系の新ツール\n8:29　①、Decisions API\n9:03　②、OpenAI Marketplace\n9:27　③、プラグイン拡張機能\n10:31　エンディングムービー\n\n◆動画の中で紹介している内容\nJev、Codex CLI、Codex Security Cloud、Daybreak Blue\nHermes Agents、Notion\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://openai.com/ja-JP/index/devday-2026-recap/\nhttps://openai.com/ja-JP/index/introducing-dots/\nhttps://openai.com/ja-JP/api/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-1-sol/\nhttps://artificialanalysis.ai/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIのDevDay 2026で発表された自律型AI「dots」や新モデル「GPT-6.1 Sol」などの最新機能を解説している",
+    "高速処理を行うUltrafastモードや月額500ドルのProプラン、Codexクラウドの機能強化を紹介している",
+    "リアルタイム判断を行うDecisions APIやMarketplaceなどの開発者向け新ツールを説明している"
+   ],
+   "for_whom": "OpenAIの最新モデルや開発ツールの動向を把握したいエンジニアやビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T21:43:29.295081+00:00"
   },
   {
    "video_id": "4hIh1-4ScZk",
@@ -1017,10 +1047,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、ChatGPT に新しく登場した「Dots」を実際に触ってみて、Grok Bot と何が違うのかを解説しました。\nDots では、自分の PC や OpenAI が用意した VM の操作、Slack 連携、@メンションでの呼び出し、リアルタイムの電話などができます。実際に電話をかけて「このお茶を調べて」と頼むと、話しながらコンピューターを操作してくれて、これはかなり面白い体験でした。\n\nDots と Grok Bot、みなさんはどちらの方向が好みでしょうか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/ja-JP/index/introducing-dots/\n\n\n🎁無料プレゼントは公式LINEから🎁\n『devday』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://lin.ee/cJtJ8Y3\n\n\ntimestamp:\n00:00 オープニング - ChatGPT の新機能 Dots\n01:00 Dots の画面と主な機能を紹介\n01:36 Grok Bot とはハーネスの設計思想が違う\n02:18 Gmail 連携やメモリで ChatGPT と統合\n02:56 複数ボット不可、自由度は Grok Bot が上\n04:32 Slack 連携と @メンションでやり取り\n04:49 電話機能でリアルタイム音声デモ\n06:13 Codex の /voice から広がる音声体験\n06:30 ChatGPT アプリでの操作と自由度の制約\n07:28 安全設計とヒューマンインザループ\n07:58 まとめ - GPT の UI/UX の進化に期待\n09:00 メンバーシップと勉強会のお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者は、ChatGPTの新機能「Dots」について、PC操作やSlack連携、リアルタイム通話機能などを実際の操作画面を交えて紹介している。",
+    "DotsはGrok Botと比べると自由度に制約があるものの、ChatGPT環境との密な統合や安全設計による扱いやすさが強みだと解説している。",
+    "音声通話で指示を出しながらブラウザ検索を代行させるデモを行い、今後のAIエージェントのUIやUXの進化に期待を寄せている。"
+   ],
+   "for_whom": "ChatGPTの最新エージェント機能「Dots」の特徴や操作感を知りたい人",
+   "caution": "動画内および概要欄にて、公式LINEへの登録によるプレゼント配布や、noteの有料メンバーシップへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-03T21:43:29.295081+00:00"
   },
   {
    "video_id": "ICa11eWgStw",
@@ -1404,87 +1444,87 @@
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-03T16:41:00.180204+00:00",
+   "last_ok": "2026-10-03T21:43:29.295081+00:00",
    "fail_streak": 0
   }
  }
