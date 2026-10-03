@@ -30095,3 +30095,127 @@ def grown_file_sticky_pattern_chart() -> None:
 if __name__ == "__main__":
     grown_file_hit_rate_chart()
     grown_file_sticky_pattern_chart()
+
+
+def how_far_back_changes_the_usual_number_chart() -> None:
+    """同じ8週間の記録でも、何日ぶんを渡すかで「ふだんの目安」と倍率が変わる（2026-10-03）。
+
+    実測。問い合わせフォームの架空の受信件数ログ（8週間・56日、緩やかな増加傾向）を
+    そのまま2週/4週/8週に切り分けて渡し、AIに自分で「ふだんの目安」を計算させ、
+    本日の件数34件が目安の何倍かを答えさせた。指示文は一字一句同じ、渡すログの長さだけが違う。
+    各2回。値は docs/evidence/how-far-back-changes-the-usual-number.md の機械照合から。
+    """
+    rows = [
+        ("直近2週間（14日）ぶんだけ渡す", 6.1, "約5.5〜5.6倍"),
+        ("直近4週間（28日）ぶんを渡す", 5.6, "約6.0倍"),
+        ("8週間（56日）全部を渡す", 4.5, "約7.6倍"),
+    ]
+    label_x = 18
+    plot_x = 280
+    plot_w = 160
+    axis_max = 7
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "同じ8週間の記録でも、見せる長さで「ふだん」の数字が変わる</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "問い合わせフォームの受信件数（緩やかな増加傾向あり）を2週/4週/8週に切り分け、"
+        "同じ指示文でAI自身に目安を計算させた。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "横棒は、AIが自分で計算した「ふだんの1日あたりの目安」（件/日）。"
+        "本日の件数は3条件とも同じ34件。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "渡した記録が短いほど、直近の高い週だけを拾って目安が上がり、本日の倍率は小さく出る。</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 10}">件/日</text>\n',
+    ]
+
+    x_val = px(axis_max) + 14
+    x_ratio = x_val + 90
+    y = top
+    for label, value, ratio_text in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value}件/日</text>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{x_ratio:.1f}" y="{ty}">本日の約{_esc(ratio_text)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    notes = [
+        "※ 指示文は3条件とも一字一句同じ。「渡すログの長さ」だけを変えた（各2回）。",
+        "AIの自己申告した目安は、どの条件でも真値（単純平均）と一致した（12/12）。",
+        "変わったのは計算の正確さではなく、「どこまでを“ふだん”とみなすか」そのもの。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "同じ8週間ぶんの問い合わせ受信件数の記録から、渡す長さだけを変えて「ふだんの目安」を"
+        "AI自身に計算させた結果を3本の横棒で比べた図。直近2週間（14日）だけを渡すと目安は6.1件/日で、"
+        "本日34件はその約5.5〜5.6倍。直近4週間（28日）を渡すと目安は5.6件/日で、本日はその約6.0倍。"
+        "8週間（56日）全部を渡すと目安は4.5件/日まで下がり、本日はその約7.6倍になる。"
+        "指示文は3条件とも一字一句同じで、渡したログの長さだけが違う。"
+        "下の枠には、AIの自己申告した目安がどの条件でも真値（単純平均）と一致したこと（12/12）、"
+        "変わったのは計算の正確さではなく「どこまでをふだんとみなすか」そのものであることが書かれている。"
+    )
+    (OUT / "how-far-back-changes-the-usual-number.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def how_far_back_reliability_chart() -> None:
+    """目安の計算そのものの的中率と、言い直し方（週ごとの小計・保存版・祝日除外）の的中率（2026-10-03）。"""
+    _hit_and_miss_rows_chart(
+        "how-far-back-reliability.svg",
+        "計算そのものは、条件を変えても崩れなかった",
+        "実測2026-10-03。架空の受信件数ログ2本（問い合わせフォーム・来店予約）で、"
+        "AI自身の計算を真値（単純平均）と照合した。",
+        "「ふだんの目安」という言葉のあいまいさとは別に、計算の正確さ自体は毎回そろっている。",
+        [
+            ("目安の計算が真値（単純平均）と一致（2週/4週/8週・各2回）", 6, 6, "good"),
+            ("週ごとの小計を先に出させても、小計8個すべてが真値と一致（各2回）", 2, 2, "good"),
+            ("保存版（①②③の3項目だけ）の書式が崩れなかった（材料B・各2回）", 2, 2, "good"),
+            ("祝日で0件だった日を、指示どおり目安の計算から除外できた（各2回）", 2, 2, "good"),
+        ],
+        [
+            "崩れていたのはAIの計算力ではなく、「ふだん」の定義そのものだった。",
+            "条件を「週ごとの小計を先に出して」と変えても、最終的な目安と倍率は変わらなかった。",
+            "祝日除外・保存版の書式は、明示すれば2回とも確実に効いた。",
+        ],
+        "計算そのものの的中率を4行で示した図。すべて「指示どおりになった回数／試した回数」。"
+        "目安の計算が真値（単純平均）と一致したのは2週・4週・8週の各2回ずつ合計6回中6回。"
+        "週ごとの小計を先に出させる言い直し方でも、小計8個すべてが真値と一致したのは2回中2回。"
+        "保存版（①②③の3項目だけを出す指示）の書式が崩れなかったのは材料Bの2回中2回。"
+        "祝日で0件だった日を指示どおり目安の計算から除外できたのは2回中2回。"
+        "下の枠には、崩れていたのはAIの計算力ではなく「ふだん」の定義そのものだったこと、"
+        "週ごとの小計を先に出す言い直し方でも最終的な目安と倍率は変わらなかったこと、"
+        "祝日除外と保存版の書式は明示すれば2回とも確実に効いたことが書かれている。",
+        label_w=460,
+    )
+
+
+if __name__ == "__main__":
+    how_far_back_changes_the_usual_number_chart()
+    how_far_back_reliability_chart()
