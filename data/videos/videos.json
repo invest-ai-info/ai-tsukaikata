@@ -177,19 +177,6 @@
    "attempts": 0
   },
   {
-   "video_id": "Ubyr8F82i2I",
-   "title": "注目AIニュース18選〜超高速AI「Jev」、one Claude、Gemini Notebook 音声会話、Agent Router、AnthropicのR&Dの26%がAI主導など",
-   "url": "https://www.youtube.com/watch?v=Ubyr8F82i2I",
-   "published": "2026-09-20T06:00:06+00:00",
-   "channel_key": "iketomo",
-   "channel_name": "いけともch",
-   "default_category": "news",
-   "description": "スポンサード：CleanMyMac\n今すぐMacを綺麗しましょう！https://clnmy.com/IKETOMo からCleanMyMacを7日間無料でお試しいただき、\nコード IKETOMO を使うと20%OFFになります！\n\n---\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊（10月発売）Gemini Notebook 推し技 100線\nhttps://link.amazon/B05XAyOaL\n\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://gais-event-voice-259747770348.asia-northeast1.run.app/\n\n---\n\n\n▼生成AI活用のマンツーマンコーチング ストイシアン\nサービス紹介：https://stoician.co.jp/\n\n▼最強の初心者向けハンズオン研修（ChatGPT/Gemini対応）\nhttps://workstyle-evolution.co.jp/hands-on/chatgpt\n\n\n\n\n\n\n今週（2026年8月31日～2026年9月6日）の生成AIニュースを厳選してお届けします！この動画を見ておけば、ビジネスパーソンが知るべき主なAIの動きをキャッチできます！\n\n00:00 イントロ\n01:19 超高速AI「Jev」：会話を介さず200倍速で判断\n07:58 Claude大進化：チャット・CoWork・デザインが一つに統合\n11:00 Macのパフォーマンスを最大化\n13:10 Claude Code Projects：複数エージェントを束ねる司令塔機能\n16:06 Gemini Notebook：音声対話・録音・クイズ機能が追加\n19:11 OpenAI激震：カスタムGPT（GPTs）を12月に段階廃止\n21:16 ChatGPT Work新機能：データベースを分析する「Data agent」\n22:57 Cursor「Projects」始動：AIが開発を主導する新スタイル\n24:36 Suno v6発表：プロ向け・ワイルド・ミニの3モデル展開\n27:43 AIエージェント「Goose」：ベンダーに縛られないオープンな選択肢\n30:58 Claude for Small Business：43の業務フローと27の連携を追加\n33:57 OpenAI「Sponsored Agents」：会話型広告という新たな体験\n35:39 サム・アルトマン氏：AI安全性を優先しOpenAIの上場を延期\n37:48 Meta新サブスク「Meta One」：AI機能を統合した新プラン\n40:23 Google Home × MCP：AIエージェントによる家電操作が解禁\n41:33 Agent Router：AIモデルの切り替えを標準化する新技術\n43:58 OpenArt Arena：現場クリエイターによるAIモデル評価\n45:40 Anthropic報告：AI悪用の脅威実態と防御の最前線\n50:49 衝撃の事実：AnthropicのR&Dの26%をClaudeが主導\n1:01:04 まとめ\n\n\n--告知---\n▼いけともXはこちら！\nhttps://tw",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "fHEIw5CcN5U",
    "title": "The dots demo, take two | OpenAI DevDay 2026",
    "url": "https://www.youtube.com/watch?v=fHEIw5CcN5U",
@@ -701,10 +688,20 @@
    "channel_key": "greg-isenberg",
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
-   "description": "I watched almost 60 minutes of Sam Altman on stage at OpenAI Dev Day 2026. Out of 20-plus launches, I pick the three or four that I think can make people billions of dollars in aggregate. I break down Dots, OpenAI's personal agent platform, plus the Decisions API, the Agents API with computer use, and Sign in with ChatGPT. I also share my four-step framework for building in this world and two business ideas I hope someone takes. If you want to build a business and make money around AI, this episode is for you.\n\nTimestamps\n\n00:00 – Intro\n01:48 – Dots, the Personal Agent Platform\n03:29 – OpenAI Doubles Down on Plugins\n05:02 – Decisions API\n06:43 – Agents API With Computer Use\n08:01 – Sign In With ChatGPT\n12:36 – Where should you build?\n13:46 – Idea: Real-World Work APIs\n15:04 – Idea: Analytics for Agent Discovery\n17:05 –Closing Thoughts\n\nKey Points\n\n• Dots gives plugin builders a front door to 1.2 billion weekly active users.\n• OpenAI is doubling down on plugins to make ChatGPT the app ecosystem for AI.\n• Sign in with ChatGPT lets users bring their current plan, so a free core app with paid upsells now works.\n• Workflows too niche for OpenAI to build become viable businesses.\n• The strongest businesses in this world own the trigger, the action, and the feedback.\n• Two open opportunities: real-world work APIs and an analytics layer for agent discovery\n\nNumbered Section Summaries\n\n1. The Launches Worth Your Attention\n\nOpenAI shipped 20-plus features at Dev Day 2026, and I focus o",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "DevDay 2026でのDotsやSign in with ChatGPTなどの発表により、巨額のビジネス機会が生まれると投稿者は説明している。",
+    "ChatGPTログインを活用し、コア機能を無料で提供しつつ高度なワークフローを有料化するビジネスモデルを提案している。",
+    "現実世界の専門業務と連携するAPIや、エージェント発見・最適化のための分析ツールという2つの事業アイデアを紹介している。"
+   ],
+   "for_whom": "AIを活用した新規事業の立ち上げや、エージェント向けビジネスのアイデアを探している起業家向け。",
+   "caution": "数十億ドル規模の市場機会や将来の取引規模に言及しているが、具体的な収益実績ではなく投稿者による予測である点に留意が必要。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T06:16:55.115687+00:00"
   },
   {
    "video_id": "ZT4mpjx0JnE",
@@ -802,10 +799,20 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "Workspace Studio×GASで使える自作カスタムステップ「5選」を無償配布します💥\n\n開発コード量を激減させる「Studioラッパー」に加え、ファイルまたはフォルダを移動（本家よりもっと柔軟に使えます）、追加したアイテムが指定フォルダ直下かどうかを判定、PDFのページ分割、JSONデータからの行一括追加＆ドキュメント差し込み印刷機能まで実演解説していきます！\n\n導入手順やコードはGitHubで完全無償公開中！Workspace Studioの自動化を劇的に進化させる神機能をぜひご活用ください😎\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:13 「Workspace Studio」とは\n03:02 前回動画のおさらい\n03:37 Google Workspace Studioを拡張する\n06:24 ラッパー作りました！\n08:15 GitHub紹介\n09:06 ①ファイルまたはフォルダを移動ex\n12:12 ②追加したアイテムが指定フォルダ直下かどうかを判定\n14:16 ③PDFファイルを指定ページ数で分割\n15:29 ④JSONデータから行を追加\n16:14 ⑤JSONデータからドキュメントに差し込み印刷\n23:21 GitHubの導入手順おさらい\n24:11 まとめ\n26:00 ゆるトーク\n\n【GitHub：Workspace Studio Toolkit】\nhttps://github.com/kotakahashi-4u/gas-workspace-studio-toolkit\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【関連動画】\n「Workspace Studio」からGASが直接動く！Salesforce・Slack連携も解禁！\nhttps://youtu.be/774iU5fsCS0\n\n【※個人アカウントの方向け「Google Workspace Experiments」】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.c",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Workspace Studioのカスタムステップ開発を簡素化する自作ライブラリ「StudioWrapper」を公開したと紹介している。",
+    "フォルダ移動の拡張やサブフォルダ検知の防止など、実務で役立つカスタムステップの仕組みを解説している。",
+    "PDF分割やJSONデータを用いたスプレッドシートへの行追加、ドキュメントへの差し込み印刷などの連携例を実演して説明している。"
+   ],
+   "for_whom": "Workspace StudioとGASを組み合わせて業務自動化を高度化したい人",
+   "caution": "カスタムステップの導入や初回設定にはGASの編集やマニフェストファイルの設定など、一定のスクリプト知識と手動の作業が必要となります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T06:16:55.115687+00:00"
   },
   {
    "video_id": "774iU5fsCS0",
@@ -1070,10 +1077,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、OpenAI DevDay 2026 で発表された内容を、「実際に僕らが使えるのはどれか」「僕が注目しているのはどこか」という視点で一本にまとめて解説しました。\n\n一番の目玉は、Mac を閉じても動き続ける 24 時間稼働のエージェント「Dots」。ほかにも GPT-6.1 Sol、Ultrafast、Pro 500 プラン、ChatGPT Space、Agents API、Decisions API、ChatGPT の利用枠を他社アプリから使える仕組みなど、盛りだくさんでした。\n\nみなさんが一番気になった発表はどれでしたか？ よろしければコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/ja-JP/index/devday-2026-recap/\n\n\n🎁無料プレゼントは公式LINEから🎁\n『devday』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://lin.ee/cJtJ8Y3\n\ntimestamp:\n00:00 オープニング - DevDay 2026 の全体像\n00:47 目玉は Dots、Sol・Pro 500 も登場\n03:50 Codex CLI の /voice を実演\n05:42 コードレビューと Security Cloud\n06:31 Agents API で Codex に仕事を渡す\n07:49 プラグインと MCP Events・職場向け機能\n09:27 注目ポイント整理と Ultrafast の価格\n11:17 ChatGPT の利用枠を他社アプリで\n12:42 Dots の中身と専用クラウドPC\n14:11 ChatGPT Space はプチNotion\n15:24 Decisions API は選択専用のAPI\n16:07 Dots が目指す AI 組織とまとめ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAI DevDay 2026で発表された24時間稼働エージェント「dots」やGPT-6.1 Sol、Pro 500プランなどの全体像を紹介している。",
+    "Codex CLIの音声対話機能やAgents APIによるブラウザ操作など、開発者向けツールの具体的な新機能と実演を解説している。",
+    "提携他社アプリでChatGPTの契約枠を消費できる連携機能や、共同作業スペース「ChatGPT Space」の仕様を説明している。"
+   ],
+   "for_whom": "OpenAIの新機能やAPI、AIエージェントの最新動向をまとめて把握したいエンジニアやビジネスパーソン向け。",
+   "caution": "動画内でデモコード配布を名目とした公式LINEへの登録誘導や、Noteメンバーシップへの案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T06:16:55.115687+00:00"
   },
   {
    "video_id": "u5oo-41kVjk",
@@ -1083,10 +1100,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、OpenAI の DevDay で発表された新モデル「GPT-6.1 Sol」について解説しました。\n入力・出力の料金は 6 Sol から据え置きのまま、キャッシュ読み込みが 1M トークンあたり 0.1 ドルと半額になり、GPT-6 Astra の 1/10 です。\n\nエージェントのように何度も送り直すタスクでは、1 タスクあたりのコストがかなり下がります。ベンチマークでも OSWorld などで 6 Sol から大きく伸びていて、DeepSWE では一部 Astra を超えています。\n\n皆さんは GPT-6.1 Sol と Claude の Opus / Sonnet、どれをメインに使っていますか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/ja-JP/index/introducing-gpt-6-1-sol/\n\ntimestamp:\n00:00 オープニング - GPT-6.1 Sol はプチ Astra\n00:56 3D マサオキャラで見る Astra との近さ\n01:30 料金改定 - キャッシュリードが半額に\n03:13 公式ベンチマーク - 低コストで Astra に迫る\n06:24 安全性・Ultrafast・公式の使い分け\n07:37 Artificial Analysis での立ち位置\n08:23 エフォート別に 3D ゲームを作って比較\n10:02 LP 作成を 6 Sol・Opus 5.5 と比較\n12:46 ピンボール・ゴブリンなどゲームの比較\n14:30 解説スライド・サムネイル・SVG の比較\n16:50 まとめ - Sol のイメージを改めたい理由\n17:41 お知らせ - ノートのメンバーシップと勉強会\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIの新モデルGPT-6.1 Solについて、上位モデルに近い性能を優れたコストパフォーマンスで利用できると紹介している。",
+    "キャッシュ読み込み料金が半額になり、送り直しが多いエージェントタスクでの運用コストが大幅に抑えられると説明している。",
+    "3Dゲーム制作やWebページ生成の出力例を比較し、従来のSolから品質が大きく向上していると評価を述べている。"
+   ],
+   "for_whom": "AIエージェント開発やAPI運用のコスト効率を高めたい開発者やビジネスパーソン。",
+   "caution": "動画の終盤および概要欄にて、noteの有料メンバーシップやコミュニティへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T06:16:55.115687+00:00"
   },
   {
    "video_id": "sp7gNLljsZk",
@@ -1445,87 +1472,87 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
+   "last_ok": "2026-10-04T06:16:55.115687+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
+   "last_ok": "2026-10-04T06:16:55.115687+00:00",
    "fail_streak": 0
   },
   "yuimama": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "starter-story": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "greg-isenberg": {
    "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   }
  }
 }
