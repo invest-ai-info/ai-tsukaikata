@@ -5341,20 +5341,6 @@
       "uid": "bab752476baf1b54",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-06T16:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Since 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them.",
-      "summary_ja": "アルバータ州政府がAIを使ってサイバー対策を進めた。\n2025年からClaude CodeのOpusやSonnetモデルを導入。\n政府システムの脆弱性を探し修正するために活用している。",
-      "summary_source": "gemini",
-      "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
-      "uid": "e2f89661ee8c7381",
-      "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
-      "vendor": "Anthropic"
     }
   ]
 }

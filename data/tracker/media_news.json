@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-04T17:38:23.346948+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-10-04T15:59:31+00:00",
+      "source_id": "media-publickey",
+      "summary": "IT関連の各種調査を行っているプロジェクトDevographicsは、世界中のソフトウェア開発者の実態などをアンケートで調査した「State of Devs 2026」の結果を公開しました。 ここでは全体の結果から興味深いところをいくつか抜...",
+      "title": "世界中のソフトウェア開発者の実態を調べた「State of Devs 2026」公開。何歳？ 年収は？ モニタは何枚？ AIにどのくらいコードを書かせている？ 趣味は？ など集計結果",
+      "uid": "5d26e40f20cc98d8",
+      "url": "https://www.publickey1.jp/blog/26/state_of_devs_2026_ai.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-04T17:38:23.346948+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-10-04T15:56:27+00:00",
+      "source_id": "media-publickey",
+      "summary": "PostgreSQLをベースにしたデータベースサービス「Supabase」などを提供しているSupabaseは、SQLiteをベースとしたデータベースサービスを提供する「Turso」を買収したことを発表しました。 Turso is join...",
+      "title": "Supabase、1サーバあたり数百万ものSQLiteをホストする「Turso」買収を発表。AIエージェントで加速するDB需要に対応",
+      "uid": "56c9b398ab5ee77a",
+      "url": "https://www.publickey1.jp/blog/26/supabase1sqlitetursoaidb.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-10-04T06:59:10.034675+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2374,30 +2398,6 @@
       "title": "「塾代を払うよりChatGPTやGeminiを使って」と保護者に勧め、塾が教室を閉鎖へ",
       "uid": "6db69450f76ea358",
       "url": "https://gigazine.net/news/20260928-dymocks-tutoring-close-use-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-28T15:33:11.163516+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-28T07:49:14+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "リコーは9月28日、不動産事業者向けサービス「RICOH360 ビジネスパッケージ 集客AI」で、360度カメラ「RICOH THETA X」の不動産専用モデル本体に搭載したAIが、撮影した360度画像から物件の集客用写真を自動生成する新機能「THETA内画像切り出し機能」の提供を10月中旬に開始すると発表した。",
-      "title": "リコー、「THETA内画像切り出し機能」を10月中旬に提供開始",
-      "uid": "11ec2634c28c8c26",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143799.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-28T15:33:11.163516+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-28T07:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "生成AIにウェブページから情報を抜き出させる際に「ページに値がなければnullを使い、推測しないでください」と指示するだけで、存在しない値を作り出す割合が70.7％から20.2％まで低下したという実験結果をAIエージェント向けマーケットプレイスのEarn an Honest Dollarが公開しました。 続きを読む...",
-      "title": "AIに「推測するな」と指示するだけで架空データが70％から20％に減少したという実験結果",
-      "uid": "a4de282370adefcc",
-      "url": "https://gigazine.net/news/20260928-ai-do-not-guess/",
       "vendor": "GIGAZINE"
     }
   ]
