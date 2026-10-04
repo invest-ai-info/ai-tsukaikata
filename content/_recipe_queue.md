@@ -1736,7 +1736,10 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
     対象読者（免税事業者で直接受託する個人）の手取りに実際に影響する変更だった
     （出典: 税理士ドットコム・弥生「令和8年度税制改正」・山田&パートナーズ解説）
 
-- [ ] 原稿料・デザイン料は、プラットフォーム手数料とは別にもう一度引かれるか
+- [x] 原稿料・デザイン料は、プラットフォーム手数料とは別にもう一度引かれるか
+  - →保管: ✅ **2026-10-04 公開**＝`recipes/direct-contract-withholding-survives-the-million-yen-line`
+    （見立てが外れた＝「明記が無いと源泉徴収を見落とすのでは」という懸念は支持されず、
+    18回とも正しい手取り額に到達。100万円ちょうどの境界値でも誤って20.42%側に踏み込まなかった）
   - 根拠: 源①発。副業節の「手取り」系記事（`take-home-from-the-contract-amount`・
     `take-home-repeat-no-split`・`three-way-split-does-not-break-the-match`・
     `four-and-five-way-split-does-not-break-the-match`等）はすべて**プラットフォームの
