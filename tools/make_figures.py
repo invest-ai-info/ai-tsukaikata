@@ -30323,8 +30323,175 @@ def url_given_anyway_breakdown_chart() -> None:
     )
 
 
+def sort_bucket_slip_rate_chart() -> None:
+    """受け皿の作り方ごとに、紛れ込みが起きた割合を3本で比べる。
+
+    実測（2026-10-04・架空の送信済み30行と受信25行を2本、新規セッション18回）。
+    ①受け皿なし＝一次返信2件が本体の一覧に混ざった回数／試した回数。
+    ②一次返信のみの受け皿＝無関係の送信者がその受け皿に紛れ込んだ回数／試した回数。
+    ③受け皿を「具体的な答えの有無」で定義し直す＝別の送信者が〔決められない〕に紛れ込んだ回数／試した回数。
+    """
+    rows = [
+        ("① 受け皿なし（前回記事の保存版）", 4, 4, "本体の一覧に混ざった"),
+        ("② 「一次返信のみ」の受け皿を足す", 1, 8, "無関係な相手が紛れ込んだ"),
+        ("③ 受け皿を「答えの有無」で定義し直す", 1, 6, "別の相手が紛れ込んだ"),
+    ]
+    label_x = 18
+    plot_x = 320
+    plot_w = 250
+    top = 150
+    row_h = 46
+    bar_h = 20
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "受け皿を作ると紛れ込みは激減するが、形を変えても0にはならない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の送信済み30行と受信25行を2本（会社の総務課／お祭りの事務局）。"
+        "「確認します」「ご連絡します」だけの</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "一次返信が2件ずつ仕込んである。3通りの指示文を、新規セッションで合計18回試した。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "①は受け皿そのものが無い版、②は前回の記事のキュー項目にある版、"
+        "③は②の取り違えを防ごうとした版。</text>\n",
+        '<text class="t-xs" x="18" y="102">'
+        "どの版でも、本体の一覧（催促すべき6件）の中身は18回とも1件も動かなかった"
+        "（下のもう1枚の図）。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 18}">紛れ込みが起きた割合（低いほどよい）</text>\n',
+    ]
+
+    y = top
+    for label, hit, total, note in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        rate = hit / total
+        w = round(plot_w * rate)
+        cls = "box-bad" if rate >= 0.5 else "bar-old"
+        parts.append(
+            f'<rect class="{cls}" x="{plot_x}" y="{ty - 14}" '
+            f'width="{max(w, 3)}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if rate >= 0.5 else "t"
+        parts.append(
+            f'<text class="{tcls}" x="{plot_x + max(w, 3) + 8}" y="{ty}">'
+            f"{_esc(f'{hit}/{total}')}</text>\n"
+        )
+        parts.append(
+            f'<text class="t-xs" x="{label_x}" y="{ty + 16}">{_esc(note)}</text>\n'
+        )
+        y += row_h
+
+    notes = [
+        ("t-bad", "🚨 受け皿が無いと、一次返信は2件とも4回中4回、本体の催促一覧に混ざった。"),
+        ("t-sm", "   受け皿を足すと激減したが、どちらの作り方でも「別の誰か」が1回だけ紛れ込んだ。"),
+        ("t-xs", "架空データでの実測（全18回）。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    y += 8
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 4
+    alt = (
+        "受け皿の作り方ごとに、紛れ込みが起きた割合を3本の横棒で比べた図。"
+        "架空の送信済み30行と受信25行を2本に、「確認します」「ご連絡します」だけの一次返信を2件ずつ仕込み、"
+        "3通りの指示文を新規セッションで合計18回試した。"
+        "①受け皿なし（前回記事の保存版）は、一次返信2件が本体の一覧に混ざった回数が4回中4回。"
+        "②「一次返信のみ」の受け皿を足すと、無関係な相手が紛れ込んだのは8回中1回。"
+        "③受け皿を「答えの有無」で定義し直すと、②の取り違えは消えたが、"
+        "別の相手が〔決められない〕に紛れ込んだのは6回中1回。"
+        "下の枠には、受け皿が無いと一次返信は4回中4回、本体の催促一覧に混ざったこと、"
+        "受け皿を足すと激減したがどちらの作り方でも別の誰かが1回だけ紛れ込んだことが書かれている。"
+    )
+    (OUT / "sort-bucket-slip-rate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def sort_main_list_steady_chart() -> None:
+    """本体の催促一覧(6件)が、受け皿の作り方を変えても18回とも動かなかったことを示す。
+
+    実測（2026-10-04）。14回（受け皿あり2種×材料2本）を1行ずつ点で並べ、
+    本体の件数は常に6で一定、受け皿側だけ2か所で色が変わる。
+    """
+    runs = [
+        ("②-A", "1", 2, False), ("②-A", "2", 2, False), ("②-A", "3", 3, True), ("②-A", "4", 2, False),
+        ("②-B", "1", 2, False), ("②-B", "2", 2, False), ("②-B", "3", 2, False), ("②-B", "4", 2, False),
+        ("③-A", "1", 2, False), ("③-A", "2", 2, False), ("③-A", "3", 2, False), ("③-A", "4", 2, False),
+        ("③-B", "1", 2, False), ("③-B", "2", 2, False),
+    ]
+    left = 54
+    top = 140
+    col_w = 46
+    row_main_y = top
+    row_bucket_y = top + 70
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "本体の一覧は14回とも6件で動かず、ブレたのは受け皿の中身だけだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "②「一次返信のみ」の受け皿版（材料A・B各4回）と③「答えの有無」で定義し直した版"
+        "（材料A4回・B2回）、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "合わせて14回。上段＝本体の催促一覧の件数、下段＝受け皿（一次返信のみ）の件数。"
+        "</text>\n",
+        f'<text class="t" x="18" y="{row_main_y + 4}">本体</text>\n',
+        f'<text class="t" x="18" y="{row_bucket_y + 4}">受け皿</text>\n',
+    ]
+
+    for i, (group, idx, bucket_n, bad) in enumerate(runs):
+        cx = left + i * col_w
+        parts.append(
+            f'<circle class="box-good" cx="{cx}" cy="{row_main_y}" r="13" stroke-width="1.5"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{cx}" y="{row_main_y + 4}" text-anchor="middle">6</text>\n'
+        )
+        cls = "box-bad" if bad else "box"
+        tcls = "t-bad" if bad else "t"
+        parts.append(
+            f'<circle class="{cls}" cx="{cx}" cy="{row_bucket_y}" r="13" stroke-width="1.5"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{cx}" y="{row_bucket_y + 4}" text-anchor="middle">{bucket_n}</text>\n'
+        )
+        if idx == "1":
+            parts.append(
+                f'<text class="t-xs" x="{cx}" y="{row_bucket_y + 32}">{_esc(group)}</text>\n'
+            )
+
+    y = row_bucket_y + 56
+    notes = [
+        ("t-good", "✅ 本体の件数は14回とも6のまま。宛先の中身も14回とも同じ6件だった。"),
+        ("t-bad", "🚨 受け皿の件数が3になった1か所（②-A の3回目）だけ、無関係な相手が紛れ込んでいた。"),
+        ("t-xs", "③-A の3回目は受け皿自体は2のままだったが、〔決められない〕に別の相手が1件紛れ込んだ"
+                 "（この図には出ない。詳細は本文）。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 6
+    alt = (
+        "本体の催促一覧の件数と、一次返信のみの受け皿の件数を、14回ぶん点で並べた図。"
+        "上段が本体、下段が受け皿。"
+        "②一次返信のみの受け皿版は材料A・Bとも各4回、③答えの有無で定義し直した版は材料A4回・材料B2回、"
+        "合わせて14回。"
+        "本体の件数は14回ともすべて6のままで、宛先の中身も14回とも同じ6件だった。"
+        "受け皿の件数が3になったのは②材料Aの3回目だけで、このとき無関係な相手(人事課早瀬さん)が紛れ込んでいた。"
+        "③材料Aの3回目は受け皿自体は2のままだったが、別の相手(三葉印刷山口様)が〔決められない〕に"
+        "紛れ込んでおり、この図には表れていない。"
+    )
+    (OUT / "sort-main-list-steady.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     how_far_back_changes_the_usual_number_chart()
     how_far_back_reliability_chart()
     url_hint_five_conditions_chart()
     url_given_anyway_breakdown_chart()
+    sort_bucket_slip_rate_chart()
+    sort_main_list_steady_chart()
