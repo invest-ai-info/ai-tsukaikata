@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-04T00:41:29.303028+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-03T23:05:47+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIで安全性報告の執筆を統括したデビッド・ロビンソン氏が退社し、企業文化の崩壊を訴える記事を寄稿した。現行の反復開発手法は失敗を前提としており、能力向上に伴いリスクが拡大すると指摘。原子力や航空分野の安全知見の導入や、未監視下の安全性を担保する新たな科学の確立を求めた。",
+      "title": "「OpenAIの文化は壊れている」──安全性報告書を統括した従業員が退社し、寄稿",
+      "uid": "91b9f27691eeb86d",
+      "url": "https://www.itmedia.co.jp/news/article/2610/04/2000001986/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-03T13:27:15.968803+00:00",
       "importance": "major",
       "label": "ITmedia AI+",
@@ -2386,18 +2398,6 @@
       "title": "ボイスクローン対応のAIポッドキャスト制作サービス「Podorica」登場",
       "uid": "2df933cefe836e6c",
       "url": "https://ai.watch.impress.co.jp/docs/news/2143774.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-28T06:59:28.240897+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-28T05:56:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Google Japanは、9月で日本法人設立25周年を迎えるとして、特設サイトを公開するとともに、アワード「Google AI Challenge」を開催する。",
-      "title": "Google Japan、設立25周年でアワード「Google AI Challenge」を開催",
-      "uid": "304dad753ed1bf85",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143750.html",
       "vendor": "Impress AI Watch"
     }
   ]

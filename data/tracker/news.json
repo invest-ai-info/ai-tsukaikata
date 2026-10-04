@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-04T00:41:29.303028+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-03T23:07:17+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blo…",
+      "title": "v2.1.289",
+      "uid": "f17c62d8fe463811",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-02T18:27:27.101114+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
@@ -5342,20 +5354,6 @@
       "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
       "uid": "e2f89661ee8c7381",
       "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-09-05T01:00:47.840577+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-06T00:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "The inside story of how Claude Code went from an internal CLI to Anthropic's coding agent, told by researchers, engineers and early users who built it.",
-      "summary_ja": "AI『Claude Code』の開発秘話が公開\n社内ツールからAnthropicのAIツールへ進化\n開発者や初期ユーザーがその道のりを語る",
-      "summary_source": "gemini",
-      "title": "The Making of Claude Code",
-      "uid": "5d4f111caeb586a7",
-      "url": "https://www.anthropic.com/features/making-of-claude-code",
       "vendor": "Anthropic"
     }
   ]
