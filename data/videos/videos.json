@@ -194,10 +194,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Ultrafast is our fastest way to build with Astra yet: in Codex, it runs up to 8x faster than Astra Standard and 4x faster than Astra Fast.\n\nBring your ideas to life as fast as you can type them.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GPT-6 Astra向けのUltrafast機能がAPI、ChatGPT Work、Codexで利用可能になったと発表している。",
+    "ゲーム開発の例では、プロンプトからキャラクター等の生成を待つことなく高速に実行できる様子を示している。",
+    "APIにおけるトークン生成速度は通常版の7倍以上、高速版の4倍以上向上したと説明している。"
+   ],
+   "for_whom": "APIやCodexを活用して高速にAIアプリや機能を開発したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T21:53:17.715145+00:00"
   },
   {
    "video_id": "Fls_onRviPM",
@@ -207,10 +217,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Watch Sam Altman, Romain Huet, Tejal Patwardhan, and Holly Li announce and demo 20+ launches at OpenAI DevDay, including dots, ChatGPT Spaces, GPT-6.1 Sol, Astra Ultrafast, and more.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "常時稼働する自律型AIエージェント「dots」を発表し、業務タスクの委託やSlack連携、電話での指示が可能になると説明している。",
+    "チームメンバーやエージェントとともに文書作成やプロトタイプ開発を共同で行える「ChatGPT Space」を紹介している。",
+    "高性能かつ低コストな新モデル「GPT-6.1 Sol」や高速なUltrafast、開発者向け「Agents API」を発表したと紹介している。"
+   ],
+   "for_whom": "最新のAIエージェントや開発ツールを活用して業務自動化を進めたいビジネスパーソンやエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T21:53:17.715145+00:00"
   },
   {
    "video_id": "7Bv68f5szSU",
@@ -386,10 +406,20 @@
    "channel_key": "claude",
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
-   "description": "Add Claude to a channel in a team workspace like Slack and it can keep up with your whole team in real time. No more switching back and forth to your Claude chat window, or copying and pasting to give Claude all the context it needs. With Claude Tag, it’s already in your team’s workspace following along.\n\nClaude Academy → https://claude.com/learn",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Slackなどのワークスペースに追加してチームで共同作業できる機能「Claude Tag」を紹介している。",
+    "チャット履歴や連携ツールを参照し、タスクの整理や日程調整などを実行できると説明している。",
+    "チャンネルごとに参照できるツールや権限を設定可能で、TeamおよびEnterpriseプランで利用できると述べている。"
+   ],
+   "for_whom": "チーム内のSlackやツールでAIを活用して業務を効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T21:53:17.715145+00:00"
   },
   {
    "video_id": "s5nkj-L2vAw",
@@ -627,19 +657,6 @@
    "channel_name": "Starter Story",
    "default_category": "earn",
    "description": "Frank had never built software in his life. Until one weekend, he got a crazy idea and decided to just build it with Claude. \n\nToday, the app he built in just a few hours, makes over $40K per month. In this video, we break down the growth story and how anyone can build and launch their idea all thanks to coding with AI.\n\n*Find your business idea with our free database (over 3k+ ideas):* https://clickhubspot.com/von4\n\nSay hi to Frank: https://x.com/frankmikesmith\nCheck out GeoSports: https://geosports.app/\n\n🔔 Follow the Second Channel: @StarterStoryBuild\n🏁 We're hiring: starterstory.com/jobs\n\nChapters:\n0:00 - Built in a few hours\n0:46 - What's your story?\n1:24 - Business breakdown\n2:58 - Build your own app!\n4:06 - Founder background\n5:11 - But you had an audience?\n6:43 - Finding the idea\n7:27 - Building the app\n8:10 - Tools and tech stack\n8:43 - Advice for building apps\n10:35 - Growth timeline\n11:42 - Zero to $40K/month\n12:44 - Final advice\n13:58 - Gus reflections\n\nThis video is an educational case study of this founder’s experience. It is not financial advice and does not guarantee any income or results. Every business is different and your results may vary.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "mr4YV-9MY0Q",
-   "title": "This Simple Widget Makes $50K/Month",
-   "url": "https://www.youtube.com/watch?v=mr4YV-9MY0Q",
-   "published": "2026-09-20T17:00:39+00:00",
-   "channel_key": "starter-story",
-   "channel_name": "Starter Story",
-   "default_category": "earn",
-   "description": "Tom built a tiny widget that solves one painful problem. He launched it about 1 year ago, and today it makes $55K per month – 100% bootstrapped. This video is the story of how spotting one real problem and building the simplest possible solution turned into a real business.\n\n*90+ Million-dollar problems (business ideas):* https://clickhubspot.com/tu8n \n\nSay hi to Tom: https://www.linkedin.com/in/tom-holliday-505469161/\nCheck out Avenue: https://www.avenue2.au/\nFollow Avenue on IG: https://www.instagram.com/avenue2.au\n\n🔔 Follow the Second Channel: @StarterStoryBuild\n🏁 We're hiring: starterstory.com/jobs\n\nChapters:\n0:00 - The simple app I found on X\n1:03 - What's your story?\n1:28 - What's the app?\n1:59 - Solving an age old problem\n2:29 - Revenue breakdown\n2:50 - Problems worth solving\n3:29 - Founder background\n4:13 - Finding the idea\n4:51 - Build timeline\n5:45 - Hiring without revenue?\n6:18 - Growth and marketing\n7:29 - Building for the trades\n8:29 - Tom's advice for building apps\n9:10 - Tools and tech stack\n9:51 - App demo\n10:29 - Final advice\n11:19 - Gus reflections\n\nThis video is an educational case study of this founder’s experience. It is not financial advice and does not guarantee any income or results. Every business is different and your results may vary.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -1533,91 +1550,114 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-04T12:49:20.804567+00:00"
+  },
+  {
+   "video_id": "RypUD_Fuaqw",
+   "title": "This unbelievable app idea makes $50K/month",
+   "url": "https://www.youtube.com/watch?v=RypUD_Fuaqw",
+   "published": "2026-10-04T17:00:24+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-10-04T21:53:17.715145+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "プログラミング未経験のLino氏がAIツールを活用し、腹筋特化型フィットネスアプリ「AbMaxx」を短期間で立ち上げたと説明している。",
+    "初期はTikTokスライドショーやインフルエンサー提携で集客し、MetaやTikTokの広告運用により月商約6万ドル規模に達したと語っている。",
+    "アイデアは事前にSNS投稿で需要を検証し、細部に固執せず7日程度で素早く初期版をリリースすべきだとアドバイスしている。"
+   ],
+   "for_whom": "AIツールを活用してプログラミング未経験からアプリを開発・収益化したい人",
+   "caution": "月商約6万ドルという実績は出演者の主張に基づくもので、広告費やインフルエンサーへの株式譲渡などのコストが伴う点に留意が必要です。また、概要欄で無料データベースへの登録誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T21:53:17.715145+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "last_ok": "2026-10-04T21:53:17.715145+00:00",
    "fail_streak": 0
   }
  }
