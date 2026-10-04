@@ -197,8 +197,9 @@ def test_collect_emits_search_index_and_search_page(tmp_path):
     files, errors = build.collect(_content_dir(tmp_path))
     assert errors == []
     index = json.loads(files["search.json"])
-    # 動画（AI動画まとめ）は実データの data/videos/ から入るので除いて見る（tests/test_videos.py が別に見る）
-    assert [entry["url"] for entry in index if entry["category"] != "videos"] == ["/recipes/sample/"]
+    # 動画・ニュースは実データ（data/）から入るので除いて見る（tests/test_videos.py・test_search.py が別に見る）
+    assert [entry["url"] for entry in index
+            if entry["category"] in ("recipes", "tools", "pages")] == ["/recipes/sample/"]
     assert index[0]["title"] == "テスト記事"
     assert "search/index.html" in files
     assert "/search/" not in files["sitemap.xml"]

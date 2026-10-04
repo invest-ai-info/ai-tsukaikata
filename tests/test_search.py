@@ -5,7 +5,7 @@ from pathlib import Path
 
 from src.content import Article, load_articles, render_markdown
 from src.render import render_site
-from src.search import INDEX_BUDGET_BYTES, build_index, headings, plain_text, search_json
+from src.search import INDEX_BUDGET_GZIP_BYTES, build_index, headings, plain_text, search_json
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -72,7 +72,16 @@ def test_search_json_keeps_japanese_readable_and_round_trips():
 
 
 def test_real_content_index_is_within_budget_and_clean():
-    """実データの歯止め。索引が黙って重くなったり、見出しにタグが混ざったりしたら落ちる。"""
+    """実データの歯止め。索引が黙って重くなったり、見出しにタグが混ざったりしたら落ちる。
+
+    大きさは本番と同じ中身（記事・動画・直近1か月のニュース）を gzip した後で見る＝
+    読者が実際に受け取る大きさ（GitHub Pages は gzip で送る）。
+    """
+    import gzip
+    from datetime import timedelta
+
+    from src import news, videos
+
     articles, errors = load_articles(ROOT / "content")
     assert errors == []
     index = build_index(articles)
@@ -80,8 +89,18 @@ def test_real_content_index_is_within_budget_and_clean():
     for entry in index:
         for heading in entry["headings"]:
             assert "<" not in heading, (entry["url"], heading)
-    size = len(search_json(articles).encode("utf-8"))
-    assert size <= INDEX_BUDGET_BYTES, f"search.json が {size} バイト（予算 {INDEX_BUDGET_BYTES}）"
+
+    items = news.load_news(ROOT / "data" / "tracker" / "news.json")
+    media = news.load_media_news(ROOT / "data" / "tracker" / "media_news.json")
+    video_data = videos.load_videos(ROOT / "data" / "videos" / "videos.json",
+                                    ROOT / "videos" / "channels.yml")
+    # 基準は「いちばん新しいニュースの時刻」＝テストを走らせた日によって結果が変わらない
+    newest = max([i.published for i in items + media], default=None)
+    now = (newest + timedelta(seconds=1)) if newest else None
+    text = search_json(articles, videos=video_data, news=items, media_news=media, now=now)
+    size = len(gzip.compress(text.encode("utf-8")))
+    assert size <= INDEX_BUDGET_GZIP_BYTES, (
+        f"search.json が圧縮後 {size} バイト（予算 {INDEX_BUDGET_GZIP_BYTES}）")
 
 
 def test_search_page_is_rendered_with_noindex_and_script():
@@ -108,3 +127,49 @@ def test_other_pages_do_not_load_search_js():
     pages = render_site([_article()])
     assert "search.js" not in pages["recipes/sample/index.html"]
     assert "search.js" not in pages["index.html"]
+
+
+# --- ニュース（2026-10-04・直近1か月だけ） ---
+
+def _news_item(uid, days_ago, url="https://example.com/a", summary_ja="日本語の要約\n2行目"):
+    from datetime import datetime, timedelta
+
+    from src.news import JST, NewsItem
+
+    now = datetime(2026, 10, 4, 12, 0, tzinfo=JST)
+    return NewsItem(uid=uid, source_id="s", title=f"題{uid}", url=url, vendor="Anthropic",
+                    label="Anthropic", importance="major",
+                    published=now - timedelta(days=days_ago), summary_ja=summary_ja), now
+
+
+def test_news_index_keeps_only_last_month_and_safe_urls():
+    from src.search import NEWS_DAYS, news_index
+
+    recent, now = _news_item("a", 1)
+    old, _ = _news_item("b", NEWS_DAYS + 1)
+    unsafe, _ = _news_item("c", 1, url="javascript:alert(1)")
+    index = news_index([recent, old, unsafe], "updates", "AIアップデート", now)
+    assert [e["title"] for e in index] == ["題a"]
+    entry = index[0]
+    assert entry["url"] == "https://example.com/a"            # 行き先は元の記事
+    assert entry["description"] == "日本語の要約 2行目"
+    assert entry["tags"] == ["Anthropic"] and entry["category_label"] == "AIアップデート"
+    assert entry["published"] == "2026-10-03"
+
+
+def test_media_news_index_has_no_excerpt():
+    from src.search import news_index
+
+    item, now = _news_item("a", 1, summary_ja="メディアの本文の抜粋")
+    entry = news_index([item], "ainews", "AIニュース", now, with_summary=False)[0]
+    assert entry["description"] == ""                          # /ainews/ と同じく本文を載せない
+
+
+def test_search_json_needs_now_when_news_given():
+    import pytest
+
+    item, now = _news_item("a", 1)
+    with pytest.raises(ValueError):
+        search_json([], news=[item])
+    parsed = json.loads(search_json([], news=[item], now=now))
+    assert [e["category"] for e in parsed] == ["updates"]
