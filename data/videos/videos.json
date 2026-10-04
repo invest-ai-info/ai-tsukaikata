@@ -99,19 +99,6 @@
    "attempts": 0
   },
   {
-   "video_id": "4ZZexI0awQk",
-   "title": "9割の人は知らない『Codex App Server』って神機能を解説！",
-   "url": "https://www.youtube.com/watch?v=4ZZexI0awQk",
-   "published": "2026-09-20T10:00:06+00:00",
-   "channel_key": "keito",
-   "channel_name": "KEITO【AI&WEB ch】",
-   "default_category": "tech",
-   "description": "今回はCodex App Serverを徹底解説。AIの機能を盛り込める神機能なのでぜひ皆さんも使ってみて。\n\nオンラインセミナーは下記（有料）\nhttps://luma.com/0nz51ico\n\nKEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n★プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nChatGPT むちゃぶり仕事術\n→ https://amzn.to/46u5zjd\nやりたい！ができる生成AIでアプリづくり\n→ https://amzn.to/46sdQT4\n\n▼目次\nCodex App Serverとは 00:00\nCodex App Serverでできること 00:20\nCodex App Server対応アプリの作成デモ 02:03\nスライド作成アプリの活用例 06:58\nAI・コンピューターユース向けアプリの設計 10:44\n動画タイトル生成・評価アプリの実行 13:34\nCodex App Serverの応用例 17:04\nCodex App Serverの可能性 18:00\nまとめ・セミナー案内 19:18\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Workを完全解説\nhttps://youtu.be/U74PHw-h59Q\n【GPT 5.6 Sol】ChatGPT CodexとWorkを解説\nhttps://youtu.be/Qw6sOGhRg8U\nOpenAI「Codex」完全ガイド\nhttps://youtu.be/ESGl8Juwytc\nCodexの便利なプラグイン２４選！\nhttps://youtu.be/Rf5K3reQWIM\nOpenAI CodexのPC操作の便利な使い方\nhttps://youtu.be/w8TRpmOEpMk\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼はXのDMもしくは以下メールへ。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twitter.com/keitowebai\nnote：https://blog.procevo.biz/\nInstagram：https://instagram.com/keitowebai/\nTikTok：https://ti",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "peP_o66u-vM",
    "title": "Stop Organizing Files Yourself.",
    "url": "https://www.youtube.com/watch?v=peP_o66u-vM",
@@ -988,19 +975,6 @@
    "attempts": 0
   },
   {
-   "video_id": "Nvq2fvRM9QA",
-   "title": "【今週のAIツール・ニュース総まとめ】ClaudeとClaude Coworkが合体/文章を書けない判断特化の新型AI「Jev」/Claude Codeに複数の新機能実装",
-   "url": "https://www.youtube.com/watch?v=Nvq2fvRM9QA",
-   "published": "2026-09-20T09:07:40+00:00",
-   "channel_key": "ai-daigaku",
-   "channel_name": "AI大学【AI&ChatGPT最新情報】",
-   "default_category": "news",
-   "description": "◆動画の説明\n今回の動画では\nClaude Coworkと統合され\nデザイン・スライド・ドキュメント\n生成特化ツールも実装されたAIチャット「Claude」\n高速で低コストにタスクを処理できる\nTypeSafe AIのAIモデル「Jev」\n複数作業の自動実行機能の実装や\nAGENTS.mdが正式にサポートされ\n大きくパワーアップしたClaude Codeなど\n今週公開されたり発表された\nAIエージェントやAIツールのリリース・更新情報\n中国紙がAnthropicのAI開発減速提言を\n冷戦の手法と批判\nEUが15歳未満のAIチャットボットの\n利用禁止を提案へなど\n最新AIニュースをまとめて紹介します\n\n◆動画のもくじ\n0:00　動画について\n1:00　最新AIツール\n1:10　ClaudeとClaude Coworkが統合し新機能も実装\n2:22　タスクを超高速に実行できるAIモデル「Jev」\n3:41　Claude Codeに複数作業自動実行機能など実装\n4:57　Googleの新しいAI音声会話モデル「Gemini 3.8 Live」\n6:06　Sakana ChatでFugu Maxが無料公開\n7:01　AIエージェント「Cline」のデスクトップアプリ\n7:51　ChatGPTとCodex関連の新機能\n9:20　ステルスモデル「Union Alpha」が無料公開中etc.\n11:04　最新AIニュース　\n11:13　中国紙がAnthropicのAI開発減速提言を冷戦の手法と批判\n12:01　EUが15歳未満のAIチャットボットの利用禁止を提案へ\n12:32　OpenAIが評価額1兆2000億ドル超で資金調達を検討\n13:09　MicrosoftのAI責任者が人間らしい「Claude」のリスクを警告\n13:46　Metaのザッカーバーグ氏がAnthropicの警告に反論\n14:21　製薬会社がAnthropicと協力して医薬品開発を加速\n14:59　Anthropicがアクセンチュアと提携\n15:36　シャープがAIサーバー事業に参入etc.\n17:35　エンディングムービー\n\n◆動画の中で紹介している内容\nClaude Design、Salesforce、TypeSafe AI、AGENTS.md\nCLAUDE.md、Gemini 3.8 Live Extended Thinking、Grok Bot\nAffinity、Gemini Notebook、NoLang、YuE2、Qwen3.8-Omni-Flash\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「K",
-   "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "ChOJ7cg-19Y",
    "title": "【UIUX最高】AIエージェント基盤『T3 Code』が登場！ClaudeCodeもCodexもCursorもこれ1つで管理！",
    "url": "https://www.youtube.com/watch?v=ChOJ7cg-19Y",
@@ -1467,92 +1441,184 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-03T11:58:36.088830+00:00"
+  },
+  {
+   "video_id": "3npRKnj2h_8",
+   "title": "注目AIニュース16選～AIエージェントが常駐する世界へ！OpenAI DevDay・Claude Sonnet 5.5・Gemini 4 Argon",
+   "url": "https://www.youtube.com/watch?v=3npRKnj2h_8",
+   "published": "2026-10-04T06:00:05+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "first_seen": "2026-10-04T12:49:20.804567+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAI DevDayで常時稼働エージェントdotsやGPT-6.1 Sol、月額500ドルのPro新プランなどが発表されたと伝えている",
+    "Anthropicが日常業務向けモデルClaude Sonnet 5.5やClaude Codeのカスタマイズ機能modsを公開したと紹介している",
+    "GoogleのGeminiで提供されていたGemsがスキルへ自動移行される予定であると解説している"
+   ],
+   "for_whom": "最新のAI動向やAIエージェントの業務活用をキャッチアップしたい人",
+   "caution": "動画内でスポンサー提供ツール（Hostinger、Tanka）への有料登録や自身の書籍への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T12:49:20.804567+00:00"
+  },
+  {
+   "video_id": "YWhvru12yjU",
+   "title": "【今週のAIツール・ニュース総まとめ】dotsやGPT-6.1 solなどOpenAIの新製品/アンソロピックのClaude Sonnet 5.5/GoogleのGemini 4 Argon",
+   "url": "https://www.youtube.com/watch?v=YWhvru12yjU",
+   "published": "2026-10-04T09:04:56+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-04T12:49:20.804567+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが自律型AIアシスタント「dots」や新モデル「GPT-6.1 Sol」を発表したと紹介している。",
+    "Anthropicの「Claude Sonnet 5.5」やGoogleの「Gemini 4 Argon」など最新AIモデルの動向を解説している。",
+    "米大統領によるSI呼称の大統領令や声のパブリシティー権に関する司法判断など、最新のAI関連ニュースを伝えている。"
+   ],
+   "for_whom": "主要な生成AIツールやモデルの最新動向、AI業界の重要ニュースをまとめて把握したい会社員",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T12:49:20.804567+00:00"
+  },
+  {
+   "video_id": "GunxHphrQ7s",
+   "title": "【有料級】『Claude Mods』はこう使うと便利！実装まで徹底共有2選！根本ポイントから解説",
+   "url": "https://www.youtube.com/watch?v=GunxHphrQ7s",
+   "published": "2026-10-04T10:45:13+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-04T12:49:20.804567+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Modsを活用してClaude Codeの内部ハーネスに介入し、機能を拡張する方法を解説している。",
+    "純正の/goalを改造し、2つのモデルによる判定で厳しくループを回す「masa-goal」の実装例を紹介している。",
+    "音声モデルと連携させ、ターミナルから声で指示を出して作業させるリアルタイムボイス機能の実装を実演している。"
+   ],
+   "for_whom": "Claude Codeの動作を自作プラグイン等で高度にカスタマイズしたいエンジニア",
+   "caution": "ソースコード配布のための公式LINE登録や有料メンバーシップへの誘導があります。また、Modにはサンドボックスがないため導入時の権限管理に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T12:49:20.804567+00:00"
+  },
+  {
+   "video_id": "lRTTkv93S2A",
+   "title": "【データ入力もAIに丸投げ】実際に受けている在宅ワークで試した結果",
+   "url": "https://www.youtube.com/watch?v=lRTTkv93S2A",
+   "published": "2026-10-04T11:00:19+00:00",
+   "channel_key": "yuimama",
+   "channel_name": "飽き性主婦ゆいママの人気副業チャレンジ日記",
+   "default_category": "earn",
+   "first_seen": "2026-10-04T12:49:20.804567+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "月約10時間かかっていた在宅事務の仕事をAIエージェントに任せる検証を行ったと紹介している。",
+    "修正を交えて作業させた結果、月作業時間が3〜4時間に減り、時給換算が約2,000円から約5,000円に上がったと試算している。",
+    "AIの出力を過信せず人間が最終確認することや、機密情報・個人情報の扱い、発注者への事前確認の重要性を説明している。"
+   ],
+   "for_whom": "在宅事務や副業の作業負担をAIを使って効率化したい人",
+   "caution": "時給換算5,000円は作業時間削減による出演者の試算です。また、動画末尾や概要欄で無料電子書籍の受け取りを名目に公式LINEへ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-04T12:49:20.804567+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-04T06:16:55.115687+00:00",
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-04T06:16:55.115687+00:00",
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-03T21:43:29.295081+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-04T12:49:20.804567+00:00",
+   "fail_streak": 0
   }
  }
 }
