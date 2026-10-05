@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-05T16:05:41.951020+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-05T15:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+      "summary_ja": "OpenAIがAI文章の識別技術の方針公開。\nどこに適用され、どう検知するかを説明。\nまずは研究者から利用を開始する。",
+      "summary_source": "gemini",
+      "title": "Our approach to EU text provenance rules",
+      "uid": "170cf84006975a5c",
+      "url": "https://openai.com/index/eu-text-provenance",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-05T16:05:41.951020+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-05T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+      "summary_ja": "OpenAIがChatGPTに新しい画像広告を導入。\n広告主向けに計測・効果測定・安全性を強化。",
+      "summary_source": "gemini",
+      "title": "Building advertising for the way people use AI",
+      "uid": "efd76f1c25b5cfee",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-04T00:41:29.303028+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5327,20 +5355,6 @@
       "uid": "451d82648427a5d8",
       "url": "https://openrouter.ai/x-ai/grok-4.5",
       "vendor": "xAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-07T08:54:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Managed agents feature bundle launch",
-      "summary_ja": "Gemini APIの管理エージェント機能が拡張された。\n裏で動く処理やリモート管理機能などが追加された。",
-      "summary_source": "gemini",
-      "title": "Expanding Managed Agents in Gemini API:  background tasks, remote MCP and more",
-      "uid": "bab752476baf1b54",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
-      "vendor": "Google"
     }
   ]
 }
