@@ -30877,3 +30877,131 @@ def bare_prohibition_diagnosis_chart() -> None:
 if __name__ == "__main__":
     bare_prohibition_outcome_chart()
     bare_prohibition_diagnosis_chart()
+
+
+def four_tier_subtotal_hit_and_miss_chart() -> None:
+    """集計欄を4段(小計→中計→大計→総合計)にしても、いちばん下の段は崩れるか実測（2026-10-05・H35）。
+
+    材料2本（店舗別売上表・部門別経費表、いずれも既存3段実測に地域ブロック/事業部を
+    1段足した）×各5回=10回の自由記述に、SUBTOTALを禁じた版2回・注意書きを外した
+    素朴な指示2回を加えた。判定は docs/evidence/
+    four-tier-subtotal-still-correct.md の生の返りをPythonで実際の値に基づき機械判定した。
+    """
+    _hit_and_miss_rows_chart(
+        "four-tier-subtotal-hit-and-miss.svg",
+        "4段に増やしても、今回はすべて正しい数式だった",
+        "実測2026-10-05。店舗別売上表(地域ブロック→エリア→店舗)・部門別経費表(事業部→部署→担当者)。",
+        "いずれも既存の3段実測に1段足した材料。中間の2段は、新設の大計欄を指す。",
+        [
+            ("4段・自由記述で最下位(小計)欄が正しかった回（材料2種×5回）", 10, 10, "good"),
+            ("4段・自由記述で中間1(中計)欄が正しかった回", 10, 10, "good"),
+            ("4段・自由記述で新設の中間2(大計)欄が正しかった回", 10, 10, "good"),
+            ("4段・自由記述で総合計欄が正しかった回", 10, 10, "good"),
+            ("SUBTOTALを禁じても、4段すべてが正しかった回（材料B×2回）", 2, 2, "good"),
+            ("注意書きを外しても、4段すべてが正しかった回（材料B×2回）", 2, 2, "good"),
+            ("参考：3段構造(別記事)で最下位(小計)欄が正しかった回", 10, 10, "good"),
+        ],
+        [
+            "4段に増やした自由記述10回・SUBTOTALを禁じた2回・注意書きを外した2回の、",
+            "合計14回すべてで、小計・中計・大計・総合計の4段とも正しい数式になった。",
+            "＝この材料・この回数の範囲では、3段→4段に増やしても最下位の段はさらに悪化しなかった（H35棄却）。",
+        ],
+        "集計欄を4段にしても、いちばん下の段は崩れるかを実測した結果を示す表。"
+        "すべて「当たった回数／聞いた回数」で、多いほど良い。"
+        "4段・自由記述で最下位(小計)欄が正しかった回数は材料2種×5回の10回中10回、"
+        "中間1(中計)欄が正しかった回数も10回中10回、新設の中間2(大計)欄が正しかった回数も10回中10回、"
+        "総合計欄が正しかった回数も10回中10回。"
+        "SUBTOTALを禁じても4段すべてが正しかった回数は材料Bの2回中2回。"
+        "注意書きを外しても4段すべてが正しかった回数も材料Bの2回中2回。"
+        "参考として、3段構造(別記事)で最下位(小計)欄が正しかった回数は10回中10回。"
+        "下の枠には、4段に増やした自由記述10回・SUBTOTALを禁じた2回・注意書きを外した2回の"
+        "合計14回すべてで小計・中計・大計・総合計の4段とも正しい数式になったこと、"
+        "この材料・この回数の範囲では3段から4段に増やしても最下位の段はさらに悪化しなかったこと"
+        "（H35棄却）が書かれている。",
+        label_w=460,
+    )
+
+
+def four_tier_subtotal_method_split_chart() -> None:
+    """同じ指示文でも、選ぶ数式の方式が材料によって割れたことを示す図（2026-10-05・H35）。
+
+    材料Aでは SUMIFS で作り直す方式が5回中4回、材料Bでは SUBTOTAL が5回中5回だった。
+    """
+    rows = [
+        ("店舗別売上表（材料A・自由記述5回）", 4, 1, "SUMIFSで作り直す方式", "SUBTOTAL方式"),
+        ("部門別経費表（材料B・自由記述5回）", 0, 5, "SUMIFSで作り直す方式", "SUBTOTAL方式"),
+    ]
+    bar_x, bar_w, bar_h = 18, 684, 28
+    top = 100
+    row_gap = 56
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ指示文でも、選んだ方式は材料で割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-10-05。同じ指示文（4段の数式を作らせる自由記述）を材料2種×5回ずつ試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "どちらの方式でも12箇所の数式はすべて正しかった。方式そのものに優劣はつけていない。</text>\n",
+    ]
+    y = top
+    for label, n_sumifs, n_subtotal, label_sumifs, label_subtotal in rows:
+        parts.append(f'<text class="t" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        w1 = bar_w * n_sumifs / 5
+        w2 = bar_w * n_subtotal / 5
+        if n_sumifs:
+            parts.append(f'<rect class="bar-in" x="{bar_x}" y="{y}" width="{w1:.1f}" height="{bar_h}"/>\n')
+            parts.append(
+                f'<text class="t-sm" x="{bar_x + w1 / 2:.1f}" y="{y + bar_h / 2 + 4:.1f}" '
+                f'text-anchor="middle" style="fill:#ffffff">{n_sumifs}/5</text>\n'
+            )
+        if n_subtotal:
+            parts.append(
+                f'<rect class="bar-out" x="{bar_x + w1:.1f}" y="{y}" width="{w2:.1f}" height="{bar_h}"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{bar_x + w1 + w2 / 2:.1f}" y="{y + bar_h / 2 + 4:.1f}" '
+                f'text-anchor="middle" style="fill:#ffffff">{n_subtotal}/5</text>\n'
+            )
+        y += row_gap
+
+    y += 4
+    parts.append(f'<rect class="bar-in" x="18" y="{y}" width="14" height="14"/>\n')
+    parts.append(f'<text class="t-sm" x="38" y="{y + 12}">SUMIFSで作り直す方式(下位の計を経由せず、ラベル名で直接集計し直す)</text>\n')
+    y += 22
+    parts.append(f'<rect class="bar-out" x="18" y="{y}" width="14" height="14"/>\n')
+    parts.append(f'<text class="t-sm" x="38" y="{y + 12}">SUBTOTAL方式(範囲内の他のSUBTOTALを自動で無視する)</text>\n')
+    y += 30
+
+    box_h = 40
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">店舗別売上表ではSUMIFSを4回・SUBTOTALを1回、'
+        f'部門別経費表ではSUBTOTALを5回とも選んだ。</text>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 36}">方式は指示文ではなく材料が決めている可能性がある。</text>\n'
+    )
+    y += box_h + 12
+
+    (OUT / "four-tier-subtotal-method-split.svg").write_text(
+        _svg(
+            y + 8,
+            "同じ指示文でも、選んだ数式の方式が材料によって割れたことを示す横棒グラフ。"
+            "店舗別売上表(材料A・自由記述5回)は、SUMIFSで作り直す方式が5回中4回、"
+            "SUBTOTAL方式が5回中1回。部門別経費表(材料B・自由記述5回)は、"
+            "SUMIFSで作り直す方式が5回中0回、SUBTOTAL方式が5回中5回。"
+            "どちらの方式でも12箇所の数式はすべて正しく、方式そのものに優劣はつけていない。"
+            "下の枠には、店舗別売上表ではSUMIFSを4回・SUBTOTALを1回、"
+            "部門別経費表ではSUBTOTALを5回とも選んだこと、"
+            "方式は指示文ではなく材料が決めている可能性があることが書かれている。",
+            "".join(parts),
+        ),
+        encoding="utf-8",
+        newline="\n",
+    )
+
+
+if __name__ == "__main__":
+    four_tier_subtotal_hit_and_miss_chart()
+    four_tier_subtotal_method_split_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
