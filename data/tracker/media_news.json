@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-05T00:59:15.249775+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-04T22:56:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米連邦航空局（FAA）と米運輸省（DOT）は9月21日（現地時間）、AIを活用した航空交通管理システム「SMART」（Strategic Management of Airspace, Routes and Trajectories）の試験運用を始めたと発表した。試験の対象は、首都ワシントンDC周辺のレーガン・ナショナル空港、ダレス国際空港、ボルチモア・ワシントン国際空港の3空港だ。FAAは今後…",
+      "title": "米当局、航空管制にAI導入　その中身とは",
+      "uid": "4cf6398ad9e70ab6",
+      "url": "https://japan.cnet.com/article/35253220/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-05T00:59:15.249775+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-04T22:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "実は成功しにくいボトムアップでのAI活用。現場主導のAI活用が奏功しない──このような事態はなぜ起きるのでしょうか。",
+      "title": "「現場任せのAI活用」が失敗するこれだけの理由　経営層がすべき“頭の中”の言語化とは",
+      "uid": "3c8ee06835682952",
+      "url": "https://www.itmedia.co.jp/news/article/2610/05/2000001937/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-05T00:59:15.249775+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-10-04T22:12:10+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "トランプ米大統領は超知能分野の政策を調整する新組織「Super Intelligence Force」（SIF）の創設を発表した。国家情報長官、FTC委員長、戦争省CTO、人事管理局長の4人が率い、大統領に直属する。官民や業界団体との連携窓口を担い、米国の技術的優位性の維持を目指す。",
+      "title": "トランプ大統領、「Super Intelligence Force」創設を発表　国家情報長官やFTC委員長らが主導",
+      "uid": "2dd29190e3103956",
+      "url": "https://www.itmedia.co.jp/news/article/2610/05/2000001990/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-05T00:59:15.249775+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-04T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "国産AI開発を掲げるNoetraが始動した。国内44社が出資し、政府が5年で1兆円規模の支援をする可能性がある。目指すは、米中二極化する「AI開発」の領域における第三極。そのチャンスをつかめるか。",
+      "title": "国産AI開発「ラストチャンス」の局面へ　ノエトラが「44社が出資・国が最大1兆円支援」の追い風を背に向かう先",
+      "uid": "836b11c2dca028f2",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/05/news037.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-04T17:38:23.346948+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2350,54 +2398,6 @@
       "title": "最先端AIモデルの「思考しすぎてコスト増加」を解決するべくKimi K3ベースで開発されたAIモデル「Ember-1」が登場",
       "uid": "9b6067a52d87bf7e",
       "url": "https://gigazine.net/news/20260928-ember-1-fireworks/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-28T15:33:11.163516+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-28T09:07:16+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、対話型の音声AIモデル「Gemini 3.8 Live」にAIアバターを表示するLive Avatar機能を搭載したと発表した。すでに、Gemini Enterpriseで、Live Avatar機能を搭載したGemini 3.8 Liveを利用することができる。",
-      "title": "Gemini Enterpriseで「Gemini 3.8 Live with Live Avatar」が提供開始",
-      "uid": "527666b329aa869b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143840.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-28T15:33:11.163516+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-09-28T09:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NVIDIAは、AIセキュリティ強化のためのシステム「NVIDIA Open Agent Safety Platform」を発表した。",
-      "title": "AIセキュリティ強化のためのシステム「NVIDIA Open Agent Safety Platform」を発表",
-      "uid": "6eb8767de3b82a7b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2143723.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-28T15:33:11.163516+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-28T08:55:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "不気味な動画がある。OpenAIのAIモデル「GPT-6 Astra」で動くロボットアームが大きなナイフを持ち上げ、バゲットのそばに座る赤ちゃんの人形を突く。「パンではない方を刺して」という指示に従ったのだ。",
-      "title": "AIが赤ちゃん人形をナイフで刺す？ ロボットに汎用LLMを搭載する危険性",
-      "uid": "cdf7617a01a48e12",
-      "url": "https://japan.cnet.com/article/35253035/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-28T15:33:11.163516+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-28T08:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "子どもの成績を伸ばそうと塾に通わせている保護者に、塾の運営会社自身がChatGPTやGeminiの利用を勧めるという異例の事態が起きました。 続きを読む...",
-      "title": "「塾代を払うよりChatGPTやGeminiを使って」と保護者に勧め、塾が教室を閉鎖へ",
-      "uid": "6db69450f76ea358",
-      "url": "https://gigazine.net/news/20260928-dymocks-tutoring-close-use-ai/",
       "vendor": "GIGAZINE"
     }
   ]
