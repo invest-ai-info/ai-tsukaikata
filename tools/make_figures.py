@@ -30627,3 +30627,137 @@ def withholding_hit_and_miss_chart() -> None:
 
 if __name__ == "__main__":
     withholding_hit_and_miss_chart()
+
+
+def split_across_chunks_boundary_chart() -> None:
+    """300件のログを「100件ごと3分割」「150件ごと2分割」にしたとき、同じ2件の仕込み
+    （100件目・201件目）が、分け方によって境界の上に乗るか、チャンクの中ほどに収まるかを示す。
+
+    実測2026-10-05。`split-across-chunks-keeps-the-edge-row` の図1。座標はすべて
+    300件ぶんの横幅684pxに対する比率から計算し、手で置いていない。
+    """
+    plot_x, plot_w, total = 18, 684, 300
+    scale = plot_w / total
+
+    def px(pos: float) -> float:
+        return plot_x + pos * scale
+
+    mark_a, mark_b = 100, 201
+    bar_h = 34
+
+    schemes = [
+        ("① 100件ごとに3分割", [(0, 100), (100, 200), (200, 300)]),
+        ("② 150件ごとに2分割", [(0, 150), (150, 300)]),
+    ]
+
+    top = 110
+    row_pitch = 92
+    height = top + row_pitch * len(schemes) + 70
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ100件目・201件目でも、分け方を変えると境界の上に乗ったり外れたりする</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "300件のログに仕込んだ新着2件（100件目・201件目）の位置は固定したまま、分け方だけを変えた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "①は両方とも境界の真上、②は両方ともチャンクの中ほどに収まる。中身・件数はどちらも同じ300件。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 16}">1件目</text>\n',
+        f'<text class="t-xs" x="{plot_x + plot_w - 24}" y="{top - 16}">300件目</text>\n',
+    ]
+
+    y = top
+    for label, segs in schemes:
+        parts.append(f'<text class="t" x="18" y="{y - 6}">{_esc(label)}</text>\n')
+        for i, (lo, hi) in enumerate(segs):
+            klass = "box-quiet" if i % 2 == 0 else "box"
+            parts.append(
+                f'<rect class="{klass}" x="{px(lo):.1f}" y="{y}" '
+                f'width="{px(hi) - px(lo):.1f}" height="{bar_h}"/>\n'
+            )
+            parts.append(
+                f'<text class="t-xs" x="{(px(lo) + px(hi)) / 2:.1f}" y="{y + bar_h / 2 + 4:.1f}" '
+                f'text-anchor="middle">{lo + 1}〜{hi}件目</text>\n'
+            )
+        # 境界線
+        for b in segs[:-1]:
+            bx = px(b[1])
+            parts.append(f'<line class="line" x1="{bx:.1f}" y1="{y - 4}" x2="{bx:.1f}" y2="{y + bar_h + 4}"/>\n')
+        # 仕込みのマーク（縦の点線＋ラベル）
+        for mark, name in ((mark_a, "新着①\n100件目"), (mark_b, "新着②\n201件目")):
+            mx = px(mark - 0.5)
+            on_boundary = any(abs(mx - px(b[1])) < scale for b in segs[:-1])
+            cls = "t-bad" if on_boundary else "t-good"
+            parts.append(
+                f'<line x1="{mx:.1f}" y1="{y - 10}" x2="{mx:.1f}" y2="{y + bar_h + 10}" '
+                f'stroke="{"#d92b2b" if on_boundary else "#1a7f37"}" stroke-width="2" stroke-dasharray="3,3"/>\n'
+            )
+            lines = name.split("\n")
+            for li, ln in enumerate(lines):
+                parts.append(
+                    f'<text class="{cls}" x="{mx:.1f}" y="{y + bar_h + 24 + 14 * li:.1f}" '
+                    f'text-anchor="middle" style="font-weight:700">{_esc(ln)}</text>\n'
+                )
+            tag = "境界の上" if on_boundary else "中ほど"
+            parts.append(
+                f'<text class="{cls}" x="{mx:.1f}" y="{y + bar_h + 24 + 14 * len(lines):.1f}" '
+                f'text-anchor="middle">（{tag}）</text>\n'
+            )
+        y += row_pitch
+
+    note_y = y + 4
+    parts.append(f'<rect class="box-accent" x="18" y="{note_y}" width="684" height="44" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{note_y + 27}">'
+        "件数・中身は同じまま、チャンク幅だけを振って境界の位置をずらす実験。</text>\n"
+    )
+
+    alt = (
+        "300件のログに仕込んだ2件の新着（100件目・201件目）の位置を固定したまま、"
+        "分け方を100件ごと3分割と150件ごと2分割の2通りに変えた図。100件ごと3分割では、"
+        "100件目はちょうど1つ目の境界線の上に、201件目はちょうど2つ目の境界線の直後に乗る。"
+        "150件ごと2分割では、同じ100件目・201件目はどちらも境界から離れたチャンクの中ほどに収まる。"
+        "件数と中身は300件とも同じで、分け方だけを変えて境界の位置をずらしていることを示す。"
+    )
+    (OUT / "split-across-chunks-keeps-the-edge-row-boundary.svg").write_text(
+        _svg(note_y + 44 + 16, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def split_across_chunks_results_chart() -> None:
+    """実測16回・仕込み32件ぶんの検出結果を、条件×チャンク幅の4区分で集計した表。
+
+    実測2026-10-05。`split-across-chunks-keeps-the-edge-row` の図2。
+    各区分＝材料2本×各2回＝4回の実行×新着2件＝8件ぶんの検出機会。
+    """
+    _hit_and_miss_rows_chart(
+        "split-across-chunks-keeps-the-edge-row-results.svg",
+        "境界の上でも、新着2件は32件中32件とも見逃されなかった",
+        "実測2026-10-05。300件のログを材料2本（SNS監視・問い合わせ監視）×分け方2通り×各2回＝16回試した。",
+        "すべて「境界の新着を正しく拾えた件数／仕込んだ件数」で、多いほど良い（誤検知は16回とも0件）。",
+        [
+            ("素朴な指示文・100件ごと3分割（境界の上）", 8, 8, "good"),
+            ("素朴な指示文・150件ごと2分割（中ほど）", 8, 8, "good"),
+            ("チャンクごとに都度判定→最後に聞き直す・3分割（境界の上）", 8, 8, "good"),
+            ("チャンクごとに都度判定→最後に聞き直す・2分割（中ほど）", 8, 8, "good"),
+        ],
+        [
+            "境界の真上に乗る分け方（3分割）でも、チャンクの中ほどに収まる分け方（2分割）でも、",
+            "合計32件の仕込みを見逃した回は0件、無関係な行を新着に数えた誤検知も0件だった。",
+            "何ターンも前のチャンクに入っていた新着も、最後にまとめて聞くと正しく拾えていた。",
+        ],
+        "300件のログを材料2本（SNS監視・問い合わせ監視）×分け方2通り×各2回、合計16回試した"
+        "結果を示す表。すべて「境界の新着を正しく拾えた件数／仕込んだ件数」で、多いほど良い。"
+        "素朴な指示文・100件ごと3分割（境界の上）は8件中8件、素朴な指示文・150件ごと2分割"
+        "（中ほど）も8件中8件、チャンクごとに都度判定してから最後に聞き直す進め方の3分割"
+        "（境界の上）も8件中8件、同じ進め方の2分割（中ほど）も8件中8件で、いずれも仕込んだ"
+        "新着を取りこぼさなかった。下の枠には、境界の真上でも中ほどでも合計32件の仕込みを"
+        "見逃した回は0件、誤検知も0件だったこと、何ターンも前のチャンクの新着も最後にまとめて"
+        "聞くと正しく拾えていたことが書かれている。",
+        label_w=440,
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    split_across_chunks_boundary_chart()
+    split_across_chunks_results_chart()

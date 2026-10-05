@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="358" viewBox="0 0 720 358" role="img" aria-label="300件のログに仕込んだ2件の新着（100件目・201件目）の位置を固定したまま、分け方を100件ごと3分割と150件ごと2分割の2通りに変えた図。100件ごと3分割では、100件目はちょうど1つ目の境界線の上に、201件目はちょうど2つ目の境界線の直後に乗る。150件ごと2分割では、同じ100件目・201件目はどちらも境界から離れたチャンクの中ほどに収まる。件数と中身は300件とも同じで、分け方だけを変えて境界の位置をずらしていることを示す。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="358"/>
+<text class="t-strong" x="18" y="26">同じ100件目・201件目でも、分け方を変えると境界の上に乗ったり外れたりする</text>
+<text class="t-sm" x="18" y="45">300件のログに仕込んだ新着2件（100件目・201件目）の位置は固定したまま、分け方だけを変えた。</text>
+<text class="t-sm" x="18" y="64">①は両方とも境界の真上、②は両方ともチャンクの中ほどに収まる。中身・件数はどちらも同じ300件。</text>
+<text class="t-xs" x="18" y="94">1件目</text>
+<text class="t-xs" x="678" y="94">300件目</text>
+<text class="t" x="18" y="104">① 100件ごとに3分割</text>
+<rect class="box-quiet" x="18.0" y="110" width="228.0" height="34"/>
+<text class="t-xs" x="132.0" y="131.0" text-anchor="middle">1〜100件目</text>
+<rect class="box" x="246.0" y="110" width="228.0" height="34"/>
+<text class="t-xs" x="360.0" y="131.0" text-anchor="middle">101〜200件目</text>
+<rect class="box-quiet" x="474.0" y="110" width="228.0" height="34"/>
+<text class="t-xs" x="588.0" y="131.0" text-anchor="middle">201〜300件目</text>
+<line class="line" x1="246.0" y1="106" x2="246.0" y2="148"/>
+<line class="line" x1="474.0" y1="106" x2="474.0" y2="148"/>
+<line x1="244.9" y1="100" x2="244.9" y2="154" stroke="#d92b2b" stroke-width="2" stroke-dasharray="3,3"/>
+<text class="t-bad" x="244.9" y="168.0" text-anchor="middle" style="font-weight:700">新着①</text>
+<text class="t-bad" x="244.9" y="182.0" text-anchor="middle" style="font-weight:700">100件目</text>
+<text class="t-bad" x="244.9" y="196.0" text-anchor="middle">（境界の上）</text>
+<line x1="475.1" y1="100" x2="475.1" y2="154" stroke="#d92b2b" stroke-width="2" stroke-dasharray="3,3"/>
+<text class="t-bad" x="475.1" y="168.0" text-anchor="middle" style="font-weight:700">新着②</text>
+<text class="t-bad" x="475.1" y="182.0" text-anchor="middle" style="font-weight:700">201件目</text>
+<text class="t-bad" x="475.1" y="196.0" text-anchor="middle">（境界の上）</text>
+<text class="t" x="18" y="196">② 150件ごとに2分割</text>
+<rect class="box-quiet" x="18.0" y="202" width="342.0" height="34"/>
+<text class="t-xs" x="189.0" y="223.0" text-anchor="middle">1〜150件目</text>
+<rect class="box" x="360.0" y="202" width="342.0" height="34"/>
+<text class="t-xs" x="531.0" y="223.0" text-anchor="middle">151〜300件目</text>
+<line class="line" x1="360.0" y1="198" x2="360.0" y2="240"/>
+<line x1="244.9" y1="192" x2="244.9" y2="246" stroke="#1a7f37" stroke-width="2" stroke-dasharray="3,3"/>
+<text class="t-good" x="244.9" y="260.0" text-anchor="middle" style="font-weight:700">新着①</text>
+<text class="t-good" x="244.9" y="274.0" text-anchor="middle" style="font-weight:700">100件目</text>
+<text class="t-good" x="244.9" y="288.0" text-anchor="middle">（中ほど）</text>
+<line x1="475.1" y1="192" x2="475.1" y2="246" stroke="#1a7f37" stroke-width="2" stroke-dasharray="3,3"/>
+<text class="t-good" x="475.1" y="260.0" text-anchor="middle" style="font-weight:700">新着②</text>
+<text class="t-good" x="475.1" y="274.0" text-anchor="middle" style="font-weight:700">201件目</text>
+<text class="t-good" x="475.1" y="288.0" text-anchor="middle">（中ほど）</text>
+<rect class="box-accent" x="18" y="298" width="684" height="44" rx="6"/>
+<text class="t-accent" x="34" y="325">件数・中身は同じまま、チャンク幅だけを振って境界の位置をずらす実験。</text>
+</svg>
