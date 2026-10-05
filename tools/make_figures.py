@@ -30761,3 +30761,119 @@ def split_across_chunks_results_chart() -> None:
 if __name__ == "__main__":
     split_across_chunks_boundary_chart()
     split_across_chunks_results_chart()
+
+
+def bare_prohibition_outcome_chart() -> None:
+    """3条件（禁止なし／禁止だけ／禁止＋行き先）で、仕込んだ禁句（週3の体調不良・
+    週4の残業）が最終的にどこへ行ったかを3週ぶん並べた図。
+
+    実測2026-10-05。`bare-prohibition-holds-but-erases-the-row` の図1。
+    禁止なしの数字は `weekly-report-loop-without-drift`（2026-08-14実測）の指示文1から、
+    禁止だけ・禁止＋行き先はこの記事で新たに実測した。
+    """
+    rows = [
+        ("禁止なし（元の指示文）", [
+            ("週3「体調不良」", "本文に書かれた", "box-bad", "t-bad"),
+            ("週4「残業」", "本文に書かれた", "box-bad", "t-bad"),
+        ]),
+        ("禁止だけ・行き先なし（この記事）", [
+            ("週3「体調不良」", "跡形もなく消えた", "box-quiet", "t"),
+            ("週4「残業」", "跡形もなく消えた", "box-quiet", "t"),
+        ]),
+        ("禁止＋行き先あり（前作の対策）", [
+            ("週3「体調不良」", "5.に残った", "box-good", "t-good"),
+            ("週4「残業」", "5.に残った", "box-good", "t-good"),
+        ]),
+    ]
+    label_w = 250
+    item_w = 210
+    col_x = 18 + label_w
+    row_h = 30
+    group_gap = 8
+    top = 104
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "禁止だけでも本文には漏れない。ただし行き先が無いと、その行は消えてしまう</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ2つの禁句（週3の体調不良・週4の残業）が、3つの指示文でどこへ行ったかを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同じ週報ループを週3・週4それぞれ2回ずつ＝各条件4回試し、ここでは4回とも一致した結果だけを1行で示す。</text>\n",
+    ]
+
+    y = top
+    for group_label, items in rows:
+        parts.append(f'<text class="t-strong" x="18" y="{y + 10}">{_esc(group_label)}</text>\n')
+        y += 20
+        for item_label, outcome, klass, tcls in items:
+            parts.append(f'<text class="t-sm" x="34" y="{y + 19}">{_esc(item_label)}</text>\n')
+            parts.append(
+                f'<rect class="{klass}" x="{col_x}" y="{y}" width="{item_w}" height="24" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcls}" x="{col_x + item_w / 2:.1f}" y="{y + 17}" '
+                f'text-anchor="middle" style="font-weight:700">{_esc(outcome)}</text>\n'
+            )
+            y += row_h
+        y += group_gap
+
+    y += 4
+    box_h = 48
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "禁止だけでも「本文に漏れる」事故は4回とも0件まで減った。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "ただし行き先（5.）が無いと、その行自体がどこにも残らず消える。</text>\n"
+    )
+    y += box_h + 16
+
+    alt = (
+        "3つの指示文（禁止なし・禁止だけで行き先なし・禁止と行き先の両方あり）で、"
+        "仕込んだ2つの禁句（週3の体調不良による半休・週4の残業の増加）が最終的にどこへ"
+        "行ったかを示す図。禁止なしの元の指示文では、週3の体調不良も週4の残業も本文の"
+        "見出しにそのまま書かれた。禁止だけで行き先が無い指示文では、週3の体調不良も"
+        "週4の残業も、本文のどこにも書かれず跡形もなく消えた。禁止と行き先の両方がある"
+        "指示文では、週3の体調不良も週4の残業も「5. 私が決める行」に残った。週3・週4それぞれ2回ずつ、"
+        "各条件4回ずつ試し、4回とも同じ結果だった。"
+    )
+    (OUT / "bare-prohibition-holds-but-erases-the-row-outcome.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def bare_prohibition_diagnosis_chart() -> None:
+    """消えた行を「メモと週報を並べて、どこにも無い行を挙げて」で見つけられるかの実測結果。
+
+    実測2026-10-05。`bare-prohibition-holds-but-erases-the-row` の図2。
+    """
+    _hit_and_miss_rows_chart(
+        "bare-prohibition-holds-but-erases-the-row-diagnosis.svg",
+        "消えた行は、メモと週報を並べ直すと4回とも見つかった",
+        "実測2026-10-05。禁止だけ・行き先なしの指示文で消えた週3・週4の禁句を、それぞれ2回ずつ確認。",
+        "「メモにあるのに週報のどこにも無い行」を正しく1件だけ挙げられた回数／試した回数。",
+        [
+            ("週3「体調不良」を挙げられたか", 2, 2, "good"),
+            ("週4「残業」を挙げられたか", 2, 2, "good"),
+        ],
+        [
+            "禁止だけの指示文で消えた行は、別の会話で「メモと週報を並べて、どこにも無い行を",
+            "挙げて」と聞き直すと、4回とも過不足なく1件だけ見つかった。消えたことに気づく",
+            "手段はあるが、その手段を自分から使わない限り、消えたことにも気づけない。",
+        ],
+        "消えた行を「メモと週報を並べて、どこにも無い行を挙げて」という指示文で見つけられるか"
+        "を実測した結果を示す表。週3の「体調不良」を正しく挙げられたかは2回中2回、週4の"
+        "「残業」を正しく挙げられたかも2回中2回で、どちらも全部成功した。下の枠には、禁止"
+        "だけの指示文で消えた行は、別の会話でメモと週報を並べて聞き直すと4回とも過不足なく"
+        "1件だけ見つかったこと、消えたことに気づく手段はあるが自分から使わない限り気づけない"
+        "ことが書かれている。",
+        label_w=360,
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    bare_prohibition_outcome_chart()
+    bare_prohibition_diagnosis_chart()

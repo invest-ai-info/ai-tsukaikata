@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="444" viewBox="0 0 720 444" role="img" aria-label="3つの指示文（禁止なし・禁止だけで行き先なし・禁止と行き先の両方あり）で、仕込んだ2つの禁句（週3の体調不良による半休・週4の残業の増加）が最終的にどこへ行ったかを示す図。禁止なしの元の指示文では、週3の体調不良も週4の残業も本文の見出しにそのまま書かれた。禁止だけで行き先が無い指示文では、週3の体調不良も週4の残業も、本文のどこにも書かれず跡形もなく消えた。禁止と行き先の両方がある指示文では、週3の体調不良も週4の残業も「5. 私が決める行」に残った。週3・週4それぞれ2回ずつ、各条件4回ずつ試し、4回とも同じ結果だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="444"/>
+<text class="t-strong" x="18" y="26">禁止だけでも本文には漏れない。ただし行き先が無いと、その行は消えてしまう</text>
+<text class="t-sm" x="18" y="45">同じ2つの禁句（週3の体調不良・週4の残業）が、3つの指示文でどこへ行ったかを並べた。</text>
+<text class="t-sm" x="18" y="64">同じ週報ループを週3・週4それぞれ2回ずつ＝各条件4回試し、ここでは4回とも一致した結果だけを1行で示す。</text>
+<text class="t-strong" x="18" y="114">禁止なし（元の指示文）</text>
+<text class="t-sm" x="34" y="143">週3「体調不良」</text>
+<rect class="box-bad" x="268" y="124" width="210" height="24" rx="4"/>
+<text class="t-bad" x="373.0" y="141" text-anchor="middle" style="font-weight:700">本文に書かれた</text>
+<text class="t-sm" x="34" y="173">週4「残業」</text>
+<rect class="box-bad" x="268" y="154" width="210" height="24" rx="4"/>
+<text class="t-bad" x="373.0" y="171" text-anchor="middle" style="font-weight:700">本文に書かれた</text>
+<text class="t-strong" x="18" y="202">禁止だけ・行き先なし（この記事）</text>
+<text class="t-sm" x="34" y="231">週3「体調不良」</text>
+<rect class="box-quiet" x="268" y="212" width="210" height="24" rx="4"/>
+<text class="t" x="373.0" y="229" text-anchor="middle" style="font-weight:700">跡形もなく消えた</text>
+<text class="t-sm" x="34" y="261">週4「残業」</text>
+<rect class="box-quiet" x="268" y="242" width="210" height="24" rx="4"/>
+<text class="t" x="373.0" y="259" text-anchor="middle" style="font-weight:700">跡形もなく消えた</text>
+<text class="t-strong" x="18" y="290">禁止＋行き先あり（前作の対策）</text>
+<text class="t-sm" x="34" y="319">週3「体調不良」</text>
+<rect class="box-good" x="268" y="300" width="210" height="24" rx="4"/>
+<text class="t-good" x="373.0" y="317" text-anchor="middle" style="font-weight:700">5.に残った</text>
+<text class="t-sm" x="34" y="349">週4「残業」</text>
+<rect class="box-good" x="268" y="330" width="210" height="24" rx="4"/>
+<text class="t-good" x="373.0" y="347" text-anchor="middle" style="font-weight:700">5.に残った</text>
+<rect class="box-accent" x="18" y="372" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="392">禁止だけでも「本文に漏れる」事故は4回とも0件まで減った。</text>
+<text class="t-accent" x="34" y="410">ただし行き先（5.）が無いと、その行自体がどこにも残らず消える。</text>
+</svg>
