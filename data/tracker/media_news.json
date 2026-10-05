@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-05T22:41:35.985615+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-05T22:15:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは、生成AI「Gemini」で、プランごとに利用できるAIモデルを見直すとヘルプページで明らかにした。無料ユーザーは10月9日から、これまで使えた「Flash」と「Pro」が使えなくなり、速度を重視した「Flash-Lite」のみ利用できるようになる。対象は、個人のGoogleアカウントでGeminiアプリを使う場合だ。",
+      "title": "Gemini無料版、10月9日から「Flash-Lite」のみに",
+      "uid": "1055d5694e229ac5",
+      "url": "https://japan.cnet.com/article/35253255/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-05T22:41:35.985615+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-05T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ドイツのAIスタートアップ企業Aleph Alphaは、ドイツ統一の日にあたる2026年10月3日に新たな言語モデル「Kolibri」を発表しました。 続きを読む...",
+      "title": "無料で国のミッションクリティカル作業のために構築された主権AIモデル「Kolibri」、公共行政・産業・航空宇宙などの規制分野での使用が前提でオープンソースなだけでなく構築過程も透明化",
+      "uid": "1bea0ea64a410ca9",
+      "url": "https://gigazine.net/news/20261006-kolibri/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-05T22:41:35.985615+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-05T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIのトークン単価が下がり続けてきたにもかかわらず、企業が支払うAIの請求額は増えている――。気付かないうちに膨らむ「トークン浪費」がなぜ起きるのかを考えます。",
+      "title": "「トークン単価は8割下がった。なのに請求額は増えた」――その“見えないAI浪費”の正体",
+      "uid": "7686c5a8b583998b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/06/news004.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-05T16:05:41.951020+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2363,42 +2399,6 @@
       "uid": "6266a4fcf8474b43",
       "url": "https://ai.watch.impress.co.jp/docs/news/2144044.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-29T08:36:30.590774+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-29T03:26:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが2026年10月に予定していた「GPT-6.1 Astra」のリリース計画を中止したことがわかりました。自社の安全基準を十分に満たしていないと判断したためだそうです。 続きを読む...",
-      "title": "OpenAIが「GPT-6.1 Astra」の一般公開を中止、安全基準を満たさないため",
-      "uid": "e61831064147b868",
-      "url": "https://gigazine.net/news/20260929-openai-abandons-plan-to-release-gpt-6-1-astra/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-29T08:36:30.590774+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-09-29T03:23:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "豊田自動織機は9月29日、金属が破損した原因を破断面から推定する「破面解析」において、AIを活用した自動解析技術を発表した。",
-      "title": "豊田自動織機、AIで金属の破面解析を自動化。解析工程が最大90％短縮",
-      "uid": "43ba585b9afd22de",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2144027.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-09-29T08:36:30.590774+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-29T03:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "生成AIが作成した要約に誤った情報が含まれていると、読んだ人は元の映像を自分で見ていたにもかかわらず、誤情報に沿って出来事を思い出してしまう可能性があることをジョージタウン大学とワシントン大学の研究チームが報告しました。 続きを読む...",
-      "title": "AIの間違った要約を読むと「自分で見た出来事」まで間違って記憶することが実験で判明",
-      "uid": "b6b629c2e87f3d6d",
-      "url": "https://gigazine.net/news/20260929-misleading-ai-generated-summaries/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

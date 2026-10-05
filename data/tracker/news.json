@@ -481,6 +481,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-10-05T22:41:35.985615+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-09-25T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Wayfair uses OpenAI models to improve ecommerce support and product catalog accuracy, automating ticket triage and enhancing millions of product attributes at scale.",
+      "summary_ja": "WayfairがOpenAIを使い顧客対応と商品情報の精度を高めた。\n問い合わせの自動振り分けが可能になった。\n数百万の商品情報も正確に修正・強化できる。",
+      "summary_source": "gemini",
+      "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
+      "uid": "1e2f7f82ac897ed0",
+      "url": "https://openai.com/index/wayfair",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-09-24T19:13:34.436880+00:00",
       "importance": "minor",
       "label": "Claude Code",
