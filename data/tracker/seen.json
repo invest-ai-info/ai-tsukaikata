@@ -45,41 +45,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-27T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-05T15:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-      "title": "Our approach to EU text provenance rules",
-      "uid": "170cf84006975a5c",
-      "url": "https://openai.com/index/eu-text-provenance",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-05T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-      "title": "Building advertising for the way people use AI",
-      "uid": "efd76f1c25b5cfee",
-      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-09-25T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Wayfair uses OpenAI models to improve ecommerce support and product catalog accuracy, automating ticket triage and enhancing millions of product attributes at scale.",
-      "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
-      "uid": "1e2f7f82ac897ed0",
-      "url": "https://openai.com/index/wayfair",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
