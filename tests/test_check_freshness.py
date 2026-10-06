@@ -788,6 +788,36 @@ def test_every_run_of_the_day_is_checked_not_just_the_first():
     assert len(problems) == 1 and "★91" in problems[0]
 
 
+def test_numbered_measurement_lines_count_as_the_field():
+    """番号付き（21:00 の副業枠が1晩に複数本を実測するときの書き方）も欄として読む。
+    2026-09-30・10-01 の夜をこれで誤報し、Writer Watch が5日連続で赤だった。"""
+    log = ("# レシピ担当の日次ログ\n\n## 記録\n\n"
+           "### 2026-10-01 21:00（副業枠）\n- 公開: 3本\n"
+           f"- 実測1（H29・追記2つ）: {_OK}\n"
+           f"- 実測2（H30・消費税の当てはめ先）: {_OK}\n\n")
+    assert writer_measurement_gaps(log, date(2026, 10, 6)) == []
+
+
+def test_environment_blockage_on_a_numbered_line_is_detected():
+    """🚨 番号付きの行に書かれた ❌環境 も★91として鳴らす（以前は欄ごと見えていなかった）。"""
+    log = ("# レシピ担当の日次ログ\n\n## 記録\n\n"
+           "### 2026-10-01 21:00（副業枠）\n- 公開: 1本\n"
+           f"- 実測1（H29）: {_OK}\n"
+           "- 実測2（H30）: ❌環境 — 別セッションを立てられなかった\n\n")
+    problems = writer_measurement_gaps(log, date(2026, 10, 1))
+    assert len(problems) == 1 and "★91" in problems[0]
+
+
+def test_prose_lines_starting_with_measurement_are_not_the_field():
+    """「- 実測の結果、…:」のような散文は欄ではない。欄が無い夜はそのまま鳴る。"""
+    log = ("# レシピ担当の日次ログ\n\n## 記録\n\n"
+           "### 2026-10-01\n- 公開: 1本\n"
+           "- 実測の結果、**見立ては外れた**: 詳細は記事\n"
+           "- 実測中に12番を踏んだ: 直した\n\n")
+    problems = writer_measurement_gaps(log, date(2026, 10, 1))
+    assert len(problems) == 1 and "実測" in problems[0]
+
+
 def test_writer_measurement_gaps_without_a_file_is_silent():
     """ファイルの不在は heartbeat 側の担当。ここで二重に鳴らさない。"""
     assert writer_measurement_gaps(None, date(2026, 8, 26)) == []
