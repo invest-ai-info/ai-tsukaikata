@@ -125,19 +125,6 @@
    "attempts": 0
   },
   {
-   "video_id": "qBBRRsH0rQc",
-   "title": "Yes, Jev Is Insane, But There's A Catch",
-   "url": "https://www.youtube.com/watch?v=qBBRRsH0rQc",
-   "published": "2026-09-22T09:32:13+00:00",
-   "channel_key": "two-minute-papers",
-   "channel_name": "Two Minute Papers",
-   "default_category": "tech",
-   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 Jev:\nhttps://typesafe.ai/blog/introducing-system-one-models-and-jev\n\nFull song: https://www.youtube.com/watch?v=4RtUJkjrKMI\n\nPrevious papers, implementations, models:\nhttps://huggingface.co/convaiinnovations/laya\nhttps://arxiv.org/abs/2503.23303\nhttps://huggingface.co/DeepMostInnovations/sales-conversion-model-reinf-learning\nhttps://huggingface.co/datasets/DeepMostInnovations/saas-sales-conversations\nhttps://arxiv.org/abs/2510.01237\nhttps://huggingface.co/blog/setfit\nhttps://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html\n\nSources:\nhttps://x.com/alexisgallagher/status/2100312082491322873?s=46\nhttps://x.com/tamarajtran/status/2100694549362553153?s=46\nhttps://x.com/maubaron/status/2100738237237002706?s=46\nhttps://x.com/elvissun/status/2100951347080421409?s=46\nhttps://x.com/completeskeptic/status/2099925684256899543?s=46\nhttps://x.com/completeskeptic/status/2099925685720760404?s=46\nhttps://x.com/filippkowalski/status/2100864984448147770?s=46\nhttps://x.com/egafni/status/2100770895325524242?s=46\nhttps://x.com/mizorewww/status/2101473552956555427\nhttps://x.com/miu21590/status/2101857866378362926?s=46\nhttps://x.com/atomic_chat_hq/status/2102160983409955244?s=46\nhttps://x.com/HugoDuprez/status/2100953089003921543?s=20\nhttps://x.com/heyxviraj/status/2102048070649405592?s=20\n\n🙏 We would like to thank our generous Patreon supporters who make Two",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "nPeYcT272eg",
    "title": "注目AIニュース21選〜Claude Opus 5.5、GPT-6 sol＆luna、Copilot大規模リニューアル、Grok4.7など",
    "url": "https://www.youtube.com/watch?v=nPeYcT272eg",
@@ -440,58 +427,6 @@
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
    "description": "Opus 5.5 is faster than Opus 5, better at telling you what it did, and 20% cheaper per token. On Pro, Max, and Team plans your limits go 25% further. This is what that looks like in daily Claude Code work: the same bug fixed side by side, what each model does to your limits, and when medium effort is enough.\n\nRead more at https://anthropic.com/claude-opus-5-5",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "1f13Bl1sYkw",
-   "title": "Introducing Claude Opus 5.5",
-   "url": "https://www.youtube.com/watch?v=1f13Bl1sYkw",
-   "published": "2026-09-22T16:32:25+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "For most tasks, Claude Opus 5.5 performs at the level of Claude Fable 5.1, our most intelligent model. It writes more clearly and puts the most important information first, which makes it easier to work with over long sessions.\nIt’s also faster and more efficient than Opus 5, so you can hand it your bigger, more ambitious work.\nOpus 5.5 is available everywhere today. To celebrate, we’re raising usage limits on Pro, Max, and Team plans, so there’s more room for you to explore what it can do.\n\nRead more at https://anthropic.com/claude-opus-5-5",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "K-pgPNFcAj4",
-   "title": "GPS, explained by Claude Opus 5.5",
-   "url": "https://www.youtube.com/watch?v=K-pgPNFcAj4",
-   "published": "2026-09-22T16:32:22+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "The satellites never hear a word from your phone. Each one broadcasts the time from an atomic clock, over and over, and your phone does the rest: four signals, four distances, and one solve for both where it is and what time it really is. Claude built the interactive page shown here, a true simulation of the real satellites from the published GPS almanac, not a live radio capture.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "Ov-B6K1EsaI",
-   "title": "Claude Opus 5.5 rebuilds Earthrise in 3D, down to the second",
-   "url": "https://www.youtube.com/watch?v=Ov-B6K1EsaI",
-   "published": "2026-09-22T16:32:18+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "The Moon's jagged horizon in the 1968 Earthrise photo, and the Earth's place beside it, only look like that from one spot on Apollo 8's path, and that spot gives away the moment. Claude traced 2,781 points along the horizon, matched them against lunar elevation data, and worked out the time and place: 16:39:39 UTC on Dec. 24, 1968, about 69 miles above the Moon. Then it rebuilt the scene in 3D and blinked it against the original.\n\nPhoto: NASA, Apollo 8 frame AS08-14-2383 (film scan: NASA/JSC/Arizona State University). Data: NASA LRO LOLA · SLDEM2015 (LOLA + JAXA Kaguya TC) · LROC WAC · NASA GRAIL GL0420A · JPL NAIF · USNO · Apollo 8 Mission Report & Suppl. 1 · NASA SP-201 · NASA TN D-6082 · NASA Earth Observatory Blue Marble · ISCCP (NOAA NCEI) · GEBCO. No endorsement by NASA or any other data provider is implied.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "lCR9epzSNGc",
-   "title": "Claude Opus 5.5 builds daydreams that hold together",
-   "url": "https://www.youtube.com/watch?v=lCR9epzSNGc",
-   "published": "2026-09-22T16:32:15+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "Describe a model or drop in a photo, and Claude designs it in bricks where every piece is actually connected, then you get the full step-by-step manual. The app's engine turns the design into parts and checks every connection, because studs grip and side-by-side contact holds nothing. The 2,874-piece Canal Clock Square takes 487 steps across 498 pages, with 15,880 stud joints and not one flagged as weak. Some sections of the demo have been accelerated for time.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -893,19 +828,6 @@
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
    "description": "◆動画の説明\n(2026年)9月23日、OpenAIは\n(2026年)9月上旬に公開した同社の最上位AIモデル\n「GPT‑6 Astra」の技術をもっと速く・安く使えるようにした\n上位モデル「GPT-6 Sol」と\n軽量モデル「GPT-6 Luna」を公開しました\nこれらのモデルは、Astraと同じ手法で訓練されており\nタスクの処理・正確さ・コーディング\nパソコンの操作・安全性の進化を\n前のモデル(GPT-5.6 Sol)の半額という\n手頃な価格で使うことができます\n\n今回の動画では\n第一章：GPT-6 Sol・Lunaの概要\n第二章：GPT-6 Solの使い方と活用事例\nの二章構成で、OpenAIの公開した最新AIモデル\n「GPT-6 Sol」と「GPT-6 Luna」の概要\nAIエージェント「Codex」と「ChatGPTワーク」で\nGPT-6 Sol(Luna)を使う方法と\nGPT-6 Solを使った簡単な活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:41　動画のもくじ\n1:24　第一章：GPT-6 Sol・Lunaの概要\n1:51　①、GPT-6 SolとLunaの特徴\n3:18　②、GPT-6 SolとLunaのAIベンチマーク\n4:56　③、GPT-6 SolとLunaの安全性\n5:35　第二章：GPT-6 Solの使い方と活用事例\n5:53　GPT-6 SolとGPT-6 Lunaを使う方法\n7:11　GPT-6 Solの活用事例\n8:56　エンディングムービー\n\n◆動画の中で紹介している内容\nCodex、ChatGPTワーク、Claude Opus 5(max)、GPT-5.6\nClaude Fable 5、Anthropic\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://openai.com/index/introducing-gpt-6-sol-and-luna/\nhttps://openai.com/ja-JP/index/gpt-6-astra/\nhttps://openai.com/ja-JP/api/\nhttps://developers.openai.com/api/docs/models/gpt-6-sol\nhttps://developers.openai.com/api/docs/pricing\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claud",
-   "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "cARZ48ija0M",
-   "title": "安い・速い・賢いSpaceXAIの新AIモデル「Grok 4.7」の実力は？ ～GPT-5.6 Sol超えの性能をCursorで徹底検証～",
-   "url": "https://www.youtube.com/watch?v=cARZ48ija0M",
-   "published": "2026-09-22T09:06:03+00:00",
-   "channel_key": "ai-daigaku",
-   "channel_name": "AI大学【AI&ChatGPT最新情報】",
-   "default_category": "news",
-   "description": "◆動画の説明\n(2026年)9月22日、SpaceXAIは\n同社の最上位AIモデルの最新版「Grok 4.7」を公開しました\nGrok 4.7は、コーディングや知識作業の性能を強化し\n難しいタスクへの対応力や自己チェック能力\nさらに安全性も向上したモデルで\n価格(API)と処理速度は\n前のモデルの「Grok 4.6」と同じながら\n同じクラスのAIモデルと比べて\n約2倍高速で半分の価格で提供されており\nAIモデルの有名ベンチマークサイトでは\n全てのAIモデルの中で6位につけており\n性能とコストの両面で注目を集めています\n\n今回の動画では\n第一章：Grok 4.7の概要\n第二章：Grok 4.7の使い方と活用事例\nの二章構成で、SpaceXAIの公開したAIモデル\n「Grok 4.7」の概要、Grok 4.7を使えるツール\nAIエージェント「Cursor」を使った簡単な活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:49　動画のもくじ\n1:23　第一章：Grok 4.7の概要\n1:47　①、Grok 4.7の特徴\n2:54　②、Grok 4.7のAIベンチマーク\n4:24　③、Grok 4.7の安全対策\n5:24　第二章：Grok 4.7の使い方と活用事例\n5:37　Grok 4.7を使う方法\n6:34　Grok 4.7の活用事例\n8:33　エンディングムービー\n\n◆動画の中で紹介している内容\nGrok 4.6、Grok Bot、Anthropic、GPT-5.6 Sol、Grok Build\nAnthropic、Claude Fable 5.1、Grok 4.8、Grok 5.0\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://x.ai/news/grok-4-7\nhttps://docs.x.ai/developers/grok-4-7\nhttps://artificialanalysis.ai/\nhttps://media.x.ai/v1/website/4p7card-5eccc980.pdf\nhttps://x.com/elonmusk/status/2099458047408013751\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイン、Hooks、Subage",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
    "status": "pending",
    "attempts": 0
@@ -1745,91 +1667,222 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-06T00:17:53.329419+00:00"
+  },
+  {
+   "video_id": "9HbWnA7WmEY",
+   "title": "ChatGPTの「dots」は何が凄い？「AI秘書」から「AI首席補佐官」へ、その裏側を考察",
+   "url": "https://www.youtube.com/watch?v=9HbWnA7WmEY",
+   "published": "2026-10-06T12:00:06+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ChatGPTの常時稼働エージェントdotsは、頼まなくても自律的にメールの誤り指摘や助言を行うと説明している。",
+    "単なる秘書にとどまらず、多数の論点や状況を整理し優先順位をつけて動くAI首席補佐官のような存在だと述べている。",
+    "ChatGPTのスペース機能を使い、dotsが把握している論点や情報更新ログを書き出させて裏側の理解を深める方法を紹介している。"
+   ],
+   "for_whom": "ChatGPTの最新エージェント機能の活用法や業務への組み込み方を知りたい人",
+   "caution": "動画後半および概要欄において、有料ハンズオン研修や公式LINE登録への誘導が行われている点にご留意ください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T18:35:19.660274+00:00"
+  },
+  {
+   "video_id": "sh_RH4Q8h-Q",
+   "title": "筆者が語る『ひとりビジネスのためのAIエージェント活用術　爆速でタスクを片付ける！「最強チーム」のつくり方』",
+   "url": "https://www.youtube.com/watch?v=sh_RH4Q8h-Q",
+   "published": "2026-10-06T07:08:00+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "R4KAdlOaRzk",
+   "title": "筆者が語る『ひとりビジネスのためのAIエージェント活用術　爆速でタスクを片付ける！「最強チーム」のつくり方』",
+   "url": "https://www.youtube.com/watch?v=R4KAdlOaRzk",
+   "published": "2026-10-06T07:06:00+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "fL1PpH0wftM",
+   "title": "【いけとも×木内翔大】AIに任せて、自分にしかできない仕事に時間を使う｜10/5(月)19:00〜",
+   "url": "https://www.youtube.com/watch?v=fL1PpH0wftM",
+   "published": "2026-10-05T23:10:08+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "7kRUMV9WMs0",
+   "title": "【これは新しい】Cua Spaceを使えば、「エージェント専用デスクトップ」が作成可！実際に使ってみた",
+   "url": "https://www.youtube.com/watch?v=7kRUMV9WMs0",
+   "published": "2026-10-06T10:05:36+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AIエージェント専用の仮想デスクトップ環境を構築・管理できるツール「Cua Space」の機能や使い方を解説している。",
+    "人間とAIが同一デスクトップ上で操作できるマルチカーソル機能や、アプリ環境を転送するテレポート機能を紹介している。",
+    "余剰PCを活用してAIに並行作業をさせられる利点を示す一方、通信の安全性や動作の安定性に関する懸念点にも言及している。"
+   ],
+   "for_whom": "AIエージェントにPC操作を任せて作業を自動化・並行化したいエンジニアや会社員。",
+   "caution": "動画終盤および概要欄にて、有料のnoteメンバーシップや限定勉強会への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T18:35:19.660274+00:00"
+  },
+  {
+   "video_id": "idJQMJwHtyM",
+   "title": "Claude for Google Workspace™",
+   "url": "https://www.youtube.com/watch?v=idJQMJwHtyM",
+   "published": "2026-10-06T17:02:37+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Google Docs、Sheets、Slidesの各アプリ内で直接Claudeを利用できる拡張機能が発表されたと紹介している。",
+    "Google Docsでの文章整形やSheetsでのデータ集計・表作成、Slidesでのプレゼン作成を指示一つで行う様子を示している。",
+    "SalesforceやGoogle ドライブなどのコネクタと連携し、外部データを参照して作業を進められると説明している。"
+   ],
+   "for_whom": "Google Workspaceでの文書作成や表計算、スライド作成をAIで効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T18:35:19.660274+00:00"
+  },
+  {
+   "video_id": "bQPU6UJ4iCw",
+   "title": "13 Businesses for the Age of AI",
+   "url": "https://www.youtube.com/watch?v=bQPU6UJ4iCw",
+   "published": "2026-10-06T14:30:39+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-10-06T18:35:19.660274+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "AIエージェント時代に成立する事業として、AIネイティブ受託サービスや特定分野向けハーネス開発など13のビジネスを紹介している。",
+    "独自データセットの保有や計算資源・エネルギー、セキュリティなど、AIが依存する希少な資源に大きな機会があると説明している。",
+    "オフライン施設やファン向けハードウェアなど、エージェントでは代替できない物理的な体験や資産を持つ事業も有望だと主張している。"
+   ],
+   "for_whom": "AIエージェント時代に起業や新規事業を立ち上げたい人",
+   "caution": "紹介されているビジネスアイデアには多額の設備投資や専門技術が必要なものが含まれます。また概要欄にリサーチツールへの誘導があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T18:35:19.660274+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-06T06:49:07.865532+00:00",
+   "last_ok": "2026-10-06T18:35:19.660274+00:00",
    "fail_streak": 0
   }
  }
