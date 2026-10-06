@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-06T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+      "summary_ja": "アトラシアンとOpenAIが提携を拡大しました。\n最新のAI技術で企業知識を繋ぎ、\nチームの計画・構築・成果を支援します。",
+      "summary_source": "gemini",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "uid": "391bc5cb0a732780",
+      "url": "https://openai.com/index/atlassian-partnership",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-06T10:24:48.047911+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5381,18 +5395,6 @@
       "uid": "614860175df08f82",
       "url": "https://tech.preferred.jp/ja/blog/plamo_3_120b_distillation_cpt/",
       "vendor": "Preferred Networks"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Grok 新モデル",
-      "published": "2026-07-08T15:05:54+00:00",
-      "source_id": "openrouter-xai",
-      "summary": "Grok 4.5 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
-      "title": "x-ai/grok-4.5",
-      "uid": "451d82648427a5d8",
-      "url": "https://openrouter.ai/x-ai/grok-4.5",
-      "vendor": "xAI"
     }
   ]
 }

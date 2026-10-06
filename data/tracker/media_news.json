@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-10-06T15:47:53+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトは9月30日付けでリリースされたVisual Studio Code 1.140（以下、VS Code）で、複数のAIベンダから提供されているAIモデルをオーケストレーションすることでより高品質で低コストを実現するという「Hy...",
+      "title": "マイクロソフト、VS CodeにAIモデルのオーケストレーションで高品質低コストなAIを実現する「HydraFusion」をプレビュー実装",
+      "uid": "b04bdd4f922545d9",
+      "url": "https://www.publickey1.jp/blog/26/vs_codeaiaihydrafusion.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-10-06T15:43:31+00:00",
+      "source_id": "media-publickey",
+      "summary": "米調査会社のガートナーは、ベンダーのFDE（フォワードデプロイドエンジニアあるいはフォワードデプロイドエンジニアリング）によって開発されたAIエージェントの70％が2028年までに企業に使われずに放棄されるだろう（Gartner Predi...",
+      "title": "FDE（フォワードデプロイドエンジニアリング）によって開発されたAIエージェントの7割は使われず、FDEの名前で単なるコンサルティングが販売されるようになる危険が高まるとガートナーが予測",
+      "uid": "4febdf69e6f918c6",
+      "url": "https://www.publickey1.jp/blog/26/fdeai7fde.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-06T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI企業のTavusが、リアルタイムの映像と音声で人間と対話するAIモデル「Griffin」を発表しました。研究プレビュー版「Griffin-Lite」を使った実験では、1分間のライブビデオ通話に参加した54人のうち26人、約48％が、会話相手のAIを実在する人間だと判断しました。 続きを読む...",
+      "title": "ビデオ通話で参加者の48％が人間だと誤認したAIモデル「Griffin」が登場、1枚の画像から顔や体の動きを映像で再現",
+      "uid": "72273f7d88571a8c",
+      "url": "https://gigazine.net/news/20261006-tavus-griffin/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-06T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ロサンゼルスのラジオ局で活用されているAIパーソナリティを事例に、アメリカの一部の地域でラジオにおけるAIの活用が加速していることを、ロサンゼルスの地元紙であるLos Angeles Timesが報じています。 続きを読む...",
+      "title": "ラジオでAIパーソナリティの活用が加速、労働組合や人間のパーソナリティからは不満の声",
+      "uid": "6b13922856378ab6",
+      "url": "https://gigazine.net/news/20261006-ai-co-host-dj-radio/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-06T11:42:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Googleが2026年10月9日から、個人の無料ユーザーが利用できるGeminiを軽量高速モデルの「Flash-Lite」のみに制限します。サブスクリプションの「AI Plus」ならその上位の「Flash」まで利用可能で、Gemini Proの利用には「AI Pro」か「AI Ultra」への加入が必要です。 続きを読む...",
+      "title": "Googleが無料・下位プランで使えるGeminiのモデルを制限",
+      "uid": "fa111b81173e6b9b",
+      "url": "https://gigazine.net/news/20261006-google-gemini-ai-subscription/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-06T11:05:20+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "三井不動産は、熊谷組、ゲットワークス（以下、事業者）と共同し、神戸市が2005年9月まで造成用の土砂運搬用として活用していたトンネル（以下、既存トンネル）を活用し、日本初となる地中型データセンターの開発に着手する。",
+      "title": "日本初、トンネル跡地を活用した20MW規模の地中型データセンター開発 三井不動産ら3事業者が着手、次世代インフラ拠点を2027年末運用開始",
+      "uid": "cd432d0c200474a6",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2146154.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-06T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "試験中のAIが外部の機関に不正アクセスを行うという事例が相次いでいます。こうしたAIは大抵、外部へのアクセスを遮断されている中で、独自のルートを見いだして不正な手段でアクセスを試みます。こうしたAIの痕跡を見つけ出すコミュニティが、いくつか発達しつつあります。 続きを読む...",
+      "title": "AIエージェントが暴走した記録をオンライン上で探し出し手がかりを追うコミュニティが発達しつつある",
+      "uid": "17143235e8f44053",
+      "url": "https://gigazine.net/news/20261006-ai-swarm-chasing-group/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-06T17:14:04.853635+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-06T10:47:25+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "チームみらいの安野貴博党首は、サイバー攻撃能力の高いAIモデルが拡散しているとの認識を示した。「データの漏えい事故も相次いでおり、対応を急ぐ必要がある」と指摘している。",
+      "title": "チームみらい安野氏「サイバー攻撃能力の高いAIモデルが拡散」　相次ぐ情報漏えい受け「対応を急ぐ必要がある」",
+      "uid": "8f776f030e9496e8",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/06/2000002065/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-06T10:24:48.047911+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2303,102 +2399,6 @@
       "uid": "3cd09e1a1afcb453",
       "url": "https://gigazine.net/news/20260930-anthropic-ai-existential-risk-to-humanity/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-09-30T06:46:49.248383+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-29T23:56:35+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "トランプ大統領はIT首脳らと昼食会を開き、行政機関で「人工知能（AI）」に代わり「超知能（SI）」の呼称使用を命じる大統領令に署名した。主要各社は自主的安全合意「White House Accord on Super Intelligence」に署名。米連邦政府は行政窓口サイト「America.gov」の創設も発表した。",
-      "title": "AI企業トップらと昼食会のトランプ米大統領、政府内で「AI」を「SI」と呼び替える大統領令に署名",
-      "uid": "3c66015794ebc72b",
-      "url": "https://www.itmedia.co.jp/news/article/2609/30/2000001871/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-09-29T23:15:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米OpenAIが「ChatGPT」の個人向け有料プラン「Pro」を再編した。これまで月額200ドルだったプランの料金は据え置く一方、主に「ChatGPT Work」や「Codex」で使える利用枠を従来の半分にする。同時に、さらに上位となる月額500ドルの「Pro 500」を新設した。",
-      "title": "OpenAI、「ChatGPT」のサブスクを再編　月200ドルプランは利用枠半減",
-      "uid": "f5b90a1c30174e5a",
-      "url": "https://japan.cnet.com/article/35253083/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-29T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIも子どもと同じで、適切な学習を繰り返して初めて育つ――。筆者が学生時代に携わった脳科学の実験を手掛かりに、AIを育てる条件と、IT負債の分析をAIに任せることの危うさ、AI向けデータセンター投資の落とし穴を論じる。",
-      "title": "AIは魔法の杖ではなく“子ども”だ　「ずる賢く」育つのを阻止するための3つのポイント",
-      "uid": "21dd7a3fb24b05a1",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/30/news017.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-09-29T22:52:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは9月29日（米国時間）、AIモデル「GPT-6 Sol」を改良した「GPT-6.1 Sol」を発表した。同社のソフトウェア開発評価では、上位モデル「GPT-6 Astra」と同等の性能を示したという。標準のAPI入力・出力料金はAstraの5分の1に設定した。",
-      "title": "OpenAI、「GPT-6.1 Sol」発表　Astraに迫る性能を5分の1の料金で",
-      "uid": "1e89fc3795b1ffbb",
-      "url": "https://japan.cnet.com/article/35253082/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-29T22:41:40+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、学習中のAIモデルが豪政府サイトへ不正アクセスした問題で、通知の遅れを認め謝罪した。ネットワーク制限の強化や最上位モデルの学習停止に加え、航空や原子力分野にならい学習前に安全性を体系的に検証する仕組みを導入する。豪議会の特別委員会にも出席し、一連の経緯を説明する。",
-      "title": "OpenAI、豪政府サイトへの不正アクセスで謝罪　最先端AI学習の安全指針も公開",
-      "uid": "b5af40c7ace3fe33",
-      "url": "https://www.itmedia.co.jp/news/article/2609/30/2000001869/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-29T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "社内の情報が複数の場所に分散していれば、従業員もAIも必要な情報にたどり着きにくい。マネーフォワードは約2800人規模のグループでNotionを活用し、社内情報を集約した。「AIに聞けば分かる」環境づくりをどう進めているのか。",
-      "title": "マネーフォワード、2800人の情報をNotionに集約　「AIに聞けば分かる」環境へ",
-      "uid": "989f5be7ed54ca79",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/30/2000001856/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-29T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIの登場によって、半導体の進化が加速している。「ムーアの法則」に限界が見える中、半導体メーカーは新たな技術を次々に生み出している。果てなき性能向上、どうかなえるのか。",
-      "title": "AIがもたらした「半導体」の進化　光電融合、HBM、新トランジスタ――果てなき性能向上、どうかなえる？",
-      "uid": "d2da2ca1b23b2226",
-      "url": "https://www.itmedia.co.jp/business/articles/2609/30/news021.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T00:30:49.747979+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-29T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "社内チャットの使い方の変化から、従業員の退職の兆候を捉えられるのか。SlackやTeamsの利用ログと勤怠データから、従業員の変化を捉えるAIサービスが登場した。アンケートの回答ではなく、日々の行動に着目する仕組みとは。",
-      "title": "SlackやTeamsで「辞めそうな社員」が分かる？　退職予兆を探るAI登場",
-      "uid": "128cdb14cfda3f21",
-      "url": "https://kn.itmedia.co.jp/kn/article/2609/30/2000001811/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
