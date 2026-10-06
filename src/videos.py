@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 """data/videos/videos.json を読んで、/videos/（AI動画まとめ）に渡す形へ整える。
 
+ページは3段（2026-10-06・オーナー判断「長くて見づらい・過去の動画も見たい」）:
+  /videos/                 入口。分類ごとに最新 TOP_PER_SECTION 本（題とサムネだけ）
+  /videos/<分類>/           分類のページ。最新 PER_SECTION 本（要約つき）＋過去の月への入口
+  /videos/<分類>/<年-月>/   月のページ。その月の動画を全部（要約つき）
+入口・検索の行き先は分類のページ（入口の6本も検索に入る動画も、必ずそこに並んでいる）。
+
 載せるのは要約が済んだ動画（status=done）だけ。ファイルが無い・載せる動画が
 0本＝ページごと出さない（/ainews/ と同じ）。ファイルが壊れている・形が違う＝
 VideoError でビルドを止める（半端なページを公開しない）。
@@ -15,7 +21,8 @@ from pathlib import Path
 import yaml
 
 JST = timezone(timedelta(hours=9))
-PER_SECTION = 24
+PER_SECTION = 20        # 分類のページに並べる本数（＝サイト内検索に入る本数）
+TOP_PER_SECTION = 6     # 入口に並べる本数
 
 SECTIONS = (
     ("tech", "AI技術", "AIの仕組みや、ツールの使い方・設定・自動化の手順を解説している動画。"),
@@ -73,8 +80,43 @@ def _entry(video: dict, notes: dict[str, str]) -> dict:
     }
 
 
-def load_videos(path: Path, channels_path: Path, per_section: int = PER_SECTION) -> dict | None:
-    """/videos/ 用のデータ。載せる動画が無ければ None。"""
+def _months(key: str, items: list[dict]) -> list[dict]:
+    """新しい順に並んだ動画を、日本時間の月ごとに分ける（新しい月から）。"""
+    months: list[dict] = []
+    for entry in items:
+        published = entry["published"]
+        month_key = f"{published.year:04d}-{published.month:02d}"
+        if not months or months[-1]["key"] != month_key:
+            months.append({
+                "key": month_key,
+                "label": f"{published.year}年{published.month}月",
+                "url": f"/videos/{key}/{month_key}/",
+                "entries": [],
+            })
+        months[-1]["entries"].append(entry)
+    for month in months:
+        month["count"] = len(month["entries"])
+    return months
+
+
+def page_paths(videos: dict | None) -> tuple[str, ...]:
+    """/videos/ 以下のページの URL（sitemap 用）。動画が0本の分類のページは作らない。"""
+    if not videos:
+        return ()
+    paths = ["/videos/"]
+    for section in videos["sections"]:
+        if section["count"]:
+            paths.append(section["url"])
+            paths.extend(month["url"] for month in section["months"])
+    return tuple(paths)
+
+
+def load_videos(path: Path, channels_path: Path, per_section: int = PER_SECTION,
+                top: int = TOP_PER_SECTION) -> dict | None:
+    """/videos/ 用のデータ。載せる動画が無ければ None。
+
+    分類ごとに top（入口）・latest（分類のページ）・months（月のページ）・count を持つ。
+    """
     path = Path(path)
     if not path.exists():
         return None
@@ -93,7 +135,9 @@ def load_videos(path: Path, channels_path: Path, per_section: int = PER_SECTION)
 
     sections = []
     for key, label, lead in SECTIONS:
-        items = [e for e in entries if e["category"] == key][:per_section]
+        items = [e for e in entries if e["category"] == key]
         sections.append({"key": key, "label": label, "lead": lead,
-                         "entries": items, "count": len(items)})
+                         "url": f"/videos/{key}/",
+                         "top": items[:top], "latest": items[:per_section],
+                         "months": _months(key, items), "count": len(items)})
     return {"sections": sections, "total": len(entries)}

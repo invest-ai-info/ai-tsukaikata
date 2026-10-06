@@ -19,7 +19,11 @@ import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
-KEEP_DAYS = 45          # 公開から何日まで残すか
+# 載らない動画（skipped/failed）を公開から何日まで残すか。残すのは「もう見た」の記録＝
+# 同じ動画を要約待ちに戻さないため（merge が足すのは PENDING_DAYS 以内なので、それより長ければ足りる）。
+# ⚠️ 要約済み（done）は期限なしで残す＝過去の月のページ（/videos/<分類>/<年-月>/）に載せ続ける
+# （2026-10-06 オーナー判断「過去の動画も見れるようにしたい」）。1本 約1.3KB・1日7本ほどで、1年 約3MB
+KEEP_DAYS = 45
 PENDING_DAYS = 14       # 要約待ちのまま何日たったら諦めるか（溜まりすぎ防止）
 MAX_ATTEMPTS = 3
 DESCRIPTION_MAX = 1500  # 要約に渡す概要欄（要約が済んだら捨てる）
@@ -134,14 +138,18 @@ def mark_failed(video: dict, reason: str) -> None:
 
 
 def prune(data: dict, now: datetime, channel_keys: set[str] | None = None) -> int:
-    """古い動画・諦めた要約待ち・外したチャンネルの動画を消す。消した本数を返す。"""
+    """古い動画・諦めた要約待ち・外したチャンネルの動画を消す。消した本数を返す。
+
+    要約済み（done）は古くても消さない（過去の月のページに載せ続ける）。
+    チャンネルを channels.yml から外したときだけ、そのチャンネルの要約済みも消える。
+    """
     keep_after = now - timedelta(days=KEEP_DAYS)
     pending_after = now - timedelta(days=PENDING_DAYS)
     before = len(data["videos"])
 
     def keep(video: dict) -> bool:
         published = datetime.fromisoformat(video["published"])
-        if published < keep_after:
+        if video["status"] != "done" and published < keep_after:
             return False
         if video["status"] == "pending" and published < pending_after:
             return False

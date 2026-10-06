@@ -38,3 +38,49 @@
   {% endif %}
 </li>
 {% endmacro %}
+
+{# --- AI動画まとめ（/videos/・2026-10-06 に入口・分類・月の3段へ分けた） --- #}
+
+{% macro video_warning() %}
+<p class="video-warning">⚠️ 動画の中の収入・売上の金額は出演者の主張です。このサイトは確かめていません。有料講座や LINE 登録への誘導がある動画もあります。</p>
+{% endmacro %}
+
+{# 分類のページ・月のページの1本（要約つき）。id は入口と検索結果の飛び先 #}
+{% macro video_card(video) %}
+<li class="video-card" id="v-{{ video.video_id }}">
+  <a class="video-thumb" href="{{ video.url }}" rel="noopener"><img src="{{ video.thumbnail }}" alt="" width="320" height="180" loading="lazy"></a>
+  <div class="video-head">
+    <a class="video-title" href="{{ video.url }}" rel="noopener">{{ video.title }}</a>
+    <p class="video-meta">{{ video.channel_name }} ・ {{ video.date_label }}</p>
+  </div>
+  <div class="video-body">
+    <ul class="video-summary">
+      {% for line in video.summary %}
+      <li>{{ line }}</li>
+      {% endfor %}
+    </ul>
+    {% if video.for_whom %}
+    <p class="video-for">こんな人向け：{{ video.for_whom }}</p>
+    {% endif %}
+    {% if video.caution %}
+    <p class="video-caution">⚠️ {{ video.caution }}</p>
+    {% endif %}
+    {% if video.note %}
+    <p class="video-caution">⚠️ {{ video.note }}</p>
+    {% endif %}
+  </div>
+</li>
+{% endmacro %}
+
+{# 入口の1本（題とサムネだけ）。押すと分類のページの要約へ飛ぶ #}
+{% macro video_mini(video, href) %}
+<li class="video-mini">
+  <a class="video-mini-link" href="{{ href }}">
+    <img src="{{ video.thumbnail }}" alt="" width="320" height="180" loading="lazy">
+    <span class="video-mini-text">
+      <span class="video-mini-title">{{ video.title }}</span>
+      <span class="video-meta">{{ video.channel_name }} ・ {{ video.date_label }}</span>
+    </span>
+  </a>
+</li>
+{% endmacro %}

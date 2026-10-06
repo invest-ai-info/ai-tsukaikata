@@ -1036,6 +1036,12 @@ a { color: var(--accent); }
   opacity: 0.8;
 }
 
+/* 分類のページ・月のページで、いま見ている分類 */
+.video-tab.is-current {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 .video-section {
   margin-bottom: 2.8rem;
   scroll-margin-top: 1rem;
@@ -1058,15 +1064,21 @@ a { color: var(--accent); }
   padding: 0;
 }
 
+/* 1本＝サムネ・題（head）・要約（body）。PC はサムネを左に縦通し、
+   スマホはサムネを小さく題の横に置き、要約は下に全幅で流す（2026-10-06・
+   全幅のサムネだと1本が画面1枚ぶんになり、ページが長くなっていた） */
 .video-card {
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "thumb head" "thumb body";
+  column-gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 1rem;
 }
 
-/* 検索結果から飛んできた動画（/videos/#v-…）を目立たせる */
+/* 入口・検索結果から飛んできた動画（/videos/<分類>/#v-…）を目立たせる */
 .video-card:target {
   margin: 0 -0.6rem;
   padding: 1rem 0.6rem;
@@ -1075,11 +1087,12 @@ a { color: var(--accent); }
 }
 
 .video-thumb {
-  flex: 0 0 200px;
-  align-self: flex-start;
+  grid-area: thumb;
+  align-self: start;
 }
 
-.video-thumb img {
+.video-thumb img,
+.video-mini-link img {
   display: block;
   width: 100%;
   height: auto;
@@ -1089,7 +1102,8 @@ a { color: var(--accent); }
   background: var(--code-bg);
 }
 
-.video-body { flex: 1 1 auto; min-width: 0; }
+.video-head { grid-area: head; min-width: 0; line-height: 1.5; }
+.video-body { grid-area: body; min-width: 0; }
 
 .video-title {
   font-weight: 700;
@@ -1125,7 +1139,80 @@ a { color: var(--accent); }
 
 .video-empty { color: var(--muted); font-size: 0.9rem; }
 
+/* 入口（/videos/）の1本＝題とサムネだけ。PC は2列 */
+.video-minis {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.4rem;
+}
+
+.video-mini-link {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.video-mini-link img { flex: 0 0 128px; width: 128px; }
+.video-mini-text { display: flex; flex-direction: column; min-width: 0; }
+
+.video-mini-title {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  /* 長い題は3行で切る（並びの高さをそろえる。全文は分類のページにある） */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-mini-link:hover .video-mini-title { text-decoration: underline; }
+.video-mini .video-meta { margin: 0.2rem 0 0; }
+
+.video-more { margin: 1rem 0 0; font-weight: 700; }
+
+/* 分類のページ・月のページの「月ごとに見る」 */
+.video-months { margin-top: 2.5rem; }
+
+.video-month-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.video-month-list a,
+.video-month-list .is-current {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.video-month-list .is-current {
+  background: var(--prompt-bg);
+  font-weight: 700;
+}
+
 @media (max-width: 560px) {
-  .video-card { flex-direction: column; gap: 0.6rem; }
-  .video-thumb { flex-basis: auto; width: 100%; }
+  .video-card {
+    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "thumb head" "body body";
+    column-gap: 0.75rem;
+    row-gap: 0.55rem;
+  }
+  .video-title { font-size: 0.92rem; }
+  .video-minis { grid-template-columns: 1fr; }
+  .video-mini-link img { flex-basis: 120px; width: 120px; }
 }

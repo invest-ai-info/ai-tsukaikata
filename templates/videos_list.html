@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "_macros.html" as macros %}
+{# 分類のページ（month=None・最新の動画）と月のページ（その月の全部）を兼ねる。2026-10-06 #}
+<p class="breadcrumb"><a href="/">ホーム</a> › <a href="/videos/">AI動画まとめ</a> › {% if month %}<a href="{{ section.url }}">{{ section.label }}</a> › {{ month.label }}{% else %}{{ section.label }}{% endif %}</p>
+<h1 class="article-title">{{ section.label }}の動画{% if month %}（{{ month.label }}）{% endif %}</h1>
+<p class="article-meta">{{ section.lead }}{% if month %}{{ month.label }}に公開された{{ month.count }}本です。{% else %}新しい順に{{ entries | length }}本です。それより前の動画は、下の「月ごとに見る」から開けます。{% endif %}要約は Google の AI（Gemini）が動画を見て作ったもので、運営者は内容を確かめていません。</p>
+
+<nav class="video-tabs" aria-label="動画の分類">
+  {% for other in videos.sections if other.count %}
+  <a class="video-tab{% if other.key == section.key %} is-current{% endif %}" href="{{ other.url }}"{% if other.key == section.key and not month %} aria-current="page"{% endif %}>{{ other.label }}<span class="video-tab-count">{{ other.count }}</span></a>
+  {% endfor %}
+</nav>
+
+{% if section.key == "earn" %}{{ macros.video_warning() }}{% endif %}
+
+<ul class="video-list">
+  {% for video in entries %}
+  {{ macros.video_card(video) }}
+  {% endfor %}
+</ul>
+
+<section class="video-months">
+  <h2 class="section-title">月ごとに見る</h2>
+  <ul class="video-month-list">
+    {% for m in section.months %}
+    <li>{% if month and m.key == month.key %}<span class="is-current" aria-current="page">{{ m.label }}（{{ m.count }}本）</span>{% else %}<a href="{{ m.url }}">{{ m.label }}（{{ m.count }}本）</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

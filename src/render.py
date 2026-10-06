@@ -164,6 +164,28 @@ def render_site(
             og_type="website",
             videos=videos,
         )
+        # 分類のページ（最新の動画）と月のページ（その月の全部）。2026-10-06〜
+        # 動画が0本の分類は作らない（入口もリンクを出さない）
+        list_template = env.get_template("videos_list.html")
+        for section in videos["sections"]:
+            if not section["count"]:
+                continue
+            pages[f"videos/{section['key']}/index.html"] = list_template.render(
+                page_title=f"{section['label']}の動画（AI動画まとめ）",
+                description=f"{section['lead']}Gemini が動画を見て日本語で要約した、新しい順の一覧。",
+                canonical=f"{config.SITE_URL}{section['url']}",
+                og_type="website",
+                videos=videos, section=section, entries=section["latest"], month=None,
+            )
+            for month in section["months"]:
+                pages[f"videos/{section['key']}/{month['key']}/index.html"] = list_template.render(
+                    page_title=f"{section['label']}の動画 {month['label']}（AI動画まとめ）",
+                    description=f"{month['label']}に公開された「{section['label']}」の動画"
+                                f"{month['count']}本を、Gemini が動画を見て日本語で要約した一覧。",
+                    canonical=f"{config.SITE_URL}{month['url']}",
+                    og_type="website",
+                    videos=videos, section=section, entries=month["entries"], month=month,
+                )
 
     for scene in active_scenes:
         meta = config.SCENES[scene]

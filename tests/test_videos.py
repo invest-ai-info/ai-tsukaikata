@@ -125,6 +125,24 @@ def test_prune_removes_old_stale_and_dropped_channels():
     assert data["videos"] == []
 
 
+def test_prune_keeps_done_forever_but_drops_old_skipped_and_failed():
+    """要約済みは過去の月のページに載せ続ける（2026-10-06 オーナー判断）。
+    載らない動画（skipped/failed）だけを KEEP_DAYS で消す。"""
+    data = store.empty()
+    store.merge(data, CHANNEL, [_entry("AAAAAAAAAAA"), _entry("CCCCCCCCCCC"),
+                                _entry("EEEEEEEEEEE")], NOW)
+    done, skipped, failed = data["videos"]
+    store.mark_done(done, json.loads(_reply()), "m", NOW)
+    store.mark_done(skipped, {**json.loads(_reply()), "is_ai": False}, "m", NOW)
+    for _ in range(store.MAX_ATTEMPTS):
+        store.mark_failed(failed, "err")
+    years_later = NOW + timedelta(days=store.KEEP_DAYS * 10)
+    assert store.prune(data, years_later, {"test"}) == 2
+    assert [v["video_id"] for v in data["videos"]] == ["AAAAAAAAAAA"]
+    # チャンネルを外したら要約済みも消える（今までどおり）
+    assert store.prune(data, years_later, set()) == 1
+
+
 def test_load_missing_is_empty_and_broken_raises(tmp_path):
     assert store.load(tmp_path / "none.json") == store.empty()
     broken = tmp_path / "videos.json"
@@ -311,11 +329,50 @@ def test_load_videos_groups_and_forces_youtube_link(tmp_path):
     result = site_videos.load_videos(_write(tmp_path, _done_data()), run.CHANNELS_PATH)
     sections = {s["key"]: s for s in result["sections"]}
     assert list(sections) == ["tech", "earn", "news"]
-    entry = sections["earn"]["entries"][0]
+    entry = sections["earn"]["latest"][0]
     assert entry["url"] == "https://www.youtube.com/watch?v=AAAAAAAAAAA"
     assert entry["thumbnail"].startswith("https://i.ytimg.com/vi/AAAAAAAAAAA/")
     assert "LINE" in entry["note"]          # channels.yml の注意書きが付く
-    assert sections["tech"]["entries"] == []
+    assert sections["earn"]["url"] == "/videos/earn/"
+    assert sections["tech"]["latest"] == [] and sections["tech"]["count"] == 0
+
+
+def _many(count, category="tech", start=datetime(2026, 10, 31, 0, 0, tzinfo=timezone.utc)):
+    """1日1本ずつ過去へさかのぼる要約済み動画。"""
+    return [
+        {"video_id": f"V{i:010d}", "title": f"題{i}", "url": "x",
+         "published": (start - timedelta(days=i)).isoformat(), "channel_key": "nyanta",
+         "channel_name": "ch", "status": "done", "category": category,
+         "summary": [f"要約{i}"], "for_whom": "", "caution": ""}
+        for i in range(count)
+    ]
+
+
+def test_load_videos_splits_top_latest_and_months(tmp_path):
+    """入口は最新6本、分類のページは最新20本、月のページはその月の全部（新しい月から）。"""
+    data = {"videos": _many(70), "channels": {}}
+    section = site_videos.load_videos(_write(tmp_path, data), run.CHANNELS_PATH)["sections"][0]
+    assert section["count"] == 70
+    assert [e["video_id"] for e in section["top"]] == [f"V{i:010d}" for i in range(6)]
+    assert len(section["latest"]) == site_videos.PER_SECTION == 20
+    months = section["months"]
+    # 10/31 から70日さかのぼる＝10月・9月・8月（日付は日本時間で数える）
+    assert [m["key"] for m in months] == ["2026-10", "2026-09", "2026-08"]
+    assert [m["label"] for m in months] == ["2026年10月", "2026年9月", "2026年8月"]
+    assert months[1]["url"] == "/videos/tech/2026-09/"
+    assert sum(m["count"] for m in months) == 70
+    assert all(len(m["entries"]) == m["count"] for m in months)
+    assert site_videos.page_paths({"sections": [section]}) == (
+        "/videos/", "/videos/tech/",
+        "/videos/tech/2026-10/", "/videos/tech/2026-09/", "/videos/tech/2026-08/")
+
+
+def test_load_videos_months_use_japan_time(tmp_path):
+    """UTC では9月30日でも、日本時間で10月1日なら10月の動画。"""
+    data = _done_data(published="2026-09-30T16:00:00+00:00")
+    section = {s["key"]: s for s in site_videos.load_videos(
+        _write(tmp_path, data), run.CHANNELS_PATH)["sections"]}["earn"]
+    assert [m["key"] for m in section["months"]] == ["2026-10"]
 
 
 @pytest.mark.parametrize("overrides", [{"video_id": "bad id"}, {"summary": "文字列"},
@@ -346,16 +403,41 @@ def _tmp_build(tmp_path, videos_data):
 
 
 def test_build_renders_videos_page_and_button(tmp_path):
-    files, errors = _tmp_build(tmp_path, _done_data())
+    files, errors = _tmp_build(tmp_path, _done_data(summary=["要約の一行目です", "二"]))
     assert errors == []
-    page = files["videos/index.html"]
+    # 分類のページ＝要約つきのカード
+    page = files["videos/earn/index.html"]
     assert "https://www.youtube.com/watch?v=AAAAAAAAAAA" in page
     assert "javascript:" not in page
     assert "題&lt;b&gt;" in page                      # 題はエスケープされる
     assert "出演者の主張" in page
+    assert "要約の一行目です" in page
+    assert 'id="v-AAAAAAAAAAA"' in page                 # 入口・検索結果の飛び先
+    assert 'href="/videos/earn/2026-10/"' in page       # 過去の月への入口
+    # 月のページ＝その月の動画を全部
+    month = files["videos/earn/2026-10/index.html"]
+    assert 'id="v-AAAAAAAAAAA"' in month and "要約の一行目です" in month
+    assert "出演者の主張" in month
+    # 入口＝題とサムネだけ。要約は出さず、分類のページの要約へ飛ばす
+    top = files["videos/index.html"]
+    assert 'href="/videos/earn/#v-AAAAAAAAAAA"' in top
+    assert 'href="/videos/earn/"' in top
+    assert "要約の一行目です" not in top
+    assert "題&lt;b&gt;" in top
+    # 動画が0本の分類はページを作らず、リンクも出さない
+    assert "videos/tech/index.html" not in files
+    assert 'href="/videos/tech/"' not in top
     assert 'href="/videos/"' in files["index.html"]
-    assert "/videos/" in files["sitemap.xml"]
-    assert 'id="v-AAAAAAAAAAA"' in page                 # 検索結果の飛び先
+    for path in ("/videos/", "/videos/earn/", "/videos/earn/2026-10/"):
+        assert f"{path}</loc>" in files["sitemap.xml"]
+
+
+def test_build_earn_warning_on_every_earn_page(tmp_path):
+    """稼ぐ系の注意書き（オーナー判断）は、入口・分類・月のどのページにも出す。"""
+    files, errors = _tmp_build(tmp_path, _done_data())
+    assert errors == []
+    for path in ("videos/index.html", "videos/earn/index.html", "videos/earn/2026-10/index.html"):
+        assert "有料講座や LINE 登録への誘導" in files[path], path
 
 
 def test_build_puts_videos_in_search_index(tmp_path):
@@ -365,7 +447,7 @@ def test_build_puts_videos_in_search_index(tmp_path):
     hits = [e for e in index if e["category"] == "videos"]
     assert len(hits) == 1
     hit = hits[0]
-    assert hit["url"] == "/videos/#v-AAAAAAAAAAA"        # YouTube ではなく要約のあるカードへ
+    assert hit["url"] == "/videos/earn/#v-AAAAAAAAAAA"   # YouTube ではなく要約のあるカードへ
     assert hit["title"] == "題<b>"                        # JS 側が textContent で出す
     assert "一" in hit["description"] and "二" in hit["description"]
     assert "ch" in hit["tags"] and "AIで稼ぐ" in hit["tags"]
@@ -383,7 +465,7 @@ def test_search_index_has_no_videos_without_data(tmp_path):
 def test_build_without_videos_has_no_page_or_button(tmp_path):
     files, errors = _tmp_build(tmp_path, None)
     assert errors == []
-    assert "videos/index.html" not in files
+    assert not any(path.startswith("videos/") for path in files)
     assert 'href="/videos/"' not in files["index.html"]
 
 

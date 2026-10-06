@@ -141,9 +141,7 @@ def collect(
 
     section_paths = ("/", "/news/") + (
         ("/ainews/",) if media_data else ()
-    ) + (
-        ("/videos/",) if videos_data else ()
-    ) + tuple(
+    ) + videos.page_paths(videos_data) + tuple(
         f"/{name}/" for name in config.LISTED_CATEGORIES
         if any(a.category == name for a in articles)
     ) + tuple(

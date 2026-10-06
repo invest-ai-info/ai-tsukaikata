@@ -1,47 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
+{% import "_macros.html" as macros %}
 <h1 class="article-title">AI動画まとめ</h1>
 <p class="article-meta">YouTube の AI 関連の動画を自動で集め、Google の AI（Gemini）が動画を見て日本語で要約した一覧です。要約は機械が作ったもので、運営者は内容を確かめていません。長い動画は最初の30分から要約しています。</p>
 
 <nav class="video-tabs" aria-label="動画の分類">
-  {% for section in videos.sections %}
-  <a class="video-tab" href="#{{ section.key }}">{{ section.label }}<span class="video-tab-count">{{ section.count }}</span></a>
+  {% for section in videos.sections if section.count %}
+  <a class="video-tab" href="{{ section.url }}">{{ section.label }}<span class="video-tab-count">{{ section.count }}</span></a>
   {% endfor %}
 </nav>
 
+{# 入口は分類ごとに最新の数本だけ（題とサムネ）。要約は分類のページで読む（2026-10-06 オーナー指示「長くて見づらい」） #}
 {% for section in videos.sections %}
 <section class="video-section" id="{{ section.key }}">
   <h2 class="section-title">{{ section.label }}</h2>
   <p class="video-lead">{{ section.lead }}</p>
-  {% if section.key == "earn" %}
-  <p class="video-warning">⚠️ 動画の中の収入・売上の金額は出演者の主張です。このサイトは確かめていません。有料講座や LINE 登録への誘導がある動画もあります。</p>
-  {% endif %}
-  {% if section.entries %}
-  <ul class="video-list">
-    {% for video in section.entries %}
-    <li class="video-card" id="v-{{ video.video_id }}">
-      <a class="video-thumb" href="{{ video.url }}" rel="noopener"><img src="{{ video.thumbnail }}" alt="" width="320" height="180" loading="lazy"></a>
-      <div class="video-body">
-        <a class="video-title" href="{{ video.url }}" rel="noopener">{{ video.title }}</a>
-        <p class="video-meta">{{ video.channel_name }} ・ {{ video.date_label }}</p>
-        <ul class="video-summary">
-          {% for line in video.summary %}
-          <li>{{ line }}</li>
-          {% endfor %}
-        </ul>
-        {% if video.for_whom %}
-        <p class="video-for">こんな人向け：{{ video.for_whom }}</p>
-        {% endif %}
-        {% if video.caution %}
-        <p class="video-caution">⚠️ {{ video.caution }}</p>
-        {% endif %}
-        {% if video.note %}
-        <p class="video-caution">⚠️ {{ video.note }}</p>
-        {% endif %}
-      </div>
-    </li>
+  {% if section.key == "earn" %}{{ macros.video_warning() }}{% endif %}
+  {% if section.top %}
+  <ul class="video-minis">
+    {% for video in section.top %}
+    {{ macros.video_mini(video, section.url ~ "#v-" ~ video.video_id) }}
     {% endfor %}
   </ul>
+  <p class="video-more"><a href="{{ section.url }}">{{ section.label }}の動画を要約つきで見る（全{{ section.count }}本）→</a></p>
   {% else %}
   <p class="video-empty">まだ要約できた動画がありません。6時間おきに少しずつ増えます。</p>
   {% endif %}
