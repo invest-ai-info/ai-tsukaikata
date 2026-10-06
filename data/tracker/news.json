@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-06T03:02:33.080668+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-05T23:33:17+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added serverToolUses to the result of a mod's turn.step hook: the tool calls the API ran itself (the advisor), each with its id, name, input, start and end Added agentId to the tool.ch…",
+      "title": "v2.1.290",
+      "uid": "95162324a74cc7d7",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.290",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-05T16:05:41.951020+00:00",
       "importance": "minor",
       "label": "OpenAI News",
