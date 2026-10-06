@@ -5,7 +5,8 @@
   /videos/                 入口。分類ごとに最新 TOP_PER_SECTION 本（題とサムネだけ）
   /videos/<分類>/           分類のページ。最新 PER_SECTION 本（要約つき）＋過去の月への入口
   /videos/<分類>/<年-月>/   月のページ。その月の動画を全部（要約つき）
-入口・検索の行き先は分類のページ（入口の6本も検索に入る動画も、必ずそこに並んでいる）。
+1本ごとの飛び先（page_url）＝分類のページに並ぶ最新の動画は分類のページ、それより前は月のページ。
+入口の6本とサイト内検索（過去の動画も入る）はこの page_url へ飛ばす。
 
 載せるのは要約が済んだ動画（status=done）だけ。ファイルが無い・載せる動画が
 0本＝ページごと出さない（/ainews/ と同じ）。ファイルが壊れている・形が違う＝
@@ -136,8 +137,14 @@ def load_videos(path: Path, channels_path: Path, per_section: int = PER_SECTION,
     sections = []
     for key, label, lead in SECTIONS:
         items = [e for e in entries if e["category"] == key]
+        months = _months(key, items)
+        for month in months:
+            for entry in month["entries"]:
+                entry["page_url"] = f"{month['url']}#v-{entry['video_id']}"
+        for entry in items[:per_section]:      # 分類のページに並ぶ動画はそちらへ（上書き）
+            entry["page_url"] = f"/videos/{key}/#v-{entry['video_id']}"
         sections.append({"key": key, "label": label, "lead": lead,
                          "url": f"/videos/{key}/",
                          "top": items[:top], "latest": items[:per_section],
-                         "months": _months(key, items), "count": len(items)})
+                         "months": months, "count": len(items)})
     return {"sections": sections, "total": len(entries)}

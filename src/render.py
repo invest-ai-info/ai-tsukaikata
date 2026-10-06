@@ -119,7 +119,7 @@ def render_site(
     # noindex＋sitemap 外（build.py の section_paths に入れない）＝検索結果ページを Google に拾わせない
     pages["search/index.html"] = env.get_template("search.html").render(
         page_title="記事を探す",
-        description="記事・AI動画まとめの動画・直近1か月のニュースから探します。",
+        description="記事・AI動画まとめの動画（過去の分も）・直近1か月のニュースから探します。",
         canonical=f"{config.SITE_URL}/search/",
         og_type="website",
         hide_header_search=True,   # 本文の大きい窓だけにする（同じ窓が2つ並ばない）

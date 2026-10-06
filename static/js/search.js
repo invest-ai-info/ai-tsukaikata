@@ -1,7 +1,9 @@
 // サイト内検索（/search/ だけで読む）。
 //
 // 索引は /search.json（ビルドが記事から作る。タイトル・説明文・タグ・見出し）。
-// 2026-10-02 から AI動画まとめの動画も入る（題・要約・チャンネル名。行き先は /videos/#v-…）。
+// 2026-10-02 から AI動画まとめの動画も入る（題・要約・チャンネル名。行き先は要約の載ったカード）。
+// 2026-10-06 から過去の動画も全部入り、別のファイル /search-videos.json になった（1年で約650KBに育つ）。
+// 記事の索引が届いた時点で検索を始め、動画の索引は届いたら足して出し直す＝記事の検索を待たせない。
 // 2026-10-04 から直近1か月のニュース（AIアップデート・AIニュース）も入る（行き先は元の記事）。
 // 探し方は「部分一致の AND」。日本語は単語の切れ目が無いので、分かち書きせずに
 // 文字列の部分一致で当てるのがいちばん素直。全角・大文字は NFKC と小文字化で揃える
@@ -11,10 +13,13 @@
   "use strict";
 
   var INDEX_URL = "/search.json";
+  var VIDEO_INDEX_URL = "/search-videos.json";
   var DEBOUNCE_MS = 150;
   // 当たり方の点。タイトル > タグ > 説明文 > 見出し。語ごとに最も高い当たり方を採る
   var WEIGHTS = { title: 4, tags: 3, description: 2, headings: 1 };
-  var EMPTY_HINT = "言葉を入れると、記事・AI動画まとめの動画・直近1か月のニュースから探します。例: Gmail、副業、GitHub Actions";
+  var EMPTY_HINT = "言葉を入れると、記事・AI動画まとめの動画（過去の分も）・直近1か月のニュースから探します。例: Gmail、副業、GitHub Actions";
+  // 動画の索引の状態（"loading" / "done" / "failed"）。結果の件数の後ろに添える
+  var videoState = "loading";
 
   var form = document.getElementById("search-form");
   var input = document.getElementById("search-input");
@@ -143,6 +148,12 @@
     window.history.replaceState(null, "", url);
   }
 
+  function videoNote() {
+    if (videoState === "loading") return "（動画を読み込み中…）";
+    if (videoState === "failed") return "（動画の索引を読み込めなかったため、動画は含みません）";
+    return "";
+  }
+
   function run(items) {
     var query = input.value.trim();
     var words = terms(query);
@@ -154,23 +165,41 @@
     }
     var hits = search(items, words);
     if (hits.length === 0) {
-      status.textContent = "0件";
+      status.textContent = "0件" + videoNote();
       results.appendChild(renderEmpty(query));
       return;
     }
-    status.textContent = "「" + query + "」の検索結果: " + hits.length + "件";
+    status.textContent = "「" + query + "」の検索結果: " + hits.length + "件" + videoNote();
     hits.forEach(function (hit) { results.appendChild(renderHit(hit, words)); });
+  }
+
+  function load(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.json();
+    });
   }
 
   function start() {
     var initial = new URLSearchParams(window.location.search).get("q") || "";
     input.value = initial;
     status.textContent = "索引を読み込んでいます…";
-    fetch(INDEX_URL).then(function (response) {
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      return response.json();
-    }).then(function (entries) {
-      var items = entries.map(prepare);
+    var items = null;          // 記事の索引が届くまで null
+    var videoItems = [];
+    // 動画の索引は記事と並行して取りに行く。先に届いても、記事が届くまでは出さない
+    load(VIDEO_INDEX_URL).then(function (entries) {
+      videoItems = entries.map(prepare);
+      videoState = "done";
+    }).catch(function () {
+      videoState = "failed";   // 記事の検索は続ける（件数の後ろに断りを添える）
+    }).then(function () {
+      if (items === null) return;
+      items = items.concat(videoItems);
+      run(items);
+    });
+    load(INDEX_URL).then(function (entries) {
+      items = entries.map(prepare);
+      if (videoState === "done") items = items.concat(videoItems);
       var timer = null;
       input.addEventListener("input", function () {
         if (timer) clearTimeout(timer);

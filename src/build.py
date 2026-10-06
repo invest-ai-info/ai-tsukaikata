@@ -157,9 +157,10 @@ def collect(
     # ⚠️ section_paths には /search/ を足さない（sitemap に載せない）
     # ニュースは直近1か月だけ（search.NEWS_DAYS）。基準は「ビルドした時刻」
     files["search.json"] = search.search_json(
-        articles, videos=videos_data, news=items, media_news=media_items,
-        now=datetime.now(news.JST),
+        articles, news=items, media_news=media_items, now=datetime.now(news.JST),
     )
+    # 動画は過去の分も全部入るので別のファイル（2026-10-06）。JS は記事の索引を先に使い、届いたら足す
+    files["search-videos.json"] = search.videos_search_json(videos_data)
 
     # 生成HTMLをコミットしない方式では、CNAME を artifact に含めないと
     # デプロイのたびに独自ドメインの設定が外れる

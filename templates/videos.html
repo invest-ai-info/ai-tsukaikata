@@ -19,7 +19,7 @@
   {% if section.top %}
   <ul class="video-minis">
     {% for video in section.top %}
-    {{ macros.video_mini(video, section.url ~ "#v-" ~ video.video_id) }}
+    {{ macros.video_mini(video, video.page_url) }}
     {% endfor %}
   </ul>
   <p class="video-more"><a href="{{ section.url }}">{{ section.label }}の動画を要約つきで見る（全{{ section.count }}本）→</a></p>

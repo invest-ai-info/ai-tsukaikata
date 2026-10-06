@@ -5,7 +5,8 @@ from pathlib import Path
 
 from src.content import Article, load_articles, render_markdown
 from src.render import render_site
-from src.search import INDEX_BUDGET_GZIP_BYTES, build_index, headings, plain_text, search_json
+from src.search import (INDEX_BUDGET_GZIP_BYTES, VIDEO_INDEX_BUDGET_GZIP_BYTES, build_index,
+                        headings, plain_text, search_json, videos_search_json)
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -74,8 +75,8 @@ def test_search_json_keeps_japanese_readable_and_round_trips():
 def test_real_content_index_is_within_budget_and_clean():
     """実データの歯止め。索引が黙って重くなったり、見出しにタグが混ざったりしたら落ちる。
 
-    大きさは本番と同じ中身（記事・動画・直近1か月のニュース）を gzip した後で見る＝
-    読者が実際に受け取る大きさ（GitHub Pages は gzip で送る）。
+    大きさは本番と同じ中身を gzip した後で見る＝読者が実際に受け取る大きさ（GitHub Pages は gzip で送る）。
+    search.json（記事・直近1か月のニュース）と search-videos.json（AI動画まとめの全動画）は別々に見る。
     """
     import gzip
     from datetime import timedelta
@@ -97,10 +98,14 @@ def test_real_content_index_is_within_budget_and_clean():
     # 基準は「いちばん新しいニュースの時刻」＝テストを走らせた日によって結果が変わらない
     newest = max([i.published for i in items + media], default=None)
     now = (newest + timedelta(seconds=1)) if newest else None
-    text = search_json(articles, videos=video_data, news=items, media_news=media, now=now)
+    text = search_json(articles, news=items, media_news=media, now=now)
     size = len(gzip.compress(text.encode("utf-8")))
     assert size <= INDEX_BUDGET_GZIP_BYTES, (
         f"search.json が圧縮後 {size} バイト（予算 {INDEX_BUDGET_GZIP_BYTES}）")
+    video_size = len(gzip.compress(videos_search_json(video_data).encode("utf-8")))
+    assert video_size <= VIDEO_INDEX_BUDGET_GZIP_BYTES, (
+        f"search-videos.json が圧縮後 {video_size} バイト（予算 {VIDEO_INDEX_BUDGET_GZIP_BYTES}）。"
+        "月ごとのファイルに分ける時期（src/search.py の VIDEO_INDEX_BUDGET_GZIP_BYTES の説明）")
 
 
 def test_search_page_is_rendered_with_noindex_and_script():

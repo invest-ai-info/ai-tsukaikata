@@ -35,6 +35,12 @@ NEWS_DAYS = 30
 # 記事は1日数本ずつ増える（1本あたり圧縮後 約0.4KB）ので、200KB なら数か月は持つ
 INDEX_BUDGET_GZIP_BYTES = 200 * 1024
 
+# AI動画まとめの索引（search-videos.json）の予算（gzip 後）。過去の動画も全部入る（2026-10-06 オーナー指示
+# 「過去の動画も検索できるように」）ので、search.json とは別のファイル・別の予算にした＝記事の検索を待たせない。
+# 実測＝1本 約0.25KB（ほぼ要約の文字。項目名を短くしても gzip 後は変わらない）×1日7本ほど＝1年 約650KB。
+# ⚠️ 超えたら（1年弱で来る）、値を上げる前に「月ごとのファイルに分けて、新しい月から順に読む」へ作り替える
+VIDEO_INDEX_BUDGET_GZIP_BYTES = 600 * 1024
+
 
 def plain_text(fragment: str) -> str:
     """HTML の断片から文字だけを取り出す。タグを剥がし、実体参照を戻し、空白を1つに畳む。"""
@@ -70,17 +76,16 @@ def build_index(articles: list[Article]) -> list[dict]:
 def video_index(videos: dict | None) -> list[dict]:
     """AI動画まとめ（src/videos.py の load_videos の結果）の動画を索引にする（2026-10-02）。
 
-    行き先は YouTube ではなく分類のページの該当カード（/videos/<分類>/#v-<動画ID>）＝
-    要約と注意書きを先に見せる。載せるのは分類のページに並んでいる最新の動画だけ
-    （ページに無い動画へ飛ばさない）。過去の月の動画は入れない＝月のページでたどる
-    （全部入れると索引が1年で数百KB増える。2026-10-06）。
+    行き先は YouTube ではなく、その動画の要約が載っているカード（page_url）＝要約と注意書きを先に見せる。
+    最新の動画は分類のページ、それより前は月のページ（/videos/<分類>/<年-月>/#v-<動画ID>）。
+    2026-10-06 から過去の動画も全部入る（オーナー指示）。そのぶん search.json とは別のファイルにした。
     探せる文字＝題（タイトル枠）・要約（説明文枠）・チャンネル名と分類（タグ枠）。
     """
     if not videos:
         return []
     return [
         {
-            "url": f"{section['url']}#v-{video['video_id']}",
+            "url": video["page_url"],
             "title": video["title"],
             "description": " ".join(video["summary"]),
             "tags": [video["channel_name"], section["label"], "動画", "YouTube"],
@@ -92,7 +97,8 @@ def video_index(videos: dict | None) -> list[dict]:
             "published": video["published"].date().isoformat(),
         }
         for section in videos["sections"]
-        for video in section["latest"]
+        for month in section["months"]
+        for video in month["entries"]
     ]
 
 
@@ -123,17 +129,27 @@ def news_index(items, category: str, label: str, now: datetime,
     ]
 
 
-def search_json(articles: list[Article], videos: dict | None = None,
-                news=None, media_news=None, now: datetime | None = None) -> str:
-    """search.json の本文。日本語をそのまま書き、区切りは詰める（gzip 後は差が無いが生の大きさが読みやすい）。
+def _dumps(index: list[dict]) -> str:
+    """日本語をそのまま書き、区切りは詰める（gzip 後は差が無いが生の大きさが読みやすい）。"""
+    return json.dumps(index, ensure_ascii=False, separators=(",", ":")) + "\n"
+
+
+def search_json(articles: list[Article], news=None, media_news=None,
+                now: datetime | None = None) -> str:
+    """search.json の本文＝記事と直近1か月のニュース。動画は videos_search_json（別のファイル）。
 
     news / media_news は src/news.py の NewsItem のリスト（AIアップデート / AIニュース）。
     now はニュースの「直近1か月」を数える基準（テストから固定できるように引数にしてある）。
     """
-    index = build_index(articles) + video_index(videos)
+    index = build_index(articles)
     if news or media_news:
         if now is None:
             raise ValueError("ニュースを索引に入れるときは now が要ります")
         index += news_index(news, "updates", "AIアップデート", now)
         index += news_index(media_news, "ainews", "AIニュース", now, with_summary=False)
-    return json.dumps(index, ensure_ascii=False, separators=(",", ":")) + "\n"
+    return _dumps(index)
+
+
+def videos_search_json(videos: dict | None) -> str:
+    """search-videos.json の本文＝AI動画まとめの全動画。動画が無くても空の一覧を書く（JS が 404 で迷わない）。"""
+    return _dumps(video_index(videos))

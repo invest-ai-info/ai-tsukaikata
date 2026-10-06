@@ -362,6 +362,10 @@ def test_load_videos_splits_top_latest_and_months(tmp_path):
     assert months[1]["url"] == "/videos/tech/2026-09/"
     assert sum(m["count"] for m in months) == 70
     assert all(len(m["entries"]) == m["count"] for m in months)
+    # 飛び先＝分類のページに並ぶ20本は分類のページ、それより前は月のページ
+    assert section["latest"][0]["page_url"] == "/videos/tech/#v-V0000000000"
+    assert section["latest"][-1]["page_url"] == "/videos/tech/#v-V0000000019"
+    assert months[-1]["entries"][-1]["page_url"] == "/videos/tech/2026-08/#v-V0000000069"
     assert site_videos.page_paths({"sections": [section]}) == (
         "/videos/", "/videos/tech/",
         "/videos/tech/2026-10/", "/videos/tech/2026-09/", "/videos/tech/2026-08/")
@@ -441,11 +445,12 @@ def test_build_earn_warning_on_every_earn_page(tmp_path):
 
 
 def test_build_puts_videos_in_search_index(tmp_path):
+    """動画の索引は search.json とは別のファイル（search-videos.json）。記事の検索を待たせない。"""
     files, errors = _tmp_build(tmp_path, _done_data())
     assert errors == []
-    index = json.loads(files["search.json"])
-    hits = [e for e in index if e["category"] == "videos"]
-    assert len(hits) == 1
+    assert all(e["category"] != "videos" for e in json.loads(files["search.json"]))
+    hits = json.loads(files["search-videos.json"])
+    assert len(hits) == 1 and hits[0]["category"] == "videos"
     hit = hits[0]
     assert hit["url"] == "/videos/earn/#v-AAAAAAAAAAA"   # YouTube ではなく要約のあるカードへ
     assert hit["title"] == "題<b>"                        # JS 側が textContent で出す
@@ -453,13 +458,29 @@ def test_build_puts_videos_in_search_index(tmp_path):
     assert "ch" in hit["tags"] and "AIで稼ぐ" in hit["tags"]
     assert hit["published"] == "2026-10-01"
     # 記事の索引と同じ形（JS が同じ描き方で出せる）
-    article = next(e for e in index if e["category"] != "videos")
+    article = json.loads(files["search.json"])[0]
     assert set(hit) == set(article)
+
+
+def test_search_index_has_past_videos_with_month_page_links(tmp_path):
+    """過去の動画も検索できる（2026-10-06 オーナー指示）。分類のページに無い動画は月のページへ飛ばす。"""
+    data = {"videos": _many(25), "channels": {}}
+    files, errors = _tmp_build(tmp_path, data)
+    assert errors == []
+    hits = {e["title"]: e["url"] for e in json.loads(files["search-videos.json"])}
+    assert len(hits) == 25
+    assert hits["題0"] == "/videos/tech/#v-V0000000000"
+    assert hits["題24"] == "/videos/tech/2026-10/#v-V0000000024"
+    # 飛び先のカードが実際にそのページにある
+    for url in hits.values():
+        path, anchor = url.split("#")
+        assert f'id="{anchor}"' in files[path.lstrip("/") + "index.html"], url
 
 
 def test_search_index_has_no_videos_without_data(tmp_path):
     files, _ = _tmp_build(tmp_path, None)
     assert all(e["category"] != "videos" for e in json.loads(files["search.json"]))
+    assert json.loads(files["search-videos.json"]) == []     # JS が 404 で迷わない
 
 
 def test_build_without_videos_has_no_page_or_button(tmp_path):
