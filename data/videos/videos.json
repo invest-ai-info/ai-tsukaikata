@@ -1699,10 +1699,20 @@
    "channel_key": "iketomo",
    "channel_name": "いけともch",
    "default_category": "news",
-   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
    "first_seen": "2026-10-06T18:35:19.660274+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "筆者は、ひとりビジネスにおいてAIエージェントを活用しタスクを爆速で処理する方法について語ると説明している。",
+    "AIエージェントを「最強チーム」と見立て、その具体的な構築と活用による業務効率化を解説していると推測される。",
+    "自身の新刊「ひとりビジネスのためのAIエージェント活用術」の内容について紹介していると見られる。"
+   ],
+   "for_whom": "ひとりビジネスでAIを活用し、業務効率を大幅に向上させたい人",
+   "caution": "書籍や有料サービスへの誘導、公式LINE登録の案内が複数含まれているため、自身のニーズに合わせて検討することが推奨される。",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-10-06T22:46:32.964598+00:00"
   },
   {
    "video_id": "R4KAdlOaRzk",
@@ -1798,91 +1808,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-06T18:35:19.660274+00:00"
+  },
+  {
+   "video_id": "fbFOSkztjec",
+   "title": "【徹底比較】新しく登場した『Nano Banana 2.1』を実際に使ってみた！GPT Image 2.5と比べてどう？解説します",
+   "url": "https://www.youtube.com/watch?v=fbFOSkztjec",
+   "published": "2026-10-06T22:00:12+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-06T22:46:32.964598+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleから新画像生成モデルNano Banana 2.1が登場したことを受け、GPT Image 2.5との比較検証結果を紹介している。",
+    "指示追従や細部の描き込みではGPT Image 2.5が優勢な一方、Nano Banana 2.1は生成速度が速く画風の選択肢になると説明している。",
+    "将棋盤の駒配置のような正確な知識や配置の再現など、用途によってはNano Banana 2.1が勝る場面もあると述べている"
+   ],
+   "for_whom": "画像生成AIの最新モデルの性能差や使い分けを知りたい人",
+   "caution": "動画終盤および概要欄にて、有料のnoteメンバーシップ（AI駆動開発研究部）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T22:46:32.964598+00:00"
+  },
+  {
+   "video_id": "FB6oCmrIj-Y",
+   "title": "Introducing the Decisions API",
+   "url": "https://www.youtube.com/watch?v=FB6oCmrIj-Y",
+   "published": "2026-10-06T21:33:36+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-06T22:46:32.964598+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIがテキストや画像から瞬時に選択肢を選び、アプリの次の動作を決定できる「Decisions API」を発表したと紹介している。",
+    "GPT-6 Lunaを基盤とし、選択肢を絞ることで約10倍高速化され、100ミリ秒未満で判定を返す例などを説明している。",
+    "フォーム入力の自動分類や運転ゲームのレーン選択、小型ロボットの視線制御などのリアルタイムなデモを披露している。"
+   ],
+   "for_whom": "アプリやロボットに超高速なAIの判断処理を組み込みたい開発者やエンジニア向け。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T22:46:32.964598+00:00"
+  },
+  {
+   "video_id": "z7cNbsr3b5s",
+   "title": "Building secure agents for knowledge work",
+   "url": "https://www.youtube.com/watch?v=z7cNbsr3b5s",
+   "published": "2026-10-06T20:31:57+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-06T22:46:32.964598+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Every社のCEOらは、Claude Managed Agentsを活用してSlack上で協働する社内向けAIエージェントを構築したと紹介している。",
+    "一般的なベンチマークだけでなく、日々の編集業務や社内手続きなどの実業務でモデルの挙動をテスト・評価していると説明している。",
+    "サンドボックスやセッション管理などのセキュリティ基盤をマネージド機能に任せ、業務に即した対話設計に集中できたと述べている。"
+   ],
+   "for_whom": "Slackなどの社内ツールにAIエージェントを安全に組み込んで業務自動化を図りたい開発者や企業担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T22:46:32.964598+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-06T18:35:19.660274+00:00",
+   "last_ok": "2026-10-06T22:46:32.964598+00:00",
    "fail_streak": 0
   }
  }
