@@ -337,45 +337,6 @@
    "attempts": 0
   },
   {
-   "video_id": "rRm3Vnb7UPY",
-   "title": "Figma Gave GPT-6 Astra a Moonshot. Here's what happened.",
-   "url": "https://www.youtube.com/watch?v=rRm3Vnb7UPY",
-   "published": "2026-09-21T19:25:46+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "John gave GPT-6 Astra a moonshot: design the flight-control experience for a new personal aircraft.\n\nThe gap between generating an interface and designing a system is massive, and AI models have always fallen short.\n\nUntil now.\n\nAstra reasoned through the audience, jobs to be done, pilot-versus-passenger tradeoffs, and critical interface states. Then it connected that thinking to a real design system via the Figma MCP Server to create a polished, on-brand prototype of the concept.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "p7TjXroM4ak",
-   "title": "One Prompt. A Feature Built and Tested. | Ramp × GPT-6 Astra",
-   "url": "https://www.youtube.com/watch?v=p7TjXroM4ak",
-   "published": "2026-09-21T19:22:03+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "Veeral gave GPT-6 Astra a one-line feature request: add routing controls for individual API keys. Astra found the right settings, made the changes, and used computer use to check its own work. It verified the mobile experience without being asked.\n\nAbout 12 minutes of implementing. \n\nAnother 15 for validating.\n\nVeeral told Romain Huet that was the shift: give Astra a high-level goal, let it make progress, and come back to changes you can review. \n\nWe're making moves. This is why Astra is the next generation in intelligence at work.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "dtNlpZI86Dk",
-   "title": "“A Staff Engineer Collaborator” | Notion’s First Look at GPT-6 Astra",
-   "url": "https://www.youtube.com/watch?v=dtNlpZI86Dk",
-   "published": "2026-09-21T19:17:35+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "Don’t sleep on Astra. Quinn Johnson started working with GPT-6 Astra differently in Codex: he shared the goal, added context, and let it tackle the problem his team had been working on. On a cache-reuse audit, Astra connected patterns the Notion team had overlooked, then explained the issue clearly. \n\nThe Notion issue was sneaky: older messages were being regenerated using what the agent knew, subtly changing the prompt history and breaking cache reuse. \n\nEverything could still appear to work while becoming quietly slower and more expensive at scale.  🚀 Astra finding that hidden pattern made it a meaningful engineering win.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "bVXiNb9RyyI",
    "title": "How an Anthropic designer uses Claude Slides",
    "url": "https://www.youtube.com/watch?v=bVXiNb9RyyI",
@@ -742,19 +703,6 @@
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
    "description": "Build your own AI native creative agency with Higgsfield : https://startup-ideas-pod.link/higgsfield\n\nIn this solo episode, I explain why I expect a wave of one-person businesses built as AI-native service firms, and I show you how I built one. Three things matured at the same time: specialist creative models, Astra as an orchestrator that plans and repairs work, and the Higgsfield API, which puts 50+ creative models behind one key. I demo Studio Operator, the MVP I built to show you how I’d run an AI-native creative Agency, and I walk through the six prompts I used to build it. I finish with a model-by-model primer, three startup ideas, and four filters for choosing which firm to build.\n\nTimestamps\n00:00 – Intro\n01:46 – 3 Shifts, All at Once\n03:35 – The AI-Native Service Firm\n04:22 – Demand on Upwork and Fiverr\n05:16 – Human Agency vs. AI-Native Firm\n11:14 – Studio Operator Tour\n20:08 – The Six Build Prompts\n26:42 – Model Primer by Job Type\n32:42 – Idea 1: Always-On Ad Studio\n33:52 – Idea 2: Franchise Localization\n41:00 – Idea 3: Industrial Catalog Sales Assets\n43:15 – Four Filters for Picking an Idea\n45:28 – The Self Improvement Loop\n46:59 – How to Start\n46:11 – Closing Thoughts \n\nStudio Operator 6 Prompts: https://startup-ideas-pod.link/Creative_prompt_pack \n\nKey Points\n\n- Creative models, Astra, and one production API matured together, and that makes one-person creative firms possible now.\n\n- Upwork, Fiverr, and Contra show what buyers purchase again and again, so I start",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "YuOSyRj3sXg",
-   "title": "$30M Writer: Never write AI slop again",
-   "url": "https://www.youtube.com/watch?v=YuOSyRj3sXg",
-   "published": "2026-09-21T19:30:18+00:00",
-   "channel_key": "greg-isenberg",
-   "channel_name": "Greg Isenberg",
-   "default_category": "earn",
-   "description": "Get Your Complete Financial OS at https://startup-ideas-pod.link/brex_SIP\n\nIn this episode I speak with Nicolas Cole about the real value of everything you write on the internet. Cole has 15 years of experience as a nonfiction writer and ghostwriter, and he runs the SaaS platform Typeshare. He gives me a simple model with three tiers of content: commodity, personality, and original. He also explains the digital brain, which he calls your personal language model, and he shows how AI repeats your approved language at scale. By the end, you know how to judge the short, medium, and long-term value of a piece before you write it.\n\nMake AI Sound like you: https://startup-ideas-pod.link/plm\n\nStart Writing Online In 30 Days: https://startup-ideas-pod.link/ship30\n\nTimestamps\n00:00:00 – Intro\n00:03:36 – POV is the Moat\n00:05:40 – Language As Open Source\n00:11:24 – Value Is Relative To The Reader\n00:14:26 – Approved Language\n00:17:43 – The Value of AI in Writing\n00:22:09 – Commodity Ideas\n00:24:23 – How To Set Up The System\n00:27:58 – Ownership IS Association\n00:33:56 – Build your Personal Data Set\n00:39:53 – Branded Content vs Founder-Led Content\n00:45:17 – What is Original Content?\n00:46:35 – Writing Versus Short-Form Video\n00:48:58 – Three Types of Hooks\n00:49:50 – Timely Content vs Timeless Content\n00:53:27 – Voice is 3 dialed settings\n00:56:32 – Finding your Voice\n01:00:49 – The Company Brain As The Moat\n01:07:30 – Closing Thoughts\n\nKey Points\n\n• A point of view creates the moat, b",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -1556,10 +1504,20 @@
    "channel_key": "keito",
    "channel_name": "KEITO【AI&WEB ch】",
    "default_category": "tech",
-   "description": "AIに動画編集を丸投げしたら、どこまで任せられるのか？今回はClaude Codeに未編集の動画を渡し、実際に編集を依頼してみました。カットやテロップ、図解など、やってほしい編集をどう伝えるのかも実演。気になる費用と所要時間、そして仕上がりまで、検証の様子をお見せします。「AIの動画編集って、実際どうなの？」と思っている方に向けて、使い方だけでは見えてこない部分も含めて紹介します。\n\nメンバー用動画はこちらです。\nhttps://youtu.be/yRAEecgUBtM\nスキルデータは下記のメンバーシップ向けの『投稿』に入れています\nhttps://www.youtube.com/@keitoaiweb/membership\n\nKEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n★プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nChatGPT むちゃぶり仕事術\n→ https://amzn.to/46u5zjd\nやりたい！ができる生成AIでアプリづくり\n→ https://amzn.to/46sdQT4\n\n▼目次\n0:00 Claude CodeでAI動画編集を自動化する検証\n2:07 AI編集の検証内容と演出要件\n7:20 Claude Codeを使った動画編集の実践手順\n14:27 自作の動画編集スキルを作る方法\n18:57 編集にかかった時間と料金\n20:39 完成したAI編集動画のクオリティ検証\n24:38 AI動画編集の現状と結論\n\n▼おすすめ動画\nClaude Code × Obsidianが相性抜群\nhttps://youtu.be/TU8DSyuMto4\n今すぐ作るべきエージェントスキル10選\nhttps://youtu.be/D3Ftx4KjLyw\nChatGPT Workを完全解説\nhttps://youtu.be/U74PHw-h59Q\nCodexの便利なプラグイン２４選\nhttps://youtu.be/Rf5K3reQWIM\nOpenAI「Codex」完全ガイド\nhttps://youtu.be/ESGl8Juwytc\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼はXのDMもしくは以下メールへ。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twitter.com/keitowebai\nnote：https://blog.procevo.biz/\nInst",
    "first_seen": "2026-10-05T15:13:37.706878+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "出演者は、AI動画編集のレベルはもう動画編集者を雇わなくていいほどに達していると主張。",
+    "出演者は、カット、テロップ、エフェクト、Bロールの挿入、画面切り替えの動きなどをAIに指示。",
+    "出演者は、約9分半の動画編集にClaude Codeを使ってかかった費用が約8,369円、時間が3時間と報告。"
+   ],
+   "for_whom": "AI動画編集ツールの実用性や費用・時間を知りたい人、動画編集の自動化・効率化に関心がある人。",
+   "caution": "AI利用料として約8,369円と提示されたが、これはClaude Codeのみの費用。AI環境構築や学習の手間、一部利用した他AIツールの費用は別途考慮が必要。動画で解説されたカスタムスキルはメンバーシップ限定配布であり、有料講座への誘導が",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-10-06T00:17:53.329419+00:00"
   },
   {
    "video_id": "yQo4UijSDBQ",
@@ -1677,10 +1635,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、ChatGPT の Dots・Grok Bot・Hermes Agent という「24時間動く AI エージェント」3つを取り上げ、それぞれが生まれた背景と設計思想の違いから、どれを使うべきかを解説しました。\n\nDots は ChatGPT のメモリや外部サービス連携、プロアクティブサーチ、ボイス体験まで作り込まれた「AI 秘書 1 体」で、ChatGPT に乗っかるならまずここから始めるのがおすすめです。\nGrok Bot は 1 つの Linux VM を全ボットで共有しながら、ボットごとに関心ごとを分離できる設計がとても綺麗で、AI 組織そのものを製品にしている印象でした。\n\n皆さんは 3 つのうちどれを使っていますか？ 使ってみた感想も、ぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ngrokbot勉強会はこちら👇\nhttps://note.com/masa_wunder/n/n6ea94255ae78\n\nclaudemodsの動画もやりました👇\nhttps://youtu.be/GunxHphrQ7s\n\n\n🎁無料プレゼントは公式LINEから🎁\n動画や記事で紹介したソースコードやスキルを、公式LINEに登録してくださった方限定で「無料」でプレゼントしています！\nいま特に人気なのは、認知負荷対策の「赤ペン (akapen)」skill です✨\n『akapen』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://go.masao.ai/line/open/Glu3UoqwiqvI?mtid=Jou19lKoK8vG\n\ntimestamp:\n00:00 今回のテーマ - 3つのAIエージェント\n01:10 3つが生まれた背景と思想の違い\n03:19 Grok Bot の強み - VM共有と関心の分離\n05:19 Dots - ChatGPT に溶け込む秘書AI\n07:54 Dots が向く人と火力の限界\n08:59 Dots と Grok Bot に共通する発想\n10:13 Hermes Agent - モデルの自由と古さ\n12:04 思想の違いと OpenAI の UX 力\n15:29 Dots の弱点と使い分け\n17:32 振り返りと OSS で挑む未来\n20:07 補足 - マクロとミクロの役割分担\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15",
    "first_seen": "2026-10-05T15:13:37.706878+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ChatGPTのdotsは1体の優秀なAI秘書としてUXが徹底的に作り込まれていると解説している",
+    "Grok Botは1台のVMを共有し関心事を分離するAI組織の設計思想を持つと説明している",
+    "Hermes Agentはモデル差し替えの自由度が高い一方マクロ連携の思想は旧世代的と述べている"
+   ],
+   "for_whom": "自律型AIエージェントの導入や自作ハーネス開発を検討している人",
+   "caution": "動画内および概要欄で有料のnoteメンバーシップや公式LINEへの登録による特典配布へ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T00:17:53.329419+00:00"
   },
   {
    "video_id": "AgSSLBxNvW8",
@@ -1704,91 +1672,137 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-05T15:13:37.706878+00:00"
+  },
+  {
+   "video_id": "PUBc2G0Tj5E",
+   "title": "Meet the New Codex CLI",
+   "url": "https://www.youtube.com/watch?v=PUBc2G0Tj5E",
+   "published": "2026-10-05T18:29:08+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-06T00:17:53.329419+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Codex CLIに刷新された全画面UIや音声入力モードが追加されたと紹介している。",
+    "複数タスクの並行処理やAgent管理画面、スマホからのリモート操作に対応したと説明している。",
+    "ターミナル内でのMermaid図やLaTeXの表示、作業ツリーの分岐機能などを紹介している。"
+   ],
+   "for_whom": "ターミナル環境でAIを活用してコーディングや開発作業を効率化したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T00:17:53.329419+00:00"
+  },
+  {
+   "video_id": "yUuFvL1lK4k",
+   "title": "Mods in Claude Code: change how Claude Code works",
+   "url": "https://www.youtube.com/watch?v=yUuFvL1lK4k",
+   "published": "2026-10-05T19:18:43+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-06T00:17:53.329419+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude CodeのUI描画やプロンプト内容、ツール呼び出しをカスタマイズできるMod機能が追加されたと紹介している。",
+    "コンテキスト使用量の表示バーやエージェント一覧、メールアドレスを非表示にするModなどの具体例を解説している。",
+    "Modは内部イベントをTypeScript関数でフックして作成し、プラグインとして配布・導入可能だと説明している。"
+   ],
+   "for_whom": "Claude Codeの表示や挙動を自分好みに拡張したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T00:17:53.329419+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-05T15:13:37.706878+00:00",
+   "last_ok": "2026-10-06T00:17:53.329419+00:00",
    "fail_streak": 0
   }
  }
