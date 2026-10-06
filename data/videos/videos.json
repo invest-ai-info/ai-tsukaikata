@@ -151,19 +151,6 @@
    "attempts": 0
   },
   {
-   "video_id": "fL1PpH0wftM",
-   "title": "【いけとも×木内翔大】AIに任せて、自分にしかできない仕事に時間を使う｜10/5(月)19:00〜",
-   "url": "https://www.youtube.com/watch?v=fL1PpH0wftM",
-   "published": "2026-09-22T06:30:22+00:00",
-   "channel_key": "iketomo",
-   "channel_name": "いけともch",
-   "default_category": "news",
-   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "fHEIw5CcN5U",
    "title": "The dots demo, take two | OpenAI DevDay 2026",
    "url": "https://www.youtube.com/watch?v=fHEIw5CcN5U",
@@ -240,10 +227,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Start a Codex task, close your laptop, and pick it up from your phone. See how to create a reusable cloud environment with your repositories, networking, and secrets, then share it with your team.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "PCを閉じてもクラウド上でCodexのタスクが継続実行され、スマホや音声からも追加入力できると説明している。",
+    "リポジトリを指定すると対話形式で依存関係や環境変数を設定し、再利用可能な環境を作れると紹介している。",
+    "作成した環境はチームで共有可能で、PR作成やコードレビューの流れまで連携できると解説している。"
+   ],
+   "for_whom": "Codexを活用して開発作業をクラウド上で効率化・自動化したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T06:49:07.865532+00:00"
   },
   {
    "video_id": "uXspbC2srEQ",
@@ -1550,10 +1547,20 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "Workspace StudioのGASカスタムステップ作成に悩んでいる方必見！\n\n今回はカスタムステップ構築を爆速化する専用Gemを完全無償配布します✨\n「こんな自動化をしたい！」という要望を言語化して伝えるだけで、GemがGitHubの知識を基に最適なコードを自動生成💥\n\nエラーが起きてもGemと壁打ちしながら試行錯誤できるため、誰でも簡単にコードを完成させられます！概要欄の共有リンクからGemを取得し、ぜひ自社の内製化や業務効率化にお役立てください👀\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:55 「Workspace Studio」とは\n02:32 前回動画のおさらい\n04:59 Gemを作りました！\n07:45 Gemの指示通り、GASを作成する\n09:02 作成したステップがStudioに入ってるか確認\n12:20 まとめ\n13:56 ゆるトーク\n\n【GitHub：Workspace Studio Toolkit】\nhttps://github.com/kotakahashi-4u/gas-workspace-studio-toolkit\n\n【今回のGem：GAS Studio】\nhttps://gemini.google.com/gem/1IwLtPazmHt4bMTgxlYyADGhtUzL-NkMM?usp=sharing\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【関連動画】\n「Workspace Studio」からGASが直接動く！Salesforce・Slack連携も解禁！\nhttps://youtu.be/774iU5fsCS0\n\n【※個人アカウントの方向け「Google Workspace Experiments」】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
    "first_seen": "2026-10-05T15:13:37.706878+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Workspace StudioのGASカスタムステップ作成を支援する専用Gem「GAS Studio」を無償配布すると紹介している。",
+    "要望を伝えることでGitHubの知識を基にマニフェストとGASコードを自動生成し、導入手順まで案内してくれると説明している。",
+    "生成されたコードをApps Scriptにデプロイし、CSVデータをJSON変換して差し込み印刷を行うワークフローの構築を実演している。"
+   ],
+   "for_whom": "Workspace Studioで独自のGASステップを作成し業務を自動化したい人",
+   "caution": "Gemが生成したコードが一発で正常動作しないケースもあるため、エラーメッセージをGemにフィードバックしながら修正を重ねる試行錯誤が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T06:49:07.865532+00:00"
   },
   {
    "video_id": "ZHVNTTKu9fU",
@@ -1563,10 +1570,20 @@
    "channel_key": "two-minute-papers",
    "channel_name": "Two Minute Papers",
    "default_category": "tech",
-   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 Sonnet 5.5: \nhttps://www.anthropic.com/claude-sonnet-5-5\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
    "first_seen": "2026-10-05T15:13:37.706878+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Sonnet 5.5を用いて物理シミュレーションやレイトレーシングの再現実験を行った結果を紹介している。",
+    "最新モデルは従来同等の品質を維持しながら約5倍安価かつ小型化が進んでいると説明している。",
+    "パラメータ数だけでなく訓練の質が重要となり、個人でも高度なAIを活用できる時代が来ると述べている。"
+   ],
+   "for_whom": "最新AIモデルの性能向上やコスト低下の動向を把握したい人",
+   "caution": "動画の後半にはスポンサーであるクラウドGPUサービス（Lambda）のプロモーションが含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T06:49:07.865532+00:00"
   },
   {
    "video_id": "O_fBq2ROISA",
@@ -1622,10 +1639,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\n(2026年)9月30日、OpenAIは\n同社の上位AIモデルの最新版\n「GPT-6.1 Sol」を公開しました\nこのモデルは、同社の最上位モデル\n「GPT‑6 Astra」とほぼ同じ性能を持ちながら\nコストは5分の1で提供されるモデルで、特に\nAIエージェント系のコーディング、パソコンの操作\n金融、医療、法務などの専門業務を得意としており\nユーザーの指示や権限を守る能力が改善するなどの\n安全面も強化されていて\nWebサイトやアプリ・ゲーム開発はもちろん\n動画やスライド資料の制作からライティングまで\n幅広い用途でメインAIとして使えます\n\n今回の動画では\n第一章：GPT-6.1 Solの概要\n第二章：GPT-6.1 Solの使い方と活用事例\nの二章構成で、OpenAIの公開した最新AIモデル\n「GPT-6.1 Sol」の概要\nAIエージェント「Codex」と「ChatGPTワーク」で\nGPT-6.1 Solを使う方法と\nGPT-6.1 Solを使った簡単な活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:52　動画のもくじ\n1:33　第一章：GPT-6.1 Solの概要\n1:58　①、GPT-6.1 Solの特徴\n2:53　②、GPT-6.1 SolのAIベンチマーク\n4:30　③、GPT-6.1 Solの安全性\n5:38　第二章：GPT-6.1 Solの使い方と活用事例\n6:14　①、GPT-6.1 Solを使う方法\n7:39　②、GPT-6.1 Solの活用事例 ～開発編～\n9:25　③、GPT-6.1 Solの活用事例 ～実務編～\n11:29　エンディングムービー\n\n◆動画の中で紹介している内容\nGPT-6 Sol、GPT‑6.1 Sol Ultrafast、three.js、JavaScript、スキル\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://chatgpt.com/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-1-sol/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-sol-and-luna/\nhttps://arena.ai/leaderboard\nhttps://artificialanalysis.ai/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n",
    "first_seen": "2026-10-05T15:13:37.706878+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが公開した「GPT-6.1 Sol」は、最上位モデルAstra級の性能を持ちながらコストを5分の1に抑えたAIモデルだと紹介している。",
+    "コーディングやPC操作、専門業務のベンチマークで高スコアを記録し、安全性や指示遵守能力も改善されたと説明している。",
+    "ChatGPT有料プランやCodex等で利用可能で、3Dゲーム作成やスライド資料生成など幅広い業務に活用できると解説している。"
+   ],
+   "for_whom": "OpenAIの最新モデルの性能や費用対効果、業務での活用方法を把握したいビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-06T06:49:07.865532+00:00"
   },
   {
    "video_id": "4BlktIXr5EI",
@@ -1723,86 +1750,86 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-06T00:17:53.329419+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-06T00:17:53.329419+00:00",
+   "last_ok": "2026-10-06T06:49:07.865532+00:00",
    "fail_streak": 0
   }
  }
