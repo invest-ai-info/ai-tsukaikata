@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="354" viewBox="0 0 720 354" role="img" aria-label="8件の仕込み誤りのうち、条件によって結果が割れた唯一の1件（保温時間『最大4時間』、正しくは40時間）だけを取り出した表。各行は「拾えた回数／5回」。素朴に『聞き取りミスを指摘して』と頼んだ回は1/5。『自信の低い語に印をつけて』と頼んだ回は5/5。自動字幕だと伝えずに『確認して』と頼んだ回は5/5。キャプションを47行に増やした回は5/5。動画3本分をまとめて頼んだ回は5/5。下の枠には、素朴に聞いた5回中1回だけ言い間違いの可能性ありと『最大4時間』に触れ、残り4回はこの行だけ『不自然な変換は見当たりません』と明記するか無言で素通りしたこと、条件を1つ変えるだけで5/5に戻ったことからこの誤りだけが際どい位置にあったとわかることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="354"/>
+<text class="t-strong" x="18" y="26">割れたのは8件中1件だけ。保温時間の数字（最大4時間→正しくは40時間）</text>
+<text class="t-sm" x="18" y="45">実測2026-10-06。同じ1か所（最大4時間保温）を、5条件・各5回で拾えたかどうかだけを取り出した。</text>
+<text class="t-sm" x="18" y="64">各行は「拾えた回数／5回」。他の7件（同音異義語6件・価格1件）は、この5条件すべてで割れていない。</text>
+<text class="t-xs" x="518.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">素朴に「聞き取りミスを指摘して」と頼んだ回</text>
+<rect class="box" x="438" y="104" width="160" height="26" rx="4"/>
+<text class="t-sm" x="518.0" y="125" text-anchor="middle" style="font-weight:700">1/5</text>
+<text class="t" x="18" y="157">「自信の低い語に印をつけて」と頼んだ回</text>
+<rect class="box-good" x="438" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="157" text-anchor="middle" style="font-weight:700">5/5</text>
+<text class="t" x="18" y="189">自動字幕だと伝えずに「確認して」と頼んだ回</text>
+<rect class="box-good" x="438" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="189" text-anchor="middle" style="font-weight:700">5/5</text>
+<text class="t" x="18" y="221">キャプションを47行に増やした回</text>
+<rect class="box-good" x="438" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="221" text-anchor="middle" style="font-weight:700">5/5</text>
+<text class="t" x="18" y="253">動画3本分をまとめて頼んだ回</text>
+<rect class="box-good" x="438" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="253" text-anchor="middle" style="font-weight:700">5/5</text>
+<rect class="box-accent" x="18" y="270" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="290">素朴に聞いた5回中1回だけ、言い間違いの可能性ありと「最大4時間」に触れた。</text>
+<text class="t-accent" x="34" y="308">残り4回は、この行だけ『不自然な変換は見当たりません』と明記するか、無言で素通りした。</text>
+<text class="t-accent" x="34" y="326">条件を1つ変えるだけで5/5に戻った＝この誤りだけが「際どい」位置にあったとわかる。</text>
+</svg>
