@@ -31203,3 +31203,265 @@ def caption_check_warm_time_chart() -> None:
 if __name__ == "__main__":
     caption_check_condition_chart()
     caption_check_warm_time_chart()
+
+
+def embeddinggemma2_v1_vs_v2_chart() -> None:
+    """EmbeddingGemma（2025年9月発表）→2（2026年10月6日発表）の変化を、モデルカードの数字で並べる。
+
+    出典＝EmbeddingGemma 2 モデルカード（ai.google.dev/gemma/docs/embeddinggemma/model_card_2。
+    比較表に旧モデルの数値も載っている）と、EmbeddingGemma 1 モデルカード
+    （.../model_card。パラメータ数・コンテキスト長）。
+    ⚠️ ライセンス行は実測で見つけた差。v1のページには「License:」バッジが無く
+    「Terms of Use: Terms」が ai.google.dev/gemma/terms（Gemma利用規約・使用制限あり）に
+    リンクしている。v2のページは独立した「License: Apache 2.0」バッジを持つ
+    （どちらのページにもある「content is licensed under CC BY 4.0」という
+    フッターの定型文とは別物。それと混同しないよう生のHTMLで確認した）。
+    """
+    rows = [
+        (["モダリティ"], ["テキストのみ"], ["テキスト・画像・", "動画・音声"]),
+        (["テキスト専用の構成", "（パラメータ数）"], ["3.00億"], ["2.70億"]),
+        (["読める長さ", "（コンテキスト）"], ["2,048", "トークン"], ["8,192トークン", "（4倍）"]),
+        (["MTEBコード", "（NDCG@10）"], ["68.76"], ["78.68", "（+9.92点）"]),
+        (["MTEB多言語", "（v2・平均）"], ["61.15"], ["61.36"]),
+        (["ライセンス"], ["Gemma利用規約", "（使用制限あり）"], ["Apache 2.0", "（制限条項なし）"]),
+    ]
+    label_w = 165
+    col_gap = 8
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 140
+    pitch, box_h = 56, 46
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "1→2で増えたのはモダリティ、減ったのはテキスト専用時の重さ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "灰色＝EmbeddingGemma（2025年9月発表）、青＝EmbeddingGemma 2（2026年10月6日発表）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "出典はいずれもGoogleのモデルカード。テキスト専用の構成では前世代より軽くなっている。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "MTEBコードはGoogle自身の測定（NDCG@10）。ライセンスも独自規約からApache 2.0に変わった。</text>\n",
+    ]
+    headers = ["EmbeddingGemma", "EmbeddingGemma 2"]
+    for i, h in enumerate(headers):
+        tcls = "t-sm" if i == 0 else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label_lines, v1_lines, v2_lines in rows:
+        for i, line in enumerate(label_lines):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 18 + i * 16}">{_esc(line)}</text>\n')
+        for col_i, (lines, cls, tcls) in enumerate(
+            ((v1_lines, "box-quiet", "t"), (v2_lines, "box-accent", "t-accent"))
+        ):
+            x = col_x[col_i]
+            parts.append(
+                f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            for li, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 10:.1f}" y="{y + 18 + li * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※ テキスト専用の構成はモジュール式で、画像用(1.7億)・音声用(3.0億)は必要なときだけ追加する。</text>\n"
+    )
+    height += 18
+
+    alt = (
+        "EmbeddingGemma（2025年9月発表）からEmbeddingGemma 2（2026年10月6日発表）への変化を示した表。"
+        "モダリティはテキストのみからテキスト・画像・動画・音声へ拡大。"
+        "テキスト専用の構成のパラメータ数は3.00億から2.70億へ減少。"
+        "読める長さ（コンテキスト）は2,048トークンから8,192トークンへ4倍に拡大。"
+        "MTEBコード（NDCG@10）は68.76から78.68（+9.92点）に上昇。"
+        "MTEB多言語（v2・平均）は61.15から61.36。"
+        "ライセンスは、使用制限のあるGemma利用規約から、制限条項のないApache 2.0に変わった。"
+        "テキスト専用の構成はモジュール式の読み込みで、画像用(1.7億パラメータ)・音声用(3.0億パラメータ)の"
+        "エンコーダーは必要なときだけ追加する。"
+    )
+    (OUT / "embeddinggemma2-v1-vs-v2.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def embeddinggemma2_context_chart() -> None:
+    """読める長さ（コンテキスト）と埋め込みの次元を、3社の公式ページの数字だけで比べる。
+
+    出典＝EmbeddingGemma 2モデルカード・OpenAIのEmbeddingsガイド
+    （developers.openai.com/api/docs/guides/embeddings）・Anthropic公式ドキュメントの
+    Embeddingsページ（platform.claude.com。Voyage AIを紹介している）。
+    いずれも仕様の数字で、性能テストの点数ではないので3社を並べている。
+    """
+    context_rows = [
+        ("EmbeddingGemma 2", 8192, "box-accent", "t-accent"),
+        ("text-embedding-3-large", 8192, "box-quiet", "t"),
+        ("voyage-multimodal-3.5", 32000, "box-quiet", "t"),
+    ]
+    dim_rows = [
+        ("EmbeddingGemma 2", 768, "box-accent", "t-accent"),
+        ("text-embedding-3-large", 3072, "box-quiet", "t"),
+        ("voyage-multimodal-3.5", 1024, "box-quiet", "t"),
+    ]
+    label_w = 210
+    left = 18 + label_w
+    bar_right = 560
+    span = bar_right - left
+    bar_h, pitch = 16, 28
+
+    assert bar_right + 8 + 132 <= WIDTH - 10, bar_right
+
+    def section(y0: int, title: str, rows: list[tuple[str, int, str, str]], unit: str) -> tuple[str, int]:
+        biggest = max(v for _, v, _, _ in rows)
+        scale = span / biggest
+        out = [f'<text class="t-accent" x="18" y="{y0}">{_esc(title)}</text>\n']
+        y = y0 + 20
+        for name, value, cls, tcls in rows:
+            bw = max(2.0, value * scale)
+            out.append(f'<text class="t-sm" x="18" y="{y + bar_h - 3}">{_esc(name)}</text>\n')
+            out.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            out.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 3}">{value:,}{unit}</text>\n'
+            )
+            y += pitch
+        return "".join(out), y
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "読める長さはOpenAIと同じ8,192トークン、次元はOpenAIの4分の1</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "数値は各社の公式ページに書かれている仕様（性能テストの点数ではない）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "voyage-multimodal-3.5は、Anthropicが公式ドキュメントで紹介している埋め込みモデル。</text>\n",
+    ]
+    body1, y1 = section(96, "読める長さ（コンテキスト・トークン）", context_rows, "トークン")
+    parts.append(body1)
+    body2, y2 = section(y1 + 20, "埋め込みの次元（既定値）", dim_rows, "次元")
+    parts.append(body2)
+
+    height = y2 + 24
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 3モデルとも、MRL（Matryoshka）で実行時に次元を切り詰められる仕組みを持つ。</text>\n"
+    )
+    height += 16
+
+    alt = (
+        "読める長さ（コンテキスト）と埋め込みの次元を3社の公式ページの数字で比べた横棒グラフ。"
+        "読める長さ＝EmbeddingGemma 2は8,192トークン、text-embedding-3-large（OpenAI）も"
+        "同じ8,192トークン、voyage-multimodal-3.5（Anthropicが紹介）は32,000トークンで最大。"
+        "埋め込みの次元（既定値）＝EmbeddingGemma 2は768次元、text-embedding-3-largeは3,072次元、"
+        "voyage-multimodal-3.5は1,024次元。いずれも各社公式ページに書かれている仕様の数字で、"
+        "自社測定の性能テストの点数ではない。3モデルとも、MRL（Matryoshka Representation Learning）で"
+        "実行時に次元を切り詰められる仕組みを持つ。"
+    )
+    (OUT / "embeddinggemma2-context-dims.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def embeddinggemma2_vendor_shape_chart() -> None:
+    """埋め込みモデルの「売り方」そのものが3社で違うことを並べる。
+
+    出典＝Google（発表ページ・モデルカード）、OpenAI（Embeddingsガイド・料金ページ）、
+    Anthropic公式ドキュメントのEmbeddingsページ（自社モデルは無く、Voyage AIを紹介）。
+    Voyage AI自身の料金ページ（docs.voyageai.com・voyageai.com）は、この記事を書いた
+    環境からは経路遮断（CONNECT tunnel failed）で到達できなかった。
+    """
+    rows = [
+        (
+            ["提供形態"],
+            ["重みを無料公開", "自分の環境で動かす"],
+            ["有料のAPI", "（従量課金）"],
+            ["自社モデルなし", "Voyage AIを紹介"],
+        ),
+        (
+            ["テキストの単価", "（100万トークン）"],
+            ["無料", "（計算は自己負担）"],
+            ["$0.02〜$0.13"],
+            ["確認できず", "（経路遮断）"],
+        ),
+        (
+            ["対応モダリティ"],
+            ["テキスト・画像・", "動画・音声"],
+            ["テキストのみ"],
+            ["テキスト・画像・", "動画（音声なし）"],
+        ),
+    ]
+    label_w = 145
+    col_gap = 6
+    col_w = (684 - label_w - col_gap * 2) / 3
+    col_x = [18 + label_w + i * (col_w + col_gap) for i in range(3)]
+    top = 150
+    pitch, box_h = 58, 46
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "無料の重みと、2種類の有料APIが並ぶ——単価の土台がそもそも違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "各社の公式ページ（発表・ドキュメント・料金ページ）に書かれている範囲だけを並べた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "AnthropicはEmbeddingsページで「自社の埋め込みモデルは無い」と明記し、Voyage AIを紹介している。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "Voyage AI自身の料金ページは、この記事を書いた環境からは経路遮断で到達できなかった。</text>\n",
+    ]
+    headers = ["Google", "OpenAI", "Anthropic"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label_lines, google_v, openai_v, anthropic_v in rows:
+        for i, line in enumerate(label_lines):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 18 + i * 16}">{_esc(line)}</text>\n')
+        for i, lines in enumerate((google_v, openai_v, anthropic_v)):
+            x = col_x[i]
+            cls = "box-accent" if i == 0 else "box-quiet"
+            tcls = "t-accent" if i == 0 else "t-sm"
+            parts.append(
+                f'<rect class="{cls}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            for line_no, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tcls}" x="{x + 8:.1f}" y="{y + 18 + line_no * 16}">{_esc(line)}</text>\n'
+                )
+        y += pitch
+
+    height = y + 24
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※「確認できず」は機能や価格が無いのではなく、公式の料金ページに到達できなかった意味。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "埋め込みモデルの提供形態を3社で比べた表。提供形態＝Googleは重みを無料公開して"
+        "自分の環境で動かす、OpenAIは有料のAPI（従量課金）、Anthropicは自社モデルが無く"
+        "Voyage AIを紹介。テキストの単価（100万トークン）＝Googleは無料（計算は自己負担）、"
+        "OpenAIは$0.02〜$0.13、Anthropic（Voyage AI）は確認できず（経路遮断）。"
+        "対応モダリティ＝Googleはテキスト・画像・動画・音声、OpenAIはテキストのみ、"
+        "Anthropic（Voyage AI）はテキスト・画像・動画（音声には対応していない）。"
+        "Voyage AI自身の料金ページは、この記事を書いた環境からは経路遮断（CONNECT tunnel failed）で"
+        "到達できなかった。"
+    )
+    (OUT / "embeddinggemma2-vendor-shape.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    embeddinggemma2_v1_vs_v2_chart()
+    embeddinggemma2_context_chart()
+    embeddinggemma2_vendor_shape_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

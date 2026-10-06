@@ -273,10 +273,37 @@
 - [x] https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
   - →保管: ✅ **2026-10-01: 公開した** → `content/tools/gemini-4-argon.md`
 
-- [ ] https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/
-  - 2026-10-06 自動追記（major・Google DeepMind「EmbeddingGemma 2: an open, lightweight multimodal embedding model」）
+- [x] https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/
+  - →保管: ✅ **2026-10-06: 公開した** → `content/tools/embeddinggemma-2.md`
 
 ## 処理済み
+
+- https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/ → **公開済み** content/tools/embeddinggemma-2.md（2026-10-06・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた（200・約394KB、要約させず生HTMLから抽出）。
+    関連して EmbeddingGemma 2 モデルカード・EmbeddingGemma（v1）モデルカード・Gemma利用規約・
+    OpenAIのEmbeddingsガイド/料金ページ/モデル一覧・Anthropic公式ドキュメントのEmbeddingsページにも到達。
+    図3枚（`embeddinggemma2-v1-vs-v2` / `embeddinggemma2-context-dims` / `embeddinggemma2-vendor-shape`）。
+    出典11件すべて取得成功。`check_numbers.py` は照合対象10個のうち**8個が出典に存在**。
+    残る2個は、①`$0.13`＝OpenAI料金ページの生データ（埋め込みJSON）が`$`無しの`0.13`で持っているため
+    機械照合には掛からないが、生JSONを直接確認して本文にその旨明記、②`14.4%`＝
+    9.92÷68.76からこの記事が計算した値で、本文に計算式を明記。どちらも消さずに残した。
+    pytest 785 passed・build 271ファイル。`check_readability.py` は60字以上11%（目安15%以下、最長95字）。
+  - 📌 記事の芯＝**EmbeddingGemma 2は文章・画像・動画・音声を1つの768次元ベクトルにまとめる
+    マルチモーダル埋め込みモデルで、商用利用も含めて無料（Apache 2.0・重みを自分の環境で動かす）**。
+    前世代（EmbeddingGemma、2025年9月・テキスト専用）からは、読める長さが2,048→8,192トークン（4倍）、
+    MTEBコード（NDCG@10）が68.76→78.68に向上。
+  - 🔍 **実測で見つけた差＝ライセンスがGemma利用規約（使用制限あり）からApache 2.0（制限条項なし）に
+    変わっていた**。両モデルカードの生HTMLを直接比較して確認（v1は独立した「License:」バッジが無く
+    「Terms of Use」が`ai.google.dev/gemma/terms`にリンクするのみ、v2は独立した
+    「License: Apache 2.0」バッジを持つ。どちらのページにもある「content is licensed under CC BY 4.0」という
+    フッターの定型文とは別物で、混同しないよう生データで確認した）。
+  - ⚠️ 他社比較は「単価」という前提がそもそも崩れる記事だった。**EmbeddingGemma 2は無料の重み、
+    OpenAIは有料API、Anthropicは自社モデルを持たずVoyage AIを公式ドキュメントで紹介**、と
+    提供形態そのものが3社で違う。性能テスト（MTEB）の点数は方針どおり3社間で並べず、
+    読める長さ・次元・提供形態という仕様の数字だけを比較した。
+  - ⚠️ Voyage AI自身の公式ページ（`docs.voyageai.com`・`voyageai.com`）は**経路遮断**
+    （`CONNECT tunnel failed, response 403`）で到達できず、voyage-multimodal-3.5の単価は
+    「確認できず」のまま。次にこのドメインを叩く行が来たら再試行対象にすること。
 
 - https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/ → **公開済み** content/tools/gemini-4-argon.md（2026-10-01・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/` へ到達（200）。
