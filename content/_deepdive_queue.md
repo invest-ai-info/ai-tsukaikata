@@ -273,6 +273,9 @@
 - [x] https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/
   - →保管: ✅ **2026-10-01: 公開した** → `content/tools/gemini-4-argon.md`
 
+- [ ] https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/
+  - 2026-10-06 自動追記（major・Google DeepMind「EmbeddingGemma 2: an open, lightweight multimodal embedding model」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/ → **公開済み** content/tools/gemini-4-argon.md（2026-10-01・公開）

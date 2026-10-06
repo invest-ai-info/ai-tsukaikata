@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-06T21:41:17.838890+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-06T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "PyMCはベイズ統計に欠かせないMCMCサンプリングのためのライブラリ。これまではさまざまな推定や検定を行うために、使い方を中心に見てきました。今回はPyMCそのものの仕組みについて見ていきます。『社会人1年生から学ぶ、やさしいデータ分析』ベイズ統計編、番外編（第10回）です。",
+      "title": "【Pythonで学ぶデータ分析】PyMC早わかり ～ PyMCのモデルを可視化する",
+      "uid": "cff3ca42f8e7edd8",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/07/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-06T17:14:04.853635+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2387,18 +2399,6 @@
       "uid": "fabd6ab78feca8fe",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/30/news048.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T06:46:49.248383+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-09-30T01:46:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIチャットボット「Claude」を開発するAnthropicが新規株式公開(IPO)に向けた目論見書で、高度なAIが「人類に壊滅的または存亡に関わるリスク」をもたらす可能性があると投資家に警告していることが明らかになりました。目論見書では、AIモデルが停止に抵抗したり、情報を隠したり操作したりする可能性など、AIの安全性に関する幅広いリスクが挙げられています。 続きを読む...",
-      "title": "Anthropicが「高度なAIが人類存亡に関わるリスクをもたらす可能性がある」と新規株式公開(IPO)の目論見書で警告",
-      "uid": "3cd09e1a1afcb453",
-      "url": "https://gigazine.net/news/20260930-anthropic-ai-existential-risk-to-humanity/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

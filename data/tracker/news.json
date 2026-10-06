@@ -1,6 +1,44 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-06T21:41:17.838890+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-10-06T19:57:04+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+      "uid": "cfb26c2f47d5c402",
+      "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-10-06T21:41:17.838890+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-06T19:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re launching a new, expanded version of our Cyber Verification Program (CVP), which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professional…",
+      "summary_ja": "サイバー認証プログラムの拡張版が開始。\n高度なサイバー機能と、ブロックを減らす機能を提供。\n資格を持つセキュリティ専門家が利用できます。",
+      "summary_source": "gemini",
+      "title": "Expanding the Cyber Verification Program",
+      "uid": "0ee374d01e47709b",
+      "url": "https://www.anthropic.com/news/cyber-verification-program",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-06T21:41:17.838890+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-06T18:59:30+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added --marketplace to claude plugin install : adds the marketplace if needed, under the same policy checks as claude plugin marketplace add , then installs the plugin from it…",
+      "title": "v2.1.292",
+      "uid": "4b2ba74f1a69a55b",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-06T17:14:04.853635+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -12,6 +50,20 @@
       "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
       "uid": "391bc5cb0a732780",
       "url": "https://openai.com/index/atlassian-partnership",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-06T21:41:17.838890+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-06T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+      "summary_ja": "OpenAIとIroncladがAIエージェントを訓練中。\n複雑な契約業務でAIを訓練・評価し、\n専門業務におけるPC利用の高度化を目指します。",
+      "summary_source": "gemini",
+      "title": "Advancing computer use with Ironclad",
+      "uid": "bce80a84bb3f6f14",
+      "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
       "vendor": "OpenAI"
     },
     {
