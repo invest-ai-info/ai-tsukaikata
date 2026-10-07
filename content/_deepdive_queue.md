@@ -276,6 +276,9 @@
 - [x] https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/
   - →保管: ✅ **2026-10-06: 公開した** → `content/tools/embeddinggemma-2.md`
 
+- [ ] https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/
+  - 2026-10-07 自動追記（major・Google「Introducing Playground: Create and play custom games」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/ → **公開済み** content/tools/embeddinggemma-2.md（2026-10-06・公開）

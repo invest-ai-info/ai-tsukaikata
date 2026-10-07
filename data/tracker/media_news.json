@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-07T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "生成AIによる画像生成能力はますます進化しており、まるで人間のイラストレーターやマンガ家が描いたような画像を容易に生成することが可能です。ハーバード大学のジャーナリズム機関であるNieman Jounalism Labが、OpenAIのChatGPTが生成したマンガに「実在するマンガ家の署名」が含まれていると報じました。 続きを読む...",
+      "title": "ChatGPTが生成したマンガに「実在するマンガ家の署名」が含まれているとの指摘",
+      "uid": "ca762df67bc4d987",
+      "url": "https://gigazine.net/news/20261007-chatgpt-adding-real-cartoonists-signatures-fake/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-07T10:08:56+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Preferred Networksは、日本語に特化したAI翻訳サービス「PLaMo翻訳」の大型アップデート版の提供を開始した。",
+      "title": "「PLaMo翻訳」を大型アップデート。フロンティア級精度を10分の1以下のコストで実現",
+      "uid": "c9d201d35caefc55",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2146541.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-07T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIを使ってAI向けハードウェアを設計するオープンソースプロジェクト「openTPU」が公開されています。openTPUは、AIモデルを高速に動かすための専用アクセラレーターをAIエージェントも活用しながら開発する試みで、Qwen3やQwen3.5、Gemma 4など複数の言語モデルを実際のFPGAカード上で動かすことに成功しています。 続きを読む...",
+      "title": "AIによって開発されたオープンソースのAIアクセラレータ「openTPU」が登場",
+      "uid": "15a5af1a18c4f9cb",
+      "url": "https://gigazine.net/news/20261007-opentpu/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-07T09:20:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIがアプリケーション内で「どのモデルを使うか」「どのツールを呼び出すか」「問い合わせをどこに振り分けるか」といった判断を高速に行うための新API「Decisions API」をパブリックベータとして公開しました。テキストと画像を入力でき、条件に当てはまる確率や選択結果、評価スコアなどを機械処理しやすい形式で返します。 続きを読む...",
+      "title": "OpenAIが判断専用の「Decisions API」を公開、テキストや画像を約10倍高速に判定して確率や信頼度を出力",
+      "uid": "455116841a044167",
+      "url": "https://gigazine.net/news/20261007-decisions-api/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-07T09:09:56+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "インプレスは、書籍「あしざわ式 小説を書く人のAI実践術 創作の困ったを解決するQ&A」を10月7日に発売した。価格は1,980円。",
+      "title": "安野貴博氏推薦の小説を書く時のAI活用がわかる本。特典の使えるプロンプトも収録 「あしざわ式 小説を書く人のAI実践術 創作の困ったを解決するQ&A」",
+      "uid": "dc0f758a14fa9385",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2146520.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-07T08:24:32+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米調査会社のガートナーは、ベンダーのFDE（フォワードデプロイドエンジニアあるいはフォワードデプロイドエンジニアリング）によって開発されたAIエージェントの70％が2028年までに企業に使われずに放棄される（Gartner Predicts 70% of Enterprises Will Abandon Agentic AI Built by Vendor Forward-Deployed En…",
+      "title": "「FDEが開発したAIエージェントの7割は使われず、単なるコンサルティングが販売される」　ガートナー予測",
+      "uid": "7f6fb76206c64379",
+      "url": "https://www.itmedia.co.jp/news/article/2610/07/2000002098/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-07T08:44:48.868475+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2327,78 +2399,6 @@
       "uid": "735203101ef4d3fe",
       "url": "https://japan.cnet.com/article/35253135/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-01T06:02:04.226611+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-10-01T01:33:42+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは10月1日、新しいフロンティアモデル「Gemini 4 Argon」を発表した。まずは「Fairwind Program」を通じて、信頼できるサイバーセキュリティの担当者に順次展開。導入価格は、100万入力トークンあたり2ドル、100万出力トークンあたり10ドル。キャッシュ済みの入力トークンについては、95%オフの割引価格で提供される。",
-      "title": "Google、新AI「Gemini 4 Argon」を発表。出力100万トークンに拡大",
-      "uid": "5e0ae757a2ac5689",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2144705.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-01T06:02:04.226611+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-10-01T00:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Autodeskは「Autodesk University 2026（AU 2026）」において、「Fusion」「Inventor」「Vault」およびPLMに関する新たなAI機能や取り組みを発表した。部品の編集や組み立て、製造工程の自動化に加え、製品情報の連携や既存の設計資産の再利用を支援する。",
-      "title": "Autodesk、FusionなどのAI機能を発表　設計作業の自動化や設計資産の再利用を支援",
-      "uid": "3a5cce5154f5aa94",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/01/news015.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T23:54:33.788131+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-30T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIの活用が進むほど、企業は外部のサービスやインフラへの依存を深める。データやモデルへのコントロールを保ち、自らの意思で選択できる状態を守る「AI主権」はなぜ経営課題になったのか、4つの観点から解説する。",
-      "title": "AI主権はなぜ「切実な経営課題」になったのか　モデル“禁輸”問題が示した「選択肢を持つこと」の重要性",
-      "uid": "8ed688c4bad91084",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/01/2000001909/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T23:54:33.788131+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-30T22:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "日立製作所とファナックはフィジカルAI（人工知能）実装の共同事業化に向けた戦略的パートナーシップを締結した。日立のAI技術とファナックの産業用ロボットを組み合わせたフィジカルAIの共同実証と共同展開を推進する。共同実証で得られたフィジカルAIの実装／運用ノウハウを生かして、2027年度からグローバルなインストールベースを活用して展開する。",
-      "title": "日立とファナックがフィジカルAI協業　日立エッジAI×ファナックロボ有効性も検証",
-      "uid": "9a178af58f40fe5b",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/01/news031.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T23:54:33.788131+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-09-30T22:16:25+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、次世代フロンティアモデル「Gemini 4 Argon」を発表した。最大出力100万トークンに対応し、長時間に及ぶ業務処理や自律的なサイバー脆弱性修正に強みを持つ。安全対策を強化した上で、まずは信頼できるサイバー防御組織に先行提供し、有料APIなどで順次拡大する。",
-      "title": "Google、「Gemini 4 Pro」ではなく「Gemini 4 Agron」発表　まずはサイバー防御組織に限定提供、出力上限は100万トークンに",
-      "uid": "b8d01c270f6fbe2a",
-      "url": "https://www.itmedia.co.jp/news/article/2610/01/2000001912/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-09-30T23:54:33.788131+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-09-30T22:15:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "富士ソフトは経営体制「富士ソフト Gen.2」に基づく、製造業向けスマート工場事業戦略を発表した。既存設備を生かし、データをデジタルスレッドで統合しフィジカルAIで現場を動かす4つのオファリングを展開する。同事業で10％以上の成長を目指す。",
-      "title": "「デジタルスレッドとAIで動かす」　富士ソフトがスマート工場で10％成長狙う",
-      "uid": "c6d1914f1ac89e01",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/01/news034.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

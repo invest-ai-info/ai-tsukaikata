@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-07T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+      "summary_ja": "10代向けChatGPTに新機能が追加\n大学受験の出願管理を助ける機能が登場\nフラッシュカードやクイズ、AI評議会も設置",
+      "summary_source": "gemini",
+      "title": "Helping teens learn, plan, and shape the future of AI",
+      "uid": "b4edfdf60001d206",
+      "url": "https://openai.com/index/teens-learn-and-plan",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-07T16:34:15.852907+00:00",
+      "importance": "major",
+      "label": "Google AI Blog",
+      "published": "2026-10-07T12:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Overview of Playground",
+      "summary_ja": "カスタムゲームを作って遊べる「Playground」が登場",
+      "summary_source": "gemini",
+      "title": "Introducing Playground: Create and play custom games",
+      "uid": "9c9a9f8323e5e7c9",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-10-06T21:41:17.838890+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -5408,58 +5436,6 @@
       "title": "UST is bringing Claude to physical AI",
       "uid": "875451fe27a98aba",
       "url": "https://www.anthropic.com/news/ust-claude",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-09T16:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re asking the public for their hardest questions about AI, and committing to show our work as we address them.",
-      "summary_ja": "AIに関する一般からの質問を募集している。\n開発企業は、寄せられた質問への取り組み方を公開する方針。",
-      "summary_source": "gemini",
-      "title": "Inviting hard questions",
-      "uid": "a33a07829d930c1e",
-      "url": "https://www.anthropic.com/news/hard-questions",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-09T16:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust",
-      "uid": "489cfa8978beb818",
-      "url": "https://www.anthropic.com/news/ben-bernanke",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-09T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "The AI Picbreeder Experiment: Can AI agents be creative when nobody tells them what to create?",
-      "uid": "b13341319837fb3b",
-      "url": "/picbreeder-ai/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-09T13:20:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Introducing a new way to reflect on and refine how you use Claude. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals.",
-      "summary_ja": "AI「Claude」の利用状況を確認する機能が導入された。\n利用時間を追跡・可視化でき、目標との一致を判断できる。",
-      "summary_source": "gemini",
-      "title": "Introducing a way to reflect on how you use Claude",
-      "uid": "0f212765873ae80c",
-      "url": "https://www.anthropic.com/news/reflect-with-claude",
       "vendor": "Anthropic"
     }
   ]
