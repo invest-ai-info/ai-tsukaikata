@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-07T18:10:20+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added Claude Haiku 5.5 ( claude-haiku-5-5 ), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K) Added agentType to …",
+      "title": "v2.1.293",
+      "uid": "f1617683f16e13ed",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-07T17:57:07+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "1.12.0 (2026-10-07) Full Changelog: v1.11.0...v1.12.0 Features api: add claude-haiku-5-5 and typed computer and browser toolset tool calls ( f6346e6 ) api: add disabled to thinking types in model cap…",
+      "title": "v1.12.0",
+      "uid": "514f397d258a1914",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.12.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-07T16:34:15.852907+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -27,6 +51,48 @@
       "uid": "9c9a9f8323e5e7c9",
       "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-07T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
+      "summary_ja": "ラディソンホテルがChatGPTでホテル検索可能に\nアクセンチュアと組み機能追加を開発\n旅行者はホテル比較・予約まで行える",
+      "summary_source": "gemini",
+      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+      "uid": "bc4a1b8c01c8136b",
+      "url": "https://openai.com/index/radisson",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "major",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-07T00:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Our fastest, cheapest, and most capable small model yet. It’s designed for high-volume, cost-sensitive work.",
+      "summary_ja": "新しいAIモデル「Claude Haiku 5.5」発表\nこれまでで最速・最安・最も高性能な小型モデル\n大量の処理や費用重視の業務向けに開発",
+      "summary_source": "gemini",
+      "title": "Introducing Claude Haiku 5.5",
+      "uid": "a2ad04bcf24d5079",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-07T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
+      "summary_ja": "ChatGPTで「GPT-6」と新機能が提供開始\n賢い操作画面「Intelligent UI」を搭載\n画像や対話機能で応答が速く利用可能に",
+      "summary_source": "gemini",
+      "title": "GPT-6 and Intelligent UI for everyone",
+      "uid": "5871771c0c1278d0",
+      "url": "https://openai.com/index/gpt-6-for-everyone",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-06T21:41:17.838890+00:00",

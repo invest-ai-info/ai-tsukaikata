@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-07T21:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "インテルが「インテル株式会社 設立50周年記念式典」を開催した。インテル米国本社 CEOのリップブー・タン氏や同社日本法人 代表取締役社長の大野誠氏など同社の上級幹部、パートナー企業や政府関係者をはじめとする来賓、合わせて約400人が参加した。",
+      "title": "インテル日本法人が50周年、「4004」と「Intel Inside」は日本発祥",
+      "uid": "543e9fe12f1e46f2",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/08/news048.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-07T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの利用では、気付かないうちにコストが膨らむ「トークンの浪費」が起こりがちです。どうすればAIエージェントが消費するトークンを適正に抑制できるのでしょうか。5つの視点で考えます。",
+      "title": "AIの「トークン浪費」を減らす5つの打ち手――AI請求額が“また増えた”をどう抑制？",
+      "uid": "45f03fd6b896b050",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/08/news003.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-07T19:35:52+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米Microsoftは10月7日（現地時間）、米NVIDIAと共同開発したプロセッサ「RTX Spark」を搭載するノートPC「Surface Laptop Ultra」（以下、Laptop Ultra）の予約受付を始めた。",
+      "title": "NVIDIA「RTX Spark」搭載のノートPC「Surface Laptop Ultra」発売　価格は51万3480円から",
+      "uid": "3645238e28cd2ee5",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/08/2000002110/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-07T22:01:18.008705+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-07T19:28:13+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米Microsoftは10月7日（現地時間）、Windowsを「ハイブリッドインテリジェンス」の基盤と位置付ける新たな方針を発表した。AIエージェントを必要に応じてローカルPC上で実行し、より大きな能力が必要な場合はクラウドを使う仕組みをOSレベルで整える。",
+      "title": "Microsoft、Windowsを「ハイブリッドインテリジェンス」の基盤に　ローカルとクラウドのAIを使い分け　CopilotはファイルやPC操作にも対応",
+      "uid": "c7a9051ace1b919f",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/08/2000002111/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-07T16:34:15.852907+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "a98d789ac5cd1ae7",
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/01/news021.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-01T06:02:04.226611+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-01T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AWSは、AIコーディングエージェント「Kiro」のシステムプロンプトを継続的に評価する仕組みを公開した。社内の実利用データをLLMに採点させ、システムプロンプト変更の効果を比較しているという。",
-      "title": "「システムプロンプト陳腐化」をどう防ぐか　AWSの試行錯誤に見る「自社AIエージェント」運用のポイント",
-      "uid": "03429549572b98f9",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/01/news029.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-01T06:02:04.226611+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-01T02:00:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "スマートフォンに入る半導体は今や、どこかの工程で必ず東京エレクトロンの装置を通っている。9月25日に開幕した「Newtonフェス」のセッションでは、同社の難波敏之氏が、GPUの仕組みから自律化する工場の未来まで、AI時代の半導体製造を一般向けにわかりやすく解説した。",
-      "title": "Newtonフェスで聞く、AI時代の半導体製造　微細化から立体化、2000工程へ",
-      "uid": "8adac6e835798c56",
-      "url": "https://japan.cnet.com/article/35252999/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-01T06:02:04.226611+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-01T01:58:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleは2026年9月30日、新たなAIモデル「Gemini 4 Argon」を発表しました。Gemini 4 Argonは複数の工程にわたる作業を長時間続ける能力を重視したモデルで、ソフトウェア開発や企業の知識作業、サイバーセキュリティ防御などで高い性能を示しています。記事作成時点では一般公開されておらず、信頼できるサイバーセキュリティ担当者などに提供されています。 続きを読む...",
-      "title": "Googleが「Gemini 4 Argon」を発表、GPT-6 AstraやClaude Fable 5.1を超える性能でGemini 4シリーズの先駆けモデル",
-      "uid": "7893d89acc9983f8",
-      "url": "https://gigazine.net/news/20261001-google-gemini-4-argon/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-01T06:02:04.226611+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-10-01T01:35:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Appleが米国時間10月13日にAI搭載の新しいスマートホームハブを発表する予定だと、Bloombergが報じている。",
-      "title": "アップル、AI搭載ホームハブを10月13日発表か　顔と声で家族を識別",
-      "uid": "735203101ef4d3fe",
-      "url": "https://japan.cnet.com/article/35253135/",
-      "vendor": "CNET Japan"
     }
   ]
 }

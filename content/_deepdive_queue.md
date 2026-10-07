@@ -279,6 +279,9 @@
 - [ ] https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/
   - 2026-10-07 自動追記（major・Google「Introducing Playground: Create and play custom games」）
 
+- [ ] https://www.anthropic.com/claude-haiku-5-5
+  - 2026-10-07 自動追記（major・Anthropic「Introducing Claude Haiku 5.5」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/ → **公開済み** content/tools/embeddinggemma-2.md（2026-10-06・公開）
