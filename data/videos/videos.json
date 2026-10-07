@@ -237,10 +237,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Dots are frontier intelligence that have your back. Powered by GPT‑6 Astra, they have their own cloud computer, learn from feedback over time, and can work towards your goals 24/7. Through our ecosystem of plugins, they can readily connect to over 4,000 apps, giving them the tools to help wherever you need them.\n\nYour dot is always within reach, whether it is through ChatGPT, Slack, or Teams. You can ask questions, explore ideas, and give feedback along the way; or you can simply hop on a voice call when you need to talk something out. The more you work together, the more your dot learns your preferences, how you think, and what good looks like to you.\n\nThe magic of dots is when they bring you work done the way you would do it, sometimes before you even think to ask. With dots alongside you, ambitious ideas and projects you haven’t had the time or support to pursue start to feel achievable.\n\nhttps://openai.com/index/introducing-dots/",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "ChatGPTの新機能として、ユーザーの目標に向けて自律的に動く常時稼働エージェント「dots」を発表したと紹介している。",
+    "会議メモや指示に基づき、ウェブサイトの更新や資料作成、アプリ開発のテストなどを代行できると説明している。",
+    "仕事の進捗管理だけでなく、習い事の予約やスケジュール調整など日常のタスクもサポートすると示している。"
+   ],
+   "for_whom": "仕事や私生活のタスク管理・実務をAIエージェントに任せて自動化したい人向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T06:24:10.490971+00:00"
   },
   {
    "video_id": "m8VkCbkFAKA",
@@ -250,10 +260,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "These builders aren’t just writing code. They’re rewriting what’s possible.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIのCodexを活用して新たな可能性を切り拓く開発者たち「Codex Originals」を紹介している。",
+    "彼らは単にコードを書くだけでなく、ビジネスや教育、医療分野などを変革していると伝えている。",
+    "AIを通じて直感に従い、新たな創造や問題解決に挑む現代のビルダーたちの姿勢を表現している。"
+   ],
+   "for_whom": "OpenAI Codexに関心がある人やAIを活用した創作事例を見たい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T06:24:10.490971+00:00"
   },
   {
    "video_id": "a75xDflRooI",
@@ -1052,32 +1072,6 @@
    "attempts": 0
   },
   {
-   "video_id": "Z2-Btkv3K9k",
-   "title": "【正直評価】GPT 6 SolとLunaが登場！公式はコスパ版Astra級と語るが本命はコスト効率の大幅改善か",
-   "url": "https://www.youtube.com/watch?v=Z2-Btkv3K9k",
-   "published": "2026-09-23T03:17:24+00:00",
-   "channel_key": "masao",
-   "channel_name": "まさおAIじっくり解説ch",
-   "default_category": "news",
-   "description": "今回の動画では、OpenAI から登場した GPT-6 Sol と GPT-6 Luna について、同じ日に出た Claude Opus 5.5 と比べながら解説しました。\nAPI 価格は GPT-5.6 と比べて半額になり、Luna は Opus 5.5 の 1/40 という激安ぶりです。一方で Artificial Analysis などのベンチマークを見ると、賢さはあまり変わっておらず、性能の飛躍というよりコスパ寄りの進化だと感じました。\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://openai.com/index/introducing-gpt-6-sol-and-luna/\n\ntimestamp:\n00:00 導入 - GPT-6 Sol / Luna 登場\n01:14 Sol / Luna の概要と API 価格半額\n04:28 スペック - effort・キャッシュ等\n05:07 ベンチマークと公式の訴求ポイント\n07:58 賢さは据え置き？Opus 5.5 との差\n10:29 世界の反応 - 話題は Opus 5.5 へ\n11:28 Artificial Analysis のコスト比較\n12:35 デモ - LP・UI の作り込み比較\n16:01 デモ - ピンボール・マーブルラン・水槽\n17:39 デモ - ゴブリンゲーム・スライド・サムネ\n19:00 デモ - 3D / SVG キャラ再現と文章\n21:22 まとめ・メンバーシップ案内\n\n\n---\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
-   "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "HkhCUPoLv6M",
-   "title": "【感動級】Claude Opus5.5が登場！Fable5.1から大幅進化&AI臭やコスト効率も大幅改善、俺たちのOpusが帰ってきたので徹底解説",
-   "url": "https://www.youtube.com/watch?v=HkhCUPoLv6M",
-   "published": "2026-09-22T23:35:17+00:00",
-   "channel_key": "masao",
-   "channel_name": "まさおAIじっくり解説ch",
-   "default_category": "news",
-   "description": "今回の動画では、Anthropic から登場した新モデル「Claude Opus 5.5」について解説しました。\n入力 100 万トークンあたり料金やキャッシュの値下げ、Terminal-Bench 4.0 で medium が Opus 5 の max を上回る結果、Artificial Analysis での第三者の評価を整理したうえで、いつものデモ を Fable 5.1 や GPT-6 Astra と比べています。\n\n実際に使ってみて、コストが下がったのに情報の整理がうまくなり、人が読みやすい画面や文章に仕上げてくれる点に「一世代上がった」と感じました。皆さんは Opus 5.5 をどんな場面で使ってみたいですか？ 使ってみた感想もぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://www.anthropic.com/claude-opus-5-5\nhttps://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-opus-5-5.html\n\ntimestamp:\n00:00 Claude Opus 5.5 が登場\n01:33 エフォート別の出力量とゲーム比較\n05:00 料金・キャッシュ単価とナレッジカットオフ\n07:23 公式ベンチマークで見る性能の伸び\n10:52 文章スタイル・安全性・第三者の評価\n12:19 Artificial Analysis の評価\n14:27 Fable 5.1 と文章を読み比べ\n16:23 恒例デモ① LP・Notion 風・Figma 風\n21:28 恒例デモ② ゲーム・3D の世代差\n23:56 図解・3D を GPT-6 Astra と比較\n26:30 Fable 5.5 への期待と SVG 比較\n29:45 総評 - Opus 中心の使い方へ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: h",
-   "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "iiyGrn1mp-0",
    "title": "AI動画生成マネタイズ勉強会前日LIVE！Claude CodeもCodexも最近エグいね！",
    "url": "https://www.youtube.com/watch?v=iiyGrn1mp-0",
@@ -1722,10 +1716,20 @@
    "channel_key": "iketomo",
    "channel_name": "いけともch",
    "default_category": "news",
-   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
    "first_seen": "2026-10-06T18:35:19.660274+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "筆者は、ひとりビジネスにおいてAIエージェントがタスクを効率的に処理する方法を説明している。",
+    "AIエージェントを「最強チーム」と見立て、爆速で業務を片付けるための自動化手法を紹介している。",
+    "個人の事業主がAIを活用することで、複数の業務を同時並行で進める考え方を解説している。"
+   ],
+   "for_whom": "ひとりビジネスでAIエージェントを導入し、業務効率を大幅に高めたい人",
+   "caution": "この動画は、著者が提供する書籍や有料研修、コーチングサービス、公式LINEなど、複数の商材への誘導を含んでいます。",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-10-07T06:24:10.490971+00:00"
   },
   {
    "video_id": "fL1PpH0wftM",
@@ -1735,10 +1739,20 @@
    "channel_key": "iketomo",
    "channel_name": "いけともch",
    "default_category": "news",
-   "description": "▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n\n---\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n\n-----\n\n\n\n00:00 イントロ\n00:00 告知\n\n\n-----------------\n\n▼公式LINEはこちら（資料や「リモ研ガイド」「AIいけとも」もこちら）\nhttps://lin.ee/JtDTqN3\n\n▼いけともXはこちら！\nhttps://twitter.com/pop_ikeda\n\n▼より深い生成AIの情報は生成AIビジネス活用研究所へ\nhttps://www.youtube.com/@iketomo-gai-lab\n\n\n--告知---\n▼書籍『ChatGPT 最強の仕事術』\nhttps://amzn.to/3N3CaS2\n\n▼書籍『Perplexity 最強のAI検索術』（2024年11月27日発売予定）\nhttps://amzn.to/3ZGcCBX\n\n▼リモ研の運営会社（Workstyle Evolution）はこちら\nhttps://workstyle-evolution.co.jp/\n\n▼リモ研へのお問合せ～「ChatGPT活用研修」「ウェビナー企画AI」「スマートノート」等にご興味ある方はこちら!!\nhttps://forms.gle/nScF8Sq5LCzf7efT6\n\n▼サブチャンネル～池田朋弘のリモートワーク仕事術\nhttps://www.youtube.com/@iketomo_work\n\n\n-----------------\n\n\n\n\n\n▽チャンネル登録はこちら\nhttps://www.youtube.com/channel/UCpUQnk6MaY4o3NdgJmv10cw\n\n\n■このチャンネル（いけともchについて）\nビジネスパーソン向けに、AIエージェント時代に学ぶべき実践的なAI活用のスタンスやノウハウ、最新のAIニュースを、日本一わかりやすく発信しています！ぜひチャンネル登録よろしくお願いします！\n\n▼運営会社（株式会社Workstyle Evolution）はこちら",
    "first_seen": "2026-10-06T18:35:19.660274+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "いけとも氏は、AIに仕事を任せられない原因としてチャット利用止まりや育てる前提の欠如など4つの詰まりを挙げている。",
+    "いけとも氏は、AIエージェントを自動運転に例え、説明やお見本提示、改善のループを回して育成することが重要だと説明している。",
+    "木内氏は、経営者の台本作成やメール対応、スライド作成などをAIエージェントで自動化し作業時間を大幅削減した事例を紹介している。"
+   ],
+   "for_whom": "AIエージェントを活用して日常業務を自動化・効率化したいビジネスパーソン。",
+   "caution": "動画内および概要欄で公式LINE登録や関連書籍、コミュニティ等への案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T06:24:10.490971+00:00"
   },
   {
    "video_id": "7kRUMV9WMs0",
@@ -1882,86 +1896,86 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-06T22:46:32.964598+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-06T22:46:32.964598+00:00",
+   "last_ok": "2026-10-07T06:24:10.490971+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-06T22:46:32.964598+00:00",
+   "last_ok": "2026-10-07T06:24:10.490971+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-06T22:46:32.964598+00:00",
+   "last_ok": "2026-10-07T06:24:10.490971+00:00",
    "fail_streak": 0
   }
  }
