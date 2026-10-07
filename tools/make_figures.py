@@ -31460,8 +31460,140 @@ def embeddinggemma2_vendor_shape_chart() -> None:
     )
 
 
+def exclusion_wording_no_drift_chart() -> None:
+    """条ごとに誤報を4週積み重ねても、他の条・前週までに直した条が巻き添えにならないことを示す表。
+
+    実測（2026-10-07・架空の受注ログ点検5条・材料32行×2系列）。
+    週0=基準、週1〜4で条1→条2→条3→条4の順に誤報を1つずつ除外した。
+    条5（担当者欄空欄）は最後まで一度も触っていない対照。
+    """
+    label_w = 76
+    col_gap = 10
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 112
+    pitch, box_h = 40, 30
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    rows = [
+        ("週0（基準）", "5/5検出・巻き添え0件", "5/5検出・巻き添え0件"),
+        ("週1（条1除外）", "5/5検出・巻き添え0件", "5/5検出・巻き添え0件"),
+        ("週2（条2除外）", "5/5検出・巻き添え0件", "5/5検出・巻き添え0件"),
+        ("週3（条3除外）", "5/5検出・巻き添え0件", "5/5検出・巻き添え0件"),
+        ("週4（条4除外）", "5/5検出・巻き添え0件", "5/5検出・巻き添え0件"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "条ごとに誤報を4週重ねても、条5（未変更）は4週とも5/5検出・巻き添え0件</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の受注ログ点検5条・材料32行×2系列。週ごとに条1→条2→条3→条4の順で誤報を1つ除外。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "本物の異常5件（条5の担当者欄空欄を含む）と、既に除外した誤報の再混入を、週末ごとに機械で確認した。</text>\n",
+    ]
+    headers = ["系列A（一般化型の除外）", "系列B（行specific型の除外）"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, va, vb in rows:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for i, v in enumerate((va, vb)):
+            x = col_x[i]
+            parts.append(
+                f'<rect class="box-good" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{x + 8:.1f}" y="{y + 20}">{_esc(v)}</text>\n'
+            )
+        y += pitch
+
+    height = y + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※ 条5は週1〜4のどの週も編集していない。それでも5/5・0件のまま変わらなかった。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "条ごとに誤報の除外を4週積み重ねても、他の条が巻き添えにならないことを示す表。"
+        "行は週0（基準）から週4（条4除外）まで、列は系列A（一般化型の除外）と"
+        "系列B（行specific型の除外）。すべての行・列で「5/5検出・巻き添え0件」。"
+        "条5（担当者欄空欄）は週1〜4のどの週も一度も編集していない対照条件だが、"
+        "それでも5/5検出・巻き添え0件のまま変わらなかった。"
+    )
+    (OUT / "exclusion-wording-no-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def exclusion_wording_recurrence_chart() -> None:
+    """除外の書き方（一般化型／行specific型）で、来年また起きた同種の誤報を
+    鳴らしてしまうかどうかが分かれたことを示す図。
+
+    実測（2026-10-07）。週4時点の最終ルールに、金額だけ変えた「来年の同種注文」を当てた。
+    """
+    top = 108
+    bar_h = 34
+    pitch = 56
+
+    groups = [
+        ("系列A（一般化型の除外）", "box-good", "t-good", "来年の再発を鳴らした: 0/2回"),
+        ("系列B（行specific型の除外）", "box-bad", "t-bad", "来年の再発を鳴らした: 2/2回"),
+        ("系列Bに「金額や日付が変わっても\n再発しないように」を足した版", "box-good", "t-good", "来年の再発を鳴らした: 0/4回"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "除外の書き方で、来年また起きた同種の誤報を鳴らすかが分かれた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "週4時点の最終ルールに、金額だけ違う「来年の同種注文」を当てた実測。</text>\n",
+    ]
+
+    y = top
+    label_lines_total = 0
+    for label, box_cls, text_cls, value in groups:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(f'<text class="t-sm" x="18" y="{y - 8 + i * 15}">{_esc(line)}</text>\n')
+        row_top = y + (len(label_lines) - 1) * 15 + 4
+        parts.append(
+            f'<rect class="{box_cls}" x="18" y="{row_top}" width="400" height="{bar_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="30" y="{row_top + 22}">{_esc(value)}</text>\n'
+        )
+        y = row_top + bar_h + pitch - bar_h
+        label_lines_total += len(label_lines)
+
+    height = y + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※「鳴った」は誤報が再発したのではなく、正当な注文がまた異常として報告されたこと。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "除外の書き方によって、来年また起きた同種の誤報を鳴らしてしまうかどうかが"
+        "分かれたことを示す図。系列A（一般化型の除外・取引先と商品で条件を書いた）は、"
+        "金額だけ違う来年の同種注文を2回とも鳴らさなかった。系列B（行specific型の除外・"
+        "受注ID・金額などの具体的な値を指定した）は、同じ来年の同種注文を2回とも"
+        "また異常として鳴らしてしまった。系列Bに「金額や日付が変わっても再発しないように」"
+        "という一文を足して直させた版は、4回とも鳴らなかった。「鳴った」は誤報そのものが"
+        "起きたのではなく、正当な注文がまた異常として報告されたことを意味する。"
+    )
+    (OUT / "exclusion-wording-recurrence.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     embeddinggemma2_v1_vs_v2_chart()
     embeddinggemma2_context_chart()
     embeddinggemma2_vendor_shape_chart()
+    exclusion_wording_no_drift_chart()
+    exclusion_wording_recurrence_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
