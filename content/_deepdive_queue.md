@@ -276,8 +276,25 @@
 - [x] https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/
   - →保管: ✅ **2026-10-06: 公開した** → `content/tools/embeddinggemma-2.md`
 
-- [ ] https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/
+- [!] https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/
   - 2026-10-07 自動追記（major・Google「Introducing Playground: Create and play custom games」）
+  - **2026-10-07 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 の Sakana FIG・2026-09-30 の SynthID Bio と同型）。
+
+    **① ページ自体は問題なく読めた**（`blog.google` は200・約382KB。要約させず生のHTMLから本文を抽出して確認した）
+
+    **② 中身が「コーディング不要のゲーム制作プラットフォームの実験公開」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - Playground は文章で指示するだけでゲームを作れる実験的なプラットフォーム。本文を全文抽出して確認したが、
+      数字が一切無い（%・$・トークン数・ベンチマークのいずれも0件）。唯一の具体的な記述は「米国在住・18歳以上」の
+      利用条件と「Google AIサブスクリプションに応じて段階的に提供」という記述のみで、料金表も性能数値も無い
+    - 比較相手（他社の同種の「AIでゲームを作れるプラットフォーム」発表）も見つからず、読者（自動化したい
+      非エンジニアの会社員）が「どういう人に効くか」を数字で判断できる要素が無い。AIモデルでもAPI料金表でもないため、
+      このサイトの記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG・2026-09-30 SynthID Bio とほぼ同じ構造**（①は解けている・②＝数字が無い/比較できない・
+      モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
+      確定させるのが、FIG・SynthID Bio のときの前例に合わせたやり方。
 
 - [ ] https://www.anthropic.com/claude-haiku-5-5
   - 2026-10-07 自動追記（major・Anthropic「Introducing Claude Haiku 5.5」）
