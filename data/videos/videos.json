@@ -315,19 +315,6 @@
    "attempts": 0
   },
   {
-   "video_id": "96ogPwN9ykM",
-   "title": "Get Stuff Done with ChatGPT Voice",
-   "url": "https://www.youtube.com/watch?v=96ogPwN9ykM",
-   "published": "2026-09-23T17:11:13+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "We heard you loud and clear. \n\nChatGPT Voice can now:\n- Use plugins like your email, calendar, and Slack.\n\n- Be powered by GPT-6 Astra, Sol, and Luna.\n\n- Be used in ChatGPT Work on web and mobile, so you can create docs, decks, sites, and spreadsheets or tackle complex tasks in the browser, just by talking.\n\nRolling out globally today in the latest version of the app.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "bVXiNb9RyyI",
    "title": "How an Anthropic designer uses Claude Slides",
    "url": "https://www.youtube.com/watch?v=bVXiNb9RyyI",
@@ -426,19 +413,6 @@
    "attempts": 0
   },
   {
-   "video_id": "jKRl_CSVxyI",
-   "title": "Using Claude Opus 5.5 as your daily driver",
-   "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
-   "published": "2026-09-23T16:41:37+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "Opus 5.5 is faster than Opus 5, better at telling you what it did, and 20% cheaper per token. On Pro, Max, and Team plans your limits go 25% further. This is what that looks like in daily Claude Code work: the same bug fixed side by side, what each model does to your limits, and when medium effort is enough.\n\nRead more at https://anthropic.com/claude-opus-5-5",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "HIUzrxQxTtw",
    "title": "From deepfakes to DNA: the science of watermarking AI",
    "url": "https://www.youtube.com/watch?v=HIUzrxQxTtw",
@@ -460,19 +434,6 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-02T22:31:24.782662+00:00"
-  },
-  {
-   "video_id": "FL6mI_Br-mc",
-   "title": "Create your own voices with Gemini 3.8 text-to-speech",
-   "url": "https://www.youtube.com/watch?v=FL6mI_Br-mc",
-   "published": "2026-09-23T15:23:38+00:00",
-   "channel_key": "google-deepmind",
-   "channel_name": "Google DeepMind（公式）",
-   "default_category": "news",
-   "description": "Design entirely new vocal personas from scratch for gaming, immersive audiobooks, or dual-speaker podcasts using natural language prompts - directing every performance line by line with nuanced acting cues, pacing, back channeling, and dialect shifts. \n\nOr, recreate consistent adult vocal profiles from just a 30-second audio sample of your voice or a voice you have the rights to use, backed by built-in consent verification, SynthID watermarking, and C2PA credentials to protect both developers and their vocal talent. \n\nLearn more and start using the our latest Gemini Audio models today: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
   },
   {
    "video_id": "_rtp1XzaP6Q",
@@ -629,19 +590,6 @@
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
    "description": "In this solo episode, I break down the huge business opportunity because Meta has opened Muse, its personal AI agent, to developers. You can now submit a connector, which lets Muse use your service when someone asks it for help, and I think this could be the app store moment for AI. I explain how a connector works, share four startup ideas you can build on one, and cover how to get customers beyond Meta's directory. I also show how I'd build a first version with a coding agent like Claude Code or Codex, and what I'd test before submitting it to Meta for review.\n\nTimestamps\n\n00:00 – Intro\n01:35 – The App Store Parallel\n04:55 – How a Muse Connector Works\n07:29 – Startup Idea 1: Lead Gen for Business Suppliers\n09:28 – Startup Idea 2: Home Repair Dispatch\n11:07 – Startup Idea 3: Paddle Match and Court Finder\n12:47 – Startup Idea 4: Family Dinner Planning\n14:10 – How to pick an idea?\n14:56 – How People Find Your Connector\n15:32 – Growth Idea 1: Partner With Creators\n16:17 – Growth Idea 2: Product-Led Sharing\n17:46 – Growth Idea 3: Connected Marketplaces and Directory Placement\n19:34 – Building the First Version\n21:38 – Custom Connectors and Meta Approval\n23:56 – Where to Start This Week\n25:31 – Closing thoughts\n\nMuse Connector Prompt: https://startup-ideas-pod.link/muse-connector-prompt\n\nKey Points\n\n• Meta has opened Muse to developers, and a connector lets Muse use your service when someone asks it for help.\n• I look closely at the step in a request where someone needs a business",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "e7s7jRgHWsg",
-   "title": "Take Upwork jobs, let AI do them (Astra etc). It's absurd.",
-   "url": "https://www.youtube.com/watch?v=e7s7jRgHWsg",
-   "published": "2026-09-23T18:27:51+00:00",
-   "channel_key": "greg-isenberg",
-   "channel_name": "Greg Isenberg",
-   "default_category": "earn",
-   "description": "Build your own AI native creative agency with Higgsfield : https://startup-ideas-pod.link/higgsfield\n\nIn this solo episode, I explain why I expect a wave of one-person businesses built as AI-native service firms, and I show you how I built one. Three things matured at the same time: specialist creative models, Astra as an orchestrator that plans and repairs work, and the Higgsfield API, which puts 50+ creative models behind one key. I demo Studio Operator, the MVP I built to show you how I’d run an AI-native creative Agency, and I walk through the six prompts I used to build it. I finish with a model-by-model primer, three startup ideas, and four filters for choosing which firm to build.\n\nTimestamps\n00:00 – Intro\n01:46 – 3 Shifts, All at Once\n03:35 – The AI-Native Service Firm\n04:22 – Demand on Upwork and Fiverr\n05:16 – Human Agency vs. AI-Native Firm\n11:14 – Studio Operator Tour\n20:08 – The Six Build Prompts\n26:42 – Model Primer by Job Type\n32:42 – Idea 1: Always-On Ad Studio\n33:52 – Idea 2: Franchise Localization\n41:00 – Idea 3: Industrial Catalog Sales Assets\n43:15 – Four Filters for Picking an Idea\n45:28 – The Self Improvement Loop\n46:59 – How to Start\n46:11 – Closing Thoughts \n\nStudio Operator 6 Prompts: https://startup-ideas-pod.link/Creative_prompt_pack \n\nKey Points\n\n- Creative models, Astra, and one production API matured together, and that makes one-person creative firms possible now.\n\n- Upwork, Fiverr, and Contra show what buyers purchase again and again, so I start",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -1996,91 +1944,313 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-07T13:50:56.325789+00:00"
+  },
+  {
+   "video_id": "IsL4dVezs18",
+   "title": "Introducing GPT-6 in ChatGPT with Intelligent UI",
+   "url": "https://www.youtube.com/watch?v=IsL4dVezs18",
+   "published": "2026-10-07T21:55:41+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "文字だけでなく対話的で視覚的なUIを即座に生成して案内する「Intelligent UI」を紹介している。",
+    "自転車の組み立てや旅行計画、部屋の模様替えなどを視覚的に支援する活用例を紹介している。",
+    "最新モデル「GPT-6」をChatGPTに導入し、有料版や無料版へ順次提供すると発表している。"
+   ],
+   "for_whom": "ChatGPTの最新モデルGPT-6や新機能Intelligent UIの概要を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T23:17:32.466646+00:00"
+  },
+  {
+   "video_id": "LiNhqbetrbU",
+   "title": "Build Plugins for ChatGPT",
+   "url": "https://www.youtube.com/watch?v=LiNhqbetrbU",
+   "published": "2026-10-07T21:34:02+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ChatGPT内に自社ツールのUIや操作画面を組み込めるプラグイン拡張機能を紹介している。",
+    "サイドバーや会話横のサイドパネルに専用UIを配置し、文脈に応じた操作が可能だと説明している。",
+    "MCPを基盤としており、プラグインクリエイターを活用して開発できると案内している。"
+   ],
+   "for_whom": "ChatGPT向けにインタラクティブなプラグインやUIを開発したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T23:17:32.466646+00:00"
+  },
+  {
+   "video_id": "_nmlHbSB8kM",
+   "title": "Stop Overpaying for Intelligence | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=_nmlHbSB8kM",
+   "published": "2026-10-07T21:10:51+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "トークン単価ではなく、人間介入も含めてタスク完了にかかる総コストを重視すべきだと説明している。",
+    "必要な精度を満たす最小限のモデルを選定するため、評価セットとパレート曲線の活用を提案している。",
+    "プロンプトキャッシュやツール呼び出しのコード化、推論エフォート調整によるコスト削減策を紹介している。"
+   ],
+   "for_whom": "OpenAIのAPI利用コストを抑えつつ精度を保ちたい開発者や企業担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T23:17:32.466646+00:00"
+  },
+  {
+   "video_id": "3glzJZ-_qB8",
+   "title": "Stack Overflow - From Idea to Product | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=3glzJZ-_qB8",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Stack OverflowがCodexを活用して開発した「Stack Internal」と「Stack Overflow for Agents」の事例を紹介し",
+    "エンタープライズ向けのナレッジ統合では、セキュリティや権限管理の制約のもとでCodexを活用したと説明している",
+    "AIエージェントが情報を消費するだけでなく、自律的に知識を検証・投稿してコミュニティに還元する設計を語っている"
+   ],
+   "for_whom": "AIエージェント向けのプロダクト設計や社内ナレッジのAI活用を進めたいエンジニアや開発責任者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-07T23:17:32.466646+00:00"
+  },
+  {
+   "video_id": "8804JYm81cc",
+   "title": "Higgsfield - Building Agents That Provision Their Own Compute | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=8804JYm81cc",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Explore how Higgsfield agents choose models and provision their own compute. Learn when to use dedicated GPUs or hosted models, how to deliver predictable throughput, and where the approach can fail.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "SXCfs7mitPo",
+   "title": "How OpenAI Puts ChatGPT to Work | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=SXCfs7mitPo",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "See how OpenAI’s teams use ChatGPT to manage launches, research competitors, and turn expertise into tools. Take practical ideas back to your own work.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "XkKdbPhIvbY",
+   "title": "Codex Has Left The Laptop | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=XkKdbPhIvbY",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Explore what’s new in Codex across the CLI, app, and web. Through live demos, see how to move from delegating individual tasks to letting Codex tackle entire problems and goals.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "aDTPTwnrRyA",
+   "title": "From Single Player to Multiplayer with Codex | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=aDTPTwnrRyA",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Follow a 2am outage from the first Slack message to a reviewed fix. See how voice, Appshots, plugins, and meeting notes help a persistent personal agent investigate and keep the team informed.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "bQ3-pXCpCTg",
+   "title": "Qodo - The Last Human Code Review | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=bQ3-pXCpCTg",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "See how Qodo uses OpenAI to review AI-generated code. Explore an adversarial reviewer that challenges coding agents’ assumptions and output, and learn when model confidence still needs human judgment.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "wZYnJfL4c2Y",
+   "title": "ClawLabs: Building Open Source Together | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=wZYnJfL4c2Y",
+   "published": "2026-10-07T21:10:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "See how agents help small open-source teams build together. Explore workflows for sharing context across projects and working with contributors, with live demos of cloud sessions and computer use.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "ZcDFZzsp3_Y",
+   "title": "Build custom site annotations with ChatGPT",
+   "url": "https://www.youtube.com/watch?v=ZcDFZzsp3_Y",
+   "published": "2026-10-07T19:36:26+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Add custom annotation controls and suggested prompts to your website. See how these work with WebMCP to help users edit a scene and enrich expense records using context available to their agent in ChatGPT.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "DmCaBWv5yG8",
+   "title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+   "url": "https://www.youtube.com/watch?v=DmCaBWv5yG8",
+   "published": "2026-10-07T14:57:47+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "It’s 3 a.m. and checkout errors are climbing. What do you check first?\n\nJoin cohosts Tony Loehr and Anke Hao for three practical production-monitoring demos with Codex. Follow a checkout failure in Grafana, investigate a Kubernetes rollout that causes out-of-memory restarts, and explore how a Codex Security finding connects service availability to a missing resource limit.\n\nSee how telemetry, release history, and code support an investigation; learn how engineers review a proposed change and check the result.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "ICGS7LlRfpI",
+   "title": "What's new in Claude: September recap",
+   "url": "https://www.youtube.com/watch?v=ICGS7LlRfpI",
+   "published": "2026-10-07T15:41:05+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "description": "Chat and Cowork are now one Claude, and September's updates add docs, decks, and designs to any conversation.\n\nWork now runs in the cloud so it keeps going after you close your laptop, Claude Docs lets your team edit in the same doc as Claude, and the new Claude 5.5 models power it all. Opus 5.5 for the heavy lifting, Sonnet 5.5 for quick rounds of edits. And, if you already know the format you want, type /slides, /docs, or /designs to skip straight to it.\n\nWhich release are you enjoying most? We would love to hear from you.\n\nLearn more: https://claude.com",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "aLidq3_FwW0",
+   "title": "I Make $13K/Month From This Simple App",
+   "url": "https://www.youtube.com/watch?v=aLidq3_FwW0",
+   "published": "2026-10-07T17:00:09+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "description": "Max built a simple iOS app to solve his own problem at the gym. But here’s the thing… before this app, he had never shipped a single line of code in his life. In fact, he was going down the traditional route: college, internships, everything. But he found apps and decided to go all-in. Today, his app makes $14K/month and is growing. This is his app story for anyone looking to get started with apps in 2026.\n\n*Get HubSpot's free CRM, the one that updates itself:* https://clickhubspot.com/2b1y\n\nSay hi to Max: https://x.com/MaxHirsch13\nCheck out Maxed AI: https://apps.apple.com/us/app/maxed-ai-smart-fitness-app/id6759180029\n\n🔔 Follow the Second Channel: @StarterStoryBuild\n🏁 We're hiring: starterstory.com/jobs\n\nChapters:\n0:00 - Zero to $14K in 6 months\n0:49 - What’s your story?\n1:19 - What’s the app?\n2:29 - What makes your app different?\n3:03 - How to keep track of your customers\n3:45 - Founder background\n4:49 - Finding the idea\n5:32 - Tech stack\n6:04 - Growth and marketing\n7:38 - What’s working for growing apps right now\n8:23 - Building a personal brand\n9:15 - App demo\n10:14 - Final advice\n11:15 - Pat and Gus reflections\n\nThis video is an educational case study of this founder’s experience. It is not financial advice and does not guarantee any income or results. Every business is different and your results may vary.",
+   "first_seen": "2026-10-07T23:17:32.466646+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-07T13:50:56.325789+00:00",
+   "last_ok": "2026-10-07T23:17:32.466646+00:00",
    "fail_streak": 0
   }
  }
