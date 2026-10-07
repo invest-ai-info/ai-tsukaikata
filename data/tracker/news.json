@@ -53,6 +53,34 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-10-07T08:44:48.868475+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-06T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review.",
+      "summary_ja": "Jump TradingがAIで調査を拡大\n複数のデータ源を使いAIが長期間作業\n人による確認と組み合わせて進める",
+      "summary_source": "gemini",
+      "title": "How Jump Trading is scaling quant research with ChatGPT",
+      "uid": "38a52b9ae18c07d5",
+      "url": "https://openai.com/index/jump-trading",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-07T08:44:48.868475+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-06T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+      "summary_ja": "OpenAIが数学のAI研究成果を公開\n社内AIモデルで数学の未解決問題を解いた\n証明の記載や研究詳細をGitHubで共有",
+      "summary_source": "gemini",
+      "title": "Sharing AI progress in mathematics",
+      "uid": "7b3058cab09a8764",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-06T21:41:17.838890+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -5433,20 +5461,6 @@
       "uid": "0f212765873ae80c",
       "url": "https://www.anthropic.com/news/reflect-with-claude",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "PFN 技術ブログ",
-      "published": "2026-07-09T02:39:54+00:00",
-      "source_id": "pfn-blog",
-      "summary": "はじめに Preferred Networksでは国立研究開発法人情報通信研究機構（以下: NICT（エヌアイシーティー） ）と共同で大規模言語モデル（以下、LLM）の開発を現在行っています。この取り組みの中で、日本の文 […] 投稿 大規模言語モデルの次期バージョンPLaMo 3シリーズにおける120B事前学習モデル、31B蒸留モデルの評価 は Preferred Networks Tech …",
-      "summary_ja": "Preferred Networksが次期AIモデルの評価を行った。\nNICTと共同でPLaMo 3シリーズを開発中。\n120Bと31Bのモデルを評価した。",
-      "summary_source": "gemini",
-      "title": "大規模言語モデルの次期バージョンPLaMo 3シリーズにおける120B事前学習モデル、31B蒸留モデルの評価",
-      "uid": "614860175df08f82",
-      "url": "https://tech.preferred.jp/ja/blog/plamo_3_120b_distillation_cpt/",
-      "vendor": "Preferred Networks"
     }
   ]
 }
