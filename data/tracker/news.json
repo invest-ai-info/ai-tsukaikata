@@ -5491,18 +5491,6 @@
       "uid": "229710cf3e6a98f1",
       "url": "/smart-cellular-bricks/",
       "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-09T23:55:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "UST is bringing Claude to physical AI",
-      "uid": "875451fe27a98aba",
-      "url": "https://www.anthropic.com/news/ust-claude",
-      "vendor": "Anthropic"
     }
   ]
 }
