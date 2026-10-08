@@ -48,74 +48,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-09-27T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-06T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review.",
-      "title": "How Jump Trading is scaling quant research with ChatGPT",
-      "uid": "38a52b9ae18c07d5",
-      "url": "https://openai.com/index/jump-trading",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-06T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
-      "title": "Sharing AI progress in mathematics",
-      "uid": "7b3058cab09a8764",
-      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-07T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
-      "title": "Helping teens learn, plan, and shape the future of AI",
-      "uid": "b4edfdf60001d206",
-      "url": "https://openai.com/index/teens-learn-and-plan",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-10-07T18:10:20+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added Claude Haiku 5.5 ( claude-haiku-5-5 ), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K) Added agentType to …",
-      "title": "v2.1.293",
-      "uid": "f1617683f16e13ed",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-07T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
-      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-      "uid": "bc4a1b8c01c8136b",
-      "url": "https://openai.com/index/radisson",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-07T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
-      "title": "GPT-6 and Intelligent UI for everyone",
-      "uid": "5871771c0c1278d0",
-      "url": "https://openai.com/index/gpt-6-for-everyone",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
