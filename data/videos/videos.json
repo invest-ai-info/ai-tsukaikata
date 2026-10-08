@@ -374,32 +374,6 @@
    "attempts": 0
   },
   {
-   "video_id": "S_lzYIvtEaQ",
-   "title": "Patrick Collison on Claude Code at Stripe",
-   "url": "https://www.youtube.com/watch?v=S_lzYIvtEaQ",
-   "published": "2026-09-24T22:57:27+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "Stripe CEO Patrick Collison joined Boris to talk about how Stripe builds with Claude Code.\n\nAbout 36% of Stripe's pull requests now start as a prompt, with Claude Code doing the work in an isolated dev box. Patrick explains how Stripe keeps five and a half nines of reliability, how one engineer merged 600 AI-written pull requests in six months with a single revert, and why he expects AI to raise the quality of Stripe's code.\n\nHave a question? Let us know in the comments.\n\nLearn more about Claude Code: https://claude.com/claude-code\n\nChapters\n\n0:00 Claude-powered weather model and throwaway devboxes\n2:11 600 AI-written pull requests, Minions, one revert\n4:23 AI guardrails as infrastructure\n6:34 Stripe Projects with Claude Code\n9:10 AI code quality: every codebase is a prompt\n10:44 Claude Code plan mode and 10 parallel devboxes\n13:06 Stripe's data: new startups up 2x with AI\n16:33 How AI agents will pay each other on Stripe",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "oZgcAsfvS_g",
-   "title": "Using AI in humanitarian work",
-   "url": "https://www.youtube.com/watch?v=oZgcAsfvS_g",
-   "published": "2026-09-24T17:03:13+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "A look at the International Rescue Committee's fight against child malnutrition in Nigeria and how Claude could help this work.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "HIUzrxQxTtw",
    "title": "From deepfakes to DNA: the science of watermarking AI",
    "url": "https://www.youtube.com/watch?v=HIUzrxQxTtw",
@@ -444,19 +418,6 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-02T22:31:24.782662+00:00"
-  },
-  {
-   "video_id": "R9momwXV9w4",
-   "title": "Opus 5.5: How Close Are We to Automated AI Research?",
-   "url": "https://www.youtube.com/watch?v=R9momwXV9w4",
-   "published": "2026-09-24T22:51:54+00:00",
-   "channel_key": "ai-explained",
-   "channel_name": "AI Explained",
-   "default_category": "news",
-   "description": "Not only is Opus 5.5 out, pushing the frontier of AI, it also tells us much about what is going on inside the labs, as they both warn about, and promise, Recursive Self Improvement, aka automated AI research. I cover the model (digging into its 230 page paper), labs’ mixed record on promises, why following what is happening in AI is getting almost impossible, and just so much more that even a summary in this description would get too long.\n\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n02:20 - Opus 5.5 and why it came so soon\n07:52 - The RSI goalposts keep moving?\n15:41 - Can we actually test these models?\n23:50 - where this is heading, options\n\n\nIntroducing Claude Opus 5.5: https://www.anthropic.com/claude-opus-5-5\nClaude Opus 5.5 System Card: https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf\nAnthropic: Measurements for understanding the pace of AI development inside frontier labs: https://www.anthropic.com/institute/measuring-pace-of-ai-development\nAnthropic Responsible Scaling Policy, July 2026, version 3.4: https://www-cdn.anthropic.com/files/4zrzovbb/website/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf\nAnthropic Responsible Scaling Policy, October 2024: https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf\nAnthropic Responsible Scaling Policy — March 2025, version 2.1: https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf\nNoam B",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
   },
   {
    "video_id": "xF1iwFu5P7U",
@@ -564,19 +525,6 @@
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
    "description": "In this solo episode, I break down the $5 trillion wave of small businesses set to change hands as their owners retire, and why AI agents make this wave a real opening for solo founders. I walk through how Thrive Holdings and General Catalyst buy accounting firms, property managers, and support centers, then run AI agents inside them to lift margins. Then I show how I'd run a one-person holding company: the folder structure, the agent files, the human approval rule, and my average week. I close with the strongest arguments against AI roll-ups, including the one I take most seriously.\n\nTimestamps\n\n00:00 – Intro\n01:52 – Why the $5 Trillion Shift Is Happening Now\n04:52 – Examples: Thrive Holdings& General Catalyst\n08:38 – The Fund Playbook\n10:07 – The Small-Deal Gap\n10:51 – The One-Person Holdco\n14:23 – The Folder Structure\n16:47 – The Agent Pipeline\n18:38 – Inside a Reviewer Agent File\n19:41 – My Week Running the Holdco\n21:49 – How to Land the First Business\n22:24 – Arguments Against AI Roll-Ups\n27:43 – Closing Thoughts\n\nKey Points\n\n• About a million small businesses, part of a $5 trillion shift, are set to sell by 2035 as owners retire (McKinsey).\n• AI agents now handle the work these firms run on: data entry, document chasing, status updates, and first drafts.\n• The big funds chase bigger deals, which leaves the small firms open for solo founders and small teams.\n• A one-person holdco runs on shared agents and rules, plus a GM with real upside at each business.\n• A person app",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "84q4WA3kA8Q",
-   "title": "Meta Muse AI Connectors: The App Store for AI?",
-   "url": "https://www.youtube.com/watch?v=84q4WA3kA8Q",
-   "published": "2026-09-24T18:45:00+00:00",
-   "channel_key": "greg-isenberg",
-   "channel_name": "Greg Isenberg",
-   "default_category": "earn",
-   "description": "In this solo episode, I break down the huge business opportunity because Meta has opened Muse, its personal AI agent, to developers. You can now submit a connector, which lets Muse use your service when someone asks it for help, and I think this could be the app store moment for AI. I explain how a connector works, share four startup ideas you can build on one, and cover how to get customers beyond Meta's directory. I also show how I'd build a first version with a coding agent like Claude Code or Codex, and what I'd test before submitting it to Meta for review.\n\nTimestamps\n\n00:00 – Intro\n01:35 – The App Store Parallel\n04:55 – How a Muse Connector Works\n07:29 – Startup Idea 1: Lead Gen for Business Suppliers\n09:28 – Startup Idea 2: Home Repair Dispatch\n11:07 – Startup Idea 3: Paddle Match and Court Finder\n12:47 – Startup Idea 4: Family Dinner Planning\n14:10 – How to pick an idea?\n14:56 – How People Find Your Connector\n15:32 – Growth Idea 1: Partner With Creators\n16:17 – Growth Idea 2: Product-Led Sharing\n17:46 – Growth Idea 3: Connected Marketplaces and Directory Placement\n19:34 – Building the First Version\n21:38 – Custom Connectors and Meta Approval\n23:56 – Where to Start This Week\n25:31 – Closing thoughts\n\nMuse Connector Prompt: https://startup-ideas-pod.link/muse-connector-prompt\n\nKey Points\n\n• Meta has opened Muse to developers, and a connector lets Muse use your service when someone asks it for help.\n• I look closely at the step in a request where someone needs a business",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -2246,91 +2194,196 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-08T13:58:07.288395+00:00"
+  },
+  {
+   "video_id": "RQfg-zo4R-g",
+   "title": "Production Monitoring with Codex: Grafana, Kubernetes, & Security",
+   "url": "https://www.youtube.com/watch?v=RQfg-zo4R-g",
+   "published": "2026-10-08T21:35:18+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-08T23:32:30.877734+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "CodexがGrafanaのチェックアウトエラーを自動で特定し、修正パッチを提案、迅速な回復を可能にしていると説明している。",
+    "Kubernetes環境で発生したOOM killによるカスケード障害に対し、Codexが原因を特定し、自動修正によってサービスを復旧させると示している。",
+    "Codex Securityが、過剰なリソースを消費するリクエストをブロックするセキュリティパッチを生成し、生産監視の課題も解決したと紹介している。"
+   ],
+   "for_whom": "オンコール対応や生産監視、Kubernetes環境でのトラブルシューティングを行うエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-10-08T23:32:30.877734+00:00"
+  },
+  {
+   "video_id": "Mm3EsJL73tM",
+   "title": "How Oracle Uses ChatGPT Work to Transform Recruitment",
+   "url": "https://www.youtube.com/watch?v=Mm3EsJL73tM",
+   "published": "2026-10-08T17:38:00+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-08T23:32:30.877734+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "オラクルがChatGPT Workを活用して独自の人材市場インテリジェンスツールを構築したと紹介している。",
+    "職務記述書をもとに外部市場の競合状況やスキル要件をAIで分析・整理していると説明している。",
+    "採用マネージャーとの要件定義の準備にかかる時間を、数日から約20分に短縮できたと述べている。"
+   ],
+   "for_whom": "採用業務や人材市場調査のプロセスを生成AIで効率化したい人事担当者や管理職向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-08T23:32:30.877734+00:00"
+  },
+  {
+   "video_id": "en0GuyhieQk",
+   "title": "Introducing Claude Dashboards and Claude Motion",
+   "url": "https://www.youtube.com/watch?v=en0GuyhieQk",
+   "published": "2026-10-08T18:52:44+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-08T23:32:30.877734+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claudeの新機能「Claude Dashboards」と「Claude Motion」のベータ版提供開始を紹介している。",
+    "データウェアハウス等の走行データをダッシュボード化し、さらに説明用アニメーションへ変換できると説明している。",
+    "生成したアニメーションはコメント入力で微調整でき、各種デザインツールへエクスポート可能だと伝えている。"
+   ],
+   "for_whom": "社内発表向けにデータの可視化や説明用動画を手軽に作成したい会社員",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-08T23:32:30.877734+00:00"
+  },
+  {
+   "video_id": "9GtcbnmldcY",
+   "title": "Inside Shopify's AI strategy with CTO Mikhail Parakhin",
+   "url": "https://www.youtube.com/watch?v=9GtcbnmldcY",
+   "published": "2026-10-08T16:30:45+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "description": "Shopify's CTO on how Shopify uses Claude: unlimited tokens for everyone, always the largest model, and a digital twin of the company.\n\nIn this conversation with Boris, Shopify's CTO explains why the real value of working with Claude is in building things that weren't possible before. He describes solving a problem he'd worked on for seven years, how Shopify built a digital twin of the company, and the unique barbell strategy he recommends for getting the most out of Claude.\n\nHave a question? Let us know in the comments.\n\nLearn more about Claude Code: https://claude.com/claude-code\n\nChapters\n0:00 How Shopify's CTO raises the ceiling with Claude\n2:07 Measuring AI ROI and engineering productivity\n3:32 Why Shopify gives every engineer unlimited tokens\n4:42 Building a digital twin to predict merchant growth\n7:28 AI for managing engineering teams\n9:41 Advice for CTOs: the barbell token strategy",
+   "first_seen": "2026-10-08T23:32:30.877734+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "rkK8ZyzYyEA",
+   "title": "8 GitHub Repos To Go Viral and Make Money",
+   "url": "https://www.youtube.com/watch?v=rkK8ZyzYyEA",
+   "published": "2026-10-08T18:30:11+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-10-08T23:32:30.877734+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "URLからローンチ動画を作るBragやSNS調査を行うAgent Reachなど、注目のGitHubリポジトリやAIスキルを紹介している。",
+    "ローカル音声吹き替えや資料からのスライド自動生成、複数エージェント連携など具体的なツールの仕組みと設定手順を解説している。",
+    "作例を勝手に作って送る営業手法や小規模な受託サービスを始め、月1万ドルの収益を目指す活用アイデアを提案している。"
+   ],
+   "for_whom": "AIツールやGitHubリポジトリを活用して業務効率化や受託ビジネスの立ち上げを目指す人",
+   "caution": "受託サービスから月1万ドルを稼ぐビジネス展開の例が示されているが、出演者のアイデア提示にとどまり実際の売上明細などの根拠は示されていない。",
+   "summary_source": "gemini",
+   "model": "gemini-3.7-flash",
+   "summarized_at": "2026-10-08T23:32:30.877734+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-08T13:58:07.288395+00:00",
+   "last_ok": "2026-10-08T23:32:30.877734+00:00",
    "fail_streak": 0
   }
  }
