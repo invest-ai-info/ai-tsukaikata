@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-08T09:03:14.950532+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-08T05:03:54+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed prompt and agent hooks written as instructions (such as \"Block commands that...\") allowing what they should block Improved how prompt hooks on Stop and SubagentStop written as in…",
+      "title": "v2.1.294",
+      "uid": "8045903e2441708f",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-08T09:03:14.950532+00:00",
+      "importance": "minor",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-08T03:41:38+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Chores ci: check that pull requests update the changelog docs: note that listing Claude Console spend limits is in early access internal: match the package version in uv.lock",
+      "title": "v1.12.1",
+      "uid": "0da11675fda7a961",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.12.1",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-07T22:01:18.008705+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -23,6 +47,18 @@
       "uid": "514f397d258a1914",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.12.0",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-08T09:03:14.950532+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-07T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "研究、産業実装、プロダクトの最前線へ―Sakana AIニュースレター「Sakana AI Insider」―",
+      "uid": "ed72827149682c35",
+      "url": "https://sakana.ai/sakana-ai-insider/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-10-07T16:34:15.852907+00:00",
