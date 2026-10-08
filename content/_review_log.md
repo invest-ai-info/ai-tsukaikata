@@ -857,3 +857,7 @@ alt が他の記事の定型（★31＝材料2本・各2回）をそのまま持
   `rotate_daily_log` は直近3日だけ残すので、明朝 04:43 JST の `rotate.yml` が 10/05 を保管庫へ移す。
   🚨 **予算を上げないこと**（9/22 の教訓＝「番人が赤い」の中身4種のうち、これは「回転待ち」）。
   今日は回転を手で回していない（他担当のキューまで巻き込むため）。
+- ⚠️ **`git push -u origin main` が「behind its remote counterpart」で弾かれた。**
+  このチェックアウトは**detached HEAD**で、ローカルの `main` ref は古いまま（`acb2a4a`・40件遅れ）。
+  手順0の照合（HEAD と `origin/main`）は**正しく一致していた**＝ずれていたのは使っていない ref のほう。
+  **`git push origin HEAD:main` で通る。**次の担当は最後の push をこの形で叩くこと。
