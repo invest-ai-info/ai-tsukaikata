@@ -981,19 +981,6 @@
    "attempts": 0
   },
   {
-   "video_id": "lcvyzvqWUVw",
-   "title": "【完全解説】Claude Opus 5.5の公式が語る特徴とは？プロンプトやEffort設定など変更多数！",
-   "url": "https://www.youtube.com/watch?v=lcvyzvqWUVw",
-   "published": "2026-09-24T03:10:06+00:00",
-   "channel_key": "masao",
-   "channel_name": "まさおAIじっくり解説ch",
-   "default_category": "news",
-   "description": "今回の動画では、Claude の Opus 5.5 について、公式のプロンプトガイドやブログで共有された使い方のポイントを解説しました。\nOpus 5.5 はロングランが得意で報告もはっきりしているモデルなので、プロンプトで「よく考えて」と書くよりも、考える量はエフォートで調節し、完了条件と止まって良い条件を CLAUDE.md などにしっかり書いておくことが大事になります。\n\n僕もいつも Fable で進めている作業を Opus 5.5 に切り替えて試してみましたが、出力が速くて「あれ、もうできたの？」と驚く場面が増えた一方で、深いメタな対話ではまだ Fable に届かないかな、とも感じました。\n皆さんは Opus 5.5 をどんな場面で使っていますか？ 使ってみた感想や、エフォートはどのくらいに設定しているかなど、ぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5\nhttps://claude.dev/blog/getting-the-most-out-of-opus-5-5/\n\nakapen\nhttps://www.youtube.com/watch?v=KgUhKw_P2GE\n\ntimestamp:\n00:00 オープニング - Opus 5.5 の使い方\n00:58 結論: ゴールと止まり方を決める\n01:34 Opus 5 からの移行と Effort の調整\n04:26 完了条件を決めて赤ペンで擦り合わせ\n05:02 はっきりした報告と図表の読み取り力\n06:49 完了条件の書き方と AI っぽさ対策\n09:12 止まってよい条件を CLAUDE.md に書く\n10:05 大きい作業はサブエージェントに分ける\n11:39 タスクリストのファイル化と途中報告\n16:33 まとめ - 基礎を徹底しよう\n18:01 感想: Opus 5.5 と Fable の使い分け\n19:58 メンバーシップのお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他",
-   "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "iiyGrn1mp-0",
    "title": "AI動画生成マネタイズ勉強会前日LIVE！Claude CodeもCodexも最近エグいね！",
    "url": "https://www.youtube.com/watch?v=iiyGrn1mp-0",
@@ -2045,10 +2032,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Explore how Higgsfield agents choose models and provision their own compute. Learn when to use dedicated GPUs or hosted models, how to deliver predictable throughput, and where the approach can fail.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Higgsfieldは広告制作などを支援するマルチメディアAIプラットフォームだと説明している。",
+    "エージェントが自らGPUを調達・管理し、動画生成や編集などの重い処理を実行する仕組みを紹介している。",
+    "OpenAIのAstra等のモデルと連携し、少人数でも高度なインタラクティブメディアを制作できると述べている。"
+   ],
+   "for_whom": "AIエージェントによる動画生成やインフラの自動管理に関心がある開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-08T06:36:15.316430+00:00"
   },
   {
    "video_id": "SXCfs7mitPo",
@@ -2058,10 +2055,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "See how OpenAI’s teams use ChatGPT to manage launches, research competitors, and turn expertise into tools. Take practical ideas back to your own work.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "OpenAI社内でChatGPTを活用し、製品立ち上げの反響監視や競合分析、社内ナレッジ共有を効率化している事例を紹介している。",
+    "チームで共同作業できる「Space」を活用し、AIと連携しながら調査結果の整理やドキュメント作成を進める手法を解説している。",
+    "常時稼働するAIエージェント「Dot」を設定し、Slackなどと連携して反響の監視やタスク対応を任せる運用方法を説明している。"
+   ],
+   "for_whom": "ChatGPTやAIエージェントを日々の業務に組み込み、リサーチや情報共有を効率化したい会社員",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-08T06:36:15.316430+00:00"
   },
   {
    "video_id": "XkKdbPhIvbY",
@@ -2071,10 +2078,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Explore what’s new in Codex across the CLI, app, and web. Through live demos, see how to move from delegating individual tasks to letting Codex tackle entire problems and goals.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ローカル環境に依存せずクラウド上で長時間タスクを実行できるCodex Cloudの活用法を紹介している。",
+    "Slack連携や自律型エージェントdotsを通じて、コード修正やPRレビューを自動化する手順を実演している。",
+    "ドキュメント上で計画やタスク進捗をエージェントとチームで一元管理できるSpace機能などを説明している。"
+   ],
+   "for_whom": "AIエージェントを活用して開発やコードレビューを効率化したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-08T06:36:15.316430+00:00"
   },
   {
    "video_id": "aDTPTwnrRyA",
@@ -2084,10 +2101,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Follow a 2am outage from the first Slack message to a reviewed fix. See how voice, Appshots, plugins, and meeting notes help a persistent personal agent investigate and keep the team informed.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "登壇者はAIの個人利用から、チーム全体でエージェントを共有・連携させる開発スタイルへの移行を提案している。",
+    "画面状況を共有するAppshotや双方向音声、クラウドエージェントを組み合わせた障害調査の自動化手順を紹介している。",
+    "ドキュメントへの指示記載やプラグインの活用で、チーム全員が恩恵を受けられる仕組み作りの重要性を説いている。"
+   ],
+   "for_whom": "AIエージェントをチーム開発や業務自動化に組み込みたいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-08T06:36:15.316430+00:00"
   },
   {
    "video_id": "bQ3-pXCpCTg",
@@ -2171,86 +2198,86 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-07T23:17:32.466646+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-07T23:17:32.466646+00:00",
+   "last_ok": "2026-10-08T06:36:15.316430+00:00",
    "fail_streak": 0
   }
  }
