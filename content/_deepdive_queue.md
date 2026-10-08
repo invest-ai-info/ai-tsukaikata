@@ -299,6 +299,9 @@
 - [ ] https://www.anthropic.com/claude-haiku-5-5
   - 2026-10-07 自動追記（major・Anthropic「Introducing Claude Haiku 5.5」）
 
+- [ ] https://www.anthropic.com/news/anthropic-cyber-mission
+  - 2026-10-08 自動追記（major・Anthropic「Introducing the Anthropic Cyber Mission」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/ → **公開済み** content/tools/embeddinggemma-2.md（2026-10-06・公開）

@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-08T22:07:40.987749+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-08T19:48:38+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added onFailure: \"block\" for command and HTTP hooks: a hook that can't start, times out, or exits with an unexpected code blocks the action instead of letting it through Added Program …",
+      "title": "v2.1.295",
+      "uid": "5995bd7f35e7f80e",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.295",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-08T22:07:40.987749+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-08T17:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.",
+      "summary_ja": "利用規約の新しい版が公開された\n変更内容がまとめられている",
+      "summary_source": "gemini",
+      "title": "2026 Usage Policy update",
+      "uid": "6013411965bd0f34",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-08T22:07:40.987749+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-08T16:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+      "summary_ja": "オラクルがAIで業務時間を大幅に短縮\nChatGPT WorkとCodexを活用し数日の作業を数分に\n採用、開発、運用といった幅広い分野で活用",
+      "summary_source": "gemini",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "uid": "1239c9254083b9dd",
+      "url": "https://openai.com/index/oracle",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-08T16:32:35.748525+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
@@ -12,6 +52,34 @@
       "title": "Building on our commitment to American scientific discovery",
       "uid": "414e25109d9aad59",
       "url": "https://www.anthropic.com/news/genesis-mission-commitment",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-08T22:07:40.987749+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-08T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+      "summary_ja": "Pollo AIがAIでクリエイティブ制作を効率化\nOpenAIのGPT-5.6等で、アイデアを詳細画像に変換\n映画のような動画広告も作成可能に",
+      "summary_source": "gemini",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "uid": "f5fbf4d6a583b86e",
+      "url": "https://openai.com/index/pollo-ai",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-08T22:07:40.987749+00:00",
+      "importance": "major",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-08T09:04:16.632000+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.",
+      "summary_ja": "Anthropicがサイバーセキュリティの取り組みを開始\nAnthropic Cyber Missionを発足し長期的に安全を確保",
+      "summary_source": "gemini",
+      "title": "Introducing the Anthropic Cyber Mission",
+      "uid": "e16fa462e4bd35d9",
+      "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
       "vendor": "Anthropic"
     },
     {
