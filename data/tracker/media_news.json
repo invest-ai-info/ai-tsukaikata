@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-10-08T15:49:01+00:00",
+      "source_id": "media-publickey",
+      "summary": "さくらインターネットは、GPUサーバ上で基盤モデルを展開しマネージドサービスとして提供する「さくらのAI Engine」を、企業がGPUを専有して使える「さくらのAI Engine プライベートエディション」の提供開始を発表しました。 お知...",
+      "title": "さくらインターネット、GPU専有によりトークン消費量を気にせず定額で利用できる「さくらのAI Engineプライベートエディション」提供開始を発表",
+      "uid": "f4440070939a32cb",
+      "url": "https://www.publickey1.jp/blog/26/gpuai_engine.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-08T13:51:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Metaのマーク・ザッカーバーグCEOと妻のプリシラ・チャン氏の出資によって誕生した非営利研究組織・Biohubが手がける、生命の予測モデル構築に向けた5カ年計画「Virtual Biology Initiative」に、アメリカのエネルギー省やGoogleも合流することが発表されました。 続きを読む...",
+      "title": "AIトレーニング用のオープンな生物学データセット構築のためアメリカ政府が5億ドルを投資、Meta・Google DeepMind・Isomorphic Labsはそれぞれ3億ドル投資",
+      "uid": "39b5ee51721a1af1",
+      "url": "https://gigazine.net/news/20261008-virtual-biology-initiative/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-08T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントが実際に使用したソフトウェアや開発ツールについて評価を投稿するレビューサイト「agent.reviews」が登場しました。AIエージェントが使用したツールの使いやすさや信頼性を評価し、ほかのAIエージェントがツールを選ぶ際の参考にできる仕組みになっています。 続きを読む...",
+      "title": "AIが使ったツールをAI自身が5段階で評価する口コミサイト「agent.reviews」が登場、Claude CodeやCodexもレビューを投稿",
+      "uid": "165304f2ef7f0829",
+      "url": "https://gigazine.net/news/20261008-agent-reviews/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-08T10:50:58+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "日立グループのハピネスプラネットは、AIにより企業間の競争と需要連鎖の相互作用をとらえ、競争優位に向けた戦略構築を支援する「競争世界モデル」を開発し提供を開始した。",
+      "title": "ハピネスプラネット、AIにより企業間の関わりをモデル化「競争世界モデル」を開発 競争優位に向けた企業の戦略構築を支援",
+      "uid": "6a93d88fac510ad3",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2146897.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-08T10:16:36+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "インプレスは、「AI時代のFPGA開発 Claude CodeとLLMで加速するFPGA設計入門」をインプレス NextPublishingより発行する。",
+      "title": "AIエージェントで開発を効率化するFPGA設計の実践ガイド刊行 「AI時代のFPGA開発 Claude CodeとLLMで加速するFPGA設計入門」10月9日発売",
+      "uid": "b5045590beef90a6",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2146884.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-08T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2024年、数十万曲ものAI生成楽曲を音楽ストリーミングサービスで配信し、ボットを使って再生させてロイヤリティを荒稼ぎしたアメリカ在住の男が逮捕されました。そして2026年10月6日、音楽ストリーミングサービスやミュージシャンから不当にロイヤリティを詐取したとして、男に18カ月の拘禁刑が科されました。 続きを読む...",
+      "title": "大量のAI生成楽曲をストリーミング配信＆ボットで数十億回再生して12億円以上のロイヤリティを荒稼ぎした男に18カ月の拘禁刑が科される",
+      "uid": "fed09c22eda0cd5a",
+      "url": "https://gigazine.net/news/20261008-ai-music-streaming-fraud-bots-prison/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-08T09:30:54+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "さくらインターネットは、企業が保有する生成AIモデルを専有環境で運用できるフルマネージドのAIモデルサービングサービス「さくらのAI Engine プライベートエディション」を10月8日より開始する。",
+      "title": "さくらインターネット、ユーザー専用のクローズド環境で生成AIモデルを利用可能 「さくらのAI Engine プライベートエディション」",
+      "uid": "57e6d3a2bb850f78",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2146857.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-08T08:44:40+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "取材の録音はAIで文字起こしする時代になったが、複数人が入り乱れる立ち話は、話者を分けられずにうまく文字にならないことが多い。そんな録音をスウェーデン発の「Klang」にかけてみると、8人の声を正しく切り分けた。愛用する「Plaud」と比べて見えた得意分野の違いと、雑談を“宝の山”に変えうる話者分離技術の可能性を探る。",
+      "title": "立ち話が“宝の山”に　8人の声を聞き分けられたAI文字起こし「Klang」の実力",
+      "uid": "008ce7272b8ba3b2",
+      "url": "https://www.itmedia.co.jp/news/article/2610/08/2000002130/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-08T09:03:14.950532+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2303,102 +2399,6 @@
       "uid": "af24580458223023",
       "url": "https://gigazine.net/news/20261002-ps5-qssr/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-02T05:45:04.667904+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-02T02:50:32+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Dr. Loveは10月1日、親友AIサービス「Dr.Love（ドクターラブ）」を正式にローンチした。",
-      "title": "親友AIサービス「Dr.Love」登場。2人のAIが気持ちと行動をサポート",
-      "uid": "e6483ceae54b4159",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2145091.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-02T05:45:04.667904+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-02T02:11:09+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "nextクリエイティブは10月2日、AI×3Dプリントサービス「FIGURO（フィグロ）」を正式ローンチした。",
-      "title": "写真1枚から自分だけのフィギュア作成、AI×3Dプリント「FIGURO」",
-      "uid": "bab23ec053fa749b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2145055.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-02T05:45:04.667904+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-02T02:05:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "アマゾンがAIスマートグラスの導入を進めるにつれ、プライバシーへの懸念が高まっている。",
-      "title": "アマゾン配達員のAIスマートグラス、視界を次々撮影　プライバシーに懸念",
-      "uid": "4564924dae836458",
-      "url": "https://japan.cnet.com/article/35253182/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-02T05:45:04.667904+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-02T01:49:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI企業のBlack Forest Labsが画像生成AI「FLUX 3 Image」をリリースしました。「最大4Kの画像生成」「画像内の物体の位置を指定」「特定の箇所のみ編集」「最大10枚の参照画像入力」といった機能を備えています。 続きを読む...",
-      "title": "画像生成AI「FLUX 3 Image」が登場、「最大4K生成」「被写体の位置指定」「一部分のみ編集」など高機能でオープンモデル版も数週間後に登場予定",
-      "uid": "d863defc042d6030",
-      "url": "https://gigazine.net/news/20261002-flux-3-image/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-02T05:45:04.667904+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-02T01:47:09+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Microsoft AIは、ストリーミング文字起こしモデル「MAI-Transcribe-2-Streaming」と音声合成モデル群を発表した。低遅延な逐次認識や声のトーンを保った多言語合成に対応し、音声エージェント構築を想定する。Microsoft Foundryでプレビュー提供を始め、複合デモも公開した。",
-      "title": "Microsoft、初のストリーミング文字起こしモデル「MAI-Transcribe-2-Streaming」公開　音声合成「MAI-Voice-2.1」と高速版も",
-      "uid": "8b187a20fd0a3cb9",
-      "url": "https://www.itmedia.co.jp/news/article/2610/02/2000001950/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-02T05:45:04.667904+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-10-01T23:45:52+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ソニー・インタラクティブエンタテインメントは、PS5向けのAIアップスケーリング技術「QSSR」を発表した。PS5 Pro向けのPSSRをAMDと共同で軽量化し、無印のPS5でもAIによる画質向上を実現する。「Marvel's Wolverine」などに先行導入され、今後全開発者へ提供を拡大する。",
-      "title": "SIE、PS5向けAI採用画質向上技術「QSSR」発表　AMDと共同開発、「Marvel's Wolverine」と「Ghost of Yōtei」が初対応",
-      "uid": "e09bfe31fb64acdd",
-      "url": "https://www.itmedia.co.jp/news/article/2610/02/2000001946/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-01T23:55:07.714679+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-01T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIの「粘り強さ」が原因となって、米OpenAIの評価環境から数百体のエージェントが外部システムに侵入する事件が起きた。この事件が示したリスクの変化と、企業に求められる対応を解説する。",
-      "title": "「長く働くAI」が裏目に？　OpenAIの“脱走事件”が示すリスクの変化　企業に求められる対応は",
-      "uid": "282004f9a1ad70e8",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/02/2000001900/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-01T23:55:07.714679+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-01T23:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、人間とAIエージェントによる効果的なチームを構築するためのベストプラクティスをまとめたブログ記事を公開した。Slack社の最高製品責任者（CPO）へのインタビューに基づいている。",
-      "title": "「DMに逃げる理由は秘密保持ではない」　人とAIエージェントの“最強チーム”を作るベストプラクティス",
-      "uid": "e1b4970ea6aecd22",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/02/news009.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

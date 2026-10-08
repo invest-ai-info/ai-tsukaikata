@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-08T13:00:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Anthropic is committing $150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.",
+      "summary_ja": "Anthropicが米国科学技術に資金提供\n3年間で1.5億ドルをGenesis Missionに投資\nAI活用で科学技術の発見を加速させる",
+      "summary_source": "gemini",
+      "title": "Building on our commitment to American scientific discovery",
+      "uid": "414e25109d9aad59",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-08T09:03:14.950532+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -23,6 +37,20 @@
       "uid": "0da11675fda7a961",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.12.1",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-08T16:32:35.748525+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-08T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.",
+      "summary_ja": "OpenAIがAI悪用した情報操作を停止\n偽ジャーナリストらを使い2件確認\n地政学的なメッセージ拡散を阻止",
+      "summary_source": "gemini",
+      "title": "Disrupting AI-enabled “false front” operations",
+      "uid": "bd342c5244714c6f",
+      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-07T22:01:18.008705+00:00",
