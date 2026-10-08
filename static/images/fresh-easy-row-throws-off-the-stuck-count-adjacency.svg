@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="412" viewBox="0 0 720 412" role="img" aria-label="詰んだ行のすぐ隣にいただけで、資料がそろっている行まで「止まったまま」に数えられたことを示す図。変種B（いちばん下へ移す版）の7日後、待ち行列の末尾4行を実際の並び順で示す。1行目＝前田様（注文番号C-552の変更可否）、資料は（取得できませんでした）でまだ確認されていない。2行目＝森田様（注文番号B-317の在庫）、資料は（取得できませんでした）で「できなかった理由」つき、赤。3行目＝藤田様（見積りの消費税の扱い）、資料は消費税別表記・税率10%でそろっている、強調表示。4行目＝山本様（注文番号A-204の納期）、資料は（取得できませんでした）で「できなかった理由」つき、赤。藤田様の行は資料がそろっていて止まっていないのに、詰んだ2行の間に挟まれていたため、3回とも「止まったまま」に数えられた。下の枠には、印で残す版でも同じことが起きたこと（石井様・藤田様が、まだ確認していない前田様の両隣にいたこと）、印の有無や置き場所ではなく資料の中身を見ないと区別できないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="412"/>
+<text class="t-strong" x="18" y="26">詰んだ行のすぐ隣にいただけで、無関係の行まで数えられた</text>
+<text class="t-sm" x="18" y="45">変種B（いちばん下へ移す版）の7日後、待ち行列の末尾4行をそのままの順で並べた（2026-10-08実測）。</text>
+<text class="t-sm" x="18" y="64">藤田様の行は資料がそろっていて止まっていないのに、詰んだ2行の間に挟まれ、3回とも「止まったまま」に数えられた。</text>
+<rect class="box-quiet" x="18" y="96" width="684" height="48" rx="6"/>
+<text class="t-strong" x="34" y="116">前田様：注文番号C-552の変更可否</text>
+<text class="t" x="34" y="136">資料: （取得できませんでした）／まだ確認されていない</text>
+<rect class="box-bad" x="18" y="154" width="684" height="48" rx="6"/>
+<text class="t-strong" x="34" y="174">森田様：注文番号B-317の在庫</text>
+<text class="t-bad" x="34" y="194">資料: （取得できませんでした）／「できなかった理由」つき</text>
+<rect class="box-accent" x="18" y="212" width="684" height="48" rx="6"/>
+<text class="t-strong" x="34" y="232">藤田様：見積りの消費税の扱い</text>
+<text class="t-accent" x="34" y="252">資料: 消費税別表記・税率10%／資料はそろっている</text>
+<rect class="box-bad" x="18" y="270" width="684" height="48" rx="6"/>
+<text class="t-strong" x="34" y="290">山本様：注文番号A-204の納期</text>
+<text class="t-bad" x="34" y="310">資料: （取得できませんでした）／「できなかった理由」つき</text>
+<rect class="box-accent" x="18" y="334" width="684" height="58" rx="6"/>
+<text class="t-accent" x="34" y="354">印で残す版でも同じことが起きた（石井様・藤田様が、まだ確認していない前田様の両隣にいた）。</text>
+<text class="t-accent" x="34" y="374">印の有無や置き場所ではなく、資料の中身を見ないと区別できない。</text>
+</svg>
