@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="510" viewBox="0 0 720 510" role="img" aria-label="安い系モデルと各社の最上位モデルの単価を比べた横棒グラフ。100万トークンあたりのドル。上下で目盛りの縮尺が違う。安い系モデル＝Claude Haiku 5.5は入力0.10ドル・出力0.50ドル、GPT-6 Lunaは入力0.10ドル・出力0.50ドルで両方の4つの単価が完全一致、Gemini 3.5 Flash-Liteは入力0.30ドル・出力2.50ドル。各社の最上位モデル＝Claude Opus 5.5は入力4.00ドル・出力20.00ドル、GPT-6 Astraは入力10.00ドル・出力50.00ドル、Gemini 3.1 Pro Previewは入力2.00ドル・出力12.00ドル（いずれも短い入力のときの値段）。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="510"/>
+<text class="t-strong" x="18" y="26">安い系モデルは、各社の最上位モデルの何十分の1</text>
+<text class="t-sm" x="18" y="45">入力＝薄い色 ／ 出力＝濃い色。100万トークンあたりのドル。</text>
+<text class="t-sm" x="18" y="64">上下で目盛りの縮尺が違う（下の最上位モデルのほうが値が大きいため）。</text>
+<text class="t-accent" x="18" y="90">安い系モデル</text>
+<text class="t" x="18" y="112">Claude Haiku 5.5</text>
+<text class="t-xs" x="214" y="111" text-anchor="end">入力</text>
+<rect class="bar-in" x="250" y="100" width="14.8" height="14" rx="2"/>
+<text class="t-sm" x="272.8" y="111">$0.10</text>
+<text class="t-xs" x="214" y="130" text-anchor="end">出力</text>
+<rect class="bar-out" x="250" y="119" width="74.0" height="14" rx="2"/>
+<text class="t-sm" x="332.0" y="130">$0.50</text>
+<text class="t" x="18" y="167">GPT-6 Luna</text>
+<text class="t-xs" x="214" y="166" text-anchor="end">入力</text>
+<rect class="bar-in" x="250" y="155" width="14.8" height="14" rx="2"/>
+<text class="t-sm" x="272.8" y="166">$0.10</text>
+<text class="t-xs" x="214" y="185" text-anchor="end">出力</text>
+<rect class="bar-out" x="250" y="174" width="74.0" height="14" rx="2"/>
+<text class="t-sm" x="332.0" y="185">$0.50</text>
+<text class="t" x="18" y="222">Gemini 3.5 Flash-Lite</text>
+<text class="t-xs" x="214" y="221" text-anchor="end">入力</text>
+<rect class="bar-in" x="250" y="210" width="44.4" height="14" rx="2"/>
+<text class="t-sm" x="302.4" y="221">$0.30</text>
+<text class="t-xs" x="214" y="240" text-anchor="end">出力</text>
+<rect class="bar-out" x="250" y="229" width="370.0" height="14" rx="2"/>
+<text class="t-sm" x="628.0" y="240">$2.50</text>
+<text class="t-accent" x="18" y="275">各社の最上位モデル</text>
+<text class="t" x="18" y="307">Claude Opus 5.5</text>
+<text class="t-xs" x="214" y="306" text-anchor="end">入力</text>
+<rect class="bar-in" x="250" y="295" width="29.6" height="14" rx="2"/>
+<text class="t-sm" x="287.6" y="306">$4.00</text>
+<text class="t-xs" x="214" y="325" text-anchor="end">出力</text>
+<rect class="bar-out" x="250" y="314" width="148.0" height="14" rx="2"/>
+<text class="t-sm" x="406.0" y="325">$20.00</text>
+<text class="t" x="18" y="362">GPT-6 Astra</text>
+<text class="t-xs" x="214" y="361" text-anchor="end">入力</text>
+<rect class="bar-in" x="250" y="350" width="74.0" height="14" rx="2"/>
+<text class="t-sm" x="332.0" y="361">$10.00</text>
+<text class="t-xs" x="214" y="380" text-anchor="end">出力</text>
+<rect class="bar-out" x="250" y="369" width="370.0" height="14" rx="2"/>
+<text class="t-sm" x="628.0" y="380">$50.00</text>
+<text class="t" x="18" y="417">Gemini 3.1 Pro Preview</text>
+<text class="t-xs" x="214" y="416" text-anchor="end">入力</text>
+<rect class="bar-in" x="250" y="405" width="14.8" height="14" rx="2"/>
+<text class="t-sm" x="272.8" y="416">$2.00</text>
+<text class="t-xs" x="214" y="435" text-anchor="end">出力</text>
+<rect class="bar-out" x="250" y="424" width="88.8" height="14" rx="2"/>
+<text class="t-sm" x="346.8" y="435">$12.00</text>
+<text class="t-xs" x="18" y="480">※ GPT と Gemini は短い入力のときの値段。会社ごとにトークンの数え方が違います。</text>
+<text class="t-xs" x="18" y="498">※ 出典: 各社の公式料金ページ（2026年10月8日に確認）。単価が安い＝支払いが安い、ではありません。</text>
+</svg>

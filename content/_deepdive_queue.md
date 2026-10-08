@@ -296,13 +296,39 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
       確定させるのが、FIG・SynthID Bio のときの前例に合わせたやり方。
 
-- [ ] https://www.anthropic.com/claude-haiku-5-5
-  - 2026-10-07 自動追記（major・Anthropic「Introducing Claude Haiku 5.5」）
+- [x] https://www.anthropic.com/claude-haiku-5-5
+  - →保管: ✅ **2026-10-08: 公開した** → `content/tools/claude-haiku-5-5.md`
 
 - [ ] https://www.anthropic.com/news/anthropic-cyber-mission
   - 2026-10-08 自動追記（major・Anthropic「Introducing the Anthropic Cyber Mission」）
 
 ## 処理済み
+
+- https://www.anthropic.com/claude-haiku-5-5 → **公開済み** content/tools/claude-haiku-5-5.md（2026-10-08・公開）
+  - `www.anthropic.com` に到達（200・素のUAで問題なく読める）。発表ページのRSCペイロードから
+    ベンチマーク表（`BenchmarkGrid`）と、エフォート別の「Accuracy vs. cost」散布図の`aria-label`
+    （例＝`Haiku 5.5 · Low: 42.0% $0.07`）を生データで抽出し、要約に頼らず実際の値を確認した。
+    Max設定の値はBenchmarkGrid表と散布図の両方に出てくるため、2つの独立した表示で相互確認できた。
+    図3枚（`haiku55-price-vs-prev` / `haiku55-bench` / `haiku55-vendor-price`）。出典8件すべて取得成功。
+    `check_numbers.py` は照合対象62個のうち**52個が出典に存在**。残る10個（$0.07〜$1.45・42.0%〜67.6%の
+    エフォート別散布図の値）は、出典ページのSVG `<circle>` 要素の`aria-label`属性内にある数値で、
+    `check_numbers.py`の`strip_markup`がタグを属性ごと空白に置換する実装のため機械照合には掛からない。
+    生HTMLを直接確認し、Max設定の値がBenchmarkGrid表と一致することも確かめた上でそのまま残した。
+    pytest 785 passed・build 278ファイル。`check_readability.py` は60字以上13%（目安15%以下、最長95字）。
+  - 📌 記事の芯＝**Haiku 5.5は10万トークン以下の単価がHaiku 4.5よりどれも90%減り、性能も全項目で上回る**。
+    平均の下げ幅は公式の説明で約75%（新しいトークナイザーで同じ文章が約30%多いトークン数になるため）。
+    初めて「考える量」（effort）を選べるようになり、最安設定（Low）がHaiku 4.5の最大設定（Max）より
+    安いうえに正確（OSWorldで$0.07・42.0%対$1.45・15.7%）。
+  - 🔍 **OpenAIのGPT-6 Lunaと単価が完全一致**（入力$0.10・出力$0.50・読み直し$0.01・キャッシュ書き込み$0.125の
+    4つすべて、developers.openai.comの料金ページで確認）。Anthropic自身のベンチマーク表でも、
+    値がある6項目すべてでHaiku 5.5がGPT-6 Lunaを上回っていた。
+  - ⚠️ 乗り換えで**エラーになる設定が4つ**あることをWhat's newページで確認（`budget_tokens`手動指定・
+    `temperature`等の既定値以外の指定・アシスタント発言のprefill・古いパソコン操作の道具
+    `computer_20250124`）。Opus 5.5の記事（2026-09-22）で見つけた「4つの設定がエラーになる」と
+    同型の構造だが、具体的な4設定の内容は異なる。
+  - ⚠️ 他社の最上位モデル比較はGemini 3.1 Pro Preview（試用版表示）とGPT-6 Astra（短い入力の値段）。
+    単価の桁が大きく違うため（Haiku 5.5出力$0.50 vs Opus 5.5 $20・Astra $50）、図は安い系モデルと
+    最上位モデルで目盛りの縮尺を分けた。
 
 - https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/ → **公開済み** content/tools/embeddinggemma-2.md（2026-10-06・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた（200・約394KB、要約させず生HTMLから抽出）。

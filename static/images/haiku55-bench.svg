@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="333" viewBox="0 0 720 333" role="img" aria-label="Haiku 4.5・GPT-6 Luna・Haiku 5.5 の点数を比べた横棒グラフ。OSWorld 2.1（オフラインsubset）はHaiku 4.5が15.7％、GPT-6 Lunaが48.9％、Haiku 5.5が72.4％。Terminal-Bench 4.0はHaiku 4.5が0.0％、GPT-6 Lunaが16.4％、Haiku 5.5が39.2％。Chartography（道具なし）はHaiku 4.5が6.4％、GPT-6 Lunaが29.1％、Haiku 5.5が46.4％。いずれもHaiku 5.5が最大の設定（max）で3モデル中もっとも高い。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="333"/>
+<text class="t-strong" x="18" y="26">Haiku 5.5 は Haiku 4.5 だけでなく GPT-6 Luna も上回る</text>
+<text class="t-sm" x="18" y="45">灰＝Haiku 4.5、薄い青＝GPT-6 Luna、濃い青＝Haiku 5.5。目盛りは0〜100％。</text>
+<text class="t-sm" x="18" y="64">3モデルとも値がある項目だけを選んだ（最大の設定 max の点数）。</text>
+<text class="t" x="18" y="98">OSWorld 2.1（オフライン subset・パソコン操作）</text>
+<text class="t-xs" x="234" y="96" text-anchor="end">Haiku 4.5</text>
+<rect class="bar-old" x="262" y="86" width="59.3" height="13" rx="2"/>
+<text class="t-sm" x="329.3" y="96">15.7%</text>
+<text class="t-xs" x="234" y="113" text-anchor="end">GPT-6 Luna</text>
+<rect class="bar-in" x="262" y="103" width="184.8" height="13" rx="2"/>
+<text class="t-sm" x="454.8" y="113">48.9%</text>
+<text class="t-xs" x="234" y="130" text-anchor="end">Haiku 5.5</text>
+<rect class="bar-new" x="262" y="120" width="273.7" height="13" rx="2"/>
+<text class="t-sm" x="543.7" y="130">72.4%</text>
+<text class="t" x="18" y="167">Terminal-Bench 4.0（自動作業）</text>
+<text class="t-xs" x="234" y="165" text-anchor="end">Haiku 4.5</text>
+<rect class="bar-old" x="262" y="155" width="2.0" height="13" rx="2"/>
+<text class="t-sm" x="272.0" y="165">0.0%</text>
+<text class="t-xs" x="234" y="182" text-anchor="end">GPT-6 Luna</text>
+<rect class="bar-in" x="262" y="172" width="62.0" height="13" rx="2"/>
+<text class="t-sm" x="332.0" y="182">16.4%</text>
+<text class="t-xs" x="234" y="199" text-anchor="end">Haiku 5.5</text>
+<rect class="bar-new" x="262" y="189" width="148.2" height="13" rx="2"/>
+<text class="t-sm" x="418.2" y="199">39.2%</text>
+<text class="t" x="18" y="236">Chartography（道具なし・図表の読み取り）</text>
+<text class="t-xs" x="234" y="234" text-anchor="end">Haiku 4.5</text>
+<rect class="bar-old" x="262" y="224" width="24.2" height="13" rx="2"/>
+<text class="t-sm" x="294.2" y="234">6.4%</text>
+<text class="t-xs" x="234" y="251" text-anchor="end">GPT-6 Luna</text>
+<rect class="bar-in" x="262" y="241" width="110.0" height="13" rx="2"/>
+<text class="t-sm" x="380.0" y="251">29.1%</text>
+<text class="t-xs" x="234" y="268" text-anchor="end">Haiku 5.5</text>
+<rect class="bar-new" x="262" y="258" width="175.4" height="13" rx="2"/>
+<text class="t-sm" x="445.4" y="268">46.4%</text>
+<text class="t-xs" x="18" y="321">※ 出典: すべて https://www.anthropic.com/claude-haiku-5-5（2026年10月8日に確認）。</text>
+</svg>

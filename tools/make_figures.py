@@ -31894,3 +31894,239 @@ def subtotal_300_rows_row_number_chart() -> None:
 if __name__ == "__main__":
     subtotal_300_rows_hit_and_miss_chart()
     subtotal_300_rows_row_number_chart()
+
+
+def haiku55_price_vs_prev_chart() -> None:
+    """Haiku 4.5 → Haiku 5.5 の単価（prompt 10万トークン以下の階層・2026-10-08）。
+
+    出典＝platform.claude.com のモデルのページ（claude-haiku-5-5／claude-haiku-4-5 の
+    contextWindowTokens・pricing データ）。4項目とも10万トークン以下は正確に90%減
+    （公式の脚注「90% lower... for requests up to 100,000 tokens」どおり）。
+    """
+    groups = [
+        ("入力", 1.00, 0.10),
+        ("出力", 5.00, 0.50),
+        ("読み直し（キャッシュ読み取り）", 0.10, 0.01),
+        ("キャッシュ書き込み（5分）", 1.25, 0.125),
+    ]
+    left, right = 230, 560
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 90, 14, 5, 30
+    group_h = bar_h * 2 + bar_gap + group_gap
+    scale = span / 5.0
+
+    assert right + 90 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Haiku 4.5 → Haiku 5.5、10万トークン以下はどれも90%減</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い灰＝Haiku 4.5、濃い青＝Haiku 5.5。100万トークンあたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "10万トークンを超える分の下げ幅は50%で、これより小さい（本文に表あり）。</text>\n",
+    ]
+    for index, (label, old, new) in enumerate(groups):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(label)}</text>\n')
+        drop_pct = round((1 - new / old) * 100)
+        parts.append(f'<text class="t-xs" x="18" y="{y + 28}">{drop_pct}%減</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "4.5"), (new, "bar-new", "5.5"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(
+                f'<text class="t-xs" x="206" y="{by + bar_h - 3}" text-anchor="end">{tag}</text>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{_usd(value)}</text>\n"
+            )
+
+    height = top + len(groups) * group_h + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: platform.claude.com のモデルのページ（2026年10月8日に確認）。</text>\n"
+    )
+    alt = (
+        "Claude Haiku 4.5 から Haiku 5.5 への単価の変化を示す横棒グラフ（prompt 10万トークン以下）。"
+        "100万トークンあたりのドル。薄い灰＝Haiku 4.5、濃い青＝Haiku 5.5。"
+        "入力は1.00ドルから0.10ドルへ90%減、出力は5.00ドルから0.50ドルへ90%減、"
+        "読み直し（キャッシュ読み取り）は0.10ドルから0.01ドルへ90%減、"
+        "キャッシュ書き込み（5分）は1.25ドルから0.125ドルへ90%減。"
+        "10万トークンを超える分の下げ幅は50%で、これより小さい。"
+    )
+    (OUT / "haiku55-price-vs-prev.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def haiku55_bench_chart() -> None:
+    """Haiku 4.5・Haiku 5.5・GPT-6 Luna の点数（3モデルとも値がある3項目・最大設定、2026-10-08）。
+
+    出典＝Haiku 5.5 発表ページのベンチマーク表（www.anthropic.com/claude-haiku-5-5）。
+    Humanity's Last Exam と FrontierCode 1.1 は GPT-6 Luna か Haiku 4.5 のどちらかが
+    「—」（未測定）だったため、3モデルとも値がある3項目だけを選んだ。
+    """
+    rows = [
+        ("OSWorld 2.1（オフライン subset・パソコン操作）", 15.7, 72.4, 48.9),
+        ("Terminal-Bench 4.0（自動作業）", 0.0, 39.2, 16.4),
+        ("Chartography（道具なし・図表の読み取り）", 6.4, 46.4, 29.1),
+    ]
+    left, right = 262, 640
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 86, 13, 4, 22
+    group_h = bar_h * 3 + bar_gap * 2 + group_gap
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "Haiku 5.5 は Haiku 4.5 だけでなく GPT-6 Luna も上回る</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "灰＝Haiku 4.5、薄い青＝GPT-6 Luna、濃い青＝Haiku 5.5。目盛りは0〜100％。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "3モデルとも値がある項目だけを選んだ（最大の設定 max の点数）。</text>\n",
+    ]
+    for index, (name, h45, h55, luna) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        series = (
+            (h45, "bar-old", "Haiku 4.5"),
+            (luna, "bar-in", "GPT-6 Luna"),
+            (h55, "bar-new", "Haiku 5.5"),
+        )
+        for offset, (value, cls, tag) in enumerate(series):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(
+                f'<text class="t-xs" x="234" y="{by + bar_h - 3}" text-anchor="end">{tag}</text>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:.1f}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: すべて https://www.anthropic.com/claude-haiku-5-5（2026年10月8日に確認）。</text>\n"
+    )
+    alt = (
+        "Haiku 4.5・GPT-6 Luna・Haiku 5.5 の点数を比べた横棒グラフ。"
+        "OSWorld 2.1（オフラインsubset）はHaiku 4.5が15.7％、GPT-6 Lunaが48.9％、Haiku 5.5が72.4％。"
+        "Terminal-Bench 4.0はHaiku 4.5が0.0％、GPT-6 Lunaが16.4％、Haiku 5.5が39.2％。"
+        "Chartography（道具なし）はHaiku 4.5が6.4％、GPT-6 Lunaが29.1％、Haiku 5.5が46.4％。"
+        "いずれもHaiku 5.5が最大の設定（max）で3モデル中もっとも高い。"
+    )
+    (OUT / "haiku55-bench.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def haiku55_vendor_price_chart() -> None:
+    """安い系モデルと、各社の最上位モデルの単価を並べる（2026-10-08）。
+
+    出典＝Claude は platform.claude.com、GPT は developers.openai.com、
+    Gemini は ai.google.dev の各公式料金ページ（短い入力・prompt 10万トークン以下の値）。
+    GPT-6 Luna の4つの単価（入力・読み直し・キャッシュ書き込み・出力）は、
+    Claude Haiku 5.5 のこの階層の単価とすべて一致する。
+    """
+    cheap = [
+        ("Claude Haiku 5.5", 0.10, 0.50),
+        ("GPT-6 Luna", 0.10, 0.50),
+        ("Gemini 3.5 Flash-Lite", 0.30, 2.50),
+    ]
+    flagship = [
+        ("Claude Opus 5.5", 4.00, 20.00),
+        ("GPT-6 Astra", 10.00, 50.00),
+        ("Gemini 3.1 Pro Preview", 2.00, 12.00),
+    ]
+    left, right = 250, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 100, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    cheap_scale = span / 2.50
+    flagship_scale = span / 50.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "安い系モデルは、各社の最上位モデルの何十分の1</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "入力＝薄い色 ／ 出力＝濃い色。100万トークンあたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "上下で目盛りの縮尺が違う（下の最上位モデルのほうが値が大きいため）。</text>\n",
+        f'<text class="t-accent" x="18" y="{top - 10}">安い系モデル</text>\n',
+    ]
+    y = top
+    for name, price_in, price_out in cheap:
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * cheap_scale)
+            parts.append(
+                f'<text class="t-xs" x="214" y="{by + bar_h - 3}" text-anchor="end">{tag}</text>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">{_usd(value)}</text>\n'
+            )
+        y += group_h
+
+    flagship_label_y = y + 10
+    parts.append(f'<text class="t-accent" x="18" y="{flagship_label_y}">各社の最上位モデル</text>\n')
+    y = flagship_label_y + 20
+    for name, price_in, price_out in flagship:
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * flagship_scale)
+            parts.append(
+                f'<text class="t-xs" x="214" y="{by + bar_h - 3}" text-anchor="end">{tag}</text>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">{_usd(value)}</text>\n'
+            )
+        y += group_h
+
+    height = y + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ GPT と Gemini は短い入力のときの値段。会社ごとにトークンの数え方が違います。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: 各社の公式料金ページ（2026年10月8日に確認）。単価が安い＝支払いが安い、ではありません。</text>\n"
+    )
+    alt = (
+        "安い系モデルと各社の最上位モデルの単価を比べた横棒グラフ。100万トークンあたりのドル。上下で目盛りの縮尺が違う。"
+        "安い系モデル＝Claude Haiku 5.5は入力0.10ドル・出力0.50ドル、GPT-6 Lunaは入力0.10ドル・出力0.50ドルで"
+        "両方の4つの単価が完全一致、Gemini 3.5 Flash-Liteは入力0.30ドル・出力2.50ドル。"
+        "各社の最上位モデル＝Claude Opus 5.5は入力4.00ドル・出力20.00ドル、GPT-6 Astraは入力10.00ドル・出力50.00ドル、"
+        "Gemini 3.1 Pro Previewは入力2.00ドル・出力12.00ドル（いずれも短い入力のときの値段）。"
+    )
+    (OUT / "haiku55-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    haiku55_price_vs_prev_chart()
+    haiku55_bench_chart()
+    haiku55_vendor_price_chart()
