@@ -2020,10 +2020,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "See how Qodo uses OpenAI to review AI-generated code. Explore an adversarial reviewer that challenges coding agents’ assumptions and output, and learn when model confidence still needs human judgment.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "QodoはAIに開発組織の文脈や知見を与え、コード生成やレビューを自動化・支援する仕組みだとCEOが説明している。",
+    "プロンプトからフローやスウォームへの移行など、複数のAIエージェントを連携させてコード検証を行う手法を解説している。",
+    "AI同士で意見が分かれた場合などに人間が介入し、障害などの知見を蓄積して再発を防ぐ設計が重要だと述べている。"
+   ],
+   "for_whom": "AIによるコードレビューや開発プロセスの自動化を検討しているエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T06:38:48.571426+00:00"
   },
   {
    "video_id": "wZYnJfL4c2Y",
@@ -2033,10 +2043,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "See how agents help small open-source teams build together. Explore workflows for sharing context across projects and working with contributors, with live demos of cloud sessions and computer use.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Peter Steinberger氏が、CLIからチームサーバーへと移行したAIエージェントとの協調開発ワークフローを紹介している。",
+    "プロンプト履歴やセッションをチームで共有し、ゲーム制作やダッシュボード更新を自律的に進める手法を実演している。",
+    "Kevin Lin氏が、サンドボックスや自動レビュー機能を備えたOpenClaw Enterpriseのセキュリティ管理と設定を解説している。"
+   ],
+   "for_whom": "AIエージェントをチーム開発や共同プロジェクトに導入したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T06:38:48.571426+00:00"
   },
   {
    "video_id": "ZcDFZzsp3_Y",
@@ -2167,10 +2187,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、新しく登場した Claude Haiku 5.5 について、公式ベンチやAAなどのスコア、作成したデモなどを元に解説しました！\nOpus 5.5 や Sonnet 5.5 を超えるモデルではありませんが、速度は TPS で 250 前後と速く、ComputerUseは Haiku 4.5 から大きく伸びています。今回からエフォートも選べるようになり、xhigh あたりで使うとコスパの良いゾーンに乗ってくる印象でした。価格も 100K トークン以下ならかなり安く、サブエージェントに軽いタスクやちょっとしたリサーチを任せる用途にぴったりだと感じました。一方で、Terminal-Bench で測るような複雑なエージェンティックコーディングは Sonnet や Opus に任せたほうが良さそうです。\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://www.anthropic.com/claude-haiku-5-5\n\ntimestamp:\n00:00 Haiku 5.5 登場、立ち位置と使い分け\n01:20 Artificial Analysisでの立ち位置\n02:39 エフォート別に3Dゲームを作って比較\n04:12 ナレッジカットオフと公式デモの印象\n05:43 公式ベンチはコンピュータユースが躍進\n08:27 価格は100K トークン以下で10分の1\n09:20 向かないタスクとSonnet のキャッシュ値下げ\n11:00 GPT-6 Luna と自作デモで比較\n14:50 資料・スライド・サムネ・SVGの出来\n17:30 まとめ: Haiku に仕事を振っていこう\n18:15 note メンバーシップと勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-08T13:58:07.288395+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "AnthropicからClaude Haiku 5.5が登場し、低コストかつ高速でサブエージェント等の軽量タスクに向いていると紹介している。",
+    "ベンチマークではPC操作性能が大きく伸びた一方、複雑なコーディングは上位モデルに任せる使い分けが推奨されると説明している。",
+    "GPT-6 Lunaとのデモ比較を通じ、資料作成や簡単なゲーム開発などで実用的な品質を出せると評価している。"
+   ],
+   "for_whom": "Claude APIのコストを抑えて業務自動化を進めたいエンジニアや会社員",
+   "caution": "動画の終盤および概要欄で、有料のnoteメンバーシップへの加入案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T06:38:48.571426+00:00"
   },
   {
    "video_id": "9-37zVwSDwE",
@@ -2272,10 +2302,20 @@
    "channel_key": "claude",
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
-   "description": "Shopify's CTO on how Shopify uses Claude: unlimited tokens for everyone, always the largest model, and a digital twin of the company.\n\nIn this conversation with Boris, Shopify's CTO explains why the real value of working with Claude is in building things that weren't possible before. He describes solving a problem he'd worked on for seven years, how Shopify built a digital twin of the company, and the unique barbell strategy he recommends for getting the most out of Claude.\n\nHave a question? Let us know in the comments.\n\nLearn more about Claude Code: https://claude.com/claude-code\n\nChapters\n0:00 How Shopify's CTO raises the ceiling with Claude\n2:07 Measuring AI ROI and engineering productivity\n3:32 Why Shopify gives every engineer unlimited tokens\n4:42 Building a digital twin to predict merchant growth\n7:28 AI for managing engineering teams\n9:41 Advice for CTOs: the barbell token strategy",
    "first_seen": "2026-10-08T23:32:30.877734+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ShopifyのCTOは、AIの価値は単なる効率化だけでなく従来不可能だった課題を解決して上限を引き上げることにあると述べている。",
+    "企業の行動をモデル化してデジタルツインを構築し、マーチャントの成長を最大化する施策のシミュレーションに活用していると説明している。",
+    "開発や推論には最大モデルを投じ、本番環境には軽量モデルやファインチューニングを使い分けるバーベル戦略を推奨している。"
+   ],
+   "for_whom": "自社組織での生成AI活用やエンジニアのAI導入戦略を模索している技術リーダーやCTO",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T06:38:48.571426+00:00"
   },
   {
    "video_id": "rkK8ZyzYyEA",
@@ -2303,87 +2343,87 @@
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "keito": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-08T23:32:30.877734+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-08T23:32:30.877734+00:00",
+   "last_ok": "2026-10-09T06:38:48.571426+00:00",
    "fail_streak": 0
   }
  }
