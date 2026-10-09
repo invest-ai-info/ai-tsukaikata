@@ -28,17 +28,11 @@
     "e5867c4dc76ca063": "2026-08-17",
     "e7c4e5e484b85e66": "2026-09-15"
   },
-  "failures": {
-    "deepmind-blog": {
-      "count": 1,
-      "last_error": "0件",
-      "since": "2026-10-09T16:17:06.887837+00:00"
-    }
-  },
+  "failures": {},
   "latest": {
     "anthropic-news": "2026-10-08T17:00:00+00:00",
     "anthropic-sdk": "2026-10-09T15:28:52+00:00",
-    "claude-code": "2026-10-08T19:48:38+00:00",
+    "claude-code": "2026-10-09T19:28:59+00:00",
     "deepmind-blog": "2026-10-06T19:57:04+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-10-07T12:00:00+00:00",
@@ -187,6 +181,28 @@
       "uid": "46fc6e9d34317ecc",
       "url": "https://sakana.ai/namazu-aillis/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-09T19:28:59+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a code key to the Claude apps gateway's managed.policies[] : the same settings as cli , also applied in Claude Desktop's Code tab; beside desktop , it turns on Claude Desktop's g…",
+      "title": "v2.1.296",
+      "uid": "952479984a38b0c9",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.296",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-09T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
+      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+      "uid": "b2ec2f5a189d9061",
+      "url": "https://openai.com/index/asana-browser-agent",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -2361,6 +2377,7 @@
     "9518dd8d5b4e2786": "2026-09-09T16:42:11.740885+00:00",
     "951e390c2550da86": "2026-09-03T16:29:05.225191+00:00",
     "95225c3175a5f548": "2026-10-08T01:59:29.411679+00:00",
+    "952479984a38b0c9": "2026-10-09T21:01:26.956752+00:00",
     "9536cfcf73088088": "2026-09-23T23:44:44.256252+00:00",
     "953cca9738b992f8": "2026-08-20T04:01:20.445066+00:00",
     "953f20cfa9ff8e7f": "2026-08-19T17:43:17.097023+00:00",
@@ -2772,6 +2789,7 @@
     "b2c0e0432d6d8654": "2026-09-08T04:43:11.821528+00:00",
     "b2c6f5d24d63e5c3": "2026-08-04T11:04:53.115730+00:00",
     "b2e181ae74ffb79c": "2026-08-27T09:54:30.419398+00:00",
+    "b2ec2f5a189d9061": "2026-10-09T21:01:26.956752+00:00",
     "b2f55fe3e00bb9d6": "2026-08-25T07:10:25.158045+00:00",
     "b30ccca642e9093b": "2026-09-15T21:28:25.537882+00:00",
     "b320466795ac2ed8": "2026-09-08T21:53:36.719703+00:00",
