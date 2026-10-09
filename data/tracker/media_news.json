@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-09T10:49:29+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Anthropicは10月8日、重要インフラおよびオープンソースソフトウェアのセキュリティ向上を目指す長期的な取り組み「Anthropic Cyber Mission」を発足した。",
+      "title": "Anthropic、重要インフラとOSSを保護する「Cyber Mission」",
+      "uid": "5d160d66c03edd5d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2147283.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-09T10:44:36+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米OpenAIは10月9日（日本時間）までに、「ChatGPT」が音声ファイルのアップロードに対応したと発表した。",
+      "title": "ChatGPT、ついに音声ファイルに対応　文字起こしや要約などが可能に　有料ユーザー向け",
+      "uid": "fc4cae210e555953",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/09/2000002182/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-09T10:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIがロシアやイランによる「AI生成の架空組織・架空人物を用いた影響工作」に利用されたアカウントを停止したと発表しました。 続きを読む...",
+      "title": "ロシアとイランがプロパガンダ工作で用いたChatGPTアカウントをOpenAIが停止、工作の影響度は6段階中4～5",
+      "uid": "fa2af7d42d3376a6",
+      "url": "https://gigazine.net/news/20261009-openai-disrupted-russian-operation-dark-clark/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-09T10:08:10+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米CrowdStrikeは10月7日（現地時間）、韓国の金融機関を狙ったサイバー攻撃の攻撃者が、中国在住の26歳の人物である可能性を示す分析結果を公表した。攻撃者が使ったAIツールの履歴に、本人のものとみられる個人情報が残っていたという。",
+      "title": "韓国の銀行狙ったサイバー攻撃、犯人は「中国在住の26歳」か　Claudeで作られた“履歴書”から浮上",
+      "uid": "c639307c624fe795",
+      "url": "https://www.itmedia.co.jp/news/article/2610/09/2000002176/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-09T09:57:32+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "KDDIは、同社のブランド体験施設「GINZA 456 Created by KDDI」において、体験型イベント「もしもし、わたし-Sparked by INFOBAR-」を、10月9日から2027年3月31日まで開催する。",
+      "title": "KDDI、AIが生み出すもうひとりのわたしから電話がかかってくる体験型イベントを開催",
+      "uid": "53c418b8db471e81",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2147247.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-09T09:14:20+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Sakana AIは10月9日、日本仕様のLLM「Sakana Namazu」が、医師向けエビデンス検索ツール「Evidence Finder」に採用されたと発表した。",
+      "title": "Sakana AIのLLM「Namazu」、医師向け「Evidence Finder」に採用",
+      "uid": "e38270c6861fad99",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2147246.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-10-09T09:12:47.194885+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
@@ -2327,78 +2399,6 @@
       "uid": "7abb1a1587c257a6",
       "url": "https://gigazine.net/news/20261005-figure-02-decommission/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-05T02:04:59+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Amazonにて、EGQINRの「AIスマートグラス」が21%OFFのセール価格27,792円で販売されている。",
-      "title": "137言語翻訳のAIスマートグラスがAmazonでセール。21%OFFで2万円台に",
-      "uid": "3f6b2009dbce6dd0",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2145519.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-05T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "サーバーワークスが2026年8月20日、ITエンジニア260人を対象にしたAIエージェントに関する調査結果を公表。勤務先の52.7％で導入済みであり、全10業務において「AI主体」を支持する割合が「人間主体」を上回る結果となった。",
-      "title": "ITエンジニアの8割超「AIは人間より優れた判断をする」と認める　“でも任せられない”業務とは",
-      "uid": "2fad168c5f044ca4",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/05/news017.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-05T01:54:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "SpaceXの最高経営責任者（CEO）イーロン・マスク氏は4日、「X」（旧Twitter）への投稿で、同社のAI部門「SpaceXAI」を「SpaceXSI」に改称すると表明した。SIは「スーパーインテリジェンス（超知能）」の略で、ドナルド・トランプ米大統領が人工知能を指す呼称として「AI」に代えて用いるよう促している。",
-      "title": "「SpaceXAI」を「SpaceXSI」に改称　マスク氏表明",
-      "uid": "4e1704143c8a78da",
-      "url": "https://japan.cnet.com/article/35253231/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-05T01:35:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "アップルは動画を録画せずに侵入者を検知し、通知できる家庭用防犯カメラを開発しているという。Bloombergのマーク・ガーマン氏が伝えた。",
-      "title": "アップル、「録画しない」防犯カメラを開発か　AIが状況を文章で通知",
-      "uid": "a7fe5b0c0c9e118f",
-      "url": "https://japan.cnet.com/article/35253228/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-05T00:59:15.249775+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-04T22:56:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米連邦航空局（FAA）と米運輸省（DOT）は9月21日（現地時間）、AIを活用した航空交通管理システム「SMART」（Strategic Management of Airspace, Routes and Trajectories）の試験運用を始めたと発表した。試験の対象は、首都ワシントンDC周辺のレーガン・ナショナル空港、ダレス国際空港、ボルチモア・ワシントン国際空港の3空港だ。FAAは今後…",
-      "title": "米当局、航空管制にAI導入　その中身とは",
-      "uid": "4cf6398ad9e70ab6",
-      "url": "https://japan.cnet.com/article/35253220/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-05T00:59:15.249775+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-04T22:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "実は成功しにくいボトムアップでのAI活用。現場主導のAI活用が奏功しない──このような事態はなぜ起きるのでしょうか。",
-      "title": "「現場任せのAI活用」が失敗するこれだけの理由　経営層がすべき“頭の中”の言語化とは",
-      "uid": "3c8ee06835682952",
-      "url": "https://www.itmedia.co.jp/news/article/2610/05/2000001937/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

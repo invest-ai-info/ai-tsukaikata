@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-09T16:17:06.887837+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-09T15:28:52+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add types for the Chat and Cowork unified analytics metrics api: add workflows, multiagent configuration and thread status filtering to Managed Agents Chores internal: name the default …",
+      "title": "v1.13.0",
+      "uid": "4f3b76693958ac9b",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.13.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-09T09:12:47.194885+00:00",
       "importance": "minor",
       "label": "OpenAI News",
