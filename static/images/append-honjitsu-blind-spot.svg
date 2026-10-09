@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="586" viewBox="0 0 720 586" role="img" aria-label="架空の副業の作業記録ファイル、10回追記した時点の実物を示す図。1行目は見出し、2行目はお手本、3行目以降が追記された行。6行目（2026-10-09 / F社 / 記事の下書き / 50分）と11行目（2026-10-09 / C社 / 見積りの作成 / 45分）は本来2026-08-04・2026-08-09のはずが、どちらも呼び出した実際の日2026-10-09になっている。区切り記号も日付の桁数も他の行と同じなので、形だけを見る点検では異常に見えない。実際に「形がそろっていない行があれば挙げてください」と新しい会話に聞いた8回（10回目・50回目×4系列）は、8回とも「ありません」と答え、この日付の飛びには1回も触れなかった。一方、聞き方を「日付が前後と比べて順番から外れていないか」に変えると、同じ8回のファイルで8回とも2026-10-09の行を正しく名指しした。点検は聞いた形にしか効かないので、聞き方そのものを日付の順番に向ければこの事故は拾える。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="586"/>
+<text class="t-strong" x="18" y="26">点検に「形がそろっていますか」と聞くと、この2行は「ありません」で素通りする</text>
+<text class="t-sm" x="18" y="45">材料A・1系列の10回目のファイル実物。6行目・11行目は8/4・8/9のはずが2026-10-09。</text>
+<text class="t-sm" x="18" y="64">区切り記号も日付の桁数も他の行と同じなので、「形」の点検では異常に見えない。</text>
+<rect class="box" x="10" y="126" width="330" height="304" rx="4"/>
+<text class="mono" x="18" y="146"># 副業の作業記録（1日1行）</text>
+<text class="mono" x="18" y="170">2026-07-31 / C社 / 記事の下書き / 90分</text>
+<text class="mono" x="18" y="194">2026-08-01 / C社 / 打ち合わせメモ起こし / 45分</text>
+<text class="mono" x="18" y="218">2026-08-02 / D社 / 資料のチェック / 75分</text>
+<text class="mono" x="18" y="242">2026-08-03 / E社 / 原稿の校正 / 120分</text>
+<text class="t-bad" x="18" y="266">2026-10-09 / F社 / 記事の下書き / 50分</text>
+<text class="t-bad" x="372" y="266">本日→実日付に化けた</text>
+<text class="mono" x="18" y="290">2026-08-05 / G社 / 請求書の作成 / 45分</text>
+<text class="mono" x="18" y="314">2026-08-06 / H社 / 写真の加工 / 75分</text>
+<text class="mono" x="18" y="338">2026-08-07 / I社 / 納品物の確認 / 120分</text>
+<text class="mono" x="18" y="362">2026-08-08 / J社 / 修正対応 / 50分</text>
+<text class="t-bad" x="18" y="386">2026-10-09 / C社 / 見積りの作成 / 45分</text>
+<text class="t-bad" x="372" y="386">本日→実日付に化けた</text>
+<text class="mono" x="18" y="410">2026-08-10 / D社 / 打ち合わせ準備 / 75分</text>
+<text class="t-bad" x="18" y="460">🚨 「形がそろっていない行があれば挙げてください」と聞いた8回（round10・round50×4系列）は、</text>
+<text class="t-bad" x="18" y="481">   8回とも「ありません」。この2行の日付の飛びには1回も触れなかった。</text>
+<text class="t-good" x="18" y="502">※ 聞き方を「日付が前後と比べて順番から外れていないか」に変えると、同じ8回のファイルで</text>
+<text class="t-good" x="18" y="523">   8回とも2026-10-09の行を正しく名指しした。点検は「聞いた形」にしか効かない——</text>
+<text class="t-good" x="18" y="544">   聞き方そのものを日付の順番に向ければ、この事故は拾える。</text>
+<text class="t-xs" x="18" y="565">架空データでの実測。生の返りは docs/evidence/ に置いてある。</text>
+</svg>

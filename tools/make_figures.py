@@ -32130,3 +32130,187 @@ if __name__ == "__main__":
     haiku55_price_vs_prev_chart()
     haiku55_bench_chart()
     haiku55_vendor_price_chart()
+
+
+def append_rounds_date_drift_chart() -> None:
+    """形（区切り・単位・日付のケタ）は50回転でも崩れないが、
+
+    「本日」とだけ書いた日の日付の値は壁時計の実日付に化ける。直す前と直した後を並べる。
+    実測（2026-10-09・架空の記録2本×各2回×50回転＝200回＋単発6回＋言い直し後6回）。
+    """
+    rows = [
+        ("形（区切り・単位・日付のケタ）が規定どおりだった回", 200, 200, "good"),
+        ("「本日」と書いた日の日付が、意図した日になった回（直す前）", 0, 46, "bad"),
+        ("同じ「本日」の回、指示文に1行足した後", 6, 6, "good"),
+    ]
+    label_x = 18
+    plot_x = 420
+    plot_w = 190
+    top = 150
+    row_h = 40
+    bar_h = 20
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "形は50回転でも崩れない。でも「本日」と書いた日だけ、日付が実日付に化ける</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "毎日の追記を同じ指示文のまま50回転させた（架空の記録2本×各2回＝4系列×50回＝200回）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "区切り記号・日付のケタ・末尾の単位は200回とも規定どおり。ところが走り書きが"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「本日◯◯、所要◯分でした」のように日付を書かない日だけ、追記された日付の値が"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "ファイルの続きの日ではなく、呼び出した実際の日（2026-10-09）になった。"
+        "</text>\n",
+    ]
+
+    y = top
+    for label, hit, total, tone in rows:
+        ty = y + 14
+        # ラベルは長いので2行に折り返す
+        mid = len(label) // 2
+        split_at = label.find("、", mid) + 1 or label.find("を", mid) + 1 or mid
+        line1, line2 = label[:split_at] or label, label[split_at:]
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(line1)}</text>\n')
+        if line2:
+            parts.append(f'<text class="t" x="{label_x}" y="{ty + 17}">{_esc(line2)}</text>\n')
+        bar_y = ty + (17 if line2 else 0) + 6
+        w = round(plot_w * hit / total) if total else 0
+        bar_cls = "bar-out" if tone == "good" else "box-bad"
+        if w:
+            parts.append(
+                f'<rect class="{"bar-out" if tone == "good" else "bar-in"}" '
+                f'x="{plot_x}" y="{bar_y}" width="{max(w,2)}" height="{bar_h}" rx="3"/>\n'
+            )
+        else:
+            parts.append(
+                f'<rect class="box-bad" x="{plot_x}" y="{bar_y}" width="4" height="{bar_h}" rx="3"/>\n'
+            )
+        cls = "t-good" if tone == "good" else "t-bad"
+        parts.append(
+            f'<text class="{cls}" x="{plot_x + max(w,4) + 8}" y="{bar_y + bar_h - 5}">'
+            f"{hit}/{total}回</text>\n"
+        )
+        y += row_h + (17 if line2 else 0)
+
+    notes = [
+        ("t-good", "※ 形だけを見れば、10回目でも50回目でも何も崩れていない（200/200）。"),
+        ("t-bad", "🚨 だが日付の値は違う。「本日」という走り書きが46回あり、46回とも壁時計の実日付になった。"),
+        ("t-bad", "   ファイルの続きとしては2026-08-04や2026-09-18のはずの行が、すべて2026-10-09になった。"),
+        ("t-good", "※ 直し方＝「実際の今日の日付ではなく、ファイルの続きの日付を使ってください」を1行足すと6/6で直った。"),
+        ("t-xs", "架空データでの実測（追記200回＋単発確認6回＋言い直し後6回＝全212回）。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y += 14
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "毎日の追記を同じ指示文のまま50回転させた結果を示す横棒グラフ。"
+        "架空の記録2本×各2回＝4系列×50回＝200回。"
+        "形（区切り記号・日付のケタ・末尾の単位）が規定どおりだった回は200回中200回で、"
+        "10回目でも50回目でも崩れていない。"
+        "ところが「本日◯◯、所要◯分でした」のように走り書きが日付を書かない日だけ、"
+        "追記された日付の値がファイルの続きの日ではなく、呼び出した実際の日（2026-10-09）に化けた。"
+        "この「本日」の走り書きは46回あり、意図した日付になった回は直す前は46回中0回だった。"
+        "指示文に「実際の今日の日付ではなく、ファイルの続きの日付を使ってください」と1行足すと、"
+        "6回中6回とも意図した日付に直った。"
+    )
+    (OUT / "append-rounds-date-drift.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def append_honjitsu_blind_spot_chart() -> None:
+    """round10のファイル実物を示し、「本日」が化けた2行を名指しする。
+
+    点検（新しい会話に「形がそろっていない行があれば」と聞く）が、
+    この日付の飛びには気づかなかったことを下に添える。
+    """
+    left_x = 18
+    col_w = 330
+    right_x = left_x + col_w + 24
+    top = 130
+    line_h = 24
+
+    lines = [
+        "# 副業の作業記録（1日1行）",
+        "2026-07-31 / C社 / 記事の下書き / 90分",
+        "2026-08-01 / C社 / 打ち合わせメモ起こし / 45分",
+        "2026-08-02 / D社 / 資料のチェック / 75分",
+        "2026-08-03 / E社 / 原稿の校正 / 120分",
+        "2026-10-09 / F社 / 記事の下書き / 50分",
+        "2026-08-05 / G社 / 請求書の作成 / 45分",
+        "2026-08-06 / H社 / 写真の加工 / 75分",
+        "2026-08-07 / I社 / 納品物の確認 / 120分",
+        "2026-08-08 / J社 / 修正対応 / 50分",
+        "2026-10-09 / C社 / 見積りの作成 / 45分",
+        "2026-08-10 / D社 / 打ち合わせ準備 / 75分",
+    ]
+    bad_idx = {5, 10}
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "点検に「形がそろっていますか」と聞くと、この2行は「ありません」で素通りする</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料A・1系列の10回目のファイル実物。6行目・11行目は8/4・8/9のはずが2026-10-09。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "区切り記号も日付の桁数も他の行と同じなので、「形」の点検では異常に見えない。"
+        "</text>\n",
+    ]
+
+    box_h = line_h * len(lines) + 16
+    parts.append(
+        f'<rect class="box" x="{left_x - 8}" y="{top - 4}" '
+        f'width="{col_w}" height="{box_h}" rx="4"/>\n'
+    )
+
+    y = top + 16
+    for i, text in enumerate(lines):
+        cls = "t-bad" if i in bad_idx else "mono"
+        parts.append(f'<text class="{cls}" x="{left_x}" y="{y}">{_esc(text)}</text>\n')
+        if i in bad_idx:
+            parts.append(
+                f'<text class="t-bad" x="{right_x}" y="{y}">本日→実日付に化けた</text>\n'
+            )
+        y += line_h
+
+    y = top + box_h + 26
+    notes = [
+        ("t-bad", "🚨 「形がそろっていない行があれば挙げてください」と聞いた8回（round10・round50×4系列）は、"),
+        ("t-bad", "   8回とも「ありません」。この2行の日付の飛びには1回も触れなかった。"),
+        ("t-good", "※ 聞き方を「日付が前後と比べて順番から外れていないか」に変えると、同じ8回のファイルで"),
+        ("t-good", "   8回とも2026-10-09の行を正しく名指しした。点検は「聞いた形」にしか効かない——"),
+        ("t-good", "   聞き方そのものを日付の順番に向ければ、この事故は拾える。"),
+        ("t-xs", "架空データでの実測。生の返りは docs/evidence/ に置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 21
+
+    height = y
+    alt = (
+        "架空の副業の作業記録ファイル、10回追記した時点の実物を示す図。"
+        "1行目は見出し、2行目はお手本、3行目以降が追記された行。"
+        "6行目（2026-10-09 / F社 / 記事の下書き / 50分）と11行目（2026-10-09 / C社 / 見積りの作成 / 45分）は"
+        "本来2026-08-04・2026-08-09のはずが、どちらも呼び出した実際の日2026-10-09になっている。"
+        "区切り記号も日付の桁数も他の行と同じなので、形だけを見る点検では異常に見えない。"
+        "実際に「形がそろっていない行があれば挙げてください」と新しい会話に聞いた8回"
+        "（10回目・50回目×4系列）は、8回とも「ありません」と答え、この日付の飛びには1回も触れなかった。"
+        "一方、聞き方を「日付が前後と比べて順番から外れていないか」に変えると、同じ8回のファイルで"
+        "8回とも2026-10-09の行を正しく名指しした。点検は聞いた形にしか効かないので、"
+        "聞き方そのものを日付の順番に向ければこの事故は拾える。"
+    )
+    (OUT / "append-honjitsu-blind-spot.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    append_rounds_date_drift_chart()
+    append_honjitsu_blind_spot_chart()
