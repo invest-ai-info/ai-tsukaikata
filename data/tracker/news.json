@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-09T09:12:47.194885+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-09T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight.",
+      "summary_ja": "SophosがAIを活用しサイバー脅威の調査を効率化\nOpenAI Daybreakで脅威調査時間を96%削減\nサイバー攻撃対応の52%を自動化し人による監視は継続",
+      "summary_source": "gemini",
+      "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
+      "uid": "a56315b6e871cc9b",
+      "url": "https://openai.com/index/sophos",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-08T22:07:40.987749+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -39,6 +53,18 @@
       "uid": "1239c9254083b9dd",
       "url": "https://openai.com/index/oracle",
       "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-09T09:12:47.194885+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-08T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "医師向け検索ツール「Evidence Finder」にSakana Namazuを導入：日本仕様のAIを、医療の現場へ",
+      "uid": "46fc6e9d34317ecc",
+      "url": "https://sakana.ai/namazu-aillis/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-10-08T16:32:35.748525+00:00",
