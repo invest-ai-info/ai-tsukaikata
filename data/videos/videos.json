@@ -2014,10 +2014,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Add custom annotation controls and suggested prompts to your website. See how these work with WebMCP to help users edit a scene and enrich expense records using context available to their agent in ChatGPT.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ChatGPTアプリ向けにWebMCPツールやカスタム注釈のサポートを追加したと説明している。",
+    "開発者はHTML属性やJSで注釈用UIやプロンプトを設定できると述べている。",
+    "家具配置や経費精算アプリを例に、エージェントと連携した操作デモを紹介している。"
+   ],
+   "for_whom": "ChatGPTアプリと連携するWebアプリを構築したい開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T22:52:02.092452+00:00"
   },
   {
    "video_id": "DmCaBWv5yG8",
@@ -2368,91 +2378,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-09T13:43:53.843362+00:00"
+  },
+  {
+   "video_id": "p5KxBTUncoE",
+   "title": "Set up your dot in the ChatGPT mobile app",
+   "url": "https://www.youtube.com/watch?v=p5KxBTUncoE",
+   "published": "2026-10-09T19:13:03+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-09T22:52:02.092452+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "モバイル版ChatGPTアプリから、常時稼働してタスクを代行するAIエージェント「dot」を作成可能になったと説明している。",
+    "dotの名前やアバターのカスタマイズ、カレンダーやメールへのアクセス連携手順を紹介している。",
+    "音声通話でdotに指示を出し、ウィジェットの試作やSlack上での共同作業者確認を依頼するデモを行っている。"
+   ],
+   "for_whom": "ChatGPTのAIエージェントを活用してスマホから作業を効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T22:52:02.092452+00:00"
+  },
+  {
+   "video_id": "enPbh_A5F7E",
+   "title": "Building the Codex community",
+   "url": "https://www.youtube.com/watch?v=enPbh_A5F7E",
+   "published": "2026-10-09T17:00:34+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-09T22:52:02.092452+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIのCodexアンバサダープログラムが世界80カ国以上、150人以上に拡大し、300以上のイベントが開かれたと紹介している。",
+    "インドの地下鉄車内で行われたコーディングや、世界規模で開催されたBuild Weekなど印象的な活動事例を振り返っている。",
+    "アンバサダーに必要なのは完全な知識ではなく、好奇心や周囲へ共有する情熱だと説明し、コミュニティへの参加を呼びかけている。"
+   ],
+   "for_whom": "OpenAIのCodexコミュニティや開発者イベントに関心があるエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T22:52:02.092452+00:00"
+  },
+  {
+   "video_id": "omihvjf0A2k",
+   "title": "Getting started with Claude Code Projects",
+   "url": "https://www.youtube.com/watch?v=omihvjf0A2k",
+   "published": "2026-10-09T19:49:09+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-09T22:52:02.092452+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Code Projectsは、目標を複数のスレッドに分割して並列実行・調整できる新機能だと説明している。",
+    "プルリクエスト作成やCI修正、外部サービスと連携した定期監視ルーチンの構築手順を紹介している。",
+    "コスト管理のためにモデル設定や推論労力を調整する方法や、プロジェクトメモリの活用法を解説している。"
+   ],
+   "for_whom": "AIを活用して複数の開発タスクや調査を並列で自動化したいエンジニア向け",
+   "caution": "現在はProおよびMaxプラン向けに順次展開中のベータ機能であり、複数スレッドを同時に走らせるとプランの利用枠消費が早くなる点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-09T22:52:02.092452+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-09T13:43:53.843362+00:00",
+   "last_ok": "2026-10-09T22:52:02.092452+00:00",
    "fail_streak": 0
   }
  }
