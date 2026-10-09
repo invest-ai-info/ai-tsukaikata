@@ -299,8 +299,31 @@
 - [x] https://www.anthropic.com/claude-haiku-5-5
   - →保管: ✅ **2026-10-08: 公開した** → `content/tools/claude-haiku-5-5.md`
 
-- [ ] https://www.anthropic.com/news/anthropic-cyber-mission
+- [!] https://www.anthropic.com/news/anthropic-cyber-mission
   - 2026-10-08 自動追記（major・Anthropic「Introducing the Anthropic Cyber Mission」）
+  - **2026-10-09 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground と同型）。
+
+    **① ページ自体は問題なく読めた**（`www.anthropic.com` に到達成功。要約させず節ごとに本文を抜き出して確認した）
+
+    **② 中身が「サイバー防御の長期的な取り組み発表」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - Anthropic Cyber Mission は、重要インフラ（電力網・上下水道・交通網の制御システム）とオープンソース
+      ソフトウェアの防御を支援する長期プログラム。「Critical Infrastructure Defense Program」
+      （創設パートナー11社・Accenture／Booz Allen／CrowdStrike等のコンサル・セキュリティ企業）と、
+      OSSを定期スキャンする新サービス「OSS Scanner」（オプトイン制・無料）の2本立て
+    - 本文中の数字は「真陽性率90%超を見込む」「米国の半数以上の州に支援」の2つのみで、どちらも
+      このプログラム単体の見込み・実績であり、料金表やベンチマークではない。他社に同種の
+      「サイバー防御支援プログラム」の発表が見当たらず、比較相手が無い
+    - 読者（自動化したい非エンジニアの会社員）が「どういう人に効くか」を判断できる要素が無い
+      （対象はOTの運用者・OSSメンテナー・セキュリティベンダーで、個人の自動化とは層が違う）。
+      プロダクトでもモデルでもないため、このサイトの記事の型（何が変わったか／前のモデルとの違い／
+      他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground とほぼ同じ構造**
+      （①は解けている・②＝数字はあっても比較できない／モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。
+      オーナーに一言確認を仰いでから確定させるのが、FIG・SynthID Bio・Playground のときの前例に
+      合わせたやり方。
 
 ## 処理済み
 
