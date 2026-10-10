@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-10T07:12:50.304450+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-10T06:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「RX10 V(DSC-RX10M5)」は2026年7月31日に登場したソニー製レンズ一体型カメラで、35mm判換算で24mm～600mmの25倍ズームレンズを搭載しており遠くの被写体を大きく写すことができます。そんなRX10 Vをソニーから借りられたので、実際に動物園や飲食店でいろいろ撮影して「どれだけズームできるのか？」「卓上の食べ物などの近くの被写体は撮影できるのか？」といった疑問点を検証…",
+      "title": "25倍ズームで遠くまで大きく写せるソニー製デジカメ「RX10 V」を使って動物や食べ物を撮影してみた作例はこんな感じ、スマホのAIズームとは別格の出来栄え",
+      "uid": "9012b08e74fb22d9",
+      "url": "https://gigazine.net/news/20261010-sony-rx10-v-photo-example/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-10T00:55:40.059243+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "f2a839f8d2ccb748",
       "url": "https://www.itmedia.co.jp/aiplus/article/2610/05/2000001997/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-05T02:55:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが提供するオープンソースソフトウェアを対象としたバグ報奨金プログラムの「Google Open Source Software Vulnerability Reward Program(Google OSS VRP)」が、2026年10月1日以降は製品脆弱(ぜいじゃく)性の報告を受け付けなくなったと報告しています。 続きを読む...",
-      "title": "AIによるバグ報告が爆増したためGoogleがバグ報奨金プログラムを一時停止",
-      "uid": "1aa44836a23a4640",
-      "url": "https://gigazine.net/news/20261005-google-froze-open-source-bug-bounty-program/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
