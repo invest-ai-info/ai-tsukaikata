@@ -5687,20 +5687,6 @@
       "uid": "c5d31b0c68aa13d8",
       "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-12T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "Collections of hundreds of physical 3D cellular bricks, simple modular hardware units that run identical local Neural Cellular Automata without any global knowledge, collaboratively infer their overa…",
-      "summary_ja": "物理的なAIブロックの研究が進んでいる。\n数百個の3Dブロックが集まり、個々がAIプログラムを実行。\n全体的な知識なしに協力して推論する。",
-      "summary_source": "gemini",
-      "title": "Smart Cellular Bricks: Towards Collective Intelligence for the Physical World",
-      "uid": "229710cf3e6a98f1",
-      "url": "/smart-cellular-bricks/",
-      "vendor": "Sakana AI"
     }
   ]
 }
