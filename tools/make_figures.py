@@ -32535,3 +32535,155 @@ def pending_mark_other_defects_chart() -> None:
 
 if __name__ == "__main__":
     pending_mark_other_defects_chart()
+
+
+def title_count_vs_real_ideas_chart() -> None:
+    """「タイトルを100個出して」の100件が、クラスタリングで実質何件に減るか。
+    前半50件・後半50件で、新規クラスタ（＝それまでに出ていない発想）の数を比べる。
+
+    実測（2026-10-10）。note記事テーマ（在宅勤務の集中力）とKindle本テーマ
+    （スマホ料理写真）の2本、各100件。判定は Python（difflib の類似度0.5で
+    クラスタリング）。証拠＝`docs/evidence/title-brainstorm-real-count.md`。
+    """
+    rows = [
+        ("note記事テーマ・前半50件", 30, 50),
+        ("note記事テーマ・後半50件", 5, 50),
+        ("Kindle本テーマ・前半50件", 33, 50),
+        ("Kindle本テーマ・後半50件", 3, 50),
+    ]
+    label_w = 230
+    plot_x = label_w + 12
+    plot_w = 330
+    axis_max = 50
+    scale = plot_w / axis_max
+    top = 128
+    row_h = 38
+    bar_h = 16
+    assert plot_x + plot_w + 60 <= WIDTH - 18, plot_x + plot_w + 60
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "タイトルを100個出させると、新しい発想は前半に集中する</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "note記事テーマ・Kindle本テーマの2本、各100件を難易度を変えず1回で出させた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒＝それまでに出た発想と似ていない「新規クラスタ」の数（50件中。"
+        "difflib の類似度0.5で判定）。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "🚨 どちらのテーマも、後半50件の新規クラスタは一桁に落ちる。</text>\n",
+        f'<text class="t-xs" x="{plot_x}" y="{top - 14}">'
+        "0件 ←────────────────→ 50件中</text>\n",
+    ]
+    y = top
+    for label, new, total in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        w = max(new * scale, 2)
+        cls = "bar-out" if new >= 20 else "bar-old"
+        parts.append(
+            f'<rect class="{cls}" x="{plot_x}" y="{ty - bar_h + 4:.0f}" '
+            f'width="{w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        txt_cls = "t-good" if new >= 20 else "t-bad"
+        parts.append(
+            f'<text class="{txt_cls}" x="{plot_x + w + 8:.1f}" y="{ty}">'
+            f"{new}件 / {total}件</text>\n"
+        )
+        y += row_h
+
+    axis_y = y + 2
+    parts.append(f'<path class="line" d="M{plot_x} {axis_y} L{plot_x + plot_w} {axis_y}"/>\n')
+    for tick in (0, 25, 50):
+        tx = plot_x + tick * scale
+        parts.append(f'<path class="line" d="M{tx:.1f} {axis_y} L{tx:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{tx - 8:.1f}" y="{axis_y + 18}">{tick}件</text>\n')
+    note_y = axis_y + 40
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_y}">'
+        "※ 100件を通しで機械判定すると、実質の種類数はnote記事テーマ35件・"
+        "Kindle本テーマ36件（いずれも100件中）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_y + 18}">'
+        "※ 類似度の線は0.5で引いた。しきい値を変えても、前半に偏る傾向は変わらない。</text>\n"
+    )
+    height = note_y + 34
+    alt = (
+        "タイトル案を100個出させたとき、新しい発想（それまでに出た案と似ていない"
+        "新規クラスタ）の数が前半50件と後半50件でどう違うかを比べた横棒グラフ。"
+        "note記事テーマは前半50件のうち30件が新規クラスタだったのに対し、"
+        "後半50件は5件しかなかった。Kindle本テーマも前半50件のうち33件が新規クラスタ"
+        "だったのに対し、後半50件は3件だった。100件を通しで機械判定すると、"
+        "実質の種類数はnote記事テーマで35件、Kindle本テーマで36件（いずれも100件中）。"
+        "どちらのテーマも、後半50件に入ると新しい発想はほぼ出なくなる。"
+    )
+    (OUT / "title-count-vs-real-ideas.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def title_honest_stop_density_chart() -> None:
+    """「100個出して」と「言い換え禁止・無理に埋めないで」の、密度の違い。
+
+    実測（2026-10-10）。同じ2テーマで、後者は編集距離の近い結び方を2回以上
+    使わない指示を足し、新しい切り口が尽きたら正直に打ち切ってよいとした。
+    証拠＝`docs/evidence/title-brainstorm-real-count.md`。
+    """
+    top = 96
+    box_w, box_h = 216, 150
+    gap = 18
+    xs = [18, 18 + box_w + gap, 18 + (box_w + gap) * 2]
+    assert xs[2] + box_w <= WIDTH - 18, xs[2] + box_w
+    boxes = [
+        ("box-bad", "「100個出して」", "35〜36件", "出てきた件数は100件。", "実質の種類数はこれだけ（100件中）。"),
+        ("box-good", "言い換え禁止＋\n正直に打ち切ってよい", "20〜22件", "出てきた件数は22〜23件。", "ほぼ全件が実質の種類数。"),
+        ("box-quiet", "密度（実質÷出てきた件数）", "35〜36%\n→ 87〜100%", "出てきた件数に占める、", "実質の種類の割合。"),
+    ]
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "件数を減らして正直に打ち切ると、密度はほぼ100%に近づく</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ2テーマ（note記事・Kindle本）。「言い換え禁止・無理に埋めない」を足した版は、"
+        "新規クラスタが尽きたら打ち切ってよいとした。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "出てきた件数は100件→22〜23件に減るが、実質の種類数はほとんど減らない。</text>\n",
+    ]
+    for x, (cls, title, big, l1, l2) in zip(xs, boxes):
+        title_lines = title.split("\n")
+        big_lines = big.split("\n")
+        parts.append(f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="8"/>\n')
+        for i, tl in enumerate(title_lines):
+            parts.append(f'<text class="t-sm" x="{x + 14}" y="{top + 22 + i * 16}">{_esc(tl)}</text>\n')
+        big_y = top + 22 + len(title_lines) * 16 + 20
+        for i, bl in enumerate(big_lines):
+            parts.append(f'<text class="t-strong" x="{x + 14}" y="{big_y + i * 20}">{_esc(bl)}</text>\n')
+        l_y = big_y + len(big_lines) * 20 + 2
+        parts.append(f'<text class="t-xs" x="{x + 14}" y="{l_y}">{_esc(l1)}</text>\n')
+        parts.append(f'<text class="t-xs" x="{x + 14}" y="{l_y + 16}">{_esc(l2)}</text>\n')
+    note_y = top + box_h + 32
+    parts.append(
+        f'<text class="t-accent" x="18" y="{note_y}">'
+        "数を求めると埋め草が増え、正直さを求めると数は減る——この記事はこの線引きの話。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-sm" x="18" y="{note_y + 22}">'
+        "※ note記事テーマは23件中20件（87%）、Kindle本テーマは22件中22件（100%）が実質の種類数。</text>\n"
+    )
+    height = note_y + 42
+    alt = (
+        "「100個出して」と「言い換え禁止・無理に埋めないで」を比べた図。"
+        "「100個出して」は出てきた件数100件に対し実質の種類数は35〜36件（密度35〜36%）。"
+        "「言い換え禁止・正直に打ち切ってよい」は出てきた件数が22〜23件に減る代わりに、"
+        "実質の種類数は20〜22件（密度87〜100%）に上がる。数を求めると埋め草が増え、"
+        "正直さを求めると出てくる件数そのものは減るというのが、この記事の比較の軸。"
+        "note記事テーマは23件中20件（87%）、Kindle本テーマは22件中22件（100%）が実質の種類数だった。"
+    )
+    (OUT / "title-honest-stop-density.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    title_count_vs_real_ideas_chart()
+    title_honest_stop_density_chart()
