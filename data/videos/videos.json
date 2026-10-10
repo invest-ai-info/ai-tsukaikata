@@ -24,19 +24,6 @@
    "summarized_at": "2026-10-03T21:43:29.295081+00:00"
   },
   {
-   "video_id": "uOtbNXMFs7w",
-   "title": "自己改善するAI秘書「Hermes Agent」の仕組みからVPS環境でのセットアップまで解説してみた",
-   "url": "https://www.youtube.com/watch?v=uOtbNXMFs7w",
-   "published": "2026-09-26T09:00:12+00:00",
-   "channel_key": "nyanta",
-   "channel_name": "にゃんたのAIチャンネル",
-   "default_category": "tech",
-   "description": "Hostinger VPS はこちら → https://www.hostinger.com/nyanta10\n（クーポンコード NYANTA10 で10%オフ）\n\n『ゼロからわかるClaude Code業務エージェントの教科書』\nAmazonで予約受付中！▶︎https://amzn.to/4yz0AZo\n\n『ゼロからわかるDifyの教科書 ～生成AI × ノーコードでかんたん業務効率化』\nAmazon ▶︎ https://amzn.to/3QMrFnY\n\n🏢【受付中】企業様向けAI活用の相談窓口を設置しています。\n「AIで業務効率化できるか一緒に考えてほしい」「AIがわかる人を育てたい」という企業様向けに、研修から業務改善の定着まで伴走支援いたします。\n▼登録はこちら（登録は1分ほど・本目的以外では営業しません）\nhttps://forms.gle/sPVYtBkZpeaJ7URS9 \n\n------------------------------------------------------------------------------------------------\n\nこんにちは、にゃんたです。\n今回は、私がAI秘書として注目している「Hermes Agent」について、基本的な仕組みから使い方まで解説しました！\n\nHermes Agentは単なるAIモデルではなくAIを動かすための仕組みであり、自己改善するAI秘書のように振る舞ってくれるのが最大の魅力です🙆‍♂️\n\n動画の前半では自分のパソコンで手軽に始めるデスクトップアプリの導入方法を解説し、後半ではVPSを利用した24時間稼働のサーバー構築や、Telegramと連携してスマホから操作する便利な設定方法まで紹介しています。\n\nAIに自分の仕事を覚えさせて業務を効率化したい方は、ぜひ動画を参考に試してみてください！\n\n■LINE公式で限定コンテンツ配布中！\n▼登録はこちらから行えます▼\nhttps://liff.line.me/2004040861-3Jvq4bAG\n\n今ならキーワード「プレゼント」と入力すると\n・ChatGPTのプロンプトまとめ\n・Claudeのプロンプトまとめ\n・Difyのまとめ\nを無料でお渡ししています！\n\n■Hermes Agent公式サイト\nhttps://hermes-agent.nousresearch.com\n\n■チャプター\n00:00 Hermes Agent完全入門｜AI秘書の全体像\n01:04 Hermes Agentのハーネス構造と仕組み\n03:54 Hermes Agent自己学習｜Claude Codeとの違い\n06:43 Hermes Agentのデメリットと導入条件\n09:03 Hermes Agent操作方法｜CLI・Desktop・Slack\n11:55 Hermes Agent Desktop導入とChatGPT連携\n15:10 Hermes Agent標準スキルと自己学習の仕組み\n19:37 Hermes Agentを24時間動かすAI自動化\n22:58 Hermes Agent VPS運用とHostinger料金\n25:41 HostingerでHermes Agentをデプロイ\n28:17 Hermes Agentリモート接続とモデル設定\n38:11 Hermes Agent Telegram連携と定期タスク\n\n■Udemy\nChatGPTAPIの使い方講座も作成しているので興味があれば是非！(クーポン発行してます！",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "Gp61r2ehrB0",
    "title": "ChatGPTに24時間働く新機能『Dots』登場！【OpenAI DevDay 2026まとめ】",
    "url": "https://www.youtube.com/watch?v=Gp61r2ehrB0",
@@ -343,19 +330,6 @@
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
    "description": "Claude Sonnet 5.5 runs more than 30% faster than Sonnet 5 and writes more clearly, so it’s well suited to quick back-and-forth on the things you do most.\n\nWhere Claude Opus 5.5 is built for complex work requiring careful judgment, Sonnet 5.5 is strongest at well-scoped everyday tasks, fixing bugs, and creating polished documents, slides, and spreadsheets. It also has a strong eye for design.\n\nSonnet 5.5 is available everywhere today, and Claude Haiku 5.5 will join the family in the coming weeks. Read more at https://www.anthropic.com/claude-sonnet-5-5",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "mQZB0l-rhxE",
-   "title": "Building verification loops in Claude Code",
-   "url": "https://www.youtube.com/watch?v=mQZB0l-rhxE",
-   "published": "2026-09-25T23:13:15+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "Claude Code already runs your tests, type checks, and linters. This video shows how to give it more ways to verify its own work, so it gets further on its own and needs fewer rounds of back and forth.\n\nLearn more:\nhttps://code.claude.com/docs/en/skills#run-and-verify-your-app\n\nhttps://code.claude.com/docs/en/best-practices#give-claude-a-way-to-verify-its-work\n\nChapters\n0:00 Hand off your manual checks\n1:01 Codify your checks\n1:49 The verification loop",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "pending",
    "attempts": 0
@@ -820,19 +794,6 @@
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
    "description": "今回の動画では、Grok Bot を実際に運用してみて感じた「強くするための 3 つの鉄則」について解説しました。\nGrok Bot は、16GB RAM・128GB ディスクのクラウド環境を丸ごと用意してくれるので、Mac mini を買わなくても 24 時間エージェントに働いてもらえる環境がすぐに作れます。中で Claude Code や Codex を動かせば「ハーネスを操作するハーネス」としても使えます。\n\n皆さんは Grok Bot でどんなボットのチームを組んでみたいですか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://x.ai/bot\n\n\n🎁無料プレゼントは公式LINEから🎁\n『grokbot』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://lin.ee/cJtJ8Y3\n\ntimestamp:\n00:00 Grok Bot を強くする3つの鉄則\n01:03 Grok Bot の魅力はクラウドのVM\n02:40 24時間動く環境で Mac mini の代わりに\n05:19 VMの中で複数のBotが動く仕組み\n06:51 ルーチンとマーケットプレイスで拡張\n09:08 鉄則① 役割ごとにBotを分ける\n11:47 Bot同士の会議と赤ペンでの指摘\n12:36 鉄則② Botごとにメモリを育てる\n14:01 鉄則③ ルールは1ファイルに置く\n15:17 ハマった点：崩れた画面へのチェック\n16:17 Tailscale で手元PCからVMへ入る\n18:15 まとめと勉強会・メンバーシップ案内\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
-   "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "NPGo-OxWfqk",
-   "title": "【必見】Opus 5.5中心にAIモデル勢力図が激変！ハーネスでも見直すべき点を実体験ベースで解説",
-   "url": "https://www.youtube.com/watch?v=NPGo-OxWfqk",
-   "published": "2026-09-26T09:45:06+00:00",
-   "channel_key": "masao",
-   "channel_name": "まさおAIじっくり解説ch",
-   "default_category": "news",
-   "description": "今回の動画では、Opus 5.5 や GPT-6 Sol / Luna の登場で変わりつつあるモデルの勢力図と、それに合わせて見直したいハーネスの作り方について解説しました。\n\nOpus 5.5 は目の良さやコンピューターユース、ロングランの粘り強さに加えて文章の読みやすさまで伸びていて、実際に使ってみて「とりあえず Opus 5.5 があれば何でもできる」と感じるほどでした。コストも下がったことで、スクリーンショットを使った確認や前提を知らない別エージェントによるレビューなど、成果物ベースの検証を積極的に回せるようになっています。一方で、動画や音声の検証には Gemini 3.8 Flash や MiMo-V2.6-Flash、大量の定型判定には Luna といった形で、手札の使い分けも広がってきました。\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n\ntimestamp:\n00:00 オープニング - モデル勢力図が変わった\n01:20 9月時点の使い分けと新モデル\n02:24 守備範囲が広がった Opus 5.5\n04:27 ナレッジワークのベンチマーク比較\n05:18 動画・音声の検証は Gemini と MiMo\n06:28 低コスト化で質も量もこなせる時代\n07:06 OSWorld とコンピューターユースの進化\n08:15 量をさばくなら Opus か GPT か\n09:20 画面・音声で成果物ベース評価へ\n11:11 用途別のモデル使い分けまとめ\n12:33 限界の先を試しハーネスを見直す\n14:40 メンバーシップとまとめ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
    "status": "pending",
    "attempts": 0
@@ -2447,91 +2408,183 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-09T22:52:02.092452+00:00"
+  },
+  {
+   "video_id": "nTNCwOYrww0",
+   "title": "OpenAIの新機能！24時間働くAIエージェント「dots」の使用感や課金すべきか解説してみた",
+   "url": "https://www.youtube.com/watch?v=nTNCwOYrww0",
+   "published": "2026-10-10T09:00:18+00:00",
+   "channel_key": "nyanta",
+   "channel_name": "にゃんたのAIチャンネル",
+   "default_category": "tech",
+   "first_seen": "2026-10-10T13:00:07.522336+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "OpenAIの新機能「dots」は指示がなくても24時間自律的に動くAIエージェントサービスであると紹介している",
+    "クラウド側でのGPT-6 Astraモデルの処理が無制限で利用できる点や音声対話でのタスク依頼などのメリットを解説している",
+    "月額約17000円のProプランへの加入が必要なため、全員におすすめできる段階ではないと投稿者は述べている"
+   ],
+   "for_whom": "OpenAIの新機能dotsの使い勝手やProプランへの課金価値を知りたい人",
+   "caution": "概要欄で自身の著書の予約購入や公式LINEへの登録、Udemy講座の購入へ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T13:00:07.522336+00:00"
+  },
+  {
+   "video_id": "v7xZOGzlbKY",
+   "title": "【神機能】ClaudeをGoogleアプリを直接搭載！Geminiはもう不要？実際に使って比較！",
+   "url": "https://www.youtube.com/watch?v=v7xZOGzlbKY",
+   "published": "2026-10-10T10:00:22+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-10T13:00:07.522336+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Google Workspace拡張機能でClaudeを有料プラン契約者向けに連携し、スプレッドシートやスライド等で直接利用する方法を解説している。",
+    "スプレッドシートでの集計表やガントチャートの作成、スライドでの図解入り資料の一括生成など、実務向けの自動化手順を実演している。",
+    "Geminiとの違いとして、Claudeはスキル活用によるデザイン統一や一括作成に強みがある一方、個別機能の実行可否に差があると述べている。"
+   ],
+   "for_whom": "Google WorkspaceでClaudeを使って業務を自動化したい人",
+   "caution": "動画の最後や概要欄で、有料のワークショップ型AIスクール・コミュニティ「プロセボ」や公式LINEへの案内が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T13:00:07.522336+00:00"
+  },
+  {
+   "video_id": "MQ27-EHRldQ",
+   "title": "【最高です】APIクレジット毎月配布確定！つまりClaude Managed Agents が熱いので解説！",
+   "url": "https://www.youtube.com/watch?v=MQ27-EHRldQ",
+   "published": "2026-10-10T10:50:09+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-10T13:00:07.522336+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ClaudeのMaxやTeamプラン利用者に毎月APIクレジットが付与される仕様と、コンソール連携の手順を説明している。",
+    "Anthropicクラウド上でエージェントを定期実行できるManaged Agentsの構成要素や設定方法を解説している。",
+    "ニュース収集から動画生成・Discord投稿を行う自動化デモや、複数エージェントを動かすDynamic Workflowsを紹介している。"
+   ],
+   "for_whom": "Claudeの有料プランを契約し、クラウド上でエージェント自動化システムを構築したい人",
+   "caution": "動画内および概要欄にて、公式LINEへの登録による特典コード配布や有料noteメンバーシップへの勧誘が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T13:00:07.522336+00:00"
+  },
+  {
+   "video_id": "sDP0qdNYcrY",
+   "title": "【完全在宅】ひとりでコソコソ稼ぐならnote一択です",
+   "url": "https://www.youtube.com/watch?v=sDP0qdNYcrY",
+   "published": "2026-10-10T08:15:35+00:00",
+   "channel_key": "uto",
+   "channel_name": "うと-在宅スキルアップの講座",
+   "default_category": "earn",
+   "first_seen": "2026-10-10T13:00:07.522336+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "人付き合いが苦手な内向型の人には、クライアントワークよりも自分のペースで取り組めるnote販売が向いていると主張している。",
+    "過去の経験や知識を文章化して販売することで、作業時間を切り売りせずに継続的な収入を得られるメリットがあると説明している。",
+    "note執筆の土台作りや構成案の作成にAIを活用しつつ、実体験や個人的なこだわりを書き加えることが重要だと述べている。"
+   ],
+   "for_whom": "人間関係に疲れず完全在宅かつ匿名で副業を始めたい会社員",
+   "caution": "動画内で受講生が月30万〜70万円を達成した事例が紹介されていますが客観的な証拠は示されておらず、特典プロンプトの配布を契機に公式LINEへ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T13:00:07.522336+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-09T22:52:02.092452+00:00",
+   "last_ok": "2026-10-10T13:00:07.522336+00:00",
    "fail_streak": 0
   }
  }
