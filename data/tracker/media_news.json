@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-10T00:55:40.059243+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-09T23:28:02+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIで安全性研究に携わっていた研究者3人が、突然解雇されたと公表し、書面での理由開示や外部監査の受け入れ維持を求める書簡を公開した。これに対しOpenAIは、機密情報規定への重大な違反が社内調査で判明したためと説明し、安全性の懸念表明を理由とした解雇ではないと反論している。",
+      "title": "OpenAI、安全性研究者3人を解雇　本人らは「安全性を優先したため」と主張、同社は「機密情報の扱いに関する規定違反」と説明",
+      "uid": "9d5338de90a0aed0",
+      "url": "https://www.itmedia.co.jp/news/article/2610/10/2000002189/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-09T16:17:06.887837+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2386,18 +2398,6 @@
       "title": "AIによるバグ報告が爆増したためGoogleがバグ報奨金プログラムを一時停止",
       "uid": "1aa44836a23a4640",
       "url": "https://gigazine.net/news/20261005-google-froze-open-source-bug-bounty-program/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-05T02:06:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アメリカのAIロボット企業・Figureが、Figure 03の登場によって型落ちした人型ロボットのFigure 02を溶鉱炉で処分する動画を公開しました。この処分は、映画『ターミネーター2』でT-800役を演じた俳優のアーノルド・シュワルツェネッガー氏からの助言に端を発しています。 続きを読む...",
-      "title": "AIロボット企業・Figureがアーノルド・シュワルツェネッガーの提案で旧型ロボットを溶鉱炉へ、「ターミネーター2」の名場面を完全再現",
-      "uid": "7abb1a1587c257a6",
-      "url": "https://gigazine.net/news/20261005-figure-02-decommission/",
       "vendor": "GIGAZINE"
     }
   ]
