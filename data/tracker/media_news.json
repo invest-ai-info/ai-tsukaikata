@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-10T13:47:38.469347+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-10T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "電子書籍のハイライトやメモだけでなく、2冊を横並びにする分割画面読書・AI音声読み上げ・文章や書籍全体の翻訳・端末間のクラウド同期まで利用でき、Windows・Linux・macOS・Android・iOS・ブラウザに対応する「Readest」が公開されています。 続きを読む...",
+      "title": "無料のオープンソースEPUB・PDFリーダー「Readest」、Windows・Linux・macOS・Android・iOS・ブラウザ・KOReaderでハイライト・メモ・分割画面読書・AIテキスト読み上げ・AI自動翻訳・クラウド同期が可能",
+      "uid": "5e50c7ddb7047877",
+      "url": "https://gigazine.net/news/20261010-readest/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-10T07:12:50.304450+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "8cf08e017ac62824",
       "url": "https://gigazine.net/news/20261005-modders-furious-claude-powered-mashup-mods/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-05T02:59:48+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ティボ氏がまたリセット宣言。「大半のCodex／Workユーザーに関係する」改善を毎日続けるか、できなかった日はフルリセットするという。",
-      "title": "Codex「毎日改善、できない日はフルリセット」宣言　今後28日間",
-      "uid": "f2a839f8d2ccb748",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/05/2000001997/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
