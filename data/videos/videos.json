@@ -1998,10 +1998,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "It’s 3 a.m. and checkout errors are climbing. What do you check first?\n\nJoin cohosts Tony Loehr and Anke Hao for three practical production-monitoring demos with Codex. Follow a checkout failure in Grafana, investigate a Kubernetes rollout that causes out-of-memory restarts, and explore how a Codex Security finding connects service availability to a missing resource limit.\n\nSee how telemetry, release history, and code support an investigation; learn how engineers review a proposed change and check the result.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "OpenAIのCodexを用いた、3つの実践的なプロダクション監視デモを紹介していると説明している。",
+    "Grafanaで発生したチェックアウト失敗事例を追い、問題の調査と解決プロセスをデモしている。",
+    "Kubernetesのロールアウトによるメモリ不足再起動の原因を究明し、対策方法を解説している。"
+   ],
+   "for_whom": "AIツールを活用してシステム運用監視を効率化したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-10-10T21:58:43.519154+00:00"
   },
   {
    "video_id": "ICGS7LlRfpI",
@@ -2011,10 +2021,20 @@
    "channel_key": "claude",
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
-   "description": "Chat and Cowork are now one Claude, and September's updates add docs, decks, and designs to any conversation.\n\nWork now runs in the cloud so it keeps going after you close your laptop, Claude Docs lets your team edit in the same doc as Claude, and the new Claude 5.5 models power it all. Opus 5.5 for the heavy lifting, Sonnet 5.5 for quick rounds of edits. And, if you already know the format you want, type /slides, /docs, or /designs to skip straight to it.\n\nWhich release are you enjoying most? We would love to hear from you.\n\nLearn more: https://claude.com",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "ChatとCoworkが統合され、モード切り替えなしで単一の会話からタスク処理まで実行可能になったと紹介している。",
+    "会話内でドキュメントやスライド、デザインを直接生成・編集でき、チームでの共同作業も可能になったと説明している。",
+    "基盤モデルとしてOpus 5.5とSonnet 5.5が登場し、用途に応じた使い分けが可能になったと述べている。"
+   ],
+   "for_whom": "Claudeの最新機能やモデルのアップデート情報を把握したい会社員",
+   "caution": "ドキュメントやスライド、デザインなどの生成機能は有料プラン向けに提供されていると説明されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T21:58:43.519154+00:00"
   },
   {
    "video_id": "aLidq3_FwW0",
@@ -2024,10 +2044,20 @@
    "channel_key": "starter-story",
    "channel_name": "Starter Story",
    "default_category": "earn",
-   "description": "Max built a simple iOS app to solve his own problem at the gym. But here’s the thing… before this app, he had never shipped a single line of code in his life. In fact, he was going down the traditional route: college, internships, everything. But he found apps and decided to go all-in. Today, his app makes $14K/month and is growing. This is his app story for anyone looking to get started with apps in 2026.\n\n*Get HubSpot's free CRM, the one that updates itself:* https://clickhubspot.com/2b1y\n\nSay hi to Max: https://x.com/MaxHirsch13\nCheck out Maxed AI: https://apps.apple.com/us/app/maxed-ai-smart-fitness-app/id6759180029\n\n🔔 Follow the Second Channel: @StarterStoryBuild\n🏁 We're hiring: starterstory.com/jobs\n\nChapters:\n0:00 - Zero to $14K in 6 months\n0:49 - What’s your story?\n1:19 - What’s the app?\n2:29 - What makes your app different?\n3:03 - How to keep track of your customers\n3:45 - Founder background\n4:49 - Finding the idea\n5:32 - Tech stack\n6:04 - Growth and marketing\n7:38 - What’s working for growing apps right now\n8:23 - Building a personal brand\n9:15 - App demo\n10:14 - Final advice\n11:15 - Pat and Gus reflections\n\nThis video is an educational case study of this founder’s experience. It is not financial advice and does not guarantee any income or results. Every business is different and your results may vary.",
    "first_seen": "2026-10-07T23:17:32.466646+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "プログラミング未経験の創業者がClaudeを活用して開発したAIフィットネスアプリで月1万4000ドル超を売り上げていると紹介している。",
+    "SupabaseやVercel、RevenueCatなどの低コストなツール群を組み合わせ、初期費用を抑えて運用していると説明している。",
+    "自ら出演する動画投稿やMeta広告、Xでの過程公開を通じて認知を広げ、ユーザーを獲得したと創業者が語っている。"
+   ],
+   "for_whom": "生成AIを活用して未経験からアプリを自作し、個人で収益化を目指したい人向け。",
+   "caution": "動画内の月1万4000ドル超という売上は創業者の主張であり、広告費の投入や継続的なマーケティング努力が必要で再現性が保証されるわけではない点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T21:58:43.519154+00:00"
   },
   {
    "video_id": "p57ZfsgOp2s",
@@ -2500,91 +2530,114 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-10T13:00:07.522336+00:00"
+  },
+  {
+   "video_id": "Ju-JyxDgV7g",
+   "title": "How Oracle Uses Codex to Help Business Users Get Answers",
+   "url": "https://www.youtube.com/watch?v=Ju-JyxDgV7g",
+   "published": "2026-10-10T21:40:25+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-10T21:58:43.519154+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "オラクル社で社内データを活用する際、従来はレポート作成に多大な手間がかかっていたと担当者が振り返っている",
+    "ビジネスユーザーが得たい成果を自然言語で指定するだけで、Codexが必要なサービスを呼び出し情報収集すると語っている",
+    "分析結果やレポートの出力だけでなくアプリ生成まで可能になり、迅速な意思決定につながる変革だと説明している"
+   ],
+   "for_whom": "社内データ活用や業務自動化を推進したい企業の担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-10T21:58:43.519154+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-10T13:00:07.522336+00:00",
+   "last_ok": "2026-10-10T21:58:43.519154+00:00",
    "fail_streak": 0
   }
  }
