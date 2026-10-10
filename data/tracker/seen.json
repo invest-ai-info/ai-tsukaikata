@@ -28,7 +28,13 @@
     "e5867c4dc76ca063": "2026-08-17",
     "e7c4e5e484b85e66": "2026-09-15"
   },
-  "failures": {},
+  "failures": {
+    "deepmind-blog": {
+      "count": 1,
+      "last_error": "0件",
+      "since": "2026-10-10T22:36:56.382023+00:00"
+    }
+  },
   "latest": {
     "anthropic-news": "2026-10-08T17:00:00+00:00",
     "anthropic-sdk": "2026-10-09T15:28:52+00:00",
