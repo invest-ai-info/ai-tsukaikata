@@ -46,6 +46,19 @@
 
 ## 記録
 
+### 2026-10-10（自動化・ループ優先の回）
+- 公開: 1本（`recipes/pending-mark-drifts-to-the-end`）。`### 自動化・ループ優先` 節の
+  未処理先頭（`who-has-not-replied-yet.md` 末尾が「次の実測」と明記していた、
+  確認します止まりの返信への印付け）を選んだ。未処理は③「書式の優先」件・④「複数基準
+  同時違反」件も残っていたが、1本仕上げてから次の題材を確認し直す条2のとおり、1本に
+  絞って実際に試すことを優先した。残りは `- [ ]` のまま次回に残す
+- 実測: Agentツール`claude`（同一セッション内の新規サブエージェント・毎回新規に立てて
+  材料のみ渡す）。材料2本（`who-has-not-replied-yet` と同じ送信済み30行・受信25行を
+  再利用）×指示文6通り＝合計26回。印を付けるべき行の見落としは0件。印の位置（先頭）は
+  材料Aで24/24・材料Bで20/28と材料依存で崩れ、生成の指示文を強めるより出力後に
+  自分で見直させる1文のほうが効いた。詳細は `docs/evidence/pending-mark-drifts-to-
+  the-end.md`
+
 ### 2026-10-09（21:00 レシピ担当の回）
 - 公開: 3本（`recipes/withholding-formula-holds-for-other-fee-types`・
   `recipes/lancers-direct-question-accuracy`・`recipes/kdp-quote-first-turn-accuracy`）。
