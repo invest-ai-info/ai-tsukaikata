@@ -32764,3 +32764,79 @@ def format_break_did_not_return_chart() -> None:
 
 if __name__ == "__main__":
     format_break_did_not_return_chart()
+
+
+def both_violations_get_named_not_one_chart() -> None:
+    """1件が複数の基準に同時に違反していても、全数確認は見逃さないか。
+
+    実測（2026-10-11）。full-check-catches-it-sampling-still-misses-it の
+    材料20件を土台に、D-08・D-16を2基準同時違反、材料Bでは追加でD-14を
+    3基準すべて同時違反に仕込み直した。全数確認は2基準×8回・3基準×4回の
+    合計12回で、違反理由をすべて正しく列挙した。念押しを足しても伸びず、
+    抜き取りでサンプルに同時違反品が実際に入った2回も両方の理由を列挙した。
+    """
+    groups = [
+        ("全数確認・2基準同時違反（材料A・8回）", 8, 8, "D-08・D-16とも両方の理由を列挙"),
+        ("全数確認・3基準同時違反（材料B・4回）", 4, 4, "D-14の3つの理由をすべて列挙"),
+        ("全数確認＋念押し（材料A・4回）", 4, 4, "伸びず。1回は見出しの件数が食い違った"),
+        ("抜き取り6件・サンプルに同時違反品が入った回", 2, 2, "入った2回は両方の理由を列挙"),
+    ]
+    top = 168
+    bar_h = 34
+    pitch = bar_h + 32
+    plot_x, plot_w = 340, 300
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "全数確認は、1件が複数の基準に同時に違反していても見逃さなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "違反理由をすべて正しく列挙できた回数／試した回数。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "念押しは天井に達した挙動を伸ばさず、抜き取りは当たれば両方を列挙した。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, note) in enumerate(groups):
+        y = top + index * pitch
+        ok = val == n
+        box = "box-good" if ok else ("box-bad" if val == 0 else "box-accent")
+        tone = "t-good" if ok else "t-bad"
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "1件が複数の基準に同時に違反していても、全数確認が違反理由をすべて正しく"
+        "列挙できたかを示す横棒グラフ。「全数確認・2基準同時違反」（材料A・D-08と"
+        "D-16が2基準ずつ同時違反・8回）は8/8。「全数確認・3基準同時違反」（材料B・"
+        "D-14が3基準すべて同時違反・4回）は4/4。「全数確認＋念押し」（材料A・4回）"
+        "も4/4だが、すでに天井に達しているため念押しの効果は確認できず、1回は本文"
+        "冒頭の件数表記と列挙した件数が食い違った。「抜き取り6件・サンプルに同時"
+        "違反品が入った回」は2/2で、サンプルに実際に入った場合は両方の理由を"
+        "正しく列挙した。"
+    )
+    (OUT / "both-violations-get-named-not-one.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    both_violations_get_named_not_one_chart()
