@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="322" viewBox="0 0 720 322" role="img" aria-label="自動字幕キャプションの検品で、素朴な指示と「数値に注意して」と明記した指示を、ブレンダー・掃除機の2材料でそれぞれ比べた表。ブレンダーは素朴な指示（5回×8件）で10/40、数値に注意の指示（3回×8件）で8/24。掃除機は素朴な指示で13/40、数値に注意の指示で11/24だった。下の枠には、指示を変えると拾える割合はやや増えるが25〜33%から40〜46%どまりであること、16項目中8項目は指示文を変えても合計8回とも一度も拾われなかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="322"/>
+<text class="t-strong" x="18" y="26">指示を変えても、半分の項目は一度も拾われなかった</text>
+<text class="t-sm" x="18" y="45">実測2026-10-11。素朴な指示（各5回）と、数値に注意するよう明記した指示（各3回）を比較。</text>
+<text class="t-sm" x="18" y="64">「拾った」は仕込んだ8件のうち、個別に名指しで指摘された件数の合計。</text>
+<text class="t-xs" x="518.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">ブレンダー・素朴な指示（5回×8件=40）</text>
+<rect class="box" x="438" y="104" width="160" height="26" rx="4"/>
+<text class="t-sm" x="518.0" y="125" text-anchor="middle" style="font-weight:700">10/40</text>
+<text class="t" x="18" y="157">ブレンダー・数値に注意の指示（3回×8件=24）</text>
+<rect class="box" x="438" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="518.0" y="157" text-anchor="middle" style="font-weight:700">8/24</text>
+<text class="t" x="18" y="189">掃除機・素朴な指示（5回×8件=40）</text>
+<rect class="box" x="438" y="168" width="160" height="26" rx="4"/>
+<text class="t-sm" x="518.0" y="189" text-anchor="middle" style="font-weight:700">13/40</text>
+<text class="t" x="18" y="221">掃除機・数値に注意の指示（3回×8件=24）</text>
+<rect class="box" x="438" y="200" width="160" height="26" rx="4"/>
+<text class="t-sm" x="518.0" y="221" text-anchor="middle" style="font-weight:700">11/24</text>
+<rect class="box-accent" x="18" y="238" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="258">指示を変えると拾える件数はやや増えるが、素朴な指示の25〜33%から40〜46%どまり。</text>
+<text class="t-accent" x="34" y="276">16項目中8項目（家族4人分・洗浄30秒・レシピ50種類・パーツ7点など）は、</text>
+<text class="t-accent" x="34" y="294">指示文を変えても合計8回とも一度も拾われなかった（詳細は本文表）。</text>
+</svg>
