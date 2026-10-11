@@ -228,10 +228,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Matt Weaver, Head of Applied AI Architects at OpenAI, and Reuben Athaide, Head of Innovation, Applications & Assurance at Standard Chartered, discuss how the global bank is using OpenAI Daybreak to stay ahead of attackers.",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "スタンダードチャータード銀行は、OpenAIのモデルやツールを活用して攻撃経路の早期把握に取り組んでいると説明している。",
+    "単なるコード検査だけでなく、システム構成や依存関係などの全体コンテキストをAIに与えることが重要だと述べている。",
+    "AIを有効活用するには、技術的負債の解消といった基礎固めや開発チームとの協調体制が不可欠であると語っている。"
+   ],
+   "for_whom": "大規模企業でAIを活用したセキュリティ対策や脆弱性管理を推進したいエンジニアや責任者向け。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T22:25:05.636720+00:00"
   },
   {
    "video_id": "zoohZ1BiHs0",
@@ -387,19 +397,6 @@
    "default_category": "earn",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
    "status": "skipped",
-   "attempts": 0
-  },
-  {
-   "video_id": "s9aLA4IOSZE",
-   "title": "I built this website in 8 hours with Claude. Now it makes $40K/month",
-   "url": "https://www.youtube.com/watch?v=s9aLA4IOSZE",
-   "published": "2026-09-27T17:00:22+00:00",
-   "channel_key": "starter-story",
-   "channel_name": "Starter Story",
-   "default_category": "earn",
-   "description": "Frank had never built software in his life. Until one weekend, he got a crazy idea and decided to just build it with Claude. \n\nToday, the app he built in just a few hours, makes over $40K per month. In this video, we break down the growth story and how anyone can build and launch their idea all thanks to coding with AI.\n\n*Find your business idea with our free database (over 3k+ ideas):* https://clickhubspot.com/von4\n\nSay hi to Frank: https://x.com/frankmikesmith\nCheck out GeoSports: https://geosports.app/\n\n🔔 Follow the Second Channel: @StarterStoryBuild\n🏁 We're hiring: starterstory.com/jobs\n\nChapters:\n0:00 - Built in a few hours\n0:46 - What's your story?\n1:24 - Business breakdown\n2:58 - Build your own app!\n4:06 - Founder background\n5:11 - But you had an audience?\n6:43 - Finding the idea\n7:27 - Building the app\n8:10 - Tools and tech stack\n8:43 - Advice for building apps\n10:35 - Growth timeline\n11:42 - Zero to $40K/month\n12:44 - Final advice\n13:58 - Gus reflections\n\nThis video is an educational case study of this founder’s experience. It is not financial advice and does not guarantee any income or results. Every business is different and your results may vary.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
    "attempts": 0
   },
   {
@@ -725,10 +722,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、Claude の Sonnet 5.5 をフル活用するために押さえておきたいポイントを、公式のプロンプトガイドや開発者ブログ、Claude Code のチェンジログをもとに解説しました。\n\n「怠けるな」のような昔の回避策を消す、CLAUDE.md の細かいルールや矛盾する指示を減らしてシンプルにする、「よく考えて」と書く代わりにエフォートで思考量を調整する、そして /doctor prompt-audit で削れる部分を洗い出す、といった内容です。\n\nみなさんは Sonnet と Opus をどう使い分けていますか？ エフォートの設定のコツなども、ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5\n\n\ntimestamp:\n00:00 オープニング - Sonnet 5.5 活用術\n01:21 Sonnet 5 からの移行と「怠けるな」の削除\n02:18 CLAUDE.md をシンプルに見直す流れ\n02:59 矛盾・細かすぎる指示は注意力を分散させる\n04:28 「よく考えて」より effort で思考量を調整\n06:02 /doctor prompt-audit で削る\n07:08 effort は見落としを減らすが方針は変えない\n08:04 Sonnet 頼みにせず Opus と使い分ける\n09:14 考える量は役割で決める - 症状別の対策\n10:28 プロンプトインジェクション判定と道具の設計\n11:41 まとめ - モデルルーターでコストと速度を最適化\n12:57 エンディング - 今後の展望とメンバーシップ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://sound",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Sonnet 5.5では「怠けるな」などの強い言葉や冗長な指示を消し、シンプルにすることが推奨されていると解説している。",
+    "思考量を調整したい場合は「よく考えて」と書くのではなく、effort設定を使うべきだと説明している。",
+    "SonnetとOpusの使い分けや、タスクに応じた道具（ツール）設計によりコストと速度を最適化できると述べている。"
+   ],
+   "for_whom": "Claude Sonnet 5.5向けにプロンプトや開発環境を最適化したい人",
+   "caution": "動画終盤および概要欄にて、有料のnoteメンバーシップコミュニティへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T22:25:05.636720+00:00"
   },
   {
    "video_id": "ApirM3nX8wM",
@@ -2620,91 +2627,137 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-11T13:27:45.138894+00:00"
+  },
+  {
+   "video_id": "4fLVq6HJsKc",
+   "title": "DeepSeek Solved AI’s Memory Problem",
+   "url": "https://www.youtube.com/watch?v=4fLVq6HJsKc",
+   "published": "2026-10-11T16:53:17+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-10-11T22:25:05.636720+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "DeepSeek-OCRが文書を画像化し、視覚トークンとして圧縮することでAIのコンテキスト処理効率を高める仕組みを解説している。",
+    "約10倍の圧縮率でも96%以上のテキストを復元でき、A100 GPU1台で1日20万ページ以上のデータを処理可能だと紹介している。",
+    "極端に圧縮した場合は視覚情報そのものではなく、言語モデルによる文脈推測で補完している側面がある限界点にも言及している。"
+   ],
+   "for_whom": "LLMのコンテキスト拡張やトークン削減の最新技術動向に関心がある技術者やビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T22:25:05.636720+00:00"
+  },
+  {
+   "video_id": "QXxESN94Y6s",
+   "title": "My First SaaS Project Just Hit $11K/Month",
+   "url": "https://www.youtube.com/watch?v=QXxESN94Y6s",
+   "published": "2026-10-11T17:00:31+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-10-11T22:25:05.636720+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "19歳のVadim氏が、コーディング経験なしでAIを活用し動画切り抜き編集SaaS「Vugola」を開発した経緯を説明している。",
+    "LovableやClaude、CodexなどのAI開発支援ツールを組み合わせて約4か月でアプリを構築したと述べている。",
+    "Instagramで競合の伸びている投稿構成を分析して真似し、1日複数回投稿することで月商1万ドルを達成したと語っている。"
+   ],
+   "for_whom": "プログラミング未経験からAIを使ってWebサービスを開発・集客したい人",
+   "caution": "月商1万ドル超という実績は出演者本人の主張であり、達成には1日3〜6本の継続的なSNS投稿や徹底的な競合分析などの作業量が前提となっている点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T22:25:05.636720+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-11T13:27:45.138894+00:00",
+   "last_ok": "2026-10-11T22:25:05.636720+00:00",
    "fail_streak": 0
   }
  }
