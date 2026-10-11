@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-11T01:57:26.231907+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-11T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年10月9日、フィラデルフィア警察が「AnthropicのAIモデルが未解決殺人事件に関する虚偽の情報を送信してきた」と発表しました。 続きを読む...",
+      "title": "AnthropicのAIが未解決殺人事件に関する虚偽の情報を提供",
+      "uid": "8e6c7333dfe45d95",
+      "url": "https://gigazine.net/news/20261011-anthropic-ai-gave-fake-tip-unsolved-homicide/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-10T13:47:38.469347+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "d9f4389ef70a08ff",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2610/05/news010.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-05T03:08:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIの普及により、AIを用いて制作されたMOD(モッド)が大量に作成されるようになっています。これに対して、長年MOD制作を行ってきたモッダーたちが不満を表明しました。 続きを読む...",
-      "title": "「スカイリム×タルコフ」のようなマッシュアップMODをAI生成する行為が流行してMOD制作者たちが怒り",
-      "uid": "8cf08e017ac62824",
-      "url": "https://gigazine.net/news/20261005-modders-furious-claude-powered-mashup-mods/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
