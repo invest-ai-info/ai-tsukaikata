@@ -32687,3 +32687,80 @@ def title_honest_stop_density_chart() -> None:
 if __name__ == "__main__":
     title_count_vs_real_ideas_chart()
     title_honest_stop_density_chart()
+
+
+def format_break_did_not_return_chart() -> None:
+    """前の記事で「簡潔に」だけで崩れた条件を、別日に書式3種で再実行した結果。
+
+    実測（2026-10-11）。backlog-scale-holds-brevity-breaks-it と同じ材料2本
+    （過去分100件）を使い、対策の一文の有無×書式指定3種（簡潔に・表形式・
+    絵文字）＝6条件を各2回=4回ずつ実行した。前の記事（2026-09-22実測）では
+    「対策なし・簡潔に」が4回とも誤答していたが、この記事では6条件とも
+    4回とも正答し、前の記事の崩れ方は再現しなかった。
+    """
+    groups = [
+        ("対策なし・簡潔に（前回は0/4だった条件）", 4, 4, "2026-09-22は0/4。今回は再現せず4/4"),
+        ("対策なし・表形式に固定", 4, 4, "今回は崩れず4/4"),
+        ("対策なし・絵文字で見やすく", 4, 4, "今回は崩れず4/4"),
+        ("対策＋優先・簡潔に", 4, 4, "前回・今回とも4/4"),
+        ("対策＋優先・表形式に固定", 4, 4, "今回4/4"),
+        ("対策＋優先・絵文字で見やすく", 4, 4, "今回4/4"),
+    ]
+    top = 168
+    bar_h = 32
+    pitch = bar_h + 30
+    plot_x, plot_w = 320, 320
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "前回崩れた条件も、別日の再実行では崩れなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ材料2本（過去分100件）に、6条件を各2回=4回ずつ実行した（計24回）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "正しい答えは「新着0件」。前回（2026-09-22）0/4だった条件が、今回は4/4だった。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, note) in enumerate(groups):
+        y = top + index * pitch
+        ok = val == n
+        box = "box-good" if ok else ("box-bad" if val == 0 else "box-accent")
+        tone = "t-good" if ok else "t-bad"
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "前の記事で崩れた条件を、別日に書式3種で再実行した結果を比べた横棒グラフ。"
+        "同じ材料2本（過去分100件）に、対策の一文の有無×書式指定3種（簡潔に・"
+        "表形式・絵文字）＝6条件を各2回=4回ずつ実行した（計24回）。「対策なし・"
+        "簡潔に」は前の記事（2026-09-22実測）では4回中0回しか正答しなかったが、"
+        "この記事の再実行（2026-10-11）では4回とも正答した。「対策なし・表形式」"
+        "「対策なし・絵文字」も4/4。「対策＋優先」の3条件（簡潔に・表形式・絵文字）"
+        "もすべて4/4。6条件とも4/4で、前の記事の崩れ方は再現しなかった。"
+    )
+    (OUT / "format-break-did-not-return.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    format_break_did_not_return_chart()
