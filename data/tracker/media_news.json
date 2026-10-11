@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-11T08:58:17.208311+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-11T08:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "生成AIの発達により、写真やイラストなどのアート作品がAIを使って大量に生み出されています。そんな中、イギリスの公共放送局であるBBCが、1996年に放送した「絵画を制作できるAI」について取り上げた番組のアーカイブを公開しています。 続きを読む...",
+      "title": "30年前にBBCが放送した「アート作品を作るAI・AARON」を扱ったテレビ番組",
+      "uid": "a1e63b590f079aa9",
+      "url": "https://gigazine.net/news/20261011-computer-art/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-11T01:57:26.231907+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "c92f17cb986d219f",
       "url": "https://ai.watch.impress.co.jp/docs/news/2145590.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-05T03:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "MONOistに掲載した主要な記事を、読みやすいPDF形式の電子ブックレットに再編集した「エンジニア電子ブックレット」。今回は、サイバネットシステム主催の「CAEユニバーシティ 特別公開フォーラム 2026」で行われた、AIエージェントに任せることと人に残る役割をテーマとした講演の内容をまとめたブックレットをお送りします。",
-      "title": "CAE解析をAIエージェントに任せてみた　人は何を担うのか",
-      "uid": "d9f4389ef70a08ff",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/05/news010.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
