@@ -67,23 +67,20 @@
    "channel_key": "jeff-su",
    "channel_name": "Jeff Su",
    "default_category": "tech",
-   "description": "📦 Try Dropbox in ChatGPT with your team: https://bit.ly/jeffsudropbox \n\nEvery downloaded PDF becomes another file to rename and another folder to choose. In this video, I show you how to give #AI a file management rulebook so it can name and organize your files using the folder structure and preferences that make sense to you.\n\nSpecifically, you’ll see my exact setup in #ChatGPT Work (applicable to both Claude and Gemini Spark) and how to create a system that reorganizes your existing Google Drive files. Then we'll schedule a daily task that uses the same rulebook to help keep new files organized.\n\nThanks to Dropbox for sponsoring this video! For my YouTube production workflow, I use Dropbox in ChatGPT to organize new footage according to my handoff rules, review the proposed changes, and create one Dropbox folder link so my editor has everything ready to edit.\n\n*TIMESTAMPS*\n00:00 My Simple AI File Management System\n00:46 The File Management Problem\n01:35 Your AI File Management Rulebook\n03:56 AI File Management: A Simple Example\n06:40 Dropbox in ChatGPT for Video Production\n07:51 Organize Your Existing Cloud Files\n12:34 Automate Your File Management\n14:07 Recap: How to Organize Files using AI\n\n*RESOURCES MENTIONED*\nTemplates and prompts: https://www.jeffsu.org/ai-file-management-guide/?utm_source=youtube&utm_medium=video&utm_campaign=v211\nAI Essentials Newsletter: https://www.jeffsu.org/newsletter/?utm_source=youtube&utm_medium=video&utm_campaign=v211\nThe Cowork Academy - ht",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "nPeYcT272eg",
-   "title": "注目AIニュース21選〜Claude Opus 5.5、GPT-6 sol＆luna、Copilot大規模リニューアル、Grok4.7など",
-   "url": "https://www.youtube.com/watch?v=nPeYcT272eg",
-   "published": "2026-09-27T06:00:04+00:00",
-   "channel_key": "iketomo",
-   "channel_name": "いけともch",
-   "default_category": "news",
-   "description": "スポンサード：youmind\nhttps://youmind.com/?ref=QPKJKP\n専用リンクからの登録で、月額プラン 50% OFF\n年額プラン 20% OFF（年額の80%でご利用いただけます）\n\n\n\n---\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊（10月発売）Gemini Notebook 推し技 100線\nhttps://link.amazon/B05XAyOaL\n\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://gais-event-voice-259747770348.asia-northeast1.run.app/\n\n---\n\n\n▼生成AI活用のマンツーマンコーチング ストイシアン\nサービス紹介：https://stoician.co.jp/\n\n▼最強の初心者向けハンズオン研修（ChatGPT/Gemini対応）\nhttps://workstyle-evolution.co.jp/hands-on/chatgpt\n\n\n\n\n今週（2026年9月21日～2026年9月27日）の生成AIニュースを厳選してお届けします！この動画を見ておけば、ビジネスパーソンが知るべき主なAIの動きをキャッチできます！\n\n00:00 イントロ\n01:24 OpenAI：GPT-6 SolとLunaを公開！コスパ最強モデルの実力\n05:42 OpenAI：ChatGPT音声からWorkの操作が可能に\n09:14 【PR】資料を成果物に変えるAI「YouMind」\n11:13 Anthropic：最高峰モデル Claude Opus 5.5 公開と価格改定\n14:41 Anthropic：Claude Codeのクラウドセッションを正式提供\n16:15 Google：Gemini 3.8 TTS（音声合成）の衝撃的なクオリティ\n20:02 Microsoft：新Copilot「Home・Code・Autopilot」の全貌\n23:53 Microsoft：CopilotでxAIの「Grok」が選択可能に\n25:22 xAI：最新モデル Grok 4.7 公開とCursorでの活用術\n29:04 Anthropic：年換算売上が1000億ドル突破の急成長\n34:32 Anthropic × OpenEvidence：医療AIを世界100カ国へ無償展開\n38:03 Google：Gemini前提のAIノートPC「Googlebook」予約開始\n39:34 Google：Geminiが店舗へ自動で電話予約を代行（米国）\n41:25 Amazon vs Meta：買い物AI「Muse」を巡るプラットフォームの攻防\n46:30 Meta：AI搭載スマートグラス披露（音声対話・聴覚補助）\n48:07 中国動向：AI映像制作の拡大で制作費が20分の1に激減\n49:50 テクノロジー：Google「Project Suncatcher」AIチップ搭載衛星\n51:30 社会：Geminiがテスト中に実在企業へ侵入した事案\n53:19 社会：イタリア大手銀行で発生したAI音声による巨額詐欺\n55:42 社会：トランプ氏、AIを「スーパーイン",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ルールブックを作成しAIに参照させることで、ファイルの命名や適切なフォルダへの仕分けを自動化できると解説している。",
+    "Google DriveやDropboxなどのデスクトップアプリを連携させ、AIにフォルダ構造を分析・提案させる手順を紹介している。",
+    "定期実行タスクを設定し、受信トレイ内の未整理ファイルを毎日AIが確認して整理案を提示する仕組みを説明している。"
+   ],
+   "for_whom": "PCやクラウド上のファイル整理を手動で行う手間に悩む会社員",
+   "caution": "動画内や概要欄で、有料講座（The Cowork Academy）や無料ニュースレターへの誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T06:23:20.023504+00:00"
   },
   {
    "video_id": "fHEIw5CcN5U",
@@ -1637,10 +1634,20 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "既存のWordやスプレッドシートの様式を崩さず、AIで自動化したい方必見！\n\n今回は専用Gem「データシート職人」を活用し、手元の様式レイアウトを変えずに音声データやメモから必要項目を自動入力する仕組みを解説します！\n\n今ある様式のスクショを貼るだけで、データシート構造とGemini用プロンプトを自動作成！生成されたTSVデータをスプシへコピペするだけで報告書が即完成します✌️\n\n「Workspace Studio」なしでも動く安心設計となっております！\n是非、概要欄にあるGemを活用してご活用ください！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:56 AIによる様式の出力\n02:49 前回動画のおさらい(Studioによる出力)\n03:20 実演（スプシ＆Studio）\n06:41 Gemini Web Appを用いた出力\n08:31 Gem\n13:20 まとめ\n15:44 ゆるトーク\n\n【今回のGem：データシート職人】\nhttps://gemini.google.com/gem/1g01kFUp73NVhcjbTComI2twMjt2HCGkc?usp=sharing\n\n【過去動画】\n紙のフォーマットを自動でHTML構造化するGemを配布します\nhttps://youtu.be/y3_rFlT7jfI\n\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【関連動画】\n「Workspace Studio」からGASが直接動く！Salesforce・Slack連携も解禁！\nhttps://youtu.be/774iU5fsCS0\n\n【※個人アカウントの方向け「Google Workspace Experiments」】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
    "first_seen": "2026-10-07T13:50:56.325789+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "既存の帳票様式を変更せず、音声記録などから必要項目を自動入力する仕組みを解説している。",
+    "自作Gem「データシート職人」に様式のスクショを渡すことで、データシート構造と指示プロンプトが自動生成されると紹介している。",
+    "Geminiが出力したTSVテキストをスプレッドシートに貼り付けるだけで、様式にデータが反映される手順を実演している。"
+   ],
+   "for_whom": "既存の書類や日報の様式を崩さずに、AIを活用して入力業務を効率化したい人",
+   "caution": "動画内で説明されている通り、既存の様式側にはデータシートの値を参照するためのINDEX関数などの数式を手作業で設定する必要があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T06:23:20.023504+00:00"
   },
   {
    "video_id": "Wkaw03p3BrM",
@@ -1673,10 +1680,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\n(2026年)9月下旬、Googleから「Gemini 3.8 Flash TTS」\nElevenlabsから「Eleven v4」という\n2つの音声AIモデルがリリースされました\nこれらは日本語のテキストを\n音声に変換可能なAIモデルですが\n以前より品質が大きく向上し\n本物と区別がつかないような日本語音声を作ることができ\nテキストの指示で自分好みの声をデザインしたり\n自分の声をクローンしてしゃべらせることもできるほか\nCodexやClaude CodeなどのAIエージェントと連携させれば\nテキストの指示で音声を自由に操れます\n\n今回の動画では\n第一章：Gemini 3.8 Flash TTSの概要と使い方\n第二章：Eleven v4の概要と使い方\nの2章構成で、Googleの「Gemini 3.8 Flash TTS」\nElevenlabsの「Eleven v4」という\n2つの音声AIモデルの概要と、無料で使う方法\nCodexとClaude Codeと連動させて使う方法までまとめて解説します\n\n◆動画のもくじ\n0:00　Gemini 3.8 Flash TTS＋Codexで作ったサンプル\n0:33　動画について\n1:18　動画のもくじ\n1:56　第一章：Gemini 3.8 Flash TTSの概要と使い方\n2:22　①、Gemini 3.8 Flash TTSの概要\n4:11　②、Gemini 3.8 Flash TTSの使い方\n6:08　③、CodexでGemini 3.8 Flash TTSを使う\n9:25　第二章：Eleven v4の概要と使い方\n9:46　①、Eleven v4の概要\n11:10　②、Eleven v4の使い方\n12:48　③、Claude CodeでEleven v4を使う\n15:52　エンディングムービー\n\n◆動画の中で紹介している内容\nEleven v4 Turbo、Gemini 3.8 Flash-Lite TTS、SynthID\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nGemini 3.8 Flash TTS\nhttps://aistudio.google.com/\nhttps://github.com/google-gemini/gemini-skills\nEleven v4\nhttps://elevenlabs.io/ja\nhttps://elevenlabs.io/v4\nhttps://github.com/elevenlabs/skills\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Clau",
    "first_seen": "2026-10-07T13:50:56.325789+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Googleの音声AI「Gemini 3.8 Flash TTS」の概要と、Google AI StudioやCodexでの利用手順を紹介している。",
+    "ElevenLabsの「Eleven v4」の特徴や感情表現機能、Claude Codeと連携してナレーションを生成する方法を解説している。",
+    "両モデルともに無料枠で試せるが、利用制限の存在やAPIキーを安全に管理する必要性について説明している。"
+   ],
+   "for_whom": "動画制作やアプリ開発で高品質な日本語音声AIを活用したい人",
+   "caution": "無料利用にはリミットがあり超過すると課金が発生する点や、発行したAPIキーを他人に知られないよう管理することに留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T06:23:20.023504+00:00"
   },
   {
    "video_id": "c0lHc2El35o",
@@ -1709,10 +1726,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、Claude Code の中の人が公開した「html-plan」について解説しました。\nhtml-plan は、実装計画を 1 枚の対話型 HTML にしてくれる Claude のプラグインで、AI エージェントと人間の認識のズレを小さくするためのものです。\n僕もアプリを作る想定で実際に使ってみたところ、画面のモックやログインの実装方針、押さえるべき論点のサマリーがまとまっていて、必要なところだけ答えて返せるのがとても便利でした。\n\n皆さんは AI エージェントとの認識合わせ、どんな工夫をしていますか？ ぜひコメント欄で教えてください！\n\n赤ペン動画\nhttps://www.youtube.com/watch?v=KgUhKw_P2GE\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n公式\nhttps://x.com/trq212/status/2107192901537329354\nhttps://github.com/anthropics/claude-plugins-community/tree/main/html-plan\n\n\n🎁無料プレゼントは公式LINEから🎁\n動画や記事で紹介したソースコードやスキルを、公式LINEに登録してくださった方限定で「無料」でプレゼントしています！\nいま特に人気なのは、認知負荷対策の「赤ペン (akapen)」skill です✨\n『akapen』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://go.masao.ai/line/open/Glu3UoqwiqvI?mtid=VuWujkCnP33e\n\ntimestamp:\n00:00 オープニング - html-plan とは\n00:23 認識ズレ解消と公式チームの共有\n01:19 html-plan の画面と回答の流れ\n02:15 公開状況と赤ペン・best-of-n の話\n02:47 オフ会アプリで html-plan を実演\n03:38 コードを見る必要はあるのか\n05:02 非開発者には赤ペンスキルもおすすめ\n06:41 HTMLで認識合わせを手札に\n07:40 エンディング - メンバーシップ案内\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもS",
    "first_seen": "2026-10-07T13:50:56.325789+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Codeチーム関係者が公開した対話型HTML生成プラグイン「html-plan」の概要と使い方を紹介している",
+    "計画やUIモック、コード変更点を確認し、選択肢に回答してターミナルへ送り返すことで認識ズレを防ぐ手順を解説している",
+    "非エンジニア向けには、図や文章に直接フィードバックを書き込める自作の赤ペンスキルも有効だと説明している"
+   ],
+   "for_whom": "Claude CodeなどのAIエージェントと仕様の認識ズレを減らしたい開発者",
+   "caution": "動画内で紹介されている「赤ペンスキル」のソースコード入手には公式LINEへの登録が必要と案内されています。また、有料noteメンバーシップへの誘導が含まれます。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-11T06:23:20.023504+00:00"
   },
   {
    "video_id": "N5kTmoCKbe0",
@@ -2558,86 +2585,86 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-10-10T21:58:43.519154+00:00",
+   "last_ok": "2026-10-11T06:23:20.023504+00:00",
    "fail_streak": 0
   },
   "claude": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-10T21:58:43.519154+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-10T21:58:43.519154+00:00",
+   "last_ok": "2026-10-11T06:23:20.023504+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-10T21:58:43.519154+00:00",
+   "last_ok": "2026-10-11T06:23:20.023504+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-10T21:58:43.519154+00:00",
+   "last_ok": "2026-10-11T06:23:20.023504+00:00",
    "fail_streak": 0
   }
  }
