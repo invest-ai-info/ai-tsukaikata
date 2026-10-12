@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="424" viewBox="0 0 720 424" role="img" aria-label="崩れた1か所の集計欄に、本来の値の何%が残っていたかを、不均等さ「1対3」と「1対6」で比べた横棒グラフ。不均等「1対3」（前作・店舗売上表）は約32%、不均等「1対3」（前作・部門経費表）は約34%、不均等「1対6」（今回・部門経費表）は約17%しか残らなかった。どの行も、崩れた集計欄には「最後の塊1個分」の値だけが残っていたことが注記されている。下の枠には、崩れた箇所の数そのものは前作も今回も1か所のまま増えなかったこと、残る金額の割合は塊の数（3個・6個）にほぼ反比例したこと（約1/3→約1/6）、見た目の崩れ方は同じでも気づかずに使うと欠落の規模は比率しだいで膨らむことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="424"/>
+<text class="t-strong" x="18" y="26">崩れた1か所に残る金額は、塊の数に反比例して縮む</text>
+<text class="t-sm" x="18" y="45">崩れた集計欄はいつも「最後の塊1個分」の値だけが残っていた。塊が多いほど、残る割合は小さい。</text>
+<text class="t-sm" x="18" y="64">横軸＝本来の値に対して残った割合（%）。実測2026-10-08/2026-10-12。</text>
+<text class="t" x="18" y="110">不均等「1対3」（前作・店舗売上表）</text>
+<rect class="box-quiet" x="280.0" y="120.0" width="280.0" height="20" rx="3"/>
+<rect class="box-bad" x="280.0" y="120.0" width="89.6" height="20" rx="3"/>
+<text class="t-bad" x="574.0" y="135.0" style="font-weight:700">約32%</text>
+<text class="t-xs" x="18" y="154">西日本大計＝3エリアのうち、残ったのは最後の1エリア分だけ</text>
+<text class="t" x="18" y="190">不均等「1対3」（前作・部門経費表）</text>
+<rect class="box-quiet" x="280.0" y="200.0" width="280.0" height="20" rx="3"/>
+<rect class="box-bad" x="280.0" y="200.0" width="94.1" height="20" rx="3"/>
+<text class="t-bad" x="574.0" y="215.0" style="font-weight:700">約34%</text>
+<text class="t-xs" x="18" y="234">バックオフィス大計＝3部署のうち、残ったのは最後の1部署分だけ</text>
+<text class="t" x="18" y="270">不均等「1対6」（今回・部門経費表）</text>
+<rect class="box-quiet" x="280.0" y="280.0" width="280.0" height="20" rx="3"/>
+<rect class="box-bad" x="280.0" y="280.0" width="46.5" height="20" rx="3"/>
+<text class="t-bad" x="574.0" y="295.0" style="font-weight:700">約17%</text>
+<text class="t-xs" x="18" y="314">バックオフィス大計＝6部署のうち、残ったのは最後の1部署分だけ</text>
+<rect class="box-accent" x="18" y="338" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="358">崩れた箇所の数そのものは、前作（1対3）も今回（1対6）も1か所のまま増えなかった。</text>
+<text class="t-accent" x="34" y="376">ただし残る金額の割合は、塊の数（3個・6個）にほぼ反比例した（約1/3→約1/6）。</text>
+<text class="t-accent" x="34" y="394">見た目の崩れ方は同じ「1か所だけ」でも、気づかずに使うと欠落の規模は比率しだいで膨らむ。</text>
+</svg>

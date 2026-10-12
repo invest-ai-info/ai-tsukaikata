@@ -33210,3 +33210,125 @@ def flat_vs_trend_benchmark_swing_chart() -> None:
 if __name__ == "__main__":
     flat_log_keeps_the_benchmark_steady_chart()
     flat_vs_trend_benchmark_swing_chart()
+
+
+def subtotal_ratio_1to6_hit_and_miss_chart() -> None:
+    """集計表の不均等さを「1対3」から「1対6」に広げても、崩れる場所の数は増えるか（2026-10-12）。
+
+    既存記事 subtotal-still-correct-past-300-rows（不均等「1対3」）の宿題
+    「不均等さは『1対3』の比率のみ（もっと極端な比率は試していません）」に答える実測（H41）。
+    店舗別売上表（東日本1エリア対西日本6エリア・570行）・部門別経費表（フロント1部署対
+    バックオフィス6部署・640行）で、既存記事と同一の指示文を各5回試した。
+    判定は docs/evidence/subtotal-ratio-1to6-still-one-spot.md の grade_all.py から。
+    """
+    _hit_and_miss_rows_chart(
+        "subtotal-ratio-1to6-hit-and-miss.svg",
+        "比率を1対6に広げても、崩れたのはやはり1か所だけ",
+        "実測2026-10-12。店舗売上表（570行・80か所）・部門経費表（640行・115か所）を各5回。",
+        "返ってきた数式を同じ階層の他セルへコピーし直して全箇所を再計算した。",
+        [
+            ("店舗売上表・SUMIFS方式を選んだ回（5回・SUBTOTAL方式は0回）", 400, 400, "good"),
+            ("部門経費表・SUMIFS方式を選んだ回（3回）", 345, 345, "good"),
+            ("部門経費表・SUBTOTAL方式を選んだ回（1回）", 114, 115, "good"),
+            ("部門経費表・SUMを階層の深さで割る方式を選んだ回（1回）", 113, 115, "good"),
+        ],
+        [
+            "SUMIFS方式（ラベルの文字列で絞り込む）は、合計8回・745か所すべてで正しい値に届いた。",
+            "SUBTOTAL方式は前作（不均等「1対3」）と同じく1か所だけ崩れた——場所も増えなかった。",
+            "見たことのない第3の方式（SUMを階層の深さで割る）は2か所崩れ、総合計まで連鎖した。",
+        ],
+        "集計表の不均等さを1対3から1対6に広げても、数式が正しい値に届くかを示した表。"
+        "店舗売上表でSUMIFS方式を選んだ回は5回とも80か所ずつ正解で400/400（SUBTOTAL方式は0回）、"
+        "部門経費表でSUMIFS方式を選んだ回は3回とも115か所ずつ正解で345/345、"
+        "SUBTOTAL方式を選んだ回は115か所中114か所の正解（1回）、"
+        "SUMを階層の深さで割る方式を選んだ回は115か所中113か所の正解（1回）。"
+        "下の枠には、SUMIFS方式は合計8回・745か所すべてで正しい値に届いたこと、"
+        "SUBTOTAL方式は前作と同じく1か所だけ崩れ場所も増えなかったこと、"
+        "見たことのない第3の方式は2か所崩れ総合計まで連鎖したことが書かれている。",
+        label_w=460,
+    )
+
+
+def subtotal_ratio_captured_share_chart() -> None:
+    """崩れた1か所が、本来の値の何%を持っていたか——不均等さ「1対3」と「1対6」を比べる（2026-10-12）。
+
+    崩れた集計欄は、いつも「最後の塊1個分」の値しか持っていなかった。
+    塊が3個なら約3分の1（約32〜34%）、塊が6個なら約6分の1（約17%）残る——
+    崩れ方の個数は増えないが、残る金額の割合は塊の数に反比例して縮む。
+    """
+    left, right = 280, 560
+    span = right - left
+    row_h = 80
+    top = 96
+
+    def px(pct: float) -> float:
+        return left + pct * span / 100.0
+
+    rows = [
+        ("不均等「1対3」（前作・店舗売上表）", 32.0,
+         "西日本大計＝3エリアのうち、残ったのは最後の1エリア分だけ"),
+        ("不均等「1対3」（前作・部門経費表）", 33.6,
+         "バックオフィス大計＝3部署のうち、残ったのは最後の1部署分だけ"),
+        ("不均等「1対6」（今回・部門経費表）", 16.6,
+         "バックオフィス大計＝6部署のうち、残ったのは最後の1部署分だけ"),
+    ]
+
+    assert right + 90 <= WIDTH, right
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "崩れた1か所に残る金額は、塊の数に反比例して縮む</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "崩れた集計欄はいつも「最後の塊1個分」の値だけが残っていた。塊が多いほど、残る割合は小さい。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "横軸＝本来の値に対して残った割合（%）。実測2026-10-08/2026-10-12。</text>\n",
+    ]
+    for i, (label, pct, note) in enumerate(rows):
+        y = top + i * row_h
+        label_y = y + 14
+        bar_y = y + 24
+        note_y = y + 58
+        parts.append(f'<text class="t" x="18" y="{label_y}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{bar_y:.1f}" '
+            f'width="{span:.1f}" height="20" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="box-bad" x="{px(0):.1f}" y="{bar_y:.1f}" '
+            f'width="{max(px(pct) - px(0), 3):.1f}" height="20" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="{px(100) + 14:.1f}" y="{bar_y + 15:.1f}" '
+            f'style="font-weight:700">約{pct:.0f}%</text>\n'
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{note_y}">{_esc(note)}</text>\n')
+
+    y = top + len(rows) * row_h + 2
+    notes = [
+        "崩れた箇所の数そのものは、前作（1対3）も今回（1対6）も1か所のまま増えなかった。",
+        "ただし残る金額の割合は、塊の数（3個・6個）にほぼ反比例した（約1/3→約1/6）。",
+        "見た目の崩れ方は同じ「1か所だけ」でも、気づかずに使うと欠落の規模は比率しだいで膨らむ。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "崩れた1か所の集計欄に、本来の値の何%が残っていたかを、不均等さ「1対3」と「1対6」で比べた横棒グラフ。"
+        "不均等「1対3」（前作・店舗売上表）は約32%、不均等「1対3」（前作・部門経費表）は約34%、"
+        "不均等「1対6」（今回・部門経費表）は約17%しか残らなかった。"
+        "どの行も、崩れた集計欄には「最後の塊1個分」の値だけが残っていたことが注記されている。"
+        "下の枠には、崩れた箇所の数そのものは前作も今回も1か所のまま増えなかったこと、"
+        "残る金額の割合は塊の数（3個・6個）にほぼ反比例したこと（約1/3→約1/6）、"
+        "見た目の崩れ方は同じでも気づかずに使うと欠落の規模は比率しだいで膨らむことが書かれている。"
+    )
+    (OUT / "subtotal-ratio-1to6-captured-share.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+if __name__ == "__main__":
+    subtotal_ratio_1to6_hit_and_miss_chart()
+    subtotal_ratio_captured_share_chart()
