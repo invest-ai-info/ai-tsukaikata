@@ -5647,44 +5647,6 @@
       "uid": "917c6476aecbbd59",
       "url": "https://note.com/elyza/n/n2a6863c6dcc9",
       "vendor": "ELYZA"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-14T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Google Images logo surrounded by illustrations of people searching for different images",
-      "summary_ja": "Google画像検索が25周年を迎えた。",
-      "summary_source": "gemini",
-      "title": "Celebrating 25 years of visual search innovation",
-      "uid": "b34f32f75668b122",
-      "url": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-14T15:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Introducing Claude for Teachers",
-      "uid": "74008b956856427b",
-      "url": "https://www.anthropic.com/news/claude-for-teachers",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-14T13:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Anthropic commits $10 million to Canadian AI research",
-      "uid": "7e8a5a9b8be50359",
-      "url": "https://www.anthropic.com/news/canadian-ai-research",
-      "vendor": "Anthropic"
     }
   ]
 }

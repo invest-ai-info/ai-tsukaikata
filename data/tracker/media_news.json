@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-12T17:59:15.066399+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-12T14:15:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "NVIDIAが7年前に発売した、テレビに接続してNetflixやYouTubeなどを視聴できるストリーミング端末「SHIELD TV Pro」が2026年10月2日からアメリカで約1.5倍の価格に値上げされました。 続きを読む...",
+      "title": "7年前に発売されたNVIDIA製品がAIブームで1.5倍に値上がり",
+      "uid": "f4c5c356eb962a0e",
+      "url": "https://gigazine.net/news/20261012-nvidia-shield-tv-price-hike/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-12T17:59:15.066399+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-12T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「CarWatch」は車自身がAIエージェントとして機能し、家・電話・時計などのスマートデバイスと同様に「チャットルーム」内で対話できるようになる革新的なシステムです。 続きを読む...",
+      "title": "愛車がAIエージェントとなる「CarWatch」、必要なのはRaspberry Pi 5とローカルAI",
+      "uid": "b4ab736b44a724ea",
+      "url": "https://gigazine.net/news/20261012-carwatch/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-12T17:59:15.066399+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-12T09:06:37+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "アドビとえちごトキめき鉄道は10月12日、鉄道写真撮影における安全マナーの啓発と生成AIを活用した写真表現の拡張を目的とした共催イベント「楽しく撮り鉄！生成AIで鉄道写真がもっと簡単に！」を開催した。",
+      "title": "アドビ×えちごトキめき鉄道、安全で楽しい撮り鉄向けAI活用テクを提案",
+      "uid": "5aad1a89bfdb5a6b",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2147421.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-12T17:59:15.066399+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-12T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントをいくつも試していると、以前追加したMCPサーバー・プラグイン・AI拡張機能などがPCのどこに設定されているのか分かりにくくなります。PC内のAIエージェント・ハーネス・MCPサーバー・プラグイン・AI拡張機能などをスキャンして一覧化し、それぞれがアクセス可能な範囲までレポートしてくれる「Geiger」が公開されています。 続きを読む...",
+      "title": "無料で自分のPCにインストールされているAIエージェント・ハーネス・MCPサーバー・プラグイン・AI拡張機能をすべてスキャンして列挙してレポートしてくれる「Geiger」",
+      "uid": "fc3e6a77f9ef427b",
+      "url": "https://gigazine.net/news/20261012-geiger/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-12T07:25:30.741379+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2351,54 +2399,6 @@
       "uid": "0d29078841396c78",
       "url": "https://gigazine.net/news/20261005-sam-altman-talk-to-decoded/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-05T05:18:53+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "シャープは、東京都大田区の社会福祉法人善光会 特別養護老人ホーム「フロース東糀谷」で、「介護向けAIトレーナー」の実証を10月5日より11月1日まで実施する。",
-      "title": "シャープ、「介護向けAIトレーナー」を実証開始。AI×テレビで機能訓練を支援",
-      "uid": "679e7c08b5a67232",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2145639.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-05T05:13:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "トランプ米大統領は、連邦政府のAI政策を調整する新たなタスクフォース「Super Intelligence Force（SIF）」の設置を発表した。",
-      "title": "トランプ政権が「Super Intelligence Force」設置、AI政策を横断調整",
-      "uid": "47c4fbb40c6bb5da",
-      "url": "https://japan.cnet.com/article/35253238/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-05T04:38:51+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米SpaceXのイーロン・マスクCEOは10月4日、傘下のAI部門SpaceXAIを「SpaceXSI」に改名する意向をXで示した。SIは「Super Intelligence」の略で、トランプ米大統領が連邦政府に「AI」の呼称をやめるよう命じた直後の動きだ。",
-      "title": "「SpaceXAI」→「SpaceXSI」に改名へ　マスク氏、トランプ大統領の“AI呼称廃止”に追随",
-      "uid": "5695f1fa94a492e0",
-      "url": "https://www.itmedia.co.jp/news/article/2610/05/2000002000/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-05T04:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "生成AIが「幻滅期」に入っても、AI関連市場全体の成長は続いている。中でも、AIサービスの2倍以上の額が投じられる分野がある。AI関連で最大の支出分野とは何か。",
-      "title": "AIサービス、AIソフトウェアを上回る「最大のAI支出分野」とは？　ガートナー調査",
-      "uid": "18fa73b54ace9106",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/05/news025.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
