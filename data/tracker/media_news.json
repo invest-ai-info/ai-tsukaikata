@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-12T07:25:30.741379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-12T02:50:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIを使うほど増えるトークンの支出。アクセンチュアが調査したところ、その8割は明確な事業成果に結び付いているとはいえなかった。3社に1社が年間予算を既に超過する中、トークンを経営資源として管理する先進企業が実施している取り組みとは。",
+      "title": "3社に1社がトークン予算超過　コスト増を最大44％抑える方法とは【アクセンチュア調査】",
+      "uid": "a959ac4f393e7dfc",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/08/news036.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-12T07:25:30.741379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-12T02:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ベンダーのエンジニアと直接協力して構築したAIエージェントを、2028年までに企業の7割が放棄する――。Gartnerはそう予測する。しかも、原因は技術の未熟さではなく、案件の「構造」にあるという。何が企業をつまずかせ、どうすれば避けられるのか。",
+      "title": "FDEが構築したAIエージェントの7割、企業が放棄へ　Gartner予測",
+      "uid": "fbaf37cb2fb64499",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/09/news042.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-12T07:25:30.741379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-12T01:26:23+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "MicrosoftのナデラCEOは、SIモデルを組織の内部リスクと同様に扱い、統制の仕組みをモデル外部に構築すべきだと提言した。モデルの多様性や人間による強制停止、証拠の記録など7つの設計原則を提示し、モデル提供者の保証に頼らず知能の供給と実行権限を分離する安全策を訴えた。",
+      "title": "MicrosoftのナデラCEO、「SIモデルは“内部リスク”として扱うべき」とXに投稿　統制はモデルの外に置くよう提言",
+      "uid": "2b9b6535d041bcb6",
+      "url": "https://www.itmedia.co.jp/news/article/2610/12/2000002195/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-12T07:25:30.741379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-12T00:39:33+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Microsoftは、文章生成を行わず選択肢ごとの確率を返す判断特化AI「Microsoft-Decision-1」を発表した。「Qwen3.5-9B」を追加学習し、OpenAIの「GPT-6 Sol」の35倍の速度を実現。「Jev」と同じ入力100万トークン当たり0.042ドルで、分類やエージェントの行動判定向けに提供する。",
+      "title": "Microsoftも“判断特化”AIモデル「Microsoft-Decision-1」、Qwenベースで「Jev」と同価格",
+      "uid": "749e880d7411c113",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/12/2000002194/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-12T07:25:30.741379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-11T23:59:36+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、Claudeの評価試験中に、未解決殺人事件サイトへの架空情報送信や脆弱性悪用などの意図しない行動が生じたと発表した。警察は発見から報告までの遅れを批判。ホワイトハウスのSI Forceも、インシデントの迅速な通知と是正は国家安全保障上の義務であると警告した。",
+      "title": "AnthropicのAI、未解決殺人事件で警察に虚偽の情報提供　米政権は「通知と是正は義務」と警告",
+      "uid": "06a37460b9a8c5b6",
+      "url": "https://www.itmedia.co.jp/news/article/2610/12/2000002192/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-11T08:58:17.208311+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2339,66 +2399,6 @@
       "uid": "18fa73b54ace9106",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2610/05/news025.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-05T04:14:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "東京工科大学は八王子市との協働により、同市の新たな大型複合施設「桑都の杜」とJR八王子駅間における自動運転バスの実証運行を実施する。一般利用は無料で1日10往復便程度の運行を予定。",
-      "title": "東京工科大学、八王子で自動運転バス実証運行を実施",
-      "uid": "87be83ba325e943a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2145621.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-05T04:11:50+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "生成AIの業務活用が進み、【第1回】で解説した「AIエージェント」や、【第23回】で取り上げた「エージェントワークフロー」のように、AIが仕事を自動的に進める仕組みが現実のものになりつつあります。",
-      "title": "AI用語の基礎知識 【第25回】「ヒューマン・イン・ザ・ループ」とは―― AIに丸投げせず、人が判断に加わり品質・安全を守る仕組み",
-      "uid": "d7a3760970382cf0",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2145570.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-05T04:08:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "カーネギーメロン大学やマサチューセッツ工科大学などの研究チームが、相手の駒の正体が見えない軍人将棋型のボードゲーム「ストラテゴ」で、トップクラスの人間を大幅に上回るAI「Ataraxos」を開発しました。Ataraxosは世界選手権で4回優勝したピム・ニーメイヤー氏に15勝1敗4引き分けで勝利しており、研究チームはストラテゴで初めて「超人的」な成績を実証したとしています。 続きを読む...",
-      "title": "AI「Ataraxos」が軍人将棋型ボドゲ「ストラテゴ」で世界最強クラスのプレイヤーに15勝1敗4分で大勝",
-      "uid": "d7a1f514a245b042",
-      "url": "https://gigazine.net/news/20261005-stratego-ai-ataraxos/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-05T04:01:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Metaが2026年9月に発表したパーソナルAIエージェント「Muse」の内部指示やシステムプロンプトをセキュリティ研究者が抽出し、Museがユーザーの家族や友人、同僚などについて人物ごとのページを作成するよう設計されていることが分かりました。人物ページには基本的な事実だけでなく、過去の出来事や親密さ、今後関係を深めるためのヒントなども記録する仕組みになっていると報じられました。 続きを読む...",
-      "title": "MetaのAI「Muse」は家族・友人・同僚ごとの「人物ページ」を作成して人間関係まで記録する設計、セキュリティ研究者がシステムプロンプトを抽出",
-      "uid": "f1d282f49462f80c",
-      "url": "https://gigazine.net/news/20261005-meta-muse-create-profile/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-05T07:07:33.677725+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-05T03:40:05+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは、書籍「そのまま使えるAI×ネット広告（実務特化型AI活用シリーズ）」の全文無料公開キャンペーンを10月5日より10月7日まで開催する。",
-      "title": "AI広告運用の実践書「そのまま使えるAI×ネット広告」3日間全文無料公開",
-      "uid": "c92f17cb986d219f",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2145590.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
