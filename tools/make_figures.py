@@ -33031,3 +33031,182 @@ def sentence_ending_repeat_replicates_prior_chart() -> None:
 if __name__ == "__main__":
     sentence_ending_repeat_stays_zero_chart()
     sentence_ending_repeat_replicates_prior_chart()
+
+
+def flat_log_keeps_the_benchmark_steady_chart() -> None:
+    """増減の無い記録では、窓の長さを変えても「ふだんの目安」はほぼ動かない（2026-10-12）。
+
+    実測。問い合わせフォームの架空の受信件数ログ（8週間・56日、増減の無いフラットな記録）を
+    2週/4週/8週に切り分けて渡し、AIに自分で「ふだんの目安」を計算させ、本日の件数28件が
+    目安の何倍かを答えさせた。指示文は一字一句同じ、渡すログの長さだけが違う。各2回。
+    値は docs/evidence/flat-log-keeps-the-benchmark-steady.md の真値（単純平均）から。
+    """
+    rows = [
+        ("直近2週間（14日）ぶんだけ渡す", 5.29, "約5.30倍"),
+        ("直近4週間（28日）ぶんを渡す", 5.04, "約5.56倍"),
+        ("8週間（56日）全部を渡す", 5.00, "約5.60倍"),
+    ]
+    label_x = 18
+    plot_x = 280
+    plot_w = 160
+    axis_max = 6
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "増減の無い記録では、見せる長さを変えても「ふだん」はほぼ動かない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "問い合わせフォームの受信件数（増減の無いフラットな記録）を2週/4週/8週に切り分け、"
+        "同じ指示文でAI自身に目安を計算させた。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "横棒は、真値（単純平均）としての「ふだんの1日あたりの目安」（件/日）。"
+        "本日の件数は3条件とも同じ28件。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "増加傾向のある先行記事（4.5→6.1件・約36%動いた）と違い、3本の長さはほぼそろう。</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 10}">件/日</text>\n',
+    ]
+
+    x_val = px(axis_max) + 14
+    x_ratio = x_val + 90
+    y = top
+    for label, value, ratio_text in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value:.2f}件/日</text>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{x_ratio:.1f}" y="{ty}">本日の{_esc(ratio_text)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    notes = [
+        "※ 指示文は3条件とも一字一句同じ。「渡すログの長さ」だけを変えた（各2回）。",
+        "真値は5.00→5.04→5.29件/日で、動いた幅はわずか約6%（先行記事は約36%動いた）。",
+        "AI自身の自己申告（1桁に丸めた値）は、28日版と56日版が同じ「5.0件・5.6倍」になった。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "増減の無い問い合わせ受信件数の記録から、渡す長さだけを変えて「ふだんの目安」を"
+        "AI自身に計算させた結果を3本の横棒で比べた図。直近2週間（14日）だけを渡すと目安は"
+        "真値で5.29件/日で、本日28件はその約5.30倍（AIの自己申告は約5.3倍）。直近4週間（28日）を"
+        "渡すと目安は5.04件/日で、本日はその約5.56倍（AIの自己申告は約5.6倍）。8週間（56日）"
+        "全部を渡すと目安は5.00件/日で、本日はその約5.60倍。指示文は3条件とも一字一句同じで、"
+        "渡したログの長さだけが違う。下の枠には、真値は5.00から5.29件/日まで動いた幅がわずか"
+        "約6%であること（増加傾向のある先行記事は約36%動いた）、AI自身の自己申告は1桁に丸めた"
+        "結果28日版と56日版が同じ5.0件・5.6倍という表示になったことが書かれている。"
+    )
+    (OUT / "flat-log-keeps-the-benchmark-steady.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def flat_vs_trend_benchmark_swing_chart() -> None:
+    """フラットな記録と増加傾向のある記録で、窓の長さによる目安の動いた幅を比べる（2026-10-12）。
+
+    本記事（増減の無い記録・真値5.00→5.29件/日）と前作
+    `how-far-back-changes-the-usual-number`（増加傾向のある記録・真値4.5→6.1件/日）の
+    「2週間ぶんと8週間ぶんを比べたときの動いた幅（%）」を2本の横棒で並べる。
+    """
+    rows = [
+        ("フラットな記録（この記事・材料A）", 5.71, "増減が無いので、2週も8週もほぼ同じ"),
+        ("増加傾向のある記録（前作の材料A）", 35.56, "古い週を含めるほど目安が下がる"),
+    ]
+    label_x = 18
+    plot_x = 320
+    plot_w = 280
+    axis_max = 40
+    scale = plot_w / axis_max
+    top = 140
+    row_h = 48
+    bar_h = 20
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "動いた幅を比べると、フラットな記録は約1/6にしかならない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "「2週間ぶんだけ渡した目安」と「8週間（全部）渡した目安」の差を、"
+        "もとの8週間目安に対する割合（%）で比べた。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "本記事の材料Aと、前作（増加傾向のある材料A）の、それぞれの真値（単純平均）から算出。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "低いほど、窓の長さを気にせず計算できることを示す。</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 10:.1f}" y="{top - 16}">動いた幅（%）</text>\n',
+    ]
+
+    y = top
+    for label, pct, note in rows:
+        ty = y + 16
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        klass = "bar-new" if pct < 15 else "box-bad"
+        tcls = "t-accent" if pct < 15 else "t-bad"
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 14}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{klass}" x="{px(0):.1f}" y="{ty - 14}" '
+            f'width="{max(px(pct) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 14:.1f}" y="{ty}" '
+            f'style="font-weight:700">約{pct:.0f}%</text>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{label_x}" y="{ty + 16}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "フラットな記録（この記事）: 真値5.00件→5.29件/日。動いた幅は約6%。",
+        "増加傾向のある記録（前作）: 真値4.5件→6.1件/日。動いた幅は約36%で、約6倍の差。",
+        "動いたのは計算の正確さではなく、材料に増減の傾向があるかどうかだけ。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "窓の長さ（2週間ぶんと8週間ぶん）を比べたときの「ふだんの目安」の動いた幅を、"
+        "もとの目安に対する割合で2本の横棒で比べた図。この記事の増減の無い記録は、"
+        "真値が5.00件から5.29件/日までしか動かず、動いた幅は約6%。前作の増加傾向のある記録は、"
+        "真値が4.5件から6.1件/日まで動き、動いた幅は約36%で約6倍の差がある。"
+        "下の枠には、フラットな記録の動いた幅は約6%、増加傾向のある記録は約36%で約6倍の差が"
+        "あること、動いたのは計算の正確さではなく材料に増減の傾向があるかどうかだけであることが"
+        "書かれている。"
+    )
+    (OUT / "flat-vs-trend-benchmark-swing.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    flat_log_keeps_the_benchmark_steady_chart()
+    flat_vs_trend_benchmark_swing_chart()

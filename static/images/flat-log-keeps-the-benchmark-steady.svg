@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="328" viewBox="0 0 720 328" role="img" aria-label="増減の無い問い合わせ受信件数の記録から、渡す長さだけを変えて「ふだんの目安」をAI自身に計算させた結果を3本の横棒で比べた図。直近2週間（14日）だけを渡すと目安は真値で5.29件/日で、本日28件はその約5.30倍（AIの自己申告は約5.3倍）。直近4週間（28日）を渡すと目安は5.04件/日で、本日はその約5.56倍（AIの自己申告は約5.6倍）。8週間（56日）全部を渡すと目安は5.00件/日で、本日はその約5.60倍。指示文は3条件とも一字一句同じで、渡したログの長さだけが違う。下の枠には、真値は5.00から5.29件/日まで動いた幅がわずか約6%であること（増加傾向のある先行記事は約36%動いた）、AI自身の自己申告は1桁に丸めた結果28日版と56日版が同じ5.0件・5.6倍という表示になったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="328"/>
+<text class="t-strong" x="18" y="24">増減の無い記録では、見せる長さを変えても「ふだん」はほぼ動かない</text>
+<text class="t-sm" x="18" y="43">問い合わせフォームの受信件数（増減の無いフラットな記録）を2週/4週/8週に切り分け、同じ指示文でAI自身に目安を計算させた。</text>
+<text class="t-sm" x="18" y="62">横棒は、真値（単純平均）としての「ふだんの1日あたりの目安」（件/日）。本日の件数は3条件とも同じ28件。</text>
+<text class="t-xs" x="18" y="81">増加傾向のある先行記事（4.5→6.1件・約36%動いた）と違い、3本の長さはほぼそろう。</text>
+<text class="t-xs" x="426.0" y="120">件/日</text>
+<text class="t" x="18" y="144">直近2週間（14日）ぶんだけ渡す</text>
+<rect class="box-quiet" x="280.0" y="132" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="280.0" y="132" width="141.1" height="16" rx="3"/>
+<text class="t-strong" x="454.0" y="144">5.29件/日</text>
+<text class="t-accent" x="544.0" y="144">本日の約5.30倍</text>
+<text class="t" x="18" y="178">直近4週間（28日）ぶんを渡す</text>
+<rect class="box-quiet" x="280.0" y="166" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="280.0" y="166" width="134.4" height="16" rx="3"/>
+<text class="t-strong" x="454.0" y="178">5.04件/日</text>
+<text class="t-accent" x="544.0" y="178">本日の約5.56倍</text>
+<text class="t" x="18" y="212">8週間（56日）全部を渡す</text>
+<rect class="box-quiet" x="280.0" y="200" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="280.0" y="200" width="133.3" height="16" rx="3"/>
+<text class="t-strong" x="454.0" y="212">5.00件/日</text>
+<text class="t-accent" x="544.0" y="212">本日の約5.60倍</text>
+<rect class="box-accent" x="18" y="242" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="262">※ 指示文は3条件とも一字一句同じ。「渡すログの長さ」だけを変えた（各2回）。</text>
+<text class="t-accent" x="34" y="280">真値は5.00→5.04→5.29件/日で、動いた幅はわずか約6%（先行記事は約36%動いた）。</text>
+<text class="t-accent" x="34" y="298">AI自身の自己申告（1桁に丸めた値）は、28日版と56日版が同じ「5.0件・5.6倍」になった。</text>
+</svg>
