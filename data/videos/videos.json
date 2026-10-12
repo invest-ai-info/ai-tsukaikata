@@ -251,10 +251,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Claire Lawlor, Digital Native AD EMEA at OpenAI, and John Peterson, CTO at Sophos, explain the role of technology partnerships in keeping organizations safe from cyber threats",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "SophosのCTOが、OpenAIのフロンティアモデルを活用してサイバー脅威への調査や対応を高速化していると説明している。",
+    "AIエージェントの導入により、セキュリティ事案の平均調査時間を従来の約38分から約89秒へと大幅に短縮できたと報告している。",
+    "対応の自動化を進めつつも重大な判断には人を介在させ、エンドポイント保護などの基本対策も依然重要だと強調している。"
+   ],
+   "for_whom": "セキュリティ業務の自動化やAIエージェント活用法を知りたいシステム・セキュリティ担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-12T06:28:05.266827+00:00"
   },
   {
    "video_id": "6wNqpZdHE_s",
@@ -594,10 +604,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\nAnthropicは、(2026年)9月下旬\n最新AIモデル「Claude Opus 5.5」を公開しました\nこのモデルは、各種AIベンチマークで、同社の最上位AIモデル\n「Claude Fable 5.1」や、OpenAIの最上位AIモデル\n「GPT-6 Astra」のスコアを圧倒し\nAIモデルの有名ランキングサイトでも\nすべてのAIモデルの中でダントツの1位となっていて\nスライド資料や文書の作成はもちろん\nこれまでのモデルでは作るのが難しかったような\n細かい部分まで精密な3D系のゲームやアプリ\n実際の仕事場でも使えるような\n高品質なアニメーション動画を\n手軽に生成できるようになりました\n\n今回の動画では\n第一章：Claude Opus 5.5の概要と使い方\n第二章：Opus 5.5の活用事例10選 ～開発編～\n第三章：Opus 5.5の活用事例10選 ～実務編～\nの3章構成で、Anthropicの公開した\nAIモデル「Claude Opus 5.5」の最新の概要と使い方から\nAIエージェント「Claude Code」やAIチャット「Claude」を組み合わせて\nClaude Opus 5.5を使いこなす為の活用事例を\n開発編と実務編に分けて、計10例ほど紹介します\n\n◆動画のもくじ\n0:00　Opus 5.5＋Claude Codeのサンプル\n0:30　動画について\n1:23　動画のもくじ\n2:13　第一章：Claude Opus 5.5の概要と使い方\n2:35　①、Claude Opus 5.5の特徴\n4:12　②、Claude Opus 5.5のベンチマーク\n6:01　③、Claude Opus 5.5の使い方\n7:08　第二章：Opus 5.5の活用事例10選 ～開発編～\n7:38　3Dゲームの生成\n8:48　webサイトの生成\n10:00　複雑なwebアプリの生成\n11:10　デスクトップアプリとChrome拡張機能の生成\n12:14　高品質な3Dモデルの生成\n13:19　第三章：Opus 5.5の活用事例10選 ～実務編～\n13:50　解説動画の生成\n15:22　アニメーション動画の生成\n17:03　スライド資料の生成\n17:56　レポートの生成\n18:46　日本語のライティング\n20:43　エンディングムービー\n\n◆動画の中で紹介している内容\nClaude Fable 5.1、GPT-5.6 Sol、Claude Design、three.js\nJavaScript、Blender、Gemini 3.8 Flash TTS\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://www.anthropic.com/claude-opus-5-5\nhttps://www.anthropic.com/claude-fable-and-mythos-5-1\nhttps://threejs.org/\nhttps://artificialanalysis.ai/\n\n※動画内のずんだもんのVRMは↓で借りました\nhttps://booth.pm/ja/items/4823014\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini N",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "最新モデル「Claude Opus 5.5」は各種ベンチマークで首位を獲得し、前モデル比で実行コストが約40％削減されたと説明している。",
+    "AIエージェント「Claude Code」と組み合わせ、3Dゲームや動きのあるWebサイト、Blender連携による3D制作が可能と紹介している。",
+    "実務編として、スライド資料や長文記事の作成に加え、JavaScriptを活用したアニメーション解説動画の自動生成手順を紹介している。"
+   ],
+   "for_whom": "Claude Opus 5.5の性能や、Claude Codeを用いた開発・業務効率化の活用例を知りたい人",
+   "caution": "Webサイト作成時にAIが自動ダウンロードした画像素材について、本番環境で公開する際は利用規約やフリー素材かどうかの権利確認が必要と注意を促している。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-12T06:28:05.266827+00:00"
   },
   {
    "video_id": "ChOJ7cg-19Y",
@@ -745,10 +765,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、新しく登場した「Claude Sonnet 5.5」について、公式情報のポイントと僕が実際に作らせてみたデモを交えて解説しました。\nOpus 5.5 とほぼ同じくらいのベンチマークなのに単価は半額、速度も僕の環境で 150〜180 TPS ほど出ていました\neffort (low / medium / high / xhigh / max) でトークン消費と品質が大きく変わるので、その使い分けも実例で比べています。20ドルプランでも Sonnet を選べば十分戦える時代になってきたと感じました。\n皆さんは Sonnet 5.5 と Opus 5.5、どう使い分けていますか？ ぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://www.anthropic.com/claude-sonnet-5-5\n\n\ntimestamp:\n00:00 オープニング - Claude Sonnet 5.5 登場\n00:56 SVG 比較で見える Sonnet の新世代感\n02:03 ナレッジカットオフとエフォートの扱い\n03:04 Sonnet 5 とは別物になったベンチ結果\n04:02 外ループや Best-of-N に Sonnet を交ぜる\n05:27 公式情報 - Opus 5.5 並みの性能で単価半額\n08:12 ベンチマークとエフォートの使い分け\n11:20 エフォート別の TPS とトークン消費量\n12:53 宇宙シューティングと迷路をエフォート別に比較\n14:32 LP・ゲームを Opus 5.5 と作り比べ\n21:41 資料・SVG・文章を GPT-6 Sol と比較\n25:01 総評 - Sonnet 5.5 で十分な時代へ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者はClaude Sonnet 5.5が登場し、Opus 5.5に迫る性能を持ちながら単価は半額に抑えられていると解説している。",
+    "effort設定によって品質やトークン消費量が大きく変化し、通常業務ではmediumやhighが扱いやすいと説明している。",
+    "ゲームやLPの作成デモを交え、低価格プランでも十分に高いクオリティの成果物が得られると紹介している。"
+   ],
+   "for_whom": "Claudeの新モデルの性能や、コストを抑えたAI活用法に関心がある人",
+   "caution": "動画内および概要欄でnoteの有料メンバーシップ（コミュニティ）への誘導が含まれているため、加入を検討する際は詳細を確認してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-12T06:28:05.266827+00:00"
   },
   {
    "video_id": "qPuDbewU6E4",
@@ -840,10 +870,20 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=hj5SXTdJxh\n※もしLINE登録が上手く行かない方は「@223etryz」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🧩【同じ“注文が入った時だけ工場で作る”回、このチャンネルにあります】\n今日はAIで作った絵を、アメリカの工場とEtsyを使って、在庫を持たずに売る話でした。\n同じ仕組みを、別の商品・別の角度から通した回を並べておきます↓\n\n▼本編でちらっと出てきた“庭に立てる旗”の回。同じ工場とEtsyで、季節ごとに売れる棚の作り方\nhttps://youtu.be/9PRzJCWL378\n\n▼同じ工場とEtsyで、壁一面の布を売る回。超特大タペストリー\nhttps://youtu.be/icblXzctaDU\n\n▼同じEtsyで、形のないデータを売る回。アメリカで流行っている“テレビに映す絵”\nhttps://youtu.be/G5MpQKyP_uc\n\n▼日本の絵が海外で売れるのか気になった人へ。Etsyで穴場の市場を特定する激レア手法\nhttps://youtu.be/zRhMGQ_Bxcg\n\n▼一人で黙々とやりたい人向け。Etsyで孤独なリスナー3名中3名が成果を出した回\nhttps://youtu.be/sJPF92izwy4\n\n▼AIの絵を金属のポスターにして売る回。審査に通す方法まで1年分の検証\nhttps://youtu.be/eRPC2D4lkAM\n\n▼売れない時期が続いて心が折れかけている人へ。月500円から月42万まで抜け出した記録\nhttps://youtu.be/yw6ujlK07aI\n\n▼漢字が読めるだけで強い。世界各国に“自動販売機”を置く、海外向けの無在庫販売\nhttps://youtu.be/dOF8EPYoaqU\n\n▼なぜ手作りですらない1枚に5,500円払う人がいるのか。作らないハンドメイドの証拠を出した回\nhttps://youtu.be/jyfLXRm5WFk\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=hj5SXTdJxh\n\n----------------------",
    "first_seen": "2026-10-02T13:06:52.178708+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "画像生成AIとPrintify、Etsyを組み合わせたジグソーパズルの無在庫販売ノウハウを解説している",
+    "米国の認知症高齢者向けパズル需要に着目し、30ピースの大人の絵柄に特化することが重要だと説明している",
+    "単色で手がかりのないピースを作らないよう、絵柄全体にモチーフを配置する工夫が必要だと述べている"
+   ],
+   "for_whom": "画像生成AIを活用した海外向け物販やPOD副業に関心がある人",
+   "caution": "動画内ではモニター生が月46万円を稼いだ等の実績を紹介していますが、成果には個人差があります。また、特典配布を名目に公式LINEへの登録を促している点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-12T06:28:05.266827+00:00"
   },
   {
    "video_id": "COJAZQM1aeQ",
@@ -2678,86 +2718,86 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   },
   "masao": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   },
   "shizuma": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-11T22:25:05.636720+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-11T22:25:05.636720+00:00",
+   "last_ok": "2026-10-12T06:28:05.266827+00:00",
    "fail_streak": 0
   }
  }
