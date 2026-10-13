@@ -2806,91 +2806,196 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-13T00:57:11.414768+00:00"
+  },
+  {
+   "video_id": "HdI_aYzgJIg",
+   "title": "Personal Agents, Clearly Explained",
+   "url": "https://www.youtube.com/watch?v=HdI_aYzgJIg",
+   "published": "2026-10-13T13:00:11+00:00",
+   "channel_key": "jeff-su",
+   "channel_name": "Jeff Su",
+   "default_category": "tech",
+   "first_seen": "2026-10-13T14:32:16.573053+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "従来のチャットボットと、指示や記憶をファイル管理するDIYエージェント、設定不要で自律動作するパーソナルエージェントの違いを解説している",
+    "パーソナルエージェントはクラウド上で常時動作し、ユーザーが指示する前に自発的に提案や作業を行ってくれる利点があると説明している",
+    "手軽さ重視ならパーソナルエージェント、自由度やプライバシー保護、脱囲い込みを重視するならDIY型が適していると比較している"
+   ],
+   "for_whom": "AIエージェントの仕組みや選び方を知りたいビジネスパーソン",
+   "caution": "概要欄で自身の無料ニュースレターや有料講座（The Cowork Academyなど）への登録・参加を促しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T14:32:16.573053+00:00"
+  },
+  {
+   "video_id": "z_sXLlLVUls",
+   "title": "OpenAI Just Changed What It Means To Do Math",
+   "url": "https://www.youtube.com/watch?v=z_sXLlLVUls",
+   "published": "2026-10-13T08:56:12+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 The papers are available here:\nhttps://openai.com/index/sharing-ai-progress-in-mathematics/\nhttps://github.com/openai/math\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
+   "first_seen": "2026-10-13T14:32:16.573053+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "hL2CsNKcDZk",
+   "title": "【AI映像編集の新時代】テキストや画像から映像が瞬時に生成、無料の動画生成AI(世界モデル)「Odyssey-3」で変わる動画生成の常識！",
+   "url": "https://www.youtube.com/watch?v=hL2CsNKcDZk",
+   "published": "2026-10-13T09:06:38+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-13T14:32:16.573053+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "テキストや画像からリアルタイムに仮想空間を生成・操作できる世界モデル「Odyssey-3」が公開されたと解説している",
+    "物理法則や因果関係を反映し、AIエージェント訓練やロボット学習データ作成への活用が期待されると紹介している",
+    "公式サイトでFlash版プレビューが無料公開されており、プロンプト入力や視点選択による操作手順を実演している"
+   ],
+   "for_whom": "最新の世界モデルやリアルタイムな仮想空間生成AIの機能と使い方を試したい人",
+   "caution": "動画内で紹介されているFlash版は研究プレビュー段階であり、動作がやや不安定になる場合があると説明されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T14:32:16.573053+00:00"
+  },
+  {
+   "video_id": "7Ymq-dGIb3Y",
+   "title": "【必見】Claude Codeの新機能『プロジェクト』は絶対押さえたい次世代ハーネス！機能から徹底解説",
+   "url": "https://www.youtube.com/watch?v=7Ymq-dGIb3Y",
+   "published": "2026-10-13T11:20:05+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-13T14:32:16.573053+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Codeの新プロジェクト機能では、まとめ役のAIが複数の並列スレッドを管理して作業を進めると説明している。",
+    "クラウド上で動作するため、PCを閉じても処理が継続し、定期実行ルーチンや記憶機能も備わっていると紹介している。",
+    "デフォルト設定では利用枠の消費が非常に速いため、モデルの使い分けやエフォート設定の調整が必要だと注意を促している。"
+   ],
+   "for_whom": "Claude Codeを活用して複数の開発タスクを効率的に並列実行・自動化したい人",
+   "caution": "概要欄や動画内で有料のnoteメンバーシップ（AI駆動開発研究部）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T14:32:16.573053+00:00"
+  },
+  {
+   "video_id": "Sb2U14jajsE",
+   "title": "【月55万】売れるグッズと1個も売れないグッズの違いを言語化してみると、AIが描く動物の致命的なクセが見えてきました……【副業 おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=Sb2U14jajsE",
+   "published": "2026-10-13T09:00:01+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "first_seen": "2026-10-13T14:32:16.573053+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTで生成したペット画像を使い、PrintifyとEtsyでクリスマスオーナメントを販売する副業手法を紹介している。",
+    "AIが生成した絵は吊り下げ穴や縁で重要な部分が切れるため、位置を調整する「吊り穴潰し」の対策が必要だと解説している。",
+    "犬種ごとにデザインを用意し、購入者のペット名を入れる受注生産の仕組みにより月55万円を達成可能と主張している。"
+   ],
+   "for_whom": "画像生成AIとPODサービスを活用した海外向け物販副業に興味がある人",
+   "caution": "投稿者は月収55万円などの高額な成果を主張していますが、実際の収益明細などの客観的な証拠は示されていません。また、公式LINEへの登録誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T14:32:16.573053+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-13T00:57:11.414768+00:00",
+   "last_ok": "2026-10-13T14:32:16.573053+00:00",
    "fail_streak": 0
   }
  }
