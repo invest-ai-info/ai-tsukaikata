@@ -25,6 +25,34 @@
       "vendor": "Google DeepMind"
     },
     {
+      "first_seen": "2026-10-13T21:18:32.363706+00:00",
+      "importance": "major",
+      "label": "Google AI Blog",
+      "published": "2026-10-13T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "TBD",
+      "summary_ja": "Gemini 4 Argonが発表されました。",
+      "summary_source": "gemini",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "uid": "ef1a177e81759e91",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-10-13T21:18:32.363706+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-13T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.",
+      "summary_ja": "HiggsfieldがAI動画の生成時間を10分超に延ばしました。\n最新モデル「GPT-6 Astra」で実現しました。\n「GPT-Image-2.5」で映像精度を高め、「GPT-Live」で声つき動画の道を開きました。",
+      "summary_source": "gemini",
+      "title": "Higgsfield takes AI video from 1 minute to over 10",
+      "uid": "e3df886f5008fe85",
+      "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-12T00:35:56.163771+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",

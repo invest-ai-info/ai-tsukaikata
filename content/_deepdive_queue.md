@@ -330,6 +330,9 @@
 - [ ] https://deepmind.google/blog/gemini-4-argon-for-robotics/
   - 2026-10-13 自動追記（minor・Google DeepMind「Gemini 4 Argon for Robotics」）
 
+- [ ] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
+  - 2026-10-13 自動追記（major・Google「Gemini 4 Argon: Built to solve your hardest problems」）
+
 ## 処理済み
 
 - https://www.anthropic.com/claude-haiku-5-5 → **公開済み** content/tools/claude-haiku-5-5.md（2026-10-08・公開）

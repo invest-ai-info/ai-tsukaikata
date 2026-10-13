@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-13T21:18:32.363706+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-13T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI研究者アンドレイ・カルパシー氏が「これからはLLMの出力を理解することに多くの時間を使うようになる」と述べ、理解しやすくするための手段を4段階で示した。文章、図、Webページ、動画の順に何を頼めばよいか、筆者が実際に試した結果も添えて整理する。",
+      "title": "AIの出力を「理解する時間」がどんどん増えていく　Karpathy氏推奨の4手段：文章・図・Webページ・動画",
+      "uid": "15dad3a35431196b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/13/news017.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-13T16:03:37.365437+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "afa4e2424eb167fb",
       "url": "https://ai.watch.impress.co.jp/docs/news/2145984.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-06T10:24:48.047911+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-06T05:03:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "「東芝がAIデータセンター向けHDDの生産能力を2027年度中に2025年基準から倍増させる予定」と報じられました。これにより、ライバルのWestern DigitalとSeagateの株価が10％以上急落しました。 続きを読む...",
-      "title": "東芝がAIデータセンター向けHDDの生産能力を2027年度までに倍増させる計画発表でライバル企業のWestern DigitalとSeagateの株価が急落、東芝はさらに65TBと100TBも準備",
-      "uid": "c021330f3f7b4e90",
-      "url": "https://gigazine.net/news/20261006-toshiba-hdd-double/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
