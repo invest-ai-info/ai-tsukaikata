@@ -2911,91 +2911,235 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-13T14:32:16.573053+00:00"
+  },
+  {
+   "video_id": "JdyOX_AlWWo",
+   "title": "【速報】Gemini 4 Argonがついに登場！1M出力対応に動画入力も！解説します",
+   "url": "https://www.youtube.com/watch?v=JdyOX_AlWWo",
+   "published": "2026-10-13T17:37:14+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleの新モデルGemini 4 Argonが登場し、動画や音声の入力や長文出力に対応したと紹介している。",
+    "各種ベンチマーク指標で上位を獲得しており、コーディングや専門業務タスクで高い性能を示すと説明している。",
+    "AI Studioを使ってスライド構成やコード生成、分析プロンプトを試し、賢さや出力速度を検証している。"
+   ],
+   "for_whom": "Geminiの新モデルの性能や特徴、活用例をいち早く把握したい人",
+   "caution": "概要欄および動画内で有料のnoteメンバーシップへの案内・誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T23:05:41.161003+00:00"
+  },
+  {
+   "video_id": "G-9Y2xNiDKQ",
+   "title": "Work with your team in ChatGPT Space",
+   "url": "https://www.youtube.com/watch?v=G-9Y2xNiDKQ",
+   "published": "2026-10-13T21:01:10+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "チームで共同作業できる新環境「ChatGPT Space」と文書作成機能「Pages」を紹介している。",
+    "チャットの会話内容から計画書などのページを自動生成し、メンバーとリアルタイムで共同編集できると説明している。",
+    "各メンバーのチャット履歴は非公開に保たれ、SlackやGoogle Driveとの自動同期設定も可能だと述べている。"
+   ],
+   "for_whom": "チームや同僚とChatGPTを活用してドキュメント作成や業務を進めたい会社員",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T23:05:41.161003+00:00"
+  },
+  {
+   "video_id": "N6K_pxaAh0w",
+   "title": "Block on Finding and Fixing Security Risks with OpenAI",
+   "url": "https://www.youtube.com/watch?v=N6K_pxaAh0w",
+   "published": "2026-10-13T17:59:33+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "BlockのCISOジェームズ・ネッテスハイム氏が、攻撃パターンの仮説を立てて連鎖的な脆弱性を分析するAIの能力を説明している。",
+    "ソフトウェア内の欠陥発見から担当者特定、修正パッチの提案、検証までをAIで支援できると語っている。",
+    "最終的なコードの適用は人間が判断しつつ、悪用される前に先手を打って対策できると述べている。"
+   ],
+   "for_whom": "セキュリティリスクの特定や修正作業にAIを取り入れたいセキュリティ担当者やエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T23:05:41.161003+00:00"
+  },
+  {
+   "video_id": "-OH1y7CjIew",
+   "title": "Coding on the go with Claude Code",
+   "url": "https://www.youtube.com/watch?v=-OH1y7CjIew",
+   "published": "2026-10-13T18:54:54+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude CodeのクラウドセッションはPCを閉じても仮想マシン上で作業が継続し、スマホからも操作できると説明している。",
+    "GitHub連携により専用ブランチで作業が行われ、複数セッションを同時に並行実行できると解説している。",
+    "スマホ上で差分確認やPR作成ができ、必要に応じてターミナルへセッションを引き継いで作業を続けられると紹介している。"
+   ],
+   "for_whom": "PCを閉じた状態や外出先でもAIにコーディング作業を進めさせたい開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T23:05:41.161003+00:00"
+  },
+  {
+   "video_id": "LVEfFyijQ2c",
+   "title": "Applying Gemini 4 for large-scale codebase maintenance in Chromium",
+   "url": "https://www.youtube.com/watch?v=LVEfFyijQ2c",
+   "published": "2026-10-13T16:38:17+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "description": "The Chromium codebase is millions of lines long and decades old. In the past, working with it has meant navigating decades of tangled features, where touching one component can unexpectedly affect another. Erik Chen, an engineer at Google, is using Gemini 4 Argon to ‘untangle’ the architecture. The model’s coding capabilities mean that multiple agents can work independently to refactor the codebase (all verified by Chromium's test suites and code reviews from engineers). With Gemini 4 Argon maintaining the codebase, Erik and his team can focus their attention on the future of Chromium.\n\nLearn more about Gemini 4 Argon: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "ftkic7Tdpcg",
+   "title": "Using Gemini 4 Argon to protect against Cyber attackers",
+   "url": "https://www.youtube.com/watch?v=ftkic7Tdpcg",
+   "published": "2026-10-13T16:38:14+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "description": "In shadow A/B testing on real-world systems, Wiz security researchers put Gemini 4 Argon to the test against complex cyber threats. Using its advanced reasoning and long-horizon capabilities, Gemini 4 Argon found over two times more vulnerabilities than baseline models and successfully uncovered critical risks—such as identifying a file download bypass and master key in healthcare software. By handling tireless, multi-step threat analysis and remediation, Gemini 4 gives defenders the crucial advantage needed to outpace attackers and protect sensitive data faster than ever before. \n\nLearn more about Gemini 4 Argon: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "9PICEmtfpWU",
+   "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+   "url": "https://www.youtube.com/watch?v=9PICEmtfpWU",
+   "published": "2026-10-13T15:58:20+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "description": "In an internal test, Google DeepMind robotics researchers instructed Gemini 4 Argon to watch a video of a human playing cornhole. Using its video understanding and advanced reasoning capabilities, Gemini 4 built a virtual simulation in MuJoCo and accurately calculated the physics and whole-body control required for Apptronik’s Apollo 2 humanoid to sink seven consecutive shots in the real world. This Video-to-Sim-to-Real pipeline compresses weeks of manual modeling into a few hours, transforming ordinary videos into an infinite training ground for physical AI.\n\nLearn more about Gemini 4 Argon: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "9jQA7IgPhBE",
+   "title": "Untangling 500-page chemistry patents with Gemini 4",
+   "url": "https://www.youtube.com/watch?v=9jQA7IgPhBE",
+   "published": "2026-10-13T15:58:17+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "description": "Auditing chemistry literature usually means weeks of manual, error-prone reading, where a molecule’s structure can sit 50 pages away from its experimental readout. At Isomorphic Labs, researchers Brian Bender and Santosh Adhikari are using Gemini 4 Argon’s multimodal capabilities to help tackle this early research bottleneck. The model synthesizes dense papers and extracts patent data into structured reports in an afternoon instead of a month, helping teams uncover connected insights faster.\n\nLearn more about Gemini 4 Argon: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
+   "first_seen": "2026-10-13T23:05:41.161003+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-13T14:32:16.573053+00:00",
+   "last_ok": "2026-10-13T23:05:41.161003+00:00",
    "fail_streak": 0
   }
  }
