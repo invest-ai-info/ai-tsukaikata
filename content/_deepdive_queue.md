@@ -325,15 +325,37 @@
       オーナーに一言確認を仰いでから確定させるのが、FIG・SynthID Bio・Playground のときの前例に
       合わせたやり方。
 
-- [ ] https://deepmind.google/blog/introducing-gemini-4-argon/
-  - 2026-10-13 自動追記（major・Google DeepMind「Gemini 4 Argon: Built to solve your hardest problems」）
+- [x] https://deepmind.google/blog/introducing-gemini-4-argon/
+  - →保管: ✅ **2026-10-13: 公開した** → `content/tools/gemini-4-argon-ga.md`
 - [ ] https://deepmind.google/blog/gemini-4-argon-for-robotics/
   - 2026-10-13 自動追記（minor・Google DeepMind「Gemini 4 Argon for Robotics」）
 
-- [ ] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
-  - 2026-10-13 自動追記（major・Google「Gemini 4 Argon: Built to solve your hardest problems」）
+- [x] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
+  - →保管: 302転送先がdeepmind.google側の行と同一ページ。重複執筆はせず`content/tools/gemini-4-argon-ga.md`に統合（2026-10-13）
 
 ## 処理済み
+
+- https://deepmind.google/blog/introducing-gemini-4-argon/ → **公開済み** content/tools/gemini-4-argon-ga.md（2026-10-13・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/` へ到達（200）。
+    同じ待ち行列に手で足されていた `blog.google` 側の行（転送先と同一URL）は重複として統合し、
+    こちらを正本として処理した。関連してGemini API公式モデルページ・公式料金ページ・
+    Claude Opus 5.5のモデル一覧／料金ページ・GPT-6 Astraのモデル／料金ページにも到達。
+    図3枚（`argon-ga-output-budget` / `argon-ga-price-deadline` / `argon-ga-vendor-match`）。
+    出典7件すべて取得成功。`check_numbers.py` は照合対象12個のうち**12個すべて出典に存在**。
+    pytest 785 passed・build 295ファイル。`check_readability.py` は60字以上1%（目安15%以下、最長65字）。
+  - 📌 記事の芯＝**9月30日にFairwind Program限定で発表されたGemini 4 Argonが、本日一般提供を開始した**。
+    前回記事で「公表されていない」とした一般公開の時期・価格の終了日（2026年11月30日）が判明した。
+  - 🔍 **宣伝文句「出力100万トークン」には条件がある**＝公式モデルページでは既定（同期呼び出し）の
+    出力上限は前のモデルと同じ65,536のままで、1,048,576まで出せるのは`long decode`という別機能を
+    使った場合だけ。この数字は入力と出力の合計上限（前のモデルは入力・出力が別々の表示だった）。
+    16倍（1,048,576÷65,536）はこの記事の計算で、前回記事の「約15.3倍」（丸めた「100万」との比較）を
+    公式の正確な値で計算し直した。
+  - 🔍 **値上がり後のArgon（入力$4・出力$20・キャッシュ$0.20）はClaude Opus 5.5と単価が完全一致**
+    （両社とも公式料金ページで確認）。導入価格（〜11/30）の間だけはOpus 5.5の半額。
+  - ⚠️ 仕様の比較は「コンテキストウィンドウ」の基準が3社で揃わないため、GPT-6 Astraの
+    入力922,000＋出力128,000＝1,050,000という内訳も含めて、各社のページの表示をそのまま書いた
+    （Argonが前のモデルの時点で別々だった入出力の表示を今回「統合」に変えたことが要点で、
+    3社の構造が同じだとは断定していない）。知識の締め切りはArgonのみ今も非公表。
 
 - https://www.anthropic.com/claude-haiku-5-5 → **公開済み** content/tools/claude-haiku-5-5.md（2026-10-08・公開）
   - `www.anthropic.com` に到達（200・素のUAで問題なく読める）。発表ページのRSCペイロードから

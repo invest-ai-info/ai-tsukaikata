@@ -33892,4 +33892,190 @@ def title_self_report_accuracy_chart() -> None:
 
 if __name__ == "__main__":
     title_density_repeat_chart()
+
+
+def argon_ga_output_budget_chart() -> None:
+    """Gemini 4 Argonの出力上限を、既定（同期呼び出し）とlong decode利用時で分ける。
+
+    出典＝Gemini API公式モデルページ（ai.google.dev・2026-10-13確認）の
+    「Max output: 65,536 (default synchronous), up to 1,048,576 (with long decode)」。
+    前のモデル（3.1 Pro Preview）の65,536も同ページの表記。
+    16倍はこの記事の計算（1,048,576÷65,536）。
+    """
+    rows = [
+        ("Gemini 3.1 Pro Preview（前のモデル）", 65_536, "bar-old"),
+        ("Gemini 4 Argon（既定・同期呼び出し）", 65_536, "bar-old"),
+        ("Gemini 4 Argon（long decode利用時・最大）", 1_048_576, "bar-new"),
+    ]
+    left, right = 272, 610
+    span = right - left
+    top, bar_h, pitch = 96, 22, 42
+    biggest = max(value for _, value, _ in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "既定の出力上限は、前のモデルと同じ65,536のまま</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「業界最高水準の100万トークン」はlong decodeという別機能を使った場合の値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "何もしなければ、1回の応答で生成できるトークン数は前のモデルから変わらない。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 6}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 6}">'
+            f"{value:,}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 38
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 22}">'
+        "※ 16倍はこの記事の計算（1,048,576 ÷ 65,536）。出典: Gemini API公式モデルページ。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 6}">'
+        "※ long decodeを使うほど、入力に使える枠は減る（1,048,576は入出力の合計）。</text>\n"
+    )
+    alt = (
+        "Gemini 3.1 Pro Previewの出力上限65,536トークン、"
+        "Gemini 4 Argonの既定（同期呼び出し）の出力上限65,536トークン、"
+        "Gemini 4 Argonのlong decode利用時の出力上限1,048,576トークンを比べた横棒グラフ。"
+        "long decode利用時は既定の16倍（この記事の計算）。既定のままでは前のモデルと変わらない。"
+    )
+    (OUT / "argon-ga-output-budget.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def argon_ga_price_deadline_chart() -> None:
+    """Gemini 4 Argonの導入価格と、2026年12月1日からの価格を入力・出力別に比べる。
+
+    出典＝GA発表ページの脚注（blog.google・2026-10-13）と、
+    Gemini API公式料金ページ（ai.google.dev）の両方が同じ日付「2026年11月30日」を明記。
+    """
+    rows = [("入力（100万トークンあたり）", 2, 4), ("出力（100万トークンあたり）", 10, 20)]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 86, 16, 6, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">値上がりの日付が判明：2026年11月30日まで</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝〜11月30日の導入価格、濃い色＝12月1日からの価格。</text>\n',
+        '<text class="t-sm" x="18" y="64">発表ページの脚注と公式料金ページの両方に同じ日付がある。</text>\n',
+    ]
+    for index, (name, before, after) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((before, "bar-old", "〜11/30"), (after, "bar-new", "12/1〜"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="198" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ キャッシュ済み入力は$0.10→$0.20（いずれも入力価格の95%引き）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: GA発表ページ脚注・Gemini API公式料金ページ（2026-10-13確認）。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argonの導入価格（入力2ドル・出力10ドル）と、"
+        "2026年12月1日からの価格（入力4ドル・出力20ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。値上がりの日付（2026年11月30日まで）は、"
+        "発表ページの脚注と公式料金ページの両方で確認できた。"
+    )
+    (OUT / "argon-ga-price-deadline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def argon_ga_vendor_match_chart() -> None:
+    """値上がり後のGemini 4 Argonと、Claude Opus 5.5・GPT-6 Astraの単価を比べる。
+
+    出典＝Argonは発表ページ・公式料金ページ、Claude Opus 5.5は platform.claude.com、
+    GPT-6 Astraは developers.openai.com（いずれも2026-10-13確認）。
+    """
+    rows = [
+        ("Gemini 4 Argon（〜2026年11月30日）", 2, 10),
+        ("Gemini 4 Argon（2026年12月1日から）", 4, 20),
+        ("Claude Opus 5.5（Anthropic最上位）", 4, 20),
+        ("GPT-6 Astra（OpenAI最上位）", 10, 50),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">値上がり後のArgonは、Claude Opus 5.5と同額になる</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。単価は各社の公式ページの数字（100万トークンあたり）。</text>\n',
+        '<text class="t-sm" x="18" y="64">2026年10月13日に確認。会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しない。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ 2026年12月1日からのArgonは、入力・出力ともClaude Opus 5.5と1円も違わない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 出典: Argonは発表ページ・公式料金ページ、他2社は各社の公式料金ページ。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argon（〜2026年11月30日・入力2ドル出力10ドル）、"
+        "Gemini 4 Argon（2026年12月1日から・入力4ドル出力20ドル）、"
+        "Claude Opus 5.5（入力4ドル出力20ドル）、GPT-6 Astra（入力10ドル出力50ドル）を"
+        "比べた横棒グラフ。100万トークンあたりのドル。"
+        "値上がり後のArgonはClaude Opus 5.5と単価が完全に一致する。"
+    )
+    (OUT / "argon-ga-vendor-match.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    argon_ga_output_budget_chart()
+    argon_ga_price_deadline_chart()
+    argon_ga_vendor_match_chart()
     title_self_report_accuracy_chart()

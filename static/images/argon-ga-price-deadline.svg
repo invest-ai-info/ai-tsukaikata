@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="260" viewBox="0 0 720 260" role="img" aria-label="Gemini 4 Argonの導入価格（入力2ドル・出力10ドル）と、2026年12月1日からの価格（入力4ドル・出力20ドル）を比べた横棒グラフ。100万トークンあたりのドル。値上がりの日付（2026年11月30日まで）は、発表ページの脚注と公式料金ページの両方で確認できた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="260"/>
+<text class="t-strong" x="18" y="26">値上がりの日付が判明：2026年11月30日まで</text>
+<text class="t-sm" x="18" y="45">薄い色＝〜11月30日の導入価格、濃い色＝12月1日からの価格。</text>
+<text class="t-sm" x="18" y="64">発表ページの脚注と公式料金ページの両方に同じ日付がある。</text>
+<text class="t" x="18" y="98">入力（100万トークンあたり）</text>
+<text class="t-xs" x="198" y="99">〜11/30</text>
+<rect class="bar-old" x="262" y="86" width="35.8" height="16" rx="2"/>
+<text class="t-sm" x="305.8" y="99">$2</text>
+<text class="t-xs" x="198" y="121">12/1〜</text>
+<rect class="bar-new" x="262" y="108" width="71.6" height="16" rx="2"/>
+<text class="t-sm" x="341.6" y="121">$4</text>
+<text class="t" x="18" y="162">出力（100万トークンあたり）</text>
+<text class="t-xs" x="198" y="163">〜11/30</text>
+<rect class="bar-old" x="262" y="150" width="179.0" height="16" rx="2"/>
+<text class="t-sm" x="449.0" y="163">$10</text>
+<text class="t-xs" x="198" y="185">12/1〜</text>
+<rect class="bar-new" x="262" y="172" width="358.0" height="16" rx="2"/>
+<text class="t-sm" x="628.0" y="185">$20</text>
+<text class="t-xs" x="18" y="234">※ キャッシュ済み入力は$0.10→$0.20（いずれも入力価格の95%引き）。</text>
+<text class="t-xs" x="18" y="252">※ 出典: GA発表ページ脚注・Gemini API公式料金ページ（2026-10-13確認）。</text>
+</svg>
