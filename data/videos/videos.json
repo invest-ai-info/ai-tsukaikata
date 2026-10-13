@@ -254,19 +254,6 @@
    "summarized_at": "2026-10-12T06:28:05.266827+00:00"
   },
   {
-   "video_id": "6wNqpZdHE_s",
-   "title": "GPT-6 Astra in practice: Turning ideas into projects",
-   "url": "https://www.youtube.com/watch?v=6wNqpZdHE_s",
-   "published": "2026-09-28T18:05:42+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "See what members of the OpenAI Developer Experience team are building with Astra, from a YouTube thumbnail generator and visual learning tools to music workflows, a hardware prototype, and a tactical RPG. The team shares how Astra helps them turn loosely defined ideas into working projects, navigate complex software, and work through the details along the way.",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "bVXiNb9RyyI",
    "title": "How an Anthropic designer uses Claude Slides",
    "url": "https://www.youtube.com/watch?v=bVXiNb9RyyI",
@@ -311,19 +298,6 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-04T21:53:17.715145+00:00"
-  },
-  {
-   "video_id": "s5nkj-L2vAw",
-   "title": "Introducing Claude Sonnet 5.5",
-   "url": "https://www.youtube.com/watch?v=s5nkj-L2vAw",
-   "published": "2026-09-28T18:04:19+00:00",
-   "channel_key": "claude",
-   "channel_name": "Claude（Anthropic 公式）",
-   "default_category": "news",
-   "description": "Claude Sonnet 5.5 runs more than 30% faster than Sonnet 5 and writes more clearly, so it’s well suited to quick back-and-forth on the things you do most.\n\nWhere Claude Opus 5.5 is built for complex work requiring careful judgment, Sonnet 5.5 is strongest at well-scoped everyday tasks, fixing bugs, and creating polished documents, slides, and spreadsheets. It also has a strong eye for design.\n\nSonnet 5.5 is available everywhere today, and Claude Haiku 5.5 will join the family in the coming weeks. Read more at https://www.anthropic.com/claude-sonnet-5-5",
-   "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
   },
   {
    "video_id": "HIUzrxQxTtw",
@@ -437,10 +411,20 @@
    "channel_key": "greg-isenberg",
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
-   "description": "In this solo episode, I break down the $5 trillion wave of small businesses set to change hands as their owners retire, and why AI agents make this wave a real opening for solo founders. I walk through how Thrive Holdings and General Catalyst buy accounting firms, property managers, and support centers, then run AI agents inside them to lift margins. Then I show how I'd run a one-person holding company: the folder structure, the agent files, the human approval rule, and my average week. I close with the strongest arguments against AI roll-ups, including the one I take most seriously.\n\nTimestamps\n\n00:00 – Intro\n01:52 – Why the $5 Trillion Shift Is Happening Now\n04:52 – Examples: Thrive Holdings& General Catalyst\n08:38 – The Fund Playbook\n10:07 – The Small-Deal Gap\n10:51 – The One-Person Holdco\n14:23 – The Folder Structure\n16:47 – The Agent Pipeline\n18:38 – Inside a Reviewer Agent File\n19:41 – My Week Running the Holdco\n21:49 – How to Land the First Business\n22:24 – Arguments Against AI Roll-Ups\n27:43 – Closing Thoughts\n\nKey Points\n\n• About a million small businesses, part of a $5 trillion shift, are set to sell by 2035 as owners retire (McKinsey).\n• AI agents now handle the work these firms run on: data entry, document chasing, status updates, and first drafts.\n• The big funds chase bigger deals, which leaves the small firms open for solo founders and small teams.\n• A one-person holdco runs on shared agents and rules, plus a GM with real upside at each business.\n• A person app",
    "first_seen": "2026-10-02T05:58:54.988105+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "引退期を迎える中小企業を個人が買収し、AIエージェントで業務を効率化して利益率を高めるロールアップ手法を解説している。",
+    "大手ファンドが狙わない小規模企業を対象に、共通のAI基盤やエージェント構築用フォルダ構成を整えて運営する方法を提案している。",
+    "AIが下書きを作成し人間が承認・送信する仕組みや、現場のGMに成果配分を渡すことで信頼関係を維持する体制を説明している。"
+   ],
+   "for_whom": "AIを活用した中小企業の買収や事業承継ビジネスに関心がある個人起業家",
+   "caution": "5兆ドル規模の市場機会や利益率改善を説明していますが、紹介されている数値の一部は企業側の自己申告であり、不況期での実績が未検証である点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T00:57:11.414768+00:00"
   },
   {
    "video_id": "Bk7wTz7I-Mw",
@@ -2753,91 +2737,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-12T16:02:25.718055+00:00"
+  },
+  {
+   "video_id": "taYd1RTzq1U",
+   "title": "【徹底解説】Metaの最先端モデル『Muse Wonder』公開！長い開発と記憶で Opus 5.5 超え！？ 一方で3Dに弱い等の指摘も【AI解説】",
+   "url": "https://www.youtube.com/watch?v=taYd1RTzq1U",
+   "published": "2026-10-12T22:17:47+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-13T00:57:11.414768+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Metaが発表したMuse Wonderは、長時間の開発や文脈の記憶力においてClaude Opus 5.5を上回る性能を持つと解説している。",
+    "一方で、短いコーディングや画面操作、3D表現などの作業ではOpus 5.5に劣るため、用途ごとの使い分けが必要だと説明している。",
+    "開発ツールMuse Codeは初期設定で入力内容がAI学習に利用される仕様のため、業務利用時は設定をオフにすべきだと注意を促している。"
+   ],
+   "for_whom": "最新AIモデルの性能比較やコーディング業務での最適な使い分けを知りたい開発者や会社員",
+   "caution": "動画の最後や概要欄で、有料のnoteメンバーシップ（コミュニティ）への加入案内や勉強会への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T00:57:11.414768+00:00"
+  },
+  {
+   "video_id": "IZXv6a78NDw",
+   "title": "Code review is no longer the bottleneck",
+   "url": "https://www.youtube.com/watch?v=IZXv6a78NDw",
+   "published": "2026-10-12T16:00:08+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-13T00:57:11.414768+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Codexが複数リポジトリのPRやレビューを一元管理できる「Code Review」機能を発表したと紹介している。",
+    "AIによる自動レビューやチャットでのリスク分析、チーム指針に沿ったコメント作成が可能だと説明している。",
+    "GitHub向けコードレビュー機能は一般提供され、GitLab向けはプレビュー版であると伝えている。"
+   ],
+   "for_whom": "プルリクエストのコードレビュー業務をAIで効率化・自動化したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T00:57:11.414768+00:00"
+  },
+  {
+   "video_id": "C4Sq3Rot8FU",
+   "title": "AI Labs Warn Race Makes Breach ‘Inevitable’",
+   "url": "https://www.youtube.com/watch?v=C4Sq3Rot8FU",
+   "published": "2026-10-12T22:52:31+00:00",
+   "channel_key": "ai-explained",
+   "channel_name": "AI Explained",
+   "default_category": "news",
+   "first_seen": "2026-10-13T00:57:11.414768+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "主要AIラボ幹部らが重大なAI事故やセキュリティ侵害のリスクを警告していると紹介している",
+    "開発競争や経済的リターン、対中国の懸念から各社が開発ペースを落とせない現状を解説している",
+    "数学的ブレイクスルーや研究自動化の進展により今後の予測が極めて困難だと説明している"
+   ],
+   "for_whom": "AIの最新動向や安全性リスク、業界の競争状況に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-13T00:57:11.414768+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "keito": {
    "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
    "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-12T16:02:25.718055+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-12T16:02:25.718055+00:00",
+   "last_ok": "2026-10-13T00:57:11.414768+00:00",
    "fail_streak": 0
   }
  }
