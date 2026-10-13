@@ -5633,20 +5633,6 @@
       "uid": "62f49d80d26acfec",
       "url": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "ELYZA note",
-      "published": "2026-07-15T01:00:02+00:00",
-      "source_id": "elyza-note",
-      "summary": "【Profile】藤田 登 Noboru Fujita 経営システム工学を学んだ後、日本IBMで会計領域のシステム導入、SAS Institute Japanでデータ活用・分析プロジェクトに携わる。 構造化データの分析やAI活用の経験を通じて、自然言語処理による「課題認識」の可能性に関心を深め、ELYZAへ入社。 現在は、ソリューション事業部 AIインテグレーショングループのマネジャーとして、L…",
-      "summary_ja": "AIインテグレーショングループの仕事が紹介された。\nマネージャー藤田氏の経歴から、自然言語処理による課題認識に注目。",
-      "summary_source": "gemini",
-      "title": "「課題解決」から「課題発見」へ。顧客と向き合い続けるAIインテグレーショングループの仕事。",
-      "uid": "917c6476aecbbd59",
-      "url": "https://note.com/elyza/n/n2a6863c6dcc9",
-      "vendor": "ELYZA"
     }
   ]
 }
