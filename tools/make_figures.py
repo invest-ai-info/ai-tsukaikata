@@ -33718,3 +33718,178 @@ def manual_stated_vs_unstated_chart() -> None:
 if __name__ == "__main__":
     manual_reason_fabrication_chart()
     manual_stated_vs_unstated_chart()
+
+
+def title_density_repeat_chart() -> None:
+    """切り口方式(kadou)と素朴(naive)の密度%を、全14回ぶん昇順に並べる。
+
+    実測2026-10-13。先行記事(title-brainstorm-real-count)の既存3回
+    （note素朴35%・Kindle素朴36%・note切り口86%）に、新規11回を追加。
+    """
+    rows = [
+        ("素朴　note（既存）", 35.0, "bar-old"),
+        ("素朴　Kindle（既存）", 36.0, "bar-old"),
+        ("素朴　Kindle 1回目", 43.0, "bar-old"),
+        ("素朴　note 2回目", 44.4, "bar-old"),
+        ("素朴　Kindle 3回目", 46.5, "bar-old"),
+        ("素朴　note 1回目", 52.5, "bar-old"),
+        ("切り口　note 2回目", 58.0, "bar-new"),
+        ("素朴　note 3回目", 59.0, "bar-old"),
+        ("素朴　Kindle 2回目", 67.0, "bar-old"),
+        ("切り口　note 3回目", 84.0, "bar-new"),
+        ("切り口　note（既存）", 86.0, "bar-new"),
+        ("切り口　Kindle 1回目", 86.0, "bar-new"),
+        ("切り口　Kindle 2回目", 92.0, "bar-new"),
+        ("切り口　Kindle 3回目", 94.0, "bar-new"),
+    ]
+    label_x, label_w = 18, 150
+    plot_x = label_x + label_w + 10
+    plot_w = WIDTH - plot_x - 60
+    axis_max = 100
+
+    def px(value: float) -> float:
+        return plot_x + value / axis_max * plot_w
+
+    top = 100
+    row_h, row_gap = 20, 6
+    row_y = [top + i * (row_h + row_gap) for i in range(len(rows))]
+
+    overlap_lo, overlap_hi = 58.0, 67.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "切り口方式は平均では濃いが、1回ずつ見ると素朴方式と重なる帯がある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "先行記事の3回（note/Kindleで素朴35〜36%・切り口86%）に、新規11回を追加した計14回。濃い色＝切り口。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "横軸は実質の種類数÷件数（%）。架空のnote記事テーマ・Kindle本テーマで、difflibのクラスタ数で機械判定。</text>\n",
+        f'<rect class="box-accent" x="{px(overlap_lo):.1f}" y="{top - 10}" '
+        f'width="{px(overlap_hi) - px(overlap_lo):.1f}" height="{row_y[-1] + row_h - top + 16}" '
+        f'rx="4" opacity="0.5"/>\n',
+    ]
+    for i in (0, 20, 40, 60, 80, 100):
+        parts.append(
+            f'<text class="t-xs" x="{px(i):.1f}" y="{top - 16}" text-anchor="middle">{i}%</text>\n'
+        )
+    for label, value, cls in rows:
+        y = row_y[rows.index((label, value, cls))]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 4:.0f}" '
+            f'style="font-size:11.5px">{_esc(label)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{plot_x}" y="{y}" width="{plot_w:.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{plot_x}" y="{y}" '
+            f'width="{max(px(value) - plot_x, 3):.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{px(value) + 6:.1f}" y="{y + row_h / 2 + 4:.0f}">{value:g}%</text>\n'
+        )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        "※ 濃い帯（58〜67%）では、切り口方式の最低値が素朴方式の最高値より低い。",
+        "1回だけの比較だと、運が悪いと逆の結果が出る。",
+    ]
+    box_h = 18 * len(notes) + 14
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 19 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    height = y + 4
+    alt = (
+        "切り口を割る方式（濃い色）と素朴に「100個出して」と頼む方式（薄い色）の、"
+        "実質の種類数÷件数（%）を、架空のnote記事テーマとKindle本テーマで計14回試した結果を昇順に並べた横棒グラフ。"
+        "素朴方式は35%・36%・43%・44.4%・46.5%・52.5%・59%・67%の8回で、"
+        "切り口方式は58%・84%・86%・86%・92%・94%の6回。"
+        "58%から67%の帯では、切り口方式の最低値（58%）が素朴方式の最高値（67%）より低く、両方式が重なっている。"
+        "下の注記には、1回だけの比較だと運が悪いと逆の結果が出ることが書かれている。"
+    )
+    (OUT / "title-density-repeat.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def title_self_report_accuracy_chart() -> None:
+    """AI自身に「実質何種類か」を数えさせたときの、自己申告と機械判定の差。"""
+    rows = [
+        ("2回ぶんを比べて数えさせた", 62.5, 58, "62〜65", "58"),
+        ("1回ぶんだけを自分で見直させた", 5, 43, "5", "43"),
+    ]
+    label_x, label_w = 18, 280
+    plot_x = label_x + label_w + 10
+    plot_w = WIDTH - plot_x - 20
+    axis_max = 90
+
+    def px(value: float) -> float:
+        return plot_x + value / axis_max * plot_w
+
+    top = 110
+    row_h, row_gap = 42, 30
+    row_y = [top + i * (row_h * 2 + row_gap) for i in range(len(rows))]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "自己申告の数字は、聞き方によって当たることもあれば大きく外れることもある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ「実質何種類か」という質問でも、2回ぶんを比べさせたときと、1回ぶんだけを見直させたときで結果が違う。</text>\n",
+        '<text class="t-xs" x="18" y="64">'
+        "機械判定＝difflibのクラスタ数（threshold 0.5）。実測2026-10-13。</text>\n",
+    ]
+    for i, (label, self_val, real_val, self_label, real_label) in enumerate(rows):
+        y = row_y[i]
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y + row_h / 2 + 4:.0f}">自己申告</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{plot_x}" y="{y}" width="{plot_w:.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-old" x="{plot_x}" y="{y}" '
+            f'width="{max(px(self_val) - plot_x, 3):.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{px(self_val) + 8:.1f}" y="{y + row_h / 2 + 4:.0f}">{_esc(self_label)}</text>\n'
+        )
+        y2 = y + row_h + 8
+        parts.append(
+            f'<text class="t-sm" x="{label_x}" y="{y2 + row_h / 2 + 4:.0f}">機械判定</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-quiet" x="{plot_x}" y="{y2}" width="{plot_w:.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{plot_x}" y="{y2}" '
+            f'width="{max(px(real_val) - plot_x, 3):.1f}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{px(real_val) + 8:.1f}" y="{y2 + row_h / 2 + 4:.0f}">{_esc(real_label)}件</text>\n'
+        )
+
+    y = row_y[-1] + row_h * 2 + row_gap - 4
+    note = "※ 2回を比べさせると近い数字が出たが、1回だけの見直しは切り口の数（5）で止まった。"
+    box_h = 36
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 23}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    height = y + 4
+    alt = (
+        "AIに「実質何種類か」を数えさせたときの自己申告と、difflibによる機械判定を比べた図。"
+        "「2回ぶんを比べて数えさせた」場合、自己申告は62〜65（中央値62.5）、機械判定は58件で、近い数字だった。"
+        "「1回ぶんだけを自分で見直させた」場合、自己申告は5、機械判定は43件で、自己申告は作らせたときの"
+        "切り口の数（5つ）をそのまま答えただけで、実際の種類数とは大きくかけ離れていた。"
+        "下の注記には、2回を比べさせると近い数字が出たが、1回だけの見直しは切り口の数で止まったことが書かれている。"
+    )
+    (OUT / "title-self-report-accuracy.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    title_density_repeat_chart()
+    title_self_report_accuracy_chart()
