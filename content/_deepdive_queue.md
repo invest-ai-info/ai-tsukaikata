@@ -325,6 +325,11 @@
       オーナーに一言確認を仰いでから確定させるのが、FIG・SynthID Bio・Playground のときの前例に
       合わせたやり方。
 
+- [ ] https://deepmind.google/blog/introducing-gemini-4-argon/
+  - 2026-10-13 自動追記（major・Google DeepMind「Gemini 4 Argon: Built to solve your hardest problems」）
+- [ ] https://deepmind.google/blog/gemini-4-argon-for-robotics/
+  - 2026-10-13 自動追記（minor・Google DeepMind「Gemini 4 Argon for Robotics」）
+
 ## 処理済み
 
 - https://www.anthropic.com/claude-haiku-5-5 → **公開済み** content/tools/claude-haiku-5-5.md（2026-10-08・公開）
