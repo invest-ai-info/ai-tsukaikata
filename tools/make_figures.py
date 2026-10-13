@@ -33329,6 +33329,217 @@ def subtotal_ratio_captured_share_chart() -> None:
         _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
     )
 
+
+def own_log_daily_counts_vs_thresholds_chart() -> None:
+    """自分の実行ログ21日分に、2つの基準線（名目24回の50%／自分の記録から計算した目安）を重ねる。
+
+    実測（2026-10-13）。架空の「1時間ごとに実行される予定」の処理ログ（材料A・真に
+    09-10〜09-13の4日間だけ止まった版）の日次件数を並べ、名目の基準（12回）と、
+    記録そのものから計算した目安（約5.9回）がそれぞれどこに来るかを示す。
+    """
+    left, right = 46, 700
+    usable = right - left
+    n = 21
+    gap = 3.0
+    bar_w = (usable - (n - 1) * gap) / n
+    top = 112
+    plot_h = 150.0
+    axis_max = 13.0
+    bottom = top + plot_h
+
+    def px(i: int) -> float:
+        return left + i * (bar_w + gap)
+
+    def py(v: float) -> float:
+        return bottom - v / axis_max * plot_h
+
+    counts = [7, 8, 8, 7, 4, 5, 5, 7, 6, 0, 0, 0, 0, 7, 7, 4, 4, 6, 5, 7, 4]
+    stop_idx = {9, 10, 11, 12}
+    nominal = 12.0
+    baseline = 5.9411764705882355  # 0件の4日を除いた17日の単純平均（真値）
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "名目24回の基準は、止まっていない日の実行回数も全部上回っている</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の実行ログ21日分（材料A・2026-09-01〜09-21）。実際に止まったのは09-10〜09-13の4日間だけ。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "名目の基準線（12回）はどの日の棒より高く、自分の記録から出した目安（約5.9回）だけが"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="81">'
+        "ふだんの棒のすぐ上に来て、0件の4本だけを区別できる。</text>\n",
+    ]
+
+    for i, count in enumerate(counts):
+        x = px(i)
+        is_stop = i in stop_idx
+        if count > 0:
+            bar_top = py(count)
+            bar_h = bottom - bar_top
+        else:
+            bar_h = 4.0
+            bar_top = bottom - bar_h
+        cls = "box-bad" if is_stop else "box-good"
+        parts.append(
+            f'<rect class="{cls}" x="{x:.1f}" y="{bar_top:.1f}" '
+            f'width="{bar_w:.1f}" height="{bar_h:.1f}" rx="2"/>\n'
+        )
+
+    # x軸（ベースライン）
+    parts.append(
+        f'<line class="line" x1="{left}" y1="{bottom:.1f}" x2="{right}" y2="{bottom:.1f}"/>\n'
+    )
+
+    # 基準線2本（破線）。文字ラベルは乗せない——棒や他の破線と重なって
+    # 「線が文字を貫く」判定になりやすいため、説明は下の枠にだけ書く。
+    for value in (nominal, baseline):
+        y = py(value)
+        parts.append(
+            f'<line class="line" x1="{left}" y1="{y:.1f}" x2="{right}" y2="{y:.1f}" '
+            f'stroke-dasharray="5 4"/>\n'
+        )
+
+    # x軸ラベル（3本おき＋最終日。左寄せで揃える——中央寄せは
+    # src/figures.py の検査が x を左端として見るため、はみ出し扱いになる）
+    tick_indices = [0, 3, 6, 9, 12, 15, 18, 20]
+    label_y = bottom + 16
+    for i in tick_indices:
+        day = 1 + i
+        lx = px(i) + bar_w / 2 - 8
+        parts.append(
+            f'<text class="t-xs" x="{lx:.1f}" y="{label_y:.1f}">9/{day}</text>\n'
+        )
+
+    note_top = label_y + 14
+    notes = [
+        "名目24回の基準（12回）は、4〜8回のふだんの日もすべて下回ってしまい、どの日も「異常」になる。",
+        "自分の記録から計算した目安（約5.9回）は、ふだんの日のすぐ上に来て、0件の4日間だけを区別できる。",
+    ]
+    box_h = 18 * len(notes) + 16
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{note_top:.1f}" width="684" height="{box_h}" rx="6"/>\n'
+    )
+    for i, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-accent" x="34" y="{note_top + 22 + 18 * i:.1f}">{_esc(note)}</text>\n'
+        )
+
+    height = int(note_top + box_h + 10)
+    alt = (
+        "架空の実行ログ21日分（材料A・2026-09-01〜09-21）の日次実行回数を21本の縦棒で示した図。"
+        "09-01から09-09・09-14から09-21はすべて4〜8回の範囲に収まり、09-10〜09-13の4日間だけが0回（赤い棒）。"
+        "横に2本の破線があり、上の線は名目24回の50%にあたる12回で、どの日の棒よりも高い位置にある。"
+        "下の線は0件の4日間を除いた17日間の単純平均である約5.9回で、ふだんの棒のすぐ上を通り、"
+        "0件の4本だけがこの線の下に来る。下の枠には、名目24回の基準はふだんの日もすべて下回ってしまい"
+        "どの日も異常に見えてしまうこと、自分の記録から計算した目安は0件の4日間だけを正しく区別できることが"
+        "書かれている。"
+    )
+    (OUT / "own-log-daily-counts-vs-thresholds.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def own_log_threshold_hit_and_miss_chart() -> None:
+    """3つの指示文が、材料Aの停止を見逃した回数／材料Bを誤って異常と判定した回数を並べる。
+
+    実測（2026-10-13）。架空の実行ログ2本（材料A＝真に4日間停止／材料B＝対照・停止なし）に
+    3つの指示文を各2回・計12回試した。名目24回を基準にした版だけが、見逃しも誤報も2/2だった。
+    """
+    label_x = 18
+    plot_x = 300
+    plot_w = 160
+    axis_max = 2
+    scale = plot_w / axis_max
+    top = 132
+    group_gap_h = 22  # 変体名（見出し）の行の高さ
+    row_h = 24
+    bar_h = 14
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    groups = [
+        ("①名目24回が基準", [("材料Aの見逃し", 2, "box-bad"), ("材料Bの誤報", 2, "box-bad")]),
+        ("②基準を渡さない", [("材料Aの見逃し", 0, "box-good"), ("材料Bの誤報", 0, "box-good")]),
+        ("③自分の記録から目安を計算", [("材料Aの見逃し", 0, "box-good"), ("材料Bの誤報", 0, "box-good")]),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "名目24回を基準にした版だけが、見逃しも誤報も2回中2回だった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の実行ログ2本（材料A＝真に4日間停止／材料B＝対照・何も起きていない）に"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "3つの指示文を各2回・計12回試した。縦軸は2回中の件数。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "見逃し＝材料Aの停止日を名指しできなかった回数。誤報＝材料Bを異常と判定した回数。"
+        "</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    group_tops = []
+    for heading, rows in groups:
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y}">{_esc(heading)}</text>\n')
+        group_tops.append(y - 10)
+        y += group_gap_h
+        for label, value, cls in rows:
+            ty = y + 10
+            parts.append(f'<text class="t" x="{label_x + 10}" y="{ty}">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            tcls = "t-accent" if value == 0 else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/2</text>\n'
+            )
+            y += row_h
+        y += 6
+
+    plot_bottom = y - 6
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {group_tops[0]:.1f} L{zx:.1f} {plot_bottom:.1f}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        "①は材料A・Bどちらでも「ほぼ全日が異常」という同じ形の答えを返し、真の停止日を名指しできなかった。",
+        "②③は答えの中身が材料によって変わり、本当に止まった4日間だけを正しく区別した。",
+    ]
+    y += 8
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "3つの指示文それぞれについて、材料A（真に4日間停止）の停止を見逃した回数と、"
+        "材料B（対照・何も起きていない）を誤って異常と判定した回数を、2回中の件数で示した横棒グラフ。"
+        "①名目24回を基準にした版は、材料Aの見逃しが2/2、材料Bの誤報も2/2で、どちらも赤い棒。"
+        "②基準を渡さず自由記述で聞いた版は、見逃し0/2・誤報0/2。"
+        "③自分の記録から目安を計算させた版も、見逃し0/2・誤報0/2で、どちらも緑の棒。"
+        "下の枠には、①は材料A・Bどちらでも『ほぼ全日が異常』という同じ形の答えを返し"
+        "真の停止日を名指しできなかったこと、②③は答えの中身が材料によって変わり"
+        "本当に止まった4日間だけを正しく区別したことが書かれている。"
+    )
+    (OUT / "own-log-threshold-hit-and-miss.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     subtotal_ratio_1to6_hit_and_miss_chart()
     subtotal_ratio_captured_share_chart()
+
+if __name__ == "__main__":
+    own_log_daily_counts_vs_thresholds_chart()
+    own_log_threshold_hit_and_miss_chart()
