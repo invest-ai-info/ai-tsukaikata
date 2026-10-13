@@ -46,6 +46,45 @@
 
 ## 記録
 
+### 2026-10-13 21:00（レシピ担当の回）
+- 公開: 2本（`recipes/manual-impact-column-invents-reasons` / `recipes/title-brainstorm-density-does-not-hold-across-repeats`）
+- ⚠️ **手順の誤り（自己申告）＝副業の節（`### 副業`、`content/_recipe_queue.md:1108`〜`:1897`）の範囲を
+  最初に取り違えた。**冒頭の `### 副業` から次の `## 処理済み`（:1898）までが節の全体だと
+  見ていなかったため、1本目（manual-impact-column-invents-reasons）は副業の節を読み切る前に
+  一般の待ち行列（:570）から選んでしまった。節の全体を読み直して気づき、2本目は副業の節の
+  未処理（⏸を除く）上位1件（切り口方式の再現性チェック＝H42）を公開した。副業の節はこの時点で
+  ⏸2件を除いて未処理5件が残っている（上から：見本の文章の文体再現／分割払いの同時2件未入金／
+  キャンセル返金の取り違え／納品物の著作権／数字抽出の2段階方式）。**ノルマの3本には届いていない**
+  （1本しか副業から出せなかった）
+- 実測1（manual-impact-column-invents-reasons）: Agentツール `claude`（共有コンテキストの無い
+  新規サブエージェントを毎回1回だけ呼び出し）。架空の月次作業の説明文（4つの細則入り）を
+  そのまま「マニュアルにして」と3回変換→細則は3回とも全部残った（12/12）。手順表に
+  「やらないとどうなるか」列を足すと、理由が本文に無い3手順に3回とも全部作り話の理由が付いた
+  （9/9）。「無ければ理由は書かれていませんと書いて」を足すと2回とも0/9に直った。
+  計13回（基本変換3+分割見出し変換3+列追加3+ガード付き列追加2+自己見直し1+出典照合1）。
+  詳細は `docs/evidence/manual-impact-column-invents-reasons.md`
+- 実測2（title-brainstorm-density-does-not-hold-across-repeats）: 同Agentツール。先行記事
+  `title-brainstorm-real-count`の1回だけの比較（密度86%対35〜36%）を、同じ2テーマ
+  （note記事・Kindle本）で11回追加。素朴方式は35〜67%・切り口方式は58〜94%に散らばり、
+  58〜67%の帯で両方式が重なった。平均（切り口83%・素朴48%）では向きは崩れなかった。
+  副産物＝AI自身に「実質何種類か」を数えさせると、1回ぶんの見直しでは切り口の見出し数（5）を
+  そのまま返して機械判定（43件）の88%過少、2回ぶんを比べさせると機械判定（58件）に近い数字
+  （60〜65件）が返った。クラスタリングは先行記事と同一のPython判定（`difflib`しきい値0.5・
+  貪欲法）で自分で再実装して検証済み。詳細は
+  `docs/evidence/title-brainstorm-density-does-not-hold-across-repeats.md`
+- 重複確認: `grep -h '^## ' content/recipes/*.md`（既定の5ブロック見出し以外に重複なし）に加え、
+  `マニュアル`・`手順書`・`タイトル案`・`切り口`で既存記事をgrep確認。`try-the-runbook`
+  （検証）・`teaching-ai-runbook-stops-where`（教える講座）とは軸が違うことを確認（前者から
+  相互リンクを追加）。`title-brainstorm-real-count`は直接の先行記事として内部リンクした
+- 新しい教訓＝台帳★258（やらないとどうなるか列は理由の無い手順に作り話を作る）・
+  ★259（1回の実測の一般化は、再現させると向きは合うが値は信じられない）を新規追加
+- 図＝`manual-reason-fabrication.svg`・`manual-stated-vs-unstated.svg`・
+  `title-density-repeat.svg`・`title-self-report-accuracy.svg`の4枚を新規作成
+  （`tools/make_figures.py`に追記。崩れ検査は2回とも一発では通らず、文字のはみ出しを
+  2件・2件直してから通した）
+- 残した宿題＝副業の節の残り5件は次の担当へ。改稿枠（`auto-health-check`）には今夜は
+  着手していない（副業優先のため）
+
 ### 2026-10-13（自動化・ループ優先の枠。専任の別ルーティン）
 - 公開: 1本（`recipes/own-average-catches-it-schedule-count-misses-it`。`### 自動化・ループ優先`
   節の未処理先頭「自分の実行ログそのものを見張らせると、起動が途絶えたことに気づけるか」を公開。
