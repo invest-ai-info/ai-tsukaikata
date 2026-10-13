@@ -33543,3 +33543,178 @@ if __name__ == "__main__":
 if __name__ == "__main__":
     own_log_daily_counts_vs_thresholds_chart()
     own_log_threshold_hit_and_miss_chart()
+
+
+def manual_reason_fabrication_chart() -> None:
+    """「やらないとどうなるか」欄を足すと、理由が書かれていない3つの手順に
+
+    作り話の理由が付くか。架空の月次作業の説明文（実測2026-10-13）で、
+    理由が書かれていないと確かめた3手順（件名統一・控えの保存・Slack投稿）だけを見る。
+    条件Aは理由を考えて埋めるよう促していない版、条件Bは「書かれていなければ
+    『理由は書かれていません』と書いて」を足した版。
+    """
+    cols = ["件名の統一", "控えのフォルダ保存", "Slackへの投稿"]
+    rows = [
+        ("条件A　1回目", ["作り話", "作り話", "作り話"]),
+        ("条件A　2回目", ["作り話", "作り話", "作り話"]),
+        ("条件A　3回目", ["作り話", "作り話", "作り話"]),
+        ("条件B　1回目", ["書かれていません", "書かれていません", "書かれていません"]),
+        ("条件B　2回目", ["書かれていません", "書かれていません", "書かれていません"]),
+    ]
+    label_x, label_w = 18, 150
+    col_w, col_gap = 160, 10
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(len(cols))]
+    head_y = 100
+    row_h, row_gap = 34, 10
+    row_y = [head_y + 26 + i * (row_h + row_gap) for i in range(len(rows))]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「やらないとどうなるか」欄を足すと、理由が書かれていない3手順は3/3・3/3・3/3で作り話になった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "月次の請求書発行を説明した架空の文章に、本文には理由が書かれていない手順が3つある。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "条件Aはそのまま列を足した版（3回）、条件Bは「書かれていなければ正直に言って」を足した版（2回）。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。</text>\n",
+    ]
+    for i, name in enumerate(cols):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 14}">{_esc(name)}</text>\n'
+        )
+    for r, (label, values) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12px">{_esc(label)}</text>\n'
+        )
+        for c, value in enumerate(values):
+            bad = value == "作り話"
+            klass = "box-bad" if bad else "box-good"
+            tone = "t-bad" if bad else "t-good"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + 14}" y="{y + row_h / 2 + 5:.0f}" '
+                f'style="font-size:12.5px">{_esc(value)}</text>\n'
+            )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        ("t-bad", [
+            "※ 条件Aの「作り話」は回ごとに中身が違う",
+            "（Slack投稿の理由だけで「ダブルチェックの機会を失う」",
+            "「進捗を把握できない」「リアルタイムで把握できない」の3通り）。",
+            "本文に無い理由なら、回ごとに割れるのが自然。",
+        ]),
+        ("t-good", [
+            "※ 条件Bは9マスとも作り話が0件。",
+            "理由が書いてある1手順（月末メンテナンス）だけは、2回とも本文のとおりに正しく書いた。",
+        ]),
+    ]
+    for css, lines in notes:
+        for line in lines:
+            parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(line)}</text>\n')
+            y += 19
+
+    height = y + 8
+    alt = (
+        "手順表に「やらないとどうなるか」列を足す頼み方を2条件で試し、"
+        "本文に理由が書かれていない3手順（件名の統一・控えのフォルダ保存・Slackへの投稿）について、"
+        "作り話の理由が付いたか「書かれていません」と正直に書いたかを、5回ぶん並べた表。"
+        "条件A（そのまま列を足した3回）は、3手順とも3回とも全部「作り話」。"
+        "条件B（『書かれていなければ理由は書かれていませんと書いて』を足した2回）は、"
+        "3手順とも2回とも全部「書かれていません」。"
+        "下の注記には、条件Aの作り話はSlack投稿の理由だけでも回ごとに中身が違う3通りの説明文になったこと、"
+        "条件Bは9マスとも作り話が0件で、理由が書いてある1手順（月末メンテナンス）だけは"
+        "本文のとおりに正しく書いたことが書かれている。"
+    )
+    (OUT / "manual-reason-fabrication.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def manual_stated_vs_unstated_chart() -> None:
+    """同じ説明文の中で、理由が書いてあるルールは1つだけで、残り4つは
+
+    「ルールがある」としか書いていない、を示す図。
+    """
+    left_x, left_w = 18, 320
+    right_x = left_x + left_w + 24
+    right_w = WIDTH - right_x - 18
+    top = 90
+    row_h = 34
+
+    left_items = [
+        "月の最終営業日は15時までに作業を終える",
+    ]
+    left_reason_lines = [
+        "→ 本文に理由が明記されている：",
+        "「15時以降はシステムが",
+        "メンテナンスで使えなくなる」",
+    ]
+    right_items = [
+        "初回ログインは上長への申請が必要",
+        "20万円超は経理部長の確認メールをもらう",
+        "控えをフォルダに保存する",
+        "控えをSlackの#keiri-logにも貼る",
+    ]
+
+    left_box_h = row_h * len(left_items) + 20 + 18 * len(left_reason_lines) + 14
+    right_box_h = row_h * len(right_items) + 30
+    box_h = max(left_box_h, right_box_h)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ説明文の中で、理由が書いてあるルールは1つだけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "残り4つは「そういうルールがある」「教わってやっている」としか書かれていない。</text>\n",
+        f'<rect class="box-good" x="{left_x}" y="{top}" width="{left_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-accent" x="{left_x + 16}" y="{top + 24}">理由も書いてある（1つ）</text>\n',
+        f'<rect class="box-quiet" x="{right_x}" y="{top}" width="{right_w}" height="{box_h}" rx="6"/>\n',
+        f'<text class="t-strong" x="{right_x + 16}" y="{top + 24}">ルールがあるとだけ書いてある（4つ）</text>\n',
+    ]
+    for i, text in enumerate(left_items):
+        y = top + 50 + i * row_h
+        parts.append(f'<text class="t" x="{left_x + 16}" y="{y}" style="font-size:12.5px">{_esc(text)}</text>\n')
+    reason_top = top + 50 + len(left_items) * row_h + 14
+    for i, line in enumerate(left_reason_lines):
+        parts.append(
+            f'<text class="t-good" x="{left_x + 16}" y="{reason_top + i * 18}" '
+            f'style="font-size:11.5px">{_esc(line)}</text>\n'
+        )
+    for i, text in enumerate(right_items):
+        y = top + 50 + i * row_h
+        parts.append(f'<text class="t" x="{right_x + 16}" y="{y}" style="font-size:12.5px">{_esc(text)}</text>\n')
+
+    y = top + box_h + 32
+    note_lines = [
+        "「やらないとどうなるか」と聞くと、右の4つのうち3つ（確認メール以外）に",
+        "本文には無い組織的な理由が作られた。左の1つは2回とも本文のまま正しく書けた。",
+    ]
+    box_h2 = 18 * len(note_lines) + 22
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h2}" rx="6"/>\n')
+    for i, line in enumerate(note_lines):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 25 + 19 * i}">{_esc(line)}</text>\n')
+    y += box_h2 + 10
+
+    height = y + 4
+    alt = (
+        "1つの説明文の中にあるルールを、理由が書いてあるものと、ルールがあるとだけ書いてあるものに分けた図。"
+        "左の緑の枠「理由も書いてある（1つ）」には「月の最終営業日は15時までに作業を終える」が入り、"
+        "下に「本文に理由が明記されている：15時以降はシステムがメンテナンスで使えなくなる」と注記がある。"
+        "右の枠「ルールがあるとだけ書いてある（4つ）」には、初回ログインの上長申請、"
+        "20万円超の経理部長確認、控えのフォルダ保存、控えのSlack投稿の4つが入り、理由は書かれていない。"
+        "下の注記には、『やらないとどうなるか』と聞くと右の4つのうち3つ（確認メール以外）に"
+        "本文には無い組織的な理由が作られたこと、左の1つは本文のまま正しく書けたことが書かれている。"
+    )
+    (OUT / "manual-stated-vs-unstated.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    manual_reason_fabrication_chart()
+    manual_stated_vs_unstated_chart()

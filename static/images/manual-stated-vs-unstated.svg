@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" role="img" aria-label="1つの説明文の中にあるルールを、理由が書いてあるものと、ルールがあるとだけ書いてあるものに分けた図。左の緑の枠「理由も書いてある（1つ）」には「月の最終営業日は15時までに作業を終える」が入り、下に「本文に理由が明記されている：15時以降はシステムがメンテナンスで使えなくなる」と注記がある。右の枠「ルールがあるとだけ書いてある（4つ）」には、初回ログインの上長申請、20万円超の経理部長確認、控えのフォルダ保存、控えのSlack投稿の4つが入り、理由は書かれていない。下の注記には、『やらないとどうなるか』と聞くと右の4つのうち3つ（確認メール以外）に本文には無い組織的な理由が作られたこと、左の1つは本文のまま正しく書けたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="360"/>
+<text class="t-strong" x="18" y="26">同じ説明文の中で、理由が書いてあるルールは1つだけ</text>
+<text class="t-sm" x="18" y="45">残り4つは「そういうルールがある」「教わってやっている」としか書かれていない。</text>
+<rect class="box-good" x="18" y="90" width="320" height="166" rx="6"/>
+<text class="t-accent" x="34" y="114">理由も書いてある（1つ）</text>
+<rect class="box-quiet" x="362" y="90" width="340" height="166" rx="6"/>
+<text class="t-strong" x="378" y="114">ルールがあるとだけ書いてある（4つ）</text>
+<text class="t" x="34" y="140" style="font-size:12.5px">月の最終営業日は15時までに作業を終える</text>
+<text class="t-good" x="34" y="188" style="font-size:11.5px">→ 本文に理由が明記されている：</text>
+<text class="t-good" x="34" y="206" style="font-size:11.5px">「15時以降はシステムが</text>
+<text class="t-good" x="34" y="224" style="font-size:11.5px">メンテナンスで使えなくなる」</text>
+<text class="t" x="378" y="140" style="font-size:12.5px">初回ログインは上長への申請が必要</text>
+<text class="t" x="378" y="174" style="font-size:12.5px">20万円超は経理部長の確認メールをもらう</text>
+<text class="t" x="378" y="208" style="font-size:12.5px">控えをフォルダに保存する</text>
+<text class="t" x="378" y="242" style="font-size:12.5px">控えをSlackの#keiri-logにも貼る</text>
+<rect class="box-accent" x="18" y="288" width="684" height="58" rx="6"/>
+<text class="t-accent" x="34" y="313">「やらないとどうなるか」と聞くと、右の4つのうち3つ（確認メール以外）に</text>
+<text class="t-accent" x="34" y="332">本文には無い組織的な理由が作られた。左の1つは2回とも本文のまま正しく書けた。</text>
+</svg>

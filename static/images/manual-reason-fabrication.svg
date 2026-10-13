@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="484" viewBox="0 0 720 484" role="img" aria-label="手順表に「やらないとどうなるか」列を足す頼み方を2条件で試し、本文に理由が書かれていない3手順（件名の統一・控えのフォルダ保存・Slackへの投稿）について、作り話の理由が付いたか「書かれていません」と正直に書いたかを、5回ぶん並べた表。条件A（そのまま列を足した3回）は、3手順とも3回とも全部「作り話」。条件B（『書かれていなければ理由は書かれていませんと書いて』を足した2回）は、3手順とも2回とも全部「書かれていません」。下の注記には、条件Aの作り話はSlack投稿の理由だけでも回ごとに中身が違う3通りの説明文になったこと、条件Bは9マスとも作り話が0件で、理由が書いてある1手順（月末メンテナンス）だけは本文のとおりに正しく書いたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="484"/>
+<text class="t-strong" x="18" y="26">「やらないとどうなるか」欄を足すと、理由が書かれていない3手順は3/3・3/3・3/3で作り話になった</text>
+<text class="t-sm" x="18" y="45">月次の請求書発行を説明した架空の文章に、本文には理由が書かれていない手順が3つある。</text>
+<text class="t-sm" x="18" y="64">条件Aはそのまま列を足した版（3回）、条件Bは「書かれていなければ正直に言って」を足した版（2回）。</text>
+<text class="t-xs" x="18" y="83">架空データでの実測。回ごとの生の返りは docs/evidence/ に全文置いてある。</text>
+<text class="t-xs" x="186" y="114">件名の統一</text>
+<text class="t-xs" x="356" y="114">控えのフォルダ保存</text>
+<text class="t-xs" x="526" y="114">Slackへの投稿</text>
+<text class="t" x="18" y="148" style="font-size:12px">条件A　1回目</text>
+<rect class="box-bad" x="178" y="126" width="160" height="34" rx="3"/>
+<text class="t-bad" x="192" y="148" style="font-size:12.5px">作り話</text>
+<rect class="box-bad" x="348" y="126" width="160" height="34" rx="3"/>
+<text class="t-bad" x="362" y="148" style="font-size:12.5px">作り話</text>
+<rect class="box-bad" x="518" y="126" width="160" height="34" rx="3"/>
+<text class="t-bad" x="532" y="148" style="font-size:12.5px">作り話</text>
+<text class="t" x="18" y="192" style="font-size:12px">条件A　2回目</text>
+<rect class="box-bad" x="178" y="170" width="160" height="34" rx="3"/>
+<text class="t-bad" x="192" y="192" style="font-size:12.5px">作り話</text>
+<rect class="box-bad" x="348" y="170" width="160" height="34" rx="3"/>
+<text class="t-bad" x="362" y="192" style="font-size:12.5px">作り話</text>
+<rect class="box-bad" x="518" y="170" width="160" height="34" rx="3"/>
+<text class="t-bad" x="532" y="192" style="font-size:12.5px">作り話</text>
+<text class="t" x="18" y="236" style="font-size:12px">条件A　3回目</text>
+<rect class="box-bad" x="178" y="214" width="160" height="34" rx="3"/>
+<text class="t-bad" x="192" y="236" style="font-size:12.5px">作り話</text>
+<rect class="box-bad" x="348" y="214" width="160" height="34" rx="3"/>
+<text class="t-bad" x="362" y="236" style="font-size:12.5px">作り話</text>
+<rect class="box-bad" x="518" y="214" width="160" height="34" rx="3"/>
+<text class="t-bad" x="532" y="236" style="font-size:12.5px">作り話</text>
+<text class="t" x="18" y="280" style="font-size:12px">条件B　1回目</text>
+<rect class="box-good" x="178" y="258" width="160" height="34" rx="3"/>
+<text class="t-good" x="192" y="280" style="font-size:12.5px">書かれていません</text>
+<rect class="box-good" x="348" y="258" width="160" height="34" rx="3"/>
+<text class="t-good" x="362" y="280" style="font-size:12.5px">書かれていません</text>
+<rect class="box-good" x="518" y="258" width="160" height="34" rx="3"/>
+<text class="t-good" x="532" y="280" style="font-size:12.5px">書かれていません</text>
+<text class="t" x="18" y="324" style="font-size:12px">条件B　2回目</text>
+<rect class="box-good" x="178" y="302" width="160" height="34" rx="3"/>
+<text class="t-good" x="192" y="324" style="font-size:12.5px">書かれていません</text>
+<rect class="box-good" x="348" y="302" width="160" height="34" rx="3"/>
+<text class="t-good" x="362" y="324" style="font-size:12.5px">書かれていません</text>
+<rect class="box-good" x="518" y="302" width="160" height="34" rx="3"/>
+<text class="t-good" x="532" y="324" style="font-size:12.5px">書かれていません</text>
+<text class="t-bad" x="18" y="362">※ 条件Aの「作り話」は回ごとに中身が違う</text>
+<text class="t-bad" x="18" y="381">（Slack投稿の理由だけで「ダブルチェックの機会を失う」</text>
+<text class="t-bad" x="18" y="400">「進捗を把握できない」「リアルタイムで把握できない」の3通り）。</text>
+<text class="t-bad" x="18" y="419">本文に無い理由なら、回ごとに割れるのが自然。</text>
+<text class="t-good" x="18" y="438">※ 条件Bは9マスとも作り話が0件。</text>
+<text class="t-good" x="18" y="457">理由が書いてある1手順（月末メンテナンス）だけは、2回とも本文のとおりに正しく書いた。</text>
+</svg>
