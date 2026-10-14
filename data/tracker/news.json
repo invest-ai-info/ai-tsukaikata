@@ -107,6 +107,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-10-14T23:57:22.501228+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-14T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Block is building AI-powered security with OpenAI. Its security team investigates threats faster and proposes patches in minutes.",
+      "summary_ja": "BlockがOpenAIの技術でセキュリティを強化\nAIを活用し、セキュリティチームの危険調査を高速化\n修正案を数分で提案できるようになりました",
+      "summary_source": "gemini",
+      "title": "How Block is building AI-powered security with OpenAI technology",
+      "uid": "8c6013adbca9e5e9",
+      "url": "https://openai.com/index/block-ai-powered-security",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-14T06:13:53.374387+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5669,20 +5683,6 @@
       "uid": "26b7e2e66770bbba",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.212",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "PFN 技術ブログ",
-      "published": "2026-07-16T23:48:39+00:00",
-      "source_id": "pfn-blog",
-      "summary": "本記事は、PFNの2025年度夏インターンシップに参加し、パートタイムで勤務していただいたBoming Yangさんの寄稿によるもので、英語版記事の日本語翻訳版です。 Original English version: […] 投稿 PLaMoベースの強い日本語報酬モデルの構築 は Preferred Networks Tech Blog に最初に表示されました。",
-      "summary_ja": "PFNが日本語報酬モデルの構築について報告しました。\nPLaMoを基にした強力なモデルを開発しています。\n2025年夏インターンシップ参加者の寄稿によるものです。",
-      "summary_source": "gemini",
-      "title": "PLaMoベースの強い日本語報酬モデルの構築",
-      "uid": "4c82f847ed733fee",
-      "url": "https://tech.preferred.jp/ja/blog/building-a-strong-japanese-reward-model-on-plamo-ja/",
-      "vendor": "Preferred Networks"
     }
   ]
 }

@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-14T23:57:22.501228+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-14T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "再生可能エネルギーの電力を使い切れない時間と場所に、AIの計算処理を移す。日立製作所や電源開発など5社が総務省の実証で試みるのは、発電状況に合わせてデータセンターの処理を動かす「ワークロードシフト」だ。横浜と北九州、さらに上越新幹線の沿線で、何を検証するのか。",
+      "title": "AIデータセンターの電力問題、答えは「計算処理の引っ越し」か？　日立など5社、横浜と北九州をつないで実証",
+      "uid": "88c3c84b28153c7d",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/14/news029.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-14T23:57:22.501228+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-14T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの性能が飛躍的に高まり、安全性にも注目が集まる中、日本のAISI（AIセーフティ・インスティテュート）は何を担い、どのような課題に取り組んでいくのか。村上明子所長に聞いた。",
+      "title": "AIの安全性測る「物差し」を日本でも――AISI村上所長に聞く展望　相次ぐサイバー攻撃への対応は",
+      "uid": "b7211a037ee35744",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/15/2000002280/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-14T23:57:22.501228+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-14T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "企業のAI活用が本格化する中、現場の課題を自力で解決する取り組みが注目を集めている。LINEヤフーコミュニケーションズの総務部 CAREチームでは、Google Workspaceの生成AI「Gemini」とGoogle Apps Script（GAS）を組み合わせ、社内会議室予約ツール「みえぽち」をわずか1か月半で開発したという。",
+      "title": "突撃！となりのAI LINEヤフーコミュニケーションズ、総務が作った会議室予約ツール「みえぽち」",
+      "uid": "0fd0650e814e1d2f",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/nextdoor/2146466.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-14T23:57:22.501228+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-14T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「WordCraft」はオープンソースで開発されている文書作成アプリです。日本時間の2026年10月8日バージョン0.1.0がリリースされ、高頻度でアップデートが実施されて14日時点ではバージョン0.6.1に達しています。 続きを読む...",
+      "title": "Microsoft Wordの代替を目指すオープンソースの文書作成アプリ「WordCraft」、Rust製ネイティブアプリでAIエージェントでの使用も考慮",
+      "uid": "30332f9b89581cf1",
+      "url": "https://gigazine.net/news/20261015-wordcraft-open-source-word-processor/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-14T23:57:22.501228+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-10-14T21:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "IFSのフラグシップカンファレンス「IFS Unleashed 2026」が、米国オーランドで開幕した。同イベントに合わせて、産業用AIプラットフォームの新製品「IFS Intelligence」を発表。対話型機能、自律型エージェント、開発支援の3機能を通じて、企業内に眠る未活用データを引き出し、自律型AIで具体的なアクションへと導く。",
+      "title": "IFS最大イベントで新産業用AI発表　対話と自律実行で「眠る40％」を解き放つ",
+      "uid": "3f639a86fffce309",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/15/news017.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-14T17:16:15.142196+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2339,66 +2399,6 @@
       "uid": "1f15b0c40ca7951e",
       "url": "https://gigazine.net/news/20261007-openai-mathematics/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-07T03:16:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが画像生成AI「Nano Banana 2.1」を発表しました。2026年5月に正式リリースされた「Nano Banana 2」のアップデート版で、Gemini 3.6 FlashをベースにしていることでFlashレベルの速度と費用対効果を維持しながら、1K・2K・4Kの解像度でビジュアル品質、テキストレンダリング、マルチターンの整合性、Google検索のグラウンディングを改善してい…",
-      "title": "Googleが画像生成AI「Nano Banana 2.1」を公開、人物の一貫性や編集機能が向上",
-      "uid": "dfbadafd15d1d89c",
-      "url": "https://gigazine.net/news/20261007-nano-banana-2-1/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-07T03:12:12+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米Microsoftやシンガポール国立大学などに所属する研究者らが発表した論文「Understanding the (In)Security of Vibe-Coded Applications」は、AIに自動生成させたアプリケーションに潜む脆弱性の実態と、その原因を調査した研究報告だ。",
-      "title": "バイブコーディングで作った公開中のWebアプリ、9割に脆弱性　MSの研究者など調査",
-      "uid": "57f385fe6c969796",
-      "url": "https://www.itmedia.co.jp/news/article/2610/07/2000002055/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-07T03:02:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicが、Claude向けのアドオン「Claude for Google Workspace」をパブリックベータとしてリリースしました。GoogleドキュメントやGoogleスプレッドシート、GoogleスライドにClaudeを接続して直接ファイルを編集できます。 続きを読む...",
-      "title": "ClaudeがGoogleドキュメントやGoogleスプレッドシートと接続可能に",
-      "uid": "68ed9742e073c491",
-      "url": "https://gigazine.net/news/20261007-claude-for-google-workspace/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-07T02:53:08+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、画像生成・編集モデル「Nano Banana 2.1」を発表した。「Gemini 3.6 Flash」ベースで最大100万トークンに対応。ベンチマークでは従来モデルやPro版を上回るスコアを記録した。検索の「AIモード」やGeminiアプリ等で順次提供され、APIの画像出力料金は前モデル比でほぼ半額になった。",
-      "title": "Google、「Nano Banana 2.1」公開　APIの画像出力料金は「Nano Banana 2」の約半額に",
-      "uid": "6c93008f6e22fe6d",
-      "url": "https://www.itmedia.co.jp/news/article/2610/07/2000002078/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-07T02:42:32+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは、GeminiアプリのGemini Liveに、会話形式のリアルタイムな視覚支援を行なうシンプルガイドを順次提供開始した。カメラを共有するだけで、周囲の環境を探索するのに役立つ動的な音声による描写や、自然な言葉でスマートフォン操作のヒントを受け取ることができる。",
-      "title": "Google、高齢者をサポートするGeminiアプリの新機能「シンプルガイド」を順次提供",
-      "uid": "e6d495f3276c9f1c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2146293.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
