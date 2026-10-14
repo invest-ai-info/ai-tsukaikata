@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-14T20:46:52.713584+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-14T18:33:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.",
+      "summary_ja": "米国中間選挙に向け、安全対策を強化\n今年発表された対策をさらに強化した。",
+      "summary_source": "gemini",
+      "title": "Preparing for the 2026 US midterms",
+      "uid": "927a228164256c5c",
+      "url": "https://www.anthropic.com/news/2026-us-midterms",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-14T20:46:52.713584+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-14T18:24:25+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added virtualText to a mod's prompt decorations: text drawn in the prompt box that never enters the draft or the submitted prompt Added cache_creation_5m_tokens and cache_creation_1h_t…",
+      "title": "v2.1.300",
+      "uid": "c9bad3fbe5dcbe83",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-14T17:16:15.142196+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -36,6 +62,20 @@
       "title": "Amp puts AI agents to work beyond code with OpenAI models",
       "uid": "5108302b4205e51b",
       "url": "https://openai.com/index/amp-beyond-coding",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-14T20:46:52.713584+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-14T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats.",
+      "summary_ja": "SentinelOneが悪性プログラムの分析時間を短縮\n数週間かかっていた分析を数時間に短縮した。\n「OpenAI Daybreak」を使い、より多くの脅威を調べられる。",
+      "summary_source": "gemini",
+      "title": "SentinelOne cuts malware analysis from weeks to hours",
+      "uid": "28c593f6cf21a72f",
+      "url": "https://openai.com/index/sentinelone",
       "vendor": "OpenAI"
     },
     {
@@ -5643,18 +5683,6 @@
       "uid": "4c82f847ed733fee",
       "url": "https://tech.preferred.jp/ja/blog/building-a-strong-japanese-reward-model-on-plamo-ja/",
       "vendor": "Preferred Networks"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-16T19:36:01+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.117.0 (2026-07-16) Full Changelog: v0.116.0...v0.117.0 Features api: add support for dreaming ( 642eee7 ) api: add support for MCP Tunnels ( d716df6 ) Bug Fixes credentials: keep credential materia…",
-      "title": "v0.117.0",
-      "uid": "e0b8439d87a299bf",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.0",
-      "vendor": "Anthropic"
     }
   ]
 }

@@ -33,11 +33,17 @@
     "e7c4e5e484b85e66": "2026-09-15",
     "ef1a177e81759e91": "2026-10-13"
   },
-  "failures": {},
+  "failures": {
+    "deepmind-blog": {
+      "count": 1,
+      "last_error": "0件",
+      "since": "2026-10-14T20:46:52.713584+00:00"
+    }
+  },
   "latest": {
-    "anthropic-news": "2026-10-14T08:30:00+00:00",
+    "anthropic-news": "2026-10-14T18:33:00+00:00",
     "anthropic-sdk": "2026-10-14T17:13:08+00:00",
-    "claude-code": "2026-10-14T02:49:42+00:00",
+    "claude-code": "2026-10-14T18:24:25+00:00",
     "deepmind-blog": "2026-10-14T02:00:14+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-10-13T16:00:00+00:00",
@@ -142,6 +148,39 @@
       "uid": "e5758d8968daba9c",
       "url": "https://sakana.ai/my-fish/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-14T18:33:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.",
+      "title": "Preparing for the 2026 US midterms",
+      "uid": "927a228164256c5c",
+      "url": "https://www.anthropic.com/news/2026-us-midterms",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-14T18:24:25+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added virtualText to a mod's prompt decorations: text drawn in the prompt box that never enters the draft or the submitted prompt Added cache_creation_5m_tokens and cache_creation_1h_t…",
+      "title": "v2.1.300",
+      "uid": "c9bad3fbe5dcbe83",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-14T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats.",
+      "title": "SentinelOne cuts malware analysis from weeks to hours",
+      "uid": "28c593f6cf21a72f",
+      "url": "https://openai.com/index/sentinelone",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -775,6 +814,7 @@
     "28944e9b0d96e685": "2026-09-09T11:28:50.861492+00:00",
     "289a3dd4fa86a3f9": "2026-08-01T12:16:42.309603+00:00",
     "28af5bd78c5b3252": "2026-10-05T16:05:41.951020+00:00",
+    "28c593f6cf21a72f": "2026-10-14T20:46:52.713584+00:00",
     "28fd622c496a196a": "2026-08-19T22:44:40.365901+00:00",
     "2909acbb5b94f8b2": "2026-10-14T06:13:53.374387+00:00",
     "29175f194c7a9f2a": "2026-08-20T07:08:56.756357+00:00",
@@ -2374,6 +2414,7 @@
     "925bb42857b6c722": "2026-08-26T03:27:09.606981+00:00",
     "925c2d2107cb719f": "2026-09-09T00:18:03.279528+00:00",
     "92704fbb9efbf83e": "2026-09-18T00:25:04.694205+00:00",
+    "927a228164256c5c": "2026-10-14T20:46:52.713584+00:00",
     "927f3fc1cfd1de9c": "2026-10-08T09:03:14.950532+00:00",
     "92879a07c936aa3b": "2026-08-16T10:42:33.692092+00:00",
     "928c398f13c921a9": "2026-10-08T09:03:14.950532+00:00",
@@ -3177,6 +3218,7 @@
     "c98a4cf360ad2e7a": "2026-08-18T01:52:33.611856+00:00",
     "c9a1ebe895ddc303": "2026-09-20T12:25:47.781662+00:00",
     "c9a40eb2dc611988": "2026-10-08T09:03:14.950532+00:00",
+    "c9bad3fbe5dcbe83": "2026-10-14T20:46:52.713584+00:00",
     "c9cb76d501fbca6e": "2026-08-18T22:43:44.829078+00:00",
     "c9d069d5905e63b1": "2026-08-20T23:42:54.211577+00:00",
     "c9d201d35caefc55": "2026-10-07T16:34:15.852907+00:00",
