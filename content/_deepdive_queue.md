@@ -327,8 +327,13 @@
 
 - [x] https://deepmind.google/blog/introducing-gemini-4-argon/
   - →保管: ✅ **2026-10-13: 公開した** → `content/tools/gemini-4-argon-ga.md`
-- [ ] https://deepmind.google/blog/gemini-4-argon-for-robotics/
+- [!] https://deepmind.google/blog/gemini-4-argon-for-robotics/
   - 2026-10-13 自動追記（minor・Google DeepMind「Gemini 4 Argon for Robotics」）
+  - **2026-10-14 1回目: 下書きを作らずに停止した。**理由＝**経路遮断（`CONNECT tunnel failed, response 403`）**。
+    302転送先 `developers.googleblog.com` が許可リストに無い（WebFetchは`getaddrinfo ENOTFOUND`）。
+    `deepmind.google`・`blog.google` 自体は200で到達できるため、転送先ホストだけの許可リスト問題。
+    応答ヘッダに `cf-mitigated` は無く、先方のbot判定ではない。許可リストに
+    `developers.googleblog.com` が足されたら再試行対象にすること。
 
 - [x] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
   - →保管: 302転送先がdeepmind.google側の行と同一ページ。重複執筆はせず`content/tools/gemini-4-argon-ga.md`に統合（2026-10-13）
