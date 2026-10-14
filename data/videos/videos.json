@@ -2838,10 +2838,20 @@
    "channel_key": "two-minute-papers",
    "channel_name": "Two Minute Papers",
    "default_category": "tech",
-   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 The papers are available here:\nhttps://openai.com/index/sharing-ai-progress-in-mathematics/\nhttps://github.com/openai/math\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
    "first_seen": "2026-10-13T14:32:16.573053+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが社内のフロンティアモデルを用いて生成した722本もの数学の成果を公開したと紹介している。",
+    "AIが難問を解く一方で、人間にとって証明が解読しづらい点や数学の本質を巡る議論が生じていると説明している。",
+    "コミュニティの指摘で誤りが見つかり取り下げられた論文もあるため、オープンな検証環境の重要性を訴えている。"
+   ],
+   "for_whom": "AIの数学・科学研究への応用や最新のフロンティアモデル動向を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-14T21:55:07.608882+00:00"
   },
   {
    "video_id": "hL2CsNKcDZk",
@@ -3081,10 +3091,20 @@
    "channel_key": "google-deepmind",
    "channel_name": "Google DeepMind（公式）",
    "default_category": "news",
-   "description": "Auditing chemistry literature usually means weeks of manual, error-prone reading, where a molecule’s structure can sit 50 pages away from its experimental readout. At Isomorphic Labs, researchers Brian Bender and Santosh Adhikari are using Gemini 4 Argon’s multimodal capabilities to help tackle this early research bottleneck. The model synthesizes dense papers and extracts patent data into structured reports in an afternoon instead of a month, helping teams uncover connected insights faster.\n\nLearn more about Gemini 4 Argon: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n___\n\nSubscribe to our channel https://www.youtube.com/@googledeepmind \nFind us on X https://x.com/GoogleDeepMind\nFollow us on Instagram https://instagram.com/googledeepmind \nAdd us on Linkedin https://www.linkedin.com/company/deepmind/",
    "first_seen": "2026-10-13T23:05:41.161003+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "創薬における膨大な学術論文や特許文献の調査と要約に、Gemini 4を活用していると研究者が述べている。",
+    "従来1〜2日かかっていた論文の要約や洞察の抽出を、Gemini 4は約10〜15分で高精度に行えたと説明している。",
+    "化学構造と実験結果が離れた特許からもデータを抽出し、通常1か月かかるレポート作成を半日で完了できたと紹介している。"
+   ],
+   "for_whom": "創薬や化学分野で特許や論文の調査・データ抽出を効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-14T21:55:07.608882+00:00"
   },
   {
    "video_id": "uNSx7NCNbzw",
@@ -3204,87 +3224,87 @@
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-14T17:34:41.116467+00:00",
+   "last_ok": "2026-10-14T21:55:07.608882+00:00",
    "fail_streak": 0
   }
  }
