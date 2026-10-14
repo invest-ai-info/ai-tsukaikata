@@ -3055,91 +3055,183 @@
    "first_seen": "2026-10-13T23:05:41.161003+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "uNSx7NCNbzw",
+   "title": "【徹底比較】Gemini 4 Argonいいね！Claude Opus 5.5・GPT 6.1と本気で比較した結果…",
+   "url": "https://www.youtube.com/watch?v=uNSx7NCNbzw",
+   "published": "2026-10-14T06:58:56+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-14T12:19:03.608628+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Googleの「Gemini 4 Argon」が公開され、業務代行や動画理解のベンチマークで高いスコアを記録していると説明している。",
+    "前モデルと比較し、Webサイト制作や3Dゲーム生成、資料作成などのタスクで表現力やバランスが向上したと紹介している。",
+    "Claude Opus 5.5やGPT-6.1と比較検証し、コード描画等で差がある一方、ゲーム設計の調整など独自の良さがあると述べている。"
+   ],
+   "for_whom": "Gemini 4 Argonの実力や、他社の最新AIモデルとの出力精度の違いを知りたい人。",
+   "caution": "概要欄に公式LINEやAIスクール、コミュニティへの誘導リンクが含まれているため、利用を検討する際は費用や内容を十分にご確認ください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-14T12:19:03.608628+00:00"
+  },
+  {
+   "video_id": "oc5ndHQ7Q6o",
+   "title": "【速報】「Gemini 4 Argon」AIの常識が変わる｜徹底解説します",
+   "url": "https://www.youtube.com/watch?v=oc5ndHQ7Q6o",
+   "published": "2026-10-14T09:07:04+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-10-14T12:19:03.608628+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "「Gemini 4 Argon」の提供が開始され、出力上限が100万トークンに拡張されて複雑な課題への深い思考が可能になったと説明している。",
+    "コーディングや法務・財務リサーチなどの評価指標で高スコアを獲得し、高度な3Dモデル生成など実務遂行能力が向上したと紹介している。",
+    "Google AI Proや有料APIで利用可能であり、Google Workspace向けにも順次対応が進む見通しだと案内している。"
+   ],
+   "for_whom": "最新のGoogle製AIモデルの性能や、自社業務での利用条件を把握したい会社員。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-14T12:19:03.608628+00:00"
+  },
+  {
+   "video_id": "y2xCGyURl7Q",
+   "title": "Googleの最先端AIモデル「Gemini 4 Argon(アルゴン)」がついに公開！ ～概要・使い方・活用事例を徹底解説～",
+   "url": "https://www.youtube.com/watch?v=y2xCGyURl7Q",
+   "published": "2026-10-14T09:06:56+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-14T12:19:03.608628+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleが一般公開した最新AIモデル「Gemini 4 Argon」の概要や高いベンチマーク性能、安全対策について解説している。",
+    "GeminiやGoogle Antigravity、API経由での利用方法や有料プラン向けの料金体系を紹介している。",
+    "3Dコンテンツ制作やアニメーション生成、資料作成など実際の業務における具体的な活用事例を検証している。"
+   ],
+   "for_whom": "Googleの最新AIモデルの性能や業務での具体的な活用方法を知りたい会社員やエンジニア",
+   "caution": "API利用料金は導入期間終了後に値上げされると説明されているため、継続利用時のコスト変動に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-14T12:19:03.608628+00:00"
+  },
+  {
+   "video_id": "eyRBhpuc5Yw",
+   "title": "【世界待望モデル】『Gemini 4 Argon』を実際に使い込んだので解説！音声や動画を入力に持てる最先端モデルが登場",
+   "url": "https://www.youtube.com/watch?v=eyRBhpuc5Yw",
+   "published": "2026-10-13T23:41:37+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-14T12:19:03.608628+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "新登場のGemini 4 Argonは前世代より表現力が向上した一方、スライドや文章などの生成物で冗長な表現が目立つ傾向があると投稿者が分析している。",
+    "動画や音声の解析能力が高く、AI生成動画の読み間違いや無音区間、グラフと発言の食い違いなどを高精度に検知する校正役に適していると説明している。",
+    "他社モデルとの比較を踏まえ、メインの開発作業よりもサブエージェントや検証などの補助的な役割で活用するのが有効だと述べている。"
+   ],
+   "for_whom": "最新AIモデルの性能差や、音声・動画解析を業務に活用したい人",
+   "caution": "概要欄で有料のnoteメンバーシップ（コミュニティ）への誘導が行われている点には留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-14T12:19:03.608628+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-13T23:05:41.161003+00:00",
+   "last_ok": "2026-10-14T12:19:03.608628+00:00",
    "fail_streak": 0
   }
  }
