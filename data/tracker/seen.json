@@ -58,30 +58,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-11T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-10-13T16:01:58+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Gemini 4 Argon for Robotics",
-      "uid": "4861f4bb8ed6f683",
-      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-13T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.",
-      "title": "Higgsfield takes AI video from 1 minute to over 10",
-      "uid": "e3df886f5008fe85",
-      "url": "https://openai.com/index/higgsfield-longer-videos-voice",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
