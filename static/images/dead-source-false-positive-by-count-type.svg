@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="352" viewBox="0 0 720 352" role="img" aria-label="材料1（情報源6つ）と材料2（情報源5つ）それぞれについて、健全な相手のうち誤って「停止」と判定された数を、取得件数版と新着件数版で比べた横棒グラフ。材料1は健全5件のうち、取得件数版が0/5、新着件数版が3/5。材料2は健全4件のうち、取得件数版が0/4、新着件数版が2/4。どちらも緑の棒（取得件数版）は0に留まり、赤い棒（新着件数版）だけが伸びている。下の枠には、取得件数版は材料1・材料2とも誤判定が0件だったこと、新着件数版は材料1で3件・材料2で2件の健全な相手が「停止」に化け、2回試しても同じ相手が誤判定されたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="352"/>
+<text class="t-strong" x="18" y="24">新着件数で判定すると、健全な相手まで「停止」に化ける</text>
+<text class="t-sm" x="18" y="43">架空の監視ログ2本（材料1＝情報源6つ・材料2＝情報源5つ）に、同じ閾値</text>
+<text class="t-sm" x="18" y="62">（3回連続0件なら停止）を「取得件数」版と「新着件数」版で各2回当てた。</text>
+<text class="t-xs" x="18" y="81">縦軸は、健全な相手のうち誤って「停止」と判定された数。2回とも同じ数だった。</text>
+<text class="t-strong" x="18" y="128">材料1（健全5件）</text>
+<text class="t" x="28" y="160">取得件数で判定</text>
+<rect class="box-quiet" x="320.0" y="150" width="160.0" height="14" rx="3"/>
+<rect class="box-good" x="320.0" y="150" width="3.0" height="14" rx="3"/>
+<text class="t-accent" x="492.0" y="160">0/5</text>
+<text class="t" x="28" y="184">新着件数で判定</text>
+<rect class="box-quiet" x="320.0" y="174" width="160.0" height="14" rx="3"/>
+<rect class="box-bad" x="320.0" y="174" width="96.0" height="14" rx="3"/>
+<text class="t-bad" x="492.0" y="184">3/5</text>
+<text class="t-strong" x="18" y="204">材料2（健全4件）</text>
+<text class="t" x="28" y="236">取得件数で判定</text>
+<rect class="box-quiet" x="320.0" y="226" width="160.0" height="14" rx="3"/>
+<rect class="box-good" x="320.0" y="226" width="3.0" height="14" rx="3"/>
+<text class="t-accent" x="492.0" y="236">0/4</text>
+<text class="t" x="28" y="260">新着件数で判定</text>
+<rect class="box-quiet" x="320.0" y="250" width="160.0" height="14" rx="3"/>
+<rect class="box-bad" x="320.0" y="250" width="64.0" height="14" rx="3"/>
+<text class="t-bad" x="492.0" y="260">2/4</text>
+<path class="line" d="M320.0 118.0 L320.0 274.0" stroke-dasharray="4 3"/>
+<rect class="box-accent" x="18" y="288" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="308">取得件数版は、材料1・材料2とも誤判定が0件だった。</text>
+<text class="t-accent" x="34" y="326">新着件数版は、材料1で3件・材料2で2件の健全な相手が「停止」に化けた。2回試しても同じ相手だった。</text>
+</svg>

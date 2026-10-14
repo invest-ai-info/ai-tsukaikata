@@ -34079,3 +34079,201 @@ if __name__ == "__main__":
     argon_ga_price_deadline_chart()
     argon_ga_vendor_match_chart()
     title_self_report_accuracy_chart()
+
+
+def dead_source_false_positive_chart() -> None:
+    """取得件数版・新着件数版で、健全な相手を誤って「停止」と判定した数を材料2本で比べる。
+
+    実測（2026-10-14）。架空の監視ログ2本（材料1＝情報源6つ・材料2＝情報源5つ、
+    どちらも更新頻度がまちまちな健全な相手＋本当に取得できない相手1つ）に、
+    同じ閾値（3回連続0件なら停止）を「取得件数」版と「新着件数」版で各2回当てた。
+    """
+    label_x = 18
+    plot_x = 320
+    plot_w = 160
+    axis_max = 5
+    scale = plot_w / axis_max
+    top = 128
+    group_gap_h = 22
+    row_h = 24
+    bar_h = 14
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    groups = [
+        ("材料1（健全5件）", [
+            ("取得件数で判定", 0, 5, "box-good"),
+            ("新着件数で判定", 3, 5, "box-bad"),
+        ]),
+        ("材料2（健全4件）", [
+            ("取得件数で判定", 0, 4, "box-good"),
+            ("新着件数で判定", 2, 4, "box-bad"),
+        ]),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "新着件数で判定すると、健全な相手まで「停止」に化ける</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の監視ログ2本（材料1＝情報源6つ・材料2＝情報源5つ）に、同じ閾値"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "（3回連続0件なら停止）を「取得件数」版と「新着件数」版で各2回当てた。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "縦軸は、健全な相手のうち誤って「停止」と判定された数。2回とも同じ数だった。"
+        "</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    group_tops = []
+    for heading, rows in groups:
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y}">{_esc(heading)}</text>\n')
+        group_tops.append(y - 10)
+        y += group_gap_h
+        for label, value, denom, cls in rows:
+            ty = y + 10
+            parts.append(f'<text class="t" x="{label_x + 10}" y="{ty}">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            tcls = "t-accent" if value == 0 else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/{denom}</text>\n'
+            )
+            y += row_h
+        y += 6
+
+    plot_bottom = y - 6
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {group_tops[0]:.1f} L{zx:.1f} {plot_bottom:.1f}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        "取得件数版は、材料1・材料2とも誤判定が0件だった。",
+        "新着件数版は、材料1で3件・材料2で2件の健全な相手が「停止」に化けた。2回試しても同じ相手だった。",
+    ]
+    y += 8
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "材料1（情報源6つ）と材料2（情報源5つ）それぞれについて、健全な相手のうち"
+        "誤って「停止」と判定された数を、取得件数版と新着件数版で比べた横棒グラフ。"
+        "材料1は健全5件のうち、取得件数版が0/5、新着件数版が3/5。"
+        "材料2は健全4件のうち、取得件数版が0/4、新着件数版が2/4。"
+        "どちらも緑の棒（取得件数版）は0に留まり、赤い棒（新着件数版）だけが伸びている。"
+        "下の枠には、取得件数版は材料1・材料2とも誤判定が0件だったこと、"
+        "新着件数版は材料1で3件・材料2で2件の健全な相手が「停止」に化け、"
+        "2回試しても同じ相手が誤判定されたことが書かれている。"
+    )
+    (OUT / "dead-source-false-positive-by-count-type.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def dead_source_zero_streak_chart() -> None:
+    """材料1の6情報源について、新着件数が何回連続で0だったか（最長）を並べる。
+
+    実測（2026-10-14）。閾値線（3回）を境に、A・Bは閾値の下、C・D・E・Fは
+    閾値を大きく超える。C・D・Eは健全（更新頻度が低いだけ）、Fだけが本当に
+    取得できていない相手——だが新着件数の最長0連続だけでは、この4つを区別できない。
+    """
+    label_x = 18
+    plot_x = 180
+    plot_w = 460
+    axis_max = 20
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 26
+    bar_h = 14
+    threshold = 3
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("A（健全・毎日更新）", 0, "box-good"),
+        ("B（健全・3日おき）", 2, "box-good"),
+        ("C（健全・週1）", 6, "box-bad"),
+        ("D（健全・隔週）", 13, "box-bad"),
+        ("E（健全・月1）", 20, "box-bad"),
+        ("F（本当に停止）", 20, "box-bad"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "新着件数の0連続は、健全な低頻度の相手と本当の停止を区別しない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "材料1の6情報源について、新着件数が何回連続で0だったか（最長）を並べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦の破線は閾値（3回）。C・D・Eは健全なのに、Fと同じ側に入る。"
+        "</text>\n",
+    ]
+
+    y = top
+    for label, value, cls in rows:
+        ty = y + 10
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{px(axis_max) + 10:.1f}" y="{ty}">{value}回</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - 8
+    tx = px(threshold)
+    parts.append(
+        f'<path class="line" d="M{tx:.1f} {top - 16:.1f} L{tx:.1f} {plot_bottom:.1f}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(f'<text class="t-xs" x="{tx - 10:.1f}" y="{top - 20:.1f}">閾値3回</text>\n')
+
+    y += 10
+    notes = [
+        "A・Bは閾値の下に収まる。C・D・Eは健全なのに閾値を超え、本当に停止したFと同じ側に入る。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "材料1の6情報源（A〜F）について、新着件数が何回連続で0だったか（最長）を示した横棒グラフ。"
+        "Aは0回、Bは2回で、どちらも閾値線（3回）の手前に収まる。"
+        "Cは6回、Dは13回、Eは20回、Fも20回で、4つとも閾値線を超えている。"
+        "C・D・Eは更新頻度が低いだけの健全な情報源で、Fだけが本当に取得できていない相手だが、"
+        "新着件数の0連続の長さだけでは、この4つが同じ側に並んでしまい区別できない。"
+        "下の枠には、A・Bは閾値の下に収まり、C・D・Eは健全なのに閾値を超えて"
+        "本当に停止したFと同じ側に入ることが書かれている。"
+    )
+    (OUT / "dead-source-zero-streak.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    dead_source_false_positive_chart()
+    dead_source_zero_streak_chart()

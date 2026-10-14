@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="342" viewBox="0 0 720 342" role="img" aria-label="材料1の6情報源（A〜F）について、新着件数が何回連続で0だったか（最長）を示した横棒グラフ。Aは0回、Bは2回で、どちらも閾値線（3回）の手前に収まる。Cは6回、Dは13回、Eは20回、Fも20回で、4つとも閾値線を超えている。C・D・Eは更新頻度が低いだけの健全な情報源で、Fだけが本当に取得できていない相手だが、新着件数の0連続の長さだけでは、この4つが同じ側に並んでしまい区別できない。下の枠には、A・Bは閾値の下に収まり、C・D・Eは健全なのに閾値を超えて本当に停止したFと同じ側に入ることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="342"/>
+<text class="t-strong" x="18" y="24">新着件数の0連続は、健全な低頻度の相手と本当の停止を区別しない</text>
+<text class="t-sm" x="18" y="43">材料1の6情報源について、新着件数が何回連続で0だったか（最長）を並べた。</text>
+<text class="t-sm" x="18" y="62">縦の破線は閾値（3回）。C・D・Eは健全なのに、Fと同じ側に入る。</text>
+<text class="t" x="18" y="140">A（健全・毎日更新）</text>
+<rect class="box-quiet" x="180.0" y="130" width="460.0" height="14" rx="3"/>
+<rect class="box-good" x="180.0" y="130" width="3.0" height="14" rx="3"/>
+<text class="t-sm" x="650.0" y="140">0回</text>
+<text class="t" x="18" y="166">B（健全・3日おき）</text>
+<rect class="box-quiet" x="180.0" y="156" width="460.0" height="14" rx="3"/>
+<rect class="box-good" x="180.0" y="156" width="46.0" height="14" rx="3"/>
+<text class="t-sm" x="650.0" y="166">2回</text>
+<text class="t" x="18" y="192">C（健全・週1）</text>
+<rect class="box-quiet" x="180.0" y="182" width="460.0" height="14" rx="3"/>
+<rect class="box-bad" x="180.0" y="182" width="138.0" height="14" rx="3"/>
+<text class="t-sm" x="650.0" y="192">6回</text>
+<text class="t" x="18" y="218">D（健全・隔週）</text>
+<rect class="box-quiet" x="180.0" y="208" width="460.0" height="14" rx="3"/>
+<rect class="box-bad" x="180.0" y="208" width="299.0" height="14" rx="3"/>
+<text class="t-sm" x="650.0" y="218">13回</text>
+<text class="t" x="18" y="244">E（健全・月1）</text>
+<rect class="box-quiet" x="180.0" y="234" width="460.0" height="14" rx="3"/>
+<rect class="box-bad" x="180.0" y="234" width="460.0" height="14" rx="3"/>
+<text class="t-sm" x="650.0" y="244">20回</text>
+<text class="t" x="18" y="270">F（本当に停止）</text>
+<rect class="box-quiet" x="180.0" y="260" width="460.0" height="14" rx="3"/>
+<rect class="box-bad" x="180.0" y="260" width="460.0" height="14" rx="3"/>
+<text class="t-sm" x="650.0" y="270">20回</text>
+<path class="line" d="M249.0 114.0 L249.0 278.0" stroke-dasharray="4 3"/>
+<text class="t-xs" x="239.0" y="110.0">閾値3回</text>
+<rect class="box-accent" x="18" y="296" width="684" height="30" rx="6"/>
+<text class="t-accent" x="34" y="316">A・Bは閾値の下に収まる。C・D・Eは健全なのに閾値を超え、本当に停止したFと同じ側に入る。</text>
+</svg>
