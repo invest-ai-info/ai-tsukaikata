@@ -333,6 +333,11 @@
 - [x] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
   - →保管: 302転送先がdeepmind.google側の行と同一ページ。重複執筆はせず`content/tools/gemini-4-argon-ga.md`に統合（2026-10-13）
 
+- [ ] https://deepmind.google/blog/on-device-ai-scam-detection-mddi/
+  - 2026-10-14 自動追記（minor・Google DeepMind「Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection」）
+- [ ] https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/
+  - 2026-10-14 自動追記（minor・Google DeepMind「Developing Gemini 4 Argon responsibly and safely」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-argon/ → **公開済み** content/tools/gemini-4-argon-ga.md（2026-10-13・公開）
