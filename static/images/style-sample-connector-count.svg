@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="396" viewBox="0 0 720 396" role="img" aria-label="見本あり・言葉だけ・見本なしの3条件で、対象の接続詞を1回のレビューに平均何回使ったかを示す横棒グラフ。犬レビューの「ちなみに」は、見本なし0.0回・見本あり2.0回・言葉だけ2.0回で、縦の点線（見本の実物2回）にどちらも一致している。万年筆の「そもそも」は、見本なし0.0回・見本あり2.0回・言葉だけ3.25回で、見本ありは点線（実物2回）に一致するが、言葉だけは点線を超えている。下の枠には、犬レビューの「ちなみに」はどちらの条件も実物どおり2回で揃ったこと、万年筆の「そもそも」は見本ありが実物どおり2回だが言葉だけは平均3.25回で1.6倍に増えたこと、見本を渡すと特徴の量まで実物に合わせて再現されるが言葉だけだと量が盛られやすいことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="396"/>
+<text class="t-strong" x="18" y="26">「ちなみに」は実物どおり。「そもそも」は言葉だけ版が実物を超える</text>
+<text class="t-sm" x="18" y="45">実測2026-10-14。見本の実物は、犬レビューの「ちなみに」も万年筆の「そもそも」も2回。</text>
+<text class="t-sm" x="18" y="64">棒は4回（見本なしは2回）の平均回数。縦の点線は、見本の実物に書かれている回数（2回）。</text>
+<path class="line" d="M470.0 106 L470.0 274" stroke-dasharray="4 3"/>
+<text class="t-xs" x="434.0" y="100">実物＝2回</text>
+<text class="t-sm" x="18" y="124">犬レビュー「ちなみに」：見本なし（2回）</text>
+<rect class="bar-old" x="280" y="111" width="2.0" height="18" rx="3"/>
+<text class="t-sm" x="290.0" y="124">0.00回</text>
+<text class="t-sm" x="18" y="152">犬レビュー「ちなみに」：見本あり（4回）</text>
+<rect class="bar-new" x="280" y="139" width="190.0" height="18" rx="3"/>
+<text class="t-sm" x="478.0" y="152">2.00回</text>
+<text class="t-sm" x="18" y="180">犬レビュー「ちなみに」：言葉だけ（4回）</text>
+<rect class="bar-new" x="280" y="167" width="190.0" height="18" rx="3"/>
+<text class="t-sm" x="478.0" y="180">2.00回</text>
+<text class="t-sm" x="18" y="208">万年筆「そもそも」：見本なし（2回）</text>
+<rect class="bar-old" x="280" y="195" width="2.0" height="18" rx="3"/>
+<text class="t-sm" x="290.0" y="208">0.00回</text>
+<text class="t-sm" x="18" y="236">万年筆「そもそも」：見本あり（4回）</text>
+<rect class="bar-new" x="280" y="223" width="190.0" height="18" rx="3"/>
+<text class="t-sm" x="478.0" y="236">2.00回</text>
+<text class="t-sm" x="18" y="264">万年筆「そもそも」：言葉だけ（4回）</text>
+<rect class="bar-new" x="280" y="251" width="308.8" height="18" rx="3"/>
+<text class="t-sm" x="596.8" y="264">3.25回</text>
+<path class="line" d="M280 286 L660.0 286"/>
+<path class="line" d="M280.0 286 L280.0 291"/>
+<text class="t-xs" x="276.0" y="306">0回</text>
+<path class="line" d="M375.0 286 L375.0 291"/>
+<text class="t-xs" x="371.0" y="306">1回</text>
+<path class="line" d="M470.0 286 L470.0 291"/>
+<text class="t-xs" x="466.0" y="306">2回</text>
+<path class="line" d="M565.0 286 L565.0 291"/>
+<text class="t-xs" x="561.0" y="306">3回</text>
+<path class="line" d="M660.0 286 L660.0 291"/>
+<text class="t-xs" x="656.0" y="306">4回</text>
+<rect class="box-accent" x="18" y="318" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="338">犬レビューの「ちなみに」は、見本あり・言葉だけのどちらも実物どおり2回で揃った。</text>
+<text class="t-accent" x="34" y="356">万年筆の「そもそも」は、見本ありは実物どおり2回だが、言葉だけは平均3.25回——1.6倍に増えた。</text>
+<text class="t-accent" x="34" y="374">見本を渡すと、特徴の「量」まで実物に合わせて再現される。言葉だけだと量が盛られやすい。</text>
+</svg>
