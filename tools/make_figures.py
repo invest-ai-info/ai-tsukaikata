@@ -34277,3 +34277,135 @@ def dead_source_zero_streak_chart() -> None:
 if __name__ == "__main__":
     dead_source_false_positive_chart()
     dead_source_zero_streak_chart()
+
+
+def style_sample_ending_rate_chart() -> None:
+    """見本を渡す・言葉だけ・見本なしで、文末パターンの比率がどう変わるか（2026-10-14実測）。
+
+    犬の散歩バッグ（くだけた「んですよね」調）と万年筆（硬い「である」調）の2材料。
+    各4回（見本なし2回）をAgent toolの独立した新規会話で試した。
+    """
+    _hit_and_miss_rows_chart(
+        "style-sample-ending-rate.svg",
+        "見本を渡すと実物に近い比率。言葉だけだと全文が対象の文末になる",
+        "実測2026-10-14。くだけた文体（犬レビュー）と硬い文体（万年筆レビュー）の2材料で実測。",
+        "見本の実物の比率は、犬レビューが9文中7文（78%）、万年筆が7文中7文（100%）。",
+        [
+            ("犬レビュー：見本を渡さない（2回・11文）", 0, 11, "good"),
+            ("犬レビュー：見本を渡す（4回・35文）", 27, 35, "good"),
+            ("犬レビュー：言葉だけで説明する（4回・41文）", 41, 41, "good"),
+            ("万年筆：見本を渡さない（2回・11文）", 2, 11, "good"),
+            ("万年筆：見本を渡す（4回・28文）", 28, 28, "good"),
+            ("万年筆：言葉だけで説明する（4回・16文）", 16, 16, "good"),
+        ],
+        [
+            "犬レビューは、見本を渡すと実物とほぼ同じ比率（77%）になった。実物は78%。",
+            "言葉だけで説明すると、犬レビューは全文が対象の文末になった（100%）——実物より多い。",
+            "万年筆はどちらの条件も100%。『である調を使うか』という二値の切り替えでは差が出なかった。",
+        ],
+        "2つの架空ブログ文体で、新しい話題のレビュー文を書かせたときに見本の文末パターンが"
+        "どれだけ再現されたかを示す表。犬の散歩バッグ：見本を渡さない場合は11文中0文、"
+        "見本を渡す場合は35文中27文（77%）、言葉だけで説明する場合は41文中41文（100%）。"
+        "万年筆：見本を渡さない場合は11文中2文、見本を渡す場合は28文中28文（100%）、"
+        "言葉だけで説明する場合は16文中16文（100%）。下の枠には、見本の実物の比率は"
+        "犬レビューが9文中7文（78%）・万年筆が7文中7文（100%）であること、犬レビューは"
+        "見本を渡すと実物とほぼ同じ比率（77%）になったが言葉だけだと全文が対象の文末になり"
+        "実物より多くなったこと（100%）、万年筆はどちらの条件も100%で二値の切り替えでは"
+        "差が出なかったことが書かれている。",
+        label_w=380,
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def style_sample_connector_count_chart() -> None:
+    """接続詞（ちなみに・そもそも）を1回のレビューに平均何回使ったか（2026-10-14実測）。
+
+    犬レビューの「ちなみに」と万年筆の「そもそも」。見本の実物はどちらも2回。
+    縦の点線が、その実物の回数を示す。
+    """
+    axis_max = 4.0
+    plot_x, plot_w = 280, 380
+
+    def px(value: float) -> float:
+        return plot_x + value * (plot_w / axis_max)
+
+    rows = [
+        ("犬レビュー「ちなみに」：見本なし（2回）", 0.0, "bar-old"),
+        ("犬レビュー「ちなみに」：見本あり（4回）", 2.0, "bar-new"),
+        ("犬レビュー「ちなみに」：言葉だけ（4回）", 2.0, "bar-new"),
+        ("万年筆「そもそも」：見本なし（2回）", 0.0, "bar-old"),
+        ("万年筆「そもそも」：見本あり（4回）", 2.0, "bar-new"),
+        ("万年筆「そもそも」：言葉だけ（4回）", 3.25, "bar-new"),
+    ]
+    top = 110
+    pitch, bar_h = 28, 18
+    plot_bottom = top + len(rows) * pitch
+    axis_y = plot_bottom + 8
+    height = axis_y + 24 + 18 * 3 + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「ちなみに」は実物どおり。「そもそも」は言葉だけ版が実物を超える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-10-14。見本の実物は、犬レビューの「ちなみに」も万年筆の「そもそも」も2回。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "棒は4回（見本なしは2回）の平均回数。縦の点線は、見本の実物に書かれている回数（2回）。</text>\n",
+    ]
+
+    dash_x = px(2.0)
+    parts.append(
+        f'<path class="line" d="M{dash_x:.1f} {top - 4} L{dash_x:.1f} {plot_bottom - 4}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(f'<text class="t-xs" x="{dash_x - 36:.1f}" y="{top - 10}">実物＝2回</text>\n')
+
+    y = top
+    for label, value, klass in rows:
+        ty = y + 14
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(value * (plot_w / axis_max), 2)
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x}" y="{y + 1}" width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{plot_x + bar_w + 8:.1f}" y="{ty}">{value:.2f}回</text>\n'
+        )
+        y += pitch
+
+    parts.append(f'<path class="line" d="M{plot_x} {axis_y} L{px(axis_max):.1f} {axis_y}"/>\n')
+    for mark in (0, 1, 2, 3, 4):
+        x = px(mark)
+        parts.append(f'<path class="line" d="M{x:.1f} {axis_y} L{x:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{x - 4:.1f}" y="{axis_y + 20}">{mark}回</text>\n')
+
+    y2 = axis_y + 32
+    notes = [
+        "犬レビューの「ちなみに」は、見本あり・言葉だけのどちらも実物どおり2回で揃った。",
+        "万年筆の「そもそも」は、見本ありは実物どおり2回だが、言葉だけは平均3.25回——1.6倍に増えた。",
+        "見本を渡すと、特徴の「量」まで実物に合わせて再現される。言葉だけだと量が盛られやすい。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y2}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y2 + 20 + 18 * i}">{_esc(note)}</text>\n')
+
+    height = y2 + box_h + 12
+    alt = (
+        "見本あり・言葉だけ・見本なしの3条件で、対象の接続詞を1回のレビューに平均何回使ったかを示す"
+        "横棒グラフ。犬レビューの「ちなみに」は、見本なし0.0回・見本あり2.0回・言葉だけ2.0回で、"
+        "縦の点線（見本の実物2回）にどちらも一致している。万年筆の「そもそも」は、"
+        "見本なし0.0回・見本あり2.0回・言葉だけ3.25回で、見本ありは点線（実物2回）に一致するが、"
+        "言葉だけは点線を超えている。下の枠には、犬レビューの「ちなみに」はどちらの条件も"
+        "実物どおり2回で揃ったこと、万年筆の「そもそも」は見本ありが実物どおり2回だが"
+        "言葉だけは平均3.25回で1.6倍に増えたこと、見本を渡すと特徴の量まで実物に合わせて"
+        "再現されるが言葉だけだと量が盛られやすいことが書かれている。"
+    )
+    (OUT / "style-sample-connector-count.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    style_sample_ending_rate_chart()
+    style_sample_connector_count_chart()
