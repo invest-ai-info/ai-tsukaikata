@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-14T12:03:22.056244+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-14T08:30:00+00:00",
+      "source_id": "anthropic-news",
+      "summary": "Anthropic has opened an office in Singapore and signed an MOU with the country’s government to advance safe, responsible AI adoption.",
+      "summary_ja": "アンソロピックがシンガポールに拠点を開設した。\n同国政府と安全なAI導入に関する覚書を締結した。",
+      "summary_source": "gemini",
+      "title": "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
+      "uid": "1b646beafbbbc45f",
+      "url": "https://www.anthropic.com/news/singapore-office-opening",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-14T06:13:53.374387+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -25,6 +39,20 @@
       "uid": "778c4a860e8e63d9",
       "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
       "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-10-14T12:03:22.056244+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-14T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "New analysis shows how agentic AI adoption is growing across EU enterprises and small businesses—and where deeper use could unlock more value.",
+      "summary_ja": "EUでエージェントAIの導入が進んでいることが分かった。\n欧州企業や中小企業で活用が広がりつつある。\n深く活用すればさらなる価値が生まれる可能性を示唆している。",
+      "summary_source": "gemini",
+      "title": "The EU’s next chapter in AI is agentic",
+      "uid": "610d27f64ff88885",
+      "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-14T06:13:53.374387+00:00",
@@ -5641,34 +5669,6 @@
       "uid": "8c6ba0a69b8e1409",
       "url": "https://openrouter.ai/moonshotai/kimi-k3:batch",
       "vendor": "Moonshot AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-07-16T09:30:42+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI models.",
-      "summary_ja": "Google DeepMindなどが生体安全性で連携\nAIモデルに関する共同アプローチを公開\nIsomorphic Labsと協力",
-      "summary_source": "gemini",
-      "title": "Our approach to bioresilience",
-      "uid": "19e982ab91ff0a0b",
-      "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-16T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "How OpenAI’s creative team uses Codex to build custom creative tools, accelerate ideation, and prototype faster with context-aware AI.",
-      "summary_ja": "OpenAIがAIツール「Codex」を活用\n独自の開発ツール作成やアイデア出しに貢献\n文脈を理解するAIで試作を高速化",
-      "summary_source": "gemini",
-      "title": "How Codex became a collaborator for OpenAI’s creative team",
-      "uid": "905cfbd3c62a6139",
-      "url": "https://openai.com/index/codex-collaborator-creative-team",
-      "vendor": "OpenAI"
     }
   ]
 }
