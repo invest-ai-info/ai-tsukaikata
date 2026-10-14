@@ -5631,32 +5631,6 @@
       "uid": "905cfbd3c62a6139",
       "url": "https://openai.com/index/codex-collaborator-creative-team",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-16T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.",
-      "summary_ja": "Cars24がOpenAIのAIツールで業務改善\n月100万分超の会話を処理し見込み客を12%回復\nAIによる自動化された業務プロセスを全社に導入",
-      "summary_source": "gemini",
-      "title": "How Cars24 scales conversations and builds faster with OpenAI",
-      "uid": "2ec49092b4acc1b3",
-      "url": "https://openai.com/index/cars24",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-07-15T23:02:35+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added --forward-subagent-text flag and CLAUDE_CODE_FORWARD_SUBAGENT_TEXT environment variable to include subagent text and thinking in stream-json output Fixed permission previews rela…",
-      "title": "v2.1.211",
-      "uid": "ee7c35f2257aa0ac",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.211",
-      "vendor": "Anthropic"
     }
   ]
 }
