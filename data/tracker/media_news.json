@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-14T17:16:15.142196+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-14T16:10:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NVIDIAは、原子や分子の相互作用をシミュレーションするAIエージェントの構築に利用できる、新しいNVIDIA CUDA-Xライブラリ「cuPotential」を発表した。テストでは、GPUに最適化されているワークフローをさらに2～3倍高速化する結果を記録している。",
+      "title": "NVIDIA、最新の半導体工場「AIファブ」に向けたチップ設計と製造全体でAIを推進",
+      "uid": "9f05ecbbf5cae980",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2147934.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-14T17:16:15.142196+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-10-14T15:57:19+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトはWindows 11上でAIエージェントを安全に動かすための隔離環境「Microsoft Execution Containers」（以下、MXC）の正式リリースを発表しました。 MXC is now GA on Windo...",
+      "title": "Windows上でAIエージェントの実行を安全に隔離する「Microsoft Execution Containers」（MXC）正式リリース。ファイルやネットワークなどの境界を柔軟にカスタマイズ",
+      "uid": "ce885ac4f8a33cd8",
+      "url": "https://www.publickey1.jp/blog/26/windowsaimicrosoft_execution_containersmxc.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-10-14T12:03:22.056244+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2375,30 +2399,6 @@
       "uid": "e6d495f3276c9f1c",
       "url": "https://ai.watch.impress.co.jp/docs/news/2146293.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-07T02:27:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "世界初のトレーディングカードゲームであるマジック：ザ・ギャザリングや世界初のロールプレイングゲームとして知られるダンジョンズ＆ドラゴンズなどの販売元であるウィザーズ・オブ・ザ・コーストの労働組合が、同社に対して生成AIの推進を中止するよう要求していると報じられています。 続きを読む...",
-      "title": "マジック：ザ・ギャザリングやダンジョンズ＆ドラゴンズの販売元であるウィザーズ・オブ・ザ・コーストの労働組合が生成AIの推進を中止するよう要求",
-      "uid": "f82ddfead46d9320",
-      "url": "https://gigazine.net/news/20261007-wizards-of-the-coast-union-demands-stops-generative-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-07T08:44:48.868475+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-07T02:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "フランスのAI企業・Mistralが総パラメータ数が1兆を超える新しいAIモデル「Mistral Large 4」を2026年10月6日に発表しました。Mistral Large 4は「Le Chonk」の愛称を持つマルチモーダルモデルで、Mistralによるとその性能は「中国企業が開発する有力なオープンウェイトモデルに匹敵する」とのことです。 続きを読む...",
-      "title": "1兆パラメータ超の「Mistral Large 4 Le Chonk」をMistralが発表、中国勢に対抗するオープンウェイトAIモデル",
-      "uid": "82f1d04fc6687acb",
-      "url": "https://gigazine.net/news/20261007-mistral-large-4-le-chonk/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

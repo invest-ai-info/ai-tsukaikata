@@ -1,6 +1,44 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-14T17:16:15.142196+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-14T17:13:08+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add execution_identity to Managed Agents agents api: add organization_type_not_supported error to spend limit lists api: add telemetry destination test endpoint api: add telemetry desti…",
+      "title": "v1.14.0",
+      "uid": "d6bc1a348ed03541",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.14.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-14T17:16:15.142196+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-14T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana Chatが覚えていることを見てみよう：メモリーを可視化する新機能「My Fish」",
+      "uid": "e5758d8968daba9c",
+      "url": "https://sakana.ai/my-fish/",
+      "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-10-14T17:16:15.142196+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-14T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT.",
+      "summary_ja": "AmpがAIエージェントをプログラミング以外で活用\nGPT-6 AstraやUltrafastなど複数のモデルを使用\n「Sign in with ChatGPT」も採用している",
+      "summary_source": "gemini",
+      "title": "Amp puts AI agents to work beyond code with OpenAI models",
+      "uid": "5108302b4205e51b",
+      "url": "https://openai.com/index/amp-beyond-coding",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-14T12:03:22.056244+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
@@ -13,6 +51,20 @@
       "uid": "1b646beafbbbc45f",
       "url": "https://www.anthropic.com/news/singapore-office-opening",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-14T17:16:15.142196+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-14T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use.",
+      "summary_ja": "Third Moment ResearchがAIを長時間稼働\n1万個を36時間以上動かし数日集中できるAI開発\nサイバーセキュリティ向けで使えば向上する",
+      "summary_source": "gemini",
+      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+      "uid": "b6b62b965bb4685e",
+      "url": "https://openai.com/index/third-moment-research",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-14T06:13:53.374387+00:00",
@@ -5603,72 +5655,6 @@
       "uid": "e0b8439d87a299bf",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.0",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-16T16:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships.",
-      "summary_ja": "OpenAIがChatGPTを若者向けに安全化する対策を公開しました。\n年齢に合った保護機能や学習ツールを提供します。\n保護者向け管理機能や専門家との協力も進めます。",
-      "summary_source": "gemini",
-      "title": "Why teens deserve access to safe AI",
-      "uid": "e2291bc75a55c0e3",
-      "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-16T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Connected apps rendering",
-      "summary_ja": "検索機能とアプリの連携が強化されます。\n(具体的な情報が説明にないため、これ以上書けません)",
-      "summary_source": "gemini",
-      "title": "Connect more of your apps to Search",
-      "uid": "cf1fcd7a799d9f51",
-      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-16T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Text \"Gemini Omni and Personal Avatars in Google Vids\" surrounded by various images",
-      "summary_ja": "Google Vidsに動画作成・編集の新機能が追加されました。\n「Gemini Omni」と「パーソナルアバター」が使えるようになります。",
-      "summary_source": "gemini",
-      "title": "Create, edit and star in videos with two Google Vids updates",
-      "uid": "e8494578d91ea603",
-      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Kimi 新モデル",
-      "published": "2026-07-16T15:30:58+00:00",
-      "source_id": "openrouter-moonshot",
-      "summary": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at…",
-      "title": "moonshotai/kimi-k3",
-      "uid": "f54f39c5e842f6cf",
-      "url": "https://openrouter.ai/moonshotai/kimi-k3",
-      "vendor": "Moonshot AI"
-    },
-    {
-      "first_seen": "2026-08-29T02:14:31.599661+00:00",
-      "importance": "minor",
-      "label": "Kimi 新モデル",
-      "published": "2026-07-16T15:30:58+00:00",
-      "source_id": "openrouter-moonshot",
-      "summary": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at…",
-      "title": "moonshotai/kimi-k3:batch",
-      "uid": "8c6ba0a69b8e1409",
-      "url": "https://openrouter.ai/moonshotai/kimi-k3:batch",
-      "vendor": "Moonshot AI"
     }
   ]
 }
