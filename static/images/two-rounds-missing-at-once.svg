@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="単独で聞いた場合と、別の分割方式の契約24件を1通に混ぜて聞いた場合の正答率を比べた図。材料Aは内装リフォーム(6分割・12件)、材料Bは動画制作費(8分割・12件)で、それぞれ1件だけ非連続の2回分（材料Aは中間金1と中間金4、材料Bは制作2と制作6）を未入金として仕込んだ。材料Aで2回同時の未入金を両方とも正しく指摘した回数は5/5、材料Bも5/5。どの回が抜けているかまで両方正しく名指しした詳細版の回数は6/6。健全な22件を誤って未入金扱いした回数は、全実測を合わせて0/22。24件を1通に混ぜても2件だけを正しく指摘した回数は2/3、混ぜた回で存在しない3回目の未入金を誤って足した回数は1/3。下の枠には、材料ごとに単独で聞くと2回同時の未入金は合計16/16が正しく両方とも名指しされたこと、24件を1つのメッセージに混ぜた3回のうち1回だけ実在しない制作1の未入金を誤って追加したこと、健全な契約を誤って未入金扱いした回は単独・混在を通じて0回だったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">単独では16/16が正解。24件を混ぜた回だけ、3回に1回ずれた</text>
+<text class="t-sm" x="18" y="45">実測2026-10-15。内装リフォーム(6分割・12件)と動画制作費(8分割・12件)、各1件に2回分の同時未入金を仕込んだ。</text>
+<text class="t-sm" x="18" y="64">単独で聞くと合計16回とも2回分を正しく名指し。24件を1通に混ぜた3回のうち1回だけ、無い回を1つ足した。</text>
+<text class="t-xs" x="478.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">材料Aで2回同時の未入金を両方とも正しく指摘した回数</text>
+<rect class="box-good" x="398" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="125" text-anchor="middle" style="font-weight:700">5/5</text>
+<text class="t" x="18" y="157">材料Bで2回同時の未入金を両方とも正しく指摘した回数</text>
+<rect class="box-good" x="398" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="157" text-anchor="middle" style="font-weight:700">5/5</text>
+<text class="t" x="18" y="189">どの回が抜けているかまで両方正しく名指しした回数(詳細版)</text>
+<rect class="box-good" x="398" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="189" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="221">健全な22件を誤って未入金扱いした回数(全実測の合計)</text>
+<rect class="box-good" x="398" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="221" text-anchor="middle" style="font-weight:700">0/22</text>
+<text class="t" x="18" y="253">24件を1通に混ぜても、2件だけを正しく指摘した回数</text>
+<rect class="box" x="398" y="232" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="253" text-anchor="middle" style="font-weight:700">2/3</text>
+<text class="t" x="18" y="285">混ぜた回で、存在しない3回目の未入金を誤って足した回数</text>
+<rect class="box-bad" x="398" y="264" width="160" height="26" rx="4"/>
+<text class="t-bad" x="478.0" y="285" text-anchor="middle" style="font-weight:700">1/3</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">✅ 材料ごとに単独で聞くと、2回同時の未入金は合計16/16が正しく両方とも名指しされた。</text>
+<text class="t-accent" x="34" y="340">🚨 24件を1つのメッセージに混ぜた3回のうち1回だけ、実在しない「制作1」の未入金を追加した。</text>
+<text class="t-accent" x="34" y="358">この材料・この回数（合計21回）の実測。健全な契約を誤って未入金扱いした回は、単独・混在を通じて0回。</text>
+</svg>

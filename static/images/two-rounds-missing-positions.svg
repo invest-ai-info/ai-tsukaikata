@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="330" viewBox="0 0 720 330" role="img" aria-label="分割払いの中で、どの位置に2回分の未入金を仕込んだかを示す図。内装リフォーム(6分割・山本様)は着手金・中間金1・中間金2・中間金3・中間金4・残金のうち、2番目の中間金1と5番目の中間金4が赤(未入金)で、他は緑(入金済み)。動画制作費(8分割・ミナト広報社)は企画料・制作1〜6・納品金のうち、3番目の制作2と7番目の制作6が赤(未入金)で、他は緑(入金済み)。どちらも最初や最後ではなく、隣り合わない中間の位置を2つ選んでいる。下の枠には、緑が入金済み・赤が仕込んだ未入金(2回分)であること、単独で聞くとこの配置でも16/16が両方とも正しく名指しされたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="330"/>
+<text class="t-strong" x="18" y="26">仕込んだ2回分は、どちらも「両端ではない・隣り合っていない」位置</text>
+<text class="t-sm" x="18" y="45">材料Aは6分割の2回目と5回目、材料Bは8分割の3回目と7回目を未入金にした。</text>
+<text class="t-sm" x="18" y="64">最初・最後だけ見る、1つ見つけたら探すのをやめる、といった見方では両方とも拾えない配置。</text>
+<text class="t" x="18" y="122">内装リフォーム(6分割)</text>
+<text class="t-sm" x="18" y="138">山本様</text>
+<rect class="box-good" x="168" y="110" width="58" height="34" rx="4"/>
+<text class="t-good" x="172" y="132">着手金</text>
+<rect class="box-bad" x="230" y="110" width="58" height="34" rx="4"/>
+<text class="t-bad" x="234" y="132">中間金1</text>
+<rect class="box-good" x="292" y="110" width="58" height="34" rx="4"/>
+<text class="t-good" x="296" y="132">中間金2</text>
+<rect class="box-good" x="354" y="110" width="58" height="34" rx="4"/>
+<text class="t-good" x="358" y="132">中間金3</text>
+<rect class="box-bad" x="416" y="110" width="58" height="34" rx="4"/>
+<text class="t-bad" x="420" y="132">中間金4</text>
+<rect class="box-good" x="478" y="110" width="58" height="34" rx="4"/>
+<text class="t-good" x="482" y="132">残金</text>
+<text class="t" x="18" y="198">動画制作費(8分割)</text>
+<text class="t-sm" x="18" y="214">ミナト広報社</text>
+<rect class="box-good" x="168" y="186" width="58" height="34" rx="4"/>
+<text class="t-good" x="172" y="208">企画料</text>
+<rect class="box-good" x="230" y="186" width="58" height="34" rx="4"/>
+<text class="t-good" x="234" y="208">制作1</text>
+<rect class="box-bad" x="292" y="186" width="58" height="34" rx="4"/>
+<text class="t-bad" x="296" y="208">制作2</text>
+<rect class="box-good" x="354" y="186" width="58" height="34" rx="4"/>
+<text class="t-good" x="358" y="208">制作3</text>
+<rect class="box-good" x="416" y="186" width="58" height="34" rx="4"/>
+<text class="t-good" x="420" y="208">制作4</text>
+<rect class="box-good" x="478" y="186" width="58" height="34" rx="4"/>
+<text class="t-good" x="482" y="208">制作5</text>
+<rect class="box-bad" x="540" y="186" width="58" height="34" rx="4"/>
+<text class="t-bad" x="544" y="208">制作6</text>
+<rect class="box-good" x="602" y="186" width="58" height="34" rx="4"/>
+<text class="t-good" x="606" y="208">納品金</text>
+<rect class="box-accent" x="18" y="266" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="286">緑＝入金済み、赤＝仕込んだ未入金（2回分）。</text>
+<text class="t-accent" x="34" y="304">単独で聞くと、この配置でも16/16が両方とも正しく名指しした（本文の実測）。</text>
+</svg>
