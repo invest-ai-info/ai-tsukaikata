@@ -5671,18 +5671,6 @@
       "uid": "e308cad69399bfa1",
       "url": "https://openai.com/index/a-scorecard-for-the-ai-age",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-07-17T00:26:27+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed /fork now copies your conversation into a new background session (its own row in claude agents ) while you keep working; the in-session subagent it used to launch is now /subtask Added…",
-      "title": "v2.1.212",
-      "uid": "26b7e2e66770bbba",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.212",
-      "vendor": "Anthropic"
     }
   ]
 }
