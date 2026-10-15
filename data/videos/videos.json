@@ -3220,92 +3220,197 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-14T17:34:41.116467+00:00"
+  },
+  {
+   "video_id": "V_Ib3j9o6ys",
+   "title": "【Grok Bot・Cursor・Xが1つに】Xが新しいAIサブスクリプション「X Subscription」を発表！ ～無料を含む全5プランの料金と機能を完全解説～",
+   "url": "https://www.youtube.com/watch?v=V_Ib3j9o6ys",
+   "published": "2026-10-15T09:07:04+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-15T12:03:02.553189+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "SpaceXAIがGrok、Cursor、Grok Bot、X Premiumを1つに統合した新プラン「X Subscription」を発表したと紹介している。",
+    "無料からUltraまで5つのプランがあり、Premiumプランでは月額5280円で各ツールの主要機能が利用可能になると説明している。",
+    "注意点として、Cursor内での他社製AIモデル利用には別途API料金が必要になることや、利用枠が共有される点などを解説している。"
+   ],
+   "for_whom": "Xの有料機能やCursor、Grokをまとめてお得に利用したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-15T12:03:02.553189+00:00"
+  },
+  {
+   "video_id": "bPygAyvsn0A",
+   "title": "【これ最高】Grok Voice 3.0登場！倍速機能も自然さもスゴいので徹底解説",
+   "url": "https://www.youtube.com/watch?v=bPygAyvsn0A",
+   "published": "2026-10-15T11:45:45+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-15T12:03:02.553189+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "SpaceX AIから発表された音声モデル「Grok Voice 3.0」の機能や特徴を紹介している。",
+    "音声操作による検索を実演し、倍速再生への対応や自然な対話応答が進化していると説明している。",
+    "APIでの再生速度調整機能や、外部ベンチマークにおける他社モデルとの比較結果を解説している。"
+   ],
+   "for_whom": "最新のAI音声対話モデルの性能や、音声操作エージェントの活用に関心がある人",
+   "caution": "動画内や概要欄で、有料のnoteメンバーシップや特典配布を目的とした公式LINEへの登録誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-15T12:03:02.553189+00:00"
+  },
+  {
+   "video_id": "6tocyVuMr68",
+   "title": "【神アプデ】Claude Codeデスクトップアプリが大型更新！複数セッションを並列で回す使い方を解説",
+   "url": "https://www.youtube.com/watch?v=6tocyVuMr68",
+   "published": "2026-10-15T03:00:22+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Claude Code のデスクトップアプリに来た大型アップデートについて解説しました。\n複数のセッションを並列で動かせるようになり、親セッションから子セッションの様子を見たり、btw で「今何してるの？」と途中で質問したりできます。サイドバーからターミナル・ブラウザ・ファイルを開けて、コンテキストやタスクの状況も目で追えるので、実際に触ってみて「これいいな」と素直に思えました。\n\n皆さんはデスクトップアプリを使ってみてどう感じましたか？ よろしければコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n記事\nhttps://x.com/ClaudeDevs/status/2110445844675838148\n\ntimestamp:\n00:00 Claude Codeデスクトップ版に大型更新\n00:25 エージェント同士の連携とセッション管理\n01:27 プロジェクトと単発作業の使い分け\n02:11 自作ハーネス派から見た立ち位置\n02:42 並列で3Dゲームを3つ作らせる\n02:57 サイドバーで環境・ターミナル・ブラウザ\n03:36 マージ提案とbtwでの途中質問\n04:27 新規作成と親子セッションの体験\n05:05 CLI・Orca・T3 Code派はどうする?\n05:54 権限・クラウド環境とGrok Botとの違い\n06:51 ドットと未読表示で状況が見える\n07:30 まとめとおすすめ度、今後の自作ハーネス\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-15T12:03:02.553189+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "nbPFih7hPDE",
+   "title": "【2027年】残念ながらClaude Codeを使ったnote副業は稼げなくなります。",
+   "url": "https://www.youtube.com/watch?v=nbPFih7hPDE",
+   "published": "2026-10-15T09:00:30+00:00",
+   "channel_key": "muttyo",
+   "channel_name": "むっちょの副業月5万攻略",
+   "default_category": "earn",
+   "first_seen": "2026-10-15T12:03:02.553189+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "AIを使えば誰でも記事が書けるため参入障壁が下がり、note販売は差別化が難しく稼げなくなると説明している",
+    "売り切りのnoteでは顧客の一時情報が蓄積されず、購入者の成果や口コミが得にくいため信頼が積み上がらないと指摘している",
+    "AI時代の副業は参入障壁が高く、まだ一次情報で先行者と差がついていない新市場を基準に選ぶべきだと主張している"
+   ],
+   "for_whom": "AIを使ったnote販売や副業の選定に悩んでいる人",
+   "caution": "公式LINEへの登録や無料オンラインコミュニティへの参加へと誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-15T12:03:02.553189+00:00"
+  },
+  {
+   "video_id": "eZRiR5rwv1U",
+   "title": "【月39万】売れなくても金になる。紙・送料・在庫ゼロ。副業人生史上、もっとも感謝されるライフバインダー作りを徹底解説【副業 おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=eZRiR5rwv1U",
+   "published": "2026-10-15T09:00:13+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "first_seen": "2026-10-15T12:03:02.553189+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTを活用して海外向けに「ライフバインダー」と呼ばれる書き込み式手帳のPDFデータを作成し、Etsyで販売する副業を紹介している。",
+    "AI任せで目次を作ると解約前に必要な電話回線情報などが抜け落ちるため、実体験に基づく独自の1ページを補うことが大切だと解説している。",
+    "実践例として40〜60代のモニターが3ヶ月目に月12万〜39万円を達成した事例を挙げ、需要が高まる1月に向けた準備を勧めている。"
+   ],
+   "for_whom": "ChatGPTを活用してデジタルコンテンツを作り、海外向けプラットフォームで販売して稼ぎたい人",
+   "caution": "動画内ではモニターが月39万円を達成した等の実績が語られていますが、収益を保証するものではありません。また公式LINEへの登録や特典受け取りへ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-15T12:03:02.553189+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-15T05:07:00.074719+00:00",
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-14T21:55:07.608882+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-15T12:03:02.553189+00:00",
+   "fail_streak": 0
   }
  }
 }
