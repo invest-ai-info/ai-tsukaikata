@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-15T15:05:05.659178+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-10-15T15:21:12+00:00",
+      "source_id": "media-publickey",
+      "summary": "Anthropicが開発しているJavaScriptランタイム「Bun」は、10月10日付けで新バージョン「Bun v1.4.3」がリリースされました。 Bun v1.4.3の最大の特徴として示されたのが、Go言語で実装されたTypeScr...",
+      "title": "AnthropicのBun、TypeScript 7よりも3倍以上高速なTypeScript型チェッカーを搭載。Bunの新バージョン1.4.3で",
+      "uid": "e7120cf7f79229e0",
+      "url": "https://www.publickey1.jp/blog/26/anthropicbuntypescript_73typescriptbun143.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-15T15:05:05.659178+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-10-15T15:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NVIDIAは、1,200億パラメータのオープンモデル「Nemotron 3.5 Super VL」、およびローカルのエージェンティックワークロード（自律型AI処理）に最適化された「Nemotron 3.5 Bolt 74B-A9B 24GB」と、高速な対話型エージェント向けに構築された「Nemotron 3.5 Bolt E4B 4GB」の2つの新たなエッジモデルを発表した。",
+      "title": "NVIDIA、1,200億パラメーターのオープンモデル「Nemotron 3.5 Super VL」を発表 ローカル自律型AI処理に最適化「Bolt 74B-A9B 24GB」と対話モデル「Bolt E4B 4GB」も",
+      "uid": "557f27b6b72985a7",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2148539.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-15T15:05:05.659178+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-15T10:49:01+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "パナソニック ホールディングス（以下、パナソニックHD）は、同社開発の自動搬送ロボット「ハコボ」を活用したロボットサービスの実証実験を、パソナグループ主導の元、兵庫県立淡路島公園内のアニメパーク「ニジゲンノモリ」で、10月15日から10月28日までの平日に実施する。",
+      "title": "パナソニックHDの「ハコボ」実証、淡路島で案内・警備を検証",
+      "uid": "3326bef69fa0da4d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2148549.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-15T15:05:05.659178+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-15T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "登録するサービスごとに専用のメールアドレスを作成し、最初にメールを送ってきた相手以外からのメールを自動的に拒否するサービス「Clova.Email」が登場しました。メールアドレスが流出しても第三者からの迷惑メールを受け取らずに済む仕組みで、無料プランでもメールアドレスを無制限に作成できます。 続きを読む...",
+      "title": "メールアドレスが流出しても迷惑メールを自動拒否、最初の送信元からしか受信できない「Clova.Email」が登場",
+      "uid": "933b8882c6e08fc7",
+      "url": "https://gigazine.net/news/20261015-clova-email/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-15T09:59:38.574832+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2351,54 +2399,6 @@
       "uid": "1b0013808b97e16a",
       "url": "https://gigazine.net/news/20261008-claude-haiku-5-5/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-08T01:59:29.411679+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-08T01:22:19+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleはテキスト入力だけでゲームを作成・共有できるプラットフォーム「Playground」をWebブラウザ向けに発表した。まずは米国の成人向けに提供する。あわせてUnityとの提携で、高精細な3D表現やアセットを活用して機能拡張を図る「Unity Spark」を年内に投入することも発表した。",
-      "title": "Google、プロンプトでゲームを作って遊べる「Playground」を米国で公開　「Unity Spark」も年内投入",
-      "uid": "4a2787820ff66feb",
-      "url": "https://www.itmedia.co.jp/news/article/2610/08/2000002117/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T01:59:29.411679+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-08T00:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "TIMEWELLは、2D CAD図面から3D CADモデルを自動生成するAIエージェントの開発実証に取り組む。オリオン機械が保有する実図面を用いて精度と実用性を検証し、図面に込められたベテラン技術者の知見の継承も目指す。",
-      "title": "2D図面から3D CADモデルを自動生成、AIエージェント開発実証が長野県の事業に採択",
-      "uid": "b74e83fbe677d6ae",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/08/news012.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T01:59:29.411679+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-07T23:20:36+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、小型AI「Claude Haiku 5.5」のAPI提供を開始した。料金は10万トークン以下で前世代の10分の1になり、平均利用コストは約75％下がる。effort設定への初対応やSDKへのブラウザおよびコンピュータ使用ツールセット追加のほか、Sonnet 5.5のキャッシュ料金半額も行われた。",
-      "title": "Anthropic、「Claude Haiku 5.5」のAPI料金を「Haiku 4.5」の10分の1に　「Sonnet 5.5」のキャッシュ読み込み料金は半額に",
-      "uid": "ea5ac7e10de876fd",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/08/2000002114/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T01:59:29.411679+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-07T23:15:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "東北大学と島津製作所は、15億円を投じる新拠点「異分野融合計測イノベーションセンター」（CICMI）を開設した。目玉は現在比「1000倍」の精度を誇る質量分析技術の開発と、ノーベル賞受賞者・田中耕一氏の国際卓越教授就任だ。「引退前にもうひと花」と意気込む田中氏とともに病気の超早期発見に挑み、経済安全保障の基盤となる「計測」を武器に、産学連携で日本の国力強化を目指す。",
-      "title": "「日本の勝ち筋は計測にある」　東北大がノーベル賞・田中耕一氏と挑む「精度1000倍」の限界突破",
-      "uid": "5a9d9283dfede85e",
-      "url": "https://www.itmedia.co.jp/business/articles/2610/08/news041.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

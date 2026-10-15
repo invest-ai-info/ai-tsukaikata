@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-15T15:05:05.659178+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-15T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
+      "summary_ja": "教師向けのAI活用ツールが提供開始。\nブラジルポルトガル語版が教師の日に合わせて登場。\n「学習モード」で能動的な段階的学習を支援します。",
+      "summary_source": "gemini",
+      "title": "Teaching students to think and learn through questions",
+      "uid": "6db4fea7c0c052a3",
+      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-14T20:46:52.713584+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
@@ -5643,34 +5657,6 @@
       "uid": "1afaad08576a9b3a",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.214",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-07-17T15:00:11+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and patch vulnerabilities.",
-      "summary_ja": "Googleがサイバーセキュリティ向けAIを発表しました。\n「Gemini 3.5 Flash Cyber」は軽量なモデルです。\nシステムの弱点を見つけ、修正するのに役立ちます。",
-      "summary_source": "gemini",
-      "title": "Introducing Gemini 3.5 Flash Cyber",
-      "uid": "66b7ba68f3a2975e",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-17T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute.",
-      "summary_ja": "OpenAIのCFOがAIの効果を測る指標を発表しました。\n「AIスコアカード」はAI投資対効果を測るためのものです。\n有益な仕事量や成功コスト、信頼性などで評価します。",
-      "summary_source": "gemini",
-      "title": "A scorecard for the AI age",
-      "uid": "e308cad69399bfa1",
-      "url": "https://openai.com/index/a-scorecard-for-the-ai-age",
-      "vendor": "OpenAI"
     }
   ]
 }
