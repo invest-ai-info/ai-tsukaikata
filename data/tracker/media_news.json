@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-15T22:23:31.227325+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-15T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 判断だけができるAI「Jev」、使い方と使い道は？ どれくらい高速で低コスト？",
+      "uid": "24eec7b0cd7bbc4a",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2148158.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-15T22:23:31.227325+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-15T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Linuxカーネルの生みの親であるリーナス・トーバルズ氏がAIコーディングアシスタントのClaude Codeを活用し、Linuxカーネルの大幅な改善に取り組んでいることが明らかになりました。 続きを読む...",
+      "title": "リーナス・トーバルズがClaude CodeなどのAIをバリバリ活用してLinuxカーネルの改善に取り組み中",
+      "uid": "51582ce80fabf1a9",
+      "url": "https://gigazine.net/news/20261016-linus-torvalds-claude-code/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-15T15:05:05.659178+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2375,30 +2399,6 @@
       "uid": "07e0fd31dda09ba2",
       "url": "https://japan.cnet.com/article/35253350/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-08T01:55:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは「ChatGPT」で、操作可能な図や画像などを含む回答を提供する新たな「Intelligent UI」の提供を開始した。",
-      "title": "「ChatGPT」の回答がビジュアルに進化、GPT-6と新UIを無料版でも提供へ",
-      "uid": "9459e7c2510c37c0",
-      "url": "https://japan.cnet.com/article/35253345/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-08T01:59:29.411679+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-08T01:44:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AnthropicがAIモデル「Claude Haiku 5.5」を現地時間の2026年10月7日にリリースしました。前世代モデルのClaude Haiku 4.5と比べて性能が飛躍的に向上しています。 続きを読む...",
-      "title": "「Claude Haiku 5.5」が登場、GPT-6 Lunaより高性能で前モデルより9割引きの安価なモデル",
-      "uid": "1b0013808b97e16a",
-      "url": "https://gigazine.net/news/20261008-claude-haiku-5-5/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

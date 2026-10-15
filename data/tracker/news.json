@@ -1,6 +1,44 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-15T22:23:31.227325+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-15T19:45:15+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add between_tools to thinking types in model capabilities api: add the speed parameter and usage.speed to Messages api: return a Console organization's usage-tier spend cap as a read-on…",
+      "title": "v1.15.0",
+      "uid": "1ac1632ac09a8813",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.15.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-15T22:23:31.227325+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-15T19:22:06+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS so unattended retry mode ( CLAUDE_CODE_RETRY_WATCHDOG ) ends a request at a usage limit that resets too far away instead of wai…",
+      "title": "v2.1.301",
+      "uid": "229e6c4b7cdb51f1",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-15T22:23:31.227325+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-15T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research.",
+      "summary_ja": "GPT-Rosalindが学術機関に提供開始\n「Rosalind Academic Plan」で適格な研究室へ\n生命科学研究向けツールも無償提供",
+      "summary_source": "gemini",
+      "title": "Bringing GPT-Rosalind to academic research labs",
+      "uid": "54c7c8306a4c63e9",
+      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-15T19:12:12.726856+00:00",
       "importance": "minor",
       "label": "Anthropic 公式ニュース",
