@@ -34406,6 +34406,199 @@ def style_sample_connector_count_chart() -> None:
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
 
 
+def easy_summary_items_kept_chart() -> None:
+    """「そのまま」「わかりやすく」「わかりやすく＋省略禁止」で、要約に残った項目数を材料2本で比べる。
+
+    実測（2026-10-15）。架空の自動監視ダイジェスト2本（材料A＝15項目・材料B＝13項目、
+    数字・条件・例外を仕込んだもの）に、3通りの指示文を各2回当てた。
+    """
+    label_x = 18
+    plot_x = 320
+    plot_w = 160
+    top = 128
+    group_gap_h = 22
+    row_h = 24
+    bar_h = 14
+
+    groups = [
+        ("材料A（15項目中）", 15, [
+            ("そのまま", 15, "box-good"),
+            ("わかりやすく", 13, "box-bad"),
+            ("わかりやすく＋省略禁止", 15, "box-good"),
+        ]),
+        ("材料B（13項目中）", 13, [
+            ("そのまま", 12, "box-bad"),
+            ("わかりやすく", 12, "box-bad"),
+            ("わかりやすく＋省略禁止", 13, "box-good"),
+        ]),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「わかりやすく」で残った項目数は、材料によって違う動き方をした</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の自動監視ダイジェスト2本（材料A＝15項目・材料B＝13項目）に、3通りの指示文を各2回当てた。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="62">'
+        "縦軸は、仕込んだ数字・条件のうち要約にそのまま残った項目数。2回とも同じ数だった。"
+        "</text>\n",
+    ]
+
+    y = top
+    group_tops = []
+    for heading, denom, rows in groups:
+        scale = plot_w / denom
+
+        def px(n: float, _scale: float = scale) -> float:
+            return plot_x + n * _scale
+
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y}">{_esc(heading)}</text>\n')
+        group_tops.append(y - 10)
+        y += group_gap_h
+        for label, value, cls in rows:
+            ty = y + 10
+            parts.append(f'<text class="t" x="{label_x + 10}" y="{ty}">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{px(denom) + 12:.1f}" y="{ty}">{value}/{denom}</text>\n'
+            )
+            y += row_h
+        y += 6
+
+    plot_bottom = y - 6
+    notes = [
+        "材料Aは「わかりやすく」だけ2項目減った。他の2条件は満数（15/15・13/13）だった。",
+        "材料Bは「そのまま」の時点で1項目欠けており、「わかりやすく」で追加の欠落は起きなかった。",
+        "どちらも「省略禁止」を足すと満数に戻った（15/15・13/13）。",
+    ]
+    y += 2
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "材料A（15項目）と材料B（13項目）それぞれについて、「そのまま」「わかりやすく」"
+        "「わかりやすく＋省略禁止」の3条件で要約に残った項目数を比べた横棒グラフ。"
+        "材料Aは、そのまま15/15、わかりやすく13/15、わかりやすく＋省略禁止15/15。"
+        "材料Bは、そのまま12/13、わかりやすく12/13、わかりやすく＋省略禁止13/13。"
+        "材料Aは「わかりやすく」の条件だけ満数を割り、材料Bは「そのまま」の時点で"
+        "すでに1項目欠けていて「わかりやすく」でも増えていない。どちらも"
+        "「省略禁止」を足した条件は満数に戻っている。"
+    )
+    (OUT / "easy-summary-items-kept.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def easy_summary_which_item_drops_chart() -> None:
+    """消えた項目は「見出しに添えた時刻・回数・日時」だけだったことを、項目別に示す。
+
+    実測（2026-10-15）。材料Aの発表時刻・停止回数は「わかりやすく」でだけ2回とも消え、
+    材料Bの追加日時は「そのまま」でも「わかりやすく」でも2回とも消えた（指示の言い方と無関係）。
+    """
+    label_x = 18
+    plot_x = 330
+    plot_w = 150
+    axis_max = 2
+    scale = plot_w / axis_max
+    top = 128
+    group_gap_h = 22
+    row_h = 24
+    bar_h = 14
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    groups = [
+        ("材料A：発表時刻（2027-02-09 18:40）", [
+            ("そのまま", 0, "box-good"),
+            ("わかりやすく", 2, "box-bad"),
+        ]),
+        ("材料A：停止回数（52回連続）", [
+            ("そのまま", 0, "box-good"),
+            ("わかりやすく", 2, "box-bad"),
+        ]),
+        ("材料B：追加日時（2027-03-04 21:15）", [
+            ("そのまま", 2, "box-bad"),
+            ("わかりやすく", 2, "box-bad"),
+        ]),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "消えた項目は、見出しの事実に添えた「時刻」「回数」だけだった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "材料A・Bとも、仕込んだ数字・条件12〜13項目はそのまま残り、消えたのはこの3項目だけ。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="62">'
+        "縦軸は、2回の実行のうちその項目が消えた回数。"
+        "</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    group_tops = []
+    for heading, rows in groups:
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{y}">{_esc(heading)}</text>\n')
+        group_tops.append(y - 10)
+        y += group_gap_h
+        for label, value, cls in rows:
+            ty = y + 10
+            parts.append(f'<text class="t" x="{label_x + 10}" y="{ty}">{_esc(label)}</text>\n')
+            parts.append(
+                f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+                f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+            tcls = "t-accent" if value == 0 else "t-bad"
+            parts.append(
+                f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/2回</text>\n'
+            )
+            y += row_h
+        y += 6
+
+    plot_bottom = y - 6
+    notes = [
+        "材料Aの発表時刻・停止回数は、「わかりやすく」でだけ2回とも消えた。",
+        "材料Bの追加日時は、「そのまま」でも「わかりやすく」でも2回とも消えた——指示の言い方とは無関係。",
+    ]
+    y += 2
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "3つの項目について、「そのまま」と「わかりやすく」それぞれで2回中何回消えたかを示す横棒グラフ。"
+        "材料Aの発表時刻（2027-02-09 18:40）は、そのまま0/2回、わかりやすく2/2回。"
+        "材料Aの停止回数（52回連続）も、そのまま0/2回、わかりやすく2/2回。"
+        "材料Bの追加日時（2027-03-04 21:15）は、そのまま2/2回、わかりやすく2/2回。"
+        "下の枠には、材料Aの発表時刻・停止回数は「わかりやすく」でだけ2回とも消えたこと、"
+        "材料Bの追加日時は指示の言い方に関係なく2回とも消えたことが書かれている。"
+    )
+    (OUT / "easy-summary-which-item-drops.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
 if __name__ == "__main__":
     style_sample_ending_rate_chart()
     style_sample_connector_count_chart()
+    easy_summary_items_kept_chart()
+    easy_summary_which_item_drops_chart()
