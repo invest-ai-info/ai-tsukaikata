@@ -338,8 +338,30 @@
 - [x] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
   - →保管: 302転送先がdeepmind.google側の行と同一ページ。重複執筆はせず`content/tools/gemini-4-argon-ga.md`に統合（2026-10-13）
 
-- [ ] https://deepmind.google/blog/on-device-ai-scam-detection-mddi/
+- [!] https://deepmind.google/blog/on-device-ai-scam-detection-mddi/
   - 2026-10-14 自動追記（minor・Google DeepMind「Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection」）
+  - **2026-10-15 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` は200・約155KB〈gzip展開後〉。要約させず生HTMLから本文を抽出して確認した）
+
+    **② 中身が「シンガポール政府との詐欺検知の協業発表」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - GovTech Singapore（シンガポール政府機関）と協力し、軽量版 Gemma を現地の詐欺の会話データでファインチューニングし、
+      端末上で動かす（会話をクラウドへ送らない）詐欺検知の仕組み。本文に Gemma の具体的なバージョン番号・
+      モデルサイズの記載は無く、料金・提供API・一般提供の有無も書かれていない（シンガポール国内で段階的に展開、とのみ）
+    - **本文を全文抽出して確認したが、数字は2つだけ**（「詐欺がシンガポールの届け出犯罪の半数超・2019年以降の
+      被害額S$40億超」「そのうち会話型の手口が被害額の最大80%」）。いずれも**シンガポールの詐欺被害の社会統計**で、
+      モデルの性能・料金・提供条件の数字ではない
+    - 比較相手（他社の同種の「端末上の詐欺検知モデル」発表）も見つからず、読者（自動化したい非エンジニアの
+      会社員）が「どういう人に効くか」を判断できる要素が無い。対象はシンガポールのスマートフォン利用者であり、
+      モデルでも製品機能でもバージョン比較でもないため、このサイトの記事の型（何が変わったか／前のモデルとの違い／
+      他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission と
+      ほぼ同じ構造**（①は解けている・②＝数字はあっても料金や性能の比較に使えない／モデルや料金表ではない、という
+      停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
+      確定させるのが、FIG・SynthID Bio・Playground・Cyber Mission のときの前例に合わせたやり方。
 - [ ] https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/
   - 2026-10-14 自動追記（minor・Google DeepMind「Developing Gemini 4 Argon responsibly and safely」）
 
