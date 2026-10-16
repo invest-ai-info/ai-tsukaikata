@@ -34713,3 +34713,205 @@ if __name__ == "__main__":
     easy_summary_which_item_drops_chart()
     two_rounds_missing_at_once_chart()
     two_rounds_missing_positions_chart()
+
+
+def notice_split_accuracy_chart() -> None:
+    """5つの条件で、通知文の判定が何件中何件正解したかを比べる。
+
+    実測（2026-10-16）。回復ケース（一時停止から回復した相手）を含めない2条件は
+    誤判定0件。回復ケースを混ぜると、基準を「どこかで3回連続0」のまま明示した
+    版だけが2回とも同じ相手を誤判定した。あいまいに戻すか「直近」に言い直すと
+    0件に戻る。
+    """
+    label_x = 18
+    plot_x = 240
+    plot_w = 380
+    axis_max = 100
+    scale = plot_w / axis_max
+    top = 128
+    row_h = 30
+    bar_h = 16
+
+    def px(pct: float) -> float:
+        return plot_x + pct * scale
+
+    rows = [
+        ("明示（回復なし）", 32, 32, "box-good"),
+        ("あいまい（回復なし）", 16, 16, "box-good"),
+        ("明示「どこかで3連続」＋回復", 16, 18, "box-bad"),
+        ("あいまい＋回復", 18, 18, "box-good"),
+        ("明示「直近/末尾」＋回復", 36, 36, "box-good"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「どこかで3連続0」と明示したときだけ、誤判定が出た</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "5つの条件で、通知文の判定が何件中何件正解したかを比べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "回復ケース（一時停止から回復した相手）を混ぜたときだけ、基準の書き方で結果が分かれた。"
+        "</text>\n",
+    ]
+
+    y = top
+    zx = px(0)
+    for label, correct, total, cls in rows:
+        ty = y + 10
+        pct = correct / total * 100
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+            f'width="{max(px(pct) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-accent" if correct == total else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{correct}/{total}</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - (row_h - bar_h)
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 20:.1f} L{zx:.1f} {plot_bottom:.1f}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        "回復ケースを含めない2条件（明示・あいまい）は、どちらも誤判定0件。",
+        "回復ケースを混ぜると「どこかで3連続」のまま明示した版だけが2回とも同じ相手を誤判定した。",
+    ]
+    y += 8
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "5つの条件で、通知文の判定が何件中何件正解したかを比べた横棒グラフ。"
+        "基準を明示し回復ケースを含めない版は32件中32件が正解。"
+        "基準をあいまいにし回復ケースを含めない版は16件中16件が正解。"
+        "一時停止から回復した相手を混ぜ、基準を「どこかで3回連続0」のまま明示した版は"
+        "18件中16件が正解（2件は同じ相手を2回とも誤判定）。"
+        "同じ相手を混ぜて基準をあいまいに戻した版は18件中18件が正解。"
+        "同じ相手を混ぜて基準を「直近3回分」または「表の末尾3行」に言い直した版は36件中36件が正解。"
+        "下の枠には、回復ケースを含めない2条件はどちらも誤判定が0件だったこと、"
+        "回復ケースを混ぜると「どこかで3回連続0」のままでは2件とも同じ相手を誤判定し、"
+        "あいまいに戻すか直近に言い直すと0件に戻ったことが書かれている。"
+    )
+    (OUT / "notice-split-accuracy-by-condition.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def temporary_outage_recovery_timeline_chart() -> None:
+    """3つの情報源（S・T・X）について、21日分の取得件数が0だった日を並べる。
+
+    実測（2026-10-16）。Sは最初から停止、Tは6日目から停止、Xは11〜13日目だけ
+    停止してその後8日間回復している。直近3回（点検19〜21）の枠で見れば
+    Sは本当の停止・Xは正常だが、「記録のどこかに3連続0」という基準では
+    どちらも同じ「停止」に化ける。
+    """
+    label_x = 18
+    plot_x = 190
+    cell_w = 24
+    cell_h = 18
+    days = 21
+    top = 130
+    row_h = 34
+
+    def px(day_index: int) -> float:
+        return plot_x + day_index * cell_w
+
+    rows = [
+        ("S（最初から停止）", [False] * days),
+        ("T（6日目から停止）", [True] * 5 + [False] * (days - 5)),
+        ("X（11〜13日目だけ停止）", [True] * 10 + [False] * 3 + [True] * 8),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "Xは8日前に回復しているのに、「どこかで3連続」だと今も死んだままに見える</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "3つの情報源について、取得件数が0だった日（赤）と0でなかった日（緑）を21日分並べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "右端の破線枠は「直近3回」（点検19〜21）。"
+        "</text>\n",
+    ]
+
+    y = top
+    row_tops = []
+    row_bottoms = []
+    for label, ok_days in rows:
+        ty = y + 10
+        row_tops.append(ty - cell_h + 2)
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for d in range(days):
+            cls = "box-good" if ok_days[d] else "box-bad"
+            parts.append(
+                f'<rect class="{cls}" x="{px(d):.1f}" y="{ty - cell_h + 2:.1f}" '
+                f'width="{cell_w - 2}" height="{cell_h}" rx="2"/>\n'
+            )
+        row_bottoms.append(ty + 2)
+        y += row_h
+
+    # 日番号（5日おき）
+    for d in (0, 4, 9, 14, 18, 20):
+        parts.append(
+            f'<text class="t-xs" x="{px(d) + (cell_w - 2) / 2:.1f}" y="{top - 14:.1f}" '
+            f'text-anchor="middle">{d + 1}</text>\n'
+        )
+
+    # 直近3回の枠（点検19〜21＝インデックス18〜20）
+    hl_x = px(18)
+    hl_w = 3 * cell_w - 2
+    hl_top = row_tops[0] - 4
+    hl_bottom = row_bottoms[-1] + 4
+    parts.append(
+        f'<rect class="box" x="{hl_x:.1f}" y="{hl_top:.1f}" width="{hl_w:.1f}" '
+        f'height="{hl_bottom - hl_top:.1f}" rx="4" fill="none" stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="{hl_x:.1f}" y="{hl_top - 6:.1f}">直近3回</text>\n'
+    )
+
+    y += 6
+    notes = [
+        "SとTは直近3回も含めて赤が続くので「取得自体ができない」で正しい。",
+        "Xは直近3回がすべて緑で「正常」に戻るべきだが、記録のどこかに",
+        "3連続の赤があればよいという基準だと、Xも「取得自体ができない」に化ける。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "3つの情報源（S・T・X）について、21日分の取得件数が0だった日と0でなかった日を、"
+        "日ごとに緑と赤で並べたタイムライン図。"
+        "Sは21日間すべて赤（取得できない状態が最初から最後まで続く）。"
+        "Tは1〜5日目が緑、6日目以降21日目まで赤（6日目に取得が止まり、以後ずっと止まったまま）。"
+        "Xは1〜10日目が緑、11〜13日目だけ赤、14日目以降21日目まで緑"
+        "（3日だけ止まり、その後8日間回復している）。"
+        "右端の19〜20〜21日目には破線の枠が重ねられ「直近3回」と注記されている。"
+        "下の枠には、SとTは直近3回も含めて赤が続くので「取得自体ができない」で正しいこと、"
+        "Xは直近3回がすべて緑なので「正常」に戻るべきだが、"
+        "記録のどこかに3連続の赤があればよいという基準だと、"
+        "Xも「取得自体ができない」に化けることが書かれている。"
+    )
+    (OUT / "temporary-outage-recovery-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    notice_split_accuracy_chart()
+    temporary_outage_recovery_timeline_chart()

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320" role="img" aria-label="3つの情報源（S・T・X）について、21日分の取得件数が0だった日と0でなかった日を、日ごとに緑と赤で並べたタイムライン図。Sは21日間すべて赤（取得できない状態が最初から最後まで続く）。Tは1〜5日目が緑、6日目以降21日目まで赤（6日目に取得が止まり、以後ずっと止まったまま）。Xは1〜10日目が緑、11〜13日目だけ赤、14日目以降21日目まで緑（3日だけ止まり、その後8日間回復している）。右端の19〜20〜21日目には破線の枠が重ねられ「直近3回」と注記されている。下の枠には、SとTは直近3回も含めて赤が続くので「取得自体ができない」で正しいこと、Xは直近3回がすべて緑なので「正常」に戻るべきだが、記録のどこかに3連続の赤があればよいという基準だと、Xも「取得自体ができない」に化けることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="320"/>
+<text class="t-strong" x="18" y="24">Xは8日前に回復しているのに、「どこかで3連続」だと今も死んだままに見える</text>
+<text class="t-sm" x="18" y="43">3つの情報源について、取得件数が0だった日（赤）と0でなかった日（緑）を21日分並べた。</text>
+<text class="t-sm" x="18" y="62">右端の破線枠は「直近3回」（点検19〜21）。</text>
+<text class="t-sm" x="18" y="140">S（最初から停止）</text>
+<rect class="box-bad" x="190.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="214.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="238.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="262.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="286.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="310.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="334.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="358.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="382.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="406.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="430.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="454.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="478.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="502.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="526.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="550.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="574.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="598.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="622.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="646.0" y="124.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="670.0" y="124.0" width="22" height="18" rx="2"/>
+<text class="t-sm" x="18" y="174">T（6日目から停止）</text>
+<rect class="box-good" x="190.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="214.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="238.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="262.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="286.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="310.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="334.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="358.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="382.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="406.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="430.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="454.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="478.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="502.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="526.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="550.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="574.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="598.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="622.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="646.0" y="158.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="670.0" y="158.0" width="22" height="18" rx="2"/>
+<text class="t-sm" x="18" y="208">X（11〜13日目だけ停止）</text>
+<rect class="box-good" x="190.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="214.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="238.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="262.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="286.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="310.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="334.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="358.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="382.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="406.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="430.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="454.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-bad" x="478.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="502.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="526.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="550.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="574.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="598.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="622.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="646.0" y="192.0" width="22" height="18" rx="2"/>
+<rect class="box-good" x="670.0" y="192.0" width="22" height="18" rx="2"/>
+<text class="t-xs" x="201.0" y="116.0" text-anchor="middle">1</text>
+<text class="t-xs" x="297.0" y="116.0" text-anchor="middle">5</text>
+<text class="t-xs" x="417.0" y="116.0" text-anchor="middle">10</text>
+<text class="t-xs" x="537.0" y="116.0" text-anchor="middle">15</text>
+<text class="t-xs" x="633.0" y="116.0" text-anchor="middle">19</text>
+<text class="t-xs" x="681.0" y="116.0" text-anchor="middle">21</text>
+<rect class="box" x="622.0" y="120.0" width="70.0" height="94.0" rx="4" fill="none" stroke-dasharray="4 3"/>
+<text class="t-xs" x="622.0" y="114.0">直近3回</text>
+<rect class="box-accent" x="18" y="238" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="258">SとTは直近3回も含めて赤が続くので「取得自体ができない」で正しい。</text>
+<text class="t-accent" x="34" y="276">Xは直近3回がすべて緑で「正常」に戻るべきだが、記録のどこかに</text>
+<text class="t-accent" x="34" y="294">3連続の赤があればよいという基準だと、Xも「取得自体ができない」に化ける。</text>
+</svg>

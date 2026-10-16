@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="350" viewBox="0 0 720 350" role="img" aria-label="5つの条件で、通知文の判定が何件中何件正解したかを比べた横棒グラフ。基準を明示し回復ケースを含めない版は32件中32件が正解。基準をあいまいにし回復ケースを含めない版は16件中16件が正解。一時停止から回復した相手を混ぜ、基準を「どこかで3回連続0」のまま明示した版は18件中16件が正解（2件は同じ相手を2回とも誤判定）。同じ相手を混ぜて基準をあいまいに戻した版は18件中18件が正解。同じ相手を混ぜて基準を「直近3回分」または「表の末尾3行」に言い直した版は36件中36件が正解。下の枠には、回復ケースを含めない2条件はどちらも誤判定が0件だったこと、回復ケースを混ぜると「どこかで3回連続0」のままでは2件とも同じ相手を誤判定し、あいまいに戻すか直近に言い直すと0件に戻ったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="350"/>
+<text class="t-strong" x="18" y="24">「どこかで3連続0」と明示したときだけ、誤判定が出た</text>
+<text class="t-sm" x="18" y="43">5つの条件で、通知文の判定が何件中何件正解したかを比べた。</text>
+<text class="t-sm" x="18" y="62">回復ケース（一時停止から回復した相手）を混ぜたときだけ、基準の書き方で結果が分かれた。</text>
+<text class="t" x="18" y="138">明示（回復なし）</text>
+<rect class="box-quiet" x="240.0" y="128" width="380.0" height="16" rx="3"/>
+<rect class="box-good" x="240.0" y="128" width="380.0" height="16" rx="3"/>
+<text class="t-accent" x="632.0" y="138">32/32</text>
+<text class="t" x="18" y="168">あいまい（回復なし）</text>
+<rect class="box-quiet" x="240.0" y="158" width="380.0" height="16" rx="3"/>
+<rect class="box-good" x="240.0" y="158" width="380.0" height="16" rx="3"/>
+<text class="t-accent" x="632.0" y="168">16/16</text>
+<text class="t" x="18" y="198">明示「どこかで3連続」＋回復</text>
+<rect class="box-quiet" x="240.0" y="188" width="380.0" height="16" rx="3"/>
+<rect class="box-bad" x="240.0" y="188" width="337.8" height="16" rx="3"/>
+<text class="t-bad" x="632.0" y="198">16/18</text>
+<text class="t" x="18" y="228">あいまい＋回復</text>
+<rect class="box-quiet" x="240.0" y="218" width="380.0" height="16" rx="3"/>
+<rect class="box-good" x="240.0" y="218" width="380.0" height="16" rx="3"/>
+<text class="t-accent" x="632.0" y="228">18/18</text>
+<text class="t" x="18" y="258">明示「直近/末尾」＋回復</text>
+<rect class="box-quiet" x="240.0" y="248" width="380.0" height="16" rx="3"/>
+<rect class="box-good" x="240.0" y="248" width="380.0" height="16" rx="3"/>
+<text class="t-accent" x="632.0" y="258">36/36</text>
+<path class="line" d="M240.0 108.0 L240.0 264.0" stroke-dasharray="4 3"/>
+<rect class="box-accent" x="18" y="286" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="306">回復ケースを含めない2条件（明示・あいまい）は、どちらも誤判定0件。</text>
+<text class="t-accent" x="34" y="324">回復ケースを混ぜると「どこかで3連続」のまま明示した版だけが2回とも同じ相手を誤判定した。</text>
+</svg>
