@@ -3432,87 +3432,87 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
+   "last_ok": "2026-10-16T04:56:55.371353+00:00",
    "fail_streak": 0
   },
   "shizuma": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
+   "last_ok": "2026-10-16T04:56:55.371353+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
+   "last_ok": "2026-10-16T04:56:55.371353+00:00",
    "fail_streak": 0
   },
   "muttyo": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
+   "last_ok": "2026-10-16T04:56:55.371353+00:00",
    "fail_streak": 0
   },
   "starter-story": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "greg-isenberg": {
    "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   }
  }
 }
