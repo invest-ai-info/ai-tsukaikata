@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="キャンセル・返金の備考が、頼み方によってどこまで検算されるかを比べた図。素朴に聞いた場合、真の未入金を正しく指摘した回数は10/10、曖昧なキャンセル（備考にキャンセル額だけ書かれ確定額は書かれていない）の隠れた不足を見つけた回数は5/10、正当なキャンセル（確定額まで明記）を誤って不足扱いした回数は0/10。「基本月額からキャンセル額を引いて入金額と一致するか確認して」と計算式を明示した場合、曖昧なキャンセルの隠れた不足を見つけた回数は10/10、正当なキャンセルを誤って不足扱いした回数は0/10。「説明が入金額と合っているか確認して」と頼んだ場合、正当なキャンセルを誤って不足扱いした回数は1/6。下の枠には、素朴に聞くだけでは曖昧なキャンセルの隠れた不足は2回に1回しか見つからなかったこと、計算式を明示すると10回とも見つかったこと、「説明が合っているか確認して」という言い方だけでは1回だけ正しく処理された契約まで誤って疑ったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">説明の数字まで検算させないと、曖昧なキャンセルは2回に1回見逃す</text>
+<text class="t-sm" x="18" y="45">実測2026-10-16。保守・運用代行の契約各12社に、未入金・正当なキャンセルを各1件仕込んだ。</text>
+<text class="t-sm" x="18" y="64">曖昧なキャンセル（確定額が書かれていない）も1件仕込み、頼み方別に3種・計26回を比べた。</text>
+<text class="t-xs" x="478.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">素朴に聞いて、真の未入金を正しく指摘した回数</text>
+<rect class="box-good" x="398" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="125" text-anchor="middle" style="font-weight:700">10/10</text>
+<text class="t" x="18" y="157">素朴に聞いて、曖昧なキャンセルの隠れた不足を見つけた回数</text>
+<rect class="box" x="398" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="157" text-anchor="middle" style="font-weight:700">5/10</text>
+<text class="t" x="18" y="189">素朴に聞いて、正当なキャンセルを誤って不足扱いした回数</text>
+<rect class="box-good" x="398" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="189" text-anchor="middle" style="font-weight:700">0/10</text>
+<text class="t" x="18" y="221">計算式を明示して、曖昧なキャンセルの隠れた不足を見つけた回数</text>
+<rect class="box-good" x="398" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="221" text-anchor="middle" style="font-weight:700">10/10</text>
+<text class="t" x="18" y="253">計算式を明示して、正当なキャンセルを誤って不足扱いした回数</text>
+<rect class="box-good" x="398" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="253" text-anchor="middle" style="font-weight:700">0/10</text>
+<text class="t" x="18" y="285">「説明が合っているか確認して」で、正当なキャンセルを誤って不足扱いした回数</text>
+<rect class="box-bad" x="398" y="264" width="160" height="26" rx="4"/>
+<text class="t-bad" x="478.0" y="285" text-anchor="middle" style="font-weight:700">1/6</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">✅ 素朴に聞くだけでは、曖昧なキャンセル（備考に確定額が書かれていない）の隠れた不足は2回に1回しか見つからなかった。</text>
+<text class="t-accent" x="34" y="340">✅ 「基本月額からキャンセル額を引いて、入金額と一致するか確認して」と計算式を明示すると、10回とも見つかった。</text>
+<text class="t-accent" x="34" y="358">🚨 「説明が入金額と合っているか確認して」という言い方だけでは、1回だけ正しく処理された契約まで誤って疑った。</text>
+</svg>
