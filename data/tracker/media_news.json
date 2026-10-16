@@ -1,6 +1,114 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-16T00:49:28+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、AI評価団体METRに従業員並みのアクセス権を与える常駐評価を開始した。端末やオフィスを提供して社内システムへのアクセスを認め、リスクや障害の独自公表を許可する。公表拒否はできず、伏せ字要請のみ可能。OpenAIも同様の外部評価機関受け入れを準備している。",
+      "title": "Anthropic、METRの評価チームを社内に常駐させ“従業員並み”のアクセス付与　公表に拒否権なし",
+      "uid": "6bc2ea9f3e1b5121",
+      "url": "https://www.itmedia.co.jp/news/article/2610/16/2000002315/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-10-16T00:45:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "グーグルの買い物支援機能「ユニバーサル カート」が、ブラックフライデーと年末商戦を前に、米国のGoogle検索と「Gemini」アプリで順次提供されている。",
+      "title": "グーグル、AI買い物支援「ユニバーサル カート」を提供開始　検索とGeminiで",
+      "uid": "2859e08aedae8036",
+      "url": "https://japan.cnet.com/article/35253615/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-16T00:44:38+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicの最軽量モデル「Claude Haiku 5.5」を、3つの日本語タスクで「Sonnet 5.5」「GPT-6 Luna」と比較検証。定型文書では上位モデルに迫る一方、自らの立場を把握した上での返答が必要な課題では回答が揺れた。",
+      "title": "「Claude Haiku 5.5」は本当にコスパがいいのか？　3つの日本語タスクで検証してみた",
+      "uid": "66b99fb1fd7fa1d6",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002313/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-10-16T00:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Metaは10月15日、大規模AI「Muse Spark Open」の学習済みモデルを公開したと発表した。同社によると、「M5 Ultra」を搭載した「Mac Studio」2台を組み合わせ、手元の機器で動かせるという。",
+      "title": "Meta、クラウド不要の大規模AI発表　「Mac Studio」2台で動作　Appleと異例の協力",
+      "uid": "0929b86054b03ea7",
+      "url": "https://japan.cnet.com/article/35253607/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-10-15T23:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "アマゾンは、会話を録音し、AIを使って「要約、To-Doリスト、リマインダー、気付いたこと」にまとめる新製品「Bee Frontier」と「Bee Eclipse」を発表した。",
+      "title": "アマゾン、会話を記憶するAI端末「Bee」2機種を発表　手首やスマホに装着",
+      "uid": "b7d22c593fd6efc9",
+      "url": "https://japan.cnet.com/article/35253611/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-15T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "中国では現在、ヒューマノイドロボットの開発や量産、社会実装に向けた動きが加速している。しかし、完成品の動向を追うだけでは、その競争力の源泉や本格普及に向けた課題までは見えてこない。SUGENAのセミナー「フィジカルAI解体新書」では、ヒューマノイドをAIや関節、センサー、手などに“解体”し、中国勢の強さと残された課題を解説した。本稿ではその内容を基に、日本企業が勝負できる領域を見ていく。",
+      "title": "日本に本当に勝ち筋はあるのか　ヒューマノイド「解剖」で見る中国の強さと課題",
+      "uid": "a8e8df4428098356",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/16/news017.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-15T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Umios（旧マルハニチロ）が全国の支社が手作業で入力していた月次の販売計画業務を自動化した。業務用流通事業部の全支社で年間約4200時間の作業削減を見込む。自動化の鍵は何だったのか。",
+      "title": "「年4200時間の入力」「経験と勘」からの脱却　旧マルハニチロは「販売計画」をどう自動化した？",
+      "uid": "a0624e3b5afdec5d",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/16/news033.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-15T22:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは10月14日、論文や技術資料の論理的な矛盾や根拠の不足を点検するAI「Deep Review」を一般公開したと発表した。文書の作成中や提出前に、主張を支える根拠や論理に抜けがないかを確かめる補助ツールとして使える。",
+      "title": "論文の矛盾を見つけるAI「Deep Review」、Googleが公開　週2回まで無料",
+      "uid": "af73d788fb7df26d",
+      "url": "https://japan.cnet.com/article/35253606/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-15T22:25:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは10月13日、AIで作ったAndroidアプリを、開発者アカウントなしで自分の端末に導入できる機能の提供を始めたと発表した。米国を含む一部地域の18歳以上のユーザーに順次提供する。",
+      "title": "AIで自作したアプリ、開発者登録なしでGoogle Playで利用可能に--家族へシェアも可能",
+      "uid": "053f2e81f2a56d9c",
+      "url": "https://japan.cnet.com/article/35253604/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-15T22:23:31.227325+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -11,6 +119,18 @@
       "uid": "24eec7b0cd7bbc4a",
       "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2148158.html",
       "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-16T01:25:00.084826+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-15T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ドイツ南西部の地方都市が、首都ベルリンを凌ぐ勢いでBtoB・ディープテックの巨大ベンチャー拠点へと変貌している。大学の知財、地場産業の課題、そして強固な民間資本が結びつき、単なる出資にとどまらない「現場実装型エコシステム」を構築。東京一極集中や「資金提供のみ」に陥りがちな日本のオープンイノベーションと地方創生に対し、強力な勝ち筋と教訓を示している。",
+      "title": "【現地レポ】なぜドイツの地方都市が「AIベンチャーの聖地」に？　元食肉処理場が起業拠点、その熱気の実態",
+      "uid": "906c7f989adc3194",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/16/news007.html",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-10-15T22:23:31.227325+00:00",
@@ -2279,126 +2399,6 @@
       "uid": "0e9ed5c345bd434e",
       "url": "https://www.itmedia.co.jp/news/article/2610/08/2000002125/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-08T03:58:32+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "京王自動車バスサービスは10月8日、golloccoと共同開発したバス仕業作成支援システム「BASHUB」の販売媒介を開始した。京王自動車バスサービスは、貸切バス事業を運営しており、さまざまな路線で多彩な車両を運行している。",
-      "title": "AIで複雑なバス仕業割当てを効率化するシステム「BASHUB」 京王自動車バスサービスとgolloccoが共同開発",
-      "uid": "8eb252913e3f1b0a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2146697.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-08T03:48:14+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "今年夏ごろから増加傾向の、サイバー攻撃による情報漏えいなど被害の公表件数。増加している侵害に対し「これまでとは違う異常な事態が生じていると感じている」として、3社のサイバーセキュリティ専門家が情報を持ち寄りまとめた、マクニカのセキュリティ研究センターブログが注目を集めている。",
-      "title": "「異常な事態」、AI悪用は「否定する方が難しい状況」──多発する情報漏えいにセキュリティ専門家が合同で見解　攻撃の特徴と対策方法は",
-      "uid": "0f0f2e97485a5a08",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/08/2000002123/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-08T03:33:51+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Anthropicは、同社最速モデルであり、コスト重視の大量なタスク向けに設計された「Claude Haiku 5.5」をリリースした。Claude Haiku 5.5は、Amazon Web Services、Google Cloud、Microsoft Azureを含むすべてのプラットフォームで利用可能。コスト的には、Haiku 4.5よりも低価格に設定されており、同社によれば、運用コストは…",
-      "title": "Anthropic、小型モデルの中で最も安価で最も速く最も高性能な「Claude Haiku 5.5」",
-      "uid": "b56025f545928df5",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2146680.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-08T02:45:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Anthropicが小型AIモデルを刷新し、「Claude Haiku 5.5」を公開した。高頻度処理を想定し、価格、速度、推論量の調整機能をアピールしている。",
-      "title": "Anthropic、「Claude Haiku 5.5」公開　小型モデルを高速・低価格化",
-      "uid": "9e69ea2ecee97733",
-      "url": "https://japan.cnet.com/article/35253352/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-08T02:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIは2026年10月7日にChatGPTの新たなAIモデル「GPT-6」の提供範囲を無料ユーザーにも拡大すると発表しました。さらに、質問内容に応じて画像・グラフ・操作可能なボタンなどを組み合わせて回答する新機能「Intelligent UI(インテリジェントUI)」も発表しています。 続きを読む...",
-      "title": "ChatGPTの無料プランでも「GPT-6 Luna」が利用可能に、画像やグラフを組み合わせて回答する新機能「インテリジェントUI」も登場",
-      "uid": "062e6615e2f9be11",
-      "url": "https://gigazine.net/news/20261008-openai-gpt-6-luna/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-08T02:17:45+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Arcstellaは、レトロゲームのコレクション管理・プレイ記録サービス「Retro Game Gather（以下、RGG）」において、アップデートv2.2を10月6日に公開した。",
-      "title": "「このソフト持ってたっけ？」をAIに聞ける。レトロゲーム管理「RGG」v2.2公開",
-      "uid": "abbd7cf0d2bd68e2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2146631.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-08T02:13:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年10月7日、MicrosoftがNVIDIAのノートPC向けのSoC「RTX Spark」を搭載したPC群の予約販売を開始しました。最大128GBのユニファイドメモリを搭載可能で、大型のAIモデルをローカルで実行できます。 続きを読む...",
-      "title": "メモリ128GBでAI処理特化なRTX Spark搭載のMicrosoft製ノートPC「Surface Laptop Ultra」とミニPC「Surface RTX Spark Dev Box」の予約販売が始まる",
-      "uid": "1169524ea6185960",
-      "url": "https://gigazine.net/news/20261008-microsoft-surface-nvidia-rtx-spark/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-08T02:09:40+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、ChatGPTに新モデル「GPT-6」を搭載し順次提供を開始した。テキストに加え図や操作可能なボタン、フォームなどを回答として生成する「Intelligent UI」を導入。思考しながら回答を出力する機能も備える。有料プランから順次提供を始め、無料プランやGoプランにも翌日から展開する。",
-      "title": "ChatGPT、無料版を含む全ユーザーに「GPT-6」　回答内に“操作できる画面”を生成する「Intelligent UI」搭載",
-      "uid": "219976f76a833721",
-      "url": "https://www.itmedia.co.jp/news/article/2610/08/2000002119/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-08T02:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "全社にAIを導入しても、実際に使われなければ効果は生まれない。「Microsoft 365 Copilot」を社内導入した富士通は、どのようにしてAI活用を全社に定着させ、日常業務の変革につなげたのか。",
-      "title": "富士通では「Copilot」10万ライセンスの利用率が“9割超え”　「導入したけど使われない」をどう防いだ？",
-      "uid": "6be7044ce51d1518",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/08/news022.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-08T09:03:14.950532+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-08T02:00:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Timekettle（タイムケトル）は10月8日、AI通訳イヤホン「W4 Plus」の先行予約販売をMakuakeで開始した。対面では2人がイヤホンを片耳ずつ装着し、互いの発話を翻訳して聞く。一般販売予定価格は6万7999円（税込み）。",
-      "title": "AI同時通訳イヤホン「W4 Plus」登場　AirPods Pro 3との違いは",
-      "uid": "07e0fd31dda09ba2",
-      "url": "https://japan.cnet.com/article/35253350/",
-      "vendor": "CNET Japan"
     }
   ]
 }
