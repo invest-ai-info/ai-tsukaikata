@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-16T23:40:43.058467+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-16T22:25:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "日本俳優連合（日俳連）は10月15日、俳優や声優の声を生成AIで利用する際の指針を発表した。学習から生成、作品での公開・利用まで、各段階で本人の事前同意を得るよう求める。音声の無断利用を防ぎ、AI利用時の報酬や契約の基準を示す。",
+      "title": "亡くなった声優の声、AIでの再現は原則禁止　日俳連が新指針",
+      "uid": "fc9907fcec1fd7c4",
+      "url": "https://japan.cnet.com/article/35253656/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-16T23:40:43.058467+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-16T22:11:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "ウェザーニューズは10月15日、天気アプリ「ウェザーニュース」の3時間先までの天気・降水量予測に、独自のAI気象予測モデル「AI-Nowcast」を導入したと発表した。雨雲の急な発生や発達を捉え、予測精度を高めるとしている。",
+      "title": "3時間先までの雨予測をAIで改善　ウェザーニュースアプリに本格実装",
+      "uid": "c519def104f69c9d",
+      "url": "https://japan.cnet.com/article/35253654/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-16T12:31:17.014467+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "a4eb035b8b644582",
       "url": "https://www.itmedia.co.jp/news/article/2610/09/2000002102/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-09T02:48:26+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Plaruは、AI旅行計画アプリ「ぷらる」を活用した公共交通の利用と観光周遊を促す実証事業を熊本市内で10月10日に開始する。",
-      "title": "AIが最適な観光ルートを提案。旅行アプリ「ぷらる」熊本スタンプラリーが10月10日開始",
-      "uid": "a7fe25799e9d5391",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2147029.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T02:38:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicはモデルの進化やユーザーからのフィードバックを受けて、必要に応じて細かく利用規約の更新を行っています。現地時間2026年10月8日付けで発表されたアップデートは「ほとんどは既存のルールの明確化」を目的としたものですが、新たに、Claudeに対する虐待行為に対処する項目が加わりました。 続きを読む...",
-      "title": "Anthropicが「Claudeに対する持続的かつ不必要な虐待・残酷な行為禁止」などを利用規約に追加",
-      "uid": "d3e83494be1d47e9",
-      "url": "https://gigazine.net/news/20261009-anthropic-policy-update/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

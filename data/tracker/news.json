@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-16T23:40:43.058467+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-16T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors.",
+      "summary_ja": "イタウ銀行が全顧客向けに生成AIを展開。\n会話AI「ia.i」と管理基盤「IARA」を導入。\nブラジルの金融分野で顧客や従業員に活用。",
+      "summary_source": "gemini",
+      "title": "How Itaú is building generative AI for its entire customer base",
+      "uid": "fdb7774557b73120",
+      "url": "https://openai.com/index/itau-generative-ai",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-16T21:15:37.796416+00:00",
       "importance": "minor",
       "label": "OpenAI News",
