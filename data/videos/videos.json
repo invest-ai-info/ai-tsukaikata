@@ -3427,92 +3427,138 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-15T21:43:33.199233+00:00"
+  },
+  {
+   "video_id": "MAsgGQS7eks",
+   "title": "【Studio×GAS】領収書整理＆画像の個人情報黒塗りを自動化！神カスタムステップ2選を無料配布",
+   "url": "https://www.youtube.com/watch?v=MAsgGQS7eks",
+   "published": "2026-10-16T09:00:27+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-10-16T11:51:48.877960+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Workspace StudioとGASを連携させ、Geminiを活用して定型業務を高度に自動化する自作カスタムステップを紹介している。",
+    "スキャンした領収書PDFを分割・Geminiで解析し、ファイル名を自動変更してスプレッドシートに転記する手順を実演している。",
+    "申請書画像から個人情報をGeminiに特定させ、該当箇所を自動で黒塗りマスキング加工するカスタムステップを解説している。"
+   ],
+   "for_whom": "Google Workspace上で領収書整理や個人情報のマスキング作業を自動化したい人",
+   "caution": "動画内でも説明されている通り、Geminiによる個人情報の検出は完全ではなく見落とす可能性があるため、一次処理として活用し確認を怠らない注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-16T11:51:48.877960+00:00"
+  },
+  {
+   "video_id": "U9x_Xtc7deI",
+   "title": "【シニア副業の金字塔】20年続けた人生経験をAIで早見表にして、巨万の富を実現する方法【副業 おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=U9x_Xtc7deI",
+   "published": "2026-10-16T09:40:24+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "first_seen": "2026-10-16T11:51:48.877960+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "料理や大工など長年の仕事経験をChatGPTで英語の早見表や図解にし、海外向けに販売する副業手法を紹介している。",
+    "作成した図はEtsyでのデジタル販売やPrintifyを使った紙ポスター、店舗用研修セットとして展開できると説明している。",
+    "AI任せにすると寸法の不整合が生じるため、自身の経験を基に作成した表で図を検品・修正することが重要だと述べている。"
+   ],
+   "for_whom": "長年の仕事や家事の経験を活かし、AIを使った海外向け販売副業に挑戦したい人",
+   "caution": "動画内では4ヶ月で月収50万円超を達成したとする事例が紹介されていますが客観的な収益証明はなく、公式LINEへの登録誘導が目的となっている点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-16T11:51:48.877960+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-16T04:56:55.371353+00:00",
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-16T04:56:55.371353+00:00",
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-16T04:56:55.371353+00:00",
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-16T04:56:55.371353+00:00",
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-15T21:43:33.199233+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-16T11:51:48.877960+00:00",
+   "fail_streak": 0
   }
  }
 }
