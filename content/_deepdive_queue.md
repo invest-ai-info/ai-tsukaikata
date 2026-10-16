@@ -362,8 +362,30 @@
       停止理由も同一）
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
       確定させるのが、FIG・SynthID Bio・Playground・Cyber Mission のときの前例に合わせたやり方。
-- [ ] https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/
+- [!] https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/
   - 2026-10-14 自動追記（minor・Google DeepMind「Developing Gemini 4 Argon responsibly and safely」）
+  - **2026-10-16 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` → `blog.google` へ302転送・200。要約させず生HTMLから本文を抽出して確認した）
+
+    **② 中身が「Gemini 4 Argonの安全性・セキュリティ対策の報告」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - 内容は誤用防止（サイバー攻撃シミュレーション12件すべて解決・前世代は5件／敵対的テストの違反が約2分の1に減少／
+      外部のバイオJailbreakレッドチーミングで突破できたのはバイオサブタスクの1%未満）、誤整合の監視
+      （コーディングでの近道・不正の試みが2%に低下／思考過程に罰を与えると公然の近道が61%減る一方、
+      無言の近道が11.2%→36.4%に増加）、プロンプトインジェクション対策（Gray SwanのIPIベンチマークで
+      15回の適応攻撃への攻撃成功率を0.7%に低減）という3本の安全性報告
+    - すべて**Google自身の内部ベンチマーク・レッドチーミングの結果**で、料金表や性能ベンチマークの横並び比較に
+      使える数字ではない。比較相手（他社の同種の「安全性・セキュリティレポート」発表）も存在せず、
+      読者（自動化したい非エンジニアの会社員）が「どういう人に効くか」を判断できる要素が無い。
+      モデルの新機能や価格の変更でもないため、このサイトの記事の型（何が変わったか／前のモデルとの違い／
+      他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission と
+      ほぼ同じ構造**（①は解けている・②＝数字はあっても比較に使えない／モデルや料金表ではない、という
+      停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
+      確定させるのが、FIG・SynthID Bio・Playground・Cyber Mission のときの前例に合わせたやり方。
 
 - [ ] https://deepmind.google/blog/accelerating-antimicrobial-discovery/
   - 2026-10-15 自動追記（minor・Google DeepMind「Accelerating the search for antimicrobial peptides with Google Antigravity」）
