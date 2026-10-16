@@ -38,7 +38,7 @@
   "latest": {
     "anthropic-news": "2026-10-15T17:20:00+00:00",
     "anthropic-sdk": "2026-10-15T19:45:15+00:00",
-    "claude-code": "2026-10-15T19:22:06+00:00",
+    "claude-code": "2026-10-16T20:53:06+00:00",
     "deepmind-blog": "2026-10-15T16:08:03+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-10-13T16:00:00+00:00",
@@ -49,7 +49,7 @@
     "media-impress-ai": "2026-10-16T10:26:18+00:00",
     "media-itmedia-aiplus": "2026-10-16T05:20:00+00:00",
     "media-publickey": "2026-10-15T15:21:12+00:00",
-    "openai-news": "2026-10-15T19:00:00+00:00",
+    "openai-news": "2026-10-16T00:00:00+00:00",
     "openrouter-moonshot": "2026-07-16T15:30:58+00:00",
     "openrouter-qwen": "2026-09-23T19:20:28+00:00",
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
@@ -65,6 +65,28 @@
       "title": "Sullivan & Cromwell brings legal expertise into agreement review",
       "uid": "59dcfb7521f46eaa",
       "url": "https://openai.com/index/sullivan-cromwell",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-16T20:53:06+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added CLAUDE_CODE_AUTO_MODE_MODEL to choose the model the client-side auto mode classifier uses; it does not change the model for server-side auto mode Added an Idle compaction row to …",
+      "title": "v2.1.302",
+      "uid": "983f49ae9dad260f",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
+      "vendor": "Anthropic"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-16T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation.",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "uid": "c4c93e5bf5836045",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
       "vendor": "OpenAI"
     }
   ],
@@ -2514,6 +2536,7 @@
     "97e5ef9b4a32ab18": "2026-10-01T06:02:04.226611+00:00",
     "97ea8ad8d601c775": "2026-08-14T05:06:15.076052+00:00",
     "98099964cab6ca1c": "2026-08-27T09:54:30.419398+00:00",
+    "983f49ae9dad260f": "2026-10-16T21:15:37.796416+00:00",
     "986cb0d7e3a8ab4e": "2026-10-16T07:14:56.691022+00:00",
     "989f5be7ed54ca79": "2026-09-30T00:30:49.747979+00:00",
     "98a8dab990458d28": "2026-08-02T11:35:58.106550+00:00",
@@ -3174,6 +3197,7 @@
     "c48934e22b87504b": "2026-08-04T11:04:53.115730+00:00",
     "c4a0ef8d3542dfce": "2026-08-10T23:52:14.190919+00:00",
     "c4af947324b634f8": "2026-10-14T01:15:30.868128+00:00",
+    "c4c93e5bf5836045": "2026-10-16T21:15:37.796416+00:00",
     "c4d2cc5ab8e3d239": "2026-09-08T09:45:19.651566+00:00",
     "c50edecdb3f60f71": "2026-09-18T05:58:12.647888+00:00",
     "c510b155db138431": "2026-09-09T11:28:50.861492+00:00",

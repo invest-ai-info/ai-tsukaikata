@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-16T21:15:37.796416+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-16T20:53:06+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added CLAUDE_CODE_AUTO_MODE_MODEL to choose the model the client-side auto mode classifier uses; it does not change the model for server-side auto mode Added an Idle compaction row to …",
+      "title": "v2.1.302",
+      "uid": "983f49ae9dad260f",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-16T21:15:37.796416+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-16T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation.",
+      "summary_ja": "Stack Overflow for Agentsの利用が急増。\nChatGPTプラグイン導入で登録者が3倍に増加。\nAIエージェント作成数は最大10倍に伸びた。",
+      "summary_source": "gemini",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "uid": "c4c93e5bf5836045",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-15T22:23:31.227325+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
