@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-17T22:23:02.304095+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-17T20:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "中国の商務部と科学技術部は10月16日、大規模AIモデルや、自律的に作業を進めるAIエージェントなどに関する23項目の技術を、輸出の禁止・制限の対象に加える案を公表した。ただし、大規模モデルの機能をAPIやアプリで海外向けに提供する場合は、技術輸出管理の対象外とする方針だ。",
+      "title": "中国、AI技術23項目を輸出規制へ　その中身とは",
+      "uid": "d9c12b163ee0d436",
+      "url": "https://japan.cnet.com/article/35253670/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-17T17:15:15.799083+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "edf7a11b12436c17",
       "url": "https://www.itmedia.co.jp/news/article/2610/09/2000002164/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-10-09T03:53:51+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Googleは10月6日、テキストから動画まで扱える軽量なオープンマルチモーダルモデル「EmbeddingGemma 2」を発表した。現在、Hugging FaceやKaggleからモデルの重みをダウンロード可能。MediaPipeやLiteRTなどを用いたオンデバイスデプロイ、各種開発ツールとの連携に対応している。",
-      "title": "Google、画像や動画にも対応する「EmbeddingGemma 2」を発表",
-      "uid": "6d697ffa89d2ce0c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2147081.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
