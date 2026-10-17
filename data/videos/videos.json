@@ -3496,91 +3496,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-16T21:39:26.364693+00:00"
+  },
+  {
+   "video_id": "-_bZFw-FORY",
+   "title": "Claudeの便利機能！Artifactsの基本的な使い方やデザインシステムの作り方を解説してみた",
+   "url": "https://www.youtube.com/watch?v=-_bZFw-FORY",
+   "published": "2026-10-17T09:00:14+00:00",
+   "channel_key": "nyanta",
+   "channel_name": "にゃんたのAIチャンネル",
+   "default_category": "tech",
+   "first_seen": "2026-10-17T11:08:34.537473+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ClaudeのArtifacts機能の概要と、仕事で使う際は情報漏洩を防ぐため一般公開ではなく組織内共有にとどめるべき注意点などを説明している。",
+    "事前に配色やフォントを定めたデザインシステムを作成・参照させることで、スライドやLPの見た目を統一できると紹介している。",
+    "Artifacts上での直接編集やClaude Codeとの連携、ダッシュボードによるデータ可視化など仕事での具体的な活用法を解説している。"
+   ],
+   "for_whom": "Claudeを使ってスライド資料や社内ツール作成を効率化したい会社員",
+   "caution": "概要欄で特典配布を案内してLINE公式アカウントへの登録を誘導している点には留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-17T11:08:34.537473+00:00"
+  },
+  {
+   "video_id": "1lF9yQBJVoA",
+   "title": "【緊急】DeepSeek V4.1 Flash 1017版が激アツ！Opus 5の60分の1の費用で戦える実力を解説",
+   "url": "https://www.youtube.com/watch?v=1lF9yQBJVoA",
+   "published": "2026-10-17T10:29:10+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-17T11:08:34.537473+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "DeepSeek V4.1 Flash 1017版が登場し、Opus 5に近い性能を約60分の1のコストで実現していると紹介している。",
+    "自社検索エンジンを活用するSearch＆Fetch APIが一般公開され、安価に利用可能になったと説明している。",
+    "Webサイトや3Dゲーム、SVGなどの生成デモを比較し、前バージョンから品質が大きく向上したと解説している。"
+   ],
+   "for_whom": "低コストで高性能な最新AIモデルを活用・開発したい人",
+   "caution": "動画終盤および概要欄にて、noteの有料メンバーシップや限定勉強会への案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-17T11:08:34.537473+00:00"
+  },
+  {
+   "video_id": "GBOZIRK1ujw",
+   "title": "Put your dot on call",
+   "url": "https://www.youtube.com/watch?v=GBOZIRK1ujw",
+   "published": "2026-10-16T21:43:48+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-17T11:08:34.537473+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "OpenAIのエンジニアが、永続型クラウドエージェント「dot」をSlackと連携させて活用する方法を紹介している。",
+    "オンコール通知を監視し、自動で障害調査を行ってCodexスレッドを作成するワークフローの手順を説明している。",
+    "深夜の障害通知時も、PCを開かずにスマホのChatGPTアプリから調査結果を確認して指示できた事例を語っている。"
+   ],
+   "for_whom": "オンコール対応や障害調査をAIエージェントで自動化したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-17T11:08:34.537473+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-16T21:39:26.364693+00:00",
+   "last_ok": "2026-10-17T11:08:34.537473+00:00",
    "fail_streak": 0
   }
  }
