@@ -34999,3 +34999,161 @@ def number_list_first_detection_rates_chart() -> None:
 
 if __name__ == "__main__":
     number_list_first_detection_rates_chart()
+
+
+def later_stages_chain_flow_chart() -> None:
+    """3工程のチェーンに工程4・5を足した流れと、工程3が完全に止まった場合の流れを並べる。
+
+    実測（2026-10-17）。工程1〜3は前の記事（split-into-stages-what-breaks・2026-08-23）の
+    実際の出力をそのまま使い、工程4・5だけを新しく独立した会話で走らせた。
+    """
+    box_x, box_w = 18, 684
+    row_h = 78
+    arrow_h = 22
+    top = 100
+
+    rows = [
+        (
+            "工程1〜3（前の記事・2026-08-23）",
+            ["件数を書かせた版は4通しとも12件のまま。", "ただし3本は「期限」欄が本工程に届かず機能しなかった。"],
+            "box-quiet",
+            "t",
+        ),
+        (
+            "工程4（今回・新規）部署への振り分け",
+            ["見積もり→営業部／不具合→サポート部／日程→総務部。", "4通し・48件すべて真値どおり（期限は使っていない）。"],
+            "box-good",
+            "t-good",
+        ),
+        (
+            "工程5（今回・新規）部署別の集計表",
+            ["営業部・サポート部・総務部・合計の4セル。", "4通しとも真値どおり。"],
+            "box-good",
+            "t-good",
+        ),
+    ]
+    rows2 = [
+        (
+            "工程3が0件で停止（前の記事の別の版）",
+            ["下流に渡せる3行（型番・用件・期限）が1件もなく、", "「作れません」と断って停止した。"],
+            "box-bad",
+            "t-bad",
+        ),
+        (
+            "工程4（今回・新規）に、この停止をそのまま渡す",
+            ["「受け取った件数: 0件」と自己申告。作り話の部署は0件。", "前工程への質問をそのまま引き継いで、ここでも停止した。"],
+            "box-good",
+            "t-good",
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "工程を5つまで増やしても、新しい2工程は崩れなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前の記事の工程3の出力（4本・実測済み）をそのまま使い、工程4・5を新しく足した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "工程3が完全に0件で止まった場合に、工程4がどう振る舞うかも別に試した（下）。</text>\n",
+    ]
+
+    def draw_box(y: int, title: str, lines: list[str], klass: str, tcls: str) -> int:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(title)}</text>\n')
+        for i, line in enumerate(lines):
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 40 + i * 18}">{_esc(line)}</text>\n')
+        return y + row_h
+
+    def draw_arrow(y: int) -> int:
+        cx = box_x + box_w / 2
+        parts.append(f'<path class="line" d="M{cx:.1f} {y} L{cx:.1f} {y + arrow_h - 6}"/>\n')
+        parts.append(
+            f'<path class="line" d="M{cx - 5:.1f} {y + arrow_h - 10} '
+            f'L{cx:.1f} {y + arrow_h - 2} L{cx + 5:.1f} {y + arrow_h - 10}"/>\n'
+        )
+        return y + arrow_h
+
+    y = top
+    for i, (title, lines, klass, tcls) in enumerate(rows):
+        y = draw_box(y, title, lines, klass, tcls)
+        if i < len(rows) - 1:
+            y = draw_arrow(y)
+
+    y += 18
+    parts.append(f'<text class="t-accent" x="18" y="{y}">別の版：工程3が0件で完全に止まった場合</text>\n')
+    y += 20
+
+    for i, (title, lines, klass, tcls) in enumerate(rows2):
+        y = draw_box(y, title, lines, klass, tcls)
+        if i < len(rows2) - 1:
+            y = draw_arrow(y)
+
+    y += 10
+    notes = [
+        "✅ 48件・4セルとも、新しく足した工程4・5は崩れなかった（期限欄の欠けを使わないため）。",
+        "✅ 工程3が0件で止まった場合も、工程4は作り話で埋めず、同じ理由を引き継いで止まった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "3工程のチェーンに工程4（部署への振り分け）・工程5（部署別の集計表）を足した流れを示す図。"
+        "工程1〜3（前の記事・2026年8月23日の実測）は、件数を書かせた版が4通しとも12件のまま保たれたが、"
+        "4通しのうち3本は「期限」欄が本工程に届かず機能しなかった。"
+        "工程4（今回・新規）は、見積もりを営業部、不具合をサポート部、日程を総務部に振り分け、"
+        "4通し・48件すべて真値どおりだった（期限は使っていない）。"
+        "工程5（今回・新規）は営業部・サポート部・総務部・合計の4セルを集計し、4通しとも真値どおりだった。"
+        "下には別の版として、工程3が完全に0件で止まった場合を示す。"
+        "工程3が0件で停止したのは、下流に渡せる型番・用件・期限の3行が1件もなく「作れません」と断ったため。"
+        "この停止をそのまま渡した工程4（今回・新規）は、「受け取った件数: 0件」と自己申告し、"
+        "作り話で部署を割った件数は0件で、前工程への質問をそのまま引き継いで同じく停止した。"
+        "下の枠には、48件・4セルとも新しく足した工程4・5は崩れなかったこと、"
+        "工程3が0件で止まった場合も工程4は作り話で埋めず同じ理由を引き継いで止まったことが書かれている。"
+    )
+    (OUT / "later-stages-chain-flow.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    later_stages_chain_flow_chart()
+
+
+def later_stages_run_level_accuracy_chart() -> None:
+    """工程3の期限欄の割れと、新しく足した工程4・5の run 単位の完全正解率を比べる。
+
+    実測（2026-10-17）。工程3は前の記事（2026-08-23・版d）の4通し、
+    工程4・5は今回新しく足した4通し。判定は check.py。
+    """
+    _hit_and_miss_rows_chart(
+        "later-stages-run-level-accuracy.svg",
+        "工程3で割れた期限欄も、使わない工程4・5では一度も崩れなかった",
+        "実測2026-10-17。前の記事（2026-08-23）の工程3の出力4本を、そのまま工程4・5の入力にした。",
+        "行は run 単位（4通し）での完全正解。工程3は期限欄まで12件とも機能したかを見る。",
+        [
+            ("工程3：期限欄まで12件とも機能した run", 1, 4, "good"),
+            ("工程3：期限欄が機能しなかった run（新規2工程はこれを引き継いだ）", 3, 4, "bad"),
+            ("工程4（新規）：部署の振り分けが12件とも真値どおりだった run", 4, 4, "good"),
+            ("工程5（新規）：集計表が4セルとも真値どおりだった run", 4, 4, "good"),
+        ],
+        [
+            "✅ 工程4・5は、期限欄が機能しなかった3本を引き継いでも、48件・4表とも崩れなかった。",
+            "🔑 部署の判定も集計も「期限」を使わないので、工程3の欠けはそのまま伝わらずに消えた。",
+            "🚨 工程3が完全に0件で止まった場合は別枠（もう1枚の図）。作り話での穴埋めは0件だった。",
+        ],
+        "工程3の期限欄の割れと、新しく足した工程4・5の run単位の完全正解率を比べた表。"
+        "工程3で期限欄まで12件とも機能したrunは4本中1本、期限欄が機能しなかったrunは4本中3本で、"
+        "新規2工程はこの3本も引き継いでいる。"
+        "工程4（部署の振り分けが12件とも真値どおりだったrun）は4本中4本、"
+        "工程5（集計表が4セルとも真値どおりだったrun）も4本中4本。"
+        "下の枠には、工程4・5は期限欄が機能しなかった3本を引き継いでも48件・4表とも崩れなかったこと、"
+        "部署の判定も集計も期限を使わないので工程3の欠けは伝わらず消えたこと、"
+        "工程3が完全に0件で止まった場合は別の図で扱い、作り話での穴埋めは0件だったことが書かれている。",
+        label_w=430,
+    )
+
+
+if __name__ == "__main__":
+    later_stages_run_level_accuracy_chart()
