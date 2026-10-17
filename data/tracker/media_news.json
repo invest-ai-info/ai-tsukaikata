@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-17T17:15:15.799083+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-10-17T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "基本無料のイラスト制作アプリ「アイビスペイント(ibisPaint)」で知られるibisWorksが、Microsoft Officeファイル形式を編集できる無料オープンソースオフィススイート「ibisOffice」をリリースしました。 続きを読む...",
+      "title": "無料オープンソースオフィススイート「ibisOffice」をibisPaint開発元がリリース、ブラウザまたはWindows・Mac版アプリでWord・Excel・PowerPointファイルの閲覧と編集が可能",
+      "uid": "5583668a55fe72a8",
+      "url": "https://gigazine.net/news/20261017-ibisOffice/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-17T09:25:57.745014+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "6d697ffa89d2ce0c",
       "url": "https://ai.watch.impress.co.jp/docs/news/2147081.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-09T03:20:15+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米スタンフォード大学や米カーネギーメロン大学などに所属する研究者らが発表した論文「Living with AI Companions: Sustained AI Companionship Predicts Lower Well-Being Through Lower Human Interaction」は、いわゆる“AIキャラチャット”への長期的な没頭がユーザーの幸福度にどのような影響を与える…",
-      "title": "“AIキャラチャット”に没頭した人の予後、スタンフォード大などが1年の追跡調査　依存強まる傾向に",
-      "uid": "6273717ff7a847ab",
-      "url": "https://www.itmedia.co.jp/news/article/2610/09/2000002121/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
