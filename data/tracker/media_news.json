@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-17T09:25:57.745014+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-17T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Claude CodeやCodexなどを並行して利用すると、どのAIコーディングエージェントやモデルへどれだけトークンを使ったのか全体像を把握しにくくなります。そこで使えるのが複数のエージェントのローカル履歴を自動収集し、モデル別・日別・セッション別の利用量やAPI料金換算のコストをまとめて確認できる「AgentsView」です。 続きを読む...",
+      "title": "すべてのAIコーディングエージェントのコストを閲覧・検索・追跡しローカルで動作する「AgentsView」、Claude Code・Codex・Cursor・Copilot・Geminiなど60種類以上のエージェントを自動検出し全文検索も可能",
+      "uid": "a153e5a9d42547d1",
+      "url": "https://gigazine.net/news/20261017-agentsview/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-17T09:25:57.745014+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-17T08:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "SHIFT AIが65歳以上の親を持つ全国の30～50代男女723人を対象とした「シニア×AIの意識調査」の結果を発表。親に生成AIを使ってほしくない子世代が69.3％に達したという結果とともに、その理由や自身の利用頻度、親に教える際の障壁などを示した。",
+      "title": "「そもそも親にAIなんて必要ない」　65歳以上の生成AI利用、子世代の7割が拒否する理由",
+      "uid": "4e67c25d87448cb6",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/17/news007.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-16T23:40:43.058467+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2374,30 +2398,6 @@
       "title": "“AIキャラチャット”に没頭した人の予後、スタンフォード大などが1年の追跡調査　依存強まる傾向に",
       "uid": "6273717ff7a847ab",
       "url": "https://www.itmedia.co.jp/news/article/2610/09/2000002121/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T03:13:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicがオープンソースプロジェクト向けに、自社の「最も高性能なモデル」によるセキュリティスキャンを無料で受けられるとするサービス「OSS Scanner」を発表しました。 続きを読む...",
-      "title": "Anthropicがオープンソースプロジェクト向けに無料AIセキュリティスキャンサービスの「OSS Scanner」を開始",
-      "uid": "8dc707da1e95c1bf",
-      "url": "https://gigazine.net/news/20261009-anthropic-oss-scanner/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-09T03:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米ノースカロライナ大学チャペルヒル校、米デューク大学、米UCバークレーなどに所属する研究者らがセキュリティ分野の国際会議「USENIX Security Symposium 2026」で発表した論文「Measuring Real-World Prompt Injection Attacks in LLM-based Resume Screening」は、AIをだます隠し文字入りの履歴書が現実の就…",
-      "title": "履歴書100通に1通「AIだけが読める文字」　20万件調査でわかった“就活ハック”の手口　米研究",
-      "uid": "a4eb035b8b644582",
-      "url": "https://www.itmedia.co.jp/news/article/2610/09/2000002102/",
       "vendor": "ITmedia AI+"
     }
   ]

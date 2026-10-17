@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-17T09:25:57.745014+00:00",
+      "importance": "major",
+      "label": "DeepSeek 新モデル",
+      "published": "2026-10-17T02:40:38+00:00",
+      "source_id": "hf-deepseek",
+      "summary": "HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4.1-Flash-1017 が公開されました。",
+      "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "uid": "8d6ddac260023b88",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "vendor": "DeepSeek"
+    },
+    {
       "first_seen": "2026-10-16T21:15:37.796416+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -38,6 +50,20 @@
       "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
       "uid": "c4c93e5bf5836045",
       "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-17T09:25:57.745014+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-16T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups.",
+      "summary_ja": "Benefit Street PartnersがAIで質問対応を高速化\nAnant Kumar氏が融資評価や信用契約分析のツール開発\nCodexでプログラム確認と対応を迅速化",
+      "summary_source": "gemini",
+      "title": "Benefit Street Partners answers questions faster with Codex",
+      "uid": "8e25d32ee3ca3152",
+      "url": "https://openai.com/index/benefit-street-partners",
       "vendor": "OpenAI"
     },
     {
