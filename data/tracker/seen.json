@@ -55,30 +55,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-14T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-06-03T13:03:03+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...",
-      "title": "qwen/qwen3.7-plus:batch",
-      "uid": "5487407a221d5676",
-      "url": "https://openrouter.ai/qwen/qwen3.7-plus:batch",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-16T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups.",
-      "title": "Benefit Street Partners answers questions faster with Codex",
-      "uid": "8e25d32ee3ca3152",
-      "url": "https://openai.com/index/benefit-street-partners",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
