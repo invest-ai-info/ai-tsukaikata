@@ -34,9 +34,15 @@
     "e7c4e5e484b85e66": "2026-09-15",
     "ef1a177e81759e91": "2026-10-13"
   },
-  "failures": {},
+  "failures": {
+    "deepmind-blog": {
+      "count": 1,
+      "last_error": "0件",
+      "since": "2026-10-18T18:09:26.805482+00:00"
+    }
+  },
   "latest": {
-    "anthropic-news": "2026-10-15T17:20:00+00:00",
+    "anthropic-news": "2026-10-18T16:49:35.513000+00:00",
     "anthropic-sdk": "2026-10-15T19:45:15+00:00",
     "claude-code": "2026-10-16T20:53:06+00:00",
     "deepmind-blog": "2026-10-15T16:08:03+00:00",
@@ -55,7 +61,19 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-14T15:00:00+00:00"
   },
-  "pending_minor": [],
+  "pending_minor": [
+    {
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-18T16:49:35.513000+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+      "title": "Investing in the public benefit",
+      "uid": "11595e01a99591bd",
+      "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "vendor": "Anthropic"
+    }
+  ],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
@@ -336,6 +354,7 @@
     "11148a71f7cd8270": "2026-09-02T11:23:56.563756+00:00",
     "1124e1d1483fe52f": "2026-09-11T11:27:18.996340+00:00",
     "114402d77348c210": "2026-09-02T05:51:57.834877+00:00",
+    "11595e01a99591bd": "2026-10-18T18:09:26.805482+00:00",
     "11655ebcdb668a6f": "2026-09-14T14:08:28.662401+00:00",
     "1169524ea6185960": "2026-10-08T09:03:14.950532+00:00",
     "118d86ac6037ff45": "2026-09-09T06:01:22.694805+00:00",

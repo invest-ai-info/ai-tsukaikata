@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-18T18:09:26.805482+00:00",
+      "importance": "minor",
+      "label": "Anthropic 公式ニュース",
+      "published": "2026-10-18T16:49:35.513000+00:00",
+      "source_id": "anthropic-news",
+      "summary": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+      "summary_ja": "Anthropicが自社株を公益基金に拠出しました\n「Anthropic公益基金」という新組織に\n会社成長で基金の持ち株比率が高まります",
+      "summary_source": "gemini",
+      "title": "Investing in the public benefit",
+      "uid": "11595e01a99591bd",
+      "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-17T09:25:57.745014+00:00",
       "importance": "major",
       "label": "DeepSeek 新モデル",
@@ -5737,34 +5751,6 @@
       "uid": "5ffa791b58142187",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.216",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-20T17:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Anthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, w…",
-      "summary_ja": "Anthropicが研究助成金の応募を開始\n希少な遺伝性疾患の研究が対象となる\n採用者は最大5万ドル相当のClaude利用権を得る",
-      "summary_source": "gemini",
-      "title": "Apply for Anthropic’s AI for Science rare disease research grants",
-      "uid": "0b0fb5576ac3eac3",
-      "url": "https://www.anthropic.com/news/rare-disease-research-grants",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-20T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "summary_ja": "新しいサイバーセキュリティAIモデルが発表されました。\n「Fugu-Cyber」という名前の高性能なモデルです。\n実際のサイバーセキュリティの評価で、業界最高の性能を示しました。",
-      "summary_source": "gemini",
-      "title": "Introducing Fugu-Cyber: our new orchestration model that achieves state-of-the-art performance on real-world cybersecurity benchmarks",
-      "uid": "a45b32194abb2c90",
-      "url": "/fugu-cyber-release/",
-      "vendor": "Sakana AI"
     }
   ]
 }
