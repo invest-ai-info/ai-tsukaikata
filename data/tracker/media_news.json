@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-18T23:17:33.953345+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-18T22:15:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "二足で歩いたり、踊ったりする小型ロボット「FF Nova Mini」が、米国で299ドルで発売された。米Faraday FutureとFF EAI Robotics Ecosystemが、米国時間10月15日に発表した。家庭や学校で子どもがプログラミングなどを学ぶ用途を想定している。",
+      "title": "子どもがフィジカルAIを学べる二足歩行ロボ、約5万円で発売　米国で",
+      "uid": "17faf84f1cbd1d22",
+      "url": "https://japan.cnet.com/article/35253690/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-18T23:17:33.953345+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-18T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIを実業務に定着させるには、明確な目的設定とデータの整備・統合が不可欠だ。NECと東京都足立区の事例を通じて、AIエージェントによるデータ分析・施策立案の実践と、統合的なAI基盤を活用した持続的な業務変革の要点を解説する。",
+      "title": "「言い訳文化」から脱却のNECが足立区に伝授した生成AI活用術とは　データ活用“逆算”の鉄則",
+      "uid": "9e450df0042977b7",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/19/2000002342/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-18T23:17:33.953345+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-18T21:57:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "公開情報の調査を頼まれた内部AIモデルが、対象組織の内部システムを無許可で変更し、非公開データ14万7451行を取得していた。OpenAIが10月15日に更新した報告書で明らかにした。6月17日の評価中に起きた事案だ。",
+      "title": "OpenAI、AIの新たな「暴走」事例を公表　公開情報を調べるはずが内部システムに無断侵入",
+      "uid": "b0dce69d52dbe634",
+      "url": "https://japan.cnet.com/article/35253688/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-18T23:17:33.953345+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-18T21:01:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AIが生成した画像は、将来、科学的に見分けられなくなるかもしれない。OpenAIの政策担当弁護士Shira Anderson氏が米司法の会合でこうした見方を示したと、Reutersを引用したBreitbartが10月17日に報じた。",
+      "title": "「AI画像」と「本物の写真」、いずれ科学的にも判別困難に--OpenAI担当者が警告",
+      "uid": "bd16456023ac5f15",
+      "url": "https://japan.cnet.com/article/35253687/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-18T11:13:57.157722+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2350,54 +2398,6 @@
       "title": "MetaやOpenAIが「.agent」を新ドメインとしてICANNに申請、「.agi」やトランプ大統領の「.trump」に加え日本からは「.neko」も",
       "uid": "9d5265c0f93672be",
       "url": "https://gigazine.net/news/20261009-icann-reveals-bids-new-domains-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-09T06:18:37+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "富士通は米国のニューメキシコ州（以下、同州）と、量子コンピューティングでの技術開発と専門人材育成を行なう量子コンピューティング研究センター設立に向けた協業を10月8日に開始した。",
-      "title": "富士通、米ニューメキシコ州と量子計算の研究拠点設立へ 1億5,000万ドルを拠出、ニューメキシコが表明",
-      "uid": "e50b6b7d3d8b7e17",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2147135.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T06:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ロシアのIT大手「Yandex(ヤンデックス)」が運営するデータセンターが2026年10月8日にウクライナのドローン攻撃を受け、大規模な火災が発生しました。データセンターは稼働停止に追い込まれ、ロシア国内の多数のオンラインサービスで障害が報告されています。攻撃を受けた施設にはAI開発に使用するスーパーコンピューター2基も設置されており、被害が懸念されています。 続きを読む...",
-      "title": "ロシアのIT大手・Yandexのデータセンターがウクライナのドローン攻撃で大規模炎上、AI開発用スパコン2基も被災の可能性",
-      "uid": "57c62417be3ff43f",
-      "url": "https://gigazine.net/news/20261009-yandex-drone-attack/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-09T06:15:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "グーグルが、会話をデータセンターに送信せずに文字起こしできる新しいメモアプリ「Google AI Edge Foresight」を公開した。現時点では「Mac」にのみ提供されている。",
-      "title": "グーグル、会話をクラウドに送らないAIメモアプリ「AI Edge Foresight」公開　Mac向け",
-      "uid": "c56827619d47b7ab",
-      "url": "https://japan.cnet.com/article/35253417/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年10月、OpenAIが社内の最先端AIモデルを使って生成した722件に及ぶ「数学的成果」を発表しました。これに対し、世界各国の数学者らにより構成されているThe Association for Human Mathematics(人間のための数学協会)が、「一度に700以上の成果を公開することは学術的な成果を示すものではなく、権力の誇示に過ぎない」と批判しています。 続きを読む...",
-      "title": "OpenAIがAIで大量の数学的成果を発表したのは「学術的成果ではなく権力の誇示に過ぎない」との指摘",
-      "uid": "5dad49e6a93d0c97",
-      "url": "https://gigazine.net/news/20261009-openais-math-solutions-human-ahm/",
       "vendor": "GIGAZINE"
     }
   ]
