@@ -35330,4 +35330,126 @@ def same_week_two_fixes_scope_chart() -> None:
 if __name__ == "__main__":
     same_week_two_fixes_results_chart()
     same_week_two_fixes_scope_chart()
+
+
+def seen_list_catches_the_backfilled_one_results_chart() -> None:
+    """既読ID一覧を実際に渡して新着を判定したとき、一括と3分割の結果を示す表。
+
+    実測（2026-10-18・架空のお知らせ一覧/メンテナンス履歴300件×2系列・各2回転）。
+    """
+    label_w = 110
+    col_gap = 10
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 100
+    pitch, box_h = 40, 30
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    rows = [
+        ("一括（分割なし）", "2/2検出・見逃し0件", "2/2検出・見逃し0件"),
+        ("100件ごと3分割", "2/2検出・見逃し0件", "2/2検出・見逃し0件"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "既読ID一覧を実際に渡すと、一括でも3分割でも新着2件とも見逃さなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空のお知らせ一覧・メンテナンス履歴（各300件）×2系列。新着2件のうち1件は一覧の中ほどの古い日付。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "既読ID一覧298件を実際に渡し、「既読リストに無い項目を新着として」で聞いた。2系列×2回転＝4回ずつ機械で確認。</text>\n",
+    ]
+    headers = ["系列ANN", "系列MNT"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, va, vb in rows:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for i, v in enumerate((va, vb)):
+            x = col_x[i]
+            parts.append(
+                f'<rect class="box-good" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{x + 8:.1f}" y="{y + 20}">{_esc(v)}</text>\n'
+            )
+        y += pitch
+
+    height = y + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※ 誤検知（既読を新着と誤る）も4セル・8回とも0件。2回転とも同じ結果（割れた回は無し）。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "既読ID一覧を実際に渡して新着を判定したとき、一括で渡した場合と100件ごと3分割で"
+        "渡した場合の結果を示す表。行は一括・100件ごと3分割、列は系列ANN（お知らせ一覧）・"
+        "系列MNT（メンテナンス履歴）。すべての行・列で「2/2検出・見逃し0件」。"
+        "2回転とも同じ結果だった。"
+    )
+    (OUT / "seen-list-catches-the-backfilled-one-results.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def seen_list_catches_the_backfilled_one_dates_chart() -> None:
+    """日付だけで新着を判定する方法と、既読ID一覧を実際に確認する方法を比べた図。
+
+    実測（2026-10-18）。新着のうち1件は一覧の中ほど（2024-03-29）にあり、
+    日付だけでは最新ではないため新着と分からない。
+    """
+    top = 108
+    bar_h = 40
+    pitch = 70
+
+    groups = [
+        ("日付だけで新着を判定すると", "box-bad", "t-bad", "中ほどの古い新着（2024-03-29）は\n新着に見えない"),
+        ("既読ID一覧を実際に確認すると", "box-good", "t-good", "古い新着も最新の新着も両方検出\n16回中16回、見逃し0件"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "日付だけでは見えない新着も、既読ID一覧なら見える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "新着2件のうち1件は、一覧の中ほど（2024-03-29付け）に紛れた「遡って取得し直した分」。</text>\n",
+    ]
+
+    y = top
+    for label, box_cls, text_cls, value in groups:
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box_cls}" x="18" y="{y}" width="500" height="{bar_h}" rx="4"/>\n'
+        )
+        lines = value.split("\n")
+        for i, line in enumerate(lines):
+            parts.append(
+                f'<text class="{text_cls}" x="30" y="{y + 17 + i * 15}">{_esc(line)}</text>\n'
+            )
+        y += pitch
+
+    height = y + 10
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※「見逃し0件」は材料2本×一括/3分割×2回転＝16回の機械照合（ID抽出→集合比較）による。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "日付だけで新着を判定する方法と、既読ID一覧を実際に確認する方法を比べた図。"
+        "日付だけで判定すると、一覧の中ほどにある古い新着（2024-03-29付け）は"
+        "最新ではないため新着に見えない。既読ID一覧を実際に確認すると、"
+        "古い新着も最新の新着も両方検出され、16回中16回とも見逃さなかった。"
+    )
+    (OUT / "seen-list-catches-the-backfilled-one-dates.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    seen_list_catches_the_backfilled_one_results_chart()
+    seen_list_catches_the_backfilled_one_dates_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
