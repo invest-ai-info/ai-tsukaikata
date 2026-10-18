@@ -334,6 +334,7 @@
     `deepmind.google`・`blog.google` 自体は200で到達できるため、転送先ホストだけの許可リスト問題。
     応答ヘッダに `cf-mitigated` は無く、先方のbot判定ではない。許可リストに
     `developers.googleblog.com` が足されたら再試行対象にすること。
+  - 2026-10-18 2回目（再試行）: 変わらず。`developers.googleblog.com` は `getaddrinfo ENOTFOUND`（許可リスト未追加のまま）
 
 - [x] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
   - →保管: 302転送先がdeepmind.google側の行と同一ページ。重複執筆はせず`content/tools/gemini-4-argon-ga.md`に統合（2026-10-13）
