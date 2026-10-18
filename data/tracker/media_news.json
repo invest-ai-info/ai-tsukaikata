@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-18T05:58:23.341201+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-10-18T02:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年10月15日、電気自動車メーカーのテスラが新型ロードスターを発表しました。ロードスターにはコールドガススラスターを搭載したモデルがあり、これは垂直な壁を登ったり、空中で姿勢制御したり、短時間なら空を飛ぶこともできたりするというトンデモナイ車両になっています。そんなロードスターの使い方を提案したり、「もしもロードスターが走っていたら」を想像したりするAI生成動画がSNS上で大流行中です。…",
+      "title": "テスラが空飛ぶ車「ロードスター」を発表してからAI生成の「もしもロードスターなら」動画がSNS上で大流行中",
+      "uid": "18d21da77d54d603",
+      "url": "https://gigazine.net/news/20261018-tesla-roadster-ai-meme/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-18T05:58:23.341201+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-18T01:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Anthropicは10月16日、電子署名に使われる暗号規格の「謎の数値」の生成方法を、社内のAI研究モデル「Claude」が30分未満で特定したと発表した。米国家安全保障局（NSA）が提供し、25年以上由来が説明されていなかった数値を再現できたという。",
+      "title": "Claude、暗号技術の「25年来の謎」を30分足らずで解明",
+      "uid": "3c41fdffbf9f61e9",
+      "url": "https://japan.cnet.com/article/35253671/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-18T05:58:23.341201+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-18T01:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Appleは10月16日、本人の同意のない性的画像への対策を、アプリの審査指針で明確にしたと発表した。AIで作られた画像も含め、開発者に防止策の実施と削除を求める。審査を通った後で有害な機能を追加・有効化する手口への対応も明記した。",
+      "title": "Apple、AI「脱衣」画像への対策を強化　「結果的に脱衣できてしまった」もNG",
+      "uid": "61ace3f59b7e8c99",
+      "url": "https://japan.cnet.com/article/35253672/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-18T01:07:22.182404+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2362,42 +2398,6 @@
       "title": "GoogleがGemma 2・Gemma 4などのAIアシスタントで会議を記録するmacOSノートアプリ「Google AI Edge Foresight」リリース",
       "uid": "80ebf2c8190877c9",
       "url": "https://gigazine.net/news/20261009-google-ai-edge-foresight/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T04:45:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが2026年10月8日に開催したイベント「Gemini at Work 2026」で、仕事に関するさまざまな作業をまとめて任せられる汎用AIエージェント「Geminiエージェント」を発表しました。情報調査や資料作成、画像生成、プログラミングなどを1つの画面から依頼でき、AIが必要な手順を考えて作業を進めるとのことです。 続きを読む...",
-      "title": "Googleが仕事を自動で進めるAI「Geminiエージェント」を発表、情報調査・資料作成・プログラミングまで対応",
-      "uid": "5c36f3631a757a71",
-      "url": "https://gigazine.net/news/20261009-gemini-agent/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-09T04:27:51+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ヴァリューズは、国内の生成AI主要6サービスを対象とした「生成AIユーザー動向調査」（2024年6月～2026年5月）を実施した。",
-      "title": "ChatGPT、国内ユーザー2,670万人突破。2年で約8倍に急成長",
-      "uid": "0188f31e62c968a8",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2147088.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T04:27:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アメリカのドナルド・トランプ大統領が、「SI(超知能)」表記ではなく「AI(人工知能)」表記を使っている人のことを「敵」とみなすことを表明しました。 続きを読む...",
-      "title": "トランプ大統領が「SIではなくAI表記を使う者はすべて『敵』とみなす」と表明",
-      "uid": "a29a706a8b791c41",
-      "url": "https://gigazine.net/news/20261009-trump-ai-user-enemy/",
       "vendor": "GIGAZINE"
     }
   ]
