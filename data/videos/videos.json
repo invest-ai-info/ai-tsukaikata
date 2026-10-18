@@ -3597,10 +3597,20 @@
    "channel_key": "iketomo",
    "channel_name": "いけともch",
    "default_category": "news",
-   "description": "スポンサード：Hostinger × Hermes Agent\nhttps://www.hostinger.com/ikeda10\nクーポン：IKEDA10（10%割引）\n\n---\n\n▼11/7 ループウェアイベント\nhttps://luma.com/iketomo261107\n\n▼『システムゼロ』\nhttps://link.amazon/B0h56HiRH\n\n▼システムゼロ出版記念イベント\nhttps://peatix.com/event/5225030/view\n\n▼11/28 AI時代のセキュリティ実践講座\nhttps://luma.com/iketomo261128\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n-----\n\n2026年10月18日のAIニュース22選。最新AIの実演とセキュリティを解説。\n\n00:00 イントロ\n01:27 Gemini 4 Argon実演比較\n10:33 PR：Hostinger × Hermes Agent\n12:48 Google Play個人向け登録\n16:00 ChatGPT Slides\n19:14 ChatGPT音声ファイル対応\n21:19 CursorをiPhoneで操作\n22:58 Grok Voice 3.0比較\n29:14 Sarashina無償βと日本語AI\n31:36 Google Universal Cart\n34:14 OpenAIの売上報道\n39:04 AnthropicのScion移行\n43:07 Anthropicと外部評価者\n46:29 Character.AIの売却と利用者保護\n49:43 Claude評価中の意図しない操作\n51:18 Meta Muse Wonder\n53:30 Muse Spark Open\n56:02 NVIDIA Nemotron 3.5 Super VL\n56:49 Mistral Large 4\n58:35 Google Earth AI\n59:44 AI支援後の自力テ",
    "first_seen": "2026-10-18T11:39:00.262158+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleが提供開始したGemini 4 Argonのタスク機能やAntigravityを使ったUI自動生成を実演し、他社モデルと比較している。",
+    "ChatGPTの新機能Slidesや音声ファイルの直接入力対応、CursorをiPhoneから遠隔操作する手法などを解説している。",
+    "xAIのGrok Voice 3.0をはじめとする音声対話モデルのベンチマークや実務での応答性能を比較検証している。"
+   ],
+   "for_whom": "最新の生成AIツールや各社モデルの動向を実演付きで把握したいビジネスパーソン",
+   "caution": "動画内および概要欄で自身の有料セキュリティ講座（20,000円）や書籍、スポンサーの有料サーバーサービスへ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T16:06:50.005495+00:00"
   },
   {
    "video_id": "vnuKONCskBI",
@@ -3656,10 +3666,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、AI 界隈で話題の「Reason Network」について解説しました。\nReason Network は、Grok Bot や Claude Code、Codex といった種類の違うエージェントを、PC やセッションをまたいでつなぎ、お互いにやりとりさせられる無料のピア・ツー・ピア型オープンソースです。\n\n「1 つ上のレイヤーから複数のセッションを見渡して指示を出す」という設計の面白さと、これからハーネスを自作・選定するうえで押さえておきたいポイントもお話ししました。\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n\n🎁無料プレゼントは公式LINEから🎁\n動画や記事で紹介したソースコードやスキルを、公式LINEに登録してくださった方限定で「無料」でプレゼントしています！\nこの動画の特典は「Reason Network」解説スライドです✨\n『reasonnetwork』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://go.masao.ai/line/open/Glu3UoqwiqvI?mtid=7xoIG89LruMU\n\ntimestamp:\n00:00 Reason Network とは何か\n01:24 インストールとセットアップの流れ\n01:55 複数 PC のエージェントが同じチームに参加\n02:56 デモ：Claude に指示を送って返信を受ける\n03:25 自作ハーネスと複数端末基盤の強み\n04:35 マクロハーネスからセッションを監視・操作\n05:01 Claude Desktop や Codex との違い\n05:46 裏側のサービス Reason と話題になった背景\n06:49 解説スライドは LINE でプレゼント\n07:14 次世代ハーネスと有志での共同開発構想\n08:28 メンバーシップと無料勉強会のお知らせ\n09:09 手を動かしてキャッチアップしよう\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n",
    "first_seen": "2026-10-18T11:39:00.262158+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude CodeやCodexなど異なるAIエージェントをP2Pで連携できるオープンソース「Reason Network」を紹介している。",
+    "複数のPCやセッションをまたいでエージェントを接続し、指示の送信や返答の受け取りを行う設定や操作手順を解説している。",
+    "複数端末やセッションを俯瞰して監視・操作できる設計のメリットを挙げ、次世代のエージェント基盤における有用性を説明している。"
+   ],
+   "for_whom": "複数のAIエージェントを端末横断で連携・管理したいエンジニアや開発者",
+   "caution": "解説スライドの配布先として公式LINEへの登録を案内しているほか、有料メンバーシップへの誘導を行っている点に留意してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T16:06:50.005495+00:00"
   },
   {
    "video_id": "Uj-2acVvtxA",
@@ -3692,95 +3712,105 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=HKbLW8Uted\n※もしLINE登録が上手く行かない方は「@866enevi」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🎁【人生や経験を“贈り物・商品”にして売る回、このチャンネルにあります】\n今日は誰かの60年を聞き出して、還暦祝い・退職祝いとして届ける話でした。\n同じminneの回や、人生や経験をそのまま商品にした回を並べておきます↓\n\n▼同じminneで売る回。AIで設計して印刷は業者に任せる“作らないハンドメイド”で月35万に届いた話\nhttps://youtu.be/jyfLXRm5WFk\n\n▼家族に残すものを形にする回。親を見送った経験から作る手帳で月39万に届いた話\nhttps://youtu.be/eZRiR5rwv1U\n\n▼人生の苦労を材料に、有料記事にして売る回。50代からのnote副業\nhttps://youtu.be/L3ELZlFRcbI\n\n▼40〜50代の人生経験をそのまま商品にする。話を聞く人生相談の副業の回\nhttps://youtu.be/S7biGIYIjBI\n\n▼今日パネル作りに使ったCanvaで、視聴者が成果を出した副業を5つまとめた回\nhttps://youtu.be/jBCuLkOTB54\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=HKbLW8Uted\n\n--------------------------\n\n【動画の目次】\n\n00:00 生きてきた日々が、そのまま売り物になる\n00:49 最近とても多い、切実な相談\n03:28 結果が出るまでの、正直な道のり\n04:35 画面には映らない、いちばん怖い落とし穴\n10:57 持っている人ほど、財布の口が固くなる\n17:24 先に試してくれた人たちの、それぞれの暮らし\n23:48 家でできる内職の、目を疑う相場\n26:35 聞いても、話が広がらないのはなぜか\n29:29 子供が親に黙って作ると、どうなるか\n31:44 棚を開くと、主役は意外なものだった\n35:02 きれいに見える問いに潜む、下手な癖\n40:30 自分の目で",
    "first_seen": "2026-10-18T11:39:00.262158+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "同年代の人向けの12の質問をAIで作成し、聞き出した人生を12行の年表にしてminneで還暦や退職祝いとして販売する副業を解説している。",
+    "顧客の個人情報をAIに入力する際のプライバシー保護や規約違反のリスク、AIが事実と異なる内容を勝手に補完する注意点を指摘している。",
+    "モニター3名の事例を挙げ、レビューが集まるまでは低単価商品から始め、徐々に額付きなどの高単価商品を受注していく流れを紹介している。"
+   ],
+   "for_whom": "生成AIを活用したハンドメイド販売や受注型の副業を始めたい人",
+   "caution": "動画内では月40万円の達成実績や月収300万円への引き上げを主張していますが、公式LINEへの登録誘導が含まれており、紹介される収益額の再現性には注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T16:06:50.005495+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "last_ok": "2026-10-18T16:06:50.005495+00:00",
    "fail_streak": 0
   }
  }
