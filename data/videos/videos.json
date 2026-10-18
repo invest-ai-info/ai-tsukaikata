@@ -3565,92 +3565,223 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-17T11:08:34.537473+00:00"
+  },
+  {
+   "video_id": "UyQrr1LAxzY",
+   "title": "WordPressはもう古い。Cloudflareの無料CMS「EmDash」がAI時代の正解だった",
+   "url": "https://www.youtube.com/watch?v=UyQrr1LAxzY",
+   "published": "2026-10-18T11:00:38+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Cloudflareが公開したCMS「EmDash」は、MCP経由でAIエージェントがサイト更新できるAIネイティブな設計だと紹介している。",
+    "WordPress風の操作画面を備えつつ、TypeScript基盤やサーバーレス動作により管理の手間やコストを抑えられる利点を説明している。",
+    "Claude Codeに指示を出すだけで、ポートフォリオへのコンテンツ追加やサイトのCMS化が自動完了する実演を紹介している。"
+   ],
+   "for_whom": "AIを活用してWebサイトの更新や保守管理を効率化・自動化したい人",
+   "caution": "概要欄で自身のWebサイト構築代行サービスや有料スクール、公式LINE、YouTubeメンバーシップへの誘導が行われている点に留意してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T11:39:00.262158+00:00"
+  },
+  {
+   "video_id": "hkhSaYlAA98",
+   "title": "注目AIニュース22選～情報漏洩、10月だけで1億件超！Gemini 4 Argon・Universal Cart・Meta Muse Wonder",
+   "url": "https://www.youtube.com/watch?v=hkhSaYlAA98",
+   "published": "2026-10-18T06:00:13+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "スポンサード：Hostinger × Hermes Agent\nhttps://www.hostinger.com/ikeda10\nクーポン：IKEDA10（10%割引）\n\n---\n\n▼11/7 ループウェアイベント\nhttps://luma.com/iketomo261107\n\n▼『システムゼロ』\nhttps://link.amazon/B0h56HiRH\n\n▼システムゼロ出版記念イベント\nhttps://peatix.com/event/5225030/view\n\n▼11/28 AI時代のセキュリティ実践講座\nhttps://luma.com/iketomo261128\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊（10月発売）Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n-----\n\n2026年10月18日のAIニュース22選。最新AIの実演とセキュリティを解説。\n\n00:00 イントロ\n01:27 Gemini 4 Argon実演比較\n10:33 PR：Hostinger × Hermes Agent\n12:48 Google Play個人向け登録\n16:00 ChatGPT Slides\n19:14 ChatGPT音声ファイル対応\n21:19 CursorをiPhoneで操作\n22:58 Grok Voice 3.0比較\n29:14 Sarashina無償βと日本語AI\n31:36 Google Universal Cart\n34:14 OpenAIの売上報道\n39:04 AnthropicのScion移行\n43:07 Anthropicと外部評価者\n46:29 Character.AIの売却と利用者保護\n49:43 Claude評価中の意図しない操作\n51:18 Meta Muse Wonder\n53:30 Muse Spark Open\n56:02 NVIDIA Nemotron 3.5 Super VL\n56:49 Mistral Large 4\n58:35 Google Earth AI\n59:44 AI支援後の自力テ",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "vnuKONCskBI",
+   "title": "【今週のAIツール・ニュース総まとめ】Googleの最先端AIモデルGemini 4 Argon/Xの統合サブスクX Subscription/ChatGPTとCodexの最新アップデート",
+   "url": "https://www.youtube.com/watch?v=vnuKONCskBI",
+   "published": "2026-10-18T09:07:43+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleの新AIモデル「Gemini 4 Argon」の公開や、Xの有料プランを統合した新サブスク「X Subscription」の登場を紹介している。",
+    "ChatGPTやCodexの機能強化、Metaの最新AI「Muse Wonder」、Claude Codeのアプリ強化など最新ツールの更新を解説している。",
+    "OpenAI従業員の逮捕疑惑やCharacter.AI、Getty Imagesの破産法申請など、国内外のAI関連ニュースを報告している。"
+   ],
+   "for_whom": "最新の生成AIモデルやツールの動向、業界ニュースを短時間でまとめて把握したいビジネスパーソン。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T11:39:00.262158+00:00"
+  },
+  {
+   "video_id": "dWA977-gKPA",
+   "title": "【2026年10月版】今選ぶべき、LLM徹底格付け26選！Claudeが圧倒的環境へ",
+   "url": "https://www.youtube.com/watch?v=dWA977-gKPA",
+   "published": "2026-10-18T11:00:34+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者は2026年10月のLLM環境において、総合的な性能とコスト効率からClaude Opus 5.5が最高位のGodランクであると説明している。",
+    "Claude Fable 5.1やSonnet 5.5をSS、Gemini 4 ArgonやGPT-6 SolなどをSランクに位置づけて評価している。",
+    "DeepSeek V4.1 Flashなどの格安モデルも、開発ベンチマークや特定用途において十分に実用的であると解説している。"
+   ],
+   "for_whom": "最新の主要LLMの性能比較や、開発・業務に適したモデルの選定基準を知りたい人",
+   "caution": "動画内および概要欄で、有料のnoteメンバーシップコミュニティへの加入や、特典資料の受け取りを目的とした公式LINEへの登録が案内されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T11:39:00.262158+00:00"
+  },
+  {
+   "video_id": "TthDhuF24As",
+   "title": "【新ハーネス設計】大注目の『Reason Network』とは？マルチPCマルチセッションのエージェント基盤",
+   "url": "https://www.youtube.com/watch?v=TthDhuF24As",
+   "published": "2026-10-18T09:00:01+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、AI 界隈で話題の「Reason Network」について解説しました。\nReason Network は、Grok Bot や Claude Code、Codex といった種類の違うエージェントを、PC やセッションをまたいでつなぎ、お互いにやりとりさせられる無料のピア・ツー・ピア型オープンソースです。\n\n「1 つ上のレイヤーから複数のセッションを見渡して指示を出す」という設計の面白さと、これからハーネスを自作・選定するうえで押さえておきたいポイントもお話ししました。\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n\n🎁無料プレゼントは公式LINEから🎁\n動画や記事で紹介したソースコードやスキルを、公式LINEに登録してくださった方限定で「無料」でプレゼントしています！\nこの動画の特典は「Reason Network」解説スライドです✨\n『reasonnetwork』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://go.masao.ai/line/open/Glu3UoqwiqvI?mtid=7xoIG89LruMU\n\ntimestamp:\n00:00 Reason Network とは何か\n01:24 インストールとセットアップの流れ\n01:55 複数 PC のエージェントが同じチームに参加\n02:56 デモ：Claude に指示を送って返信を受ける\n03:25 自作ハーネスと複数端末基盤の強み\n04:35 マクロハーネスからセッションを監視・操作\n05:01 Claude Desktop や Codex との違い\n05:46 裏側のサービス Reason と話題になった背景\n06:49 解説スライドは LINE でプレゼント\n07:14 次世代ハーネスと有志での共同開発構想\n08:28 メンバーシップと無料勉強会のお知らせ\n09:09 手を動かしてキャッチアップしよう\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Uj-2acVvtxA",
+   "title": "【実際に作ってみた】稼げると噂のCanva副業5つを100種類以上試した主婦がリアル検証｜LINEスタンプ・デジタルペーパー・ステッカー",
+   "url": "https://www.youtube.com/watch?v=Uj-2acVvtxA",
+   "published": "2026-10-18T11:00:20+00:00",
+   "channel_key": "yuimama",
+   "channel_name": "飽き性主婦ゆいママの人気副業チャレンジ日記",
+   "default_category": "earn",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "CanvaとAIを用いたステッカーやLINEスタンプ、AI絵本、デジタルペーパーなどの商品販売副業は、作成自体は容易でも集客や販売が難しいと検証結果を報告してい",
+    "ChatGPT Image 2.5とCanvaを組み合わせて、約15分で和柄のデジタルペーパーを作成する手順を実演している",
+    "月5万円を目指すなら商品を待つ販売型より、Instagram画像作成やサムネイル作成などのクライアントワークから始める方が現実的だと述べている"
+   ],
+   "for_whom": "Canvaや生成AIを使った副業に興味があり、実際の難易度や収益性を知りたい人",
+   "caution": "動画終盤および概要欄にて、無料の電子書籍や副業診断を受け取るための公式LINE登録へ誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-18T11:39:00.262158+00:00"
+  },
+  {
+   "video_id": "pQQC4TSnu_I",
+   "title": "【手取り多すぎて草】今還暦祝い・退職祝いで大人気！AI×人生年表で月40万をサクっと達成する、ここでしか見れない最強副業の全てを徹底解説【副業 おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=pQQC4TSnu_I",
+   "published": "2026-10-18T09:00:20+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=HKbLW8Uted\n※もしLINE登録が上手く行かない方は「@866enevi」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🎁【人生や経験を“贈り物・商品”にして売る回、このチャンネルにあります】\n今日は誰かの60年を聞き出して、還暦祝い・退職祝いとして届ける話でした。\n同じminneの回や、人生や経験をそのまま商品にした回を並べておきます↓\n\n▼同じminneで売る回。AIで設計して印刷は業者に任せる“作らないハンドメイド”で月35万に届いた話\nhttps://youtu.be/jyfLXRm5WFk\n\n▼家族に残すものを形にする回。親を見送った経験から作る手帳で月39万に届いた話\nhttps://youtu.be/eZRiR5rwv1U\n\n▼人生の苦労を材料に、有料記事にして売る回。50代からのnote副業\nhttps://youtu.be/L3ELZlFRcbI\n\n▼40〜50代の人生経験をそのまま商品にする。話を聞く人生相談の副業の回\nhttps://youtu.be/S7biGIYIjBI\n\n▼今日パネル作りに使ったCanvaで、視聴者が成果を出した副業を5つまとめた回\nhttps://youtu.be/jBCuLkOTB54\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=HKbLW8Uted\n\n--------------------------\n\n【動画の目次】\n\n00:00 生きてきた日々が、そのまま売り物になる\n00:49 最近とても多い、切実な相談\n03:28 結果が出るまでの、正直な道のり\n04:35 画面には映らない、いちばん怖い落とし穴\n10:57 持っている人ほど、財布の口が固くなる\n17:24 先に試してくれた人たちの、それぞれの暮らし\n23:48 家でできる内職の、目を疑う相場\n26:35 聞いても、話が広がらないのはなぜか\n29:29 子供が親に黙って作ると、どうなるか\n31:44 棚を開くと、主役は意外なものだった\n35:02 きれいに見える問いに潜む、下手な癖\n40:30 自分の目で",
+   "first_seen": "2026-10-18T11:39:00.262158+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-18T05:05:09.058320+00:00",
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-17T20:54:37.857369+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-18T11:39:00.262158+00:00",
+   "fail_streak": 0
   }
  }
 }
