@@ -35197,4 +35197,137 @@ def crowdworks_copyright_hit_and_miss_chart() -> None:
 
 if __name__ == "__main__":
     crowdworks_copyright_hit_and_miss_chart()
+
+
+def same_week_two_fixes_results_chart() -> None:
+    """同じ週に条1・条3の誤報が同時に起きても、1回の依頼で両方直せたことを示す表。
+
+    実測（2026-10-18・架空の受注ログ点検5条・材料31行×2系列C・D・各2回転）。
+    週0=基準、同時修正後=条1・条3の誤報を1回の依頼で両方除外した直後の再点検。
+    """
+    label_w = 100
+    col_gap = 10
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 112
+    pitch, box_h = 40, 30
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    rows = [
+        ("週0（基準）", "7/7検出・一致", "7/7検出・一致"),
+        ("同時修正後\n1回目", "誤報2件除外・巻き添え0件", "誤報2件除外・巻き添え0件"),
+        ("同時修正後\n2回目", "誤報2件除外・巻き添え0件", "誤報2件除外・巻き添え0件"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ週に条1・条3の誤報が重なっても、1回の依頼で両方直り巻き添え0件</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の受注ログ点検5条・材料31行×2系列（C・D）。条1と条3の誤報を同時に見せ、1回の依頼で両方の除外を頼んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "本物の異常5件の維持と、条2・条4・条5への巻き添えを、2系列×2回転＝4回とも機械で確認した。</text>\n",
+    ]
+    headers = ["系列C", "系列D"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 14}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for label, va, vb in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 16 + i * 14}">{_esc(line)}</text>\n')
+        for i, v in enumerate((va, vb)):
+            x = col_x[i]
+            parts.append(
+                f'<rect class="box-good" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{x + 8:.1f}" y="{y + 20}">{_esc(v)}</text>\n'
+            )
+        y += pitch + (14 if len(label_lines) > 1 else 0)
+
+    height = y + 20
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※ 本物5件の維持・条2/4/5が文字どおり不変であることも、4回とも機械照合で確認済み。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "同じ週に条1と条3で誤報が同時に起きても、1回の依頼で両方を直せたことを示す表。"
+        "行は週0（基準）・同時修正後1回目・同時修正後2回目、列は系列C・系列D。"
+        "週0はどちらも7件中7件検出。同時修正後は1回目・2回目とも、"
+        "誤報2件を除外し本物5件を維持し、条2・条4・条5への巻き添えは0件。"
+        "4回の独立呼び出し全部が同じ結果だった。"
+    )
+    (OUT / "same-week-two-fixes-results.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def same_week_two_fixes_scope_chart() -> None:
+    """1回の依頼で2条を同時に直したとき、どの条が変わりどの条が不変だったかを示す図。
+
+    実測（2026-10-18）。条1・条3は除外条件が追記され、条2・条4・条5は
+    4回の独立呼び出し全部で文字どおり不変だった（Pythonで文字列比較）。
+    """
+    top = 108
+    bar_h = 30
+    pitch = 42
+
+    rows = [
+        ("条1（金額超過）", "box-accent", "t-accent", "除外が追記された"),
+        ("条2（ID重複）", "box-quiet", "t-sm", "4回とも1文字も不変"),
+        ("条3（数量異常）", "box-accent", "t-accent", "除外が追記された"),
+        ("条4（日付未来）", "box-quiet", "t-sm", "4回とも1文字も不変"),
+        ("条5（担当者欄空欄）", "box-quiet", "t-sm", "4回とも1文字も不変"),
+    ]
+
+    label_w = 160
+    bar_x = 18 + label_w
+    bar_w = WIDTH - 18 - bar_x - 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "変わったのは頼んだ2条だけ。他の3条は4回とも1文字も変わらなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "条1・条3の誤報を1回の依頼で同時に直した後、5条の文章を直す前と機械で比較した。</text>\n",
+    ]
+
+    y = top
+    for label, box_cls, text_cls, value in rows:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box_cls}" x="{bar_x}" y="{y}" width="{bar_w:.1f}" height="{bar_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{bar_x + 10}" y="{y + 20}">{_esc(value)}</text>\n'
+        )
+        y += pitch
+
+    height = y + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 4}">'
+        "※ 系列C・系列D×2回転＝4回とも同じパターン。割れた回は無かった。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "1回の依頼で2条の誤報を同時に直したとき、どの条が変わりどの条が不変だったかを示す図。"
+        "条1（金額超過）と条3（数量異常）は除外の条件が追記されて変わり、"
+        "条2（ID重複）・条4（日付未来）・条5（担当者欄空欄）は不変。"
+        "系列C・系列Dそれぞれ2回転、合計4回の独立呼び出しすべてで"
+        "同じ変化・不変のパターンが再現された。"
+    )
+    (OUT / "same-week-two-fixes-scope.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    same_week_two_fixes_results_chart()
+    same_week_two_fixes_scope_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
