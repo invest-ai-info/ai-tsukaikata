@@ -35449,7 +35449,106 @@ def seen_list_catches_the_backfilled_one_dates_chart() -> None:
     )
 
 
+def free_text_tally_needs_row_ids_chart() -> None:
+    """アンケート自由記述24件を4通りの頼み方で分類したときの、分類ごとの件数を比べた図。
+
+    実測（2026-10-18・claude --safe-mode --tools "" での独立セッション）。
+    """
+    rows = [
+        ("使いやすさ", ["4", "4", "4", "8"], ["box", "box", "box-good", "box-bad"]),
+        ("価格", ["6", "6", "6", "4"], ["box", "box", "box-good", "box"]),
+        ("精度", ["6", "6", "6", "6"], ["box", "box", "box-good", "box"]),
+        ("サポート対応", ["3", "3", "3", "3"], ["box", "box", "box-good", "box"]),
+        ("機能要望", ["3", "3", "3", "3"], ["box", "box", "box-good", "box"]),
+        ("分類対象外・分類不能", ["3", "4", "4", "0"], ["box-bad", "box", "box-good", "box-bad"]),
+    ]
+    totals = ["23件", "24件", "24件※", "24件"]
+    total_tone = ["box-bad", "box-good", "box-good", "box-bad"]
+
+    label_x, label_w = 18, 180
+    col_w, col_gap = 118, 8
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(4)]
+    head_y = 112
+    row_h, row_gap = 36, 7
+    row_y = [head_y + 30 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["IDなし・素朴", "ID付き・素朴", "ID付き+分類不能可", "強制1つ+自己検算"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ24件を、頼み方を変えて分類すると件数がこう動く</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料は使いやすさ・価格・精度・サポート対応・機能要望に触れる回答20件＋空欄や意見なしの回答4件（うち1件は本当の空欄）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "価格と精度の両方に触れる回答が2件あり、複数カテゴリを許す版ではその2件を両方に数えている。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        words = name.split("・") if "・" in name else [name]
+        for j, word in enumerate(words):
+            parts.append(
+                f'<text class="t-xs" x="{col_x[i] + 6}" y="{head_y + 14 + j * 13}">{_esc(word)}</text>\n'
+            )
+    for r, (label, values, tones) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12px">{_esc(label)}</text>\n'
+        )
+        for c, (value, klass) in enumerate(zip(values, tones)):
+            tone = "t-good" if klass == "box-good" else ("t-bad" if klass == "box-bad" else "t")
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + col_w / 2:.0f}" y="{y + row_h / 2 + 5:.0f}" '
+                f'text-anchor="middle" style="font-size:13px">{_esc(value)}</text>\n'
+            )
+
+    total_y = row_y[-1] + row_h + row_gap + 10
+    parts.append(
+        f'<text class="t-strong" x="{label_x}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'style="font-size:12px">入力24件に対する合計</text>\n'
+    )
+    for c, (value, tone_cls) in enumerate(zip(totals, total_tone)):
+        tone = "t-good" if tone_cls == "box-good" else "t-bad"
+        parts.append(
+            f'<rect class="{tone_cls}" x="{col_x[c]}" y="{total_y}" '
+            f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{tone}" x="{col_x[c] + col_w / 2:.0f}" y="{total_y + row_h / 2 + 5:.0f}" '
+            f'text-anchor="middle" style="font-size:12.5px">{_esc(value)}</text>\n'
+        )
+
+    y = total_y + row_h + 26
+    notes = [
+        ("t-bad", "※ IDなし・素朴は、本当に空欄の1件が貼った時点で消えて23件になった（2回とも再現）。"),
+        ("t-bad", "※ 強制1つ+自己検算は、合計こそ24件できれいに合うが、空欄など4件が「使いやすさ」に紛れたまま。"),
+        ("t-xs", "※ 24件※＝複数カテゴリの2件を両方に数えると延べ26件（24件の内訳として正しく数え直せる）。"),
+        ("t-xs", "架空のアンケート自由記述24件での実測。生の返りは docs/evidence/ に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 20
+
+    height = y + 2
+    alt = (
+        "アンケート自由記述24件を4通りの頼み方で分類したときの、分類ごとの件数を比べた図。"
+        "IDを付けずに素朴に分類を頼むと、本当の空欄1件が貼った時点で消えて入力が23件になった。"
+        "IDを付けて同じ素朴な頼み方をすると24件全部が数えられ、使いやすさ4・価格6・精度6・"
+        "サポート対応3・機能要望3・分類対象外4で、2回とも同じ結果だった。"
+        "IDを付けて複数カテゴリと分類不能を許す頼み方でも同じ内訳になり、延べ26件（価格と精度の"
+        "両方に触れる2件を含む）が24件の内訳として正しく数え直せる形で出た。"
+        "必ずどれか1つに分類し自己検算させる頼み方では、合計はきれいに24件に合うが、"
+        "本当は分類対象外の4件が使いやすさに紛れ込んだままで、使いやすさが8件、分類対象外が0件になった。"
+    )
+    (OUT / "free-text-tally-needs-row-ids.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     seen_list_catches_the_backfilled_one_results_chart()
     seen_list_catches_the_backfilled_one_dates_chart()
+    free_text_tally_needs_row_ids_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
