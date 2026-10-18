@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-18T11:13:57.157722+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-18T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "仕事や日常生活でメモを取っていると文章の記録・タスクの管理・スケジュールの確認など、情報の種類に応じて複数のアプリを使い分けることがあります。こうした情報を1カ所にまとめ、ノート・カンバン・タスク・ダッシュボード・Markdown・グラフなどの形式で管理できるほか、AI連携・ブラウザ拡張機能・自動バックアップにも対応した無料のオープンソースアプリが「Poznote」です。 続きを読む...",
+      "title": "無料でメモをノート・カンバン・タスク・ダッシュボード・マークダウン・グラフ表示の6つに対応できAI連携・ブラウザ拡張機能・PWA・自動バックアップもできる「Poznote」、オープンソースでセルフホスト可能",
+      "uid": "852d4df69cfc17c5",
+      "url": "https://gigazine.net/news/20261018-poznote/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-18T05:58:23.341201+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "OpenAIがAIで大量の数学的成果を発表したのは「学術的成果ではなく権力の誇示に過ぎない」との指摘",
       "uid": "5dad49e6a93d0c97",
       "url": "https://gigazine.net/news/20261009-openais-math-solutions-human-ahm/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-09T09:12:47.194885+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-09T04:57:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが、AIを使って会議の内容を記録・要約するmacOS向けノートアプリ「Google AI Edge Foresight」を公開しました。Google AI Edge Foresightは、GoogleのAIモデル「EmbeddingGemma 2」や「Gemma 4」を使用し、会議の文字起こしや議事録の作成、AIアシスタントによる質問への回答などを、クラウドに接続せずに実行できるのが…",
-      "title": "GoogleがGemma 2・Gemma 4などのAIアシスタントで会議を記録するmacOSノートアプリ「Google AI Edge Foresight」リリース",
-      "uid": "80ebf2c8190877c9",
-      "url": "https://gigazine.net/news/20261009-google-ai-edge-foresight/",
       "vendor": "GIGAZINE"
     }
   ]
