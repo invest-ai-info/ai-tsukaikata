@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-19T17:30:33.245760+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-19T13:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "スタンフォード大学、Together AI、イリノイ大学アーバナ・シャンペーン校、Metaの研究チームが「Hybrid Reasoning Agents」というAI実行手法を発表しました。AIモデルの思考(thinking)を潜在空間で実行できるように事後学習を施し、処理トークン数を少なくして高速化と低コスト化が可能とされています。 続きを読む...",
+      "title": "AIの思考を潜在空間で実行して高性能化＆高速化＆低コスト化を実現する「Hybrid Reasoning Agents」",
+      "uid": "5d6858a7842fe56b",
+      "url": "https://gigazine.net/news/20261019-hybrid-reasoning-agents/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-19T17:30:33.245760+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-19T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "存命する数学者の中で世界最高峰のひとりと評されるテレンス・タオ氏は、現在、ほとんど数学に取り組めていないそうです。カリフォルニア大学ロサンゼルス校で開かれた数学のワークショップに出席したタオ氏は、AIが数学界にもたらした存続の危機について「今は臨戦態勢です」と語りました。 続きを読む...",
+      "title": "AIが数学の難問を解く現状について数学者が「建設的に関わっていく方法が見いだせない」と語る",
+      "uid": "e1c088d7d0b06f5b",
+      "url": "https://gigazine.net/news/20261019-front-lines-debate-ai-future-math/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-19T17:30:33.245760+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-19T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの性能を測定するベンチマークテストの中には「人間の仕事をどれだけの精度でこなせるか」を測定するものが多く含まれています。ところが、こうしたベンチマークは「一部のタスク」しかカバーしておらず、AIが労働を代行できるという結果が出たとしても、それは労働全体のうちほんのわずかであることを意味する可能性があるという分析結果が公表されました。 続きを読む...",
+      "title": "AIのベンチマークテストは人間の仕事の1割しかカバーできていない",
+      "uid": "8b41af5653ae4127",
+      "url": "https://gigazine.net/news/20261019-ai-benchmark-mapping/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-19T10:49:34.328950+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "3fa00b5168988b12",
       "url": "https://ai.watch.impress.co.jp/docs/news/2147483.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-13T00:24:59+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Microsoftは、自社設計AIアクセラレータ「Maia 300」を発表した。TSMCの2nmプロセスを採用し、HBM4を288GB搭載。推論処理に特化し、GPU基盤比で電力効率を向上させて前世代比最大7倍の処理能力を実現した。数ギガワット規模で展開し、自社サービスの中核に据える。",
-      "title": "Microsoft、第3世代AIチップ「Maia 300」を2027年に投入　GPU比で電力効率4割向上、自社サービスの主力推論基盤に",
-      "uid": "857ec819d3b52fe4",
-      "url": "https://www.itmedia.co.jp/news/article/2610/13/2000002200/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-13T00:45:49.083531+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-12T23:51:44+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "",
-      "title": "新サービス「Gemini Agent」は企業向け、「Gemini Enterprise」加入者は追加料金なし　日本提供時期は未定",
-      "uid": "7c21e4c9703c95b3",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002199/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-13T00:45:49.083531+00:00",
-      "importance": "major",
-      "label": "CNET Japan",
-      "published": "2026-10-12T23:42:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Metaは10月12日（現地時間）、新たな有料AIモデル「Muse Wonder」と、その上位版「Muse Wonder Full」を発表した。同社が今年投入した「Muse Spark」をベースにしたモデルで、Metaは「これまでで最も高性能なモデル」と位置付ける。マーク・ザッカーバーグCEOが「AIのフロンティア」と呼ぶ最先端領域で、先行する米Anthropic、米OpenAI、米Googl…",
-      "title": "Meta、ChatGPTやClaudeに対抗する最先端AI「Muse Wonder」発表",
-      "uid": "f9200dafc7953a43",
-      "url": "https://japan.cnet.com/article/35253478/",
-      "vendor": "CNET Japan"
     }
   ]
 }
