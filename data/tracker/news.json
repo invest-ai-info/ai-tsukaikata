@@ -5737,20 +5737,6 @@
       "uid": "92a7c1f7dbc60fd1",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-21T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance.",
-      "summary_ja": "OpenAIの役員会に新メンバー2名が就任\nDavid Vélez氏とRobin Vince氏が参加\n金融やテクノロジー分野の経験を持つ",
-      "summary_source": "gemini",
-      "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
-      "uid": "bb713afcd3e49219",
-      "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
-      "vendor": "OpenAI"
     }
   ]
 }
