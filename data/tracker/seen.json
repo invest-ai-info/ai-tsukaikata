@@ -55,30 +55,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-14T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-10-18T16:49:35.513000+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
-      "title": "Investing in the public benefit",
-      "uid": "11595e01a99591bd",
-      "url": "https://www.anthropic.com/news/public-benefit-fund",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-10-18T22:26:54+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Bug fixes and reliability improvements",
-      "title": "v2.1.303",
-      "uid": "50f05d1d946c5937",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.303",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
