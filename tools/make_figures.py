@@ -35732,3 +35732,133 @@ if __name__ == "__main__":
     scale_holds_accuracy_chart()
     yellow_signal_one_sided_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def relation_list_flow_chart() -> None:
+    """説明文 → 一覧＋出典 → 言葉を確認 → 図の構成案 → 突き合わせ、の5段階。"""
+    steps = [
+        ("説明文を渡す", "整理していない原文のまま", "you"),
+        ("一覧＋出典", "1行ごとに根拠つき", "ai"),
+        ("言葉を確認", "一文の中に実在するか照合", "ai"),
+        ("図の構成案", "一覧の言葉だけで作らせる", "ai"),
+        ("突き合わせ", "図と一覧の過不足を確認", "ai"),
+    ]
+    box_w, box_h, gap = 124, 96, 20
+    top, left = 92, 22
+    parts = [
+        '<text class="t-strong" x="18" y="26">図にする前に、一覧と出典で関係を確かめてから描かせます</text>\n',
+        '<text class="t-sm" x="18" y="45">青がAIの担当。最初に説明文を渡すところだけ、あなたがやります。</text>\n',
+        '<text class="t-sm" x="18" y="64">一覧なら行ごとに照合できますが、図そのものは照合できません。</text>\n',
+    ]
+    for index, (title, note, who) in enumerate(steps):
+        x = left + index * (box_w + gap)
+        cls = "box-accent" if who == "ai" else "box"
+        parts.append(
+            f'<rect class="{cls}" x="{x}" y="{top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(
+            f'<text class="{"t-accent" if who == "ai" else "t-strong"}" '
+            f'x="{x + 12}" y="{top + 32}">{_esc(title)}</text>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{x + 12}" y="{top + 58}">{_esc(note)}</text>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x + 12}" y="{top + box_h - 14}">'
+            f'{"AI" if who == "ai" else "あなた"}</text>\n'
+        )
+        if index < len(steps) - 1:
+            ax = x + box_w + 4
+            parts.append(
+                f'<path class="line" d="M{ax} {top + box_h / 2} L{ax + gap - 8} {top + box_h / 2}"/>\n'
+            )
+
+    height = top + box_h + 44
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 「言葉を確認」で引っかかった行は、直せる言葉があれば直し、無ければ消してから次に進みます。</text>\n"
+    )
+    alt = (
+        "図にする前の5段階を示した図。あなたが説明文を渡す、AIが関係を一覧にして根拠の一文も付ける、"
+        "AIが一覧の言葉が根拠の一文に実在するか確認する、AIが一覧の言葉だけで図の構成案を作る、"
+        "AIが図と一覧の過不足を突き合わせる、の5段階。"
+        "AIが担当するのは後の4つで、人がやるのは最初に説明文を渡すところだけ。"
+        "一覧なら行ごとに照合できるが、図そのものは照合できない。"
+    )
+    (OUT / "relation-list-flow.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def relation_list_word_check_chart() -> None:
+    """出典の引用だけでは0件、言葉の実在確認で21行中3行が見つかった。"""
+    rows = [
+        ("材料1（経費精算・9行）", "0/9", "2/9"),
+        ("材料2（図書館予約・12行）", "0/12", "1/12"),
+        ("合計（21行）", "0/21", "3/21"),
+    ]
+    label_x, label_w = 18, 230
+    col_w, col_gap = 160, 16
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(2)]
+    head_y = 96
+    row_h, row_gap = 42, 10
+    row_y = [head_y + 28 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["②出典を引用（出典なし件数）", "④言葉の実在を確認（修正・削除）"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "出典を引用させるだけでは0件。言葉の実在まで確認すると21行中3行見つかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "「出典なし」と書かれた行はどちらの材料にも無かった。AIは必ずそれらしい一文を選んできた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "その引用文を読み直すと、関係に使った言葉そのものが無い行が材料ごとに見つかった。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 10}" y="{head_y + 14}">{_esc(name)}</text>\n'
+        )
+    for r, (label, no_source, word_check) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{_esc(label)}</text>\n'
+        )
+        for c, value in enumerate((no_source, word_check)):
+            found = not value.startswith("0/")
+            klass = "box-bad" if found else "box-good"
+            tone = "t-bad" if found else "t-good"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + 20}" y="{y + row_h / 2 + 5:.0f}" '
+                f'style="font-size:13px">{_esc(value)}</text>\n'
+            )
+
+    y = row_y[-1] + row_h + 26
+    notes = [
+        ("t-xs", "※ 図書館の例＝「予約者 → 図書館 → 来館する」。根拠に挙げた一文に「図書館」という言葉は無かった。"),
+        ("t-xs", "架空データでの実測。生の返りは docs/evidence/list-before-you-diagram.md に全文置いてある。"),
+    ]
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "出典の引用だけでは捏造を防げなかったことを示す表。"
+        "材料1（経費精算・9行）は、出典を引用させた段階の「出典なし」件数が0/9、"
+        "言葉の実在を確認した段階で修正・削除になった件数が2/9。"
+        "材料2（図書館予約・12行）は、出典なし件数が0/12、言葉の実在確認での修正・削除が1/12。"
+        "合計21行では、出典なし件数が0/21、言葉の実在確認での修正・削除が3/21。"
+        "図書館の例では「予約者 → 図書館 → 来館する」という行の根拠に挙げた一文に"
+        "「図書館」という言葉が無く、削除された。"
+    )
+    (OUT / "relation-list-word-check.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    relation_list_flow_chart()
+    relation_list_word_check_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
