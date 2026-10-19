@@ -3850,10 +3850,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Ein kleiner Tipp von uns: Ton an, denn das willst du hören.\n\nHier weiterlesen: https://chatgpt.com/de-DE/features/voice/",
    "first_seen": "2026-10-19T13:53:12.338197+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "双方向かつ全二重で自然な会話が可能な新しいChatGPT Voice機能を紹介している。",
+    "話している最中の割り込み対応や、リアルタイムでの翻訳、旅行ルート計画を実演している。",
+    "複数の人が同時に話す場面や生活音がある環境でも認識して応答できる様子を示している。"
+   ],
+   "for_whom": "ChatGPTの最新の音声会話機能やその応答性能を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T22:36:58.496337+00:00"
   },
   {
    "video_id": "-vpwIHxkDFw",
@@ -3863,95 +3873,151 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Pour cette vidéo, pensez à activez le son pour ne rien manquer.\n\nEn savoir plus: https://chatgpt.com/fr-FR/features/voice/",
    "first_seen": "2026-10-19T13:53:12.338197+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GPT Liveを搭載した新しい音声対話機能「ChatGPT Voix」を紹介している。",
+    "人間同士のように会話の途中で割り込んで話しかけたり、複数の依頼を処理したりできる様子を実演している。",
+    "フランス語から英語へのリアルタイム音声翻訳に対応している様子を示している。"
+   ],
+   "for_whom": "ChatGPTの最新の音声対話機能やリアルタイム翻訳に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T22:36:58.496337+00:00"
+  },
+  {
+   "video_id": "ExVDpMeaWp0",
+   "title": "Thomson Reuters on Building Trust in Legal AI | OpenAI",
+   "url": "https://www.youtube.com/watch?v=ExVDpMeaWp0",
+   "published": "2026-10-19T15:07:35+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-19T22:36:58.496337+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "弁護士が文書作成時に複数のシステムを行き来する複雑さを抱えていると指摘している。",
+    "ChatGPT EnterpriseにCoCounselやHighQを統合し業務を一元化すると説明している。",
+    "法務の専門家が信頼して引用・検証できるアウトプットの提供が重要だと語っている。"
+   ],
+   "for_whom": "法務業務の効率化や生成AIの企業導入動向に関心があるビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T22:36:58.496337+00:00"
+  },
+  {
+   "video_id": "tpZOU1ugODQ",
+   "title": "Meta Muse Will Create 1,000 Millionaires",
+   "url": "https://www.youtube.com/watch?v=tpZOU1ugODQ",
+   "published": "2026-10-19T17:50:26+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-10-19T22:36:58.496337+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Meta Museを活用してFacebookグループやMarketplaceから需要と供給のデータを抽出し、仲介ビジネスを作る手法を解説している",
+    "Bland AIと連携して専用の電話番号を付与し、AIエージェントにアウトリーチや商談の自動化を行わせる構成を紹介している",
+    "リサーチからリスト化、自前コミュニティの構築、最終的な特化型SaaSの開発へと発展させる4段階のフレームワークを説明している"
+   ],
+   "for_whom": "AIエージェントを活用したマッチングビジネスや情報仲介の副業・起業アイデアを探している人",
+   "caution": "動画内では100万ドルの収益化機会など大きな金額が語られていますが、具体的な入金実績などの裏付け画面は提示されていません。またSNS規約に沿ったデータ収集が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T22:36:58.496337+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "last_ok": "2026-10-19T22:36:58.496337+00:00",
    "fail_streak": 0
   }
  }
