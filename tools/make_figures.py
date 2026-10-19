@@ -35552,3 +35552,183 @@ if __name__ == "__main__":
     seen_list_catches_the_backfilled_one_dates_chart()
     free_text_tally_needs_row_ids_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def scale_holds_accuracy_chart() -> None:
+    """相手が3→12→20系統に増えても、明確な異常・正常の判定は崩れなかったことを示す表。
+
+    実測（2026-10-19・claude --safe-mode --tools "" での独立セッション）。
+    見逃し＝真の異常を正常と判定した回数（のべ）。誤検知＝真の正常を異常と判定した回数（のべ）。
+    20系統の誤検知2件は、同じ1系統（境界ケース・最大間隔+4日）が2回とも異常側に出たもの。
+    """
+    label_w = 190
+    col_gap = 10
+    col_w = (684 - label_w - col_gap) / 2
+    col_x = [18 + label_w, 18 + label_w + col_w + col_gap]
+    top = 118
+    pitch, box_h = 44, 32
+
+    assert col_x[-1] + col_w <= WIDTH - 18, col_x[-1] + col_w
+
+    rows = [
+        ("12系統・順序1\n(2回)", "0/8", True),
+        ("12系統・順序2\n(並び替え・2回)", "0/8", True),
+        ("20系統・二値判定\n(2回)", "0/14", True),
+    ]
+    false_positive = [("0/16", True), ("0/16", True), ("2/26", False)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "相手が3→12→20系統に増えても、明確な異常・正常の判定は崩れなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の更新履歴12〜20系統に、相手ごとに基準を計算する同じ指示文を当てた（並び順を変えた版も含む）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "見逃し＝真の異常を正常と判定した回数（のべ）。誤検知＝真の正常を異常と判定した回数（のべ）。",
+        '</text>\n',
+        '<text class="t-sm" x="18" y="83">'
+        "誤検知2件は、同じ1系統（基準を+4日だけ超えた境界ケース）が2回とも異常側に出たもの。</text>\n",
+    ]
+    headers = ["真の異常の見逃し", "真の正常の誤検知"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + 8:.1f}" y="{top - 16}">{_esc(h)}</text>\n'
+        )
+
+    y = top
+    for (label, miss_value, miss_good), (fp_value, fp_good) in zip(rows, false_positive):
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(f'<text class="t-sm" x="18" y="{y + 15 + i * 14}">{_esc(line)}</text>\n')
+        for i, (value, good) in enumerate(((miss_value, miss_good), (fp_value, fp_good))):
+            x = col_x[i]
+            klass = "box-good" if good else "box-bad"
+            tone = "t-good" if good else "t-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{x:.1f}" y="{y}" width="{col_w:.1f}" height="{box_h}" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{x + col_w / 2:.1f}" y="{y + box_h / 2 + 5:.0f}" '
+                f'text-anchor="middle" style="font-size:14px">{_esc(value)}</text>\n'
+            )
+        y += pitch + (14 if len(label_lines) > 1 else 0)
+
+    height = y + 14
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height}">'
+        "※ 20系統の誤検知2件（同一系統・2回）は「黄信号」を両側（超えたかどうかを問わない）にすると正しく動いた（本文参照）。</text>\n"
+    )
+    height += 20
+
+    alt = (
+        "相手が3から12・20系統に増えても、明確な異常・正常の判定は崩れなかったことを示す表。"
+        "行は12系統・順序1（2回）、12系統・順序2（並び替え・2回）、20系統・二値判定（2回）。"
+        "列は真の異常の見逃しと真の正常の誤検知。見逃しは3行とも0（0/8・0/8・0/14）。"
+        "誤検知も12系統の2条件は0（0/16・0/16）だが、20系統だけ2/26で、"
+        "これは同じ1系統（基準を4日だけ超えた境界ケース）が2回とも異常側に出たものだと注記されている。"
+    )
+    (OUT / "scale-holds-accuracy.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def yellow_signal_one_sided_chart() -> None:
+    """「黄信号」の受け皿が片側にしか効かず、両側にすると直ることを示す数直線。
+
+    実測（2026-10-19）。横軸＝経過日数−基準日数（0が基準そのもの）。
+    系統⑭（真値は正常・基準を+1日だけ超過）が、片側版では赤に残り、両側版では黄に動いた。
+    """
+    label_w = 120
+    axis_w = 490
+    d_min, d_max = -6, 6
+    axis_x = 18 + label_w
+    scale = axis_w / (d_max - d_min)
+
+    def px(d: float) -> float:
+        return axis_x + (d - d_min) * scale
+
+    assert axis_x + axis_w <= WIDTH - 18, axis_x + axis_w
+
+    track_h = 28
+    top = 120
+    track_gap = 56
+    tracks = [
+        ("片側版\n(基準まで3日以内のみ黄)", [
+            (d_min, -3, "box-good", "t-good", "正常"),
+            (-3, 0, "box-accent", "t-accent", "黄信号"),
+            (0, d_max, "box-bad", "t-bad", "異常"),
+        ]),
+        ("両側版\n(差が±3日以内は黄)", [
+            (d_min, -3, "box-good", "t-good", "正常"),
+            (-3, 3, "box-accent", "t-accent", "黄信号"),
+            (3, d_max, "box-bad", "t-bad", "異常"),
+        ]),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「黄信号」は片側版では拾えず、両側版だと正しく拾う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "横軸＝経過日数−基準日数（0が基準そのもの）。系統⑭は基準を+1日だけ超えた、真値が正常の境界ケース。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "片側版は「基準まであと3日以内」だけを黄信号にするため、超えた側は素通りして異常のままになる。</text>\n",
+    ]
+
+    y = top
+    for label, bands in tracks:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(f'<text class="t-sm" x="18" y="{y + track_h / 2 - 6 + i * 14}">{_esc(line)}</text>\n')
+        for lo, hi, box_cls, _text_cls, band_label in bands:
+            x0, x1 = px(lo), px(hi)
+            parts.append(
+                f'<rect class="{box_cls}" x="{x0:.1f}" y="{y}" width="{x1 - x0:.1f}" height="{track_h}" rx="3"/>\n'
+            )
+            if x1 - x0 > 46:
+                parts.append(
+                    f'<text class="t-xs" x="{(x0 + x1) / 2:.1f}" y="{y + track_h / 2 + 4:.0f}" '
+                    f'text-anchor="middle">{_esc(band_label)}</text>\n'
+                )
+        # threshold line at d=0
+        tx = px(0)
+        parts.append(
+            f'<line class="line" x1="{tx:.1f}" y1="{y - 4}" x2="{tx:.1f}" y2="{y + track_h + 4}"/>\n'
+        )
+        # system 14 marker at d=+1
+        mx = px(1)
+        marker_y_top = y - 16
+        parts.append(
+            f'<line class="line" x1="{mx:.1f}" y1="{marker_y_top}" x2="{mx:.1f}" y2="{y + track_h + 4}"/>\n'
+        )
+        parts.append(
+            f'<circle cx="{mx:.1f}" cy="{y + track_h / 2:.1f}" r="4.5" fill="#1a56b8"/>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{mx:.1f}" y="{marker_y_top - 4}" text-anchor="middle" '
+            f'style="font-size:11px">⑭(+1)</text>\n'
+        )
+        y += track_h + track_gap
+
+    y -= track_gap - 18
+    parts.append(
+        f'<text class="t-xs" x="{px(0):.1f}" y="{y}" text-anchor="middle">基準(0)</text>\n'
+    )
+    height = y + 24
+
+    alt = (
+        "黄信号の受け皿が片側版では拾えず両側版だと正しく拾うことを示す数直線の図。"
+        "横軸は経過日数マイナス基準日数で、0が基準そのもの。"
+        "片側版の帯は、マイナス3未満が正常、マイナス3から0未満が黄信号、0以上が異常。"
+        "系統14（基準を1日だけ超えた境界ケース、真値は正常）はプラス1の位置にあり、"
+        "片側版では0以上の異常の帯に入ってしまう。"
+        "両側版の帯は、マイナス3未満が正常、マイナス3からプラス3までが黄信号、プラス3超が異常で、"
+        "系統14のプラス1の位置は黄信号の帯の中に正しく入る。"
+    )
+    (OUT / "yellow-signal-one-sided.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    scale_holds_accuracy_chart()
+    yellow_signal_one_sided_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
