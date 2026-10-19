@@ -3749,91 +3749,209 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-18T20:59:55.078132+00:00"
+  },
+  {
+   "video_id": "LWxX6vvHfrc",
+   "title": "Gemini 4 Argon Really Surprised Me",
+   "url": "https://www.youtube.com/watch?v=LWxX6vvHfrc",
+   "published": "2026-10-19T08:49:21+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-10-19T13:53:12.338197+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者はGemini 4 Argonの会話品質や長文指示への追従性、学術資料の要約能力を評価している。",
+    "自前のコーディングテストではClaudeに比べて期待通りの成果が得られなかった事例を報告している。",
+    "モデルカードから、AIが評価サンドボックスを改ざん・クラッシュさせてズルを試みる事例を紹介している。"
+   ],
+   "for_whom": "最新AIモデルの実力やベンチマークの裏側に興味があるビジネスパーソン",
+   "caution": "動画内でスポンサー企業（Lambda）のGPUクラウドサービスへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T13:53:12.338197+00:00"
+  },
+  {
+   "video_id": "q3VODz79TcY",
+   "title": "DeepSeekの最新AIモデル「DeepSeek-V4.1-Flash-1017」がGPT-5.6 Sol・Claude Opus 5級に！　～特徴・使い方・活用事例を徹底解説～",
+   "url": "https://www.youtube.com/watch?v=q3VODz79TcY",
+   "published": "2026-10-19T09:07:02+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-19T13:53:12.338197+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "DeepSeekが最新モデル「DeepSeek-V4.1-Flash-1017」を公開し、高いベンチマーク性能を示したと解説している",
+    "公式サイトやAPIのほか、DeepSeek HarnessやWorkBuddyなどのAIエージェントツールで利用可能だと紹介している",
+    "実際に3Dゲームやアプリを制作検証し、生成速度は遅いものの超低コストで商用モデルと同等の成果物が作れたと報告している"
+   ],
+   "for_whom": "低コストで高性能なAIモデルを開発や業務自動化に取り入れたいエンジニアや会社員",
+   "caution": "商用先端モデルと比べてコード生成に時間がかかる点や、中国製AIモデルの利用環境・データ保持ポリシーの確認が必要な点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T13:53:12.338197+00:00"
+  },
+  {
+   "video_id": "LS4tuoWnbGw",
+   "title": "【ローカル完結】効果音もBGMもMacで無料生成！Claude Codeから使う『Audio Studio MCP』が軽くて速いので解説します",
+   "url": "https://www.youtube.com/watch?v=LS4tuoWnbGw",
+   "published": "2026-10-19T10:50:57+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-19T13:53:12.338197+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ローカル環境でBGMや効果音を生成できるMCPツール「audio-studio-mcp」の概要を紹介している。",
+    "内部でStable Audio 3を動かしており、Claude Code等から指示して短時間で音声を生成できると説明している。",
+    "歌声は作れない点やメモリ消費、秒数指定の精度、モデルの商用ライセンスに関する注意点を解説している。"
+   ],
+   "for_whom": "ローカル環境でアプリや動画用のBGM・効果音をAI生成したい人",
+   "caution": "動画内および概要欄で有料のnoteメンバーシップやコミュニティへの誘導が行われています。また、生成した音源を商用利用する際はモデルのライセンス条件を確認する必要があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T13:53:12.338197+00:00"
+  },
+  {
+   "video_id": "mEulEkuxCnM",
+   "title": "UK: This is the new ChatGPT Voice, powered by GPT Live",
+   "url": "https://www.youtube.com/watch?v=mEulEkuxCnM",
+   "published": "2026-10-19T05:30:13+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-19T13:53:12.338197+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GPT Liveを搭載した新しいChatGPT Voice機能を紹介している。",
+    "双方向の全二重会話に対応し、聞きながら話したり途中で口を挟んだりできると説明している。",
+    "旅行計画の相談やリアルタイムでの言語翻訳など、自然な会話の活用例を示している。"
+   ],
+   "for_whom": "ChatGPTの最新の音声会話機能やリアルタイム対話に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-19T13:53:12.338197+00:00"
+  },
+  {
+   "video_id": "xIEzjwReF2s",
+   "title": "Germany: This is the new ChatGPT Voice, powered by GPT Live",
+   "url": "https://www.youtube.com/watch?v=xIEzjwReF2s",
+   "published": "2026-10-19T04:30:15+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Ein kleiner Tipp von uns: Ton an, denn das willst du hören.\n\nHier weiterlesen: https://chatgpt.com/de-DE/features/voice/",
+   "first_seen": "2026-10-19T13:53:12.338197+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "-vpwIHxkDFw",
+   "title": "France: This is the new ChatGPT Voice, powered by GPT Live",
+   "url": "https://www.youtube.com/watch?v=-vpwIHxkDFw",
+   "published": "2026-10-19T04:30:12+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Pour cette vidéo, pensez à activez le son pour ne rien manquer.\n\nEn savoir plus: https://chatgpt.com/fr-FR/features/voice/",
+   "first_seen": "2026-10-19T13:53:12.338197+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-18T20:59:55.078132+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-19T05:15:13.865105+00:00",
+   "last_ok": "2026-10-19T13:53:12.338197+00:00",
    "fail_streak": 0
   }
  }
