@@ -35862,3 +35862,178 @@ if __name__ == "__main__":
     relation_list_flow_chart()
     relation_list_word_check_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def seen_list_catches_the_scattered_gaps_results_chart() -> None:
+    """IDが非連番で、新着3件がバラバラな位置にあるときの見逃し・誤検知を比べた表。
+
+    実測（2026-10-20・claude --safe-mode --tools "" での独立セッション・計10回）。
+    一括＝1メッセージで全300件を渡す。分割＝150件ごと2分割で渡す。
+    見逃しの分母＝そのセッション数×仕込み3件。誤検知は全セッションで0件。
+    """
+    rows = [
+        ("一括・系列A\n(問い合わせ受付・3回)", "0/9"),
+        ("一括・系列B\n(入出庫記録・3回)", "0/9"),
+        ("分割・系列A\n(問い合わせ受付・2回)", "0/6"),
+        ("分割・系列B\n(入出庫記録・2回)", "0/6"),
+    ]
+    total_row = ("合計(10回)", "0/30", "0件")
+
+    label_x, label_w = 18, 190
+    col_w, col_gap = 118, 14
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(2)]
+    head_y = 112
+    row_h, row_gap = 40, 12
+    row_y = [head_y + 26 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["見逃し", "誤検知したID数"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "IDがバラバラで新着が3件に増えても、見逃し・誤検知は0のまま</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "既読ID一覧も投稿一覧もハッシュ風の非連番ID。新着3件を先頭寄り・中ほど・末尾寄りに分けて仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "指示文は「既読リストに無い項目を新着として列挙」のまま。一括（全300件を1通）と分割（150件ずつ2通）を比べた。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "見逃しの分母＝セッション数×仕込み3件。誤検知は無関係な既読済みIDを新着と答えた回数。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.0f}" y="{head_y}" '
+            f'text-anchor="middle">{_esc(name)}</text>\n'
+        )
+    for r, (label, miss_value) in enumerate(rows):
+        y = row_y[r]
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t-sm" if i else "t"}" x="{label_x}" '
+                f'y="{y + 15 + i * 14}" style="font-size:12px">{_esc(line)}</text>\n'
+            )
+        parts.append(
+            f'<rect class="box-good" x="{col_x[0]}" y="{y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{col_x[0] + col_w / 2:.0f}" y="{y + row_h / 2 + 5:.0f}" '
+            f'text-anchor="middle" style="font-size:14px">{_esc(miss_value)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-good" x="{col_x[1]}" y="{y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{col_x[1] + col_w / 2:.0f}" y="{y + row_h / 2 + 5:.0f}" '
+            f'text-anchor="middle" style="font-size:14px">0件</text>\n'
+        )
+
+    total_y = row_y[-1] + row_h + row_gap + 8
+    parts.append(
+        f'<text class="t-strong" x="{label_x}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'style="font-size:12.5px">{_esc(total_row[0])}</text>\n'
+    )
+    parts.append(
+        f'<rect class="box-good" x="{col_x[0]}" y="{total_y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="{col_x[0] + col_w / 2:.0f}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'text-anchor="middle" style="font-size:14.5px">{_esc(total_row[1])}</text>\n'
+    )
+    parts.append(
+        f'<rect class="box-good" x="{col_x[1]}" y="{total_y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="{col_x[1] + col_w / 2:.0f}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'text-anchor="middle" style="font-size:14.5px">{_esc(total_row[2])}</text>\n'
+    )
+
+    height = total_y + row_h + 30
+    alt = (
+        "IDが非連番で新着3件がバラバラな位置にあるときの、一括と分割それぞれの見逃し・誤検知を示す表。"
+        "行は一括・系列A問い合わせ受付(3回)、一括・系列B入出庫記録(3回)、"
+        "分割・系列A(2回)、分割・系列B(2回)。列は見逃しと誤検知したID数。"
+        "一括系列Aは0/9、一括系列Bは0/9、分割系列Aは0/6、分割系列Bは0/6で、"
+        "誤検知したID数はすべての行で0件。合計10回・仕込み30件中、見逃しは0/30、誤検知は0件。"
+    )
+    (OUT / "seen-list-catches-the-scattered-gaps-results.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def seen_list_catches_the_scattered_gaps_positions_chart() -> None:
+    """前作（単独ギャップ・連番ID）と今回（3カ所に散らしたギャップ・非連番ID）の、
+    一覧内の位置の違いを示す数直線の図。
+
+    実測（2026-10-20）。横軸は投稿一覧300件内の位置（%）。
+    """
+    axis_x, axis_w = 160, 500
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("前作\n(連番ID・ANN-0001形式)", [33, 100], ["#1a56b8", "#1a56b8"]),
+        ("この記事\n(非連番ID・TCK-xxxxxxxx形式)", [7, 50, 93], ["#1a7f37", "#1a7f37", "#1a7f37"]),
+    ]
+    top = 150
+    track_h, track_gap = 46, 42
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "新着を仕込む位置を、前作の2か所から3か所に増やし、散らした</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "横軸は投稿一覧300件のうち、何%目に新着を仕込んだかという位置。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "前作のIDは連番（ANN-0099の次がANN-0101）で、抜けた番号そのものが手がかりになる可能性があった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "この記事はIDをハッシュ風の非連番にし、さらに新着を先頭寄り・中ほど・末尾寄りの3か所に散らした。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "番号の連続性という手がかりを無くし、仕込みの数も1.5倍にした状態で、見逃し・誤検知ともに0件だった。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    for label, positions, colors in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 6 + i * 14:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        parts.append(
+            f'<line class="line" x1="{axis_x:.1f}" y1="{y + track_h / 2:.1f}" '
+            f'x2="{axis_x2:.1f}" y2="{y + track_h / 2:.1f}"/>\n'
+        )
+        for pct, color in zip(positions, colors):
+            x = px(pct)
+            parts.append(f'<circle cx="{x:.1f}" cy="{y + track_h / 2:.1f}" r="6" fill="{color}"/>\n')
+            parts.append(
+                f'<text class="t-xs" x="{x:.1f}" y="{y + track_h / 2 - 12:.0f}" '
+                f'text-anchor="middle">{pct}%</text>\n'
+            )
+        y += track_h + track_gap
+
+    height = y - track_gap + 30
+    alt = (
+        "新着を仕込んだ位置を、前作とこの記事で比べた数直線の図。横軸は投稿一覧300件のうちの位置(%)。"
+        "前作(連番ID・ANN-0001形式)は33%と100%の2か所。この記事(非連番ID・TCK-xxxxxxxx形式)は"
+        "7%・50%・93%の3か所に散らしてある。番号の連続性という手がかりを無くし、仕込みの数も1.5倍にした状態で、"
+        "見逃し・誤検知ともに0件だった。"
+    )
+    (OUT / "seen-list-catches-the-scattered-gaps-positions.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    seen_list_catches_the_scattered_gaps_results_chart()
+    seen_list_catches_the_scattered_gaps_positions_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

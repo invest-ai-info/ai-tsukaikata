@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="314" viewBox="0 0 720 314" role="img" aria-label="新着を仕込んだ位置を、前作とこの記事で比べた数直線の図。横軸は投稿一覧300件のうちの位置(%)。前作(連番ID・ANN-0001形式)は33%と100%の2か所。この記事(非連番ID・TCK-xxxxxxxx形式)は7%・50%・93%の3か所に散らしてある。番号の連続性という手がかりを無くし、仕込みの数も1.5倍にした状態で、見逃し・誤検知ともに0件だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="314"/>
+<text class="t-strong" x="18" y="26">新着を仕込む位置を、前作の2か所から3か所に増やし、散らした</text>
+<text class="t-sm" x="18" y="45">横軸は投稿一覧300件のうち、何%目に新着を仕込んだかという位置。</text>
+<text class="t-sm" x="18" y="64">前作のIDは連番（ANN-0099の次がANN-0101）で、抜けた番号そのものが手がかりになる可能性があった。</text>
+<text class="t-sm" x="18" y="83">この記事はIDをハッシュ風の非連番にし、さらに新着を先頭寄り・中ほど・末尾寄りの3か所に散らした。</text>
+<text class="t-sm" x="18" y="102">番号の連続性という手がかりを無くし、仕込みの数も1.5倍にした状態で、見逃し・誤検知ともに0件だった。</text>
+<line class="line" x1="160.0" y1="142" x2="160.0" y2="148"/>
+<text class="t-xs" x="160.0" y="136" text-anchor="middle">0%</text>
+<line class="line" x1="285.0" y1="142" x2="285.0" y2="148"/>
+<text class="t-xs" x="285.0" y="136" text-anchor="middle">25%</text>
+<line class="line" x1="410.0" y1="142" x2="410.0" y2="148"/>
+<text class="t-xs" x="410.0" y="136" text-anchor="middle">50%</text>
+<line class="line" x1="535.0" y1="142" x2="535.0" y2="148"/>
+<text class="t-xs" x="535.0" y="136" text-anchor="middle">75%</text>
+<line class="line" x1="660.0" y1="142" x2="660.0" y2="148"/>
+<text class="t-xs" x="660.0" y="136" text-anchor="middle">100%</text>
+<line class="line" x1="160.0" y1="145" x2="660.0" y2="145"/>
+<text class="t" x="18" y="167">前作</text>
+<text class="t-xs" x="18" y="181">(連番ID・ANN-0001形式)</text>
+<line class="line" x1="160.0" y1="173.0" x2="660.0" y2="173.0"/>
+<circle cx="325.0" cy="173.0" r="6" fill="#1a56b8"/>
+<text class="t-xs" x="325.0" y="161" text-anchor="middle">33%</text>
+<circle cx="660.0" cy="173.0" r="6" fill="#1a56b8"/>
+<text class="t-xs" x="660.0" y="161" text-anchor="middle">100%</text>
+<text class="t" x="18" y="255">この記事</text>
+<text class="t-xs" x="18" y="269">(非連番ID・TCK-xxxxxxxx形式)</text>
+<line class="line" x1="160.0" y1="261.0" x2="660.0" y2="261.0"/>
+<circle cx="195.0" cy="261.0" r="6" fill="#1a7f37"/>
+<text class="t-xs" x="195.0" y="249" text-anchor="middle">7%</text>
+<circle cx="410.0" cy="261.0" r="6" fill="#1a7f37"/>
+<text class="t-xs" x="410.0" y="249" text-anchor="middle">50%</text>
+<circle cx="625.0" cy="261.0" r="6" fill="#1a7f37"/>
+<text class="t-xs" x="625.0" y="249" text-anchor="middle">93%</text>
+</svg>
