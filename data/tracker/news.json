@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-20T22:13:01+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add org webhook endpoints and user profile enforcement events api: add RBAC Group owner-access error codes to the Admin API api: document the unsupported_charset error code for plugin u…",
+      "title": "v1.17.0",
+      "uid": "2180bae2c56b3886",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.17.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-20T20:46:50+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added sandbox.allowNestedUserNamespaces so sandboxed commands on Linux can create user namespaces (Chromium, rootless podman); this lets them get around the sandbox's file protections …",
+      "title": "v2.1.305",
+      "uid": "7649733cee598446",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-20T18:29:14.936975+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -11,6 +35,18 @@
       "uid": "bfecc6d0f5fccef9",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.16.0",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-20T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "【イベントレポート】Sakana AI Engineer Open House 2026",
+      "uid": "c86fbe3033e09577",
+      "url": "https://sakana.ai/open-house-2026/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-10-20T18:29:14.936975+00:00",
@@ -5553,18 +5589,6 @@
       "uid": "9010a64d5f38d97d",
       "url": "https://openai.com/index/health-in-chatgpt",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-07-22T21:24:56+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Changed /code-review to run as a background subagent, so review work no longer fills your conversation and keeps stacked slash commands as its review target Added screen-reader announc…",
-      "title": "v2.1.218",
-      "uid": "1a24794f576e817f",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
-      "vendor": "Anthropic"
     }
   ]
 }

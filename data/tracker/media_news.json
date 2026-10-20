@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-20T21:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "LSTCと北海道大学、富士フイルム、GEヘルスケア・ジャパン、imecが、推論に特化した2nm世代半導体を活用する医用画像処理システムの開発プロジェクトについて説明。現行GPUと比較して画像処理速度5倍以上、画像処理のエネルギー効率10倍以上の達成を目指す中で、2nm世代半導体の製造はRapidusが望ましいものの現時点では未定とした。",
+      "title": "Rapidusで製造できるか、推論特化2nm世代半導体で医用画像処理システムを開発",
+      "uid": "9b4b415569c5a9be",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/21/news045.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-20T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "会議の内容を記録していない人は50.2％に上る一方、議事録作成ツールの利用者では73.2％が負担軽減を実感している。なぜツールの活用は進まないのか。調査結果から、議事録作成の実態とAI活用の可能性、導入に向けた課題を探る。",
+      "title": "会議の記録を残さない人が50.2％　AI議事録が便利でも企業に浸透しない理由",
+      "uid": "bd3f27d997020160",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/21/2000002415/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-20T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIに社内規定やマニュアルを参照させても、その後の申請やデータ登録は人手に頼る場合がある。GMOプライム・ストラテジーとGMO AIコネクトは、RAGと業務自動化基盤を連携し、社内ルールに沿った判断から業務処理までの自動化を目指す。",
+      "title": "GMO、生成AIの「答えるだけ問題」を解消へ　社内ナレッジを業務フローにつなぐ",
+      "uid": "dafcb8ab42eb8ebe",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/21/2000002373/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T22:19:50.690379+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-20T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIコーディングツールの認証情報を盗むマルウェアと、保存されたAPIキーが流出した可能性のあるサービスの侵害が、同じ週に公表された。盗まれたキーで何が起きるのか、手元のキーをどう守るかを整理する。",
+      "title": "AIコーディングのAPIキーが狙われている　OpenCodeのキー流出とインフォスティーラー「Aoki」から学ぶ対策",
+      "uid": "49404f82b091d489",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/21/news011.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-20T18:29:14.936975+00:00",
       "importance": "minor",
       "label": "Publickey",
@@ -2350,54 +2398,6 @@
       "title": "AIチャットサービスのCharacter.aiが破産申請、ディズニーへの資産売却などを検討",
       "uid": "8d8933665321a868",
       "url": "https://gigazine.net/news/20261014-character-ai-bankruptcy/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-14T06:13:53.374387+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-14T03:05:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "オフィスに密かに盗聴器を仕掛けていたとして、OpenAIの従業員がFBIに逮捕されました。盗聴器の仕掛けられた役員会議室は、会社の機密情報や非公開情報をやり取りするような会議が行われる場でしたが、OpenAIによると情報の窃取や持ち出しは確認されていないとのことです。 続きを読む...",
-      "title": "OpenAIの従業員をFBIが逮捕、役員会議室に盗聴器を仕掛けた疑い",
-      "uid": "2909acbb5b94f8b2",
-      "url": "https://gigazine.net/news/20261014-openai-employee-arrested-by-fbi/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-14T06:13:53.374387+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-14T02:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Appleがスマートホームデバイスを一元管理するためのスマートハブ「Apple HomeView」を発表しました。同時に、新型「Apple TV 4K」や「HomePod mini 2」も発表されています。 続きを読む...",
-      "title": "Apple IntelligenceとSiri AIでスマートホームを一元管理できる「Apple HomeView」が登場",
-      "uid": "e79e11cda14f585f",
-      "url": "https://gigazine.net/news/20261014-apple-homeview/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-14T06:13:53.374387+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-14T02:06:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "GoogleがAIモデル「Gemini 4 Argon」を現地時間の2026年10月13日に正式リリースしました。正式リリースに合わせて、Google社内や先行ユーザーによる活用事例が多数公開されています。 続きを読む...",
-      "title": "「Gemini 4 Argon」を正式リリース、Claude Fable 5.1やGPT-6 Astraと同等性能で久しぶりにGoogleがAIトップ競争に追いつく",
-      "uid": "fe9fdcd71532c183",
-      "url": "https://gigazine.net/news/20261014-gemini-4-argon-available-for-everyone/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-14T06:13:53.374387+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-14T02:03:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Microsoftのゲーム部門であるXBOXのアシャ・シャルマCEOが、ゲーム制作者・エンジニア・科学者からなる小規模チーム「XBOX LABS」の立ち上げを発表しました。 続きを読む...",
-      "title": "Microsoftが「XBOX LABS」を立ち上げ、AIを活用したレトロゲームの移植が目標か",
-      "uid": "6d9f71567948068c",
-      "url": "https://gigazine.net/news/20261014-microsoft-xbox-labs/",
       "vendor": "GIGAZINE"
     }
   ]
