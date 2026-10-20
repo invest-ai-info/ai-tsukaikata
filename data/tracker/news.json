@@ -13,6 +13,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-20T13:35:27.071861+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-19T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "オープンエンドな探索を意思決定支援へ：推薦の質と多様性を高める「QD-Rec」を提案",
+      "uid": "a894800d93d342ce",
+      "url": "https://sakana.ai/qd-rec/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-10-20T01:51:50.311355+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -5585,62 +5597,6 @@
       "uid": "17613fc96f2cfbba",
       "url": "https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-22T13:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex.",
-      "summary_ja": "OpenAIが米ジョージア州で新事業を発表\nエフィンガム郡で「Project Camellia」を開始\n地域投資、雇用、環境配慮などを約束",
-      "summary_source": "gemini",
-      "title": "Building AI infrastructure with the Effingham County community",
-      "uid": "319c07606d4d3143",
-      "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-22T13:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide.",
-      "summary_ja": "報道機関がAIの利用を進めています\n記事作成、読者増加、業務改善に活用\nOpenAIのツールで記者や出版社を支援",
-      "summary_source": "gemini",
-      "title": "How news organizations are using AI to advance their vital missions",
-      "uid": "17e39d1f4a99910e",
-      "url": "https://openai.com/index/how-news-organizations-are-using-ai",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-22T13:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Gentle Monster glasses, Warby Parker glasses, a prompt asking for the history behind a pictured building, and a prompt asking to book a table at a pictured restaurant",
-      "summary_ja": "Googleが新機能を3つ発表しました\nGalaxy Unpacked 2026で公開\nAIで映る建物の歴史や店予約が可能に",
-      "summary_source": "gemini",
-      "title": "3 Google updates from Galaxy Unpacked 2026",
-      "uid": "f25d9ed636296780",
-      "url": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-22T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI outlines its commitment to advancing American science working with the U.S. Department of Energy and national labs to use frontier AI to accelerate discovery.",
-      "summary_ja": "OpenAIが米国の科学発展に協力\n米エネルギー省や国立研究所と連携し\n最先端AIで科学的発見を加速します",
-      "summary_source": "gemini",
-      "title": "Advancing the next era of national science",
-      "uid": "97148fe3ecb35e15",
-      "url": "https://openai.com/index/advancing-the-next-era-of-national-science",
-      "vendor": "OpenAI"
     }
   ]
 }
