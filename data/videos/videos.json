@@ -3945,7 +3945,7 @@
    "description": "AIエージェントを便利だからといって、初期設定のまま使っていませんか？\nAIの進化によってサイバー攻撃の手口は変化し、情報漏洩のリスクも無視できなくなっています。今回は、Claude Codeを安全に使うために知っておきたいセキュリティ対策を徹底解説！権限モードの違いやDeny・Allow・Hookの設定、MCP連携の危険性、サンドボックスの活用方法まで、実際の設定画面を交えながら紹介します。AIエージェントを安心して活用したい方は必見です！\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n▼セキュリティに関する無料書籍は下記\nhttps://keitoai.dev/books/\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書一覧\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 AIによる情報漏洩・サイバー攻撃の現状\n04:51 AIサイバーリスクを示す3つの根拠\n11:53 AIエージェントのリスクの正体\n14:37 情報が外部に漏れる4つの経路\n16:58 プロンプトインジェクション攻撃の仕組み\n19:14 実際に起こりやすい4つの事故パターン\n20:58 Claude Codeの権限モード\n23:14 Deny・Ask・Allow・Hookの仕組み\n25:05 権限モードの切り替えと設定方法\n32:08 Claude Codeを安全に使うための基本設定\n41:36 リスクと利便性のシミュレーター\n43:54 機密情報を扱う場合の追加対策\n47:00 MCP連携のセキュリティ対策\n51:08 サンドボックスによる隔離と安全な実行環境\n55:56 人間側で徹底すべきセキュリティ運用\n59:35 まとめと安全な導入支援の案内\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Codex AI活用【総まとめ】\nhttps://youtu.be/NImFdpHOSPA\nChatGPT Work完全解説動画\nhttps://youtu.be/U74PHw-h59Q\nGemini for Google Workspace完全解説\nhttps://youtu.be/0BZpNHfdFIk\nChatGPTをもっと便利に使いこなすAI活用術\nhttps://youtu.be/jSjjWKChnVA\n『Codex App Server』って神機能を解説\nhttps://youtu.be/4ZZexI0awQk\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを",
    "first_seen": "2026-10-20T12:04:35.823084+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -3959,7 +3959,7 @@
    "description": "今回の動画では、Cuaから新しく登場した「Cua Spaces SDK」について解説しました。\n\nCua Spacesは、自分のMacの中にLinuxやmacOSのVMを簡単に作り、Claude CodeやCodexなどのエージェントに専用の仮想環境として渡せる仕組みです。\n\nこれまではアプリやMCPからの操作が中心でしたが、SDKの登場でTypeScriptやPythonのコードからスペースを作ったり、space_bashでシェルを動かしたり、中に入っているCua Driverでクリックやキー入力をさせたりできるようになりました。\n\nみなさんはエージェントにパソコンを操作させるとき、どんなツールを使っていますか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Cua Spaces SDK 登場 - 今回のテーマ\n01:13 Cua Driver と Spaces がコードで操作可能に\n02:12 コードでスペース作成とリソース割り当て\n03:03 人の介入・チーム共有とエージェントOS\n04:06 全体像 - CLI・SDK・Cua Bench・Cua Driver\n05:10 動かし方 - スペース生成とコマンド操作\n05:42 実測: Linux デスクトップが15.9秒で起動\n06:17 call_tool と Cua Driver の豊富なツール\n07:38 ピクチャーインピクチャーと料金プラン\n08:36 Grok Bot と比べた自作エージェントOSの利点\n09:05 まとめと note 勉強会のお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-20T12:04:35.823084+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -3975,91 +3975,119 @@
    "status": "pending",
    "attempts": 1,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "TuO-D9oFQLo",
+   "title": "【AI社員】Claude CodeとGemini Notebookの神連携で天才AI社員を生み出して仕事を秒で終わらす方法はコレ！",
+   "url": "https://www.youtube.com/watch?v=TuO-D9oFQLo",
+   "published": "2026-10-20T12:00:30+00:00",
+   "channel_key": "saki",
+   "channel_name": "【さき】のAIでええやん。",
+   "default_category": "tech",
+   "description": "100社以上のAI研修・コンサル実績ノウハウを詰め込んだ\n📊自分の会社の今の状態を知れる💬\n【無料】企業様向けのAI活用診断はコチラ⬇️\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/present/harness\n\n🌏企業向けAIの活用がわかる！学べる無料会員サイト💻\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/top\n\n🏢企業様向けのAI研修のお問い合わせはコチラから🏢\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/contact\n\n何となく聞きに来るのは勿体ない/本気の人向けAI勉強会\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\n\n今AI活用やマネタイズの仕方がわからない人🤦やAI初心者の人も必見！\n\n🚨無料期間限定🚨で\n✨Youtubeでは出せないさきのAI最新情報✨&\n👩‍💻AIノウハウ100大特典🎁を勉強会参加後にLINEで受け取れます！\n\nAIスキルを身につけて【社内評価⏫UP⏫】や【収益化💰】\n業務効率化🗒️できるココでしか手に入らない情報を\n現在期間限定でしかも、無料配布しているので興味ある方は是非！！\n↓↓↓\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\nーーーーーーーーーーーーーー\n\n約10,000人以上の人が登録中！\n⬇️さきのAI最新情報公式LINE⬇️\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\n\nーーーーーーーーーーーーーー\n🎁”LINE登録者限定\"のAI特別セミナー開催\n🎁”LINE登録者限定\"のAI勉強会\n🎁”勉強会参加者限定\"のAI豪華100大特典配布\n🎁”勉強会参加者限定\"の特別な案内\n\n【⬇️無料登録はこちら⬇️】\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\n\n\n🏢企業のAI活用が学べる無料会員サイトはコチラ📚\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/top\n\n🧑‍💻企業様向けのAI研修のお問い合わせはこちらから🧑‍💻\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/contact\n\n\n━━━━━━━━━━━━━━━━━━\n↓↓本日紹介したツールや動画📚などはこちら↓↓\n\n【GeminiNotebook（旧NotebookLM）】\nhttps://notebooklm.google.com/\n\n【Gemini】\nhttps://gemini.google.com/app\n\n【ClaudeCode】\nhttps://claude.com/ja/product/claude-code\n\n【ClaudeCodeの仕組み】\nhttps://code.claude.com/docs/ja/how-claude-code-works\n\n━━━━━━━━━━━━━━━━━━\n#chatgpt    #gemini    #ai活用  #claude #claudecode",
+   "first_seen": "2026-10-20T17:29:30.903159+00:00",
+   "status": "pending",
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "SkFmiMHDN38",
+   "title": "How an Anthropic engineer uses Claude Docs",
+   "url": "https://www.youtube.com/watch?v=SkFmiMHDN38",
+   "published": "2026-10-20T16:40:09+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "description": "Most docs at work are shared, so Claude Docs is built for a team. Claude works in the doc alongside everyone: it pulls the numbers, checks your claims, and picks up questions in the comments.\nDoug, a product engineer at Anthropic, shares how he uses it for standups and launch reviews.\n\nCreate a doc with Claude: https://claude.ai/artifacts \nRead the announcement: https://claude.com/blog/cowork-is-now-claude",
+   "first_seen": "2026-10-20T17:29:30.903159+00:00",
+   "status": "pending",
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-20T12:04:35.823084+00:00",
+   "last_ok": "2026-10-20T17:29:30.903159+00:00",
    "fail_streak": 0
   }
  }
