@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-20T18:29:14.936975+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-20T17:49:46+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add data_refreshed_at and has_more to analytics report pages api: add workspace rate-limit updates to the Admin API api: make User Profiles generally available client: yield server-sent…",
+      "title": "v1.16.0",
+      "uid": "bfecc6d0f5fccef9",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.16.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-20T18:29:14.936975+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-20T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+      "uid": "89edc97eaeea0bb2",
+      "url": "https://openai.com/index/ted-taylor-restaurant",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-20T18:29:14.936975+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-20T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D, helping biopharma teams accelerate drug development and advance new treatments.",
+      "title": "OpenAI acquires Orchestra Bio",
+      "uid": "65d19c309994b736",
+      "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-19T22:23:53.419021+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5529,74 +5565,6 @@
       "uid": "1a24794f576e817f",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-22T17:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re sharing the research agenda for the Anthropic Economic Futures Research Fund.",
-      "summary_ja": "Anthropicが研究計画を発表した\n経済未来研究基金に関する内容",
-      "summary_source": "gemini",
-      "title": "A research agenda for the Economic Futures Research Fund",
-      "uid": "de1b74fbc10d5be5",
-      "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-22T17:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We're launching the Anthropic Economic Index connector for Claude, which lets anyone explore real data about AI and work.",
-      "summary_ja": "Claudeに新機能が追加されました\n「Anthropic Economic Index」で\nAIと仕事の実際のデータを調べられます",
-      "summary_source": "gemini",
-      "title": "Ask Claude about the Anthropic Economic Index",
-      "uid": "7d07738df944ccae",
-      "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-22T16:43:45+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.118.0 (2026-07-22) Full Changelog: v0.117.1...v0.118.0 Features api: add support for Managed Agents model effort, initial session events, and threads delta streaming ( 712bc6f )",
-      "title": "v0.118.0",
-      "uid": "4176b3ffa531bc36",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.118.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-22T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "summary_ja": "UnMaskForkという新技術が発表",
-      "summary_source": "gemini",
-      "title": "UnMaskFork: Test-Time Scaling for Masked Diffusion via Deterministic Action Branching",
-      "uid": "34614f01d31fcba6",
-      "url": "/umf/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-07-22T13:38:54+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Google commits $40M in AI tokens and credits for the Genesis Mission",
-      "summary_ja": "Googleが科学研究に4000万ドルを提供\n「Genesis Mission」という計画に対し\nAIの利用権などの形で支援します",
-      "summary_source": "gemini",
-      "title": "Accelerating the frontiers of scientific discovery: Google’s $40M commitment to the Genesis Mission",
-      "uid": "17613fc96f2cfbba",
-      "url": "https://deepmind.google/blog/accelerating-the-frontiers-of-scientific-discovery-googles-40m-commitment-to-the-genesis-mission/",
-      "vendor": "Google DeepMind"
     }
   ]
 }

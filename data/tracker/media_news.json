@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-20T18:29:14.936975+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-10-20T15:10:05+00:00",
+      "source_id": "media-publickey",
+      "summary": "Cloudflareは、AIを活用した業務のためのプラットフォームとなる「Cloudflare OS」のマネージドサービスを発表しました。現在ウェイティングリストへの登録を募集しています。 AIを活用した業務アプリのプラットフォーム Clo...",
+      "title": "「Cloudflare OS」のマネージドサービス提供へ。GitHubとの接続やGmailとの連携強化など",
+      "uid": "740e3c8f6ebe3382",
+      "url": "https://www.publickey1.jp/blog/26/cloudflare_osgithubgmail.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-20T18:29:14.936975+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-20T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIがプログラムを修正する際に追加したコードと削除したコードの差を測定するオープンソースのベンチマーク「Parsimony」が公開されました。従来のベンチマークで重視されてきた問題の解決率やコストに加えて、コードの増加量からAIモデルを比較できるのが特徴です。 続きを読む...",
+      "title": "同じ問題を解決してもAIによってコードの増加量に大きな差、AIモデルを比較するベンチマーク「Parsimony」が登場",
+      "uid": "d03b5058474c13ce",
+      "url": "https://gigazine.net/news/20261020-parsimony/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-20T13:35:27.071861+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "6d9f71567948068c",
       "url": "https://gigazine.net/news/20261014-microsoft-xbox-labs/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-14T06:13:53.374387+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-14T01:04:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Googleは10月13日（米国時間）、高度な推論能力を備えたAIモデル「Gemini 4 Argon」の一般公開を始めた。従来はサイバーセキュリティの担当者に提供を限定していたが、開発者や企業、一般利用者にも対象を広げる。「Google AI Pro」「Google AI Ultra」の加入者は、GeminiアプリやGoogle検索の「AIモード」で利用できる。世界で順次展開する。",
-      "title": "Google、「Gemini 4 Argon」を一般公開　ChatGPTやClaudeの上位モデルに対抗",
-      "uid": "f557f8fc3929fdb9",
-      "url": "https://japan.cnet.com/article/35253521/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-14T01:15:30.868128+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-10-14T00:29:49+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは同社最先端のモデル「Gemini 4 Argon」の一般提供を開始した。Geminiアプリや検索のAIモード、Google Antigravity、APIなどで利用できる。",
-      "title": "Googleの新モデル「Gemini 4 Argon」一般提供開始　使えるプラン、価格",
-      "uid": "ed2b6f60dce62d91",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/14/2000002241/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
