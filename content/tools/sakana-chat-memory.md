@@ -83,8 +83,8 @@ Sakana Chat自体の料金です。発表ページに記載がなく、料金ペ
 1. Sakana Chatの更新発表（Sakana AI・2026年9月17日）: <https://sakana.ai/chat-fugumax/>
 2. Fugu MaxのAPI発表（Sakana AI・2026年9月11日）: <https://sakana.ai/fugu-max-release/>
 3. Geminiのメモリー機能（Google公式ヘルプ）: <https://support.google.com/gemini/answer/16598469>
-4. Claudeのメモリー機能の発表（Anthropic公式・2025年9月11日、2025年10月23日更新）: <https://claude.com/blog/memory>
-   （<https://www.anthropic.com/news/memory> を開くと、このページへ転送されます）
+4. Claudeのメモリー機能の発表（Anthropic公式・2025年9月11日、2025年10月23日更新）: <https://claude.com/resources/articles/memory>
+   （<https://www.anthropic.com/news/memory> も <https://claude.com/blog/memory> も、開くとこのページへ転送されます）
 5. OpenAIの公式ニュースRSS（見出しと日付のみ確認）: <https://openai.com/news/rss.xml>
 
 OpenAIの発表ページ本体（`openai.com`）と、Sakana Chat自体の料金ページ（`chat.sakana.ai`）には、この記事を書いた環境から到達できませんでした。
