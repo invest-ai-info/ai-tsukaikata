@@ -36037,3 +36037,451 @@ if __name__ == "__main__":
     seen_list_catches_the_scattered_gaps_results_chart()
     seen_list_catches_the_scattered_gaps_positions_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def spec_sheet_detection_vs_naive_chart() -> None:
+    """素朴な指示文と、公式仕様書を添えた指示文の検出率を比べる（2026-10-20実測）。
+
+    先行記事（natural-number-swap-hides-from-naive-check）の素朴な指示文80回は
+    23/80（28.75%）。この記事の仕様書照合はブレンダー40/40・掃除機40/40で合計80/80。
+    """
+    _hit_and_miss_rows_chart(
+        "spec-sheet-detection-vs-naive.svg",
+        "公式仕様書を添えると、検出は28.75%から100%に上がった",
+        "実測2026-10-20。架空のブレンダー・掃除機キャプション、仕込み誤り計16件・計160回。",
+        "指示文の構造は先行記事と同じ。違うのは、公式仕様書を添えたことだけ。",
+        [
+            ("先行記事：素朴な指示文（80回ぶん）", 23, 80, "good"),
+            ("この記事：ブレンダーを仕様書と照合（5回×8件）", 40, 40, "good"),
+            ("この記事：掃除機を仕様書と照合（5回×8件）", 40, 40, "good"),
+        ],
+        [
+            "先行記事の素朴な指示文は80件中23件（28.75%）しか拾えなかった。",
+            "仕様書を添えると、ブレンダー・掃除機ともに40件中40件（100%）を拾った。",
+            "指示文はどちらの記事でも同じ文面。添えた仕様書1枚だけが違いを生んだ。",
+        ],
+        "動画の自動字幕キャプションの検品で、素朴な指示文と公式仕様書を添えた指示文の"
+        "検出率を比べる表。先行記事の素朴な指示文（80回ぶん）は23/80。"
+        "この記事のブレンダーを仕様書と照合（5回×8件）は40/40。"
+        "掃除機を仕様書と照合（5回×8件）も40/40。"
+        "下の枠には、先行記事の素朴な指示文は80件中23件（28.75%）しか拾えなかったこと、"
+        "仕様書を添えるとブレンダー・掃除機ともに40件中40件（100%）を拾ったこと、"
+        "指示文の文面は同じで添えた仕様書1枚だけが違いを生んだことが書かれている。",
+        label_w=360,
+    )
+
+
+def spec_sheet_partial_coverage_chart() -> None:
+    """仕様書から2項目を外すと、その2項目だけが保留になることを示す（2026-10-20実測）。
+
+    掃除機の仕様書から吸引力・保証期間を外し、同じ指示文を3回試した。
+    仕様書に残した6件は3回×6件=18/18。外した2項目は、誤って一致と判定された回も
+    正しく不一致と判定された回も0件（3回とも「照合不可」）。
+    """
+    _hit_and_miss_rows_chart(
+        "spec-sheet-partial-coverage.svg",
+        "仕様書から外した2項目は、見つからず「保留」のままだった",
+        "実測2026-10-20。掃除機の仕様書から、仕込み誤りのある吸引力・保証期間を外して3回試した。",
+        "「正しく拾えた回」ではなく「不一致と判定できた回」を数えている（外した2項目は0回）。",
+        [
+            ("仕様書に残した6項目（3回×6件）", 18, 18, "good"),
+            ("仕様書から外した「吸引力」（3回）", 0, 3, "good"),
+            ("仕様書から外した「保証期間」（3回）", 0, 3, "good"),
+        ],
+        [
+            "仕様書に残した6項目は、3回とも全件そのまま不一致と判定された（18/18）。",
+            "外した2項目は、3回とも『仕様書に記載がないため照合できません』で止まった。",
+            "間違っているのに『一致』と誤判定された回は0件。見つからないだけで、誤りはしない。",
+        ],
+        "掃除機の仕様書から、仕込み誤りのある吸引力と保証期間の2項目を外して、"
+        "同じ指示文を3回試した結果を示す表。仕様書に残した6項目（3回×6件）は18/18が"
+        "不一致と判定された。仕様書から外した「吸引力」は3回中0回、「保証期間」も3回中0回しか"
+        "不一致と判定されなかった。下の枠には、仕様書に残した6項目は3回とも全件そのまま"
+        "不一致と判定されたこと、外した2項目は3回とも『仕様書に記載がないため照合できません』で"
+        "止まったこと、間違っているのに一致と誤判定された回は0件で見つからないだけで"
+        "誤りはしないことが書かれている。",
+        label_w=360,
+    )
+
+
+if __name__ == "__main__":
+    spec_sheet_detection_vs_naive_chart()
+    spec_sheet_partial_coverage_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def mixed_log_daily_counts_chart() -> None:
+    """2つの処理（X・Y）を1本のログに混ぜたとき、停止した4日間だけが0になることを示す。
+
+    実測（2026-10-20）。材料セット1＝処理Xが09-10〜09-13の4日間だけ0回、処理Yは
+    全期間4〜8回ではなく1〜2回で正常。2系列を同じ軸に重ね、Xの停止だけが際立つ形。
+    """
+    left, right = 46, 700
+    usable = right - left
+    n = 21
+    gap = 3.0
+    slot_w = (usable - (n - 1) * gap) / n
+    bar_gap = 2.0
+    bar_w = (slot_w - bar_gap) / 2
+    top = 118
+    plot_h = 150.0
+    axis_max = 9.0
+    bottom = top + plot_h
+
+    def slot_x(i: int) -> float:
+        return left + i * (slot_w + gap)
+
+    def py(v: float) -> float:
+        return bottom - v / axis_max * plot_h
+
+    x_counts = [5, 7, 6, 4, 8, 5, 6, 7, 5, 0, 0, 0, 0, 6, 5, 7, 4, 6, 8, 5, 6]
+    y_counts = [1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+    stop_idx = {9, 10, 11, 12}
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "処理Xが4日間止まっても、処理Yの棒は動かない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空のログ21日分（2026-09-01〜09-21）に、処理X（濃い棒）・処理Y（薄い棒）を1本にまとめた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "実際に止まったのは09-10〜09-13の処理Xだけ（赤）。処理Yはこの4日間も1〜2回のまま。</text>\n",
+    ]
+
+    for i in range(n):
+        sx = slot_x(i)
+        is_stop = i in stop_idx
+        for series_idx, (counts, normal_cls) in enumerate(
+            ((x_counts, "bar-new"), (y_counts, "bar-old"))
+        ):
+            count = counts[i]
+            bx = sx + series_idx * (bar_w + bar_gap)
+            if count > 0:
+                bar_top = py(count)
+                bar_h = bottom - bar_top
+            else:
+                bar_h = 4.0
+                bar_top = bottom - bar_h
+            cls = "box-bad" if (is_stop and series_idx == 0) else normal_cls
+            parts.append(
+                f'<rect class="{cls}" x="{bx:.1f}" y="{bar_top:.1f}" '
+                f'width="{bar_w:.1f}" height="{bar_h:.1f}" rx="2"/>\n'
+            )
+
+    parts.append(
+        f'<line class="line" x1="{left}" y1="{bottom:.1f}" x2="{right}" y2="{bottom:.1f}"/>\n'
+    )
+
+    tick_indices = [0, 3, 6, 9, 12, 15, 18, 20]
+    label_y = bottom + 16
+    for i in tick_indices:
+        day = 1 + i
+        lx = slot_x(i) - 4
+        parts.append(f'<text class="t-xs" x="{lx:.1f}" y="{label_y:.1f}">9/{day}</text>\n')
+
+    legend_y = label_y + 2
+    parts.append(f'<rect class="bar-new" x="18" y="{legend_y - 10:.1f}" width="14" height="10"/>\n')
+    parts.append(f'<text class="t-xs" x="36" y="{legend_y - 1:.1f}">処理X</text>\n')
+    parts.append(f'<rect class="bar-old" x="86" y="{legend_y - 10:.1f}" width="14" height="10"/>\n')
+    parts.append(f'<text class="t-xs" x="104" y="{legend_y - 1:.1f}">処理Y</text>\n')
+
+    note_top = legend_y + 16
+    notes = [
+        "処理Xは1日4〜8回、処理Yは1日1〜2回と、もともと頻度が5倍近く違う。",
+        "09-10〜09-13は処理Xだけ0回（赤）。処理Yはこの4日間も1〜2回を保っている。",
+    ]
+    box_h = 18 * len(notes) + 16
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{note_top:.1f}" width="684" height="{box_h}" rx="6"/>\n'
+    )
+    for i, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-accent" x="34" y="{note_top + 22 + 18 * i:.1f}">{_esc(note)}</text>\n'
+        )
+
+    height = int(note_top + box_h + 10)
+    alt = (
+        "架空のログ21日分（2026-09-01〜09-21）に、頻度の違う処理Xと処理Yを1本にまとめて"
+        "日次実行回数を示した図。処理X（濃い棒）は1日4〜8回、処理Y（薄い棒）は1日1〜2回で、"
+        "もともと頻度が5倍近く違う。09-10〜09-13の4日間だけ、処理Xの棒が0になって赤く示され、"
+        "処理Yの棒はこの4日間も1〜2回のまま変わらない。下の枠には、処理Xと処理Yの頻度がもともと"
+        "大きく違うこと、停止したのは処理Xだけで処理Yはその4日間も1〜2回を保っていることが"
+        "書かれている。"
+    )
+    (OUT / "mixed-log-daily-counts.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def mixed_log_hit_and_miss_chart() -> None:
+    """「処理ごと」の指示文と「合算」の指示文で、停止4日間の名指しがどう変わるか。
+
+    実測（2026-10-20）。セット1＝多数派の処理Xが停止・処理Yが正常。
+    セット2＝役割を入れ替えて、少数派の処理Yが停止・処理Xが正常。どちらも2回ずつ。
+    """
+    _hit_and_miss_rows_chart(
+        "mixed-log-hit-and-miss.svg",
+        "「処理ごと」は4回とも正解。「合算」は少数派の停止だけ見逃した",
+        "実測2026-10-20。1本のログに頻度の違う処理X・Yを混ぜ、どちらが止まっても正しく分かるかを見た。",
+        "数値は「停止4日間を正しく名指しできた回数／試した回数」。",
+        [
+            ("処理ごとに計算：セット1(多数派Xが停止・2回)", 2, 2, "good"),
+            ("処理ごとに計算：セット2(少数派Yが停止・2回)", 2, 2, "good"),
+            ("日ごとに合算：セット1(多数派Xが停止・2回)", 2, 2, "good"),
+            ("日ごとに合算：セット2(少数派Yが停止・2回)", 0, 2, "good"),
+        ],
+        [
+            "「処理ごとに計算」は、止まった処理が多数派でも少数派でも4回とも正解だった。",
+            "「日ごとに合算」は、多数派が止まった回は合計も落ちるので正解できた（まぐれ）。",
+            "少数派が止まった回は、合計がふだんの範囲に収まり、2回とも『該当なし』になった。",
+        ],
+        "1本のログに頻度の違う処理Xと処理Yを混ぜ、指示文を「処理ごとに計算」と「日ごとに合算」で"
+        "比べた結果を示す表。処理ごとに計算は、多数派の処理Xが停止したセット1で2/2、少数派の"
+        "処理Yが停止したセット2でも2/2、どちらも停止4日間を正しく名指しできた。日ごとに合算は、"
+        "セット1では2/2で正しく名指しできたが、セット2では0/2で、2回とも『該当なし』という"
+        "見逃しになった。下の枠には、処理ごとに計算は止まった処理が多数派でも少数派でも4回とも"
+        "正解だったこと、日ごとに合算は多数派が止まった回はまぐれで正解できたこと、少数派が"
+        "止まった回は合計がふだんの範囲に収まり2回とも該当なしになったことが書かれている。",
+        label_w=380,
+    )
+
+
+if __name__ == "__main__":
+    mixed_log_daily_counts_chart()
+    mixed_log_hit_and_miss_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def mixed_log_combined_hides_minority_chart() -> None:
+    """合算した日次総数では、少数派の処理Yが止まった4日間が目立たないことを示す積み上げ棒。
+
+    実測（2026-10-20・セット2＝処理Yが09-10〜09-13の4日間だけ停止）。
+    下段＝処理X、上段＝処理Y。停止4日間は上段が0になるだけで、合計の高さは
+    ほかの「ふだんの少ない日」（09-04・09-20など）とほぼ同じ範囲に収まる。
+    """
+    left, right = 46, 700
+    usable = right - left
+    n = 21
+    gap = 3.0
+    bar_w = (usable - (n - 1) * gap) / n
+    top = 122
+    plot_h = 150.0
+    axis_max = 10.0
+    bottom = top + plot_h
+
+    def px(i: int) -> float:
+        return left + i * (bar_w + gap)
+
+    def ph(v: float) -> float:
+        return v / axis_max * plot_h
+
+    x_counts = [5, 7, 6, 4, 8, 5, 6, 7, 5, 5, 6, 7, 4, 6, 5, 7, 4, 6, 8, 5, 6]
+    y_counts = [1, 2, 1, 2, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 2, 1, 2, 1, 2]
+    stop_idx = {9, 10, 11, 12}
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "合算した総数では、処理Yが止まった4日間はふだんの少ない日と変わらない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空のログ21日分（セット2・処理Yが09-10〜09-13だけ停止）。下段＝処理X、上段＝処理Y。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "「日付ごとに合算の目安と比べて」とだけ頼むと、この4日間は『該当なし』と答えが返った。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="81">'
+        "合計の高さが、09-04・09-20のようなふだんの少ない日とほぼ同じ範囲に収まるためです。"
+        "</text>\n",
+    ]
+
+    for i in range(n):
+        x = px(i)
+        x_h = ph(x_counts[i])
+        y_h = ph(y_counts[i])
+        x_top = bottom - x_h
+        y_top = x_top - y_h
+        parts.append(
+            f'<rect class="bar-new" x="{x:.1f}" y="{x_top:.1f}" '
+            f'width="{bar_w:.1f}" height="{x_h:.1f}" rx="1.5"/>\n'
+        )
+        if y_h > 0:
+            parts.append(
+                f'<rect class="bar-old" x="{x:.1f}" y="{y_top:.1f}" '
+                f'width="{bar_w:.1f}" height="{y_h:.1f}" rx="1.5"/>\n'
+            )
+        if i in stop_idx:
+            parts.append(
+                f'<circle cx="{x + bar_w / 2:.1f}" cy="{bottom - ph(x_counts[i]) - 10:.1f}" '
+                f'r="3" fill="#1a56b8"/>\n'
+            )
+
+    parts.append(
+        f'<line class="line" x1="{left}" y1="{bottom:.1f}" x2="{right}" y2="{bottom:.1f}"/>\n'
+    )
+
+    tick_indices = [0, 3, 6, 9, 12, 15, 18, 20]
+    label_y = bottom + 16
+    for i in tick_indices:
+        day = 1 + i
+        lx = px(i) - 4
+        parts.append(f'<text class="t-xs" x="{lx:.1f}" y="{label_y:.1f}">9/{day}</text>\n')
+
+    legend_y = label_y + 2
+    parts.append(f'<rect class="bar-new" x="18" y="{legend_y - 10:.1f}" width="14" height="10"/>\n')
+    parts.append(f'<text class="t-xs" x="36" y="{legend_y - 1:.1f}">処理X</text>\n')
+    parts.append(f'<rect class="bar-old" x="86" y="{legend_y - 10:.1f}" width="14" height="10"/>\n')
+    parts.append(f'<text class="t-xs" x="104" y="{legend_y - 1:.1f}">処理Y</text>\n')
+    parts.append(f'<circle cx="160" cy="{legend_y - 5:.1f}" r="3" fill="#1a56b8"/>\n')
+    parts.append(f'<text class="t-xs" x="170" y="{legend_y - 1:.1f}">実際にYが止まった日</text>\n')
+
+    note_top = legend_y + 16
+    notes = [
+        "印（●）の4日間は処理Yが0回。合計の高さは09-04・09-20などふだんの少ない日と同程度。",
+        "合算だけ見ると目立たないが、処理ごとに分けて見ると、Yだけ4日連続で0回だと分かる。",
+    ]
+    box_h = 18 * len(notes) + 16
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{note_top:.1f}" width="684" height="{box_h}" rx="6"/>\n'
+    )
+    for i, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-accent" x="34" y="{note_top + 22 + 18 * i:.1f}">{_esc(note)}</text>\n'
+        )
+
+    height = int(note_top + box_h + 10)
+    alt = (
+        "架空のログ21日分（セット2・処理Yが09-10〜09-13だけ停止）の日次総数を積み上げ棒で示した図。"
+        "下段が処理X、上段が処理Y。処理Yが止まった09-10〜09-13の4日間は、印（青い点）が付いているが、"
+        "合計の高さは09-04・09-20のようなふだんの少ない日とほぼ同じ範囲に収まっていて、"
+        "見た目では区別できない。下の枠には、印の4日間は処理Yが0回であること、合計の高さは"
+        "ふだんの少ない日と同程度であること、合算だけ見ると目立たないが処理ごとに分けて見ると"
+        "Yだけ4日連続で0回だと分かることが書かれている。"
+    )
+    (OUT / "mixed-log-combined-hides-minority.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    mixed_log_combined_hides_minority_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def short_sample_ending_rate_chart() -> None:
+    """見本を1〜2文に短縮すると、文末パターンの再現比率がどこまで落ちるかを示す表。
+
+    実測（2026-10-20）。先行記事（writing-style-sample-matches-the-ratio）のフル見本
+    （犬9文・万年筆7文）を1〜2文に短縮し、単純に書かせる版・2段階（特徴抽出→執筆）版の
+    各4回を比べた。短い見本そのものの比率（2文中2文）は、全文を使っても再現できなかった。
+    """
+    _hit_and_miss_rows_chart(
+        "short-sample-ending-rate.svg",
+        "見本を1〜2文に短縮すると、再現の比率は30%前後まで落ちた",
+        "実測2026-10-20。先行記事のフル見本を1〜2文に短縮し、単純に書かせる版・2段階版を各4回試した。",
+        "フル見本（7〜9文）の実物比率は犬78%・万年筆100%だった（先行記事2026-10-14実測）。",
+        [
+            ("犬：短い見本そのもの（2文中2文）", 2, 2, "good"),
+            ("犬：短い見本で単純に書かせる（4回・27文）", 8, 27, "good"),
+            ("犬：短い見本で2段階（4回・28文）", 8, 28, "good"),
+            ("万年筆：短い見本そのもの（2文中2文）", 2, 2, "good"),
+            ("万年筆：短い見本で単純に書かせる（4回・21文）", 6, 21, "good"),
+            ("万年筆：短い見本で2段階（4回・26文）", 9, 26, "good"),
+        ],
+        [
+            "短い見本（1〜2文）自体は2文とも対象の文末で、比率は100%に見える。",
+            "ところが単純に書かせても2段階にしても、出力の比率は29〜35%にしか届かない。",
+            "フル見本（7〜9文）を渡した先行記事は犬78%・万年筆100%。短くすると大きく下がる。",
+        ],
+        "見本を1〜2文に短縮すると、文末パターンの再現比率がどこまで落ちるかを示す表。"
+        "犬の短い見本そのものは2文中2文（100%）。短い見本で単純に書かせると27文中8文（30%）、"
+        "2段階にすると28文中8文（29%）。万年筆の短い見本そのものも2文中2文（100%）。"
+        "短い見本で単純に書かせると21文中6文（29%）、2段階にすると26文中9文（35%）。"
+        "下の枠には、短い見本自体は2文とも対象の文末で比率は100%に見えること、単純に書かせても"
+        "2段階にしても出力の比率は29〜35%にしか届かないこと、フル見本を渡した先行記事は"
+        "犬78%・万年筆100%で短くすると大きく下がることが書かれている。",
+        label_w=380,
+    )
+
+
+def short_sample_connector_missing_chart() -> None:
+    """短い見本に含まれていなかった接続詞は、どちらの頼み方でも0回だったことを示す。
+
+    実測（2026-10-20）。1〜2文に短縮した見本には「ちなみに」「そもそも」が1回も
+    登場しなかった。フル見本（先行記事）では、どちらも実物2回・再現も2回だった。
+    """
+    axis_max = 3.0
+    plot_x, plot_w = 320, 340
+
+    def px(value: float) -> float:
+        return plot_x + value * (plot_w / axis_max)
+
+    rows = [
+        ("犬「ちなみに」：フル見本の実物（先行記事）", 2.0, "bar-old"),
+        ("犬「ちなみに」：短い見本・単純（4回）", 0.0, "bar-new"),
+        ("犬「ちなみに」：短い見本・2段階（4回）", 0.0, "bar-new"),
+        ("万年筆「そもそも」：フル見本の実物（先行記事）", 2.0, "bar-old"),
+        ("万年筆「そもそも」：短い見本・単純（4回）", 0.0, "bar-new"),
+        ("万年筆「そもそも」：短い見本・2段階（4回）", 0.0, "bar-new"),
+    ]
+    top = 112
+    pitch, bar_h = 28, 18
+    plot_bottom = top + len(rows) * pitch
+    height = plot_bottom + 24 + 18 * 2 + 40
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "見本に無かった接続詞は、どちらの頼み方でも0回のままだった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "実測2026-10-20。1〜2文に短縮した見本には「ちなみに」「そもそも」が1回も入っていない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "フル見本（7〜9文・先行記事2026-10-14実測）では、実物も再現も2回で揃っていた。</text>\n",
+    ]
+
+    dash_x = px(2.0)
+    parts.append(
+        f'<path class="line" d="M{dash_x:.1f} {top - 4} L{dash_x:.1f} {plot_bottom - 4}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(f'<text class="t-xs" x="{dash_x - 36:.1f}" y="{top - 10}">フル見本＝2回</text>\n')
+
+    y = top
+    for label, value, klass in rows:
+        ty = y + 14
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(value * (plot_w / axis_max), 2)
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x}" y="{y + 1}" width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(f'<text class="t-sm" x="{plot_x + bar_w + 8:.1f}" y="{ty}">{value:.0f}回</text>\n')
+        y += pitch
+
+    note_top = plot_bottom + 10
+    notes = [
+        "短い見本（1〜2文）には「ちなみに」「そもそも」が含まれていなかった。",
+        "結果、単純版・2段階版とも4回中4回、この接続詞を1回も使わなかった。",
+    ]
+    box_h = 18 * len(notes) + 16
+    parts.append(
+        f'<rect class="box-accent" x="18" y="{note_top:.1f}" width="684" height="{box_h}" rx="6"/>\n'
+    )
+    for i, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-accent" x="34" y="{note_top + 22 + 18 * i:.1f}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "短い見本に含まれていなかった接続詞は、どちらの頼み方でも0回のままだったことを示す"
+        "横棒グラフ。犬「ちなみに」はフル見本の実物（先行記事）が2回、短い見本・単純は0回、"
+        "短い見本・2段階も0回。万年筆「そもそも」もフル見本の実物が2回、短い見本・単純は0回、"
+        "短い見本・2段階も0回。縦の点線はフル見本の実物の回数（2回）を示す。下の枠には、"
+        "短い見本（1〜2文）には「ちなみに」「そもそも」が含まれていなかったこと、結果、"
+        "単純版・2段階版とも4回中4回この接続詞を1回も使わなかったことが書かれている。"
+    )
+    (OUT / "short-sample-connector-missing.svg").write_text(
+        _svg(int(note_top + box_h + 10), alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    short_sample_ending_rate_chart()
+    short_sample_connector_missing_chart()
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
