@@ -109,10 +109,16 @@ BOT_BLOCK_HEADER = "cf-mitigated"
 AKAMAI_SERVER = "AkamaiGHost"
 AKAMAI_DENIED_MARK = "Access Denied"
 
+# AWS WAF が bot 判定で返す目印（2026-10-20 実測・www.lancers.jp の FAQ）。
+# HEAD も GET も 405・`x-amzn-waf-action: captcha` 付き。人が実ブラウザで開けば見える。
+AWS_WAF_HEADER = "x-amzn-waf-action"
+
 
 def _bot_blocked(error: urllib.error.HTTPError) -> bool:
-    """先方の bot 判定で弾かれた応答か（Cloudflare の目印ヘッダ、または Akamai の定型ページ）。"""
+    """先方の bot 判定で弾かれた応答か（Cloudflare・Akamai・AWS WAF の目印）。"""
     if error.headers.get(BOT_BLOCK_HEADER) is not None:
+        return True
+    if error.headers.get(AWS_WAF_HEADER) is not None:
         return True
     if error.code == 403 and error.headers.get("Server") == AKAMAI_SERVER:
         try:
