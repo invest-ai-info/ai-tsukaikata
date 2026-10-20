@@ -5641,20 +5641,6 @@
       "uid": "97148fe3ecb35e15",
       "url": "https://openai.com/index/advancing-the-next-era-of-national-science",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "OpenAI News",
-      "published": "2026-07-22T05:30:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Introducing OpenAI Presence, a proven enterprise AI agent platform that helps organizations deploy trusted voice and chat agents for customer and internal workflows.",
-      "summary_ja": "OpenAIが新製品「Presence」を発表\n企業向けAIエージェントのプラットフォーム\n音声・チャットAIで顧客や社内業務を支援",
-      "summary_source": "gemini",
-      "title": "Introducing OpenAI Presence",
-      "uid": "de7383bdae4d25ae",
-      "url": "https://openai.com/index/introducing-openai-presence",
-      "vendor": "OpenAI"
     }
   ]
 }
