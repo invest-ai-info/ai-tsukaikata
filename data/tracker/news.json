@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-19T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+      "summary_ja": "OpenAIがChatGPTのコーディング機能を改善。\n利用者の少ないプログラミング言語に対応。\nソフトウェア開発、SQLite、COBOL移行で評価。",
+      "summary_source": "gemini",
+      "title": "Advancing coding in low‑resource programming languages",
+      "uid": "1e0b1a21cef15d82",
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-18T23:17:33.953345+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5641,46 +5655,6 @@
       "uid": "de7383bdae4d25ae",
       "url": "https://openai.com/index/introducing-openai-presence",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "ELYZA note",
-      "published": "2026-07-22T01:00:03+00:00",
-      "source_id": "elyza-note",
-      "summary": "【Profile】落合 洋文 Hirofumi Ochiai 新潟大学理学部生物学科を卒業し、名古屋大学大学院情報科学研究科へ進学。 人工生命の研究室で生態系の研究で博士（情報科学）を取得する一方、日本IBMではコンサルタントとして経理財務領域、経営管理領域の業務変革に携わるなど、研究者とビジネスパーソンの両方の視点を培ったキャリアを歩む。その中で、組織運営や人材育成にも携わり、現在はELYZA…",
-      "summary_ja": "落合洋文氏がAIの社会活用に挑む\n研究者とビジネス両方の経験を持つ人物\n博士（情報科学）で日本IBM勤務経験あり",
-      "summary_source": "gemini",
-      "title": "研究と社会の間に立ち、予測された未来を書き換える。AIの価値を社会へ届ける先端ソリューショングループの挑戦",
-      "uid": "f2a80d22cdfc0bc2",
-      "url": "https://note.com/elyza/n/n07a56f53f7b4",
-      "vendor": "ELYZA"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-22T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "NTT DATA Group uses ChatGPT Enterprise and Codex to help 9,000 employees automate work, cut incident analysis to 30 minutes, and scale secure AI adoption.",
-      "summary_ja": "NTTデータがAI活用で業務効率を改善\n9,000人の社員がChatGPTなどで業務自動化\nインシデント分析時間を30分に短縮した",
-      "summary_source": "gemini",
-      "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
-      "uid": "2c2bca32b3651116",
-      "url": "https://openai.com/index/ntt-data",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-21T22:27:23+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.117.1 (2026-07-21) Full Changelog: v0.117.0...v0.117.1 Bug Fixes aws: handle credentials correctly when using AnthropicAWS.copy() ( 85d3881 ) Chores api: add support for new refusal category ( d1de…",
-      "title": "v0.117.1",
-      "uid": "5ec103ea690ae68a",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.1",
-      "vendor": "Anthropic"
     }
   ]
 }

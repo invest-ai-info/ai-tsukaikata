@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-20T01:15:47+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "博報堂は10月19日、生成AI等の作成画像の著作権侵害リスクを自動判定する「画像類似度チェッカー」をクライアント企業向けに提供開始した。",
+      "title": "博報堂、著作物との類似性を自動判定する「画像類似度チェッカー」の企業提供を開始",
+      "uid": "5a232e1f74c37321",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2149474.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-20T00:59:23+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "常時稼働エージェントツール「Grok Bot」がiPhoneのアクションボタンに対応。「15 Pro」以降のiPhoneでGrok Botのバージョンを「1.16」にアップデートすると割り当てられるようになる。",
+      "title": "Grok BotがiPhoneのアクションボタンに対応　音声会話などを起動可能",
+      "uid": "184f8f175ec5008e",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/20/2000002411/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-19T22:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "アライアンス・アーツは10月16日、PCゲーム「PUKEY GODDESS SHOT TRICK」の体験版の一般公開を取りやめ、参加者を限定したオンライン体験会に切り替えると発表した。同社は、体験版をもとにAIなどでゲームの表現や内容を短期間で模倣・再現した作品が、本作の発売前に公開されることを懸念している。",
+      "title": "「AIに真似されてしまう」--ゲーム開発企業、体験版の一般公開を中止",
+      "uid": "459020b668e9d2e0",
+      "url": "https://japan.cnet.com/article/35253747/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-19T22:07:09+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米国土安全保障省は、中国DeepSeekの製品および関連サービスを連邦民間機関の調達とITシステムから排除する命令を官報で公示した。自社製だけでなく、同社の実装を用いた第三者製品も排除対象とする。連邦調達サプライチェーン安全法に基づく措置で、勧告と証拠を検討した上で発令された。",
+      "title": "米国土安全保障省、中国DeepSeek製品を連邦民間機関から排除する命令",
+      "uid": "22b4ecb81aaea08a",
+      "url": "https://www.itmedia.co.jp/news/article/2610/20/2000002405/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "日立製作所や東京ガスなど4社が、データセンターと電源設備を一体開発するため協業した。関東と九州でデータセンター開発計画を策定する。発電大手JERAも、発電所一体型データセンターを建設中だ。一体型が増える背景には何があるのか。",
+      "title": "「データセンター×発電設備」一体開発がトレンド？　日立・東京ガスが九州で計画、JERAは千葉で　狙いは",
+      "uid": "13c27bd729cc4b17",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/20/news051.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "デジタル庁は、全府省庁の職員約18万人に生成AI「源内」を提供する。情報の機密性、税金で運用するAIのコスト感など解決しなければならない課題も多い。AI活用にどう取り組むのか。",
+      "title": "「税金で動かす以上……」　政府18万人が使うAI「源内」の「コストに関する工夫」とは",
+      "uid": "c4ff854971ad1480",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/20/news012.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "江戸川区がAI活用によって年3万5000時間の削減に成功した。約5年でさまざまな活用事例を蓄積。「ツールを配って終わり」にさせない導入のポイントとは。",
+      "title": "AI活用で「年3万5000時間削減」の江戸川区　「配って終わり」にさせないコツは？　5年で培った実践知を聞く",
+      "uid": "97baff3aa3af126b",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/20/news011.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-20T01:51:50.311355+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-19T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「テスラ超え」を掲げる自動運転スタートアップのTuringは、AI技術の開発を加速させている。しかし「GPUを増やすだけでは開発スピードが上がらなかった」という。この課題をどう乗り越えたのか。",
+      "title": "“テスラ超え”狙う――チューリング「完全自動運転」までの道　「GPUより速いチップ」使った開発のウラ側",
+      "uid": "b808141ea3ea734c",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/20/news017.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-19T22:23:53.419021+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2303,102 +2399,6 @@
       "uid": "03102289f9f3d7e4",
       "url": "https://ai.watch.impress.co.jp/docs/news/2147604.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-13T04:18:06+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米SpaceXのAI部門SpaceXAIが、X公式アカウントの名称を「SpaceX Super Intelligence」（@SpaceXSI）に変えた。イーロン・マスクCEOが10月4日に改名を予告してから、1週間ほどでの実行となった。",
-      "title": "SpaceXAI、Xのユーザー名を「SpaceXSI」に変更　“AI呼称やめる”宣言から1週間ほどで",
-      "uid": "edd0001c9954ea48",
-      "url": "https://www.itmedia.co.jp/news/article/2610/13/2000002209/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-13T04:04:34+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ChatGPTやGeminiなどの生成AIを使うとき、私たちは通常、インターネットの向こう側にあるデータセンターと通信しています。質問を送ると、データセンター内のAIが回答を生成し、その結果を手元に返してくるわけですね。",
-      "title": "AI用語の基礎知識 【第26回】「ローカル推論」とは――クラウドに頼らず手元の機器でAIを動かす技術",
-      "uid": "16ba67b2c3417092",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2147561.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-13T04:04:28+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Microsoftは10月12日、自社開発のAIアクセラレータ「Azure Maia」プログラムを2027年からマルチギガワット規模へと拡張し、自社製品およびサービスの主要な推論システムとしていくことを発表した。",
-      "title": "Microsoft、次世代AIチップ「Maia 300」詳細公開。ラック単位の処理量は最大7倍に",
-      "uid": "bd528e169aa849b0",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2147569.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-13T03:54:46+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ソフトバンク傘下のSB Intuitionsは、同社が開発する国産AI「Sarashina」を利用できる「Sarashinaサービス」の無償β版の提供を始めた。",
-      "title": "国産AI「Sarashina」を無料で試せる　ソフトバンク傘下が新サービスβ版　API・チャットに対応",
-      "uid": "3c903447f07a2323",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002210/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-13T03:34:18+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Microsoftが自社AIアクセラレータの第3世代「Maia 300」を発表。本番配備は2027年開始で、Maiaファミリーをマルチギガワット規模に拡大する計画。GPUベース比で電力当たり生成トークン数40％増を見込むという。",
-      "title": "Microsoft、Copilotなどを自社開発チップで稼働　新チップでNVIDIA依存から脱却狙いか",
-      "uid": "f7750709cb8d2963",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/13/2000002207/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-13T03:29:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "SpaceXSI(旧称：SpaceXAI)がSNS「X」、AIサービス「Grok」、コーディングAIサービス「Cursor」の有料サブスクリプションプランを統合したことを発表しました。新たなサブスクリプションの名称は「The X Subscription」で、個人向けプランは「Free」「Plus」「Premium」「Super」「Ultra」の5段階に分かれています。 続きを読む...",
-      "title": "X・Grok・Cursorのサブスクを統合した「The X Subscription」が登場、1つのサブスクでX有料機能や有料AIを使用可能に",
-      "uid": "acc1e9ba1863ad37",
-      "url": "https://gigazine.net/news/20261013-the-x-subscription/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-13T03:15:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "便利になるからこそ、人の力が問われますね。",
-      "title": "エージェント型AIがプロジェクトを切り盛りする日　その時、人は？",
-      "uid": "0dbac8a956040140",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/13/news034.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-13T07:46:29.320532+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-13T03:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "MicrosoftがカスタムAIチップの第3世代にあたる「Maia 300」を2027年に導入予定であることを発表しました。Microsoftによれば、MaiaファミリーはMicrosoft製品およびサービスの主要なAI推論システムになる予定だとのことで、NVIDIAへの依存が軽減されるものとみられます。 続きを読む...",
-      "title": "Microsoftが第3世代AIチップ「Maia 300」を発表、最新の推論モデルやエージェントタスクの処理能力向上へ向けて2027年に導入予定",
-      "uid": "6ee0ebdc787d85f6",
-      "url": "https://gigazine.net/news/20261013-microsoft-maia-300-chip/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
