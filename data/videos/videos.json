@@ -4011,93 +4011,135 @@
    "description": "See how an AI shopping agent can turn a room photo into a personalized shopping experience—from finding the right products to updating an order.\n\nIn this demo for fictional home goods retailer Vesper & Alder, a shopper uses voice and images to create a cozy reading nook. The agent recommends products, generates a preview of the room, adjusts selections to fit a $250 budget, and suggests a complementary throw blanket. After checkout, it helps switch the order from store pickup to home delivery—all through conversation.\n\nExplore what you can build with OpenAI: https://openai.com/solutions/industries/retail/",
    "first_seen": "2026-10-21T05:15:18.398196+00:00",
    "status": "pending",
+   "attempts": 2,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "L_eZFZ0-mn4",
+   "title": "【最新アプデ情報】「Gemini Notebook」密かに増えた機能をご紹介します",
+   "url": "https://www.youtube.com/watch?v=L_eZFZ0-mn4",
+   "published": "2026-10-21T09:00:29+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "Gemini Notebookの最新アップデート情報を徹底解説！ インタラクティブなレポート機能の登場に加え、さりげなく進化した「3つの新機能」を実演しながらご紹介します！ \n\nWorkspaceや無償版などアカウントごとの対応状況も網羅してお届けします。ぜひご覧ください！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:43 「Gemini Notebook」とは\n03:57 インタラクティブなレポート機能\n04:48 ①AI使用量の可視化とあとで生成機能の実現\n06:36 ②スライド / 動画 作成時における事前確認\n09:37 ③ショート動画の完全日本語化\n12:05 留意点\n12:51 まとめ\n13:58 ゆるトーク\n\n【関連動画】\n「NotebookLM」の新機能、ビジネスの場でどう使うかを徹底検証\nhttps://youtu.be/gV8snCCZQJk\n\nGemini Notebookで「ショート動画」作成が可能に！\nhttps://youtu.be/Fdim_AUD0-Q\n\n【プレゼンコンサルwith NotebookLM(Gems)※スライド生成を補助】\nhttps://gemini.google.com/gem/1fxT2nX1rWxPtCTvDxF3QXEDZ1QaHMDeE?usp=sharing\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-10-21T12:19:14.953361+00:00",
+   "status": "pending",
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "Lh6Dc7PKhw4",
+   "title": "Googleの最先端AIモデル「Gemini 4 Argon(アルゴン)」徹底解説！ ～性能・使い方・Antigravity・AI Studioを使った活用事例10選～",
+   "url": "https://www.youtube.com/watch?v=Lh6Dc7PKhw4",
+   "published": "2026-10-21T09:06:28+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\nGoogleは、(2026年)10月中旬\n最先端AIモデル「Gemini 4 Argon」を公開しました\nこのモデルは、長時間にわたる複雑なタスクや\n大規模なコーディング、金融・法律などの専門業務\nさらにはサイバーセキュリティなど\nさまざまな分野で高い能力を発揮し\nアプリやゲーム、webサイトから\nアニメーション動画、スライド資料\nレポートの作成まで、幅広い用途に対応する\nGoogle史上最高性能のAIモデルです\n\n今回の動画では\n第一章：Gemini 4 Argonの概要と使い方\n第二章：Gemini 4 Argonの活用事例4選 ～開発編～\n第三章：Gemini 4 Argonの活用事例6選 ～実務編～\nの3章構成で、Googleの公開した\n最先端AIモデル「Gemini 4 Argon」の最新の概要と使い方から\nGeminiやGoogle Antigravity\nGoogle AI StudioなどのGoogleの公式のAIツールと\nGemini 4 Argonを組み合わせて使いこなす為の活用事例を\n開発編と実務編に分けて、計10例ほど紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:40　動画のもくじ\n1:32　第一章：Gemini 4 Argonの概要と使い方\n1:51　①、Gemini 4 Argonの特徴\n3:02　②、Gemini 4 Argonのベンチマーク\n4:20　③、Gemini 4 Argonの使い方\n6:01　第二章：Gemini 4 Argonの活用事例4選 ～開発編～\n6:33　1、3Dゲームの生成\n7:49　2、複雑なwebアプリの生成\n9:02　3、動きのあるwebサイトの生成\n9:53　4、デスクトップアプリやChrome拡張機能の生成\n10:48　第三章：Gemini 4 Argonの活用事例6選 ～実務編～\n11:18　1、アニメーション動画の生成\n13:06　2、スライド資料の生成\n14:10　3、スプレッドシートの生成\n14:52　4、レポートの生成\n15:54　5、日本語のライティング\n17:07　6、画像や動画の分析\n18:30　エンディングムービー\n\n◆動画の中で紹介している内容\nOpenAIの、GPT-6 Astra、Anthropic、Claude Fable 5.1、Claude Opus 5.5\nthree.js、Nano Banana、Javascript\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\nhttps://gemini.google.com/\nhttps://antigravity.google/\nhttps://aistudio.google.com/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNW",
+   "first_seen": "2026-10-21T12:19:14.953361+00:00",
+   "status": "pending",
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "8XnBdePZZLo",
+   "title": "【今注目】話題の外ループハーネス『OpenBOT』を解説！GrokBOT風でマルチモデル対応！",
+   "url": "https://www.youtube.com/watch?v=8XnBdePZZLo",
+   "published": "2026-10-21T10:49:29+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Grok Bot のように複数のエージェントをチームとして動かせるオープンソースのデスクトップアプリ「OpenBot」について解説しました。\n\nClaude Opus と OpenAI の GPT-6.1 Sol を混ぜて使えるなど複数のモデルに対応していて、ChatGPT、Claude、OpenCode、Cursor なども選べます。エージェントごとの役割・メモリ・スキルの設定、並列タスク、定期実行のルーティン、Slack や Discord との連携まで、実際に触りながら紹介しています。\nOpenBot を使ってみたい、Grok Bot と比べてどうか、などの意見があれば、ぜひコメント欄で教えてください！\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nopenbot\nhttps://openbot.run/\n\ntimestamp:\n00:00 オープニング - OpenBot とは\n01:20 ソースコード公開とエージェントの作成\n02:57 テーブル共有と bot の詳細設定\n03:37 bot の公開とファイルプレビュー\n04:27 タスクの並列実行とサブエージェント\n05:19 OpenBot の設計と外ループ系\n05:58 エージェントへの指示と Dynamic Island\n06:54 マルチプロバイダーと複数サーバー\n08:13 音声入力のパイプライン\n09:13 Discord・Slack などのアプリ連携\n10:07 ルーティンとスケジュールの機能\n11:21 まとめとメンバーシップのお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-10-21T12:19:14.953361+00:00",
+   "status": "pending",
    "attempts": 1,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-21T05:15:18.398196+00:00",
+   "last_ok": "2026-10-21T12:19:14.953361+00:00",
    "fail_streak": 0
   }
  }
