@@ -36484,4 +36484,182 @@ def short_sample_connector_missing_chart() -> None:
 if __name__ == "__main__":
     short_sample_ending_rate_chart()
     short_sample_connector_missing_chart()
+
+
+def increasing_log_two_windows_chart() -> None:
+    """増加傾向のある記録2本で、直近14日の目安と56日全体の目安を比べる（2026-10-21）。
+
+    材料A（flat-logと同じ系列・前作how-far-backの増加傾向版）と、新規に作った材料C
+    （より急な増加傾向）。値は docs/evidence/increasing-log-same-or-different.md の
+    真値（単純平均・Python statistics）から。
+    """
+    rows = [
+        ("材料A・直近14日(8/25〜9/7)", 6.14, "56日全体より約37%高い"),
+        ("材料A・56日全体(7/14〜9/7)", 4.50, "材料Aの基準値"),
+        ("材料C・直近14日(9/1〜9/14)", 8.21, "56日全体より約68%高い"),
+        ("材料C・56日全体(7/21〜9/14)", 4.88, "材料Cの基準値"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 230
+    axis_max = 9
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "増加傾向のある記録では、直近14日の目安が56日全体より明確に高い</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "問い合わせフォームの受信件数（増加傾向のある架空ログ）2本を、直近14日と56日全体に"
+        "切り分けて単純平均（真値）を比べた。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "材料Aは前作（how-far-back）と同じ系列、材料Cはこの記事で新しく作った、"
+        "より急な増加傾向の記録。</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 10}">件/日</text>\n',
+    ]
+
+    x_val = px(axis_max) + 14
+    y = top
+    for i, (label, value, note) in enumerate(rows):
+        ty = y + 14
+        is_14 = i % 2 == 0
+        klass = "bar-new" if is_14 else "bar-old"
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{klass}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value:.2f}件/日</text>\n')
+        y += row_h
+        parts.append(f'<text class="t-xs" x="{label_x}" y="{y - 20}">{_esc(note)}</text>\n')
+        if i % 2 == 1 and i < len(rows) - 1:
+            y += 10
+
+    y += 10
+    notes = [
+        "材料A：真値6.142857…件→4.5件/日。差は約36.5%（前作で「大きく動く」側だった幅）。",
+        "材料C：真値8.214286…件→4.875件/日。差は約68.5%（材料Aよりさらに急な増加傾向）。",
+        "どちらも「増減の無いフラットな記録（先行記事・差約6%）」とは別の性質を持つ材料。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "増加傾向のある問い合わせ受信件数の記録2本（材料A・材料C）で、直近14日の目安と56日全体の"
+        "目安を4本の横棒で比べた図。材料Aは直近14日6.14件/日・56日全体4.50件/日で差は約37%。"
+        "材料Cは直近14日8.21件/日・56日全体4.88件/日で差は約68%。下の枠には、材料Aの真値差が"
+        "約36.5%、材料Cの真値差が約68.5%であること、どちらも増減の無いフラットな記録（差約6%）"
+        "とは別の性質を持つことが書かれている。"
+    )
+    (OUT / "increasing-log-two-windows.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def increasing_log_missing_quadrant_chart() -> None:
+    """「同じか違うか」を判定させたとき、4つの組み合わせのうち埋まっていたのは1つだけだった（2026-10-21）。
+
+    フラットな記録×判定依頼は前作flat-logで2/2確認済み。増加傾向の記録×判定依頼は
+    この記事で4/4確認（材料A2回・材料C2回）。残り2マスは実測していない
+    （増加傾向の記録で「同じ」と出たら誤り、フラットな記録で「大きく違う」と出たら誤り）。
+    """
+    col_x = [18 + 190, 18 + 190 + 250 + 14]
+    col_w = 250
+    row_y = [150, 150 + 90]
+    row_h = 70
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「同じか違うか」を判定させたとき、埋まっていたのは4マス中1マスだけだった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "記録の性質（フラット／増加傾向）と、AIが出す判定（同じ／大きく違う）を2軸にした表。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "前作flat-logが左上を埋め、この記事（材料A・C各2回）が右下を埋めた。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "残り2マスは出れば誤りのはずの組み合わせで、今回も実測していない。</text>\n",
+    ]
+
+    headers = ["「同じ」と判定", "「大きく違う」と判定"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" y="{row_y[0] - 16}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    row_labels = ["フラットな\n記録", "増加傾向の\n記録"]
+    cells = [
+        [("2/2 正しい\n（前作flat-log）", "good"), ("試していない\n（出れば誤り）", "quiet")],
+        [("試していない\n（出れば誤り）", "quiet"), ("4/4 正しい\n（この記事）", "good")],
+    ]
+
+    for r in range(2):
+        label_lines = row_labels[r].split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{row_y[r] + row_h / 2 - 6 + li * 16:.1f}">'
+                f"{_esc(line)}</text>\n"
+            )
+        for c in range(2):
+            text, kind = cells[r][c]
+            klass = "box-good" if kind == "good" else "box-quiet"
+            tone = "t-good" if kind == "good" else "t-sm"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]:.1f}" y="{row_y[r]:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h}" rx="6"/>\n'
+            )
+            lines = text.split("\n")
+            n = len(lines)
+            start_y = row_y[r] + row_h / 2 - (n - 1) * 9 + 4
+            for li, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tone}" x="{col_x[c] + col_w / 2:.1f}" '
+                    f'y="{start_y + li * 18:.1f}" text-anchor="middle">{_esc(line)}</text>\n'
+                )
+        if r == 0:
+            parts.append(
+                f'<line class="line" x1="18" y1="{row_y[1] - 10:.1f}" x2="702" y2="{row_y[1] - 10:.1f}" '
+                f'stroke-dasharray="3 3"/>\n'
+            )
+
+    y = row_y[1] + row_h + 20
+    notes = [
+        "左上（フラット×同じ）＝前作flat-logで2/2確認済み。",
+        "右下（増加傾向×大きく違う）＝この記事で材料A2回・材料C2回の4/4が正しく判定。",
+        "左下・右上は、出れば誤りのはずの組み合わせ。今回もその2マスは試していない。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "記録の性質（フラット／増加傾向）とAIが出す判定（同じ／大きく違う）を2行2列にした表。"
+        "左上（フラット×同じ）は前作flat-logで2/2正しいと確認済み。右下（増加傾向×大きく違う）は"
+        "この記事で材料A2回・材料C2回の4/4が正しいと確認。左下（増加傾向×同じ）と"
+        "右上（フラット×大きく違う）は、出れば誤りのはずの組み合わせで、今回も試していない。"
+        "下の枠にも同じ内容が書かれている。"
+    )
+    (OUT / "increasing-log-missing-quadrant.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    increasing_log_two_windows_chart()
+    increasing_log_missing_quadrant_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")

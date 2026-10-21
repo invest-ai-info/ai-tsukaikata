@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="416" viewBox="0 0 720 416" role="img" aria-label="記録の性質（フラット／増加傾向）とAIが出す判定（同じ／大きく違う）を2行2列にした表。左上（フラット×同じ）は前作flat-logで2/2正しいと確認済み。右下（増加傾向×大きく違う）はこの記事で材料A2回・材料C2回の4/4が正しいと確認。左下（増加傾向×同じ）と右上（フラット×大きく違う）は、出れば誤りのはずの組み合わせで、今回も試していない。下の枠にも同じ内容が書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="416"/>
+<text class="t-strong" x="18" y="24">「同じか違うか」を判定させたとき、埋まっていたのは4マス中1マスだけだった</text>
+<text class="t-sm" x="18" y="43">記録の性質（フラット／増加傾向）と、AIが出す判定（同じ／大きく違う）を2軸にした表。</text>
+<text class="t-sm" x="18" y="62">前作flat-logが左上を埋め、この記事（材料A・C各2回）が右下を埋めた。</text>
+<text class="t-xs" x="18" y="81">残り2マスは出れば誤りのはずの組み合わせで、今回も実測していない。</text>
+<text class="t-accent" x="333.0" y="134" text-anchor="middle">「同じ」と判定</text>
+<text class="t-accent" x="597.0" y="134" text-anchor="middle">「大きく違う」と判定</text>
+<text class="t-sm" x="18" y="179.0">フラットな</text>
+<text class="t-sm" x="18" y="195.0">記録</text>
+<rect class="box-good" x="208.0" y="150.0" width="250.0" height="70" rx="6"/>
+<text class="t-good" x="333.0" y="180.0" text-anchor="middle">2/2 正しい</text>
+<text class="t-good" x="333.0" y="198.0" text-anchor="middle">（前作flat-log）</text>
+<rect class="box-quiet" x="472.0" y="150.0" width="250.0" height="70" rx="6"/>
+<text class="t-sm" x="597.0" y="180.0" text-anchor="middle">試していない</text>
+<text class="t-sm" x="597.0" y="198.0" text-anchor="middle">（出れば誤り）</text>
+<line class="line" x1="18" y1="230.0" x2="702" y2="230.0" stroke-dasharray="3 3"/>
+<text class="t-sm" x="18" y="269.0">増加傾向の</text>
+<text class="t-sm" x="18" y="285.0">記録</text>
+<rect class="box-quiet" x="208.0" y="240.0" width="250.0" height="70" rx="6"/>
+<text class="t-sm" x="333.0" y="270.0" text-anchor="middle">試していない</text>
+<text class="t-sm" x="333.0" y="288.0" text-anchor="middle">（出れば誤り）</text>
+<rect class="box-good" x="472.0" y="240.0" width="250.0" height="70" rx="6"/>
+<text class="t-good" x="597.0" y="270.0" text-anchor="middle">4/4 正しい</text>
+<text class="t-good" x="597.0" y="288.0" text-anchor="middle">（この記事）</text>
+<rect class="box-accent" x="18" y="330" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="350">左上（フラット×同じ）＝前作flat-logで2/2確認済み。</text>
+<text class="t-accent" x="34" y="368">右下（増加傾向×大きく違う）＝この記事で材料A2回・材料C2回の4/4が正しく判定。</text>
+<text class="t-accent" x="34" y="386">左下・右上は、出れば誤りのはずの組み合わせ。今回もその2マスは試していない。</text>
+</svg>

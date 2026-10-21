@@ -67,6 +67,22 @@
 - 台帳★279・★280・★281として追記。図は`tools/make_figures.py`に6関数（H44×2・H45×2・H46×2）
   を足して座標計算で生成。`python -m src.build`・`pytest`は3本とも1回で通った
 
+### 2026-10-21（自動化・ループ専任枠）
+- 公開: 1本（`increasing-log-judgment-comes-out-right`）
+- 実測: `flat-log-keeps-the-benchmark-steady`の未測定事項（増加傾向の記録で指示文6番
+  「2つの窓は同じか」をどう判定するか）を埋めた。材料Aは前作`how-far-back-changes-the-usual-number`
+  と同じ56日ログを再利用（真値の差36.5%）、材料Cは新規作成（`random.seed(20261020)`・真値の差
+  68.5%）。実測相手は`mcp__Claude_Code_Remote__create_session`で立てた独立クラウドセッション4つ
+  （材料A・C各2回）。⚠️ `- 実測の相手が立てられないときに試す順`の1番（`claude --safe-mode
+  --tools "" -p`）を試す前に3番から使ってしまったので★91に📌を追記した。生の返り全文は
+  `get_session`/`list_sessions`では読めず、相手にArtifact公開→`Artifact`の`read`で回収する
+  追加の中継が必要だった（4回中1回はこの中継依頼自体で`need_input`停止し、捨てて再試行）。
+  結果は4回とも真値どおり「大きく違う」。先行記事の「同じ」判定（2/2）と合わせ、
+  2×2マスのうち2マスが実測で埋まった
+- 図は`tools/make_figures.py`に2関数（2窓比較・2×2マス）を足して座標計算で生成。
+  読みやすさは60字以上12%（目安15%以下）・最長86字。`python -m src.build`・`pytest`（785件）
+  とも1回で通った
+
 ### 2026-10-20（自動化・ループ優先の枠。専任の別ルーティン）
 - 公開: 1本（`seen-list-catches-the-scattered-gaps`）。手順1の未処理が2件
   （「IDが連番でない監視先」「点検100回超の『末尾3行』」）だったので、実測の芯が明確で
