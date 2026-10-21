@@ -36722,9 +36722,44 @@ def later_stage_deadline_fabrication_chart() -> None:
     )
 
 
+def coconala_disclosure_loophole_hit_and_miss_chart() -> None:
+    """ココナラのAIイラスト出品禁止ルールで、素朴に聞いた場合と原文を貼った場合を比較（2026-10-21）。
+
+    架空の案件文2本（SNSアイコン・VTuber立ち絵）。素朴な6回・原文を貼った10回の
+    docs/evidence/coconala-disclosure-loophole-closes-with-the-source-text.md を人が分類。
+    """
+    _hit_and_miss_rows_chart(
+        "coconala-disclosure-loophole-hit-and-miss.svg",
+        "原文を貼ると、「開示すれば足りる」という誤った救済策が10回中9回消えた",
+        "実測2026-10-21。架空の案件文2本（SNSアイコン・VTuber立ち絵）。",
+        "結論の方向が正しかった回数は多いほど良い。救済策を提案した回数は少ないほど良い。",
+        [
+            ("結論の方向(避けるべき)が正しかった回数・素朴な6回", 6, 6, "good"),
+            ("規約原文を引用した回数・素朴な6回", 0, 6, "good"),
+            ("「開示すれば足りる」を提案した回数・素朴な6回", 6, 6, "bad"),
+            ("結論の方向(避けるべき)が正しかった回数・原文を貼った10回", 10, 10, "good"),
+            ("規約原文を引用した回数・原文を貼った10回", 10, 10, "good"),
+            ("「開示すれば足りる」を提案した回数・原文を貼った10回", 1, 10, "bad"),
+        ],
+        [
+            "素朴に聞くと、結論は6回とも合っていたが、根拠は原文に基づかず6回とも救済策が混ざった。",
+            "原文を貼ると、結論に加えて根拠も正しくなり、救済策が出た回は10回中1回まで減った。",
+        ],
+        "ココナラのAIイラスト出品禁止ルールについて、素朴に聞いた場合と規約原文を貼って聞いた"
+        "場合の結果を比べた表。結論の方向(避けるべき)が正しかった回数は、素朴な6回・原文を"
+        "貼った10回のどちらも全数。規約原文を引用した回数は、素朴な6回では0回、原文を貼った"
+        "10回では10回。「発注者に開示して合意を得れば問題ない」という、原文には無い救済策を"
+        "提案した回数は、素朴な6回では6回、原文を貼った10回では1回。下の枠には、素朴に聞くと"
+        "結論は合っていても根拠は原文に基づかず6回とも救済策が混ざったこと、原文を貼ると"
+        "10回中9回はこの救済策が消えたことが書かれている。",
+        label_w=460,
+    )
+
+
 if __name__ == "__main__":
     increasing_log_two_windows_chart()
     increasing_log_missing_quadrant_chart()
     two_gaps_position_accuracy_chart()
     later_stage_deadline_fabrication_chart()
+    coconala_disclosure_loophole_hit_and_miss_chart()
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
