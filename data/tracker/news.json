@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-21T13:51:14.862036+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and Google Cloud are bringing frontier models and Codex workflows to Gemini’s Model Garden, available through Google Cloud Marketplace.",
+      "title": "OpenAI models are coming to Google Cloud",
+      "uid": "53e487afee7a7abe",
+      "url": "https://openai.com/index/openai-models-google-cloud",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-21T07:43:07.219760+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
