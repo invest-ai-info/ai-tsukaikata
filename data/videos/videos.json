@@ -3971,7 +3971,7 @@
    "description": "In this episode of Cooking with Codex, an OpenAI dot helps plan a ramen recipe and organize prep in ChatGPT Space, with GPT-Live guiding the cooking process.\n\nAlso covered: Codex cloud environments, which keep tasks running after a laptop is closed, and new Codex CLI features including voice input, agent management, and forking conversations into separate worktrees.\n\nMatthew and Brian from Forward Future join to build an 8-bit ramen game using Ultrafast and play it on a ModRetro.\n\nPlus, a showcase of community projects, from a retro space shooter to a racing game featuring hand-drawn horses.",
    "first_seen": "2026-10-20T12:04:35.823084+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -3982,10 +3982,9 @@
    "channel_key": "saki",
    "channel_name": "【さき】のAIでええやん。",
    "default_category": "tech",
-   "description": "100社以上のAI研修・コンサル実績ノウハウを詰め込んだ\n📊自分の会社の今の状態を知れる💬\n【無料】企業様向けのAI活用診断はコチラ⬇️\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/present/harness\n\n🌏企業向けAIの活用がわかる！学べる無料会員サイト💻\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/top\n\n🏢企業様向けのAI研修のお問い合わせはコチラから🏢\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/contact\n\n何となく聞きに来るのは勿体ない/本気の人向けAI勉強会\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\n\n今AI活用やマネタイズの仕方がわからない人🤦やAI初心者の人も必見！\n\n🚨無料期間限定🚨で\n✨Youtubeでは出せないさきのAI最新情報✨&\n👩‍💻AIノウハウ100大特典🎁を勉強会参加後にLINEで受け取れます！\n\nAIスキルを身につけて【社内評価⏫UP⏫】や【収益化💰】\n業務効率化🗒️できるココでしか手に入らない情報を\n現在期間限定でしかも、無料配布しているので興味ある方は是非！！\n↓↓↓\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\nーーーーーーーーーーーーーー\n\n約10,000人以上の人が登録中！\n⬇️さきのAI最新情報公式LINE⬇️\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\n\nーーーーーーーーーーーーーー\n🎁”LINE登録者限定\"のAI特別セミナー開催\n🎁”LINE登録者限定\"のAI勉強会\n🎁”勉強会参加者限定\"のAI豪華100大特典配布\n🎁”勉強会参加者限定\"の特別な案内\n\n【⬇️無料登録はこちら⬇️】\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=eS4SnyWKFmCQ\n\n\n🏢企業のAI活用が学べる無料会員サイトはコチラ📚\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/top\n\n🧑‍💻企業様向けのAI研修のお問い合わせはこちらから🧑‍💻\nhttps://www.aideeyan.com/yt/TuO-D9oFQLo/contact\n\n\n━━━━━━━━━━━━━━━━━━\n↓↓本日紹介したツールや動画📚などはこちら↓↓\n\n【GeminiNotebook（旧NotebookLM）】\nhttps://notebooklm.google.com/\n\n【Gemini】\nhttps://gemini.google.com/app\n\n【ClaudeCode】\nhttps://claude.com/ja/product/claude-code\n\n【ClaudeCodeの仕組み】\nhttps://code.claude.com/docs/ja/how-claude-code-works\n\n━━━━━━━━━━━━━━━━━━\n#chatgpt    #gemini    #ai活用  #claude #claudecode",
    "first_seen": "2026-10-20T17:29:30.903159+00:00",
-   "status": "pending",
-   "attempts": 2,
+   "status": "failed",
+   "attempts": 3,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -3996,96 +3995,109 @@
    "channel_key": "claude",
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
-   "description": "Most docs at work are shared, so Claude Docs is built for a team. Claude works in the doc alongside everyone: it pulls the numbers, checks your claims, and picks up questions in the comments.\nDoug, a product engineer at Anthropic, shares how he uses it for standups and launch reviews.\n\nCreate a doc with Claude: https://claude.ai/artifacts \nRead the announcement: https://claude.com/blog/cowork-is-now-claude",
    "first_seen": "2026-10-20T17:29:30.903159+00:00",
+   "status": "failed",
+   "attempts": 3,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "8n-SXxRIrm8",
+   "title": "Build a Better Shopping Experience with OpenAI | Shopping Agent Demo",
+   "url": "https://www.youtube.com/watch?v=8n-SXxRIrm8",
+   "published": "2026-10-20T22:57:52+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "See how an AI shopping agent can turn a room photo into a personalized shopping experience—from finding the right products to updating an order.\n\nIn this demo for fictional home goods retailer Vesper & Alder, a shopper uses voice and images to create a cozy reading nook. The agent recommends products, generates a preview of the room, adjusts selections to fit a $250 budget, and suggests a complementary throw blanket. After checkout, it helps switch the order from store pickup to home delivery—all through conversation.\n\nExplore what you can build with OpenAI: https://openai.com/solutions/industries/retail/",
+   "first_seen": "2026-10-21T05:15:18.398196+00:00",
    "status": "pending",
-   "attempts": 2,
+   "attempts": 1,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "honami": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "haruto": {
    "last_ok": "2026-10-20T21:50:11.490767+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "starter-story": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-20T21:50:11.490767+00:00",
+   "last_ok": "2026-10-21T05:15:18.398196+00:00",
    "fail_streak": 0
   }
  }
