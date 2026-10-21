@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-21T22:23:58.778138+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-21T21:45:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "エクストリームーDら3社は、中古GPUを活用したAIインフラサービス「Raplase RCA」を開始した。最短即日かつ1GPUから定額利用でき、柔軟な構成変更にも対応する。機密データを扱う製造業が求める「プライベートAI」を低コストで実現する。",
+      "title": "旧世代NVIDIAを循環利用、クラウド接続の「自社専用AI基盤」を1GPUから提供",
+      "uid": "be537517a11a8d60",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/22/news039.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-21T22:23:58.778138+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-21T21:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "三菱電機は、フィジカルAIを介してヒューマノイドロボットとCNC工作機械が連携する加工システムを開発した。自然言語の指示から加工タスクを自動生成し、現場の省人化に貢献する。",
+      "title": "三菱電機、ヒューマノイドと工作機械が連携して加工　JIMTOF20226でデモ",
+      "uid": "5bd9e4cf9e35cc36",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/21/news073.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-21T18:41:10.727594+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2375,30 +2399,6 @@
       "uid": "04fea2ab9ece3a47",
       "url": "https://ai.watch.impress.co.jp/docs/news/2148437.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-15T09:59:38.574832+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-15T07:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "日本のAI企業であるSakana AIが2026年10月15日、AIチャットサービス「Sakana Chat」に新機能「My Fish」を追加したと発表しました。My FishではAIがユーザーについて覚えている情報を一覧表示できるほか、記憶が使われた履歴や情報同士のつながりを視覚的に確認できます。 続きを読む...",
-      "title": "Sakana ChatにAIの記憶を可視化する新機能「My Fish」が登場、覚えている内容や記憶同士のつながりを確認可能に",
-      "uid": "187fa85f75f77ff9",
-      "url": "https://gigazine.net/news/20261015-sakana-chat-my-fish/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-15T09:59:38.574832+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-15T07:05:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "写真・動画素材大手の米Getty Images Holdingsは10月12日、米連邦破産法11条（チャプター11）の適用を申請する計画を発表した。多額の債務を抱えるなか、生成AIによる画像制作の普及で競争が激化していた。事業を継続しながら債務を整理し、2026年末までに再建を終えて株式を非公開化する方針だ。",
-      "title": "米Getty Imagesが破産申請　生成AIとの競争激化、巨額債務も重荷に",
-      "uid": "6281e78d95824e6d",
-      "url": "https://japan.cnet.com/article/35253591/",
-      "vendor": "CNET Japan"
     }
   ]
 }

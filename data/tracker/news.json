@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-21T22:23:58.778138+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-21T22:17:02+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added /claude-api api-version to move Claude API code to API version 2026-10-21 Added the claude_code.safety_event OpenTelemetry event for each tool call a permission rule, auto mode, …",
+      "title": "v2.1.307",
+      "uid": "2605ff32fb23a40d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-21T22:23:58.778138+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-21T22:00:30+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add enforcement status, actions and filter to user profiles",
+      "title": "v2.1.0",
+      "uid": "8848358f1cecd4f8",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.1.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-21T22:23:58.778138+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T21:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How OpenAI works with distribution partners to uphold consistent safeguards, support responsible access, and clarify expectations in our Usage Policies.",
+      "title": "Broad access through consistent standards",
+      "uid": "ec8a2210e4de5e2b",
+      "url": "https://openai.com/index/broad-access-through-consistent-standards",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-21T18:41:10.727594+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -107,6 +143,18 @@
       "uid": "64cb44d0c671d254",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-21T22:23:58.778138+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.",
+      "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+      "uid": "674c05c2e902192c",
+      "url": "https://openai.com/index/empowering-cyber-defenders",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-20T22:19:50.690379+00:00",
