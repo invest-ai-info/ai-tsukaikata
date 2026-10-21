@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-21T16:12:28+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米OpenAIは10月21日（現地時間）、同日に修正版が公開されたオープンソースのプログラミング言語「PHP」の脆弱性について、OpenAIのAIモデルで発見したと発表した。",
+      "title": "PHPの脆弱性、OpenAIのAIで発見　「同様の発見、今後数カ月で急増」",
+      "uid": "386b03c3499034a1",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002482/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-21T15:06:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "プログラミング言語のPHPに「PHP2Shell」と呼ばれる重大な脆弱性が見つかり、緊急アップデートがリリースされました。「PHP2Shell」の2つの脆弱性は、セキュリティ企業のCalifとWizがそれぞれ独立して2026年8月に発見していたことが報告されています。 続きを読む...",
+      "title": "PHPの重大脆弱性「PHP2Shell」はセキュリティ企業のCalifとWizがAIを用いて発見しOpenAIの枠組みを使って対策したことが判明",
+      "uid": "788ac314cb3fa22b",
+      "url": "https://gigazine.net/news/20261022-php2shell-wiz-openai-calif/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-21T13:51:14.862036+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2375,30 +2399,6 @@
       "uid": "6281e78d95824e6d",
       "url": "https://japan.cnet.com/article/35253591/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-15T09:59:38.574832+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-15T06:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "DeepMindの共同創業者デミス・ハサビス氏は、科学的探究におけるAIの役割や、気候変動への取り組みにおいて期待される好ましい成果について語った。",
-      "title": "Google DeepMindのハサビス会長が語る「AIと気候危機」--AGIへの言及は避ける",
-      "uid": "8e6a8c646412f92b",
-      "url": "https://japan.cnet.com/article/35253583/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-15T09:59:38.574832+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-15T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "セキュリティ研究企業のWhite Circleが、OpenAIやGoogleの画像生成AIの安全対策を回避し、性的な画像などを生成させる新たな攻撃手法「RISE」を発表しました。検証では、OpenAIのDALL·E 3やGoogleのNano Banana 2などで安全対策の回避に成功したほか、より新しいモデルでは攻撃成功率がさらに高くなることが確認されています。 続きを読む...",
-      "title": "OpenAIやGoogleの画像生成AIは簡単に騙されてヌード画像を生成してしまうと研究者が指摘",
-      "uid": "751f90c038ed853f",
-      "url": "https://gigazine.net/news/20261015-rise-ai-image-nude/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

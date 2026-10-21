@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
+      "title": "How AT&T is rethinking in-house legal work with OpenAI",
+      "uid": "2a1a5cb1c32fd943",
+      "url": "https://openai.com/index/att-legal",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-21T15:51:32+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "⚠ BREAKING CHANGES api: add support for new API version 2026-10-21 Features api: add a workspace_id filter and the usage_tier scope type to list spend limits api: add support for new API version 2026…",
+      "title": "v2.0.0",
+      "uid": "ce16359516848fef",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.0.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT.",
+      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+      "uid": "1c05fab5376a5aaf",
+      "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-21T13:51:14.862036+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -10,6 +46,42 @@
       "title": "OpenAI models are coming to Google Cloud",
       "uid": "53e487afee7a7abe",
       "url": "https://openai.com/index/openai-models-google-cloud",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
+      "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+      "uid": "bbcc19face0ad88a",
+      "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale.",
+      "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
+      "uid": "52166a9ea3d2f130",
+      "url": "https://openai.com/index/building-chatgpt-ad-stack",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-21T18:41:10.727594+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T04:50:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells.",
+      "title": "Using thousands of AI agents to uncover new leads in biological data",
+      "uid": "2794c74262e6a3df",
+      "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
       "vendor": "OpenAI"
     },
     {
@@ -5597,32 +5669,6 @@
       "uid": "2a4448bdca027789",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.0",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-23T17:34:23+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.119.0 (2026-07-23) Full Changelog: v0.118.0...v0.119.0 Features api: add new stop reason 'model_context_window_exceeded' ( d983cde ) Bug Fixes tools: handle binary files in agent toolset read/edit …",
-      "title": "v0.119.0",
-      "uid": "2200aa40884d03b8",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-23T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "summary_ja": "Fugu-Ultra v1.1を発表した\nFugu向けClaude Codeインターフェースも登場",
-      "summary_source": "gemini",
-      "title": "Announcing Fugu-Ultra v1.1 and Claude Code interface for Fugu",
-      "uid": "dcb788e7da346d4f",
-      "url": "/fugu-1-1-claude-code-interface/",
-      "vendor": "Sakana AI"
     }
   ]
 }
