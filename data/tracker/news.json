@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-21T07:43:07.219760+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-10-21T04:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Cover image for the e-Conomy SEA 2026 report titled Building the intelligent economy by Google, Temasek, and Bain and Company. A 3D illustration features a glowing yellow star surrounded by miniature…",
+      "title": "Southeast Asia’s digital economy to hit $368 billion",
+      "uid": "b9ecd961f410f8da",
+      "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-10-21T07:43:07.219760+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-21T03:16:31+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed claude -p inside cloud sessions reporting \"Not logged in\" when started without the session's environment variables Fixed an API error being replaced by \"prompt is too long\", and …",
+      "title": "v2.1.306",
+      "uid": "64cb44d0c671d254",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-20T22:19:50.690379+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
