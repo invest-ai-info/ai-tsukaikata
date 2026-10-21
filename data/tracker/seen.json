@@ -61,74 +61,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-20T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-19T12:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
-      "title": "Advancing coding in low‑resource programming languages",
-      "uid": "1e0b1a21cef15d82",
-      "url": "https://openai.com/index/low-resource-programming-languages",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-10-19T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "オープンエンドな探索を意思決定支援へ：推薦の質と多様性を高める「QD-Rec」を提案",
-      "uid": "a894800d93d342ce",
-      "url": "https://sakana.ai/qd-rec/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-20T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
-      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
-      "uid": "89edc97eaeea0bb2",
-      "url": "https://openai.com/index/ted-taylor-restaurant",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-20T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D, helping biopharma teams accelerate drug development and advance new treatments.",
-      "title": "OpenAI acquires Orchestra Bio",
-      "uid": "65d19c309994b736",
-      "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-10-20T20:46:50+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added sandbox.allowNestedUserNamespaces so sandboxed commands on Linux can create user namespaces (Chromium, rootless podman); this lets them get around the sandbox's file protections …",
-      "title": "v2.1.305",
-      "uid": "7649733cee598446",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-10-20T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "【イベントレポート】Sakana AI Engineer Open House 2026",
-      "uid": "c86fbe3033e09577",
-      "url": "https://sakana.ai/open-house-2026/",
-      "vendor": "Sakana AI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
