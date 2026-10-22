@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-22T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "What forward deployed engineering means at OpenAI",
+      "title": "What FDE means at OpenAI",
+      "uid": "7d3ead435b1312f7",
+      "url": "https://openai.com/index/forward-deployed-engineering-means",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-22T07:38:43.029486+00:00",
       "importance": "minor",
       "label": "Claude Code",

@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-22T10:14:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの性能分析を行っているArtificial Analysisが、各種AIの性格を分析するベンチマークテスト「AA-PersonalityBench」を開発し、その結果を公開しました。 続きを読む...",
+      "title": "ChatGPTやGeminiの性格診断結果をArtificial Analysisが公開、Gemini 4 Argonは媚びやすくClaude Fable 5.1は説得力がある",
+      "uid": "bc747f9c9a229050",
+      "url": "https://gigazine.net/news/20261022-artificial-analysis-personalitybench/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-10-22T09:26:34+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "MetaMoJiは10月22日、次期学習指導要領を見据えた文教事業戦略として、独自開発の教育AI「SHUUSAI（シュウサイ）」を発表した。2027年3月より、同社の主力製品となるリアルタイム学習支援サービス「MetaMoJi ClassRoom 3」へ追加費用なしの標準機能として組み込まれる。",
+      "title": "MetaMoJi、次世代教育AI「SHUUSAI」を発表",
+      "uid": "9229a48265ff57cd",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2150485.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-22T09:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "宇宙で取得したデータをその場で小型のAIに処理させ、軽量化してから地上に下ろす──という仕組みの実現を目指す日本初ベンチャー、技術開発の進捗は。",
+      "title": "手のひらサイズの“宇宙AIデータセンター”？　JAXA後押しの国内新興が実現目指す　南極・高山での利用も視野",
+      "uid": "00d01ea92b47532a",
+      "url": "https://www.itmedia.co.jp/news/article/2610/22/2000002510/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-22T08:13:05+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントによるWebサイト攻撃を観測したビットフォレスト。同社のWAF開発責任者は「AIは新しい攻撃ジャンルを生んでいない」と語る。守る側のAI活用の本命と「防御側が有利」の理由を聞いた。",
+      "title": "「長い目で見れば防御側が有利」はなぜ？　守る側のAI活用法、本命は　Webセキュリティ専門家に聞く",
+      "uid": "5cc738cc9f350e7f",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002521/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-22T08:10:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIは2026年10月21日、数千体のAIエージェントを使って数百万個のマウスの脳細胞から得られた実験データをわずか32分で分析し、アルツハイマー病やパーキンソン病などの研究につながる新たな手掛かりを発見したと発表しました。人間の研究者なら数カ月から1年かかると推定される分析を短時間で実施し、これまで見落とされていた可能性のある遺伝子の働きについて新たな仮説も提示したとのことです。 続き…",
+      "title": "数千体のAIが数百万個の脳細胞データをわずか32分で分析、アルツハイマー病やパーキンソン病の研究につながる新たな手掛かりを発見",
+      "uid": "b16d5325fc09bfac",
+      "url": "https://gigazine.net/news/20261022-openai-research-complex-biological-data/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-10-22T07:59:39+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "TECHFUNDは、国産セキュリティAI「Hi AUDIT Agent」の正式提供を10月22日より開始した。Hi AUDIT Agentは、セキュリティベンチマーク「CyberGym」でClaude Mythos 5を上回る脆弱性再現成功率を記録している。",
+      "title": "TECHFUND、Mythos 5を上回る国産セキュリティAI「Hi AUDIT Agent」を提供開始",
+      "uid": "137b26c4d3579f31",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2150441.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-22T07:33:29+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "LINEヤフーは、飲食店向けAI電話対応サービス「LINE AI予約」の正式提供を10月22日に開始した。初期費用は0円、初月無料、月額10,000円（税別）から利用可能。",
+      "title": "AIが24時間365日予約対応。LINEヤフー、飲食店向け音声AI「LINE AI予約」",
+      "uid": "6391a15b965bcafd",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2150426.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-22T13:50:09.201863+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-22T07:33:26+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NTTデータとNTTデータ東海は、あいち銀行と共同で自然言語を使って銀行サービスを利用できる対話型インターフェイスやAIエージェントの実証を10月26日に開始する。",
+      "title": "NTTデータ、金融機関向けサービス基盤「ANSER」をAI化へ あいち銀行と実証",
+      "uid": "6e0c256f360be603",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2150423.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-10-22T07:38:43.029486+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2303,102 +2399,6 @@
       "uid": "63c1b9aa1b2e53c9",
       "url": "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002328/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-16T04:59:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "総パラメータ数が2.8兆になるAIモデル「MAI-Base-2」の事前学習が完了したと、Microsoftが発表しました。 続きを読む...",
-      "title": "Microsoftが2.8兆パラメータの基盤モデル「MAI-Base-2」の事前学習完了を発表",
-      "uid": "5353c908c2b0cc76",
-      "url": "https://gigazine.net/news/20261016-microsoft-mai-base-2/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-16T04:18:48+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTアドバンステクノロジ（以下、NTT-AT）は、AIとのチャットを通じてパソコン業務の自動化につなげる「AiActor」の製品化に着手した。なお、同製品の実現を支える中核技術に関しては、特許を出願中という。",
-      "title": "NTT-AT、AIでPC業務を自動化するRPA「AiActor」製品化へ",
-      "uid": "a039252257d699ed",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2148742.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-16T04:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "NVIDIAが2026年10月15日に文章や画像、動画をまとめて理解できるオープンウェイトAIモデル「NVIDIA Nemotron 3.5 Super VL」を公開しました。複数の情報を組み合わせて作業を進めるAIエージェント向けのモデルで、同規模のオープンモデルと比較して最大5倍の処理能力を発揮するとのこと。企業の業務に合わせて調整したモデルではAIの処理コストを40分の1に削減した事例も報…",
-      "title": "NVIDIAが画像・動画・文章をまとめて理解するオープンウェイトAI「Nemotron 3.5 Super VL」を公開、処理コストを40分の1に削減する事例も",
-      "uid": "3ee38eb79f2754f4",
-      "url": "https://gigazine.net/news/20261016-nemotron-3-5-super-vl/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-16T03:57:36+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Anthropicは、現地時間の11月3日に行なわれる「2026年米中間選挙」に向けた対応について公表した。",
-      "title": "Anthropic、選挙とAIの関係性とは？ 2026年米中間選挙に向けた備えを公表",
-      "uid": "62d498ba15497255",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2148727.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-16T03:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "画像生成AIサービス「Krea 3」のベータ版がリリースされました。画像生成と画像編集を高精度にこなすことが可能で、OpenAIのGPT-Image-2やGoogleのNano Banana 2と比べて高速かつ安価な処理が可能とされています。 続きを読む...",
-      "title": "画像生成・編集AI「Krea 3」のベータ版がリリースされる、GPT-Image-2より10倍高速で価格は3分の1",
-      "uid": "184e745de858a3d0",
-      "url": "https://gigazine.net/news/20261016-krea-3-beta/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-16T03:20:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "欧州最大の格安航空会社（LCC）ライアンエアーのCEOは米CNETに対し、高度なAI予測モデルが旅行者により良い体験をもたらすと語ってくれた。",
-      "title": "欠航の連鎖をAIで防ぐ--欧州最大手LCCライアンエアーが明かす予測モデル活用の現実解",
-      "uid": "3b49549706fdd56e",
-      "url": "https://japan.cnet.com/article/35253627/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-16T03:11:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Black Forest Labsが画像生成AI「FLUX 3 Image Klein」を現地時間の2026年10月15日にオープンモデルとして公開しました。オープンモデルの中では最高峰の性能を備えつつ、ゲーミングPCで実用的な速度で実行できる軽量さも両立しています。 続きを読む...",
-      "title": "画像生成・編集モデル「FLUX 3 Image Klein」が登場、5.6BのオープンモデルでゲーミングPCでローカル動作し日本語テキストの描画や位置指定にも対応",
-      "uid": "dc00f7ecc317cfa9",
-      "url": "https://gigazine.net/news/20261016-flux-3-image-klein/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-16T03:06:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Amazonで開催中のプライム会員限定セール「プライム感謝祭」にて、PlaudのAIボイスレコーダー「Plaud Note Pro」が通常価格30,800円から20%OFFの24,640円で販売されている。",
-      "title": "Amazonプライム感謝祭、AIボイスレコーダー「Plaud Note Pro」が20%OFF",
-      "uid": "04c320b7ee0334ad",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2148694.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
