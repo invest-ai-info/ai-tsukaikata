@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="676" viewBox="0 0 720 676" role="img" aria-label="10分23秒の動画に仕込んだ16件の誤りを、時系列順に点で示したタイムライン図。各点の色の濃さは、通しで素朴に聞いた5回のうち見つかった回数（0〜5）を示す。前半（0:00〜5:43、8件）は対応畳数18畳が0回、フィルター交換2年に1回が0回、重さ5.2kgが2回、コード3mが0回、清浄時間15分が2回、高さ60cmが2回、センサー4種類が1回、モード5段階が3回。後半（5:50〜10:23、8件）は花粉除去10分が2回、保証3年間が0回、フィルター40cmが3回、お手入れ3か月に1回が0回、比較6〜8畳が3回、価格3万円前後が0回、消費電力80Wが1回、保証登録1か月以内が2回。下の枠には、前半8件の合計は10/40、後半8件の合計は12/40で後半のほうがわずかに多く見つかっていること、前半だけを分けて聞くと13/24まで上がるが後半だけを分けても8/24で大差ないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="676"/>
+<text class="t-strong" x="18" y="26">前半の仕込みは0〜2回、後半は0〜3回。見つかった回数に偏りがある</text>
+<text class="t-sm" x="18" y="45">10分23秒の架空レビュー動画に仕込んだ16件を、時系列順に並べた（通しで素朴に聞いた5回の結果）。</text>
+<text class="t-sm" x="18" y="64">色の濃さが、5回中見つかった回数（0〜5）を示す。前半（0:00〜5:43）と後半（5:50〜10:23）の区切りに縦線。</text>
+<path class="line" d="M398.4 90 L398.4 590" stroke-dasharray="4 3"/>
+<text class="t-xs" x="404.4" y="100">前半｜後半</text>
+<circle cx="64.1" cy="110.0" r="7" class="box-bad"/>
+<text class="t-xs" x="64.1" y="98.0" text-anchor="middle">00:42</text>
+<text class="t-sm" x="18" y="114.0">対応畳数18畳</text>
+<text class="t-xs" x="702.0" y="114.0" text-anchor="end">0/5</text>
+<circle cx="110.2" cy="140.0" r="7" class="box-bad"/>
+<text class="t-xs" x="110.2" y="128.0" text-anchor="middle">01:24</text>
+<text class="t-sm" x="18" y="144.0">フィルター交換2年に1回</text>
+<text class="t-xs" x="702.0" y="144.0" text-anchor="end">0/5</text>
+<circle cx="156.3" cy="170.0" r="7" class="box"/>
+<text class="t-xs" x="156.3" y="158.0" text-anchor="middle">02:06</text>
+<text class="t-sm" x="18" y="174.0">重さ5.2kg</text>
+<text class="t-xs" x="702.0" y="174.0" text-anchor="end">2/5</text>
+<circle cx="202.4" cy="200.0" r="7" class="box-bad"/>
+<text class="t-xs" x="202.4" y="188.0" text-anchor="middle">02:48</text>
+<text class="t-sm" x="18" y="204.0">コード3m</text>
+<text class="t-xs" x="702.0" y="204.0" text-anchor="end">0/5</text>
+<circle cx="248.6" cy="230.0" r="7" class="box"/>
+<text class="t-xs" x="248.6" y="218.0" text-anchor="middle">03:30</text>
+<text class="t-sm" x="18" y="234.0">清浄時間15分</text>
+<text class="t-xs" x="702.0" y="234.0" text-anchor="end">2/5</text>
+<circle cx="294.7" cy="260.0" r="7" class="box"/>
+<text class="t-xs" x="294.7" y="248.0" text-anchor="middle">04:12</text>
+<text class="t-sm" x="18" y="264.0">高さ60cm</text>
+<text class="t-xs" x="702.0" y="264.0" text-anchor="end">2/5</text>
+<circle cx="340.8" cy="290.0" r="7" class="box"/>
+<text class="t-xs" x="340.8" y="278.0" text-anchor="middle">04:54</text>
+<text class="t-sm" x="18" y="294.0">センサー4種類</text>
+<text class="t-xs" x="702.0" y="294.0" text-anchor="end">1/5</text>
+<circle cx="386.9" cy="320.0" r="7" class="box-good"/>
+<text class="t-xs" x="386.9" y="308.0" text-anchor="middle">05:36</text>
+<text class="t-sm" x="18" y="324.0">モード5段階</text>
+<text class="t-xs" x="702.0" y="324.0" text-anchor="end">3/5</text>
+<circle cx="425.3" cy="350.0" r="7" class="box"/>
+<text class="t-xs" x="425.3" y="338.0" text-anchor="middle">06:11</text>
+<text class="t-sm" x="18" y="354.0">花粉除去10分</text>
+<text class="t-xs" x="702.0" y="354.0" text-anchor="end">2/5</text>
+<circle cx="456.1" cy="380.0" r="7" class="box-bad"/>
+<text class="t-xs" x="456.1" y="368.0" text-anchor="middle">06:39</text>
+<text class="t-sm" x="18" y="384.0">保証3年間</text>
+<text class="t-xs" x="702.0" y="384.0" text-anchor="end">0/5</text>
+<circle cx="486.8" cy="410.0" r="7" class="box-good"/>
+<text class="t-xs" x="486.8" y="398.0" text-anchor="middle">07:07</text>
+<text class="t-sm" x="18" y="414.0">フィルター40cm</text>
+<text class="t-xs" x="702.0" y="414.0" text-anchor="end">3/5</text>
+<circle cx="517.6" cy="440.0" r="7" class="box-bad"/>
+<text class="t-xs" x="517.6" y="428.0" text-anchor="middle">07:35</text>
+<text class="t-sm" x="18" y="444.0">お手入れ3か月に1回</text>
+<text class="t-xs" x="702.0" y="444.0" text-anchor="end">0/5</text>
+<circle cx="548.3" cy="470.0" r="7" class="box-good"/>
+<text class="t-xs" x="548.3" y="458.0" text-anchor="middle">08:03</text>
+<text class="t-sm" x="18" y="474.0">比較6〜8畳</text>
+<text class="t-xs" x="702.0" y="474.0" text-anchor="end">3/5</text>
+<circle cx="579.0" cy="500.0" r="7" class="box-bad"/>
+<text class="t-xs" x="579.0" y="488.0" text-anchor="middle">08:31</text>
+<text class="t-sm" x="18" y="504.0">価格3万円前後</text>
+<text class="t-xs" x="702.0" y="504.0" text-anchor="end">0/5</text>
+<circle cx="609.8" cy="530.0" r="7" class="box"/>
+<text class="t-xs" x="609.8" y="518.0" text-anchor="middle">08:59</text>
+<text class="t-sm" x="18" y="534.0">消費電力80W</text>
+<text class="t-xs" x="702.0" y="534.0" text-anchor="end">1/5</text>
+<circle cx="640.5" cy="560.0" r="7" class="box"/>
+<text class="t-xs" x="640.5" y="548.0" text-anchor="middle">09:27</text>
+<text class="t-sm" x="18" y="564.0">保証登録1か月以内</text>
+<text class="t-xs" x="702.0" y="564.0" text-anchor="end">2/5</text>
+<rect class="box-accent" x="18" y="600" width="684" height="56" rx="6"/>
+<text class="t-accent" x="34" y="620">前半8件の合計は10/40、後半8件の合計は12/40。後半のほうがわずかに多く見つかっている。</text>
+<text class="t-accent" x="34" y="638">前半だけを分けて聞くと13/24まで上がるが、後半だけを分けても8/24で大差ない（本文参照）。</text>
+</svg>

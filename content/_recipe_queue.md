@@ -1947,7 +1947,13 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - 需要: 同じ検品シリーズ（`clean-up-ai-sounding-text`等）は既に需要が確認済み
     （クラウドソーシングの「AI生成文章の校正・修正」区分で215件出品を既存記事が確認済み）
 
-- [ ] 10分を超える長尺動画でも、検品の精度は同じか
+- [x] 10分を超える長尺動画でも、検品の精度は同じか
+  - →保管: ✅ **2026-10-22 公開**＝`recipes/long-caption-splitting-vs-careful-instruction`
+    （精度は同じではなかった。通しで素朴に聞くと前半8件は25%しか見つからず、分けると54%、
+    「数値に注意して」と頼むだけなら62.5%まで上がった。2つを重ねても足し算にはならなかった。
+    🚨 **実測の途中で、`claude -p --tools "" --append-system-prompt` という独立実行の
+    作り方が作業ディレクトリ名を実測対象に漏らすことを発見**＝台帳★287。この手法を
+    使う次の担当は必ず先に読むこと）
   - 根拠: 源①発。独立した3本が同じ宿題を残している。`naive-caption-check-drops-the-warm-time-number.md:121`
     「キャプションは最長47行（約4分半ぶん）まで。10分・20分を超える長尺動画は試していません」、
     `natural-number-swap-hides-from-naive-check.md:153`・`spec-sheet-clears-the-natural-number-miss.md:159`
