@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-22T07:38:43.029486+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-22T04:34:55+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Bug fixes and reliability improvements",
+      "title": "v2.1.308",
+      "uid": "f209b3dbf8bc7651",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.308",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-21T22:23:58.778138+00:00",
       "importance": "minor",
       "label": "Claude Code",
