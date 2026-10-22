@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-22T22:22:38.966025+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-22T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "日沼諭史の「AI活用入門塾」 初心者でも統一感あるAI動画を作れる「Google Flow」",
+      "uid": "1a52b6c74ffc8650",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/beginner/2149507.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-10-22T13:50:09.201863+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "不正アクセス多発、Gartnerが日本企業に「7つのアクション」を緊急提言",
       "uid": "e84437278ec8dfd7",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2610/16/news048.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-16T07:14:56.691022+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-10-16T05:14:11+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Metaがオープンウェイトモデル「Muse Spark Open」を発表し、重みを公開。「米国製で過去最高性能」とうたい、M5 Ultra搭載のMac Studio 2台で動作するという。独自ライセンスで商用利用は条件付き。",
-      "title": "Meta、「米国製で最高性能」のオープンモデル「Muse Spark Open」発表　Apple Siliconに最適化、Mac Studio×2でローカル動作",
-      "uid": "63c1b9aa1b2e53c9",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/16/2000002328/",
       "vendor": "ITmedia AI+"
     }
   ]

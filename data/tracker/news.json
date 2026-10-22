@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-22T22:22:38.966025+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-22T22:18:57+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed sandboxed Bash commands on macOS and Linux running the shell's startup files outside the sandbox before each command Fixed macOS sandbox denyWrite glob patterns not applying at a…",
+      "title": "v2.1.309",
+      "uid": "9a61a643f728fe52",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.309",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-22T22:22:38.966025+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-22T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Fast, focused, low-cost decisions for any application.",
+      "title": "Build more responsive apps with the Decisions API",
+      "uid": "88c04b278a1c0cb9",
+      "url": "https://openai.com/index/decisions-api",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-22T18:34:18.930503+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",
