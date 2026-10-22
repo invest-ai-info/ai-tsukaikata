@@ -157,6 +157,18 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-10-22T01:33:21.073639+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-21T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality.",
+      "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+      "uid": "0fa0f70a42ede816",
+      "url": "https://openai.com/index/cloudflare-cyber",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-20T22:19:50.690379+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
