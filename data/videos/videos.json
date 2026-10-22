@@ -4106,7 +4106,7 @@
    "description": "#PR #GoogleChrome\n\nGoogle Chrome に AI が標準で入りました。それが「 Gemini in Chrome 」。拡張機能も課金もいらなくて、右上のアイコンを押すとサイドパネルが開き、今見ているページの中身をわかったうえで答えてくれます。 今回は意外と知らない Chrome 本体の機能から、長いマニュアルのナナメ読み、複数タブを横断した比較表づくり、 YouTube 動画の要約、カレンダー登録、画像加工まで、仕事で使えるアイデアを実際の画面で全部見せます。 動画で使ったプロンプトは下にまとめて置いてあるので、コピーしてそのまま試してみてください。\n\n▼ Google Chrome のダウンロードはこちら\nhttps://www.google.com/intl/ja/chrome/\n\n▼ Gemini in Chrome について\nhttps://www.google.com/intl/ja/chrome/ai-innovations/\n\n▼動画で使ったプロンプト一式（コピーして使えます） \n※同じページで試せるように、動画内で開いていたサイトのURLも一緒に載せています（すべて本動画用に制作したデモサイトです）\n\n・ページ要約：このページ、3行でまとめて \nhttps://hatarakraft.vercel.app/feature-meeting-design\n\n・マニュアルのナナメ読み：この導入ガイドで、最初にやる設定とつまずきやすいポイントだけ教えて\nhttps://hakobill.vercel.app/guide\n\n・海外ドキュメントの読解：このページを日本語で、専門用語をかみ砕いて説明して ・追い質問：ここもう少し詳しく\nhttps://fluxbase-docs.vercel.app/docs/core-concepts\n\n・タブ横断で比較：開いてるタブのサービスを、料金と特徴で比較表にして。5人のチームならどれがおすすめかも教えて\nhttps://todaru-app.vercel.app/pricing https://chronica-pm.vercel.app/pricing https://musubime-team.vercel.app/pricing\n\n・ YouTube 要約：この動画の要点を3つにまとめて\n・メールの下書き：この内容をチームに共有するメールの下書きを作って \nhttps://youtu.be/4d0vrDtTpmI\n\n・カレンダー登録：このイベント、カレンダー空いてたら予定入れといて\nhttps://future-work-summit.vercel.app/sessions\n\n・画像加工（ Nano Banana 2 ）：この写真を秋のキャンペーン用に、紅葉の背景にして『 AUTUMN SALE 』の文字を入れて\nhttps://mameto-coffee.vercel.app/product-dripper\n\n・画面から選択：この花の名前は？\nhttps://komorebi-trails.vercel.app/article-alpine-flowers\n\n・ Skills に登録したプロンプト：開いているページの導入ガイドから、最初にやる設定とつまずきやすいポイントだけ抜き出して\nhttps://irodoly.vercel.app/guide\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュ",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4120,7 +4120,7 @@
    "description": "◆Topviewを試してみる\nhttps://www.topview.ai/?via=aidaigaku\n\n◆動画の説明\n2026年に入り、テキストで指示するだけで\nゲームやアプリ、スライド資料を手軽に作れる\nCodexやClaude Codeなどの\nAIエージェントが人気を集めていますが\nこれらのAIエージェントには\n単体で動画を作る機能は搭載されていません\nただ、TopviewというAIツールのプラグインを\nワンクリックでインストールするだけで\nCodexやClaude Codeを司令塔として\n動画の企画から生成まですべてAIにお任せでき\n作った動画は、広いキャンバス上に配置して\n細かく編集することもできます\n\n今回の動画では、TopviewとCodexを組み合わせることで\n具体的にどんなことができるのか\n①、CodexとTopviewの概要\n②、CodexとTopviewの連携方法\n③、絵コンテからCM動画の生成\n④、Topviewのお得情報\nの4点で、実際の活用事例を交えながら詳しく紹介して行きます\n\n◆動画のもくじ\n0:00　動画について\n0:43　動画のもくじ\n1:12　①、CodexとTopviewの概要\n2:28　②、CodexとTopviewの連携方法\n4:09　③、絵コンテからCM動画の生成\n8:44　④、Topviewのお得情報\n10:26　エンディングムービー\n\n◆動画の中で紹介している内容\nAnthropic、Claude Code、SpaceX、Cursor\nNous Research、Hermes Agent\n\n◆参考サイト\nhttps://openai.com/ja-JP/codex/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイン、Hooks、Subagents)をやさしく解説！\nhttps://youtu.be/gKtw6tuTuJ0\n【すぐに使える活用事例20例】画像生成・編集AI「ChatGPT Images 2.5」完全攻略！ 日本語漫画・Codexを使って画像からアプリ・絵コンテから動画作成まで徹底解説！\nhttps://youtu.be/ayWPNzFy25Y\n\n▼SNS(AI速報【AI&ChatGPT最新情報】)\nhttps://x.com/AIMIRAI46487\n\n▼どんなチャンネル",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4160,7 +4160,7 @@
    "description": "今回は「Claude Codeを使って月30万を狙える穴場のAI副業TOP3」ってテーマで話しました！\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=viX0niH67hBf\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=viX0niH67hBf\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n00:00 穴場のClaude Code副業TOP3\n01:00 Claude Codeの穴場副業1つ目:AI動画生成\n14:13 Claude Codeの穴場副業2つ目:個別サポートつきのコンテンツ販売\n20:38 Claude Codeの穴場副業3つ目:オフラインのAI講師\n\n#ClaudeCode #おすすめ副業 #クロードコード",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4174,93 +4174,93 @@
    "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=RaI0k8EJYt\n※もしLINE登録が上手く行かない方は「@866enevi」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🎁【紙や画像を商品にする副業、こちらも見てみてください】\n今日は麻雀会で使う印刷キットの話でした。\n早見表や手帳など、使う人を決めて形にする回をまとめました↓\n\n▼仕事で身についた見分け方を、早見表に。長年の経験をAIで商品にする回\nhttps://youtu.be/U9x_Xtc7deI\n\n▼買った人が自宅で印刷する、もうひとつの副業。家族のためのライフバインダー作り\nhttps://youtu.be/eZRiR5rwv1U\n\n▼Canvaで作るテンプレートを、必要とする相手へ。作り方と売り方をまとめた回\nhttps://youtu.be/cPuSseF95jc\n\n▼遊ぶ人の目線で絵を作ると、売れ方はどう変わる？AIジグソーパズルの回\nhttps://youtu.be/vyYsdD1DRVE\n\n▼遊ぶ人が気持ちよく正解できる本へ。AIで作る間違い探し本の回\nhttps://youtu.be/UVzVVRf2yUo\n\n▼画像をテレビに飾る商品に。データ販売で月87万に届いた回\nhttps://youtu.be/G5MpQKyP_uc\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=RaI0k8EJYt\n\n--------------------------\n\n【動画の目次】\n\n00:00 麻雀会の印刷キットを海外に売る。今日作るものと使う道具\n01:49 母には私がいる。じゃあ自分の番が来たら誰が来てくれるのか\n02:51 実演だけ真似すると踏む落とし穴。売れた後に困らないための前置き\n06:20 母の介護で外に働きに出られない。元歯科衛生士が副業を始めた事情\n08:04 貯金があるのに通帳を開くのが怖い。毎月減っていく家計の計算\n09:32 介護の合間に使える時間を数える。何も残さない未来と、作り置く未来\n11:14 作って置いたのに売れない。商品を丸ごと消しかけた朝\n12:45 作り直していないキ",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-22T12:20:29.310740+00:00",
+   "last_ok": "2026-10-22T17:35:37.765408+00:00",
    "fail_streak": 0
   }
  }
