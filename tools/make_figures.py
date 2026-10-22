@@ -36993,3 +36993,97 @@ def double_cancellation_calc_chain_chart() -> None:
 if __name__ == "__main__":
     double_cancellation_still_subtracts_both_chart()
     double_cancellation_calc_chain_chart()
+
+
+def other_endings_longer_runs_chart() -> None:
+    """文末表現の種類・連続回数を変えた4材料で、「人間らしく書き直して」の効果が保つか（2026-10-22）。
+
+    前の記事（rewrite-clears-sentence-ending-repeats）が残した宿題「他の文末表現」
+    「5回以上の連続」に答える。判定は
+    docs/evidence/other-endings-and-longer-runs-still-clear.md の生の返りから、
+    文単位で文末の連続を数えた（3回以上残れば失敗）。
+    """
+    _hit_and_miss_rows_chart(
+        "other-endings-longer-runs-chart.svg",
+        "文末の種類を変えても、6回連続でも、残った回は0件",
+        "実測2026-10-22。新しい文末2種（4回連続）・既出の文末2種（5回・6回連続）を各3回試した。",
+        "「3回以上連続を使わない」という3回以上連続が残った回数（少ないほど良い）を比べた。",
+        [
+            ("「〜でしょう」4回連続・素朴な指示で3回以上連続が残った回数", 0, 3, "bad"),
+            ("「〜と思います」4回連続・素朴な指示で3回以上連続が残った回数", 0, 3, "bad"),
+            ("「〜のです」5回連続・素朴な指示で3回以上連続が残った回数", 0, 3, "bad"),
+            ("「〜ください」6回連続・素朴な指示で3回以上連続が残った回数", 0, 3, "bad"),
+            ("「〜ください」6回連続・禁止を明記した指示で3回以上連続が残った回数", 0, 3, "bad"),
+        ],
+        [
+            "✅ 文末表現の種類を変えても（「〜でしょう」「〜と思います」）、素朴な指示だけで3回以上連続は12回とも消えた。",
+            "✅ 連続回数を5回・6回に増やしても、同じ素朴な指示だけで3回以上連続は残らなかった。",
+            "📌 前の記事（文末2種・連続4回まで）と同じ天井（0件）が、より広い条件でも再現した。",
+        ],
+        "文末表現の種類と連続回数を変えた4材料に、「人間らしく書き直して」という指示を試した結果を比べた図。"
+        "「〜でしょう」4回連続・素朴な指示で3回以上連続が残った回数は0/3、"
+        "「〜と思います」4回連続・素朴な指示で0/3、"
+        "「〜のです」5回連続・素朴な指示で0/3、"
+        "「〜ください」6回連続・素朴な指示で0/3、"
+        "「〜ください」6回連続・禁止を明記した指示で0/3。"
+        "下の枠には、文末表現の種類を変えても素朴な指示だけで3回以上連続は12回とも消えたこと、"
+        "連続回数を5回・6回に増やしても同じ素朴な指示だけで3回以上連続は残らなかったこと、"
+        "前の記事（文末2種・連続4回まで）と同じ天井（0件）がより広い条件でも再現したことが書かれている。",
+        label_w=430,
+    )
+
+
+def other_endings_explicit_vs_plain_chart() -> None:
+    """6回連続という最も極端な材料で、素朴な指示と禁止を明記した指示を比べる。"""
+    rows = [
+        ("素朴な指示", "次の文章を、AIが書いたような文章ではなく人間らしい文章に書き直してください。", "3回以上連続が残った回数：0/3", "box-good", "t-good"),
+        ("禁止を明記した指示", "上に加えて「同じ文末表現を3回以上連続で使わないでください」を追加", "3回以上連続が残った回数：0/3", "box-good", "t-good"),
+    ]
+    box_x, box_w = 18, 684
+    top = 96
+    row_h = 92
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "6回連続でも、禁止の一文を足すかどうかで結果は変わらなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "忘年会の案内文（「〜ください」が6回連続）を材料に、同じ文章で指示文だけを変えて各3回試した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "前の記事は連続4回までしか試しておらず、「連続が多いと禁止の一文が効くかもしれない」という宿題を残していた。</text>\n",
+    ]
+
+    y = top
+    for label, instruction, result, klass, tcls in rows:
+        parts.append(f'<rect class="box" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{box_x + 16}" y="{y + 42}">{_esc(instruction)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 64}">{_esc(result)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="46" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="{box_x + 16}" y="{y + 20}">'
+        "前の記事（連続4回まで）と同じ天井（0件）が、連続6回でも再現した。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="{box_x + 16}" y="{y + 38}">'
+        "＝連続回数が増えるほど禁止の一文が効いてくる、という見立ては今回も支持されなかった。</text>\n"
+    )
+    y += 46 + 12
+
+    height = y + 8
+    alt = (
+        "6回連続という最も極端な材料で、素朴な指示と「3回以上禁止」を明記した指示の結果を比べた図。"
+        "素朴な指示（3回試行）は3回以上連続が残った回0件。禁止を明記した指示（3回試行）も0件。"
+        "下の枠には、最も極端な6回連続の材料でも禁止の一文を足すかどうかで結果は変わらなかったこと、"
+        "前の記事（4回連続まで）と同じ天井が連続回数を増やしても再現したことが書かれている。"
+    )
+    (OUT / "other-endings-explicit-vs-plain.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    other_endings_longer_runs_chart()
+    other_endings_explicit_vs_plain_chart()
