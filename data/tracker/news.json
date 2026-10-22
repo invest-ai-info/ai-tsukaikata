@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-22T18:34:18.930503+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-10-22T14:30:24+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types.",
+      "title": "Beyond tree cover: mapping the world’s forest types",
+      "uid": "0fc1ac95bc596c57",
+      "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-10-22T13:50:09.201863+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -23,6 +35,18 @@
       "uid": "f209b3dbf8bc7651",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.308",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-22T18:34:18.930503+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-22T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows.",
+      "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+      "uid": "1823e292e3d4a626",
+      "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-21T22:23:58.778138+00:00",
@@ -5714,44 +5738,6 @@
       "title": "v2.1.220",
       "uid": "73fdec75168e5cb6",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-07-24T17:14:23+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added Claude Opus 5 ( claude-opus-5 ), now the default Opus model — 1M context, fast mode at $10/$50 per Mtok Added sandbox.network.strictAllowlist setting to deny non-allowlisted host…",
-      "title": "v2.1.219",
-      "uid": "e67e30ab2776e7e3",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-24T17:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.",
-      "summary_ja": "AI「Claude Opus 5」を発表した\nOpus階層の性能が大幅に向上\n長時間のAI処理や専門業務、プログラミングが改善",
-      "summary_source": "gemini",
-      "title": "Introducing Claude Opus 5",
-      "uid": "cf5b4f4e2077c154",
-      "url": "https://www.anthropic.com/news/claude-opus-5",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-24T16:32:34+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.120.0 (2026-07-24) Full Changelog: v0.119.0...v0.120.0 Features api: add claude-opus-5 model ( bf4e31c ) api: add tool addition/removal blocks and tool_change events ( bf4e31c ) api: expand client-…",
-      "title": "v0.120.0",
-      "uid": "2a4448bdca027789",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.0",
       "vendor": "Anthropic"
     }
   ]

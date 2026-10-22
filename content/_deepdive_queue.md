@@ -415,6 +415,9 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
       確定させるのが、FIG・SynthID Bio・Playground・Cyber Mission のときの前例に合わせたやり方。
 
+- [ ] https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/
+  - 2026-10-22 自動追記（minor・Google DeepMind「Beyond tree cover: mapping the world’s forest types」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-argon/ → **公開済み** content/tools/gemini-4-argon-ga.md（2026-10-13・公開）

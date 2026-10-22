@@ -1,6 +1,7 @@
 {
   "deepdive_queued": {
     "0142ff57a6111b2d": "2026-09-11",
+    "0fc1ac95bc596c57": "2026-10-22",
     "12b44cab4afb3819": "2026-10-14",
     "18b661e48bcdb052": "2026-10-13",
     "1bfef5e8c32e8074": "2026-08-25",
@@ -36,12 +37,12 @@
   },
   "failures": {
     "anthropic-news": {
-      "count": 10,
+      "count": 11,
       "last_error": "ValueError: 埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）",
       "since": "2026-10-20T18:29:14.936975+00:00"
     },
     "media-cnet-japan": {
-      "count": 5,
+      "count": 6,
       "last_error": "0件",
       "since": "2026-10-21T18:41:10.727594+00:00"
     }
@@ -50,7 +51,7 @@
     "anthropic-news": "2026-10-18T16:49:35.513000+00:00",
     "anthropic-sdk": "2026-10-21T22:00:30+00:00",
     "claude-code": "2026-10-22T04:34:55+00:00",
-    "deepmind-blog": "2026-10-15T16:08:03+00:00",
+    "deepmind-blog": "2026-10-22T14:30:24+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-10-21T04:00:00+00:00",
     "hf-deepseek": "2026-10-17T02:40:38+00:00",
@@ -99,6 +100,28 @@
       "uid": "7d3ead435b1312f7",
       "url": "https://openai.com/index/forward-deployed-engineering-means",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-22T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows.",
+      "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+      "uid": "1823e292e3d4a626",
+      "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-10-22T14:30:24+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types.",
+      "title": "Beyond tree cover: mapping the world’s forest types",
+      "uid": "0fc1ac95bc596c57",
+      "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+      "vendor": "Google DeepMind"
     }
   ],
   "uids": {
@@ -377,6 +400,7 @@
     "0fafeb8f45239cc3": "2026-08-04T11:04:53.115730+00:00",
     "0fb016549607a756": "2026-08-17T20:46:22.723644+00:00",
     "0fbf947a3626a3f6": "2026-09-02T05:51:57.834877+00:00",
+    "0fc1ac95bc596c57": "2026-10-22T18:34:18.930503+00:00",
     "0fc5e4e25b97c843": "2026-09-29T15:55:59.129583+00:00",
     "0fd0650e814e1d2f": "2026-10-14T23:57:22.501228+00:00",
     "0fd301d5e02c964e": "2026-09-29T15:55:59.129583+00:00",
@@ -522,6 +546,7 @@
     "180f1c7b02596682": "2026-08-27T20:33:26.631798+00:00",
     "181cc8f5f1a8c9d1": "2026-08-01T12:16:42.309603+00:00",
     "1822b58d1b193cc0": "2026-08-25T04:04:08.570654+00:00",
+    "1823e292e3d4a626": "2026-10-22T18:34:18.930503+00:00",
     "18274e55a8f4125d": "2026-10-18T11:13:57.157722+00:00",
     "182d5e2a816e62b5": "2026-09-13T22:26:35.131205+00:00",
     "184409d1f93a7cb3": "2026-09-10T06:01:05.671464+00:00",
