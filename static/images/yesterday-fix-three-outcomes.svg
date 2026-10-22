@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="392" viewBox="0 0 720 392" role="img" aria-label="材料A（副業の作業記録、最後の行が2026-08-03）に「昨日E社と電話で打ち合わせ、所要25分でした」を渡した3つの条件を比べた図。直す前（名指し無し）では、追記された行は2026-10-21 / E社 / 電話で打ち合わせ / 25分となり、壁時計の実日付の前日であってファイルの続き（2026-08-03）ではない。既存の直し方（「本日」「今日」だけ名指し）では、4回中3回は2026-08-03 / E社 / …となり、これはC社の行と同じ日付だが続きの前日として正しい。4回中1回は2026-10-21 / E社 / …に戻ってしまった。「昨日」も名指しした最終版では、2回中2回とも2026-08-03 / E社 / 電話で打ち合わせ / 25分となり、正しく直った。下の枠には、名指ししていない語の生成は当たるか外れるかが回ごとに割れること、確実にするには語を列挙する必要があること、材料B（家計の買い物メモ）でも同じ傾向だったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="392"/>
+<text class="t-strong" x="18" y="26">「昨日」は、直し方の名指しの有無で結果が変わる</text>
+<text class="t-sm" x="18" y="45">材料A（最後の行が2026-08-03）に「昨日E社と電話で打ち合わせ」を渡した3条件。</text>
+<text class="t-sm" x="18" y="64">ファイルの続きとして正しいのは2026-08-03（C社の行と同じ日付になってよい）。</text>
+<rect class="box-bad" x="18" y="110" width="684" height="60" rx="6"/>
+<text class="t-strong" x="34" y="130">直す前（名指し無し）</text>
+<text class="mono" x="34" y="148">2026-10-21 / E社 / 電話で打ち合わせ / 25分</text>
+<text class="t-bad" x="34" y="164">壁時計の実日付の前日。ファイルの続き（2026-08-03）ではない</text>
+<rect class="box-quiet" x="18" y="180" width="684" height="60" rx="6"/>
+<text class="t-strong" x="34" y="200">既存の直し方（「本日」「今日」だけ名指し）</text>
+<text class="mono" x="34" y="218">3/4: 2026-08-03 / E社 / … 　1/4: 2026-10-21 / E社 / …</text>
+<text class="t" x="34" y="234">3回は続きの前日（C社と同日）で正しい。1回は壁時計の日付に戻った</text>
+<rect class="box-good" x="18" y="250" width="684" height="60" rx="6"/>
+<text class="t-strong" x="34" y="270">最終版（「昨日」も名指し）</text>
+<text class="mono" x="34" y="288">2026-08-03 / E社 / 電話で打ち合わせ / 25分</text>
+<text class="t-good" x="34" y="304">2回とも続きの前日。C社の行と同日になるが、これが正しい</text>
+<rect class="box-accent" x="18" y="326" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="346">名指ししていない語の生成は、当たるか外れるかが回ごとに割れる。確実にするには語を列挙する。</text>
+<text class="t-accent" x="34" y="364">（材料B・家計の買い物メモでも同じ3条件を試し、同じ傾向だった）</text>
+</svg>
