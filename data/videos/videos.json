@@ -4036,10 +4036,9 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\nGoogleは、(2026年)10月中旬\n最先端AIモデル「Gemini 4 Argon」を公開しました\nこのモデルは、長時間にわたる複雑なタスクや\n大規模なコーディング、金融・法律などの専門業務\nさらにはサイバーセキュリティなど\nさまざまな分野で高い能力を発揮し\nアプリやゲーム、webサイトから\nアニメーション動画、スライド資料\nレポートの作成まで、幅広い用途に対応する\nGoogle史上最高性能のAIモデルです\n\n今回の動画では\n第一章：Gemini 4 Argonの概要と使い方\n第二章：Gemini 4 Argonの活用事例4選 ～開発編～\n第三章：Gemini 4 Argonの活用事例6選 ～実務編～\nの3章構成で、Googleの公開した\n最先端AIモデル「Gemini 4 Argon」の最新の概要と使い方から\nGeminiやGoogle Antigravity\nGoogle AI StudioなどのGoogleの公式のAIツールと\nGemini 4 Argonを組み合わせて使いこなす為の活用事例を\n開発編と実務編に分けて、計10例ほど紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:40　動画のもくじ\n1:32　第一章：Gemini 4 Argonの概要と使い方\n1:51　①、Gemini 4 Argonの特徴\n3:02　②、Gemini 4 Argonのベンチマーク\n4:20　③、Gemini 4 Argonの使い方\n6:01　第二章：Gemini 4 Argonの活用事例4選 ～開発編～\n6:33　1、3Dゲームの生成\n7:49　2、複雑なwebアプリの生成\n9:02　3、動きのあるwebサイトの生成\n9:53　4、デスクトップアプリやChrome拡張機能の生成\n10:48　第三章：Gemini 4 Argonの活用事例6選 ～実務編～\n11:18　1、アニメーション動画の生成\n13:06　2、スライド資料の生成\n14:10　3、スプレッドシートの生成\n14:52　4、レポートの生成\n15:54　5、日本語のライティング\n17:07　6、画像や動画の分析\n18:30　エンディングムービー\n\n◆動画の中で紹介している内容\nOpenAIの、GPT-6 Astra、Anthropic、Claude Fable 5.1、Claude Opus 5.5\nthree.js、Nano Banana、Javascript\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\nhttps://gemini.google.com/\nhttps://antigravity.google/\nhttps://aistudio.google.com/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNW",
    "first_seen": "2026-10-21T12:19:14.953361+00:00",
-   "status": "pending",
-   "attempts": 2,
+   "status": "failed",
+   "attempts": 3,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4063,10 +4062,9 @@
    "channel_key": "starter-story",
    "channel_name": "Starter Story",
    "default_category": "earn",
-   "description": "Charlie bootstrapped his micro-saas, Links, to over $30K/month, which allowed him to quit his job... twice! In this episode, he shares exactly how he grew Liinks to $30K/month (even in a saturated market), and his advice for building a side project that might help you quit your full-time job, right now in 2026\n\n*Side project ideas you can build with your 9-5:* https://clickhubspot.com/xls2\n\nSay hi to Charlie: https://x.com/charliie\nCheck out Liinks: https://www.liinks.co/\n\n🔔 Follow the Second Channel: @StarterStoryBuild\n🏁 We're hiring: starterstory.com/jobs\n\nChapters:\n0:00 - zero to $30K/month\n1:03 - What’s your story?\n1:32 - What’s the app?\n2:34 - Building side projects\n3:30 - Business metrics\n4:15 - Founder background\n5:47 - Finding the app idea\n6:59 - Liinks growth strategies\n8:23 - Pricing strategy and breakdown\n9:40 - Leaving the 9-5\n10:53 - Mindset behind quitting your job\n12:45 - Tech stack and tools\n13:32 - App demo\n15:01 - Final advice\n\nThis video is an educational case study of this founder’s experience. It is not financial advice and does not guarantee any income or results. Every business is different and your results may vary.",
    "first_seen": "2026-10-21T17:36:57.895040+00:00",
-   "status": "pending",
-   "attempts": 2,
+   "status": "failed",
+   "attempts": 3,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4080,7 +4078,7 @@
    "description": "Claude Duet is a new app where Claude comes to you with what needs your attention and keeps working after you put your phone down. It decides what needs you and what can wait, and checks with you before it acts on your behalf.\n\nThe research preview is open by waitlist to Pro and Max subscribers in the US.\n\nJoin the waitlist: https://claude.com/claude-duet\n\nRead more: https://claude.com/resources/articles/claude-duet",
    "first_seen": "2026-10-21T21:57:44.448014+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4094,93 +4092,93 @@
    "description": "In this solo episode, I break down the war on AI agents, from Amazon blocking Meta's Muse to Delta treating outside booking agents as unauthorized automated activity to Yelp charging agents for access. I share how I think about an agent, as a customer with a credit card who reads your site instead of looking at it, and the ladder of trust that runs from research to prepare to pay. Then I walk through each big player's bet, my nine stages for how this war plays out, five moves any business can make this week, and the startup ideas I see between agents and the businesses they buy from. If you run a store or build products, this episode gives you a map for selling to customers who send an agent to shop for them.\n\nTimestamps\n\n00:00 – Intro\n02:09 –The Three Camps\n05:08 – How I Define an Agent\n06:52 – The Ladder of Trust\n08:54 – Real Reasons to Block Agents\n09:48 – What Agents Skip\n12:57 – How Each Company is Playing it\n17:06 – Lessons From Mint and Plaid\n17:49 – The 9 stages of The War on Agents\n21:56 – What to do this week\n24:39 – Startup Idea 1: Agent Readiness\n25:48 – Startup Idea 2: Plaid for One Vertical\n26:22 – Startup Idea 3: Insurance for Agents\n26:57 – Startup Idea 4: Analytics for Agent Traffic\n27:26 – Startup Idea 4: Agent Specialist\n28:05 – Closing Thoughts\n\nKey Points\n\n• Agents read product details, prices, shipping, and return policies, so plain-text facts on the page decide whether they pick you.\n• Agents climb a ladder of trust from research to prepare to pay, and ",
    "first_seen": "2026-10-21T21:57:44.448014+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
-   "last_ok": "2026-10-21T21:57:44.448014+00:00",
+   "last_ok": "2026-10-22T05:18:31.462792+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-21T21:57:44.448014+00:00",
+   "last_ok": "2026-10-22T05:18:31.462792+00:00",
    "fail_streak": 0
   },
   "starter-story": {
    "last_ok": "2026-10-21T21:57:44.448014+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-21T21:57:44.448014+00:00",
+   "last_ok": "2026-10-22T05:18:31.462792+00:00",
    "fail_streak": 0
   }
  }
