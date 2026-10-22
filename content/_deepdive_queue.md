@@ -415,8 +415,32 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を仰いでから
       確定させるのが、FIG・SynthID Bio・Playground・Cyber Mission のときの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/
+- [!] https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/
   - 2026-10-22 自動追記（minor・Google DeepMind「Beyond tree cover: mapping the world’s forest types」）
+  - **2026-10-22 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission・
+    2026-10-15 scam detection・2026-10-17 antimicrobial discovery と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` は200・約155KB。要約させず生HTMLから本文を抽出して確認した）
+
+    **② 中身が「森林タイプの地図データセット公開」という環境・地理空間の研究発表で、モデルでも料金でも比較可能な仕様でもない**
+
+    - Forest Typology (ForTy) 2020 は、Google DeepMind/Google Research が World Resources Institute・IIASA と
+      共同で公開した、世界の森林を10m四方の区画ごとに6種類（原生林・自然再生林・植林地・プランテーション・
+      樹木作物／アグロフォレストリー・その他）に分類する地図データセット。AlphaEarth Foundations の埋め込みを
+      入力に使うAIモデルで作られているが、モデル自体はAPIや料金表として提供されておらず、Google Earth Engine 上で
+      オープンライセンスの地図データとして無料公開されるのみ
+    - **本文を全文抽出して確認した数字は4つ**（学習データ約170万地点・検証サイト9,000超・正解率90%・
+      森林／非森林の判別率95%）。いずれも地図の精度検証の数字で、料金・トークン単価・性能ベンチマークの
+      類ではない
+    - 比較相手（他社の同種の「森林タイプ分類AI」発表）も見つからず、読者（自動化したい非エンジニアの
+      会社員）が「どういう人に効くか」を判断できる要素が無い。対象はEUの森林破壊防止規則（EUDR）対応の
+      企業・研究者・政府機関であり、モデルでも製品機能でも価格改定でもないため、このサイトの記事の型
+      （何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG 以降の5件とほぼ同じ構造**（①は解けている・②＝数字はあっても料金や
+      性能の比較に使えない／モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 ## 処理済み
 
