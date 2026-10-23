@@ -1991,7 +1991,12 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - 需要: `take-home-from-the-contract-amount`・`withholding-formula-holds-for-other-fee-types`など
     直接契約の手取り計算シリーズは本サイトの主力シリーズとして需要が確認済み
 
-- [ ] 適格請求書の必須項目、AIの下書きは何を抜くか
+- [x] 適格請求書の必須項目、AIの下書きは何を抜くか
+  - →保管: 公開: `recipes/invoice-registration-number-fades-mixed-rate-keeps-it`（2026-10-23）。
+    登録番号を渡さないと3/3〜1/3で欄ごと消える（でっち上げは0件）。意外な発見＝税率が
+    2種類混ざるほうが単一税率より内訳が残りやすい（台帳★292・★293）。実測中に副産物の
+    事故（`--safe-mode`無しのCLIが実行アカウントの実メールを埋め草にした）も発見・記録
+    （台帳★291。該当箇所は伏せ字にして公開）
   - 根拠: 源②発。担当がgrep実測＝`content/recipes/*.md`に「インボイス」「登録番号」「適格請求書」
     で言及する記事は5本あるが、いずれも「この記事は税務の記事ではない・インボイス制度の判断は
     しない」という除外の断り書きのみ（`direct-contract-withholding-survives-the-million-yen-line.md:111`

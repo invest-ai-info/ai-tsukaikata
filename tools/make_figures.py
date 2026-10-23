@@ -37520,3 +37520,108 @@ def withholding_individual_vs_corporate_mechanism_chart() -> None:
 if __name__ == "__main__":
     withholding_lawyers_performers_hit_and_miss_chart()
     withholding_individual_vs_corporate_mechanism_chart()
+
+
+def invoice_required_items_hit_and_miss_chart() -> None:
+    """登録番号が消える条件・税率の内訳が消える条件を、6行で比べる（2026-10-23実測）。
+
+    claude -pの独立実行。登録番号を渡さない条件（単一税率・税率混在）、
+    「分からなければ明記して」を足した条件を比べる。
+    """
+    _hit_and_miss_rows_chart(
+        "invoice-required-items-hit-and-miss.svg",
+        "登録番号は言われないと消える。税率が混ざるほうが内訳は残る",
+        "実測2026-10-23。claude -pの独立実行。登録番号を渡さずに「請求書を作って」と頼んだ場合。",
+        "上3行＝登録番号の欄が出た回数。下3行＝税率ごとの消費税額が明記された回数。",
+        [
+            ("登録番号の欄：単一税率・渡さない", 0, 3, "good"),
+            ("登録番号の欄：税率2種混在・渡さない", 1, 3, "good"),
+            ("登録番号の欄：「不明なら明記して」を追加", 4, 4, "good"),
+            ("税率ごとの消費税額：単一税率・渡さない", 1, 3, "good"),
+            ("税率ごとの消費税額：税率2種混在・渡さない", 3, 3, "good"),
+            ("税率ごとの消費税額：情報をすべて渡した場合", 8, 8, "good"),
+        ],
+        [
+            "登録番号を渡さなかった6回のうち、架空の番号をでっち上げた回は0回だった。",
+            "税率が2種類混ざる材料のほうが、単一税率より登録番号・内訳とも残りやすかった。",
+            "「分からなければ明記して」を足すと、登録番号は4回とも正しく「不明」と書かれた。",
+        ],
+        "登録番号の欄が出た回数と、税率ごとの消費税額が明記された回数を示す表。登録番号の欄は、"
+        "単一税率で渡さない場合3回中0回、税率2種混在で渡さない場合3回中1回、「不明なら明記して」"
+        "を追加した場合4回中4回。税率ごとの消費税額は、単一税率で渡さない場合3回中1回、税率2種"
+        "混在で渡さない場合3回中3回、情報をすべて渡した場合8回中8回。下の枠には、登録番号を"
+        "渡さなかった6回のうちでっち上げた回は0回だったこと、税率が2種類混ざる材料のほうが"
+        "単一税率より残りやすかったこと、「不明なら明記して」を足すと登録番号は4回とも正しく"
+        "「不明」と書かれたことが書かれている。",
+        label_w=420,
+    )
+
+
+def invoice_single_vs_mixed_rate_mechanism_chart() -> None:
+    """単一税率は合計だけで済むが、税率混在は内訳を経由せざるを得ない仕組み（2026-10-23実測）。"""
+    box_x, box_w = 18, 684
+    row_h = 92
+    top = 112
+
+    rows = [
+        (
+            "単一税率（10%のみ）で頼んだとき",
+            "「代金55万円（税込）」とだけ渡すと、3回中2回は税込の合計額だけで完結し、"
+            "税率ごとの消費税額を省略した",
+            "box",
+            "t",
+        ),
+        (
+            "税率が2種類（10%・8%）混ざるとき",
+            "合計額を出すには税率ごとに分けて計算する必要があり、3回とも税率ごとの"
+            "内訳（税抜金額・消費税額）がそのまま出力に残った",
+            "box-good",
+            "t-good",
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">内訳を「経由しないと答えが出ない」ときだけ、内訳が残る</text>\n',
+        '<text class="t-sm" x="18" y="45">登録番号を渡さない同じ条件で、税率の数だけを変えた2つの依頼。</text>\n',
+        '<text class="t-sm" x="18" y="64">どちらも「請求書を作ってください」という同じ頼み方。</text>\n',
+    ]
+
+    y = top
+    for label, detail, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        lines = _wrap_label(detail, 56)
+        for i, line in enumerate(lines[:3]):
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 42 + 18 * i}">{_esc(line)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "単一税率は「合計額」を書けば用が足りるため、内訳を書く動機が弱くなる。",
+        "税率が混ざると、合算のために内訳をいったん経由する必要があり、その過程がそのまま出力に残る。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "単一税率と税率2種混在のとき、税率ごとの消費税額がどれだけ残るかを比べる図。上段＝"
+        "単一税率（10%のみ）で頼んだとき、「代金55万円（税込）」とだけ渡すと、3回中2回は"
+        "税込の合計額だけで完結し、税率ごとの消費税額を省略した。下段＝税率が2種類（10%・8%）"
+        "混ざるとき、合計額を出すには税率ごとに分けて計算する必要があり、3回とも税率ごとの"
+        "内訳（税抜金額・消費税額）がそのまま出力に残った。どちらも登録番号を渡さない同じ条件で、"
+        "税率の数だけを変えた2つの依頼。下の枠には、単一税率は合計額を書けば用が足りるため"
+        "内訳を書く動機が弱くなること、税率が混ざると合算のために内訳をいったん経由する必要があり"
+        "その過程がそのまま出力に残ることが書かれている。"
+    )
+    (OUT / "invoice-single-vs-mixed-rate-mechanism.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    invoice_required_items_hit_and_miss_chart()
+    invoice_single_vs_mixed_rate_mechanism_chart()
