@@ -25,6 +25,18 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-10-23T01:34:03.775009+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-22T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "オントロジーを基盤に、意思決定・実行を支援するAIエージェントプラットフォーム「Sakana Aquarium」",
+      "uid": "c9cfbd0958c0ba8c",
+      "url": "https://sakana.ai/aquarium-release/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-10-22T18:34:18.930503+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",
