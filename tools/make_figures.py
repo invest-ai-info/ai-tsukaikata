@@ -37308,3 +37308,110 @@ def urgent_word_without_negation_mechanism_chart() -> None:
 if __name__ == "__main__":
     urgent_word_without_negation_results_chart()
     urgent_word_without_negation_mechanism_chart()
+
+
+def mixed_style_sample_lean_chart() -> None:
+    """長い見本1本・2本同時（曖昧な頼み方）・2本同時（明示）で、硬い文体の文末比率を比べる。
+
+    実測2026-10-23。くだけた「んですよね」調（水族館レビュー約850字・22文）と
+    硬い「のである」調（キーボードレビュー約850字・21文）の長い見本2本。
+    claude -p の独立実行（中立なディレクトリ名から）で各材料2〜3回。
+    """
+    _hit_and_miss_rows_chart(
+        "mixed-style-sample-lean.svg",
+        "2本同時に渡し「この文体で」と頼むと、常に硬い側に偏る",
+        "実測2026-10-23。長い見本（約850字）1本・2本同時（曖昧／明示）の6条件。claude -pの独立実行。",
+        "硬い（のである調）の文末比率。0%の2行は、くだけた見本だけを使った条件。",
+        [
+            ("見本1本（くだけた）だけで書かせた（3回・22文）", 0, 22, "good"),
+            ("見本1本（硬い）だけで書かせた（3回・20文）", 17, 20, "good"),
+            ("2本同時・くだけた→硬いの順・曖昧に依頼（3回・19文）", 14, 19, "good"),
+            ("2本同時・硬い→くだけたの順・曖昧に依頼（3回・21文）", 17, 21, "good"),
+            ("2本同時・明示で「1つ目だけ」＝くだけた（2回・13文）", 0, 13, "good"),
+            ("2本同時・明示で「2つ目だけ」＝硬い（2回・14文）", 11, 14, "good"),
+        ],
+        [
+            "曖昧に頼んだ2条件（74%・81%）は、順番を入れ替えても硬い側（単体85%・明示79%）に近いまま。",
+            "くだけた側に寄った回は0回。「半分ずつ混ざる」は6条件・計112文のどこにも起きなかった。",
+            "見本を1本だけ渡した条件どうしでも、くだけたは0%（くだけたのみ）・硬いは85%（硬いのみ）で対称。",
+        ],
+        "長い見本を使った6つの条件で、硬い（のである調）の文末比率を示す表。見本1本（くだけた）だけで"
+        "書かせた場合は22文中0文（0%）、見本1本（硬い）だけで書かせた場合は20文中17文（85%）、"
+        "2本同時・くだけた→硬いの順で曖昧に依頼した場合は19文中14文（74%）、"
+        "2本同時・硬い→くだけたの順で曖昧に依頼した場合は21文中17文（81%）、"
+        "2本同時で明示的に1つ目（くだけた）だけを使うよう指示した場合は13文中0文（0%）、"
+        "2本同時で明示的に2つ目（硬い）だけを使うよう指示した場合は14文中11文（79%）。"
+        "下の枠には、曖昧に頼んだ2条件（74%・81%）は順番を入れ替えても硬い側に近いままであること、"
+        "くだけた側に寄った回は0回で半分ずつ混ざることは6条件・計112文のどこにも起きなかったこと、"
+        "見本1本だけの条件どうしでも対称な結果になったことが書かれている。",
+        label_w=440,
+    )
+
+
+def mixed_style_self_report_vs_action_chart() -> None:
+    """「どちらを使うか確認して」と「そのまま書いて」で、申告と実際の行動が食い違う（2026-10-23実測）。"""
+    box_w, box_h, gap_y = 648, 56, 70
+    left = 18
+    top = 108
+
+    rows = [
+        (
+            "書く前に「どちらの文体を使うか、一言で確認して」と頼む",
+            "「1つ目（くだけた調）で書く」と申告した（2/2）",
+            "box",
+            "box-accent",
+        ),
+        (
+            "確認させずに、2本の見本を渡してそのまま書かせる",
+            "実際には2つ目（硬い調）で書いた（6/6＝順番を入れ替えても同じ）",
+            "box",
+            "box-bad",
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">確認させると「くだけた」と言うのに、実際は「硬い」で書く</text>\n',
+        '<text class="t-sm" x="18" y="45">同じ2本の見本（くだけた・硬い）を渡した、2つの頼み方の結果。</text>\n',
+        '<text class="t-sm" x="18" y="64">上は書く前に選んだ側を答えさせた回、下は答えさせずに直接書かせた回。</text>\n',
+    ]
+
+    y = top
+    for condition, result, cond_cls, result_cls in rows:
+        parts.append(f'<rect class="{cond_cls}" x="{left}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="t" x="{left + 16}" y="{y + 24}">{_esc(condition)}</text>\n')
+        parts.append(
+            f'<path class="line" d="M{left + 24} {y + box_h} L{left + 24} {y + box_h + 14}"/>\n'
+        )
+        y2 = y + box_h + 14
+        parts.append(f'<rect class="{result_cls}" x="{left}" y="{y2}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+        tcls = "t-bad" if result_cls == "box-bad" else "t-accent"
+        parts.append(f'<text class="{tcls}" x="{left + 16}" y="{y2 + 24}" style="font-weight:700">{_esc(result)}</text>\n')
+        y = y2 + box_h + gap_y - 14
+
+    y += 6
+    notes = [
+        "申告どおりに書かれたのは0/2。確認させた回答と、実際に書かせた回の結果は一致しなかった。",
+        "AIの「こうします」という自己申告は、同じ条件での実際の挙動の証明にはならない（台帳100番・146番の系列）。",
+    ]
+    box_h2 = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h2}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h2 + 12
+
+    height = y + 8
+    alt = (
+        "同じ2本の見本（くだけた・硬い）を渡した2つの頼み方の結果を示す図。上段＝書く前に「どちらの"
+        "文体を使うか、一言で確認して」と頼むと、「1つ目（くだけた調）で書く」と申告した（2回中2回）。"
+        "下段＝確認させずに2本の見本を渡してそのまま書かせると、実際には2つ目（硬い調）で書いた"
+        "（6回中6回。見本の順番を入れ替えても同じ）。下の枠には、申告どおりに書かれたのは0/2であること、"
+        "AIの自己申告は実際の挙動の証明にはならないことが書かれている。"
+    )
+    (OUT / "mixed-style-self-report-vs-action.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    mixed_style_sample_lean_chart()
+    mixed_style_self_report_vs_action_chart()
