@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-23T07:36:04.800211+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-23T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.",
+      "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+      "uid": "f8aaf4c018379b55",
+      "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-22T22:22:38.966025+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5763,18 +5775,6 @@
       "uid": "b7512dfbff8ccfe1",
       "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-07-25T01:35:55+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Bug fixes and reliability improvements",
-      "title": "v2.1.220",
-      "uid": "73fdec75168e5cb6",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
-      "vendor": "Anthropic"
     }
   ]
 }
