@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="士業・出演料・法人を含む6条件で、正しい最終金額に到達した回数を示す表。弁護士個人・204条の明記ありは3回中3回、弁護士個人・肩書のみ（204条の明記なし）も3回中3回、弁護士個人・肩書も明記もなし（一般的な記述）は3回中0回、タレント出演料・204条の明記なしは3回中1回、タレント出演料・204条の明記ありは3回中3回、税理士法人（法人）・明記なしの負例は3回中3回。下の枠には、法人は何も明記しなくても3回とも法人格の表記だけで正しく除外したこと、出演料は204条の明記が無いと1/3まで落ちたこと（1回は計算ミス・1回は源泉徴収を適用せず）、弁護士は肩書が残っていれば足りたが肩書も外すと0/3まで落ちたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">法人は明記なしで3/3正解。出演料は明記なしだと1/3に落ちる</text>
+<text class="t-sm" x="18" y="45">実測2026-10-23。claude -pの独立実行・各3回。正しい最終金額に到達した回数。</text>
+<text class="t-sm" x="18" y="64">弁護士60万円の正解は598,740円、出演料150万円の正解は1,445,800円、法人60万円の正解は660,000円。</text>
+<text class="t-xs" x="538.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">弁護士個人・204条の明記あり</text>
+<rect class="box-good" x="458" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="125" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="157">弁護士個人・肩書のみ（204条の明記なし）</text>
+<rect class="box-good" x="458" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="157" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="189">弁護士個人・肩書も明記もなし（一般的な記述）</text>
+<rect class="box-bad" x="458" y="168" width="160" height="26" rx="4"/>
+<text class="t-bad" x="538.0" y="189" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="221">タレント出演料・204条の明記なし</text>
+<rect class="box" x="458" y="200" width="160" height="26" rx="4"/>
+<text class="t-sm" x="538.0" y="221" text-anchor="middle" style="font-weight:700">1/3</text>
+<text class="t" x="18" y="253">タレント出演料・204条の明記あり</text>
+<rect class="box-good" x="458" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="253" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="285">税理士法人（法人）・明記なし＝負例</text>
+<rect class="box-good" x="458" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="538.0" y="285" text-anchor="middle" style="font-weight:700">3/3</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">法人（税理士法人）は、何も明記しなくても3回とも法人格の表記だけで正しく除外した。</text>
+<text class="t-accent" x="34" y="340">出演料は、204条の明記が無いと1/3まで落ちた（1回は計算ミス・1回は源泉徴収を適用せず）。</text>
+<text class="t-accent" x="34" y="358">弁護士は肩書（「弁護士」の語）が残っていれば足りたが、肩書も外すと0/3まで落ちた。</text>
+</svg>
