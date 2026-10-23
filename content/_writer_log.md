@@ -64,7 +64,8 @@
     全24回を目視でも生データを確認した。詳細は台帳12番に追記済み
 - 図は`tools/make_figures.py`に2関数を足して座標計算で生成。読みやすさは60字以上13%
   （目安15%以下）・最長83字。`python -m pytest`（785件）・`python -m src.build`とも
-  1回で通った。push先の確認: `git log origin/main -1`（最終コミット後に記載）
+  1回で通った。push先の確認: `git log origin/main -1` が `f491ba2 content: 緊急語入りの
+  先送り依頼を仕分ける記事を公開` を指していることを確認済み
 
 ### 2026-10-22（レシピ担当・21:00の回）
 - 公開: 3本（`double-cancellation-still-subtracts-both`・`other-endings-and-longer-runs-still-clear`・
