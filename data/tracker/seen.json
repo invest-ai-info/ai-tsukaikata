@@ -37,7 +37,7 @@
   },
   "failures": {
     "anthropic-news": {
-      "count": 16,
+      "count": 17,
       "last_error": "ValueError: 埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）",
       "since": "2026-10-20T18:29:14.936975+00:00"
     }
@@ -52,7 +52,7 @@
     "hf-deepseek": "2026-10-17T02:40:38+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
     "media-cnet-japan": "2026-10-23T13:05:00+00:00",
-    "media-gigazine": "2026-10-23T15:00:00+00:00",
+    "media-gigazine": "2026-10-23T22:00:00+00:00",
     "media-impress-ai": "2026-10-23T09:47:09+00:00",
     "media-itmedia-aiplus": "2026-10-23T13:56:59+00:00",
     "media-publickey": "2026-10-21T15:42:36+00:00",
@@ -94,6 +94,17 @@
       "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
       "uid": "16e0e7fa72abbd5f",
       "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-23T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+      "title": "Securing our frontier model training environment",
+      "uid": "86f71ac045bb0415",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
       "vendor": "OpenAI"
     }
   ],
@@ -1203,6 +1214,7 @@
     "3d4deb0c0546c3c1": "2026-10-21T13:51:14.862036+00:00",
     "3d5549a66b8efe60": "2026-09-18T05:58:12.647888+00:00",
     "3d5a2409a42faae9": "2026-09-18T00:25:04.694205+00:00",
+    "3d5cda267b5bc717": "2026-10-23T22:14:53.874400+00:00",
     "3d741759e38054a1": "2026-09-28T15:33:11.163516+00:00",
     "3d8541522dd69c1b": "2026-09-03T11:20:05.613883+00:00",
     "3d873a997f8cbeed": "2026-10-03T17:59:09.093411+00:00",
@@ -2458,6 +2470,7 @@
     "86cf8d60c93319f2": "2026-08-19T04:02:09.383121+00:00",
     "86e7b4cb4af114d0": "2026-08-17T05:00:16.701147+00:00",
     "86efe4c2263f54d0": "2026-09-28T15:33:11.163516+00:00",
+    "86f71ac045bb0415": "2026-10-23T22:14:53.874400+00:00",
     "86ff561a81d2e1e7": "2026-09-29T08:36:30.590774+00:00",
     "871230368c8f4694": "2026-09-09T19:48:15.908322+00:00",
     "871ef1283adff928": "2026-08-13T12:01:33.145239+00:00",

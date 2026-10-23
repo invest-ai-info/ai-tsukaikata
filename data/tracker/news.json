@@ -37,6 +37,18 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-23T22:14:53.874400+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-23T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+      "title": "Securing our frontier model training environment",
+      "uid": "86f71ac045bb0415",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-23T07:36:04.800211+00:00",
       "importance": "minor",
       "label": "OpenAI News",
