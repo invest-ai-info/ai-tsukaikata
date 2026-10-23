@@ -4132,7 +4132,8 @@
    "description": "今回の動画では、Anthropic から案内された秘書型エージェント「Claude Duet」について、公式の動画やスクリーンショットを見ながら解説しました。\nGrok Bot や ChatGPT Dots の Claude 版のような位置づけで、中身のモデルは Opus 5.5。いつもの Claude アプリのコネクタやメモリ、スキルを引き継げて、クラウド上の専用PCで動くので PC を閉じていても仕事が進むのが良いポイントです。\n実際に触れたらまた動画にする予定です。\n皆さんは Claude Duet、使ってみたいと思いましたか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 オープニング - Claude Duet とは\n01:36 研究プレビュー開始と Opus 5.5\n02:12 安全面の工夫と提供範囲\n02:36 公式動画: 向こうから届く通知\n03:37 ルーチン機能と先回りの下書き\n04:06 PCを閉じても仕事が進む\n04:35 Claude Code のボリス氏も日常使い\n04:57 丸投げ・資料作成と Stripe の Link\n05:51 Grok Bot ほどの自由度はあるか\n06:34 まとめ - Claude Duet の嬉しい点\n07:29 メンバーシップ勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 0
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
    "video_id": "20IRGgQwPkc",
@@ -4145,7 +4146,8 @@
    "description": "V7 Go organizes company files into a Context Graph that agents can query to screen investment deals and support insurance underwriting. On V7’s hardest graph-query tests across thousands of documents, GPT-6 Astra reached 89% accuracy.\n\nRead the full story: https://openai.com/index/v7/",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 0
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
    "video_id": "6Qw0Go0A8vM",
@@ -4168,10 +4170,9 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=RaI0k8EJYt\n※もしLINE登録が上手く行かない方は「@866enevi」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🎁【紙や画像を商品にする副業、こちらも見てみてください】\n今日は麻雀会で使う印刷キットの話でした。\n早見表や手帳など、使う人を決めて形にする回をまとめました↓\n\n▼仕事で身についた見分け方を、早見表に。長年の経験をAIで商品にする回\nhttps://youtu.be/U9x_Xtc7deI\n\n▼買った人が自宅で印刷する、もうひとつの副業。家族のためのライフバインダー作り\nhttps://youtu.be/eZRiR5rwv1U\n\n▼Canvaで作るテンプレートを、必要とする相手へ。作り方と売り方をまとめた回\nhttps://youtu.be/cPuSseF95jc\n\n▼遊ぶ人の目線で絵を作ると、売れ方はどう変わる？AIジグソーパズルの回\nhttps://youtu.be/vyYsdD1DRVE\n\n▼遊ぶ人が気持ちよく正解できる本へ。AIで作る間違い探し本の回\nhttps://youtu.be/UVzVVRf2yUo\n\n▼画像をテレビに飾る商品に。データ販売で月87万に届いた回\nhttps://youtu.be/G5MpQKyP_uc\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=RaI0k8EJYt\n\n--------------------------\n\n【動画の目次】\n\n00:00 麻雀会の印刷キットを海外に売る。今日作るものと使う道具\n01:49 母には私がいる。じゃあ自分の番が来たら誰が来てくれるのか\n02:51 実演だけ真似すると踏む落とし穴。売れた後に困らないための前置き\n06:20 母の介護で外に働きに出られない。元歯科衛生士が副業を始めた事情\n08:04 貯金があるのに通帳を開くのが怖い。毎月減っていく家計の計算\n09:32 介護の合間に使える時間を数える。何も残さない未来と、作り置く未来\n11:14 作って置いたのに売れない。商品を丸ごと消しかけた朝\n12:45 作り直していないキ",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
-   "status": "pending",
-   "attempts": 2,
+   "status": "failed",
+   "attempts": 3,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4185,94 +4186,94 @@
    "description": "Following a 1,000-person pilot, Uber is bringing ChatGPT Work to more than 30,000 employees worldwide in its first company-wide deployment of an agentic platform for knowledge work.\n\nUber CTO Praveen Neppalli Naga and OpenAI co-founder and President Greg Brockman discuss expanding AI beyond engineering and helping teams rethink entire workflows.\n\nRead more about Uber’s rollout of ChatGPT Work: https://openai.com/index/uber-chatgpt-work-rollout/",
    "first_seen": "2026-10-22T21:53:46.304277+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
+   "last_ok": "2026-10-23T05:17:30.820769+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
+   "last_ok": "2026-10-23T05:17:30.820769+00:00",
    "fail_streak": 0
   },
   "claude": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
+   "last_ok": "2026-10-23T05:17:30.820769+00:00",
    "fail_streak": 0
   },
   "haruto": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "starter-story": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "greg-isenberg": {
    "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   }
  }
 }
