@@ -4199,7 +4199,7 @@
    "description": "Google公式ポストで紹介された「Gemini 4 Argon」の活用法を早速実践！\n\n難解な「自治体向け情報セキュリティガイドライン（PDF）」を「インタラクティブWebアプリ」やスライドへ自動変換してみました！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:03 「Gemini 4 Argon」とは\n02:14 公式Xポスト\n03:42 PDFからインタラクティブなサイトを作る\n06:01 アニメーションスライド\n06:54 まとめ\n08:40 ゆるトーク\n\n【公式ソース：Canvas×Gemini 4 Argon】\nhttps://x.com/GeminiApp/status/2111147479248855484?s=20\n\n【公式ソース：Gemini 4 Argon: Built to solve your hardest problems】\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
    "first_seen": "2026-10-23T12:01:49.260887+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4213,93 +4213,121 @@
    "description": "今回の動画では、Meta のパーソナル AI エージェント「Muse」が日本でも公開されたので、実際に触りながら解説しました\n\nInstagram や Messenger、Meta ビジネスマネージャーとコネクタでつながり、「誰と最後に連絡したか」「返信漏れはないか」といった確認を任せられるのが大きな強みですね。\n1 人 1 台のクラウド PC の中で動き、外への通信を見張るエージェント「センチネル」が承認しない限りネットに出ない、という安全の仕組みも面白いところでした。\n僕が特に好きなのは、システムファイルから IDENTITY.md、MEMORY.md、HEARTBEAT などを直接見て書き換えられる点です。Grok Bot よりもエージェントの中身に手を入れやすい作りになっています。無料から始められるので、まだエージェントに慣れていない方にも試しやすいと思います。\n\nMuse を使ってみた感想や、Grok Bot とどう使い分けるかなど、ぜひコメント欄で教えてください！\n\n📚 3DAYS 勉強会はこちら\nhttps://utage-system.com/p/WZrfosEK86Pu\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 オープニング - Meta の Muse が日本上陸\n01:16 Muse の始め方とアプリの UI\n01:52 エージェントからの提案と買い物機能\n02:52 アバター変更とアイデアタブ\n03:59 内蔵ブラウザと購入前の承認\n05:07 Muse Charm と音声・動画入力\n05:39 仕組み - 1人1台の VM とセンチネル\n07:02 Muse Spark 1.3・VM の中身・料金\n08:23 コネクタ連携 - Instagram・Messenger\n09:33 システムファイルでハーネスに介入\n10:30 サブチャット・目標・ルーティーン\n13:08 Grok Bot との比較とまとめ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めた",
    "first_seen": "2026-10-23T12:01:49.260887+00:00",
    "status": "pending",
+   "attempts": 2,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "wUeDaCeMrdM",
+   "title": "【今すぐ！】セキュリティのあれこれを対応しましょ！あと1passwordを導入しよう",
+   "url": "https://www.youtube.com/watch?v=wUeDaCeMrdM",
+   "published": "2026-10-23T12:00:24+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "description": "Claude CodeやCodexを使う方に向けて、今すぐ確認したいセキュリティ対策をまとめました。PHP・WordPressの確認、Node.jsやChromeの更新、AIによるチェック、1PasswordでのAPIキー管理、パスキー設定まで紹介。対策を後回しにしていた方は、PCやサイト、アカウントを見直すきっかけにしてください。皆さんの対策もコメントで教えてください。\n\n▼PHPチェック\nhttps://web.realaize.jp/phpcheck\n▼Cloudflareのセキュリティスキル\nhttps://github.com/cloudflare/security-audit-skill\n▼OpenAI php2shell-checker\nhttps://github.com/openai/php2shell-checker\n▼Nodejsの更新方法（こまめさん）\nhttps://ai-sns.com/nodejs/\n▼KEITOの公式LINEはこちら\nhttps://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 PHP・WordPressを使っているか確認\n02:15 WordPressからの移行という選択肢\n02:42 Node.jsの確認とアップデート\n06:14 Chrome・Pythonなどの更新\n07:21 AIを使ったセキュリティチェック\n08:10 自作のチェックスキルと配布案内\n09:29 AIエージェントの実行権限と秘密鍵の管理\n10:10 僕が1Passwordを導入した理由\n11:31 パスワード・APIキー・SSHキーの管理\n13:25 パスキー・2段階認証でアカウントを守る\n14:43 コメント募集とお知らせ\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nAIエージェントから情報が漏れる理由と今すぐできる対策\nhttps://youtu.be/xhm4jlXtzMU\nChatGPT Codex AI活用【総まとめ】\nhttps://youtu.be/NImFdpHOSPA\nChatGPT Work完全解説動画\nhttps://youtu.be/U74PHw-h59Q\nChatGPTをもっと便利に使いこなすAI活用術\nhttps://youtu.be/jSjjWKChnVA\n『Codex App Server』って神機能を解説\nhttps://youtu.be/4ZZexI0awQk\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂",
+   "first_seen": "2026-10-23T17:24:32.475980+00:00",
+   "status": "pending",
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "N6FkmdL0Lg0",
+   "title": "How Factory is building autonomous software with Claude",
+   "url": "https://www.youtube.com/watch?v=N6FkmdL0Lg0",
+   "published": "2026-10-23T16:09:38+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "description": "Factory is bringing autonomy to software engineering with Droids, AI coding agents that handle enterprise work. In this conversation, Co-founder and CEO Matan Grinberg sits down with Anthropic's Kai Gill to talk about his journey founding Factory, how Claude's frontier models handle long-horizon tasks across large codebases so teams can trust agent plans with less oversight, and what it will take to build a fully autonomous \"dark factory\" for software.\n\nRead the full story: http://claude.com/customers/factory\n\nChapters:\n0:00 Intro\n0:19 From string theory to founding Factory\n1:48 The mission: autonomy for software engineering\n2:22 Lessons from being too early\n2:58 Droids and the \"dark factory\"\n4:09 A COBOL modernization with 90% less human effort\n4:58 When Droids need frontier models\n5:29 What Opus unlocks: less human oversight\n6:31 Shipping 300 things and rethinking what matters\n7:11 The Anthropic partnership\n8:12 What's blocking the dark factory\n9:31 Advice for would-be founders",
+   "first_seen": "2026-10-23T17:24:32.475980+00:00",
+   "status": "pending",
    "attempts": 1,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "last_ok": "2026-10-23T17:24:32.475980+00:00",
    "fail_streak": 0
   }
  }
