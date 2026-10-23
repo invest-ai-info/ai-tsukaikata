@@ -4132,7 +4132,7 @@
    "description": "今回の動画では、Anthropic から案内された秘書型エージェント「Claude Duet」について、公式の動画やスクリーンショットを見ながら解説しました。\nGrok Bot や ChatGPT Dots の Claude 版のような位置づけで、中身のモデルは Opus 5.5。いつもの Claude アプリのコネクタやメモリ、スキルを引き継げて、クラウド上の専用PCで動くので PC を閉じていても仕事が進むのが良いポイントです。\n実際に触れたらまた動画にする予定です。\n皆さんは Claude Duet、使ってみたいと思いましたか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 オープニング - Claude Duet とは\n01:36 研究プレビュー開始と Opus 5.5\n02:12 安全面の工夫と提供範囲\n02:36 公式動画: 向こうから届く通知\n03:37 ルーチン機能と先回りの下書き\n04:06 PCを閉じても仕事が進む\n04:35 Claude Code のボリス氏も日常使い\n04:57 丸投げ・資料作成と Stripe の Link\n05:51 Grok Bot ほどの自由度はあるか\n06:34 まとめ - Claude Duet の嬉しい点\n07:29 メンバーシップ勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
    "status": "pending",
-   "attempts": 1,
+   "attempts": 2,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   },
   {
@@ -4183,97 +4183,124 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Following a 1,000-person pilot, Uber is bringing ChatGPT Work to more than 30,000 employees worldwide in its first company-wide deployment of an agentic platform for knowledge work.\n\nUber CTO Praveen Neppalli Naga and OpenAI co-founder and President Greg Brockman discuss expanding AI beyond engineering and helping teams rethink entire workflows.\n\nRead more about Uber’s rollout of ChatGPT Work: https://openai.com/index/uber-chatgpt-work-rollout/",
    "first_seen": "2026-10-22T21:53:46.304277+00:00",
+   "status": "failed",
+   "attempts": 3,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "zxYnXd4Za9M",
+   "title": "【検証】「Gemini 4 Argon×Canvas」で動くWebアプリ&スライドを生成！",
+   "url": "https://www.youtube.com/watch?v=zxYnXd4Za9M",
+   "published": "2026-10-23T09:00:15+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "Google公式ポストで紹介された「Gemini 4 Argon」の活用法を早速実践！\n\n難解な「自治体向け情報セキュリティガイドライン（PDF）」を「インタラクティブWebアプリ」やスライドへ自動変換してみました！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:03 「Gemini 4 Argon」とは\n02:14 公式Xポスト\n03:42 PDFからインタラクティブなサイトを作る\n06:01 アニメーションスライド\n06:54 まとめ\n08:40 ゆるトーク\n\n【公式ソース：Canvas×Gemini 4 Argon】\nhttps://x.com/GeminiApp/status/2111147479248855484?s=20\n\n【公式ソース：Gemini 4 Argon: Built to solve your hardest problems】\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-10-23T12:01:49.260887+00:00",
    "status": "pending",
-   "attempts": 2,
+   "attempts": 1,
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+  },
+  {
+   "video_id": "LpmBcALir8M",
+   "title": "【世界で話題】MetaのAIエージェント「Muse」が遂に日本公開！Instagram・Messenger連携やハーネス設計を解説",
+   "url": "https://www.youtube.com/watch?v=LpmBcALir8M",
+   "published": "2026-10-23T09:15:01+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Meta のパーソナル AI エージェント「Muse」が日本でも公開されたので、実際に触りながら解説しました\n\nInstagram や Messenger、Meta ビジネスマネージャーとコネクタでつながり、「誰と最後に連絡したか」「返信漏れはないか」といった確認を任せられるのが大きな強みですね。\n1 人 1 台のクラウド PC の中で動き、外への通信を見張るエージェント「センチネル」が承認しない限りネットに出ない、という安全の仕組みも面白いところでした。\n僕が特に好きなのは、システムファイルから IDENTITY.md、MEMORY.md、HEARTBEAT などを直接見て書き換えられる点です。Grok Bot よりもエージェントの中身に手を入れやすい作りになっています。無料から始められるので、まだエージェントに慣れていない方にも試しやすいと思います。\n\nMuse を使ってみた感想や、Grok Bot とどう使い分けるかなど、ぜひコメント欄で教えてください！\n\n📚 3DAYS 勉強会はこちら\nhttps://utage-system.com/p/WZrfosEK86Pu\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 オープニング - Meta の Muse が日本上陸\n01:16 Muse の始め方とアプリの UI\n01:52 エージェントからの提案と買い物機能\n02:52 アバター変更とアイデアタブ\n03:59 内蔵ブラウザと購入前の承認\n05:07 Muse Charm と音声・動画入力\n05:39 仕組み - 1人1台の VM とセンチネル\n07:02 Muse Spark 1.3・VM の中身・料金\n08:23 コネクタ連携 - Instagram・Messenger\n09:33 システムファイルでハーネスに介入\n10:30 サブチャット・目標・ルーティーン\n13:08 Grok Bot との比較とまとめ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めた",
+   "first_seen": "2026-10-23T12:01:49.260887+00:00",
+   "status": "pending",
+   "attempts": 1,
    "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-23T05:17:30.820769+00:00",
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-23T05:17:30.820769+00:00",
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-23T05:17:30.820769+00:00",
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-22T21:53:46.304277+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-23T12:01:49.260887+00:00",
+   "fail_streak": 0
   }
  }
 }
