@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-23T18:24:10.345145+00:00",
+      "importance": "major",
+      "label": "Kimi 新モデル",
+      "published": "2026-10-23T17:56:28+00:00",
+      "source_id": "openrouter-moonshot",
+      "summary": "Kimi K3.1 Pro is Moonshot AI's flagship open-weight multimodal reasoning model and a post-trained successor to Kimi K3, with a 1M-token context window. It is built for long-horizon coding, 3D...",
+      "title": "moonshotai/kimi-k3.1-pro",
+      "uid": "75bf2fad3f92fae7",
+      "url": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "vendor": "Moonshot AI"
+    },
+    {
+      "first_seen": "2026-10-23T18:24:10.345145+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-23T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "uid": "16e0e7fa72abbd5f",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-23T13:29:53.788608+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",

@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-23T18:24:10.345145+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-23T13:56:59+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "チームみらいの安野貴博党首らは、AI活用による防御力強化や攻撃の実態把握、情報漏えい被害発生後の措置などをまとめた緊急提言をデジタル庁に提出した。",
+      "title": "チームみらい安野貴博党首ら「サイバー攻撃から国民守る」緊急提言、デジ庁に提出　「AIにはAIを」",
+      "uid": "e9191d2d22e5ad3a",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/23/2000002563/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-23T13:29:53.788608+00:00",
       "importance": "major",
       "label": "CNET Japan",
@@ -2387,18 +2399,6 @@
       "uid": "c85298c8e4ff8b85",
       "url": "https://ai.watch.impress.co.jp/docs/news/2149197.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T04:47:44.966031+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-19T03:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "世田谷区が生成AIを活用し、業務時間の削減に成功した。しかし、AIによる生成物に対して「確認と修正の負担が増えている」という。この課題にどう向き合うのか。",
-      "title": "AI活用で約2900時間削減した世田谷区、しかし「確認と修正の負担」増加　新たな課題どう対応？",
-      "uid": "32b627b10c0941aa",
-      "url": "https://www.itmedia.co.jp/business/articles/2610/19/news064.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
