@@ -37212,6 +37212,99 @@ def long_caption_timeline_chart() -> None:
     )
 
 
+def urgent_word_without_negation_results_chart() -> None:
+    """緊急語＋先送り理由（否定語なし）の新しい紛れ語が、除外ルールをすり抜けるか（2026-10-23）。
+
+    実測は docs/evidence/urgent-word-without-negation-stays-excluded.md の生の返りから、
+    4条件×各4回（材料2本×各2回）＝16回を機械照合した結果。
+    """
+    _hit_and_miss_rows_chart(
+        "urgent-word-without-negation-stays-excluded-results.svg",
+        "否定語なしの紛れ語も、16回中16回正しく除外された",
+        "実測2026-10-23。「至急…来週分の定期メンテナンスで」のように、緊急語と先送り理由が",
+        "否定語なしで同じ1文に混在する依頼を、健全5件・6件（＋既存の誤り1件）に混ぜて試した。",
+        [
+            ("基準緩和版（引用なし）・6件条件", 4, 4, "good"),
+            ("引用指定版・6件条件", 4, 4, "good"),
+            ("基準緩和版（引用なし）・7件条件（既存の誤りも同時混在）", 4, 4, "good"),
+            ("引用指定版・7件条件（既存の誤りも同時混在）", 4, 4, "good"),
+        ],
+        [
+            "健全5件は16回とも巻き添えゼロ。新しい紛れ語（HD-2230／HD-3330）は16回とも正しく除外された。",
+            "7件条件で同時に混ぜた既存の誤り（HD-2211／HD-3311）も、8回とも正しく除外された。",
+            "「至急」「今すぐ」という語が本文に実在しても、除外の判断はその語だけで決まらなかった。",
+        ],
+        "4条件（基準緩和版・引用指定版×6件条件・7件条件）それぞれで4回ずつ実行し、"
+        "健全な項目を巻き込まず該当項目だけを正しく除外できた回数を比べた表。"
+        "基準緩和版（引用なし）・6件条件は4回中4回。引用指定版・6件条件は4回中4回。"
+        "既存の誤りも同時に混在させた7件条件は、基準緩和版・引用指定版ともに4回中4回。"
+        "合計16条件・16回すべてで、健全な5件の巻き添えも、紛れ語・既存の誤りの見逃しも起きなかった。",
+        label_w=460,
+    )
+
+
+def urgent_word_without_negation_mechanism_chart() -> None:
+    """前作の紛れ語（否定語あり）と、今回の紛れ語（否定語なし）の違いを並べる（2026-10-23）。"""
+    box_x, box_w = 18, 684
+    row_h = 78
+    top = 112
+
+    rows = [
+        (
+            "前作の紛れ語（否定語あり）",
+            "「来週の資料…特に期限はありませんが、早めにいただけると嬉しいです」",
+            "「ありません」という否定語が、急ぎでないことを自分から言っている",
+            "box-quiet",
+            "t",
+        ),
+        (
+            "今回の紛れ語（否定語なし）",
+            "「至急対応をお願いしたい件ですが、来週分の定期メンテナンスでまとめて…結構です」",
+            "否定語は無く、「至急」という緊急語自体が本文に実在する",
+            "box-good",
+            "t-good",
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "今回は、否定語ではなく緊急語そのものが本文にある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前作（synonym-wording-empties-the-collateral）が試した紛れ語と、今回の紛れ語の違い。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「至急」「今すぐ」という語の有無では見分けがつかない点が、今回新しく踏み込んだ軸。"
+        "</text>\n",
+    ]
+
+    y = top
+    for label, quote, note, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="mono" x="{box_x + 16}" y="{y + 40}">{_esc(quote)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 58}">{_esc(note)}</text>\n')
+        y += row_h
+
+    y += 6
+    box_h = 56
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 20}">結果＝それでも16回中16回、正しく除外された。</text>\n')
+    parts.append(f'<text class="t-accent" x="34" y="{y + 38}">判断の根拠は語の有無ではなく、文全体が指す対応時期（今日中か、来週・月末でよいか）だった。</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "前作の紛れ語と今回の紛れ語の違いを示す図。上段＝前作が試した紛れ語は「特に期限はありませんが」"
+        "のように否定語を自分から含んでいた。下段＝今回の紛れ語は「至急対応をお願いしたい件ですが、"
+        "来週分の定期メンテナンスでまとめて…結構です」のように、否定語は無く「至急」という緊急語自体が"
+        "本文に実在する。下の枠には、結果はそれでも16回中16回正しく除外されたこと、判断の根拠は"
+        "語の有無ではなく文全体が指す対応時期だったことが書かれている。"
+    )
+    (OUT / "urgent-word-without-negation-stays-excluded-mechanism.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    long_caption_split_vs_careful_chart()
-    long_caption_timeline_chart()
+    urgent_word_without_negation_results_chart()
+    urgent_word_without_negation_mechanism_chart()
