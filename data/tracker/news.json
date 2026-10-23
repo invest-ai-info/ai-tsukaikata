@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-23T13:29:53.788608+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-23T13:10:10+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add support for message threads api: add usage and cost reports by dimension, mark older reports legacy Bug Fixes client: stop suggesting math.inf in the max_retries error message tools…",
+      "title": "v2.2.0",
+      "uid": "c73fd742c143ff34",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.2.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-23T07:36:04.800211+00:00",
       "importance": "minor",
       "label": "OpenAI News",
