@@ -62,52 +62,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-22T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-10-22T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "オントロジーを基盤に、意思決定・実行を支援するAIエージェントプラットフォーム「Sakana Aquarium」",
-      "uid": "c9cfbd0958c0ba8c",
-      "url": "https://sakana.ai/aquarium-release/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-23T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.",
-      "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
-      "uid": "f8aaf4c018379b55",
-      "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-23T17:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-      "uid": "16e0e7fa72abbd5f",
-      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-10-23T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
-      "title": "Securing our frontier model training environment",
-      "uid": "86f71ac045bb0415",
-      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
