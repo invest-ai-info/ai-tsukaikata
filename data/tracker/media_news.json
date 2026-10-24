@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-24T23:18:47.234148+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-24T22:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米ビンガムトン大学の研究チームは、事前に改ざんしたAIを使い、指示に「CF」を加えると、ロボットが切る対象を果物の模型から手の模型へ変える実験を公開した。同大学が10月20日、AIにロボットの行動計画を任せる際の安全性研究として紹介した。",
+      "title": "「たった2文字」でAIロボットが豹変、果物ではなく「ヒトの手」を切ってしまう--米研究",
+      "uid": "77666ab78425f59d",
+      "url": "https://japan.cnet.com/article/35253926/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-24T14:35:39.650619+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -59,6 +71,18 @@
       "uid": "147c6a276876bfe4",
       "url": "https://www.itmedia.co.jp/news/article/2610/24/2000002564/",
       "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-24T23:18:47.234148+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-23T22:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは10月23日、開発中の最先端AIの訓練で、モデルをインターネットに接続させない方針を導入したと発表した。ウェブの検索や閲覧は、あらかじめ保存したコンテンツを使う環境で学習させる。",
+      "title": "OpenAI、先端モデル訓練でネット接続を禁止　広大な「オフラインの世界」を構築",
+      "uid": "1cd762189e315080",
+      "url": "https://japan.cnet.com/article/35253920/",
+      "vendor": "CNET Japan"
     },
     {
       "first_seen": "2026-10-23T18:24:10.345145+00:00",
@@ -2375,30 +2399,6 @@
       "uid": "2c858472a8e2ecbc",
       "url": "https://gigazine.net/news/20261019-employment-at-anthropic/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-19T05:21:54+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Meta AI Researchは10月15日、オープンウェイトのAIモデル「Muse Spark Open」の提供を開始した。現在、Together AI、Fireworks AI、GroqといったAPIプラットフォームを通じて利用可能。モデルの重みは、Amazon SageMaker AI、Google Cloud Model Garden、Hugging Face、Microsoft Fo…",
-      "title": "Meta、8,160億パラメータのオープンモデル「Muse Spark Open」",
-      "uid": "6cf905a506cb81b2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149274.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-19T05:04:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LINE Digital Frontierは10月19日、電子コミックサービス「LINEマンガ」において、AIストーリーチャット「byUs（バイアス）」をリリースした。",
-      "title": "公式キャラと新たな物語を紡ぐ。「LINEマンガ」、AIチャット「byUs」開始",
-      "uid": "67fc68738ab4577e",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149258.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
