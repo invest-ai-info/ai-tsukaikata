@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-24T14:35:39.650619+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-24T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "zg(zvec-grep)はAlibaba製のベクトルデータベース「zvec」を基盤とする、ripgrep・BM25・ベクトル検索を統合したローカルファーストな検索レイヤーです。ターミナルから直接使うことも、AIエージェントから利用することも可能です。 続きを読む...",
+      "title": "人間とAIエージェント両方のために設計されたワークスペース全体を対象としたローカルファースト検索「zg」",
+      "uid": "4ee8eb0185d2808a",
+      "url": "https://gigazine.net/news/20261024-zvec-grep/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-24T11:08:22.559162+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2387,18 +2399,6 @@
       "uid": "67fc68738ab4577e",
       "url": "https://ai.watch.impress.co.jp/docs/news/2149258.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-19T05:03:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "オープンソースのAIプログラミングツール「OpenCode」の運営元が2026年10月17日に不正アクセスを受けたことを明らかにしました。OpenAIやAnthropicなどのAIサービスを利用するためのAPIキーが漏えいした可能性があり、一部のユーザーからは身に覚えのないAI利用料金が発生したとの報告も上がっています。 続きを読む...",
-      "title": "AIプログラミングツール「OpenCode」でAPIキー流出の可能性、OpenAIやClaudeの利用残高が不正利用でゼロになったとの報告も",
-      "uid": "0cd269abf1347ebe",
-      "url": "https://gigazine.net/news/20261019-opencode-leak/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
