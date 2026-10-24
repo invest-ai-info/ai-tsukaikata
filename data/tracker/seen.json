@@ -37,9 +37,14 @@
   },
   "failures": {
     "anthropic-news": {
-      "count": 21,
+      "count": 22,
       "last_error": "ValueError: 埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）",
       "since": "2026-10-20T18:29:14.936975+00:00"
+    },
+    "deepmind-blog": {
+      "count": 1,
+      "last_error": "0件",
+      "since": "2026-10-24T18:11:20.840043+00:00"
     }
   },
   "latest": {
