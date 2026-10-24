@@ -4252,11 +4252,21 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "At Realpage., Austin Braham creates AI training for different teams, roles and skill levels. He uses ChatGPT Work to turn ideas, notes and source materials into complete enablement packages tailored to each audience. The result is more relevant, consistent education that helps colleagues put AI to work in their everyday jobs.",
    "first_seen": "2026-10-23T21:37:40.590534+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 1,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "tech",
+   "summary": [
+    "RealPageのオースティン氏が、社内向けAI研修の作成にChatGPT Workを活用している事例を紹介している。",
+    "アイデアやメモ、元資料をもとに、異なる職種やスキルレベルに合わせた研修教材パッケージを生成していると説明している。",
+    "ChatGPT Workを使うことで、日常業務に直結した一貫性のあるAI教育を効率的に提供できると述べている。"
+   ],
+   "for_whom": "社内向けのAI研修資料や業務トレーニング教材を効率的に作成したい人事・研修担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-24T16:13:11.768049+00:00"
   },
   {
    "video_id": "m6MlxaFMmPI",
@@ -4266,11 +4276,21 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "When someone can’t log in or get online, their IT team often has to put other work on hold. Shield is building Forge to help IT services teams get their customers back to work faster. Its AI agents use Astra to work directly in business software and resolve problems that previously needed a technician.\n\nShield reports that OpenAI’s model navigates and acts in software 35–40% faster on average than earlier models. The bigger change is where technicians spend their time: handling harder problems that need their judgment, while agents take on more routine fixes.",
    "first_seen": "2026-10-23T21:37:40.590534+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 1,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "tech",
+   "summary": [
+    "Shield社がOpenAIのAstraを活用したITサービス向けAI OS「Forge」を開発していると紹介している。",
+    "AIがPCや管理画面を直接操作して問題を解決し、従来より平均35〜40%高速に対処可能になったと説明している。",
+    "人間の技術者は判断を要する高度な問題に集中できるようになり、顧客満足度も向上したと述べている。"
+   ],
+   "for_whom": "ITサポートやヘルプデスク業務のAI自動化を検討している情シス担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-24T16:13:11.768049+00:00"
   },
   {
    "video_id": "V39_L7uh66M",
@@ -4280,11 +4300,21 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "AT&T’s David McAtee and Bill Ryan describe how AI is changing their legal team’s work—and what they plan to build with OpenAI next.\n\nOne initiative is a natural-language intake system that would classify and prioritize legal matters, then connect them with relevant knowledge. The aim is to put better information in lawyers’ hands and give them more time for strategy and judgment. Decision-making remains with the lawyers.",
    "first_seen": "2026-10-23T21:37:40.590534+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 1,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "news",
+   "summary": [
+    "AT&Tの法務部門がOpenAIと連携し、AIを活用した法務サービス「LegalEdge」などの取り組みを進めていると述べている。",
+    "自然言語による相談受付システムを構築し、案件の分類や優先度判定、関連ナレッジの紐付けを目指していると説明している。",
+    "最終的な意思決定は弁護士が行い、AIはより良い情報を提供して判断の質を高めるための思考パートナーだと強調している。"
+   ],
+   "for_whom": "企業法務やバックオフィス業務での生成AI活用事例を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-24T16:13:11.768049+00:00"
   },
   {
    "video_id": "CTkDi1THc_g",
@@ -4380,91 +4410,114 @@
    "first_seen": "2026-10-24T11:33:22.173837+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "aCL2SgGIl90",
+   "title": "【スキルゼロOK】Claude×Threadsで稼ぐまでの5ステップを初心者向けに完全解説",
+   "url": "https://www.youtube.com/watch?v=aCL2SgGIl90",
+   "published": "2026-10-24T14:14:05+00:00",
+   "channel_key": "honami",
+   "channel_name": "ほなみ【在宅ワーク・副業のトリセツ】",
+   "default_category": "earn",
+   "first_seen": "2026-10-24T16:13:11.768049+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Claudeを使ってThreadsのアカウント設計から発信ジャンル、自己紹介文の作成までを対話形式で進める手順を解説している。",
+    "楽天アフィリエイトと連携し、商品情報や使いたい場面のイメージをもとにClaudeで投稿文とリプ欄のテキストを作成する流れを紹介している。",
+    "未購入の商品でも関心を持った点や特徴を整理して自然な文章で紹介し、商品リンクへ誘導して収益化を目指す手法を説明している。"
+   ],
+   "for_whom": "AIツールを活用してThreadsで物販アフィリエイト副業を始めたい未経験者",
+   "caution": "出演者が月収60万円を達成したと主張していますが客観的な証拠は示されていません。また、プロンプトの無料配布を理由に公式LINEへの登録へ誘導している点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-24T16:13:11.768049+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-24T11:33:22.173837+00:00",
+   "last_ok": "2026-10-24T16:13:11.768049+00:00",
    "fail_streak": 0
   }
  }
