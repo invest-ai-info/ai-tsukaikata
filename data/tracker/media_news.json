@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-24T11:08:22.559162+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-24T10:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "グーグルは、GmailやGoogleフォトなどのデータを使って利用者に合わせた広告を表示する場合があると、10月16日付のプライバシーポリシーに明記した。広告の個人化に対応する他のGoogleサービスへのデータ連携を、利用者が許可した場合が対象となる。",
+      "title": "Google、「Gmail」などの内容を広告に利用できると明記　本人の同意前提で規約変更",
+      "uid": "56bd68fe6cceb9dc",
+      "url": "https://japan.cnet.com/article/35253919/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-24T00:47:21.407180+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "0cd269abf1347ebe",
       "url": "https://gigazine.net/news/20261019-opencode-leak/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-19T04:25:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "人間とAIエージェントが協働してどのように成果を上げ、目標を達成するか。そのマネジメントはプロジェクト管理の手法で担えないか――。NTTテクノクロスの取り組みから発想したことについて考察する。",
-      "title": "AIエージェントの業務管理、答えは「プロジェクト管理」にある？　NTTテクノクロスの「AI-PMO」構想を基に考察",
-      "uid": "089620cc31469e0d",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/19/news068.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
