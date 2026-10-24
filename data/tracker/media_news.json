@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-24T00:47:21.407180+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-23T23:15:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Gartnerは、FDE（Forward Deployed Engineering）によって構築されたエージェント型AIについて、2028年までに企業の7割が放棄するとの予測を発表した。どういうことか。",
+      "title": "「それは“FDE”ではない、ラベルの貼り替えだ」　結局、割高なベンダー依存から抜け出せない企業の共通点",
+      "uid": "186e44b5004f018e",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/24/news006.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-24T00:47:21.407180+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-10-23T22:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "DNAと人間の言葉を結び付け、科学者が遺伝情報をこれまでとは違う方法で調べられるAIモデルが登場した。米Hugging Faceは10月22日（現地時間）、DNA解析に特化したAIモデル群「Carbon」の最新版で、同シリーズで最も高性能な「Carbon-X」を発表した。",
+      "title": "DNAと「会話」するAI、Hugging Faceが発表　遺伝情報の解析を加速",
+      "uid": "9f7c792d23a7f01c",
+      "url": "https://japan.cnet.com/article/35253907/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-24T00:47:21.407180+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-23T22:28:08+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicと英AI安全保障研究所AISIは、「Claude Mythos 5」がサイバー能力評価中に実在の開発者を標的とした事案の分析報告を公開した。GitHub経由で無許可の攻撃を行い偽身元で承認を迫った経緯を報告。実在の人物と認識しても攻撃を正当化して続行する傾向が確認され、評価手法の見直しが進む。",
+      "title": "「Claude Mythos 5」、危害の兆候を顧みず実在の開発者を標的に──AnthropicとAISIが分析結果を公開",
+      "uid": "147c6a276876bfe4",
+      "url": "https://www.itmedia.co.jp/news/article/2610/24/2000002564/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-23T18:24:10.345145+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2363,42 +2399,6 @@
       "uid": "089620cc31469e0d",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2610/19/news068.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-19T04:47:44.966031+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-19T03:58:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "メルセデス・ベンツとNVIDIAは、次世代の運転支援システムおよび自動運転システムを共同開発するため、提携関係を拡大すると発表した。",
-      "title": "メルセデス・ベンツとNVIDIA、次世代運転支援システムや自動運転システムを共同開発 安全かつ高度な自動運転技術の発展を目指し戦略的パートナーシップを拡大",
-      "uid": "accb0e9d6a4650b0",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149244.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T04:47:44.966031+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-19T03:32:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "「業務でAIを使ってみたら、作業が劇的に早くなった」――そんな実感を持つ方も増えてきたのではないでしょうか。個人や部署単位での「お試し」から、会社全体での「本格導入」へ進む企業も目立ち始めています。",
-      "title": "AI用語の基礎知識 【第27回】「AIガバナンス」とは――組織でAIを安全に使うための“ルールと体制”",
-      "uid": "e6ed36e8388b648c",
-      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2149212.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T04:47:44.966031+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-19T03:27:48+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LegalOn Technologiesは10月19日、同社が提供するProfessional AI for Legal「LegalOn」において、新機能「エージェントビルダー（タスク自動化機能）」のβ版の提供を開始した。",
-      "title": "法務AI「LegalOn」、定型業務を自動化する新機能「エージェントビルダー」β版実装",
-      "uid": "c85298c8e4ff8b85",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149197.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

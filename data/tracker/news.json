@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-24T00:47:21.407180+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-23T23:39:00+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added the Monitor tool and plugin monitors on Bedrock, Vertex, and Foundry, and when telemetry or nonessential traffic is disabled; long foreground sleeps are now blocked there too Fix…",
+      "title": "v2.1.310",
+      "uid": "fcc65cdebd05088d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-10-24T00:47:21.407180+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-10-23T23:18:22+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add Claude Tag endpoints for Claude Enterprise organizations Bug Fixes google-cloud: send user profiles requests to the organization endpoint Chores client: stop sending query params ha…",
+      "title": "v2.3.0",
+      "uid": "a093ded076ccfc1c",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.3.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-23T18:24:10.345145+00:00",
       "importance": "major",
       "label": "Kimi 新モデル",
