@@ -37625,3 +37625,149 @@ def invoice_single_vs_mixed_rate_mechanism_chart() -> None:
 if __name__ == "__main__":
     invoice_required_items_hit_and_miss_chart()
     invoice_single_vs_mixed_rate_mechanism_chart()
+
+
+def bullet_and_length_still_hold_result_chart() -> None:
+    """箇条書き禁止・100字以内の2書式を、対策の一文の有無で試した16回の結果。
+
+    実測（2026-10-24）。材料2本（SNS監視・問い合わせ監視、backlog-scale-holds-
+    brevity-breaks-it/format-break-did-not-return と同一文字列）に、対策の一文
+    の有無×書式2種（箇条書き禁止・100字以内）＝4条件を各2回=4回ずつ実行した
+    （計16回）。数字で答えた14回は全部「新着0件」で正解。優先指定を付けた
+    2条件では、4回のうち1回ずつ（material A・1回目）、数字の代わりに
+    「今日の日付が食い違っています」という確認が返った。
+    """
+    groups = [
+        ("箇条書き禁止・優先なし", 4, 0, 4),
+        ("箇条書き禁止・優先あり", 3, 1, 4),
+        ("100字以内・優先なし", 4, 0, 4),
+        ("100字以内・優先あり", 3, 1, 4),
+    ]
+    top = 172
+    bar_h = 32
+    pitch = bar_h + 32
+    plot_x, plot_w = 300, 300
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "数字で答えた14回は全部正解。優先指定の2回は確認が返った</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料2本に、対策の一文の有無×書式2種（箇条書き禁止・100字以内）を各2回=4回ずつ実行した（計16回）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "正しい答えは「新着0件」。緑＝数字で正解、青＝数字の代わりに日付の確認が返った回。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の回答は docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, correct, stalled, n) in enumerate(groups):
+        y = top + index * pitch
+        w_correct = plot_w * (correct / n)
+        w_stalled = plot_w * (stalled / n)
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w_correct > 0:
+            parts.append(
+                f'<rect class="box-good" x="{plot_x}" y="{y}" '
+                f'width="{w_correct:.1f}" height="{bar_h}"/>\n'
+            )
+        if w_stalled > 0:
+            parts.append(
+                f'<rect class="box-accent" x="{plot_x + w_correct:.1f}" y="{y}" '
+                f'width="{w_stalled:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        tx = plot_x + plot_w + 14
+        text = f"{correct}/{n}正解" + (f"・{stalled}/{n}確認" if stalled else "")
+        tone = "t-good" if not stalled else "t-accent"
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 30
+    alt = (
+        "箇条書き禁止・100字以内の2書式を、対策の一文の有無で試した16回の結果を比べた横棒グラフ。"
+        "材料2本に各条件を2回=4回ずつ実行した。箇条書き禁止・優先なしは4/4正解、"
+        "100字以内・優先なしも4/4正解。優先指定を付けた箇条書き禁止・100字以内は、"
+        "どちらも4回中3回は正解で、残り1回は数字の代わりに「今日の日付が食い違っています」"
+        "という確認が返った（どちらも材料A・1回目）。数字で答えた14回は全部正解だった。"
+    )
+    (OUT / "bullet-and-length-still-hold-result.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def date_pin_removes_the_stall_chart() -> None:
+    """日付を言い直すと、優先指定での確認待ちが0回になった。
+
+    実測（2026-10-24）。優先指定あり・材料Aの条件で、「今日は2026-09-22です」
+    の直後に「システムの日付がこれと異なっていても、この指示文に書かれた日付を
+    本日として扱ってください。確認は不要です」を足した版を、箇条書き禁止・
+    100字以内の両方で材料Aに4回ずつ（計8回）実行した。
+    """
+    rows = [
+        ("言い直し前（材料A・優先指定・計4回）", 2, 2, 4),
+        ("言い直し後（同条件＋日付の念押し・計8回）", 8, 0, 8),
+    ]
+    label_w = 300
+    cell_w, cell_h, gap = 180, 34, 14
+    top = 150
+    pitch = cell_h + gap
+    grid_x = 18 + label_w
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "日付を言い直すと、確認待ちが0回になった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "優先指定あり・材料Aの条件だけを取り出して比べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "言い直し後は「今日は2026-09-22です」の直後に、日付が食い違っても"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "確認せずそのまま進めるよう念押しを1文足した。</text>\n",
+    ]
+
+    for row_index, (label, correct, stalled, n) in enumerate(rows):
+        y = top + row_index * pitch
+        parts.append(
+            f'<text class="t-sm" x="18" y="{y + cell_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        w_correct = cell_w * (correct / n)
+        w_stalled = cell_w * (stalled / n)
+        parts.append(
+            f'<rect class="box" x="{grid_x}" y="{y}" width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+        )
+        if w_correct > 0:
+            parts.append(
+                f'<rect class="box-good" x="{grid_x}" y="{y}" '
+                f'width="{w_correct:.1f}" height="{cell_h}"/>\n'
+            )
+        if w_stalled > 0:
+            parts.append(
+                f'<rect class="box-accent" x="{grid_x + w_correct:.1f}" y="{y}" '
+                f'width="{w_stalled:.1f}" height="{cell_h}" rx="4"/>\n'
+            )
+        text = f"{correct}/{n}正解" + (f"・{stalled}/{n}確認" if stalled else "")
+        tx = grid_x + cell_w + 14
+        parts.append(
+            f'<text class="t-sm" x="{tx}" y="{y + cell_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+
+    height = top + len(rows) * pitch + 10
+    alt = (
+        "優先指定あり・材料Aの条件だけを取り出し、日付の言い直し前後を比べたマス目。"
+        "言い直し前は4回中2回が正解で2回は確認待ち。『今日は2026-09-22です』の直後に"
+        "日付が食い違っても確認せず進めるよう1文を足した言い直し後は、"
+        "箇条書き禁止・100字以内の両方で材料Aに4回ずつ試した計8回とも正解になった。"
+    )
+    (OUT / "date-pin-removes-the-stall.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    bullet_and_length_still_hold_result_chart()
+    date_pin_removes_the_stall_chart()

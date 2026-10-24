@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="426" viewBox="0 0 720 426" role="img" aria-label="箇条書き禁止・100字以内の2書式を、対策の一文の有無で試した16回の結果を比べた横棒グラフ。材料2本に各条件を2回=4回ずつ実行した。箇条書き禁止・優先なしは4/4正解、100字以内・優先なしも4/4正解。優先指定を付けた箇条書き禁止・100字以内は、どちらも4回中3回は正解で、残り1回は数字の代わりに「今日の日付が食い違っています」という確認が返った（どちらも材料A・1回目）。数字で答えた14回は全部正解だった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="426"/>
+<text class="t-strong" x="18" y="26">数字で答えた14回は全部正解。優先指定の2回は確認が返った</text>
+<text class="t-sm" x="18" y="45">材料2本に、対策の一文の有無×書式2種（箇条書き禁止・100字以内）を各2回=4回ずつ実行した（計16回）。</text>
+<text class="t-sm" x="18" y="64">正しい答えは「新着0件」。緑＝数字で正解、青＝数字の代わりに日付の確認が返った回。</text>
+<text class="t-xs" x="18" y="83">生の回答は docs/evidence/ に全文置いてある。</text>
+<text class="t-sm" x="18" y="164">箇条書き禁止・優先なし</text>
+<rect class="box" x="300" y="172" width="300" height="32" rx="4"/>
+<rect class="box-good" x="300" y="172" width="300.0" height="32"/>
+<text class="t-good" x="614" y="193">4/4正解</text>
+<text class="t-sm" x="18" y="228">箇条書き禁止・優先あり</text>
+<rect class="box" x="300" y="236" width="300" height="32" rx="4"/>
+<rect class="box-good" x="300" y="236" width="225.0" height="32"/>
+<rect class="box-accent" x="525.0" y="236" width="75.0" height="32" rx="4"/>
+<text class="t-accent" x="614" y="257">3/4正解・1/4確認</text>
+<text class="t-sm" x="18" y="292">100字以内・優先なし</text>
+<rect class="box" x="300" y="300" width="300" height="32" rx="4"/>
+<rect class="box-good" x="300" y="300" width="300.0" height="32"/>
+<text class="t-good" x="614" y="321">4/4正解</text>
+<text class="t-sm" x="18" y="356">100字以内・優先あり</text>
+<rect class="box" x="300" y="364" width="300" height="32" rx="4"/>
+<rect class="box-good" x="300" y="364" width="225.0" height="32"/>
+<rect class="box-accent" x="525.0" y="364" width="75.0" height="32" rx="4"/>
+<text class="t-accent" x="614" y="385">3/4正解・1/4確認</text>
+</svg>
