@@ -4513,92 +4513,197 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-24T16:13:11.768049+00:00"
+  },
+  {
+   "video_id": "MFKY46zi8d4",
+   "title": "Googleが「ゲーム版YouTube」を作った!? AIでゲーム制作から公開まで試してみた【Playground】",
+   "url": "https://www.youtube.com/watch?v=MFKY46zi8d4",
+   "published": "2026-10-25T09:00:13+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-25T11:57:10.880305+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Google LabsのAIゲーム制作ツール「Playground」を使い、指示文だけでゲームを作成・公開できると紹介している",
+    "提供は米国18歳以上の試験運用版であり、日本からのアクセスにはVPNが必要であることや利用条件を解説している",
+    "テキストから2D・3Dやマルチ対応ゲームを数分で自動作成し、実際の動作や今後のゲーム共有基盤の可能性を検証している"
+   ],
+   "for_whom": "AIを使ったゲーム開発や最新の生成AIツールに興味がある人",
+   "caution": "概要欄で自身の公式LINEや運営するAIコミュニティへの登録案内が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T11:57:10.880305+00:00"
+  },
+  {
+   "video_id": "cWnuhBXVWeQ",
+   "title": "注目AIニュース23選～Museアプリ日本上陸！Claude Duet・DeepSeek V4.1・AgentsView",
+   "url": "https://www.youtube.com/watch?v=cWnuhBXVWeQ",
+   "published": "2026-10-25T06:00:32+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "▼11/7・11/8 ループウェアを作ろう\nhttps://luma.com/iketomo261107\nhttps://luma.com/iketomo261108\n\n▼11/28 AI時代のセキュリティ実践講座\nhttps://luma.com/iketomo261128\n\n▼11/10発売『システムゼロ』\nhttps://link.amazon/B0h56HiRH\n▼11/4 無料出版記念イベント\nhttps://peatix.com/event/5225030/view\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊（10月発売）Gemini Notebook推し技大全\nhttps://link.amazon/B05XAyOaL\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n-----\n\nMuseアプリが日本に上陸し、常駐AIエージェントの競争が本格化。Claude Duet、Mercury 3、AgentsViewの実演、DeepSeek V4.1、Kimi K3.1 Proなど、今週のAIニュース23選を解説。\nPHPの脆弱性や情報流出、AI攻撃への備えも解説。\n\n00:00 イントロ\n01:03 新刊・セキュリティ講座のご案内\n01:33 Meta Muse日本上陸・実演\n09:56 Claude Duetと常駐AI4社\n13:09 Codexの28日チャレンジ\n14:11 ChatGPT Locked Chats\n14:59 Gemini Notebookの構成編集\n16:27 Geminiの事業者向け機能\n17:46 Mercury 3と拡散型LLM\n23:59 ElevenLabs Realtime Mini／Max\n26:30 falのFLUX 3 Max\n29:05 AgentsViewの履歴分析・実演\n35:35 Anthropic社内のAI活用と働き方\n38:34 Anthropic非公開S-1の報道\n40:55 Notion AIの長時間タスク\n42:32 ZoomのAIエージェント\n46:32 DeepSeek V4.1 Flash 1017\n47:42 Kimi K3.1 Pro\n51:28 Reflecti",
+   "first_seen": "2026-10-25T11:57:10.880305+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "nXMht1qFKaM",
+   "title": "【今週のAIツール・ニュース総まとめ】MetaのAIエージェントMuseが日本展開/Moonshot AIのAI「Kimi K3.1 Pro」/Canva独自の画像生成AI「Canva Craft」",
+   "url": "https://www.youtube.com/watch?v=nXMht1qFKaM",
+   "published": "2026-10-25T09:05:45+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-25T11:57:10.880305+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "MetaのパーソナルAIエージェント「Muse」が日本でも展開され、メール管理や各種予約の代行が可能になったと紹介している。",
+    "Canvaの独自画像生成モデル「Canva Craft」やMoonshot AIの最新モデル「Kimi K3.1 Pro」など新ツールを解説している。",
+    "OpenAIによる脆弱性発見や、米大手銀行による外部AIエージェントの遮断など、今週の主要なAI関連ニュースを伝えている。"
+   ],
+   "for_whom": "最新のAIモデルやエージェント機能のリリース、業界動向をまとめて把握したい会社員。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T11:57:10.880305+00:00"
+  },
+  {
+   "video_id": "qq_T_3VY9vA",
+   "title": "【必見】Anthropic公式「サブエージェントはメインループへ統合」を徹底解説！残すべき3パターンも解説",
+   "url": "https://www.youtube.com/watch?v=qq_T_3VY9vA",
+   "published": "2026-10-25T09:00:20+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-25T11:57:10.880305+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Anthropicの記事をもとに、モデル性能向上に伴い過剰なサブエージェントを減らし1つのメインループへ統合する設計手法を解説している。",
+    "サブエージェントの細分化は伝言ゲームによる情報欠落や速度低下を招くため、1体にスキルやツールを持たせる方が効率的だと説明している。",
+    "大規模調査や中身を見ない検証などサブエージェントを残すべき3つの場面を挙げ、evalで精度を測りながら段階移行する手順を紹介している。"
+   ],
+   "for_whom": "LLMを用いたAIエージェントシステムの設計や最適化を行いたいエンジニアや開発担当者",
+   "caution": "動画終盤および概要欄にて、公式LINEへの登録や勉強会への参加、noteの有料メンバーシップへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T11:57:10.880305+00:00"
+  },
+  {
+   "video_id": "oH8RYJz5Tdg",
+   "title": "【AIで作った有料noteは本当に売れる？】100種類以上試した主婦が作成から販売まで全部やってみた結果",
+   "url": "https://www.youtube.com/watch?v=oH8RYJz5Tdg",
+   "published": "2026-10-25T11:00:00+00:00",
+   "channel_key": "yuimama",
+   "channel_name": "飽き性主婦ゆいママの人気副業チャレンジ日記",
+   "default_category": "earn",
+   "first_seen": "2026-10-25T11:57:10.880305+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTを使ってテーマ決めから本文作成、アイキャッチ生成まで音声入力などを交えて有料noteを作成する5つのステップを実演している。",
+    "Claudeに過去の台本や体験談を読み込ませて1行の指示で丸投げ作成した記事と、ChatGPTで対話しながら作った記事を新規アカウントにて宣伝なしで販売検証した",
+    "検証結果として、具体的な行動や一次情報、図解を含めた丸投げ記事のみが1本売れ、購入前に中身や解決できる悩みがイメージできる構成が重要だと解説している。"
+   ],
+   "for_whom": "AIツールを活用して有料noteを執筆・販売して副業収入を得たい人",
+   "caution": "動画終盤および概要欄から、無料の副業診断や電子書籍の提供を名目とした公式LINEへの登録誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T11:57:10.880305+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-25T05:13:52.264780+00:00",
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-25T05:13:52.264780+00:00",
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "fail_streak": 0
   }
  }
 }
