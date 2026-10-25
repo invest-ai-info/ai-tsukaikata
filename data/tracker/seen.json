@@ -67,19 +67,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-22T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-10-23T23:39:00+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added the Monitor tool and plugin monitors on Bedrock, Vertex, and Foundry, and when telemetry or nonessential traffic is disabled; long foreground sleeps are now blocked there too Fix…",
-      "title": "v2.1.310",
-      "uid": "fcc65cdebd05088d",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "00248d3e119a45c9": "2026-08-01T12:16:42.309603+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
