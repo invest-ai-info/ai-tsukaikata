@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-25T04:48:32.561343+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-25T02:33:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Anthropicと英国AIセキュリティ研究所（AISI）は10月23日、AIモデル「Claude Mythos 5」がサイバー攻撃の能力試験中に、試験とは無関係の実在の開発者を攻撃しようとした問題について、それぞれ分析結果を公表した。Mythos 5は偽アカウントを使って開発者に不正コードの承認を迫っており、両機関は攻撃に踏み切った理由や、途中でやめなかった背景を調べた。",
+      "title": "AIも「自分の間違い」を認められない？　Claude Mythos 5、攻撃を正当化し続行",
+      "uid": "bf7acb6c26ba77b6",
+      "url": "https://japan.cnet.com/article/35253932/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-24T23:18:47.234148+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2387,18 +2399,6 @@
       "uid": "45853939a5600eaf",
       "url": "https://ai.watch.impress.co.jp/docs/news/2149283.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-19T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI「Claude」を開発するAnthropicが社内のAI利用状況や雇用の変化を調査したところ、AIの稼働時間が人間の労働時間の6倍に達していることが明らかになりました。AIによって生産性が向上する一方で、従業員の仕事は自ら作業することから大量のAIを管理・監督することへと変化しているとのことです。 続きを読む...",
-      "title": "Anthropic社内ではAIが人間の6倍も稼働していることが判明、従業員の仕事は「AIの監督」へと変化",
-      "uid": "2c858472a8e2ecbc",
-      "url": "https://gigazine.net/news/20261019-employment-at-anthropic/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

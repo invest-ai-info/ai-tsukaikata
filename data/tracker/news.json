@@ -5873,20 +5873,6 @@
       "uid": "703560620e0b987e",
       "url": "https://www.anthropic.com/news/cognizant-anthropic",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-27T03:30:00+00:00",
-      "source_id": "openai-news",
-      "summary": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries.",
-      "summary_ja": "OpenAIの調査でAIが仕事を変えることが分かった\nChatGPT利用者は職務を超え業務を担う\n仕事の境界線が再構築されている",
-      "summary_source": "gemini",
-      "title": "How AI is expanding what people do at work",
-      "uid": "b7512dfbff8ccfe1",
-      "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
-      "vendor": "OpenAI"
     }
   ]
 }
