@@ -5845,20 +5845,6 @@
       "uid": "53ed9cf1bc8fddae",
       "url": "https://openrouter.ai/qwen/qwen3.7-flash",
       "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-27T18:36:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "summary_ja": "オープンモデルに関する方針を発表した",
-      "summary_source": "gemini",
-      "title": "Our position on open-weights models",
-      "uid": "0fafeb8f45239cc3",
-      "url": "https://www.anthropic.com/news/position-open-weights-models",
-      "vendor": "Anthropic"
     }
   ]
 }

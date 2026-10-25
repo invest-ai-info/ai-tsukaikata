@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-25T21:50:35.321515+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-25T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ボット検出システムを開発するProof of Humanが、自社製品を含む5種類のシステムを比較した結果を公開しました。 続きを読む...",
+      "title": "AIエージェントによる操作の多くがボット検出システムのhCaptchaやCloudflare Turnstileを通過",
+      "uid": "04c29a8c88f08cb3",
+      "url": "https://gigazine.net/news/20261026-ai-bot-detection-benchmark/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-25T04:48:32.561343+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2387,18 +2399,6 @@
       "uid": "f9c587d7d35d733b",
       "url": "https://japan.cnet.com/article/35253714/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-19T06:06:25+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立製作所、Brookfield Japan、Hartree Partners、および東京ガスは、日本国内におけるグリーンデータセンターの実現に向け協業に関する覚書を締結した。",
-      "title": "日立や東京ガスなど4社、AI需要を支える電源併設型グリーンデータセンター実現に",
-      "uid": "45853939a5600eaf",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149283.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
