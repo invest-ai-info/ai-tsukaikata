@@ -4075,11 +4075,21 @@
    "channel_key": "claude",
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
-   "description": "Claude Duet is a new app where Claude comes to you with what needs your attention and keeps working after you put your phone down. It decides what needs you and what can wait, and checks with you before it acts on your behalf.\n\nThe research preview is open by waitlist to Pro and Max subscribers in the US.\n\nJoin the waitlist: https://claude.com/claude-duet\n\nRead more: https://claude.com/resources/articles/claude-duet",
    "first_seen": "2026-10-21T21:57:44.448014+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 2,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "news",
+   "summary": [
+    "Claudeが自発的に必要な業務を判断して連絡し、裏で作業を進めてくれる新アプリ「Claude Duet」を紹介している。",
+    "売上集計や採用通知の作成などを行い、最終確認や送信の判断はユーザーに委ねる仕組みだと説明している。",
+    "開発チームはOpus 3.5を活用した文脈理解の高さを語り、米国の有料会員向けに先行ウェイトリストを開放したと伝えている。"
+   ],
+   "for_whom": "自律的に業務をサポートする最新のAIアシスタント機能をいち早く知りたいビジネスパーソン",
+   "caution": "現在は米国のProおよびMax加入者を対象としたリサーチプレビュー（ウェイトリスト制）であり、一般提供ではない点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T05:13:52.264780+00:00"
   },
   {
    "video_id": "nRl-7Yhmbog",
@@ -4129,11 +4139,21 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、Anthropic から案内された秘書型エージェント「Claude Duet」について、公式の動画やスクリーンショットを見ながら解説しました。\nGrok Bot や ChatGPT Dots の Claude 版のような位置づけで、中身のモデルは Opus 5.5。いつもの Claude アプリのコネクタやメモリ、スキルを引き継げて、クラウド上の専用PCで動くので PC を閉じていても仕事が進むのが良いポイントです。\n実際に触れたらまた動画にする予定です。\n皆さんは Claude Duet、使ってみたいと思いましたか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 オープニング - Claude Duet とは\n01:36 研究プレビュー開始と Opus 5.5\n02:12 安全面の工夫と提供範囲\n02:36 公式動画: 向こうから届く通知\n03:37 ルーチン機能と先回りの下書き\n04:06 PCを閉じても仕事が進む\n04:35 Claude Code のボリス氏も日常使い\n04:57 丸投げ・資料作成と Stripe の Link\n05:51 Grok Bot ほどの自由度はあるか\n06:34 まとめ - Claude Duet の嬉しい点\n07:29 メンバーシップ勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 2,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "news",
+   "summary": [
+    "Anthropicから案内された秘書型AIエージェント「Claude Duet」について、公式の動画や資料をもとに解説している。",
+    "中身のモデルはOpus 5.5で、クラウド上の専用PCで動作し、端末を閉じても作業が進む点が特徴だと説明している。",
+    "米国のProやMaxユーザー向けに研究プレビューの案内が始まったとし、日本での展開時期などは未定と紹介している。"
+   ],
+   "for_whom": "Claudeの最新エージェント機能や業務自動化の動向を把握したい人",
+   "caution": "動画内および概要欄にて、有料のメンバーシップ（noteのコミュニティ）限定の勉強会への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T05:13:52.264780+00:00"
   },
   {
    "video_id": "20IRGgQwPkc",
@@ -4143,11 +4163,21 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "V7 Go organizes company files into a Context Graph that agents can query to screen investment deals and support insurance underwriting. On V7’s hardest graph-query tests across thousands of documents, GPT-6 Astra reached 89% accuracy.\n\nRead the full story: https://openai.com/index/v7/",
    "first_seen": "2026-10-22T12:20:29.310740+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 1,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "news",
+   "summary": [
+    "V7 GoがGPTモデルを活用し、投資審査や保険引受といった複雑な企業業務フローを自動化していると紹介している。",
+    "GPT-5.6 Solの導入で、ベンチマークにおけるツール呼び出しエラーが2.7%から0.2%に低下したとCTOが説明している。",
+    "ナレッジグラフとGPT-5.6 Lunaの組み合わせで、ハルシネーションが38%削減され出力精度が向上したと述べている。"
+   ],
+   "for_whom": "大量の企業ドキュメントを活用した業務フローの自動化やAI導入を検討している会社員や開発者。",
+   "caution": "提示されているエラー率やハルシネーション削減の数値は、V7独自の環境およびベンチマーク検証に基づく主張である点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T05:13:52.264780+00:00"
   },
   {
    "video_id": "6Qw0Go0A8vM",
@@ -4196,11 +4226,21 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "Google公式ポストで紹介された「Gemini 4 Argon」の活用法を早速実践！\n\n難解な「自治体向け情報セキュリティガイドライン（PDF）」を「インタラクティブWebアプリ」やスライドへ自動変換してみました！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:03 「Gemini 4 Argon」とは\n02:14 公式Xポスト\n03:42 PDFからインタラクティブなサイトを作る\n06:01 アニメーションスライド\n06:54 まとめ\n08:40 ゆるトーク\n\n【公式ソース：Canvas×Gemini 4 Argon】\nhttps://x.com/GeminiApp/status/2111147479248855484?s=20\n\n【公式ソース：Gemini 4 Argon: Built to solve your hardest problems】\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
    "first_seen": "2026-10-23T12:01:49.260887+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 2,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "tech",
+   "summary": [
+    "Gemini 4 ArgonとCanvasを使い、難解なPDFからインタラクティブなWebアプリやスライドを生成する検証を紹介している。",
+    "短い指示文からPDCAアニメーションや理解度チェッククイズを含むWebアプリが作成できたと説明している。",
+    "現状は個人向け有償プラン等で利用できるが、5〜6回ほどプロンプトを送ると使用上限に達するため注意が必要だと述べている。"
+   ],
+   "for_whom": "Geminiの新機能を使って文書からWebアプリやスライドを作りたい人",
+   "caution": "Gemini 4 Argonは記事作成時点で利用できるアカウントが限られており、5〜6回の試行で使用上限に達する場合があると説明されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T05:13:52.264780+00:00"
   },
   {
    "video_id": "LpmBcALir8M",
@@ -4478,87 +4518,87 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
+   "last_ok": "2026-10-25T05:13:52.264780+00:00",
    "fail_streak": 0
   },
   "claude": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
-   "last_ok": "2026-10-24T21:08:51.859231+00:00",
+   "last_ok": "2026-10-25T05:13:52.264780+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "starter-story": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "greg-isenberg": {
    "last_ok": "2026-10-24T21:08:51.859231+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   }
  }
 }
