@@ -4008,11 +4008,21 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "See how an AI shopping agent can turn a room photo into a personalized shopping experience—from finding the right products to updating an order.\n\nIn this demo for fictional home goods retailer Vesper & Alder, a shopper uses voice and images to create a cozy reading nook. The agent recommends products, generates a preview of the room, adjusts selections to fit a $250 budget, and suggests a complementary throw blanket. After checkout, it helps switch the order from store pickup to home delivery—all through conversation.\n\nExplore what you can build with OpenAI: https://openai.com/solutions/industries/retail/",
    "first_seen": "2026-10-21T05:15:18.398196+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 2,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "tech",
+   "summary": [
+    "部屋の写真と音声対話から、要望に合わせたインテリア商品を推薦するAIエージェントのデモを紹介している。",
+    "提案商品に合わせて部屋の設置イメージ画像を生成し、予算250ドル以内に収まるよう商品を差し替える様子を示している。",
+    "注文完了後でも、会話を通じて店舗受取から自宅配送への変更手続きを完結できる機能を紹介している。"
+   ],
+   "for_whom": "ECサイトや小売業でAIを活用した顧客対応や購買体験の自動化を検討している人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T16:47:04.439213+00:00"
   },
   {
    "video_id": "L_eZFZ0-mn4",
@@ -4022,11 +4032,21 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "Gemini Notebookの最新アップデート情報を徹底解説！ インタラクティブなレポート機能の登場に加え、さりげなく進化した「3つの新機能」を実演しながらご紹介します！ \n\nWorkspaceや無償版などアカウントごとの対応状況も網羅してお届けします。ぜひご覧ください！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:43 「Gemini Notebook」とは\n03:57 インタラクティブなレポート機能\n04:48 ①AI使用量の可視化とあとで生成機能の実現\n06:36 ②スライド / 動画 作成時における事前確認\n09:37 ③ショート動画の完全日本語化\n12:05 留意点\n12:51 まとめ\n13:58 ゆるトーク\n\n【関連動画】\n「NotebookLM」の新機能、ビジネスの場でどう使うかを徹底検証\nhttps://youtu.be/gV8snCCZQJk\n\nGemini Notebookで「ショート動画」作成が可能に！\nhttps://youtu.be/Fdim_AUD0-Q\n\n【プレゼンコンサルwith NotebookLM(Gems)※スライド生成を補助】\nhttps://gemini.google.com/gem/1fxT2nX1rWxPtCTvDxF3QXEDZ1QaHMDeE?usp=sharing\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
    "first_seen": "2026-10-21T12:19:14.953361+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 2,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "tech",
+   "summary": [
+    "Gemini Notebookに追加されたAI使用量の可視化と、上限到達時などに予約できる「あとで生成」機能を紹介している。",
+    "スライドや動画の生成前にアウトラインなどを事前確認し、プロンプトで微調整できる機能が追加されたと解説している。",
+    "生成されるショート動画の字幕が文字化けせず表示されるようになり、完全日本語化に対応したと説明している。"
+   ],
+   "for_whom": "Gemini Notebookを活用して資料や動画を効率的に作成したい会社員",
+   "caution": "AI使用量の可視化はGoogle Workspaceアカウントで未対応、事前確認機能は無償アカウントで未対応など、利用環境によって使えない機能がある点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T16:47:04.439213+00:00"
   },
   {
    "video_id": "Lh6Dc7PKhw4",
@@ -4099,11 +4119,21 @@
    "channel_key": "greg-isenberg",
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
-   "description": "In this solo episode, I break down the war on AI agents, from Amazon blocking Meta's Muse to Delta treating outside booking agents as unauthorized automated activity to Yelp charging agents for access. I share how I think about an agent, as a customer with a credit card who reads your site instead of looking at it, and the ladder of trust that runs from research to prepare to pay. Then I walk through each big player's bet, my nine stages for how this war plays out, five moves any business can make this week, and the startup ideas I see between agents and the businesses they buy from. If you run a store or build products, this episode gives you a map for selling to customers who send an agent to shop for them.\n\nTimestamps\n\n00:00 – Intro\n02:09 –The Three Camps\n05:08 – How I Define an Agent\n06:52 – The Ladder of Trust\n08:54 – Real Reasons to Block Agents\n09:48 – What Agents Skip\n12:57 – How Each Company is Playing it\n17:06 – Lessons From Mint and Plaid\n17:49 – The 9 stages of The War on Agents\n21:56 – What to do this week\n24:39 – Startup Idea 1: Agent Readiness\n25:48 – Startup Idea 2: Plaid for One Vertical\n26:22 – Startup Idea 3: Insurance for Agents\n26:57 – Startup Idea 4: Analytics for Agent Traffic\n27:26 – Startup Idea 4: Agent Specialist\n28:05 – Closing Thoughts\n\nKey Points\n\n• Agents read product details, prices, shipping, and return policies, so plain-text facts on the page decide whether they pick you.\n• Agents climb a ladder of trust from research to prepare to pay, and ",
    "first_seen": "2026-10-21T21:57:44.448014+00:00",
-   "status": "pending",
+   "status": "done",
    "attempts": 2,
-   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon"
+   "last_error": "RuntimeError: Gemini が全部失敗: gemini-3.8-flash/interactions: HTTPError 400 / gemini-3.8-flash/generateContent: HTTPError 402 / gemini-3.7-flash/interactions: HTTPError 400 / gemini-3.7-flash/generateCon",
+   "category": "tech",
+   "summary": [
+    "Amazon等の企業が外部AIエージェントを遮断する理由を分析し、エージェントは見た目ではなく文字情報を見る顧客だと説明している。",
+    "エージェント普及の流れについて、初期の遮断から信頼レイヤーの確立、エージェント向け広告の復活まで9段階のシナリオを提示している。",
+    "事業者が今週試すべき購買テストの手順や、エージェント向け解析ツール、失敗保証サービスなどの起業アイデアを紹介している。"
+   ],
+   "for_whom": "EC事業者や、AIエージェントの普及に伴う新規ビジネスの機会を探している人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T16:47:04.439213+00:00"
   },
   {
    "video_id": "pZZo0bqcZLU",
@@ -4545,10 +4575,20 @@
    "channel_key": "iketomo",
    "channel_name": "いけともch",
    "default_category": "news",
-   "description": "▼11/7・11/8 ループウェアを作ろう\nhttps://luma.com/iketomo261107\nhttps://luma.com/iketomo261108\n\n▼11/28 AI時代のセキュリティ実践講座\nhttps://luma.com/iketomo261128\n\n▼11/10発売『システムゼロ』\nhttps://link.amazon/B0h56HiRH\n▼11/4 無料出版記念イベント\nhttps://peatix.com/event/5225030/view\n\n▼新刊：Claude 最強のAI自動化術\nhttps://amzn.to/4eTUVG1\n\n▼新刊（10月発売）ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊（10月発売）Gemini Notebook推し技大全\nhttps://link.amazon/B05XAyOaL\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n-----\n\nMuseアプリが日本に上陸し、常駐AIエージェントの競争が本格化。Claude Duet、Mercury 3、AgentsViewの実演、DeepSeek V4.1、Kimi K3.1 Proなど、今週のAIニュース23選を解説。\nPHPの脆弱性や情報流出、AI攻撃への備えも解説。\n\n00:00 イントロ\n01:03 新刊・セキュリティ講座のご案内\n01:33 Meta Muse日本上陸・実演\n09:56 Claude Duetと常駐AI4社\n13:09 Codexの28日チャレンジ\n14:11 ChatGPT Locked Chats\n14:59 Gemini Notebookの構成編集\n16:27 Geminiの事業者向け機能\n17:46 Mercury 3と拡散型LLM\n23:59 ElevenLabs Realtime Mini／Max\n26:30 falのFLUX 3 Max\n29:05 AgentsViewの履歴分析・実演\n35:35 Anthropic社内のAI活用と働き方\n38:34 Anthropic非公開S-1の報道\n40:55 Notion AIの長時間タスク\n42:32 ZoomのAIエージェント\n46:32 DeepSeek V4.1 Flash 1017\n47:42 Kimi K3.1 Pro\n51:28 Reflecti",
    "first_seen": "2026-10-25T11:57:10.880305+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Metaの常駐型AIエージェント「Muse」の日本提供開始に伴い、ブラウザ操作や決済連携などの機能や他社比較を実演を交えて解説している。",
+    "AnthropicのClaude DuetやChatGPTのLocked Chats、Gemini Notebookの事前構成編集など各社の新機能を紹介している",
+    "拡散型LLM「Mercury 3」やElevenLabsのリアルタイム音声モデルなど、生成速度が劇的に向上した最新モデルの動向を説明している。"
+   ],
+   "for_whom": "最新のAIエージェントや生成AIツールの進化動向をまとめて把握し、実務に活かしたい会社員向け。",
+   "caution": "動画冒頭および概要欄で有料のセキュリティ実践講座（受講料2万円）や自身の書籍への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-25T16:47:04.439213+00:00"
   },
   {
    "video_id": "nXMht1qFKaM",
@@ -4622,87 +4662,87 @@
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-25T11:57:10.880305+00:00",
+   "last_ok": "2026-10-25T16:47:04.439213+00:00",
    "fail_streak": 0
   }
  }
