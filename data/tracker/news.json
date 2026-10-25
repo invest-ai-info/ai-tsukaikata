@@ -5859,20 +5859,6 @@
       "uid": "0fafeb8f45239cc3",
       "url": "https://www.anthropic.com/news/position-open-weights-models",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-27T15:32:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "summary_ja": "CognizantとAnthropicが提携を拡大した\n企業顧客向けにAI「Claude」を提供する",
-      "summary_source": "gemini",
-      "title": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
-      "uid": "703560620e0b987e",
-      "url": "https://www.anthropic.com/news/cognizant-anthropic",
-      "vendor": "Anthropic"
     }
   ]
 }
