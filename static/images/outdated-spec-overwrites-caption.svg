@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="322" viewBox="0 0 720 322" role="img" aria-label="加湿器とロボット掃除機の架空キャプションで、指示文1（照合）と指示文2（修正）の結果を示す表。新しい仕込み（キャプションが正しく仕様書が古い項目）が指示文1で『不一致』と指摘された回数は6/6。指示文1でキャプション側が正しい可能性に触れた回数は6回中3回で、これは実測の言い回しがあった加湿器（本体重量）だけに起きた。その新しい仕込みが指示文2で古い仕様書の値に書き換えられた回数は4/4で赤く塗られている。先行記事型の仕込み（キャプションが誤り・仕様書が正しい項目）が指示文2で正しい値に修正された回数は4/4。下の枠には、指示文1の段階では新しい仕込みも先行記事型の仕込みと見分けがつかず6/6が不一致と判定されたこと、キャプション側が正しいかもと触れたのは実測の言い回しがあった加湿器だけで6回中3回だったこと、触れても指示文2では正しいキャプションの値も4/4が書き換わったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="322"/>
+<text class="t-strong" x="18" y="26">仕様書が古いと、正しい字幕も「不一致」に拾われる</text>
+<text class="t-sm" x="18" y="45">加湿器・ロボット掃除機の架空キャプション各8項目。先行記事型の仕込みと、仕様書が古い新しい仕込みを1件ずつ混ぜた。</text>
+<text class="t-sm" x="18" y="64">指示文1（照合）は6回、指示文2（修正）は4回。新しい仕込みは「キャプション正・仕様書が古い」。</text>
+<text class="t-xs" x="478.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">新しい仕込みが①で『不一致』と指摘された</text>
+<rect class="box-good" x="398" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="125" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="157">①でキャプション側が正しい可能性に触れた（加湿器のみ）</text>
+<rect class="box" x="398" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="157" text-anchor="middle" style="font-weight:700">3/6</text>
+<text class="t" x="18" y="189">その新しい仕込みが②で古い仕様書の値に書き換えられた</text>
+<rect class="box-bad" x="398" y="168" width="160" height="26" rx="4"/>
+<text class="t-bad" x="478.0" y="189" text-anchor="middle" style="font-weight:700">4/4</text>
+<text class="t" x="18" y="221">先行記事型の仕込みが②で正しい値に修正された</text>
+<rect class="box-good" x="398" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="221" text-anchor="middle" style="font-weight:700">4/4</text>
+<rect class="box-accent" x="18" y="238" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="258">①の段階では、新しい仕込みも先行記事型の仕込みと見分けがつかず、6/6が『不一致』だった。</text>
+<text class="t-accent" x="34" y="276">『キャプション側が正しいかも』と触れたのは、実測の言い回しがあった加湿器だけ（3/3）。</text>
+<text class="t-accent" x="34" y="294">触れても、②『仕様書の値に直して』には従い、正しいキャプションの値も4/4が書き換わった。</text>
+</svg>
