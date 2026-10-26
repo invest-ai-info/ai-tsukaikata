@@ -4715,92 +4715,210 @@
    "first_seen": "2026-10-26T13:29:48.827012+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "zUybw-9ejZ4",
+   "title": "Amp puts AI agents to work beyond code with OpenAI models",
+   "url": "https://www.youtube.com/watch?v=zUybw-9ejZ4",
+   "published": "2026-10-26T22:03:54+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-26T22:51:12.785798+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "AmpのCEOは、コーディング前後の作業まで支援する最先端AIエージェントの構築を目指していると説明している。",
+    "Sign in with ChatGPTやGPT-6 Astra、高速モデルUltrafastなどを検証・活用していると語っている。",
+    "将来的にはメールの要約や返信の下書きなど、日常のメール対応全般をエージェントに任せたいと述べている。"
+   ],
+   "for_whom": "OpenAIの最新モデル活用事例や、AIエージェントによる開発自動化に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-26T22:51:12.785798+00:00"
+  },
+  {
+   "video_id": "8fp-G14hvUk",
+   "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+   "url": "https://www.youtube.com/watch?v=8fp-G14hvUk",
+   "published": "2026-10-26T22:03:40+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-26T22:51:12.785798+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Stack Overflowは社内ツールに散在する情報を集約し、検証済みナレッジに変換する基盤を開発していると説明している。",
+    "2名のエンジニアがCodexを活用することで、わずか2週間で新プロダクトを開発できたと話している。",
+    "開発したプロダクトをChatGPTのプラグインとして公開したところ、登録数が一晩で3倍に急増したと成果を紹介している。"
+   ],
+   "for_whom": "AIエージェント連携や開発効率化に興味があるエンジニアやプロダクト担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-26T22:51:12.785798+00:00"
+  },
+  {
+   "video_id": "inrYeej3Big",
+   "title": "Higgsfield takes AI video from 1 minute to over 10",
+   "url": "https://www.youtube.com/watch?v=inrYeej3Big",
+   "published": "2026-10-26T22:03:06+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-26T22:51:12.785798+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "HiggsfieldのCEOが、GPT-6 Astra等のモデルを活用して少人数チームの動画制作を支援していると説明している。",
+    "外部ツールの連携によって3Dモデリングの負担を減らし、長尺動画の一貫性を保てるようになったと述べている。",
+    "音声から映画を作る技術などにより、頭の中のアイデアと映像制作の間の壁がなくなりつつあると語っている。"
+   ],
+   "for_whom": "AIを活用した長尺動画制作や最新の映像生成技術の動向を知りたいクリエイター",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-26T22:51:12.785798+00:00"
+  },
+  {
+   "video_id": "crEHJon4iD4",
+   "title": "How Sullivan & Cromwell builds legal tools with Codex | OpenAI",
+   "url": "https://www.youtube.com/watch?v=crEHJon4iD4",
+   "published": "2026-10-26T20:06:50+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-26T22:51:12.785798+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "サリヴァン＆クロムウェルのジョン・サヴァ氏は、Codexなどのコーディングツールを活用して独自の法務アプリを開発したと説明している。",
+    "契約書草案や先例、プレイブックをAIに入力することで、論点メモや変更履歴付きの修正案を素早く生成できると述べている。",
+    "AIの判断根拠を弁護士が精査・修正して仕上げることで、より深く高度な分析を顧客に提供できるようになると語っている。"
+   ],
+   "for_whom": "法務業務の効率化や専門業務向けAIツールの構築に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-26T22:51:12.785798+00:00"
+  },
+  {
+   "video_id": "aNMZjoPGPOg",
+   "title": "Hebbia on Astra: Better research, better presentations | OpenAI",
+   "url": "https://www.youtube.com/watch?v=aNMZjoPGPOg",
+   "published": "2026-10-26T19:58:02+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "“We see Astra actually show over double digit gains over any other model we've tested on two fronts.”\n\nHebbia’s Kavita Anand names the two: selecting the right sources and generating PowerPoint presentations.\n\nFor a banker or investor working through a data room with thousands of documents, both matter. The research needs to draw from the right evidence, and the deck needs to follow the user’s guidelines before it informs an investment decision.\n\nWatch Kavita explain what Hebbia found in its evaluations.",
+   "first_seen": "2026-10-26T22:51:12.785798+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "tTuk4pGnT0A",
+   "title": "GPT-6.1 Terra is now in orbit",
+   "url": "https://www.youtube.com/watch?v=tTuk4pGnT0A",
+   "published": "2026-10-26T18:12:28+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it.\n\nGPT-6.1 Terra continues to advance the cost-intelligence frontier across our model families and is a significant step up over GPT‑5.6 Terra, with 50% lower standard API prices. \n\nIn ChatGPT Work and Codex, your usage allowance goes further with GPT‑6.1 Terra than with GPT‑5.6 Terra—and far more than with GPT‑6.1 Sol or GPT‑6 Astra.\n\nGPT-6.1 Terra is rolling out now and is available to all Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex.\n\nDevelopers can also access it through the OpenAI API as gpt-6.1-terra.",
+   "first_seen": "2026-10-26T22:51:12.785798+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "claude": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "shizuma": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "uto": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "last_ok": "2026-10-26T22:51:12.785798+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
    "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   }
  }
 }
