@@ -38288,8 +38288,102 @@ def tax_included_withholding_calc_chain_chart() -> None:
     )
 
 
+def three_cancel_hit_and_miss_chart() -> None:
+    """3条件×2材料で、3件同時の曖昧なキャンセルの不足額に正しく到達した回数（2026-10-26実測）。
+
+    判定は docs/evidence/three-way-cancellation-still-subtracts-all-three.md の extract_conclusions() から。
+    """
+    _hit_and_miss_rows_chart(
+        "three-cancel-hit-and-miss.svg",
+        "計算手順を明示した言い方だけが、3件同時でも崩れなかった",
+        "実測2026-10-26。架空のWeb保守契約12社・SNS運用代行契約12社、備考1文に3件分のキャンセル額。",
+        "各条件の「正しい不足額に到達し、健全な契約を誤判定しなかった回数／試した回数」。",
+        [
+            ("①計算手順を明示・Web保守契約", 5, 5, "good"),
+            ("①計算手順を明示・運用代行契約", 5, 5, "good"),
+            ("②素朴に聞く・Web保守契約", 3, 5, "good"),
+            ("②素朴に聞く・運用代行契約", 4, 5, "good"),
+            ("③説明が合っているか確認・Web保守", 2, 3, "good"),
+            ("③説明が合っているか確認・運用代行", 2, 3, "good"),
+        ],
+        [
+            "✅ 計算手順を明示した言い方は10回とも崩れなかった",
+            "⚠️ 素朴・軽い言い方は合わせて16回中6回、見落としや引き算の誤りが起きた",
+        ],
+        "3つの条件×2つの材料で、正しい不足額に到達し健全な契約を誤判定しなかった回数を示す表。"
+        "計算手順を明示した言い方はWebサイト保守契約5回中5回・SNS運用代行契約5回中5回。"
+        "計算手順を省いた素朴な聞き方はWebサイト保守契約5回中3回・SNS運用代行契約5回中4回。"
+        "説明が合っているか確認してという軽い言い方はWebサイト保守契約3回中2回・SNS運用代行契約3回中2回。"
+        "下の枠には、計算手順を明示した言い方は10回とも3件すべてを引いて正解に到達し"
+        "健全な契約への誤判定も0回だったこと、"
+        "素朴な聞き方・軽い言い方は合わせて16回中6回、"
+        "見落とし・結論行と本文の食い違い・引き算の誤り・完全な見逃しという崩れ方をしたことが書かれている。",
+        label_w=420,
+    )
+
+
+def three_cancel_calc_chain_chart() -> None:
+    """同じ3件同時の曖昧なキャンセルを、計算手順を明示した場合と素朴に聞いた場合で比べる図。
+
+    実測は docs/evidence/three-way-cancellation-still-subtracts-all-three.md。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">素朴な聞き方は、3件のうち1件を見落とすことがあった</text>\n',
+        '<text class="t-sm" x="18" y="45">三日月印刷（基本月額52,000円・3件のキャンセル計6,000円・入金42,000円）を例に比べた（実測はdocs/evidence参照）。</text>\n',
+    ]
+    y = top
+
+    def row(y: int, label: str, cls: str) -> int:
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="28" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 19}">{_esc(label)}</text>\n')
+        return y + 28 + 4
+
+    parts.append(f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc("①計算手順を明示（5回とも同じ結果）")}</text>\n')
+    y += 24
+    y = row(y, "52,000円 − 2,000円 − 1,500円 − 2,500円 = 確定額46,000円", "box-quiet")
+    y = row(y, "46,000円 − 入金42,000円 = 不足4,000円（正解）", "box-good")
+    y += 10
+
+    parts.append(f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc("②素朴に聞く（5回中1回、3件目を見落とした）")}</text>\n')
+    y += 24
+    y = row(y, "52,000円 − 2,000円 − 1,500円 = 48,500円（オプションC 2,500円を見落とし）", "box-bad")
+    y = row(y, "48,500円 − 入金42,000円 = 不足6,500円（誤り）", "box-bad")
+
+    y += 6
+    notes = [
+        "⚠️ キャンセルの件数が増えるほど、手順を書かない聞き方は見落としや引き算の誤りが起きやすい",
+        "✅ 手順を明示する言い方は、何件のキャンセルが重なっても同じ式を繰り返すだけで崩れにくい",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "同じ3件同時の曖昧なキャンセルを、計算手順を明示した場合と素朴に聞いた場合で比べる図。"
+        "三日月印刷は基本月額52,000円からオプションA2,000円・オプションB1,500円・オプションC2,500円の"
+        "3件を引くと確定額46,000円、入金42,000円との差額4,000円が正解。"
+        "計算手順を明示した5回は全て3件を正しく引いて4,000円に到達。"
+        "素朴に聞いた5回のうち1回は、オプションCの2,500円を見落として48,500円を確定額とし、"
+        "不足額を誤って6,500円と計算した。"
+        "下の枠には、キャンセルの件数が増えるほど、計算の手順を書かない聞き方は見落としや"
+        "引き算の誤りが起きやすくなること、手順を明示する言い方は何件のキャンセルが重なっても"
+        "同じ式を繰り返すだけなので件数が増えても崩れにくいことが書かれている。"
+    )
+    (OUT / "three-cancel-calc-chain.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     pr_disclosure_hit_and_miss_chart()
     pr_disclosure_position_mechanism_chart()
     tax_included_withholding_hit_and_miss_chart()
     tax_included_withholding_calc_chain_chart()
+    three_cancel_hit_and_miss_chart()
+    three_cancel_calc_chain_chart()
