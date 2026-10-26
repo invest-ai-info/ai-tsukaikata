@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-26T00:25:06.011314+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-25T23:28:28+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleはプライバシーポリシーを更新し、検索やGeminiにGmailやフォトなどのアクセスを許可した場合、そのデータが広告のパーソナライズに使われる例外規定を明記した。背景には「パーソナルインテリジェンス」機能があり、連携を解除しても検索履歴に残ったデータは削除されない。",
+      "title": "Google、プライバシーポリシーに「Gmail」「Googleフォト」のデータを広告に使う例外を追加　回避方法は",
+      "uid": "ebdbfe95995a6853",
+      "url": "https://www.itmedia.co.jp/news/article/2610/26/2000002570/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-26T00:25:06.011314+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-25T22:55:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "オンライン掲示板Redditで、オープンソースソフトウェアを扱うコミュニティー「r/opensource」の管理者が、AIに関わるプロジェクトの紹介投稿を原則禁止する方針を示し、利用者の間で賛否が分かれている。",
+      "title": "AI関連プロジェクトの紹介を原則禁止--Reddit「r/opensource」の方針に賛否",
+      "uid": "f92e4882d20eacc5",
+      "url": "https://japan.cnet.com/article/35253950/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-25T21:50:35.321515+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "882d4f9c6be82544",
       "url": "https://ai.watch.impress.co.jp/docs/news/2149301.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-19T06:25:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは10月16日、プレゼンテーション資料を作成し、チームで共同編集できる「ChatGPT Slides」を発表した。共有作業スペース「Space」が使えるPro、Business、Enterpriseプランの対象ユーザーに、ウェブ版とデスクトップアプリで順次提供を始めた。",
-      "title": "「ChatGPT」にスライド作成＆共同編集機能　PowerPointへの出力も",
-      "uid": "93dab3ad8a7e6a37",
-      "url": "https://japan.cnet.com/article/35253715/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-19T10:49:34.328950+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-19T06:20:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Anthropicは10月16日、技術部門の採用に占める初級職の割合が、2025年から2026年にかけて27％から9％に下がったとする社内調査を公表した。AIの利用が広がる同社で、採用や社員の仕事に起きている変化を報告している。",
-      "title": "コード作成やバグ探しは「AIの仕事」に--Anthropic、初級技術職の採用比率が急減",
-      "uid": "f9c587d7d35d733b",
-      "url": "https://japan.cnet.com/article/35253714/",
-      "vendor": "CNET Japan"
     }
   ]
 }
