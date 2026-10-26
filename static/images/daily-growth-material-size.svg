@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="436" viewBox="0 0 720 436" role="img" aria-label="材料（送信済み・受信の行数）が3日分育っていく様子と、その日の本体・受け皿・〔決められない〕の件数を並べた図。1日目＝送信済み30行・受信25行、本体6件・受け皿2件・〔決められない〕0件。2日目＝送信済み34行（+4）・受信29行（+4）、本体6件（1件入れ替わり）・受け皿2件（1件入れ替わり）・〔決められない〕0件。3日目＝送信済み37行（+3）・受信32行（+3）、本体6件（1件入れ替わり）・受け皿1件（1件減）・〔決められない〕は2回中1回だけ1件で赤く塗られている。下の枠には、本体6件と受け皿の中身は3日とも真値どおり入れ替わったこと、動いたのは3日目の1回だけで新しく増えた周知メール1件が〔決められない〕に紛れ込んだことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="436"/>
+<text class="t-strong" x="18" y="26">材料が育つたびに、本体6件・受け皿も中身を入れ替えて追いついた</text>
+<text class="t-sm" x="18" y="45">同じ架空材料（会社の総務課）に、日を追うごとに新しい用件を足し、一部の未解決行には回答が来た形へ更新した。</text>
+<text class="t-sm" x="18" y="64">本体＝催促すべき一覧、受け皿＝〔一次返信のみ・本回答待ち〕。件数はその日の新規セッション2回の結果（6回とも同じ）。</text>
+<text class="t-xs" x="18" y="83">「1件入れ替わり」＝古い行が1件解決して消え、新しい未解決行が1件増えて件数自体は変わらないこと。</text>
+<rect class="box-quiet" x="18" y="112" width="684" height="68" rx="6"/>
+<text class="t-strong" x="34" y="134">1日目</text>
+<text class="t-sm" x="34" y="154">送信済み30行／受信25行</text>
+<text class="t" x="34" y="172">本体6／受け皿2／〔決められない〕0</text>
+<rect class="box-quiet" x="18" y="190" width="684" height="68" rx="6"/>
+<text class="t-strong" x="34" y="212">2日目</text>
+<text class="t-sm" x="34" y="232">送信済み34行（+4）／受信29行（+4）</text>
+<text class="t" x="34" y="250">本体6（1件入れ替わり）／受け皿2（1件入れ替わり）／〔決められない〕0</text>
+<rect class="box-bad" x="18" y="268" width="684" height="68" rx="6"/>
+<text class="t-strong" x="34" y="290">3日目</text>
+<text class="t-sm" x="34" y="310">送信済み37行（+3）／受信32行（+3）</text>
+<text class="t-bad" x="34" y="328">本体6（1件入れ替わり）／受け皿1（1件減）／〔決められない〕2回中1回だけ1件</text>
+<rect class="box-accent" x="18" y="352" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="372">本体6件・受け皿の中身は3日とも真値どおり入れ替わった。</text>
+<text class="t-accent" x="34" y="394">動いたのは3日目の1回だけ、新しく増えた周知メール1件が〔決められない〕に紛れ込んだこと。</text>
+</svg>
