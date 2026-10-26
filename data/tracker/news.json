@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-26T14:19:56.115232+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
+      "summary_ja": "FanaticsがOpenAIでファンの買い物体験を改善\n試合観戦時の服装選び支援サービス「Shop the Look」に導入。\n約3万点のMLB商品でテストし、利用率が10%向上。",
+      "summary_source": "gemini",
+      "title": "How Fanatics and OpenAI streamline the fan experience",
+      "uid": "af73028dc1b52cc8",
+      "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-24T00:47:21.407180+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5791,48 +5805,6 @@
       "uid": "9b1ad9aef8483085",
       "url": "/dream-cubed/",
       "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-07-28T13:21:37+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "summary_ja": "新しいロボット技術「Gemini Robotics 2」が登場\nロボットが「全身で考える」能力を獲得",
-      "summary_source": "gemini",
-      "title": "Gemini Robotics 2 brings whole body intelligence to robots",
-      "uid": "150bd4129532568e",
-      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-28T13:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Illustration of a black magnifying glass in a white circle on green grass surrounded by items related to fun activities like tennis and games",
-      "summary_ja": "検索のAI機能が現実世界で役立つ方法を紹介\n「AIモード」が実生活をより楽しむ手助けに",
-      "summary_source": "gemini",
-      "title": "5 ways AI Mode in Search helps you enjoy the real world",
-      "uid": "d7157fd3eb0da4e5",
-      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-28T13:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "An illustrated black magnifying glass with a sparkle in a white circle surrounded by a dinner party tablescape",
-      "summary_ja": "Google検索で夕食会の準備が楽になった\n最高の夕食会を主催する5つの方法を紹介",
-      "summary_source": "gemini",
-      "title": "5 ways to host the ultimate dinner party with Google Search",
-      "uid": "580148696d0b3f78",
-      "url": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
-      "vendor": "Google"
     }
   ]
 }
