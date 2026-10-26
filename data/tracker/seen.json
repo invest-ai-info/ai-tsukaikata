@@ -37,9 +37,14 @@
   },
   "failures": {
     "anthropic-news": {
-      "count": 32,
+      "count": 33,
       "last_error": "ValueError: 埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）",
       "since": "2026-10-20T18:29:14.936975+00:00"
+    },
+    "deepmind-blog": {
+      "count": 1,
+      "last_error": "0件",
+      "since": "2026-10-26T20:32:27.740755+00:00"
     }
   },
   "latest": {
@@ -48,15 +53,15 @@
     "claude-code": "2026-10-23T23:39:00+00:00",
     "deepmind-blog": "2026-10-22T14:30:24+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
-    "google-ai-blog": "2026-10-21T04:00:00+00:00",
+    "google-ai-blog": "2026-10-26T16:00:00+00:00",
     "hf-deepseek": "2026-10-17T02:40:38+00:00",
     "hf-zhipu": "2026-08-25T06:45:05+00:00",
-    "media-cnet-japan": "2026-10-26T10:20:00+00:00",
-    "media-gigazine": "2026-10-26T14:00:00+00:00",
+    "media-cnet-japan": "2026-10-26T15:45:00+00:00",
+    "media-gigazine": "2026-10-26T17:00:00+00:00",
     "media-impress-ai": "2026-10-26T14:00:00+00:00",
     "media-itmedia-aiplus": "2026-10-26T06:00:00+00:00",
     "media-publickey": "2026-10-26T15:59:52+00:00",
-    "openai-news": "2026-10-26T07:00:00+00:00",
+    "openai-news": "2026-10-26T10:00:00+00:00",
     "openrouter-moonshot": "2026-10-23T17:56:28+00:00",
     "openrouter-qwen": "2026-09-23T19:20:28+00:00",
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
@@ -73,6 +78,39 @@
       "uid": "af73028dc1b52cc8",
       "url": "https://openai.com/index/fanatics-streamline-fan-experience",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+      "title": "ChatGPT’s expanding world of work",
+      "uid": "cbe700c6f6e82380",
+      "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+      "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+      "uid": "9fd11ae4a9b1d26b",
+      "url": "https://openai.com/index/openai-cut-incident-investigation",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-10-26T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "An illustration of a planet rotating to show various cartoon figures waving. At the top is the text \"AI Quests\"",
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "uid": "2bd2776d4f3f981e",
+      "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "vendor": "Google"
     }
   ],
   "uids": {
@@ -885,6 +923,7 @@
     "2ba6e020afe05869": "2026-09-29T08:36:30.590774+00:00",
     "2bb692ef6ea75374": "2026-08-31T05:41:42.559558+00:00",
     "2bbbb4a615175b9f": "2026-10-14T12:03:22.056244+00:00",
+    "2bd2776d4f3f981e": "2026-10-26T20:32:27.740755+00:00",
     "2bdc797d947a4b1b": "2026-08-18T03:10:26.176978+00:00",
     "2bdd687d4310e4b9": "2026-09-30T13:48:28.583155+00:00",
     "2be320fe7e4b3ecb": "2026-08-21T09:00:17.887163+00:00",
@@ -918,6 +957,7 @@
     "2d54bf37c446b6bd": "2026-08-31T05:41:42.559558+00:00",
     "2d74ecda98b13172": "2026-08-14T08:39:06.340012+00:00",
     "2d788a8736341862": "2026-08-01T12:16:42.309603+00:00",
+    "2d895892f7151e28": "2026-10-26T20:32:27.740755+00:00",
     "2d8f07f648d7859f": "2026-09-19T05:58:18.432398+00:00",
     "2d9815517a918183": "2026-08-19T07:08:12.848731+00:00",
     "2d9b881884db779f": "2026-09-18T11:21:48.616520+00:00",
@@ -2971,6 +3011,7 @@
     "9fa355da012cbf91": "2026-08-15T03:06:56.696462+00:00",
     "9fb168d3ecf705c3": "2026-09-16T22:58:53.568048+00:00",
     "9fbc6fd7cf3a2af4": "2026-10-16T12:31:17.014467+00:00",
+    "9fd11ae4a9b1d26b": "2026-10-26T20:32:27.740755+00:00",
     "a00a9590b55e9091": "2026-09-24T04:57:20.166847+00:00",
     "a02e60b8c1d64dd4": "2026-09-04T16:25:10.290522+00:00",
     "a030f411f5d1006a": "2026-10-19T10:49:34.328950+00:00",
@@ -3733,6 +3774,7 @@
     "cb916c668d8f5146": "2026-09-04T05:57:33.223134+00:00",
     "cbb39e9cdef9840a": "2026-10-06T03:02:33.080668+00:00",
     "cbb8b29df278f824": "2026-09-17T07:43:59.936479+00:00",
+    "cbe700c6f6e82380": "2026-10-26T20:32:27.740755+00:00",
     "cbecbf107a2372b3": "2026-09-18T11:21:48.616520+00:00",
     "cc0f8075b35f8e12": "2026-08-02T11:35:58.106550+00:00",
     "cc1b6347adfe8567": "2026-09-23T06:02:05.594533+00:00",
@@ -4168,6 +4210,7 @@
     "e3eb23bd3a1e7a42": "2026-08-27T09:54:30.419398+00:00",
     "e3f041b24130d2e6": "2026-09-30T13:48:28.583155+00:00",
     "e3fdf43239a432b8": "2026-10-06T10:24:48.047911+00:00",
+    "e400be9de8e357de": "2026-10-26T20:32:27.740755+00:00",
     "e400d84d9e0eebed": "2026-08-01T12:16:42.309603+00:00",
     "e40c37de3a8a841a": "2026-09-15T21:28:25.537882+00:00",
     "e40ef2798728284b": "2026-10-07T08:44:48.868475+00:00",
@@ -4423,6 +4466,7 @@
     "f1617683f16e13ed": "2026-10-07T22:01:18.008705+00:00",
     "f166e18d81f471e2": "2026-09-25T07:53:40.744678+00:00",
     "f17c62d8fe463811": "2026-10-04T00:41:29.303028+00:00",
+    "f187c3e0d528bc95": "2026-10-26T20:32:27.740755+00:00",
     "f198048191f7c301": "2026-10-08T16:32:35.748525+00:00",
     "f1a1f1d561da6dcd": "2026-09-23T06:02:05.594533+00:00",
     "f1a266ae4752cfd7": "2026-09-03T22:37:08.568544+00:00",

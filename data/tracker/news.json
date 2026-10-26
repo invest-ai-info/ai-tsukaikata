@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-26T20:32:27.740755+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-10-26T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "An illustration of a planet rotating to show various cartoon figures waving. At the top is the text \"AI Quests\"",
+      "summary_ja": "AIが人間の脳を解明する新しい課題に取り組む。\n人間の脳の構造を理解し地図化することを目指す。",
+      "summary_source": "gemini",
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "uid": "2bd2776d4f3f981e",
+      "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-10-26T20:32:27.740755+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+      "summary_ja": "ChatGPTの仕事での使われ方に関する調査結果が公開された。\nOpenAIが約100カ国で165種類の仕事内容を調査。\n利用状況とその変化がデータで示された。",
+      "summary_source": "gemini",
+      "title": "ChatGPT’s expanding world of work",
+      "uid": "cbe700c6f6e82380",
+      "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-26T14:19:56.115232+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -12,6 +40,32 @@
       "title": "How Fanatics and OpenAI streamline the fan experience",
       "uid": "af73028dc1b52cc8",
       "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-26T20:32:27.740755+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+      "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+      "uid": "9fd11ae4a9b1d26b",
+      "url": "https://openai.com/index/openai-cut-incident-investigation",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-26T20:32:27.740755+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-10-26T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Bringing fast and capable computer use to everyone",
+      "summary_ja": "新しいAIモデル「GPT-6.1 Terra」が発表された。\n誰もが高速で高性能なコンピューターを使えるようになる。",
+      "summary_source": "gemini",
+      "title": "Introducing GPT-6.1 Terra",
+      "uid": "f187c3e0d528bc95",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra",
       "vendor": "OpenAI"
     },
     {
@@ -5739,72 +5793,6 @@
       "uid": "151a22ba840a79e3",
       "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-28T17:38:09+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.120.2 (2026-07-28) Full Changelog: v0.120.1...v0.120.2 Bug Fixes mcp: support mcp sdk v2 alongside v1 ( #300 ) ( 177f88c )",
-      "title": "v0.120.2",
-      "uid": "30bec7ef49839403",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.2",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-28T17:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond.",
-      "summary_ja": "科学計算にAIが活用されていることが判明\nAIがコードを書く仕組みで計算を現代化\nゲノム解析などの研究開発を加速させる",
-      "summary_source": "gemini",
-      "title": "Scientific computing in the age of agentic AI",
-      "uid": "8337e57ff39a9d5a",
-      "url": "https://openai.com/index/scientific-computing-agentic-ai",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-07-28T16:37:33+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.120.1 (2026-07-28) Full Changelog: v0.120.0...v0.120.1 Bug Fixes mcp: pin mcp extra to <2 ( #1783 ) ( fb66371 )",
-      "title": "v0.120.1",
-      "uid": "2a85425b9fcc5386",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.1",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-07-28T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Managed Agents Gemini 3.6 Flash, Hooks and Triggers",
-      "summary_ja": "Gemini APIの管理機能が更新された\n「Managed Agents」に「3.6 Flash」が追加\n「Hooks」「Triggers」といった機能も利用可能に",
-      "summary_source": "gemini",
-      "title": "Gemini API Managed Agents: 3.6 Flash, hooks, and more",
-      "uid": "4749e7d8a5f00671",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-28T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "summary_ja": "AIがマインクラフトの世界を生成できるようになった\nAIが「プレイできる」ゲームの世界を生み出す",
-      "summary_source": "gemini",
-      "title": "Dreaming in Voxels: How AI is Generating Playable Minecraft Worlds",
-      "uid": "9b1ad9aef8483085",
-      "url": "/dream-cubed/",
-      "vendor": "Sakana AI"
     }
   ]
 }
