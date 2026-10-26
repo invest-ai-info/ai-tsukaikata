@@ -4680,91 +4680,126 @@
    "first_seen": "2026-10-25T21:11:53.725275+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "V-sR6TAaQDQ",
+   "title": "【神機能】Google Meetの「リアルタイム音声翻訳」が日本語対応！使い方＆設定方法を徹底解説します",
+   "url": "https://www.youtube.com/watch?v=V-sR6TAaQDQ",
+   "published": "2026-10-26T09:00:33+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-10-26T13:29:48.827012+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Google Meetのリアルタイム音声翻訳機能が日本語を含む63言語に対応したと紹介している。",
+    "参加者ごとに話す言語と聞く言語を個別設定でき、音声と字幕がほぼリアルタイムで翻訳されると実演している。",
+    "利用にはWorkspaceなどの有償プランが必要で、管理コンソール側で音声翻訳を有効化する必要があると解説している。"
+   ],
+   "for_whom": "外国語でのオンライン会議や多言語対応を効率化したいビジネスパーソンや管理者",
+   "caution": "本機能はGoogle Workspaceの特定プランやGoogle AI Proなど有償アカウントが対象で、管理コンソールでの有効化設定が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-26T13:29:48.827012+00:00"
+  },
+  {
+   "video_id": "6JBpLu5TLwI",
+   "title": "【衝撃】SNSの数字を売るスマホ農場の実態｜運営者の正体",
+   "url": "https://www.youtube.com/watch?v=6JBpLu5TLwI",
+   "published": "2026-10-26T11:00:21+00:00",
+   "channel_key": "shizuma",
+   "channel_name": "ガチ検証｜シズマ",
+   "default_category": "earn",
+   "first_seen": "2026-10-26T13:29:48.827012+00:00",
+   "status": "skipped",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-26T05:14:12.962712+00:00",
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-26T05:14:12.962712+00:00",
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-25T21:11:53.725275+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-26T05:14:12.962712+00:00",
+   "last_ok": "2026-10-26T13:29:48.827012+00:00",
    "fail_streak": 0
   }
  }
