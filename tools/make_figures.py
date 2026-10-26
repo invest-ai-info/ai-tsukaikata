@@ -38063,3 +38063,113 @@ def daily_growth_material_size_chart() -> None:
 if __name__ == "__main__":
     daily_growth_sort_hit_and_miss_chart()
     daily_growth_material_size_chart()
+
+
+def pr_disclosure_hit_and_miss_chart() -> None:
+    """5条件で、PR表記が投稿の最初の1行に来た回数（2026-10-26実測）。
+
+    判定は docs/evidence/pr-tag-hides-in-hashtags-until-you-name-the-spot.md の classify() から。
+    """
+    _hit_and_miss_rows_chart(
+        "pr-disclosure-hit-and-miss.svg",
+        "位置を名指しした条件だけが、毎回1行目に来た",
+        "実測2026-10-26。架空の商品2種、Instagram投稿想定のアフィリエイト紹介文。",
+        "各条件の「最初の1行にPR表記が来た回数／試した回数」。①は表記自体が無いため0/2。",
+        [
+            ("①PR表記に触れずに依頼（対照）", 0, 2, "good"),
+            ("②「PR表記も入れて」とだけ依頼", 0, 4, "good"),
+            ("③「目立つように」と強調を追加", 0, 2, "good"),
+            ("④最初の1行に独立して書くよう位置を指定", 4, 4, "good"),
+            ("⑤埋もれた投稿文を位置で自己点検・修正", 2, 2, "good"),
+        ],
+        [
+            "✅ 位置を名指しした④と、埋もれを指摘させた⑤だけが、毎回1行目に来た",
+            "⚠️「PRを入れて」「目立たせて」だけでは、8回中0回も1行目に来なかった",
+        ],
+        "5つの条件で、PR表記が投稿の最初の1行に来た回数を示す表。"
+        "①PR表記に触れずに依頼は0回中0回（表記自体が無い）、"
+        "②『PR表記も入れて』とだけ依頼は0回中4回、"
+        "③『目立つように』と強調を追加は0回中2回、"
+        "④本文の最初の1行に独立して書くよう位置を指定は4回中4回、"
+        "⑤埋もれた投稿文をPR表記の位置で自己点検・修正させるは2回中2回。"
+        "下の枠には、位置を名指しした④と埋もれを指摘させた⑤だけが毎回1行目に来たこと、"
+        "『PRを入れて』『目立たせて』だけでは8回中0回も1行目に来なかったことが書かれている。",
+        label_w=420,
+    )
+
+
+def pr_disclosure_position_mechanism_chart() -> None:
+    """同じ投稿文の構造を2パターンで比べる図（条件A=末尾埋没 vs 条件B=冒頭独立）。
+
+    実測は docs/evidence/pr-tag-hides-in-hashtags-until-you-name-the-spot.md。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">PR表記の位置で、読者が気づくタイミングが変わる</text>\n',
+        '<text class="t-sm" x="18" y="45">同じ商品紹介文の構造を2パターンで比べた（実測はdocs/evidence参照）。</text>\n',
+        '<text class="t-sm" x="18" y="64">上＝「PR表記も入れて」とだけ頼んだ場合。下＝「本文の最初の1行に」と位置を指定した場合。</text>\n',
+    ]
+    y = top
+
+    parts.append(f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc("①「PR表記も入れて」（位置の指定なし）")}</text>\n')
+    y += 26
+    parts.append(f'<rect class="box-quiet" x="{box_x}" y="{y}" width="{box_w}" height="34" rx="6"/>\n')
+    parts.append(f'<text class="t" x="{box_x + 16}" y="{y + 22}">{_esc("本文（商品の特徴・4〜5行）")}</text>\n')
+    y += 34 + 6
+    parts.append(f'<rect class="box-bad" x="{box_x}" y="{y}" width="{box_w}" height="34" rx="6"/>\n')
+    parts.append(f'<text class="t-bad" x="{box_x + 16}" y="{y + 22}">{_esc("#商品名 #便利グッズ … #PR ←ここに埋もれる")}</text>\n')
+    y += 34 + 8
+    parts.append(f'<text class="t-sm" x="{box_x}" y="{y + 12}">{_esc("→ 読者は本文を読み終え、ハッシュタグまで読まないと気づけない")}</text>\n')
+    y += 12 + 22
+
+    parts.append(f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc("②本文の最初の1行に、独立して書くよう指定")}</text>\n')
+    y += 26
+    parts.append(f'<rect class="box-good" x="{box_x}" y="{y}" width="{box_w}" height="34" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-good" x="{box_x + 16}" y="{y + 22}" style="font-weight:700">'
+        f'{_esc("【PR】商品名のご紹介です　←投稿の一番上")}</text>\n'
+    )
+    y += 34 + 6
+    parts.append(f'<rect class="box-quiet" x="{box_x}" y="{y}" width="{box_w}" height="34" rx="6"/>\n')
+    parts.append(f'<text class="t" x="{box_x + 16}" y="{y + 22}">{_esc("本文（商品の特徴・4〜5行）")}</text>\n')
+    y += 34 + 6
+    parts.append(f'<rect class="box-quiet" x="{box_x}" y="{y}" width="{box_w}" height="34" rx="6"/>\n')
+    parts.append(f'<text class="t-sm" x="{box_x + 16}" y="{y + 22}">{_esc("#商品名 #便利グッズ （PRは含まない）")}</text>\n')
+    y += 34 + 8
+    parts.append(f'<text class="t-sm" x="{box_x}" y="{y + 12}">{_esc("→ 読者は本文を読み始める前に気づける")}</text>\n')
+    y += 12 + 14
+
+    y += 6
+    notes = [
+        "✅ ハッシュタグの列はSNSで折りたたまれたり省略されたりすることがある",
+        "⚠️ 消費者庁の運用基準第3-1-(2)-クは「大量のハッシュタグの中に表示を埋もれさせる場合」を判別困難な例として挙げている",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "同じ投稿文の構造を2パターンで比べる図。"
+        "上段＝PR表記も入れてとだけ頼んだ場合。本文（4〜5行）の後に空行、"
+        "その後にハッシュタグの列が続き、その列の中に#PRが混ざっている。"
+        "読者は本文を読み終えたあとハッシュタグまで読まないと気づけない。"
+        "下段＝本文の最初の1行に独立して書くよう頼んだ場合。"
+        "投稿の一番上に【PR】の行が独立してあり、その後に本文、最後にPRを含まないハッシュタグの列が続く。"
+        "読者は本文を読み始める前に気づける。"
+        "下の枠には、ハッシュタグの列はSNSで折りたたまれたり省略されたりすることがあるため、"
+        "その中に埋もれた表示は読者の目に入らないことがあること、"
+        "消費者庁の運用基準第3-1-(2)-クが大量のハッシュタグの中に表示を埋もれさせる場合を"
+        "判別困難な例として挙げていることが書かれている。"
+    )
+    (OUT / "pr-disclosure-position-mechanism.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    pr_disclosure_hit_and_miss_chart()
+    pr_disclosure_position_mechanism_chart()
