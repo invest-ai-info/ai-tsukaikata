@@ -38170,6 +38170,126 @@ def pr_disclosure_position_mechanism_chart() -> None:
     )
 
 
+def tax_included_withholding_hit_and_miss_chart() -> None:
+    """4条件で、源泉徴収後の手取り額が国税庁の通達どおりの正解と一致した回数（2026-10-26実測）。
+
+    判定は docs/evidence/no-tax-breakdown-means-withholding-on-the-full-amount.md の extract_final_amount() から。
+    """
+    _hit_and_miss_rows_chart(
+        "tax-included-withholding-hit-and-miss.svg",
+        "区分記載の無い契約は、3回中2回、源泉徴収が少なく計算された",
+        "実測2026-10-26。架空の業務委託契約（請求総額333,000円）、消費税の書き方だけを変えた。",
+        "各条件の「正解（通達どおりの手取り額）に到達した回数／試した回数」。",
+        [
+            ("①消費税を区分記載した契約", 2, 2, "good"),
+            ("②込み・区分なし・通達を示さず依頼", 1, 3, "good"),
+            ("③込み・区分なし・通達の文言を先に提示", 2, 2, "good"),
+            ("④区分の有無を確認させる汎用プロンプト", 2, 2, "good"),
+        ],
+        [
+            "⚠️ ②で誤った2回は、消費税込みの金額を税抜へ逆算してから源泉徴収をかけ、",
+            "本来より2,907円多い手取り額（302,092円。正解は299,001円）を出した",
+        ],
+        "4つの条件で、手取り額が国税庁の通達どおりの正解と一致した回数を示す表。"
+        "①消費税を区分記載した契約は2回中2回正解、"
+        "②消費税込みで総額のみ・通達を示さずに依頼は3回中1回正解、"
+        "③消費税込みで総額のみ・通達の文言を先に示して依頼は2回中2回正解、"
+        "④区分の有無をまず確認させる汎用プロンプトを契約①②の両方に適用は2回中2回正解。"
+        "下の枠には、②で誤った2回はどちらも消費税込みの金額を税抜へ逆算してから源泉徴収をかけ、"
+        "本来より2,907円多い手取り額（302,092円、正解は299,001円）を出したことが書かれている。",
+        label_w=420,
+    )
+
+
+def tax_included_withholding_calc_chain_chart() -> None:
+    """同じ請求総額333,000円から、計算の分かれ道で手取り額がどう変わるかを示す図。
+
+    実測は docs/evidence/no-tax-breakdown-means-withholding-on-the-full-amount.md。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    def chain_group(y: int, label: str, cls: str, steps: list[str]) -> int:
+        parts_local = [f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc(label)}</text>\n']
+        y += 24
+        for i, step in enumerate(steps):
+            parts_local.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="28" rx="5"/>\n')
+            tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+            style = ' style="font-weight:700"' if i == len(steps) - 1 else ""
+            parts_local.append(
+                f'<text class="{tcls}" x="{box_x + 16}" y="{y + 19}"{style}>{_esc(step)}</text>\n'
+            )
+            y += 28 + 4
+        parts.extend(parts_local)
+        return y + 10
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">税抜へ逆算すると、源泉徴収が2,907円少なくなる</text>\n',
+        '<text class="t-sm" x="18" y="45">同じ請求総額333,000円から、計算の分かれ道で手取り額がどう変わるかを示した（実測はdocs/evidence参照）。</text>\n',
+    ]
+    y = top
+    y = chain_group(
+        y,
+        "①消費税を区分記載した契約（正しい手順）",
+        "box-good",
+        [
+            "報酬額300,000円 × 10.21% = 30,630円を源泉徴収",
+            "333,000円 − 30,630円 = 手取り302,370円",
+        ],
+    )
+    y += 8
+    y = chain_group(
+        y,
+        "②込み・区分なしの契約（ありがちな誤りの手順）",
+        "box-bad",
+        [
+            "333,000円 ÷ 1.1 = 302,727円へ税抜逆算",
+            "302,727円 × 10.21% = 30,908円を源泉徴収",
+            "333,000円 − 30,908円 = 手取り302,092円（誤り）",
+        ],
+    )
+    y += 8
+    y = chain_group(
+        y,
+        "②込み・区分なしの契約（通達どおりの正しい手順）",
+        "box-good",
+        [
+            "区分記載が無いため、333,000円全体 × 10.21% = 33,999円を源泉徴収",
+            "333,000円 − 33,999円 = 手取り299,001円",
+        ],
+    )
+
+    y += 4
+    notes = [
+        "⚠️ 誤りの手順は、源泉徴収が本来より2,907円少ない方向にズレる",
+        "✅ 通達は「原則は込みの金額全体が対象。区分記載があるときだけ報酬額のみでよい」という順番",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "同じ請求総額333,000円という条件だけを揃え、消費税の書き方だけを変えた2契約の計算の分かれ道を示す図。"
+        "上段＝消費税を区分記載した契約。報酬額300,000円×10.21%=30,630円を源泉徴収し、"
+        "333,000円から引いて手取りは302,370円。"
+        "中段＝消費税込みで総額333,000円のみ記載した契約の、ありがちな誤りの手順。"
+        "333,000円を1.1で割って税抜額302,727円へ逆算し、その302,727円×10.21%=30,908円を源泉徴収、"
+        "333,000円から引いて手取りは302,092円。"
+        "下段＝同じ契約の正しい手順。区分記載が無いので333,000円全体×10.21%=33,999円を源泉徴収し、"
+        "手取りは299,001円。"
+        "下の枠には、誤りの手順は源泉徴収が2,907円少なくなる方向であること、"
+        "国税庁の通達が原則は消費税込みの金額全体を対象とし、"
+        "区分記載があるときだけ報酬額のみでよいとしていることが書かれている。"
+    )
+    (OUT / "tax-included-withholding-calc-chain.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     pr_disclosure_hit_and_miss_chart()
     pr_disclosure_position_mechanism_chart()
+    tax_included_withholding_hit_and_miss_chart()
+    tax_included_withholding_calc_chain_chart()
