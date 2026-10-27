@@ -2173,3 +2173,39 @@ WebFetch は `www.maruzenjunkudo.co.jp`・`www.hanmoto.com`・`qiita.com` の3�
   - 使った源: ①のみ（既存記事`content/recipes/*.md`の「試していません」記述を直接検索）
   - キューの未処理合計＝**25件**（🔁自動化・ループ優先枠は2件に復帰。副業4件・着手可能は
     変化なし）。
+
+- 2026-10-28（手動起動の追加実行・21:14 UTC）総数22件（目安の20超）で手順1.5どおりなら本来
+  スキップだが、🔁自動化・ループ優先枠を`- [ ] 🔁`で個別確認すると**0件**（床2件を下回り。
+  10/26補充の1件が10/27公開`sentence-end-check-stays-under-three`で消費された後、もう1件も
+  消費されたとみられる）だった。9/9〜10/26の申し送りどおり、この枠だけ源①（既存記事の発展・
+  general-purpose agent 1体）で補充した。副業は`earn_queue_shortage()`の数え方（⏸付きを除く）で
+  着手可能6件・床3件を上回っており問題なし。**採用3件・見送りなし。**源②③④は今日は回していない
+  （総数十分・自動化枠のみの補充のため）。
+  - 採用①「リンク切れの自動点検は、HEADが404を返しただけで『切れている』と決めてよいか」＝
+    CLAUDE.md「週次の検査（Freshness Check）が4週続けて赤だった（2026-09-22）」の実話
+    （Googleのヘルプが HEAD に404・GET に200を返す／Akamaiの定型403は実ブラウザでは開ける）が
+    起点。担当がgrep実測＝`HEAD`・`cf-mitigated`・`bot判定`は`content/recipes/`全体で0件。
+    `リンク切れ`が出る2本（`catch-broken-figures`・`pass-criteria-before-the-output`）は
+    どちらもHTTPの応答コードの食い違いそのものは扱っていないことを本文で確認
+  - 採用②「問い合わせ対応を6工程・7工程まで鎖でつなぐと、途中で欠けた項目はそれでも
+    『要確認』のまま届くか」＝公開済み`later-stages-skip-the-gap-and-stay-clean.md:135`の
+    未測定事項（5工程までしか測っていない）。⚠️ **サブエージェントは同記事の宿題を1件報告したが、
+    もう一方の宿題（欠けを実際に使う工程）は`later-stage-needs-the-missing-deadline.md`が
+    既に答えていることをサブエージェント自身が本文確認で見抜いており、担当も実物で再確認した**。
+    採ったのは工程数を6・7まで伸ばす軸だけ
+  - 採用③「待ち行列の『止まったままの行』は、詰んだ行が1か月・3か月と積み重なっても
+    正しく数えられるか」＝公開済み`fresh-easy-row-throws-off-the-stuck-count.md:146`の
+    未測定事項（10日までしか測っていない）。grep実測＝`1か月`と`詰んだ行`が同時に出る
+    既存記事は0件
+  - 見送り（サブエージェントが事前に除外）＝死活警告の警告疲れ（`diff-does-not-flag-still-open-warnings`
+    が既に実測済み）／点検100回超の「末尾3行」表現（キュー内に`[!]`で既に止め済み）／
+    見出し表記ゆれで0件警告が外れる話（`zero-alert-misses-without-a-header-row`と近い）／
+    索引行の回転誤認（このサイト自身のコード特化で読者が再現できる形に翻訳しづらい）
+  - 使った源: ①（general-purpose agent 1体・`content/recipes/*.md`の「測っていません」
+    「次に測る」等の宿題記述とCLAUDE.md「1段目」節を確認。担当が全根拠をgrep実測・該当記事の
+    本文確認で再検算＝`later-stages-skip-the-gap-and-stay-clean.md`・
+    `later-stage-needs-the-missing-deadline.md`・`fresh-easy-row-throws-off-the-stuck-count.md`・
+    `catch-broken-figures.md`・`pass-criteria-before-the-output.md`）のみ
+  - キューの未処理合計＝**25件**（🔁自動化・ループ優先枠は3件に復帰〈床2件を上回り〉・
+    副業6件〈⏸0件・着手可能6件〉・🔧改稿1件・定説を実測する2件・補充08-13床割れ4件・
+    もとからあるもの5件・詐欺2件・セキュリティ2件）。
