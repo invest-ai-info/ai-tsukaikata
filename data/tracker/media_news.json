@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-27T18:45:30.663558+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-10-27T16:33:51+00:00",
+      "source_id": "media-publickey",
+      "summary": "オラクルはGoogleが開発しているAI専用チップのGoogle TPUをOracle Cloud Infrastructure（以下、Oracle Cloud）に導入し、2027年からGoogle TPUのサービスを提供開始すると発表しま...",
+      "title": "Oracle CloudがGoogle TPU導入を発表、2027年に提供を開始。Oracle AI World 2026",
+      "uid": "74cf548057d6fa6c",
+      "url": "https://www.publickey1.jp/blog/26/oracle_cloudgoogle_tpu2027oracle_ai_world_2026.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-10-27T13:16:43.111805+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
@@ -2387,18 +2399,6 @@
       "uid": "c798c5fafee7a7b6",
       "url": "https://www.itmedia.co.jp/aiplus/article/2610/21/2000002452/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-21T03:06:27+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Memoketは10月21日、AIボイスレコーダー「Memoket Gem（メモケット ジェム）」の日本市場戦略に関する発表会を開催した。",
-      "title": "11gのウェアラブルAIボイスレコーダー「Memoket Gem」",
-      "uid": "404eeb3a5b374f22",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149922.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
