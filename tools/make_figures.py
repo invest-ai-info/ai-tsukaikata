@@ -38592,6 +38592,102 @@ def deferral_without_destination_mechanism_chart() -> None:
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
 
 
+def ending_count_hit_and_miss_chart() -> None:
+    """文末パターンの「見出しの数」が実際のパターン数と一致した回数（2026-10-27実測）。
+
+    2パターン（隣接・14文に分散）はいずれも素朴な指示で5/5一致。3パターンに増やすと
+    素朴な指示では2/5まで落ち、総数を先に（または最後に）明記させる言い方で戻る。
+    判定は docs/evidence/other-patterns-get-named-but-not-counted.md の
+    extract_conclusions() から。
+    """
+    _hit_and_miss_rows_chart(
+        "ending-count-hit-and-miss.svg",
+        "2パターンは5/5一致。3パターンに増えると、素朴な指示は2/5に落ちる",
+        "「文末表現が不自然に連続している箇所を指摘して」に対し、見出しの数が実際の数と一致した回数。",
+        "3パターンでは、総数を先または最後に明記させる言い方で5/5・3/3に戻った。",
+        [
+            ("2パターン・隣接8文・素朴に指摘して", 5, 5, "good"),
+            ("2パターン・14文に分散・素朴に指摘して", 5, 5, "good"),
+            ("3パターン・素朴に指摘して", 2, 5, "good"),
+            ("3パターン・総数を先に明記させる", 5, 5, "good"),
+            ("3パターン・総数を最後に明記させる", 3, 3, "good"),
+        ],
+        [
+            "2パターンまでは、素朴な指示でも見出しの数は5回とも実際の数と一致した。",
+            "3パターンに増えると、素朴な指示は5回中3回「2か所」と少なく数え、3つ目は本文に書かれるだけだった。",
+        ],
+        "文末パターンの「見出しで示した数」が実際のパターン数と一致した回数を示す表。"
+        "2パターン・隣接8文の素朴な指示は5/5一致。2パターン・14文に分散させた素朴な指示も5/5一致。"
+        "3パターンに増やした素朴な指示は2/5まで落ちる。3パターンで総数を先に明記させる言い方は5/5一致、"
+        "総数を最後に明記させる言い方は3/3一致。下の枠には、2パターンまでは素朴な指示でも"
+        "見出しの数が5回とも実際の数と一致したこと、3パターンに増えると素朴な指示は5回中3回"
+        "「2か所」と少なく数え、3つ目は本文に書かれるだけだったことが書かれている。",
+        label_w=380,
+    )
+
+
+def ending_count_third_pattern_mechanism_chart() -> None:
+    """3パターンのうち3つ目が、見出しの数からは漏れつつ本文には出てくる様子を示す図。
+
+    実測は docs/evidence/other-patterns-get-named-but-not-counted.md。
+    トライアル5の生の返りから、材料の実際の並び（3文が連続）と、
+    返りが書いた根拠（「間に他の文が挟まっている」）が食い違う箇所を転記した。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">3つ目のパターンは、本文には出てくるが見出しの数には入らない</text>\n',
+        '<text class="t-sm" x="18" y="45">材料では「でしょう」「と思います」「のです」がそれぞれ3文連続（実測はdocs/evidence参照）。</text>\n',
+    ]
+    y = top
+
+    def row(y: int, label: str, cls: str) -> int:
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="28" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 19}">{_esc(label)}</text>\n')
+        return y + 28 + 4
+
+    parts.append(f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc("材料の実際の並び（9〜11文目・3文は連続していて、間に他の文は無い）")}</text>\n')
+    y += 24
+    y = row(y, "①でしょう（2〜4文目・3文連続）", "box-good")
+    y = row(y, "②と思います（9〜11文目・3文連続）", "box-good")
+    y = row(y, "③のです（16〜18文目・3文連続）", "box-good")
+    y += 10
+
+    parts.append(f'<text class="t-strong" x="{box_x}" y="{y + 14}">{_esc("トライアル5の見出しと言い分（5回中3回、この型になった）")}</text>\n')
+    y += 24
+    y = row(y, "見出し「文末表現が不自然に連続している箇所を2か所指摘します」", "box-bad")
+    y = row(y, "本文「〜と思います〜間に他の文が挟まっているため上記2箇所より目立ちません」", "box-bad")
+
+    y += 6
+    notes = [
+        "⚠️ 「間に他の文が挟まっている」は誤り。②は材料の中で3文とも連続しており、挟まる文は無い",
+        "✅ 本文には②も出てくる。消えるのは「見出しの数」と「同格の扱い」のほうだけ",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "文末パターン3つ（でしょう・と思います・のです）が、材料の中ではそれぞれ3文連続している実際の並びと、"
+        "AIの返り（トライアル5）が見出しで「2か所」と少なく数え、3つ目（と思います）について"
+        "「間に他の文が挟まっているため目立たない」と書いた箇所を並べた図。"
+        "材料の実際の並びは、でしょうが2〜4文目・と思いますが9〜11文目・のですが16〜18文目で、"
+        "いずれも3文が連続しており間に他の文は無い。下の枠には、"
+        "「間に他の文が挟まっている」という返りの根拠は誤りで、と思いますの3文は材料の中で連続していたこと、"
+        "本文にはと思いますへの言及自体はあり、見出しの数と同格の扱いのほうだけが消えたことが書かれている。"
+    )
+    (OUT / "ending-count-third-pattern-mechanism.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
 if __name__ == "__main__":
     deferral_without_destination_results_chart()
     deferral_without_destination_mechanism_chart()
+    ending_count_hit_and_miss_chart()
+    ending_count_third_pattern_mechanism_chart()
