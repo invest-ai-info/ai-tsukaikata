@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-27T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "国内で「AIデータセンター」の建設が相次いでいる。その立地は、工場跡地、廃校、洋上などさまざまだ。ユニークな立地戦略の狙いを考察する。",
+      "title": "「AIデータセンター」どこに作る？　工場跡地、廃校、洋上、宇宙――ユニークな立地戦略の狙いは",
+      "uid": "8b9cd7681f052937",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/28/news039.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-27T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI開発を外注したら、委託先の試験では90点なのに社内では使い物にならない――こんな悩みをどう解決すればよいのか。そもそも、外注してもよいのか。失敗しないAI導入のコツを整理する。",
+      "title": "「AI開発、“外注”しても大丈夫？」──丸投げで失敗するケースも　絶対に「手放してはいけないもの」とは",
+      "uid": "810b020804f7c14b",
+      "url": "https://www.itmedia.co.jp/business/articles/2610/28/news011.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-27T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "システムの複雑化に伴い、障害対応の属人化が深刻化している。そうした中、JPXと日立は金融市場における取引システムの運用監視業務にAIの本格適用を開始した。ミッションクリティカルなシステム運用にAIを組み込む上で最大の障壁となるハルシネーションのリスクにどのように向き合っているのか。",
+      "title": "日本取引所、金融市場の取引システム運用監視にAIを導入　精度97％を実現した方法",
+      "uid": "56ca3cfd7adf4730",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/28/2000002621/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-27T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの性能向上によってソフトウェアの脆弱性が続々と発見されるようになりました。@0x_Osprey氏が公開しているウェブアプリ「CVE Tracker」では2026年に入ってから脆弱性の報告件数が急増していることが読み取れます。 続きを読む...",
+      "title": "AIによって脆弱性発見が爆増したことが一目で分かるグラフ「CVE Tracker」",
+      "uid": "8e915b4b99332604",
+      "url": "https://gigazine.net/news/20261028-cve-tracker/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-10-27T21:53:37+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Google DeepMindは、対話型の仮想世界をリアルタイム生成するAI「Genie 4」を発表した。映像品質や物理演算が向上し、環境音や会話音声の同時生成に対応。人物の自然な動作やテキストによる環境操作が可能となった。まずは研究プレビューとして提供し、順次「Google AI Ultra」加入者等へ展開する。",
+      "title": "Google DeepMind、ワールドモデル「Genie 4」発表　音声や会話もリアルタイム生成、Geminiと連携",
+      "uid": "c4ae14a6943f04a7",
+      "url": "https://www.itmedia.co.jp/news/article/2610/28/2000002648/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-10-27T21:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Preferred Networks（PFN）は10月27日、国産生成AI「PLaMo」の新モデル「PLaMo 3.1 Prime」の提供を始め、出典付きの調査レポートを自動作成する「Deep Research」機能を追加した。チャットサービス「PLaMo Chat」では、11月30日まで1日2回を上限に無料で利用できる。",
+      "title": "国産AI「PLaMo」にディープリサーチ機能　出典付きレポートを自動作成--PFNが発表",
+      "uid": "13fc50a0bef23445",
+      "url": "https://japan.cnet.com/article/35254051/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-27T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年9月8日、Cloudflare Workers AIでホストされているGLM-5.3モデル(@cf/zai-org/glm-5.3)においていわゆる「テナント分離問題」が発生していることがセキュリティ研究者のガディ・エヴロン氏により報告されました。Cloudflareはこのインシデントを修正し、モデルは9月9日に復旧されました。インシデント情報開示の一環としてCloudflareによる…",
+      "title": "GLM-5.3 Workers AIモデルにおけるリクエスト間のKVキャッシュ漏洩とSGLangによる対策をCloudflareが解説",
+      "uid": "efdfb249c39a35f7",
+      "url": "https://gigazine.net/news/20261028-kv-cache-exposure-remediation/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-27T22:58:59.068564+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-27T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "株価の分析手法には、収益力や成長性など、企業の財務指標などを基に分析するファンダメンタルズ分析と、上昇や下降の傾向などの値動きを基に分析するテクニカル分析があります。今回は、重回帰分析の適用例として、ファンダメンタルズ分析のごく簡単な例を取り上げます。『社会人1年生から学ぶやさしいデータ分析』ベイズ統計編（第11回）です。",
+      "title": "【Pythonで学ぶデータ分析】ベイズ統計で重回帰分析 ～ 株価のファンダメンタルズ分析を行う",
+      "uid": "f384ec6d4c3de239",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/28/news006.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-27T18:45:30.663558+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2303,102 +2399,6 @@
       "uid": "40f6419240f64dad",
       "url": "https://gigazine.net/news/20261021-google-personal-intelligence-with-gemini/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-21T06:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "不正アクセス急増に伴い再燃する「SaaS is Dead」を巡る議論。ただ、これまでとは少々事情が違うようだ。",
-      "title": "不正アクセス急増は“SaaS離れ”を招くか？　露呈したもう1つの「SaaS is Dead」リスク",
-      "uid": "59b8e0f9fc83cbe5",
-      "url": "https://www.itmedia.co.jp/news/article/2610/21/2000002451/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-21T05:51:30+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日立製作所は、生成AIの普及に伴い増大するデータセンターの電力消費量を低減するGPU冷却用コールドプレートを開発した。",
-      "title": "日立、新開発のGPU冷却技術でAIデータセンターの電力30％削減",
-      "uid": "51db1205ed9fa000",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150003.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-21T05:07:51+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTは、福岡市内のフィールド環境で福岡市管工事協同組合と共同で、光ファイバーセンシング技術を活用した給水管の漏水位置の特定の実証に世界で初めて成功した。同実証は、「福岡市実証実験フルサポート事業」に採択され、福岡市協力のもと実施している。同技術により、従来は熟練者の経験に依存し、習得に数年を要した漏水探査の作業が、専門的なスキルを持たない作業者でも熟練者並みの15分程度で行なえるようになる。",
-      "title": "NTTが実証、約15分で水道管の漏水を自動特定するAI技術",
-      "uid": "9703b0d3dadf38bc",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149981.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-21T04:55:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicが2026年上半期に800億ドル(約12兆円)を超える純損失を計上し、今後数年間でコンピューティング能力の増強に最大7500億ドル(約118兆円)を投じる可能性があることが新規株式公開(IPO)目論見書草案で示されました。 続きを読む...",
-      "title": "AnthropicのIPO目論見書草案で118兆円超えの支出予定が判明、2026年上半期は約12兆円の純損失＆売上は半年で10倍以上の成長",
-      "uid": "74cf2815057d33e5",
-      "url": "https://gigazine.net/news/20261021-anthropic-wsj-reports/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-21T04:19:19+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは10月20日、バイオ医薬品チーム向けに創薬開発の連携を支援するプラットフォームを手がけるOrchestra Bioを買収した。Orchestra Bioのチームと技術は、OpenAIが展開する生命科学研究向けのAIモデルおよびツール群である「Rosalind」に統合される。Rosalindは、同社のAIモデルとツールを生命科学研究者に提供される。",
-      "title": "OpenAIが創薬AIで開発を加速、Orchestra Bioを買収",
-      "uid": "2229ff99ab5e9f8f",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2149943.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-21T03:53:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI検索ツールの開発に携わる研究者が、約5万ページ分の偽の統計データを保有するウェブサイトを立ち上げてAIに読まれるかどうかを検証するという実験を行いました。その結果、AIから大量のアクセスがあり、さらには架空のデータなのに論文やニュースなどで引用されるという事態に発展したことが分かりました。 続きを読む...",
-      "title": "架空の統計データをウェブサイトで公開したらChatGPTが引用しまくっていたことが判明",
-      "uid": "fc14806ddb6fbae8",
-      "url": "https://gigazine.net/news/20261021-ai-read-fake-statistics/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-21T03:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "人工知能（AI）に仕事を奪われたり、経済に悪影響が及んだり、政治プロセスが混乱したりすることを、愛する人が亡くなること以上に恐れている人もいるようだ。",
-      "title": "米国人の「恐怖の対象」ランキング、AIの政治介入が3位に",
-      "uid": "4e3f552d27868ab5",
-      "url": "https://japan.cnet.com/article/35253804/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-21T03:08:18+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "GMOサイバーセキュリティ byイエラエが、日本企業を狙った不正アクセスの攻撃元を調査し、自律型ペネトレーションテストツール「ARTEX」の使用を確認。約20の日本企業が標的になっているという。",
-      "title": "AI利用のペネトレーションテストツール「ARTEX」を使用した攻撃、日本企業20社を標的に　同一グループが複数犯行か　対策のポイントは　GMO系列調査",
-      "uid": "c798c5fafee7a7b6",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/21/2000002452/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
