@@ -4816,10 +4816,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "“We see Astra actually show over double digit gains over any other model we've tested on two fronts.”\n\nHebbia’s Kavita Anand names the two: selecting the right sources and generating PowerPoint presentations.\n\nFor a banker or investor working through a data room with thousands of documents, both matter. The research needs to draw from the right evidence, and the deck needs to follow the user’s guidelines before it informs an investment decision.\n\nWatch Kavita explain what Hebbia found in its evaluations.",
    "first_seen": "2026-10-26T22:51:12.785798+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "HebbiaのKavita Anand氏が、Astraは他モデルに比べ2桁以上の改善を見せたと述べている。",
+    "金融業務において膨大な資料から正しい引用元を特定する精度が向上したと説明している。",
+    "ユーザーの指示に沿った高精度なPowerPoint資料の自動生成が可能になったと語っている。"
+   ],
+   "for_whom": "金融や投資分野で大量の文書調査や資料作成を効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T22:34:42.863062+00:00"
   },
   {
    "video_id": "tTuk4pGnT0A",
@@ -4947,10 +4957,20 @@
    "channel_key": "jeff-su",
    "channel_name": "Jeff Su",
    "default_category": "tech",
-   "description": "Grab my free Cowork Toolkit: https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v213\n\nIf your #AI keeps creating Notion pages you have to fix, it needs to learn how YOU work. In this video, I’ll show you how to teach Claude and #ChatGPT your database, template, and formatting preferences so they can handle the tedious work for you.\n\nYou’ll start with tasks and notes, save your preferences in a reusable Notion Conventions file, and see how the same process scales to entire projects with linked tasks and deliverables. It works with Claude, ChatGPT, or Gemini, so you can keep the Notion setup you already use.\n\n*TIMESTAMPS*\n00:00 Manage Your ENTIRE Notion Setup with AI\n01:31 How Notion Works with ChatGPT and Claude\n04:24 Teaching AI Your Notion Preferences\n09:43 Using AI Across Your Notion Workspace\n11:54 Managing Projects in Notion using ChatGPT and Claude\n\n*RESOURCES MENTIONED*\nPrompts & templates - https://www.jeffsu.org/notion-ai-workflow-guide/?utm_source=youtube&utm_medium=video&utm_campaign=v213\nThe Cowork Academy - https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v213\nNotion course - https://www.pressplay.cc/link/s/DE1C4C50\nPersonal Agents, Clearly Explained - https://www.youtube.com/watch?v=HdI_aYzgJIg\n\n*BUILD A POWERFUL WORKFLOW*\n🦾 AI Systems Academy - https://systemsacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=213\n📈 The Workspace Academy - https://academy.jeffsu.org/workspace-academy?utm_source=yo",
    "first_seen": "2026-10-27T18:14:57.266228+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "NotionとAIを連携する際、独自の規則ファイルをAIに読み込ませることで、一貫したレイアウトや設定でページを自動生成できると説明している。",
+    "理想的なページやデータベースのURLをAIに解析させ、プロパティやテンプレートの指定ルールを規則ファイルに記録・更新する手順を紹介している。",
+    "単一のタスク管理だけでなく、プロジェクトや成果物など複数のデータベースが連動する複雑なワークフローも同様に自動化できると実演している。"
+   ],
+   "for_whom": "NotionとChatGPTやClaudeを連携し、好みの形式でタスクやプロジェクト作成を自動化したい人",
+   "caution": "動画内および概要欄において、投稿者が運営するNotionの有料講座やAIコミュニティ（The Cowork Academy）への誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T22:34:42.863062+00:00"
   },
   {
    "video_id": "lPZQrVFcz3c",
@@ -5029,10 +5049,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Security teams face a constant stream of vulnerabilities and alerts. Cloudflare’s Mark Anderson describes using AI to automate detection and response so experts can focus on threats that need their judgment. He sees automation from companies like OpenAI as a way to take on routine security work and help teams keep pace.",
    "first_seen": "2026-10-27T18:14:57.266228+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "セキュリティ制御はオフィス内にとどまらず、あらゆる場所に存在する必要があると述べている。",
+    "従来のセキュリティ運用では人員不足になるため、AIを活用した検知・対応の自動化を進めていると話している。",
+    "定型作業をAIに任せることで、人間が最も重要な判断に集中できるようになると説明している。"
+   ],
+   "for_whom": "セキュリティ運用の効率化やAIによる自動化に関心があるIT・セキュリティ担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T22:34:42.863062+00:00"
   },
   {
    "video_id": "0qb0FQo3M5c",
@@ -5042,10 +5072,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "“It is a prerequisite for staying safe that you must use AI.”\n\nAttackers can move at machine speed. Defenders need security controls that can adapt just as quickly.\n\nJeetu Patel, President of Cisco, explains why OpenAI is becoming a core foundation for that work. With capabilities like Daybreak and Astra, Cisco sees an opportunity to make security controls and policies dynamic—and strengthen defenses for the businesses that depend on them.\n\nWatch why Cisco is rethinking how defense gets done.",
    "first_seen": "2026-10-27T18:14:57.266228+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "CiscoのJeetu Patel氏が、安全性を保つためにはAIの活用が前提条件になっていると説明している。",
+    "セキュリティの制御やポリシーは静的ではなく、自律的かつ動的に対応できるようにする必要があると述べている。",
+    "脆弱性の公表から悪用までの猶予が短い中、OpenAIの技術により防御側を機械の速度で動かせると話している。"
+   ],
+   "for_whom": "サイバーセキュリティ対策や企業防衛へのAI活用に関心があるIT・セキュリティ担当者向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T22:34:42.863062+00:00"
   },
   {
    "video_id": "sFfPkUJd_Jk",
@@ -5073,87 +5113,87 @@
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-27T18:14:57.266228+00:00",
+   "last_ok": "2026-10-27T22:34:42.863062+00:00",
    "fail_streak": 0
   }
  }
