@@ -4833,92 +4833,197 @@
    "first_seen": "2026-10-26T22:51:12.785798+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "kuRFAngTJsU",
+   "title": "EmDash完全解説【この動画1本で全て理解】WordPressから移管してAIネイティブなWebサイトを構築する方法",
+   "url": "https://www.youtube.com/watch?v=kuRFAngTJsU",
+   "published": "2026-10-27T10:00:03+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-27T12:38:08.582796+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "WordPressからCloudflare基盤のCMS「EmDash」へサイトを移行する手順と利点を解説している。",
+    "移行により保守の手間を減らし、AIでの更新内製化やパスキー管理による安全性向上が図れると説明している。",
+    "ClaudeのMCP連携を使い、チャットでの指示からお知らせ記事や画像を生成してサイトを更新する実演を紹介している。"
+   ],
+   "for_whom": "WordPressの保守負担を軽減し、AIを使ってWebサイトの更新作業を効率化したい人",
+   "caution": "自力での移行が難しい人向けに有償の移行支援サービスを紹介しているほか、概要欄で公式LINEやAIコミュニティへの登録誘導があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T12:38:08.582796+00:00"
+  },
+  {
+   "video_id": "9FLNYHMFeGc",
+   "title": "Metaの無料パーソナルAIエージェント「Muse」の特徴・使い方・活用事例！～Gmail・カレンダー連携から動画・画像生成まで丸投げできる～",
+   "url": "https://www.youtube.com/watch?v=9FLNYHMFeGc",
+   "published": "2026-10-27T09:06:25+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-27T12:38:08.582796+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Metaが日本展開を開始した無料のAIエージェント「Muse」の特徴や安全対策について解説している。",
+    "ログイン手順や、対話内容をAIモデルの学習に使われないようにするための初期設定を説明している。",
+    "Gmailやカレンダーとの連携、画像や動画の生成といった具体的な活用事例を紹介している。"
+   ],
+   "for_whom": "メール返信やスケジュール管理などの日常業務をAIエージェントで自動化したい会社員",
+   "caution": "初期設定ではやり取りがMetaのAI学習に利用される設定が有効になっているため、気になる場合はデータコントロールからオフにする必要があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T12:38:08.582796+00:00"
+  },
+  {
+   "video_id": "GasJL9OrbxE",
+   "title": "【面白い】『GPT-6.1 Terra』が登場したので実際に使ってきた！Token効率や速度をキープしたトレンド性能を押さえたAIでした",
+   "url": "https://www.youtube.com/watch?v=GasJL9OrbxE",
+   "published": "2026-10-27T03:12:32+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-27T12:38:08.582796+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIの新モデル「GPT-6.1 Terra」の料金や処理速度、ベンチマーク性能を解説している",
+    "Solの半額のAPI単価で高速動作し、大量タスクやComputer Useに向くと説明している",
+    "自作デモの比較から、Solより細部は簡略化されるがスマートにタスクをこなすと評価している"
+   ],
+   "for_whom": "最新AIモデルの性能比較やAPIコストの使い分けを知りたい人",
+   "caution": "動画終盤および概要欄にて、投稿者が運営するnoteの有料メンバーシップへの誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T12:38:08.582796+00:00"
+  },
+  {
+   "video_id": "vd-HRExj5l8",
+   "title": "【ぬらない塗り絵】売上0円に心が折れた人にガチおすすめしたい！ほったらかしで成果を生み出す自動販売機を世界中に設置する方法【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=vd-HRExj5l8",
+   "published": "2026-10-27T09:00:23+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "first_seen": "2026-10-27T12:38:08.582796+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "海外で流行し日本で未開拓な「1色ミステリー塗り絵」をAmazon KDPで出版する副業を紹介している。",
+    "画像生成AIのRecraftを使い、4色のみで名画風のパロディ画像を生成する手順を説明している。",
+    "ChatGPTのPython実行機能を活用し、画像をマス目形式の塗り絵PDFや表紙へ変換する方法を解説している。"
+   ],
+   "for_whom": "AIツールを活用してAmazon KDP向け塗り絵本の出版副業に挑戦したい人",
+   "caution": "動画内では実践者が月77万円を達成したなどの実績が語られていますが、全員が同様の収益を得られる保証はありません。また、特典配布を名目とした公式LINEへの登録誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T12:38:08.582796+00:00"
+  },
+  {
+   "video_id": "HKNpCwG3nlc",
+   "title": "The $1,000/hour 1-person AI business",
+   "url": "https://www.youtube.com/watch?v=HKNpCwG3nlc",
+   "published": "2026-10-26T18:35:28+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "description": "Get Your Complete Financial OS at https://startup-ideas-pod.link/brex_SIP\n\nI sit down with James Dickerson, the Boring Marketer, who owns Diesel Dudes, a mobile diesel repair business in Charlotte, North Carolina, and spent years running agencies for local businesses. James shows how to sell AI-built funnels to Main Street trades businesses doing $2 million to $20 million a year, starting with a Boring Funnels search that found 100 Dallas plumbers worth pitching. He walks through the leaks he finds on their landing pages, the funnel offers he'd sell, and how he'd win clients with the Dream 100, lumpy mail, and local meetups. If you know how to use coding agents, this episode gives you a full playbook for a service business built around booked jobs.\n\nBuild funnels that sell: https://startup-ideas-pod.link/boring_funnels\n\nTimestamps\n00:00 – Intro\n01:23 – Sponsor: Brex\n02:08 – Why sell AI to Main Street\n03:05 – James's Background\n04:32 – Finding and Picking a Niche\n07:26 – The $2M to $20M Opportunity\n09:02 – Plumbing and HVAC Market Size\n10:56 – Underserved Trades Niches\n12:38 – Auditing Five Dallas Plumbers\n13:50 – Personal Agents vs. Google\n15:02 – Selling Booked Jobs and Phone Calls\n17:41 – Funnel Offer Overview\n19:43 – Funnel Example\n23:19 – Matching Ads to Funnels\n24:14 – Chet Holmes and the Dream 100\n28:18 – Branding your Firm\n30:04 – Meta Ads for your firm\n31:37 – Stacking Old School and New School Marketing Strategy\n34:31 – Find, Pitch, Deliver\n36:02 – Showing Owners the",
+   "first_seen": "2026-10-27T12:38:08.582796+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-26T22:51:12.785798+00:00",
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-26T13:29:48.827012+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "fail_streak": 0
   }
  }
 }
