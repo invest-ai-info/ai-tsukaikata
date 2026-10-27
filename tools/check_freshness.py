@@ -592,6 +592,10 @@ EARN_RESEARCH_PATH = "content/_earn_research.md"
 EARN_RESEARCH_MAX_DAYS = 2  # 1日休んでも鳴らない。2日ぶん空いたら鳴る
 # 作業ログの日付見出し＝「### 2026-08-17 — …」
 EARN_RESEARCH_DATE_RE = re.compile(r"^### (\d{4})-(\d{2})-(\d{2})", re.M)
+# 在庫十分でスキップした日は見出しを作らず「- →保管: 2026-10-25 …」の1行だけ
+# 追記する設計（沈黙禁止＝0件の日も1行書く）。見出しだけ見ると、スキップが
+# 2日続いただけで「止まっている」と誤報する（2026-10-25・10-26 で実際に発生）。
+EARN_RESEARCH_SKIP_DATE_RE = re.compile(r"^- →保管: (\d{4})-(\d{2})-(\d{2})", re.M)
 
 
 def earn_research_heartbeat(log_text, today: date,
@@ -607,6 +611,8 @@ def earn_research_heartbeat(log_text, today: date,
 
     dates = [date(int(y), int(m), int(d))
              for y, m, d in EARN_RESEARCH_DATE_RE.findall(log_text)]
+    dates += [date(int(y), int(m), int(d))
+              for y, m, d in EARN_RESEARCH_SKIP_DATE_RE.findall(log_text)]
     if not dates:
         return (
             f"{EARN_RESEARCH_PATH}: 作業ログに日付の節（### YYYY-MM-DD）が1つもありません"
