@@ -41,6 +41,18 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-10-27T06:20:54.555843+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-26T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Taking Japan-Born AI Products to the World: An Interview with Sakana AI’s VP of GTM",
+      "uid": "5bff48f6bd4ca496",
+      "url": "https://sakana.ai/vp-of-gtm-interview/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-10-27T00:29:48.146067+00:00",
       "importance": "minor",
       "label": "OpenAI News",
