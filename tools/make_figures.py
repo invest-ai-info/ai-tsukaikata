@@ -38387,3 +38387,123 @@ if __name__ == "__main__":
     tax_included_withholding_calc_chain_chart()
     three_cancel_hit_and_miss_chart()
     three_cancel_calc_chain_chart()
+
+
+def prohibition_matching_heading_outcome_chart() -> None:
+    """禁止あり／禁止なしで、週3体調・週4残業・週5待遇の漏れが何回中何回起きたかを並べた図。
+
+    実測2026-10-27。`prohibition-holds-leak-needs-a-matching-heading` の図1。
+    `bare-prohibition-holds-but-erases-the-row`（週2→週4・2項目）の続編として、
+    同じ禁止の一文を週2→週5の4週連鎖・3項目（体調・残業・待遇）に伸ばして2回ずつ試した。
+    """
+    _hit_and_miss_rows_chart(
+        "prohibition-holds-leak-needs-a-matching-heading-outcome.svg",
+        "禁止ありは4週・3対象とも漏れ0。禁止なしは話題によって割れる",
+        "週報ループを週2→週5の4週連鎖で2回ずつ試した。数字は「本文に漏れた回数／試した回数」。",
+        "禁止なしでも「体調」は0/2。残業・待遇だけが「4. 相談したいこと」に漏れた。",
+        [
+            ("禁止あり・週3体調（頭痛・半休）", 0, 2, "bad"),
+            ("禁止あり・週4残業（残業時間の増加）", 0, 2, "bad"),
+            ("禁止あり・週5待遇（ボーナス査定）", 0, 2, "bad"),
+            ("禁止なし・週3体調（頭痛・半休）", 0, 2, "bad"),
+            ("禁止なし・週4残業（残業時間の増加）", 2, 2, "bad"),
+            ("禁止なし・週5待遇（ボーナス査定）", 2, 2, "bad"),
+        ],
+        [
+            "禁止の一文は、4週・3つの話題に増えても本文への漏れを6/6で0に抑えた。",
+            "禁止が無いときの漏れやすさは話題で決まる。既存の見出しに当てはまる話題だけが漏れた。",
+        ],
+        "禁止あり・禁止なしの2条件で、週3の体調不良・週4の残業・週5の待遇（ボーナス査定）が"
+        "本文に漏れた回数を示す表。禁止ありは週3・週4・週5とも0/2で、6回とも漏れなかった。"
+        "禁止なしは週3の体調が0/2で漏れなかったが、週4の残業は2/2、週5の待遇は2/2で"
+        "どちらも「4. 相談したいこと」に漏れた。下の枠には、禁止の一文は4週・3つの話題に"
+        "増えても漏れを0に抑えたこと、禁止が無いときの漏れやすさは話題で決まり、既存の見出しに"
+        "当てはまる話題だけが漏れたことが書かれている。",
+        label_w=360,
+    )
+
+
+def prohibition_matching_heading_mechanism_chart() -> None:
+    """3つの話題それぞれに「当てはまる見出しがあるか」と、禁止なしでの結果を並べた図。
+
+    実測2026-10-27。`prohibition-holds-leak-needs-a-matching-heading` の図2。
+    """
+    rows = [
+        ("体調（頭痛・半休）", [
+            ("当てはまる見出しがあるか", "無い", "box-good", "t-good"),
+            ("禁止なしでの結果", "自然に消えた（0/2）", "box-good", "t-good"),
+        ]),
+        ("残業（残業時間の増加）", [
+            ("当てはまる見出しがあるか", "ある（4. 相談したいこと）", "box-bad", "t-bad"),
+            ("禁止なしでの結果", "そのまま書かれた（2/2）", "box-bad", "t-bad"),
+        ]),
+        ("待遇（ボーナス査定）", [
+            ("当てはまる見出しがあるか", "ある（4. 相談したいこと）", "box-bad", "t-bad"),
+            ("禁止なしでの結果", "そのまま書かれた（2/2）", "box-bad", "t-bad"),
+        ]),
+    ]
+    label_w = 210
+    item_w = 330
+    col_x = 18 + label_w
+    row_h = 30
+    group_gap = 8
+    top = 104
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "漏れるかどうかを決めていたのは、禁止の有無ではなく見出しとの相性だった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "3つの話題それぞれに、4つの見出し（やったこと・進んでいないこと・来週やること・相談したいこと）の"
+        "どれかが当てはまるかを見た。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "禁止なしでの結果は、週3・週4・週5をそれぞれ2回ずつ試したもの。</text>\n",
+    ]
+
+    y = top
+    for group_label, items in rows:
+        parts.append(f'<text class="t-strong" x="18" y="{y + 10}">{_esc(group_label)}</text>\n')
+        y += 20
+        for item_label, outcome, klass, tcls in items:
+            parts.append(f'<text class="t-sm" x="34" y="{y + 19}">{_esc(item_label)}</text>\n')
+            parts.append(
+                f'<rect class="{klass}" x="{col_x}" y="{y}" width="{item_w}" height="24" rx="4"/>\n'
+            )
+            parts.append(
+                f'<text class="{tcls}" x="{col_x + item_w / 2:.1f}" y="{y + 17}" '
+                f'text-anchor="middle" style="font-weight:700">{_esc(outcome)}</text>\n'
+            )
+            y += row_h
+        y += group_gap
+
+    y += 4
+    box_h = 48
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "見出しのどれにも当てはまらない話題は、言われなくても自然に消えた。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "「相談したいこと」に当てはまる話題だけが、禁止しないと漏れた。</text>\n"
+    )
+    y += box_h + 16
+
+    alt = (
+        "体調・残業・待遇の3つの話題について、4つの見出し（やったこと・進んでいないこと・"
+        "来週やること・相談したいこと）のどれかが当てはまるかと、禁止なしでの結果を示す図。"
+        "体調（頭痛・半休）は当てはまる見出しが無く、禁止なしでも自然に消えた（0/2）。"
+        "残業（残業時間の増加）は「4. 相談したいこと」が当てはまり、禁止なしではそのまま"
+        "書かれた（2/2）。待遇（ボーナス査定）も同様に「4. 相談したいこと」が当てはまり、"
+        "禁止なしではそのまま書かれた（2/2）。下の枠には、見出しのどれにも当てはまらない"
+        "話題は言われなくても自然に消えたこと、相談したいことに当てはまる話題だけが禁止しないと"
+        "漏れたことが書かれている。"
+    )
+    (OUT / "prohibition-holds-leak-needs-a-matching-heading-mechanism.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    prohibition_matching_heading_outcome_chart()
+    prohibition_matching_heading_mechanism_chart()
