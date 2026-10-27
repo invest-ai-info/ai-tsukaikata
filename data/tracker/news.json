@@ -5833,20 +5833,6 @@
       "uid": "70d2e9006b476313",
       "url": "/diver-osint/",
       "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-29T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery.",
-      "summary_ja": "OpenAIが研究者向けChatGPT無料提供を開始\n学術研究者10万人が最先端AIを利用可能に\n科学研究や発見を加速させる目的",
-      "summary_source": "gemini",
-      "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
-      "uid": "a7d16ccc94839459",
-      "url": "https://openai.com/index/chatgpt-for-academic-researchers",
-      "vendor": "OpenAI"
     }
   ]
 }
