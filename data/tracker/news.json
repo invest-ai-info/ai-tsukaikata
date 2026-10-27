@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-27T00:29:48.146067+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T22:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.",
+      "summary_ja": "GreptileがAIで不具合を見つける方法を進化させた。\nGPT-6 Astraで利用者の操作の流れをテストし、\nDaybreakで安全性を高め、Codexで手直しを減らす。",
+      "summary_source": "gemini",
+      "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+      "uid": "3b3cf45281360fb0",
+      "url": "https://openai.com/index/greptile-code-review-codex-astra",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-27T00:29:48.146067+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-26T21:51:23+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added --hold-idle-file and --max-hold-min to self-hosted-runner , to keep an idle session while your host reports processes it left running Added a tip for the Explanatory output style…",
+      "title": "v2.1.311",
+      "uid": "707bc8946a51071f",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.311",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-26T20:32:27.740755+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -13,6 +39,34 @@
       "uid": "2bd2776d4f3f981e",
       "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-10-27T00:29:48.146067+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T14:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+      "summary_ja": "OpenAIが学術界とAI研究の成果を共有する。\nKakeya予想や量子色力学などの難問解決にAIを利用。\n研究者はその結果を検証し、さらに発展させられる。",
+      "summary_source": "gemini",
+      "title": "Working with academic communities to build scientific understanding",
+      "uid": "531507810ff8de6d",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-27T00:29:48.146067+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-26T13:45:00+00:00",
+      "source_id": "openai-news",
+      "summary": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+      "summary_ja": "CodeRabbitがAIでプログラムの安全性を高める。\nGPT-6.1 Solを使い、複雑なプログラムの危険性を調べる。\nAIが開発者に問題点と修正案を提示し助ける。",
+      "summary_source": "gemini",
+      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+      "uid": "76354f8a024f0e13",
+      "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-26T20:32:27.740755+00:00",
@@ -49,6 +103,8 @@
       "published": "2026-10-26T07:00:00+00:00",
       "source_id": "openai-news",
       "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+      "summary_ja": "OpenAIがAIでシステム問題解決を高速化した。\nCodex Ultrafastを使い、調査時間を数時間から数分に短縮。\n安全性分析やプログラム修正なども素早くできる。",
+      "summary_source": "gemini",
       "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
       "uid": "9fd11ae4a9b1d26b",
       "url": "https://openai.com/index/openai-cut-incident-investigation",
@@ -5778,20 +5834,6 @@
       "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
       "uid": "a7d16ccc94839459",
       "url": "https://openai.com/index/chatgpt-for-academic-researchers",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-29T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "GPT-5.6 improves AI efficiency across models, inference, and agentic workflows, helping deliver more useful intelligence per dollar.",
-      "summary_ja": "新しいAIモデル「GPT-5.6」が登場\nAIの効率が向上し、費用対効果を高める\nモデルや推論、AIの自動作業で能力を発揮",
-      "summary_source": "gemini",
-      "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
-      "uid": "151a22ba840a79e3",
-      "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
       "vendor": "OpenAI"
     }
   ]
