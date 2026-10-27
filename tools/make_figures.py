@@ -38507,3 +38507,91 @@ def prohibition_matching_heading_mechanism_chart() -> None:
 if __name__ == "__main__":
     prohibition_matching_heading_outcome_chart()
     prohibition_matching_heading_mechanism_chart()
+
+
+def deferral_without_destination_results_chart() -> None:
+    """先送り先を書かない優先度下げの依頼を、広い基準の指示文に通した結果（4条件×2回）。
+
+    実測2026-10-27。`deferral-without-a-destination-stays-excluded` の図1。
+    """
+    _hit_and_miss_rows_chart(
+        "deferral-without-a-destination-stays-excluded-results.svg",
+        "先送り先を書かない依頼でも、広い基準は8回中8回崩れなかった",
+        "材料A（丁寧な長文）・B（口語）×健全5件のみ／既存の誤りも混在、の4条件を2回ずつ試した。",
+        "数字は「該当件だけを正しく除外し、健全5件を巻き込まなかった回数／試した回数」。",
+        [
+            ("材料A・健全5件＋新しい依頼1件", 2, 2, "good"),
+            ("材料A・健全5件＋既存の誤り＋新しい依頼", 2, 2, "good"),
+            ("材料B・健全5件＋新しい依頼1件", 2, 2, "good"),
+            ("材料B・健全5件＋既存の誤り＋新しい依頼", 2, 2, "good"),
+        ],
+        [
+            "先送り先を書かない優先度下げの依頼でも、広い基準（類義語・言い換えも含める）は",
+            "8回中8回、該当件だけを正しく除外し、健全な5件を巻き込まなかった。",
+        ],
+        "材料A・B、健全5件のみ条件・既存の誤りも混在させた条件の4パターンを2回ずつ試し、"
+        "該当件だけを正しく除外し健全5件を巻き込まなかった回数を示す表。4パターンすべてで"
+        "2回中2回、正しく処理できた。下の枠には、先送り先を書かない優先度下げの依頼でも、"
+        "広い基準は8回中8回、該当件だけを正しく除外し健全な5件を巻き込まなかったことが"
+        "書かれている。",
+        label_w=340,
+    )
+
+
+def deferral_without_destination_mechanism_chart() -> None:
+    """先送り先の有無に関わらず、判断の根拠が同じ（文全体が指す対応時期）であることを示す図。
+
+    実測2026-10-27。`deferral-without-a-destination-stays-excluded` の図2。
+    """
+    rows = [
+        ("先送り先あり（前作・例）", "「来週分の定期メンテナンスで」", "box-good", "t-good"),
+        ("先送り先なし（今回・例）", "「他の作業が立て込んでいれば」", "box-good", "t-good"),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 54
+    top = 100
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "先送り先を書いたか書かないかは、判断の決め手ではなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "どちらの依頼も「至急」「今すぐ」という緊急語を本文に含んでいる。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "広い基準の指示文は、語の有無ではなく文全体が指す対応時期で、どちらも正しく除外した。</text>\n",
+    ]
+    y = top
+    for label, quote, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 40}">{_esc(quote)}</text>\n')
+        y += row_h
+
+    y += 6
+    box_h = 48
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 20}">'
+        "どちらも「至急」「今すぐ」という語を含んでいたが、広い基準は8回中8回正しく除外した。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 38}">'
+        "先送り先の書き方の違いは、この基準にとって崩す条件にならなかった。</text>\n"
+    )
+    y += box_h + 16
+
+    alt = (
+        "先送り先を書いた依頼（前作・来週分の定期メンテナンスで）と、先送り先を書かない依頼"
+        "（今回・他の作業が立て込んでいれば）を並べた図。どちらも「至急」「今すぐ」という"
+        "緊急語を本文に含んでいる。下の枠には、広い基準の指示文はどちらも8回中8回正しく"
+        "除外したこと、先送り先の書き方の違いはこの基準を崩す条件にならなかったことが"
+        "書かれている。"
+    )
+    (OUT / "deferral-without-a-destination-stays-excluded-mechanism.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    deferral_without_destination_results_chart()
+    deferral_without_destination_mechanism_chart()
