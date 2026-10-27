@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="180" viewBox="0 0 720 180" role="img" aria-hidden="true"><style>
+.ec-bg{fill:#F5E6D3}
+.ec-paper{fill:#FFFDF8}
+.ec-ln{stroke:#4A3F35}
+.ec-rule{stroke:#D9CBB8}
+.ec-ink{fill:#4A3F35}
+@media (prefers-color-scheme: dark){
+.ec-bg{fill:#33251B}
+.ec-paper{fill:#241D15}
+.ec-ln{stroke:#EFE7DA}
+.ec-rule{stroke:#5C5044}
+.ec-ink{fill:#EFE7DA}
+}
+</style><rect width="720" height="180" rx="10" class="ec-bg"/><g transform="translate(84,44)"><circle cx="0" cy="0" r="17" fill="#FAC775"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(0)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(45)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(90)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(135)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(180)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(225)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(270)"/><line x1="0" y1="-24" x2="0" y2="-30" stroke="#EF9F27" stroke-width="3" stroke-linecap="round" transform="rotate(315)"/></g><path d="M40 150 Q200 128 380 142 T690 134" fill="none" stroke="#D85A30" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/><g transform="translate(314,50) rotate(-6)"><path d="M0 40 L34 4 H92 V76 H34 Z" class="ec-paper ec-ln" stroke-width="3" stroke-linejoin="round"/><line x1="34" y1="6" x2="34" y2="74" stroke="#EF9F27" stroke-width="3" opacity="0.55"/><circle cx="24" cy="40" r="7" class="ec-bg ec-ln" stroke-width="3"/><line x1="48" y1="30" x2="80" y2="30" stroke="#D85A30" stroke-width="3.5" stroke-linecap="round"/><line x1="48" y1="52" x2="72" y2="52" class="ec-rule" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(238,112)"><circle r="17" fill="#FAC775" class="ec-ln" stroke-width="3"/><circle r="9" fill="none" class="ec-ln" stroke-width="2.5" opacity="0.7"/></g><g transform="translate(452,58)"><rect width="104" height="74" rx="8" class="ec-paper ec-ln" stroke-width="3"/><line x1="14" y1="22" x2="88" y2="22" class="ec-rule" stroke-width="3" stroke-linecap="round"/><line x1="14" y1="38" x2="78" y2="38" class="ec-rule" stroke-width="3" stroke-linecap="round"/><line x1="14" y1="54" x2="86" y2="54" stroke="#D85A30" stroke-width="3" stroke-linecap="round"/></g></svg>
