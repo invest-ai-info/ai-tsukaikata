@@ -4938,91 +4938,222 @@
    "first_seen": "2026-10-27T12:38:08.582796+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "ofzHbyxkpVg",
+   "title": "I knew AI + Notion would be good, but this... wow.",
+   "url": "https://www.youtube.com/watch?v=ofzHbyxkpVg",
+   "published": "2026-10-27T13:02:29+00:00",
+   "channel_key": "jeff-su",
+   "channel_name": "Jeff Su",
+   "default_category": "tech",
+   "description": "Grab my free Cowork Toolkit: https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v213\n\nIf your #AI keeps creating Notion pages you have to fix, it needs to learn how YOU work. In this video, I’ll show you how to teach Claude and #ChatGPT your database, template, and formatting preferences so they can handle the tedious work for you.\n\nYou’ll start with tasks and notes, save your preferences in a reusable Notion Conventions file, and see how the same process scales to entire projects with linked tasks and deliverables. It works with Claude, ChatGPT, or Gemini, so you can keep the Notion setup you already use.\n\n*TIMESTAMPS*\n00:00 Manage Your ENTIRE Notion Setup with AI\n01:31 How Notion Works with ChatGPT and Claude\n04:24 Teaching AI Your Notion Preferences\n09:43 Using AI Across Your Notion Workspace\n11:54 Managing Projects in Notion using ChatGPT and Claude\n\n*RESOURCES MENTIONED*\nPrompts & templates - https://www.jeffsu.org/notion-ai-workflow-guide/?utm_source=youtube&utm_medium=video&utm_campaign=v213\nThe Cowork Academy - https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v213\nNotion course - https://www.pressplay.cc/link/s/DE1C4C50\nPersonal Agents, Clearly Explained - https://www.youtube.com/watch?v=HdI_aYzgJIg\n\n*BUILD A POWERFUL WORKFLOW*\n🦾 AI Systems Academy - https://systemsacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=213\n📈 The Workspace Academy - https://academy.jeffsu.org/workspace-academy?utm_source=yo",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "lPZQrVFcz3c",
+   "title": "Getting a Head Start with Codex | Mitchell Hashimoto",
+   "url": "https://www.youtube.com/watch?v=lPZQrVFcz3c",
+   "published": "2026-10-27T15:04:57+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Mitchell Hashimoto氏が、Codexを活用してデスクワーク時間を減らしつつ成果を増やしている実体験を語っている。",
+    "業務終了の30分前に複数のAIエージェントを立ち上げ、競合調査やプロトタイプ作成を委任していると述べている。",
+    "翌朝すぐに作業へ取り掛かれるよう準備させることで、コンピューターとの対話が新たな領域に入ったと説明している。"
+   ],
+   "for_whom": "AIエージェントを日々の調査や開発フローに組み込んで業務を効率化したい人。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T18:14:57.266228+00:00"
+  },
+  {
+   "video_id": "cflbzHRvGvg",
+   "title": "From Ideas to Prototypes with Codex | Shopify’s Mikhail Parakhin",
+   "url": "https://www.youtube.com/watch?v=cflbzHRvGvg",
+   "published": "2026-10-27T15:03:41+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Shopifyのミハイル・パラキン氏が、Codexにタスクを渡して短時間でプロトタイプ作成や検証を行う朝のワークフローを説明している。",
+    "会議にスライドやワイヤーフレームではなく、Codexですぐに作成した実動プロトタイプを持参する文化に変わったと紹介している。",
+    "プロジェクト管理や設計案の比較検証にCodexを活用し、以前はできなかった業務まで実行可能になったと語っている。"
+   ],
+   "for_whom": "開発や企画のプロトタイプ作成をAIで効率化したいエンジニアやリーダー",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T18:14:57.266228+00:00"
+  },
+  {
+   "video_id": "C2vdw5GSTQo",
+   "title": "How Sotira Gives Unsold Inventory a Second Life with Codex",
+   "url": "https://www.youtube.com/watch?v=C2vdw5GSTQo",
+   "published": "2026-10-27T15:02:46+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Amrita Bhasin氏は、技術的な知識がなくてもAIを使えば自らシステムを構築できると語っている。",
+    "複雑な余剰在庫の仕分けとNPOへの配送マッチングを、Codexを使って自動化する仕組みを構築したと説明している。",
+    "AIを活用した自動化プラットフォームにより、何百万ポンドもの廃棄予定在庫を削減できたと紹介している。"
+   ],
+   "for_whom": "非エンジニアでも生成AIを活用して業務の自動化やマッチングの仕組みを作りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T18:14:57.266228+00:00"
+  },
+  {
+   "video_id": "ilG7LPrngkI",
+   "title": "AI for Detection and Response | Cloudflare’s Mark Anderson",
+   "url": "https://www.youtube.com/watch?v=ilG7LPrngkI",
+   "published": "2026-10-27T14:54:56+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Security teams face a constant stream of vulnerabilities and alerts. Cloudflare’s Mark Anderson describes using AI to automate detection and response so experts can focus on threats that need their judgment. He sees automation from companies like OpenAI as a way to take on routine security work and help teams keep pace.",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "0qb0FQo3M5c",
+   "title": "Why Cybersecurity Needs AI | Cisco’s Jeetu Patel",
+   "url": "https://www.youtube.com/watch?v=0qb0FQo3M5c",
+   "published": "2026-10-27T12:45:06+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "“It is a prerequisite for staying safe that you must use AI.”\n\nAttackers can move at machine speed. Defenders need security controls that can adapt just as quickly.\n\nJeetu Patel, President of Cisco, explains why OpenAI is becoming a core foundation for that work. With capabilities like Daybreak and Astra, Cisco sees an opportunity to make security controls and policies dynamic—and strengthen defenses for the businesses that depend on them.\n\nWatch why Cisco is rethinking how defense gets done.",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "sFfPkUJd_Jk",
+   "title": "Genie 4: A new generation of world simulation",
+   "url": "https://www.youtube.com/watch?v=sFfPkUJd_Jk",
+   "published": "2026-10-27T16:00:41+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-27T18:14:57.266228+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Google DeepMindが、自然言語やキーボード操作でリアルタイムに探索できる世界モデル「Genie 4」を発表したと紹介している。",
+    "1枚の画像から立体的な環境を構築し、プロンプトによって展開や情景を即座に変化させながら探索できると説明している。",
+    "インタラクティブな体験に加え、ロボットが実世界で作業するための仮想シミュレーション環境にも活用できると紹介している。"
+   ],
+   "for_whom": "世界モデルや生成AIの最新動向、ロボティクスへの応用に興味がある人向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-27T18:14:57.266228+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-27T12:38:08.582796+00:00",
+   "last_ok": "2026-10-27T18:14:57.266228+00:00",
    "fail_streak": 0
   }
  }
