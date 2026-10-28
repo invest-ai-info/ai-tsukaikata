@@ -445,6 +445,9 @@
 - [ ] https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/
   - 2026-10-28 自動追記（major・Google DeepMind「Genie 4: A new generation of world simulation」）
 
+- [ ] https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/
+  - 2026-10-28 自動追記（major・Google DeepMind「Gemini 4 Carbon: Our next frontier model」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-argon/ → **公開済み** content/tools/gemini-4-argon-ga.md（2026-10-13・公開）

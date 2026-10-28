@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-10-28T17:00:58+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Gemini 4 Carbon: Our next frontier model",
+      "uid": "2d79d3aac217c809",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-28T13:15:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
+      "summary_ja": "OpenAIとServiceNowが提携を拡大した。\nOpenAIのAIがServiceNowに統合され、\nServiceNowの業務がChatGPTなどで使える。",
+      "summary_source": "gemini",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "uid": "c2ba84863ec5fd7c",
+      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-28T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How AI might enter the org chart—beneath, beside, and between us.",
+      "summary_ja": "AIが企業組織にどう組み込まれるか議論された。\nAIは社員の補佐、共同作業者、仲介役となる可能性。",
+      "summary_source": "gemini",
+      "title": "The future of the firm",
+      "uid": "73f7476a7518dc70",
+      "url": "https://openai.com/index/the-future-of-the-firm",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-28T16:41:13.792697+00:00",
       "importance": "minor",
       "label": "OpenAI News",

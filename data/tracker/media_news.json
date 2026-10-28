@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-28T21:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Google DeepMindは10月27日（現地時間）、利用者の操作に合わせて仮想世界の映像や音をリアルタイムに生成するAI「Genie 4」を発表した。登場人物の会話も生成できる。一部のテスター向けに研究プレビューとして提供を始めた。",
+      "title": "Google、十字キーで歩き回れる「仮想世界」を音や会話付きで生成する「Genie 4」公開",
+      "uid": "2e607a654af5c96c",
+      "url": "https://japan.cnet.com/article/35254115/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-28T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "2027年度以降、IT国家試験の大幅な刷新が予定されている。企業のIT現場はこの変化をどう見ているのか。読者調査から、制度刷新への期待と懸念、資格取得意向の変化、AI・セキュリティなど今後重視されるスキルを探る。",
+      "title": "「高度なAIスキル」だけではもう食えない？　IT人材が答えた「これからの必須スキル」",
+      "uid": "257b609fa3546039",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/29/2000002688/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-28T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "OpenAIとAnthropicが2026年夏から秋にかけて大規模言語モデル(LLM)の利用料金を相次いで引き下げました。この値下げについてデータサイエンティストのマックス・ウルフ氏は、別のモデルに乗り換えやすいことと、モデルの重みを公開する「オープンウェイトモデル」との競争を背景として挙げています。 続きを読む...",
+      "title": "OpenAIとAnthropicが2026年夏から秋にかけてLLM料金を相次いで値下げした理由とは？",
+      "uid": "d3e34e3c2124966a",
+      "url": "https://gigazine.net/news/20261029-openai-anthropic-llm-price-cuts/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-28T21:41:28.239784+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-28T20:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Appleは10月27日（現地時間）、プレゼンテーション作成アプリ「Keynote」、文書作成アプリ「Pages」、表計算アプリ「Numbers」のMac版に、外部のAIが内容を読み取り、編集や操作を行える機能を追加すると発表した。11月にベータ版として提供する予定。制作アプリをまとめた定額制サービス「Apple Creator Studio」の加入者は、追加料金なしで利用できる。",
+      "title": "アップル、「Keynote」などを「ChatGPT」などの外部AIで操作可能に",
+      "uid": "b948ec9442b8ec4f",
+      "url": "https://japan.cnet.com/article/35254116/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-28T16:41:13.792697+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2350,54 +2398,6 @@
       "title": "AIが自分を監視するシステムを勝手に無効化して問い詰められると「無効化していない」と虚偽の説明",
       "uid": "1f03c51e67f62e07",
       "url": "https://gigazine.net/news/20261022-openai-misalignment-report/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-22T02:48:47+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、AIモデル「Claude」でソフトウェアの攻撃対象領域を分析・縮小する研究結果を公開した。オープンソース25件を分析し、設定矛盾など493件の問題を特定。「OpenSSH」では、認証前に到達可能なコードを約5分の1削減し、最新版に対策が反映された。手法は脆弱性検出サービス「OSS Scanner」に組み込まれる。",
-      "title": "Anthropic、Claudeでソフトウェアのアタックサーフェスを洗い出し・縮小する研究を公開　OpenSSHの修正にも貢献",
-      "uid": "8d7756a72b5317ef",
-      "url": "https://www.itmedia.co.jp/news/article/2610/22/2000002498/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-22T02:44:13+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "東芝は10月22日、現場ごとに異なる設備音や警報音、作業者の発話を高精度に認識する2つのAI技術を開発したと発表した。",
-      "title": "東芝、少量のデータで設備音や現場発話を高精度に認識する2つのAI技術を開発",
-      "uid": "17b24ec7bbeae982",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150274.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-22T02:32:44+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "日本漢字能力検定協会は、公式Xで投稿したAI生成とみられる画像について「誤字があった」と謝罪した。同画像を巡っては、Xユーザーから誤りの指摘が相次いでいた。",
-      "title": "漢検運営が「AIで生成」画像で漢字ミス→謝罪　「これを出そうって神経が分からない」の声も",
-      "uid": "e94693bddcd14ebd",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002494/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-22T02:32:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIがChatGPTの広告提供地域を拡大したことを発表しました。合わせて、広告主がすでに10万社を超えていることも明かされています。 続きを読む...",
-      "title": "ChatGPTの広告主はすでに10万社を超えている",
-      "uid": "bc7fccf94d1215b4",
-      "url": "https://gigazine.net/news/20261022-chatgpt-ads/",
       "vendor": "GIGAZINE"
     }
   ]
