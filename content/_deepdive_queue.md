@@ -442,8 +442,34 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/
+- [!] https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/
   - 2026-10-28 自動追記（major・Google DeepMind「Genie 4: A new generation of world simulation」）
+  - **2026-10-28 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission・
+    2026-10-15 scam detection・2026-10-17 antimicrobial discovery・2026-10-22 forest mapping と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` は200・約226KB。要約させず生HTMLから本文を抽出して確認した）
+
+    **② 中身が「研究プレビューの発表」で、価格も仕様も比較できる数字が一切無い**
+
+    - Genie 4 は、自然言語の指示から探索可能な3D世界をリアルタイム生成する「world model」の研究発表。
+      音声・会話もリアルタイムで同時生成する点が新しいが、**信頼されたテスターのみへのプレビュー配布で、
+      一般向けのAPIも料金表も存在しない**（Google AI Ultra加入者・Gemini API早期アクセス提供者への
+      ウェイトリスト登録のみ）
+    - モデルカードを探したが `deepmind.google/models/model-cards/genie-4/` は **Page not found**（404相当の
+      案内ページ）で、スペック（読める量・書ける量・学習データの締め切り等）も公開されていない
+    - **本文を全文抽出して確認したが、数字が一切無い**（%・$・トークン数・ベンチマークのいずれも0件）。
+      登場する固有名詞はGemini 4 Argon・Gemini 3.8 Flash・Gemini Roboticsなど連携先のモデル名のみで、
+      Genie 4自体の仕様値は書かれていない
+    - 比較相手（他社の同種の「リアルタイム世界生成モデル」の一般提供）も見つからず、料金も仕様も
+      非公開のため比較表が作れない。想定利用者も映像制作者・ゲーム開発者・ロボティクス研究者が
+      中心で、読者（自動化したい非エンジニアの会社員）が「どういう人に効くか」を判断できる要素が無い。
+      一般提供されているモデルでも料金改定でもないため、このサイトの記事の型
+      （何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **これまでの7件（Sakana FIG以降）とほぼ同じ構造**（①は解けている・②＝数字が無い/比較できない・
+      ウェイトリスト限定のプレビューで一般提供のモデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 - [ ] https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/
   - 2026-10-28 自動追記（major・Google DeepMind「Gemini 4 Carbon: Our next frontier model」）
