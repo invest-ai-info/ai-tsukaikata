@@ -38686,8 +38686,167 @@ def ending_count_third_pattern_mechanism_chart() -> None:
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
 
 
+def head_only_flags_live_pages_chart() -> None:
+    """HEADだけ/HEADだけ+保留/HEAD+GETの3つの渡し方で、誤判定の件数を比べる図。
+
+    実測（2026-10-28）。架空のリンク一覧2本（各20本：本当に切れている8本・
+    HEADは404だがGETは200の4本・HEAD/GETとも403でボット判定の可能性4本・正常4本）に、
+    3つの渡し方を各2回×2材料＝4回ずつ試した。縦軸は、生きている4本を
+    「切れている」に含めてしまった件数（真値0）。
+    """
+    label_x = 18
+    plot_x = 330
+    plot_w = 300
+    axis_max = 4
+    scale = plot_w / axis_max
+    top = 120
+    row_h = 30
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("① HEADだけ渡して素朴に聞く", 4, "box-bad", "4/4回とも混入"),
+        ("② HEADだけ+「確定できない」と保留", 0, "box-good", "4回とも保留"),
+        ("③ HEADとGETの両方を渡す", 0, "box-good", "4回とも0件"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "HEADだけで判定すると、生きている4件が4回とも「切れている」に混入する</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空のリンク一覧2本（各20本）に、3つの渡し方を材料2本×各2回＝4回ずつ試した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は、HEADは404だがGETは200の生きている4本を「切れている」に含めた件数（真値0）。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "①はHEADの応答コードのみを渡した版。②も同じデータだが「確定できない」と言い添えた版。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "③はHEADとGETの両方を渡した版（数字の基準は指示していない）。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value, cls, tail in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3) if value else 3
+        bar_cls = cls if value else "box-quiet"
+        parts.append(
+            f'<rect class="{bar_cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if value else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{_esc(tail)}</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 18
+
+    notes = [
+        "⚠️ 403（ボット判定の可能性）の4本は、①〜③のどの版でも「切れている」には入らず、",
+        "4回とも「要確認」「判断を保留すべきもの」に分けられた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    alt = (
+        "HEADだけ渡して素朴に聞く・HEADだけ渡して確定できないと言い添える・HEADとGETの両方を渡す、"
+        "の3つの渡し方で、本当は生きている4本（HEADは404だがGETは200）を「切れている」に"
+        "含めてしまった件数を比べた横棒グラフ。架空のリンク一覧2本（各20本）に材料2本×各2回＝4回ずつ試した。"
+        "HEADだけ渡して素朴に聞いた場合は4回とも4本とも混入した。HEADだけ渡しつつ確定できないと"
+        "言い添えた場合は4回とも混入せず、404や403のリンクを切れているとは断定せず保留の扱いに分けた。"
+        "HEADとGETの両方を渡した場合も4回とも混入しなかった。ボット判定の可能性がある403の4本は、"
+        "どの版でも「切れている」には入らず、4回とも要確認や保留の扱いに分けられた。"
+    )
+    (OUT / "head-only-flags-live-pages.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def link_check_headline_miscounts_chart() -> None:
+    """判断基準の渡し方ごとに、見出しの件数が実際の列挙件数と食い違った回数を示す図。
+
+    実測（2026-10-28）。同じ実測の、言い直し方の節に対応する4版。
+    分類（どのIDが切れている・確認できないか）はどの版でも4回とも正しく、
+    ずれたのは見出しに書く数字だけだった。
+    """
+    label_x = 18
+    plot_x = 330
+    plot_w = 300
+    axis_max = 4
+    scale = plot_w / axis_max
+    top = 110
+    row_h = 30
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("HEADとGETを渡して素朴に聞く", 0, "box-good"),
+        ("GETも404の場合だけ、と数字の基準", 4, "box-bad"),
+        ("＋確認できないリンクの受け皿を追加", 2, "box-bad"),
+        ("名前を全部挙げたあとに件数を書く", 0, "box-good"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "見出しの件数は4回中最大4回ずれる。直るのは基準ではなく「件数を名前のあとに」</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "同じ架空リンク一覧（材料2本×各2回＝4回）に、判断基準の渡し方を4版試した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は、見出しに書いた件数が実際の列挙件数と食い違い、本文中で自己訂正した回数。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "4版とも、列挙したリンクのID自体は4回とも真値と完全一致していた（分類ミスは0）。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value, cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3) if value else 3
+        bar_cls = cls if value else "box-quiet"
+        parts.append(
+            f'<rect class="{bar_cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if value else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/4回</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 20
+
+    alt = (
+        "判断基準の渡し方を4版（HEADとGETを渡して素朴に聞く・GETも404の場合だけ切れていると数字の"
+        "基準を渡す・確認できないリンクの受け皿を追加・名前を全部挙げたあとに件数を書く）に分け、"
+        "見出しに書いた件数が実際の列挙件数と食い違い本文中で自己訂正した回数を示す横棒グラフ。"
+        "素朴に聞いた版は4回中0回。数字の基準を渡した版は4回中4回。受け皿を追加した版は4回中2回に"
+        "減ったが消えなかった。名前を全部挙げたあとに件数を書くよう指示を変えた版は4回中0回に戻った。"
+        "4版とも、列挙したリンクのID自体は4回とも真値と完全に一致しており、分類そのものに誤りはなかった。"
+    )
+    (OUT / "link-check-headline-miscounts.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    deferral_without_destination_results_chart()
-    deferral_without_destination_mechanism_chart()
-    ending_count_hit_and_miss_chart()
-    ending_count_third_pattern_mechanism_chart()
+    head_only_flags_live_pages_chart()
+    link_check_headline_miscounts_chart()
