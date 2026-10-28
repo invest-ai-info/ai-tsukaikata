@@ -13,6 +13,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-10-27T16:01:38+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation.",
+      "summary_ja": "新しいAIモデル「Genie 4」を発表。\n世界を再現するAIで、これまでにない現実感を実現。\nリアルタイムでのシミュレーションが可能に。",
+      "summary_source": "gemini",
+      "title": "Genie 4: A new generation of world simulation",
+      "uid": "e7bfa75acf163c24",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-10-27T22:58:59.068564+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -5844,20 +5858,6 @@
       "title": "Advancing the price-performance frontier with GPT-5.6",
       "uid": "b559c5e1d8c5795f",
       "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-30T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "avatarin uses OpenAI’s GPT-Realtime to give Yamada Denki shoppers 24/7 multilingual support. In two weeks, 30,000 people used the agent and 92% of survey responses were positive.",
-      "summary_ja": "avatarinが店舗向けAIエージェントを開発\nヤマダデンキでGPT-Realtime使い24時間多言語対応\n2週間で3万人が利用し92%が満足と回答",
-      "summary_source": "gemini",
-      "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
-      "uid": "f0f767c383fd0158",
-      "url": "https://openai.com/index/avatarin",
       "vendor": "OpenAI"
     }
   ]

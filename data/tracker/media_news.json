@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-28T01:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AI企業のSunoとAnthropicが、マドンナさん、ジョニー・キャッシュさん、ジョニ・ミッチェルさんの楽曲や歌詞を人工知能（AI）システムの学習に使用したとして、総額3億3800万ドル（約530億円）の損害賠償を求める訴訟を起こされた。",
+      "title": "AI学習でマドンナらの楽曲を不正利用か--AnthropicとSuno、計約530億円の訴訟に直面",
+      "uid": "f1ab292ba73e4259",
+      "url": "https://japan.cnet.com/article/35254071/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-10-28T00:48:05+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Preferred Networksが国産の生成AI基盤モデル「PLaMo 3.1 Prime」を提供開始。オンプレミスでも使える「Deep Research」を搭載し、ハルシネーションも抑えたという。API無料プランで試せる。",
+      "title": "PFNの国産フラッグシップモデル「PLaMo 3.1 Prime」発表　オンプレでDeep Research対応　API無料プランも開始",
+      "uid": "a0cd4a87666dc8fa",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2610/28/2000002652/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-28T00:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "リコーとリコージャパンは、360度カメラで撮影した映像から、欠損の少ない高精細な3Dモデルを生成する技術を東京電力パワーグリッドの建物保全業務に導入し、運用を開始した。独自の位置推定技術とAIを組み合わせ、画像上の特徴が少ない壁面や床面などの形状も補完する。高精細な3Dモデルを半日程度で生成できるという。",
+      "title": "360度カメラの映像から高精細な3Dモデルを生成、東電PGの建物保全業務に導入",
+      "uid": "ccf41385d64dd216",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/28/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-28T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "GIGAZINEではガジェットやAI、ゲーム、アニメ、食などさまざまな分野の記事を掲載しています。そんなGIGAZINE読者がどんな分野に深く関心を持っているのかを調べるため、2026年夏に実施した読者アンケートで「あなたは何オタクですか？(複数選択可)」と質問。年代やゲーム・マンガとの関わりによる違いも分析してみました。 続きを読む...",
+      "title": "AIから園芸までGIGAZINE読者の「オタク趣味」調査結果まとめ、年代・性別・他の設問との関連など細かい分析もあり",
+      "uid": "72436408f397ca4f",
+      "url": "https://gigazine.net/news/20261028-gigazine-user-otaku/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-10-27T23:55:26+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NVIDIAとAMDは、MetaとのAI分野における戦略的提携拡大をそれぞれ発表した。AIエージェント「Muse」の開発・運用支援や次世代インフラ構築で協力し、Metaへの出資（NVIDIAが30億ドル、AMDが10億ドル）も表明。Metaは自社チップ開発と外部調達の両輪でインフラを強化する。",
+      "title": "NVIDIAとAMD、MetaとのAI分野での提携拡大を発表　「Muse」の強化や次世代インフラ構築で協力",
+      "uid": "a7533866f427d4d4",
+      "url": "https://www.itmedia.co.jp/news/article/2610/28/2000002651/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-28T02:20:00.165733+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-27T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "「Colorfigures」は「コインを入れてレバーを回すガムボールマシン」「お湯を沸かし、沸騰したら自動的に電源が切れる電気ケトル」というように身近な物を説明すると手描き風のイラストを生成し、3Dでぐりぐり動かしたりボタンを押して実際に動作させたりできるClaude Codeのスキルです。Claude Codeのターミナルからスキルを追加できるほか、ブラウザからライブデモを確認することもできま…",
+      "title": "身近な物を説明するとAIが手描き風で実際に機能するボタン付きで描いてくれる「Colorfigures」",
+      "uid": "39a6c85f5f873e5c",
+      "url": "https://gigazine.net/news/20261028-colorfigures/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-27T22:58:59.068564+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2327,78 +2399,6 @@
       "uid": "b219ea24aeef31ac",
       "url": "https://www.itmedia.co.jp/aiplus/article/2610/21/2000002470/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-21T13:51:14.862036+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-21T07:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "日立製作所は、冷却水をGPUの発熱部へ直接届けてUターンさせる独自技術「U字トンネル流路」構造を採用したGPU冷却用コールドプレートを開発。冷却設備全体の消費電力を約30％削減する見込みだ。",
-      "title": "日立がGPU冷却用コールドプレート開発、独自のU字構造で消費電力を約30％削減",
-      "uid": "097dca0df3dd78d3",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/21/news067.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-21T07:08:37+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "リコージャパンは、オンプレミス環境での生成AI活用を導入から運用までワンストップで支援する「RICOH オンプレLLMスターターキット」で、GPUサーバーを月額で利用できるサーバーレンタルプランの提供を10月22日に開始する。",
-      "title": "リコー、オンプレでのAI用GPUサーバー導入を促すレンタルプラン",
-      "uid": "83f8359564ccd113",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150032.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-21T06:50:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "MetaのAIエージェント「Muse」で会話を共有すると、会話のタイトルを含むURLが外部から簡単に検索できる状態になっていたことが明らかになりました。Metaは報告を受けて会話の共有機能を一時停止しています。 続きを読む...",
-      "title": "MetaのAI「Muse」で共有した会話が第三者に丸見えになる問題が発覚、6800件以上の共有リンクが発見される",
-      "uid": "4b2d939410258492",
-      "url": "https://gigazine.net/news/20261021-meta-muse-expose-user-secret/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-21T06:50:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "生成AIの急拡大に伴い、ビッグテックの脱炭素目標が崩壊の危機に瀕している。",
-      "title": "AIが環境目標を破壊する--グーグルやアマゾンらによるデータセンター急増の代償",
-      "uid": "f113aea652a0f2e9",
-      "url": "https://japan.cnet.com/article/35253823/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-21T06:43:26+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「日本が世界2位」――米OpenAIの日本法人OpenAI Japanの長?忠雄社長は、OpenAIの新たなAIエージェント機能「dots」のユーザー数についてこのように説明した。",
-      "title": "OpenAIの常時稼働エージェント「dots」、日本のユーザー数は「世界2位」　「仕事の在り方を大きく変える可能性」と長?社長",
-      "uid": "861af39230fedaa0",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/21/2000002457/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-21T07:43:07.219760+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-21T06:26:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleはスマートフォンに接続することなく、車載システムに直接組み込まれたGoogleアプリやサービスを利用できる「Google built-in」を提供しています。このGoogle built-inで、GoogleのAIアシスタント・Geminiを利用可能となっているのですが、このGeminiをさらにパーソナライズする機能をGoogleが発表しました。 続きを読む...",
-      "title": "車載版Geminiがもっと各ユーザーに最適化される予定、GmailやGoogleカレンダーなどと連携可能に",
-      "uid": "40f6419240f64dad",
-      "url": "https://gigazine.net/news/20261021-google-personal-intelligence-with-gemini/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
