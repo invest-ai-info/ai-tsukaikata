@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-10-28T15:39:53+00:00",
+      "source_id": "media-publickey",
+      "summary": "オラクルは、社員が業務アプリをAIで自動的に生成しOracle Cloudにデプロイして利用できる「Oracle App Composer」を、米国ラスベガスで開催中の年次イベント「Oracle AI World 2026」で発表しました。...",
+      "title": "オラクル、社員が業務アプリをAIで自動作成、Oracle Cloud上で共有できる「Oracle App Composer」発表。Oracle AI World 2026",
+      "uid": "535d725425a68c78",
+      "url": "https://www.publickey1.jp/blog/26/aioracle_cloudoracle_app_composeroracle_ai_world_2026.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "major",
+      "label": "Impress AI Watch",
+      "published": "2026-10-28T15:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Amazonは10月29日、日本において次世代アシスタントサービス「Alexa+（アレクサプラス）」の早期アクセスをスタートした。早期アクセス期間中は全ユーザーに無料で提供され、終了後の利用料は月額3000円となるが、Amazonプライム会員は追加料金なしで継続利用できる。",
+      "title": "Amazon、日本で「Alexa+」の提供をスタート スマートクロック「Echo Time」と「Echo Dot」新モデルも登場",
+      "uid": "3ffbd1a75128f494",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2152052.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-28T11:10:56+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NTTは、道路監視や空港監視といった幅広いインフラ監視への活用に向け、自社開発の「超高精細映像AI推論LSI」により、4K映像を高精細な状態でリアルタイムに解析し、遠方に小さく映る対象の検知可能距離を従来比3倍以上に拡大するとともに、検知した対象の状況判断まで支援する映像監視技術を実証した。同研究成果は、11月18日～25日に開催される「NTT R&D FORUM 2026」に展示される予定とな…",
+      "title": "NTT、4Kリアルタイム解析×VLMでインフラ監視を広域化・省設備化",
+      "uid": "e6bca543a9237081",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2152036.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-28T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AnthropicのAIモデル「Claude Mythos 5」がセキュリティテスト中に悪意のあるコードをGitHubに投稿し、偽アカウントを使って開発者に承認を迫った問題について、AnthropicとイギリスのAI Security Institute(AISI)が原因分析の結果を発表しました。AIが被害の可能性を十分に考慮せずに行動したことや、自分の判断を正当化する偏った推論、タスクを完了す…",
+      "title": "Claude Mythos 5がGitHubに悪意あるコードを送り込み偽アカウントで開発者に圧力をかけた問題の原因をAnthropicが分析",
+      "uid": "54f688d8a7074a6d",
+      "url": "https://gigazine.net/news/20261028-claude-mythos-5-failure/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-28T10:55:39+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "KDDIが主催するビジネスイベント「KDDI SUMMIT 2026」が10月27日、28日の2日間の日程で開催された。",
+      "title": "雑談できるAIアンドロイド、手ぶらで記録できるARグラス、AI生成ARなど、楽しめる展示が盛りだくさんの「KDDI SUMMIT 2026」",
+      "uid": "2efefadff6dd2764",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2152022.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-28T09:48:42+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "",
+      "title": "Oracle CloudがGoogle TPU導入へ　2027年に提供を開始",
+      "uid": "0b840ac41c48f623",
+      "url": "https://www.itmedia.co.jp/news/article/2610/28/2000002681/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-28T09:45:56.538336+00:00",
       "importance": "major",
       "label": "Impress AI Watch",
@@ -2326,78 +2398,6 @@
       "title": "ChatGPTの広告主はすでに10万社を超えている",
       "uid": "bc7fccf94d1215b4",
       "url": "https://gigazine.net/news/20261022-chatgpt-ads/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-22T02:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "大規模言語モデル(LLM)に国や地域を指定せず文化について質問すると日本やアメリカを取り上げた回答に偏る傾向があることを、バスク大学とカーディフ大学の研究チームが報告しました。研究では8種類のモデルを24言語で比較し、回答に登場する国と、質問に使う言語や学習段階との関係を調べています。 続きを読む...",
-      "title": "文化についてAIに質問すると日本が選ばれやすい傾向がある、8モデル・24言語で回答の偏りを調査",
-      "uid": "2143fac32741537d",
-      "url": "https://gigazine.net/news/20261022-llms-japanese-culture/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-10-22T02:26:59+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "サイバーセキュリティ企業のCalifはGPT-5.6 Solを使用し、プログラミング言語「PHP」の脆弱性「PHP2Shell（CVE-2026-109618/CVE-2026-109619）」を発見・公表し、PHP開発チームより修正パッチが日本時間の10月21日23時にリリースされた。",
-      "title": "OpenAI、PHPの重大脆弱性がGPT-5.6 Solにより発見されたと発表 問題のあるPHPを特定する「PHPバージョンチェッカー」を公開",
-      "uid": "8e8f0be5934b4201",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150225.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-22T01:57:58+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SUUNTO Japanは、GPSスポーツウォッチ「Suunto Race 3S（スント レース 3S）」を10月29日に発売する。",
-      "title": "対話型AIコーチに対応。約56gのGPSウォッチ「Suunto Race 3S」10月29日発売",
-      "uid": "8f9f2d7101459b0f",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150215.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-10-22T01:43:38+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは常時稼働エージェント「Claude Duet」のリサーチプレビューを公開した。「Claude Opus 5.5」をベースに設計し、タスクの優先度などの判断力に優れるという。",
-      "title": "Anthropic版常時稼働エージェント「Claude Duet」発表　Opus 5.5ベースで設計　Pro／Maxプランで提供",
-      "uid": "707d3f75df935ebd",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/22/2000002490/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-22T07:38:43.029486+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-22T01:37:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI企業のAnthropicがAIエージェントアプリ「Claude Duet」を発表しました。Claude Opus 5.5を基盤に動作するAIエージェントで、AIが自発的に情報収集したり通知を送信したりしてくれます。 続きを読む...",
-      "title": "人間の指示なしでAIが自発的にタスクを実行するClaudeのエージェントアプリ「Claude Duet」が発表される",
-      "uid": "fdd4cb75399aadde",
-      "url": "https://gigazine.net/news/20261022-claude-duet/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-22T01:33:21.073639+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-22T01:11:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIがGoogle CloudのAIモデル提供基盤「Model Garden」を通じてOpenAIの最新AIモデルを提供すると発表しました。これにより、Google Cloudの利用者はOpenAIのAIモデルを既存のクラウド環境から直接利用できるようになります。 続きを読む...",
-      "title": "GoogleとOpenAIが提携、Google Cloudで「GPT-6 Astra」などOpenAIのAIモデルを提供へ",
-      "uid": "8a654c32f908ce4c",
-      "url": "https://gigazine.net/news/20261022-google-cloud-openai-models/",
       "vendor": "GIGAZINE"
     }
   ]

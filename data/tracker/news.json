@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-28T09:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+      "summary_ja": "LegoraがAIで法務作業を効率化する\nOpenAIのChatGPTなどを使用し法務業務を加速\n契約分析を広げ弁護士は高度な業務に集中",
+      "summary_source": "gemini",
+      "title": "Legora is building the agentic operating system for legal work",
+      "uid": "dd108bdb08814980",
+      "url": "https://openai.com/index/legora-agentic-operating-system-for-legal-work",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-28T16:41:13.792697+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-28T09:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+      "summary_ja": "LegoraがAIで法務作業を効率化する\nOpenAIのChatGPTなどを使用し法務業務を加速\n契約分析を広げ弁護士は高度な業務に集中",
+      "summary_source": "gemini",
+      "title": "Legora is building the agentic operating system for legal work",
+      "uid": "d272398ecd6f8774",
+      "url": "https://openai.com/index/legora",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-27T22:58:59.068564+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5802,62 +5830,6 @@
       "title": "Disrupting a Criminal Scam Operation",
       "uid": "3cc46b67108e93f4",
       "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-07-30T15:00:59+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic ap…",
-      "summary_ja": "Gemini Robotics ER 2がロボットの能力向上\n動画理解や複数ロボット連携を大きく進歩\nロボットが現実世界の様々な課題を解決可能に",
-      "summary_source": "gemini",
-      "title": "Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration",
-      "uid": "ef528e9df51bc3de",
-      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-07-30T15:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "summary_ja": "サイバーセキュリティ評価で3つの事例を調査",
-      "summary_source": "gemini",
-      "title": "Investigating three real-world incidents in our cybersecurity evaluations",
-      "uid": "f6151d45512fc0bd",
-      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-07-30T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "summary_ja": "Sakana AIの製品開発責任者がインタビュー\n日本発で世界に広がる製品について語る",
-      "summary_source": "gemini",
-      "title": "From Japan, Products the World Will Use: An Interview with Sakana AI’s Head of Product Development",
-      "uid": "f00a662df9404a68",
-      "url": "/product-development-interview/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-30T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale.",
-      "summary_ja": "GPT-5.6の利用料金が値下げされました\nLunaとTerraというモデル向けに価格を安く提供\n効率的なAIモデルで企業のAI導入を支援",
-      "summary_source": "gemini",
-      "title": "Advancing the price-performance frontier with GPT-5.6",
-      "uid": "b559c5e1d8c5795f",
-      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
       "vendor": "OpenAI"
     }
   ]
