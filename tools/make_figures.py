@@ -38850,3 +38850,153 @@ def link_check_headline_miscounts_chart() -> None:
 if __name__ == "__main__":
     head_only_flags_live_pages_chart()
     link_check_headline_miscounts_chart()
+
+
+def price_timing_verdict_chart() -> None:
+    """値上げを切り出すタイミングを6つの日付で聞いたときの判定を並べる図。
+
+    実測（2026-10-28）。同じ架空の作業ログ（さちさんとミドリ制作）を使い、
+    「本日は◯月◯日です」の日付だけを変えて、独立プロセス（claude -p --safe-mode
+    --tools "" --model claude-sonnet-5）で各2回試した。
+    """
+    label_x = 18
+    badge_x = 430
+    badge_w = 128
+    badge_h = 24
+    top = 132
+    row_h = 38
+
+    rows = [
+        ("8/1　契約が自動更新された日", False),
+        ("8/20　感謝のメッセージが届いた日", False),
+        ("9/5　依頼本数が20%増えた日", True),
+        ("9/18　クレーム対応中の連絡があった日", False),
+        ("9/25　1か月ぶりに依頼が再開した日", False),
+        ("10/5　通常どおり提出した日（特記なし）", False),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "値上げの好機とされる日でも、「適切」になったのは1日だけ</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "同じ作業ログ（契約更新・感謝・増量・クレーム対応・再開・平常提出）を使い、</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "「本日は◯月◯日です」の日付だけを変えて、新規プロセスで各2回試した（計12回）。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "「適切」になったのは、依頼本数が実際に増えた9/5だけ（2/2）。契約更新・感謝の言葉</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "だけの日は根拠が薄いとして「不適切」。9/18のクレーム対応以降は、再開・平常提出の</text>\n",
+        '<text class="t-xs" x="18" y="119">'
+        "日になっても「不適切」のまま変わらなかった。</text>\n",
+    ]
+
+    y = top
+    for label, ok in rows:
+        ty = y + row_h / 2 + 5
+        parts.append(f'<text class="t" x="{label_x}" y="{ty:.0f}">{_esc(label)}</text>\n')
+        cls = "box-good" if ok else "box-bad"
+        tcls = "t-good" if ok else "t-bad"
+        text = "適切　2/2" if ok else "不適切　2/2"
+        parts.append(
+            f'<rect class="{cls}" x="{badge_x}" y="{y + (row_h - badge_h) / 2:.0f}" '
+            f'width="{badge_w}" height="{badge_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{badge_x + badge_w / 2 - 28:.0f}" y="{ty:.0f}" '
+            f'style="font-size:12.5px">{text}</text>\n'
+        )
+        y += row_h
+
+    y += 14
+    notes = [
+        "⚠️ 9/18以降（9/25・10/5）も「不適切」のままだったのは、クレーム対応という古い",
+        "懸念が、後の好転（依頼再開・平常提出）があっても自分からは解消されなかったため。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    alt = (
+        "値上げを切り出すタイミングとして6つの日付を試した結果を示す表。契約が自動更新された8/1は"
+        "不適切2/2、感謝のメッセージが届いた8/20は不適切2/2、依頼本数が20%増えた9/5は適切2/2、"
+        "クレーム対応中の連絡があった9/18は不適切2/2、1か月ぶりに依頼が再開した9/25は不適切2/2、"
+        "通常どおり提出した10/5（特記なし）は不適切2/2。適切になったのは依頼本数が実際に増えた"
+        "9/5だけで、契約更新や感謝の言葉だけでは根拠が薄いとして不適切と判定され、"
+        "9/18のクレーム対応以降は再開・平常提出の日になっても不適切のまま変わらなかった。"
+    )
+    (OUT / "price-timing-verdict.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def price_timing_recency_fix_chart() -> None:
+    """同じ10/5に、「クレーム対応から時間が経って落ち着いたかも」を足すと判定が変わる図。
+
+    実測（2026-10-28）。10/5（クレーム対応の連絡から17日後）に対し、
+    素朴に聞いた場合と、経過日数と好転の兆しを明示した場合を比べた。
+    """
+    label_x = 18
+    badge_x = 430
+    badge_w = 150
+    badge_h = 26
+    top = 110
+    row_h = 46
+
+    rows = [
+        ("10/5をそのまま聞く（n=2）", False, "0/2"),
+        ("＋「17日経って落ち着いたかも」を足す（n=3）", True, "3/3"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "古い懸念は自分では賞味期限切れにならない。日数と好転を名指しすると直る</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "同じ10/5（クレーム対応の連絡から17日後）に、素朴に聞いた場合と、</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "経過日数・その後の依頼再開・平常提出を名指しで示した場合を比べた。</text>\n",
+    ]
+
+    y = top
+    for label, ok, frac in rows:
+        ty = y + row_h / 2 + 5
+        parts.append(f'<text class="t" x="{label_x}" y="{ty:.0f}">{_esc(label)}</text>\n')
+        cls = "box-good" if ok else "box-bad"
+        tcls = "t-good" if ok else "t-bad"
+        text = f"適切　{frac}" if ok else f"不適切　{frac}"
+        parts.append(
+            f'<rect class="{cls}" x="{badge_x}" y="{y + (row_h - badge_h) / 2:.0f}" '
+            f'width="{badge_w}" height="{badge_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{tcls}" x="{badge_x + badge_w / 2 - 34:.0f}" y="{ty:.0f}" '
+            f'style="font-size:12.5px">{text}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    notes = [
+        "「もう落ち着いたかもしれない」という評価そのものではなく、経過日数（17日）と",
+        "その後の具体的な出来事（依頼再開・平常提出）を名指ししたことが効いた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    alt = (
+        "同じ10月5日（クレーム対応の連絡から17日後）について、素朴に聞いた場合と、経過日数と"
+        "その後の依頼再開・平常提出を名指しで示した場合を比べた図。素朴に聞いた場合は2回とも"
+        "不適切。経過日数（17日）とその後の好転を名指しした場合は3回とも適切に変わった。"
+        "評価そのものではなく、経過日数と具体的な出来事を名指ししたことが効いた。"
+    )
+    (OUT / "price-timing-recency-fix.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    price_timing_verdict_chart()
+    price_timing_recency_fix_chart()
