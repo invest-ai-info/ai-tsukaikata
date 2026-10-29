@@ -5321,91 +5321,196 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-29T06:24:22.150937+00:00"
+  },
+  {
+   "video_id": "inyzHAdrvQw",
+   "title": "【意外と知らない】Claudeの超便利機能まとめ！Motion・Design・Dashboardなど",
+   "url": "https://www.youtube.com/watch?v=inyzHAdrvQw",
+   "published": "2026-10-29T09:00:24+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-29T13:40:21.332013+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ClaudeのWeb版でドキュメントやスライドを作成し、直接編集やチャット指示、共有ができる機能を紹介している。",
+    "Webモック等を作成できるデザイン機能や、色や余白などの統一ルールを定義して成果物に反映できるデザインシステムを解説している。",
+    "CSVデータからグラフを生成するダッシュボード機能や、アニメーション動画を自動作成・編集できるMotion機能を紹介している。"
+   ],
+   "for_whom": "Claudeを活用して資料やデザイン、動画作成などの業務を効率化したい人",
+   "caution": "動画内および概要欄で、有料の「Claude Code基礎研修」や公式LINE、有料AIコミュニティ「プロセボ」への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T13:40:21.332013+00:00"
+  },
+  {
+   "video_id": "pryCaGv8wuo",
+   "title": "DeepSeek's New AI Is An Absolute Monster",
+   "url": "https://www.youtube.com/watch?v=pryCaGv8wuo",
+   "published": "2026-10-28T17:32:40+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 DeepSeek v4.1 Flash 1017 is available here:\nhttps://api-docs.deepseek.com/news/news261017/\n\nSources:\nhttps://x.com/marcthecreatorr/status/2111427716142571554/video/1\nhttps://x.com/olezhavich/status/2112897791022264814/video/1\nhttps://x.com/notjazii/status/2111432925313179689/video/1\nhttps://x.com/izag82161/status/2113126108787089811/video/1\nhttps://x.com/notjazii/status/2111414086349336841/photo/1\nhttps://x.com/EnvolDev/status/2112304943076184535/video/1\nhttps://x.com/loktar00/status/2111468860935127532/video/1\nhttps://x.com/ItsmeAjayKV/status/2114036230354788581/video/1\nhttps://x.com/SPAC89/status/2111413922989224089/video/1\nhttps://x.com/marcthecreatorr/status/2114074078340649183/video/1\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
+   "first_seen": "2026-10-29T13:40:21.332013+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "pxN37PTV5Vs",
+   "title": "【暫定世界1位のAI】Googleが最先端AIモデル「Gemini 4 Carbon(カーボン)」を発表！ ～GPT-6 Astra・Claude Opus 5.5を明確に超えた？～",
+   "url": "https://www.youtube.com/watch?v=pxN37PTV5Vs",
+   "published": "2026-10-29T09:04:35+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-29T13:40:21.332013+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleがサイバーセキュリティや長時間の自律タスク遂行能力を高めた新モデル「Gemini 4 Carbon」を発表したと紹介している。",
+    "ベンチマーク評価や分析サイトにおいてGPT-6 Astraなどを上回り、現存モデルの中で総合1位を獲得したと説明している。",
+    "安全性検証のためまずは専門家向けに先行提供され、一般公開は11月中旬頃と予想されることやAPI価格を説明している。"
+   ],
+   "for_whom": "最新の最先端AIモデルの性能比較や提供スケジュール、API価格の動向を把握したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T13:40:21.332013+00:00"
+  },
+  {
+   "video_id": "gpsgMOuxHwA",
+   "title": "【最強性能】『Gemini 4 Carbon』発表！サイバーセキュリティと長時間タスクで大幅進化、ベンチマークを解説",
+   "url": "https://www.youtube.com/watch?v=gpsgMOuxHwA",
+   "published": "2026-10-28T22:08:20+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-10-29T13:40:21.332013+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Google DeepMindが発表したGemini 4 Carbonは、サイバーセキュリティと長時間タスク処理が大きな特徴だと投稿者が説明している。",
+    "サイバーセキュリティ関連や総合指標で首位を記録する一方、PC操作や一部コーディングベンチマークでは他社モデルが優勢な面もあると分析している。",
+    "現在はサイバー防御者向け等に段階的提供されており、一般開発者やユーザー向けには順次公開される予定だと紹介している。"
+   ],
+   "for_whom": "最新AIモデルの性能動向やセキュリティ分野でのベンチマーク結果に関心がある技術者や会社員",
+   "caution": "動画の終盤および概要欄において、投稿者が運営するnoteの有料メンバーシップコミュニティへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T13:40:21.332013+00:00"
+  },
+  {
+   "video_id": "ujmyzWSj8IU",
+   "title": "API credits, now in ChatGPT Pro and Business plans",
+   "url": "https://www.youtube.com/watch?v=ujmyzWSj8IU",
+   "published": "2026-10-28T23:45:26+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-29T13:40:21.332013+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "ChatGPT ProやBusinessプランの利用者を対象に、毎月APIクレジットが付与されるようになったと発表している。",
+    "ChatGPTの請求設定画面からAPI組織をリンクすることで、付与されたクレジットをAPIプラットフォームで利用できると説明している。",
+    "Codexのプラグインを活用し、Decisions APIやGPT-6.1 Terraを自作アプリへ迅速に組み込む手順を実演している。"
+   ],
+   "for_whom": "ChatGPTの有料プランを利用しており、OpenAIのAPIを使ったアプリ開発や実験を行いたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T13:40:21.332013+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-29T06:24:22.150937+00:00",
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-29T06:24:22.150937+00:00",
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-29T06:24:22.150937+00:00",
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-29T06:24:22.150937+00:00",
+   "last_ok": "2026-10-29T13:40:21.332013+00:00",
    "fail_streak": 0
   }
  }
