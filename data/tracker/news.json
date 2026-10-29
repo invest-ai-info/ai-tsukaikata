@@ -5829,34 +5829,6 @@
       "uid": "a1d68b672d017794",
       "url": "https://openai.com/index/ten-advances-in-mathematics",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-31T15:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.",
-      "summary_ja": "OpenAIがヨーロッパで責任あるAI活用を進めています。\n安全性、透明性などの取り組みを共有。\nEUのAI法に合わせ活動を継続します。",
-      "summary_source": "gemini",
-      "title": "Advancing responsible AI across Europe",
-      "uid": "8b5cf9986bbc1621",
-      "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-31T15:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.",
-      "summary_ja": "高度なAIを普及させるための取り組みを提示しました。\nAIをより高性能に、安価に、幅広く役立つようにします。",
-      "summary_source": "gemini",
-      "title": "Building abundant intelligence",
-      "uid": "ce075195b855879a",
-      "url": "https://openai.com/index/building-abundant-intelligence",
-      "vendor": "OpenAI"
     }
   ]
 }
