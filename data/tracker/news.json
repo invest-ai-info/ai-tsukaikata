@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-29T08:34:51.656988+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-29T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Intelligence Report: SNSのAI分析からみる米中間選挙",
+      "uid": "1a578fc9d4854d16",
+      "url": "https://sakana.ai/us-midterms-analysis/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-10-28T21:41:28.239784+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -5844,32 +5856,6 @@
       "title": "Building abundant intelligence",
       "uid": "ce075195b855879a",
       "url": "https://openai.com/index/building-abundant-intelligence",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "DeepSeek 新モデル",
-      "published": "2026-07-31T07:30:24+00:00",
-      "source_id": "hf-deepseek",
-      "summary": "HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4-Flash-0731 が公開されました。",
-      "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
-      "uid": "4c22d218c984142f",
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
-      "vendor": "DeepSeek"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-31T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.",
-      "summary_ja": "UnivéがAI活用できる人材育成を進めました。\nChatGPT Enterpriseを導入し、リーダーシップと\n従業員発の工夫で大規模な仕事改革を進めます。",
-      "summary_source": "gemini",
-      "title": "Univé builds an AI-ready workforce",
-      "uid": "b0e1cf75b723ed62",
-      "url": "https://openai.com/index/unive",
       "vendor": "OpenAI"
     }
   ]
