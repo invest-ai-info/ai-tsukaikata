@@ -39,7 +39,7 @@
   },
   "failures": {
     "anthropic-news": {
-      "count": 45,
+      "count": 46,
       "last_error": "ValueError: 埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）",
       "since": "2026-10-20T18:29:14.936975+00:00"
     }
@@ -58,7 +58,7 @@
     "media-impress-ai": "2026-10-29T10:32:46+00:00",
     "media-itmedia-aiplus": "2026-10-29T08:46:39+00:00",
     "media-publickey": "2026-10-28T15:39:53+00:00",
-    "openai-news": "2026-10-28T13:15:00+00:00",
+    "openai-news": "2026-10-29T17:00:00+00:00",
     "openrouter-moonshot": "2026-10-23T17:56:28+00:00",
     "openrouter-qwen": "2026-09-23T19:20:28+00:00",
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
@@ -130,6 +130,39 @@
       "uid": "1a578fc9d4854d16",
       "url": "https://sakana.ai/us-midterms-analysis/",
       "vendor": "Sakana AI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI’s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.",
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "uid": "77c7d6f7bc6a8726",
+      "url": "https://openai.com/index/updated-model-spec",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "title": "How we detect frontier model misalignment",
+      "uid": "c19e3b1a9042d7e5",
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
+      "title": "How Ropes & Gray is developing AI for transactional diligence",
+      "uid": "155d69c2bd681501",
+      "url": "https://openai.com/index/ropes-gray-ai-diligence",
+      "vendor": "OpenAI"
     }
   ],
   "uids": {
@@ -542,6 +575,7 @@
     "152b94617473229d": "2026-08-29T09:08:25.973712+00:00",
     "153692c99a3c64a1": "2026-08-25T15:07:57.999147+00:00",
     "1537b94051c1b7d1": "2026-09-29T08:36:30.590774+00:00",
+    "155d69c2bd681501": "2026-10-29T21:11:27.966927+00:00",
     "15648937902c7bfa": "2026-10-13T07:46:29.320532+00:00",
     "1577fc2f94763cd1": "2026-09-13T01:03:50.448341+00:00",
     "158d34a456620440": "2026-08-17T13:54:47.131963+00:00",
@@ -2416,6 +2450,7 @@
     "77993f40afd07974": "2026-09-08T04:43:11.821528+00:00",
     "77a90f76487e9ea3": "2026-08-01T12:16:42.309603+00:00",
     "77b25b7604d79a99": "2026-08-18T22:43:44.829078+00:00",
+    "77c7d6f7bc6a8726": "2026-10-29T21:11:27.966927+00:00",
     "77ca6dfe1a6f7f8f": "2026-09-26T13:09:27.137457+00:00",
     "77d959194b055e07": "2026-09-10T16:28:03.909484+00:00",
     "77e5d0e089d74bb7": "2026-09-24T04:57:20.166847+00:00",
@@ -3848,6 +3883,7 @@
     "c17573ec637bc633": "2026-08-15T03:06:56.696462+00:00",
     "c184270205293e01": "2026-09-23T17:07:31.530680+00:00",
     "c18c5d8b53d14457": "2026-09-14T14:08:28.662401+00:00",
+    "c19e3b1a9042d7e5": "2026-10-29T21:11:27.966927+00:00",
     "c1b18033bb036502": "2026-10-22T07:38:43.029486+00:00",
     "c1bbf03ccc5f100b": "2026-08-19T03:12:45.748785+00:00",
     "c1bda499ad6f45f0": "2026-10-22T07:38:43.029486+00:00",

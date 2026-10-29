@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-29T21:11:27.966927+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI’s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.",
+      "summary_ja": "OpenAIがAIの新たな基準を更新\nAIがより良い判断をし、人間の意図に従うため\n5つの重要項目を提示し開発を導く",
+      "summary_source": "gemini",
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "uid": "77c7d6f7bc6a8726",
+      "url": "https://openai.com/index/updated-model-spec",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-29T08:34:51.656988+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",
@@ -11,6 +25,34 @@
       "uid": "1a578fc9d4854d16",
       "url": "https://sakana.ai/us-midterms-analysis/",
       "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-10-29T21:11:27.966927+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "summary_ja": "OpenAIが最先端AIの異常を監視\n複数の段階で想定外の動作や不正を発見\n問題が大きくなる前に対応できるよう工夫",
+      "summary_source": "gemini",
+      "title": "How we detect frontier model misalignment",
+      "uid": "c19e3b1a9042d7e5",
+      "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-29T21:11:27.966927+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
+      "summary_ja": "Ropes & GrayがAIを導入し業務を効率化\nOpenAIと協力し企業取引の調査に開発\n弁護士は最終確認後、顧客に助言する",
+      "summary_source": "gemini",
+      "title": "How Ropes & Gray is developing AI for transactional diligence",
+      "uid": "155d69c2bd681501",
+      "url": "https://openai.com/index/ropes-gray-ai-diligence",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-10-28T21:41:28.239784+00:00",
