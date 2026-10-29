@@ -109,6 +109,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-10-29T01:50:44.832484+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-10-27T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "管理画面のイメージ。*この画像は架空のデータを使ったイメージです。今後予告なく変更される可能性があります。",
+      "summary_ja": "Sakana API Platformが法人向け先行利用を開始。",
+      "summary_source": "gemini",
+      "title": "Sakana API Platform、エンタープライズ向けにアーリーアクセスプログラムを開始",
+      "uid": "885e9bc176d41720",
+      "url": "https://sakana.ai/api-platform-earlyaccess/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-10-27T18:45:30.663558+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -5856,20 +5870,6 @@
       "title": "Univé builds an AI-ready workforce",
       "uid": "b0e1cf75b723ed62",
       "url": "https://openai.com/index/unive",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-07-31T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes.",
-      "summary_ja": "OpenAIがAIを使った詐欺を阻止しました\nChatGPTが悪用され、投資や恋愛詐欺を実行\nカンボジア拠点の詐欺グループの活動を停止",
-      "summary_source": "gemini",
-      "title": "Disrupting a Criminal Scam Operation",
-      "uid": "3cc46b67108e93f4",
-      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
       "vendor": "OpenAI"
     }
   ]
