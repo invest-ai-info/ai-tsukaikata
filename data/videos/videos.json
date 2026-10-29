@@ -5282,10 +5282,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "What can lawyers achieve when time is no longer the limit? Discover how Legora uses OpenAI models, ChatGPT and Codex to help legal teams review contracts faster, broaden their analysis and make more room for work that needs human judgment. Part of Intelligence at Work, a series exploring how businesses are putting AI to work. \n\nRead the full story: https://openai.com/index/legora-agentic-operating-system-for-legal-work/",
    "first_seen": "2026-10-28T13:28:49.220900+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "リーガルAIプラットフォームのLegoraが、OpenAIの技術を活用して法律業務を効率化している事例を紹介している。",
+    "従来は上位10%に限られていた契約書精査を、AIエージェントの活用により短時間で大量に分析可能になったと説明している。",
+    "デューデリジェンスなどの定型的な確認作業をAIが担うことで、人間がより高度な判断業務に集中できると述べている。"
+   ],
+   "for_whom": "法務業務や契約書レビューの効率化に生成AIを活用したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T22:56:38.728667+00:00"
   },
   {
    "video_id": "pwvnH9S4j60",
@@ -5353,10 +5363,20 @@
    "channel_key": "two-minute-papers",
    "channel_name": "Two Minute Papers",
    "default_category": "tech",
-   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers\n\n📝 DeepSeek v4.1 Flash 1017 is available here:\nhttps://api-docs.deepseek.com/news/news261017/\n\nSources:\nhttps://x.com/marcthecreatorr/status/2111427716142571554/video/1\nhttps://x.com/olezhavich/status/2112897791022264814/video/1\nhttps://x.com/notjazii/status/2111432925313179689/video/1\nhttps://x.com/izag82161/status/2113126108787089811/video/1\nhttps://x.com/notjazii/status/2111414086349336841/photo/1\nhttps://x.com/EnvolDev/status/2112304943076184535/video/1\nhttps://x.com/loktar00/status/2111468860935127532/video/1\nhttps://x.com/ItsmeAjayKV/status/2114036230354788581/video/1\nhttps://x.com/SPAC89/status/2111413922989224089/video/1\nhttps://x.com/marcthecreatorr/status/2114074078340649183/video/1\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
    "first_seen": "2026-10-29T13:40:21.332013+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "DeepSeekの新モデル「v4.1 Flash 1017」が登場し、コーディングや端末操作などのベンチマークで大幅な進化を遂げたと紹介している。",
+    "トークン単価は非常に安価だが、タスク完了に多くのトークンを消費することがあるため、タスクごとの総コストで評価すべきだと解説している。",
+    "性能向上の要因として、AIが自身の出力を評価して改善を繰り返す「自己フィードバックによる強化学習」が活用されている可能性を指摘している。"
+   ],
+   "for_whom": "最新のオープン系AIモデルの性能やAPIコストに関心があるエンジニアや開発者",
+   "caution": "動画および概要欄に特定のクラウドGPUサービス（Lambda）のスポンサープロモーションが含まれている点にご留意ください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T22:56:38.728667+00:00"
   },
   {
    "video_id": "pxN37PTV5Vs",
@@ -5426,92 +5446,138 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-29T13:40:21.332013+00:00"
+  },
+  {
+   "video_id": "L6pzlo1QvoM",
+   "title": "ChatGPT Enterprise at Zendesk: Putting Company Data to Work",
+   "url": "https://www.youtube.com/watch?v=L6pzlo1QvoM",
+   "published": "2026-10-29T16:23:43+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-29T22:56:38.728667+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Zendeskでは全社員にChatGPT Enterpriseを提供し、社内全体で約600のアプリが構築されたと説明している。",
+    "営業向けAIが顧客の利用状況データを分析し、契約拡大の機会と提案価値を営業担当へ提示すると紹介している。",
+    "開発された営業支援アプリケーションには毎日約1000人のアクティブユーザーがいると述べている。"
+   ],
+   "for_whom": "社内業務や営業活動への生成AI・エージェント導入を検討している企業担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T22:56:38.728667+00:00"
+  },
+  {
+   "video_id": "SkpwzfR4A1E",
+   "title": "Claude's new mobile app updates are here",
+   "url": "https://www.youtube.com/watch?v=SkpwzfR4A1E",
+   "published": "2026-10-29T18:02:37+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-29T22:56:38.728667+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claudeのモバイルアプリで仕事用と個人用アカウントの切り替えが可能になり、画像のバックグラウンドアップロードにも対応したと紹介している。",
+    "iPadや大画面端末でチャットの横に成果物を並べて表示できるほか、音声モードの応答性向上やApple CarPlayへの対応が追加されたと説明している。",
+    "UIの対応言語が計33言語に拡大されたほか、過去のチャットや設定を素早く検索できる機能が近日追加予定であると述べている。"
+   ],
+   "for_whom": "スマートフォンやタブレットでClaudeアプリを活用している人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T22:56:38.728667+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "keito": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "iketomo": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "honami": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "haruto": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "starter-story": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
+   "last_ok": "2026-10-29T22:56:38.728667+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   }
  }
 }
