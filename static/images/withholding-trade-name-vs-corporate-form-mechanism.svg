@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="370" viewBox="0 0 720 370" role="img" aria-label="屋号に「法人」という文字列があるだけの個人事業主と、実際に法人格を持つ表記を比べる図。上段＝屋号「法人企画社」佐藤一郎（個人事業主）。法人格を示す語尾も代表者の役職も無く、屋号＋個人名という個人事業主の典型形。8回とも源泉徴収ありと正しく判定した。下段＝法人格の表記「まつば税理士法人」（既出記事）。「税理士法人」という正式な法人格の語尾があり、3回とも源泉徴収なしと正しく判定した。下の枠には、源泉徴収の要否は株式会社・合同会社・◯◯法人のような法人格の語尾で決まること、屋号の中に「法人」という文字列が混ざっているだけでは法人格の語尾にはならないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="370"/>
+<text class="t-strong" x="18" y="26">見ているのは「法人」の文字列ではなく、法人格の語尾</text>
+<text class="t-sm" x="18" y="45">屋号に「法人」と入っているだけの個人事業主と、正式な法人格の表記を比べた。</text>
+<text class="t-sm" x="18" y="64">どちらの契約書にも「源泉徴収の要否」を説明する条項は書いていない。</text>
+<rect class="box" x="18" y="112" width="684" height="82" rx="6"/>
+<text class="t-strong" x="34" y="134">屋号「法人企画社」佐藤一郎（個人事業主）</text>
+<text class="t" x="34" y="154">法人格を示す語尾（株式会社・合同会社等）も、代表者の役職も無い。</text>
+<text class="t" x="34" y="172">屋号＋個人名という個人事業主の典型形。</text>
+<text class="t" x="34" y="190">8回とも「源泉徴収あり」と正しく判定した。</text>
+<rect class="box-good" x="18" y="204" width="684" height="82" rx="6"/>
+<text class="t-strong" x="34" y="226">法人格の表記「まつば税理士法人」（既出記事）</text>
+<text class="t-good" x="34" y="246">「税理士法人」という正式な法人格の語尾がある。</text>
+<text class="t-good" x="34" y="264">3回とも、この語尾だけから「源泉徴収なし」と自分で気づいて</text>
+<text class="t-good" x="34" y="282">正しく判定した。</text>
+<rect class="box-accent" x="18" y="302" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="322">源泉徴収の要否は「株式会社・合同会社・◯◯法人」のような法人格の語尾で決まる（国税庁No.2792）。</text>
+<text class="t-accent" x="34" y="340">屋号の中に「法人」という文字列が混ざっているだけでは、法人格の語尾にはならない。</text>
+</svg>

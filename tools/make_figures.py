@@ -39152,3 +39152,118 @@ def stage_six_broaden_definition_chart() -> None:
 if __name__ == "__main__":
     stage_six_known_deadline_chart()
     stage_six_broaden_definition_chart()
+
+
+def withholding_trade_name_hit_and_miss_chart() -> None:
+    """屋号に「法人」という文字列が入っていても、源泉徴収の判定は惑わされるか（2026-10-29実測）。
+
+    判定は docs/evidence/withholding-survives-a-corporate-sounding-trade-name.md から。
+    """
+    _hit_and_miss_rows_chart(
+        "withholding-trade-name-hit-and-miss.svg",
+        "屋号に「法人」と入っていても、8回とも個人として正しく計算した",
+        "実測2026-10-29。講演料150,000円・原稿料200,000円の2契約、屋号だけを変えた版を各2回。",
+        "「個人事業主として正しい手取り額に到達した回数／試した回数」。",
+        [
+            ("講演料・屋号「法人企画社」佐藤一郎", 2, 2, "good"),
+            ("講演料・対照屋号「佐藤企画社」佐藤一郎", 2, 2, "good"),
+            ("原稿料・屋号「蒼空法人工房」鈴木次郎", 2, 2, "good"),
+            ("原稿料・対照屋号「蒼空工房」鈴木次郎", 2, 2, "good"),
+            ("誘導質問（講演料・法人なので不要のはず）", 1, 1, "good"),
+            ("誘導質問（原稿料・法人なので不要のはず）", 1, 1, "good"),
+        ],
+        [
+            "✅ 屋号に「法人」と入っていても、8回とも個人事業主として正しい手取り額に到達した",
+            "⚠️ 依頼者が「法人なので不要」と誤った前提で聞いても、2回とも正しい側の金額にたどりついた",
+        ],
+        "6つの条件で、個人事業主として正しい手取り額に到達した回数を示す表。"
+        "講演料・屋号「法人企画社」佐藤一郎は2回中2回、"
+        "講演料・対照屋号「佐藤企画社」佐藤一郎も2回中2回、"
+        "原稿料・屋号「蒼空法人工房」鈴木次郎は2回中2回、"
+        "原稿料・対照屋号「蒼空工房」鈴木次郎も2回中2回、"
+        "誘導質問（講演料・法人なので不要のはずと聞く）は1回中1回、"
+        "誘導質問（原稿料・法人なので不要のはずと聞く）も1回中1回、いずれも正解。"
+        "下の枠には、屋号に「法人」と入っていても8回とも個人事業主として正しい手取り額に到達したこと、"
+        "依頼者が法人なので不要と誤った前提で聞いても2回とも正しい側の金額にたどりついたことが"
+        "書かれている。",
+        label_w=380,
+    )
+
+
+def withholding_trade_name_vs_corporate_form_mechanism_chart() -> None:
+    """屋号に「法人」という文字列があるだけの個人事業主と、実際に法人格を持つ表記を比べる図。
+
+    実測は docs/evidence/withholding-survives-a-corporate-sounding-trade-name.md。
+    既出記事（法人格の表記「◯◯税理士法人」は3回とも源泉徴収なしと判定）と対にして読む図。
+    """
+    box_x, box_w = 18, 684
+    row_h = 92
+    top = 112
+
+    rows = [
+        (
+            "屋号「法人企画社」佐藤一郎（個人事業主）",
+            [
+                "法人格を示す語尾（株式会社・合同会社等）も、代表者の役職も無い。",
+                "屋号＋個人名という個人事業主の典型形。",
+                "8回とも「源泉徴収あり」と正しく判定した。",
+            ],
+            "box",
+            "t",
+        ),
+        (
+            "法人格の表記「まつば税理士法人」（既出記事）",
+            [
+                "「税理士法人」という正式な法人格の語尾がある。",
+                "3回とも、この語尾だけから「源泉徴収なし」と自分で気づいて",
+                "正しく判定した。",
+            ],
+            "box-good",
+            "t-good",
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">見ているのは「法人」の文字列ではなく、法人格の語尾</text>\n',
+        '<text class="t-sm" x="18" y="45">屋号に「法人」と入っているだけの個人事業主と、正式な法人格の表記を比べた。</text>\n',
+        '<text class="t-sm" x="18" y="64">どちらの契約書にも「源泉徴収の要否」を説明する条項は書いていない。</text>\n',
+    ]
+
+    y = top
+    for label, lines, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        for i, line in enumerate(lines[:3]):
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 42 + 18 * i}">{_esc(line)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "源泉徴収の要否は「株式会社・合同会社・◯◯法人」のような法人格の語尾で決まる（国税庁No.2792）。",
+        "屋号の中に「法人」という文字列が混ざっているだけでは、法人格の語尾にはならない。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "屋号に「法人」という文字列があるだけの個人事業主と、実際に法人格を持つ表記を比べる図。"
+        "上段＝屋号「法人企画社」佐藤一郎（個人事業主）。法人格を示す語尾も代表者の役職も無く、"
+        "屋号＋個人名という個人事業主の典型形。8回とも源泉徴収ありと正しく判定した。"
+        "下段＝法人格の表記「まつば税理士法人」（既出記事）。「税理士法人」という正式な法人格の"
+        "語尾があり、3回とも源泉徴収なしと正しく判定した。"
+        "下の枠には、源泉徴収の要否は株式会社・合同会社・◯◯法人のような法人格の語尾で決まること、"
+        "屋号の中に「法人」という文字列が混ざっているだけでは法人格の語尾にはならないことが"
+        "書かれている。"
+    )
+    (OUT / "withholding-trade-name-vs-corporate-form-mechanism.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    withholding_trade_name_hit_and_miss_chart()
+    withholding_trade_name_vs_corporate_form_mechanism_chart()
