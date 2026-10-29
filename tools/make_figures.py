@@ -39000,3 +39000,155 @@ def price_timing_recency_fix_chart() -> None:
 if __name__ == "__main__":
     price_timing_verdict_chart()
     price_timing_recency_fix_chart()
+
+
+def stage_six_known_deadline_chart() -> None:
+    """工程6（期限が分かっている／分かっていないに仕分け）の結果を、材料ごとに並べる図。
+
+    実測（2026-10-29）。`later-stages-skip-the-gap-and-stay-clean` の工程4の出力
+    （4本）を工程6の入力にし、「期限の具体的な日付が本文に書かれているもの」を
+    「分かっている」とする指示文で各2回試した。
+    """
+    label_x = 18
+    badge_x = 460
+    badge_w = 190
+    badge_h = 26
+    top = 150
+    row_h = 44
+
+    rows = [
+        ("材料A-1　期限は「記載あり・日付は未着」", "box-accent", "t-accent", "質問して止まる（2/2）"),
+        ("材料A-2　日付と「今週中」等が混在", "box-bad", "t-bad", "分かっている 3／12件（2/2とも）"),
+        ("材料B-1　期限は本文に記載なし", "box-good", "t-good", "分かっている 0／12件（2/2とも）"),
+        ("材料B-2　記載なし＋希望日の罠あり", "box-good", "t-good", "分かっている 0／12件（2/2とも）"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「具体的な日付」で仕分けると、「今週中」は9件とも分からない扱いになる</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "前作の工程4の出力4本をそのまま工程6（期限の仕分け・部署内の並べ替え）に渡した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "材料A-2は12件とも「今週中」「8月28日まで」等の期限情報を持つが、日付形式は3件だけ。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "材料A-1は全件が同じ「記載あり・日付未着」で、2回とも推測せず質問して止まった。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "材料B-2は「希望日は9月5日・6日」という罠を含むが、2材料×各2回＝4回とも誤って拾わなかった。</text>\n",
+    ]
+
+    y = top
+    for label, box_cls, text_cls, text in rows:
+        ty = y + row_h / 2 + 5
+        parts.append(f'<text class="t" x="{label_x}" y="{ty:.0f}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="{box_cls}" x="{badge_x}" y="{y + (row_h - badge_h) / 2:.0f}" '
+            f'width="{badge_w}" height="{badge_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{badge_x + 12}" y="{ty:.0f}" '
+            f'style="font-size:12px">{_esc(text)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    notes = [
+        "材料A-2の「今週中」「今週金曜まで」は、読む人には実質的な期限だが、文字どおりの",
+        "「◯月◯日」という日付形式ではないため、9件とも「分かっていない」側に回った。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    alt = (
+        "工程6（期限が分かっている・分かっていないへの仕分けと部署内の並べ替え）の結果を材料ごとに"
+        "示す図。材料A-1（期限欄が「記載あり・日付は未着」で全12件同一）は2回とも推測せず質問して"
+        "止まった。材料A-2（日付と「今週中」等の言い回しが混在）は2回とも「期限が分かっている」が"
+        "12件中3件にとどまり、「今週中」「今週金曜まで」のような言い回しは分からない扱いになった。"
+        "材料B-1（期限は本文に記載なし）は2回とも0件が分かっている扱いで12件とも分かっていない。"
+        "材料B-2（記載なしに加え、希望する利用日「9月5日・6日」という罠を含む）も2回とも0件で、"
+        "希望日を期限と取り違えなかった。"
+    )
+    (OUT / "stage-six-known-deadline.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def stage_six_broaden_definition_chart() -> None:
+    """「今週中」も期限に含める言い直しで、結果がどう変わるかを示す図。
+
+    実測（2026-10-29）。工程6の指示文に「日付だけでなく『今週中』『今週金曜まで』
+    のような言い回しも期限が分かっているに含める」を足し、同じ3材料で各2回試した。
+    """
+    label_x = 18
+    plot_x = 330
+    plot_w = 300
+    axis_max = 12
+    scale = plot_w / axis_max
+    top = 120
+    row_h = 34
+    bar_h = 14
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("材料A-2　元の指示（日付のみ）", 3, "box-bad"),
+        ("材料A-2　言い直し後（今週中も含む）", 12, "box-good"),
+        ("材料B-1　言い直し後（記載なし12件）", 0, "box-good"),
+        ("材料B-2　言い直し後（希望日の罠あり）", 1, "box-bad"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「今週中」を救うと、材料B-2では希望日が期限に化ける</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "工程6の指示文に「日付だけでなく『今週中』等の言い回しも含める」を足して、再度各2回試した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "縦軸は「期限が分かっている」と判定された件数（12件中）。値は2回とも同じだった。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "材料A-2は3→12件に回復。材料B-1（記載なしのみ）は0件のまま変わらず安全だった。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "材料B-2は0→1件に変化し、希望する利用日「9月5日・6日」を期限として誤って拾った（2/2）。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value, cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3) if value else 3
+        bar_cls = cls if value else "box-quiet"
+        parts.append(
+            f'<rect class="{bar_cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if value else "t-good")
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}／12件</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 20
+
+    alt = (
+        "工程6の指示文に「『今週中』等の言い回しも期限が分かっているに含める」を足した前後を比べる"
+        "横棒グラフ。材料A-2は元の指示（日付のみ）で12件中3件、言い直し後は12件中12件に回復した。"
+        "材料B-1（記載なしのみ）は言い直し後も0件で変わらず安全だった。材料B-2（記載なしに加え"
+        "希望する利用日『9月5日・6日』という罠を含む）は言い直し後に0件から1件へ変化し、"
+        "希望日を期限として誤って拾う結果になった。いずれも2回とも同じ値だった。"
+    )
+    (OUT / "stage-six-broaden-definition.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    stage_six_known_deadline_chart()
+    stage_six_broaden_definition_chart()

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="工程6（期限が分かっている・分かっていないへの仕分けと部署内の並べ替え）の結果を材料ごとに示す図。材料A-1（期限欄が「記載あり・日付は未着」で全12件同一）は2回とも推測せず質問して止まった。材料A-2（日付と「今週中」等の言い回しが混在）は2回とも「期限が分かっている」が12件中3件にとどまり、「今週中」「今週金曜まで」のような言い回しは分からない扱いになった。材料B-1（期限は本文に記載なし）は2回とも0件が分かっている扱いで12件とも分かっていない。材料B-2（記載なしに加え、希望する利用日「9月5日・6日」という罠を含む）も2回とも0件で、希望日を期限と取り違えなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="400"/>
+<text class="t-strong" x="18" y="24">「具体的な日付」で仕分けると、「今週中」は9件とも分からない扱いになる</text>
+<text class="t-sm" x="18" y="43">前作の工程4の出力4本をそのまま工程6（期限の仕分け・部署内の並べ替え）に渡した。</text>
+<text class="t-sm" x="18" y="62">材料A-2は12件とも「今週中」「8月28日まで」等の期限情報を持つが、日付形式は3件だけ。</text>
+<text class="t-xs" x="18" y="81">材料A-1は全件が同じ「記載あり・日付未着」で、2回とも推測せず質問して止まった。</text>
+<text class="t-xs" x="18" y="100">材料B-2は「希望日は9月5日・6日」という罠を含むが、2材料×各2回＝4回とも誤って拾わなかった。</text>
+<text class="t" x="18" y="177">材料A-1　期限は「記載あり・日付は未着」</text>
+<rect class="box-accent" x="460" y="159" width="190" height="26" rx="4"/>
+<text class="t-accent" x="472" y="177" style="font-size:12px">質問して止まる（2/2）</text>
+<text class="t" x="18" y="221">材料A-2　日付と「今週中」等が混在</text>
+<rect class="box-bad" x="460" y="203" width="190" height="26" rx="4"/>
+<text class="t-bad" x="472" y="221" style="font-size:12px">分かっている 3／12件（2/2とも）</text>
+<text class="t" x="18" y="265">材料B-1　期限は本文に記載なし</text>
+<rect class="box-good" x="460" y="247" width="190" height="26" rx="4"/>
+<text class="t-good" x="472" y="265" style="font-size:12px">分かっている 0／12件（2/2とも）</text>
+<text class="t" x="18" y="309">材料B-2　記載なし＋希望日の罠あり</text>
+<rect class="box-good" x="460" y="291" width="190" height="26" rx="4"/>
+<text class="t-good" x="472" y="309" style="font-size:12px">分かっている 0／12件（2/2とも）</text>
+<rect class="box-accent" x="18" y="336" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="356">材料A-2の「今週中」「今週金曜まで」は、読む人には実質的な期限だが、文字どおりの</text>
+<text class="t-accent" x="34" y="374">「◯月◯日」という日付形式ではないため、9件とも「分かっていない」側に回った。</text>
+</svg>
