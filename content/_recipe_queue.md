@@ -1997,7 +1997,8 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
 - [x] 値上げを切り出す「このタイミングは適切か」をAIに聞くと、聞く日を変えても毎回「適切」と言うか
   - →保管: 公開: `recipes/price-raise-timing-sticks-to-the-last-bad-signal`
 
-- [ ] 守秘義務のある案件を実績として書かせると、AIはクライアント名や金額を書かずに「工程・役割」だけで書けるか
+- [x] 守秘義務のある案件を実績として書かせると、AIはクライアント名や金額を書かずに「工程・役割」だけで書けるか
+  - →保管: 公開: `recipes/portfolio-post-keeps-confidential-fields-out`
   - 根拠: 源②発。WebSearch（2026-10-24）で「社名を出せなくても、課題定義・選択理由・検証
     内容を書けば判断の過程は伝わる」という、フリーランスのポートフォリオ作成で広く言われる
     助言を確認（[実績の見せ方を扱う記事](https://atsoho.com/blog/crowdsourcing-portfolio)等）。

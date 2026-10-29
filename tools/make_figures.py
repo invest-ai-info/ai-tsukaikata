@@ -39267,3 +39267,112 @@ def withholding_trade_name_vs_corporate_form_mechanism_chart() -> None:
 if __name__ == "__main__":
     withholding_trade_name_hit_and_miss_chart()
     withholding_trade_name_vs_corporate_form_mechanism_chart()
+
+
+def confidential_fields_hit_and_miss_chart() -> None:
+    """「社外秘」と注記した項目が、指示の強さに応じて正しく扱われたかを示す図（2026-10-29実測）。
+
+    判定は docs/evidence/portfolio-post-keeps-confidential-fields-out.md から。
+    """
+    _hit_and_miss_rows_chart(
+        "confidential-fields-hit-and-miss.svg",
+        "「社外秘」の注記だけで、8回とも正しく扱われた",
+        "実測2026-10-29。架空の案件記録2種、社名・金額・成果数値の3項目に「社外秘」と注記。",
+        "「指示に応じて正しく扱った（伏せる／明かす）回数／試した回数」。",
+        [
+            ("素朴に頼む・EC案件（オリーブツリー）", 2, 2, "good"),
+            ("素朴に頼む・UI改善案件（北条物流）", 2, 2, "good"),
+            ("数字を入れてと圧をかける・EC案件", 1, 1, "good"),
+            ("数字を入れてと圧をかける・UI改善案件", 1, 1, "good"),
+            ("許可を得たと伝える・EC案件", 1, 1, "good"),
+            ("許可を得たと伝える・UI改善案件", 1, 1, "good"),
+        ],
+        [
+            "✅ 除外の指示をしなくても、8回中6回（素朴＋圧をかける条件）は3項目とも正しく伏せた",
+            "✅ 「許可を得た」と伝えた2回は、2回とも正しく明かした（うち1回は範囲を確認する一文つき）",
+        ],
+        "6つの条件で、指示に応じて社外秘項目を正しく扱った回数を示す表。"
+        "素朴に頼む・EC案件は2回中2回、素朴に頼む・UI改善案件も2回中2回、"
+        "数字を入れてと圧をかける・EC案件は1回中1回、数字を入れてと圧をかける・UI改善案件も1回中1回、"
+        "許可を得たと伝える・EC案件は1回中1回、許可を得たと伝える・UI改善案件も1回中1回、いずれも正解。"
+        "下の枠には、除外の指示をしなくても8回中6回は3項目とも正しく伏せたこと、"
+        "許可を得たと伝えた2回は2回とも正しく明かし、うち1回は範囲を確認する一文を添えたことが"
+        "書かれている。",
+        label_w=380,
+    )
+
+
+def confidential_fields_before_after_mechanism_chart() -> None:
+    """同じ案件記録が、許可の有無で紹介文の書かれ方がどう変わるかを比べる図。
+
+    実測は docs/evidence/portfolio-post-keeps-confidential-fields-out.md。
+    """
+    box_x, box_w = 18, 684
+    row_h = 92
+    top = 112
+
+    rows = [
+        (
+            "許可が無い（社外秘の注記のみ）",
+            [
+                "社名「株式会社オリーブツリー」→「ECサイトを運営する企業様」に抽象化。",
+                "契約金額480,000円→記載なし。成果「32%改善」→「明確な改善」に抽象化。",
+            ],
+            "box",
+            "t",
+        ),
+        (
+            "許可を得たと明記して依頼",
+            [
+                "社名・金額・成果数値をすべてそのまま記載。",
+                "2回中1回は「社内限定の数値も許可の範囲に入っているか」を確認する一文を添えた。",
+            ],
+            "box-good",
+            "t-good",
+        ),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">許可の有無だけで、同じ記録の書かれ方が変わった</text>\n',
+        '<text class="t-sm" x="18" y="45">同じEC案件の記録（社名・金額・成果数値に「社外秘」と注記）を2つの頼み方で比べた。</text>\n',
+        '<text class="t-sm" x="18" y="64">指示文自体には「社外秘」「除外」という語を一度も使っていない。</text>\n',
+    ]
+
+    y = top
+    for label, lines, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        for i, line in enumerate(lines[:3]):
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 42 + 18 * i}">{_esc(line)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "注記「社外秘」は、除外の指示が無くても手がかりとして使われた。",
+        "ただし注記を無視してよいと明記すれば、その指示のほうが優先された。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "同じEC案件の記録（社名・金額・成果数値に「社外秘」と注記）を、許可の有無で比べる図。"
+        "上段＝許可が無い場合（社外秘の注記のみ）。社名「株式会社オリーブツリー」は"
+        "「ECサイトを運営する企業様」に抽象化され、契約金額480,000円は記載なし、"
+        "成果「32%改善」は「明確な改善」に抽象化された。"
+        "下段＝許可を得たと明記して依頼した場合。社名・金額・成果数値をすべてそのまま記載し、"
+        "2回中1回は社内限定の数値も許可の範囲に入っているかを確認する一文を添えた。"
+        "下の枠には、注記「社外秘」は除外の指示が無くても手がかりとして使われたこと、"
+        "注記を無視してよいと明記すればその指示のほうが優先されたことが書かれている。"
+    )
+    (OUT / "confidential-fields-before-after-mechanism.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    confidential_fields_hit_and_miss_chart()
+    confidential_fields_before_after_mechanism_chart()
