@@ -471,10 +471,31 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/
-  - 2026-10-28 自動追記（major・Google DeepMind「Gemini 4 Carbon: Our next frontier model」）
+- [x] https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/
+  - →保管: ✅ **2026-10-29: 公開した** → `content/tools/gemini-4-carbon.md`
 
 ## 処理済み
+
+- https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/ → **公開済み** content/tools/gemini-4-carbon.md（2026-10-29・公開）
+  - `deepmind.google` → `blog.google` へ302転送・到達できた（要約させず、価格・提供範囲・ベンチマークの
+    各段落を原文のまま個別に引用して確認した）。関連してGemini 4 Argonの発表・GA記事・公式料金ページ、
+    Claude Opus 5.5の料金・モデル一覧ページ、GPT-6 Astraの料金・モデルページにも到達。
+    図3枚（`carbon-benchmarks` / `carbon-price-deadline` / `carbon-vendor-price`）。
+    出典8件すべて取得成功。`check_numbers.py` は照合対象17個のうち16個が出典に存在、残る1個
+    （GPT-6 Astraのキャッシュ入力「90%引き」）は$1.00÷$10.00からこの記事が計算した値で、
+    生ページの数字（$10.00・$1.00）と一致することを確認済み。pytest 785 passed・build 344ファイル。
+    `check_readability.py` は60字以上8%（目安15%以下、最長115字）。
+  - 📌 記事の芯＝**Carbonはまだ一般提供されていない**（Fairwind Program経由でサイバー防御担当者のみ）。
+    2026年9月6日のGemini 3.8 Flash Cyber・9月30日のArgonに続き、これで3件目の
+    「限定公開→時期未定で一般公開」パターン。
+  - 🔍 **導入価格はArgonと1円も違わない**（入力$2・出力$10）。ただしArgonは値上がりの日付
+    （2026年12月1日）が判明しているのに対し、Carbonの発表にはその日付が一切書かれていない。
+  - ⚠️ 安全性の節の主張は、Gray SwanのIPIベンチマーク（Argon 0.7%→Carbon 0.0%）だけが
+    比較できる具体的な数字。残り3つ（Terminal-Bench 4.0の不正行為・unsupported claims・
+    セキュアなコード生成）は「約2倍」等の倍率だけで、元の数字は発表に書かれていないため
+    「分からないこと」に明記した。
+  - ⚠️ 仕様（コンテキストウィンドウ・出力上限・知識の締め切り）はいずれも非公表。
+    Argonの初回発表（出力100万トークンのみ判明）よりさらに情報が少ない。
 
 - https://deepmind.google/blog/introducing-gemini-4-argon/ → **公開済み** content/tools/gemini-4-argon-ga.md（2026-10-13・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/` へ到達（200）。

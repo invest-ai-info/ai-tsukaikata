@@ -39376,3 +39376,197 @@ def confidential_fields_before_after_mechanism_chart() -> None:
 if __name__ == "__main__":
     confidential_fields_hit_and_miss_chart()
     confidential_fields_before_after_mechanism_chart()
+
+
+def carbon_benchmarks_chart() -> None:
+    """Gemini 4 Carbonが発表ページで挙げた、自社測定のみの点数4つ。
+
+    出典＝発表ページ（blog.google・2026-10-28）。いずれもGoogle自身の測定で、
+    他社モデルの同じ条件での点数は発表に無い。テストの中身も測り方も別々。
+    """
+    rows = [
+        ("Artificial Analysis Intelligence Index v5.0（総合・1位）", 59.0, "総合的な知能の指標"),
+        ("SEC-bench Pro（最高水準）", 88.2, "セキュリティ脆弱性の発見"),
+        ("ExploitGym（新記録）", 54.8, "見つけた脆弱性の悪用実証"),
+        ("CWE-bench（Collinear運営）", 71.0, "脆弱性の修復パッチ作成"),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, pitch = 100, 20, 44
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "発表ページが挙げた点数は、どれもGoogle自身の測定</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "目盛りは0〜100で揃えているが、テストの中身も対象も別々で平均は取れない。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "他社モデルを同じ条件で測った数字は発表に無い。単価以外の「どちらが賢いか」は比較できない。</text>\n",
+    ]
+    for index, (name, value, note) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 5}">'
+            f"{value:g}</text>\n"
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{y + bar_h + 12}">{_esc(note)}</text>\n')
+
+    height = top + len(rows) * pitch + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ Intelligence Indexは0〜100の指標値。他の3項目は％。出典: Carbon発表ページ（2026年10月28日）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 8}">'
+        "※ 比較相手（他社・前のモデル）の同条件の点数は発表に無い。鵜呑みにしない。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Carbonの発表ページが挙げた点数4つを並べた横棒グラフ。"
+        "Artificial Analysis Intelligence Index v5.0（総合的な知能の指標）は59で1位、"
+        "SEC-bench Pro（セキュリティ脆弱性の発見）は88.2%で最高水準、"
+        "ExploitGym（見つけた脆弱性の悪用実証）は54.8%で新記録、"
+        "CWE-bench（Collinear運営・脆弱性の修復パッチ作成）は71.0%。"
+        "いずれもGoogle自身の測定で、他社モデルを同じ条件で測った数字は発表に無い。"
+    )
+    (OUT / "carbon-benchmarks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def carbon_price_deadline_chart() -> None:
+    """Gemini 4 Argon（値上がりの日付が判明済み）と、Gemini 4 Carbon（日付が非公表）の価格を並べる。
+
+    出典＝Argonは発表ページ脚注とGemini API公式料金ページ（ai.google.dev・2026-10-29確認）、
+    Carbonは発表ページ本文・脚注（blog.google・2026-10-28）。
+    """
+    rows = [
+        ("Gemini 4 Argon（〜2026年11月30日）", 2, 10),
+        ("Gemini 4 Argon（12月1日から・日付判明済み）", 4, 20),
+        ("Gemini 4 Carbon（導入価格）", 2, 10),
+        ("Gemini 4 Carbon（導入後・日付は非公表）", 4, 20),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じ金額、ただし値上がりの日付は非公表</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。金額はArgonとCarbonで完全に同額。</text>\n',
+        '<text class="t-sm" x="18" y="64">Argonは値上がりの日付（12月1日）が判明しているが、Carbonにはその記載が無い。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 50
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 30}">'
+        "※ キャッシュ済み入力は両モデルとも入力価格の95%引き。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 出典: Argonは発表ページ脚注・公式料金ページ、Carbonは発表ページ本文・脚注。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Argon（〜2026年11月30日・入力2ドル出力10ドル）、"
+        "Gemini 4 Argon（12月1日から・入力4ドル出力20ドル）、"
+        "Gemini 4 Carbon（導入価格・入力2ドル出力10ドル）、"
+        "Gemini 4 Carbon（導入後・入力4ドル出力20ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。金額はArgonとCarbonで完全に同額。"
+        "Argonは値上がりの日付（2026年12月1日）が判明しているが、Carbonの発表にはその記載が無い。"
+    )
+    (OUT / "carbon-price-deadline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def carbon_vendor_price_chart() -> None:
+    """Gemini 4 Carbon（導入価格）と、各社の現時点の最上位モデルの単価を比べる。
+
+    出典＝Carbonは発表ページ、Claude Opus 5.5は platform.claude.com、
+    GPT-6 Astraは developers.openai.com（いずれも2026-10-29確認）。
+    """
+    rows = [
+        ("Gemini 4 Carbon（導入価格）", 2, 10),
+        ("Gemini 4 Argon（現在の価格・同額）", 2, 10),
+        ("Claude Opus 5.5（Anthropic最上位）", 4, 20),
+        ("GPT-6 Astra（OpenAI最上位・短い入力）", 10, 50),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Carbonの導入価格は、他社の最上位より安く見える</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。単価は各社の公式ページの数字（100万トークンあたり）。</text>\n',
+        '<text class="t-sm" x="18" y="64">2026年10月29日に確認。会社ごとにトークンの数え方が違うため、単価の安さは支払額の安さを意味しない。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ CarbonはFairwind Program経由のサイバー防御担当者のみ。今日からは使えない。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 出典: Carbonは発表ページ、他2社は各社の公式料金ページ。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Carbon（導入価格・入力2ドル出力10ドル）、"
+        "Gemini 4 Argon（現在の価格・入力2ドル出力10ドルで同額）、"
+        "Claude Opus 5.5（入力4ドル出力20ドル）、"
+        "GPT-6 Astra（短い入力・入力10ドル出力50ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。Carbonはまだ一部のサイバー防御担当者しか使えない。"
+    )
+    (OUT / "carbon-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    carbon_benchmarks_chart()
+    carbon_price_deadline_chart()
+    carbon_vendor_price_chart()
