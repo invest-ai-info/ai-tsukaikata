@@ -5236,10 +5236,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Legora co-founder and CEO Max Junestrand wants to make legal expertise available wherever it’s needed. He shares how OpenAI helped turn that ambition into a platform, why staying AI-native matters as the company grows, and what becomes possible when lawyers can take on work that time and capacity once put out of reach. Part of Intelligence at Work. \n\nRead the full story: https://openai.com/index/legora-agentic-operating-system-for-legal-work/",
    "first_seen": "2026-10-28T13:28:49.220900+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Legora導入によりFortune 100企業で契約処理時間が90％短縮され、弁護士1人あたり週9.5時間が創出されたと成果を紹介している。",
+    "法務は需要超過の分野であり、AIエージェントによる契約確認やデューデリジェンスの代行で業務迅速化が可能になると説明している。",
+    "急速に進化するOpenAIの最新モデルを取り入れ、常に技術フロンティアに追従するAIネイティブな開発姿勢が重要だと語っている。"
+   ],
+   "for_whom": "法務業務の効率化や、生成AIを活用した業務自動化の企業導入事例を知りたい人",
+   "caution": "動画内で挙げられている契約ターンアラウンド90％短縮や巨額の費用削減効果は、登壇企業が提示した特定の顧客事例に基づく主張です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T06:24:22.150937+00:00"
   },
   {
    "video_id": "z-WZMjNsg-k",
@@ -5249,10 +5259,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "When deadlines limit how many contracts lawyers can examine, important risks can go unseen. Alex Fortescue-Webb, Global Head of Legal Engineering at Legora, explains how AI powered by OpenAI models helps teams analyse thousands of contracts across multiple questions in minutes, expanding the scope of due diligence and giving lawyers more information to apply their judgment. Part of Intelligence at Work. \n\nRead the full story: https://openai.com/index/legora-agentic-operating-system-for-legal-work/",
    "first_seen": "2026-10-28T13:28:49.220900+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Legoraの担当者が、法律実務とAI技術を橋渡しするリーガルエンジニアの重要性を説明している。",
+    "弁護士が求める高精度に応えるため、引用元への直接リンクなど確認の仕組みを構築したと述べている。",
+    "膨大な契約書を短時間で確認可能になり、従来は見落とされていたリスクも抽出できると紹介している。"
+   ],
+   "for_whom": "契約書レビューの効率化や法務業務へのAI活用を検討している法務担当者や弁護士",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T06:24:22.150937+00:00"
   },
   {
    "video_id": "yJxZef1Ylok",
@@ -5266,91 +5286,126 @@
    "first_seen": "2026-10-28T13:28:49.220900+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "pwvnH9S4j60",
+   "title": "I Make $30K/Month From the Most Boring Website on the Internet",
+   "url": "https://www.youtube.com/watch?v=pwvnH9S4j60",
+   "published": "2026-10-28T17:00:22+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-10-29T06:24:22.150937+00:00",
+   "status": "skipped",
+   "attempts": 0
+  },
+  {
+   "video_id": "st61aKW8P5A",
+   "title": "$100M ARR Founder: The Next Big AI Opportunity",
+   "url": "https://www.youtube.com/watch?v=st61aKW8P5A",
+   "published": "2026-10-28T17:40:18+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-10-29T06:24:22.150937+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gamma共同創業者のJon氏が、LLMを実務で動かすための「エージェントハーネス」の仕組みを解説している",
+    "1つのプレゼン作成の裏で約20種類のモデルと200回の呼び出しを組み合わせ、品質チェックまで行うと説明している",
+    "新モデルの導入検証やA/Bテストを高速で回し、安価な小型モデルと高性能モデルを使い分ける重要性を述べている"
+   ],
+   "for_whom": "AIエージェントを活用したプロダクト開発や業務自動化に関心があるビジネスパーソンや開発者",
+   "caution": "動画冒頭でGammaのARRが1億ドルに達したと紹介されているが、第三者による財務明細などの客観的根拠は示されていない。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-29T06:24:22.150937+00:00"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
+   "last_ok": "2026-10-29T06:24:22.150937+00:00",
    "fail_streak": 0
   },
   "honami": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-10-28T13:28:49.220900+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
+   "last_ok": "2026-10-29T06:24:22.150937+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
+   "last_ok": "2026-10-29T06:24:22.150937+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-28T13:28:49.220900+00:00",
+   "last_ok": "2026-10-29T06:24:22.150937+00:00",
    "fail_streak": 0
   }
  }
