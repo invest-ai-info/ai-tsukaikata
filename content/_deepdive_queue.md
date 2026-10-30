@@ -474,6 +474,13 @@
 - [x] https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/
   - →保管: ✅ **2026-10-29: 公開した** → `content/tools/gemini-4-carbon.md`
 
+- [ ] https://note.com/elyza/n/n7cd59e020596
+  - 2026-10-30 自動追記（major・ELYZA「ELYZA、法人向け生成AI活用ツール「ELYZA Works」をリリース」）
+- [ ] https://note.com/elyza/n/n548506dea012
+  - 2026-10-30 自動追記（major・ELYZA「【社会実装】三井住友カード様に提供した生成AIのお客さまサポートでの活用成果を公開しました」）
+- [ ] https://note.com/elyza/n/n329765508a74
+  - 2026-10-30 自動追記（major・ELYZA「論理的思考能力を強化した「Reasoning Model」を開発し、商用利用可能な形で公開しました」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/ → **公開済み** content/tools/gemini-4-carbon.md（2026-10-29・公開）

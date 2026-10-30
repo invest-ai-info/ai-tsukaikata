@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-30T19:29:09.349397+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-30T09:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers.",
+      "summary_ja": "OpenAIがウェブサイトのAI学習に関する意向を尊重する仕組みを導入。\nサイト運営者は「robots.txt」でAI提供会社に学習可否を伝えられる。\nOpenAIを含む参加プロバイダーがこの指示に従う。",
+      "summary_source": "gemini",
+      "title": "Making it easier for websites to express AI training preferences",
+      "uid": "0e77e8b6f1959840",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-30T19:29:09.349397+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-30T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting.",
+      "summary_ja": "OpenAIがChatGPTでの暴力防止対策を強化。\n保護措置の拡大と早期介入により、若年層の安全を守る。\n公共の安全に関する情報公開にも取り組む。",
+      "summary_source": "gemini",
+      "title": "Community safety report and new protections for teens",
+      "uid": "b0384a88c6a843b3",
+      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-30T07:13:02.338490+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -64,6 +92,20 @@
       "title": "How Ropes & Gray is developing AI for transactional diligence",
       "uid": "155d69c2bd681501",
       "url": "https://openai.com/index/ropes-gray-ai-diligence",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-10-30T19:29:09.349397+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-29T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Credit Saison’s ChatGPT Enterprise pilot delivered 954% ROI. See how leaders and employees helped turn the results into companywide adoption.",
+      "summary_ja": "クレディセゾンがChatGPT Enterpriseの試験導入で高い成果。\n投資対効果（ROI）が954%を達成。\n経営層と従業員の協力で全社導入へとつながった。",
+      "summary_source": "gemini",
+      "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+      "uid": "d23156b7def6ea54",
+      "url": "https://openai.com/index/credit-saison",
       "vendor": "OpenAI"
     },
     {
