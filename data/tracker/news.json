@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-30T07:13:02.338490+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-10-30T01:06:26+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added permissions.blockWritesOutsideWorkingDirectories : Write, Edit and NotebookEdit refuse paths outside the working directories in every permission mode Added an optional groups lis…",
+      "title": "v2.1.314",
+      "uid": "b4dfb69cec8e8fe1",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-10-29T21:11:27.966927+00:00",
       "importance": "minor",
       "label": "OpenAI News",
