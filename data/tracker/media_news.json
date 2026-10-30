@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-30T00:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "生成AIの急速な進化とAI駆動開発の台頭は、従来の工数積算による「人月型」SIビジネスや受託開発の構造を根底から揺るがしている。工数削減が進む中で、企業はいかにして新たな収益モデルを確立し、内製化やアジャイル開発を現場へ定着させるべきなのか。",
+      "title": "KDDI木村氏とアイレット髙木氏が語るAI時代の開発と組織",
+      "uid": "cef78f7d31bb54cf",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2152276.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-29T23:24:32+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは、AIの振る舞い指針「Model Spec」の改定版を公開した。全体を5つの価値観に沿って再構成し、メモリや会話履歴の適切な扱い、エージェント自律動作時の人間による監督への服従などを規定。一方で人格設定や詳細な文体規定の大半を削除し、モデル呼称を「the assistant」から「GPT」に改めた。",
+      "title": "OpenAI、AIの行動指針「Model Spec」を改定　“記憶”の使い方や人間による監督を明記",
+      "uid": "b159b713f9f69330",
+      "url": "https://www.itmedia.co.jp/news/article/2610/30/2000002735/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-29T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "パナソニック ホールディングスでは、2026年4月にグループCAIO（Chief AI Officer）に就任した、執行役員 榊原彰氏が合同取材に応じ、グループ内のAI活用の展望について説明した。",
+      "title": "AIは「組織能力の増幅器」、パナソニック新CAIOが描く人とAIの共進化",
+      "uid": "0fad64a6ed3da14e",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/30/news053.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-10-29T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIモデルは基本的に学習完了時までの知識しか備えておらず、学習完了後の知識はウェブ検索機能などで補うことになります。新たに、GoogleがAIに「睡眠フェーズ」を導入して継続的な知識習得を可能にする研究成果を発表しました。 続きを読む...",
+      "title": "GoogleがAIに「睡眠フェーズ」を導入する研究成果を発表、AIモデルの完成後も新しい知識を継続的に習得させられる仕組み",
+      "uid": "7294bcee40be92fe",
+      "url": "https://gigazine.net/news/20261030-ai-sleep-knowledge/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-29T22:05:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Oracleは10月27日（現地時間）、ChatGPTを通じて受注や在庫、財務など、複数の業務システムを連携させる新サービス「Oracle AI Workspace」を発表した。現在開発中で、提供時期や機能の詳細は今後公表する。",
+      "title": "オラクル、「ChatGPT」で受注や在庫、財務管理を横断できる新サービス　AIの業務浸透が加速",
+      "uid": "b875794aa85acff0",
+      "url": "https://japan.cnet.com/article/35254118/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-29T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ダッソー・システムズは「SIMULIA Community Conference Japan 2026」を開催した。基調講演では、SIMULIAブランドの戦略を支える物理ソルバー、MODSIM、AIの3層構造を紹介。エンジニアと協働するAI「バーチャルコンパニオン」や生成型設計、NVIDIAとの協業などを通じて、設計／シミュレーションの将来像を示した。",
+      "title": "物理ソルバーからMODSIM、AIへ　SIMULIAが描く次世代の設計／シミュレーション",
+      "uid": "bbb8c8d748e2bdf2",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/30/news004.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-10-29T22:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "今や当たり前の存在になってきたスマホやパソコンで使えるAIツール。まだ本格的に触れたことがない人でも、便利に使いこなすためのヒントをお届けします。",
+      "title": "裏で作業してユーザーを助ける新AIエージェント「Muse」、フィットネス習慣にも有効かも",
+      "uid": "72b77dd9adae241c",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2152133.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-10-30T01:05:25.902023+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-29T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "協力会社ごとに書式が異なる見積書の転記作業に、建設現場は多くの時間を費やしてきた。沖縄県の福地組はAI文書処理サービスを活用し、見積書1枚当たりの処理時間を10?15分から約1分に短縮した。",
+      "title": "見積書100枚超をどうさばく？　「半日仕事」を約30分にした建設会社のAI活用",
+      "uid": "9e4f66648a4fc3ef",
+      "url": "https://kn.itmedia.co.jp/kn/article/2610/30/2000002725/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-29T16:12:27.160095+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2303,102 +2399,6 @@
       "uid": "71f539d13fe548db",
       "url": "https://www.itmedia.co.jp/aiplus/article/2610/23/2000002545/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-23T05:57:08+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NECは、道路や河川を観測するライブカメラ映像から現場の状況をスコア化することで、河川氾濫・冠水・積雪などの災害につながる予兆を早期に発見できるAIを新たに開発した。2027年度中の実用化を目指す。",
-      "title": "NEC、災害予兆を早期に発見できるAIを開発 VLMでライブカメラ映像から現場状況をスコア化",
-      "uid": "1806bffcd7bcb4d3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150749.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-23T05:45:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "MetaのザッカーバーグCEOの思惑通りに事が進めば、人々は買い物をすべて自分専用のAIエージェントに任せるようになるだろう。同氏によれば、実際、すでにそうなりつつある。",
-      "title": "MetaのAI「Muse」、ユーザー1000万人の4分の1が買い物に利用",
-      "uid": "2d52bef2fab02da7",
-      "url": "https://japan.cnet.com/article/35253857/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-23T05:34:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIモデルのコストおよび性能を比較できるウェブサービスのModelCompareが、すべてのAIは「人間はひとりで正しくあるより、みんなで間違っている方を選ぶ」という考えを持っていると指摘しています。 続きを読む...",
-      "title": "多くのAIが「人間はひとりで正しくあるより、みんなで間違っている方を選ぶ」という考えを持っている",
-      "uid": "6f5dbc3c459b5a70",
-      "url": "https://gigazine.net/news/20261023-every-ai-model-controversial-humans/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-23T05:31:48+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "サードウェーブが運営するPC専門店「ドスパラ」は、MSI製ノートPC「MSI Prestige N16 Flip AI+」を10月23日より販売開始した。価格は1,459,800円。",
-      "title": "ドスパラ、MSI製の次世代AIノートPCを販売。メモリ128GB搭載で約146万円",
-      "uid": "6f1471b0579ed845",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150726.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-23T05:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "香りを「送る」技術は、オンラインショッピングや医療診断、あるいは単に楽しむために活用される可能性がある。",
-      "title": "「におい」もネットで届く時代へ--AIで香りを分析・再現するウェアラブル端末を米大学が開発",
-      "uid": "e1a2166717c57f7c",
-      "url": "https://japan.cnet.com/article/35253856/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-23T04:53:06+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ディー・エヌ・エー（DeNA）は、AIとQA（品質保証）の専門家を組み合わせソフトウェア開発の検証工程を効率化するサービス「DAAQ（ダック）」の正式サービスを開始した。",
-      "title": "DeNA、ソフト開発の検証工程を効率化する「DAAQ」の提供を開始 テスト作成工数を最大90％削減",
-      "uid": "3c188c34fcb40357",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150713.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-23T04:36:06+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "弥生は10月23日、会計事務所向け記帳ソリューション「弥生の記帳代行AI」のオープンβ版の提供を開始した。8月よりクローズドβ版として提供していた同サービスは、すべての「弥生PAP」会員が無料で利用できる。",
-      "title": "生成AIで会計事務所の業務負担を軽減する「弥生の記帳代行AI」オープンβ版",
-      "uid": "8ce5667893f72b14",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2150697.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-23T07:36:04.800211+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-23T03:58:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIの高性能化によって、さまざまなソフトウェアのバグが大量に発見されており、PHPの緊急アップデートのように大きな影響を及ぼす事例も現れています。そんな中、AI企業のAnthropicが「ソフトウェアにバグがないことを形式的検証で証明する」という手法に取り組んでいることを明らかにしました。 続きを読む...",
-      "title": "「バグのないソフトウェア」の実現を目指してAnthropicが「AIを用いて数学的にバグがないことを証明する」という手法を開発",
-      "uid": "4cd74c677228a9d7",
-      "url": "https://gigazine.net/news/20261023-anthropic-formal-verification/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

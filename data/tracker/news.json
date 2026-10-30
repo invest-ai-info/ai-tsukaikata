@@ -5857,20 +5857,6 @@
       "uid": "ec9009e847c8684e",
       "url": "/namazu-api/",
       "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-01T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.",
-      "summary_ja": "OpenAIが数学・理論計算機科学で成果を発表。\n長年の未解決問題に取り組み新たな結果を公表し\n幾何学、暗号、計算の複雑さなどで進歩しました。",
-      "summary_source": "gemini",
-      "title": "Ten advances in mathematics and theoretical computer science",
-      "uid": "a1d68b672d017794",
-      "url": "https://openai.com/index/ten-advances-in-mathematics",
-      "vendor": "OpenAI"
     }
   ]
 }
