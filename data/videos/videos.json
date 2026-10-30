@@ -4944,10 +4944,20 @@
    "channel_key": "greg-isenberg",
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
-   "description": "Get Your Complete Financial OS at https://startup-ideas-pod.link/brex_SIP\n\nI sit down with James Dickerson, the Boring Marketer, who owns Diesel Dudes, a mobile diesel repair business in Charlotte, North Carolina, and spent years running agencies for local businesses. James shows how to sell AI-built funnels to Main Street trades businesses doing $2 million to $20 million a year, starting with a Boring Funnels search that found 100 Dallas plumbers worth pitching. He walks through the leaks he finds on their landing pages, the funnel offers he'd sell, and how he'd win clients with the Dream 100, lumpy mail, and local meetups. If you know how to use coding agents, this episode gives you a full playbook for a service business built around booked jobs.\n\nBuild funnels that sell: https://startup-ideas-pod.link/boring_funnels\n\nTimestamps\n00:00 – Intro\n01:23 – Sponsor: Brex\n02:08 – Why sell AI to Main Street\n03:05 – James's Background\n04:32 – Finding and Picking a Niche\n07:26 – The $2M to $20M Opportunity\n09:02 – Plumbing and HVAC Market Size\n10:56 – Underserved Trades Niches\n12:38 – Auditing Five Dallas Plumbers\n13:50 – Personal Agents vs. Google\n15:02 – Selling Booked Jobs and Phone Calls\n17:41 – Funnel Offer Overview\n19:43 – Funnel Example\n23:19 – Matching Ads to Funnels\n24:14 – Chet Holmes and the Dream 100\n28:18 – Branding your Firm\n30:04 – Meta Ads for your firm\n31:37 – Stacking Old School and New School Marketing Strategy\n34:31 – Find, Pitch, Deliver\n36:02 – Showing Owners the",
    "first_seen": "2026-10-27T12:38:08.582796+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "AIエージェントを活用し、売上200万〜2000万ドルの配管や空調など地域密着型企業向けに支援を行うビジネス機会が大きいと説明している。",
+    "顧客には「AI」という言葉を使わず、既存の広告トラフィックを実際の予約や問い合わせに変えるファネルの改善として提案すべきだと主張している。",
+    "コーディングエージェントで短時間にファネルを作成し、ドリーム100戦略などを活用して継続的に営業する手順を紹介している。"
+   ],
+   "for_whom": "AIを活用して地域の中小企業向けにWeb集客や受託支援を行いたい人",
+   "caution": "動画タイトルにある時給1,000ドルという金額は出演者側の主張であり、実際の案件獲得や成果には一定の営業活動や改善スキルが必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T06:23:19.810939+00:00"
   },
   {
    "video_id": "ofzHbyxkpVg",
@@ -5141,10 +5151,20 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "「自作カスタムステップを使いたいけど、表示されない…」そんな悩みを一発解消！Google Workspaceの管理コンソールにて、カスタムステップやサードパーティ製品を使うための設定手順を解説！ \n\nさらに新登場のカスタムステップ「会議の設定Ex」を実演！従来の会議設定では出来なかった日付・時間の「変数指定」によるカレンダー予定作成や終日指定が可能になります。\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:01 「Workspace Studio」とは\n01:56 「Workspace Studio」の直近の進化\n02:49 管理コンソール\n06:12 GAS×Studio連携例（会議の設定Ex）\n09:00 まとめ\n10:06 ゆるトーク\n\n【GitHub：Workspace Studio Toolkit】\nhttps://github.com/kotakahashi-4u/gas-workspace-studio-toolkit\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【関連動画】\n自動化の限界を突破！今すぐ使える「神カスタムステップ5選」を完全無償公開！\nhttps://youtu.be/r0Dyczj8rs8\n\n【※個人アカウントの方向け「Google Workspace Experiments」】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
    "first_seen": "2026-10-28T13:28:49.220900+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Workspace StudioでカスタムステップやWebhookを使うには、管理コンソールでの許可設定が必要だと説明している。",
+    "Google Workspace管理コンソールのアプリメニューから、各機能のオン・オフを切り替える手順を実演している。",
+    "日付や時間を変数として扱いカレンダー登録ができる、自作の拡張ステップ「会議の設定Ex」の活用例を紹介している。"
+   ],
+   "for_whom": "Workspace Studioを活用して業務自動化を進めたいGoogle Workspace管理者や実務担当者",
+   "caution": "管理コンソールの設定を変更するには、組織のGoogle Workspace特権管理者権限が必要となります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T06:23:19.810939+00:00"
   },
   {
    "video_id": "UupCIHTlz-A",
@@ -5154,10 +5174,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆提供：Lovart\n気になった人はぜひこのリンクから試してみてください\nhttps://www.lovart.ai/?sourceId=905077\n\n◆動画の説明\n2026年に入り、CodexやClaude Codeのように\n指示するだけでコーディングや実務作業を進めてくれる\nAIエージェントが人気を集めていますが\nデザインの分野でもついに「自分から動くAI」が登場しました\nそれが、AIデザインエージェントの最新版\n「Lovart 2.0」に搭載された\nパーソナルデザインエージェント「Arti」です\nユーザーの好みを記憶しているArtiは\nユーザーがデザインの作成を指示すると\n自ら動いてデザイン作業を進め、複数の工程をまとめて\n完成品のデザインを納品してくれます\n\n今回の動画では、Resonate Internationalが開発する\nAIデザインエージェント「Lovart」の最新バージョン\n「Lovart 2.0」の目玉機能として実装された\nユーザー専用のパーソナルデザインエージェント\n「Arti」を使って具体的にどんなことができるのか\n①、Lovart 2.0とArtiの概要\n②、LovartとArtiの使い方\n③、Artiを使ってSNS用の素材を作成\n④、Artiにローカライズを委任\nの4点で、実際の活用事例を交えながら詳しく紹介して行きます\n\n◆動画のもくじ\n0:00　動画について\n0:45　動画のもくじ\n1:27　①、Lovart 2.0とArtiの概要\n3:36　②、LovartとArtiの使い方\n5:16　③、Artiを使ってSNS用の素材を作成\n7:30　④、Artiにローカライズを委任\n9:34　エンディングムービー\n\n◆動画の中で紹介している内容\nCodex、Claude Code\n\n◆参考サイト\nhttps://x.com/lovart_ai/status/2113691934132748706\nhttps://x.com/lovart_ai/status/2112604762289946819\nhttps://x.com/lovart_ai/status/2112967153221558610\nhttps://x.com/lovart_jp/status/2112082122991411203\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重",
    "first_seen": "2026-10-28T13:28:49.220900+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Lovart 2.0に搭載されたAIデザインエージェント「Arti」の自律的な制作機能や学習機能を紹介している。",
+    "ブランド素材や好みを記憶させ、SNS用ポスターやサムネイル画像などを自動生成・編集する手順を解説している。",
+    "指定した日時に多言語ローカライズや市場リサーチなどのタスクを自動実行させる委任機能の使い方を説明している。"
+   ],
+   "for_whom": "バナーやSNS画像制作の業務をAIエージェントに任せて効率化したいデザイナーやマーケティング担当者",
+   "caution": "本動画はLovartのプロモーション（提供案件）であり、Artiの全機能を利用するには有料サブスクリプションへの加入が必要と案内されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T06:23:19.810939+00:00"
   },
   {
    "video_id": "5gLxdt5lcww",
@@ -5492,92 +5522,115 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-29T22:56:38.728667+00:00"
+  },
+  {
+   "video_id": "AqqjH_uv-_w",
+   "title": "SaaS is dead?",
+   "url": "https://www.youtube.com/watch?v=AqqjH_uv-_w",
+   "published": "2026-10-29T19:25:16+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-10-30T06:23:19.810939+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "高度なAIモデルの登場で開発が容易になり、従来の1席ごとに課金するSaaSのビジネスモデルは成り立たなくなっていると主張している。",
+    "これからのSaaSはツールを無料で提供してデータやネットワーク効果を集め、AIエージェントの知能や人的サービスをアップセルすべきだと述べている。",
+    "中小企業や個人向けツールは無料化に向かう一方、成果報酬やトークン単位でAIエージェントへ課金する市場は拡大すると説明している。"
+   ],
+   "for_whom": "AIを活用した新しいソフトウェアビジネスやサービス開発の収益化設計を学びたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T06:23:19.810939+00:00"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "saki": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "jeff-su": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "two-minute-papers": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "ai-daigaku": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "masao": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "openai": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-explained": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "shizuma": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "yuimama": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "honami": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "uto": {
    "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "fail_streak": 2
   },
   "muttyo": {
    "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 0
-  },
-  "haruto": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
    "fail_streak": 1
   },
+  "haruto": {
+   "last_ok": "2026-10-30T06:23:19.810939+00:00",
+   "fail_streak": 0
+  },
   "starter-story": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
+   "last_ok": "2026-10-30T06:23:19.810939+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T06:23:19.810939+00:00",
+   "fail_streak": 0
   }
  }
 }
