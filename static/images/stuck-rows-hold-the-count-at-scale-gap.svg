@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="366" viewBox="0 0 720 366" role="img" aria-label="詰んだ行の真値が30日後11件・90日後31件に増えても、開いた聞き方のはみ出しが資料ありの未着手行の数と常に一致することを示す積み上げ棒グラフ。30日後は資料の中身を条件にした聞き方が11件、開いた聞き方は11件＋はみ出し5件で16件。90日後は資料の中身を条件にした聞き方が31件、開いた聞き方は31件＋はみ出し15件で46件。はみ出しは、資料はあるがまだ処理していない行の数と常に一致し、規模が3倍になっても0件や2件に固定されるわけではなかった。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="366"/>
+<text class="t-strong" x="18" y="26">詰んだ行が11件→31件に増えても、開いた聞き方のはみ出しは資料ありの未着手行と同じ数だけ増える</text>
+<text class="t-sm" x="18" y="45">資料の中身を条件にした聞き方（薄い色）は真値と同じ長さ。開いた聞き方（赤が加わる）は、資料はあるが未着手の行の数（5件・15件）だけ長い。</text>
+<text class="t-accent" x="18" y="86">30日後（真の詰んだ行＝11件）</text>
+<text class="t-sm" x="18" y="111">資料条件</text>
+<rect class="bar-new" x="230.0" y="94" width="77.0" height="22" rx="3"/>
+<text class="t-xs" x="315.0" y="110">11件</text>
+<text class="t-sm" x="18" y="145">開いた聞き方</text>
+<rect class="bar-old" x="230.0" y="128" width="77.0" height="22" rx="3"/>
+<rect class="box-bad" x="307.0" y="128" width="35.0" height="22" rx="3"/>
+<text class="t-bad" x="350.0" y="144">16件（+5）</text>
+<text class="t-accent" x="18" y="196">90日後（真の詰んだ行＝31件）</text>
+<text class="t-sm" x="18" y="221">資料条件</text>
+<rect class="bar-new" x="230.0" y="204" width="217.0" height="22" rx="3"/>
+<text class="t-xs" x="455.0" y="220">31件</text>
+<text class="t-sm" x="18" y="255">開いた聞き方</text>
+<rect class="bar-old" x="230.0" y="238" width="217.0" height="22" rx="3"/>
+<rect class="box-bad" x="447.0" y="238" width="105.0" height="22" rx="3"/>
+<text class="t-bad" x="560.0" y="254">46件（+15）</text>
+<path class="line" d="M230 282 L580.0 282"/>
+<path class="line" d="M230.0 282 L230.0 287"/>
+<text class="t-xs" x="224.0" y="302">0</text>
+<path class="line" d="M300.0 282 L300.0 287"/>
+<text class="t-xs" x="294.0" y="302">10</text>
+<path class="line" d="M370.0 282 L370.0 287"/>
+<text class="t-xs" x="364.0" y="302">20</text>
+<path class="line" d="M440.0 282 L440.0 287"/>
+<text class="t-xs" x="434.0" y="302">30</text>
+<path class="line" d="M510.0 282 L510.0 287"/>
+<text class="t-xs" x="504.0" y="302">40</text>
+<path class="line" d="M580.0 282 L580.0 287"/>
+<text class="t-xs" x="574.0" y="302">50</text>
+<text class="t-xs" x="18" y="306">※ はみ出しは、資料はあるがまだ処理していない行（30日後5件・90日後15件）。詰んだ行とは別の種類。</text>
+<text class="t-bad" x="18" y="328">※ はみ出しの数は、資料ありの未着手行の数と常に一致した。</text>
+<text class="t-xs" x="18" y="350">架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>
+</svg>

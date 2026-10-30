@@ -39570,3 +39570,134 @@ if __name__ == "__main__":
     carbon_benchmarks_chart()
     carbon_price_deadline_chart()
     carbon_vendor_price_chart()
+
+
+def stuck_rows_scale_hit_and_miss_chart() -> None:
+    """規模を3〜8倍（詰んだ行11件→31件）にしても、前作と同じ2つの聞き方の正答率がどう動くかを示す。
+
+    実測（2026-10-30）。問い合わせ待ち行列の30日後・90日後の状態をコードで直接構築し
+    （真値：詰んだ行11件／40行、31件／100行）、claude --print --safe-mode --tools "" に新規セッションで
+    2回転×3回＝6回ずつ聞いた。判定は docs/evidence/stuck-rows-hold-the-count-at-scale.md の count.py から。
+    """
+    _hit_and_miss_rows_chart(
+        "stuck-rows-hold-the-count-at-scale-hit-and-miss.svg",
+        "資料の中身を条件にした聞き方は、規模が3〜8倍でも6回とも正しかった",
+        "実測2026-10-30。問い合わせ待ち行列を30日後（詰んだ行11件／40行）・90日後（31件／100行）まで伸ばした。",
+        "前作と同じ2つの聞き方を、新規セッションに2回転×3回＝6回ずつ聞いた。",
+        [
+            ("資料の中身を条件にした聞き方／30日後（正解11件）", 6, 6, "good"),
+            ("資料の中身を条件にした聞き方／90日後（正解31件）", 6, 6, "good"),
+            ("開いた聞き方／30日後（正解11件）", 0, 6, "good"),
+            ("開いた聞き方／90日後（正解31件）", 0, 6, "good"),
+        ],
+        [
+            "資料の中身を条件にした聞き方は、詰んだ行が11件→31件に増えても6回とも正しい件数に合った。",
+            "開いた聞き方は、規模が変わっても6回とも、資料はあるが未着手の行を詰んだ行と同じ数に数えた。",
+            "＝開いた聞き方の答えは、詰んだ行の真値より常に5件・15件多かった（16件・46件）。",
+        ],
+        "資料の中身を条件にした聞き方と、開いた聞き方の正答率を、30日後と90日後で比べた表。"
+        "資料の中身を条件にした聞き方は30日後（正解11件）・90日後（正解31件）とも6/6で緑。"
+        "開いた聞き方は30日後・90日後とも0/6で赤。"
+        "下の枠には、資料の中身を条件にした聞き方は詰んだ行が11件から31件に増えても6回とも正しい件数に合ったこと、"
+        "開いた聞き方は規模が変わっても6回とも資料はあるが未着手の行を詰んだ行と同じ数に数え、"
+        "答えが真値より常に5件・15件多かった（16件・46件）ことが書かれている。",
+        label_w=380,
+    )
+
+
+def stuck_rows_scale_gap_chart() -> None:
+    """詰んだ行の真値が11件→31件に増えても、開いた聞き方の「はみ出し」が常に資料ありの未着手行と
+    同じ数だけ増えることを示す。
+
+    実測（2026-10-30）。真値・資料条件の答え・開いた聞き方の答えを、30日後・90日後で積み上げ棒で比べる。
+    開いた聞き方の棒は、真値と同じ長さ（薄い色）＋はみ出し（赤）で構成する。
+    はみ出し＝資料ありの未着手行（30日後5件・90日後15件）と常に同じ数だった。
+    """
+    groups = [
+        ("30日後", 11, 5),
+        ("90日後", 31, 15),
+    ]
+    axis_max = 50
+    plot_x, plot_w = 230, 350
+    unit = plot_w / axis_max
+    bar_h = 22
+    pitch = 34
+    group_gap = 20
+
+    assert plot_x + axis_max * unit + 18 <= WIDTH
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "詰んだ行が11件→31件に増えても、開いた聞き方のはみ出しは資料ありの未着手行と同じ数だけ増える</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "資料の中身を条件にした聞き方（薄い色）は真値と同じ長さ。開いた聞き方（赤が加わる）は、"
+        "資料はあるが未着手の行の数（5件・15件）だけ長い。</text>\n",
+    ]
+
+    y = 72
+    for label, true_n, excess in groups:
+        parts.append(f'<text class="t-accent" x="18" y="{y + 14}">{_esc(label)}（真の詰んだ行＝{true_n}件）</text>\n')
+        y += 22
+
+        # 資料の中身を条件にした聞き方＝真値と同じ長さ
+        w_true = true_n * unit
+        parts.append(f'<text class="t-sm" x="18" y="{y + bar_h - 5}">資料条件</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{plot_x:.1f}" y="{y}" width="{w_true:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x + w_true + 8:.1f}" y="{y + bar_h - 6}">{true_n}件</text>\n'
+        )
+        y += pitch
+
+        # 開いた聞き方＝真値ぶん＋はみ出し
+        parts.append(f'<text class="t-sm" x="18" y="{y + bar_h - 5}">開いた聞き方</text>\n')
+        parts.append(
+            f'<rect class="bar-old" x="{plot_x:.1f}" y="{y}" width="{w_true:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        w_excess = excess * unit
+        parts.append(
+            f'<rect class="box-bad" x="{plot_x + w_true:.1f}" y="{y}" width="{w_excess:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-bad" x="{plot_x + w_true + w_excess + 8:.1f}" y="{y + bar_h - 6}">'
+            f"{true_n + excess}件（+{excess}）</text>\n"
+        )
+        y += pitch + group_gap
+
+    axis_y = y - group_gap + 10
+    parts.append(f'<path class="line" d="M{plot_x} {axis_y} L{plot_x + axis_max * unit:.1f} {axis_y}"/>\n')
+    for n in (0, 10, 20, 30, 40, 50):
+        x = plot_x + n * unit
+        parts.append(f'<path class="line" d="M{x:.1f} {axis_y} L{x:.1f} {axis_y + 5}"/>\n')
+        parts.append(f'<text class="t-xs" x="{x - 6:.1f}" y="{axis_y + 20}">{n}</text>\n')
+
+    height = axis_y + 24 + 22 + 22 + 16
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 60}">'
+        "※ はみ出しは、資料はあるがまだ処理していない行（30日後5件・90日後15件）。詰んだ行とは別の種類。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 38}">'
+        "※ はみ出しの数は、資料ありの未着手行の数と常に一致した。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 16}">'
+        "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。</text>\n"
+    )
+
+    alt = (
+        "詰んだ行の真値が30日後11件・90日後31件に増えても、開いた聞き方のはみ出しが資料ありの"
+        "未着手行の数と常に一致することを示す積み上げ棒グラフ。30日後は資料の中身を条件にした聞き方が"
+        "11件、開いた聞き方は11件＋はみ出し5件で16件。90日後は資料の中身を条件にした聞き方が31件、"
+        "開いた聞き方は31件＋はみ出し15件で46件。はみ出しは、資料はあるがまだ処理していない行の数と"
+        "常に一致し、規模が3倍になっても0件や2件に固定されるわけではなかった。"
+    )
+    (OUT / "stuck-rows-hold-the-count-at-scale-gap.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    stuck_rows_scale_hit_and_miss_chart()
+    stuck_rows_scale_gap_chart()
