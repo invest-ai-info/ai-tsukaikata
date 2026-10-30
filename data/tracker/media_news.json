@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-30T23:51:41.015537+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-30T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "一口にAIといってもその性能は千差万別です。中国科学技術大学の実験では、AIの「性格」もそれぞれバラバラであることが分かった一方で、この結果は回答に使う言語によって変わることも明らかになりました。 続きを読む...",
+      "title": "AIに性格診断をやらせてみたところ言語を切り替えると結果が変わることが判明",
+      "uid": "cec431c3d0896fde",
+      "url": "https://gigazine.net/news/20261031-ai-personality-profile-language-bias/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-10-30T23:51:41.015537+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-10-30T22:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "グーグルは10月30日、試作衛星に搭載したAI半導体「TPU」で生成AIを動かし、宇宙を題材にした俳句を生成したと発表した。宇宙でAIの計算基盤を構築する研究「Project Suncatcher」の一環で、データセンター向けTPUを使って軌道上でAIの応答を得たのは初めてという。",
+      "title": "グーグルのAI半導体、宇宙での動作を確認　「俳句」を生成したと発表",
+      "uid": "73260bdd2a05069c",
+      "url": "https://japan.cnet.com/article/35254241/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-10-30T23:51:41.015537+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-30T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "2026年10月26～30日に公開された記事の中から、MONOist編集部が厳選した今週の注目ニュースをお届けします。",
+      "title": "GMOがサイバー攻撃情報に異例の1.5億円懸賞金、AI時代の新防衛策となるのか",
+      "uid": "0677654afdb1cf06",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/31/news013.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-10-30T23:51:41.015537+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-30T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "生成AIの活用は「試す」段階から「使い広げる」段階へ移り、AIエージェントも実運用が主流になった。一方で、企業規模による差は広がっている。INDUSTRIAL-Xの調査が示す、成果を分ける“技術以外の要因”とは。",
+      "title": "AIエージェントは「実運用」が主流に　「明確な成果」を得る企業の共通点は？",
+      "uid": "d0283101b6636e38",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news008.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-30T14:16:16.511490+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2350,54 +2398,6 @@
       "title": "人の感情を察する音声対話AI。NTTドコモ、「高EQな音声対話技術」を確立",
       "uid": "9966332a587af532",
       "url": "https://ai.watch.impress.co.jp/docs/news/2151210.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-26T06:19:03.627681+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-26T06:12:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "大学生の「ほぼ全員」が生成AIを使っているとの調査結果や、学生の17％が「課題や試験にChatGPTを使っている」と回答した調査など、AIが学習に強い影響を与えていることが分かっています。そんな中、フィールズ賞の受賞歴もあるカリフォルニア大学バークレー校の数学者であるリチャード・ボルチャーズ氏は、「AIの使用は避けられない状況にあるため、宿題の正誤を採点するのは無意味」と発言しました。 続きを読…",
-      "title": "AIのせいで宿題を採点する意味がなくなったとしてフィールズ賞受賞の数学教授が「提出しただけで評価する」方式に変更",
-      "uid": "63a19cdccb9524e1",
-      "url": "https://gigazine.net/news/20261026-ai-grading-homework/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-26T06:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "他社のAIエージェント管理基盤まで統治の対象にする――。米Dataikuの新サービスは、マルチベンダー環境でガバナンスを一元管理するという理想に踏み出した。だが、ガードレールやサイバーセキュリティの「強度」まで一元化できるのか。AIガバナンスの在り方を考察する。",
-      "title": "AIガバナンス一元化の「理想と限界」とは？　 米Dataikuの新サービスから考察",
-      "uid": "8ea8d470c87333f2",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/26/news060.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-26T06:19:03.627681+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-26T05:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "数百万冊の書籍や論文を無料で提供する海賊版電子書籍ライブラリ「Z-Library」は、高価な教科書や学術誌の購読料を払えない学生や研究者にとって有用な情報源となっており、「Z-Libraryが貧困の学生を助けている」という研究結果も存在しています。そんなZ-Libraryの情報としての有用性と著作権の問題について扱った論文が、著作権について扱うメディア・TorrentFreakの存在しない記事を…",
-      "title": "Z-Libraryに関する論文が存在しないTorrentFreakの記事を引用、AIで記述か",
-      "uid": "efc701bd8decf276",
-      "url": "https://gigazine.net/news/20261026-z-library-paper/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-26T06:19:03.627681+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-26T05:13:13+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Anthropicと英国AIセキュリティ研究所（AISI）は、「Claude Mythos 5」が評価環境外で実在の開発者を標的にした事例を公開した。",
-      "title": "Anthropicと英AISI、Claude Mythos 5が評価環境外で不誠実な行動をとった事例を公開",
-      "uid": "68a6c5adff8aee01",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151170.html",
       "vendor": "Impress AI Watch"
     }
   ]

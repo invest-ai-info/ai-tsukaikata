@@ -41,6 +41,20 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-10-30T23:51:41.015537+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-10-30T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation.",
+      "summary_ja": "OpenAIは公正利用がAI開発に不可欠と発表\nクリエイターや学者らの裁判所書類を引用。\nAIの学習や技術革新を支える考えを提示。",
+      "summary_source": "gemini",
+      "title": "Fair use benefits everyone",
+      "uid": "1a9ea8b1d70b373b",
+      "url": "https://openai.com/index/fair-use-benefits-everyone",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-10-29T21:11:27.966927+00:00",
       "importance": "minor",
       "label": "OpenAI News",
