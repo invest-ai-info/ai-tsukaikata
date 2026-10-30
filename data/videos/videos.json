@@ -5545,91 +5545,183 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-30T06:23:19.810939+00:00"
+  },
+  {
+   "video_id": "1DmznuvBVFU",
+   "title": "【知らないの勿体無い】Grok Botが有能だった！AIチームの作り方やAI活用法",
+   "url": "https://www.youtube.com/watch?v=1DmznuvBVFU",
+   "published": "2026-10-30T09:00:07+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-10-30T13:29:03.690065+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Grok Botは専用のクラウドPC環境を持ち、ブラウザ操作やファイル管理を自律的に行えると説明している。",
+    "1Password連携による安全なログインや、複数ボットによる役割分担チームの構築方法を紹介している。",
+    "Xの自動リサーチやPowerPointスライド作成、専用アドレスからのメール配信手順を実演している。"
+   ],
+   "for_whom": "AIエージェントを使って日々の情報収集や資料作成などの業務を自動化したい会社員",
+   "caution": "動画内および概要欄で外部の有料研修講座、書籍、公式LINE、有料コミュニティへの誘導が行われているため、参加や購入の際は費用や条件を確認してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T13:29:03.690065+00:00"
+  },
+  {
+   "video_id": "M7vRSjhzdzE",
+   "title": "【激震！】「Google Vids」が大進化！数クリックで「スライドを動画化！」AIナレーションも超自然に",
+   "url": "https://www.youtube.com/watch?v=M7vRSjhzdzE",
+   "published": "2026-10-30T09:00:08+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-10-30T13:29:03.690065+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "GoogleスライドをGoogle Vidsに読み込ませ、AIによるアニメーションやナレーション、BGM付き動画を自動生成できる機能を紹介している。",
+    "スライドの「動画に変換」メニューから、約4回のクリック操作だけでプレゼン資料から動画を作成する手順を実演している。",
+    "生成後のAIナレーション音声を最新モデルに変更することで、日本語のイントネーションや抑揚をより自然に仕上げられると解説している。"
+   ],
+   "for_whom": "プレゼン資料や研修用スライドを手軽にナレーション付き動画へ変換したいビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T13:29:03.690065+00:00"
+  },
+  {
+   "video_id": "PApI5KqeqFQ",
+   "title": "OpenAIの最新AIモデル「GPT-6.1 Terra(テラ)」徹底解説！ ～性能・使い方・Codex/ChatGPTワークを使った活用事例～",
+   "url": "https://www.youtube.com/watch?v=PApI5KqeqFQ",
+   "published": "2026-10-30T09:05:13+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-10-30T13:29:03.690065+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが公開した中位モデルGPT-6.1 Terraは、低コストかつ高速でPCアプリ操作や日常業務に向いた性能を持つと説明している。",
+    "AIベンチマークにおいて上位モデルに匹敵する性能を示し、前世代モデルからコーディングやPC操作能力が向上したと解説している。",
+    "ChatGPTワークやCodexで利用でき、3Dゲーム作成やスライド・レポート作成などを低コストで高速に行える活用事例を紹介している。"
+   ],
+   "for_whom": "業務効率化やPC操作自動化に関心があり、コスパの良い最新AIモデルの性能や使い方を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T13:29:03.690065+00:00"
+  },
+  {
+   "video_id": "2Lfq1OKJz_o",
+   "title": "【AI音楽の金字塔】ココナラで1曲1万2,000円！バカ売れ！新感覚の副業、AI口癖ソングを作り方から売り方まで徹底解説【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=2Lfq1OKJz_o",
+   "published": "2026-10-30T09:01:53+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "first_seen": "2026-10-30T13:29:03.690065+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTで主役の口癖や縦読みを組み込んだ歌詞を作成し、送別会用ソングをココナラで受注制作する副業を紹介している。",
+    "作曲AIにElevenLabsを使用し、商用ライセンスの規約や禁止事項、生成プロンプトの具体的な設定手順を解説している。",
+    "実践者が月40万円以上の売上を達成したと主張し、1件あたり約40分の作業で手堅く稼げるスキームであると説明している。"
+   ],
+   "for_whom": "生成AIを使った音楽制作やココナラでの受注による副業に関心がある会社員",
+   "caution": "動画内では手軽に月数十万円稼げると主張されていますが、成果には個人差があります。また概要欄等で公式LINEへの登録へ強く誘導している点や、AIツールの商用利用には有料プラン契約が必要となる点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T13:29:03.690065+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-29T13:40:21.332013+00:00",
-   "fail_streak": 2
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-29T22:56:38.728667+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-30T06:23:19.810939+00:00",
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-30T06:23:19.810939+00:00",
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-30T06:23:19.810939+00:00",
+   "last_ok": "2026-10-30T13:29:03.690065+00:00",
    "fail_streak": 0
   }
  }
