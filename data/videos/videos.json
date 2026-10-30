@@ -4839,10 +4839,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it.\n\nGPT-6.1 Terra continues to advance the cost-intelligence frontier across our model families and is a significant step up over GPT‑5.6 Terra, with 50% lower standard API prices. \n\nIn ChatGPT Work and Codex, your usage allowance goes further with GPT‑6.1 Terra than with GPT‑5.6 Terra—and far more than with GPT‑6.1 Sol or GPT‑6 Astra.\n\nGPT-6.1 Terra is rolling out now and is available to all Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex.\n\nDevelopers can also access it through the OpenAI API as gpt-6.1-terra.",
    "first_seen": "2026-10-26T22:51:12.785798+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが、画面認識とPC操作（computer use）に優れた新モデル「GPT-6.1 Terra」を発表したと紹介している。",
+    "画像をもとにBlenderなどのアプリを直接操作し、3Dモデルを自動作成するデモを実演している。",
+    "前世代モデルと比べてAPI利用料が半額になり、有料プランやAPI向けに提供を開始したと説明している。"
+   ],
+   "for_whom": "PC作業の自動化やAIによるアプリ操作機能に関心がある会社員や開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T22:37:32.575772+00:00"
   },
   {
    "video_id": "kuRFAngTJsU",
@@ -5637,91 +5647,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-30T13:29:03.690065+00:00"
+  },
+  {
+   "video_id": "CWdTBLsbaQs",
+   "title": "OpenAI Claims It Just Did The Impossible",
+   "url": "https://www.youtube.com/watch?v=CWdTBLsbaQs",
+   "published": "2026-10-30T15:57:16+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-10-30T22:37:32.575772+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが「指数時間仮説（ETH）は誤りである」と主張する研究論文を発表したと紹介している。",
+    "3-SAT問題を解く決定論的アルゴリズムにより、計算量の指数関数の壁を破れると説明している。",
+    "多くの難問に影響を与える成果だが、専門家による査読はまだ完了していないと解説している。"
+   ],
+   "for_whom": "理論計算機科学の動向やOpenAIの最新研究に関心がある人",
+   "caution": "論文で提示された証明は専門家による査読がまだ完全には完了しておらず、検証途上である点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T22:37:32.575772+00:00"
+  },
+  {
+   "video_id": "o4D1J1YWjhg",
+   "title": "There are many futures. Which do you want to build?",
+   "url": "https://www.youtube.com/watch?v=o4D1J1YWjhg",
+   "published": "2026-10-30T20:17:12+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-30T22:37:32.575772+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "言葉を記すことで、空飛ぶ都市や宇宙開拓など様々な未来のビジョンが現れる様子を描いている。",
+    "「人々が自らの未来を築く」という言葉とともに、多様な人々が科学や技術を発展させる世界を提示している。",
+    "「数多くの未来がある中で、あなたはどの未来を創りたいか」と視聴者に問いかけている。"
+   ],
+   "for_whom": "AIがもたらす多様な未来像やOpenAIのメッセージに興味がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T22:37:32.575772+00:00"
+  },
+  {
+   "video_id": "Oi9DHk57KeQ",
+   "title": "How Gen uses ChatGPT Work to turn data Into decisions | OpenAI",
+   "url": "https://www.youtube.com/watch?v=Oi9DHk57KeQ",
+   "published": "2026-10-30T15:22:47+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-10-30T22:37:32.575772+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Gen DigitalのHowie Xu氏が、ChatGPT Workの活用により意思決定の速度が劇的に向上したと述べている。",
+    "グローバルチーム間のデータ分析や検証にかかる時間が短縮され、新機能のフィードバックが数時間で得られると語っている。",
+    "従来は決定までに5週間かかっていたキャンペーンの判断が、約5時間で完了できるようになったと説明している。"
+   ],
+   "for_whom": "社内データに基づく迅速な意思決定や業務の効率化を目指すビジネスリーダー",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-10-30T22:37:32.575772+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-10-30T13:29:03.690065+00:00",
+   "last_ok": "2026-10-30T22:37:32.575772+00:00",
    "fail_streak": 0
   }
  }
