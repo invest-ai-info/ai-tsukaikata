@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-31T21:39:59.728900+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-31T20:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "デジタル庁が10月30日に公表した政府職員の生成AI利用状況調査で、生成AIを使える職員に仕事が集中し、かえって負担が増えるという声が寄せられた。週1〜2回以上使う回答者の過半数が、AIを導入した業務で週1時間以上の短縮を実感した一方、AIの回答の確認や指示文の作成に手間がかかるとの指摘もあった。",
+      "title": "「AIを使える職員に仕事が集中」--政府の生成AI調査に負担増の声も",
+      "uid": "f93cb7bc8934645b",
+      "url": "https://japan.cnet.com/article/35254236/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-31T12:40:16.317278+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2386,18 +2398,6 @@
       "title": "Googleが「GmailやGoogleフォトの内容は広告に利用しない」という方針に例外を追加、AIとのデータ共有が広告に影響する可能性",
       "uid": "80fdc2a2ddd27432",
       "url": "https://gigazine.net/news/20261026-google-privacy-policy/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-26T07:36:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "中国の大手テクノロジー企業であるTencentが世界モデル「Hy-Nomas」をリリースしました。入力に応じて仮想世界を生成し、カメラやオブジェクトを自由に制御することが可能。モデルはオープンモデルとして無償公開されており、ローカルで実行することもできます。 続きを読む...",
-      "title": "ゲームのように移動可能な世界を生成できるAI「Hy-Nomas」がオープンモデルとして公開される、RTX 4090でローカル実行可能",
-      "uid": "958320cc759ab935",
-      "url": "https://gigazine.net/news/20261026-hy-nomas-interactive-world-model/",
       "vendor": "GIGAZINE"
     }
   ]
