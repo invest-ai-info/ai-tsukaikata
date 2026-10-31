@@ -798,6 +798,16 @@ def test_numbered_measurement_lines_count_as_the_field():
     assert writer_measurement_gaps(log, date(2026, 10, 6)) == []
 
 
+def test_wrapped_parenthetical_measurement_line_counts_as_the_field():
+    """括弧の中身が長いと Markdown が改行で折り返す（2026-10-30 実測。欄はあるのに
+    「欄がない」と誤報し Writer Watch が赤になった）。改行を挟んでも欄として読む。"""
+    log = ("# レシピ担当の日次ログ\n\n## 記録\n\n"
+           "### 2026-10-30\n- 公開: 1本\n"
+           "- 実測（走り書き5語×2つの一般化版・材料1本。gennaive 5語×2回＝10回／\n"
+           f"  genfixed 5語・計8回＝22回）: {_OK}\n\n")
+    assert writer_measurement_gaps(log, date(2026, 10, 30)) == []
+
+
 def test_environment_blockage_on_a_numbered_line_is_detected():
     """🚨 番号付きの行に書かれた ❌環境 も★91として鳴らす（以前は欄ごと見えていなかった）。"""
     log = ("# レシピ担当の日次ログ\n\n## 記録\n\n"
