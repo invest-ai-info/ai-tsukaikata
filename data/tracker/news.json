@@ -5923,20 +5923,6 @@
       "uid": "946a2476bbaff510",
       "url": "https://openai.com/index/circles",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "major",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-02T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "summary_ja": "Sakana AIが日本語特化のAIモデルを提供開始。\n「Sakana Namazu」という名前の\n外部サービス連携の仕組みです。",
-      "summary_source": "gemini",
-      "title": "Sakana AI、日本語特化のLLM API「Sakana Namazu」を提供開始",
-      "uid": "ec9009e847c8684e",
-      "url": "/namazu-api/",
-      "vendor": "Sakana AI"
     }
   ]
 }
