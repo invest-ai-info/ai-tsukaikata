@@ -39953,6 +39953,103 @@ def four_process_stop_each_hit_and_miss_chart() -> None:
     )
 
 
+def headline_count_four_patterns_chart() -> None:
+    """文末パターンを4つに増やしたときの「見出しの数字が4と食い違った回数」（2026-10-31実測）。
+
+    3パターン時（前作）の食い違い5回中3回を参考行として並べ、4パターンでも
+    悪化していないこと、材料によって現れ方が違うこと、総数を明記させると
+    0になることを示す。判定は docs/evidence/headline-count-slips-at-four-patterns.md
+    の extract_conclusions() から。
+    """
+    _hit_and_miss_rows_chart(
+        "headline-count-four-patterns.svg",
+        "4パターンに増やしても、見出しの数字の食い違いは悪化しない。ただし材料による",
+        "「文末表現が不自然に連続している箇所を指摘して」に対し、見出しの数字が実際の4と食い違った回数。",
+        "材料Bでだけ食い違いが出た。総数を先または最後に明記させると、11回とも一致した。",
+        [
+            ("（参考）3パターン時・前作の実測", 3, 5, "bad"),
+            ("4パターン・材料A（清掃当番）", 1, 5, "bad"),
+            ("4パターン・材料B（備品発注）", 3, 5, "bad"),
+            ("総数を先に明記（材料A+B・計8回）", 0, 8, "bad"),
+            ("総数を最後に明記（材料B・3回）", 0, 3, "bad"),
+        ],
+        [
+            "材料Aでは前作と同じ「本文のリストが3項目に減る」崩れ方が5回中1回だけ再発した。",
+            "材料Bは本文のリストは5回とも4つ同格だが、見出しの文の数字だけが5回中3回「3」と誤った。",
+        ],
+        "文末パターンを4つに増やしたときに、見出しの文が宣言する数字が実際の4と食い違った回数を示す表。"
+        "参考として前作の3パターン時は5回中3回食い違った。今回の4パターンは、材料A（清掃当番メモ）では"
+        "5回中1回、材料B（備品発注引き継ぎメモ）では5回中3回食い違った。総数を先に明記させる言い方では"
+        "材料A・B計8回とも一致し、最後に明記させる言い方でも材料Bの3回とも一致した。下の枠には、"
+        "材料Aでは前作と同じ本文のリストが3項目に減る崩れ方が5回中1回だけ再発したこと、材料Bでは"
+        "本文のリストは5回とも4つ同格なのに見出しの文の数字だけが5回中3回「3」と誤ったことが書かれている。",
+        label_w=360,
+    )
+
+
+def headline_count_two_failure_shapes_chart() -> None:
+    """2種類の崩れ方（本文ごと減る／本文は無傷で見出しの数字だけ誤る）を並べて見せる図。
+
+    実測は docs/evidence/headline-count-slips-at-four-patterns.md。
+    材料Aのtrial3（本文のリストが3項目に減る）と材料Bのtrial1（本文のリストは4項目
+    同格のまま、見出しの文だけ「3箇所」と誤る）の実際の言い回しを転記した。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">同じ「数字の食い違い」でも、崩れ方は2種類あった</text>\n',
+        '<text class="t-sm" x="18" y="45">左（材料A）は本文のリストごと減る。右（材料B）は本文は無傷で見出しの数字だけ誤る。</text>\n',
+    ]
+    col_w = (box_w - 16) / 2
+    col1_x = box_x
+    col2_x = box_x + col_w + 16
+    y = top
+
+    def row(x: int, y: int, w: int, label: str, cls: str) -> None:
+        parts.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{w}" height="40" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="{tcls}" x="{x + 14}" y="{y + 17}" style="font-size:11.5px">{_esc(label)}</text>\n')
+
+    parts.append(f'<text class="t-strong" x="{col1_x}" y="{y + 14}">{_esc("材料A・trial3")}</text>\n')
+    parts.append(f'<text class="t-strong" x="{col2_x}" y="{y + 14}">{_esc("材料B・trial1")}</text>\n')
+    y += 22
+    row(col1_x, y, col_w, "見出し「不自然な連続が3箇所あります」", "box-bad")
+    row(col2_x, y, col_w, "見出し「以下の3箇所で…不自然です」", "box-bad")
+    y += 48
+    row(col1_x, y, col_w, "本文のリスト＝①でしょう②のです③次第です（3項目）", "box-bad")
+    row(col2_x, y, col_w, "本文のリスト＝①②③④（4項目・4パターンとも同格）", "box-good")
+    y += 48
+    row(col1_x, y, col_w, "「と思います」は別の文で「3箇所より目立たない」と格下げ", "box-bad")
+    row(col2_x, y, col_w, "4つ目（次第です）も他と同じ書式で本文に並ぶ。格下げなし", "box-good")
+    y += 56
+
+    notes = [
+        "⚠️ 左は前作（3パターン時）と同じ崩れ方＝本文のリストそのものが減る。",
+        "⚠️ 右は今回材料Bで新しく見つかった崩れ方＝本文は無傷で、要約の数字だけが誤る。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "材料A（trial3）と材料B（trial1）を並べた図。材料Aは見出しが「不自然な連続が3箇所あります」と言い、"
+        "本文のリストも①でしょう②のです③次第です の3項目しか無く、4つ目（と思います）は別の文で"
+        "「3箇所より目立たない」と格下げされている。材料Bは見出しが「以下の3箇所で…不自然です」と言うが、"
+        "本文のリストは①②③④の4項目が4パターンとも同格に並んでおり、格下げは無い。下の枠には、"
+        "材料Aは前作（3パターン時）と同じ本文のリストそのものが減る崩れ方であること、材料Bは本文は無傷で"
+        "要約の数字だけが誤る、今回新しく見つかった崩れ方であることが書かれている。"
+    )
+    (OUT / "headline-count-two-failure-shapes.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
 if __name__ == "__main__":
     four_process_frequency_range_chart()
     four_process_stop_each_hit_and_miss_chart()
+    headline_count_four_patterns_chart()
+    headline_count_two_failure_shapes_chart()
