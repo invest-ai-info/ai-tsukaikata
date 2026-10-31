@@ -518,6 +518,13 @@
 - [ ] https://note.com/elyza/n/n329765508a74
   - 2026-10-30 自動追記（major・ELYZA「論理的思考能力を強化した「Reasoning Model」を開発し、商用利用可能な形で公開しました」）
 
+- [ ] https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/
+  - 2026-10-31 自動追記（major・Google DeepMind「Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration」）
+- [ ] https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/
+  - 2026-10-31 自動追記（major・Google DeepMind「We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control」）
+- [ ] https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
+  - 2026-10-31 自動追記（minor・Google DeepMind「Gemini Robotics 2 brings whole body intelligence to robots」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/ → **公開済み** content/tools/gemini-4-carbon.md（2026-10-29・公開）

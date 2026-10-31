@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-31T05:50:57.778517+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-31T00:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI導入が進む中で、IT部門は費用対効果を厳しく問われる局面に入っている。Anthropicが企業向けプラン「Claude Enterprise」に追加した新機能は、その説明材料になるか。利用状況の可視化から予算の配分まで、3つの機能の中身とは。",
+      "title": "AIの「費用対効果が分からない」問題、解決へ？　Claude Enterprise搭載の「3つの新機能」",
+      "uid": "8b48e97cef760dba",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/31/news009.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-10-30T23:51:41.015537+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "a855208f45b0f510",
       "url": "https://japan.cnet.com/article/35253971/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-26T07:10:17+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTドコモは10月26日、AIで「EQ（感情指数）」の高い対話を実現するための評価指針・共通設計図・4つの要素技術を確立したことを発表した。",
-      "title": "人の感情を察する音声対話AI。NTTドコモ、「高EQな音声対話技術」を確立",
-      "uid": "9966332a587af532",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151210.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
