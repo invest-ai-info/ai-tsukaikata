@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-10-31T12:40:16.317278+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-10-31T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIコーディングツールでアプリを開発する際には、画面の配置やボタンを押したときの動作などを文章で説明する必要があります。そこでGoogleの「Material 3 Expressive」に対応した部品をブラウザ上で組み立て、複数の画面をつないで実際にタップしながら動作を確認できるほか、設計内容をそのままAIコーディング用のプロンプトに変換できる無料のオープンソースツールが「M3E Canvas」…",
+      "title": "Material 3 Expressiveの画面をブラウザで組み立てて画面同士をつなぎタップして確かめてそのままAIコーディング用のプロンプトにするツール「M3E Canvas」",
+      "uid": "d07679cacab060c2",
+      "url": "https://gigazine.net/news/20261031-m3e-canvas/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-10-31T05:50:57.778517+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "958320cc759ab935",
       "url": "https://gigazine.net/news/20261026-hy-nomas-interactive-world-model/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-26T07:26:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Blockは、人間の会話音声だけで学習し、相手の話を聞きながら同時に話せるAI「Dessa」を発表し、録音した会話デモを公開した。テキストや既存の学習済みモデルを使わず、一から学習させたという。",
-      "title": "人の音声だけで学習したAI「Dessa」登場　会話の間合いや相づちが自然に",
-      "uid": "a855208f45b0f510",
-      "url": "https://japan.cnet.com/article/35253971/",
-      "vendor": "CNET Japan"
     }
   ]
 }
