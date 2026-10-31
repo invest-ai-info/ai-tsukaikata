@@ -39843,3 +39843,116 @@ def lancers_project_force_topic_drift_chart() -> None:
 if __name__ == "__main__":
     lancers_project_force_hit_and_miss_chart()
     lancers_project_force_topic_drift_chart()
+
+
+def four_process_frequency_range_chart() -> None:
+    """4処理(P1〜P4)のふだんの1日あたり実行回数の範囲を横棒で示し、頻度差を visualize する。
+
+    実測（2026-10-31・自動化・ループ優先枠）。先行記事`mixed-log-keeps-each-process-own-
+    baseline`は頻度差5倍（4〜8回/日 対 1〜2回/日）・2処理までだった。この記事は処理を4本に増やし、
+    頻度差をP1(1〜2回/日)〜P4(20〜30回/日)の最大約17倍まで広げた。
+    """
+    left, right = 230, 590
+    usable = right - left
+    axis_max = 30.0
+    top = 108
+    row_h = 34
+    bar_h = 16
+
+    def px(v: float) -> float:
+        return left + v / axis_max * usable
+
+    rows = [
+        ("P1", 1, 2),
+        ("P2", 4, 8),
+        ("P3", 10, 15),
+        ("P4", 20, 30),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "P1〜P4のふだんの1日あたり回数は、最大で約17倍違う</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の定期実行ログ（2026-09-01〜09-21・21日分）。P1は1〜2回/日、P4は20〜30回/日。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "先行記事の頻度差（4〜8回 対 1〜2回＝約5倍・2処理）より、差も処理数も広げた。</text>\n",
+    ]
+
+    y = top
+    for name, lo, hi in rows:
+        x1, x2 = px(lo), px(hi)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 2}">process={name}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{x1:.1f}" y="{y}" '
+            f'width="{(x2 - x1):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{x2 + 8:.1f}" y="{y + bar_h - 3:.1f}">{lo}〜{hi}回/日</text>\n'
+        )
+        y += row_h
+
+    axis_y = y + 4
+    parts.append(f'<line class="line" x1="{left}" y1="{axis_y}" x2="{right}" y2="{axis_y}"/>\n')
+    for tick in (0, 10, 20, 30):
+        tx = px(tick)
+        parts.append(f'<text class="t-xs" x="{tx:.1f}" y="{axis_y + 16}" text-anchor="middle">{tick}</text>\n')
+
+    note_top = axis_y + 30
+    notes = [
+        "P4(20〜30回/日)はP1(1〜2回/日)の約17倍の頻度。先行記事の約5倍から差を広げた。",
+        "処理数も2本→4本に増やし、どの処理が止まっても見つけられるかを確かめた。",
+    ]
+    box_h = 18 * len(notes) + 16
+    parts.append(f'<rect class="box-accent" x="18" y="{note_top}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{note_top + 22 + 18 * i}">{_esc(note)}</text>\n')
+
+    height = int(note_top + box_h + 10)
+    alt = (
+        "process=P1〜P4の4つの処理について、ふだんの1日あたり実行回数の範囲を横棒で示した図。"
+        "P1は1〜2回/日、P2は4〜8回/日、P3は10〜15回/日、P4は20〜30回/日で、"
+        "最も少ないP1と最も多いP4では約17倍の差がある。下の枠には、P4はP1の約17倍の頻度で"
+        "先行記事の約5倍から差を広げたこと、処理数も2本から4本に増やしたことが書かれている。"
+    )
+    (OUT / "four-process-frequency-range.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def four_process_stop_each_hit_and_miss_chart() -> None:
+    """処理を4本・頻度差17倍に広げても、止めた処理をすべて正しく名指しできたかを示す表。
+
+    実測（2026-10-31）。P1〜P4のどれか1本だけを4日間止める総当たり4パターン＋
+    全処理正常（誤報ゼロの確認）の計5構成を、同じ指示文で各2回試した。
+    """
+    _hit_and_miss_rows_chart(
+        "four-process-stop-each-hit-and-miss.svg",
+        "処理が4本・頻度差17倍でも、止めた処理は2回とも正しく名指しできた",
+        "実測2026-10-31。P1(1〜2回/日)〜P4(20〜30回/日)を1本のログに混ぜ、「処理ごとに計算して」を試した。",
+        "止めた処理1本ずつの総当たり4パターンと、全処理正常（誤報の確認）を各2回。",
+        [
+            ("P1(最少)だけ4日間停止", 2, 2, "good"),
+            ("P2だけ4日間停止", 2, 2, "good"),
+            ("P3だけ4日間停止", 2, 2, "good"),
+            ("P4(最多)だけ4日間停止", 2, 2, "good"),
+            ("全処理が正常（誤報ゼロの確認）", 2, 2, "good"),
+        ],
+        [
+            "止めたのがP1〜P4のどれでも、4日間を2回とも完全に名指しできた（計8/8）。",
+            "正常な処理を誤って異常と報告した回は、10回を通じて0件だった。",
+            "全処理が正常なログでも、2回とも誤報なく『該当なし』と答えた。",
+        ],
+        "process=P1〜P4の4本を1本のログに混ぜ、どれか1本だけを4日間止める総当たり4パターンと、"
+        "全処理が正常な構成の計5構成を、同じ指示文で各2回試した結果を示す表。"
+        "P1・P2・P3・P4のどれを止めた場合も2/2で停止4日間を正しく名指しできた。"
+        "全処理が正常な構成も2/2で誤報なく『該当なし』と答えた。下の枠には、"
+        "止めたのがP1〜P4のどれでも2回とも完全に名指しできたこと、正常な処理を誤って異常と"
+        "報告した回は10回を通じて0件だったこと、全処理正常でも2回とも誤報が無かったことが"
+        "書かれている。",
+        label_w=320,
+    )
+
+
+if __name__ == "__main__":
+    four_process_frequency_range_chart()
+    four_process_stop_each_hit_and_miss_chart()
