@@ -40053,3 +40053,98 @@ if __name__ == "__main__":
     four_process_stop_each_hit_and_miss_chart()
     headline_count_four_patterns_chart()
     headline_count_two_failure_shapes_chart()
+
+
+def list_length_holds_the_limit_chart() -> None:
+    """監視対象を3件→12件に増やしても、1行100字以内という制約は破れなかったことを示す図。
+
+    一方で、要約が必要だった項目のうち一定の割合は文中を「…」で切って終えていた
+    （言い直し後はその割合が0になる）ことも並べる。
+    実測は docs/evidence/longer-list-holds-the-limit-but-ellipsis-drops-the-ask.md。
+    """
+    _hit_and_miss_rows_chart(
+        "list-length-holds-the-limit.svg",
+        "監視対象を3件→12件に増やしても、100字以内という制約自体は破れなかった",
+        "短い一覧(3件)・長い一覧(12件)とも、2系統×各2回で得た行の文字数を数えた。",
+        "ただし、要約が必要だった項目のうち一定の割合は、文中を「…」で切って終えていた。",
+        [
+            ("短い一覧(3件)・100字以内で収まった行", 12, 12, "good"),
+            ("長い一覧(12件)・100字以内で収まった行", 48, 48, "good"),
+            ("要約が必要だった12回中、「…」で切れた回数", 3, 12, "bad"),
+            ("言い直し後・長い一覧の要約対象8回中の回数", 0, 8, "bad"),
+        ],
+        [
+            "一覧の長さそのものは、1行100字という制約を破らなかった（60行中0行が超過）。",
+            "「…」で切れた3回は、どれも具体的な質問の内容がまだ出ていない場所で切れていた。",
+        ],
+        "行ごとの達成率を示す表形式の図。短い一覧(3件)は12行中12行が100字以内に収まり、"
+        "長い一覧(12件)は48行中48行が100字以内に収まった。一方、要約が必要だった12回の実行のうち"
+        "3回は文中を「…」で切って終えており、言い直し後の長い一覧8回ではこの「…」が0回に減った。"
+        "下の注記には、一覧の長さ自体は100字制限を破らなかったこと、「…」で切れた3回はいずれも"
+        "具体的な質問の内容がまだ出ていない場所で切れていたことが書かれている。",
+    )
+
+
+def ellipsis_cuts_before_the_ask_chart() -> None:
+    """「…」で切れた出力が、具体的な質問の手前で切れていたことを実例で見せる図。
+
+    問い合わせ監視・長い一覧・1回目（言い直し前）と、同じ項目の言い直し後を並べる。
+    実測は docs/evidence/longer-list-holds-the-limit-but-ellipsis-drops-the-ask.md。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">「…」で切れた行は、質問の中身が出る前で切れていた</text>\n',
+        '<text class="t-sm" x="18" y="45">同じ項目（返品・交換フォーム）を、言い直し前と言い直し後で比べた。</text>\n',
+    ]
+    col_w = (box_w - 16) / 2
+    col1_x = box_x
+    col2_x = box_x + col_w + 16
+    y = top
+
+    def row(x: float, y: int, w: float, label: str, cls: str) -> None:
+        parts.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{w}" height="40" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="{tcls}" x="{x + 14}" y="{y + 17}" style="font-size:11.5px">{_esc(label)}</text>\n')
+
+    parts.append(f'<text class="t-strong" x="{col1_x}" y="{y + 14}">{_esc("言い直し前（1回目）")}</text>\n')
+    parts.append(f'<text class="t-strong" x="{col2_x}" y="{y + 14}">{_esc("言い直し後（1回目）")}</text>\n')
+    y += 22
+    row(col1_x, y, col_w, "出力「…お願いしたいのですが…」で終わる", "box-bad")
+    row(col2_x, y, col_w, "出力「Mサイズ交換可否と返送料負担について」", "box-good")
+    y += 48
+    row(col1_x, y, col_w, "含まれる質問＝0件（交換したい、で終わる）", "box-bad")
+    row(col2_x, y, col_w, "含まれる質問＝2件（Mサイズ可否・返送料負担）", "box-good")
+    y += 48
+    row(col1_x, y, col_w, "文字数＝63字（100字以内。字数自体は守られている）", "box-quiet")
+    row(col2_x, y, col_w, "文字数＝53字（100字以内。字数自体は守られている）", "box-quiet")
+    y += 56
+
+    notes = [
+        "⚠️ 字数の制約はどちらも守られている。崩れているのは中身のほうだけ。",
+        "📌 原文の質問は「Mサイズに交換できるか」「往復の配送料はどちらが負担か」の2点。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "返品・交換フォームという同じ監視項目を、言い直し前と言い直し後で比べた図。言い直し前の出力は"
+        "「…お願いしたいのですが…」で終わり、含まれる質問は0件（交換したい、という事実で終わる）。"
+        "文字数は63字で100字以内に収まっている。言い直し後の出力は「Mサイズ交換可否と返送料負担について」"
+        "で、含まれる質問は2件（Mサイズへの交換可否、往復の配送料をどちらが負担するか）。文字数は53字で"
+        "同じく100字以内。下の注記には、字数の制約はどちらも守られていて崩れているのは中身のほうだけであること、"
+        "原文の質問はMサイズに交換できるかと往復の配送料はどちらが負担するかの2点であることが書かれている。"
+    )
+    (OUT / "ellipsis-cuts-before-the-ask.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    list_length_holds_the_limit_chart()
+    ellipsis_cuts_before_the_ask_chart()
