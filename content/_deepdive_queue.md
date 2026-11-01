@@ -543,8 +543,39 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://note.com/elyza/n/n329765508a74
+- [!] https://note.com/elyza/n/n329765508a74
   - 2026-10-30 自動追記（major・ELYZA「論理的思考能力を強化した「Reasoning Model」を開発し、商用利用可能な形で公開しました」）
+  - **2026-11-01 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG・2026-09-30 SynthID Bio・2026-10-07 Playground・2026-10-08 Anthropic Cyber Mission・
+    2026-10-15 scam detection・2026-10-17 antimicrobial discovery・2026-10-22 forest mapping・2026-10-28 Genie 4・
+    2026-10-30 ELYZA Works・ELYZA 三井住友カード社会実装 と同型）。
+
+    **① ページ自体は問題なく読めた**（note.com の公開API `https://note.com/api/v3/notes/n329765508a74` から
+    本文のJSON（`body`フィールド・8,753字）を直接取得。要約させず生の行をそのまま確認した。記事自体は
+    2025年5月1日のプレスリリース「ELYZA、論理的思考能力を強化した『Reasoning Model』を開発」の転載で、
+    tracker には1年半近く遅れて今回初めて乗った）。
+
+    **② 中身が「オープンウェイトの研究モデル公開」で、料金も性能数値も本文テキストに無い**
+
+    - ELYZA-Thinking-1.0-Qwen-32B（Qwen2.5-32B-Instructを土台にした推論強化モデル）と、派生の
+      ELYZA-Shortcut-1.0-Qwen-32B/7Bの3モデルをApache 2.0でHuggingFaceに公開した告知。API課金ではなく
+      重みをダウンロードして自分の環境で動かす前提で、料金ページ自体が存在しない
+    - **本文を全文確認したが、性能を示す数字が一切無い**（%・件数のいずれも0件）。本文には「o1-mini
+      に匹敵する性能」「数学系ベンチマークでo1-miniを上回る」「GPT-4oに匹敵」「JHumanEval以外の
+      全ベンチマークでGPT-4を上回る」という**文章だけの主張**があり、具体的な点数は「図１」「図２」という
+      **画像（スクリーンショット）にしかない**。画像から数字を読み取って記事に書くことはしない
+      （出典ページに文字として書いてある数字だけを写す、という手順3のルールに反する）
+    - HuggingFaceのモデルカード本体（`huggingface.co/elyza/ELYZA-Thinking-1.0-Qwen-32B` 等3モデル）と、
+      README.mdの生ファイル（`/raw/main/README.md`）も直接取得して確認したが、使い方・引用情報のみで
+      ベンチマーク表は無い。3モデルとも同様
+    - 比較対象として本文中に挙がる相手（OpenAI o1-mini・GPT-4o・GPT-4）も、公開から1年半近く経った
+      今（2026年11月）ではいずれも現行の最上位モデルではない。「前のモデルとの違い」「他社の最上位モデルとの
+      比較」のどちらも、現行の公式ページの数字では書けない。モデルでも料金表でもないため、このサイトの
+      記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **これまでの10件とほぼ同じ構造**（①は解けている・②＝数字が無い/画像にしかない、という
+      停止理由も同一）。くわえて比較対象モデル自体が陳腐化している点は今回が初めて
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 - [ ] https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/
   - 2026-10-31 自動追記（major・Google DeepMind「Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration」）
