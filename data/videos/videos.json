@@ -5808,91 +5808,198 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-10-31T21:50:15.831614+00:00"
+  },
+  {
+   "video_id": "tc8ecHu4lX0",
+   "title": "AIへの指示は「Typeless」一択！圧倒的に仕事が効率化します",
+   "url": "https://www.youtube.com/watch?v=tc8ecHu4lX0",
+   "published": "2026-11-01T09:00:34+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-11-01T18:04:19.257753+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "音声入力AIアプリTypelessを活用し、フィラー除去や自動整形でAIへの指示やテキスト入力を大幅に効率化できると説明している。",
+    "選択した文章の音声による再編集や辞書登録、翻訳機能に加え、背景情報を多く渡してAIの回答精度を高める利点を紹介している。",
+    "スマホの音声入力とClaude Codeのリモート操作を連携させ、外出先からPC作業を指示して自動処理する実演を行っている。"
+   ],
+   "for_whom": "AIへのプロンプト入力や文章作成の作業時間を短縮したい会社員",
+   "caution": "概要欄で公式LINEや有料AIスクールへの誘導があるほか、紹介されているツールの全機能を利用するには有料プランの契約が必要となる点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-01T18:04:19.257753+00:00"
+  },
+  {
+   "video_id": "ikL4m39bX18",
+   "title": "注目AIニュース22選～Anthropic上場へ、知っておきたい7つの数字！GPT-6.1 Terra・Gemini 4 Carbon・セキュリティ危機",
+   "url": "https://www.youtube.com/watch?v=ikL4m39bX18",
+   "published": "2026-11-01T06:00:25+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "スポンサード：Manus\n▼Manus 2.0を試す（ボーナスクレジット付き）\nhttps://manus.im/redeem?c=IKTM24W8\n引き換えコード：IKTM24W8\n有効期限：2026年12月1日まで\n\n-----------------\n\n▼2時間で学ぶ「いけともハンズオン」\nhttps://luma.com/user/usr-caLu98fa5GLuoT7\n\n▼新刊：システムゼロ\nhttps://link.amazon/B0h56HiRH\n\n▼新刊：ひとりビジネスのためのAIエージェント活用術\nhttps://link.amazon/B0cUYGSIe\n\n▼新刊：Gemini Notebook 推し技100\nhttps://link.amazon/B05XAyOaL\n\n▼いけともハンズオンのアーカイブ＆過去アンケート全公開\nhttps://handson.workstyle-evolution.co.jp/\n\n---\n\n▼2/25発売『Nano Banana 最強のAIアウトプット術』\nhttps://amzn.to/4rC67L7\n\n▼3/13発売『中高生のための AIが最強の家庭教師になる自宅学習法』\nhttps://amzn.to/4b15w01\n\n▼『AIの雇い方 部署別・業種別 ChatGPT導入ガイド』\nhttps://amzn.to/4oVajnj\n\n▼『Gemini 最強のAI仕事術』\nhttps://amzn.to/3JmAu7I\n\n----\n\n▼生成AI利用を習慣化するコーチングサービス～ストイシアン\nhttps://stoician.co.jp/\n\n▼Gemini 最強の初心者向けハンズオン研修\nhttps://workstyle-evolution.co.jp/hands-on/gemini\n\n-----\n\n今週の注目AIニュース22件。Anthropicの上場申請で見えた7つの数字、GPT-6.1 Terra、Gemini 4 Carbon、人間に残す4つの仕事、GMOの脅迫事件と情報漏えいへの備えまで、実演と事例を交えて解説します。\n\n00:00 イントロ\n01:27 Codexの28日間アップデート\n03:18 GPT-6.1 Terra：性能とコスパ\n07:22 Geminiのファイル直接編集\n08:53 Antigravityのプラグイン市場\n11:15 PR：Manus 2.0で動画・ゲーム制作\n13:54 GitHub Copilot Fusion\n16:01 MOSS-ImageとローカルAI連携\n23:18 AIエージェントが人に仕事を依頼\n26:56 ビル・ゲイツ氏「人に残す4分野」\n31:50 Anthropic上場申請：7つの数字\n37:34 Gemini 4 Carbon\n39:06 Anthropicと一人創薬企業\n41:21 Microsoftの6万人規模の任意退職\n43:00 Genie 4：操作できる世界モデル\n47:23 Project Suncatcher：宇宙でAI応答\n49:16 robots.txtとAI学習の意思表示\n52:16 Cohere：AIの不審な送信試行\n53:39 AI個別化フィッシングの訓練実験\n55:29 EMBRACE：AI内蔵ブラウザの脆弱性\n58:09 CursorのClaude Code拡張改ざん\n1:01:19 GMO：身代金拒否と懸賞金\n1:05:41 10月の情報流出、3週目の更新\n1:08:04 情報漏えい対策の7つのポイン",
+   "first_seen": "2026-11-01T18:04:19.257753+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "8hVF3BXUoQ8",
+   "title": "【今週のAIツール・ニュース総まとめ】Googleの最先端AI「Gemini 4 Carbon」/OpenAIの中位AI「GPT-6.1 Terra」/Googleの世界モデル「Genie 4」",
+   "url": "https://www.youtube.com/watch?v=8hVF3BXUoQ8",
+   "published": "2026-11-01T09:04:34+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-01T18:04:19.257753+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GoogleのGemini 4 CarbonやOpenAIのGPT-6.1 Terraなど最新AIモデルの性能や特徴を紹介している",
+    "OpenAIやGoogle関連ツールのアップデート情報、CanvaのBrushなど最新ツールの機能を解説している",
+    "Anthropicの株式公開申請や大手IT企業の決算など、今週の主要なAI業界ニュースをまとめている"
+   ],
+   "for_whom": "最新のAIモデルの動向や関連ツールのアップデート情報をまとめて把握したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-01T18:04:19.257753+00:00"
+  },
+  {
+   "video_id": "LUsicyEmbic",
+   "title": "【これ良い】UIのAI臭を削る『unslop』が話題なので使ってみた！実際のワークフローも参考になります",
+   "url": "https://www.youtube.com/watch?v=LUsicyEmbic",
+   "published": "2026-11-01T11:00:23+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-01T18:04:19.257753+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AIが生成したUI特有の違和感を解消し洗練されたデザインに直すClaude skill「unslop」の仕組みと導入方法を紹介している。",
+    "素のClaudeとunslop適用後を比較し、特に管理画面等で視線誘導や文言の具体化など細部まで行き届いた調整ができると説明している。",
+    "unslopがデザイン修正時にグラフや実績の数値を勝手に書き換えることがあるため、プロンプトで数値を保持する指示が必要と注意を促している。"
+   ],
+   "for_whom": "AIを使ってダッシュボードやWebアプリのUIを洗練させたいエンジニア",
+   "caution": "動画終盤および概要欄にて、有料のNoteメンバーシップコミュニティへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-01T18:04:19.257753+00:00"
+  },
+  {
+   "video_id": "kPNzvaYtFSQ",
+   "title": "【導入かんたん】AIエージェント向けのPC操作『agent-desktop』を使ってきた！良いところ含め正直解説",
+   "url": "https://www.youtube.com/watch?v=kPNzvaYtFSQ",
+   "published": "2026-11-01T09:00:23+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Vercel の agent-browser に着想を得た「agent-desktop」について解説しました。作者自身が「agent-browser の PC 全体版」と表現しているとおり、電卓や TextEdit といった普段のアプリを操作できる、コンピュータユース向けの CLI ツールです。\n\n実際に僕も入れてみましたが、インストールがとても簡単で、ターミナルに権限を渡しておけば動くので導入が軽いのが魅力でした。\nみなさんはコンピュータユースをどんな場面で使っていますか？ よかったらコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://github.com/vercel-labs/agent-desktop\n\ntimestamp:\n00:00 オープニング - agent-desktop の紹介\n01:06 結論: シンプルなコンピューターユースツール\n01:18 推しポイント: ターミナル権限だけで動く\n01:40 カーソルを奪う? Cua との違いと使い分け\n02:08 インストールとクイックスタート\n02:39 仕組み: 部品一覧と番号札で操作する\n03:26 コンピューターユースは最後の手札\n03:54 Cua との比較: 裏側での座標クリック\n05:09 配布するなら権限チェックの重さが壁\n06:06 まとめ: agent-desktop は良い選択肢\n06:49 エンディング・メンバーシップのお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-11-01T18:04:19.257753+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "VJk8SRHfEbA",
+   "title": "【未経験からの始め方】クラウドワークス初心者が最初の1件を取るまで全部見せます",
+   "url": "https://www.youtube.com/watch?v=VJk8SRHfEbA",
+   "published": "2026-11-01T11:00:06+00:00",
+   "channel_key": "yuimama",
+   "channel_name": "飽き性主婦ゆいママの人気副業チャレンジ日記",
+   "default_category": "earn",
+   "first_seen": "2026-11-01T18:04:19.257753+00:00",
+   "status": "skipped",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-10-31T21:50:15.831614+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-10-31T21:50:15.831614+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-10-31T21:50:15.831614+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-10-31T21:50:15.831614+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-10-31T21:50:15.831614+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-10-31T21:50:15.831614+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-01T06:46:57.437828+00:00",
+   "last_ok": "2026-11-01T18:04:19.257753+00:00",
    "fail_streak": 0
   }
  }
