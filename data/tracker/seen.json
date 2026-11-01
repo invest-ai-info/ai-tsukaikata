@@ -70,30 +70,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-10-29T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-10-31T01:01:35+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added CLAUDE_CODE_DISABLE_ULTRATHINK , which turns the ultrathink keyword off Added pooled group budgets to the Claude apps gateway: one monthly budget that a group's members share, on…",
-      "title": "v2.1.316",
-      "uid": "2f9e7fc1a4c62e07",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.316",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-07-28T13:21:37+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Gemini Robotics 2 brings whole body intelligence to robots",
-      "uid": "150bd4129532568e",
-      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
-      "vendor": "Google DeepMind"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
