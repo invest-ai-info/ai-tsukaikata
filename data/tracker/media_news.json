@@ -13,6 +13,90 @@
       "vendor": "Publickey"
     },
     {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-01T22:40:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米OpenAI、米Google、米Microsoftは10月30日（現地時間）、生成AIの学習に関するサイト運営者の意向を伝える共通設定に対応する方針をそれぞれ発表した。運営者は「学習に使わないでほしい」という意思を、対応する複数のAI企業に一度に伝えられるようになる。",
+      "title": "robots.txtで「クロールはOK、でもAIの学習には使わないで」を明示可能に　OpenAIやGoogleら",
+      "uid": "5fb6f1429d161594",
+      "url": "https://japan.cnet.com/article/35254264/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-01T22:00:23+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、「Claude」の個人向け有料プランの名称を変更し、月額100ドルの「Max 5x」を「Max」に、月額200ドルの「Max 20x」を「Ultra」にした。料金は据え置き。Ultraでは確認済みアカウントを対象に、5時間ごとの利用制限を撤廃した。週ごとの制限は変わらない。",
+      "title": "Anthropic、「Claude」の「Max 20x」を「Ultra」に名称変更　月200ドルで5時間ごとの利用制限を撤廃",
+      "uid": "5b96ccb61f92f452",
+      "url": "https://www.itmedia.co.jp/news/article/2611/02/2000002777/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-01T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "4月に開業したフランクフルト空港の第3ターミナル。IT技術やAIを導入し、顧客体験の向上や業務効率化を行っている。どのような技術を導入し、「止まらない空港」を実現しようとしているのか？",
+      "title": "「保安検査の長い列」と「人手不足」をどう解消する？　フランクフルト空港におけるAI時代の空港DX",
+      "uid": "13631ac82e81be1f",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/02/news003.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-01T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "半導体メモリ大手のキオクシアは、2027年の生産能力が全て“完売”だと明かした。AIブームによる旺盛なメモリ需要に答えるため、年5000億円弱を投じて新工場を建設する。",
+      "title": "キオクシア「設備投資を急がねば……」　2027年分は完売、メモリ供給追い付くか",
+      "uid": "59385391f80b48d3",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/02/news031.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-01T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIツールの利用率100％を達成したメルカリ。しかし「AIエージェント構築に時間を割きたい部下と、それを止めたい上司」など一筋縄ではいかなかった。試行錯誤の裏側をCAIOが語る。",
+      "title": "その日、メルカリは「業務を止めた」――上司と部下が対立も、AI利用率100％をかなえたCAIOの奮闘記",
+      "uid": "8529d2bb82511a72",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/02/news032.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-01T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "オラクルがOpenAIとの協業を拡大し、ChatGPTやCodex、AI技術を活用し、業務の効率化・実行からソフトウェアの脆弱性の検出、アプリケーション開発まで幅広く支援する。小規模企業には年間1万2000ドル分のクラウド利用枠を含むプランを提供する。",
+      "title": "オラクルの機能がChatGPTで利用可能に　複数システムをまたぐ業務をAIで自動化",
+      "uid": "37d71136b55a4397",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/02/2000002740/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-01T23:39:25.157516+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-01T22:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Claude Codeの「エージェントサマリー」機能はバックグラウンドエージェントのステータスを約30秒ごとに更新するため、トランスクリプト(記録したデータ)全体をモデルに再送信しています。トランスクリプト送信によりトークンの約15～20％が消費されている計算になります。 続きを読む...",
+      "title": "Claude Codeは各バックグラウンドエージェントのトランスクリプトを定期的にモデルに送信していることが発覚",
+      "uid": "95fe18cb2078291e",
+      "url": "https://gigazine.net/news/20261102-claude-code-resends-background-agents-transcript/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-01T15:14:44.331142+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2315,90 +2399,6 @@
       "uid": "afaa6d26d108aefc",
       "url": "https://www.itmedia.co.jp/business/articles/2610/27/news013.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-27T00:29:48.146067+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-26T22:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "近年では多くの企業がAIツールやAIエージェントを導入し、生産性や収益性を向上させようと取り組んでいます。ところがアメリカの投資会社・Apolloのチーフエコノミストであるトルステン・スロク氏は、「AIはテクノロジー業界以外のアメリカ企業に何の経済的利益ももたらしていない」とするレポートを発表しました。 続きを読む...",
-      "title": "大手テクノロジー企業以外ではAIへの投資による経済的利益がほとんど得られていないとの指摘",
-      "uid": "1196977a1d7c591c",
-      "url": "https://gigazine.net/news/20261027-no-signs-ai-payoff-outside-tech/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-27T00:29:48.146067+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-26T21:58:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "生成AI「Claude」を手がけるAnthropicは米国時間10月26日、新規株式公開（IPO）に向けた登録届出書「Form S-1」を米証券取引委員会（SEC）に提出したと発表した。公開された申請書によると、2026年上半期の売上高は前年同期の約14倍に拡大した。",
-      "title": "「Claude」のAnthropicが上場申請　売上好調で営業損失縮小　ティッカー「ANT」に",
-      "uid": "eb640384c4c4b182",
-      "url": "https://japan.cnet.com/article/35253994/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-27T00:29:48.146067+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-26T21:45:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "三菱電機は「JIMTOF2026（第33回日本国際工作機械見本市）」において、加工現場における人手不足や技能伝承の課題解決を図る、AIを活用したソリューションなどを披露した。",
-      "title": "三菱電機が描く工作機械×AIの未来、人手不足や技能伝承の「切り札」となるか",
-      "uid": "f43584ca762aae7b",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/27/news041.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-27T00:29:48.146067+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-26T21:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "伊藤忠インタラクティブは、ClaudeやClaude Codeを使った法人向け「AIエージェント実装研修」の提供を開始する。一般的な生成AIの使い方ではなく、提案書作成や調査レポートなど、受講者自身の業務を題材にAIエージェントを構築し、業務の自動化を目指す。",
-      "title": "伊藤忠インタラクティブが「Claude」活用研修　「AIを使う」から「業務を任せる」へ",
-      "uid": "1ee680768b368aaf",
-      "url": "https://kn.itmedia.co.jp/kn/article/2610/27/2000002583/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "Publickey",
-      "published": "2026-10-26T15:59:52+00:00",
-      "source_id": "media-publickey",
-      "summary": "10月20日と21日に米カリフォルニア州で行われたイベント「PyTorch Conference 2026」において、AWSとGoogle Cloudが相次いでPyTorchの自社AIプロセッサ対応版をオープンソースとして発表しました。 A...",
-      "title": "AWSとGoogle Cloudが「PyTorch」のAWS Trainium、Google Cloud TPU対応版をオープンソースで公開。NVIDIAからの移行に挑む",
-      "uid": "1a6b5b5456b976ab",
-      "url": "https://www.publickey1.jp/blog/26/awsgoogle_cloudpytorchaws_trainiumgoogle_cloud_tpunvidia.html",
-      "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-26T14:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Even Realitiesのスマートグラス、「Even G2」のファームウェアに大型アップデートが入り、AI関連機能が大幅強化される。",
-      "title": "スマートグラス「Even G2」のAI機能が大幅強化。会話を聞いて表示される「ヒント」がより高精度に",
-      "uid": "da172139e40fc86a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151196.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-26T09:17:25+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ソフトバンクは、法人のAI活用を推進するプラットフォームサービス「AGENTIC STAR」において、新バージョン「AGENTIC STAR 3.0」を10月26日に提供開始した。",
-      "title": "AIと人が連携するプロジェクト機能を搭載。ソフトバンク「AGENTIC STAR 3.0」",
-      "uid": "47c4866dc0be5934",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151248.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

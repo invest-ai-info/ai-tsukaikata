@@ -5855,20 +5855,6 @@
       "uid": "1cd7206d43933b0c",
       "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-03T22:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
-      "summary_ja": "OpenAIがAppleの訴訟に反論しました。\n従業員に関するAppleの主張を訂正し\n当時のやり取りを公開しています。",
-      "summary_source": "gemini",
-      "title": "Apple is getting this wrong",
-      "uid": "9f50c32afd5adfdf",
-      "url": "https://openai.com/index/apple-is-getting-this-wrong",
-      "vendor": "OpenAI"
     }
   ]
 }
