@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-01T15:14:44.331142+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-11-02T14:36:38+00:00",
+      "source_id": "media-publickey",
+      "summary": "GitHubは、米サンフランシスコで10月28日と29日の2日間開催した年次イベント「GitHub Universe 2026」で、新機能「GitHub Copilot Fusion」の正式リリースを発表しました。 Copilot Fusi...",
+      "title": "GitHub、「Copilot Fusion」正式リリース。タスクに応じて最適なAIモデル選択で高性能かつ低コストに。GitHub Universe 2026",
+      "uid": "8b35735bb0a68f86",
+      "url": "https://www.publickey1.jp/blog/26/githubcopilot_fusionaigithub_universe_2026.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-01T15:14:44.331142+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-01T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "あらゆるプラットフォームにAI生成テキストがあふれている中で、WikipediaではAIに記事本文を生成させたり書き換えさせたりすることを原則禁じるガイドラインが設定されています。そのガイドラインに違反するコンテンツを見つけて削除することを目的としたボランティア活動「WikiProject AI Cleanup」の創設メンバーが、活動について語っています。 続きを読む...",
+      "title": "Wikipediaの編集者はどのようにしてAI生成テキストを見つけて除外しているのか？",
+      "uid": "922267162c75af2d",
+      "url": "https://gigazine.net/news/20261101-wikipedia-ai-content/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-01T01:15:15.797301+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2374,30 +2398,6 @@
       "title": "AIと人が連携するプロジェクト機能を搭載。ソフトバンク「AGENTIC STAR 3.0」",
       "uid": "47c4866dc0be5934",
       "url": "https://ai.watch.impress.co.jp/docs/news/2151248.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-26T07:50:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "マネーフォワードホームは10月26日、家計・資産管理サービス「マネーフォワード ME」とMetaのAIエージェント「Muse（ミューズ）」の連携を発表した。24日から提供を始めており、マネーフォワード MEに記録された収支や資産のデータを基に、サブスクリプションの見直しや旅行に向けた貯蓄計画などをMuseに相談できる。",
-      "title": "マネーフォワードME、MetaのAI「Muse」と連携　サブスク見直しや貯蓄計画を相談",
-      "uid": "64940a6ab559bd3c",
-      "url": "https://japan.cnet.com/article/35253976/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-26T07:48:45+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTドコモビジネスは、代表機関として参画企業・団体とともに、京都市と自動運転バスの走行に関する実証実験を実施する。同実証は、洛西ニュータウンエリアで11月1日～令和9年1月31日までテスト走行を行ない、令和9年2月1日～14日には市民の試乗体験を予定している。",
-      "title": "NTTドコモビジネスと京都市、自動運転レベル4を目指しバス実証",
-      "uid": "c0a236b761b451ac",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151233.html",
       "vendor": "Impress AI Watch"
     }
   ]

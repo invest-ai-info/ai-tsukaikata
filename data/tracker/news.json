@@ -5869,20 +5869,6 @@
       "uid": "9f50c32afd5adfdf",
       "url": "https://openai.com/index/apple-is-getting-this-wrong",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T15:37:58.863476+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-03T15:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Illustrations of a laptop, an AI spark, messages, code, and a 3-D cube",
-      "summary_ja": "35万3千人が参加するプログラミング講座を開催。\n講座の内部について紹介しました。",
-      "summary_source": "gemini",
-      "title": "Inside our 353,000-person vibe coding course",
-      "uid": "8e1e7ef4c1267057",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
-      "vendor": "Google"
     }
   ]
 }
