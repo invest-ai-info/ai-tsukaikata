@@ -5909,20 +5909,6 @@
       "uid": "02d3a6ff4673b520",
       "url": "https://openrouter.ai/qwen/qwen3.8-max",
       "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-04T11:35:58.926237+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-03T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.",
-      "summary_ja": "CirclesがAIで通信事業の個別化を進めました。\nOpenAIのAPIなどを使いAIサービスを提供。\n売上22%増、顧客離れ9%減を実現しました。",
-      "summary_source": "gemini",
-      "title": "Circles powers telco personalization with OpenAI technology",
-      "uid": "946a2476bbaff510",
-      "url": "https://openai.com/index/circles",
-      "vendor": "OpenAI"
     }
   ]
 }

@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-01T01:15:15.797301+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-10-31T23:31:07+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAI、Google、Microsoftは、Webサイト運営者がAI学習へのコンテンツ利用に関する意向を一括で指定できる共通の仕組みへの対応を発表した。Anthropicも担当者が個人名義で実装を表明している。robots.txtに共通トークンを記述するだけで、AI各社のAIクローラーを一元管理できるようになる。",
+      "title": "AI学習への利用拒否をrobots.txtで一括指定へ　OpenAIやGoogleなどが対応表明",
+      "uid": "940c5e2b49da445b",
+      "url": "https://www.itmedia.co.jp/news/article/2611/01/2000002776/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-01T01:15:15.797301+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-10-31T23:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米Anthropicは米国時間10月30日、生成AI「Claude」の月額200ドルプラン「Max 20x」を「Ultra」に改称し、認証済みアカウントの5時間ごとの利用量制限を撤廃すると発表した。同日から既存契約者の大半を対象に適用を始めた。1週間単位の利用上限は維持する。",
+      "title": "Claude、月額200ドルの「Ultra」で5時間制限撤廃　週間上限は維持",
+      "uid": "e681b1c73470cae9",
+      "url": "https://japan.cnet.com/article/35254252/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-10-31T21:39:59.728900+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2375,30 +2399,6 @@
       "uid": "c0a236b761b451ac",
       "url": "https://ai.watch.impress.co.jp/docs/news/2151233.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-26T07:48:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AnthropicのAIモデルであるClaudeが、人間の許可なくアメリカ・ジョージア州の有権者情報にアクセスしていたことが明らかになりました。 続きを読む...",
-      "title": "AnthropicのAIモデル・Claudeが人間の許可なく有権者情報にアクセス",
-      "uid": "ac3ac0a4df7f2c01",
-      "url": "https://gigazine.net/news/20261026-anthropic-claude-accessed-vote-information/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-26T14:19:56.115232+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-26T07:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Googleが2026年10月16日にプライバシーポリシーを更新し、GmailやGoogleフォトなどに保存された情報を広告のカスタマイズに利用する条件を変更したことが明らかになりました。 続きを読む...",
-      "title": "Googleが「GmailやGoogleフォトの内容は広告に利用しない」という方針に例外を追加、AIとのデータ共有が広告に影響する可能性",
-      "uid": "80fdc2a2ddd27432",
-      "url": "https://gigazine.net/news/20261026-google-privacy-policy/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
