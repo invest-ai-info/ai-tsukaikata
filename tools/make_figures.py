@@ -40419,3 +40419,92 @@ def mixed_endings_vs_single_pattern_chart() -> None:
 if __name__ == "__main__":
     mixed_endings_two_patterns_hit_and_miss_chart()
     mixed_endings_vs_single_pattern_chart()
+
+
+def pr_format_generalization_hit_and_miss_chart() -> None:
+    """同じ判定基準をX・note/ブログに広げても、ほぼ同じ判定になったことを示す表。
+
+    実測（2026-11-01）。先行記事（Instagram想定）の判定基準の文言を、X（ハッシュタグ詰め込み・
+    140字程度）とnote・ブログ（長文の途中に埋もれる形式）に広げて各2回ずつ試した。
+    """
+    _hit_and_miss_rows_chart(
+        "pr-format-generalization-hit-and-miss.svg",
+        "判定は8回中7回、埋もれ・明瞭を正しく言い当てた",
+        "実測2026-11-01。X・note/ブログそれぞれに「埋没版」「明瞭版」を用意し、同じ判定基準で試した。",
+        "「正しい向き（埋没版は疑義・明瞭版は問題なし）で判定した回数／試した回数」。",
+        [
+            ("X：ハッシュタグ埋没版（2回）", 1, 2, "good"),
+            ("X：冒頭明示版（2回）", 2, 2, "good"),
+            ("note・ブログ：長文埋没版（2回）", 2, 2, "good"),
+            ("note・ブログ：冒頭明示版（2回）", 2, 2, "good"),
+        ],
+        [
+            "note・ブログの長文埋没は2回とも「長文による表示」として正しく指摘された（運用基準キの文言どおり）。",
+            "Xのハッシュタグ埋没だけ、2回中1回は「大量のハッシュタグ」という文言の解釈でグレー判定になった。",
+            "明瞭版（冒頭に独立して明記）は、X・noteとも4回とも「問題なし」で揺れなかった。",
+        ],
+        "判定は8回中7回、埋もれ・明瞭を正しく言い当てたことを示す表。Xのハッシュタグ埋没版は2回中1回のみ"
+        "明確に疑義を示した（もう1回はグレー判定）。Xの冒頭明示版は2回中2回「問題なし」。"
+        "note・ブログの長文埋没版は2回中2回「不十分」。note・ブログの冒頭明示版は2回中2回「問題なし」。"
+        "下の枠には、note・ブログの長文埋没は2回とも「長文による表示」として正しく指摘されたこと、"
+        "Xのハッシュタグ埋没だけ2回中1回は「大量のハッシュタグ」という文言の解釈でグレー判定になったこと、"
+        "明瞭版は4回とも「問題なし」で揺れなかったことが書かれている。",
+        label_w=380,
+    )
+
+
+def pr_x_verdict_split_example_chart() -> None:
+    """同じXのハッシュタグ埋没版を2回判定すると、結論の強さが割れた例を示す。"""
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">同じX投稿(ハッシュタグ埋没)でも、判定の強さが割れた</text>\n',
+        '<text class="t-sm" x="18" y="45">材料＝#PRが6個のハッシュタグの4番目に挟まれたX投稿。同じ指示文を2回試した。</text>\n',
+    ]
+    col_w = (box_w - 16) / 2
+    col1_x = box_x
+    col2_x = box_x + col_w + 16
+    y = top
+
+    def row(x: float, y: int, w: float, label: str, cls: str) -> None:
+        parts.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{w}" height="52" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="t-strong" x="{x + 14}" y="{y + 20}" style="font-size:12px">{_esc(label.split("｜")[0])}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{x + 14}" y="{y + 38}" style="font-size:11px">{_esc(label.split("｜")[1])}</text>\n')
+
+    parts.append(f'<text class="t-strong" x="{col1_x}" y="{y + 14}">1回目</text>\n')
+    parts.append(f'<text class="t-strong" x="{col2_x}" y="{y + 14}">2回目</text>\n')
+    y += 22
+    row(col1_x, y, col_w, "判定｜不十分である可能性が高い", "box-bad")
+    row(col2_x, y, col_w, "判定｜グレーゾーン（セーフとも言い切れない）", "box-quiet")
+    y += 62
+    row(col1_x, y, col_w, "根拠｜#PRが前後をタグに挟まれ紛れ込んでいる構造", "box-quiet")
+    row(col2_x, y, col_w, "根拠｜6個は「大量」と言えるか微妙、構造面はグレー寄り", "box-quiet")
+    y += 70
+
+    notes = [
+        "⚠️ 2回とも「埋没している」という構造自体は認めたが、「大量」という文言の有無で結論の強さが割れた。",
+        "📌 note・ブログの「長文による表示」は、こうした文言の揺れが2回とも起きなかった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "同じXのハッシュタグ埋没版の投稿を2回判定した結果を比べた図。1回目は判定「不十分である可能性が高い」"
+        "根拠「#PRが前後をタグに挟まれ紛れ込んでいる構造」。2回目は判定「グレーゾーン（セーフとも言い切れない）」"
+        "根拠「6個は『大量』と言えるか微妙、構造面はグレー寄り」。下の枠には、2回とも埋没している構造自体は"
+        "認めたが『大量』という文言の有無で結論の強さが割れたこと、note・ブログの長文による表示はこうした"
+        "文言の揺れが2回とも起きなかったことが書かれている。"
+    )
+    (OUT / "pr-x-verdict-split-example.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    pr_format_generalization_hit_and_miss_chart()
+    pr_x_verdict_split_example_chart()

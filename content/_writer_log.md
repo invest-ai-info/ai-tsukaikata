@@ -90,6 +90,16 @@
   正しく判定した
 - 台帳★252が再発（新規番号は増やしていない）。図2枚を`tools/make_figures.py`に追加し、
   `python -m src.build`・`pytest`・`check_readability.py`とも通した
+- 公開: 3本目＝`pr-disclosure-judgment-holds-across-x-and-note`。副業の節の上位3件すべてに
+  着手完了（3本目は未処理が「X・note長文のPR表記検品」まで繰り下がったため選んだ）
+- 実測（PR表記の判定）: WebFetchで消費者庁の運用基準PDFを取得（200）、Readツールでページ画像を
+  開いて原文を確認。同じ方式で16回起動（X・noteの埋没版/明瞭版・計4材料を各2回判定＝8回＋
+  X・noteの埋没版を「指摘して直して」と頼む各2回＝4回＋評価用の予備呼び出し数回）。判定は
+  8回中7回が正しい向き。note・ブログの「長文による表示」は2回とも揺れずに「不十分」。Xの
+  ハッシュタグ埋没だけ2回中1回「大量のハッシュタグ」という文言の解釈でグレー判定になった。
+  「判定して」ではなく「指摘して直して」と頼むと、Xでも4回とも迷いが消えた
+- 台帳★315を新規追記。図2枚を`tools/make_figures.py`に追加し、
+  `python -m src.build`・`pytest`・`check_readability.py`とも通した
 
 ### 2026-10-31（21:00の枠。副業の床埋め担当）
 - 公開: 1本（`headline-count-slips-at-four-patterns`）。副業の節の未処理7件のうち、
