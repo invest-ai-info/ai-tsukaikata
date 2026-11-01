@@ -40148,3 +40148,99 @@ def ellipsis_cuts_before_the_ask_chart() -> None:
 if __name__ == "__main__":
     list_length_holds_the_limit_chart()
     ellipsis_cuts_before_the_ask_chart()
+
+
+def two_days_back_receptacle_hit_and_miss_chart() -> None:
+    """「前日より前を指す語が出たら止める」という受け皿の実測12回をまとめた図。
+
+    止まるべき場面（一昨日・おととい）で止まった回数、止まらないべき場面
+    （別の相対語が混ざっただけ）で誤って止まらなかった回数、追記した本文が
+    入力とそのまま一致した回数を並べる。
+    実測は docs/evidence/two-days-back-stops-correctly-but-wording-shifts.md。
+    """
+    _hit_and_miss_rows_chart(
+        "two-days-back-receptacle-hit-and-miss.svg",
+        "「前日より前の語が出たら止める」受け皿は、12回とも判定自体は正しかった",
+        "一昨日・おとといで止まるべき4回、別の相対語が混ざっても止まらないべき6回を実測した。",
+        "一方、追記した本文がそのまま保たれたのは8回中5回だった。",
+        [
+            ("止まるべき場面（一昨日・おととい）で止まった回数", 4, 4, "good"),
+            ("止まらないべき場面で誤って止まった回数", 0, 6, "bad"),
+            ("続けた8回のうち、日付の判定が正しかった回数", 8, 8, "good"),
+            ("続けた8回のうち、本文がそのまま保たれた回数", 5, 8, "good"),
+        ],
+        [
+            "止まる/止まらないの判定そのものは12回とも期待どおりだった（自己訂正表現の2回を除く）。",
+            "ただし本文の一字一句は指示文が約束していないため、8回中3回は入力と違う文面に書き換わった。",
+        ],
+        "行ごとの達成率を示す表形式の図。止まるべき場面（一昨日・おととい）では4回とも正しく止まり、"
+        "止まらないべき場面（別の相対語が混ざっただけ）では6回とも誤って止まらなかった。続けた8回では"
+        "日付の判定が8回とも正しかったが、追記した本文がそのまま保たれたのは8回中5回だった。下の注記には、"
+        "止まる/止まらないの判定そのものは12回とも期待どおりだったこと、本文の一字一句は指示文が約束して"
+        "いないため8回中3回は入力と違う文面に書き換わったことが書かれている。",
+        label_w=420,
+    )
+
+
+def two_days_back_wording_shift_example_chart() -> None:
+    """追記した本文が、入力とそのまま一致した回と書き換わった回を実例で比べる図。
+
+    材料A・混在[今日/昨日]の1回目（一致）と2回目（書き換え）を並べる。
+    実測は docs/evidence/two-days-back-stops-correctly-but-wording-shifts.md。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">同じ入力でも、本文がそのまま残る回と短く書き換わる回があった</text>\n',
+        '<text class="t-sm" x="18" y="45">材料A・混在[今日/昨日]の2回を比べた。日付の判定（2026-08-04）はどちらも正しい。</text>\n',
+    ]
+    col_w = (box_w - 16) / 2
+    col1_x = box_x
+    col2_x = box_x + col_w + 16
+    y = top
+
+    def row(x: float, y: int, w: float, label: str, cls: str) -> None:
+        parts.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{w}" height="40" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="{tcls}" x="{x + 14}" y="{y + 17}" style="font-size:11.5px">{_esc(label)}</text>\n')
+
+    parts.append(f'<text class="t-strong" x="{col1_x}" y="{y + 14}">{_esc("1回目")}</text>\n')
+    parts.append(f'<text class="t-strong" x="{col2_x}" y="{y + 14}">{_esc("2回目")}</text>\n')
+    y += 22
+    row(col1_x, y, col_w, "入力「昨日は進捗なし…今日は契約しました」", "box-quiet")
+    row(col2_x, y, col_w, "入力「昨日は進捗なし…今日は契約しました」", "box-quiet")
+    y += 48
+    row(col1_x, y, col_w, "出力＝入力と1字一句一致", "box-good")
+    row(col2_x, y, col_w, "出力＝「新しいクライアントと契約した。」に短縮", "box-bad")
+    y += 48
+    row(col1_x, y, col_w, "日付＝2026-08-04（正しい）", "box-quiet")
+    row(col2_x, y, col_w, "日付＝2026-08-04（正しい）", "box-quiet")
+    y += 56
+
+    notes = [
+        "⚠️ 日付の判定はどちらも正しい。崩れているのは追記した本文の一字一句のほう。",
+        "📌 指示文は「すでにある行」の保持だけを約束しており、新しい行の一字一句は約束していない。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "同じ入力「昨日は進捗なし…今日は契約しました」を2回試した例を比べた図。1回目は出力が入力と"
+        "1字一句一致した。2回目は出力が「新しいクライアントと契約した。」に短縮され、入力と一致しなかった。"
+        "どちらも日付の判定は2026-08-04で正しい。下の注記には、日付の判定はどちらも正しく崩れているのは"
+        "追記した本文の一字一句のほうであること、指示文はすでにある行の保持だけを約束しており新しい行の"
+        "一字一句は約束していないことが書かれている。"
+    )
+    (OUT / "two-days-back-wording-shift-example.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    two_days_back_receptacle_hit_and_miss_chart()
+    two_days_back_wording_shift_example_chart()
