@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="386" viewBox="0 0 720 386" role="img" aria-label="見本を1文まで削っても、比率指定なら73%まで戻ることを示す表。犬の1文見本そのものは1文中1文（100%）。1文見本で単純に書かせると13文中3文（23%）、比率指定では16文中12文（75%）。万年筆の1文見本そのものも1文中1文（100%）。1文見本で単純に書かせると11文中4文（36%）、比率指定では14文中10文（71%）。下の枠には、1文の見本自体は比率が100%に見えること、単純に書かせると合計29%で2文見本の先行記事とほぼ同じこと、比率を数字で指定すると合計73%で2文見本の先行記事と同じ値に戻ることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="386"/>
+<text class="t-strong" x="18" y="26">見本を1文まで削っても、比率指定なら73%まで戻った</text>
+<text class="t-sm" x="18" y="45">実測2026-11-01。2文見本記事（2026-10-20）の見本をさらに1文に削り、単純版・比率指定版を試した。</text>
+<text class="t-sm" x="18" y="64">2文見本（先行記事）は単純29%・比率指定73%だった。1文に削っても、ほぼ同じ比率になった。</text>
+<text class="t-xs" x="478.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">犬：1文の見本そのもの（1文中1文）</text>
+<rect class="box-good" x="398" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="125" text-anchor="middle" style="font-weight:700">1/1</text>
+<text class="t" x="18" y="157">犬：1文見本で単純に書かせる（3回・13文）</text>
+<rect class="box" x="398" y="136" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="157" text-anchor="middle" style="font-weight:700">3/13</text>
+<text class="t" x="18" y="189">犬：1文見本＋比率指定（2回・16文）</text>
+<rect class="box" x="398" y="168" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="189" text-anchor="middle" style="font-weight:700">12/16</text>
+<text class="t" x="18" y="221">万年筆：1文の見本そのもの（1文中1文）</text>
+<rect class="box-good" x="398" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="221" text-anchor="middle" style="font-weight:700">1/1</text>
+<text class="t" x="18" y="253">万年筆：1文見本で単純に書かせる（3回・11文）</text>
+<rect class="box" x="398" y="232" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="253" text-anchor="middle" style="font-weight:700">4/11</text>
+<text class="t" x="18" y="285">万年筆：1文見本＋比率指定（2回・14文）</text>
+<rect class="box" x="398" y="264" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="285" text-anchor="middle" style="font-weight:700">10/14</text>
+<rect class="box-accent" x="18" y="302" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="322">1文の見本そのものは1文とも対象の文末で、比率は100%に見える。</text>
+<text class="t-accent" x="34" y="340">単純に書かせると犬23%・万年筆36%（合計29%）。2文見本（先行記事）の29%とほぼ同じだった。</text>
+<text class="t-accent" x="34" y="358">比率を数字で指定すると犬75%・万年筆71%（合計73%）。2文見本（先行記事）の73%と同じ値に戻った。</text>
+</svg>

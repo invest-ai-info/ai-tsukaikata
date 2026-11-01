@@ -40241,6 +40241,119 @@ def two_days_back_wording_shift_example_chart() -> None:
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
 
 
+def one_sentence_sample_ending_rate_chart() -> None:
+    """見本を1文まで削っても、比率指定なら73%まで戻ることを示す表。
+
+    実測（2026-11-01）。短い見本記事（2026-10-20）の2文見本を、さらに1文に削った。
+    単純に書かせる版は犬3回・万年筆3回、比率を数字で指定する版は犬2回・万年筆2回。
+    """
+    _hit_and_miss_rows_chart(
+        "one-sentence-sample-ending-rate.svg",
+        "見本を1文まで削っても、比率指定なら73%まで戻った",
+        "実測2026-11-01。2文見本記事（2026-10-20）の見本をさらに1文に削り、単純版・比率指定版を試した。",
+        "2文見本（先行記事）は単純29%・比率指定73%だった。1文に削っても、ほぼ同じ比率になった。",
+        [
+            ("犬：1文の見本そのもの（1文中1文）", 1, 1, "good"),
+            ("犬：1文見本で単純に書かせる（3回・13文）", 3, 13, "good"),
+            ("犬：1文見本＋比率指定（2回・16文）", 12, 16, "good"),
+            ("万年筆：1文の見本そのもの（1文中1文）", 1, 1, "good"),
+            ("万年筆：1文見本で単純に書かせる（3回・11文）", 4, 11, "good"),
+            ("万年筆：1文見本＋比率指定（2回・14文）", 10, 14, "good"),
+        ],
+        [
+            "1文の見本そのものは1文とも対象の文末で、比率は100%に見える。",
+            "単純に書かせると犬23%・万年筆36%（合計29%）。2文見本（先行記事）の29%とほぼ同じだった。",
+            "比率を数字で指定すると犬75%・万年筆71%（合計73%）。2文見本（先行記事）の73%と同じ値に戻った。",
+        ],
+        "見本を1文まで削っても、比率指定なら73%まで戻ることを示す表。"
+        "犬の1文見本そのものは1文中1文（100%）。1文見本で単純に書かせると13文中3文（23%）、"
+        "比率指定では16文中12文（75%）。万年筆の1文見本そのものも1文中1文（100%）。"
+        "1文見本で単純に書かせると11文中4文（36%）、比率指定では14文中10文（71%）。"
+        "下の枠には、1文の見本自体は比率が100%に見えること、単純に書かせると合計29%で"
+        "2文見本の先行記事とほぼ同じこと、比率を数字で指定すると合計73%で2文見本の先行記事と"
+        "同じ値に戻ることが書かれている。",
+        label_w=380,
+    )
+
+
+def one_sentence_sample_lineage_chart() -> None:
+    """見本を7〜9文→2文→1文と削っていっても、比率指定の戻り先は同じだったことを示す横棒グラフ。
+
+    実測の系列（犬・万年筆の合計）。フル見本（2026-10-14実測）→2文見本（2026-10-20実測）
+    →1文見本（2026-11-01実測）の3段階で、単純版と比率指定版を比べる。
+    """
+    axis_max = 100.0
+    plot_x, plot_w = 300, 360
+
+    def px(value: float) -> float:
+        return plot_x + value * (plot_w / axis_max)
+
+    rows = [
+        ("フル見本（7〜9文）・単純（先行記事）", 87.0, "bar-old"),
+        ("2文見本・単純（先行記事）", 29.0, "bar-old"),
+        ("1文見本・単純（今回）", 29.0, "bar-new"),
+        ("2文見本＋比率指定（先行記事）", 73.0, "bar-old"),
+        ("1文見本＋比率指定（今回）", 73.0, "bar-new"),
+    ]
+    top = 116
+    pitch, bar_h = 30, 18
+    plot_bottom = top + len(rows) * pitch
+    notes = [
+        "📌 単純に書かせた比率は、見本を2文→1文に削っても29%のまま変わらなかった。",
+        "📌 比率を数字で指定した場合も、2文→1文で73%のまま変わらなかった。",
+        "⚠️ 下がる場所は「フル見本→短い見本」の間にすでにあり、2文→1文では下がらない。",
+    ]
+    box_h = 18 * len(notes) + 10
+    height = plot_bottom + 24 + box_h + 24
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "見本を2文から1文に削っても、比率はもう下がらなかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "犬・万年筆2種の合計（件数を足し上げた比率）。フル見本2026-10-14・2文見本2026-10-20・"
+        "1文見本2026-11-01の実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "単純版は素朴に見本を渡して書かせた比率、比率指定版は「8文中6〜7文」のように数字を足した比率。</text>\n",
+    ]
+
+    for value in (0, 25, 50, 75, 100):
+        x = px(value)
+        parts.append(
+            f'<path class="line" d="M{x:.1f} {top - 6} L{x:.1f} {plot_bottom - 4}" '
+            f'stroke-dasharray="2 4"/>\n'
+        )
+        parts.append(f'<text class="t-xs" x="{x:.1f}" y="{top - 12}" text-anchor="middle">{value}%</text>\n')
+
+    y = top
+    for label, value, klass in rows:
+        ty = y + 14
+        parts.append(f'<text class="t-sm" x="18" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(value * (plot_w / axis_max), 2)
+        parts.append(
+            f'<rect class="{klass}" x="{plot_x}" y="{y + 1}" width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(f'<text class="t-sm" x="{plot_x + bar_w + 8:.1f}" y="{ty}">{value:.0f}%</text>\n')
+        y += pitch
+
+    note_top = plot_bottom + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{note_top}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{note_top + 20 + 18 * i}">{_esc(note)}</text>\n')
+
+    alt = (
+        "見本の長さを7〜9文のフル見本から2文、1文と削っていったときの、文末パターンの再現比率を"
+        "示す横棒グラフ。フル見本に単純に書かせた比率は87%（先行記事）。2文見本に単純に書かせた比率は"
+        "29%（先行記事）、1文見本に単純に書かせた比率も29%（今回）で同じだった。2文見本に比率を"
+        "数字で指定した比率は73%（先行記事）、1文見本に比率を数字で指定した比率も73%（今回）で"
+        "同じだった。下の枠には、単純版は見本を2文から1文に削っても29%のまま変わらなかったこと、"
+        "比率指定版も73%のまま変わらなかったこと、比率が下がる場所はフル見本から短い見本に"
+        "削った段階にすでにあり、2文から1文の間では下がらないことが書かれている。"
+    )
+    (OUT / "one-sentence-sample-lineage.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    two_days_back_receptacle_hit_and_miss_chart()
-    two_days_back_wording_shift_example_chart()
+    one_sentence_sample_ending_rate_chart()
+    one_sentence_sample_lineage_chart()

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="378" viewBox="0 0 720 378" role="img" aria-label="見本の長さを7〜9文のフル見本から2文、1文と削っていったときの、文末パターンの再現比率を示す横棒グラフ。フル見本に単純に書かせた比率は87%（先行記事）。2文見本に単純に書かせた比率は29%（先行記事）、1文見本に単純に書かせた比率も29%（今回）で同じだった。2文見本に比率を数字で指定した比率は73%（先行記事）、1文見本に比率を数字で指定した比率も73%（今回）で同じだった。下の枠には、単純版は見本を2文から1文に削っても29%のまま変わらなかったこと、比率指定版も73%のまま変わらなかったこと、比率が下がる場所はフル見本から短い見本に削った段階にすでにあり、2文から1文の間では下がらないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="378"/>
+<text class="t-strong" x="18" y="26">見本を2文から1文に削っても、比率はもう下がらなかった</text>
+<text class="t-sm" x="18" y="45">犬・万年筆2種の合計（件数を足し上げた比率）。フル見本2026-10-14・2文見本2026-10-20・1文見本2026-11-01の実測。</text>
+<text class="t-sm" x="18" y="64">単純版は素朴に見本を渡して書かせた比率、比率指定版は「8文中6〜7文」のように数字を足した比率。</text>
+<path class="line" d="M300.0 110 L300.0 262" stroke-dasharray="2 4"/>
+<text class="t-xs" x="300.0" y="104" text-anchor="middle">0%</text>
+<path class="line" d="M390.0 110 L390.0 262" stroke-dasharray="2 4"/>
+<text class="t-xs" x="390.0" y="104" text-anchor="middle">25%</text>
+<path class="line" d="M480.0 110 L480.0 262" stroke-dasharray="2 4"/>
+<text class="t-xs" x="480.0" y="104" text-anchor="middle">50%</text>
+<path class="line" d="M570.0 110 L570.0 262" stroke-dasharray="2 4"/>
+<text class="t-xs" x="570.0" y="104" text-anchor="middle">75%</text>
+<path class="line" d="M660.0 110 L660.0 262" stroke-dasharray="2 4"/>
+<text class="t-xs" x="660.0" y="104" text-anchor="middle">100%</text>
+<text class="t-sm" x="18" y="130">フル見本（7〜9文）・単純（先行記事）</text>
+<rect class="bar-old" x="300" y="117" width="313.2" height="18" rx="3"/>
+<text class="t-sm" x="621.2" y="130">87%</text>
+<text class="t-sm" x="18" y="160">2文見本・単純（先行記事）</text>
+<rect class="bar-old" x="300" y="147" width="104.4" height="18" rx="3"/>
+<text class="t-sm" x="412.4" y="160">29%</text>
+<text class="t-sm" x="18" y="190">1文見本・単純（今回）</text>
+<rect class="bar-new" x="300" y="177" width="104.4" height="18" rx="3"/>
+<text class="t-sm" x="412.4" y="190">29%</text>
+<text class="t-sm" x="18" y="220">2文見本＋比率指定（先行記事）</text>
+<rect class="bar-old" x="300" y="207" width="262.8" height="18" rx="3"/>
+<text class="t-sm" x="570.8" y="220">73%</text>
+<text class="t-sm" x="18" y="250">1文見本＋比率指定（今回）</text>
+<rect class="bar-new" x="300" y="237" width="262.8" height="18" rx="3"/>
+<text class="t-sm" x="570.8" y="250">73%</text>
+<rect class="box-accent" x="18" y="276" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="296">📌 単純に書かせた比率は、見本を2文→1文に削っても29%のまま変わらなかった。</text>
+<text class="t-accent" x="34" y="314">📌 比率を数字で指定した場合も、2文→1文で73%のまま変わらなかった。</text>
+<text class="t-accent" x="34" y="332">⚠️ 下がる場所は「フル見本→短い見本」の間にすでにあり、2文→1文では下がらない。</text>
+</svg>
