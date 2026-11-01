@@ -39,7 +39,7 @@ cost: 無料
 
 <mark class="warn">発注者の原稿や実在の人物が書いた文章は、そのまま貼らないでください。</mark>この記事は架空の下書きを使っています。実在の人物・団体とは関係ありません。
 
-この記事は[前の記事](/recipes/rewrite-clears-sentence-ending-repeats/)・[その続編](/recipes/other-endings-and-longer-runs-still-clear/)の続きです。前の2本は、1本の下書きに仕込む文末の連続を1種類（最大6回）だけに限って試していました。今回は2種類の文末パターンを、同じ下書きの別々の箇所に仕込みました。
+この記事は[最初の記事](/recipes/rewrite-clears-sentence-ending-repeats/)・[前の記事](/recipes/other-endings-and-longer-runs-still-clear/)の続きです。前の2本は、1本の下書きに仕込む文末の連続を1種類（最大6回）だけに限って試していました。今回は2種類の文末パターンを、同じ下書きの別々の箇所に仕込みました。
 
 ## AIへの頼み方 {: .ask }
 
