@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-02T19:07:19+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add GA methods for analytics, spend limits and RBAC api: add named beta types for unified metrics and RBAC delete responses api: add shared analytics order and increase request actor ty…",
+      "title": "v2.4.0",
+      "uid": "d4f4c50ad2a45764",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.4.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-02T17:45:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Animated carousel of images from AI posts in October",
+      "summary_ja": "2026年10月に最新AIニュースが発表。\n過去の投稿からの画像が使われ、\nアニメーション形式で公開されました。",
+      "summary_source": "gemini",
+      "title": "The latest AI news we announced in October 2026",
+      "uid": "aab73a7c09275299",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-11-02T16:14:58.493755+00:00",
       "importance": "major",
       "label": "OpenAI News",
@@ -12,6 +38,34 @@
       "title": "Introducing the Grid Protectors Program",
       "uid": "c94727ba238fc723",
       "url": "https://openai.com/index/grid-protectors-program",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-02T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+      "summary_ja": "AIの新たな評価基準「LifeVal」が導入。\nAIが日常生活の課題解決に役立つかを測定。\n育児、家計管理、行政手続きなどを評価対象。",
+      "summary_source": "gemini",
+      "title": "LifeVal",
+      "uid": "e003527d8b4c8897",
+      "url": "https://openai.com/index/lifeval",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-02T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Qodo brings company knowledge and coding standards into Codex, helping developers catch P0 issues across repositories before opening a pull request.",
+      "summary_ja": "QodoがAIコードレビューに文脈情報を追加。\n自社知識や規約をCodexに組み込み開発者を支援。\n変更依頼前にコード保管場所全体で重大な問題を発見。",
+      "summary_source": "gemini",
+      "title": "Qodo builds context into AI code review with Codex",
+      "uid": "e43e7d6dd9b2ee86",
+      "url": "https://openai.com/index/qodo-codex-plugin",
       "vendor": "OpenAI"
     },
     {
@@ -5805,46 +5859,6 @@
       "uid": "a6760b940fd45ef8",
       "url": "https://openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T23:27:29.115493+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-04T22:39:55+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session…",
-      "title": "v2.1.222",
-      "uid": "23894ac3cc20aaef",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-04T21:38:59.013970+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-04T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
-      "summary_ja": "OpenAIが第三者評価での問題を説明\nサイバーセキュリティ評価で起きた問題に対応\nモデルのテスト評価を強化する新しい対策を発表",
-      "summary_source": "gemini",
-      "title": "Third-party cyber evaluations involving OpenAI models",
-      "uid": "79a297680f147c41",
-      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-04T18:05:22.407010+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-04T17:02:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Mariano-Florentino (Tino) Cuéllar will join Anthropic as its first Chief Global Affairs Officer.",
-      "summary_ja": "Anthropic社に初の役職者が就任しました。\nマリアノ・クエジャル氏がChief Global Affairs Officerに。",
-      "summary_source": "gemini",
-      "title": "Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer",
-      "uid": "090649ee691179b9",
-      "url": "https://www.anthropic.com/news/tino-cuellar",
-      "vendor": "Anthropic"
     }
   ]
 }

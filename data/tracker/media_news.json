@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-02T23:20:20+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは、証券取引委員会（SEC）にIPOに向けた登録届出書の修正版を提出した。第3四半期の売上高は前年同期比約12.3倍の約169億ドルに拡大した一方、営業損益は赤字に転落。また、AI計算資源やインフラに関する将来の支出約束額が約8954億ドルに上ることも明らかにした。",
+      "title": "Anthropic、IPO申請書を修正　7?9月売上高は約170億ドル、インフラ契約額は約8954億ドル",
+      "uid": "8784114a6ac48771",
+      "url": "https://www.itmedia.co.jp/news/article/2611/03/2000002831/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-02T23:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ugoは11月2日、AIロボット「ugo mini G2」の生産をキヤノン電子に委託し、同社の美里事業所で10月より生産を開始したことを発表した。",
+      "title": "点検AIロボ「ugo mini G2」、キヤノン電子に生産委託。量産体制を強化",
+      "uid": "7688007a03752d60",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2153068.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-02T23:37:09.387614+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-02T22:07:56+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "半導体大手のMarvell Technologyは、光通信関連製品を手掛けるLumentum Holdingsを買収することで合意したと発表した。買収額は約1150億ドル。AIデータセンターで急増するデータ通信需要に対応するため、自社の半導体技術とLumentumの光通信技術を統合し、次世代AI接続技術の提供を目指す。",
+      "title": "Marvell、光通信技術のLumentumを約18兆円で買収　AIデータセンターの高速化に対応",
+      "uid": "217a31bdd1f5ecd4",
+      "url": "https://www.itmedia.co.jp/news/article/2611/03/2000002830/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-01T15:14:44.331142+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2363,42 +2399,6 @@
       "uid": "f1e506633557fac9",
       "url": "https://gigazine.net/news/20261027-microsoft-offers-buy-out-quarter-of-workforce/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-27T06:20:54.555843+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-27T05:10:30+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ReViaは、応援購入サービス「Makuake」にて、AI機能とUSBハブを組み合わせた「AI ONE UltraHub」の先行販売を10月24日に開始した。販売期間は11月29日まで。Makuakeでの応援購入価格は17,420円から。",
-      "title": "登録・課金不要でAI利用。AI搭載USBハブ「AI ONE UltraHub」",
-      "uid": "0363688b5ba64db3",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151490.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-27T06:20:54.555843+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-27T04:20:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "既報の通り、アップルは日本時間10月27日未明、iOS 27.2でAIアシスタント「Siri AI」の日本語版の提供を開始した。メッセージやメールから必要な情報を探し、文章の作成やアプリの操作まで頼める新しいSiriだ。",
-      "title": "「iOS 27.2」でついに日本語対応した「Siri AI」とは　15 Pro以降のiPhoneに対応",
-      "uid": "5ba20f123a479bbe",
-      "url": "https://japan.cnet.com/article/35254017/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-27T06:20:54.555843+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-27T04:16:49+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは10月27日、仕事の現場で使えるAI用語集「3行で深掘り！ 仕事で使えるAI単語帳」を発売した。",
-      "title": "インプレス、MCPやRAGなど実務直結の190語を厳選した「AI単語帳」",
-      "uid": "528dd75f2525a852",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151466.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
