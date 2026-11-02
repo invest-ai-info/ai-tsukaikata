@@ -577,8 +577,8 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/
-  - 2026-10-31 自動追記（major・Google DeepMind「Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration」）
+- [x] https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/
+  - →保管: ✅ **2026-11-02: 公開した** → `content/tools/gemini-robotics-er-2.md`
 - [ ] https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/
   - 2026-10-31 自動追記（major・Google DeepMind「We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control」）
 - [ ] https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
@@ -588,6 +588,34 @@
   - 2026-11-02 自動追記（minor・Google DeepMind「Speeding up planning decisions with AI」）
 
 ## 処理済み
+
+- https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/ → **公開済み** content/tools/gemini-robotics-er-2.md（2026-11-02・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/` へ到達（200）。
+    モデルカード（`deepmind.google/models/model-cards/gemini-robotics-er-2`）にも到達。図3枚
+    （`er2-price-deadline` / `er2-benchmarks` / `er2-vendor-price`）。出典9件すべて取得成功。
+    `check_numbers.py` は**18個すべて出典に存在**。pytest 786 passed・build 360ファイル。
+    `check_readability.py` は60字以上9%（目安15%以下、最長74字。初稿は15%だったため列挙文を
+    箇条書き・文分割で直してから公開）。
+  - 🆕 **価格は発表ページ・モデルカードのどちらにも書かれていなかった**。見つけたのは
+    `ai.google.dev/gemini-api/docs/pricing` ではなく **Vertex AI の料金ページ**
+    （`cloud.google.com/vertex-ai/generative-ai/pricing`）で、「Gemini ER 2.0」の行として
+    入力$1.00/出力$5.00（〜2026年12月31日）・入力$2.00/出力$10.00（2027年1月1日から）と
+    判明した。前のモデル（ER 1.6）の同種の価格は、現在の料金ページには載っておらず確認できなかった。
+  - 🚨 **`ai.google.dev/gemini-api/docs/pricing` が `aistudio.google.com` へ301転送するようになっており、
+    転送先が許可リストに無いため経路遮断（`CONNECT tunnel failed, response 403`）で読めなかった。**
+    これまでの記事（Argon・Carbon・3.7 Flash等）はこのURLを価格の一次情報として使ってきたため、
+    **次に Gemini のモデル価格を確認する担当は、まず `aistudio.google.com` が許可リストに
+    入っているか確認すること**。入っていなければ Vertex AI の料金ページ（上記）で代替できる場合がある。
+  - 📌 記事の芯＝**ER 2.0はロボットの「高レベルの頭脳」役の専用モデルで、OpenAI・Anthropicには
+    同種の製品が無い**（両社の公式モデル一覧で「robot」「robotics」を含む名前が0件であることを確認）。
+    単価だけの比較はできるが、**ER 2.0の標準価格（2027年以降・$2/$10）はGemini 4 Argonの導入価格と
+    1円も違わない**（偶然の一致で、発表に理由の説明は無い）。
+  - ⚠️ 進捗分類57.4%・瞬間検出91.3%・平均絶対誤差0.96秒・前世代比4倍はいずれも文章に書かれた数字として
+    採用したが、**ER 1.6自身の点数は数値として発表に書かれておらず**（「上回った」という記述のみ・
+    グラフのみ）、比較グラフの目盛りから読み取ることはせず「分からないこと」に明記した。
+  - ⚠️ コンテキストウィンドウ比較で、ER 2.0だけ一度に読める量が小さい（12.8万 vs 他社100万前後）。
+    モデルカードに「Gemini 3.5 Flash をもとにしている」と明記されているため、関係がありそうだが
+    公式の説明は無く、理由を推測せずに数字だけを書いた。
 
 - https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/ → **公開済み** content/tools/gemini-4-carbon.md（2026-10-29・公開）
   - `deepmind.google` → `blog.google` へ302転送・到達できた（要約させず、価格・提供範囲・ベンチマークの

@@ -40846,3 +40846,186 @@ def brand_tone_omit_name_risk_chart() -> None:
 if __name__ == "__main__":
     brand_tone_named_every_time_chart()
     brand_tone_omit_name_risk_chart()
+
+
+def er2_price_deadline_chart() -> None:
+    """Gemini Robotics ER 2の単価が、2027年1月1日に2倍になることを示す。
+
+    出典＝Vertex AI の料金ページ（cloud.google.com・2026-11-02確認）。
+    「Gemini ER 2.0」の行として掲載されている。
+    """
+    rows = [
+        ("導入価格（〜2026年12月31日）", 1, 5),
+        ("標準価格（2027年1月1日から）", 2, 10),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">ER 2.0の単価も、年明けに2倍になる</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。金額はVertex AIの公式料金ページの数字（100万トークンあたり）。</text>\n',
+        '<text class="t-sm" x="18" y="64">キャッシュ済み入力はどちらの期間も入力価格の10%（90%引き）。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ Gemini Enterprise Agent Platform経由はプライベートプレビューで、価格は別途。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 出典: Vertex AI 公式料金ページ（2026年11月2日確認）。</text>\n"
+    )
+    alt = (
+        "Gemini Robotics ER 2の単価を示した横棒グラフ。100万トークンあたりのドル。"
+        "導入価格（2026年12月31日まで）は入力1ドル・出力5ドル、"
+        "標準価格（2027年1月1日から）は入力2ドル・出力10ドルで、どちらも2倍になる。"
+        "キャッシュ済み入力はどちらの期間も入力価格の10%。"
+    )
+    (OUT / "er2-price-deadline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def er2_benchmarks_chart() -> None:
+    """Gemini Robotics ER 2が発表ページで挙げた、自社測定のみの点数2つ。
+
+    出典＝発表ページ（blog.google・2026-07-30）。いずれもGoogle自身の測定で、
+    前のモデル（ER 1.6）や他社モデルの同じ条件での点数は発表に数値として書かれていない。
+    """
+    rows = [
+        ("進捗の分類（5段階・Continuous progress classification）", 57.4, "動画の各場面が完了度0〜100%のどの段階かを当てる"),
+        ("決定的な瞬間の検出（Precision moment-finding）", 91.3, "注ぐのを止めるタイミング等、重要な瞬間のフレームを当てる"),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, pitch = 100, 20, 48
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">発表ページが挙げた点数は、どれもGoogle自身の測定</text>\n',
+        '<text class="t-sm" x="18" y="45">「前のモデル（ER 1.6）を上回った」とは書かれているが、ER 1.6自身の点数は数値として書かれていない。</text>\n',
+        '<text class="t-sm" x="18" y="64">他社にロボット向けの同種モデルは無く、横並びの比較はできない。</text>\n',
+    ]
+    for index, (name, value, note) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 5}">'
+            f"{value:g}%</text>\n"
+        )
+        parts.append(f'<text class="t-xs" x="18" y="{y + bar_h + 12}">{_esc(note)}</text>\n')
+
+    height = top + len(rows) * pitch + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ 決定的な瞬間の検出は、平均絶対誤差0.96秒・前世代比4倍の速さとも発表されている（別の単位のため棒には含めない）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 8}">'
+        "※ 比較相手（前のモデル・他社）の同条件の点数は発表に数値として無い。鵜呑みにしない。</text>\n"
+    )
+    alt = (
+        "Gemini Robotics ER 2の発表ページが挙げた点数2つを並べた横棒グラフ。"
+        "進捗の分類（5段階に完了度を当てる）は57.4%、"
+        "決定的な瞬間の検出（重要な瞬間のフレームを当てる）は91.3%。"
+        "いずれもGoogle自身の測定で、前のモデルや他社モデルを同じ条件で測った数値は発表に無い。"
+    )
+    (OUT / "er2-benchmarks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def er2_vendor_price_chart() -> None:
+    """Gemini Robotics ER 2（標準価格）と、各社の現時点の最上位モデルの単価を比べる。
+
+    出典＝ER 2はVertex AI公式料金ページ、Claude Opus 5.5は platform.claude.com、
+    GPT-6 Astraは developers.openai.com（いずれも2026-11-02確認）。
+    """
+    rows = [
+        ("Gemini Robotics ER 2（標準価格）", 2, 10),
+        ("Gemini 4 Argon（導入価格・同額）", 2, 10),
+        ("Claude Opus 5.5（Anthropic最上位）", 4, 20),
+        ("GPT-6 Astra（OpenAI最上位・短い入力）", 10, 50),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">ER 2の標準価格は、Argonの導入価格と1円も違わない</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。単価は各社の公式ページの数字（100万トークンあたり）。</text>\n',
+        '<text class="t-sm" x="18" y="64">2026年11月2日に確認。OpenAI・Anthropicにロボット向けの同種モデルは無いため、単価だけの比較。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 48
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 28}">'
+        "※ ER 2はロボット制御の「頭脳」役で、チャット向けの他社モデルとは使い道が違う。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 10}">'
+        "※ 出典: ER 2はVertex AI公式料金ページ、他2社は各社の公式料金ページ。</text>\n"
+    )
+    alt = (
+        "Gemini Robotics ER 2（標準価格・入力2ドル出力10ドル）、"
+        "Gemini 4 Argon（導入価格・入力2ドル出力10ドルで同額）、"
+        "Claude Opus 5.5（入力4ドル出力20ドル）、"
+        "GPT-6 Astra（短い入力・入力10ドル出力50ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。OpenAIとAnthropicにはロボット向けの同種モデルが無い。"
+    )
+    (OUT / "er2-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    er2_price_deadline_chart()
+    er2_benchmarks_chart()
+    er2_vendor_price_chart()
