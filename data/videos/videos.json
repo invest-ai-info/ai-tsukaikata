@@ -5947,91 +5947,196 @@
    "first_seen": "2026-11-01T22:22:08.984645+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "-0RJnk__4cE",
+   "title": "【ガチ失敗】プレゼンで動画が流れない…スライド事故を防ぐ「爆速GIF変換ツール」作りました【無料配布】",
+   "url": "https://www.youtube.com/watch?v=-0RJnk__4cE",
+   "published": "2026-11-02T09:00:03+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "Google主催の「Agentic AI Summit '26 Fall」に登壇しました！そこで出くわした「動画再生エラー事件」をきっかけにとあるツールを開発！\n\nGoogleスライドでのプレゼントラブルを防ぐ自作ツール「Media Convert Studio」を実演解説＆無料公開します！画面録画や動画ファイルから、簡単なカット編集・解像度＆フレームレート調整を行い、GIF動画を一発作成！\n\nブラウザ完結・サーバー送信なしでご利用いただけるので、セキュリティ面も安全！ツールは概要欄にございますGitHubリンクからぜひお試しください！✨\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:28 「Agentic AI Summit '26 Fall」に登壇しました！\n02:16 「GIF動画」とは\n03:15 GIF動画の弱点\n04:29 「Media Convert Studio」\n07:26 スライドにGIF動画を挿入する\n08:34 まとめ\n10:35 ゆるトーク\n\n【Media Convert Studio】\nhttps://kotakahashi-4u.github.io/media-convert-studio/\n\n【関連動画：足立区が挑む自治体 DX：議会答弁 AI エージェントと Gemini が変える行政の未来】\nhttps://cloudonair.withgoogle.com/events/agentic-ai-summit-26-fall/watch?talk=26q4-d1t2-session1\n\n※当日、会場やオンラインでご視聴いただき、ありがとうございました✨\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-11-02T21:54:47.234974+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "7crERNYKsNs",
+   "title": "【無料でも超高性能】Canva初の独自画像生成AIモデル「Canva Craft(キャンバ・クラフト)」徹底解説！ ～性能・使い方・マジックレイヤーを使った活用事例～",
+   "url": "https://www.youtube.com/watch?v=7crERNYKsNs",
+   "published": "2026-11-02T09:04:38+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-02T21:54:47.234974+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Canva初の独自画像生成AIモデル「Canva Craft」が公開され、構図設計と生成の2段階方式で高い日本語描画精度を実現していると説明している。",
+    "Canva内の「ドリームラボ」から無料で利用でき、「マジックレイヤー」により生成後の文字や要素を直接編集できると解説している。",
+    "今後の展開としてAPI提供やMCP対応、高速モデルの開発、画像編集に特化したAIモデル「Canva Brush」の公開を紹介している。"
+   ],
+   "for_whom": "Canvaで日本語入りのデザイン画像やインフォグラフィックを効率的に作成したい人",
+   "caution": "無料枠でも利用可能ですが、毎月のAI利用量に上限が設定されているため、頻繁に生成・編集を行う場合は有料プランが必要になる点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-02T21:54:47.234974+00:00"
+  },
+  {
+   "video_id": "Amm9ySSET4c",
+   "title": "Coinbase on OpenAI Private Intelligence",
+   "url": "https://www.youtube.com/watch?v=Amm9ySSET4c",
+   "published": "2026-11-02T16:59:21+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-02T21:54:47.234974+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "CoinbaseのCTOが、全社員が最新のOpenAIモデルへアクセスできる環境を整備していると述べている。",
+    "強固なセキュリティやゼロデータ保持により、自社データを保護・管理できる点が信頼の理由だと説明している。",
+    "適切なガードレールを設けてAI自動化を進めた結果、開発速度が3〜4倍に加速したと語っている。"
+   ],
+   "for_whom": "社内への生成AI導入でデータセキュリティや業務効率化事例を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-02T21:54:47.234974+00:00"
+  },
+  {
+   "video_id": "0Kw6_DTZPrY",
+   "title": "‘We may release models we can’t control’: Amodei, Altman … and Gemini Carbon",
+   "url": "https://www.youtube.com/watch?v=0Kw6_DTZPrY",
+   "published": "2026-11-02T17:02:16+00:00",
+   "channel_key": "ai-explained",
+   "channel_name": "AI Explained",
+   "default_category": "news",
+   "first_seen": "2026-11-02T21:54:47.234974+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "AnthropicのIPO文書やCEO発言を基に、挙動を十分に検証できないモデルの展開可能性や安全方針の変更を解説している。",
+    "OpenAIのアルトマン氏の発言などを通じ、サンドボックスによる制御の限界とアライメントへの依存度を説明している。",
+    "GoogleのGemini 4 Carbonの高性能ぶりと、人間がAIの内部規則を完全理解できない構造的理由を分析している。"
+   ],
+   "for_whom": "フロンティアAI各社の最新安全方針やモデル開発動向を追いたい会社員向け",
+   "caution": "概要欄で有料コミュニティ（Patreon）への誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-02T21:54:47.234974+00:00"
+  },
+  {
+   "video_id": "67BmkptgTms",
+   "title": "The $1M+ Solo Grok Bot Business (Full Course)",
+   "url": "https://www.youtube.com/watch?v=67BmkptgTms",
+   "published": "2026-11-02T19:15:08+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-11-02T21:54:47.234974+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Nick氏は、電話やメール、仮想PCを持つ業務特化型AIエージェントを企業向けに構築・販売するビジネスを提案している。",
+    "開発手法として、事前リサーチ後にPaper等で画面を設計し、API仕様を読み込ませて一括実装する手順を解説している。",
+    "中小企業向けに初期2万5000ドル、月額保守3000ドルでシステムを納品・維持する販売モデルを紹介している。"
+   ],
+   "for_whom": "AIエージェントを開発し、中小企業向けに導入支援や受託販売を行いたい人",
+   "caution": "初期2万5000ドルや月額3000ドルという高額な受注価格が提示されていますが、実際の販売実績や売上明細などの客観的な根拠は示されていません。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-02T21:54:47.234974+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-01T22:22:08.984645+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-02T06:45:25.877976+00:00",
+   "last_ok": "2026-11-02T21:54:47.234974+00:00",
    "fail_streak": 0
   }
  }
