@@ -40508,3 +40508,177 @@ def pr_x_verdict_split_example_chart() -> None:
 if __name__ == "__main__":
     pr_format_generalization_hit_and_miss_chart()
     pr_x_verdict_split_example_chart()
+
+
+def seen_list_order_does_not_matter_results_chart() -> None:
+    """既読リストの並び順を3通り（元の順・シャッフル・近い順）に変えて渡した結果の表。
+
+    実測（2026-11-02・claude --print --tools "" での独立セッション）。
+    架空の社内掲示板・ナレッジベース（各60件）・問い合わせ記録（300件）の3系列、
+    各条件2回転＝計18回。見逃しの分母＝セッション数×仕込み3件。誤検知は全セッションで0件。
+    """
+    rows = [
+        ("元の順\n(時系列のまま・6回)", "0/18"),
+        ("近い順\n(一部だけ入れ替え・6回)", "0/18"),
+        ("シャッフル\n(全くのランダム・6回)", "0/18"),
+    ]
+    total_row = ("合計(18回)", "0/54", "0件")
+
+    label_x, label_w = 18, 190
+    col_w, col_gap = 118, 14
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(2)]
+    head_y = 130
+    row_h, row_gap = 40, 12
+    row_y = [head_y + 26 + i * (row_h + row_gap) for i in range(len(rows))]
+    heads = ["見逃し", "誤検知したID数"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "既読リストの並び順を変えても、見逃し・誤検知は0のまま</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ既読ID一覧を、①時系列のまま②一部だけ入れ替え③全くのランダム、の3通りの並び順で渡した。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "投稿一覧（60件×2本・300件×1本）と仕込んだ新着3件は、どの条件でも変えていない。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "指示文は「既読リストに無い項目を新着として列挙」のまま。材料・条件を変えても1字も変えていない。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "見逃しの分母＝セッション数×仕込み3件。誤検知は無関係な既読済みIDを新着と答えた回数。</text>\n",
+    ]
+    for i, name in enumerate(heads):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.0f}" y="{head_y}" '
+            f'text-anchor="middle">{_esc(name)}</text>\n'
+        )
+    for r, (label, miss_value) in enumerate(rows):
+        y = row_y[r]
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t-sm" if i else "t"}" x="{label_x}" '
+                f'y="{y + 15 + i * 14}" style="font-size:12px">{_esc(line)}</text>\n'
+            )
+        parts.append(
+            f'<rect class="box-good" x="{col_x[0]}" y="{y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{col_x[0] + col_w / 2:.0f}" y="{y + row_h / 2 + 5:.0f}" '
+            f'text-anchor="middle" style="font-size:14px">{_esc(miss_value)}</text>\n'
+        )
+        parts.append(
+            f'<rect class="box-good" x="{col_x[1]}" y="{y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-good" x="{col_x[1] + col_w / 2:.0f}" y="{y + row_h / 2 + 5:.0f}" '
+            f'text-anchor="middle" style="font-size:14px">0件</text>\n'
+        )
+
+    total_y = row_y[-1] + row_h + row_gap + 8
+    parts.append(
+        f'<text class="t-strong" x="{label_x}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'style="font-size:12.5px">{_esc(total_row[0])}</text>\n'
+    )
+    parts.append(
+        f'<rect class="box-good" x="{col_x[0]}" y="{total_y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="{col_x[0] + col_w / 2:.0f}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'text-anchor="middle" style="font-size:14.5px">{_esc(total_row[1])}</text>\n'
+    )
+    parts.append(
+        f'<rect class="box-good" x="{col_x[1]}" y="{total_y}" width="{col_w}" height="{row_h}" rx="4"/>\n'
+    )
+    parts.append(
+        f'<text class="t-good" x="{col_x[1] + col_w / 2:.0f}" y="{total_y + row_h / 2 + 5:.0f}" '
+        f'text-anchor="middle" style="font-size:14.5px">{_esc(total_row[2])}</text>\n'
+    )
+
+    height = total_y + row_h + 30
+    alt = (
+        "既読リストの並び順を3通りに変えたときの見逃し・誤検知を示す表。行は元の順(時系列のまま・6回)、"
+        "近い順(一部だけ入れ替え・6回)、シャッフル(全くのランダム・6回)。列は見逃しと誤検知したID数。"
+        "3行とも0/18・0件。合計18回・仕込み54件中、見逃しは0/54、誤検知は0件。"
+    )
+    (OUT / "seen-list-order-does-not-matter-results.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def seen_list_order_does_not_matter_similarity_chart() -> None:
+    """3つの並び順条件が、投稿一覧の順とどれだけ一致していたかを示す横棒グラフ。
+
+    実測（2026-11-02）。一致度＝既読ID一覧の各位置のIDが、時系列順の一覧と
+    同じ位置に来ていた割合。系列A・B・Cの3本の平均。シャッフルは3.5%・5.3%・0.7%
+    （平均3.2%）、近い順は40.4%・29.8%・31.3%（平均33.8%）、元の順は定義上100%。
+    """
+    axis_x, axis_w = 190, 440
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("元の順\n(時系列のまま)", 100.0, "bar-old"),
+        ("近い順\n(一部だけ入れ替え)", 33.8, "bar-new"),
+        ("シャッフル\n(全くのランダム)", 3.2, "bar-new"),
+    ]
+    top = 150
+    track_h, track_gap = 44, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "並びの一致度は3%から100%まで大きく違うが、見逃しはどれも0件</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "一致度＝既読ID一覧の各位置のIDが、時系列順(投稿一覧と同じ順)の一覧と同じ位置に来ていた割合。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "系列A・B・C（計3本）の平均値。シャッフルは一致度3.2%とほぼ無関係な並びだった。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "それでも新着の見逃し・誤検知は、元の順・近い順・シャッフルのどの条件も0/18だった（上の表）。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 22
+    for label, pct, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 6 + i * 14:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{axis_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = px(pct) - axis_x
+        parts.append(
+            f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{pct:.1f}%</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 30
+    alt = (
+        "既読リストの並び順3条件が、投稿一覧の時系列順とどれだけ一致していたかを示す横棒グラフ。"
+        "元の順は定義上100%。近い順(一部だけ入れ替え)は平均33.8%。シャッフル(全くのランダム)は"
+        "平均3.2%。一致度がここまで違っても、新着の見逃し・誤検知はどの条件も0/18だった。"
+    )
+    (OUT / "seen-list-order-does-not-matter-similarity.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    seen_list_order_does_not_matter_results_chart()
+    seen_list_order_does_not_matter_similarity_chart()

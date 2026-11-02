@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="390" viewBox="0 0 720 390" role="img" aria-label="既読リストの並び順を3通りに変えたときの見逃し・誤検知を示す表。行は元の順(時系列のまま・6回)、近い順(一部だけ入れ替え・6回)、シャッフル(全くのランダム・6回)。列は見逃しと誤検知したID数。3行とも0/18・0件。合計18回・仕込み54件中、見逃しは0/54、誤検知は0件。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="390"/>
+<text class="t-strong" x="18" y="26">既読リストの並び順を変えても、見逃し・誤検知は0のまま</text>
+<text class="t-sm" x="18" y="45">同じ既読ID一覧を、①時系列のまま②一部だけ入れ替え③全くのランダム、の3通りの並び順で渡した。</text>
+<text class="t-sm" x="18" y="64">投稿一覧（60件×2本・300件×1本）と仕込んだ新着3件は、どの条件でも変えていない。</text>
+<text class="t-sm" x="18" y="83">指示文は「既読リストに無い項目を新着として列挙」のまま。材料・条件を変えても1字も変えていない。</text>
+<text class="t-sm" x="18" y="102">見逃しの分母＝セッション数×仕込み3件。誤検知は無関係な既読済みIDを新着と答えた回数。</text>
+<text class="t-accent" x="281" y="130" text-anchor="middle">見逃し</text>
+<text class="t-accent" x="413" y="130" text-anchor="middle">誤検知したID数</text>
+<text class="t" x="18" y="171" style="font-size:12px">元の順</text>
+<text class="t-sm" x="18" y="185" style="font-size:12px">(時系列のまま・6回)</text>
+<rect class="box-good" x="222" y="156" width="118" height="40" rx="4"/>
+<text class="t-good" x="281" y="181" text-anchor="middle" style="font-size:14px">0/18</text>
+<rect class="box-good" x="354" y="156" width="118" height="40" rx="4"/>
+<text class="t-good" x="413" y="181" text-anchor="middle" style="font-size:14px">0件</text>
+<text class="t" x="18" y="223" style="font-size:12px">近い順</text>
+<text class="t-sm" x="18" y="237" style="font-size:12px">(一部だけ入れ替え・6回)</text>
+<rect class="box-good" x="222" y="208" width="118" height="40" rx="4"/>
+<text class="t-good" x="281" y="233" text-anchor="middle" style="font-size:14px">0/18</text>
+<rect class="box-good" x="354" y="208" width="118" height="40" rx="4"/>
+<text class="t-good" x="413" y="233" text-anchor="middle" style="font-size:14px">0件</text>
+<text class="t" x="18" y="275" style="font-size:12px">シャッフル</text>
+<text class="t-sm" x="18" y="289" style="font-size:12px">(全くのランダム・6回)</text>
+<rect class="box-good" x="222" y="260" width="118" height="40" rx="4"/>
+<text class="t-good" x="281" y="285" text-anchor="middle" style="font-size:14px">0/18</text>
+<rect class="box-good" x="354" y="260" width="118" height="40" rx="4"/>
+<text class="t-good" x="413" y="285" text-anchor="middle" style="font-size:14px">0件</text>
+<text class="t-strong" x="18" y="345" style="font-size:12.5px">合計(18回)</text>
+<rect class="box-good" x="222" y="320" width="118" height="40" rx="4"/>
+<text class="t-good" x="281" y="345" text-anchor="middle" style="font-size:14.5px">0/54</text>
+<rect class="box-good" x="354" y="320" width="118" height="40" rx="4"/>
+<text class="t-good" x="413" y="345" text-anchor="middle" style="font-size:14.5px">0件</text>
+</svg>
