@@ -40682,3 +40682,167 @@ def seen_list_order_does_not_matter_similarity_chart() -> None:
 if __name__ == "__main__":
     seen_list_order_does_not_matter_results_chart()
     seen_list_order_does_not_matter_similarity_chart()
+
+
+def brand_tone_named_every_time_chart() -> None:
+    """店名を書けば、同じ会話でも新しい会話でも混ざらなかった（実測16回）。
+
+    実測（2026-11-02）。架空の2ブランド（カジュアル・絵文字多用のアパレルEC／
+    敬語徹底・絵文字なしの和菓子店）のSNS投稿文を、A→B→A→Bの順で頼んだ。
+    「同じ会話で交互に依頼」はAgentツールで1つの会話を継続（2系統×4件=8件）、
+    「会話を分けて都度依頼」は毎回フレッシュなAgentに全文のブランドトーンを
+    渡し直した（2系統×4件=8件）。いずれも店名を毎回名指しした場合、
+    トーンが崩れた件数は両条件とも0/8だった。
+    """
+    axis_x, axis_w = 230, 400
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("同じ会話で交互に依頼\n(A→B→A→Bを1つの会話で)", 100.0, 8, "bar-in"),
+        ("会話を分けて都度依頼\n(毎回フレッシュな会話で)", 100.0, 8, "bar-out"),
+    ]
+    top = 150
+    track_h, track_gap = 46, 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "店名を毎回書けば、トーンが保たれた割合は16回とも100%</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の2ブランド（タメ口＋絵文字／敬語＋絵文字なし）に、A→B→A→Bの順で投稿文を依頼。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "どちらの頼み方でも、店名を名指しした8件は8件とも、指定したトーンのまま返った。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 24
+    for label, pct, count, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 8 + i * 15:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{axis_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = px(pct) - axis_x
+        parts.append(
+            f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{count}/8件</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 30
+    alt = (
+        "店名を毎回名指ししたときのトーン保持率を示す横棒グラフ。"
+        "同じ会話で2ブランドを交互に依頼した8件、会話を分けて都度依頼した8件のいずれも、"
+        "トーンが保たれた割合は100%（8/8件）。店名さえ書けば、同じ会話で複数クライアントを"
+        "扱ってもブランドトーンは混ざらなかった。"
+    )
+    (OUT / "brand-tone-named-every-time.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def brand_tone_omit_name_risk_chart() -> None:
+    """店名を省くと、確認するか無言で前のトーンを引き継ぐかが条件で変わる（実測4回）。
+
+    実測（2026-11-02）。2ブランドのトーンを渡したのと同じ会話で、店名も商品名も
+    書かずに「もう1件、新商品の入荷案内をお願いします」と頼んだ。
+    ふだんの頼み方（ガードなし）では2回中1回は確認を返したが、1回は確認せず、
+    直前に使っていたブランド（敬語側）のトーンのまま投稿文を作ってしまった。
+    ブランドトーンの指示に「店名が無ければ必ず確認して」の一文を足した版
+    （ガードあり）では、2回とも確認を返した。
+    """
+    axis_x, axis_w = 230, 400
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("ふだんの頼み方\n(ガードなし)", 50.0, "1/2回", "bar-old"),
+        ("「店名が無ければ必ず確認して」を足す\n(ガードあり)", 100.0, "2/2回", "bar-new"),
+    ]
+    top = 150
+    track_h, track_gap = 46, 34
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "店名を省いたとき、確認したのはガードなしで2回中1回だけ</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ会話で2ブランドのトーンを渡した後、店名も商品名も書かずに「もう1件」と頼んだ場合。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "ガードなしで確認しなかった1回は、直前に使っていた敬語トーンのまま投稿文を作ってしまった。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 24
+    for label, pct, count_label, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 8 + i * 15:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{axis_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = px(pct) - axis_x
+        parts.append(
+            f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">確認{count_label}</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 30
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ いずれもn=2と少数の実測です。この条件・この2回での結果として扱ってください。</text>\n"
+    )
+    height += 20
+    alt = (
+        "店名を省いたときに確認を返した割合を示す横棒グラフ。"
+        "ふだんの頼み方(ガードなし)は2回中1回(50%)だけ確認し、残り1回は確認せず"
+        "直前のブランドのトーンのまま投稿文を作った。"
+        "「店名が無ければ必ず確認して」という一文を足した版(ガードあり)は2回とも確認した(100%)。"
+    )
+    (OUT / "brand-tone-omit-name-risk.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    brand_tone_named_every_time_chart()
+    brand_tone_omit_name_risk_chart()
