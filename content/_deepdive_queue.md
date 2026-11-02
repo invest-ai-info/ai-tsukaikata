@@ -584,6 +584,9 @@
 - [ ] https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
   - 2026-10-31 自動追記（minor・Google DeepMind「Gemini Robotics 2 brings whole body intelligence to robots」）
 
+- [ ] https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/
+  - 2026-11-02 自動追記（minor・Google DeepMind「Speeding up planning decisions with AI」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/ → **公開済み** content/tools/gemini-4-carbon.md（2026-10-29・公開）

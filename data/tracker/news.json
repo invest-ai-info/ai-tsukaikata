@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-02T16:14:58.493755+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-02T15:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+      "summary_ja": "OpenAIが電力網保護の新プログラムを開始。\n電力会社と連携し、計算施設の電力安定化を支援。\n消費者の電気料金保護にも貢献する。",
+      "summary_source": "gemini",
+      "title": "Introducing the Grid Protectors Program",
+      "uid": "c94727ba238fc723",
+      "url": "https://openai.com/index/grid-protectors-program",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-02T06:15:12.027740+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",
@@ -25,6 +39,20 @@
       "uid": "2f9e7fc1a4c62e07",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.316",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-02T16:14:58.493755+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-10-30T14:18:30+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Google DeepMind and UK government work together to reduce planning assessment times",
+      "summary_ja": "Google DeepMindと英政府がAIで連携を開始。\n計画の審査時間短縮を目指す。",
+      "summary_source": "gemini",
+      "title": "Speeding up planning decisions with AI",
+      "uid": "76d7ea61db6f9662",
+      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+      "vendor": "Google DeepMind"
     },
     {
       "first_seen": "2026-10-30T19:29:09.349397+00:00",
@@ -5817,32 +5845,6 @@
       "uid": "090649ee691179b9",
       "url": "https://www.anthropic.com/news/tino-cuellar",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-05T03:36:38.501387+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-04T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Sakana AI、大和証券グループとの共同AIプロジェクトを本格展開フェーズへ移行　ウェルスマネジメント業務支援AIの開発を開始",
-      "uid": "e47b4c9b63e7b6ca",
-      "url": "/daiwa-shoken-full-scale/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-04T15:37:58.863476+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-04T13:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "July AI recap header",
-      "summary_ja": "AIに関する7月の新しい発表がありました。",
-      "summary_source": "gemini",
-      "title": "The latest AI news we announced in July 2026",
-      "uid": "042052bf2ede16ae",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/",
-      "vendor": "Google"
     }
   ]
 }
