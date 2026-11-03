@@ -648,6 +648,19 @@ def test_earn_research_missing_file_is_detected():
     assert "見つかりません" in message
 
 
+def test_earn_research_skip_day_note_counts_as_heartbeat():
+    # 🚨 2026-10-27 に実際に起きた誤報の回帰テスト。在庫十分でスキップした日は
+    # 見出し（### YYYY-MM-DD）を作らず「- →保管: YYYY-MM-DD …」の1行だけ
+    # 追記する（沈黙禁止＝0件の日も1行書く設計）。見出しだけ見ると、
+    # スキップが2日続くだけで「止まっている」と誤報した。
+    log = (
+        _log("24")
+        + "\n- →保管: 2026-08-25 在庫十分（未処理11件）のためスキップ\n"
+        + "\n- →保管: 2026-08-26 在庫十分（未処理10件）のためスキップ\n"
+    )
+    assert earn_research_heartbeat(log, date(2026, 8, 26)) is None
+
+
 def _money_body(checked):
     return (
         '<div class="money-note">金額の目安: 月1〜6万円\n'
