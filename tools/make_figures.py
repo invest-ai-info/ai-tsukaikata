@@ -41361,3 +41361,168 @@ def mixed_status_headline_miscount_chart() -> None:
 if __name__ == "__main__":
     mixed_status_not_misread_chart()
     mixed_status_headline_miscount_chart()
+
+
+def review_reply_specific_ask_leak_chart() -> None:
+    """「具体的に」と念押しすると、返信本文自体の個人情報漏えいが跳ね上がる図。
+
+    実測（2026-11-03）。架空の口コミ2種（寿司店・美容室。同伴者名・個室や座席の
+    番号・スタッフ実名を仕込み）に、返信文を4条件で作らせた。素朴に頼んだ6回は
+    返信本文自体の漏えいが2/6、「具体的に、心のこもった返信を」と頼んだ4回は
+    4/4に跳ね上がった。「個人情報には触れないでください」と一言足した6回と、
+    伏せる項目を名前で指定した4回は、どちらも返信本文の漏えいが0件だった。
+    """
+    axis_x, axis_w = 280, 350
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("素朴に頼む\n(ガードなし)", 33.3, "2/6回", "bar-old"),
+        ("「具体的に、心のこもった返信を」\nと念押しする", 100.0, "4/4回", "box-bad"),
+        ("＋「個人情報には触れないで」", 0.0, "0/6回", "box-good"),
+        ("＋伏せる項目を名前で指定する", 0.0, "0/4回", "box-good"),
+    ]
+    top = 150
+    track_h, track_gap = 46, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「具体的に」と念押しすると、返信本文自体の個人情報漏えいが2/6→4/4に跳ね上がる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の口コミ2種（同伴者名・個室や座席の番号・スタッフ実名を仕込み）で、返信文を4条件・計20回実測。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「個人情報には触れないで」の一言、または伏せる項目を名前で指定すると、どちらも本文の漏えいは0件。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 24
+    for label, pct, count_label, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 8 + i * 15:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{axis_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = max(px(pct) - axis_x, 3 if pct > 0 else 0)
+        if bar_w:
+            parts.append(
+                f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+            )
+        tcls = "t-bad" if cls == "box-bad" else ("t-good" if cls == "box-good" else "t")
+        parts.append(
+            f'<text class="{tcls}" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{count_label}</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 24
+    alt = (
+        "返信本文自体に個人情報相当の文字列が漏れた割合を条件別に示す横棒グラフ。"
+        "素朴に頼んだ場合は6回中2回(33%)で漏れた。「具体的に、心のこもった返信を」と"
+        "念押しした場合は4回中4回(100%)すべてで漏れた。「個人情報には触れないでください」"
+        "という一言を足した場合と、伏せる項目を名前で指定した場合は、どちらも漏れが0件だった。"
+    )
+    (OUT / "review-reply-specific-ask-leak.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def review_reply_note_leak_chart() -> None:
+    """返信の下に自動で付く「ポイント」説明欄のほうで、名前が戻ってくる図。
+
+    実測（2026-11-03）。素朴に頼んだ6回は全部に説明欄が付き、4回はそこに
+    伏せたはずの同伴者名・個室や座席の番号・スタッフ実名がそのまま書かれていた。
+    「個人情報には触れないでください」を足した6回は、説明欄は付いても漏えいは
+    0件（「お子様のお名前」のように一般化された）。伏せる項目を名前で指定した
+    4回は、2回は説明欄自体が付かず、付いた2回も漏えいは0件だった。
+    """
+    axis_x, axis_w = 280, 350
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("素朴に頼む\n(説明欄は6回とも付く)", 66.7, "4/6回", "box-bad"),
+        ("＋「個人情報には触れないで」\n(説明欄は6回とも付く)", 0.0, "0/6回", "box-good"),
+        ("＋伏せる項目を名前で指定する\n(説明欄は2回しか付かない)", 0.0, "0/4回", "box-good"),
+    ]
+    top = 150
+    track_h, track_gap = 48, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "素朴に頼むと、返信の下の「説明欄」に名前が戻ってくる（6回中4回）</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "AIは返信のあとに「ここがポイントです」という説明を自動で付けることが多く、そこに伏せた名前を再び書く。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "返信案をまるごとコピーすると、本文は安全でも説明欄ごと公開されてしまう。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 24
+    for label, pct, count_label, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 11 + i * 15:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{axis_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = max(px(pct) - axis_x, 3 if pct > 0 else 0)
+        if bar_w:
+            parts.append(
+                f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+            )
+        tcls = "t-bad" if cls == "box-bad" else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{count_label}</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 24
+    alt = (
+        "返信のあとに自動で付く説明欄に個人情報が漏れた割合を条件別に示す横棒グラフ。"
+        "素朴に頼んだ場合は6回とも説明欄が付き、そのうち4回(67%)に伏せたはずの"
+        "同伴者名・個室や座席の番号・スタッフ実名がそのまま書かれていた。"
+        "「個人情報には触れないでください」を足した場合は6回とも説明欄は付いたが漏えいは0件。"
+        "伏せる項目を名前で指定した場合は4回中2回は説明欄自体が付かず、付いた2回も漏えいは0件だった。"
+    )
+    (OUT / "review-reply-note-leak.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    review_reply_specific_ask_leak_chart()
+    review_reply_note_leak_chart()
