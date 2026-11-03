@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-03T15:14:00.921955+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-11-03T15:16:22+00:00",
+      "source_id": "media-publickey",
+      "summary": "GitHubは、米サンフランシスコで10月28日と29日の2日間開催した年次イベント「GitHub Universe 2026」で、AIエージェント時代に対応した大幅な性能向上を実現することを明らかにしました。 性能向上はGitHubの基盤...",
+      "title": "GitHubが従来比180倍のスループット性能向上を実現へ、来年初頭に。AIエージェント時代に対応。GitHub Universe 2026",
+      "uid": "f55e5d21886d07a5",
+      "url": "https://www.publickey1.jp/blog/26/github180aigithub_universe_2026.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-03T15:14:00.921955+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-11-03T15:14:57+00:00",
+      "source_id": "media-publickey",
+      "summary": "GitHubは、米サンフランシスコで10月28日と29日の2日間開催した年次イベント「GitHub Universe 2026」で、より高度なコードレビューを行う新機能「Copilot Code Review Max」を発表しました。 Gi...",
+      "title": "GitHub、より高度なコードレビューを行う「Copilot Code Review Max」発表。GitHub Universe 2026",
+      "uid": "d53672065e9e0df4",
+      "url": "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-03T15:14:00.921955+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-03T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "複数のAIエージェントに作業を依頼する場合、途中の承認状態に気付かず作業が中断したり、作業が終了したことに気付かず次の指示待ちで放置されるなど作業効率が悪くなる場合があります。こうした無駄を無くすためAIエージェントをバックグラウンドで実行し、作業完了の通知や承認待ちの依頼をメールのような受信箱にまとめて管理できるほか、Windows・macOS・LinuxやローカルAIモデルにも対応する無料ア…",
+      "title": "バックグラウンドで動作するAIエージェント用のメールっぽい受信箱「Pizza Bot」、Windows/macOS/Linuxに対応したセルフホスト型のデスクトップアプリでローカルAIモデルなどあらゆるAIモデルに対応して通知によるアクション管理が可能",
+      "uid": "ba138a1c2be478fa",
+      "url": "https://gigazine.net/news/20261103-pizza-bot/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-03T06:53:53.984880+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "db5abb0d9c0170ac",
       "url": "https://gigazine.net/news/20261027-openai-three-new-discoveries/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-27T13:16:43.111805+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-27T06:55:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AnthropicがクラスA普通株式の新規株式公開(IPO)に関して、アメリカ証券取引委員会(SEC)に「フォームS-1」による登録届出書を提出したことを発表しました。 続きを読む...",
-      "title": "Anthropicが株式上場に向けてアメリカ証券委員会に登録届出書を提出、12兆円の赤字が事実であることが確定",
-      "uid": "b2088d9bd3f16684",
-      "url": "https://gigazine.net/news/20261027-anthropic-ipo-s1/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-27T13:16:43.111805+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-27T06:41:04+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、新しいAIモデル「GPT-6.1 Terra」を発表した。同モデルは現在、ChatGPT WorkおよびCodexのPlus、Pro、Enterprise、Eduユーザー向けに提供されている。開発者向けAPI（gpt-6.1-terra）の価格は、入力100万トークンあたり1ドル、キャッシュされた入力100万トークンあたり0.05ドル、出力100万トークンあたり5ドルに設定されて…",
-      "title": "OpenAI、視覚推論とPC操作に優れる「GPT-6.1 Terra」",
-      "uid": "ee07f8df2bf247b8",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151539.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-27T13:16:43.111805+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-27T06:33:52+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTドコモは10月27日、「睡眠の質推定AI」を開発し、法人向け「HealthTech（ヘルステック）基盤」の新たな機能として提供を開始したと発表した。",
-      "title": "スマホ利用状況から睡眠の質を推定。ドコモ、「睡眠の質推定AI」を開発",
-      "uid": "e5f27d3b3e540e89",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151525.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

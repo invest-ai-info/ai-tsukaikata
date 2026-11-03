@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-03T15:14:00.921955+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how Heimstaden uses OpenAI’s ChatGPT Enterprise and Codex to transform property management, cut costs, and empower employees across Europe.",
+      "summary_ja": "HeimstadenがAIで不動産管理を改善しました\nOpenAIのChatGPT EnterpriseとCodexを活用し\nコスト削減や従業員の能力向上を実現、欧州で展開",
+      "summary_source": "gemini",
+      "title": "Heimstaden is changing residential real estate management with AI",
+      "uid": "f9bae2615096d966",
+      "url": "https://openai.com/index/heimstaden",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-03T06:53:53.984880+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5898,34 +5912,6 @@
       "title": "From asking to doing: How the world is putting ChatGPT to work",
       "uid": "5a7f04ad895f9075",
       "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-10T17:11:21.526374+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-05T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
-      "summary_ja": "OpenAIの最先端AIがサイバー対策に活用される\n承認されたDaybreak提携企業が利用可能に\n顧客向けに監視下のサービスを提供開始",
-      "summary_source": "gemini",
-      "title": "Putting frontier cyber models in more trusted hands",
-      "uid": "afc8bc0e69c75b22",
-      "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-10T17:11:21.526374+00:00",
-      "importance": "major",
-      "label": "OpenAI News",
-      "published": "2026-08-05T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Frontier cyber models for defenders, from broad defensive work to advanced security research.",
-      "summary_ja": "サイバー対策AI「GPT-Daybreak」を発表\n防衛者向けに高度なAIモデルを提供\n幅広い対策から高度な研究までを支援",
-      "summary_source": "gemini",
-      "title": "Introducing GPT-Daybreak to accelerate defenders",
-      "uid": "a6760b940fd45ef8",
-      "url": "https://openai.com/index/accelerating-defenders-with-gpt-daybreak-legacy",
       "vendor": "OpenAI"
     }
   ]
