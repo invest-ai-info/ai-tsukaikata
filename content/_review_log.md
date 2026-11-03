@@ -850,3 +850,11 @@ frontmatter は渡していない**）。5本ともこのサイトの型（★�
 直したあとに確認＝**今日の🚩はどれも機械が赤くならない種類**（母数・番号の指し先・開示の有無・題の型）。
 ⚠️ **今日もコンテナが作り直されていて依存が消えていた**（`pip install --break-system-packages
 -r requirements.txt`・`python3` は 3.11 で入らないので `python3.13`）
+
+#### 運用の🚩（1件・記事とは関係ない）
+
+- 🚩 **このコンテナは detached HEAD でチェックアウトされていて、`git push -u origin main` が
+  「behind its remote counterpart」で弾かれた。**`git branch --show-current` が空＝ローカルの `main` 参照は
+  古い位置にあり、`-u origin main` はそちらを押そうとする。
+  **`git push origin HEAD:main` で通った**（手順6の `git log origin/main -1` で確認済み）。
+  📌 次の担当も同じ所で止まる。手順6は detached HEAD を前提に `HEAD:main` と書くほうが安全
