@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="362" viewBox="0 0 720 362" role="img" aria-label="行が無い日（欠番）を0件として平均や日付ごとの表に混ぜてしまった回数を、5つの頼み方で比べた横棒グラフ。架空の記録2本（18日分・21日分。どちらも行自体が無い日が3〜4日ある）に、素朴に聞く・実際より多い日数を宣言して聞く・行が無い日は除外するよう明示・欠番の日数も報告させる・日付ごとの表に起こす、の5パターンを材料2本×各2回＝20回試した。縦軸はどの版も0/4回で、20回とも行が無い日を0件に混ぜた回は無かった。実際より多い日数を宣言して聞いた版でも、記録の行数のほうを正しいとみなして割った。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="362"/>
+<text class="t-strong" x="18" y="24">行が無い日を0件に混ぜた回は、5つの頼み方のどれでも0回だった</text>
+<text class="t-sm" x="18" y="43">架空の記録2本（18日分・21日分。どちらも行自体が無い日が3〜4日ある）に、</text>
+<text class="t-sm" x="18" y="62">頼み方5パターン×材料2本×各2回＝20回試した。</text>
+<text class="t-xs" x="18" y="81">縦軸は、行が無い日を0件として平均や日付ごとの表に混ぜてしまった回数（真値0）。</text>
+<text class="t-xs" x="18" y="100">②は実際より多い日数（18日・21日）をプロンプトに書いて聞いた版。</text>
+<text class="t" x="18" y="143">① 素朴に聞く（日数は言わない）</text>
+<rect class="box-quiet" x="330.0" y="132" width="3.0" height="16" rx="3"/>
+<text class="t-good" x="642.0" y="143">0/4回</text>
+<text class="t" x="18" y="173">② 多い日数を宣言して聞く</text>
+<rect class="box-quiet" x="330.0" y="162" width="3.0" height="16" rx="3"/>
+<text class="t-good" x="642.0" y="173">0/4回</text>
+<text class="t" x="18" y="203">③ 行が無い日は除外と明示</text>
+<rect class="box-quiet" x="330.0" y="192" width="3.0" height="16" rx="3"/>
+<text class="t-good" x="642.0" y="203">0/4回</text>
+<text class="t" x="18" y="233">④ 欠番の日数も報告させる</text>
+<rect class="box-quiet" x="330.0" y="222" width="3.0" height="16" rx="3"/>
+<text class="t-good" x="642.0" y="233">0/4回</text>
+<text class="t" x="18" y="263">⑤ 日付ごとの表に起こす</text>
+<rect class="box-quiet" x="330.0" y="252" width="3.0" height="16" rx="3"/>
+<text class="t-good" x="642.0" y="263">0/4回</text>
+<path class="line" d="M330.0 124 L330.0 266" stroke-dasharray="4 3"/>
+<rect class="box-accent" x="18" y="298" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="318">⚠️ 「多い日数を宣言して聞く」版は、実際より多い日数（18日・21日）を</text>
+<text class="t-accent" x="34" y="336">プロンプトに書いても、記録の行数のほうを正しいとみなして割った。</text>
+</svg>

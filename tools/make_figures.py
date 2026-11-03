@@ -41028,4 +41028,170 @@ def er2_vendor_price_chart() -> None:
 if __name__ == "__main__":
     er2_price_deadline_chart()
     er2_benchmarks_chart()
+
+
+def missing_row_zero_count_chart() -> None:
+    """行自体が無い日を0件として数えた回数を、5つの頼み方で比べる図。
+
+    実測（2026-11-03）。架空の記録2本（18日分・21日分、どちらも行自体が
+    無い日が3〜4日ある）に、頼み方5パターン×材料2本×各2回＝20回試した。
+    縦軸は、行が無い日を0件として平均や日付ごとの表に混ぜてしまった回数
+    （真値0）。20回とも0回だった。
+    """
+    label_x = 18
+    plot_x = 330
+    plot_w = 300
+    axis_max = 4
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 30
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("① 素朴に聞く（日数は言わない）", 0),
+        ("② 多い日数を宣言して聞く", 0),
+        ("③ 行が無い日は除外と明示", 0),
+        ("④ 欠番の日数も報告させる", 0),
+        ("⑤ 日付ごとの表に起こす", 0),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "行が無い日を0件に混ぜた回は、5つの頼み方のどれでも0回だった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空の記録2本（18日分・21日分。どちらも行自体が無い日が3〜4日ある）に、</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "頼み方5パターン×材料2本×各2回＝20回試した。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "縦軸は、行が無い日を0件として平均や日付ごとの表に混ぜてしまった回数（真値0）。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "②は実際より多い日数（18日・21日）をプロンプトに書いて聞いた版。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3) if value else 3
+        bar_cls = "box-bad" if value else "box-quiet"
+        parts.append(
+            f'<rect class="{bar_cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if value else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/4回</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 18
+
+    notes = [
+        "⚠️ 「多い日数を宣言して聞く」版は、実際より多い日数（18日・21日）を",
+        "プロンプトに書いても、記録の行数のほうを正しいとみなして割った。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    alt = (
+        "行が無い日（欠番）を0件として平均や日付ごとの表に混ぜてしまった回数を、"
+        "5つの頼み方で比べた横棒グラフ。架空の記録2本（18日分・21日分。どちらも"
+        "行自体が無い日が3〜4日ある）に、素朴に聞く・実際より多い日数を宣言して聞く・"
+        "行が無い日は除外するよう明示・欠番の日数も報告させる・日付ごとの表に起こす、"
+        "の5パターンを材料2本×各2回＝20回試した。縦軸はどの版も0/4回で、20回とも"
+        "行が無い日を0件に混ぜた回は無かった。実際より多い日数を宣言して聞いた版でも、"
+        "記録の行数のほうを正しいとみなして割った。"
+    )
+    (OUT / "missing-row-does-not-count-as-zero.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def missing_row_average_gap_chart() -> None:
+    """欠番を0件として割っていたら、平均が実際にどれだけ低く出ていたかを示す図。
+
+    実測（2026-11-03）。材料Aは95件÷15日=6.33件/日（正しい）に対し、
+    欠番3日を0件として18日で割ると5.28件/日（83%）。材料Bは1,677件÷17日=
+    98.65件/日（正しい）に対し、欠番4日を0件として21日で割ると79.86件/日
+    （81%）。どちらも実測の20回では一度も出なかった参考値。
+    """
+    label_x = 18
+    plot_x = 300
+    plot_w = 330
+    axis_max = 100
+    scale = plot_w / axis_max
+    top = 110
+    row_h = 32
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("材料A・記録のある15日で割る", 100, "box-good"),
+        ("材料A・欠番を0件として18日で割る", 83, "box-bad"),
+        ("材料B・記録のある17日で割る", 100, "box-good"),
+        ("材料B・欠番を0件として21日で割る", 81, "box-bad"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "もし欠番を0件に混ぜていたら、平均は17〜19%低く出ていたはずだった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "正しい平均（記録のある日数で割った値）を100%としたときの、参考値の割合。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "実測でこの低い値が返ってきたことは一度もない（20回とも正しい割り方だった）。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value, cls in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3)
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-good" if cls == "box-good" else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}%</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 16
+
+    alt = (
+        "正しい平均（記録のある日数で割った値）を100%としたとき、欠番の日を0件として"
+        "暦日全体で割った場合に平均が何%になるかを示す横棒グラフ。材料A（18日分・"
+        "記録のある15日で割ると6.33件/日）は、欠番3日を0件として18日で割ると83%"
+        "（5.28件/日）に下がる。材料B（21日分・記録のある17日で割ると98.65件/日）は、"
+        "欠番4日を0件として21日で割ると81%（79.86件/日）に下がる。実測ではこの"
+        "低い値が20回中0回だった。"
+    )
+    (OUT / "missing-row-average-gap.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    missing_row_zero_count_chart()
+    missing_row_average_gap_chart()
     er2_vendor_price_chart()
