@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-03T06:53:53.984880+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-03T01:25:46+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a warning to /schedule when a new cloud scheduled task gets connectors you did not ask for, with how to remove them Added a check that asks before a web or shell tool call sends …",
+      "title": "v2.1.317",
+      "uid": "3c2087bb0acdc31a",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-02T23:37:09.387614+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -11,6 +23,34 @@
       "uid": "d4f4c50ad2a45764",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.4.0",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-03T06:53:53.984880+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-02T18:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
+      "summary_ja": "OpenAIがセキュリティの報奨金を増額した。\nバグを見つけた外部研究者へ品質などでボーナスを追加。\n報告の質や継続性に応じて報奨金をさらに強化する。",
+      "summary_source": "gemini",
+      "title": "Rewarding defenders with bigger bug bounties",
+      "uid": "03c11cf45788ba5b",
+      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-03T06:53:53.984880+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-02T18:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+      "summary_ja": "OpenAIが自社のセキュリティ強化を計画している。\nAIを使いCathedral Systemsと共同で防御力を検証する。\n内部システムをテストし、より強固な体制を築く。",
+      "summary_source": "gemini",
+      "title": "Preparing our next security sprint to harden OpenAI",
+      "uid": "80cde4726c3e43fa",
+      "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-02T23:37:09.387614+00:00",
@@ -25,6 +65,20 @@
       "uid": "aab73a7c09275299",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
       "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-03T06:53:53.984880+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-02T15:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+      "summary_ja": "OpenAIがGit互換のバックエンドシステムを開発した。\nその名は「Pando」で、Codexによる大規模開発に対応できる。\n従来のシステムでは難しい、膨大なコードの管理を可能にした。",
+      "summary_source": "gemini",
+      "title": "Scaling Git at OpenAI",
+      "uid": "6bc47f675fb3637a",
+      "url": "https://openai.com/index/scaling-git-at-openai",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-02T16:14:58.493755+00:00",
@@ -66,6 +120,20 @@
       "title": "Qodo builds context into AI code review with Codex",
       "uid": "e43e7d6dd9b2ee86",
       "url": "https://openai.com/index/qodo-codex-plugin",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-03T06:53:53.984880+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-02T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI appoints Dan Driscoll to advise on responsible AI for national security modernization, cyber resilience, and collaboration with U.S. allies.",
+      "summary_ja": "OpenAIが国家安全保障に関する顧問を任命した。\nDan Driscoll氏が、責任あるAIの活用やサイバー対策を助言。\n米国同盟国との連携も視野に入れ、安全保障の近代化を進める。",
+      "summary_source": "gemini",
+      "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
+      "uid": "efad490ab42c314c",
+      "url": "https://openai.com/index/dan-driscoll-joins-openai",
       "vendor": "OpenAI"
     },
     {
