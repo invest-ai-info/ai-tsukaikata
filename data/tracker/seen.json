@@ -71,63 +71,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-01T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-11-01T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "基調講演を行うSakana AI Chief Scientific Advisorのユルゲン・シュミットフーバー教授",
-      "title": "【開催レポート】Sakana AIシンポジウム：Jürgen Schmidhuberが語るAIのこれまでとこれから、日本から挑む言語モデル・世界モデル・Physical AI",
-      "uid": "f87f32a888f61ead",
-      "url": "https://sakana.ai/symposium-2026/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-10-30T14:18:30+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Google DeepMind and UK government work together to reduce planning assessment times",
-      "title": "Speeding up planning decisions with AI",
-      "uid": "76d7ea61db6f9662",
-      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-02T09:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
-      "title": "LifeVal",
-      "uid": "e003527d8b4c8897",
-      "url": "https://openai.com/index/lifeval",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-02T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Qodo brings company knowledge and coding standards into Codex, helping developers catch P0 issues across repositories before opening a pull request.",
-      "title": "Qodo builds context into AI code review with Codex",
-      "uid": "e43e7d6dd9b2ee86",
-      "url": "https://openai.com/index/qodo-codex-plugin",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-11-02T17:45:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Animated carousel of images from AI posts in October",
-      "title": "The latest AI news we announced in October 2026",
-      "uid": "aab73a7c09275299",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
-      "vendor": "Google"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
