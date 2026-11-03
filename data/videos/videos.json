@@ -6052,91 +6052,248 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-02T21:54:47.234974+00:00"
+  },
+  {
+   "video_id": "679baCrFPDw",
+   "title": "【Claudeが凄すぎる】こんなことまでできるのか…今までのAI活用術を総まとめ！",
+   "url": "https://www.youtube.com/watch?v=679baCrFPDw",
+   "published": "2026-11-03T09:30:31+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "description": "Claudeを仕事でどう使うか、これまでの実演をまとめた総集編です。スキルによる自動化から資料・動画・サイト制作、AIに作業を任せる工夫まで紹介。操作画面を見ながら、普段の仕事に取り入れるヒントを探せます。使い方の幅を広げたい方におすすめです。\n\n▼Claude Code基礎研修は下記\nhttps://luma.com/yft7we9k\n\n▼いちばんやさしいClaudeの教本\nhttps://link.amazon/B03PzG6Bh\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n0:00 オープニング・お知らせ\n1:03 Obsidianを活用したClaude Codeスキル管理\n3:08 執筆・記事制作におけるナレッジ蓄積\n4:57 NG表現・良い表現リストによる文体制御\n5:37 Obsidian保存の自動化\n10:08 Notta操作を記録してスキル化する事例\n16:13 Webサイトのスクリーンショット収集自動化\n22:13 Claude Designの編集・共同作業機能\n26:35 Claude Designによるスライド資料作成\n31:29 ワイヤーフレーム作成\n35:03 動作するWebプロトタイプの作成\n37:41 Claude Designから実装・公開までの連携\n39:47 デザインシステムとStorybookの同期\n44:02 Claudeドキュメント機能\n44:51 デザインシステムの重要性\n46:17 スライドの出力・共有機能\n47:49 Claude Motionによるアニメーション制作\n49:49 Claude Codeを使ったショート動画編集\n52:18 動画編集の検証ループと品質改善\n1:00:34 Claude Designのテンプレート動画機能\n1:04:03 AIモデルとエージェントスキルを使った動画生成\n1:08:55 Claude Code利用時のセキュリティーと権限管理\n1:10:48 Claude Codeの権限モード\n1:13:23 セキュリティー診断ツールと外部リポジトリーの扱い\n1:15:53 CloudflareとClaude CodeによるWebサイト公開\n1:19:26 ワークフローエージェントによるゲーム・アプリ制作\n1:25:04 AI社員によるホームページ制作会社「ブラック製作所」\n1:33:40 サブエージェントによる役割分担\n1:36:37 AI制作会社による公開・コスト集計\n1:41:57 Claude Code基礎研修の案内\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Work完全解説動画\nhttps://youtu.be/U74PHw-h59Q\n【最新版】Claude完全攻略！これ見れば全てわかる\nhttps://youtu.be/OhO0WcRP6Ow\nGemini for Google Workspace完全解説\nhttps://youtu.be/0BZpNHfdFIk\nChatGPTをもっと便利に使いこなすAI活用",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "paktVBbMfWA",
+   "title": "【マジ使える】企業が導入するAI最新Copilotの革命的使い方を教えるで！",
+   "url": "https://www.youtube.com/watch?v=paktVBbMfWA",
+   "published": "2026-11-03T11:00:26+00:00",
+   "channel_key": "saki",
+   "channel_name": "【さき】のAIでええやん。",
+   "default_category": "tech",
+   "description": "100社以上のAI研修・コンサル実績ノウハウを詰め込んだ\n📊自分の会社の今の状態を知れる💬\n【無料】企業様向けのAI活用診断はコチラ⬇️\nhttps://www.aideeyan.com/yt/paktVBbMfWA\n\n🌏企業向けAIの活用がわかる！学べる無料会員サイト💻\nhttps://www.aideeyan.com/yt/paktVBbMfWA/top\n\n🏢AI研修やAI導入のお問い合わせはこちらから🏢\nhttps://www.aideeyan.com/yt/paktVBbMfWA/contact\n\n何となく聞きに来るのは勿体ない/本気の人向けAI勉強会\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\n今AI活用やマネタイズの仕方がわからない人🤦やAI初心者の人も必見！\n\n🚨無料期間限定🚨で\n✨Youtubeでは出せないさきのAI最新情報✨&\n👩‍💻AIノウハウ100大特典🎁を勉強会参加後にLINEで受け取れます！\n\nAIスキルを身につけて【社内評価⏫UP⏫】や【収益化💰】\n業務効率化🗒️できるココでしか手に入らない情報を\n現在期間限定でしかも、無料配布しているので興味ある方は是非！！\n↓↓↓\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\nーーーーーーーーーーーーーー\n\n約10,000人以上の人が登録中！\n⬇️さきのAI最新情報公式LINE⬇️\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\nーーーーーーーーーーーーーー\n🎁”LINE登録者限定\"のAI特別セミナー開催\n🎁”LINE登録者限定\"のAI勉強会\n🎁”勉強会参加者限定\"のAI豪華100大特典配布\n🎁”勉強会参加者限定\"の特別な案内\n\n【⬇️無料登録はこちら⬇️】\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\n🏢企業のAI活用が学べる無料会員サイトはコチラ📚\nhttps://www.aideeyan.com/yt/paktVBbMfWA/top\n\n🧑‍💻AI研修やAI導入のお問い合わせはこちらから🧑‍💻\nhttps://www.aideeyan.com/yt/paktVBbMfWA/contact\n\n\n━━━━━━━━━━━━━━━━━━\n↓↓本日紹介したツールや動画📚などはこちら↓↓\n\n【Copilot】\nhttps://copilot.com/ja-jp/\n\n━━━━━━━━━━━━━━━━━━\n#chatgpt    #gemini    #ai活用  #claude #claudecode",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "TKs5ktj36f4",
+   "title": "【尾原和啓×池田朋弘】AIに支配される人、使いこなす人。AIに溶かされない「うたう」思考法",
+   "url": "https://www.youtube.com/watch?v=TKs5ktj36f4",
+   "published": "2026-11-03T02:16:55+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "尾原和啓×池田朋弘『システムゼロ』特別トーク\n\nAIの答えは、整っていて、根拠らしいものまで添えられていて、しかも自分を肯定してくれる。そのとき私たちは、疑う理由を持てているでしょうか。\n\n書籍『システムゼロ ― 「AIがすべて先回りする」時代の思考法』（PHP研究所）の共著者、尾原和啓さんと池田朋弘（いけとも）が、ポッドキャスト「いけとも尾原 DeepなAIニュース」での対談から生まれた視点を、1時間でお話しします。\n\n■ 日時\n2026年11月4日（水）20:00-21:00\n\n■ 今回の論点\n- そもそも「システム0」とは何なのか\n- システム0の脅威とは\n- システム0に対して必要な3つの思考法「うたう」（疑う力・立ち止まる力・裏返す力）\n- どんなシーンでどうするべきか\n- 新しい時代に向けて、キャリアや人生をどう豊かにしていくか\n\n当日はコメントにもお答えしながら進めます。\n\n■ 書籍\n『システムゼロ ― 「AIがすべて先回りする」時代の思考法』\n池田朋弘・尾原和啓 著 ／ PHP研究所\n2026年11月10日発売　定価1,870円（税込）\n\n■ イベントページ\nhttps://peatix.com/event/5225030/view",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "b6I72Ok5Pq4",
+   "title": "【今バズってる】AIエージェントで使える『図解スキル』7選！実際に使った感想含めて、使い所を解説",
+   "url": "https://www.youtube.com/watch?v=b6I72Ok5Pq4",
+   "published": "2026-11-03T03:00:08+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、10 月に GitHub トレンドや X で話題になった Claude Code の図解スキル 7 選を、実際に入れて試した結果とあわせて解説しました。\n僕は、Claude が JSON を書いて PNG にして見直すループを回し、あとから Excalidraw で開いて直せるスキルが特に好きでした。\n\n得意不得意があるので、複数入れて使い分けるのが良さそうです。皆さんが普段使っている図解スキルや、「この図にはこれ」という使い分けがあれば、ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n🎁無料プレゼントは公式LINEから🎁\n動画や記事で紹介したソースコードやスキルを、公式LINEで共有してます！『svg-skill』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://go.masao.ai/line/open/Glu3UoqwiqvI?mtid=OhUjWdkx1ULn\n\npretty-mermaid    https://github.com/imxv/Pretty-mermaid-skills\narchify           https://github.com/tt-a1i/archify\nsvg-diagram       https://github.com/bybit-exchange/svg-diagram\ndiagram-design    https://github.com/cathrynlavery/diagram-design\nexcalidraw        https://github.com/coleam00/excalidraw-diagram-skill\nhuashu-design     https://github.com/alchaincyf/huashu-design\nanatomy           https://github.com/wheresryan22/anatomy\n\ntimestamp:\n00:00 図解スキル7選と今注目される理由\n01:06 7本の分類と同じお題での試し方\n02:25 pretty-mermaid：手軽に貼れる図\n04:09 archify：コードから正確な構成図\n05:43 svg-diagram：色と数字で縛るルール\n07:04 diagram-design：45種類の図の型\n08:19 Excalidraw 図：画像を見て直すループ\n09:33 huashu-design：3案から人が選ぶ\n10:33 anatomy：概念を機械の図に\n11:29 用途別の使い分けまとめ\n12:28 htmlスキル共有とメンバーシップ紹介\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhtt",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "NCxD-qsQcN0",
+   "title": "TamaGPT",
+   "url": "https://www.youtube.com/watch?v=NCxD-qsQcN0",
+   "published": "2026-11-03T18:30:30+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "OpenAIの研究員がGPT-6 Astraを活用して回路基板を設計したプロジェクトを紹介している。",
+    "画面上のCodexと音声対話できる携帯型ペット端末の基板や外装を試作したと説明している。",
+    "AIの支援によってハードウェア開発の試作が容易になり、より大きな挑戦が可能になると語っている。"
+   ],
+   "for_whom": "AIを活用したハードウェア開発や電子工作に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-03T19:47:02.227858+00:00"
+  },
+  {
+   "video_id": "yC72iQx6rM0",
+   "title": "Qodo brings company context into Codex code review",
+   "url": "https://www.youtube.com/watch?v=yC72iQx6rM0",
+   "published": "2026-11-03T18:11:23+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "QodoのCEOは、Codexと連携してコンテキスト提供やレビューを行い、複数リポジトリにまたがる重大なバグを防ぐ仕組みを説明している。",
+    "開発者が新機能作成だけでなくバグの自動修正ループを構築し、エージェント同士の議論により開発プロセスを効率化していると紹介している。",
+    "将来的にはメールやSNSの優先順位付けや返信などの日常業務もAIエージェントに任せて効率化したいと語っている。"
+   ],
+   "for_whom": "AIエージェントによるコードレビューやソフトウェア開発の自動化に関心があるエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-03T19:47:02.227858+00:00"
+  },
+  {
+   "video_id": "63pcV4z0DwI",
+   "title": "ChatGPT Voice is now in Finances",
+   "url": "https://www.youtube.com/watch?v=63pcV4z0DwI",
+   "published": "2026-11-03T18:04:51+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "ChatGPT Voiceと金融サービスを連携し、サブスクや定期支払いを音声で確認できる機能を紹介している。",
+    "重複している保険やストリーミングサービスなどの無駄な支出をAIが検出し、画面と音声で指摘している。",
+    "不要になったサービスの解約メール送信などの手続きを、音声指示でAIに依頼できる様子を実演している。"
+   ],
+   "for_whom": "毎月のサブスクや固定費の見直し・整理をAIを使って手軽に行いたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-03T19:47:02.227858+00:00"
+  },
+  {
+   "video_id": "2h16j4K_NbA",
+   "title": "Glean on privacy and OpenAI Private Intelligence",
+   "url": "https://www.youtube.com/watch?v=2h16j4K_NbA",
+   "published": "2026-11-03T16:46:37+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GleanのCTOは、顧客データがモデル学習に利用されないことが顧客にとって不可欠な要件だと述べている。",
+    "OpenAIと初期から連携し、高度なモデル提供と厳格なプライバシー要件の両立を進めてきたと語っている。",
+    "安全性審査は自動化され人間が実データに触れず、データは暗号化されて顧客の管理下にあると説明している。"
+   ],
+   "for_whom": "社内へのAI導入でデータプライバシーや安全性管理の仕組みに関心がある企業担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-03T19:47:02.227858+00:00"
+  },
+  {
+   "video_id": "U2GSSJGrpoQ",
+   "title": "【手取り多すぎて草】テレビ画面の販売で月56万！リスナー4人中4人が月43万を超えた、俺だけがやっていた必殺AI調教テクを全部公開【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=U2GSSJGrpoQ",
+   "published": "2026-11-03T09:00:38+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=EbbLnDGprn\n※もしLINE登録が上手く行かない方は「@828wrlzg」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n📺【海外に“絵”を置いて売る回、このチャンネルにあります】\n今日は、毎朝1か所だけ変わるテレビの絵をEtsyで売る話でした。\n同じテレビの絵の回、“探させる”商品の回、海外に絵を置いて売る回を並べておきます↓\n\n▼同じテレビの絵の回。リスナー5人中4人が月30万を超えた、テレビ画面の販売\nhttps://youtu.be/G5MpQKyP_uc\n\n▼同じく“探させる”商品。間違い探し本が売れる唯一の要素を言語化した、月88万の回\nhttps://youtu.be/UVzVVRf2yUo\n\n▼名画に猫がまぎれる、塗らない塗り絵。海外で流行っている“探す”1色ぬりえの回\nhttps://youtu.be/vd-HRExj5l8\n\n▼1枚13分の超特大タペストリーで月74万3000円。7人中6人が届いた回\nhttps://youtu.be/icblXzctaDU\n\n▼ひとりで黙々とEtsyにAIのデジタル商品を並べる、ぼっち副業の回\nhttps://youtu.be/sJPF92izwy4\n\n▼和風ポスターで穴場の市場を見つける、海外マーケットの回\nhttps://youtu.be/zRhMGQ_Bxcg\n\n▼AI生成で審査を通す。58歳が月62万7000円に届いたメタルポスターの回\nhttps://youtu.be/eRPC2D4lkAM\n\n▼無在庫販売で月500円だった50代無職男が月42万。日本美術×メタルポスターの全記録\nhttps://youtu.be/yw6ujlK07aI\n\n▼季節ごとに売れるガーデンフラッグ。Etsyで無在庫販売する回\nhttps://youtu.be/9PRzJCWL378\n\n▼作らないハンドメイド。手作りでもない1枚に5,500円払う人がいる理由\nhttps://youtu.be/jyfLXRm5WFk\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=EbbLnDGprn",
+   "first_seen": "2026-11-03T19:47:02.227858+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-02T21:54:47.234974+00:00",
+   "last_ok": "2026-11-03T19:47:02.227858+00:00",
    "fail_streak": 0
   }
  }
