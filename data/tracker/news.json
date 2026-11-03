@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-03T21:04:29.813658+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-11-03T17:01:49+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+      "summary_ja": "Googleが薬の研究開発を効率化しました。\nAntigravityなどの技術で化合物を探し、\n新しい化合物の提案が可能になります。",
+      "summary_source": "gemini",
+      "title": "Agentic cheminformatics with Google Antigravity",
+      "uid": "2f433627a6183745",
+      "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-11-03T21:04:29.813658+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
+      "summary_ja": "AIがものづくりの設計を効率化しました。\nChatGPTやCodexが活用され、\nCADや基板設計などが速くなります。",
+      "summary_source": "gemini",
+      "title": "Accelerating engineering for the physical world",
+      "uid": "d3ce1320063f1787",
+      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-03T15:14:00.921955+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -15,6 +43,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-03T21:04:29.813658+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Cisco combines network intelligence with OpenAI models to strengthen enterprise security. Learn how it is building more adaptive defenses.",
+      "summary_ja": "シスコがAIで企業ネットワークを守ります。\nネットワーク情報とOpenAIのAIモデルを組み合わせ、\nより柔軟な防御を構築します。",
+      "summary_source": "gemini",
+      "title": "How Cisco defends at machine speed with OpenAI",
+      "uid": "9c8fee89cfae74d2",
+      "url": "https://openai.com/index/cisco-cyber",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-03T06:53:53.984880+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -25,6 +67,20 @@
       "uid": "3c2087bb0acdc31a",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-03T21:04:29.813658+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company’s global communications and corporate positioning.",
+      "summary_ja": "OpenAIに新しい役員が就任しました。\nジル・ヘイゼルベーカー氏が最高広報担当となり、\n世界規模の広報と企業戦略を統括します。",
+      "summary_source": "gemini",
+      "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
+      "uid": "d5816343b8f2d590",
+      "url": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-02T23:37:09.387614+00:00",
@@ -2835,6 +2891,18 @@
       "vendor": "xAI"
     },
     {
+      "first_seen": "2026-11-03T21:04:29.813658+00:00",
+      "importance": "minor",
+      "label": "Grok 新モデル",
+      "published": "2026-09-21T16:19:01+00:00",
+      "source_id": "openrouter-xai",
+      "summary": "Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work,…",
+      "title": "x-ai/grok-4.7:batch",
+      "uid": "ce0212d89d537ac1",
+      "url": "https://openrouter.ai/x-ai/grok-4.7:batch",
+      "vendor": "xAI"
+    },
+    {
       "first_seen": "2026-09-21T19:33:20.574647+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -5512,6 +5580,18 @@
       "title": "x-ai/grok-4.6",
       "uid": "732cc8e99d4e8494",
       "url": "https://openrouter.ai/x-ai/grok-4.6",
+      "vendor": "xAI"
+    },
+    {
+      "first_seen": "2026-11-03T21:04:29.813658+00:00",
+      "importance": "minor",
+      "label": "Grok 新モデル",
+      "published": "2026-08-12T15:35:57+00:00",
+      "source_id": "openrouter-xai",
+      "summary": "Grok 4.6 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
+      "title": "x-ai/grok-4.6:batch",
+      "uid": "4e8025cc2f1a9b9a",
+      "url": "https://openrouter.ai/x-ai/grok-4.6:batch",
       "vendor": "xAI"
     },
     {

@@ -8,6 +8,7 @@
     "1bfef5e8c32e8074": "2026-08-25",
     "29f5a8cd813bd979": "2026-09-23",
     "2d79d3aac217c809": "2026-10-28",
+    "2f433627a6183745": "2026-11-03",
     "335cac6c2b15e967": "2026-09-17",
     "4861f4bb8ed6f683": "2026-10-13",
     "4b555795a5ea4e26": "2026-09-03",
@@ -46,21 +47,16 @@
   },
   "failures": {
     "anthropic-news": {
-      "count": 65,
+      "count": 66,
       "last_error": "ValueError: 埋め込みデータはあるが記事が0件（サイト構造の変更を疑う）",
       "since": "2026-10-20T18:29:14.936975+00:00"
-    },
-    "deepmind-blog": {
-      "count": 1,
-      "last_error": "0件",
-      "since": "2026-11-03T15:14:00.921955+00:00"
     }
   },
   "latest": {
     "anthropic-news": "2026-10-18T16:49:35.513000+00:00",
     "anthropic-sdk": "2026-11-02T19:07:19+00:00",
     "claude-code": "2026-11-03T01:25:46+00:00",
-    "deepmind-blog": "2026-10-30T14:18:30+00:00",
+    "deepmind-blog": "2026-11-03T17:01:49+00:00",
     "elyza-note": "2026-07-22T01:00:03+00:00",
     "google-ai-blog": "2026-11-02T17:45:00+00:00",
     "hf-deepseek": "2026-10-17T02:40:38+00:00",
@@ -70,7 +66,7 @@
     "media-impress-ai": "2026-11-03T02:00:00+00:00",
     "media-itmedia-aiplus": "2026-11-02T23:20:20+00:00",
     "media-publickey": "2026-11-03T15:16:22+00:00",
-    "openai-news": "2026-11-03T08:00:00+00:00",
+    "openai-news": "2026-11-03T12:00:00+00:00",
     "openrouter-moonshot": "2026-10-23T17:56:28+00:00",
     "openrouter-qwen": "2026-09-23T19:20:28+00:00",
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
@@ -142,6 +138,72 @@
       "uid": "f9bae2615096d966",
       "url": "https://openai.com/index/heimstaden",
       "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
+      "title": "Accelerating engineering for the physical world",
+      "uid": "d3ce1320063f1787",
+      "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Cisco combines network intelligence with OpenAI models to strengthen enterprise security. Learn how it is building more adaptive defenses.",
+      "title": "How Cisco defends at machine speed with OpenAI",
+      "uid": "9c8fee89cfae74d2",
+      "url": "https://openai.com/index/cisco-cyber",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-03T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Jill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company’s global communications and corporate positioning.",
+      "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
+      "uid": "d5816343b8f2d590",
+      "url": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
+      "vendor": "OpenAI"
+    },
+    {
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-11-03T17:01:49+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+      "title": "Agentic cheminformatics with Google Antigravity",
+      "uid": "2f433627a6183745",
+      "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "importance": "minor",
+      "label": "Grok 新モデル",
+      "published": "2026-09-21T16:19:01+00:00",
+      "source_id": "openrouter-xai",
+      "summary": "Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work,…",
+      "title": "x-ai/grok-4.7:batch",
+      "uid": "ce0212d89d537ac1",
+      "url": "https://openrouter.ai/x-ai/grok-4.7:batch",
+      "vendor": "xAI"
+    },
+    {
+      "importance": "minor",
+      "label": "Grok 新モデル",
+      "published": "2026-08-12T15:35:57+00:00",
+      "source_id": "openrouter-xai",
+      "summary": "Grok 4.6 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
+      "title": "x-ai/grok-4.6:batch",
+      "uid": "4e8025cc2f1a9b9a",
+      "url": "https://openrouter.ai/x-ai/grok-4.6:batch",
+      "vendor": "xAI"
     }
   ],
   "uids": {
@@ -1063,6 +1125,7 @@
     "2efefadff6dd2764": "2026-10-28T16:41:13.792697+00:00",
     "2f163d2c1fdc56a9": "2026-10-14T06:13:53.374387+00:00",
     "2f199f68f73d453d": "2026-09-20T12:25:47.781662+00:00",
+    "2f433627a6183745": "2026-11-03T21:04:29.813658+00:00",
     "2f5c03cd716049d1": "2026-10-05T07:07:33.677725+00:00",
     "2f834f336ee6cb39": "2026-10-30T07:13:02.338490+00:00",
     "2f9a380bca90921f": "2026-10-23T13:29:53.788608+00:00",
@@ -1616,6 +1679,7 @@
     "4e5a6625ff6c061e": "2026-10-01T19:34:31.151246+00:00",
     "4e5fc6a644db07f3": "2026-09-07T10:24:07.119095+00:00",
     "4e67c25d87448cb6": "2026-10-17T09:25:57.745014+00:00",
+    "4e8025cc2f1a9b9a": "2026-11-03T21:04:29.813658+00:00",
     "4eaadafc605cf992": "2026-10-02T12:42:43.536621+00:00",
     "4eb64da1af81afcf": "2026-10-27T13:16:43.111805+00:00",
     "4ebe4ef76e10f8a9": "2026-08-27T20:33:26.631798+00:00",
@@ -3107,6 +3171,7 @@
     "9c42a432371e59eb": "2026-09-04T11:23:18.866777+00:00",
     "9c4a84c9e1360518": "2026-09-11T06:03:40.950848+00:00",
     "9c5ae255ff57e763": "2026-10-29T16:12:27.160095+00:00",
+    "9c8fee89cfae74d2": "2026-11-03T21:04:29.813658+00:00",
     "9c9a9f8323e5e7c9": "2026-10-07T16:34:15.852907+00:00",
     "9c9d7df93217d218": "2026-10-29T08:34:51.656988+00:00",
     "9cbde789f557ade5": "2026-11-02T06:15:12.027740+00:00",
@@ -4013,6 +4078,7 @@
     "cdd6b06a708ca742": "2026-09-06T13:41:43.502295+00:00",
     "cdf7617a01a48e12": "2026-09-28T15:33:11.163516+00:00",
     "cdfc12cf20362cba": "2026-09-03T01:08:30.967641+00:00",
+    "ce0212d89d537ac1": "2026-11-03T21:04:29.813658+00:00",
     "ce16359516848fef": "2026-10-21T18:41:10.727594+00:00",
     "ce1cd3757ca55bbb": "2026-10-06T10:24:48.047911+00:00",
     "ce1d349e8e5e329f": "2026-10-23T07:36:04.800211+00:00",
@@ -4154,6 +4220,7 @@
     "d385f51081282591": "2026-09-07T23:31:58.052633+00:00",
     "d3a641a3fea89963": "2026-09-07T04:47:57.358551+00:00",
     "d3bb0e8c5df8f285": "2026-09-02T11:23:56.563756+00:00",
+    "d3ce1320063f1787": "2026-11-03T21:04:29.813658+00:00",
     "d3d0556ad7ff45b3": "2026-09-08T04:43:11.821528+00:00",
     "d3d87fc59d300507": "2026-08-30T00:23:30.333768+00:00",
     "d3e34e3c2124966a": "2026-10-28T21:41:28.239784+00:00",
@@ -4177,6 +4244,7 @@
     "d53672065e9e0df4": "2026-11-03T15:14:00.921955+00:00",
     "d54e2527eb26aca5": "2026-10-30T14:16:16.511490+00:00",
     "d5737f24270e193e": "2026-10-08T09:03:14.950532+00:00",
+    "d5816343b8f2d590": "2026-11-03T21:04:29.813658+00:00",
     "d5888290637450e2": "2026-10-16T12:31:17.014467+00:00",
     "d594f082507b2f83": "2026-10-22T01:33:21.073639+00:00",
     "d5c75e7e7eafb282": "2026-08-13T12:01:33.145239+00:00",

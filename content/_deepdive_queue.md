@@ -587,6 +587,9 @@
 - [ ] https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/
   - 2026-11-02 自動追記（minor・Google DeepMind「Speeding up planning decisions with AI」）
 
+- [ ] https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/
+  - 2026-11-03 自動追記（minor・Google DeepMind「Agentic cheminformatics with Google Antigravity」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/ → **公開済み** content/tools/gemini-robotics-er-2.md（2026-11-02・公開）
