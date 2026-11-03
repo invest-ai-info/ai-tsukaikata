@@ -579,8 +579,29 @@
 
 - [x] https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/
   - →保管: ✅ **2026-11-02: 公開した** → `content/tools/gemini-robotics-er-2.md`
-- [ ] https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/
+- [!] https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/
   - 2026-10-31 自動追記（major・Google DeepMind「We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control」）
+  - **2026-11-03 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降これまでの11件と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` → `blog.google` へ302転送・200・約37万バイト。
+    要約させず生HTMLの本文部分だけを抽出して確認した）。
+
+    **② 中身が「音楽生成モデルの機能改善の告知」で、数字が一文字も無い**
+
+    - Lyria 3.5 は Google Flow Music 向けの新しい音楽生成モデル。本文全体を確認したが、改善点は
+      「より自然なメロディ構造」「歌詞の指示への忠実度向上」「より感情豊かなボーカル」「テンポ・長さの
+      操作性向上」という**形容詞だけの説明**で、%・$・件数・バージョン比較数値のいずれも0件
+    - 料金・提供範囲・対応言語数・前のバージョン（Lyria 3）との数値的な違いも本文に記載が無い。
+      これまでの11件（Sakana FIG・SynthID Bio・Playground・Anthropic Cyber Mission・scam detection・
+      antimicrobial discovery・forest mapping・Genie 4・ELYZA Works・ELYZA SMBCカード・ELYZA Reasoning Model）
+      の中でも**数字の無さが最も徹底している**（他の多くは比較に使えない数字だけでも1〜4個あったが、
+      この記事は0個）
+    - 比較相手（他社の同種の「音楽生成AI」の機能改善発表）も本文に無く、読者（自動化したい非エンジニアの
+      会社員）が「どういう人に効くか」を判断できる数字的な要素が無い。モデルでも料金表でもないため、
+      このサイトの記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 - [ ] https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
   - 2026-10-31 自動追記（minor・Google DeepMind「Gemini Robotics 2 brings whole body intelligence to robots」）
 
