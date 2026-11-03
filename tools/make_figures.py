@@ -41195,3 +41195,169 @@ if __name__ == "__main__":
     missing_row_zero_count_chart()
     missing_row_average_gap_chart()
     er2_vendor_price_chart()
+
+
+def mixed_status_not_misread_chart() -> None:
+    """混在コード（301/302・タイムアウト・500番台）を「切れている」に誤分類した回を比べる図。
+
+    実測（2026-11-03）。架空のリンク一覧2本（各12本・404/200/403に加えて
+    301・302・タイムアウト・500・503を混ぜた）に、頼み方5パターン×材料2本×
+    各2回＝20回試した。縦軸は、404以外のコードを「切れている」に混ぜてしまった
+    回数（真値0）。20回とも0回だった。
+    """
+    label_x = 18
+    plot_x = 330
+    plot_w = 300
+    axis_max = 4
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 30
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("① 基準を渡さず素朴に聞く", 0),
+        ("② 保存版の基準をそのまま使う", 0),
+        ("③ ②+確認できないを4種に分ける", 0),
+        ("④ ③+件数は名前のあとに", 0),
+        ("⑤ 500番台だけ切れている側に", 0),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "混在コードを「切れている」に誤分類した回は、5つの頼み方のどれでも0回だった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "架空のリンク一覧2本（各12本。404/200/403に301・302・タイムアウト・500・503を混ぜた）に、</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "頼み方5パターン×材料2本×各2回＝20回試した。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "縦軸は、本当に404のもの以外を「切れている」に混ぜてしまった回数（真値0）。</text>\n",
+        '<text class="t-xs" x="18" y="100">'
+        "基準を渡さなくても、常識的な言い回しで404とそれ以外は区別された。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3) if value else 3
+        bar_cls = "box-bad" if value else "box-quiet"
+        parts.append(
+            f'<rect class="{bar_cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-bad" if value else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{value}/4回</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 18
+
+    notes = [
+        "⚠️ 誤分類は0回だったが、基準を渡さない①は回ごとにバケツの数と名前が変わった",
+        "（2〜5種）。安定させるには②のように基準を明示する必要がある。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="{WIDTH - 36}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 10
+
+    alt = (
+        "本当は404ではないコード（301・302・タイムアウト・500・503）を「切れている」に"
+        "混ぜてしまった回数を、5つの頼み方で比べた横棒グラフ。架空のリンク一覧2本（各12本。"
+        "404/200/403に301・302・タイムアウト・500・503を混ぜた）に、基準を渡さず素朴に聞く・"
+        "保存版の基準をそのまま使う・確認できないを4種に分ける・件数は名前のあとに書かせる・"
+        "500番台だけ切れている側に含める、の5パターンを材料2本×各2回＝20回試した。縦軸はどの"
+        "版も0/4回で、20回とも誤分類は無かった。基準を渡さなくても、常識的な言い回しで404と"
+        "それ以外は区別されたが、バケツの数と名前は回ごとに変わった。"
+    )
+    (OUT / "mixed-status-not-misread.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def mixed_status_headline_miscount_chart() -> None:
+    """件数を書かせたとき、見出しの数字が実際の件数と食い違った割合を比べる図。
+
+    実測（2026-11-03）。確認できないリンクを4種に分けて件数も書かせると、
+    件数を書いた3回のうち2回で食い違った。「件数は名前のあとに」を足すと
+    4回とも食い違いが消えたが、優先順位付けという別の作業を追加すると、
+    その指示を省いた回でまた1回食い違った。
+    """
+    label_x = 18
+    plot_x = 320
+    plot_w = 310
+    axis_max = 100
+    scale = plot_w / axis_max
+    top = 110
+    row_h = 32
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    rows = [
+        ("4種に分けて件数も書く（指示なし）", 67, "box-bad", "2/3回"),
+        ("＋件数は名前のあとに", 0, "box-good", "0/4回"),
+        ("500番台を切れている側に（名前が先）", 0, "box-good", "0/4回"),
+        ("＋優先順位も聞く（名前の指示を省く）", 50, "box-bad", "1/2回"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "見出しの件数のズレは、直してもその指示を省くとまた出た</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "分類の誤りは0回だったが、件数を書かせた回だけを見ると、食い違いの率はこう変わった。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "「件数は名前のあとに」を外すと、別の作業を追加しただけで食い違いが戻った。</text>\n",
+    ]
+
+    zx = px(0)
+    y = top
+    for label, value, cls, tail in rows:
+        ty = y + 13
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        bar_w = max(px(value) - px(0), 3)
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{bar_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-good" if cls == "box-good" else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{tail}</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - row_h + bar_h
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 6} L{zx:.1f} {plot_bottom}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+    y += 16
+
+    alt = (
+        "件数を書かせたとき、見出しの数字が実際に列挙した件数と食い違った割合を示す横棒グラフ。"
+        "確認できないリンクを4種に分けて件数も書かせた版は、件数を書いた3回のうち2回（67%）で"
+        "食い違った。「件数は名前のあとに」を足した版は4回中0回。500番台を切れている側に含める"
+        "よう基準を変えても、名前を先に書く指示があれば4回中0回だった。ところが優先順位付けという"
+        "別の作業を追加し、名前を先に書く指示を省くと、件数を書いた2回のうち1回（50%）で"
+        "また食い違いが出た。"
+    )
+    (OUT / "mixed-status-headline-miscount.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    mixed_status_not_misread_chart()
+    mixed_status_headline_miscount_chart()
