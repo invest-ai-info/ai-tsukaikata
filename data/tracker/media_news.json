@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-04T22:57:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "英Nothingの最高経営責任者（CEO）、カール・ペイ氏が11月4日（現地時間）にXで公開した文章は、書き出しだけ読むと、AI専用端末への期待に水を差す内容にも見える。",
+      "title": "Nothing、初のAI専用端末を12月出荷へ　「スマホアプリでは実現できない」機能搭載",
+      "uid": "0a5c6ef7f0337fd0",
+      "url": "https://japan.cnet.com/article/35254399/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-04T22:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "OpenAIは11月3日、AIで自動車の設計案を作り、性能を評価するための共同研究をマツダと進めていると発表した。空気の流れや車体構造の挙動をシミュレーションし、デザインやコストも踏まえた性能向上を探る。",
+      "title": "マツダ、クルマの「顔」をAIで設計　OpenAIと共同研究、空気抵抗とデザインの両立探る",
+      "uid": "ee663c2da8e1d68b",
+      "url": "https://japan.cnet.com/article/35254397/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-04T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "“トイレの会社”として知られるTOTOが、半導体ビジネスで化けている。半導体製造装置に使う材料が、営業利益の7割をかせぐまでに成長している。急成長の裏側を社長が語った。",
+      "title": "「トイレ」に凝ったらAI需要で大躍進――TOTO、利益の7割かせぐ「半導体」ビジネスの正体",
+      "uid": "6ddb5edea96b4343",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/05/news018.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-04T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの導入を検討する企業とって大きな懸念となるのがトークン消費に伴うAPI利用コストだろう。高性能な最上位モデルを全工程で走らせれば予算を圧迫し、安価なモデルを一律で選定すれば修正ループが増えて手戻りが発生する。限られた予算枠の中で開発スピードと品質を両立させるためにはどうしたらいいのか。OpenAI Japanの石田修平氏が解説する。",
+      "title": "GPT-6モデルはAstra、Sol、それともLuna？　OpenAIが教える、Codex爆速開発の鉄則",
+      "uid": "15f2a7bc0cd659fc",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/05/2000002770/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-04T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "MIXIが財務経理の改革に注力している。経営企画から「CFOの右腕」を切り出し、予算配分について進言。芽がある事業への予算増額を実現した。改革の裏側をCFOが語る。",
+      "title": "予算止める側だったのに「増額」進言　現場の「伸びそう」応援する“CFOの右腕”設置、MIXIに何が起きた？",
+      "uid": "6d71e6de658516dc",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/05/news025.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-04T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "中国が輸出の蛇口を少し締めるだけで、日本の田畑からみずみずしい作物が消え失せかねない──。化学肥料原料のほぼ全量を海外に握られた日本の農業。この食料安全保障の急所に立ち向かうのは、売上高500億円を誇る「100年続く資材問屋」だ。湯気立つ牛ふんにプラズマを当てて空気から肥料を錬成し、熟練農家の「30年の眼」をAIに移植する。裏方の商人が自らリスクを取り、輸入依存を打破する勝算に迫る。",
+      "title": "深刻な「中国依存」を脱せるか　老舗問屋が動いた「空気を使った肥料づくり」とAI農業とは？",
+      "uid": "c467bec70aa81bb7",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/05/news019.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-04T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIが生成するプルリクエストの増加を受け、あるOSS開発者が「今後公開するコードではPRの受付をやめ、改変は自由にする」と宣言した。変更を上流に送るのではなく、各自が自分用にカスタマイズする「リミックスモデル」の中身と、その賛否を整理する。",
+      "title": "OSSは「プルリクエストを送る」から「自分用に直す」へ？　AI時代のメンテナーがPR受付を閉じると宣言した理由",
+      "uid": "89d02bca2e56e09c",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/05/news004.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-04T18:01:07.395017+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2315,90 +2399,6 @@
       "uid": "2efefadff6dd2764",
       "url": "https://ai.watch.impress.co.jp/docs/news/2152022.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-28T16:41:13.792697+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-28T09:48:42+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "",
-      "title": "Oracle CloudがGoogle TPU導入へ　2027年に提供を開始",
-      "uid": "0b840ac41c48f623",
-      "url": "https://www.itmedia.co.jp/news/article/2610/28/2000002681/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-10-28T09:36:39+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LINEヤフーは、個人ユーザー向けAIエージェント「Agent i」において、食事の写真や内容を投稿するだけで、毎日の食事の記録や栄養分析、一人ひとりの目的に合わせたアドバイスなどを受けられる「食事管理」エージェントの提供を開始した。",
-      "title": "LINEヤフー、LINEに食事写真を送るだけでAIがカロリーや栄養素を分析 AIが食事管理してくれるAgent iを提供開始",
-      "uid": "d9d74137676fe182",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151974.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-28T09:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Anthropicが病気の治療を加速させるため、新薬開発を行う企業との研究提携を深め、独自の創薬活動も開始したことを発表しました。発表では、2種類の筋ジストロフィー治療薬を開発しているMithril Medicineを買収し、創業者にして唯一の人員であるコーディ・トランバーガー氏はAnthropicに所属して創薬研究を行っていることも明らかになりました。 続きを読む...",
-      "title": "Anthropicが筋ジストロフィー治療薬開発のMithril Medicine買収を発表、生命科学分野で独自の創薬活動を開始",
-      "uid": "30a375b699df0362",
-      "url": "https://gigazine.net/news/20261028-anthropic-life-science-working/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-28T08:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Anthropicは10月27日付の発表で、創業者1人で運営していた創薬企業「Mithril Medicine」を買収し、小児の希少な筋ジストロフィーの治療研究を社内で続けていると明らかにした。AI「Claude」が外部研究機関との契約や実験の手配を支援しており、候補薬はまだ人で試験する前の研究段階にある。",
-      "title": "Anthropic、1人社長の創薬企業を買収　「Claude」で小児難病の治療研究",
-      "uid": "ade7d260c6d08353",
-      "url": "https://japan.cnet.com/article/35254099/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-28T08:36:39+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "LINEヤフーは、同社が運営する「Yahoo!ショッピング」の機能「AIおまかせ比較」を刷新し、「価格の安さ」「配送の早さ」「評価の高さ」など、ユーザーが重視する条件に応じて商品を提案する「AIベスト提案」の提供を順次開始する。同機能は、「Yahoo!ショッピング」のPC／Webブラウザーおよびアプリ（iOS版、Android版）の商品詳細ページやお気に入りページから利用できる。",
-      "title": "Yahoo!ショッピング「お得」なお買い物を提案してくれる「AIベスト提案」",
-      "uid": "c0fdbdc0aabdc271",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151962.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-28T08:13:58+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "イスラエルのセキュリティ企業によれば、悪意のある「AGENTS.md」が仕込まれたダウンロードフォルダでコーディングエージェントを起動すると、エージェントがマルウェアをインストールしたり、アカウント乗っ取りを支援したりする恐れがある。",
-      "title": "「ダウンロードフォルダでAIを使わないで」――セキュリティ企業が注意喚起　エージェントが攻撃者の指示に従いマルウェアインストールの恐れ",
-      "uid": "96c4d2a671ee791d",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/28/2000002671/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-28T07:20:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "エルヴィス・プレスリーは「キング・オブ・ロックンロール」と称される伝説的ロックスターであり、記事作成時点でも根強い人気を誇っています。そんなプレスリーの著作権を所有する企業や団体が、Claudeを開発するAnthropicがAIモデルの学習にプレスリーの楽曲を無断使用したとして訴訟を起こしました。 続きを読む...",
-      "title": "「エルヴィス・プレスリーの曲がAI学習に無断使用された」と60億円超の損害賠償をAnthropicに求める訴訟が提起される",
-      "uid": "cdb1052f1075fb9c",
-      "url": "https://gigazine.net/news/20261028-elvis-presley-anthropic-lawsuit-ai-music/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

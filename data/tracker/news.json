@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-04T20:27:20+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add error details types and new error type values api: add ids filter to list workspaces client: add error classes for HTTP statuses and API error codes, and error_code, details and api…",
+      "title": "v2.5.0",
+      "uid": "879161dc0c634af9",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.5.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-04T18:01:07.395017+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -12,6 +24,20 @@
       "title": "OpenAI to acquire Pierre Computer Company, Inc.",
       "uid": "120bdc61e498dc65",
       "url": "https://openai.com/index/openai-to-acquire-pierre",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-04T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel.",
+      "summary_ja": "OpenAIがAIでLinuxの脆弱性948件を修正\nOSの基幹部分で、権限を不正に上げられる脆弱性を発見。\nAIが自動で発見・検証し、修正プログラムも生成。",
+      "summary_source": "gemini",
+      "title": "A thousand fewer paths to root",
+      "uid": "79e66cbfa5457b2c",
+      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
       "vendor": "OpenAI"
     },
     {
@@ -39,6 +65,20 @@
       "uid": "00384775e94edf04",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-04T23:44:04.606550+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-04T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+      "summary_ja": "DevRevがAIモデル「GPT-6.1 Sol」で自動サービス開始\n「Computer and Operator」という企業向けサービス。\n賢さ、速さ、費用の最適なバランスを実現する。",
+      "summary_source": "gemini",
+      "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+      "uid": "d82195200c5851b7",
+      "url": "https://openai.com/index/devrev-enterprise-self-service",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-03T21:04:29.813658+00:00",
