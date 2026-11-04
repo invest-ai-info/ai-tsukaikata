@@ -2052,6 +2052,12 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
 #### 補充（2026-11-01・ネタ探し担当。副業の着手可能が2件〈床3件を下回る〉のため源①②で補充）
 
 - [ ] フリマ・ハンドメイドの手数料と入金を、原文で確かめる
+  - ⏸ **いま着手できない**（2026-11-04・レシピ担当）＝この記事は手数料の数字に出典・確認日が
+    必須（money-noteの様式）だが、`curl -sS -o /dev/null -w "%{http_code}"` で実測したところ
+    `https://www.mercari.com/jp/help_center/article/833/`・`https://jp.mercari.com/...`・
+    `https://www.creema.jp`・`https://minne.com` の4件とも `CONNECT tunnel failed, response 403`
+    ＝**経路の遮断**（許可リストの問題。先方のbot判定ではない）。**印を消す条件**＝
+    これらのいずれかにクラウドから到達できた（実測して日付を書く）
   - 根拠: 源①＝`content/tools/money-map-three-routes.md`（「お金の流れ」シリーズの地図・③型
     〈買い手から直接〉の実例がnote・Kindleのみ）と`content/recipes/listing-only-what-you-checked.md`
     （メルカリ系の需要はdemand研究で確認済み＝`docs/superpowers/notes/2026-08-10-demand-research.md:231`
@@ -2074,7 +2080,8 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
     既存のdemand研究でも裏付けあり。ただし「AIに頼んで手取りを出す」という使い方自体を
     扱った記事は見当たらず、計算式そのものの定説性は確認できた
 
-- [ ] 既存クライアントへ値上げを切り出す文面を、AIと作る（条件は自分で決め、文面調整だけ任せる）
+- [x] 既存クライアントへ値上げを切り出す文面を、AIと作る（条件は自分で決め、文面調整だけ任せる）
+  - →保管: 公開: `price-raise-email-keeps-numbers-adds-a-reason`
   - 根拠: 源①＝公開済み`price-raise-timing-sticks-to-the-last-bad-signal.md`（値上げの
     「タイミング」判定）の「応用・次の一手」が「値上げ交渉そのものの進め方は
     [hourly-rate-from-your-own-log]にまとめてあります」と書くが、同記事189行目を実物で
