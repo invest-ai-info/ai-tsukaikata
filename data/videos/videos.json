@@ -6209,91 +6209,185 @@
    "first_seen": "2026-11-03T19:47:02.227858+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "SH-uT3UKGk4",
+   "title": "【最先端の日本語性能】Kling AIの最新動画生成AIモデル「Kling 4.0」徹底解説！ ～性能・使い方・動画作成事例～",
+   "url": "https://www.youtube.com/watch?v=SH-uT3UKGk4",
+   "published": "2026-11-04T09:06:53+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)10月下旬、Kling AIは、最新の動画生成AIモデル\n「Kling 4.0」を一般公開しました\nこのモデルは、前のモデル(Kling 3.0)から大きく進化し\nテキストから動画を作れるほかにも\n動画や画像などの参照素材を15個まで組み合わせて\n1080p解像度の最大30秒の音付き動画を生成可能で\nさらに、動画内の人物に日本語のセリフを\nほぼ完璧に喋らせることもできるようになりました\n\n今回の動画では\n第一章：Kling 4.0の概要と使い方\n第二章：Kling 4.0で作れる動画\nの二章構成で、Kling 4.0の概要\nKling AIの公式サイトやAIプラットフォームで\nKling 4.0を使って動画を作る方法\n最後に、Kling 4.0でどんな動画を作れるのか\n実際に作った動画を交えて紹介します\n\n◆動画のもくじ\n0:00　Kling 4.0のサンプル\n0:43　動画について\n1:20　動画のもくじ\n1:58　第一章：Kling 4.0の概要\n2:22　①、Kling 4.0の特徴\n3:41　②、Kling AIでKling 4.0を使う\n5:13　③、その他のKling 4.0の使い方\n6:16　第二章：Kling 4.0で作れる動画\n9:52　エンディングムービー\n\n◆動画の中で紹介している内容\nfal、ByteDance、Seedance 2.5、MiniMax、MiniMax H3\n\n◆参考サイト\nhttps://kling.ai/ja\nhttps://kling.ai/ja/feature/kling-4-ai-video-generation\nhttps://fal.ai/\nhttps://x.com/Kling_ai/status/2113601348881002731\nhttps://x.com/Kling_ai/status/2110747526840361191\nhttps://x.com/Kling_ai/status/2112946255257084260\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイン、Hooks、Subagents)をやさしく解説！\nhttps://youtu.be/gKtw6tuTuJ0\n【すぐに使える活用事例20例】画像生成・編集AI「ChatGPT ",
+   "first_seen": "2026-11-04T19:59:57.371887+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Lb7B16Gohv4",
+   "title": "【脱AI臭】『AIとの認識のズレ』をなくす本質解説！なぜハーネスが必要でポン出しは厳しいのか",
+   "url": "https://www.youtube.com/watch?v=Lb7B16Gohv4",
+   "published": "2026-11-04T10:00:20+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-04T19:59:57.371887+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AIに任せきりにすると無難な選択で埋められ認識のズレが生じるため、人間が制御するハーネスが必要だと説明している。",
+    "手戻りが大きくなる上流の決定から順に、質問やすり合わせを行ってシミュレーションの解像度を高めるべきだと述べている。",
+    "本番生成の前にモックや選択肢を提示して合意を取る「グリル」や「赤ペン」などの手法を紹介している。"
+   ],
+   "for_whom": "AIエージェントの出力が意図とズレて手直しに苦労している人",
+   "caution": "動画内で紹介されているスキルやコードの受け取りには公式LINE登録が必要であり、有料のnoteメンバーシップへの案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-04T19:59:57.371887+00:00"
+  },
+  {
+   "video_id": "44GBqQGc-v0",
+   "title": "How Figma Is Building Self-Serve Analytics with OpenAI",
+   "url": "https://www.youtube.com/watch?v=44GBqQGc-v0",
+   "published": "2026-11-04T17:27:07+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-04T19:59:57.371887+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "FigmaがOpenAIと提携し、組織内の文脈を理解するAthenaを活用していると説明している。",
+    "マーケターがダッシュボード構築を待たずに、施策の成果を直接質問できると述べている。",
+    "今後は質問する前にAIが分析を提示する、プロアクティブな分析に期待していると語っている。"
+   ],
+   "for_whom": "社内データ分析のセルフサービス化や自動化を進めたい企業担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-04T19:59:57.371887+00:00"
+  },
+  {
+   "video_id": "kJA3fQnntpY",
+   "title": "Collaborate on artifacts in Claude",
+   "url": "https://www.youtube.com/watch?v=kJA3fQnntpY",
+   "published": "2026-11-04T18:18:25+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-04T19:59:57.371887+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ClaudeのArtifacts機能でドキュメントやトラッカーを作成し、チームメンバーと共有して共同編集できると紹介している。",
+    "閲覧や編集、貢献などユーザーごとにアクセス権限を設定でき、コメントからClaudeに直接修正を指示できると説明している。",
+    "Artifactsタブから過去の共有データやテンプレートを管理でき、チームの進捗状況をClaudeに要約させられると解説している。"
+   ],
+   "for_whom": "ClaudeのArtifactsを使ってチームで資料作成やタスク管理の共同作業を行いたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-04T19:59:57.371887+00:00"
+  },
+  {
+   "video_id": "KgS3hbpxTzE",
+   "title": "I turned a viral idea into a $25K/month app",
+   "url": "https://www.youtube.com/watch?v=KgS3hbpxTzE",
+   "published": "2026-11-04T18:00:08+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-11-04T19:59:57.371887+00:00",
+   "status": "skipped",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-03T19:47:02.227858+00:00",
+   "last_ok": "2026-11-04T19:59:57.371887+00:00",
    "fail_streak": 0
   }
  }
