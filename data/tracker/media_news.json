@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-11-04T15:15:49+00:00",
+      "source_id": "media-publickey",
+      "summary": "GitHubは、米サンフランシスコで10月28日と29日の2日間開催した年次イベント「GitHub Universe 2026」で、新機能「GitHub Copilot Dreaming」をパブリックプレビューとして発表しました。 Copi...",
+      "title": "「GitHub Copilot Dreaming」発表。作業を振り返ってパーソナルメモリやガイダンスをバックグラウンドで整理、アップデート。GitHub Universe 2026",
+      "uid": "d4290addc9895bfc",
+      "url": "https://www.publickey1.jp/blog/26/github_copilot_dreaminggithub_universe_2026.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-04T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Wikipediaで調べ物をしたり地図を確認したりする際はインターネット接続が基本ですが、通信回線が使えない場所や災害時には必要な情報を確認するのが難しくなります。そんな状況に備えてWikipedia・教科書・電子書籍・医療資料・オフラインマップをPCにまとめて保存し、さらにインターネット接続なしで動作するAIアシスタントまで利用できる無料のオープンソース知識検索ツールが「Project NOM…",
+      "title": "無料でネット接続なしでもWikipedia・教科書・オフラインマップが検索できAIアシスタントも搭載したオフライン知識検索ツール「Project NOMAD」",
+      "uid": "31dfcbf64f4a804e",
+      "url": "https://gigazine.net/news/20261104-project-nomad/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-11-04T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "富士フイルムが約100億円を投資して「データストレージ用磁気テープ」の製造能力を5倍に増強することを2026年10月29日に発表しました。生成AIの普及に伴ってデータアーカイブ需要が高まっており、これに対応するため磁気テープの安定供給体制を強化するとのことです。 続きを読む...",
+      "title": "富士フイルムが「磁気テープ」の製造能力を5倍に増強すると発表、AIブームによるデータアーカイブ需要増加に対応",
+      "uid": "4ba3f20d51deca87",
+      "url": "https://gigazine.net/news/20261104-fujifilm-boost-tape-production-ai-fuels/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-04T10:19:27+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "イトーキは、2月に発表したワークプレイス事業「Office3.0」の新ソリューション「ITOKI OFFICE AI AGENTS（イトーキ オフィス AIエージェント）」の提供を11月4日に開始した。",
+      "title": "イトーキ、拠点の意思決定をAIで支援する「ITOKI OFFICE AI AGENTS」",
+      "uid": "c5e986f4bbedae4c",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2153675.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-04T09:58:53+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "WHEREはスペースシフトと協業し、候補地の探索から地権者へのアプローチまでを一貫して支援するサービスの提供を開始した。再生可能エネルギー事業者を対象に、衛星データとAIを活用した用地探索の実証を進める。",
+      "title": "衛星データとAIで遊休農地などを新たな事業候補地として抽出するサービスを提供",
+      "uid": "a6cddfe870899ab9",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2153667.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-04T09:45:50+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "国内大手が出資するAI企業Noetraは、テックブログを開設した。",
+      "title": "国産AI開発のNoetra、テックブログ開設　「開発現場での試行錯誤や工夫」も発信",
+      "uid": "dff76a5d4009eddc",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/04/2000002886/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-04T09:21:51+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ガートナージャパンは、同社イベント「Gartner IT Symposium/Xpo」のオープニング基調講演において、AIの価値とリスクは相互に関連しており、最高情報責任者（CIO）にとっての課題は、リスクの高まりを上回るスピードで価値を累積していくことであると発表した。",
+      "title": "ガートナー「AIリスクが価値よりも速く高まっている中でやるべきこととは？」",
+      "uid": "a01dee99e16b41bb",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2153648.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-11-04T09:22:22.527755+00:00",
       "importance": "major",
       "label": "GIGAZINE",
@@ -2314,90 +2398,6 @@
       "title": "「エルヴィス・プレスリーの曲がAI学習に無断使用された」と60億円超の損害賠償をAnthropicに求める訴訟が提起される",
       "uid": "cdb1052f1075fb9c",
       "url": "https://gigazine.net/news/20261028-elvis-presley-anthropic-lawsuit-ai-music/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-28T07:08:10+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Synologyは10月28日、AI分析機能を備える6MP屋内フィッシュアイカメラ「FC600」を発表し、販売代理店およびパートナーを通じて販売を開始した。",
-      "title": "Synology、エッジAI搭載の360度屋内カメラ「FC600」",
-      "uid": "31437123227669a2",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151916.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-28T06:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "パナソニックグループで、従業員や元従業員とその家族約33万人分の個人情報が、社内で利用を禁止している外部の生成AIサービスにアップロードされた。同グループは、データについて「今後二次利用されない」と説明する。その根拠は何か。",
-      "title": "「禁止」するだけでは防げない？　パナソニックグループで約33万人分の個人情報が外部生成AIに",
-      "uid": "178f24b60dcc051a",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2610/28/news060.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-28T05:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "NVIDIAは10月26日、Metaの株式発行に合わせて30億ドルを出資すると発表した。AMDも翌27日、10億ドルの出資を発表。合計40億ドルとなる。両社はMetaのAIエージェント「Muse」などを支える計算基盤でも協力を拡大する。",
-      "title": "NVIDIA、Metaに計30億ドル（約4700億円）出資へ　新AI「Muse」を支える計算基盤で協力",
-      "uid": "72ab993b87b7338b",
-      "url": "https://japan.cnet.com/article/35254095/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-28T05:33:50+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Gensparkは10月27日、AI動画制作スタジオ「Genspark AI Media Studio（ジェンスパーク・エーアイ・メディアスタジオ）」を公開した。動画制作の専門知識や編集経験がないユーザーでも、制作したい映像を自然な言語で伝えるだけで、公開できる完成度の作品に仕上げられる。なお、同機能のローンチに合わせ、Plus、Pro、Team、Enterpriseプランの利用者を対象に、クレ…",
-      "title": "Genspark、脚本から字幕まで一気通貫で仕上げるAI動画制作スタジオ",
-      "uid": "38d38e84a7cd442c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2151878.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-28T05:20:24+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Notion AIが、毎月付与されるクレジットを消費して使う仕組みに移行する。利用コストを抑えるには何が必要か。開発を率いるシール・イェホシュア氏は「クリーンなコンテキストほど安くなる」と語る。その実践法を聞いた。",
-      "title": "Notion AIの「クレジット制」導入は改悪か？　コスト最適化のヒケツを開発責任者に聞いた",
-      "uid": "a7134c7f669836f3",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/28/2000002666/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-28T05:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "リョーサン菱洋は、ロボット実機を用いて実践的にフィジカルAIを学べる「フィジカルAI入門パッケージ」の提供を開始した。",
-      "title": "ロボット実機で実践的に学べる、リョーサン菱洋「フィジカルAI入門パッケージ」",
-      "uid": "3205db0be3bd8402",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2610/28/news040.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-28T09:45:56.538336+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-28T04:42:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AppleがiPhone・iPad・Macで使えるクリエイター向けツールコレクション「Apple Creator Studio」のアップデートを発表しました。Apple Creator Studio向けアップデートは2026年11月にApp Storeで提供開始となります。 続きを読む...",
-      "title": "AppleとOpenAIのモデルに基づいて構築されたAIアシスタントがKeynote・Pages・NumbersだけでなくLogic Proにも追加、Keynote・Pages・NumbersはMCPをサポート",
-      "uid": "f98d2587631c38de",
-      "url": "https://gigazine.net/news/20261028-apple-creator-studio-ai-features-openai-models/",
       "vendor": "GIGAZINE"
     }
   ]

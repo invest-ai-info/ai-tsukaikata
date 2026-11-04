@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-04T14:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code.",
+      "summary_ja": "OpenAIがPierre Computerを買収。\nコード生成AI「Codex」の機能を強化。\nコード作成、理解、レビューが拡充される。",
+      "summary_source": "gemini",
+      "title": "OpenAI to acquire Pierre Computer Company, Inc.",
+      "uid": "120bdc61e498dc65",
+      "url": "https://openai.com/index/openai-to-acquire-pierre",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-04T18:01:07.395017+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-04T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Daybreak Red brings GPT-5.6 Cyber to approved customers in AWS GovCloud (US-East) through Amazon Bedrock for authorized cybersecurity work.",
+      "summary_ja": "Daybreak Redが米国政府向けクラウドで提供開始。\nGPT-5.6 CyberがAmazon Bedrock経由で利用可能に。\n承認された顧客がサイバーセキュリティ業務に利用。",
+      "summary_source": "gemini",
+      "title": "Daybreak Red is now available in AWS GovCloud (US-East)",
+      "uid": "b3143fb111764a77",
+      "url": "https://openai.com/index/daybreak-red-aws-govcloud",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-04T01:26:07.275112+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5953,32 +5981,6 @@
       "uid": "fe3568a6632498a0",
       "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-07T00:17:27.231353+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-06T15:06:15+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
-      "uid": "a308efebc7f4e70d",
-      "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-07T00:17:27.231353+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-06T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.6 Luna.",
-      "summary_ja": "ChatGPTのAIが改善され、無料利用の範囲が広がった。\nAI「GPT-5.6 Sol」の精度と安定性が向上した。\n無料ユーザーはAI「GPT-5.6 Luna」と無制限に会話できる。",
-      "summary_source": "gemini",
-      "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
-      "uid": "f86c8dc90103de18",
-      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
-      "vendor": "OpenAI"
     }
   ]
 }
