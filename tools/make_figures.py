@@ -41526,3 +41526,97 @@ def review_reply_note_leak_chart() -> None:
 if __name__ == "__main__":
     review_reply_specific_ask_leak_chart()
     review_reply_note_leak_chart()
+
+
+def simultaneous_stop_both_named_chart() -> None:
+    """2本が同時に止まっても、両方を名指しできたかを示す表（2026-11-04実測）。
+
+    先行記事`four-process-log-keeps-each-own-baseline`は「止まるのは常に1本だけ」
+    という条件だった（著者自身が「2本以上が同時に止まる場合は試していません」と明記）。
+    この記事は、低頻度どうし(P1+P2)・頻度差17倍の両極(P1+P4)・中〜高頻度どうし(P2+P4)の
+    3パターンで2本を同じ4日間に同時に止め、全処理が正常な構成とあわせて各2回試した。
+    """
+    _hit_and_miss_rows_chart(
+        "simultaneous-stop-both-named.svg",
+        "2本が同時に止まっても、両方とも8回中8回名指しできた",
+        "実測2026-11-04。P1〜P4を1本のログに混ぜ、2本を同じ4日間だけ同時に止めて「処理ごとに計算して」を試した。",
+        "低頻度どうし・頻度差17倍の両極・中〜高頻度どうしの3組み合わせと、全処理が正常な構成を各2回。",
+        [
+            ("P1+P2（低頻度どうし）が同時停止", 2, 2, "good"),
+            ("P1+P4（頻度差17倍の両極）が同時停止", 2, 2, "good"),
+            ("P2+P4（中〜高頻度どうし）が同時停止", 2, 2, "good"),
+            ("全処理が正常（誤報ゼロの確認）", 2, 2, "good"),
+        ],
+        [
+            "同時に止めた2本のどちらが欠けても見逃した回は0件。8回とも両方を完全に名指しできた。",
+            "片方だけ名指しして、もう片方を見逃した回・誤って他の処理を異常とした回は0件だった。",
+        ],
+        "process=P1〜P4の4本を1本のログに混ぜ、指定した2本だけを同じ4日間(09-10〜09-13)同時に"
+        "止めて「処理ごとに計算して」と試した結果を示す表。低頻度どうし(P1+P2)・頻度差17倍の両極"
+        "(P1+P4)・中〜高頻度どうし(P2+P4)の3組み合わせと、全処理が正常な構成を、各2回試した。"
+        "4行とも2/2で、同時に止めた2本を両方とも完全に名指しできた。下の枠には、同時に止めた2本の"
+        "どちらが欠けても見逃した回は0件で8回とも両方を完全に名指しできたこと、片方だけ名指しして"
+        "もう片方を見逃した回・他の処理を誤って異常とした回は0件だったことが書かれている。",
+        label_w=360,
+    )
+
+
+def singular_ask_drops_one_from_headline_chart() -> None:
+    """「いちばん異常な処理はどれですか」と1つだけ尋ねると、見出しの答えが1本に絞られる様子を示す図。
+
+    実測2026-11-04。P1+P4（頻度差17倍の両極で両方が同時に停止）のログに、単数形で尋ねる
+    言い直しを2回試した。2回とも見出しは頻度の高いP4だけを名指しし、P1の停止は本文の後半に
+    補足として出るだけだった。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">「いちばん異常な処理は」と1つだけ尋ねると、見出しは1本に絞られる</text>\n',
+        '<text class="t-sm" x="18" y="45">P1とP4が同時に停止した同じログに、単数形の尋ね方で2回試した結果。</text>\n',
+    ]
+    y = top
+
+    def row(label: str, detail: str, cls: str) -> int:
+        nonlocal y
+        h = 48
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 38}">{_esc(detail)}</text>\n')
+        y += h + 12
+        return h
+
+    parts.append(f'<text class="t-sm" x="{box_x}" y="{y}">1回目・2回目とも同じ形だった：</text>\n')
+    y += 16
+    row("見出しの答え", "「いちばん異常なのは process=P4 です」（2回とも）", "box-bad")
+    row("本文のP4の扱い", "頻度・実行パターン・4日間の欠落を理由に挙げる（2回とも）", "box-good")
+    row("本文のP1の扱い", "「P1も9/10〜9/13は動いていない」と後半で触れるだけ（2回とも）", "box-bad")
+
+    y += 6
+    notes = [
+        "⚠️ P1の停止は本文から消えてはいない。ただし見出しの答えには出ない。",
+        "⚠️ 見出しだけを読む・見出しだけを後段に渡す使い方では、P1の停止が伝わらない。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "P1とP4が同時に停止した同じログに「いちばん異常な処理はどれですか」と1つだけ尋ねた結果を示す図。"
+        "1回目・2回目とも、見出しの答えは「いちばん異常なのはprocess=P4です」で、頻度の高いP4だけを"
+        "名指ししている。本文ではP4について実行頻度・パターンの変化・4日間の欠落を理由に挙げている。"
+        "P1についても本文の後半で「P1も9/10〜9/13は動いていない」と触れているが、見出しの答えには"
+        "出てこない。下の枠には、P1の停止は本文から消えてはいないが見出しの答えには出ないこと、"
+        "見出しだけを読む・見出しだけを後段に渡す使い方ではP1の停止が伝わらないことが書かれている。"
+    )
+    (OUT / "singular-ask-drops-one-from-headline.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    simultaneous_stop_both_named_chart()
+    singular_ask_drops_one_from_headline_chart()
