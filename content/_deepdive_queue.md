@@ -602,8 +602,29 @@
       このサイトの記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
-- [ ] https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
+- [!] https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
   - 2026-10-31 自動追記（minor・Google DeepMind「Gemini Robotics 2 brings whole body intelligence to robots」）
+  - **2026-11-04 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降これまでの12件と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` は200。本文を確認した）
+
+    **② 中身が「ロボット本体を動かすVLAモデル群の発表」で、価格・公開仕様が無い**
+
+    - Gemini Robotics 2（全身制御のVLAモデル）・Gemini Robotics On-Device 2（端末上で動くVLAモデル）の
+      2モデルの紹介。同日発表の Gemini Robotics ER 2（「頭脳」役・2026-11-02公開済み:
+      `content/tools/gemini-robotics-er-2.md`）の姉妹モデルで、こちらは実際の手足の動き（低レベル制御）を担う
+    - モデルカード（`https://deepmind.google/models/model-cards/gemini-robotics-2`）は**Page not found**（404）で、
+      読める量・書ける量・学習データの締め切りが公開されていない
+    - 本文は「VLAモデル・On-Deviceモデルは早期アクセスのパートナーのみに提供」と明記しており、
+      Gemini API・AI Studio等の一般提供は行われていない。Vertex AI の料金ページは本文が大きすぎて
+      この環境からは中身を取得できず、該当行の有無は**確認できず**（取得できなかった事実のみ記録。無いと断定はしない）
+    - 本文中の数字は「22自由度の五指ハンド」「新しい二腕構成に適応するのに通常200例未満」の2つのみで、
+      料金・性能ベンチマーク・一般提供条件の数字ではない
+    - 💡 **2026-10-28 Genie 4（早期アクセス限定・モデルカード無し・料金非公開）とほぼ同じ構造**。
+      料金も仕様も非公開のため比較表が作れない
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 - [ ] https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/
   - 2026-11-02 自動追記（minor・Google DeepMind「Speeding up planning decisions with AI」）
