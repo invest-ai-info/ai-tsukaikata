@@ -5979,20 +5979,6 @@
       "uid": "f86c8dc90103de18",
       "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-07T00:17:27.231353+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-06T06:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health.",
-      "summary_ja": "OpenAIが米国心理学会と協力し、AIの指針を作る。\n若者の心の健康とAIの適切な利用について議論する。\n根拠に基づく指針や資料、安全策を推進する。",
-      "summary_source": "gemini",
-      "title": "Working with the American Psychological Association on youth mental health and AI",
-      "uid": "1e81e8ad089d65e4",
-      "url": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
-      "vendor": "OpenAI"
     }
   ]
 }
