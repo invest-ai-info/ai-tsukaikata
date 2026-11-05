@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-05T22:04:07.559769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-05T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIに実装を任せ、コードもテストも自動で進む「エージェント型開発」。効率化への期待が高まる一方、経験豊富な開発者ほど導入に慎重だ。コードが動けばそれでいい、とはいかないらしい。彼らが警戒するのは、動作確認だけでは分からない、その先のリスクだ。",
+      "title": "デキるプログラマーほど「AI任せ」を嫌う、エージェント型開発のちょっと怖い話：904th Lap",
+      "uid": "84ffa7d860d70efa",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/06/2000002925/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-05T22:04:07.559769+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-05T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "2026年10月21日に発見された深刻なサイバーセキュリティ脆弱性「PHP2Shell」はNASA・Wikipedia・ホワイトハウスといった名だたるウェブサイトに影響を与える可能性があったものの、悪用される前に修正パッチがリリースされたため大規模な被害は回避されました。しかし、PHP2Shellはいわば「炭鉱のカナリア」でありAI時代に起こり得ることへの警告かもしれないと、電気・電子工学系ニュ…",
+      "title": "AIは開発者やプログラマーたちに長年にわたって蓄積されてきた技術的負債を返済することを強いている",
+      "uid": "e7b9d527f703487f",
+      "url": "https://gigazine.net/news/20261106-ai-in-cybersecurity-php2shell-vulnerability/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-05T22:04:07.559769+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-05T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Linux Foundation傘下のAgentic AI Foundation（AAIF）が「AGNTCon + MCPCon Japan 2026」を東京・渋谷で開催した。同イベントとしては日本初開催となる。MCPの共同開発者らの講演から、AIエージェントの現在地と今後を読み解く。",
+      "title": "「48ドルの返金が4800ドルに」　AIエージェントの暴走を止める、本番運用の勘所",
+      "uid": "0af4c2ffc42865f4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/06/news012.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-05T15:31:45.618492+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "6e6dc91eb8d4f5fd",
       "url": "https://japan.cnet.com/article/35254125/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-29T05:18:08+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "エムエスアイコンピュータージャパンは、120BクラスのLLMをローカルで実行できる128GBのユニファイドメモリを搭載し、2TB SSD、最大4画面出力で高度なAIワークフローと業務効率化を実現する「PRO MAX EDGE AI+ 11M-008JP」を11月5日より販売を開始する。同社販売サイトでの価格は818,000円。",
-      "title": "MSI、ローカルLLM環境を実現できる128GBのユニファイドメモリ搭載AIステーション 120Bクラスの大規模パラメータに対応「PRO MAX EDGE AI+ 11M-008JP」発売",
-      "uid": "9d1a894a3fd77276",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152259.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-29T05:14:15+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ORENDA WORLDは10月29日、農林水産省の2026年度「AI×『農山漁村』インパクト創出ソリューション実装プログラム」において、福島アグリテックスLab.と共同提案した取組「『半農半テック』推奨による農山漁村現場のAIリテラシー向上」が選定されたことを発表した。",
-      "title": "「半農半テック」で農村のAI活用を推進。ORENDA WORLDらの取組が農水省事業に選定",
-      "uid": "e43d77d270ed5a91",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152254.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-10-29T05:14:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "Artificial AnalysisはAIモデルの性能評価を行っている独立機関で、複数のベンチマーク結果をもとにAIの総合性能を算出する「Artificial Analysis Intelligence Index」は新規モデルの性能を把握するための指標として広く用いられています。そんなArtificial Analysis Intelligence Indexのバージョン5が発表されました。…",
-      "title": "AIベンチマーク「Intelligence Index v5」発表、2つの新しいベンチマークと3つのアップグレード",
-      "uid": "dd12e8d07b089ee8",
-      "url": "https://gigazine.net/news/20261029-intelligence-index-v5/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

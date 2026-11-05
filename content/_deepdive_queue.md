@@ -635,6 +635,11 @@
 - [ ] https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/
   - 2026-11-05 自動追記（minor・Google DeepMind「WeatherNext: AI model achieves breakthrough in forecasting cyclones」）
 
+- [ ] https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/
+  - 2026-11-05 自動追記（major・Google「Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips」）
+- [ ] https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/
+  - 2026-11-05 自動追記（major・Google DeepMind「Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/ → **公開済み** content/tools/gemini-robotics-er-2.md（2026-11-02・公開）
