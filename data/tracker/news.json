@@ -81,6 +81,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-05T06:54:36.662801+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-04T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
+      "summary_ja": "AI画像生成機能「Images 2.6」が登場。\n画像生成が高速化し、GIF作成や精密編集も可能に。\nChatGPTやAPIで新しい操作機能が追加されました。",
+      "summary_source": "gemini",
+      "title": "Introducing Images 2.6",
+      "uid": "16b1a2a54b6d4835",
+      "url": "https://openai.com/index/introducing-images-2-6",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-03T21:04:29.813658+00:00",
       "importance": "minor",
       "label": "DeepMind Blog",
@@ -5997,30 +6011,6 @@
       "uid": "dc0ad20d81d4604e",
       "url": "https://openai.com/index/hsp-gruppe",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-07T04:04:17.931385+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-07T04:00:59+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added self-hosted environments: claude self-hosted-runner turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and Enterpri…",
-      "title": "v2.1.224",
-      "uid": "027b3b38530d9248",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-07T04:04:17.931385+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-07T01:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "Improving Fable 5's biology safeguards",
-      "uid": "fe3568a6632498a0",
-      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
-      "vendor": "Anthropic"
     }
   ]
 }
