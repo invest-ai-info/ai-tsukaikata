@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-05T10:17:58+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "医学書院、NTTおよびNTTドコモビジネスは、Ubieと医療AI情報プラットフォームを活用した共同実証を11月より開始する。同実証では、医学書院、NTT、NTTドコモビジネスが共同開発した医療AI情報プラットフォームとUbieの医療機関向け生成AIサービス「ユビー生成AI」を用い、NTT東日本関東病院で検証を行なう。",
+      "title": "医学書院とNTT等、医療AI基盤の実証実験を関東病院で開始",
+      "uid": "dd531f0bbe41f5d4",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2154095.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-05T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "アメリカで2026年11月3日に実施された中間選挙に合わせて、各地でAI向けデータセンターの建設を禁止・制限する住民投票が行われました。多くの地域でデータセンターの建設に反対する結果となり、11月4日時点では2026年に実施された関連住民投票47件のうち46件で規制強化を支持する結果が出ています。 続きを読む...",
+      "title": "アメリカ各地でAIデータセンター建設に反対する住民投票が相次ぎ可決、47件中46件で規制強化を支持",
+      "uid": "b0198801c6c5d42a",
+      "url": "https://gigazine.net/news/20261105-us-data-center-vote-reject/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-05T09:50:30+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "電通と東京藝術大学は、AIと芸術に関する共同研究契約を締結した。両者は「アートベース／偶然はない。」を共同の活動拠点とし、研究者、アーティスト、クリエイター、テクノロジストがAIを活用して協働する。共同研究では、「絵画の拡張」「音楽の拡張」「社会の拡張」の3つのプロジェクトを進め、新たな表現の可能性を研究していく。",
+      "title": "電通と東京藝術大学、AIと芸術の関係は探り、新たな表現の可能性を探求",
+      "uid": "17c8e39c4d5df70d",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2154080.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-05T09:13:39+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "楽天インサイトは、「生活者のAI活用購買における調査」をインターネットで実施した。調査期間は7月24日から7月28日。",
+      "title": "AI活用の買い物調査、期待するのは自分に似合うものの提案",
+      "uid": "13f6942067516a8b",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2154062.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-05T09:06:36+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ガートナージャパンは、2027年の日本IT支出総額が前年比9.7％増となる51兆2,000億円に達するとの見通しを発表した。",
+      "title": "ガートナー、2027年の日本のIT支出はAI関連需要が堅調で前年比9.7％増と予測",
+      "uid": "d81ac4d01db8ef79",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2154055.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-05T07:01:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "フジテレビは11月5日、2027年10月をめどに、制作するすべてのドラマで作品や場面に応じてAIを活用できる体制を整えると発表した。すでに「救命病棟24時」など複数のドラマで生成AIを使っている。",
+      "title": "フジテレビ、全ドラマでAI映像活用へ　27年秋めどに体制整備",
+      "uid": "feebe31cac8e4f7e",
+      "url": "https://japan.cnet.com/article/35254441/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-05T07:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "さまざまなAIモデルに書道に挑戦させ、作品を並べて鑑賞するというサイトが「AI書道コンクール」です。 続きを読む...",
+      "title": "AIに無理やり書道をやらせる「AI書道コンクール」が登場、画像生成AIではなく言語モデルに挑戦させる",
+      "uid": "46be96f4a0b0d711",
+      "url": "https://gigazine.net/news/20261105-ai-shodo/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-05T06:54:36.662801+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2315,90 +2399,6 @@
       "uid": "dd12e8d07b089ee8",
       "url": "https://gigazine.net/news/20261029-intelligence-index-v5/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-29T04:45:11+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Google DeepMindは10月27日、新しいワールドモデル「Genie 4」を発表した。現在、信頼できるテスター向けにリサーチプレビューとして公開されており、今後は「Project Genie」のGoogle AI Ultra加入者やGemini APIの早期アクセスパートナー向けに順次提供される予定となる。",
-      "title": "Google DeepMind、推論で複雑なタスクを描く世界モデル「Genie 4」",
-      "uid": "51cb14e6f0e13d73",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152245.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-29T04:40:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "マレーシア税関当局が、高度なAIチップを搭載したサーバーユニット30台を押収したと発表しました。貨物の輸送を仲介したマレーシア企業が取り調べを受けています。 続きを読む...",
-      "title": "約19億円相当のAIチップがマレーシアの空港で押収される",
-      "uid": "5783e6c2b124a4ba",
-      "url": "https://gigazine.net/news/20261029-malaysia-airport-ai-chip/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-29T04:13:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "NVIDIAが文字起こしAI「Nemotron 3.5 Transcribe」を現地時間の2026年10月28日に公開しました。複数の話者を識別しながら高精度な文字起こしが可能です。 続きを読む...",
-      "title": "NVIDIAが文字起こしAI「Nemotron 3.5 Transcribe」を公開、大勢が同時に話す場面でも高精度な話者識別が可能",
-      "uid": "6ec11157ff526cf4",
-      "url": "https://gigazine.net/news/20261029-nvidia-nemotron-3-5-transcribe/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-29T03:50:52+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTテクノクロスは、コールセンター向け統合ソリューション「CTBASE」シリーズのオペレーター応対支援ソリューション「ForeSight Voice Mining」に、会話内容をもとに次の応対をリアルタイムに案内する新機能「AIナビゲーション」を追加し12月より提供する。詳細な料金プランについては個別の問い合わせが必要。",
-      "title": "コールセンターの応対をリアルタイム案内。NTTテクノクロスの新AI機能",
-      "uid": "2a3f35cf00bc5154",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152214.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-29T03:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米プリンストン大学に所属する研究者らが4月に発表した論文「Commercial Persuasion in AI-Mediated Conversations」は、オンラインショッピングなどにおける対話型AIによる説得が消費者の選択をどれほど操作できるかを検証した研究報告だ。",
-      "title": "AIチャットが勧める広告商品、選択率が約3倍に　こっそり他商品けなし誘導　米研究者らが検証",
-      "uid": "aa7478587cd7e8fd",
-      "url": "https://www.itmedia.co.jp/news/article/2610/29/2000002680/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-29T03:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "独立研究者のPulak MehtaさんとAryan Deshkumarさんが発表した論文「Security Risks of AI Agents Hiring Humans: An Empirical Marketplace Study」は、2026年2月に開設した、AIエージェントが人間を雇うことを目的に設計された人材雇用マーケットプレース「RentAHuman」の求人情報を分析し、悪用されて…",
-      "title": "AIが人間に“闇バイト”を発注？　AIが物理的労働を買う求人サイト「RentAHuman」の実態",
-      "uid": "78086d4be897c8f6",
-      "url": "https://www.itmedia.co.jp/news/article/2610/29/2000002679/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-29T08:34:51.656988+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-29T02:15:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "開発チーム「Project Tadori」が運営するワイン情報サービス「ワイカメ」は、ワインに関する質問に対話形式で答える新しいトップページを10月29日に公開した。利用料は無料。",
-      "title": "実在15店舗・13万件の販売データと連携。対話型ワインAI「ワイカメ」公開",
-      "uid": "c56e8f017b17ff88",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152116.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

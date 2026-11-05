@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-05T15:31:45.618492+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-05T02:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI introduces its National Community Compact and Compute Campus Policy Blueprint to protect local resources, create jobs, and guide responsible AI infrastructure development.",
+      "summary_ja": "OpenAIがAIインフラ開発の責任に関する新基準を発表。\n地域資源の保護や雇用創出を目的とした方針を導入。\n「National Community Compact」など2つの方針。",
+      "summary_source": "gemini",
+      "title": "Setting a new standard for responsible AI infrastructure",
+      "uid": "269f130f26035dba",
+      "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-04T23:44:04.606550+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -5983,34 +5997,6 @@
       "uid": "ce6d55dc824071b1",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.121.0",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-07T17:10:40.287447+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-07T15:20:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls.",
-      "summary_ja": "OpenAIが新モデルの安全評価を公開\nモデル「Astra」のサイバー攻撃への安全性評価\n安全対策とセキュリティ強化の措置も公表",
-      "summary_source": "gemini",
-      "title": "Responding to the next frontier of critical cyber capabilities",
-      "uid": "d8cc34f5bb6df456",
-      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-07T09:17:20.213476+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-07T09:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
-      "summary_ja": "HSP GRUPPEが税務顧問業務にAIを導入\n企業向けChatGPTを使い生産性を向上\n業務品質を高め、顧客対応の余力も創出",
-      "summary_source": "gemini",
-      "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
-      "uid": "dc0ad20d81d4604e",
-      "url": "https://openai.com/index/hsp-gruppe",
-      "vendor": "OpenAI"
     }
   ]
 }
