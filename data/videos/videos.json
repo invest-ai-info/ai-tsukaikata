@@ -6303,91 +6303,261 @@
    "first_seen": "2026-11-04T19:59:57.371887+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "LXhrdpm7hKQ",
+   "title": "【今すぐ設定！】Geminiの『スキル』を徹底解説（簡単で便利なAI活用方法）",
+   "url": "https://www.youtube.com/watch?v=LXhrdpm7hKQ",
+   "published": "2026-11-05T09:00:09+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "description": "Geminiのスキル機能を徹底解説。そして今すぐ使える簡単AI活用方法を紹介。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 はじめに\n00:34 Gemとは？\n02:39 スキルとは？Gemとの違い\n06:38 スキルの作り方\n10:26 メール返信スキルを作って送信する\n12:52 スライド資料を同じデザインで作る\n18:01 複数のスキルを組み合わせる\n19:23 Gmailからサブスクの支払いを集計\n22:31 Apps Scriptで受付システムを作る\n28:29 Gemからスキルへの移行と注意点\n29:32 まとめ・サービスの案内\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Work完全解説動画\nhttps://youtu.be/U74PHw-h59Q\n【最新版】Claude完全攻略！これ見れば全てわかる\nhttps://youtu.be/OhO0WcRP6Ow\nGemini for Google Workspace完全解説\nhttps://youtu.be/0BZpNHfdFIk\nChatGPTをもっと便利に使いこなすAI活用術\nhttps://youtu.be/jSjjWKChnVA\nMidjourney Web版を徹底解説【これで全て理解】\nhttps://youtu.be/r6ynzWEX_38\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼は下記のメールアドレス宛へお願いします。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twitter.com/keitowebai\nnote：https://blog.procevo.biz/\nInstagram：https://instagram.com/keitowebai/\nTikTok：https://tiktok.com/@keito_cc\nメルマガ：https://kt-life.net/sns-links/newsletter.html\n\n#keito \n#ai \n#gemini",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "uPCuUsZv8-s",
+   "title": "ChatGPT(Codex)の最新画像生成AI「ChatGPT Images 2.6」徹底解説！ ～画像生成速度が50％向上し、GIFアニメーションの作成に対応～",
+   "url": "https://www.youtube.com/watch?v=uPCuUsZv8-s",
+   "published": "2026-11-05T09:04:51+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが画像生成AIの最新版「ChatGPT Images 2.6」を実装し、生成速度が50％向上したほかGIFアニメ生成に対応したと説明している。",
+    "参照画像を保存して再利用できる機能や、API向けモデル「Flare」「Sunburst」の特徴とベンチマーク結果を紹介している。",
+    "ChatGPT上での画像やGIFの生成手順に加え、AIプラットフォーム「fal」を使ったAPIモデルの利用方法を解説している。"
+   ],
+   "for_whom": "ChatGPTの最新画像生成機能やGIF作成、APIモデルの活用法を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-05T20:14:58.202512+00:00"
+  },
+  {
+   "video_id": "pr9zYRYiUe4",
+   "title": "【順当進化】『GPT Image 2.6』登場！GIF作成にSVG出力、高速化など嬉しいアプデを解説します",
+   "url": "https://www.youtube.com/watch?v=pr9zYRYiUe4",
+   "published": "2026-11-05T11:10:38+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIの画像生成API「GPT Image 2.6」が登場し、FlareとSunburstの両モデルが更新されたと紹介している。",
+    "GIF生成やSVG出力、マークアップによる部分修正、complexityパラメータなどの新機能が追加されたと解説している。",
+    "投稿者の検証ではFlareは高速化した一方で出力トークン数が増加し、生成コストが上昇する傾向があると指摘している。"
+   ],
+   "for_whom": "OpenAIの画像生成APIのアップデート内容やコスト変化を把握したい開発者",
+   "caution": "動画後半や概要欄で、主催するNoteの有料メンバーシップ（コミュニティ）への参加を促しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-05T20:14:58.202512+00:00"
+  },
+  {
+   "video_id": "pXRZyOxbDL4",
+   "title": "How Mozilla strengthens Firefox security with GPT-6 Cyber",
+   "url": "https://www.youtube.com/watch?v=pXRZyOxbDL4",
+   "published": "2026-11-05T17:14:11+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Mozillaのエンジニアが、Firefoxのセキュリティ強化にAIを活用していると説明している。",
+    "GPT-6 Cyberが未知の脆弱性を特定し、多層防御の強化に貢献したと述べている。",
+    "AIが提示した再現テストケースや修正パッチにより、迅速な対応が可能になったと語っている。"
+   ],
+   "for_whom": "AIを活用したソフトウェアのセキュリティ診断や脆弱性対策に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-05T20:14:58.202512+00:00"
+  },
+  {
+   "video_id": "bJldMYfRvMQ",
+   "title": "Introducing ChatGPT Images 2.6",
+   "url": "https://www.youtube.com/watch?v=bJldMYfRvMQ",
+   "published": "2026-11-05T02:32:21+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Images, upgraded—introducing ChatGPT Images 2.6.\n\nNow with GIFs and reference images.\n\nPlus, two new models are coming to the API with 50% faster image generation.\n\nImages, upgraded—introducing ChatGPT Images 2.6.\n\nNow with GIFs and reference images.\n\nPlus, two new models are coming to the API with 50% faster image generation. https://openai.com/index/introducing-images-2-6/",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "9ZxCOHkfn_8",
+   "title": "GPT-Image-2.6: Faster image generation with Flare and Sunburst",
+   "url": "https://www.youtube.com/watch?v=9ZxCOHkfn_8",
+   "published": "2026-11-04T23:42:40+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "We’re bringing GPT-Image-2.6 to Codex and the API. In the API, the 2.6 versions of Flare and Sunburst generate images 50% faster than before.\n\nUse Flare for a quick first pass on a poster or product shot. At low image quality, it can generate an image in as little as six seconds. When you need details to stay consistent across edits, use Sunburst at medium or high quality. Try changing a product’s backdrop while keeping its shape and texture, or bring a mascot to life as a looping GIF.\n\nhttp://openai.com/index/introducing-images-2-6/",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "UTubvRLX2j4",
+   "title": "Introducing Personal Finance in Claude",
+   "url": "https://www.youtube.com/watch?v=UTubvRLX2j4",
+   "published": "2026-11-05T18:00:30+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claudeに個人財務を管理・分析できる新機能「Personal Finance」がベータ版として登場したと紹介している。",
+    "金融口座を連携して支出内訳や固定費を可視化し、自然言語の質問で家計状況を把握できると説明している。",
+    "旅行計画などに向けた貯金シミュレーションの作成や、予算に合うホテル提案まで行えると示している。"
+   ],
+   "for_whom": "家計管理や将来の資金計画にAIを活用したい人",
+   "caution": "本機能はベータ版であり、米国の一部の有料プラン向けに順次展開されている点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-05T20:14:58.202512+00:00"
+  },
+  {
+   "video_id": "29rjKyt_yxI",
+   "title": "【最新】Claude CodeとHiggsfieldを使って「AI動画生成」で稼ぐ5STEPを公開します【AI副業を実演】",
+   "url": "https://www.youtube.com/watch?v=29rjKyt_yxI",
+   "published": "2026-11-05T09:00:05+00:00",
+   "channel_key": "muttyo",
+   "channel_name": "むっちょの副業月5万攻略",
+   "default_category": "earn",
+   "description": "今回は「Claude CodeとHiggsfieldで稼ぐAI動画の作り方」ってテーマで話しました！\n\n👇Higgsfieldの登録はこちら！\nhttps://higgsfield.ai?fpr=8mgmof\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=viX0niH67hBf\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=viX0niH67hBf\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n0:00 AI動画生成で収益化する全貌\n0:35 AI動画生成の仕組みと将来性\n4:27 AI動画制作のための環境構築\n10:44 崩れないAI動画制作の極意\n24:18 仕事に繋がるポートフォリオの作り方\n27:43 コンテストで実績を積む\n29:42 案件獲得のための営業戦略\n\n#claudecode  #おすすめ副業 #Higgsfield",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "pp2BeVbwHOk",
+   "title": "【センスなくてOK】52歳介護パートが月40万245円！同じ絵でLINEスタンプ・ステッカー・楽天ROOMをつなぐ俺とっておきの制作＆販売手順【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=pp2BeVbwHOk",
+   "published": "2026-11-05T09:00:38+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=yQOgiHNwfP\n※もしLINE登録が上手く行かない方は「@828wrlzg」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n📱【LINEスタンプ・ステッカー・楽天ROOMの回、このチャンネルにあります】\n今日は、同じ絵を3つの売り場に置いて、つなげて売る話でした。\n売り場ごとに1本ずつ深く掘った回を並べておきます↓\n\n▼宣伝ゼロで印税月52万。7人中4人が月30万を超えた、LINEスタンプの制作＆販売手順\nhttps://youtu.be/8ys-TVcolAw\n\n▼倉庫勤務・腰痛持ちの46歳が月22万。一番売れている穴場スタンプの作り方と売り方\nhttps://youtu.be/xWXMXUyjzME\n\n▼集客は頑張らない。LINEスタンプの“相互拡散作用”で、集客0のまま利益を出す回\nhttps://youtu.be/WClEnKzE7L0\n\n▼20万益を生んだスタンプの、アイデアの出し方から作り方まで全部見せた回\nhttps://youtu.be/TEHVudFziBc\n\n▼完璧ノーセンスでも50万。AI×ステッカーの始め方の回\nhttps://youtu.be/StpS6ldvYrc\n\n▼AIステッカーを無在庫で売って勝つ、ただ1つの方法\nhttps://youtu.be/zfU2RGIflVI\n\n▼ステッカーの売れ行きが変わる、5つのプロンプトの回\nhttps://youtu.be/yB0bgYu_RP0\n\n▼AIに“買わない客”を演じさせる。SUZURIで売る物販の回\nhttps://youtu.be/08q3EAtDi-Q\n\n▼愚痴をステッカーに変えて売る、ぼやき出荷の回\nhttps://youtu.be/EoQbPnQDEas\n\n▼“AI問診票”と“AI手のひら返し”。AIの力を引き上げてステッカーを作る回\nhttps://youtu.be/frSmfnOfG8I\n\n▼漢字が読める人の出番。和文のグッズを世界に置く、SUZURIの回\nhttps://youtu.be/dOF8EPYoaqU\n\n▼60代女性が50万。楽天ROOMの“絶対法則”と、思わず買われる投稿の作り方\nhttps://youtu.be/ljSMXKfd4Og\n\n▼マーケティングもアルゴリズムもいらない。楽天ROOMで唯一やるべきこと\nhttps://youtu.be/H47wa9M5sBQ\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AI",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "b3tMAOFB71o",
+   "title": "If You Want To Create Wealth In The Age of AI, Watch This",
+   "url": "https://www.youtube.com/watch?v=b3tMAOFB71o",
+   "published": "2026-11-04T20:30:20+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "description": "In this solo episode, I lay out how I think about building an AI-proof business now that anyone can press a few buttons and spin up a company in seconds. Layoffs keep coming, people copy products pixel for pixel, and I still see more opportunity than ever. I walk through eight categories: atoms, permission, attention, timing, belonging, liquidity, unique data, and outcomes. I share examples like Hampton, final.com, and Cars & Bids, say how I'd rank the categories, and show how to mix them. If you're an employee looking at a startup or a founder worried about getting copied, this episode gives you a map for building something with value when AI makes software, content, and answers almost free.\n\nTimestamps\n\n00:00 – Intro\n01:17 – Atoms: Physical Businesses\n02:26 – Permission: Licenses, Regulation, and Partnerships\n04:10 – Attention: Building a Media Machine\n06:28 – Timing: Spotting Trends Early\n08:24 – Belonging: Paid Communities and IRL Events\n10:59 – Liquidity: Marketplaces\n14:38 – Unique Data: Data Brokers and Curated Directories\n18:31 – Outcomes: Customers Paying for Results\n20:44 – Closing Thoughts\n\nKey Points\n\n• Physical businesses hold up against overnight clones, and I expect their valuations to rise as tech money moves in.\n• Licenses, regulation, and preferred-vendor deals are permission that a copycat has a hard time getting on day one.\n• Media is underrated, and AI lets you run a content machine around a micro niche.\n• A first mover's product may be easy to copy, whil",
+   "first_seen": "2026-11-05T20:14:58.202512+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-04T19:59:57.371887+00:00",
+   "last_ok": "2026-11-05T20:14:58.202512+00:00",
    "fail_streak": 0
   }
  }
