@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="名指ししない懸念が残るかどうかは懸念の確かめ方で決まることを示す図。1行目＝材料A（支払いが届いたかという確認すれば分かる事実）は、名指ししなくても5回とも『まだ届いていない』として残り、誤って消えなかった（緑）。2行目＝材料B（締め日変更の相談ごとで、決着が記録に無い）は、名指ししないと5回中4回『もう定着した』『不自然ではない』と自分から決着扱いにした（赤）。3行目＝材料Bに『懸念を全部列挙し、解消済みか未確認か1つずつ判定して』という一文を足すと、5回とも『未確認』として残った（緑）。下の枠には、分かれ目は懸念の重さではなく記録の中に決着を示す事実があるかどうかだったこと、事実で確認できない懸念は列挙と個別判定を指示文に入れないと黙って消えることがあることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="400"/>
+<text class="t-strong" x="18" y="26">名指ししない懸念が残るかどうかは、懸念の「確かめ方」で決まる</text>
+<text class="t-sm" x="18" y="45">片方だけを「解消した」と伝えたとき、もう片方がどう扱われたかを材料ごとに並べた。</text>
+<rect class="box-good" x="18" y="100" width="684" height="64" rx="6"/>
+<text class="t-strong" x="34" y="122">材料A：支払いが届いたか（確認すれば分かる事実）</text>
+<text class="t-good" x="34" y="144">名指ししなくても、5回とも「まだ届いていない」として残った＝誤って消えなかった</text>
+<rect class="box-bad" x="18" y="176" width="684" height="64" rx="6"/>
+<text class="t-strong" x="34" y="198">材料B：締め日変更の相談ごと（決着が記録に無い）</text>
+<text class="t-bad" x="34" y="220">名指ししないと、5回中4回「もう定着した」「不自然ではない」と自分から決着扱いにした</text>
+<rect class="box-good" x="18" y="252" width="684" height="64" rx="6"/>
+<text class="t-strong" x="34" y="274">材料B＋列挙の一文（言い直し方）</text>
+<text class="t-good" x="34" y="296">「懸念を全部列挙し、解消済みか未確認か1つずつ判定して」を足すと、5回とも「未確認」で残った</text>
+<rect class="box-accent" x="18" y="334" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="354">⚠️ 分かれ目は懸念の「重さ」ではなく、記録の中に決着を示す事実があるかどうかだった。</text>
+<text class="t-accent" x="34" y="372">⚠️ 事実で確認できない懸念は、列挙と個別判定を指示文に入れないと黙って消えることがある。</text>
+</svg>
