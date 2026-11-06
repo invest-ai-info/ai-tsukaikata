@@ -6473,91 +6473,183 @@
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "FznZ9EJyJX8",
+   "title": "【Skills】Geminiで作ったWebアプリを「完全オフライン化」！オフライン環境でも動く最強スキルを配布",
+   "url": "https://www.youtube.com/watch?v=FznZ9EJyJX8",
+   "published": "2026-11-06T09:00:15+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-11-06T19:39:46.771554+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "対話型AIに直感的な指示を出してWebアプリを構築する手法を説明し、専門知識不要で現場主導の開発ができると述べている。",
+    "Geminiで作成したアプリは外部CDN依存があるため、資材をローカル保存して参照先を書き換える必要があると説明している。",
+    "外部依存を解消する自作スキル「html-offline-converter」を使い、完全オフライン化する実演を紹介している。"
+   ],
+   "for_whom": "Geminiで作ったWebアプリをネット非接続環境やLGWAN環境で動かしたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-06T19:39:46.771554+00:00"
+  },
+  {
+   "video_id": "XgC1QTs6A2U",
+   "title": "The Future of AI Is Absolutely Incredible (Spencer Huang)",
+   "url": "https://www.youtube.com/watch?v=XgC1QTs6A2U",
+   "published": "2026-11-06T07:27:02+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-11-06T19:39:46.771554+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "NVIDIAの発表としてNewton更新を含むIsaac LabやAgile 1向け参照プラットフォーム等を紹介している。",
+    "Spencer Huang氏は、物理AIの難しさは現実世界の双方向な物理データや力覚フィードバックの不足にあると説明している。",
+    "従来型物理シミュレータとCosmos等のニューラルシミュレータを併用し、現実とのギャップを埋める手法を解説している。"
+   ],
+   "for_whom": "ロボティクスや物理AIの最新動向、シミュレーションを用いた学習技術に関心がある開発者向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-06T19:39:46.771554+00:00"
+  },
+  {
+   "video_id": "agm0UptOyYU",
+   "title": "【Claude公式】AIフル任せを防ぐ対策術8選！作業を任せても責任は取ってくれない！プロンプトにハーネスに向き合うべきことを解説",
+   "url": "https://www.youtube.com/watch?v=agm0UptOyYU",
+   "published": "2026-11-06T10:30:19+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-06T19:39:46.771554+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AIエージェントに作業を委託できても説明責任は人間側に残り、コードや判断を説明できない状態は思考の明け渡しになると指摘している。",
+    "認知ドリフトを防ぐ対策として、指示前に仮説を立てて出力と比較することや、エージェントの決定事項をクイズ化して確認する習慣を解説している。",
+    "テストの成功を過信せず検証基準を先に設けることや、プロンプトの最初と最後のチェックに注力して品質を担保する重要性を説明している。"
+   ],
+   "for_whom": "AIエージェントを活用した開発や業務自動化で、丸投げによるミスや品質低下を防ぎたい人",
+   "caution": "動画内で紹介されているプロンプトスキルやツールの受け取りには公式LINEへの登録が必要であり、noteの有料メンバーシップへの誘導も含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-06T19:39:46.771554+00:00"
+  },
+  {
+   "video_id": "4ZsVR-6YOzs",
+   "title": "How Salesforce uses Claude Code",
+   "url": "https://www.youtube.com/watch?v=4ZsVR-6YOzs",
+   "published": "2026-11-06T17:03:04+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-06T19:39:46.771554+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Salesforceの幹部が、Claude Codeを活用して既存コードのヘッドレス化を進め、API対応を大幅に加速させたと説明している。",
+    "スタンフォード大の研究者と有効アウトプット指標を策定し、ROIを定量測定して生産性が2倍になりバグも減少したと語っている。",
+    "自律的エージェント導入には客観的な検証とガードレールが不可欠であり、タスクの規模に応じた適切なモデル選定が重要だと述べている。"
+   ],
+   "for_whom": "社内へのAI開発ツール導入や、エンジニア組織の生産性向上・自動化を目指す技術リーダー向け。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-06T19:39:46.771554+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-05T20:14:58.202512+00:00",
+   "last_ok": "2026-11-06T19:39:46.771554+00:00",
    "fail_streak": 0
   }
  }
