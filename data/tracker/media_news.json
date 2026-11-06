@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-06T18:01:28.248445+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-06T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "自分のPCでAIを動かすには、PCの性能に合ったAIモデルを選んだり実行環境を構築したりする必要があり、AIとのチャットだけでなく手元のファイルを読み取らせたり加工したりするには追加の設定が必要になる場合もあります。こうした作業を自動化する無料のオープンソースアプリ「Hob」は、PCに適したAIモデルを選んで実行環境を構築し、文書や表計算ファイルの解析・編集・グラフ作成などをチャットから実行でき…",
+      "title": "無料でローカルAIを簡単にオフライン利用できるオープンソースアプリ「Hob」、Windows・Mac・Linux対応でPCに適したAIモデルの自動選択・ファイル操作・外部アプリ連携が可能",
+      "uid": "31cfd3e0e6d72502",
+      "url": "https://gigazine.net/news/20261106-hob/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-06T18:01:28.248445+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-06T11:10:25+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "Googleは、動画の生成・編集AIモデル「Gemini Omni 1.2 Flash」の一般提供を開始した。同モデルは現在、Gemini APIやGemini for businessを通じて開発者および企業向けに提供されるほか、Google Vids、Geminiアプリ（Google AI Ultra加入者）、Flowを介して個人向けにも展開される。",
+      "title": "Google、動画生成AI「Gemini Omni 1.2 Flash」を一般提供 前モデルから30%値下げ、最大15秒に長尺化",
+      "uid": "13aad0becf05687c",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2154512.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-06T18:01:28.248445+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-06T11:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIモデルの提供プラットフォームであるOpenRouterの調査によると、2026年9月末時点で、OpenRouter上の上位50モデルのトークンのうちオープンウェイトモデルが処理した割合は72％と、前年の27％から大幅に増加したとのこと。AIのオープンウェイトモデルとクローズドウェイトモデルの違いについて、OpenRouterが解説しています。 続きを読む...",
+      "title": "AIのオープンモデル利用率が大きく拡大中、オープンウェイトモデルとクローズドウェイトモデルの違いは何か？",
+      "uid": "de857876277b6035",
+      "url": "https://gigazine.net/news/20261106-open-closed-weight/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-06T10:59:17.380223+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2363,42 +2399,6 @@
       "uid": "3f22652365c855cd",
       "url": "https://japan.cnet.com/article/35254191/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-30T04:22:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "八楽は11月1日、AI翻訳ワークスペース「ヤラク翻訳」をVer.6.1にアップデートする。",
-      "title": "ヤラク翻訳、誤訳を80〜90％自動検出する「AIチェッカー」追加",
-      "uid": "8ffa78d5b8fc4560",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152596.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-30T03:41:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが、自社のAIモデルに求める振る舞いについて定めた指針「Model Spec⁠」を更新し、5つの原則を定めました。このような原則に従うようAIに指示することで、安全かつ有用なモデルを実現するという社内目標を推進できるとしています。 続きを読む...",
-      "title": "OpenAIが「AI五原則」を提案、「人間の意図に忠実であれ」「害を最小限に抑えろ」などの指針を自社モデルに適用",
-      "uid": "70c88fdc1e0b46b1",
-      "url": "https://gigazine.net/news/20261030-openai-model-spec-five-principles/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-30T03:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "アンリツ（神奈川県厚木市）の計測事業グループCTO（最高技術責任者）、ジョナサン・ボリル氏に日本の光通信技術が再び世界を制する可能性について聞いた。",
-      "title": "東京と台北を「17ミリ秒」で結ぶIOWN　アンリツCTOが語るデータセンター相互接続と日本の勝機",
-      "uid": "fb9a29b0bf211ec7",
-      "url": "https://www.itmedia.co.jp/business/articles/2610/30/news038.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-06T18:01:28.248445+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-06T17:04:01+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Changed auto mode with telemetry or feature flags off, including behind LLM gateways: calls the server can't check are asked about or denied, with no fallback to the built-in classifie…",
+      "title": "v2.1.319",
+      "uid": "0ecc42e5dc7ecd55",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-06T02:31:01.451102+00:00",
       "importance": "minor",
       "label": "OpenAI News",
