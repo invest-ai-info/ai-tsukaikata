@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-06T02:31:01.451102+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-05T20:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.",
+      "summary_ja": "Cult.fitがCodexで業務改善を加速\n各チームが作業効率化ツールを開発\n業務の進め方を変え、迅速化を実現",
+      "summary_source": "gemini",
+      "title": "Cult.fit builds operational muscle with Codex",
+      "uid": "61acfaf4dc7f1315",
+      "url": "https://openai.com/index/cultfit-builds-with-codex",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-05T22:04:07.559769+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -39,6 +53,20 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-11-06T02:31:01.451102+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-05T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Australian universities are expanding access to ChatGPT and bringing AI into teaching and learning to prepare students for an AI-enabled workforce.",
+      "summary_ja": "オーストラリアの大学がAI教育を拡充\nChatGPT利用を拡大し授業にAIを導入\n学生をAIを活用する労働力に育成",
+      "summary_source": "gemini",
+      "title": "Australian universities are creating AI-native graduates",
+      "uid": "b8166c17f30f8838",
+      "url": "https://openai.com/index/australian-universities-ai-native-graduates",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-05T22:04:07.559769+00:00",
       "importance": "major",
       "label": "OpenAI News",
@@ -53,6 +81,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-06T02:31:01.451102+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-05T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.",
+      "summary_ja": "MergeがOpenAI技術でツールを開発\nGPT-6 Astraなどで製品コード確認や営業支援\n経営陣の食事会計画や営業報告作成にもAI活用",
+      "summary_source": "gemini",
+      "title": "Merge builds product and business tools with OpenAI technology",
+      "uid": "2bbd086b47631f4c",
+      "url": "https://openai.com/index/merge-builds-with-openai",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-05T15:31:45.618492+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -64,6 +106,34 @@
       "title": "Setting a new standard for responsible AI infrastructure",
       "uid": "269f130f26035dba",
       "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-06T02:31:01.451102+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-05T00:45:15+00:00",
+      "source_id": "openai-news",
+      "summary": "Flipsnack focused its ChatGPT Ads campaigns on getting people to try its product, growing registrations while lowering the cost per signup.",
+      "summary_ja": "FlipsnackがAI広告で登録数を増加\nChatGPT広告で製品試用を促進する戦略を採用\n新規登録者数を増やしつつ獲得単価を削減",
+      "summary_source": "gemini",
+      "title": "Flipsnack grows product signups with conversion optimization",
+      "uid": "622b3a8b53ac663d",
+      "url": "https://openai.com/ads/customers/flipsnack",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-06T02:31:01.451102+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-05T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Starting with equity research, Franklin Templeton is developing AI workflows to help portfolio managers compare research views and examine investment risks.",
+      "summary_ja": "Franklin TempletonがAIで投資調査を支援\n株式調査からAIワークフローの開発を開始\nポートフォリオマネージャーが調査比較やリスク分析に利用",
+      "summary_source": "gemini",
+      "title": "Franklin Templeton uses OpenAI to support investment research",
+      "uid": "80df6865628deb3e",
+      "url": "https://openai.com/index/franklin-templeton",
       "vendor": "OpenAI"
     },
     {
@@ -6024,18 +6094,6 @@
       "title": "v2.1.226",
       "uid": "8a5d4b2b066e7e60",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-08T02:23:46.887173+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-08T01:09:26+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.2…",
-      "title": "v2.1.225",
-      "uid": "3155ee98a5ac2c58",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
       "vendor": "Anthropic"
     }
   ]
