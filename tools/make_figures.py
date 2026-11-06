@@ -42092,3 +42092,100 @@ def memo_chain_collapses_into_self_report_chart() -> None:
 if __name__ == "__main__":
     memo_chain_day_by_day_survival_chart()
     memo_chain_collapses_into_self_report_chart()
+
+
+def fifth_pattern_hit_and_miss_chart() -> None:
+    """文末パターンを5つに増やしたときの「見出しの数字が5と一致した回数」（2026-11-06実測）。
+
+    材料Aは5パターンでも崩れない。材料Bは新しい5つ目「ということになります」が
+    既存の「次第です」と意味が近く、同じ項目にまとめられて見出しが「4か所」になる。
+    総数を先または最後に明記させると材料Bも元に戻る。判定は
+    docs/evidence/fifth-pattern-merges-with-a-lookalike.md の judge.py から。
+    """
+    _hit_and_miss_rows_chart(
+        "fifth-pattern-hit-and-miss.svg",
+        "5パターンに増やしても材料Aは崩れない。材料Bは新しい崩れ方で5回中2回しか一致しない",
+        "「文末表現が不自然に連続している箇所を指摘して」に対し、見出しの数字が実際の5と一致した回数。",
+        "材料Bだけ食い違う。総数を先または最後に明記させると、材料Bも3/3・1/1で一致した。",
+        [
+            ("材料A・素朴に「指摘して」(5パターン)", 5, 5, "good"),
+            ("材料B・素朴に「指摘して」(5パターン)", 2, 5, "good"),
+            ("材料B・総数を先に明記", 3, 3, "good"),
+            ("材料B・総数を最後に明記", 1, 1, "good"),
+            ("材料A・総数を先に明記(確認)", 1, 1, "good"),
+        ],
+        [
+            "材料Aは4パターン時と同じく崩れなかった。5パターンでも本文の列挙は5回とも5グループ同格だった。",
+            "材料Bは5回中3回、新しい5つ目「ということになります」が「次第です」と1項目にまとめられ、見出しが「4か所」になった。",
+        ],
+        "文末パターンを5つに増やしたときに、見出しの文が宣言する数字が実際の5と一致した回数を示す表。"
+        "材料A（清掃当番メモ）は素朴に「指摘して」と頼んだ5回とも5か所と一致した。"
+        "材料B（備品発注引き継ぎメモ）は素朴に頼むと5回中2回しか一致せず、総数を先に明記させると3回とも一致し、"
+        "総数を最後に明記させた1回も一致した。材料Aで総数を先に明記させた確認の1回も一致した。下の枠には、"
+        "材料Aは4パターン時と同じく崩れなかったこと、材料Bは新しい5つ目「ということになります」が既存の「次第です」と"
+        "1つの項目にまとめられ見出しが4か所になったことが書かれている。",
+        label_w=360,
+    )
+
+
+def fifth_pattern_merge_detail_chart() -> None:
+    """同じ材料Bの素朴な頼み方で、正しく数えた回と統合して数えた回を並べる図。
+
+    実測は docs/evidence/fifth-pattern-merges-with-a-lookalike.md の1回目(正しい)と2回目(統合)。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">同じ材料・同じ指示文でも、2つの項目がまとまる回がある</text>\n',
+        '<text class="t-sm" x="18" y="45">左（1回目）は5グループを別々に数えた。右（2回目）は④で2つの文末表現をまとめた。</text>\n',
+    ]
+    col_w = (box_w - 16) / 2
+    col1_x = box_x
+    col2_x = box_x + col_w + 16
+    y = top
+
+    def row(x: int, y: int, w: int, label: str, cls: str) -> None:
+        parts.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{w}" height="48" rx="5"/>\n')
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<text class="{tcls}" x="{x + 14}" y="{y + 20}" style="font-size:11.5px">{_esc(label)}</text>\n')
+
+    parts.append(f'<text class="t-strong" x="{col1_x}" y="{y + 14}">{_esc("1回目")}</text>\n')
+    parts.append(f'<text class="t-strong" x="{col2_x}" y="{y + 14}">{_esc("2回目")}</text>\n')
+    y += 22
+    row(col1_x, y, col_w, "見出し「5か所です」と正しく宣言", "box-good")
+    row(col2_x, y, col_w, "見出し「以下の4か所です」", "box-bad")
+    y += 56
+    row(col1_x, y, col_w, "①〜⑤の5項目。④⑤は別々のまま", "box-good")
+    row(col2_x, y, col_w, "①〜③の3項目。④に2表現を統合", "box-bad")
+    y += 56
+    row(col1_x, y, col_w, "15文は5項目のどれかに入る", "box-good")
+    row(col2_x, y, col_w, "15文は残るが項目は4つに減る", "box-bad")
+    y += 64
+
+    notes = [
+        "⚠️ 右の統合は、2つの文末表現が『これから〜することが決まっている』という同じ告知の言い回しだから起きた。",
+        "⚠️ 文章そのものは消えていない。見出しの数字と項目の数だけが、まとめた分だけ減っている。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "材料Bの素朴な頼み方の1回目と2回目を並べた図。1回目は見出しが「文末表現が不自然に連続している箇所は5か所です」"
+        "と正しく宣言し、本文も①②③④⑤の5項目に分かれていて、④次第です・⑤ということになります も別の項目になっている（緑）。"
+        "2回目は見出しが「不自然な文末の連続は、以下の4か所です」となり、本文は①②③の3項目に、④として"
+        "「次第です」「ということになります」の2つの文末表現を1項目にまとめている（赤）。どちらの回も15文はすべて"
+        "本文のどこかに入っているが、2回目は項目の数として4つに減って見える。下の枠には、この統合は2つの文末表現が"
+        "『これから〜することが決まっている』という同じ告知の言い回しだから起きたこと、文章そのものは消えておらず"
+        "見出しの数字と項目の数だけがまとめた分だけ減っていることが書かれている。"
+    )
+    (OUT / "fifth-pattern-merge-detail.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+if __name__ == "__main__":
+    fifth_pattern_hit_and_miss_chart()
+    fifth_pattern_merge_detail_chart()
