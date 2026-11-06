@@ -41987,3 +41987,108 @@ def price_raise_concern_type_chart() -> None:
 if __name__ == "__main__":
     price_raise_two_concerns_named_chart()
     price_raise_concern_type_chart()
+
+
+def memo_chain_day_by_day_survival_chart() -> None:
+    """引き継ぎメモの識別子3個が、1〜3日目にどれだけ崩れたかを示す図。
+
+    実測2026-11-06。base条件（4本のチェーン）とwinning条件（5本のチェーン）を、
+    日ごとの「崩れた識別子の数／全識別子数」で並べる。0件なら緑、1件以上なら赤。
+    """
+    _hit_and_miss_rows_chart(
+        "memo-chain-day-by-day-survival.svg",
+        "winning指示文は、2日目から識別子が崩れはじめる",
+        "実測2026-11-06。同じ行が同じ理由で3日連続止まる架空の待ち行列で、前日のメモだけを渡して今日のメモを書かせた。",
+        "base＝素朴な「その旨を書いて」。winning＝前作が効いた「言い換えずにコピー」＋「次はこの行から」相当の指示。",
+        [
+            ("1日目・base条件（4本×識別子3個）", 0, 12, "bad"),
+            ("1日目・winning条件（5本×識別子3個）", 0, 15, "bad"),
+            ("2日目・base条件", 0, 12, "bad"),
+            ("2日目・winning条件", 1, 15, "bad"),
+            ("3日目・base条件", 0, 12, "bad"),
+            ("3日目・winning条件", 2, 15, "bad"),
+        ],
+        [
+            "⚠️ 数字は「崩れた識別子の数」。0なら緑（崩れなし）、1以上なら赤（崩れあり）。",
+            "base条件は3日間とも崩れ0件。winning条件だけ、2日目・3日目に崩れが出た（材料Aの3本中2本）。",
+        ],
+        "引き継ぎメモの識別子3個（行の文字列・資料のファイル名・画面の手がかり）が、1日目から3日目まで"
+        "どれだけ崩れたかを、崩れた数／全識別子数で示す表。1日目はbase条件12個中0個・winning条件15個中"
+        "0個で、どちらも崩れなし（緑）。2日目はbase条件12個中0個で崩れなし（緑）だが、winning条件は"
+        "15個中1個が崩れた（赤）。3日目はbase条件12個中0個で崩れなし（緑）だが、winning条件は15個中2個が"
+        "崩れた（赤）。下の枠には、数字は崩れた識別子の数で0なら崩れなし・1以上なら崩れありという意味で"
+        "あること、base条件は3日間とも崩れ0件でwinning条件だけ2日目・3日目に崩れが出たこと（材料Aの3本"
+        "のチェーンのうち2本）が書かれている。",
+        label_w=380,
+    )
+
+
+def memo_chain_collapses_into_self_report_chart() -> None:
+    """ある1本のチェーンで、3日目にメモ本体が「メモを作りました」という自己報告に化けた様子を示す図。
+
+    実測2026-11-06。material A・winning条件・2回目のチェーン。1日目・2日目は
+    ①②③を言い換えずに貼る形式が保たれたが、3日目は返答そのものが自己報告に変わり、
+    識別子③（品目コードKX-2200）が消えた。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">3日目、メモ本体が「メモを作りました」という自己報告に化けた</text>\n',
+        '<text class="t-sm" x="18" y="45">同じチェーン（材料A・winning条件）の1〜3日目の返答を並べた。指示文は3日とも同じ。</text>\n',
+    ]
+    y = top
+
+    def row(label: str, detail: str, cls: str) -> None:
+        nonlocal y
+        h = 56
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 44}">{_esc(detail)}</text>\n')
+        y += h + 12
+
+    row(
+        "1日目の返り",
+        "①②③を言い換えずに貼る。品目コードKX-2200を含む資料の実物がそのまま残る",
+        "box-good",
+    )
+    row(
+        "2日目の返り",
+        "同じ①②③の形式。KX-2200を含む手がかりがそのまま残る",
+        "box-good",
+    )
+    row(
+        "3日目の返り",
+        "「メモ本文は会話内に出力済みで…」という自己報告だけ。KX-2200は影も形もない",
+        "box-bad",
+    )
+
+    y += 6
+    notes = [
+        "⚠️ この返答自体が最終出力であり、これより前に「会話」は無い（出力済みという一文は事実ではない）。",
+        "⚠️ 「メモの本文を直接書いて」と対策を足した別の回では、1日早く・2日目に同じ崩れが起きた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "引き継ぎメモの同じチェーン（材料A・winning条件）の1日目から3日目までの返答を並べた図。"
+        "1日目の返りは、①②③を言い換えずに貼る形式で、品目コードKX-2200を含む資料の実物がそのまま"
+        "残っている（緑）。2日目の返りも同じ①②③の形式で、KX-2200を含む手がかりがそのまま残っている"
+        "（緑）。3日目の返りは「メモ本文は会話内に出力済みで」という自己報告だけになり、KX-2200は"
+        "影も形もない（赤）。下の枠には、この返答自体が最終出力であり、これより前に会話は無いので"
+        "出力済みという一文は事実ではないこと、メモの本文を直接書いてと対策を足した別の回では1日早く"
+        "2日目に同じ崩れが起きたことが書かれている。"
+    )
+    (OUT / "memo-chain-collapses-into-self-report.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    memo_chain_day_by_day_survival_chart()
+    memo_chain_collapses_into_self_report_chart()
