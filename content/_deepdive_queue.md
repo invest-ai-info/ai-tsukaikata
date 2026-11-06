@@ -652,8 +652,32 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/
+- [!] https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/
   - 2026-11-03 自動追記（minor・Google DeepMind「Agentic cheminformatics with Google Antigravity」）
+  - **2026-11-06 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降これまでの14件と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` は200。本文を抽出して確認した）
+
+    **② 中身が「エージェント型の化学情報学ワークフローの実演」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - Google Antigravity（エージェント型の開発プラットフォーム）の「Cheminformatics Skills」機能を使い、
+      研究者が既存の肺がん治療薬（クリゾチニブ→ロルラチニブ）を例に、文献からの化合物収集・マッチド分子ペア
+      解析（MMPA）・効力予測モデルの構築・新規マクロサイクルの合成経路提案までを約1時間で行った実演記事。
+      本文は "a workflow that typically takes multiple days for a single iteration" と、通常数日かかる反復が
+      短縮されたと述べているのみで、料金表・モデルカード・性能ベンチマークは一切無い
+    - 本文中の数字で製品の仕様・料金に関わるものは無く、唯一の具体的な数字は「対話型ビューアで568件の
+      精選化合物を閲覧できる」という分子データの件数と、「提供資格・選考のある10,000人の科学者に
+      6か月間、最上位プランを無料提供する」という提供プログラムの規模のみ。いずれも他社の同種サービスと
+      比較できる料金・性能の数字ではない
+    - 比較相手（他社の同種の「AIエージェントによる化学・新薬設計ワークフロー」発表）も見つからず、
+      読者（自動化したい非エンジニアの会社員）が「どういう人に効くか」を判断できる要素が無い。対象は
+      新薬開発の研究者であり、個人の自動化とは層が違う。汎用AIモデルの新機能や価格改定でもないため、
+      このサイトの記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG 以降これまでの14件とほぼ同じ構造**（①は解けている・②＝数字はあっても
+      製品の料金・性能の比較に使えない／モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 - [ ] https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/
   - 2026-11-05 自動追記（minor・Google DeepMind「WeatherNext: AI model achieves breakthrough in forecasting cyclones」）
