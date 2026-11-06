@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block head %}
+{% if show_ads %}
+<script src="/static/js/ads.js" defer></script>
+{% endif %}
+{% endblock %}
 {% block content %}
 <article class="article">
   {% if category_label %}
@@ -43,7 +48,16 @@
   </dl>
   {% endif %}
 
-  <div class="article-body">{{ article.body_html | safe }}</div>
+  {% set body_head, body_rest = article.body_html | split_at_second_h2 %}
+  <div class="article-body">{{ body_head | safe }}
+  {% if show_ads and body_rest %}
+  {% include "_ad.html" %}
+  {% endif %}
+  {{ body_rest | safe }}</div>
+
+  {% if show_ads %}
+  {% include "_ad.html" %}
+  {% endif %}
 
   {% if article.tags %}
   <p class="tags">{% for tag in article.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</p>

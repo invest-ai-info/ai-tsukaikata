@@ -7,6 +7,7 @@ autoescape を有効にしてあるので、記事タイトルにHTMLが混ざ�
 """
 from __future__ import annotations
 
+import re
 from datetime import date
 from pathlib import Path
 
@@ -16,11 +17,24 @@ from . import config
 from .content import Article
 
 TEMPLATES_DIR = Path(__file__).resolve().parent.parent / "templates"
+H2_RE = re.compile(r"<h2[\s>]")
 
 
 def jp_date(value: date) -> str:
     """2026年8月1日 の形にする。strftime の %-m は Windows で使えないため自前で組む。"""
     return f"{value.year}年{value.month}月{value.day}日"
+
+
+def split_at_second_h2(body_html: str) -> tuple[str, str]:
+    """本文を2つ目の h2 の手前で分ける（途中の広告を挟む位置）。
+
+    h2 が2つ未満なら後半は空＝途中の広告は出さない。
+    """
+    headings = list(H2_RE.finditer(body_html))
+    if len(headings) < 2:
+        return body_html, ""
+    cut = headings[1].start()
+    return body_html[:cut], body_html[cut:]
 
 
 def build_env(templates_dir: Path = TEMPLATES_DIR) -> Environment:
@@ -31,6 +45,7 @@ def build_env(templates_dir: Path = TEMPLATES_DIR) -> Environment:
         lstrip_blocks=True,
     )
     env.filters["jp_date"] = jp_date
+    env.filters["split_at_second_h2"] = split_at_second_h2
     env.globals["site"] = {
         "name": config.SITE_NAME,
         "url": config.SITE_URL,
@@ -240,6 +255,7 @@ def render_site(
             scene_url=f"/scenes/{article.scene}/" if article.scene else None,
             series_prev=series_prev,
             series_next=series_next,
+            show_ads=article.category in config.LISTED_CATEGORIES,
         )
 
     return pages

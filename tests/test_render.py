@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 from datetime import date
 from pathlib import Path
 
@@ -386,3 +387,74 @@ def test_plain_article_has_no_series_parts():
     html = pages["recipes/sample/index.html"]
     assert "series-band" not in html
     assert "series-nav" not in html
+
+
+# --- A8 のバナー広告（2026-11-05 オーナー指示＝PC用とスマホ用で分ける）---
+
+PC_MEDIA = "(min-width: 768px)"
+PHONE_MEDIA = "(max-width: 767.98px)"
+PC_BANNER = "4BCGFM+84BVKQ+348+4SOKAP"  # 素材ID 004・300×250
+PHONE_BANNER = "4BCGFM+84BVKQ+348+4SOCKX"  # 素材ID 003・100×60
+TWO_H2 = "前置き。\n\n## 一つ目 {: .what }\n\n本文。\n\n## 二つ目 {: .need }\n\n本文。"
+ONE_H2 = "前置き。\n\n## 一つ目 {: .what }\n\n本文。"
+
+
+def _article_page(**kwargs):
+    article = _article(**kwargs)
+    return render_site([article])[article.output_path]
+
+
+def _ad_templates(page):
+    return re.findall(r'<template data-ad-media="([^"]+)">(.*?)</template>', page, re.S)
+
+
+def test_each_ad_slot_offers_pc_and_phone_banners_separately():
+    templates = _ad_templates(_article_page(body=ONE_H2))
+    assert [media for media, _ in templates] == [PC_MEDIA, PHONE_MEDIA]
+    pc_code, phone_code = templates[0][1], templates[1][1]
+    assert PC_BANNER in pc_code and 'width="300" height="250"' in pc_code
+    assert PHONE_BANNER in phone_code and 'width="100" height="60"' in phone_code
+
+
+def test_ad_code_stays_inert_until_script_picks_one():
+    """template の外に出ると隠した側の画像まで読み込まれ、表示回数が2倍に数えられる。"""
+    page = _article_page(body=TWO_H2)
+    outside = re.sub(r"<template.*?</template>", "", page, flags=re.S)
+    assert "a8.net" not in outside
+
+
+def test_every_ad_slot_is_labeled_as_ad():
+    """広告表記は法的に必須。validate.py は本文しか見ないので、テンプレート側はここで守る。"""
+    page = _article_page(body=TWO_H2)
+    slots = page.count('class="ad-slot"')
+    assert slots == 2
+    assert page.count('<span class="ad-label">広告</span>') == slots
+
+
+def test_middle_ad_sits_just_before_second_heading():
+    page = _article_page(body=TWO_H2)
+    first_h2 = page.index("一つ目")
+    middle_ad = page.index('class="ad-slot"')
+    second_h2 = page.index("二つ目")
+    assert first_h2 < middle_ad < second_h2
+
+
+def test_article_with_one_heading_gets_only_end_ad():
+    page = _article_page(body=ONE_H2)
+    assert page.count('class="ad-slot"') == 1
+    assert page.index("本文。") < page.index('class="ad-slot"')
+
+
+def test_tool_article_also_has_ads():
+    assert 'class="ad-slot"' in _article_page(category="tools", body=TWO_H2)
+
+
+def test_fixed_pages_have_no_ads():
+    page = _article_page(slug="privacy", category="pages", body=TWO_H2)
+    assert "a8.net" not in page
+    assert "/static/js/ads.js" not in page
+
+
+def test_ads_script_is_loaded_and_exists():
+    assert '<script src="/static/js/ads.js" defer></script>' in _article_page(body=ONE_H2)
+    assert (Path(__file__).resolve().parent.parent / "static/js/ads.js").is_file()

@@ -1,0 +1,14 @@
+{# A8.net のバナー広告（LOLIPOP! AIホームページ・2026-11-05）。
+   ⚠️ <template> の中身は A8 の管理画面が出したコードそのまま。書き換えない（loading や alt も足さない）。
+   画面幅に合う片方だけを static/js/ads.js が取り出す。CSS の display:none で隠すと
+   隠した側の画像も読み込まれ、A8 の表示回数が実際の2倍に数えられる。
+   境目の 768px を変えるときは static/style.css の .ad-slot も揃える。 #}
+<aside class="ad-slot" aria-label="広告">
+<span class="ad-label">広告</span>
+<template data-ad-media="(min-width: 768px)"><a href="https://px.a8.net/svt/ejp?a8mat=4BCGFM+84BVKQ+348+4SOKAP" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=260921650491&wid=002&eno=01&mid=s00000000404029004000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4BCGFM+84BVKQ+348+4SOKAP" alt=""></template>
+<template data-ad-media="(max-width: 767.98px)"><a href="https://px.a8.net/svt/ejp?a8mat=4BCGFM+84BVKQ+348+4SOCKX" rel="nofollow">
+<img border="0" width="100" height="60" alt="" src="https://www24.a8.net/svt/bgt?aid=260921650491&wid=002&eno=01&mid=s00000000404029003000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4BCGFM+84BVKQ+348+4SOCKX" alt=""></template>
+</aside>
