@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-06T23:13:22.156164+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-06T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AI面接の導入で面接業務を効率化できても、応募者情報の登録や選考結果の転記など、採用担当者の手作業は残りがちだ。",
+      "title": "AI面接を導入したのに、応募者情報は手入力？　採用現場の「二度手間」を解消へ",
+      "uid": "0d42e70883393301",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/07/2000002951/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-06T23:13:22.156164+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-06T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ChatGPTやClaudeなどの生成AIに自社サイトが引用されていない場合、AIに情報を参照されていないと考えがちだ。だが、回答に表示されるリンクだけでは、AIがどのWebサイトを参考にしたのか分からない。",
+      "title": "「ChatGPTの回答にリンクがない＝見られていない」　実は違うAIの情報収集",
+      "uid": "b2c532bd505ad6da",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/07/2000002948/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-06T23:13:22.156164+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-06T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIで提案書の作成や情報収集は効率化できても、それだけで営業成績は上がるのか。AIを導入した営業現場で今、問われているのは、ツールを使いこなす力だけではない。",
+      "title": "AIで営業は効率化した、でもなぜ売れない？　成果を出す人が大切にしていること",
+      "uid": "21048f7009ce6659",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/07/2000002945/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-06T18:01:28.248445+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "0227ea32bfa2f661",
       "url": "https://ai.watch.impress.co.jp/docs/news/2152647.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-30T05:47:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "シャープは、プラズマクラスターエアコンのフラッグシップモデル「Rシリーズ」8機種を発売する。",
-      "title": "シャープ、AIが室内環境をチェックし快適にしてくれるエアコン 統合AIサービス「NIAH」にも対応",
-      "uid": "5808d796ff24b0ba",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152637.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-10-30T05:09:54+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本エイサーは、AMD Ryzen AIを搭載したノートパソコン「Acer Swift Air 14」シリーズの新モデル4機種を、10月30日より順次発売する。",
-      "title": "日本エイサー、AMD Ryzen AIを搭載したノートPC「Acer Swift Air 14」新モデル4機種",
-      "uid": "a3ccac8755134843",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152622.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-30T05:07:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Googleは10月29日、AIアプリ「Gemini」のチャット内で、文書やPDFなどのファイルを表示・編集できる新機能を発表した。ファイルを全画面表示して直接書き換えられるほか、修正したい部分を選択してGeminiに編集を指示することもできる。",
-      "title": "Gemini、文書やPDFをチャット内で直接編集可能に　PDFはスマホにも対応",
-      "uid": "3f22652365c855cd",
-      "url": "https://japan.cnet.com/article/35254191/",
-      "vendor": "CNET Japan"
     }
   ]
 }

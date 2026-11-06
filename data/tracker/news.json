@@ -13,6 +13,34 @@
       "vendor": "Anthropic"
     },
     {
+      "first_seen": "2026-11-06T23:13:22.156164+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-06T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
+      "summary_ja": "OpenAIがハクトロン社と提携\nAIシステムの弱点を探し防御を強化\n他社サービスとの連携もテスト",
+      "summary_source": "gemini",
+      "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+      "uid": "6c5b0adfce4f59ae",
+      "url": "https://openai.com/index/partnering-with-hacktron",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-06T23:13:22.156164+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-06T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+      "summary_ja": "OpenAIが新評価指標を発表\nAIの科学実験能力を測る「BioBasicsBench」\n生データ解析や実際の実験作業を含む全100項目",
+      "summary_source": "gemini",
+      "title": "Measuring how AI agents handle everyday wet-lab science",
+      "uid": "643d85226a1b0875",
+      "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-06T02:31:01.451102+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -5660,6 +5688,18 @@
       "title": "qwen/qwen3.8-27b:free",
       "uid": "e0e92fbfb33ca169",
       "url": "https://openrouter.ai/qwen/qwen3.8-27b:free",
+      "vendor": "Alibaba Qwen"
+    },
+    {
+      "first_seen": "2026-11-06T23:13:22.156164+00:00",
+      "importance": "minor",
+      "label": "Qwen 新モデル",
+      "published": "2026-08-14T15:55:10+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
+      "title": "qwen/qwen3.8-27b:batch",
+      "uid": "2e2358c3a01077e1",
+      "url": "https://openrouter.ai/qwen/qwen3.8-27b:batch",
       "vendor": "Alibaba Qwen"
     },
     {
