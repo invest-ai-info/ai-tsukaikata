@@ -6565,91 +6565,196 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-06T19:39:46.771554+00:00"
+  },
+  {
+   "video_id": "J_kxKd7wVew",
+   "title": "仕事で使えるAgent Skillsおすすめ6選！Claude Code/Codexで実際に使っている便利なスキルを紹介してみた",
+   "url": "https://www.youtube.com/watch?v=J_kxKd7wVew",
+   "published": "2026-11-07T09:00:18+00:00",
+   "channel_key": "nyanta",
+   "channel_name": "にゃんたのAIチャンネル",
+   "default_category": "tech",
+   "first_seen": "2026-11-07T13:29:51.561423+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Agent Skillsの基本的な仕組みや、AIへの指示書となるSKILL.mdの役割について解説している。",
+    "Google Workspace操作やHTMLスライド作成、難解な文章を図解化するスキルを紹介している。",
+    "AI文章を自然な日本語に整える「yomiyasu」や動画を生成するスキルの活用法を説明している。"
+   ],
+   "for_whom": "Claude Code等のAIエージェントで業務を効率化したい人",
+   "caution": "概要欄で書籍の紹介や公式LINEへの登録誘導があります。また、動画内でも注意喚起されている通り、外部のスキルを導入する際は悪意あるコードのリスクを考慮し配布元の確認が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T13:29:51.561423+00:00"
+  },
+  {
+   "video_id": "8XbqxjJOP08",
+   "title": "【本気でAI活用したい人向け】AIガチ勢のAI環境を徹底解説！",
+   "url": "https://www.youtube.com/watch?v=8XbqxjJOP08",
+   "published": "2026-11-07T09:00:36+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-11-07T13:29:51.561423+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Codeを司令塔としてCodexやGemini、外部ツールを連携させるAIエコシステムの全体図を紹介している",
+    "安全に作業させるため、判断AIによるチェックや実行フック、権限ルール（settings.json）を導入していると説明している",
+    "業務ごとに特化した多数のスキルやサブエージェントを用意し、Obsidian等にナレッジを蓄積して品質を保っていると述べている"
+   ],
+   "for_whom": "Claude CodeなどのAIエージェントを実務に深く組み込み、業務自動化を進めたい人",
+   "caution": "動画内で解説された図解PDFの受け取り口として公式LINEへの登録が案内されているほか、概要欄で有料コミュニティへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T13:29:51.561423+00:00"
+  },
+  {
+   "video_id": "SvnP3FYPMfw",
+   "title": "動画生成AIランキング1位！Googleの「Gemini Omni 1.2 Flash」徹底解説！ ～最大15秒の音付き動画を作れ、生成コストが30%ダウン～",
+   "url": "https://www.youtube.com/watch?v=SvnP3FYPMfw",
+   "published": "2026-11-07T09:06:00+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-07T13:29:51.561423+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleが最大15秒の音声付き動画生成や編集ができる新モデル「Gemini Omni 1.2 Flash」を公開したと説明している。",
+    "前世代から生成コストが30%引き下げられ、ベンチマークランキングで1位を獲得するなど高評価を得ていると紹介している。",
+    "「Google Flow」を用いた動画生成や延長の手順、参照画像を使ったキャラクターの一貫性の高い生成事例を紹介している。"
+   ],
+   "for_whom": "最新の動画生成AIの性能や、Googleのツールを使った映像制作・動画編集に関心がある人",
+   "caution": "Google Flow等で本モデルを利用する際は、Google AI Proなどの有料プラン加入やAPI利用料が必要になる場合があると説明されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T13:29:51.561423+00:00"
+  },
+  {
+   "video_id": "WXvjFeY8g6s",
+   "title": "【重要知識】Anthropicの語るAIエージェントの記憶を徹底解説！DreamingやLLM-Wikiなど重要概念も登場！",
+   "url": "https://www.youtube.com/watch?v=WXvjFeY8g6s",
+   "published": "2026-11-07T10:30:11+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-07T13:29:51.561423+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Anthropicが公開したAIエージェントの記憶を4層に分ける構造や、空き時間に記憶を整理・修正する「Dreaming」という概念を解説している。",
+    "メモは単に増やすより質が重要で、細かい手順で縛るより目的や失敗から学んだ判断基準を記録する方が正答率向上に有効だと説明している。",
+    "Wiki形式で記憶を構造化して検索と併用すると性能が上がる一方、誤情報や肥大化を防ぐ管理が必要であると述べている。"
+   ],
+   "for_whom": "AIエージェントの記憶設計やCLAUDE.md等の設定を最適化したいエンジニア",
+   "caution": "動画内および概要欄において、投稿者が運営する有料のnoteメンバーシップ（コミュニティ）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T13:29:51.561423+00:00"
+  },
+  {
+   "video_id": "hJOwOkLHRN0",
+   "title": "LifeVal: Measuring AI progress on the tasks that matter in everyday life.",
+   "url": "https://www.youtube.com/watch?v=hJOwOkLHRN0",
+   "published": "2026-11-06T21:11:34+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "For AGI to benefit all of humanity, it should help people with the everyday tasks that matter most to them. \n\nSo we built LifeVal, a new benchmark shaped by feedback from thousands of ChatGPT users on where they most want help from a personal assistant—from finding childcare to accessing government services and managing personal finances.\n\nOver the past year, we’ve used LifeVal to measure and improve how well our models handle these everyday tasks.\n\n\nhttps://openai.com/index/lifeval/",
+   "first_seen": "2026-11-07T13:29:51.561423+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-06T19:39:46.771554+00:00",
+   "last_ok": "2026-11-07T13:29:51.561423+00:00",
    "fail_streak": 0
   }
  }
