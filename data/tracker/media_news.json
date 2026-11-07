@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-07T02:52:49.802748+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-07T00:10:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは、ソフトウェアの脆弱性（セキュリティー上の欠陥）を発見・修正するAI「CodeMender」を強化した。脆弱性の検証に使う隔離環境や、調査するファイルの範囲を選べるようにしたと、11月4日付の公式ブログで発表した。CodeMenderは現在、プレビュー版として提供している。",
+      "title": "Google、脆弱性修正AI「CodeMender」を強化　Gemini 4 Argonなど複数AIモデルを使用",
+      "uid": "13ae14e7bfa4f5b7",
+      "url": "https://japan.cnet.com/article/35254533/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-11-06T23:13:22.156164+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "20fc31395fc30bfc",
       "url": "https://gigazine.net/news/20261030-minecraft-gpt-sol/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-30T05:52:47+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "NTTテクノクロスは、オンプレミス型IP-PBX「Crossway（クロスウェイ）」の新機能として、音声データを外部クラウドに送信せずに利用できるリアルタイム「AI音声通訳」オプションの提供を開始した。",
-      "title": "NTT-TX、セキュリティ特化のオンプレAIで双方向通訳を実現",
-      "uid": "0227ea32bfa2f661",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152647.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
