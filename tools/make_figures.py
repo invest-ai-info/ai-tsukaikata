@@ -42273,6 +42273,301 @@ def ten_day_chain_newest_row_skipped_chart() -> None:
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
 
 
+def kindle_royalty_search_free_vs_fetch_chart() -> None:
+    """検索ツールを渡したときの6回を、方法と結果で並べる図。
+
+    実測はdocs/evidence/kindle-royalty-search-band-two-of-three.mdの条件1（A/B/C回）・
+    条件2（継続訂正・新規）・条件3（直近1年の変更確認）。正解は250円〜1,650円。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    rows = [
+        ("自由に任せる・A回", "WebSearchの要約だけで回答", "250円〜1,250円（旧い情報のまま）", "box-bad", "t-bad"),
+        ("自由に任せる・B回", "WebSearchで新しい記事も発見", "250円〜1,650円（正解）", "box-good", "t-good"),
+        ("自由に任せる・C回", "自分からWebFetchで原文を確認", "250円〜1,650円（正解）", "box-good", "t-good"),
+        ("「原文を開いて確認して」と聞き直す", "A回の続き・WebFetchで訂正", "250円〜1,650円（訂正後は正解）", "box-good", "t-good"),
+        ("最初から「原文を開いてから答えて」", "新規・WebFetchで確認してから回答", "250円〜1,650円（正解）", "box-good", "t-good"),
+        ("「直近1年で変わっていないか確認して」", "新規・検索とWebFetchで確認", "250円〜1,650円（正解）", "box-good", "t-good"),
+    ]
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">検索ツールを渡した6回のうち、自由に任せた回だけ1回間違えた</text>\n',
+        '<text class="t-sm" x="18" y="45">「70%を選べる価格帯」は250円〜1,650円（税込）が正解。旧い上限1,250円は2026-07-07の改定前の数字。</text>\n',
+    ]
+    y = top
+    row_h = 68
+    for label, method, result, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 18}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{box_x + 16}" y="{y + 34}">{_esc(method)}</text>\n')
+        parts.append(
+            f'<text class="{tcls}" x="{box_x + 16}" y="{y + 50}" style="font-weight:700">{_esc(result)}</text>\n'
+        )
+        y += row_h
+
+    y += 6
+    notes = [
+        "⚠️ 間違えたのは、検索結果の要約だけで止まった1回だけ。原文ページを開いて確認した回は6回とも正解した。",
+        "母数は小さい（自由に任せた3回・原文を開かせた3回）。「検索すれば必ず直る」とは一般化できない。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "検索ツールを渡した6回の方法と結果を示す図。自由に任せたA回はWebSearchの要約だけで回答し"
+        "250円〜1,250円という旧い情報のまま（赤）。同じく自由に任せたB回はWebSearchで新しい記事も見つけて"
+        "250円〜1,650円の正解（緑）。C回は自分からWebFetchで原文を確認し正解（緑）。A回に続けて「原文を"
+        "開いて確認して」と聞き直すと訂正されて正解（緑）。最初から「原文を開いてから答えて」と指定した新規の"
+        "回も正解（緑）。「直近1年で変わっていないか確認して」と指定した新規の回も正解（緑）。下の枠には、"
+        "間違えたのは検索結果の要約だけで止まった1回だけで原文ページを開いて確認した回は6回とも正解したこと、"
+        "母数は小さいので検索すれば必ず直るとは一般化できないことが書かれている。"
+    )
+    (OUT / "kindle-royalty-search-free-vs-fetch.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def kindle_royalty_band_timeline_chart() -> None:
+    """70%価格帯の上限が2026-07-07に変わった経緯と、検索結果に旧い数字が残る様子を示す図。"""
+    box_x, box_w = 18, 684
+    top = 100
+
+    rows = [
+        ("〜2026-07-06", "70%を選べる価格帯は250円〜1,250円（旧）", "box-quiet", "t"),
+        ("2026-07-07", "Amazonが上限を引き上げ（米国$9.99→$12.99・日本は1,250円→1,650円）", "box-accent", "t-accent"),
+        ("2026-11-07（今回の確認時点）", "公式ヘルプは1,650円。ただし検索結果には旧い1,250円を書いた記事も混在", "box-bad", "t-bad"),
+    ]
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">価格帯の上限は4か月前に変わったが、検索結果には旧い数字が残っている</text>\n',
+        '<text class="t-sm" x="18" y="45">2026-07-07の改定を知らない記事・ページが検索結果に混ざり、どちらを拾うかは回によって分かれる。</text>\n',
+    ]
+    y = top
+    row_h = 60
+    for when, what, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(when)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 40}">{_esc(what)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "⚠️ AIの知識が古いだけなら、検索ツールが直してくれそうに見える。実際は検索結果の中身自体が新旧混在している。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-good" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-good" x="{box_x + 16}" y="{y + 20 + 18 * i}" style="font-weight:700">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "70%ロイヤリティの価格帯の上限が変わった経緯を時系列で示す図。2026年7月6日までは250円〜1,250円（灰色）。"
+        "2026年7月7日、Amazonが上限を引き上げ、米国は9.99ドルから12.99ドルに、日本は1,250円から1,650円に"
+        "変わった（青の強調枠）。2026年11月7日の今回の確認時点では、公式ヘルプは1,650円だが、検索結果には"
+        "旧い1,250円を書いた記事も混在している（赤）。下の枠には、AIの知識が古いだけなら検索ツールが直して"
+        "くれそうに見えるが、実際は検索結果の中身自体が新旧混在していることが書かれている。"
+    )
+    (OUT / "kindle-royalty-band-timeline.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def long_caption_two_step_rate_chart() -> None:
+    """長尺材料（10分23秒・88行）で、4つの聞き方の前半・後半それぞれの検出率を並べる図。
+
+    実測はdocs/evidence/long-caption-two-step-list-still-37-percent.mdと
+    long-caption-splitting-vs-careful-instruction.md（素朴・分割・数値に注意の3条件）。
+    """
+    _hit_and_miss_rows_chart(
+        "long-caption-two-step-rate.svg",
+        "2段階リスト化は、素朴より少し上がるが「数値に注意して」には届かない",
+        "同じ長尺材料（10分23秒・仕込み16件）で、4つの聞き方の前半8件・後半8件それぞれの検出数。",
+        "2段階リスト化（今回）は前半9/24・後半7/24。先行記事の素朴・分割・数値に注意と並べた。",
+        [
+            ("素朴に通しで聞く・前半8件", 10, 40, "good"),
+            ("素朴に通しで聞く・後半8件", 12, 40, "good"),
+            ("前半だけ分けて聞く・前半8件", 13, 24, "good"),
+            ("後半だけ分けて聞く・後半8件", 8, 24, "good"),
+            ("通しで「数値に注意して」・前半8件", 15, 24, "good"),
+            ("通しで「数値に注意して」・後半8件", 12, 24, "good"),
+            ("2段階リスト化（今回）・前半8件", 9, 24, "good"),
+            ("2段階リスト化（今回）・後半8件", 7, 24, "good"),
+        ],
+        [
+            "2段階リスト化は前半25%→37.5%・後半30%→29.2%。前半だけ少し伸びる。",
+            "分割（54%）や数値に注意（62.5%）には届かない。",
+            "短尺材料の先行記事（28.75%→36.25%）とほぼ同じ伸び幅。長さを変えても順位は変わらなかった。",
+        ],
+        "10分23秒の長尺材料で、4つの聞き方（素朴・前後分割・数値に注意・2段階リスト化）の前半8件・後半8件"
+        "それぞれの検出数を並べた図。素朴は前半10/40(25%)・後半12/40(30%)。前後分割は前半13/24(54%)・"
+        "後半8/24(33%)。数値に注意は前半15/24(62.5%)・後半12/24(50%)。2段階リスト化（今回）は前半9/24(37.5%)・"
+        "後半7/24(29.2%)。下の枠には、2段階リスト化は前半25%→37.5%・後半30%→29.2%で前半だけ少し伸びるが"
+        "分割や数値に注意には届かないこと、短尺材料の先行記事とほぼ同じ伸び幅で長さを変えても順位は"
+        "変わらなかったことが書かれている。",
+        label_w=280,
+    )
+
+
+def long_caption_two_step_missed_items_chart() -> None:
+    """2段階リスト化でも3回とも一度も拾われなかった6項目を示す図。
+
+    実測はdocs/evidence/long-caption-two-step-list-still-37-percent.md。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    rows = [
+        ("F6 本体高さ「60センチ」", "正: 45cm", "box-bad", "t-bad"),
+        ("F7 センサー「4種類」", "正: 3種類", "box-bad", "t-bad"),
+        ("F8 運転モード「5段階」", "正: 3段階", "box-bad", "t-bad"),
+        ("B4 お手入れ頻度「3か月に1回」", "正: 2週に1回", "box-bad", "t-bad"),
+        ("B5 比較対象クラス「6〜8畳」", "正: 10〜12畳", "box-bad", "t-bad"),
+        ("B8 保証登録期限「1か月以内」", "正: 3か月以内", "box-bad", "t-bad"),
+    ]
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">2段階リスト化でも、3回とも一度も拾われなかった6項目</text>\n',
+        '<text class="t-sm" x="18" y="45">どれも単体で見て「製品としてありえない値」ではない。先にリストアップさせても、比べる基準は変わらない。</text>\n',
+    ]
+    y = top
+    row_h = 56
+    for label, correct, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 38}">{_esc(correct)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "短尺材料の先行記事でも、同じ性質の6項目が一度も拾われなかった。材料の長さは関係ない。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "2段階リスト化でも3回とも一度も拾われなかった6項目を示す図。本体高さ「60センチ」（正45cm）、"
+        "センサー「4種類」（正3種類）、運転モード「5段階」（正3段階）、お手入れ頻度「3か月に1回」"
+        "（正2週に1回）、比較対象クラス「6〜8畳」（正10〜12畳）、保証登録期限「1か月以内」（正3か月以内）、"
+        "すべて赤。下の枠には、どれも単体で見て製品としてありえない値ではなく先にリストアップさせても"
+        "比べる基準は変わらないこと、短尺材料の先行記事でも同じ性質の6項目が一度も拾われなかったため"
+        "材料の長さは関係ないことが書かれている。"
+    )
+    (OUT / "long-caption-two-step-missed-items.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def swot_missing_quadrant_trials_chart() -> None:
+    """SWOTの機会・脅威欄（材料に無い）を、6回の試行がどう扱ったかを示す図。
+
+    実測はdocs/evidence/swot-missing-quadrant-needs-confirmed.md。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    rows = [
+        ("素朴に頼む・A回", "機会・脅威を具体的な文章で埋めた（仮説の印は末尾のみ）", "box-bad", "t-bad"),
+        ("素朴に頼む・B回", "機会・脅威を具体的な文章で埋めた（仮説の印は末尾のみ）", "box-bad", "t-bad"),
+        ("素朴に頼む・C回", "機会・脅威を具体的な文章で埋めた（見出しに仮説の印あり）", "box-bad", "t-bad"),
+        ("「要確認」と明記するよう指定・D回", "「情報がありません／要確認」と記載。作り話なし", "box-good", "t-good"),
+        ("「要確認」と明記するよう指定・E回", "「情報がありません／要確認」と記載。クロス分析も伝播", "box-good", "t-good"),
+        ("「要確認」と明記するよう指定・F回", "「情報がありません／要確認」と記載。作り話なし", "box-good", "t-good"),
+    ]
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">材料に無い「機会」「脅威」欄を、6回の試行がどう扱ったか</text>\n',
+        '<text class="t-sm" x="18" y="45">渡した材料は「強み」「弱み」だけ。「機会」「脅威」のデータは一切渡していない。</text>\n',
+    ]
+    y = top
+    row_h = 46
+    for label, result, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 8}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 18}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 34}">{_esc(result)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "⚠️ 固有の競合名や円建ての市場規模までは作らなかった（一般名詞どまり）。",
+        "ただし見出しの体裁は「分析済みの事実」と見分けがつかない。",
+        "「要確認と書いて」と指定した3回は、クロス分析まで扱いが正しく伝わった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "SWOTの機会・脅威欄（材料に無い）を6回の試行がどう扱ったかを示す図。素朴に頼んだA・B・C回は"
+        "いずれも機会・脅威を具体的な文章で埋めた（赤）。A・B回は仮説の印が末尾の注記のみ、C回は見出しに"
+        "印があった。「分からない項目は作らず要確認と書いて」と指定したD・E・F回はいずれも「情報がありません"
+        "／要確認」と記載し、作り話をしなかった（緑）。E回はクロス分析のセルにも要確認の扱いを伝播させていた。"
+        "下の枠には、固有の競合名や円建ての市場規模までは作らなかったが見出しの体裁は分析済みの事実と"
+        "見分けがつかないこと、要確認と指定した3回はクロス分析まで扱いが正しく伝わったことが書かれている。"
+    )
+    (OUT / "swot-missing-quadrant-trials.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
+def swot_grid_filled_vs_confirmed_chart() -> None:
+    """SWOTの2x2マスのうち、材料にあるのは半分だけ。残り半分をどう扱ったかを示す図。"""
+    box_x, box_w = 18, 684
+    col_w = (box_w - 16) / 2
+    top = 110
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">SWOTの4マスのうち、材料にあるのは「強み」「弱み」の2マスだけ</text>\n',
+        '<text class="t-sm" x="18" y="45">「機会」「脅威」は、架空の案件文に一切データを入れていない。</text>\n',
+        f'<text class="t-xs" x="{box_x}" y="{top - 14}">内部要因（材料あり）</text>\n',
+        f'<text class="t-xs" x="{box_x + col_w + 16}" y="{top - 14}">外部要因（材料なし）</text>\n',
+    ]
+
+    def cell(x: float, y: float, w: float, h: float, label: str, body: str, klass: str, tcls: str) -> None:
+        parts.append(f'<rect class="{klass}" x="{x}" y="{y}" width="{w}" height="{h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{x + 14}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{x + 14}" y="{y + 40}" style="font-size:11.5px">{_esc(body)}</text>\n')
+
+    cell(box_x, top, col_w, 70, "強み（S）", "創業52年・地元産ゆず最中餡・実演販売で週末完売", "box-good", "t-good")
+    cell(box_x + col_w + 16, top, col_w, 70, "機会（O）", "材料なし → 素朴は作り話／指定ありは「要確認」", "box-quiet", "t")
+    cell(box_x, top + 80, col_w, 70, "弱み（W）", "30代以下の認知65%が未認知・自社EC無し", "box-good", "t-good")
+    cell(box_x + col_w + 16, top + 80, col_w, 70, "脅威（T）", "材料なし → 素朴は作り話／指定ありは「要確認」", "box-quiet", "t")
+
+    y = top + 80 + 70 + 18
+    notes = [
+        "右側の2マスは、同じ「材料が無い」状態なのに、頼み方しだいで中身がまったく変わった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "SWOTの4マスのうち、材料にあるのは強み・弱みの2マスだけであることを示す図。左列（内部要因・"
+        "材料あり）は、強み＝創業52年・地元産ゆず最中餡・実演販売で週末完売（緑）、弱み＝30代以下の認知65%が"
+        "未認知・自社EC無し（緑）。右列（外部要因・材料なし）は、機会と脅威のどちらも材料が無く、素朴に"
+        "頼むと作り話で埋まり、要確認と指定すると「要確認」のまま扱われる（グレー）。下の枠には、右側の2マスは"
+        "同じ材料が無い状態なのに頼み方しだいで中身がまったく変わったことが書かれている。"
+    )
+    (OUT / "swot-grid-filled-vs-confirmed.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
 if __name__ == "__main__":
-    ten_day_chain_marks_hold_chart()
-    ten_day_chain_newest_row_skipped_chart()
+    swot_missing_quadrant_trials_chart()
+    swot_grid_filled_vs_confirmed_chart()

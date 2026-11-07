@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="580" viewBox="0 0 720 580" role="img" aria-label="検索ツールを渡した6回の方法と結果を示す図。自由に任せたA回はWebSearchの要約だけで回答し250円〜1,250円という旧い情報のまま（赤）。同じく自由に任せたB回はWebSearchで新しい記事も見つけて250円〜1,650円の正解（緑）。C回は自分からWebFetchで原文を確認し正解（緑）。A回に続けて「原文を開いて確認して」と聞き直すと訂正されて正解（緑）。最初から「原文を開いてから答えて」と指定した新規の回も正解（緑）。「直近1年で変わっていないか確認して」と指定した新規の回も正解（緑）。下の枠には、間違えたのは検索結果の要約だけで止まった1回だけで原文ページを開いて確認した回は6回とも正解したこと、母数は小さいので検索すれば必ず直るとは一般化できないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="580"/>
+<text class="t-strong" x="18" y="26">検索ツールを渡した6回のうち、自由に任せた回だけ1回間違えた</text>
+<text class="t-sm" x="18" y="45">「70%を選べる価格帯」は250円〜1,650円（税込）が正解。旧い上限1,250円は2026-07-07の改定前の数字。</text>
+<rect class="box-bad" x="18" y="100" width="684" height="58" rx="6"/>
+<text class="t-strong" x="34" y="118">自由に任せる・A回</text>
+<text class="t-sm" x="34" y="134">WebSearchの要約だけで回答</text>
+<text class="t-bad" x="34" y="150" style="font-weight:700">250円〜1,250円（旧い情報のまま）</text>
+<rect class="box-good" x="18" y="168" width="684" height="58" rx="6"/>
+<text class="t-strong" x="34" y="186">自由に任せる・B回</text>
+<text class="t-sm" x="34" y="202">WebSearchで新しい記事も発見</text>
+<text class="t-good" x="34" y="218" style="font-weight:700">250円〜1,650円（正解）</text>
+<rect class="box-good" x="18" y="236" width="684" height="58" rx="6"/>
+<text class="t-strong" x="34" y="254">自由に任せる・C回</text>
+<text class="t-sm" x="34" y="270">自分からWebFetchで原文を確認</text>
+<text class="t-good" x="34" y="286" style="font-weight:700">250円〜1,650円（正解）</text>
+<rect class="box-good" x="18" y="304" width="684" height="58" rx="6"/>
+<text class="t-strong" x="34" y="322">「原文を開いて確認して」と聞き直す</text>
+<text class="t-sm" x="34" y="338">A回の続き・WebFetchで訂正</text>
+<text class="t-good" x="34" y="354" style="font-weight:700">250円〜1,650円（訂正後は正解）</text>
+<rect class="box-good" x="18" y="372" width="684" height="58" rx="6"/>
+<text class="t-strong" x="34" y="390">最初から「原文を開いてから答えて」</text>
+<text class="t-sm" x="34" y="406">新規・WebFetchで確認してから回答</text>
+<text class="t-good" x="34" y="422" style="font-weight:700">250円〜1,650円（正解）</text>
+<rect class="box-good" x="18" y="440" width="684" height="58" rx="6"/>
+<text class="t-strong" x="34" y="458">「直近1年で変わっていないか確認して」</text>
+<text class="t-sm" x="34" y="474">新規・検索とWebFetchで確認</text>
+<text class="t-good" x="34" y="490" style="font-weight:700">250円〜1,650円（正解）</text>
+<rect class="box-accent" x="18" y="514" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="534">⚠️ 間違えたのは、検索結果の要約だけで止まった1回だけ。原文ページを開いて確認した回は6回とも正解した。</text>
+<text class="t-accent" x="34" y="552">母数は小さい（自由に任せた3回・原文を開かせた3回）。「検索すれば必ず直る」とは一般化できない。</text>
+</svg>
