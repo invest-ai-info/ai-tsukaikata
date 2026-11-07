@@ -42186,6 +42186,93 @@ def fifth_pattern_merge_detail_chart() -> None:
     print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
 
 
+def ten_day_chain_marks_hold_chart() -> None:
+    """10日間の連鎖（印で残す版／いちばん下へ移す版）で、確定済みの行が書き換わらなかったことを示す図。
+
+    材料は`queue-done-marks-that-survive`の続編`fresh-easy-row-throws-off-the-stuck-count`が
+    独立プロセス（claude --print --tools ""）で生成した10日分の全文ログを再利用し、
+    前日との突き合わせを新しく機械照合した（2026-11-07）。3段目は、育った山から
+    「直近3日の新着だけ」を正しく挙げられたかを独立6回で聞いた新規の実測。
+    """
+    _hit_and_miss_rows_chart(
+        "ten-day-chain-keeps-marks-skips-newest-row-hit-and-miss.svg",
+        "10日間・217件の突き合わせで、確定済みの行は0件も書き換わらなかった",
+        "印で残す版・いちばん下へ移す版それぞれの10日分の全文を、前日と1行ずつ突き合わせた（確定済み行のみ）。",
+        "3段目は、育った山に「直近3日の新着だけ」を正しく挙げられるかを、新規セッションに6回聞いた別の実測。",
+        [
+            ("印で残す版・確定済み行の突き合わせ（10日間）", 112, 112, "good"),
+            ("いちばん下へ移す版・確定済み行の突き合わせ（10日間）", 105, 105, "good"),
+            ("「直近3日の新着だけ」を正しく挙げられたか（6回）", 1, 6, "good"),
+        ],
+        [
+            "上2段＝印そのものが書き換わる心配は、10日間・217件とも起きなかった。",
+            "3段目＝日付の記録がないと、新旧の区別はAIにも難しい。でっち上げた回は0件だが、正しく絞れたのは1回だけ。",
+        ],
+        "待ち行列を10日間延ばした連鎖で、確定済みの行が書き換わらなかったかを示す表。印で残す版は112件の"
+        "突き合わせで不一致0件、いちばん下へ移す版は105件の突き合わせで不一致0件、どちらも緑。"
+        "3段目は、育った山に「直近3日の新着だけ」を正しく挙げられるかを新規セッションに6回聞いた結果で、"
+        "正しく絞れたのは6回中1回。下の枠には、印そのものが書き換わる心配は10日間・217件とも起きなかったこと、"
+        "日付の記録がないと新旧の区別はAIにも難しく、でっち上げた回は0件だが正しく絞れたのは1回だけだったことが"
+        "書かれている。",
+        label_w=380,
+    )
+
+
+def ten_day_chain_newest_row_skipped_chart() -> None:
+    """いちばん下へ移す版の10日目、積んだ山を飛び越えて新着だけ処理された様子を示す図。
+
+    実測はdocs/evidence/ten-day-chain-keeps-marks-skips-newest-row.mdのB_day10。
+    長谷川様（9日目到着・資料なし）は理由も印も付かずに山の中に埋もれ、
+    村上様（10日目到着・資料あり）だけが先に処理された。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    rows = [
+        ("前田様", "6日目到着・資料なし", "すでに理由あり（8日目に発見）", "box-quiet", "t"),
+        ("長谷川様", "9日目到着・資料なし", "理由なし。印は[ ]のまま。今日も触れられず", "box-bad", "t-bad"),
+        ("森田様", "3日目到着・資料なし", "すでに理由あり（6日目に発見）", "box-quiet", "t"),
+        ("山本様", "最初から資料なし", "すでに理由あり（3日目に発見）", "box-quiet", "t"),
+        ("村上様", "10日目到着・資料あり", "今日届いて今日処理済み[x]", "box-good", "t-good"),
+    ]
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">10日目、積んだ4行を飛び越えて、今日届いた1行だけが処理された</text>\n',
+        '<text class="t-sm" x="18" y="45">「いちばん下へ移す」版の10日目の末尾（上から時系列の到着順ではなく、ファイルに実際に並んだ順）。</text>\n',
+    ]
+    y = top
+    row_h = 46
+    for name, arrived, status, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 8}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 18}">{_esc(name)}（{_esc(arrived)}）</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 34}">{_esc(status)}</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "AIの補足：「長谷川様も資料が取得できておらず…今回は手を加えていません」。",
+        "山の中では最新だが、「理由なし」のまま一度も開かれていない行として埋もれた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "いちばん下へ移す版の10日目、待ち行列の末尾に並んだ5行を示す図。上から、前田様（6日目到着・資料なし・"
+        "8日目に発見済みで理由あり・グレー）、長谷川様（9日目到着・資料なし・理由なし・印は[ ]のまま・今日も"
+        "触れられず・赤）、森田様（3日目到着・資料なし・6日目に発見済みで理由あり・グレー）、山本様（最初から"
+        "資料なし・3日目に発見済みで理由あり・グレー）、村上様（10日目到着・資料あり・今日届いて今日処理済み・"
+        "緑）の順。下の枠には、AIの補足「長谷川様も資料が取得できておらず…今回は手を加えていません」という発言、"
+        "長谷川様は山の中では最新だが理由なしのまま一度も開かれていない行として埋もれたことが書かれている。"
+    )
+    (OUT / "ten-day-chain-keeps-marks-skips-newest-row-skip.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+    print(f"{len(list(OUT.glob('*.svg')))}枚を {OUT} に出力しました")
+
+
 if __name__ == "__main__":
-    fifth_pattern_hit_and_miss_chart()
-    fifth_pattern_merge_detail_chart()
+    ten_day_chain_marks_hold_chart()
+    ten_day_chain_newest_row_skipped_chart()

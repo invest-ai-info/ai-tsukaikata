@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="402" viewBox="0 0 720 402" role="img" aria-label="いちばん下へ移す版の10日目、待ち行列の末尾に並んだ5行を示す図。上から、前田様（6日目到着・資料なし・8日目に発見済みで理由あり・グレー）、長谷川様（9日目到着・資料なし・理由なし・印は[ ]のまま・今日も触れられず・赤）、森田様（3日目到着・資料なし・6日目に発見済みで理由あり・グレー）、山本様（最初から資料なし・3日目に発見済みで理由あり・グレー）、村上様（10日目到着・資料あり・今日届いて今日処理済み・緑）の順。下の枠には、AIの補足「長谷川様も資料が取得できておらず…今回は手を加えていません」という発言、長谷川様は山の中では最新だが理由なしのまま一度も開かれていない行として埋もれたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="402"/>
+<text class="t-strong" x="18" y="26">10日目、積んだ4行を飛び越えて、今日届いた1行だけが処理された</text>
+<text class="t-sm" x="18" y="45">「いちばん下へ移す」版の10日目の末尾（上から時系列の到着順ではなく、ファイルに実際に並んだ順）。</text>
+<rect class="box-quiet" x="18" y="100" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="118">前田様（6日目到着・資料なし）</text>
+<text class="t" x="34" y="134">すでに理由あり（8日目に発見）</text>
+<rect class="box-bad" x="18" y="146" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="164">長谷川様（9日目到着・資料なし）</text>
+<text class="t-bad" x="34" y="180">理由なし。印は[ ]のまま。今日も触れられず</text>
+<rect class="box-quiet" x="18" y="192" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="210">森田様（3日目到着・資料なし）</text>
+<text class="t" x="34" y="226">すでに理由あり（6日目に発見）</text>
+<rect class="box-quiet" x="18" y="238" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="256">山本様（最初から資料なし）</text>
+<text class="t" x="34" y="272">すでに理由あり（3日目に発見）</text>
+<rect class="box-good" x="18" y="284" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="302">村上様（10日目到着・資料あり）</text>
+<text class="t-good" x="34" y="318">今日届いて今日処理済み[x]</text>
+<rect class="box-accent" x="18" y="336" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="356">AIの補足：「長谷川様も資料が取得できておらず…今回は手を加えていません」。</text>
+<text class="t-accent" x="34" y="374">山の中では最新だが、「理由なし」のまま一度も開かれていない行として埋もれた。</text>
+</svg>
