@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="466" viewBox="0 0 720 466" role="img" aria-label="SWOTの機会・脅威欄（材料に無い）を6回の試行がどう扱ったかを示す図。素朴に頼んだA・B・C回はいずれも機会・脅威を具体的な文章で埋めた（赤）。A・B回は仮説の印が末尾の注記のみ、C回は見出しに印があった。「分からない項目は作らず要確認と書いて」と指定したD・E・F回はいずれも「情報がありません／要確認」と記載し、作り話をしなかった（緑）。E回はクロス分析のセルにも要確認の扱いを伝播させていた。下の枠には、固有の競合名や円建ての市場規模までは作らなかったが見出しの体裁は分析済みの事実と見分けがつかないこと、要確認と指定した3回はクロス分析まで扱いが正しく伝わったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="466"/>
+<text class="t-strong" x="18" y="26">材料に無い「機会」「脅威」欄を、6回の試行がどう扱ったか</text>
+<text class="t-sm" x="18" y="45">渡した材料は「強み」「弱み」だけ。「機会」「脅威」のデータは一切渡していない。</text>
+<rect class="box-bad" x="18" y="100" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="118">素朴に頼む・A回</text>
+<text class="t-bad" x="34" y="134">機会・脅威を具体的な文章で埋めた（仮説の印は末尾のみ）</text>
+<rect class="box-bad" x="18" y="146" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="164">素朴に頼む・B回</text>
+<text class="t-bad" x="34" y="180">機会・脅威を具体的な文章で埋めた（仮説の印は末尾のみ）</text>
+<rect class="box-bad" x="18" y="192" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="210">素朴に頼む・C回</text>
+<text class="t-bad" x="34" y="226">機会・脅威を具体的な文章で埋めた（見出しに仮説の印あり）</text>
+<rect class="box-good" x="18" y="238" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="256">「要確認」と明記するよう指定・D回</text>
+<text class="t-good" x="34" y="272">「情報がありません／要確認」と記載。作り話なし</text>
+<rect class="box-good" x="18" y="284" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="302">「要確認」と明記するよう指定・E回</text>
+<text class="t-good" x="34" y="318">「情報がありません／要確認」と記載。クロス分析も伝播</text>
+<rect class="box-good" x="18" y="330" width="684" height="38" rx="6"/>
+<text class="t-strong" x="34" y="348">「要確認」と明記するよう指定・F回</text>
+<text class="t-good" x="34" y="364">「情報がありません／要確認」と記載。作り話なし</text>
+<rect class="box-accent" x="18" y="382" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="402">⚠️ 固有の競合名や円建ての市場規模までは作らなかった（一般名詞どまり）。</text>
+<text class="t-accent" x="34" y="420">ただし見出しの体裁は「分析済みの事実」と見分けがつかない。</text>
+<text class="t-accent" x="34" y="438">「要確認と書いて」と指定した3回は、クロス分析まで扱いが正しく伝わった。</text>
+</svg>
