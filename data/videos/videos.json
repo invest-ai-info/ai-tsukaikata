@@ -6312,10 +6312,20 @@
    "channel_key": "keito",
    "channel_name": "KEITO【AI&WEB ch】",
    "default_category": "tech",
-   "description": "Geminiのスキル機能を徹底解説。そして今すぐ使える簡単AI活用方法を紹介。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 はじめに\n00:34 Gemとは？\n02:39 スキルとは？Gemとの違い\n06:38 スキルの作り方\n10:26 メール返信スキルを作って送信する\n12:52 スライド資料を同じデザインで作る\n18:01 複数のスキルを組み合わせる\n19:23 Gmailからサブスクの支払いを集計\n22:31 Apps Scriptで受付システムを作る\n28:29 Gemからスキルへの移行と注意点\n29:32 まとめ・サービスの案内\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Work完全解説動画\nhttps://youtu.be/U74PHw-h59Q\n【最新版】Claude完全攻略！これ見れば全てわかる\nhttps://youtu.be/OhO0WcRP6Ow\nGemini for Google Workspace完全解説\nhttps://youtu.be/0BZpNHfdFIk\nChatGPTをもっと便利に使いこなすAI活用術\nhttps://youtu.be/jSjjWKChnVA\nMidjourney Web版を徹底解説【これで全て理解】\nhttps://youtu.be/r6ynzWEX_38\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼は下記のメールアドレス宛へお願いします。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twitter.com/keitowebai\nnote：https://blog.procevo.biz/\nInstagram：https://instagram.com/keitowebai/\nTikTok：https://tiktok.com/@keito_cc\nメルマガ：https://kt-life.net/sns-links/newsletter.html\n\n#keito \n#ai \n#gemini",
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "GeminiのGem機能がスキル機能へ移行することを踏まえ、設定方法や特徴を解説している",
+    "スキルはチャット内で呼び出しや重ねがけが可能で、メール返信やGAS作成を効率化できると説明している",
+    "スライドデザインの再現やGmailのサブスク集計など、業務で使える具体的なスキル作成手順を実演している"
+   ],
+   "for_whom": "Geminiを使ってメール作成や資料作成などの日常業務を効率化したい人",
+   "caution": "動画内で作成したスキルの配布を受け取るには公式LINEへの登録が必要と案内されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T22:15:15.607637+00:00"
   },
   {
    "video_id": "uPCuUsZv8-s",
@@ -6456,10 +6466,20 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=yQOgiHNwfP\n※もしLINE登録が上手く行かない方は「@828wrlzg」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n📱【LINEスタンプ・ステッカー・楽天ROOMの回、このチャンネルにあります】\n今日は、同じ絵を3つの売り場に置いて、つなげて売る話でした。\n売り場ごとに1本ずつ深く掘った回を並べておきます↓\n\n▼宣伝ゼロで印税月52万。7人中4人が月30万を超えた、LINEスタンプの制作＆販売手順\nhttps://youtu.be/8ys-TVcolAw\n\n▼倉庫勤務・腰痛持ちの46歳が月22万。一番売れている穴場スタンプの作り方と売り方\nhttps://youtu.be/xWXMXUyjzME\n\n▼集客は頑張らない。LINEスタンプの“相互拡散作用”で、集客0のまま利益を出す回\nhttps://youtu.be/WClEnKzE7L0\n\n▼20万益を生んだスタンプの、アイデアの出し方から作り方まで全部見せた回\nhttps://youtu.be/TEHVudFziBc\n\n▼完璧ノーセンスでも50万。AI×ステッカーの始め方の回\nhttps://youtu.be/StpS6ldvYrc\n\n▼AIステッカーを無在庫で売って勝つ、ただ1つの方法\nhttps://youtu.be/zfU2RGIflVI\n\n▼ステッカーの売れ行きが変わる、5つのプロンプトの回\nhttps://youtu.be/yB0bgYu_RP0\n\n▼AIに“買わない客”を演じさせる。SUZURIで売る物販の回\nhttps://youtu.be/08q3EAtDi-Q\n\n▼愚痴をステッカーに変えて売る、ぼやき出荷の回\nhttps://youtu.be/EoQbPnQDEas\n\n▼“AI問診票”と“AI手のひら返し”。AIの力を引き上げてステッカーを作る回\nhttps://youtu.be/frSmfnOfG8I\n\n▼漢字が読める人の出番。和文のグッズを世界に置く、SUZURIの回\nhttps://youtu.be/dOF8EPYoaqU\n\n▼60代女性が50万。楽天ROOMの“絶対法則”と、思わず買われる投稿の作り方\nhttps://youtu.be/ljSMXKfd4Og\n\n▼マーケティングもアルゴリズムもいらない。楽天ROOMで唯一やるべきこと\nhttps://youtu.be/H47wa9M5sBQ\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AI",
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ChatGPTを使って日用品のイラストを生成し、LINEスタンプやSUZURI、楽天ROOMで連携させて収益化する副業モデルを投稿者が解説している。",
+    "遠距離介護や高齢の親との連絡を想定した実用的なスタンプの構成案を、ChatGPTを用いて作成する手順を紹介している。",
+    "生成した画像を背景透過処理し、指定サイズへ切り分けてLINEクリエイターズマーケットへ登録する具体的なプロンプトや設定方法を実演している。"
+   ],
+   "for_whom": "ChatGPTの画像生成を活用して、LINEスタンプやグッズ販売などの副業を始めたい人",
+   "caution": "動画内でパート勤務者が月40万円を稼いだと主張されていますが、客観的な証拠画面は提示されていません。また、特典配布を理由に公式LINEへの登録へ強く誘導しています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T22:15:15.607637+00:00"
   },
   {
    "video_id": "b3tMAOFB71o",
@@ -6666,95 +6686,128 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "For AGI to benefit all of humanity, it should help people with the everyday tasks that matter most to them. \n\nSo we built LifeVal, a new benchmark shaped by feedback from thousands of ChatGPT users on where they most want help from a personal assistant—from finding childcare to accessing government services and managing personal finances.\n\nOver the past year, we’ve used LifeVal to measure and improve how well our models handle these everyday tasks.\n\n\nhttps://openai.com/index/lifeval/",
    "first_seen": "2026-11-07T13:29:51.561423+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIの研究者が、AIが日常生活のタスクでどれだけ役立つかを測定する新たな評価指標「LifeVal」を発表したと紹介している。",
+    "従来のコーディングや数学だけでなく、計画や比較、フォローアップなど日々の実用的な作業の遂行能力を評価すると説明している。",
+    "健康データや予算に応じた買い物支援など実践的な行動の成否を測定し、今後のモデル改善に役立てていると伝えている。"
+   ],
+   "for_whom": "AIの日常生活への応用や最新のモデル評価基準に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T22:15:15.607637+00:00"
+  },
+  {
+   "video_id": "GJ6PMUm5oTA",
+   "title": "OpenAI's Astra Just Opened The Black Box Of AI",
+   "url": "https://www.youtube.com/watch?v=GJ6PMUm5oTA",
+   "published": "2026-11-07T16:24:47+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-11-07T22:15:15.607637+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "MITの研究で、AIが別のニューラルネットワークの重みを読み取り、訓練されたタスクを特定できたと紹介している。",
+    "重みを直接編集することでAIの不具合を修正し、思考ループを抑えて数学ベンチマークの正答率を改善したと説明している。",
+    "報道にある「どんなAIも賢くできる」等は誇張であり、効果が出ないモデルもあるなど制限が存在すると指摘している。"
+   ],
+   "for_whom": "ニューラルネットワークの直接編集や解釈技術に関心がある人",
+   "caution": "動画内でも注意されている通り、重みの直接編集技術はあらゆるモデルに万能なわけではなく、限定的な実験成果である点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-07T22:15:15.607637+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-07T13:29:51.561423+00:00",
+   "last_ok": "2026-11-07T22:15:15.607637+00:00",
    "fail_streak": 0
   }
  }
