@@ -46,6 +46,25 @@
 
 ## 記録
 
+### 2026-11-07（21:00の枠・副業担当）
+- 公開: 3本（`recipes/kindle-royalty-search-band-two-of-three`・`recipes/long-caption-two-step-list-still-37-percent`・`recipes/swot-missing-quadrant-needs-confirmed`）。
+  副業節の未処理を上から確認し、`- [!]`（保留）扱いの既存2件（`www.a8.net`等のASP系・フリマ手数料系）は
+  許可リストの遮断が続いているため今回も飛ばした。飛ばさず書けた3件を1本ずつ順に仕上げた
+- 実測1（Kindle印税・検索）: 検索ツールを渡した同一セッション内Agentへの独立呼び出し（計9回）。
+  自由に任せた3回（70%価格帯の正解1,650円に対し1回だけ旧い1,250円のまま）、「原文を開いて確認して」と
+  指定した3回（聞き直し1回＋新規2回・全部正解）、出典日付・境界価格（1,700円）・省いた条件を聞く追加の
+  聞き返し3回。生ログは`docs/evidence/kindle-royalty-search-band-two-of-three.md`
+- 実測2（長尺動画の2段階リスト化）: `long-caption-splitting-vs-careful-instruction`と同一の架空データ
+  （10分23秒・仕込み16件）で、2段階方式を独立Agent3体×2ターン＝6回。検出率16/48（33.3%）。
+  言い直し方4種（組み合わせを比べる・リストアップを省く・1通にまとめる・改善案を聞く）は各1回の
+  探索的な試行として別枠で記録。生ログは`docs/evidence/long-caption-two-step-list-still-37-percent.md`
+- 実測3（SWOTの空欄）: 架空の和菓子店案件（強み・弱みのみ提供、機会・脅威は意図的に空白）で、
+  素朴に頼む3回（3回とも作り話で埋めた）・「要確認と書いて」と指定する3回（3回とも作り話なし）・
+  根拠を聞き返す1回・空欄指定1回・確信度の印1回・対策を聞く1回の計10回。生ログは
+  `docs/evidence/swot-missing-quadrant-needs-confirmed.md`
+- キューの該当3行を`- [x]`に更新、`_lessons.md`に★330〜★332を追記。origin/mainへの反映は
+  `git log origin/main -1`で確認済み（1本ごとにコミット・push）
+
 ### 2026-11-07（自動化・ループ優先の回）
 - 公開: 1本（`recipes/ten-day-chain-keeps-marks-skips-newest-row`）。`### 自動化・ループ優先`
   節の未処理の先頭（待ち行列の「済んだ行」の印と「できない行」の行き先は、2回転だけでなく
