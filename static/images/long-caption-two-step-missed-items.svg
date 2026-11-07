@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="490" viewBox="0 0 720 490" role="img" aria-label="2段階リスト化でも3回とも一度も拾われなかった6項目を示す図。本体高さ「60センチ」（正45cm）、センサー「4種類」（正3種類）、運転モード「5段階」（正3段階）、お手入れ頻度「3か月に1回」（正2週に1回）、比較対象クラス「6〜8畳」（正10〜12畳）、保証登録期限「1か月以内」（正3か月以内）、すべて赤。下の枠には、どれも単体で見て製品としてありえない値ではなく先にリストアップさせても比べる基準は変わらないこと、短尺材料の先行記事でも同じ性質の6項目が一度も拾われなかったため材料の長さは関係ないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="490"/>
+<text class="t-strong" x="18" y="26">2段階リスト化でも、3回とも一度も拾われなかった6項目</text>
+<text class="t-sm" x="18" y="45">どれも単体で見て「製品としてありえない値」ではない。先にリストアップさせても、比べる基準は変わらない。</text>
+<rect class="box-bad" x="18" y="100" width="684" height="46" rx="6"/>
+<text class="t-strong" x="34" y="120">F6 本体高さ「60センチ」</text>
+<text class="t-bad" x="34" y="138">正: 45cm</text>
+<rect class="box-bad" x="18" y="156" width="684" height="46" rx="6"/>
+<text class="t-strong" x="34" y="176">F7 センサー「4種類」</text>
+<text class="t-bad" x="34" y="194">正: 3種類</text>
+<rect class="box-bad" x="18" y="212" width="684" height="46" rx="6"/>
+<text class="t-strong" x="34" y="232">F8 運転モード「5段階」</text>
+<text class="t-bad" x="34" y="250">正: 3段階</text>
+<rect class="box-bad" x="18" y="268" width="684" height="46" rx="6"/>
+<text class="t-strong" x="34" y="288">B4 お手入れ頻度「3か月に1回」</text>
+<text class="t-bad" x="34" y="306">正: 2週に1回</text>
+<rect class="box-bad" x="18" y="324" width="684" height="46" rx="6"/>
+<text class="t-strong" x="34" y="344">B5 比較対象クラス「6〜8畳」</text>
+<text class="t-bad" x="34" y="362">正: 10〜12畳</text>
+<rect class="box-bad" x="18" y="380" width="684" height="46" rx="6"/>
+<text class="t-strong" x="34" y="400">B8 保証登録期限「1か月以内」</text>
+<text class="t-bad" x="34" y="418">正: 3か月以内</text>
+<rect class="box-accent" x="18" y="442" width="684" height="28" rx="6"/>
+<text class="t-accent" x="34" y="462">短尺材料の先行記事でも、同じ性質の6項目が一度も拾われなかった。材料の長さは関係ない。</text>
+</svg>
