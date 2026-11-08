@@ -6079,62 +6079,6 @@
       "uid": "7d5dc772904479c1",
       "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-10T17:11:21.526374+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-10T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
-      "summary_ja": "ChatGPTビジネス版に上位プランが登場\n8月20日までの契約で100ドルの割引\nチームでより多くの利用が可能に",
-      "summary_source": "gemini",
-      "title": "Premium seats are coming to ChatGPT Business",
-      "uid": "d9de7eb95547aa28",
-      "url": "https://openai.com/index/premium-seats-chatgpt-business",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-10T23:52:14.190919+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-10T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
-      "summary_ja": "Zapierがマーケティング業務を効率化した\nビジネス向けChatGPTを使い、見込み客の離脱を減らした\nキャンペーン素材作成や報告業務も自動化",
-      "summary_source": "gemini",
-      "title": "How Zapier transformed core marketing processes with ChatGPT Work",
-      "uid": "c4a0ef8d3542dfce",
-      "url": "https://openai.com/index/zapier",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-10T23:52:14.190919+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-10T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
-      "summary_ja": "Virgin Atlanticが業務効率を上げた\nビジネス向けChatGPTで調査や製品計画を加速\n意思決定も早まり、顧客体験の連携も強化",
-      "summary_source": "gemini",
-      "title": "Virgin Atlantic sharpens customer journeys with ChatGPT Work",
-      "uid": "4831eb0f4620e41c",
-      "url": "https://openai.com/index/virgin-atlantic/chatgpt-work",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-09T23:48:59.918712+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-09T23:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "Sakana AIは、Sakana Fuguの指揮者モデルをGemma 4ベースで訓練し、従来と同等のオーケストレーション性能が出ることを確認しました。モデルプールに加えて指揮者モデルの多様化・モジュール化を図ることで、国内のさまざまな用途で求められるソブリン性の要件に応じたオーケストレーション技術を開発し、提供していきます。",
-      "summary_ja": "Sakana AIがAI連携技術を別基盤で検証\nGemma 4基盤で指揮AI「Sakana Fugu」を開発。従来の連携性能を維持。\n国内向けに、基盤を選ばず使えるAI連携技術を提供へ。",
-      "summary_source": "gemini",
-      "title": "ベースモデルに依存しないオーケストレーションに向けて：Gemma 4版 Sakana Fuguの検証",
-      "uid": "1ed84fe2de2797eb",
-      "url": "/fugu-gemma4/",
-      "vendor": "Sakana AI"
     }
   ]
 }

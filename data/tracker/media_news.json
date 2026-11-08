@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-08T00:42:05.584082+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-07T23:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIエージェントの一般化に伴い、複数のAIエージェントを連携させるマルチエージェントシステムが注目されています。GitHub、Google、Siemensが紹介した15のデザインパターンを、設計上の課題や具体的な活用場面とともに解説します。",
+      "title": "【図解あり】マルチエージェント設計「15のパターン」　GitHub、Google、Siemensの知見を一気に整理",
+      "uid": "8269c5539ebd09ec",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/08/news001.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-08T00:42:05.584082+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-07T22:24:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "AnthropicのAIモデルは、正解を判定しやすい課題での性能向上が、従来の約2倍のペースに速まった可能性がある。AIの能力やリスクを研究するMETRが11月5日、調査報告書を公開した。METRは、性能向上が加速した主な要因はAIを使った研究開発にあるとみるが、推定には大きな不確実性があるとしている。",
+      "title": "Claudeの性能向上ペース、約2倍に加速--「AIを使ってAIを開発」が要因か",
+      "uid": "236b95e7b1fb8383",
+      "url": "https://japan.cnet.com/article/35254548/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-11-07T02:52:49.802748+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2375,30 +2399,6 @@
       "uid": "b107d17eef9f8190",
       "url": "https://www.itmedia.co.jp/aiplus/article/2610/30/2000002757/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-10-30T06:25:33+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "感性AIと神戸電鉄は10月30日、神戸電鉄が感性AIの開発・提供する法人向け生成AIプラットフォーム「AI-Hub」の本格導入を開始したと発表した。",
-      "title": "神戸電鉄、感性AIの「AI-Hub」を10部署130名に本格導入",
-      "uid": "92733ee21899a00a",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2152654.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-30T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AIスタートアップ企業のOlam LabsとベンチャーキャピタルのY Combinatorが共同で、ゲーム「マインクラフト」を50体のGPT-6.1 Solにプレイさせるという実験を行い、その結果を公開しました。また「OpenAIのAI対AnthropicのAIでミニゲームのベッドウォーズをする」という試みも行っています。 続きを読む...",
-      "title": "AIを50体集めてマインクラフトで文明を作らせたら食糧難に陥って配給制度が実施される",
-      "uid": "20fc31395fc30bfc",
-      "url": "https://gigazine.net/news/20261030-minecraft-gpt-sol/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
