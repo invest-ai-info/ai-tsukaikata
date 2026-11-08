@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240" role="img" aria-label="P1+P2+P3が同時停止した同じログに、2種類の指示文を各2回試した結果を示す表。通常の指示文（「処理ごとに計算して、極端に少ない日があれば挙げて」）は、2回ともP1を「ふだんの範囲内」と判断して名指しから外した。「ふだんの回数が少ない処理でも、0件が複数日連続していれば頻度の低さを理由に除外せず、同じように挙げてください」という一文を足した指示文では、2回ともP1・P2・P3の3本すべてを正しく名指しした。下の枠には、通常の指示文はP1のふだんの少なさを理由に極端ではないと判断して2回とも見送ったこと、一文を足すと同じ少なさでも4日間連続の0件を理由に2回ともP1を含めて名指ししたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="240"/>
+<text class="t-strong" x="18" y="26">「頻度が低くても除外しない」を足すとP1も見つかった</text>
+<text class="t-sm" x="18" y="45">実測2026-11-08。P1+P2+P3が同時停止した同じログに、一文を足した指示文を2回試した。</text>
+<text class="t-sm" x="18" y="64">通常の指示文はP1を2回とも見送ったが、一文を足すと2回ともP1を含む3本すべてを名指しした。</text>
+<text class="t-xs" x="458.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">通常の指示文（P1+P2+P3の3本同時停止）</text>
+<rect class="box-bad" x="378" y="104" width="160" height="26" rx="4"/>
+<text class="t-bad" x="458.0" y="125" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="157">「頻度が低くても除外しない」を追加</text>
+<rect class="box-good" x="378" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="458.0" y="157" text-anchor="middle" style="font-weight:700">2/2</text>
+<rect class="box-accent" x="18" y="174" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="194">通常の指示文は、P1のふだんの少なさを理由に「極端ではない」と判断して2回とも見送った。</text>
+<text class="t-accent" x="34" y="212">一文を足すと、同じ少なさでも「4日間連続の0件」を理由に2回ともP1を含めて名指しした。</text>
+</svg>
