@@ -6061,10 +6061,20 @@
    "channel_key": "keito",
    "channel_name": "KEITO【AI&WEB ch】",
    "default_category": "tech",
-   "description": "Claudeを仕事でどう使うか、これまでの実演をまとめた総集編です。スキルによる自動化から資料・動画・サイト制作、AIに作業を任せる工夫まで紹介。操作画面を見ながら、普段の仕事に取り入れるヒントを探せます。使い方の幅を広げたい方におすすめです。\n\n▼Claude Code基礎研修は下記\nhttps://luma.com/yft7we9k\n\n▼いちばんやさしいClaudeの教本\nhttps://link.amazon/B03PzG6Bh\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n0:00 オープニング・お知らせ\n1:03 Obsidianを活用したClaude Codeスキル管理\n3:08 執筆・記事制作におけるナレッジ蓄積\n4:57 NG表現・良い表現リストによる文体制御\n5:37 Obsidian保存の自動化\n10:08 Notta操作を記録してスキル化する事例\n16:13 Webサイトのスクリーンショット収集自動化\n22:13 Claude Designの編集・共同作業機能\n26:35 Claude Designによるスライド資料作成\n31:29 ワイヤーフレーム作成\n35:03 動作するWebプロトタイプの作成\n37:41 Claude Designから実装・公開までの連携\n39:47 デザインシステムとStorybookの同期\n44:02 Claudeドキュメント機能\n44:51 デザインシステムの重要性\n46:17 スライドの出力・共有機能\n47:49 Claude Motionによるアニメーション制作\n49:49 Claude Codeを使ったショート動画編集\n52:18 動画編集の検証ループと品質改善\n1:00:34 Claude Designのテンプレート動画機能\n1:04:03 AIモデルとエージェントスキルを使った動画生成\n1:08:55 Claude Code利用時のセキュリティーと権限管理\n1:10:48 Claude Codeの権限モード\n1:13:23 セキュリティー診断ツールと外部リポジトリーの扱い\n1:15:53 CloudflareとClaude CodeによるWebサイト公開\n1:19:26 ワークフローエージェントによるゲーム・アプリ制作\n1:25:04 AI社員によるホームページ制作会社「ブラック製作所」\n1:33:40 サブエージェントによる役割分担\n1:36:37 AI制作会社による公開・コスト集計\n1:41:57 Claude Code基礎研修の案内\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nChatGPT Work完全解説動画\nhttps://youtu.be/U74PHw-h59Q\n【最新版】Claude完全攻略！これ見れば全てわかる\nhttps://youtu.be/OhO0WcRP6Ow\nGemini for Google Workspace完全解説\nhttps://youtu.be/0BZpNHfdFIk\nChatGPTをもっと便利に使いこなすAI活用",
    "first_seen": "2026-11-03T19:47:02.227858+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Codeで作成したスキルや執筆ルールをObsidianに自動保存して管理する連携方法を解説している",
+    "画面操作を記録してNottaの目次作成やWebサイトのスクショ収集を自動化するスキル作成手順を紹介している",
+    "Claude Designを使い、デザインシステムを活用したLPの直接編集やスライド資料を生成する流れを説明している"
+   ],
+   "for_whom": "ClaudeやClaude Codeを活用して日々の業務やデザイン作業を自動化したいビジネスパーソン",
+   "caution": "動画内および概要欄で、有料の基礎研修講座や書籍、公式LINE、有料コミュニティへの誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T22:26:43.886050+00:00"
   },
   {
    "video_id": "paktVBbMfWA",
@@ -6074,10 +6084,20 @@
    "channel_key": "saki",
    "channel_name": "【さき】のAIでええやん。",
    "default_category": "tech",
-   "description": "100社以上のAI研修・コンサル実績ノウハウを詰め込んだ\n📊自分の会社の今の状態を知れる💬\n【無料】企業様向けのAI活用診断はコチラ⬇️\nhttps://www.aideeyan.com/yt/paktVBbMfWA\n\n🌏企業向けAIの活用がわかる！学べる無料会員サイト💻\nhttps://www.aideeyan.com/yt/paktVBbMfWA/top\n\n🏢AI研修やAI導入のお問い合わせはこちらから🏢\nhttps://www.aideeyan.com/yt/paktVBbMfWA/contact\n\n何となく聞きに来るのは勿体ない/本気の人向けAI勉強会\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\n今AI活用やマネタイズの仕方がわからない人🤦やAI初心者の人も必見！\n\n🚨無料期間限定🚨で\n✨Youtubeでは出せないさきのAI最新情報✨&\n👩‍💻AIノウハウ100大特典🎁を勉強会参加後にLINEで受け取れます！\n\nAIスキルを身につけて【社内評価⏫UP⏫】や【収益化💰】\n業務効率化🗒️できるココでしか手に入らない情報を\n現在期間限定でしかも、無料配布しているので興味ある方は是非！！\n↓↓↓\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\nーーーーーーーーーーーーーー\n\n約10,000人以上の人が登録中！\n⬇️さきのAI最新情報公式LINE⬇️\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\nーーーーーーーーーーーーーー\n🎁”LINE登録者限定\"のAI特別セミナー開催\n🎁”LINE登録者限定\"のAI勉強会\n🎁”勉強会参加者限定\"のAI豪華100大特典配布\n🎁”勉強会参加者限定\"の特別な案内\n\n【⬇️無料登録はこちら⬇️】\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\n🏢企業のAI活用が学べる無料会員サイトはコチラ📚\nhttps://www.aideeyan.com/yt/paktVBbMfWA/top\n\n🧑‍💻AI研修やAI導入のお問い合わせはこちらから🧑‍💻\nhttps://www.aideeyan.com/yt/paktVBbMfWA/contact\n\n\n━━━━━━━━━━━━━━━━━━\n↓↓本日紹介したツールや動画📚などはこちら↓↓\n\n【Copilot】\nhttps://copilot.com/ja-jp/\n\n━━━━━━━━━━━━━━━━━━\n#chatgpt    #gemini    #ai活用  #claude #claudecode",
    "first_seen": "2026-11-03T19:47:02.227858+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Copilotは社内データと自動連携しOfficeアプリ内で直接エージェントが動作する点などが特徴だと説明している。",
+    "WordやPowerPoint、Excelのエージェントを使い、企画書作成や売上データ集計を効率化する実例を紹介している。",
+    "複数タスクを一括で自律進行するCowork機能の概要や、組織での従量課金設定の手順を解説している。"
+   ],
+   "for_whom": "Microsoft 365 Copilotを仕事で使いこなしたい会社員",
+   "caution": "動画内で企業向け無料診断や個別相談が案内されているほか、概要欄ではLINE登録による勉強会や特典配布へ誘導されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T22:26:43.886050+00:00"
   },
   {
    "video_id": "TKs5ktj36f4",
@@ -6218,10 +6238,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\n(2026年)10月下旬、Kling AIは、最新の動画生成AIモデル\n「Kling 4.0」を一般公開しました\nこのモデルは、前のモデル(Kling 3.0)から大きく進化し\nテキストから動画を作れるほかにも\n動画や画像などの参照素材を15個まで組み合わせて\n1080p解像度の最大30秒の音付き動画を生成可能で\nさらに、動画内の人物に日本語のセリフを\nほぼ完璧に喋らせることもできるようになりました\n\n今回の動画では\n第一章：Kling 4.0の概要と使い方\n第二章：Kling 4.0で作れる動画\nの二章構成で、Kling 4.0の概要\nKling AIの公式サイトやAIプラットフォームで\nKling 4.0を使って動画を作る方法\n最後に、Kling 4.0でどんな動画を作れるのか\n実際に作った動画を交えて紹介します\n\n◆動画のもくじ\n0:00　Kling 4.0のサンプル\n0:43　動画について\n1:20　動画のもくじ\n1:58　第一章：Kling 4.0の概要\n2:22　①、Kling 4.0の特徴\n3:41　②、Kling AIでKling 4.0を使う\n5:13　③、その他のKling 4.0の使い方\n6:16　第二章：Kling 4.0で作れる動画\n9:52　エンディングムービー\n\n◆動画の中で紹介している内容\nfal、ByteDance、Seedance 2.5、MiniMax、MiniMax H3\n\n◆参考サイト\nhttps://kling.ai/ja\nhttps://kling.ai/ja/feature/kling-4-ai-video-generation\nhttps://fal.ai/\nhttps://x.com/Kling_ai/status/2113601348881002731\nhttps://x.com/Kling_ai/status/2110747526840361191\nhttps://x.com/Kling_ai/status/2112946255257084260\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、Hooks、Subagent、Plugins)をやさしく解説！\nhttps://youtu.be/-xla8NqooJU\n【本当に凄いのか？】AIモデル「Kimi K3」完全解説！ GPT-5.6 Sol・Claude Fable 5級の性能、使い方＆開発・業務系の活用事例10選！\nhttps://youtu.be/C-5l4iaHgKQ\n【Claude Codeのライバル】Codex(コーデックス)入門ガイド｜導入方法・使い方・重要機能(MCP、スキル、プラグイン、Hooks、Subagents)をやさしく解説！\nhttps://youtu.be/gKtw6tuTuJ0\n【すぐに使える活用事例20例】画像生成・編集AI「ChatGPT ",
    "first_seen": "2026-11-04T19:59:57.371887+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Kling AIの最新動画生成モデル「Kling 4.0」が公開され、最大30秒の動画生成や最大2分までの動画延長に対応したと説明している。",
+    "公式サイトやfalなどのプラットフォームで利用でき、複数素材の参照やキーフレーム設定による動画生成が可能だと解説している。",
+    "日本語の発話性能とリップシンク精度が向上し、テキスト指示通りに自然な日本語を喋らせることができると紹介している。"
+   ],
+   "for_whom": "日本語のセリフ付き動画をAIで作りたい人や、最新の動画生成AIモデルの性能を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T22:26:43.886050+00:00"
   },
   {
    "video_id": "Lb7B16Gohv4",
@@ -6844,91 +6874,114 @@
    "first_seen": "2026-11-08T13:50:28.112666+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "X2T92MVx7xs",
+   "title": "I made $1M from 30 different apps",
+   "url": "https://www.youtube.com/watch?v=X2T92MVx7xs",
+   "published": "2026-11-08T18:00:14+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-11-08T22:26:43.886050+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Sanskar氏が30以上のマイクロアプリを開発し、累計売上100万ドルを達成したプロセスを解説している",
+    "単一機能に絞ったアプリをプラットフォーム上に構築し、開発前に購入ボタンを置いて需要を検証する手法を勧めている",
+    "集客はFacebookグループやYouTube、Instagramでの継続的な動画投稿を活用したと説明している"
+   ],
+   "for_whom": "AIツールやマイクロSaaSの個人開発で収益化を目指す副業希望者やエンジニア",
+   "caution": "売上100万ドルという数字は出演者の主張による実績であり、同じ手法で誰もが同等の収益を得られるとは限りません。また、動画および概要欄では関連データベースへの登録案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T22:26:43.886050+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "last_ok": "2026-11-08T22:26:43.886050+00:00",
    "fail_streak": 0
   }
  }
