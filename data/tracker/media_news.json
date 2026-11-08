@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-08T15:17:44.673953+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-11-08T15:16:44+00:00",
+      "source_id": "media-publickey",
+      "summary": "年度の切り替え時に取引先に提出する見積書のフォーマットが変わる、取引先から納品書のフォーマットを指定されたなど、ビジネスにおいて帳票のレイアウトに新たな要求が寄せられることは珍しくありません。 しかし業務システムをそのたびに作り変えるのは一...",
+      "title": "Excelで帳票レイアウトを作成、CSVデータから簡単に単票や明細付きの帳票を生成できる「AS-DataReport」が新登場［PR］",
+      "uid": "191de406055dae43",
+      "url": "https://www.publickey1.jp/blog/26/excelcsvas-datareportpr.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-08T15:17:44.673953+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-08T10:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIを使用してシリコンチップを設計する再帰的自己改善に取り組むアメリカのスタートアップ「Ricursive Intelligence」が、アメリカ産のオープンウェイトモデル「Ripple-65B Preview」をリリースしました。Ripple-65B Previewはエージェント型コーディングのベンチマーク「Terminal-Bench 2.1」で80.52点を記録し、より大規模なAIモデルを…",
+      "title": "アメリカ産のAIでオープンモデル「Ripple-65B Preview」登場、パラメーター数10倍の大型モデルを上回る性能で開発費は10分の1",
+      "uid": "09133fd702bca889",
+      "url": "https://gigazine.net/news/20261108-ripple-65b-preview/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-08T15:17:44.673953+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-08T08:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "画像生成AIは便利な技術ですが、ロマンス詐欺やフェイクニュースなどに悪用されることもあります。生成AIで作成され画像を高精度に見分けることが可能なブラウザ拡張機能「Pangram AI Detection」が登場したので、実際にAI画像を検出できるのか試してみました。 続きを読む...",
+      "title": "AI画像を検出できるブラウザ拡張機能「Pangram AI Detection」を実際に使って本当に検出できるのか試してみた",
+      "uid": "24ed46148398f237",
+      "url": "https://gigazine.net/news/20261108-pangram-image-ai-image-detection/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-08T07:26:09.558472+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "27a2ece9bad69f73",
       "url": "https://ai.watch.impress.co.jp/docs/news/2152713.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-10-30T14:16:16.511490+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-30T07:45:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "健康情報をネットで調べることは、多くの人にとって日常の一部になっている。だが、そこにはリスクもある。2026年2月、中国に住む両親は、米シアトルで暮らす31歳の娘Bowen Wanさんと2日間連絡が取れなくなり、現地の友人に様子を見に行くよう頼んだ。家族がビデオ通話越しに見守るなか、友人がアパートに入ると、Wanさんはベッドで亡くなっていた。",
-      "title": "「ChatGPTが服薬中止をアドバイス」--亡くなった女性の両親がOpenAIを提訴",
-      "uid": "247701ed55e84c93",
-      "url": "https://japan.cnet.com/article/35254217/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-30T14:16:16.511490+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-10-30T07:19:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ChatGPT、Perplexity、Gemini、Claude、Google検索のAIによる概要という5つのAIアシスタントが出力した統計情報1285件を追跡調査したところ、そのほとんどが研究による裏付けのないものだったとAI可視化プラットフォームのTrakkrが報告しています。 続きを読む...",
-      "title": "AIの回答で登場する統計データの40％が裏付ける研究結果などがない「ゾンビ統計」であることが明らかに",
-      "uid": "422f5d5e2521fb0c",
-      "url": "https://gigazine.net/news/20261030-ai-assistants-statistics-not-find-study/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-10-30T06:50:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Alphabetが10月28日（現地時間）に開いた決算説明会で、対照的な動きが明らかになった。検索回数は増えているのに、検索広告収入の伸びは鈍っている。米グーグルの最高事業責任者（CBO）Philipp Schindler氏は、2026年第3四半期に検索広告収入の伸びが鈍った理由として、検索結果に要約を表示する「AIによる概要」や、会話形式で調べ物ができる「AIモード」への移行を挙げた。これら…",
-      "title": "グーグル、「AI概要」での広告表示を拡大　検索広告収入の伸び悩み受け",
-      "uid": "7f5c1c35e0851fdd",
-      "url": "https://japan.cnet.com/article/35254216/",
-      "vendor": "CNET Japan"
     }
   ]
 }
