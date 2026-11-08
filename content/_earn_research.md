@@ -1405,3 +1405,5 @@ skips-newest-row`・`memo-chain-holds-until-it-summarizes-itself`はscene:automa
 
 - →保管: 2026-11-07 研究パック1件（H57を変換。あわせてH58を新規登録）。促進項目
   （`www.conmark.jp`）を再測定・変化なし
+
+2026-11-08 在庫十分（未処理12件）のためスキップ
