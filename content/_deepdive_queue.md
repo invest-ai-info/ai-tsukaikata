@@ -705,12 +705,31 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/
-  - 2026-11-05 自動追記（major・Google「Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips」）
-- [ ] https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/
-  - 2026-11-05 自動追記（major・Google DeepMind「Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips」）
-
 ## 処理済み
+
+- https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/ → **公開済み** content/tools/gemini-omni-1-2-flash.md（2026-11-08・公開）
+  - `blog.google` に到達（200・約394KB、要約させず生HTMLから本文を抽出して確認した）。
+    `deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/` は302転送で
+    このページへ到達する同一記事（utm付きURL）だったため、重複として統合しこちらを正本として処理した。
+    関連してモデルカード・Google Cloudの一般提供発表（11/6・1日後の別記事）・Vertex AI料金ページ（`cloud.google.com/model-garden/pricing`。
+    `ai.google.dev/gemini-api/docs/pricing`は`aistudio.google.com`への301転送先が許可リストに無く経路遮断のため、
+    代わりにこのページを使用）・OpenAI Sora 2モデルページ・Anthropicモデル一覧に到達。
+    図3枚（`omni12-price-vs-prev` / `omni12-vendor-720p-price` / `omni12-duration`）。出典6件すべて取得成功。
+    `check_numbers.py` は照合対象22個のうち**17個が出典に存在**、残る5個（$0.023・$0.21・31%・31.43%・68.57%）は
+    この記事が料金ページのトークン数×単価から計算した値で、そう明記してある。
+    pytest 794 passed・build 378ファイル。`check_readability.py` は60字以上14%（目安15%以下、最長105字）。
+  - 📌 記事の芯＝**動画出力の秒単価がどの解像度でもおよそ31%（公式は「30%」）下がり、
+    1回の生成でネイティブに作れる長さが10秒から15秒に伸びた**。ただし安くなったのは動画出力だけで、
+    入力・テキスト出力は旧モデルから1円も変わっていない。
+  - 🔍 **前回記事（Omni 1.1 Flash・2026-09-04公開）で「3週間後にAPI終了」と予告されていたOpenAIのSora 2が、
+    実際に2026年9月24日に終了していたことを確認した**（`developers.openai.com/api/docs/models/sora-2`に
+    「shut down... no one-to-one replacement API」と明記）。結果、720pの動画生成APIを実際に契約できる
+    大手3社はGoogleだけという状態になっている。
+  - ⚠️ **Googleの2つの公式ページが、Gemini for businessでの提供状況について食い違っていた**
+    （発表ページ11/5は「一般提供を開始した」、Google Cloud側11/6は「coming soon」）。どちらが正しいか
+    公表されていないため、本文に両方書いた。
+  - ⚠️ 音声参照機能は許可リスト制限付き（Google Cloud側の発表に明記）。延長機能（旧モデルは最大40秒）が
+    1.2 Flashでも同じ上限かは発表に記載が無く「分からないこと」に残した。
 
 - https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/ → **公開済み** content/tools/gemini-robotics-er-2.md（2026-11-02・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/` へ到達（200）。

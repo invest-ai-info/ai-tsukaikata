@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="388" viewBox="0 0 720 388" role="img" aria-label="Gemini Omni 1.1 Flashから1.2 Flashへの、解像度別・秒あたり価格の変化を示す横棒グラフ。音声付き動画・秒あたりのドル。薄い灰＝旧モデル、濃い青＝新モデル。360pは0.034ドルから0.023ドルへ約31%減、720pは0.10ドルから0.07ドルへ約31%減（この720pの新価格は発表ページ本文に直接書かれている）、1080pは0.15ドルから0.10ドルへ約31%減、4Kは0.30ドルから0.21ドルへ約31%減。360p/1080p/4Kはこの記事が料金ページのトークン数から計算した値。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="388"/>
+<text class="t-strong" x="18" y="26">どの解像度でも、秒単価はおよそ3割下がった</text>
+<text class="t-sm" x="18" y="45">薄い灰＝前モデル（1.1 Flash）、濃い青＝新モデル（1.2 Flash）。音声付き動画・秒あたりのドル。</text>
+<text class="t-sm" x="18" y="64">720pの新価格（$0.07）は発表ページの本文に直接書かれている。他の解像度はこの記事が料金表のトークン数から計算した。</text>
+<text class="t" x="18" y="104">360p</text>
+<text class="t-xs" x="18" y="120">31.4%減</text>
+<text class="t-xs" x="186" y="103" text-anchor="end">旧</text>
+<rect class="bar-old" x="210" y="92" width="38.9" height="14" rx="2"/>
+<text class="t-sm" x="256.9" y="103">$0.034／秒</text>
+<text class="t-xs" x="186" y="122" text-anchor="end">新</text>
+<rect class="bar-new" x="210" y="111" width="26.7" height="14" rx="2"/>
+<text class="t-sm" x="244.7" y="122">$0.023／秒</text>
+<text class="t" x="18" y="167">720p（公式が明記）</text>
+<text class="t-xs" x="18" y="183">31.5%減</text>
+<text class="t-xs" x="186" y="166" text-anchor="end">旧</text>
+<rect class="bar-old" x="210" y="155" width="116.7" height="14" rx="2"/>
+<text class="t-sm" x="334.7" y="166">$0.101／秒</text>
+<text class="t-xs" x="186" y="185" text-anchor="end">新</text>
+<rect class="bar-new" x="210" y="174" width="80.0" height="14" rx="2"/>
+<text class="t-sm" x="298.0" y="185">$0.070／秒</text>
+<text class="t" x="18" y="230">1080p</text>
+<text class="t-xs" x="18" y="246">31.3%減</text>
+<text class="t-xs" x="186" y="229" text-anchor="end">旧</text>
+<rect class="bar-old" x="210" y="218" width="174.7" height="14" rx="2"/>
+<text class="t-sm" x="392.7" y="229">$0.152／秒</text>
+<text class="t-xs" x="186" y="248" text-anchor="end">新</text>
+<rect class="bar-new" x="210" y="237" width="120.0" height="14" rx="2"/>
+<text class="t-sm" x="338.0" y="248">$0.104／秒</text>
+<text class="t" x="18" y="293">4K</text>
+<text class="t-xs" x="18" y="309">31.4%減</text>
+<text class="t-xs" x="186" y="292" text-anchor="end">旧</text>
+<rect class="bar-old" x="210" y="281" width="350.0" height="14" rx="2"/>
+<text class="t-sm" x="568.0" y="292">$0.304／秒</text>
+<text class="t-xs" x="186" y="311" text-anchor="end">新</text>
+<rect class="bar-new" x="210" y="300" width="240.0" height="14" rx="2"/>
+<text class="t-sm" x="458.0" y="311">$0.209／秒</text>
+<text class="t-xs" x="18" y="362">※ 360p/1080p/4Kは、この記事が料金ページのトークン数（秒あたり）×単価から計算した値。</text>
+<text class="t-xs" x="18" y="380">※ 出典: cloud.google.com/model-garden/pricing（2026年11月8日確認）。</text>
+</svg>

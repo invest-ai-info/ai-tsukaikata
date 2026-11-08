@@ -42751,3 +42751,200 @@ def one_combined_post_mechanism_chart() -> None:
 if __name__ == "__main__":
     one_combined_post_hit_and_miss_chart()
     one_combined_post_mechanism_chart()
+
+
+def omni12_price_vs_prev_chart() -> None:
+    """Gemini Omni 1.1 Flash → 1.2 Flash の、解像度別・秒あたり価格。
+
+    出典＝Vertex AI の料金ページ（cloud.google.com/model-garden/pricing・2026-11-08確認）。
+    動画出力は100万トークンあたり$17.50（1.1）→$12.00（1.2）。720pの秒単価（$0.10→$0.07）は
+    発表ページ本文にも直接書かれているが、360p/1080p/4Kはこの記事が同じ料金ページの
+    トークン換算表（360p=1,931・720p=5,792・1080p=8,688・4k=17,376トークン/秒）から計算した。
+    """
+    rows = [
+        ("360p", 0.0337925, 0.023172),
+        ("720p（公式が明記）", 0.1014, 0.069504),
+        ("1080p", 0.1518, 0.104256),
+        ("4K", 0.3041, 0.208512),
+    ]
+    left, right = 210, 560
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 92, 14, 5, 30
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(old for _, old, _ in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "どの解像度でも、秒単価はおよそ3割下がった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "薄い灰＝前モデル（1.1 Flash）、濃い青＝新モデル（1.2 Flash）。音声付き動画・秒あたりのドル。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "720pの新価格（$0.07）は発表ページの本文に直接書かれている。他の解像度はこの記事が料金表のトークン数から計算した。</text>\n",
+    ]
+    for index, (label, old, new) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(label)}</text>\n')
+        drop_pct = round((1 - new / old) * 100, 1)
+        parts.append(f'<text class="t-xs" x="18" y="{y + 28}">{drop_pct:g}%減</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((old, "bar-old", "旧"), (new, "bar-new", "新"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="186" y="{by + bar_h - 3}" text-anchor="end">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:.3f}／秒</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 44
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ 360p/1080p/4Kは、この記事が料金ページのトークン数（秒あたり）×単価から計算した値。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: cloud.google.com/model-garden/pricing（2026年11月8日確認）。</text>\n"
+    )
+    alt = (
+        "Gemini Omni 1.1 Flashから1.2 Flashへの、解像度別・秒あたり価格の変化を示す横棒グラフ。"
+        "音声付き動画・秒あたりのドル。薄い灰＝旧モデル、濃い青＝新モデル。"
+        "360pは0.034ドルから0.023ドルへ約31%減、720pは0.10ドルから0.07ドルへ約31%減（この720pの新価格は発表ページ本文に直接書かれている）、"
+        "1080pは0.15ドルから0.10ドルへ約31%減、4Kは0.30ドルから0.21ドルへ約31%減。"
+        "360p/1080p/4Kはこの記事が料金ページのトークン数から計算した値。"
+    )
+    (OUT / "omni12-price-vs-prev.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def omni12_vendor_720p_price_chart() -> None:
+    """720p・音声付き動画1秒ぶんの価格を、同じ条件で6モデル並べる。
+
+    出典＝Gemini/VeoはGoogleの料金ページ（cloud.google.com/model-garden/pricing）、
+    Sora 2 / Sora 2 Pro はOpenAIのモデルページ（developers.openai.com/api/docs/models/sora-2）。
+    いずれも2026-11-08確認。Sora 2系はAPIが2026年9月24日に終了済みと明記されている。
+    """
+    rows = [
+        ("Gemini Omni 1.2 Flash", 0.07, False),
+        ("Veo 3.1 Lite", 0.05, False),
+        ("Veo 3.1 Fast", 0.10, False),
+        ("Veo 3.1 Standard", 0.40, False),
+        ("Sora 2（終了済み）", 0.10, True),
+        ("Sora 2 Pro（終了済み）", 0.30, True),
+    ]
+    label_w = 190
+    left = 18
+    bar_left = left + label_w
+    right = 620
+    span = right - bar_left
+    top, bar_h, gap = 90, 22, 15
+    pitch = bar_h + gap
+    biggest = max(v for _, v, _ in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">720pの動画1秒ぶんを、同じ条件で6モデル並べる</text>\n',
+        '<text class="t-sm" x="18" y="45">'
+        "音声付き・720p出力のときの秒単価（ドル）。各社の公式ページに書かれている値。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "Sora 2 系（赤字）は、API自体が2026年9月24日に終了済みで今は契約できない。</text>\n",
+    ]
+    for index, (name, value, warn) in enumerate(rows):
+        y = top + index * pitch
+        cls = "bar-new" if name.startswith("Gemini") else "bar-old"
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="{left}" y="{y + bar_h - 6:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{bar_left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        value_cls = "t-bad" if warn else "t-sm"
+        suffix = "／秒（終了済み）" if warn else "／秒"
+        parts.append(
+            f'<text class="{value_cls}" x="{bar_left + bw + 8:.1f}" y="{y + bar_h - 6:.1f}">'
+            f"{_usd(value)}{suffix}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 80
+    notes = [
+        "※ Sora 2 / Sora 2 Pro は、Videos APIごと2026年9月24日に終了済み（公式モデルページに明記）。",
+        "※ 同ページに一対一の後継モデルの案内は無いと明記されている。",
+        "※ Anthropicは動画生成モデルを提供していない（公式ドキュメントで確認）。",
+    ]
+    for note_index, note in enumerate(notes):
+        parts.append(
+            f'<text class="t-xs" x="18" y="{height - 56 + note_index * 18}">{_esc(note)}</text>\n'
+        )
+
+    alt = (
+        "720p・音声付き動画1秒あたりの価格を6モデルで比べた横棒グラフ。"
+        "Gemini Omni 1.2 Flashは0.07ドル、Veo 3.1 Liteは0.05ドル、Veo 3.1 Fastは0.10ドル、"
+        "Veo 3.1 Standardは0.40ドル、Sora 2は0.10ドル、Sora 2 Proは0.30ドル。"
+        "Sora 2とSora 2 Proは、Videos APIごと2026年9月24日に終了済みで今は契約できないと公式モデルページに明記されている。"
+        "同ページに一対一の後継モデルの案内は無い。Anthropicは動画生成モデルを提供していない。"
+    )
+    (OUT / "omni12-vendor-720p-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def omni12_duration_chart() -> None:
+    """ネイティブに生成できる動画の長さが、1.1の10秒から1.2の15秒に伸びたことを示す。
+
+    出典＝発表ページ本文（blog.google・2026-11-05）。
+    「3秒から15秒まで1秒刻みで指定できる」という記述も本文に明記されている。
+    """
+    rows = [
+        ("Gemini Omni 1.1 Flash", 10, "bar-old"),
+        ("Gemini Omni 1.2 Flash", 15, "bar-new"),
+    ]
+    left, right = 230, 600
+    span = right - left
+    top, bar_h, gap = 86, 28, 26
+    pitch = bar_h + gap
+    scale = span / 15
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "ネイティブに作れる長さが、10秒から15秒に伸びた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "1回の生成で作れる動画の最大の長さ（秒）。続きを足す編集機能とは別の数字。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "1.2 Flashは3秒から15秒まで、1秒刻みで長さを指定できると発表ページに明記されている。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 8:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 8:.1f}">'
+            f"最大{value}秒</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 54
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 14}">'
+        "※ 出典: Gemini Omni 1.2 Flash発表ページ（blog.google・2026年11月5日）。</text>\n"
+    )
+    alt = (
+        "Gemini Omni 1.1 FlashとGemini Omni 1.2 Flashの、1回の生成で作れる動画の最大の長さを比べた横棒グラフ。"
+        "1.1 Flashは最大10秒、1.2 Flashは最大15秒。"
+        "1.2 Flashは3秒から15秒まで1秒刻みで長さを指定できると発表ページに明記されている。"
+    )
+    (OUT / "omni12-duration.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    omni12_price_vs_prev_chart()
+    omni12_vendor_720p_price_chart()
+    omni12_duration_chart()
