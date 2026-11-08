@@ -6009,20 +6009,6 @@
       "uid": "85d495635b1d1874",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-10T17:11:21.526374+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-10T17:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI.",
-      "summary_ja": "OpenAIのCFOがAI活用経理の教訓を共有\n経理にAIを組み込む5つの教訓を紹介\n自動予測や管理強化、投資効果など具体的に",
-      "summary_source": "gemini",
-      "title": "What building an AI-native finance function taught me",
-      "uid": "9f9b8cbc0990a835",
-      "url": "https://openai.com/index/building-an-ai-native-finance-function",
-      "vendor": "OpenAI"
     }
   ]
 }
