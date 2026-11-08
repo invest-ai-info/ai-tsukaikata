@@ -6404,10 +6404,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Images, upgraded—introducing ChatGPT Images 2.6.\n\nNow with GIFs and reference images.\n\nPlus, two new models are coming to the API with 50% faster image generation.\n\nImages, upgraded—introducing ChatGPT Images 2.6.\n\nNow with GIFs and reference images.\n\nPlus, two new models are coming to the API with 50% faster image generation. https://openai.com/index/introducing-images-2-6/",
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが画像生成の新バージョン「ChatGPT Images 2.6」を発表したと紹介している。",
+    "テキストプロンプトによるGIFアニメーションの生成や、後からの追加編集が可能になった様子を示している。",
+    "API向けには画像生成速度が50%向上した2つの新モデルが追加されると説明している。"
+   ],
+   "for_whom": "ChatGPTの最新機能やGIF生成機能を活用したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T06:39:09.761110+00:00"
   },
   {
    "video_id": "9ZxCOHkfn_8",
@@ -6417,10 +6427,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "We’re bringing GPT-Image-2.6 to Codex and the API. In the API, the 2.6 versions of Flare and Sunburst generate images 50% faster than before.\n\nUse Flare for a quick first pass on a poster or product shot. At low image quality, it can generate an image in as little as six seconds. When you need details to stay consistent across edits, use Sunburst at medium or high quality. Try changing a product’s backdrop while keeping its shape and texture, or bring a mascot to life as a looping GIF.\n\nhttp://openai.com/index/introducing-images-2-6/",
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが画像生成モデルGPT-Image-2.6のSunburstとFlareをAPI等に導入したと発表している。",
+    "生成の複雑度指定や、画像の一部をマークアップして指定箇所のみを編集する機能を紹介している。",
+    "拡大縮小に強いSVG形式の出力や、スプライトシートからのループGIFアニメ生成に対応したと説明している。"
+   ],
+   "for_whom": "画像生成AIをAPI経由でシステムや制作ワークフローに組み込みたい開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T06:39:09.761110+00:00"
   },
   {
    "video_id": "UTubvRLX2j4",
@@ -6453,10 +6473,20 @@
    "channel_key": "muttyo",
    "channel_name": "むっちょの副業月5万攻略",
    "default_category": "earn",
-   "description": "今回は「Claude CodeとHiggsfieldで稼ぐAI動画の作り方」ってテーマで話しました！\n\n👇Higgsfieldの登録はこちら！\nhttps://higgsfield.ai?fpr=8mgmof\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=viX0niH67hBf\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=viX0niH67hBf\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n0:00 AI動画生成で収益化する全貌\n0:35 AI動画生成の仕組みと将来性\n4:27 AI動画制作のための環境構築\n10:44 崩れないAI動画制作の極意\n24:18 仕事に繋がるポートフォリオの作り方\n27:43 コンテストで実績を積む\n29:42 案件獲得のための営業戦略\n\n#claudecode  #おすすめ副業 #Higgsfield",
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Claude CodeとHiggsfieldをMCP連携し、指示だけでAI動画を一貫制作する環境構築手順を解説している。",
+    "キャラクターシートや絵コンテを作成して整合性を保ちながら、高品質なCM動画を低コストで生成する手順を実演している。",
+    "複数ジャンルの動画でポートフォリオを作成し、コンテスト応募で実績を積んで営業するマネタイズ手順を提案している。"
+   ],
+   "for_whom": "AI動画生成を学び、企業のCM制作などクライアントワークで案件獲得を目指したい人",
+   "caution": "動画内で紹介されるプロンプトキットの入手には公式LINEへの登録が必要と案内されているほか、HiggsfieldやChatGPT等の有料プランの契約が必要となる点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T06:39:09.761110+00:00"
   },
   {
    "video_id": "pp2BeVbwHOk",
@@ -6489,10 +6519,20 @@
    "channel_key": "greg-isenberg",
    "channel_name": "Greg Isenberg",
    "default_category": "earn",
-   "description": "In this solo episode, I lay out how I think about building an AI-proof business now that anyone can press a few buttons and spin up a company in seconds. Layoffs keep coming, people copy products pixel for pixel, and I still see more opportunity than ever. I walk through eight categories: atoms, permission, attention, timing, belonging, liquidity, unique data, and outcomes. I share examples like Hampton, final.com, and Cars & Bids, say how I'd rank the categories, and show how to mix them. If you're an employee looking at a startup or a founder worried about getting copied, this episode gives you a map for building something with value when AI makes software, content, and answers almost free.\n\nTimestamps\n\n00:00 – Intro\n01:17 – Atoms: Physical Businesses\n02:26 – Permission: Licenses, Regulation, and Partnerships\n04:10 – Attention: Building a Media Machine\n06:28 – Timing: Spotting Trends Early\n08:24 – Belonging: Paid Communities and IRL Events\n10:59 – Liquidity: Marketplaces\n14:38 – Unique Data: Data Brokers and Curated Directories\n18:31 – Outcomes: Customers Paying for Results\n20:44 – Closing Thoughts\n\nKey Points\n\n• Physical businesses hold up against overnight clones, and I expect their valuations to rise as tech money moves in.\n• Licenses, regulation, and preferred-vendor deals are permission that a copycat has a hard time getting on day one.\n• Media is underrated, and AI lets you run a content machine around a micro niche.\n• A first mover's product may be easy to copy, whil",
    "first_seen": "2026-11-05T20:14:58.202512+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "物理的な実店舗などのアトムビジネスや許認可・提携が必要な事業は、AIによる即座の模倣を防ぎやすいと説明している。",
+    "特化型メディアの運営や早期のトレンド察知を通じ、データやブランドロイヤルティを蓄積することが重要だと述べている。",
+    "AIエージェントを活用すれば少人数でもマーケットプレイスや成果報酬型の自動化サービスを運営可能だと紹介している。"
+   ],
+   "for_whom": "AIの普及後も価値が落ちにくい事業や副業のアイデアを探している人",
+   "caution": "データ仲介で多額の収益を得る事例などの言及がありますが、客観的な証拠は示されていないため出演者の主張として捉える必要があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T06:39:09.761110+00:00"
   },
   {
    "video_id": "FznZ9EJyJX8",
@@ -6728,86 +6768,86 @@
  "channels": {
   "nyanta": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
+   "last_ok": "2026-11-08T06:39:09.761110+00:00",
    "fail_streak": 0
   },
   "iketomo": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "claude": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "google-deepmind": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
+   "last_ok": "2026-11-08T06:39:09.761110+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "shizuma": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "yuimama": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
+   "last_ok": "2026-11-08T06:39:09.761110+00:00",
    "fail_streak": 0
   },
   "honami": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "uto": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "muttyo": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "haruto": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "starter-story": {
    "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
+   "last_ok": "2026-11-08T06:39:09.761110+00:00",
    "fail_streak": 0
   }
  }
