@@ -6763,91 +6763,172 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-07T22:15:15.607637+00:00"
+  },
+  {
+   "video_id": "QkgmqG6QdAw",
+   "title": "注目AIニュース14選～SiriとAlexaがAIで変わる！ChatGPT画像生成・Claude家計分析・AI利用者の働き方",
+   "url": "https://www.youtube.com/watch?v=QkgmqG6QdAw",
+   "published": "2026-11-08T06:00:36+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "first_seen": "2026-11-08T13:50:28.112666+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "SiriやAlexaの日本語対応AI機能や、端末内情報との連携による音声操作の進化について実機デモを交えて紹介している。",
+    "ChatGPTの画像生成やGeminiの動画生成の更新に加え、AI生成物を広告利用する際の景品表示法上の注意点を解説している。",
+    "Cursor AppsでのWebアプリ公開機能やローカルAIモデルの活用など、最新のAIエージェント関連ツールを説明している。"
+   ],
+   "for_whom": "最新の生成AIツールや音声アシスタントの動向を把握し、業務や日常に活かしたい会社員。",
+   "caution": "概要欄では多数の自著の販売や有料ハンズオン研修、公式LINEへの登録誘導が行われている点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T13:50:28.112666+00:00"
+  },
+  {
+   "video_id": "AeRqDO_QCSw",
+   "title": "【今週のAIツール・ニュース総まとめ】ChatGPTの画像生成AI「ChatGPT Images 2.6」/Googleの動画生成AI「Gemini Omni 1.2 Flash」など",
+   "url": "https://www.youtube.com/watch?v=AeRqDO_QCSw",
+   "published": "2026-11-08T09:05:52+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-08T13:50:28.112666+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "ChatGPTの画像生成モデル「ChatGPT Images 2.6」やGoogleの動画生成モデル「Gemini Omni 1.2 Flash」の登場を紹介し",
+    "Google AntigravityやClaude Code、MetaのMuseなどの最新エージェント機能やアップデートを解説している。",
+    "米中間選挙によるNVIDIA株の急落やCanvaの人員削減など、直近の国内外のAI関連ニュースをまとめている。"
+   ],
+   "for_whom": "最新の生成AIツールや業界の動向を短時間で把握したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T13:50:28.112666+00:00"
+  },
+  {
+   "video_id": "dlscuAM3TC4",
+   "title": "【必見】Claudeの中の人が語る、AI上達のコツは『プロンプトよりマネジメント』！向き合い方10選を徹底解説",
+   "url": "https://www.youtube.com/watch?v=dlscuAM3TC4",
+   "published": "2026-11-08T12:10:38+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-08T13:50:28.112666+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Anthropic関係者の記事をもとに、AIエージェントの活用にはプロンプトの工夫よりもマネジメント技術が重要であると解説している。",
+    "検証手段を渡す、指示はリポジトリにない前提だけに絞る、計画段階で合意するなど、エージェントを動かす10の習慣を紹介している。",
+    "作業をエージェントに任せても最終的な判断や責任は人間が持つべきであり、見張る手間を考慮して並列数を制御すべきと述べている。"
+   ],
+   "for_whom": "Claude CodeなどのAIエージェントを使って開発や作業を進めたいエンジニアや会社員",
+   "caution": "動画内で自身のnoteメンバーシップ（AI駆動開発研究部）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-08T13:50:28.112666+00:00"
+  },
+  {
+   "video_id": "6yV7IqddLV4",
+   "title": "【稼げないは思い込みでした】同じシール貼り内職で時給17倍｜差がつく理由と在宅内職の探し方",
+   "url": "https://www.youtube.com/watch?v=6yV7IqddLV4",
+   "published": "2026-11-08T11:00:40+00:00",
+   "channel_key": "yuimama",
+   "channel_name": "飽き性主婦ゆいママの人気副業チャレンジ日記",
+   "default_category": "earn",
+   "first_seen": "2026-11-08T13:50:28.112666+00:00",
+   "status": "skipped",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-08T06:39:09.761110+00:00",
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-08T06:39:09.761110+00:00",
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-08T06:39:09.761110+00:00",
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-07T22:15:15.607637+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
+   "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-08T06:39:09.761110+00:00",
+   "last_ok": "2026-11-08T13:50:28.112666+00:00",
    "fail_streak": 0
   }
  }
