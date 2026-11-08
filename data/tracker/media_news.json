@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-08T07:26:09.558472+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-08T03:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "近年よく目にするようになった「ウォーターマーク」という言葉はメディアが本物であることを確認したりメディアの所有権を主張したりするために用いられる可視の「透かし」を指します。しかし、AIを用いて画像・動画制作ソフトを開発するArtCraftの創業者であるブランドン・トーマス氏は、よく似た別物として我々の知らないうちにデジタルコンテンツを追跡可能にする「スパイマーク」と呼ぶべき新たな技術が登場してい…",
+      "title": "AI生成の証拠「透かし」がユーザー追跡の「スパイマーク」と化している",
+      "uid": "79722d7c54a85ba6",
+      "url": "https://gigazine.net/news/20261108-spymarks-not-watermarks/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-08T00:42:05.584082+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "7f5c1c35e0851fdd",
       "url": "https://japan.cnet.com/article/35254216/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-10-30T07:13:02.338490+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-10-30T06:31:36+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Geminiとのチャット内で直接、PDFやスライドなどを生成、プレビュー、編集できるようになった。ITmedia AI＋編集部の環境で同機能を試した結果をお届けする。",
-      "title": "Geminiで生成したPDFやスライドを「チャット上で直接編集」可能に　個人プランとGoogle Workspaceで試してみた",
-      "uid": "b107d17eef9f8190",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2610/30/2000002757/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
