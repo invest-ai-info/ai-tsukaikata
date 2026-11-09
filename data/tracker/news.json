@@ -5997,18 +5997,6 @@
       "uid": "55beddbfd09c1a07",
       "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-10T23:52:14.190919+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-10T22:56:53+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage c…",
-      "title": "v2.1.227",
-      "uid": "85d495635b1d1874",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
-      "vendor": "Anthropic"
     }
   ]
 }
