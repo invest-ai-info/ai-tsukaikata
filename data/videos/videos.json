@@ -6897,91 +6897,222 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-08T22:26:43.886050+00:00"
+  },
+  {
+   "video_id": "8XDnuwPsmTM",
+   "title": "GeminiのAntigravityがClaude Codeレベルになってた",
+   "url": "https://www.youtube.com/watch?v=8XDnuwPsmTM",
+   "published": "2026-11-09T09:00:03+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "description": "Geminiで資料や動画を作っても、思った仕上がりにならない。そんなときに試したいのがAntigravityです。通常のGeminiとの資料比較から、スキルを使った動画制作や請求書の発行まで実演。準備した環境で、どこまで仕事を任せられるのかを確かめます。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 見どころ・今回のテーマ\n01:51 Antigravityとは？活用に必要な準備\n02:46 通常のGeminiとスライド資料を比較\n04:29 検証① 動画制作をClaude Codeと比較\n09:07 検証② 請求書の発行とメール送信\n11:47 検証③ 画像・動画入りのGoogleスライド\n13:49 検証④ スプレッドシートでガントチャート作成\n19:07 まとめ\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nAIガチ勢のAI環境を徹底解説！\nhttps://www.youtube.com/watch?v=8XbqxjJOP08\nGeminiの『スキル』を徹底解説\nhttps://www.youtube.com/watch?v=LXhrdpm7hKQ\nGemini 3.8 Flash TTS × Claude Opus 5.5で動画\nhttps://www.youtube.com/watch?v=PZVc6b046Ik\n今すぐ\"作る\"べきエージェントスキル１０選\nhttps://www.youtube.com/watch?v=D3Ftx4KjLyw\n絶対に使うべきMCPツール20選！\nhttps://www.youtube.com/watch?v=oyggup_ZNv4\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼は下記のメールアドレス宛へお願いします。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twitter.com/keitowebai\nnote：https://blog.procevo.biz/\nInstagram：https://instagram.com/keitowebai/\nTikTok",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "uzVm7m5DdwQ",
+   "title": "【Gemini 4 Argon】Googleスライドを劇的進化！「動くスマートアート作成ツール」を無料公開",
+   "url": "https://www.youtube.com/watch?v=uzVm7m5DdwQ",
+   "published": "2026-11-09T09:00:26+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "「GoogleスライドでPowerPointのような図解・スマートアートが使いたい…」そんな悩みを解決！Googleスライドで使える隠しダイアグラム機能の設定手順を丁寧にレクチャーします！\n\nさらに、「Gemini 4 Argon」を活用して自作した「動くスマートアート作成ツール」も無料配布予定！プレゼン発表中に自動でループ再生されるアニメーションGIF図解を簡単に組み込めます。図解作成の効率化とプレゼン資料の差別化にぜひお役立てください！✨\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:08 「Googleスライド」とは\n02:39 Googleスライドの弱点？\n02:55 パワーポイントの画面\n03:05 Googleスライドでもスマートアート、使えます\n08:00 動くスマートアート、開発しました\n10:16 DLしたスマートアート動画をスライドに挿入する\n10:29 まとめ\n12:50 ゆるトーク\n\n【G-SmartArt Studio 70】\n本動画でご紹介したスマートアート作成ツールです！\nhttps://kotakahashi-4u.github.io/g-studio/smartart/\n\n【GitHubリポジトリ】\n⚠️スマートアート作成ツールのソースコードです\nhttps://github.com/kotakahashi-4u/g-studio/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "vdYynH177h0",
+   "title": "Claude Fable 5.2 designs a working voice-assistant hub",
+   "url": "https://www.youtube.com/watch?v=vdYynH177h0",
+   "published": "2026-11-09T18:57:00+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claude Fable 5.2に対し、1段落の指示文から音声アシスタント用ハブを設計させたと説明している。",
+    "回路図や基板レイアウト、CADでの筐体設計、ファームウェア作成までAIが実行したと示している。",
+    "AIが作成した設計データをもとに基板が製造され、プロトタイプとして実際に動作する様子を紹介している。"
+   ],
+   "for_whom": "AIによる回路設計やハードウェア開発の自動化に関心がある技術者や開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-09T22:40:17.186701+00:00"
+  },
+  {
+   "video_id": "FMbXUxn_nBw",
+   "title": "Claude Mythos 5.2 predicts the structure of a therapy capsid",
+   "url": "https://www.youtube.com/watch?v=FMbXUxn_nBw",
+   "published": "2026-11-09T18:56:56+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claude Mythos 5.2が遺伝子治療に使われるAAVカプシド全体の立体構造を予測したと紹介している。",
+    "60本の鎖のうち5本ずつを予測し、ウイルスの対称性を利用して全体を統合するコードを作成したと説明している。",
+    "予測結果は実験構造と約1.2Åの誤差に収まり、複数のカプシドや別モデルでも再現できたと示している。"
+   ],
+   "for_whom": "創薬やバイオテクノロジー分野での最先端AI活用に関心がある研究者や開発者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-09T22:40:17.186701+00:00"
+  },
+  {
+   "video_id": "6a1QSJlsYpU",
+   "title": "Introducing Claude Fable 5.2",
+   "url": "https://www.youtube.com/watch?v=6a1QSJlsYpU",
+   "published": "2026-11-09T18:56:50+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claudeの新モデル「Fable 5.2」の提供開始を発表している。",
+    "コーディングや推論、ビジョンなどの性能が向上し、技術的課題に対応できると説明している。",
+    "Pro、Max、Team、Enterpriseプラン向けに提供が開始されたことを案内している。"
+   ],
+   "for_whom": "Claudeの最新モデルの動向や高度な開発へのAI活用に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-09T22:40:17.186701+00:00"
+  },
+  {
+   "video_id": "kRZk15zzl6E",
+   "title": "【まだ自分でnote書いてる？】Claude Codeにほぼ丸投げで収益化する方法、全部見せちゃいます【AI副業】",
+   "url": "https://www.youtube.com/watch?v=kRZk15zzl6E",
+   "published": "2026-11-09T10:47:32+00:00",
+   "channel_key": "honami",
+   "channel_name": "ほなみ【在宅ワーク・副業のトリセツ】",
+   "default_category": "earn",
+   "description": "👇今回の特典のナレッジと豪華7大特典はこちらから自動ですぐ受け取れます👇\nhttps://sub.re-tro.net/line/open/DWbTsqqDEqco?mtid=t8gCAWnvRkXc\n\n🎁 無料豪華7大特典の中身はこちら🎁\n① 月3万円までのやることリスト\n② 月10万円までのやることリスト\n③ 初心者でも失敗しない！おすすめ在宅ワーク10選\n④ これやると稼げない…NG習慣リスト\n⑤ 在宅ワーク体験記①\n⑥ 在宅ワーク体験記②\n⑦ 在宅ワーク体験記③",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "uJuxenfe-NU",
+   "title": "Cracked Marketing 101",
+   "url": "https://www.youtube.com/watch?v=uJuxenfe-NU",
+   "published": "2026-11-09T18:15:17+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-11-09T22:40:17.186701+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AIエージェントに広告業務を担わせるには、データウェアハウス、広告APIの書き込み権限、各種生成AIツール連携の3要素が必要だと説明している。",
+    "広告APIを直接大量に叩くのを防ぐため、AirbyteやClickHouseを介してデータを集約・参照する仕組みの構築方法を解説している。",
+    "WebサイトのURLを入力するだけで競合やペインポイントを分析し、静止画広告を自動生成して入稿まで行うワークフローを実演している。"
+   ],
+   "for_whom": "AIエージェントを活用して広告作成やマーケティング運用を自動化したいマーケターや創業期メンバー",
+   "caution": "動画内で解説される自動化基盤として登壇者の自社サービス「Graphed」への登録が推奨されている点や、各種APIキーの取得・設定作業が必要な点に留意してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-09T22:40:17.186701+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-08T22:26:43.886050+00:00",
+   "last_ok": "2026-11-09T22:40:17.186701+00:00",
    "fail_streak": 0
   }
  }
