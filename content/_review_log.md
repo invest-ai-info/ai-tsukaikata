@@ -983,3 +983,17 @@
 ⚠️ **今日もコンテナが作り直されていて依存が消えていた**（`python3.13 -m pip install
 --break-system-packages -r requirements.txt`。`python3` は 3.11 で入らない）。
 ⚠️ **`tools/check_freshness.py` は走らせていない**（週次の持ち物）。
+
+### 🚩 運用（追記）＝作業ツリーが detached HEAD だった
+
+コミットは作れたのに `git push origin main` が「a pushed branch tip is behind its remote」で
+2回続けて拒否された。原因＝**セッション開始時点で detached HEAD**（`git status -sb` が
+`## HEAD (no branch)`）で、ローカルの `main` は `0aa14330`（origin/main `df373d08` の祖先）に
+取り残されていた＝**押していたのは自分のコミットではなく、古い main の先端**だった。
+
+- 直し方＝ローカル `main` が HEAD の祖先であることを `git merge-base --is-ancestor` で確かめてから
+  `git checkout -B main <自分のコミット>` で早送りし、push（`df373d08..0b66bafa`）。**巻き戻した履歴は無い**
+- 📌 **今日の他の担当は push できている**（`df373d08` が origin/main に載っている）ので、
+  detached になったのはこのセッションの開始状態。それでも**担当が守ること11（push 先は必ず origin の main・
+  `git log origin/main -1` で目で確かめる）は、ブランチに入ったままの事故だけでなく
+  detached でも効いた**＝確認の手順は変えない
