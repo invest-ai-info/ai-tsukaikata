@@ -4337,6 +4337,18 @@
       "vendor": "Alibaba Qwen"
     },
     {
+      "first_seen": "2026-11-09T18:51:21.471890+00:00",
+      "importance": "minor",
+      "label": "Qwen 新モデル",
+      "published": "2026-09-03T21:08:24+00:00",
+      "source_id": "openrouter-qwen",
+      "summary": "Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,...",
+      "title": "qwen/qwen3.8-max-0902:batch",
+      "uid": "9357908a181e518d",
+      "url": "https://openrouter.ai/qwen/qwen3.8-max-0902:batch",
+      "vendor": "Alibaba Qwen"
+    },
+    {
       "first_seen": "2026-09-03T16:29:05.225191+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -5955,48 +5967,6 @@
       "uid": "fbb8442b97daea2e",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-11T17:14:43.158523+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-11T17:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "AMIE promotional video",
-      "summary_ja": "医療AI「AMIE」が動画での遠隔診療を実演\n世界初の研究としてリアルタイムの相談が可能に",
-      "summary_source": "gemini",
-      "title": "AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.",
-      "uid": "ed00016dbf571254",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-11T17:14:43.158523+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-11T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
-      "summary_ja": "ChatGPTで広告のテスト運用が始まった\n無料利用の維持を目的としてOpenAIが開始\n広告は明確に表示されプライバシーも保護される",
-      "summary_source": "gemini",
-      "title": "Testing ads in ChatGPT",
-      "uid": "88604715e73f2ef3",
-      "url": "https://openai.com/index/testing-ads-in-chatgpt",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-11T22:07:19.519079+00:00",
-      "importance": "major",
-      "label": "OpenAI News",
-      "published": "2026-08-11T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
-      "summary_ja": "Daybreakのサイバーセキュリティ機能がAWSで利用可能に\nOpenAIとAWSがAmazon Bedrockを通じて提供\n企業のセキュリティ業務を支援します",
-      "summary_source": "gemini",
-      "title": "Daybreak models are now available on AWS",
-      "uid": "55beddbfd09c1a07",
-      "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
-      "vendor": "OpenAI"
     }
   ]
 }
