@@ -42638,9 +42638,183 @@ def three_stop_quiet_one_fix_chart() -> None:
     )
 
 
+def judgment_flip_points_chart() -> None:
+    """この記事の3材料（差10.0%・20.0%・30.0%）を、判定とともに数直線上に置く（2026-11-09実測）。
+
+    材料D・E・Fはどれも同じ指示文・同じ56日間（9/2〜10/27）。差の大きさだけを
+    10.0%・20.0%・30.0%に振り、それぞれ独立した新規呼び出しで2回ずつ試した。
+    """
+    left, right = 70, 660
+    pct_max = 33.0
+    axis_y = 150
+
+    def px(pct: float) -> float:
+        return left + pct / pct_max * (right - left)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "差10%は『同じ』、差20%は『大きく違う』——2回ずつとも一致</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ指示文・同じ56日間の記録で、直近14日と56日全体の差だけを10.0%・20.0%・30.0%に振った。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "それぞれ独立した新規の呼び出しで2回ずつ試し、2回とも同じ判定だった（2026-11-09実測）。</text>\n",
+    ]
+
+    # 軸と目盛り（0,10,20,30%）
+    parts.append(f'<line class="line" x1="{left}" y1="{axis_y}" x2="{right}" y2="{axis_y}"/>\n')
+    for tick in (0, 10, 20, 30):
+        x = px(tick)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{axis_y - 8}" x2="{x:.1f}" y2="{axis_y}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{axis_y - 14}" text-anchor="middle">{tick}%</text>\n'
+        )
+
+    points = [
+        ("材料D", 10.0, "同じ", "bar-old", "5.5件", "5.0件"),
+        ("材料E", 20.0, "違う", "bar-new", "6.0件", "5.0件"),
+        ("材料F", 30.0, "違う", "bar-new", "8.4件", "6.5件"),
+    ]
+    box_w, box_h = 170, 94
+    for name, pct, verdict, cls, mean14, mean56 in points:
+        x = px(pct)
+        parts.append(f'<circle class="{cls}" cx="{x:.1f}" cy="{axis_y}" r="9"/>\n')
+        parts.append(
+            f'<line class="line" x1="{x:.1f}" y1="{axis_y + 9}" x2="{x:.1f}" y2="{axis_y + 34}"/>\n'
+        )
+        box_x = x - box_w / 2
+        box_top = axis_y + 34
+        box_cls = "box" if cls == "bar-old" else "box-accent"
+        parts.append(
+            f'<rect class="{box_cls}" x="{box_x:.1f}" y="{box_top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{x:.1f}" y="{box_top + 20}" text-anchor="middle">{_esc(name)}（{pct:g}%）</text>\n')
+        parts.append(f'<text class="t-sm" x="{x:.1f}" y="{box_top + 40}" text-anchor="middle">直近14日 {_esc(mean14)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{x:.1f}" y="{box_top + 58}" text-anchor="middle">56日全体 {_esc(mean56)}</text>\n')
+        tcls = "t-sm" if cls == "bar-old" else "t-accent"
+        parts.append(
+            f'<text class="{tcls}" x="{x:.1f}" y="{box_top + 80}" text-anchor="middle" style="font-weight:700">'
+            f"2回『{_esc(verdict)}』</text>\n"
+        )
+
+    y = axis_y + 34 + box_h + 18
+    notes = [
+        "差が10.0%のときは2回とも『同じ』、差が20.0%では2回とも『大きく違う』という判定でした。",
+        "切り替わりは10%と20%の間のどこかにある、ということだけが分かりました（1点には絞れません）。",
+    ]
+    box_h2 = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h2}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h2 + 12
+
+    alt = (
+        "差の大きさ（直近14日と56日全体の1日あたり件数の差）を横軸にした数直線に、3つの材料を置いた図。"
+        "材料D（差10.0%）は5.5件/日対5.0件/日で、2回とも『同じ』と判定された（灰色）。"
+        "材料E（差20.0%）は6.0件/日対5.0件/日で、2回とも『大きく違う』と判定された（青）。"
+        "材料F（差30.0%）は8.4件/日対6.5件/日で、2回とも『大きく違う』と判定された（青）。"
+        "下の枠には、差が10.0%のときは2回とも『同じ』、20.0%では2回とも『大きく違う』という判定だったこと、"
+        "切り替わりは10%と20%の間のどこかにあるということだけが分かり、1点には絞れないことが書かれている。"
+    )
+    (OUT / "judgment-flip-points.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def judgment_flip_narrows_chart() -> None:
+    """先行2記事（差5.7%=同じ・差36.5%/68.5%=大きく違う）と合わせ、未知区間が31ポイントから10ポイントへ狭まった様子を示す。
+
+    先行記事（flat-log-keeps-the-benchmark-steady・increasing-log-judgment-comes-out-right）は
+    「同じ」と「大きく違う」のどちらも確認済みだが、間が広く空いていた。この記事の3点で、
+    空いていた区間のうち10%〜20%の10ポイントだけに絞り込めた。
+    """
+    left, right = 70, 660
+    pct_max = 75.0
+    scale = (right - left) / pct_max
+
+    def px(pct: float) -> float:
+        return left + pct * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "分からない区間が、31ポイントから10ポイントへ狭まった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "先行記事までは『同じ』5.7%〜『大きく違う』36.5%の間（31ポイント）が未知だった。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "この記事の材料D・Eで、未知区間のうち10%〜20%（10ポイント）に絞り込めた。</text>\n",
+    ]
+
+    axis_y = 230
+    parts.append(f'<line class="line" x1="{left}" y1="{axis_y}" x2="{right}" y2="{axis_y}"/>\n')
+    for tick in (0, 10, 20, 30, 40, 50, 60, 70, 75):
+        x = px(tick)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{axis_y}" x2="{x:.1f}" y2="{axis_y + 8}"/>\n')
+        label = "75%" if tick == 75 else f"{tick}%"
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{axis_y + 22}" text-anchor="middle">{label}</text>\n'
+        )
+
+    # 帯1: 先行記事までの未知区間（5.7%〜36.5%）
+    row1_y = axis_y - 70
+    x1a, x1b = px(5.7), px(36.5)
+    parts.append(f'<rect class="bar-old" x="{x1a:.1f}" y="{row1_y}" width="{x1b - x1a:.1f}" height="22" rx="4"/>\n')
+    parts.append(f'<text class="t" x="18" y="{row1_y + 16}">先行記事まで</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="{(x1a + x1b) / 2:.1f}" y="{row1_y - 8}" text-anchor="middle">'
+        "未知＝31ポイント（5.7%〜36.5%）</text>\n"
+    )
+
+    # 帯2: この記事までの未知区間（10%〜20%）
+    row2_y = axis_y - 30
+    x2a, x2b = px(10.0), px(20.0)
+    parts.append(f'<rect class="bar-new" x="{x2a:.1f}" y="{row2_y}" width="{x2b - x2a:.1f}" height="22" rx="4"/>\n')
+    parts.append(f'<text class="t" x="18" y="{row2_y + 16}">この記事まで</text>\n')
+    parts.append(
+        f'<text class="t-accent" x="{(x2a + x2b) / 2:.1f}" y="{row2_y - 8}" text-anchor="middle" '
+        'style="font-weight:700">未知＝10ポイント（10%〜20%）</text>\n'
+    )
+
+    # 既知の点（5.7・10・20・30・36.5・68.5%）
+    known = [
+        (5.7, "同じ", "bar-old"),
+        (10.0, "同じ", "bar-old"),
+        (20.0, "大きく違う", "bar-new"),
+        (30.0, "大きく違う", "bar-new"),
+        (36.5, "大きく違う", "bar-new"),
+        (68.5, "大きく違う", "bar-new"),
+    ]
+    for i, (pct, verdict, cls) in enumerate(known):
+        x = px(pct)
+        parts.append(f'<circle class="{cls}" cx="{x:.1f}" cy="{axis_y}" r="6"/>\n')
+        label_y = axis_y + 48 if i % 2 == 0 else axis_y + 64
+        pct_text = f"{pct:g}%"
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{label_y}" text-anchor="middle">{pct_text}={_esc(verdict)}</text>\n'
+        )
+
+    y = axis_y + 84
+    notes = [
+        "灰色＝『同じ』と判定された差。青＝『大きく違う』と判定された差（いずれも2回とも一致）。",
+        "残り10ポイント（10%〜20%）のどこで切り替わるかは、この記事でもまだ1点には絞れていません。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "直近14日と56日全体の差（%）を横軸にした数直線に、先行2記事とこの記事の判定済みの点を重ねた図。"
+        "先行記事までは、差5.7%で『同じ』、差36.5%と68.5%で『大きく違う』という2点しか分かっておらず、"
+        "間の31ポイント（5.7%〜36.5%）が未知区間だった（上の灰色の帯）。"
+        "この記事は差10.0%で『同じ』、差20.0%と30.0%で『大きく違う』を確かめ、未知区間を10%〜20%の10ポイントまで"
+        "狭めた（下の青い帯）。下の数直線には5.7%・10%・20%・30%・36.5%・68.5%の6点が、『同じ』は灰色、"
+        "『大きく違う』は青の点で示されている。下の枠には、残り10ポイントのどこで切り替わるかはこの記事でも"
+        "1点に絞れていないことが書かれている。"
+    )
+    (OUT / "judgment-flip-narrows.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
 if __name__ == "__main__":
-    three_stop_drops_the_quiet_one_chart()
-    three_stop_quiet_one_fix_chart()
+    judgment_flip_points_chart()
+    judgment_flip_narrows_chart()
 
 
 def one_combined_post_hit_and_miss_chart() -> None:
@@ -42944,7 +43118,90 @@ def omni12_duration_chart() -> None:
     )
 
 
+def no_date_caution_hit_and_miss_chart() -> None:
+    """日付の無い記録でも、軽い注意だけで新規対象の新着が0件に戻るかを見る（2026-11-09実測）。
+
+    [先行記事](unseen-does-not-mean-new)は日付付きの記録だけで実測していた。
+    この記事は日付・時刻・相対表現を1つも持たない記録で、同じ軽い注意を2回試した。
+    """
+    _hit_and_miss_rows_chart(
+        "no-date-caution-hit-and-miss.svg",
+        "日付が無くても、軽い注意で新着0件に戻った（2/2）",
+        "社内お知らせ掲示板4本の監視に、日付を一切持たない5本目の対象を追加する場面で実測。",
+        "「既読リストが無い対象も、過去の記録まで新着に含めないよう注意」の有無だけを振った。",
+        [
+            ("軽い注意なし（情報システム部が0件になった回）", 0, 2, "good"),
+            ("軽い注意あり（情報システム部が0件になった回）", 2, 2, "good"),
+        ],
+        [
+            "軽い注意が無いと、2回とも取得した8件全部を「新着」として報告した。",
+            "軽い注意を足すと、2回とも0件に戻り、理由も「既読の基準として扱った」と正しく書いた。",
+        ],
+        "情報システム部お知らせ（既読リストの無い新規対象）の新着件数が0件になった回数を、"
+        "軽い注意の有無で比べた表。軽い注意なしは0/2で、2回とも取得した8件全部を新着として報告した。"
+        "軽い注意ありは2/2で、2回とも0件に戻り、既読リストが無いことを「過去の記録を新着に含めない」"
+        "理由として正しく扱った。下の枠には、軽い注意が無いと2回とも8件全部を新着として報告したこと、"
+        "軽い注意を足すと2回とも0件に戻り理由も正しく書いたことが書かれている。",
+        label_w=380,
+    )
+
+
+def no_date_caution_backlog_chart() -> None:
+    """情報システム部（新規対象）の新着件数を、軽い注意の有無で比べる横棒（2026-11-09実測）。
+
+    取得した過去分は8件で変わらない。報告された「新着件数」だけが変わる。
+    """
+    rows = [
+        ("軽い注意なし", 8, "bar-old"),
+        ("軽い注意あり", 0, "bar-new"),
+    ]
+    left = 260
+    right = 600
+    span = right - left
+    top, bar_h, gap = 90, 32, 30
+    pitch = bar_h + gap
+    scale = span / 8
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "取得した8件は変わらない。報告される「新着件数」が変わる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "情報システム部（既読リストの無い新規対象）が今回取得した件数は、どちらも8件。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "指示文に軽い注意を足すかどうかだけで、報告される「新着件数」が8件か0件かに分かれた。</text>\n",
+    ]
+    for index, (name, value, cls) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale) if value else 2.0
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 8:.1f}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="{cls}" x="{left}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="4"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 10:.1f}" y="{y + bar_h - 8:.1f}">'
+            f"新着{value}件</text>\n"
+        )
+
+    y = top + len(rows) * pitch + 10
+    notes = [
+        "取得した8件は、どちらの条件でも同じ記録（S-01〜S-08・日付や時刻の記載は無い）。",
+        "軽い注意が「既読リストが無いこと」を基準に使い、8件を新着から外せた（2回とも）。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "情報システム部（既読リストの無い新規対象）が報告した新着件数を、軽い注意の有無で比べた横棒グラフ。"
+        "取得した件数はどちらも8件（S-01〜S-08・日付や時刻の記載は無い）。軽い注意なしは新着8件（灰色、全件）、"
+        "軽い注意ありは新着0件（青）。下の枠には、取得した8件はどちらの条件でも同じ記録であること、"
+        "軽い注意が既読リストが無いことを基準に使い8件を新着から外せたことが2回とも起きたことが書かれている。"
+    )
+    (OUT / "no-date-caution-backlog.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
 if __name__ == "__main__":
-    omni12_price_vs_prev_chart()
-    omni12_vendor_720p_price_chart()
-    omni12_duration_chart()
+    no_date_caution_hit_and_miss_chart()
+    no_date_caution_backlog_chart()

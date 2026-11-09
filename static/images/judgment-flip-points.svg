@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="362" viewBox="0 0 720 362" role="img" aria-label="差の大きさ（直近14日と56日全体の1日あたり件数の差）を横軸にした数直線に、3つの材料を置いた図。材料D（差10.0%）は5.5件/日対5.0件/日で、2回とも『同じ』と判定された（灰色）。材料E（差20.0%）は6.0件/日対5.0件/日で、2回とも『大きく違う』と判定された（青）。材料F（差30.0%）は8.4件/日対6.5件/日で、2回とも『大きく違う』と判定された（青）。下の枠には、差が10.0%のときは2回とも『同じ』、20.0%では2回とも『大きく違う』という判定だったこと、切り替わりは10%と20%の間のどこかにあるということだけが分かり、1点には絞れないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="362"/>
+<text class="t-strong" x="18" y="26">差10%は『同じ』、差20%は『大きく違う』——2回ずつとも一致</text>
+<text class="t-sm" x="18" y="45">同じ指示文・同じ56日間の記録で、直近14日と56日全体の差だけを10.0%・20.0%・30.0%に振った。</text>
+<text class="t-sm" x="18" y="64">それぞれ独立した新規の呼び出しで2回ずつ試し、2回とも同じ判定だった（2026-11-09実測）。</text>
+<line class="line" x1="70" y1="150" x2="660" y2="150"/>
+<line class="line" x1="70.0" y1="142" x2="70.0" y2="150"/>
+<text class="t-xs" x="70.0" y="136" text-anchor="middle">0%</text>
+<line class="line" x1="248.8" y1="142" x2="248.8" y2="150"/>
+<text class="t-xs" x="248.8" y="136" text-anchor="middle">10%</text>
+<line class="line" x1="427.6" y1="142" x2="427.6" y2="150"/>
+<text class="t-xs" x="427.6" y="136" text-anchor="middle">20%</text>
+<line class="line" x1="606.4" y1="142" x2="606.4" y2="150"/>
+<text class="t-xs" x="606.4" y="136" text-anchor="middle">30%</text>
+<circle class="bar-old" cx="248.8" cy="150" r="9"/>
+<line class="line" x1="248.8" y1="159" x2="248.8" y2="184"/>
+<rect class="box" x="163.8" y="184" width="170" height="94" rx="6"/>
+<text class="t-strong" x="248.8" y="204" text-anchor="middle">材料D（10%）</text>
+<text class="t-sm" x="248.8" y="224" text-anchor="middle">直近14日 5.5件</text>
+<text class="t-sm" x="248.8" y="242" text-anchor="middle">56日全体 5.0件</text>
+<text class="t-sm" x="248.8" y="264" text-anchor="middle" style="font-weight:700">2回『同じ』</text>
+<circle class="bar-new" cx="427.6" cy="150" r="9"/>
+<line class="line" x1="427.6" y1="159" x2="427.6" y2="184"/>
+<rect class="box-accent" x="342.6" y="184" width="170" height="94" rx="6"/>
+<text class="t-strong" x="427.6" y="204" text-anchor="middle">材料E（20%）</text>
+<text class="t-sm" x="427.6" y="224" text-anchor="middle">直近14日 6.0件</text>
+<text class="t-sm" x="427.6" y="242" text-anchor="middle">56日全体 5.0件</text>
+<text class="t-accent" x="427.6" y="264" text-anchor="middle" style="font-weight:700">2回『違う』</text>
+<circle class="bar-new" cx="606.4" cy="150" r="9"/>
+<line class="line" x1="606.4" y1="159" x2="606.4" y2="184"/>
+<rect class="box-accent" x="521.4" y="184" width="170" height="94" rx="6"/>
+<text class="t-strong" x="606.4" y="204" text-anchor="middle">材料F（30%）</text>
+<text class="t-sm" x="606.4" y="224" text-anchor="middle">直近14日 8.4件</text>
+<text class="t-sm" x="606.4" y="242" text-anchor="middle">56日全体 6.5件</text>
+<text class="t-accent" x="606.4" y="264" text-anchor="middle" style="font-weight:700">2回『違う』</text>
+<rect class="box-accent" x="18" y="296" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="316">差が10.0%のときは2回とも『同じ』、差が20.0%では2回とも『大きく違う』という判定でした。</text>
+<text class="t-accent" x="34" y="334">切り替わりは10%と20%の間のどこかにある、ということだけが分かりました（1点には絞れません）。</text>
+</svg>

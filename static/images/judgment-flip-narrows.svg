@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-label="直近14日と56日全体の差（%）を横軸にした数直線に、先行2記事とこの記事の判定済みの点を重ねた図。先行記事までは、差5.7%で『同じ』、差36.5%と68.5%で『大きく違う』という2点しか分かっておらず、間の31ポイント（5.7%〜36.5%）が未知区間だった（上の灰色の帯）。この記事は差10.0%で『同じ』、差20.0%と30.0%で『大きく違う』を確かめ、未知区間を10%〜20%の10ポイントまで狭めた（下の青い帯）。下の数直線には5.7%・10%・20%・30%・36.5%・68.5%の6点が、『同じ』は灰色、『大きく違う』は青の点で示されている。下の枠には、残り10ポイントのどこで切り替わるかはこの記事でも1点に絞れていないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="380"/>
+<text class="t-strong" x="18" y="26">分からない区間が、31ポイントから10ポイントへ狭まった</text>
+<text class="t-sm" x="18" y="45">先行記事までは『同じ』5.7%〜『大きく違う』36.5%の間（31ポイント）が未知だった。</text>
+<text class="t-sm" x="18" y="64">この記事の材料D・Eで、未知区間のうち10%〜20%（10ポイント）に絞り込めた。</text>
+<line class="line" x1="70" y1="230" x2="660" y2="230"/>
+<line class="line" x1="70.0" y1="230" x2="70.0" y2="238"/>
+<text class="t-xs" x="70.0" y="252" text-anchor="middle">0%</text>
+<line class="line" x1="148.7" y1="230" x2="148.7" y2="238"/>
+<text class="t-xs" x="148.7" y="252" text-anchor="middle">10%</text>
+<line class="line" x1="227.3" y1="230" x2="227.3" y2="238"/>
+<text class="t-xs" x="227.3" y="252" text-anchor="middle">20%</text>
+<line class="line" x1="306.0" y1="230" x2="306.0" y2="238"/>
+<text class="t-xs" x="306.0" y="252" text-anchor="middle">30%</text>
+<line class="line" x1="384.7" y1="230" x2="384.7" y2="238"/>
+<text class="t-xs" x="384.7" y="252" text-anchor="middle">40%</text>
+<line class="line" x1="463.3" y1="230" x2="463.3" y2="238"/>
+<text class="t-xs" x="463.3" y="252" text-anchor="middle">50%</text>
+<line class="line" x1="542.0" y1="230" x2="542.0" y2="238"/>
+<text class="t-xs" x="542.0" y="252" text-anchor="middle">60%</text>
+<line class="line" x1="620.7" y1="230" x2="620.7" y2="238"/>
+<text class="t-xs" x="620.7" y="252" text-anchor="middle">70%</text>
+<line class="line" x1="660.0" y1="230" x2="660.0" y2="238"/>
+<text class="t-xs" x="660.0" y="252" text-anchor="middle">75%</text>
+<rect class="bar-old" x="114.8" y="160" width="242.3" height="22" rx="4"/>
+<text class="t" x="18" y="176">先行記事まで</text>
+<text class="t-sm" x="236.0" y="152" text-anchor="middle">未知＝31ポイント（5.7%〜36.5%）</text>
+<rect class="bar-new" x="148.7" y="200" width="78.7" height="22" rx="4"/>
+<text class="t" x="18" y="216">この記事まで</text>
+<text class="t-accent" x="188.0" y="192" text-anchor="middle" style="font-weight:700">未知＝10ポイント（10%〜20%）</text>
+<circle class="bar-old" cx="114.8" cy="230" r="6"/>
+<text class="t-xs" x="114.8" y="278" text-anchor="middle">5.7%=同じ</text>
+<circle class="bar-old" cx="148.7" cy="230" r="6"/>
+<text class="t-xs" x="148.7" y="294" text-anchor="middle">10%=同じ</text>
+<circle class="bar-new" cx="227.3" cy="230" r="6"/>
+<text class="t-xs" x="227.3" y="278" text-anchor="middle">20%=大きく違う</text>
+<circle class="bar-new" cx="306.0" cy="230" r="6"/>
+<text class="t-xs" x="306.0" y="294" text-anchor="middle">30%=大きく違う</text>
+<circle class="bar-new" cx="357.1" cy="230" r="6"/>
+<text class="t-xs" x="357.1" y="278" text-anchor="middle">36.5%=大きく違う</text>
+<circle class="bar-new" cx="608.9" cy="230" r="6"/>
+<text class="t-xs" x="608.9" y="294" text-anchor="middle">68.5%=大きく違う</text>
+<rect class="box-accent" x="18" y="314" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="334">灰色＝『同じ』と判定された差。青＝『大きく違う』と判定された差（いずれも2回とも一致）。</text>
+<text class="t-accent" x="34" y="352">残り10ポイント（10%〜20%）のどこで切り替わるかは、この記事でもまだ1点には絞れていません。</text>
+</svg>
