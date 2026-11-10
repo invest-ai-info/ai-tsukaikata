@@ -43269,3 +43269,133 @@ def singular_constraint_fixes_the_normal_pick_chart() -> None:
 if __name__ == "__main__":
     single_answer_can_name_the_normal_one_chart()
     singular_constraint_fixes_the_normal_pick_chart()
+
+
+def record_scaled_to_a_year_benchmark_chart() -> None:
+    """記録を56日から364日・251日に伸ばしても、「ふだんの目安」はほぼ動かない（2026-11-10実測）。
+
+    材料A（問い合わせ・増減の無い記録）を56日／364日、材料B（来店予約・増減の無い記録）を
+    56日／251日に切り分け、同じ指示文でAIに目安を計算させた。値は
+    docs/evidence/record-scaled-to-a-year-benchmark-holds.md の真値（単純平均）から。
+    """
+    rows = [
+        ("材料A・直近56日だけ渡す", 5.27, "本日30件の約5.70倍"),
+        ("材料A・364日（約1年）全部渡す", 5.29, "本日30件の約5.68倍"),
+        ("材料B・直近56日だけ渡す", 4.73, "本日25件の約5.28倍"),
+        ("材料B・251日（約8か月）全部渡す", 4.73, "本日25件の約5.29倍"),
+    ]
+    label_x = 18
+    plot_x = 300
+    plot_w = 160
+    axis_max = 6
+    scale = plot_w / axis_max
+    top = 140
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "記録を56日から364日・251日に伸ばしても、目安はほぼ動かない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "問い合わせフォーム（材料A）と来店予約（材料B）、どちらも増減の無いフラットな記録。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "それぞれ「直近56日だけ」と「記録の全部（364日・251日）」の2条件で、"
+        "同じ指示文をAIに2回ずつ試した。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "横棒は真値（単純平均）としての「ふだんの1日あたりの目安」（件/日）。"
+        "先行記事（56日以内）の実測と同じ材料の性質を、さらに長い記録で確かめた。</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 10}">件/日</text>\n',
+    ]
+
+    x_val = px(axis_max) + 14
+    x_ratio = x_val + 90
+    y = top
+    for label, value, ratio_text in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value:.2f}件/日</text>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{x_ratio:.1f}" y="{ty}">{_esc(ratio_text)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    notes = [
+        "材料A: 56日→364日で真値5.2679→5.2857件/日。動いた幅はわずか約0.3%。",
+        "材料B: 56日→251日で真値4.7321→4.7251件/日。動いた幅はわずか約0.15%。",
+        "どちらも増減の無い記録。記録をさらに長く伸ばしても、目安はほとんど動かなかった。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "問い合わせフォーム（材料A）と来店予約（材料B）、どちらも増減の無いフラットな記録で、"
+        "渡す記録の長さだけを変えて「ふだんの目安」をAI自身に計算させた結果を4本の横棒で比べた図。"
+        "材料Aは直近56日だけ渡すと目安5.27件/日で本日30件はその約5.70倍、364日（約1年）全部"
+        "渡すと目安5.29件/日で本日はその約5.68倍。材料Bは直近56日だけ渡すと目安4.73件/日で"
+        "本日25件はその約5.28倍、251日（約8か月）全部渡すと目安4.73件/日で本日はその約5.29倍。"
+        "下の枠には、材料Aは56日から364日で真値が5.2679から5.2857件/日までしか動かず動いた幅は"
+        "約0.3%であること、材料Bは56日から251日で真値が4.7321から4.7251件/日までしか動かず"
+        "動いた幅は約0.15%であること、どちらも増減の無い記録で記録をさらに長く伸ばしても目安は"
+        "ほとんど動かなかったことが書かれている。"
+    )
+    (OUT / "record-scaled-to-a-year-benchmark.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def record_scaled_to_a_year_hit_and_miss_chart() -> None:
+    """記録が数百日に育っても、計算・小計・保存版の書式は全部真値と一致した（2026-11-10実測）。
+
+    材料A（364日・問い合わせ）・材料B（251日・来店予約）に、基本の目安計算、週ごとの小計、
+    月ごとの小計、出す項目を3つに絞る保存版の書式を試した結果。
+    値は docs/evidence/record-scaled-to-a-year-benchmark-holds.md の機械照合から。
+    """
+    _hit_and_miss_rows_chart(
+        "record-scaled-to-a-year-hit-and-miss.svg",
+        "記録が数百日に育っても、計算は全部正解だった",
+        "実測2026-11-10。材料A（364日・問い合わせ）・材料B（251日・来店予約）、いずれも増減の無い記録。",
+        "同じ指示文を独立した新規の会話で複数回試し、AIの答えを真値（単純平均・実際の小計）と突き合わせた。",
+        [
+            ("ふだんの目安と倍率（材料A・B×長短2条件×各2回）", 8, 8, "good"),
+            ("週ごとの小計52個（材料A・364日を2回）", 104, 104, "good"),
+            ("月ごとの小計9個（材料B・251日を2回）", 18, 18, "good"),
+            ("出す項目を3つに絞る保存版の書式（材料B・251日を2回）", 2, 2, "good"),
+        ],
+        [
+            "基本の目安・倍率は8回とも真値と一致した。",
+            "週ごとの小計は52週×2回＝104個、月ごとの小計は9か月×2回＝18個、どちらも1個の誤りも無かった。",
+            "出す項目を3つに絞る書式も、251日ぶんを渡した2回とも崩れなかった。",
+        ],
+        "材料A（364日・問い合わせ）と材料B（251日・来店予約）に試した4種類の確認を、"
+        "当たった回数／聞いた回数の形で示す表。ふだんの目安と倍率（材料A・B×長短2条件×各2回）は"
+        "8/8。週ごとの小計52個（材料A・364日を2回）は104/104。月ごとの小計9個（材料B・251日を"
+        "2回）は18/18。出す項目を3つに絞る保存版の書式（材料B・251日を2回）は2/2。"
+        "下の枠には、基本の目安・倍率は8回とも真値と一致したこと、週ごとの小計は52週×2回＝104個・"
+        "月ごとの小計は9か月×2回＝18個でどちらも誤りが無かったこと、"
+        "出す項目を3つに絞る書式も251日ぶんを渡した2回とも崩れなかったことが書かれている。",
+        label_w=460,
+    )
+
+
+if __name__ == "__main__":
+    record_scaled_to_a_year_benchmark_chart()
+    record_scaled_to_a_year_hit_and_miss_chart()

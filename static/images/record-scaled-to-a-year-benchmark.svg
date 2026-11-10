@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="372" viewBox="0 0 720 372" role="img" aria-label="問い合わせフォーム（材料A）と来店予約（材料B）、どちらも増減の無いフラットな記録で、渡す記録の長さだけを変えて「ふだんの目安」をAI自身に計算させた結果を4本の横棒で比べた図。材料Aは直近56日だけ渡すと目安5.27件/日で本日30件はその約5.70倍、364日（約1年）全部渡すと目安5.29件/日で本日はその約5.68倍。材料Bは直近56日だけ渡すと目安4.73件/日で本日25件はその約5.28倍、251日（約8か月）全部渡すと目安4.73件/日で本日はその約5.29倍。下の枠には、材料Aは56日から364日で真値が5.2679から5.2857件/日までしか動かず動いた幅は約0.3%であること、材料Bは56日から251日で真値が4.7321から4.7251件/日までしか動かず動いた幅は約0.15%であること、どちらも増減の無い記録で記録をさらに長く伸ばしても目安はほとんど動かなかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="372"/>
+<text class="t-strong" x="18" y="24">記録を56日から364日・251日に伸ばしても、目安はほぼ動かない</text>
+<text class="t-sm" x="18" y="43">問い合わせフォーム（材料A）と来店予約（材料B）、どちらも増減の無いフラットな記録。</text>
+<text class="t-sm" x="18" y="62">それぞれ「直近56日だけ」と「記録の全部（364日・251日）」の2条件で、同じ指示文をAIに2回ずつ試した。</text>
+<text class="t-xs" x="18" y="81">横棒は真値（単純平均）としての「ふだんの1日あたりの目安」（件/日）。先行記事（56日以内）の実測と同じ材料の性質を、さらに長い記録で確かめた。</text>
+<text class="t-xs" x="446.0" y="130">件/日</text>
+<text class="t" x="18" y="154">材料A・直近56日だけ渡す</text>
+<rect class="box-quiet" x="300.0" y="142" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="300.0" y="142" width="140.5" height="16" rx="3"/>
+<text class="t-strong" x="474.0" y="154">5.27件/日</text>
+<text class="t-accent" x="564.0" y="154">本日30件の約5.70倍</text>
+<text class="t" x="18" y="188">材料A・364日（約1年）全部渡す</text>
+<rect class="box-quiet" x="300.0" y="176" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="300.0" y="176" width="141.1" height="16" rx="3"/>
+<text class="t-strong" x="474.0" y="188">5.29件/日</text>
+<text class="t-accent" x="564.0" y="188">本日30件の約5.68倍</text>
+<text class="t" x="18" y="222">材料B・直近56日だけ渡す</text>
+<rect class="box-quiet" x="300.0" y="210" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="300.0" y="210" width="126.1" height="16" rx="3"/>
+<text class="t-strong" x="474.0" y="222">4.73件/日</text>
+<text class="t-accent" x="564.0" y="222">本日25件の約5.28倍</text>
+<text class="t" x="18" y="256">材料B・251日（約8か月）全部渡す</text>
+<rect class="box-quiet" x="300.0" y="244" width="160.0" height="16" rx="3"/>
+<rect class="bar-new" x="300.0" y="244" width="126.1" height="16" rx="3"/>
+<text class="t-strong" x="474.0" y="256">4.73件/日</text>
+<text class="t-accent" x="564.0" y="256">本日25件の約5.29倍</text>
+<rect class="box-accent" x="18" y="286" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="306">材料A: 56日→364日で真値5.2679→5.2857件/日。動いた幅はわずか約0.3%。</text>
+<text class="t-accent" x="34" y="324">材料B: 56日→251日で真値4.7321→4.7251件/日。動いた幅はわずか約0.15%。</text>
+<text class="t-accent" x="34" y="342">どちらも増減の無い記録。記録をさらに長く伸ばしても、目安はほとんど動かなかった。</text>
+</svg>
