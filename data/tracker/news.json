@@ -1,6 +1,32 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-10T09:56:10.760824+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-10T09:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Lessons from OpenAI’s EMEA education partnerships and new ThinkYoung research. Supporting teachers, AI literacy and independent learning.",
+      "summary_ja": "OpenAIが教育分野でのAI活用を支援\n欧州等で教育機関と提携し、ThinkYoung調査も公表\n教師支援やAIの基礎知識習得を促す",
+      "summary_source": "gemini",
+      "title": "Closing the AI guidance gap in education",
+      "uid": "6af57c15497b2ca2",
+      "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-10T09:56:10.760824+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-10T02:29:43+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added fast mode on Vertex in the global, us and eu regions, falling back to standard speed if Vertex refuses it",
+      "title": "v2.1.322",
+      "uid": "d6d95313bb2502bf",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-10T02:11:36.573541+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -6007,20 +6033,6 @@
       "uid": "51a5149bea38d09d",
       "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
       "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-12T13:51:03.624504+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-12T06:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption.",
-      "summary_ja": "OpenAIが企業のAI導入状況を調査。\n企業はエージェント型AIを導入し、\nChatGPTやCodexを使い最先端企業が先行。",
-      "summary_source": "gemini",
-      "title": "From assistance to execution: How enterprises put AI to work",
-      "uid": "e33edd69f7816887",
-      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
-      "vendor": "OpenAI"
     }
   ]
 }
