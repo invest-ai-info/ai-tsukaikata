@@ -705,6 +705,13 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
+- [ ] https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/
+  - 2026-11-10 自動追記（major・Google「Google Cloud launches Gemini for healthcare.」）
+- [ ] https://deepmind.google/blog/gemini-4-carbon-is-now-available/
+  - 2026-11-10 自動追記（major・Google DeepMind「Gemini 4 Carbon is now available」）
+- [ ] https://deepmind.google/blog/introducing-alphaproof-code/
+  - 2026-11-10 自動追記（major・Google DeepMind「Introducing AlphaProof Code: a breakthrough in verifying complex software at depth」）
+
 ## 処理済み
 
 - https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/ → **公開済み** content/tools/gemini-omni-1-2-flash.md（2026-11-08・公開）

@@ -1,6 +1,86 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-10T16:32:58+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add Claude Tag metrics to the analytics summaries and users reports api: add reply_mode to Claude Tag Slack channel settings Bug Fixes bedrock: send \";\" in a model ID as is, and refuse …",
+      "title": "v2.8.0",
+      "uid": "4cda56a22e86d14a",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.8.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-11-10T16:03:47+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Gemini 4 Carbon is now available",
+      "uid": "0e7f4d8884ff7f0a",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-10T14:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Google and Adobe are integrating creative and productivity tools. Edit PDFs in Drive and use Adobe AI in Gemini. See what’s new in this partnership.",
+      "summary_ja": "GoogleとAdobeがアプリ連携を強化した。\nGoogle DriveでPDFの編集が可能になる。\nGoogle GeminiでAdobeのAI機能が使える。",
+      "summary_source": "gemini",
+      "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+      "uid": "2ed22e71c8d7fe51",
+      "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "major",
+      "label": "Google AI Blog",
+      "published": "2026-11-10T13:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.",
+      "summary_ja": "Google Cloudが医療向けGeminiを発表した。\n医療データを統合し、事務作業を自動化する。\n医療従事者の事務負担を軽減する。",
+      "summary_source": "gemini",
+      "title": "Google Cloud launches Gemini for healthcare.",
+      "uid": "e19805693e4e3ad0",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-11-10T12:02:28+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+      "summary_ja": "AlphaProof Codeがソフトの検証に成功した。\nSignalの主要な暗号システムを検証した。\n300万行の証明コードを記述した。",
+      "summary_source": "gemini",
+      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+      "uid": "5147d4e12a361d04",
+      "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-10T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+      "summary_ja": "OpenAIが介護者向け無料AI講座を実施する。\n米国5都市でChatGPTの体験ワークショップを行う。\n日常生活で役立つAIスキルの習得を支援する。",
+      "summary_source": "gemini",
+      "title": "Helping caregivers use AI in everyday life",
+      "uid": "f3a300a7f7ad7528",
+      "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-10T09:56:10.760824+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -15,6 +95,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-10T07:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+      "summary_ja": "AIがフリーランス市場に変化をもたらしている。\nOpenAIとUpworkの調査で需要の変化が判明。\nAI案件は予算と作業時間が増加傾向。",
+      "summary_source": "gemini",
+      "title": "Work at the Frontier: AI’s effect on freelance work",
+      "uid": "65eede507e7d0d79",
+      "url": "https://openai.com/index/ai-effect-on-freelance-work",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-10T09:56:10.760824+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -25,6 +119,20 @@
       "uid": "d6d95313bb2502bf",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-10T17:54:08.433486+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-11-09T19:51:47+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
+      "summary_ja": "Gemini Robotics 2.5でロボット性能が向上した。\nロボットの器用さ、信頼性、安全性が強化された。\n現実世界でのより複雑な作業が可能になる。",
+      "summary_source": "gemini",
+      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+      "uid": "5be2d802f354f53b",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+      "vendor": "Google DeepMind"
     },
     {
       "first_seen": "2026-11-10T02:11:36.573541+00:00",
@@ -5959,80 +6067,6 @@
       "uid": "a9dcded0aaecd80a",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-12T17:16:22.730003+00:00",
-      "importance": "major",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-12T16:21:42+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion to…",
-      "title": "qwen/qwen3.8-2.4t-a95b",
-      "uid": "c02f674e6ff35098",
-      "url": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-28T18:46:16.087122+00:00",
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-12T16:21:42+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion to…",
-      "title": "qwen/qwen3.8-2.4t-a95b:batch",
-      "uid": "397b77064a7f8f2f",
-      "url": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b:batch",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-12T16:13:47.060095+00:00",
-      "importance": "major",
-      "label": "Grok 新モデル",
-      "published": "2026-08-12T15:35:57+00:00",
-      "source_id": "openrouter-xai",
-      "summary": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
-      "title": "x-ai/grok-4.6",
-      "uid": "732cc8e99d4e8494",
-      "url": "https://openrouter.ai/x-ai/grok-4.6",
-      "vendor": "xAI"
-    },
-    {
-      "first_seen": "2026-11-03T21:04:29.813658+00:00",
-      "importance": "minor",
-      "label": "Grok 新モデル",
-      "published": "2026-08-12T15:35:57+00:00",
-      "source_id": "openrouter-xai",
-      "summary": "Grok 4.6 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM. It is succeeded by [Grok 4.7](/x-ai/grok-4.7).",
-      "title": "x-ai/grok-4.6:batch",
-      "uid": "4e8025cc2f1a9b9a",
-      "url": "https://openrouter.ai/x-ai/grok-4.6:batch",
-      "vendor": "xAI"
-    },
-    {
-      "first_seen": "2026-08-13T03:01:19.384336+00:00",
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-08-12T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Sakana Chatがアップデート：「Sakana Fugu」と新世代「Sakana Namazu」が利用可能に",
-      "uid": "f6c29fbda611dcc1",
-      "url": "/chat-update/",
-      "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-12T15:16:40.028954+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-12T14:01:59+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users.",
-      "summary_ja": "手話をテキストに変換するAIモデルが発表された。\n「SL2T」という新しいAIモデルが開発された。\n聴覚障がいのあるユーザー向けに新機能を提供する。",
-      "summary_source": "gemini",
-      "title": "Putting sign language AI into users’ hands",
-      "uid": "51a5149bea38d09d",
-      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
