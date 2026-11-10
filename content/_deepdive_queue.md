@@ -705,8 +705,30 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/
+- [!] https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/
   - 2026-11-10 自動追記（major・Google「Google Cloud launches Gemini for healthcare.」）
+  - **2026-11-10 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降これまでの16件と同型）。
+
+    **① ページ自体は問題なく読めた**（`blog.google` は200・約379KB。要約させず生HTMLから本文を抽出して確認した）
+
+    **② 中身が「医療機関向け業務基盤サービスのプレビュー発表」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - Gemini for healthcare は、電子カルテ・請求システム・診療ガイドライン・Medicare データ等に散らばった
+      医療機関の情報をつなぎ、記録の統合や事前承認審査のような複数手順の業務を実行するAI基盤。汎用モデルの
+      発表ではなく、**HCA Healthcare・Highmark Health・Northwell Health を launch partner としたプレビュー
+      提供**で、一般提供の時期・料金ページ・モデルカードは存在しない
+    - **本文を全文抽出して確認した数字は1つだけ**（「臨床医は書類仕事に毎週約28時間を奪われている」という
+      業界統計）。モデルの性能・料金・提供条件の数字ではない
+    - 比較相手（他社の同種の「医療機関向け業務統合AI基盤」発表）も見つからず、読者（自動化したい
+      非エンジニアの会社員）が「どういう人に効くか」を判断できる要素が無い。対象は病院・医療機関の
+      運用担当者であり、個人の自動化とは層が違う。モデルでも料金表でもないため、このサイトの記事の型
+      （何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG 以降これまでの16件とほぼ同じ構造**（①は解けている・②＝数字が1つしかなく
+      比較に使えない／モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
+
 - [ ] https://deepmind.google/blog/gemini-4-carbon-is-now-available/
   - 2026-11-10 自動追記（major・Google DeepMind「Gemini 4 Carbon is now available」）
 - [ ] https://deepmind.google/blog/introducing-alphaproof-code/
