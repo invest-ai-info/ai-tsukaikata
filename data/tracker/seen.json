@@ -80,63 +80,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-01T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-09-03T21:08:24+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,...",
-      "title": "qwen/qwen3.8-max-0902:batch",
-      "uid": "9357908a181e518d",
-      "url": "https://openrouter.ai/qwen/qwen3.8-max-0902:batch",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-11-09T19:22:30+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added Claude Fable 5.2 ( claude-fable-5-2 ), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads Added --settings to claude remote-control , wh…",
-      "title": "v2.1.321",
-      "uid": "2b70605d6a2b3167",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-09T13:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
-      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
-      "uid": "87eecf766f8028c0",
-      "url": "https://openai.com/index/control-room",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-09T08:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
-      "title": "CodeRabbit scales agentic software development and ships 20x more",
-      "uid": "a646ca10c17c5e4a",
-      "url": "https://openai.com/index/coderabbit-codex-daybreak",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-09T08:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
-      "title": "Kuken Industries searches 70 years of drawings in minutes",
-      "uid": "9372f3cd6692df75",
-      "url": "https://openai.com/index/kuken",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
     "0036d587f742e082": "2026-09-07T23:31:58.052633+00:00",
