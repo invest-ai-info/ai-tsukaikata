@@ -1,6 +1,86 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-10T02:11:36.573541+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-09T19:22:30+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added Claude Fable 5.2 ( claude-fable-5-2 ), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads Added --settings to claude remote-control , wh…",
+      "title": "v2.1.321",
+      "uid": "2b70605d6a2b3167",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-10T02:11:36.573541+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-09T19:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+      "summary_ja": "ChatGPT EnterpriseがAWSで利用可能に\nAWSマーケットプレイスから企業向けに提供開始\n既存のAWS契約で簡単に導入・支払いが可能",
+      "summary_source": "gemini",
+      "title": "ChatGPT Enterprise now available in AWS Marketplace",
+      "uid": "0f423d16843e88b6",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-10T02:11:36.573541+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-09T18:52:17+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: accept user_profile.program_status_updated on organization webhook endpoints api: add claude-fable-5-2 and claude-mythos-5-2 api: add parent organization filtering and grouping to the u…",
+      "title": "v2.7.0",
+      "uid": "511e91bfde4f91e0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.7.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-10T02:11:36.573541+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-09T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+      "summary_ja": "OpenAIがAIモデル停止システムを開発\n「Control Room」が研究中のモデルの動きを監視\n安全・セキュリティ問題時に迅速に停止できる",
+      "summary_source": "gemini",
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "uid": "87eecf766f8028c0",
+      "url": "https://openai.com/index/control-room",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-10T02:11:36.573541+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-09T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+      "summary_ja": "CodeRabbitがAIで開発効率を大幅向上\nOpenAIのモデルを使いAIコードを管理・信頼\n同じ開発チームで20倍多くのソフトを出荷",
+      "summary_source": "gemini",
+      "title": "CodeRabbit scales agentic software development and ships 20x more",
+      "uid": "a646ca10c17c5e4a",
+      "url": "https://openai.com/index/coderabbit-codex-daybreak",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-10T02:11:36.573541+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-09T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+      "summary_ja": "空研工業がAIで図面検索を大幅に高速化\nOpenAIのAI技術で70年分の冷却塔図面を検索\n約1時間かかった検索が4.5分に短縮された",
+      "summary_source": "gemini",
+      "title": "Kuken Industries searches 70 years of drawings in minutes",
+      "uid": "9372f3cd6692df75",
+      "url": "https://openai.com/index/kuken",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-06T18:01:28.248445+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -5941,32 +6021,6 @@
       "uid": "e33edd69f7816887",
       "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-12T22:05:03.082330+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-12T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations.",
-      "summary_ja": "RingCentralがAI活用で業務を改善。\n仕事向けChatGPTとCodexを使い、\nAI製品開発加速と運用状況分析を一元化。",
-      "summary_source": "gemini",
-      "title": "How RingCentral builds AI-native work from engineering to ops",
-      "uid": "4408d194e70063a3",
-      "url": "https://openai.com/index/ringcentral",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-11T21:06:02.039062+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-11T19:50:59+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed interactive sessions that could stop redrawing entirely, while the process kept running, after a rare internal layout error Fixed git / Git Bash not being found on Windows when C…",
-      "title": "v2.1.228",
-      "uid": "fbb8442b97daea2e",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
-      "vendor": "Anthropic"
     }
   ]
 }
