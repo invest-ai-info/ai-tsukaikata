@@ -7001,10 +7001,20 @@
    "channel_key": "honami",
    "channel_name": "ほなみ【在宅ワーク・副業のトリセツ】",
    "default_category": "earn",
-   "description": "👇今回の特典のナレッジと豪華7大特典はこちらから自動ですぐ受け取れます👇\nhttps://sub.re-tro.net/line/open/DWbTsqqDEqco?mtid=t8gCAWnvRkXc\n\n🎁 無料豪華7大特典の中身はこちら🎁\n① 月3万円までのやることリスト\n② 月10万円までのやることリスト\n③ 初心者でも失敗しない！おすすめ在宅ワーク10選\n④ これやると稼げない…NG習慣リスト\n⑤ 在宅ワーク体験記①\n⑥ 在宅ワーク体験記②\n⑦ 在宅ワーク体験記③",
    "first_seen": "2026-11-09T22:40:17.186701+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Claude CodeとCanvaを連携させ、無料記事と有料記事を自動作成してnoteで販売する手順を紹介している。",
+    "無料記事で読者の信頼を獲得し、続きの具体的手順やテンプレートを有料記事に誘導して販売する導線を解説している。",
+    "Claude Codeの利用には月額約3,000円の有料プランが必要であり、利用枠の管理が必要だと説明している。"
+   ],
+   "for_whom": "AIツールを活用してnote記事の作成を効率化し、副業でコンテンツ販売を始めたい人。",
+   "caution": "動画内で月収約60万〜70万円といった実績が語られているほか、公式LINEへの登録による特典配布や個別診断会への誘導が行われている点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-10T07:42:36.362049+00:00"
   },
   {
    "video_id": "uJuxenfe-NU",
@@ -7028,91 +7038,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-09T22:40:17.186701+00:00"
+  },
+  {
+   "video_id": "vJvVKWgN0t4",
+   "title": "【公式ガイド】『Claude Fable 5.2』で変更になった9つの特徴を解説！Effortの重要性が高まってます",
+   "url": "https://www.youtube.com/watch?v=vJvVKWgN0t4",
+   "published": "2026-11-10T03:11:47+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-10T07:42:36.362049+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は、Claude Fable 5.2は指示を文字通り守る特性があり、エフォート設定の適切な使い分けが重要になると解説している。",
+    "投稿者は、エフォートが低いと途中で止まりやすいため、作業を最後までやり切らせる具体的なプロンプト指示が有効だと説明している。",
+    "投稿者は、コードの所有権の明示や古い作業メモの削除など、前モデルから対処法が逆になった点も含めて見直しを推奨している。"
+   ],
+   "for_whom": "Claude Fable 5.2を使った開発やプロンプト設計を効率化したいエンジニア。",
+   "caution": "動画の後半で、限定ノウハウや勉強会アーカイブの案内としてnoteの有料メンバーシップへ誘導している点には留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-10T07:42:36.362049+00:00"
+  },
+  {
+   "video_id": "GiKkgvMr5Ps",
+   "title": "【感動級】『Claude Fable 5.2』遂に登場！圧倒的性能とコスパ改良で環境がまた変わったので徹底解説",
+   "url": "https://www.youtube.com/watch?v=GiKkgvMr5Ps",
+   "published": "2026-11-09T23:35:15+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-10T07:42:36.362049+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Anthropicの最新モデル「Claude Fable 5.2」と「Mythos 5.2」のリリースを受け、性能向上や価格改定の内容を解説している。",
+    "公式ベンチマーク等の指標を基に、多くの項目でOpus 5.5を上回る性能や高い安全性対策が示されていると紹介している。",
+    "Webページやゲームを作成した比較デモを通じ、細部の作り込みや自然で読みやすい文章生成能力の高さを評価している。"
+   ],
+   "for_whom": "最新AIモデルの性能や、コーディング・業務への活用法を知りたいエンジニアやビジネスパーソン。",
+   "caution": "概要欄にて有料のNoteメンバーシップコミュニティへの誘導が行われている点には留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-10T07:42:36.362049+00:00"
+  },
+  {
+   "video_id": "FNTz0CdqL6g",
+   "title": "Kuken Industries searches 70 years of drawings in minutes",
+   "url": "https://www.youtube.com/watch?v=FNTz0CdqL6g",
+   "published": "2026-11-10T02:41:23+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-10T07:42:36.362049+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "空研工業では熟練者のノウハウ承継や過去の膨大な図面探しに多くの時間を要していた課題があったと説明している。",
+    "Recursiveと協業しOpenAIのモデルを活用して70年分の図面データから迅速に検索できるシステムを構築したと紹介している。",
+    "図面検索時間が大幅に短縮され若手への指導やより難易度の高い案件の検討に時間を充てられるようになったと述べている。"
+   ],
+   "for_whom": "製造業で過去の図面検索効率化や技術伝承にAI活用を検討している人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-10T07:42:36.362049+00:00"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-11-09T22:40:17.186701+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-09T22:40:17.186701+00:00",
+   "last_ok": "2026-11-10T07:42:36.362049+00:00",
    "fail_streak": 0
   }
  }
