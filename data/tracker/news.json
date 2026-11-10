@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-10T23:26:54.403401+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-10T19:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'",
+      "summary_ja": "Gemini Intelligenceに新機能が追加。\nより多くの機器で使えるようになった。",
+      "summary_source": "gemini",
+      "title": "Gemini Intelligence: New features, on more devices",
+      "uid": "bc5d886c49a7e89d",
+      "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-11-10T17:54:08.433486+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -78,6 +92,20 @@
       "title": "Helping caregivers use AI in everyday life",
       "uid": "f3a300a7f7ad7528",
       "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-10T23:26:54.403401+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-10T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+      "summary_ja": "ChatGPTにビジネス向け機能が導入。\n会社の情報管理や表示方法の分析が可能に。\n顧客の関心を具体的な行動に繋げられます。",
+      "summary_source": "gemini",
+      "title": "Introducing Businesses in ChatGPT",
+      "uid": "ebf446c70a5bd86f",
+      "url": "https://openai.com/index/introducing-businesses-chatgpt",
       "vendor": "OpenAI"
     },
     {
@@ -6054,18 +6082,6 @@
       "title": "How Claude’s text watermark works",
       "uid": "c7be9f553b9d4f72",
       "url": "https://www.anthropic.com/news/claude-text-watermark",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-12T22:05:03.082330+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-12T20:56:22+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Documented claude remote-control --continue for resuming the most recent Remote Control session Added server-supplied Claude Code hook support for self-hosted runner sessions, matching…",
-      "title": "v2.1.229",
-      "uid": "a9dcded0aaecd80a",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
       "vendor": "Anthropic"
     }
   ]
