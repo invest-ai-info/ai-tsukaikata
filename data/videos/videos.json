@@ -7290,91 +7290,365 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-10T19:58:49.234105+00:00"
+  },
+  {
+   "video_id": "ELI2L9V-5WA",
+   "title": "【時短】覚醒したCopilotとGeminiでExcel・スプレッドシート業務を秒で終わらせる神活用",
+   "url": "https://www.youtube.com/watch?v=ELI2L9V-5WA",
+   "published": "2026-11-11T11:00:01+00:00",
+   "channel_key": "saki",
+   "channel_name": "【さき】のAIでええやん。",
+   "default_category": "tech",
+   "description": "100社以上のAI研修・コンサル実績ノウハウを詰め込んだ\n📊自分の会社の今の状態を知れる💬\n【無料】企業様向けのAI活用診断はコチラ⬇️\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA\n\n【無料】セキュリティ診断はコチラ\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/security-check\n\n🌏企業向けAIの活用がわかる！学べる無料会員サイト💻\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/top\n\n🏢AI研修やAI導入のお問い合わせはこちらから🏢\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/contact\n\nー資料をダウンロードしたい方は✅ー\n\n🏢他社のAI活用事例集のダウンロードはこちら📃\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/present/whitepaper-ai-case-studies\n\n🛡️自社のセキュリティ資料のダウンロードはこちら⬇️\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/present/whitepaper-ai-usage-rules\n━━━━━━━━━━━━━━━━━━\n\n何となく聞きに来るのは勿体ない/本気の人向けAI勉強会\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=SXNkFdcf19Dp\n\n今AI活用やマネタイズの仕方がわからない人🤦やAI初心者の人も必見！\n\n🚨無料期間限定🚨で\n✨Youtubeでは出せないさきのAI最新情報✨&\n👩‍💻AIノウハウ100大特典🎁を勉強会参加後にLINEで受け取れます！\n\nAIスキルを身につけて【社内評価⏫UP⏫】や【収益化💰】\n業務効率化🗒️できるココでしか手に入らない情報を\n現在期間限定でしかも、無料配布しているので興味ある方は是非！！\n↓↓↓\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=SXNkFdcf19Dp\n\nーーーーーーーーーーーーーー\n\n約10,000人以上の人が登録中！\n⬇️さきのAI最新情報公式LINE⬇️\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=SXNkFdcf19Dp\n\nーーーーーーーーーーーーーー\n🎁”LINE登録者限定\"のAI特別セミナー開催\n🎁”LINE登録者限定\"のAI勉強会\n🎁”勉強会参加者限定\"のAI豪華100大特典配布\n🎁”勉強会参加者限定\"の特別な案内\n\n【⬇️無料登録はこちら⬇️】\nhttps://utage-system.com/p/cCQYo5AUNsJh?ftid=h84HOS6hXRWe\n\n🏢企業のAI活用が学べる無料会員サイトはコチラ📚\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/top\n\n🧑‍💻AI研修やAI導入のお問い合わせはこちらから🧑‍💻\nhttps://www.aideeyan.com/yt/ELI2L9V-5WA/contact\n\n\n━━━━━━━━━━━━━━━━━━\n↓↓本日紹介したツールや動画📚などはこちら↓↓\n\n【Copilot】\nhttps://copilot.com/ja-jp/\n\n━━━━━━━━━━━━━━━━━━\n#chatgpt    #gemini    #ai活用  #claude #claudec",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "dBQEVbRXG7w",
+   "title": "【神アプデ】「Workspace Studio」にて「ファイルの自動移動」がついに標準対応へ！",
+   "url": "https://www.youtube.com/watch?v=dBQEVbRXG7w",
+   "published": "2026-11-11T09:00:12+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "今回は日々ものすごいスピードで進化を続ける「Workspace Studio」の最新情報をお届けします！\n\n実は、以前配布させて頂きました自作カスタムステップ「ファイルまたはフォルダを移動Ex」が、なんと標準機能のアップデートにより早くも不要に！\n\n「Geminiで作成」で生成したドキュメントやスライドが、既存の「ファイルまたはフォルダを移動」ステップから直接指定・移動できるようになりました。 \n週単位・日単位で便利機能が追加されるWorkspace Studioの凄さを感じてください！\n\n⚠️今回の進化によって、いずれ「ファイルまたはフォルダを移動Ex」は削除する予定です。こちらの関数をご利用の方は、公式のステップに組み替えをお願いします。\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:16 「Workspace Studio」とは\n02:27 自作GAS関数紹介\n03:01「ファイルまたはフォルダを移動Ex」を作った背景\n05:41 「ファイルまたはフォルダを移動」の今の動き\n06:46 まとめ\n09:02 ゆるトーク\n\n【関連動画】\n自動化の限界を突破！今すぐ使える「神カスタムステップ5選」を完全無償公開！\nhttps://youtu.be/r0Dyczj8rs8\n\n【関連記事：Workspace Studio では、カスタム スターターとステップ、サードパーティ統合、Webhook を使用してワークフローを自動化できます】\nhttps://workspaceupdates.googleblog.com/2026/09/automate-workflows-with-custom-starters-and-steps-third-party-integrations-and-webhooks-in-Workspace-Studio.html\n\n【関連動画】\n自動化の限界を突破！今すぐ使える「神カスタムステップ5選」を完全無償公開！\nhttps://youtu.be/r0Dyczj8rs8\n\n【※個人アカウントの方向け「Google Workspace Experiments」】\nhttps://workspace.google.com/experiments/\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "tyjUdIfKKQE",
+   "title": "無料のAIエージェント「Muse」の活用事例10選！～Gmail・カレンダー連携からアプリ・動画生成まで丸投げできる～",
+   "url": "https://www.youtube.com/watch?v=tyjUdIfKKQE",
+   "published": "2026-11-11T09:06:32+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)10月下旬に日本でリリースされた\nMetaの無料で使えるパーソナルAIエージェント\n「Muse」は、iOSの無料アプリランキングで\n連日上位にランクインするなど\n大きな注目を集めています\nMuseは、ユーザーごとに独立した専用のクラウドで動作し;\nメールやスケジュールの管理はもちろん\nパソコンを操作して買い物まで代行してくれ\nさらには画像や動画\nwebアプリやスライド資料の制作もこなす\n無料とは思えないほど高性能なAIエージェントで\nうまく使いこなせば、毎日の生活がぐっと充実します\n\n今回の動画では\n第一章：Museの活用事例 ～基本編～\n第二章：Museの活用事例 ～応用編～\nの二章構成で、MetaのパーソナルAIエージェント\n「Muse」を使いこなすための、便利な活用事例を10個紹介します\nなお、Museのインストール方法と基本的な使い方については\nこのチャンネルの別の動画でまとめているので\nまだインストールしていない方はそちらの動画をご覧ください\n\n◆動画のもくじ\n0:00　動画について\n0:45　動画のもくじ\n1:26　第一章：Museの活用事例 ～基本編～\n1:43　1、サイドチャットの展開\n2:20　2、メールとスケジュール管理\n3:24　3、健康・お金などの目標管理\n4:20　4、Museの性格や話し方の変更\n5:17　5、アバターの変更\n6:08　第二章：Museの活用事例 ～応用編～\n6:27　1、画像の生成\n7:28　2、動画の生成\n8:27　3、スライド・ドキュメント・スプレッドシートの生成\n9:32　4、アプリやゲームの生成\n11:25　5、ショップでの買い物代行\n12:33　エンディングムービー\n\n◆動画の中で紹介している内容\nMuse Spark、Muse Wonder、Muse Image、Muse Video\nByteDance、Seedanceシリーズ、MiniMax、MiniMax H3\nOpenAI、GPT Image 2.6、Google、Nano Banana 2.1\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://youtu.be/9FLNYHMFeGc\nhttps://muse.ai/\nhttps://ai.meta.com/muse/\nhttps://dev.meta.ai/models/muse-image\nhttps://dev.meta.ai/models/muse-spark\nhttps://ai.meta.com/blog/introducing-muse-image-muse-video-msl/\nhttps://www.itmedia.co.jp/news/article/2609/22/2000001669/\n\n▼オススメ動画\n【3000円払うならどれ？】ChatGPT(Codex)・Gemini(Google Antigravity)・Claude(Claude Code)の三大AIチャットのお手軽有料プランを徹底比較！\nhttps://youtu.be/wxb_Iw4WkSg\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い方・重要機能(MCP、Skills、H",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "THi3S0cKMGI",
+   "title": "【公式の結論】Claudeモデル使い分け！Opus、Fable、Sonnetなど4種はどこで使うべき？",
+   "url": "https://www.youtube.com/watch?v=THi3S0cKMGI",
+   "published": "2026-11-11T11:55:35+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Claude 公式ブログで共有された「Haiku・Sonnet・Opus・Fable の使い分け」と「effort の選び方」について、僕自身の使い方も交えながら解説しました。\n公式のおすすめは「迷ったら Opus 5.5 の effort ミディアムから」。そこから、仕様が決まった作業は Sonnet、大量の単純作業は Haiku、最難関の開発や長時間の無人実行は Fable 5.2 へ上げ下げしていく考え方です。\nみなさんは普段どのモデルと effort の組み合わせで使っていますか？ よろしければコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://claude.dev/blog/which-claude-model-should-you-build-with/\n\ntimestamp:\n00:00 オープニング - Claude のモデル使い分け\n01:15 公式の基本は Opus 5.5 ミディアム\n03:02 下げる基準 - Sonnet と Haiku\n04:47 上げる基準 - Fable 5.2 と長時間実行\n06:34 モデルより先に effort を動かす\n07:56 4モデルの単価・性能・既定 effort\n10:18 タスク別おすすめのモデルと effort\n13:01 モデル切替と opusplan・/advisor\n16:34 コストは1タスクあたりで考える\n18:53 性能不足時の手順と自分での検証\n22:25 まとめ - それでも Fable 推しの理由\n24:34 エンディング - メンバーシップのお知らせ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "9e2PJkB0UQM",
+   "title": "【待ってた】Gemini 4 Carbonを実際に使ったので徹底解説！Argonから順当進化で唯一無二の魅力も健在",
+   "url": "https://www.youtube.com/watch?v=9e2PJkB0UQM",
+   "published": "2026-11-10T23:45:33+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Google DeepMind から登場した Gemini 4 シリーズの最上位モデル「Gemini 4 Carbon」について、公式情報と僕が実際に API 経由や Cursor 経由で使ってみた感想を交えて解説しました。\n\n特に良かったのは動画・音声のインプットです。過去の投稿動画を渡してフィードバックさせてみたら、1 分動画にするならどこをカットするか、聞き逃していたノイズの位置まで拾ってくれて、動画編集の自動化に組み込みたいと思えるレベルでした。\n\n皆さんは Gemini 4 Carbon をどんな場面で使ってみたいですか？ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\n\ntimestamp:\n00:00 オープニング - Gemini 4 Carbon 登場\n01:04 動画・音声入力と 1M コンテキスト\n02:20 Fable・Opus との使い分けと提供範囲\n03:09 価格とコスパ - 12月から API は 2 倍\n04:41 公式の売りと Argon との使い分け\n07:34 3D ゲームと資料作成で Fable と比較\n08:53 動画インプットでのフィードバックが強力\n11:42 デモ比較 - LP・エディター・SNS\n15:12 3D ファイティングやゴブリンゲームで実演\n16:36 Argon VS Carbon - 出力の冗長さ\n19:36 まとめ - API でピンポイントに使う\n20:33 メンバーシップのご案内\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "jDxKzlGLCas",
+   "title": "Building with GPT-Live and Image Generation | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=jDxKzlGLCas",
+   "published": "2026-11-11T01:24:08+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "See GPT-Live brainstorm, play games, and create images while coordinating work in the background. Learn to add voice to agents and design for delegation, latency, interruptions, and changing requests.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "pIW_8VyvCuQ",
+   "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=pIW_8VyvCuQ",
+   "published": "2026-11-11T01:24:08+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "QRm7VNMnurA",
+   "title": "Sites and the Next Generation of Web Apps | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=QRm7VNMnurA",
+   "published": "2026-11-11T01:24:07+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Turn an idea into an interactive web experience with Astra, ChatGPT Sites, and WebMCP. Learn how to build new kinds of interfaces alongside your colleagues and agents.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "U1IVZy9FhVQ",
+   "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=U1IVZy9FhVQ",
+   "published": "2026-11-11T01:24:07+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should step in.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "b7l_Dhe1h8M",
+   "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=b7l_Dhe1h8M",
+   "published": "2026-11-11T01:24:07+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "gUQN7juxvVI",
+   "title": "Codex Security: From Vulnerability to Verified Fix | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=gUQN7juxvVI",
+   "published": "2026-11-11T01:24:07+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Find and fix vulnerabilities with OpenAI’s cyber models and open-source CLI and SDK. Learn to scan large codebases, catch issues in pull requests, and verify fixes, drawing on OpenAI’s own security work.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "nAubbmlhPfI",
+   "title": "What Comes After Loops?: Deep Dive Into Agentic Architecture | DevDay 2026",
+   "url": "https://www.youtube.com/watch?v=nAubbmlhPfI",
+   "published": "2026-11-11T01:24:07+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Trace the evolution from simple agent loops to collaborating agents. Explore the design choices and model advances behind that shift, and take a closer look at what comes next.",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "5YXlrzC_RYE",
+   "title": "Answering your questions about GPT-Live",
+   "url": "https://www.youtube.com/watch?v=5YXlrzC_RYE",
+   "published": "2026-11-10T21:10:08+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "We’re answering the internet’s questions about GPT-Live, starting with how it’s different from earlier voice models and what developers are using it for. Already building with GPT-Live? We’ll share practical tips for customizing your agent’s voice and improving delegation.\n\nWhat else would you like to know about building with GPT-Live? Leave us a question in the comments!\n\nChapters\n00:00 Intro\n00:10 GPT Live vs. GPT Realtime\n02:22 Handling background noise\n03:06 Use cases\n03:38 Custom voices\n04:57 Improving delegation\n06:33 Collecting tool call parameters\n07:54 Managing delegation context\n\nLinks\nGPT Live prompting guide\nhttps://developers.openai.com/api/docs/guides/live-prompting\n\nBuilding with GPT-Live-1 and Cognition\nhttps://openai.com/business/learn/gpt-live-1-webinar/",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "C33hJGt-ySg",
+   "title": "Fable 5.2 or Opus? When to use each model in Claude Code",
+   "url": "https://www.youtube.com/watch?v=C33hJGt-ySg",
+   "published": "2026-11-11T17:30:20+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "日常的な複雑なコーディング作業にはOpus 5.5を基本とし、不足時はEffortレベルを上げることが推奨されると説明している。",
+    "大規模な移行作業にはFable 5.2、明確に定義されたタスクには高速で安価なSonnetやHaikuが適していると紹介している。",
+    "Fableを親セッションとして全体の進行を管理し、個別の作業をSonnetのサブエージェントへ分散して実行させる手法を紹介している。"
+   ],
+   "for_whom": "Claude Codeでタスクに適したモデルを選定し、開発効率やコストを最適化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-11T19:50:28.216797+00:00"
+  },
+  {
+   "video_id": "uND6iY2qp_c",
+   "title": "AlphaGenome 2: Teaching AI to read the entire human genome",
+   "url": "https://www.youtube.com/watch?v=uND6iY2qp_c",
+   "published": "2026-11-11T18:00:31+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "DeepMindの研究者が、非コードDNA領域の変異が細胞に与える影響を予測するAI「AlphaGenome」と発展型「2」を紹介している。",
+    "全ゲノムの変異影響を事前計算したAtlasを活用し、小児てんかんなどの希少疾患で原因変異を特定した事例を説明している。",
+    "AlphaGenome 2では単一細胞レベルに解像度を高め、特定の細胞種や状態で遺伝子制御がどう変化するか予測できると述べている。"
+   ],
+   "for_whom": "ゲノム医療やバイオ分野における最新AIの応用動向を知りたい人",
+   "caution": "AlphaGenomeは臨床診断ツールではなく研究用ツールであり、予測結果には不確実性があるため実験的な検証が必要であると説明されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-11T19:50:28.216797+00:00"
+  },
+  {
+   "video_id": "583ThJIqQ7k",
+   "title": "Fable 5.2: The Self-Improvement Loop Keeps Loopin’ … (plus Gemini Carbon)",
+   "url": "https://www.youtube.com/watch?v=583ThJIqQ7k",
+   "published": "2026-11-10T23:11:36+00:00",
+   "channel_key": "ai-explained",
+   "channel_name": "AI Explained",
+   "default_category": "news",
+   "description": "I’ve read the full Fable 5.2 report at 264 pages, the 30 page METR RSI report, and tested Gemini Carbon and Fable 5.2 hundreds of times. There’s too much to cover in one video, but let’s explore everything from how fast AI is accelerating AI, five benchmarks few others will talk about, why Simple Bench got saturated but meta-simple bench might not have, Internal model 4, remote labour automation and much more\n\nhttps://www.assemblyai.com/aiexplained\n\nExclusive Vids($9!): https://www.patreon.com/AIExplained\n\n00:00 - Introduction\n00:49 - how good are Fable 5.2 and Carbon?\n09:01 - smarter, but still missing some common sense\n15:49 - how fast is AI improving itself?\n23:51 - small gains, big consequences\n26:33 - it knows when you're watching\n\n\n\nIntroducing Claude Fable 5.2 and Mythos 5.2: https://www.anthropic.com/claude-fable-and-mythos-5-2\n\nClaude Fable 5.2 and Mythos 5.2 System Card: https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf\n\nMETR: AI R&D acceleration at Anthropic: https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/\n\nEpoch AI: Fable 5.2 sets a new capabilities record: https://x.com/EpochAIResearch/status/2119903415363113088\n\nSemiAnalysis: Fable 5.2's coding gains and RSI plateau: https://x.com/SemiAnalysis_/status/2119961452496756926\n\nSemiAnalysis GDPx: https://gdpx.semianalysis.com/\n\nRemote Labor Index: https://www.remotelabor.ai/\n\nRemote Labor Index paper: https://arxiv.org/pdf/2510.26787\n\nGreg Burnham on Fable 5.2's Remote La",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "P3RVeg8YCg0",
+   "title": "I made $100K in 3 months with this AI wrapper",
+   "url": "https://www.youtube.com/watch?v=P3RVeg8YCg0",
+   "published": "2026-11-11T18:00:00+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "電子書籍作成を自動化するAIツールを開発し、4か月で約13万ドルの売上を達成した創業者の事例を紹介している。",
+    "LovableやClaudeなどを活用してノーコード・バイブコーディングでアプリを構築した開発プロセスを解説している。",
+    "Meta広告で複数のクリエイティブを検証し、追加クレジット販売などで顧客単価を高める成長戦略を説明している。"
+   ],
+   "for_whom": "AIラッパー開発やAIツールを活用したマネタイズに興味がある人",
+   "caution": "月2万〜3万ドルのMeta広告費を投じて集客を行っており、広告運用スキルや資金が必要となる点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-11T19:50:28.216797+00:00"
+  },
+  {
+   "video_id": "1cWZ7Ekff6E",
+   "title": "Grok Bot: Engineering, Design, Content, Money, Shopping",
+   "url": "https://www.youtube.com/watch?v=1cWZ7Ekff6E",
+   "published": "2026-11-11T18:00:16+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-11-11T19:50:28.216797+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Ras Mic氏は、プロジェクトごとに専用のGrok Botを作成し、文脈を整理してClaude Code等のツールを指揮させていると説明している。",
+    "コード生成前にPaperなどのツールでデザインシステムを確定させ、AIにフィードバックを反映させる手順を紹介している。",
+    "不要になったBotは随時削除し、重要な案件にのみ専用Botを割り当てることで作業効率を維持できると述べている。"
+   ],
+   "for_whom": "AIエージェントを活用して開発やデザイン業務を効率化したい人",
+   "caution": "月額プランの費用対効果やアプリの収益実績は出演者個人の主張であり、同等の成果や再現性が保証されているわけではありません。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-11T19:50:28.216797+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-10T19:58:49.234105+00:00",
+   "last_ok": "2026-11-11T19:50:28.216797+00:00",
    "fail_streak": 0
   }
  }
