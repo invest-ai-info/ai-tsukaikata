@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="498" viewBox="0 0 720 498" role="img" aria-label="問い合わせフォームの受信件数（減少傾向の架空ログ・8週間56日）を週ごとに集計した1日平均を8本の横棒で示した図。1週目が約7.0件/日、2週目5.7、3週目6.0、4週目4.7、5週目4.0、6週目3.1、7週目3.3、8週目（直近）が約2.3件/日で、全体として右肩下がり。56日全体の平均約4.52件/日の位置に点線が引かれている。下の枠には、週合計が49→40→42→33→28→22→23→16件で8週目は1週目の約3分の1であること、直近14日の平均が約2.79件/日で56日全体より約38%少ないこと、3週目のように一時的に増える週もあるが全体としては一貫して下がっていることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="498"/>
+<text class="t-strong" x="18" y="24">週ごとの1日平均は、8週間でほぼ一貫して下がり続ける</text>
+<text class="t-sm" x="18" y="43">問い合わせフォームの受信件数（減少傾向の架空ログ・8週間56日）を週ごとに集計し、1日あたりの平均に直した。</text>
+<text class="t-sm" x="18" y="62">1週目は約7.0件/日、8週目（直近）は約2.3件/日。56日全体の平均は約4.52件/日（点線）。</text>
+<line class="line" x1="376.8" y1="116" x2="376.8" y2="394" stroke-dasharray="3 3"/>
+<text class="t-xs" x="380.8" y="112">56日全体 約4.52件/日</text>
+<text class="t-xs" x="476.0" y="112">件/日</text>
+<text class="t" x="18" y="144">1週目（7/20〜7/26）</text>
+<rect class="box-quiet" x="230.0" y="132" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="132" width="227.5" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="144">7.0件/日</text>
+<text class="t" x="18" y="178">2週目（7/27〜8/2）</text>
+<rect class="box-quiet" x="230.0" y="166" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="166" width="185.2" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="178">5.7件/日</text>
+<text class="t" x="18" y="212">3週目（8/3〜8/9）</text>
+<rect class="box-quiet" x="230.0" y="200" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="200" width="195.0" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="212">6.0件/日</text>
+<text class="t" x="18" y="246">4週目（8/10〜8/16）</text>
+<rect class="box-quiet" x="230.0" y="234" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="234" width="152.8" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="246">4.7件/日</text>
+<text class="t" x="18" y="280">5週目（8/17〜8/23）</text>
+<rect class="box-quiet" x="230.0" y="268" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="268" width="130.0" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="280">4.0件/日</text>
+<text class="t" x="18" y="314">6週目（8/24〜8/30）</text>
+<rect class="box-quiet" x="230.0" y="302" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="302" width="100.8" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="314">3.1件/日</text>
+<text class="t" x="18" y="348">7週目（8/31〜9/6）</text>
+<rect class="box-quiet" x="230.0" y="336" width="260.0" height="16" rx="3"/>
+<rect class="bar-old" x="230.0" y="336" width="107.2" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="348">3.3件/日</text>
+<text class="t" x="18" y="382">8週目（9/7〜9/13・最新）</text>
+<rect class="box-quiet" x="230.0" y="370" width="260.0" height="16" rx="3"/>
+<rect class="bar-new" x="230.0" y="370" width="74.8" height="16" rx="3"/>
+<text class="t-strong" x="504.0" y="382">2.3件/日</text>
+<rect class="box-accent" x="18" y="412" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="432">週合計は49→40→42→33→28→22→23→16件（真値・Python算出）。8週目は1週目の約3分の1。</text>
+<text class="t-accent" x="34" y="450">直近14日（8週目・7週目の後半7日分）の平均は約2.79件/日で、56日全体より約38%少ない。</text>
+<text class="t-accent" x="34" y="468">途中3週目のように一時的に増える週もあるが、全体としては一貫して下がっている。</text>
+</svg>

@@ -43459,6 +43459,188 @@ def bare_hour_time_hit_and_miss_chart() -> None:
     )
 
 
+def decline_log_weekly_trend_chart() -> None:
+    """減少傾向のある架空ログ（8週間・56日）で、週ごとの1日平均が右肩下がりになることを示す（2026-11-11）。
+
+    `increasing-log-judgment-comes-out-right` の末尾に残っていた未測定事項
+    「減少傾向（右肩下がり）の記録で同じ判定をしたときの結果」に答える記事の図その1。
+    週合計は docs/evidence/decreasing-log-judgment-comes-out-right.md の真値（Python算出）から。
+    """
+    rows = [
+        ("1週目（7/20〜7/26）", 7.0),
+        ("2週目（7/27〜8/2）", 5.7),
+        ("3週目（8/3〜8/9）", 6.0),
+        ("4週目（8/10〜8/16）", 4.7),
+        ("5週目（8/17〜8/23）", 4.0),
+        ("6週目（8/24〜8/30）", 3.1),
+        ("7週目（8/31〜9/6）", 3.3),
+        ("8週目（9/7〜9/13・最新）", 2.3),
+    ]
+    label_x = 18
+    plot_x = 230
+    plot_w = 260
+    axis_max = 8
+    scale = plot_w / axis_max
+    top = 130
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "週ごとの1日平均は、8週間でほぼ一貫して下がり続ける</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "問い合わせフォームの受信件数（減少傾向の架空ログ・8週間56日）を週ごとに集計し、"
+        "1日あたりの平均に直した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "1週目は約7.0件/日、8週目（直近）は約2.3件/日。56日全体の平均は約4.52件/日（点線）。"
+        "</text>\n",
+        f'<line class="line" x1="{px(4.517857142857143):.1f}" y1="{top - 14}" '
+        f'x2="{px(4.517857142857143):.1f}" y2="{top + len(rows) * row_h - 8}" '
+        f'stroke-dasharray="3 3"/>\n',
+        f'<text class="t-xs" x="{px(4.517857142857143) + 4:.1f}" y="{top - 18}">'
+        "56日全体 約4.52件/日</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 18}">件/日</text>\n',
+    ]
+
+    x_val = px(axis_max) + 14
+    y = top
+    for i, (label, value) in enumerate(rows):
+        ty = y + 14
+        klass = "bar-new" if i == len(rows) - 1 else "bar-old"
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{klass}" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value:.1f}件/日</text>\n')
+        y += row_h
+
+    y += 10
+    notes = [
+        "週合計は49→40→42→33→28→22→23→16件（真値・Python算出）。8週目は1週目の約3分の1。",
+        "直近14日（8週目・7週目の後半7日分）の平均は約2.79件/日で、56日全体より約38%少ない。",
+        "途中3週目のように一時的に増える週もあるが、全体としては一貫して下がっている。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "問い合わせフォームの受信件数（減少傾向の架空ログ・8週間56日）を週ごとに集計した"
+        "1日平均を8本の横棒で示した図。1週目が約7.0件/日、2週目5.7、3週目6.0、4週目4.7、"
+        "5週目4.0、6週目3.1、7週目3.3、8週目（直近）が約2.3件/日で、全体として右肩下がり。"
+        "56日全体の平均約4.52件/日の位置に点線が引かれている。下の枠には、週合計が"
+        "49→40→42→33→28→22→23→16件で8週目は1週目の約3分の1であること、直近14日の平均が"
+        "約2.79件/日で56日全体より約38%少ないこと、3週目のように一時的に増える週もあるが"
+        "全体としては一貫して下がっていることが書かれている。"
+    )
+    (OUT / "decline-log-weekly-trend.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def decline_log_quadrant_chart() -> None:
+    """「同じか違うか」判定の実測マスを、フラット・増加傾向・減少傾向の3行に広げる（2026-11-11）。
+
+    `increasing-log-judgment-comes-out-right` が2行×2列で残していた図を、
+    この記事（減少傾向・3/3正しく「大きく違う」）の分だけ3行目に広げたもの。
+    """
+    col_x = [18 + 190, 18 + 190 + 250 + 14]
+    col_w = 250
+    row_y = [150, 150 + 78, 150 + 78 * 2]
+    row_h = 62
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「同じか違うか」判定は、3つの記録の性質すべてで真値どおりだった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "記録の性質（フラット／増加傾向／減少傾向）と、AIが出す判定（同じ／大きく違う）を2軸にした表。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "先行2本がフラット行と増加傾向行を埋め、この記事が減少傾向行を埋めた。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "残り2マス（減少傾向×同じ・フラット×大きく違う等）は出れば誤りのはずの組み合わせで、未測定。"
+        "</text>\n",
+    ]
+
+    headers = ["「同じ」と判定", "「大きく違う」と判定"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" y="{row_y[0] - 16}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    row_labels = ["フラットな\n記録", "増加傾向の\n記録", "減少傾向の\n記録"]
+    cells = [
+        [("2/2 正しい\n（flat-log）", "good"), ("試していない\n（出れば誤り）", "quiet")],
+        [("試していない\n（出れば誤り）", "quiet"), ("4/4 正しい\n（increasing-log）", "good")],
+        [("試していない\n（出れば誤り）", "quiet"), ("3/3 正しい\n（この記事）", "good")],
+    ]
+
+    for r in range(3):
+        label_lines = row_labels[r].split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{row_y[r] + row_h / 2 - 6 + li * 16:.1f}">'
+                f"{_esc(line)}</text>\n"
+            )
+        for c in range(2):
+            text, kind = cells[r][c]
+            klass = "box-good" if kind == "good" else "box-quiet"
+            tone = "t-good" if kind == "good" else "t-sm"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]:.1f}" y="{row_y[r]:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h}" rx="6"/>\n'
+            )
+            lines = text.split("\n")
+            n = len(lines)
+            start_y = row_y[r] + row_h / 2 - (n - 1) * 9 + 4
+            for li, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tone}" x="{col_x[c] + col_w / 2:.1f}" '
+                    f'y="{start_y + li * 18:.1f}" text-anchor="middle">{_esc(line)}</text>\n'
+                )
+        if r < 2:
+            parts.append(
+                f'<line class="line" x1="18" y1="{row_y[r + 1] - 8:.1f}" x2="702" '
+                f'y2="{row_y[r + 1] - 8:.1f}" stroke-dasharray="3 3"/>\n'
+            )
+
+    y = row_y[2] + row_h + 20
+    notes = [
+        "左上（フラット×同じ）＝先行記事flat-logで2/2確認済み。",
+        "右中（増加傾向×大きく違う）＝先行記事increasing-logで材料A・C各2回の4/4が正しく判定。",
+        "右下（減少傾向×大きく違う）＝この記事で3回とも正しく「大きく違う」（真値差約38%）。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "記録の性質（フラット／増加傾向／減少傾向）とAIが出す判定（同じ／大きく違う）を"
+        "3行2列にした表。左上（フラット×同じ）は先行記事flat-logで2/2正しいと確認済み。"
+        "右中（増加傾向×大きく違う）は先行記事increasing-logで4/4正しいと確認済み。"
+        "右下（減少傾向×大きく違う）はこの記事で3/3正しいと確認。左下・右上・左中などの"
+        "残りのマスは、出れば誤りのはずの組み合わせで未測定。下の枠にも同じ内容が書かれている。"
+    )
+    (OUT / "decline-log-quadrant.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    mixed_notation_hit_and_miss_chart()
-    bare_hour_time_hit_and_miss_chart()
+    decline_log_weekly_trend_chart()
+    decline_log_quadrant_chart()

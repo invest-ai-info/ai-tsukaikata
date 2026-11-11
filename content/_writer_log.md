@@ -46,6 +46,30 @@
 
 ## 記録
 
+### 2026-11-11（自動化・ループ優先の回）
+- `git fetch origin`→`git log origin/main -1`で基点確認。HEADがdetachedのうえ
+  origin/mainがforce-updateされていたため（`0aa1433→64df930`）、`git checkout main && git reset
+  --hard origin/main`で取り直してから着手（手順0の指示どおり）
+- 公開: 1本（`recipes/decreasing-log-judgment-comes-out-right`）。`### 自動化・ループ優先`節の
+  未処理先頭「減少傾向の記録でも『同じか/大きく違うか』の判定は正しく『大きく違う』と言えるか」
+  （`increasing-log-judgment-comes-out-right`の未測定事項）を選んだ
+- 実測: `claude --safe-mode --tools "" < prompt.txt`（新規プロセス起動・CLAUDE.md等を全部無効化）。
+  真値差約38.3%の右肩下がり架空ログ（56日・週合計49,40,42,33,28,22,23,16件）で、主指示文を
+  独立3回（Run1〜3）＝3回とも「大きく違う」、週合計8件すべて真値と完全一致。向きの確認版
+  （「どちらが高いか」）を2回、判定と向きを1本化した定期実行向け版を2回、計6指示文・9回試した。
+  生ログは`docs/evidence/decreasing-log-judgment-comes-out-right.md`
+- 併行で`mcp__Claude_Code_Remote__create_session`も2本試した（参考）。1本は完了して
+  `post_turn_summary`が真値どおりの数字を返したが生の全文は回収できず主役には数えず、
+  もう1本はArtifact公開依頼を埋め込み指示と疑って確認待ちで停止（★91・先行記事と同じ型）
+- 新しい教訓2件を`_lessons.md`へ追記＝★334番が再発（最終判定は正しいまま、途中の週合計1件を
+  書き誤った事例）、★338新規（同じ条件でも1回だけ出力が1行だけに崩れたが、同じ条件で
+  再起動したら正常に戻った）
+- キューの該当1行を`- [x]`に更新。節の未処理はこれで0件（次に減ったら条11bで補充）
+- 図2枚を`tools/make_figures.py`に追加（週次推移の横棒・フラット/増加/減少3行の判定マス表）。
+  座標は既存関数のパターンに合わせて計算、`src/figures.py`の検査はどちらもOK
+- `python3.13 -m pytest -q`＝794 passed、`python3.13 -m src.build`＝384ファイル出力・エラー無し、
+  `tools/check_readability.py`＝60字以上14%（目安15%以下）で通過
+
 ### 2026-11-10（副業枠の回）
 - 公開: 1本（`recipes/bare-hour-time-slips-past-confirmation`）。`git fetch`・
   `git log origin/main -1` で基点を確認、作業ブランチはoriginと同じコミットを指していた
