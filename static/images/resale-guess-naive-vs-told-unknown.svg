@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240" role="img" aria-label="架空の商品2点の相場をメルカリ想定で聞いた実測の一覧図。そのまま相場を聞いた回では、具体的な金額が返った回数は6回中6回だった。わからなければ具体的な金額を言わずにわからないと伝えてくださいを足した回では、具体的な金額が返った回数は4回中0回だった。下の枠には、データが一切無いのに6回とも金額が返ったこと、受け皿の一文を足すと4回とも金額が消えたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="240"/>
+<text class="t-strong" x="18" y="26">データが無くても金額は返る。受け皿を足すと消えた</text>
+<text class="t-sm" x="18" y="45">実在しないブランド名の商品2点（電動ミルクフォーマー・折り畳み自転車）の相場を、メルカリ想定でAIに聞いた。</text>
+<text class="t-sm" x="18" y="64">商品固有のデータは一切渡していない。「わからなければ金額を言わずに」の有無だけを振った。</text>
+<text class="t-xs" x="428.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">そのまま相場を聞く（データなし）</text>
+<rect class="box-bad" x="348" y="104" width="160" height="26" rx="4"/>
+<text class="t-bad" x="428.0" y="125" text-anchor="middle" style="font-weight:700">6/6</text>
+<text class="t" x="18" y="157">「わからなければ金額を言わずに」を足す</text>
+<rect class="box-good" x="348" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="428.0" y="157" text-anchor="middle" style="font-weight:700">0/4</text>
+<rect class="box-accent" x="18" y="174" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="194">受け皿なしは6回とも具体的な金額（例: 1,500円〜2,500円）が返った。</text>
+<text class="t-accent" x="34" y="212">受け皿を足すと4回とも金額は0件。ただし1回、金額以外の根拠のない断定が残った。</text>
+</svg>

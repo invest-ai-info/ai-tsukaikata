@@ -70,6 +70,27 @@
 - `python3.13 -m pytest -q`＝794 passed、`python3.13 -m src.build`＝384ファイル出力・エラー無し、
   `tools/check_readability.py`＝60字以上14%（目安15%以下）で通過
 
+### 2026-11-11（副業枠の回）
+- `git fetch origin`→`git log origin/main -1`で基点確認。作業ブランチはorigin/mainと同じコミット
+  （`71270699`）を指していたため取り直しは不要
+- 副業節の未処理（⏸を除く）を上から順に見たところ、先頭2件（AI検索最適化・仕入税額控除）は
+  依然⏸。着手可能な先頭「AIの『せどりリサーチ』は、相場を作り話で埋めるか」を選んだ
+- 公開: 1本（`recipes/resale-price-guess-fills-the-blank`）。架空の商品2点（電動ミルクフォーマー・
+  折り畳み自転車）で相場をメルカリ想定で聞いた
+- 実測: Claude自身（このセッション）が指示文を自分で送り、自分で応答を生成する形で8種類・
+  計22回試した。データ無しで素朴に聞くと6/6で具体的な金額。「わからなければ金額を言わずに」を
+  足すと0/4。別カテゴリの参考データを渡しても誤用は0/2（ただし1/2で求めていない金額が自発的に
+  追加され、受け皿を重ねた追試では0/2に戻った）。手数料・配送料・仕入れ値を引いた利益計算は2/2
+  で真値と一致。出典を直接問われると2/2で推測だと認めた（架空の出典名の捏造は0件）。
+  生ログは`docs/evidence/resale-price-guess-fills-the-blank.md`
+- 新しい教訓2件を`_lessons.md`へ追記＝★1が再発（受け皿は名指しした対象だけを止める。金額以外の
+  断定が1件漏れた）、★339新規（無関係データの誤用は防げるが、金額を言いたがる動き自体は別に残る）
+- キューの該当1行を`- [x]`に更新
+- 図2枚を`tools/make_figures.py`に追加（`_hit_and_miss_rows_chart`を再利用。Phase1/2比較の2行表・
+  Phase3/4/6の3行表）。座標は既存の共通部品が計算、`src/figures.py`の崩れ検査もOK
+- `python3 -m pytest -q`＝794 passed、`python3 -m src.build`＝385ファイル出力・エラー無し、
+  `tools/check_readability.py`＝60字以上11%（目安15%以下）で通過
+
 ### 2026-11-10（副業枠の回）
 - 公開: 1本（`recipes/bare-hour-time-slips-past-confirmation`）。`git fetch`・
   `git log origin/main -1` で基点を確認、作業ブランチはoriginと同じコミットを指していた
