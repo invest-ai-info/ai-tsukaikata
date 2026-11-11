@@ -1027,3 +1027,18 @@
 ⚠️ **今日もコンテナが作り直されていて依存が消えていた**（`python3.13 -m pip install
 --break-system-packages -r requirements.txt`）＝11/09・11/10 と同じ。
 ⚠️ **`tools/check_freshness.py` は走らせていない**（週次の持ち物）。
+
+### 🚩 運用（追記）＝作業ツリーがまた detached HEAD だった
+
+**11/09 の運用🚩が再発。**`git push -u origin main` が「pushed branch tip is behind its remote counterpart」で
+2回拒否された。中身＝作業ツリーは `HEAD detached from refs/heads/main` で、ローカルの `main` ブランチの参照は
+`0aa14330`（`origin/main` に対して **ahead 50 / behind 50** の古い枝）のまま止まっていた。
+`-u origin main` は**その古いローカル `main`** を押そうとしていた（自分のコミットは detached HEAD 側にある）。
+
+- 直し方＝自分のコミットが `origin/main` の素直な続き（fast-forward）であることを
+  `git merge-base --is-ancestor origin/main HEAD` で確かめてから `git push origin HEAD:main`。これで通った
+- ⚠️ **ローカルの `main` ブランチには触っていない**（ahead 50 の中身が何かを確かめていないため。
+  `origin/main` が正）。次の担当も `git log --oneline -1 origin/main` で着地を確認すること
+- 📌 **手順0の「ずれていたら `git reset --hard origin/main`」は、detached HEAD のときは素通りする**
+  （`HEAD` と `origin/main` は一致しているので「ずれ」に見えない）。手順0に
+  `git rev-parse --abbrev-ref HEAD` を足したい（オーナー判断）
