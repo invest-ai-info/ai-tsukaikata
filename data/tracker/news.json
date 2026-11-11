@@ -15,6 +15,34 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-11T18:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
+      "summary_ja": "新しい「Gemini Decisions API」が登場しました。\n最先端モデル「Gemini Decision」を活用。\n様々な情報から素早く正確な判断が可能です。",
+      "summary_source": "gemini",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "uid": "b1b9f5511cd8c2fa",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-11T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
+      "summary_ja": "Googleがグループ向けの新コラボツールを発表。\n「Tabletop」は対話型日程表や投票を作成でき、\n現在はウェイティングリストで利用者を募集中です。",
+      "summary_source": "gemini",
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "uid": "6d5c7d6a1e4d5e72",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-11-11T15:18:00.931587+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -54,6 +82,20 @@
       "title": "ChatGPT Plus for veterans and servicemembers",
       "uid": "f58993416188dd4b",
       "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-11T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
+      "summary_ja": "JioStarの幹部が5億人規模のAI導入を語った。\nチーフアーキテクトのVijay Seshadri氏が、\nAIの評価や安全対策、本番運用に関する教訓を公開。",
+      "summary_source": "gemini",
+      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "uid": "bd254bc002dd43d1",
+      "url": "https://openai.com/index/jiostar-vijay-seshadri",
       "vendor": "OpenAI"
     },
     {
@@ -6065,44 +6107,6 @@
       "uid": "84a41b4e152051ce",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-13T19:28:08.765068+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-08-13T18:35:49+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.122.0 (2026-08-13) Full Changelog: v0.121.0...v0.122.0 Features api: add output_behavior to dream creation (create a new memory store or update the input store in place) ( 852c4bb ) Bug Fixes bedro…",
-      "title": "v0.122.0",
-      "uid": "258c7d230ca05f0b",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.122.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-13T17:15:19.173918+00:00",
-      "importance": "major",
-      "label": "DeepMind Blog",
-      "published": "2026-08-13T17:04:18+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Introducing Gemini 3.7 Flash",
-      "uid": "bee8914689fa7a6e",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-13T18:10:59.443436+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-13T16:45:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "The video shows Sheets canvas in action.",
-      "summary_ja": "Sheets canvasという新機能が登場しました\n表計算のデータをより分かりやすく表現\n実際の動きは動画で確認できます",
-      "summary_source": "gemini",
-      "title": "Bring your spreadsheet data to life with Sheets canvas",
-      "uid": "4bd32acd0d20328e",
-      "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
-      "vendor": "Google"
     }
   ]
 }

@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-11T22:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Metaの個人向けAIエージェント「Muse」がApple Watchに対応し、手首から作業を依頼したり、進行状況を確認したりする画面例が公開された。米App Storeの更新履歴では、バージョン15.0でApple Watch向けの連携アプリを追加したと案内している。",
+      "title": "MetaのAI「Muse」、Apple WatchとWear OSに対応--手首から指示や進捗確認",
+      "uid": "30f5021f6adba64b",
+      "url": "https://japan.cnet.com/article/35254741/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-11-11T22:03:58+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Googleは、ツールの選択や条件判定など選択肢から答えを選ぶ用途に特化した「Gemini Decisions API」を発表した。専用モデルを用い、テキストや画像などのマルチモーダル入力を1回の推論で評価し、確率と信頼度スコアを返す。従来のモデルより高速かつ安価に動作し、他社が先行する判断特化型AI市場への本格参入となる。",
+      "title": "Google、選択肢から答えを選ぶことに特化した「Gemini Decisions API」発表　回答を生成せず確率で返す",
+      "uid": "be885c740010b2be",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/12/2000003123/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-11T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIは「ChatGPT Enterprise」をAWS Marketplaceで提供開始した。企業は既存のAWSアカウントや契約枠でChatGPT Enterpriseを購入・管理できる。企業のAI調達はどう変わるのか。",
+      "title": "AWSで「ChatGPT Enterprise」を購入可能に　AWSアカウントで一括管理するメリットは",
+      "uid": "4b78582a459430b9",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003080/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-11T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの議論は「何ができるか」から「どう統制するか」へ――。Gartnerは2027年のトップ・トレンド10項目の大半を、自律型エージェントの統制と変化に耐える基盤の設計に充てた。一方で同社が「まだ不足している」とする、AIの頭脳に当たる3つの技術とは。",
+      "title": "「非言語系AI」はLLMの弱点を補えるか？　Gartner「2027年の戦略的テクノロジのトップ・トレンド」",
+      "uid": "56e0695b1838a52e",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2611/11/news089.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-11T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicは「Claude Enterprise」のセキュリティと管理機能の拡充を発表した。設定状況の一覧化やDLP連携、個人アカウントの遮断などによって、企業のAI統制とシャドーIT対策を支援する。",
+      "title": "Claude Enterpriseがセキュリティと管理機能を強化　DLP・EDR連携など新機能の全容は",
+      "uid": "5d6d8fc1ea7ff889",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003082/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-11T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "米Autodeskは、イタリア・ローマで鉄道業界向けの年次カンファレンス「Autodesk Rail Summit 2026」を開催した。設計情報のモデル化や共有にとどまらず、AIと人間が協働して目標とする成果の実現を目指す「成果志向のBIM」を提唱。鉄道インフラの設計から運用／維持管理までをデータでつなぐ戦略や、イタリアの鉄道グループによるAI活用事例などが紹介された。",
+      "title": "「成果志向のBIM」とは何か？　Autodeskが描くAI時代の鉄道インフラ",
+      "uid": "f19db5d0c7407b4f",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/12/news016.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-11T22:43:48.314132+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-11T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "2026年7月の仕様改訂によって、「MCP」は既存のWeb技術との親和性を高めました。これが意味するのは、企業の既存のAPIをAIエージェントから利用するための仕組みが整いつつあるということです。AIエージェントが自らAPIを選び、呼び出す時代に、API設計の何を見直す必要があるのかを考えます。",
+      "title": "「APIを呼ぶのは、もう人間ではない」　進化するMCPとOpenAPIとの“新しい関係”",
+      "uid": "6762a2f8277bf42b",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/12/news004.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-11T15:18:00.931587+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -2314,90 +2398,6 @@
       "title": "ガートナー、2027年の日本のIT支出はAI関連需要が堅調で前年比9.7％増と予測",
       "uid": "d81ac4d01db8ef79",
       "url": "https://ai.watch.impress.co.jp/docs/news/2154055.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-05T15:31:45.618492+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-05T07:01:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "フジテレビは11月5日、2027年10月をめどに、制作するすべてのドラマで作品や場面に応じてAIを活用できる体制を整えると発表した。すでに「救命病棟24時」など複数のドラマで生成AIを使っている。",
-      "title": "フジテレビ、全ドラマでAI映像活用へ　27年秋めどに体制整備",
-      "uid": "feebe31cac8e4f7e",
-      "url": "https://japan.cnet.com/article/35254441/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-05T15:31:45.618492+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-05T07:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "さまざまなAIモデルに書道に挑戦させ、作品を並べて鑑賞するというサイトが「AI書道コンクール」です。 続きを読む...",
-      "title": "AIに無理やり書道をやらせる「AI書道コンクール」が登場、画像生成AIではなく言語モデルに挑戦させる",
-      "uid": "46be96f4a0b0d711",
-      "url": "https://gigazine.net/news/20261105-ai-shodo/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-05T06:54:36.662801+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-05T06:47:57+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "パナソニック ホールディングス（以下、パナソニックHD）とパナソニックR&Dカンパニーオブアメリカ（以下、PRDCA）は、カリフォルニア大学バークレー校、NVIDIA、スタンフォード大学、ローマ・ラ・サピエンツァ大学、ItalAIの研究者らと共同で、指先の触覚に即応しながら器用な両手作業を行なうロボット操作AI「Tactile-Reactive Dexterous Manipulation（T-…",
-      "title": "パナソニックHDら、両手で作業するロボット操作AI「T-Rex」を開発 VLAモデルに指先の触覚情報を統合",
-      "uid": "a98f147592f2747c",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2153977.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-05T06:54:36.662801+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-05T06:40:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは11月4日、GIFアニメーションを作成できる画像生成機能「Images 2.6」を発表した。同日、ChatGPTとCodexの全プランで世界中への提供を開始した。デスクトップ、モバイル、ウェブで利用できる。",
-      "title": "ChatGPTでGIF動画、画像やスケッチから生成可能に--OpenAI「Images 2.6」全プランに提供",
-      "uid": "3cbfd36ee9e6dfda",
-      "url": "https://japan.cnet.com/article/35254418/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-05T06:54:36.662801+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-11-05T05:38:38+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "テンセントは、最新AIモデル「Tencent Hy4」をリリースした。Tencent Hyは今後、数日中にモデルウェイトとシステムカードを公開する予定。",
-      "title": "テンセント、視覚理解機能を搭載した最新AIモデル「Tencent Hy4」をリリース",
-      "uid": "0b19bef352142ccd",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2153953.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-05T06:54:36.662801+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-05T05:17:52+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "WOGOは11月5日、機械設計における図面・3D CAD作業を自律実行する「Hacadly AIエージェント」の提供を開始した。同AIエージェントは、ChatGPTやClaudeといったAIモデルと、同社独自の2D図面処理・3D計上処理の技術を組み合わせた設計支援サービス。会話での指示をもとに、図面やCADデータの読み取りから、モデルの生成・照合・修正までを実行できる。",
-      "title": "東大発WOGO、図面・3D作業を自律実行する「Hacadly AIエージェント」 ChatGPT/Claudeと独自の形状処理技術を統合した設計支援サービス",
-      "uid": "406158071784fd12",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2153933.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-05T06:54:36.662801+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-05T04:53:05+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは、画像生成・編集機能を強化した「ChatGPT Images 2.6」をリリースした。提供範囲は、ChatGPTおよびCodexのすべてのプランを対象に、デスクトップ、モバイル、Webでグローバルに提供される。",
-      "title": "アニGIFも作成可能になった「ChatGPT Images 2.6」 常に一貫性のある状態で編集可能に",
-      "uid": "b7cc8b79e13a23a6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2153926.html",
       "vendor": "Impress AI Watch"
     }
   ]
