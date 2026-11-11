@@ -43706,3 +43706,185 @@ def resale_guess_reference_data_and_source_chart() -> None:
 if __name__ == "__main__":
     resale_guess_naive_vs_told_unknown_chart()
     resale_guess_reference_data_and_source_chart()
+
+
+def carbon_ga_price_deadline_chart() -> None:
+    """Gemini 4 Carbon の一般提供開始で、値上がりの日付が判明したことを示す。
+
+    出典＝一般提供の発表ページ脚注（blog.google・2026-11-10）。
+    発表時点（10/28）は「導入期間がいつ終わるか非公表」だった。
+    """
+    rows = [
+        ("Gemini 4 Carbon（〜2026年11月30日）", 2, 10),
+        ("Gemini 4 Carbon（2026年12月1日から）", 4, 20),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">同じ金額、今回は値上がりの日付も判明</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。金額は発表時点（10月28日）から変わっていない。</text>\n',
+        '<text class="t-sm" x="18" y="64">一般提供の発表（11月10日）で、導入期間が終わる日付が初めて書かれた。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ キャッシュ済み入力は両時期とも入力価格の95%引き。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: 一般提供の発表ページ脚注。Gemini 4 Argonと同じ日付・同じ金額。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Carbon（〜2026年11月30日・入力2ドル出力10ドル）と、"
+        "Gemini 4 Carbon（2026年12月1日から・入力4ドル出力20ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。金額は10月28日の発表時点から変わっていないが、"
+        "導入期間が終わる日付（2026年12月1日）は今回の一般提供の発表で初めて判明した。"
+    )
+    (OUT / "carbon-ga-price-deadline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def carbon_ga_benchmarks_chart() -> None:
+    """モデルカードの比較表から、AA Index v5.0（総合指標）を5モデルで並べる。
+
+    出典＝Gemini 4 Carbon モデルカード（deepmind.google・2026-11-10公開）。
+    この表を作ったのはGoogleで、他社が自社で測った値ではない。
+    """
+    rows = [
+        ("Gemini 4 Carbon", 59),
+        ("Claude Opus 5.5", 58),
+        ("GPT-6 Astra", 57),
+        ("Gemini 4 Argon", 50),
+        ("Claude Fable 5.1", 49),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, pitch = 82, 20, 32
+    scale = span / 100.0
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "AA Index v5.0（総合指標）はCarbonが1位——ただしGoogle自身の表</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "目盛りは0〜100。この比較表を作ったのはGoogleで、他社が自社で測った値ではない。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 5}">'
+            f"{value:g}</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 出典: Gemini 4 Carbon モデルカード（2026年11月10日公開）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 8}">'
+        "※ 他のベンチマークでは順位が入れ替わる項目もある（本文参照）。</text>\n"
+    )
+    alt = (
+        "AA Index v5.0（Artificial Analysis Intelligence Index v5.0・総合指標）を"
+        "5モデルで比べた横棒グラフ。目盛りは0〜100。Gemini 4 Carbonが59で最高、"
+        "Claude Opus 5.5が58、GPT-6 Astraが57、Gemini 4 Argonが50、"
+        "Claude Fable 5.1が49。この表を作ったのはGoogleで、他社が自社で測った値ではない。"
+    )
+    (OUT / "carbon-ga-benchmarks.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def carbon_ga_safety_chart() -> None:
+    """安全性の2項目で、Carbon と Argon の数字を比べる（数字が小さいほど安全）。
+
+    出典＝一般提供の発表ページ本文（blog.google・2026-11-10）。
+    """
+    rows = [
+        ("1回の攻撃あたりの侵入成功率", 0.8, 3.1),
+        ("自動サイバー攻撃の成功率（Gray Swan）", 2.17, 9.86),
+    ]
+    left, right = 300, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 26
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">攻撃の成功率が下がった（数字が小さいほど安全）</text>\n',
+        '<text class="t-sm" x="18" y="45">濃い色＝Carbon、薄い色＝Argon。単位は％。</text>\n',
+        '<text class="t-sm" x="18" y="64">いずれもGoogle自身のレッドチーミング・外部機関（Gray Swan）による測定。</text>\n',
+    ]
+    for index, (name, carbon_v, argon_v) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((carbon_v, "bar-new", "Carbon"), (argon_v, "bar-old", "Argon"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"{value:g}%</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 44
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 誠実さベンチマークの合格率（高いほど良い・この図には入れていない）は本文参照。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: 一般提供の発表ページ本文。</text>\n"
+    )
+    alt = (
+        "Gemini 4 CarbonとGemini 4 Argonの安全性2項目を比べた横棒グラフ。数字が小さいほど安全。"
+        "1回の攻撃あたりの侵入成功率は、Carbonが0.8%・Argonが3.1%。"
+        "自動サイバー攻撃の成功率（Gray Swanの測定）は、Carbonが2.17%・Argonが9.86%。"
+        "いずれもCarbonのほうが低い（安全）。"
+    )
+    (OUT / "carbon-ga-safety.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    carbon_ga_price_deadline_chart()
+    carbon_ga_benchmarks_chart()
+    carbon_ga_safety_chart()

@@ -729,8 +729,8 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/gemini-4-carbon-is-now-available/
-  - 2026-11-10 自動追記（major・Google DeepMind「Gemini 4 Carbon is now available」）
+- [x] https://deepmind.google/blog/gemini-4-carbon-is-now-available/
+  - →保管: ✅ **2026-11-11: 公開した** → `content/tools/gemini-4-carbon-ga.md`
 - [ ] https://deepmind.google/blog/introducing-alphaproof-code/
   - 2026-11-10 自動追記（major・Google DeepMind「Introducing AlphaProof Code: a breakthrough in verifying complex software at depth」）
 
@@ -738,6 +738,32 @@
   - 2026-11-11 自動追記（major・Google DeepMind「AlphaGenome 2: Deciphering how cells read DNA to better understand disease」）
 
 ## 処理済み
+
+- https://deepmind.google/blog/gemini-4-carbon-is-now-available/ → **公開済み** content/tools/gemini-4-carbon-ga.md（2026-11-11・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/` へ到達（200）。
+    関連してGemini 4 Carbonモデルカード（新規公開）・Vertex AI料金ページ（`cloud.google.com/vertex-ai/generative-ai/pricing`→
+    `cloud.google.com/model-garden/pricing`に301転送）・Claude Opus 5.5の料金/モデル一覧ページ・GPT-6 Astraの
+    料金/モデルページに到達。出典7件すべて取得成功。図3枚（`carbon-ga-price-deadline` / `carbon-ga-benchmarks` /
+    `carbon-ga-safety`）。`check_numbers.py` は**23個すべて出典に存在**（1回目の実行は出典取得が一時的に
+    失敗し4個が「出典に無い」と誤報されたが、再実行で解消——`strip_markup`やURLの問題ではなくネットワークの
+    一時的な失敗だった）。pytest 794 passed・build 386ファイル。`check_readability.py` は60字以上13%
+    （目安15%以下、最長106字。初稿は121字の1文があり箇条書きに分けて修正済み）。
+  - 📌 記事の芯＝**10月28日の発表で「非公表」だった3点（値上がりの日付・コンテキストウィンドウ・知識の
+    締め切り）が、今回のモデルカードと一般提供の発表でまとめて判明した**。値上がりの日付（2026年11月30日）は
+    Gemini 4 Argonと完全に同じ。コンテキストウィンドウ（入出力合計100万トークン）・知識の締め切り
+    （2026年3月）も、Argonを作った後継モデルとして妥当な数字だった。
+  - 🔍 **モデルカードに、Carbon・Argon・GPT-6 Astra・Claude Opus 5.5・Claude Fable 5.1の5社比較表が
+    新規に加わった**（前回10/28時点は自社測定4項目のみ）。この記事が17項目すべてを数えたところ、
+    Carbonが最高値だったのは15項目、残り2項目（FrontierSWE 2はGPT-6 Astra、OSWorld-2.1はClaude Opus 5.5）は
+    他社が上だった。方針どおり「どちらが賢いか」の結論は書かず、Google自身が作った表である旨を明記した。
+  - ⚠️ **既定（long decodeを使わない）の出力トークン上限は、今回も確認できなかった。**Argon一般提供時の
+    記事で使った`ai.google.dev/gemini-api/docs/models/gemini-4-argon`に相当するCarbon用ページを
+    探したが、`ai.google.dev`は`aistudio.google.com`へ301転送し、転送先が経路遮断（`CONNECT tunnel
+    failed, response 403`）。次にGeminiのモデル詳細ページを使う担当は、まず`aistudio.google.com`が
+    許可リストに入っているか確認すること（`gemini-robotics-er2.md`の注記と同じ状態が続いている）。
+  - ⚠️ 安全性の数字（侵入成功率0.8%・自動攻撃成功率2.17%・誠実さベンチマーク92%）は、いずれも
+    Google自身のレッドチーミングか提携先（Gray Swan・Trajectory Labs）による評価で、他社モデルを
+    同条件で測った数字ではない。その旨を本文に明記した。
 
 - https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/ → **公開済み** content/tools/gemini-omni-1-2-flash.md（2026-11-08・公開）
   - `blog.google` に到達（200・約394KB、要約させず生HTMLから本文を抽出して確認した）。
