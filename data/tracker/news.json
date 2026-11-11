@@ -15,6 +15,34 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-11T15:18:00.931587+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-11-11T15:00:15+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
+      "summary_ja": "AlphaGenome 2が発表されました。\nDNAの並びや変化が特定の細胞や病気にどう影響するか予測。\n病気の理解を深めることを目指します。",
+      "summary_source": "gemini",
+      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+      "uid": "09223b92d0f19089",
+      "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+      "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-11-11T15:18:00.931587+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-11T09:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "A portrait of Dr Nontobeko Ntombela, Senior Lecturer, Department of Curatorial, Public and Visual Cultures, Wits School of Arts, University of the Witwatersrand",
+      "summary_ja": "Dr. Esther Mahlanguの芸術と遺産が紹介されます。\nWits芸術学校の講師、Dr Nontobeko Ntombela氏の肖像画も展示。",
+      "summary_source": "gemini",
+      "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+      "uid": "e4da809d689dbb27",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-11-11T06:33:31.072504+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -65,6 +93,20 @@
       "uid": "0e7f4d8884ff7f0a",
       "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
       "vendor": "Google DeepMind"
+    },
+    {
+      "first_seen": "2026-11-11T15:18:00.931587+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-11-10T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "写真左：マイケル・ロジャース氏、写真右：トム・モラン氏",
+      "summary_ja": "Sakana AIにシニアアドバイザーが就任しました。\n米退役海軍大将のマイケル・ロジャース氏と、\n元CIA支局長のトム・モラン氏です。",
+      "summary_source": "gemini",
+      "title": "マイケル・ロジャース米退役海軍大将、トム・モラン元CIA支局長がSakana AIのシニアアドバイザーに就任",
+      "uid": "97f362daf9d312ef",
+      "url": "https://sakana.ai/michael-tom/",
+      "vendor": "Sakana AI"
     },
     {
       "first_seen": "2026-11-10T17:54:08.433486+00:00",
@@ -148,6 +190,20 @@
       "title": "Closing the AI guidance gap in education",
       "uid": "6af57c15497b2ca2",
       "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-11T15:18:00.931587+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-10T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
+      "summary_ja": "シンガポール航空がOpenAI技術を活用。\n顧客サポートや従業員生産性を向上させました。\nチャットボット「Kris」の顧客満足度は2倍に。",
+      "summary_source": "gemini",
+      "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+      "uid": "4e6abb4d7a2451f4",
+      "url": "https://openai.com/index/singapore-airlines-travel-work",
       "vendor": "OpenAI"
     },
     {
@@ -6047,60 +6103,6 @@
       "uid": "4bd32acd0d20328e",
       "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-13T19:28:08.765068+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-13T11:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities.",
-      "summary_ja": "GPT-5.6の活用ガイドが公開されました\nより早く低コストでAIシステムを作る方法を解説\n賢いモデル選びや新API機能について学べます",
-      "summary_source": "gemini",
-      "title": "The builder’s guide to GPT‑5.6",
-      "uid": "a867dc6cc38cc8c2",
-      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-13T17:15:19.173918+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-13T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14× faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
-      "summary_ja": "OpenAIがAIの高速利用サービス「Ultrafast」を開始。\n「GPT-5.6 Sol」を最大14倍の速さで動かせるように。\nCerebras提供で、毎秒750トークン出力に対応。",
-      "summary_source": "gemini",
-      "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
-      "uid": "ae8216f90e901db2",
-      "url": "https://openai.com/index/previewing-ultrafast",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-13T17:15:19.173918+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-13T09:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI.",
-      "summary_ja": "OpenAIが最高収益責任者（CRO）を任命した。\nDali Rajic氏が就任し、グローバル収益組織を率いる。\n企業がAIの価値を最大限に活用できるよう支援する。",
-      "summary_source": "gemini",
-      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
-      "uid": "a0625f59bdd66d41",
-      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-13T08:45:37.262356+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-13T08:38:50+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack",
-      "title": "v2.1.231",
-      "uid": "15d33eba8d914dcd",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
-      "vendor": "Anthropic"
     }
   ]
 }

@@ -734,6 +734,9 @@
 - [ ] https://deepmind.google/blog/introducing-alphaproof-code/
   - 2026-11-10 自動追記（major・Google DeepMind「Introducing AlphaProof Code: a breakthrough in verifying complex software at depth」）
 
+- [ ] https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
+  - 2026-11-11 自動追記（major・Google DeepMind「AlphaGenome 2: Deciphering how cells read DNA to better understand disease」）
+
 ## 処理済み
 
 - https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/ → **公開済み** content/tools/gemini-omni-1-2-flash.md（2026-11-08・公開）
