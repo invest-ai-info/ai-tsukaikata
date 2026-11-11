@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-11T06:33:31.072504+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-12T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+      "summary_ja": "法律事務所がAIで業務を見直します\nGilbert + TobinのCEOがその取り組みを語ります",
+      "summary_source": "gemini",
+      "title": "Gilbert + Tobin rethinks the business of law with AI",
+      "uid": "200c65ab5974673a",
+      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-11T06:33:31.072504+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-11T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
+      "summary_ja": "退役軍人向けにAIツールを無償提供\n2万人以上がChatGPT Plusを1年間無料で利用\n民間企業への就職準備に役立てています",
+      "summary_source": "gemini",
+      "title": "ChatGPT Plus for veterans and servicemembers",
+      "uid": "f58993416188dd4b",
+      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-10T23:26:54.403401+00:00",
       "importance": "minor",
       "label": "Google AI Blog",
@@ -147,6 +175,20 @@
       "uid": "d6d95313bb2502bf",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.322",
       "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-11T06:33:31.072504+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-10T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Cogent combines OpenAI models with enterprise context to help automatically remediate vulnerabilities with agents.",
+      "summary_ja": "企業向けにAIでサイバー防御を強化\nCogentとOpenAIが連携して開発しました\nシステムの弱点をAIが自動で修正します",
+      "summary_source": "gemini",
+      "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+      "uid": "c478ef54b3f40092",
+      "url": "https://openai.com/index/cogent-security",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-10T17:54:08.433486+00:00",
@@ -6058,30 +6100,6 @@
       "title": "v2.1.231",
       "uid": "15d33eba8d914dcd",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-13T17:15:19.173918+00:00",
-      "importance": "major",
-      "label": "DeepSeek 新モデル",
-      "published": "2026-08-13T03:05:06+00:00",
-      "source_id": "hf-deepseek",
-      "summary": "HuggingFace に新しいモデル deepseek-ai/DeepSeek-V4-Pro-0813 が公開されました。",
-      "title": "deepseek-ai/DeepSeek-V4-Pro-0813",
-      "uid": "ec0f7682cbae739d",
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
-      "vendor": "DeepSeek"
-    },
-    {
-      "first_seen": "2026-08-14T19:16:35.990897+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-12T23:49:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "",
-      "title": "How Claude’s text watermark works",
-      "uid": "c7be9f553b9d4f72",
-      "url": "https://www.anthropic.com/news/claude-text-watermark",
       "vendor": "Anthropic"
     }
   ]
