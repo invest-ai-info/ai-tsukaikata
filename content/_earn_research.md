@@ -1413,3 +1413,44 @@ skips-newest-row`・`memo-chain-holds-until-it-summarizes-itself`はscene:automa
 2026-11-10 在庫十分（未処理10件）のためスキップ
 
 2026-11-11 在庫十分（未処理9件）のためスキップ
+
+### 2026-11-12 — 研究パック1件（源0＝H58を変換。あわせてH59を新規登録）
+
+在庫チェック＝副業節の未処理`- [ ]`は投入前で8件（9件未満のため研究に進んだ）。うち5件は
+⏸（経路遮断待ち。`conmark.jp`・`kdp.amazon.co.jp`・税理士系3ドメイン・A8系4ドメイン）、
+3件は源③（検索需要）発の着手可能枠。`www.conmark.jp`を`curl -sS -o /dev/null -w
+"%{http_code}"`で再測定＝`CONNECT tunnel failed, response 403`のまま変化なし（対照の
+coconala.comは200）。
+
+在庫の決まりに従い、先にH59「参考データの件数を増やし、日付を古くしても、無関係カテゴリへの
+誤流用は起きないか」を新規登録してからH58を変換した。発想元は`resale-price-guess-fills-
+the-blank`（2026-11-11公開）が末尾「試したのは、次の範囲までです」に残した宿題「参考データは
+4件・1カテゴリ分のみです。データの件数を増やした場合、データが古い場合は試していません」。
+同記事は小型キッチン家電4件（直近の日付）の参考データを渡し、無関係カテゴリ（折り畳み
+自転車）を聞いても誤流用は2回中0回だったことを確かめている。需要はWebSearchで確認——
+「AI 参考データ 件数 古いデータ 相場 誤用」「AI せどり 相場 データ量 増加 誤判定」に近い
+語で検索したが、参考データの件数や日付の古さが無関係カテゴリへの誤流用に与える影響を
+扱った記事・議論は見当たらなかった。
+
+H58の変換は`fifth-pattern-merges-with-a-lookalike`（2026-11-06公開）が残した宿題
+「意味の近さが無い5パターンの組み合わせでも同じことが起きるかは確かめていません」で、
+設計はH58登録時（2026-11-07）のものをそのまま使った。
+
+見送った新規候補は無い。源1（定番副業の台帳）・源4（検索需要。`docs/topic-candidates/`の
+earn向け最新は`2026-11-07-earn.md`で変化なし）は変化なし。11-08〜11-11に公開された
+`one-combined-post-swaps-a-number`・`bare-hour-time-slips-past-confirmation`・
+`resale-price-guess-fills-the-blank`以外の記事（`price-raise-email-keeps-numbers-adds-
+a-reason`・`ai-style-checklist-does-not-flag-humans`・`light-post-edit-term-keeps-ai-
+in-scope`）の宿題も見たが、直近公開（2026-11-11・scene:earn）の記事が残した宿題を優先し、
+他は次回以降の在庫として残す。
+
+`earn_queue_shortage`・`hypothesis_stock_empty`・`hypothesis_registration_gaps`を
+この環境で直接呼んで確認、いずれも正常（鳴らず・空）。`earn_demand_gaps`は1件の既存の赤を
+返した（担当が直接呼んで確認）＝副業節の`- [ ]`（⏸待ち）「アフィリエイト（ASP）の原資・門・
+入金は〜」が様式9番の「需要:」行を欠いたまま残っている。2026-11-07時点では4件だったが
+3件（SWOT・長尺動画二段方式・Kindle印税検索帯）は公開済みで解消しており、残る1件はこの
+担当の持ち物（源0＝仮説キュー）ではなく、該当項目自体が⏸（経路遮断）で着手できないため
+需要調査を代行せず、検査は直さず赤いまま次の担当へ申し送る。
+
+- →保管: 2026-11-12 研究パック1件（H58を変換。あわせてH59を新規登録）。促進項目
+  （`www.conmark.jp`）を再測定・変化なし
