@@ -6095,18 +6095,6 @@
       "uid": "2e2358c3a01077e1",
       "url": "https://openrouter.ai/qwen/qwen3.8-27b:batch",
       "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-14T00:01:18.717033+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-13T23:29:59+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Subagent forking is now on by default: a subagent_type: \"fork\" subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run i…",
-      "title": "v2.1.232",
-      "uid": "84a41b4e152051ce",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
-      "vendor": "Anthropic"
     }
   ]
 }
