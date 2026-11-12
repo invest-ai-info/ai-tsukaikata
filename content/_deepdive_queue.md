@@ -731,8 +731,31 @@
 
 - [x] https://deepmind.google/blog/gemini-4-carbon-is-now-available/
   - →保管: ✅ **2026-11-11: 公開した** → `content/tools/gemini-4-carbon-ga.md`
-- [ ] https://deepmind.google/blog/introducing-alphaproof-code/
+- [!] https://deepmind.google/blog/introducing-alphaproof-code/
   - 2026-11-10 自動追記（major・Google DeepMind「Introducing AlphaProof Code: a breakthrough in verifying complex software at depth」）
+  - **2026-11-12 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降これまでの17件と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` は200・gzip展開後約154KB。要約させず生HTMLから本文を抽出して確認した）
+
+    **② 中身が「暗号プロトコルの形式検証に関する研究発表」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - AlphaProof Code は、人間の専門家とAIエージェントが協力して、Signal の暗号プロトコル（実際に動いているコード）の
+      主要なセキュリティ特性を数学的に証明した、という研究成果の発表。検証に使ったエージェントは Gemini Carbon を
+      基盤としているが、AlphaProof Code 自体は製品やAPIとして提供されるものではなく、一般提供の時期・料金・
+      モデルカードは存在しない（成果物をオープンソース公開する予定とのみ）
+    - **本文を全文抽出して確認した数字は4つ**（生成したLeanコード600万行以上・人間の再確認が必要だったのは
+      コードベースの約1%・検証にかかった期間は約4週間〈専門家チームなら従来数年〉・過去に修正済みの実バグ
+      2件を再導入してどちらも機械的に「安全でない」と証明できた）。いずれも**この研究プロジェクト単体の
+      作業量・期間の実績**で、料金・性能ベンチマーク・提供条件の数字ではない
+    - 比較相手（他社の同種の「AIによる暗号プロトコルの形式検証」発表）も見つからず、読者（自動化したい
+      非エンジニアの会社員）が「どういう人に効くか」を判断できる要素が無い。対象はセキュリティ研究者・
+      暗号プロトコルの開発者であり、個人の自動化とは層が違う。モデルの新機能や価格改定でもないため、
+      このサイトの記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG 以降これまでの17件とほぼ同じ構造**（①は解けている・②＝数字はあっても
+      比較に使えない研究プロジェクト単体の実績／モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 - [ ] https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
   - 2026-11-11 自動追記（major・Google DeepMind「AlphaGenome 2: Deciphering how cells read DNA to better understand disease」）
