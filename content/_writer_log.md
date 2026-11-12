@@ -46,6 +46,23 @@
 
 ## 記録
 
+### 2026-11-12（自動化・ループ優先の枠。専任の別ルーティン）
+- `git fetch origin`→`git log origin/main -1`で基点確認。HEADがdetachedだがcommitは
+  origin/mainと一致していたため、`git checkout main && git reset --hard origin/main`で
+  ブランチに乗せてから着手
+- 公開: 1本（`recipes/shorter-limit-swaps-ellipsis-for-a-silent-drop`）。`### 自動化・ループ優先`節の
+  未処理先頭「字数指定を『100字』より短く（50字など）したら、通知の省略（『…』切れ）の
+  起きやすさは変わるか」（`longer-list-holds-the-limit-but-ellipsis-drops-the-ask`の未測定事項）を選んだ
+- 実測: Agentツール（general-purpose・新規セッション・事前知識なし）に、前の記事と同じ
+  SNS監視・問い合わせ監視の12件一覧を渡し、字数上限だけ100字→50字に変えた指示文を
+  材料2本×版2種（言い直し前・後）×各2回＝8回、追加の言い直し（質問数を数えてから要約）を
+  2回、補助の指示文を1回、計11回・6指示文を試した。結果＝「…」は11回とも0回だったが、
+  「採用に関する問い合わせ」行（原文に質問2つ）では言い直し前・後の計4回中2回、別々の点が
+  「…」を使わない言い換えで静かに脱落した（機械照合＝正規表現でキーワード有無を確認）。
+  生ログは`docs/evidence/shorter-limit-swaps-ellipsis-for-a-silent-drop.md`
+- 教訓: `content/_lessons.md` ★340を新規追加（字数を縮めると崩れ方が「…」から静かな脱落へ
+  移ることがある）。★32（2回転は材料2本・各2回）が再発
+
 ### 2026-11-11（自動化・ループ優先の回）
 - `git fetch origin`→`git log origin/main -1`で基点確認。HEADがdetachedのうえ
   origin/mainがforce-updateされていたため（`0aa1433→64df930`）、`git checkout main && git reset

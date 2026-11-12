@@ -43888,3 +43888,159 @@ if __name__ == "__main__":
     carbon_ga_price_deadline_chart()
     carbon_ga_benchmarks_chart()
     carbon_ga_safety_chart()
+
+
+def fifty_char_ellipsis_rate_chart() -> None:
+    """字数の上限を100字→50字に縮めたら「…」が出る回数はどう動いたか（2026-11-12）。
+
+    `longer-list-holds-the-limit-but-ellipsis-drops-the-ask` の100字条件（前の記事・
+    自分自身の実測値）と、この記事の50字条件（言い直し前・後の計8回）を並べる。
+    """
+    left, right = 300, 620
+    span = right - left
+    scale = span / 100
+    bar_h, bar_gap, group_gap = 14, 5, 30
+    group_h = bar_h * 2 + bar_gap + group_gap
+    top = 96
+
+    groups = [
+        ("問い合わせ監視・長い一覧", 50.0, "2/4回", 0.0, "0/4回"),
+        ("SNS監視・長い一覧", 0.0, "0/4回", 0.0, "0/4回"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "字数を100字から50字に縮めても、「…」が出た回数は増えなかった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "縦軸は2系統（問い合わせ監視・SNS監視）の長い一覧（12件）。横軸は、要約を試した"
+        "回のうち「…」で文が切れた割合。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "薄い色＝前の記事の100字条件（自分自身の実測）。濃い色＝この記事の50字条件"
+        "（言い直し前・後の計8回）。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "問い合わせ監視は100字で2/4回に「…」が出たが、50字では8回中0回だった。"
+        "</text>\n",
+    ]
+
+    for gi, (name, old_v, old_label, new_v, new_label) in enumerate(groups):
+        gy = top + gi * group_h
+        parts.append(f'<text class="t" x="18" y="{gy + bar_h + bar_gap / 2 + 4:.1f}">{_esc(name)}</text>\n')
+        for offset, (value, label, cls, tag) in enumerate(
+            ((old_v, old_label, "bar-old", "100字(前の記事)"), (new_v, new_label, "bar-new", "50字(今回)"))
+        ):
+            by = gy + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="186" y="{by + bar_h - 3:.1f}" text-anchor="end">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by:.1f}" width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3:.1f}">{label}</text>\n'
+            )
+
+    y = top + len(groups) * group_h + 6
+    notes = [
+        "SNSは100字でも「…」が0回なので、この記事（50字）でも変化を確かめられていない。",
+        "縮めて消えたのは「…」という見た目の崩れだけで、中身が保たれたかは別に確かめている（下の図）。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "字数の上限を100字から50字に縮めたときの「…」出現率を、問い合わせ監視・SNS監視の"
+        "長い一覧(12件)で比べた横棒グラフ。問い合わせ監視は、前の記事の100字条件で4回中2回"
+        "「…」が出たが、この記事の50字条件(言い直し前・後の計8回)では0回だった。SNS監視は"
+        "100字でも50字でも0回のまま変化していない。下の注記には、縮めて消えたのは見た目の"
+        "崩れだけで中身が保たれたかは別の図で確かめていることが書かれている。"
+    )
+    (OUT / "fifty-char-ellipsis-rate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def fifty_char_point_survival_chart() -> None:
+    """50字に縮めた6回で、「採用に関する問い合わせ」の2つの質問が残ったか（2026-11-12）。
+
+    原文の質問は①リモート勤務・地方拠点での採用は可能か ②応募書類は追加で必要なものがあるか。
+    「…」は1回も出ていないが、要約の言い換えそのものでどちらかが静かに消える回があった。
+    """
+    label_w = 170
+    col_w = 240
+    col_gap = 14
+    col_x = [18 + label_w + 14, 18 + label_w + 14 + col_w + col_gap]
+    row_h = 40
+    row_y0 = 112
+
+    rows = [
+        ("言い直し前\n1回目", True, True),
+        ("言い直し前\n2回目", True, False),
+        ("言い直し後\n1回目", False, True),
+        ("言い直し後\n2回目", True, True),
+        ("数えてから\n要約・1回目", True, True),
+        ("数えてから\n要約・2回目", True, True),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "「…」は出なくても、2つの質問の片方が静かに消える回があった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "「採用に関する問い合わせ」の原文には2つの質問がある。①リモート勤務・地方拠点は"
+        "可能か ②応募書類は追加で必要か。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "50字に縮めた6回すべてで「…」は0回だったが、言い直し前2回目は②が消え、"
+        "言い直し後1回目は①が消えた。</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "「要約する前に質問の数を数えて」と足した2回は、どちらも①②とも残った"
+        "（この2回での結果）。</text>\n",
+    ]
+
+    headers = ["①リモート/地方拠点", "②応募書類"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" y="{row_y0 - 14}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    for r, (label, p1, p2) in enumerate(rows):
+        ry = row_y0 + r * row_h
+        label_lines = label.split("\n")
+        n = len(label_lines)
+        start_y = ry + row_h / 2 - (n - 1) * 8 + 4
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{start_y + li * 16:.1f}">{_esc(line)}</text>\n'
+            )
+        for c, ok in enumerate((p1, p2)):
+            klass = "box-good" if ok else "box-bad"
+            tone = "t-good" if ok else "t-bad"
+            mark = "残った" if ok else "消えた"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]:.1f}" y="{ry + 4:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h - 8}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="{tone}" x="{col_x[c] + col_w / 2:.1f}" y="{ry + row_h / 2 + 4:.1f}" '
+                f'text-anchor="middle">{mark}</text>\n'
+            )
+
+    height = row_y0 + len(rows) * row_h + 16
+    alt = (
+        "「採用に関する問い合わせ」の行を50字に縮めた6回について、原文の2つの質問"
+        "(①リモート勤務・地方拠点での採用は可能か ②応募書類は追加で必要か)が残ったかを"
+        "示す表。言い直し前1回目は①②とも残った。言い直し前2回目は①は残り②(応募書類)が"
+        "消えた。言い直し後1回目は②は残り①(リモート/地方拠点)が消えた。言い直し後2回目は"
+        "①②とも残った。「要約する前に質問の数を数えて」と足した2回は、どちらも①②とも"
+        "残った。いずれの回も「…」という省略記号は使われていない。"
+    )
+    (OUT / "fifty-char-point-survival.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    fifty_char_ellipsis_rate_chart()
+    fifty_char_point_survival_chart()
