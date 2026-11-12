@@ -7564,91 +7564,222 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-11T19:50:28.216797+00:00"
+  },
+  {
+   "video_id": "NS220dAaRMo",
+   "title": "How to request and enable Daybreak Blue",
+   "url": "https://www.youtube.com/watch?v=NS220dAaRMo",
+   "published": "2026-11-11T21:10:28+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "OpenAIの管理コンソールでビジネス認証を行い、申請を提出してDaybreak Blueへのアクセス権を取得する手順を説明している。",
+    "ワークスペース全体またはロール単位でDaybreak Blueの利用を有効化し、ユーザーごとのアクセス権を管理する方法を紹介している。",
+    "Codexでのアクセス確認に加え、APIプラットフォーム上で新規プロジェクトを作成してAPIキーを発行する手順を解説している。"
+   ],
+   "for_whom": "Daybreak Blueの申請や組織内での権限設定を行いたいシステム管理者やセキュリティ担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T07:40:40.635420+00:00"
+  },
+  {
+   "video_id": "vdBDMj2UhDg",
+   "title": "How to enable PR security reviews with Codex Security",
+   "url": "https://www.youtube.com/watch?v=vdBDMj2UhDg",
+   "published": "2026-11-11T21:10:24+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Bring security reviews into your pull request workflow with Codex Security. Learn how to check your GitHub connection, request a review, work through a fix, and review the change again. Then configure automatic reviews for your repository, including triggers and severity thresholds.",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "CrrpfvbNyMw",
+   "title": "ChatGPT Images: Three Ways to Get Started",
+   "url": "https://www.youtube.com/watch?v=CrrpfvbNyMw",
+   "published": "2026-11-11T21:10:10+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "ChatGPT Images lets you create new images and edit existing images directly inside ChatGPT. Turn plain-language prompts into original images, explore different visual directions.\n\nIn this video, learn three ways to get started: creating an image from scratch, refining its look through conversation, and editing a photo you already have. Along the way, see how the details you share help guide the result.\n\nReady to try it? Open a chat to create something new or give an existing photo a different look: https://chatgpt.com/?utm_source=youtube&utm_medium=social&utm_campaign=CNT-chatgpt-images-three-ways-to-get-started&utm_content=description_try_chatgpt\n\nLooking for inspiration? Explore templates and trending images: https://chatgpt.com/images?utm_source=youtube&utm_medium=social&utm_campaign=CNT-chatgpt-images-three-ways-to-get-started&utm_content=description_explore_images",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "hUhr0JiVZZs",
+   "title": "How to run your first Codex Security scan",
+   "url": "https://www.youtube.com/watch?v=hUhr0JiVZZs",
+   "published": "2026-11-11T21:10:05+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Get started with Codex Security, from installing the plugin to running your first scan. Learn how to select a repository, add context, review findings, and generate a patch. Then follow the fix into GitHub and see how to use the CLI to bring security scans into your automation workflows.",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "2_z9c-6AOSc",
+   "title": "Mariko Mori's world of radiant light",
+   "url": "https://www.youtube.com/watch?v=2_z9c-6AOSc",
+   "published": "2026-11-12T00:14:53+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "美術家の森万里子氏が過去の体験をもとに、光の感覚を他者と共有するための映像作品を制作したと語っている。",
+    "テクノロジーと精神性は相反するものではなく、ツールは人の心を映す鏡のようなものだと森氏が自身の見解を述べている。",
+    "森氏が最新作の制作においてClaudeを活用し、海の波の動きを表現するコード等を共同制作したと紹介している。"
+   ],
+   "for_whom": "生成AIを活用したアート表現や創作事例に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T07:40:40.635420+00:00"
+  },
+  {
+   "video_id": "MnW6mm_dHpM",
+   "title": "New ChatGPT, Claude Whiteboards, Google Carbon: LIVE reaction",
+   "url": "https://www.youtube.com/watch?v=MnW6mm_dHpM",
+   "published": "2026-11-11T21:24:51+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIの新しいChatGPTがリリースされ、その革新的な機能と市場への影響について出演者が考察していると説明している。",
+    "Claudeの新しい「ホワイトボード」機能が、ビジネスにおける共同作業やアイデア出しにどのように活用できるかを紹介している。",
+    "Googleの新しいAI関連技術「Google Carbon」について、その可能性と将来的な展望について見解を述べている。"
+   ],
+   "for_whom": "AIの最新モデルや新機能の発表に常に注目している人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-2.5-flash",
+   "summarized_at": "2026-11-12T07:40:40.635420+00:00"
+  },
+  {
+   "video_id": "6DT8Cy2rnd0",
+   "title": "New ChatGPT, Claude Whiteboards, Google Carbon: LIVE reaction",
+   "url": "https://www.youtube.com/watch?v=6DT8Cy2rnd0",
+   "published": "2026-11-11T21:22:35+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-11-12T07:40:40.635420+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GoogleのGemini 4 CarbonやClaudeの新機能など、直近で発表された最新AI動向を配信者が紹介している。",
+    "ClaudeのWhiteboardsやSheets、Data機能により、データ分析業務などを代替・支援できる可能性に言及している。",
+    "Cursorのマルチプレイヤー機能やChatGPTのビジネス向け機能、StripeによるOpenRouter買収などを取り上げている。"
+   ],
+   "for_whom": "最新のAIツール動向や新機能をいち早く把握したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T07:40:40.635420+00:00"
   }
  ],
  "channels": {
   "nyanta": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "keito": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "saki": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "kosuke-google": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "jeff-su": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "two-minute-papers": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "iketomo": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "ai-daigaku": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "masao": {
    "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 0
+   "fail_streak": 1
   },
   "openai": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
+   "last_ok": "2026-11-12T07:40:40.635420+00:00",
    "fail_streak": 0
   }
  }
