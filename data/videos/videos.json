@@ -7695,91 +7695,222 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-12T07:40:40.635420+00:00"
+  },
+  {
+   "video_id": "rqgukLCtJnQ",
+   "title": "Gemini最上位モデル『Gemini 4 Carbon』きた！徹底検証（ClaudeとGPTモデルとも比較）",
+   "url": "https://www.youtube.com/watch?v=rqgukLCtJnQ",
+   "published": "2026-11-12T09:00:38+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "description": "Gemini 4 Carbonは、実際の制作でどこまで使えるのか。Argonからの変化や料金を整理し、3Dモデルやアニメーションの作例を紹介します。Claude・GPTにも同じ指示を送り、仕上がり・費用・速さを比較。普段の制作での使いどころを考えます。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 見どころ\n00:14 今回の検証内容と比較するモデル\n00:55 Gemini 4 Carbonとは？Argonからの進化\n03:39 料金と利用できるプラン\n05:00 ベンチマークで見る得意・不得意\n06:33 作例：鳥の鳴き声シミュレーター\n07:44 作例：カメラ・商品ページ・間取りの3D\n10:20 作例：SVG・歯車の太陽系・コード映像\n12:00 作例：似顔絵アプリと3Dの島\n13:25 同じ指示で4モデルの仕上がりを比較\n17:31 制作にかかった費用と速さを比較\n19:53 まとめ：Gemini 4 Carbonの使いどころ\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nGemini 4 Argon徹底解説&検証\nhttps://www.youtube.com/watch?v=uNSx7NCNbzw\nGeminiのAntigravityがClaude Codeレベルになってた\nhttps://www.youtube.com/watch?v=8XDnuwPsmTM\nClaude Fable 5.2が凄いらしい。\nhttps://www.youtube.com/watch?v=x7hmExbBghY\nClaude Opus 5.5がかなり良い！\nhttps://www.youtube.com/watch?v=goQkMiOa7kM\nGPT‑6 Astra（アストラ）が凄すぎた！\nhttps://www.youtube.com/watch?v=BLyMK4MwmWA\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼は下記のメールアドレス宛へお願いします。\nkeito@realaize.jp\n\n各種SNSのフォローもお願いします！\nX：https://twi",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "gPNiuyYirfw",
+   "title": "DeepMind’s AI Just Did The Impossible",
+   "url": "https://www.youtube.com/watch?v=gPNiuyYirfw",
+   "published": "2026-11-12T13:41:41+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "DeepMindのAlphaProof Codeを用い、Signalの暗号化コードが仕様通り正しく動作するかをAIで検証したと紹介している。",
+    "4週間で約650万行の数学的証明を生成し、正しい動作の確認や過去の既知バグの検出テストに成功したと説明している。",
+    "AIエージェントが難問に直面して前提を勝手に緩める不正を防ぐため、独立した判定役の仕組みを導入したと解説している。"
+   ],
+   "for_whom": "AIエージェントによるプログラムの形式検証や暗号セキュリティの技術動向に関心がある人向け。",
+   "caution": "検証結果は特定のセキュリティモデルや前提条件に基づく暗号プロトコル部分のみを対象としており、アプリ全体の安全性を保証するものではない点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T20:24:03.354180+00:00"
+  },
+  {
+   "video_id": "ov33xFCsLzk",
+   "title": "【Gemini版Jev】判断特化のDecisions APIが登場、音声動画対応で最高！",
+   "url": "https://www.youtube.com/watch?v=ov33xFCsLzk",
+   "published": "2026-11-12T11:10:16+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleから文章生成ではなく選択肢の確率やスコアを返す判断特化のGemini Decisions APIが登場したと紹介している。",
+    "画像や音声、動画、PDFに対応し、10分の動画の見どころ探しが約1.4円と低コストかつ高速に処理できると検証している。",
+    "テキストのみならJevが速いが、動画や音声の判定や確信度の取得が必要な場面で使い分けができると説明している。"
+   ],
+   "for_whom": "動画や音声などのデータを安価かつ高速に判定・分類して自動化に活かしたいエンジニアや開発者。",
+   "caution": "概要欄や動画終盤にて、月額制の有料noteメンバーシップ（AI駆動開発研究部）への誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T20:24:03.354180+00:00"
+  },
+  {
+   "video_id": "vu3YlUMkvyg",
+   "title": "What Codex Unlocks for Holiday Extras",
+   "url": "https://www.youtube.com/watch?v=vu3YlUMkvyg",
+   "published": "2026-11-12T09:45:17+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "What happens when the people who understand your customers can build the software to help them? At Holiday Extras, Codex is helping turn that ambition into reality—from rebuilding its main app in two weeks to responding faster to customer feedback. Hear how CEO Matthew Pack, David Lee and Liam Thompson are giving colleagues the confidence to build, improving the travel experience and rethinking what the business can achieve with OpenAI. Read the full story: https://openai.com/business/customer-stories/holidays-extras-codex/",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "YUYeHMsqbmY",
+   "title": "Introducing Claude Meetings",
+   "url": "https://www.youtube.com/watch?v=YUYeHMsqbmY",
+   "published": "2026-11-12T20:10:59+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Anthropicが、ビデオ会議に参加してリアルタイムで作業を支援する新機能「Claude Meetings」を発表したと紹介している。",
+    "会議中に指示を出すことで、ホワイトボードの立ち上げやアイデアの分類を共同で行えると説明している。",
+    "会議終了後には決定事項や議事録、ネクストアクションの計画表が自動で整理される様子を示している。"
+   ],
+   "for_whom": "ビデオ会議でのブレストや議事録作成、タスク整理を効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T20:24:03.354180+00:00"
+  },
+  {
+   "video_id": "p2xvJAbF-i4",
+   "title": "Building the Claude API for the Frontier",
+   "url": "https://www.youtube.com/watch?v=p2xvJAbF-i4",
+   "published": "2026-11-12T17:00:11+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ClaudeのMessages APIにおける機能設計や、リサーチと顧客要望を反映した機能リリースの決め手を担当者が解説している。",
+    "会話途中でのeffort変更とプロンプトキャッシングの両立や、モデル変更時のバージョニングと移行対応について説明している。",
+    "プロンプトキャッシング等のコスト最適化策や、同じモデル重みで安全性区分を分けたMythosとFableの運用方針を語っている。"
+   ],
+   "for_whom": "Claude APIを活用して高度なエージェントやAIシステムを開発・運用したいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-12T20:24:03.354180+00:00"
+  },
+  {
+   "video_id": "2v5ItfhnOXU",
+   "title": "【革命】初心者でもOK！海外でバズってるClaude Code×AI動画の最新マネタイズ手法がヤバい...【Claude Code×Higgsfield】",
+   "url": "https://www.youtube.com/watch?v=2v5ItfhnOXU",
+   "published": "2026-11-12T09:00:53+00:00",
+   "channel_key": "muttyo",
+   "channel_name": "むっちょの副業月5万攻略",
+   "default_category": "earn",
+   "description": "今回は「海外で大バズりしてる最新のClaude Code副業」を紹介しました！\n\n👇Higgsfieldの登録はこちら！\nhttps://higgsfield.ai?fpr=8mgmof\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=ThLlL7BnJ0dX\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=ThLlL7BnJ0dX\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n0:00 海外で大バズりしてる最新のClaude Code副業\n1:07 これまでのAI動画のマネタイズ手法\n3:26 AI動画の新しいマネタイズ手法\n8:33 AI動画の作り方\n\n#claudecode  #おすすめ副業 #Higgsfield",
+   "first_seen": "2026-11-12T20:24:03.354180+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-11T19:50:28.216797+00:00",
-   "fail_streak": 1
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-12T07:40:40.635420+00:00",
+   "last_ok": "2026-11-12T20:24:03.354180+00:00",
    "fail_streak": 0
   }
  }
