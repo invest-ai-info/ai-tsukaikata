@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-12T20:51:33.037243+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-12T20:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
+      "summary_ja": "AmplitudeがOpenAIを使い製品改善を高速化。\n自社AI「Wave」が開発内容を特定し、開発用AIで変更を1～2日で。\n製品改善の効果測定まで一貫して支援する。",
+      "summary_source": "gemini",
+      "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+      "uid": "94090de31129ee5b",
+      "url": "https://openai.com/index/amplitude",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-12T20:51:33.037243+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-12T18:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Rotating carousel of cards with text \"Gemini 4 Hydrogen\" \"Now in Google Search\" and examples from the Google Search UI",
+      "summary_ja": "Google検索に新AI「Gemini 4 Hydrogen」が搭載された。",
+      "summary_source": "gemini",
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+      "uid": "6c90212dd5be8cd1",
+      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "vendor": "Google"
+    },
+    {
       "first_seen": "2026-11-12T12:48:40.122445+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -6099,42 +6127,6 @@
       "uid": "1246398c4993fdfb",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-15T01:52:13.409322+00:00",
-      "importance": "major",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-14T15:55:10+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
-      "title": "qwen/qwen3.8-27b",
-      "uid": "3380dbec625f2419",
-      "url": "https://openrouter.ai/qwen/qwen3.8-27b",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-09-17T22:13:16.175456+00:00",
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-14T15:55:10+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
-      "title": "qwen/qwen3.8-27b:free",
-      "uid": "e0e92fbfb33ca169",
-      "url": "https://openrouter.ai/qwen/qwen3.8-27b:free",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-11-06T23:13:22.156164+00:00",
-      "importance": "minor",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-14T15:55:10+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thi…",
-      "title": "qwen/qwen3.8-27b:batch",
-      "uid": "2e2358c3a01077e1",
-      "url": "https://openrouter.ai/qwen/qwen3.8-27b:batch",
-      "vendor": "Alibaba Qwen"
     }
   ]
 }

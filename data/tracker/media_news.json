@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-12T20:51:33.037243+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-12T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "総務省統計局が、Pythonで統計解析と主要な分析手法を学ぶ無料オンライン講座「“わかる・使える”統計解析プログラミング」を2027年1月12日に新規開講する。主成分分析、回帰分析、ランダムフォレストから需要予測の演習まで、4週間の中身と受講の条件を整理する。",
+      "title": "総務省が新しい無料オンライン講座「統計解析プログラミング」を1月に開講　Pythonでのデータ分析が4週間で学べる",
+      "uid": "23b54d37e5ed8ad8",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/13/news013.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-12T20:51:33.037243+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-11-12T15:13:43+00:00",
+      "source_id": "media-publickey",
+      "summary": "Googleが提供するAIエージェントによる開発環境「Antigravity」に、新機能「リモートエージェント」が搭載されました。 We want Antigravity to be working for you all the time...",
+      "title": "Google Antigravity、クラウド上でAIエージェントが働く「リモートエージェント」機能を搭載。就業時間外でもAIエージェントは働き続ける",
+      "uid": "0b848e124f7dc25d",
+      "url": "https://www.publickey1.jp/blog/26/google_antigravityaiai.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-12T20:51:33.037243+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-12T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIにプログラムを作成させると短時間で動作するコードを得られますが、機能の追加を繰り返すうちに古い処理との整合性が崩れたりコードが複雑になったりすることがあります。こうした問題を調べるために開発され、AI自身が作ったコードに新しい仕様を段階的に追加させながら機能の維持や品質の変化を測定するベンチマークが「SlopCodeBench」です。 続きを読む...",
+      "title": "長期反復タスクにおけるAIコーディングエージェントの性能低下をベンチマークする「SlopCodeBench」",
+      "uid": "dd1d8648eb1b5a3a",
+      "url": "https://gigazine.net/news/20261112-slopcodebench/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-12T20:51:33.037243+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-12T13:36:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Googleは2026年10月16日にプライバシーポリシーを改定し、ユーザーがGmailやGoogleフォトの情報をパーソナライズド広告に対応する別のGoogleサービスで使うことを許可した場合、その情報が広告のカスタマイズにも使われることがあると明記しました。メールサービス「Proton Mail」を運営するProtonは、Google検索やGoogleマップなどを含む「検索サービス」とGma…",
+      "title": "GmailやGoogleフォトの情報をGoogle検索のAIや広告に使わせないための設定方法まとめ",
+      "uid": "1332fd5488b046d0",
+      "url": "https://gigazine.net/news/20261112-google-gmail-photos-search-ads/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-12T12:48:40.122445+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2351,54 +2399,6 @@
       "uid": "57f889d57576d16c",
       "url": "https://ai.watch.impress.co.jp/docs/news/2154401.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-06T10:59:17.380223+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-11-06T07:16:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIの元CTOであるミラ・ムラティ氏が設立したアメリカに拠点を置くAI研究企業「Thinking Machines Lab」が、AIモデル「Inkling 2 Small」を現地時間の2026年11月5日に発表しました。近日中にオープンモデルとして公開される予定です。 続きを読む...",
-      "title": "OpenAI元CTOのAI企業が高性能AIモデル「Inkling 2 Small」を発表、近日中にオープンモデルとして公開される予定",
-      "uid": "adf5c1048bbcff40",
-      "url": "https://gigazine.net/news/20261106-inkling-2-small/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-06T10:59:17.380223+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-06T07:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "WOGOは、機械設計における図面や3D CAD作業を自律実行する「Hacadly AIエージェント」の提供を開始した。大規模言語モデルと独自の図面／3D形状処理技術を組み合わせ、2D図面からの3Dモデル生成や、履歴のないCADデータからのフィーチャー再構築などを支援する。",
-      "title": "2D図面をAIで3Dモデル化、編集可能なフィーチャー履歴も再構築",
-      "uid": "b652d1f6e64ccb2e",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/06/news072.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-06T10:59:17.380223+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-11-06T06:32:41+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Boxは、組織がコンテンツを安全に管理し、重要なワークフローを自動化するとともに事業全体でAIを活用できる業界特化型ソリューション群「Box for Industries」を発表した。Box for Industriesを構成する製品の中で、まず始めに「Box for Banking」「Box for Public Sector」「Box for Media & Entertainment」の提…",
-      "title": "Box、各業界に合ったAI活用を提案するソリューション「Box for Industries」発表",
-      "uid": "109bdf27cfaadd81",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2154373.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-06T10:59:17.380223+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-11-06T06:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2026年11月、アメリカで中間選挙に合わせて行われた複数の住民投票でAIデータセンターに反対する声が非常に強かったことを受けて、OpenAIがAIデータセンターの展開にあたっては地域に最大限配慮していくという内容の約束を発表しました。 続きを読む...",
-      "title": "OpenAIが「AIデータセンターの電力やインフラは全額自己負担」「電気・水道の使用量を公表」などの約束を発表",
-      "uid": "fba78b559d39d032",
-      "url": "https://gigazine.net/news/20261106-openai-responsible-ai-infrastructure/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
