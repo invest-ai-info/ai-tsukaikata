@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-12T12:48:40.122445+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-12T09:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth.",
+      "summary_ja": "Holiday ExtrasがAI開発ツールでアプリ開発を変革。\n顧客の知識を活かしたアプリで、予約成約率が向上した。",
+      "summary_source": "gemini",
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "uid": "a31bfd9ad7b4b2e3",
+      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-11T06:33:31.072504+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -12,6 +26,20 @@
       "title": "Gilbert + Tobin rethinks the business of law with AI",
       "uid": "200c65ab5974673a",
       "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-12T12:48:40.122445+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-12T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
+      "summary_ja": "OpenAIがAIと子どもの安全に関する研究を支援。\n研究に200万ドルを拠出し、若年層のリスクと機会を測る\n共通ツールの開発を支援する。",
+      "summary_source": "gemini",
+      "title": "Supporting research on AI and children’s safety",
+      "uid": "0494efc5ced70114",
+      "url": "https://openai.com/index/children-first-declaration",
       "vendor": "OpenAI"
     },
     {
@@ -1354,6 +1382,18 @@
       "title": "moonshotai/kimi-k3.1-pro",
       "uid": "75bf2fad3f92fae7",
       "url": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "vendor": "Moonshot AI"
+    },
+    {
+      "first_seen": "2026-11-12T12:48:40.122445+00:00",
+      "importance": "minor",
+      "label": "Kimi 新モデル",
+      "published": "2026-10-23T17:56:28+00:00",
+      "source_id": "openrouter-moonshot",
+      "summary": "Kimi K3.1 Pro is Moonshot AI's flagship open-weight multimodal reasoning model and a post-trained successor to Kimi K3, with a 1M-token context window. It is built for long-horizon coding, 3D...",
+      "title": "moonshotai/kimi-k3.1-pro:batch",
+      "uid": "7b0cd04bbe411e17",
+      "url": "https://openrouter.ai/moonshotai/kimi-k3.1-pro:batch",
       "vendor": "Moonshot AI"
     },
     {
