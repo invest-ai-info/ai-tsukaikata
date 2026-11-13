@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-13T23:37:15.904374+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-13T20:40:01+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Fixed a security issue in how zstd-compressed responses are decoded Added a spinner tip in VS Code and similar integrated terminals about re-running a notebook cell, shown once Claude …",
+      "title": "v2.1.325",
+      "uid": "32df95ebf15991a9",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-13T17:47:21.349159+00:00",
       "importance": "major",
       "label": "OpenAI News",
