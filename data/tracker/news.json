@@ -41,6 +41,18 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-13T09:36:48.865953+00:00",
+      "importance": "major",
+      "label": "DeepMind Blog",
+      "published": "2026-11-12T18:00:50+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "",
+      "title": "Introducing Gemini 4 Hydrogen",
+      "uid": "18cf28afb3ad7abe",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-11-12T20:51:33.037243+00:00",
       "importance": "minor",
       "label": "Google AI Blog",

@@ -760,6 +760,9 @@
 - [ ] https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
   - 2026-11-11 自動追記（major・Google DeepMind「AlphaGenome 2: Deciphering how cells read DNA to better understand disease」）
 
+- [ ] https://deepmind.google/blog/introducing-gemini-4-hydrogen/
+  - 2026-11-13 自動追記（major・Google DeepMind「Introducing Gemini 4 Hydrogen」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-4-carbon-is-now-available/ → **公開済み** content/tools/gemini-4-carbon-ga.md（2026-11-11・公開）
