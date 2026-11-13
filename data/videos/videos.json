@@ -7826,91 +7826,209 @@
    "first_seen": "2026-11-12T20:24:03.354180+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "NU09RCn2svQ",
+   "title": "【有料級】動画から「操作手順書」を全自動生成する神ツールを無料公開します",
+   "url": "https://www.youtube.com/watch?v=NU09RCn2svQ",
+   "published": "2026-11-13T09:00:04+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-11-13T19:59:24.203989+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemini Canvas上で動画を読み込み、操作手順書を自動作成する自作ツール「G-Manual Studio」を紹介している。",
+    "動画からステップごとの画像抽出や説明文作成、番号付け、モザイク処理などの編集が可能と説明している。",
+    "作成した手順書は印刷対応のHTMLマニュアルや、AI音声ナレーション付きの解説動画として出力できると解説している。"
+   ],
+   "for_whom": "業務手順書や引き継ぎマニュアルの作成業務を、操作動画から自動生成して効率化したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-13T19:59:24.203989+00:00"
+  },
+  {
+   "video_id": "OoQG7KwE4cM",
+   "title": "Googleの最新AIモデル「Gemini 4 Hydrogen」徹底解説！ ～中位モデルながら全AIモデル中7位、無料ユーザーも利用可能な高速モデル～",
+   "url": "https://www.youtube.com/watch?v=OoQG7KwE4cM",
+   "published": "2026-11-13T09:05:48+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-13T19:59:24.203989+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleが日常作業やコーディング向けに高速性と効率を重視した中位AIモデル「Gemini 4 Hydrogen」を公開したと紹介している",
+    "ベンチマークで高いスコアを記録し、AIチャットのGeminiやGoogle AI Studio、API経由で利用可能だと説明している",
+    "Google Antigravityなどを用いたWeb制作や3Dゲーム、アニメーション動画の生成などの活用事例を解説している"
+   ],
+   "for_whom": "Geminiの最新モデルの特徴やベンチマーク、具体的な開発・活用事例を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-13T19:59:24.203989+00:00"
+  },
+  {
+   "video_id": "0N92RtzlqTs",
+   "title": "【徹底解説】『Gemini 4 Hydrogen』が突然登場！3.8 Flash後継の高速モデルで音声動画入力対応！",
+   "url": "https://www.youtube.com/watch?v=0N92RtzlqTs",
+   "published": "2026-11-12T23:30:30+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "今回の動画では、Googleから登場した高速・低コストモデル「Gemini 4 Hydrogen」について解説しました。\n\nGemini 3.8 Flashの後継で、1Mコンテキストウィンドウに加えて画像・動画・音声の入力にも対応した実行特化のモデルです。ベンチマークやコストの立ち位置を、Sonnet 5.5やGPT-6.1 Terraと比べながら見ていきました。\n\n速さと値段の割に賢い、個人的には結構好きなモデルです。一方で、デモではSonnetの強さを感じる場面も多かったです。\nみなさんはHydrogenをどんな用途で使ってみたいですか？ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Gemini 4 Hydrogen 登場の概要\n01:14 ベンチマークと料金の立ち位置\n03:35 CarbonとArgonとの役割の違い\n05:04 Gemini 3.8からの進化と外部評価\n08:41 Sonnetに近い使い分けと注意点\n09:19 動画分析でCarbonと比べた結果\n11:52 デモ比較: LPとUIの作り込み\n15:27 デモ比較: ゲームと3D表現\n16:59 デモ比較: 図解・スライド・サムネ\n19:08 デモ比較: 文章とSVGの出来\n20:44 まとめ: Hydrogenの使いどころ\n21:50 メンバーシップのご案内\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-11-13T19:59:24.203989+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "PkAmyub12K8",
+   "title": "How Mozilla uses GPT-6 Cyber to find and fix Firefox vulnerabilities",
+   "url": "https://www.youtube.com/watch?v=PkAmyub12K8",
+   "published": "2026-11-13T16:56:45+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-13T19:59:24.203989+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "MozillaがGPT-6 Cyber等のAIを活用し、Firefoxの脆弱性発見から検証・修正案作成までを行うパイプラインを構築したと紹介している。",
+    "動的テストによる検証や別エージェントによる二重チェックを行い、偽陽性を抑えつつ潜在的な高リスク脆弱性を再評価していると説明している。",
+    "既知のバグパターンを横断検索するバリアントスキャン等により、バグの発見と修正数が前年比で約8倍に達したと述べている。"
+   ],
+   "for_whom": "AIエージェントを活用してセキュリティ診断やバグ修正の自動化を進めたいエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-13T19:59:24.203989+00:00"
+  },
+  {
+   "video_id": "YmxpxJZvm4M",
+   "title": "Cyber at the Frontier",
+   "url": "https://www.youtube.com/watch?v=YmxpxJZvm4M",
+   "published": "2026-11-12T22:37:14+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "A live keynote featuring OpenAI's latest cyber announcements.",
+   "first_seen": "2026-11-13T19:59:24.203989+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "FQqipQudhIg",
+   "title": "【検証】HiggsfieldでTikTokは本当にバズるのか？",
+   "url": "https://www.youtube.com/watch?v=FQqipQudhIg",
+   "published": "2026-11-13T11:00:24+00:00",
+   "channel_key": "shizuma",
+   "channel_name": "ガチ検証｜シズマ",
+   "default_category": "earn",
+   "first_seen": "2026-11-13T19:59:24.203989+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Higgsfieldのモーション機能等を活用してAI猫動画を生成し、TikTokやInstagramでバズるかを検証している。",
+    "テンプレート動画の動きをトレースした動画は、TikTok側でオリジナルではないコンテンツとして公開制限を受けたと報告している。",
+    "動画生成ツールで簡単に量産できても簡単にバズって稼げるわけではなく、独自の工夫や規約への配慮が必要だとまとめている。"
+   ],
+   "for_whom": "AI動画生成ツールを用いたSNS運用や副業を検討している人",
+   "caution": "Higgsfieldのプロモーション動画であり、概要欄で割引リンクへ誘導しています。また、既存動画をトレースした生成物はSNSの規約違反やペナルティ対象となる恐れがあります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-13T19:59:24.203989+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-12T20:24:03.354180+00:00",
+   "last_ok": "2026-11-13T19:59:24.203989+00:00",
    "fail_streak": 0
   }
  }
