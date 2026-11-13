@@ -44173,3 +44173,143 @@ def all_stopped_drops_the_singular_answer_chart() -> None:
 
 if __name__ == "__main__":
     all_stopped_drops_the_singular_answer_chart()
+
+
+def ai_ok_writing_rate_vs_guideline_chart() -> None:
+    """クラウドワークスの実在募集4件の文字単価(税抜)と、相場目安0.5〜3円の帯を比べる図。
+
+    実測（2026-11-13・docs/evidence/ai-writing-rate-below-the-rule-of-thumb.md）。
+    Aは1,000円/500字、Bは2,000円/800〜1,200字（範囲のため2値）、Cは1,000円/500字、
+    Dは500円/7,000字。Dだけが目安の下限0.5円を大きく下回る。
+    """
+    plot_x, right = 300, 660
+    span = right - plot_x
+    scale = span / 3.3
+
+    def px(v: float) -> float:
+        return plot_x + v * scale
+
+    rows = [
+        ("A（テスト記事・500字・1,000円）", 2.0, 2.0),
+        ("B（1記事・800〜1,200字・2,000円）", 1.67, 2.5),
+        ("C（テスト記事・500字・1,000円）", 2.0, 2.0),
+        ("D（継続・7,000字・500円）", 0.0714, 0.0714),
+    ]
+    top, pitch, bar_h = 118, 36, 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">A・B・Cは相場目安の帯の中。Dだけ下限の約7分の1</text>\n',
+        '<text class="t-sm" x="18" y="45">クラウドワークスの実在の募集文4件（2026-11-13確認）の文字単価（税抜）。</text>\n',
+        '<text class="t-sm" x="18" y="64">点線はよく言われる目安「文字単価0.5円から3円くらい」の両端。</text>\n',
+        f'<text class="t-xs" x="{px(0.5) + 4:.1f}" y="{top - 24}">↑ 目安の下限0.5円</text>\n',
+        f'<text class="t-xs" x="{px(3.0) - 70:.1f}" y="{top - 24}">目安の上限3.0円 ↑</text>\n',
+    ]
+    for lo, label_y_offset in ((0.5, 0), (3.0, 0)):
+        x = px(lo)
+        parts.append(
+            f'<path class="line" d="M{x:.1f} {top - 14} L{x:.1f} {top + len(rows) * pitch - 10}" '
+            f'stroke-dasharray="4 3"/>\n'
+        )
+
+    y = top
+    for label, lo, hi in rows:
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(label)}</text>\n')
+        left_x, right_x = px(lo), px(max(hi, lo + 0.03))
+        bw = max(3.0, right_x - left_x)
+        parts.append(
+            f'<rect class="bar-new" x="{left_x:.1f}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        value_label = f"{lo:g}円" if lo == hi else f"{lo:g}〜{hi:g}円"
+        parts.append(
+            f'<text class="t-sm" x="{left_x + bw + 8:.1f}" y="{y + bar_h - 5:.1f}">{value_label}</text>\n'
+        )
+        y += pitch
+
+    y += 4
+    notes = [
+        "Dの文字単価は約0.07円。目安の下限0.5円の約7分の1で、A・B・Cとは一桁違う。",
+        "この0.07円という水準は、データを渡さずAIへ素朴に相場を聞いた3回では一度も出てこなかった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "クラウドワークスの実際の募集文4件（A・B・C・D）の文字単価と、よく言われる相場目安「0.5円から3円」の帯を並べた"
+        "横棒グラフ。Aは2.0円、Bは1.67円から2.5円の範囲、Cは2.0円、Dは0.07円。0.5円と3円の位置に縦の点線が引かれ、"
+        "A・B・Cはこの帯の中に収まるが、Dは0.5円の線より大きく左側にあり、帯から外れている。下の枠には、4件のうち"
+        "3件は目安の範囲に収まるが、Dだけが下限の7分の1まで下回ること、この0.07円という水準は素朴にAIへ相場を聞いた"
+        "3回では一度も出てこなかったことが書かれている。"
+    )
+    (OUT / "ai-ok-writing-rate-vs-guideline.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def ai_ok_writing_fee_before_after_chart() -> None:
+    """クラウドワークス実在募集4件の文字単価、表示（税抜）とシステム利用料20%後の手取りを比べる。
+
+    実測（2026-11-13）。料率はcrowdworks.jp/pages/guides/employee/fee（2026-11-13確認）の
+    10万円以下20%。4件とも契約金額が10万円以下なのでこの帯が適用される。
+    """
+    rows = [
+        ("A（500字・1,000円）", 2.0, 1.6),
+        ("B（800〜1,200字・2,000円、表示基準）", 1.6, 1.28),
+        ("C（500字・1,000円）", 2.0, 1.6),
+        ("D（7,000字・500円）", 0.0714, 0.0571),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">表示の文字単価は手数料を引く前。4件とも20%引かれて手取りになる</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝表示（税抜）、濃い色＝手取り（システム利用料20%後）。単位は円/字。</text>\n',
+        '<text class="t-sm" x="18" y="64">4件とも契約金額が10万円以下なので、同じ20%の帯が適用される。</text>\n',
+    ]
+    for index, (name, before, after) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((before, "bar-in", "表示"), (after, "bar-out", "手取り"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="190" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by:.1f}" width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3:.1f}">{value:g}円</text>\n'
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ 出典: ワーカーシステム利用料（crowdworks.jp・2026-11-13確認）。10万円以下の部分は20%。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ Bは募集文の表示単価（1.6円）を基準に計算。振込手数料は含まない。</text>\n"
+    )
+    alt = (
+        "クラウドワークスの実際の募集4件（A・B・C・D）について、表示されている文字単価（税抜）と、"
+        "システム利用料20%を引いた後の手取りの文字単価を並べた図。Aは表示2.0円から手取り1.6円、"
+        "Bは表示1.6円から手取り1.28円、Cは表示2.0円から手取り1.6円、Dは表示0.07円から手取り0.057円。"
+        "いずれも20%分だけ下がっている。下の枠には、募集文に出ている文字単価はシステム利用料を引く前の"
+        "金額であること、4件とも同じ20%が引かれるので順位は変わらないが実際の手取りはさらに下がることが"
+        "書かれている。"
+    )
+    (OUT / "ai-ok-writing-fee-before-after.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    ai_ok_writing_rate_vs_guideline_chart()
+    ai_ok_writing_fee_before_after_chart()

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="348" viewBox="0 0 720 348" role="img" aria-label="クラウドワークスの実際の募集4件（A・B・C・D）について、表示されている文字単価（税抜）と、システム利用料20%を引いた後の手取りの文字単価を並べた図。Aは表示2.0円から手取り1.6円、Bは表示1.6円から手取り1.28円、Cは表示2.0円から手取り1.6円、Dは表示0.07円から手取り0.057円。いずれも20%分だけ下がっている。下の枠には、募集文に出ている文字単価はシステム利用料を引く前の金額であること、4件とも同じ20%が引かれるので順位は変わらないが実際の手取りはさらに下がることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="348"/>
+<text class="t-strong" x="18" y="26">表示の文字単価は手数料を引く前。4件とも20%引かれて手取りになる</text>
+<text class="t-sm" x="18" y="45">薄い色＝表示（税抜）、濃い色＝手取り（システム利用料20%後）。単位は円/字。</text>
+<text class="t-sm" x="18" y="64">4件とも契約金額が10万円以下なので、同じ20%の帯が適用される。</text>
+<text class="t" x="18" y="94">A（500字・1,000円）</text>
+<text class="t-xs" x="190" y="93">表示</text>
+<rect class="bar-in" x="262" y="82.0" width="358.0" height="14" rx="2"/>
+<text class="t-sm" x="628.0" y="93.0">2円</text>
+<text class="t-xs" x="190" y="112">手取り</text>
+<rect class="bar-out" x="262" y="101.0" width="286.4" height="14" rx="2"/>
+<text class="t-sm" x="556.4" y="112.0">1.6円</text>
+<text class="t" x="18" y="149">B（800〜1,200字・2,000円、表示基準）</text>
+<text class="t-xs" x="190" y="148">表示</text>
+<rect class="bar-in" x="262" y="137.0" width="286.4" height="14" rx="2"/>
+<text class="t-sm" x="556.4" y="148.0">1.6円</text>
+<text class="t-xs" x="190" y="167">手取り</text>
+<rect class="bar-out" x="262" y="156.0" width="229.1" height="14" rx="2"/>
+<text class="t-sm" x="499.1" y="167.0">1.28円</text>
+<text class="t" x="18" y="204">C（500字・1,000円）</text>
+<text class="t-xs" x="190" y="203">表示</text>
+<rect class="bar-in" x="262" y="192.0" width="358.0" height="14" rx="2"/>
+<text class="t-sm" x="628.0" y="203.0">2円</text>
+<text class="t-xs" x="190" y="222">手取り</text>
+<rect class="bar-out" x="262" y="211.0" width="286.4" height="14" rx="2"/>
+<text class="t-sm" x="556.4" y="222.0">1.6円</text>
+<text class="t" x="18" y="259">D（7,000字・500円）</text>
+<text class="t-xs" x="190" y="258">表示</text>
+<rect class="bar-in" x="262" y="247.0" width="12.8" height="14" rx="2"/>
+<text class="t-sm" x="282.8" y="258.0">0.0714円</text>
+<text class="t-xs" x="190" y="277">手取り</text>
+<rect class="bar-out" x="262" y="266.0" width="10.2" height="14" rx="2"/>
+<text class="t-sm" x="280.2" y="277.0">0.0571円</text>
+<text class="t-xs" x="18" y="322">※ 出典: ワーカーシステム利用料（crowdworks.jp・2026-11-13確認）。10万円以下の部分は20%。</text>
+<text class="t-xs" x="18" y="340">※ Bは募集文の表示単価（1.6円）を基準に計算。振込手数料は含まない。</text>
+</svg>
