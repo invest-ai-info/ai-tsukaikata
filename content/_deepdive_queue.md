@@ -763,6 +763,9 @@
 - [ ] https://deepmind.google/blog/introducing-gemini-4-hydrogen/
   - 2026-11-13 自動追記（major・Google DeepMind「Introducing Gemini 4 Hydrogen」）
 
+- [ ] https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
+  - 2026-11-13 自動追記（minor・Google DeepMind「Opening the datasets behind our AI weather models」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/gemini-4-carbon-is-now-available/ → **公開済み** content/tools/gemini-4-carbon-ga.md（2026-11-11・公開）

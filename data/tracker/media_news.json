@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-13T17:47:21.349159+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-13T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "古いタブレットや小型デバイスでもAIモデルを動かせるようにするオープンソースプロジェクト「smolmaxxing」が公開されました。メモリ容量が限られた端末でもAIモデルを実行できるようにするもので、2013年発売の初代iPad Airや小型のテレビ用端末で動作が確認されています。 続きを読む...",
+      "title": "古いiPadやメモリ1GBの小型端末でも160億パラメータのAIをローカルで動かせる無料ツール「smolmaxxing」が登場",
+      "uid": "0301b5e6fbe67afa",
+      "url": "https://gigazine.net/news/20261113-smolmaxxing/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-13T17:47:21.349159+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-13T11:23:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "アメリカは高性能AIチップの中国への輸出を制限しており、中国も輸入を制限しています。しかし、AI研究組織のUnemployment Labsが複数の中国製AIモデルを分析した結果、制限対象GPUを用いて開発された痕跡が発見されました。 続きを読む...",
+      "title": "中国AI企業は禁輸措置中でもNVIDIAのBlackwell世代AIチップを使って高性能AIを作っていた",
+      "uid": "ad6c7bd1e74ae40d",
+      "url": "https://gigazine.net/news/20261113-china-ai-nvidia-blackwell-gpu/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-13T17:47:21.349159+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-13T10:21:56+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "NTT西日本は11月13日、フィジカルAIの発展・振興および次世代を担う人材の育成に向けて、京都大学成長戦略本部との連携を強化すると発表した。",
+      "title": "NTT西日本、フィジカルAI分野での人材育成を京都大学と推進",
+      "uid": "695ffd45b7c89068",
+      "url": "https://ai.watch.impress.co.jp/docs/news/2156428.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
+      "first_seen": "2026-11-13T17:47:21.349159+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-13T09:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "人気インディーゲーム「Big Walk」の開発元がゲームのプログラムのごく一部に生成AIを使用したことを公表したところ、400件以上の低評価レビューが殺到する事態となりました。生成AIが関わったコードは全体の0.1％未満で、主に技術的な問題の調査や不具合の修正に利用されたとのこと。生成AIの使用を巡ってゲーム開発者やゲーム賞の審査員の間でも議論が広がっています。 続きを読む...",
+      "title": "ゲームのコードのわずか0.1％未満にAIを使用したことを公表しただけで400件以上の低評価レビューが殺到",
+      "uid": "d6e9de7e64c00860",
+      "url": "https://gigazine.net/news/20261113-indie-game-used-ai-bad-review/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-13T09:36:48.865953+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2351,54 +2399,6 @@
       "uid": "86653c9f9779e56a",
       "url": "https://japan.cnet.com/article/35254604/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-09T08:01:39.125460+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-09T06:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "金融大手のゴールドマン・サックスが、一部の従業員による「Claude Code」や「GitHub」の利用を制限していると報じられています。 続きを読む...",
-      "title": "ゴールドマン・サックスは銀行員やトレーダーによるAIコーディングエージェントの使用を制限している、なぜか？",
-      "uid": "f3a27a0df30c22f2",
-      "url": "https://gigazine.net/news/20261109-goldman-sachs-restricts-ai/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-09T08:01:39.125460+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-09T05:48:25+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ロボットバンクは、フィジカルAIを活用した具身AIロボットを、継続的に開発するとした方針を発表した。第一弾製品として、四足歩行ロボットの製品開発プロジェクトを始動した。",
-      "title": "ロボットバンク、産業向け四足歩行ロボットの開発に着手 具身AIロボットの自社製品開発を始動",
-      "uid": "929ac4cfa13ebade",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2154818.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-09T08:01:39.125460+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-09T05:10:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI物理学スタートアップのPhysical Superintelligence(PSI)が2026年11月6日、2008年から未解決だった量子コンピューティングの難問「アーロンソン＝アンバイニス予想」の証明に成功したと発表しました。証明にはAnthropicの非公開AIモデルを組み込んだ研究システムが使われており、数学的な証明をコンピューターで検証する「Lean」による確認も完了しているとのこと…",
-      "title": "Anthropicの非公開AIモデルを使って18年間未解決だった量子コンピューターの難問が証明される",
-      "uid": "5d88b5887d9bb792",
-      "url": "https://gigazine.net/news/20261109-anthropic-psi-aaronson-ambainis/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-09T08:01:39.125460+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-09T04:58:58+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Preferred Networksは11月9日、国産生成AI基盤モデル「PLaMo」をベースに金融機関の実務利用を想定した金融特化型の小規模言語モデル（SLM）「PLaMo 3.0 Fin」を開発し、同社の「Hugging Face」ページでオープンウェイトモデルとして公開した。セキュリティ要件の厳しい金融機関向けに、クラウドの閉域環境やオンプレミス環境への導入にも対応している。",
-      "title": "PFN、金融特化型のSLM「PLaMo 3.0 Fin」をHugging Faceで公開",
-      "uid": "682fe1d99b19bce6",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2154802.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }

@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-13T17:47:21.349159+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-13T15:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+      "summary_ja": "AIが支払いする機能が登場。\nChatGPT Workなど複数のAIが決済を実行。\n利用者の承認とカード保護で安全に購入。",
+      "summary_source": "gemini",
+      "title": "Introducing ChatGPT Wallet",
+      "uid": "b36ab0c8dedd5b12",
+      "url": "https://openai.com/index/introducing-chatgpt-wallet",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-13T01:52:18.105904+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -313,6 +327,20 @@
       "uid": "f3a300a7f7ad7528",
       "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
       "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-13T17:47:21.349159+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-11-10T11:13:04+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
+      "summary_ja": "AI天気モデルのデータが公開。\n降水量と静止衛星の基本データを提供。\n地球の様子をより明確に観測可能に。",
+      "summary_source": "gemini",
+      "title": "Opening the datasets behind our AI weather models",
+      "uid": "2a417fa9c7f84446",
+      "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+      "vendor": "Google DeepMind"
     },
     {
       "first_seen": "2026-11-10T23:26:54.403401+00:00",
