@@ -4143,3 +4143,40 @@ judgment-holds-across-x-and-note`以降に公開された記事の宿題も見�
 
 - →保管: 2026-11-03 研究パック1件（H55を変換。あわせてH56を新規登録）。促進項目
   （`www.conmark.jp`）を再測定・変化なし
+
+## 2026-11-14 回転
+
+### 2026-11-04 — 研究パック1件（源0＝H56を変換。あわせてH57を新規登録）
+
+在庫チェック＝副業節の未処理`- [ ]`は投入前で8件（9件未満のため研究に進んだ）。
+`www.conmark.jp`を`curl -sS -o /dev/null -w "%{http_code}"`で再測定＝`CONNECT tunnel failed,
+response 403`のまま変化なし（対照のcoconala.comは200）。
+
+在庫の決まりに従い、先にH57「止まる処理が2本から3本に増えても、複数形の指示文は全部
+名指しできるか、単数形で落とす本数は増えるか」を新規登録してからH56を変換した。発想元は
+`simultaneous-stop-both-get-named`（2026-11-04公開）が末尾「試したのは、次の範囲までです」
+に残した宿題「同時に止まったのは常に2本まで。3本以上が同時に止まる場合は試していません」。
+需要はWebSearchで確認——並列処理の停止検知・スタック検知を扱う一般的な記事はあったが、
+同時に3本以上止まったときの名指し漏れや単数形の聞き方の崩れを扱った記事・議論は
+見当たらなかった。
+
+H56の変換は`headline-count-slips-at-four-patterns`（2026-10-31公開）が残した宿題
+「文末パターンは4種のみです。5つ以上に増やした場合は試していません」で、設計はH56登録時
+（2026-11-03）のものをそのまま使った。
+
+見送った新規候補は無い。源1（定番副業の台帳）・源4（検索需要。`docs/topic-candidates/`の
+earn向け最新は`2026-10-10-earn.md`で変化なし）は変化なし。11-01〜11-03に公開された
+`mixed-endings-both-clear-in-one-pass`・`one-sentence-sample-still-hits-the-named-ratio`・
+`pr-disclosure-judgment-holds-across-x-and-note`・`same-chat-two-clients-named-every-time`・
+`review-reply-specific-ask-leaks-names`の宿題も見たが、直近公開（2026-11-04・scene:automate）
+の記事が残した宿題を優先し、他は次回以降の在庫として残す。
+
+`earn_queue_shortage`・`hypothesis_stock_empty`・`hypothesis_registration_gaps`・
+`earn_demand_gaps`をこの環境で直接呼んで確認、いずれも正常（鳴らず・空）。
+
+- →保管: 2026-11-04 研究パック1件（H56を変換。あわせてH57を新規登録）。促進項目
+  （`www.conmark.jp`）を再測定・変化なし
+
+2026-11-05 在庫十分（未処理10件）のためスキップ
+
+2026-11-06 在庫十分（未処理9件）のためスキップ
