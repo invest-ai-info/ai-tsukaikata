@@ -34912,9 +34912,215 @@ def temporary_outage_recovery_timeline_chart() -> None:
     )
 
 
+def window_width_accuracy_chart() -> None:
+    """4つの基準で、9情報源の判定が何件中何件正解したかを比べる。
+
+    実測（2026-11-14）。「どこかで10日以上連続0」は、過去に止まって復活した相手(Y)と
+    更新間隔がもともと長い健全な相手(R)の両方を誤判定した（7/9）。「直近5回」に絞ると
+    Yは直ったがRはまだ誤判定（8/9）。「あいまいに判定してください」と、Rの間隔に
+    合わせて「直近7回」に広げた版は、どちらも2回とも9/9だった。
+    """
+    label_x = 18
+    plot_x = 300
+    plot_w = 320
+    axis_max = 100
+    scale = plot_w / axis_max
+    top = 128
+    row_h = 32
+    bar_h = 16
+
+    def px(pct: float) -> float:
+        return plot_x + pct * scale
+
+    rows = [
+        ("①どこかで10日以上連続0", 7, 9, "box-bad"),
+        ("②直近5回（点検17〜21）", 8, 9, "box-bad"),
+        ("③あいまい（判定してください）", 9, 9, "box-good"),
+        ("④直近7回（点検15〜21・相対でも同じ）", 9, 9, "box-good"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "窓を「直近5回」に絞るとYは直るが、Rは新たに誤判定される</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "9情報源（P・Q・R・S・T・U・V・W・Y）に、同じ基準の書き方を2回ずつ当てた正解数。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "Yは「過去に止まって今は復活した」相手、Rは「更新間隔がもともと長い健全な」相手。"
+        "</text>\n",
+    ]
+
+    y = top
+    zx = px(0)
+    for label, correct, total, cls in rows:
+        ty = y + 10
+        pct = correct / total * 100
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 10}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{cls}" x="{px(0):.1f}" y="{ty - 10}" '
+            f'width="{max(px(pct) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        tcls = "t-accent" if correct == total else "t-bad"
+        parts.append(
+            f'<text class="{tcls}" x="{px(axis_max) + 12:.1f}" y="{ty}">{correct}/{total}</text>\n'
+        )
+        y += row_h
+
+    plot_bottom = y - (row_h - bar_h)
+    parts.append(
+        f'<path class="line" d="M{zx:.1f} {top - 20:.1f} L{zx:.1f} {plot_bottom:.1f}" '
+        f'stroke-dasharray="4 3"/>\n'
+    )
+
+    notes = [
+        "①は2回ともYとRの両方を「停止」と誤判定した（7/9）。",
+        "②は2回ともYは直ったが、Rはまだ「停止」と誤判定した（8/9）。",
+        "③と④は2回とも9/9で、YとRのどちらも誤判定しなかった。",
+    ]
+    y += 8
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "4つの基準で、9情報源（P・Q・R・S・T・U・V・W・Y）の判定が何件中何件正解したかを比べた横棒グラフ。"
+        "「①どこかで10日以上連続0」は7件中7件のうち2件（YとR）を誤判定し7/9。"
+        "「②直近5回（点検17〜21）」はYは直ったがRはまだ誤判定で8/9。"
+        "「③あいまい（判定してください）」は9/9。"
+        "「④直近7回（点検15〜21、相対表現『表の末尾7行』でも同じ）」は9/9。"
+        "下の枠には、①は2回ともYとRの両方を誤判定し、②は2回ともYは直ったがRはまだ誤判定し、"
+        "③と④は2回とも9/9でどちらも誤判定しなかったことが書かれている。"
+    )
+    (OUT / "window-width-accuracy-by-criterion.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def comeback_slow_source_timeline_chart() -> None:
+    """Y（復活した相手）とR（更新間隔がもともと長い相手）の新着件数を21日分並べる。
+
+    実測（2026-11-14）。Yは1〜4日目に新着があり、5〜14日目の10日間はゼロ、
+    15日目以降に復活する。Rは1日目と15日目だけ新着があり、16日目以降はゼロ。
+    「直近5回（点検17〜21）」の枠にはYの新着（18・21日目）は入るがRの新着（15日目）は入らない。
+    「直近7回（点検15〜21）」の枠にはどちらの新着も入る。
+    """
+    label_x = 18
+    plot_x = 190
+    cell_w = 24
+    cell_h = 18
+    days = 21
+    top = 140
+    row_h = 34
+
+    def px(day_index: int) -> float:
+        return plot_x + day_index * cell_w
+
+    y_new = {1, 4, 15, 18, 21}
+    r_new = {1, 15}
+    rows = [
+        ("Y（過去に止まって復活した相手）", [d in y_new for d in range(1, days + 1)]),
+        ("R（更新間隔がもともと長い相手）", [d in r_new for d in range(1, days + 1)]),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "Rの最後の新着（15日目）は、直近5回の枠の外にある</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "YとRについて、新着があった日（緑）と無かった日（グレー）を21日分並べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "内側の破線枠は「直近5回」（点検17〜21）、外側の破線枠は「直近7回」（点検15〜21）。"
+        "</text>\n",
+    ]
+
+    y = top
+    row_tops = []
+    row_bottoms = []
+    for label, has_new in rows:
+        ty = y + 10
+        row_tops.append(ty - cell_h + 2)
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for d in range(days):
+            cls = "box-good" if has_new[d] else "box-quiet"
+            parts.append(
+                f'<rect class="{cls}" x="{px(d):.1f}" y="{ty - cell_h + 2:.1f}" '
+                f'width="{cell_w - 2}" height="{cell_h}" rx="2"/>\n'
+            )
+        row_bottoms.append(ty + 2)
+        y += row_h
+
+    for d in (0, 4, 9, 14, 16, 18, 20):
+        parts.append(
+            f'<text class="t-xs" x="{px(d) + (cell_w - 2) / 2:.1f}" y="{top - 14:.1f}" '
+            f'text-anchor="middle">{d + 1}</text>\n'
+        )
+
+    # 外側＝直近7回（点検15〜21＝インデックス14〜20）
+    hl7_x = px(14)
+    hl7_w = 7 * cell_w - 2
+    hl_top = row_tops[0] - 4
+    hl_bottom = row_bottoms[-1] + 4
+    parts.append(
+        f'<rect class="box" x="{hl7_x:.1f}" y="{hl_top:.1f}" width="{hl7_w:.1f}" '
+        f'height="{hl_bottom - hl_top:.1f}" rx="4" fill="none" stroke-dasharray="4 3"/>\n'
+    )
+    parts.append(
+        f'<text class="t-xs" x="{hl7_x:.1f}" y="{hl_top - 20:.1f}">直近7回（点検15〜21）</text>\n'
+    )
+
+    # 内側＝直近5回（点検17〜21＝インデックス16〜20）
+    hl5_x = px(16)
+    hl5_w = 5 * cell_w - 2
+    parts.append(
+        f'<rect class="box-accent" x="{hl5_x:.1f}" y="{hl_top + 6:.1f}" width="{hl5_w:.1f}" '
+        f'height="{hl_bottom - hl_top - 12:.1f}" rx="4" fill="none" stroke-dasharray="2 2"/>\n'
+    )
+    parts.append(
+        f'<text class="t-accent" x="{hl5_x:.1f}" y="{hl_top - 6:.1f}">直近5回（点検17〜21）</text>\n'
+    )
+
+    y += 6
+    notes = [
+        "Yの新着ゼロは5〜14日目の10日間続く。「どこかでの10日連続ゼロ」はここを拾う。",
+        "Rの最後の新着は15日目。直近5回（点検17〜21）の枠には入らないが、",
+        "直近7回（点検15〜21）の枠には入るので、窓を広げるとRも正しく「正常」に戻る。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "YとRについて、新着があった日（緑）と無かった日（グレー）を21日分並べたタイムライン図。"
+        "Yは1・4日目に新着があり、5〜14日目の10日間は新着ゼロが続き、15・18・21日目に新着が復活する。"
+        "Rは1日目と15日目だけ新着があり、16日目以降21日目まではずっと新着ゼロ。"
+        "グラフには内側（点線・青枠）に「直近5回（点検17〜21）」、"
+        "外側（破線・グレー枠）に「直近7回（点検15〜21）」の2つの枠が重ねられている。"
+        "直近5回の枠にはYの新着（18・21日目）は入るが、Rの新着（15日目）は入らない。"
+        "直近7回の枠にはYとRどちらの新着も入る。"
+        "下の枠には、Yの新着ゼロが5〜14日目の10日間続くこと（『どこかでの10日連続ゼロ』がここを拾うこと）、"
+        "Rの最後の新着が15日目で直近5回の枠の外にあること、"
+        "直近7回に広げるとRも正しく『正常』に戻ることが書かれている。"
+    )
+    (OUT / "comeback-and-slow-source-new-item-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     notice_split_accuracy_chart()
     temporary_outage_recovery_timeline_chart()
+    window_width_accuracy_chart()
+    comeback_slow_source_timeline_chart()
 
 
 def cancellation_note_detection_rates_chart() -> None:
