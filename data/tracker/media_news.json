@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-14T06:32:41.993487+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-14T04:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ゲーム開発にAIを活用することに対しては賛否両論ありますが、世界最大級のゲーム開発者会議であるGDCの最新レポートから、業界で活躍する開発者の40％が生成AIを利用していることが明らかになりました。 続きを読む...",
+      "title": "ゲーム開発者の40％が生成AIを使用しているもののそれ以上に多くの人が生成AIは有害だと考えている",
+      "uid": "5aa7ab4102731527",
+      "url": "https://gigazine.net/news/20261114-developers-games-industry-using-generative-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-14T06:32:41.993487+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-14T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "学術出版業界ではAIによって大量生産された低品質なコンテンツ、いわゆる「AIスロップ」が問題視されつつあります。科学技術系フリーライターのベンジャミン・スクーゼ氏はAIツールを用いて偽造論文を生成する実証実験を通じ、学術出版システムの未来に関する考察を行いました。 続きを読む...",
+      "title": "AIを使って科学論文を偽造してみたらこうなった",
+      "uid": "10c631b10f8ef31d",
+      "url": "https://gigazine.net/news/20261114-ai-generated-scientific-papers/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-13T23:37:15.904374+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2375,30 +2399,6 @@
       "uid": "63546c5abc7debce",
       "url": "https://www.publickey1.jp/blog/26/googlekubernetes10aiagent_sustrategvisorcncf.html",
       "vendor": "Publickey"
-    },
-    {
-      "first_seen": "2026-11-09T18:51:21.471890+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-09T10:55:22+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Metaは、最新AIモデル「Muse Wonder」を用いて訓練された特化型モデルを発表し、MuseおよびMeta AIへの導入を開始した。この更新により、「Personal Superintelligence Index」におけるMuseモデルのスコアは、従来の38%から47%に上昇した。",
-      "title": "Meta、MuseとMeta AIに特化型モデルを順次導入",
-      "uid": "3d20e0f5984addff",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2154956.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-09T18:51:21.471890+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-09T10:52:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "AI開発企業のZyphraがAIエージェントツール「MAIA」のベータ版を公開しました。 続きを読む...",
-      "title": "チームでの複数人同時利用を前提としたAIエージェント「MAIA」が登場",
-      "uid": "d19d7ad7e0eef15c",
-      "url": "https://gigazine.net/news/20261109-maia-zyphra-multiplayer-ai-agent/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

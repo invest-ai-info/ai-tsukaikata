@@ -27,6 +27,20 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-14T06:32:41.993487+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-13T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.",
+      "summary_ja": "ShieldがAIでIT技術者の古いシステム業務を支援\nForgeエージェントがシステム操作を代行するため\n技術者は判断が必要な業務に集中できる",
+      "summary_source": "gemini",
+      "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+      "uid": "6fbbb72188cd9c84",
+      "url": "https://openai.com/business/customer-stories/shield",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-13T01:52:18.105904+00:00",
       "importance": "minor",
       "label": "Claude Code",
