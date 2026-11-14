@@ -46,6 +46,34 @@
 
 ## 記録
 
+### 2026-11-14（副業枠の回・21:00）
+- `git fetch origin`→現在のブランチ（`claude/serene-hamilton-cgt32x`）が`origin/main`と
+  同じコミットだったため、取り直しは不要
+- 副業の節の未処理（⏸を除く）を上から確認。先頭5件（AI検索最適化・KDP価格帯・仕入税額控除・
+  フリマ手数料・ASP原資）と「AI動画編集ツールの商用利用」はすべて⏸（経路遮断。直近の実測日
+  から日が浅いためcurlでの再確認はしていない）。着手可能な先頭は、稼ぎ方研究担当の研究パック
+  （H58）「文末パターンが互いに意味の近い組み合わせを含まなくても、5パターンの検品はまとめら
+  れてしまうか」
+- 公開: 1本（`recipes/distant-endings-hold-but-filler-joins-the-count`）。重複チェック
+  （`grep -h '^## ' content/recipes/*.md | sort -u`）で既存15見出しと衝突なしを確認
+- 実測: `claude --print --tools "" --system-prompt "…"`（新規プロセス起動・1回の指示につき
+  会話を継続しない）。架空の下書き2本（清掃当番メモ・備品発注メモ、各35文）に、意味の離れた
+  5パターン（依頼・断定・推量・伝聞・勧誘）をそれぞれ3文連続・間に4文ずつfiller文を挟んで仕込み、
+  素朴な指示10回・総数を先に明記させる指示4回・最後に明記させる指示2回・応用2回＝計18回試した。
+  5パターンどうしの統合は10回とも0件（前作の意味が近い5パターンは5回中3回まとまっていた）。
+  代わりに、材料Eだけfiller文（すべて「〜ます」終わり）の4連続クラスタまで数に入り、見出しの
+  数字が5・8・宣言無しで揺れた。材料Fは5回とも5のまま揺れず。「先に明記させる」言い直しは
+  材料Eでも3回とも「10」で安定したが、5だけに絞る効果ではなく「見つけたもの全部」を安定させる
+  だけだった。生ログは`docs/evidence/distant-endings-hold-but-filler-joins-the-count.md`
+- 教訓: `content/_lessons.md` ★344を新規追加（対象をあいまいに指定する指示文は、意味の近さが
+  無くても周辺filler文の偶然の繰り返しで数字が揺れる。直すには対象の名指しが要る）
+- 図2枚（`distant-endings-merge-rate.svg`・`distant-endings-declare-total.svg`）を
+  `tools/make_figures.py`に追加して生成。`python -m src.build`・`python -m pytest -q`
+  （794 passed）・`check_readability.py`（60字以上7%）を確認し、
+  `python -m tools.make_eyecatch`を実行した
+- push: `git log origin/main -1`で自分のコミット（`d0259a2e`）がorigin/mainに載ったことを
+  確認した
+
 ### 2026-11-14（自動化・ループ優先の枠。専任の別ルーティン）
 - `git fetch origin`→HEADがdetachedだがコミットはorigin/mainと一致していたため、取り直し不要
 - `### 自動化・ループ優先`節の未処理を上から確認。先頭「『中身が止まっている』側の判定にも、
