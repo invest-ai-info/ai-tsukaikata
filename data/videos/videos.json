@@ -7751,10 +7751,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "What happens when the people who understand your customers can build the software to help them? At Holiday Extras, Codex is helping turn that ambition into reality—from rebuilding its main app in two weeks to responding faster to customer feedback. Hear how CEO Matthew Pack, David Lee and Liam Thompson are giving colleagues the confidence to build, improving the travel experience and rethinking what the business can achieve with OpenAI. Read the full story: https://openai.com/business/customer-stories/holidays-extras-codex/",
    "first_seen": "2026-11-12T20:24:03.354180+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Holiday ExtrasはCodexを活用し、従来1年以上かかっていたアプリの再構築をプロトタイプ2日、本番対応2週間で完了させたと説明している。",
+    "役員から現場や財務担当まで全社員にCodexを展開し、顧客に近い立場の人自身が課題解決ツールを構築できる体制を整えたと語っている。",
+    "独自のデプロイ基盤を用意することで、アイデアが形になるまでの時間を劇的に短縮し、自社システムの改善を加速させていると紹介している。"
+   ],
+   "for_whom": "社内でのAI開発導入事例や、開発サイクルの高速化に関心があるビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-14T22:42:47.351332+00:00"
   },
   {
    "video_id": "YUYeHMsqbmY",
@@ -7810,10 +7820,20 @@
    "channel_key": "muttyo",
    "channel_name": "むっちょの副業月5万攻略",
    "default_category": "earn",
-   "description": "今回は「海外で大バズりしてる最新のClaude Code副業」を紹介しました！\n\n👇Higgsfieldの登録はこちら！\nhttps://higgsfield.ai?fpr=8mgmof\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=ThLlL7BnJ0dX\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=ThLlL7BnJ0dX\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n0:00 海外で大バズりしてる最新のClaude Code副業\n1:07 これまでのAI動画のマネタイズ手法\n3:26 AI動画の新しいマネタイズ手法\n8:33 AI動画の作り方\n\n#claudecode  #おすすめ副業 #Higgsfield",
    "first_seen": "2026-11-12T20:24:03.354180+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "ショート動画の広告収益は不安定なため、単価が高く競合が少ない企業向けのAI動画制作を受注するクライアントワークが狙い目だと主張している。",
+    "Claude Codeと動画生成ツールHiggsfieldを連携させ、企画書からキャラ設定、絵コンテ、動画生成までを一貫して進める手順を紹介している。",
+    "生成動画特有の顔や衣装の崩れを絵コンテに沿って修正し、低コストで企業に納品できる品質に仕上げる実演を行っている。"
+   ],
+   "for_whom": "生成AIを活用した動画制作で企業の案件を受注し、副業で稼ぎたい人",
+   "caution": "動画1本で5万円など高単価で稼げると主張していますが具体的な受注実績の提示はなく、公式LINE登録や勉強会への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-14T22:42:47.351332+00:00"
   },
   {
    "video_id": "NU09RCn2svQ",
@@ -7869,10 +7889,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "今回の動画では、Googleから登場した高速・低コストモデル「Gemini 4 Hydrogen」について解説しました。\n\nGemini 3.8 Flashの後継で、1Mコンテキストウィンドウに加えて画像・動画・音声の入力にも対応した実行特化のモデルです。ベンチマークやコストの立ち位置を、Sonnet 5.5やGPT-6.1 Terraと比べながら見ていきました。\n\n速さと値段の割に賢い、個人的には結構好きなモデルです。一方で、デモではSonnetの強さを感じる場面も多かったです。\nみなさんはHydrogenをどんな用途で使ってみたいですか？ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Gemini 4 Hydrogen 登場の概要\n01:14 ベンチマークと料金の立ち位置\n03:35 CarbonとArgonとの役割の違い\n05:04 Gemini 3.8からの進化と外部評価\n08:41 Sonnetに近い使い分けと注意点\n09:19 動画分析でCarbonと比べた結果\n11:52 デモ比較: LPとUIの作り込み\n15:27 デモ比較: ゲームと3D表現\n16:59 デモ比較: 図解・スライド・サムネ\n19:08 デモ比較: 文章とSVGの出来\n20:44 まとめ: Hydrogenの使いどころ\n21:50 メンバーシップのご案内\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-11-13T19:59:24.203989+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Googleが発表したGemini 4 Hydrogenは、高速・低コストで日常的な作業や自動化ワークフローに向いた実行特化モデルだと説明している。",
+    "動画分析の実験では上位のCarbonと互角に情報を拾えてコストも抑えられる一方、改善案の具体性では差が出たと報告している。",
+    "UI制作やゲーム開発のデモを通じて、前世代より大きく進化しているもののClaude Sonnetに及ばない場面もあると評価している。"
+   ],
+   "for_whom": "最新の軽量AIモデルの性能や料金、具体的なユースケースでの実力を知りたいエンジニアやビジネスパーソン。",
+   "caution": "動画の終盤および概要欄で、有料のNoteメンバーシップ（AI駆動開発研究部）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-14T22:42:47.351332+00:00"
   },
   {
    "video_id": "PkAmyub12K8",
@@ -7905,10 +7935,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "A live keynote featuring OpenAI's latest cyber announcements.",
    "first_seen": "2026-11-13T19:59:24.203989+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIがサイバーセキュリティ向けプラットフォームDaybreakと新モデルGPT-6 Cyberを発表している。",
+    "脆弱性の自動探索・検証を行うDaybreak Red Teamや、自動修正を行うDefense Factoryを紹介している。",
+    "AIエージェントを活用して防御側の対応を自動化・迅速化し、安全なシステム構築を支援すると説明している。"
+   ],
+   "for_whom": "AIを活用したセキュリティ対策や脆弱性管理の自動化に関心があるエンジニアや担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-14T22:42:47.351332+00:00"
   },
   {
    "video_id": "FQqipQudhIg",
@@ -8017,87 +8057,87 @@
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-14T18:27:51.330831+00:00",
+   "last_ok": "2026-11-14T22:42:47.351332+00:00",
    "fail_streak": 0
   }
  }
