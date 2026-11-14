@@ -86,30 +86,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-10T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-11-10T11:13:04+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
-      "title": "Opening the datasets behind our AI weather models",
-      "uid": "2a417fa9c7f84446",
-      "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-11-13T20:40:01+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed a security issue in how zstd-compressed responses are decoded Added a spinner tip in VS Code and similar integrated terminals about re-running a notebook cell, shown once Claude …",
-      "title": "v2.1.325",
-      "uid": "32df95ebf15991a9",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
-      "vendor": "Anthropic"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
