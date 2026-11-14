@@ -44516,6 +44516,140 @@ def ai_ok_writing_fee_before_after_chart() -> None:
     )
 
 
+def distant_endings_merge_rate_chart() -> None:
+    """文末5パターンが、互いに統合された(1つにまとめられた)回の割合。前作(意味が近い5パターン)と今作(意味が離れた5パターン)の比較。"""
+    left, right = 330, 620
+    span = right - left
+    top, bar_h, gap = 82, 34, 34
+    rows = [
+        ("意味が近い5パターン（前作・材料B）", 3, 5, "bar-old"),
+        ("意味が離れた5パターン（今回・材料2本×5回）", 0, 10, "bar-new"),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "文末5パターンどうしが、1つにまとめられた回の割合</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前作は新しく足した表現が既存の表現と意味が近かった（どちらも告知の言い回し）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "今回は5パターンを依頼・断定・推量・伝聞・勧誘という意味の離れた形に差し替えた。</text>\n",
+    ]
+    for index, (label, hit, total, cls) in enumerate(rows):
+        y = top + index * (bar_h + gap)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 11}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{left}" y="{y}" '
+            f'width="{span}" height="{bar_h}" rx="3"/>\n'
+        )
+        ratio = hit / total
+        if hit:
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{y}" '
+                f'width="{span * ratio:.1f}" height="{bar_h}" rx="3"/>\n'
+            )
+        parts.append(
+            f'<text class="t-strong" x="{right + 12}" y="{y + bar_h - 11}">'
+            f"{hit} / {total}回</text>\n"
+        )
+
+    height = top + len(rows) * (bar_h + gap) + 24
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 12}">'
+        "※ 架空の下書き2本（清掃当番メモ・備品発注メモ）・計10回の実測。統合は0回だった。</text>\n"
+    )
+    alt = (
+        "文末5パターンどうしが1つにまとめられた回の割合を、前作と今回で比べた図。"
+        "前作の意味が近い5パターン（材料B）は5回中3回まとめられた。"
+        "今回の意味が離れた5パターンは、架空の下書き2本・計10回の実測で、まとめられた回は0回だった。"
+    )
+    (OUT / "distant-endings-merge-rate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def distant_endings_declare_total_chart() -> None:
+    """材料Eで、見出しの総数を先に明記させると、数字が揺れずにそろうか。"""
+    rows = [
+        ("素朴に「指摘して」（5回）", "2/5", "warn", "2/5", "warn"),
+        ("総数を先に明記させる（3回）", "3/3", "good", "3/3", "good"),
+    ]
+    cols = [
+        ("総数を明記した回", "回答の冒頭か最後に数字を書いたか"),
+        ("数字がそろった回", "明記した中で、同じ数字だったか"),
+    ]
+    klass = {"good": "box-good", "warn": "box-accent", "bad": "box-bad"}
+    text_klass = {"good": "t-good", "warn": "t-accent", "bad": "t-bad"}
+
+    label_x, label_w = 18, 220
+    col_w, col_gap = 200, 10
+    col_x = [label_x + label_w + col_gap + i * (col_w + col_gap) for i in range(2)]
+    head_y, head_h = 92, 46
+    row_h, row_gap = 48, 8
+    row_y = [head_y + head_h + row_gap + i * (row_h + row_gap) for i in range(2)]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "材料Eで、見出しの数字は宣言のさせ方で変わるか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料Eは素朴に頼むと、filler文の「〜ます」の連続まで数に入るかどうかで数字が揺れた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "分母は試した回数。「そろった」は、明記した回どうしで同じ数字だったかを見ている。</text>\n",
+    ]
+
+    for i, (head, sub) in enumerate(cols):
+        parts.append(
+            f'<rect class="box-quiet" x="{col_x[i]}" y="{head_y}" '
+            f'width="{col_w}" height="{head_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{col_x[i] + 8}" y="{head_y + 20}" '
+            f'style="font-size:12px">{_esc(head)}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{col_x[i] + 8}" y="{head_y + 36}">{_esc(sub)}</text>\n'
+        )
+
+    for r, (label, *cells) in enumerate(rows):
+        y = row_y[r]
+        parts.append(
+            f'<text class="t" x="{label_x}" y="{y + row_h / 2 + 5:.0f}">{_esc(label)}</text>\n'
+        )
+        for c in range(2):
+            value, kind = cells[c * 2], cells[c * 2 + 1]
+            parts.append(
+                f'<rect class="{klass[kind]}" x="{col_x[c]}" y="{y}" '
+                f'width="{col_w}" height="{row_h}" rx="3"/>\n'
+            )
+            parts.append(
+                f'<text class="{text_klass[kind]}" x="{col_x[c] + col_w / 2 - 16:.0f}" '
+                f'y="{y + row_h / 2 + 5:.0f}">{value}</text>\n'
+            )
+
+    bottom = row_y[-1] + row_h
+    notes = [
+        ("t-xs", "※ 素朴に頼んだ5回中、数字を明記しなかった3回は「そろった」の分母から外している。"),
+        ("t-xs", "※ 明記させた3回は、3回とも「10」で一致（5パターン＋filler文の4〜5か所を含む数字）。"),
+        ("t-xs", "架空データでの実測。指示文ごとの生の返りは docs/evidence/ に置いてある。"),
+    ]
+    y = bottom + 26
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{y}">{_esc(text)}</text>\n')
+        y += 22
+
+    height = y + 2
+    alt = (
+        "材料Eで、見出しの総数の宣言のさせ方によって数字がそろうかを示した表。"
+        "素朴に「指摘して」と頼んだ5回では、総数を明記した回は2回、そろった回も2回（どちらも8）。"
+        "総数を先に明記させる言い方に変えた3回では、総数を明記した回・そろった回ともに3回で、"
+        "3回とも同じ10という数字だった。"
+    )
+    (OUT / "distant-endings-declare-total.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     ai_ok_writing_rate_vs_guideline_chart()
     ai_ok_writing_fee_before_after_chart()
+    distant_endings_merge_rate_chart()
+    distant_endings_declare_total_chart()
