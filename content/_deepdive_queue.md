@@ -784,13 +784,46 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/introducing-gemini-4-hydrogen/
-  - 2026-11-13 自動追記（major・Google DeepMind「Introducing Gemini 4 Hydrogen」）
+- [x] https://deepmind.google/blog/introducing-gemini-4-hydrogen/
+  - →保管: ✅ **2026-11-14: 公開した** → `content/tools/gemini-4-hydrogen.md`
 
 - [ ] https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/
   - 2026-11-13 自動追記（minor・Google DeepMind「Opening the datasets behind our AI weather models」）
 
 ## 処理済み
+
+- https://deepmind.google/blog/introducing-gemini-4-hydrogen/ → **公開済み** content/tools/gemini-4-hydrogen.md（2026-11-14・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/` へ到達（200）。
+    本文はWebFetchの要約を信じず、該当部分を逐語で引用させて確認した。モデルカードPDF
+    （`storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf`）はWebFetchでは
+    バイナリが読めなかったため、ローカルに保存された同PDFをReadツールで直接開き、生の本文・比較表を確認した。
+    関連してOpenAI料金/モデルページ、Anthropic料金/モデル一覧ページに到達。Vertex AI系の価格ページ
+    （`cloud.google.com/model-garden/pricing`）は内容が取得できず（JS描画のためと見られる）、
+    `aistudio.google.com`は既報のとおり許可リスト未追加で経路遮断（`getaddrinfo ENOTFOUND`）。
+    出典7件中、この2件は使わずHydrogen自身の発表文とOpenAI/Anthropicの公式ページだけで記事を構成した。
+    図3枚（`hydrogen-price-vs-flash-future` / `hydrogen-benchmark-wins` / `hydrogen-vendor-price`）。
+    `check_numbers.py` は照合対象68個のうち**44個が出典に存在**。残る24個はすべてモデルカードPDFの
+    比較表（10ベンチマーク×Hydrogen/Sonnet 5.5/Terraの3列）の数字で、`check_numbers.py`がPDFのバイナリを
+    テキスト照合できないために「出典に無い」と出た（Claude Haiku 5.5の記事でSVGのaria-label値が
+    照合に掛からなかったのと同じ構造）。Readツールで開いた生のPDF本文と記事の表を1行ずつ突き合わせ、
+    24個すべてが一致することを確認したうえでそのまま残した。pytest 794 passed・build 393ファイル。
+    `check_readability.py` は60字以上10%（目安15%以下、最長71字。初稿は113字の1文を含み22%だったため
+    箇条書き・文分割で修正済み）。
+  - 📌 記事の芯＝**HydrogenはCarbon・Argonの「弟分」で、発表価格$1.50/$7.50には値上がりの予告が無いが、
+    この金額はGemini 3.8 Flashが2027年1月の値上げ後に払う金額とぴったり同じ**（この一致は記事が独自に
+    気づいたもので、公式の説明ではない）。
+  - 🔍 **Googleが自分で選んだ比較相手（モデルカードの10ベンチマーク表）は、Claude Sonnet 5.5と
+    GPT-6.1 Terra——どちらも両社の最上位モデルではない**（最上位はClaude Opus 5.5・GPT-6 Astra）。
+    10項目中Hydrogenが7項目で最高値だったが、残り3項目（Terminal-Bench 4.1・OSWorld-2.1・
+    Terminal-Bench-Science 0.1）はSonnet 5.5が上。とくにTerminal-Bench 4.1は発表ページ自身が
+    「3倍以上に上がった」と誇った看板テストで、そこはSonnet 5.5に負けている。
+  - ⚠️ **「入出力あわせて100万トークン」の宣伝文句にも、Argonと同じ型の条件が付いていた**＝既定の
+    同期呼び出しでの出力上限は6.4万トークンのままで、100万トークンまで出すには`long decode`という
+    別機能が要る。Argon一般提供時の記事で見つけた同じパターンの再発。
+  - ⚠️ 性能で全項目Hydrogenに負けたGPT-6.1 Terraのほうが、単価はHydrogenより安いというねじれがある
+    （短い入力で$1.00/$5.00 vs Hydrogenの$1.50/$7.50）。
+  - ⚠️ Safety & Security Reportの本体はモデルカードに「近日公開」とだけ書かれており、この記事を
+    書いた時点では読めない。「分からないこと」に明記した。
 
 - https://deepmind.google/blog/gemini-4-carbon-is-now-available/ → **公開済み** content/tools/gemini-4-carbon-ga.md（2026-11-11・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/` へ到達（200）。

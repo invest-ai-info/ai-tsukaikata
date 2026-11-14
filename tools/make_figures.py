@@ -44652,4 +44652,196 @@ if __name__ == "__main__":
     ai_ok_writing_rate_vs_guideline_chart()
     ai_ok_writing_fee_before_after_chart()
     distant_endings_merge_rate_chart()
+
+
+def hydrogen_price_vs_flash_future_chart() -> None:
+    """Gemini 4 Hydrogenの発表価格が、Gemini 3.8 Flashの値上げ後と同額であることを示す。
+
+    出典＝Hydrogenの発表ページ本文（blog.google・2026-11-12。$1.50/$7.50、期限の記載なし）と、
+    Gemini 3.8 Flashの発表時点の料金ページ（既刊記事で確認済み。$0.75/$3.75→2027-01-01に$1.50/$7.50）。
+    """
+    rows = [
+        ("Gemini 3.8 Flash（〜2026年12月31日）", 0.75, 3.75),
+        ("Gemini 3.8 Flash（2027年1月1日から）", 1.50, 7.50),
+        ("Gemini 4 Hydrogen（発表時点・期限の記載なし）", 1.50, 7.50),
+    ]
+    left, right = 300, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Hydrogenの発表価格は、3.8 Flashの値上げ後と同じ金額</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。100万トークンあたりのドル。</text>\n',
+        '<text class="t-sm" x="18" y="64">3.8 Flashは2027年1月1日に価格が2倍になる予定。Hydrogenはその金額から始まる。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="264" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ Hydrogenの発表に値上がりの予告は書かれていない（2026年11月12日時点）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: Hydrogen発表ページ本文、3.8 Flashは公式料金ページ（既刊記事で確認済み）。</text>\n"
+    )
+    alt = (
+        "Gemini 3.8 Flash（〜2026年12月31日・入力0.75ドル出力3.75ドル）、"
+        "Gemini 3.8 Flash（2027年1月1日から・入力1.50ドル出力7.50ドル）、"
+        "Gemini 4 Hydrogen（発表時点・入力1.50ドル出力7.50ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。HydrogenはFlashが値上げしたあとの金額から始まっており、"
+        "Hydrogen自身の発表には値上がりの予告が書かれていない。"
+    )
+    (OUT / "hydrogen-price-vs-flash-future.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def hydrogen_benchmark_wins_chart() -> None:
+    """モデルカードの比較表10項目のうち、各モデルが最高値だった項目数を比べる。
+
+    出典＝Gemini 4 Hydrogen モデルカード（2026-11公開）の比較表（Hydrogen・
+    Claude Sonnet 5.5・GPT-6.1 Terraの3モデル・10ベンチマーク）。この表を作ったのはGoogle。
+    """
+    rows = [
+        ("Gemini 4 Hydrogen", 7),
+        ("Claude Sonnet 5.5", 3),
+        ("GPT-6.1 Terra", 0),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, pitch = 82, 20, 34
+    scale = span / 10
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "モデルカードの10項目中、Hydrogenが7項目で最高値</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "目盛りは0〜10項目。この比較表を作ったのはGoogleで、他社が自社で測った値ではない。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 5}">'
+            f"{value}/10項目</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 出典: Gemini 4 Hydrogen モデルカード（2026年11月公開）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 8}">'
+        "※ 残り3項目（うち1つはエージェント型コーディングの看板テスト）はSonnet 5.5が上。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Hydrogen モデルカードの比較表10項目のうち、各モデルが最高値だった項目数を示す"
+        "横棒グラフ。Gemini 4 Hydrogenが7/10項目、Claude Sonnet 5.5が3/10項目、"
+        "GPT-6.1 Terraが0/10項目。この表を作ったのはGoogleで、他社が自社で測った値ではない。"
+        "残り3項目のうち1つ（Terminal-Bench 4.1）はエージェント型コーディングの看板テストで、"
+        "そこはSonnet 5.5のほうが高かった。"
+    )
+    (OUT / "hydrogen-benchmark-wins.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def hydrogen_vendor_price_chart() -> None:
+    """Hydrogenと、同じ「高速・低コスト層」の他社モデル、各社最上位モデルの単価を比べる。
+
+    出典＝Hydrogenは発表ページ、GPT-6.1 Terra・GPT-6 Astraは developers.openai.com、
+    Claude Sonnet 5.5・Claude Opus 5.5は platform.claude.com、Gemini 4 Argonは既刊記事
+    （いずれも2026-11-13確認）。
+    """
+    rows = [
+        ("Gemini 4 Hydrogen", 1.50, 7.50),
+        ("GPT-6.1 Terra（短い入力）", 1.00, 5.00),
+        ("Claude Sonnet 5.5", 2.00, 10.00),
+        ("Claude Opus 5.5（最上位）", 4.00, 20.00),
+        ("Gemini 4 Argon（値上がり後）", 4.00, 20.00),
+        ("GPT-6 Astra（最上位・短い入力）", 10.00, 50.00),
+    ]
+    left, right = 262, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Terraより高く、各社の最上位よりずっと安い</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。単価は各社の公式ページの数字（100万トークンあたり）。</text>\n',
+        '<text class="t-sm" x="18" y="64">2026年11月13日に確認。「短い入力」は長い入力だと単価が上がる注記付きのモデル。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="226" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ GPT-6.1 Terraは長い入力（27.2万トークン超）だと入力2.00ドル・出力7.50ドルに上がる。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: OpenAI・Anthropic・Googleの各公式料金ページ（Argonは既刊記事で確認済み）。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Hydrogen（入力1.50ドル出力7.50ドル）、GPT-6.1 Terra（短い入力・入力1.00ドル"
+        "出力5.00ドル）、Claude Sonnet 5.5（入力2.00ドル出力10.00ドル）、Claude Opus 5.5"
+        "（最上位・入力4.00ドル出力20.00ドル）、Gemini 4 Argon（値上がり後・入力4.00ドル"
+        "出力20.00ドル）、GPT-6 Astra（最上位・短い入力・入力10.00ドル出力50.00ドル）を"
+        "比べた横棒グラフ。100万トークンあたりのドル。HydrogenはGPT-6.1 Terraより高く、"
+        "各社の最上位モデル（Claude Opus 5.5・GPT-6 Astra）やGoogle自社の最上位格（Argon）"
+        "よりずっと安い。"
+    )
+    (OUT / "hydrogen-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    hydrogen_price_vs_flash_future_chart()
+    hydrogen_benchmark_wins_chart()
+    hydrogen_vendor_price_chart()
     distant_endings_declare_total_chart()
