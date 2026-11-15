@@ -44845,3 +44845,129 @@ if __name__ == "__main__":
     hydrogen_benchmark_wins_chart()
     hydrogen_vendor_price_chart()
     distant_endings_declare_total_chart()
+
+
+def increasing_record_scaled_to_a_year_benchmark_chart() -> None:
+    """増加傾向の記録を56日から364日に伸ばすと、目安の動きは縮まらず約42%に広がった（2026-11-15実測）。
+
+    `record-scaled-to-a-year-benchmark-holds`（増減の無い記録）の続き。今回は緩やかな
+    増加傾向が364日間続く架空ログ（問い合わせフォーム・3件/日→9件/日）で、同じ指示文を
+    「直近56日だけ」と「記録の全部（364日）」の2条件で試した。値は
+    docs/evidence/increasing-record-scaled-to-a-year-benchmark-widens.md の真値（単純平均）から。
+    """
+    rows = [
+        ("直近56日だけ渡す", 8.48, "本日34件の約4.0倍"),
+        ("364日（約1年）全部渡す", 5.96, "本日34件の約5.7倍"),
+    ]
+    label_x = 18
+    plot_x = 280
+    plot_w = 180
+    axis_max = 9
+    scale = plot_w / axis_max
+    top = 140
+    row_h = 34
+    bar_h = 16
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "記録を56日から364日に伸ばすと、目安の動きは縮まらなかった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "問い合わせフォームの架空ログ（364日・緩やかな増加傾向、3件/日→9件/日）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "「直近56日だけ」と「記録の全部（364日）」の2条件で、同じ指示文をAIに3回ずつ試した。"
+        "</text>\n",
+        '<text class="t-xs" x="18" y="81">'
+        "横棒は真値（単純平均）としての「ふだんの1日あたりの目安」（件/日）。"
+        "先行記事（増減の無い記録・同じ長さ）の実測と条件をそろえた。</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 10}">件/日</text>\n',
+    ]
+
+    x_val = px(axis_max) + 14
+    x_ratio = x_val + 90
+    y = top
+    for label, value, ratio_text in rows:
+        ty = y + 14
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="bar-new" x="{px(0):.1f}" y="{ty - 12}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value:.2f}件/日</text>\n'
+        )
+        parts.append(
+            f'<text class="t-accent" x="{x_ratio:.1f}" y="{ty}">{_esc(ratio_text)}</text>\n'
+        )
+        y += row_h
+
+    y += 10
+    notes = [
+        "56日だけだと目安8.48件/日、364日全部だと5.96件/日。動いた幅は約42%。",
+        "先行記事（同じ記録の2週/4週/8週での比較）では約36%動いた。記録を364日に伸ばしても縮まなかった。",
+        "この記録は増加傾向が364日間ずっと続く設計。傾きが途中で止まる記録では結果が変わりうる。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "問い合わせフォームの架空ログ（364日・緩やかな増加傾向で3件/日から9件/日まで育つ設計）で、"
+        "渡す記録の長さだけを変えて「ふだんの目安」をAI自身に計算させた結果を2本の横棒で比べた図。"
+        "直近56日だけ渡すと目安8.48件/日で本日34件はその約4.0倍、364日（約1年）全部渡すと"
+        "目安5.96件/日で本日はその約5.7倍。下の枠には、56日だけだと目安8.48件/日・364日全部だと"
+        "5.96件/日で動いた幅は約42%であること、先行記事（同じ記録の2週・4週・8週での比較）では"
+        "約36%動いたこと、記録を364日に伸ばしても動きの大きさは縮まらなかったことが書かれている。"
+    )
+    (OUT / "increasing-record-scaled-to-a-year-benchmark.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def increasing_record_scaled_to_a_year_hit_and_miss_chart() -> None:
+    """増加傾向の364日ログでは、目安・倍率が真値と一致したのは3回中2回だった（2026-11-15実測）。
+
+    合計（総和）自体は3回とも正しかったが、1回は364で割る段で6.5件/日と誤り、
+    倍率も5.2倍にずれた。直近56日だけを渡した3回は、合計・平均・倍率のすべてが
+    3回とも真値と一致した。値は
+    docs/evidence/increasing-record-scaled-to-a-year-benchmark-widens.md の機械照合から。
+    """
+    _hit_and_miss_rows_chart(
+        "increasing-record-scaled-to-a-year-hit-and-miss.svg",
+        "364日ぶんの手計算は、3回に1回だけ割り算でずれた",
+        "実測2026-11-15。問い合わせフォームの架空ログ（緩やかな増加傾向・364日）。",
+        "同じ指示文を独立した新規の会話で3回ずつ試し、AIの答えを真値（単純平均）と突き合わせた。",
+        [
+            ("目安・倍率が真値と一致（364日を3回）", 2, 3, "good"),
+            ("目安・倍率が真値と一致（直近56日を3回）", 3, 3, "good"),
+        ],
+        [
+            "364日を渡した3回中1回は、合計(2,170件)は正しく数えたのに、364で割る段で6.5件/日と",
+            "答え、倍率も5.2倍にずれた。直近56日を渡した3回は、合計・平均・倍率のすべてが一致した。",
+            "n=3・1題材の範囲での結果。合計が正しいのに割り算だけでずれる崩れ方は、先行記事（増減の",
+            "無い記録・8回とも一致）では1回も見られなかった。",
+        ],
+        "問い合わせフォームの架空ログ（緩やかな増加傾向・364日）に試した基本の目安・倍率の計算を、"
+        "当たった回数／聞いた回数の形で示す表。364日を渡した3回のうち目安・倍率が真値と一致したのは"
+        "2/3。直近56日を渡した3回は3/3で全部一致。下の枠には、364日を渡した3回中1回は合計"
+        "2,170件自体は正しく数えたのに364で割る段で6.5件/日と誤り倍率も5.2倍にずれたこと、"
+        "直近56日を渡した3回は合計・平均・倍率のすべてが一致したこと、n=3・1題材の範囲での結果で"
+        "あり合計が正しいのに割り算だけでずれる崩れ方は先行記事の8回とも一致した結果では見られな"
+        "かったことが書かれている。",
+        label_w=380,
+    )
+
+
+if __name__ == "__main__":
+    increasing_record_scaled_to_a_year_benchmark_chart()
+    increasing_record_scaled_to_a_year_hit_and_miss_chart()

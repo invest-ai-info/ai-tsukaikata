@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="276" viewBox="0 0 720 276" role="img" aria-label="問い合わせフォームの架空ログ（緩やかな増加傾向・364日）に試した基本の目安・倍率の計算を、当たった回数／聞いた回数の形で示す表。364日を渡した3回のうち目安・倍率が真値と一致したのは2/3。直近56日を渡した3回は3/3で全部一致。下の枠には、364日を渡した3回中1回は合計2,170件自体は正しく数えたのに364で割る段で6.5件/日と誤り倍率も5.2倍にずれたこと、直近56日を渡した3回は合計・平均・倍率のすべてが一致したこと、n=3・1題材の範囲での結果であり合計が正しいのに割り算だけでずれる崩れ方は先行記事の8回とも一致した結果では見られなかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="276"/>
+<text class="t-strong" x="18" y="26">364日ぶんの手計算は、3回に1回だけ割り算でずれた</text>
+<text class="t-sm" x="18" y="45">実測2026-11-15。問い合わせフォームの架空ログ（緩やかな増加傾向・364日）。</text>
+<text class="t-sm" x="18" y="64">同じ指示文を独立した新規の会話で3回ずつ試し、AIの答えを真値（単純平均）と突き合わせた。</text>
+<text class="t-xs" x="478.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">目安・倍率が真値と一致（364日を3回）</text>
+<rect class="box" x="398" y="104" width="160" height="26" rx="4"/>
+<text class="t-sm" x="478.0" y="125" text-anchor="middle" style="font-weight:700">2/3</text>
+<text class="t" x="18" y="157">目安・倍率が真値と一致（直近56日を3回）</text>
+<rect class="box-good" x="398" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="478.0" y="157" text-anchor="middle" style="font-weight:700">3/3</text>
+<rect class="box-accent" x="18" y="174" width="684" height="82" rx="6"/>
+<text class="t-accent" x="34" y="194">364日を渡した3回中1回は、合計(2,170件)は正しく数えたのに、364で割る段で6.5件/日と</text>
+<text class="t-accent" x="34" y="212">答え、倍率も5.2倍にずれた。直近56日を渡した3回は、合計・平均・倍率のすべてが一致した。</text>
+<text class="t-accent" x="34" y="230">n=3・1題材の範囲での結果。合計が正しいのに割り算だけでずれる崩れ方は、先行記事（増減の</text>
+<text class="t-accent" x="34" y="248">無い記録・8回とも一致）では1回も見られなかった。</text>
+</svg>

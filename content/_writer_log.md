@@ -46,6 +46,33 @@
 
 ## 記録
 
+### 2026-11-15（自動化・ループ優先の枠。専任の別ルーティン）
+- `git fetch origin`→HEADがdetachedだったがコミットはorigin/mainと一致していたため、
+  `git checkout -B main origin/main`で取り直した（新規コミットは発生していない）
+- `### 自動化・ループ優先`節の未処理を上から確認。先頭「検算で巻き添えが出ないのは『計算だから』
+  か『答えが1つに決まるから』か」（文言照合の検算）は、架空メルマガの決まり文句にAIの初回判定で
+  誤検知を実際に起こす必要があり、1回のエンジニアリングで再現できる見込みが低いと判断して見送った
+  （キューには残し、`- [!]`にはしていない＝再挑戦可能）。2番目「増えている記録を364日分に伸ばして
+  も、ふだんの目安は0.3%程度の動きで収まるか」を選んだ
+- 重複確認: `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認
+- 公開: 1本（`recipes/increasing-record-scaled-to-a-year-benchmark-widens`）
+- 実測: Agentツール`general-purpose`（ツール・コード実行を使わず素のチャットAIとして回答のみを
+  返すよう明示指示・毎回ゼロから起動）。問い合わせフォームの架空ログ（緩やかな増加傾向・
+  3件/日→9件/日・364日）を材料に、同じ指示文を「直近56日だけ」「記録の全部（364日）」の
+  2条件×各3回＝6回試した。結果＝56日基準の目安8.48件/日・364日基準の目安5.96件/日で、動いた
+  幅は約42%（先行記事が56日以内の窓で確かめた約36%より縮まらず、やや広がった）。基本計算は
+  直近56日が3回とも真値と一致したが、364日は3回中1回、合計(2,170件)は正しいのに364で割る
+  段で6.5件/日にずれた（倍率も5.2倍にずれた）。生ログは
+  `docs/evidence/increasing-record-scaled-to-a-year-benchmark-widens.md`
+- 教訓: `content/_lessons.md` ★345を新規追加（★336の続き。増加傾向のある記録は56日→364日に
+  伸ばしても窓の長さの動きは縮まらない。364日ぶんの手計算は合計は正しいのに割り算だけが
+  3回に1回ずれた）
+- 図2枚（`increasing-record-scaled-to-a-year-benchmark.svg`・
+  `increasing-record-scaled-to-a-year-hit-and-miss.svg`）を`tools/make_figures.py`に追加して
+  生成。`python -m pytest -q`（794 passed）・`python tools/check_readability.py`（60字以上5%）・
+  `python -m src.build`を確認し、`python -m tools.make_eyecatch`を実行した
+- キュー: `content/_recipe_queue.md`の該当項目を`- [x]`にして結果を書いた
+
 ### 2026-11-14（副業枠の回・21:00）
 - `git fetch origin`→現在のブランチ（`claude/serene-hamilton-cgt32x`）が`origin/main`と
   同じコミットだったため、取り直しは不要
