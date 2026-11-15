@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-15T02:43:47.066805+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-15T02:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "iPhone Duo向けのカレンダーアプリ「つらなりカレンダー」を個人開発し、App Storeで公開した。コードはAI開発ツールの「Claude Code」がすべて書き、発売日の夜に作り始めてから公開までは13日だった。プログラマーではない筆者が、何をAIに任せ、何を自分で担ったかを振り返る。",
+      "title": "コードはすべてAI--非プログラマーの筆者がiPhoneアプリをApp Storeで公開するまでの13日間",
+      "uid": "30ed5aefe967963b",
+      "url": "https://japan.cnet.com/article/35254571/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-15T02:43:47.066805+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-15T01:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIの性能評価を手がけるSurge AIは2026年10月27日、アメリカの税務相談や申告書の作成を題材にしたベンチマーク「DAYJOB: Tax」の結果を公開しました。 続きを読む...",
+      "title": "AIは答えを出せても「聞くべきこと」を見落とすことが税務の仕事を再現したテストで判明",
+      "uid": "2a91c832ed054f97",
+      "url": "https://gigazine.net/news/20261115-dayjob-tax/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-15T02:43:47.066805+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-15T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "近年のAIの進化はSRE(サイト信頼性エンジニアリング)に大きな影響を与えています。AIがインシデント対応の大部分を自動化するにつれて、人間が担うべき「稀・複雑・曖昧」な問題への対応能力が低下するという「自動化の皮肉」が指摘されています。オープンソースのシステム監視・分析ツール「SigNoz」の開発者エリザベス・マシュー氏は「AIがインシデント対応の95%を処理するようになったら、実際に重要な5…",
+      "title": "AIが便利になればなるほど深刻になる「自動化の皮肉」に人間はどう対処すべきか",
+      "uid": "a27a785b4e80a03e",
+      "url": "https://gigazine.net/news/20261115-ai-isnt-replacing-sres-its-deskilling/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-14T06:32:41.993487+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "3fcfddf07f1c63b8",
       "url": "https://www.itmedia.co.jp/news/article/2611/10/2000003042/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-10T02:11:36.573541+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-09T21:12:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "米Anthropicは11月9日（現地時間）、AIモデル「Claude Fable 5.2」を発表した。同社によると、前モデルのFable 5.1より出力が最大30％速くなり、APIの利用料金も引き下げた。",
-      "title": "「Claude Fable 5.2」登場、出力速度を最大30％向上　API料金は2割値下げ",
-      "uid": "cf38fead12894d2b",
-      "url": "https://japan.cnet.com/article/35254625/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-10T02:11:36.573541+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-09T20:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIエージェントと外部のツールをつなぐ「MCP」が、大きな転換点を迎えています。2026年7月の仕様改訂では、サーバ側で通信の状態を保持しない「ステートレス化」が進められました。この変更は、企業がMCPを導入、運用する上で何を意味するのか。まずはMCPの普及状況を振り返りながら、仕様改訂の背景や影響を整理します。",
-      "title": "「MCPはもう特別な存在ではない」――その普及と“仕様改訂”がもたらした転換点",
-      "uid": "e30e8e516b4692d4",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/10/news003.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-09T18:51:21.471890+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-11-09T15:25:30+00:00",
-      "source_id": "media-publickey",
-      "summary": "Googleは、Kubernetes上にAIエージェントのための高効率な基盤を構築するためのオープンソースソフトウェア「Agent Substrate」と「gVisor」を、Linux Foundation傘下のCloud Native C...",
-      "title": "Google、Kubernetesで10倍高密度にAIエージェントを実行可能にする「Agent Sustrate」と「gVisor」、オープンソースとしてCNCFに寄贈と発表",
-      "uid": "63546c5abc7debce",
-      "url": "https://www.publickey1.jp/blog/26/googlekubernetes10aiagent_sustrategvisorcncf.html",
-      "vendor": "Publickey"
     }
   ]
 }
