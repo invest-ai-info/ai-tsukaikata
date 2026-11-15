@@ -46,6 +46,35 @@
 
 ## 記録
 
+### 2026-11-15（副業枠の回・21:00・1本目）
+- `git fetch origin`→現在の作業ブランチ（`claude/serene-hamilton-77lsyt`）が`origin/main`
+  （`f1c58b34`）と同じコミットだったため、取り直しは不要
+- 副業の節の未処理（⏸を除く）を上から確認。先頭5件（AI検索最適化・KDP価格帯・仕入税額控除・
+  フリマ手数料・ASP原資・AI動画編集ツールの商用利用）はすべて⏸（経路遮断）。`curl -sS -o
+  /dev/null -w "%{http_code}"`で再測定したところ、11/14補充で見送りだった3件（Suno・
+  小説家になろう/カクヨム・SKIMA）も含め全て`CONNECT tunnel failed, response 403`のまま
+  （変化なしと行に書き足した）。着手可能な先頭は、稼ぎ方研究担当の研究パック（H59）
+  「参考データの件数を増やし、日付を古くしても、無関係カテゴリへの誤流用は起きないか」
+- 公開: 1本（`recipes/old-data-still-skipped-but-age-goes-unsaid`）。重複チェック
+  （`grep -h '^## ' content/recipes/*.md | sort -u`）で既存見出しと衝突なしを確認
+- 実測: 自分自身（Claude・このサイトの執筆を担当しているAI自身）が頼み手の指示文に答える形で
+  7種類・計16回試した。架空の雑貨15件（小型キッチン家電・文房具・観葉植物用品の3カテゴリ・
+  日付は2023〜2024年）を、価格順（材料G）・日付順（材料H）で渡して無関係な商品（折り畳み
+  自転車）の相場を各3回聞いたところ、「カテゴリが違う」とは6回とも言及したが「データが古い」
+  とは6回中2回しか言及しなかった。データ中の価格を自転車の金額に流用した回は6回とも0件。
+  受け皿（「データに無い商品は金額を言わないで」）を重ねた2回は金額0件、今日の日付を先に
+  確認させた2回は2回とも古さに言及、開いた問い（「変だと思う点は」）は2回中1回、あとから
+  直接聞くと2回とも認めた。受け皿と日付確認を1本にまとめた2回も両方効いた。生ログは
+  `docs/evidence/old-data-still-skipped-but-age-goes-unsaid.md`
+- 教訓: `content/_lessons.md` ★339が再発（無関係カテゴリの誤流用は件数を15件・3カテゴリに
+  増やしても0件のまま）。新規でも1件追加（★346＝カテゴリの不一致は毎回気づくが、データの
+  古さは聞き方を工夫しないと6回中2回しか気づかない）
+- 図2枚（`old-data-category-vs-age.svg`・`old-data-date-prompt-fix.svg`）を
+  `tools/make_figures.py`に追加して生成。`python -m src.build`・`python -m pytest -q`
+  （794 passed）・`check_readability.py`（60字以上1%）を確認し、
+  `python -m tools.make_eyecatch`を実行した
+- push: 1本目をpushし終えてから2本目へ進む（手順どおり）
+
 ### 2026-11-15（自動化・ループ優先の枠。専任の別ルーティン）
 - `git fetch origin`→HEADがdetachedだったがコミットはorigin/mainと一致していたため、
   `git checkout -B main origin/main`で取り直した（新規コミットは発生していない）
