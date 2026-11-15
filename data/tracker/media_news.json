@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-15T11:02:41.104557+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-15T09:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "動画撮影で意外と難しいのが、周囲の雑音を抑えながらクリアな音声を録音することです。Insta360のワイヤレスマイク「Insta360 Mic Pro」は好きな画像やロゴを表示できるカラーE-Inkディスプレイが送信機に搭載されているのが特徴で、AIによるノイズキャンセリングや最大400mのワイヤレス伝送に対応し、32bit float内部録音によって大きな声や音を収録した際の音割れにも対処でき…",
+      "title": "AIノイズキャンセリング＆32bit float録音対応でE-Inkディスプレイ搭載のワイヤレスマイク「Insta360 Mic Pro」はどれほど高性能なのか実際に使ってみたよレビュー",
+      "uid": "8ab6a0beb556d257",
+      "url": "https://gigazine.net/news/20261115-insta360-mic-pro-usage/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-15T02:43:47.066805+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2386,18 +2398,6 @@
       "title": "Google、第8世代TPUに「8tx」と「8i Max」を追加　機密データ処理と大規模AIエージェントに特化",
       "uid": "02ceb6bc23fec644",
       "url": "https://www.itmedia.co.jp/news/article/2611/10/2000003043/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-10T02:11:36.573541+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-11-09T22:03:56+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは、最上位AIモデルの新版「Claude Fable 5.2」および審査制の「Claude Mythos 5.2」を発表した。出力速度は最大30％向上し、API料金は2割値下げされている。長時間の複雑な推論やエージェント型コーディングに特化しており、同日より主要クラウドや各種アプリで提供が開始された。",
-      "title": "Anthropic、「Claude Fable 5.2」と「Claude Mythos 5.2」発表　API料金2割下げ、出力は最大30％高速化",
-      "uid": "3fcfddf07f1c63b8",
-      "url": "https://www.itmedia.co.jp/news/article/2611/10/2000003042/",
       "vendor": "ITmedia AI+"
     }
   ]
