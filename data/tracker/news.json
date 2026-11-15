@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-15T22:53:18.676781+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-15T22:00:01+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+      "summary_ja": "GPT-6 Astraが新しい物理理論の証明を支援しました。\n素粒子の標準模型の定義方法のアイデアが\nAIの助けで詳細な証明へと具体化されました。",
+      "summary_source": "gemini",
+      "title": "A step toward defining the Standard Model on a lattice",
+      "uid": "3f1284714a1e4605",
+      "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-15T22:53:18.676781+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-15T22:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+      "summary_ja": "OpenAIが科学分野の新しいブログを開始しました。\nAIを使った科学研究の新しい発見や方法、\n研究者の体験談などを共有します。",
+      "summary_source": "gemini",
+      "title": "Our new blog for science",
+      "uid": "a55de416a7e348b5",
+      "url": "https://openai.com/index/our-new-blog-for-science",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-13T23:37:15.904374+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -6125,18 +6153,6 @@
       "uid": "7e0103b4dc91fb0f",
       "url": "https://openai.com/index/nvidia/chatgpt-work",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-17T20:46:22.723644+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-17T20:20:58+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added the optional CLAUDE_CODE_PROJECT_DIR_NAME environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript direc…",
-      "title": "v2.1.234",
-      "uid": "0fb016549607a756",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
-      "vendor": "Anthropic"
     }
   ]
 }
