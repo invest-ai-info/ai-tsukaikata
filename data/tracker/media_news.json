@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-15T17:46:05.971300+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-11-15T15:31:49+00:00",
+      "source_id": "media-publickey",
+      "summary": "オープンソースのリレーショナルデータベース「PostgreSQL」は、先週木曜日（2026年11月12日）に最終リリース候補版となるPostgreSQL 19 RC2が公開され、予定では今週の11月19日に正式リリースとなる見通しです。 そ...",
+      "title": "PostgreSQL 19リリース延期の背景。β4で多くの新機能取り下げが発生、原因はAIによるコードレビューか",
+      "uid": "a6f8bd5d0ee8c4c7",
+      "url": "https://www.publickey1.jp/blog/26/postgresql_194ai.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-15T17:46:05.971300+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-11-15T15:30:19+00:00",
+      "source_id": "media-publickey",
+      "summary": "Cloudflareは、AIエージェントが操作することを想定した軽量のヘッドレスブラウザ「Kitesurf」をオープンソースで公開したと発表しました。 Kitesurf is now open source on GitHub under ...",
+      "title": "Cloudflare、AI専用でタブやテーマや拡張などない軽量ヘッドレスブラウザ「Kitesurf」、オープンソースで公開",
+      "uid": "67f31d6583c707b6",
+      "url": "https://www.publickey1.jp/blog/26/cloudflareaikitesurf.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-11-15T11:02:41.104557+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2374,30 +2398,6 @@
       "title": "Meta、最小・低コストのAIモデル「Muse Ember」発表　「Muse Spark 1.3」に迫る性能を約17分の1のコストで",
       "uid": "22c95fac979d611e",
       "url": "https://www.itmedia.co.jp/news/article/2611/10/2000003044/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-10T02:11:36.573541+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-09T23:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Googleは11月6日、検索の「AIモード」で、条件に合う飲食店の空席を複数の予約サイトから探せる機能の提供を日本で始めたと発表した。数週間かけて順次展開する。",
-      "title": "Google検索の「AIモード」、日本で飲食店の空席検索に対応　複数サイトを横断",
-      "uid": "ecc22e91555734f6",
-      "url": "https://japan.cnet.com/article/35254622/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-10T02:11:36.573541+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-09T22:26:48+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、第8世代TPUに機密データ処理向けの「TPU 8tx」と長大コンテキスト処理向けの「TPU 8i Max」を追加した。自律的なAIエージェントの普及に伴うセキュリティとメモリ性能の課題に対処する。TPU向けソフトウェアのオープンソース化や、計算資源の無駄を省く機能の強化も併せて発表した。",
-      "title": "Google、第8世代TPUに「8tx」と「8i Max」を追加　機密データ処理と大規模AIエージェントに特化",
-      "uid": "02ceb6bc23fec644",
-      "url": "https://www.itmedia.co.jp/news/article/2611/10/2000003043/",
       "vendor": "ITmedia AI+"
     }
   ]
