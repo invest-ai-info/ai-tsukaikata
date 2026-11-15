@@ -99,7 +99,9 @@
   `tools/make_figures.py`に追加して生成。`python -m src.build`・`python -m pytest -q`
   （794 passed）・`check_readability.py`（60字以上2%）を確認し、
   `python -m tools.make_eyecatch`を実行した
-- push: 2本目をコミット後、`git log origin/main -1`で確認する（次のブロックへ）
+- push: `git log origin/main -1`で自分のコミット（`99bc930c`）がorigin/mainに載ったことを
+  確認した。`git pull --rebase origin main`は差分なし（up to date）で`git push origin main`
+  がそのまま通った
 
 ### 2026-11-15（自動化・ループ優先の枠。専任の別ルーティン）
 - `git fetch origin`→HEADがdetachedだったがコミットはorigin/mainと一致していたため、
