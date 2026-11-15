@@ -73,7 +73,33 @@
   `tools/make_figures.py`に追加して生成。`python -m src.build`・`python -m pytest -q`
   （794 passed）・`check_readability.py`（60字以上1%）を確認し、
   `python -m tools.make_eyecatch`を実行した
-- push: 1本目をpushし終えてから2本目へ進む（手順どおり）
+- push: `git log origin/main -1`で自分のコミット（`a0568e45`）がorigin/mainに載ったことを
+  確認した。pull --rebase時にorigin/mainが37コミット先行していたが、`checkout main`→
+  `pull --rebase`→`merge`→`push`はfast-forwardで衝突なく完了
+
+### 2026-11-15（副業枠の回・21:00・2本目）
+- 1本目をpushし終えてから着手。副業の節を再確認（⏸を除く）＝未処理は稼ぎ方研究担当の
+  研究パック（H60）「個別確認する出品を5件から、価格帯の境界に近いあいまいな表記を含む
+  件数に増やしても、月額か別の意味かの判定に誤りは出ないか」のみだった
+- 重複チェック（`grep -h '^## ' content/recipes/*.md content/tools/*.md | sort -u`）で
+  既存見出しと衝突なしを確認。1本目（`old-data-still-skipped-but-age-goes-unsaid`）とも
+  題材が別（参考データの件数・日付／出品本文の件数）なので衝突なし
+- 公開: 1本（`recipes/ten-listings-hold-but-bundle-price-slips`）
+- 実測: 自分自身（Claude）が頼み手の指示文に答える形で6種類・計14回試した。前作
+  （instagram-agency-rate-sticker-price-trap）の既存5件に、月額の目安（20,000〜40,000円）
+  に近い新規5件を加えた10件を、価格順（材料I）・検索順（材料J）で各3回・計6回判定させた。
+  10件中9件は6回とも全部正解（54/54）。崩れたのは「3ヶ月パック・一括支払い30,000円」の
+  1件だけで、6回中2回「月額」と誤判定した。価格だけで聞いた2回はどちらも月額でない可能性に
+  触れず、「1か月あたりに直して」を足した2回・単独で取り出して聞いた2回はどちらも2回とも
+  正解した。「迷うものは要確認に」では誤判定は0件になったが断定の答えは返らなかった。
+  生ログは`docs/evidence/ten-listings-hold-but-bundle-price-slips.md`
+- 教訓: `content/_lessons.md` ★347を新規追加（件数を5件→10件に増やしても崩れたのは複数月ぶん
+  の価格を一括表示した1件だけ。他の9件と並べて聞くこと自体が崩れる一因になる）
+- 図2枚（`ten-listings-material-order-hit-rate.svg`・`ten-listings-bundle-price-fixes.svg`）を
+  `tools/make_figures.py`に追加して生成。`python -m src.build`・`python -m pytest -q`
+  （794 passed）・`check_readability.py`（60字以上2%）を確認し、
+  `python -m tools.make_eyecatch`を実行した
+- push: 2本目をコミット後、`git log origin/main -1`で確認する（次のブロックへ）
 
 ### 2026-11-15（自動化・ループ優先の枠。専任の別ルーティン）
 - `git fetch origin`→HEADがdetachedだったがコミットはorigin/mainと一致していたため、
