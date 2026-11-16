@@ -81,30 +81,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-10T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-15T22:00:01+00:00",
-      "source_id": "openai-news",
-      "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
-      "title": "A step toward defining the Standard Model on a lattice",
-      "uid": "3f1284714a1e4605",
-      "url": "https://openai.com/index/step-toward-defining-the-standard-model",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-15T22:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
-      "title": "Our new blog for science",
-      "uid": "a55de416a7e348b5",
-      "url": "https://openai.com/index/our-new-blog-for-science",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
