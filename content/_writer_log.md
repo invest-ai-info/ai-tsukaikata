@@ -46,6 +46,33 @@
 
 ## 記録
 
+### 2026-11-16（副業枠の回・21:00）
+- `git fetch origin`→作業ブランチ（`claude/serene-hamilton-rt3pda`）は`origin/main`
+  （`e9651514`）と同じコミットを指していたため取り直しは不要
+- 副業の節の未処理（⏸を除く）を上から確認。先頭3件（AI検索最適化・KDP価格帯・仕入税額控除）
+  と続く4件（フリマ手数料・ASP原資・AI動画編集ツール・Suno/小説投稿/SKIMAの3件）はすべて⏸
+  （経路遮断。前回までの記録と同じ）。着手可能な先頭は「よく言われる『見積もりは松竹梅（3段階）
+  で出すと決まりやすい』を、実際に試す」（外部ドメイン不要の題材）
+- 重複チェック（`grep -h '^## ' content/recipes/*.md | sort -u`）で既存見出しと衝突なしを確認。
+  `count-the-estimate-basis`・`proposal-draft-what-actually-repeats`は切り分け済みの隣接記事
+- 公開: 1本（`recipes/three-tier-estimate-ratio-slips-once-in-six`）。副業枠の床3件には
+  今回は満たない（着手可能が1件のみだったため、2本目・3本目は見送り。無理に埋めていない）
+- 実測: Agentツール`general-purpose`（ツール未使用・一般的なチャットAI役・毎回独立した新規会話）
+  で計10回。架空の案件2本（記事執筆代行・名刺デザイン）に「安い/標準/高い」の3段階見積もりを
+  各3回＝6回頼んだところ、標準/安いの比率は5回が1.875〜2.000倍に収まったが、材料Bの3回目だけ
+  3.000倍まで跳ねた（高い/標準も5回が1.667〜1.867倍・跳ねた回は2.333倍）。比率を「1.5倍にして」
+  と数値で指定した版は材料が違っても2回とも1.50倍で一致。金額から比率を自分で計算させる検算
+  1回は最終結果が真値と一致（途中の記述に書き違いらしき箇所あり）。4段階への拡張1回では、
+  4段目「特急」が比率ではなく足し算（標準＋特急料金）で決まり3段目「高い」より安くなった。
+  生ログは`docs/evidence/three-tier-estimate-ratio-slips-once-in-six.md`
+- 教訓: `content/_lessons.md` ★31が再発（材料2本×各3回で崩れを見つけ、比率を数値で指定して
+  直す形）。新規で1件追加（★348＝見積もりの3段階プラン、中間プランの比率は6回中5回は狭い
+  範囲に収まるが1回は大きく外れる。比率を数値で指定すれば材料が違っても指定どおりに揃う）
+- 図2枚（`matsutake-ratio-spread.svg`・`matsutake-four-tier-break.svg`）を
+  `tools/make_figures.py`に追加。`python -m src.build`の崩れ検査を通過
+- `python tools/check_readability.py`＝60字以上7%（目安15%以下）・最長68字で通過
+- `python -m src.build`・`python -m pytest -q`（794 passed）とも通過
+
 ### 2026-11-16（自動化・ループ優先枠の回。21:00の副業担当とは別枠）
 - `git fetch origin`→HEADはdetachedだったが`origin/main`（`f588cda5`）と同じコミットを
   指していたため取り直しは不要。`git checkout main`してから`git pull --ff-only`で追従

@@ -45177,3 +45177,138 @@ def wording_match_detail_chart() -> None:
 if __name__ == "__main__":
     wording_match_axis_chart()
     wording_match_detail_chart()
+
+
+def matsutake_ratio_spread_chart() -> None:
+    """見積もりを3段階で出す実測。中間プランの比率(標準/安い・高い/標準)を8回分並べる。
+
+    実測（2026-11-16・架空の案件2本〈記事執筆代行／名刺デザイン〉に素朴な指示で各3回、
+    比率を1.5倍/1.5倍と指定した指示で各1回・計8回）。docs/evidence/matsutake-tier-ratio.md 参照。
+    """
+    rows = [
+        ("材料A・記事執筆代行 1回目", 1.94, 1.80, "cluster"),
+        ("材料A・記事執筆代行 2回目", 2.00, 1.67, "cluster"),
+        ("材料A・記事執筆代行 3回目", 1.88, 1.67, "cluster"),
+        ("材料B・名刺デザイン 1回目", 1.88, 1.87, "cluster"),
+        ("材料B・名刺デザイン 2回目", 1.88, 1.67, "cluster"),
+        ("材料B・名刺デザイン 3回目", 3.00, 2.33, "out"),
+        ("材料A・比率を1.5倍/1.5倍に指定", 1.50, 1.50, "locked"),
+        ("材料B・比率を1.5倍/1.5倍に指定", 1.50, 1.50, "locked"),
+    ]
+    label_w = 280
+    col_w = 150
+    gap = 24
+    col1_x = 18 + label_w
+    col2_x = col1_x + col_w + gap
+    top = 112
+    row_h = 32
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">素朴に頼むと6回中1回だけ、比率が1.6倍近く跳ねた</text>\n',
+        '<text class="t-sm" x="18" y="45">架空の案件2本（記事執筆代行・名刺デザイン）に「安い/標準/高い」の3段階見積もりを各3回頼んだ。</text>\n',
+        '<text class="t-sm" x="18" y="64">下2行は「標準は安いの1.5倍、高いは標準の1.5倍にして」と比率を指定した版（各1回）。</text>\n',
+        f'<text class="t-xs" x="{col1_x + col_w / 2:.1f}" y="{top - 14}" text-anchor="middle">標準／安い</text>\n',
+        f'<text class="t-xs" x="{col2_x + col_w / 2:.1f}" y="{top - 14}" text-anchor="middle">高い／標準</text>\n',
+    ]
+    y = top
+    for label, r1, r2, kind in rows:
+        ty = y + 21
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        for col_x, val in ((col1_x, r1), (col2_x, r2)):
+            if kind == "out":
+                klass, tcls = "box-bad", "t-bad"
+            elif kind == "locked":
+                klass, tcls = "box-good", "t-good"
+            else:
+                klass, tcls = "box", "t"
+            parts.append(f'<rect class="{klass}" x="{col_x}" y="{y}" width="{col_w}" height="26" rx="4"/>\n')
+            parts.append(
+                f'<text class="{tcls}" x="{col_x + col_w / 2:.1f}" y="{ty}" '
+                f'text-anchor="middle" style="font-weight:700">{val:.2f}倍</text>\n'
+            )
+        y += row_h
+
+    y += 6
+    notes = [
+        "6回のうち5回は標準/安いが1.88〜2.00倍、高い/標準が1.67〜1.87倍という狭い範囲に収まった。",
+        "材料Bの3回目だけ、標準/安いが3.00倍・高い/標準が2.33倍に跳ねた（同じ指示文・同じ案件）。",
+        "「1.5倍にして」と比率を指定した2回は、材料が違っても指定どおり1.50倍・1.50倍で揃った。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "見積もりを3段階で出す実測で、標準/安い・高い/標準の比率を8回分示す表。材料A（記事執筆代行）は"
+        "1回目1.94倍/1.80倍、2回目2.00倍/1.67倍、3回目1.88倍/1.67倍。材料B（名刺デザイン）は1回目1.88倍/1.87倍、"
+        "2回目1.88倍/1.67倍、3回目は3.00倍/2.33倍に跳ねて赤で強調されている。比率を1.5倍・1.5倍に指定した版は"
+        "材料A・材料Bとも1.50倍・1.50倍で緑で強調。下の枠には、6回のうち5回は標準/安いが1.88〜2.00倍、"
+        "高い/標準が1.67〜1.87倍という狭い範囲に収まったこと、材料Bの3回目だけ3.00倍・2.33倍に跳ねたこと、"
+        "比率を指定した2回は材料が違っても指定どおり1.50倍・1.50倍で揃ったことが書かれている。"
+    )
+    (OUT / "matsutake-ratio-spread.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def matsutake_four_tier_break_chart() -> None:
+    """「安い/標準/高い」に「特急」を4段目として足すと、価格の並びはどう崩れるか。
+
+    実測（2026-11-16・材料A〈記事執筆代行〉に4段階を1回頼んだ）。特急は「標準プラン＋特急料金」
+    という足し算で出され、高いプランより安い金額になった。docs/evidence/matsutake-tier-ratio.md 参照。
+    """
+    bars = [
+        ("安い", 8000, "bar-in"),
+        ("標準", 15000, "bar-in"),
+        ("高い", 28000, "bar-in"),
+        ("特急（4段目として追加）", 27000, "box-bad"),
+    ]
+    label_x = 18
+    bar_x = 230
+    max_bar_w = 400
+    top = 108
+    row_h = 44
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">4段目の「特急」は、高いプランより安く割り込んだ</text>\n',
+        '<text class="t-sm" x="18" y="45">材料A（記事執筆代行）に「安い/標準/高い/特急」の4段階を1回だけ頼んだ結果。</text>\n',
+        '<text class="t-sm" x="18" y="64">特急は作業内容を標準のままにし、納期短縮の特急料金12,000円を足して27,000円にしていた。</text>\n',
+    ]
+    y = top
+    for label, amount, cls in bars:
+        ty = y + 16
+        parts.append(f'<text class="t-strong" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        w = max(4, round(max_bar_w * amount / 28000))
+        parts.append(f'<rect class="{cls}" x="{bar_x}" y="{ty - 13}" width="{w}" height="18" rx="3"/>\n')
+        parts.append(f'<text class="t-strong" x="{bar_x + w + 8}" y="{ty}">{amount:,}円</text>\n')
+        y += row_h
+
+    y += 6
+    notes = [
+        "安い→標準→高いの比率は1.875倍・1.867倍で、6回の実測クラスター（1.88〜2.00倍）とほぼ重なった。",
+        "特急だけ「標準の内容＋特急料金」という足し算で決まり、高いプラン28,000円より1,000円安い27,000円。",
+        "段を増やす指示は、比率で段を増やすとは限らない。4段目は金額の並びを守らずに割り込んできた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "材料A（記事執筆代行）に「安い/標準/高い/特急」の4段階見積もりを1回頼んだ結果を示す横棒グラフ。"
+        "安い8,000円・標準15,000円・高い28,000円・特急27,000円（特急だけ赤で強調）。特急は高いプランより"
+        "1,000円安い。下の枠には、安い→標準→高いの比率は1.875倍・1.867倍で6回の実測クラスターとほぼ重なったこと、"
+        "特急は標準の内容に特急料金を足す方式で決まり高いプランより安くなったこと、段を増やす指示は比率で"
+        "段を増やすとは限らず4段目が金額の並びを守らずに割り込んできたことが書かれている。"
+    )
+    (OUT / "matsutake-four-tier-break.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    matsutake_ratio_spread_chart()
+    matsutake_four_tier_break_chart()
