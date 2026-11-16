@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-16T21:30:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "ダッソー・システムズは、年次カンファレンス「3DEXPERIENCE CONFERENCE JAPAN 2026」の開催に併せてプレスブリーフィングを実施した。同社 CEOのパスカル・ダロズ氏が、AIと科学、人間の専門性を融合させた産業AI戦略について説明。バーチャルツインを中核に、物理世界の仕組みを理解し、現実世界の課題解決を支援するAIの実現を目指す。",
+      "title": "「回答するAI」から「現実の課題を解決するAI」へ、ダッソーが掲げる産業AI戦略",
+      "uid": "ef016d10d61871fb",
+      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/17/news025.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-16T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "NTTの島田明社長は11月16日、都内で講演し、宇宙で光通信網を構築する構想を明らかにした。人工衛星同士や地上の通信施設を光信号でつなぎ、高速通信を実現する。宇宙データセンターや月の発電インフラの整備にも乗り出す。",
+      "title": "NTTが宇宙光通信網の構築へ　「IOWN搭載」衛星と宇宙データセンターで米中に挑む",
+      "uid": "47d1e0ccf8bc7994",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/17/news039.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-16T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "ChatGPTなどのAIは文章を作成したり質問に回答したりできますが、その内部でどのような計算が行われているのかを理解するには数学やプログラミングの知識が必要です。そんな大規模言語モデル(LLM)の仕組みを高校1年生向けの数学から順番に学び、Google Colab上で実際に小さなGPTを作ることができる無料教材「microgpt-lesson」です。 続きを読む...",
+      "title": "無料で高校1年生(数学IA履修程度)を対象に大規模言語モデル(LLM)・GPTの仕組みを数学とプログラミングの初歩から順番に作って学ぶ教材「microgpt-lesson」、Google Colabで動作",
+      "uid": "31d2a3af3fc50224",
+      "url": "https://gigazine.net/news/20261116-microgpt-lesson/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-16T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "排ガス規制に適合させるため、Claude CodeとOpenAI Codexで車を修理したという人が詳細を報告しました。 続きを読む...",
+      "title": "ClaudeとCodexで32年落ちのジープをリバースエンジニアリングして修理",
+      "uid": "ba3d9cd1876a474b",
+      "url": "https://gigazine.net/news/20261116-claude-codex-controll-jeep/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-16T11:31:43.556407+00:00",
       "importance": "minor",
       "label": "Impress AI Watch",
@@ -2351,54 +2399,6 @@
       "uid": "5e59d9327d8d5700",
       "url": "https://japan.cnet.com/article/35254675/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-10T23:26:54.403401+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-10T22:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Adobeは11月10日、対応する外部AIエージェントから「Photoshop」「Illustrator」「Premiere」「After Effects」を呼び出して操作できる「MCPインテグレーション」を発表した。2027年初めにCreative Cloud利用者向けのプライベートベータとして提供する予定だ。",
-      "title": "アドビ、「フォトショ」「プレミア」などがMCP対応　外部AIエージェントから操作可能に",
-      "uid": "74d1577a095d1a55",
-      "url": "https://japan.cnet.com/article/35254677/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-10T23:26:54.403401+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-11-10T22:03:30+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、最上位AIモデル「Gemini 4 Carbon」の提供を開始した。一般ユーザーは月額1万4500円の「Google AI Ultra」契約で利用可能となる。複雑な推論や高度なコーディングに特化しており、開発者向けAPIや新機能「/swarm」のプレビュー提供も始まった。",
-      "title": "Google、「Gemini 4 Carbon」一般提供開始　Geminiアプリでは最上位「AI Ultra」限定",
-      "uid": "2875b3a003074e7a",
-      "url": "https://www.itmedia.co.jp/news/article/2611/11/2000003083/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-10T23:26:54.403401+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-10T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "「同じ質問に何度も答えている」「引き継ぎに手間がかかる」といったあるあるの悩み。Gemini Notebookなら既存のマニュアルを読み込ませるだけで、根拠付きで回答する専用AIを素早く構築できる。",
-      "title": "Gemini Notebookで規定探しの手間をゼロにする、「問い合わせ効率化」超入門",
-      "uid": "f1330505870d25fa",
-      "url": "https://kn.itmedia.co.jp/kn/article/2611/11/2000003077/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-10T23:26:54.403401+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-10T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ソフトバンク、NTT、KDDIがフィジカルAIビジネスに本格参入した。通信大手3社がそろって本腰を入れるのはなぜか。各社の狙いを読み解く。",
-      "title": "通信大手3社こぞって「フィジカルAI」に参入、なぜ？　ロボットが動くともうかるワケ",
-      "uid": "d63113b5f8b0d420",
-      "url": "https://www.itmedia.co.jp/business/articles/2611/11/news038.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }

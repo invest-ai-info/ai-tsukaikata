@@ -1,6 +1,58 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-16T22:11:05+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added support for turning on Code Mode while agent teams are enabled; if you already turned it on, sessions with teams on now start in Code Mode Added a startup warning when an --allow…",
+      "title": "v2.1.326",
+      "uid": "ace21f6c92c17339",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.326",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+      "summary_ja": "科学者向けAIへの無償アクセスが拡大\nChatGPT研究者プログラムを拡充し\n世界の20万人に最先端AIモデルを提供",
+      "summary_source": "gemini",
+      "title": "Broadening access to AI for scientists",
+      "uid": "9244732bd22f0cea",
+      "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T17:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
+      "summary_ja": "オンラインの児童虐待対策が強化\n新しいツールと指針、提携を活用し\n防止・検出・対応を支援する",
+      "summary_source": "gemini",
+      "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+      "uid": "0cda5fb028a37764",
+      "url": "https://openai.com/index/strengthening-online-child-safety",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-16T16:47:17+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add source and error codes to the RBAC Role read endpoints api: add Update Bundle, which sets a Claude Tag Bundle's instructions, and return instructions on Bundle Bug Fixes credentials…",
+      "title": "v2.9.0",
+      "uid": "8edadc949df6378a",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.9.0",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-16T11:31:43.556407+00:00",
       "importance": "minor",
       "label": "Sakana AI Blog",
@@ -13,6 +65,34 @@
       "uid": "07cd5853ee4bd163",
       "url": "https://sakana.ai/jfinbench/",
       "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-16T14:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "tbd",
+      "summary_ja": "Googleマップに新機能が登場",
+      "summary_source": "gemini",
+      "title": "New Ask Maps features to help with holiday travel and prep",
+      "uid": "09054c8b0d32a2d9",
+      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T12:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
+      "summary_ja": "科学者がChatGPTをどう使うか調査\n1,800人超の利用実態を公開し\n日常業務、生産性、発見への期待を分析",
+      "summary_source": "gemini",
+      "title": "Science at the Frontier: How scientists use ChatGPT",
+      "uid": "7db5a4dc3bc49fb6",
+      "url": "https://openai.com/index/science-at-the-frontier",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-16T11:31:43.556407+00:00",
@@ -29,6 +109,46 @@
       "vendor": "OpenAI"
     },
     {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI begins embedded assessments with Apollo Research, METR, and Transluce, and Goodfire to independently evaluate model alignment, safeguards, and monitoring systems.",
+      "summary_ja": "OpenAIがAIモデルの評価を開始\n独立機関と連携し埋め込み評価を実施\nApollo Researchなど4社が安全性などを検証",
+      "summary_source": "gemini",
+      "title": "Our first phase of embedded assessments",
+      "uid": "6d5d4c7fefdbbacc",
+      "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "",
+      "title": "Advancing computer-use agents for healthcare teams",
+      "uid": "7c10136a45f15790",
+      "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T06:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing computer-use agents, improved clinical answers, and new healthcare plugins that work across healthcare software to get real work done.",
+      "summary_ja": "医療向けChatGPTの機能が拡充\n自動応答や臨床回答の精度が向上\n医療ソフトと連携する新プラグインを導入",
+      "summary_source": "gemini",
+      "title": "More ways to move care forward with ChatGPT for Healthcare",
+      "uid": "63221754f2564109",
+      "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-16T02:47:29.378343+00:00",
       "importance": "major",
       "label": "Qwen 新モデル",
@@ -39,6 +159,34 @@
       "uid": "f8655936ce24aee7",
       "url": "https://openrouter.ai/qwen/qwen4-max",
       "vendor": "Alibaba Qwen"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-16T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "The King’s Trust and OpenAI launch a £1m partnership to help up to 25,000 young people across the UK build practical AI skills for work.",
+      "summary_ja": "OpenAIと慈善団体が提携を発表\nKing’s Trustと100万ポンドの共同事業\n英の若者2.5万人にAIスキル習得を支援",
+      "summary_source": "gemini",
+      "title": "The King’s Trust and OpenAI launch £1m partnership",
+      "uid": "f6d2d2e13d3f4484",
+      "url": "https://openai.com/index/the-kings-trust-and-openai",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-16T22:11:17.685915+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Dots deliver launch reports unprompted, flag issues people might miss, and talk through upcoming meetings on the commute to work.",
+      "summary_ja": "Holiday Extrasで新機能が稼働\n自発的にレポート作成や問題を指摘\n通勤中に今後の会議内容を説明する",
+      "summary_source": "gemini",
+      "title": "At Holiday Extras, dots get to work before anyone asks",
+      "uid": "f92ac43888fdfdd8",
+      "url": "https://openai.com/business/customer-stories/holiday-extras-dots",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-15T22:53:18.676781+00:00",
@@ -6082,46 +6230,6 @@
       "title": "Replit expands access to software creation with GPT-5.6 Luna",
       "uid": "828aa1662b982be2",
       "url": "https://openai.com/index/replit",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-19T05:48:17.932182+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-18T22:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "ChatGPT Ads is expanding to 31 European markets. Learn how advertisers can reach people as they explore, compare options, and make decisions.",
-      "summary_ja": "ChatGPTの広告機能がヨーロッパで拡大\n31の市場に展開されます\n広告主はユーザーの意思決定時にアプローチ可",
-      "summary_source": "gemini",
-      "title": "ChatGPT Ads expands across Europe",
-      "uid": "47589f54860f380c",
-      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-18T20:42:26.846917+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-18T20:38:54+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added an optional spellcheck setting that underlines misspelled words in the prompt input as you type, using your installed aspell , hunspell , or ispell Fixed whole-prompt-cache inval…",
-      "title": "v2.1.235",
-      "uid": "b7ae0383bfd3f5c1",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.235",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-18T20:42:26.846917+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-18T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI launches an initiative to strengthen democratic oversight of AI in national security, supporting government institutions with tools, training, and expertise.",
-      "summary_ja": "OpenAIが国家安全保障分野のAI監視を強化する取り組みを開始\n政府機関に対し、ツールや研修、専門知識を提供",
-      "summary_source": "gemini",
-      "title": "Strengthening Democratic Oversight in National Security",
-      "uid": "f63af62064cc3f67",
-      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
       "vendor": "OpenAI"
     }
   ]
