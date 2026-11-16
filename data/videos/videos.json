@@ -5937,19 +5937,6 @@
    "attempts": 0
   },
   {
-   "video_id": "-0RJnk__4cE",
-   "title": "【ガチ失敗】プレゼンで動画が流れない…スライド事故を防ぐ「爆速GIF変換ツール」作りました【無料配布】",
-   "url": "https://www.youtube.com/watch?v=-0RJnk__4cE",
-   "published": "2026-11-02T09:00:03+00:00",
-   "channel_key": "kosuke-google",
-   "channel_name": "こーすけ先生のGoogle塾",
-   "default_category": "tech",
-   "description": "Google主催の「Agentic AI Summit '26 Fall」に登壇しました！そこで出くわした「動画再生エラー事件」をきっかけにとあるツールを開発！\n\nGoogleスライドでのプレゼントラブルを防ぐ自作ツール「Media Convert Studio」を実演解説＆無料公開します！画面録画や動画ファイルから、簡単なカット編集・解像度＆フレームレート調整を行い、GIF動画を一発作成！\n\nブラウザ完結・サーバー送信なしでご利用いただけるので、セキュリティ面も安全！ツールは概要欄にございますGitHubリンクからぜひお試しください！✨\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:28 「Agentic AI Summit '26 Fall」に登壇しました！\n02:16 「GIF動画」とは\n03:15 GIF動画の弱点\n04:29 「Media Convert Studio」\n07:26 スライドにGIF動画を挿入する\n08:34 まとめ\n10:35 ゆるトーク\n\n【Media Convert Studio】\nhttps://kotakahashi-4u.github.io/media-convert-studio/\n\n【関連動画：足立区が挑む自治体 DX：議会答弁 AI エージェントと Gemini が変える行政の未来】\nhttps://cloudonair.withgoogle.com/events/agentic-ai-summit-26-fall/watch?talk=26q4-d1t2-session1\n\n※当日、会場やオンラインでご視聴いただき、ありがとうございました✨\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
-   "first_seen": "2026-11-02T21:54:47.234974+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "7crERNYKsNs",
    "title": "【無料でも超高性能】Canva初の独自画像生成AIモデル「Canva Craft(キャンバ・クラフト)」徹底解説！ ～性能・使い方・マジックレイヤーを使った活用事例～",
    "url": "https://www.youtube.com/watch?v=7crERNYKsNs",
@@ -8186,91 +8173,196 @@
    "first_seen": "2026-11-15T19:04:35.364908+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "hz1Dpa0G0qo",
+   "title": "Claudeミーティングが神機能すぎる！実演画面付きで解説",
+   "url": "https://www.youtube.com/watch?v=hz1Dpa0G0qo",
+   "published": "2026-11-16T09:00:13+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-11-16T22:28:47.290413+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claudeのビジネスプランに追加された新機能「ミーティング」を使い、Google Meetの会議にAIを参加させる手順を実演している。",
+    "会話内容からリアルタイムでメモや決定事項、アクションアイテムが議事録に自動作成される様子を紹介している。",
+    "音声の指示により、議事録をホワイトボード形式にまとめ直したり、関連情報を調査して新規ページを作成できると説明している。"
+   ],
+   "for_whom": "会議の議事録作成を自動化したい人や、Claudeをチーム業務に取り入れたい会社員向け。",
+   "caution": "紹介されている機能はClaudeのビジネスプラン限定機能と説明されています。また、概要欄で公式LINEや有料AIスクール等への誘導が行われている点にご留意ください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-16T22:28:47.290413+00:00"
+  },
+  {
+   "video_id": "6MnogGf-DEo",
+   "title": "【始動】法人向け特大プロジェクトがスタートします。",
+   "url": "https://www.youtube.com/watch?v=6MnogGf-DEo",
+   "published": "2026-11-16T12:00:00+00:00",
+   "channel_key": "saki",
+   "channel_name": "【さき】のAIでええやん。",
+   "default_category": "tech",
+   "first_seen": "2026-11-16T22:28:47.290413+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AI研修を受けても業務が変わらないのは、どの仕事にAIを使うかが決まっていないことが原因だと説明している。",
+    "現場の業務を整理し、AIで時間を削減できる業務と優先順位を一緒に決める無料の「47都道府県AI研修」を開始すると発表している。",
+    "研修内容は資料にまとめられ、YouTube企画として撮影・公開される前提で、公式Webサイトから応募を受け付けていると案内している。"
+   ],
+   "for_whom": "社内へのAI導入を進めたいが具体的な活用業務が決まらず悩んでいる企業担当者や経営者",
+   "caution": "無料のAI研修企画ですが、YouTube動画として撮影・公開される条件があり、事前の選考や自社サイトへの会員登録が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-16T22:28:47.290413+00:00"
+  },
+  {
+   "video_id": "ooLSFvXs_Jo",
+   "title": "【徹底解説】無償版でも使える高コスパモデル「Gemini 4 Hydrogen」知能指数でArgonを上回る実力を検証します",
+   "url": "https://www.youtube.com/watch?v=ooLSFvXs_Jo",
+   "published": "2026-11-16T09:00:15+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-11-16T22:28:47.290413+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemini 4 Hydrogenは高速かつ低コストで、知能指数等のベンチマークで上位モデルのArgonを上回る性能を持つと解説している。",
+    "無償アカウントではAIの自動判別で利用でき、企業向け等の有償アカウントであれば明示的にモデルを指定して利用できると説明している。",
+    "実際にHydrogenを使って、PDFの分割や結合、ページ番号付与などが可能なWebツールを爆速で開発・改良する様子を実演している。"
+   ],
+   "for_whom": "Geminiを活用して自作の業務効率化ツールやWebアプリを手軽に開発したい人向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-16T22:28:47.290413+00:00"
+  },
+  {
+   "video_id": "vVVdxMwPBuA",
+   "title": "How Check Point speeds up vulnerability research with Daybreak | OpenAI for Cybersecurity",
+   "url": "https://www.youtube.com/watch?v=vVVdxMwPBuA",
+   "published": "2026-11-16T16:55:56+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-16T22:28:47.290413+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Check PointのCTOが、OpenAIのDaybreakを活用した脆弱性調査の自動化について説明している",
+    "従来は数時間かかっていた専門家による脆弱性の分析プロセスを数分に短縮したと述べている",
+    "OpenAIと協力して自律型ネットワークセキュリティを開発し、防御を迅速化していると語っている"
+   ],
+   "for_whom": "サイバーセキュリティの業務自動化やAI活用に関心があるIT担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-16T22:28:47.290413+00:00"
+  },
+  {
+   "video_id": "soNLXvgUqNY",
+   "title": "La Cousinade",
+   "url": "https://www.youtube.com/watch?v=soNLXvgUqNY",
+   "published": "2026-11-16T05:00:26+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Une cousinade avec 63 cousins. Un site créé avec ChatGPT.",
+   "first_seen": "2026-11-16T22:28:47.290413+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-15T19:04:35.364908+00:00",
+   "last_ok": "2026-11-16T22:28:47.290413+00:00",
    "fail_streak": 0
   }
  }
