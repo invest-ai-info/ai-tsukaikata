@@ -73,6 +73,35 @@
 - `python tools/check_readability.py`＝60字以上7%（目安15%以下）・最長68字で通過
 - `python -m src.build`・`python -m pytest -q`（794 passed）とも通過
 
+### 2026-11-16（自動化・ループ優先枠の回・2回目の起動）
+- `git fetch origin`→HEADはdetachedで`origin/main`より古いコミット（`90190759`）を指していた。
+  まだ何も書いていないうちに`git checkout -B main origin/main`で取り直した
+- `content/_recipe_queue.md`の`### 自動化・ループ優先`節を確認。先頭（検算で巻き添え…）は
+  今回すでに`[x]`済みだったので、2番目の未処理（更新間隔1日・15日・30日の混在）を選んだ
+  （今朝の1回目の記録に「2番目は今回は着手していない」と残っていたとおり）
+- 重複チェック（`grep -h '^## ' content/recipes/*.md | sort -u`／タイトルの「窓」「間隔」
+  「監視」等でも検索）で既存見出しと衝突なしを確認
+- 公開: 1本（`recipes/wide-interval-mix-splits-the-ambiguous-call`）
+- 実測: Agentツール`general-purpose`（ツール未使用・一般的なチャットAI役・毎回独立した新規会話）
+  で計12回。1日・15日・30日おきの更新間隔を混ぜた架空の監視ログ（5情報源・60日分）に、
+  固定窓（直近10/20/35回・絶対表現2種＋相対表現1種）とあいまい判定（列順入替含め2種）を
+  各2回試した。固定窓は幅をどれにしても5件中3件しか正解できず（間違う2件の組み合わせだけが
+  入れ替わる＝窓10はL・N、窓20はK・N、窓35はK・M）、相対表現にしても絶対表現と1件も変わらな
+  かった。あいまい版は4回のうち全問正解2回・取り違え2回（3件・1件）で、前作（間隔差14日まで）
+  の「あいまいなら2回とも9/9」という結論がこの材料では成り立たなかった。生ログは
+  `docs/evidence/wide-interval-mix-splits-the-ambiguous-call.md`
+- 教訓: `content/_lessons.md` ★349を新規追加（固定窓は幅によらず5件中3件止まり・あいまい判定も
+  4回中2回は取り違える）。★343の材料（間隔差最長14日）では成り立った「あいまいなら安全」が、
+  間隔差を1〜30日まで広げると崩れることを確認
+- 図2枚（`wide-interval-mix-accuracy.svg`・`wide-interval-mix-timeline.svg`）を
+  `tools/make_figures.py`に追加。初回生成でタイムライン図の右はみ出し（日数ラベル「60」と
+  窓の起点ラベル）を検出→`text-anchor="middle"`を使わず左アンカーに直して解消。
+  `python -m src.build`の崩れ検査を通過
+- `python tools/check_readability.py`＝初回60字以上18%で8文を箇条書き・分割し直し、
+  再測定で60字以上10%（目安15%以下）・最長69字に収めて通過
+- `python -m src.build`・`python -m pytest -q`（794 passed）とも通過
+- `git pull`後に`python -m tools.make_eyecatch`を実行し、アイキャッチ361枚を再生成
+
 ### 2026-11-16（自動化・ループ優先枠の回。21:00の副業担当とは別枠）
 - `git fetch origin`→HEADはdetachedだったが`origin/main`（`f588cda5`）と同じコミットを
   指していたため取り直しは不要。`git checkout main`してから`git pull --ff-only`で追従

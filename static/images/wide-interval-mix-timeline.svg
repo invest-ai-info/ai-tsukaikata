@@ -1,0 +1,309 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="364" viewBox="0 0 720 364" role="img" aria-label="K・L・M・Nについて、新着があった日（緑）と無かった日（グレー）を60日分並べたタイムライン図。Kは1〜50日目は毎日新着があり51〜60日目はゼロ（本当に停止）。Lは1・16・31・46日目だけ新着があり47日目以降はゼロ（15日おきの健全な相手でまだ正常）。Mは1・16・31日目だけ新着があり32日目以降はゼロ（15日おきだが本当に停止）。Nは1・31日目だけ新着があり32日目以降はゼロ（30日おきの健全な相手でまだ正常）。グラフには3本の点線（点検26・41・51＝窓35・20・10の起点）が重ねられている。下の枠には、KとLは起点15で境目が分かれ窓10はLを窓20・35はKを取り違えること、MとNは起点30で境目が分かれ窓10・20はNを窓35はMを取り違えること、2つの境目（15と30）の間に起点を置ける幅が無いのでどの窓も4件を同時に当てられないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="364"/>
+<text class="t-strong" x="18" y="24">窓の起点をどこに置いても、2つの境目を同時に満たせない</text>
+<text class="t-sm" x="18" y="43">K・L・M・Nの新着があった日（緑）と無かった日（グレー）を60日分並べた。</text>
+<text class="t-sm" x="18" y="62">点線は3本の窓の起点（点検26・41・51）。起点より左に最後の新着があると「停止」と判定される。</text>
+<text class="t-sm" x="18" y="170">K（毎日おき・いま停止）</text>
+<rect class="box-good" x="176.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="185.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="194.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="203.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="212.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="221.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="230.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="239.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="248.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="257.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="266.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="275.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="284.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="293.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="302.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="311.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="320.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="329.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="338.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="347.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="356.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="365.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="374.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="383.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="392.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="401.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="410.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="419.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="428.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="437.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="446.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="455.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="464.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="473.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="482.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="491.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="500.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="509.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="518.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="527.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="536.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="545.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="554.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="563.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="572.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="581.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="590.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="599.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="608.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="617.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="626.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="635.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="644.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="653.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="662.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="671.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="680.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="689.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="698.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="707.0" y="156.0" width="7.8" height="16" rx="1.5"/>
+<text class="t-sm" x="18" y="198">L（15日おき・正常）</text>
+<rect class="box-good" x="176.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="185.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="194.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="203.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="212.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="221.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="230.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="239.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="248.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="257.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="266.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="275.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="284.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="293.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="302.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="311.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="320.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="329.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="338.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="347.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="356.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="365.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="374.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="383.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="392.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="401.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="410.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="419.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="428.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="437.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="446.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="455.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="464.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="473.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="482.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="491.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="500.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="509.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="518.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="527.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="536.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="545.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="554.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="563.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="572.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="581.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="590.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="599.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="608.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="617.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="626.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="635.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="644.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="653.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="662.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="671.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="680.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="689.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="698.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="707.0" y="184.0" width="7.8" height="16" rx="1.5"/>
+<text class="t-sm" x="18" y="226">M（15日おき・停止）</text>
+<rect class="box-good" x="176.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="185.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="194.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="203.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="212.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="221.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="230.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="239.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="248.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="257.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="266.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="275.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="284.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="293.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="302.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="311.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="320.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="329.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="338.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="347.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="356.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="365.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="374.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="383.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="392.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="401.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="410.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="419.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="428.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="437.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="446.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="455.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="464.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="473.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="482.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="491.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="500.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="509.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="518.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="527.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="536.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="545.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="554.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="563.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="572.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="581.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="590.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="599.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="608.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="617.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="626.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="635.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="644.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="653.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="662.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="671.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="680.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="689.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="698.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="707.0" y="212.0" width="7.8" height="16" rx="1.5"/>
+<text class="t-sm" x="18" y="254">N（30日おき・正常）</text>
+<rect class="box-good" x="176.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="185.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="194.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="203.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="212.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="221.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="230.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="239.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="248.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="257.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="266.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="275.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="284.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="293.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="302.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="311.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="320.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="329.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="338.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="347.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="356.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="365.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="374.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="383.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="392.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="401.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="410.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="419.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="428.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="437.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-good" x="446.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="455.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="464.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="473.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="482.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="491.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="500.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="509.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="518.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="527.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="536.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="545.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="554.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="563.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="572.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="581.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="590.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="599.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="608.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="617.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="626.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="635.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="644.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="653.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="662.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="671.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="680.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="689.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="698.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<rect class="box-quiet" x="707.0" y="240.0" width="7.8" height="16" rx="1.5"/>
+<text class="t-xs" x="176.0" y="146.0">1</text>
+<text class="t-xs" x="257.0" y="146.0">10</text>
+<text class="t-xs" x="347.0" y="146.0">20</text>
+<text class="t-xs" x="437.0" y="146.0">30</text>
+<text class="t-xs" x="527.0" y="146.0">40</text>
+<text class="t-xs" x="617.0" y="146.0">50</text>
+<text class="t-xs" x="707.0" y="146.0">60</text>
+<path class="line" d="M401.0 152.0 L401.0 260.0" stroke-dasharray="3 3"/>
+<text class="t-xs" x="303.0" y="106.0">窓35の起点（点検26）</text>
+<path class="line" d="M536.0 152.0 L536.0 260.0" stroke-dasharray="3 3"/>
+<text class="t-xs" x="438.0" y="122.0">窓20の起点（点検41）</text>
+<path class="line" d="M626.0 152.0 L626.0 260.0" stroke-dasharray="3 3"/>
+<text class="t-xs" x="528.0" y="138.0">窓10の起点（点検51）</text>
+<rect class="box-accent" x="18" y="282" width="684" height="66" rx="6"/>
+<text class="t-accent" x="34" y="302">KとLは起点15で境目が分かれる（K正解＝起点≦10／L正解＝起点≧15）。窓10はLを、窓20・35はKを取り違える。</text>
+<text class="t-accent" x="34" y="320">MとNは起点30で境目が分かれる（M正解＝起点≦29／N正解＝起点≧30）。窓10・20はNを、窓35はMを取り違える。</text>
+<text class="t-accent" x="34" y="338">2つの境目（15と30）の間に起点を置ける幅が無いので、どの窓もK・L・M・Nの4件を同時に当てられない。</text>
+</svg>

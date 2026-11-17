@@ -45312,3 +45312,149 @@ def matsutake_four_tier_break_chart() -> None:
 if __name__ == "__main__":
     matsutake_ratio_spread_chart()
     matsutake_four_tier_break_chart()
+
+
+def wide_interval_mix_accuracy_chart() -> None:
+    """固定の窓3種とあいまい判定2回の正解数（5情報源中）を比べる（2026-11-16）。
+
+    実測。更新間隔1日・15日・30日の相手を混ぜると、固定窓は幅を変えても
+    常に5件中3件しか正解しない（間違う2件が入れ替わるだけ）。あいまいに
+    判定してくださいと頼む版は、1回目は5/5だったが2回目は2/5まで落ちた。
+    """
+    _hit_and_miss_rows_chart(
+        "wide-interval-mix-accuracy.svg",
+        "窓の幅を変えても、正解はいつも5件中3件のまま",
+        "更新間隔1日・15日・30日の相手5件を混ぜた架空ログ（60日分）で、5種の頼み方を比べた。",
+        "固定の窓は幅を10・20・35回のどれにしても3/5。あいまいに頼むと1回目5/5・2回目2/5と割れた。",
+        [
+            ("窓＝直近10回（点検51〜60）", 3, 5, "good"),
+            ("窓＝直近20回（点検41〜60）", 3, 5, "good"),
+            ("窓＝直近35回（点検26〜60）", 3, 5, "good"),
+            ("数字を使わず「判定してください」（1回目）", 5, 5, "good"),
+            ("数字を使わず「判定してください」（2回目）", 2, 5, "good"),
+        ],
+        [
+            "固定窓は3種類とも5件中3件で変わらず、5件全部が正解になる幅は見つからなかった。",
+            "あいまいに判定してくださいと頼む版は、同じ指示文のまま1回目5/5・2回目2/5と結果が割れた。",
+            "2回目は、どの固定窓よりも正解数が少なかった（2/5＜3/5）。",
+        ],
+        "窓の幅を変えても、正解はいつも5件中3件のままであることを示す横棒グラフ。"
+        "窓＝直近10回は3/5、窓＝直近20回は3/5、窓＝直近35回は3/5。"
+        "数字を使わず「判定してください」と頼んだ版は1回目5/5・2回目2/5。"
+        "下の枠には、固定窓は3種類とも5件中3件で変わらず5件全部が正解になる幅は見つからなかったこと、"
+        "あいまいに判定してくださいと頼む版は同じ指示文のまま1回目5/5・2回目2/5と結果が割れたこと、"
+        "2回目はどの固定窓よりも正解数が少なかったことが書かれている。",
+    )
+
+
+def wide_interval_mix_timeline_chart() -> None:
+    """K・L・M・Nの新着の有無を60日分並べ、3本の窓の起点に縦の破線を重ねる（2026-11-16）。
+
+    実測。Kは1〜50日目に毎日新着があり51〜60日目は0（本当に停止）。Lは1・16・31・46
+    日目だけ新着があり47日目以降は0（15日おきの健全な相手・まだ正常）。Mは1・16・31
+    日目だけ新着があり32日目以降は0（15日おきだが本当に停止）。Nは1・31日目だけ新着
+    があり32日目以降は0（30日おきの健全な相手・まだ正常）。
+    窓の起点（点検51・41・26）をどこに置いても、K・Lの境目（起点15）とM・Nの境目
+    （起点30）を同時に正しい側へ置くことはできない。
+    """
+    label_x = 18
+    plot_x = 176
+    cell_w = 9
+    cell_h = 16
+    days = 60
+    top = 160
+    row_h = 28
+
+    def px(day_index: int) -> float:
+        return plot_x + day_index * cell_w
+
+    rows = [
+        ("K（毎日おき・いま停止）", {i for i in range(1, 51)}),
+        ("L（15日おき・正常）", {1, 16, 31, 46}),
+        ("M（15日おき・停止）", {1, 16, 31}),
+        ("N（30日おき・正常）", {1, 31}),
+    ]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "窓の起点をどこに置いても、2つの境目を同時に満たせない</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "K・L・M・Nの新着があった日（緑）と無かった日（グレー）を60日分並べた。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "点線は3本の窓の起点（点検26・41・51）。起点より左に最後の新着があると「停止」と判定される。"
+        "</text>\n",
+    ]
+
+    y = top
+    row_tops = []
+    row_bottoms = []
+    for label, has_new_days in rows:
+        ty = y + 10
+        row_tops.append(ty - cell_h + 2)
+        parts.append(f'<text class="t-sm" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        for d in range(days):
+            day = d + 1
+            cls = "box-good" if day in has_new_days else "box-quiet"
+            parts.append(
+                f'<rect class="{cls}" x="{px(d):.1f}" y="{ty - cell_h + 2:.1f}" '
+                f'width="{cell_w - 1.2:.1f}" height="{cell_h}" rx="1.5"/>\n'
+            )
+        row_bottoms.append(ty + 2)
+        y += row_h
+
+    for d in (0, 9, 19, 29, 39, 49, 59):
+        parts.append(
+            f'<text class="t-xs" x="{px(d):.1f}" y="{top - 14:.1f}">{d + 1}</text>\n'
+        )
+
+    grid_top = row_tops[0] - 4
+    grid_bottom = row_bottoms[-1] + 4
+
+    boundaries = [
+        (26, "窓35の起点（点検26）", -46),
+        (41, "窓20の起点（点検41）", -30),
+        (51, "窓10の起点（点検51）", -14),
+    ]
+    for day, text, label_dy in boundaries:
+        bx = px(day - 1)
+        parts.append(
+            f'<path class="line" d="M{bx:.1f} {grid_top:.1f} L{bx:.1f} {grid_bottom:.1f}" '
+            f'stroke-dasharray="3 3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{bx - 98:.1f}" y="{grid_top + label_dy:.1f}">{_esc(text)}</text>\n'
+        )
+
+    y += 10
+    notes = [
+        "KとLは起点15で境目が分かれる（K正解＝起点≦10／L正解＝起点≧15）。窓10はLを、窓20・35はKを取り違える。",
+        "MとNは起点30で境目が分かれる（M正解＝起点≦29／N正解＝起点≧30）。窓10・20はNを、窓35はMを取り違える。",
+        "2つの境目（15と30）の間に起点を置ける幅が無いので、どの窓もK・L・M・Nの4件を同時に当てられない。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 4
+    alt = (
+        "K・L・M・Nについて、新着があった日（緑）と無かった日（グレー）を60日分並べたタイムライン図。"
+        "Kは1〜50日目は毎日新着があり51〜60日目はゼロ（本当に停止）。"
+        "Lは1・16・31・46日目だけ新着があり47日目以降はゼロ（15日おきの健全な相手でまだ正常）。"
+        "Mは1・16・31日目だけ新着があり32日目以降はゼロ（15日おきだが本当に停止）。"
+        "Nは1・31日目だけ新着があり32日目以降はゼロ（30日おきの健全な相手でまだ正常）。"
+        "グラフには3本の点線（点検26・41・51＝窓35・20・10の起点）が重ねられている。"
+        "下の枠には、KとLは起点15で境目が分かれ窓10はLを窓20・35はKを取り違えること、"
+        "MとNは起点30で境目が分かれ窓10・20はNを窓35はMを取り違えること、"
+        "2つの境目（15と30）の間に起点を置ける幅が無いのでどの窓も4件を同時に当てられないことが書かれている。"
+    )
+    (OUT / "wide-interval-mix-timeline.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    wide_interval_mix_accuracy_chart()
+    wide_interval_mix_timeline_chart()
