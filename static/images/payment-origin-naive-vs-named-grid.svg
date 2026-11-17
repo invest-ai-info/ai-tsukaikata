@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="325" viewBox="0 0 720 325" role="img" aria-label="素朴に「入金予定日はいつですか」と聞いた回（4回）と、「発注書の記述だけを起点に」と名指しして聞いた回（4回）で、結論として最初に示した日付を並べたマス目。素朴に聞いた回は、材料Aの1回目が10/31、2回目が11/30、材料Bの1回目が未定（両方の可能性を対等に提示）、2回目が10/31で、3通りに割れた。起点を名指しした回は、材料A・Bとも1回目・2回目すべてで10/31に一致した。下の枠には、素朴に聞いた回は4回とも2つの文書の基準が違うこと自体には触れていたこと、起点を名指しした回は結論の日付が4回とも一致したが4回中3回は使わないよう頼んだ基本契約の矛盾を補足として書き足したことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="325"/>
+<text class="t-strong" x="18" y="26">矛盾そのものには4回とも気づいたが、結論の日付は3通りに割れた</text>
+<text class="t-sm" x="18" y="45">架空の「基本契約書＋個別発注書」2組（検収完了と納品日で支払の基準が揃わない）に、「入金予定日はいつですか」と素朴に聞いた（4回）。</text>
+<text class="t-sm" x="18" y="64">同じ2組に、「発注書の記述だけを起点に」と名指しして聞いた回（4回）も試した。</text>
+<text class="t-sm" x="18" y="83">材料や仮説を知らない新規の会話に、毎回同じ指示文を送った実測。</text>
+<text class="t-xs" x="18" y="106">結論として最初に示した日付</text>
+<text class="t-xs" x="237.0" y="138">材料A・1回目</text>
+<text class="t-xs" x="357.0" y="138">材料A・2回目</text>
+<text class="t-xs" x="477.0" y="138">材料B・1回目</text>
+<text class="t-xs" x="597.0" y="138">材料B・2回目</text>
+<text class="t-sm" x="18" y="170">素朴に聞く（4回）</text>
+<rect class="box-accent" x="210" y="150" width="110" height="32" rx="4"/>
+<text class="t-accent" x="237.0" y="170">10/31</text>
+<rect class="box-bad" x="330" y="150" width="110" height="32" rx="4"/>
+<text class="t-bad" x="357.0" y="170">11/30</text>
+<rect class="box-quiet" x="450" y="150" width="110" height="32" rx="4"/>
+<text class="t-sm" x="493.8" y="170">未定</text>
+<rect class="box-accent" x="570" y="150" width="110" height="32" rx="4"/>
+<text class="t-accent" x="597.0" y="170">10/31</text>
+<text class="t-sm" x="18" y="212">起点を名指し（4回）</text>
+<rect class="box-good" x="210" y="192" width="110" height="32" rx="4"/>
+<text class="t-good" x="237.0" y="212">10/31</text>
+<rect class="box-good" x="330" y="192" width="110" height="32" rx="4"/>
+<text class="t-good" x="357.0" y="212">10/31</text>
+<rect class="box-good" x="450" y="192" width="110" height="32" rx="4"/>
+<text class="t-good" x="477.0" y="212">10/31</text>
+<rect class="box-good" x="570" y="192" width="110" height="32" rx="4"/>
+<text class="t-good" x="597.0" y="212">10/31</text>
+<text class="t-xs" x="18" y="267">※ 素朴に聞いた回は、4回とも2つの文書の基準が違うこと自体には触れていた（内訳＝10/31が2回・11/30が1回・未定が1回）。</text>
+<text class="t-xs" x="18" y="288">※ 起点を名指しした回は、結論の日付が4回とも一致した（ただし4回中3回は、使わないよう頼んだ基本契約の矛盾を補足として書き足した）。</text>
+<text class="t-xs" x="18" y="309">架空データでの実測。生の返り12回は docs/evidence/ に全文置いてある。</text>
+</svg>

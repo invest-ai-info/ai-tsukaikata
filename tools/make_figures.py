@@ -45458,3 +45458,164 @@ def wide_interval_mix_timeline_chart() -> None:
 if __name__ == "__main__":
     wide_interval_mix_accuracy_chart()
     wide_interval_mix_timeline_chart()
+
+
+def payment_origin_naive_vs_named_grid_chart() -> None:
+    """素朴に聞いた回と、起点を名指しして聞いた回で、結論の日付がどう割れたかを並べたマス目。
+
+    実測（2026-11-17・材料2本〈ライティング受託／動画編集受託〉×各2回＝4回ずつ。
+    材料や仮説を知らない新規サブエージェントに送った）。
+    """
+    cols = ["材料A・1回目", "材料A・2回目", "材料B・1回目", "材料B・2回目"]
+    row_naive = ["10/31", "11/30", "未定", "10/31"]
+    row_naive_box = ["box-accent", "box-bad", "box-quiet", "box-accent"]
+    row_naive_t = ["t-accent", "t-bad", "t-sm", "t-accent"]
+    row_named = ["10/31", "10/31", "10/31", "10/31"]
+
+    label_w = 210
+    cell_w, cell_h, gap = 110, 32, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "矛盾そのものには4回とも気づいたが、結論の日付は3通りに割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の「基本契約書＋個別発注書」2組（検収完了と納品日で支払の基準が揃わない）に、"
+        "「入金予定日はいつですか」と素朴に聞いた（4回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "同じ2組に、「発注書の記述だけを起点に」と名指しして聞いた回（4回）も試した。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "材料や仮説を知らない新規の会話に、毎回同じ指示文を送った実測。</text>\n",
+        '<text class="t-xs" x="18" y="106">結論として最初に示した日付</text>\n',
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 28:.1f}" y="{top - 12}">{name}</text>\n'
+        )
+
+    def row(y: float, label: str, cells: list, boxes: list, tones: list) -> None:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for col_index, text in enumerate(cells):
+            x = grid_x + col_index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[col_index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + cell_w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="{tones[col_index]}" x="{tx:.1f}" y="{y + 20}">{text}</text>\n'
+            )
+
+    row(top, "素朴に聞く（4回）", row_naive, row_naive_box, row_naive_t)
+    row(top + pitch, "起点を名指し（4回）", row_named, ["box-good"] * 4, ["t-good"] * 4)
+
+    height = top + 2 * pitch + 12 + 21 * 3 + 16
+    notes = [
+        ("t-xs", "※ 素朴に聞いた回は、4回とも2つの文書の基準が違うこと自体には触れていた（内訳＝10/31が2回・11/30が1回・未定が1回）。"),
+        ("t-xs", "※ 起点を名指しした回は、結論の日付が4回とも一致した（ただし4回中3回は、使わないよう頼んだ基本契約の矛盾を補足として書き足した）。"),
+        ("t-xs", "架空データでの実測。生の返り12回は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * len(notes) + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "素朴に「入金予定日はいつですか」と聞いた回（4回）と、「発注書の記述だけを起点に」と"
+        "名指しして聞いた回（4回）で、結論として最初に示した日付を並べたマス目。"
+        "素朴に聞いた回は、材料Aの1回目が10/31、2回目が11/30、材料Bの1回目が未定（両方の可能性を"
+        "対等に提示）、2回目が10/31で、3通りに割れた。起点を名指しした回は、材料A・Bとも1回目・"
+        "2回目すべてで10/31に一致した。下の枠には、素朴に聞いた回は4回とも2つの文書の基準が"
+        "違うこと自体には触れていたこと、起点を名指しした回は結論の日付が4回とも一致したが"
+        "4回中3回は使わないよう頼んだ基本契約の矛盾を補足として書き足したことが書かれている。"
+    )
+    (OUT / "payment-origin-naive-vs-named-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def payment_origin_branch_chart() -> None:
+    """検収完了のタイミングで、支払期日の解釈が2つに分かれる仕組みを示す分岐図。
+
+    材料A（ライティング受託）の日付で作成。納品日2026-09-28から7営業日以内という
+    検収期限が、ちょうど9月と10月の境目にかかっていることが、矛盾の仕込みの核心。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "検収完了が月をまたぐかどうかで、支払期日の解釈が2つに分かれる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料A（ライティング受託）。納品日から7営業日以内という検収期限が、9月と10月の境目にかかっている。</text>\n",
+    ]
+
+    def box(y: float, h: float, klass: str, lines: list, x: float = box_x, w: float = box_w) -> None:
+        parts.append(f'<rect class="{klass}" x="{x}" y="{y}" width="{w}" height="{h}" rx="6"/>\n')
+        for i, (cls, text) in enumerate(lines):
+            parts.append(f'<text class="{cls}" x="{x + 16}" y="{y + 22 + i * 19}">{_esc(text)}</text>\n')
+
+    y = top
+    box(y, 40, "box-quiet", [("t-strong", "納品日：2026年9月28日（月）")])
+    y += 40 + 14
+    box(y, 58, "box-quiet", [
+        ("t-strong", "検収完了（基本契約第7条：7営業日以内）"),
+        ("t-sm", "最短＝9月中　／　最長＝2026年10月7日（水）"),
+    ])
+    y += 58 + 22
+
+    parts.append(
+        f'<text class="t-xs" x="18" y="{y - 6}">検収完了がどちらで終わるかで、下の2つに分かれる</text>\n'
+    )
+
+    half_w = (box_w - 20) / 2
+    left_x, right_x = box_x, box_x + half_w + 20
+
+    box(y, 40, "box", [("t-strong", "9月中に検収完了")], x=left_x, w=half_w)
+    box(y, 40, "box", [("t-strong", "10月に入ってから検収完了")], x=right_x, w=half_w)
+    y += 40 + 10
+
+    box(y, 54, "box-good", [
+        ("t-good", "発注書・基本契約　どちらの基準でも一致"),
+        ("t-good", "→ 2026年10月31日"),
+    ], x=left_x, w=half_w)
+
+    right_h = 54 * 2 + 10
+    parts.append(
+        f'<rect class="box-bad" x="{right_x}" y="{y}" width="{half_w}" height="54" rx="6"/>\n'
+    )
+    parts.append(f'<text class="t-bad" x="{right_x + 16}" y="{y + 22}">基本契約の基準（検収完了月）</text>\n')
+    parts.append(f'<text class="t-bad" x="{right_x + 16}" y="{y + 41}">→ 2026年11月30日</text>\n')
+    y2 = y + 54 + 10
+    parts.append(
+        f'<rect class="box-accent" x="{right_x}" y="{y2}" width="{half_w}" height="54" rx="6"/>\n'
+    )
+    parts.append(f'<text class="t-accent" x="{right_x + 16}" y="{y2 + 22}">発注書の基準（納品月）</text>\n')
+    parts.append(f'<text class="t-accent" x="{right_x + 16}" y="{y2 + 41}">→ 2026年10月31日のまま</text>\n')
+
+    y += 54 + 10 + 54 + 18
+
+    height = y + 8
+    alt = (
+        "検収完了のタイミングで支払期日の解釈が2つに分かれる仕組みを示す分岐図。"
+        "材料A（ライティング受託）。1段目＝納品日2026年9月28日（月）。"
+        "2段目＝検収完了は基本契約第7条により7営業日以内で、最短なら9月中・最長なら2026年10月7日（水）までかかる。"
+        "ここで9月と10月の境目にかかっているのが仕込みの核心。"
+        "3段目は2つの分岐。左＝9月中に検収完了した場合、発注書と基本契約のどちらの基準で計算しても"
+        "2026年10月31日で一致する（緑）。右＝10月に入ってから検収完了した場合、基本契約の基準"
+        "（検収完了月の翌月末）では2026年11月30日になる（赤）のに対し、発注書の基準（納品月の翌月末）"
+        "は変わらず2026年10月31日のまま（青）で、1か月のズレが生じる。"
+    )
+    (OUT / "payment-origin-branch.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    payment_origin_naive_vs_named_grid_chart()
+    payment_origin_branch_chart()
