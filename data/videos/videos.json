@@ -6075,32 +6075,6 @@
    "summarized_at": "2026-11-08T22:26:43.886050+00:00"
   },
   {
-   "video_id": "TKs5ktj36f4",
-   "title": "【尾原和啓×池田朋弘】AIに支配される人、使いこなす人。AIに溶かされない「うたう」思考法",
-   "url": "https://www.youtube.com/watch?v=TKs5ktj36f4",
-   "published": "2026-11-03T02:16:55+00:00",
-   "channel_key": "iketomo",
-   "channel_name": "いけともch",
-   "default_category": "news",
-   "description": "尾原和啓×池田朋弘『システムゼロ』特別トーク\n\nAIの答えは、整っていて、根拠らしいものまで添えられていて、しかも自分を肯定してくれる。そのとき私たちは、疑う理由を持てているでしょうか。\n\n書籍『システムゼロ ― 「AIがすべて先回りする」時代の思考法』（PHP研究所）の共著者、尾原和啓さんと池田朋弘（いけとも）が、ポッドキャスト「いけとも尾原 DeepなAIニュース」での対談から生まれた視点を、1時間でお話しします。\n\n■ 日時\n2026年11月4日（水）20:00-21:00\n\n■ 今回の論点\n- そもそも「システム0」とは何なのか\n- システム0の脅威とは\n- システム0に対して必要な3つの思考法「うたう」（疑う力・立ち止まる力・裏返す力）\n- どんなシーンでどうするべきか\n- 新しい時代に向けて、キャリアや人生をどう豊かにしていくか\n\n当日はコメントにもお答えしながら進めます。\n\n■ 書籍\n『システムゼロ ― 「AIがすべて先回りする」時代の思考法』\n池田朋弘・尾原和啓 著 ／ PHP研究所\n2026年11月10日発売　定価1,870円（税込）\n\n■ イベントページ\nhttps://peatix.com/event/5225030/view",
-   "first_seen": "2026-11-03T19:47:02.227858+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "b6I72Ok5Pq4",
-   "title": "【今バズってる】AIエージェントで使える『図解スキル』7選！実際に使った感想含めて、使い所を解説",
-   "url": "https://www.youtube.com/watch?v=b6I72Ok5Pq4",
-   "published": "2026-11-03T03:00:08+00:00",
-   "channel_key": "masao",
-   "channel_name": "まさおAIじっくり解説ch",
-   "default_category": "news",
-   "description": "今回の動画では、10 月に GitHub トレンドや X で話題になった Claude Code の図解スキル 7 選を、実際に入れて試した結果とあわせて解説しました。\n僕は、Claude が JSON を書いて PNG にして見直すループを回し、あとから Excalidraw で開いて直せるスキルが特に好きでした。\n\n得意不得意があるので、複数入れて使い分けるのが良さそうです。皆さんが普段使っている図解スキルや、「この図にはこれ」という使い分けがあれば、ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n🎁無料プレゼントは公式LINEから🎁\n動画や記事で紹介したソースコードやスキルを、公式LINEで共有してます！『svg-skill』と入力するとリンクが送られます👍\n▼ LINEはこちら\nhttps://go.masao.ai/line/open/Glu3UoqwiqvI?mtid=OhUjWdkx1ULn\n\npretty-mermaid    https://github.com/imxv/Pretty-mermaid-skills\narchify           https://github.com/tt-a1i/archify\nsvg-diagram       https://github.com/bybit-exchange/svg-diagram\ndiagram-design    https://github.com/cathrynlavery/diagram-design\nexcalidraw        https://github.com/coleam00/excalidraw-diagram-skill\nhuashu-design     https://github.com/alchaincyf/huashu-design\nanatomy           https://github.com/wheresryan22/anatomy\n\ntimestamp:\n00:00 図解スキル7選と今注目される理由\n01:06 7本の分類と同じお題での試し方\n02:25 pretty-mermaid：手軽に貼れる図\n04:09 archify：コードから正確な構成図\n05:43 svg-diagram：色と数字で縛るルール\n07:04 diagram-design：45種類の図の型\n08:19 Excalidraw 図：画像を見て直すループ\n09:33 huashu-design：3案から人が選ぶ\n10:33 anatomy：概念を機械の図に\n11:29 用途別の使い分けまとめ\n12:28 htmlスキル共有とメンバーシップ紹介\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhtt",
-   "first_seen": "2026-11-03T19:47:02.227858+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "NCxD-qsQcN0",
    "title": "TamaGPT",
    "url": "https://www.youtube.com/watch?v=NCxD-qsQcN0",
@@ -8049,10 +8023,20 @@
    "channel_key": "keito",
    "channel_name": "KEITO【AI&WEB ch】",
    "default_category": "tech",
-   "description": "Geminiのモデル、どれを使えばいい？Hydrogen・Argon・Carbonを、同じ指示で作ったアニメーションや図解で比較します。Decisionや画像・動画・音声などの作例も紹介。料金や無料枠、思考レベルの違いを整理し、用途に合うモデルを選ぶヒントをまとめました。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 見どころ\n00:24 Geminiのモデル、どれを選ぶ？\n02:05 モデルと機能を7つの用途で整理\n03:49 Gemini 2.5から4への変化\n04:37 Hydrogen・Argon・Carbonの違い\n05:23 3モデルのアニメーション・図解を比較\n07:13 Gemini 4の料金と使い分け\n08:00 Flash系との料金・作例比較\n09:26 画像生成：Nano Bananaの各モデルを比較\n11:45 動画生成：Gemini Omniの新旧モデルを比較\n12:59 音声生成：TTSの読み上げを聞き比べる\n15:18 文字起こし：話者と時刻付きで文章にする\n15:45 音楽生成：Lyria 3.5とLyria 3 Clipを比較\n16:59 判断AI：Decision 1でメール・動画・音声を判定\n20:55 Deep Research・Antigravityなどの関連機能\n22:06 プラン別に選べるモデル\n22:36 思考レベルと料金の関係\n23:23 AI Studioで試す方法と無料枠\n24:37 まとめ・お知らせ\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nGemini最上位モデル『Gemini 4 Carbon』徹底検証\nhttps://www.youtube.com/watch?v=rqgukLCtJnQ\nGeminiの画像生成AI『Nanobanana 2』を徹底解説\nhttps://www.youtube.com/watch?v=2oyIHT8bzj4\nGemini『Omni』を解説\nhttps://www.youtube.com/watch?v=7Ok6EbI32fk\nGemini 3.8 Flash TTSとChatGPT Voiceを解説\nhttps://www.youtube.com/watch?v=1a91FIjDPSY\nGeminiにAIで「音楽を作成（Lyria 3）」を徹底検証\nhttps://www.youtube.com/watch?v=QVAW2oFIaIs\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに",
    "first_seen": "2026-11-15T19:04:35.364908+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemini 4のHydrogen・Argon・Carbonの性能や料金差を、コード生成や図解の出力結果を交えて比較・解説している。",
+    "画像生成のNano Bananaや動画生成のOmni、音声読み上げ、音楽生成など各分野のモデルの違いと特徴を検証している。",
+    "判断AIのDecision 1によるメールや動画・音声の仕分け機能や、プランごとの利用可能モデルと料金体系を紹介している。"
+   ],
+   "for_whom": "Geminiの多彩なモデルの違いを把握し、用途やコストに合った選び方を知りたい人",
+   "caution": "動画内および概要欄にて、公式LINEへの登録や運営する有料AIコミュニティ（プロセボ）への勧誘が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T08:26:08.887672+00:00"
   },
   {
    "video_id": "zuBVh1TyFJw",
@@ -8075,10 +8059,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\n今回の動画では\n有名なAIモデルランキングで世界1位を獲得した\nAnthropicの最先端AIモデル「Claude Fable 5.2」\n無料ユーザーも使える\nGoogleの最新AIモデル「Gemini 4 Hydrogen」\nGoogleの最先端AIモデル\n「Gemini 4 Carbon」が一般公開\nGoogle Antigravityに\n4つの大型新機能が実装など\n今週公開されたり発表された\nAIエージェントやAIツールのリリース・更新情報\nNVIDIAのジェンスン・フアンCEOが辞任\nNotionの連携先への不正アクセスで\nAIチャットの内容が漏洩など\n最新AIニュースをまとめて紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:57　最新AIツール\n1:06　Anthropicの最先端AIモデル「Claude Fable 5.2」\n2:33　Googleの最新AIモデル「Gemini 4 Hydrogen」\n3:48　Googleの最先端AIモデル「Gemini 4 Carbon」が一般公開\n5:00　Google Antigravityに5つの大型新機能が実装\n6:37　MiniMaxの画像生成AIモデル「MiniMax H3-Image」\n7:32　SpaceXAIのAIエージェントの最新版「Grok Bot 1.0」\n8:33　Anthropic関連ツールの新機能\n10:08　Qwenが最新AIモデル「Qwen4-Max」のプレビュー版を公開etc.\n11:48　最新AIニュース\n11:58　NVIDIAのジェンスン・フアンCEOが辞任\n12:38　Notionの連携先への不正アクセスでAIチャットの内容が漏洩\n13:22　AdobeとDisneyがAI関連で戦略的提携\n13:59　鴻海精密工業とソフトバンクGが決算発表\n15:04　OpenAIがAIモデルを強制停止するシステムを開発\n15:44　Sakana AIが2027年秋にも上場を計画\n16:23　Microsoftが大規模障害でAIサービスにも影響\n17:04　AmazonがAIショッピングアシスタントを日本展開etc.\n18:52　エンディングムービー\n\n◆動画の中で紹介している内容\nGoogle AI Studio、Claude Duet、Seedream 5.5、Seedance 2.5 Flash\nSuno v6、ACE Music v1、Scribe v3 Live、dots、Muse Ember\nGemini Decision 1、World Labs、Atlas、ModRetro Chromatic、Cohere\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nhttps://youtu.be/ny14GDyjchU\nhttps://youtu.be/OoQG7KwE4cM\n\n▼オススメ動画\n【Grok Bot・Cursor・Xが1つに】Xが新しいAIサブスクリプション「X Subscription」を発表！ ～無料を含む全5プランの料金と機能を完全解説～\nhttps://youtu.be/V_Ib3j9o6ys\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude Code(クロードコード)入門ガイド｜導入方法・使い",
    "first_seen": "2026-11-15T19:04:35.364908+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Anthropicの最新モデル「Claude Fable 5.2」が公開され、総合性能ランキングで1位を獲得したと紹介している。",
+    "Googleが高速な「Gemini 4 Hydrogen」や最先端モデル「Gemini 4 Carbon」を公開したと解説している。",
+    "NVIDIAのCEO辞任やNotionのデータ漏洩、企業決算など国内外の最新AIニュースをまとめて伝えている。"
+   ],
+   "for_whom": "生成AIの最新モデル動向や業界ニュースを短時間で網羅したいビジネスパーソン。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T08:26:08.887672+00:00"
   },
   {
    "video_id": "M6QwcMiLVEo",
@@ -8157,10 +8151,20 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=Z8oSnDsUlk\n※もしLINE登録が上手く行かない方は「@828wrlzg」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🖼️【メタルポスター・飾る絵・愚痴を商品にする副業の回】\n今回は、仕事の経験を浮世絵のメタルポスターにして、海外の同業者に届ける手順を紹介しました。\nこのチャンネルの関連回を、売る物や売り方の違いから見たい方はこちら↓\n\n▼本編で触れた前回のメタルポスター。浮世絵にトレンドを掛けて売った回\nhttps://youtu.be/yw6ujlK07aI\n\n▼AI画像でメタルポスターの審査を通す。11人の検証と、月62万7000円に届いた手順\nhttps://youtu.be/eRPC2D4lkAM\n\n▼和風ポスターは、どこで誰に売る？穴場の市場を見つける方法を扱った回\nhttps://youtu.be/zRhMGQ_Bxcg\n\n▼超特大タペストリーで月74万3000円。大きな布に印刷する絵の作り方と売り方\nhttps://youtu.be/icblXzctaDU\n\n▼テレビ画面を売って月87万。壁を飾るデータを商品にする制作と販売の手順\nhttps://youtu.be/G5MpQKyP_uc\n\n▼テレビ画面の販売を4人で検証。全員が月43万を超えた、別の売り方の回\nhttps://youtu.be/U2GSSJGrpoQ\n\n▼季節ごとのガーデンフラッグをAIで作る。在庫を持たず、庭を飾る絵を売る回\nhttps://youtu.be/9PRzJCWL378\n\n▼浮世絵×現代の題材を塗り絵に。1万4000冊が売れた組み合わせを見せた回\nhttps://youtu.be/sFAQF8Wv-8I\n\n▼仕事や生活の愚痴をステッカーに。ぼやきを商品に変える制作と販売の回\nhttps://youtu.be/EoQbPnQDEas\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=Z8oSnDsUlk\n\n--------------------------\n\n【動画の目次】\n\n00:00 仕事の愚痴が浮世絵のメタルポスター",
    "first_seen": "2026-11-15T19:04:35.364908+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "仕事の愚痴や日常の苦労を浮世絵テイストと掛け合わせた絵柄にし、海外向けメタルポスター販売サイトDisplateで出品する副業を紹介している。",
+    "Grokで世界共通の仕事の悩みをリサーチし、Recraftなどの画像生成AIを使ってポスター用の絵柄を作成・審査出品する流れを解説している。",
+    "検証参加者10人のうち、流行の模倣ではなく自身の仕事の苦労を題材にした人が月数十万円の利益を達成したと投稿者は主張している。"
+   ],
+   "for_whom": "画像生成AIを活用し、海外向けポスター販売などの在宅副業で収益化を目指したい人。",
+   "caution": "動画内で月71万円などの高収益事例が語られますが投稿者の検証に基づく主張であり、同様に稼げる保証はありません。また公式LINEへの登録誘導が行われている点にも留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T08:26:08.887672+00:00"
   },
   {
    "video_id": "B7b_2LaWOzs",
@@ -8274,95 +8278,105 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "Une cousinade avec 63 cousins. Un site créé avec ChatGPT.",
    "first_seen": "2026-11-16T22:28:47.290413+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "親族の集まりに必要な情報をまとめたWebサイトの作成をChatGPTに指示している。",
+    "ChatGPTがプロンプトを受け取り、短時間でサイトを生成する様子を紹介している。",
+    "写真共有ギャラリーの追加を依頼し、家族向けサイトを完成させて共有している。"
+   ],
+   "for_whom": "ChatGPTを活用してイベント用サイトを手軽に作成したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T08:26:08.887672+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-16T22:28:47.290413+00:00",
+   "last_ok": "2026-11-17T08:26:08.887672+00:00",
    "fail_streak": 0
   }
  }
