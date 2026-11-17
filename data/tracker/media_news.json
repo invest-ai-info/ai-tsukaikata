@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-11-17T22:49:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleは11月16日、生成AI「Gemini」で履歴をオフにした際の会話の保存期間を、従来の72時間から約2カ月に延長すると発表した。履歴一覧に残らない「一時チャット」も対象となる。今後数週間のうちに、世界で順次提供を始める。",
+      "title": "Gemini、「履歴オフ設定」でも会話を約2カ月保存　Googleが発表",
+      "uid": "d6d389d678acb9bd",
+      "url": "https://japan.cnet.com/article/35255032/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-11-17T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "GASとGeminiの連携によってコーディング不要でスクリプト作成やデバッグが可能になった。コーディング知識がないユーザーでも自然言語の指示でスクリプトの作成や編集、エラー修正ができるようになる。",
+      "title": "GAS×Geminiが一般提供開始　IT管理者が確認すべき権限設定は？",
+      "uid": "b7d60548eae8007b",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/18/2000003256/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-17T22:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Geminiでカスタム指示を保存する「スキル」機能が拡張された。作成したスキルの他ユーザーへの共有や、Googleドライブなどのファイル追加が可能になり、常に最新データを参照してAIを動かせるようになる。",
+      "title": "Googleドライブの最新ファイルをGeminiが常時参照　「スキル」に新機能追加",
+      "uid": "4b947718689d96ca",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/18/2000003259/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-11-17T21:48:15+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトは日本時間11月18日未明に開幕した年次イベント「Microsoft Ignite 2026」で、同社が開発したコーディング用AIモデルのフラグシップで高性能かつ低価格を売り文句とする「MAI Code 2」と、さらに安価な「...",
+      "title": "［速報］マイクロソフト、コーディング用AIモデルとして高性能かつ低価格「MAI Code 2」「MAI Code 2 Flash」発表",
+      "uid": "105902fcb9bef725",
+      "url": "https://www.publickey1.jp/blog/26/aimai_code_2mai_code_2_flash.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-11-17T21:40:32+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトは日本時間11月18日未明に開幕した年次イベント「Microsoft Ignite 2026」で、Azure Database Migration Service （Azure DMS）におけるOracle DBからPostg...",
+      "title": "［速報］AIがOracle DBからPostgreSQLへの移行を支援、「Azure Database Migration Service」プレビュー",
+      "uid": "67b25a7d52fc665a",
+      "url": "https://www.publickey1.jp/blog/26/aioracle_dbpostgresqlazure_database_migration_service.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "Publickey",
+      "published": "2026-11-17T21:37:53+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトは日本時間11月18日未明に開幕した年次イベント「Microsoft Ignite 2026」で、Azure SQL Databaseをローカルで実行する「Azure SQL Database local developmen...",
+      "title": "［速報］Azure SQL Databaseをローカルで実行する「Azure SQL Database local development container」パブリックプレビュー",
+      "uid": "9f835a44da460918",
+      "url": "https://www.publickey1.jp/blog/26/azure_sql_databaseazure_sql_database_local_development_container.html",
+      "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-17T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "株価のファンダメンタルズ分析を行う手法の一つとして、重回帰分析が使われることがあります。例えば、収益力や成長性、割安性などの指標を説明変数として、リターン（利益）を目的変数とするわけです。その際、どの説明変数を重回帰式に含めるとより良い予測ができるかを検討する必要があります。今回は、そのためのモデル比較の簡単な方法を紹介します。『社会人1年生から学ぶやさしいデータ分析』ベイズ統計編（第12回）で…",
+      "title": "【Pythonで学ぶデータ分析】重回帰分析のモデル比較をベイズ統計で行う ～ 株価の予測にはどの指標が効くのか？",
+      "uid": "2d641f2d01d71ca6",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/18/news010.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-17T15:00:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "ますます高度なタスクをこなせるようになってきたAI。その進化は動画生成においても顕著です。数年前までは短尺、低画質の動画を作るのにも四苦八苦していましたが、今や簡単な操作で映画クオリティの作品を生み出せるほど。それが本当なのか、まずはこちらの映像をご覧ください。",
+      "title": "自然な日本語も、4K 10bit HDRも扱える、動画生成「Kling AI」を体感せよ！ [Sponsored]",
+      "uid": "d4f6cb4e4de0b098",
+      "url": "https://ai.watch.impress.co.jp/docs/topic/special/2154312.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-11-17T14:30:55.500596+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2303,102 +2399,6 @@
       "uid": "667200950ca00186",
       "url": "https://www.itmedia.co.jp/aiplus/article/2611/12/2000003113/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-11T22:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Metaの個人向けAIエージェント「Muse」がApple Watchに対応し、手首から作業を依頼したり、進行状況を確認したりする画面例が公開された。米App Storeの更新履歴では、バージョン15.0でApple Watch向けの連携アプリを追加したと案内している。",
-      "title": "MetaのAI「Muse」、Apple WatchとWear OSに対応--手首から指示や進捗確認",
-      "uid": "30f5021f6adba64b",
-      "url": "https://japan.cnet.com/article/35254741/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-11-11T22:03:58+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Googleは、ツールの選択や条件判定など選択肢から答えを選ぶ用途に特化した「Gemini Decisions API」を発表した。専用モデルを用い、テキストや画像などのマルチモーダル入力を1回の推論で評価し、確率と信頼度スコアを返す。従来のモデルより高速かつ安価に動作し、他社が先行する判断特化型AI市場への本格参入となる。",
-      "title": "Google、選択肢から答えを選ぶことに特化した「Gemini Decisions API」発表　回答を生成せず確率で返す",
-      "uid": "be885c740010b2be",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2611/12/2000003123/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-11T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは「ChatGPT Enterprise」をAWS Marketplaceで提供開始した。企業は既存のAWSアカウントや契約枠でChatGPT Enterpriseを購入・管理できる。企業のAI調達はどう変わるのか。",
-      "title": "AWSで「ChatGPT Enterprise」を購入可能に　AWSアカウントで一括管理するメリットは",
-      "uid": "4b78582a459430b9",
-      "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003080/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-11T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIの議論は「何ができるか」から「どう統制するか」へ――。Gartnerは2027年のトップ・トレンド10項目の大半を、自律型エージェントの統制と変化に耐える基盤の設計に充てた。一方で同社が「まだ不足している」とする、AIの頭脳に当たる3つの技術とは。",
-      "title": "「非言語系AI」はLLMの弱点を補えるか？　Gartner「2027年の戦略的テクノロジのトップ・トレンド」",
-      "uid": "56e0695b1838a52e",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2611/11/news089.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-11T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Anthropicは「Claude Enterprise」のセキュリティと管理機能の拡充を発表した。設定状況の一覧化やDLP連携、個人アカウントの遮断などによって、企業のAI統制とシャドーIT対策を支援する。",
-      "title": "Claude Enterpriseがセキュリティと管理機能を強化　DLP・EDR連携など新機能の全容は",
-      "uid": "5d6d8fc1ea7ff889",
-      "url": "https://kn.itmedia.co.jp/kn/article/2611/12/2000003082/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-11T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米Autodeskは、イタリア・ローマで鉄道業界向けの年次カンファレンス「Autodesk Rail Summit 2026」を開催した。設計情報のモデル化や共有にとどまらず、AIと人間が協働して目標とする成果の実現を目指す「成果志向のBIM」を提唱。鉄道インフラの設計から運用／維持管理までをデータでつなぐ戦略や、イタリアの鉄道グループによるAI活用事例などが紹介された。",
-      "title": "「成果志向のBIM」とは何か？　Autodeskが描くAI時代の鉄道インフラ",
-      "uid": "f19db5d0c7407b4f",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/12/news016.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T22:43:48.314132+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-11T20:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "2026年7月の仕様改訂によって、「MCP」は既存のWeb技術との親和性を高めました。これが意味するのは、企業の既存のAPIをAIエージェントから利用するための仕組みが整いつつあるということです。AIエージェントが自らAPIを選び、呼び出す時代に、API設計の何を見直す必要があるのかを考えます。",
-      "title": "「APIを呼ぶのは、もう人間ではない」　進化するMCPとOpenAPIとの“新しい関係”",
-      "uid": "6762a2f8277bf42b",
-      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/12/news004.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-11T15:18:00.931587+00:00",
-      "importance": "major",
-      "label": "Publickey",
-      "published": "2026-11-11T15:04:47+00:00",
-      "source_id": "media-publickey",
-      "summary": "Amazon Web Services（AWS）は、Amazon EC2インスタンス上でほぼネイティブのEC2性能で動作しつつ、Nitroシステムハードウェアレベルのきわめて強力な隔離環境を備えた軽量な仮想マシン「AWS Nitro San...",
-      "title": "AWS、AIエージェント向けに強力な隔離環境とネイティブなEC2性能を備えた軽量VM「AWS Nitro Sandboxes」提供開始",
-      "uid": "c3800be949f247cd",
-      "url": "https://www.publickey1.jp/blog/26/awsaiec2vmaws_nitro_sandboxes.html",
-      "vendor": "Publickey"
     }
   ]
 }

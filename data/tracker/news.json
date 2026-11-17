@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-17T18:28:13+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add beta support for the billing_policy request parameter api: add contract_spend_limit_reached error code to messages api: add error codes for linked billing refusals api: add the user…",
+      "title": "v2.10.0",
+      "uid": "294d7098e8f7ea81",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.10.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-17T17:45:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Introducing GPT‑6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+      "summary_ja": "GPT-6.2 AstraとSolが発表された。\n専門的な成果物やコーディングが向上。\nChatGPT Work等で利用でき、効率良く低コストに。",
+      "summary_source": "gemini",
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "uid": "e25eb26ddfebddb6",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-17T17:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "A user interface displaying the prompt \"What can I get done for you?\" above an input box containing placeholder text \"Describe a task\".",
+      "summary_ja": "Geminiの利用を促す画面が表示された。\n「何を手伝えますか？」と入力ボックスがあり、\n「タスクを説明してください」と表示される。",
+      "summary_source": "gemini",
+      "title": "Put Gemini to work for you",
+      "uid": "b62270a686259781",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-17T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
+      "summary_ja": "ChatGPTに営業用プラグインが導入された。\n30以上の新規・拡張提携プラグインが追加。\n見込み客調査や顧客管理システム更新に活用。",
+      "summary_source": "gemini",
+      "title": "Introducing ChatGPT for Sales",
+      "uid": "8bddee1bd1a4209d",
+      "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-17T14:30:55.500596+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -26,6 +80,20 @@
       "title": "Introducing OpenAI for Chile",
       "uid": "8b743163e48af0f9",
       "url": "https://openai.com/index/introducing-openai-for-chile",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-17T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Astra for Law ranked first in a launch evaluation spanning 24 areas of law. Every ChatGPT Enterprise customer can now request access.",
+      "summary_ja": "Astra for Lawが法律分野で最高の評価を得た。\n24の法律分野にわたる評価で1位を獲得。\nChatGPT Enterpriseの全顧客がアクセス申請可能。",
+      "summary_source": "gemini",
+      "title": "Astra for Law leads in legal intelligence",
+      "uid": "f4dc1a23ad1d9144",
+      "url": "https://openai.com/index/astra-law-6-2",
       "vendor": "OpenAI"
     },
     {
@@ -418,6 +486,20 @@
       "title": "Supporting research on AI and children’s safety",
       "uid": "0494efc5ced70114",
       "url": "https://openai.com/index/children-first-declaration",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-17T22:55:48.765741+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-12T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Aleph selected as ChatGPT Ads’ exclusive reseller in 44 countries to offer local invoicing, in-person support and local market expertise to brands and agencies",
+      "summary_ja": "ChatGPT広告が44カ国で市場展開を拡大。\nAlephが独占再販業者となり、現地サポートを提供。\n現地請求や市場知識でブランドや代理店を支援。",
+      "summary_source": "gemini",
+      "title": "ChatGPT Ads increases its market presence in 44 countries",
+      "uid": "cad67fb01bae4a4c",
+      "url": "https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence",
       "vendor": "OpenAI"
     },
     {
@@ -6169,84 +6251,6 @@
       "uid": "65cbee7c753c4230",
       "url": "https://openai.com/index/stampli",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-19T22:44:40.365901+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-08-19T22:00:31+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.125.0 (2026-08-19) Full Changelog: v0.124.0...v0.125.0 Features api: managed agents web search config and self hosted sandbox memory ( b75afd6 )",
-      "title": "v0.125.0",
-      "uid": "d83ad24091ae8579",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.125.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-19T20:47:52.348282+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-19T20:02:05+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added ANTHROPIC_DEFAULT_MODEL environment variable: sets the model new sessions start on, while a /model pick still overrides it and persists across restarts (unlike ANTHROPIC_MODEL ) …",
-      "title": "v2.1.236",
-      "uid": "b893f8a4932982f9",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.236",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-19T17:43:17.097023+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-19T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
-      "summary_ja": "OpenAIがAPI利用顧客向けに「データ保持なし」を改めて提供。\n加えて「プライベート安全処理」を発表。\nデータプライバシーを守りつつ、AIの安全性を高める仕組み。",
-      "summary_source": "gemini",
-      "title": "Offering Zero Data Retention for frontier models",
-      "uid": "953f20cfa9ff8e7f",
-      "url": "https://openai.com/index/our-commitment-to-zero-data-retention",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-19T19:42:21.534279+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-19T19:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "an illustrated image with icons and phrasing like \"Add Notebook\" and \"Ask Google\"",
-      "summary_ja": "Google検索に学習支援の5つの新機能が追加",
-      "summary_source": "gemini",
-      "title": "5 new ways to level up your learning with Search",
-      "uid": "8509d6e94064675a",
-      "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
-      "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-19T20:47:52.348282+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-19T19:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
-      "summary_ja": "OpenAIがAPI顧客へのデータ利用方針を再確認。\n条件を満たす顧客のデータは保存しない「ゼロデータ保持」を保証。\nプライバシーを保護しつつAIの安全性を高める新機能も一部公開。",
-      "summary_source": "gemini",
-      "title": "Offering Zero Data Retention for frontier models",
-      "uid": "a83219eb67b2bf01",
-      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-19T17:43:17.097023+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-08-19T16:51:20+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.124.0 (2026-08-19) Full Changelog: v0.123.0...v0.124.0 Features api: Files and Skills APIs are now GA; add computer use and browser use toolsets ( 9a09e84 )",
-      "title": "v0.124.0",
-      "uid": "3a63a35cfc7a0c57",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.124.0",
-      "vendor": "Anthropic"
     }
   ]
 }
