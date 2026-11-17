@@ -6167,19 +6167,6 @@
    "summarized_at": "2026-11-03T19:47:02.227858+00:00"
   },
   {
-   "video_id": "U2GSSJGrpoQ",
-   "title": "【手取り多すぎて草】テレビ画面の販売で月56万！リスナー4人中4人が月43万を超えた、俺だけがやっていた必殺AI調教テクを全部公開【副業 AI おすすめ 在宅ワーク ChatGPT】",
-   "url": "https://www.youtube.com/watch?v=U2GSSJGrpoQ",
-   "published": "2026-11-03T09:00:38+00:00",
-   "channel_key": "haruto",
-   "channel_name": "Haruto｜AI自動化副業ラボ",
-   "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=EbbLnDGprn\n※もしLINE登録が上手く行かない方は「@828wrlzg」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n📺【海外に“絵”を置いて売る回、このチャンネルにあります】\n今日は、毎朝1か所だけ変わるテレビの絵をEtsyで売る話でした。\n同じテレビの絵の回、“探させる”商品の回、海外に絵を置いて売る回を並べておきます↓\n\n▼同じテレビの絵の回。リスナー5人中4人が月30万を超えた、テレビ画面の販売\nhttps://youtu.be/G5MpQKyP_uc\n\n▼同じく“探させる”商品。間違い探し本が売れる唯一の要素を言語化した、月88万の回\nhttps://youtu.be/UVzVVRf2yUo\n\n▼名画に猫がまぎれる、塗らない塗り絵。海外で流行っている“探す”1色ぬりえの回\nhttps://youtu.be/vd-HRExj5l8\n\n▼1枚13分の超特大タペストリーで月74万3000円。7人中6人が届いた回\nhttps://youtu.be/icblXzctaDU\n\n▼ひとりで黙々とEtsyにAIのデジタル商品を並べる、ぼっち副業の回\nhttps://youtu.be/sJPF92izwy4\n\n▼和風ポスターで穴場の市場を見つける、海外マーケットの回\nhttps://youtu.be/zRhMGQ_Bxcg\n\n▼AI生成で審査を通す。58歳が月62万7000円に届いたメタルポスターの回\nhttps://youtu.be/eRPC2D4lkAM\n\n▼無在庫販売で月500円だった50代無職男が月42万。日本美術×メタルポスターの全記録\nhttps://youtu.be/yw6ujlK07aI\n\n▼季節ごとに売れるガーデンフラッグ。Etsyで無在庫販売する回\nhttps://youtu.be/9PRzJCWL378\n\n▼作らないハンドメイド。手作りでもない1枚に5,500円払う人がいる理由\nhttps://youtu.be/jyfLXRm5WFk\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=EbbLnDGprn",
-   "first_seen": "2026-11-03T19:47:02.227858+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "SH-uT3UKGk4",
    "title": "【最先端の日本語性能】Kling AIの最新動画生成AIモデル「Kling 4.0」徹底解説！ ～性能・使い方・動画作成事例～",
    "url": "https://www.youtube.com/watch?v=SH-uT3UKGk4",
@@ -8292,91 +8279,313 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-17T08:26:08.887672+00:00"
+  },
+  {
+   "video_id": "1GbKbO11ywI",
+   "title": "Google Antigravityをスマホから使うの超便利！リモート操作の設定と活用例を実演",
+   "url": "https://www.youtube.com/watch?v=1GbKbO11ywI",
+   "published": "2026-11-17T09:00:31+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "description": "Antigravityをスマホから使う方法を実演。PCを遠隔操作する機能と、クラウドで動く機能の違いを整理します。設定の流れに加え、領収書から経費精算シートへの入力や、Googleドライブの整理も紹介。外出先からAIに作業を頼みたい方に向けた内容です。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 見どころ\n00:26 Antigravityをスマホから使う2つの方法\n01:25 Antigravityとは？Googleアプリとの連携\n02:19 実例① 経費精算シートを作成する\n03:52 領収書・請求書からシートへ入力\n05:07 スマホからAntigravityを使う仕組み\n05:52 リモートコントロールの設定\n07:19 Web版とPC版の同期・利用時の条件\n08:28 リモートエージェント：クラウドで動かす\n09:56 実例② スマホからGoogleドライブの整理を依頼\n11:44 整理されたフォルダを確認する\n12:02 まとめ・お知らせ\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nGeminiのAntigravityがClaude Codeレベルになってた\nhttps://www.youtube.com/watch?v=8XDnuwPsmTM\nOpenAIのCodexをスマホから遠隔操作する機能が便利\nhttps://www.youtube.com/watch?v=obN7kcUhKVU\nClaudeの新機能『Dispatch』が革命的に便利だった\nhttps://www.youtube.com/watch?v=IoI__TVlvv4\nGoogle Antigravityで画像付きWebサイトを作ってみた\nhttps://www.youtube.com/watch?v=wpW8-GvDfKY\nAIガチ勢のAI環境を徹底解説！\nhttps://www.youtube.com/watch?v=8XbqxjJOP08\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に関するアドバイザー（AI顧問）を請け負っております。\n\n▼お問合せ\n仕事の依頼は下記のメールアドレス宛へお願いします。\nkeito@realaize.jp\n\n各種S",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "gl2U4fGTr6g",
+   "title": "OpenAI's New Breakthrough Is... Utter Chaos",
+   "url": "https://www.youtube.com/watch?v=gl2U4fGTr6g",
+   "published": "2026-11-17T12:46:24+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIのAIが難問であるヤン＝ミルズ理論の存在問題の形式的証明をLeanで出力したと紹介している。",
+    "生成されたコードは約25万の宣言を含むが約6割が不要なものであり、解読が困難を極めていると指摘している。",
+    "物理学者らによる検証は現在も継続中であり、質量ギャップ問題も含めた完全解決ではないと解説している。"
+   ],
+   "for_whom": "最先端AIによる数学や物理学の難問解決の進捗に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T21:17:56.558258+00:00"
+  },
+  {
+   "video_id": "TKs5ktj36f4",
+   "title": "【尾原和啓×池田朋弘】AIに支配される人、使いこなす人。AIに溶かされない「うたう」思考法",
+   "url": "https://www.youtube.com/watch?v=TKs5ktj36f4",
+   "published": "2026-11-04T12:09:11+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "description": "▼『システムゼローー「AIがすべて先回りする」時代の思考法』\nhttps://link.amazon/B0h56HiRH\n\n----\n\n尾原和啓×池田朋弘『システムゼロ』特別トーク\n\nAIの答えは、整っていて、根拠らしいものまで添えられていて、しかも自分を肯定してくれる。そのとき私たちは、疑う理由を持てているでしょうか。\n\n書籍『システムゼロ ― 「AIがすべて先回りする」時代の思考法』（PHP研究所）の共著者、尾原和啓さんと池田朋弘（いけとも）が、ポッドキャスト「いけとも尾原 DeepなAIニュース」での対談から生まれた視点を、1時間でお話しします。\n\n■ 日時\n2026年11月4日（水）20:00-21:00\n\n■ 今回の論点\n- そもそも「システム0」とは何なのか\n- システム0の脅威とは\n- システム0に対して必要な3つの思考法「うたう」（疑う力・立ち止まる力・裏返す力）\n- どんなシーンでどうするべきか\n- 新しい時代に向けて、キャリアや人生をどう豊かにしていくか\n\n当日はコメントにもお答えしながら進めます。\n\n■ 書籍\n『システムゼロ ― 「AIがすべて先回りする」時代の思考法』\n池田朋弘・尾原和啓 著 ／ PHP研究所\n2026年11月10日発売　定価1,870円（税込）\n\n■ イベントページ\nhttps://peatix.com/event/5225030/view",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Ts4ddqNjV68",
+   "title": "月額2900円で最強コスパ！GoogleのAIサブスク「Google AI Pro」徹底解説！ ～ChatGPTやClaudeのプランにはない強みとは？～",
+   "url": "https://www.youtube.com/watch?v=Ts4ddqNjV68",
+   "published": "2026-11-17T09:06:34+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n最近は、AIツールのサブスクプランが増えてきて\nどのサブスクに入るか迷っている方も多いと思います\nそんな中、オススメしたいのが\nGoogleの月額2900円のサブスクプラン「Google AI Pro」です\nこのプランに加入すると、Gemini系の最上位モデルや\nAIエージェントの「Gemini Spark」が使えるのはもちろん\nGoogle FlowやGoogle Flow Musicなどの\n画像や動画、音楽生成AIツールや\nAIアシスタントのGemini Notebookといった\n一連のツールの利用量も大幅に増加され\n5TBのクラウドストレージや\nYouTubeの広告を減らせる\n「YouTube Premium Lite」も付属するなど\nGoogleのエコシステムを最大限に活用できる\n超コスパの高いお得なプランとなっています\n\n今回の動画では\n第一章：Google AI Proプランの概要\n第二章：Gemini系のツール\n第三章：画像・動画・音楽生成AIツール\n第四章：開発系のAIツール\n第五章：その他のAIツール\nの五章構成で、GoogleのAI系のサブスクプラン\n「Google AI Pro」についての基本情報と\nGoogle AI Proで利用できるGemini系のツール\n画像や動画、音楽生成AIツール\n開発系のAIツール、最後にその他の特典についても解説します\n\n◆動画のもくじ\n0:00　動画について\n0:59　動画のもくじ\n1:50　第一章：Google AI Proプランの概要\n3:57　第二章：Gemini系のツール\n4:15　①、Gemini\n5:12　②、Gemini Notebook\n5:56　③、Google Workspace\n6:58　第三章：画像・動画・音楽生成AIツール\n7:21　①、Google Flow\n8:06　②、Google Flow Music\n8:55　③、Google Vids\n9:42　第四章：開発系のAIツール\n10:05　①、Google Antigravity\n10:53　②、Google AI Studio\n12:04　③、Google Colab\n12:42　第五章：その他のAIツール\n14:00　エンディングムービー\n\n◆動画の中で紹介している内容\nGoogle AI Plus、Google AI Ultra、Gemini Omni、Veo\nLyria、Nano Banana、ナノバナナ、Gemini 4 Argon\nAnthropic、Claude Opus 5.5、Claude Sonnet\n\n◆参考サイト\n※参考サイトの全部のリンクはこの動画のコメント欄に貼っています\nGoogle Developer Program の特典ページ\nhttps://me.developers.google.com/benefits?hl=ja\n\nhttps://one.google.com/intl/ja_jp/about/google-ai-plans/\nhttps://flow.google.com/\nhttps://www.flowmusic.app/\n\n▼オススメ動画\n【Grok Bot・Cursor・Xが1つに】Xが新しいAIサブスクリプション「X Subscription」を発表！ ～無料を含む全5プランの料金と機能を完全解説～\nhttps://youtu.be/V_Ib3j9o6ys\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコード",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "mSCpmPVPEWI",
+   "title": "【必見】Claude Codeチームの検証術を徹底解説！強力な3種のテストと押さえるポイントを解説",
+   "url": "https://www.youtube.com/watch?v=mSCpmPVPEWI",
+   "published": "2026-11-17T12:00:30+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "▼ 記事はこちら\nhttps://media.masao.ai/ai-generated-code-testing/?utm_source=youtube&utm_medium=description&utm_campaign=mSCpmPVPEWI\n\n今回の動画では、Anthropic の中の人が書いた記事「Claude Code チームは AI が書いたコードをどう確かめているのか」について解説しました\n\nClaude Code チームではコードの 90% を Claude が書いていて、人が全部読むのはもう無理です。そこでテストやレビューといった「確かめる仕組み」を作り、作る・確かめる・直すを Claude 自身が繰り返せるようにしている、というのが記事の結論でした。\n\nみなさんは AI が書いたコードをどう確かめていますか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Claude Code チームの検証方法とは\n01:48 別の Claude に採点させると精度が上がる\n02:45 AI はテストを通すだけなら簡単にできる\n04:48 エンドトゥエンドテストで実際の流れを試す\n06:20 決まりを大量の入力で試すプロパティテスト\n07:31 新旧を並べるテストと避けたいテスト\n08:50 verify スキルでアプリを実際に動かす\n10:45 Claude に判定ルールを書き換えさせない\n12:10 変更を止める仕組みは段階を踏んで入れる\n13:07 レビュー役は増やさず1体目を磨き込む\n14:10 見逃したバグをルール化しレビュー役を鍛える\n16:28 まとめ - 人の仕事は証拠を見ることへ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "0wNe3dl6_zo",
+   "title": "【破格】鬼コスパAI『Hy4 Flash』登場！Haiku5.5級、OpenCodeGoで期間限定無料も熱いので解説！",
+   "url": "https://www.youtube.com/watch?v=0wNe3dl6_zo",
+   "published": "2026-11-17T09:00:25+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "▼ 記事はこちら\nhttps://media.masao.ai/hy4-flash-overview/?utm_source=youtube&utm_medium=description&utm_campaign=0wNe3dl6_zo\n\n今回の動画では、Tencent から登場した「Hy4 flash」について解説しました。公式が「安くて速くて出力が短く、日常の事務作業なら十分」と打ち出しているモデルで、開発用途は上位の Hy4 を使ってほしいという立ち位置です。\n\n期間限定で OpenCode Go のサブスクから無料で使えるので、気軽に試せるのも魅力です。\nぜひ皆さんも使ってみて、感想をコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Tencent Hy4 flash 登場と結論\n01:34 激安コストと公式の売り出し方\n03:27 公式の評価軸とベンチマークの位置\n05:50 OpenCode Goで無料で使える\n06:51 デモ比較開始 OS風アプリを作らせる\n08:31 LP・ドット絵・エージェントUIを比較\n11:41 ピンボールや3Dゲームで比較\n14:35 MV・ショートムービー・ボクセル\n16:25 3Dキャラクターを歩かせる比較\n17:18 ブログ記事で見えたHy4 flashの良さ\n18:28 キャラクターシートと寿司の3D\n20:09 まとめ - Hy4 flashの総評\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "tKoDPOrLMX0",
+   "title": "Building 3D video sets with GPT-6.2 Astra",
+   "url": "https://www.youtube.com/watch?v=tKoDPOrLMX0",
+   "published": "2026-11-17T18:41:32+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "GPT-6.2 Astraを使い、動画の2フレームからBlender上で部屋の3D空間全体を再構築する技術を紹介している。",
+    "プロンプトによる指示で壁の絵や照明を変更し、空間内を自由に歩き回れるシーンへ変換できると説明している。",
+    "Decisions APIを連携させ、Webカメラの照明に合わせて背景の光をリアルタイム調整するバーチャル背景アプリの実装を実演している。"
+   ],
+   "for_whom": "3D空間制作や高機能なバーチャル背景に関心があるクリエイターやエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T21:17:56.558258+00:00"
+  },
+  {
+   "video_id": "C1zYX5jwqq4",
+   "title": "GPT-6.2 Astra and GPT-6.2 Sol—Models built for the real world",
+   "url": "https://www.youtube.com/watch?v=C1zYX5jwqq4",
+   "published": "2026-11-17T17:55:40+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが新モデル「GPT-6.2 Astra」と「GPT-6.2 Sol」を発表したと伝えている。",
+    "動画では、請求書の処理やスライド作成、財務分析などの実務を指示だけで素早くこなす様子を描いている。",
+    "複雑な業務にも対応し、スプレッドシートや資料作成を効率的に行えると紹介している。"
+   ],
+   "for_whom": "日常の事務作業やスライド・資料作成をAIで効率化したいビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T21:17:56.558258+00:00"
+  },
+  {
+   "video_id": "ZIpm-0RczCk",
+   "title": "How Revolut’s lean teams take on bigger challenges with OpenAI",
+   "url": "https://www.youtube.com/watch?v=ZIpm-0RczCk",
+   "published": "2026-11-17T09:45:35+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "What can one engineer build when a project looks like it needs a whole team? At Revolut, an engineer used Codex to build an internal code review service himself. Its designers used Codex to turn seven years of design documentation into a format AI could read in a single day. OpenAI also helps Revolut’s financial crime team investigate flagged payments and respond faster to make shopping safer.\n\nRead the full story: https://openai.com/business/customer-stories/revolut/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "R_sl8zEp9ng",
+   "title": "How one engineer built a code review service with Codex | Revolut’s Dmitry Pitik",
+   "url": "https://www.youtube.com/watch?v=R_sl8zEp9ng",
+   "published": "2026-11-17T09:45:34+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Dmitry Pitik thought he’d need a team of developers to build Revolut’s internal code review service. In this film, the Senior Platform Engineer explains how he broke the design into tasks, assigned them to Codex agents working in parallel and reviewed the code himself. That gave him more time for the engineering decisions he wanted to get right.\n\nRead the full story: https://openai.com/business/customer-stories/revolut/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "xkeXefmxArU",
+   "title": "Making marketing feel local across 40 markets | Revolut’s Kim Maniovich",
+   "url": "https://www.youtube.com/watch?v=xkeXefmxArU",
+   "published": "2026-11-17T09:45:31+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "A campaign that works in one market can need a different approach in the next. Kim Maniovich, Global Head of Business Marketing at Revolut, shares how her team uses AI to understand local differences and tailor campaigns faster. She also explains why she asks her team to challenge an answer even when it sounds convincing.\n\nRead the full story: https://openai.com/business/customer-stories/revolut/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "-O0tMcyH4Wo",
+   "title": "Faster fraud response for safer shopping | Revolut’s David Abitbol",
+   "url": "https://www.youtube.com/watch?v=-O0tMcyH4Wo",
+   "published": "2026-11-17T09:45:26+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "OpenAI helps Revolut’s financial crime team investigate flagged payments and respond faster to make shopping safer. David Abitbol, AI Lead at Revolut, explains how his team tests AI systems before putting them to work. He also shares how Codex gives engineers more time to weigh up different designs and decide what to build.\n\nRead the full story: https://openai.com/business/customer-stories/revolut/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "hAASMPKkaXA",
+   "title": "Making seven years of design documentation AI-readable in a day | Revolut’s Dmytro Pavlov",
+   "url": "https://www.youtube.com/watch?v=hAASMPKkaXA",
+   "published": "2026-11-17T09:45:10+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Revolut’s designers had spent seven years documenting how their design system works. Senior Designer Dmytro Pavlov shares how his team used Codex to turn that material into a format AI could read in a single day. Along the way, they spotted gaps in their templates and made the guidance clearer for the designers who use it.\n\nRead the full story: https://openai.com/business/customer-stories/revolut/",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "RRj07Hc3ikU",
+   "title": "A season on the farm with AI",
+   "url": "https://www.youtube.com/watch?v=RRj07Hc3ikU",
+   "published": "2026-11-17T18:43:13+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-17T21:17:56.558258+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "スロベニアでサツマイモを栽培する女性が、農作業の課題解決にAIのClaudeを活用した経験を語っている。",
+    "種芋が発芽しない問題に対し、写真をClaudeに送って調査させ、育成や栄養管理のプロトコルを作成したと説明している。",
+    "改善したプロトコルにより苗が強く育ち、従来より早期の収穫と過去最高の成果を達成できたと紹介している。"
+   ],
+   "for_whom": "農業や現場の業務改善にAIを活用する具体例を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-17T21:17:56.558258+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-17T08:26:08.887672+00:00",
+   "last_ok": "2026-11-17T21:17:56.558258+00:00",
    "fail_streak": 0
   }
  }
