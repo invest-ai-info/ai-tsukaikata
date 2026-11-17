@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-17T14:30:55.500596+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-17T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
+      "summary_ja": "OpenAIがNATOと提携しサイバー防御を強化。\nサイバー攻撃の弱点発見や対策検証を支援。\n重要なシステムの保護を目指す。",
+      "summary_source": "gemini",
+      "title": "Strengthening NATO and allied cyber defenses with AI",
+      "uid": "7cfaed0172feb120",
+      "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-17T14:30:55.500596+00:00",
+      "importance": "major",
+      "label": "OpenAI News",
+      "published": "2026-11-17T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+      "summary_ja": "OpenAIがチリ政府と提携しAI活用を推進。\n公共部門のAIスキル向上や、\nスタートアップのAIアプリ開発を支援。",
+      "summary_source": "gemini",
+      "title": "Introducing OpenAI for Chile",
+      "uid": "8b743163e48af0f9",
+      "url": "https://openai.com/index/introducing-openai-for-chile",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-16T22:11:17.685915+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -92,6 +120,20 @@
       "title": "Science at the Frontier: How scientists use ChatGPT",
       "uid": "7db5a4dc3bc49fb6",
       "url": "https://openai.com/index/science-at-the-frontier",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-17T14:30:55.500596+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-16T09:30:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Discover how Revolut uses OpenAI models and Codex to cut coding time by 30–60%, scale financial crime investigations, and innovate without compromising security.",
+      "summary_ja": "RevolutがOpenAIのAIを業務に導入。\nコード自動生成AIなどで開発時間を30～60%削減。\n金融犯罪調査を効率化し、新サービス創出。",
+      "summary_source": "gemini",
+      "title": "How Revolut raises ambition without lowering the bar",
+      "uid": "29b469bb24d64b0b",
+      "url": "https://openai.com/business/customer-stories/revolut",
       "vendor": "OpenAI"
     },
     {
@@ -6205,32 +6247,6 @@
       "uid": "3a63a35cfc7a0c57",
       "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.124.0",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-19T13:59:23.932772+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-08-19T13:31:54+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "0.123.0 (2026-08-18) Full Changelog: v0.122.0...v0.123.0 Features api: additions to files and memory stores ( 09ce187 ) api: updates to skill, files, and user profiles ( c6cbffd ) client: add helpers…",
-      "title": "v0.123.0",
-      "uid": "969e95f08578ab9c",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.123.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-19T14:54:48.719000+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-19T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs.",
-      "summary_ja": "ReplitがAI開発の無料モードを開始しました\n強力なAI「GPT-5.6 Luna」を搭載し\nAI利用の費用を気にせずソフトウェア開発が可能です",
-      "summary_source": "gemini",
-      "title": "Replit expands access to software creation with GPT-5.6 Luna",
-      "uid": "828aa1662b982be2",
-      "url": "https://openai.com/index/replit",
-      "vendor": "OpenAI"
     }
   ]
 }
