@@ -820,8 +820,29 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/
+- [!] https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/
   - 2026-11-18 自動追記（major・Google「The Gemini app is now available on lower-memory Android devices.」）
+  - **2026-11-18 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降これまでの20件と同型）。
+
+    **① ページ自体は問題なく読めた**（`blog.google` は200。要約させず、本文に出てくる数字を一つ残らず
+    リストアップさせて確認した）。
+
+    **② 中身が「低メモリAndroid端末へのアプリ対応告知」で、モデルでも料金でも比較可能な仕様でもない**
+
+    - 低メモリ端末（Android Go edition）向けにGeminiアプリを再設計し、Gemini Live（音声会話・面接練習）・
+      カメラでのメモ確認や翻訳・Nano Bananaによる画像生成が使えるようにした、という機能展開の告知。
+      新しいモデルの発表ではなく、価格ページ・モデルカードは存在しない
+    - **本文に出てくる数字は「45以上の言語」の1つだけ**（%・$・ベンチマーク名・スコアはいずれも0件）。
+      モデルの性能・料金・仕様の数字ではない
+    - 比較相手（他社の同種の「低メモリ端末向けAIアプリ対応」発表）も見つからず、「前のモデルとの違い」
+      「他社の最上位モデルとの比較」のどちらも書けない。モデルでも料金表でもないため、このサイトの
+      記事の型（何が変わったか／前のモデルとの違い／他社との比較）に当てはまらない
+    - 💡 **2026-09-18 Sakana FIG 以降これまでの20件とほぼ同じ構造**（①は解けている・②＝数字がほぼ無い/
+      比較できない・モデルや料金表ではない、という停止理由も同一）
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
+
 - [ ] https://deepmind.google/blog/introducing-gemini-4-neon/
   - 2026-11-18 自動追記（major・Google DeepMind「Introducing Gemini 4 Neon」）
 - [ ] https://deepmind.google/blog/genie-4-is-now-available/
