@@ -8350,10 +8350,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "▼ 記事はこちら\nhttps://media.masao.ai/ai-generated-code-testing/?utm_source=youtube&utm_medium=description&utm_campaign=mSCpmPVPEWI\n\n今回の動画では、Anthropic の中の人が書いた記事「Claude Code チームは AI が書いたコードをどう確かめているのか」について解説しました\n\nClaude Code チームではコードの 90% を Claude が書いていて、人が全部読むのはもう無理です。そこでテストやレビューといった「確かめる仕組み」を作り、作る・確かめる・直すを Claude 自身が繰り返せるようにしている、というのが記事の結論でした。\n\nみなさんは AI が書いたコードをどう確かめていますか？ ぜひコメント欄で教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\ntimestamp:\n00:00 Claude Code チームの検証方法とは\n01:48 別の Claude に採点させると精度が上がる\n02:45 AI はテストを通すだけなら簡単にできる\n04:48 エンドトゥエンドテストで実際の流れを試す\n06:20 決まりを大量の入力で試すプロパティテスト\n07:31 新旧を並べるテストと避けたいテスト\n08:50 verify スキルでアプリを実際に動かす\n10:45 Claude に判定ルールを書き換えさせない\n12:10 変更を止める仕組みは段階を踏んで入れる\n13:07 レビュー役は増やさず1体目を磨き込む\n14:10 見逃したバグをルール化しレビュー役を鍛える\n16:28 まとめ - 人の仕事は証拠を見ることへ\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像処理\n-----\n■使用素材\nVOICEVOX: 四国めたん,青山龍星\nBGMER: https://bgmer.net/\n効果音ラボ: https://soundeffect-lab.info/",
    "first_seen": "2026-11-17T21:17:56.558258+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Anthropic公式ブログを基に、Claude CodeチームがAI生成コードの品質を担保する検証の仕組みを紹介している。",
+    "端から端まで動かす通しテストやプロパティテスト、新旧比較などごまかしの効かない3つのテスト手法を説明している。",
+    "判定ルールの改ざん防止や検証自動化により、人の仕事はコード読解から「完了条件と証拠の確認」へ移ると述べている。"
+   ],
+   "for_whom": "AIを活用した開発で、AIが生成したコードの検証やテストを効率化したいエンジニア向け。",
+   "caution": "概要欄や動画の終盤で、noteの有料コミュニティ（メンバーシップ）への勧誘が行われている点にご留意ください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T07:53:59.343345+00:00"
   },
   {
    "video_id": "0wNe3dl6_zo",
@@ -8422,10 +8432,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "What can one engineer build when a project looks like it needs a whole team? At Revolut, an engineer used Codex to build an internal code review service himself. Its designers used Codex to turn seven years of design documentation into a format AI could read in a single day. OpenAI also helps Revolut’s financial crime team investigate flagged payments and respond faster to make shopping safer.\n\nRead the full story: https://openai.com/business/customer-stories/revolut/",
    "first_seen": "2026-11-17T21:17:56.558258+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Revolutは自律型AIエージェントを活用し、金融犯罪に関する取引スクリーニングや調査業務を自動化していると説明している。",
+    "Codexの活用により開発者が単独でコードレビュー機能を構築し、コーディング時間を30〜60％削減できたと述べている。",
+    "OpenAIの技術導入により、新機能の市場投入スピードが従来の約3倍に加速したと担当者が語っている。"
+   ],
+   "for_whom": "AIエージェントを活用して業務自動化や開発の効率化を進めたい企業の担当者やエンジニア",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T07:53:59.343345+00:00"
   },
   {
    "video_id": "R_sl8zEp9ng",
@@ -8501,91 +8521,137 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-17T21:17:56.558258+00:00"
+  },
+  {
+   "video_id": "TPpOJsYlRLE",
+   "title": "【最高です】『GPT-6.2 Astra / Sol』を徹底解説！コスパ超改善、性能も一回り進化してます",
+   "url": "https://www.youtube.com/watch?v=TPpOJsYlRLE",
+   "published": "2026-11-18T00:01:53+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-18T07:53:59.343345+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIがGPT-6.2 AstraとSolを公開し、出力トークンの削減や値下げによってコスパと性能が一回り向上したと投稿者が説明している。",
+    "Astraは最難関業務向けで3Dやスライド等の成果物品質が高く、Solは日常業務向けで大幅な低コスト運用が可能であると紹介している。",
+    "各種ベンチマーク結果や自作の3Dゲーム、UI作成デモを交え、推論設定ごとの品質や生成速度の違いを比較検証している。"
+   ],
+   "for_whom": "GPT-6.2 AstraとSolの性能や料金の違い、業務での使い分け方を知りたい人",
+   "caution": "動画概要欄でnoteの有料メンバーシップコミュニティへ誘導しているため、加入を検討する際は内容や費用を事前に確認してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T07:53:59.343345+00:00"
+  },
+  {
+   "video_id": "pmOJIq7Ah00",
+   "title": "Introducing ChatGPT for Sales",
+   "url": "https://www.youtube.com/watch?v=pmOJIq7Ah00",
+   "published": "2026-11-17T23:24:04+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-18T07:53:59.343345+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIは営業支援向けの拡張機能「ChatGPT for Sales」プラグインを発表した。",
+    "ZoomInfoでの見込み客探索やパーソナライズメール作成、HubSpotへのタスク登録の連携を紹介している。",
+    "顧客情報を取り込み、商談準備や案件フォローなどの営業プロセスを効率化できると説明している。"
+   ],
+   "for_whom": "ChatGPTを活用して営業プロセスの自動化や商談準備を効率化したい営業担当者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T07:53:59.343345+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-17T21:17:56.558258+00:00",
+   "last_ok": "2026-11-18T07:53:59.343345+00:00",
    "fail_streak": 0
   }
  }
