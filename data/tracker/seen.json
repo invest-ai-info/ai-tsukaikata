@@ -81,63 +81,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-16T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-17T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
-      "title": "Strengthening NATO and allied cyber defenses with AI",
-      "uid": "7cfaed0172feb120",
-      "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-16T09:30:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Discover how Revolut uses OpenAI models and Codex to cut coding time by 30–60%, scale financial crime investigations, and innovate without compromising security.",
-      "title": "How Revolut raises ambition without lowering the bar",
-      "uid": "29b469bb24d64b0b",
-      "url": "https://openai.com/business/customer-stories/revolut",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-17T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Astra for Law ranked first in a launch evaluation spanning 24 areas of law. Every ChatGPT Enterprise customer can now request access.",
-      "title": "Astra for Law leads in legal intelligence",
-      "uid": "f4dc1a23ad1d9144",
-      "url": "https://openai.com/index/astra-law-6-2",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-12T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Aleph selected as ChatGPT Ads’ exclusive reseller in 44 countries to offer local invoicing, in-person support and local market expertise to brands and agencies",
-      "title": "ChatGPT Ads increases its market presence in 44 countries",
-      "uid": "cad67fb01bae4a4c",
-      "url": "https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-11-17T17:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "A user interface displaying the prompt \"What can I get done for you?\" above an input box containing placeholder text \"Describe a task\".",
-      "title": "Put Gemini to work for you",
-      "uid": "b62270a686259781",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-      "vendor": "Google"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
