@@ -3,10 +3,12 @@
 
 - SDK は使わない（このプロジェクトの流儀＝urllib 直叩き。tracker/summarize.py と同じ）
 - キーはヘッダ（x-goog-api-key）で渡す。URL に載せない
-- 公開動画の URL を渡すだけ。無料枠は YouTube 動画が1日8時間ぶん（2026-10-02 公式ドキュメント）。
-  だから**最初の30分だけ**を見せる（END_OFFSET）
-- 呼び方は2通り試す。2026年の公式ドキュメントは interactions API に移っているが、
-  tracker/summarize.py が使う generateContent も動いているので、駄目なら後者で取り直す
+- 公開動画の URL を渡すだけ。**最初の30分だけ**を見せる（END_OFFSET）
+- 🚨 **無料枠ではない**（2026-11-19 請求レポートで確認）。GEMINI_API_KEY は姉妹サイト marketwatch と同じ
+  課金ありのプロジェクトのキーなので、読んだ動画は全部課金される（10月 ¥500＝費用の最大の項目）。
+  だから**低い画質で読む**（MEDIA_RESOLUTION＝読み込む量が約3分の1。要約には十分）
+- 呼び方は2通り試す。**画質を指定できる generateContent を先に**使い、駄目なら interactions API で取り直す
+  （interactions は画質の指定の書き方を確かめていない＝ふつうの画質で読む予備の道）
 """
 from __future__ import annotations
 
@@ -19,6 +21,7 @@ MODELS = ("gemini-3.8-flash", "gemini-3.7-flash", "gemini-2.5-flash")
 BASE = "https://generativelanguage.googleapis.com/v1beta"
 TIMEOUT = 300           # 動画は読むのに時間がかかる
 END_OFFSET = 1800       # 最初の30分だけ見る（秒）
+MEDIA_RESOLUTION = "MEDIA_RESOLUTION_LOW"   # 低い画質＝1コマあたりの読み込む量を減らす（費用対策・2026-11-19）
 USER_AGENT = "ai-tsukaikata-videos/1.0"
 
 CATEGORIES = ("tech", "earn", "news")
@@ -167,6 +170,7 @@ def _via_generate(model: str, api_key: str, video_url: str, prompt: str, post) -
              "video_metadata": {"end_offset": f"{END_OFFSET}s"}},
             {"text": prompt},
         ]}],
+        "generationConfig": {"mediaResolution": MEDIA_RESOLUTION},
     })
     return generate_text(body)
 
@@ -182,8 +186,8 @@ def client(api_key: str, post=_post):
         errors = []
         quota_hit = False
         for model in MODELS:
-            for name, way in (("interactions", _via_interactions),
-                              ("generateContent", _via_generate)):
+            for name, way in (("generateContent", _via_generate),     # 低い画質で読める道が先
+                              ("interactions", _via_interactions)):
                 try:
                     text = way(model, api_key, video["url"], prompt, post)
                 except Exception as error:  # noqa: BLE001 - 次の呼び方で試す

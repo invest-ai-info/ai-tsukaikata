@@ -22,7 +22,7 @@ from . import feed, gemini, store
 ROOT = Path(__file__).resolve().parent.parent
 CHANNELS_PATH = Path(__file__).resolve().parent / "channels.yml"
 DATA_PATH = ROOT / "data" / "videos" / "videos.json"
-MAX_SUMMARIES = 4   # 1回あたり。6時間おき×4本×最初の30分＝無料枠（1日8時間）の内側
+MAX_SUMMARIES = 4   # 1回あたり。6時間おき×4本×最初の30分。⚠️ 無料枠ではない（課金ありのキー＝gemini.py の冒頭）
 
 
 def load_channels(path: Path = CHANNELS_PATH) -> list[dict]:

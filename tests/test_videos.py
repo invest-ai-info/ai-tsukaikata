@@ -209,14 +209,33 @@ def test_client_falls_back_and_keeps_key_out_of_url():
     def post(url, api_key, payload):
         seen.append(url)
         assert "key" not in url and api_key == "secret"
-        if "interactions" in url:
+        if "generateContent" in url:
             raise urllib.error.HTTPError(url, 400, "bad", {}, None)
-        return {"candidates": [{"content": {"parts": [{"text": _reply()}]}}]}
+        return {"steps": [{"type": "model_output",
+                           "content": [{"type": "text", "text": _reply()}]}]}
 
     text, model = gemini.client("secret", post=post)({"url": "https://youtu.be/x",
                                                       "title": "t"})
     assert json.loads(text)["category"] == "tech"
     assert model == gemini.MODELS[0] and len(seen) == 2
+    assert "interactions" in seen[1]
+
+
+def test_client_reads_video_at_low_resolution_first():
+    """🆕 2026-11-19 費用対策＝最初に送る呼び方は generateContent で、低い画質と最初の30分を指定する"""
+    payloads = []
+
+    def post(url, api_key, payload):
+        payloads.append((url, payload))
+        return {"candidates": [{"content": {"parts": [{"text": _reply()}]}}]}
+
+    gemini.client("k", post=post)({"url": "https://youtu.be/x", "title": "t"})
+    assert len(payloads) == 1
+    url, payload = payloads[0]
+    assert url.endswith(f"{gemini.MODELS[0]}:generateContent")
+    assert payload["generationConfig"]["mediaResolution"] == "MEDIA_RESOLUTION_LOW"
+    video = payload["contents"][0]["parts"][0]
+    assert video["video_metadata"]["end_offset"] == f"{gemini.END_OFFSET}s"
 
 
 def test_client_raises_quota_error_on_429():
