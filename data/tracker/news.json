@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-18T04:27:09.068415+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-17T23:17:45+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added a confirmation before /install-github-app changes a repository Added claude mcp add-json - to read the server's JSON from stdin, so tokens can stay off the command line; n…",
+      "title": "v2.1.327",
+      "uid": "d16072996bc6fb80",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.327",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-17T22:55:48.765741+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -6224,32 +6236,6 @@
       "title": "Introducing Intelligence Age",
       "uid": "82a751613fe8f19a",
       "url": "https://openai.com/index/introducing-intelligence-age",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-20T01:53:51.496322+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-20T00:54:41+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Fixed prompt caching for sessions using an LLM gateway or custom base URL Added a built-in \"Concise\" output style: Claude leads with results and skips preamble and narration, while doi…",
-      "title": "v2.1.237",
-      "uid": "fc62a13fa30b435b",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-20T15:50:41.871329+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-20T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
-      "summary_ja": "Stampli社がChatGPTを使い製品準備を効率化\n開発支援AI「Codex」と「ChatGPT Work」を導入\n数週間かかる作業を数日に短縮し発売に成功",
-      "summary_source": "gemini",
-      "title": "How ChatGPT Work helps Stampli move ideas to market",
-      "uid": "65cbee7c753c4230",
-      "url": "https://openai.com/index/stampli",
       "vendor": "OpenAI"
     }
   ]
