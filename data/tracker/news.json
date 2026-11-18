@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-18T14:06:27.442011+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-18T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+      "summary_ja": "ル・フィガロとOpenAIが提携しました\nル・フィガロの記事がChatGPTで利用可能に\n要約や抜粋、元記事へのリンクも提供",
+      "summary_source": "gemini",
+      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "uid": "8a270732dc33eedd",
+      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-18T04:27:09.068415+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -6209,34 +6223,6 @@
       "uid": "5b9d6a719247b623",
       "url": "/translate-update/",
       "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-20T19:48:00.804720+00:00",
-      "importance": "major",
-      "label": "OpenAI News",
-      "published": "2026-08-20T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
-      "summary_ja": "OpenAIが新しいブログを公開しました。\n「AI Futures」という名前です。\nAIが社会や個人の自由をどう変えるか探ります。",
-      "summary_source": "gemini",
-      "title": "Introducing AI Futures",
-      "uid": "e491b63b4d5b0a3f",
-      "url": "https://openai.com/index/introducing-ai-futures",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-26T23:39:54.528131+00:00",
-      "importance": "major",
-      "label": "OpenAI News",
-      "published": "2026-08-20T07:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
-      "summary_ja": "OpenAIが新ブログ「Intelligence Age」を開始\n画期的なAIが社会に与える影響を探求\n権力、政治、経済、個人の自由などを議論",
-      "summary_source": "gemini",
-      "title": "Introducing Intelligence Age",
-      "uid": "82a751613fe8f19a",
-      "url": "https://openai.com/index/introducing-intelligence-age",
-      "vendor": "OpenAI"
     }
   ]
 }
