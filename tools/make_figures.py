@@ -45807,6 +45807,104 @@ def decline_boundary_magnitude_chart() -> None:
     )
 
 
+def range_mixup_hit_rate_chart() -> None:
+    """文字数の範囲表記が2件以上同時にあっても、取り違え・計算漏れは起きなかった。
+
+    ai-writing-rate-below-the-rule-of-thumb の宿題（H61）に答えた実測（2026-11-18）。
+    値は docs/evidence/ranges-stay-separate-up-to-three-at-once.md の機械照合から。
+    """
+    _hit_and_miss_rows_chart(
+        "range-mixup-hit-rate.svg",
+        "範囲が2つ・3つ同時にあっても、取り違えは0件だった",
+        "実測2026-11-18。文字数・件数が範囲表記の案件を2〜3件同時に渡し、両端の値を計算させた。",
+        "材料K・L＝離れた値の2範囲／材料M＝近い値の2範囲（並べ替え含む）／材料N＝3範囲を同時に。",
+        [
+            ("材料K（離れた2範囲・文字単価、3回）", 3, 3, "good"),
+            ("材料L（別業種・件数単価の2範囲、3回）", 3, 3, "good"),
+            ("材料M（近い値の2範囲、3回）", 3, 3, "good"),
+            ("材料M・並べ替え（2回）", 2, 2, "good"),
+            ("材料N（3範囲を同時に、2回）", 2, 2, "good"),
+        ],
+        [
+            "離れた値の範囲・近い値の範囲・順番を変えた版・3範囲を同時に渡した版のどれでも、",
+            "どちらの範囲がどの案件のものか取り違えた回や、両端のどちらかを計算し忘れた回は",
+            "合計15回のうち0回だった。",
+        ],
+        "文字数・件数が範囲表記の案件を2〜3件同時に渡して両端の値を計算させた実測の結果を示す表。"
+        "材料K（離れた2範囲・文字単価）は3回中3回正解、材料L（別業種・件数単価の2範囲）も3回中3回正解、"
+        "材料M（近い値の2範囲）も3回中3回正解、材料Mの並べ替え版も2回中2回正解、"
+        "材料N（3範囲を同時に）も2回中2回正解で、すべて緑。"
+        "下の枠には、離れた値・近い値・順番を変えた版・3範囲同時のどれでも取り違えや計算漏れは"
+        "合計15回のうち0回だったことが書かれている。",
+        label_w=360,
+    )
+
+
+def close_magnitude_ranges_chart() -> None:
+    """値が近い2つの範囲（材料M）を同時に渡しても、4件とも正しい値に分かれた。
+
+    実測（2026-11-18）。I＝1,350円/700〜900字、J＝1,020円/600字、
+    K＝1,820円/1,000〜1,300字、L＝900円/500字。
+    """
+    domain_min, domain_max = 1.2, 2.05
+    plot_x, right = 230, 660
+    scale = (right - plot_x) / (domain_max - domain_min)
+
+    def px(v: float) -> float:
+        return plot_x + (v - domain_min) * scale
+
+    rows = [
+        ("I（700〜900字・1,350円）", 1.50, 1.93),
+        ("J（600字・1,020円）", 1.70, 1.70),
+        ("K（1,000〜1,300字・1,820円）", 1.40, 1.82),
+        ("L（500字・900円）", 1.80, 1.80),
+    ]
+    top, pitch, bar_h = 100, 34, 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">値の近い2つの範囲（I・K）を混ぜても、4件は分かれたまま</text>\n',
+        '<text class="t-sm" x="18" y="45">材料M。1.4円〜1.93円の狭い帯に、範囲2件・単一値2件を同時に渡した（3回・計算は全部一致）。</text>\n',
+        f'<text class="t-xs" x="{px(domain_min) :.1f}" y="{top - 14}">1.2円</text>\n',
+        f'<text class="t-xs" x="{px(domain_max) - 24:.1f}" y="{top - 14}">2.0円</text>\n',
+    ]
+    y = top
+    for label, lo, hi in rows:
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(label)}</text>\n')
+        left_x, right_x = px(lo), px(max(hi, lo + 0.02))
+        bw = max(3.0, right_x - left_x)
+        parts.append(
+            f'<rect class="bar-new" x="{left_x:.1f}" y="{y}" width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        value_label = f"{lo:g}円" if lo == hi else f"{lo:g}〜{hi:g}円"
+        parts.append(
+            f'<text class="t-sm" x="{right_x + 8:.1f}" y="{y + bar_h - 5:.1f}">{value_label}</text>\n'
+        )
+        y += pitch
+
+    y += 6
+    notes = [
+        "I（1.50〜1.93円）とK（1.40〜1.82円）は値が重なるほど近いが、3回とも取り違えなかった。",
+        "並べる順番を変えた2回も含め、I・J・K・Lの4件は5回とも正しい値に分かれた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "値の近い2つの範囲（I・K）を含む4件（I・J・K・L）の文字単価を横棒グラフで示す図。"
+        "Iは700〜900字・1,350円で1.50円から1.93円の範囲、Jは600字・1,020円で1.70円の単一値、"
+        "Kは1,000〜1,300字・1,820円で1.40円から1.82円の範囲、Lは500字・900円で1.80円の単一値。"
+        "IとKの範囲は値が重なるほど近いが、1.2円から2.0円の軸の上でそれぞれ区別して示されている。"
+        "下の枠には、IとKは値が近いが3回とも取り違えなかったこと、"
+        "並べる順番を変えた2回も含め4件は5回とも正しい値に分かれたことが書かれている。"
+    )
+    (OUT / "close-magnitude-ranges.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    decline_boundary_direction_grid_chart()
-    decline_boundary_magnitude_chart()
+    range_mixup_hit_rate_chart()
+    close_magnitude_ranges_chart()
