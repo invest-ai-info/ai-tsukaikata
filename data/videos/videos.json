@@ -8317,19 +8317,6 @@
    "summarized_at": "2026-11-17T21:17:56.558258+00:00"
   },
   {
-   "video_id": "TKs5ktj36f4",
-   "title": "【尾原和啓×池田朋弘】AIに支配される人、使いこなす人。AIに溶かされない「うたう」思考法",
-   "url": "https://www.youtube.com/watch?v=TKs5ktj36f4",
-   "published": "2026-11-04T12:09:11+00:00",
-   "channel_key": "iketomo",
-   "channel_name": "いけともch",
-   "default_category": "news",
-   "description": "▼『システムゼローー「AIがすべて先回りする」時代の思考法』\nhttps://link.amazon/B0h56HiRH\n\n----\n\n尾原和啓×池田朋弘『システムゼロ』特別トーク\n\nAIの答えは、整っていて、根拠らしいものまで添えられていて、しかも自分を肯定してくれる。そのとき私たちは、疑う理由を持てているでしょうか。\n\n書籍『システムゼロ ― 「AIがすべて先回りする」時代の思考法』（PHP研究所）の共著者、尾原和啓さんと池田朋弘（いけとも）が、ポッドキャスト「いけとも尾原 DeepなAIニュース」での対談から生まれた視点を、1時間でお話しします。\n\n■ 日時\n2026年11月4日（水）20:00-21:00\n\n■ 今回の論点\n- そもそも「システム0」とは何なのか\n- システム0の脅威とは\n- システム0に対して必要な3つの思考法「うたう」（疑う力・立ち止まる力・裏返す力）\n- どんなシーンでどうするべきか\n- 新しい時代に向けて、キャリアや人生をどう豊かにしていくか\n\n当日はコメントにもお答えしながら進めます。\n\n■ 書籍\n『システムゼロ ― 「AIがすべて先回りする」時代の思考法』\n池田朋弘・尾原和啓 著 ／ PHP研究所\n2026年11月10日発売　定価1,870円（税込）\n\n■ イベントページ\nhttps://peatix.com/event/5225030/view",
-   "first_seen": "2026-11-17T21:17:56.558258+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "Ts4ddqNjV68",
    "title": "月額2900円で最強コスパ！GoogleのAIサブスク「Google AI Pro」徹底解説！ ～ChatGPTやClaudeのプランにはない強みとは？～",
    "url": "https://www.youtube.com/watch?v=Ts4ddqNjV68",
@@ -8567,91 +8554,222 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-18T07:53:59.343345+00:00"
+  },
+  {
+   "video_id": "rpYNfqiiPac",
+   "title": "【有料級】スクショ・PDF加工が一瞬で終わる神ツールを無料配布します",
+   "url": "https://www.youtube.com/watch?v=rpYNfqiiPac",
+   "published": "2026-11-18T09:00:30+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "description": "「業務マニュアルや手順書の画像注記が面倒…」「PDFの個人情報を安全に隠したい！」そんな悩みを一発解決！ G-Studioシリーズの最新Webアプリ「Annotator」を無料公開します。\n\n画面キャプチャへの連番ピン自動付与（欠番時の自動番号再整理対応）や引出線ラベル、スポットライト、定型スタンプ配置が直感操作で完結。 さらにPDFの個人情報モザイク＆後から剥がせない完全焼き付け出力にも対応！資料作成の手間を激減させる神ツールをぜひお試しください！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n01:19 「Canvas」とは\n03:57 「Annotator Studio」\n06:33「G-Manual Studio」\n09:54 まとめ\n11:27 ゆるトーク\n\n【G-Snap Annotator】\nhttps://kotakahashi-4u.github.io/g-studio/annotator\n\n【便利ツールまとめサイト】\nhttps://kotakahashi-4u.github.io/g-studio/\n\n【関連動画】\nGoogleスライドを劇的進化！「動くスマートアート作成ツール」を無料公開\nhttps://youtu.be/uzVm7m5DdwQ\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【SNS関連】\n✨Google Apps Scriptを解説するブログ\n「ガスログ」\nhttps://gas-4u.com/\n\n✨X（旧Twitter)\nブログやYouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "3D1QRW4a7bA",
+   "title": "ChatGPT(Codex)の最先端AIモデル「GPT-6.2 Astra」徹底解説！ ～世界ランキング2位に浮上し、上位AIモデルのGPT-6.2 Solも同時公開～",
+   "url": "https://www.youtube.com/watch?v=3D1QRW4a7bA",
+   "published": "2026-11-18T09:06:12+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "description": "◆動画の説明\n(2026年)11月18日、OpenAIは\n最先端AIモデルの最新版「GPT-6.2 Astra」と\n上位AIモデルの最新版「GPT-6.2 Sol」を公開しました\nどちらのモデルも、コーディングや推論、資料作成\nWebサイトや3Dコンテンツの制作\nAIエージェントとしての作業能力が向上していて\n使用量(トークン)を抑えながら\n質の高い結果を出せるので、利用制限の範囲内で\nより多くの作業をこなせるとされており\nGPT-6.2 Astraに関しては\nAIモデルの有名ベンチマークサイトで\n現存する全てのAIモデルの中で2位につけています\n\n今回の動画では\n第一章：GPT-6.2 Astra・Solの概要\n第二章：GPT-6.2 Astra・Solの使い方\n第三章：GPT-6.2 Astraの活用事例\nの三章構成で、OpenAIの公開した最新AIモデル\nGPT-6.2 AstraとGPT-6.2 Solの概要\nAIエージェント「Codex」や「ChatGPT Work」で\nGPT-6.2 AstraとGPT-6.2 Solを使う方法\n最後に、GPT-6.2 Astraを使った活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:51　動画のもくじ\n1:43　第一章：GPT-6.2 Astra・Solの概要\n2:14　①、GPT-6.2 Astra・Solの特徴\n3:13　②、GPT-6.2 Astra・SolのAIベンチマーク\n4:18　③、GPT-6.2 Astra・Solの安全性\n5:44　第二章：GPT-6.2 Astra・Solの使い方\n7:39　第三章：GPT-6.2 Astraの活用事例\n9:34　エンディングムービー\n\n◆動画の中で紹介している内容\nControl Room、Ultrafast、GPT-6 Astra、GPT-6.1 Sol\n\n◆参考サイト\nhttps://chatgpt.com/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/?utm_source=chatgpt.com\nhttps://openai.com/ja-JP/api/\nhttps://developers.openai.com/api/docs/models/gpt-6.2-astra\nhttps://developers.openai.com/api/docs/models/gpt-6.2-sol\nhttps://artificialanalysis.ai/\nhttps://x.com/OpenAIDevs/status/2122752256923873753\nhttps://x.com/OpenAI/status/2122750124543926515\n\n▼オススメ動画\n【Grok Bot・Cursor・Xが1つに】Xが新しいAIサブスクリプション「X Subscription」を発表！ ～無料を含む全5プランの料金と機能を完全解説～\nhttps://youtu.be/V_Ib3j9o6ys\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "QUd7DVefuSw",
+   "title": "【賛否両論】GPT-6.2 Astraは本当に史上最悪なのか？不評の理由3つと強みの6つを解説",
+   "url": "https://www.youtube.com/watch?v=QUd7DVefuSw",
+   "published": "2026-11-18T10:29:04+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "▼ 記事はこちら\nhttps://media.masao.ai/gpt-6-2-astra-reputation/?utm_source=youtube&utm_medium=description&utm_campaign=QUd7DVefuSw\n\n今回の動画では、OpenAI の新モデル GPT-6.2 Astra に対して、T3 Code で知られる Theoさんが「OpenAI 史上最悪のモデルだと思う」と投稿して話題になっている記事を解説しました。\n\nAstra はめちゃくちゃ良いモデルだと思う一方で癖も強く、察しの悪さやポエムっぽい説明は正直感じています。ただ、3D や UI を作らせるところは本当に良いので、主役にはしなくても、探索の案のひとつやサブエージェントとして個性を生かしていくのがいいのかなと思っています。\n皆さんは GPT-6.2 Astra を使ってみてどう感じましたか？ぜひコメント欄で感想を教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://x.com/theo/status/2122760447103484410\nhttps://x.com/theo/status/2122757647170703550\n\ntimestamp:\n00:00 オープニング - Theoさんの批判記事が話題\n01:31 良い点6つと嫌う理由3つ、発売日の空気感\n03:40 Theoさんの過剰反応とTiboさんの反論\n04:41 Astraの個性をハーネスで生かす\n05:54 Theoさんが認めるAstraの良い点6つ\n08:08 嫌う理由1 答えようのない質問で止まる\n11:34 嫌う理由2 説明が細部に潜り読み解けない\n13:55 嫌う理由3 同じ所をぐるぐる回り続ける\n15:08 賢いが一緒に働くのは耐え難いという結論\n15:56 まさおの使い分け - Fable中心にAstra\n17:56 まとめ - 賛否両論でも察しの悪さが課題\n19:37 メンバーシップと無料勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "t2Zo3YAJdj4",
+   "title": "Five brand new ways to use Claude at work",
+   "url": "https://www.youtube.com/watch?v=t2Zo3YAJdj4",
+   "published": "2026-11-18T18:39:05+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "会議に同席してリアルタイムに議事録やホワイトボードを作成・整理する新機能を紹介している。",
+    "計算式対応の表計算機能Claude Sheetsや、社内データを可視化するClaude Dataを解説している。",
+    "外部業務アプリをClaudeの画面内から直接操作できるインタラクティブコネクターの提供を発表している。"
+   ],
+   "for_whom": "会議メモの自動作成や業務アプリ連携で作業を効率化したいチームやビジネスパーソン。",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T20:51:49.530003+00:00"
+  },
+  {
+   "video_id": "pVc6KkjeCfU",
+   "title": "Behind the scenes with Genie 4",
+   "url": "https://www.youtube.com/watch?v=pVc6KkjeCfU",
+   "published": "2026-11-18T18:12:24+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Google DeepMindは、テキスト入力からリアルタイムに探索可能な仮想空間を生成する世界モデル「Genie 4」を紹介している。",
+    "生成された空間はキーボード操作で自由に移動でき、リアルタイムの追加プロンプトで視点変更や演出の追加が可能だと説明している。",
+    "ホットキーでの動作割り当てやプロンプトによる再現性を活用し、映像制作やロボットの学習環境などに応用できると述べている。"
+   ],
+   "for_whom": "最新の世界モデルや対話型AI技術、映像・ゲーム制作への応用に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T20:51:49.530003+00:00"
+  },
+  {
+   "video_id": "EDp4IoAUsXY",
+   "title": "Project Genie: Create and explore interactive worlds with Genie 4",
+   "url": "https://www.youtube.com/watch?v=EDp4IoAUsXY",
+   "published": "2026-11-18T18:12:21+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Google DeepMindは、テキストや画像からインタラクティブな世界を生成する新モデル「Genie 4」と「Project Genie」を発表したと紹介し",
+    "生成された世界を探索しながら、プロンプト入力によって天候や登場キャラクターなどをリアルタイムに変更できると説明している。",
+    "作成した世界はギャラリーに公開でき、他のユーザーが探索したりリミックスして改変できると紹介している。"
+   ],
+   "for_whom": "最新の対話型世界生成AIやメタバース・ゲーム制作技術に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T20:51:49.530003+00:00"
+  },
+  {
+   "video_id": "PoEJ9t9rUb4",
+   "title": "How I Built It: $600K/Month SaaS",
+   "url": "https://www.youtube.com/watch?v=PoEJ9t9rUb4",
+   "published": "2026-11-18T18:00:30+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-11-18T20:51:49.530003+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "創業者のOliver氏が、AIと人手を組み合わせた模倣品対策サービスで月商60万ドルを達成した経緯を説明している。",
+    "当初のツール提供から、AIで検出して人が削除手続きまで代行するサービス型へ転換したことで価値が高まったと述べている。",
+    "ソフトウェア単体ではなく、実務を代行するプロダクタイズド・サービス型ビジネスモデルが今後の機会になると解説している。"
+   ],
+   "for_whom": "AIとサービス代行を掛け合わせたビジネスモデルで収益化を目指したい人",
+   "caution": "月商60万ドルという実績は出演者側の主張であり、成果は市場環境や提供体制によって大きく左右されます。また概要欄では別リソースへの登録誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-18T20:51:49.530003+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-18T07:53:59.343345+00:00",
+   "last_ok": "2026-11-18T20:51:49.530003+00:00",
    "fail_streak": 0
   }
  }
