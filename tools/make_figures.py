@@ -45619,3 +45619,194 @@ def payment_origin_branch_chart() -> None:
 if __name__ == "__main__":
     payment_origin_naive_vs_named_grid_chart()
     payment_origin_branch_chart()
+
+
+def decline_boundary_direction_grid_chart() -> None:
+    """境界%（10/20/30）×方向（増加／減少）の2行3列グリッド（2026-11-18実測）。
+
+    `ten-percent-same-twenty-percent-different`（増加傾向）と、この記事（減少傾向・
+    材料D/E/F・独立呼び出し各2回）を並べ、差10.0%のときだけ方向で結果が割れたことを示す。
+    """
+    label_w = 150
+    col_w = 170
+    gap = 12
+    col_x = [18 + label_w + i * (col_w + gap) for i in range(3)]
+    row_h = 84
+    row_y = [150, 150 + row_h + 14]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "差10%だけ、増加傾向と減少傾向で結果が割れた</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "同じ指示文（直近14日と56日全体を比べさせる）を、差10.0%・20.0%・30.0%の3条件で、"
+        "増加傾向と減少傾向の両方向に試した。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "20%・30%はどちらの方向でも2回とも『大きく違う』。10%だけ、減少傾向で判定が割れた。"
+        "</text>\n",
+    ]
+
+    headers = ["差10.0%", "差20.0%", "差30.0%"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" y="{row_y[0] - 16}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    row_labels = ["増加傾向\n（先行記事）", "減少傾向\n（この記事）"]
+    cells = [
+        [
+            ("2/2が\n『同じ』", "good"),
+            ("2/2が\n『大きく違う』", "good"),
+            ("2/2が\n『大きく違う』", "good"),
+        ],
+        [
+            ("1/2が『同じ』\n1/2は中間\n（大きく違う\nとは言わない）", "bad"),
+            ("2/2が\n『大きく違う』", "good"),
+            ("2/2が\n『大きく違う』", "good"),
+        ],
+    ]
+
+    for r in range(2):
+        label_lines = row_labels[r].split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{row_y[r] + row_h / 2 - 6 + li * 16:.1f}">'
+                f"{_esc(line)}</text>\n"
+            )
+        for c in range(3):
+            text, kind = cells[r][c]
+            klass = "box-good" if kind == "good" else "box-bad"
+            tone = "t-good" if kind == "good" else "t-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]:.1f}" y="{row_y[r]:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h}" rx="6"/>\n'
+            )
+            lines = text.split("\n")
+            n = len(lines)
+            start_y = row_y[r] + row_h / 2 - (n - 1) * 9 + 4
+            for li, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tone}" x="{col_x[c] + col_w / 2:.1f}" '
+                    f'y="{start_y + li * 18:.1f}" text-anchor="middle">{_esc(line)}</text>\n'
+                )
+        if r == 0:
+            parts.append(
+                f'<line class="line" x1="18" y1="{row_y[1] - 7:.1f}" x2="702" '
+                f'y2="{row_y[1] - 7:.1f}" stroke-dasharray="3 3"/>\n'
+            )
+
+    y = row_y[1] + row_h + 20
+    notes = [
+        "増加傾向は差10.0%でも2回とも『同じ』（ten-percent-same-twenty-percent-different）。",
+        "減少傾向は差10.0%で、1回は『同じ』、もう1回は『大きく違う』とは言わない中間の判定だった。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "境界%（差10.0%・20.0%・30.0%）を列、記録の方向（増加傾向・減少傾向）を行にした2行3列の表。"
+        "増加傾向の行は、差10.0%で2/2が『同じ』、差20.0%・30.0%で2/2が『大きく違う』（緑）。"
+        "減少傾向の行は、差20.0%・30.0%は同じく2/2が『大きく違う』（緑）だが、"
+        "差10.0%だけは1/2が『同じ』、もう1/2が『同じでも大きく違うでもない』中間の判定で割れた（赤）。"
+        "下の枠には、増加傾向は差10.0%でも2回とも『同じ』だったのに対し、"
+        "減少傾向は差10.0%で判定が割れたことが書かれている。"
+    )
+    (OUT / "decline-boundary-direction-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def decline_boundary_magnitude_chart() -> None:
+    """材料D/E/Fそれぞれの「古い42日の目安」と「直近14日の目安」を並べた棒グラフ（2026-11-18実測）。
+
+    56日全体の目安はどの材料も5.0件/日にそろえ、直近14日だけを4.5→4.0→3.5件/日と動かして
+    差をちょうど10.0%・20.0%・30.0%にした（真値はPython算出）。
+    """
+    label_x = 18
+    plot_x = 300
+    plot_w = 230
+    axis_max = 6.0
+    scale = plot_w / axis_max
+    top = 92
+    row_h = 32
+    bar_h = 15
+    divider_gap = 10
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "直近14日だけを動かして、差をちょうど10%・20%・30%にそろえた</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "材料D・E・Fはどれも56日全体の目安を5.0件/日にそろえ、直近14日の目安だけを"
+        "4.5→4.0→3.5件/日と動かした。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "古い42日の目安（灰）は材料ごとに約5.17→5.33→5.5件/日と、直近14日（青）から離れていく。"
+        "</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 14:.1f}" y="{top - 14}">件/日</text>\n',
+    ]
+
+    groups = [
+        ("材料D（差10.0%）", "古い42日", 5.1666666666666667, "bar-old"),
+        ("材料D（差10.0%）", "直近14日", 4.5, "bar-new"),
+        ("材料E（差20.0%）", "古い42日", 5.333333333333333, "bar-old"),
+        ("材料E（差20.0%）", "直近14日", 4.0, "bar-new"),
+        ("材料F（差30.0%）", "古い42日", 5.5, "bar-old"),
+        ("材料F（差30.0%）", "直近14日", 3.5, "bar-new"),
+    ]
+    x_val = px(axis_max) + 14
+    y = top
+    for i, (group, period, value, klass) in enumerate(groups):
+        ty = y + 14
+        label = f"{group} ― {period}" if period == "古い42日" else f"　　　　　　　　  {period}"
+        parts.append(f'<text class="t" x="{label_x}" y="{ty}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{klass}" x="{px(0):.1f}" y="{ty - 11}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{x_val:.1f}" y="{ty}">{value:.2f}件/日</text>\n')
+        y += row_h
+        if period == "直近14日" and i < len(groups) - 1:
+            parts.append(
+                f'<line class="line" x1="18" y1="{y - 6:.1f}" x2="684" y2="{y - 6:.1f}" '
+                f'stroke-dasharray="3 3"/>\n'
+            )
+            y += divider_gap
+
+    y += 8
+    notes = [
+        "材料Dは差10.0%、材料Eは差20.0%、材料Fは差30.0%（いずれも56日の目安5.0件/日に対する差）。",
+        "直近14日の落ち込みが大きいほど、判定は『大きく違う』で安定した（本文のAIへの頼み方を参照）。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "材料D・E・Fそれぞれについて、古い42日の1日あたりの目安（灰の棒）と直近14日の目安"
+        "（青の棒）を並べた横棒グラフ。材料Dは古い42日が約5.17件/日・直近14日が4.5件/日（差10.0%）、"
+        "材料Eは古い42日が約5.33件/日・直近14日が4.0件/日（差20.0%）、"
+        "材料Fは古い42日が5.5件/日・直近14日が3.5件/日（差30.0%）。"
+        "56日全体の目安はどの材料も5.0件/日にそろえてあり、直近14日だけが材料ごとに低くなっている。"
+        "下の枠には、直近14日の落ち込みが大きいほど判定が『大きく違う』で安定したことが書かれている。"
+    )
+    (OUT / "decline-boundary-magnitude.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    decline_boundary_direction_grid_chart()
+    decline_boundary_magnitude_chart()

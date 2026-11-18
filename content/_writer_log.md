@@ -46,6 +46,31 @@
 
 ## 記録
 
+### 2026-11-18（自動化・ループ優先枠の回）
+- `git fetch origin`→`main`ブランチは`origin/main`（`d7206cd1`）と同じコミットを指していたため
+  取り直しは不要
+- `### 自動化・ループ優先`節の未処理先頭（減少傾向10/20/30%境界）に着手。
+  `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認
+- 公開: 1本（`decreasing-boundary-splits-at-ten-percent`）。残る未処理2件
+  （HEAD/GET不一致・週1回程度の低頻度処理の固定日数ルール）は今回は着手せず`- [ ]`のまま残した
+  （0番＝本数はノルマではない。1本を2回転・実測込みで丁寧に仕上げることを優先）
+- 実測: `claude --safe-mode --tools "" -p` による独立プロセス起動6回（材料D/E/F・各2回）。
+  56日全体の目安をD/E/F全て5.0件/日にそろえ、直近14日だけを4.5→4.0→3.5件/日と動かして
+  差をちょうど10.0%・20.0%・30.0%にした減少傾向の架空ログを新規作成。差20.0%・30.0%は
+  2回とも「大きく違う」で一致（増加傾向の先行記事と合わせて9/9）。差10.0%（材料D）だけ、
+  1回目「実務上ほぼ同じ」、2回目「同じとはみなさない方がよい（差は中程度）、ただし大きく違う
+  ほどではない」という中間判定に割れた。数値（合計・平均・週ごとの小計）は6回とも真値と
+  完全一致。生ログは`docs/evidence/decreasing-boundary-splits-at-ten-percent.md`
+- 教訓: `content/_lessons.md` ★334が再発（判定ラベルだけでは中間判定を見落とす。数値自体は
+  崩れなかった）。新規で★351を追加（真値の差10.0%という同じ境界%でも、増加傾向では判定が
+  揺れないが減少傾向では中間判定に割れることがある。n=2のみで頻度は未確認）
+- 図2枚（`decline-boundary-direction-grid.svg`・`decline-boundary-magnitude.svg`）を
+  `tools/make_figures.py`に追加。1回目は2行3列グリッドの1セルが枠から右にはみ出して
+  `src/figures.py`の崩れ検査で止まったため、セル内の行を4行に割って文字数を減らして直した
+- `python tools/check_readability.py`＝60字以上0%（目安15%以下）・最長58字で1回で通過
+- `git pull --rebase`（変化なし）→`python -m tools.make_eyecatch`実行、新規slugの1枚のみ生成
+- `python -m src.build`・`python -m pytest -q`（794 passed）とも通過
+
 ### 2026-11-17（副業枠の回・21:00）
 - `git fetch origin`→作業ブランチ（`claude/serene-hamilton-s392j3`）は`origin/main`
   （`0b1fd832`）と同じコミットを指していたため取り直しは不要

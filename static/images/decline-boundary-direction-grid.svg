@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-label="境界%（差10.0%・20.0%・30.0%）を列、記録の方向（増加傾向・減少傾向）を行にした2行3列の表。増加傾向の行は、差10.0%で2/2が『同じ』、差20.0%・30.0%で2/2が『大きく違う』（緑）。減少傾向の行は、差20.0%・30.0%は同じく2/2が『大きく違う』（緑）だが、差10.0%だけは1/2が『同じ』、もう1/2が『同じでも大きく違うでもない』中間の判定で割れた（赤）。下の枠には、増加傾向は差10.0%でも2回とも『同じ』だったのに対し、減少傾向は差10.0%で判定が割れたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="420"/>
+<text class="t-strong" x="18" y="24">差10%だけ、増加傾向と減少傾向で結果が割れた</text>
+<text class="t-sm" x="18" y="43">同じ指示文（直近14日と56日全体を比べさせる）を、差10.0%・20.0%・30.0%の3条件で、増加傾向と減少傾向の両方向に試した。</text>
+<text class="t-sm" x="18" y="62">20%・30%はどちらの方向でも2回とも『大きく違う』。10%だけ、減少傾向で判定が割れた。</text>
+<text class="t-accent" x="253.0" y="134" text-anchor="middle">差10.0%</text>
+<text class="t-accent" x="435.0" y="134" text-anchor="middle">差20.0%</text>
+<text class="t-accent" x="617.0" y="134" text-anchor="middle">差30.0%</text>
+<text class="t-sm" x="18" y="186.0">増加傾向</text>
+<text class="t-sm" x="18" y="202.0">（先行記事）</text>
+<rect class="box-good" x="168.0" y="150.0" width="170.0" height="84" rx="6"/>
+<text class="t-good" x="253.0" y="187.0" text-anchor="middle">2/2が</text>
+<text class="t-good" x="253.0" y="205.0" text-anchor="middle">『同じ』</text>
+<rect class="box-good" x="350.0" y="150.0" width="170.0" height="84" rx="6"/>
+<text class="t-good" x="435.0" y="187.0" text-anchor="middle">2/2が</text>
+<text class="t-good" x="435.0" y="205.0" text-anchor="middle">『大きく違う』</text>
+<rect class="box-good" x="532.0" y="150.0" width="170.0" height="84" rx="6"/>
+<text class="t-good" x="617.0" y="187.0" text-anchor="middle">2/2が</text>
+<text class="t-good" x="617.0" y="205.0" text-anchor="middle">『大きく違う』</text>
+<line class="line" x1="18" y1="241.0" x2="702" y2="241.0" stroke-dasharray="3 3"/>
+<text class="t-sm" x="18" y="284.0">減少傾向</text>
+<text class="t-sm" x="18" y="300.0">（この記事）</text>
+<rect class="box-bad" x="168.0" y="248.0" width="170.0" height="84" rx="6"/>
+<text class="t-bad" x="253.0" y="267.0" text-anchor="middle">1/2が『同じ』</text>
+<text class="t-bad" x="253.0" y="285.0" text-anchor="middle">1/2は中間</text>
+<text class="t-bad" x="253.0" y="303.0" text-anchor="middle">（大きく違う</text>
+<text class="t-bad" x="253.0" y="321.0" text-anchor="middle">とは言わない）</text>
+<rect class="box-good" x="350.0" y="248.0" width="170.0" height="84" rx="6"/>
+<text class="t-good" x="435.0" y="285.0" text-anchor="middle">2/2が</text>
+<text class="t-good" x="435.0" y="303.0" text-anchor="middle">『大きく違う』</text>
+<rect class="box-good" x="532.0" y="248.0" width="170.0" height="84" rx="6"/>
+<text class="t-good" x="617.0" y="285.0" text-anchor="middle">2/2が</text>
+<text class="t-good" x="617.0" y="303.0" text-anchor="middle">『大きく違う』</text>
+<rect class="box-accent" x="18" y="352" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="372">増加傾向は差10.0%でも2回とも『同じ』（ten-percent-same-twenty-percent-different）。</text>
+<text class="t-accent" x="34" y="390">減少傾向は差10.0%で、1回は『同じ』、もう1回は『大きく違う』とは言わない中間の判定だった。</text>
+</svg>
