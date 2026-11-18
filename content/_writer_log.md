@@ -71,6 +71,34 @@
 - `git pull --rebase`（変化なし）→`python -m tools.make_eyecatch`実行、新規slugの1枚のみ生成
 - `python -m src.build`・`python -m pytest -q`（794 passed）とも通過
 
+### 2026-11-18（副業枠の回・21:00）
+- `git fetch origin`→作業ブランチのHEADは`origin/main`と同じコミットを指していたため取り直し不要
+- `### 副業`節の未処理（⏸除く）5件（H61・H62・3C/逆パターン続編2件・長文AI文体続編・口コミ複数件続編）
+  から上位3件を選択。`grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認
+- 公開: 3本（`ranges-stay-separate-up-to-three-at-once`・`month-count-not-needed-to-catch-a-bundle-price`・
+  `other-frameworks-leave-the-blank-quadrant-blank`）。残る未処理2件（AI文体チェックの長文続編・
+  口コミ複数件続編）は今回は着手せず`- [ ]`のまま残した
+- 実測1（範囲表記の取り違え）: `claude --safe-mode --tools "" -p`による独立プロセス起動15回
+  （材料K・L・M・M並べ替え・N・N検証版）。離れた2範囲・近い2範囲・順番を変えた版・3範囲同時の
+  どの条件でも取り違え・計算漏れは0件。仮説は棄却（範囲は複数あっても混同しない）
+- 実測2（月数を書かない一括価格）: 独立プロセス起動13回＋単独確認4回＋応用1回（材料M・M並べ替え・
+  N・単独2件・応用）。月数を書かない「まとめ割」「セット料金」は10件に混ぜても並べ替えても
+  単独でも13回中13回正解。元記事（月数明記・6回中4回）より崩れなかった
+- 実測3（3C・SWOT逆パターン）: 独立プロセス起動12回（3C素朴3・3C要確認3・SWOT逆素朴3・
+  SWOT逆要確認3）＋言い直し方2回＋応用1回。4条件とも作り話0件。元記事（SWOTで機会・脅威なし・
+  和菓子店）とは案件も違うため、効いた要因は記事に明記のうえ切り分けていない。
+  一部プロセスがAPI Error（Opus 5.5のsafeguard誤検知）・空応答を返したため、
+  3回ぶんの有効な応答が揃うまで同条件を再試行した（題材側の問題ではない）
+- 教訓: `content/_lessons.md`に★352・★353・★354を追加（いずれも追記のみ）
+- 図6枚（`range-mixup-hit-rate.svg`・`close-magnitude-ranges.svg`・`bundle-no-month-hit-rate.svg`・
+  `bundle-wording-compare.svg`・`framework-blank-hit-rate.svg`・`framework-vs-swot-fabrication.svg`）を
+  `tools/make_figures.py`に追加（1本ごとに2枚）
+- `python tools/check_readability.py`＝3本とも60字以上15%以下（11%・15%・13%）で通過。
+  初稿で1本が18%・1本が21%だったため、長い文を箇条書きに分けて直した
+- `python -m tools.make_eyecatch`実行、新規slug3枚を生成
+- `python -m src.build`・`python -m pytest -q`（794 passed）とも、3本それぞれの公開直後に通過
+- `swot-missing-quadrant-needs-confirmed`に相互リンクを1本追加（キュー指定の「相互リンク必須」）
+
 ### 2026-11-17（副業枠の回・21:00）
 - `git fetch origin`→作業ブランチ（`claude/serene-hamilton-s392j3`）は`origin/main`
   （`0b1fd832`）と同じコミットを指していたため取り直しは不要
