@@ -45905,6 +45905,108 @@ def close_magnitude_ranges_chart() -> None:
     )
 
 
+def bundle_no_month_hit_rate_chart() -> None:
+    """月数を書かなくても、「まとめ割」「セット料金」という言葉だけで気づいた。
+
+    実測（2026-11-18）。元記事の数値はdocs/evidence/ten-listings-hold-but-bundle-price-slips.md、
+    新規2材料の数値はdocs/evidence/month-count-not-needed-to-catch-a-bundle-price.mdの機械照合から。
+    """
+    _hit_and_miss_rows_chart(
+        "bundle-no-month-hit-rate.svg",
+        "月数を書かなくても、まとめ割・セット料金の言葉だけで気づいた",
+        "実測2026-11-18。「3ヶ月パック」のように月数を書かず、「まとめ割」「セット料金」とだけ書いた。",
+        "元記事（月数明記あり・6回）と比べると、月数を書かない版（8回）のほうが崩れなかった。",
+        [
+            ("元記事（3ヶ月パック・月数を明記、6回）", 4, 6, "good"),
+            ("材料M（SNS運用代行・月数の記載なし、3回）", 3, 3, "good"),
+            ("材料M・並べ替え（1番目に提示、3回）", 3, 3, "good"),
+            ("材料N（別業種・ライティング代行・月数の記載なし、3回）", 3, 3, "good"),
+            ("単独で聞く（材料M・N各1件、計4回）", 4, 4, "good"),
+        ],
+        [
+            "月数を書かず「まとめ割」「セット料金」とだけ書いた版は、10件に混ぜても並べ替えても",
+            "単独で聞いても、13回中13回正しく「月額ではない」と判定した。月数を明記した元記事の",
+            "版（4/6）より崩れなかった。「複数回分をまとめて」という言葉だけで気づいていた。",
+        ],
+        "月数の記載が無い一括価格の出品を、10件の中に混ぜて判定させた実測結果を示す表。"
+        "元記事（3ヶ月パック・月数を明記した版、6回）は4回正解で黄、"
+        "材料M（SNS運用代行・月数の記載なし、3回）は3回正解で緑、"
+        "材料Mの並べ替え版（1番目に提示、3回）も3回正解で緑、"
+        "材料N（別業種・ライティング代行・月数の記載なし、3回）も3回正解で緑、"
+        "単独で聞いた4回（材料M・N各1件）も4回正解で緑。"
+        "下の枠には、月数を書かない版は10件に混ぜても並べ替えても単独で聞いても"
+        "13回中13回正しく判定したこと、これは月数を明記した元記事の版より崩れなかったこと、"
+        "「複数回分をまとめて」という言葉だけで気づいていたことが書かれている。",
+        label_w=440,
+    )
+
+
+def bundle_wording_compare_chart() -> None:
+    """崩れた元記事の文言と、崩れなかったこの記事の文言を並べる。
+
+    実測（2026-11-18）。元記事はdocs/evidence/ten-listings-hold-but-bundle-price-slips.md、
+    この記事はdocs/evidence/month-count-not-needed-to-catch-a-bundle-price.md。
+    """
+    rows = [
+        (
+            "元記事（6回中2回・月額と誤判定）",
+            "「運用代行3ヶ月パック（一括支払い・月あたり10,000円相当）」",
+            "box-bad",
+            "t-bad",
+        ),
+        (
+            "材料M（3回中0回・誤判定なし）",
+            "「まとめ割プラン（一括支払い）。複数回分をまとめてご依頼いただくと、通常よりお得に」",
+            "box-good",
+            "t-good",
+        ),
+        (
+            "材料N（3回中0回・誤判定なし）",
+            "「セット料金。記事4本分をまとめてご依頼いただけます（まとめてご依頼いただくとお得です）」",
+            "box-good",
+            "t-good",
+        ),
+    ]
+    box_x, box_w = 18, 684
+    row_h = 58
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "「月あたり◯円相当」という数字が、むしろ月額と混同されやすかった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "崩れた元記事の文言と、崩れなかった材料M・Nの文言を並べた（いずれも価格は本文内の一部）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "共通点は「複数回分をまとめて」という言葉。元記事だけに「月あたり10,000円相当」という数字がある。</text>\n",
+    ]
+    y = top
+    for label, quote, klass, tcls in rows:
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{row_h - 10}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 20}">{_esc(label)}</text>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{y + 40}">{_esc(quote)}</text>\n')
+        y += row_h
+
+    y += 6
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="40" rx="6"/>\n')
+    parts.append(
+        f'<text class="t-accent" x="34" y="{y + 25}">'
+        "月数そのものは書かなくても、「まとめて」という言葉だけで複数の意味は伝わっていた。</text>\n"
+    )
+    y += 40 + 12
+
+    alt = (
+        "崩れた元記事の出品文言と、崩れなかった材料M・Nの出品文言を並べた図。"
+        "元記事（6回中2回・月額と誤判定）は「運用代行3ヶ月パック（一括支払い・月あたり10,000円相当）」で赤、"
+        "材料M（3回中0回・誤判定なし）は「まとめ割プラン（一括支払い）。複数回分をまとめてご依頼いただくと、"
+        "通常よりお得に」で緑、材料N（3回中0回・誤判定なし）は「セット料金。記事4本分をまとめてご依頼いただけます"
+        "（まとめてご依頼いただくとお得です）」で緑。"
+        "下の枠には、月数そのものは書かなくても「まとめて」という言葉だけで複数の意味は伝わっていたことが書かれている。"
+    )
+    (OUT / "bundle-wording-compare.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    range_mixup_hit_rate_chart()
-    close_magnitude_ranges_chart()
+    bundle_no_month_hit_rate_chart()
+    bundle_wording_compare_chart()
