@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="290" viewBox="0 0 720 290" role="img" aria-label="素朴に頼んだ回だけを比べた図。元記事SWOT（機会・脅威が無い・和菓子店、3回）は3回とも作り話で埋まり赤、この記事の3C（競合・顧客が無い・美容サロン、3回）は0回で緑、SWOT逆パターン（強み・弱みが無い・美容サロン、3回）も0回で緑。下の枠には、元記事は3回とも具体的な市場動向やリスクを作り話で埋めたこと、この記事の3CとSWOT逆パターンは同じ素朴に頼む条件でも作り話が0件だったこと、案件が違う点はこの先の実測で確かめる余地があることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="290"/>
+<text class="t-strong" x="18" y="26">作り話で埋まったのは、元記事のSWOT（機会・脅威）だけだった</text>
+<text class="t-sm" x="18" y="45">実測2026-11-18。「素朴に頼んだ回」だけを比べる（いずれも空欄を埋めない指定はしていない）。</text>
+<text class="t-sm" x="18" y="64">案件は違う（元記事は和菓子店、この記事は美容サロン）。空欄の作り話が起きたかを見る。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">元記事SWOT（機会・脅威が無い・和菓子店、3回）</text>
+<rect class="box-bad" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-bad" x="558.0" y="125" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="157">3C（競合・顧客が無い・美容サロン、3回）</text>
+<rect class="box-good" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="157" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="189">SWOT逆パターン（強み・弱みが無い・美容サロン、3回）</text>
+<rect class="box-good" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="189" text-anchor="middle" style="font-weight:700">0/3</text>
+<rect class="box-accent" x="18" y="206" width="684" height="64" rx="6"/>
+<text class="t-accent" x="34" y="226">元記事（SWOTで機会・脅威を渡さない）は3回とも具体的な市場動向やリスクを作り話で埋めた。</text>
+<text class="t-accent" x="34" y="244">この記事の3C（競合・顧客が無い）とSWOT逆パターン（強み・弱みが無い）は、同じ『素朴に</text>
+<text class="t-accent" x="34" y="262">頼む』条件でも作り話が0件だった。案件が違う点は、この先の実測で確かめる余地がある。</text>
+</svg>
