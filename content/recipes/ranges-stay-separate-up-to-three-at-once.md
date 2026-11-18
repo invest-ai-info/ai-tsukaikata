@@ -157,4 +157,4 @@ L. 1記事500文字程度、報酬900円。
 - 手数料を引く前か後か
 - 範囲の両端が、どちらも示されているか
 
-上の3点は[AI可の文字単価は0.07円から](/recipes/ai-writing-rate-below-the-rule-of-thumb/)の確認事項です。
+上の最初の3点は[AI可の文字単価は0.07円から](/recipes/ai-writing-rate-below-the-rule-of-thumb/)の確認事項です。
