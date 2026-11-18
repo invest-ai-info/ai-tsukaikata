@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-18T22:00:54.607366+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-18T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIの書いたSQLがエラーなく動いても、「売上」の定義を取り違えれば、欲しい数字は得られない。こうした業務上の意味を共有する仕組みとして注目されるのが「オントロジー」だ。何を定義し、どこまで実行するのか。従来の考え方と各社の製品を比べ、開発者の視点で整理する。",
+      "title": "「オントロジー」とは結局何なのか　Palantir、Databricks、Snowflake、NVIDIAで中身が違う理由",
+      "uid": "872ea3d9838b7540",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/19/news008.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-18T14:06:27.442011+00:00",
       "importance": "major",
       "label": "Publickey",
@@ -35,6 +47,18 @@
       "uid": "8e0a2392fcdc02d2",
       "url": "https://www.publickey1.jp/blog/26/windows_server_2028microsoft_foundryai.html",
       "vendor": "Publickey"
+    },
+    {
+      "first_seen": "2026-11-18T22:00:54.607366+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-18T15:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "前回の記事ではGPUを搭載したWindows PCに「Ollama」と「Open WebUI」をインストールし、ブラウザからローカルAIを使える環境を構築しました。今回はこのローカルAIをほかのPCからも利用できるようにしていきます。 続きを読む...",
+      "title": "メインPCのローカルAIをVPN・ポート開放なしで外出先のHermes Agentから使えるように「Cloudflare Tunnel＋Access」を設定してみた",
+      "uid": "c0881a156d9e48c1",
+      "url": "https://gigazine.net/news/20261119-cloudflare-tunnel-local-ai/",
+      "vendor": "GIGAZINE"
     },
     {
       "first_seen": "2026-11-18T14:06:27.442011+00:00",
@@ -2374,30 +2398,6 @@
       "title": "AIに航空券の予約は任せない　ユナイテッド航空がAIエージェントを制限",
       "uid": "a0f898d2d7e6faf1",
       "url": "https://japan.cnet.com/article/35254782/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-12T12:48:40.122445+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-12T07:29:50+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Amazonは11月12日、「Amazonショッピングアプリ」および「Amazon.co.jp」にて、AIショッピングアシスタント「Rufus（ルーファス）」の名称を「Alexa for Shopping」に変更し、Alexaのサービスの一部として日本向けに提供することを発表した。",
-      "title": "Amazon、買い物AI「Alexa for Shopping」日本展開。Rufusを刷新",
-      "uid": "05cc5e8757a3a245",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2155952.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-12T12:48:40.122445+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-12T07:20:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "NTTドコモ モバイル社会研究所は11月12日、生成AIを知っている15～69歳を対象に、AI製の偽情報に「自信がある」「やや自信がある」と答えた人の合計が、テキスト、画像、動画のいずれも1年前から低下し、2026年は3割前後になったとの調査結果を発表した。",
-      "title": "AI生成の偽情報、見抜ける？　「自信あり」は約3割に低下--ドコモ調査",
-      "uid": "51d9450b982906a9",
-      "url": "https://japan.cnet.com/article/35254781/",
       "vendor": "CNET Japan"
     }
   ]

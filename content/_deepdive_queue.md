@@ -820,6 +820,13 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
+- [ ] https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/
+  - 2026-11-18 自動追記（major・Google「The Gemini app is now available on lower-memory Android devices.」）
+- [ ] https://deepmind.google/blog/introducing-gemini-4-neon/
+  - 2026-11-18 自動追記（major・Google DeepMind「Introducing Gemini 4 Neon」）
+- [ ] https://deepmind.google/blog/genie-4-is-now-available/
+  - 2026-11-18 自動追記（major・Google DeepMind「Genie 4 is now available」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-hydrogen/ → **公開済み** content/tools/gemini-4-hydrogen.md（2026-11-14・公開）
