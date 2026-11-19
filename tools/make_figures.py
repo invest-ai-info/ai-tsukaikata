@@ -46070,6 +46070,191 @@ def framework_vs_swot_fabrication_chart() -> None:
     )
 
 
+def weekly_rule_misfire_grid_chart() -> None:
+    """指示文（①計算のみ／②＋2日ルール）×材料（正常版／停止版）の2行2列グリッド（2026-11-19実測）。
+
+    値は docs/evidence/weekly-cadence-trips-the-two-day-rule.md の機械照合から。
+    誤報が起きたのは「正常版×②」の2回のうち1回だけだったことを示す。
+    """
+    label_w = 150
+    col_w = 230
+    gap = 14
+    col_x = [18 + label_w + i * (col_w + gap) for i in range(2)]
+    row_h = 92
+    row_y = [148, 148 + row_h + 14]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "誤報が起きたのは「正常版×②」の2回のうち1回だけだった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "①処理ごとに自分の記録から目安を計算するだけの指示文。②①に「0件が2日以上続いたら"
+        "必ず該当」の一文を足した指示文。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "正常版＝P5（週1回）に本当の停止なし。停止版＝P5が2回ぶん（21日間）動かなかった版。"
+        "</text>\n",
+    ]
+
+    headers = ["①計算のみ", "②①＋2日ルール"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" y="{row_y[0] - 16}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    row_labels = ["正常版\n（本当の\n停止なし）", "停止版\n（P5に21日間\nの停止）"]
+    cells = [
+        [
+            ("2/2が\n正しく\n「該当なし」", "good"),
+            ("1/2が結論で\n誤報\n（もう1/2は\n読み替えて\n該当なし）", "bad"),
+        ],
+        [
+            ("2/2が正しく\n本当の停止\nだけを該当\nに挙げた", "good"),
+            ("2/2が正しく\n本当の停止\nだけを該当\nに挙げた", "good"),
+        ],
+    ]
+
+    for r in range(2):
+        label_lines = row_labels[r].split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{row_y[r] + row_h / 2 - 14 + li * 16:.1f}">'
+                f"{_esc(line)}</text>\n"
+            )
+        for c in range(2):
+            text, kind = cells[r][c]
+            klass = "box-good" if kind == "good" else "box-bad"
+            tone = "t-good" if kind == "good" else "t-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]:.1f}" y="{row_y[r]:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h}" rx="6"/>\n'
+            )
+            lines = text.split("\n")
+            n = len(lines)
+            start_y = row_y[r] + row_h / 2 - (n - 1) * 9 + 4
+            for li, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tone}" x="{col_x[c] + col_w / 2:.1f}" '
+                    f'y="{start_y + li * 18:.1f}" text-anchor="middle">{_esc(line)}</text>\n'
+                )
+        if r == 0:
+            parts.append(
+                f'<line class="line" x1="18" y1="{row_y[1] - 7:.1f}" x2="702" '
+                f'y2="{row_y[1] - 7:.1f}" stroke-dasharray="3 3"/>\n'
+            )
+
+    y = row_y[1] + row_h + 20
+    notes = [
+        "2日ルールが誤報したのは正常版に当てはめたときだけ（2回のうち1回）。",
+        "本当の停止を見つける力は、①②どちらの指示文でも、正常版・停止版とも崩れなかった。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "指示文（①自分の記録から計算するだけ・②①に2日ルールを足したもの）を列、"
+        "材料（正常版・停止版）を行にした2行2列の表。正常版×①は2/2が正しく『該当なし』で緑。"
+        "正常版×②は1/2が結論で誤報（赤）、もう1/2は読み替えて該当なし。"
+        "停止版×①は2/2が正しく本当の停止だけを該当として名指し（緑）。"
+        "停止版×②も2/2が正しく本当の停止だけを該当として名指し（緑）。"
+        "下の枠には、2日ルールが誤報したのは正常版に当てはめたときだけで、"
+        "本当の停止を見つける力はどちらの指示文でも崩れなかったことが書かれている。"
+    )
+    (OUT / "weekly-rule-misfire-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def weekly_gap_vs_two_day_rule_chart() -> None:
+    """P5の毎週の0件区間（6日）と本当の停止（0件20日間）を、2日ルールの基準線と並べる（2026-11-19実測）。
+
+    健全な週の0件区間も本当の停止も、どちらも「2日」の基準をはるかに超えることを示す。
+    """
+    label_x = 18
+    plot_x = 260
+    plot_w = 280
+    axis_max = 24.0
+    scale = plot_w / axis_max
+    top = 110
+    row_h = 40
+    bar_h = 18
+
+    def px(n: float) -> float:
+        return plot_x + n * scale
+
+    threshold_x = px(2)
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "健全な週の0件区間も、本当の停止も、どちらも「2日」を大きく超える</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "P5は週1回だけ動く処理。健全な週でも、実行した翌日から次の実行の前日まで6日間は0件になる。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "「0件が2日以上続いたら必ず該当」という基準だけでは、この2本を区別できない。"
+        "</text>\n",
+        f'<text class="t-xs" x="{px(axis_max) - 10:.1f}" y="{top - 16}">日</text>\n',
+        f'<line class="line" x1="{threshold_x:.1f}" y1="{top - 6}" x2="{threshold_x:.1f}" '
+        f'y2="{top + 2 * row_h + 4}" stroke-dasharray="3 3"/>\n',
+        f'<text class="t-xs" x="{threshold_x:.1f}" y="{top - 10}" text-anchor="middle">'
+        "2日ルールの基準</text>\n",
+    ]
+
+    rows = [
+        ("健全な週の0件区間\n（6日・8回繰り返す）", 6.0, "bar-old", "t-strong"),
+        ("本当の停止\n（0件20日間・1回）", 20.0, "bar-new", "t-accent"),
+    ]
+    y = top
+    for label, value, bar_cls, text_cls in rows:
+        ty = y + row_h / 2
+        label_lines = label.split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t" x="{label_x}" y="{ty - 7 + li * 16:.1f}">{_esc(line)}</text>\n'
+            )
+        parts.append(
+            f'<rect class="box-quiet" x="{px(0):.1f}" y="{ty - bar_h / 2:.1f}" '
+            f'width="{plot_w:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<rect class="{bar_cls}" x="{px(0):.1f}" y="{ty - bar_h / 2:.1f}" '
+            f'width="{max(px(value) - px(0), 3):.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="{text_cls}" x="{px(axis_max) + 10:.1f}" y="{ty + 4:.1f}" '
+            f'style="font-weight:700">{value:.0f}日</text>\n'
+        )
+        y += row_h + 24
+
+    y += 4
+    notes = [
+        "健全な週（6日）も本当の停止（20日）も、どちらも「2日」の基準線を大きく超えている。",
+        "日数だけでは区別できず、区別できたのは『処理ごとの頻度』まで考えた回だけだった。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "横棒グラフ。P5の毎週の0件区間（6日間・正常版で8回繰り返す）と、本当の停止"
+        "（0件20日間・停止版で1回）の長さを、『2日ルールの基準』を示す縦の点線と並べて示す。"
+        "毎週の0件区間（6日）も本当の停止（20日）も、どちらも2日の基準線を大きく超えている。"
+        "下の枠には、0件が2日続いたかどうかだけでは、健全な週と本当の停止を区別できないことが"
+        "書かれている。"
+    )
+    (OUT / "weekly-gap-vs-two-day-rule.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
     framework_blank_hit_rate_chart()
     framework_vs_swot_fabrication_chart()
+    weekly_rule_misfire_grid_chart()
+    weekly_gap_vs_two_day_rule_chart()

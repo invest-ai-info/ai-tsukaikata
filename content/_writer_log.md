@@ -46,6 +46,32 @@
 
 ## 記録
 
+### 2026-11-19（自動化・ループ優先枠の回）
+- `git fetch origin`→HEADが`origin/main`より遅れていた（detached HEAD）ため`git checkout -B main origin/main`
+  で取り直し（`a17c3f81`）
+- `### 自動化・ループ優先`節の未処理2件（HEAD/GET不一致・週1回程度の低頻度処理の固定日数ルール）
+  から、後者（`短い停止がもっと頻度の低い処理で見逃されないか`の宿題）に着手。
+  `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認
+- 公開: 1本（`weekly-cadence-trips-the-two-day-rule`）。残る未処理1件（HEAD/GET不一致）は
+  今回は着手せず`- [ ]`のまま残した（0番＝本数はノルマではない）
+- 実測: `claude --safe-mode --tools "" --print`による独立プロセス起動8回（正常版/停止版×
+  指示文①計算のみ/②+2日ルール×各2回）。既存のP1〜P4（60日・正常）に新規P5（週1回・月曜のみ）
+  を足した架空ログ2版（正常版・P5に21日間の本当の停止を仕込んだ停止版）で、
+  `short-stop-slips-through-on-the-quiet-process`が勧めた安全策「0件が2日以上続いたら必ず該当」を
+  週次処理に当てはめた。正常版×①は2/2が正しく「該当なし」。正常版×②は2回のうち1回、結論の
+  見出しで「該当になります」と誤報（もう1回は読み替えて該当なしに）。停止版は①②とも2/2が
+  本当の停止（09-14・09-21）だけを正しく名指しし、②はルールを「本来動く日」単位に読み替えて
+  誤報しなかった。生ログは`docs/evidence/weekly-cadence-trips-the-two-day-rule.md`
+- 教訓: `content/_lessons.md` ★148が再発（安全策が既に確認済みの正常系＝週次処理の健全な週を
+  壊した）。新規で★355を追加（矛盾への気づき自体は毎回あるが、どちらを結論として先に出すかが
+  2回中1回割れた）
+- 図2枚（`weekly-rule-misfire-grid.svg`・`weekly-gap-vs-two-day-rule.svg`）を`tools/make_figures.py`
+  に追加。1回目は後者の値ラベル「6日」がグレーの帯の上辺を貫いて`src/figures.py`の崩れ検査で
+  止まったため、ラベル位置を軸の右端外側（先行記事の棒グラフと同じ固定位置）に直して解消
+- `python3.12 tools/check_readability.py`＝60字以上0%（目安15%以下）で1回で通過
+- `git pull --rebase`（変化なし）→`python3.12 -m tools.make_eyecatch`実行、新規slugの1枚のみ生成
+- `python3.12 -m src.build`・`python3.12 -m pytest -q`とも通過（下のコマンド結果を参照）
+
 ### 2026-11-18（自動化・ループ優先枠の回）
 - `git fetch origin`→`main`ブランチは`origin/main`（`d7206cd1`）と同じコミットを指していたため
   取り直しは不要
