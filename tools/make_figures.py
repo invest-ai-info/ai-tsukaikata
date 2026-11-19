@@ -46323,3 +46323,198 @@ def long_text_ai_checklist_catch_rate_chart() -> None:
 if __name__ == "__main__":
     long_text_ai_checklist_false_positive_chart()
     long_text_ai_checklist_catch_rate_chart()
+
+
+def neon_price_vs_siblings_chart() -> None:
+    """Gemini 4 Neonの価格が、Carbon・Argonの「今の価格」と「値上げ後の価格」の間にあることを示す。
+
+    出典＝Neonの発表ページ本文（blog.google・2026-11-18。$3/$15、期限の記載なし）と、
+    Gemini 4 Carbon一般提供の発表（既刊記事で確認済み。〜2026-11-30は$2/$10、
+    2026-12-01からは$4/$20。Argonも同じ日付・同じ金額）、Hydrogenの発表（既刊記事で確認済み）。
+    """
+    rows = [
+        ("Gemini 4 Hydrogen", 1.50, 7.50),
+        ("Carbon・Argon（〜11/30）", 2.00, 10.00),
+        ("Gemini 4 Neon（発表時点）", 3.00, 15.00),
+        ("Carbon・Argon（12/1から）", 4.00, 20.00),
+    ]
+    left, right = 300, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 22
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">Neonの値段は、Carbon・Argonの今と値上げ後の間</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。100万トークンあたりのドル。</text>\n',
+        '<text class="t-sm" x="18" y="64">Carbon・Argonは2026年12月1日に価格が2倍になる予定。Neonの発表に期限の記載は無い。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="264" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ Neonの発表に値上がりの予告は書かれていない（2026年11月18日時点）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: Neon発表ページ本文、Carbon・ArgonとHydrogenは既刊記事で確認済み。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Hydrogen（入力1.50ドル出力7.50ドル）、Carbon・Argon（〜2026年11月30日・"
+        "入力2.00ドル出力10.00ドル）、Gemini 4 Neon（発表時点・入力3.00ドル出力15.00ドル）、"
+        "Carbon・Argon（2026年12月1日から・入力4.00ドル出力20.00ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。NeonはCarbon・Argonの今の価格より高いが、"
+        "2026年12月1日の値上げ後の価格よりは安い。Neon自身の発表には値上がりの予告が書かれていない。"
+    )
+    (OUT / "neon-price-vs-siblings.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def neon_benchmark_wins_chart() -> None:
+    """モデルカードの比較表19項目のうち、各モデルが最高値だった項目数を比べる。
+
+    出典＝Gemini 4 Neon モデルカード（2026-11公開）の比較表（Neon・
+    Claude Opus 5.5・GPT-6.2 Solの3モデル・19ベンチマーク）。この表を作ったのはGoogle。
+    """
+    rows = [
+        ("Gemini 4 Neon", 16),
+        ("Claude Opus 5.5", 2),
+        ("GPT-6.2 Sol", 1),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, pitch = 82, 20, 34
+    scale = span / 19
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "モデルカードの19項目中、Neonが16項目で最高値</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "目盛りは0〜19項目。この比較表を作ったのはGoogleで、他社が自社で測った値ではない。</text>\n",
+    ]
+    for index, (name, value) in enumerate(rows):
+        y = top + index * pitch
+        bw = max(2.0, value * scale)
+        parts.append(f'<text class="t" x="18" y="{y + bar_h - 5}">{_esc(name)}</text>\n')
+        parts.append(
+            f'<rect class="bar-new" x="{left}" y="{y}" '
+            f'width="{bw:.1f}" height="{bar_h}" rx="3"/>\n'
+        )
+        parts.append(
+            f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{y + bar_h - 5}">'
+            f"{value}/19項目</text>\n"
+        )
+
+    height = top + len(rows) * pitch + 42
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 24}">'
+        "※ 出典: Gemini 4 Neon モデルカード（2026年11月公開）。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-bad" x="18" y="{height - 8}">'
+        "※ 残り3項目（Terminal-bench 4.1・FrontierCode 2.0・Chartography）はNeon以外が上。</text>\n"
+    )
+    alt = (
+        "Gemini 4 Neon モデルカードの比較表19項目のうち、各モデルが最高値だった項目数を示す"
+        "横棒グラフ。Gemini 4 Neonが16/19項目、Claude Opus 5.5が2/19項目、"
+        "GPT-6.2 Solが1/19項目。この表を作ったのはGoogleで、他社が自社で測った値ではない。"
+        "Opus 5.5が上だったのはTerminal-bench 4.1（不正行為調整後の正解率）とFrontierCode 2.0、"
+        "GPT-6.2 Solが上だったのはChartography。"
+    )
+    (OUT / "neon-benchmark-wins.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def neon_vendor_price_chart() -> None:
+    """Neonと、両社の「普段使いの中位モデル」「現在の旗艦モデル」の単価を比べる。
+
+    出典＝Neonは発表ページ、GPT-6.2 Sol・GPT-6.2 Astraは developers.openai.com、
+    Claude Sonnet 5.5・Claude Opus 5.5・Claude Fable 5.2は platform.claude.com
+    （いずれも2026-11-19確認）。GPT-6.2 Astraは「flagship model」、Fable 5.2は
+    「Opus 5.5で足りないときに使う」モデルと、それぞれの公式ページに明記されている。
+    """
+    rows = [
+        ("GPT-6.2 Sol（短い入力）", 2.00, 10.00),
+        ("Claude Sonnet 5.5", 2.00, 10.00),
+        ("Gemini 4 Neon", 3.00, 15.00),
+        ("Claude Opus 5.5", 4.00, 20.00),
+        ("GPT-6.2 Astra（旗艦・短い入力）", 8.00, 40.00),
+        ("Claude Fable 5.2（最上位格）", 8.00, 40.00),
+    ]
+    left, right = 272, 620
+    span = right - left
+    top, bar_h, bar_gap, group_gap = 82, 14, 5, 20
+    group_h = bar_h * 2 + bar_gap + group_gap
+    biggest = max(max(a, b) for _, a, b in rows)
+    scale = span / biggest
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">普段使いより高く、両社の最上位格の半額以下</text>\n',
+        '<text class="t-sm" x="18" y="45">薄い色＝入力、濃い色＝出力。単価は各社の公式ページの数字（100万トークンあたり）。</text>\n',
+        '<text class="t-sm" x="18" y="64">2026年11月19日に確認。「短い入力」は長い入力だと単価が上がる注記付きのモデル。</text>\n',
+    ]
+    for index, (name, price_in, price_out) in enumerate(rows):
+        y = top + index * group_h
+        parts.append(f'<text class="t" x="18" y="{y + 12}">{_esc(name)}</text>\n')
+        for offset, (value, cls, tag) in enumerate(
+            ((price_in, "bar-in", "入力"), (price_out, "bar-out", "出力"))
+        ):
+            by = y + offset * (bar_h + bar_gap)
+            bw = max(2.0, value * scale)
+            parts.append(f'<text class="t-xs" x="236" y="{by + bar_h - 3}">{tag}</text>\n')
+            parts.append(
+                f'<rect class="{cls}" x="{left}" y="{by}" '
+                f'width="{bw:.1f}" height="{bar_h}" rx="2"/>\n'
+            )
+            parts.append(
+                f'<text class="t-sm" x="{left + bw + 8:.1f}" y="{by + bar_h - 3}">'
+                f"${value:g}</text>\n"
+            )
+
+    height = top + len(rows) * group_h + 46
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 26}">'
+        "※ GPT-6.2 Astraは発表ページで「our flagship model」と明記。Fable 5.2はOpus 5.5で"
+        "足りないときの選択肢。</text>\n"
+    )
+    parts.append(
+        f'<text class="t-xs" x="18" y="{height - 8}">'
+        "※ 出典: OpenAI・Anthropic・Googleの各公式料金ページ。</text>\n"
+    )
+    alt = (
+        "GPT-6.2 Sol（短い入力・入力2.00ドル出力10.00ドル）、Claude Sonnet 5.5（入力2.00ドル"
+        "出力10.00ドル）、Gemini 4 Neon（入力3.00ドル出力15.00ドル）、Claude Opus 5.5"
+        "（入力4.00ドル出力20.00ドル）、GPT-6.2 Astra（旗艦・短い入力・入力8.00ドル出力40.00ドル）、"
+        "Claude Fable 5.2（最上位格・入力8.00ドル出力40.00ドル）を比べた横棒グラフ。"
+        "100万トークンあたりのドル。Neonは両社の普段使いの中位モデルより高く、"
+        "両社の最上位格モデルの半額以下。"
+    )
+    (OUT / "neon-vendor-price.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    neon_price_vs_siblings_chart()
+    neon_benchmark_wins_chart()
+    neon_vendor_price_chart()

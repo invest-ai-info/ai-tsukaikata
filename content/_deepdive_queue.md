@@ -843,8 +843,8 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
-- [ ] https://deepmind.google/blog/introducing-gemini-4-neon/
-  - 2026-11-18 自動追記（major・Google DeepMind「Introducing Gemini 4 Neon」）
+- [x] https://deepmind.google/blog/introducing-gemini-4-neon/
+  - →保管: ✅ **2026-11-19: 公開した** → `content/tools/gemini-4-neon.md`
 - [ ] https://deepmind.google/blog/genie-4-is-now-available/
   - 2026-11-18 自動追記（major・Google DeepMind「Genie 4 is now available」）
 
@@ -852,6 +852,36 @@
   - 2026-11-19 自動追記（major・Google「Introducing Tool Retrieval in the Gemini API」）
 
 ## 処理済み
+
+- https://deepmind.google/blog/introducing-gemini-4-neon/ → **公開済み** content/tools/gemini-4-neon.md（2026-11-19・公開）
+  - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/` へ到達（200）。
+    モデルカードPDF（`storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf`）はWebFetchでは
+    バイナリが読めなかったため、ローカルに保存された同PDFをReadツールで直接開き、比較表19項目・安全性差分表・
+    FSF判定を生の画像から逐語で確認した。関連してOpenAI料金/モデルページ、Anthropic料金/モデル一覧ページに到達。
+    図3枚（`neon-price-vs-siblings` / `neon-benchmark-wins` / `neon-vendor-price`）。出典7件すべて取得成功。
+    `check_numbers.py` は照合対象60個のうち**26個が出典に存在**。残る34個はすべてモデルカードPDFの比較表
+    （19ベンチマーク×Neon/Opus 5.5/GPT-6.2 Solの3列）のパーセンテージで、Hydrogen・Carbon GA・Haiku 5.5の
+    記事と同じ構造（check_numbers.pyがPDFのバイナリをテキスト照合できないために「出典に無い」と出る）。
+    Readツールで開いた生のPDF画像と記事の表を1行ずつ突き合わせ、34個すべてが一致することを確認したうえで
+    そのまま残した。pytest 795 passed・build 407ファイル。`check_readability.py` は初稿で120字超の文が4つ
+    あったため、列挙を箇条書き・文分割に直してから公開（最終稿は60字以上28%・最長114字）。
+  - 📌 記事の芯＝**NeonはCarbonから作られた「調整版」で、価格（$3/$15）に値上がりの予告が無い**。
+    Carbon・Argonの今の導入価格（$2/$10）より高く、2026年12月1日の値上げ後価格（$4/$20）よりは安い、
+    一時的に中間の値段になっている。
+  - 🔍 **Googleがモデルカードの比較表に選んだClaude Opus 5.5・GPT-6.2 Solは、どちらも両社の現在の
+    「旗艦」ではなかった**（実測2026-11-19）。OpenAIの公式ページは GPT-6.2 Astra を
+    「our flagship model」と明記しており、5日前の記事（Hydrogen）で最上位として扱った「GPT-6 Astra」は
+    モデル一覧ページから名前が消えていた（料金表には行だけ残る）。Anthropicも Claude Fable 5.2 を
+    「Opus 5.5で足りないときに使う」モデルと案内しており、単価はOpus 5.5より高い。
+    **次にOpenAI・Anthropicの「最上位モデル」を使う担当は、モデル一覧ページで名称を確認し直すこと**
+    （5日間でも変わりうる）。
+  - ⚠️ モデルカードの比較表19項目中、Neonが最高値だったのは16項目。残り3項目（Terminal-bench 4.1の
+    不正行為調整後正解率・FrontierCode 2.0はClaude Opus 5.5、ChartographyはGPT-6.2 Sol）は他社が上。
+    この表を作ったのはGoogleで、他社が同じ条件で測った値ではない旨を本文に明記した。
+  - ⚠️ 既定（long decodeを使わない）の出力上限は6.4万トークンのまま（Argon・Carbon・Hydrogenと同型の注記）。
+    詳しい安全性レポート（Safety & Security Report）本体はモデルカードに「近日公開」とだけ書かれており、
+    この記事を書いた時点では読めない。FSFの危険性評価もArgonの判定をそのまま引き継いでおり、
+    Neon独自の再評価はまだ無い。
 
 - https://deepmind.google/blog/introducing-gemini-4-hydrogen/ → **公開済み** content/tools/gemini-4-hydrogen.md（2026-11-14・公開）
   - 302転送で `blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/` へ到達（200）。
