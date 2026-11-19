@@ -84,74 +84,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-16T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-11-17T23:17:45+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a confirmation before /install-github-app changes a repository Added claude mcp add-json - to read the server's JSON from stdin, so tokens can stay off the command line; n…",
-      "title": "v2.1.327",
-      "uid": "d16072996bc6fb80",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.327",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-18T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
-      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
-      "uid": "8a270732dc33eedd",
-      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-18T10:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "title": "The Silent Consensus",
-      "uid": "49e27f3f5d70e685",
-      "url": "https://openai.com/index/the-silent-consensus",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-18T08:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
-      "title": "Inside the Codex sandbox",
-      "uid": "b35fbcd87bda1f74",
-      "url": "https://openai.com/index/inside-the-codex-sandbox",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-18T06:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
-      "title": "Managing frontier AI risk: From training to deployment",
-      "uid": "a075d7172df861f1",
-      "url": "https://openai.com/index/managing-frontier-ai-risk",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-18T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI models optimized circuits used in Jalapeño silicon and improved RISC‑V core designs, showing progress in AI-assisted chip design with GPT‑6 Astra.",
-      "title": "Advancing chip design with OpenAI models",
-      "uid": "0f9be97ca9ddb742",
-      "url": "https://openai.com/index/advancing-chip-design-with-our-models",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
