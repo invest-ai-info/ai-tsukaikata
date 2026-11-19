@@ -848,6 +848,9 @@
 - [ ] https://deepmind.google/blog/genie-4-is-now-available/
   - 2026-11-18 自動追記（major・Google DeepMind「Genie 4 is now available」）
 
+- [ ] https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/
+  - 2026-11-19 自動追記（major・Google「Introducing Tool Retrieval in the Gemini API」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-hydrogen/ → **公開済み** content/tools/gemini-4-hydrogen.md（2026-11-14・公開）

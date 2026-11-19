@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-19T19:14:21+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add Claude Code managed settings to the Admin API api: add the sandbox_egress_restricted error to Admin API plugin methods Bug Fixes client: encode spaces in query strings as %20 The AW…",
+      "title": "v2.11.0",
+      "uid": "e50c7ed80f0ca561",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.11.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "major",
+      "label": "Google AI Blog",
+      "published": "2026-11-19T18:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Gemini spark on a space background",
+      "summary_ja": "Geminiの連携機能に「ツール利用」が加わった。",
+      "summary_source": "gemini",
+      "title": "Introducing Tool Retrieval in the Gemini API",
+      "uid": "a1672bee087273d2",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-19T17:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Walter Isaacson joins Google to discuss how history’s greatest innovators inspire creativity and human judgment in the AI age. Watch the episode.",
+      "summary_ja": "ウォルター・アイザックソン氏がGoogleで対談。\nAI時代の創造性や人間の判断力について議論し、\n歴史上の発明家から着想を得る方法を語った。",
+      "summary_source": "gemini",
+      "title": "Walter Isaacson on curiosity and creativity in the AI age.",
+      "uid": "a887d20a04cf3838",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-19T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
+      "summary_ja": "OpenAIがChatGPT高速化の新システムを構築。\n「Performance Factory」と名付けられ、\nAIモデルCodexで性能問題を自動発見・修正する。",
+      "summary_source": "gemini",
+      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+      "uid": "ab438e2404af7e31",
+      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-19T13:18:48.120986+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -6294,18 +6348,6 @@
       "title": "v2.1.240",
       "uid": "31590b4ebb1d3011",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.240",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-21T20:42:45.987204+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-21T19:54:23+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Cost estimates ( /cost , status line, --max-budget-usd ) now include the 1.1× US-only-inference premium for data-residency workspaces Added the one-time fullscreen renderer offer on Be…",
-      "title": "v2.1.239",
-      "uid": "d60272baf614570e",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
       "vendor": "Anthropic"
     }
   ]

@@ -1,6 +1,42 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-19T21:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "生成AI「Claude」を手がける米Anthropicがナスダックに上場し、日本時間11月20日午前1時48分ごろに株式の取引が始まった。銘柄コードは「ANT」。初値は111.50ドルと、新規株式公開（IPO）の公開価格83ドルを約34％上回った。20日午前3時27分付の米CNETの記事によると、その後の取引では株価が94ドルまで下がったという。",
+      "title": "Anthropic上場、初値34％高--AIで「科学100年分の進歩を今後10年で達成」とCEO",
+      "uid": "d5ba71c0c86fd66e",
+      "url": "https://japan.cnet.com/article/35255175/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-19T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "多くのエンジニアに支持されるコーディングAI「Claude Code」。長年愛用してきたエンジニアが、ある日、あえて無名のコーディングAIへの乗り換えを決めた。使い慣れた人気ツールに別れを告げるほどの問題とは何だったのか。",
+      "title": "さよなら「Claude Code」　人気AIに愛想を尽かしたエンジニアの意外な移行先：906th Lap",
+      "uid": "534804cf3083b952",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/20/2000003337/",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-19T22:11:26.266489+00:00",
+      "importance": "major",
+      "label": "Publickey",
+      "published": "2026-11-19T15:19:21+00:00",
+      "source_id": "media-publickey",
+      "summary": "マイクロソフトは日本時間11月18日未明に開幕した年次イベント「Microsoft Ignite 2026」で、Microsoft Azureやオンプレミス、他社クラウドにあるデータベースなど、管理者が権限を持つデータベースを自動的に一覧表...",
+      "title": "マイクロソフト、クラウドやオンプレミスのデータベースを一元管理する「Database Hub」正式リリース。AIエージェントによる運用監視の自動化も",
+      "uid": "e7a4f8534ab13eab",
+      "url": "https://www.publickey1.jp/blog/26/database_hubai.html",
+      "vendor": "Publickey"
+    },
+    {
       "first_seen": "2026-11-19T13:18:48.120986+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2363,42 +2399,6 @@
       "uid": "d6e9de7e64c00860",
       "url": "https://gigazine.net/news/20261113-indie-game-used-ai-bad-review/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-13T09:36:48.865953+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-13T09:26:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ソフトバンクは11月11日、和歌山県すさみ町と連携し、デジタルツイン技術を活用して、被災した建物の応急危険度判定を遠隔から行なう実証を実施したと発表した。有資格者である応急危険度判定士が遠隔から確認を行ない、鉄筋コンクリート造の建物について、必要な全項目を遠隔から危険度を判定できることを確認した。",
-      "title": "ソフトバンク、デジタルツインで被災建物の危険度判定を実証",
-      "uid": "63d85c5fa56cb0a1",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2156411.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-13T09:36:48.865953+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-13T09:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Gentle Monsterのショールームで、4つのロボットの頭を見上げていた。透明な球体の中で回転しながら、それぞれ異なる言語で会話を交わしている。ところが、何を話しているのかは分かる。かけていたスマートグラスが、リアルタイムで翻訳してくれていたのだ。使っていたのは、米Googleと韓国Samsungが共同開発した「Intelligent Eyewear」のGentle Monsterモデル。…",
-      "title": "Googleの「カメラ付きAI眼鏡」最速実機インプレ--見たものを理解するGeminiの実力",
-      "uid": "000097b83b5ee3bf",
-      "url": "https://japan.cnet.com/article/35254849/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-13T09:36:48.865953+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-13T09:04:05+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ABCは11月13日、NVIDIA DGX Sparkを使った大規模言語モデル（LLM）のベンチマークと動作検証を受託するサービスを開始した。料金は1回20万円から（検証項目や構成など、作業量に応じて個別に見積もり）。",
-      "title": "ABC、購入前にNVIDIA DGX SparkでLLMを実機検証できるサービス",
-      "uid": "9a73b7ea9141106d",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2156397.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
