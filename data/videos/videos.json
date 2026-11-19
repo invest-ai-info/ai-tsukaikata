@@ -8589,10 +8589,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "▼ 記事はこちら\nhttps://media.masao.ai/gpt-6-2-astra-reputation/?utm_source=youtube&utm_medium=description&utm_campaign=QUd7DVefuSw\n\n今回の動画では、OpenAI の新モデル GPT-6.2 Astra に対して、T3 Code で知られる Theoさんが「OpenAI 史上最悪のモデルだと思う」と投稿して話題になっている記事を解説しました。\n\nAstra はめちゃくちゃ良いモデルだと思う一方で癖も強く、察しの悪さやポエムっぽい説明は正直感じています。ただ、3D や UI を作らせるところは本当に良いので、主役にはしなくても、探索の案のひとつやサブエージェントとして個性を生かしていくのがいいのかなと思っています。\n皆さんは GPT-6.2 Astra を使ってみてどう感じましたか？ぜひコメント欄で感想を教えてください！\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\nhttps://x.com/theo/status/2122760447103484410\nhttps://x.com/theo/status/2122757647170703550\n\ntimestamp:\n00:00 オープニング - Theoさんの批判記事が話題\n01:31 良い点6つと嫌う理由3つ、発売日の空気感\n03:40 Theoさんの過剰反応とTiboさんの反論\n04:41 Astraの個性をハーネスで生かす\n05:54 Theoさんが認めるAstraの良い点6つ\n08:08 嫌う理由1 答えようのない質問で止まる\n11:34 嫌う理由2 説明が細部に潜り読み解けない\n13:55 嫌う理由3 同じ所をぐるぐる回り続ける\n15:08 賢いが一緒に働くのは耐え難いという結論\n15:56 まさおの使い分け - Fable中心にAstra\n17:56 まとめ - 賛否両論でも察しの悪さが課題\n19:37 メンバーシップと無料勉強会のお知らせ\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■zenn(技術ブログ)\nhttps://zenn.dev/aimasaou\n■お仕事依頼・お問い合わせ:\nzarakiai@outlook.com までご連絡ください\n-----\n■まさおのプロフィール\n・AIスタートアップのCEO&CTO、開発15年くらい/独立して9年\n・学歴: 旧帝大,画素補完法の研究\n・個人開発で累計3000万人以上が使ったサービス＆400万DL超のアプリを開発\n・他にもSNSマーケティング支援事業やWebメディアの運営事業も行う\n・得意分野:フロントエンドおよびモバイルアプリ,画像",
    "first_seen": "2026-11-18T20:51:49.530003+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "T3 CodeのTheo氏が新モデルGPT-6.2 Astraを批判した記事をもとに、モデルの良い点と嫌う理由を解説している。",
+    "Astraの長所として3Dやゲーム開発、短所として不適切な質問で停止する点や説明の難解さなどが挙げられていると紹介している。",
+    "投稿者は、Astraは癖が強いものの強みもあるため、主役ではなくサブエージェント等として活用するのが有効だと述べている。"
+   ],
+   "for_whom": "GPT-6.2 Astraの評価や特徴、開発での活用法を知りたい人",
+   "caution": "動画内および概要欄で、有料のnoteメンバーシップ（AI駆動開発研究部）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-19T07:52:35.598378+00:00"
   },
   {
    "video_id": "t2Zo3YAJdj4",
@@ -8685,91 +8695,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-18T20:51:49.530003+00:00"
+  },
+  {
+   "video_id": "jz5QiTOyTCw",
+   "title": "【まとめ】Geminiのリリースラッシュが熱い 最新の話題9選！新モデルや新機能が続々登場",
+   "url": "https://www.youtube.com/watch?v=jz5QiTOyTCw",
+   "published": "2026-11-19T00:07:45+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-19T07:52:35.598378+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者は、新モデルGemini 4 NeonがCarbonに近い性能でありながら価格は25%安く高速であると解説している",
+    "投稿者は、公開後の製品を監視して修正提案を続けるStitch Loopや、日本でも無料化されたTasks機能などを紹介している",
+    "未発表の噂として、Carbonの後継とされるKryptonやGemini 4ベースのNano Bananaなどの存在に言及している"
+   ],
+   "for_whom": "Geminiの最新モデルや新機能の動向を把握したいエンジニアやビジネスパーソン",
+   "caution": "動画の終盤および概要欄で、有料のnoteメンバーシップ（勉強会や独自ツールの提供）への誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-19T07:52:35.598378+00:00"
+  },
+  {
+   "video_id": "AhmCKHNqhB8",
+   "title": "Introducing ChatGPT for Accounting",
+   "url": "https://www.youtube.com/watch?v=AhmCKHNqhB8",
+   "published": "2026-11-18T21:01:26+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-19T07:52:35.598378+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが会計業務を支援する「ChatGPT for Accounting」プラグインを発表している。",
+    "メールから完了案件を見つけてQuickBooksの請求書下書きを作成し、確認事項を通知する手順を示している。",
+    "請求書や領収書の処理、月次レポート作成、取引照合、監査資料の作成に活用できると説明している。"
+   ],
+   "for_whom": "請求書発行や月次決算などの経理作業を自動化したい経理担当者や自営業者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-19T07:52:35.598378+00:00"
+  },
+  {
+   "video_id": "vKobP6DkC1E",
+   "title": "Build a 1 Person Media Machine With Grok Bot",
+   "url": "https://www.youtube.com/watch?v=vKobP6DkC1E",
+   "published": "2026-11-18T22:10:02+00:00",
+   "channel_key": "greg-isenberg",
+   "channel_name": "Greg Isenberg",
+   "default_category": "earn",
+   "first_seen": "2026-11-19T07:52:35.598378+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Louise氏はGrokBotを活用し、SNS上のフックやクリエイター投稿を自動でNotionに収集・分析するリサーチ手順を紹介している。",
+    "毎週のトレンドや急上昇キーワードを収集し、カレンダーと連携して動画の企画や制作スケジュールを効率よく管理する方法を解説している。",
+    "役割の異なる複数のAIボットをグループチャットで対話させ、企画案のブレストや台本・フックの改善アドバイスを得る設定を説明している。"
+   ],
+   "for_whom": "AIを活用して動画コンテンツの企画・リサーチ・台本作成を効率化・自動化したい人",
+   "caution": "動画内で3か月でフォロワーが6500人増加した成果が語られているが、個人の運用実績に基づく主張であり、同様の結果が保証されるわけではない点に留意が必要。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-19T07:52:35.598378+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-18T20:51:49.530003+00:00",
+   "last_ok": "2026-11-19T07:52:35.598378+00:00",
    "fail_streak": 0
   }
  }
