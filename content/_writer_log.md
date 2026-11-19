@@ -72,6 +72,31 @@
 - `git pull --rebase`（変化なし）→`python3.12 -m tools.make_eyecatch`実行、新規slugの1枚のみ生成
 - `python3.12 -m src.build`・`python3.12 -m pytest -q`とも通過（下のコマンド結果を参照）
 
+### 2026-11-19（副業枠の回・21:00）
+- `git fetch origin`→`origin/main`（`0689584c`）と同じコミットを指していたため取り直しは不要
+- 副業の節の未処理（⏸を除く）先頭「AI文体チェックリストは、長文・創作的な文章でも人間の
+  文章を誤判定しないか」に着手。`grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと
+  衝突なしを確認
+- 公開: 1本（`long-text-checklist-needs-a-pair-to-catch-ai`）。2件目「ChatGPT・Geminiでも
+  起きるか」はこの環境にログイン済みブラウザが無く試せないため⏸にした（キューに記録）。
+  3件目以降には着手せず`- [ ]`のまま残した（0番＝本数はノルマではない）
+- 実測: `claude --print --safe-mode --tools ""`による独立プロセス起動16回。架空の人間執筆
+  長文エッセイ2本（各約730〜830字）と、同CLIに実際に依頼して生成させた本物のAI長文1本
+  （約960字）を使い、先行記事と同じ4項目チェックリストを当て直した。単体版は本物のAI長文を
+  2回とも見逃し（先行記事と同じ崩れ）、人間と比べる版は4回中4回が正しい側に傾いたが1回は
+  確信度が低かった。新規発見＝AI文章が材料に無い人間どうしの比較でも2回中1回、一方を
+  誤って「よりAIらしい」と選んだ。「無理に選ばなくてよい」と一文足すと2回とも消えた。
+  生ログは`docs/evidence/long-text-checklist-needs-a-pair-to-catch-ai.md`
+- 教訓: `content/_lessons.md`に★356を新規追加（★322の長文版での再発＋AI文章が材料に無い
+  比較での新しい失敗モード）
+- 図2枚（`long-text-checklist-catch-rate.svg`・`long-text-checklist-false-positive.svg`）を
+  `tools/make_figures.py`に追加して生成。Playwrightで`getBBox()`の厳密計測も実行し、
+  この記事の図2枚は問題なしを確認（サイト全体では他記事に既存の崩れ19件が見つかったが、
+  今夜の担当範囲外のため未着手）
+- `python3.12 tools/check_readability.py`＝初回35%→文を箇条書き・分割に直して1%（目安15%以下）
+- `python3.12 -m tools.make_eyecatch`実行、新規slugの1枚のみ生成
+- `python3.12 -m src.build`・`python3.12 -m pytest -q`（795 passed）とも通過
+
 ### 2026-11-18（自動化・ループ優先枠の回）
 - `git fetch origin`→`main`ブランチは`origin/main`（`d7206cd1`）と同じコミットを指していたため
   取り直しは不要
