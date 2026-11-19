@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-19T13:18:48.120986+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-19T01:14:04+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added auto mode for Claude Opus 4.6 and Sonnet 4.6 on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude apps gateway; interactive sessions with no permission …",
+      "title": "v2.1.328",
+      "uid": "a60a68d16851592d",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-18T22:00:54.607366+00:00",
       "importance": "major",
       "label": "DeepMind Blog",
@@ -64,6 +76,34 @@
       "title": "Inside the Codex sandbox",
       "uid": "b35fbcd87bda1f74",
       "url": "https://openai.com/index/inside-the-codex-sandbox",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-19T13:18:48.120986+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-18T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+      "summary_ja": "OpenAIがAIによる研究加速状況を測定。\nプログラムを書くAIの性能はまだ不安定。\n自己改善するAIの可能性を示唆。",
+      "summary_source": "gemini",
+      "title": "Research acceleration: The jagged frontier",
+      "uid": "5e5329f30b331d26",
+      "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-19T13:18:48.120986+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-18T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Sumitomo Life uses ChatGPT Enterprise to research insurers, prepare proposals, and draft code for investment analysis. Early use by executives helped drive adoption.",
+      "summary_ja": "住友生命がChatGPT Enterpriseを導入。\n保険会社の調査、提案書作成、投資分析用コード作成に活用。\n役員の早期利用が社員への普及を後押しした。",
+      "summary_source": "gemini",
+      "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+      "uid": "f998f0955ad60fea",
+      "url": "https://openai.com/business/customer-stories/sumitomo-life",
       "vendor": "OpenAI"
     },
     {
@@ -6267,20 +6307,6 @@
       "uid": "d60272baf614570e",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-21T13:13:14.784845+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-21T11:59:48+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
-      "summary_ja": "Google DeepMindがゲーム会社と提携。\n15年のAI研究を活かし、新しいAIゲームを試作。\nAtariやEVE Onlineなどでの活用を目指す。",
-      "summary_source": "gemini",
-      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-      "uid": "7ddcd168ee28e4a9",
-      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
