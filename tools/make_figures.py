@@ -46925,3 +46925,172 @@ def review_reply_batch_cross_contamination_chart() -> None:
 if __name__ == "__main__":
     review_reply_batch_leak_rate_chart()
     review_reply_batch_cross_contamination_chart()
+
+
+def clause_conflict_same_document_grid_chart() -> None:
+    """1つの契約書の中で支払基準が食い違うとき、結論として最初に示す基準が割れるかを示すマス目。
+
+    実測（2026-11-20・架空の基本契約書2本〈ライティング受託／動画編集受託〉、
+    どちらも1つの文書の中に「支払条件」条項と「特記事項」の支払基準が別々に
+    書かれている）。素朴に「入金予定日はいつですか」と聞いた回（材料2本×各3回＝6回）と、
+    「特記事項の基準だけを使ってください」と起点を名指しした回（材料2本×各1回＝2回）。
+    """
+    cols = ["材料A・1回目", "材料A・2回目", "材料A・3回目", "材料B・1回目", "材料B・2回目", "材料B・3回目"]
+    row_naive = ["11/20", "11/26", "両方", "11/23", "12/1", "両方"]
+    row_naive_box = ["box-accent", "box-bad", "box-quiet", "box-accent", "box-bad", "box-quiet"]
+    row_naive_t = ["t-accent", "t-bad", "t-sm", "t-accent", "t-bad", "t-sm"]
+
+    label_w = 160
+    cell_w, cell_h, gap = 82, 32, 8
+    top = 180
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "1つの契約書の中だけで矛盾していても、結論として最初に示す基準は割れた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の基本契約書2本（それぞれ1つの文書）に、支払基準を2つ仕込んだ。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「支払条件」条項（検収完了基準）と「特記事項」（納品日基準）が食い違う。</text>\n",
+        '<text class="t-sm" x="18" y="83">'
+        "「入金予定日はいつですか」と素朴に聞いた回（材料2本×各3回＝6回）。</text>\n",
+        '<text class="t-sm" x="18" y="102">'
+        "同じ2本に、「特記事項の基準だけを」と起点を名指しした回（各1回）も試した。</text>\n",
+        '<text class="t-xs" x="18" y="126">結論として最初に示した基準の日付</text>\n',
+    ]
+    for index, name in enumerate(cols):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 26:.1f}" y="{top - 12}">{name}</text>\n'
+        )
+
+    def row(y: float, label: str, cells: list, boxes: list, tones: list, widths: list, xs: list) -> None:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for index, text in enumerate(cells):
+            x = xs[index]
+            w = widths[index]
+            parts.append(
+                f'<rect class="{boxes[index]}" x="{x}" y="{y}" '
+                f'width="{w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tx = x + w / 2 - len(text) * 5.6
+            parts.append(
+                f'<text class="{tones[index]}" x="{tx:.1f}" y="{y + 20}">{text}</text>\n'
+            )
+
+    naive_xs = [grid_x + i * (cell_w + gap) for i in range(6)]
+    naive_widths = [cell_w] * 6
+    row(top, "素朴に聞く（6回）", row_naive, row_naive_box, row_naive_t, naive_widths, naive_xs)
+
+    fix_w = 3 * cell_w + 2 * gap
+    fix_xs = [grid_x, grid_x + 3 * (cell_w + gap)]
+    row(
+        top + pitch,
+        "起点を名指し（2回）",
+        ["11/26", "12/1"],
+        ["box-good", "box-good"],
+        ["t-good", "t-good"],
+        [fix_w, fix_w],
+        fix_xs,
+    )
+
+    height = top + 2 * pitch + 12 + 21 * 5 + 16
+    notes = [
+        ("t-xs", "※ 素朴に聞いた回は、6回とも2つの条項の基準が違うこと自体には触れていた。"),
+        ("t-xs", "内訳＝11/20系が先頭2回・11/26系が先頭2回・両方を対等に挙げて未定が2回。"),
+        ("t-xs", "※ 起点を名指しした回は、結論の日付が2回とも指定どおり特記事項の基準に揃った"),
+        ("t-xs", "（2回中1回は、使わないよう頼んだ支払条件条項の基準を補足として書き足した）。"),
+        ("t-xs", "架空データでの実測。生の返り8回は docs/evidence/ に全文置いてある。"),
+    ]
+    ny = height - 21 * len(notes) + 5
+    for css, text in notes:
+        parts.append(f'<text class="{css}" x="18" y="{ny}">{_esc(text)}</text>\n')
+        ny += 21
+
+    alt = (
+        "1つの契約書の中に支払条件条項（検収完了基準）と特記事項（納品日基準）という"
+        "別々の支払基準を仕込んだ架空の契約書2本に、素朴に「入金予定日はいつですか」と"
+        "聞いた回（材料2本×各3回）で、結論として最初に示した日付を並べたマス目。"
+        "材料Aは1回目が11/20（検収完了基準）、2回目が11/26（特記事項基準）、3回目が両方を"
+        "対等に挙げて未定。材料Bは1回目が11/23、2回目が12/1、3回目が両方で未定。"
+        "下の行には、起点を名指しして「特記事項の基準だけを使ってください」と聞いた回"
+        "（材料2本×各1回）は、結論の日付が2回とも指定どおり特記事項の基準（材料Aは11/26・"
+        "材料Bは12/1）に揃ったことが書かれている。"
+    )
+    (OUT / "clause-conflict-same-document-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def clause_conflict_date_compare_chart() -> None:
+    """同じ1本の契約書の中にある2つの条項が、別々の基準で別々の日付を計算する仕組みを示す図。
+
+    材料A（ライティング受託）の日付で作成。第6条（支払条件）は検収完了日を基準に、
+    特記事項は納品日を基準にしており、起点そのものが違うため計算結果もずれる。
+    """
+    col_w, gap = 330, 24
+    left_x = 18
+    right_x = left_x + col_w + gap
+    top = 110
+    box_h = 150
+
+    def column(x: float, title: str, basis_label: str, basis_date: str, formula: str, result: str, cls: str) -> list[str]:
+        out = [
+            f'<rect class="{cls}" x="{x}" y="{top}" width="{col_w}" height="{box_h}" rx="6"/>\n',
+            f'<text class="t-strong" x="{x + 14}" y="{top + 28}">{_esc(title)}</text>\n',
+            f'<text class="t-sm" x="{x + 14}" y="{top + 54}">起点：{_esc(basis_label)}（{_esc(basis_date)}）</text>\n',
+            f'<text class="t-sm" x="{x + 14}" y="{top + 78}">計算：{_esc(formula)}</text>\n',
+            f'<line class="line" x1="{x + 14}" y1="{top + 96}" x2="{x + col_w - 14}" y2="{top + 96}"/>\n',
+            f'<text class="t-accent" x="{x + 14}" y="{top + 126}" style="font-size:20px">{_esc(result)}</text>\n',
+        ]
+        return out
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ契約書の中にある2つの条項が、別々の起点から別々の日付を出す</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料A（ライティング受託）の契約書1本には、支払条件条項と特記事項という2つの"
+        "支払基準が別々に書かれている。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "起点（検収完了か納品日か）が違うため、同じ契約書を読んでも計算結果がずれる。</text>\n",
+    ]
+    parts += column(
+        left_x, "第6条（支払条件）", "検収完了日", "2026/10/21",
+        "検収完了後30日以内", "→ 2026年11月20日", "box-accent",
+    )
+    parts += column(
+        right_x, "特記事項", "納品日", "2026/10/12",
+        "納品日から45日後", "→ 2026年11月26日", "box-bad",
+    )
+    mid_x = left_x + col_w + gap / 2
+    parts.append(
+        f'<text class="t-strong" x="{mid_x - 10:.1f}" y="{top + box_h / 2 + 7:.0f}" '
+        f'style="font-size:22px">≠</text>\n'
+    )
+
+    note_y = top + box_h + 34
+    parts.append(
+        f'<text class="t-xs" x="18" y="{note_y}">'
+        "※ どちらの条項を優先するかは、この契約書の記載だけでは決まらない（発注者への確認が必要）。</text>\n"
+    )
+    height = note_y + 24
+
+    alt = (
+        "同じ1本の契約書の中にある2つの条項が、別々の起点から別々の日付を計算する仕組みを示す図。"
+        "左の箱＝第6条（支払条件）は検収完了日(2026/10/21)を起点に、検収完了後30日以内で"
+        "2026年11月20日を計算する。右の箱＝特記事項は納品日(2026/10/12)を起点に、"
+        "納品日から45日後で2026年11月26日を計算する。中央に≠の記号があり、2つの計算結果が"
+        "一致しないことを示す。下の注記には、どちらの条項を優先するかはこの契約書の記載だけでは"
+        "決まらないと書かれている。"
+    )
+    (OUT / "clause-conflict-date-compare.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    clause_conflict_same_document_grid_chart()
+    clause_conflict_date_compare_chart()

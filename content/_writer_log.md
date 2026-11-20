@@ -59,6 +59,25 @@
   `docs/evidence/_check_review_reply_batch.py` で文字列照合した（他のAIを呼ぶ手段がこの環境に
   無いため）
 
+### 2026-11-20（副業枠の回・21:00・2本目・別フォーク担当）
+- `git pull --rebase origin main`で1本目公開後の最新状態を取得してから着手
+- 副業節の未処理のうち⏸の付いていない上から2件目「契約書が1つの文書の中だけで矛盾している場合
+  （条文どうしの食い違い）、AIはどちらを選ぶか」に着手。`grep -h '^## ' content/recipes/*.md | sort -u`
+  で既存見出しと衝突なしを確認
+- `content/_lessons.md`を通読し、★350（前作の宿題そのもの）・★308（独立性を保つ実測方法）を適用
+  しようとしたが、★308の方法（新規サブエージェントに聞く）を試みたところ
+  `Subagent nesting limit reached (depth 1 of 1)` で8件のAgent呼び出しが全部失敗（この担当自身が
+  既にサブエージェントのため、ネスト上限に達していた）。1本目と同じ代替方式（担当自身が応答する）
+  に切り替えた。この制約は新しい知見として★359（`content/_lessons.md`）に追記した
+- 公開: 1本（`clause-conflict-same-document-pick-still-splits`）
+- 実測: 架空の基本契約書2本（ライティング受託・動画編集受託、それぞれ1本の文書に支払条件条項と
+  特記事項で支払基準が食い違う条文を仕込んだ）を自分で用意し、素朴に聞く6回（材料2本×各3回）＋
+  起点を名指し2回＋矛盾確認1回＋両方挙げさせる1回＋形式固定1回＋要約依頼1回＋自動化導線1回の
+  計13回、自分がAI役として応答を生成し`docs/evidence/_check_clause_conflict.py`で文字列照合した
+- `python -m src.build`（411ファイル）・`pytest -q`（795 passed）・`check_readability.py`
+  （60字以上2%、目安15%以下）すべて通過。図2枚（`clause-conflict-same-document-grid.svg`・
+  `clause-conflict-date-compare.svg`）を`tools/make_figures.py`に追加して生成
+
 ### 2026-11-19（自動化・ループ優先枠の回）
 - `git fetch origin`→HEADが`origin/main`より遅れていた（detached HEAD）ため`git checkout -B main origin/main`
   で取り直し（`a17c3f81`）

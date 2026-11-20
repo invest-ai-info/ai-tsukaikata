@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="393" viewBox="0 0 720 393" role="img" aria-label="1つの契約書の中に支払条件条項（検収完了基準）と特記事項（納品日基準）という別々の支払基準を仕込んだ架空の契約書2本に、素朴に「入金予定日はいつですか」と聞いた回（材料2本×各3回）で、結論として最初に示した日付を並べたマス目。材料Aは1回目が11/20（検収完了基準）、2回目が11/26（特記事項基準）、3回目が両方を対等に挙げて未定。材料Bは1回目が11/23、2回目が12/1、3回目が両方で未定。下の行には、起点を名指しして「特記事項の基準だけを使ってください」と聞いた回（材料2本×各1回）は、結論の日付が2回とも指定どおり特記事項の基準（材料Aは11/26・材料Bは12/1）に揃ったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="393"/>
+<text class="t-strong" x="18" y="26">1つの契約書の中だけで矛盾していても、結論として最初に示す基準は割れた</text>
+<text class="t-sm" x="18" y="45">架空の基本契約書2本（それぞれ1つの文書）に、支払基準を2つ仕込んだ。</text>
+<text class="t-sm" x="18" y="64">「支払条件」条項（検収完了基準）と「特記事項」（納品日基準）が食い違う。</text>
+<text class="t-sm" x="18" y="83">「入金予定日はいつですか」と素朴に聞いた回（材料2本×各3回＝6回）。</text>
+<text class="t-sm" x="18" y="102">同じ2本に、「特記事項の基準だけを」と起点を名指しした回（各1回）も試した。</text>
+<text class="t-xs" x="18" y="126">結論として最初に示した基準の日付</text>
+<text class="t-xs" x="175.0" y="168">材料A・1回目</text>
+<text class="t-xs" x="265.0" y="168">材料A・2回目</text>
+<text class="t-xs" x="355.0" y="168">材料A・3回目</text>
+<text class="t-xs" x="445.0" y="168">材料B・1回目</text>
+<text class="t-xs" x="535.0" y="168">材料B・2回目</text>
+<text class="t-xs" x="625.0" y="168">材料B・3回目</text>
+<text class="t-sm" x="18" y="200">素朴に聞く（6回）</text>
+<rect class="box-accent" x="160" y="180" width="82" height="32" rx="4"/>
+<text class="t-accent" x="173.0" y="200">11/20</text>
+<rect class="box-bad" x="250" y="180" width="82" height="32" rx="4"/>
+<text class="t-bad" x="263.0" y="200">11/26</text>
+<rect class="box-quiet" x="340" y="180" width="82" height="32" rx="4"/>
+<text class="t-sm" x="369.8" y="200">両方</text>
+<rect class="box-accent" x="430" y="180" width="82" height="32" rx="4"/>
+<text class="t-accent" x="443.0" y="200">11/23</text>
+<rect class="box-bad" x="520" y="180" width="82" height="32" rx="4"/>
+<text class="t-bad" x="538.6" y="200">12/1</text>
+<rect class="box-quiet" x="610" y="180" width="82" height="32" rx="4"/>
+<text class="t-sm" x="639.8" y="200">両方</text>
+<text class="t-sm" x="18" y="240">起点を名指し（2回）</text>
+<rect class="box-good" x="160" y="220" width="262" height="32" rx="4"/>
+<text class="t-good" x="263.0" y="240">11/26</text>
+<rect class="box-good" x="430" y="220" width="262" height="32" rx="4"/>
+<text class="t-good" x="538.6" y="240">12/1</text>
+<text class="t-xs" x="18" y="293">※ 素朴に聞いた回は、6回とも2つの条項の基準が違うこと自体には触れていた。</text>
+<text class="t-xs" x="18" y="314">内訳＝11/20系が先頭2回・11/26系が先頭2回・両方を対等に挙げて未定が2回。</text>
+<text class="t-xs" x="18" y="335">※ 起点を名指しした回は、結論の日付が2回とも指定どおり特記事項の基準に揃った</text>
+<text class="t-xs" x="18" y="356">（2回中1回は、使わないよう頼んだ支払条件条項の基準を補足として書き足した）。</text>
+<text class="t-xs" x="18" y="377">架空データでの実測。生の返り8回は docs/evidence/ に全文置いてある。</text>
+</svg>

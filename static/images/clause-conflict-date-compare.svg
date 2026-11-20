@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="318" viewBox="0 0 720 318" role="img" aria-label="同じ1本の契約書の中にある2つの条項が、別々の起点から別々の日付を計算する仕組みを示す図。左の箱＝第6条（支払条件）は検収完了日(2026/10/21)を起点に、検収完了後30日以内で2026年11月20日を計算する。右の箱＝特記事項は納品日(2026/10/12)を起点に、納品日から45日後で2026年11月26日を計算する。中央に≠の記号があり、2つの計算結果が一致しないことを示す。下の注記には、どちらの条項を優先するかはこの契約書の記載だけでは決まらないと書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="318"/>
+<text class="t-strong" x="18" y="26">同じ契約書の中にある2つの条項が、別々の起点から別々の日付を出す</text>
+<text class="t-sm" x="18" y="45">材料A（ライティング受託）の契約書1本には、支払条件条項と特記事項という2つの支払基準が別々に書かれている。</text>
+<text class="t-sm" x="18" y="64">起点（検収完了か納品日か）が違うため、同じ契約書を読んでも計算結果がずれる。</text>
+<rect class="box-accent" x="18" y="110" width="330" height="150" rx="6"/>
+<text class="t-strong" x="32" y="138">第6条（支払条件）</text>
+<text class="t-sm" x="32" y="164">起点：検収完了日（2026/10/21）</text>
+<text class="t-sm" x="32" y="188">計算：検収完了後30日以内</text>
+<line class="line" x1="32" y1="206" x2="334" y2="206"/>
+<text class="t-accent" x="32" y="236" style="font-size:20px">→ 2026年11月20日</text>
+<rect class="box-bad" x="372" y="110" width="330" height="150" rx="6"/>
+<text class="t-strong" x="386" y="138">特記事項</text>
+<text class="t-sm" x="386" y="164">起点：納品日（2026/10/12）</text>
+<text class="t-sm" x="386" y="188">計算：納品日から45日後</text>
+<line class="line" x1="386" y1="206" x2="688" y2="206"/>
+<text class="t-accent" x="386" y="236" style="font-size:20px">→ 2026年11月26日</text>
+<text class="t-strong" x="350.0" y="192" style="font-size:22px">≠</text>
+<text class="t-xs" x="18" y="294">※ どちらの条項を優先するかは、この契約書の記載だけでは決まらない（発注者への確認が必要）。</text>
+</svg>
