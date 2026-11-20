@@ -46767,3 +46767,161 @@ def cadence_misfire_rate_before_after_chart() -> None:
 if __name__ == "__main__":
     cadence_rule_before_after_grid_chart()
     cadence_misfire_rate_before_after_chart()
+
+
+def review_reply_batch_leak_rate_chart() -> None:
+    """口コミ3件を1つのプロンプトにまとめて頼むと、説明欄への単体漏えいが
+    1件ずつ処理した前作（review-reply-specific-ask-leaks-names）より増える図。
+
+    実測（2026-11-20）。架空の口コミ3件（9トークン）を一括処理した6回×2条件。
+    素朴に頼むと48/54（88.9%）が説明欄に漏れ、「個人情報には触れないでください」を
+    足すと1/54（1.9%）まで下がる。docs/evidence/review-reply-batch-note-leaks-all-names.md
+    の機械照合（_check_review_reply_batch.py）から。
+    """
+    axis_x, axis_w = 280, 350
+    axis_x2 = axis_x + axis_w
+    box_w = axis_w + 70  # ラベル「48/54件」が100%近くでも枠内に収まる余白
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("素朴な一括依頼\n(口コミ3件まとめて)", 88.9, "48/54件", "box-bad"),
+        ("＋「個人情報には触れないで」", 1.9, "1/54件", "box-good"),
+    ]
+    top = 150
+    track_h, track_gap = 48, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "3件まとめて頼むと、説明欄への単体漏えいは88.9%まで上がる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前作は口コミ1件ずつの処理で説明欄の漏えいは6回中4回。3件を1つのプロンプトにまとめると、"
+        "まとめ用の説明欄が全員分を一度に並べる。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "「個人情報には触れないでください」を足すと1.9%まで下がるが、0件にはならない。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 24
+    for label, pct, count_label, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 11 + i * 15:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{box_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = max(px(pct) - axis_x, 3 if pct > 0 else 0)
+        if bar_w:
+            parts.append(
+                f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+            )
+        tcls = "t-bad" if cls == "box-bad" else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{count_label}</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 24
+    alt = (
+        "口コミ3件を1つのプロンプトにまとめて返信を頼んだときの、説明欄への単体漏えい率を示す横棒グラフ。"
+        "素朴な一括依頼は54項目中48件(88.9%)が漏れた。"
+        "「個人情報には触れないでください」を足すと54項目中1件(1.9%)まで下がった。"
+    )
+    (OUT / "review-reply-batch-leak-rate.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def review_reply_batch_cross_contamination_chart() -> None:
+    """3件まとめて処理したときだけ起きる「混線」（別の口コミの情報として取り違える）が、
+    何回の試行で起きたかを示す図。
+
+    実測（2026-11-20）。素朴な一括依頼は6回中2回（33.3%）で混線が起きた。
+    「個人情報には触れないでください」を足すと6回中0回に消えた。
+    """
+    axis_x, axis_w = 280, 350
+    axis_x2 = axis_x + axis_w
+
+    def px(pct: float) -> float:
+        return axis_x + axis_w * pct / 100
+
+    rows = [
+        ("素朴な一括依頼\n(口コミ3件まとめて)", 33.3, "2/6回", "box-bad"),
+        ("＋「個人情報には触れないで」", 0.0, "0/6回", "box-good"),
+    ]
+    top = 130
+    track_h, track_gap = 48, 30
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "別の口コミの情報として取り違える「混線」は、まとめ処理だけで起きた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "口コミ1件ずつ処理した前作には存在しなかった失敗モード。3件まとめた6回中2回で、"
+        "スタッフ名が別の口コミの説明として書かれた。</text>\n",
+    ]
+
+    for i in range(0, 101, 25):
+        x = px(i)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{top - 8}" x2="{x:.1f}" y2="{top - 2}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{top - 14}" text-anchor="middle">{i}%</text>\n'
+        )
+    parts.append(
+        f'<line class="line" x1="{axis_x:.1f}" y1="{top - 5}" x2="{axis_x2:.1f}" y2="{top - 5}"/>\n'
+    )
+
+    y = top
+    bar_h = 24
+    for label, pct, count_label, cls in rows:
+        label_lines = label.split("\n")
+        for i, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="{"t" if i == 0 else "t-xs"}" x="18" y="{y + track_h / 2 - 11 + i * 15:.0f}">'
+                f'{_esc(line)}</text>\n'
+            )
+        bar_y = y + track_h / 2 - bar_h / 2
+        parts.append(
+            f'<rect class="box" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{axis_w:.1f}" height="{bar_h}"/>\n'
+        )
+        bar_w = max(px(pct) - axis_x, 3 if pct > 0 else 0)
+        if bar_w:
+            parts.append(
+                f'<rect class="{cls}" x="{axis_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h}"/>\n'
+            )
+        tcls = "t-bad" if cls == "box-bad" else "t-good"
+        parts.append(
+            f'<text class="{tcls}" x="{px(pct) + 8:.1f}" y="{y + track_h / 2 + 5:.0f}" '
+            f'style="font-size:12.5px">{count_label}</text>\n'
+        )
+        y += track_h + track_gap
+
+    height = y - track_gap + 24
+    alt = (
+        "3件まとめて処理したときに別の口コミの情報として取り違える「混線」が起きた割合を示す横棒グラフ。"
+        "素朴な一括依頼は6回中2回(33.3%)で混線が起きた。"
+        "「個人情報には触れないでください」を足すと6回中0回(0%)に消えた。"
+    )
+    (OUT / "review-reply-batch-cross-contamination.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    review_reply_batch_leak_rate_chart()
+    review_reply_batch_cross_contamination_chart()
