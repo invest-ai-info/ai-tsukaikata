@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="434" viewBox="0 0 720 434" role="img" aria-label="材料（E・F）を行、回（1回目・2回目）を列にした2行2列の表。HEADとGETで異なるコードを仕込んだ3本の分類が正しかった本数を示す。4セルすべてが緑で『3/3一致』。下の枠には、HEADとGETで違うコードが同じ行に出てもGET優先の判定は崩れなかったこと、切れている5本・確認できない4本・正常3本という分類全体も2材料×2回とも真値と完全一致したことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="434"/>
+<text class="t-strong" x="18" y="24">HEADとGETが割れた3本の判定は、2材料×2回とも3/3で正しかった</text>
+<text class="t-sm" x="18" y="43">各材料12本のうち3本に、HEADとGETで異なるコードを仕込んだ（例: HEAD=403・GET=200／HEAD=302・GET=404／HEAD=200・GET=503）。</text>
+<text class="t-sm" x="18" y="62">指示文は mixed-status-not-misread の指示文5（GETを優先し、名前を先に件数はあとに書かせる版）と同一文字列。</text>
+<text class="t-accent" x="283.0" y="132" text-anchor="middle">1回目</text>
+<text class="t-accent" x="527.0" y="132" text-anchor="middle">2回目</text>
+<text class="t-sm" x="18" y="180.0">材料E</text>
+<text class="t-sm" x="18" y="196.0">（観葉植物</text>
+<text class="t-sm" x="18" y="212.0">ブログ）</text>
+<rect class="box-good" x="168.0" y="148.0" width="230.0" height="92" rx="6"/>
+<text class="t-good" x="283.0" y="200.0" text-anchor="middle" style="font-weight:700;font-size:20px">3/3 一致</text>
+<rect class="box-good" x="412.0" y="148.0" width="230.0" height="92" rx="6"/>
+<text class="t-good" x="527.0" y="200.0" text-anchor="middle" style="font-weight:700;font-size:20px">3/3 一致</text>
+<line class="line" x1="18" y1="247.0" x2="702" y2="247.0" stroke-dasharray="3 3"/>
+<text class="t-sm" x="18" y="286.0">材料F</text>
+<text class="t-sm" x="18" y="302.0">（キャンプ</text>
+<text class="t-sm" x="18" y="318.0">用品ブログ）</text>
+<rect class="box-good" x="168.0" y="254.0" width="230.0" height="92" rx="6"/>
+<text class="t-good" x="283.0" y="306.0" text-anchor="middle" style="font-weight:700;font-size:20px">3/3 一致</text>
+<rect class="box-good" x="412.0" y="254.0" width="230.0" height="92" rx="6"/>
+<text class="t-good" x="527.0" y="306.0" text-anchor="middle" style="font-weight:700;font-size:20px">3/3 一致</text>
+<rect class="box-accent" x="18" y="366" width="684" height="48" rx="6"/>
+<text class="t-accent" x="34" y="386">4セルとも3/3。HEADとGETで違うコードが同じ行に出ても、GET優先の判定は崩れなかった。</text>
+<text class="t-accent" x="34" y="404">切れている5本・確認できない4本・正常3本（計12本）の分類自体も、2材料×2回とも真値と完全一致。</text>
+</svg>

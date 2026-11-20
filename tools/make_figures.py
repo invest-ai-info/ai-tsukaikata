@@ -46518,3 +46518,119 @@ if __name__ == "__main__":
     neon_price_vs_siblings_chart()
     neon_benchmark_wins_chart()
     neon_vendor_price_chart()
+
+
+def head_get_mismatch_grid_chart() -> None:
+    """材料（E・F）×回（1・2）の2行2列グリッドで、HEAD/GETのコードが割れた3本の分類が
+    真値と何本一致したかを示す（2026-11-20実測）。
+
+    値は docs/evidence/head-get-disagreement-still-sorts-correctly.md の機械照合から。
+    4セルとも3/3で、不一致を仕込んでも判定は崩れなかったことを示す。
+    """
+    label_w = 150
+    col_w = 230
+    gap = 14
+    col_x = [18 + label_w + i * (col_w + gap) for i in range(2)]
+    row_h = 92
+    row_y = [148, 148 + row_h + 14]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "HEADとGETが割れた3本の判定は、2材料×2回とも3/3で正しかった</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "各材料12本のうち3本に、HEADとGETで異なるコードを仕込んだ"
+        "（例: HEAD=403・GET=200／HEAD=302・GET=404／HEAD=200・GET=503）。</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "指示文は mixed-status-not-misread の指示文5（GETを優先し、名前を先に件数はあとに書かせる版）と同一文字列。</text>\n",
+    ]
+
+    headers = ["1回目", "2回目"]
+    for i, h in enumerate(headers):
+        parts.append(
+            f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" y="{row_y[0] - 16}" '
+            f'text-anchor="middle">{_esc(h)}</text>\n'
+        )
+
+    row_labels = ["材料E\n（観葉植物\nブログ）", "材料F\n（キャンプ\n用品ブログ）"]
+    for r in range(2):
+        label_lines = row_labels[r].split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{row_y[r] + row_h / 2 - 14 + li * 16:.1f}">'
+                f"{_esc(line)}</text>\n"
+            )
+        for c in range(2):
+            parts.append(
+                f'<rect class="box-good" x="{col_x[c]:.1f}" y="{row_y[r]:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h}" rx="6"/>\n'
+            )
+            parts.append(
+                f'<text class="t-good" x="{col_x[c] + col_w / 2:.1f}" '
+                f'y="{row_y[r] + row_h / 2 + 6:.1f}" text-anchor="middle" '
+                f'style="font-weight:700;font-size:20px">3/3 一致</text>\n'
+            )
+        if r == 0:
+            parts.append(
+                f'<line class="line" x1="18" y1="{row_y[1] - 7:.1f}" x2="702" '
+                f'y2="{row_y[1] - 7:.1f}" stroke-dasharray="3 3"/>\n'
+            )
+
+    y = row_y[1] + row_h + 20
+    notes = [
+        "4セルとも3/3。HEADとGETで違うコードが同じ行に出ても、GET優先の判定は崩れなかった。",
+        "切れている5本・確認できない4本・正常3本（計12本）の分類自体も、2材料×2回とも真値と完全一致。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "材料（E・F）を行、回（1回目・2回目）を列にした2行2列の表。HEADとGETで異なるコードを仕込んだ"
+        "3本の分類が正しかった本数を示す。4セルすべてが緑で『3/3一致』。"
+        "下の枠には、HEADとGETで違うコードが同じ行に出てもGET優先の判定は崩れなかったこと、"
+        "切れている5本・確認できない4本・正常3本という分類全体も2材料×2回とも真値と完全一致したことが"
+        "書かれている。"
+    )
+    (OUT / "head-get-mismatch-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def head_get_headline_count_chart() -> None:
+    """4回の実測で、見出しの件数（切れている◯件・確認できない◯件）が、実際に列挙した
+    IDの数と一致していたかを示す（2026-11-20実測）。
+
+    前々作（mixed-status-not-misread）で崩れた「件数のズレ」が、この指示文のままでは
+    4回とも起きなかったことを示す。
+    """
+    _hit_and_miss_rows_chart(
+        "head-get-headline-count.svg",
+        "見出しの件数は、4回とも実際に列挙したIDの数と一致した",
+        "実測2026-11-20。HEAD/GETが割れた3本を仕込んだ材料E・Fに、同じ指示文を各2回試した。",
+        "「以上、◯件」の見出しと、箇条書きで並んだIDの本数を機械で数えて突き合わせた。",
+        [
+            ("材料E・1回目（切れている5件/確認できない4件）", 1, 1, "good"),
+            ("材料E・2回目（切れている5件/確認できない4件）", 1, 1, "good"),
+            ("材料F・1回目（切れている5件/確認できない4件）", 1, 1, "good"),
+            ("材料F・2回目（切れている5件/確認できない4件）", 1, 1, "good"),
+        ],
+        [
+            "4回とも、見出しの「◯件」と箇条書きの本数が完全に一致した（ズレ0回）。",
+            "ただし自動化に組み込むなら、この見出しの数字ではなく箇条書きの行自体をスクリプトで数えること。",
+        ],
+        "横棒の一覧表。HEAD/GETが割れた3本を含む材料E・Fに同じ指示文を各2回試したとき、"
+        "見出しの「以上◯件」という数字と、実際に列挙したIDの本数が一致したかどうかを示す。"
+        "材料E・F、1回目・2回目のすべてで1/1（一致）だった。"
+        "下の枠には、4回とも見出しの件数と箇条書きの本数が完全に一致したこと、"
+        "それでも自動化に組み込むなら見出しの数字ではなく箇条書きの行自体をスクリプトで数えるべきことが"
+        "書かれている。",
+        label_w=420,
+    )
+
+
+if __name__ == "__main__":
+    head_get_mismatch_grid_chart()
+    head_get_headline_count_chart()
