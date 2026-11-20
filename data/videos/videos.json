@@ -8921,91 +8921,196 @@
    "first_seen": "2026-11-19T20:56:38.955367+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "OSHSopaYjTw",
+   "title": "Create and Share a Dashboard in ChatGPT",
+   "url": "https://www.youtube.com/watch?v=OSHSopaYjTw",
+   "published": "2026-11-20T06:07:50+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-20T07:42:26.426749+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ChatGPTとデータプラグインを用いて、売上データなどからチーム向けダッシュボードを作成する手順を紹介している。",
+    "グラフの元データ確認や直接編集、アノテーション機能による修正、定期更新の自動設定ができると説明している。",
+    "ブランドに合わせたデザイン変更や各種形式へのエクスポート、Sitesを通じた安全なダッシュボード共有方法を紹介している。"
+   ],
+   "for_whom": "ChatGPTを活用して業務データからダッシュボードを作成・共有したいビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T07:42:26.426749+00:00"
+  },
+  {
+   "video_id": "JEgTn37Sk50",
+   "title": "Ask Questions About Your Data in ChatGPT",
+   "url": "https://www.youtube.com/watch?v=JEgTn37Sk50",
+   "published": "2026-11-20T06:05:59+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-20T07:42:26.426749+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Google Driveの売上データをChatGPTに読み込ませ、四半期ごとの売上推移やセグメント別貢献度をグラフ化する方法を紹介している。",
+    "注文履歴や顧客メモから注意が必要な顧客を特定し、具体的なフォローアップ対応案をChatGPTに提示させる手順を解説している。",
+    "分析した売上数値や推奨アクションをもとに、会議で使える3枚組のスライド資料をChatGPTで作成できると紹介している。"
+   ],
+   "for_whom": "ChatGPTを活用して社内データの分析や報告用スライドの作成を効率化したい会社員向け",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T07:42:26.426749+00:00"
+  },
+  {
+   "video_id": "oJIuz3AFfEQ",
+   "title": "Connect Your Team’s Data to ChatGPT",
+   "url": "https://www.youtube.com/watch?v=oJIuz3AFfEQ",
+   "published": "2026-11-20T06:02:57+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-20T07:42:26.426749+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "管理者コンソールでDataプラグインを有効化し、ワークスペースへの導入方法を設定できると説明している。",
+    "SnowflakeなどのDWH向けテンプレートからプラグインを作成・連携する手順を紹介している。",
+    "自作のコネクタやMCPサーバーをカスタムプラグインとしてChatGPTに登録できると解説している。"
+   ],
+   "for_whom": "社内データやツールをChatGPTに連携させたいワークスペース管理者",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T07:42:26.426749+00:00"
+  },
+  {
+   "video_id": "KrlfehIapEA",
+   "title": "Meet the Data Agent in ChatGPT",
+   "url": "https://www.youtube.com/watch?v=KrlfehIapEA",
+   "published": "2026-11-20T05:35:32+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-20T07:42:26.426749+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ChatGPT向けDataプラグインの機能概要とプラグインストアからの導入方法を紹介している。",
+    "データに関する質問への回答、グラフやダッシュボードの作成、レポート生成ができると説明している。",
+    "データ品質の確認やKPI設計、各種BIツールやファイルとの連携機能が備わっていると解説している。"
+   ],
+   "for_whom": "ChatGPTを活用して業務データ分析や可視化を行いたいビジネスパーソン",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T07:42:26.426749+00:00"
+  },
+  {
+   "video_id": "3_fayTbZrW8",
+   "title": "Create and Share a Report in ChatGPT Space",
+   "url": "https://www.youtube.com/watch?v=3_fayTbZrW8",
+   "published": "2026-11-20T05:32:52+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Give your team a report they can read, discuss, and work on together. In this walkthrough, turn the fictional Acme sales analysis into a Page in Space, with the highlights, quarterly comparisons, and charts in one place.\n\nSee how to choose who can access the report, copy a link for your meeting, edit a heading directly, ask ChatGPT questions about the report, and leave comments beside the findings you want to discuss.\n\nCreate and edit Pages:\nhttps://learn.chatgpt.com/docs/space/pages\n\nShare a Page or Space:\nhttps://learn.chatgpt.com/docs/space/collaboration#share-a-page-or-space\n\nPart 5 of the Data Agent series.",
+   "first_seen": "2026-11-20T07:42:26.426749+00:00",
+   "status": "pending",
+   "attempts": 0
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-19T20:56:38.955367+00:00",
+   "last_ok": "2026-11-20T07:42:26.426749+00:00",
    "fail_streak": 0
   }
  }
