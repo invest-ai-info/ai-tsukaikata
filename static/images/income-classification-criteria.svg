@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="387" viewBox="0 0 720 387" role="img" aria-label="国税庁の事業所得と雑所得の区分の目安を3つの箱で示す図。左＝記帳・資料保存があれば原則事業所得。中央＝記帳が無くても年間300万円を超えれば概ね事業所得（個別判断）。右＝記帳が無く300万円以下で、本業など主たる収入に対する割合が10%未満なら概ね雑所得。下に4つ目の箱があり、記帳が無く300万円以下だが本業に対する割合が10%以上の場合は目安が無く個別判断になることを示す。この領域にプロフィールBとCが当たり、AIの結論も割れた。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="387"/>
+<text class="t-strong" x="18" y="26">国税庁の目安には「どちらにも当てはまらない」ケースがある</text>
+<text class="t-sm" x="18" y="45">記帳の有無・300万円・本業に対する10%という3つの目安を並べると、</text>
+<text class="t-sm" x="18" y="64">プロフィールB・Cはどの箱にも収まらない。AIの結論が割れたのはこの領域。</text>
+<rect class="box-good" x="18.0" y="140" width="214.7" height="54" rx="6"/>
+<text class="t" x="28.0" y="162">記帳・資料保存あり</text>
+<text class="t-good" x="28.0" y="182">→ 原則、事業所得として扱う</text>
+<rect class="box-good" x="252.7" y="140" width="214.7" height="54" rx="6"/>
+<text class="t" x="262.7" y="162">記帳なし・300万円超</text>
+<text class="t-good" x="262.7" y="182">→ 概ね事業所得（個別判断）</text>
+<rect class="box-accent" x="487.3" y="140" width="214.7" height="54" rx="6"/>
+<text class="t" x="497.3" y="162">記帳なし・300万円以下・</text>
+<text class="t-bad" x="497.3" y="182">10%未満 → 概ね雑所得</text>
+<rect class="box-bad" x="242.7" y="230" width="234.7" height="54" rx="6"/>
+<text class="t" x="252.7" y="252">記帳なし・300万円以下・10%以上</text>
+<text class="t-bad" x="252.7" y="272">→ 目安なし。AIもB・Cで結論が割れた</text>
+<path class="line" d="M360.0 196 L360.0 228"/>
+<text class="t-xs" x="18" y="314">※ 目安は一般に知られている国税庁の取扱いの要約で、最終判断は税務署・税理士に確認。</text>
+<text class="t-xs" x="18" y="335">プロフィールAは「記帳なし・300万円以下・本業に対する割合1%未満」で左の箱の対象外側。</text>
+<text class="t-xs" x="18" y="356">プロフィールDは「記帳あり」の箱にそのまま当たるため、結論が3回とも安定した。</text>
+</svg>

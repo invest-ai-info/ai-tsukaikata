@@ -47094,3 +47094,175 @@ def clause_conflict_date_compare_chart() -> None:
 if __name__ == "__main__":
     clause_conflict_same_document_grid_chart()
     clause_conflict_date_compare_chart()
+
+
+def income_classification_grid_chart() -> None:
+    """事業所得か雑所得かの判定が、境界線のプロフィールだけ回によって変わることを示すマス目。
+
+    実測（2026-11-20・架空の副業プロフィール4本。A=低頻度/記帳なし、
+    B・C=国税庁の目安のメルクマール〈記帳の有無・300万円・本業に対する10%〉の
+    境界に近い、D=開業届・複式簿記・生活の主な収入源）。
+    素朴に「事業所得か雑所得か」を聞いた2回と、「一言で」と決断を迫った1回を並べる。
+    """
+    cols = ["プロフィールA\n雑所得寄り", "プロフィールB\n境界線", "プロフィールC\n境界線", "プロフィールD\n事業所得寄り"]
+    rows = [
+        ("素朴に聞く・1回目", ["雑所得", "事業所得", "事業所得", "事業所得"],
+         ["box-accent", "box-good", "box-good", "box-good"]),
+        ("素朴に聞く・2回目", ["雑所得", "要確認", "要確認", "事業所得"],
+         ["box-accent", "box-quiet", "box-quiet", "box-good"]),
+        ("一言で聞く", ["雑所得", "雑所得", "事業所得", "事業所得"],
+         ["box-accent", "box-accent", "box-good", "box-good"]),
+    ]
+
+    label_w = 150
+    cell_w, cell_h, gap = 118, 30, 10
+    top = 150
+    pitch = cell_h + gap
+    grid_x = label_w
+    right_x = grid_x + len(cols) * (cell_w + gap) - gap
+    assert right_x + 18 <= WIDTH, right_x
+
+    col_headers = ["プロフィールA", "プロフィールB", "プロフィールC", "プロフィールD"]
+    col_subs = ["(雑所得寄り)", "(境界線)", "(境界線)", "(事業所得寄り)"]
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "事業所得か雑所得か——境界線の2件だけ、聞くたびに結論が変わった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の副業プロフィール4本。継続年数・売上規模・帳簿の有無を段階的に変えた。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "AとDは明確なケース、BとCは国税庁の目安（記帳・300万円・本業の10%）の境界線。</text>\n",
+        '<text class="t-xs" x="18" y="88">'
+        "同じプロフィールに同じ聞き方を2回。3行目は、続けて「一言で」と決断を迫った回。</text>\n",
+    ]
+    for index, (name, sub) in enumerate(zip(col_headers, col_subs)):
+        x = grid_x + index * (cell_w + gap)
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 34:.1f}" y="{top - 28}">{name}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{x + cell_w / 2 - 30:.1f}" y="{top - 12}">{sub}</text>\n'
+        )
+
+    def row(y: float, label: str, cells: list, boxes: list) -> None:
+        parts.append(f'<text class="t-sm" x="18" y="{y + 20}">{_esc(label)}</text>\n')
+        for index, text in enumerate(cells):
+            x = grid_x + index * (cell_w + gap)
+            parts.append(
+                f'<rect class="{boxes[index]}" x="{x}" y="{y}" '
+                f'width="{cell_w}" height="{cell_h}" rx="4"/>\n'
+            )
+            tone = "t-good" if boxes[index] == "box-good" else (
+                "t-bad" if boxes[index] == "box-accent" else "t-sm"
+            )
+            tx = x + cell_w / 2 - len(text) * 6.5
+            parts.append(
+                f'<text class="{tone}" x="{tx:.1f}" y="{y + 20}">{text}</text>\n'
+            )
+
+    y = top
+    for label, cells, boxes in rows:
+        row(y, label, cells, boxes)
+        y += pitch
+
+    notes_top = y + 10
+    notes = [
+        "※ A・Dは3回とも同じ結論（安定）。B・Cは3回のうち2種類以上の結論が出た（不安定）。",
+        "一言で迫った回は4回とも「要確認」が消えたが、Bの一言の答えは1回目の素朴な結論とは",
+        "一致せず、Cの一言の答えは2回目の素朴な結論とは一致しなかった。",
+        "架空データでの実測。生の返り14回は docs/evidence/ に全文置いてある。",
+    ]
+    for line in notes:
+        parts.append(f'<text class="t-xs" x="18" y="{notes_top}">{_esc(line)}</text>\n')
+        notes_top += 21
+
+    height = notes_top + 10
+
+    alt = (
+        "架空の副業プロフィール4本（A=雑所得寄り、B・Cは国税庁の目安の境界線、D=事業所得寄り）"
+        "に「事業所得か雑所得か」を素朴に2回、続けて「一言で」と決断を迫った1回の結果を示す"
+        "3行×4列のマス目。Aは3回とも雑所得。Dは3回とも事業所得。Bは1回目が事業所得、"
+        "2回目が要確認、一言で聞くと雑所得。Cは1回目が事業所得、2回目が要確認、"
+        "一言で聞くと事業所得。境界線の2件だけ、回によって異なる結論が出た。"
+    )
+    (OUT / "income-classification-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def income_classification_criteria_chart() -> None:
+    """国税庁の目安（記帳の有無・300万円・本業に対する10%）のどこに境界線があるかを示す図。
+
+    記帳・資料保存があれば概ね事業所得。無ければ、300万円を超えるかどうかと、
+    本業など主たる収入に対する割合が10%未満かどうかで分かれる。
+    プロフィールB・Cは、このメルクマールが機械的に決め切れない領域に落ちる。
+    """
+    gap_x = 20
+    box_h = 54
+    top = 140
+    left = 18
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "国税庁の目安には「どちらにも当てはまらない」ケースがある</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "記帳の有無・300万円・本業に対する10%という3つの目安を並べると、</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "プロフィールB・Cはどの箱にも収まらない。AIの結論が割れたのはこの領域。</text>\n",
+    ]
+
+    col_w = (WIDTH - 2 * left - 2 * gap_x) / 3
+    assert left + 3 * col_w + 2 * gap_x + 18 <= WIDTH + 18, left + 3 * col_w + 2 * gap_x
+    labels = [
+        ("記帳・資料保存あり", "→ 原則、事業所得として扱う", "box-good", "t-good"),
+        ("記帳なし・300万円超", "→ 概ね事業所得（個別判断）", "box-good", "t-good"),
+        ("記帳なし・300万円以下・", "10%未満 → 概ね雑所得", "box-accent", "t-bad"),
+    ]
+    for index, (line1, line2, box_cls, text_cls) in enumerate(labels):
+        x = left + index * (col_w + gap_x)
+        parts.append(f'<rect class="{box_cls}" x="{x:.1f}" y="{top}" width="{col_w:.1f}" height="{box_h}" rx="6"/>\n')
+        parts.append(f'<text class="t" x="{x + 10:.1f}" y="{top + 22}">{_esc(line1)}</text>\n')
+        parts.append(f'<text class="{text_cls}" x="{x + 10:.1f}" y="{top + 42}">{_esc(line2)}</text>\n')
+
+    gap_top = top + box_h + 36
+    gap_box_w = col_w + gap_x
+    gap_box_x = left + col_w + gap_x / 2
+    assert gap_box_x + gap_box_w + 18 <= WIDTH + 18, gap_box_x + gap_box_w
+    parts.append(
+        f'<rect class="box-bad" x="{gap_box_x:.1f}" y="{gap_top}" width="{gap_box_w:.1f}" height="{box_h}" rx="6"/>\n'
+    )
+    parts.append(f'<text class="t" x="{gap_box_x + 10:.1f}" y="{gap_top + 22}">記帳なし・300万円以下・10%以上</text>\n')
+    parts.append(f'<text class="t-bad" x="{gap_box_x + 10:.1f}" y="{gap_top + 42}">→ 目安なし。AIもB・Cで結論が割れた</text>\n')
+
+    arrow_x = gap_box_x + gap_box_w / 2
+    parts.append(
+        f'<path class="line" d="M{arrow_x:.1f} {top + box_h + 2} L{arrow_x:.1f} {gap_top - 2}"/>\n'
+    )
+
+    notes_top = gap_top + box_h + 30
+    notes = [
+        "※ 目安は一般に知られている国税庁の取扱いの要約で、最終判断は税務署・税理士に確認。",
+        "プロフィールAは「記帳なし・300万円以下・本業に対する割合1%未満」で左の箱の対象外側。",
+        "プロフィールDは「記帳あり」の箱にそのまま当たるため、結論が3回とも安定した。",
+    ]
+    for line in notes:
+        parts.append(f'<text class="t-xs" x="18" y="{notes_top}">{_esc(line)}</text>\n')
+        notes_top += 21
+
+    height = notes_top + 10
+
+    alt = (
+        "国税庁の事業所得と雑所得の区分の目安を3つの箱で示す図。左＝記帳・資料保存があれば"
+        "原則事業所得。中央＝記帳が無くても年間300万円を超えれば概ね事業所得（個別判断）。"
+        "右＝記帳が無く300万円以下で、本業など主たる収入に対する割合が10%未満なら概ね雑所得。"
+        "下に4つ目の箱があり、記帳が無く300万円以下だが本業に対する割合が10%以上の場合は"
+        "目安が無く個別判断になることを示す。この領域にプロフィールBとCが当たり、AIの結論も割れた。"
+    )
+    (OUT / "income-classification-criteria.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    income_classification_grid_chart()
+    income_classification_criteria_chart()
