@@ -9026,91 +9026,183 @@
    "first_seen": "2026-11-20T07:42:26.426749+00:00",
    "status": "pending",
    "attempts": 0
+  },
+  {
+   "video_id": "lEucvDwp36s",
+   "title": "【全Googleユーザー使って】「Gemini」や「Gemini Notebook」が劇的に使いやすくなる「Enhancer 4 Google」大型アプデ解説！",
+   "url": "https://www.youtube.com/watch?v=lEucvDwp36s",
+   "published": "2026-11-20T09:00:19+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-11-20T20:41:21.789756+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "GoogleサービスやGeminiを拡張するツール「Enhancer 4 Google」がver 2.0にアップデートされたと紹介している。",
+    "ワンクリックでの言語切り替えや設定のバックアップ、Gemini Notebookのカテゴリ管理機能の復活などを解説している。",
+    "Geminiでのプロンプト目次ジャンプや過去履歴の呼び出し機能、拡張機能のインストール手順について説明している。"
+   ],
+   "for_whom": "GeminiやGemini Notebookを活用して日々の業務効率を高めたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T20:41:21.789756+00:00"
+  },
+  {
+   "video_id": "jL0y0dRzrq4",
+   "title": "暫定世界1位のAIモデル「Claude Fable 5.2」の使い方と活用事例10選！ ～ゲームやアプリ、動画、スライド資料まで自動で作れる～",
+   "url": "https://www.youtube.com/watch?v=jL0y0dRzrq4",
+   "published": "2026-11-20T09:06:07+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-20T20:41:21.789756+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "AnthropicのAIモデル「Claude Fable 5.2」の性能やベンチマーク結果、料金体系を説明している。",
+    "Claude Codeと組み合わせた3Dゲーム制作やWebアプリ構築、PC操作など開発向けの活用事例を紹介している。",
+    "アニメーション動画やスライド資料、スプレッドシート生成など実務に役立つ5つの活用事例を紹介している。"
+   ],
+   "for_whom": "Claudeを活用してアプリ開発や資料作成などの実務作業を自動化・効率化したい人",
+   "caution": "Claude Fable 5.2の利用にはMaxやUltraなどの上位プラン契約や、別途APIクレジットの購入が必要になる場合があると説明されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T20:41:21.789756+00:00"
+  },
+  {
+   "video_id": "ooJuwiv8mU8",
+   "title": "【Grok Bot】公式も認めた枠を活かす効率最強の構成！ Claude CodeミクロとマクロなGrokBOT構成について解説",
+   "url": "https://www.youtube.com/watch?v=ooJuwiv8mU8",
+   "published": "2026-11-20T09:30:33+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-20T20:41:21.789756+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は、Grok Botの使用枠を長持ちさせるため、重い実作業はClaude Codeなど外部AIへ逃がす構成を推奨している。",
+    "ボット同士の不要な会話や相槌の削減、定期実行の間隔見直しなど、消費枠を抑える具体的な運用テクニックを解説している。",
+    "Grok Bot環境では複数ボットで同一マシンを共有するため、機密情報や認証情報の扱いに注意が必要だと説明している。"
+   ],
+   "for_whom": "Grok Botの利用枠がすぐに尽きて困っている人や、AIエージェントの効率的な連携方法を知りたい人向け。",
+   "caution": "動画内および概要欄で、主催する無料勉強会やnoteの有料メンバーシップへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T20:41:21.789756+00:00"
+  },
+  {
+   "video_id": "WGvsk0LIveU",
+   "title": "3 ChatGPT Tips to Save Money",
+   "url": "https://www.youtube.com/watch?v=WGvsk0LIveU",
+   "published": "2026-11-20T16:00:17+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-20T20:41:21.789756+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "商品の画像から、より安価な代替品や耐久性などの注意点をChatGPTに調べさせる方法を紹介している。",
+    "銀行口座やメールを連携して継続課金サブスクを洗い出し、解約時の年間節約額を試算する手順を解説している。",
+    "過去の支出データをもとに、無理のない支出削減案を含めた月間予算をChatGPTに作成させる方法を説明している。"
+   ],
+   "for_whom": "ChatGPTを活用して買い物やサブスク、月々の家計予算を見直したい人",
+   "caution": "動画内の支出データや銀行口座の連携画面はデモ用のシミュレーションであり、実際の金融機関連携やメール接続時は各自でプライバシー設定を確認する必要があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-20T20:41:21.789756+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-20T07:42:26.426749+00:00",
+   "last_ok": "2026-11-20T20:41:21.789756+00:00",
    "fail_streak": 0
   }
  }
