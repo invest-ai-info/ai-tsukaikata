@@ -46634,3 +46634,136 @@ def head_get_headline_count_chart() -> None:
 if __name__ == "__main__":
     head_get_mismatch_grid_chart()
     head_get_headline_count_chart()
+
+
+def cadence_rule_before_after_grid_chart() -> None:
+    """①固定「2日ルール」（前作）と②頻度ごとに分けたルール（今回）を列、
+    正常版・停止版を行にした2行2列のグリッド（2026-11-20実測）。
+
+    値は weekly-cadence-trips-the-two-day-rule（前作・①の列）と
+    docs/evidence/per-cadence-threshold-clears-the-misfire.md（今回・②の列）の機械照合から。
+    正常版×①だけが誤報で、②に変えると0/2に消えたことを示す。
+    """
+    label_w = 150
+    col_w = 230
+    gap = 14
+    col_x = [18 + label_w + i * (col_w + gap) for i in range(2)]
+    row_h = 92
+    row_y = [148, 148 + row_h + 14]
+
+    parts = [
+        '<text class="t-strong" x="18" y="24">'
+        "正常版の誤報は、頻度ごとに分けたルールに変えると0/2に消えた</text>\n",
+        '<text class="t-sm" x="18" y="43">'
+        "①は「0件が2日以上続いたら必ず該当」（前作）。②はP1（毎日）とP5（週1回）の基準を分けた言い直し（今回）。"
+        "</text>\n",
+        '<text class="t-sm" x="18" y="62">'
+        "正常版＝P5に本当の停止なし。停止版＝P5が2回ぶん（21日間）動かなかった版。どちらも同じログ。"
+        "</text>\n",
+    ]
+
+    headers = ["①固定「2日ルール」\n（前作）", "②頻度ごとに分けた\nルール（今回）"]
+    for i, h in enumerate(headers):
+        lines = h.split("\n")
+        for li, line in enumerate(lines):
+            parts.append(
+                f'<text class="t-accent" x="{col_x[i] + col_w / 2:.1f}" '
+                f'y="{row_y[0] - 30 + li * 16:.1f}" text-anchor="middle">{_esc(line)}</text>\n'
+            )
+
+    row_labels = ["正常版\n（本当の\n停止なし）", "停止版\n（P5に21日間\nの停止）"]
+    cells = [
+        [
+            ("1/2が結論で\n誤報\n（もう1/2は\n読み替えて\n該当なし）", "bad"),
+            ("2/2が正しく\n「該当なし」", "good"),
+        ],
+        [
+            ("2/2が正しく\n本当の停止\nだけを該当\nに挙げた", "good"),
+            ("2/2が正しく\n本当の停止\nだけを該当\nに挙げた", "good"),
+        ],
+    ]
+
+    for r in range(2):
+        label_lines = row_labels[r].split("\n")
+        for li, line in enumerate(label_lines):
+            parts.append(
+                f'<text class="t-sm" x="18" y="{row_y[r] + row_h / 2 - 14 + li * 16:.1f}">'
+                f"{_esc(line)}</text>\n"
+            )
+        for c in range(2):
+            text, kind = cells[r][c]
+            klass = "box-good" if kind == "good" else "box-bad"
+            tone = "t-good" if kind == "good" else "t-bad"
+            parts.append(
+                f'<rect class="{klass}" x="{col_x[c]:.1f}" y="{row_y[r]:.1f}" '
+                f'width="{col_w:.1f}" height="{row_h}" rx="6"/>\n'
+            )
+            lines = text.split("\n")
+            n = len(lines)
+            start_y = row_y[r] + row_h / 2 - (n - 1) * 9 + 4
+            for li, line in enumerate(lines):
+                parts.append(
+                    f'<text class="{tone}" x="{col_x[c] + col_w / 2:.1f}" '
+                    f'y="{start_y + li * 18:.1f}" text-anchor="middle">{_esc(line)}</text>\n'
+                )
+        if r == 0:
+            parts.append(
+                f'<line class="line" x1="18" y1="{row_y[1] - 7:.1f}" x2="702" '
+                f'y2="{row_y[1] - 7:.1f}" stroke-dasharray="3 3"/>\n'
+            )
+
+    y = row_y[1] + row_h + 20
+    notes = [
+        "誤報が消えたのは正常版だけ。停止版では①②どちらも、本当の停止を2/2で正しく見つけている。",
+        "頻度ごとに基準を分けても、本当の停止を見つける力は落ちなかった。",
+    ]
+    box_h = 18 * len(notes) + 12
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    height = y + 8
+    alt = (
+        "ルール（①固定『2日ルール』・②頻度ごとに分けたルール）を列、材料（正常版・停止版）を行にした"
+        "2行2列の表。正常版×①は1/2が結論で誤報（赤）、もう1/2は読み替えて該当なし。"
+        "正常版×②は2/2が正しく『該当なし』（緑）。停止版×①・停止版×②はどちらも2/2が正しく"
+        "本当の停止だけを該当として名指し（緑）。下の枠には、誤報が消えたのは正常版だけで、"
+        "停止版ではどちらのルールでも本当の停止を2/2で正しく見つけていること、"
+        "頻度ごとに基準を分けても本当の停止を見つける力は落ちなかったことが書かれている。"
+    )
+    (OUT / "cadence-rule-before-after-grid.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def cadence_misfire_rate_before_after_chart() -> None:
+    """正常版での誤報率を、①固定「2日ルール」（前作）と②頻度ごとに分けたルール（今回）で比べる
+    （2026-11-20実測）。
+
+    どちらも同じログ（正常版・本当の停止なし）に対する誤報の回数。
+    """
+    _hit_and_miss_rows_chart(
+        "cadence-misfire-rate-before-after.svg",
+        "正常版での誤報は、①1/2回から②0/2回に減った",
+        "実測2026-11-20。同じ正常版ログ（P5に本当の停止なし）に、①固定『2日ルール』と②頻度ごとに分けたルールを各2回試した。",
+        "①は前作（weekly-cadence-trips-the-two-day-rule）の実測。②は今回、同じログに新しい言い直しを当てた結果。",
+        [
+            ("①固定「2日ルール」のみ（前作・正常版の誤報）", 1, 2, "bad"),
+            ("②頻度ごとに分けたルール（今回・正常版の誤報）", 0, 2, "bad"),
+        ],
+        [
+            "誤報は0件になったが、これは「この1種類の週次処理・各2回」での結果。",
+            "停止版（本当の停止あり）では、①②とも2/2で正しく検出できている（誤報の減少と検出力は両立）。",
+        ],
+        "横棒の一覧表。正常版ログに対する誤報の回数を、①固定『2日ルール』（前作）と②頻度ごとに分けた"
+        "ルール（今回）で比べる。①は2回中1回が誤報で赤。②は2回中0回で緑。"
+        "下の枠には、この結果は1種類の週次処理・各2回に限ること、停止版では両方のルールとも"
+        "2/2で正しく検出できており誤報の減少と検出力が両立していることが書かれている。",
+        label_w=420,
+    )
+
+
+if __name__ == "__main__":
+    cadence_rule_before_after_grid_chart()
+    cadence_misfire_rate_before_after_chart()
