@@ -845,8 +845,33 @@
 
 - [x] https://deepmind.google/blog/introducing-gemini-4-neon/
   - →保管: ✅ **2026-11-19: 公開した** → `content/tools/gemini-4-neon.md`
-- [ ] https://deepmind.google/blog/genie-4-is-now-available/
+- [!] https://deepmind.google/blog/genie-4-is-now-available/
   - 2026-11-18 自動追記（major・Google DeepMind「Genie 4 is now available」）
+  - **2026-11-20 1回目: 記事を書かずに停止した。**理由は「読めない」ではなく「このサイトの型に当てはまらない」
+    （2026-09-18 Sakana FIG 以降、同種の理由で見送ってきた一連の回と同型）。
+
+    **① ページ自体は問題なく読めた**（`deepmind.google` → `blog.google` へ302転送・200。要約させず
+    本文の数字を一つ残らず列挙させて確認した。モデルカード `deepmind.google/models/model-cards/genie-4/`
+    も存在し、同じやり方で確認した）
+
+    **② 比較に使える公式の数字が無い**
+
+    - 新機能はリアルタイム編集・ネイティブ音声・Genie 3側の探索時間延長（60秒→3分）・360度パノラマからの
+      生成・Project Genieエージェント・コミュニティギャラリーで、いずれも定性的な説明のみ
+    - **料金の記載が無い**。Google AI Ultra加入者に順次展開、Google AI Proはウェイトリストのみで、
+      トークン単価・サブスク価格のどちらも本文・モデルカードに書かれていない
+    - **性能はベンチマークの数値が無く**「Genie 3から大きく改善」という定性的な記述のみ。モデルカードの
+      唯一の仕様値は出力720p・最大24fps
+    - CLAUDE.mdの「新しいモデルの記事には他社比較を必ず入れる」が要求する2本の比較のどちらも、
+      公式の数字だけでは満たせない:
+      - ①同じ会社の前モデルとの比較＝**Genie 3のモデルカード自体が存在しない**（`genie-3/` は404）ため、
+        解像度・fpsの前世代比較ができない
+      - ②他社の最上位モデルとの比較＝「対話可能な世界生成モデル」を公式料金ページで比較できる
+        他社製品が見つからない
+    - 💡 **2026-10-28 に同じ Genie 4 の研究プレビュー版が、同じ理由（数字が無い・一般提供前）で
+      すでに見送られている。**今回は一般提供が始まったが、料金・ベンチマークの欠如という停止理由は変わっていない
+    - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
+      仰いでから確定させるのが、これまでの前例に合わせたやり方。
 
 - [ ] https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/
   - 2026-11-19 自動追記（major・Google「Introducing Tool Retrieval in the Gemini API」）
