@@ -1,6 +1,60 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-20T21:11:10.324002+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-20T15:56:21+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add the image_dimensions_too_large error code Bug Fixes bedrock: send the user profile ID in the request body Amazon Bedrock reads user_profile_id from the request body and ignores the …",
+      "title": "v2.12.0",
+      "uid": "2287d084aae87269",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.12.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-20T21:11:10.324002+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-20T10:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "summary_ja": "OpenAIがAIの悪用防止策を発表。\nモデル訓練、保護機能、検出、強制措置で対応。\nAIの企業秘密などが抜き取られるのを防ぐ。",
+      "summary_source": "gemini",
+      "title": "Combatting adversarial distillation",
+      "uid": "874dfe0fa948f6df",
+      "url": "https://openai.com/index/combatting-adversarial-distillation",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-20T21:11:10.324002+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-20T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+      "summary_ja": "Hebbia社がGPT-6 Astraで金融調査の改善を確認。\n事前評価で情報源の網羅性や引用の適切さが向上。\n資料の質も良くなったと報告した。",
+      "summary_source": "gemini",
+      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "uid": "388561e481dfa338",
+      "url": "https://openai.com/business/customer-stories/hebbia",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-20T21:11:10.324002+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-20T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
+      "summary_ja": "AIが新薬開発に役立つかを評価する仕組みが登場。\n「MedChemBench」が分子構造の解釈能力などを検証。\n初期の新薬開発で有望な化合物をAIが選べるか確認。",
+      "summary_source": "gemini",
+      "title": "Can AI help scientists identify promising drug candidates?",
+      "uid": "3e083e622df8b355",
+      "url": "https://openai.com/index/introducing-medchembench",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-20T03:23:59.635463+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -6416,18 +6470,6 @@
       "title": "v2.1.241",
       "uid": "457b4b35027bae37",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.241",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-22T15:37:42.202914+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-22T14:45:30+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Bug fixes and reliability improvements",
-      "title": "v2.1.240",
-      "uid": "31590b4ebb1d3011",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.240",
       "vendor": "Anthropic"
     }
   ]
