@@ -879,6 +879,9 @@
 - [ ] https://sakana.ai/security-research-group/
   - 2026-11-20 自動追記（major・Sakana AI「Introducing Sakana AI’s Security Research Group」）
 
+- [ ] https://sakana.ai/applied-research-lab/
+  - 2026-11-21 自動追記（major・Sakana AI「Introducing the Sakana AI Applied Research Lab」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-neon/ → **公開済み** content/tools/gemini-4-neon.md（2026-11-19・公開）

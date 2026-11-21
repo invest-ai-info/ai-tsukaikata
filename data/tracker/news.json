@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-21T11:13:10.317038+00:00",
+      "importance": "major",
+      "label": "Sakana AI Blog",
+      "published": "2026-11-23T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Introducing the Sakana AI Applied Research Lab",
+      "uid": "cca047e539f9b765",
+      "url": "https://sakana.ai/applied-research-lab/",
+      "vendor": "Sakana AI"
+    },
+    {
       "first_seen": "2026-11-21T02:22:14.226362+00:00",
       "importance": "minor",
       "label": "Claude Code",

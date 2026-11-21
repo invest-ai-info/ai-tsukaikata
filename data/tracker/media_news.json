@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-21T11:13:10.317038+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-21T05:22:15+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "企業が業務で利用するAIサービスの顔ぶれが変わりつつある。従来のように個別のAIサービスを選ぶだけでなく、既存の業務環境に組み込まれたAIを利用する動きも広がっているようだ。",
+      "title": "企業はAIをどう選ぶようになった？　ChatGPT、Copilot、Geminiの勢力図",
+      "uid": "32c49844b6691209",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/21/2000003385/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-21T02:22:14.226362+00:00",
       "importance": "major",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "82dbd92c7a31dbb1",
       "url": "https://japan.cnet.com/article/35254974/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-16T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "クレディセゾンは、わずか1カ月の検証を経てChatGPT Enterpriseの全社一斉導入に踏み切った。経営層の巻き込みと現場の工夫を両立させた、同社の実践的な推進アプローチとは。",
-      "title": "クレディセゾンはなぜChatGPTでROI954％・年169時間削減を達成できたのか",
-      "uid": "8677a3b056e4f993",
-      "url": "https://kn.itmedia.co.jp/kn/article/2611/17/2000003219/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
