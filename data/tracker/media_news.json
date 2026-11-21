@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-21T23:23:39.881316+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-21T21:39:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "生成AI「Claude」を使って数学の難問「リーマン予想」を証明したとする研究成果について、数学の証明をコンピューターで検証するプログラミング言語「Lean」と数学ライブラリー「Mathlib」の開発コミュニティーは11月21日、証明は正しいとする共同声明を発表した。約1700万行のコードを複数の方法で検証し、リーマン予想そのものを証明していると確認した。",
+      "title": "リーマン予想の証明、Lean開発者らが「正しい」と声明　Claudeを使って発見",
+      "uid": "58c14e8fa37a6fa8",
+      "url": "https://japan.cnet.com/article/35255270/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-21T23:23:39.881316+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-21T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "管理職を対象とした勤務先でのAI活用に関する調査では、半数以上が利用されなくなったAIツールや用途があると回答した。背景には、企業独自の判断基準に関わる課題があるようだ。",
+      "title": "AIに必要なのは知識か、企業独自の判断基準か？　管理職調査で見えたAI活用の盲点",
+      "uid": "f1132d33568e11e6",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/22/2000003384/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-21T18:01:37.683955+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "facbc6bfc66dda18",
       "url": "https://ai.watch.impress.co.jp/docs/news/2156278.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-17T00:52:22+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NVIDIAの創業者、ジェンスン・フアン氏のCEOへの復帰を求める公開書簡に、18万人を超える署名が集まっている。",
-      "title": "ジェンスン・フアン氏復帰を求める公開書簡に18万人以上が署名　現役従業員9000人に加えてイーロン・マスク氏らも賛同",
-      "uid": "4cd4cf30f481bb50",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2611/17/2000003249/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-17T00:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "Liberty Dataは、生成AIを活用した図面関連業務の自動化サービス「Liberty図面AI」における新旧図面の差分抽出機能の導入事例を公開した。図面の内容や設計指示の意図を理解し、検図者が優先して確認すべき変更点を判別する機能で、大手自動車メーカーでは検図工数を90％削減したという。",
-      "title": "大手自動車メーカーの検図工数を90％削減　AIが図面の重要な変更点を判別",
-      "uid": "960efb56893f2b49",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/17/news014.html",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
