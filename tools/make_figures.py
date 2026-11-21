@@ -47345,6 +47345,117 @@ def one_sentence_stops_wording_shrink_example_chart() -> None:
     )
 
 
+def target_gap_survives_hit_and_miss_chart() -> None:
+    """4つの条件で、「到達は難しい」という結論を明言した回数を比べる。
+
+    材料A(Webライティング・目標2.08倍)・材料B(SNS運用代行・目標6.67倍)、計16回の実測。
+    実測は docs/evidence/target-gap-survives-the-verdict-does-not.md。
+    """
+    alt = (
+        "4つの条件で、架空の副業実績2種への目標額計画を実測した結果を示す表。素朴に頼んだ(4回)は、"
+        "結論で「難しい」と明言した回数0/4。前向きにと最初から頼んだ(2回)も0/2。差を先に計算させ、"
+        "無い前提を禁じた(6回)は6/6で結論に「難しい」と明言(緑枠)。その後「前向きに」を重ねた"
+        "(同じメッセージ2回+別ターン2回の計4回)は0/4に戻った(赤枠)。下の枠には、差の計算そのものは"
+        "どの条件でも正確だったこと、結論だけが「前向きに」の一言で入れ替わったことが書かれている。"
+    )
+    _hit_and_miss_rows_chart(
+        "target-gap-survives-the-verdict-does-not.svg",
+        "差を計算させるだけなら6/6で「難しい」と言うが、「前向きに」を足すと0/4に戻る",
+        "架空の副業実績2種(目標は現状の2.08倍・6.67倍)に、2か月後の収入目標までの計画を頼んだ実測。",
+        "結論で「到達は難しい」「届く見込みは低い」と明言した回数／試した回数。",
+        [
+            ("素朴に頼んだ(材料A・B各2回)", 0, 4, "good"),
+            ("「前向きに」と最初から頼んだ(各1回)", 0, 2, "good"),
+            ("差を先に計算させ、無い前提を禁じた(各2〜3回)", 6, 6, "good"),
+            ("その後「前向きに」を重ねた(同じ文2回+別ターン2回)", 0, 4, "good"),
+        ],
+        [
+            "差の計算(必要な提案数・成功確率)はどの条件でも正確だったが、結論の厳しさだけが指示文で動いた。",
+            "「前向きに」を一度でも足すと、同じメッセージでも、あとから別メッセージで重ねても、結論は消えた。",
+        ],
+        alt,
+        label_w=430,
+    )
+
+
+def target_gap_verdict_disappears_chart() -> None:
+    """材料Aで、同じ会話の中に「前向きに」を追加しただけで結論が反転した経緯を示す図。
+
+    実測は docs/evidence/target-gap-survives-the-verdict-does-not.md の追い打ちターン。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ会話の中で「前向きに」と頼み直しただけで、結論が反転した</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "材料A(Webライティング・提案14件/受注2件/月24,000円・目標2か月後に月50,000円)。</text>\n",
+    ]
+    y = top
+
+    def row(lines: list, cls: str, h: int) -> None:
+        nonlocal y
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        ty = y + 22
+        for line in lines:
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{ty}">{_esc(line)}</text>\n')
+            ty += 19
+        y += h + 12
+
+    row(
+        [
+            "① 1回目のメッセージ＝差を計算させ、無い前提を禁じ、難しければ難しいと書かせる",
+            "結果：「到達できません。時間を2.5倍に増やせる場合でも難しい目標」。成功確率は約57%（検算とほぼ一致）",
+        ],
+        "box-good",
+        58,
+    )
+    y += 10
+    parts.append(f'<text class="t-xs" x="{box_x + box_w / 2:.1f}" y="{y}" text-anchor="middle">↓ 同じ会話の中で、追加のメッセージを送る</text>\n')
+    y += 20
+    row(
+        [
+            "② 2回目のメッセージ＝「前向きに、達成できる具体的な行動計画を教えてください」とだけ送る",
+        ],
+        "box-accent",
+        36,
+    )
+    row(
+        [
+            "③ 結果＝必要な提案数(35件)・作業時間(45時間)の計算は①と同じまま保たれた",
+            "ところが結びは「今の受注率のままでも、時間さえ確保できれば届きます」「到達は十分に狙えます」",
+            "「難しい」「届きません」という言葉は、この回答のどこにも一度も出てこなかった",
+        ],
+        "box-bad",
+        78,
+    )
+
+    notes = [
+        "受け皿（差を先に計算させる指示）は、計算の手順までは次の指示にも引き継がれなかった。",
+        "「前向きに」の一言は、同じ会話の中で、別のメッセージとして送っても効いてしまう。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "材料A（Webライティング）での崩れ方を示す図。1回目のメッセージ＝差を計算させる指示で「到達は"
+        "難しい」という結論と、成功確率約57%という計算を得た。2回目のメッセージ＝同じ会話の中で"
+        "「前向きに、達成できる計画を」とだけ追加で頼んだ。結果＝必要な提案数などの計算は正しいまま"
+        "保たれたが、結論は「到達は十分に狙えます」に変わり、「難しい」という言葉は一度も出てこなく"
+        "なった。下の枠には、受け皿の指示文は計算のやり方までは次のメッセージに引き継がせるが、"
+        "結論の厳しさまでは引き継がせないこと、前向きさを求める一言は同じ会話の中でも効いてしまう"
+        "ことが書かれている。"
+    )
+    (OUT / "target-gap-verdict-disappears.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    one_sentence_stops_wording_shrink_hit_and_miss_chart()
-    one_sentence_stops_wording_shrink_example_chart()
+    target_gap_survives_hit_and_miss_chart()
+    target_gap_verdict_disappears_chart()
