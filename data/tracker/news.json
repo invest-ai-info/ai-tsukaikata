@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-20T22:32:56+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added sign-in to organizations managed in Anthropic's Enterprise Admin Console: after claude auth login , Claude Code applies the organization's settings and uses its cloud provider or…",
+      "title": "v2.1.330",
+      "uid": "864817081a4418e9",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-20T21:11:10.324002+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -6459,18 +6471,6 @@
       "uid": "cf313473384aa866",
       "url": "/defense-integrated-analysis/",
       "vendor": "Sakana AI"
-    },
-    {
-      "first_seen": "2026-08-23T02:01:45.025281+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-23T00:52:16+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Bug fixes and reliability improvements",
-      "title": "v2.1.241",
-      "uid": "457b4b35027bae37",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.241",
-      "vendor": "Anthropic"
     }
   ]
 }

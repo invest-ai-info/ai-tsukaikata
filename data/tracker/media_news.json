@@ -1,6 +1,78 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "major",
+      "label": "ITmedia AI+",
+      "published": "2026-11-21T00:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "「AIが普及すれば企業の人員は減る」という通説と食い違う調査結果を、IDCが発表した。AI投資で高いROIを得ている組織ほど、今後の増員を見込む割合が高い。AIで成果を出す企業が人員を増やすのはなぜか。",
+      "title": "AIで成果を出す企業ほど「人を増やす」？　“通説”を否定する調査結果をIDCが発表",
+      "uid": "fcaeee045b67b5e9",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2611/21/news003.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-20T23:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "何もかもが次々と止まるのはなぜか。そういう記事を書く時間がなかなか取れずにいた。何もかもが次々と止まるからだ。",
+      "title": "相次ぐシステム障害、AIはどこまで関係しているのか--「12月はさらに深刻に」と専門家",
+      "uid": "9c67b0e3b50f6b59",
+      "url": "https://japan.cnet.com/article/35255244/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-20T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "発電能力を確保するため、ボーイングやエアバスなど民間機で使われ役目を終えた古いジェットエンジンが買いあさられていることが分かりました。 続きを読む...",
+      "title": "退役したジェットエンジンがAIデータセンターの動力源として使われている",
+      "uid": "b1e655e57f618fbb",
+      "url": "https://gigazine.net/news/20261121-jet-engine-ai-power/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-11-20T22:48:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米アンソロピックの数学者Levent Alpöge氏は11月20日、生成AI「Claude」と研究を進め、素数の分布に関わる難問「リーマン予想」の証明を見つけたとする声明を個人サイトで公開した。米マサチューセッツ工科大学（MIT）の研究者は、公開された証明コードが機械検証を通過したと報告した。追加の検証も続いている。",
+      "title": "Claudeを使い「リーマン予想」を証明か　Anthropic数学者が発表　Lean検証も通過、数学界が精査へ",
+      "uid": "fcdc2abd4ebec998",
+      "url": "https://japan.cnet.com/article/35255245/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-20T22:30:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "ドン・キホーテの店頭ポスターやSNSで商品を紹介するAIキャラクター「近藤あい」が、11月23日の勤労感謝の日に正式デビューする。ドン・キホーテを傘下に持つパン・パシフィック・インターナショナルホールディングス（PPIH）が11月19日に発表した。",
+      "title": "ドンキの「AI社員」近藤あい、店頭ポスターやSNSに起用　11月23日正式デビュー",
+      "uid": "44966e84f99d0aaa",
+      "url": "https://japan.cnet.com/article/35255239/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-21T02:22:14.226362+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-20T22:00:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "Googleの有料AIプラン「Google AI Ultra」に付属するYouTube Premiumが、日本でもファミリープランに変更された。従来は契約者本人だけが利用できる個人プランだったが、契約者本人に加え、同居する家族最大5人も追加料金なしで利用できる。",
+      "title": "「Google AI Ultra」のYouTube Premium、同居家族最大5人と共有可能に　日本も対象",
+      "uid": "2be5c37260a87d6e",
+      "url": "https://japan.cnet.com/article/35255226/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-11-20T12:59:25.945778+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2327,78 +2399,6 @@
       "uid": "8677a3b056e4f993",
       "url": "https://kn.itmedia.co.jp/kn/article/2611/17/2000003219/",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-16T22:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIの業務導入が進む一方、本格展開のフェーズで運用体制の抜本的な見直しを迫られる企業が相次いでいる。トークン消費による想定外のコスト膨張や、各国・地域の法規制、データ主権への対応など、ITリーダーが直面する新たな制約とは何か。",
-      "title": "AIの本格運用に潜むトークン消費増とガバナンス負担　企業の約9割が再設計を迫られる実態",
-      "uid": "38ad193996a0b415",
-      "url": "https://kn.itmedia.co.jp/kn/article/2611/17/2000003223/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-16T22:11:17.685915+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-16T21:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "ダッソー・システムズは、年次カンファレンス「3DEXPERIENCE CONFERENCE JAPAN 2026」の開催に併せてプレスブリーフィングを実施した。同社 CEOのパスカル・ダロズ氏が、AIと科学、人間の専門性を融合させた産業AI戦略について説明。バーチャルツインを中核に、物理世界の仕組みを理解し、現実世界の課題解決を支援するAIの実現を目指す。",
-      "title": "「回答するAI」から「現実の課題を解決するAI」へ、ダッソーが掲げる産業AI戦略",
-      "uid": "ef016d10d61871fb",
-      "url": "https://monoist.itmedia.co.jp/mn/articles/2611/17/news025.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-16T22:11:17.685915+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-16T21:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "NTTの島田明社長は11月16日、都内で講演し、宇宙で光通信網を構築する構想を明らかにした。人工衛星同士や地上の通信施設を光信号でつなぎ、高速通信を実現する。宇宙データセンターや月の発電インフラの整備にも乗り出す。",
-      "title": "NTTが宇宙光通信網の構築へ　「IOWN搭載」衛星と宇宙データセンターで米中に挑む",
-      "uid": "47d1e0ccf8bc7994",
-      "url": "https://www.itmedia.co.jp/business/articles/2611/17/news039.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-16T22:11:17.685915+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-16T14:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "ChatGPTなどのAIは文章を作成したり質問に回答したりできますが、その内部でどのような計算が行われているのかを理解するには数学やプログラミングの知識が必要です。そんな大規模言語モデル(LLM)の仕組みを高校1年生向けの数学から順番に学び、Google Colab上で実際に小さなGPTを作ることができる無料教材「microgpt-lesson」です。 続きを読む...",
-      "title": "無料で高校1年生(数学IA履修程度)を対象に大規模言語モデル(LLM)・GPTの仕組みを数学とプログラミングの初歩から順番に作って学ぶ教材「microgpt-lesson」、Google Colabで動作",
-      "uid": "31d2a3af3fc50224",
-      "url": "https://gigazine.net/news/20261116-microgpt-lesson/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-16T22:11:17.685915+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-16T12:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "排ガス規制に適合させるため、Claude CodeとOpenAI Codexで車を修理したという人が詳細を報告しました。 続きを読む...",
-      "title": "ClaudeとCodexで32年落ちのジープをリバースエンジニアリングして修理",
-      "uid": "ba3d9cd1876a474b",
-      "url": "https://gigazine.net/news/20261116-claude-codex-controll-jeep/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-16T11:31:43.556407+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-16T10:29:38+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "日本電気（以下、NEC）とdotDは、AI事業の強化に向け、事業アイデアや研究成果、現場の困りごと、市場ニーズをもとに、新規サービス創出を進める共創体制を発足し、活動を開始する。",
-      "title": "NECとdotD、AI事業強化に向け新規サービス創出を加速",
-      "uid": "76056ba8ba31b261",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2156854.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
