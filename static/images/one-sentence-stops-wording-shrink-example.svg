@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="366" viewBox="0 0 720 366" role="img" aria-label="数字を5つ含む約230字の長い1文を追記した材料Fの実測結果を示す図。入力は「初回ロットは5,000個、単価は1個あたり128円、納期は発注から45日後…」という契約条件の打ち合わせメモ。1回目の出力は入力と1字一句一致し、5,000個・128円・45日後・3件・30日以内という5つの数字すべてが保たれた。2回目の出力も同様に1字一句一致した。日付の判定は2026年6月4日で2回とも正しかった。下の注記には、長い1文・複数の数字を含む材料でも一字一句保持の一文があれば2回とも短縮されなかったこと、この記事が実測したのは1種類の長文のみでもっと長い資料や表形式には別の確認が要ることが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="366"/>
+<text class="t-strong" x="18" y="26">数字を5つ含む約230字の1文でも、2回とも一字一句そのまま残った</text>
+<text class="t-sm" x="18" y="45">材料F（契約条件の打ち合わせメモ）。初回ロット数・単価・納期・指摘件数・支払期日の5つの数字を含む。</text>
+<rect class="box-quiet" x="18" y="100" width="684" height="40" rx="5"/>
+<text class="t" x="32" y="125" style="font-size:11.5px">入力「初回ロットは5,000個、単価は1個あたり128円、納期は発注から45日後…」（約230字）</text>
+<rect class="box-good" x="18" y="150" width="684" height="40" rx="5"/>
+<text class="t-good" x="32" y="175" style="font-size:11.5px">1回目の出力＝入力と1字一句一致（5,000個・128円・45日後・3件・30日以内、すべて保持）</text>
+<rect class="box-good" x="18" y="200" width="684" height="40" rx="5"/>
+<text class="t-good" x="32" y="225" style="font-size:11.5px">2回目の出力＝入力と1字一句一致（同上）</text>
+<rect class="box-quiet" x="18" y="250" width="684" height="40" rx="5"/>
+<text class="t" x="32" y="275" style="font-size:11.5px">日付＝2026-06-04（2回とも正しい。前作から数えて記録最後の行の翌日）</text>
+<rect class="box-accent" x="18" y="300" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="320">📌 長い1文・複数の数字を含む材料でも、一字一句保持の一文があれば2回とも短縮されなかった。</text>
+<text class="t-accent" x="34" y="338">⚠️ この記事が実測したのは1種類の長文のみ。もっと長い資料や表形式には別の確認が要る。</text>
+</svg>

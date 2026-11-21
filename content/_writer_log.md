@@ -46,6 +46,30 @@
 
 ## 記録
 
+### 2026-11-21（自動化・ループ優先枠の回。専任の別ルーティン）
+- `git fetch origin`→HEADが`origin/main`より44コミット遅れていたため、まだ何も書いていないうちに
+  `git checkout main && git reset --hard origin/main`で取り直した
+- `content/_recipe_queue.md`の「🔁自動化・ループ優先」節の未処理を上から確認。1件目
+  「自動追記に『追記する本文も一字一句保つ』の一文を足すと、記録される文面の要約・短縮は止まるか」
+  に着手（`two-days-back-stops-correctly-but-wording-shifts`が提案したが未実測だった言い直し）。
+  `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認。
+  `grep -rl "追記する本文"`で既存候補の丸かぶりが無いことも確認
+- `content/_lessons.md`を通読し、★21（見た目に効かない一文は落ちやすい）・★148（安全策を足すとき
+  既存の正常系を壊していないか同じ材料で確認する）をこの題材向けに適用する設計にした
+- 実測の相手＝★91の順に従い、新規サブエージェント（Agentツール・`general-purpose`）に
+  仮説を伝えずツール不使用で指示文と材料だけを渡す方式を使用。材料6本
+  （制作業・店舗引き継ぎ・設備点検・問い合わせ対応・回帰確認用の一昨日ケース・数字5つを含む長文）
+  ×各2回＝計12回実行し、`docs/evidence/one-sentence-stops-the-wording-shrink.md`に生の返りと
+  機械照合を残した
+- 実測: 本文の一字一句一致＝材料4本＋長文1本の計10回中10回（前作は一文を足す前で8回中5回）。
+  既存の「前日より前を指す語で止める」受け皿の回帰確認＝材料1本・2回とも正しく作動（壊れていない）
+- 公開: 1本（`one-sentence-stops-the-wording-shrink`）
+- 図2枚（`one-sentence-stops-wording-shrink-hit-and-miss.svg`・
+  `one-sentence-stops-wording-shrink-example.svg`）を`tools/make_figures.py`に追加して生成。
+  `src.figures.check_svg`で両方とも崩れ0件を確認
+- `python tools/check_readability.py`（60字以上3%、目安15%以下）・`pytest -q`（795 passed）・
+  `python -m src.build`（413ファイル）すべて通過
+
 ### 2026-11-20（副業枠の回・21:00・3本目・別フォーク担当・今夜の最後）
 - `git pull --rebase origin main`で1本目・2本目公開後の最新状態を取得してから着手
 - 副業節の未処理のうち⏸の付いていない上から3件目（今回で床3件すべて）「副業は『事業所得』か

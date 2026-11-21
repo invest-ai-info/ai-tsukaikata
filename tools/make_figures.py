@@ -47263,6 +47263,88 @@ def income_classification_criteria_chart() -> None:
     )
 
 
+def one_sentence_stops_wording_shrink_hit_and_miss_chart() -> None:
+    """「追記する本文は一字一句そのまま」を足す前と後で、本文の一致率がどう変わったかの図。
+
+    前作（two-days-back-stops-correctly-but-wording-shifts）は8回中5回のみ一致。
+    本記事は新しい一文を足して材料5本×各2回＝10回を実測し、10/10に変わった。
+    あわせて、既存の「前日より前を指す語で止める」受け皿が壊れていないかも材料1本×2回で確認した。
+    実測は docs/evidence/one-sentence-stops-the-wording-shrink.md。
+    """
+    _hit_and_miss_rows_chart(
+        "one-sentence-stops-wording-shrink-hit-and-miss.svg",
+        "「本文は一字一句そのまま」の一文を足すと、一致率は5/8から10/10に変わった",
+        "前作（一文を足す前）の実測は8回中5回のみ本文が一致。今回、一文を足して材料5本×各2回を実測した。",
+        "あわせて、既存の「前日より前を指す語で止める」受け皿が壊れていないかも材料1本×2回で確認した。",
+        [
+            ("前作＝一文を足す前。本文が一致した回数（8回中）", 5, 8, "good"),
+            ("今回＝一文を足した後。本文が一致した回数（材料A・B・C・D・F、計10回）", 10, 10, "good"),
+            ("今回、既存の「止まる」受け皿が壊れていないか（材料E、2回）", 2, 2, "good"),
+        ],
+        [
+            "追記した本文の一字一句は、指示文で明示的に約束させない限り保たれるとは限らない。",
+            "新しい一文を足すときは、それが既存の別のルールを壊していないかも同じ実測で確かめる（★148）。",
+        ],
+        "行ごとの一致率を示す表形式の図。前作（一文を足す前）は本文が一致したのが8回中5回だった。"
+        "今回、追記する本文は入力された文章を一字一句そのまま使ってくださいという一文を指示文に足し、"
+        "材料4本と長文1本の計5本を各2回、合計10回実測したところ、本文が一致した回数は10回中10回に変わった。"
+        "あわせて、既存の「前日より前を指す語が出たら止める」受け皿が新しい一文で壊れていないかを"
+        "別の材料1本で2回確認し、2回とも正しく作動した。下の注記には、追記した本文の一字一句は指示文で"
+        "明示的に約束させない限り保たれるとは限らないこと、新しい一文を足すときはそれが既存の別のルールを"
+        "壊していないかも同じ実測で確かめるべきことが書かれている。",
+        label_w=460,
+    )
+
+
+def one_sentence_stops_wording_shrink_example_chart() -> None:
+    """長文・数字が多い材料Fで、追記後の本文が入力の数字まで一字一句保たれた例を示す図。
+
+    実測は docs/evidence/one-sentence-stops-the-wording-shrink.md の材料F。
+    """
+    box_x, box_w = 18, 684
+    top = 100
+
+    parts: list[str] = [
+        '<text class="t-strong" x="18" y="26">数字を5つ含む約230字の1文でも、2回とも一字一句そのまま残った</text>\n',
+        '<text class="t-sm" x="18" y="45">材料F（契約条件の打ち合わせメモ）。初回ロット数・単価・納期・指摘件数・支払期日の5つの数字を含む。</text>\n',
+    ]
+    y = top
+
+    def row(label: str, cls: str, h: int = 40) -> None:
+        nonlocal y
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="5"/>\n')
+        parts.append(f'<text class="{tcls}" x="{box_x + 14}" y="{y + h / 2 + 5:.0f}" style="font-size:11.5px">{_esc(label)}</text>\n')
+        y += h + 10
+
+    row("入力「初回ロットは5,000個、単価は1個あたり128円、納期は発注から45日後…」（約230字）", "box-quiet", 40)
+    row("1回目の出力＝入力と1字一句一致（5,000個・128円・45日後・3件・30日以内、すべて保持）", "box-good", 40)
+    row("2回目の出力＝入力と1字一句一致（同上）", "box-good", 40)
+    row("日付＝2026-06-04（2回とも正しい。前作から数えて記録最後の行の翌日）", "box-quiet", 40)
+
+    notes = [
+        "📌 長い1文・複数の数字を含む材料でも、一字一句保持の一文があれば2回とも短縮されなかった。",
+        "⚠️ この記事が実測したのは1種類の長文のみ。もっと長い資料や表形式には別の確認が要る。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "数字を5つ含む約230字の長い1文を追記した材料Fの実測結果を示す図。入力は「初回ロットは5,000個、"
+        "単価は1個あたり128円、納期は発注から45日後…」という契約条件の打ち合わせメモ。1回目の出力は"
+        "入力と1字一句一致し、5,000個・128円・45日後・3件・30日以内という5つの数字すべてが保たれた。"
+        "2回目の出力も同様に1字一句一致した。日付の判定は2026年6月4日で2回とも正しかった。下の注記には、"
+        "長い1文・複数の数字を含む材料でも一字一句保持の一文があれば2回とも短縮されなかったこと、"
+        "この記事が実測したのは1種類の長文のみでもっと長い資料や表形式には別の確認が要ることが書かれている。"
+    )
+    (OUT / "one-sentence-stops-wording-shrink-example.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    income_classification_grid_chart()
-    income_classification_criteria_chart()
+    one_sentence_stops_wording_shrink_hit_and_miss_chart()
+    one_sentence_stops_wording_shrink_example_chart()
