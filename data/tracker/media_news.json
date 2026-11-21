@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-21T18:01:37.683955+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-21T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AIエージェントにソフトウェアのバグ修正を任せ、別のAIとやり取りする中で秘密を守れるかどうかを調べる実験を行ったところ、修正方法を教えてもらう代わりに秘密の認証情報を相手に渡すエージェントがいたという実験結果が報告されています。 続きを読む...",
+      "title": "AIエージェントは「仲間のAI」の助けが得られると思うと秘密を漏らしやすくなるという実験結果",
+      "uid": "b13089e6fe080470",
+      "url": "https://gigazine.net/news/20261121-ai-agents-leak-secrets/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-21T11:13:10.317038+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2387,18 +2399,6 @@
       "uid": "960efb56893f2b49",
       "url": "https://monoist.itmedia.co.jp/mn/articles/2611/17/news014.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-16T23:30:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは11月16日、AI生成のものを含む児童性的虐待コンテンツ（CSAM）の可能性がある画像を検出する新ツールを発表した。審査を通過した組織にAPI経由で無料提供する。ChatGPTでも、こうしたコンテンツを探そうとする利用者への警告や、一時的な利用停止を導入する。",
-      "title": "OpenAI、AI生成の児童性的虐待画像も検出　新ツールを審査済み組織に無料提供",
-      "uid": "82dbd92c7a31dbb1",
-      "url": "https://japan.cnet.com/article/35254974/",
-      "vendor": "CNET Japan"
     }
   ]
 }
