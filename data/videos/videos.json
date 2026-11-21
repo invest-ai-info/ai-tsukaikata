@@ -8914,10 +8914,20 @@
    "channel_key": "muttyo",
    "channel_name": "むっちょの副業月5万攻略",
    "default_category": "earn",
-   "description": "今回は「Claude Codeを使って月30万を狙える最新副業」を紹介しました！\n\n👇Higgsfieldの登録はこちら！\nhttps://higgsfield.ai?fpr=8mgmof\n\n【もうすぐ終了】\n超豪華10大特典プレゼントはこちらから👇\n公式LINE→https://utage-system.com/line/open/aaxZUiuDjNl0?mtid=ThLlL7BnJ0dX\n\n━━━━━━━━━━━━━━━━━━\n\n⬇️✨🎁LINE登録超豪華10大特典🎁✨⬇️\n\n特典①：15分で終わる「Claude Code 初期設定 完全ガイド」\n特典②：AIに\"あなた\"を覚えさせる「CLAUDE.md作成GPTs」\n特典③：Claude Codeの「最強の使い方」\n特典④：Claude Codeを使いこなす「20の方法」\n特典⑤：第2の脳を作る「Obsidian連携ガイド」\n特典⑥：Claude Codeの神連携「NotebookLM丸投げキット」\n特典⑦：10分で作れる「AI資料作成 完全再現キット」\n特典⑧：コード不要の「自分専用アプリ開発 完全再現キット」\n特典⑨：30分で完了「Claude Code ひとり起業 完全キット」\n特典⑩：Claude Codeで実装する「AI秘書キット」\n\n━━━━━━━━━━━━━━━━━━\n\n👇プレゼントを受けとる👇\nhttps://utage-system.com/line/open/aaxZUiuDjNl0?mtid=ThLlL7BnJ0dX\n\n━━━━━━━━━━━━━━━━━━\n\n↓オススメ動画はこちら↓\n・Claude Codeを使ったおすすめ副業TOP3\nhttps://youtu.be/aU4BvO8N7_0?si=UsWoMQDrot3n33UI\n\n・Claude Codeでひとり起業を自動化する全手順\nhttps://youtu.be/EVAKuPFvPdo?si=Jx9bemarpOd2chvJ\n\n【0円コミュニティーやってます！】\nhttps://line.me/ti/g2/80uypponCHbi7_sSP_4LiJ-3RcFvxMKRPMSuPA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default\n\n【むっちょのClaude Code攻略チャンネル】\n  https://youtube.com/channel/UCVmHbp7L5_SY7WkG0hSwh0g?si=C-sHQ-vFl0D2iNxS\n\n【むっちょ副業コーチング受講生対談】\n https://youtube.com/@muttyo_Achievements?si=pw5jeqfmIx3x8cme\n\n【X (旧Twitter)】\n➡︎ https://x.com/tanpakun000\n※よりリアルな内容を発信しています。\n\n【お仕事関係のご連絡はこちらまで】\ntanpakun000@gmail.com\n\n目次\n0:00 海外で大バズりしてる最新のClaude Code副業\n0:40 AI動画生成がアツい理由\n2:32 なぜAI動画がおすすめなのか？\n5:44 AI動画生成の5つのマネタイズ方法\n12:33 AI動画生成でマネタイズする4STEP\n\n#claudecode  #おすすめ副業 #Higgsfield",
    "first_seen": "2026-11-19T20:56:38.955367+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Claude CodeやHiggsfield、Sunoを連携させてPR用AI動画を制作し、クライアントワーク等で副業収入を得る方法を解説している。",
+    "企画書の作成からキャラクターシート、絵コンテ作成、動画生成までの手順を、架空のカフェCMを例に実演を交えて説明している。",
+    "案件獲得に向けてポートフォリオを作成し、クラウドソーシングサイトや制作会社への直営業で案件を獲得する流れを紹介している。"
+   ],
+   "for_whom": "生成AIツールを活用して動画制作案件を受注し、副業収入を得たい人",
+   "caution": "月30万円狙えると主張していますが具体的な収益明細などの客観的根拠は示されておらず、公式LINE登録や勉強会への誘導が含まれている点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-21T19:44:35.897318+00:00"
   },
   {
    "video_id": "Lz1UPKyipVA",
@@ -9184,91 +9194,160 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-21T07:39:28.418793+00:00"
+  },
+  {
+   "video_id": "zz2GMZjhbqM",
+   "title": "結局どのAIを使えばいい？Claude/ChatGPT/Gemini/Grokの使い分けや実際の活用方法を解説してみた",
+   "url": "https://www.youtube.com/watch?v=zz2GMZjhbqM",
+   "published": "2026-11-21T09:00:13+00:00",
+   "channel_key": "nyanta",
+   "channel_name": "にゃんたのAIチャンネル",
+   "default_category": "tech",
+   "first_seen": "2026-11-21T19:44:35.897318+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は5つの有料AIサービスに課金しているが、日常的に愛用しているのはClaude、ChatGPT、Aqua Voiceの3つだと説明している。",
+    "資料の読み込みや図解レポート作成にはClaude Opus 5.5を使い、精度の高い情報検索やPCの操作にはChatGPTを使い分けていると紹介している。",
+    "高精度な音声入力アプリのAqua Voiceと連携させ、スマホからPC上のClaude Codeを遠隔操作して作業を効率化する方法を解説している。"
+   ],
+   "for_whom": "複数の生成AIツールの使い分けや、仕事での具体的な連携・活用法を知りたい人",
+   "caution": "概要欄にて書籍の紹介や、特典配布を伴う公式LINEへの登録誘導、Udemy講座への案内が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-21T19:44:35.897318+00:00"
+  },
+  {
+   "video_id": "-vlfdARcxqs",
+   "title": "Muse完全解説【これ1本で全てわかる】無料で十分使えるMeta AI活用",
+   "url": "https://www.youtube.com/watch?v=-vlfdARcxqs",
+   "published": "2026-11-21T09:00:20+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-11-21T19:44:35.897318+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は、MetaのAIエージェント「Muse」は回答するだけでなく、クラウド上で自律してブラウザ操作や作業代行を行うツールだと解説している。",
+    "無料プランでも専用クラウドPCや各種連携が利用でき、一般的な調査や画像作成なら無料枠で十分活用できると述べている。",
+    "「スペース」機能を使うことで、自然言語の指示を一言入力するだけで自分専用の家計簿アプリなどを自動作成できると紹介している。"
+   ],
+   "for_whom": "MetaのAIエージェント「Muse」を使って日々の作業や情報収集を自動化したい人",
+   "caution": "動画内で案内されているプロンプト集や解説資料を受け取るには、概要欄にある公式LINEへの登録が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-21T19:44:35.897318+00:00"
+  },
+  {
+   "video_id": "voPU8lQXhHE",
+   "title": "【待望】今勢いのあるAgent型IDEのOrcaから、『Orca Bots』が登場！AI秘書が熱いので徹底解説",
+   "url": "https://www.youtube.com/watch?v=voPU8lQXhHE",
+   "published": "2026-11-21T09:05:20+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-21T19:44:35.897318+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "エージェント型IDEのOrcaに追加された「Orca Bots」の仕組みと特徴を解説している。",
+    "手元のClaude Code等を包み込み、Slack連携や定期実行を可能にする構成を紹介している。",
+    "クラウド完結型と異なりローカルPCを起動させて動かす前提の設計であると説明している。"
+   ],
+   "for_whom": "AIエージェントを活用した開発自動化や環境構築に関心があるエンジニア向け",
+   "caution": "動画の終盤および概要欄にて、noteの有料メンバーシップや外部勉強会への誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-21T19:44:35.897318+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-21T07:39:28.418793+00:00",
+   "last_ok": "2026-11-21T19:44:35.897318+00:00",
    "fail_streak": 0
   }
  }
