@@ -8773,10 +8773,20 @@
    "channel_key": "keito",
    "channel_name": "KEITO【AI&WEB ch】",
    "default_category": "tech",
-   "description": "Gemini 4 Neonは、安さと仕上がりを両立できるのか。GPT・Claudeにも同じ指示を送り、ゲームやWebサイト、動画を作って比べます。制作時間と推定費用に加え、Canvaのマウス操作も検証。実際の成果物から、用途ごとの使い分けを考えます。\n\n▼KEITOの公式LINEはこちら\nLINE：https://lin.ee/1krnxOu\n\n▼プロセボ｜AIコミュニティ\nAI活用を実際に操作しながら学ぶワークショップ型AIスクール。\n参加申し込みはこちら → https://procevo.biz/\n\n▼KEITOの著書\nhttps://keitoai.dev/books/\n\n▼目次\n00:00 今回の検証内容と比較する4モデル\n01:23 Gemini 4 Neonの特徴・料金・使える場所\n03:42 SVGイラストの仕上がりと費用を比較\n04:40 ゲーム比較① Gemini 4 Neon\n07:06 ゲーム比較② GPT-6.2 Astra\n08:41 ゲーム比較③ Claude Fable 5.2\n10:10 ゲーム比較④ Claude Opus 5.5\n11:32 3Dの地球を作って比較\n16:28 Webサイト・LPのデザインを比較\n20:38 コードだけで作った広告動画を比較\n23:20 Canvaをマウス操作して富士山を描く\n25:04 各モデルにオリジナルコンテンツを作らせる\n27:15 制作時間・推定費用の比較と総括\n28:08 Gemini・Antigravityでの使いどころ\n\nチャンネルのメンバーになって特典にアクセス\nhttps://www.youtube.com/channel/UCfapRkagDtoQEkGeyD3uERQ/join\n\n▼おすすめ動画\nGemini Decision 1やHydrogen・Argon・Carbonの違いを解説\nhttps://www.youtube.com/watch?v=6TZwJ_A-oc0\nGemini最上位モデル『Gemini 4 Carbon』きた！\nhttps://www.youtube.com/watch?v=rqgukLCtJnQ\nClaude Fable 5.2が凄いらしい。\nhttps://www.youtube.com/watch?v=x7hmExbBghY\nGeminiのAntigravityがClaude Codeレベルになってた\nhttps://www.youtube.com/watch?v=8XDnuwPsmTM\nGeminiの『スキル』を徹底解説\nhttps://www.youtube.com/watch?v=LXhrdpm7hKQ\n\n完全無料｜日本最大級の生成AIコミュニティ\n情報共有・無料講義・交流など。生成AIを学びたい、生成AIをビジネスにしたい、生成AIで仲間を見つけたい方は是非ご参加下さい。\n参加申し込みはこちら → https://sozo-collabo.hp.peraichi.com/\n\n\\\\　自己紹介　//\nAI × WEB YouTuber 兼 制作ディレクター。\nこのチャンネルではChatGPTや画像生成AIなどの生成系AIツールの活用方法や、新しいAI系ツールを紹介。その他ITに関する便利ツールや情報も発信しています。役に立った！面白かった！と思って頂けたら是非チャンネル登録お願い致します。\n\nAIを使ったサービス・仕組みのプロデュース。生成AIを活用した業務改善コンサルタント、講義やセミナーなどの登壇、AIやIT関連に",
    "first_seen": "2026-11-19T20:56:38.955367+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemini 4 NeonをGPT-6.2 AstraやClaude各種モデルと同一プロンプトで比較検証している。",
+    "ゲーム開発やLP作成などにおいて、Gemini 4 Neonは低コストかつ十分な品質で動作すると述べている。",
+    "クリエイティブ系の成果物ではClaude系、コンピュータ操作ではGPT系が優れる場面もあると分析している。"
+   ],
+   "for_whom": "各AIモデルの生成品質やAPIコストの差を比較検討したい人",
+   "caution": "概要欄で公式LINE登録や有料コミュニティ・スクールへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T07:24:16.990286+00:00"
   },
   {
    "video_id": "Cy7Wz6Z4TWU",
@@ -8832,10 +8842,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "▼ 記事はこちら\nhttps://media.masao.ai/gemini-4-neon-usage/?utm_source=youtube&utm_medium=description&utm_campaign=vhN-z6ENeTM\n\nGoogle から Gemini 4 Neon が登場したので、公式の発表と、実際に使ってみた結果をまとめて話しました。\n\n\n個人的には、出力の映えがすごいというよりは、スマートに押さえるところを押さえていて使いやすいモデルやなという印象です。使い分けは「まず Hydrogen、足りなければ Neon」かなと思っています。\n\n※今回は出張中のため、読み上げは本人の声から作った AI 音声（AI まさお）でお届けしています。\n\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n目次\n00:00 Gemini 4 Neon が登場\n01:36 位置づけ: Hydrogen と Carbon の間 / Artificial Analysis / Argon の扱い / どこで使えるか\n08:30 料金と仕様: 入力 $3・出力 $15 / thinking level\n12:21 公式ベンチマーク: 19 行中 16 行の中身\n16:27 安全性とサイバー防御向けの版\n18:53 使い分け (公式の話のまとめ)\n19:18 実験: 動画と音声を渡して Hydrogen と比べた\n26:26 実験: エフォート別の比較と速さ\n32:24 いつものデモ 25 問 (Opus 5.5 と比較)\n51:39 Hydrogen・Carbon との傾向の違い\n56:02 まとめと総評\n57:50 メンバーシップのご案内\n\n断り書き\nデモ 25 問の Gemini 4 Neon は Cursor CLI 経由・thinking level は xhigh。点数は LLM ジャッジ (Claude Opus 系) による 1 問 1 回の評価で、モデルごとに使った CLI が違います。参考程度にご覧ください。\n動画・音声の実験は、動画 1 本・各 1〜3 回の結果です。\n参考リンク\nGoogle 公式ブログ \"Introducing Gemini 4 Neon\"\nGemini 4 Neon モデルカード / Gemini API ドキュメント\nCursor の告知: https://x.com/cursor_ai/status/2123198346802450926\nArtificial Analysis: https://artificialanalysis.ai/models/gemini-4-neon\n\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_masaou?sub_confirmation=1\n\n-----\n\n■公式サイト\nhttps://masao-ai.web.app/\n■X(旧Twitter)\nhttps://x.com/ai_masaou\n■note(ブログ)\nhttps://note.com/masa_wunder\n■z",
    "first_seen": "2026-11-19T20:56:38.955367+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者は、Gemini 4 NeonがHydrogenとCarbonの中間に位置し、公式ベンチマークで高い性能を示していると紹介している。",
+    "投稿者は、料金は入力3ドル・出力15ドルで、12月以降はCarbonより単価が安くなる設定だと説明している。",
+    "投稿者は、動画や音声の検証ではHydrogenと精度差が小さく、まずはHydrogenを試して不足ならNeonを使う運用を推奨している。"
+   ],
+   "for_whom": "Gemini 4各モデルの使い分けや、業務でのAIモデル選定を検討している人。",
+   "caution": "概要欄でnoteのコミュニティ（メンバーシップ）への誘導が行われているため、参加を検討する場合は提供内容や費用をよく確認してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T07:24:16.990286+00:00"
   },
   {
    "video_id": "ikNf7eW8CHk",
@@ -8937,10 +8957,20 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=6Q9eAhFs36\n※もしLINE登録が上手く行かない方は「@828wrlzg」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n💬【LINEスタンプのタグ設定・作り方・売り方をもっと知りたい方へ】\n今回は、丁寧な返事と動いた先の本音を組み合わせた、動くLINEスタンプの作り方を紹介しました。\n本編で案内したタグ設定の解説は、下の1本目です。このチャンネルの関連回もまとめています↓\n\n▼本編で案内したタグ設定の解説はこちら。LINEスタンプ・ステッカー・楽天ROOMをつなぐ回\nhttps://youtu.be/pp2BeVbwHOk\n\n▼本音を敬語で包むスタンプ。絵を作るだけでなく、タグ設定や出品後まで見せた回\nhttps://youtu.be/xWXMXUyjzME\n\n▼ファンがいない状態から、どう売る？リスナー7人の検証で見えた制作と販売の手順\nhttps://youtu.be/8ys-TVcolAw\n\n▼使った相手から次の買い手へ。LINEスタンプの広がり方と、送られる絵の作り方\nhttps://youtu.be/WClEnKzE7L0\n\n▼どんな言葉をスタンプにする？AIでアイデアを出し、選んでいく制作の基本\nhttps://youtu.be/TEHVudFziBc\n\n▼LINEスタンプ・ステッカー・塗り絵。Canvaで作る副業3つを比較した回\nhttps://youtu.be/p1q79a2W55I\n\n▼人生経験を自分の収入に変える。LINEスタンプを含む在宅ワーク3つを紹介した回\nhttps://youtu.be/lOTJgbjeLPc\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=6Q9eAhFs36\n\n--------------------------\n\n【動画の目次】\n\n00:00 飲み込んだ本音が売り物に。動くLINEスタンプで月62万に届いた話\n03:26 今日使うAIと作業の流れ。審査に出した後では直せない注意点\n05:53 言っても無駄だから、何も言わない。職場で飲み込んだ本音はどこへ行くのか\n09",
    "first_seen": "2026-11-19T20:56:38.955367+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "動くLINEスタンプで稼ぐには、静止時の丁寧な建前と動いた際の本音を組み合わせるダブルミーニングの手法が重要だと主張している。",
+    "Claudeを使って日常で飲み込んだ本音から案を出し、Grok Imagineでキャラクター画像とアニメーションを生成する手順を解説している。",
+    "審査基準に抵触してアカウント停止されないよう、他者への攻撃ではなく自分自身が崩れるコミカルな表現にすることが大切だと説明している。"
+   ],
+   "for_whom": "生成AIを活用して動くLINEスタンプの制作や販売副業に挑戦したい人",
+   "caution": "動画内で月62万円稼いだ等の実績が語られていますが客観的な裏付け画面は提示されていません。また概要欄から特典配布を名目とした公式LINEへの誘導が行われています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T07:24:16.990286+00:00"
   },
   {
    "video_id": "OSHSopaYjTw",
@@ -9263,91 +9293,114 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-21T19:44:35.897318+00:00"
+  },
+  {
+   "video_id": "BjNGEgO7Alg",
+   "title": "注目AIニュース17選～Anthropic上場は成功？、AI社員は月いくら？、Copilot・GPT-6.2・Gemini Notebook最新動向など",
+   "url": "https://www.youtube.com/watch?v=BjNGEgO7Alg",
+   "published": "2026-11-22T06:00:27+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "first_seen": "2026-11-22T07:24:16.990286+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Gemini Tasksの無料展開やGemini Notebookでのサイト生成機能など、Googleの最新ツール機能を紹介している。",
+    "GPT-6.2やGemini 4 Neonなど新モデルの性能ベンチマークと、業務利用におけるコストパフォーマンスを比較解説している。",
+    "Microsoft Igniteで発表された自律型AI「Autopilot」の仕組みや、AI社員の業務別想定コストを解説している。"
+   ],
+   "for_whom": "最新の生成AIツールや自律型エージェントの動向・費用感を把握したいビジネスパーソン。",
+   "caution": "概要欄で自著や有料研修、AIコーチングサービスへの案内が含まれています。また、動画内で示されているAI社員の運用費用は公式発表や試算に基づく目安です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T07:24:16.990286+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-21T19:44:35.897318+00:00",
+   "last_ok": "2026-11-22T07:24:16.990286+00:00",
    "fail_streak": 0
   }
  }
