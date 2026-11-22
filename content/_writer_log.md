@@ -46,6 +46,23 @@
 
 ## 記録
 
+### 2026-11-22（21:00の枠・副業担当）
+- `git fetch origin`→HEADはorigin/mainと一致済み（取り直し不要）
+- `content/_recipe_queue.md`冒頭「🔢 1晩の本数」「担当が守ること」「### 副業」節を読んだ。
+  副業の節の未処理（⏸を除く）は**2件のみ**（床3件を下回る）。ChatGPT・Gemini比較の1件は
+  この環境にログイン済みブラウザが無く⏸のまま。報告にそのとおり書く
+- `content/_lessons.md`を通読（10265行・全節）。特に★1・★37・★98・★101・★122・★177
+  （受け皿は作るだけでなく置き場所まで指定する系列）を、誤った前提を指示文に書く今回の実測の
+  下敷きにした
+- `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認
+- 公開: 1本（`mixed-invoice-withholding-holds-until-told-exempt`）。`withholding-formula-holds-for-other-fee-types`
+  が残した宿題（複数の報酬種別が1枚の契約書に混在する場合は未検証）に答えた
+- 実測: `claude --print --safe-mode --tools ""`（Claude Code CLIを非対話モードで起動。
+  カスタマイズ非読込・1回につき新規プロセス）。架空の請求書7パターンに同じ指示文を送り、
+  計21回＋言い直し3回＋応用2回＝合計26回
+- 2件目（実績紹介文、案件が4件に増えると社外秘はどこで漏れるか）には着手していない
+  （1本の実測を厚くかけたところで区切った）。ノルマの3本には届いていない
+
 ### 2026-11-22（自動化・ループ優先枠の回。21:00の副業担当とは別枠）
 - `git fetch origin`→HEADが古いmainを掴んでいた（履歴がforce updateされていた）ため、
   `git checkout -B main origin/main` で取り直した。以後は`origin/main`（`d2bc4e99`）と一致
