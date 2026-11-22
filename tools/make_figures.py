@@ -47456,6 +47456,145 @@ def target_gap_verdict_disappears_chart() -> None:
     )
 
 
+def stage1_broaden_removes_collateral_chart() -> None:
+    """工程1の基準を広げると、材料ごとの拾い漏れと工程2の巻き添えがどう動いたか。
+
+    実測（2026-09-20・独立のサブエージェント、架空の問い合わせ16件を2本・各2回）。
+    値は docs/evidence/widen-stage1-clears-the-collateral.md の「照合（機械）」節から。
+    """
+    groups = [
+        ("材料A・広げた工程1が拾った至急（7件中）", 7, 7, "box-good", "t-good", "2回とも7件全部を正しく拾った"),
+        ("材料B・広げた工程1が拾った至急（7件中）", 6, 7, "box-bad", "t-bad", "「そろそろ始まる」の1件だけ2回とも拾えず"),
+        ("工程2（確認なしの並べ替えのみ）の巻き添え除外（4回中）", 0, 4, "box-good", "t-good", "広げた工程1の出力には誤りが無く、消す必要も無かった"),
+    ]
+    top = 150
+    bar_h = 40
+    pitch = bar_h + 40
+    plot_x, plot_w = 300, 340
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "工程1の基準を広げたら、工程2の確認なしでも巻き添えは消えた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "架空の問い合わせ16件を2本、独立のサブエージェントで各2回=4回（材料2本×2回）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "材料Aは言い換えを含め全部拾えたが、材料Bは1種類の言い方だけ毎回拾い漏れた。</text>\n",
+        '<text class="t-xs" x="18" y="83">'
+        "生の返りは docs/evidence/ に全文置いてある。</text>\n",
+    ]
+
+    for index, (label, val, n, box, tone, note) in enumerate(groups):
+        y = top + index * pitch
+        w = plot_w * (val / n) if n else 0
+        parts.append(f'<text class="t-sm" x="18" y="{y - 8}">{_esc(label)}</text>\n')
+        parts.append(
+            f'<rect class="box" x="{plot_x}" y="{y}" width="{plot_w}" height="{bar_h}" rx="4"/>\n'
+        )
+        if w > 0:
+            parts.append(
+                f'<rect class="{box}" x="{plot_x}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4"/>\n'
+            )
+        text = f"{val}/{n}"
+        tx = plot_x + plot_w + 14
+        parts.append(
+            f'<text class="{tone}" x="{tx}" y="{y + bar_h / 2 + 5:.0f}">{text}</text>\n'
+        )
+        parts.append(
+            f'<text class="t-xs" x="{plot_x}" y="{y + bar_h + 15}">{_esc(note)}</text>\n'
+        )
+
+    height = top + (len(groups) - 1) * pitch + bar_h + 34
+    alt = (
+        "工程1の基準を広げた結果を示す横棒グラフ。材料A（丁寧な長文）では、独立の実測2回とも"
+        "至急7件中7件を正しく拾い、拾い漏れは0件だった。材料B（口語の社内チャット）では、"
+        "2回とも7件中6件しか拾えず、「そろそろ始まる」という言い方の1件だけが毎回拾い漏れた。"
+        "工程2に「本当に該当するか確認して」という一言を足さず、確認なしの並べ替えだけを渡した"
+        "4回では、広げた工程1の出力に誤りが無かったため、正しい項目を誤って除外する巻き添えは"
+        "0/4回だった。"
+    )
+    (OUT / "stage1-broaden-removes-collateral.svg").write_text(
+        _svg(height, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+def stage1_broaden_before_after_flow() -> None:
+    """旧設計（工程2で確認）と、今回（工程1を広げる）の作りの違いを並べる。
+
+    実測は docs/evidence/widen-stage1-clears-the-collateral.md と、
+    参照元の docs/evidence/doubt-fixes-added-not-dropped.md。
+    """
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "直す場所を工程2から工程1へ移すと、巻き添えそのものが起きなくなる</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "2026-09-19の実測（旧設計）と、2026-09-20の実測（今回）を並べたもの。</text>\n",
+    ]
+    y = top
+
+    def row(lines: list, cls: str, h: int) -> None:
+        nonlocal y
+        tcls = "t-good" if cls == "box-good" else ("t-bad" if cls == "box-bad" else "t")
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        ty = y + 22
+        for line in lines:
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{ty}">{_esc(line)}</text>\n')
+            ty += 19
+        y += h + 12
+
+    row(
+        [
+            "旧設計：工程1は「至急」などの語の有無だけで判定し、基準は狭いまま",
+            "工程2に「本当に該当するか確認して」を足すと、健全な5件だけでも4/4で1件を誤って除外",
+        ],
+        "box-bad",
+        58,
+    )
+    y += 10
+    parts.append(f'<text class="t-xs" x="{box_x + box_w / 2:.1f}" y="{y}" text-anchor="middle">↓ 直す場所を工程2から工程1へ移す</text>\n')
+    y += 20
+    row(
+        [
+            "今回：工程1に「語が無くても、締切の近さなら今日中に含める」を追加",
+            "材料Aは7件中7件を回収。工程2は確認なしでも4回とも0件除外（巻き添え消失）",
+        ],
+        "box-good",
+        58,
+    )
+    row(
+        [
+            "ただし材料B（口語）では「そろそろ始まる」という言い方だけ、2回とも拾えなかった",
+            "「明日の朝一」型の言い換えは拾えても、「まもなく」型の言い換えは言い方次第で抜ける",
+        ],
+        "box-bad",
+        58,
+    )
+
+    notes = [
+        "基準を広げる効果は、言い方の種類ごとに別々に確かめないと、抜けたまま気づかない。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "旧設計と今回の設計の違いを示す図。旧設計＝工程1は「至急」などの語の有無だけで判定し、"
+        "工程2に「本当に該当するか確認して」を足すと、健全な5件だけを渡した回でも4回中4回で"
+        "正しい項目を1件誤って除外した。今回＝工程1の指示文に「語が無くても、締切の近さなら"
+        "今日中に含める」を追加したところ、材料A（丁寧な長文）は7件中7件を回収し、工程2は"
+        "確認なしの並べ替えだけでも4回とも0件除外で巻き添えが消えた。ただし材料B（口語）では"
+        "「そろそろ始まる」という言い方の1件だけ、2回とも拾えなかった。下の枠には、基準を"
+        "広げる効果は言い方の種類ごとに別々に確かめないと、抜けたまま気づかないと書かれている。"
+    )
+    (OUT / "stage1-broaden-before-after.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
 if __name__ == "__main__":
-    target_gap_survives_hit_and_miss_chart()
-    target_gap_verdict_disappears_chart()
+    stage1_broaden_removes_collateral_chart()
+    stage1_broaden_before_after_flow()
