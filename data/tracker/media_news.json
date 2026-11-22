@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-22T21:50:43.794570+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-22T21:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "メルカリグループが業務で利用する「Notion AI」で、チャット記録の一部が外部に流出した可能性があることが公表された。AI処理を委託企業では、外部クラウド事業者への侵害や認証情報の窃取、サービスの脆弱性を悪用した不正アクセスが確認された。",
+      "title": "メルカリの情報流出、AI委託先で何が起きた？　確認された2つの攻撃",
+      "uid": "9214ce1060c90bbc",
+      "url": "https://kn.itmedia.co.jp/kn/article/2611/23/2000003393/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-22T15:24:03.087513+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "030fe209dbbf1f42",
       "url": "https://www.itmedia.co.jp/enterprise/articles/2611/17/news015.html",
       "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-17T02:30:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "アメリカ商務省の産業安全保障局(BIS)は2026年11月16日、中国などの企業が第三国のデータセンターを経由して高性能なAIチップを遠隔利用することを制限する新たな規則を発表しました。従来の半導体輸出規制ではカバーできなかったクラウド経由での計算資源の利用を規制することで、先端AI技術の流出を防ぐ狙いがあります。 続きを読む...",
-      "title": "中国からアメリカ製AIサーバーへのリモートアクセスを制限する新規則をアメリカが策定、輸出規制を回避するクラウドレンタルの抜け穴に対抗",
-      "uid": "39393bf43213fc5d",
-      "url": "https://gigazine.net/news/20261117-bis-issued-rule-cloud-access-from-china/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

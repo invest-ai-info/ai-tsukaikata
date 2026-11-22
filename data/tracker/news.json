@@ -13,6 +13,20 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-11-22T21:50:43.794570+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-22T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "summary_ja": "AIの進歩を測る指標「パープレキシティ」を解説\nAIモデルの性能向上の測定方法を提示。\n開発者が新しいAIの能力を評価する共通基準の確立に貢献。",
+      "summary_source": "gemini",
+      "title": "Perplexity and Intelligence",
+      "uid": "7abe021a52f03442",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-21T02:22:14.226362+00:00",
       "importance": "minor",
       "label": "Claude Code",
