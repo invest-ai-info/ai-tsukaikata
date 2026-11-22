@@ -9316,91 +9316,196 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-22T07:24:16.990286+00:00"
+  },
+  {
+   "video_id": "4MDVvQRB0sQ",
+   "title": "【お知らせ】今すぐAIを武器にする！企業向け1day実践AI活用ワークショップ",
+   "url": "https://www.youtube.com/watch?v=4MDVvQRB0sQ",
+   "published": "2026-11-22T09:10:29+00:00",
+   "channel_key": "saki",
+   "channel_name": "【さき】のAIでええやん。",
+   "default_category": "tech",
+   "first_seen": "2026-11-22T19:56:29.980966+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "日常業務をAIで自動化する「AI社員」を作成する法人代表者やAI担当者向けの1日研修を開催すると発表している。",
+    "研修では安全な設定や業務の棚卸しを行い、ChatGPTやClaudeを用いて各自の業務に特化したAIを構築すると説明している。",
+    "新宿でのオフライン開催とZoomによるオンライン開催があり、実務への適合性を事前アンケートで確認した上で実施すると述べている。"
+   ],
+   "for_whom": "自社の日常業務をAIで効率化・自動化したい企業経営者やAI推進担当者",
+   "caution": "有料の1day研修（動画内の案内では49,800円）への申し込みを促す動画です。参加にはChatGPTまたはClaudeの有料プラン契約やパソコンの準備が必要とされています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T19:56:29.980966+00:00"
+  },
+  {
+   "video_id": "xxAAe2bkHno",
+   "title": "【今週のAIツール・ニュース総まとめ】OpenAIの最新AIモデル「GPT-6.2 Astra」と「GPT-6.2 Sol」/Googleの最新AIモデル「Gemini 4 Neon」など",
+   "url": "https://www.youtube.com/watch?v=xxAAe2bkHno",
+   "published": "2026-11-22T09:05:13+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-22T19:56:29.980966+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIの最新モデルGPT-6.2 AstraとSol、GoogleのGemini 4 Neonなど最新AIツールの特徴を紹介している。",
+    "ChatGPTの音声入力やClaude Codeの新機能、SunoのMCP一般公開など主要ツールのアップデートを解説している。",
+    "Anthropicのナスダック上場やNVIDIAの好決算、ElevenLabsによる国内企業買収など今週のAIニュースを報告している。"
+   ],
+   "for_whom": "最新のAIモデル動向や主要ツールの新機能アップデートを短時間で把握したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T19:56:29.980966+00:00"
+  },
+  {
+   "video_id": "mya3LdVJQ3U",
+   "title": "【完全解説】GrokBOTの基礎から実践活用までこれ一本！王道の使い方からハーネスの本質まで",
+   "url": "https://www.youtube.com/watch?v=mya3LdVJQ3U",
+   "published": "2026-11-22T11:00:38+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-22T19:56:29.980966+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "クラウド上のパソコンで作業を行うAIエージェント「Grok Bot」の特徴や、Premiumプラン以上で使える始め方を説明している。",
+    "最初は1体のbotに1つの仕事を任せ、Google等の連携アプリやスキルを段階的に追加していく運用手順を勧めている。",
+    "bot同士の会話で使用量枠が早く消費される問題や、送信・削除などの重要操作を人間が承認する安全設定について解説している。"
+   ],
+   "for_whom": "Grok Botを活用して日常業務の自動化やタスク管理を進めたい会社員",
+   "caution": "概要欄で無料勉強会や有料のnoteメンバーシップコミュニティへの誘導が行われている点には留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T19:56:29.980966+00:00"
+  },
+  {
+   "video_id": "jnHE45z1l2E",
+   "title": "【超巨大データベースでヌルゲーに】月間売上100万！宣伝ゼロ・1日たった13分でOK！俺とっておきの放置ゲーム制作＆販売手順を全部公開【副業 AI おすすめ 在宅ワーク ChatGPT】",
+   "url": "https://www.youtube.com/watch?v=jnHE45z1l2E",
+   "published": "2026-11-22T09:00:04+00:00",
+   "channel_key": "haruto",
+   "channel_name": "Haruto｜AI自動化副業ラボ",
+   "default_category": "earn",
+   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=kovXfjhR5R\n※もしLINE登録が上手く行かない方は「@285mffvp」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🎮【AIでアプリを作る・売る方法と、指示の出し方をもっと知りたい方へ】\n今回は、AIと企画を練り、絵とゲーム本体を分担して作って、BOOTHで販売するところまで紹介しました。\nこのチャンネルの、アプリ開発・AIを使う仕事・商品作りの関連回もどうぞ↓\n\n▼Grokで需要を探し、Google Opalで形にする。コードを書かずにアプリを作って売る回\nhttps://youtu.be/Ew-PTJ-XlH4\n\n▼AIに相手の業務を学ばせる。作った仕組みを仕事として届けるAI代行の回\nhttps://youtu.be/nvQDij3oKzo\n\n▼データ入力・データ作成をAIと進める。企業の困りごとから仕事を見つける回\nhttps://youtu.be/l0GFLk3rII8\n\n▼思ったものができないときの聞き方。AIに質問させ、自分の案を見直させる制作テクの回\nhttps://youtu.be/frSmfnOfG8I\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=kovXfjhR5R\n\n--------------------------\n\n【動画の目次】\n\n00:00 AIと作る放置ゲーム副業。コードを書かず、売る側に回る\n01:17 休んでも収入が止まらない副業とは。AI記事の受注と、ゲーム販売の違い\n02:28 スーパーの仕事をゲームに。閉じている間も進む試作品を見せます\n03:26 熱を出して仕事を休んだ日、お金はどこから出る？別の収入を作る理由\n05:21 BOOTHの放置ゲーム売り場を確認。並んでいる作品と、試した直近1ヶ月の売上\n07:55 Grokで国内外のトレンドを調べる。放置ゲームと相性のいい題材を探す\n09:30 ゲーム本体を作るAIを選ぶ。いきなり作らせず、先にルールを表にする\n11:01 年代や性別から仮想客を決める。同じ題材でも競合と重なりにくくする方法\n12:55 花の精霊を集",
+   "first_seen": "2026-11-22T19:56:29.980966+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Ce_wXQ1BJjE",
+   "title": "He Scaled a Reddit Micro-SaaS to $40K/Month",
+   "url": "https://www.youtube.com/watch?v=Ce_wXQ1BJjE",
+   "published": "2026-11-22T18:00:38+00:00",
+   "channel_key": "starter-story",
+   "channel_name": "Starter Story",
+   "default_category": "earn",
+   "first_seen": "2026-11-22T19:56:29.980966+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "Filip氏がReddit上で自社製品を自動推薦・マーケティングするツール「Bazzly」を開発し収益化した経緯を紹介している。",
+    "開発先行で失敗した経験から、事前検証や解約ユーザーへのヒアリングによるファネル改善を重視したと説明している。",
+    "影響力のある創業者との提携や招待制の導入で品質を保ち、MRRを大きく成長させた戦略を解説している。"
+   ],
+   "for_whom": "AIツールやマイクロSaaSを開発して収益化を目指す個人開発者や起業志望者",
+   "caution": "月間収益4万ドルへの急成長は出演者の主張による実績例であり、同様の成果が保証されるものではありません。また概要欄には関連サービスやデータベースへの誘導が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-22T19:56:29.980966+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-22T07:24:16.990286+00:00",
+   "last_ok": "2026-11-22T19:56:29.980966+00:00",
    "fail_streak": 0
   }
  }
