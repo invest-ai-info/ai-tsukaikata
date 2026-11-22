@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-22T06:57:01.684851+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-22T06:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "生成AIの急速な進化を背景に、AIモデルの開発やデータセンターの建設などに巨額の資金が投じられています。しかし、AIが今後の経済成長をけん引するという期待が高まる一方で、AIを開発する企業や投資家が必ずしも大きな利益を得られるとは限りません。元ベンチャーキャピタリストのジェリー・ニューマン氏がPCの普及や海上輸送のコンテナ化といった過去の技術革新を振り返りながら、AIによって生み出される利益が最…",
+      "title": "AIが世界を変えてもAI企業が儲かるとは限らない、その理由とは？",
+      "uid": "f8fe8df1fe417f9b",
+      "url": "https://gigazine.net/news/20261122-ai-will-not-make-you-rich/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-22T06:57:01.684851+00:00",
+      "importance": "major",
+      "label": "GIGAZINE",
+      "published": "2026-11-22T02:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "AI開発企業Anthropicの研究者であるレベント・アルポゲ氏が2026年11月20日、AnthropicのAIモデルであるClaudeとともに数学の未解決問題であるリーマン予想を証明したと発表しました。アルポゲ氏は約1700万行に及ぶ証明コードを公開しており、マサチューセッツ工科大学(MIT)などの研究者による独立した検証で証明の正しさを確認する複数の検査に成功しています。リーマン予想には1…",
+      "title": "Anthropicの研究者がAI「Claude」とともに数学の未解決問題「リーマン予想」を証明したと発表、1700万行の証明コードを専門家が検証中",
+      "uid": "02696cccc2ea465f",
+      "url": "https://gigazine.net/news/20261122-anthropic-claude-said-riemann-hypothesis-solved/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-22T06:57:01.684851+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-22T01:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "プライベートメッセンジャーアプリのSignalが、モバイルアプリでのAIによるスクリーンショット撮影機能を制限しました。これはAIエージェントによる情報収集が、Signalの構築してきたプライバシー保護機能を崩してしまうためと説明されています。 続きを読む...",
+      "title": "SignalがAIエージェントによる情報収集を防ぐためアプリでのAIによるスクリーンショット撮影を制限、OSレベルのAIエージェントによる情報収集に警鐘",
+      "uid": "711c44a2e144dc80",
+      "url": "https://gigazine.net/news/20261122-signal-restricts-mobile-screenshots-threat-ai-surveillance/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-22T06:57:01.684851+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-22T01:22:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "パソコン版Google検索のトップページから、AIモードで中断した調べ物を再開できるようになる。Google検索の製品担当バイスプレジデント、Robby Stein氏は11月19日（米国時間）、Xへの投稿で、世界で順次提供すると明らかにした。折りたためるサイドバーに最近のやりとりが並び、選ぶと続けて質問できる。",
+      "title": "Google検索トップに「AIモード」の履歴　PC版で中断した調べ物を再開",
+      "uid": "0d42ff9223d20f7d",
+      "url": "https://japan.cnet.com/article/35255268/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-22T06:57:01.684851+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-21T23:21:31+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "Anthropicの数学者レベント・アルポーゲ氏は、「Claude」と共同で未解決問題「リーマン予想」の証明を発見したと発表した。証明支援系「Lean」で記述された1700万行の形式証明を公開しており、Leanコミュニティは複数の検証を経て「証明は正しい」と認定する共同声明を出した。",
+      "title": "Anthropicの数学者、「Claude」と共同で「リーマン予想」を証明したと主張　Leanコミュニティが「正しい」と認定",
+      "uid": "54f174744d7533d5",
+      "url": "https://www.itmedia.co.jp/news/article/2611/22/2000003388/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-21T23:23:39.881316+00:00",
       "importance": "minor",
       "label": "CNET Japan",
@@ -2338,66 +2398,6 @@
       "title": "NEC PC、家族で使いながらAIも気軽に使えるノートPC「LAVIE N15」",
       "uid": "95137949528cc481",
       "url": "https://ai.watch.impress.co.jp/docs/news/2156385.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-17T01:49:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "2013年に発売されたソニーの家庭用ゲーム機「PlayStation 4(PS4)」で90億パラメーターの大規模言語モデルをローカル実行できるオープンソースのアプリ「Garlic LLM」が登場しました。PS4に搭載されたGPUを直接操作することで毎秒最大43トークンの生成速度を実現しており、インターネット接続なしでAIとのチャットや音声会話が可能です。 続きを読む...",
-      "title": "脱獄したPlayStation 4で90億パラメーターのAIモデルを毎秒最大43トークンで動作させる「Garlic LLM」が登場",
-      "uid": "1e5b1d04b0508422",
-      "url": "https://gigazine.net/news/20261117-playstation-4-garlic-llm/",
-      "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-17T01:45:02+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "OpenAIは、児童性的虐待コンテンツ（CSAM）を検出するための新たな画像分類ツールを発表した。従来は検出が困難だった新規画像やAI生成画像も対象とし、審査を通過した組織へAPI経由で無償提供する。同時にChatGPT上でのCSAM検索行為に対し、アカウントを24時間停止する警告機能も導入した。",
-      "title": "OpenAI、児童性的虐待コンテンツ（CSAM）検出ツールを公開　ChatGPTで探すと24時間アカウント停止の警告も",
-      "uid": "1e69a696cfeb10dd",
-      "url": "https://www.itmedia.co.jp/news/article/2611/17/2000003254/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-17T01:43:40+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "DWZは、東京大学AI研究室のエンジニアと共同開発したiOS用ピックルボール専用AI解析アプリ「PickleballMe（ピックルボールミー）」を11月17日にApp Storeでリリースした（Android版も開発中で後日リリース予定）。料金プランはフリープランが無料、ライトプランが月額980円、スタンダードプランが月額2,980円、プロプランが月額9,980円。",
-      "title": "スマホ撮影で試合を自動解析、ピックルボール専用AIアプリ「PickleballMe」",
-      "uid": "ad1913be6bb21445",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2156913.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-17T01:35:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "サムスンは2027年初めに「Galaxy S27」シリーズを発表するとみられており、パーソナルAIアシスタントも登場する可能性がある。",
-      "title": "サムスン「Galaxy S27」に自律型AI搭載か　「Galaxy Claw」が電話やメッセージを代行",
-      "uid": "db4f4b5a2bd0c6f3",
-      "url": "https://japan.cnet.com/article/35254980/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-17T01:00:00+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "VAIOは、AI時代におけるAI PCのラインナップを拡充した新たなノートPCの受注を11月17日10時より開始した。最速での発送は11月27日となる。ラインナップは13.3型ワイドの液晶を採用したVAIO S13/Pro PGと、16.0型ワイドの液晶を採用したVAIO F16/Pro BM、14.0型ワイド液晶のVAIO F14/Pro BKの3シリーズ。",
-      "title": "AI時代のAI PCを拡充。ミリグラム単位で軽さを追求「VAIO S13/Pro PG」など ユーザー過失による故障も保証対象とする新メーカー保証開始",
-      "uid": "facbc6bfc66dda18",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2156278.html",
       "vendor": "Impress AI Watch"
     }
   ]
