@@ -87,19 +87,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-22T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-      "title": "Perplexity and Intelligence",
-      "uid": "7abe021a52f03442",
-      "url": "https://openai.com/index/perplexity-and-intelligence",
-      "vendor": "OpenAI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
