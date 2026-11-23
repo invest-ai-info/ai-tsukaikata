@@ -8576,10 +8576,20 @@
    "channel_key": "ai-daigaku",
    "channel_name": "AI大学【AI&ChatGPT最新情報】",
    "default_category": "news",
-   "description": "◆動画の説明\n(2026年)11月18日、OpenAIは\n最先端AIモデルの最新版「GPT-6.2 Astra」と\n上位AIモデルの最新版「GPT-6.2 Sol」を公開しました\nどちらのモデルも、コーディングや推論、資料作成\nWebサイトや3Dコンテンツの制作\nAIエージェントとしての作業能力が向上していて\n使用量(トークン)を抑えながら\n質の高い結果を出せるので、利用制限の範囲内で\nより多くの作業をこなせるとされており\nGPT-6.2 Astraに関しては\nAIモデルの有名ベンチマークサイトで\n現存する全てのAIモデルの中で2位につけています\n\n今回の動画では\n第一章：GPT-6.2 Astra・Solの概要\n第二章：GPT-6.2 Astra・Solの使い方\n第三章：GPT-6.2 Astraの活用事例\nの三章構成で、OpenAIの公開した最新AIモデル\nGPT-6.2 AstraとGPT-6.2 Solの概要\nAIエージェント「Codex」や「ChatGPT Work」で\nGPT-6.2 AstraとGPT-6.2 Solを使う方法\n最後に、GPT-6.2 Astraを使った活用事例を紹介します\n\n◆動画のもくじ\n0:00　動画について\n0:51　動画のもくじ\n1:43　第一章：GPT-6.2 Astra・Solの概要\n2:14　①、GPT-6.2 Astra・Solの特徴\n3:13　②、GPT-6.2 Astra・SolのAIベンチマーク\n4:18　③、GPT-6.2 Astra・Solの安全性\n5:44　第二章：GPT-6.2 Astra・Solの使い方\n7:39　第三章：GPT-6.2 Astraの活用事例\n9:34　エンディングムービー\n\n◆動画の中で紹介している内容\nControl Room、Ultrafast、GPT-6 Astra、GPT-6.1 Sol\n\n◆参考サイト\nhttps://chatgpt.com/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/\nhttps://openai.com/ja-JP/index/introducing-gpt-6-2-astra-sol/?utm_source=chatgpt.com\nhttps://openai.com/ja-JP/api/\nhttps://developers.openai.com/api/docs/models/gpt-6.2-astra\nhttps://developers.openai.com/api/docs/models/gpt-6.2-sol\nhttps://artificialanalysis.ai/\nhttps://x.com/OpenAIDevs/status/2122752256923873753\nhttps://x.com/OpenAI/status/2122750124543926515\n\n▼オススメ動画\n【Grok Bot・Cursor・Xが1つに】Xが新しいAIサブスクリプション「X Subscription」を発表！ ～無料を含む全5プランの料金と機能を完全解説～\nhttps://youtu.be/V_Ib3j9o6ys\nNotebookLMが『Gemini Notebook』に大リニューアル！自らコードを書いてデータ分析もできる、Gemini連携＆全機能を完全解説！\nhttps://youtu.be/ECmlCHNWsxI\n【2026年春最新版】Claude",
    "first_seen": "2026-11-18T20:51:49.530003+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIが公開した最新モデルGPT-6.2 AstraとGPT-6.2 Solの概要や性能ベンチマークを解説している。",
+    "ChatGPTの有料プランやAPIにおける提供状況、料金体系、高速化するUltrafastモードについて説明している。",
+    "3Dコンテンツ制作やWebアプリ生成、PC操作自動化などGPT-6.2 Astraの活用事例を紹介している。"
+   ],
+   "for_whom": "OpenAIの最新AIモデルの性能や料金、具体的な業務活用法を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-23T08:08:06.297898+00:00"
   },
   {
    "video_id": "QUd7DVefuSw",
@@ -9394,10 +9404,20 @@
    "channel_key": "haruto",
    "channel_name": "Haruto｜AI自動化副業ラボ",
    "default_category": "earn",
-   "description": "🎁動画で分からない部分があれば、いつでも聞きに来てね！\n公式LINE：https://ialoop.net/lineadd?ap=kovXfjhR5R\n※もしLINE登録が上手く行かない方は「@285mffvp」とLINEID検索をかけていただき、適当にスタンプメッセージをお願いします←なにかメッセージをいただけないと僕からメッセージを送ることが出来ないためです。\n\n※LINEの理由は、スクショ等画像でもやり取りできるのでリスナーの疑問が解消しやすいためです。\n\nこれさえあれば、あなたが明日から「ラク」して「効率的」に行動するための『具体的な武器』が手に入ります。\n\n--------------------------\n\n視聴者からの成果報告が最も多かった副業動画はこちら！\nhttps://www.youtube.com/playlist?list=PLBpnvpd4j5mI\n\n--------------------------\n\n🎮【AIでアプリを作る・売る方法と、指示の出し方をもっと知りたい方へ】\n今回は、AIと企画を練り、絵とゲーム本体を分担して作って、BOOTHで販売するところまで紹介しました。\nこのチャンネルの、アプリ開発・AIを使う仕事・商品作りの関連回もどうぞ↓\n\n▼Grokで需要を探し、Google Opalで形にする。コードを書かずにアプリを作って売る回\nhttps://youtu.be/Ew-PTJ-XlH4\n\n▼AIに相手の業務を学ばせる。作った仕組みを仕事として届けるAI代行の回\nhttps://youtu.be/nvQDij3oKzo\n\n▼データ入力・データ作成をAIと進める。企業の困りごとから仕事を見つける回\nhttps://youtu.be/l0GFLk3rII8\n\n▼思ったものができないときの聞き方。AIに質問させ、自分の案を見直させる制作テクの回\nhttps://youtu.be/frSmfnOfG8I\n\n--------------------------\n\nこれに加えて\n↓LINE登録特典、ブッチギリでいいもの揃ってます↓\n全部無料で差し上げちゃいます😊\n\n・お宝ネタ 自動生成ツール\n・AIお絵かきプロンプト\n・AIライティングアシスタント\n・AI未来診断\n・AIビジネスメール工房\n・AIクラウドソーシング工房\n・AI副業大全100\n・押すだけであなたの人生が変わるボタン\n・AI読心リサーチャー\n・AI作曲プロンプト工房\n・はるとがドはまりしている頭の良くなるゲーム\n\n▽受け取りはこちら▽\n公式LINE：https://ialoop.net/lineadd?ap=kovXfjhR5R\n\n--------------------------\n\n【動画の目次】\n\n00:00 AIと作る放置ゲーム副業。コードを書かず、売る側に回る\n01:17 休んでも収入が止まらない副業とは。AI記事の受注と、ゲーム販売の違い\n02:28 スーパーの仕事をゲームに。閉じている間も進む試作品を見せます\n03:26 熱を出して仕事を休んだ日、お金はどこから出る？別の収入を作る理由\n05:21 BOOTHの放置ゲーム売り場を確認。並んでいる作品と、試した直近1ヶ月の売上\n07:55 Grokで国内外のトレンドを調べる。放置ゲームと相性のいい題材を探す\n09:30 ゲーム本体を作るAIを選ぶ。いきなり作らせず、先にルールを表にする\n11:01 年代や性別から仮想客を決める。同じ題材でも競合と重なりにくくする方法\n12:55 花の精霊を集",
    "first_seen": "2026-11-22T19:56:29.980966+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "earn",
+   "summary": [
+    "投稿者は、Grokでトレンドを調査した上で、Claudeを用いてコードを書かずにブラウザ放置ゲームを作成する手順を解説している。",
+    "ゲームのキャラクター画像や素材はGrokで生成し、ClaudeにHTML1本へまとめさせてブラウザ上で動作確認する流れを実演している。",
+    "完成したゲームをBOOTHに出品するための商品名、紹介文、価格設定までAIに作成させ、販売準備を整える方法を紹介している。"
+   ],
+   "for_whom": "AIツールを活用して自作ゲームを開発し、BOOTHでのダウンロード販売に挑戦したい人。",
+   "caution": "動画内で月間50万円超の利益を達成したと主張され、LINE登録への誘導が行われています。AIでのゲーム制作や出品が必ずしも継続的な収益につながるわけではない点に注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-23T08:08:06.297898+00:00"
   },
   {
    "video_id": "Ce_wXQ1BJjE",
@@ -9421,91 +9441,137 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-22T19:56:29.980966+00:00"
+  },
+  {
+   "video_id": "1jPdehG3Hms",
+   "title": "Claude AI Solved The Secret Of Black Holes",
+   "url": "https://www.youtube.com/watch?v=1jPdehG3Hms",
+   "published": "2026-11-23T07:37:52+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-11-23T08:08:06.297898+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "20年以上未解決だったブラックホールの量子計算問題にAIのClaudeが挑んだと紹介している。",
+    "複数のAIエージェントが計算を細分化してコードを書き、相互検証を行って解を導出したと解説している。",
+    "AIが算出した結果は負の値となり、一般相対性理論と量子力学の予測が一致したと説明している。"
+   ],
+   "for_whom": "AIが科学研究や高度な物理学の難問解決にどう活用されるか知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-23T08:08:06.297898+00:00"
+  },
+  {
+   "video_id": "35r8V7oy1Ak",
+   "title": "非エンジニアでもできる！AWS×AIエージェントでアプリを公開する方法",
+   "url": "https://www.youtube.com/watch?v=35r8V7oy1Ak",
+   "published": "2026-11-23T06:00:28+00:00",
+   "channel_key": "iketomo",
+   "channel_name": "いけともch",
+   "default_category": "news",
+   "first_seen": "2026-11-23T08:08:06.297898+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は、AWSとAIエージェントを連携させることで非エンジニアでも自作アプリの外部公開が容易になると説明している。",
+    "Claude Codeに指示プロンプトを渡すことで、AWS CLIの導入や初期認証をAIが自動で進める手順を実演している。",
+    "AIで作成したゲームをS3やCloudFrontを使ってWeb公開し、発生費用や設定内容をAIに確認させる方法を紹介している。"
+   ],
+   "for_whom": "AIで作ったアプリや自動化ツールを外部公開・定期実行したい非エンジニア",
+   "caution": "概要欄で公式LINEや自著・有料研修への案内があるほか、AWSの無料枠（最大200ドル等）を超過した場合や設定ミスによる意図しない課金リスクに注意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-23T08:08:06.297898+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-22T19:56:29.980966+00:00",
+   "last_ok": "2026-11-23T08:08:06.297898+00:00",
    "fail_streak": 0
   }
  }
