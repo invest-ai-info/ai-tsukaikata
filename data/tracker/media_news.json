@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-23T02:50:48.496087+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-23T00:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "人工ダイヤモンドメーカーのDiamond Foundryが、世界初となる直径200mmの単結晶ダイヤモンドウェハーの製造に成功しました。同社は銅を大幅に上回る熱伝導率を持つダイヤモンドを半導体に直接組み込むことでAIチップの発熱問題を解消し、将来的にはダイヤモンドそのものをトランジスタの材料として利用することを目指しています。 続きを読む...",
+      "title": "世界初の直径200mm単結晶ダイヤモンドウェハーは何を変えるのか、AIチップの99％をダイヤモンドにする構想とは？",
+      "uid": "3a83aa2973fb5dd4",
+      "url": "https://gigazine.net/news/20261123-diamond-foundrysingle-crystal-diamond/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-23T02:50:48.496087+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-22T22:49:18+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "OpenAIのチーフサイエンティストが、AIの予測精度を示す「パープレキシティ」を共通指標とし、開発の上限を業界で設けるよう提案する論考を公開した。GPT-3.5以降の社内モデルの推移も開示し、早ければ2027年にも事前学習が急加速する恐れがあるとして、監視技術が追いつくまでの歯止めを訴えている。",
+      "title": "OpenAIのチーフサイエンティスト、AI開発に業界共通の「上限」を提案　指標は「パープレキシティ」",
+      "uid": "0a53769863bc513d",
+      "url": "https://www.itmedia.co.jp/news/article/2611/23/2000003394/",
+      "vendor": "ITmedia AI+"
+    },
+    {
       "first_seen": "2026-11-22T21:50:43.794570+00:00",
       "importance": "minor",
       "label": "ITmedia AI+",
@@ -2374,30 +2398,6 @@
       "title": "AIに打ち明けた相談は“広告トラッカー”に筒抜け？　ChatGPT、Claude、Gemini含む42サービスを米大が調査",
       "uid": "293c56f3bfe47665",
       "url": "https://www.itmedia.co.jp/news/article/2611/17/2000003241/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-17T02:31:09+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "インプレスは、書籍「できるChatGPT Work&Codex 仕事を自走させるAIエージェント実践術」を11月17日に発売した。発売を記念し、11月17日から19日までの3日間、本書の全文無料公開キャンペーンも実施する。",
-      "title": "AI入門書「できるChatGPT Work&Codex」発売、3日間限定で全文を無料公開",
-      "uid": "43a7f1694a74bb09",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2156956.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "major",
-      "label": "ITmedia AI+",
-      "published": "2026-11-17T02:30:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "AIエージェントの実証から本番運用へ――。IBMとMicrosoftは、6000種類超の構築済みエージェントやアセットをそろえた業界特化型の基盤「Imagine Enterprise」でこの移行を支援する。一から構築せず、既存システムも置き換えずに済むという仕組みとは。",
-      "title": "規制の厳しい業界でAIエージェントをどう導入する？　MicrosoftとIBMが発表した基盤「3つの特徴」",
-      "uid": "030fe209dbbf1f42",
-      "url": "https://www.itmedia.co.jp/enterprise/articles/2611/17/news015.html",
       "vendor": "ITmedia AI+"
     }
   ]
