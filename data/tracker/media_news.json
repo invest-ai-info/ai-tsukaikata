@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-23T12:57:23.878587+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-23T10:30:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "監視カメラの映像から小切手詐欺の疑いで2025年に逮捕された人物が、カメラに映ったのと同時刻に別の場所で働いていたことから、州の検察局は訴追を取り下げました。容疑者を逮捕した刑事は「AI顔認識技術」のみに依存したことで容疑者を誤認しており、「AIは、アメリカ憲法の修正第4条に規定される捜査や押収における『相当な理由』にはあたらない」として、刑事の免責を連邦裁判官が却下しました。 続きを読む...",
+      "title": "AIの顔認識技術に依存して容疑者を誤認逮捕した刑事の免責主張を連邦裁判官が却下、顔認識は逮捕を認める「相当な理由」にあたらず",
+      "uid": "fabbd80f500f82fa",
+      "url": "https://gigazine.net/news/20261123-probable-cause-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-23T12:57:23.878587+00:00",
+      "importance": "minor",
+      "label": "Impress AI Watch",
+      "published": "2026-11-23T03:02:00+00:00",
+      "source_id": "media-impress-ai",
+      "summary": "AIに「出張用のホテルを探して」「モニターを比較して」と頼む人は増えました。では、「じゃあ、それを買っておいて」と、注文や支払いまで【第1回】の「AIエージェント」に任せられたらどうでしょう。",
+      "title": "AI用語の基礎知識 【第32回】「エージェント決済」とは――AIが買い物と支払いを代行する仕組み。「勝手に買われない」ための安全網は?",
+      "uid": "8bb3493fb6d4a54e",
+      "url": "https://ai.watch.impress.co.jp/docs/serial/glossary/2158372.html",
+      "vendor": "Impress AI Watch"
+    },
+    {
       "first_seen": "2026-11-23T02:50:48.496087+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "d39875492013a957",
       "url": "https://gigazine.net/news/20261117-dgx-spark-developer-kit/",
       "vendor": "GIGAZINE"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-17T03:10:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "Googleは11月16日、人の介入なしにソフトウェアの弱点を見つけ、攻撃コードの作成から実行までを自動で進めるAIの仕組みが、実際の攻撃者に使われている事例を初めて観測したと報告した。修正前後のプログラムを比較して攻撃方法を組み立てるため、企業が修正プログラムを適用するまでの猶予がさらに短くなる恐れがある。",
-      "title": "AIが脆弱性の発見から攻撃まで自動実行--Google、悪用事例を初確認",
-      "uid": "f6acd1ff39835abf",
-      "url": "https://japan.cnet.com/article/35254969/",
-      "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-17T04:32:48.528161+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-17T03:00:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "米ニューヨーク州立大学ストーニーブルック校に所属する研究者らが発表した論文「Penny for Your Prompts: A Measurement Study of Contextual Leakage in AI Chat Platforms」（IEEE S&P 2027採択）は、AIチャットbotに入力した会話内容や個人情報が、サイト内の追跡プログラム（トラッカー）を通じて外部企業へ漏え…",
-      "title": "AIに打ち明けた相談は“広告トラッカー”に筒抜け？　ChatGPT、Claude、Gemini含む42サービスを米大が調査",
-      "uid": "293c56f3bfe47665",
-      "url": "https://www.itmedia.co.jp/news/article/2611/17/2000003241/",
-      "vendor": "ITmedia AI+"
     }
   ]
 }
