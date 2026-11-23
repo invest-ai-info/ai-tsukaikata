@@ -46,6 +46,40 @@
 
 ## 記録
 
+### 2026-11-23（21:00の枠・副業担当）
+- `git fetch origin`→HEADはorigin/mainと一致済み（取り直し不要）
+- `content/_recipe_queue.md`冒頭「🔢 1晩の本数」「担当が守ること」「### 副業」節、
+  `content/_lessons.md`（10288行・全節。特に★333・★170）、`SESSION_HANDOFF.md`の
+  記事の書き方・見出し・マーカー・図の各節、見本2本（`find-what-to-delegate`・
+  `batch-instead-of-repeat`）を読んだ
+- 副業節の未処理（⏸を除く）を上から順に確認。先頭7件（AI検索最適化・KDP価格帯・
+  仕入税額控除・フリマ手数料・AI動画編集・Suno/小説投稿/SKIMA・ASP原資）はすべて⏸
+  （経路遮断またはログイン済みブラウザが無い）。再測定（`curl`）でも変化なしを確認した。
+  着手可能な先頭「実績紹介文、案件が4件に増えると社外秘はどこで漏れるか」に着手し、
+  1本だけ公開した（`five-clients-one-post-numbers-go-quiet`）。ノルマの3本には
+  届いていない＝1本の実測を厚くかけたところで区切った。残りの着手可能な2件
+  （月1〜2万円upでも「前向きに」で結論は消えるか／開業届と青色申告65万円控除）には
+  着手していない
+- `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認
+- 実測: `claude --print --safe-mode --tools "" --system-prompt "<汎用アシスタント人格>"`
+  （新規プロセスごと）。架空の案件記録5件（型が同じペアを2組に増やした）に、素朴・
+  圧をかける・圧縮・歯止めつきの4種の指示文を各2回＝計8回
+- ★170（Claude Code人格が残ってツール呼び出しを書き出す壊れ方）が、`--system-prompt`
+  無しの初回測定で再発した。1回目は実在しないファイルへの「幻の保存」を主張し本文が
+  得られず、2回目は`<invoke name="Write">`構文をそのまま文章に書き出した。
+  `--system-prompt`を足して8回を測り直し、以後は再発しなかった
+- 教訓: 3件で起きた「圧縮すると数字が崩れる」（★333）は5件では再現しなかった
+  （漏洩0/8・数字の対応の誤り0/6）。代わりに、素朴な依頼・圧縮した依頼の計4回が
+  成果の数字を本文に1つも書かなかった——件数が増えるほど崩れるのではなく、AIが
+  数字を言うことに慎重になった可能性がある。新規で★363を追加。
+  `one-combined-post-swaps-a-number`に相互リンクを追加した
+- `python -m pip install -r requirements.txt`（この環境は初回で`markdown`等が
+  python3.11側に未インストールだった）。図2枚
+  （`five-clients-one-post-hit-and-miss.svg`・`five-clients-one-post-mechanism.svg`）を
+  `tools/make_figures.py`に追加して生成。`python -m tools.make_eyecatch`・
+  `python -m src.build`（419ファイル）・`python -m pytest -q`（795 passed）・
+  `check_readability.py`（60字以上17%→箇条書き化と文割りで5%に修正）を確認した
+
 ### 2026-11-23（自動化・ループ優先枠の回）
 - `git fetch origin`→HEADはorigin/mainと一致済み（取り直し不要）
 - `content/_recipe_queue.md`の「自動化・ループ優先」節を確認。未処理`- [ ] 🔁`は2件のみ
