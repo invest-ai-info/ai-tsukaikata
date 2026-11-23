@@ -46,6 +46,21 @@
 
 ## 記録
 
+### 2026-11-23（自動化・ループ優先枠の回）
+- `git fetch origin`→HEADはorigin/mainと一致済み（取り直し不要）
+- `content/_recipe_queue.md`の「自動化・ループ優先」節を確認。未処理`- [ ] 🔁`は2件のみ
+  （床2件とちょうど同数）。両方に着手した
+- `content/_lessons.md`を通読（10278行・全節。特に★358・★362＝直前2本の自動化枠の実測）。
+  ★362の「開始の近さを名指しすると口語では半分しか拾えない」という発見を2本目の出発点にした
+- `grep -h '^## ' content/recipes/*.md | sort -u`で既存見出しと衝突なしを確認。
+  `ls content/recipes | grep -iE 'cadence|threshold|stage|urgent|soon|month'`でも丸かぶりなし
+- 公開: 2本（`three-tier-cadence-adds-a-monthly-process` / `soon-wording-stage1-still-catches-it`）
+- 実測1（3段階頻度）: `claude --safe-mode --tools "" --print` CLI（新規プロセスごと）。
+  123日分の架空ログ（P1〜P6）を正常版・停止版に各2回＝計4回
+- 実測2（そろそろ型）: 同CLI。社内問い合わせ16件に3版の指示文を各2回＝計6回
+- 2件とも1晩で処理したため、この枠の自動化・ループ優先節は未処理0件になった。
+  次の担当は条11bの床割れ対応（`docs/topic-candidates/`から補充）が必要になる見込み
+
 ### 2026-11-22（21:00の枠・副業担当）
 - `git fetch origin`→HEADはorigin/mainと一致済み（取り直し不要）
 - `content/_recipe_queue.md`冒頭「🔢 1晩の本数」「担当が守ること」「### 副業」節を読んだ。
