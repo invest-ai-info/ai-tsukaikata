@@ -1,6 +1,66 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-24T21:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "コーディングエージェント「Cursor」の開発企業であるAnysphereは、中国製AIモデルをベースとするコーディングモデルなども開発していました。新たにAnysphereが中国製AIモデルの段階的廃止を検討中であることが判明しました。 続きを読む...",
+      "title": "Cursorが中国製AIモデルの段階的廃止を検討中との報道",
+      "uid": "d33b85b4a572cde3",
+      "url": "https://gigazine.net/news/20261125-cursor-ai-china/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-24T20:00:00+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "AIコーディングエージェントを個別に使う段階から、工程全体を「工場」として組む段階へ。OpenAI、Uber、freeeなどの取り組みを手掛かりに、この言葉が指す仕組みと、人間に残る仕事を整理する。",
+      "title": "「ソフトウェアファクトリー」とは結局何か　OpenAIもUberもfreeeも始めたAIエージェントの「工場」の中身",
+      "uid": "e5572dd81727ddbd",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/25/news002.html",
+      "vendor": "ITmedia AI+"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-24T12:15:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Amazonは日本時間の2026年11月23日、イスラエルのAIスタートアップ「Decart」が開発したAI処理の最適化技術「Decart Optimization Stack(DOS)」を買収する契約を締結したと発表しました。Decartの共同創業者やAI研究者、エンジニアもAmazonに加わる予定で、Bloombergは買収額が75億ドル(約1兆2000億円)に上ると報じています。 続きを読…",
+      "title": "AmazonがAIスタートアップ「Decart」の主要事業を約1兆2000億円で買収へ、AIチップの性能を引き出す技術と研究者を獲得",
+      "uid": "0b2efaa1621a4a3c",
+      "url": "https://gigazine.net/news/20261124-amazon-acquire-decart/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-24T12:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Googleの研究開発機関であるGoogle DeepMindが、AI開発が進めば人間レベルの知能を持ち合わせた「汎用人工知能(AGI)」や、人間の専門家集団を凌駕する「汎用人工超知能(ASI)」へ到達するとして、その道のりに待ち受ける課題などについて解説しました。 続きを読む...",
+      "title": "AI開発は人間レベルの汎用人工知能「AGI」を超え人間の専門家集団を凌駕する汎用人工超知能「ASI」へと向かうとGoogle DeepMindの研究者が主張",
+      "uid": "b93b0f4e2bb5b0ad",
+      "url": "https://gigazine.net/news/20261124-what-comes-after-agi/",
+      "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-24T11:45:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "Metaの最高AI責任者であるアレクサンダー・ワン氏が2026年11月23日に「超知能の到来が迫っている」と題した文章を公開しました。ワン氏は数学の難問である「リーマン予想」がAIの力を借りて証明されたことについて、AIがAI研究を含むほぼすべての分野で人間の能力を大幅に上回るようになる前兆だと指摘しています。 続きを読む...",
+      "title": "「超知能の到来が迫っている」とMetaのAI責任者が警告、AIによるリーマン予想の証明で人類がAIを制御できなくなる未来に現実味",
+      "uid": "43d32ab03d8c0e4a",
+      "url": "https://gigazine.net/news/20261124-superintelligence-is-arriving/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-24T11:00:12.085162+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -11,6 +71,18 @@
       "uid": "1b590b5fdb45cefa",
       "url": "https://gigazine.net/news/20261124-riemann-hypothesis-mathematician/",
       "vendor": "GIGAZINE"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "ITmedia AI+",
+      "published": "2026-11-24T10:51:37+00:00",
+      "source_id": "media-itmedia-aiplus",
+      "summary": "マンガ「GetBackers -奪還屋-」のボイスコミック公式X（@reclaim_00）は、11月18日に投稿した告知映像について、誤解や混乱を招いたとして謝罪した。",
+      "title": "「GetBackers」AI利用の告知映像で謝罪　「作者への説明と確認が十分でなかった」　ボイスコミック制作巡り",
+      "uid": "ff0f404451cb8ab0",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/24/2000003424/",
+      "vendor": "ITmedia AI+"
     },
     {
       "first_seen": "2026-11-24T11:00:12.085162+00:00",
@@ -2327,78 +2399,6 @@
       "uid": "d38de6d96292aa81",
       "url": "https://japan.cnet.com/article/35255083/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-18T14:06:27.442011+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-18T05:45:00+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "アシックスは11月17日、2027年度から始まる3カ年の中期経営計画（最終年度は2029年度）を策定し、東京都内で説明会を開催した。業界トップ水準の収益性を維持しながら、2029年度に売上高1兆5000億円を目指す。",
-      "title": "アシックス富永社長「売上高1.5兆円を実現する」　オニツカタイガー分社化と株主還元4000億円",
-      "uid": "5303a8695a7608ff",
-      "url": "https://www.itmedia.co.jp/business/articles/2611/18/news050.html",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-18T14:06:27.442011+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-18T05:43:12+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "Twilioは、企業がAIモデルや音声サービス、AIエージェントの実行環境を通話システムと連携させ、AIを活用した音声対応を実現する新機能を発表した。",
-      "title": "Twilio、自然な音声で対話するAIエージェントの大規模導入を支援する新機能を導入",
-      "uid": "dd5630a030d35dd0",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2157478.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-18T14:06:27.442011+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-18T05:17:14+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "SiMa.aiは、フィジカルAIモデルで高性能化と大規模展開を実現するソフトウェアの新バージョン「Palette 3.0」を発表した。",
-      "title": "SiMa.ai、フィジカルAIモデルで高性能化を実現する「Palette 3.0」",
-      "uid": "4599173cb66b1b68",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2157467.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-18T14:06:27.442011+00:00",
-      "importance": "major",
-      "label": "Impress AI Watch",
-      "published": "2026-11-18T04:21:16+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "OpenAIは11月17日、難度の高いプロジェクト向けのフロンティアモデル「GPT-6.2 Astra」と、日々の業務向けの「GPT-6.2 Sol」を発表した。",
-      "title": "OpenAI、高難度向け「GPT-6.2 Astra」と日常業務向け「Sol」を発表",
-      "uid": "4dd42e9356b51163",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2157437.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-18T04:27:09.068415+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-18T04:16:19+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "ソフトバンクは、日本バスケットボール協会と連携し、スマートフォンで撮影したバスケットボールの試合映像をAIで解析し、ハイライト動画や、シュートやアシスト、リバウンドなどのプレーの成績（スタッツ）を自動生成する技術を、国内大会で実証した。",
-      "title": "ソフトバンク、バスケの試合をスマホで撮影しAIで解析しハイライト動画を作成",
-      "uid": "60b0612b0186e48b",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2157440.html",
-      "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-18T04:27:09.068415+00:00",
-      "importance": "major",
-      "label": "GIGAZINE",
-      "published": "2026-11-18T04:15:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "OpenAIが新たなAIモデル「GPT-6.2 Astra」と「GPT-6.2 Sol」を発表しました。GPT-6.2 Astraは複雑な業務やプログラミング、科学研究に適した最上位モデルで、GPT-6.2 Solは日常的な作業を効率よく処理できるモデルです。両モデルとも従来より少ない出力トークン数で高い性能を発揮でき、資料作成やPC操作の精度も向上しているとのことです。 続きを読む...",
-      "title": "OpenAIが「GPT-6.2 Astra」「GPT-6.2 Sol」をリリース、資料作成やPC操作が進化＆少ないトークンで複雑な業務を処理可能に",
-      "uid": "6e84a6a5feebd23a",
-      "url": "https://gigazine.net/news/20261118-openai-gpt-6-2-astra-sol/",
-      "vendor": "GIGAZINE"
     }
   ]
 }

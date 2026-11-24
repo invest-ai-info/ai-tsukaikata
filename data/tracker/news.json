@@ -1,6 +1,70 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-24T21:00:57+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add Google-managed data controls for Google Cloud projects api: add Google-managed data controls for user profiles api: add support for compliance review cases, notices, and items Bug F…",
+      "title": "v2.14.0",
+      "uid": "35acb890612f5b7f",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.14.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-24T16:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Google Gemini partners with Golden State to power fan experiences and business operations for the Warriors, Valkyries, and Chase Center. See the news.",
+      "summary_ja": "Google GeminiがNBAチームと提携\nGolden State Warriorsのファン体験と業務を強化。\nValkyriesとChase Centerでも活用。",
+      "summary_source": "gemini",
+      "title": "How Gemini is changing the game for Golden State's organization and fans.",
+      "uid": "4468d4ce7384e9df",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-24T11:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
+      "summary_ja": "素人天文家がAIで惑星候補を発見\n2人がCodexとAstraを使い成果。\nNASAの公開データから太陽系外惑星候補を見つけた。",
+      "summary_source": "gemini",
+      "title": "Searching for distant planets with Astra",
+      "uid": "eaab04009272a220",
+      "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-24T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+      "title": "How Intentful uses dots to make more time for growth",
+      "uid": "0431aadbb536c844",
+      "url": "https://openai.com/business/customer-stories/intentful-dots",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-24T21:17:12.158587+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-24T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "",
+      "title": "How iFood scales coding agents across 15,000 repositories",
+      "uid": "fdecd11e5f29e556",
+      "url": "https://openai.com/business/customer-stories/ifood",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-24T00:57:23.752680+00:00",
       "importance": "minor",
       "label": "Claude Code",
@@ -6289,44 +6353,6 @@
       "uid": "be6b607af7614377",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.247",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-26T23:39:54.528131+00:00",
-      "importance": "major",
-      "label": "Qwen 新モデル",
-      "published": "2026-08-26T19:37:40+00:00",
-      "source_id": "openrouter-qwen",
-      "summary": "Qwen3.8 Flash is a multimodal reasoning model from Alibaba. It is suited for coding assistance, agentic workflows, visual understanding, document and codebase analysis, desktop interaction, chart ana…",
-      "title": "qwen/qwen3.8-flash",
-      "uid": "70991e07c1639ccf",
-      "url": "https://openrouter.ai/qwen/qwen3.8-flash",
-      "vendor": "Alibaba Qwen"
-    },
-    {
-      "first_seen": "2026-08-26T17:51:15.758122+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-08-26T17:14:40+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "1.1.0 (2026-08-26) Full Changelog: v1.0.0...v1.1.0 Features api: add updates thinking display mode (beta) ( eb4a73f ) api: add missing anthropic-beta values ( dbebd15 ) api: add support for Organizat…",
-      "title": "v1.1.0",
-      "uid": "8760d57483998862",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.1.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-26T17:51:15.758122+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-26T17:01:00+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe.",
-      "summary_ja": "新しい音声認識サービスが登場\n「Gemini 3.5 Transcribe」を提供開始\n音声をより賢く文字に変換できるように",
-      "summary_source": "gemini",
-      "title": "Intelligent transcription with Gemini 3.5 Transcribe",
-      "uid": "a66166d1c0dfde78",
-      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
-      "vendor": "Google DeepMind"
     }
   ]
 }
