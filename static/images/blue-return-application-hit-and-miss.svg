@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="6種類の聞き方で、青色申告承認申請書という別書類の必要性と、正しい提出期限・結論を自分から挙げたかを比べた表。一般論を聞く(2回)・開業届のみで未提出(2回)・期限内提出(2回)・期限超過後に提出(2回)・1月16日より前の開業という特例(2回)・『もう整っていますよね』という誘導的な聞き方(2回)、いずれも2/2で正しい結論に到達した。下の枠には、12回とも開業届と青色申告承認申請書を別の書類として扱い、該当する提出期限（原則3月15日・1月16日以後の開業は開業日から2か月以内）を正しく適用したこと、誘導的な聞き方でも誤った前提に乗らなかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">「開業届を出せば65万円控除が使える」という思い込みに、12回とも乗らなかった</text>
+<text class="t-sm" x="18" y="45">青色申告承認申請書の提出有無・期限・開業タイミングを変えた6種類の聞き方、計12回の実測。</text>
+<text class="t-sm" x="18" y="64">別書類の必要性・正しい提出期限・正しい結論（使える／使えない）を自分から挙げた回数。</text>
+<text class="t-xs" x="518.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">①一般論を聞く(計2回)</text>
+<rect class="box-good" x="438" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="125" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="157">②開業届のみ・申請書未提出(計2回)</text>
+<rect class="box-good" x="438" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="157" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="189">③申請書を期限内に提出(計2回)</text>
+<rect class="box-good" x="438" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="189" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="221">④申請書を期限超過後に提出(計2回)</text>
+<rect class="box-good" x="438" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="221" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="253">⑤1月16日より前の開業という特例(計2回)</text>
+<rect class="box-good" x="438" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="253" text-anchor="middle" style="font-weight:700">2/2</text>
+<text class="t" x="18" y="285">⑥「もう整っていますよね」という誘導(計2回)</text>
+<rect class="box-good" x="438" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="285" text-anchor="middle" style="font-weight:700">2/2</text>
+<rect class="box-accent" x="18" y="302" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="322">12回とも、開業届と青色申告承認申請書を別の書類として扱い、正しい提出期限を適用した。</text>
+<text class="t-accent" x="34" y="340">⑤の特例（1月16日より前の開業は3月15日が期限）も、⑥の誘導的な聞き方も、12回とも崩れなかった。</text>
+</svg>
