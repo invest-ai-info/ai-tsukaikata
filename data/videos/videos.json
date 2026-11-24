@@ -7007,19 +7007,6 @@
    "summarized_at": "2026-11-10T07:42:36.362049+00:00"
   },
   {
-   "video_id": "9Hwanevuhd8",
-   "title": "Top 6 AI Productivity Tips for Work!",
-   "url": "https://www.youtube.com/watch?v=9Hwanevuhd8",
-   "published": "2026-11-10T13:00:14+00:00",
-   "channel_key": "jeff-su",
-   "channel_name": "Jeff Su",
-   "default_category": "tech",
-   "description": "✅ Get HubSpot’s free guide, Use Claude like an AI Expert - https://clickhubspot.com/89c42f\n\nTired of AI tips that go out of date as soon as a new model comes out? These six AI productivity tips help you waste fewer tokens, do less manual work, and teach #ChatGPT, Claude, and Gemini how you like to work.\n\nI’ll show you how to turn a dense PDF into a reusable reference, save prompts you keep retyping, and catch misunderstandings by checking the AI’s plan first. Plus, you’ll see how simple tool rulebooks save you from correcting the same emails and calendar events every time.\n\n*TIMESTAMPS*\n00:00 Top 6 EVERYDAY AI Tips You'll Actually Use\n00:28 Tip #1: The Markdown Shortcut\n03:50 Tip #2: The Folder Map\n05:12 Tip #3: Prompt Shortcuts\n08:29 Tip #4: The Intent Check\n11:06 Tip #5: The Spare Key\n13:22 Tip #6: Tool Rulebooks\n16:47 Lightning Round\n\n*RESOURCES MENTIONED*\nCopy the six prompts - https://www.jeffsu.org/ai-productivity-tips-for-work/?utm_source=youtube&utm_medium=video&utm_campaign=v214\nFree Claude Toolkit - https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v214\nThe Cowork Academy - https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v214\nAI file management tutorial - https://youtu.be/peP_o66u-vM\n\n*BUILD A POWERFUL WORKFLOW*\n🦾 AI Systems Academy - https://systemsacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=214\n📈 The Workspace Academy - https://academy.jeffsu.org/workspace-academy?utm_source=youtube&utm_me",
-   "first_seen": "2026-11-10T19:58:49.234105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
    "video_id": "Z9k5oI3Paoc",
    "title": "Introducing Businesses in ChatGPT in beta",
    "url": "https://www.youtube.com/watch?v=Z9k5oI3Paoc",
@@ -7041,32 +7028,6 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-10T19:58:49.234105+00:00"
-  },
-  {
-   "video_id": "vdEGZYIvFiI",
-   "title": "Greg Brockman on how OpenAI uses frontier models for cyber defense",
-   "url": "https://www.youtube.com/watch?v=vdEGZYIvFiI",
-   "published": "2026-11-10T16:02:15+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "We’re turning lessons from defending OpenAI into practical tools for our customers.\n\nOpenAI President and Co-Founder Greg Brockman shares how we used a frontier model to identify and resolve important vulnerabilities in our own code and infrastructure. That experience is informing the tools and playbooks we’re building to help other security teams strengthen their defenses as model capabilities improve.\n\nLearn more about OpenAI’s work in cybersecurity: openai.com/daybreak",
-   "first_seen": "2026-11-10T19:58:49.234105+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "ZTxzWJeGFAA",
-   "title": "How CodeRabbit uses OpenAI to review AI-generated code",
-   "url": "https://www.youtube.com/watch?v=ZTxzWJeGFAA",
-   "published": "2026-11-10T15:05:40+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "CodeRabbit co-founder and CEO Harjot Gill explains how the team uses OpenAI models to help teams understand, review, and secure code produced by AI agents and decide what’s ready to ship. He also shares how CodeRabbit used Codex to ship 20x more software over 6 months with the same engineering team.\n\nRead the story: https://openai.com/index/coderabbit-codex-daybreak/",
-   "first_seen": "2026-11-10T19:58:49.234105+00:00",
-   "status": "pending",
-   "attempts": 0
   },
   {
    "video_id": "YewAJPawE7I",
@@ -7289,19 +7250,6 @@
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
    "description": "Trace the evolution from simple agent loops to collaborating agents. Explore the design choices and model advances behind that shift, and take a closer look at what comes next.",
-   "first_seen": "2026-11-11T19:50:28.216797+00:00",
-   "status": "pending",
-   "attempts": 0
-  },
-  {
-   "video_id": "5YXlrzC_RYE",
-   "title": "Answering your questions about GPT-Live",
-   "url": "https://www.youtube.com/watch?v=5YXlrzC_RYE",
-   "published": "2026-11-10T21:10:08+00:00",
-   "channel_key": "openai",
-   "channel_name": "OpenAI（公式）",
-   "default_category": "news",
-   "description": "We’re answering the internet’s questions about GPT-Live, starting with how it’s different from earlier voice models and what developers are using it for. Already building with GPT-Live? We’ll share practical tips for customizing your agent’s voice and improving delegation.\n\nWhat else would you like to know about building with GPT-Live? Leave us a question in the comments!\n\nChapters\n00:00 Intro\n00:10 GPT Live vs. GPT Realtime\n02:22 Handling background noise\n03:06 Use cases\n03:38 Custom voices\n04:57 Improving delegation\n06:33 Collecting tool call parameters\n07:54 Managing delegation context\n\nLinks\nGPT Live prompting guide\nhttps://developers.openai.com/api/docs/guides/live-prompting\n\nBuilding with GPT-Live-1 and Cognition\nhttps://openai.com/business/learn/gpt-live-1-webinar/",
    "first_seen": "2026-11-11T19:50:28.216797+00:00",
    "status": "pending",
    "attempts": 0
@@ -9594,91 +9542,287 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-24T10:22:25.405689+00:00"
+  },
+  {
+   "video_id": "e0EGefCi7GE",
+   "title": "It’s Boring, But These 8 AI Plugins Save You 10 Hours a Week",
+   "url": "https://www.youtube.com/watch?v=e0EGefCi7GE",
+   "published": "2026-11-24T13:00:10+00:00",
+   "channel_key": "jeff-su",
+   "channel_name": "Jeff Su",
+   "default_category": "tech",
+   "description": "🎙️ Get an entire month of Wispr Flow Pro for free - https://ref.wisprflow.ai/jeff-su-yt-2\n\nMost AI plugins look impressive in a demo, then sit unused. These are the eight #ChatGPT and #Claude plugins and skills I actually use to build dashboards, catch up on long conversations, and turn meeting notes into updates I can use at work every week.\n\nYou’ll see real examples of Data, Wispr Flow, Firecrawl, Excalidraw and Supadata, including how to create diagrams you can edit yourself. I’m also sharing three free custom skills that work across ChatGPT, Claude and Gemini, with setup steps and the catches to know before installing them.\n\n*TIMESTAMPS*\n00:00 8 AI Plugins for ChatGPT and Claude\n00:19 First-Party Data Plugin\n02:51 Level Set Skill\n04:32 Wispr Flow\n06:06 Meeting Review Skill\n08:00 FireCrawl\n10:10 Excalidraw\n11:54 Brief Skill\n13:05 Supadata\n\n*RESOURCES MENTIONED*\nFree skills & resources - https://www.jeffsu.org/chatgpt-claude-plugins-for-work/?utm_source=youtube&utm_medium=video&utm_campaign=v215\nExcalidraw setup instructions - https://mcpservers.org/servers/excalidraw-app-demo-mcp\nFree Claude Toolkit - https://coworkacademy.ai/toolkit?utm_source=youtube&utm_medium=video&utm_campaign=v215\nThe Cowork Academy - https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v215\n\n*BUILD A POWERFUL WORKFLOW*\n✅ The Cowork Academy - https://coworkacademy.ai/?utm_source=youtube&utm_medium=video&utm_campaign=v215\n📈 The Workspace Academy - https://academy.jeffsu.org/works",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "HFGiXkLuFro",
+   "title": "【徹底比較】話題のUIデザインSkill 7選！どれが本当に使えるか比べてみた結果",
+   "url": "https://www.youtube.com/watch?v=HFGiXkLuFro",
+   "published": "2026-11-24T10:20:30+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "description": "話題の UI デザイン skill、結局どれがいいのか。star がたくさん集まっている 7 つの skill に「skill なし」を加えた 8 通りで、同じお題 6 本を Claude Code (Opus) に作らせ、どれが作ったかを伏せたブラインドで選びました。あわせて Claude の Fable にも評価役をやってもらい、人と AI の評価がどれだけずれるかも見ています。\n\n人の 1 位と Fable の 1 位は、6 本とも一致しませんでした。実際に作られたページの画面を見ながら、skill ごとの傾向・作る時間・費用まで紹介します。\n\n✅AI駆動開発研究部(Noteのコミュニティ）\n▼メンバーシップはこちら▼\nhttps://note.com/masa_wunder/membership\n\n▼ 無料勉強会 (11 月 25 日 20:00〜)\nAI 秘書 (Grok Bot・Muse・Orca Bots など) についての勉強会です。\nhttps://go.masao.ai/p/N1GzZe3DbhCG\n\n▼ 目次\n0:00 UI デザイン skill 7 選、どれがいいのか\n0:47 やり方 (お題 6 本 × 作り方 8 通りをブラインドで)\n1:42 全体の結果と、人と AI の評価のずれ\n3:41 GitHub の star と評価は比例しない\n4:06 お題① 古本市の告知ページ\n5:20 お題② 図書館アプリ\n6:52 お題③ 議事録サービス\n7:45 お題④ ネットショップの管理画面\n9:15 お題⑤ 喫茶店のサイト\n9:57 お題⑥ 歯科医院の初診予約\n11:06 skill 別: hallmark\n11:31 skill 別: emil-design-eng\n11:58 skill 別: ui-ux-pro-max\n12:25 skill 別: landing-page-design\n12:50 比較の基準: skill なしの Opus\n13:05 skill 別: impeccable\n13:24 skill 別: Anthropic 公式 frontend-design\n13:53 skill 別: taste-skill\n14:14 全体の比較 (時間・費用・評価のずれ)\n14:57 結論とおすすめの使い方\n15:20 評価関数を磨くという話\n15:45 メンバーシップと勉強会のお知らせ\n16:56 無料勉強会 (11 月 25 日 20:00〜)\n\n▼ 紹介した skill (star は 2026 年 11 月 23 日時点)\n・frontend-design (Anthropic 公式): https://github.com/anthropics/skills\n・taste-skill: https://github.com/Leonxlnx/taste-skill\n・impeccable: https://github.com/pbakaus/impeccable\n・ui-ux-pro-max: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill\n・hallmark: https://github.com/Nutlope/hallmark\n・emil-design-eng: https://github.com/emilkowalski/skills\n・landing-page-design: https://github.com/el",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "1u0hTd86_HU",
+   "title": "Experiment with SVG & 3D Design with the Codex Plugin",
+   "url": "https://www.youtube.com/watch?v=1u0hTd86_HU",
+   "published": "2026-11-24T21:32:42+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "OpenAIのクレイグ氏が、デザイン経験がなくてもSVGや3Dモデルを作成できるCodex用プラグインを紹介している。",
+    "参考画像から編集可能なSVGや3Dモデルを生成し、自然言語の指示で細かな修正や調整ができると説明している。",
+    "Blenderと連携した3Dアセットの作成やWeb用の動的グラフィックなど、多様な制作に応用できると述べている。"
+   ],
+   "for_whom": "デザインや3D制作のスキルはないが、Web素材や3Dモデルを自作したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-24T22:44:23.747455+00:00"
+  },
+  {
+   "video_id": "p8lvQQebvpg",
+   "title": "How to Search for Exoplanets",
+   "url": "https://www.youtube.com/watch?v=p8lvQQebvpg",
+   "published": "2026-11-24T20:00:45+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "ケプラー望遠鏡の公開データを使い、恒星の光の周期的な減光から系外惑星を探す手順を説明している。",
+    "Codexを活用して10万個以上の恒星データを解析する処理パイプラインを構築したと話している。",
+    "AIで偽陽性の検証を行った後、天文学者から有望な候補として確認を受けたと述べている。"
+   ],
+   "for_whom": "AIを使った大量データ解析や科学的探求に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-24T22:44:23.747455+00:00"
+  },
+  {
+   "video_id": "2DUJ2whBJRM",
+   "title": "Make sense of your day | with ChatGPT",
+   "url": "https://www.youtube.com/watch?v=2DUJ2whBJRM",
+   "published": "2026-11-24T17:14:03+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "食品の原材料表示をスマートフォンのカメラで撮影し、ChatGPTにアレルギー物質が含まれているか質問している。",
+    "ChatGPTがパッケージの記載内容を確認し、該当のアレルギー成分が見当たらないことを音声で回答している。",
+    "カメラと音声対話機能を使い、日常生活の疑問や確認作業にChatGPTを活用できる様子を紹介している。"
+   ],
+   "for_whom": "ChatGPTの画像認識機能や音声対話の具体的な使い方を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-24T22:44:23.747455+00:00"
+  },
+  {
+   "video_id": "4MFBNFyBmQg",
+   "title": "Make a day of it | with ChatGPT",
+   "url": "https://www.youtube.com/watch?v=4MFBNFyBmQg",
+   "published": "2026-11-24T17:14:01+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "ChatGPT can turn a rough idea into the perfect-sized plan for your family. Tell ChatGPT what you’re looking for and it’ll browse sites on your behalf to find local information, and even help you book things.",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "Faoam45LT-Q",
+   "title": "Make room in your day | with ChatGPT",
+   "url": "https://www.youtube.com/watch?v=Faoam45LT-Q",
+   "published": "2026-11-24T17:13:58+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "A little more time at the park? Connect your calendar and ask ChatGPT to find a later time for your meeting.",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "DLV3XRdJAog",
+   "title": "Make your day move | with ChatGPT",
+   "url": "https://www.youtube.com/watch?v=DLV3XRdJAog",
+   "published": "2026-11-24T17:13:55+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "Plans changed? With your calendar connected, ChatGPT can check your schedule, find another time, and draft a note to let people know.",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "bGiFYYrmnAg",
+   "title": "School Day | Make A Day Do Anything with ChatGPT",
+   "url": "https://www.youtube.com/watch?v=bGiFYYrmnAg",
+   "published": "2026-11-24T17:09:11+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "When an unexpected change of plans throws Marla and Ava’s day off course, the pair embark on a spontaneous adventure with a little help from ChatGPT.\n\nChatGPT can move things around, plan trips and create room in your day to spend doing things you love, with people you love. With ChatGPT, you can Make a Day Do Anything.",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "5p8CdiQGqV4",
+   "title": "Conheça o novíssimo ChatGPT Modo Voz.",
+   "url": "https://www.youtube.com/watch?v=5p8CdiQGqV4",
+   "published": "2026-11-24T13:14:46+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "description": "De uma simples pergunta a uma tarefa resolvida. É só falar com o ChatGPT Modo Voz. Ele te escuta e faz com você.",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "8Aoq6mJeAXI",
+   "title": "Lessons from building agents on the Claude Platform",
+   "url": "https://www.youtube.com/watch?v=8Aoq6mJeAXI",
+   "published": "2026-11-24T17:01:50+00:00",
+   "channel_key": "claude",
+   "channel_name": "Claude（Anthropic 公式）",
+   "default_category": "news",
+   "description": "Anthropic built the infrastructure behind Claude Managed Agents three times before turning it into a platform for customers.\nJess Yan (Product Manager, Claude Managed Agents), Michael Cohen (Member of Technical Staff, Claude Managed Agents), and Lance Martin (Member of Technical Staff, Claude Platform) share what they learned during the process and offer best practices for teams building with Managed Agents. They explain how Managed Agents separates the harness from its execution environment, when to use dynamic workflows to coordinate work across many agents, and how dreaming consolidates what agents store in memory between sessions.*\n\nChapters\n0:00 - Intro\n0:20 - Why we built Claude Managed Agents\n1:50 - Keeping up with models and managing cost\n4:50 - Using dynamic workflows and multi-agent harnesses\n8:10 - Scaling Claude Managed Agents: decoupling the brain and hands\n10:30 - How customers are building with Claude Managed Agents\n12:15 - How dreaming and agent memory work\nLearn more about the Claude Platform: https://claude.com/platform/api\nFollow ClaudeDevs on X for product updates and best practices from the Claude Platform team: https://x.com/ClaudeDevs\n\n*Claude Managed Agents and dynamic workflows are in beta; dreaming is a research preview.",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "pending",
+   "attempts": 0
+  },
+  {
+   "video_id": "K8rdrWQRd20",
+   "title": "The brain helped us build AI. Now AI is explaining the brain.",
+   "url": "https://www.youtube.com/watch?v=K8rdrWQRd20",
+   "published": "2026-11-24T17:51:08+00:00",
+   "channel_key": "google-deepmind",
+   "channel_name": "Google DeepMind（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-24T22:44:23.747455+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "脳の構造からAIを作る段階から、AI技術を使って人間の脳の意思決定や学習アルゴリズムを解明する研究へシフトしていると説明している。",
+    "従来の強化学習モデル単体では人間の行動予測精度が低いが、ニューラルネットワークと組み合わせることで大幅に精度向上したと報告している。",
+    "LLMを活用して人間の行動データに適合するシンプルなモデル記述を自動生成・探索するシステム「Data Diver」の開発を紹介している。"
+   ],
+   "for_whom": "AI技術を活用した認知科学や脳科学研究の最新アプローチ、モデル探索に関心がある人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-24T22:44:23.747455+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-24T10:22:25.405689+00:00",
+   "last_ok": "2026-11-24T22:44:23.747455+00:00",
    "fail_streak": 0
   }
  }
