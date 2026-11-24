@@ -88,74 +88,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-23T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-11-23T21:34:41+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added Code Mode support in terminal sessions on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude Platform on AWS Added oidc.groups_jsonpath to the Claude app…",
-      "title": "v2.1.331",
-      "uid": "8005941983e5d204",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.331",
-      "vendor": "Anthropic"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-23T21:20:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
-      "title": "OpenAI and Cisco introduce Shirudo",
-      "uid": "48398106854d0a53",
-      "url": "https://openai.com/index/introducing-shirudo",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-23T08:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get…",
-      "title": "Connected intelligence for in-house legal",
-      "uid": "f42ea00de3792c11",
-      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-11-23T08:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.",
-      "title": "Richpanel helps companies automate 50% of support in 30 days",
-      "uid": "5070bbebaefe32c6",
-      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
-      "vendor": "OpenAI"
-    },
-    {
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-11-23T17:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Google Search bar with the text \"Personal Intelligence\" surrounded by the Google Wallet, Google Drive, GMail, Google Photos, Google Calendar, and Google G logo icons",
-      "title": "A more tailored Google Search that’s uniquely yours",
-      "uid": "b6c15b0e0cf6ee30",
-      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
-      "vendor": "Google"
-    },
-    {
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-11-23T16:59:40+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
-      "title": "Finding faster quantum algorithms with agents and formal verification",
-      "uid": "aa0b1152ff0bad7b",
-      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
-      "vendor": "Google DeepMind"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
