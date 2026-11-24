@@ -1,6 +1,72 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-23T21:34:41+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added Code Mode support in terminal sessions on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude Platform on AWS Added oidc.groups_jsonpath to the Claude app…",
+      "title": "v2.1.331",
+      "uid": "8005941983e5d204",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.331",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-23T21:20:00+00:00",
+      "source_id": "openai-news",
+      "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+      "summary_ja": "OpenAIとCiscoが「Shirudo」を発表。\nLinuxで動くシステムを守るための技術。\nパッチ適用中もシステムを保護できる。",
+      "summary_source": "gemini",
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "uid": "48398106854d0a53",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "major",
+      "label": "Anthropic SDK (Python)",
+      "published": "2026-11-23T18:34:26+00:00",
+      "source_id": "anthropic-sdk",
+      "summary": "Features api: add an error code to Message Batches creation api: add External Storage to the Admin API beta api: add webhook events for external storage failure and recovery Bug Fixes client: build t…",
+      "title": "v2.13.0",
+      "uid": "b3712c3557f4d2cb",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v2.13.0",
+      "vendor": "Anthropic"
+    },
+    {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "minor",
+      "label": "Google AI Blog",
+      "published": "2026-11-23T17:00:00+00:00",
+      "source_id": "google-ai-blog",
+      "summary": "Google Search bar with the text \"Personal Intelligence\" surrounded by the Google Wallet, Google Drive, GMail, Google Photos, Google Calendar, and Google G logo icons",
+      "summary_ja": "Google検索に「Personal Intelligence」が登場。\n個人のGoogleアプリ情報と連携し、\nより自分に合った検索結果を提供する。",
+      "summary_source": "gemini",
+      "title": "A more tailored Google Search that’s uniquely yours",
+      "uid": "b6c15b0e0cf6ee30",
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+      "vendor": "Google"
+    },
+    {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-11-23T16:59:40+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+      "summary_ja": "量子アルゴリズムを高速化する新手法が開発された。\nエージェントと検証技術を使い、\n核融合や化学分野に応用する。",
+      "summary_source": "gemini",
+      "title": "Finding faster quantum algorithms with agents and formal verification",
+      "uid": "aa0b1152ff0bad7b",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-11-21T11:13:10.317038+00:00",
       "importance": "major",
       "label": "Sakana AI Blog",
@@ -11,6 +77,34 @@
       "uid": "cca047e539f9b765",
       "url": "https://sakana.ai/applied-research-lab/",
       "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-23T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get…",
+      "summary_ja": "AIが企業法務に役立つ方法が議論された。\nOpenAI、LECG、Cooleyの専門家が登壇。\n事業情報連携や業務フロー構築にAIを活用。",
+      "summary_source": "gemini",
+      "title": "Connected intelligence for in-house legal",
+      "uid": "f42ea00de3792c11",
+      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-24T00:57:23.752680+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-23T08:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.",
+      "summary_ja": "RichpanelがAIで顧客対応を大幅に効率化。\n30日でサポート業務の50%を自動化可能。\nGPT-6 Astra/Sol/Lunaモデルを活用。",
+      "summary_source": "gemini",
+      "title": "Richpanel helps companies automate 50% of support in 30 days",
+      "uid": "5070bbebaefe32c6",
+      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+      "vendor": "OpenAI"
     },
     {
       "first_seen": "2026-11-22T21:50:43.794570+00:00",
@@ -6261,74 +6355,6 @@
       "uid": "8ea264cbd3a0c691",
       "url": "https://openai.com/index/learning-never-stops",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-26T09:59:37.152037+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-26T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.",
-      "summary_ja": "loveholidaysがAIを使い開発を簡単にしました\nOpenAI Codexで社内の誰もがプログラム作成に参加できます\nアイデアを素早く製品にできる速度が向上しました",
-      "summary_source": "gemini",
-      "title": "How loveholidays is making everyone a builder with Codex",
-      "uid": "88f0fec04190f840",
-      "url": "https://openai.com/index/loveholidays",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-26T23:39:54.528131+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-26T00:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment.",
-      "summary_ja": "OpenAIがHugging Faceのセキュリティ問題を報告\nAIモデルの安全性強化に向けた対策を発表\n監視やAIが意図通り動くか確認を進める",
-      "summary_source": "gemini",
-      "title": "The Hugging Face incident and the road ahead",
-      "uid": "c5839ad9a1ccc8de",
-      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-25T22:47:34.840984+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-25T22:31:52+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added a startup warning for Bash allow rules with a wildcard before the subcommand (e.g. Bash(git * main) ), since they also match options inserted before the subcommand Added an Auto …",
-      "title": "v2.1.246",
-      "uid": "f6d6b7695db8112d",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.246",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-25T16:58:07.451889+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-25T17:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re launching a $5 million grant program to fund independent research into how AI impacts users’ wellbeing.",
-      "summary_ja": "AIが利用者の幸福度への影響研究を助成開始\n独立研究に総額500万ドルを資金提供",
-      "summary_source": "gemini",
-      "title": "Funding better evaluations of AI’s impact on wellbeing",
-      "uid": "481d8ed51bc55b5e",
-      "url": "https://www.anthropic.com/news/wellbeing-research-grants",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-25T16:58:07.451889+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-25T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Illustration of ombre rainbow furniture items like a sofa, lamp, and chair against a purple background",
-      "summary_ja": "グラデーションの家具のイラストを公開\nソファやランプ、椅子などが描かれている\n背景は紫色",
-      "summary_source": "gemini",
-      "title": "5 ways to upgrade your home decor with Google Search",
-      "uid": "a24044a4d9cfa29a",
-      "url": "https://blog.google/products-and-platforms/products/search/home-decor-tips/",
-      "vendor": "Google"
     }
   ]
 }
