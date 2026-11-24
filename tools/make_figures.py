@@ -48114,3 +48114,109 @@ def blue_return_deadline_timeline_chart() -> None:
 if __name__ == "__main__":
     blue_return_application_hit_and_miss_chart()
     blue_return_deadline_timeline_chart()
+
+
+def split_cancellation_hit_and_miss_chart() -> None:
+    """2件分のキャンセル額を別々の文・別の段に分けても、3種類の聞き方が崩れるかを比べる。
+
+    材料A(Webサイト保守契約・別々の文)・材料B(SNS運用代行契約・別の段)、計26回の実測。
+    実測は docs/evidence/split-cancellation-still-subtracts-both.md。
+    """
+    alt = (
+        "2件分のキャンセル額を別々の文・別の段に分けた場合に、3種類の聞き方で正しい不足額に"
+        "到達した回数を示す表。計算手順を明示した言い方は材料A(別々の文・5回)・材料B(別の段・5回)"
+        "とも5/5。素朴な聞き方も材料A・B各5回とも5/5。「説明が合っているか確認して」という軽い"
+        "言い方も材料A・B各3回とも3/3。下の枠には、26回とも正しい不足額(材料A=4,000円・"
+        "材料B=3,000円)に到達したこと、1件分を見落とす・結論の数字が食い違うといった崩れ方は"
+        "1件も起きなかったことが書かれている。"
+    )
+    _hit_and_miss_rows_chart(
+        "split-cancellation-hit-and-miss.svg",
+        "別々の文・別の段に分けても、3種類の聞き方は26回とも崩れなかった",
+        "2件分のキャンセル額を別々の文(材料A)・別の段(材料B)に分けた場合の実測。",
+        "正しい不足額(材料A=4,000円・材料B=3,000円)に到達した回数／試した回数。",
+        [
+            ("計算手順を明示（材料A・別々の文、5回）", 5, 5, "good"),
+            ("計算手順を明示（材料B・別の段、5回）", 5, 5, "good"),
+            ("素朴な聞き方（材料A、5回）", 5, 5, "good"),
+            ("素朴な聞き方（材料B、5回）", 5, 5, "good"),
+            ("「説明が合っているか確認して」（材料A、3回）", 3, 3, "good"),
+            ("「説明が合っているか確認して」（材料B、3回）", 3, 3, "good"),
+        ],
+        [
+            "2件同時のキャンセルを同じ文に書いた前の記事と、26回とも同じ精度（見逃し0・誤判定0）だった。",
+            "別々の文・別の段に分けても、1件だけ引く・足し間違える・結論の数字が食い違うといった崩れ方は出なかった。",
+        ],
+        alt,
+        label_w=420,
+    )
+
+
+def split_cancellation_text_structure_chart() -> None:
+    """材料A(別々の文)と材料B(別の段)で、備考欄の実際の文面がどう違うかを示す図。"""
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "2件分のキャンセル額を、どう分散させたか</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前の記事（二・三件同時のキャンセル実測）は、2〜3件分を同じ1文の中に書いていた。</text>\n",
+    ]
+    y = top
+
+    def row(label: str, lines: list, cls: str, h: int) -> None:
+        nonlocal y
+        tcls = "t-good" if cls == "box-good" else "t"
+        parts.append(f'<rect class="{cls}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        ty = y + 42
+        for line in lines:
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{ty}">{_esc(line)}</text>\n')
+            ty += 19
+        y += h + 14
+
+    row(
+        "材料A（Webサイト保守契約・つばさ商会）＝別々の文",
+        [
+            "「6月12日、オプションA（3,500円）をキャンセルされたとの連絡があり、返金対応済みです。",
+            "6月28日、別件でオプションB（2,500円）もキャンセルされたとの連絡があり、合わせて返金対応済みです。」",
+        ],
+        "box-good", 100,
+    )
+    row(
+        "材料B（SNS運用代行契約・はるか美容室）＝別の段（改行で分離）",
+        [
+            "「ストーリーズ投稿オプション（4,500円）のキャンセル連絡があり、返金対応済みです。",
+            "（空行）後日、ハイライト編集オプション（1,500円）についても別途キャンセルの連絡があり、返金対応済みです。」",
+        ],
+        "box-good", 100,
+    )
+
+    notes = [
+        "どちらも、26回とも2件分を正しく両方引いた（4,000円・3,000円）。1件だけ引く崩れ方は出なかった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "材料A(Webサイト保守契約・つばさ商会)は、2件分のキャンセルを別々の文に分けて書いている。"
+        "「6月12日、オプションA(3,500円)をキャンセルされたとの連絡があり、返金対応済みです。"
+        "6月28日、別件でオプションB(2,500円)もキャンセルされたとの連絡があり、合わせて返金対応済み"
+        "です。」材料B(SNS運用代行契約・はるか美容室)は、2件分を別の段(改行で分離)に書いている。"
+        "「ストーリーズ投稿オプション(4,500円)のキャンセル連絡があり、返金対応済みです。(空行)後日、"
+        "ハイライト編集オプション(1,500円)についても別途キャンセルの連絡があり、返金対応済みです。」"
+        "下の枠には、どちらも26回とも2件分を正しく両方引いて4,000円・3,000円に到達したこと、1件だけ"
+        "引く崩れ方は出なかったことが書かれている。"
+    )
+    (OUT / "split-cancellation-text-structure.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    split_cancellation_hit_and_miss_chart()
+    split_cancellation_text_structure_chart()

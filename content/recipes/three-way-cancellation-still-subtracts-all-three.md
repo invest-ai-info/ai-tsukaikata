@@ -151,4 +151,6 @@ Webサイト保守契約で3回試したところ、1回は3件の合計を6,000
 - 3件分のキャンセル額は、すべて備考の同じ文の中に書きました。別々の文・別の段に分けて書かれる場合は[前の記事](/recipes/double-cancellation-still-subtracts-both/)と同じく未検証です
 - 素朴な聞き方・軽い言い方は材料ごと3〜5回のみです。もっと多く試すと、崩れる頻度が変わる可能性があります
 
+🆕 この記事で仕込んだキャンセル額は、どちらも備考の**同じ文の中**に書きました。別々の文・別の段に分けて書かれる場合は、[別々の文・段に分けたキャンセルを実測した記事](/recipes/split-cancellation-still-subtracts-both/)で確かめています。
+
 今回の生の返りは `docs/evidence/three-way-cancellation-still-subtracts-all-three.md` に全文置いてあります。

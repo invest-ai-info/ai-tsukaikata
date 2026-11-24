@@ -145,4 +145,6 @@ Webサイト保守契約で3回試したところ、1回目と3回目は満月�
 
 [キャンセルの説明を検算した前の記事](/recipes/cancellation-note-half-goes-unchecked/)では1件分のキャンセルを扱いました。分割払いの入金照合は[分割払いの入金照合を実測した記事](/recipes/installment-payments-add-up-correctly/)、手数料ぶんの差額と本当の未入金が同時に混ざるケースは[手数料差額と未入金が混ざる記事](/recipes/fee-gap-and-real-shortfall-same-reconciliation/)で扱っています。
 
+🆕 この記事で仕込んだ2件分のキャンセル額は、どちらも備考の**同じ文の中**に書きました。別々の文・別の段に分けて書かれる場合は、[別々の文・段に分けたキャンセルを実測した記事](/recipes/split-cancellation-still-subtracts-both/)で確かめています。
+
 今回の生の返りは `docs/evidence/double-cancellation-still-subtracts-both.md` に全文置いてあります。
