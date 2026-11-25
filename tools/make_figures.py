@@ -48402,3 +48402,108 @@ def boundary_narrows_bands_chart() -> None:
 if __name__ == "__main__":
     boundary_narrows_points_chart()
     boundary_narrows_bands_chart()
+
+
+def cancellation_weeks_column_hit_and_miss_chart() -> None:
+    """3件のキャンセルを「日付が約6週間離れた3つの文」(材料A)・「備考とは別の列」(材料B)に
+    分けても、3種類の聞き方が崩れるかを比べる。
+
+    実測は docs/evidence/cancellation-weeks-and-column-still-subtracts-all.md。
+    """
+    alt = (
+        "3件分のキャンセル額を、日付が約6週間離れた3つの文(材料A)・備考とは別のキャンセル履歴列"
+        "(材料B)に分けた場合に、3種類の聞き方で正しい不足額に到達した回数を示す表。計算手順を"
+        "明示した言い方は材料A(5回)・材料B(5回)とも5/5。素朴な聞き方も材料A・B各5回とも5/5。"
+        "「説明が合っているか確認して」という軽い言い方も材料A・B各3回とも3/3。下の枠には、"
+        "26回とも正しい不足額(材料A=4,000円・材料B=3,500円)に到達したこと、1件を見落とす・"
+        "列を見落とすといった崩れ方は1件も起きなかったことが書かれている。"
+    )
+    _hit_and_miss_rows_chart(
+        "cancellation-weeks-column-hit-and-miss.svg",
+        "日付も列も分けたキャンセルも、3種類の聞き方は26回とも崩れなかった",
+        "3件分のキャンセル額を、日付が約6週間離れた3つの文(材料A)・備考とは別の列(材料B)に分けた実測。",
+        "正しい不足額(材料A=4,000円・材料B=3,500円)に到達した回数／試した回数。",
+        [
+            ("計算手順を明示（材料A・日付が離れた3文、5回）", 5, 5, "good"),
+            ("計算手順を明示（材料B・別の列、5回）", 5, 5, "good"),
+            ("素朴な聞き方（材料A、5回）", 5, 5, "good"),
+            ("素朴な聞き方（材料B、5回）", 5, 5, "good"),
+            ("「説明が合っているか確認して」（材料A、3回）", 3, 3, "good"),
+            ("「説明が合っているか確認して」（材料B、3回）", 3, 3, "good"),
+        ],
+        [
+            "3件同時・別々の文・別の段を実測した前の3本と、26回とも同じ精度（見逃し0・誤判定0）だった。",
+            "日付を約6週間離しても、列の名前を指示文の「備考」と違えても、崩れ方は増えなかった。",
+        ],
+        alt,
+        label_w=420,
+    )
+
+
+def cancellation_weeks_column_mechanism_chart() -> None:
+    """材料A(日付が離れた3文)と材料B(別の列)の実際の仕込みを示す図。"""
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "3件分のキャンセルを、日付と列でさらに分散させた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "前の3本（2件・3件同時／別々の文・段）は、同じ列の中に収まっていた。</text>\n",
+    ]
+    y = top
+
+    def row(label: str, lines: list, h: int) -> None:
+        nonlocal y
+        parts.append(f'<rect class="box-good" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        ty = y + 42
+        for line in lines:
+            parts.append(f'<text class="t-good" x="{box_x + 16}" y="{ty}">{_esc(line)}</text>\n')
+            ty += 19
+        y += h + 14
+
+    row(
+        "材料A（Webサイト保守契約・ことり建設）＝日付が約6週間離れた3つの文",
+        [
+            "「9月3日、オプションA(2,000円)をキャンセル…。9月24日、オプションB(1,800円)も…。",
+            "10月15日、オプションC(2,200円)も…」。同じ備考欄の中で、日付だけが約6週間に渡っている。",
+        ],
+        100,
+    )
+    row(
+        "材料B（SNS運用代行契約・れんげ接客代行）＝備考とは別の「キャンセル履歴」列",
+        [
+            "備考列＝「来月から請求書の送付先が変更になります」（キャンセルと無関係な事務連絡）。",
+            "キャンセル履歴列＝「8/20 投稿作成(3,000円)。9/10 コメント対応(2,000円)。10/2 分析(2,500円)」。",
+        ],
+        100,
+    )
+
+    notes = [
+        "どちらも、26回とも3件分を正しく引いた（4,000円・3,500円）。1件だけ引く崩れ方は出なかった。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "材料A(Webサイト保守契約・ことり建設)は、3件分のキャンセルを日付が約6週間離れた3つの文に"
+        "分けて書いている。「9月3日、オプションA(2,000円)をキャンセル…。9月24日、オプションB"
+        "(1,800円)も…。10月15日、オプションC(2,200円)も…」。同じ備考欄の中で日付だけが約6週間に"
+        "渡っている。材料B(SNS運用代行契約・れんげ接客代行)は、備考列にはキャンセルと無関係な"
+        "事務連絡(来月から請求書の送付先が変更になります)だけを書き、キャンセル額は備考とは別の"
+        "「キャンセル履歴」列(8/20 投稿作成3,000円・9/10 コメント対応2,000円・10/2 分析2,500円)に"
+        "分けて書いている。下の枠には、どちらも26回とも3件分を正しく引いて4,000円・3,500円に"
+        "到達したこと、1件だけ引く崩れ方は出なかったことが書かれている。"
+    )
+    (OUT / "cancellation-weeks-column-mechanism.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    cancellation_weeks_column_hit_and_miss_chart()
+    cancellation_weeks_column_mechanism_chart()
