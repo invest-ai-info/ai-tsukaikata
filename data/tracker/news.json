@@ -6353,34 +6353,6 @@
       "uid": "4ebe4ef76e10f8a9",
       "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
       "vendor": "Google"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-27T12:59:16+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "Piloting the world's first double-blind AI evaluations",
-      "summary_ja": "世界初の二重盲検AI評価を試験導入",
-      "summary_source": "gemini",
-      "title": "Piloting the world's first double-blind AI evaluations",
-      "uid": "652c884e6e598bf8",
-      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-27T09:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment.",
-      "summary_ja": "ChatGPTと思考力訓練の学生への効果を調査\n1,000人超の学生が対象で、批判的思考力や独創性\n大学の課題を使った学習成績への影響を検証した",
-      "summary_source": "gemini",
-      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
-      "uid": "0bb97bd9a90c5ca3",
-      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-      "vendor": "OpenAI"
     }
   ]
 }
