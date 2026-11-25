@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-25T04:20:49.704372+00:00",
+      "importance": "minor",
+      "label": "Claude Code",
+      "published": "2026-11-25T01:32:14+00:00",
+      "source_id": "claude-code",
+      "summary": "What's changed Added skills from MCP servers (beta). They show as server:skill in the / menu; other skills keep their names Added a PreSkillShellCommand hook event that can refuse a skill or command'…",
+      "title": "v2.1.332",
+      "uid": "5373146767ea3441",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332",
+      "vendor": "Anthropic"
+    },
+    {
       "first_seen": "2026-11-24T21:17:12.158587+00:00",
       "importance": "major",
       "label": "Anthropic SDK (Python)",
@@ -27,6 +39,32 @@
       "vendor": "Google"
     },
     {
+      "first_seen": "2026-11-25T04:20:49.704372+00:00",
+      "importance": "minor",
+      "label": "Sakana AI Blog",
+      "published": "2026-11-24T15:00:00+00:00",
+      "source_id": "sakana-blog",
+      "summary": "",
+      "title": "Sakana Namazu Small",
+      "uid": "f9be355405e7fba2",
+      "url": "https://sakana.ai/namazu-small/",
+      "vendor": "Sakana AI"
+    },
+    {
+      "first_seen": "2026-11-25T04:20:49.704372+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-24T13:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
+      "summary_ja": "GPT-6モデルがタンパク質を設計する能力を示しました。\n推論とコードを使い、タンパク質の構造と配列を設計。\n実験では5つの標的への結合が確認されました。",
+      "summary_source": "gemini",
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "uid": "22624cad79404948",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "vendor": "OpenAI"
+    },
+    {
       "first_seen": "2026-11-24T21:17:12.158587+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -47,6 +85,8 @@
       "published": "2026-11-24T00:00:00+00:00",
       "source_id": "openai-news",
       "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+      "summary_ja": "IntentfulのAIアシスタント「Aria」が業務を支援します。\nウェブサイト調査や提案書作成を補助。\nメッセージの事前対応や問題解決も行います。",
+      "summary_source": "gemini",
       "title": "How Intentful uses dots to make more time for growth",
       "uid": "0431aadbb536c844",
       "url": "https://openai.com/business/customer-stories/intentful-dots",
@@ -62,6 +102,20 @@
       "title": "How iFood scales coding agents across 15,000 repositories",
       "uid": "fdecd11e5f29e556",
       "url": "https://openai.com/business/customer-stories/ifood",
+      "vendor": "OpenAI"
+    },
+    {
+      "first_seen": "2026-11-25T04:20:49.704372+00:00",
+      "importance": "minor",
+      "label": "OpenAI News",
+      "published": "2026-11-24T00:00:00+00:00",
+      "source_id": "openai-news",
+      "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
+      "summary_ja": "ClayがChatGPTとCodex連携で営業活動を強化しました。\n案件リサーチやデータからの営業戦略作成を支援。\n推論はGPT-6モデルが担当します。",
+      "summary_source": "gemini",
+      "title": "Clay helps sales teams win with Codex and ChatGPT",
+      "uid": "8ebae8e5c8dd1ebf",
+      "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
       "vendor": "OpenAI"
     },
     {
@@ -6327,32 +6381,6 @@
       "uid": "0bb97bd9a90c5ca3",
       "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "OpenAI News",
-      "published": "2026-08-27T03:00:00+00:00",
-      "source_id": "openai-news",
-      "summary": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country.",
-      "summary_ja": "OpenAIがブラジルでの事業展開を強化\n開発者や企業、地域社会との連携を深める\n国内全体でのAI導入を支援していく狙い",
-      "summary_source": "gemini",
-      "title": "Expanding OpenAI’s presence in Brazil",
-      "uid": "2ea0a4f5b920c199",
-      "url": "https://openai.com/index/expanding-our-presence-in-brazil",
-      "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-26T23:39:54.528131+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-26T23:06:39+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added the SendFeedback tool: when something goes wrong in a session, Claude can draft a feedback report for you to review and send from /feedback (turn off with the feedbackDrafts sett…",
-      "title": "v2.1.247",
-      "uid": "be6b607af7614377",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.247",
-      "vendor": "Anthropic"
     }
   ]
 }
