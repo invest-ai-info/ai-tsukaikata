@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="差の大きさ（直近14日と56日全体の1日あたり件数の差）を横軸にした数直線に、この記事の3つの材料を置いた図。材料I（差13.0%）は5.6件/日対5.0件/日で、2回とも『大きく違う』と判定された（青）。材料G（差15.0%）は4.9件/日対4.3件/日で、2回とも『大きく違う』と判定された（青）。材料H（差18.0%）は4.2件/日対3.6件/日で、2回とも『大きく違う』と判定された（青）。参考として先行記事の10.0%（同じ・灰色）と20.0%（大きく違う・青）の点も薄く添えてある。下の枠には、13.0%・15.0%・18.0%のどれも『大きく違う』で20.0%と同じ側だったこと、先行記事で『同じ』だった10.0%との間、13.0%より手前のどこかで切り替わったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">13%でもう『大きく違う』——10%とのあいだで、もう切り替わっていた</text>
+<text class="t-sm" x="18" y="45">同じ指示文で、直近14日と56日全体の差だけを13.0%・15.0%・18.0%に振った、独立した新しい記録。</text>
+<text class="t-sm" x="18" y="64">それぞれ独立した新規の呼び出しで2回ずつ試し、2回とも同じ判定だった（2026-11-25実測）。</text>
+<line class="line" x1="70" y1="150" x2="660" y2="150"/>
+<line class="line" x1="70.0" y1="142" x2="70.0" y2="150"/>
+<text class="t-xs" x="70.0" y="136" text-anchor="middle">0%</text>
+<line class="line" x1="338.2" y1="142" x2="338.2" y2="150"/>
+<text class="t-xs" x="338.2" y="136" text-anchor="middle">10%</text>
+<line class="line" x1="418.6" y1="142" x2="418.6" y2="150"/>
+<text class="t-xs" x="418.6" y="136" text-anchor="middle">13%</text>
+<line class="line" x1="472.3" y1="142" x2="472.3" y2="150"/>
+<text class="t-xs" x="472.3" y="136" text-anchor="middle">15%</text>
+<line class="line" x1="552.7" y1="142" x2="552.7" y2="150"/>
+<text class="t-xs" x="552.7" y="136" text-anchor="middle">18%</text>
+<line class="line" x1="606.4" y1="142" x2="606.4" y2="150"/>
+<text class="t-xs" x="606.4" y="136" text-anchor="middle">20%</text>
+<circle class="bar-new" cx="418.6" cy="150" r="9"/>
+<line class="line" x1="418.6" y1="159" x2="168.3" y2="190"/>
+<rect class="box-accent" x="83.3" y="190" width="170" height="94" rx="6"/>
+<text class="t-strong" x="168.3" y="210" text-anchor="middle">材料I（13%）</text>
+<text class="t-sm" x="168.3" y="230" text-anchor="middle">直近14日 5.6件</text>
+<text class="t-sm" x="168.3" y="248" text-anchor="middle">56日全体 5.0件</text>
+<text class="t-accent" x="168.3" y="270" text-anchor="middle" style="font-weight:700">2回『違う』</text>
+<circle class="bar-new" cx="472.3" cy="150" r="9"/>
+<line class="line" x1="472.3" y1="159" x2="365.0" y2="190"/>
+<rect class="box-accent" x="280.0" y="190" width="170" height="94" rx="6"/>
+<text class="t-strong" x="365.0" y="210" text-anchor="middle">材料G（15%）</text>
+<text class="t-sm" x="365.0" y="230" text-anchor="middle">直近14日 4.9件</text>
+<text class="t-sm" x="365.0" y="248" text-anchor="middle">56日全体 4.3件</text>
+<text class="t-accent" x="365.0" y="270" text-anchor="middle" style="font-weight:700">2回『違う』</text>
+<circle class="bar-new" cx="552.7" cy="150" r="9"/>
+<line class="line" x1="552.7" y1="159" x2="561.7" y2="190"/>
+<rect class="box-accent" x="476.7" y="190" width="170" height="94" rx="6"/>
+<text class="t-strong" x="561.7" y="210" text-anchor="middle">材料H（18%）</text>
+<text class="t-sm" x="561.7" y="230" text-anchor="middle">直近14日 4.2件</text>
+<text class="t-sm" x="561.7" y="248" text-anchor="middle">56日全体 3.6件</text>
+<text class="t-accent" x="561.7" y="270" text-anchor="middle" style="font-weight:700">2回『違う』</text>
+<circle class="bar-old" cx="338.2" cy="150" r="5"/>
+<text class="t-xs" x="338.2" y="170" text-anchor="middle">10%＝同じ（先行記事）</text>
+<circle class="bar-new" cx="606.4" cy="150" r="5"/>
+<text class="t-xs" x="606.4" y="170" text-anchor="middle">20%＝違う（先行記事）</text>
+<rect class="box-accent" x="18" y="302" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="322">差が13.0%・15.0%・18.0%のどれも、2回とも『大きく違う』でした。差20.0%と同じ側です。</text>
+<text class="t-accent" x="34" y="340">先行記事で『同じ』だった10.0%との間、13.0%より手前のどこかで切り替わったことになります。</text>
+</svg>

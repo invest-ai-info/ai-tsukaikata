@@ -48220,3 +48220,185 @@ def split_cancellation_text_structure_chart() -> None:
 if __name__ == "__main__":
     split_cancellation_hit_and_miss_chart()
     split_cancellation_text_structure_chart()
+
+
+def boundary_narrows_points_chart() -> None:
+    """この記事の3材料（差13.0%・15.0%・18.0%）を、判定とともに数直線上に置く（2026-11-25実測）。
+
+    材料I・G・Hはどれも同じ指示文。差の大きさだけを13.0%・15.0%・18.0%に振り、
+    それぞれ独立した新規呼び出しで2回ずつ試した（先行記事の10.0%〜20.0%の未知区間の内側）。
+    """
+    left, right = 70, 660
+    pct_max = 22.0
+    axis_y = 150
+
+    def px(pct: float) -> float:
+        return left + pct / pct_max * (right - left)
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "13%でもう『大きく違う』——10%とのあいだで、もう切り替わっていた</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "同じ指示文で、直近14日と56日全体の差だけを13.0%・15.0%・18.0%に振った、独立した新しい記録。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "それぞれ独立した新規の呼び出しで2回ずつ試し、2回とも同じ判定だった（2026-11-25実測）。</text>\n",
+    ]
+
+    parts.append(f'<line class="line" x1="{left}" y1="{axis_y}" x2="{right}" y2="{axis_y}"/>\n')
+    for tick in (0, 10, 13, 15, 18, 20):
+        x = px(tick)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{axis_y - 8}" x2="{x:.1f}" y2="{axis_y}"/>\n')
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{axis_y - 14}" text-anchor="middle">{tick}%</text>\n'
+        )
+
+    # 13%・15%・18%は数直線上では近すぎて、真の位置に箱を置くと重なる。
+    # 点（丸）は真の位置に置き、詳細の箱は等間隔の3列へ離して、斜めの線で結ぶ。
+    points = [
+        ("材料I", 13.0, "違う", "bar-new", "5.6件", "5.0件"),
+        ("材料G", 15.0, "違う", "bar-new", "4.9件", "4.3件"),
+        ("材料H", 18.0, "違う", "bar-new", "4.2件", "3.6件"),
+    ]
+    box_w, box_h = 170, 94
+    box_top = axis_y + 40
+    col_centers = [left + (right - left) * (1, 3, 5)[i] / 6 for i in range(3)]
+    for (name, pct, verdict, cls, mean14, mean56), bx in zip(points, col_centers):
+        x = px(pct)
+        parts.append(f'<circle class="{cls}" cx="{x:.1f}" cy="{axis_y}" r="9"/>\n')
+        parts.append(
+            f'<line class="line" x1="{x:.1f}" y1="{axis_y + 9}" x2="{bx:.1f}" y2="{box_top}"/>\n'
+        )
+        box_x = bx - box_w / 2
+        parts.append(
+            f'<rect class="box-accent" x="{box_x:.1f}" y="{box_top}" width="{box_w}" height="{box_h}" rx="6"/>\n'
+        )
+        parts.append(f'<text class="t-strong" x="{bx:.1f}" y="{box_top + 20}" text-anchor="middle">{_esc(name)}（{pct:g}%）</text>\n')
+        parts.append(f'<text class="t-sm" x="{bx:.1f}" y="{box_top + 40}" text-anchor="middle">直近14日 {_esc(mean14)}</text>\n')
+        parts.append(f'<text class="t-sm" x="{bx:.1f}" y="{box_top + 58}" text-anchor="middle">56日全体 {_esc(mean56)}</text>\n')
+        parts.append(
+            f'<text class="t-accent" x="{bx:.1f}" y="{box_top + 80}" text-anchor="middle" style="font-weight:700">'
+            f"2回『{_esc(verdict)}』</text>\n"
+        )
+    # 参考: 先行記事の既知2点（10.0%=同じ・20.0%=大きく違う）を薄く添える
+    ref_y = axis_y
+    for pct, verdict, cls in ((10.0, "同じ", "bar-old"), (20.0, "違う", "bar-new")):
+        x = px(pct)
+        parts.append(f'<circle class="{cls}" cx="{x:.1f}" cy="{ref_y}" r="5"/>\n')
+        label_y = ref_y + 20
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{label_y}" text-anchor="middle">{pct:g}%＝{_esc(verdict)}（先行記事）</text>\n'
+        )
+
+    y = box_top + box_h + 18
+    notes = [
+        "差が13.0%・15.0%・18.0%のどれも、2回とも『大きく違う』でした。差20.0%と同じ側です。",
+        "先行記事で『同じ』だった10.0%との間、13.0%より手前のどこかで切り替わったことになります。",
+    ]
+    box_h2 = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h2}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h2 + 12
+
+    alt = (
+        "差の大きさ（直近14日と56日全体の1日あたり件数の差）を横軸にした数直線に、この記事の3つの材料を置いた図。"
+        "材料I（差13.0%）は5.6件/日対5.0件/日で、2回とも『大きく違う』と判定された（青）。"
+        "材料G（差15.0%）は4.9件/日対4.3件/日で、2回とも『大きく違う』と判定された（青）。"
+        "材料H（差18.0%）は4.2件/日対3.6件/日で、2回とも『大きく違う』と判定された（青）。"
+        "参考として先行記事の10.0%（同じ・灰色）と20.0%（大きく違う・青）の点も薄く添えてある。"
+        "下の枠には、13.0%・15.0%・18.0%のどれも『大きく違う』で20.0%と同じ側だったこと、"
+        "先行記事で『同じ』だった10.0%との間、13.0%より手前のどこかで切り替わったことが書かれている。"
+    )
+    (OUT / "boundary-narrows-points.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+def boundary_narrows_bands_chart() -> None:
+    """先行記事（未知10%〜20%）と合わせ、未知区間が10ポイントから3ポイントへ狭まった様子を示す。"""
+    left, right = 70, 660
+    pct_max = 22.0
+    scale = (right - left) / pct_max
+
+    def px(pct: float) -> float:
+        return left + pct * scale
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "分からない区間が、10ポイントから3ポイントへ狭まった</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "先行記事までは『同じ』10%〜『大きく違う』20%の間（10ポイント）が未知だった。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "この記事の材料I・G・H（13%・15%・18%）で、未知区間は『同じ』10%〜『大きく違う』13%の3ポイントに絞り込めた。</text>\n",
+    ]
+
+    axis_y = 180
+    parts.append(f'<line class="line" x1="{left}" y1="{axis_y}" x2="{right}" y2="{axis_y}"/>\n')
+    for tick in (0, 10, 13, 15, 18, 20, 22):
+        x = px(tick)
+        parts.append(f'<line class="line" x1="{x:.1f}" y1="{axis_y}" x2="{x:.1f}" y2="{axis_y + 8}"/>\n')
+        label = "22%" if tick == 22 else f"{tick}%"
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{axis_y + 22}" text-anchor="middle">{label}</text>\n'
+        )
+
+    # 帯1: 先行記事までの未知区間（10%〜20%）
+    row1_y = axis_y - 70
+    x1a, x1b = px(10.0), px(20.0)
+    parts.append(f'<rect class="bar-old" x="{x1a:.1f}" y="{row1_y}" width="{x1b - x1a:.1f}" height="22" rx="4"/>\n')
+    parts.append(f'<text class="t" x="18" y="{row1_y + 16}">先行記事まで</text>\n')
+    parts.append(
+        f'<text class="t-sm" x="{(x1a + x1b) / 2:.1f}" y="{row1_y - 8}" text-anchor="middle">'
+        "未知＝10ポイント（10%〜20%）</text>\n"
+    )
+
+    # 帯2: この記事までの未知区間（10%〜13%）
+    row2_y = axis_y - 30
+    x2a, x2b = px(10.0), px(13.0)
+    parts.append(f'<rect class="bar-new" x="{x2a:.1f}" y="{row2_y}" width="{x2b - x2a:.1f}" height="22" rx="4"/>\n')
+    parts.append(f'<text class="t" x="18" y="{row2_y + 16}">この記事まで</text>\n')
+    parts.append(
+        f'<text class="t-accent" x="{(x2a + x2b) / 2:.1f}" y="{row2_y - 8}" text-anchor="middle" '
+        'style="font-weight:700">未知＝3ポイント（10%〜13%）</text>\n'
+    )
+
+    known = [
+        (10.0, "同じ", "bar-old"),
+        (13.0, "大きく違う", "bar-new"),
+        (15.0, "大きく違う", "bar-new"),
+        (18.0, "大きく違う", "bar-new"),
+        (20.0, "大きく違う", "bar-new"),
+    ]
+    for i, (pct, verdict, cls) in enumerate(known):
+        x = px(pct)
+        parts.append(f'<circle class="{cls}" cx="{x:.1f}" cy="{axis_y}" r="6"/>\n')
+        label_y = axis_y + 48 if i % 2 == 0 else axis_y + 64
+        pct_text = f"{pct:g}%"
+        parts.append(
+            f'<text class="t-xs" x="{x:.1f}" y="{label_y}" text-anchor="middle">{pct_text}={_esc(verdict)}</text>\n'
+        )
+
+    y = axis_y + 84
+    notes = [
+        "灰色＝『同じ』と判定された差。青＝『大きく違う』と判定された差（いずれも2回とも一致）。",
+        "残り3ポイント（10%〜13%）のどこで切り替わるかは、この記事でもまだ1点には絞れていません。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "直近14日と56日全体の差（%）を横軸にした数直線に、先行記事とこの記事の判定済みの点を重ねた図。"
+        "先行記事までは、差10%で『同じ』、差20%で『大きく違う』という2点しか分かっておらず、"
+        "間の10ポイント（10%〜20%）が未知区間だった（上の灰色の帯）。"
+        "この記事は差13%・15%・18%のどれも『大きく違う』を確かめ、未知区間を10%〜13%の3ポイントまで"
+        "狭めた（下の青い帯）。下の数直線には10%・13%・15%・18%・20%の5点が、『同じ』は灰色、"
+        "『大きく違う』は青の点で示されている。下の枠には、残り3ポイントのどこで切り替わるかはこの記事でも"
+        "1点に絞れていないことが書かれている。"
+    )
+    (OUT / "boundary-narrows-bands.svg").write_text(_svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n")
+
+
+if __name__ == "__main__":
+    boundary_narrows_points_chart()
+    boundary_narrows_bands_chart()
