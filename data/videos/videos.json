@@ -9605,10 +9605,20 @@
    "channel_key": "two-minute-papers",
    "channel_name": "Two Minute Papers",
    "default_category": "tech",
-   "description": "❤️ Check out Lambda here and sign up for their GPU Cloud: https://lambda.com/papers\n\n📝 The paper is available here:\nhttps://nasqret.github.io/riemann-rev/guide/proof-guide.pdf\nhttps://alpo.ge/remark.pdf\n\nCompression and building in public:\nhttps://x.com/altryne/status/2124585496013926707\nhttps://x.com/slimer48484/status/2124414071349104804\nhttps://riemann.verifytask.cn/\nhttps://pequalnp.com/\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi",
    "first_seen": "2026-11-25T21:57:18.824885+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Claude AIと研究者がリーマン予想の証明をLean言語で作成し、形式的検証システムで正しいと判定されたと紹介している。",
+    "証明コードは約1700万行と膨大で人間が全体を理解できていないため、AIによるコード圧縮の試みが進んでいると説明している。",
+    "テータリフトと呼ばれる既存手法を多数連結することで誤差を抑制した点が、今回の証明における重要な進展だと述べている。"
+   ],
+   "for_whom": "AIを活用した数学の難問解決や定理証明の最新動向を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-26T08:51:18.638667+00:00"
   },
   {
    "video_id": "seVIzQzxR5w",
@@ -9631,10 +9641,20 @@
    "channel_key": "masao",
    "channel_name": "まさおAIじっくり解説ch",
    "default_category": "news",
-   "description": "この動画では、Devin (Cognition) から出た新しいモデル「SWE-2.1」を、公式の発表と、僕が実際に作らせたデモの両方から見ていきました。前半は公式の発表の中身、真ん中で自分で測った速度、後半は約 25 個のお題で Sonnet 5.5 と作った物を見比べています。\n\n見た目より速さを取りたい場面なら面白い存在だと思うんですが、皆さんはこの速さと出来のバランス、どう感じましたか？ ぜひコメント欄で教えてください。\n\n▼ メンバーシップ (note)\n月に数回の勉強会と、実際に使っているハーネスの共有をしています\nhttps://note.com/masa_wunder/membership\n\n▼ タイムライン\n0:00 Devin の新モデル SWE-2.1 が登場\n1:17 ベンチマークの伸びと無料期間\n2:02 土台の Kimi K3 と、前作 SWE-2 の立ち位置\n2:51 強化学習だけで鍛えた、という公式の説明\n3:50 コストに対するスコア\n4:16 サイバーセキュリティと長時間作業\n4:50 10 倍速の Ultrafast 版 (Cerebras と連携)\n5:17 割引と無料の条件\n5:54 自分で測った速度と出力トークン数\n6:39 デモの結論：3D やアニメーションは前世代的\n7:08 デモ：ブラウザの中の小さな OS\n8:06 デモ：アイドルの LP・MMORPG の LP\n9:05 デモ：アプリの UI\n9:53 デモ：3D・ピンボール・ボール落とし\n10:48 デモ：3D 格闘・アクション・サッカー・ゴブリンのゲーム\n12:00 デモ：ミュージックビデオ・ショートムービーメーカー\n12:42 デモ：ボクセルアート・Claude Code の解説動画\n13:24 デモ：キャラクターの 3D 再現と SVG 再現\n13:45 デモ：図解つきの記事・解説・スライド\n14:52 デモ：キャラクターシート・アニメーション\n15:23 デモ：3D の寿司屋さん\n16:03 総評：LLM の採点は 12 モデル中 11 位\n16:50 速さの価値と、Devin のこれから\n17:19 メンバーシップのお知らせ\n\n▼ 関連リンク\n・SWE-2.1 の公式ブログ (Cognition): https://cognition.com/blog/swe-2-1\n・Devin: https://devin.ai/\n\n関連する動画\n・【期間限定無料】Kimi K3ベース進化の『SWE-2』を実際に使ってみた！高速で開発が強いLLMを解説します\nhttps://www.youtube.com/watch?v=Rx8W28T2OMo\n・【最高です】『Claude Sonnet 5.5』、世界が絶賛の名作モデルへ！本当に良かったので徹底解説\nhttps://www.youtube.com/watch?v=ApirM3nX8wM\n・【絶賛の嵐】Kimi K3を実際に使って見たので解説！Opus超えを語る性能には納得だが…\nhttps://www.youtube.com/watch?v=h4g3YLN6kds\n\n---\nご視聴ありがとうございます！【まさおAIじっくり解説ch】にようこそ！\nAIサービス開発に携わるエンジニアである私まさおが、実際の開発現場やノウハウを交えながら「本当に役に立つAIの使い方＆開発手法」をじっくり解説しています。\n\n▼ チャンネル登録はこちらから ▼\nhttps://www.youtube.com/@ai_m",
    "first_seen": "2026-11-25T21:57:18.824885+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Cognitionの新モデル「SWE-2.1」は前作から性能が伸び、10倍速のUltrafast版も提供されていると紹介している。",
+    "Kimi K3を土台に強化学習のみで訓練され、サイバーセキュリティ等のベンチマークで高い数値を記録したと説明している。",
+    "投稿者の独自検証では生成速度が極めて速い一方、UIや3D表現などの出力品質は競合モデルに比べ物足りないと評価している。"
+   ],
+   "for_whom": "Devinの新モデルやコーディング特化AIの実力を知りたい人",
+   "caution": "動画の終盤および概要欄において、勉強会やツール共有を行う有料のnoteメンバーシップへの誘導があります。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-26T08:51:18.638667+00:00"
   },
   {
    "video_id": "A4UNP-axGHU",
@@ -9716,91 +9736,137 @@
    "first_seen": "2026-11-25T21:57:18.824885+00:00",
    "status": "skipped",
    "attempts": 0
+  },
+  {
+   "video_id": "ZHiVhLWRDnI",
+   "title": "【正直解説】『Claude Duet』を実際に使ってみた！Claude版AI秘書を実際に触って分かった良い所と気になる所を徹底解説",
+   "url": "https://www.youtube.com/watch?v=ZHiVhLWRDnI",
+   "published": "2026-11-26T03:11:21+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-26T08:51:18.638667+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Duetはチャンネルやタスクで話題を分けて作業を整理できる階層構造や、音声入力での対話が快適であると投稿者は説明している。",
+    "ローカルPCとの連携はターミナルからの接続設定や権限確認が必要で、操作感が直感的ではなく発展途上だと投稿者は述べている。",
+    "claude.aiのプロジェクト連携では閲覧や指示の追記はできるものの新規チャット開始に制約があり、まだ手探りな部分が多いとまとめている。"
+   ],
+   "for_whom": "Claude Duetの使い勝手やPC連携の実用性を知りたい人",
+   "caution": "動画の終盤および概要欄にて、有料のnoteメンバーシップ（コミュニティ）への案内が含まれています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-26T08:51:18.638667+00:00"
+  },
+  {
+   "video_id": "C6DENY3rgqg",
+   "title": "You had us at Deployed",
+   "url": "https://www.youtube.com/watch?v=C6DENY3rgqg",
+   "published": "2026-11-25T23:50:43+00:00",
+   "channel_key": "openai",
+   "channel_name": "OpenAI（公式）",
+   "default_category": "news",
+   "first_seen": "2026-11-26T08:51:18.638667+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "CiscoやWayfairなどの企業担当者が、OpenAIの技術を活用して業務や開発を加速させていると述べている。",
+    "Codexなどを開発チームの一員のように活用し、1年かかる作業を2か月で完了できるようになった事例を紹介している。",
+    "実験段階にとどまらず、本番環境での開発や実用化へ移行する企業が増えていると担当者らが語っている。"
+   ],
+   "for_whom": "生成AIの企業導入事例やビジネスでの活用動向を知りたいビジネスパーソンやエンジニア",
+   "caution": "OpenAIによる顧客事例のプロモーション動画であり、各ツールの具体的な設定手順や実装の詳細は解説されていません。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-26T08:51:18.638667+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-25T21:57:18.824885+00:00",
+   "last_ok": "2026-11-26T08:51:18.638667+00:00",
    "fail_streak": 0
   }
  }
