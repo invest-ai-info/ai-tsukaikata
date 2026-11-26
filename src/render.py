@@ -204,8 +204,10 @@ def render_site(
 
     for scene in active_scenes:
         meta = config.SCENES[scene]
+        heading = meta.get("heading", f"{meta['label']}で使う")
         pages[f"scenes/{scene}/index.html"] = env.get_template("scene.html").render(
-            page_title=f"{meta['label']}で使う",
+            page_title=heading,
+            scene_heading=heading,
             description=meta["lead"],
             canonical=f"{config.SITE_URL}/scenes/{scene}/",
             og_type="website",

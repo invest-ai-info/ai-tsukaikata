@@ -376,6 +376,15 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
             parked += 1
         else:
             ready += 1
+    if ready == 0 and parked:
+        # 2026-11-26〜 材料はあるのに全部 ⏸ ＝書き手は毎晩0本になる。⏸ の理由はほぼ
+        # クラウド環境の許可リスト（経路の遮断）で、直せるのはオーナーだけ＝打つ手のある赤。
+        # 材料そのものが無いとき（ready も parked も0）は、変化が出ていないだけなので鳴らさない。
+        return (
+            f"{QUEUE_PATH}: 「副業」の節に未処理が{parked}件ありますが、全部{PARKED_MARK}"
+            f"（いま着手できない）です。書き手は毎晩0本になります。{PARKED_MARK}の理由に書かれた"
+            f"ドメインをクラウド環境の許可リストに足すと戻ります（オーナーの操作）"
+        )
     if ready < floor:
         note = f"（ほかに{PARKED_MARK}付きが{parked}件＝いま着手できないもの）" if parked else ""
         return (
@@ -388,6 +397,42 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
 
 # deepdive_queue_shortage（深掘りキューの残量）は
 # 2026-11-26 段1a で外した（書く節を副業に絞った・深掘りと検証型を止めた）。戻すなら git の履歴から
+
+# --- 稼ぎ方の変化の見張り（2026-11-26 段1a）---
+#
+# 「変化が出た日に書く」の入口は、稼ぎ方研究担当が毎日 content/_money_watch.md の表を
+# 照合することだけ。担当の心拍（作業ログの日付）は1行書けば緑になるので、
+# 表の「最後に照合した日」が動いているかを別に見る（見直しの指摘 I-2）。
+MONEY_WATCH_PATH = "content/_money_watch.md"
+MONEY_WATCH_MAX_DAYS = 7   # 1日3本・15本なら5日で一巡する。7日動かなければ止まっている
+MONEY_WATCH_START = date(2026, 11, 26)  # 表を作った日。最初の1週間は「未」だけでも鳴らさない
+MONEY_WATCH_ROW_RE = re.compile(r"^\| *`([^`]+)` *\| *[^|]*\| *([^|]*?) *\|", re.M)
+
+
+def money_watch_gaps(text, today: date, max_days: int = MONEY_WATCH_MAX_DAYS) -> list[str]:
+    """変化の見張りの表が動いていなければ、知らせる文字列を返す。"""
+    if text is None:
+        return [f"{MONEY_WATCH_PATH} が見つかりません（稼ぎ方の変化の見張りの手順と表です）"]
+    body = text.split("## 見張る記事", 1)[1] if "## 見張る記事" in text else ""
+    body = body.split("\n## ", 1)[0]
+    rows = MONEY_WATCH_ROW_RE.findall(body)
+    if not rows:
+        return [f"{MONEY_WATCH_PATH}: 「## 見張る記事」の表に行が1つもありません"]
+    dates = []
+    for _slug, cell in rows:
+        m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", cell.strip())
+        if m:
+            dates.append(date(int(m.group(1)), int(m.group(2)), int(m.group(3))))
+    latest = max(dates) if dates else MONEY_WATCH_START
+    gap = (today - latest).days
+    if gap > max_days:
+        last = f"最後の照合が{latest}" if dates else f"{MONEY_WATCH_START}に表を作ってから1行も照合されておらず"
+        return [
+            f"{MONEY_WATCH_PATH}: {last}、{gap}日ぶん動いていません（上限{max_days}日）。"
+            f"稼ぎ方研究担当（毎日15:30）が見張りの手順を飛ばしている可能性があります"
+        ]
+    return []
+
 
 # --- 需要語の裏取り（2026-08-25 オーナー判断）---
 #
@@ -1006,6 +1051,10 @@ def main(argv: list[str] | None = None) -> int:
     if heartbeat:
         report.problems.append(heartbeat)
     report.problems.extend(money_note_staleness(articles, date.today()))
+    # 稼ぎ方の変化の見張りの表（2026-11-26）。担当の心拍とは別に、表が動いているかを見る
+    watch_file = root / "content" / "_money_watch.md"
+    report.problems.extend(money_watch_gaps(
+        watch_file.read_text(encoding="utf-8") if watch_file.exists() else None, date.today()))
 
     # 読みやすさの後戻り（2026-09-22）。直近2週間ぶんだけを見る
     report.problems.extend(readability_drift(articles, date.today()))

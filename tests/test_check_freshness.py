@@ -18,6 +18,7 @@ from check_freshness import (  # noqa: E402
     writer_log_heartbeat,
     writer_measurement_gaps,
     lawyer_deadline_gate,
+    money_watch_gaps,
     lesson_number_duplicates,
     lesson_promotions,
     money_note_staleness,
@@ -1111,3 +1112,57 @@ def test_readability_drift_ignores_articles_written_before_the_rule():
 def test_readability_drift_ignores_articles_that_are_no_longer_recent():
     art = _readable("new", date(2026, 9, 25), (LONG + "\n\n") * 3)
     assert readability_drift([art], date(2026, 10, 31)) == []
+
+
+# --- 2026-11-26 段1a の見直し（I-1・I-2）---
+
+
+def test_earn_queue_fires_when_every_item_is_parked():
+    """材料はあるのに全部 ⏸（届かない）＝書き手は毎晩0本。許可リストはオーナーにしか直せない＝打つ手のある赤。"""
+    queue = _queue(
+        "### 副業（テスト）",
+        "- [ ] A", "  - ⏸ いま着手できない＝経路の遮断",
+        "- [ ] B", "  - ⏸ いま着手できない＝経路の遮断",
+        "### 次の節",
+    )
+    problem = earn_queue_shortage(queue)
+    assert problem is not None
+    assert "2件" in problem and "許可リスト" in problem
+
+
+def test_earn_queue_is_quiet_when_one_item_is_workable():
+    queue = _queue("### 副業（テスト）", "- [ ] A", "- [ ] B", "  - ⏸ 届かない", "### 次の節")
+    assert earn_queue_shortage(queue) is None
+
+
+WATCH = """## 見張る記事
+
+| slug | 種類 | 最後に照合した日 | 結果 |
+|---|---|---|---|
+| `note-fee` | recipes | {a} | 変化なし |
+| `udemy` | recipes | {b} | — |
+
+## 見張るお知らせページ
+"""
+
+
+def test_money_watch_is_quiet_when_checked_recently():
+    text = WATCH.format(a="2026-12-01", b="未")
+    assert money_watch_gaps(text, date(2026, 12, 7)) == []
+
+
+def test_money_watch_fires_when_nothing_was_checked_for_a_week():
+    text = WATCH.format(a="2026-12-01", b="未")
+    problems = money_watch_gaps(text, date(2026, 12, 9))
+    assert problems and "8日" in problems[0]
+
+
+def test_money_watch_gives_a_grace_week_after_it_starts():
+    text = WATCH.format(a="未", b="未")
+    assert money_watch_gaps(text, date(2026, 11, 30)) == []
+    assert money_watch_gaps(text, date(2026, 12, 7))
+
+
+def test_money_watch_fires_when_the_file_or_table_is_missing():
+    assert money_watch_gaps(None, date(2026, 12, 1))
+    assert money_watch_gaps("# 見出しだけ\n", date(2026, 12, 1))

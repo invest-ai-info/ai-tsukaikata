@@ -276,6 +276,21 @@ def test_index_top_nav_hides_money_until_it_has_articles():
     assert 'href="/scenes/money/"' not in pages["index.html"]
 
 
+def test_money_and_earn_scene_headings_read_naturally():
+    """「稼ぎ方の調べもので使う」のような不自然な見出しにしない（見直しの指摘 I-6）。"""
+    pages = render_site([_article(slug="m", scene="money"), _article(slug="e", scene="earn")])
+    money, earn = pages["scenes/money/index.html"], pages["scenes/earn/index.html"]
+    assert '<h1 class="article-title">稼ぎ方の調べもの</h1>' in money
+    assert "調べもので使う" not in money
+    assert '<h1 class="article-title">副業の検証（過去の記事）</h1>' in earn
+    assert "過去の記事）で使う" not in earn
+
+
+def test_other_scene_headings_keep_the_old_form():
+    pages = render_site([_article(slug="w", scene="work")])
+    assert '<h1 class="article-title">仕事で使う</h1>' in pages["scenes/work/index.html"]
+
+
 def test_earn_scene_is_labelled_as_past_articles():
     pages = render_site([_article(slug="e", scene="earn")])
     assert "副業の検証（過去の記事）" in pages["scenes/earn/index.html"]
