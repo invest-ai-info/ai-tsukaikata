@@ -1,7 +1,7 @@
 ---
 title: AI画像を売る場所は2026年に割れた——Adobe Stockは33%で買い、PIXTAは5月22日に止めた
 category: recipes
-scene: earn
+scene: money
 description: 「AI画像をストック素材で売る」をウェブ検索を切ったAIに18回実測しました。作らせたプロンプト60本に、Adobe Stockの禁止5項目（実在の人物・作品名・政府機関名・他社IP・ニュース性）に当たる語は0本。「Adobeは33%」「PIXTAは不可」は3回とも当たりましたが、PIXTAが止めた時期は2回が「2023年」で、原文の2026年4月・5月は0回でした。
 published: 2026-09-18
 checked: 2026-09-18

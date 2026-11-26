@@ -1,7 +1,7 @@
 ---
 title: Kindle出版のAI申告を原文で確かめる——「自分で書いてAIで直した」は申告不要の側にある
 category: recipes
-scene: earn
+scene: money
 description: KDPでAI生成コンテンツの申告が必要かをAIに16回聞きました（4つの場面×4通りの聞き方）。すべて原文の線と一致しましたが、根拠の一字一句の引用を求めた2回は「引用できません」と答え、実在の出典URLは8回とも1つも出てきませんでした。
 published: 2026-08-26
 checked: 2026-08-25

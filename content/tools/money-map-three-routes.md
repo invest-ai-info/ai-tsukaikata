@@ -2,7 +2,7 @@
 title: 副業のお金は3つの流れで届く——X・YouTube・note・Kindle・受託を原文で比べた
 description: X・YouTube・Kindle・クラウドワークスの公式ページを2026-08-29に開き（noteは2026-08-25確認の既存記事の出典）、誰が払うか・受け取る門・入金の経路と時期を突き合わせました。XはPremium系サブスク加入と過去3か月に500万回以上のオーガニック インプレッションと認証済みフォロワー500人、YouTubeは登録者1,000人と4,000時間、Kindleは税に関するインタビューの完了が出版より先。門の中身と高さは、それぞれの原文で確かめられます。
 category: tools
-scene: earn
+scene: money
 published: 2026-08-29
 checked: 2026-08-29
 series: お金の流れ
