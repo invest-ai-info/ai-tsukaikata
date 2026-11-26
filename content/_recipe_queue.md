@@ -2221,7 +2221,7 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
     ではない）。2026-11-04時点の調査結果と変化なし。**印を消す条件**＝これらのいずれかにクラウド
     から到達できた（実測して日付を書く）
   - 根拠: 源①＝`content/tools/money-map-three-routes.md:119`「**アフィリエイト**はこの記事の出典では扱っていません。使うASP（仲介会社）の原文に、上の6つの質問をそのまま当てて確かめてください」。「お金の流れ」シリーズ総論が明示的に対象外とした1マス
-  - ⚠️ **着手前に必ず到達確認**＝調査時点（2026-11-04・リサーチ用セッション）で`www.a8.net`・`support.a8.net`・`support.af-moshimo.com`・`www.afi-b.com`はいずれも`CONNECT tunnel failed, response 403`（経路遮断。先方のbot判定ではない）。執筆担当の環境は別設定の可能性があるため、着手時に`curl -sS -o /dev/null -w "%{http_code}"`で実測してから進める。到達できなければ①`www.conmark.jp`（64行目）・②`kdp.amazon.co.jp`（491行目）・③`www.mercari.com`等（2054行目）と同じ扱いで⏸にしてよい
+  - ⚠️ **着手前に必ず到達確認**＝調査時点（2026-11-04・リサーチ用セッション）で`www.a8.net`・`support.a8.net`・`support.af-moshimo.com`・`www.afi-b.com`はいずれも`CONNECT tunnel failed, response 403`（経路遮断。先方のbot判定ではない）。執筆担当の環境は別設定の可能性があるため、着手時に`curl -sS -o /dev/null -w "%{http_code}"`で実測してから進める。到達できなければ①`www.conmark.jp`（64行目）・②`kdp.amazon.co.jp`（491行目）・③`www.mercari.com`等（2054行目）と同じ扱いで「着手できない」の印を付けてよい
   - 実測の芯: 実際のASP（例: A8.net）の公式ヘルプ・規約の原文を貼り、①原資②門③金額の決まり方④入金の経路と時期⑤引かれるもの⑥必要なものの6問を既存シリーズと同じ形式でAIに答えさせる。原文を貼らずに聞いた回と、貼って聞いた回を比較し、最低入金額・振込手数料・入金サイクルなどの数字が原文と一致するかをテキスト照合
   - 🔒 切り分け: `money-map-three-routes`が明示的に対象外とした1マスを埋める直接の続編。担当が`_recipe_queue.md`・`content/recipes/`・`content/tools/`をgrep実測、「アフィリエイト」の既存項目は1件（PR表記の文面の話で金銭構造とは無関係）のみ、「A8.net」「ASP」を扱う記事は0件
   - 節の縛り: 副業。「必ず稼げる」断定なし。投資・トレード系ではない。金額の数字を記事に残すなら出典URL＋確認日付必須（money-note様式）
@@ -2411,7 +2411,7 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
     `curl -sS -o /dev/null -w "%{http_code}"`で実測したところ**`help.coconala.com`は
     到達不能（接続失敗）**だった（対照に`coconala.com`の素のルートは200）。**過去に200だったのは
     `coconala.com`のトップページであって`help.coconala.com`ではない**（提案時の思い込みを
-    自分の実測で訂正）。着手前に執筆担当の環境で改めて到達確認し、ダメなら既存の⏸運用に
+    自分の実測で訂正）。着手前に執筆担当の環境で改めて到達確認し、ダメなら既存の「着手できない」の印の運用に
     ならうこと
   - 根拠: 源④＝`content/_lessons.md`の台帳から。ココナラ関連4記事（`fix-ai-drafts-for-pay`・
     `platform-name-guesses-the-rule-backwards`・`coconala-disclosure-loophole-closes-with-the-source-text`・
