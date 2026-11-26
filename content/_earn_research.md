@@ -1373,3 +1373,55 @@ Outlier（原文の言い回しのまま）＝「Rates vary by expertise, projec
 - →保管: 2026-11-25 在庫十分（未処理17件・着手可能17件・⏸0件）のためスキップ
 
 - →保管: 2026-11-26 在庫十分（未処理16件・着手可能16件・⏸0件）のためスキップ
+
+### 2026-11-26 — 見張り: 3本照合・変化1件。⏸の測り直しで6/7件が着手可能に変わった
+
+🆕 **新しい役目（手順0.5・見張り）での初回実行。**同日06:35 UTCの実行は旧手順（在庫チェック）の
+まま走っていた（上の行）。その後オーナー側で段1aの新手順・`_money_watch.md`・本ファイルの
+「🔁 2026-11-26〜」節が整備されたため、今回はその新手順どおりに走った。
+
+**手順0（⏸の測り直し）＝最大の収穫。**着手前に`earn_queue_shortage()`を直接呼んで確認したところ、
+副業節の未処理は**ready=0・parked=7**（7件全部⏸）＝まさに2026-11-26に新設された警告条件
+（「材料はあるのに全部⏸」）にちょうど当たっていた状態だった。7件のドメインをすべて
+`curl -sS -o /dev/null -w "%{http_code}"`で再測定したところ、環境の許可リストが広がっていて
+**6件が着手可能に変わった**:
+
+- フリマ・ハンドメイドの手数料と入金＝`jp.mercari.com`・`www.creema.jp`・`minne.com`＝200
+- アフィリエイト（ASP）＝`www.a8.net`・`www.afi-b.com`＝200（`support.af-moshimo.com`は
+  許可済みだが502＝agent-proxy曰く「ホストは許可されているが接続できない」というホスト側の問題）
+- AI動画編集ツールの商用利用＝`www.capcut.com`・`www.wondershare.jp`・`filmora.wondershare.com`＝
+  200（個別のToSパスは404なので着手時に正しいURLを探し直す必要あり）。`www.canva.com`のみ
+  `cf-mitigated: challenge`のbot判定で残存
+- Sunoの配信収入＝`suno.com`＝200。`distrokid.com`はbot判定、`tunecore.co.jp`は転送先が
+  許可リスト外のまま残存
+- なろう/カクヨムのAI小説投稿＝`syosetu.com`・`kakuyomu.jp`＝200
+- SKIMAのAIイラスト＝`skima.jp`＝200
+
+**残り1件（ココナラの出金）は遮断の種類が変わった。**以前は`help.coconala.com`への経路自体が
+`CONNECT tunnel failed`（経路遮断）だったが、今回測り直すと経路は開通していて（301/302で
+`/hc/ja`まで転送される）、最終応答が`cf-mitigated: challenge`付きの403＝**先方のbot判定**だった。
+`content/_money_watch.md`手順0の「bot判定は以後測り直さない」の運用にならい、この項目の印の
+理由を書き換えて固定した（印は消していない。印を消す条件を「別の一次情報が見つかった場合」に変更）。
+
+結果＝`earn_queue_shortage()`のready/parkedが**0/7→6/1**に回復。キュー本体（`_recipe_queue.md`）
+の該当7項目を編集済み。**書き手の毎晩3本が今夜から再び埋まる見込み。**
+
+**手順1〜4（見張る記事3本の照合）:**
+
+| slug | 結果 |
+|---|---|
+| `ai-stock-images-adobe-vs-pixta` | 開けず＝経路遮断（`pixta.jp`・`helpx.adobe.com`とも
+  agent-proxy「no rule or network setting allows this host」。この2ホストはまだ許可リスト外） |
+| `ai-writing-rate-below-the-rule-of-thumb` | 変化なし（`check_numbers.py`＝出典6/6件取得・
+  照合できる数字3個すべて出典に存在） |
+| `gpts-retirement-check-the-source` | **変化あり→キューへ**。OpenAIのGPTs新規作成終了日が
+  「Sep 25, 2026 (planned)」→「October 26, 2026（終了済み・確定）」に変わっていた
+  （`help.openai.com`の2ページ〈Updated: 2〜4 days ago〉を再取得し、「Sep 25」の文字列が
+  無くなっていること・「October 26, 2026」が存在することを確認。退任予定日Dec 11は不変）。
+  `_recipe_queue.md`の副業節先頭に【変化】を1件追加、🔧改稿にも1行足した |
+
+`_money_watch.md`の表3行（最後に照合した日・結果）を更新済み。見張るお知らせページは今回は
+時間切れのため未着手（表は空のまま。次回へ）。
+
+- →保管: 2026-11-26 見張り3本照合・変化1件（GPTs新規作成終了日）。⏸7件を再測定し6件が
+  着手可能に変わった（ready/parked 0/7→6/1）

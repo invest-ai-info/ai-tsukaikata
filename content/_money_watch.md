@@ -48,9 +48,9 @@
 
 | slug | 種類 | 最後に照合した日 | 結果 |
 |---|---|---|---|
-| `ai-stock-images-adobe-vs-pixta` | recipes | 未 | — |
-| `ai-writing-rate-below-the-rule-of-thumb` | recipes | 未 | — |
-| `gpts-retirement-check-the-source` | recipes | 未 | — |
+| `ai-stock-images-adobe-vs-pixta` | recipes | 2026-11-26 | 開けず＝経路遮断（pixta.jp・helpx.adobe.comとも許可リスト外） |
+| `ai-writing-rate-below-the-rule-of-thumb` | recipes | 2026-11-26 | 変化なし（出典6/6件取得・照合3個すべて一致） |
+| `gpts-retirement-check-the-source` | recipes | 2026-11-26 | 変化あり→キューへ（GPTs新規作成終了日が9/25予定→10/26終了済みに） |
 | `instagram-two-gates-500-and-10000` | recipes | 未 | — |
 | `kindle-ai-disclosure-check` | recipes | 未 | — |
 | `kindle-royalty-formula` | recipes | 未 | — |

@@ -496,6 +496,25 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - 🔒 切り分け: `flat-threshold-misfires`（更新間隔の統計閾値）・
     `zero-alarm-needs-a-holiday-list`（休みの日の0件）とは別軸＝**監視する側の時刻をどこに置くか**
 
+- [ ] 🔧 改稿 `gpts-retirement-check-the-source` ― 新規作成終了日が「9月25日（planned）」から
+      「10月26日（終了済み）」に変わった
+  - 🚨 **食い違い**＝本文・図のalt・AIへの頼み方のプロンプト引用（計5箇所）が
+    「Sep 25, 2026 (planned): Creation of new custom GPTs ends.」を原文のまま引用しているが、
+    2026-11-26に同じ出典ページ（Custom GPT retirement and migration FAQ・Updated: 4 days ago）を
+    再取得したところこの一文は無くなっており、Enterprise節に「Oct 26, 2026: New GPT creation ended
+    for affected Enterprise workspaces」とあった。もう1つの出典（Creating and editing GPTs・
+    Updated: 2 days ago）にも「New GPT creation ended on October 26, 2026」（確定・過去形）と
+    書かれている。退任予定日「Dec 11, 2026」自体は両ページとも変わっていない。
+    「Note that the dates are subject to change.」の一文も見当たらなくなった
+  - 芯＝記事の結論（GPTsで新しく収入を得る門は閉じている）は変わらないが、「予定」と書いた日付が
+    実際には別の日付で確定済みになっている。本文・図・証拠ファイルの日付表記のみ直す
+  - 実測の芯: 2つの出典URLを再取得し、「Sep 25」の文字列が存在しないこと・
+    「October 26, 2026」が存在することを文字列照合で確認する
+  - 直す場所: ①本文冒頭のリスト（21行目）②図`gpts-retirement-timeline.svg`のaltとキャプション
+    ③AIへの頼み方のプロンプト引用（80・100行目）④根拠の出典引用（142行目）⑤応用・次の一手の
+    出典リンクの注記（155行目）。`checked:`/`updated:`も再確認日に直す
+  - ⚠️ **やらないこと**＝実測9回のやり直し・記事の結論の変更。日付の表記だけ直す（決まり3）
+
 - [x] 長いメールの山から「返信が要るものだけ」抜く
   - →保管: 公開: `mail-needs-reply`
 - [x] Excelの表をAIに読ませて、おかしい数字を先に見つけさせる
@@ -1380,6 +1399,15 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
 体験を主張しない調査型（原文の逐語＋checked必須）なので tools 直接公開の条件を満たす。
 🚨 **書き手の知識で書かない**——必ず公式原文を開いてから（収益化条件は頻繁に変わる）。
 
+- [ ] 【変化】OpenAIのGPTs新規作成終了日が「9月25日（planned）」→「10月26日（終了済み・確定）」に
+      （Custom GPT retirement and migration FAQ／Creating and editing GPTs・2026-11-26確認）
+  - 出典: https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq
+    （Enterprise節に「Oct 26, 2026: New GPT creation ended for affected Enterprise workspaces」）・
+    https://help.openai.com/en/articles/8554397-creating-and-editing-gpts
+    （「New GPT creation ended on October 26, 2026」）
+  - 需要: 公式の変更（既存記事 `gpts-retirement-check-the-source` の読者に影響）
+  - 既存記事: `gpts-retirement-check-the-source`（数字が古くなった。改稿は「🔧 改稿」節へ1行足した）
+
 - [x] 総論「お金はどこから来るのか」＝3系統（運営分配・直販・受託）の地図
   - →保管: 公開: `tools/money-map-three-routes`
 - [x] 各論X「Xで収入を得るにはどういうキャッシュフローになるのか」（オーナー例示の1本目）
@@ -2166,12 +2194,11 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
 #### 補充（2026-11-01・ネタ探し担当。副業の着手可能が2件〈床3件を下回る〉のため源①②で補充）
 
 - [ ] フリマ・ハンドメイドの手数料と入金を、原文で確かめる
-  - ⏸ **いま着手できない**（2026-11-04・レシピ担当）＝この記事は手数料の数字に出典・確認日が
-    必須（money-noteの様式）だが、`curl -sS -o /dev/null -w "%{http_code}"` で実測したところ
-    `https://www.mercari.com/jp/help_center/article/833/`・`https://jp.mercari.com/...`・
-    `https://www.creema.jp`・`https://minne.com` の4件とも `CONNECT tunnel failed, response 403`
-    ＝**経路の遮断**（許可リストの問題。先方のbot判定ではない）。**印を消す条件**＝
-    これらのいずれかにクラウドから到達できた（実測して日付を書く）
+  - ▶️ **着手できる**（2026-11-26 クラウドで到達を確認）＝`curl -sS -o /dev/null -w "%{http_code}"`
+    で再測定したところ`jp.mercari.com`=200・`www.creema.jp`=200・`minne.com`=200（許可リストが
+    広がった）。⚠️ `www.mercari.com/jp/help_center/article/833/`のみ403（`cf-mitigated`無しだが
+    `__cf_bm`クッキー付きのcloudflare応答＝先方のbot判定の疑い）。**出典には`jp.mercari.com`・
+    `www.creema.jp`・`minne.com`のいずれかを使うこと**（着手時に改めてURLごとの到達を確認）
   - 根拠: 源①＝`content/tools/money-map-three-routes.md`（「お金の流れ」シリーズの地図・③型
     〈買い手から直接〉の実例がnote・Kindleのみ）と`content/recipes/listing-only-what-you-checked.md`
     （メルカリ系の需要はdemand研究で確認済み＝`docs/superpowers/notes/2026-08-10-demand-research.md:231`
@@ -2215,11 +2242,11 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - →保管: ✅ **2026-11-07 公開**＝`recipes/kindle-royalty-search-band-two-
 
 - [ ] アフィリエイト（ASP）の原資・門・入金は、「お金の流れ」6つの質問にどう答えるか
-  - ⏸ **いま着手できない**（2026-11-08・レシピ担当）＝`curl -sS -o /dev/null -w "%{http_code}"`で
-    実測したところ`www.a8.net`・`support.a8.net`・`support.af-moshimo.com`・`www.afi-b.com`の
-    4件とも`CONNECT tunnel failed, response 403`＝**経路の遮断**（許可リストの問題。先方のbot判定
-    ではない）。2026-11-04時点の調査結果と変化なし。**印を消す条件**＝これらのいずれかにクラウド
-    から到達できた（実測して日付を書く）
+  - ▶️ **着手できる**（2026-11-26 クラウドで到達を確認）＝`curl -sS -o /dev/null -w "%{http_code}"`
+    で再測定したところ`www.a8.net`=200・`support.a8.net`=200・`www.afi-b.com`=200（許可リストが
+    広がった）。⚠️ `support.af-moshimo.com`は`502 Bad Gateway`（agent-proxyのログ曰く
+    「ホストは許可されているが接続できない」＝DNSかホスト側の問題で許可リストの話ではない）。
+    **出典には`www.a8.net`か`www.afi-b.com`を使うこと**
   - 根拠: 源①＝`content/tools/money-map-three-routes.md:119`「**アフィリエイト**はこの記事の出典では扱っていません。使うASP（仲介会社）の原文に、上の6つの質問をそのまま当てて確かめてください」。「お金の流れ」シリーズ総論が明示的に対象外とした1マス
   - ⚠️ **着手前に必ず到達確認**＝調査時点（2026-11-04・リサーチ用セッション）で`www.a8.net`・`support.a8.net`・`support.af-moshimo.com`・`www.afi-b.com`はいずれも`CONNECT tunnel failed, response 403`（経路遮断。先方のbot判定ではない）。執筆担当の環境は別設定の可能性があるため、着手時に`curl -sS -o /dev/null -w "%{http_code}"`で実測してから進める。到達できなければ①`www.conmark.jp`（64行目）・②`kdp.amazon.co.jp`（491行目）・③`www.mercari.com`等（2054行目）と同じ扱いで「着手できない」の印を付けてよい
   - 実測の芯: 実際のASP（例: A8.net）の公式ヘルプ・規約の原文を貼り、①原資②門③金額の決まり方④入金の経路と時期⑤引かれるもの⑥必要なものの6問を既存シリーズと同じ形式でAIに答えさせる。原文を貼らずに聞いた回と、貼って聞いた回を比較し、最低入金額・振込手数料・入金サイクルなどの数字が原文と一致するかをテキスト照合
@@ -2263,12 +2290,13 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - →保管: 公開: `recipes/ai-writing-rate-below-the-rule-of-thumb`
 
 - [ ] AI動画編集ツールの「商用利用」範囲を、規約原文で確かめる
-  - ⏸ **いま着手できない**（2026-11-13・レシピ担当）＝WebFetchで実測したところ
-    `www.capcut.com/ja-jp/terms-of-service`・`www.canva.com/ja_jp/policies/terms-of-use/`・
-    `www.wondershare.jp/filmora/eula.html`・`filmora.wondershare.com/terms-of-use.html`・
-    `www.vrew.ai/ja/` の5件とも`CONNECT tunnel failed, response 403`＝**経路の遮断**
-    （許可リストの問題。先方のbot判定ではない）。**印を消す条件**＝これらのいずれかに
-    クラウドから到達できた（`curl -sS -o /dev/null -w "%{http_code}"`で実測して日付を書く）
+  - ▶️ **着手できる**（2026-11-26 クラウドで到達を確認）＝`curl`で再測定したところ
+    `www.capcut.com`=200・`www.wondershare.jp`=200・`filmora.wondershare.com`=200（許可リストが
+    広がった。トップは通るがURL直下の`ja-jp/terms-of-service`等の個別パスは404＝ページが
+    移動している。**着手時に正しいToSのURLを探し直すこと**）。⚠️ `www.canva.com`は
+    `cf-mitigated: challenge`の403＝**先方のbot判定（許可リストでは直らない）**。
+    `www.vrew.ai`はwwwは通るが転送先の`vrew.ai`（apex）が許可リスト外。
+    **CapCut/Filmoraの2本に絞って進めるのが無難**
   - 根拠: 源③発。`docs/topic-candidates/2026-11-07-earn.md`「動画編集」分類（実質95語）の
     「ai 動画編集 商用利用」「稼ぐ」「仕事」
   - 実測の芯: 副業で使われがちな編集ツール2〜3本の利用規約を原文で確認し、「商用利用可」の範囲・
@@ -2308,11 +2336,11 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
 着手前に執筆担当の環境で改めて到達確認すること。到達できなければ既存の⏸運用にならうこと。
 
 - [ ] AIで作った曲は配信すると収入になるのか ― Sunoの商用利用規約と配信サービスの規約を原文で
-  - ⏸ **いま着手できない**（2026-11-15・レシピ担当）＝`curl -sS -o /dev/null -w "%{http_code}"`
-    で再測定したところ`suno.com`・`distrokid.com`・`tunecore.co.jp`の3件とも
-    `CONNECT tunnel failed, response 403`＝**経路の遮断**（許可リストの問題。先方のbot判定
-    ではない）。2026-11-14の測定と変化なし。**印を消す条件**＝これらのいずれかにクラウドから
-    到達できた（実測して日付を書く）
+  - ▶️ **着手できる**（2026-11-26 クラウドで到達を確認）＝`curl`で再測定したところ`suno.com`=200
+    （許可リストが広がった）。⚠️ `distrokid.com`は`cf-mitigated: challenge`の403＝**先方のbot判定
+    （許可リストでは直らない）**。`tunecore.co.jp`はwwwへの301の先（`www.tunecore.co.jp`）が
+    まだ許可リスト外。**出典は`suno.com`の商用利用規約で進めること**（配信サービス側はDistroKid・
+    TuneCore以外の規約で代替できないか、着手時に探し直す）
   - 根拠: 源③＝`docs/topic-candidates/2026-11-07-earn.md`の「稼ぐ」節・「収益化」節に実在する
     需要語クラスタ（`suno ai 稼ぐ 方法`・`suno ai 収益化 しない`・`ai 作曲 収益化`・`ai 曲 収益化`・
     `ai 歌 収益化`・`生成ai 音楽 収益化`・`生成ai 音楽 youtube 収益化`＝計7語）。源①＝
@@ -2332,15 +2360,12 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - 節の縛り: 金額は`money-note`（出典・確認日・免責）必須／「必ず稼げる」断定なし／投資・
     トレード系ではない／プログラミング不要（配信代行サービスへの登録操作のみ）／体験の語り口禁止
     （規約原文の確認のみ）
-  - ⚠️ 到達性: 本日の測定で`suno.com`・`distrokid.com`・`tunecore.co.jp`はいずれも
-    `CONNECT tunnel failed, response 403`（経路遮断）。着手前に改めて`curl`で実測すること
+  - ⚠️ 到達性（2026-11-26 更新）: `suno.com`=200。`distrokid.com`はbot判定の403。
+    `tunecore.co.jp`は転送先が許可リスト外。着手前に改めて`curl`で実測すること
 
 - [ ] AIで書いた小説は「小説家になろう」「カクヨム」に出せるのか ― 規約の原文で
-  - ⏸ **いま着手できない**（2026-11-15・レシピ担当）＝`curl -sS -o /dev/null -w "%{http_code}"`
-    で再測定したところ`syosetu.com`・`kakuyomu.jp`の2件とも`CONNECT tunnel failed,
-    response 403`＝**経路の遮断**（許可リストの問題。先方のbot判定ではない）。2026-11-14の
-    測定と変化なし。**印を消す条件**＝これらのいずれかにクラウドから到達できた（実測して
-    日付を書く）
+  - ▶️ **着手できる**（2026-11-26 クラウドで到達を確認）＝`curl`で再測定したところ
+    `syosetu.com`=200・`kakuyomu.jp`=200（許可リストが広がった）
   - 根拠: 源③＝同ファイルの「収益化」節に`ai 小説 収益化`・`なろう 収益化 ai`・
     `カクヨム 収益化 ai`、「稼ぐ」節に`ai 小説 稼ぐ`という需要語が実在。源①＝grep実測で
     既存記事・キューとも0件
@@ -2355,14 +2380,11 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
     体験の語り口禁止（規約確認のみ）。⚠️ 収益化対象が規約上ごく一部の連載に限られる可能性があり、
     「🎯（いくら入るか）に答えられるか」は一次情報を開いてから判断すること（`conmark.jp`の前例と
     同じ注意）
-  - ⚠️ 到達性: 本日の測定で`syosetu.com`・`kakuyomu.jp`はいずれも`CONNECT tunnel failed,
-    response 403`（経路遮断）。着手前に改めて`curl`で実測すること
+  - ⚠️ 到達性（2026-11-26 更新）: `syosetu.com`=200・`kakuyomu.jp`=200
 
 - [ ] AIイラストはSKIMAで売れるのか ― 規約と手数料を原文で
-  - ⏸ **いま着手できない**（2026-11-15・レシピ担当）＝`curl -sS -o /dev/null -w "%{http_code}"`
-    で再測定したところ`skima.jp`は`CONNECT tunnel failed, response 403`＝**経路の遮断**
-    （許可リストの問題。先方のbot判定ではない）。2026-11-14の測定と変化なし。**印を消す条件**＝
-    `skima.jp`にクラウドから到達できた（実測して日付を書く）
+  - ▶️ **着手できる**（2026-11-26 クラウドで到達を確認）＝`curl`で再測定したところ`skima.jp`=200
+    （許可リストが広がった）
   - 根拠: 源③＝「副業」節に`ai イラスト 販売 副業`・`ai 副業 イラスト`・`ai 画像 販売 副業`・
     `ai 画像 生成 副業 やり方`等のクラスタ。源①＝grep実測で0件。`ai-stock-images-adobe-vs-pixta`
     はストックフォト代理店（Adobe Stock・PIXTA）を扱うが、C2Cの受注・購入マッチング型
@@ -2375,8 +2397,7 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
     プラットフォームの型（C2C受注・購入マッチング）が異なる。`coconala-ai-automation-634-listings`
     と「プラットフォームの出品構造を数える」型を共有するが対象区分が違う
   - 節の縛り: 「必ず稼げる」断定なし／投資・トレード系ではない／金額は出典必須／体験の語り口禁止
-  - ⚠️ 到達性: 本日の測定で`skima.jp`は`CONNECT tunnel failed, response 403`（経路遮断）。
-    着手前に改めて`curl`で実測すること
+  - ⚠️ 到達性（2026-11-26 更新）: `skima.jp`=200
 
 #### 補充（2026-11-15・ネタ探し担当。副業の着手可能が0件〈未処理9件全部が⏸・床3件を大きく下回る〉のため源②④で補充）
 
@@ -2401,11 +2422,14 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - →保管: ✅ **2026-11-16 公開**＝`recipes/three-tier-estimate-ratio-slips
 
 - [ ] ココナラの「売上金」が銀行口座に入るまで ― 出金申請・最低出金額・出金手数料・入金サイクルを原文で確かめる
-  - ⏸ **いま着手できない**（2026-11-17・レシピ担当）＝着手前に自分の環境で
+  - ⏸ **いま着手できない**（2026-11-26 稼ぎ方研究担当が再測定・**遮断の種類が変わった**）＝
     `curl -sS -o /dev/null -w "%{http_code}"`で再測定したところ`help.coconala.com`は
-    `CONNECT tunnel failed, response 403`＝**経路の遮断**（許可リストの問題。先方のbot判定
-    ではない）。対照の`coconala.com`は200。2026-11-15の実測（ネタ探し担当）と変化なし。
-    **印を消す条件**＝`help.coconala.com`にクラウドから到達できた（実測して日付を書く）
+    経路自体は開通していた（301/302で`/hc`→`/hc/ja`まで転送される＝許可リストの問題は
+    解消済み）が、最終応答は`cf-mitigated: challenge`付きの403＝**先方のbot判定**。
+    対照の`coconala.com`は200のまま。**bot判定と確認できたので、以後この項目は測り直さない**
+    （`content/_money_watch.md`手順0の「以後その項目は測り直さない」の運用にならう）。
+    **印を消す条件**＝bot判定を回避できる別の一次情報（ココナラの出金ヘルプを引用した信頼できる
+    二次情報・または規約PDF等）が見つかった場合のみ
   - ⚠️ **到達性の訂正（2026-11-15・ネタ探し担当が自分で再測定）**＝提案元の源④は
     「`help.coconala.com`は既存実績ドメインなので再到達不要」としたが、担当が
     `curl -sS -o /dev/null -w "%{http_code}"`で実測したところ**`help.coconala.com`は
