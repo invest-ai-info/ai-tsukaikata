@@ -6249,18 +6249,6 @@
       "uid": "84469385fbefea78",
       "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
       "vendor": "OpenAI"
-    },
-    {
-      "first_seen": "2026-08-28T18:46:16.087122+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-28T18:19:32+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added PreModelSwitch and PostModelSwitch hook events (block, confirm, or annotate a model switch); SessionStart resume hooks now receive session staleness and the estimated re-cache co…",
-      "title": "v2.1.251",
-      "uid": "b9c5ce40bf5d1b5c",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.251",
-      "vendor": "Anthropic"
     }
   ]
 }
