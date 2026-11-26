@@ -1252,13 +1252,7 @@ Upworthy の24,333ペアで、言語特徴を全部入れたモデルの的中�
   - →保管: 公開: `unregistered-canary-goes-undetected`
 
 - [x] 🔁 増減率10〜30%の境界ゾーンでは、AIの「同じ/大きく違う」判定はどこで切り替わるか
-  - →保管: 公開: `thirteen-percent-already-flips-the-call`（2026-11-25）。差13.0%・15.0%・18.0%の
-    架空データ3本（材料I・G・H）を独立に2回ずつ試し、6回すべてが真値と数値完全一致で「大きく違う」
-    判定だった。未知区間は10%〜20%（10ポイント）から10%〜13%（3ポイント）まで狭まった
-    （1点には絞っていない。残る11%・12%は未測定と明記）。
-    `ten-percent-same-twenty-percent-different`・`increasing-log-judgment-comes-out-right`・
-    `decreasing-log-judgment-comes-out-right`へ相互リンク済み。証拠は
-    `docs/evidence/thirteen-percent-already-flips-the-call.md`。
+  - →保管: 公開: `thirteen-percent-already-flips-the-call`
 
 #### 補充（2026-11-24・ネタ探し担当。🔁自動化・ループ優先枠の床割れ〈1件・床2件を下回る〉のため源①で補充）
 
@@ -2581,11 +2575,7 @@ scene:earnの155本から「試していません／確かめていません／�
     ため新たな需要語確認は不要と判断）
 
 - [x] キャンセル額が3件・別の列・日付が数週間離れていても合計は崩れないか
-  - →保管: ✅ **2026-11-25 公開**＝`recipes/cancellation-weeks-and-column-still-subtracts-all`。
-    3件分のキャンセルを、日付が約6週間離れた3つの文（材料A）・備考とは別の「キャンセル履歴」列
-    （材料B）に分けて、計算手順を明示・素朴・軽い言い方の3種類、計26回で実測。26回とも正しい
-    不足額（材料A=4,000円・材料B=3,500円）に到達し、崩れ方は1件も起きなかった。指示文は
-    「備考に」としか言っていないが、キャンセルが別の列にあることも多くの回で自分から指摘した。
+  - →保管: ✅ **2026-11-25 公開**＝`recipes/cancellation-weeks-and-column-s
 
 - [ ] 新規開拓の営業DM、情報が少ないほどAIは実績を作り話で埋めるか
   - 根拠: 源②＝『ひとり社長の稼げるAI』（田中亮大・明日香出版社・2026-10-13刊・
