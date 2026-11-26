@@ -35,7 +35,7 @@ API同期で「SYNC禁忌」ルールがあるが、こちらは**普通のgit�
 | GitHub | `invest-ai-info/ai-tsukaikata`（public） |
 | ドメイン | `ai-tsukaikata.com`（2026-08-01 取得済み。GitHub Pages への接続は2段目の作業） |
 | Python | 3.12.10。依存は `requirements.txt`（feedparser / PyYAML / pytest / Jinja2 / Markdown） |
-| テスト | `python -m pytest -q` → **796 passed**（2026-11-26 実測） |
+| テスト | `python -m pytest -q` → **804 passed**（2026-11-26 実測） |
 | 記事の数字の照合 | `python tools/check_numbers.py <記事>` → 出典に無い数字を報告（ビルドには組み込まない） |
 | 図の生成 | `python tools/make_figures.py` → `static/images/` に再生成。**座標は計算で出す** |
 
@@ -367,14 +367,17 @@ major で絞っても37件が25件になるだけで絞り込みにならない�
 |---|---|---|
 | 夜の執筆 `ai-tsukaikata-recipe` | 毎晩21:00 | 0〜1本。副業節の調べもの型だけ・`scene: money` |
 | 稼ぎ方研究 `ai-tsukaikata-earn-research` | 毎日15:30 | 公式の変化の見張り（`content/_money_watch.md`） |
-| 確認担当 `ai-tsukaikata-reviewer` | 毎晩22:38 | 公開が無い晩は何もしない |
-| ネタ探し `ai-tsukaikata-topic-scout` | 毎週土曜06:12 | 調べもの型の題材だけ |
+| 確認担当 `ai-tsukaikata-reviewer` | 毎晩22:38 | 公開が無い晩はログに1行だけ |
+| ネタ探し `ai-tsukaikata-topic-scout` | — | ⏸ 停止（稼ぎ方研究が題材探しも兼ねる） |
 | 自動化レシピ `ai-tsukaikata-automation-recipe` | — | ⏸ 停止 |
 | 深掘り `ai-tsukaikata-deepdive` | — | ⏸ 停止（トラッカーの自動追記も止めた） |
 
 - **決まりの単一ソース**＝`content/_recipe_queue.md` の冒頭🔢節。見張りの手順と見張る記事の表＝`content/_money_watch.md`
 - **見張り番**＝副業節の床を0に（在庫の目標を持たない＝空でも鳴らない。節の欠落・節の切れは鳴る）。
-  外した＝待ち行列全体の残量・深掘りキューの残量・仮説キューの在庫。心拍（書き手・研究担当とも2日）はそのまま
+  外した＝待ち行列全体の残量・深掘りキューの残量・仮説キューの在庫。心拍（書き手・研究担当とも2日）はそのまま。
+  足した＝副業節の材料が**全部 `⏸`**（クラウドから公式ページに届かない）なら鳴る／見張りの表が7日動かなければ鳴る（`money_watch_gaps`）
+- 🚨 **2026-11-26 時点で副業節の7件は全部 `⏸`**（help.coconala.com・skima.jp・a8.net・suno.com・syosetu.com・kakuyomu.jp などに届かない）。
+  クラウド環境の許可リストに足すまで、書き手は毎晩0本になる（許可リストの直し方は上の「クラウドルーティンは既定では…」節）
 - **場面**＝新しい `money`「稼ぎ方の調べもの」。既存の `earn` は「副業の検証（過去の記事）」として残す（URLは不変）。
   調べもの型の15本を `money` へ付け替えた（一覧と判定の基準＝`docs/2026-11-26-money-scene-moves.md`）。トップのボタンは「稼ぎ方の調べもの」
 - 副業節の検証型9件は `- [!]` で保留（次の回転で保管庫へ移る）
