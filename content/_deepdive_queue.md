@@ -984,6 +984,9 @@
     - 💡 **次にこの行を見る人へ**＝担当の判断だけで `- [x]`（見送り確定）にはしない。オーナーに一言確認を
       仰いでから確定させるのが、これまでの前例（FIG以降）に合わせたやり方。
 
+- [ ] https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/
+  - 2026-11-26 自動追記（minor・Google DeepMind「From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity」）
+
 ## 処理済み
 
 - https://deepmind.google/blog/introducing-gemini-4-neon/ → **公開済み** content/tools/gemini-4-neon.md（2026-11-19・公開）

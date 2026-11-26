@@ -51,6 +51,20 @@
       "vendor": "Sakana AI"
     },
     {
+      "first_seen": "2026-11-26T00:26:45.477739+00:00",
+      "importance": "minor",
+      "label": "DeepMind Blog",
+      "published": "2026-11-24T13:07:53+00:00",
+      "source_id": "deepmind-blog",
+      "summary": "Mass Spec Skills empowers scientists using Google Antigravity to interpret tandem mass spectra.",
+      "summary_ja": "Mass Spec SkillsがGoogle Antigravityで利用開始\n科学者が質量分析データから分子を特定できるように",
+      "summary_source": "gemini",
+      "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+      "uid": "9f5c7aecefe66e7b",
+      "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+      "vendor": "Google DeepMind"
+    },
+    {
       "first_seen": "2026-11-25T04:20:49.704372+00:00",
       "importance": "minor",
       "label": "OpenAI News",
@@ -6275,84 +6289,6 @@
       "uid": "911c5071c541eecf",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
       "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-28T05:26:34.338455+00:00",
-      "importance": "minor",
-      "label": "Claude Code",
-      "published": "2026-08-27T22:12:20+00:00",
-      "source_id": "claude-code",
-      "summary": "What's changed Added --restricted (or CLAUDE_CODE_RESTRICTED=1 ): removes the built-in tools that run commands or code and WebFetch (unless named in --tools ), keeps file tools inside the working dir…",
-      "title": "v2.1.248",
-      "uid": "6ad48bab95d34a0e",
-      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.248",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "major",
-      "label": "Anthropic SDK (Python)",
-      "published": "2026-08-27T20:28:58+00:00",
-      "source_id": "anthropic-sdk",
-      "summary": "1.2.0 (2026-08-27) Full Changelog: v1.1.0...v1.2.0 Features api: beta files/skills namespaces use GA shapes; drop dated beta header pins ( 9df4565 ) Bug Fixes aws,bedrock: sign raw request bytes so b…",
-      "title": "v1.2.0",
-      "uid": "602aedaa9575882c",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.2.0",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-27T18:00:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanc…",
-      "summary_ja": "AIが物理デバイスを動かす基準の試用を開始\nMHSという共通ルールを策定し、安全な操作を目指す\nまず科学研究機関などで研究として使われる",
-      "summary_source": "gemini",
-      "title": "Previewing the Model Hardware Standard",
-      "uid": "94c96e3572954e84",
-      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "Anthropic 公式ニュース",
-      "published": "2026-08-27T17:03:00+00:00",
-      "source_id": "anthropic-news",
-      "summary": "Starting today, 10,000 scientists around the world can get Claude at no cost to start. Verified principal investigators qualify for a Claude Team subscription plan and then add their research team to…",
-      "summary_ja": "科学者向けにAI「Claude」の無償提供を開始\n世界で1万人の科学者が対象で、費用はかからない\n主任研究者はチームで利用できるプランを選べる",
-      "summary_source": "gemini",
-      "title": "Expanding our support for scientists",
-      "uid": "7ffeb48e9a779ac3",
-      "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
-      "vendor": "Anthropic"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "DeepMind Blog",
-      "published": "2026-08-27T16:11:32+00:00",
-      "source_id": "deepmind-blog",
-      "summary": "",
-      "title": "Gemini Omni 1.1 Flash lets you build with more control",
-      "uid": "89a16612c9d90023",
-      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
-      "vendor": "Google DeepMind"
-    },
-    {
-      "first_seen": "2026-08-27T20:33:26.631798+00:00",
-      "importance": "minor",
-      "label": "Google AI Blog",
-      "published": "2026-08-27T16:00:00+00:00",
-      "source_id": "google-ai-blog",
-      "summary": "Graphic depicting new travel features for AI Mode in Search",
-      "summary_ja": "検索AIで旅行計画・予約の新機能を3つ追加",
-      "summary_source": "gemini",
-      "title": "3 new ways to plan and book travel in Search",
-      "uid": "4ebe4ef76e10f8a9",
-      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
-      "vendor": "Google"
     }
   ]
 }
