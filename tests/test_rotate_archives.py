@@ -26,7 +26,6 @@ from check_freshness import (  # noqa: E402
     earn_research_heartbeat,
     file_budgets,
     hypothesis_registration_gaps,
-    hypothesis_stock_empty,
 )
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -410,7 +409,7 @@ class TestRotateHypotheses:
     def test_guards_still_read_the_rotated_file(self):
         """番人が壊れないこと＝在庫（⏳）は数えられ、必須欄の欠けは鳴らない。"""
         new, _ = rotate_hypotheses(HYPO)
-        assert hypothesis_stock_empty(new) is None  # H3 が ⏳ で残っている
+        assert "### H3 " in new  # H3 が ⏳ で残っている（在庫の番人は 2026-11-26 に外した）
         assert [p for p in hypothesis_registration_gaps(new) if "H1" in p or "H2" in p] == []
 
     def test_numbers_stay_visible_for_the_next_registration(self):

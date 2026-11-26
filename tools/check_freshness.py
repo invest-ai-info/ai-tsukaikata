@@ -229,26 +229,8 @@ def check_articles(articles, today: date, head=head, max_age_days=MAX_AGE_DAYS) 
 
 
 QUEUE_PATH = "content/_recipe_queue.md"
-QUEUE_FLOOR = 6  # 2晩ぶん。ここを切ったら補充が最優先
-UNPROCESSED_RE = re.compile(r"^- \[ \]", re.M)
-
-
-def queue_shortage(queue_text: str, floor: int = QUEUE_FLOOR) -> str | None:
-    """レシピの待ち行列が枯れかけていたら、知らせる文字列を返す。
-
-    ⚠️ 静かに枯れると、毎晩の担当が「題材が無い」で止まり始めてから気づくことになる。
-    サイトが止まるわけではないので、ビルドでは止めずに週次で知らせる。
-
-    未処理は `- [ ]` だけ。`- [x]`（公開済み）も `- [!]`（書かずに止めた）も数えない。
-    """
-    count = len(UNPROCESSED_RE.findall(queue_text))
-    if count < floor:
-        return (
-            f"{QUEUE_PATH}: 待ち行列の未処理が{count}件です"
-            f"（床は{floor}件＝2晩ぶん。補充が最優先です。"
-            f"再実行の手順は docs/superpowers/notes/2026-08-10-demand-research.md）"
-        )
-    return None
+# queue_shortage（待ち行列全体の残量）は
+# 2026-11-26 段1a で外した（書く節を副業に絞った・深掘りと検証型を止めた）。戻すなら git の履歴から
 
 
 # --- 証拠の機械照合（進化ループ v1.5・2026-08-14）---
@@ -318,7 +300,10 @@ def load_evidence(root: Path) -> dict[str, str]:
 
 
 EARN_HEADING_RE = re.compile(r"^### 副業.*$", re.M)
-EARN_FLOOR = 3  # 1晩ぶん。「副業も毎晩3本」（2026-08-13 オーナー指示）を支える床
+# 2026-11-26〜 0（在庫の目標を持たない）。本数を決めず「公式の変化が出た日に書く」方針
+# （オーナー判断）なので、節が空でも正常＝鳴らさない。担当が止まったことは心拍（研究担当・
+# 書き手）が拾う。節の欠落・節の切れの検査はこのまま効く。それまでは3（毎晩3本の床）だった。
+EARN_FLOOR = 0
 
 # 🚨 「いま着手できない未処理」に付ける印（2026-08-31 追加）。
 #
@@ -360,10 +345,10 @@ def _earn_section(queue_text: str) -> tuple[str | None, str | None]:
 
 
 def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
-    """「副業」の節の**着手できる**未処理が1晩ぶんを切ったら、知らせる文字列を返す。
+    """「副業」の節が壊れているか、**着手できる**未処理が床を切ったら、知らせる文字列を返す。
 
-    毎晩3本の方針は、節の残量が尽きると黙って守れなくなる（担当は正しく
-    「残りが無い」と報告するが、週次まで誰も補充しない）ので、床を別に持つ。
+    2026-11-26〜 床は0（EARN_FLOOR のコメント）。いま鳴るのは、節の見出しが無いときと、
+    節の中の `###` で節が切れているときだけ。床を持たせたいときは floor を渡す。
 
     ⚠️ `⏸` の付いた項目は数えない（PARKED_MARK のコメント参照）。
     ⚠️ 節の見出しが見つからない場合も知らせる。見出しの改名で番人が
@@ -395,43 +380,14 @@ def earn_queue_shortage(queue_text: str, floor: int = EARN_FLOOR) -> str | None:
         note = f"（ほかに{PARKED_MARK}付きが{parked}件＝いま着手できないもの）" if parked else ""
         return (
             f"{QUEUE_PATH}: 「副業」の節で**いま着手できる**未処理が{ready}件です{note}"
-            f"（床は{floor}件＝1晩ぶん。毎晩3本の方針が守れなくなります。"
-            f"補充の手順は docs/superpowers/notes/2026-08-10-demand-research.md の"
-            f"「2026-08-13 追加実行」節）"
+            f"（床は{floor}件）"
         )
     return None
 
 
 
-# --- 深掘りキューの残量（2026-08-31 追加。ここには番人が無かった）---
-#
-# 🚨 2026-08-18〜20 に一度直した「毎朝38秒で終わる」が、2026-08-31 に再発していた。
-# 前回の対策（`- [!]` の再試行）は**経路遮断だけ**が対象で、先方の bot 判定は設計どおり
-# 対象外。そして枠を取っていたのが全部その bot 判定のドメインだったので、キューは
-# 未処理0・保留6のまま埋まり、tools/ の自動公開は 2026-08-21 で止まった（10日間ゼロ）。
-#
-# 🔑 前回は仕組みを直したのに**気づく手段を作らなかった**ので、10日かかった。
-# ⚠️ `- [!]` は数えない。再試行の対象外のものが混ざっていて、あることが在庫の証明にならない
-#    （まさにそれで10日間「緑」に見えていた）。
-DEEPDIVE_PATH = "content/_deepdive_queue.md"
-DEEPDIVE_FLOOR = 1  # ルーティンは1日1件しか処理しない。翌朝ぶんが有ればよい
-
-
-def deepdive_queue_shortage(text: str | None, floor: int = DEEPDIVE_FLOOR) -> str | None:
-    """深掘りキューの未処理が翌朝ぶんを切ったら、知らせる文字列を返す。"""
-    if text is None:
-        return None
-    ready = len(UNPROCESSED_RE.findall(text))
-    if ready >= floor:
-        return None
-    blocked = len(re.findall(r"^- \[!\]", text, re.M))
-    note = f"（保留 `- [!]` が{blocked}件ありますが、再試行の対象外が混ざるので数えていません）" if blocked else ""
-    return (
-        f"{DEEPDIVE_PATH}: 未処理が{ready}件です{note}"
-        f"（床は{floor}件。このままだと毎朝のルーティンが手順1で帰り、tools/ の公開が止まります。"
-        f"補充＝`data/tracker/news.json` の major のお知らせから、"
-        f"読めるホスト（tracker/deepdive.py の UNREADABLE_HOSTS 以外）のURLを足す）"
-    )
+# deepdive_queue_shortage（深掘りキューの残量）は
+# 2026-11-26 段1a で外した（書く節を副業に絞った・深掘りと検証型を止めた）。戻すなら git の履歴から
 
 # --- 需要語の裏取り（2026-08-25 オーナー判断）---
 #
@@ -513,32 +469,8 @@ HYPOTHESIS_NOT_STARTED = "⏳"
 HYPOTHESIS_HANDED_OVER = "📤"  # ＝キューへ渡した。研究担当の在庫からは外れる
 
 
-def hypothesis_stock_empty(text: str | None) -> str | None:
-    """まだ渡していない（⏳未着手の）仮説が1件も無ければ、知らせる文字列を返す。"""
-    if not text:
-        return None
-    heads = list(HYPOTHESIS_HEAD_RE.finditer(text))
-    ready = 0
-    for i, head in enumerate(heads):
-        end = heads[i + 1].start() if i + 1 < len(heads) else len(text)
-        state = HYPOTHESIS_STATE_RE.search(text[head.end():end])
-        if state is not None and HYPOTHESIS_NOT_STARTED in state.group(1):
-            ready += 1
-    if ready:
-        return None
-    backlog = len(re.findall(r"^- (?!\[)", _backlog_section(text), re.M))
-    note = f"バックログに{backlog}件ありますが、" if backlog else ""
-    return (
-        f"{HYPOTHESIS_PATH}: 渡していない仮説（⏳未着手）が0件です。"
-        f"{note}H番号を発行するには反証条件と試行回数の設計が要ります"
-        f"（源0は「最優先。うちしか出せない発見はここからしか出ない」と設計に明記された源です）"
-    )
-
-
-def _backlog_section(text: str) -> str:
-    """「## バックログ」以降。無ければ空文字。"""
-    m = re.search(r"^## バックログ", text, re.M)
-    return text[m.end():] if m else ""
+# hypothesis_stock_empty（仮説キューの在庫）は
+# 2026-11-26 段1a で外した（書く節を副業に絞った・深掘りと検証型を止めた）。戻すなら git の履歴から
 
 
 def hypothesis_registration_gaps(text: str | None) -> list[str]:
@@ -1054,20 +986,11 @@ def main(argv: list[str] | None = None) -> int:
     queue_file = root / "content" / "_recipe_queue.md"
     if queue_file.exists():
         queue_text = queue_file.read_text(encoding="utf-8")
-        for check in (queue_shortage, earn_queue_shortage):
-            shortage = check(queue_text)
-            if shortage:
-                report.problems.append(shortage)
+        shortage = earn_queue_shortage(queue_text)
+        if shortage:
+            report.problems.append(shortage)
         # 需要語の裏取り（2026-08-25 オーナー判断）。閉じた輪の再発を止める
         report.problems.extend(earn_demand_gaps(queue_text))
-
-    # 深掘りキューの残量（2026-08-31）。ここが空だと毎朝のルーティンが38秒で帰る
-    deepdive_file = root / "content" / "_deepdive_queue.md"
-    deepdive = deepdive_queue_shortage(
-        deepdive_file.read_text(encoding="utf-8") if deepdive_file.exists() else None
-    )
-    if deepdive:
-        report.problems.append(deepdive)
 
     # 弁護士相談の期日ゲート（収入エンジン設計 D-4）
     gate_problems, gate_notes = lawyer_deadline_gate(date.today())
@@ -1097,10 +1020,6 @@ def main(argv: list[str] | None = None) -> int:
         hypothesis_file.read_text(encoding="utf-8") if hypothesis_file.exists() else None
     )
     report.problems.extend(hypothesis_registration_gaps(hypothesis_text))
-    # 在庫（2026-08-31）。渡し終わって空になったことが、これまで無音だった
-    stock = hypothesis_stock_empty(hypothesis_text)
-    if stock:
-        report.problems.append(stock)
 
     # 台帳の昇格判定。輪2（月曜）が数え直さずに済むように、数はここで出す。
     ledger_file = root / "content" / "_lessons.md"

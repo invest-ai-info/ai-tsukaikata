@@ -12,8 +12,6 @@ from check_freshness import (  # noqa: E402
     external_links,
     earn_demand_gaps,
     hypothesis_registration_gaps,
-    hypothesis_stock_empty,
-    deepdive_queue_shortage,
     earn_queue_shortage,
     earn_research_heartbeat,
     evidence_gaps,
@@ -23,7 +21,6 @@ from check_freshness import (  # noqa: E402
     lesson_number_duplicates,
     lesson_promotions,
     money_note_staleness,
-    queue_shortage,
     readability_drift,
 )
 
@@ -193,30 +190,6 @@ def test_move_is_reported_when_the_destination_is_nowhere_in_the_article():
     assert any("引っ越して" in p for p in report.problems)
 
 
-def test_queue_shortage_fires_below_the_floor():
-    """待ち行列が枯れかけていたら知らせる。
-
-    静かに枯れると、毎晩の担当が「題材が無い」で止まり始めてから気づくことになる。
-    """
-    queue = "\n".join(["- [ ] 題材A", "- [x] 済み", "- [!] 止めた", "- [ ] 題材B"])
-    problem = queue_shortage(queue, floor=6)
-    assert problem is not None
-    assert "2件" in problem
-
-
-def test_queue_shortage_counts_only_unprocessed():
-    """`- [x]`（済み）も `- [!]`（止めた）も未処理ではない。"""
-    queue = "\n".join(["- [x] 済み"] * 10 + ["- [!] 止めた"] * 10)
-    problem = queue_shortage(queue, floor=6)
-    assert problem is not None
-    assert "0件" in problem
-
-
-def test_queue_shortage_is_quiet_at_or_above_the_floor():
-    queue = "\n".join(f"- [ ] 題材{i}" for i in range(6))
-    assert queue_shortage(queue, floor=6) is None
-
-
 def test_earn_queue_shortage_fires_below_the_floor():
     """「副業」の節の残量は全体とは別に見張る（毎晩3本の方針を支える床）。"""
     queue = "\n".join(
@@ -243,6 +216,29 @@ def test_earn_queue_shortage_counts_only_inside_the_section():
     problem = earn_queue_shortage(queue, floor=3)
     assert problem is not None
     assert "0件" in problem
+
+
+def test_earn_queue_is_quiet_when_empty_by_default():
+    """2026-11-26〜 在庫の目標を持たない（公式の変化が出た日に書く方針）。空でも鳴らさない。"""
+    assert earn_queue_shortage(_queue("### 副業（テスト）", "- [x] 済み", "### 次の節")) is None
+
+
+def test_earn_queue_still_warns_by_default_when_the_section_is_missing():
+    """床を0にしても、見出しの改名で番人が黙って死なないことは守る。"""
+    problem = earn_queue_shortage("- [ ] 題材")
+    assert problem is not None and "見つかりません" in problem
+
+
+def test_earn_queue_still_warns_by_default_when_the_section_is_cut():
+    problem = earn_queue_shortage(_queue("### 副業（テスト）", "### 2026-11-27 15:30 稼ぎ方研究担当", "- [ ] A"))
+    assert problem is not None and "####" in problem
+
+
+def test_watchers_of_stopped_routines_are_removed():
+    """2026-11-26 段1a で外した見張り（書く節を副業に絞った・深掘りと検証型を止めた）。"""
+    import check_freshness as module
+    for name in ("queue_shortage", "deepdive_queue_shortage", "hypothesis_stock_empty"):
+        assert not hasattr(module, name), name
 
 
 def test_earn_queue_shortage_warns_when_the_section_is_missing():
@@ -866,25 +862,6 @@ def test_earn_queue_shortage_still_quiet_when_enough_are_workable():
     assert earn_queue_shortage(queue, floor=3) is None
 
 
-def test_deepdive_queue_shortage_fires_when_empty():
-    """毎朝38秒で帰る状態には、これまで番人がいなかった。"""
-    problem = deepdive_queue_shortage(_queue("## 待ち行列", "", "- [x] 済み"))
-    assert problem is not None
-    assert "0件" in problem
-
-
-def test_deepdive_queue_shortage_does_not_count_blocked_items():
-    """⚠️ `- [!]` は再試行の対象外が混ざる。あることが在庫の証明にならない。"""
-    problem = deepdive_queue_shortage(_queue("- [!] https://a", "- [!] https://b"))
-    assert problem is not None
-    assert "保留" in problem and "2件" in problem
-
-
-def test_deepdive_queue_shortage_is_quiet_with_one_unprocessed():
-    assert deepdive_queue_shortage(_queue("- [ ] https://a", "- [!] https://b")) is None
-    assert deepdive_queue_shortage(None) is None
-
-
 def _hypothesis(state: str, backlog: int = 0) -> str:
     lines = [
         "## 優先キュー",
@@ -899,24 +876,7 @@ def _hypothesis(state: str, backlog: int = 0) -> str:
     return _queue(*lines)
 
 
-def test_hypothesis_stock_empty_fires_when_everything_was_handed_over():
-    """📤変換済みだけになったら鳴る＝源0が空。これが今まで無音だった。"""
-    problem = hypothesis_stock_empty(_hypothesis("📤変換済み", backlog=7))
-    assert problem is not None
-    assert "0件" in problem
-    assert "バックログに7件" in problem
-
-
-def test_hypothesis_stock_empty_is_quiet_while_one_is_unstarted():
-    assert hypothesis_stock_empty(_hypothesis("⏳未着手", backlog=7)) is None
-
-
-def test_hypothesis_stock_empty_is_quiet_without_a_file():
-    assert hypothesis_stock_empty(None) is None
-    assert hypothesis_stock_empty("") is None
-
-
-def test_hypothesis_stock_empty_does_not_break_the_registration_guard():
+def test_handed_over_hypothesis_still_passes_the_registration_guard():
     """状態語彙を増やしても、必須欄の判定は変わらない。"""
     assert hypothesis_registration_gaps(_hypothesis("📤変換済み")) == []
 
