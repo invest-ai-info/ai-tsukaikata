@@ -46,6 +46,30 @@
 
 ## 記録
 
+### 2026-11-26（自動化・ループ優先枠の回）
+- 公開: 1本（`one-word-selfcheck-splits-on-partial-detection`）
+- 実測: `claude --safe-mode --tools "" --print`で独立プロセス24回。架空の監視対象表＋
+  監視対象リストにカナリア3つ（zz-canary-1〜3）を同時に仕込み、自己診断させる指示文を
+  4パターンで試した。3つとも正しく登録＝4/4検知。1つだけ監視対象リスト未登録・説明を許す
+  （「すべて」明示版／曖昧な複数参照版の2通り）＝8/8正しく「一部だけ」と判定・理由も自発的に
+  言語化。**同じ部分検知の状況で自己診断を一言だけに強制すると8回中3回は「検知できました」と
+  誤判定**（キューの見立て「部分検知を全検知と誤認する崩れ」がこの条件で確認できた）。
+  1つずつ名指し＋検知数を数字で答えさせる形＝4/4正しく揃った（言い直しの受け皿）
+- `git fetch origin`→HEADはorigin/mainと一致（9981f027→06bc35c6に28コミット分
+  fast-forwardが必要だったため`git merge --ff-only origin/main`で取り直した）
+- `content/_recipe_queue.md`「自動化・ループ優先」節の未処理2件のうち、先頭
+  （カナリア複数同時仕込み）のみ着手。2本目（判定ロジック自体が壊れている場合の自己診断）は
+  時間と品質を優先し、見送って`- [ ]`のまま残した（次回そのまま着手可能）
+- `grep -h '^## '`で既存の節見出しと`grep -ril "カナリア\|複数.*検知\|部分検知"`で重複なしを確認。
+  図2枚追加（`multiple_canaries_oneword_verdict_chart`・`multiple_canaries_oneword_eight_runs_chart`。
+  座標は計算で出した。初回は文字が枠からはみ出す崩れを`src.build`の検査で検出し、
+  列幅とレイアウトを直して解消）
+- 証拠ファイルの初稿で、記事の指示文と証拠の「送った指示文」のプレースホルダ表記が
+  微妙に違い、`src/validate.py`の`_evidence_errors`（同一文字列チェック）に落ちた。
+  両ファイルの表記を揃えて解消（★候補：下の教訓へ）
+- `python -m pytest -q`（795 passed）・`python -m src.build`・
+  `python tools/check_readability.py`（60字以上10%・最長80字）すべて通過
+
 ### 2026-11-25 21:00（副業枠の回）
 - `git fetch origin`→HEADはorigin/mainと一致済み（取り直し不要）
 - `content/_recipe_queue.md`冒頭「🔢 1晩の本数」「担当が守ること」「### 副業」節、

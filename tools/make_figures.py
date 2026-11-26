@@ -48507,3 +48507,117 @@ def cancellation_weeks_column_mechanism_chart() -> None:
 if __name__ == "__main__":
     cancellation_weeks_column_hit_and_miss_chart()
     cancellation_weeks_column_mechanism_chart()
+
+
+def multiple_canaries_oneword_verdict_chart() -> None:
+    """3つのカナリアを同時に仕込んだとき、聞き方ごとに正しく判定できた回数を比べる。
+
+    値は docs/evidence/one-word-selfcheck-splits-on-partial-detection.md の機械照合から。
+    前作 unregistered-canary-goes-undetected の続き（カナリアを複数同時に仕込む軸）。
+    """
+    _hit_and_miss_rows_chart(
+        "multiple-canaries-oneword-verdict.svg",
+        "複数のカナリアでも、一言に縛った自己診断だけが答えが割れる",
+        "実測2026-11-24設定（本日の基準日）。3つの架空カナリアを同時に仕込み、聞き方を変えて自己診断させた。",
+        "①3つとも正しく登録 ②③1つだけ登録漏れ・説明あり ④同じ状況・一言だけに強制 ⑤同じ状況・1つずつ名指し。",
+        [
+            ("①3つとも表と監視対象リストの両方に正しく登録（4機会）：全部検知と正しく答えた回数", 4, 4, "good"),
+            ("②③1つだけ登録漏れ・理由の説明を許す（二通りの聞き方、計8機会）：「一部だけ」と正しく答えた回数", 8, 8, "good"),
+            ("④同じ登録漏れ・自己診断を一言だけに強制（8機会）：正しく「検知できませんでした」と答えた回数", 5, 8, "good"),
+            ("⑤同じ登録漏れ・検知できたか1つずつ名指しで答えさせる（4機会）：3つ中2つと正しく答えた回数", 4, 4, "good"),
+        ],
+        [
+            "一言に縛った8回だけ、同じ登録漏れ（3つ中2つ検知）なのに答えが割れた。",
+            "5回は正しく「できません」・3回は誤って「できました」。1つずつ名指しなら4回とも揃った。",
+        ],
+        "横棒の一覧表。3つの架空カナリアを同時に仕込んだときの自己診断の正しさを、聞き方ごとに比べる。"
+        "①3つとも表と監視対象リストの両方に正しく登録した場合（4機会）は全部検知と正しく答えた回数が4/4で緑。"
+        "②③1つだけ監視対象リストへの登録漏れがある状態で、理由の説明を許した場合（二通りの聞き方、計8機会）は"
+        "「一部だけ」と正しく答えた回数が8/8で緑。④同じ登録漏れの状態で自己診断を一言だけに強制した場合"
+        "（8機会）は、正しく「検知できませんでした」と答えた回数が8回中5回で、どちらの色にも振れない中間の表示になる。"
+        "⑤同じ登録漏れの状態で検知できたカナリアを1つずつ名指しで答えさせた場合（4機会）は、3つ中2つと"
+        "正しく答えた回数が4/4で緑に戻る。下の枠には、一言に縛った8回だけ同じ登録漏れなのに答えが割れたこと"
+        "（5回は正しく「できません」・3回は誤って「できました」）、1つずつ名指しで答えさせると4回とも"
+        "「3つ中2つ」と正しく揃ったことが書かれている。",
+        label_w=460,
+    )
+
+
+if __name__ == "__main__":
+    multiple_canaries_oneword_verdict_chart()
+
+
+def multiple_canaries_oneword_eight_runs_chart() -> None:
+    """一言強制の8回が、同じ登録漏れなのにどう割れたかを1回ずつ並べる。
+
+    値は docs/evidence/one-word-selfcheck-splits-on-partial-detection.md の機械照合から。
+    材料A（お知らせ配信監視・既存異常2件あり）・材料B（バックアップ監視・既存異常なし）×各4回。
+    """
+    runs = [
+        ("材料A・1回目", "検知できませんでした", True),
+        ("材料A・2回目", "検知できました", False),
+        ("材料A・3回目", "検知できませんでした", True),
+        ("材料A・4回目", "検知できませんでした", True),
+        ("材料B・1回目", "検知できませんでした", True),
+        ("材料B・2回目", "検知できました", False),
+        ("材料B・3回目", "検知できました", False),
+        ("材料B・4回目", "検知できませんでした", True),
+    ]
+    box_x, box_w = 18, 684
+    label_w = 130
+    col_x = box_x + label_w
+    col_w = box_w - label_w
+    row_h = 30
+    top = 108
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ登録漏れ（3つ中2つ検知）を8回繰り返しても、一言の答えは揃わない</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "独立プロセスで8回実行。どの回も表の中身・監視対象リストの登録状況は同一（zz-canary-3だけ未登録）。</text>\n",
+        '<text class="t-sm" x="18" y="64">'
+        "指示は「自己診断の結果だけを、他には何も書かずに一文だけで」。正解はどの回も「検知できませんでした」。</text>\n",
+        f'<text class="t-xs" x="{col_x + col_w / 2:.1f}" y="{top - 12}" '
+        f'text-anchor="middle">8回とも独立に実行した最後の一言</text>\n',
+    ]
+
+    y = top
+    for label, verdict, correct in runs:
+        ty = y + 20
+        parts.append(f'<text class="t" x="18" y="{ty}">{_esc(label)}</text>\n')
+        klass = "box-good" if correct else "box-bad"
+        tcls = "t-good" if correct else "t-bad"
+        parts.append(f'<rect class="{klass}" x="{col_x}" y="{y}" width="{col_w}" height="24" rx="4"/>\n')
+        parts.append(
+            f'<text class="{tcls}" x="{col_x + 16}" y="{ty - 1}" style="font-weight:700">{_esc(verdict)}</text>\n'
+        )
+        y += row_h
+
+    y += 6
+    notes = [
+        "8回のうち5回は正しく「検知できませんでした」。3回は同じ状況なのに「検知できました」と誤って答えた。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="18" y="{y}" width="684" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="34" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "8行の一覧表。材料A（お知らせ配信監視）の1〜4回目と材料B（バックアップ監視）の1〜4回目、"
+        "どちらも表と監視対象リストの中身は同一（カナリア3つのうちzz-canary-3だけ監視対象リストに未登録）。"
+        "指示は自己診断の結果だけを一文だけで答えさせるもの。正しい答えはどの回も「検知できませんでした」。"
+        "結果は材料A・1回目「検知できませんでした」(正解・緑)、材料A・2回目「検知できました」(誤り・赤)、"
+        "材料A・3回目「検知できませんでした」(正解・緑)、材料A・4回目「検知できませんでした」(正解・緑)、"
+        "材料B・1回目「検知できませんでした」(正解・緑)、材料B・2回目「検知できました」(誤り・赤)、"
+        "材料B・3回目「検知できました」(誤り・赤)、材料B・4回目「検知できませんでした」(正解・緑)。"
+        "下の枠には、8回のうち5回は正しく「検知できませんでした」、3回は同じ状況なのに「検知できました」と"
+        "誤って答えたことが書かれている。"
+    )
+    (OUT / "multiple-canaries-oneword-eight-runs.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    multiple_canaries_oneword_eight_runs_chart()

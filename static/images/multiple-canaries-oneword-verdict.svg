@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="304" viewBox="0 0 720 304" role="img" aria-label="横棒の一覧表。3つの架空カナリアを同時に仕込んだときの自己診断の正しさを、聞き方ごとに比べる。①3つとも表と監視対象リストの両方に正しく登録した場合（4機会）は全部検知と正しく答えた回数が4/4で緑。②③1つだけ監視対象リストへの登録漏れがある状態で、理由の説明を許した場合（二通りの聞き方、計8機会）は「一部だけ」と正しく答えた回数が8/8で緑。④同じ登録漏れの状態で自己診断を一言だけに強制した場合（8機会）は、正しく「検知できませんでした」と答えた回数が8回中5回で、どちらの色にも振れない中間の表示になる。⑤同じ登録漏れの状態で検知できたカナリアを1つずつ名指しで答えさせた場合（4機会）は、3つ中2つと正しく答えた回数が4/4で緑に戻る。下の枠には、一言に縛った8回だけ同じ登録漏れなのに答えが割れたこと（5回は正しく「できません」・3回は誤って「できました」）、1つずつ名指しで答えさせると4回とも「3つ中2つ」と正しく揃ったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="304"/>
+<text class="t-strong" x="18" y="26">複数のカナリアでも、一言に縛った自己診断だけが答えが割れる</text>
+<text class="t-sm" x="18" y="45">実測2026-11-24設定（本日の基準日）。3つの架空カナリアを同時に仕込み、聞き方を変えて自己診断させた。</text>
+<text class="t-sm" x="18" y="64">①3つとも正しく登録 ②③1つだけ登録漏れ・説明あり ④同じ状況・一言だけに強制 ⑤同じ状況・1つずつ名指し。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">①3つとも表と監視対象リストの両方に正しく登録（4機会）：全部検知と正しく答えた回数</text>
+<rect class="box-good" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="125" text-anchor="middle" style="font-weight:700">4/4</text>
+<text class="t" x="18" y="157">②③1つだけ登録漏れ・理由の説明を許す（二通りの聞き方、計8機会）：「一部だけ」と正しく答えた回数</text>
+<rect class="box-good" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="157" text-anchor="middle" style="font-weight:700">8/8</text>
+<text class="t" x="18" y="189">④同じ登録漏れ・自己診断を一言だけに強制（8機会）：正しく「検知できませんでした」と答えた回数</text>
+<rect class="box" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-sm" x="558.0" y="189" text-anchor="middle" style="font-weight:700">5/8</text>
+<text class="t" x="18" y="221">⑤同じ登録漏れ・検知できたか1つずつ名指しで答えさせる（4機会）：3つ中2つと正しく答えた回数</text>
+<rect class="box-good" x="478" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="221" text-anchor="middle" style="font-weight:700">4/4</text>
+<rect class="box-accent" x="18" y="238" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="258">一言に縛った8回だけ、同じ登録漏れ（3つ中2つ検知）なのに答えが割れた。</text>
+<text class="t-accent" x="34" y="276">5回は正しく「できません」・3回は誤って「できました」。1つずつ名指しなら4回とも揃った。</text>
+</svg>
