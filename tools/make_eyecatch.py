@@ -494,6 +494,15 @@ def _scene_earn(seed: int) -> str:
     return main + notebook(202, 56) + coin(490, 108)
 
 
+def _scene_money(seed: int) -> str:
+    """稼ぎ方の調べもの＝明細を虫めがねで確かめる。"""
+    variant = pick(seed, 1, 2)
+    main = receipt(FOCUS_CENTER - 36, 50, -5) + magnifier(FOCUS_CENTER + 22, 92, -14)
+    if variant == 0:
+        return main + coin(238, 112) + sticky(478, 56, 8)
+    return main + sticky(214, 54, -8) + coin(490, 108)
+
+
 def _scene_safety(seed: int) -> str:
     """詐欺を防ぐ＝確かめてから進む。"""
     variant = pick(seed, 1, 2)
@@ -522,6 +531,7 @@ SCENE_BUILDERS = {
     "research": _scene_research,
     "automate": _scene_automate,
     "life": _scene_life,
+    "money": _scene_money,
     "earn": _scene_earn,
     "safety": _scene_safety,
     "security": _scene_security,

@@ -61,7 +61,7 @@ def test_index_labels_come_from_config():
     entry = build_index([_article(category="tools", scene="earn")])[0]
     assert entry["category_label"] == "ツール"
     assert entry["scene"] == "earn"
-    assert entry["scene_label"] == "副業"
+    assert entry["scene_label"] == "副業の検証（過去の記事）"
 
 
 def test_search_json_keeps_japanese_readable_and_round_trips():

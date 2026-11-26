@@ -178,6 +178,12 @@ def test_scene_is_parsed():
     assert parse_article(Path("content/recipes/x.md"), text).scene == "work"
 
 
+def test_money_scene_is_parsed():
+    from src.content import parse_article
+    text = RECIPE.replace("category: recipes", "category: recipes\nscene: money")
+    assert parse_article(Path("content/recipes/x.md"), text).scene == "money"
+
+
 def test_unknown_scene_is_rejected():
     from src.content import ArticleError, parse_article
     text = RECIPE.replace("category: recipes", "category: recipes\nscene: しごと")

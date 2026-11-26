@@ -16,7 +16,7 @@ CUSTOM_DOMAIN = "ai-tsukaikata.com"
 # （render.py が絞る）。0本の場面へのリンクは404になるため。
 TOP_NAV = [
     {"label": "初めての方", "url": "/start/"},
-    {"label": "AI副業", "url": "/scenes/earn/"},
+    {"label": "稼ぎ方の調べもの", "url": "/scenes/money/"},
     {"label": "AI詐欺を防ぐ", "url": "/scenes/safety/"},
     {"label": "セキュリティ対策", "url": "/scenes/security/"},
     {"label": "最新アップデート情報", "url": "/news/"},
@@ -75,9 +75,13 @@ SCENES = {
         "label": "暮らし",
         "lead": "家計・手続き・買いもの。仕事以外の面倒をAIに渡します。",
     },
+    "money": {
+        "label": "稼ぎ方の調べもの",
+        "lead": "手数料・入金の条件・規約・相場を、公式の原文で確かめます。始める前に、いくら手元に残るかを知るために。",
+    },
     "earn": {
-        "label": "副業",
-        "lead": "副業の作業と段取りをAIに手伝わせます。「必ず稼げる」は書きません。",
+        "label": "副業の検証（過去の記事）",
+        "lead": "2026年11月までに書いた、副業の作業をAIに手伝わせた検証の記録です。新しい記事は「稼ぎ方の調べもの」に書いています。",
     },
     "safety": {
         "label": "詐欺を防ぐ",
@@ -123,6 +127,11 @@ SCENE_ICONS = {
     "life": (  # 家
         '<path d="M3 8.5 L8 4 L13 8.5"></path>'
         '<path d="M4.5 7.5 V13 H11.5 V7.5"></path>'
+    ),
+    "money": (  # 電卓
+        '<rect x="3.5" y="2.5" width="9" height="11" rx="1"></rect>'
+        '<path d="M5.5 5 H10.5"></path>'
+        '<path d="M5.5 8 H6.5 M7.5 8 H8.5 M9.5 8 H10.5 M5.5 10.5 H6.5 M7.5 10.5 H8.5 M9.5 10.5 H10.5"></path>'
     ),
     "earn": (  # ¥硬貨
         '<circle cx="8" cy="8" r="5.5"></circle>'

@@ -247,15 +247,38 @@ def test_scene_page_lists_only_its_own_articles():
 def test_index_top_nav_hides_empty_scene_buttons():
     """カテゴリーボタン（2026-08-13）。記事の無い場面のボタンは出さない＝
     0本の場面ページは作られず404になるため。記事が入れば自動で現れる。"""
-    pages = render_site([_article(slug="a", scene="earn")])
+    pages = render_site([_article(slug="a", scene="money")])
     html = pages["index.html"]
-    assert 'class="top-nav-pill" href="/scenes/earn/"' in html
-    assert ">AI副業</a>" in html
+    assert 'class="top-nav-pill" href="/scenes/money/"' in html
+    assert ">稼ぎ方の調べもの</a>" in html
     assert 'href="/scenes/safety/"' not in html   # 記事0本 → ボタンごと隠す
     assert 'href="/recipes/"' in html             # 記事のあるカテゴリは出る
     assert ">深掘り記事</a>" not in html           # tools が0本ならボタンごと隠す
     # 旧デザインの場面カード節はもう無い
     assert "場面から探す" not in html
+
+
+def test_money_scene_page_is_generated():
+    pages = render_site([_article(slug="m", scene="money")])
+    assert "稼ぎ方の調べもの" in pages["scenes/money/index.html"]
+
+
+def test_index_top_nav_points_to_money_not_earn():
+    pages = render_site([_article(slug="m", scene="money"), _article(slug="e", scene="earn")])
+    html = pages["index.html"]
+    assert 'class="top-nav-pill" href="/scenes/money/"' in html
+    assert ">稼ぎ方の調べもの</a>" in html
+    assert 'class="top-nav-pill" href="/scenes/earn/"' not in html
+
+
+def test_index_top_nav_hides_money_until_it_has_articles():
+    pages = render_site([_article(slug="e", scene="earn")])
+    assert 'href="/scenes/money/"' not in pages["index.html"]
+
+
+def test_earn_scene_is_labelled_as_past_articles():
+    pages = render_site([_article(slug="e", scene="earn")])
+    assert "副業の検証（過去の記事）" in pages["scenes/earn/index.html"]
 
 
 def test_index_top_nav_shows_tools_button_when_tools_exist():
