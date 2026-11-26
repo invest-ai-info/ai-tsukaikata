@@ -24,7 +24,6 @@ from .classify import classify
 
 DEFAULT_SOURCES = Path(__file__).parent / "sources.yml"
 DEFAULT_STATE = Path("data/tracker/seen.json")
-DEFAULT_QUEUE = Path("content/_deepdive_queue.md")
 
 
 def _default_mailer(subject: str, plain: str, html_body: str) -> None:
@@ -369,7 +368,9 @@ def main(argv=None) -> int:
             fetcher=fetch_module.fetch_source,
             mailer=_default_mailer,
             now=now,
-            queue_path=DEFAULT_QUEUE,
+            # 2026-11-26 深掘りのルーティンを止めたので、自動追記も止める（誰も読まない行がたまるだけになる）。
+            # 再開するなら Path("content/_deepdive_queue.md") に戻し、ルーティン ai-tsukaikata-deepdive も有効にする
+            queue_path=None,
         )
     else:
         run_bootstrap(

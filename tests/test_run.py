@@ -438,3 +438,18 @@ def test_check_records_when_a_source_started_failing(tmp_path):
         mailer=Mailer(), now=NOW,
     )
     assert load_state(path)["failures"]["s1"]["since"] == NOW.isoformat()
+
+
+def test_main_check_does_not_feed_the_deepdive_queue(tmp_path, monkeypatch):
+    # 2026-11-26 深掘りのルーティンを止めたので、トラッカーも深掘りキューへ足さない
+    # （足し続けると、誰も読まない行が毎日たまるだけになる）
+    from tracker import run as run_module
+
+    state = tmp_path / "seen.json"
+    state.write_text("{}", encoding="utf-8")
+    seen = {}
+    monkeypatch.setattr(run_module, "run_check", lambda **kw: seen.update(kw) or 0)
+    monkeypatch.setattr(run_module.fetch_module, "load_sources", lambda path: [])
+    code = run_module.main(["--mode", "check", "--state", str(state)])
+    assert code == 0
+    assert seen["queue_path"] is None
