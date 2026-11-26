@@ -48621,3 +48621,116 @@ def multiple_canaries_oneword_eight_runs_chart() -> None:
 
 if __name__ == "__main__":
     multiple_canaries_oneword_eight_runs_chart()
+
+
+def ai_novel_disclosure_hit_and_miss_chart() -> None:
+    """小説家になろう・カクヨムのAI利用ルールについて、素朴に聞いた回と原文を貼った回を比べる。
+
+    実測は docs/evidence/ai-novel-narou-vs-kakuyomu-disclosure.md。
+    """
+    alt = (
+        "小説家になろうとカクヨムのAI利用ルールについて、AIに素朴に聞いた回と原文を貼って"
+        "聞いた回を比べた一覧表。なろうに素朴に聞いて正しい区分名(AI直接使用等)を使った"
+        "回数は0/3で赤。なろうに素朴に聞いて全文AI生成の投稿禁止に触れた回数は0/3で赤。"
+        "なろうの原文を貼って3場面を正しく分類できた問題数は9/9で緑。なろうの原文を貼った"
+        "エッジケース(誤字1つだけ直した全文AI生成)で運営対応のリスクに正しく言及した回数は"
+        "2/2で緑。カクヨムに素朴に聞いてタグ付けを義務のように言った回数は3/3で赤"
+        "(多いほど問題)。カクヨムの原文を貼って3場面の分類と義務でないことの両方を正しく"
+        "答えた問題数は12/12で緑。下の枠には、素朴に聞いた6回はどちらのサイトも区分名を"
+        "正確に言わなかったこと、原文を貼った18問+2問は全問正解だったことが書かれている。"
+    )
+    _hit_and_miss_rows_chart(
+        "ai-novel-disclosure-hit-and-miss.svg",
+        "素朴に聞いた6回は区分名を外す。原文を貼った20問は全問正解",
+        "小説家になろう・カクヨムのAI利用ルールを、素朴な聞き方と原文を貼った聞き方で比べた実測。",
+        "正しく答えた件数／試した件数。なろうの2行目とカクヨムの1行目は多いほど問題。",
+        [
+            ("なろう・素朴に聞いて正しい区分名を使った回数", 0, 3, "good"),
+            ("なろう・素朴に聞いて全文AI生成の禁止に触れた回数", 0, 3, "good"),
+            ("カクヨム・素朴に聞いてタグ付けを義務のように言った回数", 3, 3, "bad"),
+            ("なろう・原文を貼って3場面を正しく分類(3回×3問)", 9, 9, "good"),
+            ("カクヨム・原文を貼って3場面+義務の有無を正しく回答", 12, 12, "good"),
+            ("なろう・原文を貼ったエッジケースに正しく言及(2回)", 2, 2, "good"),
+        ],
+        [
+            "素朴に聞いた6回は、どちらのサイトも正しい区分名や禁止事項・義務の強さを正確に言わなかった。",
+            "原文を貼った20問(18問+エッジケース2回)は全問正解。知識を聞くと混同し、原文を貼れば正確になる。",
+        ],
+        alt,
+        label_w=420,
+    )
+
+
+def ai_novel_disclosure_mechanism_chart() -> None:
+    """なろうとカクヨムの、AI利用ルールの実際の仕組みの違いを示す図。"""
+    box_x, box_w = 18, 684
+    top = 96
+
+    parts = [
+        '<text class="t-strong" x="18" y="26">'
+        "同じ「AIで書いた小説」でも、仕組みはサイトで違う</text>\n",
+        '<text class="t-sm" x="18" y="45">'
+        "小説家になろうは制度化・カクヨムは呼びかけ止まり(2026-11-26確認)。</text>\n",
+    ]
+    y = top
+
+    def row(label: str, lines: list, h: int, klass: str, tcls: str) -> None:
+        nonlocal y
+        parts.append(f'<rect class="{klass}" x="{box_x}" y="{y}" width="{box_w}" height="{h}" rx="6"/>\n')
+        parts.append(f'<text class="t-strong" x="{box_x + 16}" y="{y + 22}">{_esc(label)}</text>\n')
+        ty = y + 42
+        for line in lines:
+            parts.append(f'<text class="{tcls}" x="{box_x + 16}" y="{ty}">{_esc(line)}</text>\n')
+            ty += 19
+        y += h + 14
+
+    row(
+        "小説家になろう（syosetu.com/site/ai/）＝申告は必須、違反は運営対応",
+        [
+            "AI直接使用・AI間接利用・AI補助的利用・AI不使用の4区分。設定しないと新規投稿不可。",
+            "加筆修正が一切ない全文AI生成は投稿禁止。虚偽設定も禁止。違反は非公開化・アカウント停止。",
+        ],
+        80,
+        "box-bad",
+        "t-bad",
+    )
+    row(
+        "カクヨム（kakuyomu.jp/info/entry/geneai_tag）＝タグは推奨、ペナルティなし",
+        [
+            "AI本文利用・AI本文一部利用・AI補助利用の3区分。タグ付けは「お願い」で義務ではない。",
+            "「タグがあることでランキング等が不利になることはない」と明記。一般規約にAIの条文は0件。",
+        ],
+        80,
+        "box-good",
+        "t-good",
+    )
+
+    notes = [
+        "なろうは申告を制度化し違反に運営対応があるが、カクヨムは呼びかけ止まりで規約上の強制力は無い。",
+    ]
+    box_h = 18 * len(notes) + 10
+    parts.append(f'<rect class="box-accent" x="{box_x}" y="{y}" width="{box_w}" height="{box_h}" rx="6"/>\n')
+    for i, note in enumerate(notes):
+        parts.append(f'<text class="t-accent" x="{box_x + 16}" y="{y + 20 + 18 * i}">{_esc(note)}</text>\n')
+    y += box_h + 12
+
+    alt = (
+        "小説家になろうとカクヨムのAI利用ルールを並べた図。小説家になろう(上・赤)＝原文は"
+        "『AI利用状況に関して』(syosetu.com/site/ai/)。AI利用状況の設定は新規投稿で必須、"
+        "4区分(AI直接使用・AI間接利用・AI補助的利用・AI不使用)、加筆修正が一切ない全文AI生成の"
+        "投稿は禁止、虚偽の設定も禁止、違反は作品の非公開化や悪質な場合のアカウント停止の対象。"
+        "カクヨム(下・緑)＝原文は『生成AIタグ利用のお願い』(kakuyomu.jp/info/entry/geneai_tag、"
+        "2025-11-19)。タグは3区分(AI本文利用・AI本文一部利用・AI補助利用)で、あくまで推奨。"
+        "タグがあることでランキング等が不利になることはないと明記。一般の利用規約"
+        "(kakuyomu.jp/legal/tos)にAI・生成という語は0件。下の枠には、同じ『AIで書いた小説』"
+        "でも、なろうは申告を制度化し違反に運営対応があるのに対し、カクヨムは呼びかけ止まりで"
+        "規約上の強制力は確認できなかったことが書かれている。"
+    )
+    (OUT / "ai-novel-disclosure-mechanism.svg").write_text(
+        _svg(y + 8, alt, "".join(parts)), encoding="utf-8", newline="\n"
+    )
+
+
+if __name__ == "__main__":
+    ai_novel_disclosure_hit_and_miss_chart()
+    ai_novel_disclosure_mechanism_chart()

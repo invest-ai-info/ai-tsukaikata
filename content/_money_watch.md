@@ -48,6 +48,7 @@
 
 | slug | 種類 | 最後に照合した日 | 結果 |
 |---|---|---|---|
+| `ai-novel-narou-vs-kakuyomu-disclosure` | recipes | 未 | — |
 | `ai-stock-images-adobe-vs-pixta` | recipes | 未 | — |
 | `ai-writing-rate-below-the-rule-of-thumb` | recipes | 未 | — |
 | `gpts-retirement-check-the-source` | recipes | 未 | — |

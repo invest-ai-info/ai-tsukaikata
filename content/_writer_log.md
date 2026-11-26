@@ -46,6 +46,57 @@
 
 ## 記録
 
+### 2026-11-26 21:00（副業枠の回）
+- `git fetch origin`→HEADはorigin/mainと同じコミットだった（取り直し不要）
+- `content/_recipe_queue.md`冒頭「🔢 1晩の本数」「担当が守ること」「### 副業」節、
+  `content/_lessons.md`（全369件の見出しで棚卸し）、`SESSION_HANDOFF.md`の記事の書き方・
+  見出し・マーカー・図の各節、見本2本（`find-what-to-delegate`・`batch-instead-of-repeat`）を
+  読んだ
+- 🚨 **作業の途中で、本数・書く型のルールが今夜（2026-11-26）に大きく変わっていたことに
+  気づいた。**手を動かし始めた時点のキューはまだ更新前の状態だった（他の同時進行セッションが
+  書き換えた）。旧ルールのまま副業枠の「複数プラットフォームの手取り表、行数や料率が複雑に
+  なっても崩れないか」（AIの振る舞いをN回中M回で試す検証型）を1本書き上げ、評価・図・証拠
+  ファイルまで作ってコミットした**直後**に、`git merge`しようとして`content/_recipe_queue.md`で
+  コンフリクトを検出。中身を見ると、冒頭🔢節が「0〜1本・書くのは調べもの型だけ・検証型は書かない
+  方針（2026-11-26 オーナー判断）」に変わっており、まさに今夜書いた記事と同じ題材が他の
+  セッションによって`[!] 検証型は書かない方針`として保留化されていた
+- **判断＝新しい方針を優先し、書き上げた検証型記事(`multi-platform-payout-table-scales-to-
+  eight-rows`)はmainへ一切マージせず、完全に取り下げた。**`git merge --abort`でmainをきれいな
+  状態に戻し、該当のfeatureブランチ上のコミットだけに留めて二度と参照しない。scene も
+  旧ルールの`earn`で書いていた＝新ルールでは`earn`は「過去の記事（凍結）」用、新規は`money`。
+  二重の理由でこの記事はもう出せないと判断した
+- 新ルールを読み直し、`content/_money_watch.md`（新設）の手順どおり、副業節の残り`- [ ]`（調べもの型・
+  規約原文で確かめる型）から着手可能なものを探した。7件が候補で全て⏸（経路遮断）だったため、
+  自分の環境で`curl`で再測定したところ、`syosetu.com`・`kakuyomu.jp`が200で到達できることを
+  発見した（以前は403）。ついでに`jp.mercari.com`・`creema.jp`・`minne.com`・`a8.net`・
+  `suno.com`・`skima.jp`も同様に到達できることを確認し、`_recipe_queue.md`の副業節冒頭に
+  次回の研究担当向けメモを残した
+- 選んだ題材＝「AIで書いた小説は『小説家になろう』『カクヨム』に出せるのか ― 規約の原文で」。
+  `syosetu.com/site/ai/`・`kakuyomu.jp/info/entry/geneai_tag`・`kakuyomu.jp/legal/tos`を
+  curlで取得し本文を確認。`gpts-retirement-check-the-source`と同型（原文を貼ると知識より
+  正確になる、を実測で示す調べもの型）で執筆した
+- 公開: 1本（`recipes/ai-novel-narou-vs-kakuyomu-disclosure`。scene: money）
+- 実測: `claude --safe-mode --tools "" --print --system-prompt`（汎用アシスタント人格に固定・
+  中立なディレクトリ名`qz9m/work2`から・新規プロセスごと）。素朴に聞く(なろう3回・カクヨム3回)・
+  原文を貼って3場面を分類させる(なろう3回・カクヨム3回)・原文を貼ってエッジケースを聞く(2回)・
+  原文を貼らずに義務か推奨かだけを聞く(2回)・応用のチェックリスト化(2回)、計18回
+- 発見①：素朴に聞いた6回は両サイトとも「投稿できます」とだけ答え、なろうの正しい区分名
+  （AI直接使用等）は6回中0回、2回はカクヨムの区分名と混同した。原文を貼った23問（なろう9問・
+  カクヨム12問・エッジケース2問）は全問正解
+- 発見②：当初「義務か推奨かだけを直接聞くと不正確な答えになる」という見立てで指示文を書いたが、
+  実際に2回試したところ両回とも「分からない」と断定を避けた（見立てが外れた）。記事・証拠ファイルは
+  実測結果のとおりに訂正して公開した
+- `content/_lessons.md`に2件追記。図2枚（`ai-novel-disclosure-hit-and-miss.svg`・
+  `ai-novel-disclosure-mechanism.svg`）を`tools/make_figures.py`に追加して生成。
+  Playwrightで`getBBox()`の厳密計測（27要素・はみ出し0件）を確認。`python -m pytest -q`
+  （804 passed）・`python -m src.build`・`check_readability.py`（60字以上5%）・
+  `check_numbers.py`（出典2件取得・1個照合）すべて通過。`content/_money_watch.md`の
+  「見張る記事」に1行追加
+- 🔑 **教訓＝旧ルールのまま走り始めても、push前にconflictで気づけた。**ただし気づいたのは
+  「書き終えてコミットした後」で、もっと早く気づけば検証型1本を書く手間が省けた。次の担当は、
+  **書き始める前に`content/_recipe_queue.md`冒頭の🔢節を必ず読み直すこと**（このログの冒頭でも
+  毎晩読むとは書いてあるが、今夜は読んだタイミングが他セッションの更新より前だった）
+
 ### 2026-11-26（自動化・ループ優先枠の回）
 - 公開: 1本（`one-word-selfcheck-splits-on-partial-detection`）
 - 実測: `claude --safe-mode --tools "" --print`で独立プロセス24回。架空の監視対象表＋

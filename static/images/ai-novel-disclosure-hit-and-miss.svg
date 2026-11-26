@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="小説家になろうとカクヨムのAI利用ルールについて、AIに素朴に聞いた回と原文を貼って聞いた回を比べた一覧表。なろうに素朴に聞いて正しい区分名(AI直接使用等)を使った回数は0/3で赤。なろうに素朴に聞いて全文AI生成の投稿禁止に触れた回数は0/3で赤。なろうの原文を貼って3場面を正しく分類できた問題数は9/9で緑。なろうの原文を貼ったエッジケース(誤字1つだけ直した全文AI生成)で運営対応のリスクに正しく言及した回数は2/2で緑。カクヨムに素朴に聞いてタグ付けを義務のように言った回数は3/3で赤(多いほど問題)。カクヨムの原文を貼って3場面の分類と義務でないことの両方を正しく答えた問題数は12/12で緑。下の枠には、素朴に聞いた6回はどちらのサイトも区分名を正確に言わなかったこと、原文を貼った18問+2問は全問正解だったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">素朴に聞いた6回は区分名を外す。原文を貼った20問は全問正解</text>
+<text class="t-sm" x="18" y="45">小説家になろう・カクヨムのAI利用ルールを、素朴な聞き方と原文を貼った聞き方で比べた実測。</text>
+<text class="t-sm" x="18" y="64">正しく答えた件数／試した件数。なろうの2行目とカクヨムの1行目は多いほど問題。</text>
+<text class="t-xs" x="518.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">なろう・素朴に聞いて正しい区分名を使った回数</text>
+<rect class="box-bad" x="438" y="104" width="160" height="26" rx="4"/>
+<text class="t-bad" x="518.0" y="125" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="157">なろう・素朴に聞いて全文AI生成の禁止に触れた回数</text>
+<rect class="box-bad" x="438" y="136" width="160" height="26" rx="4"/>
+<text class="t-bad" x="518.0" y="157" text-anchor="middle" style="font-weight:700">0/3</text>
+<text class="t" x="18" y="189">カクヨム・素朴に聞いてタグ付けを義務のように言った回数</text>
+<rect class="box-bad" x="438" y="168" width="160" height="26" rx="4"/>
+<text class="t-bad" x="518.0" y="189" text-anchor="middle" style="font-weight:700">3/3</text>
+<text class="t" x="18" y="221">なろう・原文を貼って3場面を正しく分類(3回×3問)</text>
+<rect class="box-good" x="438" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="221" text-anchor="middle" style="font-weight:700">9/9</text>
+<text class="t" x="18" y="253">カクヨム・原文を貼って3場面+義務の有無を正しく回答</text>
+<rect class="box-good" x="438" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="253" text-anchor="middle" style="font-weight:700">12/12</text>
+<text class="t" x="18" y="285">なろう・原文を貼ったエッジケースに正しく言及(2回)</text>
+<rect class="box-good" x="438" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="518.0" y="285" text-anchor="middle" style="font-weight:700">2/2</text>
+<rect class="box-accent" x="18" y="302" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="322">素朴に聞いた6回は、どちらのサイトも正しい区分名や禁止事項・義務の強さを正確に言わなかった。</text>
+<text class="t-accent" x="34" y="340">原文を貼った20問(18問+エッジケース2回)は全問正解。知識を聞くと混同し、原文を貼れば正確になる。</text>
+</svg>

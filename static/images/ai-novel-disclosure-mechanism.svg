@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="332" viewBox="0 0 720 332" role="img" aria-label="小説家になろうとカクヨムのAI利用ルールを並べた図。小説家になろう(上・赤)＝原文は『AI利用状況に関して』(syosetu.com/site/ai/)。AI利用状況の設定は新規投稿で必須、4区分(AI直接使用・AI間接利用・AI補助的利用・AI不使用)、加筆修正が一切ない全文AI生成の投稿は禁止、虚偽の設定も禁止、違反は作品の非公開化や悪質な場合のアカウント停止の対象。カクヨム(下・緑)＝原文は『生成AIタグ利用のお願い』(kakuyomu.jp/info/entry/geneai_tag、2025-11-19)。タグは3区分(AI本文利用・AI本文一部利用・AI補助利用)で、あくまで推奨。タグがあることでランキング等が不利になることはないと明記。一般の利用規約(kakuyomu.jp/legal/tos)にAI・生成という語は0件。下の枠には、同じ『AIで書いた小説』でも、なろうは申告を制度化し違反に運営対応があるのに対し、カクヨムは呼びかけ止まりで規約上の強制力は確認できなかったことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="332"/>
+<text class="t-strong" x="18" y="26">同じ「AIで書いた小説」でも、仕組みはサイトで違う</text>
+<text class="t-sm" x="18" y="45">小説家になろうは制度化・カクヨムは呼びかけ止まり(2026-11-26確認)。</text>
+<rect class="box-bad" x="18" y="96" width="684" height="80" rx="6"/>
+<text class="t-strong" x="34" y="118">小説家になろう（syosetu.com/site/ai/）＝申告は必須、違反は運営対応</text>
+<text class="t-bad" x="34" y="138">AI直接使用・AI間接利用・AI補助的利用・AI不使用の4区分。設定しないと新規投稿不可。</text>
+<text class="t-bad" x="34" y="157">加筆修正が一切ない全文AI生成は投稿禁止。虚偽設定も禁止。違反は非公開化・アカウント停止。</text>
+<rect class="box-good" x="18" y="190" width="684" height="80" rx="6"/>
+<text class="t-strong" x="34" y="212">カクヨム（kakuyomu.jp/info/entry/geneai_tag）＝タグは推奨、ペナルティなし</text>
+<text class="t-good" x="34" y="232">AI本文利用・AI本文一部利用・AI補助利用の3区分。タグ付けは「お願い」で義務ではない。</text>
+<text class="t-good" x="34" y="251">「タグがあることでランキング等が不利になることはない」と明記。一般規約にAIの条文は0件。</text>
+<rect class="box-accent" x="18" y="284" width="684" height="28" rx="6"/>
+<text class="t-accent" x="34" y="304">なろうは申告を制度化し違反に運営対応があるが、カクヨムは呼びかけ止まりで規約上の強制力は無い。</text>
+</svg>
