@@ -1412,8 +1412,11 @@ response 403`（経路遮断）が解消し200で到達できた。ついでに`
   - 需要: 公式の変更（既存記事 `gpts-retirement-check-the-source` の読者に影響）
   - 既存記事: `gpts-retirement-check-the-source`（数字が古くなった。改稿は「🔧 改稿」節へ1行足した）
 
-- [ ] 【変化】noteが「AI参照」の対価をクリエイターに還元する新しい収益化チャネルを開始
+- [x] 【変化】noteが「AI参照」の対価をクリエイターに還元する新しい収益化チャネルを開始
       （AIに記事が参照された対価を、クリエイターのみなさんに還元します・note公式・2026-11-18公開・2026-11-27確認）
+  - →保管: ✅ 2026-11-27 公開: `note-ai-reference-payout`。着手前に`help-note.com`を再測定したが、
+    まだ`CONNECT tunnel failed, response 403`（経路遮断）で到達できず、1万円の線引き・12/2の期限は
+    記事に書かずに終えた（下の⚠️のとおり）
   - 出典: https://note.com/info/n/n19e062e42e9e（note公式ブログ本体。クラウドから到達済み・本文全文を取得して確認）
   - 需要: 公式の新発表。既存の「原文で確かめる」シリーズ（`note-fee-before-you-sell`・
     `note-membership-monthly-formula`・`gpts-retirement-check-the-source`・`kindle-ai-disclosure-check`）

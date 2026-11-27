@@ -55,6 +55,7 @@
 | `instagram-two-gates-500-and-10000` | recipes | 2026-11-27 | 開けず＝経路遮断（help.instagram.comが許可リスト外。出典4件とも`CONNECT tunnel failed, response 403`「no rule or network setting allows this host」。githubのミラー1件のみ取得） |
 | `kindle-ai-disclosure-check` | recipes | 2026-11-27 | 変化なし（出典1/1件取得・照合1個一致。AI生成/AIアシストの定義文を目で原文と全文照合し一致。「70%」の未照合は別記事〈kindle-royalty-formula〉への参照文言で出典対象外） |
 | `kindle-royalty-formula` | recipes | 未 | — |
+| `note-ai-reference-payout` | recipes | 2026-11-27 | 変化なし（公開当日。出典1/1件取得・照合済み。ヘルプページ`help-note.com`は経路遮断で未確認のまま） |
 | `note-fee-before-you-sell` | recipes | 未 | — |
 | `note-membership-monthly-formula` | recipes | 未 | — |
 | `udemy-97-or-37-who-brings-the-student` | recipes | 未 | — |
