@@ -9517,10 +9517,20 @@
    "channel_key": "openai",
    "channel_name": "OpenAI（公式）",
    "default_category": "news",
-   "description": "De uma simples pergunta a uma tarefa resolvida. É só falar com o ChatGPT Modo Voz. Ele te escuta e faz com você.",
    "first_seen": "2026-11-24T22:44:23.747455+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "ChatGPTの新しい音声モードを使うことで、より自然に対話しながら質問や相談ができると紹介している。",
+    "料理の代用食材の相談や言葉の意味の確認など、声だけで自然に会話を続けられる様子を示している。",
+    "招待メッセージの文章作成や画像生成など、音声による指示で日常の様々なタスクを支援できると伝えている。"
+   ],
+   "for_whom": "ChatGPTの新機能である音声対話モードの活用例を知りたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T09:00:08.061522+00:00"
   },
   {
    "video_id": "8Aoq6mJeAXI",
@@ -9530,10 +9540,20 @@
    "channel_key": "claude",
    "channel_name": "Claude（Anthropic 公式）",
    "default_category": "news",
-   "description": "Anthropic built the infrastructure behind Claude Managed Agents three times before turning it into a platform for customers.\nJess Yan (Product Manager, Claude Managed Agents), Michael Cohen (Member of Technical Staff, Claude Managed Agents), and Lance Martin (Member of Technical Staff, Claude Platform) share what they learned during the process and offer best practices for teams building with Managed Agents. They explain how Managed Agents separates the harness from its execution environment, when to use dynamic workflows to coordinate work across many agents, and how dreaming consolidates what agents store in memory between sessions.*\n\nChapters\n0:00 - Intro\n0:20 - Why we built Claude Managed Agents\n1:50 - Keeping up with models and managing cost\n4:50 - Using dynamic workflows and multi-agent harnesses\n8:10 - Scaling Claude Managed Agents: decoupling the brain and hands\n10:30 - How customers are building with Claude Managed Agents\n12:15 - How dreaming and agent memory work\nLearn more about the Claude Platform: https://claude.com/platform/api\nFollow ClaudeDevs on X for product updates and best practices from the Claude Platform team: https://x.com/ClaudeDevs\n\n*Claude Managed Agents and dynamic workflows are in beta; dreaming is a research preview.",
    "first_seen": "2026-11-24T22:44:23.747455+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Claude Managed Agentsの開発陣が、自律型エージェント基盤の構築で得られた知見やベストプラクティスを解説している。",
+    "オーケストレーターと実行環境の分離や動的ワークフローにより、大規模かつ長時間稼働するエージェントを安定化できると述べている。",
+    "セッションをまたぐ誤った記憶を修正し、長期的な知識として統合・整理する「dreaming」の仕組みを紹介している。"
+   ],
+   "for_whom": "Claudeを活用したAIエージェントの開発や業務自動化システムの運用に関心があるエンジニア",
+   "caution": "動画で紹介されているClaude Managed Agentsや動的ワークフローはベータ版であり、dreaming機能はリサーチプレビュー段階であると案内されています。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T09:00:08.061522+00:00"
   },
   {
    "video_id": "K8rdrWQRd20",
@@ -9589,10 +9609,20 @@
    "channel_key": "kosuke-google",
    "channel_name": "こーすけ先生のGoogle塾",
    "default_category": "tech",
-   "description": "「Gemini Notebook」が最強の学習サポートツールへ進化！ 資料からテストを作成する機能が大幅アップデートされ、従来の選択式に加えて「複数選択」「穴埋め」「短文記述」に対応しました！\n\n不正解時には「なぜ自分の回答が間違っているのか」をAIが個別解説してくれるため、苦手分野を確実に克服できます。さらにフラッシュカード（単語帳）も「不正解のみ再学習」や「シャッフル」が使えて学習効率が爆上がり！ 資格取得や新任研修の理解度テストに大活躍間違いなしの神機能をぜひお試しください！\n\n今後もこのチャンネルでは、Googleサービス全般について発信していきますので、チャンネル登録して頂けると嬉しいです✨\n\n【動画目次】\n00:00 オープニング\n00:56 「Gemini Notebook」とは\n02:59 「Gemini Notebook」の特徴\n03:47 クイズ機能\n08:36 フラッシュカード\n09:28 まとめ\n10:32 ゆるトーク\n\n【ゆるトーク「news every.」で友人の梶さんが紹介されました！】\nhttps://youtu.be/TCrGpE8nr9w?t=349&si=X92q1yE3gjd1R1IL\n\n【こーすけ先生のプロフィール】\nGoogleが大好き！富士通で12年ほどITベンダとして勤務。その後、都内自治体のICT課長を3年経験。2024年5月に「株式会社４Ｕ」を創業。現在は、自治体や企業向けにDX支援や、ITコンサルティング、クラウドサービス事業を展開している。\n\n【X】\nGoogleに関するお役立ち情報や、YouTubeの更新についてお知らせします！\nhttps://x.com/GASsuke4u\n\n【お仕事の依頼等はこちらから】\nhttps://corp-4u.com/contact/\n\n✨YouTubeチャンネル登録はこちらから✨\nhttps://www.youtube.com/channel/UC_kTlZMryHFPMc7QMi4g0VQ?sub_confirmation=1ub_confirmation=1",
    "first_seen": "2026-11-25T21:57:18.824885+00:00",
-   "status": "pending",
-   "attempts": 0
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemini Notebookのクイズ機能に、複数選択や空欄補充、短文記述などの質問タイプが追加されたと紹介している。",
+    "クイズで不正解だった場合に「説明」を押すことで、自分の回答がなぜ間違っているのかをAIが個別解説してくれると実演している。",
+    "フラッシュカード機能では、間違えたカードのみを抽出して再学習したりシャッフルして出題できると説明している。"
+   ],
+   "for_whom": "Gemini Notebookを使って資格取得や社内研修の学習効率を高めたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T09:00:08.061522+00:00"
   },
   {
    "video_id": "hwWlEuI359w",
@@ -9835,91 +9865,114 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-26T21:53:21.179679+00:00"
+  },
+  {
+   "video_id": "u6UYsl-KEoc",
+   "title": "DeepMind’s New AI: The King Is Back",
+   "url": "https://www.youtube.com/watch?v=u6UYsl-KEoc",
+   "published": "2026-11-27T08:42:30+00:00",
+   "channel_key": "two-minute-papers",
+   "channel_name": "Two Minute Papers",
+   "default_category": "tech",
+   "first_seen": "2026-11-27T09:00:08.061522+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "Google DeepMindの新モデル「Gemini Hydrogen」やフロンティアモデル「Neon」の性能と再現実験を紹介している。",
+    "安全性レポートをもとに、Neonが不正行動の検知アラートを従来比で大幅に減少させ改善したと説明している。",
+    "ユーザーに迎合しすぎるイエスマン行動（Sycophancy）の評価指標と最新モデルの課題について解説している。"
+   ],
+   "for_whom": "Geminiの最新モデル性能や安全性評価、AIの最新動向を追いたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T09:00:08.061522+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-26T21:53:21.179679+00:00",
+   "last_ok": "2026-11-27T09:00:08.061522+00:00",
    "fail_streak": 0
   }
  }
