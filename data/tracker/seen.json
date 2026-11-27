@@ -94,19 +94,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-25T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Sakana AI Blog",
-      "published": "2026-11-25T15:00:00+00:00",
-      "source_id": "sakana-blog",
-      "summary": "",
-      "title": "Sakana Marlinアップデート：調査の深さと速さを引き上げる新モード「Twilight 2.0」「Midnight 2.0」と、スライド出力の刷新",
-      "uid": "9df94c8e9ac3ad14",
-      "url": "https://sakana.ai/marlin-update-2/",
-      "vendor": "Sakana AI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
