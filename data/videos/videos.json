@@ -9888,91 +9888,183 @@
    "summary_source": "gemini",
    "model": "gemini-3.8-flash",
    "summarized_at": "2026-11-27T09:00:08.061522+00:00"
+  },
+  {
+   "video_id": "pPwJ7PVXpeA",
+   "title": "AnthropicのパーソナルAI『Claude Duet（デュエット）』を解説！どう使うべき？",
+   "url": "https://www.youtube.com/watch?v=pPwJ7PVXpeA",
+   "published": "2026-11-27T09:00:21+00:00",
+   "channel_key": "keito",
+   "channel_name": "KEITO【AI&WEB ch】",
+   "default_category": "tech",
+   "first_seen": "2026-11-27T21:36:19.494122+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "投稿者は、パーソナルAI「Claude Duet」を使い、Gmailやカレンダーと連携してタスク整理や返信下書きを自発的に行う仕組みを説明している。",
+    "スマホのDuetからPCのリモートコントロールを介し、Claude Codeに伝言を渡して実務タスクを実行させる検証を行っている。",
+    "投稿者は、単体でのメリットは実感しにくいとしつつ、常時起動PCと連携させて請求書発行などの実務を代行させる使い方が有望だと述べている。"
+   ],
+   "for_whom": "Claude Duetの機能概要や、Claude Codeと連携した業務効率化の方法を知りたい人。",
+   "caution": "概要欄で公式LINEや有料・無料のAIコミュニティ、著書の予約案内が行われている点に留意が必要です。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T21:36:19.494122+00:00"
+  },
+  {
+   "video_id": "Rk7QvFQPzEA",
+   "title": "【アプデ】「Gemini Notebook」でWebサイトが作れる！どう活用すべきか徹底解説！",
+   "url": "https://www.youtube.com/watch?v=Rk7QvFQPzEA",
+   "published": "2026-11-27T09:00:23+00:00",
+   "channel_key": "kosuke-google",
+   "channel_name": "こーすけ先生のGoogle塾",
+   "default_category": "tech",
+   "first_seen": "2026-11-27T21:36:19.494122+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "Gemini Notebookのチャット指示だけで、登録した資料をもとにインタラクティブなWebサイトを生成できる新機能を紹介している。",
+    "本機能は有償プランに限らず、Google Workspace全般や個人用アカウントのユーザーへ無料で提供されていると説明している。",
+    "プロンプトを工夫することで、マテリアルデザインやゲーム要素を取り入れた資格試験対策アプリを自動構築できると実演している。"
+   ],
+   "for_whom": "Gemini Notebookを活用して資料から手軽にWebサイトや学習用アプリを作成したい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T21:36:19.494122+00:00"
+  },
+  {
+   "video_id": "ll6XluMGSkg",
+   "title": "【世界トップ3入り】Googleの最新AIモデル「Gemini 4 Neon」の使い方と活用事例10選！ ～ゲームやアプリ、動画、スライド資料まで自動で作れる～",
+   "url": "https://www.youtube.com/watch?v=ll6XluMGSkg",
+   "published": "2026-11-27T09:06:35+00:00",
+   "channel_key": "ai-daigaku",
+   "channel_name": "AI大学【AI&ChatGPT最新情報】",
+   "default_category": "news",
+   "first_seen": "2026-11-27T21:36:19.494122+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "tech",
+   "summary": [
+    "GoogleのAIモデル「Gemini 4 Neon」の性能や各種ベンチマーク結果、料金体系などの基本概要を紹介している",
+    "開発系の事例として、3DゲームやWebアプリ、デスクトップアプリなどの生成手順や活用法を解説している",
+    "実務向けの事例として、動画やスライド資料、スプレッドシート作成、長文ライティングなどの活用法を解説している"
+   ],
+   "for_whom": "Geminiの新モデルを活用してアプリ開発や業務資料の自動作成を行いたい人",
+   "caution": "",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T21:36:19.494122+00:00"
+  },
+  {
+   "video_id": "vPngkQV6ZSk",
+   "title": "【2026年11月版】今僕が実際に課金しているAIサブスクとおすすめ、やめたサブスクを全部解説します！",
+   "url": "https://www.youtube.com/watch?v=vPngkQV6ZSk",
+   "published": "2026-11-27T11:45:35+00:00",
+   "channel_key": "masao",
+   "channel_name": "まさおAIじっくり解説ch",
+   "default_category": "news",
+   "first_seen": "2026-11-27T21:36:19.494122+00:00",
+   "status": "done",
+   "attempts": 0,
+   "category": "news",
+   "summary": [
+    "投稿者はClaudeを最高評価とし、FableやOpusの性能、プロジェクト機能やAPIクレジットの付与を評価して複数アカウントで主力運用していると語っている。",
+    "Geminiは動画や音声入力の強さからAPI課金を中心に活用し、ChatGPTは画像生成や壁打ちなどのサブ用途に絞って利用していると説明している。",
+    "CursorやDevin、GLMなどの開発支援ツールを比較し、外側の機能よりもベースとなるAIモデルの基本性能が選択の決め手になると述べている。"
+   ],
+   "for_whom": "主要なAIサービスのサブスク契約やAPI利用の見直し、最適な使い分けを検討している人向け。",
+   "caution": "動画終盤および概要欄にて、月額制の有料noteメンバーシップへの案内が行われているため、加入を検討する際は費用や提供内容を事前に確認してください。",
+   "summary_source": "gemini",
+   "model": "gemini-3.8-flash",
+   "summarized_at": "2026-11-27T21:36:19.494122+00:00"
   }
  ],
  "channels": {
   "nyanta": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "keito": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "saki": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "kosuke-google": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "jeff-su": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "two-minute-papers": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "iketomo": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "ai-daigaku": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "masao": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "openai": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "claude": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "google-deepmind": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "ai-explained": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "shizuma": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "yuimama": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "honami": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "uto": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "muttyo": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "haruto": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "starter-story": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   },
   "greg-isenberg": {
-   "last_ok": "2026-11-27T09:00:08.061522+00:00",
+   "last_ok": "2026-11-27T21:36:19.494122+00:00",
    "fail_streak": 0
   }
  }
