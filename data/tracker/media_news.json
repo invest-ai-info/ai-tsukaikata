@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-27T22:01:04.609138+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-27T14:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "テキストで図形や矢印の関係を記述するだけで図を自動生成できる「D2」は、2022年に基本的な使い方をレビューしました。その後は手描き風のデザインやアニメーション、ターミナルでも表示できるASCII出力などに対応し、図の表現方法が広がっています。2026年9月には運営体制が非営利に切り替わり、独自の自動配置エンジンもオープンソース化されたので、追加された機能を中心に改めて使ってみました。 続きを読…",
+      "title": "シンプルな構文で美しい図を自動生成する「D2」が進化、非営利化で独自レイアウトエンジンもオープンソース化",
+      "uid": "99a3c12dc49e9462",
+      "url": "https://gigazine.net/news/20261127-d2/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-27T12:33:12.926022+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "fd6a1dacf4d5f45f",
       "url": "https://ai.watch.impress.co.jp/docs/news/2158348.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-20T12:59:25.945778+00:00",
-      "importance": "minor",
-      "label": "GIGAZINE",
-      "published": "2026-11-20T10:00:00+00:00",
-      "source_id": "media-gigazine",
-      "summary": "大規模言語モデル(LLM)は通常、学習が完了すると内部のウェイト(重み)が固定され、性能を向上させるには追加学習などが必要になります。こうした従来の仕組みとは異なり、AIが自分自身のウェイトを分析して書き換え、性能を向上させられることを示した研究論文が発表されました。研究チームは、この成果がAIによる「再帰的自己改善」の実現につながる可能性があるとしています。 続きを読む...",
-      "title": "AIが追加学習なしで自らのウェイトを書き換えて「自分自身を賢くする」ことに成功",
-      "uid": "68a836a8d31b2ddf",
-      "url": "https://gigazine.net/news/20261120-large-language-model-can-rewrite-itself/",
-      "vendor": "GIGAZINE"
     }
   ]
 }
