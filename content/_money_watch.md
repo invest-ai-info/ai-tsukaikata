@@ -48,12 +48,12 @@
 
 | slug | 種類 | 最後に照合した日 | 結果 |
 |---|---|---|---|
-| `ai-novel-narou-vs-kakuyomu-disclosure` | recipes | 未 | — |
+| `ai-novel-narou-vs-kakuyomu-disclosure` | recipes | 2026-11-27 | 変化なし（出典2/2件取得・照合1個一致。4区分の定義・禁止条文・カクヨムのタグ文言を目で原文と全文照合し一致） |
 | `ai-stock-images-adobe-vs-pixta` | recipes | 2026-11-26 | 開けず＝経路遮断（pixta.jp・helpx.adobe.comとも許可リスト外） |
 | `ai-writing-rate-below-the-rule-of-thumb` | recipes | 2026-11-26 | 変化なし（出典6/6件取得・照合3個すべて一致） |
 | `gpts-retirement-check-the-source` | recipes | 2026-11-26 | 変化あり→キューへ（GPTs新規作成終了日が9/25予定→10/26終了済みに） |
-| `instagram-two-gates-500-and-10000` | recipes | 未 | — |
-| `kindle-ai-disclosure-check` | recipes | 未 | — |
+| `instagram-two-gates-500-and-10000` | recipes | 2026-11-27 | 開けず＝経路遮断（help.instagram.comが許可リスト外。出典4件とも`CONNECT tunnel failed, response 403`「no rule or network setting allows this host」。githubのミラー1件のみ取得） |
+| `kindle-ai-disclosure-check` | recipes | 2026-11-27 | 変化なし（出典1/1件取得・照合1個一致。AI生成/AIアシストの定義文を目で原文と全文照合し一致。「70%」の未照合は別記事〈kindle-royalty-formula〉への参照文言で出典対象外） |
 | `kindle-royalty-formula` | recipes | 未 | — |
 | `note-fee-before-you-sell` | recipes | 未 | — |
 | `note-membership-monthly-formula` | recipes | 未 | — |
@@ -71,3 +71,4 @@
 
 | サービス | ページ | 最後に開いた日 | 結果 |
 |---|---|---|---|
+| note | [note公式ブログ](https://note.com/info)（新着告知の一覧） | 2026-11-27 | 変更あり→キューへ。2026-11-18公開「[AIに記事が参照された対価を、クリエイターのみなさんに還元します](https://note.com/info/n/n19e062e42e9e)」＝新しい収益化チャネル（既存記事の改稿ではなく新規題材として登録）。⚠️ 詳細な条件を案内する`help-note.com`は本日経路遮断で未到達 |
