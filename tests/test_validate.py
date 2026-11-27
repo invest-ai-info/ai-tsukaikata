@@ -124,6 +124,26 @@ def test_link_to_category_list_passes():
     assert validate([_article(body="[一覧](/recipes/)を見てください。")]) == []
 
 
+def test_link_to_scene_page_with_articles_passes():
+    """場面ページ（/scenes/<名前>/）は、その場面に一覧へ載る記事があるときだけ作られる（render.py と同じ条件）。"""
+    errors = validate([
+        _article(slug="m", category="recipes", scene="money"),
+        _article(slug="guide", body="[稼ぎ方](/scenes/money/)を見てください。"),
+    ])
+    assert not any("リンク先" in error for error in errors)
+
+
+def test_link_to_scene_page_without_articles_is_detected():
+    errors = validate([_article(slug="guide", body="[詐欺](/scenes/safety/)を見てください。")])
+    assert any("リンク先 /scenes/safety/" in error for error in errors)
+
+
+def test_scene_on_a_fixed_page_does_not_make_the_scene_page():
+    """固定ページに scene を付けても場面ページは作られない（一覧に載らない）。リンク先として数えない。"""
+    errors = validate([_article(slug="guide", scene="money", body="[稼ぎ方](/scenes/money/)")])
+    assert any("リンク先 /scenes/money/" in error for error in errors)
+
+
 def test_link_to_static_file_passes():
     assert validate([_article(body="[CSS](/static/style.css)")]) == []
 

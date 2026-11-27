@@ -645,7 +645,13 @@ def validate(
     errors: list[str] = []
 
     reserved = {"/"} | {f"/{name}/" for name in config.LISTED_CATEGORIES}
-    valid_paths = set(ALWAYS_VALID_PATHS) | reserved | {a.url for a in articles}
+    # 場面ページは、その場面に一覧へ載る記事があるときだけ作られる（render.py の active_scenes と同じ条件）。
+    # 無い場面へのリンクは今までどおり「存在しません」で止める（2026-11-28 入口ページから場面へリンクするため）
+    scene_paths = {
+        f"/scenes/{a.scene}/" for a in articles
+        if a.scene and a.category in config.LISTED_CATEGORIES
+    }
+    valid_paths = set(ALWAYS_VALID_PATHS) | reserved | scene_paths | {a.url for a in articles}
     taken: dict[str, str] = {}
 
     for article in articles:
