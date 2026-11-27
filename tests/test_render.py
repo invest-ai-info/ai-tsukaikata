@@ -27,7 +27,7 @@ def _article(slug="sample", category="recipes", title="題名", body="本文で�
 
 def test_index_contains_site_name_and_article_titles():
     pages = render_site([_article(title="レシピ1")])
-    assert "AIの使い方" in pages["index.html"]
+    assert "AIで稼げるか、やってみた" in pages["index.html"]
     assert "レシピ1" in pages["index.html"]
 
 
@@ -181,9 +181,9 @@ def test_header_logo_sits_left_of_site_name():
     pages = render_site([_article()])
     header = pages["recipes/sample/index.html"].split("</header>")[0]
     logo = '<img class="site-logo" src="/static/images/logo.png" alt="" width="34" height="34">'
-    anchor = header.split('class="site-name"')[1]      # <title> の「AIの使い方」を見ないよう a 要素の中だけ見る
+    anchor = header.split('class="site-name"')[1]      # <title> のサイト名を見ないよう a 要素の中だけ見る
     assert logo in anchor
-    assert anchor.index(logo) < anchor.index("AIの使い方")
+    assert anchor.index(logo) < anchor.index("AIで稼げるか、やってみた")
 
 
 def test_card_shows_eyecatch_only_when_available():
@@ -296,12 +296,25 @@ def test_earn_scene_is_labelled_as_past_articles():
     assert "副業の検証（過去の記事）" in pages["scenes/earn/index.html"]
 
 
-def test_index_top_nav_shows_tools_button_when_tools_exist():
+def test_tools_button_left_the_top_nav_but_the_page_stays():
+    """段1b（2026-11-28）＝深掘りは止めたので、トップのボタンからは外す。過去の記事のページは残す。"""
     pages = render_site([_article(slug="a", scene="work"),
                          _article(slug="t", category="tools")])
-    html = pages["index.html"]
-    assert 'class="top-nav-pill" href="/tools/"' in html
-    assert ">深掘り記事</a>" in html
+    assert 'class="top-nav-pill" href="/tools/"' not in pages["index.html"]
+    assert "tools/t/index.html" in pages
+
+
+def test_top_nav_order_puts_money_first():
+    from src import config
+    assert [i["label"] for i in config.TOP_NAV] == [
+        "はじめての方へ", "稼ぎ方の調べもの", "AI詐欺を防ぐ", "最新アップデート情報", "AI動画まとめ", "これまでの記事"]
+    assert [i["url"] for i in config.TOP_NAV] == [
+        "/guide/", "/scenes/money/", "/scenes/safety/", "/news/", "/videos/", "/recipes/"]
+
+
+def test_hero_eyebrow_says_it_is_a_record():
+    pages = render_site([_article(slug="m", scene="money")])
+    assert "AIで稼ぐ試みを、そのまま記録する" in pages["index.html"]
 
 
 def test_article_without_scene_still_renders():
@@ -327,15 +340,21 @@ def test_no_checked_note_when_the_date_is_missing():
     assert "checked-note" not in html
 
 
-def test_start_guide_appears_on_the_top_page_when_it_exists():
-    html = render_site([_article(slug="start", category="pages")])["index.html"]
-    assert 'href="/start/"' in html
+def test_guide_appears_on_the_top_page_when_it_exists():
+    html = render_site([_article(slug="guide", category="pages", title="はじめての方へ")])["index.html"]
+    assert 'class="top-nav-pill" href="/guide/"' in html
 
 
-def test_no_start_link_when_the_guide_is_missing():
-    """記事が無いのにリンクを出すとリンク切れになる（既存の nav と同じ考え方）。"""
+def test_no_guide_link_when_the_page_is_missing():
+    """ページが無いのにボタンを出すとリンク切れになる（既存の nav と同じ考え方）。"""
     html = render_site([_article(slug="about", category="pages")])["index.html"]
-    assert 'href="/start/"' not in html
+    assert 'href="/guide/"' not in html
+
+
+def test_start_page_is_not_a_top_button_any_more():
+    """段1b（2026-11-28）＝AIの道具の入れ方（/start/）は入口ページ /guide/ からたどる。"""
+    html = render_site([_article(slug="start", category="pages")])["index.html"]
+    assert 'class="top-nav-pill" href="/start/"' not in html
 
 def _media():
     from datetime import datetime

@@ -6,7 +6,7 @@ render.py と feeds.py の両方が同じ値を必要とするため、両方に
 """
 from __future__ import annotations
 
-SITE_NAME = "AIの使い方"
+SITE_NAME = "AIで稼げるか、やってみた"
 SITE_URL = "https://ai-tsukaikata.com"
 CUSTOM_DOMAIN = "ai-tsukaikata.com"
 
@@ -15,22 +15,22 @@ CUSTOM_DOMAIN = "ai-tsukaikata.com"
 # ⚠️ /scenes/<name>/ を指すボタンは、その場面に記事が入るまで自動で隠れる
 # （render.py が絞る）。0本の場面へのリンクは404になるため。
 TOP_NAV = [
-    {"label": "初めての方", "url": "/start/"},
+    # 2026-11-28 段1b＝稼ぐ話から並べる。外したもの：セキュリティ対策・深掘り記事（深掘りは停止）・
+    # 初めての方（/start/。AIの道具の入れ方は /guide/ からたどる）。ページそのものは残っている
+    {"label": "はじめての方へ", "url": "/guide/"},
     {"label": "稼ぎ方の調べもの", "url": "/scenes/money/"},
     {"label": "AI詐欺を防ぐ", "url": "/scenes/safety/"},
-    {"label": "セキュリティ対策", "url": "/scenes/security/"},
     {"label": "最新アップデート情報", "url": "/news/"},
     {"label": "AI動画まとめ", "url": "/videos/"},
-    {"label": "AIレシピ", "url": "/recipes/"},
-    {"label": "深掘り記事", "url": "/tools/"},
+    {"label": "これまでの記事", "url": "/recipes/"},
 ]
 
 # AdSense のサイト運営者ID（2026-08-13 オーナーが審査コードを提供）。
 # 審査タグは templates/base.html、ads.txt は src/build.py がこのIDから作る。
 ADSENSE_PUBLISHER_ID = "pub-2552122294306014"
 SITE_DESCRIPTION = (
-    "プログラミングなしで、AIに頼んで自動化を作る方法。"
-    "使った指示文をそのまま載せ、なぜその言い方が効くのかまで書いています。"
+    "AIを使って本当にお金が稼げるのかを、個人で試している記録です。"
+    "売上・費用・かけた時間・うまくいかなかったことを、数字のまま載せていきます。"
 )
 SITE_LANG = "ja"
 

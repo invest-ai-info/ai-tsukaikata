@@ -84,6 +84,7 @@ def render_site(
     ]
     # 指南書は記事があるときだけ出す（無いのにリンクを出すとリンク切れになる）
     has_start = any(a.url == "/start/" for a in articles)
+    has_guide = any(a.url == "/guide/" for a in articles)
     env.globals["start_url"] = "/start/" if has_start else None
 
     # ヘッダーのナビは 2026-08-13 に廃止（オーナー指示）。トップのカテゴリー
@@ -112,6 +113,8 @@ def render_site(
     def _nav_target_exists(url: str) -> bool:
         if url == "/start/":
             return has_start
+        if url == "/guide/":
+            return has_guide
         if url == "/news/":
             return news is not None
         if url == "/ainews/":

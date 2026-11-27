@@ -30,7 +30,7 @@ def _article(slug="sample", category="recipes", title="題名", published=date(2
 def test_rss_parses_as_xml():
     root = ET.fromstring(build_rss([_article()]))
     assert root.tag == "rss"
-    assert root.find("channel/title").text == "AIの使い方"
+    assert root.find("channel/title").text == "AIで稼げるか、やってみた"
 
 
 def test_rss_uses_absolute_urls():
