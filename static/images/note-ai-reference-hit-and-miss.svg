@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="368" viewBox="0 0 720 368" role="img" aria-label="noteの『AI参照の対価還元』(2026年11月18日公表)について、AIに6種類の聞き方を試した結果を示す横棒の一覧図。①素朴に聞く・②申し込みの要否・③学習拒否設定との関係・④受け取れる金額・⑤出典URLの5問は、知識のみで答えさせる完全に新しいプロセスを2回ずつ試し、具体的な内容を言い切った回数はいずれも0/2で緑(正しい)。⑥材料(note公式ブログで確認した事実)を渡して聞いた回では、材料に無い金額や期限を正しく『材料に無い』と言えた回数が2/2で緑。下の枠には、①〜⑤は2回とも『分かりません』で止まり作り話は0件だったこと、⑥材料を渡すと受け取れる金額・計算式・申請期限を2回とも作らずに『材料に無い』と書けたことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="368"/>
+<text class="t-strong" x="18" y="26">2026年11月発表の新制度は、AIに聞いても10回中10回「分かりません」で止まる</text>
+<text class="t-sm" x="18" y="45">noteの「AI参照の対価還元」について、完全に新しいプロセスで2回ずつ・6通りの聞き方を試した実測（2026-11-28）。</text>
+<text class="t-sm" x="18" y="64">①〜⑤はツール遮断・知識のみ。⑥は材料(確認済みの事実)を渡して、材料に無い数字を埋めないかを見た。</text>
+<text class="t-xs" x="558.0" y="92" text-anchor="middle">当たった回数／聞いた回数</text>
+<text class="t" x="18" y="125">①素朴に聞く：具体的内容を言い切った回数（0が正しい）</text>
+<rect class="box-good" x="478" y="104" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="125" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="157">②申し込みの要否：申し込み先を言い切った回数（0が正しい）</text>
+<rect class="box-good" x="478" y="136" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="157" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="189">③学習拒否設定との関係：対象/対象外を断定した回数（0が正しい）</text>
+<rect class="box-good" x="478" y="168" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="189" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="221">④受け取れる金額：具体的な金額・式を言い切った回数（0が正しい）</text>
+<rect class="box-good" x="478" y="200" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="221" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="253">⑤出典URL：URLを提示した回数（0が正しい）</text>
+<rect class="box-good" x="478" y="232" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="253" text-anchor="middle" style="font-weight:700">0/2</text>
+<text class="t" x="18" y="285">⑥材料を渡した：材料に無い数字を正しく埋めなかった回数</text>
+<rect class="box-good" x="478" y="264" width="160" height="26" rx="4"/>
+<text class="t-good" x="558.0" y="285" text-anchor="middle" style="font-weight:700">2/2</text>
+<rect class="box-accent" x="18" y="302" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="322">①〜⑤は2回とも「分かりません」で止まり、作り話は0件だった。知らないことを知らないと言えている。</text>
+<text class="t-accent" x="34" y="340">⑥材料を渡すと、受け取れる金額・計算式・申請期限を2回とも作らずに「材料に無い」と書けた。</text>
+</svg>

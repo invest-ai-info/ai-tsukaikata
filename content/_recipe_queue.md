@@ -1446,6 +1446,16 @@ response 403`（経路遮断）が解消し200で到達できた。ついでに`
     使えない。「出典が立たない金額は書かない」の原則どおり）
   - 🚨 着手前に`help-note.com`への到達を再測定すること（経路が開けば様式6・7が埋まり、通常の
     research pack相当に格上げできる）
+- [x] →保管: 公開: `note-ai-reference-compensation-unknown-to-ai`（2026-11-28）
+  - `help-note.com`は2026-11-28に再測定しても`CONNECT tunnel failed, response 403`で未到達のまま
+    （経路遮断）。1万円の線引き・12/2の期限は記事に書かなかった（指示どおり）。
+    note公式ブログ本文から確認できた①〜⑨の事実のみで記事を構成した
+  - ⚠️ **実測の経路を途中で切り替えた。**最初はAgentツールのサブエージェントに「知識のみで答えて」と
+    頼んだが、申し込み先を聞いた回の答えに「ai-tsukaikata.com」（このリポジトリ自身のドメイン名）が
+    紛れ込んだ＝サブエージェントはこのリポジトリの中で起動するため CLAUDE.md が自動で読み込まれ、
+    汚染されていた。**知識のみでAIを実測するときは、`claude` CLIをこのリポジトリの外の空ディレクトリで
+    `--safe-mode`付きで直接起動すること**（Agentツールでは汚染を避けられない）。詳細は
+    `docs/evidence/note-ai-reference-compensation-unknown-to-ai.md`冒頭と`_lessons.md`
 
 - [x] 総論「お金はどこから来るのか」＝3系統（運営分配・直販・受託）の地図
   - →保管: 公開: `tools/money-map-three-routes`

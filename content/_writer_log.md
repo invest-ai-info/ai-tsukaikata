@@ -46,6 +46,26 @@
 
 ## 記録
 
+### 2026-11-28 21:00（副業枠の回）
+- `git fetch origin`→HEADはorigin/mainと同じコミットだった（取り直し不要）
+- `content/_recipe_queue.md`冒頭🔢節・「担当が守ること」・「### 副業」節、`content/_lessons.md`
+  （直近分を中心に。全文は1MB超でRead1回では読めないため、節見出しとキュー側の参照で補った）、
+  見本2本（`note-fee-before-you-sell`・`youtube-payout-thresholds`）を読んだ
+- `content/_recipe_queue.md`の「### 副業」節から【変化】項目2件を確認。1件（GPTs終了日の訂正）は
+  既存記事の数字訂正で「🔧 改稿」節に既に1行あったため見送り、もう1件（noteのAI参照対価還元・
+  2026-11-27確認の新しい収益化チャネル）を選んだ
+- 公開: 1本（`note-ai-reference-compensation-unknown-to-ai`）
+- 実測1（6指示文×各2回＝12回）: 最初はAgentツール`general-purpose`で行ったが、申し込み先を
+  聞いた回の答えに「ai-tsukaikata.com」（このリポジトリ自身のドメイン名）が紛れ込み、CLAUDE.md
+  の自動読み込みによる汚染と判明（★372）。`claude --safe-mode --disallowedTools "..."`を
+  このリポジトリの外の空ディレクトリで直接起動し直して12回を取り直した
+- `help-note.com`を再測定したが`CONNECT tunnel failed, response 403`で未到達のまま
+  （経路遮断。2026-11-26時点から変化なし）。1万円の線引き・12/2の期限は記事に書いていない
+- `python tools/check_readability.py`で60字以上の文を32%→17%まで削減（箇条書き化が中心）。
+  `python -m src.build`・`python -m pytest -q`（810 passed）・`python -m tools.make_eyecatch`は
+  いずれも通過
+- キュー・`_money_watch.md`・`_lessons.md`（★372・★373を追記）を更新してコミット・push
+
 ### 2026-11-26 21:00（副業枠の回）
 - `git fetch origin`→HEADはorigin/mainと同じコミットだった（取り直し不要）
 - `content/_recipe_queue.md`冒頭「🔢 1晩の本数」「担当が守ること」「### 副業」節、

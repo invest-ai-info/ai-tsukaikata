@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="546" viewBox="0 0 720 546" role="img" aria-label="noteの『AI参照の対価還元』の対象・対象外・手続きを、note公式ブログ(2026年11月18日公表・2026年11月27日確認)の原文どおりに7行で並べた図。1行目＝対象コンテンツは誰でも読める無料記事のテキスト部分のみで緑。2行目＝対象外は有料記事の有料部分・メンバーシップ特典・画像音声動画で赤。3行目＝対象期間は2026年4月〜7月に公開しAIの回答に参照された実績がある記事。4行目＝申し込みは不要で対象者には個別にメールで連絡が来るため緑。5行目＝『生成AIの学習に拒否意向を示す』設定をオンにしていても、または『AI学習対価還元プログラム』に参加していなくても対象になる(学習と参照は別の仕組みのため)ため緑。6行目＝受け取り方法は銀行振込またはAmazonギフトカード、支払い時期は2026年12月中旬を予定。7行目＝noteが公表していないものは対価の総額・対象人数・noteの運営手数料の率で赤。下の枠には、対象かどうかは自分で判断できること、受け取れる金額は原文にも書かれておらずAIに聞いても計算式は出てこないことが書かれている。">
+<style>
+  .bg { fill: #fbfcfd; }
+  .box { fill: #ffffff; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-accent { fill: #eaf1fc; stroke: #1a56b8; stroke-width: 1.5; }
+  .box-quiet { fill: #f2f4f6; stroke: #d5dae0; stroke-width: 1.5; }
+  .box-bad { fill: #fdf0ef; stroke: #d92b2b; stroke-width: 1.5; }
+  .box-good { fill: #eef7f0; stroke: #1a7f37; stroke-width: 1.5; }
+  .line { stroke: #8b949e; stroke-width: 1.6; fill: none; }
+  .t-bad { fill: #b02020; font-size: 12.5px; font-weight: 700; }
+  .t-good { fill: #16682e; font-size: 12.5px; }
+  .mono { fill: #1f2328; font-size: 12.5px; font-family: Consolas, "SFMono-Regular", Menlo, monospace; }
+  .t { fill: #1f2328; font-size: 13px; }
+  .t-sm { fill: #616b76; font-size: 11.5px; }
+  .t-xs { fill: #8b949e; font-size: 10.5px; }
+  .t-strong { fill: #1f2328; font-size: 13.5px; font-weight: 700; }
+  .t-accent { fill: #1a56b8; font-size: 13px; font-weight: 700; }
+  .bar-in { fill: #7aa7e0; }
+  .bar-out { fill: #1a56b8; }
+  .bar-old { fill: #c8d1da; }
+  .bar-new { fill: #1a56b8; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #191d21; }
+    .box { fill: #14171a; stroke: #363c43; }
+    .box-accent { fill: #1b2735; stroke: #7ab0ff; }
+    .box-quiet { fill: #1c2126; stroke: #363c43; }
+    .box-bad { fill: #2a1a1a; stroke: #f07a7a; }
+    .box-good { fill: #16261b; stroke: #57ab68; }
+    .line { stroke: #6e7781; }
+    .t-bad { fill: #f07a7a; }
+    .t-good { fill: #57ab68; }
+    .mono { fill: #e6e9ec; }
+    .t { fill: #e6e9ec; }
+    .t-sm { fill: #9aa4ae; }
+    .t-xs { fill: #6e7781; }
+    .t-strong { fill: #e6e9ec; }
+    .t-accent { fill: #7ab0ff; }
+    .bar-in { fill: #4a72a8; }
+    .bar-out { fill: #7ab0ff; }
+    .bar-old { fill: #3a4149; }
+    .bar-new { fill: #7ab0ff; }
+  }
+</style>
+<rect class="bg" x="0" y="0" width="720" height="546"/>
+<text class="t-strong" x="18" y="26">AI参照の対価還元——分かっていることと、noteが公表していないこと</text>
+<text class="t-sm" x="18" y="45">note公式ブログ「AIに記事が参照された対価を、クリエイターのみなさんに還元します」の原文どおり（2026-11-27確認）。</text>
+<text class="t-sm" x="18" y="64">ヘルプページ(help-note.com)はこの日もクラウドから到達できず、二次情報にある細部は未確認のため載せていない。</text>
+<rect class="box-good" x="18" y="96" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="116">対象コンテンツ</text>
+<text class="t-good" x="34" y="134">誰でも読める無料記事のテキスト部分のみ</text>
+<rect class="box-bad" x="18" y="150" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="170">対象外</text>
+<text class="t-bad" x="34" y="188">有料記事の有料部分・メンバーシップ特典・画像音声動画</text>
+<rect class="box-quiet" x="18" y="204" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="224">対象期間</text>
+<text class="t" x="34" y="242">2026年4月〜7月に公開し、AIの回答に参照された実績がある記事</text>
+<rect class="box-good" x="18" y="258" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="278">申し込み</text>
+<text class="t-good" x="34" y="296">不要。対象者には個別にメールで連絡が来る</text>
+<rect class="box-good" x="18" y="312" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="332">学習拒否設定ON／プログラム未参加でも</text>
+<text class="t-good" x="34" y="350">対象になる(「学習」と「参照」は別の仕組みのため)</text>
+<rect class="box-quiet" x="18" y="366" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="386">受け取り方法・時期</text>
+<text class="t" x="34" y="404">銀行振込またはAmazonギフトカード。2026年12月中旬を予定</text>
+<rect class="box-bad" x="18" y="420" width="684" height="44" rx="6"/>
+<text class="t-strong" x="34" y="440">noteが公表していないもの</text>
+<text class="t-bad" x="34" y="458">対価の総額・対象人数・noteの運営手数料の率</text>
+<rect class="box-accent" x="18" y="480" width="684" height="46" rx="6"/>
+<text class="t-accent" x="34" y="500">対象かどうかは自分で判断できる（期間・コンテンツの種類が原文に明記）。</text>
+<text class="t-accent" x="34" y="518">受け取れる金額は原文にも書かれていない。AIに聞いても計算式は出てこない(上のグラフ④)。</text>
+</svg>
