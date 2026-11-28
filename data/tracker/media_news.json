@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-28T03:56:39.630631+00:00",
+      "importance": "minor",
+      "label": "GIGAZINE",
+      "published": "2026-11-27T23:00:00+00:00",
+      "source_id": "media-gigazine",
+      "summary": "人間の声色と変わらないAI音声が登場したことで、警察への虚偽通報が相次いでいることがアメリカで問題視されていると、海外メディアのNPRが報じています。 続きを読む...",
+      "title": "AI音声による虚偽通報が深刻化",
+      "uid": "4fc0a496f73c53a6",
+      "url": "https://gigazine.net/news/20261128-fake-911-call-ai/",
+      "vendor": "GIGAZINE"
+    },
+    {
       "first_seen": "2026-11-27T22:01:04.609138+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2387,18 +2399,6 @@
       "uid": "d76ced01963d0fbd",
       "url": "https://japan.cnet.com/article/35255223/",
       "vendor": "CNET Japan"
-    },
-    {
-      "first_seen": "2026-11-20T12:59:25.945778+00:00",
-      "importance": "minor",
-      "label": "Impress AI Watch",
-      "published": "2026-11-20T10:04:54+00:00",
-      "source_id": "media-impress-ai",
-      "summary": "AMDとUnslothは、ローカルハードウェア上でAIモデルを実行・学習するためのアプリ「Unsloth Desktop」において、AMD XDNA 2アーキテクチャベースのNPUが公式にサポートされる世界初のNPUとなったと発表した。",
-      "title": "ローカルでAIモデルを実行するための「Unsloth Desktop」がAMD XDNA 2 NPUをサポート",
-      "uid": "fd6a1dacf4d5f45f",
-      "url": "https://ai.watch.impress.co.jp/docs/news/2158348.html",
-      "vendor": "Impress AI Watch"
     }
   ]
 }
