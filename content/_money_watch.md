@@ -54,9 +54,9 @@
 | `gpts-retirement-check-the-source` | recipes | 2026-11-26 | 変化あり→キューへ（GPTs新規作成終了日が9/25予定→10/26終了済みに） |
 | `instagram-two-gates-500-and-10000` | recipes | 2026-11-27 | 開けず＝経路遮断（help.instagram.comが許可リスト外。出典4件とも`CONNECT tunnel failed, response 403`「no rule or network setting allows this host」。githubのミラー1件のみ取得） |
 | `kindle-ai-disclosure-check` | recipes | 2026-11-27 | 変化なし（出典1/1件取得・照合1個一致。AI生成/AIアシストの定義文を目で原文と全文照合し一致。「70%」の未照合は別記事〈kindle-royalty-formula〉への参照文言で出典対象外） |
-| `kindle-royalty-formula` | recipes | 未 | — |
-| `note-fee-before-you-sell` | recipes | 未 | — |
-| `note-membership-monthly-formula` | recipes | 未 | — |
+| `kindle-royalty-formula` | recipes | 2026-11-28 | 変化なし（出典2/2件取得・照合3個すべて一致。配信コスト1円/MB・最低1円・10MB以上は差し引かれない例外・70%価格帯250円〜1,650円〈税込〉・消費税10%・KDPセレクト未登録時は35%になる条文を目で原文と全文照合し一致） |
+| `note-fee-before-you-sell` | recipes | 2026-11-28 | 開けず＝経路遮断（出典1/1件とも`help-note.com`。`CONNECT tunnel failed, response 403`「no rule or network setting allows this host」で未到達） |
+| `note-membership-monthly-formula` | recipes | 2026-11-28 | 開けず＝経路遮断（出典4件のうち`help-note.com`3件が未到達。残る1件〈JILPT調査PDF〉のみ取得・照合できる数字の範囲で一致） |
 | `udemy-97-or-37-who-brings-the-student` | recipes | 未 | — |
 | `x-pay-before-you-earn` | recipes | 未 | — |
 | `youtube-payout-thresholds` | recipes | 未 | — |
