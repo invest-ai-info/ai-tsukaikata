@@ -1,6 +1,30 @@
 {
   "items": [
     {
+      "first_seen": "2026-11-28T13:06:42.421866+00:00",
+      "importance": "major",
+      "label": "CNET Japan",
+      "published": "2026-11-28T12:20:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米OpenAIなどは11月27日（現地時間）、Appleが元社員を再雇用してOpenAIの未発表端末の機密情報を入手し、両社に共通する取引先に圧力をかけて開発を妨げたとして、Appleを反訴した。Appleが7月に起こした営業秘密をめぐる訴訟で、米カリフォルニア州北部地区連邦地裁に反訴状を提出した。ロイターによると、Appleは同日の声明で、再雇用した社員を通じてOpenAIの機密情報を入手した…",
+      "title": "OpenAI、Appleを反訴　Appleが未発表端末の機密を入手し、取引先に圧力をかけたと主張",
+      "uid": "6bafecd6e7855455",
+      "url": "https://japan.cnet.com/article/35255544/",
+      "vendor": "CNET Japan"
+    },
+    {
+      "first_seen": "2026-11-28T13:06:42.421866+00:00",
+      "importance": "minor",
+      "label": "CNET Japan",
+      "published": "2026-11-28T07:21:00+00:00",
+      "source_id": "media-cnet-japan",
+      "summary": "米OpenAIは、12月から有料プラン「Plus」「Pro」「Business」でChatGPTとソフトウェア開発支援ツール「Codex」の利用枠を共通化すると、公式ヘルプで明らかにした。ChatGPTで使った分とCodexで使った分を、同じ枠から差し引く仕組みになる。",
+      "title": "ChatGPTとCodex、12月から利用枠を共通化　Plus・Pro・Businessが対象",
+      "uid": "cd39501ee9b99db1",
+      "url": "https://japan.cnet.com/article/35255534/",
+      "vendor": "CNET Japan"
+    },
+    {
       "first_seen": "2026-11-28T03:56:39.630631+00:00",
       "importance": "minor",
       "label": "GIGAZINE",
@@ -2375,30 +2399,6 @@
       "uid": "34b2c8325a2860a8",
       "url": "https://ai.watch.impress.co.jp/docs/news/2158371.html",
       "vendor": "Impress AI Watch"
-    },
-    {
-      "first_seen": "2026-11-20T12:59:25.945778+00:00",
-      "importance": "minor",
-      "label": "ITmedia AI+",
-      "published": "2026-11-20T10:13:44+00:00",
-      "source_id": "media-itmedia-aiplus",
-      "summary": "京都大学の学生相談部門は「AIに悩みを相談する際に気をつけて欲しいこと」と題した文書を公開した。",
-      "title": "京大がAI依存チェックリスト公開　「当てはまるものあれば、しばらくAI触らないで」",
-      "uid": "013154435f2fa6b2",
-      "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003378/",
-      "vendor": "ITmedia AI+"
-    },
-    {
-      "first_seen": "2026-11-20T12:59:25.945778+00:00",
-      "importance": "minor",
-      "label": "CNET Japan",
-      "published": "2026-11-20T10:05:00+00:00",
-      "source_id": "media-cnet-japan",
-      "summary": "OpenAIは11月18日、ChatGPTで話した内容を音声入力中に文字で確認できる新機能「Live Dictation」を発表した。あわせて、音声入力の録音時間に設けていた10分の上限も撤廃した。無料プランを含むすべてのプランを対象に、iOS、Android、ウェブ、デスクトップアプリで順次提供している。",
-      "title": "ChatGPT、話しながら文字起こし　無料プランも対象、録音の10分上限を撤廃",
-      "uid": "d76ced01963d0fbd",
-      "url": "https://japan.cnet.com/article/35255223/",
-      "vendor": "CNET Japan"
     }
   ]
 }
