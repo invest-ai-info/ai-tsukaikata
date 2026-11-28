@@ -94,19 +94,7 @@
     "openrouter-xai": "2026-09-21T16:19:01+00:00",
     "sakana-blog": "2026-11-25T15:00:00+00:00"
   },
-  "pending_minor": [
-    {
-      "importance": "minor",
-      "label": "Kimi 新モデル",
-      "published": "2026-07-16T15:30:58+00:00",
-      "source_id": "openrouter-moonshot",
-      "summary": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at…",
-      "title": "moonshotai/kimi-k3:batch",
-      "uid": "8c6ba0a69b8e1409",
-      "url": "https://openrouter.ai/moonshotai/kimi-k3:batch",
-      "vendor": "Moonshot AI"
-    }
-  ],
+  "pending_minor": [],
   "uids": {
     "000097b83b5ee3bf": "2026-11-13T09:36:48.865953+00:00",
     "002f4005dd8860f3": "2026-09-29T08:36:30.590774+00:00",
